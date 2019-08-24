@@ -1,14 +1,14 @@
 ---
-title: Úvod do C# – interaktivní kurzy
-description: Přečtěte si C# v prohlížeči a můžete začít s vývojovým prostředím
-ms.date: 01/30/2018
+title: Úvod k C# interaktivním kurzům
+description: Naučte C# se v prohlížeči a začněte s vlastním vývojovým prostředím.
+ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 580339f6724066c9fb33ee734ff35a34081e1426
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 65526dcf04525f3f2afb358a5b6289ff8bba7de8
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634502"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015011"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
@@ -16,33 +16,33 @@ Vítáme vás u kurzu Úvod do C#. Tento kurz začíná interaktivní lekcí, kt
 
 První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
 
-Úvodní kurzy následující lekci Hello World jsou k dispozici prostřednictvím prostředí online prohlížeče nebo [ve vlastním místním vývojovém prostředí](local-environment.md). Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Je odkazů, které vám pomůžou nastavit prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
+Všechny úvodní kurzy po Hello World lekci jsou k dispozici v online prostředí prohlížeče nebo [ve vašem místním vývojovém prostředí](local-environment.md). Na konci každého kurzu se rozhodnete, jestli chcete pokračovat v další lekci online nebo na vašem počítači. K dispozici jsou odkazy, které vám pomůžou nastavit prostředí a pokračovat v dalším kurzu na vašem počítači.
 
 ## <a name="hello-worldhello-worldyml"></a>[Hello World](hello-world.yml)
 
-V [Hello world](hello-world.yml) kurzu vytvoříte nejzákladnější C# programu. Prozkoumáte `string` typu a postupu při práci s textem.
+V kurzu [Hello World](hello-world.yml) vytvoříte nejzákladnější C# program. Budete zkoumat `string` typ a postup práce s textem.
 
 ## <a name="numbers-in-cnumbers-in-csharpyml"></a>[Čísla v jazyce C#](numbers-in-csharp.yml)
 
-V [čísla ve C# ](numbers-in-csharp.yml) kurzu se dozvíte, jak počítače ukládána čísla a jak provádět výpočty s rozdílné číselné typy. Dozvíte se základy zaokrouhlení a provádění matematických výpočtů pomocí C#. Tento kurz je také k dispozici [spouštět místně na svém počítači](numbers-in-csharp-local.md).
+V části [čísla v C# ](numbers-in-csharp.yml) kurzu se dozvíte, jak počítače ukládají čísla a jak provádět výpočty s různými číselnými typy. Naučíte se základy zaokrouhlování a postup, jak provádět matematické výpočty pomocí C#. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](numbers-in-csharp-local.md).
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) lekce.
+V tomto kurzu se předpokládá, že jste dokončili lekci [Hello World](hello-world.yml) .
 
 ## <a name="branches-and-loopsbranches-and-loopsyml"></a>[Větve a smyčky](branches-and-loops.yml)
 
-[Větve a smyčky](branches-and-loops.yml) kurzu se naučíte se základy výběru různé cesty spuštění kódu na základě hodnot, které jsou uložené v proměnné. Se dozvíte základní informace o toku řízení, která je základem jak programy rozhodování a zvolte různé akce. Tento kurz je také k dispozici [spouštět místně na svém počítači](branches-and-loops-local.md).
+Kurz [větvení a cyklů](branches-and-loops.yml) učí základy výběru různých cest ke spuštění kódu na základě hodnot uložených v proměnných. Naučíte se základy řízení toku, což je základem způsobu, jakým programy provádí rozhodnutí a výběr různých akcí. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](branches-and-loops-local.md).
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) a [čísla ve C# ](numbers-in-csharp.yml) lekce.
+V tomto kurzu se předpokládá, že jste [ C# v](numbers-in-csharp.yml) lekci dokončili text [Hello World](hello-world.yml) a čísla.
 
-## <a name="list-collectionlist-collectionyml"></a>[Kolekce seznamu](list-collection.yml)
+## <a name="list-collectionlist-collectionyml"></a>[Kolekce seznamů](list-collection.yml)
 
-[Seznamu kolekce](list-collection.yml) lekce will vám typu kolekce, která ukládá data sekvencí. Budete se dozvíte, jak přidávat a odebírat položky, vyhledejte položky a řazení seznamu. Prozkoumáte různé druhy seznamů. Tento kurz je také k dispozici [spouštět místně na svém počítači](arrays-and-collections.md).
+V lekci [kolekce seznamu](list-collection.yml) získáte prohlídku typu kolekce, ve kterém jsou uloženy sekvence dat. Naučíte se, jak přidávat a odebírat položky, Hledat položky a třídit seznamy. Budete zkoumat různé druhy seznamů. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](arrays-and-collections.md).
 
-Tento kurz předpokládá, že dokončení lekce uvedené výše.
+V tomto kurzu se předpokládá, že jste dokončili výše uvedené lekce.
 
 ## <a name="introduction-to-classesintroduction-to-classesmd"></a>[Úvod do tříd](introduction-to-classes.md)
 
-V tomto posledním kurzu je pouze možné spustit na počítači, pomocí vlastní místní vývojové prostředí a .NET Core.
-Budete moct sestavit konzolovou aplikaci a zobrazit základní funkce objektově orientované, které jsou součástí C# jazyka.
+Tento finální kurz je k dispozici pouze ke spuštění na vašem počítači pomocí vlastního místního vývojového prostředí a .NET Core.
+Vytvoříte konzolovou aplikaci a zobrazíte základní funkce orientované na objekty, které jsou součástí C# jazyka.
 
-V tomto kurzu se předpokládá dokončení online úvodní kurzy a nainstalovali jste si [.NET Core SDK](https://www.microsoft.com/net/download) a [Visual Studio Code](https://code.visualstudio.com/).
+V tomto kurzu se předpokládá, že jste dokončili online úvodní kurzy a nainstalovali jste [.NET Core SDK](https://www.microsoft.com/net/download) a [Visual Studio Code](https://code.visualstudio.com/).

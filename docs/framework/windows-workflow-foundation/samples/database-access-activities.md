@@ -2,40 +2,43 @@
 title: Aktivity přístupu k databázi
 ms.date: 03/30/2017
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-ms.openlocfilehash: 5a7c6fa6664acee8000c100513b2cc955ffa3392
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 31794a583e87b5948457fac754cb5bf66fafa09c
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622459"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016036"
 ---
 # <a name="database-access-activities"></a>Aktivity přístupu k databázi
-Aktivity přístupu k databázi umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity umožňují přístup k databázím nebo upravte informace a použití [ADO.NET](https://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.  
-  
+
+Aktivity přístupu k databázi umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity umožňují přístup k databázím k načtení nebo úpravám informací a použití [ADO.NET](https://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.
+
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
->  `<InstallDrive>:\WF_WCF_Samples`
+> `<InstallDrive>:\WF_WCF_Samples`
 >
->  Pokud tento adresář neexistuje, přejděte na stránku (stahování) Chcete-li stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, Stáhněte si všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky na stránce (stáhnout stránku). Tato ukázka se nachází v následujícím adresáři.
 >
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`
+> `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`
 
 ## <a name="database-activities"></a>Databázové aktivity
- Seznam aktivit, které jsou zahrnuté v této ukázce jsou podrobně popsané v následujících částech.
+
+Následující části podrobně popisují seznam aktivit obsažených v této ukázce.
 
 ## <a name="dbupdate"></a>DbUpdate
- Provede dotaz SQL, který vytváří změny v databázi (insert, update, delete a jiné úpravy).
 
- Tato třída provádí svou práci asynchronně (se odvozuje od <xref:System.Activities.AsyncCodeActivity> a používá jeho asynchronní funkce).
+Provede dotaz SQL, který vytvoří změnu v databázi (vložení, aktualizace, odstranění a další úpravy).
 
- Informace o připojení se dá nakonfigurovat pomocí nastavení výchozí název zprostředkovatele (`ProviderName`) a připojovací řetězec (`ConnectionString`) nebo pouze pomocí konfigurace název připojovacího řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
+Tato třída provádí svou práci asynchronně (je odvozena z <xref:System.Activities.AsyncCodeActivity> a používá její asynchronní funkce).
 
- Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
+Informace o připojení lze konfigurovat nastavením neutrálního názvu zprostředkovatele (`ProviderName`) a připojovacího řetězce (`ConnectionString`) nebo pouze pomocí názvu konfiguračního řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
 
- Po `DbUpdate` se provedl a počet ovlivněných záznamů, které se vrátí v `AffectedRecords` vlastnost.
+Dotaz, který má být spuštěn, je konfigurován `Sql` ve své vlastnosti a parametry jsou předány `Parameters` prostřednictvím kolekce.
 
-```
+Po `DbUpdate` spuštění se `AffectedRecords` v vlastnosti vrátí počet ovlivněných záznamů.
+
+```csharp
 Public class DbUpdate: AsyncCodeActivity
 {
     [RequiredArgument]
@@ -71,26 +74,27 @@ Public class DbUpdate: AsyncCodeActivity
 
 |Argument|Popis|
 |-|-|
-|ProviderName|Výchozí název zprostředkovatele rozhraní ADO.NET. Pokud tento argument je nastavena, pak bude `ConnectionString` musí být také nastavena.|
-|připojovací řetězec|Připojovací řetězec pro připojení k databázi. Pokud tento argument je nastaven, pak `ProviderName` musí být také nastavena.|
-|ConfigName|Název oddílu konfiguračního souboru, kde se ukládají informace o připojení. Pokud je tento argument nastavená `ProviderName` a `ConnectionString` se nevyžadují.|
-|CommandType|Typ <xref:System.Data.Common.DbCommand> má být proveden.|
-|SQL|Příkaz SQL, který se spustí.|
-|Parametry|Kolekce parametrů bude příkaz jazyka SQL.|
-|AffectedRecords|Počet záznamů ovlivněný podle poslední operaci.|
+|ProviderName|Neutrální název poskytovatele ADO.NET Pokud je tento argument nastaven, `ConnectionString` musí být také nastavena.|
+|Vlastnosti|Připojovací řetězec pro připojení k databázi. Je-li tento argument nastaven, `ProviderName` musí být také nastavena.|
+|Config|Název oddílu konfiguračního souboru, ve kterém jsou uloženy informace o připojení. Pokud je tento argument nastaven `ProviderName` a `ConnectionString` není požadován.|
+|CommandType|Typ, <xref:System.Data.Common.DbCommand> který má být spuštěn.|
+|SQL|Příkaz jazyka SQL, který má být spuštěn.|
+|Parametry|Kolekce parametrů dotazu SQL|
+|AffectedRecords|Počet záznamů ovlivněných poslední operací.|
 
 ## <a name="dbqueryscalar"></a>DbQueryScalar
- Provede dotaz, který načte hodnotu single z databáze.
 
- Tato třída provádí svou práci asynchronně (se odvozuje od <xref:System.Activities.AsyncCodeActivity%601> a používá jeho asynchronní funkce).
+Spustí dotaz, který načte jednu hodnotu z databáze.
 
- Informace o připojení se dá nakonfigurovat pomocí nastavení výchozí název zprostředkovatele (`ProviderName`) a připojovací řetězec (`ConnectionString`) nebo pouze pomocí konfigurace název připojovacího řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
+Tato třída provádí svou práci asynchronně (je odvozena z <xref:System.Activities.AsyncCodeActivity%601> a používá její asynchronní funkce).
 
- Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
+Informace o připojení lze konfigurovat nastavením neutrálního názvu zprostředkovatele (`ProviderName`) a připojovacího řetězce (`ConnectionString`) nebo pouze pomocí názvu konfiguračního řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
 
- Po `DbQueryScalar` se provedl a vytvořil skalárních se vrátí v `Result out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
+Dotaz, který má být spuštěn, je konfigurován `Sql` ve své vlastnosti a parametry jsou předány `Parameters` prostřednictvím kolekce.
 
-```
+Po `DbQueryScalar` spuštění se skalární hodnota vrátí `Result out` v argumentu (typu `TResult`, který je definován v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
+
+```csharp
 public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
 {
     // public arguments
@@ -124,24 +128,25 @@ public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
 
 |Argument|Popis|
 |-|-|
-|ProviderName|Výchozí název zprostředkovatele rozhraní ADO.NET. Pokud tento argument je nastavena, pak bude `ConnectionString` musí být také nastavena.|
-|připojovací řetězec|Připojovací řetězec pro připojení k databázi. Pokud tento argument je nastaven, pak `ProviderName` musí být také nastavena.|
-|ConfigName|Název oddílu konfiguračního souboru, kde se ukládají informace o připojení. Pokud je tento argument nastavená `ProviderName` a `ConnectionString` se nevyžadují.|
-|CommandType|Typ <xref:System.Data.Common.DbCommand> má být proveden.|
-|SQL|Příkaz SQL, který se spustí.|
-|Parametry|Kolekce parametrů bude příkaz jazyka SQL.|
-|Výsledek|Skalární hodnota, která se získá po spuštění dotazu. Tento argument je typu `TResult`.|
+|ProviderName|Neutrální název poskytovatele ADO.NET Pokud je tento argument nastaven, `ConnectionString` musí být také nastavena.|
+|Vlastnosti|Připojovací řetězec pro připojení k databázi. Je-li tento argument nastaven, `ProviderName` musí být také nastavena.|
+|Config|Název oddílu konfiguračního souboru, ve kterém jsou uloženy informace o připojení. Pokud je tento argument nastaven `ProviderName` a `ConnectionString` není požadován.|
+|CommandType|Typ, <xref:System.Data.Common.DbCommand> který má být spuštěn.|
+|SQL|Příkaz jazyka SQL, který má být spuštěn.|
+|Parametry|Kolekce parametrů dotazu SQL|
+|Výsledek|Skalární, který se získá po provedení dotazu. Tento argument je typu `TResult`.|
 
 ## <a name="dbquery"></a>DbQuery
- Provede dotaz, který načte seznam objektů. Po spuštění dotazu mapování funkce se provede (může být <xref:System.Func%601> < `DbDataReader`, `TResult`> nebo <xref:System.Activities.ActivityFunc%601> < `DbDataReader`, `TResult`>). Toto mapování funkce získá v záznamu `DbDataReader` a mapuje na objekt, který má být vrácen.
 
- Informace o připojení se dá nakonfigurovat pomocí nastavení výchozí název zprostředkovatele (`ProviderName`) a připojovací řetězec (`ConnectionString`) nebo pouze pomocí konfigurace název připojovacího řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
+Spustí dotaz, který načte seznam objektů. Po <xref:System.Func%601>provedení dotazu se provede funkce mapování (může to být `DbDataReader` <xref:System.Activities.ActivityFunc%601> `DbDataReader` <, `TResult`> < nebo`TResult`>). Tato funkce mapování načte záznam v `DbDataReader` a a provede jeho mapování na objekt, který má být vrácen.
 
- Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
+Informace o připojení lze konfigurovat nastavením neutrálního názvu zprostředkovatele (`ProviderName`) a připojovacího řetězce (`ConnectionString`) nebo pouze pomocí názvu konfiguračního řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
 
- Výsledky dotazu SQL se načítají pomocí `DbDataReader`. Aktivita Iteruje přes `DbDataReader` a řádky v tabulce se mapuje `DbDataReader` do instance `TResult`. Uživatel `DbQuery` poskytnout mapování kódu, což lze provést dvěma způsoby: pomocí <xref:System.Func%601> < `DbDataReader`, `TResult`> nebo <xref:System.Activities.ActivityFunc%601> < `DbDataReader`, `TResult`>. V prvním případě mapy se provádí v jedné pulse provádění. Proto je rychlejší, ale to nejde serializovat do XAML. V posledním případě mapy probíhá v několika počtu impulsů. Proto může být pomalejší, ale může být serializován XAML a vytvořené pomocí deklarace (jakékoli existující aktivitu mohl podílet na mapování).
+Dotaz, který má být spuštěn, je konfigurován `Sql` ve své vlastnosti a parametry jsou předány `Parameters` prostřednictvím kolekce.
 
-```
+Výsledky dotazu SQL jsou načteny pomocí `DbDataReader`. Aktivita prochází `DbDataReader` a mapuje řádky `DbDataReader` v objektu na instanci `TResult`. `DbQuery` Uživatel musí poskytnout mapování kódu a může to provést dvěma způsoby: < <xref:System.Func%601> <xref:System.Activities.ActivityFunc%601> < `DbDataReader`pomocí `TResult`> nebo `DbDataReader` >.`TResult` V prvním případě se mapa provádí v rámci jednoho Pulse spuštění. Proto je rychlejší, ale nelze jej serializovat do XAML. V posledním případě se mapa provádí ve více impulsech. Proto může být pomalejší, ale může být serializována do jazyka XAML a vytvořena deklarativně (každá existující aktivita se může účastnit mapování).
+
+```csharp
 public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult : class
 {
     // public arguments
@@ -183,26 +188,27 @@ public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult 
 
 |Argument|Popis|
 |-|-|
-|ProviderName|Výchozí název zprostředkovatele rozhraní ADO.NET. Pokud tento argument je nastavena, pak bude `ConnectionString` musí být také nastavena.|
-|připojovací řetězec|Připojovací řetězec pro připojení k databázi. Pokud tento argument je nastaven, pak `ProviderName` musí být také nastavena.|
-|ConfigName|Název oddílu konfiguračního souboru, kde se ukládají informace o připojení. Pokud je tento argument nastavená `ProviderName` a `ConnectionString` se nevyžadují.|
-|CommandType|Typ <xref:System.Data.Common.DbCommand> má být proveden.|
-|SQL|Příkaz SQL, který se spustí.|
-|Parametry|Kolekce parametrů bude příkaz jazyka SQL.|
-|mapování|Mapování funkce (<xref:System.Func%601><`DbDataReader`, `TResult`>), která má záznam `DataReader` získat po provedení dotazu a vrátí instanci objektu typu `TResult` přidávaného do `Result` kolekce.<br /><br /> V takovém případě mapování se provádí v jedné pulse provádění, ale nemůže být vytvořen deklarativně pomocí návrháře.|
-|MapperFunc|Mapování funkce (<xref:System.Activities.ActivityFunc%601><`DbDataReader`, `TResult`>), která má záznam `DataReader` získat po provedení dotazu a vrátí instanci objektu typu `TResult` přidávaného do `Result` kolekce.<br /><br /> V takovém případě mapování se provádí v několika počtu impulsů provádění. Tato funkce může serializovat do XAML a je také autorem deklarativně (jakékoli existující aktivitu mohl podílet na mapování).|
-|Výsledek|Po provedení dotazu a provádění funkce mapování pro každý záznam v získat seznam objektů `DataReader`.|
+|ProviderName|Neutrální název poskytovatele ADO.NET Pokud je tento argument nastaven, `ConnectionString` musí být také nastavena.|
+|Vlastnosti|Připojovací řetězec pro připojení k databázi. Je-li tento argument nastaven, `ProviderName` musí být také nastavena.|
+|Config|Název oddílu konfiguračního souboru, ve kterém jsou uloženy informace o připojení. Pokud je tento argument nastaven `ProviderName` a `ConnectionString` není požadován.|
+|CommandType|Typ, <xref:System.Data.Common.DbCommand> který má být spuštěn.|
+|SQL|Příkaz jazyka SQL, který má být spuštěn.|
+|Parametry|Kolekce parametrů dotazu SQL|
+|Mapper|Funkce Mapping (<xref:System.Func%601>< `DataReader` , >), která přebírá záznam ve získaný jako výsledek provedení dotazu a vrací instanci objektu typu `TResult` , který se má přidat do `TResult``DbDataReader` `Result` kolekce.<br /><br /> V tomto případě se mapování provádí v rámci jednoho Pulse provádění, ale nelze je vytvořit deklarativně pomocí návrháře.|
+|MapperFunc|Funkce Mapping (<xref:System.Activities.ActivityFunc%601>< `DataReader` , >), která přebírá záznam ve získaný jako výsledek provedení dotazu a vrací instanci objektu typu `TResult` , který se má přidat do `TResult``DbDataReader` `Result` kolekce.<br /><br /> V tomto případě se mapování provádí ve více impulsech spuštění. Tato funkce se dá serializovat do XAML a vytvořit deklarativně (jakékoli existující aktivity se můžou účastnit mapování).|
+|Výsledek|Seznam objektů získaných jako výsledek provedení dotazu a provedení funkce mapování pro každý záznam v `DataReader`.|
 
 ## <a name="dbquerydataset"></a>DbQueryDataSet
- Provede dotaz, který vrací <xref:System.Data.DataSet>. Tato třída provádí svou práci asynchronně. Se odvozuje od <xref:System.Activities.AsyncCodeActivity> < `TResult`> a jeho asynchronní funkce používá.
 
- Informace o připojení se dá nakonfigurovat pomocí nastavení výchozí název zprostředkovatele (`ProviderName`) a připojovací řetězec (`ConnectionString`) nebo pouze pomocí konfigurace název připojovacího řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
+Spustí dotaz, který vrátí <xref:System.Data.DataSet>. Tato třída provádí svou práci asynchronně. Je odvozen z <xref:System.Activities.AsyncCodeActivity> < >apoužívájehoasynchronnímožnosti`TResult`.
 
- Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
+Informace o připojení lze konfigurovat nastavením neutrálního názvu zprostředkovatele (`ProviderName`) a připojovacího řetězce (`ConnectionString`) nebo pouze pomocí názvu konfiguračního řetězce (`ConfigFileSectionName`) z konfiguračního souboru aplikace.
 
- Po `DbQueryDataSet` provádí `DataSet` se vrátí v `Result out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
+Dotaz, který má být spuštěn, je konfigurován `Sql` ve své vlastnosti a parametry jsou předány `Parameters` prostřednictvím kolekce.
 
-```
+`Result out` `TResult`Po spuštění se vrátí v argumentu (typu, který je definován v základní třídě <xref:System.Activities.AsyncCodeActivity%601>). `DataSet` `DbQueryDataSet`
+
+```csharp
 public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 {
     // public arguments
@@ -236,95 +242,97 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 
 |Argument|Popis|
 |-|-|
-|ProviderName|Výchozí název zprostředkovatele rozhraní ADO.NET. Pokud tento argument je nastavena, pak bude `ConnectionString` musí být také nastavena.|
-|připojovací řetězec|Připojovací řetězec pro připojení k databázi. Pokud tento argument je nastaven, pak `ProviderName` musí být také nastavena.|
-|ConfigName|Název oddílu konfiguračního souboru, kde se ukládají informace o připojení. Pokud je tento argument nastavená `ProviderName` a `ConnectionString` se nevyžadují.|
-|CommandType|Typ <xref:System.Data.Common.DbCommand> má být proveden.|
-|SQL|Příkaz SQL, který se spustí.|
-|Parametry|Kolekce parametrů bude příkaz jazyka SQL.|
-|Výsledek|<xref:System.Data.DataSet> který získáte po provedení dotazu.|
+|ProviderName|Neutrální název poskytovatele ADO.NET Pokud je tento argument nastaven, `ConnectionString` musí být také nastavena.|
+|Vlastnosti|Připojovací řetězec pro připojení k databázi. Je-li tento argument nastaven, `ProviderName` musí být také nastavena.|
+|Config|Název oddílu konfiguračního souboru, ve kterém jsou uloženy informace o připojení. Pokud je tento argument nastaven `ProviderName` a `ConnectionString` není požadován.|
+|CommandType|Typ, <xref:System.Data.Common.DbCommand> který má být spuštěn.|
+|SQL|Příkaz jazyka SQL, který má být spuštěn.|
+|Parametry|Kolekce parametrů dotazu SQL|
+|Výsledek|<xref:System.Data.DataSet>který se získá po provedení dotazu.|
 
 ## <a name="configuring-connection-information"></a>Konfigurace informací o připojení
- Všechny DbActivities sdílet stejné parametry konfigurace. Se dají konfigurovat dvěma způsoby:
 
-- `ConnectionString + InvariantName`: Nastavení poskytovatele ADO.NET neutrální název a připojovací řetězec.
+Všechny DbActivities mají stejné parametry konfigurace. Lze je nakonfigurovat dvěma způsoby:
 
-    ```
-    Activity dbSelectCount = new DbQueryScalar<DateTime>()
-    {
-        ProviderName = "System.Data.SqlClient",
-        ConnectionString = @"Data Source=.\SQLExpress;
-                             Initial Catalog=DbActivitiesSample;
-                             Integrated Security=True",
-        Sql = "SELECT GetDate()"
-    };
-    ```
+- `ConnectionString + InvariantName`: Nastavte neutrální název poskytovatele ADO.NET a připojovací řetězec.
+
+  ```csharp
+  Activity dbSelectCount = new DbQueryScalar<DateTime>()
+  {
+      ProviderName = "System.Data.SqlClient",
+      ConnectionString = @"Data Source=.\SQLExpress;
+                            Initial Catalog=DbActivitiesSample;
+                            Integrated Security=True",
+      Sql = "SELECT GetDate()"
+  };
+  ```
 
 - `ConfigName`: Nastavte název konfiguračního oddílu, který obsahuje informace o připojení.
 
-    ```xml
-    <connectionStrings>
-        <add name="DbActivitiesSample"
-             providerName="System.Data.SqlClient"
-             connectionString="Data Source=.\SQLExpress;Initial Catalog=DbActivitiesSample;Integrated Security=true"/>
-      </connectionStrings>
-    ```
+  ```xml
+  <connectionStrings>
+      <add name="DbActivitiesSample"
+            providerName="System.Data.SqlClient"
+            connectionString="Data Source=.\SQLExpress;Initial Catalog=DbActivitiesSample;Integrated Security=true"/>
+    </connectionStrings>
+  ```
 
 - V aktivitě:
 
-    ```
-    Activity dbSelectCount = new DbQueryScalar<int>()
-    {
-        ConfigName = "DbActivitiesSample",
-        Sql = "SELECT COUNT(*) FROM Roles"
-    };
-    ```
+  ```csharp
+  Activity dbSelectCount = new DbQueryScalar<int>()
+  {
+      ConfigName = "DbActivitiesSample",
+      Sql = "SELECT COUNT(*) FROM Roles"
+  };
+  ```
 
-## <a name="running-this-sample"></a>Spuštěním této ukázky
+## <a name="running-this-sample"></a>Spuštění této ukázky
 
 ### <a name="setup-instructions"></a>Pokyny k instalaci
- Tato ukázka používá databázi. Se vzorkem je poskytován skript nastavení a načtení (Setup.cmd). Je třeba spustit soubor pomocí příkazového řádku.
 
- Skriptu Setup.cmd vyvolá CreateDb.sql souboru skriptu, který obsahuje příkazy SQL, které postupujte takto:
+V této ukázce se používá databáze. S ukázkou je k dispozici skript nastavení a načtení skriptu (Setup. cmd). Tento soubor musíte spustit pomocí příkazového řádku.
+
+Skript Setup. cmd vyvolá soubor skriptu CreateDb. SQL, který obsahuje příkazy jazyka SQL, které jsou následující:
 
 - Vytvoří databázi s názvem DbActivitiesSample.
 
-- Vytvoří tabulku role.
+- Vytvoří tabulku rolí.
 
-- Vytvoří tabulku se zaměstnanci.
+- Vytvoří tabulku Employees.
 
-- Tři záznamy se vloží do tabulky role.
+- Vloží do tabulky rolí tři záznamy.
 
-- Vloží dvanáct záznamy do tak tabulku Employees.
+- Vloží do tabulky Employees 12 záznamů.
 
-##### <a name="to-run-setupcmd"></a>Chcete-li spustit Setup.cmd
+##### <a name="to-run-setupcmd"></a>Spuštění instalačního programu. cmd
 
 1. Otevřete příkazový řádek.
 
-2. Přejděte do složky s ukázkou DbActivities.
+2. Přejít do ukázkové složky DbActivities
 
-3. Zadejte "setup.cmd" a stiskněte klávesu ENTER.
+3. Zadejte "Setup. cmd" a stiskněte klávesu ENTER.
 
     > [!NOTE]
-    >  Setup.cmd pokusu o instalaci ukázky v místním počítači SqlExpress instanci. Pokud chcete nainstalovat v jiné instance systému SQL server, upravte Setup.cmd s novým názvem instance.
+    > Setup. cmd se pokusí nainstalovat ukázku do vaší místní instance počítače SqlExpress. Pokud ho chcete nainstalovat do jiné instance SQL serveru, upravte Setup. cmd s novým názvem instance.
 
-##### <a name="to-uninstall-the-sample-database"></a>Chcete-li odinstalovat ukázkové databáze
+##### <a name="to-uninstall-the-sample-database"></a>Odinstalace ukázkové databáze
 
-1. Spusťte Cleanup.cmd ze složky s ukázkou v příkazovém řádku.
+1. Spusťte příkaz Cleanup. cmd z ukázkové složky na příkazovém řádku.
 
 ##### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku
 
-1. Otevřete řešení v sadě Visual Studio 2010
+1. Otevřete řešení v aplikaci Visual Studio 2010
 
-2. Chcete-li zkompilovat řešení, stiskněte CTRL + SHIFT + B.
+2. Pro zkompilování řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3. Pokud chcete ukázku spustit bez ladění, stiskněte kombinaci kláves CTRL + F5.
+3. Chcete-li spustit ukázku bez ladění, stiskněte klávesy CTRL + F5.
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
->   
->  `<InstallDrive>:\WF_WCF_Samples`  
->   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
->   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`

@@ -8,28 +8,30 @@ helpviewer_keywords:
 - assembly folder registration [Windows Forms], Choose Toolbox Items dialog box
 - Choose Toolbox Items dialog box [Windows Forms], display control
 ms.assetid: 01ef6eba-d044-40f0-951d-78eff7ebd9a9
-ms.openlocfilehash: 4ed3f6ffdf8a86d050b81311c9211767d8b179b8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 9a6938b4fe651e13f3ec96642db6027143f1f028
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623602"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015886"
 ---
 # <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů
-Vytvořte a rozdistribuujte ovládací prvky, možná budete chtít tyto ovládací prvky se zobrazí v **zvolit položky nástrojů** dialogové okno, které se zobrazí, když kliknete pravým tlačítkem myši **nástrojů** a vyberte  **Výběr položek**. Můžete povolit ovládacího prvku se zobrazí v tomto dialogovém AssemblyFoldersEx postupem registrace.  
-  
-### <a name="to-display-your-control-in-the-choose-toolbox-items-dialog-box"></a>Chcete-li zobrazit ovládací prvek v dialogovém okně Zvolit položky nástrojů  
-  
-- Nainstalujte sestavení ovládacího prvku do globální mezipaměti sestavení. Další informace najdete v tématu [jak: Instalace sestavení do globální mezipaměti sestavení](../../app-domains/how-to-install-an-assembly-into-the-gac.md)  
-  
-     -nebo-  
-  
-- Zaregistrujte ovládací prvek a jeho přidružené sestavení doby návrhu AssemblyFoldersEx postupem registrace. AssemblyFoldersEx je umístění registru, kam dodavateli z jiných ukládat cesty pro každou verzi rozhraní framework, která podporují. Doby návrhu řešení se můžete podívat v tomto umístění v registru najít referenční sestavení. Skript registru můžete zadat ovládací prvky, které chcete zobrazit na panelu nástrojů. Další informace najdete v tématu [nasazení vlastní ovládací prvek a sestavení doby návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee849818(v=vs.100)).  
-  
+
+Při vývoji a distribuci ovládacích prvků můžete chtít, aby se tyto ovládací prvky zobrazovaly v dialogovém okně **zvolit položky sady nástrojů** sady Visual Studio, které se zobrazí po kliknutí pravým tlačítkem myši na **panel nástrojů** a vybrání možnosti **zvolit položky**. Můžete povolit, aby se váš ovládací prvek zobrazil v tomto dialogovém okně pomocí postupu registrace AssemblyFoldersEx.
+
+Chcete-li zobrazit ovládací prvek v dialogovém okně zvolit položky sady nástrojů:
+
+- Nainstalujte sestavení ovládacího prvku do globální mezipaměti sestavení (GAC). Další informace najdete v tématu [jak: Instalace sestavení do globální mezipaměti sestavení (GAC)](../../app-domains/how-to-install-an-assembly-into-the-gac.md)
+
+  -nebo-
+
+- Zaregistrujte svůj ovládací prvek a jeho přidružená sestavení v době návrhu pomocí postupu registrace AssemblyFoldersEx. AssemblyFoldersEx je umístění v registru, kde dodavatelé třetích stran ukládají cesty pro každou verzi rozhraní, kterou podporují. Rozlišení v době návrhu může vyhledat referenční sestavení v tomto umístění registru. Skript registru může určovat ovládací prvky, které se mají zobrazit v sadě nástrojů.
+
 ## <a name="see-also"></a>Viz také:
 
-- [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100))
-- [Nasazení vlastního ovládacího prvku a sestavení doby návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee849818(v=vs.100))
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)
-- [Postupy: Instalace sestavení do globální mezipaměti sestavení](../../app-domains/how-to-install-an-assembly-into-the-gac.md)
-- [Návod: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+- [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](../../app-domains/how-to-install-an-assembly-into-the-gac.md)
+- [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

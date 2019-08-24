@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 8b33ac800144577ba5f8610afdc50a1ba56eec0f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 948d147a0990961a8706298f1112f85882e30119
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937698"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015617"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] znát při psaní aplikací pro globální trh. Programovací prvky globalizace jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -143,7 +143,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 <a name="mui"></a>
 ### <a name="multilingual-user-interface"></a>Vícejazyčné uživatelské rozhraní
- Vícejazyčná uživatelská rozhraní (MUI) je [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] podpora pro přepínání [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] z jednoho jazyka na jiný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zavaděč prostředků využívá [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]správce prostředků k podpoře vyhledávání a záložních prostředků. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálním vlákně.
+ Vícejazyčná uživatelská rozhraní (MUI) je podpora Microsoftu pro přepínání [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] z jednoho jazyka na jiný. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Aplikace používá model sestavení pro podporu MUI. Jedna aplikace obsahuje jazykově neutrální sestavení i jazyková sestavení satelitních prostředků závislá na jazyce. Vstupním bodem je spravovaný. EXE v hlavním sestavení.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]zavaděč prostředků využívá [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)]správce prostředků k podpoře vyhledávání a záložních prostředků. Více jazykových satelitních sestavení funguje se stejným hlavním sestavením. Načtené sestavení prostředků závisí na <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> aktuálním vlákně.
 
 <a name="localizable_ui"></a>
 ### <a name="localizable-user-interface"></a>Lokalizovatelné uživatelské rozhraní

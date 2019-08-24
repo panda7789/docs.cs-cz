@@ -1,6 +1,8 @@
 ---
 title: 'Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#'
 ms.date: 03/30/2017
+dev_langs:
+- CSharp
 helpviewer_keywords:
 - custom controls [C#]
 - user controls [Windows Forms], creating with Visual C#
@@ -8,43 +10,44 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 1de1ff4147ddb8cb3316795aefd38622de205a73
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: d1af6c0e013f82569eed8d085df0249f4fb991bb
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950054"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015683"
 ---
-# <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytváření složeného ovládacího prvku pomocí Visual C\#
+# <a name="walkthrough-author-a-composite-control-with-c"></a>Návod: Vytváření složeného ovládacího prvku pomocí jazyka C\#
 
 Složené ovládací prvky poskytují prostředky, pomocí kterých lze vytvořit a znovu použít vlastní grafická rozhraní. Složený ovládací prvek je v podstatě součástí vizuální reprezentace. V takovém případě se může skládat z jednoho nebo více model Windows Forms ovládacích prvků, komponent nebo bloků kódu, které mohou rozšiřování funkcí pomocí ověření vstupu uživatele, změny vlastností zobrazení nebo provádění jiných úloh vyžadovaných autorem. Složené ovládací prvky lze umístit na model Windows Forms stejným způsobem jako jiné ovládací prvky. V první části tohoto návodu vytvoříte jednoduchý složený ovládací prvek s názvem `ctlClock`. V druhé části návodu rozšíříte funkce `ctlClock` nástroje prostřednictvím dědičnosti.
 
-## <a name="creating-the-project"></a>Vytvoření projektu
+## <a name="create-the-project"></a>Vytvoření projektu
 
 Při vytváření nového projektu zadáte jeho název pro nastavení kořenového oboru názvů, název sestavení a název projektu a zajistěte, aby byla výchozí komponenta ve správném oboru názvů.
 
 ### <a name="to-create-the-ctlclocklib-control-library-and-the-ctlclock-control"></a>Vytvoření knihovny ovládacích prvků ctlClockLib a ovládacího prvku ctlClock
 
-1. V nabídce **soubor** přejděte na příkaz **Nový**a kliknutím na položku **projekt** otevřete dialogové okno **Nový projekt** .
-
-2. V seznamu C# vizuálních projektů vyberte šablonu projektu **Knihovna ovládacích prvků model Windows Forms** , do pole `ctlClockLib` **název** zadejte a klikněte na tlačítko **OK**.
+1. V aplikaci Visual Studio vytvořte nový projekt **knihovny ovládacích prvků model Windows Forms** a pojmenujte jej **ctlClockLib**.
 
      Název projektu, `ctlClockLib`, je ve výchozím nastavení přiřazen ke kořenovému oboru názvů. Kořenový obor názvů slouží k získání názvů komponent v sestavení. Například pokud dvě sestavení poskytují komponenty s názvem `ctlClock`, můžete určit svou `ctlClock` komponentu pomocí`ctlClockLib.ctlClock.`
 
-3. V Průzkumník řešení klikněte pravým tlačítkem na **UserControl1.cs**a pak klikněte na **Přejmenovat**. Změňte název souboru na `ctlClock.cs`. Pokud se zobrazí dotaz, zda chcete přejmenovat všechny odkazy na prvek kódu "UserControl1", klikněte na tlačítko **Ano** .
+2. V **Průzkumník řešení**klikněte pravým tlačítkem na **UserControl1.cs**a pak klikněte na **Přejmenovat**. Změňte název souboru na `ctlClock.cs`. Pokud se zobrazí dotaz, zda chcete přejmenovat všechny odkazy na prvek kódu "UserControl1", klikněte na tlačítko **Ano** .
 
     > [!NOTE]
     > Ve výchozím nastavení dědí složený ovládací prvek ze <xref:System.Windows.Forms.UserControl> třídy poskytované systémem. <xref:System.Windows.Forms.UserControl> Třída poskytuje funkce vyžadované všemi složenými ovládacími prvky a implementuje standardní metody a vlastnosti.
 
-4. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
+3. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
 
-## <a name="adding-windows-controls-and-components-to-the-composite-control"></a>Přidávání ovládacích prvků a součástí systému Windows do složeného ovládacího prvku
+## <a name="add-windows-controls-and-components-to-the-composite-control"></a>Přidat ovládací prvky a součásti systému Windows do složeného ovládacího prvku
 
 Vizuální rozhraní je podstatnou součástí složeného ovládacího prvku. Toto vizuální rozhraní je implementováno přidáním jednoho nebo více ovládacích prvků Windows na plochu návrháře. V následující ukázce zahrnete ovládací prvky Windows do složeného ovládacího prvku a napíšete kód pro implementaci funkcí.
 
 ### <a name="to-add-a-label-and-a-timer-to-your-composite-control"></a>Přidání popisku a časovače do složeného ovládacího prvku
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlClock.cs**a potom klikněte na **Návrhář zobrazení**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlClock.cs**a potom klikněte na **Návrhář zobrazení**.
 
 2. V sadě **nástrojů**rozbalte uzel **běžné ovládací prvky** a dvakrát klikněte na položku **popisek**.
 
@@ -89,13 +92,13 @@ Vizuální rozhraní je podstatnou součástí složeného ovládacího prvku. T
 
 9. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
 
-## <a name="adding-properties-to-the-composite-control"></a>Přidání vlastností do složeného ovládacího prvku
+## <a name="add-properties-to-the-composite-control"></a>Přidat vlastnosti do složeného ovládacího prvku
 
 Ovládací prvek hodiny nyní zapouzdřuje <xref:System.Windows.Forms.Label> ovládací prvek <xref:System.Windows.Forms.Timer> a komponentu, z nichž každá má svou vlastní sadu vlastností. Přestože jednotlivé vlastnosti těchto ovládacích prvků nebudou k dispozici pro následné uživatele vašeho ovládacího prvku, můžete vytvořit a vystavit vlastní vlastnosti zápisem příslušných bloků kódu. V následujícím postupu přidáte vlastnosti ovládacího prvku, který uživateli umožňuje změnit barvu pozadí a textu.
 
 ### <a name="to-add-a-property-to-your-composite-control"></a>Přidání vlastnosti do složeného ovládacího prvku
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlClock.cs**a pak klikněte na **Zobrazit kód**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlClock.cs**a pak klikněte na **Zobrazit kód**.
 
      Otevře se **Editor kódu** pro váš ovládací prvek.
 
@@ -108,7 +111,7 @@ Ovládací prvek hodiny nyní zapouzdřuje <xref:System.Windows.Forms.Label> ovl
 
      Tyto příkazy vytvoří soukromé proměnné, které použijete k uložení hodnot pro vlastnosti, které se chystáte vytvořit.
 
-3. Zadejte následující kód pod deklaracemi proměnných z kroku 2.
+3. Zadejte nebo vložte následující kód pod deklaracemi proměnných z kroku 2.
 
     ```csharp
     // Declares the name and type of the property.
@@ -146,25 +149,25 @@ Ovládací prvek hodiny nyní zapouzdřuje <xref:System.Windows.Forms.Label> ovl
 
 4. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
 
-## <a name="testing-the-control"></a>Testování ovládacího prvku
+## <a name="test-the-control"></a>Testování ovládacího prvku
 
 Ovládací prvky nejsou samostatné aplikace; musí být hostovány v kontejneru. Otestujte chování ovládacího prvku za běhu a využijte jeho vlastnosti pomocí **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
 
 ### <a name="to-test-your-control"></a>Testování ovládacího prvku
 
-1. Stisknutím klávesy F5 Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**.
+1. Stisknutím klávesy **F5** Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**.
 
 2. V mřížce vlastností kontejneru testů vyhledejte `ClockBackColor` vlastnost a potom vyberte vlastnost, která zobrazí paletu barev.
 
 3. Vyberte barvu kliknutím na ni.
 
-     Barva pozadí ovládacího prvku se změní na barvu, kterou jste vybrali.
+   Barva pozadí ovládacího prvku se změní na barvu, kterou jste vybrali.
 
 4. Pomocí podobné posloupnosti událostí ověřte, zda `ClockForeColor` vlastnost pracuje podle očekávání.
 
-     V této části a předchozích částech jste viděli, jak mohou být komponenty a ovládací prvky systému Windows kombinovány s kódem a balíčkem, aby poskytovaly vlastní funkce ve formě složeného ovládacího prvku. Naučili jste se vystavit vlastnosti ve složeném ovládacím prvku a jak otestovat ovládací prvek po jeho dokončení. V další části se dozvíte, jak vytvořit zděděný složený ovládací prvek pomocí `ctlClock` jako základu.
+   V této části a předchozích částech jste viděli, jak mohou být komponenty a ovládací prvky systému Windows kombinovány s kódem a balíčkem, aby poskytovaly vlastní funkce ve formě složeného ovládacího prvku. Naučili jste se vystavit vlastnosti ve složeném ovládacím prvku a jak otestovat ovládací prvek po jeho dokončení. V další části se dozvíte, jak vytvořit zděděný složený ovládací prvek pomocí `ctlClock` jako základu.
 
-## <a name="inheriting-from-a-composite-control"></a>Dědění ze složeného ovládacího prvku
+## <a name="inherit-from-a-composite-control"></a>Zdědit ze složeného ovládacího prvku
 
 V předchozích částech jste zjistili, jak zkombinovat ovládací prvky, komponenty a kód Windows do opakovaně použitelných složených ovládacích prvků. Složený ovládací prvek se teď dá použít jako základ, na kterém můžou být sestavené další ovládací prvky. Proces odvození třídy ze základní třídy se nazývá *Dědičnost*. V této části vytvoříte složený ovládací prvek, který se nazývá `ctlAlarmClock`. Tento ovládací prvek bude odvozen z jeho nadřazeného ovládacího prvku `ctlClock`. Naučíte se rozšíření funkcí `ctlClock` přepsáním nadřazených metod a přidáním nových metod a vlastností.
 
@@ -172,7 +175,7 @@ Prvním krokem při vytváření zděděného ovládacího prvku je jeho odvozen
 
 ### <a name="to-create-the-inherited-control"></a>Vytvoření zděděného ovládacího prvku
 
-1. V Průzkumník řešení klikněte pravým tlačítkem myši na **ctlClockLib**, přejděte na **Přidat**a pak klikněte na **uživatelský ovládací prvek**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na **ctlClockLib**, přejděte na **Přidat**a pak klikněte na **uživatelský ovládací prvek**.
 
      **Přidat novou položku** zobrazí se dialogové okno.
 
@@ -184,18 +187,18 @@ Prvním krokem při vytváření zděděného ovládacího prvku je jeho odvozen
 
 4. V části **název součásti**poklikejte na **ctlClock**.
 
-5. V Průzkumník řešení Procházet aktuální projekty.
+5. V **Průzkumník řešení**Procházet aktuální projekty.
 
     > [!NOTE]
     > Do aktuálního projektu byl přidán soubor s názvem **ctlAlarmClock.cs** .
 
-### <a name="adding-the-alarm-properties"></a>Přidání vlastností alarmu
+### <a name="add-the-alarm-properties"></a>Přidání vlastností alarmu
 
 Vlastnosti jsou přidány do zděděného ovládacího prvku stejným způsobem jako přidaným do složeného ovládacího prvku. Nyní použijete syntaxi deklarace vlastností k přidání dvou vlastností do ovládacího prvku: `AlarmTime`, který bude uchovávat hodnotu data a času, kdy má alarm přejít, a `AlarmSet`, který bude označovat, zda je alarm nastaven.
 
 #### <a name="to-add-properties-to-your-composite-control"></a>Přidání vlastností do složeného ovládacího prvku
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlAlarmClock**a pak klikněte na **Zobrazit kód**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlAlarmClock**a pak klikněte na **Zobrazit kód**.
 
 2. `public class` Vyhledejte příkaz. Všimněte si, že ovládací prvek `ctlClockLib.ctlClock`dědí z. Pod levou složenou závorku`{)` (příkaz zadejte následující kód.
 
@@ -228,13 +231,13 @@ Vlastnosti jsou přidány do zděděného ovládacího prvku stejným způsobem 
     }
     ```
 
-### <a name="adding-to-the-graphical-interface-of-the-control"></a>Přidání do grafického rozhraní ovládacího prvku
+### <a name="add-to-the-graphical-interface-of-the-control"></a>Přidat do grafického rozhraní ovládacího prvku
 
 Zděděný ovládací prvek má vizuální rozhraní, které je identické s ovládacím prvkem, ze kterého dědí. Má stejné ovládací prvky jako svůj nadřazený ovládací prvek, ale vlastnosti ovládacích prvků nebudou k dispozici, pokud nebyly výslovně zpřístupněny. Můžete přidat do grafického rozhraní zděděného složeného ovládacího prvku stejným způsobem, jako byste přidali do jakéhokoli složeného ovládacího prvku. Pokud chcete pokračovat v přidávání do vizuálního rozhraní pro budíky, přidejte ovládací prvek popisek, který bude při zvukovém alarmu blikat.
 
 #### <a name="to-add-the-label-control"></a>Přidání ovládacího prvku popisek
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlAlarmClock**a potom klikněte na **Návrhář zobrazení**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlAlarmClock**a potom klikněte na **Návrhář zobrazení**.
 
      Návrhář pro `ctlAlarmClock` se otevře v hlavním okně.
 
@@ -257,7 +260,7 @@ Zděděný ovládací prvek má vizuální rozhraní, které je identické s ovl
     |**TextAlign**|`MiddleCenter`|
     |**Zobrazeny**|`false`|
 
-### <a name="adding-the-alarm-functionality"></a>Přidání funkce alarmu
+### <a name="add-the-alarm-functionality"></a>Přidání funkce alarm
 
 V předchozích postupech jste přidali vlastnosti a ovládací prvek, který umožní funkci alarmu ve složeném ovládacím prvku. V tomto postupu přidáte kód, který bude porovnávat aktuální čas s časem alarmu, a pokud se jedná o stejnou dobu, aby se pomohlo zablikat alarm. Tím, že `ctlClock` `ctlClock`přepíšete `timer1_Tick` metodu a přidáte do ní další kód, rozšíříte možnost azachováte`ctlAlarmClock` všechny podstatné funkce.
 
@@ -317,7 +320,7 @@ V předchozích postupech jste přidali vlastnosti a ovládací prvek, který um
 
 #### <a name="to-implement-the-shutoff-method"></a>Implementace metody shutoff
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlAlarmClock.cs**a potom klikněte na **Návrhář zobrazení**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlAlarmClock.cs**a potom klikněte na **Návrhář zobrazení**.
 
      Otevře se Návrhář.
 
@@ -346,21 +349,21 @@ V předchozích postupech jste přidali vlastnosti a ovládací prvek, který um
 
 5. V nabídce **soubor** klikněte na **Uložit vše** a uložte projekt.
 
-### <a name="using-the-inherited-control-on-a-form"></a>Použití zděděného ovládacího prvku na formuláři
+### <a name="use-the-inherited-control-on-a-form"></a>Použití zděděného ovládacího prvku na formuláři
 
-Zděděný ovládací prvek lze otestovat stejným způsobem jako ovládací prvek `ctlClock`základní třídy: Stisknutím klávesy F5 Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
+Zděděný ovládací prvek lze otestovat stejným způsobem jako ovládací prvek `ctlClock`základní třídy: Stisknutím klávesy **F5** Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
 
 Chcete-li ovládací prvek použít, budete ho muset hostovat na formuláři. Stejně jako u standardního složeného ovládacího prvku nemůže zděděný složený ovládací prvek samostatně a musí být hostovaný ve formuláři nebo jiném kontejneru. Vzhledem `ctlAlarmClock` k tomu, že má větší hloubku funkčnosti, je nutné k otestování dalšího kódu. V tomto postupu napíšete jednoduchý program, který bude testovat funkčnost `ctlAlarmClock`nástroje. Napíšete kód pro nastavení a zobrazení `AlarmTime` `ctlAlarmClock`vlastnosti a otestujete své své vlastní funkce.
 
 #### <a name="to-build-and-add-your-control-to-a-test-form"></a>Sestavení a přidání ovládacího prvku do formuláře testu
 
-1. V Průzkumník řešení klikněte pravým tlačítkem na **ctlClockLib**a pak klikněte na **sestavit**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na **ctlClockLib**a pak klikněte na **sestavit**.
 
-2. Přidejte do řešení nový projekt **aplikace pro Windows** a pojmenujte ho `Test`.
+2. Přidejte do řešení nový projekt **aplikace pro Windows** a pojmenujte ho **test**.
 
-3. V Průzkumník řešení klikněte pravým tlačítkem myši na uzel **odkazy** pro projekt testů. Kliknutím na tlačítko **Přidat odkaz** zobrazíte dialogové okno **Přidat odkaz** . Klikněte na kartu s označením **projekty**. Projekt bude uveden v části **název projektu.** `ctlClockLib` Dvojím kliknutím na projekt přidejte odkaz na testovací projekt.
+3. V **Průzkumník řešení**klikněte pravým tlačítkem myši na uzel **odkazy** pro projekt testů. Kliknutím na tlačítko **Přidat odkaz** zobrazíte dialogové okno **Přidat odkaz** . Klikněte na kartu s označením **projekty**. Projekt bude uveden v části **název projektu.** `ctlClockLib` Dvojím kliknutím na projekt přidejte odkaz na testovací projekt.
 
-4. V Průzkumník řešení klikněte pravým tlačítkem na **test**a pak klikněte na **sestavit**.
+4. V **Průzkumník řešení**klikněte pravým tlačítkem na **test**a pak klikněte na **sestavit**.
 
 5. V **sadě nástrojů**rozbalte uzel **součásti ctlClockLib** .
 
@@ -395,7 +398,7 @@ Chcete-li ovládací prvek použít, budete ho muset hostovat na formuláři. St
     }
     ```
 
-12. V Průzkumník řešení klikněte pravým tlačítkem na **test**a pak klikněte na **nastavit jako spouštěný projekt**.
+12. V **Průzkumník řešení**klikněte pravým tlačítkem na **test**a pak klikněte na **nastavit jako spouštěný projekt**.
 
 13. Na **ladění** nabídky, klikněte na tlačítko **spustit ladění**.
 
@@ -409,7 +412,7 @@ Chcete-li ovládací prvek použít, budete ho muset hostovat na formuláři. St
 
 16. Vypněte alarm kliknutím na tlačítko `btnAlarmOff`. Nyní můžete resetovat alarm.
 
-     Tento návod pokrývá řadu klíčových konceptů. Naučili jste se vytvořit složený ovládací prvek kombinováním ovládacích prvků a součástí do složeného kontejneru ovládacích prvků. Seznámili jste se s přidáním vlastností do ovládacího prvku a při psaní kódu pro implementaci vlastních funkcí. V poslední části jste se dozvěděli o rozšíření funkcí daného složeného ovládacího prvku prostřednictvím dědičnosti a ke změně funkčnosti metod hostitele přepsáním těchto metod.
+Tento článek pojednává o řadě klíčových konceptů. Naučili jste se vytvořit složený ovládací prvek kombinováním ovládacích prvků a součástí do složeného kontejneru ovládacích prvků. Seznámili jste se s přidáním vlastností do ovládacího prvku a při psaní kódu pro implementaci vlastních funkcí. V poslední části jste se dozvěděli o rozšíření funkcí daného složeného ovládacího prvku prostřednictvím dědičnosti a ke změně funkčnosti metod hostitele přepsáním těchto metod.
 
 ## <a name="see-also"></a>Viz také:
 

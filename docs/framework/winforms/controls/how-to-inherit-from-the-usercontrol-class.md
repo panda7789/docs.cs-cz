@@ -7,21 +7,25 @@ helpviewer_keywords:
 - user controls [Windows Forms], creating
 - composite controls [Windows Forms], creating
 ms.assetid: 67713625-e2e4-4f6a-bce7-0855ee5043d9
-ms.openlocfilehash: 77233517203989f188a2b3ddf436656bc8da82a6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 7f4055c2374103b7df941d9a9bef24ed5e6cb27c
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966569"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015845"
 ---
 # <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědění ze třídy UserControl
+
 Chcete-li kombinovat funkce jednoho nebo více model Windows Forms ovládacích prvků s vlastním kódem, můžete vytvořit *uživatelský ovládací prvek*. Uživatelské ovládací prvky kombinují rychlý vývoj ovládacích prvků, standardní funkce řízení model Windows Forms a univerzálnost vlastních vlastností a metod. Po zahájení vytváření uživatelského ovládacího prvku se zobrazí viditelný Návrhář, na kterém můžete umístit standardní model Windows Forms ovládací prvky. Tyto ovládací prvky zachovávají veškerou svou vlastní funkčnost a také vzhled a chování (vzhled a chování) standardních ovládacích prvků. Jakmile jsou tyto ovládací prvky integrovány do uživatelského ovládacího prvku, nejsou již k dispozici prostřednictvím kódu. Uživatelský ovládací prvek provádí vlastní Malování a také zpracovává všechny základní funkce přidružené k ovládacím prvkům.
 
 ## <a name="to-create-a-user-control"></a>Vytvoření uživatelského ovládacího prvku
 
-1. Vytvořte nový projekt **knihovny ovládacích prvků systému Windows** .
+1. Vytvořte nový projekt **knihovny ovládacích prvků systému Windows** v aplikaci Visual Studio.
 
-     Vytvoří se nový projekt s prázdným uživatelským ovládacím prvkem.
+   Vytvoří se nový projekt s prázdným uživatelským ovládacím prvkem.
 
 2. Přetáhněte ovládací prvky z karty **model Windows Forms** **panelu nástrojů** do návrháře.
 
@@ -29,7 +33,7 @@ Chcete-li kombinovat funkce jednoho nebo více model Windows Forms ovládacích 
 
 4. Implementujte všechny vlastní metody nebo vlastnosti, které bude váš ovládací prvek obsahovat.
 
-5. Stisknutím klávesy F5 Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
+5. Stisknutím klávesy **F5** Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**. Další informace najdete v tématu [jak: Otestuje chování prvku UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)v době běhu.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -37,5 +41,5 @@ Chcete-li kombinovat funkce jednoho nebo více model Windows Forms ovládacích 
 - [Postupy: Zdědit z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)
 - [Postupy: Zdědit z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
 - [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
-- [Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
+- [Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
 - [Postupy: Testování chování prvku UserControl v době běhu](how-to-test-the-run-time-behavior-of-a-usercontrol.md)

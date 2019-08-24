@@ -6,60 +6,53 @@ helpviewer_keywords:
 - smart tags
 - designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
-ms.openlocfilehash: 1cc854d735ba88a301d6e2f6a83fe5c8bf881380
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 34c14c0afd9632b06947fd72e46ddbda070cfb0f
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211420"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015767"
 ---
-# <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms
+# <a name="walkthrough-perform-common-tasks-using-smart-tags"></a>Návod: Provádění běžných úloh pomocí inteligentních značek
 
-Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existují mnoho úloh, které budete opakovaně provádět. Toto jsou některé běžně prováděné úlohy, které se zobrazí:
+Když vytváříte formuláře a ovládací prvky pro vaši model Windows Forms aplikaci, budete opakovaně provádět spoustu úloh. Toto jsou některé běžně prováděné úkoly, které se vám budou nacházet:
 
-- Přidání nebo odebrání kartu na <xref:System.Windows.Forms.TabControl>.
+- Přidání nebo odebrání karty na <xref:System.Windows.Forms.TabControl>.
 
-- Ukotvení ovládacího prvku k nadřazené úloze.
+- Ukotvení ovládacího prvku k nadřazenému objektu.
 
 - Změna orientace <xref:System.Windows.Forms.SplitContainer> ovládacího prvku.
 
-Mnoho ovládacích prvků pro rychlejší vývoj, nabízí inteligentní značky, které jsou kontextové nabídky, které umožňují provádět běžné úkoly, jako jsou tyto jedním gestem v době návrhu. Tyto úlohy se nazývají *smart-tag příkazy*.
+K urychlení vývoje nabízí mnoho ovládacích prvků inteligentní značky, které jsou kontextové nabídky, které umožňují provádět běžné úkoly, jako jsou v jednom gestu v době návrhu. Tyto úlohy se nazývají *operace inteligentních značek*.
 
-Inteligentní značky zůstanou připojené k instanci ovládacího prvku po dobu jeho platnosti v návrháři a jsou vždy k dispozici.
-
-Úlohy v tomto návodu zahrnují:
-
-- Vytvoření projektu Windows Forms
-
-- Pomocí inteligentních značek
-
-- Povolení a zakázání inteligentní značky
-
-Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.
+Inteligentní značky zůstávají připojeny k instanci ovládacího prvku pro svou životnost v návrháři a jsou vždy k dispozici.
 
 ## <a name="create-the-project"></a>Vytvoření projektu
 
 Prvním krokem je vytvoření projektu a nastavení formuláře.
 
-1. V sadě Visual Studio vytvořte projekt aplikace pro systém Windows s názvem "SmartTagsExample" (**souboru** > **nový** > **projektu**  >  **Visual C#**  nebo **jazyka Visual Basic** > **klasický desktopový** > **Windows Forms Aplikace**).
+1. V aplikaci Visual Studio vytvořte projekt aplikace založený na systému Windows s názvem **SmartTagsExample**.
 
-2. Vyberte formulář v nástrojích pro **Návrháře formulářů Windows**.
+2. Vyberte formulář v **Návrhář formulářů**.
 
 ## <a name="use-smart-tags"></a>Použití inteligentních značek
 
-Inteligentní značky jsou vždy k dispozici na ovládací prvky, které nabízejí je v době návrhu.
+Inteligentní značky jsou vždy k dispozici v době návrhu u ovládacích prvků, které je nabízejí.
 
-1. Přetáhněte <xref:System.Windows.Forms.TabControl> z **nástrojů** do formuláře. Všimněte si smart piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")), který se zobrazí na straně aplikace <xref:System.Windows.Forms.TabControl>.
+1. Přetáhněte z panelu nástrojů do formuláře. <xref:System.Windows.Forms.TabControl> Poznamenejte si glyf inteligentních značek![(glyf](./media/vs-winformsmttagglyph.gif)inteligentních značek), který se zobrazí <xref:System.Windows.Forms.TabControl>na straně.
 
-2. Klikněte na tlačítko smart piktogram. V místní nabídce, která se zobrazí vedle šifra, vyberte **přidat kartu** položky. Podívejte se, že je do nové stránky karty <xref:System.Windows.Forms.TabControl>.
+2. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat kartu** . Všimněte si, že je do okna <xref:System.Windows.Forms.TabControl>přidána nová stránka karty.
 
-3. Přetáhněte <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku **nástrojů** do formuláře.
+3. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.TableLayoutPanel>
 
-4. Klikněte na tlačítko smart piktogram. V místní nabídce, která se zobrazí vedle šifra, vyberte **přidat sloupec** položky. Podívejte se, že nový sloupec se přidá do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.
+4. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **Přidat sloupec** . Všimněte si, že je do <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku přidán nový sloupec.
 
-5. Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku **nástrojů** do formuláře.
+5. Přetáhněte ovládací prvek z **panelu nástrojů** do formuláře. <xref:System.Windows.Forms.SplitContainer>
 
-6. Klikněte na tlačítko smart piktogram. V místní nabídce, která se zobrazí vedle šifra, vyberte **orientace vodorovné příčky** položky. Zda se zobrazila zpráva <xref:System.Windows.Forms.SplitContainer> ovládacího prvku rozdělovač je nyní orientovaný vodorovně.
+6. Klikněte na glyf inteligentních značek. V místní nabídce, která se zobrazí vedle glyfu, vyberte položku **orientace vodorovné příčky** . Všimněte si <xref:System.Windows.Forms.SplitContainer> , že příčka ovládacího prvku je nyní orientována vodorovně.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -67,4 +60,3 @@ Inteligentní značky jsou vždy k dispozici na ovládací prvky, které nabíze
 - <xref:System.Windows.Forms.TabControl>
 - <xref:System.Windows.Forms.SplitContainer>
 - <xref:System.ComponentModel.Design.DesignerActionList>
-- [Návod: Přidání inteligentních značek ke komponentě ve Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171829(v=vs.120))

@@ -5,19 +5,19 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 11019d564e7e658b745aec4254ad9a0c582b8416
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dbef816a995d9f4909a887f017da29bab6fc3702
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964931"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015639"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma poskytuje přehled technologie Microsoft ClearType, kterou najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]tématu.  
 
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Přehled technologie  
- ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely.  Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Před technologií ClearType teď může být nejmenší úroveň podrobností, kterou by byl počítač zobrazený, jeden pixel, ale u technologie ClearType běžící na monitoru LCD teď můžeme zobrazovat funkce textu jako malého podílu v šířce pixelů. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání.  
+ ClearType je softwarová technologie vyvinutá Microsoftem, která vylepšuje čitelnost textu v existujících LCDs (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitor plochých panelů.  Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Před technologií ClearType teď může být nejmenší úroveň podrobností, kterou by byl počítač zobrazený, jeden pixel, ale u technologie ClearType běžící na monitoru LCD teď můžeme zobrazovat funkce textu jako malého podílu v šířce pixelů. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání.  
   
  Technologie ClearType dostupná v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nástroji je nejnovější generace technologie ClearType, která má několik vylepšení verze v Microsoft Windows GDI (GDI).  
   

@@ -11,51 +11,54 @@ helpviewer_keywords:
 - collections [Windows Forms], serializing
 - collections [Windows Forms], standard types
 ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
-ms.openlocfilehash: 1f1412f03f912c0142b08d5ad8581e421252cfb3
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 2fbb0715d148b443b1eca8f400e4ad43eb51fa43
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882362"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015737"
 ---
-# <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute
+# <a name="walkthrough-serialize-collections-of-standard-types"></a>Návod: Serializace kolekcí standardních typů
 
-Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návod ukazuje, jak používat <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> třídy řídit, jak je kolekce serializovat v době návrhu. Použití <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> hodnota k vaší kolekci vlastností zajišťuje, že vlastnost bude serializována.
+Vaše vlastní ovládací prvky budou někdy vystavovat kolekci jako vlastnost. Tento návod ukazuje, jak použít <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> třídu pro řízení způsobu serializace kolekce v době návrhu. <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> Použití hodnoty na vlastnost kolekce zajistí, že bude vlastnost serializována.
 
-Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
+Postup kopírování kódu v tomto tématu jako jediného výpisu naleznete v [tématu How to: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Visual Studio k dokončení tohoto návodu potřebujete.
+K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 
 ## <a name="create-a-control-with-a-serializable-collection"></a>Vytvoření ovládacího prvku s serializovatelný kolekcí
 
-Prvním krokem je vytvoření ovládacího prvku, který má kolekci serializovat jako vlastnost. Můžete upravit obsah této kolekce pomocí **Editor kolekce**, která je přístupná z **vlastnosti** okna.
+Prvním krokem je vytvoření ovládacího prvku, který má serializovatelné kolekce jako vlastnost. Obsah této kolekce můžete upravit pomocí **editoru kolekce**, ke kterému můžete přistupovat z okna **vlastnosti** .
 
-1. V sadě Visual Studio vytvořte projekt knihovny ovládacích prvků Windows s názvem `SerializationDemoControlLib`. Další informace najdete v tématu [šablonu ovládacího prvku knihovny Windows](https://docs.microsoft.com/previous-versions/kxczf775(v=vs.100)).
+1. V aplikaci Visual Studio vytvořte projekt knihovny ovládacích prvků systému Windows a pojmenujte jej **SerializationDemoControlLib**.
 
-2. Přejmenovat `UserControl1` k `SerializationDemoControl`. Další informace najdete v tématu [kódu symbol refaktoring pro přejmenování](/visualstudio/ide/reference/rename).
+2. Přejmenujte `UserControl1` na `SerializationDemoControl`. Další informace najdete v tématu [přejmenování refaktoringu symbolů kódu](/visualstudio/ide/reference/rename).
 
-3. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> vlastnost `10`.
+3. V okně **vlastnosti** nastavte hodnotu <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> vlastnosti na hodnotu **10**.
 
-4. Místo <xref:System.Windows.Forms.TextBox> v ovládacím prvku `SerializationDemoControl`.
+4. Umístěte ovládací prvek do `SerializationDemoControl`. <xref:System.Windows.Forms.TextBox>
 
-5. Vyberte <xref:System.Windows.Forms.TextBox> ovládacího prvku. V **vlastnosti** okno, nastavte následující vlastnosti.
+5. <xref:System.Windows.Forms.TextBox> Vyberte ovládací prvek. V okně **vlastnosti** nastavte následující vlastnosti.
 
-    |Vlastnost|Změňte na|
+    |Vlastnost|Změnit na|
     |--------------|---------------|
-    |**Multiline**|`true`|
-    |**Ukotvení**|<xref:System.Windows.Forms.DockStyle.Fill>|
-    |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars.Vertical>|
+    |**Víceřádkový**|`true`|
+    |**Vyjměte**|<xref:System.Windows.Forms.DockStyle.Fill>|
+    |**Posuvníky**|<xref:System.Windows.Forms.ScrollBars.Vertical>|
     |**ReadOnly**|`true`|
 
-6. V **Editor kódu**, deklarace pole pole řetězce s názvem `stringsValue` v `SerializationDemoControl`.
+6. V **editoru kódu**deklarujte pole řetězců s názvem `stringsValue` v. `SerializationDemoControl`
 
      [!code-cpp[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/cpp/form1.cpp#4)]
      [!code-csharp[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/CS/form1.cs#4)]
      [!code-vb[System.ComponentModel.DesignerSerializationVisibilityAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/VB/form1.vb#4)]
 
-7. Definovat `Strings` vlastnost `SerializationDemoControl`.
+7. `Strings` Definujte vlastnost`SerializationDemoControl`na.
 
    > [!NOTE]
    > <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> Hodnota se používá k povolení serializace kolekce.
@@ -64,39 +67,37 @@ Prvním krokem je vytvoření ovládacího prvku, který má kolekci serializova
    [!code-csharp[System.ComponentModel.DesignerSerializationVisibilityAttribute#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/CS/form1.cs#5)]
    [!code-vb[System.ComponentModel.DesignerSerializationVisibilityAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.DesignerSerializationVisibilityAttribute/VB/form1.vb#5)]
 
-8. Stisknutím klávesy **F5** se projekt sestavil a spouštění ovládacího prvku v **UserControl – kontejner testů**.
+8. Stisknutím klávesy **F5** Sestavte projekt a spusťte ovládací prvek v **kontejneru testu UserControl**.
 
-9. Najít `Strings` vlastnost <xref:System.Windows.Forms.PropertyGrid> z **UserControl – kontejner testů**. Klikněte na tlačítko `Strings` vlastnost, klepněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) tlačítko Otevřít **Editor kolekce řetězců**.
+9. V<xref:System.Windows.Forms.PropertyGrid> **kontejneru testu UserControl**vyhledejte vlastnost Strings. Vyberte vlastnost **řetězce** a potom vyberte tři tečky (![tři tečky (...) v okno Vlastnosti sadě Visual Studio](./media/visual-studio-ellipsis-button.png)) a otevřete **Editor kolekce řetězců**.
 
-10. Zadejte několik řetězců v **Editor kolekce řetězců**. Oddělte je stisknutím klávesy **Enter** klíče na konci každého řetězce. Klikněte na tlačítko **OK** po dokončení zadávání řetězců.
+10. V **editoru kolekce řetězců**zadejte několik řetězců. Oddělte je stisknutím klávesy **ENTER** na konci každého řetězce. Po dokončení zadávání řetězců klikněte na **OK** .
 
    > [!NOTE]
-   > Zobrazí řetězce jste zadali v <xref:System.Windows.Forms.TextBox> z `SerializationDemoControl`.
+   > Řetězce, které jste zadali, se <xref:System.Windows.Forms.TextBox> zobrazí v `SerializationDemoControl`části.
 
-## <a name="serializing-a-collection-property"></a>Serializace vlastnost kolekce
+## <a name="serialize-a-collection-property"></a>Serializace vlastnosti kolekce
 
-K otestování chování serializace ovládacího prvku, umístěte ho na formuláři a změnit obsah kolekce s **Editor kolekce**. Zobrazí se stav serializovaná shromažďování zobrazením zvláštní soubor návrháře, do kterého **Návrháře formulářů Windows** emituje kód.
+Chcete-li otestovat chování serializace ovládacího prvku, umístěte ho do formuláře a změňte obsah kolekce pomocí **editoru kolekce**. Serializovaný stav shromažďování můžete zobrazit tak, že prohlížíte speciální soubor návrháře, do kterého **Návrhář formulářů** generuje kód.
 
-### <a name="to-serialize-a-collection"></a>K serializaci kolekce
+1. Přidejte do řešení projekt aplikace pro Windows. Pojmenujte `SerializationDemoControlTest`projekt.
 
-1. Přidáte do řešení projekt aplikace Windows. Pojmenujte projekt `SerializationDemoControlTest`.
+2. V **sadě nástrojů**Najděte kartu s názvem **součásti SerializationDemoControlLib**. Na této kartě najdete `SerializationDemoControl`. Další informace najdete v tématu [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).
 
-2. V **nástrojů**, najít na kartě s názvem **SerializationDemoControlLib komponenty**. Na této kartě můžete najít `SerializationDemoControl`. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).
+3. Umístěte objekt `SerializationDemoControl` do formuláře.
 
-3. Místo `SerializationDemoControl` na formuláři.
+4. V okně **vlastnosti** vyhledejte vlastnost.`Strings` Klikněte na![](./media/visual-studio-ellipsis-button.png)vlastnost a potom kliknutím na tlačítko se třemi tečkami (...) v okno Vlastnosti sady Visual Studio.) otevřete **Editor kolekce řetězců.** `Strings`
 
-4. Najít `Strings` vlastnost **vlastnosti** okna. Klikněte na tlačítko `Strings` vlastnost, klepněte na tlačítko se třemi tečkami (![The třemi tečkami (...) v okně Vlastnosti systému Visual Studio](./media/visual-studio-ellipsis-button.png)) tlačítko Otevřít **Editor kolekce řetězců**.
-
-5. Zadejte několik řetězců v **Editor kolekce řetězců**. Oddělte je stisknutím klávesy ENTER na konci každého řetězce. Klikněte na tlačítko **OK** po dokončení zadávání řetězců.
+5. Zadejte několik řetězců v **editoru kolekce řetězců**. Oddělte je stisknutím klávesy **ENTER** na konci každého řetězce. Po dokončení zadávání řetězců klikněte na **OK** .
 
 > [!NOTE]
-> Zobrazí řetězce jste zadali v <xref:System.Windows.Forms.TextBox> z `SerializationDemoControl`.
+> Řetězce, které jste zadali, se <xref:System.Windows.Forms.TextBox> zobrazí v `SerializationDemoControl`části.
 
-1. V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko.
+6. V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** .
 
-2. Otevřít **Form1** uzlu. Rat je soubor s názvem **Form1.Designer.cs** nebo **Form1.Designer.vb**. Jedná se o soubor, do kterého **Návrháře formulářů Windows** emituje kód představující stav návrhu a jeho podřízených ovládacích prvků formuláře. Tento soubor otevřít v **Editor kódu**.
+7. Otevřete uzel **Form1** . Pod ním je soubor s názvem **Form1.Designer.cs** nebo **Form1. Designer. vb**. Jedná se o soubor, do kterého **Návrhář formulářů** emituje kód, který představuje stav při návrhu formuláře a jeho podřízených ovládacích prvků. Otevřete tento soubor v **editoru kódu**.
 
-3. Otevřete oblast volá **kód generovaný návrhářem formulářů Windows** a vyhledejte část s názvem **serializationDemoControl1**. Pod tento popisek je kód představující serializovaný stav ovládacího prvku. Řetězce, které jste zadali v kroku 5 jsou zobrazeny v přiřazení k `Strings` vlastnost. Následující příklady kódu v C# a Visual Basic, zobrazit kód podobný co se zobrazí pokud jste zadali řetězce "red", "oranžové" a "žlutý".
+8. Otevřete oblast nazvanou **Windows Form Designer generovaný kód** a najděte oddíl označený **serializationDemoControl1**. Pod tímto popiskem je kód představující serializovaný stav vašeho ovládacího prvku. Řetězce, které jste zadali v kroku 5, se zobrazí v přiřazení `Strings` k vlastnosti. Následující příklady kódu v C# a Visual Basic ukazují kód podobný tomu, co se vám zobrazí, pokud jste zadali řetězce "Red", "oranžová" a "žlutá".
 
     ```csharp
     this.serializationDemoControl1.Strings = new string[] {
@@ -109,7 +110,7 @@ K otestování chování serializace ovládacího prvku, umístěte ho na formul
     Me.serializationDemoControl1.Strings = New String() {"red", "orange", "yellow"}
     ```
 
-4. V **Editor kódu**, změňte hodnotu <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> na `Strings` vlastnost <xref:System.ComponentModel.DesignerSerializationVisibility.Hidden>.
+9. V **editoru kódu**změňte hodnotu <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> `Strings` vlastnosti <xref:System.ComponentModel.DesignerSerializationVisibility.Hidden>na.
 
     ```csharp
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -119,26 +120,24 @@ K otestování chování serializace ovládacího prvku, umístěte ho na formul
     <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
     ```
 
-5. Znovu sestavte řešení a zopakujte kroky 3 a 4.
+10. Znovu sestavte řešení a opakujte kroky 3 a 4.
 
 > [!NOTE]
-> V takovém případě **Návrháře formulářů Windows** vysílá žádné přiřazení `Strings` vlastnost.
+> V takovém případě **Návrhář formulářů** negeneruje žádné přiřazení k `Strings` vlastnosti.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-Když víte, jak serializace kolekcí standardních typů, vezměte v úvahu integrace vlastních ovládacích prvků hlouběji do návrhové prostředí. Následující témata popisují, jak vylepšit návrhu integrace vlastních ovládacích prvků:
+Jakmile se dozvíte, jak serializovat kolekci standardních typů, zvažte integraci vlastních ovládacích prvků do prostředí v době návrhu. Následující témata popisují, jak vylepšit integraci vlastních ovládacích prvků v době návrhu:
 
-- [Architektura návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
+- [Architektura v době návrhu](/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
 
 - [Atributy v ovládacích prvcích Windows Forms](attributes-in-windows-forms-controls.md)
 
-- [Přehled serializace návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
+- [Přehled serializace návrháře](/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
 
-- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time](creating-a-wf-control-design-time-features.md)
+- [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>
-- [Přehled serializace návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
-- [Postupy: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120))
-- [Návod: Automatické vyplnění nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+- [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

@@ -1,88 +1,88 @@
 ---
-title: Architekturálních komponentách .NET
-description: Popisuje architekturálních komponentách .NET například .NET Standard, implementace .NET, moduly runtime .NET a nástroje.
+title: Komponenty architektury .NET
+description: Popisuje součásti architektury .NET, jako jsou .NET Standard, implementace .NET, moduly runtime .NET a nástroje.
 author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: b35db12c8da1f333b481d2bd2e7633026ae30c30
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: baeb091f7c1757e62ba049afc7a92ae8e73d3925
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937420"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70014949"
 ---
-# <a name="net-architectural-components"></a>Architekturálních komponentách .NET
+# <a name="net-architectural-components"></a>Komponenty architektury .NET
 
-Je vyvinutý pro aplikace .NET a běží v jedné nebo více *implementace .NET*.  Implementace .NET zahrnout rozhraní .NET Framework, Mono a .NET Core. Společné pro všechny implementace .NET, které se nazývá .NET Standard je specifikace rozhraní API. Tento článek přináší stručný úvod ke každé z těchto konceptů.
+Aplikace .NET je vyvíjena pro a spuštěna v rámci jedné nebo více *implementací rozhraní .NET*.  Implementace rozhraní .NET zahrnují .NET Framework, .NET Core a mono. Specifikace rozhraní API je společná pro všechny implementace .NET, které se nazývají .NET Standard. Tento článek obsahuje stručný úvod ke každé z těchto konceptů.
 
 ## <a name="net-standard"></a>.NET Standard
 
-.NET Standard je sada rozhraní API, které jsou implementované základní knihovny tříd .NET implementace. Více formálně je specifikace rozhraní API .NET, která tvoří sadu smluv, které kompilaci kódu proti jednotné. Tyto smlouvy jsou implementovány v každé implementace .NET. To umožňuje přenositelnost napříč různými implementacemi .NET umožňuje efektivně váš kód běžet kdekoli.
+.NET Standard je sada rozhraní API, která jsou implementována základní knihovnou tříd implementace rozhraní .NET. V tomto případě je to specifikace rozhraní .NET API, které tvoří jednotnou sadu kontraktů, se kterými kompilujete kód. Tyto smlouvy jsou implementovány v každé implementaci rozhraní .NET. To umožňuje přenositelnost napříč různými implementacemi rozhraní .NET a efektivně umožňuje, aby váš kód běžel všude.
 
-.NET Standard se také [Cílová architektura](glossary.md#target-framework). Pokud váš kód cílí na verzi .NET Standard, můžete spustit v jakékoli implementaci rozhraní .NET, což podporuje danou verzi .NET Standard.
+.NET Standard je také [cílovou architekturou](glossary.md#target-framework). Pokud váš kód cílí na verzi .NET Standard, může běžet v jakékoli implementaci rozhraní .NET, která podporuje tuto verzi .NET Standard.
 
-Další informace o .NET Standard a jak se zaměřit na to, najdete v článku [.NET Standard](net-standard.md) tématu.
+Další informace o .NET Standard a o tom, jak je cílit, najdete v tématu [.NET Standard](net-standard.md) .
 
-## <a name="net-implementations"></a>Implementace .NET
+## <a name="net-implementations"></a>Implementace rozhraní .NET
 
-Každá implementace .NET obsahuje následující součásti:
+Každá implementace rozhraní .NET zahrnuje tyto komponenty:
 
-- Jeden nebo více modulů runtime. Příklady: Modul CLR pro rozhraní .NET Framework, CoreCLR a CoreRT pro .NET Core.
-- Knihovny tříd .NET Standard a může implementovat další rozhraní API. Příklady: Základní knihovny tříd .NET Framework, knihovně základních tříd .NET Core.
-- Volitelně můžete jeden nebo více aplikačních architektur. Příklady: [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md), a [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) jsou zahrnuty v rozhraní .NET Framework.
-- Volitelně můžete nástroje pro vývoj. Některé vývojové nástroje jsou sdíleny více implementací.
+- Jeden nebo více modulů runtime. Příklady: CLR pro .NET Framework CoreCLR a CoreRT pro .NET Core.
+- Knihovna tříd, která implementuje .NET Standard a může implementovat další rozhraní API. Příklady: .NET Framework základní knihovny tříd, knihovna základních tříd .NET Core.
+- Volitelně jeden nebo více aplikačních architektur. Příklady: [ASP.NET](https://www.asp.net/), [model Windows Forms](../framework/winforms/windows-forms-overview.md)a [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) jsou součástí .NET Framework a .NET Core.
+- Volitelně vývojové nástroje. Některé vývojové nástroje se sdílejí mezi více implementacemi.
 
-Existují čtyři primární implementace .NET, které Microsoft aktivně vyvíjí a udržuje: .NET Core, .NET Framework, Mono a UPW.
+Společnost Microsoft aktivně vyvíjí a udržuje čtyři implementace v rozhraní .NET: .NET Core, .NET Framework, mono a UWP.
 
 ### <a name="net-core"></a>.NET Core
 
-.NET core je na více platforem implementace rozhraní .NET a určený pro zpracování úloh serverová a Cloudová ve velkém měřítku. Běží na Windows, macOS a Linux. .NET Standard, implementuje tak kód, který cílí na .NET Standard můžete spustit na .NET Core. ASP.NET Core běží na .NET Core. 
+.NET Core je implementace rozhraní .NET pro víc platforem a navržená tak, aby zpracovávala úlohy serveru a cloudu ve velkém měřítku. Běží na Windows, macOS a Linux. Implementuje .NET Standard, takže kód, který cílí na .NET Standard, lze spustit v rozhraní .NET Core. [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core), [model Windows Forms](../framework/winforms/windows-forms-overview.md)a [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) se spouštějí v .NET Core.
 
-Další informace o .NET Core, najdete v článku [Průvodce platformou .NET Core](../core/index.md) a [volba mezi .NET Core a .NET Framework pro serverové aplikace](choosing-core-framework-server.md).
+Další informace o .NET Core najdete v [příručce .NET Core](../core/index.md) a [Výběr mezi .net Core a .NET Framework pro serverové aplikace](choosing-core-framework-server.md).
 
 ### <a name="net-framework"></a>.NET Framework
 
-Rozhraní.NET Framework je původní implementace .NET, která již od 2002. Je stávající vývojáře na platformě .NET mají vždy používá stejné rozhraní .NET Framework. Verze 4.5 a vyšší implementace .NET Standard, tak kód, který cílí na .NET Standard můžete spustit v těchto verzích rozhraní .NET Framework. Obsahuje další rozhraní API specifické pro Windows, jako je například rozhraní API pro Windows vývoj desktopových aplikací pomocí Windows Forms a WPF. Rozhraní .NET Framework je optimalizovaný pro vytváření aplikací klasické pracovní plochy Windows.
+The.NET Framework je původní implementace rozhraní .NET, která existuje od 2002. Je to stejná .NET Framework, že stávající vývojáři rozhraní .NET se vždycky používají. Verze 4,5 a novější implementují .NET Standard, takže kód, který cílí na .NET Standard, může běžet na těchto verzích .NET Framework. Obsahuje další rozhraní API specifická pro systém Windows, například rozhraní API pro vývoj desktopových aplikací pro Windows pomocí model Windows Forms a WPF. .NET Framework je optimalizovaná pro vytváření desktopových aplikací pro Windows.
 
-Další informace o rozhraní .NET Framework, najdete v článku [rozhraní .NET Framework – průvodce](../framework/index.md).
+Další informace o .NET Framework najdete v [průvodci .NET Framework](../framework/index.md).
 
 ### <a name="mono"></a>Mono
 
-Mono je implementace .NET, který se používá hlavně při malý modul runtime je povinný. Je modul runtime, který zajišťuje provoz aplikací v Xamarinu na Android, Mac, iOS, tvOS a watchOS a zaměřili hlavně na malou stopu. Mono také využívají hry vytvořené pomocí modulu Unity.
+Mono je implementace rozhraní .NET, která se používá hlavně v případě, že je vyžadován malý modul runtime. Je to modul runtime, který využívá aplikace Xamarin v Androidu, Mac, iOS, tvOS a watchOS a zaměřuje se hlavně na malé nároky. Mono také vystavuje hry vytvořené pomocí modulu Unity.
 
 Podporuje všechny aktuálně publikované verze .NET Standard.
 
-V minulosti Mono implementovaná větší API rozhraní .NET Framework a emulované některé z nejoblíbenějších funkcí v systému Unix. Někdy se používá ke spouštění aplikací .NET, které využívají tyto funkce v systému Unix.
+V minulosti implementovala mono větší rozhraní API .NET Framework a emuluje některé z nejoblíbenějších funkcí v systému UNIX. Někdy se používá ke spouštění aplikací .NET, které spoléhají na tyto možnosti v systému UNIX.
 
-Mono se obvykle používá s kompilátorem za běhu, ale obsahuje taky celý statický kompilátor (ahead of time kompilace), který se používá na platformách, jako je iOS.
+Mono se obvykle používá s kompilátorem za běhu, ale také obsahuje úplný statický kompilátor (předem zkompilování), který se používá na platformách, jako je iOS.
 
-Další informace o Mono, najdete v článku [dokumentace Mono](https://www.mono-project.com/docs/).
+Další informace o mono najdete v [dokumentaci k mono](https://www.mono-project.com/docs/).
 
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
-UPW je implementace .NET, která je určená k vytváření moderních, dotykově ovládaný Windows aplikací a softwaru pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které můžete chtít zaměřit, včetně počítače, tablety, phablets, telefony a dokonce i Xbox. UPW poskytuje mnoho služeb, jako jsou centralizované app storu, spouštěcí prostředí (AppContainer) a sada rozhraní API Windows nahrazujícím Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, jsou k dispozici rozhraní API .NET pomocí .NET Core.
+UWP je implementace rozhraní .NET, která se používá k vytváření moderních, dotykové aplikace a softwaru Windows pro Internet věcí (IoT). Je navržený tak, aby sjednotí různé typy zařízení, na které můžete chtít cílit, včetně počítačů, tabletů, phablets, telefonů a i konzoly Xbox. UWP nabízí spoustu služeb, jako je centralizované úložiště aplikací, spouštěcí prostředí (kontejneru AppContainer) a sada rozhraní API systému Windows, které se mají použít místo Win32 (WinRT). Aplikace se dají zapisovat do C++, C#, VB.NET a JavaScriptu. Při použití C# a VB.NET jsou rozhraní API .NET k dispozici v rozhraní .NET Core.
 
-Další informace o UPW, naleznete v tématu [Úvod k univerzální platformě Windows](/windows/uwp/get-started/universal-application-platform-guide).
+Další informace o UWP najdete v tématu [Úvod do Univerzální platforma Windows](/windows/uwp/get-started/universal-application-platform-guide).
 
-## <a name="net-runtimes"></a>Moduly .NET runtime
+## <a name="net-runtimes"></a>Moduly runtime .NET
 
-Modul runtime je prostředí pro spuštění spravované aplikace. Operační systém je součástí prostředí modulu runtime, ale není součástí modulu runtime .NET. Tady je několik příkladů moduly runtime .NET:
+Modul runtime je spouštěcí prostředí pro spravovaný program. Operační systém je součástí běhového prostředí, ale není součástí modulu .NET Runtime. Tady je několik příkladů prostředí .NET Runtime:
 
-- Common Language Runtime (CLR) pro rozhraní .NET Framework
-- Základní modul Common Language Runtime (CoreCLR) pro .NET Core
-- .NET native pro Universal Windows Platform 
-- Modul Mono runtime pro Xamarin.iOS, Xamarin.Android, Xamarin.Mac a Mono framework klasické pracovní plochy
+- Modul CLR (Common Language Runtime) pro .NET Framework
+- Core Common Language Runtime (CoreCLR) pro .NET Core
+- .NET Native pro Univerzální platforma Windows 
+- Mono runtime pro Xamarin. iOS, Xamarin. Android, Xamarin. Mac a rozhraní mono Desktop Framework
 
-## <a name="net-tooling-and-common-infrastructure"></a>Nástroje pro .NET a běžnou infrastrukturu
+## <a name="net-tooling-and-common-infrastructure"></a>Nástroje .NET a běžná infrastruktura
 
-Máte přístup k rozsáhlé sadu nástrojů a komponent infrastruktury, které fungují s každou implementace .NET. Ty zahrnují, ale nejsou omezeny na následující:
+Máte přístup k rozsáhlé sadě nástrojů a komponent infrastruktury, které fungují při každé implementaci .NET. Patří mezi ně, ale nejsou omezeny na následující:
 
-- Jazyky rozhraní .NET a jejich kompilátory
-- Systém projektu .NET (na základě *.csproj*, *.vbproj*, a *.fsproj* soubory)
-- [Nástroj MSBuild](/visualstudio/msbuild/msbuild), modul sestavení použít k sestavení projektů
-- [NuGet](/nuget/), Správce balíčků od Microsoftu pro .NET
-- Orchestrace sestavení Open source nástroje, jako například [DORT](https://cakebuild.net/) a [FALEŠNÉ](https://fake.build/)
+- Jazyky a jejich kompilátory .NET
+- Systém projektu .NET (založený na souborech *. csproj*, *. vbproj*a *. fsproj* )
+- [MSBuild](/visualstudio/msbuild/msbuild), modul sestavení používaný k sestavení projektů
+- [NuGet](/nuget/), správce balíčků Microsoftu pro .NET
+- Open Source nástroje pro orchestraci sestavení, například [dortíky](https://cakebuild.net/) a [napodobeniny](https://fake.build/)
 
 ## <a name="see-also"></a>Viz také:
 
@@ -92,4 +92,4 @@ Máte přístup k rozsáhlé sadu nástrojů a komponent infrastruktury, které 
 - [Průvodce rozhraním .NET Framework](../framework/index.md)
 - [Průvodce jazykem C#](../csharp/index.md)
 - [Průvodce jazykem F#](../fsharp/index.md)
-- [VB.NET Guide](../visual-basic/index.md)
+- [Průvodce VB.NET](../visual-basic/index.md)

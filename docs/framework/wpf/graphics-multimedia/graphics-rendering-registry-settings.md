@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: de523a42f1274784a92243735a8c239a6b5bcff1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f2af32315f8f955495c51f2928c2b8eed5350759
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960233"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016086"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, která mají vliv [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na aplikace.  
@@ -70,7 +70,7 @@ Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclie
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
   
- V listopadu 2004 [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] vydala novou verzi pokynů pro testování ovladačů; ovladače napsané po tomto datu nabízejí lepší stabilitu. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použije kanál hardwarové akcelerace pro tyto ovladače a přejde zpět na softwarové vykreslování pro ovladače XPDM publikované před tímto datem.  
+ V listopadu 2004 společnost Microsoft vydala novou verzi pokynů pro testování ovladačů; ovladače napsané po tomto datu nabízejí lepší stabilitu. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použije kanál hardwarové akcelerace pro tyto ovladače a přejde zpět na softwarové vykreslování pro ovladače XPDM publikované před tímto datem.  
   
  **Požadované nastavení data ovladače videa** vám umožní zadat alternativní datum minima pro XPDM ovladače. Měli byste zadat jenom datum starší než listopadu 2004, pokud máte jistotu, že váš ovladač videa je dostatečně stabilní, aby podporoval [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   

@@ -5,22 +5,22 @@ helpviewer_keywords:
 - data binding [Windows Forms], simple data binding
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
-ms.openlocfilehash: ed1d0e423a3cdf77a242ec3214720f1466f65897
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: df87f00e6e03de67c3fb1adc28472c96f4a47ef4
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039509"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015634"
 ---
-# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms
+# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Postupy: Vytvoření jednoduchého ovládacího prvku vázaného na formuláři Windows
 
 S *jednoduchou vazbou*můžete v ovládacím prvku zobrazit jeden datový prvek, jako je například hodnota sloupce z tabulky DataSet. Můžete vytvořit jednoduchou datovou vlastnost ovládacího prvku s datovou hodnotou.
 
-### <a name="to-simple-bind-a-control"></a>Jednoduché vázání ovládacího prvku
+## <a name="to-simple-bind-a-control"></a>Jednoduché vázání ovládacího prvku
 
 1. Připojte se ke zdroji dat. Další informace najdete v tématu [připojení ke zdroji dat](../data/adonet/connecting-to-a-data-source.md).
 
-2. Ve formuláři vyberte ovládací prvek a zobrazte okno **vlastnosti** .
+2. V aplikaci Visual Studio vyberte ovládací prvek ve formuláři a zobrazte okno **vlastnosti** .
 
 3. Rozbalte vlastnost **(DataBindings)** .
 

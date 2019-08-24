@@ -7,23 +7,23 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-ms.openlocfilehash: 7b0ee8efa62175e2ced2a810ca6dd76e8adc103b
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 08cb07ceebf08b3096415f9b7370e2d955152cb6
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039885"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015924"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
 
 Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je vytvořit jako součást projektu desktopové aplikace systému Windows a použít ji pouze pro formuláře v projektu. Nebo je můžete vytvořit v projektu knihovny ovládacích prvků systému Windows, zkompilovat projekt do sestavení a použít ovládací prvky v jiných projektech. Z nich můžete dokonce dědit a použít dědění vizuálu k jejich rychlému přizpůsobení pro zvláštní účely.
 
-> [!NOTE]
-> Chcete-li vytvořit složený ovládací prvek pro použití ve webových formulářích, přečtěte si téma [vývoj vlastních ovládacích prvků ASP.NET serveru](https://docs.microsoft.com/previous-versions/aspnet/zt27tfhy(v=vs.100)).
-
 ## <a name="to-author-a-composite-control"></a>Vytváření složeného ovládacího prvku
 
-1. V aplikaci Visual Studio vytvořte nový projekt **aplikace systému Windows** s `DemoControlHost`názvem.
+1. V aplikaci Visual Studio vytvořte nový projekt **aplikace pro Windows** a pojmenujte ho **DemoControlHost**.
 
 2. V nabídce **projekt** klikněte na příkaz **Přidat uživatelský ovládací prvek**.
 
@@ -79,10 +79,8 @@ Složené ovládací prvky mohou být zaměstnány mnoha způsoby. Můžete je v
 
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytváření složeného ovládacího prvku pomocí Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
-- [Návod: Vytváření složeného ovládacího prvku pomocí vizuáluC#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
-- [Návod: Dědění z ovládacího prvku model Windows Forms s Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
-- [Návod: Dědění z ovládacího prvku model Windows Forms pomocí vizuáluC#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Návod: Vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Návod: Dědění z ovládacího prvku model Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 - [Doporučení ohledně typu ovládacího prvku](control-type-recommendations.md)
 - [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

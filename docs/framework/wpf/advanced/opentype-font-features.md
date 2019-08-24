@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: 7d73176a68d8b4b19b6c980ef52e1f47408127fb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3f1f0698afce6e64711e37ac60d0662d65bbee6b
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933691"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016143"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
@@ -22,7 +22,7 @@ Toto téma obsahuje přehled některých klíčových funkcí technologie písma
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>Formát písma OpenType  
- Formát písma OpenType je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma a přidává podporu pro PostScriptová data písma. Formát písma OpenType byl vyvinut společně od [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] společnosti and Adobe Corporation. Písma OpenType a služby operačního systému, které podporují písma OpenType, poskytují uživatelům jednoduchý způsob, jak nainstalovat a používat písma, ať už písma obsahují [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] obrysy nebo CFF (PostScript).  
+ Formát písma OpenType je rozšířením [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma a přidává podporu pro PostScriptová data písma. Formát písma OpenType vyvinuly společnosti Microsoft a společnost Adobe Corporation společně. Písma OpenType a služby operačního systému, které podporují písma OpenType, poskytují uživatelům jednoduchý způsob, jak nainstalovat a používat písma, ať už písma obsahují [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] obrysy nebo CFF (PostScript).  
   
  Formát písma OpenType řeší následující výzvy pro vývojáře:  
   

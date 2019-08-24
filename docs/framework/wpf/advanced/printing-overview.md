@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: 43b0ddc8f683e7069207bbb1c47af73976bc4a5a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bfac0248e6d9dae3ef87f43b2c713e1dc64a9464
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958544"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016115"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentation Foundation (WPF) bohatou novou sadu rozhraní API pro správu tisku a tiskového systému. U [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]nástroje jsou některé z těchto vylepšení systému pro tisk k dispozici také [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vývojářům, kteří vytvářejí aplikace a vývojáře pomocí nespravovaného kódu. Základem této nové funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a cesta pro [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] tisk.  
@@ -64,7 +64,7 @@ S Microsoft .NET Framework mají vývojáři aplikací pomocí Windows Presentat
   
  Aby bylo možné povolit používání tiskáren [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] založených na XPSDrv a aplikací model Windows Forms, ovladač tiskárny XPS (XPSDrv) podporuje převod GDI na formát XPS. Model XPSDrv také poskytuje převaděč pro formát XPS do formátu GDI, [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] takže aplikace můžou dokumenty tisknout. [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] Pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace se převod formátu XPS na formát GDI provádí automaticky <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> pomocí metod <xref:System.Windows.Xps.XpsDocumentWriter> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> třídy vždy, když cílová tisková fronta operace zápisu nemá ovladač XPSDrv. (Model Windows Forms aplikace nemohou tisknout [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty.)  
   
- Následující obrázek znázorňuje podsystém tisku a definuje části, které [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)]poskytuje, a části definované výrobci softwaru a hardwaru:  
+ Následující obrázek znázorňuje podsystém tisku a definuje části poskytované společností Microsoft a části definované výrobci softwaru a hardwaru:  
   
  ![Snímek obrazovky ukazuje tiskový systém XPS.](./media/printing-overview/xml-paper-specification-print-system.png)  
   

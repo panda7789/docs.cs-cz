@@ -10,104 +10,69 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: c8d04725a576c9e24a4b7d4aec1251516a8c544c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: b72c449ab68c9bb2ceea6f8ee78abe6771b9a8bd
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666232"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016011"
 ---
-# <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu
+# <a name="walkthrough-create-a-control-that-takes-advantage-of-design-time-features"></a>Návod: Vytvoření ovládacího prvku, který bude využívat funkce pro dobu návrhu
 
 Prostředí pro návrh vlastního ovládacího prvku lze zvýšit vytvořením přidruženého vlastního návrháře.
 
-Tento návod ukazuje, jak vytvořit vlastního návrháře vlastního ovládacího prvku. Budete implementovat `MarqueeControl` typ a přidruženou třídu návrháře, která je volána `MarqueeControlRootDesigner`.
+Tento článek ukazuje, jak vytvořit vlastního návrháře vlastního ovládacího prvku. Implementujete `MarqueeControl` typ a přidruženou třídu návrháře s názvem `MarqueeControlRootDesigner`.
 
 `MarqueeControl` Typ implementuje zobrazení podobné textu v kino s animovanými indikátory a blikající text.
 
 Návrhář pro tento ovládací prvek komunikuje s vývojovým prostředím, aby poskytoval vlastní prostředí pro dobu návrhu. Pomocí vlastního návrháře můžete sestavit vlastní `MarqueeControl` implementaci s animovanými indikátory a blikající text v mnoha kombinacích. Můžete použít sestavený ovládací prvek na formuláři, stejně jako jakýkoli jiný ovládací prvek model Windows Forms.
 
-Úlohy, které jsou znázorněné v tomto návodu, zahrnují:
-
-- Vytvoření projektu
-
-- Vytvoření projektu knihovny ovládacích prvků
-
-- Odkazování na projekt vlastního ovládacího prvku
-
-- Definování vlastního ovládacího prvku a jeho vlastního návrháře
-
-- Vytvoření instance vlastního ovládacího prvku
-
-- Nastavení projektu pro ladění v době návrhu
-
-- Implementace vlastního ovládacího prvku
-
-- Vytvoření podřízeného ovládacího prvku pro vlastní ovládací prvek
-
-- Vytvoření podřízeného ovládacího prvku MarqueeBorder
-
-- Vytvoření vlastního návrháře pro vlastnosti stínu a filtru
-
-- Zpracování změn součástí
-
-- Přidávání operací návrháře do vlastního návrháře
-
-- Vytvoření vlastního Editor UITypeEditor
-
-- Testování vlastního ovládacího prvku v Návrháři
-
-Až budete hotovi, váš vlastní ovládací prvek bude vypadat přibližně takto:
+Až budete s tímto návodem hotový, váš vlastní ovládací prvek bude vypadat přibližně takto:
 
 ![Aplikace, která zobrazuje text a tlačítka Spustit a zastavit](./media/creating-a-wf-control-design-time-features/demo-marquee-control.gif)
 
-Úplný výpis kódu naleznete v tématu [How to: Vytvořte model Windows Forms ovládací prvek, který bude využívat funkce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))pro dobu návrhu.
+Úplný výpis kódu naleznete v tématu [How to: Vytvořte model Windows Forms ovládací prvek, který bude využívat funkce](/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))pro dobu návrhu.
 
 ## <a name="prerequisites"></a>Požadavky
 
 Aby bylo možné dokončit tento návod, budete potřebovat aplikaci Visual Studio.
 
-## <a name="creating-the-project"></a>Vytvoření projektu
+## <a name="create-the-project"></a>Vytvoření projektu
 
 Prvním krokem je vytvoření projektu aplikace. Pomocí tohoto projektu sestavíte aplikaci, která je hostitelem vlastního ovládacího prvku.
 
-Otevřete Visual Studio a vytvořte projekt model Windows Forms aplikace s názvem "MarqueeControlTest" (**souborový** > **vizuál C#**  **Nový** > **projekt** > nebo **Visual Basic**  >  **Klasický stolní počítač** **Model Windows Forms aplikace).**  > 
+V aplikaci Visual Studio vytvořte nový projekt aplikace model Windows Forms a pojmenujte jej **MarqueeControlTest**.
 
-## <a name="creating-a-control-library-project"></a>Vytvoření projektu knihovny ovládacích prvků
+## <a name="create-the-control-library-project"></a>Vytvořit projekt knihovny ovládacích prvků
 
-Dalším krokem je vytvoření projektu knihovny ovládacích prvků. Vytvoří se nový vlastní ovládací prvek a jeho odpovídající vlastní Návrhář.
+1. Přidejte do řešení projekt knihovny ovládacích prvků model Windows Forms. Pojmenujte projekt **MarqueeControlLibrary**.
 
-### <a name="to-create-the-control-library-project"></a>Vytvoření projektu knihovny ovládacích prvků
+2. Pomocí **Průzkumník řešení**odstraňte výchozí ovládací prvek projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1. vb" v závislosti na zvoleném jazyce.
 
-1. Přidejte do řešení projekt knihovny ovládacích prvků model Windows Forms. Pojmenujte projekt "MarqueeControlLibrary".
+3. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlLibrary` do projektu novou položku. Dejte novému zdrojovému souboru základní název **MarqueeControl**.
 
-2. Pomocí **Průzkumník řešení**odstraňte výchozí ovládací prvek projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1. vb" v závislosti na zvoleném jazyce. Další informace najdete v tématu [jak: Odebere, odstraní a vyloučí položky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).
+4. Pomocí **Průzkumník řešení**vytvořte v `MarqueeControlLibrary` projektu novou složku.
 
-3. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlLibrary` do projektu novou položku. Dejte novému zdrojovému souboru základní název "MarqueeControl".
-
-4. Pomocí **Průzkumník řešení**vytvořte v `MarqueeControlLibrary` projektu novou složku. Další informace najdete v tématu [jak: Přidejte nové položky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100))projektu. Pojmenujte novou složku "design".
-
-5. Klikněte pravým tlačítkem na složku **návrhu** a přidejte novou třídu. Udělte zdrojovému souboru základní název "MarqueeControlRootDesigner".
+5. Klikněte pravým tlačítkem na složku **návrhu** a přidejte novou třídu. Pojmenujte ho **MarqueeControlRootDesigner**.
 
 6. Budete muset použít typy ze sestavení System. design, takže přidejte tento odkaz do `MarqueeControlLibrary` projektu.
 
-    > [!NOTE]
-    > Chcete-li použít sestavení System. design, musí projekt cílit na plnou verzi .NET Framework, nikoli .NET Framework profil klienta. Chcete-li změnit cílovou architekturu [, přečtěte si téma How to: Cílí na verzi .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
-
-## <a name="referencing-the-custom-control-project"></a>Odkazování na projekt vlastního ovládacího prvku
+## <a name="reference-the-custom-control-project"></a>Odkaz na projekt vlastního ovládacího prvku
 
 K otestování vlastního ovládacího prvku použijete projekt.`MarqueeControlTest` Testovací projekt se při přidání odkazu na projekt do `MarqueeControlLibrary` sestavení změní na vlastní ovládací prvek.
 
-### <a name="to-reference-the-custom-control-project"></a>Odkazování na projekt vlastního ovládacího prvku
+V projektu přidejte odkaz na projekt do `MarqueeControlLibrary` sestavení. `MarqueeControlTest` Nezapomeňte použít kartu **projekty** v dialogovém okně **Přidat odkaz** namísto odkazování na `MarqueeControlLibrary` sestavení přímo.
 
-- V projektu přidejte odkaz na projekt do `MarqueeControlLibrary` sestavení. `MarqueeControlTest` Nezapomeňte použít kartu **projekty** v dialogovém okně **Přidat odkaz** namísto odkazování na `MarqueeControlLibrary` sestavení přímo.
+## <a name="define-a-custom-control-and-its-custom-designer"></a>Definování vlastního ovládacího prvku a jeho vlastního návrháře
 
-## <a name="defining-a-custom-control-and-its-custom-designer"></a>Definování vlastního ovládacího prvku a jeho vlastního návrháře
- Vlastní ovládací prvek bude odvozen z <xref:System.Windows.Forms.UserControl> třídy. To umožňuje vašemu ovládacímu prvku, aby obsahoval další ovládací prvky, a poskytuje vašemu ovládacímu prvku skvělou výchozí funkčnost.
+Vlastní ovládací prvek bude odvozen z <xref:System.Windows.Forms.UserControl> třídy. To umožňuje vašemu ovládacímu prvku, aby obsahoval další ovládací prvky, a poskytuje vašemu ovládacímu prvku skvělou výchozí funkčnost.
 
- Vlastní ovládací prvek bude mít přidružený vlastní Návrhář. To vám umožní vytvořit jedinečné vývojové prostředí, které se přizpůsobí speciálně pro váš vlastní ovládací prvek.
+Vlastní ovládací prvek bude mít přidružený vlastní Návrhář. To vám umožní vytvořit jedinečné vývojové prostředí, které se přizpůsobí speciálně pro váš vlastní ovládací prvek.
 
- K přidružení ovládacího prvku ke svému návrháři použijte <xref:System.ComponentModel.DesignerAttribute> třídu. Vzhledem k tomu, že vyvíjíte celé chování vlastního ovládacího prvku v době návrhu, bude vlastní Návrhář implementovat <xref:System.ComponentModel.Design.IRootDesigner> rozhraní.
+K přidružení ovládacího prvku ke svému návrháři použijte <xref:System.ComponentModel.DesignerAttribute> třídu. Vzhledem k tomu, že vyvíjíte celé chování vlastního ovládacího prvku v době návrhu, bude vlastní Návrhář implementovat <xref:System.ComponentModel.Design.IRootDesigner> rozhraní.
 
 ### <a name="to-define-a-custom-control-and-its-custom-designer"></a>Definování vlastního ovládacího prvku a jeho vlastního návrháře
 
@@ -128,76 +93,76 @@ K otestování vlastního ovládacího prvku použijete projekt.`MarqueeControlT
 
 4. Změňte deklaraci `MarqueeControlRootDesigner` na dědění <xref:System.Windows.Forms.Design.DocumentDesigner> z třídy. Použijte pro určení interakce návrháře pomocí **sady nástrojů.** <xref:System.ComponentModel.ToolboxItemFilterAttribute>
 
-     **Poznámka:** Definice pro `MarqueeControlRootDesigner` třídu byla uzavřená v oboru názvů s názvem "MarqueeControlLibrary. Design". Tato deklarace umístí návrháře ve speciálním oboru názvů vyhrazeném pro typy související s návrhem.
+   > [!NOTE]
+   > Definice pro `MarqueeControlRootDesigner` třídu byla uzavřená v oboru názvů s názvem MarqueeControlLibrary. Design. Tato deklarace umístí návrháře ve speciálním oboru názvů vyhrazeném pro typy související s návrhem.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#530](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrolrootdesigner.cs#530)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#530](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrolrootdesigner.vb#530)]
 
-5. Definujte konstruktor pro `MarqueeControlRootDesigner` třídu. <xref:System.Diagnostics.Trace.WriteLine%2A> Vloží příkaz do těla konstruktoru. To bude užitečné pro účely ladění.
+5. Definujte konstruktor pro `MarqueeControlRootDesigner` třídu. <xref:System.Diagnostics.Trace.WriteLine%2A> Vloží příkaz do těla konstruktoru. To bude užitečné pro ladění.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#540](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrolrootdesigner.cs#540)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#540](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrolrootdesigner.vb#540)]
 
-## <a name="creating-an-instance-of-your-custom-control"></a>Vytvoření instance vlastního ovládacího prvku
- Chcete-li sledovat vlastní chování ovládacího prvku v době návrhu, umístěte instanci ovládacího prvku do formuláře v `MarqueeControlTest` projektu.
+## <a name="create-an-instance-of-your-custom-control"></a>Vytvoření instance vlastního ovládacího prvku
 
-### <a name="to-create-an-instance-of-your-custom-control"></a>Vytvoření instance vlastního ovládacího prvku
-
-1. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlTest` do projektu novou položku. Dejte novému zdrojovému souboru základní název "DemoMarqueeControl".
+1. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlTest` do projektu novou položku. Dejte novému zdrojovému souboru základní název **DemoMarqueeControl**.
 
 2. Otevřete soubor v **editoru kódu.** `DemoMarqueeControl` V horní části souboru importujte `MarqueeControlLibrary` obor názvů:
 
-```vb
-Imports MarqueeControlLibrary
-```
+   ```vb
+   Imports MarqueeControlLibrary
+   ```
 
-```csharp
-using MarqueeControlLibrary;
-```
+   ```csharp
+   using MarqueeControlLibrary;
+   ```
 
-1. Změňte deklaraci `DemoMarqueeControl` na dědění `MarqueeControl` z třídy.
+3. Změňte deklaraci `DemoMarqueeControl` na dědění `MarqueeControl` z třídy.
 
-2. Sestavte projekt.
+4. Sestavte projekt.
 
-3. Otevřete `Form1` v Návrhář formulářů.
+5. Otevřete Form1 v Návrhář formulářů.
 
-4. V **sadě nástrojů** Najděte kartu **komponenty MarqueeControlTest** a otevřete ji. Přetáhněte z panelu nástrojů do formuláře. `DemoMarqueeControl`
+6. V **sadě nástrojů** Najděte kartu **komponenty MarqueeControlTest** a otevřete ji. Přetáhněte z panelu nástrojů do formuláře. `DemoMarqueeControl`
 
-5. Sestavte projekt.
+7. Sestavte projekt.
 
-## <a name="setting-up-the-project-for-design-time-debugging"></a>Nastavení projektu pro ladění v době návrhu
+## <a name="set-up-the-project-for-design-time-debugging"></a>Nastavení projektu pro ladění v době návrhu
 
 Při vývoji vlastního prostředí v době návrhu bude nutné ladit ovládací prvky a komponenty. Existuje jednoduchý způsob, jak nastavit projekt tak, aby umožňoval ladění v době návrhu. Další informace najdete v tématu [Návod: Ladění vlastních ovládacích prvků model Windows Forms v době](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)návrhu.
 
-### <a name="to-set-up-the-project-for-design-time-debugging"></a>Nastavení projektu pro ladění v době návrhu
-
 1. Klikněte pravým tlačítkem `MarqueeControlLibrary` na projekt a vyberte **vlastnosti**.
 
-2. V dialogovém okně "MarqueeControlLibrary stránky vlastností" vyberte stránku **ladění** .
+2. V dialogovém okně **stránky vlastností MarqueeControlLibrary** vyberte stránku **ladění** .
 
-3. V části **spouštěcí akce** vyberte **spustit externí program**. Budete ladit samostatnou instanci sady Visual Studio, proto klikněte na tlačítko se třemi![tečkami (...) v okno Vlastnosti sady Visual Studio.](./media/visual-studio-ellipsis-button.png)) a vyhledejte integrované vývojové prostředí (IDE) sady Visual Studio. Název spustitelného souboru je devenv. exe a pokud jste nainstalovali do výchozího umístění, jeho cesta je%programfiles%\Microsoft Visual Studio 9.0 \ Common7\IDE\devenv.exe.
+3. V části **spouštěcí akce** vyberte **spustit externí program**. Budete ladit samostatnou instanci sady Visual Studio, takže kliknutím na tlačítko se třemi![tečkami (...) v okno Vlastnosti sady Visual Studio](./media/visual-studio-ellipsis-button.png)) můžete procházet prostředí IDE sady Visual Studio. Název spustitelného souboru je devenv. exe a pokud jste nainstalovali do výchozího umístění, jeho cesta je *% ProgramFiles (x86)% \ Microsoft Visual Studio\2019\\\<Edition > \Common7\IDE\devenv.exe*.
 
-4. Kliknutím na tlačítko OK zavřete dialogové okno.
+4. Kliknutím na **tlačítko OK** zavřete dialogové okno.
 
-5. Klikněte pravým tlačítkem `MarqueeControlLibrary` na projekt a vyberte nastavit jako spouštěný projekt, abyste mohli tuto konfiguraci ladění povolit.
+5. Klikněte pravým tlačítkem na projekt MarqueeControlLibrary a vyberte **nastavit jako spouštěný projekt** , abyste mohli tuto konfiguraci ladění povolit.
 
 ## <a name="checkpoint"></a>CheckPoint
 
-Nyní jste připraveni ladit chování vlastního ovládacího prvku v době návrhu. Jakmile zjistíte, že je prostředí ladění správně nastaveno, budete testovat přidružení mezi vlastním ovládacím prvkem a vlastním návrhářem.
+Nyní jste připraveni ladit chování vlastního ovládacího prvku v době návrhu. Jakmile zjistíte, že je prostředí ladění správně nastavené, otestujete přidružení mezi vlastním ovládacím prvkem a vlastním návrhářem.
 
 ### <a name="to-test-the-debugging-environment-and-the-designer-association"></a>Otestování ladicího prostředí a přidružení návrháře
 
-1. Otevřete zdrojový soubor v **editoru kódu** a umístěte zarážku na <xref:System.Diagnostics.Trace.WriteLine%2A> příkaz. `MarqueeControlRootDesigner`
+1. Otevřete zdrojový soubor MarqueeControlRootDesigner v **editoru kódu** a umístěte zarážku na <xref:System.Diagnostics.Trace.WriteLine%2A> příkaz.
 
-2. Stisknutím klávesy F5 spusťte relaci ladění. Všimněte si, že je vytvořena nová instance aplikace Visual Studio.
+2. Stisknutím klávesy **F5** spusťte relaci ladění.
 
-3. V nové instanci aplikace Visual Studio otevřete řešení "MarqueeControlTest". Řešení můžete snadno najít výběrem položky **Poslední projekty** v nabídce **soubor** . Soubor řešení "MarqueeControlTest. sln" bude uveden jako naposledy použitý soubor.
+   Vytvoří se nová instance sady Visual Studio.
 
-4. `DemoMarqueeControl` Otevřete v návrháři. Všimněte si, že instance ladění sady Visual Studio získá fokus a provádění se zastaví na zarážce. Stisknutím klávesy F5 pokračujte v relaci ladění.
+3. V nové instanci aplikace Visual Studio otevřete řešení MarqueeControlTest. Řešení můžete snadno najít výběrem položky **Poslední projekty** v nabídce **soubor** . Soubor řešení MarqueeControlTest. sln bude uveden jako naposledy použitý soubor.
 
-V tomto okamžiku je vše pro vývoj a ladění vlastního ovládacího prvku a jeho přidruženého vlastního návrháře. Zbývající část tohoto návodu se soustředí na podrobnosti o implementaci funkcí ovládacího prvku a návrháře.
+4. `DemoMarqueeControl` Otevřete v návrháři.
 
-## <a name="implementing-your-custom-control"></a>Implementace vlastního ovládacího prvku
+   Instance ladění aplikace Visual Studio získá fokus a provádění se zastaví na zarážce. Stisknutím klávesy **F5** pokračujte v relaci ladění.
+
+V tomto okamžiku je vše pro vývoj a ladění vlastního ovládacího prvku a jeho přidruženého vlastního návrháře. Zbývající část tohoto článku se zaměřuje na podrobnosti o implementaci funkcí ovládacího prvku a návrháře.
+
+## <a name="implement-the-custom-control"></a>Implementace vlastního ovládacího prvku
 
 `MarqueeControl` Je a<xref:System.Windows.Forms.UserControl> s malým počtem přizpůsobení. Zveřejňuje dvě metody: `Start`, který spustí animaci běžící na hranice a `Stop`, která zastaví animaci. `StartMarquee` `IMarqueeWidget` `StopMarquee` `Stop` `Start` Protože obsahuje podřízené ovládací prvky, které implementují rozhraní, a vyčíslení každého podřízeného ovládacího prvku a volání metod a v každém podřízeném ovládacím prvku, v uvedeném pořadí. `MarqueeControl` , který `IMarqueeWidget`implementuje.
 
@@ -217,7 +182,7 @@ Toto je rozsah `MarqueeControl` úprav. Funkce modulu runtime jsou implementová
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrol.cs#270)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#270](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrol.vb#270)]
 
-## <a name="creating-a-child-control-for-your-custom-control"></a>Vytvoření podřízeného ovládacího prvku pro vlastní ovládací prvek
+## <a name="create-a-child-control-for-your-custom-control"></a>Vytvoření podřízeného ovládacího prvku pro vlastní ovládací prvek
 
 Bude hostovat dva druhy podřízeného ovládacího prvku `MarqueeBorder` : ovládací prvek a `MarqueeText` ovládací prvek. `MarqueeControl`
 
@@ -249,7 +214,9 @@ K implementaci funkce periodické animace budete používat <xref:System.Compone
 
 5. Přetáhněte komponentu z **panelu nástrojů** na ovládacíprvek.`MarqueeText` <xref:System.ComponentModel.BackgroundWorker> Tato součást umožní, aby `MarqueeText` se ovládací prvek sám aktualizoval asynchronně.
 
-6. V okno Vlastnosti nastavte <xref:System.ComponentModel.BackgroundWorker> vlastnosti `WorkerReportsProgress` komponenty a <xref:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation%2A> na `true`. Tato nastavení umožňují, <xref:System.ComponentModel.BackgroundWorker> aby součást pravidelně <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> vyvolala událost a zrušila asynchronní aktualizace. Další informace najdete v tématu [Komponenta BackgroundWorker](backgroundworker-component.md).
+6. V okně **vlastnosti** nastavte <xref:System.ComponentModel.BackgroundWorker> komponentu `WorkerReportsProgress` a <xref:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation%2A> vlastnosti na **hodnotu true**. Tato nastavení umožňují, <xref:System.ComponentModel.BackgroundWorker> aby součást pravidelně <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> vyvolala událost a zrušila asynchronní aktualizace.
+
+   Další informace najdete v tématu [Komponenta BackgroundWorker](backgroundworker-component.md).
 
 7. Otevřete zdrojový soubor v **editoru kódu.** `MarqueeText` V horní části souboru importujte následující obory názvů:
 
@@ -275,7 +242,7 @@ K implementaci funkce periodické animace budete používat <xref:System.Compone
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#150](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueetext.cs#150)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#150](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueetext.vb#150)]
 
-11. Implementujte přistupující objekty vlastnosti. Pro klienty budete vystavovat dvě vlastnosti `LightColor` : `DarkColor`a. Atributy <xref:System.ComponentModel.CategoryAttribute.Category%2A> a<xref:System.ComponentModel.BrowsableAttribute.Browsable%2A> se aplikují na tyto vlastnosti, takže se vlastnosti zobrazí ve vlastní části okno Vlastnosti s názvem "výběr".
+11. Implementujte přistupující objekty vlastnosti. Pro klienty vystavíte dvě vlastnosti: `LightColor` a `DarkColor`. Atributy <xref:System.ComponentModel.CategoryAttribute.Category%2A> a<xref:System.ComponentModel.BrowsableAttribute.Browsable%2A> se aplikují na tyto vlastnosti, takže se vlastnosti zobrazí ve vlastní části okno Vlastnosti s názvem "výběr".
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#160](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueetext.cs#160)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#160](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueetext.vb#160)]
@@ -294,7 +261,7 @@ K implementaci funkce periodické animace budete používat <xref:System.Compone
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#170](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueetext.cs#170)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#170](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueetext.vb#170)]
 
-14. Stisknutím klávesy F6 Sestavte řešení.
+14. Stisknutím klávesy **F6** Sestavte řešení.
 
 ## <a name="create-the-marqueeborder-child-control"></a>Vytvoření podřízeného ovládacího prvku MarqueeBorder
 
@@ -308,9 +275,9 @@ Vzhledem k tomu, že <xref:System.Windows.Forms.Control.Layout> ovládacíprvekm
 
 2. Přetáhněte komponentu z **panelu nástrojů** na ovládacíprvek.`MarqueeBorder` <xref:System.ComponentModel.BackgroundWorker> Tato součást umožní, aby `MarqueeBorder` se ovládací prvek sám aktualizoval asynchronně.
 
-3. V okno Vlastnosti nastavte <xref:System.ComponentModel.BackgroundWorker> vlastnosti `WorkerReportsProgress` komponenty a <xref:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation%2A> na `true`. Tato nastavení umožňují, <xref:System.ComponentModel.BackgroundWorker> aby součást pravidelně <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> vyvolala událost a zrušila asynchronní aktualizace. Další informace najdete v tématu [Komponenta BackgroundWorker](backgroundworker-component.md).
+3. V okně **vlastnosti** nastavte <xref:System.ComponentModel.BackgroundWorker> komponentu `WorkerReportsProgress` a <xref:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation%2A> vlastnosti na **hodnotu true**. Tato nastavení umožňují, <xref:System.ComponentModel.BackgroundWorker> aby součást pravidelně <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> vyvolala událost a zrušila asynchronní aktualizace. Další informace najdete v tématu [Komponenta BackgroundWorker](backgroundworker-component.md).
 
-4. V okno Vlastnosti klikněte na tlačítko události. Připojte obslužné rutiny <xref:System.ComponentModel.BackgroundWorker.DoWork> pro <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> události a.
+4. V okně **vlastnosti** vyberte tlačítko **události** . Připojte obslužné rutiny <xref:System.ComponentModel.BackgroundWorker.DoWork> pro <xref:System.ComponentModel.BackgroundWorker.ProgressChanged> události a.
 
 5. Otevřete zdrojový soubor v **editoru kódu.** `MarqueeBorder` V horní části souboru importujte následující obory názvů:
 
@@ -373,7 +340,7 @@ Vzhledem k tomu, že <xref:System.Windows.Forms.Control.Layout> ovládacíprvekm
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#70)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#70)]
 
-## <a name="creating-a-custom-designer-to-shadow-and-filter-properties"></a>Vytvoření vlastního návrháře pro vlastnosti stínu a filtru
+## <a name="create-a-custom-designer-to-shadow-and-filter-properties"></a>Vytvoření vlastního návrháře pro stínové a filtrové vlastnosti
 
 `MarqueeControlRootDesigner` Třída poskytuje implementaci pro kořenového návrháře. Kromě tohoto návrháře, který pracuje na `MarqueeControl`, budete potřebovat vlastního návrháře, který je konkrétně přidružen `MarqueeBorder` k ovládacímu prvku. Tento návrhář poskytuje vlastní chování, které je vhodné v kontextu vlastního kořenového návrháře.
 
@@ -399,7 +366,7 @@ Základní třída pro `MarqueeBorderDesigner` je <xref:System.ComponentModel.De
 
 - <xref:System.ComponentModel.Design.ComponentDesigner.PostFilterEvents%2A>
 
-Při změně veřejného rozhraní komponenty pomocí těchto metod je nutné dodržovat tato pravidla:
+Při změně veřejného rozhraní komponenty pomocí těchto metod použijte tato pravidla:
 
 - Přidat nebo odebrat položky pouze v `PreFilter` metodách
 
@@ -415,9 +382,9 @@ Dodržování těchto pravidel zajišťuje, že všichni návrháři v prostřed
 
 ### <a name="to-create-a-custom-designer-to-shadow-and-filter-properties"></a>Vytvoření vlastního návrháře pro vlastnosti stínu a filtru
 
-1. Klikněte pravým tlačítkem na složku **návrhu** a přidejte novou třídu. Udělte zdrojovému souboru základní název "MarqueeBorderDesigner".
+1. Klikněte pravým tlačítkem na složku **návrhu** a přidejte novou třídu. Dejte zdrojovému souboru základní název **MarqueeBorderDesigner**.
 
-2. Otevřete zdrojový soubor v **editoru kódu.** `MarqueeBorderDesigner` V horní části souboru importujte následující obory názvů:
+2. Otevřete zdrojový soubor MarqueeBorderDesigner v **editoru kódu**. V horní části souboru importujte následující obory názvů:
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#420](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborderdesigner.cs#420)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#420](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborderdesigner.vb#420)]
@@ -439,14 +406,15 @@ Dodržování těchto pravidel zajišťuje, že všichni návrháři v prostřed
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#440](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborderdesigner.cs#440)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#440](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborderdesigner.vb#440)]
 
-## <a name="handling-component-changes"></a>Zpracování změn součástí
- Třída poskytuje vlastní prostředí pro dobu návrhu pro vaše `MarqueeControl` instance. `MarqueeControlRootDesigner` Většina funkcí návrhu je děděna z <xref:System.Windows.Forms.Design.DocumentDesigner> třídy; váš kód implementuje dvě konkrétní vlastní nastavení: zpracování změn součástí a přidávání operací návrháře.
+## <a name="handle-component-changes"></a>Zpracovat změny součásti
 
- Když uživatelé navrhují `MarqueeControl` své instance, váš kořenový Návrhář bude sledovat změny `MarqueeControl` a jeho podřízené ovládací prvky. Prostředí pro dobu návrhu nabízí pohodlný službu, <xref:System.ComponentModel.Design.IComponentChangeService>která umožňuje sledovat změny stavu součásti.
+Třída poskytuje vlastní prostředí pro dobu návrhu pro vaše `MarqueeControl` instance. `MarqueeControlRootDesigner` Většina funkcí návrhu je děděna z <xref:System.Windows.Forms.Design.DocumentDesigner> třídy. Váš kód bude implementovat dvě konkrétní vlastní nastavení: zpracování změn součástí a přidávání operací návrháře.
 
- Odkaz na tuto službu získáte dotazem na prostředí pomocí <xref:System.ComponentModel.Design.ComponentDesigner.GetService%2A> metody. Pokud je dotaz úspěšný, může Návrhář k <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged> události připojit obslužnou rutinu a provést jakékoli úkoly, aby zachovaly konzistentní stav v době návrhu.
+Když uživatelé navrhují `MarqueeControl` své instance, váš kořenový Návrhář bude sledovat změny `MarqueeControl` a jeho podřízené ovládací prvky. Prostředí pro dobu návrhu nabízí pohodlný službu, <xref:System.ComponentModel.Design.IComponentChangeService>která umožňuje sledovat změny stavu součásti.
 
- V případě `MarqueeControlRootDesigner` třídy <xref:System.Windows.Forms.Control.Refresh%2A> zavoláte metodu pro každý `IMarqueeWidget` objekt obsažený v `MarqueeControl`. To způsobí, že `IMarqueeWidget` se objekt znovu překreslí, pokud dojde ke změně vlastností, jako <xref:System.Windows.Forms.Control.Size%2A> je jeho nadřazený prvek.
+Odkaz na tuto službu získáte dotazem na prostředí pomocí <xref:System.ComponentModel.Design.ComponentDesigner.GetService%2A> metody. Pokud je dotaz úspěšný, může Návrhář k <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged> události připojit obslužnou rutinu a provést jakékoli úkoly, aby zachovaly konzistentní stav v době návrhu.
+
+V případě `MarqueeControlRootDesigner` třídy <xref:System.Windows.Forms.Control.Refresh%2A> zavoláte metodu pro každý `IMarqueeWidget` objekt obsažený v `MarqueeControl`. To způsobí, že `IMarqueeWidget` se objekt znovu překreslí, pokud dojde ke změně vlastností, jako <xref:System.Windows.Forms.Control.Size%2A> je jeho nadřazený prvek.
 
 ### <a name="to-handle-component-changes"></a>Zpracování změn součástí
 
@@ -460,7 +428,7 @@ Dodržování těchto pravidel zajišťuje, že všichni návrháři v prostřed
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#560](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrolrootdesigner.cs#560)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#560](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrolrootdesigner.vb#560)]
 
-## <a name="adding-designer-verbs-to-your-custom-designer"></a>Přidávání operací návrháře do vlastního návrháře
+## <a name="add-designer-verbs-to-your-custom-designer"></a>Přidání příkazů návrháře do vlastního návrháře
 
 Příkaz návrháře je příkaz nabídky propojený s obslužnou rutinou události. Příkazy návrháře jsou přidány do místní nabídky součásti v době návrhu. Další informace naleznete v tématu <xref:System.ComponentModel.Design.DesignerVerb>.
 
@@ -480,9 +448,9 @@ Při vyvolání příkazu **Spustit test** , obslužná rutina `StartMarquee` ud
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#590](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueecontrolrootdesigner.cs#590)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#590](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueecontrolrootdesigner.vb#590)]
 
-## <a name="creating-a-custom-uitypeeditor"></a>Vytvoření vlastního Editor UITypeEditor
+## <a name="create-a-custom-uitypeeditor"></a>Vytvoření vlastního Editor UITypeEditor
 
-Když pro uživatele vytvoříte vlastní prostředí pro dobu návrhu, často je žádoucí vytvořit vlastní interakci s okno Vlastnosti. To můžete provést vytvořením <xref:System.Drawing.Design.UITypeEditor>. Další informace najdete v tématu [jak: Vytvoří Editor](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fd3kt7d5(v=vs.120))typů uživatelského rozhraní.
+Když pro uživatele vytvoříte vlastní prostředí pro dobu návrhu, často je žádoucí vytvořit vlastní interakci s okno Vlastnosti. To můžete provést vytvořením <xref:System.Drawing.Design.UITypeEditor>.
 
 `MarqueeBorder` Ovládací prvek zveřejňuje v okno Vlastnosti několik vlastností. Dvě z těchto vlastností `MarqueeSpinDirection` a `MarqueeLightShape` jsou reprezentovány výčty. K ilustraci použití editoru `MarqueeLightShape` typů uživatelského rozhraní bude mít vlastnost přidruženou <xref:System.Drawing.Design.UITypeEditor> třídu.
 
@@ -510,69 +478,69 @@ Když pro uživatele vytvoříte vlastní prostředí pro dobu návrhu, často j
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/marqueeborder.cs#94)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#94](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/marqueeborder.vb#94)]
 
-## <a name="creating-a-view-control-for-your-custom-uitypeeditor"></a>Vytvoření ovládacího prvku zobrazení pro vlastní editor UITypeEditor
+## <a name="create-a-view-control-for-your-custom-uitypeeditor"></a>Vytvoření ovládacího prvku zobrazení pro vlastní editor UITypeEditor
 
-1. Vlastnost podporuje dva typy lehkých tvarů: `Square` a `Circle`. `MarqueeLightShape` Vytvoříte vlastní ovládací prvek, který bude použit výhradně pro účely grafického zobrazení těchto hodnot v okno Vlastnosti. Váš <xref:System.Drawing.Design.UITypeEditor> vlastní ovládací prvek bude použit pro interakci s okno Vlastnosti.
+Vlastnost podporuje dva typy lehkých tvarů: `Square` a `Circle`. `MarqueeLightShape` Vytvoříte vlastní ovládací prvek, který bude použit výhradně pro účely grafického zobrazení těchto hodnot v okno Vlastnosti. Váš <xref:System.Drawing.Design.UITypeEditor> vlastní ovládací prvek bude použit pro interakci s okno Vlastnosti.
 
 ### <a name="to-create-a-view-control-for-your-custom-ui-type-editor"></a>Vytvoření ovládacího prvku zobrazení pro vlastní Editor typů uživatelského rozhraní
 
-1. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlLibrary` do projektu novou položku. Dejte novému zdrojovému souboru základní název "LightShapeSelectionControl".
+1. <xref:System.Windows.Forms.UserControl> Přidejte`MarqueeControlLibrary` do projektu novou položku. Dejte novému zdrojovému souboru základní název **LightShapeSelectionControl**.
 
-2. Přetáhněte dva <xref:System.Windows.Forms.Panel> ovládací prvky ze `LightShapeSelectionControl` **sady nástrojů** na. `squarePanel` Pojmenujte `circlePanel`je a. Uspořádejte je vedle sebe. Nastavte vlastnost obou <xref:System.Windows.Forms.Panel> ovládacích prvků na (60, 60). <xref:System.Windows.Forms.Control.Size%2A> <xref:System.Windows.Forms.Control.Location%2A> Nastavte vlastnost `squarePanel` ovládacího prvku na (8, 10). <xref:System.Windows.Forms.Control.Location%2A> Nastavte vlastnost `circlePanel` ovládacího prvku na (80, 10). Nakonec nastavte <xref:System.Windows.Forms.Control.Size%2A> vlastnost `LightShapeSelectionControl` na (150, 80).
+2. Přetáhněte dva <xref:System.Windows.Forms.Panel> ovládací prvky ze `LightShapeSelectionControl` **sady nástrojů** na. `squarePanel` Pojmenujte `circlePanel`je a. Uspořádejte je vedle sebe. Nastavte vlastnost obou <xref:System.Windows.Forms.Panel> ovládacích prvků na **(60, 60).** <xref:System.Windows.Forms.Control.Size%2A> <xref:System.Windows.Forms.Control.Location%2A> Nastavte vlastnost `squarePanel` ovládacího prvku na **(8, 10)** . <xref:System.Windows.Forms.Control.Location%2A> Nastavte vlastnost `circlePanel` ovládacího prvku na **(80, 10)** . Nakonec nastavte <xref:System.Windows.Forms.Control.Size%2A> vlastnost `LightShapeSelectionControl` na **(150, 80)** .
 
 3. Otevřete zdrojový soubor v **editoru kódu.** `LightShapeSelectionControl` V horní části souboru importujte <xref:System.Windows.Forms.Design?displayProperty=nameWithType> obor názvů:
 
-```vb
-Imports System.Windows.Forms.Design
-```
+   ```vb
+   Imports System.Windows.Forms.Design
+   ```
 
-```csharp
-using System.Windows.Forms.Design;
-```
+   ```csharp
+   using System.Windows.Forms.Design;
+   ```
 
-1. Implementujte <xref:System.Windows.Forms.Control.Click> obslužné rutiny `squarePanel` událostí `circlePanel` pro ovládací prvky a. Tyto metody se <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.CloseDropDown%2A> volají k ukončení vlastní <xref:System.Drawing.Design.UITypeEditor> relace úprav.
+4. Implementujte <xref:System.Windows.Forms.Control.Click> obslužné rutiny `squarePanel` událostí `circlePanel` pro ovládací prvky a. Tyto metody se <xref:System.Windows.Forms.Design.IWindowsFormsEditorService.CloseDropDown%2A> volají k ukončení vlastní <xref:System.Drawing.Design.UITypeEditor> relace úprav.
 
     [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#390](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#390)]
     [!code-vb[System.Windows.Forms.Design.DocumentDesigner#390](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#390)]
 
-2. Deklarujte <xref:System.Windows.Forms.Design.IWindowsFormsEditorService> proměnnou instance s `editorService`názvem.
+5. Deklarujte <xref:System.Windows.Forms.Design.IWindowsFormsEditorService> proměnnou instance s `editorService`názvem.
 
-```vb
-Private editorService As IWindowsFormsEditorService
-```
+   ```vb
+   Private editorService As IWindowsFormsEditorService
+   ```
 
-```csharp
-private IWindowsFormsEditorService editorService;
-```
+   ```csharp
+   private IWindowsFormsEditorService editorService;
+   ```
 
-1. Deklarujte proměnnou `lightShapeValue`instance nazvanou. `MarqueeLightShape`
+6. Deklarujte proměnnou `lightShapeValue`instance nazvanou. `MarqueeLightShape`
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#330](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#330)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#330](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#330)]
 
-2. `squarePanel` `circlePanel` V konstruktoru připojte obslužné rutiny <xref:System.Windows.Forms.Control.Click> události<xref:System.Windows.Forms.Control.Click> k událostem ovládacích prvků a. `LightShapeSelectionControl` Také definujte přetížení konstruktoru, které přiřadí `MarqueeLightShape` hodnotu z prostředí návrhu `lightShapeValue` k poli.
+7. `squarePanel` `circlePanel` V konstruktoru připojte obslužné rutiny <xref:System.Windows.Forms.Control.Click> události<xref:System.Windows.Forms.Control.Click> k událostem ovládacích prvků a. `LightShapeSelectionControl` Také definujte přetížení konstruktoru, které přiřadí `MarqueeLightShape` hodnotu z prostředí návrhu `lightShapeValue` k poli.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#340](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#340)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#340](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#340)]
 
-3. V metodě odpojte obslužné rutiny <xref:System.Windows.Forms.Control.Click>událostí. <xref:System.ComponentModel.Component.Dispose%2A>
+8. V metodě odpojte obslužné rutiny <xref:System.Windows.Forms.Control.Click>událostí. <xref:System.ComponentModel.Component.Dispose%2A>
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#350](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#350)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#350](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#350)]
 
-4. V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** . Otevřete soubor LightShapeSelectionControl.Designer.cs nebo LightShapeSelectionControl. Designer. vb a odeberte výchozí definici <xref:System.ComponentModel.Component.Dispose%2A> metody.
+9. V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** . Otevřete soubor LightShapeSelectionControl.Designer.cs nebo LightShapeSelectionControl. Designer. vb a odeberte výchozí definici <xref:System.ComponentModel.Component.Dispose%2A> metody.
 
-5. Implementujte `LightShape` vlastnost.
+10. Implementujte `LightShape` vlastnost.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#360)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#360](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#360)]
 
-6. Přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
+11. Přepsat <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Tato implementace Vykreslí vyplněný čtverec a kruh. Tím se také zvýrazní vybraná hodnota vykreslením ohraničení kolem jednoho obrazce nebo druhého.
 
      [!code-csharp[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/CS/lightshapeselectioncontrol.cs#380)]
      [!code-vb[System.Windows.Forms.Design.DocumentDesigner#380](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.DocumentDesigner/VB/lightshapeselectioncontrol.vb#380)]
 
-## <a name="testing-your-custom-control-in-the-designer"></a>Testování vlastního ovládacího prvku v Návrháři
+## <a name="test-your-custom-control-in-the-designer"></a>Testování vlastního ovládacího prvku v Návrháři
 
 V tomto okamžiku můžete sestavit `MarqueeControlLibrary` projekt. Otestujte implementaci vytvořením ovládacího prvku, který dědí z `MarqueeControl` třídy a jeho použitím na formuláři.
 
@@ -602,31 +570,31 @@ V tomto okamžiku můžete sestavit `MarqueeControlLibrary` projekt. Otestujte i
 
 12. V obslužných rutinách `Start` `Stop` `DemoMarqueeControl`události volejte metody a na. <xref:System.Windows.Forms.Control.Click>
 
-```vb
-Private Sub startButton_Click(sender As Object, e As System.EventArgs)
-    Me.demoMarqueeControl1.Start()
-End Sub 'startButton_Click
+    ```vb
+    Private Sub startButton_Click(sender As Object, e As System.EventArgs)
+        Me.demoMarqueeControl1.Start()
+    End Sub 'startButton_Click
 
-Private Sub stopButton_Click(sender As Object, e As System.EventArgs)
-Me.demoMarqueeControl1.Stop()
-End Sub 'stopButton_Click
-```
+    Private Sub stopButton_Click(sender As Object, e As System.EventArgs)
+    Me.demoMarqueeControl1.Stop()
+    End Sub 'stopButton_Click
+    ```
 
-```csharp
-private void startButton_Click(object sender, System.EventArgs e)
-{
-    this.demoMarqueeControl1.Start();
-}
+    ```csharp
+    private void startButton_Click(object sender, System.EventArgs e)
+    {
+        this.demoMarqueeControl1.Start();
+    }
 
-private void stopButton_Click(object sender, System.EventArgs e)
-{
-    this.demoMarqueeControl1.Stop();
-}
-```
+    private void stopButton_Click(object sender, System.EventArgs e)
+    {
+        this.demoMarqueeControl1.Stop();
+    }
+    ```
 
-1. `MarqueeControlTest` Nastavte projekt jako spouštěný projekt a spusťte ho. Zobrazí se formulář, ve kterém se `DemoMarqueeControl`zobrazuje vaše. Kliknutím na tlačítko **Start** spustíte animaci. Mělo by se zobrazit blikání textu a indikátory pohybu kolem ohraničení.
+13. `MarqueeControlTest` Nastavte projekt jako spouštěný projekt a spusťte ho. Zobrazí se formulář, ve kterém se `DemoMarqueeControl`zobrazuje vaše. Kliknutím na tlačítko **Start** spustíte animaci. Mělo by se zobrazit blikání textu a indikátory pohybu kolem ohraničení.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 `MarqueeControlLibrary` Ukazuje jednoduchou implementaci vlastních ovládacích prvků a přidružených návrhářů. Tuto ukázku můžete udělat několika způsoby:
 
@@ -636,7 +604,7 @@ private void stopButton_Click(object sender, System.EventArgs e)
 
 - Dále upravte prostředí pro dobu návrhu. Můžete zkusit vytvořit stín více vlastností než <xref:System.Windows.Forms.Control.Enabled%2A> a <xref:System.Windows.Forms.Control.Visible%2A>a můžete přidat nové vlastnosti. Přidejte nové příkazy návrháře, abyste zjednodušili běžné úkoly, jako je například ukotvení podřízených ovládacích prvků.
 
-- `MarqueeControl`Licenci. Další informace najdete v tématu [jak: Licenční komponenty a ovládací](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))prvky.
+- `MarqueeControl`Licenci.
 
 - Určuje, jak jsou ovládací prvky serializovány a jak jsou pro ně generovány kódy. Další informace naleznete v tématu [generování a kompilace dynamického zdrojového kódu](../../reflection-and-codedom/dynamic-source-code-generation-and-compilation.md).
 
@@ -649,6 +617,3 @@ private void stopButton_Click(object sender, System.EventArgs e)
 - <xref:System.ComponentModel.Design.DesignerVerb>
 - <xref:System.Drawing.Design.UITypeEditor>
 - <xref:System.ComponentModel.BackgroundWorker>
-- [Postupy: Vytvoření model Windows Formsho ovládacího prvku, který bude využívat funkce pro dobu návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
-- [Rozšíření podpory pro dobu návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))
-- [Vlastní návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/h51z5c0x(v=vs.120))

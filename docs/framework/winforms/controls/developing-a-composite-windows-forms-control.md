@@ -7,55 +7,51 @@ helpviewer_keywords:
 - composite controls [Windows Forms], Windows Forms
 - controls [Windows Forms], composite
 ms.assetid: d086f2a3-baa3-4e09-b40c-a5bb3cfc51a6
-ms.openlocfilehash: 2d6220a95d20cc0ab8ea1cdeb396804dfbcef8a1
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 9ccbf3de3f5c65b99a06c29ffce4c96896d11fae
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211480"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015959"
 ---
-# <a name="develop-a-composite-windows-forms-control"></a>Vývoj složeného ovládacího prvku Windows Forms
+# <a name="develop-a-composite-windows-forms-control"></a>Vývoj složeného ovládacího prvku model Windows Forms
 
-Můžete vyvíjet složeného ovládacího prvku Windows Forms kombinací jiných ovládacích prvků Windows Forms. Složené ovládací prvky, které jsou odvozeny z <xref:System.Web.UI.UserControl> se nazývají uživatelské ovládací prvky. Základní třída <xref:System.Windows.Forms.UserControl>, poskytuje směrování pro podřízené ovládací prvky, čímž zajišťuje, že podřízených ovládacích prvků může získat fokus klávesnice. Příkladem uživatelského ovládacího prvku, naleznete v tématu <xref:System.Windows.Forms.UserControl> ukázku v [jak: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md).
+Složený ovládací prvek model Windows Forms lze vyvinout kombinací dalších ovládacích prvků model Windows Forms. Složené ovládací prvky, které <xref:System.Web.UI.UserControl> jsou odvozeny z, se nazývají uživatelské ovládací prvky. Základní třída <xref:System.Windows.Forms.UserControl>, poskytuje směrování klávesnice pro podřízené ovládací prvky, čímž zajišťuje, aby podřízené ovládací prvky mohly získat fokus. Příklad uživatelského ovládacího prvku naleznete v <xref:System.Windows.Forms.UserControl> ukázce v [tématu How to: Použití atributů v ovládacích prvcích](how-to-apply-attributes-in-windows-forms-controls.md)model Windows Forms.
 
-Návrhář formulářů Windows v sadě Visual Studio poskytuje bohatou podporu návrhu pro vytváření uživatelských ovládacích prvků.
+Návrhář model Windows Forms v aplikaci Visual Studio poskytuje bohatou podporu při návrhu pro vytváření uživatelských ovládacích prvků.
 
-- [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Postupy: Zobrazení ovládacího prvku v dialogovém okně zvolit položky sady nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 
 - [Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)
 
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Návod: Dědění z ovládacího prvku model Windows Forms pomocí vizuáluC#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 
 - [Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](how-to-provide-a-toolbox-bitmap-for-a-control.md)
 
-- [Postupy: Dědění z existujících Windows Forms ovládacích prvků](how-to-inherit-from-existing-windows-forms-controls.md)
+- [Postupy: Zdědit z existujících ovládacích prvků model Windows Forms](how-to-inherit-from-existing-windows-forms-controls.md)
 
-- [Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)
+- [Návod: Ladění vlastních ovládacích prvků model Windows Forms v době návrhu](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)
 
-- [Postupy: Dědit ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Zdědit z třídy ovládacího prvku](how-to-inherit-from-the-control-class.md)
 
-- [Postupy: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Postupy: Testování chování prvku UserControl v době běhu](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 
-- [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
+- [Postupy: Zarovnání ovládacího prvku na okraje formulářů v době návrhu](how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
 
-- [Postupy: Dědit ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Zdědit z třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
 
-- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Vytváření ovládacích prvků pro model Windows Forms](how-to-author-controls-for-windows-forms.md)
 
 - [Postupy: Vytváření složených ovládacích prvků](how-to-author-composite-controls.md)
 
-- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [Návod: Vytváření složeného ovládacího prvku pomocí vizuáluC#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
 
-- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)
 
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
-
-- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time](creating-a-wf-control-design-time-features.md)
-
-- [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
+- [Postupy: Vytvoření model Windows Formsho ovládacího prvku, který bude využívat funkce pro dobu návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Použití atributů v ovládacích prvcích Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)
+- [Postupy: Použití atributů v ovládacích prvcích model Windows Forms](how-to-apply-attributes-in-windows-forms-controls.md)
 - [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

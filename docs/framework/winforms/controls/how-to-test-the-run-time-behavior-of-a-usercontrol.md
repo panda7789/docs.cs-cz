@@ -8,65 +8,67 @@ helpviewer_keywords:
 - UserControl Test Container
 - UserControl class [Windows Forms], run-time behavior
 ms.assetid: 4e4d5c49-1346-40ac-9d96-40211b573583
-ms.openlocfilehash: 48531ab1ef3b30b6516e3f2e7b5858a8884cbfe8
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 1be79d52be3b5b84938d8548a8f101e965fa9dbb
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211712"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015768"
 ---
-# <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Testování běhového chování UserControl
+# <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Testování chování prvku UserControl v době běhu
 
-Při vývoji <xref:System.Windows.Forms.UserControl>, je potřeba testovat jeho chování za běhu. Můžete vytvořit projekt samostatné aplikace pro systém Windows a umístit ovládací prvek na formuláři testu, ale tento postup je praktické. Jednodušší a rychlejší způsob je použít **UserControl – kontejner testů** poskytovaný sadou Visual Studio. Tento kontejner testu spustí přímo z vašeho projektu knihovny ovládacích prvků Windows.
+Při vývoji <xref:System.Windows.Forms.UserControl>nástroje je nutné otestovat jeho chování za běhu. Můžete vytvořit samostatný projekt aplikace pro systém Windows a umístit ovládací prvek do formuláře testu, ale tato procedura je nepraktická. Rychlejší a snazší způsob použití **kontejneru testu UserControl** , který poskytuje Visual Studio. Tento kontejner testů začíná přímo z projektu knihovny ovládacích prvků systému Windows.
 
 > [!IMPORTANT]
-> Pro kontejner testu se načíst vaše <xref:System.Windows.Forms.UserControl>, ovládací prvek musí mít aspoň jeden veřejný konstruktor.
+> Aby mohl kontejner testu načíst svůj <xref:System.Windows.Forms.UserControl>ovládací prvek, musí mít alespoň jeden veřejný konstruktor.
 
 > [!NOTE]
-> Ovládací prvek Visual C++ nelze provést test pomocí **UserControl – kontejner testů**.
+> Vizuální C++ ovládací prvek nelze testovat pomocí **kontejneru testu UserControl**.
 
-## <a name="test-the-run-time-behavior-of-a-usercontrol"></a>Testování běhového chování UserControl
+## <a name="test-the-run-time-behavior-of-a-usercontrol"></a>Testování chování prvku UserControl v době běhu
 
-1. V sadě Visual Studio vytvořte projekt knihovny ovládacích prvků Windows volá **TestContainerExample**. Podrobnosti najdete v tématu [šablonu ovládacího prvku knihovny Windows](https://docs.microsoft.com/previous-versions/kxczf775(v=vs.100)).
+1. V aplikaci Visual Studio vytvořte projekt knihovny ovládacích prvků systému Windows a pojmenujte jej **TestContainerExample**.
 
-2. V **Návrháře formulářů Windows**, přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** na návrhové ploše ovládacího prvku.
+2. V **Návrhář formulářů**přetáhněte <xref:System.Windows.Forms.Label> ovládací prvek z **panelu nástrojů** na návrhovou plochu ovládacího prvku.
 
-3. Stisknutím klávesy **F5** chcete projekt sestavit a spustit **UserControl – kontejner testů**. Kontejner testu se zobrazí s vaší <xref:System.Windows.Forms.UserControl> v **ve verzi Preview** podokně.
+3. Stisknutím klávesy **F5** Sestavte projekt a spusťte **kontejner testu UserControl**. Kontejner testu se zobrazí <xref:System.Windows.Forms.UserControl> v podokně **náhledu** .
 
-4. Vyberte <xref:System.Windows.Forms.Control.BackColor%2A> zobrazená v vlastnost <xref:System.Windows.Forms.PropertyGrid> ovládací prvek vpravo od **ve verzi Preview** podokně. Změňte tuto hodnotu na `ControlDark`. Podívejte se, že ovládací prvek změní tmavší barvu. Zkuste změnit jiné hodnoty vlastností a sledujte vliv na váš ovládací prvek.
+4. Vyberte vlastnost zobrazenou <xref:System.Windows.Forms.PropertyGrid> v ovládacím prvku napravo od podokna **náhledu.** <xref:System.Windows.Forms.Control.BackColor%2A> Změňte její hodnotu na **ControlDark**. Pozor, aby se ovládací prvek změnil na tmavší barvu. Zkuste změnit další hodnoty vlastností a sledujte efekt ovládacího prvku.
 
-5. Klikněte na tlačítko **Ukotvit výplň uživatelský ovládací prvek** zaškrtnutím políčka níže **ve verzi Preview** podokně. Podívejte se, že ovládací prvek svou velikost tak, aby vyplnil podokna. Změna velikosti kontejneru testů a podívejte se, že ovládací prvek svou velikost podokna.
+5. V podokně **náhledu** klikněte na zaškrtávací políčko **ukotvit výplň uživatelského ovládacího prvku** . Všimněte si, že se změní velikost ovládacího prvku, aby bylo možné vyplnit podokno. Změňte velikost kontejneru testu a sledujte, že se změní velikost ovládacího prvku v podokně.
 
 6. Zavřete kontejner testu.
 
-7. Přidat jiný uživatelský ovládací prvek **TestContainerExample** projektu. Podrobnosti najdete v tématu [jak: Přidání existující položky do projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100)).
+7. Přidejte do projektu **TestContainerExample** další uživatelský ovládací prvek.
 
-8. V **Návrháře formulářů Windows**, přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** na návrhové ploše ovládacího prvku.
+8. V **Návrhář formulářů**přetáhněte <xref:System.Windows.Forms.Button> ovládací prvek z **panelu nástrojů** na návrhovou plochu ovládacího prvku.
 
-9. Stisknutím klávesy F5 projekt sestavit a spustit kontejner testu.
+9. Stisknutím klávesy **F5** Sestavte projekt a spusťte kontejner testu.
 
-10. Klikněte na tlačítko **vyberte uživatelský ovládací prvek** <xref:System.Windows.Forms.ComboBox> přepínat mezi dvěma uživatelské ovládací prvky.
+10. Klikněte na **ovládací prvek** <xref:System.Windows.Forms.ComboBox> pro výběr uživatele, který chcete přepínat mezi dvěma uživatelskými ovládacími prvky.
 
-## <a name="test-user-controls-from-another-project"></a>Test uživatelské ovládací prvky z jiného projektu
+## <a name="test-user-controls-from-another-project"></a>Testování uživatelských ovládacích prvků z jiného projektu
 
-Uživatelské ovládací prvky z jiných projektů můžete otestovat v kontejneru testů aktuálního projektu.
+Uživatelské ovládací prvky můžete testovat z jiných projektů v aktuálním kontejneru testů projektu.
 
-1. Vytvoření projektu knihovny ovládacích prvků Windows volá **TestContainerExample2**. Podrobnosti najdete v tématu [šablonu ovládacího prvku knihovny Windows](https://docs.microsoft.com/previous-versions/kxczf775(v=vs.100)).
+1. V aplikaci Visual Studio vytvořte projekt knihovny ovládacích prvků systému Windows a pojmenujte jej **TestContainerExample2**.
 
-2. V **Návrháře formulářů Windows**, přetáhněte <xref:System.Windows.Forms.RadioButton> ovládacího prvku **nástrojů** na návrhové ploše ovládacího prvku.
+2. V **Návrhář formulářů**přetáhněte <xref:System.Windows.Forms.RadioButton> ovládací prvek z **panelu nástrojů** na návrhovou plochu ovládacího prvku.
 
-3. Stisknutím klávesy F5 projekt sestavit a spustit kontejner testu. Kontejner testu se zobrazí s vaší <xref:System.Windows.Forms.UserControl> v **ve verzi Preview** podokně.
+3. Stisknutím klávesy **F5** Sestavte projekt a spusťte kontejner testu. Kontejner testu se zobrazí <xref:System.Windows.Forms.UserControl> v podokně **náhledu** .
 
-4. Klikněte na tlačítko **zatížení** tlačítko.
+4. Klikněte na tlačítko **načíst** .
 
-5. V **otevřít** dialogové okno, přejděte na **TestContainerExample**.dll, který jste vytvořili v předchozím postupu. Vyberte **TestContainerExample**.dll a kliknutím **otevřít** tlačítko načíst uživatelské ovládací prvky
+5. V dialogovém okně **otevřít** přejděte na **TestContainerExample**. dll, které jste vytvořili v předchozím postupu. Vyberte **TestContainerExample**. dll a kliknutím na tlačítko **otevřít** načtěte uživatelské ovládací prvky.
 
-6. Použití **vyberte uživatelský ovládací prvek** <xref:System.Windows.Forms.ComboBox> přepínat mezi dvěma uživatelské ovládací prvky z **TestContainerExample** projektu.
+6. Pomocí **ovládacího prvku vybrat uživatelský ovládací prvek** <xref:System.Windows.Forms.ComboBox> můžete přepínat mezi dvěma uživatelskými ovládacími prvky z projektu **TestContainerExample** .
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.UserControl>
 - [Postupy: Vytváření složených ovládacích prvků](how-to-author-composite-controls.md)
-- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
-- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Návod: Vytváření složeného ovládacího prvku](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
 - [Návrhář uživatelského ovládacího prvku](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/183c3hth(v=vs.100))

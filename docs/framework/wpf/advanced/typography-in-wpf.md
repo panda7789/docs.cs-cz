@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 7c83cfa22770695861b07e3bff29a38fcd125dd2
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: b4ae0d03c0207413d826e62de1d157f938b4d775
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545247"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016119"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 V tomto tématu se seznámíte s hlavními typografickou funkcí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]nástroje. Mezi tyto funkce patří Vylepšená kvalita a výkon vykreslování textu, podpora typografie OpenType, vylepšený mezinárodní text, Rozšířená podpora písem a nová textová rozhraní aplikací (API).  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Vylepšená kvalita a výkon textu  
- Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu. ClearType je softwarová technologie vyvinutá [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] nástrojem, která vylepšuje čitelnost textu v existujících LCDS (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitorované ploché panely. Technologie ClearType používá vykreslování v pixelech, které umožňuje zobrazení textu s větší věrnou přesností na jeho skutečný tvar zarovnáním znaků na zlomkové části pixelu. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání. Dalším vylepšením technologie ClearType [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v systému je antialiasing směru y, který vyhlazuje horní a dolní část neomezených křivek v textových znacích. Další podrobnosti o funkcích technologie ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
+ Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu. ClearType je softwarová technologie vyvinutá Microsoftem, která vylepšuje čitelnost textu v existujících LCDs (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitor plochých panelů. Technologie ClearType používá vykreslování v pixelech, které umožňuje zobrazení textu s větší věrnou přesností na jeho skutečný tvar zarovnáním znaků na zlomkové části pixelu. Další řešení zvyšuje ostrost drobných podrobností v zobrazení textu, což usnadňuje čtení dlouhých dob trvání. Dalším vylepšením technologie ClearType [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v systému je antialiasing směru y, který vyhlazuje horní a dolní část neomezených křivek v textových znacích. Další podrobnosti o funkcích technologie ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
   
  ![Text pomocí technologie ClearType y-Direction anti-aliasing](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
 Text pomocí technologie ClearType y-Direction antialiasing  
@@ -29,7 +29,7 @@ Text pomocí technologie ClearType y-Direction antialiasing
   
 <a name="Rich_Typography"></a>   
 ## <a name="rich-typography"></a>Bohatá typografie  
- Formát písma OpenType je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. Formát písma OpenType byl vyvinut společně nástrojem [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. <xref:System.Windows.Documents.Typography> Objekt zpřístupňuje mnoho pokročilých funkcí písem OpenType, jako jsou stylistické alternativy a ozdobné znaky. Windows SDK poskytuje sadu ukázkových písem OpenType, která jsou navržená pomocí bohatých funkcí, jako jsou například písma Pericles a Pescadero. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+ Formát písma OpenType je rozšíření [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] formátu písma. Formát písma OpenType byl vyvinut společně společností Microsoft a Adobe a poskytuje bohatou řadu pokročilých typografických funkcí. <xref:System.Windows.Documents.Typography> Objekt zpřístupňuje mnoho pokročilých funkcí písem OpenType, jako jsou stylistické alternativy a ozdobné znaky. Windows SDK poskytuje sadu ukázkových písem OpenType, která jsou navržená pomocí bohatých funkcí, jako jsou například písma Pericles a Pescadero. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
  Písmo OpenType Pericles obsahuje další glyfy, které představují stylistické alternativy standardní sady glyfů. Následující text zobrazuje stylistické alternativní glyfy.  
   

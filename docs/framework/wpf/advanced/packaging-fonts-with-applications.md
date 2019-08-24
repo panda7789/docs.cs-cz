@@ -10,18 +10,18 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: dfc1f023e9d1adce73a28f475f3796b4f7231ff8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f7d69f299b0b7638d6f8052e6aa0e77fac39c8e4
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960334"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016103"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] s vaší aplikací.  
   
 > [!NOTE]
-> Stejně jako u většiny typů softwaru jsou soubory písem licencované a nikoli prodávatelné. Licence, které řídí použití písem, se liší od dodavatele k dodavatelům, ale obecně většinou licencí, včetně těch, [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] které se týkají písem pro aplikace a okna, neumožňují vkládání písem do aplikací nebo jinak. distribuovat. Proto je jako vývojář zodpovědný za to, že máte požadovaná licenční práva pro všechna písma vložená v rámci aplikace nebo jinak znovu distribuovat.  
+> Stejně jako u většiny typů softwaru jsou soubory písem licencované a nikoli prodávatelné. Licence, které řídí použití písem, se liší od dodavatele k dodavatelům, ale obecně většinou licencí, včetně těch, které se týkají písem, která Microsoft dodává s aplikacemi a Windows, nedovolují vkládání písem do aplikací ani jiné distribuci. Proto je jako vývojář zodpovědný za to, že máte požadovaná licenční práva pro všechna písma vložená v rámci aplikace nebo jinak znovu distribuovat.  
 
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Úvod do balení písem  

@@ -8,59 +8,58 @@ helpviewer_keywords:
 - errors [Windows Forms Designer]
 - design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
-ms.openlocfilehash: b553dd6f6c5e760a671dea6400586d7074d49f5f
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: cce9baf1523391e281593428b633c401103b42b5
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211329"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015975"
 ---
-# <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby při návrhu v Návrháři formulářů Windows
+# <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby v době návrhu v Návrhář formulářů
 
-Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se zobrazí v sadě Visual Studio, když Návrhář formulářů Windows nepodaří načíst. Pokud se zobrazí tento seznam chyb, by neměla interpretovat jako chyba v návrháři, ale jako pomůcka pro opravu chyb v kódu.
+Toto téma vysvětluje význam a použití seznamu chyb v době návrhu, který se zobrazí v aplikaci Visual Studio, když se Návrhář formulářů nepodařilo načíst. Pokud se zobrazí tento seznam chyb, neměli byste ho interpretovat jako chybu v návrháři, ale jako pomůcku pro opravu chyb v kódu.
 
-Základní znalosti o tento seznam chyb můžete ladit aplikace tak, že poskytuje podrobné informace o chybách a navrhněte řešení.
+Základní porozumění tomuto seznamu chyb vám pomůže ladit aplikace tím, že poskytuje podrobné informace o chybách a navrhuje možná řešení.
 
-## <a name="the-design-time-error-list-interface"></a>Rozhraní seznam chyb při návrhu
+## <a name="the-design-time-error-list-interface"></a>Rozhraní seznamu chyb v době návrhu
 
-Pokud se nepodaří načíst Návrháře formulářů Windows, seznamu chyb se zobrazí v návrháři. Chyby jsou seskupené do kategorií. Například pokud máte čtyři instance nedeklarované proměnné, ty budou seskupeny do stejné kategorie chyby. Každá kategorie chyby obsahuje stručný popis, který shrnuje chybu.
+Pokud se Návrhář formulářů nepodařilo načíst, zobrazí se v Návrháři seznam chyb. Chyby jsou seskupené do kategorií. Například pokud máte čtyři instance nedeklarovaných proměnných, budou seskupeny do stejné kategorie chyb. Každá kategorie chyb obsahuje stručný popis, který shrnuje chybu.
 
-Můžete rozbalit nebo Sbalit kategorii chyby, kliknutím na záhlaví kategorie chyby nebo kliknutím na dvojitou šipku Rozbalit/sbalit. Když rozbalíte kategorii chyby, zobrazí se následující další pomoc:
+Kategorii chyb můžete rozbalit nebo sbalit buď kliknutím na záhlaví kategorie chyby, nebo kliknutím na dvojitou šipku rozbalení/sbalení. Po rozbalení kategorie chyby se zobrazí následující další Help:
 
-- Instance této chyby.
+- Instance této chyby
 
-- Nápověda k této chybě.
+- Pomůžete s touto chybou.
 
-- Fórum příspěvky o této chybě.
+- Příspěvky o této chybě ve fórech
 
 ### <a name="instances-of-this-error"></a>Instance této chyby
 
-Další nápověda seznam všech instancí chybu v aktuálním projektu. Mnoho chyb obsahovat přesné umístění v následujícím formátu: *[název projektu]* *[název formuláře]* řádku:*[číslo]* sloupec:*– sloupec číslo*. **Přejít ke kódu** odkaz vás nasměruje na umístění ve vašem kódu, kde dojde k chybě.
+Další Help seznam všech výskytů chyby v aktuálním projektu. Mnoho chyb zahrnuje přesné umístění v následujícím formátu: *[název projektu]* *[název formuláře]* řádek: *[řádek číslo]* sloupec: *[číslo sloupce]* . Odkaz **Přejít na kód** přejde do umístění ve vašem kódu, kde dojde k chybě.
 
-Pokud zásobníku volání je spojen s chybou, můžete kliknout **zobrazit zásobník volání** propojení, které dále rozšiřujících chyby, chcete-li zobrazit zásobník volání. Zkoumání zásobník může poskytnout cenné informace o ladění. Můžete například sledovat, funkce, které byly volány předtím, než došlo k chybě. Zásobník volání je volitelný, takže můžete zkopírovat a uložit ho.
+Pokud je zásobník volání spojen s chybou, můžete kliknout na odkaz **Zobrazit zásobník volání** , který dále rozšiřuje chybu pro zobrazení zásobníku volání. Prozkoumání zásobníku může poskytnout cenné informace o ladění. Můžete například sledovat funkce, které byly volány před tím, než došlo k chybě. Zásobník volání je možné vybrat, abyste ho mohli zkopírovat a uložit.
 
 > [!NOTE]
-> V jazyce Visual Basic v seznamu chyb při návrhu nezobrazí více než jednu chybu, ale může zobrazovat více instancí stejné chybě. Chyby v aplikaci Visual C++, nemají goto code odkazy nebo odkazy na čísla řádku.
+> V Visual Basic seznam chyb v době návrhu nezobrazuje více než jednu chybu, ale může zobrazit více instancí stejné chyby. V vizuálu C++chyby neobsahují odkazy kódu goto nebo odkazy na řádky.
 
-### <a name="help-with-this-error"></a>Nápověda k této chybě
+### <a name="forum-posts-about-this-error"></a>Příspěvky o této chybě ve fórech
 
-Pokud chyba obsahuje odkaz na související téma nápovědy MSDN, další pomoc bude obsahovat odkaz na téma nápovědy. Když kliknete na odkaz, zobrazí se v sadě Visual Studio související téma nápovědy.
+Další help obsahuje odkaz na příspěvky na fórech související s chybou. Fóra se prohledávají na základě řetězce chybové zprávy. Můžete si také vyzkoušet hledání na následujících fórech:
 
-### <a name="forum-posts-about-this-error"></a>Fórum příspěvky o této chybě
+- [Fórum Návrhář formulářů](https://social.msdn.microsoft.com/Forums/windows/home?forum=winformsdesigner)
 
-Další pomoc, bude obsahovat odkaz na příspěvků na fórech MSDN týkající se chyby. Fóra budou vyhledány podle řetězec chybové zprávy. Můžete také zkusit hledání následující fóra:
-
-- [Fórum Návrháře formulářů Windows](https://go.microsoft.com/fwlink/?LinkId=203524)
-
-- [Windows Forms fóra](https://go.microsoft.com/fwlink/?LinkId=203523)
+- [Fórum model Windows Forms](https://social.msdn.microsoft.com/Forums/windows/home?category=windowsforms)
 
 ### <a name="ignore-and-continue"></a>Ignorovat a pokračovat
 
-Můžete ignorovat chybovou podmínku a pokračovat v načítání návrháře. Výběrem této akce může způsobit neočekávané chování. Například ovládací prvky se nemusí zobrazit na návrhové ploše.
+Můžete se rozhodnout Ignorovat chybový stav a pokračovat v načítání návrháře. Pokud zvolíte tuto akci, může dojít k neočekávanému chování. Například ovládací prvky se nemusí zobrazit na návrhové ploše.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Řešení potíží s vývojem během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171843(v=vs.120))
+- [Řešení potíží s vývojem v době návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171843(v=vs.120))
 - [Řešení potíží s vytvářením ovládacích prvků a komponent](troubleshooting-control-and-component-authoring.md)
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)
-- [Chybové zprávy Návrháře formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233640(v=vs.100))
+- [Návrhář formulářů chybové zprávy](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233640(v=vs.100))
