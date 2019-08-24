@@ -5,101 +5,101 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: e481e48f-7096-40eb-9f20-7f0098412941
-ms.openlocfilehash: fbe1617aa8ade89258bb7f4b46180b5e18805e3a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 75711ea534907e5692d97e0ec5f290e03fb75235
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590550"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69988697"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Integrace s aplikacemi modelu COM+ – přehled
-Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud už používáte založených na komponentách aplikační logiky, které jsou hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání. Běžný scénář, kdy je, když chcete vystavit existujícího modelu COM + nebo podnikové služby obchodní logiky pomocí webové služby.  
+Windows Communication Foundation (WCF) poskytuje bohatou prostředí pro vytváření distribuovaných aplikací. Pokud již používáte aplikační logiku, která je hostována v modelu COM+, můžete použít WCF k rozšiřování stávající logiky, a nemusíte ji přepsat. Běžným scénářem je, že chcete v rámci webové služby vystavit existující obchodní logiku služby COM+ nebo podnikových služeb.  
   
- Při vystavení rozhraní komponenty COM + jako webovou službu, specifikace a smlouvy z těchto služeb jsou určeny automatické mapování, která se provede v době inicializace aplikace. Následující seznam ukazuje koncepční model pro toto mapování:  
+ Pokud je rozhraní komponenty modelu COM+ vystaveno jako webová služba, specifikace a kontrakt těchto služeb jsou určeny automatickým mapováním, které se provádí při inicializaci aplikace. Následující seznam uvádí koncepční model pro toto mapování:  
   
-- Pro každou třídu vystavených modelu COM je definována jednu službu.  
+- Jedna služba je definována pro každou vystavenou třídu modelu COM.  
   
-- Kontrakt služby je odvozen přímo z definice rozhraní vybrané součásti s možností metoda vyloučení definované v konfiguraci.  
+- Kontrakt pro službu je odvozen přímo z definice rozhraní vybrané součásti s možností vyloučení metody definované v konfiguraci.  
   
-- Operace v této smlouvy jsou odvozena přímo z metod v definici rozhraní komponenty.  
+- Operace v tomto kontraktu jsou odvozeny přímo z metod v definici rozhraní komponenty.  
   
-- Parametry pro tyto operace jsou odvozena přímo z typu vzájemná funkční spolupráce modelu COM, která odpovídá na parametry metod komponenty.  
+- Parametry pro tyto operace jsou odvozeny přímo z typu interoperability modelu COM, který odpovídá parametrům metody komponenty.  
   
- Výchozí adresy a vazby přenosu pro služby v konfiguračním souboru služby. Pokud ale tyto dají nakonfigurovat tak, jako povinné.  
-  
-> [!NOTE]
->  Kontrakty pro ohrožené webové služby zůstal neměnný tak dlouho, dokud rozhraní modelu COM + a konfigurace zůstanou beze změny. Úpravy několik rozhraní se neaktualizuje automaticky dostupné služby a vyžaduje znovu spustit nástroj COM + Service Model Configuration (ComSvcConfig.exe).  
-  
- Požadavky na ověřování a autorizace aplikace modelu COM + a jeho součástí i nadále vynucovat, když se použije jako webovou službu.  
-  
- Iniciuje-li volající transakce webové služby, součásti označeny jako transakční zařazení v daném oboru transakce.  
-  
- Následující kroky jsou nutné k vystavení rozhraní komponenty modelu COM + jako webovou službu beze změny komponenty:  
-  
-1. Určení, zda rozhraní komponenty modelu COM + může být vystavena jako webové služby.  
-  
-2. Vyberte odpovídající hostující režim.  
-  
-3. Použijte nástroj pro konfiguraci modelu služby COM + (ComSvcConfig.exe) Chcete-li přidat webovou službu pro rozhraní. Další informace o tom, jak používat ComSvcConfig.exe najdete v tématu [jak: Použijte nástroj pro konfiguraci modelu služby COM +](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
-  
-4. Konfigurace nastavení jakékoli další služby v konfiguračním souboru aplikace. Další informace o tom, jak nakonfigurovat komponenty, naleznete v tématu [jak: Konfigurace nastavení služby modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md).  
-  
-## <a name="supported-interfaces"></a>Podporované rozhraní  
- Platí určitá omezení na typ rozhraní, která může být vystavena jako webové služby. Nejsou podporovány následující typy rozhraní:  
-  
-- Rozhraní, která předat objekt odkazy jako parametry - následující odkaz přístup omezený objektu je popsané v části omezená podpora odkaz na objekt.  
-  
-- Rozhraní, které předávají typy, které nejsou kompatibilní s převody vzájemná funkční spolupráce modelu COM rozhraní .NET Framework.  
-  
-- Rozhraní pro aplikace, které mají aplikace sdružování povolena, když jsou hostované pomocí modelu COM +.  
-  
-- Rozhraní komponent, které jsou označeny jako soukromé do aplikace.  
-  
-- Infrastruktura rozhraní modelu COM +.  
-  
-- Rozhraní z aplikace v systému.  
-  
-- Rozhraní služby Enterprise součásti, které se nepřidaly do globální mezipaměti sestavení.  
-  
-### <a name="limited-object-reference-support"></a>Podpora odkaz omezené objektu  
- Protože počet nasazených komponenty COM +. můžete použít objekty odkaz parametry, jako je například vrací objekt sady záznamů ADO integrace modelu COM + obsahuje omezenou podporu pro parametry objektů reference. Podpora je omezena na objekty, které implementují `IPersistStream` rozhraní modelu COM. To zahrnuje objekty sady záznamů ADO a může být implementováno pro objekty COM. konkrétní aplikace.  
-  
- Pokud chcete povolit tuto podporu, poskytuje nástroj ComSvcConfig.exe **allowreferences** přepínač, který zakáže v parametru signatury metody regulárních a ověří, že je nástroj spuštěn zajistit, že parametry objektů reference nejsou používány. . Kromě toho musí být typy objektů, které se předávají jako parametry s názvem a identifikovat v rámci <`persistableTypes`> Konfigurace element, který je podřízeným prvkem <`comContract`> element.  
-  
- Při použití této funkce, používá služba integrace modelu COM + `IPersistStream` rozhraní k serializaci nebo deserializaci instance objektu. Pokud se instance objektu nepodporuje `IPersistStream`, je vyvolána výjimka.  
-  
- V rámci klientské aplikace, metody <xref:System.ServiceModel.ComIntegration.PersistStreamTypeWrapper> objekt lze použít k předání objektu v ke službě a podobně pro načtení objektu.  
+ Výchozí adresy a vazby přenosu pro službu jsou k dispozici v konfiguračním souboru služby, ale je možné je v případě potřeby překonfigurovat.  
   
 > [!NOTE]
->  Protože potřebujeme specifické pro platformu a vlastní serializace přístup to je nejvhodnější pro použití mezi klienty WCF a služby WCF.  
+> Smlouvy pro exponované webové služby zůstávají konstantní, dokud rozhraní a konfigurace modelu COM+ zůstanou beze změny. Úprava několika rozhraní neaktualizuje automaticky dostupné služby a vyžaduje opětovné spuštění nástroje pro konfiguraci modelu služby COM+ (ComSvcConfig. exe).  
   
-## <a name="selecting-the-hosting-mode"></a>Hostující režim výběru  
- COM + zveřejňuje webové služby v jednom z následujících režimů hostingu:  
+ Požadavky na ověřování a autorizaci aplikace modelu COM+ a jejích komponent se budou při použití jako webové služby nadále vymáhat.  
   
-- COM +.-hostované  
+ Pokud volající inicializuje transakci webové služby, komponenty označené jako transakční zařazení v rámci tohoto oboru transakce.  
   
-     Webová služba je hostována v rámci aplikace vyhrazené modelu COM + procesu serveru (Dllhost.exe). Tento režim vyžaduje aplikace explicitně spustit předtím, než může přijímat žádosti webové služby. COM + možnosti "Spustit jako služba NT" nebo "Ponechte spuštěna při nečinnosti" je možné zabránit ukončení aplikace a její služby při nečinnosti. Tento režim poskytuje webovou službu a přístup k DCOM na server aplikace.  
+ K vystavení rozhraní komponenty COM+ jako webové služby bez změny součásti se vyžadují následující kroky:  
   
-- Hostované webové  
+1. Určete, zda je možné rozhraní komponenty modelu COM+ zveřejnit jako webovou službu.  
   
-     Webová služba je hostována v rámci pracovní proces webového serveru. Tento režim nevyžaduje modelu COM + jako aktivní po přijetí počáteční požadavek. Pokud aplikace není aktivní, při přijetí tohoto požadavku, se automaticky aktivuje před zpracováním žádosti. Tento režim také poskytuje webovou službu a přístup k DCOM pro serverové aplikace, ale způsobí, že proces směrování webových žádostí o službu. Obvykle vyžaduje povolení zosobnění klienta. Ve službě WCF, to lze provést pomocí <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, které je přístupné jako vlastnost Obecné <xref:System.ServiceModel.ChannelFactory%601> třídu, stejně jako <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> hodnota výčtu.  
+2. Vyberte vhodný hostující režim.  
   
-- Web hostovaný v procesu  
+3. K přidání webové služby pro rozhraní použijte nástroj pro konfiguraci modelu služby COM+ (ComSvcConfig. exe). Další informace o použití ComSvcConfig. exe naleznete v tématu [How to: Použijte nástroj](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)pro konfiguraci modelu služby com+.  
   
-     Webové služby a logika aplikace modelu COM + jsou hostovány v rámci pracovní proces webového serveru. Tímto způsobem automatickou aktivaci režimu hostované webové bez způsobení procesu směrování webových žádostí o službu. Nevýhodou je, že serverová aplikace není možné přistupovat prostřednictvím modelu DCOM.  
+4. Nakonfigurujte všechna další nastavení služby v konfiguračním souboru aplikace. Další informace o tom, jak nakonfigurovat součást, najdete v [tématu How to: Nakonfigurujte nastavení](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)služby com+.  
+  
+## <a name="supported-interfaces"></a>Podporovaná rozhraní  
+ Existují určitá omezení typu rozhraní, která je možné zveřejnit jako webovou službu. Následující typy rozhraní nejsou podporovány:  
+  
+- Rozhraní, která přecházejí odkazy na objekty jako parametry – následující omezený přístup k objektům je popsán v části Podpora omezeného počtu objektů.  
+  
+- Rozhraní, která předává typy, které nejsou kompatibilní s konverzemi interoperability .NET Framework COM.  
+  
+- Rozhraní pro aplikace, které mají povolený fond aplikací, když hostuje model COM+.  
+  
+- Rozhraní komponent, která jsou pro aplikaci označena jako soukromá.  
+  
+- Rozhraní infrastruktury COM+.  
+  
+- Rozhraní ze systémové aplikace.  
+  
+- Rozhraní z komponent služeb Enterprise Services, které nebyly přidány do globální mezipaměti sestavení (GAC).  
+  
+### <a name="limited-object-reference-support"></a>Omezená podpora odkazů na objekty  
+ Vzhledem k tomu, že řada nasazených komponent modelu COM+ používá objekty podle referenčních parametrů, jako je například vrácení objektu ADO Recordset, integrace modelu COM+ zahrnuje omezené podpory pro parametry odkazů na objekty. Podpora je omezená na objekty, které implementují `IPersistStream` rozhraní com. To zahrnuje objekty ADO sady záznamů a lze je implementovat pro objekty modelu COM specifické pro danou aplikaci.  
+  
+ Chcete-li povolit tuto podporu, nástroj ComSvcConfig. exe poskytuje přepínač **allowreferences** , který zakáže parametr signatury regulární metody a kontroluje, zda je nástroj spuštěn, aby bylo zajištěno, že parametry objektu reference nejsou používány. Kromě toho musí být typy objektů, které předáváte jako parametry, pojmenovány a identifikovány v rámci elementu <`persistableTypes`> Konfigurace, který je podřízenou položkou prvku <`comContract`>.  
+  
+ Při použití této funkce služba Integration Service modelu COM+ používá `IPersistStream` rozhraní k serializaci nebo deserializaci instance objektu. Pokud instance objektu nepodporuje `IPersistStream`, je vyvolána výjimka.  
+  
+ V rámci klientské aplikace lze metody <xref:System.ServiceModel.ComIntegration.PersistStreamTypeWrapper> objektu použít k předání objektu do služby a podobně k načtení objektu.  
+  
+> [!NOTE]
+> Z důvodu vlastní povahy a specifického přístupu k serializaci je to nejvhodnější pro použití mezi klienty WCF a službami WCF.  
+  
+## <a name="selecting-the-hosting-mode"></a>Výběr režimu hostování  
+ Model COM+ zveřejňuje webové služby v jednom z následujících způsobů hostování:  
+  
+- COM+ – hostované  
+  
+     Webová služba je hostována v rámci procesu vyhrazeného serveru COM+ aplikace (Dllhost. exe). Tento režim vyžaduje, aby aplikace byla explicitně spuštěna předtím, než může přijímat žádosti webové služby. Možnosti modelu COM+ "spustit jako službu NT" nebo "ponechat spuštěné v případě nečinnosti" lze použít k zabránění nečinnému vypnutí aplikace a jejích služeb. Tento režim poskytuje obě webové služby i DCOM přístup k serverové aplikaci.  
+  
+- Hostovaný na webu  
+  
+     Webová služba je hostována v rámci pracovního procesu webového serveru. Tento režim nevyžaduje, aby model COM+ byl aktivní při přijetí počáteční žádosti. Pokud aplikace není při přijetí této žádosti aktivní, je před zpracováním žádosti automaticky aktivována. Tento režim také poskytuje přístup k serverové aplikaci prostřednictvím webové služby i modelu DCOM, ale vyvolá přesměrování procesu pro žádosti webové služby. To obvykle vyžaduje, aby klient povolil zosobnění. V rámci WCF to lze provést <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> s vlastností <xref:System.ServiceModel.Security.WindowsClientCredential> třídy, která je k dispozici jako vlastnost obecné <xref:System.ServiceModel.ChannelFactory%601> třídy a také jako <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> hodnota výčtu.  
+  
+- Webový Host v procesu  
+  
+     Webová služba a logika aplikace modelu COM+ jsou hostovány v rámci pracovního procesu webového serveru. To zajišťuje automatickou aktivaci režimu hostovaného na webu, aniž by to způsobilo přesměrování procesu na požadavky webové služby. Nevýhodou je, že k serverové aplikaci nelze přistup prostřednictvím modelu DCOM.  
   
 ### <a name="security-considerations"></a>Důležité informace o zabezpečení  
- Stejně jako jiné služby WCF nastavení zabezpečení pro službu vystavené spravují nastavení konfigurace pro kanál WCF. Tradiční nastavení zabezpečení DCOM, například nastavení celý počítač oprávnění modelu DCOM nevynucují. K vynucení aplikační role COM +, musí být povoleno "kontroly přístupu na úrovni součástí" autorizace pro komponenty.  
+ Stejně jako jiné služby WCF se nastavení zabezpečení pro vystavené služby spravují prostřednictvím nastavení konfigurace pro kanál WCF. Nejsou vynutila tradiční nastavení zabezpečení DCOM, jako je nastavení oprávnění na úrovni modelu DCOM. Aby bylo možné vyhovět aplikačním rolím COM+, musí být pro danou součást povolena autorizace "kontroly přístupu na úrovni součásti".  
   
- Použití nezabezpečené vazby můžete nechat komunikaci otevřené manipulaci nebo informace o zpřístupnění. Chcete-li tomu zabránit, doporučujeme použít zabezpečené vazby.  
+ Použití nezabezpečené vazby může opustit komunikaci, která je otevřená pro manipulaci nebo zpřístupnění informací. Abyste tomu předešli, doporučuje se používat zabezpečenou vazbu.  
   
- Modelu COM +-režimy hostované a hostuje Web, klientské aplikace musí povolit procesu server zosobnit uživatele klienta. To můžete udělat v klientech WCF, tak, že nastavíte na úrovni zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>.  
+ Pro režimy hostované v modelu COM+ a na webu musí klientské aplikace povolit zosobnění uživatele klienta v procesu serveru. To lze provést v klientech WCF nastavením úrovně zosobnění na <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>.  
   
- Internetové informační služby (IIS) nebo Windows WAS Process Activation Service () pomocí přenos pomocí protokolu HTTP nástroje Httpcfg.exe lze rezervovat adresa koncového bodu přenosu. V další konfigurace je důležité pro ochranu proti podvodným služby, které plnit funkci určené služby. Abyste zabránili podvodné službě začínají na požadovaný koncový bod, legitimní službu lze nakonfigurovat ke spuštění jako služba NT. To umožňuje službě legitimní chcete uplatnit nárok na adresu koncového bodu před všechny neautorizovaných serverů služby.  
+ Pomocí služby Internetová informační služba (IIS) nebo aktivační služby procesů systému Windows (WAS) pomocí přenosového protokolu HTTP lze použít nástroj Httpcfg. exe k rezervaci adresy koncového bodu přenosu. V jiných konfiguracích je důležité chránit před neautorizovanými službami, které fungují jako zamýšlená služba. Chcete-li zabránit tomu, aby se nepovolená služba spouštěla v požadovaném koncovém bodě, může být legitimní služba nakonfigurována tak, aby běžela jako služba NT. To umožňuje legitimní službě deklarovat adresu koncového bodu před všemi neautorizovanými službami.  
   
- Při vystavení aplikace modelu COM + s nakonfigurovanou rolí COM +. jako hostované webové služby, "Spuštění služby IIS účet procesu" musí být přidány do jedné z rolí aplikace. Tento účet, obvykle s názvem IWAM_machinename musí přidat k povolení čistého vypnutí objektů po použití. Účet by neměla mít udělen žádná další oprávnění.  
+ Při vystavení aplikace modelu COM+ s nakonfigurovanými rolemi modelu COM+ jako webové služby, je nutné přidat účet procesu spuštění služby IIS do jedné z rolí aplikace. Tento účet, obvykle s názvem IWAM_machinename, musí být přidán za účelem povolení čistého vypnutí objektů po použití. Účtu by se neměla udělit žádná další oprávnění.  
   
- Funkce recyklace procesů modelu COM + nelze použít na integrovaných aplikací. Pokud aplikace je nakonfigurován pro použití recyklace procesů a komponenty běží v procesu hostovány COM +, službu nepodaří spustit. Tento požadavek nezahrnuje služeb pomocí procesu v režimu hostované webové, protože se nepoužijí nastavení recyklace procesů.  
+ Funkce recyklace procesu COM+ se nedají použít u integrovaných aplikací. Pokud je aplikace nakonfigurována pro použití recyklace procesu a součásti jsou spuštěny v hostovaném procesu modelu COM+, spuštění služby se nezdařilo. Tento požadavek nezahrnuje služby, které používají režim v rámci hostování na webu, protože nastavení recyklace procesu se nepoužívají.  
   
 ## <a name="see-also"></a>Viz také:
 

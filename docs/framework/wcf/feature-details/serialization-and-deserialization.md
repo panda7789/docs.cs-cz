@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: c66ca9356d1db157688349dfeea4270001513e0b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: a6bbc2fe4bf68b50153075a251d23deebda78de5
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949209"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988658"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi objekty .NET Framework a XML v obou směrech. Toto téma vysvětluje, jak serializátor funguje.  
@@ -22,7 +22,7 @@ Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:S
  WCF zahrnuje i doprovodný serializátor <xref:System.Runtime.Serialization.NetDataContractSerializer>. Rozhraní <xref:System.Runtime.Serialization.NetDataContractSerializer> je podobné <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> serializátorům a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> , protože také generuje .NET Framework názvy typů jako součást serializovaných dat. Používá se, pokud jsou stejné typy sdíleny na serializaci a na konci serializace. A jsou odvozeny od <xref:System.Runtime.Serialization.XmlObjectSerializer>společné základní třídy,. <xref:System.Runtime.Serialization.NetDataContractSerializer> <xref:System.Runtime.Serialization.DataContractSerializer>  
   
 > [!WARNING]
->  <xref:System.Runtime.Serialization.DataContractSerializer> Serializovat řetězce obsahující řídicí znaky s hexadecimální hodnotou nižší než 20 jako entity XML. To může způsobit problém s klientem jiného typu než WCF při odesílání takových dat službě WCF.  
+> <xref:System.Runtime.Serialization.DataContractSerializer> Serializovat řetězce obsahující řídicí znaky s hexadecimální hodnotou nižší než 20 jako entity XML. To může způsobit problém s klientem jiného typu než WCF při odesílání takových dat službě WCF.  
   
 ## <a name="creating-a-datacontractserializer-instance"></a>Vytvoření instance DataContractSerializer  
  Vytvoření instance <xref:System.Runtime.Serialization.DataContractSerializer> je důležitým krokem. Po dokončení konstrukce nemůžete změnit žádné nastavení.  

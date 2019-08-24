@@ -11,112 +11,112 @@ helpviewer_keywords:
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc4850ff87d9ea827e86a16ee6b3a6953c1e3552
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: edf519621c2113843b89d96948243e9c095d2a57
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622711"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988865"
 ---
 # <a name="garbage-collection-notifications"></a>Oznámení pro kolekci paměti
-Existují situace, ve kterých může úplného uvolňování paměti kolekce (to znamená, že kolekce generace 2) modulem common language runtime nepříznivě ovlivnit výkon. To může být problém zvláště u serverů, které zpracovávají velký objem požadavků. v takovém případě dlouhé uvolnění paměti může způsobit vypršení časového limitu požadavku. Pokud chcete zabránit celé kolekce, ze které se vyskytují během kritických období, můžete být upozorněni, že úplné uvolnění paměti se blíží a pak provedete akce vedoucí k přesměrování zatížení k jiné instanci serveru. Můžete také zahájit kolekce sami, za předpokladu, že není potřeba zpracovávat požadavky na aktuální instanci serveru.  
+Existují situace, kdy úplné uvolňování paměti (tj. generace 2) modulem CLR (Common Language Runtime) může negativně ovlivnit výkon. To může být problém zejména u serverů, které zpracovávají velké objemy požadavků. v takovém případě může dlouhý uvolňování paměti způsobit časový limit požadavku. Aby se zabránilo úplnému výskytu celé kolekce v průběhu kritického období, můžete být upozorněni na přístup k úplnému uvolňování paměti a pak provést akci přesměrování úlohy na jinou instanci serveru. Kolekci můžete také vyvolat sami a za předpokladu, že aktuální instance serveru nemusí zpracovávat požadavky.  
   
- <xref:System.GC.RegisterForFullGCNotification%2A> Metoda registruje pro oznámení, chcete-li být vyvolána, když modul runtime detekuje, že se blíží úplného uvolňování paměti kolekce. Existují dvě části pro toto oznámení: když se blíží úplného uvolňování paměti kolekce a po dokončení úplného uvolňování paměti kolekce.  
+ <xref:System.GC.RegisterForFullGCNotification%2A> Metoda zaregistruje oznámení, které se vygeneruje v případě, že je k disjetí kompletní uvolňování paměti. Toto oznámení obsahuje dvě části: při přístupu k úplnému uvolňování paměti a po dokončení úplného uvolňování paměti.  
   
 > [!WARNING]
->  Blokování uvolnění paměti pouze zvýšit oznámení. Když [ \<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) konfigurační element je povolen, nevyvolá uvolnění paměti na pozadí, oznámení.  
+> Pouze blokování uvolňování paměti vyvolává oznámení. Pokud je povolen prvek konfigurace [ \<> gcConcurrent](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) , nebudou uvolňování paměti na pozadí vyvolávat oznámení.  
   
- Chcete-li zjistit, kdy bylo vyvoláno upozornění, použijte <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody. Obvykle se používají tyto metody v `while` smyčky průběžně získat <xref:System.GCNotificationStatus> výčet, který se zobrazuje stav oznámení. Pokud je tato hodnota <xref:System.GCNotificationStatus.Succeeded>, abyste udělali toto:  
+ Chcete-li zjistit, kdy bylo oznámení vyvoláno <xref:System.GC.WaitForFullGCApproach%2A> , <xref:System.GC.WaitForFullGCComplete%2A> použijte metody a. Obvykle tyto metody použijete ve `while` smyčce k průběžnému <xref:System.GCNotificationStatus> získávání výčtu, který zobrazuje stav oznámení. Pokud je <xref:System.GCNotificationStatus.Succeeded>tato hodnota, můžete provést následující akce:  
   
-- V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCApproach%2A> metodu, můžete přesměrovat úlohy a potenciálně způsobit kolekce sami.  
+- V reakci na oznámení získané s <xref:System.GC.WaitForFullGCApproach%2A> metodou můžete přesměrovat úlohu a případně vyvolávat kolekci sami.  
   
-- V reakci na oznámení získali díky <xref:System.GC.WaitForFullGCComplete%2A> metodu, můžete provést aktuální instance serveru k dispozici pro zpracování požadavků znovu. Může také shromažďovat informace. Například můžete použít <xref:System.GC.CollectionCount%2A> metoda k zaznamenání počtu kolekcí.  
+- V reakci na oznámení získané s <xref:System.GC.WaitForFullGCComplete%2A> metodou můžete nastavit, aby byla aktuální instance serveru k dispozici pro opětovné zpracování požadavků. Můžete také shromažďovat informace. Například můžete použít <xref:System.GC.CollectionCount%2A> metodu k zaznamenání počtu kolekcí.  
   
- <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody jsou navrženy pro práci společně. Pomocí jednoho bez nich můžete výsledky neurčitý.  
+ Metody<xref:System.GC.WaitForFullGCComplete%2A>ajsou navržené tak, aby společně <xref:System.GC.WaitForFullGCApproach%2A> spolupracovaly. Použití jednoho bez druhého může způsobit neurčité výsledky.  
   
 ## <a name="full-garbage-collection"></a>Úplné uvolňování paměti  
- Modul runtime způsobuje úplného uvolňování paměti kolekce, když je splněna některá z následujících scénářů:  
+ Modul runtime způsobuje úplné uvolňování paměti v případě, kdy platí kterýkoli z následujících scénářů:  
   
-- Dostatek paměti má byla povýšeny do generace 2 způsobit další generaci 2 kolekce.  
+- Dostatek paměti bylo povýšeno na generaci 2 a způsobilo novou kolekci 2. generace.  
   
-- Dostatek paměti byl povýšen na velkých objektových haldách způsobit další generaci 2 kolekce.  
+- Do haldy velkých objektů bylo povýšeno dostatečné množství paměti, které způsobí novou kolekci 2. generace.  
   
-- Sběr generace 1 je eskalován jej kolekce generace 2 z důvodu dalších faktorů.  
+- Kolekce 1. generace je eskalace z kolekce 2. generace z důvodu jiných faktorů.  
   
- Prahové hodnoty, které zadáte <xref:System.GC.RegisterForFullGCNotification%2A> metoda platí pro první dva scénáře. První scénář, nebude však vždycky dostat oznámení v době úměrná prahové hodnoty, kterou zadáte pro dva důvody:  
+ Prahové hodnoty, které zadáte v <xref:System.GC.RegisterForFullGCNotification%2A> metodě, se vztahují na první dva scénáře. V prvním scénáři ale nebudete vždy dostávat oznámení v čase, který je úměrný prahovým hodnotám, které zadáte, ze dvou důvodů:  
   
-- Modul runtime nekontroluje každý přidělení malých objektů (z důvodů výkonu).  
+- Modul runtime nekontroluje každé přidělení malých objektů (z důvodů výkonu).  
   
-- Pouze generace 1 kolekce propagace paměti do 2. generace.  
+- Pouze kolekce 1. generace přivýší paměť do generace 2.  
   
- Třetí scénář také přispívá ke nejistota když bude oznámení zasláno. I když to není zárukou, že bude užitečný způsob, jak zmírnit efekty nevhodnou úplného uvolňování přesměrování požadavků během této doby nebo nevyvolá kolekci, sami když ho může lépe vyhovovat.  
+ Třetí scénář také přispívá k nejistotě, kdy obdržíte oznámení. I když se nejedná o záruku, ukáže se to jako užitečný způsob, jak zmírnit důsledky neoprávněného uvolňování paměti tím, že se žádosti v této době přesměrují, nebo když kolekci vyvoláte sami, když se dá lépe přizpůsobit.  
   
-## <a name="notification-threshold-parameters"></a>Parametry prahová hodnota oznámení  
- <xref:System.GC.RegisterForFullGCNotification%2A> Metoda má dva parametry k určení prahové hodnoty 2. generace objektů a haldy pro velké objekty. Pokud jsou splněny tyto hodnoty, by měla být zvýšena oznámení uvolnění paměti. Následující tabulka popisuje tyto parametry.  
+## <a name="notification-threshold-parameters"></a>Parametry prahové hodnoty oznámení  
+ <xref:System.GC.RegisterForFullGCNotification%2A> Metoda má dva parametry pro určení prahových hodnot objektů generace 2 a haldy velkých objektů. Po splnění těchto hodnot by se mělo vyvolat oznámení o uvolňování paměti. Tyto parametry jsou popsány v následující tabulce.  
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`maxGenerationThreshold`|Číslo mezi 1 a 99, která určuje, kdy by měla být zvýšena oznámení založené na objektech, které jsou povýšeny do generace 2.|  
-|`largeObjectHeapThreshold`|Číslo mezi 1 a 99, která určuje, kdy by měla být zvýšena oznámení založené na objektech, které jsou přiděleny do haldy pro velké objekty.|  
+|`maxGenerationThreshold`|Číslo mezi 1 a 99, které určuje, kdy má být oznámení vyvoláno na základě objektů povýšených v generaci 2.|  
+|`largeObjectHeapThreshold`|Číslo mezi 1 a 99, které určuje, kdy má být oznámení vyvoláno v závislosti na objektech, které jsou přiděleny v haldě velkých objektů.|  
   
- Pokud zadáte hodnotu, která je příliš vysoká, je vysoká pravděpodobnost, že bude zasláno oznámení, ale může být příliš dlouhou dobou čekat, než modul runtime způsobí, že kolekce. Pokud jste zahájit kolekce sami, může uvolnit více objektů, než by uvolnit, pokud modul runtime způsobí, že kolekce.  
+ Pokud zadáte hodnotu, která je příliš vysoká, dojde k vysoké pravděpodobnosti, že obdržíte oznámení, ale může být příliš dlouhé období, než modul runtime vyvolá kolekci. Pokud kolekci vyvoláte sami, můžete získat více objektů, než by byla uvolněna v případě, že modul runtime vyvolá kolekci.  
   
- Pokud zadáte hodnotu, která je příliš nízká, modul runtime může způsobit kolekci předtím, než máte dostatek času na upozornění.  
+ Pokud zadáte hodnotu, která je příliš nízká, modul runtime může tuto kolekci způsobit předtím, než bude dostatek času na oznámení.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- V následujícím příkladu skupiny serverů služby příchozích webových požadavků. Pro simulaci zatížení zpracování požadavků, bajtová pole se přidají do <xref:System.Collections.Generic.List%601> kolekce. Každý server zaregistruje pro oznámení uvolnění paměti a poté spustí vlákno na `WaitForFullGCProc` metody uživatele k nepřetržitému monitorování <xref:System.GCNotificationStatus> výčet, který je vrácený <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody.  
+ V následujícím příkladu skupina serverů obsluhuje příchozí webové požadavky. Chcete-li simulovat úlohy zpracování požadavků, Bajtová pole jsou přidána do <xref:System.Collections.Generic.List%601> kolekce. Každý server zaregistruje oznámení pro uvolňování paměti a potom spustí vlákno v `WaitForFullGCProc` metodě uživatele, aby nepřetržitě <xref:System.GCNotificationStatus> sledovalo výčet <xref:System.GC.WaitForFullGCApproach%2A> , který je <xref:System.GC.WaitForFullGCComplete%2A> vrácen metodou a metodou.  
   
- <xref:System.GC.WaitForFullGCApproach%2A> a <xref:System.GC.WaitForFullGCComplete%2A> metody volání svých metod uživatele zpracování událostí při vyvolání oznámení:  
+ Metody<xref:System.GC.WaitForFullGCComplete%2A>avolají při vyvolání oznámení příslušné metody pro zpracování událostí: <xref:System.GC.WaitForFullGCApproach%2A>  
   
 - `OnFullGCApproachNotify`  
   
-     Tato metoda volá `RedirectRequests` metody uživatele, který nastaví server služby Řízení front žádost o pozastavení odesílání požadavku na server. To se simuluje nastavením proměnné úrovni třídy `bAllocate` k `false` tak, aby se přidělují žádné další objekty.  
+     Tato metoda volá `RedirectRequests` metodu uživatele, která dává pokyn serveru služby Řízení front zpráv k pozastavení odesílání požadavků na server. To je simulované nastavením proměnné `bAllocate` `false` na úrovni třídy tak, aby nebyly přiděleny žádné další objekty.  
   
-     Dále `FinishExistingRequests` uživatele metoda je volána na dokončení zpracování žádosti čekající na vyřízení serveru. To se simuluje zrušením <xref:System.Collections.Generic.List%601> kolekce.  
+     Dále je volána metoda uživatelekdokončenízpracovánípožadavkůnaserver,kteréčekajínavyřízení.`FinishExistingRequests` To se simuluje vymazáním <xref:System.Collections.Generic.List%601> kolekce.  
   
-     Uvolňování paměti je vyvolaných finally, protože je zatížení světla.  
+     Nakonec je vyvolaný uvolňování paměti, protože zatížení je lehké.  
   
 - `OnFullGCCompleteNotify`  
   
-     Tato metoda volá metodu uživatele `AcceptRequests` obnovit přijímá žádosti, protože na serveru už není náchylné k úplné uvolnění paměti. Tato akce se simuluje tak, že nastavíte `bAllocate` proměnnou `true` tak, aby objekty může pokračovat se přidávají do <xref:System.Collections.Generic.List%601> kolekce.  
+     Tato metoda volá metodu `AcceptRequests` uživatele, aby obnovila přijímání požadavků, protože server již není náchylný k úplnému uvolňování paměti. Tato akce je simulována nastavením `bAllocate` `true` proměnné tak, aby bylo možné <xref:System.Collections.Generic.List%601> obnovit objekty do kolekce.  
   
- Následující kód obsahuje `Main` metoda v příkladu.  
+ Následující kód obsahuje `Main` metodu příkladu.  
   
  [!code-cpp[GCNotification#2](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#2)]
  [!code-csharp[GCNotification#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#2)]
  [!code-vb[GCNotification#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#2)]  
   
- Následující kód obsahuje `WaitForFullGCProc` metody uživatele, obsahující průběžné ke kontrole oznámení pro kolekci paměti smyčku while.  
+ Následující kód obsahuje `WaitForFullGCProc` metodu uživatele, která obsahuje nepřetržitou smyčku while ke kontrole oznámení o uvolňování paměti.  
   
  [!code-cpp[GCNotification#8](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#8)]
  [!code-csharp[GCNotification#8](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#8)]
  [!code-vb[GCNotification#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#8)]  
   
- Následující kód obsahuje `OnFullGCApproachNotify` způsob, jak volat z  
+ Následující kód obsahuje `OnFullGCApproachNotify` metodu volanou z  
   
- `WaitForFullGCProc` Metoda.  
+ `WaitForFullGCProc`Metoda.  
   
  [!code-cpp[GCNotification#5](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#5)]
  [!code-csharp[GCNotification#5](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#5)]
  [!code-vb[GCNotification#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#5)]  
   
- Následující kód obsahuje `OnFullGCApproachComplete` způsob, jak volat z  
+ Následující kód obsahuje `OnFullGCApproachComplete` metodu volanou z  
   
- `WaitForFullGCProc` Metoda.  
+ `WaitForFullGCProc`Metoda.  
   
  [!code-cpp[GCNotification#6](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#6)]
  [!code-csharp[GCNotification#6](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#6)]
  [!code-vb[GCNotification#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#6)]  
   
- Následující kód obsahuje metody uživatele, které se volají z `OnFullGCApproachNotify` a `OnFullGCCompleteNotify` metody. Metody uživatele přesměrování požadavků, Dokončit existující žádosti o a poté obnovit požadavky po úplné uvolnění paměti došlo k chybě.  
+ Následující kód obsahuje uživatelské metody, které jsou volány z `OnFullGCApproachNotify` metod a. `OnFullGCCompleteNotify` Metody uživatele přesměrují požadavky, dokončí stávající žádosti a pak obnoví požadavky po úplném uvolnění paměti.  
   
  [!code-cpp[GCNotification#9](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#9)]
  [!code-csharp[GCNotification#9](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#9)]
  [!code-vb[GCNotification#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#9)]  
   
- Vzorový kód celé vypadá takto:  
+ Celá ukázka kódu je následující:  
   
  [!code-cpp[GCNotification#1](../../../samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#1)]
  [!code-csharp[GCNotification#1](../../../samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#1)]

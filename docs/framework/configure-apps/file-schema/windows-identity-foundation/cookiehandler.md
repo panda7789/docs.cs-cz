@@ -3,12 +3,12 @@ title: <cookieHandler>
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-ms.openlocfilehash: 6c62100b2445ae10a83ebd9e7d154a6e2aa14e0b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 1c044f7346fabc77d7744f42c5bfd3d86d72402e
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942804"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988342"
 ---
 # <a name="cookiehandler"></a>\<cookieHandler>
 <xref:System.IdentityModel.Services.SessionAuthenticationModule> Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , jak bude (SAM) používat ke čtení a zápisu souborů cookie.  
@@ -77,7 +77,7 @@ ms.locfileid: "69942804"
  Následující kód XML ukazuje `<cookieHandler>` element. V tomto příkladu, protože `mode` atribut není zadán, bude soubor Sam použit jako výchozí obslužná rutina souborů cookie. Toto je instance <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy. Vzhledem k tomu, že podřízenýelementnenízadán,budepoužitavýchozívelikostbloku.`<chunkedCookieHandler>` Protokol HTTPS nebude vyžadován, protože `requireSsl` je nastaven `false`atribut.  
   
 > [!WARNING]
->  V tomto příkladu není protokol HTTPS nutný k zápisu souborů cookie relace. Důvodem je `requireSsl` , že atribut `<cookieHandler>` prvku je nastaven na `false`hodnotu. Toto nastavení se nedoporučuje pro většinu produkčních prostředí, protože může představovat bezpečnostní riziko.  
+> V tomto příkladu není protokol HTTPS nutný k zápisu souborů cookie relace. Důvodem je `requireSsl` , že atribut `<cookieHandler>` prvku je nastaven na `false`hodnotu. Toto nastavení se nedoporučuje pro většinu produkčních prostředí, protože může představovat bezpečnostní riziko.  
   
 ```xml  
 <cookieHandler requireSsl="false" />  

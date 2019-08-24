@@ -14,39 +14,39 @@ helpviewer_keywords:
 - Windows Forms controls, nonvisual
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
-ms.openlocfilehash: 49bf927085d29b60c1d9cf5d61df3894495349db
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: bc1f844e5a2cf4d4f3b64ebf20e935f36ff85e12
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65210415"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987090"
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms
 
-Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše aplikace. Na rozdíl od jiných ovládacích prvků součástí neposkytují uživatelského rozhraní pro uživatele a proto není potřeba zobrazovat na plochu návrháře formulářů Windows. Při přidání komponenty do formuláře, zobrazí Návrhář formulářů Windows umožňující změnu velikosti na hlavním panelu v dolní části formuláře, ve kterém jsou zobrazeny všechny součásti. Jakmile ovládací prvek byl přidán do panelu komponent, můžete vybrat komponentu a nastavit jeho vlastnosti, stejně jako jakýkoli jiný ovládací prvek na formuláři.
+Nevizuální ovládací prvek (nebo komponenta) poskytuje vaší aplikaci funkce. Na rozdíl od jiných ovládacích prvků komponenty neposkytují uživatelské rozhraní uživateli, a proto nemusí být zobrazeny na Návrhář formulářů ploše. Když je do formuláře přidána součást, Návrhář formulářů zobrazí v dolní části formuláře, kde jsou zobrazeny všechny komponenty, zásobník s možností změny velikosti. Po přidání ovládacího prvku do zásobníku komponenty můžete vybrat komponentu a nastavit její vlastnosti stejným způsobem jako jakýkoli jiný ovládací prvek ve formuláři.
 
-## <a name="add-a-component-to-a-windows-form"></a>Přidejte komponentu do formuláře Windows
+## <a name="add-a-component-to-a-windows-form"></a>Přidání komponenty do formuláře Windows
 
-1. Otevřete formulář v sadě Visual Studio. Podrobnosti najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).
+1. Otevřete formulář v aplikaci Visual Studio. Podrobnosti najdete v tématu [How to: Zobrazit model Windows Forms v Návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100))
 
-2. V **nástrojů**, klikněte na komponentu a přetáhněte ji do svého formuláře.
+2. V sadě **nástrojů**klikněte na součást a přetáhněte ji do formuláře.
 
-     V panelu komponent se zobrazí vaše komponenta.
+     Vaše komponenta se zobrazí v zásobníku součásti.
 
-Kromě toho můžete přidávat součásti do formuláře v době běhu. Totiž běžný scénář, zejména komponenty nemají visual výrazu, na rozdíl od ovládacích prvků, které mají uživatelské rozhraní. V následujícím příkladu <xref:System.Windows.Forms.Timer> přidání komponenty v době běhu. (Všimněte si, že Visual Studio obsahuje několik různých časovače; v takovém případě použijte prvku Windows Forms <xref:System.Windows.Forms.Timer> komponenty. Další informace o různých časovače v sadě Visual Studio najdete v tématu [Úvod do serverových časovače](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).)
+Kromě toho je možné přidat komponenty do formuláře za běhu. Toto je běžný scénář, zejména protože komponenty nemají vizuální výraz, na rozdíl od ovládacích prvků, které mají uživatelské rozhraní. V následujícím <xref:System.Windows.Forms.Timer> příkladu je přidána komponenta v době běhu. (Všimněte si, že Visual Studio obsahuje několik různých časovačů. v takovém případě použijte model Windows Forms <xref:System.Windows.Forms.Timer> komponentu. Další informace o různých časovačích v aplikaci Visual Studio naleznete v tématu [Úvod do časovačů na serveru](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).)
 
 > [!CAUTION]
-> Součásti mají často vlastnosti specifické pro ovládací prvek, které musí být nastavena pro komponentu funkce efektivně. V případě třídy <xref:System.Windows.Forms.Timer> součásti, můžete nastavit `Interval` vlastnost. Ujistěte se, při přidávání součástí do projektu, nastavit vlastnosti pro tuto součást.
+> Komponenty mají často vlastnosti specifické pro ovládací prvky, které je třeba nastavit, aby součást fungovala efektivně. V případě <xref:System.Windows.Forms.Timer> komponenty níže `Interval` nastavte vlastnost. Ujistěte se, že při přidávání součástí do projektu jste nastavili vlastnosti nezbytné pro danou součást.
 
-## <a name="add-a-component-to-a-windows-form-programmatically"></a>Přidejte komponentu do formuláře Windows prostřednictvím kódu programu
+## <a name="add-a-component-to-a-windows-form-programmatically"></a>Programové přidání komponenty do formuláře Windows
 
-1. Vytvoření instance <xref:System.Windows.Forms.Timer> třídu v kódu.
+1. Vytvoří instanci <xref:System.Windows.Forms.Timer> třídy v kódu.
 
-2. Nastavte `Interval` a určí čas mezi značkami časovače.
+2. `Interval` Nastavte vlastnost tak, aby určovala dobu mezi takty časovače.
 
-3. Nakonfigurujte další nezbytné vlastnosti pro komponentu.
+3. Nakonfigurujte všechny další nezbytné vlastnosti pro komponentu.
 
-     Následující kód ukazuje vytvoření objektu <xref:System.Windows.Forms.Timer> s jeho `Interval` sadu vlastností.
+     Následující kód ukazuje vytvoření a <xref:System.Windows.Forms.Timer> `Interval` s nastavenou vlastností.
 
     ```vb
     Public Sub CreateTimer()
@@ -75,14 +75,13 @@ Kromě toho můžete přidávat součásti do formuláře v době běhu. Totiž 
     ```
 
     > [!IMPORTANT]
-    > Pomocí odkazu na škodlivý uživatelský ovládací prvek může zveřejnit místního počítače k ohrožení zabezpečení prostřednictvím sítě. To může být pouze v případě nežádoucí osoba vytváření škodlivé vlastního ovládacího prvku, za nímž následuje omylem přidání do projektu žádný problém.
+    > Místní počítač můžete vystavit bezpečnostnímu riziku prostřednictvím sítě odkazem na škodlivý prvek UserControl. To by mělo být obavy jenom v případě, že by škodlivá osoba vytvořila škodlivý vlastní ovládací prvek, a pak ji nepřidali do projektu omylem.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Windows Forms – ovládací prvky](index.md)
-- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
-- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)
-- [Postupy: Kopírování ovládacích prvků mezi formuláři Windows](how-to-copy-controls-between-windows-forms.md)
+- [Postupy: Přidat ovládací prvky do model Windows Forms](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidat ovládací prvky ActiveX do model Windows Forms](how-to-add-activex-controls-to-windows-forms.md)
 - [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 62d14b422ccaf963c5488498be430a0a9c4770c7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 4ff02c5856e4ee48c8e5cf375cc68d92c76737c7
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928013"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988395"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikaci, můžete určit, že má běžet v operačním systému Windows 64 jako nativní aplikace nebo v modulu WOW64 (Windows 32-bit v systému Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, které umožňuje spuštění 32 aplikace v systému 64. Subsystém WOW64 je součástí všech 64 bitových verzí operačního systému Windows.  
@@ -56,8 +56,8 @@ Když kompilujete aplikaci, můžete určit, že má běžet v operačním syst�
   
 |Přepínač|Možnost kompilátoru|  
 |--------------|---------------------|  
-|Visual Basic|[/Platform (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/platform.md)|  
-|Visual C#|[/Platform (C# možnosti kompilátoru)](~/docs/csharp/language-reference/compiler-options/platform-compiler-option.md)|  
+|Visual Basic|[/Platform (Visual Basic)](../visual-basic/reference/command-line-compiler/platform.md)|  
+|Visual C#|[/Platform (C# možnosti kompilátoru)](../csharp/language-reference/compiler-options/platform-compiler-option.md)|  
 |Visual C++|Pomocí **/clr: Safe**můžete vytvářet aplikace nezávislá platforem a aplikací jazyka MSIL (Microsoft Intermediate Language). Další informace naleznete v tématu [/CLR (Common Language Runtime Compilation)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Vizuál C++ obsahuje samostatný kompilátor pro každý 64 operační systém. Další informace o tom, jak používat vizuál C++ k vytváření nativních aplikací, které běží na 64 operačním systému Windows, najdete v tématu [64-bitové programování](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
   
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Určení stavu souboru EXE nebo DLL  

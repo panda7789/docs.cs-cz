@@ -7,44 +7,44 @@ helpviewer_keywords:
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3f87fb330fbea1344cc8532519d358fe8580a9fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f283aad7c6727aff111aaaf78beb1e8da4b45898
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592708"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988364"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
-Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům při sestavení.  
+Silné pojmenovávání sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům sestavení.  
   
-## <a name="what-makes-a-strong-named-assembly"></a>Co vlastně sestavení se silným názvem?  
- Silně pojmenované sestavení je generováno pomocí privátního klíče, který odpovídá veřejnému klíči distribuovat se sestavení a samotného sestavení. Sestavení obsahuje manifest sestavení, který obsahuje názvy a hash hodnoty všech souborů, které tvoří sestavení. Sestavení, která se stejným silným názvem musí být identické.  
+## <a name="what-makes-a-strong-named-assembly"></a>Co dělá sestavení se silným názvem?  
+ Silné pojmenované sestavení je generováno pomocí privátního klíče, který odpovídá veřejnému klíči distribuovanému se sestavením a samotným sestavením. Sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, ze kterých se skládá sestavení. Sestavení se stejným silným názvem by měla být shodná.  
   
- Je možné sestavení se silným názvem pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [jak: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md) nebo [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
+ Sestavení se silným názvem můžete vytvořit pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [jak: Podepište sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md) nebo [sn. exe (Nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
   
- Když se vytvoří sestavení se silným názvem, obsahuje jednoduchý textový název sestavení, číslo verze, jazykovou verzi volitelné informace, digitální podpis a veřejný klíč, který odpovídá privátní klíč používaný k podepisování.  
+ Když je vytvořeno sestavení se silným názvem, obsahuje jednoduchý textový název sestavení, číslo verze, volitelné informace o jazykové verzi, digitální podpis a veřejný klíč, který odpovídá privátnímu klíči používanému k podepisování.  
   
 > [!WARNING]
->  Nespoléhejte na silných názvů pro zabezpečení. Poskytují jedinečné identity.  
+> Nespoléhá se na silné názvy zabezpečení. Poskytují pouze jedinečnou identitu.  
   
-## <a name="why-strong-name-your-assemblies"></a>Proč se silným názvem vašeho sestavení?  
- Při odkazování na sestavení se silným názvem, můžete očekávat určité výhody, jako je například Správa verzí a pojmenování ochrany. Sestavení se silným názvem je možné nainstalovat do globální mezipaměti sestavení, je nutná pro povolení některé scénáře.  
+## <a name="why-strong-name-your-assemblies"></a>Proč je sestavení silným názvem?  
+ Když odkazujete na sestavení se silným názvem, můžete očekávat určité výhody, jako je například Správa verzí a ochrana názvů. Sestavení se silným názvem může být instalována v globální mezipaměti sestavení (GAC), která je nutná k povolení některých scénářů.  
   
- Sestavení se silným názvem jsou užitečné v následujících scénářích:  
+ Sestavení se silným názvem jsou užitečná v následujících situacích:  
   
-- Chcete povolit vaše sestavení může odkazovat sestavení se silným názvem, nebo chcete poskytnout `friend` přístup k sestavení z jiných sestavení se silným názvem.  
+- Chcete povolit odkazování na vaše sestavení pomocí sestavení se silným názvem, nebo chcete udělit `friend` přístup k sestavením z jiných sestavení se silným názvem.  
   
-- Aplikace potřebuje přístup k různé verze téhož sestavení. To znamená, že potřebujete různé verze sestavení, které chcete načíst vedle sebe ve stejné doméně aplikace bez konfliktu. Například pokud různých rozšíření rozhraní API v sestavení, které mají stejný jednoduchý název, silné názvy poskytuje jedinečné identity pro každou verzi sestavení.  
+- Aplikace potřebuje přístup k různým verzím stejného sestavení. To znamená, že budete potřebovat různé verze sestavení pro zatížení souběžně ve stejné doméně aplikace bez konfliktu. Například pokud různá rozšíření rozhraní API existují v sestaveních se stejným jednoduchým názvem, silné názvy poskytují jedinečnou identitu pro každou verzi sestavení.  
   
-- Nechcete negativně ovlivnit výkon aplikace pomocí sestavení, takže má sestavení jako doménově neutrální. To vyžaduje silné názvy protože doménově neutrální sestavení musí být nainstalováno v globální mezipaměti sestavení.  
+- Nechcete negativně ovlivnit výkon aplikací, které používají sestavení, takže chcete, aby bylo sestavení v doméně neutrální. To vyžaduje silné pojmenovávání, protože v globální mezipaměti sestavení (GAC) musí být nainstalována doménově neutrální sestavení.  
   
-- Pokud chcete centralizovat údržby pro vaši aplikaci s použitím zásad vydavatele, což znamená, že sestavení v globální mezipaměti sestavení musí nainstalovat.  
+- Pokud chcete centralizovat obsluhu pro vaši aplikaci pomocí zásad vydavatele, což znamená, že sestavení musí být nainstalováno v globální mezipaměti sestavení (GAC).  
   
- Pokud jsou open source vývojářů a chcete využít výhod Identita sestavení se silným názvem, je vhodné zkontrolovat v privátní klíč přidružený k sestavení do systému správy zdrojů.  
+ Pokud jste Open Source vývojář a chcete mít výhody identity sestavení se silným názvem, zvažte vrácení privátního klíče přidruženého k sestavení do systému správy zdrojového kódu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
-- [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
+- [Postupy: Podepsat sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
 - [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
 - [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

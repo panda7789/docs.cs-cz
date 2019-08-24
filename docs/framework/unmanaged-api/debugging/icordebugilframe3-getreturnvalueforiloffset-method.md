@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ac90473a0bf15173683c45abc8e4a840ea7e733
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5832ec095ea0e96327f6a9636193da9c0c8a5dd2
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946430"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988270"
 ---
 # <a name="icordebugilframe3getreturnvalueforiloffset-method"></a>ICorDebugILFrame3::GetReturnValueForILOffset – metoda
 Získá objekt "ICorDebugValue", který zapouzdřuje vrácenou hodnotu funkce.  
@@ -36,41 +36,41 @@ HRESULT GetReturnValueForILOffset(
   
 ## <a name="parameters"></a>Parametry  
  `ILOffset`  
- Posun IL. V části poznámky.  
+ Posun IL Viz část poznámky.  
   
  `ppReturnValue`  
- Ukazatel na adresu objektu rozhraní "ICorDebugValue", který poskytuje informace o vrácené hodnotě volání funkce.  
+ Ukazatel na adresu objektu rozhraní "ICorDebugValue", která poskytuje informace o vrácené hodnotě volání funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda se používá spolu s [ICorDebugCode3::GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) metodu k získání vrácené hodnoty metody. Je to užitečné zejména v případě metod, jejichž vrácené hodnoty jsou ignorovány, stejně jako v následujících dvou příkladech. První příklad volá <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> metody, ale ignoruje vrácenou hodnotu metody.  
+ Tato metoda se používá společně s metodou [ICorDebugCode3:: GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) pro získání návratové hodnoty metody. Je zvláště užitečné v případě metod, jejichž návratové hodnoty jsou ignorovány, jako v následujících dvou příkladech kódu. První příklad volá <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> metodu, ale ignoruje návratovou hodnotu metody.  
   
  [!code-csharp[Unmanaged.Debugging.MRV#1](../../../../samples/snippets/csharp/VS_Snippets_CLR/unmanaged.debugging.mrv/cs/mrv1.cs#1)]
  [!code-vb[Unmanaged.Debugging.MRV#1](../../../../samples/snippets/visualbasic/VS_Snippets_CLR/unmanaged.debugging.mrv/vb/mrv1.vb#1)]  
   
- Druhý příklad ukazuje mnohem častější problém v ladění. Protože metoda se používá jako argument ve volání metody, vrácená hodnota je dostupná jenom v případě, že ladicí program projde volané metody. V mnoha případech zejména pokud volaná metoda je definována v externí knihovně, která není možné.  
+ Druhý příklad ukazuje mnohem častější problém při ladění. Vzhledem k tomu, že metoda je použita jako argument ve volání metody, je její návratová hodnota přístupná pouze v případě, že ladicí program projde volanou metodou. V mnoha případech, zejména v případě, že je volaná metoda definována v externí knihovně, to není možné.  
   
  [!code-csharp[Unmanaged.Debugging.MRV#2](../../../../samples/snippets/csharp/VS_Snippets_CLR/unmanaged.debugging.mrv/cs/mrv2.cs#2)]
  [!code-vb[Unmanaged.Debugging.MRV#2](../../../../samples/snippets/visualbasic/VS_Snippets_CLR/unmanaged.debugging.mrv/vb/mrv2.vb#2)]  
   
- Pokud předáte [ICorDebugCode3::GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) metoda posun IL na funkci volání webu, vrátí jeden nebo více nativních posunů. Ladicí program může potom nastavit zarážky u těchto nativních posunů funkce. Pokud ladicí program narazí na jednu ze zarážek, které můžete předat stejné odsazení IL, které jste předali do této metody k získání vrácené hodnoty. Ladicí program by měl poté zrušit všechny zarážky, které nastavil.  
+ Pokud předáte metodu [ICorDebugCode3:: GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) , posun IL na web volání funkce, vrátí jedno nebo více nativních posunů. Ladicí program pak může nastavit zarážky na těchto nativních posunech ve funkci. Když ladicí program narazí na jednu ze zarážek, můžete předat stejný posun IL, který jste předali do této metody, a získat tak návratovou hodnotu. Ladicí program by pak měl vymazat všechny zarážky, které nastavily.  
   
 > [!WARNING]
->  [ICorDebugCode3::GetReturnValueLiveOffset Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) a `ICorDebugILFrame3::GetReturnValueForILOffset` metody umožňují získat informace o vrácené hodnotě pouze pro typy odkazů. Načítají se informace o vrácené hodnotě z typů hodnot (to znamená, že všechny typy, které jsou odvozeny z <xref:System.ValueType>) se nepodporuje.  
+> [Metoda ICorDebugCode3:: GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) a `ICorDebugILFrame3::GetReturnValueForILOffset` metody umožňují získat informace o vrácených hodnotách pouze pro typy odkazů. Načítání informací o vrácených hodnotách z typů hodnot (tj. všechny typy, <xref:System.ValueType>které jsou odvozeny z), nejsou podporovány.  
   
- Posun IL určený parametrem `ILOffset` parametr by měl být v místě volání funkce a laděný proces by měl být zastaven na zarážce nastavené pro nativní posun vrácený metodou [ICorDebugCode3::GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) – metoda pro stejný posun IL. Pokud laděná položka není zastavená na správném umístění pro zadaný posun IL, rozhraní API se nezdaří.  
+ Posun IL určený `ILOffset` parametrem by měl být na webu volání funkce a laděného procesu by měl být zastaven na zarážce nastavenou v nativním posunu vráceném metodou [ICorDebugCode3:: GetReturnValueLiveOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-getreturnvalueliveoffset-method.md) pro stejný posun IL. Pokud se laděného procesu nezastaví na správném místě pro zadaný posun IL, rozhraní API se nezdaří.  
   
- Pokud volání funkce nevrací hodnotu, rozhraní API se nezdaří.  
+ Pokud volání funkce nevrátí hodnotu, rozhraní API se nezdaří.  
   
- `ICorDebugILFrame3::GetReturnValueForILOffset` Metoda je k dispozici pouze na základě x86 a AMD64 systémy.  
+ Tato `ICorDebugILFrame3::GetReturnValueForILOffset` metoda je k dispozici pouze v systémech založených na platformě x86 a amd64.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 966c3c17c3c42e20ad55681e1c17b13d3f466fa3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 665ede5b5a46c4093382bed5ed28a0d2bba979be
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967820"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988597"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) může použít dvě různé technologie serializace k zapínání dat v aplikaci do formátu XML, který se přenáší mezi klienty a službami, což je proces, který se nazývá serializace.  
@@ -97,7 +97,7 @@ Windows Communication Foundation (WCF) může použít dvě různé technologie 
  Typy, které implementují `IXmlSerializable` rozhraní, jsou plně podporovány `DataContractSerializer`rozhraním. <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> Atribut by měl být vždy použit pro tyto typy pro kontrolu jejich schématu.  
   
 > [!WARNING]
->  Pokud provádíte serializaci polymorfních typů, je nutné <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> použít na typ pro zajištění, že je správně serializován typ.  
+> Pokud provádíte serializaci polymorfních typů, je nutné <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> použít na typ pro zajištění, že je správně serializován typ.  
   
  Existují tři různé typy, které implementují `IXmlSerializable`: typy, které představují libovolný obsah, typy, které představují jeden element a starší <xref:System.Data.DataSet> typy.  
   

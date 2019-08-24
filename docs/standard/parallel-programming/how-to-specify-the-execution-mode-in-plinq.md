@@ -10,27 +10,27 @@ helpviewer_keywords:
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c67b23da6742af3cb65da6da49dbab982a0248bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 705b6bc364e2ecf00c3629814228157c90017a8b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61683194"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988443"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Postupy: Určení režimu spouštění v PLINQ
-Tento příklad ukazuje, jak k vynucení PLINQ paralelizovat dotaz bez ohledu na to, na tvar dotazu a obejít své výchozí heuristické metody.  
+Tento příklad ukazuje, jak vynutit, aby PLINQ vynechal výchozí heuristické a paralelizovat dotaz bez ohledu na tvar dotazu.  
   
 > [!WARNING]
->  V tomto příkladu je za cíl předvést využití a nemusí pracovat rychleji než ekvivalentní sekvenčních LINQ to Objects dotazům. Další informace o zrychlení najdete v tématu [porozumění zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   
- PLINQ je navržená ke zneužití příležitosti pro paralelizaci. Ale ne všechny dotazy výhod paralelního provádění. Například pokud dotaz obsahuje jeden uživatelský delegát, který nemá příliš mnoho zásahů, dotaz bude obvykle fungovat rychleji postupně. Je to proto dražší než zrychlení, která se získá je režie spojená s povolením paralelního spuštění. Proto PLINQ paralelní provádění automaticky každého dotazu. Nejprve zkontroluje tvar dotaz a různé operátory, které ho tvoří. Na základě této analýzy, PLINQ ve výchozím režimu zpracování může rozhodnout provést některé nebo všechny dotaz sekvenčně. Ale v některých případech může vědět více o dotazu než PLINQ je schopna určit z jejich analýzu. Může například vědět, že delegát je velmi náročná a, že dotaz bude určitě těžit z paralelního zpracování. V takovém případě můžete použít <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metodu a zadejte <xref:System.Linq.ParallelExecutionMode.ForceParallelism> hodnotu k vynucení PLINQ dotaz vždy spustit paralelně.  
+ PLINQ je navržený tak, aby využil příležitostí k paralelnímu využití. Ale ne všechny dotazy využívají paralelní provádění. Pokud například dotaz obsahuje delegáta s jedním uživatelem, který má velmi malou práci, dotaz se obvykle spustí rychleji sekvenčně. Důvodem je to, že režie spojená s povolením provádění virtuálního je dražší než zrychlení získaná. Proto PLINQ automaticky paralelizovat každý dotaz. Nejprve prověřuje tvar dotazu a různé operátory, které jej tvoří. V závislosti na této analýze se PLINQ ve výchozím režimu spuštění může rozhodnout spustit některý nebo celý dotaz sekvenčně. V některých případech však můžete o dotazu zjistit více, než je PLINQ schopný určit z jeho analýzy. Například můžete zjistit, že delegát je velmi nákladný a že dotaz bude mít jedinečnou výhodu od paralelismu. V takových případech můžete použít <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metodu a <xref:System.Linq.ParallelExecutionMode.ForceParallelism> zadat hodnotu, která dává pokyn pro PLINQ, aby dotaz vždy spouštěl paralelně.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vyjmout a vložit tento kód do [ukázková Data pro PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) a volejte metodu z `Main`.  
+ Vyjměte a vložte tento kód do [ukázky dat pro PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) a zavolejte metodu z `Main`.  
   
 ## <a name="see-also"></a>Viz také:
 

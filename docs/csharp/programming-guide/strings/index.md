@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 39b48e7a0a296c2f4a4a2be76e0663ea3018e453
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d9453f931bba9b1d3b5db3b4f80aa365677c0b76
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928176"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988416"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> , jehož hodnota je text. Interně je text uložen jako sekvenční kolekce <xref:System.Char> objektů jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost řetězce představuje `Char` počet objektů, které obsahuje, nikoli počet znaků Unicode. <xref:System.String.Length%2A> Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte <xref:System.Globalization.StringInfo> objekt.  
@@ -68,7 +68,7 @@ ms.locfileid: "69928176"
 |\x|Řídicí sekvence Unicode podobně jako "\u" s výjimkou proměnné délky|`\xH[H][H][H]`oblasti 0 – FFFF; Příklad: `\x00E7` nebo `\x0E7` or `\xE7` = "ç")|  
   
 > [!WARNING]
->  Při použití `\x` řídicí sekvence a zadání méně než 4 šestnáctkových číslic, pokud jsou znaky, které bezprostředně následují řídicí sekvence, platné šestnáctkové číslice (tj. 0-9, a-f a a-F), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je kódový bod U + 00A1. Pokud je však další znak "a" nebo "a", pak bude řídicí sekvence místo interpretovat jako `\xA1A` "&#x0A1A;", což je kódový bod U + 0A1A. V takových případech zadáním všech 4 hex číslic (např. `\x00A1` ) zabráníte případnému případnému mylnému výkladu.  
+> Při použití `\x` řídicí sekvence a zadání méně než 4 šestnáctkových číslic, pokud jsou znaky, které bezprostředně následují řídicí sekvence, platné šestnáctkové číslice (tj. 0-9, a-f a a-F), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je kódový bod U + 00A1. Pokud je však další znak "a" nebo "a", pak bude řídicí sekvence místo interpretovat jako `\xA1A` "&#x0A1A;", což je kódový bod U + 0A1A. V takových případech zadáním všech 4 hex číslic (např. `\x00A1` ) zabráníte případnému případnému mylnému výkladu.  
   
 > [!NOTE]
 > V době kompilace jsou doslovné řetězce převedeny na běžné řetězce se všemi stejnými řídicími sekvencemi. Proto pokud si v okně kukátka ladicího programu zobrazíte doslovné řetězce, zobrazí se řídicí znaky, které byly přidány kompilátorem, nikoli doslovné verze ze zdrojového kódu. Například doslovné řetězec `@"C:\files.txt"` se zobrazí v okně kukátko jako "C:\\\files.txt".  

@@ -2,26 +2,26 @@
 title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 1ebce4f0182b68e0e3c10d3d04e07560130c0245
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cdab0876b65c190cd5d46f82218eb9fbb8234298
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635294"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988197"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
-Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace procesu Windows (WAS) hostovaná služba Windows Communication Foundation (WCF). BYL je nová aktivační služba procesů, který je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. WCF rozhraní adaptér naslouchací proces používá ke komunikaci žádosti o aktivaci, které jsou přijímány prostřednictvím protokolů jiným protokolem než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby Řízení front zpráv.  
+Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace procesů systému Windows (označované také jako) hostované služby Windows Communication Foundation (WCF). BYLA Nová aktivační služba procesů, která je generalizací funkcí služby Internetová informační služba (IIS), které fungují s protokoly přenosů bez protokolu HTTP. Služba WCF používá rozhraní naslouchacího adaptéru ke komunikaci s požadavky na aktivaci, které jsou přijímány prostřednictvím protokolů jiných než HTTP podporovaných službou WCF, jako je například TCP, pojmenované kanály a služba Řízení front zpráv.  
   
- Tato možnost hostování vyžaduje, aby komponenty aktivace WAS správně nainstalován a nakonfigurován, ale nevyžaduje žádné hostování kódu má být zapsán jako součást aplikace. Další informace o instalaci a konfiguraci služby WAS najdete v tématu [jak: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ Tato možnost hostování vyžaduje, aby byly aktivační komponenty správně nainstalované a nakonfigurované, ale nevyžadují, aby se v rámci aplikace napsal žádný hostující kód. Další informace o instalaci a konfiguraci nástroje najdete v tématu [How to: Instalace a konfigurace aktivačních komponent](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)WCF.  
   
 > [!WARNING]
->  BYLA aktivace není podporována, pokud kanál pro zpracování požadavku webový server je nastavená na klasickém režimu. Kanál pro zpracování požadavku webový server musí být nastavena na integrovaný režim, který se má použít při aktivaci WAS.  
+> Aktivace byla Nepodporovaná, pokud je kanál pro zpracování požadavků webového serveru nastavený na klasický režim. Pokud byla použita aktivace, musí být kanál zpracování požadavků webového serveru nastaven na integrovaný režim.  
   
- Při je hostování služby WCF ve WAS standardní vazby používají obvyklým způsobem. Ale při použití <xref:System.ServiceModel.NetTcpBinding> a <xref:System.ServiceModel.NetNamedPipeBinding> konfigurace WAS hostované služby, musí splňovat omezení. Při různých koncových bodů pomocí stejného dopravy, mají nastavení vazby tak, aby odpovídaly na sedm následující vlastnosti:  
+ Když je služba WCF hostována v nástroji, používají se standardní vazby obvyklým způsobem. Nicméně při použití rozhraní <xref:System.ServiceModel.NetTcpBinding> <xref:System.ServiceModel.NetNamedPipeBinding> a ke konfiguraci hostované služby, musí být splněno omezení. Pokud různé koncové body používají stejný přenos, nastavení vazby musí odpovídat následující sedm vlastností:  
   
-- connectionBufferSize  
+- ConnectionBufferSize  
   
-- třídě channelInitializationTimeout  
+- ChannelInitializationTimeout  
   
 - MaxPendingConnections  
   
@@ -33,21 +33,21 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
   
 - ConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint  
   
- V opačném případě koncového bodu, který je inicializován nejdřív vždy zjistí hodnoty těchto vlastností a vyvolat pozdějším přidání koncových bodů <xref:System.ServiceModel.ServiceActivationException> Pokud shodné nejsou tato nastavení.  
+ V opačném případě bude koncový bod, který se inicializuje jako první, určit hodnoty těchto vlastností a koncové body přidané <xref:System.ServiceModel.ServiceActivationException> později vyvolají, pokud se neshodují s těmito nastaveními.  
   
- Pro zdrojovou kopii tohoto příkladu, naleznete v tématu [Aktivace protokolem TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
+ Zdrojovou kopii tohoto příkladu najdete v tématu [Aktivace protokolem TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
   
-### <a name="to-create-a-basic-service-hosted-by-was"></a>Chcete-li vytvořit základní služba hostovaná společností WAS  
+### <a name="to-create-a-basic-service-hosted-by-was"></a>Vytvoření základní služby hostované nástrojem WAS  
   
-1. Definování kontraktu služby pro typ služby.  
+1. Definujte kontrakt služby pro typ služby.  
   
      [!code-csharp[C_HowTo_HostInWAS#1121](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/service.cs#1121)]  
   
-2. Implementace kontraktu služby ve třídě služby. Všimněte si, že není adresu nebo vazby informace zadat v rámci implementace služby. Kód také, není nutné zapsat, aby načítal příslušné informace z konfiguračního souboru.  
+2. Implementujte kontrakt služby ve třídě služby. Všimněte si, že v rámci implementace služby není zadaná adresa nebo informace o vazbě. Také není nutné zapisovat kód pro načtení těchto informací z konfiguračního souboru.  
   
      [!code-csharp[C_HowTo_HostInWAS#1122](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/service.cs#1122)]  
   
-3. Vytvořte soubor Web.config k definování <xref:System.ServiceModel.NetTcpBinding> vazby používané `CalculatorService` koncových bodů.  
+3. Vytvořte soubor Web. config pro definování <xref:System.ServiceModel.NetTcpBinding> vazby, která bude použita `CalculatorService` pro koncové body.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -64,41 +64,41 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
     </configuration>  
     ```  
   
-4. Vytvořte Service.svc soubor, který obsahuje následující kód.  
+4. Vytvořte soubor Service. svc, který obsahuje následující kód.  
   
     ```  
     <%@ServiceHost language=c# Service="CalculatorService" %>   
     ```  
   
-5. Umístěte soubor Service.svc virtuální adresář služby IIS.  
+5. Umístěte soubor Service. svc do virtuálního adresáře služby IIS.  
   
-### <a name="to-create-a-client-to-use-the-service"></a>K vytvoření klienta k používání služby  
+### <a name="to-create-a-client-to-use-the-service"></a>Vytvoření klienta pro používání služby  
   
-1. Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku pro generování kódu z metadat služby.  
+1. K vygenerování kódu z metadat služby použijte [Nástroj Svcutil. exe (s metadaty ServiceModel)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.  
   
     ```  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
     ```  
   
-2. Klient, který je generován obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí splňovat implementace klienta.  
+2. Vygenerovaný klient obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí implementace klienta splňovat.  
   
      [!code-csharp[C_HowTo_HostInWAS#1221](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1221)]  
   
-3. Generovaný klientskou aplikací také obsahuje implementaci `ClientCalculator`. Všimněte si, že informace o adrese a vazby není zadán kdekoli uvnitř implementace služby. Kód také, není nutné zapsat, aby načítal příslušné informace z konfiguračního souboru.  
+3. Vygenerovaná klientská aplikace také obsahuje implementaci `ClientCalculator`. Všimněte si, že informace o adrese a vazbě nejsou zadány kamkoli v rámci implementace služby. Také není nutné zapisovat kód pro načtení těchto informací z konfiguračního souboru.  
   
      [!code-csharp[C_HowTo_HostInWAS#1222](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1222)]  
   
-4. Konfigurace pro klienta, který se používá <xref:System.ServiceModel.NetTcpBinding> také vygeneruje Svcutil.exe. Tento soubor by měl mít název v souboru App.config při používání sady Visual Studio.  
+4. Konfigurace klienta, který používá <xref:System.ServiceModel.NetTcpBinding> , je vygenerována také nástrojem Svcutil. exe. Tento soubor by měl být pojmenován v souboru App. config při použití sady Visual Studio.  
   
      [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]   
   
-5. Vytvoření instance `ClientCalculator` v aplikaci a pak volání operací služby.  
+5. Vytvořte instanci `ClientCalculator` v aplikaci a potom zavolejte operace služby.  
   
      [!code-csharp[C_HowTo_HostInWAS#1223](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/cs/client.cs#1223)]  
   
-6. Kompilace a spuštění klienta.  
+6. Zkompilujte a spusťte klienta.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: a2f1ef37914c932801699bb2f9c2323dd0408e7f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 9316a46f809eec21f73e8eeadb49baf1748c6ca0
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964969"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988247"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Store. Tyto aplikace jsou navržené kolem rozhraní dotykové obrazovky. .NET Framework 4,5 umožňuje aplikacím pro Windows Store volat služby WCF.  
@@ -19,7 +19,7 @@ Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Sto
 > Místo těch, která služba WCF vystavuje, použijte rozhraní API syndikace WinRT. Další informace najdete v tématu [rozhraní API syndikace WinRT](https://go.microsoft.com/fwlink/?LinkId=236265) .  
   
 > [!WARNING]
->  Přidání odkazu webové služby na prostředí Windows Runtime komponentu pomocí Přidat odkaz na službu se nepodporuje.  
+> Přidání odkazu webové služby na prostředí Windows Runtime komponentu pomocí Přidat odkaz na službu se nepodporuje.  
   
 ### <a name="supported-bindings"></a>Podporované vazby  
  Následující vazby WCF jsou podporovány v aplikacích pro Windows Store:  
@@ -104,7 +104,7 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 3. XmlSerializer  
   
 > [!WARNING]
->  Implementace XmlDictionaryWriter. Write (DateTime) nyní zapisuje objekt DateTime jako řetězec.  
+> Implementace XmlDictionaryWriter. Write (DateTime) nyní zapisuje objekt DateTime jako řetězec.  
   
 ### <a name="security"></a>Zabezpečení  
 
@@ -154,7 +154,7 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
  Doporučujeme definovat pouze asynchronní operace služby pomocí asynchronního vzoru založeného na úlohách. To zajistí, že aplikace pro Windows Store při volání operace služby budou reagovat.  
   
 > [!WARNING]
->  I když se nevyvolá žádná výjimka, pokud definujete synchronní operaci, důrazně doporučujeme definovat pouze asynchronní operace.  
+> I když se nevyvolá žádná výjimka, pokud definujete synchronní operaci, důrazně doporučujeme definovat pouze asynchronní operace.  
   
 ### <a name="calling-wcf-services-from-windows-store-applications"></a>Volání služeb WCF z aplikací pro Windows Store  
  Jak je uvedeno dříve, je nutné provést veškerou konfiguraci v kódu v metodě GetBindingForEndpoint ve vygenerované třídě proxy serveru. Volání operace služby je provedeno stejně jako volání jakékoli asynchronní metody založené na úlohách, jak je znázorněno v následujícím fragmentu kódu.  

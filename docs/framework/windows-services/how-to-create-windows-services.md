@@ -6,18 +6,18 @@ helpviewer_keywords:
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-ms.openlocfilehash: 148d99713b6e6379893701b8f217a7d7546decd9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 960d30f4e484238e9e7c23741578650a8c3005c8
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952543"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987155"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
 Při vytváření služby můžete použít šablonu projektu sady Visual Studio s názvem **služba systému Windows**. Tato šablona automaticky provede spoustu práce za vás odkazem na příslušné třídy a obory názvů, nastavením dědičnosti ze základní třídy pro služby a přepsáním několika metod, které pravděpodobně chcete přepsat.  
   
 > [!WARNING]
->  Šablona projektu služby systému Windows není k dispozici v edici Express sady Visual Studio.  
+> Šablona projektu služby systému Windows není k dispozici v edici Express sady Visual Studio.  
   
  Aby bylo možné vytvořit funkční službu, musíte:  
   

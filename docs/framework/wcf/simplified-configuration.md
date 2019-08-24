@@ -2,12 +2,12 @@
 title: Zjednodušená konfigurace
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: 5aaca8ae8c456e2377326ee2e9e22c3dcf6a21a7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: cdb5d819ce3af372ce44ee2c038556c1383acfe3
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923001"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987220"
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace služeb Windows Communication Foundation (WCF) může být složitý úkol. Existuje mnoho různých možností a není vždy snadné určit, která nastavení se vyžadují. Přestože konfigurační soubory zvyšují flexibilitu služeb WCF, jsou také zdrojem mnoha obtíží při hledání problémů. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)]řeší tyto problémy a poskytuje způsob, jak omezit velikost a složitost konfigurace služby.  
@@ -49,7 +49,7 @@ Konfigurace služeb Windows Communication Foundation (WCF) může být složitý
  [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]zjednodušuje konfiguraci služby WCF odebráním požadavku na <`service`> elementu. Pokud nepřidáte oddíl <`service`> nebo přidáte žádné koncové body do oddílu <`service`> a vaše služba programově nedefinuje žádné koncové body, pak se do vaší služby automaticky přidají sada výchozích koncových bodů, jednu pro každou základní adresa služby a pro každý kontrakt implementovaný vaší službou. V každém z těchto koncových bodů adresa koncového bodu odpovídá základní adrese. vazba je určena základním adresním schématem a smlouva je ta, kterou implementuje vaše služba. Pokud nepotřebujete zadat žádné koncové body nebo chování služby nebo provést žádné změny nastavení vazby, nemusíte vůbec zadávat konfigurační soubor služby. Pokud služba implementuje dvě smlouvy a hostitel povolí přenos přes protokol HTTP i TCP, vytvoří hostitel služby čtyři výchozí koncové body, jednu pro každou kontrakt pomocí každého přenosu. Chcete-li vytvořit výchozí koncové body, musí hostitel služby zjistit, jaké vazby se mají použít. Tato nastavení jsou uvedena v části <`protocolMappings`> v části <`system.serviceModel`>. Oddíl <`protocolMappings`> obsahuje seznam schémat přenosových protokolů mapovaných na typy vazeb. Hostitel služby používá předaných základních adres k určení, která vazba se má použít. Následující příklad používá prvek <`protocolMappings`>.  
   
 > [!WARNING]
->  Změna výchozích prvků konfigurace, jako jsou vazby nebo chování, může ovlivnit služby definované v nižších úrovních konfigurační hierarchie, protože by mohly používat tyto výchozí vazby a chování. I když se jim budou měnit výchozí vazby a chování, je třeba si uvědomit, že tyto změny mohou ovlivnit jiné služby v hierarchii.  
+> Změna výchozích prvků konfigurace, jako jsou vazby nebo chování, může ovlivnit služby definované v nižších úrovních konfigurační hierarchie, protože by mohly používat tyto výchozí vazby a chování. I když se jim budou měnit výchozí vazby a chování, je třeba si uvědomit, že tyto změny mohou ovlivnit jiné služby v hierarchii.  
   
 > [!NOTE]
 > Služby hostované v rámci služby Internetová informační služba (IIS) nebo aktivační služba procesů systému Windows (WAS) používají jako základní adresu virtuální adresář.  

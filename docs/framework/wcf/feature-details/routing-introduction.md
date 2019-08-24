@@ -2,12 +2,12 @@
 title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: cc9298c96a5d1dc60ae1f9982b21ce7a160aacbd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: eaf09c0d724521c3c69fde0e90ecd7cd5aadb253
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933973"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988671"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecného zprostředkujícího zprostředkovatele SOAP, který dokáže směrovat zprávy na základě obsahu zprávy. Pomocí směrovací služby můžete vytvořit složitou logiku směrování, která vám umožní implementovat scénáře, jako je například agregace služeb, Správa verzí služeb, směrování priorit a směrování vícesměrového vysílání. Směrovací služba také poskytuje zpracování chyb, které umožňuje nastavit seznam koncových bodů zálohy, na které se odesílají zprávy, pokud dojde k selhání při posílání do primárního cílového koncového bodu.  
@@ -395,7 +395,7 @@ using (ServiceHost serviceHost =
  Zosobnění pomocí směrovací služby vyžaduje buď použití zosobnění ASP.NET v režimu kompatibility ASP.NET, nebo použití přihlašovacích údajů systému Windows, které byly nakonfigurovány tak, aby umožňovaly zosobnění. Další informace o režimu kompatibility ASP.NET najdete v tématu [služby WCF a ASP.NET](wcf-services-and-aspnet.md).  
   
 > [!WARNING]
->  Směrovací služba WCF nepodporuje zosobnění s využitím základního ověřování.  
+> Směrovací služba WCF nepodporuje zosobnění s využitím základního ověřování.  
   
  Pokud chcete používat zosobnění ASP.NET se službou směrování, povolte v hostitelském prostředí služby režim kompatibility ASP.NET. Směrovací služba již byla označena jako povolení režimu kompatibility ASP.NET a zosobnění bude automaticky povoleno. Zosobnění je jediné podporované použití integrace ASP.NET se směrovací službou.  
   

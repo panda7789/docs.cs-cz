@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 8beaddf6439b8c3bc8f7971786e36fdb576e9b6c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 82b936b753dff4230be6162583a50524e8c5254b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934891"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987178"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které mohou být reprezentovány mnoha různými způsoby. Kódování znaků je systém, který spáruje každý znak v podporované znakové sadě s určitou hodnotou, která představuje tento znak. Například kód MORSE je kódování znaků, které spáruje každý znak v římské abecedě se vzorem teček a pomlčkami, které jsou vhodné pro přenos přes telegrafní řádky. Kódování znaků pro počítače spáruje každý znak v podporované znakové sadě s číselnou hodnotou, která představuje tento znak. Kódování znaků má dvě odlišné komponenty:  
@@ -31,7 +31,7 @@ Znaky jsou abstraktní entity, které mohou být reprezentovány mnoha různými
  Kódování znaků popisuje pravidla, podle kterých kodér a dekodér pracují. Například <xref:System.Text.UTF8Encoding> Třída popisuje pravidla pro kódování a dekódování z, 8bitové transformačního formátu Unicode (UTF-8), který používá jeden až čtyři bajty pro reprezentaci jednoho znaku Unicode. Kódování a dekódování může také zahrnovat ověřování. Například <xref:System.Text.UnicodeEncoding> třída kontroluje všechny náhrady, aby se zajistilo, že tvoří platné náhradní páry. (Náhradní pár se skládá ze znaku s kódovým bodem, který je v rozsahu od U + D800 do U + DBFF následovaný znakem a bodem kódu, který je v rozsahu od U + DC00 do U + DFFF.)  Záložní strategie určuje, jak kodér zpracovává neplatné znaky nebo jak dekodér zpracovává neplatné bajty.  
   
 > [!WARNING]
->  Třídy kódování .NET poskytují způsob, jak uložit a převést znaková data. Neměly by se používat k ukládání binárních dat ve formě řetězce. V závislosti na použitém kódování může převod binárních dat na formát řetězce pomocí tříd kódování způsobit neočekávané chování a vydávat nepřesná nebo poškozená data. Chcete-li převést binární data do formuláře řetězce, použijte <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> metodu.  
+> Třídy kódování .NET poskytují způsob, jak uložit a převést znaková data. Neměly by se používat k ukládání binárních dat ve formě řetězce. V závislosti na použitém kódování může převod binárních dat na formát řetězce pomocí tříd kódování způsobit neočekávané chování a vydávat nepřesná nebo poškozená data. Chcete-li převést binární data do formuláře řetězce, použijte <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> metodu.  
   
  Rozhraní .NET používá kódování UTF-16 (reprezentované <xref:System.Text.UnicodeEncoding> třídou) k reprezentaci znaků a řetězců. Aplikace určené pro modul CLR (Common Language Runtime) používají kodéry k mapování reprezentace znaků Unicode podporované modulem CLR (Common Language Runtime) na jiná schémata kódování. Používají dekodéry k mapování znaků z kódování jiných než Unicode do kódování Unicode.  
   

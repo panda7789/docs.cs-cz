@@ -2,29 +2,29 @@
 title: Používání vazeb NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
-ms.openlocfilehash: 5090cfdfeb068acda1e1092e408f3cd747c574c2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f908361c5f9152d333daaf5e3ee90de3b1b89e9
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932558"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988635"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
-<xref:System.ServiceModel.NetHttpBinding> Vazba určená pro použití protokolu HTTP nebo objektu websocket na straně služby a používá binární kódování ve výchozím nastavení. <xref:System.ServiceModel.NetHttpBinding> zjistí, jestli se používá s kontraktů požadavek odpověď nebo duplexní kontrakt a změnit její chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a protokoly Websocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  
+<xref:System.ServiceModel.NetHttpBinding>je vazba určená pro využívání služeb HTTP nebo WebSocket a ve výchozím nastavení používá binární kódování. <xref:System.ServiceModel.NetHttpBinding>zjistí, jestli se používá se smlouvou požadavek-odpověď nebo oboustrannou smlouvou a že se má změnit chování, aby odpovídalo. bude používat protokol HTTP pro kontrakty požadavek-odpověď a objekty WebSocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  
   
-1. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Always> – To přinutí WebSockets se použije i pro kontraktů požadavek odpověď.  
+1. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Always>– To vynutí, aby se WebSockets používaly i pro kontrakty požadavek-odpověď.  
   
-2. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Never> – To brání použití objekty Websocket. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku.  
+2. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.Never>– To zabraňuje použití WebSockets. Pokus o použití duplexního kontraktu s tímto nastavením bude mít za následek výjimku.  
   
-3. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.WhenDuplex> – Toto je výchozí hodnota a chová, jak je popsáno výše.  
+3. <xref:System.ServiceModel.Channels.WebSocketTransportUsage.WhenDuplex>– Toto je výchozí hodnota a chová se, jak je popsáno výše.  
   
- <xref:System.ServiceModel.NetHttpBinding> podporuje spolehlivé relace v režimu HTTP a WebSocket režimu. V objektu websocket na straně relace režimu jsou poskytovány přenos.  
+ <xref:System.ServiceModel.NetHttpBinding>podporuje spolehlivé relace v režimu HTTP i v režimu WebSocket. V relacích režimu WebSocket je přenos zajištěný přenosem.  
   
 > [!WARNING]
->  Při použití <xref:System.ServiceModel.NetHttpBinding> a režim přenosu vazby je nastavena na TransferMode.Streamed, velké datové proudy může způsobit zablokování a vypršení časového limitu bude volání. Chcete vyřešit tento problém odesílat menší zprávy nebo použít třídy TransferMode.Buffered.  
+> Při použití <xref:System.ServiceModel.NetHttpBinding> ovládacího prvku a třídy TransferMode vazby je nastavena na třídy TransferMode. streamovaná, velké datové proudy mohou způsobit zablokování a volání bude mít časový limit. Pokud chcete tento problém obejít, pošlete menší zprávy nebo použijte třídy TransferMode. Buffered.  
   
-## <a name="configuring-a-service-to-use-nethttpbinding"></a>Konfigurace služby k použití NetHttpBinding  
- <xref:System.ServiceModel.NetHttpBinding> Může být nakonfigurované stejně jako jakákoli jiná vazba. Následující konfigurace fragment kódu ukazuje, jak se konfigurace služby WCF s <xref:System.ServiceModel.NetHttpBinding>.  
+## <a name="configuring-a-service-to-use-nethttpbinding"></a>Konfigurace služby pro použití NetHttpBinding  
+ <xref:System.ServiceModel.NetHttpBinding> Lze nakonfigurovat stejné jako jakékoli jiné vazby. Následující fragment kódu ukazuje, jak nakonfigurovat službu WCF pomocí <xref:System.ServiceModel.NetHttpBinding>.  
   
 ```xml  
 <system.serviceModel>  
@@ -49,7 +49,7 @@ ms.locfileid: "61932558"
   </system.serviceModel>  
 ```  
   
- Následující fragment kódu ukazuje, jak přidat <xref:System.ServiceModel.NetHttpBinding> v kódu.  
+ Následující fragment kódu ukazuje, jak přidat <xref:System.ServiceModel.NetHttpBinding> do kódu.  
   
 ```csharp  
 ServiceHost svchost = new ServiceHost(typeof(Service1), baseAddress);  

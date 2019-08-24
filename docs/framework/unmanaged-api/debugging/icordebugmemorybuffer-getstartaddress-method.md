@@ -1,18 +1,18 @@
 ---
-title: ICorDebugMemoryBuffer::GetStartAddress – metoda
+title: 'ICorDebugMemoryBuffer:: GetStartAddress – metoda'
 ms.date: 03/30/2017
 ms.assetid: f804d9ab-8c88-44f0-b278-5fcca7f87726
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9208d07b697c3bb8a99e13582eda70dcb8dd826b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1394624051baa9e7dd21e29788d5fab28332081b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752768"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987552"
 ---
-# <a name="icordebugmemorybuffergetstartaddress-method"></a>ICorDebugMemoryBuffer::GetStartAddress – metoda
-Získá počáteční adresa vyrovnávací paměti.  
+# <a name="icordebugmemorybuffergetstartaddress-method"></a>ICorDebugMemoryBuffer:: GetStartAddress – metoda
+Získá počáteční adresu vyrovnávací paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,21 +24,21 @@ HRESULT GetStartAddress(
   
 ## <a name="parameters"></a>Parametry  
  `address`  
- [out] Ukazatel na počáteční adresa vyrovnávací paměti.  
+ mimo Ukazatel na počáteční adresu vyrovnávací paměti.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!WARNING]
->  Tato metoda je pouze k dispozici s .NET Native.  
+> Tato metoda je k dispozici pouze s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

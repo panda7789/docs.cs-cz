@@ -2,17 +2,17 @@
 title: Programovací objektový model WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-ms.openlocfilehash: 2401a8a051ed4dcd386c7794a2197672709ea423
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 43ec16927c703ca373eaa4299093503b2fab2266
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487696"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988565"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Programovací objektový model WCF Web HTTP
-HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Windows Communication Foundation (WCF) Web prostřednictvím základních požadavků protokolu HTTP bez nutnosti SOAP. HTTP programovacího modelu WCF WEB je postavený na existující model rozšiřitelnosti WCF. Definuje následující třídy:  
+Programovací model webového HTTP WCF umožňuje vývojářům vystavit webové služby Windows Communication Foundation (WCF) prostřednictvím základních požadavků HTTP bez vyžadování protokolu SOAP. Model programování webové služby HTTP WCF je postaven nad existujícím modelem rozšiřitelnosti WCF. Definuje následující třídy:  
   
- **Programovací Model:**  
+ **Programovací model:**  
   
 - <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>  
   
@@ -22,13 +22,13 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
   
 - <xref:System.ServiceModel.Web.WebServiceHost>  
   
- **Kanály a dispečeru infrastruktury:**  
+ **Kanály a Dispečerská infrastruktura:**  
   
 - <xref:System.ServiceModel.WebHttpBinding>  
   
 - <xref:System.ServiceModel.Description.WebHttpBehavior>  
   
- **Třídy nástrojů a bodů rozšiřitelnosti:**  
+ **Třídy nástrojů a body rozšiřitelnosti:**  
   
 - <xref:System.UriTemplate>  
   
@@ -39,65 +39,65 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
 - <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>  
   
 ## <a name="aspnetcacheprofileattribute"></a>AspNetCacheProfileAttribute  
- <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, Při použití na operaci služby, označuje, technologie ASP.NET profil výstupní mezipaměti v konfiguračním souboru, který by měly být používány do mezipaměti odpovědi z operace do výstupní mezipaměti ASP .NET. Tato vlastnost má pouze jeden parametr, název profilu mezipaměti, která určuje nastavení mezipaměti v konfiguračním souboru.  
+ V <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>případě použití na operaci služby označuje profil výstupní mezipaměti ASP.NET v konfiguračním souboru, který by měl být použit pro ukládání odpovědí z operace do výstupní mezipaměti ASP .NET. Tato vlastnost přijímá pouze jeden parametr, název profilu mezipaměti, který určuje nastavení mezipaměti v konfiguračním souboru.  
   
 ## <a name="webgetattribute"></a>WebGetAttribute  
- <xref:System.ServiceModel.Web.WebGetAttribute> Atribut se používá k označení operace služby jako ten, který reaguje na požadavky HTTP GET. Je pasivní operace chování ( <xref:System.ServiceModel.Description.IOperationBehavior> metody nedělat nic), který přidá metadata do popis operace. Použití <xref:System.ServiceModel.Web.WebGetAttribute> nemá žádný vliv, pokud chování, která hledá tato metadata v popisu operace (konkrétně <xref:System.ServiceModel.Description.WebHttpBehavior>) se přidá do kolekce chování služby. <xref:System.ServiceModel.Web.WebGetAttribute> Atribut přebírá volitelné parametry uvedené v následující tabulce.  
+ <xref:System.ServiceModel.Web.WebGetAttribute> Atribut slouží k označení operace služby jako jednoho, který reaguje na požadavky HTTP GET. Jedná se o chování pasivní operace ( <xref:System.ServiceModel.Description.IOperationBehavior> metody nedělají nic), které přidávají metadata k popisu operace. Použití funkce <xref:System.ServiceModel.Description.WebHttpBehavior>nemá žádný vliv, pokud se do kolekce chování služby přidá chování, které vyhledá tato metadata v popisu operace (konkrétně). <xref:System.ServiceModel.Web.WebGetAttribute> <xref:System.ServiceModel.Web.WebGetAttribute> Atribut přebírá volitelné parametry, které jsou uvedeny v následující tabulce.  
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`BodyStyle`|Určuje, jestli se má zabalit požadavky a odpovědi odesílané do a z atributu se použije na operaci služby.|  
-|`RequestFormat`|Určuje, jak jsou zprávy požadavku ve formátu.|  
-|`ResponseFormat`|Určuje formátování zprávy odpovědi.|  
-|`UriTemplate`|Určuje šablonu identifikátoru URI, který řídí, jaké požadavky HTTP mapována na atribut se použije na operaci služby.|  
+|`BodyStyle`|Určuje, jestli se mají zabalit žádosti a odpovědi odeslané a přijaté z operace služby, na kterou se atribut aplikuje.|  
+|`RequestFormat`|Určuje způsob formátování zpráv požadavků.|  
+|`ResponseFormat`|Určuje, jak mají být zprávy odpovědí formátovány.|  
+|`UriTemplate`|Určuje šablonu identifikátoru URI, která určuje, které požadavky HTTP se mapují na operaci služby, na kterou je atribut použit.|  
   
 ## <a name="webhttpbinding"></a>WebHttpBinding  
- <xref:System.ServiceModel.WebHttpBinding> Třída zahrnuje podporu pro XML, JSON a používání Nezpracovaná binární data <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>. Skládá se z <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a <xref:System.ServiceModel.WebHttpSecurity> objektu. <xref:System.ServiceModel.WebHttpBinding> Používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior>.  
+ Třída zahrnuje podporu pro XML, JSON a Nezpracovaná binární data <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>pomocí. <xref:System.ServiceModel.WebHttpBinding> Skládá se z <xref:System.ServiceModel.Channels.HttpsTransportBindingElement> <xref:System.ServiceModel.Channels.HttpTransportBindingElement> <xref:System.ServiceModel.WebHttpSecurity> objektu a objektu. Je určen k použití ve spojení <xref:System.ServiceModel.Description.WebHttpBehavior>s. <xref:System.ServiceModel.WebHttpBinding>  
   
 ## <a name="webinvokeattribute"></a>WebInvokeAttribute  
- <xref:System.ServiceModel.Web.WebInvokeAttribute> Atribut je podobný <xref:System.ServiceModel.Web.WebGetAttribute>, ale používá se k označení operace služby, jako ten, který reaguje na HTTP žádosti jiných než metoda GET. Je pasivní operace chování ( <xref:System.ServiceModel.Description.IOperationBehavior> metody nedělat nic), který přidá metadata do popis operace. Použití <xref:System.ServiceModel.Web.WebInvokeAttribute> nemá žádný vliv, pokud chování, která hledá tato metadata v popisu operace (konkrétně <xref:System.ServiceModel.Description.WebHttpBehavior>) se přidá do kolekce chování služby.  
+ Atribut je podobný <xref:System.ServiceModel.Web.WebGetAttribute>, ale používá se k označení operace služby jako takové, která reaguje na požadavky HTTP jiné než Get. <xref:System.ServiceModel.Web.WebInvokeAttribute> Jedná se o chování pasivní operace ( <xref:System.ServiceModel.Description.IOperationBehavior> metody nedělají nic), které přidávají metadata k popisu operace. Použití funkce <xref:System.ServiceModel.Description.WebHttpBehavior>nemá žádný vliv, pokud se do kolekce chování služby přidá chování, které vyhledá tato metadata v popisu operace (konkrétně). <xref:System.ServiceModel.Web.WebInvokeAttribute>  
   
- <xref:System.ServiceModel.Web.WebInvokeAttribute> Atribut přebírá volitelné parametry uvedené v následující tabulce.  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> Atribut přebírá volitelné parametry, které jsou uvedeny v následující tabulce.  
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`BodyStyle`|Určuje, jestli se má zabalit požadavky a odpovědi odesílané do a z atributu se použije na operaci služby.|  
-|`Method`|Určuje metodu HTTP, operace služby je namapována na.|  
-|`RequestFormat`|Určuje, jak jsou zprávy požadavku ve formátu.|  
-|`ResponseFormat`|Určuje formátování zprávy odpovědi.|  
-|`UriTemplate`|Určuje šablonu identifikátoru URI, který řídí, jaké požadavky GET mapována na atribut se použije na operaci služby.|  
+|`BodyStyle`|Určuje, jestli se mají zabalit žádosti a odpovědi odeslané a přijaté z operace služby, na kterou se atribut aplikuje.|  
+|`Method`|Určuje metodu HTTP, na kterou je operace služby namapovaná.|  
+|`RequestFormat`|Určuje způsob formátování zpráv požadavků.|  
+|`ResponseFormat`|Určuje, jak mají být zprávy odpovědí formátovány.|  
+|`UriTemplate`|Určuje šablonu identifikátoru URI, která určuje, které požadavky GET se mapují na operaci služby, na kterou je atribut použit.|  
   
 ## <a name="uritemplate"></a>UriTemplate  
- <xref:System.UriTemplate> Třída umožňují definovat sadu strukturálně podobné identifikátorů URI. Šablony se skládají ze dvou částí, cestu a dotaz. Cesta se skládá z řady segmentů oddělených lomítkem (/). Každý segment může mít hodnotu literálu, hodnotu proměnné (napsané ve složených závorkách {[}], tak, aby odpovídaly obsah přesně jeden segment omezené) nebo zástupný znak (zapsán jako hvězdičku [\*], který odpovídá "zbývající část cesty"), která se musí nacházet v konce cesty. Výraz dotazu můžete zcela vynechat. Pokud jsou k dispozici, určuje Neseřazený řady párů název/hodnota. Elementy výrazu dotazu může být buď literál páry (? x = 2) nebo dvojice proměnné (? x = {*hodnotu*}). Nespárované hodnoty nejsou povoleny. <xref:System.UriTemplate> se používá interně pomocí protokolu HTTP programovacího modelu WCF WEB k mapování konkrétní identifikátory URI nebo skupiny identifikátorů URI k operacím služby.  
+ <xref:System.UriTemplate> Třída umožňuje definovat sadu strukturovaných podobných identifikátorů URI. Šablony se skládají ze dvou částí, cesty a dotazu. Cesta se skládá z řady segmentů oddělených lomítkem (/). Každý segment může mít literálovou hodnotu, hodnotu proměnné (napsanou v rámci složených závorek [{}], která je omezená tak, aby odpovídala obsahu přesně jednoho segmentu), nebo zástupný znak (napsaný jako hvězdička [\*], který odpovídá "zbytek cesty"), který se musí objevit v konec cesty Výraz dotazu může být zcela vynechán. Je-li k dispozici, určuje neuspořádanou řadu párů název/hodnota. Prvky výrazu dotazu mohou být buď páry literálů (? x = 2), nebo páry proměnných (? x = {*Value*}). Nespárované hodnoty nejsou povolené. <xref:System.UriTemplate>používá se interně WEBOVÝm modelem HTTP pro WCF k mapování konkrétních identifikátorů URI nebo skupin identifikátorů URI na operace služby.  
   
 ## <a name="uritemplatetable"></a>UriTemplateTable  
- <xref:System.UriTemplateTable> Třída reprezentuje asociativní sadu <xref:System.UriTemplate> objekty vázané na uživatele výběr objektu vývojáře. To umožňuje porovnání šablony v sadě Release candidate Uniform Resource Identifier (identifikátory URI) a načíst data související s odpovídající šablony. <xref:System.UriTemplateTable> se používá interně pomocí protokolu HTTP programovacího modelu WCF WEB k mapování konkrétní identifikátory URI nebo skupiny identifikátorů URI k operacím služby.  
+ Třída představuje asociativní <xref:System.UriTemplate> sadu objektů svázaných s objektem výběru vývojáře. <xref:System.UriTemplateTable> Umožňuje párovat kandidáty identifikátorů URI (Uniform Resource Identifier) proti šablonám v sadě a načíst data přidružená k odpovídajícím šablonám. <xref:System.UriTemplateTable>používá se interně WEBOVÝm modelem HTTP pro WCF k mapování konkrétních identifikátorů URI nebo skupin identifikátorů URI na operace služby.  
   
 ## <a name="webservicehost"></a>WebServiceHost  
- <xref:System.ServiceModel.Web.WebServiceHost> rozšiřuje <xref:System.ServiceModel.ServiceHost> zjednodušit hostování-protokolu SOAP stylu webové služby. Pokud <xref:System.ServiceModel.Web.WebServiceHost> najde žádné koncové body v popisu služby se automaticky vytvoří výchozí koncový bod na základní adrese služby. Při vytváření výchozího koncového bodu HTTP, <xref:System.ServiceModel.Web.WebServiceHost> také zakáže stránky s nápovědou HTTP a funkci GET webové služby WSDL (Description Language), takže koncový bod metadat nebude v konfliktu s výchozí koncový bod HTTP. <xref:System.ServiceModel.Web.WebServiceHost> také zajistí, že všechny koncové body, které používají <xref:System.ServiceModel.WebHttpBinding> mají požadovaný <xref:System.ServiceModel.Description.WebHttpBehavior> připojen. Nakonec <xref:System.ServiceModel.Web.WebServiceHost> automaticky nakonfiguruje vazby koncového bodu pro práci s související zabezpečení nastavení Internetové informační služby (IIS) při použití v zabezpečené virtuální adresář.  
+ <xref:System.ServiceModel.Web.WebServiceHost>rozšiřuje rozhraní <xref:System.ServiceModel.ServiceHost> , aby bylo snazší hostovat službu, která není webovým stylem SOAP. Pokud <xref:System.ServiceModel.Web.WebServiceHost> nenalezne v popisu služby žádné koncové body, automaticky vytvoří výchozí koncový bod na základní adrese služby. Při vytváření výchozího koncového bodu http <xref:System.ServiceModel.Web.WebServiceHost> také zakáže stránku Nápověda http a funkci WSDL (Web Services Description Language), takže koncový bod metadat nekoliduje s výchozím koncovým bodem http. <xref:System.ServiceModel.Web.WebServiceHost>také zajistí, že všechny koncové body <xref:System.ServiceModel.WebHttpBinding> , které používají <xref:System.ServiceModel.Description.WebHttpBehavior> , mají požadované připojené. <xref:System.ServiceModel.Web.WebServiceHost> Nakonec automaticky nakonfiguruje vazbu koncového bodu tak, aby fungovala s přidruženými nastaveními zabezpečení Internetová informační služba (IIS) při použití v zabezpečeném virtuálním adresáři.  
   
 ## <a name="webservicehostfactory"></a>WebServiceHostFactory  
- <xref:System.ServiceModel.Activation.WebServiceHostFactory> Třída se používá dynamicky se vytvářejí <xref:System.ServiceModel.Web.WebServiceHost> když služba hostována v rámci Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS). Na rozdíl od služby v místním prostředí, kde vytvoří instanci hostitelské aplikace <xref:System.ServiceModel.Web.WebServiceHost>, služba hostovaná v IIS nebo byla tato třída slouží k vytvoření <xref:System.ServiceModel.Web.WebServiceHost> pro službu. <xref:System.ServiceModel.Activation.WebServiceHostFactory.CreateServiceHost%28System.Type%2CSystem.Uri%5B%5D%29> Metoda je volána při přijetí příchozího požadavku pro službu.  
+ Třída se používá k dynamickému vytváření a <xref:System.ServiceModel.Web.WebServiceHost> při hostování služby v rámci služby Internetová informační služba (IIS) nebo aktivační služby procesů systému Windows (WAS). <xref:System.ServiceModel.Activation.WebServiceHostFactory> Na rozdíl od samoobslužné služby <xref:System.ServiceModel.Web.WebServiceHost>, ve které hostující aplikace vytváří instance, služby hostované v rámci služby IIS nebo tuto třídu použil k <xref:System.ServiceModel.Web.WebServiceHost> vytvoření pro službu. Metoda <xref:System.ServiceModel.Activation.WebServiceHostFactory.CreateServiceHost%28System.Type%2CSystem.Uri%5B%5D%29> je volána, když je přijata příchozí žádost o službu.  
   
 ## <a name="webhttpbehavior"></a>WebHttpBehavior  
- <xref:System.ServiceModel.Description.WebHttpBehavior> Třída poskytuje nezbytné formátovacích modulů, selektory provozu a atd., vyžadované pro podporu stylu webové služby v modelu služby vrstvě. Tato možnost je implementovaná jako chování koncového bodu (použít ve spojení s <xref:System.ServiceModel.WebHttpBinding>) a umožňuje formátovací moduly a operace selektory pro každý koncový bod, který povolí stejné implementaci service zpřístupňují koncové body SOAP a POX.  
+ <xref:System.ServiceModel.Description.WebHttpBehavior> Třída poskytuje potřebné formátovací moduly, selektory operací atd., které jsou vyžadovány pro podporu služeb webového stylu v rámci vrstvy modelu služby. To je implementováno jako chování koncového bodu (používá se ve <xref:System.ServiceModel.WebHttpBinding>spojení s) a umožňuje pro každý koncový bod zadat formátovací moduly a selektory operací, což umožňuje, aby stejná implementace služby zveřejnila koncové body SOAP i POX.  
   
 ### <a name="extending-webhttpbehavior"></a>Rozšíření WebHttpBehavior  
- <xref:System.ServiceModel.Description.WebHttpBehavior> je možné rozšířit pomocí čísla virtuální metody: <xref:System.ServiceModel.Description.WebHttpBehavior.GetOperationSelector%28System.ServiceModel.Description.ServiceEndpoint%29>, <xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>, <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>, <xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>, a <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>. Vývojáři můžou odvodit třídu z <xref:System.ServiceModel.Description.WebHttpBehavior> a přepsat tyto metody můžete přizpůsobit výchozí chování.  
+ <xref:System.ServiceModel.Description.WebHttpBehavior>je rozšiřitelná pomocí <xref:System.ServiceModel.Description.WebHttpBehavior.GetOperationSelector%28System.ServiceModel.Description.ServiceEndpoint%29>několika virtuálních metod:, <xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>, <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>, <xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>a <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>. Vývojáři mohou odvodit třídu z <xref:System.ServiceModel.Description.WebHttpBehavior> a přepsat tyto metody pro přizpůsobení výchozího chování.  
   
- <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> Je příkladem rozšíření <xref:System.ServiceModel.Description.WebHttpBehavior>. <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> Umožňuje Windows Communication Foundation (WCF) koncových bodů pro příjem požadavků HTTP z klienta založené na prohlížeči technologie ASP.NET AJAX. [AJAX služba využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md) je příkladem pomocí tohoto bodu rozšiřitelnosti.  
+ Je příkladem rozšíření <xref:System.ServiceModel.Description.WebHttpBehavior>. <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>povoluje koncovým bodům Windows Communication Foundation (WCF) přijímat požadavky HTTP z klienta AJAX v prohlížeči ASP.NET. [Služba AJAX využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md) je příkladem použití tohoto bodu rozšiřitelnosti.  
   
 > [!WARNING]
->  Při použití <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>, <xref:System.UriTemplate> nejsou podporovány v rámci <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy.  
+> <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>Při použití <xref:System.UriTemplate> nejsou podporovány v rámci <xref:System.ServiceModel.Web.WebGetAttribute> atributů nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> .  
   
 ## <a name="webhttpdispatchoperationselector"></a>WebHttpDispatchOperationSelector  
- <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector> Třídy používá <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy k odeslání volání operací služby.  
+ Třída používá <xref:System.UriTemplate> třídy a<xref:System.UriTemplateTable> k odesílání volání operací služby. <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>  
   
 ## <a name="compatibility"></a>Kompatibilita  
- Nepoužívá založený na protokolu SOAP zprávy HTTP programovacího modelu WCF WEB a proto nepodporuje WS-* protokoly. Ale můžete zpřístupnit stejný kontrakt ve dvou různých koncový bod: jeden pomocí protokolu SOAP a jiné ne pomocí protokolu SOAP. Zobrazit [jak: Zveřejnění kontraktu klientům SOAP a webovým klientům](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) příklad.  
+ Model programování webových služeb HTTP WCF nepoužívá zprávy založené na protokolu SOAP, a proto nepodporuje protokoly WS-*. Stejný kontrakt ale můžete zveřejnit pomocí dvou různých koncových bodů: jednoho pomocí protokolu SOAP a jiného bez použití protokolu SOAP. Viz [jak: Příklad Zveřejnění kontraktu pro SOAP a webové](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) klienty.  
   
 ## <a name="security"></a>Zabezpečení  
- Protože HTTP programovacího modelu WCF WEB nepodporuje WS-* protokolů je jediný způsob, jak zabezpečit webová služba založená na protokolu HTTP programovacího modelu WCF WEB k vystavení služby pomocí protokolu SSL. Další informace o nastavení protokolu SSL se službou IIS 7.0 naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
+ Vzhledem k tomu, že model programování webového HTTP WCF nepodporuje protokoly WS-*, jediným způsobem, jak zabezpečit webovou službu založenou na programovacím modelu webového HTTP WCF, je vystavení vaší služby pomocí protokolu SSL. Další informace o nastavení SSL se službou IIS 7,0 najdete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613) .  
   
 ## <a name="see-also"></a>Viz také:
 

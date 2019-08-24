@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e4c86ab618f6434a6a9ce4f056eeb001cacc84bc
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 9d2ae7430c10254274eed6fb8a602aa8bc11bffb
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709191"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988493"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
 
@@ -43,7 +43,7 @@ Aplikace .NET, které používají informace o datu a čase, jsou velmi rozdíln
 Rozhraní .NET zahrnuje <xref:System.DateTime>typy <xref:System.DateTimeOffset>, <xref:System.TimeSpan>, a <xref:System.TimeZoneInfo> , které lze použít k sestavování aplikací pracujících s daty a časy.
 
 > [!NOTE]
-> Toto téma se nezabývá čtvrtým typem, <xref:System.TimeZone>protože jeho funkce je skoro zcela začleněná <xref:System.TimeZoneInfo> do třídy. Pokud je to možné, vývojáři by <xref:System.TimeZoneInfo> měli místo <xref:System.TimeZone> třídy použít třídu.
+> Toto téma se nezabývá <xref:System.TimeZone> vzhledem k tomu, že jeho funkce jsou skoro zcela začleněné <xref:System.TimeZoneInfo> do třídy. Kdykoli je to možné, <xref:System.TimeZoneInfo> použijte místo <xref:System.TimeZone> třídy třídu.
 
 ## <a name="the-datetime-structure"></a>Struktura DateTime
 

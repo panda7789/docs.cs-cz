@@ -2,12 +2,12 @@
 title: Konfigurace Služby sdílení portů Net.TCP
 ms.date: 03/30/2017
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
-ms.openlocfilehash: c5dc80391ec5f655fadd31c59eef76015b9965d8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 70ebaeb8b41b0191e0352b5ef6a4b1913994100c
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949606"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988225"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Konfigurace Služby sdílení portů Net.TCP
 Samoobslužné služby, které používají přenos NET. TCP, mohou řídit několik pokročilých nastavení, například `ListenBacklog` a `MaxPendingAccepts`, což řídí chování základního soketu protokolu TCP používaného pro síťovou komunikaci. Nicméně tato nastavení pro každý soket platí jenom na úrovni vazby, pokud přenosová vazba zakázala sdílení portů, což je ve výchozím nastavení povolené.  
@@ -59,7 +59,7 @@ Samoobslužné služby, které používají přenos NET. TCP, mohou řídit něk
 > V [!INCLUDE[wv](../../../../includes/wv-md.md)] systémech s povolenou službou Řízení uživatelských účtů (UAC) vyžadují místní uživatelé zvýšená oprávnění, i když je jejich účet členem skupiny Administrators. Chcete-li umožnit těmto uživatelům používat službu sdílení portů bez zvýšení oprávnění, je nutné explicitně přidat identifikátor SID uživatele (nebo identifikátor SID skupiny, ve které je uživatel členem), do \<části allowAccounts > souboru SMSvcHost. exe. config.  
   
 > [!WARNING]
->  Výchozí soubor SMSvcHost. exe. config určuje vlastní `etwProviderId` , aby se zabránilo trasování SMSvcHost. exe v konfliktu s trasováním služby.  
+> Výchozí soubor SMSvcHost. exe. config určuje vlastní `etwProviderId` , aby se zabránilo trasování SMSvcHost. exe v konfliktu s trasováním služby.  
   
 ## <a name="see-also"></a>Viz také:
 

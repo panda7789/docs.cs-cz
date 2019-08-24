@@ -2,12 +2,12 @@
 title: Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 69c3577c82c7a0899fb94461255721f4b2ab3ecd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 20623c8d2f6bf66d2668fd07b0acae67865a3235
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913695"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987231"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním
 Programovací model Windows Workflow Foundation (WF) v .NET Framework 4,5 představil mnoho nových funkcí, včetně několika vylepšení prostředí návrháře pracovních postupů. Toto téma obsahuje podrobnosti o tom, které z těchto funkcí jsou podporovány v Návrháři s příponou a které nejsou aktuálně podporovány.
@@ -22,7 +22,7 @@ Programovací model Windows Workflow Foundation (WF) v .NET Framework 4,5 předs
  Před .NET Framework 4,5 se všechny výrazy v pracovních postupech daly zapisovat jenom v Visual Basic. V .NET Framework 4,5 jsou výrazy Visual Basic používány pouze pro projekty vytvořené pomocí Visual Basic. Vizuální C# projekty se nyní C# používají pro výrazy. Při vytváření pracovních postupů v aplikaci Visual Studio 2012 je k C# dispozici plně funkční editor výrazů, které nabízí funkce, jako je například zvýrazňování gramatiky a IntelliSense. C#projekty pracovního postupu vytvořené v předchozích verzích, které používají Visual Basic výrazy budou fungovat i nadále.
 
 > [!WARNING]
->  C#výrazy nejsou podporovány v rehostujícím návrháři.
+> C#výrazy nejsou podporovány v rehostujícím návrháři.
 
 ## <a name="new-designer-capabilities"></a>Nové možnosti návrháře
 
@@ -30,7 +30,7 @@ Programovací model Windows Workflow Foundation (WF) v .NET Framework 4,5 předs
  Funkce [rychlého hledání](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [hledání v souborech](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) zavedené s .NET Framework 4,5 nejsou podporované v novém hostovaném návrháři. `Toolbox` Hledání je podporováno v rehostujícím návrháři. Další informace o těchto funkcích najdete v tématu [hledání návrháře](whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
 
 > [!WARNING]
->  [Rychlé hledání](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [hledání v souborech](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nejsou podporovány v přehostujícím návrháři.
+> [Rychlé hledání](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) a [hledání v souborech](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) nejsou podporovány v přehostujícím návrháři.
 
 ### <a name="delete-context-menu-item-in-variable-and-argument-designer"></a>Odstranit položku kontextové nabídky v Návrháři proměnných a argumentů
  V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]nástroji lze proměnné a argumenty odstranit pouze v Návrháři pomocí klávesnice. Počínaje .NET Framework 4,5 lze proměnné a argumenty odstranit pomocí místní nabídky. Tato funkce je podporována v rehostujícím návrháři.
@@ -103,7 +103,7 @@ Programovací model Windows Workflow Foundation (WF) v .NET Framework 4,5 předs
  V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]nástroji se chyby ověření pracovního postupu nepočítají jako chyby sestavení během sestavování projektu pracovního postupu. To znamenalo, že sestavení projektu pracovního postupu může být úspěšné i v případě, že došlo k chybám ověření pracovního postupu. V .NET Framework 4,5 způsobí chyby ověření pracovního postupu selhání sestavení.
 
 > [!WARNING]
->  Ověřování v době sestavení není v přehostujícím návrháři podporováno.  
+> Ověřování v době sestavení není v přehostujícím návrháři podporováno.  
   
 ### <a name="design-time-background-validation"></a>Ověřování na pozadí v době návrhu  
  V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]nástroji byly pracovní postupy ověřeny jako proces na popředí, což by mohlo potenciálně blokovat uživatelské rozhraní během složitých nebo časově náročných ověřovacích procesů. Ověření pracovního postupu teď probíhá na vlákně na pozadí, takže uživatelské rozhraní není blokované.  
@@ -142,4 +142,4 @@ Programovací model Windows Workflow Foundation (WF) v .NET Framework 4,5 předs
  Nástroj pro vývoj pracovního postupu první smlouvy umožňuje vývojářům nejprve navrhnout kontrakt v kódu a pak s několika kliknutími v sadě Visual Studio automaticky vygenerovat šablonu aktivity v sadě nástrojů reprezentující jednotlivé operace. Tyto aktivity se pak použijí k vytvoření pracovního postupu, který implementuje operace definované smlouvou. Návrhář pracovního postupu ověří službu pracovního postupu, aby se zajistilo, že tyto operace budou implementované a že signatura pracovního postupu odpovídá signatuře smlouvy. Vývojář může také přidružit službu pracovního postupu ke kolekci implementovaných smluv. Další informace o vývoji služeb pracovních postupů prvního kontraktu najdete v [tématu How to: Vytvořte službu pracovního postupu, která využívá stávající kontrakt](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)služby.  
   
 > [!WARNING]
->  Vývoj pracovního postupu prvního kontraktu není v Návrháři pracovních postupů podporován.
+> Vývoj pracovního postupu prvního kontraktu není v Návrháři pracovních postupů podporován.

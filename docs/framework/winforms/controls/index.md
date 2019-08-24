@@ -6,35 +6,38 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, about Windows Forms controls
 ms.assetid: f050de8f-4ebd-4042-94b8-edf9a1dbd52a
-ms.openlocfilehash: 2fb4ffd4d2f39f0b11f1db4d152c5922e1ac4d19
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1088781a7780df71773b01a3816f024562abfcaf
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973807"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986991"
 ---
 # <a name="windows-forms-controls"></a>Ovládací prvky Windows Forms
-Při navrhování a upravte uživatelské rozhraní aplikace Windows Forms, je potřeba přidat, zarovnání a umístit ovládací prvky. Ovládací prvky jsou objekty, které jsou obsaženy v rámci formuláře objekty. Každý typ ovládacího prvku má svou vlastní sadu vlastností, metody a události, které se, že je vhodný pro určitý účel. Můžete manipulace s ovládacími prvky v návrháři a napsat kód pro dynamické přidávání ovládacích prvků za běhu.  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)  
- Obsahuje odkazy týkající se umístění ovládacích prvků ve formulářích.  
-  
- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)  
- Obsahuje odkazy související s uspořádání ovládacích prvků na formuláři.  
-  
- [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
- Popisuje použití klávesové zkratky, textové popisky pro ovládací prvky a modifikační klávesy.  
-  
- [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)  
- Obsahuje ovládací prvky, které využívají službu Windows Forms a základní akce, které můžete provést pomocí každého ovládacího prvku.  
-  
- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](developing-custom-windows-forms-controls.md)  
- Poskytuje základní informace a ukázky, které pomáhají uživatelům vývoj vlastních ovládacích prvků Windows Forms.  
-  
- [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)  
- Popisuje postupy pro vytváření vlastních ovládacích prvků pomocí návrhu a dědičnosti.  
-  
-## <a name="related-sections"></a>Související oddíly  
- [Klientské aplikace](../../develop-client-apps.md)  
- Poskytuje základní informace o vývoji aplikací založených na Windows.  
+
+Při návrhu a úpravách uživatelského rozhraní aplikací model Windows Forms budete muset ovládací prvky přidat, Zarovnat a umístit. Ovládací prvky jsou objekty, které jsou obsaženy v objektech formuláře. Každý typ ovládacího prvku má svou vlastní sadu vlastností, metod a událostí, které je vhodné pro určitý účel. Můžete manipulovat s ovládacími prvky v návrháři a napsat kód pro dynamické přidávání ovládacích prvků v době běhu.
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Vkládání ovládacích prvků na model Windows Forms](putting-controls-on-windows-forms.md)\
+Obsahuje odkazy související s vložením ovládacích prvků do formulářů.
+
+[Uspořádání ovládacích prvků na model Windows Forms](how-to-align-multiple-controls-on-windows-forms.md)\
+Články související s uspořádáním ovládacích prvků na formulářích.
+
+[Popisování jednotlivých ovládacích prvků model Windows Forms a poskytování jejich zástupců](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)\
+Popisuje použití klávesových zkratek, textových popisků ovládacích prvků a modifikačních kláves.
+
+[Ovládací prvky pro použití na model Windows Forms](controls-to-use-on-windows-forms.md)\
+Uvádí ovládací prvky, které pracují s model Windows Forms a základní věci, které můžete s každým ovládacím prvkem provádět.
+
+[Vývoj vlastních ovládacích prvků model Windows Forms s .NET Framework](developing-custom-windows-forms-controls.md)\
+Poskytuje informace a ukázky na pozadí, které uživatelům usnadňují vývoj vlastních model Windows Formsch ovládacích prvků.
+
+[Vývoj ovládacích prvků model Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)\
+Popisuje techniky pro vytváření vlastních ovládacích prvků prostřednictvím návrhu a dědičnosti.
+
+## <a name="related-sections"></a>Související oddíly
+
+[Klientské aplikace](../../develop-client-apps.md)\
+Poskytuje přehled vývoje aplikací určených pro systém Windows.

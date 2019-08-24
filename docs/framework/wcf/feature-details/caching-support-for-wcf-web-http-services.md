@@ -2,12 +2,12 @@
 title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: a6a03f20fa6a853f813dc9eff3a4202ab18cad90
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 655e8807a78d542cd7fa586eca3750507891f74b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952674"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988770"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]umožňuje použít deklarativní mechanizmus ukládání do mezipaměti, který je již k dispozici v ASP.NET ve webových službách HTTP služby WCF. To vám umožní ukládat odpovědi z operací služby HTTP webu WCF do mezipaměti. Když uživatel odešle službě požadavek HTTP GET, která je nakonfigurovaná pro ukládání do mezipaměti, ASP.NET odešle zpět odpověď uloženou v mezipaměti a metoda služby se nevolá. Až mezipaměť vyprší, při příštím odeslání HTTP GET se vaše metoda služby zavolá a odpověď se znovu uloží do mezipaměti. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [Přehled ukládání do mezipaměti ASP.NET](https://go.microsoft.com/fwlink/?LinkId=152534) .  
@@ -40,7 +40,7 @@ public class Service
 ```
   
 > [!WARNING]
->  Pokud není režim kompatibility ASP.NET zapnutý a <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> použije se výjimka, je vyvolána výjimka.  
+> Pokud není režim kompatibility ASP.NET zapnutý a <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> použije se výjimka, je vyvolána výjimka.  
   
  Název profilu mezipaměti určený parametrem <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> identifikuje profil mezipaměti, který je přidán do konfiguračního souboru Web. config. Profil mezipaměti je definován v prvku <`outputCacheSetting`>, jak je znázorněno v následujícím příkladu konfigurace.  
   

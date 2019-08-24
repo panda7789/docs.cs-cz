@@ -10,27 +10,27 @@ helpviewer_keywords:
 ms.assetid: 1167cfe6-c8aa-4096-94ba-c66c3a4edf4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9fd67d5f0cb5af33dc2b79f86148557a0dca6ec4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 026c7d2be678c4b6aeed4e2e6f9eb43283cd04c1
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638928"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988465"
 ---
 # <a name="how-to-combine-parallel-and-sequential-linq-queries"></a>Postupy: Kombinování paralelních a sekvenčních LINQ dotazů
-Tento příklad ukazuje způsob použití <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metoda k vynucení PLINQ postupně zpracovat všechny následující operátory v dotazu. I když je většinou horší než paralelní zpracování sekvenčních, někdy je potřeba správné výsledky.  
+Tento příklad ukazuje, jak použít <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metodu k instruování PLINQ pro zpracování všech dalších operátorů v dotazu sekvenčně. I když je sekvenční zpracování obecně pomalejší než paralelní, někdy je potřeba, abyste naprodukovali správné výsledky.  
   
 > [!WARNING]
->  V tomto příkladu je za cíl předvést využití a nemusí pracovat rychleji než ekvivalentní sekvenčních LINQ to Objects dotazům. Další informace o zrychlení najdete v tématu [porozumění zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Tento příklad je určený k předvedení používání a nemusí běžet rychleji než ekvivalentní sekvenční LINQ to Objects dotaz. Další informace o zrychlení naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje jeden scénář, ve kterém <xref:System.Linq.ParallelEnumerable.AsSequential%2A> je potřeba, a to zachovat řazení, který byl vytvořen v předchozí klauzuli dotazu.  
+ Následující příklad ukazuje jeden scénář, ve kterém <xref:System.Linq.ParallelEnumerable.AsSequential%2A> je třeba zachovat řazení, které bylo vytvořeno v předchozí klauzuli dotazu.  
   
  [!code-csharp[PLINQ#24](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#24)]
  [!code-vb[PLINQ#24](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#24)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li zkompilovat a spustit tento kód, vložte jej do [ukázková Data pro PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) projektu, přidejte řádek pro zavolání metody z `Main`, a stiskněte klávesu F5.  
+ Chcete-li zkompilovat a spustit tento kód, vložte jej do projektu [ukázkového data pro PLINQ](../../../docs/standard/parallel-programming/plinq-data-sample.md) , přidejte řádek pro volání metody `Main`z a stiskněte klávesu F5.  
   
 ## <a name="see-also"></a>Viz také:
 

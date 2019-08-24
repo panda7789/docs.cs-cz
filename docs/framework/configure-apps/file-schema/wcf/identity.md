@@ -2,12 +2,12 @@
 title: <identity>
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
-ms.openlocfilehash: d5d06953c67b90e8367f2c0d01a670a46f487526
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 262ac9be6d5ce6466cf9aff33c0c2791c0e149dd
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925415"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988383"
 ---
 # <a name="identity"></a>\<> identity
 Prvek identita umožňuje vývojáři klienta zadat v době návrhu očekávanou identitu služby. V procesu handshake mezi klientem a službou infrastruktura Windows Communication Foundation (WCF) zajistí, že identita očekávané služby bude odpovídat hodnotám tohoto prvku, a proto může být ověřena. Další informace najdete v tématu [Identita a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
@@ -29,7 +29,7 @@ Prvek identita umožňuje vývojáři klienta zadat v době návrhu očekávanou
   <dns value="String" />
   <rsa value="String" />
   <servicePrincipalName value="String" />
-  <usePrincipalName value="String" />
+  <userPrincipalName value="String" />
 </identity>
 ```  
   

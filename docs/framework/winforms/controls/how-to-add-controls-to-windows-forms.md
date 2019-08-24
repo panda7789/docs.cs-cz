@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 7ee603fa5350ef81c6d32d2f22119bbe526295df
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d20afc6e8a950035cc3c0bf010504d42f401bfbb
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912615"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987517"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do Windows Forms
 Většina formulářů je navržena přidáním ovládacích prvků na plochu formuláře k definování uživatelského rozhraní (UI). *Ovládací prvek* je komponenta na formuláři sloužící k zobrazení informací nebo přijetí vstupu uživatele. Další informace o ovládacích prvcích naleznete v tématu [model Windows Forms Controls](index.md).
@@ -89,7 +89,6 @@ Většina formulářů je navržena přidáním ovládacích prvků na plochu fo
 ## <a name="see-also"></a>Viz také:
 
 - [Windows Forms – ovládací prvky](index.md)
-- [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Postupy: Změnit velikost ovládacích prvků na model Windows Forms](how-to-resize-controls-on-windows-forms.md)
 - [Postupy: Nastavení textu zobrazovaného ovládacím prvkem model Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

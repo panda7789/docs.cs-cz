@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: 4007a04bf3bd2b130e978415722b0e5b7769cc25
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 210d15187cd539cdae6e38fdcb708b4b9f81c073
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953266"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988302"
 ---
 # <a name="handling-datatable-events"></a>Zpracování událostí datové tabulky
 <xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které mohou být zpracovány aplikací. Následující tabulka popisuje `DataTable` události.  
@@ -33,7 +33,7 @@ ms.locfileid: "69953266"
 > Většina operací, které přidávají nebo odstraňují řádky, `ColumnChanged` nevyvolají události a `ColumnChanging` . `ColumnChanged` `ColumnChanging` `DiffGram`Metoda však vyvolá události `DiffGram` `Auto` a, pokud není nastavena na nebo je nastavena na hodnotu, když je dokument XML čten. `XmlReadMode` `ReadXml`  
   
 > [!WARNING]
->  Poškození dat může nastat, pokud jsou změněna data v `DataSet` , z `RowChanged` nichž je událost vyvolána. Pokud dojde k poškození dat, nebude vyvolána žádná výjimka.  
+> Poškození dat může nastat, pokud jsou změněna data v `DataSet` , z `RowChanged` nichž je událost vyvolána. Pokud dojde k poškození dat, nebude vyvolána žádná výjimka.  
   
 ## <a name="additional-related-events"></a>Další související události  
  <xref:System.Data.DataTable.Constraints%2A> Vlastnost<xref:System.Data.ConstraintCollection> obsahuje instanci. <xref:System.Data.ConstraintCollection> Třída zpřístupňuje událost. <xref:System.Data.ConstraintCollection.CollectionChanged> Tato událost se aktivuje při přidání, úpravě nebo odebrání omezení z `ConstraintCollection`.  
@@ -71,7 +71,7 @@ ms.locfileid: "69953266"
 > Změny sloupců výrazů nikdy nevyvolávají `DataTable` události. Změny ve sloupcích výrazu jsou pouze `DataView` vyvolání `DataRowView` a události. Sloupce výrazů mohou mít závislosti na více dalších sloupcích a lze je vyhodnotit několikrát během jedné `DataRow` operace. Každé vyhodnocení výrazu vyvolá události a jediná `DataRow` operace může vyvolat vícenásobné `ListChanged` události a `PropertyChanged` , pokud jsou ovlivněny sloupce výrazu, případně včetně více událostí pro stejný sloupec výrazu.  
   
 > [!WARNING]
->  <xref:System.NullReferenceException> Nevolejte`RowChanged` v rámci obslužné rutiny události. Pokud je vyvolána `RowChanged` v rámci události a `DataTable`, pak `DataTable` bude poškozen. <xref:System.NullReferenceException>  
+> <xref:System.NullReferenceException> Nevolejte`RowChanged` v rámci obslužné rutiny události. Pokud je vyvolána `RowChanged` v rámci události a `DataTable`, pak `DataTable` bude poškozen. <xref:System.NullReferenceException>  
   
 ### <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit obslužné rutiny událostí pro `RowChanged`události `RowChanging`, `RowDeleted`, `RowDeleting`, `ColumnChanged`, `ColumnChanging`, `TableNewRow`, `TableCleared`, a `TableClearing` . Každá obslužná rutina události zobrazuje výstup v okně konzoly při jeho vyvolání.  

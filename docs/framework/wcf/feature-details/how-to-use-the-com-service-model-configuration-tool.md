@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 9677e516ef6c91ef344e10bc8f608a397a4ed157
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 9dabb5e1410427940db911299e66f82ec009cce9
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966140"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988685"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>Postupy: Použití nástroje pro konfiguraci modelu služby COM+
 Po výběru vhodného hostitelského režimu použijte nástroj příkazového řádku konfigurace modelu COM+ (ComSvcConfig. exe) ke konfiguraci rozhraní aplikace, která budou vystavena jako webové služby.  
@@ -29,7 +29,7 @@ Po výběru vhodného hostitelského režimu použijte nástroj příkazového �
 > Vrácení tohoto klíče registru je důležité. Toto je klíč kompatibility. Nevrácení této změny může způsobit problémy s jinými aplikacemi .NET běžícími v počítači.  
   
 > [!WARNING]
->  Při použití ComSvcConfig. exe/install v počítači s Windows 8 se zobrazí dialogové okno s informacemi o tom, že aplikace na vašem počítači potřebuje tuto funkci Windows: .NET Framework 3,5 (zahrnuje .NET 2,0 a .NET 3,0, pokud není nainstalovaná .NET Framework 3,5. Toto dialogové okno může být ignorováno. Alternativně můžete klíč registru OnlyUseLatestCLR SED na hodnotu DWORD 0x00000001.  
+> Při použití ComSvcConfig. exe/install v počítači s Windows 8 se zobrazí dialogové okno s informacemi o tom, že aplikace na vašem počítači potřebuje tuto funkci Windows: .NET Framework 3,5 (zahrnuje .NET 2,0 a .NET 3,0, pokud není nainstalovaná .NET Framework 3,5. Toto dialogové okno může být ignorováno. Alternativně můžete klíč registru OnlyUseLatestCLR SED na hodnotu DWORD 0x00000001.  
   
 ### <a name="to-add-an-interface-to-the-set-of-interfaces-that-are-to-be-exposed-as-web-services-using-the-com-hosting-mode"></a>Přidání rozhraní do sady rozhraní, které mají být zveřejněny jako webové služby, pomocí hostitelského režimu COM+  
   

@@ -3,12 +3,12 @@ title: <federationConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
 author: BrucePerlerMS
-ms.openlocfilehash: 53d6bdb34ded52e49fcc8c5de98fcd45ddabadaa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c4dbb31bb7961f0d33df9d1faee8fe36ecb520a3
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942768"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988336"
 ---
 # <a name="federationconfiguration"></a>\<federationConfiguration>
 <xref:System.IdentityModel.Services.SessionAuthenticationModule> Nakonfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a (SAM) při použití federovaného ověřování prostřednictvím protokolu WS-Federation. Konfiguruje při použití třídy<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> nebo k poskytnutí řízení přístupu založeného na deklaracích. <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> <xref:System.Security.Claims.ClaimsAuthorizationManager>  
@@ -74,7 +74,7 @@ ms.locfileid: "69942768"
  Následující kód XML ukazuje `<federationConfiguration>` prvek, který určuje nastavení pro WSFAM a určuje, že správce Sam používá výchozí obslužnou rutinu souborů cookie (instance <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy).  
   
 > [!WARNING]
->  V tomto příkladu není k použití protokolu HTTPS nutná obslužná rutina souborů cookie ani WSFAM. Důvodem je, že `requireHttps` atribut `<wsFederation>` na elementu `<cookieHandlerElement>` a `requireSsl` atribut v jsou `false`. Tato nastavení se nedoporučují pro většinu produkčních prostředí, protože mohou představovat bezpečnostní riziko.  
+> V tomto příkladu není k použití protokolu HTTPS nutná obslužná rutina souborů cookie ani WSFAM. Důvodem je, že `requireHttps` atribut `<wsFederation>` na elementu `<cookieHandlerElement>` a `requireSsl` atribut v jsou `false`. Tato nastavení se nedoporučují pro většinu produkčních prostředí, protože mohou představovat bezpečnostní riziko.  
   
 ```xml  
 <system.identityModel.services>  

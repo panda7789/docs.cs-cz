@@ -2,21 +2,21 @@
 title: Řízení serializace a deserializace pomocí třídy SerializationBinder
 ms.date: 03/30/2017
 ms.assetid: ba8dcecf-acc7-467c-939d-021bbac797d4
-ms.openlocfilehash: cb2476b55a965e326e492c3c0b77f0be65b2b290
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 29d48560cf25cd5c2e34d7a512d8c7079c65879e
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857256"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988214"
 ---
 # <a name="controlling-serialization-and-deserialization-with-serializationbinder"></a>Řízení serializace a deserializace pomocí třídy SerializationBinder
-Během serializace formátovací modul přenáší informace potřebné k vytvoření instance objektu správný typ a verze. Tyto informace obecně zahrnuje úplný název typu a název objektu sestavení. Ve výchozím nastavení používá deserializace tyto informace k vytvoření instance objektu stejné. Někteří uživatelé muset které třídu k serializaci a deserializaci buď protože původní třídy nemusí existovat v počítači, provádí se serializace ovládacího prvku, původní třídy přesunula mezi sestaveními, nebo na jinou verzi třídy je vyžadován na Server a klienta. Další informace najdete v tématu [použití vazače serializace](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).  
+Během serializace přenáší formátovací modul informace potřebné k vytvoření instance objektu správného typu a verze. Tyto informace obecně obsahují úplný název typu a název sestavení objektu. Ve výchozím nastavení deserializace používá tyto informace k vytvoření instance identického objektu. Někteří uživatelé mohou potřebovat určit, která třída se má serializovat a deserializovat, buď protože původní třída nesmí existovat na počítači provádějícím deserializaci, původní třída byla přesunuta mezi sestaveními nebo je vyžadována jiná verze třídy na Server a klient. Další informace najdete v tématu [použití pořadače serializace](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).  
   
 > [!WARNING]
->  Tato funkce je dostupná jenom při použití <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> nebo <xref:System.Runtime.Serialization.NetDataContractSerializer>.  
+> Tato funkce je k dispozici pouze v <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> případě, <xref:System.Runtime.Serialization.NetDataContractSerializer>že používáte nebo.  
   
-## <a name="using-serializationbinder"></a>Pomocí třídy SerializationBinder  
- <xref:System.Runtime.Serialization.SerializationBinder> je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace. Pokud chcete řídit typy používané během serializace a deserializace, odvoďte třídu z <xref:System.Runtime.Serialization.SerializationBinder> a přepsat <xref:System.Runtime.Serialization.SerializationBinder.BindToName(System.Type,System.String@,System.String@)> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType(System.String,System.String)> metody. <xref:System.Runtime.Serialization.SerializationBinder.BindToName(System.Type,System.String@,System.String@)> Přijímá metodu <xref:System.Type> a vrátí sestavení a zadejte název. <xref:System.Runtime.Serialization.SerializationBinder.BindToType(System.String,System.String)> Metoda přebírá sestavení a zadejte název a vrátí <xref:System.Type>.  
+## <a name="using-serializationbinder"></a>Použití SerializationBinder  
+ <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třída, která slouží k řízení skutečných typů použitých během serializace a deserializace. Chcete-li řídit typy používané při serializaci a deserializaci, odvodit <xref:System.Runtime.Serialization.SerializationBinder> třídu z a <xref:System.Runtime.Serialization.SerializationBinder.BindToName(System.Type,System.String@,System.String@)> přepsat <xref:System.Runtime.Serialization.SerializationBinder.BindToType(System.String,System.String)> metody a. <xref:System.Runtime.Serialization.SerializationBinder.BindToName(System.Type,System.String@,System.String@)> Metoda<xref:System.Type> přijímá a vrátí sestavení a název typu. Metoda přebírá sestavení a název typu a <xref:System.Type>vrátí. <xref:System.Runtime.Serialization.SerializationBinder.BindToType(System.String,System.String)>  
   
 ## <a name="see-also"></a>Viz také:
 

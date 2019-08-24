@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: d9c3492e50a5eba741fa6e241f6b2c57fde35ef0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 14bf9c89fd7142746b93cc45af6c2152e8700571
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952928"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988537"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementaci a volání asynchronních operací služby.  
@@ -76,7 +76,7 @@ public class SampleService:ISampleService
  Operace SampleMethodTaskAsync vrátí řetězec úkolu\<>, protože logická operace vrací řetězec. Další informace o asynchronním vzoru založeném na úlohách naleznete v tématu [asynchronní vzor založený](https://go.microsoft.com/fwlink/?LinkId=232504)na úlohách.  
   
 > [!WARNING]
->  Při použití asynchronního vzoru založeného na úlohách může být událost T:System.AggregateException vyvolána, pokud dojde k výjimce při čekání na dokončení operace. Tato výjimka může nastat u klienta nebo služeb.  
+> Při použití asynchronního vzoru založeného na úlohách může být událost T:System.AggregateException vyvolána, pokud dojde k výjimce při čekání na dokončení operace. Tato výjimka může nastat u klienta nebo služeb.  
   
 #### <a name="event-based-asynchronous-pattern"></a>Asynchronní vzor založený na událostech  
  Služba, která podporuje asynchronní vzor založený na událostech, bude mít jednu nebo více operací s názvem MethodNameAsync. Tyto metody mohou zrcadlit synchronní verze, které provádějí stejnou operaci v aktuálním vlákně. Třída může mít také událost MethodNameCompleted a může mít metodu MethodNameAsyncCancel (nebo jednoduše CancelAsync). Klient, který chce zavolat operaci, definuje obslužnou rutinu události, která se má volat po dokončení operace.  
