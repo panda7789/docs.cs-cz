@@ -2,42 +2,42 @@
 title: 'Postupy: Verze služby'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: 4e2f5cb01ac2c7f49bf93538b3c4b1f0fb4fab2b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ce9e7fc896f1ebc46dd25777fc629532339cbe2
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654543"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988707"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
-Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která směruje zprávy na různé verze stejné službě. V tomto příkladu zprávy jsou směrovány na dvě různé verze služby Kalkulačka `roundingCalc` (v1) a `regularCalc` (v2). Obou implementacích podporují stejné operace; ale službu starší `roundingCalc`, zaokrouhlí na nejbližší celočíselnou hodnotu všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete používat novější `regularCalc` služby.  
+Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která směruje zprávy do různých verzí stejné služby. V tomto příkladu jsou zprávy směrovány do dvou různých verzí služby `roundingCalc` kalkulačky (V1) a `regularCalc` (v2). Obě implementace podporují stejné operace. starší služba `roundingCalc`však Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopná určit, jestli se má používat `regularCalc` novější služba.  
   
 > [!WARNING]
->  Aby bylo možné směrovat zprávy pro konkrétní verzi služby, směrovací služba musí být schopní určit, na základě obsahu zpráv cíl zprávy. V metodě je znázorněno níže bude klient určit verzi vložením informace do záhlaví zprávy. Způsoby správy verzí služby, které nechcete, aby klienti k předání dalších dat. Například zpráva je možné směrovat na nejnovější nebo nejvíce kompatibilní verze služby nebo směrovač pomocí součástí standardní obálky protokolu SOAP.  
+> Aby bylo možné směrovat zprávu na konkrétní verzi služby, musí být směrovací služba schopná určit cíl zprávy na základě obsahu zprávy. V níže uvedené metodě bude klient zadat verzi vložením informací do záhlaví zprávy. Existují metody správy verzí, které nevyžadují, aby klienti předávali další data. Například zpráva může být směrována na nejnovější nebo nejvíce kompatibilní verzi služby nebo směrovač může použít část standardní obálky protokolu SOAP.  
   
- Operace vystavené obě služby jsou:  
+ Mezi operace vystavené oběma službami patří:  
   
 - Přidejte  
   
-- Odečíst  
+- Odečten  
   
-- Násobení  
+- Hodnotou  
   
-- Dělení  
+- Rozdělovací  
   
- Protože obou implementacích služby zpracování stejné operace a jsou v podstatě totožné než data, která vrátí, základní data obsažená ve zprávách odesílaných z klientských aplikací není dostatečně jedinečných, aby bylo možné určit, jak se směrují požadavek. Filtry akcí například nelze použít, protože výchozí akce pro obě služby jsou stejné.  
+ Vzhledem k tomu, že obě implementace služby pracují se stejnými operacemi a jsou v podstatě totožné s daty, která vrací, nejsou základní data obsažená ve zprávách odesílaných klientskými aplikacemi dostatečně jedinečná, aby bylo možné určit, jak se má směrovat Request. Například filtry akcí nelze použít, protože výchozí akce pro obě služby jsou stejné.  
   
- To může být vyřešen v několika způsoby, například vystavuje určitý koncový bod směrovače pro každou verzi služby nebo přidání prvku vlastní hlavičky zprávy k označení verze služby.  Každá z těchto přístupů můžete jednoznačně směrovat příchozí zprávy na konkrétní verzi služby, ale využívají obsah jedinečné zprávy je upřednostňovanou metodou rozlišení mezi požadavky pro různé verze aktualizace service.  
+ Dá se vyřešit několika způsoby, jako je například vystavení konkrétního koncového bodu na směrovači pro každou verzi služby nebo přidání vlastního elementu záhlaví do zprávy, aby označovala verzi služby.  Každý z těchto přístupů vám umožní jedinečně směrovat příchozí zprávy na konkrétní verzi služby, ale využití jedinečného obsahu zprávy je upřednostňovanou metodou, jak rozlišovat mezi požadavky na různé verze služeb.  
   
- Klientská aplikace v tomto příkladu přidá vlastní hlavičky "CalcVer" do zprávy požadavku. Tato hlavička bude obsahovat hodnotu, která určuje verzi, která se mají směrovat zprávy do služby. Hodnota '1' značí, že zpráva musí být zpracovány službou roundingCalc, zatímco hodnota '2' znamená regularCalc služby. To umožňuje klientské aplikaci přímo ovládají verze služby bude zpracovávat zprávy.  Vlastní hlavičky je hodnota obsažená v něm, můžete použít jeden koncový bod pro příjem zpráv určené pro obě verze služby. Následující kód slouží v klientské aplikaci přidáte tuto vlastní hlavičky zprávy:  
+ V tomto příkladu klientská aplikace do zprávy požadavku přidá vlastní hlavičku ' CalcVer '. Tato hlavička bude obsahovat hodnotu, která označuje verzi služby, na kterou se má zpráva směrovat. Hodnota 1 označuje, že zprávu musí zpracovat služba roundingCalc, zatímco hodnota 2 označuje službu regularCalc. Díky tomu může klientská aplikace přímo řídit, která verze služby zprávu zpracuje.  Vzhledem k tomu, že vlastní hlavička je hodnota obsažená v rámci zprávy, můžete použít jeden koncový bod pro příjem zpráv určených pro obě verze služby. Následující kód lze v klientské aplikaci použít k přidání této vlastní hlavičky do zprávy:  
   
 ```csharp  
 messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custom.namespace/", "2"));  
 ```  
   
-### <a name="implement-service-versioning"></a>Správa verzí služby implementují  
+### <a name="implement-service-versioning"></a>Implementace správy verzí služby  
   
-1. Vytvořte základní konfiguraci směrovací služby tak, že zadáte koncový bod služby, vystavený službou. Následující příklad definuje jedinou službou koncový bod, který se použije pro příjem zpráv. Také definuje koncové body klienta, které se použije k odesílání zpráv `roundingCalc` (v1) a `regularCalc` služby (v2).  
+1. Vytvořte základní konfiguraci směrovací služby zadáním koncového bodu služby vystaveného službou. Následující příklad definuje jeden koncový bod služby, který se použije pro příjem zpráv. Také definuje koncové body klienta, které budou použity k odesílání zpráv do `roundingCalc` služeb (V1) `regularCalc` a (v2).  
   
     ```xml  
     <services>  
@@ -69,7 +69,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
         </client>  
     ```  
   
-2. Určit filtry, které slouží ke směrování zpráv do cílové koncové body.  V tomto příkladu se používá filtr XPath rozpoznat hodnotu vlastní hlavičky "CalcVer" určení verze zprávy se mají směrovat do. Filtr XPath slouží také ke zjišťování zpráv, které neobsahují "CalcVer" záhlaví. Následující příklad definuje požadovaný filtry a obor názvů tabulky.  
+2. Definujte filtry používané ke směrování zpráv do cílových koncových bodů.  Pro účely tohoto příkladu je použit filtr XPath k detekci hodnoty vlastní hlavičky "CalcVer" a určení, na kterou verzi se má zpráva směrovat. Filtr XPath se používá také k detekci zpráv, které neobsahují hlavičku "CalcVer". Následující příklad definuje požadované filtry a tabulku oboru názvů.  
   
     ```xml  
     <!-- use the namespace table element to define a prefix for our custom namespace-->  
@@ -94,11 +94,11 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     ```  
   
     > [!NOTE]
-    > Předpona oboru názvů S12 na úrovni Standard je definované ve výchozím nastavení v tabulce obor názvů a představuje obor názvů `http://www.w3.org/2003/05/soap-envelope`.
+    > Předpona oboru názvů S12 je ve výchozím nastavení definována v tabulce oboru názvů a představuje obor `http://www.w3.org/2003/05/soap-envelope`názvů.
   
-3. Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta. Pokud zpráva obsahuje hlavičku "CalcVer" s hodnotou 1, pošle se na službu regularCalc. Pokud hlavička obsahuje hodnotu 2, pošle se na službu roundingCalc. Pokud je k dispozici žádná záhlaví, zpráva bude směrován na regularCalc.  
+3. Definujte tabulku filtru, která přidruží jednotlivé filtry ke koncovému bodu klienta. Pokud zpráva obsahuje hlavičku "CalcVer" s hodnotou 1, bude odeslána službě regularCalc. Pokud hlavička obsahuje hodnotu 2, bude odeslána do služby roundingCalc. Pokud není k dispozici hlavička, zpráva bude směrována do regularCalc.  
   
-     Následující definuje filtr tabulky a přidá filtry definovali dříve.  
+     Následující definice tabulky filtru a přidává filtry definované dříve.  
   
     ```xml  
     <filterTables>  
@@ -117,7 +117,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </filterTables>  
     ```  
   
-4. Vyhodnocování příchozích zpráv proti filtrů obsažených v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přidružení `filterTable1` s koncovými body služby:  
+4. Chcete-li vyhodnotit příchozí zprávy proti filtrům obsaženým v tabulce filtru, je nutné přidružit tabulku filtru k koncovým bodům služby pomocí chování směrování. Následující příklad ukazuje přidružení `filterTable1` k koncovým bodům služby:  
   
     ```xml  
     <behaviors>  
@@ -131,7 +131,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     ```  
   
 ## <a name="example"></a>Příklad  
- Tady je úplný seznam všech konfiguračního souboru.  
+ Následuje úplný seznam konfiguračního souboru.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -214,7 +214,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
 ```  
   
 ## <a name="example"></a>Příklad  
- Tady je úplný seznam všech klientské aplikace.  
+ Následuje úplný seznam klientských aplikací.  
   
 ```csharp  
 using System;  

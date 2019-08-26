@@ -2,54 +2,54 @@
 title: Kontrolní koncový bod pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 1b883334-1590-4fbb-b0d6-65197efe0700
-ms.openlocfilehash: 781a7cefaeeb8cd9cd21298471c59de2e7815244
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 3c826147d9d3ad452957230adb8f32659b4d1352
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66424017"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988551"
 ---
 # <a name="workflow-control-endpoint"></a>Kontrolní koncový bod pracovního postupu
-Kontrolní koncový bod pracovního postupu umožňuje vývojářům volat operace řízení vzdálené řízení hostované pomocí instancí pracovních postupů <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Tato funkce slouží k provádění operací správy, jako je pozastavení, obnovení a ukončit prostřednictvím kódu programu.  
+Koncový bod řízení pracovního postupu umožňuje vývojářům volat operace řízení pro vzdálené řízení instancí pracovních postupů <xref:System.ServiceModel.Activities.WorkflowServiceHost>hostovaných pomocí. Tato funkce se dá použít k programovému provádění operací řízení, jako je pozastavení, obnovení a ukončení.  
   
 > [!WARNING]
->  Pokud koncový bod pracovního postupu ovládací prvek v rámci transakce a pracovní postup je řízen pomocí obsahuje <xref:System.Activities.Statements.Persist> aktivity, instance pracovního postupu bude blokovat, dokud transakce vyprší časový limit.  
+> Pokud používáte řídicí koncový bod pracovního postupu v rámci transakce a řízený pracovní postup obsahuje <xref:System.Activities.Statements.Persist> aktivitu, instance pracovního postupu se zablokuje, dokud nevyprší časový limit transakce.  
   
 ## <a name="workflow-instance-management"></a>Správa instancí pracovního postupu  
- [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Definuje novou smlouvu volá <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Tento kontrakt definuje řadu ovládacího prvku operace, které vám umožní vzdálené řízení instancí pracovních postupů, které jsou hostovány <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> je standardní koncový bod, který poskytuje implementaci <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> kontraktu. <xref:System.ServiceModel.Activities.WorkflowControlClient> je třída, která se používá k odeslání operace ovládacího prvku, které se <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>.  
+ [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]Definuje novou kontrakt s názvem <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Tato Smlouva definuje řadu operací řízení, které umožňují vzdáleně řídit instance pracovních postupů, které hostuje <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>je standardní koncový bod, který poskytuje implementaci <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> kontraktu. <xref:System.ServiceModel.Activities.WorkflowControlClient>je třída, která slouží k odeslání operací ovládacího prvku do <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>.  
   
- Instance pracovního postupu může být v jednom z následujících stavů:  
+ Instance pracovního postupu můžou být v jednom z následujících stavů:  
   
  Aktivní  
- Stav instance pracovního postupu předtím, než dosáhne stavu dokončení a když to není v pozastaveném stavu. V tomto stavu instance pracovního postupu spuštěn a zpracovává zprávy aplikace.  
+ Stav instance pracovního postupu před tím, než dosáhne stavu dokončeno, a když není v pozastaveném stavu. V tomto stavu instance pracovního postupu spouští a zpracovává zprávy aplikací.  
   
  Dočasně blokován.  
- V tomto stavu instance pracovního postupu nejde spustit i v případě, že existují aktivity, které nebyly spuštěny, spuštění nebo částečně spuštěny.  
+ V tomto stavu se instance pracovního postupu nespustí ani v případě, že dojde k aktivitám, které nezačaly běžet nebo byly částečně spuštěny.  
   
  Byla dokončena  
- Konečný stav instance pracovního postupu. Po dosažení dokončeného stavu nelze spustit instanci pracovního postupu.  
+ Konečný stav instance pracovního postupu. Po dosažení stavu dokončení nelze instanci pracovního postupu spustit.  
   
 ## <a name="iworkflowinstancemanagement"></a>IWorkflowInstanceManagement  
- <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> Rozhraní definuje sadu operací řízení verzí synchronní a asynchronní. Počet zrušených zpracovaných verze vyžadují použití s ohledem na transakce vazby. Následující tabulka uvádí podporované operace ovládacího prvku.  
+ <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> Rozhraní definuje sadu operací řízení s synchronními a asynchronními verzemi. Verze v transakčním systému vyžadují použití vazby zohledňující transakci. V následující tabulce jsou uvedeny podporované operace ovládacího prvku.  
   
-|Operace správy|Popis|  
+|Operace řízení|Popis|  
 |-----------------------|-----------------|  
-|Přerušení|Vynuceně zastaví spuštění instance pracovního postupu.|  
-|Zrušit|Přejde do dokončeného stavu instance pracovního postupu ze stavu aktivní nebo se pozastavuje.|  
-|Spustit|Představuje příležitost ke spuštění instance pracovního postupu.|  
-|Pozastavit|Převede instanci pracovního postupu ze stavu Aktivní do pozastaveného stavu.|  
-|ukončit|Přejde do dokončeného stavu instance pracovního postupu ze stavu aktivní nebo se pozastavuje.|  
-|Zrušit pozastavení účtu uživatele|Přechází do stavu aktivní instance pracovního postupu v pozastaveném stavu.|  
-|TransactedCancel|Provede operaci zrušit v rámci transakce (byla převedena z klienta nebo vytváření místně). Pokud systém udržuje trvalého stavu instance pracovního postupu, musí být instance pracovního postupu jako trvalý, během provádění této operace.|  
-|TransactedRun|Provede operaci spustit v rámci transakce (byla převedena z klienta nebo vytváření místně). Pokud systém udržuje trvalého stavu instance pracovního postupu, musí být instance pracovního postupu jako trvalý, během provádění této operace.|  
-|TransactedSuspend|Provede operaci pozastavení v rámci transakce (byla převedena z klienta nebo vytváření místně). Pokud systém udržuje trvalého stavu instance pracovního postupu, musí být instance pracovního postupu jako trvalý, během provádění této operace.|  
-|TransactedTerminate|Provádí operace ukončení v rámci transakce (byla převedena z klienta nebo vytváření místně). Pokud systém udržuje trvalého stavu instance pracovního postupu, musí být instance pracovního postupu jako trvalý, během provádění této operace.|  
-|TransactedUnsuspend|Provede operaci zrušit pozastavení v rámci transakce (byla převedena z klienta nebo vytváření místně). Pokud systém udržuje trvalého stavu instance pracovního postupu, musí být instance pracovního postupu jako trvalý, během provádění této operace.|  
+|Přerušení|Vynuceně zastaví provádění instance pracovního postupu.|  
+|Zrušit|Přepřechoduje instanci pracovního postupu z aktivního nebo pozastaveného stavu do stavu dokončeno.|  
+|Spustit|Poskytuje instanci pracovního postupu, kterou je možné provést.|  
+|Pozastavit|Převede instanci pracovního postupu z aktivního stavu do pozastaveného stavu.|  
+|Ruší|Přepřechoduje instanci pracovního postupu z aktivního nebo pozastaveného stavu do stavu dokončeno.|  
+|Zrušit pozastavení účtu|Převede instanci pracovního postupu z pozastaveného stavu do stavu aktivní.|  
+|TransactedCancel|Provede operaci zrušení v rámci transakce (v toku z klienta nebo v místním prostředí). Pokud systém udržuje trvalý stav instance pracovního postupu, během provádění této operace musí být instance pracovního postupu trvalá.|  
+|TransactedRun|Provede operaci spuštění v rámci transakce (Flow z klienta nebo vytvořená místně). Pokud systém udržuje trvalý stav instance pracovního postupu, během provádění této operace musí být instance pracovního postupu trvalá.|  
+|TransactedSuspend|Provede operaci pozastavit v rámci transakce (v toku z klienta nebo vytvořená místně). Pokud systém udržuje trvalý stav instance pracovního postupu, během provádění této operace musí být instance pracovního postupu trvalá.|  
+|TransactedTerminate|Provede operaci ukončení v rámci transakce (v toku z klienta nebo v místním prostředí). Pokud systém udržuje trvalý stav instance pracovního postupu, během provádění této operace musí být instance pracovního postupu trvalá.|  
+|TransactedUnsuspend|Provede operaci zrušení pozastavení v rámci transakce (v toku z klienta nebo v místním prostředí). Pokud systém udržuje trvalý stav instance pracovního postupu, během provádění této operace musí být instance pracovního postupu trvalá.|  
   
- <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> Smlouvy neposkytuje prostředek pro vytvoření nové instance pracovního postupu, jenom ke správě existující instance pracovního postupu. Další informace o vzdálené vytvoření nové instance pracovního postupu najdete v tématu [rozšíření hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
+ <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> Kontrakt neposkytuje způsob, jak vytvořit novou instanci pracovního postupu, a to pouze za účelem správy existujících instancí pracovního postupu. Další informace o vzdáleném vytvoření nové instance pracovního postupu najdete v tématu [rozšiřitelnost hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md).  
   
 ## <a name="workflowcontrolendpoint"></a>WorkflowControlEndpoint  
- <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> je standardní koncový bod s pevnou smlouvy <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Když se přidá <xref:System.ServiceModel.Activities.WorkflowServiceHost> instance tohoto koncového bodu může pak použije k odesílání příkazu operace do jakékoli instance pracovního postupu, který je hostitelem instance hostitele. Další informace o standardních koncových bodů najdete v tématu [standardních koncových bodů](../../../../docs/framework/wcf/feature-details/standard-endpoints.md).  
+ <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>je standardní koncový bod s pevným kontraktem <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Po přidání do <xref:System.ServiceModel.Activities.WorkflowServiceHost> instance je možné tento koncový bod použít k odeslání operací příkazů do jakékoli instance pracovního postupu hostované instancí hostitele. Další informace o standardních koncových bodech naleznete v tématu [Standardní koncové body](../../../../docs/framework/wcf/feature-details/standard-endpoints.md).  
   
 ## <a name="workflowcontrolclient"></a>WorkflowControlClient  
- <xref:System.ServiceModel.Activities.WorkflowControlClient> je třída, která umožňuje odesílání ovládacího prvku <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> na <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Obsahuje metody pro každou operací podporované <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> kontraktu s výjimkou počet zrušených zpracovaných operací. <xref:System.ServiceModel.Activities.WorkflowControlClient> okolí transakce používá k určení, zda by měl být použit počet zrušených zpracovaných operací.
+ <xref:System.ServiceModel.Activities.WorkflowControlClient>je třída, která umožňuje odeslat řídicí zprávy do <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> <xref:System.ServiceModel.Activities.WorkflowServiceHost>v. Obsahuje metodu pro každou operaci podporovanou <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement> smlouvou s výjimkou operací s podporou transakcí. <xref:System.ServiceModel.Activities.WorkflowControlClient>Používá ambientní transakci k určení, zda by měla být použita transakční operace.

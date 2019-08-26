@@ -9,12 +9,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 27f75ea274cfdffc85a997a40b3dcfcafb7c9b1c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 71b2b1d32c06afca4abd89df4f6449dacb32046c
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952447"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988521"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak jednoduché jako ladění jiných typů aplikací sady Visual Studio. Chcete-li ladit službu, je nutné spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěna. Pak můžete ladit aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
@@ -32,7 +32,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
 > <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Ladění metody může být obtížné, protože správce řízení služeb má za následek limit 30 sekund pro všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md)systému Windows.  
   
 > [!WARNING]
->  Chcete-li získat smysluplné informace pro ladění, ladicí program sady Visual Studio potřebuje najít soubory symbolů pro binární soubory, které jsou laděny. Pokud ladíte službu, kterou jste vytvořili v aplikaci Visual Studio, soubory symbolů (soubory. pdb) jsou ve stejné složce jako spustitelný soubor nebo knihovna a ladicí program je načte automaticky. Pokud ladíte službu, kterou jste nesestavili, měli byste nejprve vyhledat symboly pro službu a ověřit, zda je lze najít pomocí ladicího programu. Viz [určení symbolu (. pdb) a zdrojových souborů v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Viz [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
+> Chcete-li získat smysluplné informace pro ladění, ladicí program sady Visual Studio potřebuje najít soubory symbolů pro binární soubory, které jsou laděny. Pokud ladíte službu, kterou jste vytvořili v aplikaci Visual Studio, soubory symbolů (soubory. pdb) jsou ve stejné složce jako spustitelný soubor nebo knihovna a ladicí program je načte automaticky. Pokud ladíte službu, kterou jste nesestavili, měli byste nejprve vyhledat symboly pro službu a ověřit, zda je lze najít pomocí ladicího programu. Viz [určení symbolu (. pdb) a zdrojových souborů v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Viz [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
   
 ### <a name="to-debug-a-service"></a>Ladění služby  
   
