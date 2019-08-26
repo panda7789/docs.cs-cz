@@ -1,33 +1,28 @@
 - name: Ovládací prvky Windows Forms
   href: index.md
   items:
-    - name: Uspořádávání ovládacích prvků ve Windows Forms
-      href: arranging-controls-on-windows-forms.md
+    - name: Uspořádání ovládacích prvků v modelu Windows Forms
       items:
-        - name: 'Postupy: Zarovnání více ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Zarovnání více ovládacích prvků'
           href: how-to-align-multiple-controls-on-windows-forms.md
-        - name: 'Postupy: Ukotvení ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Ukotvení ovládacích prvků'
           href: how-to-anchor-controls-on-windows-forms.md
-        - name: 'Postupy: Kopírování ovládacích prvků mezi formuláři Windows Forms'
-          href: how-to-copy-controls-between-windows-forms.md
-        - name: 'Postupy: Ukotvení ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Ukotvení ovládacích prvků'
           href: how-to-dock-controls-on-windows-forms.md
-        - name: 'Postupy: Vrstvení objektů ve Windows Forms'
+        - name: 'Postupy: Uspořádání objektů ve vrstvách'
           href: how-to-layer-objects-on-windows-forms.md
-        - name: 'Postupy: Uzamykání ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Uzamčení ovládacích prvků'
           href: how-to-lock-controls-to-windows-forms.md
-        - name: 'Postupy: Umístění ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Umístění ovládacích prvků'
           href: how-to-position-controls-on-windows-forms.md
-        - name: 'Postupy: Změna velikosti ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Změna velikosti ovládacích prvků'
           href: how-to-resize-controls-on-windows-forms.md
         - name: 'Postupy: Nastavení možností mřížky pro všechny formuláře Windows Forms'
           href: how-to-set-grid-options-for-all-windows-forms.md
-        - name: 'Postupy: Nastavení pořadí ovládacích prvků ve Windows Forms'
+        - name: 'Postupy: Nastavení pořadí ovládacích prvků'
           href: how-to-set-the-tab-order-on-windows-forms.md
-        - name: 'Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar'
+        - name: 'Návod: Uspořádání ovládacích prvků pomocí zarovnávacích čar'
           href: walkthrough-arranging-controls-on-windows-forms-using-snaplines.md
-        - name: 'Postupy: Uspořádání ovládacích prvků pomocí zarovnávacích čar a mřížky ve Windows Forms'
-          href: how-to-arrange-controls-with-snaplines-and-the-grid-in-windows-forms.md
         - name: 'Postupy: Přiřazení existujících ovládacích prvků jinému nadřazenému prvku'
           href: how-to-reassign-existing-controls-to-a-different-parent.md
         - name: 'Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize'
@@ -35,15 +30,15 @@
     - name: Vkládání ovládacích prvků do formulářů Windows
       href: putting-controls-on-windows-forms.md
       items:
-        - name: 'Postupy: Přidávání ovládacích prvků do Windows Forms'
+        - name: 'Postupy: Přidání ovládacích prvků'
           href: how-to-add-controls-to-windows-forms.md
-        - name: 'Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms'
+        - name: 'Postupy: Přidání ovládacích prvků bez uživatelského rozhraní'
           href: how-to-add-controls-without-a-user-interface-to-windows-forms.md
         - name: 'Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu'
           href: how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time.md
         - name: 'Návod: Automatické vyplnění sady nástrojů vlastními komponentami'
           href: walkthrough-automatically-populating-the-toolbox-with-custom-components.md
-        - name: 'Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms'
+        - name: 'Postupy: Přidání ovládacích prvků ActiveX'
           href: how-to-add-activex-controls-to-windows-forms.md
         - name: Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows
           href: considerations-when-hosting-an-activex-control-on-a-windows-form.md
@@ -140,7 +135,7 @@
               href: how-to-designate-a-windows-forms-button-as-the-cancel-button.md
             - name: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit pomocí Návrháře'
               href: designate-a-wf-button-as-the-cancel-button-using-the-designer.md
-            - name: 'Postupy: Reakce na kliknutí na tlačítko Windows Forms'
+            - name: 'Postupy: Reakce na kliknutí na ovládací prvek Button'
               href: how-to-respond-to-windows-forms-button-clicks.md
             - name: Metody výběru ovládacího prvku Windows Forms Button
               href: ways-to-select-a-windows-forms-button-control.md
@@ -149,9 +144,9 @@
           items:
             - name: Přehled ovládacího prvku CheckBox
               href: checkbox-control-overview-windows-forms.md
-            - name: 'Postupy: Reakce na kliknutí na prvek Windows Forms CheckBox'
+            - name: 'Postupy: Reakce na kliknutí na ovládací prvek CheckBox'
               href: how-to-respond-to-windows-forms-checkbox-clicks.md
-            - name: 'Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox'
+            - name: 'Postupy: Nastavení možností pomocí ovládacích prvků CheckBox'
               href: how-to-set-options-with-windows-forms-checkbox-controls.md
         - name: Ovládací prvek CheckedListBox
           href: checkedlistbox-control-windows-forms.md
@@ -330,9 +325,9 @@
                   href: how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md
                 - name: 'Postupy: Přidání nepřipojeného sloupce do ovládacího prvku Windows Forms DataGridView s datovou vazbou'
                   href: unbound-column-to-a-data-bound-datagridview.md
-                - name: 'Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView'
+                - name: 'Postupy: Vytvoření vazby objektů k ovládacím prvkům DataGridView'
                   href: how-to-bind-objects-to-windows-forms-datagridview-controls.md
-                - name: 'Postupy: Přístup k objektům připojeným k řádkům Windows Forms DataGridView'
+                - name: 'Postupy: Přístup k objektům připojeným k řádkům DataGridView'
                   href: how-to-access-objects-bound-to-windows-forms-datagridview-rows.md
                 - name: 'Postupy: Přístup k objektům v rozevíracím seznamu Windows Forms DataGridViewComboBoxCell'
                   href: access-objects-in-a-wf-datagridviewcomboboxcell-drop-down-list.md
@@ -462,7 +457,7 @@
           items:
             - name: Přehled ovládacího prvku DomainUpDown
               href: domainupdown-control-overview-windows-forms.md
-            - name: 'Postupy: Programové přidávání položek do ovládacích prvků Windows Forms DomainUpDown'
+            - name: 'Postupy: Programové přidávání položek do ovládacích prvků DomainUpDown'
               href: how-to-add-items-to-windows-forms-domainupdown-controls-programmatically.md
             - name: 'Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown'
               href: how-to-remove-items-from-windows-forms-domainupdown-controls.md
