@@ -2,12 +2,12 @@
 title: Obousměrná komunikace
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 297e9af98f6fe39fb2cca4b5d0350c293177b173
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 379197ee3dc041351f0b13ad1e336824a0f411ed
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941009"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038710"
 ---
 # <a name="two-way-communication"></a>Obousměrná komunikace
 Tato ukázka předvádí, jak provést transakční obousměrnou komunikaci přes službu MSMQ ve frontě. Tato ukázka používá `netMsmqBinding` vazbu. V tomto případě je tato služba samoobslužná Konzolová aplikace, která umožňuje sledovat službu přijímající zprávy ve frontě.  
@@ -225,7 +225,7 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit názvy koncových bodů v konfiguraci klienta tak, aby odpovídaly kódu klienta.  
+    > Pokud pro obnovení konfigurace této ukázky používáte Svcutil. exe, nezapomeňte změnit názvy koncových bodů v konfiguraci klienta tak, aby odpovídaly kódu klienta.  
   
  Ve výchozím nastavení <xref:System.ServiceModel.NetMsmqBinding>je zapnuto zabezpečení přenosu. Existují <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> dvě důležité vlastnosti zabezpečení přenosu ve službě MSMQ a <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> `.` ve výchozím nastavení je režim ověřování nastaven na `Windows` hodnotu a úroveň ochrany je nastavena na `Sign`hodnotu. Aby služba MSMQ poskytovala funkci ověřování a podepisování, musí být součástí domény a musí být nainstalovaná možnost integrace služby Active Directory pro službu MSMQ. Pokud tuto ukázku spustíte na počítači, který nesplňuje tato kritéria, zobrazí se chyba.  
   
@@ -320,13 +320,13 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 4. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.  
   
     > [!NOTE]
-    >  Nastavení `security mode` <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>na `None`jeekvivalentní s nastavením nebo`Message` zabezpečením na`None`. <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>  
+    > Nastavení `security mode` <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>na `None`jeekvivalentní s nastavením nebo`Message` zabezpečením na`None`. <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>  
   
 > [!IMPORTANT]
->  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
+> `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  

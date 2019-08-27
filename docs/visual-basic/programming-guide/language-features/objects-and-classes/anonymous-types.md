@@ -8,129 +8,129 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-ms.openlocfilehash: ef48ff1bbf79be981b8b8d4148f818fe40b72353
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d134b8c8ef202a91b35ad8645bf63622b5e8030
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64632189"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040847"
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
-Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty bez psaní definice třídy datového typu. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které jste zadali v rámci deklarace objektu. Protože není zadán název datového typu, to se označuje jako *anonymního typu*.  
+Visual Basic podporuje anonymní typy, které umožňují vytvářet objekty bez psaní definice třídy pro datový typ. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které zadáte v deklaraci objektu. Vzhledem k tomu, že název datového typu není zadán, je označován jako *anonymní typ*.  
   
- Následující příklad deklaruje a vytvoří proměnnou `product` jako instanci anonymního typu, který má dvě vlastnosti `Name` a `Price`.  
+ Následující příklad deklaruje a vytvoří proměnnou `product` jako instanci anonymního typu, který má dvě `Name` vlastnosti a `Price`.  
   
  [!code-vb[VbVbalrAnonymousTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#1)]  
   
- A *výrazu dotazu* používá anonymní typy zkombinovat sloupce dat vybraných v dotazu. Typ výsledku nelze definovat předem, protože nelze předvídat sloupce, které může vybrat konkrétní dotaz. Anonymní typy umožňují napsat dotaz, který vybere libovolný počet sloupců, v libovolném pořadí. Kompilátor vytvoří datový typ, který odpovídá zadané vlastnosti a v uvedeném pořadí.  
+ *Výraz dotazu* používá anonymní typy pro kombinování sloupců dat vybraných dotazem. Typ výsledku nelze definovat předem, protože nemůžete předpovědět sloupce, které může konkrétní dotaz vybrat. Anonymní typy umožňují napsat dotaz, který vybere libovolný počet sloupců, v libovolném pořadí. Kompilátor vytvoří datový typ, který odpovídá zadaným vlastnostem a určenému pořadí.  
   
- V následujících příkladech `products` je seznam produktů objektů, z nichž každý má mnoho vlastností. Proměnné `namePriceQuery` obsahuje definici dotazu, který, pokud je spuštěn, vrátí kolekci instancí anonymního typu, který má dvě vlastnosti, `Name` a `Price`.  
+ V následujících příkladech `products` je seznam objektů produktu, z nichž každý má mnoho vlastností. Proměnná `namePriceQuery` uchovává definici dotazu, který při spuštění vrátí kolekci instancí anonymního typu, které mají dvě `Name` vlastnosti a `Price`.  
   
  [!code-vb[VbVbalrAnonymousTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#2)]  
   
- Proměnné `nameQuantityQuery` obsahuje definici dotazu, který, pokud je spuštěn, vrátí kolekci instancí anonymního typu, který má dvě vlastnosti, `Name` a `OnHand`.  
+ Proměnná `nameQuantityQuery` uchovává definici dotazu, který při spuštění vrátí kolekci instancí anonymního typu, které mají dvě `Name` vlastnosti a `OnHand`.  
   
  [!code-vb[VbVbalrAnonymousTypes#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#3)]  
   
- Další informace o kód vytvořený kompilátorem pro anonymní typ, naleznete v tématu [definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
+ Další informace o kódu vytvořeném kompilátorem pro anonymní typ naleznete v tématu [definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
   
 > [!CAUTION]
->  Název anonymního typu je kompilátor vygeneruje a se může lišit od kompilace do kompilace. Váš kód by neměl používat nebo využívají název anonymního typu, protože název se může změnit při nové kompilaci projektu.  
+> Název anonymního typu je generovaný kompilátorem a může se lišit od kompilace po kompilaci. Váš kód by neměl používat nebo spoléhat na název anonymního typu, protože název se může změnit, když je projekt znovu zkompilován.  
   
 ## <a name="declaring-an-anonymous-type"></a>Deklarace anonymního typu  
- Deklarace instanci anonymního typu pomocí seznamu inicializátorů určuje vlastnosti typu. Při deklaraci anonymního typu, nikoli další prvky třídy například metody nebo události, můžete určit pouze vlastnosti. V následujícím příkladu `product1` představuje instanci anonymního typu, který má dvě vlastnosti: `Name` a `Price`.  
+ Deklarace instance anonymního typu používá seznam inicializátorů k určení vlastností typu. Můžete určit vlastnosti pouze při deklaraci anonymního typu, nikoli jiných prvků třídy, jako jsou metody nebo události. V následujícím příkladu `product1` je instancí anonymního typu, který má dvě vlastnosti: `Name` a `Price`.  
   
  [!code-vb[VbVbalrAnonymousTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#4)]  
   
- Je-li určit vlastnosti jako vlastnosti klíče je můžete použít k porovnání rovnost obou instancí anonymního typu. Však hodnoty vlastnosti klíče nelze změnit. Dále v tomto tématu pro další informace v části vlastnosti klíče.  
+ Pokud určíte vlastnosti jako klíčové vlastnosti, můžete je použít k porovnání dvou instancí anonymního typu pro rovnost. Hodnoty vlastností klíče však nelze změnit. Další informace najdete v části vlastnosti klíče dále v tomto tématu.  
   
- Všimněte si, že deklarace instanci anonymního typu je třeba deklarovat pomocí inicializátoru objektu instanci s názvem typu:  
+ Všimněte si, že deklarace instance anonymního typu je jako deklarace instance pojmenovaného typu pomocí inicializátoru objektu:  
   
  [!code-vb[VbVbalrAnonymousTypes#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#5)]  
   
- Další informace o dalších způsobech určit vlastnosti anonymního typu najdete v tématu [jak: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
+ Další informace o dalších způsobech určení vlastností anonymního typu naleznete v [tématu How to: Odvodit názvy vlastností a typy v deklaracích](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)anonymního typu.  
   
 ## <a name="key-properties"></a>Vlastnosti klíče  
- Vlastnosti klíče lišit od vlastnosti neklíčovým základní způsoby:  
+ Klíčové vlastnosti se liší od neklíčových vlastností několika základními způsoby:  
   
-- Aby bylo možné zjistit, zda jsou dvě instance rovnocenné jsou porovnány pouze hodnoty vlastnosti klíče.  
+- Porovnávají se pouze hodnoty vlastností klíče, aby bylo možné určit, zda jsou dvě instance stejné.  
   
-- Hodnoty vlastnosti klíče jsou jen pro čtení a nedá se změnit.  
+- Hodnoty vlastností klíče jsou jen pro čtení a nelze je změnit.  
   
-- Pouze hodnoty vlastností klíče jsou součástí kód generovaný kompilátorem hashovací algoritmus pro anonymního typu.  
+- V algoritmu hash generovaném kompilátorem pro anonymní typ jsou zahrnuty pouze hodnoty vlastností Key.  
   
 ### <a name="equality"></a>Rovnost  
- Instance anonymních typů může být rovny, pouze pokud jsou instancemi stejného anonymního typu. Kompilátor zpracovává dvě instance jako instance stejného typu, pokud nebudou splňovat následující podmínky:  
+ Instance anonymních typů mohou být stejné pouze v případě, že jsou instancemi stejného anonymního typu. Kompilátor zpracovává dvě instance jako instance stejného typu, pokud splňují následující podmínky:  
   
 - Jsou deklarovány ve stejném sestavení.  
   
-- Jejich vlastnosti mají stejné názvy, stejné odvozené typy a jsou deklarovány ve stejném pořadí. Název porovnání nerozlišují malá a velká písmena.  
+- Jejich vlastnosti mají stejné názvy, stejné odvozené typy a jsou deklarovány ve stejném pořadí. Porovnávání názvů nerozlišuje velká a malá písmena.  
   
-- Stejné vlastnosti v každém jsou označeny jako vlastnosti klíče.  
+- Stejné vlastnosti v každé z nich jsou označeny jako klíčové vlastnosti.  
   
-- Alespoň jednu vlastnost v deklaraci je klíčovou vlastnost.  
+- Nejméně jedna vlastnost v každé deklaraci je klíčová vlastnost.  
   
- Instance anonymních typů, která nemá žádné klíčové vlastnosti rovná pouze na sebe sama.  
+ Instance anonymních typů, které nemají žádné klíčové vlastnosti, se rovná pouze sobě.  
   
  [!code-vb[VbVbalrAnonymousTypes#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#6)]  
   
- Dva výskyty stejného anonymního typu jsou si rovny, pokud hodnoty jejich klíče vlastnosti jsou stejné. Následující příklady znázorňují, jak testovat rovnost.  
+ Dvě instance stejného anonymního typu jsou stejné, pokud jsou hodnoty jejich klíčových vlastností stejné. Následující příklady ilustrují způsob testování rovnosti.  
   
  [!code-vb[VbVbalrAnonymousTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#7)]  
   
 ### <a name="read-only-values"></a>Hodnoty jen pro čtení  
- Nelze změnit hodnoty vlastnosti klíče. Například v `prod8` v předchozím příkladu `Name` a `Price` pole jsou `read-only`, ale `OnHand` lze změnit.  
+ Hodnoty vlastností klíče nelze změnit. `prod8` Například v `OnHand` předchozím příkladu `Name` jsou `Price` polea,alelzejezměnit`read-only`.  
   
  [!code-vb[VbVbalrAnonymousTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#8)]  
   
-## <a name="anonymous-types-from-query-expressions"></a>Anonymní typy z – výrazy dotazů  
- Výrazy dotazu není vždy třídou vyžadována vytváření anonymních typů. Pokud je to možné, používají k uložení dat sloupce existujícího typu. K tomu dojde, když dotaz vrátí buď celých záznamů ze zdroje dat, nebo pouze jedno pole z každého záznamu. V následujících příkladech kódu `customers` je kolekce objektů `Customer` třídy. Třída má mnoho vlastností a může obsahovat jeden nebo více z nich ve výsledku dotazu v libovolném pořadí. V první dva příklady jsou vyžadovány žádné anonymní typy, protože dotazů vyberte elementů pojmenovaných typů:  
+## <a name="anonymous-types-from-query-expressions"></a>Anonymní typy z výrazů dotazů  
+ Výrazy dotazu nevyžadují vždy vytváření anonymních typů. Pokud je to možné, používají existující typ k uchování dat sloupce. K tomu dojde, když dotaz vrátí buď celé záznamy ze zdroje dat, nebo pouze jedno pole z každého záznamu. V následujících příkladech `customers` kódu je kolekce objektů `Customer` třídy. Třída má mnoho vlastností a můžete do výsledku dotazu zahrnout jednu nebo více z nich, a to v libovolném pořadí. V prvních dvou příkladech nejsou vyžadovány anonymní typy, protože dotazy vyberou prvky pojmenovaných typů:  
   
-- `custs1` obsahuje kolekci prvků řetězce, protože `cust.Name` je řetězec.  
+- `custs1`obsahuje kolekci řetězců, protože `cust.Name` je řetězec.  
   
      [!code-vb[VbVbalrAnonymousTypes#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#30)]  
   
-- `custs2` obsahuje kolekci `Customer` objekty, protože každý prvek `customers` je `Customer` objektu a celý prvek je vybrána v dotazu.  
+- `custs2`obsahuje kolekci `Customer` objektů, protože každý `customers` prvek `Customer` objektu je objekt a celý prvek je vybrán dotazem.  
   
      [!code-vb[VbVbalrAnonymousTypes#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#31)]  
   
- Však vhodné pojmenované typy nejsou vždy k dispozici. Můžete chtít vybrat jména zákazníků a adresy jediný účel, čísla ID zákazníka a umístění pro jiné a názvů zákazníka, adresy a historie objednávek pro třetí. Anonymní typy umožňují vybrat libovolnou kombinaci vlastnosti, v libovolném pořadí, bez první deklarace nového typu s názvem pro uchování výsledku. Místo toho kompilátor vytvoří pro každou kompilace vlastnosti anonymního typu. Následující dotaz vybere pouze zákazníka název a číslo ID z každého `Customer` objekt `customers`. Proto kompilátor vytvoří anonymního typu, který obsahuje pouze tyto dvě vlastnosti.  
+ Odpovídající pojmenované typy však nejsou vždy k dispozici. Můžete chtít vybrat jména a adresy zákazníků pro jeden účel, čísla ID zákazníka a umístění pro jiné, jména zákazníků, adresy a historie objednávek pro třetí. Anonymní typy umožňují vybrat libovolnou kombinaci vlastností, v libovolném pořadí bez první deklarace nového pojmenovaného typu pro uložení výsledku. Místo toho kompilátor vytvoří anonymní typ pro každou kompilaci vlastností. Následující dotaz vybere pouze jméno zákazníka a číslo ID z každého `Customer` objektu v. `customers` Proto kompilátor vytvoří anonymní typ, který obsahuje pouze tyto dvě vlastnosti.  
   
  [!code-vb[VbVbalrAnonymousTYpes#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#32)]  
   
- Názvy a datové typy vlastností v anonymním typu pocházejí ze argumenty, které mají `Select`, `cust.Name` a `cust.ID`. Vlastnosti v anonymním typu, který je vytvořen pomocí dotazu jsou vždy klíčové vlastnosti. Když `custs3` provádí v následujícím `For Each` smyčky, výsledek je kolekci instancí anonymního typu s dvě vlastnosti klíče `Name` a `ID`.  
+ Názvy i datové typy vlastností anonymního typu jsou odebírány z argumentů `Select` `cust.Name` a `cust.ID`. Vlastnosti v anonymním typu, který je vytvořen dotazem, jsou vždy vlastnosti klíče. Při `custs3` spuštění v následující `For Each` smyčce je výsledkem kolekce instancí anonymního typu `Name` se dvěma vlastnostmi klíče a `ID`.  
   
  [!code-vb[VbVbalrAnonymousTypes#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#33)]  
   
- Prvky v kolekci reprezentována `custs3` jsou silného typu, a můžete použít technologii IntelliSense, procházení dostupných vlastností a jejich typy ověření.  
+ Prvky v kolekci, které `custs3` jsou zastoupeny, jsou silného typu a můžete použít technologii IntelliSense k procházení dostupných vlastností a k ověření jejich typů.  
   
- Další informace najdete v tématu [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ Další informace najdete v tématu [Úvod do LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
-## <a name="deciding-whether-to-use-anonymous-types"></a>Rozhodování o tom, jestli se má použít anonymní typy  
- Před vytvořením objektu jako instance anonymní třídy, zvažte, jestli se jedná o nejlepší možnost. Pokud chcete vytvořit dočasný objekt tak, aby obsahovala souvisejících dat a nepotřebujete žádný další pole a metody, které mohou obsahovat na úplnou třídu, například anonymního typu je dobrým řešením. Anonymní typy jsou také pohodlný, pokud chcete, aby jiný výběr vlastnosti pro každou deklaraci, nebo pokud chcete změnit pořadí vlastnosti. Nicméně pokud váš projekt obsahuje několik objektů, které mají stejné vlastnosti v pevném pořadí, můžete je deklarovat snadněji pomocí pojmenovaného typu pomocí konstruktoru třídy. Například pomocí odpovídajícího konstruktoru, je jednodušší, chcete-li deklarovat několik instancí `Product` třídy, než je deklarovat několik instancí anonymního typu.  
+## <a name="deciding-whether-to-use-anonymous-types"></a>Rozhodnutí, jestli se mají používat anonymní typy  
+ Před vytvořením objektu jako instance anonymní třídy zvažte, zda se jedná o nejlepší možnost. Například pokud chcete vytvořit dočasný objekt, který bude obsahovat související data, a nepotřebujete další pole a metody, které může kompletní třída obsahovat, anonymní typ je dobrým řešením. Anonymní typy jsou také vhodné, pokud chcete pro každou deklaraci vybrat jinou vlastnost, nebo pokud chcete změnit pořadí vlastností. Nicméně pokud váš projekt obsahuje několik objektů, které mají stejné vlastnosti v určitém pořadí, můžete je deklarovat snadněji pomocí pojmenovaného typu s konstruktorem třídy. Například s příslušným konstruktorem je snazší deklarovat několik instancí `Product` třídy, než je deklarování několika instancí anonymního typu.  
   
  [!code-vb[VbVbalrAnonymousTypes#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#9)]  
   
- Další výhodou pojmenované typy je, že kompilátor může zachytit náhodnému chybným zadáním názvu vlastnosti. V předchozích příkladech `firstProd2`, `secondProd2`, a `thirdProd2` by měla být instance stejného anonymního typu. Ale pokud byste chtěli omylem deklarovat `thirdProd2` v jednom z následujících způsobů by jeho typu odlišného od `firstProd2` a `secondProd2`.  
+ Další výhodou pojmenovaných typů je, že kompilátor může zachytit náhodné chybné zadání názvu vlastnosti. V předchozích příkladech `firstProd2` `secondProd2`,, a `thirdProd2` jsou určeny jako instance stejného anonymního typu. Nicméně pokud byste měli omylem deklarovat `thirdProd2` jeden z následujících způsobů, jeho typ by se lišil od `firstProd2` a `secondProd2`.  
   
  [!code-vb[VbVbalrAnonymousTypes#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#10)]  
   
- Důležitější je existují omezení týkající se použití anonymních typů, které se nedá použít u instance pojmenovaných typů. `firstProd2`, `secondProd2`, a `thirdProd2` jsou instancemi stejného anonymního typu. Název sdílené anonymního typu však není k dispozici a nemůže být použit, kde se očekává název typu ve vašem kódu. Například anonymního typu nelze použít k definování podpis metody, chcete-li deklarovat jiné proměnné nebo pole nebo v jakékoli deklaraci typu. Anonymní typy v důsledku toho nejsou vhodné, když musíte sdílet informace pro všechny metody.  
+ Důležitější je ale omezení používání anonymních typů, které se nevztahují na instance pojmenovaných typů. `firstProd2`, `secondProd2` a`thirdProd2` jsou instancemi stejného anonymního typu. Název sdíleného anonymního typu ale není k dispozici a nemůže se objevit tam, kde se v kódu očekává název typu. Například anonymní typ nelze použít k definování signatury metody, k deklarování jiné proměnné nebo pole nebo v jakékoli deklaraci typu. V důsledku toho nejsou anonymní typy vhodné, pokud je nutné sdílet informace napříč metodami.  
   
-## <a name="an-anonymous-type-definition"></a>Definici anonymního typu  
- V reakci na deklarace instanci anonymního typu kompilátor vytvoří novou definici třídy, která obsahuje zadané vlastnosti.  
+## <a name="an-anonymous-type-definition"></a>Definice anonymního typu  
+ V reakci na deklaraci instance anonymního typu kompilátor vytvoří novou definici třídy obsahující zadané vlastnosti.  
   
- Pokud anonymní typ obsahuje alespoň jednu klíčovou vlastnost, přepíše definice tři členy zděděné z <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, a <xref:System.Object.ToString%2A>. Kód vytvořený pro účely testování rovnosti a určení, že hodnota hash kódu bere v úvahu pouze klíčové vlastnosti. Pokud anonymní typ obsahuje žádné vlastnosti klíče, pouze <xref:System.Object.ToString%2A> je přepsána. Explicitně pojmenované vlastnosti anonymního typu nelze v konfliktu s těmito generované metody. To znamená, že nelze použít `.Equals`, `.GetHashCode`, nebo `.ToString` název vlastnosti.  
+ Pokud anonymní typ obsahuje alespoň jednu vlastnost klíče, přepíše definice tři <xref:System.Object>členy zděděné z: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>a <xref:System.Object.ToString%2A>. Kód vytvořený pro testování rovnosti a určení hodnoty hash kódu považuje jenom vlastnosti klíče. Pokud anonymní typ neobsahuje žádné vlastnosti klíče, bude přepsán pouze <xref:System.Object.ToString%2A> . Explicitní pojmenované vlastnosti anonymního typu nejsou v konfliktu s těmito generovanými metodami. To znamená, že nemůžete `.GetHashCode`použít `.Equals`, `.ToString` nebo k pojmenování vlastnosti.  
   
- Definice anonymního typu, které mají alespoň jednu klíčové vlastnosti také implementovat <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní, ve kterém `T` je typ anonymního typu.  
+ Definice anonymního typu, které mají alespoň jednu vlastnost klíče, implementují <xref:System.IEquatable%601?displayProperty=nameWithType> také rozhraní, kde `T` je typ anonymního typu.  
   
- Další informace o kód vytvořený pomocí kompilátoru a funkce přetížené metody, naleznete v tématu [definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
+ Další informace o kódu vytvořeném kompilátorem a funkcích přepsaných metod naleznete v tématu [definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Postupy: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
 - [Definice anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)
 - [Key](../../../../visual-basic/language-reference/modifiers/key.md)

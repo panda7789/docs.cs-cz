@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 71e26ddd93605b02031aecba280e382528378ba6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c42255a14a23cb50f3fe8be434efab4af7361daa
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943038"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045859"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikaci, která používá vzdálenou komunikaci rozhraní .NET pro použití Windows Communication Foundation (WCF). Porovnává podobné koncepce mezi těmito produkty a potom popisuje, jak provést několik běžných scénářů vzdálené komunikace ve službě WCF.  
@@ -466,7 +466,7 @@ public class RemotingServer : MarshalByRefObject
    ```  
   
     > [!TIP]
-    >  Všimněte si, že objekt sessioning je označený jako [ServiceContract] a vytvoří normální rozhraní služby WCF. Nastavení vlastnosti SessionMode označuje, že se jedná o službu, která se jedná o relaci. V rámci WCF je relace způsob, jak korelovat více zpráv posílaných mezi dvěma koncovými body. To znamená, že jakmile klient získá připojení k této službě, bude vytvořena relace mezi klientem a serverem. Klient bude používat jednu jedinečnou instanci objektu na straně serveru pro všechny interakce v rámci této jediné relace.  
+    > Všimněte si, že objekt sessioning je označený jako [ServiceContract] a vytvoří normální rozhraní služby WCF. Nastavení vlastnosti SessionMode označuje, že se jedná o službu, která se jedná o relaci. V rámci WCF je relace způsob, jak korelovat více zpráv posílaných mezi dvěma koncovými body. To znamená, že jakmile klient získá připojení k této službě, bude vytvořena relace mezi klientem a serverem. Klient bude používat jednu jedinečnou instanci objektu na straně serveru pro všechny interakce v rámci této jediné relace.  
   
 2. Dál je potřeba poskytnout implementaci tohoto rozhraní služby. Informování o tom, že se jedná o [ServiceBehavior] a nastavení InstanceContextMode, sdělujeme, že WCF chceme pro každou relaci použít jedinečnou instanci tohoto typu.  
   

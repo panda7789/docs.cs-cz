@@ -2,22 +2,22 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: ecc5c754a51a8e1a52797dfd0af0891704eaad1f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e1f5ccb8849d5f8f6bd9156cd428d395a86b1301
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591237"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046021"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
-Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
+Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za běhu prostřednictvím poskytovatele WCF rozhraní WMI (Windows Management Instrumentation) (WMI).  
   
-## <a name="enabling-wmi"></a>Povolení rozhraní WMI  
- Rozhraní WMI se výlučně implementace Microsoftu Web-Based Enterprise Management (WBEM) standard. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page). WBEM je oborový standard pro aplikace jak vystavit WMI pro externí nástroje pro správu.  
+## <a name="enabling-wmi"></a>Povolení služby WMI  
+ WMI je implementace standardu WBEM (Web-Based Enterprise Management) od Microsoftu. Další informace o sadě WMI SDK naleznete v tématu [rozhraní WMI (Windows Management Instrumentation)](/windows/desktop/WmiSdk/wmi-start-page). WBEM je oborovým standardem, jak aplikace vystavují instrumentaci pro správu externích nástrojů pro správu.  
   
- Zprostředkovatel rozhraní WMI je komponenta, která zveřejňuje instrumentace za běhu pomocí rozhraní WBEM kompatibilní. Zahrnuje sadu objektů WMI, které mají páry atribut hodnota. Páry může být několik jednoduchých typů. Nástroje pro správu můžou připojit ke službám prostřednictvím rozhraní za běhu. WCF zpřístupňuje atributy služeb, jako jsou adresy, vazby, chování a naslouchací procesy.  
+ Zprostředkovatel rozhraní WMI je komponenta, která zveřejňuje instrumentaci za běhu prostřednictvím rozhraní kompatibilního se standardem WBEM. Skládá se ze sady objektů WMI, které mají páry atribut/hodnota. Páry můžou být v mnoha jednoduchých typech. Nástroje pro správu se můžou ke službám připojit prostřednictvím rozhraní za běhu. WCF zpřístupňuje atributy služeb, jako jsou adresy, vazby, chování a naslouchací procesy.  
   
- Předdefinovaný poskytovatel rozhraní WMI je aktivovat v konfiguračním souboru aplikace. To se provádí prostřednictvím `wmiProviderEnabled` atribut [ \<diagnostiky >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<system.serviceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, jak je znázorněno v následující ukázce konfigurace.  
+ Integrovaného zprostředkovatele WMI lze aktivovat v konfiguračním souboru aplikace. To se provádí pomocí `wmiProviderEnabled` atributu [ \<> diagnostiky](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<části System. ServiceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <system.serviceModel>  
@@ -27,53 +27,53 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
 </system.serviceModel>  
 ```  
   
- Tato položka konfigurace vystavuje rozhraní WMI. Správa aplikací teď můžete připojit přes toto rozhraní a přístup WMI aplikace.  
+ Tato položka konfigurace zpřístupňuje rozhraní WMI. Aplikace pro správu se teď můžou přes toto rozhraní připojit a přistupovat k instrumentaci správy aplikace.  
   
-## <a name="accessing-wmi-data"></a>Přístup k datům služby WMI  
- Data rozhraní WMI je možný v mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, aplikace Visual Basic, C++ aplikací a rozhraní .NET Framework. Další informace najdete v tématu [pomocí rozhraní WMI](https://go.microsoft.com/fwlink/?LinkId=95183).  
+## <a name="accessing-wmi-data"></a>Přístup k datům WMI  
+ K datům WMI lze přistupovat mnoha různými způsoby. Microsoft poskytuje rozhraní API služby WMI pro skripty, Visual Basic C++ aplikace, aplikace a .NET Framework. Další informace najdete v tématu [použití rozhraní WMI](https://go.microsoft.com/fwlink/?LinkId=95183).  
   
 > [!CAUTION]
->  Pokud používáte rozhraní .NET Framework poskytuje metody k programovému přístupu ke službě data rozhraní WMI, byste měli vědět, že tyto metody může vyvolat výjimky, když se připojení. Během procesu vytváření nebude navázáno připojení <xref:System.Management.ManagementObject> instance, ale na první žádost o zahrnující skutečná data systému exchange. Proto byste měli použít `try..catch` blok catch výjimky.  
+> Pokud používáte metody poskytnuté .NET Framework pro programový přístup k datům WMI, měli byste si uvědomit, že tyto metody mohou vyvolat výjimky při navázání spojení. Připojení není během vytváření <xref:System.Management.ManagementObject> instance navázáno, ale na první požadavek týkající se skutečného výměny dat. Proto byste měli použít `try..catch` blok k zachycení možných výjimek.  
   
- Můžete změnit trasování a úroveň protokolování zprávy, stejně jako možnosti protokolování zpráv `System.ServiceModel` zdroj trasování v rozhraní WMI. To můžete udělat přechodem k [AppDomainInfo](../../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) instanci, která poskytuje tyto logické vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`, `LogMalformedMessages`, a `TraceLevel`. Proto pokud nakonfigurovat naslouchací proces trasování pro protokolování zpráv, ale nastavit tyto možnosti na `false` v konfiguraci, můžete později změnit jejich `true` při spouštění aplikace. To vám umožní efektivní protokolování zpráv za běhu. Podobně pokud povolíte protokolování. v konfiguračním souboru, můžete ho zakázat za běhu pomocí rozhraní WMI.  
+ V rozhraní WMI můžete změnit úroveň trasování a protokolování zpráv a také možnosti protokolování zpráv pro `System.ServiceModel` zdroj trasování. To lze provést přístupem k instanci [AppDomainInfo](../../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel` `TraceLevel`, `LogMessagesAtTransportLevel`, `LogMalformedMessages`a. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. Tím se efektivně povolí protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI.  
   
- Je třeba si uvědomit, že pokud žádné protokolování zpráv trasování naslouchacích procesů pro protokolování zpráv nebo Ne `System.ServiceModel` naslouchacích procesů trasování pro trasování jsou uvedeny v konfiguračním souboru, žádná z vašich změn provedených platit, i když jsou změny přijaty rozhraní WMI. Další informace o správné nastavení příslušných naslouchacích procesů, naleznete v tématu [konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) a [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Úroveň trasování pro všechny ostatní zdroje trace zadáno v konfiguraci je účinné, když se aplikace spustí a nedá se změnit.  
+ Měli byste si uvědomit, že pokud pro protokolování zpráv nejsou k dispozici naslouchací procesy trasování `System.ServiceModel` zpráv, nebo pokud nejsou v konfiguračním souboru žádné naslouchací procesy trasování pro trasování, neprojeví se žádné změny, a to ani v případě, že se změny nepřijímají rozhraním WMI. Další informace o správném nastavení příslušného naslouchacího procesu najdete v tématu [Konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) a [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Úroveň trasování všech ostatních zdrojů trasování určených konfigurací je platná při spuštění aplikace a nelze ji změnit.  
   
- Zpřístupňuje WCF `GetOperationCounterInstanceName` metodu pro skriptování. Tato metoda vrátí název instance čítače výkonu, pokud zadáte s názvem operace. Neověřuje však váš vstup. Proto pokud zadáte název nesprávná operace, je vrácen název nesprávné čítače.  
+ WCF zpřístupňuje `GetOperationCounterInstanceName` metodu pro skriptování. Tato metoda vrací název instance čítače výkonu, pokud jej zadáte s názvem operace. Neověřuje ale vaše zadání. Proto pokud zadáte nesprávný název operace, vrátí se nesprávný název čítače.  
   
- `OutgoingChannel` Vlastnost `Service` instance nepočítá otevírány služby pro připojení k jiné službě, v případě klienta WFG pro cílové služby není v rámci kanálů `Service` metoda.  
+ Vlastnost instance nepočítá kanály, které služba otevřela, aby se mohla připojit k jiné službě, pokud není v rámci `Service` metody vytvořen klient služby WCF pro cílovou službu. `Service` `OutgoingChannel`  
   
- **Upozornění:** WMI podporuje pouze <xref:System.TimeSpan> hodnotu až 3 desetinné čárky. Například, pokud vaše služba nastavuje jednu z vlastností <xref:System.TimeSpan.MaxValue>, její hodnota je zkrácen po 3 desetinné čárky při prohlížení prostřednictvím rozhraní WMI.  
+ **Upozornění** WMI podporuje <xref:System.TimeSpan> pouze hodnotu až 3 desetinná místa. Například pokud vaše služba nastavuje jednu z jejích vlastností na <xref:System.TimeSpan.MaxValue>, její hodnota se zkrátí po 3 desítkových bodech při zobrazení prostřednictvím rozhraní WMI.  
   
 ## <a name="security"></a>Zabezpečení  
- Protože zprostředkovatel rozhraní WMI WCF umožňuje zjišťování služeb v prostředí, by měly využít extrémně opatrní pro udělení přístupu k němu. Pokud jste zmírnit výchozí přístup jen pro správce, může povolit méně důvěryhodnému strany přístup k citlivým datům ve vašem prostředí. Pokud jste povolte oprávnění pro vzdálený přístup pomocí rozhraní WMI, konkrétně zahlcení útoky může dojít k. Pokud proces je budete zaplaveni nadměrné požadavky rozhraní WMI, může snížit výkon.  
+ Vzhledem k tomu, že zprostředkovatel rozhraní WMI služby WCF umožňuje zjišťování služeb v prostředí, měli byste pro udělení přístupu využít mimořádně opatrní. Pokud nebudete mít přístup k citlivým datům ve vašem prostředí jen výchozím správcem, můžete jim udělit méně důvěryhodné strany. Konkrétně, pokud k přístupu ke vzdálenému přístupu přes rozhraní WMI přistupujete, může dojít k útokům při zahlcení. Pokud je proces zahlcen nadměrnými požadavky rozhraní WMI, může jeho výkon zhoršit.  
   
- Kromě toho pokud můžete uvolnit oprávnění k přístupu k souboru MOF, méně důvěryhodnému strany lze manipulovat s chování služby WMI a měnit objekty, které jsou načteny ve schématu WMI. Například pole lze odebrat tak, aby je důležitá data skryty od správce nebo pole, která naplnit nebo způsobit výjimky jsou přidány do souboru.  
+ Kromě toho platí, že pokud pro soubor MOF dojde k nedostatku oprávnění, nedůvěryhodné strany budou moci manipulovat s chováním služby WMI a měnit objekty, které jsou načteny ve schématu WMI. Například je možné odebrat pole tak, aby důležitá data byla skryta od správce nebo aby se do souboru přidala pole, která neplní nebo nezpůsobí výjimky.  
   
- Ve výchozím nastavení, zprostředkovatel rozhraní WMI WCF uděluje "metodu execute", "zapisovat zprostředkovatele" a "Povolit účet" oprávnění pro správce a oprávnění "Povolit účet" pro technologii ASP.NET, Local Service a Network Service. Konkrétně se na jinou hodnotu než[!INCLUDE[wv](../../../../../includes/wv-md.md)] platformy, účtu technologie ASP.NET má přístup pro čtení k oboru názvů WMI ServiceModel. Pokud nechcete udělení těchto oprávnění určitou skupinu uživatelů, si deaktivace zprostředkovatele rozhraní WMI (je zakázané ve výchozím nastavení), nebo zakázat přístup pro konkrétního uživatele skupiny.  
+ Ve výchozím nastavení udělí zprostředkovatel WMI WCF oprávnění "spouštět metodu", "Provider Write" a "Enable Account" pro správce a oprávnění "Povolit účet" pro ASP.NET, místní službu a síťovou službu. Konkrétně na jiných[!INCLUDE[wv](../../../../../includes/wv-md.md)] platformách než na platformách má účet ASP.NET oprávnění ke čtení pro obor názvů rozhraní WMI ServiceModel. Pokud nechcete tato oprávnění udělit konkrétní skupině uživatelů, měli byste buď deaktivovat poskytovatele rozhraní WMI (ve výchozím nastavení je zakázaný), nebo zakázat přístup pro konkrétní skupinu uživatelů.  
   
- Navíc je při pokusu o povolení rozhraní WMI prostřednictvím konfigurace nemusí být povoleny služby WMI z důvodu nedostatečných uživatelských oprávnění. Žádné události je však zapsané do protokolu událostí pro záznam této chyby.  
+ Kromě toho, pokud se pokusíte povolit rozhraní WMI prostřednictvím konfigurace, rozhraní WMI nemusí být povoleno z důvodu nedostatečného oprávnění uživatele. Nicméně žádná událost není zapsána do protokolu událostí, aby mohla zaznamenat tuto chybu.  
   
- Chcete-li změnit úrovně oprávnění uživatele, postupujte následovně.  
+ Chcete-li upravit úrovně oprávnění uživatele, použijte následující postup.  
   
-1. Klikněte na tlačítko Start a pak spusťte a zadejte **compmgmt.msc**.  
+1. Klikněte na Start, pak na spustit a zadejte **compmgmt. msc**.  
   
-2. Klikněte pravým tlačítkem na **služeb a ovládací prvky aplikace/služby WMI** vyberte **vlastnosti**.  
+2. Klikněte pravým tlačítkem na **služby a ovládací prvky Application/WMI** a vyberte **vlastnosti**.  
   
-3. Vyberte **zabezpečení** kartu a přejděte **kořenový/ServiceModel** oboru názvů. Klikněte na tlačítko **zabezpečení** tlačítko.  
+3. Vyberte kartu **zabezpečení** a přejděte do oboru názvů **root/ServiceModel** . Klikněte na tlačítko **zabezpečení** .  
   
-4. Vyberte konkrétní skupinu nebo uživatele, kterou chcete řízení přístupu a použití **povolit** nebo **Odepřít** zaškrtávací políčko ke konfiguraci oprávnění.  
+4. Vyberte konkrétní skupinu nebo uživatele, kterým chcete řídit přístup, a pro konfiguraci oprávnění použijte zaškrtávací políčko **Povolit** nebo **Odepřít** .  
   
-## <a name="granting-wcf-wmi-registration-permissions-to-additional-users"></a>Udělení oprávnění registrace služby WMI WCF dalším uživatelům  
- WCF zpřístupňuje data správy ke službě WMI. Dělá to tak, že hostitelem poskytovatele služby WMI v procesu, někdy označuje jako "oddělený zprostředkovatel". Pro správu data zpřístupní účet, který registruje tohoto zprostředkovatele musí mít příslušná oprávnění. Ve Windows lze zaregistrovat pouze malou sadu privilegované účty oddělení zprostředkovatelé ve výchozím nastavení. To je problém, protože uživatelé běžně chcete je zveřejnit dat služby WMI ze služby WCF spuštěný pod účtem, který není v výchozí nastavení.  
+## <a name="granting-wcf-wmi-registration-permissions-to-additional-users"></a>Udělení oprávnění k registraci rozhraní WMI WCF dalším uživatelům  
+ WCF zpřístupňuje data správy rozhraní WMI. Je tak hostitelem zprostředkovatele rozhraní WMI v procesu, někdy označovaného jako "oddělený poskytovatel". Aby bylo možné zveřejnit data správy, musí mít účet, který registruje tohoto poskytovatele, příslušná oprávnění. V systému Windows je ve výchozím nastavení možné zaregistrovat oddělené zprostředkovatele jenom v malých sestavách privilegovaných účtů. Tato chyba je způsobena tím, že uživatelé obvykle chtějí vystavit data služby WMI ze služby WCF spuštěné v rámci účtu, který není ve výchozí sadě.  
   
- Pokud chcete poskytnout tento přístup, musí správce, udělte oprávnění na další účet v následujícím pořadí:  
+ K poskytnutí tohoto přístupu musí správce udělit dodatečnému účtu následující oprávnění v následujícím pořadí:  
   
-1. Oprávnění pro přístup k rozhraní WMI Namespace WCF.  
+1. Oprávnění pro přístup k oboru názvů WMI služby WCF.  
   
-2. Oprávnění k registraci zprostředkovatele rozhraní WMI odděleném WCF.  
+2. Oprávnění k registraci zprostředkovatele rozhraní WMI pro oddělené služby WCF.  
   
-#### <a name="to-grant-wmi-namespace-access-permission"></a>Udělení oprávnění k oboru názvů rozhraní WMI  
+#### <a name="to-grant-wmi-namespace-access-permission"></a>Udělení přístupových oprávnění k oboru názvů rozhraní WMI  
   
 1. Spusťte následující skript prostředí PowerShell.  
   
@@ -110,17 +110,17 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
     write-host ""  
     ```  
   
-     Tento skript Powershellu používá zabezpečení SDDL Descriptor Definition Language () k udělení přístupu integrované uživatelé skupiny k oboru názvů WMI "kořenový/servicemodel". Určuje následující seznamy ACL:  
+     Tento skript PowerShellu používá jazyk SDDL (Security Descriptor Definition Language) k udělení přístupu předdefinovaných uživatelů do oboru názvů "root/ServiceModel" rozhraní WMI. Určuje následující seznamy ACL:  
   
-    - Předdefinovaný účet Administrator (BA) - už měli přístup.  
+    - Předdefinovaný správce (BA) – již měl přístup.  
   
-    - Síťová služba (NS) - už měli přístup.  
+    - Síťová služba (NS) – již měl přístup.  
   
-    - Místní systém (LS) - už měli přístup.  
+    - Místní systém (LS) – již měl přístup.  
   
-    - Integrované uživatelé – skupinu, kterou chcete udělit přístup k.  
+    - Předdefinované uživatele – skupina, pro kterou má být udělen přístup.  
   
-#### <a name="to-grant-provider-registration-access"></a>Poskytovatel udělit přístup k registraci  
+#### <a name="to-grant-provider-registration-access"></a>Udělení přístupu k registraci poskytovatele  
   
 1. Spusťte následující skript prostředí PowerShell.  
   
@@ -140,36 +140,36 @@ Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu p
     write-host ""  
     ```  
   
-### <a name="granting-access-to-arbitrary-users-or-groups"></a>Udělení přístupu k libovolného uživatele nebo skupiny  
- Příklad v této části uděluje oprávnění registrace zprostředkovatele rozhraní WMI pro všechny místní uživatele. Pokud chcete udělit přístup pro uživatele nebo skupiny, které není vestavěný, pak musíte získat tohoto uživatele nebo skupiny identifikátor zabezpečení (SID). Neexistuje žádné jednoduchý způsob, jak získat identifikátor SID pro libovolného uživatele. Jedním ze způsobů je přihlášení jako požadovaného uživatele a potom vydejte následující příkaz prostředí.  
+### <a name="granting-access-to-arbitrary-users-or-groups"></a>Udělení přístupu libovolným uživatelům nebo skupinám  
+ Příklad v této části uděluje oprávnění k registraci zprostředkovatele rozhraní WMI všem místním uživatelům. Pokud chcete udělit přístup uživateli nebo skupině, která není integrovaná v, musíte získat identifikátor zabezpečení (SID) daného uživatele nebo skupiny. Neexistuje žádný jednoduchý způsob, jak získat SID pro libovolného uživatele. Jedna z metod se přihlaste jako požadovaný uživatel a pak vydejte následující příkaz prostředí.  
   
 ```  
 Whoami /user  
 ```  
   
- To poskytuje SID aktuálního uživatele, ale tuto metodu nelze použít k načtení SID pro jakékoli libovolného uživatele. Získat identifikátor SID jinou metodou je použít [getsid.exe](https://go.microsoft.com/fwlink/?LinkId=186467) nástroj z [Windows 2000 Resource Kit Tools pro úlohy správy](https://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná SID dva uživatele (místní nebo doménový) a jako souběžného efekt vytiskne dvě čísla SID do příkazového řádku. Další informace najdete v tématu [dobře známé identifikátory SID](https://go.microsoft.com/fwlink/?LinkId=186468).  
+ Tato metoda poskytuje identifikátor SID aktuálního uživatele, ale tuto metodu nelze použít k získání čísla SID pro libovolného uživatele. Další metodou získání identifikátoru SID je použití nástroje [getsid. exe](https://go.microsoft.com/fwlink/?LinkId=186467) z [nástrojů sady Windows 2000 Resource Kit pro úlohy správy](https://go.microsoft.com/fwlink/?LinkId=178660). Tento nástroj porovná identifikátor SID dvou uživatelů (místní nebo doména) a jako vedlejší efekt budou tyto dva identifikátory SID vytištěny na příkazovém řádku. Další informace najdete v tématu [dobře známé identifikátory SID](https://go.microsoft.com/fwlink/?LinkId=186468).  
   
-## <a name="accessing-remote-wmi-object-instances"></a>Přistupující objekt instance vzdáleného rozhraní WMI  
- Pokud potřebujete pro přístup k instancím WCF služby WMI na vzdáleném počítači, je nutné povolit paket o ochraně osobních údajů v nabídce Nástroje, které používáte pro přístup. Následující část popisuje, jak tyto dosáhnout pomocí nástroje CIM Studio WMI, nástroj testování služby WMI Windows, stejně jako .NET SDK 2.0.  
+## <a name="accessing-remote-wmi-object-instances"></a>Přístup k instancím vzdálených objektů služby WMI  
+ Pokud potřebujete přístup k instancím WCF WMI na vzdáleném počítači, musíte povolit ochranu osobních údajů paketů u nástrojů, které používáte pro přístup. Následující část popisuje, jak dosáhnout těchto možností pomocí rozhraní WMI CIM Studio, rozhraní WMI (Windows Management Instrumentation) testeru a sady .NET SDK 2,0.  
   
 ### <a name="wmi-cim-studio"></a>WMI CIM Studio  
- Pokud jste nainstalovali [nástroje pro správu služby WMI](https://go.microsoft.com/fwlink/?LinkId=95185), můžete použít nástroje CIM Studio WMI do instancí služby WMI přístup. Nástroje jsou v následující složce  
+ Pokud jste nainstalovali [Nástroje pro správu služby WMI](https://go.microsoft.com/fwlink/?LinkId=95185), můžete k přístupu k INSTANCÍM rozhraní WMI použít rozhraní WMI CIM. Nástroje jsou v následující složce  
   
  **%windir%\Program Files\WMI Tools\\**  
   
-1. V **připojit k oboru názvů:** okno, zadejte **root\ServiceModel** a klikněte na tlačítko **OK.**  
+1. V okně **připojit k oboru názvů:** zadejte **root\ServiceModel** a klikněte na **OK.**  
   
-2. V **WMI CIM Studio přihlášení** okna, klikněte na tlačítko **možnosti >>** tlačítko pro rozbalení v okně. Vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**a klikněte na tlačítko **OK**.  
+2. V okně **přihlášení WMI CIM Studio** kliknutím na tlačítko **Možnosti > >** okno rozbalte. Vyberte možnost **Ochrana osobních údajů paketů** pro **úroveň ověřování**a klikněte na tlačítko **OK**.  
   
-### <a name="windows-management-instrumentation-tester"></a>Testování služby Windows Management Instrumentation  
- Tento nástroj je nainstalován ve Windows. K jeho spuštění spuštění nástroje command console tak, že zadáte **cmd.exe** v **spuštění nebo spuštění** dialogové okno a klikněte na tlačítko **OK**. Potom zadejte **wbemtest.exe** v příkazovém okně. Pak je spustit nástroj testování služby Windows Management Instrumentation.  
+### <a name="windows-management-instrumentation-tester"></a>rozhraní WMI (Windows Management Instrumentation) Tester  
+ Tento nástroj je nainstalován systémem Windows. Pokud ho chcete spustit, spusťte konzolu příkazů tak, že v dialogovém okně **Spustit/spustit** zadáte **cmd. exe** a kliknete na **OK**. Pak do příkazového okna zadejte **WBEMTest. exe** . Pak se spustí nástroj rozhraní WMI (Windows Management Instrumentation) Tester.  
   
-1. Klikněte na tlačítko **připojit** tlačítko v pravém horním rohu okna.  
+1. Klikněte na tlačítko **připojit** v pravém horním rohu okna.  
   
-2. V novém okně zadejte **root\ServiceModel** pro **Namespace** pole a vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**. Klikněte na **Připojit**.  
+2. V novém okně zadejte **root\ServiceModel** do pole **obor názvů** a vyberte **ochrana paketů** pro **úroveň ověřování**. Klikněte na **Připojit**.  
   
-### <a name="using-managed-code"></a>Pomocí spravovaného kódu  
- Dostanete také vzdálené instance rozhraní WMI prostřednictvím kódu programu pomocí tříd poskytovaných oborem <xref:System.Management> oboru názvů. Následující příklad kódu ukazuje, jak to provést.  
+### <a name="using-managed-code"></a>Použití spravovaného kódu  
+ Vzdálené instance služby WMI můžete získat také programově pomocí tříd poskytovaných <xref:System.Management> oborem názvů. Následující příklad kódu ukazuje, jak to provést.  
   
 ```csharp
 String wcfNamespace = $@"\\{this.serviceMachineName}\Root\ServiceModel");

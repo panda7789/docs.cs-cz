@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-ms.openlocfilehash: 5f60bcdb02f61d39711115b07ba989229e39c28c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1faed5717c65c4973c3f1965df649df6f2e24722
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929131"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045904"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-code"></a>Postupy: Publikování metadat služby promocí kódu
 Jedná se o jedno ze dvou témat s postupy, které popisují publikování metadat pro službu Windows Communication Foundation (WCF). Existují dva způsoby, jak zadat, jak má služba publikovat metadata, pomocí konfiguračního souboru a pomocí kódu. V tomto tématu se dozvíte, jak publikovat metadata pro službu pomocí kódu.  
   
 > [!CAUTION]
->  V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem. viz [Vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
+> V tomto tématu se dozvíte, jak publikovat metadata nezabezpečeným způsobem. Každý klient může získat metadata ze služby. Pokud vyžadujete, aby služba publikovala metadata zabezpečeným způsobem. viz [Vlastní zabezpečený koncový bod metadat](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
   
  Další informace o publikování metadat v konfiguračním souboru najdete v tématu [How to: Publikování metadat pro službu pomocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md). Publikování metadat umožňuje klientům načíst metadata pomocí žádosti o WS-Transfer Get nebo požadavku HTTP/GET pomocí `?wsdl` řetězce dotazu. Abyste měli jistotu, že kód pracuje, musíte vytvořit základní službu WCF. Základní Samoobslužná služba je k dispozici v následujícím kódu.  
   

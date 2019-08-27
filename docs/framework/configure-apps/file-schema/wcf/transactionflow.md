@@ -2,12 +2,12 @@
 title: <transactionFlow>
 ms.date: 03/30/2017
 ms.assetid: 8c7b4c5b-ace3-4fe3-89ff-7b13c9aacd13
-ms.openlocfilehash: 206a684e1279871eee4aed95a087921123f8efb9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2d1008a4308c9fda5d2291ce704d1f19205e996a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918664"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041252"
 ---
 # <a name="transactionflow"></a>\<transactionFlow >
 Určuje podporu toku transakce pro vlastní vazbu.  
@@ -46,7 +46,7 @@ Určuje podporu toku transakce pro vlastní vazbu.
  Tento prvek umožňuje povolit nebo zakázat tok příchozích transakcí v nastaveních vazby koncového bodu a také určit požadovaný formát protokolu pro příchozí transakce. Další informace o použití tohoto konfiguračního prvku naleznete v tématu [Konfigurace transakce ServiceModel](../../../wcf/feature-details/servicemodel-transaction-configuration.md) a [Povolení toku transakce](../../../wcf/feature-details/enabling-transaction-flow.md).  
   
 > [!CAUTION]
->  Při použití `OleTransactions` protokolu k toku transakcí z koncového bodu do koncového bodu může být časový limit transakce ztracený, pokud se cílový koncový bod pokusí znovu Flow použít `OleTransactions`libovolný protokol jiný než. To může způsobit, že všechny uzly nižší úrovně po OleTransactions směrování do vypršení časového limitu budou pozdější, než se čekalo.  
+> Při použití `OleTransactions` protokolu k toku transakcí z koncového bodu do koncového bodu může být časový limit transakce ztracený, pokud se cílový koncový bod pokusí znovu Flow použít `OleTransactions`libovolný protokol jiný než. To může způsobit, že všechny uzly nižší úrovně po OleTransactions směrování do vypršení časového limitu budou pozdější, než se čekalo.  
   
 ## <a name="see-also"></a>Viz také:
 

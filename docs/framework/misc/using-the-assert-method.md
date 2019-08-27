@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5b5a13b362f565cfae9247908bcf3cf35c899ae4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e2a86fbcd78c6768a91cc0d12e45053f8da6cdec
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910723"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041154"
 ---
 # <a name="using-the-assert-method"></a>Použití metody Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -31,7 +31,7 @@ ms.locfileid: "69910723"
  <xref:System.Security.CodeAccessPermission.Assert%2A>je metoda, která může být volána u tříd oprávnění přístupu kódu a <xref:System.Security.PermissionSet> třídy. Pomocí **výrazu Assert** můžete povolit váš kód (a volajícím) provádět akce, ke kterým má váš kód oprávnění, ale jeho volající nemusí mít oprávnění k tomu. Kontrolní výraz zabezpečení mění běžný proces, který modul runtime provede během kontroly zabezpečení. Pokud vyhodnotit oprávnění, sdělí systému zabezpečení, aby nekontroloval volající kód pro kontrolní oprávnění.  
   
 > [!CAUTION]
->  Používejte kontrolní výrazy pečlivě, protože mohou otevírat bezpečnostní otvory a podrušovat mechanismus modulu runtime pro vynucování omezení zabezpečení.  
+> Používejte kontrolní výrazy pečlivě, protože mohou otevírat bezpečnostní otvory a podrušovat mechanismus modulu runtime pro vynucování omezení zabezpečení.  
   
  Kontrolní výrazy jsou užitečné v situacích, kdy knihovna volá do nespravovaného kódu nebo provádí volání vyžadující oprávnění, které není zjevně související s zamýšleným použitím knihovny. Například všechen spravovaný kód, který volá do nespravovaného kódu, musí mít **SecurityPermission** s určeným příznakem. Kód, který nepochází z místního počítače, jako je například kód stažený z místního intranetu, nebude toto oprávnění ve výchozím nastavení uděleno. Proto aby kód, který je stažen z místního intranetu, mohl volat knihovnu, která používá nespravovaný kód, musí mít oprávnění, které je pro knihovnu uplatněno. Kromě toho mohou některé knihovny vyvolat volání, která jsou nepřesná volajícím a vyžadují zvláštní oprávnění.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "69910723"
  Předpokládejme například, že vaše vysoce důvěryhodná třída knihovny má metodu, která odstraňuje soubory. Přistupuje k souboru voláním nespravované funkce Win32. Volající vyvolá metodu **odstranění** kódu předáním názvu souboru, který má být odstraněn, C:\Test.txt. V rámci metody **Delete** váš kód vytvoří objekt, <xref:System.Security.Permissions.FileIOPermission> který představuje přístup pro zápis do C:\Test.txt. (K odstranění souboru se vyžaduje přístup pro zápis.) Váš kód poté vyvolá imperativní kontrolu zabezpečení voláním metody **Demand** objektu **FileIOPermission** . Pokud jedno z volajících v zásobníku volání nemá toto oprávnění, <xref:System.Security.SecurityException> je vyvolána výjimka. Pokud není vyvolána žádná výjimka, víte, že všichni volající mají právo na přístup k C:\Test.txt. Vzhledem k tomu, že většina vašich volajících nebude mít oprávnění pro přístup k nespravovanému kódu, váš kód pak <xref:System.Security.Permissions.SecurityPermission> vytvoří objekt, který představuje právo na volání nespravovaného kódu a volá metodu **Assert** objektu. Nakonec volá nespravovanou funkci Win32 k odstranění C:\Text.txt a vrátí řízení volajícímu.  
   
 > [!CAUTION]
->  Musíte mít jistotu, že váš kód nepoužívá kontrolní výrazy v situacích, kdy váš kód může být použit jiným kódem pro přístup k prostředku, který je chráněn oprávněním, které uplatňujete. Například v kódu, který zapisuje do souboru, jehož název je zadán volajícím jako parametr, neurčíte hodnotu **FileIOPermission** pro zápis do souborů, protože kód by byl otevřen pro zneužití třetí stranou.  
+> Musíte mít jistotu, že váš kód nepoužívá kontrolní výrazy v situacích, kdy váš kód může být použit jiným kódem pro přístup k prostředku, který je chráněn oprávněním, které uplatňujete. Například v kódu, který zapisuje do souboru, jehož název je zadán volajícím jako parametr, neurčíte hodnotu **FileIOPermission** pro zápis do souborů, protože kód by byl otevřen pro zneužití třetí stranou.  
   
  Při použití imperativní syntaxe zabezpečení volání metody **Assert** u více oprávnění ve stejné metodě způsobí vyvolání výjimky zabezpečení. Místo toho byste měli vytvořit objekt **PermissionSet** , předat jeho jednotlivá oprávnění, která chcete vyvolat, a pak zavolat metodu **Assert** na objekt **PermissionSet** . Metodu **Assert** můžete zavolat více než jednou, pokud použijete deklarativní syntaxi zabezpečení.  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 571b049300a7c7de963bd762e0266f66060479fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c9ab95124264b2b59be77695755ab1d1f1c3b1aa
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927997"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040736"
 ---
 # <a name="application-domains"></a>Aplikační domény
 
@@ -145,7 +145,7 @@ COMPLUS_LoaderOptimization = 1
  Pokud je nastavena na hodnotu 1, příznak prostředí COMPLUS_LoaderOptimization vynutí, aby hostitel modulu runtime načetl všechna sestavení v nedoménově neutrálním tvaru známém jako SingleDomain. SingleDomain nenačítá žádná sestavení jako doménově neutrální, s výjimkou mscorlib, která je vždy zavedena jako doménově neutrální. Toto nastavení se nazývá jediná doména, protože se běžně používá v případě, že je na hostiteli spuštěná jenom jedna aplikace v procesu.  
   
 > [!CAUTION]
->  Příznak prostředí COMPLUS_LoaderOptimization byl navržen pro použití v diagnostických a testovacích scénářích. Pokud je příznak zapnutý, může dojít k závažnému zpomalení a zvýšení využití paměti.  
+> Příznak prostředí COMPLUS_LoaderOptimization byl navržen pro použití v diagnostických a testovacích scénářích. Pokud je příznak zapnutý, může dojít k závažnému zpomalení a zvýšení využití paměti.  
   
 ### <a name="code-example"></a>Příklad kódu
 

@@ -2,12 +2,12 @@
 title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: e63a6c4a68da2b7e51dc1fc24353922912262806
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 8c13ad943bf4ef272c28266e12e175a0a21d5d40
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988573"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045235"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Programovací model webového HTTP služby Windows Communication Foundation (WCF) poskytuje základní prvky potřebné k sestavení webových služeb HTTP pomocí WCF. WEBOVÉ HTTP služby WCF jsou navržené tak, aby měly k dispozici nejširší škálu možných klientů, včetně webových prohlížečů, a mají následující jedinečné požadavky:  
@@ -23,7 +23,7 @@ Programovací model webového HTTP služby Windows Communication Foundation (WCF
  Neexistují žádná další omezení typů dat, která lze vrátit z webové služby HTTP. Z operace webové služby HTTP lze vrátit libovolný serializovatelný typ. Vzhledem k tomu, že je možné operace webové služby HTTP vyvolat webovým prohlížečem, existuje omezení toho, jaké typy dat lze zadat v adrese URL. Další informace o podporovaných typech ve výchozím nastavení najdete níže v části **parametry řetězce dotazu UriTemplate a adresy URL** . Výchozí chování lze změnit poskytnutím vlastní implementace T:System.ServiceModel.Dispatcher.QueryStringConverter, která určuje, jak převést parametry zadané v adrese URL na skutečný typ parametru. Další informace najdete v tématu.<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
->  Služby napsané pomocí programovacího modelu WEB HTTP WCF nepoužívají zprávy SOAP. Vzhledem k tomu, že protokol SOAP není použit, nelze použít funkce zabezpečení poskytované službou WCF. Můžete ale použít zabezpečení založené na přenosu, protože službu hostuje pomocí protokolu HTTPS. Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md) .  
+> Služby napsané pomocí programovacího modelu WEB HTTP WCF nepoužívají zprávy SOAP. Vzhledem k tomu, že protokol SOAP není použit, nelze použít funkce zabezpečení poskytované službou WCF. Můžete ale použít zabezpečení založené na přenosu, protože službu hostuje pomocí protokolu HTTPS. Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md) .  
   
 > [!WARNING]
 > Instalace rozšíření WebDAV pro službu IIS může způsobit, že webové služby HTTP budou vracet chybu HTTP 405, protože se rozšíření WebDAV pokusí zpracovat všechny požadavky PUT. Pokud chcete tento problém obejít, můžete rozšíření WebDAV odinstalovat nebo zakázat rozšíření WebDAV pro váš web. Další informace najdete v tématu [IIS a WebDAV](https://learn.iis.net/page.aspx/357/webdav-for-iis-70/) .  

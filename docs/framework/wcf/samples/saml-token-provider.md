@@ -2,12 +2,12 @@
 title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 0ab33c5f0a24e97332fd84e43e9050fc8f406a27
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4a6ee808d224696d4fc21337cc558fcc6218e71d
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965491"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044771"
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
 Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML klienta. Poskytovatel tokenu v Windows Communication Foundation (WCF) se používá k poskytnutí přihlašovacích údajů infrastruktuře zabezpečení. Poskytovatel tokenů v nástroji General prověřuje cíl a vydá odpovídající přihlašovací údaje, aby mohla infrastruktura zabezpečení zabezpečit zprávu. WCF se dodává s výchozím poskytovatelem tokenu správce přihlašovacích údajů. WCF se dodává i s poskytovatelem tokenů služby CardSpace. Vlastní zprostředkovatelé tokeny jsou užitečné v následujících případech:
@@ -365,7 +365,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu SAML
 1. Spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012 spustit s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat.  
   
 2. Spustit Service. exe z service\bin.  
   

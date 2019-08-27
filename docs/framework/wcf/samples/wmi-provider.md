@@ -2,21 +2,21 @@
 title: Poskytovatel WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: dd1cb5f580ba182516f94f10c809cfa649365045
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 89e2d370919519953e714cb0d0020587b3f53c9d
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589410"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038512"
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
-Tento příklad ukazuje, jak shromažďovat data ze služby Windows Communication Foundation (WCF) za běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), který je součástí WCF. Tato ukázka také ukazuje, jak přidat ke službě WMI objekt definovaný uživatelem. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak shromažďovat data z `ICalculator` service za běhu.  
+Tato ukázka předvádí, jak shromažďovat data ze služeb Windows Communication Foundation (WCF) za běhu pomocí poskytovatele rozhraní WMI (Windows Management Instrumentation) (WMI), který je integrovaný do WCF. Tato ukázka také ukazuje, jak přidat uživatelem definovaný objekt WMI do služby. Ukázka aktivuje zprostředkovatele rozhraní WMI pro [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak shromažďovat data ze `ICalculator` služby za běhu.  
   
- Rozhraní WMI se výlučně implementace Microsoftu Web-Based Enterprise Management (WBEM) standard. Další informace o sadě SDK rozhraní WMI najdete v tématu [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page). WBEM je oborový standard pro aplikace jak vystavit WMI pro externí nástroje pro správu.  
+ WMI je implementace standardu WBEM (Web-Based Enterprise Management) od Microsoftu. Další informace o sadě WMI SDK naleznete v tématu [rozhraní WMI (Windows Management Instrumentation)](/windows/desktop/WmiSdk/wmi-start-page). WBEM je oborovým standardem, jak aplikace vystavují instrumentaci pro správu externích nástrojů pro správu.  
   
- WCF implementuje zprostředkovatele WMI, komponenty, která zveřejňuje instrumentace za běhu pomocí rozhraní WBEM kompatibilní. Nástroje pro správu můžou připojit ke službám prostřednictvím rozhraní za běhu. WCF zpřístupňuje atributy služeb, jako jsou adresy, vazby, chování a naslouchací procesy.  
+ Služba WCF implementuje poskytovatele rozhraní WMI, součást, která zpřístupňuje instrumentaci za běhu prostřednictvím rozhraní kompatibilního se standardem WBEM. Nástroje pro správu se můžou ke službám připojit prostřednictvím rozhraní za běhu. WCF zpřístupňuje atributy služeb, jako jsou adresy, vazby, chování a naslouchací procesy.  
   
- Předdefinovaný poskytovatel rozhraní WMI dojde v konfiguračním souboru aplikace. To se provádí prostřednictvím `wmiProviderEnabled` atribut [ \<diagnostiky >](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, jak je znázorněno v následující ukázce konfigurace:  
+ V konfiguračním souboru aplikace je aktivovaný integrovaný zprostředkovatel rozhraní WMI. To se provádí pomocí `wmiProviderEnabled` atributu [ \<> diagnostiky](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<části System. ServiceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , jak je znázorněno v následující ukázkové konfiguraci:  
   
 ```xml  
 <system.serviceModel>  
@@ -26,23 +26,23 @@ Tento příklad ukazuje, jak shromažďovat data ze služby Windows Communicatio
 </system.serviceModel>  
 ```  
   
- Tato položka konfigurace vystavuje rozhraní WMI. Správa aplikací teď můžete připojit přes toto rozhraní a přístup WMI aplikace.  
+ Tato položka konfigurace zpřístupňuje rozhraní WMI. Aplikace pro správu se teď můžou přes toto rozhraní připojit a přistupovat k instrumentaci správy aplikace.  
   
-## <a name="custom-wmi-object"></a>Vlastní WMI objekt  
- Přidání objektů WMI ke službě umožňuje zobrazit informace definované uživatelem, spolu s předdefinované informace o poskytovateli WMI. Toho lze dosáhnout publikování schématu služby WMI pomocí Installutil.exe aplikace. Pokyny k instalaci na konci tohoto tématu najdete pokyny k tomu, společně s další podrobnosti.  
+## <a name="custom-wmi-object"></a>Vlastní objekt WMI  
+ Přidání objektů WMI do služby umožňuje zobrazit uživatelsky definované informace spolu s integrovanými informacemi o zprostředkovateli rozhraní WMI. Toho je možné dosáhnout publikováním schématu služby do služby WMI pomocí aplikace Installutil. exe. Pokyny k tomuto účelu, společně s dalšími podrobnostmi, najdete v pokynech k instalaci na konci tématu.  
   
-## <a name="accessing-wmi-information"></a>Přístup k informacím o rozhraní WMI  
- Dat služby WMI může přistupovat mnoho různých způsobů. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, aplikace Visual Basic, C++ aplikací a rozhraní .NET Framework (https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi).  
+## <a name="accessing-wmi-information"></a>Přístup k informacím WMI  
+ Data rozhraní WMI jsou dostupná mnoha různými způsoby. Společnost Microsoft poskytuje rozhraní API služby WMI pro skripty, C++ Visual Basic aplikace, aplikace a .NET Framework https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi) (.  
   
- Tento příklad používá dva skripty v jazyce Java: jeden výčet služby spuštěné v počítači společně s jejich vlastností a druhou pro zobrazení dat služby WMI definovaný uživatelem. Skript otevře připojení k poskytovateli služby WMI, analyzuje data a zobrazuje data, shromáždit.  
+ Tato ukázka používá dva skripty Java: jednu k vytvoření výčtu služeb spuštěných v počítači společně s některými jejich vlastnostmi a druhou pro zobrazení uživatelsky definovaných dat WMI. Skript otevře připojení ke zprostředkovateli rozhraní WMI, analyzuje data a zobrazí shromážděná data.  
   
- Spuštění ukázky vytvořit běžící instance služby WCF. Zatímco je služba spuštěna, spusťte každý skript jazyka Java pomocí následujícího příkazu na příkazovém řádku:  
+ Spusťte ukázku pro vytvoření spuštěné instance služby WCF. Když je služba spuštěná, spusťte každý skript Java pomocí následujícího příkazu na příkazovém řádku:  
   
 ```  
 cscript EnumerateServices.js  
 ```  
   
- Skript přistupuje k nim instrumentace obsažené ve službě a vytvoří následující výstup:  
+ Skript přistupuje k instrumentaci obsaženému ve službě a generuje následující výstup:  
   
 ```  
 Microsoft (R) Windows Script Host Version 5.6  
@@ -100,13 +100,13 @@ Copyright © Microsoft Corporation 1996-2001. All rights reserved.
       |-Type:                       Behavior  
 ```  
   
- V dalším kroku spusťte druhý skriptu Java pro zobrazení dat uživatelem definované rozhraní WMI:  
+ V dalším kroku spusťte druhý skript Java, který zobrazí uživatelem definovaná data rozhraní WMI:  
   
 ```  
 cscript EnumerateCustomObjects.js  
 ```  
   
- Skript přistupuje k nim uživatelem definované instrumentace obsažené ve službách a vytvoří následující výstup:  
+ Skript přistupuje k uživatelsky definovanému instrumentaci obsaženému ve službách a generuje následující výstup:  
   
 ```  
 1 WMIObject(s) found.  
@@ -115,34 +115,34 @@ cscript EnumerateCustomObjects.js
 |-WMIInfo:       User Defined WMI Information.  
 ```  
   
- Výstup ukazuje, že je jediné služby spuštěné v počítači. Služba poskytuje jeden koncový bod, který implementuje `ICalculator` kontraktu. Nastavení chování a vazby, které implementují koncového bodu jsou uvedené jako součet jednotlivých prvků zásobníkem zpráv.  
+ Výstup ukazuje, že v počítači je spuštěna jedna služba. Služba zpřístupňuje jeden koncový bod, který `ICalculator` implementuje kontrakt. Nastavení chování a vazeb, která jsou implementována koncovým bodem, jsou uvedena jako součet jednotlivých prvků zásobníku zpráv.  
   
- Služba WMI není omezena pouze na vystavení WMI infrastruktury WCF. Aplikace může zpřístupnit vlastní domény datových položek prostřednictvím stejný mechanismus. Služba WMI není jednotný mechanismus pro řízení a kontrolu webové služby.  
+ Rozhraní WMI není omezené na vystavení instrumentace infrastruktury WCF. Aplikace může vystavit vlastní datové položky specifické pro doménu přes stejný mechanismus. WMI je jednotný mechanismus pro kontrolu a kontrolu webové služby.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se dá provést [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste v Windows Communication Foundation Samples provedli [postup jednorázového nastavení](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Publikování služby schématu WMI spuštěním InstallUtil.exe (výchozí umístění pro InstallUtil.exe je "% WINDIR%\Microsoft.NET\Framework\v4.0.30319") na service.dll soubor v adresáři hostování. Tento krok je pouze potřeba provést, pokud byly provedeny změny do souboru service.dll.
+3. Publikujte schéma služby pro rozhraní WMI spuštěním příkazu InstallUtil. exe (výchozí umístění pro InstallUtil. exe je "%WINDIR%\Microsoft.NET\Framework\v4.0.30319") v souboru Service. dll v adresáři hostování. Tento krok je nutné provést pouze v případě, že byly provedeny změny v souboru Service. dll.
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!NOTE]
-    >  Pokud jste nainstalovali WCF po instalaci technologie ASP.NET, budete muset spustit "%WINDIR%\ Microsoft.Net\Framework\v3.0\Windows komunikace Foundation\servicemodelreg.exe "- r - x oprávnění účtu ASPNET k publikování objektů WMI.  
+    > Pokud jste nainstalovali WCF po instalaci ASP.NET, bude pravděpodobně nutné spustit "% WINDIR% \ Microsoft. Net\Framework\v3.0\Windows Communications Foundation\servicemodelreg.exe "-r-x" udělte účtu ASPNET oprávnění k publikování objektů WMI.  
   
-5. Zobrazit data z ukázkové prezentované prostřednictvím rozhraní WMI pomocí příkazů: `cscript EnumerateServices.js` nebo `cscript EnumerateCustomObjects.js`.  
+5. Zobrazit data z ukázky, která se procházela prostřednictvím rozhraní WMI, `cscript EnumerateServices.js` pomocí `cscript EnumerateCustomObjects.js`příkazů: nebo.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

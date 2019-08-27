@@ -2,40 +2,40 @@
 title: Řešení ReliableSecureProfile
 ms.date: 03/30/2017
 ms.assetid: 921edc41-e91b-40f9-bde9-b6148b633e61
-ms.openlocfilehash: e1895da0805a5282fc328b0c8d48d7042a1e5784
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d7cfc028c5cf1ba5cfba009cd29c89f07c64fd9c
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787566"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044804"
 ---
 # <a name="reliable-secure-profile"></a>Řešení ReliableSecureProfile
-Tato ukázka předvádí, jak sestavit WCF a [spolehlivý zabezpečený profil](https://go.microsoft.com/fwlink/?LinkId=178140) (RSP). Tato ukázka předvádí, provádění [vytvořit připojení](https://go.microsoft.com/fwlink/?LinkId=178141) kanál, který se může skládat spolu s spolehlivé zasílání zpráv a volitelně zabezpečeného kanálu k vytvoření spolehlivé zabezpečené vazby na základě RSP specifikace.  
+Tato ukázka předvádí, jak vytvořit WCF a [spolehlivý zabezpečený profil](https://go.microsoft.com/fwlink/?LinkId=178140) (RSP). Tato ukázka předvádí implementaci kanálu [připojení](https://go.microsoft.com/fwlink/?LinkId=178141) , který se může skládat společně s spolehlivým zasíláním zpráv, a volitelně také zabezpečený kanál pro vytvoření spolehlivé zabezpečené vazby na základě specifikace RSP.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ReliableSecureProfile`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ReliableSecureProfile`  
   
-## <a name="discussion"></a>Diskuse  
- Tato ukázka předvádí scénář spolehlivý asynchronní obousměrný zprávy exchange. Služba má duplexního kontraktu a klient implementuje tento kontrakt duplexního zpětného volání. Klient zahájí požadavek na službu, pro kterou se očekává odpověď na samostatné spojení. Zprávy s požadavkem je odeslána spolehlivě. Klient nechce otevřete koncový bod naslouchající na jeho konci. Díky tomu se dotazuje na službu s vytvořit připojení žádosti o službu má být zaslán zpět odpověď na používající back channel tohoto požadavku vytvořit připojení. Tato ukázka předvádí, jak vám má zabezpečené spolehlivou duplexní komunikaci přes protokol HTTP bez klienta vystavuje koncový bod naslouchající (a vytváření výjimku brány firewall).  
+## <a name="discussion"></a>Účely  
+ Tato ukázka předvádí spolehlivý asynchronní scénář obousměrné výměny zpráv. Služba má duplexní smlouvu a klient implementuje kontrakt předuplexního zpětného volání. Klient inicializuje požadavek na službu, pro kterou je odpověď očekávána v samostatném připojení. Zpráva požadavku bude spolehlivě odeslána. Klient nechce na svém konci otevřít koncový bod naslouchání. Proto dotazuje službu pomocí žádostí o vytvoření připojení, aby mohla služba odeslat zpět odpověď na zadní kanál této žádosti o vytvoření připojení. Tato ukázka předvádí, jak zajistit zabezpečenou spolehlivou duplexovou komunikaci přes protokol HTTP bez toho, aby klient vystavoval koncový bod naslouchání (a vytvořil výjimku brány firewall).  
   
-## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Otevřít **ReliableSecureProfile** řešení.  
+1. Otevřete řešení **ReliableSecureProfile** .  
   
-2. Klikněte pravým tlačítkem myši **služby** projekt **Průzkumníka řešení**vyberte **ladění**, **zahájit novou instanci** v místní nabídce. Tím se spustí služby hostitele.  
+2. Klikněte pravým tlačítkem na projekt **služby** v **Průzkumník řešení**, vyberte **ladit**, **spustit novou instanci** z kontextové nabídky. Tím se spustí hostitel služby.  
   
-3. Klikněte pravým tlačítkem myši **klienta** projekt **Průzkumníka řešení**vyberte **ladění**, **zahájit novou instanci** v místní nabídce. Tím se spustí klienta.  
+3. Klikněte pravým tlačítkem na projekt **klienta** v **Průzkumník řešení**, vyberte **ladit**, **začněte novou instanci** z kontextové nabídky. Tím spustíte klienta.  
   
-4. Zadejte libovolný řetězec v příkazovém řádku v okně konzoly klienta a klikněte na ENTER. Tím se odešle vstupního řetězce ke službě, která vypočítá hodnotu hash tohoto řetězce.  
+4. Do příkazového řádku v okně konzoly klienta zadejte libovolný řetězec a klikněte na ENTER. Tím se vstupní řetězec pošle službě, která vypočítá hodnotu hash tohoto řetězce.  
   
-5. Zobrazte výsledek v systému windows klienta při volání služby zpět operace kontraktu duplexního zpětného volání pro zobrazení výsledků v okně konzoly klienta. Na službu pro simulaci dlouho běžící operace zpracování dat není k záměrné prodlevě.  
+5. Zobrazí výsledek v klientských oknech, když služba zavolá zpět operaci produplexního zpětného volání, aby zobrazila výsledek v okně konzoly klienta. Došlo k úmyslnému zpoždění služby, aby se simulovala dlouhodobá operace zpracování dat.  
   
-6. Monitorování přenos pomocí protokolu HTTP (podle těchto online sítě monitorování nástroje, jako je sledování sítě, Fiddler a tak dále) ukazuje, že pořadí pro komunikaci se naváže mezi klientem a službou za podmínek stanovených spolehlivý zabezpečený profil a jak klienta dotazuje službu s žádostmi o vytvořit připojení. Když služba dostane připravení odeslat zpět zpracovaných odpověď, používá používající back channel poslední žádosti vytvořit připojení má být zaslán zpět výsledky.  
+6. Monitorování přenosů HTTP (pomocí kteréhokoli nástroje pro monitorování sítě online, jako je Sledování sítě, Fiddler a tak dále) ukazuje, že je mezi klientem a službou navázáná sekvence komunikace, jak je vydaná spolehlivým zabezpečeným profilem a jak klient nástroje Provede dotazování služby pomocí žádostí o připojení. Jakmile bude služba připravena odeslat zpět zpracovanou odpověď, použije back-Channel poslední žádosti o vytvoření připojení k odeslání výsledků.  
   
-7. V okně konzoly služby službu zavřete stisknutím klávesy ENTER. Stisknutím klávesy ENTER zavřete klienta v okně konzoly klienta.
+7. Pokud chcete službu zavřít, stiskněte klávesu ENTER v okně konzoly služby. Chcete-li ukončit klienta, stiskněte klávesu ENTER v okně konzoly klienta.

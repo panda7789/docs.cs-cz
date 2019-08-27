@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 16e7c564373eaf241b500c0e3de40ee8fb38f05a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f82d3f19a3bf6fc6a5ac038034880dafc03fcce1
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964595"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044787"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communication Foundation (WCF) souvisejících se zabezpečením pomocí:  
@@ -19,13 +19,13 @@ Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communica
 - Řízení protokolování identifikovatelné osobní údaje (PII) v protokolech trasování a zpráv.  
   
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>Účely  
  Každá z těchto funkcí se dá použít samostatně nebo společně k řízení aspektů zabezpečení služby. Nejedná se o nekonečný Průvodce zabezpečením služby WCF.  
@@ -120,7 +120,7 @@ Tato ukázka předvádí, jak řídit několik funkcí služby Windows Communica
 > System. Diagnostics ignoruje všechny atributy všech zdrojů s výjimkou prvního, který je uveden v konfiguračním souboru. `logKnownPii` Přidání atributu k druhému zdroji v konfiguračním souboru nemá žádný vliv.  
   
 > [!IMPORTANT]
->  Spuštění této ukázky zahrnuje ruční úpravu souboru Machine. config. Při úpravách Machine. config jako nesprávné hodnoty nebo syntaxe může zabránit spuštění všech aplikací .NET Framework.  
+> Spuštění této ukázky zahrnuje ruční úpravu souboru Machine. config. Při úpravách Machine. config jako nesprávné hodnoty nebo syntaxe může zabránit spuštění všech aplikací .NET Framework.  
   
  Je také možné zašifrovat prvky konfiguračního souboru pomocí DPAPI a RSA. Další informace najdete na následujících odkazech:  
   

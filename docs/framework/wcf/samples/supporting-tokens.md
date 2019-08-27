@@ -2,12 +2,12 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: a8464d7f32b52152b5371ff9edbb396578df6a57
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 14cc7bed55d41352acd93d4443b20f8bda966263
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964474"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044618"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Ukázka pomocných tokenů ukazuje, jak přidat další tokeny do zprávy, která používá WS-Security. V příkladu se kromě tokenu zabezpečení uživatelského jména přidá i binární token zabezpečení X. 509. Token se předává v hlavičce zprávy WS-Security od klienta ke službě a část zprávy je podepsána pomocí privátního klíče přidruženého k tokenu zabezpečení X. 509, aby bylo možné prokázat vlastnictví certifikátu X. 509 pro příjemce. To je užitečné v případě, kdy je potřeba mít k ověření nebo autorizaci odesílatele více deklarací přidružených ke zprávě. Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď.
@@ -425,7 +425,7 @@ iisreset
 1. Spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012 spustit s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat. Nezapomeňte odebrat certifikáty spuštěním souboru Cleanup. bat po dokončení ukázky. Další ukázky zabezpečení používají stejné certifikáty.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat. Nezapomeňte odebrat certifikáty spuštěním souboru Cleanup. bat po dokončení ukázky. Další ukázky zabezpečení používají stejné certifikáty.  
   
 2. Spustit soubor Client. exe z \client\bin. Aktivita klienta se zobrazí v klientské aplikaci konzoly.  
   

@@ -2,148 +2,150 @@
 title: Proces schválení dokumentu
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: dfc2e0a12d053733823427ac50066b1e4a0f97aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 20167cd1c06c2ae57dfe48fd07ab3a0e2adf9927
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62005109"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038227"
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
-Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně implementují scénář proces schválení dokumentu. Klientská aplikace může odesílat dokumenty pro schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucení pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity slouží k získání jedné schválení, schválení kvora (procento sada schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.
+
+Tato ukázka předvádí použití mnoha funkcí programovací model Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně implementují scénář procesu schvalování dokumentů. Klientská aplikace může odesílat dokumenty ke schválení a schvalování dokumentů. K dispozici je aplikace Správce schválení, která usnadňuje komunikaci mezi klienty a vynucuje pravidla schvalovacího procesu. Proces schvalování je pracovní postup, který může provést několik typů schválení. Aktivity existují pro získání jediného schválení, schválení kvora (procento sady schvalovatelů) a složitý proces schvalování, který se skládá z kvora a jednoho schválení v rámci sekvence.
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
->   
->  `<InstallDrive>:\WF_WCF_Samples`  
->   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
->   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Application\DocumentApprovalProcess`  
-  
-## <a name="sample-details"></a>Ukázka podrobnosti  
- Následující obrázek ukazuje pracovní postup procesu schvalování dokumentů:  
-  
- ![Pracovní postup procesu schvalování dokumentů](./media/document-approval-process/document-approval-process.jpg)  
-  
- Z pohledu klienta schválení zpracování funkce takto:  
-  
-1. Klient přihlásí k odběru bude uživatel v systému proces schvalování.  
-  
-2. Klienta WCF se odesílá do služby WCF hostované aplikace schválení správce.  
-  
-3. Jedinečné ID uživatele je vrácen do klienta. Klienta můžete nyní účastnit schvalovací procesy.  
-  
-4. Po připojený, klient může odesílat dokument pro schválení pomocí jednoho, kvora nebo komplexní schvalovací procesy.  
-  
-5. Stisknutí tlačítka v rozhraní klienta spuštění instance pracovního postupu v klientovi hostitele služby pracovního postupu.  
-  
-6. Pracovní postup odešle žádost o schválení aplikace schválení správce.  
-  
-7. Pracovní postup správce spustí pracovní postup na svůj vlastní straně k reprezentaci schvalovací proces.  
-  
-8. Jakmile se spustí pracovní postup schválení správce, se výsledky odesílají zpět do klienta.  
-  
-9. Klient se zobrazí výsledky.  
-  
-10. Klient může přijímat žádosti o schválení a reagovat na žádosti v libovolném bodě v čase.  
-  
-11. Služby WCF hostované na straně klienta může přijímat žádosti o schválení aplikace pro správu schválení panelu.  
-  
-12. Informace o dokumentu se zobrazí na straně klienta pro kontrolu.  
-  
-13. Uživatel můžete schválit nebo odmítnout dokumentu.  
-  
-14. Klienta WCF se používá k odesílání odpovědi na schválení zpět do aplikace schválení správce.  
-  
- Z aplikace schválení správce schválení zpracování funkce takto:  
-  
-1. Klient požádá o se zapojit do systému proces schválení.  
-  
-2. Služby WCF na schválení správce obdrží žádost jako součást procesu systému schválení.  
-  
-3. Jedinečné ID je generován pro klienta. Informace o uživateli je uložen v databázi.  
-  
-4. Jedinečné ID je odeslána zpět uživateli.  
-  
-5. Žádost o schválení je přijímat. Správce schvalování spustí proces schvalování.  
-  
-6. Správce schvalování, spouští se nový pracovní postup přijme žádost o schválení.  
-  
-7. V závislosti na typu požadavku (jednoduchý, kvora nebo komplexní) provádí jiné aktivitě.  
-  
-8. Odesílání a aktivity Receive s korelací slouží k odeslání žádosti o schválení klienta pro kontrolu a přijetí odpovědi.  
-  
-9. Výsledek pracovního postupu schvalování procesu posílá do klienta.  
-  
-## <a name="using-the-sample"></a>Pomocí ukázky  
-  
-##### <a name="to-set-up-the-database"></a>K nastavení databáze  
-  
-1. Z příkazového řádku sady Visual Studio 2010 otevřeného s oprávněními správce přejděte na tuto složku DocumentApprovalProcess a spustit Setup.cmd.  
-  
-##### <a name="to-set-up-the-application"></a>Nastavení aplikace  
-  
-1. Pomocí sady Visual Studio 2010, otevřete soubor řešení DocumentApprovalProcess.sln.  
-  
-2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
-  
-3. Spuštění řešení, schválení správce aplikaci spustit kliknutím pravým tlačítkem myši na projekt ApprovalManager v **Průzkumníka řešení** a kliknete na **ladění**->**Start**  novou instanci v místní nabídce.  
-  
-     Čekat správce výstup s oznámením, že je připravený.  
-  
-##### <a name="to-run-the-single-approval-scenario"></a>Ke spuštění jedné schválení scénář  
-  
-1. Otevřete příkazový řádek s oprávněním správce.  
-  
-2. Přejděte do adresáře, který obsahuje řešení.  
-  
-3. Přejděte do složky ApprovalClient\Bin\Debug a spusťte dvě instance ApprovalClient.exe.  
-  
-4. Klikněte na tlačítko **zjistit**, počkejte, dokud **odběru** tlačítko je povolené.  
-  
-5. Zadejte libovolné uživatelské jméno a klikněte na tlačítko **odběru**. Pro jednoho klienta, použijte `UserType1` a jiný typ `UserType2`.  
-  
-6. V `UserType1` klienta, vyberte jeden schválení zadejte v rozevírací nabídce a zadejte název dokumentu a obsah. Klikněte na tlačítko **žádost o schválení**.  
-  
-7. V `UserType2` klient, se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte klávesu **schválit** nebo **odmítnout**. Výsledky by měly zobrazovat `UserType1` klienta.  
-  
-##### <a name="to-run-the-quorum-approval-scenario"></a>Chcete-li spustit scénář schválení kvora  
-  
-1. Otevřete příkazový řádek s oprávněním správce.  
-  
-2. Přejděte do adresáře, který obsahuje řešení.  
-  
-3. Přejděte do složky ApprovalClient\Bin\Debug a provést tři instance ApprovalClient.exe.  
-  
-4. Klikněte na tlačítko **zjistit**, počkejte, dokud **odběru** tlačítko je povolené.  
-  
-5. Zadejte libovolné uživatelské jméno a klikněte na tlačítko **odběru**. Pro jednoho klienta používat `UserType1` a další dva typy `UserType2`.  
-  
-6. V `UserType1` klienta, vyberte schválení kvora, zadejte v rozevírací nabídce a zadejte název dokumentu a obsah. Klikněte na tlačítko **žádost o schválení**. To, který požaduje dva `UserType2` klienty schválit nebo odmítnout dokumentu. Přestože obě `UserType2` klientů musí odpovědět, jen pro jednoho klienta musí schválit, aby se schválit.  
-  
-7. V `UserType2` klientů, se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte klávesu **schválit** nebo **odmítnout**. Výsledky by měly zobrazovat `UserType1` klienta.  
-  
-##### <a name="to-run-the-complex-approval-scenario"></a>Chcete-li spustit scénář komplexní schválení  
-  
-1. Otevřete příkazový řádek s oprávněním správce.  
-  
-2. Přejděte do adresáře, který obsahuje řešení.  
-  
-3. Přejděte do složky ApprovalClient\Bin\Debug a spustit čtyři instancí ApprovalClient.exe.  
-  
-4. Klikněte na tlačítko **zjistit**, počkejte, dokud **odběru** tlačítko je povolené.  
-  
-5. Zadejte libovolné uživatelské jméno a klikněte na tlačítko **odběru**. Pro jednoho klienta používat `UserType1`ve dvou používá typ `UserType2`a v posledním `UserType3`.  
-  
-6. V `UserType1` klienta, vyberte jeden schválení zadejte v rozevírací nabídce a zadejte název dokumentu a obsah. Klikněte na tlačítko **žádost o schválení**.  
-  
-7. V `UserType2` klientů, se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte klávesu **schválit**, dokument je předán `UserType3` klienta.  
-  
-     Po prvním schválení dokumentu `UserType2` kvora, dokument je předán `UserType3` klienta.  
-  
-8. Schválit nebo odmítnout dokumentu z `UserType3` klienta. Výsledky by měly zobrazovat `UserType1` klienta.  
-  
-##### <a name="to-clean-up"></a>Vyčistit  
-  
-1. Z příkazového řádku sady Visual Studio 2010 přejděte do složky DocumentApprovalProcess a spusťte Cleanup.cmd.
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WF\Application\DocumentApprovalProcess`
+
+## <a name="sample-details"></a>Podrobnosti ukázky
+
+Následující obrázek znázorňuje pracovní postup procesu schvalování dokumentů:
+
+![Pracovní postup procesu schválení dokumentu](./media/document-approval-process/document-approval-process.jpg)
+
+V perspektivě klienta funkce procesu schvalování funguje takto:
+
+1. Klient se přihlásí jako uživatel v systému schvalovacích procesů.
+
+2. Klient WCF odesílá do služby WCF hostované aplikací Správce schvalování.
+
+3. Klientovi se vrátí jedinečné ID uživatele. Klient se teď může zúčastnit procesů schvalování.
+
+4. Po připojení může klient odeslat dokument ke schválení pomocí jednoho, kvora nebo složitých procesů schvalování.
+
+5. Klikne na tlačítko v rozhraní klienta a spustí se instance pracovního postupu na hostiteli služby pracovního postupu klienta.
+
+6. Pracovní postup odešle žádost o schválení aplikaci Správce schvalování.
+
+7. Správce pracovních postupů spustí pracovní postup na vlastní straně, který bude reprezentovat schvalovací proces.
+
+8. Po spuštění pracovního postupu schválení správce se výsledky odešlou zpátky klientovi.
+
+9. Klient zobrazí výsledky.
+
+10. Klient může obdržet žádost o schválení a odpovědět na žádost v jakémkoli okamžiku.
+
+11. Služba WCF hostovaná v klientovi může obdržet žádost o schválení z aplikace Správce schvalování.
+
+12. Informace o dokumentu se zobrazí na klientovi ke kontrole.
+
+13. Uživatel může dokument schválit nebo odmítnout.
+
+14. Klient WCF slouží k odeslání odpovědi na schválení zpět do aplikace Správce schvalování.
+
+Proces schvalování vychází z pohledu aplikace schvalování Manager v zobrazení následujícím způsobem:
+
+1. Klient žádá o účast do systému procesu schvalování.
+
+2. Služba WCF ve Správci schvalování obdrží požadavek, aby byl součástí systému schvalování procesů.
+
+3. Pro klienta je vygenerováno jedinečné ID. Informace o uživateli jsou uloženy v databázi aplikace.
+
+4. Jedinečné ID se pošle zpátky uživateli.
+
+5. Obdrží se žádost o schválení. Správce schvalování provede schvalovací proces.
+
+6. Správce schvalování obdrží žádost o schválení a spustí nový pracovní postup.
+
+7. V závislosti na typu požadavku (jednoduché, kvorum nebo složité) se spustí jiná aktivita.
+
+8. Aktivity Send a Receive se službou Correlation slouží k odeslání žádosti o schválení klientovi ke kontrole a přijetí odpovědi.
+
+9. Výsledek pracovního postupu procesu schválení je odeslán klientovi.
+
+## <a name="using-the-sample"></a>Použití ukázky
+
+##### <a name="to-set-up-the-database"></a>Nastavení databáze
+
+1. Z příkazového řádku sady Visual Studio 2010 otevřeného s oprávněními správce přejděte do této složky DocumentApprovalProcess a spusťte Setup. cmd.
+
+##### <a name="to-set-up-the-application"></a>Nastavení aplikace
+
+1. Pomocí sady Visual Studio 2010 otevřete soubor řešení DocumentApprovalProcess. sln.
+
+2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
+
+3. Chcete-li spustit řešení, spusťte aplikaci Správce schvalování kliknutím pravým tlačítkem na projekt ApprovalManager v **Průzkumník řešení** a kliknutím na položku **ladit**->**Spustit** novou instanci z místní nabídky.
+
+    Počkejte, až bude výstup správce, a dejte vám jistotu, že je připravený.
+
+##### <a name="to-run-the-single-approval-scenario"></a>Spuštění jediného scénáře schválení
+
+1. Otevřete příkazový řádek s oprávněním správce.
+
+2. Přejděte do adresáře, který obsahuje řešení.
+
+3. Přejděte do složky ApprovalClient\Bin\Debug a spusťte dvě instance nástroje ApprovalClient. exe.
+
+4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
+
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta použijte `UserType1` a druhý typ. `UserType2`
+
+6. `UserType1` V klientovi vyberte typ jednoho schválení z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
+
+7. `UserType2` V klientovi se zobrazí dokument, který čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit v `UserType1` klientovi.
+
+##### <a name="to-run-the-quorum-approval-scenario"></a>Spuštění scénáře schválení kvora
+
+1. Otevřete příkazový řádek s oprávněním správce.
+
+2. Přejděte do adresáře, který obsahuje řešení.
+
+3. Přejděte do složky ApprovalClient\Bin\Debug a spusťte tři instance nástroje ApprovalClient. exe.
+
+4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
+
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jedno použití `UserType1` klienta a druhý dva typy `UserType2`.
+
+6. `UserType1` V klientovi vyberte typ schválení kvora z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**. To vyžaduje, aby dva `UserType2` klienti schválili nebo odmítli dokument. I když `UserType2` musí oba klienti reagovat, musí schválit dokument, jenom jeden klient, aby ho schválil.
+
+7. `UserType2` V klientech se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit v `UserType1` klientovi.
+
+##### <a name="to-run-the-complex-approval-scenario"></a>Spuštění scénáře komplexního schválení
+
+1. Otevřete příkazový řádek s oprávněním správce.
+
+2. Přejděte do adresáře, který obsahuje řešení.
+
+3. Přejděte do složky ApprovalClient\Bin\Debug a spusťte čtyři instance nástroje ApprovalClient. exe.
+
+4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
+
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta používá `UserType1`nástroj ve dvou typech `UserType2`a při posledním použití `UserType3`.
+
+6. `UserType1` V klientovi vyberte typ jednoho schválení z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
+
+7. `UserType2` V klientech se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit**, dokument se předává `UserType3` klientovi.
+
+    Pokud dokument schválí první `UserType2` kvorum, dokument se předává `UserType3` klientovi.
+
+8. Schvalte nebo odmítněte dokument z `UserType3` klienta. Výsledky by se měly zobrazit v `UserType1` klientovi.
+
+##### <a name="to-clean-up"></a>Vyčištění
+
+1. Z příkazového řádku sady Visual Studio 2010 přejděte do složky DocumentApprovalProcess a spusťte Cleanup. cmd.

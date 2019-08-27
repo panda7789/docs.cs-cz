@@ -2,12 +2,12 @@
 title: Pokyny k bráně firewall
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 5e557963c415cf39c4f25b4854c9863652201146
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c07d17ebb6bbefa78d12bb128e354112311891a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961406"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044953"
 ---
 # <a name="firewall-instructions"></a>Pokyny k bráně firewall
 Musíte povolit několik portů nebo programů v bráně firewall, aby mohli ukázky Windows Communication Foundation (WCF) fungovat. Řada ukázek komunikuje pomocí portů v rozsahu 8000-8003 a portu 9000. Brána firewall je ve výchozím nastavení zapnutá a brání přístupu k těmto portům. Pokud chcete bránu firewall povolit pro ukázky, proveďte v závislosti na vašich požadavcích a prostředí zabezpečení jeden z následujících postupů:  
@@ -21,7 +21,7 @@ Musíte povolit několik portů nebo programů v bráně firewall, aby mohli uk�
  Pokud si nejste jistí, který postup chcete použít, vyberte první možnost. Pokud používáte bránu firewall od jiného dodavatele, možná budete muset udělat podobné změny.  
   
 > [!IMPORTANT]
->  Změna konfigurace brány firewall má vliv na vaše zabezpečení. Doporučujeme, abyste záznamy, které jste provedli, zaznamenali a odebrali je po dokončení práce s ukázkami.  
+> Změna konfigurace brány firewall má vliv na vaše zabezpečení. Doporučujeme, abyste záznamy, které jste provedli, zaznamenali a odebrali je po dokončení práce s ukázkami.  
   
 ### <a name="to-enable-samples-programs-in-advance"></a>Postup při zapnutí ukázek programů předem  
   
@@ -30,7 +30,7 @@ Musíte povolit několik portů nebo programů v bráně firewall, aby mohli uk�
 2. Klikněte na **Start**, klikněte na **Spustit**a `firewall.cpl`zadejte. Tím se otevře aplet **ovládacího panelu brány Windows Firewall** .  
   
     > [!NOTE]
-    >  Abyste mohli spouštět ukázky, které vyžadují komunikaci přes bránu Windows Firewall, musíte mít oprávnění ke změně nastavení brány firewall. Pokud některá nastavení brány firewall nejsou k dispozici a počítač je připojen k doméně, může správce systému řídit tato nastavení prostřednictvím Zásady skupiny.  
+    > Abyste mohli spouštět ukázky, které vyžadují komunikaci přes bránu Windows Firewall, musíte mít oprávnění ke změně nastavení brány firewall. Pokud některá nastavení brány firewall nejsou k dispozici a počítač je připojen k doméně, může správce systému řídit tato nastavení prostřednictvím Zásady skupiny.  
   
 3. Provedením jednoho z následujících postupů pro povolení programu v bráně Windows Firewall:  
   

@@ -2,12 +2,12 @@
 title: dataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
-ms.openlocfilehash: 8814a48df8933cf08db78e397c24d42f2da26026
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7952e6cc4d2fe7eaa77e297a650f7ffbd7aec785
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919235"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040932"
 ---
 # <a name="datacontractserializer"></a>dataContractSerializer
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -48,7 +48,7 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
  Další informace <xref:System.Runtime.Serialization.DataContractSerializer> o známých typech naleznete v dokumentaci.  
   
 > [!CAUTION]
->  Prvek chování (je-li k dispozici) by se `<enableWebScript>` měl vždy zobrazit před prvkem chování v konfiguračním souboru. `<dataContractSerializer>` V opačném případě není výsledné chování definováno.  
+> Prvek chování (je-li k dispozici) by se `<enableWebScript>` měl vždy zobrazit před prvkem chování v konfiguračním souboru. `<dataContractSerializer>` V opačném případě není výsledné chování definováno.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,39 +2,39 @@
 title: Služba zjišťování směrovačů
 ms.date: 03/30/2017
 ms.assetid: 3d30af47-b24f-40e5-833a-24d77125c9e6
-ms.openlocfilehash: 166f6b9d1055e36f987e6b9a81fe69dc8bd548b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9434c26fb12b73ea4f1c185658b03cb95a3a2310
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773032"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039832"
 ---
 # <a name="discovery-router-service"></a>Služba zjišťování směrovačů
-Tento příklad ukazuje, jak předávat zprávy zjišťování do jiného koncového bodu.  
+Tato ukázka předvádí, jak předávané zprávy zjišťování do jiného koncového bodu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Zjišťování směrování  
+ Směrování zjišťování  
   
-## <a name="discussion"></a>Diskuse  
- Zjišťování směrování je užitečné pro scénáře, ve kterém hledá klienta ke službě pomocí proxy serveru a proxy serveru Nepozná takové služby, ale zná další proxy. Tento proxy server může předat paket zjišťování od tohoto klienta na druhý server proxy. Druhý proxy můžete vyhledat službu a vracet odpovědi na původní klienta.  
+## <a name="discussion"></a>Účely  
+ Směrování zjišťování je užitečné ve scénáři, ve kterém klient hledá službu pomocí proxy serveru a proxy server tuto službu neví, ale ví o jiném proxy serveru. Tento proxy server může přeposláním paketu zjišťování od tohoto klienta k druhému proxy serveru. Druhý proxy server může hledat službu a vracet odpovědi původnímu klientovi.  
   
- V této ukázce klient odešle zprávu do komponenty směrování zjišťování. Tato zpráva se pošle určitý koncový bod zjišťování směrovače. Směrovač pak předá zprávu UDP vícesměrového vysílání koncový bod. Průzkumné zprávy dostane k vícesměrového vysílání koncových bodů a služba naslouchá na vícesměrového vysílání UDP, že adresa reaguje na zjišťování směrovače. Zjišťování směrovače odpovědi shromažďuje a odesílá zpět do klienta.  
+ V této ukázce klient pošle zprávu na součást směrování zjišťování. Tato zpráva se odešle do konkrétního koncového bodu ve směrovači zjišťování. Směrovač pak přepošle zprávu na koncový bod vícesměrového vysílání UDP. Zpráva testu se překročí na koncový bod vícesměrového vysílání a služba, která naslouchá na adrese vícesměrového vysílání UDP, reaguje na tento směrovač zjišťování. Směrovač zjišťování shromáždí odpovědi a pošle je zpátky klientovi.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Sestavte ukázku.  
   
-2. Spuštění spustitelného souboru DiscoveryRouter.  
+2. Spusťte spustitelný soubor DiscoveryRouter.  
   
-3. Spusťte spustitelný soubor služby z adresáře sestavení.  
+3. Spusťte spustitelný soubor služby z adresáře buildu.  
   
-4. Spusťte klientský spustitelný soubor. Všimněte si, že klient vyhledá službu.  
+4. Spusťte klientský spustitelný soubor. Všimněte si, že klient vyhledává službu.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryRouter`
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryRouter`

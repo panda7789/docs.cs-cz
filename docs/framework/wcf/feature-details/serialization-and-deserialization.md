@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: a6bbc2fe4bf68b50153075a251d23deebda78de5
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 085186eae034314437d5a0c1fe90e6cdf6902c5e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988658"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045842"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá mezi objekty .NET Framework a XML v obou směrech. Toto téma vysvětluje, jak serializátor funguje.  
@@ -138,7 +138,7 @@ Windows Communication Foundation (WCF) obsahuje nový modul serializace, <xref:S
 - Tato funkce může způsobit pomalejší spuštění procesu serializace a deserializace. I když data není nutné replikovat, je nutné v tomto režimu provést zvláštní porovnání objektů.  
   
 > [!CAUTION]
->  Když je `maxItemsInObjectGraph` režim povolený, je obzvláště důležité nastavit hodnotu na správnou kvótu. `preserveObjectReferences` Vzhledem k tomu, jak jsou v tomto režimu zpracovávány pole, je snadné vytvořit malou škodlivou zprávu, která má za následek omezenou spotřebu paměti omezenou pouze `maxItemsInObjectGraph` kvótou.  
+> Když je `maxItemsInObjectGraph` režim povolený, je obzvláště důležité nastavit hodnotu na správnou kvótu. `preserveObjectReferences` Vzhledem k tomu, jak jsou v tomto režimu zpracovávány pole, je snadné vytvořit malou škodlivou zprávu, která má za následek omezenou spotřebu paměti omezenou pouze `maxItemsInObjectGraph` kvótou.  
   
 ### <a name="specifying-a-data-contract-surrogate"></a>Zadání náhrady pro kontrakt dat  
  Některá `DataContractSerializer` přetížení konstruktoru `dataContractSurrogate` mají parametr, který může být nastaven na `null`hodnotu. V opačném případě můžete použít k zadání *náhrady za kontrakt dat*, což je typ, který implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate> rozhraní. Pak můžete použít rozhraní k přizpůsobení procesu serializace a deserializace. Další informace najdete v tématu [náhrada za kontrakty dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  

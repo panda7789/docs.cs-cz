@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, getting control patterns
 - getting, control patterns
 ms.assetid: 006c54c9-50bf-48d9-a855-9d62eb95603a
-ms.openlocfilehash: 8987526a572d3c9a239885407c19bd1ad3674f0e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7b194d9430f27fb85723a91f5786ed11a60bfa85
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968994"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040983"
 ---
 # <a name="get-supported-ui-automation-control-patterns"></a>Získání podporovaných vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -29,7 +29,7 @@ ms.locfileid: "69968994"
 2. Volání <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A> pro získání všech vzorů ovládacích prvků z elementu.  
   
 > [!CAUTION]
->  Důrazně doporučujeme, aby klient nepoužíval <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A>. Výkon může být vážně ovlivněn, protože tato metoda volá <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> interně pro každý existující vzor ovládacího prvku. Pokud je to možné, klient by <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> měl volat pro klíčové vzory zájmu.  
+> Důrazně doporučujeme, aby klient nepoužíval <xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A>. Výkon může být vážně ovlivněn, protože tato metoda volá <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> interně pro každý existující vzor ovládacího prvku. Pokud je to možné, klient by <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> měl volat pro klíčové vzory zájmu.  
   
 ### <a name="obtain-a-specific-control-pattern"></a>Získání konkrétního vzoru ovládacího prvku  
   

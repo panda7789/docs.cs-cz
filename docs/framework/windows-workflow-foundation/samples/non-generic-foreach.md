@@ -2,27 +2,27 @@
 title: Neobecná aktivita ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: 46db1d455bcbdd28e02d3cddfe0c9248b4abd91c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e467534ba2b233f1f3c279e89badf12846c6b7f7
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620842"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038066"
 ---
 # <a name="non-generic-foreach"></a>Neobecná aktivita ForEach
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] ve svých nástrojů se dodává sadu tok řízení aktivit, včetně <xref:System.Activities.Statements.ForEach%601>, který umožňuje procházení <xref:System.Collections.Generic.IEnumerable%601> kolekce.  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]dodá v sadě nástrojů sadu aktivit toku řízení, včetně <xref:System.Activities.Statements.ForEach%601>, což umožňuje iterace prostřednictvím <xref:System.Collections.Generic.IEnumerable%601> kolekcí.  
   
- <xref:System.Activities.Statements.ForEach%601> vyžaduje jeho <xref:System.Activities.Statements.ForEach%601.Values%2A> vlastnost typu <xref:System.Collections.Generic.IEnumerable%601>. To vylučuje uživatele od iterování celého datové struktury, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní (třeba <xref:System.Collections.ArrayList>). Obecné verzi <xref:System.Activities.Statements.ForEach%601> překonává tento požadavek za cenu za běhu složitější pro zajištění kompatibility typy hodnot v kolekci.  
+ <xref:System.Activities.Statements.ForEach%601>vyžaduje, <xref:System.Activities.Statements.ForEach%601.Values%2A> aby jeho vlastnost byla typu <xref:System.Collections.Generic.IEnumerable%601>. To uživatelům brání v iteracích v datových strukturách, <xref:System.Collections.Generic.IEnumerable%601> které implementují rozhraní ( <xref:System.Collections.ArrayList>například). Neobecnou verzi <xref:System.Activities.Statements.ForEach%601> přenese tento požadavek, na úkor více složitosti za běhu za účelem zajištění kompatibility typů hodnot v kolekci.  
   
- Tento příklad ukazuje, jak implementovat neobecných <xref:System.Activities.Statements.ForEach%601> aktivita a její návrháře. Tuto aktivitu lze použít k iteraci v rámci <xref:System.Collections.ArrayList>.  
+ Tento příklad ukazuje, jak implementovat neobecnou <xref:System.Activities.Statements.ForEach%601> aktivitu a její Návrhář. Tato aktivita se dá použít k iteraci <xref:System.Collections.ArrayList>.  
   
 ## <a name="foreach-activity"></a>Aktivita ForEach  
- C# /VB `foreach` příkaz vytvoří výčet prvků kolekce, provádění vloženým příkazem pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Ekvivalentní činnosti `foreach` jsou <xref:System.Activities.Statements.ForEach%601> a <xref:System.Activities.Statements.ParallelForEach%601>. <xref:System.Activities.Statements.ForEach%601> Aktivita obsahuje seznam hodnot a tělo. Za běhu je provést iteraci seznamu a text je provedena pro každou hodnotu v seznamu.  
+ Příkaz C#/VB `foreach` vytvoří výčet prvků kolekce a spustí vložený příkaz pro každý prvek kolekce. [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Ekvivalentní`foreach` aktivity jsou<xref:System.Activities.Statements.ForEach%601> a .<xref:System.Activities.Statements.ParallelForEach%601> <xref:System.Activities.Statements.ForEach%601> Aktivita obsahuje seznam hodnot a textů. V době běhu se seznam opakuje a text se spustí pro každou hodnotu v seznamu.  
   
- Pro většinu případů obecné verze aktivity musí být preferovaným řešením, protože zabírá většinu scénářů, ve kterých by se použily a poskytuje kontrolu v době kompilace. Neobecnou verze může být použita pro iterace typy, které implementují neobecné <xref:System.Collections.IEnumerable> rozhraní.  
+ Ve většině případů by měla být obecná verze aktivity upřednostňovaným řešením, protože pokrývá většinu scénářů, ve kterých by se použily, a poskytuje kontrolu typu v době kompilace. Neobecnou verzi lze použít pro iteraci v rámci typů, které implementují neobecné <xref:System.Collections.IEnumerable> rozhraní.  
   
 ## <a name="class-definition"></a>Definice třídy  
- Následující příklad kódu ukazuje definice není obecný `ForEach` aktivity.  
+ Následující příklad kódu ukazuje definici neobecné `ForEach` aktivity.  
   
 ```  
 [ContentProperty("Body")]  
@@ -38,14 +38,14 @@ public class ForEach : NativeActivity
 }  
 ```  
   
- Text (volitelné)  
- <xref:System.Activities.ActivityAction> Typu <xref:System.Object>, který je proveden pro každý prvek v kolekci. Každý jednotlivý prvek je předán do datové části prostřednictvím jeho `Argument` vlastnost.  
+ Tělo (volitelné)  
+ <xref:System.Activities.ActivityAction> Typ<xref:System.Object>, který je spuštěn pro každý prvek v kolekci. Každý jednotlivý prvek je předán do těla prostřednictvím jeho `Argument` vlastnosti.  
   
  Hodnoty (volitelné)  
- Kolekce prvků, které jsou provést iteraci. Zajištění, že jsou všechny prvky kolekce typů kompatibilní se provádí v době běhu.  
+ Kolekce prvků, které jsou iterované přes. Zajistěte, aby všechny prvky kolekce byly kompatibilní typy v době běhu.  
   
 ## <a name="example-of-using-foreach"></a>Příklad použití příkazu ForEach  
- Následující kód ukazuje, jak pomocí aktivity ForEach v aplikaci.  
+ Následující kód ukazuje, jak použít aktivitu ForEach v aplikaci.  
   
 ```  
 string[] names = { "bill", "steve", "ray" };  
@@ -67,12 +67,12 @@ Activity sampleUsage =
    };  
 ```  
   
-|Podmínka|Message|Severity|Typ výjimky|  
+|Podmínka|Message|severity|Typ výjimky|  
 |---------------|-------------|--------------|--------------------|  
-|Hodnoty `null`|Nebyla zadána hodnota pro povinný argument aktivity "Hodnoty".|Chyba|<xref:System.InvalidOperationException>|  
+|Hodnoty jsou`null`|Hodnota argumentu ' Values ' pro požadovanou aktivitu nebyla zadána.|Chyba|<xref:System.InvalidOperationException>|  
   
-## <a name="foreach-designer"></a>ForEach Designer  
- Návrhář aktivity pro ukázku je podobné jako u vzhled do návrháře k dispozici pro předdefinované <xref:System.Activities.Statements.ForEach%601> aktivity. Návrhář se zobrazí na panelu nástrojů v **ukázky**, **neobecné aktivity** kategorie. Návrháře jmenuje **ForEachWithBodyFactory** v sadě nástrojů, protože zveřejňuje aktivity <xref:System.Activities.Presentation.IActivityTemplateFactory> v sadě nástrojů, která vytvoří aktivita s správně nakonfigurovaný <xref:System.Activities.ActivityAction>.  
+## <a name="foreach-designer"></a>Návrhář ForEach  
+ Návrhář aktivity pro ukázku je podobný vzhledu pro návrháře poskytovaného pro integrovanou <xref:System.Activities.Statements.ForEach%601> aktivitu. Návrhář se zobrazí v sadě nástrojů v kategorii **ukázky**, **neobecné aktivity** . Návrhář má název **ForEachWithBodyFactory** v sadě nástrojů, protože aktivita zpřístupňuje ovládací prvek <xref:System.Activities.Presentation.IActivityTemplateFactory> v sadě nástrojů, který vytvoří aktivitu se správně nakonfigurovanou <xref:System.Activities.ActivityAction>.  
   
 ```  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
@@ -93,21 +93,21 @@ public sealed class ForEachWithBodyFactory : IActivityTemplateFactory
 }  
 ```  
   
-#### <a name="to-run-this-sample"></a>Tuto ukázku spustit  
+#### <a name="to-run-this-sample"></a>Spuštění této ukázky  
   
-1. Nastavte projekt podle vašeho výběru jako spouštěcí projekt řešení:  
+1. Nastavte projekt podle svého výběru jako spouštěcí projekt řešení:  
   
     1. **CodeTestClient** ukazuje, jak používat aktivitu pomocí kódu.  
   
-    2. **DesignerTestClient** ukazuje, jak pomocí aktivity v návrháři.  
+    2. **DesignerTestClient** ukazuje, jak používat aktivitu v návrháři.  
   
 2. Sestavte a spusťte projekt.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericForEach`
+> `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericForEach`

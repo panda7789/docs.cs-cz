@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: b433263cc4d72b6418cf75c278316444c83ada8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bc23aff2f049f205d02e2fb1b5f8798c7f6a9931
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933511"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044237"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasování pro generování trasování a nastavení úrovní trasování, nastavení trasování a šíření aktivit pro podporu komplexní korelace trasování a nastavení posluchačů trasování pro přístup k trasování.  
@@ -145,7 +145,7 @@ Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasová
  Můžete také programově nakonfigurovat naslouchací proces trasování. Další informace najdete v tématu [jak: Vytvořit a inicializovat naslouchací procesy](https://go.microsoft.com/fwlink/?LinkId=94648) trasování a vytvořit [vlastní TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
->  Vzhledem `System.Diagnostics.XmlWriterTraceListener` k tomu, že není bezpečná pro přístup z více vláken, může zdroj trasování uzamknout prostředky výhradně při výstupu trasování. Když mnoho vláken výstupuje trasování do zdroje trasování nakonfigurovaného pro použití tohoto naslouchacího procesu, může dojít k kolizí prostředků, což vede k významnému problému s výkonem. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečný pro přístup z více vláken.  
+> Vzhledem `System.Diagnostics.XmlWriterTraceListener` k tomu, že není bezpečná pro přístup z více vláken, může zdroj trasování uzamknout prostředky výhradně při výstupu trasování. Když mnoho vláken výstupuje trasování do zdroje trasování nakonfigurovaného pro použití tohoto naslouchacího procesu, může dojít k kolizí prostředků, což vede k významnému problému s výkonem. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečný pro přístup z více vláken.  
   
 ## <a name="trace-level"></a>Úroveň trasování  
  Úroveň trasování je řízena `switchValue` nastavením zdroje trasování. Dostupné úrovně trasování jsou popsány v následující tabulce.  
@@ -164,7 +164,7 @@ Toto téma popisuje, jak lze povolit trasování, nakonfigurovat zdroje trasová
  Úrovně z podrobných na kritickou jsou navrstveny nad sebou, to znamená, že každá úroveň trasování zahrnuje všechny úrovně nad ní, kromě úrovně off. Například naslouchací proces, který naslouchá na úrovni upozornění, obdrží kritické trasování, chyby a upozornění. Úroveň All zahrnuje události z podrobných na události trasování kritické a aktivity.  
   
 > [!CAUTION]
->  Úrovně Information, verbose a ActivityTracing generují velké množství trasování, které může negativně ovlivnit propustnost zprávy, pokud jste použili všechny dostupné prostředky v počítači.  
+> Úrovně Information, verbose a ActivityTracing generují velké množství trasování, které může negativně ovlivnit propustnost zprávy, pokud jste použili všechny dostupné prostředky v počítači.  
   
 ## <a name="configuring-activity-tracing-and-propagation-for-correlation"></a>Konfigurace trasování aktivit a šíření pro korelaci  
  `activityTracing` Hodnota zadaná`switchValue` pro atribut slouží k povolení trasování aktivity, které vysílá trasování pro hranice aktivity a přenos v rámci koncových bodů.  

@@ -2,12 +2,12 @@
 title: Relace a fronty
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
-ms.openlocfilehash: aaba55ac3eec5ae4ec36fc449c0b211cb36619d2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9d386cbeab68bea170b0f8a52f1ba2e4953708ca
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964510"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044722"
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
 Tato ukázka předvádí, jak odeslat a přijmout sadu souvisejících zpráv v komunikaci ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tato ukázka používá `netMsmqBinding` vazbu. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.  
@@ -16,13 +16,13 @@ Tato ukázka předvádí, jak odeslat a přijmout sadu souvisejících zpráv v 
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
   
  V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.  
   
@@ -267,4 +267,4 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
 2. Před spuštěním ukázky se ujistěte, že jste změnili konfiguraci na serveru i v klientovi.  
   
     > [!NOTE]
-    >  Nastavení režimu zabezpečení na `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>a `Message` zabezpečení na `None`.  
+    > Nastavení režimu zabezpečení na `None` je ekvivalentní nastavení <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>a `Message` zabezpečení na `None`.  

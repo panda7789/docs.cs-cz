@@ -2,12 +2,12 @@
 title: Z WCF do Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 083e652a0924ffed272387a4974ec600073cef2f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 34ac2dd8b6e01e2d7ae6f7978e1b09af174b71dd
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966725"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038629"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Z WCF do Řízení front zpráv
 Tato ukázka předvádí, jak může aplikace Windows Communication Foundation (WCF) odeslat zprávu do aplikace řízení front zpráv (MSMQ). Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty. Službu a klienta nemusíte spouštět ve stejnou dobu.
@@ -165,13 +165,13 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 5. V klientském počítači spusťte z příkazového řádku soubor Client. exe.  
   
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
   
 ## <a name="see-also"></a>Viz také:
 

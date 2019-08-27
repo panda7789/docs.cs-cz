@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Self hosted service
 - Self Host Sample [Windows Communication Foundation]
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
-ms.openlocfilehash: 26a2cc6e7e4a023915f2e63009aa1570528cedf8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a1fecb0ade00604d9a6e019ec50ceca04abeb545
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964579"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044755"
 ---
 # <a name="self-host"></a>Vlastní hostování
 Tato ukázka předvádí, jak implementovat samoobslužnou službu v konzolové aplikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurační soubor služby byl přejmenován ze souboru Web. config do App. config a upraven tak, aby nakonfiguroval základní adresu, kterou hostitel používá. Zdrojový kód služby byl změněn tak, aby implementoval statickou `Main` funkci, která vytváří a otevírá hostitele služby, který poskytuje nakonfigurovanou základní adresu. Implementace služby byla upravena pro zápis výstupu do konzoly pro každou operaci. Klient se nezměnil, s výjimkou konfigurace správné adresy koncového bodu služby.  
@@ -67,13 +67,13 @@ public static void Main()
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\SelfHost`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\SelfHost`  
   
 ## <a name="see-also"></a>Viz také:
 

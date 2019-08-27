@@ -2,12 +2,12 @@
 title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: f755fadf6bef2bdd58fd31f3460a143b8f52eddf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6dccc5174e3fb9ab67023310d8c060d598a707c9
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966731"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038649"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
 Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný virtuální adresář s názvem ServiceModelSamples, který je namapován na složku%SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -36,10 +36,10 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
 7. Klikněte na **OK**. Webová aplikace je nyní vytvořena pro ukázky WCF.  
   
     > [!NOTE]
-    >  Tato úloha musí být prováděna pouze jednou, protože všechny ukázky služby WCF používají stejnou webovou aplikaci ServiceModelSamples.  
+    > Tato úloha musí být prováděna pouze jednou, protože všechny ukázky služby WCF používají stejnou webovou aplikaci ServiceModelSamples.  
   
     > [!NOTE]
-    >  Pro účely této dokumentace je termínem `virtual directory` synonymum. `Web application`  
+    > Pro účely této dokumentace je termínem `virtual directory` synonymum. `Web application`  
   
      Kromě vytváření virtuálního adresáře musíte také nastavit jeho vlastnosti, aby bylo možné spouštět služby WCF. Podrobnosti najdete níže.  
   
@@ -66,7 +66,7 @@ Ukázky Windows Communication Foundation (WCF) mají za cíl sdílet společný 
 8. Klikněte na tlačítko **Další**a dokončete průvodce kliknutím na tlačítko **Dokončit** .  
   
     > [!NOTE]
-    >  Tato úloha se musí provést jenom jednou, protože všechny ukázky WCF používají stejný virtuální adresář ServiceModelSamples.  
+    > Tato úloha se musí provést jenom jednou, protože všechny ukázky WCF používají stejný virtuální adresář ServiceModelSamples.  
   
 #### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>Nastavení dalších vlastností virtuálního adresáře ve službě IIS 7,0 nebo 7,5  
   

@@ -1,44 +1,47 @@
 ---
-title: 'Omezení rizik: Správa verzí produktu'
+title: Zmírnění Správa verzí produktu
 ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d76615b5bd4d140917b84a52f7d1c251ca32302f
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 8f6016fc43700fda36c6d94408019d25f89bb36b
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489998"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044211"
 ---
-# <a name="mitigation-product-versioning"></a>Omezení rizik: Správa verzí produktu
-V rozhraní .NET Framework 4.6 nebo novější Správa verzí produktu změnil z předchozích verzí rozhraní .NET Framework (rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2).  
-  
-## <a name="product-versioning-changes"></a>Změn správy verzí produktu  
- Tady jsou podrobné změny:  
-  
-- Hodnota `Version` položku v `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` klíč byl změněn na `4.6.` *xxxxx* pro rozhraní .NET Framework 4.6 a jeho novější vydání a `4.7.` *xxxxx* pro. .NET Framework 4.7. V rozhraní .NET Framework 4.5, 4.5.1 a 4.5.2, má formát `4.5.` *xxxxx*.  
-  
-- Správa verzí souboru a produktů pro soubory rozhraní .NET Framework byl změněn z předchozích schéma vytváření verzí z `4.0.30319.x` k `4.6.X.0` pro rozhraní .NET Framework 4.6 a jeho novější vydání a `4.7.X.0` pro rozhraní .NET Framework 4.7 a jeho verze. Tyto nové hodnoty se zobrazí při zobrazení souboru **vlastnosti** po klepnutí pravým tlačítkem na soubor.  
-  
-- <xref:System.Reflection.AssemblyFileVersionAttribute> a <xref:System.Reflection.AssemblyInformationalVersionAttribute> atributy pro spravované sestavení mají <xref:System.Version> hodnoty ve formuláři `4.6.X.0` pro rozhraní .NET Framework 4.6 a jeho novější vydání a `4.7.X.0` pro rozhraní .NET Framework 4.7.  
-  
-- Od verze rozhraní .NET Framework 4.6, <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost vrací řetězec opravenou verzi `4.0.30319.42000`. V rozhraní .NET Framework 4, 4.5, 4.5.1 a 4.5.2, vrátí řetězce verze ve formátu `4.0.30319.xxxxx` kde `xxxxx` je menší než 42000 (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme tak novou závislost na kód aplikace <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost.
-  
-### <a name="handling-the-product-versioning-changes"></a>Zpracování změn správy verzí produktu  
- Obecně platí aplikace by měl záviset na doporučené postupy pro zjištění takové věci jako verzi modulu runtime rozhraní .NET Framework a v instalačním adresáři:  
-  
-- Pokud chcete zjistit verzi modulu runtime rozhraní .NET Framework, přečtěte si téma [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).  
-  
-- Určete instalační cestu pro rozhraní .NET Framework, použijte hodnotu `InstallPath` položku `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` klíč.  
-  
-    > [!IMPORTANT]
-    >  Je název podklíče `NET Framework Setup`, nikoli `.NET Framework Setup`.  
-  
-- Chcete-li určit cestu k adresáři na rozhraní .NET Framework common language runtime, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=nameWithType> metody.  
-  
-- Chcete-li získat verzi modulu CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType> metody.   Pro rozhraní .NET Framework 4 a jeho vydání (.NET Framework 4.5, 4.5.1, 4.5.2 a rozhraní .NET Framework 4.6, 4.6.1, 4.6.2 a 4.7), vrátí řetězec `v4.0.30319`.  
-  
+# <a name="mitigation-product-versioning"></a>Zmírnění Správa verzí produktu
+
+V .NET Framework 4,6 a novějších verzích se verze produktu změnila z předchozích verzí .NET Framework (.NET Framework 4, 4,5, 4.5.1 a 4.5.2).
+
+## <a name="product-versioning-changes"></a>Změny verzí produktu
+
+Níže jsou uvedené podrobné změny:
+
+- Hodnota `Version` položky `4.7.` `4.6.` v klíči se změnila na xxxxx pro .NET Framework 4,6 a její verze a na xxxxx pro .NET Framework 4,7. `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` V .NET Framework 4,5, 4.5.1 a 4.5.2 má formát `4.5.` *xxxxx*.
+
+- Verze souboru a produktu pro .NET Framework soubory se změnila ze staršího schématu `4.0.30319.x` správy verzí na `4.6.X.0` pro .NET Framework 4,6 a jeho vydání a na `4.7.X.0` pro .NET Framework 4,7 a jeho vydání. Tyto nové hodnoty se zobrazí po kliknutí pravým tlačítkem myši na soubor po zobrazení **vlastností** souboru.
+
+- <xref:System.Version> `4.7.X.0` `4.6.X.0` Atributy a pro<xref:System.Reflection.AssemblyInformationalVersionAttribute> spravovaná sestavení mají hodnoty ve formátu pro .NET Framework 4,6 a jeho vydání a pro .NET Framework 4,7. <xref:System.Reflection.AssemblyFileVersionAttribute>
+
+- Počínaje .NET Framework 4,6 <xref:System.Environment.Version%2A?displayProperty=nameWithType> vrátí vlastnost řetězec `4.0.30319.42000`pevné verze. V .NET Framework 4, 4,5, 4.5.1 a 4.5.2 vrátí řetězce verze ve formátu `4.0.30319.xxxxx` , kde `xxxxx` je méně než 42000 (například "4.0.30319.18010"). Všimněte si, že nedoporučujeme, aby se <xref:System.Environment.Version%2A?displayProperty=nameWithType> kód aplikace připustil jakékoli nové závislosti na vlastnosti.
+
+### <a name="handling-the-product-versioning-changes"></a>Zpracování změn verzí produktu
+
+Obecně platí, že by aplikace měly záviset na doporučených technikách zjišťování, jako je běhová verze .NET Framework a instalační adresář:
+
+- Chcete-li zjistit verzi modulu runtime .NET Framework, přečtěte si téma [How to: Určete, které verze .NET Framework jsou](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)nainstalovány.
+
+- Chcete-li určit instalační cestu pro .NET Framework, použijte hodnotu `InstallPath` položky `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` v klíči.
+
+  > [!IMPORTANT]
+  > `NET Framework Setup` Název`.NET Framework Setup`podklíče není.
+
+- Chcete-li určit cestu k adresáři .NET Framework modulu CLR (Common Language Runtime <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=nameWithType> ), zavolejte metodu.
+
+- Chcete-li získat verzi CLR, zavolejte <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType> metodu.   Pro .NET Framework 4 a jeho vydání (.NET Framework 4,5, 4.5.1, 4.5.2 a .NET Framework 4,6, 4.6.1, 4.6.2 a 4,7) vrátí řetězec `v4.0.30319`.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

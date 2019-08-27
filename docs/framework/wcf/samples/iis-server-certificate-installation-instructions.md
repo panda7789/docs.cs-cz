@@ -2,12 +2,12 @@
 title: Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 50fa7f1094d4b05bcadb229072293da233a18a2b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1bb9c8bb2fedc846f46f665fbfd00178e5c72975
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931872"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044913"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 Chcete-li spustit ukázky, které bezpečně komunikují s Internetová informační služba (IIS), je nutné vytvořit a nainstalovat certifikát serveru.  
@@ -47,7 +47,7 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
 3. Do klientského programu přidejte následující řádek kódu.  
   
 > [!IMPORTANT]
->  Tento kód je vyžadován pouze pro testovací certifikáty, například ty, které byly vytvořeny pomocí nástroje MakeCert. exe. Nedoporučuje se pro produkční kód.  
+> Tento kód je vyžadován pouze pro testovací certifikáty, například ty, které byly vytvořeny pomocí nástroje MakeCert. exe. Nedoporučuje se pro produkční kód.  
   
 ```  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  

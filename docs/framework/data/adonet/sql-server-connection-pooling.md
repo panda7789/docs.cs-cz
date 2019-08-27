@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 0a8d10b9d6ae80bb4fa38445e0335151661c41eb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7581031b022c9c53568a616de66584be9ef7229c
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918142"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041196"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
 Připojení k databázovému serveru se obvykle skládá z několika časově náročných kroků. Musí se navázat fyzický kanál, jako je například soket nebo pojmenovaný kanál. musí se vyskytnout počáteční Metoda handshake se serverem, informace o připojovacím řetězci musí být analyzovány, musí být spuštěny pro zařazení do aktuální transakce a tak dále.  
@@ -67,7 +67,7 @@ using (SqlConnection connection = new SqlConnection(
  Pooler připojení splňuje požadavky na připojení tím, že je znovu přidělí, protože se uvolní do fondu. Pokud byla dosažena maximální velikost fondu a není k dispozici žádné použitelné připojení, je požadavek zařazen do fronty. Pooler se pak pokusí uvolnit všechna připojení až do vypršení časového limitu (výchozí hodnota je 15 sekund). Pokud Pooler nemůže požadavek splnit, než vyprší časový limit připojení, je vyvolána výjimka.  
   
 > [!CAUTION]
->  Důrazně doporučujeme, abyste připojení vždy zavřeli, až ho budete používat, aby se připojení vrátilo do fondu. `Close` Můžete to provést pomocí metody `Connection` nebo objektu nebo `Dispose` otevřením všech C# `Using` připojení uvnitř `using` příkazu v nebo v příkazu Visual Basic. Nemusejí být do fondu přidány ani vráceny připojení, která nejsou explicitně zavřena. Další informace naleznete v tématu [using](../../../csharp/language-reference/keywords/using-statement.md) a [How to: Dispose systémového prostředku](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) pro Visual Basic.  
+> Důrazně doporučujeme, abyste připojení vždy zavřeli, až ho budete používat, aby se připojení vrátilo do fondu. `Close` Můžete to provést pomocí metody `Connection` nebo objektu nebo `Dispose` otevřením všech C# `Using` připojení uvnitř `using` příkazu v nebo v příkazu Visual Basic. Nemusejí být do fondu přidány ani vráceny připojení, která nejsou explicitně zavřena. Další informace naleznete v tématu [using](../../../csharp/language-reference/keywords/using-statement.md) a [How to: Dispose systémového prostředku](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) pro Visual Basic.  
   
 > [!NOTE]
 > `Close` Nevolejte nebo `Dispose` na `Connection`, `Finalize` nebo na jiný spravovaný objekt v metodě vaší třídy. `DataReader` V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, `Finalize` nezahrnujte metodu do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  

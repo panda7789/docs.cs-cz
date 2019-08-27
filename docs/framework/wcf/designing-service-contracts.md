@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: ddaa49e65a164c7bf074a541c9a4df8f3dace1d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a764b18cc3016610b8a149631b4de89923a7a5b4
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965619"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040621"
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jaké kontrakty služeb jsou, jak jsou definované, jaké operace jsou k dispozici (a důsledky pro výměny základních zpráv), jaké typy dat se používají, a další problémy, které vám pomůžou s návrhem operací, které splňují požadavky vašeho scénáře.  
@@ -146,7 +146,7 @@ Sub Hello (ByVal greeting As String)
  Příklad vytvoření služby a klienta, který přistupuje k této službě, najdete v tématu [How to: Vytvořte oboustranný kontrakt](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md) a [postupujte takto: Přístup ke službám pomocí duplexního](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)kontraktu. Pracovní ukázku najdete v tématu [duplexní režim](../../../docs/framework/wcf/samples/duplex.md). Další informace o problémech využívajících duplexní kontrakty najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   
 > [!CAUTION]
->  Když služba obdrží duplexní zprávu, vyhledá `ReplyTo` v této příchozí zprávě prvek, kde má odeslat odpověď. Pokud kanál, který se používá k přijetí zprávy, není zabezpečený, může nedůvěryhodný klient odeslat škodlivou zprávu s cílovým počítačem `ReplyTo`, což vede k odepření služby (DOS) daného cílového počítače.  
+> Když služba obdrží duplexní zprávu, vyhledá `ReplyTo` v této příchozí zprávě prvek, kde má odeslat odpověď. Pokud kanál, který se používá k přijetí zprávy, není zabezpečený, může nedůvěryhodný klient odeslat škodlivou zprávu s cílovým počítačem `ReplyTo`, což vede k odepření služby (DOS) daného cílového počítače.  
   
 ##### <a name="out-and-ref-parameters"></a>Parametry out a ref  
  Ve většině případů můžete `in` použít parametry ( `ref` `ByVal` v Visual Basic) a `out` parametry (`ByRef` v Visual Basic). Vzhledem k `out` tomu `ref` , že oba parametry a signalizují, že se z operace vrátí data, signatura operace, jako je třeba následující, určuje, že se vyžaduje operace požadavku/odpovědi, i když signatura operace vrátí `void`.  

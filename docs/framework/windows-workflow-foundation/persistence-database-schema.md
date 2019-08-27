@@ -2,12 +2,12 @@
 title: Schéma databáze trvalosti
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 384a9aceaf0b5619bbc4eca5929b6e6d7855e3d3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 65d8b2f7a6283d65823e1a186239d398ee4a530a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962881"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038326"
 ---
 # <a name="persistence-database-schema"></a>Schéma databáze trvalosti
 Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pracovního postupu SQL.  
@@ -44,7 +44,7 @@ Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pr
 |Revize|BigInt|Číslo revize verze pracovního postupu|  
   
 > [!CAUTION]
->  Zobrazení **Instances** obsahuje také aktivační událost DELETE. Uživatelé s příslušnými oprávněními mohou provádět příkazy odstranit pro toto zobrazení, které bude nuceně odebrat instance pracovního postupu z databáze. Doporučujeme odstranit přímo ze zobrazení jako poslední, protože odstranění instance z pod modulem runtime pracovního postupu by mohlo vést k nezamýšleným důsledkům. Místo toho použijte koncový bod správy instancí pracovního postupu, aby modul runtime pracovního postupu ukončil instanci. Pokud chcete ze zobrazení odstranit velký počet instancí, ujistěte se, že neexistují žádné aktivní moduly runtime, které by mohly na těchto instancích pracovat.  
+> Zobrazení **Instances** obsahuje také aktivační událost DELETE. Uživatelé s příslušnými oprávněními mohou provádět příkazy odstranit pro toto zobrazení, které bude nuceně odebrat instance pracovního postupu z databáze. Doporučujeme odstranit přímo ze zobrazení jako poslední, protože odstranění instance z pod modulem runtime pracovního postupu by mohlo vést k nezamýšleným důsledkům. Místo toho použijte koncový bod správy instancí pracovního postupu, aby modul runtime pracovního postupu ukončil instanci. Pokud chcete ze zobrazení odstranit velký počet instancí, ujistěte se, že neexistují žádné aktivní moduly runtime, které by mohly na těchto instancích pracovat.  
   
 ## <a name="servicedeployments-view"></a>Zobrazení ServiceDeployments  
  Zobrazení **ServiceDeployments** obsahuje informace o nasazení pro všechny webové služby (služba IIS/was) hostované služby pracovního postupu. Každá instance pracovního postupu, která je hostitelem webu, bude obsahovat **ServiceDeploymentId** , který odkazuje na řádek v tomto zobrazení.  

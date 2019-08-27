@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 95ec5b6b0edbab979f0bcf0238152ba6c96c5cf8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0a01cd3790e17f532b2f6405f83c9507ecc2f6fd
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942206"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038523"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tato ukázka předvádí použití <xref:System.ServiceModel.WS2007FederationHttpBinding>standardní vazby, kterou můžete použít k sestavení federovaných scénářů, které podporují verzi 1,3 specifikace WS-Trust.  
@@ -121,10 +121,10 @@ Press <ENTER> to terminate client.
 2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], musíte spustit Service. exe, Client. exe a SecurityTokenService. exe se zvýšenými oprávněními (pravým tlačítkem myši klikněte na soubory a pak klikněte na **Spustit jako správce**).  
   
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\WS2007FederationHttp`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\WS2007FederationHttp`  

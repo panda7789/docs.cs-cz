@@ -2,12 +2,12 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 38b5a1e4328d403671454e78a9b968ae74b34dff
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2836b8c034a62602822ca629189e38eff818180a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966789"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038716"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tato ukázka předvádí, jak použít moniker služby Windows Communication Foundation (WCF) k integraci webových služeb do vývojových prostředí založených na modelu COM, jako je například systém Microsoft Office jazyk Visual Basic for Application (Office VBA) nebo Visual Basic 6,0. Tato ukázka se skládá z klienta Windows Script Host (. vbs), podpůrné klientské knihovny (. dll) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba je služba kalkulačky a klient modelu COM volá matematické operace – přidat, odečíst, vynásobit a rozdělit – u služby. Aktivita klienta se zobrazí v okně se zprávou okna.  
@@ -16,13 +16,13 @@ Tato ukázka předvádí, jak použít moniker služby Windows Communication Fou
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
   
  Služba implementuje `ICalculator` kontrakt definovaný, jak je znázorněno v následujícím příkladu kódu.  
   
@@ -136,7 +136,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 - Název a obor názvů kontraktu. Tato identifikace je povinná, protože WSDL může obsahovat více než jeden kontrakt.  
   
     > [!NOTE]
-    >  Ve výchozím nastavení generují služby WCF samostatné soubory WSDL pro každý obor názvů, který používá. Tyto prvky jsou propojeny s použitím importované konstrukce WSDL. Vzhledem k tomu, že moniker očekává jednu definici WSDL, služba musí buď použít jeden obor názvů, jak je znázorněno v této ukázce, nebo samostatné soubory musí být ručně sloučeny.  
+    > Ve výchozím nastavení generují služby WCF samostatné soubory WSDL pro každý obor názvů, který používá. Tyto prvky jsou propojeny s použitím importované konstrukce WSDL. Vzhledem k tomu, že moniker očekává jednu definici WSDL, služba musí buď použít jeden obor názvů, jak je znázorněno v této ukázce, nebo samostatné soubory musí být ručně sloučeny.  
   
  Po sestavení instance proxy k monikeru služby může klientská aplikace volat metody na proxy serveru, což vede k tomu, že infrastruktura monikeru služby volá odpovídající operace služby.  
   
@@ -191,7 +191,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
 3. Z Developer Command Prompt pro Visual Studio otevřete složku \client\bin ve složce specifické pro jazyk.  
   
     > [!NOTE]
-    >  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)]systém, [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že spouštíte příkazový řádek s oprávněními správce.  
+    > Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)]systém, [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že spouštíte příkazový řádek s oprávněními správce.  
   
 4. Zadejte, `tlbexp.exe client.dll /out:CalcProxy.tlb` Chcete-li exportovat knihovnu DLL do souboru TLB. Očekává se "upozornění exportéra knihovny typů", ale nejedná se o problém, protože obecný typ není povinný.  
   
