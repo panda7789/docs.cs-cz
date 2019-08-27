@@ -440,6 +440,28 @@
           href: core/porting/winforms.md
         - name: Portování projektů WPF
           href: core/porting/wpf.md
+    - name: Načítání závislostí
+      items:
+        - name: Přehled
+          href: core/dependency-loading/overview.md
+        - name: Vysvětlení používání třídy AssemblyLoadContext
+          href: core/dependency-loading/understanding-assemblyloadcontext.md
+        - name: Podrobné informace o načítání
+          items:
+            - name: Výchozí testování závislostí
+              href: core/dependency-loading/default-probing.md
+            - name: Načítání spravovaných sestavení
+              href: core/dependency-loading/loading-managed.md
+            - name: Načítání satelitních sestavení
+              href: core/dependency-loading/loading-resources.md
+            - name: Načítání nespravovaných knihoven
+              href: core/dependency-loading/loading-unmanaged.md
+        - name: Kurzy
+          items:
+            - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
+              href: core/tutorials/creating-app-with-plugin-support.md
+            - name: Jak se používá a ladí funkce zrušení načtení sestavení v .NET Core
+              href: standard/assembly/unloadability-howto.md
     - name: Sestavení .NET Core ze zdroje
       href: core/build/index.md
       items:
