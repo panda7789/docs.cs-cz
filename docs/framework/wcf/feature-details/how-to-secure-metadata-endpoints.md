@@ -5,93 +5,96 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-ms.openlocfilehash: b761bbd82a7fe52c3a8b1c71607aae66b154a200
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c6439187560e15ec10f1eea4e1731421904e8643
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654241"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045285"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
-Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se zlými úmysly využívat. Příjemci služby budete možná muset zabezpečené mechanismus pro získání metadat o vaší služby. Proto je někdy nezbytné pro publikování metadata pomocí zabezpečeného koncového bodu.  
-  
- Koncové body metadat jsou obecně zabezpečené pomocí mechanismů standard zabezpečení definovaná ve Windows Communication Foundation (WCF) pro zabezpečení koncových bodů aplikace. (Další informace najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md).)  
-  
- Toto téma vás provede kroky k vytvoření koncového bodu zabezpečené pomocí certifikátu vrstvy SSL (Secure Sockets) nebo jinými slovy, koncový bod HTTPS.  
-  
-### <a name="to-create-a-secure-https-get-metadata-endpoint-in-code"></a>Chcete-li vytvořit zabezpečené HTTPS GET koncových bodů metadat v kódu  
-  
-1. Konfigurace portu s příslušný certifikát X.509. Certifikát musí pocházet od důvěryhodné autority a musí mít zamýšlené použití "Ověřování služby." Musíte použít nástroj HttpCfg.exe připojit certifikát na port. Zobrazit [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
-  
+
+Metadata služby můžou obsahovat citlivé informace o vaší aplikaci, které může využívat uživatel se zlými úmysly. Uživatelé vaší služby můžou také vyžadovat zabezpečený mechanismus pro získání metadat služby. Z tohoto důvodu je někdy nutné publikovat metadata pomocí zabezpečeného koncového bodu.
+
+Koncové body metadat jsou obecně zabezpečeny pomocí standardních mechanismů zabezpečení definovaných v Windows Communication Foundation (WCF) pro zabezpečení koncových bodů aplikace. (Další informace najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md).)
+
+Toto téma vás provede kroky pro vytvoření koncového bodu zabezpečeného certifikátem SSL (Secure Sockets Layer) (SSL) nebo jinými slovy koncového bodu HTTPS.
+
+### <a name="to-create-a-secure-https-get-metadata-endpoint-in-code"></a>Vytvoření koncového bodu metadat GET pro zabezpečený protokol HTTPS v kódu
+
+1. Nakonfigurujte port s příslušným certifikátem X. 509. Certifikát musí pocházet z důvěryhodné autority a musí mít zamýšlené použití autorizace služby. K připojení certifikátu k portu je nutné použít nástroj HttpCfg. exe. Viz [jak: Konfigurace portu s certifikátem](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)SSL.
+
     > [!IMPORTANT]
-    >  Předmět certifikátu nebo jeho systému DNS (Domain Name) musí odpovídat názvu počítače. To je nezbytné, protože jeden z prvních kroků, které provádí mechanismus HTTPS je ke kontrole, jestli se certifikát vydal do stejný identifikátor URI (Uniform Resource) jako adresu, na kterém je vyvolána.  
-  
-2. Vytvořit novou instanci třídy <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy.  
-  
-3. Nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> vlastnost <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídu `true`.  
-  
-4. Nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti na příslušné adrese URL. Všimněte si, že pokud zadáte absolutní adresa, adresa URL musí začínat schématem "https://". Pokud zadáte relativní adresu, musíte zadat základní adresu HTTPS pro hostitele vaší služby. Pokud není tato vlastnost nastavena, výchozí adresa je "", nebo přímo na základní adrese HTTPS pro službu.  
-  
-5. Přidání instance kolekce chování, která <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDescription> třídy vrací, jak je znázorněno v následujícím kódu.  
-  
-     [!code-csharp[c_HowToSecureEndpoint#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosecureendpoint/cs/source.cs#1)]
-     [!code-vb[c_HowToSecureEndpoint#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosecureendpoint/vb/source.vb#1)]  
-  
-### <a name="to-create-a-secure-https-get-metadata-endpoint-in-configuration"></a>Chcete-li vytvořit zabezpečené HTTPS GET koncových bodů metadat v konfiguraci  
-  
-1. Přidat [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementu [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) element konfiguračního souboru pro vaši službu.  
-  
-2. Přidat [ \<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) elementu [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) elementu.  
-  
-3. Přidat [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu `<serviceBehaviors>` elementu.  
-  
-4. Nastavte `name` atribut `<behavior>` element na odpovídající hodnotu. `name` Atribut je vyžadován. Následující příklad používá hodnotu `mySvcBehavior`.  
-  
-5. Přidat [ \<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) k `<behavior>` elementu.  
-  
-6. Nastavte `httpsGetEnabled` atribut `<serviceMetadata>` elementu `true`.  
-  
-7. Nastavte `httpsGetUrl` atribut `<serviceMetadata>` element na odpovídající hodnotu. Všimněte si, že pokud zadáte absolutní adresa, adresa URL musí začínat schématem "https://". Pokud zadáte relativní adresu, musíte zadat základní adresu HTTPS pro hostitele vaší služby. Pokud není tato vlastnost nastavena, výchozí adresa je "", nebo přímo na základní adrese HTTPS pro službu.  
-  
-8. Chcete-li používat chování se službou, nastavte `behaviorConfiguration` atribut [ \<služby >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) prvku na hodnotu atribut name elementu chování. Následující kód konfigurace ukazuje kompletní příklad.  
-  
-    ```xml  
-    <?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-     <system.serviceModel>  
-      <behaviors>  
-       <serviceBehaviors>  
-        <behavior name="mySvcBehavior">  
-         <serviceMetadata httpsGetEnabled="true"   
-              httpsGetUrl="https://localhost:8036/calcMetadata" />  
-        </behavior>  
-       </serviceBehaviors>  
-      </behaviors>  
-     <services>  
-      <service behaviorConfiguration="mySvcBehavior"   
-            name="Microsoft.Security.Samples.Calculator">  
-       <endpoint address="http://localhost:8037/ServiceModelSamples/calculator"  
-       binding="wsHttpBinding" bindingConfiguration=""     
-       contract="Microsoft.Security.Samples.ICalculator" />  
-      </service>  
-     </services>  
-    </system.serviceModel>  
-    </configuration>  
-    ```  
-  
-## <a name="example"></a>Příklad  
- Následující příklad vytvoří instanci <xref:System.ServiceModel.ServiceHost> třídy a přidá koncový bod. Kód poté vytvoří instanci <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy a nastaví vlastnosti pro vytvoření bod zabezpečené metadata exchange.  
-  
- [!code-csharp[c_HowToSecureEndpoint#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosecureendpoint/cs/source.cs#0)]
- [!code-vb[c_HowToSecureEndpoint#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosecureendpoint/vb/source.vb#0)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Příklad kódu používá následující obory názvů:  
-  
-- <xref:System.ServiceModel?displayProperty=nameWithType>  
-  
-- <xref:System.ServiceModel.Description?displayProperty=nameWithType>  
-  
+    > Předmět certifikátu nebo jeho DNS (Domain Name System) se musí shodovat s názvem počítače. To je nezbytné, protože jeden z prvních kroků mechanismu protokolu HTTPS provede ověření, že certifikát je vydán pro stejný identifikátor URI (Uniform Resource Identifier) jako adresa, na které je vyvolána.
+
+2. Vytvořte novou instanci <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy.
+
+3. <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> Nastavte vlastnost <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy na `true`.
+
+4. <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> Nastavte vlastnost na příslušnou adresu URL. Všimněte si, že pokud zadáte absolutní adresu, adresa URL musí začínat schématem "https://". Pokud zadáte relativní adresu, musíte pro hostitele služby zadat základní adresu HTTPS. Není-li tato vlastnost nastavena, je použita výchozí adresa "" nebo přímo na základní adrese HTTPS pro službu.
+
+5. Přidejte instanci do kolekce chování, kterou <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> vrátí vlastnost <xref:System.ServiceModel.Description.ServiceDescription> třídy, jak je znázorněno v následujícím kódu.
+
+    [!code-csharp[c_HowToSecureEndpoint#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosecureendpoint/cs/source.cs#1)]
+    [!code-vb[c_HowToSecureEndpoint#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosecureendpoint/vb/source.vb#1)]
+
+### <a name="to-create-a-secure-https-get-metadata-endpoint-in-configuration"></a>Vytvoření koncového bodu metadat získat zabezpečený protokol HTTPS v konfiguraci
+
+1. Do prvku [System. ServiceModel > konfiguračního souboru pro vaši službu přidejte > chování. \<](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+
+2. Do prvku [> chovánípřidejteprvekserviceBehaviors>.\<](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)
+
+3. `<serviceBehaviors>` [ Přidejte\<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu do elementu.
+
+4. `name` Nastavte atribut `<behavior>` prvku na odpovídající hodnotu. `name` Atribut je vyžadován. Následující příklad používá hodnotu `mySvcBehavior`.
+
+5. Přidejte [> oddílu serviceMetadata k elementu. \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) `<behavior>`
+
+6. Nastavte `httpsGetEnabled` atribut `<serviceMetadata>` elementu `true`.
+
+7. `httpsGetUrl` Nastavte atribut `<serviceMetadata>` prvku na odpovídající hodnotu. Všimněte si, že pokud zadáte absolutní adresu, adresa URL musí začínat schématem "https://". Pokud zadáte relativní adresu, musíte pro hostitele služby zadat základní adresu HTTPS. Není-li tato vlastnost nastavena, je použita výchozí adresa "" nebo přímo na základní adrese HTTPS pro službu.
+
+8. Chcete-li použít chování se službou, nastavte `behaviorConfiguration` atribut [ \<> elementu Service](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) na hodnotu atributu name elementu behavior. Následující konfigurační kód ukazuje kompletní příklad.
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8" ?>
+    <configuration>
+     <system.serviceModel>
+      <behaviors>
+       <serviceBehaviors>
+        <behavior name="mySvcBehavior">
+         <serviceMetadata httpsGetEnabled="true"
+              httpsGetUrl="https://localhost:8036/calcMetadata" />
+        </behavior>
+       </serviceBehaviors>
+      </behaviors>
+     <services>
+      <service behaviorConfiguration="mySvcBehavior"
+            name="Microsoft.Security.Samples.Calculator">
+       <endpoint address="http://localhost:8037/ServiceModelSamples/calculator"
+       binding="wsHttpBinding" bindingConfiguration=""
+       contract="Microsoft.Security.Samples.ICalculator" />
+      </service>
+     </services>
+    </system.serviceModel>
+    </configuration>
+    ```
+
+## <a name="example"></a>Příklad
+
+Následující příklad vytvoří instanci <xref:System.ServiceModel.ServiceHost> třídy a přidá koncový bod. Kód pak vytvoří instanci <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy a nastaví vlastnosti pro vytvoření zabezpečeného bodu výměny metadat.
+
+[!code-csharp[c_HowToSecureEndpoint#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howtosecureendpoint/cs/source.cs#0)]
+[!code-vb[c_HowToSecureEndpoint#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howtosecureendpoint/vb/source.vb#0)]
+
+## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+
+Příklad kódu používá následující obory názvů:
+
+- <xref:System.ServiceModel?displayProperty=nameWithType>
+
+- <xref:System.ServiceModel.Description?displayProperty=nameWithType>
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>

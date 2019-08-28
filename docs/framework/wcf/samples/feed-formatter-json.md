@@ -2,21 +2,21 @@
 title: Formátování informačního kanálu (JSON)
 ms.date: 03/30/2017
 ms.assetid: f9c0b295-55e7-48ea-b308-ba51c7d31143
-ms.openlocfilehash: c3e3378cd2465e26e4b6ff7b4c12a55050301095
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 028d2f9abd7e23f18eb90e5ecae8c57da3a871d1
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990103"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039644"
 ---
 # <a name="feed-formatter-json"></a>Formátování informačního kanálu (JSON)
-Tento příklad ukazuje, jak k serializaci instancí <xref:System.ServiceModel.Syndication.SyndicationFeed> ve formátu JavaScript Object Notation (JSON) pomocí vlastní třídy <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+Tento příklad ukazuje, jak serializovat instanci <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy ve formátu JavaScript Object Notation (JSON) pomocí vlastní <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
 ## <a name="architecture-of-the-sample"></a>Architektura ukázky  
- Ukázka implementuje třídu s názvem `JsonFeedFormatter` , která dědí z <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>. `JsonFeedFormatter` Třídy se může spolehnout <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> číst a zapisovat data ve formátu JSON. Interně, formátovací modul používá vlastní sada datových typů kontraktu s názvem `JsonSyndicationFeed` a `JsonSyndicationItem` řídit formát JSON data vytvořená modulem pro serializaci. Tyto podrobnosti implementace jsou skryté koncového uživatele, což volání provedená oproti standardní <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> třídy.  
+ Ukázka implementuje třídu s názvem `JsonFeedFormatter` , která dědí z. <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> `JsonFeedFormatter` Třída spoléhá<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> na ke čtení a zápisu dat ve formátu JSON. Interně, formátovací modul používá vlastní sadu typů kontraktů dat s `JsonSyndicationFeed` názvem `JsonSyndicationItem` a k řízení formátu dat JSON vytvořených serializátorem. Tyto podrobnosti implementace jsou skryté od koncového uživatele, což umožňuje provádět volání proti standardním <xref:System.ServiceModel.Syndication.SyndicationFeed> třídám a. <xref:System.ServiceModel.Syndication.SyndicationItem>  
   
-## <a name="writing-json-feeds"></a>Zápis JSON kanály  
- Zápis JSON kanálu se dá udělat pomocí `JsonFeedFormatter` (implementováno v této ukázce) se <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> jak je znázorněno v následujícím ukázkovém kódu.  
+## <a name="writing-json-feeds"></a>Zápis kanálů JSON  
+ Zápis datového kanálu JSON se dá provést pomocí `JsonFeedFormatter` (implementované v této ukázce) s, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 //Basic feed with sample data  
@@ -33,8 +33,8 @@ DataContractJsonSerializer writeSerializer = new DataContractJsonSerializer(type
 writeSerializer.WriteObject(stream, new JsonFeedFormatter(feed));  
 ```  
   
-## <a name="reading-a-json-feed"></a>Čtení informačního kanálu ve formátu JSON  
- Získání <xref:System.ServiceModel.Syndication.SyndicationFeed> z dat ve streamu formátu JSON, můžete provést pomocí `JsonFeedFormatter` tak, jak zobrazit v následujícím kódu.  
+## <a name="reading-a-json-feed"></a>Čtení informačního kanálu JSON  
+ Získání a <xref:System.ServiceModel.Syndication.SyndicationFeed> z datového proudu dat ve formátu JSON lze dosáhnout pomocí, `JsonFeedFormatter` jak je znázorněno v následujícím kódu.  
   
  `//Read in the feed using the DataContractJsonSerializer`  
   
@@ -44,19 +44,19 @@ writeSerializer.WriteObject(stream, new JsonFeedFormatter(feed));
   
  `SyndicationFeed feedRead = formatter.Feed;`  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\JsonFeeds`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\JsonFeeds`  

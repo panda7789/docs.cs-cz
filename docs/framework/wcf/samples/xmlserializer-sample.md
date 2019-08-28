@@ -2,12 +2,12 @@
 title: Ukázka třídy XMLSerializer
 ms.date: 03/30/2017
 ms.assetid: 7d134453-9a35-4202-ba77-9ca3a65babc3
-ms.openlocfilehash: 53ad76aa177b0cc208324aa819278264994c8631
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ae8e4f7c9be427ec5107318443816c8ade6c5085
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959463"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044475"
 ---
 # <a name="xmlserializer-sample"></a>Ukázka třídy XMLSerializer
 Tato ukázka demonstruje způsob serializace a deserializace typů, které <xref:System.Xml.Serialization.XmlSerializer>jsou kompatibilní s rozhraním. Výchozím formátovacím modulem Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> je třída. Třídu lze použít k serializaci a deserializaci typů, <xref:System.Runtime.Serialization.DataContractSerializer> Pokud třídu nelze použít. <xref:System.Xml.Serialization.XmlSerializer> Často se jedná o případ, kdy je vyžadována přesná kontrola nad XML – například pokud datový kus musí být atribut XML, nikoli XML element. Při vytváření klientů <xref:System.Xml.Serialization.XmlSerializer> pro jiné služby než WCF se taky často automaticky zvolí.  
@@ -126,10 +126,10 @@ Press <ENTER> to terminate client.
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  

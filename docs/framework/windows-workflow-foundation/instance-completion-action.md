@@ -2,19 +2,20 @@
 title: Akce dokončení instance
 ms.date: 03/30/2017
 ms.assetid: 90cc99d2-9fef-42fd-bcbf-a56917993721
-ms.openlocfilehash: d68f41a586e44f96c9ca26cf8a142a2782adaa36
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 698ac0ed5a7cbd4f6a5623cf8d9b6fbea1128d0a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662980"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044333"
 ---
 # <a name="instance-completion-action"></a>Akce dokončení instance
-**Akce dokončení Instance** vlastnost Store Instance pracovního postupu SQL umožňuje určit, zda data a metadata instancí pracovních postupů je odstraněn z databáze stálost po dokončení instance. Povolené hodnoty pro tuto vlastnost **DeleteAll** a **DeleteNothing**. Následující seznam popisuje tyto možnosti:  
-  
-- **DeleteAll (výchozí).** Pokud je nastavena hodnota vlastnosti DeleteAll, data a metadata instancí pracovních postupů je odstranit z databáze stálost po dokončení instance.  
-  
-- **DeleteNothing.** Pokud je nastavena hodnota vlastnosti DeleteNothing, data a metadata instancí pracovních postupů, zůstane databáze trvalosti i po dokončení instance.  
-  
-    > [!CAUTION]
-    >  Zachování informací o stavu instance instance po dokončení způsobí, že databáze stálost k rozvoji velikosti. Databázových operací, které provádí subsystému trvalost nárůstu velikosti databáze trvat déle, takže je třeba vymazat informace o stavu instance z databáze trvalosti pravidelně, aby se mají provést na úrovni služby, které splňují vaše požadavkům na výkon.
+
+Vlastnost **Akce dokončení instance** úložiště instance pracovního postupu SQL umožňuje určit, zda jsou data a metadata instancí pracovních postupů po dokončení instancí odstraněny z databáze trvalosti. Povolené hodnoty pro tuto vlastnost jsou **DeleteAll** a **DeleteNothing**. Následující seznam popisuje tyto možnosti:
+
+- **DeleteAll (výchozí).** Pokud je hodnota vlastnosti nastavena na DeleteAll, data a metadata instancí pracovního postupu jsou po dokončení instancí odstraněny z databáze trvalosti.
+
+- **DeleteNothing.** Pokud je hodnota vlastnosti nastavena na DeleteNothing, data a metadata instancí pracovního postupu jsou uchovávány v databázi trvalosti i po dokončení instancí.
+
+  > [!CAUTION]
+  > Uchovávání informací o stavu instance po dokončení instancí způsobí, že databáze trvala velikost. Vzhledem k tomu, že velikost databáze rozroste databázové operace, které podsystém trvalosti trvá, je třeba pravidelně vyprázdnit informace o stavu instance z databáze trvalosti, aby služby prováděly na úrovni, která vyhovuje vašim požadavky na výkon.

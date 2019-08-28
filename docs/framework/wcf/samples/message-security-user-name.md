@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
-ms.openlocfilehash: 53836e473fa09e88b4e8266923247db337387944
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cb1f42327333484f7952b6f95ea90115935a8fc8
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930451"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039275"
 ---
 # <a name="message-security-user-name"></a>Zabezpečení zpráv s uživatelským jménem
 Tato ukázka předvádí, jak implementovat aplikaci, která používá protokol WS-Security s ověřováním uživatelského jména pro klienta, a vyžaduje ověření serveru pomocí certifikátu X. 509 v3 serveru. Všechny zprávy aplikací mezi klientem a serverem jsou podepsané a šifrované. Ve výchozím nastavení se k přihlášení k platnému účtu systému Windows používá uživatelské jméno a heslo dodávané klientem. Tato ukázka je založená na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). Tato ukázka se skládá z programu klientské konzoly (Client. exe) a knihovny služeb (Service. dll) hostované službou Internetová informační služba (IIS). Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď.  
@@ -187,7 +187,7 @@ Press <ENTER> to terminate client.
     ```  
   
     > [!NOTE]
-    >  Pokud používáte jinou než U. S. Anglická edice Windows: musíte upravit soubor Setup. bat a nahradit `NT AUTHORITY\NETWORK SERVICE` název účtu svým regionálním ekvivalentem.  
+    > Pokud používáte jinou než U. S. Anglická edice Windows: musíte upravit soubor Setup. bat a nahradit `NT AUTHORITY\NETWORK SERVICE` název účtu svým regionálním ekvivalentem.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
@@ -202,7 +202,7 @@ Press <ENTER> to terminate client.
 2. Spusťte Setup. bat z ukázkové instalační složky ve Developer Command Prompt pro Visual Studio otevřené s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.  
   
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z Developer Command Prompt pro Visual Studio. Vyžaduje, aby proměnná prostředí PATH odkazovala na adresář, ve kterém je nainstalována sada SDK. Tato proměnná prostředí se automaticky nastaví v rámci Developer Command Prompt pro Visual Studio.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z Developer Command Prompt pro Visual Studio. Vyžaduje, aby proměnná prostředí PATH odkazovala na adresář, ve kterém je nainstalována sada SDK. Tato proměnná prostředí se automaticky nastaví v rámci Developer Command Prompt pro Visual Studio.  
   
 3. Zadáním adresy `http://localhost/servicemodelsamples/service.svc`ověřte přístup ke službě pomocí prohlížeče.
   
@@ -237,4 +237,4 @@ Press <ENTER> to terminate client.
 - Po dokončení ukázky Spusťte Cleanup. bat ve složce Samples.  
   
     > [!NOTE]
-    >  Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+    > Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

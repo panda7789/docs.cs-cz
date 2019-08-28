@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, obtaining elements
 - elements, UI Automation, obtaining
 ms.assetid: c2caaf45-e59c-42a1-bc9b-77a6de520171
-ms.openlocfilehash: 8c222cb2cf70502024a5934c4c527334c9f24165
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9adf8078f52653940fe9ba5caa4a256a08cc489c
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966388"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044144"
 ---
 # <a name="obtaining-ui-automation-elements"></a>Získání elementů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69966388"
  Toto téma popisuje různé způsoby získání <xref:System.Windows.Automation.AutomationElement> objektů pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvky.  
   
 > [!CAUTION]
->  Pokud se vaše klientská aplikace může pokusit najít prvky ve vlastním uživatelském rozhraní, je nutné provést [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] všechna volání v samostatném vlákně. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
+> Pokud se vaše klientská aplikace může pokusit najít prvky ve vlastním uživatelském rozhraní, je nutné provést [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] všechna volání v samostatném vlákně. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
   
 <a name="The_Root_Element"></a>   
 ## <a name="root-element"></a>Kořenový element  
@@ -28,7 +28,7 @@ ms.locfileid: "69966388"
  Kořenový element pro plochu, ze kterého jsou pořízené všechny prvky, se získá z vlastnosti static <xref:System.Windows.Automation.AutomationElement.RootElement%2A?displayProperty=nameWithType> .  
   
 > [!CAUTION]
->  Obecně byste se měli pokusit získat pouze přímé podřízené objekty <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Hledání potomků může iterovat stovky nebo dokonce tisíce prvků, což může způsobit přetečení zásobníku. Pokud se pokoušíte získat konkrétní prvek na nižší úrovni, měli byste zahájit hledání z okna aplikace nebo z kontejneru na nižší úrovni.  
+> Obecně byste se měli pokusit získat pouze přímé podřízené objekty <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Hledání potomků může iterovat stovky nebo dokonce tisíce prvků, což může způsobit přetečení zásobníku. Pokud se pokoušíte získat konkrétní prvek na nižší úrovni, měli byste zahájit hledání z okna aplikace nebo z kontejneru na nižší úrovni.  
   
 <a name="Using_Conditions"></a>   
 ## <a name="conditions"></a>Podmínky  

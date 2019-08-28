@@ -2,17 +2,17 @@
 title: ConcurrencyMode Reentrant
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
-ms.openlocfilehash: 2170b029f1cb4a85a1b2688fc1143ffcd1682fe6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c6bb73957da055e9d867fbcb78ce78acdb8d0b76
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002320"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040145"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
-Tento příklad znázorňuje nutnost a důsledky použití ConcurrencyMode.Reentrant na implementaci služby. ConcurrencyMode.Reentrant znamená, že služba (nebo zpětného volání) zpracovává pouze jednu zprávu v daném okamžiku (obdobná `ConcurencyMode.Single`). K zajištění bezpečnosti vlákna, uzamkne Windows Communication Foundation (WCF) `InstanceContext` zpracovává zprávu tak, aby zpracovat žádné další zprávy. V případě vícenásobné režim `InstanceContext` odemknut těsně před plánovaným začátkem služby umožňuje odchozí volání a tím umožní následných volání (může to být vícenásobné, jak je uvedeno v ukázce) se získat zámek příště je k dispozici ve službě. Abychom si předvedli chování, tato ukázka vysvětluje, jak může klient a služba odesílání zpráv mezi sebou pomocí duplexního kontraktu.  
+Tato ukázka demonstruje nutnost a důsledky použití režimu ConcurrencyMode. předaných do implementace služby. Režim ConcurrencyMode. reonly to znamená, že služba (nebo zpětné volání) zpracovává v daném okamžiku pouze jednu zprávu ( `ConcurencyMode.Single`podobnou). Pro zajištění bezpečnosti vlákna Windows Communication Foundation (WCF) zamkne `InstanceContext` zpracování zprávy, aby nemohly být zpracovány žádné další zprávy. V případě režimu `InstanceContext` vícenásobného vstupu je odemčení těsně před tím, než služba odešle odchozí volání, čímž umožní následné volání (které se dá znovu využít v ukázce), aby se zámek při příštím výskytu služby dostal. K předvedení tohoto chování Ukázka ukazuje, jak může klient a služba mezi sebou posílat zprávy pomocí duplexního kontraktu.  
   
- Duplexní kontrakt s je kontrakt definovaný `Ping` implementování službou a metoda zpětného volání metody `Pong` implementování klientem. Klient vyvolá serveru `Ping` metodu s čárka počítat, a tím inicializace volání. Služba zkontroluje, zda počet impulsů není roven 0 a poté vyvolá tak potřebná zpětná volání `Pong` metoda při dekrementace počtu impulsů. To se provádí v následujícím kódu v ukázce.  
+ Definovaná smlouva je duplexní kontrakt s `Ping` metodou, kterou služba implementuje, a metodou `Pong` zpětného volání, kterou klient implementuje. Klient vyvolá `Ping` metodu serveru s počtem impulsů, čímž iniciuje volání. Služba kontroluje, zda počet impulsů není roven 0, a poté vyvolá `Pong` metodu zpětného volání při snížení počtu impulsů. To se provádí v ukázce v následujícím kódu.  
   
 ```csharp
 public void Ping(int ticks)  
@@ -26,7 +26,7 @@ public void Ping(int ticks)
 }  
 ```  
   
- Při zpětném volání `Pong` implementace má stejnou logikou jako `Ping` implementace. To znamená, zkontroluje, zda počet impulsů není nula a potom vyvolá `Ping` metoda zpětného volání kanálu (v tomto případě je kanál, který jste použili k zaslání původní `Ping` zpráva) pomocí značek počet sníží o 1. V okamžiku, kdy počet impulsů dosáhne hodnoty 0, vrátí tato metoda hodnotu a rozbalení všechny odpovědi zpátky na první volání, která iniciovala volání klienta. To je ukázáno v implementaci zpětného volání.  
+ `Pong` Implementace zpětného volání má stejnou logiku `Ping` jako implementace. To znamená, že kontroluje, zda počet impulsů není nula, a poté vyvolá `Ping` metodu na kanálu zpětného volání (v tomto případě je to kanál, který byl použit k odeslání původní `Ping` zprávy) s počtem impulsů sníženým o 1. Okamžik, kdy počet impulsů dosáhne 0, metoda se vrátí a rozbalí všechny odpovědi zpět na první volání provedené klientem, který iniciuje volání. Tento příklad je zobrazen v implementaci zpětného volání.  
   
 ```csharp
 public void Pong(int ticks)  
@@ -42,18 +42,18 @@ public void Pong(int ticks)
 }  
 ```  
   
- Jak `Ping` a `Pong` metody jsou požadavku/odpovědi, což znamená, že první volání `Ping` nevrací až do volání `CallbackChannel<T>.Pong()` vrátí. V klientském počítači `Pong` metoda nemůže vrátit až do další `Ping` volání, že ji nastavit na vrátí. Protože zpětné volání a služba musí volat odchozí požadavek/odpověď předtím, než můžete odpovědět čekající žádosti, musí být obě implementace označeny ConcurrencyMode.Reentrant chování.  
+ Jak metody, `Pong` tak jsou požadavky `Ping` `CallbackChannel<T>.Pong()`aodpovědi , což znamená, že první volání vrátí, dokud volání nevrátí. `Ping` Na straně klienta `Pong` nemůže metoda vracet, dokud nebude vráceno `Ping` další volání. Vzhledem k tomu, že zpětné volání a služba musí učinit odchozí volání požadavků a odpovědí předtím, než mohou odpovědět na nevyřízenou žádost, musí být obě implementace označeny chováním režim ConcurrencyMode. replatformed.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Ke spuštění ukázky, sestavení projektů klientem a serverem. Pak otevřete dvě okně příkazového řádku a přejděte do adresáře \<ukázka > \CS\Service\bin\debug a \<ukázka > \CS\Client\bin\debug adresáře. Potom spusťte služby zadáním `service.exe` a pak vyvolejte Client.exe s počáteční hodnotou ticks předaný jako vstupní argument. Ukázkový výstup pro 10 impulzech se zobrazí.  
+ Chcete-li spustit ukázku, sestavte klientské a serverové projekty. Pak otevřete dvě okna příkazů a změňte adresáře na \<vzorový > \CS\Service\bin\debug a \<Sample > \CS\Client\bin\debug adresáře. Poté spusťte službu tak, že `service.exe` zadáte a potom vyvoláte Client. exe s počáteční hodnotou tiků předaných jako vstupní argument. Zobrazí se ukázkový výstup pro 10 taktů.  
   
 ```console  
 Prompt>Service.exe  
@@ -74,10 +74,10 @@ Pong: Ticks = 1
 ```  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Reentrant`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Reentrant`  

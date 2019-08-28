@@ -20,15 +20,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 74548df512f68761b006e064a6db968e82b03813
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 164384f043a1722ace6e5c4098cb31c4327cba1e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779128"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044062"
 ---
 # <a name="coeeshutdowncom-function"></a>CoEEShutDownCOM – funkce
-Vynutí common language runtime (CLR) uvolnit všechny ukazatele rozhraní, které obsahuje uvnitř obálek volatelných za běhu (RCW). To má za následek uvolnění všech RCW mezipamětí. Tato globální funkce je zastaralé v rozhraní .NET Framework 4. Místo toho použijte vstupní bod pro konkrétní prostředí runtime.  
+Vynutí modul CLR (Common Language Runtime), aby uvolnil všechny ukazatele rozhraní, které se nachází uvnitř za běhu volat obálky (RCW). To má vliv na uvolnění všech mezipamětí RCW cache. Tato globální funkce je zastaralá v .NET Framework 4. Místo toho použijte vstupní bod konkrétního modulu runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ void CoEEShutDownCOM ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `CoEEShutDownCOM` Funkce nejprve uvolní všechny RCW ve všech kontextech a všechny mezipaměti a pak taky odebere všechna oznámení vše existující v instalačním programu. Vyvolá se žádná uvolnění knihovny DLL.  
+ `CoEEShutDownCOM` Funkce nejprve uvolní všechny RCW ve všech kontextech a ve všech mezipamětích a následně odebere všechna oznámení, která jsou v instalaci existující. Nedochází k uvolnění knihovny DLL.  
   
 > [!CAUTION]
->  Tuto funkci ovlivňuje všechny moduly runtime, která jsou načtena do procesu.  
+> Tato funkce má vliv na všechny moduly runtime, které jsou načteny do procesu.  
   
- Od verze rozhraní .NET Framework 4, volání vstupní bod pro tuto funkci na konkrétní modul runtime, který chcete ovlivnit. Získání vstupního bodu, zavolejte [iclrruntimeinfo::GetProcAddress –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getprocaddress-method.md) metodu a zadejte "Coeeshutdowncom –".  
+ Počínaje .NET Framework 4 volejte vstupní bod pro tuto funkci pro konkrétní modul runtime, který chcete ovlivnit. Chcete-li získat vstupní bod, zavolejte metodu [ICLRRuntimeInfo:: GetProcAddress](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getprocaddress-method.md) a zadejte "CoEEShutDownCOM –".  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

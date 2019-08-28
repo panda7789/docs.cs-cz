@@ -2,24 +2,24 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: b02533641785b24019f10a3c224b09e252cbb2ef
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4db661e80663b7b5b22a17d244f0204717fef652
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966780"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044562"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tato ukázka předvádí, jak implementovat vlastní validátor UserNamePassword. To je užitečné v případech, kdy žádný z vestavěných režimů ověřování UserNamePassword není vhodný pro požadavky aplikace. například když jsou páry uživatelského jména a hesla uložené v některém externím úložišti, jako je třeba databáze. Tato ukázka obsahuje službu, která má vlastní validátor, který kontroluje dvě konkrétní páry uživatelského jména a hesla. Klient používá k ověření ve službě takové párování uživatelského jména a hesla.
 
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\UserNamePasswordValidator`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\UserNamePasswordValidator`  
   
 > [!NOTE]
 > Vzhledem k tomu, že kdokoli může vytvořit přihlašovací údaje pro uživatelské jméno, které používají páry uživatelské jméno a heslo, které vlastní validátor akceptuje, je tato služba méně bezpečná, než je výchozí chování, které poskytuje standardní validátor UserNamePassword. Standardní validátor UserNamePassword se pokusí mapovat zadané párování uživatelského jména a hesla k účtu systému Windows a ověřování se nepovede, pokud toto mapování neproběhne úspěšně. Vlastní validátor UserNamePassword v této ukázce nesmí být použit v produkčním kódu, je určen pouze pro ilustraci.
@@ -287,7 +287,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 1. Spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat.  
   
 2. Spustit Service. exe z service\bin.  
   

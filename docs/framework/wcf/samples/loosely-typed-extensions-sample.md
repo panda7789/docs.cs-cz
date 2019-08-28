@@ -2,17 +2,17 @@
 title: Ukázka rozšíření volného typu
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
-ms.openlocfilehash: 4d92f45382361c61fe9e7ac85ff5d604a2c87b27
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 21690aebca250880a8eb51aee0821220a00bc0c0
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592204"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039471"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Ukázka rozšíření volného typu
-Poskytuje objektového modelu syndikace Rozsáhlá podpora pro práci s daty rozšíření – informace, které jsou k dispozici v informačního kanálu syndikace je reprezentovaný pomocí XML, ale vystavené třídy nejsou explicitně jako <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem>. Tento příklad ukazuje základní postupy pro práci s daty rozšíření.  
+Model Syndikačních objektů poskytuje bohatou podporu pro práci s daty rozšíření – informace, které jsou přítomny v reprezentaci XML informačního kanálu syndikace, ale nejsou <xref:System.ServiceModel.Syndication.SyndicationFeed> explicitně <xref:System.ServiceModel.Syndication.SyndicationItem>vystaveny třídami, jako jsou a. Tato ukázka znázorňuje základní techniky pro práci s daty rozšíření.  
   
- Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy pro účely tohoto příkladu. Tyto vzory se dají v této ukázce jsme vám ukázali lze však použít se všemi syndikace třídy, které podporují rozšíření dat:  
+ Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídu pro účely tohoto příkladu. Vzory znázorněné v této ukázce však lze použít se všemi třídami syndikace, které podporují data rozšíření:  
   
  <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -24,8 +24,8 @@ Poskytuje objektového modelu syndikace Rozsáhlá podpora pro práci s daty roz
   
  <xref:System.ServiceModel.Syndication.SyndicationLink>  
   
-## <a name="sample-xml"></a>Ukázkový soubor XML  
- Pro srovnání následujícího dokumentu XML se používá v této ukázce.  
+## <a name="sample-xml"></a>Ukázkový kód XML  
+ Pro referenci se v této ukázce používá následující dokument XML.  
   
 ```xml  
 <?xml version="1.0" encoding="IBM437"?>  
@@ -52,20 +52,20 @@ w.w3.org/2001/XMLSchema" xmlns="">
 </feed>  
 ```  
   
- Tento dokument obsahuje následující časti dat rozšíření:  
+ Tento dokument obsahuje následující části dat rozšíření:  
   
-- `myAttribute` Atribut `<feed>` elementu.  
+- `myAttribute` Atribut`<feed>` elementu.  
   
-- `<simpleString>` element.  
+- `<simpleString>`objekt.  
   
-- `<DataContractExtension>` element.  
+- `<DataContractExtension>`objekt.  
   
-- `<XmlSerializerExtension>` element.  
+- `<XmlSerializerExtension>`objekt.  
   
-- `<xElementExtension>` element.  
+- `<xElementExtension>`objekt.  
   
 ## <a name="writing-extension-data"></a>Zápis dat rozšíření  
- Atribut rozšíření jsou vytvořena přidáním položky <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekce, jak je znázorněno v následujícím ukázkovém kódu.  
+ Rozšíření atributů jsou vytvořena přidáním záznamů do <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekce, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 //Attribute extensions are stored in a dictionary indexed by   
@@ -73,26 +73,26 @@ w.w3.org/2001/XMLSchema" xmlns="">
 feed.AttributeExtensions.Add(new XmlQualifiedName("myAttribute", ""), "someValue");  
 ```  
   
- Element rozšíření jsou vytvořena přidáním položky <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> kolekce. Tato rozšíření lze základních hodnot, jako je například řetězce, XML serializations objekty rozhraní .NET Framework, nebo z uzlů XML zakódované ručně.  
+ Rozšíření prvků jsou vytvořena přidáním položek do <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> kolekce. Tato rozšíření mohou základní hodnoty, jako jsou řetězce, serializace XML .NET Framework objektů nebo uzly XML kódované ručně.  
   
- Následující ukázkový kód vytvoří rozšíření element s názvem `simpleString`.  
+ Následující vzorový kód vytvoří element rozšíření s názvem `simpleString`.  
   
 ```  
 feed.ElementExtensions.Add("simpleString", "", "hello, world!");  
 ```  
   
- Obor názvů XML pro tento element je prázdný obor názvů ("") a její hodnota je textový uzel, který obsahuje řetězec "hello, world!".  
+ Obor názvů XML pro tento element je prázdný obor názvů ("") a jeho hodnota je textový uzel, který obsahuje řetězec "Hello, World!".  
   
- Jeden ze způsobů, jak vytvořit rozšíření komplexních prvků, které se skládají z mnoha je vnořené elementy k použití rozhraní API .NET Framework pro serializaci (jak <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer> jsou podporovány) jak je znázorněno v následujícím příkladu.  
+ Jedním ze způsobů, jak vytvořit složitá rozšíření prvků, která se skládají z mnoha vnořených elementů, je použití rozhraní <xref:System.Runtime.Serialization.DataContractSerializer> API .NET Framework <xref:System.Xml.Serialization.XmlSerializer> pro serializaci (a i podporuje), jak je znázorněno v následujících příkladech.  
   
 ```  
 feed.ElementExtensions.Add( new DataContractExtension() { Key = "X", Value = 4 } );  
 feed.ElementExtensions.Add( new XmlSerializerExtension { Key = "Y", Value = 8 }, new XmlSerializer( typeof( XmlSerializerExtension ) ) );  
 ```  
   
- V tomto příkladu `DataContractExtension` a `XmlSerializerExtension` vlastní typy, které jsou napsané pro použití s serializátor.  
+ V tomto příkladu `DataContractExtension` `XmlSerializerExtension` jsou vlastní typy vytvořené pro použití s serializátorem.  
   
- <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection> Třídy lze také vytvořit element rozšíření ze <xref:System.Xml.XmlReader> instance. To umožňuje snadnou integraci s XML zpracování rozhraní API, jako <xref:System.Xml.Linq.XElement> jak je znázorněno v následujícím ukázkovém kódu.  
+ Třídu lze také použít k vytvoření rozšíření prvků <xref:System.Xml.XmlReader> z instance. <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection> To umožňuje snadnou integraci s rozhraními API <xref:System.Xml.Linq.XElement> pro zpracování XML, například jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 feed.ElementExtensions.Add(new XElement("xElementExtension",  
@@ -102,13 +102,13 @@ feed.ElementExtensions.Add(new XElement("xElementExtension",
 ```  
   
 ## <a name="reading-extension-data"></a>Čtení dat rozšíření  
- Hodnoty pro atribut rozšíření můžete získat výčtem vyhledávání atributů v <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekci podle jeho <xref:System.Xml.XmlQualifiedName> jak je znázorněno v následujícím ukázkovém kódu.  
+ Hodnoty pro přípony atributů lze získat vyhledáním atributu v <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekci <xref:System.Xml.XmlQualifiedName> , jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 Console.WriteLine( feed.AttributeExtensions[ new XmlQualifiedName( "myAttribute", "" )]);  
 ```  
   
- Element rozšíření jsou přístupné pomocí `ReadElementExtensions<T>` metody.  
+ Rozšíření prvků jsou k dispozici `ReadElementExtensions<T>` pomocí metody.  
   
 ```  
 foreach( string s in feed2.ElementExtensions.ReadElementExtensions<string>("simpleString", ""))  
@@ -128,7 +128,7 @@ foreach (XmlSerializerExtension xse in feed2.ElementExtensions.ReadElementExtens
 }  
 ```  
   
- Je také možné získat `XmlReader` na jednotlivý element rozšíření pomocí <xref:System.ServiceModel.Syndication.SyndicationElementExtension.GetReader> metody.  
+ Je také možné získat `XmlReader` v jednotlivých prvcích rozšíření <xref:System.ServiceModel.Syndication.SyndicationElementExtension.GetReader> pomocí metody.  
   
 ```  
 foreach (SyndicationElementExtension extension in feed2.ElementExtensions.Where<SyndicationElementExtension>(x => x.OuterName == "xElementExtension"))  
@@ -138,22 +138,22 @@ foreach (SyndicationElementExtension extension in feed2.ElementExtensions.Where<
 }  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\LooselyTypedExtensions`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\LooselyTypedExtensions`  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,43 +2,43 @@
 title: Použití oboru úprav
 ms.date: 03/30/2017
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
-ms.openlocfilehash: d1e251abf2dd4d3f7ca15d66a4f5ea96e273a351
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 386c94e5c6761bb704efc9e48723d0e91a4aaf6b
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623826"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037803"
 ---
 # <a name="using-editing-scope"></a>Použití oboru úprav
-Tento příklad ukazuje, jak batch sady změn, takže se můžete vrátit zpět v jednu atomickou jednotku. Ve výchozím nastavení jsou akce prováděné návrháře autorem aktivity automaticky integrované do systému zpět/znovu.  
+Tato ukázka předvádí, jak provést dávku sady změn, aby mohly být vráceny v jedné atomické jednotce. Ve výchozím nastavení jsou akce provedené autorem návrháře aktivit automaticky integrovány do systému zpět/znovu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Úpravy rozsahu a zpět a znovu.  
+ Úpravy oboru a akce zpět a znovu.  
   
-## <a name="discussion"></a>Diskuse  
- Tento příklad ukazuje, jak batch sada změn <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury v rámci jedné jednotky práce. Všimněte si, že při vytváření vazby na <xref:System.Activities.Presentation.Model.ModelItem> hodnoty přímo z Návrháře WPF, změny se použijí automaticky. Tento příklad ukazuje, co je třeba provést při více změn ve službě sjednotit se provádějí pomocí imperativního kódu, spíše než jediné změny.  
+## <a name="discussion"></a>Účely  
+ Tento příklad ukazuje, jak dávkovat sadu změn <xref:System.Activities.Presentation.Model.ModelItem> ve stromové struktuře v rámci jedné pracovní jednotky. Všimněte si, že při <xref:System.Activities.Presentation.Model.ModelItem> vytváření vazby na hodnoty přímo z Návrháře WPF se změny aplikují automaticky. Tato ukázka demonstruje, co je třeba provést, pokud je provedeno více dávkových změn prostřednictvím imperativního kódu namísto jedné změny.  
   
- V této ukázce jsou přidány tři aktivity. Po zahájení úpravy <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> je volán na instanci <xref:System.Activities.Presentation.Model.ModelItem>. Změny provedené <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury v rámci tohoto rozsahu úprav jsou dávce. <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> Příkazem <xref:System.Activities.Presentation.Model.EditingScope>, které lze použít k ovládání této instance. Buď <xref:System.Activities.Presentation.Model.EditingScope.OnComplete%2A> nebo <xref:System.Activities.Presentation.Model.EditingScope.OnRevert%2A> lze volat buď potvrzení nebo vrátit zpět úpravy rozsahu.  
+ V této ukázce jsou přidány tři aktivity. Při zahájení <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> úprav se volá na <xref:System.Activities.Presentation.Model.ModelItem>instanci. Změny provedené <xref:System.Activities.Presentation.Model.ModelItem> ve stromové struktuře v rámci tohoto oboru úprav jsou dávkově. <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> Příkaz<xref:System.Activities.Presentation.Model.EditingScope>vrátí, který lze použít k řízení této instance. Buď <xref:System.Activities.Presentation.Model.EditingScope.OnComplete%2A> nebo<xref:System.Activities.Presentation.Model.EditingScope.OnRevert%2A> může být volána buď k potvrzení, nebo vrácení oboru úprav.  
   
- Lze také vnořit <xref:System.Activities.Presentation.Model.EditingScope> objekty, které umožňuje více sad změn ke sledování v rámci větší úpravy rozsahu a je možné řídit samostatně. Tento scénář může pomocí této funkce se při změny z více dialogů musí být potvrzené nebo vrátit samostatně, všechny změny se zachází jako jednu atomickou operaci. V této ukázce jsou uspořádány vedle pomocí úpravy oborů <xref:System.Collections.ObjectModel.ObservableCollection%601> typu <xref:System.Activities.Presentation.Model.ModelEditingScope>. <xref:System.Collections.ObjectModel.ObservableCollection%601> Se používá tak, aby hloubka vnoření může být dodržen na návrhové ploše.  
+ Můžete také vnořovat <xref:System.Activities.Presentation.Model.EditingScope> objekty, které umožňují sledovat více sad změn v rámci většího rozsahu úprav a lze je řídit individuálně. Scénář, který může být použit touto funkcí, by byl v případě, že změny z více dialogových oken musí být potvrzeny nebo vráceny samostatně, přičemž všechny změny jsou zpracovávány jako jediná atomická operace. V této ukázce jsou obory úprav skládané pomocí <xref:System.Collections.ObjectModel.ObservableCollection%601> typu. <xref:System.Activities.Presentation.Model.ModelEditingScope> <xref:System.Collections.ObjectModel.ObservableCollection%601> Je použit, aby bylo možné pozorovat hloubku vnoření na návrhové ploše.  
   
-## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Sestavení a spuštění ukázky a potom pomocí tlačítek na levé straně upravte pracovní postup.  
+1. Sestavte a spusťte ukázku a potom pomocí tlačítek vlevo upravte pracovní postup.  
   
-2. Klikněte na tlačítko **otevřete oboru úprav**.  
+2. Klikněte na **otevřít rozsah úprav**.  
   
-    1. Tento příkaz volá <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> , který vytvoří úpravy rozsahu a nasdílí změny do úprav zásobníku.  
+    1. Tento příkaz volá <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A> , který vytvoří obor úprav a vloží ho do editačního zásobníku.  
   
-    2. Tři aktivity se pak přidají do vybraného <xref:System.Activities.Presentation.Model.ModelItem>. Všimněte si, že pokud rozsahu úprav, kdyby byl otevřen s <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A>, by se zobrazí tři nové aktivity na plátně návrháře. Protože tato operace je stále čekají v rámci <xref:System.Activities.Presentation.Model.EditingScope>, Návrhář není ještě neaktualizovaly.  
+    2. Do vybrané <xref:System.Activities.Presentation.Model.ModelItem>části se pak přidají tři aktivity. Všimněte si, že pokud obor úprav nebyl otevřen s <xref:System.Activities.Presentation.Model.ModelItem.BeginEdit%2A>, zobrazí se na plátně návrháře tři nové aktivity. Vzhledem k tomu <xref:System.Activities.Presentation.Model.EditingScope>, že tato operace stále čeká na vyřízení v, Návrhář ještě není aktualizovaný.  
   
-3. Stisknutím klávesy **zavřít úpravy rozsahu** potvrdit rozsahu úprav. Tři aktivity se zobrazí v návrháři.  
+3. Kliknutím na **Zavřít rozsah** úprav potvrďte rozsah úprav. V návrháři se zobrazí tři aktivity.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\UsingEditingScope`
+> `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\UsingEditingScope`

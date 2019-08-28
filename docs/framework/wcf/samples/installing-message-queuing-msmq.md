@@ -2,12 +2,12 @@
 title: Instalace služby Řízení front zpráv (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 42e66029f8538877ded424f72cb6c829444d1ee0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 118143f2d434e9f4399c3e9141743fc0254b61ab
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935983"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039615"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalace služby Řízení front zpráv (MSMQ)
 Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv 4,0 a službu Řízení front zpráv 3,0.  
@@ -54,7 +54,7 @@ Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv
 3. Vyberte možnost Služba Řízení front zpráv a klikněte na tlačítko **Podrobnosti**.  
   
     > [!NOTE]
-    >  Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vyberte aplikační server pro přístup do služby Řízení front zpráv.  
+    > Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vyberte aplikační server pro přístup do služby Řízení front zpráv.  
   
 4. Zajistěte, aby byla na stránce podrobností vybrána možnost Podpora služby MSMQ HTTP.  
   

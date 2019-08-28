@@ -9,12 +9,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 054beab97a77bd466d2c3d8c734e37f8ded7eb62
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2ab0a41e87a9b14d1beac9fb0c39586f0ea16a4a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945274"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040186"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
 <xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat předem typy, které by měly být zahrnuty za účelem posouzení během deserializace. Pracovní příklad naleznete v příkladu [známých typů](../../../../docs/framework/wcf/samples/known-types.md) .  
@@ -77,7 +77,7 @@ ms.locfileid: "69945274"
  V následujícím příkladu kontrakt dat uchovává číslo a operaci, která se má provést na daném čísle. Datový člen může být celé číslo, pole celých čísel <xref:System.Collections.Generic.List%601> nebo, které obsahuje celá čísla. `Numbers`  
   
 > [!CAUTION]
->  To bude fungovat jenom na straně klienta, pokud SVCUTIL. K vygenerování proxy serveru WCF se používá EXE. Svcutil. EXE načítá metadata ze služby, včetně všech známých typů. Bez těchto informací klient nebude moci deserializovat typy.  
+> To bude fungovat jenom na straně klienta, pokud SVCUTIL. K vygenerování proxy serveru WCF se používá EXE. Svcutil. EXE načítá metadata ze služby, včetně všech známých typů. Bez těchto informací klient nebude moci deserializovat typy.  
   
  [!code-csharp[C_KnownTypeAttribute#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#6)]
  [!code-vb[C_KnownTypeAttribute#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#6)]  

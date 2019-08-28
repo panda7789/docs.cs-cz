@@ -2,91 +2,91 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: 35d0202a3b9cf4060240dc521554644d419a5c23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e1ee7154e2ad5b22ff0debcdd15d5809fc55df13
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61723170"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044520"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
-Tento příklad ukazuje, jak pomocí analytického trasování ve Windows Communication Foundation (WCF) vysílat události do Event Tracing for Windows (ETW). Analytické trasování jsou události, protože ho na klíčových místech v zásobníku WCF, které umožňují Poradce při potížích pro služby WCF v produkčním prostředí.
+Tato ukázka předvádí, jak použít analytické trasování v Windows Communication Foundation (WCF) k vygenerování událostí v trasování událostí pro Windows (ETW). Analytická trasování jsou události vydávané na klíčových místech v zásobníku WCF, které umožňují řešení potíží se službami WCF v produkčním prostředí.
 
- Analytické trasování ve službách WCF je trasování, který je možné zapnout v produkčním prostředí s minimálním dopadem na výkon. Trasování jsou emitovány jako události do relace trasování událostí pro Windows.
+ Analytická trasování ve službách WCF je trasování, které je možné zapnout v produkčním prostředí s minimálním dopadem na výkon. Tato trasování jsou generována jako události v relaci trasování událostí pro Windows.
 
- Tato ukázka obsahuje základní služby WCF, ve které události se vysílají ze služby do protokolu událostí, které můžete zobrazit pomocí prohlížeče událostí. Také je možné spustit relaci vyhrazené trasování událostí pro Windows, který naslouchá událostem ze služby WCF. Ukázka zahrnuje skript k vytvoření vyhrazených relace trasování událostí pro Windows, který uchovává události v binárním souboru, který může číst pomocí prohlížeče událostí.
+ Tato ukázka obsahuje základní službu WCF, ve které jsou události emitovány ze služby do protokolu událostí, který lze zobrazit pomocí Prohlížeč událostí. Je také možné spustit vyhrazenou relaci ETW, která naslouchá událostem ze služby WCF. Ukázka obsahuje skript pro vytvoření vyhrazené relace trasování událostí pro Windows, která ukládá události do binárního souboru, který je možné číst pomocí Prohlížeč událostí.
 
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+#### <a name="to-use-this-sample"></a>Použití této ukázky
 
-1. Pomocí sady Visual Studio 2012, otevřete soubor řešení EtwAnalyticTraceSample.sln.
+1. Pomocí sady Visual Studio 2012 otevřete soubor řešení EtwAnalyticTraceSample. sln.
 
-2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3. Abyste mohli spustit řešení, stiskněte CTRL + F5.
+3. Pokud chcete řešení spustit, stiskněte klávesy CTRL + F5.
 
-     Ve webovém prohlížeči, klikněte na tlačítko **Calculator.svc**. Identifikátor URI dokumentu WSDL pro službu by se zobrazit v prohlížeči. Zkopírujte tento identifikátor URI.
+     Ve webovém prohlížeči klikněte na **Kalkulačka. svc**. V prohlížeči by se měl zobrazit identifikátor URI dokumentu WSDL pro službu. Zkopírujte tento identifikátor URI.
 
-     Ve výchozím nastavení, služba začne naslouchat požadavkům na portu 1378 `http://localhost:1378/Calculator.svc`.
+     Ve výchozím nastavení služba zahajuje naslouchání požadavkům na portu 1378 `http://localhost:1378/Calculator.svc`.
 
-4. Spustíte klienta testu WCF (WcfTestClient.exe).
+4. Spusťte testovacího klienta WCF (WcfTestClient. exe).
 
-     Testovací klient WCF (WcfTestClient.exe) se nachází na `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`.  Je adresář instalace sady Visual Studio 2012 výchozí `C:\Program Files\Microsoft Visual Studio 10.0`.
+     Testovací klient služby WCF (WcfTestClient. exe) je umístěný na `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`adrese.  Výchozí instalační adresář sady Visual Studio 2012 je `C:\Program Files\Microsoft Visual Studio 10.0`.
 
-5. V rámci testovacího klienta WCF, přidání služby tak, že vyberete **souboru**a potom **přidat službu**.
+5. V rámci testovacího klienta WCF přidejte službu tak, že vyberete **soubor**a pak **přidáte službu**.
 
-     Přidáte adresu koncového bodu do vstupního pole. Výchozí hodnota je `http://localhost:1378/Calculator.svc`.
+     Do vstupního pole přidejte adresu koncového bodu. Výchozí hodnota je `http://localhost:1378/Calculator.svc`.
 
 6. Otevřete Prohlížeč událostí aplikace.
 
-     Před vyvoláním služby, spusťte Prohlížeč událostí a ujistěte se, že je pro sledování události ze služby WCF, protože ho naslouchání v protokolu událostí.
+     Před vyvoláním služby spusťte Prohlížeč událostí a zajistěte, aby protokol událostí naslouchal sledování událostí vygenerovaných ze služby WCF.
 
-7. Z **Start** nabídce vyberte možnost **nástroje pro správu**a potom **Prohlížeč událostí**.  Povolit **analytické** a **ladění** protokoly.
+7. V nabídce **Start** vyberte **Nástroje pro správu**a potom **Prohlížeč událostí**.  Povolte protokoly pro **analýzu** a **ladění** .
 
-8. Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak **Aplikace Server-**. Klikněte pravým tlačítkem na **aplikace Server-** vyberte **zobrazení**a potom **zobrazit protokoly ladění a analýzu**.
+8. Ve stromovém zobrazení v Prohlížeč událostí přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom na **aplikační server – aplikace**. Klikněte pravým tlačítkem na **aplikační server – aplikace**, vyberte **Zobrazit**a pak **Zobrazte protokoly o analýze a ladění**.
 
-     Ujistěte se, **zobrazit protokoly ladění a analýzu** zaškrtnutá možnost.
+     Zajistěte, aby byla zaškrtnuta možnost **Zobrazit protokoly o analýze a ladění** .
 
-9. Povolit **analytické** protokolu.
+9. Povolte **analytický** protokol.
 
-     Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol**.
+     Ve stromovém zobrazení v Prohlížeč událostí přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom na **aplikační server – aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **Povolit protokol**.
 
-#### <a name="to-test-the-service"></a>K otestování služby
+#### <a name="to-test-the-service"></a>Testování služby
 
-1. Přepněte zpět do klienta testu WCF a dvakrát klikněte na panel `Divide` a ponechte výchozí hodnoty, které určují jmenovatelem 0.
+1. Přepněte zpátky na testovacího klienta WCF a dvakrát klikněte `Divide` a ponechte výchozí hodnoty, které určují jmenovatele 0.
 
-     Je-li jmenovatelem 0, služba vyvolá chybu.
+     Pokud je jmenovatel 0, vyvolá služba chybu.
 
-2. Sledujte události generované ze služby.
+2. Sledujte události emitované ze služby.
 
-     Přepněte zpět do prohlížeče událostí a přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak **Aplikace Server-**. Klikněte pravým tlačítkem na **analytické** a vyberte **aktualizovat**.
+     Přepněte zpět na Prohlížeč událostí a přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom na **aplikační server – aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **aktualizovat**.
 
-     Události analytického trasování WCF se zobrazí v prohlížeči událostí. Zjistíte, že protože způsobil chybu na službu, kterou událost trasování chyby je zobrazena v události prohlížeč.
+     Události analytického trasování WCF se zobrazí v prohlížeči událostí. Všimněte si, že protože služba vyvolala chybu, zobrazí se v prohlížeči událostí událost trasování chyby.
 
-3. Opakujte kroky 1 a 2, ale s platné vstupy. Hodnota `N2` parametr může být cokoli jiného než 0.
+3. Opakujte kroky 1 a 2, ale s platnými vstupy. Hodnota `N2` parametru může být libovolné číslo jiné než 0.
 
-     Aktualizovat analytického kanálu zobrazíte WCF událostí neobsahují všechny chybové události.
+     Aktualizujte analytickou kanál, aby se zobrazily události WCF, které neobsahují žádné chybové události.
 
- Ukázce události analytického trasování ze služby WCF, protože ho.
+ Ukázka demonstruje události analytického trasování emitované ze služby WCF.
 
-#### <a name="to-cleanup-optional"></a>Vyčistit (volitelné)
+#### <a name="to-cleanup-optional"></a>K vyčištění (volitelné)
 
 1. Otevřete Prohlížeč událostí.
 
-2. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom  **Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **zakázat protokol**.
+2. Přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak na **aplikace-Server-aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte možnost **zakázat protokol**.
 
-3. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a potom  **Aplikace serveru**. Klikněte pravým tlačítkem na **analytické** a vyberte **vymazat protokol**.
+3. Přejděte na **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**a pak na **aplikace-Server-aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte možnost **Vymazat protokol**.
 
-4. Zvolte **vymazat** možnost pro vymazání událostí.
+4. Kliknutím na možnost **Vymazat** vymažte události.
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

@@ -2,37 +2,37 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: 9c2a1fc1b398a3a9efcd0c824ca041a790448dd3
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 5da6497eadc6f02210c7f9d35d2889c98dc34ce4
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487646"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039958"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
-Tato ukázka předvádí, jak používat vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> třídy pro úpravu chování za běhu služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velkým množstvím služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu použít vlastní hostitel služby v prostředí hostování internetové informační služby (IIS) nebo Windows Process Activation Service (WAS).  
+Tato ukázka předvádí, jak použít vlastní derivát <xref:System.ServiceModel.ServiceHost> třídy pro změnu chování služby za běhu. Tento přístup poskytuje opakovaně použitelnou alternativu ke konfiguraci velkého počtu služeb běžným způsobem. Ukázka také ukazuje, jak použít <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu pro použití vlastní třídy ServiceHost ve službě Internetová informační služba (IIS) nebo v hostitelském prostředí služby WAS (Windows Process Activation Service).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Hosting\CustomServiceHost`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Hosting\CustomServiceHost`  
   
-## <a name="about-the-scenario"></a>O scénář  
- Pokud chcete zabránit neúmyslnému zveřejnění metadat služby potenciálně citlivých, výchozí konfigurace pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečený, ale také znamená, že nemůžete použít metadat importovat nástroj (například Svcutil.exe) ke generování kódu klienta, který je potřeba volat službu, není-li v konfiguraci není explicitně povoleno chování publikování metadat služby.  
+## <a name="about-the-scenario"></a>O scénáři  
+ Aby nedocházelo k neúmyslnému zveřejnění potenciálně citlivých metadat služby, služba výchozí konfigurace služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je standardně zabezpečené, ale také znamená, že nemůžete použít nástroj pro import metadat (například Svcutil. exe), aby se vygeneroval kód klienta vyžadovaný pro volání služby, pokud není v konfiguraci explicitně povolený chování publikování metadat služby.  
   
- Publikování metadat pro velký počet služeb zahrnuje přidání stejné prvky konfigurace pro jednotlivé služby, což vede k velké množství informací o konfiguraci, která je v podstatě stejné. Jako alternativu ke konfiguraci jednotlivých služeb samostatně je možné psát imperativního kódu, který umožňuje publikování jednou metadat a pak znovu použít tento kód napříč několika různých služeb. To lze provést tak, že vytvoříte novou třídu, která je odvozena z <xref:System.ServiceModel.ServiceHost> a přepíše `ApplyConfiguration`– metoda () imperativně přidat chování publikování metadat.  
+ Povolení publikování metadat pro velký počet služeb zahrnuje přidání stejných konfiguračních prvků do každé jednotlivé služby, což má za následek velké množství informací o konfiguraci, které jsou v podstatě stejné. Jako alternativu ke konfiguraci jednotlivých služeb je možné napsat imperativní kód, který umožňuje publikování metadat jednou a potom tento kód znovu použít napříč několika různými službami. To je dosaženo vytvořením nové třídy, která je odvozena <xref:System.ServiceModel.ServiceHost> z a `ApplyConfiguration`přepisuje metodu () pro imperativní přidání chování publikování metadat.  
   
 > [!IMPORTANT]
->  Pro přehlednost Tato ukázka ukazuje, jak vytvořit koncový bod publikování metadat zabezpečená. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené uživatele a musí tak, aby byl veřejně pocházejí metadata služby odpovídající věnovat pozornost před nasazením tyto koncové body.  
+> Pro přehlednost Tato ukázka ukazuje, jak vytvořit nezabezpečený koncový bod publikování metadat. Tyto koncové body jsou možná dostupné anonymním neověřeným příjemcům a před nasazením těchto koncových bodů je nutné zajistit, aby bylo zajištěno, že bude jejich veřejněné zveřejnění metadat služby vhodné.  
   
-## <a name="implementing-a-custom-servicehost"></a>Implementace vlastní hostitel služby  
- <xref:System.ServiceModel.ServiceHost> Třída zveřejňuje několik užitečné virtuální metody, které můžete přepsat dědice ke změně chování za běhu služby. Například `ApplyConfiguration`– metoda () načte informace o konfiguraci služeb z konfigurace úložiště a mění hostitele <xref:System.ServiceModel.Description.ServiceDescription> odpovídajícím způsobem. Výchozí implementace načte konfiguraci z konfiguračního souboru aplikace. Můžete přepsat vlastní implementace `ApplyConfiguration`() pro další úpravu <xref:System.ServiceModel.Description.ServiceDescription> pomocí imperativního kódu nebo dokonce i úplně nahradit výchozí konfigurace úložiště. Chcete-li například čtení konfigurace koncového bodu služby z databáze místo souboru konfigurace aplikace.  
+## <a name="implementing-a-custom-servicehost"></a>Implementace vlastní třídy ServiceHost  
+ <xref:System.ServiceModel.ServiceHost> Třída zveřejňuje několik užitečných virtuálních metod, které mohou dědit pro změnu chování služby za běhu. Například `ApplyConfiguration`metoda () čte informace o konfiguraci služby z úložiště konfigurace a mění <xref:System.ServiceModel.Description.ServiceDescription> hostitele odpovídajícím způsobem. Výchozí implementace čte konfiguraci z konfiguračního souboru aplikace. Vlastní implementace mohou přepsat `ApplyConfiguration`() pro další <xref:System.ServiceModel.Description.ServiceDescription> změnu pomocí imperativního kódu nebo dokonce nahradit výchozí úložiště konfigurace. Například pro čtení konfigurace koncového bodu služby z databáze místo konfiguračního souboru aplikace.  
   
- V tomto příkladu chceme vytvořit vlastní hostitel služby, který přidá třídě ServiceMetadataBehavior (který umožňuje publikování metadat), i když toto chování se nepřidá explicitně v konfiguračním souboru služby. K tomu vytvoříme novou třídu, která dědí z <xref:System.ServiceModel.ServiceHost> a přepíše `ApplyConfiguration`().  
+ V této ukázce chceme vytvořit vlastní třídu ServiceHost, která přidá rozhraní ServiceMetadataBehavior (což umožňuje publikování metadat) i v případě, že toto chování není explicitně přidáno do konfiguračního souboru služby. K tomu vytvoříme novou třídu, která dědí z <xref:System.ServiceModel.ServiceHost> a Overrides `ApplyConfiguration`().  
   
 ```  
 class SelfDescribingServiceHost : ServiceHost  
@@ -57,7 +57,7 @@ class SelfDescribingServiceHost : ServiceHost
 }  
 ```  
   
- Protože jsme nechcete ignorovat všechny konfigurace, který byl poskytnut v konfiguračním souboru aplikace, první věc, kterou naše přepsání `ApplyConfiguration`nemá () je volání základní implementaci. Po dokončení této metody můžete imperativně přidáme <xref:System.ServiceModel.Description.ServiceMetadataBehavior> popis, pomocí následujících imperativního kódu.  
+ Vzhledem k tomu, že nechcete ignorovat žádnou konfiguraci, která byla k dispozici v konfiguračním souboru aplikace, první věc `ApplyConfiguration`() je volání základní implementace. Po dokončení této metody můžeme imperativně přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> k popisu pomocí následujícího imperativního kódu.  
   
 ```  
 ServiceMetadataBehavior mexBehavior = this.Description.Behaviors.Find<ServiceMetadataBehavior>();  
@@ -74,7 +74,7 @@ else
 }  
 ```  
   
- Poslední věcí, kterou naše `ApplyConfiguration`přepsání (), musíte udělat, je přidat výchozí koncový bod metadat. Podle konvence je vytvořen jeden koncový bod metadat pro každý identifikátor URI v kolekci adres BaseAddresses hostitele služby.  
+ Poslední věc `ApplyConfiguration`, kterou je třeba přepsat, je nutné přidat výchozí koncový bod metadat. Podle konvence je pro každý identifikátor URI v kolekci adres BaseAddresses hostitele služby vytvořen jeden koncový bod metadat.  
   
 ```  
 //Add a metadata endpoint at each base address  
@@ -110,8 +110,8 @@ foreach (Uri baseAddress in this.BaseAddresses)
 }  
 ```  
   
-## <a name="using-a-custom-servicehost-in-self-host"></a>Použití vlastní hostitel služby v hostování na vlastním serveru  
- Teď, když jsme dokončili naše vlastní implementace ServiceHost, jsme slouží k přidání chování publikování metadat k libovolné službě hostováním danou službu v rámci instance naší `SelfDescribingServiceHost`. Následující kód ukazuje, jak ho použít ve scénáři hostování na vlastním serveru.  
+## <a name="using-a-custom-servicehost-in-self-host"></a>Použití vlastní ServiceHost v samoobslužném hostování  
+ Teď, když jsme dokončili naši vlastní implementaci ServiceHost, ji můžeme použít k přidání chování publikování metadat do jakékoli služby hostováním této služby uvnitř instance našeho `SelfDescribingServiceHost`. Následující kód ukazuje, jak ho použít ve scénáři samostatného hostitele.  
   
 ```  
 SelfDescribingServiceHost host =   
@@ -119,10 +119,10 @@ SelfDescribingServiceHost host =
 host.Open();  
 ```  
   
- Naše vlastního hostitele stále načítá konfigurace koncového bodu služby z konfiguračního souboru aplikace, tak, jako kdyby jsme použili výchozí <xref:System.ServiceModel.ServiceHost> třídy pro hostování služby. Ale vzhledem k tomu, že jsme přidali logiky povolit publikování v rámci naší vlastního hostitele metadat, jsme již musíte povolit explicitně chování při publikování v konfiguraci metadat. Tento přístup má různé výhody, pokud vytváříte aplikaci, která obsahuje několik služeb a chcete povolit publikování metadat na každém z nich bez psaní stejný konfigurační prvky pořád dokola.  
+ Náš vlastní hostitel pořád čte konfiguraci koncového bodu služby z konfiguračního souboru aplikace, stejně jako když jsme použili výchozí <xref:System.ServiceModel.ServiceHost> třídu pro hostování služby. Vzhledem k tomu, že jsme přidali logiku pro povolení publikování metadat v rámci našeho vlastního hostitele, už nemusíte explicitně povolit chování publikování metadat v konfiguraci. Tento přístup má odlišnou výhodu při vytváření aplikace, která obsahuje několik služeb a chcete povolit publikování metadat na každém z nich, aniž byste museli psát stejné konfigurační prvky.  
   
-## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Použití vlastní hostitel služby IIS nebo WAS  
- Používání vlastní hostitel služby ve scénářích hostování na vlastním serveru je jasné, protože je kód aplikace, která je nakonec odpovědné za vytváření a otevírání instance hostitele služby. IIS nebo WAS hostitelské prostředí ale infrastruktura WCF je dynamicky vytvoření instance hostitele vaší služby odpověď na příchozí zprávy. Vlastní Obsluha hostitelů lze také v toto hostitelské prostředí, ale vyžadují další kód ve formuláři ServiceHostFactory. Následující kód ukazuje odvozený ze <xref:System.ServiceModel.Activation.ServiceHostFactory> , který vrátí instance naší vlastní `SelfDescribingServiceHost`.  
+## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Použití vlastního hostitele ServiceHost ve službě IIS nebo WAS  
+ Použití vlastního hostitele služby ve scénářích pro vlastní hostitele je jednoduché, protože se jedná o kód vaší aplikace, který je nakonec zodpovědný za vytvoření a otevření instance hostitele služby. Ve službě IIS nebo se hostující prostředí ale infrastruktura WCF dynamicky vytvoří instanci hostitele vaší služby v reakci na příchozí zprávy. Vlastní hostitelé služby můžete také použít v tomto hostitelském prostředí, ale vyžadují nějaký další kód ve formě ServiceHostFactory. Následující kód ukazuje derivaci <xref:System.ServiceModel.Activation.ServiceHostFactory> , který vrací instance našeho vlastního. `SelfDescribingServiceHost`  
   
 ```  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
@@ -141,9 +141,9 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
 }  
 ```  
   
- Jak je vidět, implementace vlastního ServiceHostFactory je velmi jednoduché. Všechny vlastní logiku se nachází uvnitř implementace ServiceHost; objekt pro vytváření vrátí instanci odvozené třídy.  
+ Jak vidíte, implementace vlastního ServiceHostFactory je velmi jednoduchá. Všechny vlastní logiky se nacházejí v implementaci ServiceHost. objekt pro vytváření vrací instanci odvozené třídy.  
   
- Určený objekt pro vytváření vlastní implementace služby musí přidáme některá další metadata do souboru .svc služby.  
+ Aby bylo možné používat vlastní továrnu s implementací služby, je nutné do souboru. svc služby přidat další metadata.  
   
 ```  
 <%@ServiceHost Service="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -151,29 +151,29 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
                language=c# Debug="true" %>  
 ```  
   
- Tady jsme přidali další `Factory` atribut `@ServiceHost` směrnice a předané CLR zadejte název objektu pro vytváření naše vlastní jako hodnotu atributu. Když služba IIS nebo WAS obdrží zprávu pro tuto službu, infrastruktury hostování WCF nejprve vytvoří instanci ServiceHostFactory a potom vytvořte instanci samotného hostitele služby pomocí volání `ServiceHostFactory.CreateServiceHost()`.  
+ Do direktivy jsme přidali dodatečný `Factory` atribut a jako hodnotu atributu jste předali název typu CLR naší vlastní továrny. `@ServiceHost` Když služba IIS nebo obdržela zprávu pro tuto službu, hostitelská infrastruktura WCF nejprve vytvoří instanci třídy ServiceHostFactory a potom vytvoří instanci hostitele služby sami voláním `ServiceHostFactory.CreateServiceHost()`.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- I když tato ukázka poskytuje plně funkčního klienta a implementaci služby, je bod ukázku si ukážeme, jak chcete změnit chování služby za běhu pomocí vlastního hostitele., proveďte následující kroky:  
+ I když tato ukázka poskytuje plně funkční implementaci klienta a služby, bod ukázky je ilustrující postup změny chování za běhu služby pomocí vlastního hostitele. proveďte následující kroky:  
   
-#### <a name="to-observe-the-effect-of-the-custom-host"></a>Chcete-li sledovat účinek vlastního hostitele  
+#### <a name="to-observe-the-effect-of-the-custom-host"></a>Postup sledování účinku vlastního hostitele  
   
-1. Otevřete soubor Web.config služby a podívejte se, že neexistuje žádná konfigurace explicitně povolení metadat služby.  
+1. Otevřete soubor Web. config služby a sledujte, že není k dispozici žádná konfigurace, která by měla pro službu explicitně povolení metadat.  
   
-2. Otevřete soubor SVC služby a zda se zobrazila zpráva jeho @ServiceHost direktiva obsahuje atribut Factory, který určuje název vlastního ServiceHostFactory.  
+2. Otevřete soubor služby. svc a sledujte, že jeho @ServiceHost Direktiva obsahuje atribut Factory, který určuje název vlastní ServiceHostFactory.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Po řešení je sestavený Build, spusťte Setup.bat nastavení ServiceModelSamples aplikace ve službě IIS 7.0. Adresář ServiceModelSamples by se měl objevit jako aplikace služby IIS 7.0.  
+3. Po sestavení řešení spusťte soubor Setup. bat a nastavte aplikaci ServiceModelSamples ve službě IIS 7,0. Adresář ServiceModelSamples by se teď měl zobrazit jako aplikace IIS 7,0.  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5. Pokud chcete odebrat aplikace služby IIS 7.0, spusťte Cleanup.bat.  
+5. Pokud chcete odebrat aplikaci IIS 7,0, Spusťte Cleanup. bat.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Hostování služby WCF v IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Postupy: Hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

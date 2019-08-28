@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 2e7008f6693d7d76520a7ff6ae9172e28e4990c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 77bf117b8835623d768f8b8b0ec3e4195174cad7
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207003"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70043951"
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidání sloupců do datové tabulky
-A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazují **sloupce** vlastnost tabulky. Tuto sadu sloupců, společně s omezeními, definuje schéma a struktura tabulky.  
+Obsahuje kolekci objektů, na které odkazuje vlastnost Columns v tabulce. <xref:System.Data.DataTable> <xref:System.Data.DataColumn> Tato kolekce sloupců, spolu s omezeními, definuje schéma nebo strukturu tabulky.  
   
- Vytvoříte **DataColumn** objektů v rámci tabulky pomocí **DataColumn** konstruktoru, nebo pomocí volání **přidat** metodu **sloupce**vlastnost tabulky, který je <xref:System.Data.DataColumnCollection>. **Přidat** metoda přijímá volitelný **Názevsloupce**, **datový typ**, a **výraz** argumenty a vytvoří novou  **Objekt DataColumn** jako člena kolekce. Také přijímá existující **DataColumn** objektu a přidá jej do kolekce a vrátí odkaz na přidaném **DataColumn** pokud o to požádá. Protože **DataTable** objekty nejsou specifické pro libovolný zdroj dat, typy rozhraní .NET Framework se používají při zadávání datového typu **DataColumn**.  
+ Objekty **DataColumn** lze vytvořit v tabulce pomocí konstruktoru DataColumn nebo voláním metody **Add** vlastnosti Columns tabulky, která je <xref:System.Data.DataColumnCollection>. Metoda **Add** akceptuje volitelné argumenty **ColumnName**, **DataType**a **Expression** a vytvoří nový datový **sloupec** jako člena kolekce. Přijímá také existující objekt **DataColumn** a přidává ho do kolekce a v případě potřeby vrátí odkaz na přidaný DataColumn . Vzhledem k tomu, že objekty **DataTable** nejsou specifické pro žádný zdroj dat, .NET Framework typy se používají při zadávání datového typu **DataColumn**.  
   
- Následující příklad přidá čtyři sloupce **DataTable**.  
+ Následující příklad přidá čtyři sloupce do **objektu DataTable**.  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -44,12 +44,12 @@ workTable.Columns.Add("CustFName", typeof(String));
 workTable.Columns.Add("Purchases", typeof(Double));  
 ```  
   
- V příkladu, Všimněte si, že vlastnosti **CustID** sloupec je nastaven na nepovoluje **DBNull** hodnoty a k omezení hodnoty, které mají být jedinečné. Ale pokud definujete **CustID** sloupec jako sloupec primárního klíče tabulky, **AllowDBNull** vlastnost bude automaticky nastavena **false** a **Jedinečné** vlastnost bude automaticky nastavena **true**. Další informace najdete v tématu [definování primárních klíčů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
+ V příkladu si všimněte, že vlastnosti pro sloupec **custid** jsou nastaveny tak, aby nepovolovaly hodnoty **DBNull** a omezily hodnoty tak, aby byly jedinečné. Pokud však definujete sloupec **custid** jako sloupec primárního klíče tabulky, vlastnost **AllowDBNull** bude automaticky nastavena na **hodnotu false** a vlastnost **Unique** bude automaticky nastavena na **hodnotu true**. Další informace najdete v tématu [Definování primárních klíčů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
   
 > [!CAUTION]
->  Pokud není zadán název sloupce pro sloupec, ve sloupci je předána na přírůstkové výchozí název sloupce*N,* počínaje "Sloupec1", když se přidá do **DataColumnCollection**. Doporučujeme vám, že byste se vyhnout zásadu vytváření názvů "sloupce*N*" když zadáte název sloupce, vzhledem k tomu, že zadáte název dojít ke konfliktu s existujícím názvem sloupce výchozí v **DataColumnCollection**. Pokud zadaný název již existuje, je vyvolána výjimka.  
+> Pokud pro sloupec není zadán název sloupce, sloupec má při přidání do objektu DataColumnCollection přírůstkový výchozí název sloupce*N,* který začíná na "Sloupec1". Doporučujeme vyhnout se konvenci pojmenování "Column*N*" při zadání názvu sloupce, protože zadané jméno může být v konfliktu s existujícím výchozím názvem sloupce v objektu DataColumnCollection. Pokud zadaný název již existuje, je vyvolána výjimka.  
   
- Pokud používáte <xref:System.Xml.Linq.XElement> jako <xref:System.Data.DataColumn.DataType%2A> z <xref:System.Data.DataColumn> v <xref:System.Data.DataTable>, serializace XML nebude fungovat, pokud čtení v datech. Například, pokud je vypsat <xref:System.Xml.XmlDocument> pomocí `DataTable.WriteXml` metoda po serializace za účelem je do další nadřazeného uzlu v XML <xref:System.Xml.Linq.XElement>. Chcete-li tento problém obejít, použijte <xref:System.Data.SqlTypes.SqlXml> zadejte místo <xref:System.Xml.Linq.XElement>. `ReadXml` a `WriteXml` fungují správně s <xref:System.Data.SqlTypes.SqlXml>.  
+ Pokud používáte <xref:System.Xml.Linq.XElement> <xref:System.Data.DataColumn.DataType%2A> jako<xref:System.Data.DataColumn> v ,<xref:System.Data.DataTable>serializace XML nebude při čtení dat fungovat. Například pokud napíšete <xref:System.Xml.XmlDocument> `DataTable.WriteXml` metodu pomocí metody, po serializaci do XML je <xref:System.Xml.Linq.XElement>další nadřazený uzel v. Chcete-li tento problém obejít, <xref:System.Data.SqlTypes.SqlXml> použijte typ <xref:System.Xml.Linq.XElement>místo. `ReadXml`a `WriteXml` funguje správně s <xref:System.Data.SqlTypes.SqlXml>.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -58,4 +58,4 @@ workTable.Columns.Add("Purchases", typeof(Double));
 - <xref:System.Data.DataTable>
 - [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
 - [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -4,51 +4,51 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-ms.openlocfilehash: 766b95163f164ec76135b964115069b6855ceebf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 07c215d373e4ac1cbadf82a48b8cb3d90efdbdb4
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750674"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040556"
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>Objektová proměnná nebo proměnná bloku With nebyla nastavena.
-Odkazují na neplatný objekt proměnnou.   Této chybě může dojít z několika důvodů:
+Je odkazováno na neplatnou proměnnou objektu.   K této chybě může dojít z několika důvodů:
 
-- Proměnná byla deklarovaná bez zadaného typu. Pokud je proměnná deklarována bez určení typu, použije se výchozí typ `Object`.
+- Proměnná byla deklarována bez určení typu. Je-li proměnná deklarována bez určení typu, je použita výchozí hodnota `Object`typu.
 
-    Například proměnná deklarovaná pomocí `Dim x` budou mít typ `Object;` proměnná deklarovaná pomocí `Dim x As String` budou mít typ `String`.
+    `Dim x` Například Proměnná deklarovaná s by měla být typu `Object;` proměnná s `Dim x As String` deklarací by byla typu `String`.
 
     > [!TIP]
-    >  `Option Strict` Příkaz zakáže implicitního zápisu, která vede `Object` typu. Vynecháte-li typ, dojde k chybě kompilace. Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).
+    > Příkaz nepovoluje implicitní zadání, které má `Object` za následek typ. `Option Strict` Pokud vynecháte typ, dojde k chybě při kompilaci. Viz [příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md).
 
-- Pokoušíte se odkazovat na objekt, který je nastavená na `Nothing`.
+- Pokoušíte se vytvořit odkaz na objekt, který byl nastaven na `Nothing`hodnotu.
 
-- Pokoušíte se o přístup k prvku, který nebyl správně deklarované proměnné pole.
+- Pokoušíte se o přístup k prvku proměnné pole, která nebyla správně deklarována.
 
-    Například pole deklarované jako `products() As String` chyba se aktivuje, pokud se pokusíte odkazovat na prvek pole `products(3) = "Widget"`. Pole neobsahuje žádné prvky a je považován za objekt.
+    Například pole deklarované jako `products() As String` aktivuje chybu, pokud se pokusíte odkazovat na prvek pole. `products(3) = "Widget"` Pole nemá žádné elementy a je považováno za objekt.
 
-- Pokoušíte se přístupový kód v rámci `With...End With` blokovat před inicializací bloku.   A `With...End With` bloku se musí inicializovat pomocí provádí `With` příkaz vstupní bod.
+- Pokoušíte se o přístup k kódu v rámci `With...End With` bloku před inicializací bloku.   Blok musí být inicializován `With` spuštěním vstupního bodu příkazu. `With...End With`
 
 > [!NOTE]
-> V dřívějších verzích jazyka Visual Basic nebo VBA k této chybě také aktivovaly přiřazení hodnoty proměnné bez použití `Set` – klíčové slovo (`x = "name"` místo `Set x = "name"`). `Set` – Klíčové slovo již není platný v jazyce Visual Basic .net.
+> V dřívějších verzích Visual Basic nebo v jazyce VBA se tato chyba aktivovala také přiřazením hodnoty proměnné bez použití `Set` klíčového slova (`x = "name"` místo `Set x = "name"`). `Set` Klíčové slovo již není platné v Visual Basic .NET.
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-1. Nastavte `Option Strict` k `On` na začátek souboru přidejte následující kód:
+1. Nastavte `Option Strict` na`On` začátek souboru přidáním následujícího kódu:
 
     ```vb
     Option Strict On
     ```
 
-    Při spuštění projektu se objevit Chyba kompilátoru **seznam chyb** jakékoli proměnné, který byl zadán bez typu.
+    Při spuštění projektu se zobrazí chyba kompilátoru v **Seznam chyb** pro jakoukoliv proměnnou, která byla zadána bez typu.
 
-2. Pokud nechcete povolit `Option Strict`, vyhledávání v kódu pro všechny proměnné, které byly zadány bez typu (`Dim x` místo `Dim x As String`) a přidejte odpovídající typu k deklaraci.
+2. Pokud nechcete povolit `Option Strict`, vyhledejte v kódu proměnné, které byly zadány bez typu (`Dim x` namísto `Dim x As String`) a přidejte do deklarace zamýšlený typ.
 
-3. Ujistěte se, že nejsou odkazující na proměnné objektu, která byla nastavena na `Nothing`.  Vyhledávání v kódu pro klíčové slovo `Nothing`a upravte kód tak, aby objekt není nastaven na `Nothing` až poté, co mají odkazovat.
+3. Ujistěte se, že neodkazujete na proměnnou objektu, která je nastavená na `Nothing`.  Vyhledejte kód klíčového slova `Nothing`a upravte kód tak, aby objekt nebyl nastaven na `Nothing` hodnotu až po jeho odkazování.
 
-4. Ujistěte se, že jsou všechny proměnné pole dimenzovanými předtím, než k nim přístup. Dimenze můžete přiřadit při prvním vytvoření pole (`Dim x(5) As String` místo `Dim x() As String`), nebo použijte `ReDim` – klíčové slovo k nastavení rozměrů pole před první přístup.
+4. Ujistěte se, že všechny proměnné pole jsou dimenze, než k nim přistupujete. Dimenzi můžete přiřadit buď při prvním vytvoření pole (`Dim x(5) As String` `Dim x() As String`místo `ReDim` ), nebo pomocí klíčového slova pro nastavení rozměrů pole před prvním přístupem.
 
-5. Ujistěte se, že vaše `With` bloku je inicializován pomocí provádí `With` příkaz vstupní bod.
+5. Zajistěte `With` , aby byl váš blok inicializován `With` spuštěním vstupního bodu příkazu.
 
 ## <a name="see-also"></a>Viz také:
 

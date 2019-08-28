@@ -2,18 +2,18 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: d6ed22790f5abc01b44accc05e09e75d105df429
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a911e0ae49955c5b089bb231f94e4afc0c05c97
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006613"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039542"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
-Tato ukázka předvádí, jak lze přizpůsobit procesů serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
+Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
   
-## <a name="sample-details"></a>Ukázka podrobnosti  
- Tento příklad se skládá ze čtyř projekty. Jeden z nich odpovídá služby, které budou hostované službou IIS, který definuje následující kontrakt služby.  
+## <a name="sample-details"></a>Podrobnosti ukázky  
+ Tato ukázka se skládá ze čtyř projektů. Jedna z nich odpovídá službě, aby byla hostována službou IIS, která definuje následující kontrakt služby.  
   
 ```csharp
 // Definition of a service contract.  
@@ -38,7 +38,7 @@ public interface IDataContractCalculator
 }  
 ```  
   
- Jak je znázorněno v následujícím příkladu se implementuje kontrakt služby.  
+ Kontrakt služby je implementován, jak je znázorněno v následujícím příkladu.  
   
 ```csharp
 // Service class that implements the service contract.  
@@ -84,7 +84,7 @@ public interface IDataContractCalculator
 }  
 ```  
   
- Jiný projekt odpovídá danému klienta, který komunikuje se serverem a volá metody, které vystavuje. Definice klienta je znázorněno v následujícím příkladu.  
+ Jiný projekt odpovídá klientovi, který komunikuje se serverem a vyvolává metody, které zveřejňuje. V následujícím příkladu je uvedena definice klienta.  
   
 ```csharp  
  // Client implementation code.  
@@ -187,11 +187,11 @@ public interface IDataContractCalculator
 }  
 ```  
   
- Definici kontraktu služby je označená pomocí `KnownAssembly` atribut. Tento atribut obsahuje název knihovny typů, které stanou známými za běhu ve službě i klientovi.  
+ Definice kontraktu služby je označena `KnownAssembly` atributem. Tento atribut obsahuje název knihovny typů, které jsou všechny známy za běhu v rámci služby i klienta.  
   
- `KnownAssembly` Atribut implementuje `IContractBehavior` aby bylo možné definovat `DataContractSerializer` s `DataContractResolver` definované pro každý typ chování operace. `DataContractResolver` Odráží průběhu sestavení, když je vytvořena a vytvoří adresář s mapování mezi typy a názvy se dá použít při serializaci a deserializaci různých typů. Tímto způsobem `ResolveType` a `ResolveName` typy musí vyhledat data vyžadovaná ve slovníku.  
+ Atribut implementuje `IContractBehavior` , aby bylo `DataContractSerializer` možnédefinovatadefinovánoprokaždéchováníoperace.`DataContractResolver` `KnownAssembly` Při `DataContractResolver` vytvoření odráží na sestavení a vytvoří slovník s mapováním mezi typy a názvy, které se mají použít při serializaci a deserializaci různých typů. V takovém `ResolveType` případě musí typy `ResolveName` a vyhledávat data požadovaná ve slovníku.  
   
- `DataContractResolver` Definované pro tuto ukázku je znázorněno v následujícím příkladu.  
+ V následujícím příkladu je uvedena definiceprotutoukázku.`DataContractResolver`  
   
 ```csharp
 public class MyDataContractResolver : DataContractResolver  
@@ -275,7 +275,7 @@ public class MyDataContractResolver : DataContractResolver
    }  
 ```  
   
- Knihovnu typů, které jsou používané v tomto příkladu je znázorněno v následujícím příkladu.  
+ Knihovna typů použitá v této ukázce je uvedena v následujícím příkladu.  
   
 ```csharp 
  [DataContract]  
@@ -320,9 +320,9 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- Všimněte si, že `ComplexNumber` staticky vědět, nemusí `ComplexNumberWithMagnitude` typu, protože je znám v době běhu.  
+ Všimněte si `ComplexNumber` , že není nutné staticky `ComplexNumberWithMagnitude` znát typ, protože se za běhu označuje jako známý.  
   
- Pokud vzorek je vytvořené a spuštěn, toto je očekávaný výstup, kterou jste získali v klientovi:  
+ Při sestavení a spuštění ukázky se jedná o očekávaný výstup získaný v klientovi:  
   
 ```console  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
@@ -344,29 +344,29 @@ Lists combined:
 4 + 4i  
 ```  
   
-#### <a name="to-set-up-run-and-build-the-sample"></a>Pokud chcete nastavit, spouštět a sestavit ukázku  
+#### <a name="to-set-up-run-and-build-the-sample"></a>Nastavení, spuštění a sestavení ukázky  
   
-1. Klikněte pravým tlačítkem na řešení **KnownAssemblyAttribute** a vyberte **vlastnosti**.  
+1. Klikněte pravým tlačítkem na **KnownAssemblyAttribute** řešení a vyberte **vlastnosti**.  
   
-2. V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.  
+2. V nabídce **běžné vlastnosti**vyberte možnost **projekt po spuštění**a pak klikněte na **více projektů po spuštění**.  
   
-3. Přidat **Start** akce **služby** a **klienta** projekty.  
+3. Přidejte **spouštěcí** akci do projektů **služby** a **klienta** .  
   
-4. Klikněte na tlačítko **OK**a stiskněte klávesu **F5** ke spuštění ukázky.  
+4. Klikněte na **OK**a stisknutím klávesy **F5** spusťte ukázku.  
   
-5. Pokud aplikace nespustí správně, ujistěte se, že vaše prostředí správně nastavené pomocí těchto kroků:  
+5. Pokud aplikace nefunguje správně, postupujte podle těchto kroků a ujistěte se, že je vaše prostředí správně nastavené:  
   
-6. Ujistěte se, že jste provedli [jednorázové nastavte si postup pro ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150774).  
+6. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150774).  
   
-7. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150775).  
+7. Při sestavování řešení postupujte podle pokynů v tématu sestavování [Windows Communication Foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).  
   
-8. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).  
+8. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  

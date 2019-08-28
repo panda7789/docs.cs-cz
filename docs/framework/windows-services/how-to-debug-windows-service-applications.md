@@ -9,18 +9,18 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 71b2b1d32c06afca4abd89df4f6449dacb32046c
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 74f834261d464430547ba3e1113db0ea780f593e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988521"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044446"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak jednoduché jako ladění jiných typů aplikací sady Visual Studio. Chcete-li ladit službu, je nutné spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěna. Pak můžete ladit aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
   
 > [!CAUTION]
->  K procesu se nemusíte připojovat, Pokud nevíte, co proces je, a porozumět důsledkům připojení a případně usmrcení tohoto procesu. Například pokud se připojíte k procesu WinLogon a pak zastavíte ladění, systém se zastaví, protože nemůže pracovat bez procesu WinLogon.  
+> K procesu se nemusíte připojovat, Pokud nevíte, co proces je, a porozumět důsledkům připojení a případně usmrcení tohoto procesu. Například pokud se připojíte k procesu WinLogon a pak zastavíte ladění, systém se zastaví, protože nemůže pracovat bez procesu WinLogon.  
   
  Ladicí program lze připojit pouze ke spuštěné službě. Proces přílohy přerušuje aktuální fungování vaší služby. ve skutečnosti se nezastaví nebo nezastaví zpracování služby. To znamená, že pokud vaše služba běží při zahájení ladění, je při ladění stále technicky ve stavu spuštěno, ale jeho zpracování bylo pozastaveno.  
   
@@ -55,7 +55,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
 8. V části **Dostupné procesy** zvolte proces pro vaši službu a pak zvolte **připojit**.  
   
     > [!TIP]
-    >  Tento proces bude mít stejný název jako spustitelný soubor pro vaši službu.  
+    > Tento proces bude mít stejný název jako spustitelný soubor pro vaši službu.  
   
      **Připojit k procesu** zobrazí se dialogové okno.  
   

@@ -13,19 +13,19 @@ helpviewer_keywords:
 - menu items [Windows Forms], enabling
 - menus [Windows Forms], disabling menu items
 ms.assetid: bcc1da84-50fd-41d2-8475-103b581d5654
-ms.openlocfilehash: a4bc24c5a514beaa17fdb201329b9729ec712406
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f86a2934e799e4604693491dacbecc517d44d810
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603545"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046229"
 ---
 # <a name="how-to-disable-toolstripmenuitems"></a>Postupy: Zakázání ToolStripMenuItems
-Můžete omezit nebo rozšířit příkazy, které uživatel může díky povolování a zakazování položky nabídky v reakci na aktivity uživatelů. Položky nabídky jsou ve výchozím nastavení povolená, když se vytvoří, ale tuto možnost lze upravit pomocí <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost. Tuto vlastnost můžete upravit v době návrhu **vlastnosti** okno nebo programově podle nastavení v kódu.  
+Můžete omezit nebo rozšířit příkazy, které může uživatel provést, povolením a zakázáním položek nabídky v reakci na aktivity uživatelů. Položky nabídky jsou ve výchozím nastavení povoleny při jejich vytvoření, ale lze je upravit prostřednictvím <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnosti. Tuto vlastnost můžete manipulovat v době návrhu v okně **vlastnosti** nebo programově jejich nastavením v kódu.  
   
-### <a name="to-disable-a-menu-item-programmatically"></a>Chcete-li zakázat položku nabídky prostřednictvím kódu programu  
+### <a name="to-disable-a-menu-item-programmatically"></a>Chcete-li zakázat položku nabídky programově  
   
-- V rámci metody, kde nastavíte vlastnosti položky nabídky, přidejte kód pro nastavení <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> vlastnost `false`.  
+- V rámci metody, kde nastavíte vlastnosti položky nabídky, přidejte kód pro nastavení <xref:System.Windows.Forms.ToolStripMenuItem.Enabled%2A> `false`vlastnosti na.  
   
     ```vb  
     MenuItem1.Enabled = False  
@@ -40,11 +40,11 @@ Můžete omezit nebo rozšířit příkazy, které uživatel může díky povolo
     ```  
   
     > [!TIP]
-    >  Zakázání nabídek nejvyšší úrovně nebo první položku v nabídce skryje všechny položky nabídky obsažené v nabídce, ale je nezakáže. Podobně zakázání položku nabídky, která má položky podnabídky skryje položky podnabídky, ale není je vypnout. Pokud všechny příkazy v dané nabídky jsou k dispozici pro uživatele, programovací vhodné skrýt i zakázat celou nabídku, bude považován, jak to představuje čisté uživatelské rozhraní. By měl skrýt a zakázat v nabídce a zakažte každé položky a podnabídky položky v nabídce, protože skrytí samostatně nezabraňuje přístup k příkazu nabídky prostřednictvím klávesovou zkratku. Nastavte <xref:System.Windows.Forms.ToolStripItem.Visible%2A> vlastnosti položky nabídek nejvyšší úrovně na `false` skrýt celé nabídky.  
+    > Zakázáním první nebo nejvyšší úrovně položky nabídky v nabídce se skryjí všechny položky nabídky obsažené v nabídce, ale nezakáže se. Podobně zakázání položky nabídky, která má položky podnabídky, skryje položky podnabídky, ale nezakáže je. Nejsou-li pro uživatele k dispozici všechny příkazy v dané nabídce, považuje se za dobrý postup programování pro skrytí a vypnutí celé nabídky, protože to představuje čisté uživatelské rozhraní. Nabídku byste měli skrýt a zakázat a v nabídce zakázat každou položku a položku podnabídky, protože skrytím samotné neznemožníte přístup k příkazu nabídky prostřednictvím klávesové zkratky. Nastavte vlastnost položky nabídky nejvyšší úrovně na `false` hodnotu pro skrytí celé nabídky. <xref:System.Windows.Forms.ToolStripItem.Visible%2A>  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStripMenuItem>
-- [Postupy: Skrytí ToolStripMenuItems](how-to-hide-toolstripmenuitems.md)
+- [Postupy: Skrýt ToolStripMenuItems](how-to-hide-toolstripmenuitems.md)
 - [Přehled ovládacího prvku MenuStrip](menustrip-control-overview-windows-forms.md)

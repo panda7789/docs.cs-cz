@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 3f1c1beda7519a113ea15c5fed84bcb017afae12
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 451f9581ae997ad86fee968fa978713db2049455
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962353"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044391"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Postupy: Vytvoření pracovního postupu stavového stroje
 Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.StateMachine> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.  
@@ -52,7 +52,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 9. Klikněte na **vytvořit proměnnou**.  
   
     > [!TIP]
-    >  Pokud se nezobrazí žádné pole **vytvořit proměnnou** , klikněte <xref:System.Activities.Statements.StateMachine> na aktivitu na ploše návrháře pracovního postupu a vyberte ji.  
+    > Pokud se nezobrazí žádné pole **vytvořit proměnnou** , klikněte <xref:System.Activities.Statements.StateMachine> na aktivitu na ploše návrháře pracovního postupu a vyberte ji.  
   
 10. Do `Guess` pole **název** zadejte, v rozevíracím seznamu **typ proměnné** vyberte **Int32** a pak stisknutím klávesy ENTER uložte proměnnou.  
   
@@ -67,7 +67,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 1. Klikněte na **State1** a vyberte ji. V **okně Vlastnosti**změňte **Zobrazovaný** název na `Initialize Target`.  
   
     > [!TIP]
-    >  Pokud se **okno Vlastnosti** nezobrazí, v nabídce **zobrazení** vyberte **okno Vlastnosti** .  
+    > Pokud se **okno Vlastnosti** nezobrazí, v nabídce **zobrazení** vyberte **okno Vlastnosti** .  
   
 2. Dvakrát klikněte na nově přejmenovaný **cílový stav inicializace** v Návrháři pracovních postupů a rozbalte ho.  
   
@@ -82,7 +82,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     ```  
   
     > [!TIP]
-    >  Pokud okno **panelu nástrojů** není zobrazeno, vyberte z nabídky **zobrazení** možnost **Sada nástrojů** .  
+    > Pokud okno **panelu nástrojů** není zobrazeno, vyberte z nabídky **zobrazení** možnost **Sada nástrojů** .  
   
 4. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   

@@ -2,65 +2,65 @@
 title: Koncové body SOAP a HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: c07391ccd1f8db6e5d2cb6e0c24fc06152d7517f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6fdd3bf4fb1712b181e753d1223df2709673b51e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617519"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045496"
 ---
 # <a name="soap-and-http-endpoints"></a>Koncové body SOAP a HTTP
-Tento příklad ukazuje, jak implementovat službu vzdáleného volání procedur a zpřístupnit ji ve formátu protokolu SOAP a ve formátu "Plain Old XML" (POX) s využitím modelu webového programování WCF. Zobrazit [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka podrobné informace o vazbě protokolu HTTP pro službu. Tato ukázka se zaměřuje na informace, které se týkají vystavení stejnou službu SOAP a HTTP pomocí různých vazeb.  
+Tato ukázka předvádí, jak implementovat službu pomocí protokolu RPC a zveřejnit ji ve formátu SOAP a ve formátu "obyčejného starého XML" (POX) pomocí modelu webového programování WCF. Další podrobnosti o vazbě HTTP pro službu najdete v ukázce [základní služby http](../../../../docs/framework/wcf/samples/basic-http-service.md) . Tato ukázka se zaměřuje na podrobnosti, které se vztahují k vystavení stejné služby prostřednictvím protokolu SOAP a protokolu HTTP pomocí různých vazeb.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Vystavení služby RPC přes protokol SOAP a HTTP pomocí technologie WCF.  
+ Vystavení služby RPC přes SOAP a HTTP pomocí WCF.  
   
-## <a name="discussion"></a>Diskuse  
- Tato ukázka obsahuje dvě součásti: projekt webové aplikace (služba), která obsahuje službu WCF a Konzolová aplikace (klient), která volá operace služby pomocí vazby protokolu SOAP a HTTP.  
+## <a name="discussion"></a>Účely  
+ Tato ukázka se skládá ze dvou součástí: projektu webové aplikace (služba), který obsahuje službu WCF a konzolovou aplikaci (klient), která vyvolá operace služby pomocí vazeb SOAP a HTTP.  
   
- Služba WCF poskytuje 2 činnosti`GetData` a `PutData` –, který echo řetězec, který byl předán jako vstup. Operace služby jsou opatřeny poznámkami s <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. Tyto atributy řídí projekce HTTP z těchto operací. Kromě toho jsou označena s <xref:System.ServiceModel.OperationContractAttribute>, což umožňuje jim být vystaveno přes vazby SOAP. Služby `PutData` vyvolá metoda výjimku <xref:System.ServiceModel.Web.WebFaultException>, která se odesílá zpět prostřednictvím protokolu HTTP stavový kód HTTP a odeslán zpět přes protokol SOAP jako chybu protokolu SOAP.  
+ Služba WCF zveřejňuje 2 operace –`GetData` a `PutData` – tento řetězec se předává jako vstup. Operace služby jsou opatřeny poznámkami <xref:System.ServiceModel.Web.WebGetAttribute> a <xref:System.ServiceModel.Web.WebInvokeAttribute>. Tyto atributy řídí projekci HTTP těchto operací. Kromě toho jsou opatřeny poznámkami <xref:System.ServiceModel.OperationContractAttribute>, které umožňují jejich zpřístupnění přes vazby SOAP. `PutData` Metoda služby<xref:System.ServiceModel.Web.WebFaultException>Vyvolá příkaz, který se pošle zpátky přes protokol HTTP pomocí kódu stavu HTTP a pošle zpátky přes SOAP jako chybu protokolu SOAP.  
   
- V souboru Web.config Konfiguruje službu WCF s 3 koncové body:  
+ Soubor Web. config konfiguruje službu WCF se 3 koncovými body:  
   
-- ~/Service.svc/mex koncového bodu, který zveřejňuje metadata služby pro přístup založený na protokolu SOAP klienty.  
+- Koncový bod ~/Service.svc/mex, který zpřístupňuje metadata služby pro přístup klientů založených na protokolu SOAP.  
   
-- ~/Service.svc/http koncového bodu, který umožňuje klientům přístup ke službě pomocí vazby HTTP.  
+- Koncový bod ~/Service.svc/http, který klientům umožňuje přístup ke službě pomocí vazby HTTP.  
   
-- Koncový bod ~/service.svc/soap, která umožňuje klientům přístup ke službě pomocí SOAP přes vazbu protokolu HTTP.  
+- Koncový bod ~/Service.svc/SOAP, který klientům umožňuje přístup ke službě pomocí vazby SOAP přes HTTP.  
   
- Koncový bod HTTP, nastavena <`webHttp`> standardní koncový bod, který má `helpEnabled` nastavena na `true`. V důsledku toho služba zpřístupňuje stránku nápovědy na základě XHTML ~/service.svc/http/help, založené na protokolu HTTP klientů můžete použít pro přístup ke službě.  
+ Koncový bod HTTP je nakonfigurován s <`webHttp`> standardní koncový bod, který je `helpEnabled` nastaven `true`na hodnotu. Výsledkem je, že služba zpřístupňuje stránku s podporou standardu XHTML na adrese ~/Service.svc/http/Help, kterou mohou klienti využívající protokol HTTP použít pro přístup ke službě.  
   
- Klientský projekt ukazuje přístupu ke službě pomocí proxy serveru SOAP (vygenerované pomocí **přidat odkaz na službu**) a přístup pomocí služby <xref:System.Net.WebClient>.  
+ Klientský projekt ukazuje přístup ke službě pomocí proxy protokolu SOAP (vygenerovaného prostřednictvím **Přidat odkaz na službu**) a přístupu ke službě <xref:System.Net.WebClient>pomocí.  
   
- Ukázka se skládá z hostované webové služby a aplikace konzoly. Konzolová aplikace běží, klient vytvářejí požadavky na službu a zapíše relevantní informace z odpovědi v okně konzoly.  
+ Ukázka se skládá z webové služby a konzolové aplikace. Při spuštění konzolové aplikace klient provede požadavky na službu a zapíše příslušné informace z odpovědí do okna konzoly.  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1. Otevřete řešení pro Ukázka koncové body HTTP a protokolu SOAP.  
+1. Otevřete řešení ukázky pro koncové body SOAP a HTTP.  
   
-2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+2. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.  
   
-3. Pokud ho ještě není otevřený, stiskněte kombinaci kláves CTRL + W, S otevřete **Průzkumníka řešení** okna.  
+3. Pokud ještě není otevřený, otevřete okno **Průzkumník řešení** stisknutím kombinace kláves CTRL + W, s.  
   
-4. Z **Průzkumníku řešení** okna, klikněte pravým tlačítkem na **služby** projektu a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit nový Instance** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**. Tím se spustí serveru ASP.NET development server, který je hostitelem služby.  
+4. V okně **Průzkumník řešení** klikněte pravým tlačítkem myši na projekt **služby** a umístěte kurzor na možnost místní nabídky **ladění** , aby se zobrazila místní nabídka **spustit novou instanci** . Klikněte na **spustit novou instanci**. Tím se spustí vývojový server ASP.NET, který je hostitelem služby.  
   
-5. Z okna Průzkumníka řešení, klikněte pravým tlačítkem na projekt klienta a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit novou instanci** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**.  
+5. Z okna Průzkumník řešení klikněte pravým tlačítkem myši na projekt klienta a umístěte kurzor na možnost místní nabídky **ladění** , aby se zobrazila místní nabídka **spustit novou instanci** . Klikněte na **spustit novou instanci**.  
   
-6. V okně konzoly klienta se zobrazí a poskytuje URI spuštěnou službu a identifikátor URI HTML stránka pro spuštěnou službu nápovědy. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči.  
+6. Zobrazí se okno Konzola klienta, ve kterém je uveden identifikátor URI běžící služby a identifikátor URI stránky s nápovědu HTML pro běžící službu. V jakémkoli okamžiku můžete zobrazit stránku HTML Help zadáním identifikátoru URI stránky s nastavením v prohlížeči.  
   
-7. Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
+7. Po spuštění ukázkového klienta zapíše klient stav aktuální aktivity.  
   
 8. Stisknutím libovolné klávesy ukončete konzolovou aplikaci klienta.  
   
-9. Stiskněte SHIFT + F5 ukončete ladění služby.  
+9. Stisknutím SHIFT + F5 zastavíte ladění služby.  
   
-10. V oznamovací oblasti Windows, klikněte pravým tlačítkem na ikonu ASP.NET development server a vyberte **Zastavit** v místní nabídce.  
+10. V oznamovací oblasti systému Windows klikněte pravým tlačítkem myši na ikonu vývojového serveru ASP.NET a v místní nabídce vyberte možnost **zastavit** .  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\SoapAndHttpEndpoints`
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\SoapAndHttpEndpoints`

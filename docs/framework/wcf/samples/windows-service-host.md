@@ -5,12 +5,12 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 6339666d80de6c40b390683c1dabe6925053d30d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2f2024a984111a826adab31ca15f1a46f9733de5
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942287"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045408"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
 Tato ukázka předvádí službu Windows Communication Foundation (WCF) hostovanou ve spravované službě systému Windows. Služby systému Windows jsou ovládány pomocí apletu služby v **Ovládacích panelech** a lze je nakonfigurovat tak, aby se automaticky spouštěly po restartování systému. Ukázka se skládá z klientského programu a programu služby systému Windows. Služba je implementována jako program. exe a obsahuje svůj vlastní hostitelský kód. V jiných hostitelských prostředích, jako jsou služby Aktivace procesů systému Windows (WAS) nebo Internetová informační služba (IIS), není nutné psát hostující kód.
@@ -19,13 +19,13 @@ Tato ukázka předvádí službu Windows Communication Foundation (WCF) hostovan
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
 > [!IMPORTANT]
->  Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WindowsService`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WindowsService`  
   
  Po vytvoření této služby je nutné ji nainstalovat pomocí nástroje Installutil. exe, stejně jako jakékoli jiné služby systému Windows. Pokud budete chtít změnit službu, musíte ji nejprve odinstalovat pomocí `installutil /u`nástroje. Soubory Setup. bat a Cleanup. bat, které jsou součástí této ukázky, jsou příkazy pro instalaci a spuštění služby systému Windows a pro vypnutí a odinstalaci služby systému Windows. Služba WCF může reagovat jenom na klienty, pokud je spuštěná služba systému Windows. Pokud zastavíte službu systému Windows pomocí apletu služby v **Ovládacích panelech** a spustíte klienta, dojde k <xref:System.ServiceModel.EndpointNotFoundException> výjimce, když se klient pokusí o přístup ke službě. Pokud službu systému Windows restartujete a znovu spustíte klienta, komunikace bude úspěšná.  
   

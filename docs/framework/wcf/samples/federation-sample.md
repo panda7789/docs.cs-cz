@@ -2,12 +2,12 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 10087c4c18a4bc24dd36d814619fc265f9987c8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d3a326f08e78edb79908485361f161c1b6da6625
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961430"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044978"
 ---
 # <a name="federation-sample"></a>Ukázka federace
 Tato ukázka demonstruje federované zabezpečení.  
@@ -89,7 +89,7 @@ Tato ukázka demonstruje federované zabezpečení.
 1. Otevřete okno příkazového řádku sady SDK. V ukázkové cestě spusťte Setup. bat. Tím se vytvoří virtuální adresáře vyžadované pro ukázku a nainstalují se požadované certifikáty s příslušnými oprávněními.  
   
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení v systému [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení v systému [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
   
 2. Otevřete FederationSample. sln v aplikaci Visual Studio a v nabídce **sestavení** vyberte **Sestavit řešení** . Tím se vytvoří společné soubory projektu, služba Bookstore, Bookstore STS, HomeRealm STS a nasadí je ve službě IIS. Tím se také vytvoří klientská aplikace pro Bookstore a ve složce FederationSample\BookStoreClient\bin\Debug se umístí spustitelný soubor BookStoreClient. exe.  
   
@@ -102,17 +102,17 @@ Tato ukázka demonstruje federované zabezpečení.
      Tato ukázka je nakonfigurovaná tak, aby umožňovala uživatelům koupit knihy, které $15 nebo méně. Při pokusu o zakoupení knih s vyššími náklady, než $15, dojde v klientovi k získání zprávy o odepření přístupu ze služby Book Store.  
   
     > [!NOTE]
-    >  Ukázka neaktualizuje limit úvěru uživatele po nákupu. V rámci limitu úvěru uživatele můžete opakovaně nakupovat knihy.  
+    > Ukázka neaktualizuje limit úvěru uživatele po nákupu. V rámci limitu úvěru uživatele můžete opakovaně nakupovat knihy.  
   
 #### <a name="to-clean-up"></a>Vyčištění  
   
 1. Spusťte nástroj CleanUp. bat. Tím odstraníte virtuální adresáře, které byly vytvořeny během instalace, a zároveň dojde k odebrání certifikátů nainstalovaných během instalace.  
   
 > [!IMPORTANT]
->  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  

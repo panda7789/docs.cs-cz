@@ -2,12 +2,12 @@
 title: Zajištění zabezpečení pro protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: c5db9fbf0dfb91ecb903660ebfb42c33f55b27bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b635591b7a3b07385ed48c6b1ea556139c6d77c5
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933610"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044257"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v protokolech zpráv a také v případě událostí generovaných protokolováním zpráv.  
@@ -91,7 +91,7 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
  Při použití těchto dvou přepínačů by měl správce počítače a nástroj pro nasazení aplikace velmi opatrní. Pokud je povolené protokolování PII, zaprotokolují se bezpečnostní klíče a PII. Pokud je zakázaná, citlivá a data specifická pro aplikaci se pořád přihlásí k hlavičkám a institucím zpráv. Důkladnější diskuzi o ochraně osobních údajů a ochraně PII, které se zveřejňují, najdete v tématu [Ochrana osobních údajů uživatelů](https://go.microsoft.com/fwlink/?LinkID=94647).  
   
 > [!CAUTION]
->  PII není v poškozených zprávách skryté. Taková zpráva se protokoluje bez jakýchkoli úprav. Výše uvedené atributy nemají žádný vliv na tento parametr.  
+> PII není v poškozených zprávách skryté. Taková zpráva se protokoluje bez jakýchkoli úprav. Výše uvedené atributy nemají žádný vliv na tento parametr.  
   
 ### <a name="custom-trace-listener"></a>Naslouchací proces vlastního trasování  
  Přidání vlastního naslouchacího procesu trasování ve zdroji trasování protokolování zpráv je oprávnění, které by mělo být omezeno na správce. Je to proto, že škodlivá vlastní naslouchací procesy je možné nakonfigurovat tak, aby odesílala zprávy vzdáleně, což vede k odhalení citlivých informací. Kromě toho, pokud nakonfigurujete vlastní naslouchací proces tak, aby odesílal zprávy na kabel, například, do vzdálené databáze, měli byste vymáhat správné řízení přístupu v protokolech zpráv ve vzdáleném počítači.  

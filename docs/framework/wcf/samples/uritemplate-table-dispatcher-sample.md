@@ -2,38 +2,38 @@
 title: Ukázka dispečera tabulky UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 3b32975d-ba90-4c5c-83bc-2fbb48f11c0c
-ms.openlocfilehash: 4c5f7172543f575655faafad781a272e355224b6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 724a13504cea2672aef7ff155fbbff055aac34e6
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662419"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044580"
 ---
 # <a name="uritemplate-table-dispatcher-sample"></a>Ukázka dispečera tabulky UriTemplate
-<xref:System.UriTemplateTable> Třída poskytuje strukturu jako slovník asociativní tabulky pro práci se sadou <xref:System.UriTemplate> instancí. Tato ukázka demonstruje základní dispatching modul vyvíjené `UriTemplateTable`, běžný scénář využití pro `UriTemplateTable` třídy.  
+Třída poskytuje tabulkovou strukturu asociativní tabulky pro práci se <xref:System.UriTemplate> sadou instancí. <xref:System.UriTemplateTable> Tato ukázka předvádí základní modul pro expedici sestavený `UriTemplateTable`pomocí, společný scénář použití `UriTemplateTable` pro třídu.  
   
- Tato ukázka demonstruje následující klíčové koncepty `UriTemplateTable` třídy:  
+ Tato ukázka demonstruje následující klíčové koncepty pro `UriTemplateTable` třídu:  
   
-- Přidružování delegátů pomocí `UriTemplates` v `UriTemplateTable`.  
+- Přidružení delegátů k `UriTemplates` `UriTemplateTable`v.  
   
-- Pomocí <xref:System.UriTemplateTable.MatchSingle%2A> získat správný obslužné rutiny delegáta pro konkrétní identifikátorem URI.  
+- Použijte <xref:System.UriTemplateTable.MatchSingle%2A> k získání správného delegáta obslužné rutiny pro konkrétní identifikátor URI.  
   
-- Vyvolání delegáta obslužné rutiny pro zpracování žádosti.  
+- Volání delegáta obslužné rutiny pro zpracování žádosti.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateDispatcher`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateDispatcher`  
   
 ## <a name="see-also"></a>Viz také:
 

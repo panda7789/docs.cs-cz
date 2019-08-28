@@ -2,12 +2,12 @@
 title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: cbeb0d254bf6716296f34020ea8796885e0f368a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5ca1d4e7f9107c798213d760d9780dbeded9eae0
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936258"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041271"
 ---
 # <a name="servicedebug"></a>\<serviceDebug >
 Určuje funkce ladění a informací o nápovědě pro službu Windows Communication Foundation (WCF).  
@@ -62,7 +62,7 @@ Určuje funkce ladění a informací o nápovědě pro službu Windows Communica
  Nastavení `includeExceptionDetailInFaults` povolují službě vracet jakékoli výjimky, které jsou vyvolány kódem aplikace, i v případě, že výjimka není deklarována pomocí <xref:System.ServiceModel.FaultContractAttribute>. `true` Toto nastavení je užitečné při ladění případů, kdy server vyvolává neočekávanou výjimku. Pomocí tohoto atributu je vrácena serializovaná forma neznámé výjimky a můžete prostudovat další podrobnosti o výjimce.  
   
 > [!CAUTION]
->  Vrácení spravovaných informací o výjimce klientům může představovat bezpečnostní riziko, protože podrobnosti o výjimce zpřístupňují informace o interní implementaci služby, kterou by mohli používat neoprávnění klienti. Z důvodu problémů se zabezpečením se důrazně doporučuje pouze v rámci řízených scénářů ladění. Při nasazování `includeExceptionDetailInFaults` aplikace `false` byste měli nastavit na.  
+> Vrácení spravovaných informací o výjimce klientům může představovat bezpečnostní riziko, protože podrobnosti o výjimce zpřístupňují informace o interní implementaci služby, kterou by mohli používat neoprávnění klienti. Z důvodu problémů se zabezpečením se důrazně doporučuje pouze v rámci řízených scénářů ladění. Při nasazování `includeExceptionDetailInFaults` aplikace `false` byste měli nastavit na.  
   
  Podrobnosti o problémech zabezpečení souvisejících se spravovanými výjimkami najdete v tématu [určení a manipulace s chybami ve smlouvách a službách](../../../wcf/specifying-and-handling-faults-in-contracts-and-services.md). Ukázku kódu naleznete v tématu [chování ladění služby](../../../wcf/samples/service-debug-behavior.md).  
   

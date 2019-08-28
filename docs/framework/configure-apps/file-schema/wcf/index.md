@@ -2,12 +2,12 @@
 title: Konfigurační schéma služby WCF
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
-ms.openlocfilehash: 8d7b4cbad1876888e7a22a92bdb28a17b880e159
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 37330b571553bb5e8f17ffad85faafbcaf19d217
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925394"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041290"
 ---
 # <a name="wcf-configuration-schema"></a>Konfigurační schéma služby WCF
 Konfigurační prvky Windows Communication Foundation (WCF) umožňují nakonfigurovat službu WCF a klientské aplikace. Pomocí [nástroje Configuration Editor (SvcConfigEditor. exe)](../../../wcf/configuration-editor-tool-svcconfigeditor-exe.md) můžete vytvářet a upravovat konfigurační soubory pro klienty a služby. Vzhledem k tomu, že konfigurační soubory jsou formátovány jako XML, musíte být obeznámeni s XML, pokud je chcete ručně upravovat pomocí textového editoru. Jinak můžete jej spustit do problémy jako k unfound značky elementu XML nebo atributu. Důvodem je, že značky elementu XML a atributy jsou malá a velká písmena.  
@@ -23,7 +23,7 @@ Konfigurační prvky Windows Communication Foundation (WCF) umožňují nakonfig
  ![Diagram, který zobrazuje schéma konfigurace WCF.](./media/index/windows-communication-foundation-configuration-schema.gif)  
   
 > [!CAUTION]
->  Měli byste chránit konfigurační oddíly WCF v konfiguračních souborech aplikace (App. config) pomocí příslušných seznamů Access Control (ACL), aby se předešlo potenciálním bezpečnostním hrozbám.  Měli byste se třeba ujistit, že k nastavení zabezpečení pro vazby aplikací nebo v oddílu modelu služby v konfiguračním souboru pro službu mají přístup jenom odpovídající uživatelé.  
+> Měli byste chránit konfigurační oddíly WCF v konfiguračních souborech aplikace (App. config) pomocí příslušných seznamů Access Control (ACL), aby se předešlo potenciálním bezpečnostním hrozbám.  Měli byste se třeba ujistit, že k nastavení zabezpečení pro vazby aplikací nebo v oddílu modelu služby v konfiguračním souboru pro službu mají přístup jenom odpovídající uživatelé.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [\<system.serviceModel>](system-servicemodel.md)  

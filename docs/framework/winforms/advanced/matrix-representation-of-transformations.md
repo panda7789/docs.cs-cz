@@ -16,90 +16,90 @@ helpviewer_keywords:
 - transformations [Windows Forms], translation
 - affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-ms.openlocfilehash: ceaad7b4bb5a70a890d261e39bc608becb388c17
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 24da407de24a924a68466e4301cc3f4a74cb2e94
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505634"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044242"
 ---
 # <a name="matrix-representation-of-transformations"></a>Maticové znázornění transformací
-Matici m x n je sadu čísel, které jsou uspořádány do milionů řádků a sloupců n. Následující obrázek znázorňuje několik matice.  
+Matice m × n je množina čísel uspořádaných v m řádcích a n sloupcích. Následující ilustrace znázorňuje několik matic.  
   
  ![Transformations](./media/aboutgdip05-art04.gif "AboutGdip05_art04")  
   
- Přidáním jednotlivým prvkům můžete přidat dvěma matice stejné velikosti. Následující obrázek ukazuje dva příklady přidávání matice.  
+ Přidáním jednotlivých prvků můžete přidat dvě matice stejné velikosti. Následující ilustrace znázorňuje dva příklady Sčítání matic.  
   
  ![Transformations](./media/aboutgdip05-art05.gif "AboutGdip05_art05")  
   
- Matici m x n můžete vynásobí matici p x n a výsledkem je matici m x p. Počet sloupců v první matice musí být stejný jako počet řádků v druhé matice. Například můžete matice 4 x 2 vynásobené 2 × 3 matice pro vytvoření matice 4 x 3.  
+ Matice m × n se dá vynásobit pomocí matice n × p a výsledkem je matice m × p. Počet sloupců v první matrici musí být stejný jako počet řádků ve druhé matici. Například matice 4 × 2 může být vynásobená maticí 2 × 3, která vytvoří matici 4 × 3.  
   
- Body v rovině a řádky a sloupce matice můžete představit jako vektorů. Například (2, 5) je vektor s dvě komponenty a (3, 7, 1) je vektor tří součástí. Součin dvou vektorů je definovaná následujícím způsobem:  
+ Body v rovině a řádky a sloupce matice lze představit jako vektory. Například (2, 5) je vektor se dvěma komponentami a (3, 7, 1) je vektor se třemi komponentami. Koncový součin dvou vektorů je definován následujícím způsobem:  
   
- (a, b) • (c, d) = ac + bd  
+ (a, b) • (c, d) = AC + BD  
   
- (a, b, c) • (d, e, f) = ad + být + cf  
+ (a, b, c) • (d, e, f) = AD + je + CF  
   
- Například součin z (2, 3) a (5, 4) je (2)(5) + (3)(4) = 22. SOUČIN (2, 5, 1) a (4, 3, 1) je (2)(4) + (5)(3) + (1)(1) = 24. Všimněte si, že součin dvou vektorů je číslo, ne jiným způsobem. Všimněte si také, že můžete vypočítat součin pouze v případě, že dva vektory mít stejný počet prvků.  
+ Například produkt s tečkou v (2, 3) a (5, 4) je (2) (5) + (3) (4) = 22. Koncový produkt (2, 5, 1) a (4, 3, 1) je (2) (4) + (5) (3) + (1) (1) = 24. Všimněte si, že tečkové součin dvou vektorů je číslo, nikoli jiný vektor. Všimněte si také, že produkt s tečkou lze vypočítat pouze v případě, že dva vektory mají stejný počet komponent.  
   
- Umožní A(i, j) být položka v matici A nejnovějšími řádku a sloupci jth. Například A (3, 2) je položka v matici A v řádku 3. a 2 sloupce. Předpokládejme, že jsou A, B a C matice a AB = C. Položky jazyka C jsou vypočítávány následujícím způsobem:  
+ Nechť A (i, j) je položka v matici a v řádku-tého a ve sloupci JTH. Například A (3, 2) je položka v matici a v řádku 3 a v poli druhý sloupec. Předpokládejme, že a, B a C jsou matice a AB = C. Položky jazyka C se vypočtou takto:  
   
- C (i, j) = (řádek i A) • (sloupec j B)  
+ C (i, j) = (řádek i A) • (sloupec j z B)  
   
- Následující obrázek znázorňuje několik příkladů násobení matic.  
+ Následující ilustrace znázorňuje několik příkladů násobení matic.  
   
  ![Transformations](./media/aboutgdip05-art06.gif "AboutGdip05_art06")  
   
- Pokud si představíte bod v rovině jako 1 × 2 matice, můžete transformovat tento bod vynásobením matice 2 x 2. Následující obrázek znázorňuje několik transformace použít pro bod (2, 1).  
+ Pokud si myslíte, že je bod v rovině v matici o úrovni 1 × 2, můžete tento bod transformovat tak, že ho vynásobí 2 × 2 matice. Následující ilustrace znázorňuje několik transformací použitých pro bod (2, 1).  
   
  ![Transformations](./media/aboutgdip05-art07.gif "AboutGdip05_art07")  
   
- Všechny transformace je vidět na předchozím obrázku jsou lineární transformace. Některé transformace, jako je například překladu, nejsou lineární a nelze vyjádřen jako násobení hodnotou 2 × 2 matice. Předpokládejme, že chcete začít s bod (2, 1), otočit o 90 stupňů, přeložit 3 jednotky ve směru osy x a přeloží ji 4 jednotky ve směru osy y. Můžete to provést pomocí násobení matic, za nímž následuje záležitostí matice.  
+ Všechny transformace zobrazené na předchozím obrázku jsou lineární transformace. Některé další transformace, jako je například převod, nejsou lineární a nelze je vyjádřit jako násobení pomocí matice 2 × 2. Předpokládejme, že chcete začít s bodem (2, 1), otočit ho 90 stupňů, přeložit 3 jednotky ve směru x a překládat 4 jednotky ve směru y. Můžete to provést pomocí násobení matice následovaný přidáním matice.  
   
  ![Transformations](./media/aboutgdip05-art08.gif "AboutGdip05_art08")  
   
- Lineární transformace (násobení podle matice 2 × 2), za nímž následuje překlad (součet matice 1 × 2) se nazývá afinní transformace. Alternativa k ukládání afinní transformace páru matice (jeden pro lineární část) a jeden pro překlad je pro uložení celé transformace v matici 3 × 3. Chcete-li tuto práci, bod v rovině musí být uložen v matici 1 × 3 fiktivní 3. souřadnice. Běžné techniky je, aby všechny 3. souřadnice rovnající se 1. Například bod (2, 1) je představován matice [2 1 1]. Následující obrázek znázorňuje afinní transformace (Otočit o 90 stupňů; přeložit 3 jednotky ve směru osy x, 4 jednotky ve směru osy y) vyjádřený jako násobení pomocí jednoho 3 × 3 matice.  
+ Lineární transformace (násobení o 2 × 2 matice) následovaná překladem (přídavek 1 × 2 matice) se nazývá transformace spřažení. Alternativa k uložení transformace spřažení do páru matric (jedna pro lineární část a druhá pro překlad) je uložit celou transformaci do matice 3 × 3. Aby bylo možné tuto práci provést, musí být bod v rovině uložen v matrici 1 × 3 s fiktivní třetí souřadnicí. Obvyklou technikou je, aby se všechny 3 souřadnice rovnaly 1. Například bod (2, 1) je reprezentován maticí [2 1 1]. Následující ilustrace znázorňuje transformaci spřažení (otočení 90 stupňů; přeloží 3 jednotky ve směru x, 4 jednotky ve směru y), vyjádřené jako násobení jednou maticí 3 × 3.  
   
  ![Transformations](./media/aboutgdip05-art09.gif "AboutGdip05_art09")  
   
- V předchozím příkladu bod, (2, 1) je namapována na bod (2, 6). Všimněte si, že třetí sloupec 3 × 3 matice obsahuje čísla od 0, 0, 1. To bude vždy případ 3 × 3 matice afinní transformace. Šest čísla ve sloupci 1 a 2 jsou důležitá čísla. Část 2 × 2 levého horního rohu maticového představuje lineární součástí transformace a první dvě položky na řádku 3. představují překlad.  
+ V předchozím příkladu je bod (2, 1) namapován na bod (2, 6). Všimněte si, že třetí sloupec matice 3 × 3 obsahuje čísla 0, 0, 1. Tato akce bude vždycky v případě matice 3 × 3 transformace spřažení. Důležitá čísla jsou šest čísel ve sloupcích 1 a 2. Levá horní 2 × 2 část matice představuje lineární část transformace a první dvě položky na 3 řádku představují překlad.  
   
  ![Transformations](./media/aboutgdip05-art10.gif "AboutGdip05_art10")  
   
- V rozhraní GDI + uložíte afinní transformace v <xref:System.Drawing.Drawing2D.Matrix> objektu. Třetí sloupec matrice, který představuje afinní transformace je vždy (0, 0, 1), zadejte pouze šest čísla v prvních dvou sloupcích při vytváření <xref:System.Drawing.Drawing2D.Matrix> objektu. Příkaz `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` vytvoří matice je vidět na předchozím obrázku.  
+ V rozhraní GDI+ můžete uložit transformaci spřažení do <xref:System.Drawing.Drawing2D.Matrix> objektu. Vzhledem k tomu, že třetí sloupec matice, která představuje transformaci spřažení, je vždy (0, 0, 1), při vytváření <xref:System.Drawing.Drawing2D.Matrix> objektu zadáte pouze šest čísel v prvních dvou sloupcích. Příkaz `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` vytvoří matici zobrazenou na předchozím obrázku.  
   
-## <a name="composite-transformations"></a>Kompozitní transformace  
- Kompozitní transformace je sekvence transformací, jeden za nímž následuje druhé. Vezměte v úvahu matice a transformace v následujícím seznamu:  
+## <a name="composite-transformations"></a>Složené transformace  
+ Složená transformace je posloupnost transformací, jedna následovaná druhým. Vezměte v úvahu matice a transformace v následujícím seznamu:  
   
 |||  
 |-|-|  
-|Matice|Otočit o 90 stupňů|  
-|Matrix B|Škálování faktorem 2 ve směru osy x|  
-|Matrix C|Přeložit 3 jednotky ve směru osy y|  
+|Matice A|Otočit o 90 stupňů|  
+|Matice B|Škálování podle faktoru 2 ve směru x|  
+|Matice C|Přeloží 3 jednotky ve směru y.|  
   
- Pokud Začneme s bodem (2, 1), reprezentovaný matice [2 1 1] – a vynásobit, pak B a C, bod, (2, 1) projdou tři transformace v uvedeném pořadí.  
+ Pokud Začínáme s bodem (2, 1), který je reprezentován maticí [2 1 1], a vynásobí se a, pak B, pak C, bodem (2, 1), bude podléhat třem transformacím v uvedeném pořadí.  
   
  [2 1 1]ABC = [-2 5 1]  
   
- Spíše než tři části kompozitní transformace uložit do tří samostatných matice, můžete násobení A, B a C společně se získat jednu matice 3 × 3, který ukládá celý kompozitní transformace. Předpokládejme, že ABC = D. Poté přiřadí bod vynásobené D stejný výsledek jako bod vynásobené A, pak B, pak C.  
+ Místo uložení tří částí složené transformace ve třech samostatných maticích můžete vynásobit a, B a C dohromady a získat jednu matrici 3 × 3, která ukládá celou složenou transformaci. Předpokládejme, že ABC = D. Pak bod vynásobený D znamená stejný výsledek jako bod vynásobený A, B a pak C.  
   
  [2 1 1]D = [-2 5 1]  
   
- Následující obrázek znázorňuje matice A, B, C a D.  
+ Následující ilustrace znázorňuje matice A, B, C a D.  
   
  ![Transformations](./media/aboutgdip05-art12.gif "AboutGdip05_art12")  
   
- Fakt, že můžete být tvořen matice kompozitní transformace pro násobení matic jednotlivých transformace znamená, že libovolnou posloupností afinní transformace, můžou být uložené v jediné <xref:System.Drawing.Drawing2D.Matrix> objektu.  
+ Fakt, že matice složené transformace může být vytvořena vynásobením jednotlivých matic transformace, znamená, že jakákoli sekvence transformací spřažení může být uložena v jednom <xref:System.Drawing.Drawing2D.Matrix> objektu.  
   
 > [!CAUTION]
->  Je důležité pořadí kompozitní transformace. Obecně platí, otáčet, škálování, pak přeložit není stejný jako měřítko, pak otočit a pak přeložit. Podobně je důležité pořadí násobení matic. Obecně platí ABC není stejný jako ZÁ.  
+> Pořadí složených transformací je důležité. Obecně platí, že se otočí a pak se nedá přeložit na stejné úrovni jako škálování a pak ho otočit a pak přeložit. Podobně je důležité pořadí Násobení matice. Obecně platí, že ABC není stejné jako BAC.  
   
- <xref:System.Drawing.Drawing2D.Matrix> Třída poskytuje několik metod pro vytváření složených transformace: <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>, <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>, <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>, <xref:System.Drawing.Drawing2D.Matrix.Scale%2A>, <xref:System.Drawing.Drawing2D.Matrix.Shear%2A>, a <xref:System.Drawing.Drawing2D.Matrix.Translate%2A>. Následující příklad vytvoří matice kompozitní transformace, která nejprve otočí 30 stupňů, pak škáluje faktorem 2 ve směru osy y a potom převede 5 jednotek ve směru osy x:  
+ <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A> <xref:System.Drawing.Drawing2D.Matrix.Translate%2A> <xref:System.Drawing.Drawing2D.Matrix.Shear%2A> <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A> <xref:System.Drawing.Drawing2D.Matrix.Scale%2A> <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>Třída poskytuje několik metod pro sestavování složené transformace:,,,, a. <xref:System.Drawing.Drawing2D.Matrix> Následující příklad vytvoří matici složené transformace, která nejprve otočí o 30 stupňů, potom se škáluje podle faktoru 2 ve směru y a pak přeloží 5 jednotek ve směru x:  
   
  [!code-csharp[System.Drawing.CoordinateSystems#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.CoordinateSystems#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#11)]  
   
- Následující obrázek znázorňuje matice.  
+ Následující ilustrace znázorňuje matici.  
   
  ![Transformations](./media/aboutgdip05-art13.gif "AboutGdip05_art13")  
   

@@ -1,6 +1,6 @@
 ---
 title: -langversion – (C# možnosti kompilátoru)
-ms.date: 05/14/2018
+ms.date: 08/23/2019
 f1_keywords:
 - /langversion
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 5675099f66ec99c652ef95a5328f31c360e2dc59
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f34b5d512a8054b0ab0d3fba54525801eb560143
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602838"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040464"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion – (C# možnosti kompilátoru)
 
@@ -46,6 +46,8 @@ Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena ve C# zvol
 |3|Kompilátor přijímá jenom syntaxi, která je zahrnutá C# v 3,0 nebo nižší části <sup id="TCS3">CS3</sup> .|
 |ISO-2|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2006 (2,0) <sup id="TISO2">ISO2</sup>|
 |ISO-1|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2003 (1.0/1.2) <sup id="TISO1">ISO1</sup>|  
+
+Výchozí jazyková verze závisí na cílové architektuře vaší aplikace a na nainstalované verzi sady SDK nebo sady Visual Studio. Tato pravidla jsou definovaná v článku o [konfiguraci jazykové verze](../configure-language-version.md#defaults) .
 
 ## <a name="remarks"></a>Poznámky
 

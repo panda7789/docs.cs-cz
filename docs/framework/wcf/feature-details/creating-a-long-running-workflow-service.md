@@ -2,18 +2,20 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: dae33cfcd5a2ef7b5269ebb040cf53b4c0e0b039
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e6206babdb728b6ce38c94441f775e1fdffe7d79
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945594"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040416"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
+
 Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního postupu. Dlouhodobě běžící služby pracovních postupů můžou běžet dlouhou dobu. V určitém okamžiku může pracovní postup při čekání na některé další informace přejít na nečinné. V takovém případě je pracovní postup trvale uložen v databázi SQL a je odebrán z paměti. Když budou další informace k dispozici, instance pracovního postupu se načte zpátky do paměti a pokračuje v provádění.  V tomto scénáři implementujete velmi zjednodušený systém řazení.  Klient odešle počáteční zprávu službě pracovního postupu, aby zahájí objednávku. Vrátí klientovi ID objednávky. V tomto okamžiku služba pracovního postupu čeká na jinou zprávu od klienta a přejde do stavu nečinnosti a bude trvale uložena do databáze SQL Server.  Když klient pošle další zprávu pro objednání položky, služba pracovního postupu se načte zpátky do paměti a dokončí zpracování objednávky. V ukázce kódu vrátí řetězec oznamující, že položka byla přidána do objednávky. Ukázka kódu se nepovažuje za reálné použití technologie, ale spíše na jednoduchou ukázku, která znázorňuje dlouhodobě běžící služby pracovních postupů. Toto téma předpokládá, že máte v úmyslu vytvořit projekty a řešení sady Visual Studio 2012.
 
 ## <a name="prerequisites"></a>Požadavky
- Pro použití tohoto Názorného postupu musíte mít nainstalovaný následující software:
+
+Pro použití tohoto Názorného postupu musíte mít nainstalovaný následující software:
 
 1. Microsoft SQL Server 2008
 
@@ -45,16 +47,16 @@ Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního po
 
     1. V části **Spustit akci** vyberte **konkrétní stránka** a `Service1.xamlx`zadejte.
 
-         ![Webové vlastnosti projektu služby pracovního postupu](./media/creating-a-long-running-workflow-service/start-action-specific-page-option.png "Vytvořit možnost stránky pro web hostovaný pracovní postup – konkrétní služba")
+        ![Webové vlastnosti projektu služby pracovního postupu](./media/creating-a-long-running-workflow-service/start-action-specific-page-option.png "Vytvořit možnost stránky pro web hostovaný pracovní postup – konkrétní služba")
 
     2. V části **servery** vyberte **použít místní webový server služby IIS**.
 
-         ![Nastavení místního webového serveru](./media/creating-a-long-running-workflow-service/use-local-web-server.png "Vytvoření služby Web Hosted Workflow Service – použijte možnost místní webový server služby IIS")
+        ![Nastavení místního webového serveru](./media/creating-a-long-running-workflow-service/use-local-web-server.png "Vytvoření služby Web Hosted Workflow Service – použijte možnost místní webový server služby IIS")
 
         > [!WARNING]
-        >  Chcete-li nastavit toto nastavení, je nutné spustit aplikaci Visual Studio 2012 v režimu správce.
+        > Chcete-li nastavit toto nastavení, je nutné spustit aplikaci Visual Studio 2012 v režimu správce.
 
-         Tyto dva kroky nakonfigurují projekt služby pracovního postupu tak, aby byl hostovaný službou IIS.
+        Tyto dva kroky nakonfigurují projekt služby pracovního postupu tak, aby byl hostovaný službou IIS.
 
 4. Otevřete `Service1.xamlx` , pokud už není otevřený, a odstraňte existující aktivity **ReceiveRequest** a **SendResponse** .
 
@@ -63,60 +65,60 @@ Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního po
     > [!NOTE]
     > Pokud popisovač CorrelationHandle není v rozevíracím seznamu typ proměnné, vyberte **Vyhledat typy** z rozevírací nabídky. Do pole **název typu** zadejte popisovač CorrelationHandle, v seznamu vyberte popisovač CorrelationHandle a klikněte na **OK**.
 
-     ![Přidat proměnné](./media/creating-a-long-running-workflow-service/add-variables-sequential-service-activity.gif "Přidejte proměnné do aktivity sekvenční služby.")
+    ![Přidat proměnné](./media/creating-a-long-running-workflow-service/add-variables-sequential-service-activity.gif "Přidejte proměnné do aktivity sekvenční služby.")
 
 6. Přetáhněte šablonu aktivity **ReceiveAndSendReply** do aktivity **sekvenční služby** . Tato sada aktivit obdrží zprávu od klienta a pošle odpověď zpátky.
 
     1. Vyberte aktivitu **přijmout** a nastavte vlastnosti zvýrazněné na následujícím obrázku.
 
-         ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activity-properties.png "Nastavte vlastnosti aktivity Receive.")
+        ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activity-properties.png "Nastavte vlastnosti aktivity Receive.")
 
-         Vlastnost DisplayName nastaví název zobrazený pro aktivitu Receive v návrháři. Vlastnosti ServiceContractName a OperationName určují název kontraktu služby a operace, které jsou implementované aktivitou Receive. Další informace o tom, jak se ve službách pracovních postupů používají kontrakty, najdete v tématu [Použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).
+        Vlastnost DisplayName nastaví název zobrazený pro aktivitu Receive v návrháři. Vlastnosti ServiceContractName a OperationName určují název kontraktu služby a operace, které jsou implementované aktivitou Receive. Další informace o tom, jak se ve službách pracovních postupů používají kontrakty, najdete v tématu [Použití kontraktů v pracovním postupu](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).
 
     2. Klikněte na odkaz **definovat...** v aktivitě **ReceiveStartOrder** a nastavte vlastnosti zobrazené na následujícím obrázku.  Všimněte si, že přepínač **Parameters** je vybrán, parametr s názvem `p_customerName` `customerName` je vázán na proměnnou. Tím se nakonfiguruje aktivita **příjmu** pro příjem některých dat a vazba těchto dat na lokální proměnné.
 
-         ![Nastavení dat přijatých aktivitou Receive](./media/creating-a-long-running-workflow-service/set-properties-for-receive-content.png "Nastavte vlastnosti pro data přijatá aktivitou Receive.")
+        ![Nastavení dat přijatých aktivitou Receive](./media/creating-a-long-running-workflow-service/set-properties-for-receive-content.png "Nastavte vlastnosti pro data přijatá aktivitou Receive.")
 
     3. Vyberte aktivitu **SendReplyToReceive** a nastavte zvýrazněnou vlastnost, která je znázorněna na následujícím obrázku.
 
-         ![Nastavení vlastností aktivity SendReply](./media/creating-a-long-running-workflow-service/set-properties-for-reply-activities.png "SetReplyProperties")
+        ![Nastavení vlastností aktivity SendReply](./media/creating-a-long-running-workflow-service/set-properties-for-reply-activities.png "SetReplyProperties")
 
     4. Klikněte na odkaz **definovat...** v aktivitě **SendReplyToStartOrder** a nastavte vlastnosti zobrazené na následujícím obrázku. Všimněte si, že přepínač **Parameters** je vybrán; parametr s názvem `p_orderId` je vázán `orderId` na proměnnou. Toto nastavení určuje, že aktivita SendReplyToStartOrder vrátí hodnotu typu String volajícímu.
 
-         ![Konfigurace dat obsahu aktivity SendReply](./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "Nakonfigurujte nastavení pro aktivitu SetReplyToStartOrder.")
+        ![Konfigurace dat obsahu aktivity SendReply](./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "Nakonfigurujte nastavení pro aktivitu SetReplyToStartOrder.")
 
     5. Přetáhněte aktivitu přiřadit mezi aktivitami **Receive** a **SendReply** a nastavte vlastnosti tak, jak je znázorněno na následujícím obrázku:
 
-         ![Přidání aktivity přiřazení](./media/creating-a-long-running-workflow-service/add-an-assign-activity.png "Přidejte aktivitu přiřazení.")
+        ![Přidání aktivity přiřazení](./media/creating-a-long-running-workflow-service/add-an-assign-activity.png "Přidejte aktivitu přiřazení.")
 
-         Tím se vytvoří nové ID objednávky a hodnota se umístí do proměnné ČísloObjednávky.
+        Tím se vytvoří nové ID objednávky a hodnota se umístí do proměnné ČísloObjednávky.
 
     6. Vyberte aktivitu **ReplyToStartOrder** . V okně Vlastnosti klikněte na tlačítko se třemi tečkami pro **inicializátoři CorrelationInitializers**. Vyberte odkaz **Přidat inicializátor** , do textového `orderIdHandle` pole inicializátor zadejte, pro typ korelace vyberte inicializátor korelace a v rozevíracím seznamu dotazy XPath vyberte p_orderId. Tato nastavení jsou znázorněna na následujícím obrázku. Klikněte na **OK**.  Tím se inicializuje korelace mezi klientem a touto instancí služby pracovního postupu. Když se přijme zpráva obsahující toto ID objednávky, je směrována do této instance služby pracovního postupu.
 
-         ![Přidání inicializátoru korelace](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Přidejte inicializátor korelace.")
+        ![Přidání inicializátoru korelace](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Přidejte inicializátor korelace.")
 
 7. Přetáhněte další aktivitu **ReceiveAndSendReply** na konec pracovního postupu (mimo sekvenci obsahující první aktivity **Receive** a **SendReply** ). Tím přijde druhá zpráva odeslaná klientem a reaguje na ni.
 
     1. Vyberte **sekvenci** , která obsahuje nově přidané aktivity **Receive** a **SendReply** a klikněte na tlačítko **proměnné** . Přidejte proměnnou zvýrazněnou na následujícím obrázku:
 
-         ![Přidávání nových proměnných](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "Přidejte proměnnou ItemID.")
-         
-         Do `Sequence` oboru `orderResult` přidejte také **řetězec** as.
+        ![Přidávání nových proměnných](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "Přidejte proměnnou ItemID.")
+
+        Do `Sequence` oboru `orderResult` přidejte také **řetězec** as.
 
     2. Vyberte aktivitu **Receive** a nastavte vlastnosti zobrazené na následujícím obrázku:
 
-         ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Nastavte vlastnosti aktivity Receive.")
-         
-         > [!NOTE]
-         >  Nezapomeňte změnit pole **ServiceContractName** pomocí `../IAddItem`.
+        ![Nastavit vlastnosti aktivity Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Nastavte vlastnosti aktivity Receive.")
+
+        > [!NOTE]
+        > Nezapomeňte změnit pole **ServiceContractName** pomocí `../IAddItem`.
 
     3. Klikněte na odkaz **definovat...** v aktivitě **ReceiveAddItem** a přidejte parametry zobrazené na následujícím obrázku: tím se nakonfiguruje aktivita Receive pro příjem dvou parametrů, ID objednávky a ID položky, která je seřazená.
 
-         ![Určení parametrů pro druhý příjem](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Nakonfigurujte aktivitu Receive pro příjem dvou parametrů.")
+        ![Určení parametrů pro druhý příjem](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Nakonfigurujte aktivitu Receive pro příjem dvou parametrů.")
 
     4. Klikněte na tlačítko se třemi tečkami `orderIdHandle`CorrelateOn a zadejte. V části **dotazy XPath**klikněte na šipku rozevíracího seznamu a `p_orderId`vyberte. Tím se nakonfiguruje korelace pro druhou aktivitu Receive. Další informace o korelaci najdete [](../../../../docs/framework/wcf/feature-details/correlation.md)v tématu korelace.
 
-         ![Nastavení vlastnosti vlastnosti CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Nastavte vlastnost vlastnosti CorrelatesOn.")
+        ![Nastavení vlastnosti vlastnosti CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Nastavte vlastnost vlastnosti CorrelatesOn.")
 
     5. Přetáhněte aktivitu **if** hned za aktivitu **ReceiveAddItem** . Tato aktivita funguje stejně jako příkaz if.
 
@@ -124,17 +126,17 @@ Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního po
 
         2. Přetáhněte aktivitu **přiřadit** v části do oddílu **then** a jinou do části **Else** nastavte vlastnosti aktivity **přiřazení** , jak je znázorněno na následujícím obrázku.
 
-             ![Přiřazuje se výsledek volání služby] . (./media/creating-a-long-running-workflow-service/assign-result-of-service-call.png "Přiřaďte výsledek volání služby.")
+            ![Přiřazuje se výsledek volání služby] . (./media/creating-a-long-running-workflow-service/assign-result-of-service-call.png "Přiřaďte výsledek volání služby.")
 
-             Pokud je `true` podmínka, bude provedena v oddílu **then** . Pokud je podmínka `false` v části **Else** , je provedena.
+            Pokud je `true` podmínka, bude provedena v oddílu **then** . Pokud je podmínka `false` v části **Else** , je provedena.
 
         3. Vyberte aktivitu **SendReplyToReceive** a nastavte vlastnost **DisplayName** znázorněnou na následujícím obrázku.
 
-             ![Nastavení vlastností aktivity SendReply](./media/creating-a-long-running-workflow-service/send-reply-activity-property.png "Nastavte vlastnost aktivity SendReply.")
+            ![Nastavení vlastností aktivity SendReply](./media/creating-a-long-running-workflow-service/send-reply-activity-property.png "Nastavte vlastnost aktivity SendReply.")
 
         4. Klikněte na odkaz **definovat...** v aktivitě **SetReplyToAddItem** a nakonfigurujte ho tak, jak je znázorněno na následujícím obrázku. Tím se nakonfiguruje aktivita **SendReplyToAddItem** , která vrátí hodnotu v `orderResult` proměnné.
 
-             ![Nastavení datové vazby pro aktivitu SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "Nastaví vlastnost pro aktivitu SendReplyToAddItem.")
+            ![Nastavení datové vazby pro aktivitu SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "Nastaví vlastnost pro aktivitu SendReplyToAddItem.")
 
 8. Otevřete soubor Web. config a přidejte následující prvky do \<oddílu chování >, aby bylo možné povolit trvalost pracovního postupu.
 
@@ -144,7 +146,7 @@ Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního po
     ```
 
     > [!WARNING]
-    >  Nezapomeňte nahradit název hostitele a instance serveru SQL Server v předchozím fragmentu kódu.
+    > Nezapomeňte nahradit název hostitele a instance serveru SQL Server v předchozím fragmentu kódu.
 
 9. Sestavte řešení.
 
@@ -162,7 +164,7 @@ Toto téma popisuje, jak vytvořit dlouhodobě běžící službu pracovního po
 
 4. `Main()` V metodě klientského projektu přidejte následující kód:
 
-    ```
+    ```csharp
     static void Main(string[] args)
     {
        // Send initial message to start the workflow service

@@ -2,12 +2,12 @@
 title: Ukázka identity služby
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: 999e05918eb7ac852336136a1e7512a2e9d7b9db
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0d5fce313200cdfdb8007ceffe9ff97b033d9f82
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964541"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045525"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu pro službu. V době návrhu může klient získat identitu pomocí metadat služby a pak za běhu může ověřit identitu služby. Pojmem identity služby je umožněno klientovi ověřit službu před voláním jakékoli jeho operace, což zajistí ochranu klienta před neověřenými voláními. V zabezpečeném připojení služba také ověřuje přihlašovací údaje klienta, a to ještě před tím, než jim povolí přístup, ale tato ukázka se nezaměřuje. Podívejte se na ukázky v [klientovi](../../../../docs/framework/wcf/samples/client.md) , které ukazují ověřování serveru.
@@ -24,7 +24,7 @@ Tato ukázka identity služby ukazuje, jak nastavit identitu pro službu. V dob�
 - Jak nastavit vlastní identitu na klientovi. Vlastní identita je typicky přizpůsobení stávajícího typu identity, který klientovi umožňuje prozkoumávat jiné informace o deklaracích identity, které jsou uvedené v přihlašovacích údajích služby, aby bylo možné ověřit autorizační rozhodnutí před voláním služby.
 
     > [!NOTE]
-    >  Tato ukázka ověří identitu konkrétního certifikátu s názvem identity.com a klíč RSA obsažený v tomto certifikátu. Při použití certifikátů a typů identit RSA v konfiguraci na klientovi je snadné získat tyto hodnoty pomocí nástroje WSDL pro službu, kde jsou tyto hodnoty serializovány.
+    > Tato ukázka ověří identitu konkrétního certifikátu s názvem identity.com a klíč RSA obsažený v tomto certifikátu. Při použití certifikátů a typů identit RSA v konfiguraci na klientovi je snadné získat tyto hodnoty pomocí nástroje WSDL pro službu, kde jsou tyto hodnoty serializovány.
 
  Následující vzorový kód ukazuje, jak nakonfigurovat identitu koncového bodu služby pomocí serveru DNS (Domain Name Server) certifikátu pomocí WSHttpBinding.
 
@@ -120,7 +120,7 @@ class CustomIdentityVerifier : IdentityVerifier
 2. V [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]nástroji spusťte Setup. bat z ukázkové instalační složky v příkazovém řádku sady Visual Studio 2012 s oprávněními správce. Tím se nainstalují všechny certifikáty, které jsou potřebné ke spuštění ukázky.
 
     > [!NOTE]
-    >  Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat. Po dokončení ukázky se ujistěte, že jste odebrali certifikáty spuštěním souboru Cleanup. bat. Další ukázky zabezpečení používají stejné certifikáty.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku sady Visual Studio 2012. Proměnná prostředí PATH nastavená v příkazovém řádku sady Visual Studio 2012 odkazuje na adresář, který obsahuje spustitelné soubory, které vyžaduje skript Setup. bat. Po dokončení ukázky se ujistěte, že jste odebrali certifikáty spuštěním souboru Cleanup. bat. Další ukázky zabezpečení používají stejné certifikáty.  
   
 3. Z adresáře \service\bin spusťte Service. exe. Ujistěte se, že služba indikuje, že je připravená, a zobrazí výzvu \<k ukončení služby stisknutím klávesy ENTER >.  
   
@@ -157,4 +157,4 @@ class CustomIdentityVerifier : IdentityVerifier
 - Po dokončení ukázky spusťte na složce Samples Cleanup. bat.  
   
     > [!NOTE]
-    >  Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+    > Tento skript při spuštění této ukázky mezi počítači neodebere certifikáty služby na klientovi. Pokud jste spustili ukázky Windows Communication Foundation (WCF), které používají certifikáty napříč počítači, nezapomeňte vymazat certifikáty služby, které byly nainstalovány v úložišti CurrentUser-TrustedPeople. K tomu použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`Například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

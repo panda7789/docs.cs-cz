@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: e8e8b294e05579a91a4557b23be6c65f4d619167
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb5766a3efc38750458ef0d354e8a2e3ab204000
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940878"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046410"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 V tomto tématu najdete přehled podpory přetahování v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikacích. Přetahování obvykle odkazuje na metodu přenosu dat, která zahrnuje použití myši (nebo jiného polohovacího zařízení) k výběru jednoho nebo více objektů, přetažením těchto objektů přes některý požadovaný cíl přetažení v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich přetažení.  
@@ -166,7 +166,7 @@ V tomto tématu najdete přehled podpory přetahování v [!INCLUDE[TLA#tla_winc
  <xref:System.Windows.DragDrop.QueryContinueDrag> Událost je vyvolána průběžně při přetahování zdroje. Tuto událost můžete zpracovat a určit tak, která akce ukončí operaci přetažení na základě stavu kláves ESC, SHIFT, CTRL a ALT a také stavu tlačítek myši. Výchozí obslužná rutina pro tuto událost zruší operaci přetažení, pokud je stisknuta klávesa ESC, a když dojde k uvolnění tlačítka myši, data se zruší.  
   
 > [!CAUTION]
->  Tyto události jsou během operace přetažení vyvolány průběžně. Proto byste se měli vyhnout úlohám náročným na prostředky v obslužných rutinách událostí.  Například při každém <xref:System.Windows.DragDrop.GiveFeedback> vyvolání události použijte ukazatel v mezipaměti místo vytvoření nového kurzoru.  
+> Tyto události jsou během operace přetažení vyvolány průběžně. Proto byste se měli vyhnout úlohám náročným na prostředky v obslužných rutinách událostí.  Například při každém <xref:System.Windows.DragDrop.GiveFeedback> vyvolání události použijte ukazatel v mezipaměti místo vytvoření nového kurzoru.  
   
 ### <a name="enabling-an-element-to-be-a-drop-target"></a>Povolení prvku jako cíle přetažení  
  Objekt, který je cílem přetažení, zodpovídá za:  

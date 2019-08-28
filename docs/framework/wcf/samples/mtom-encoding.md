@@ -2,26 +2,26 @@
 title: Kódování MTOM
 ms.date: 03/30/2017
 ms.assetid: 820e316f-4ee1-4eb5-ae38-b6a536e8a14f
-ms.openlocfilehash: fda14ec04515f36467bbaa5077d904866e3d8013
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 52fe91e5ab4967190d7654b232143adbf0a49d65
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876366"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039271"
 ---
 # <a name="mtom-encoding"></a>Kódování MTOM
-Tento příklad ukazuje použití kódování s WSHttpBinding zprávy zpráv přenosu optimalizace mechanismus (MTOM). MTOM je mechanismus pro předávání velké binární jejich přílohy pomocí zprávy protokolu SOAP jako nezpracovaný bajtů, umožňuje menší zprávy.  
+Tato ukázka demonstruje použití kódování zprávy MTOM (Message Transmission Optimization Mechanism) pomocí WSHttpBinding. MTOM je mechanismus pro přenos rozsáhlých binárních příloh se zprávami SOAP jako nezpracovaných bajtů, což umožňuje menší zprávy.  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MTOM`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MTOM`  
   
- Ve výchozím nastavení, odešle WSHttpBinding a přijaté zprávy jako normální text XML. Pokud chcete povolit posílat a přijímat zprávy MTOM, nastavte `messageEncoding` atribut u vazby konfigurace (viz následující příklad kódu), nebo přímo u vazby pomocí `MessageEncoding` vlastnost. Služba nebo klient teď můžete odesílat a přijímat zprávy MTOM.  
+ Ve výchozím nastavení WSHttpBinding odesílá a přijímá zprávy jako normální text XML. Chcete-li povolit odesílání a příjem zpráv MTOM, `messageEncoding` nastavte atribut v konfiguraci vazby (jako v následujícím ukázkovém kódu) nebo přímo na vazbu `MessageEncoding` pomocí vlastnosti. Služba nebo klient teď může odesílat a přijímat zprávy MTOM.  
   
 ```xml  
 <wsHttpBinding>  
@@ -29,7 +29,7 @@ Tento příklad ukazuje použití kódování s WSHttpBinding zprávy zpráv př
 </wsHttpBinding>  
 ```  
   
- Kodér MTOM můžete optimalizovat pole bajtů a datových proudů. V této ukázce se používá operaci `Stream` parametrů a proto se dá optimalizovat.  
+ Kodér MTOM může optimalizovat pole bajtů a datových proudů. V této ukázce operace používá `Stream` parametr a může být proto optimalizována.  
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -40,7 +40,7 @@ Tento příklad ukazuje použití kódování s WSHttpBinding zprávy zpráv př
   }  
 ```
   
- Kontrakt pro tuto ukázku zvolili přenáší binárních dat ve službě a přijímá počet bajtů odeslat jako návratovou hodnotu. Když je služba nainstalována a klient je spuštěn, vytiskne číslo 1 000, což znamená, že byly přijaty všechny 1 000 bajtů. Zbývající část ve výstupu zobrazit seznam velikostí optimalizované a neoptimalizované zprávu pro různé datové části.  
+ Kontrakt vybraný pro tento příklad odesílá binární data do služby a přijímá počet bajtů odeslaných jako návratovou hodnotu. Po instalaci služby a spuštění klienta se zobrazí číslo 1000, které indikuje, že byly přijaty všechny 1000 bajtů. Zbývající část výstupu obsahuje optimalizované a neoptimalizované velikosti zpráv pro různé datové části.  
   
 ```  
 Output:  
@@ -64,18 +64,18 @@ MTOM encoding with a 1000000 byte payload: 1001080
 Press <ENTER> to terminate client.  
 ```  
   
- Účelem použití MTOM je k optimalizaci přenosu velké binární datové části. Odeslání zprávy protokolu SOAP pomocí MTOM má znatelný režijní náklady pro malé binární datové části, ale změní na velké úspory, pokud se jejich průběhu několika tisíc bajtů. Důvodem je, že normální text XML zakóduje binární data pomocí kódování Base64, který vyžaduje čtyři znaky pro každých třech bajtech a zvýší množství dat o jednu třetinu. Výsledkem je menší zprávy MTOM je moct přenášet binárních dat jako nezpracovaný bajtů, úspory času kódování/dekódování. Prahové hodnoty několika tisíc bajtů je malé ve srovnání s dnešní firemní dokumenty a digitální fotografie.  
+ Účelem použití nástroje MTOM je optimalizace přenosu rozsáhlých binárních datových částí. Odeslání zprávy protokolu SOAP pomocí nástroje MTOM má znatelný nárok na malé binární datové části, ale stane se skvělým úsporou, pokud se rozrůstá o několik tisíc bajtů. Důvodem je to, že normální text XML kóduje binární data pomocí Base64, který vyžaduje čtyři znaky pro každé tři bajty a zvětšuje velikost dat o jednu třetinu. MTOM dokáže přenášet binární data jako nezpracované bajty, ušetřit čas kódování a dekódování a výsledkem je menší počet zpráv. V porovnání s dnešními obchodními dokumenty a digitálními fotografiemi je malá prahová hodnota několika tisíc bajtů.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Instalace technologie ASP.NET 4.0 pomocí následujícího příkazu.  
+1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

@@ -2,40 +2,40 @@
 title: Vlastní sledování
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: fff88c50dd2004d4491e050258ef760c033f6de5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b53b22b485a7ac340821073d2f2914b13a7b7011
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622568"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044305"
 ---
 # <a name="custom-tracking"></a>Vlastní sledování
-Tento příklad znázorňuje způsob vytvoření vlastního účastníka sledování a zapisovat obsah data sledování do konzoly. Kromě toho Ukázka předvádí, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty vyplní s uživatelem definovaná data. Filtry účastníka sledování pomocí konzoly <xref:System.Activities.Tracking.TrackingRecord> objekty, protože ho vygeneroval pracovního postupu pomocí profilu sledování objekt vytvořený v kódu.
+Tento příklad ukazuje, jak vytvořit vlastního účastníka sledování a zapsat obsah sledování dat do konzoly. Kromě toho Ukázka ukazuje, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty naplněné uživatelsky definovanými daty. Účastník sledování na základě konzoly filtruje <xref:System.Activities.Tracking.TrackingRecord> objekty emitované pracovním postupem pomocí objektu sledování profilu vytvořeného v kódu.
 
-## <a name="sample-details"></a>Ukázka podrobnosti
- Windows Workflow Foundation (WF) poskytuje sledování infrastruktury pro sledování spuštění instance pracovního postupu. Modul runtime sledování implementuje instance pracovního postupu ke generování událostí souvisejících s životního cyklu pracovního postupu, události z aktivit pracovního postupu a vlastního sledování událostí. Následující tabulka obsahuje podrobnosti o primární součásti sledování infrastruktury.
+## <a name="sample-details"></a>Podrobnosti ukázky
+ Programovací model Windows Workflow Foundation (WF) poskytuje sledovací infrastrukturu pro sledování provádění instance pracovního postupu. Sledovací modul sledování implementuje instanci pracovního postupu k vygenerování událostí souvisejících s životním cyklem pracovního postupu, událostí z aktivit pracovního postupu a vlastními událostmi sledování. Následující tabulka podrobně popisuje primární součásti infrastruktury sledování.
 
 |Součást|Popis|
 |---------------|-----------------|
-|Sledování modulu runtime|Poskytuje infrastrukturu pro vydávání záznamy sledování.|
-|Sledování účastníci|Využívá sledování záznamů. [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] se dodává s účastníkem sledování, která zapíše záznamy sledování jako události trasování událostí pro Windows (ETW).|
-|Profil sledování Tracking profile|Filtrování mechanismus, který umožňuje sledování účastník přihlásit pouze podmnožinu záznamů sledování vyzařováno instance pracovního postupu.|
+|Sledování – modul runtime|Poskytuje infrastrukturu pro vygenerování záznamů sledování.|
+|Sledování účastníků|Využívá záznamy sledování. [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]dodává se sledováním účastníka, který zapisuje záznamy sledování jako události trasování událostí pro Windows (ETW).|
+|Profil sledování|Mechanismus filtrování, který umožňuje sledování účastníka přihlásit k odběru podmnožiny sledovacích záznamů emitovaných z instance pracovního postupu.|
 
- Následující tabulka obsahuje podrobnosti o sledování záznamů, které generuje modul runtime pracovního postupu.
+ Následující tabulka podrobně popisuje záznamy sledování, které modul runtime pracovního postupu generuje.
 
 |Záznam sledování|Popis|
 |---------------------|-----------------|
-|Pracovní postup instance sledování záznamů.|Popisuje životního cyklu instance pracovního postupu. Například záznam instance je vygenerován při spuštění pracovního postupu nebo dokončení.|
-|Stav sledování záznamů aktivit.|Podrobnosti provádění aktivity. Tyto záznamy ukazují stav pracovního postupu aktivity, jako je například kdy je naplánováno aktivitu nebo při dokončení aktivity nebo kdy je vyvolána chyba.|
-|Záložku obnovení záznamů.|Pokaždé, když obnovení záložku v instanci pracovního postupu, protože ho.|
-|Vlastní sledování záznamů.|Autor pracovního postupu můžete vytvořit vlastní záznamy sledování a generovat vlastní aktivity.|
+|Záznamy sledování instance pracovního postupu.|Popisuje životní cyklus instance pracovního postupu. Například záznam instance je generován při spuštění nebo dokončení pracovního postupu.|
+|Záznamy sledování stavu aktivity.|Podrobnosti provádění aktivity. Tyto záznamy označují stav aktivity pracovního postupu, například když je naplánována aktivita nebo když se aktivita dokončí nebo když je vyvolána chyba.|
+|Záznam opětovného pokračování záložky|Vygenerováno pokaždé, když je obnovena záložka v instanci pracovního postupu.|
+|Vlastní záznamy sledování.|Autor pracovního postupu může vytvořit vlastní záznamy sledování a vygenerovat je v rámci vlastní aktivity.|
 
- Účastník sledování přihlásí pro podmnožinu vygenerovanou <xref:System.Activities.Tracking.TrackingRecord> objekty pomocí sledování profilů. Profil sledování obsahuje sledování dotazy, které umožňují přihlášení k odběru pro sledování konkrétní typ záznamu. Sledování profily se dá nastavit v kódu nebo v konfiguraci.
+ Účastník sledování se přihlásí k odběru podmnožiny <xref:System.Activities.Tracking.TrackingRecord> vygenerovaných objektů pomocí sledování profilů. Profil sledování obsahuje sledovací dotazy, které umožňují přihlášení k odběru konkrétního typu záznamu sledování. Sledování profilů lze zadat v kódu nebo v konfiguraci.
 
-### <a name="custom-tracking-participant"></a>Vlastní sledování účastník
- Umožňuje sledování účastník rozhraní API rozšíření modulu runtime sledování pomocí sledování účastník zadaného uživatelem, který může obsahovat vlastní logiku ke zpracování <xref:System.Activities.Tracking.TrackingRecord> objekty, protože ho vygeneroval modulu runtime pracovního postupu.
+### <a name="custom-tracking-participant"></a>Účastník vlastního sledování
+ Rozhraní API sledování účastníka umožňuje rozšíření sledovacího modulu Sledování s účastníkem sledování, které může zahrnovat vlastní logiku pro zpracování <xref:System.Activities.Tracking.TrackingRecord> objektů generovaných modulem runtime pracovního postupu.
 
- Zapsat sledování účastníka uživatel musí implementovat <xref:System.Activities.Tracking.TrackingParticipant>. Konkrétně <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> musí implementovat vlastní účastníka. Tato metoda je volána, když <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pomocí modulu runtime pracovního postupu.
+ Pro zápis účastníka sledování, který musí uživatel <xref:System.Activities.Tracking.TrackingParticipant>implementovat. Konkrétně musí být metoda implementovaná vlastním účastníkem. <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> Tato metoda je volána, když <xref:System.Activities.Tracking.TrackingRecord> je vyvolána modulem runtime pracovního postupu.
 
 ```csharp
 public abstract class TrackingParticipant
@@ -47,7 +47,7 @@ public abstract class TrackingParticipant
 }
 ```
 
- Účastník sledování dokončení je implementováno v souboru ConsoleTrackingParticipant.cs. Následující ukázka kódu je <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> metodu pro vlastní sledování účastník.
+ Dokončený účastník sledování je implementován v souboru ConsoleTrackingParticipant.cs. Následující příklad kódu je <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> metoda pro vlastní sledování účastník.
 
 ```csharp
 protected override void Track(TrackingRecord record, TimeSpan timeout)
@@ -93,7 +93,7 @@ protected override void Track(TrackingRecord record, TimeSpan timeout)
 }
 ```
 
- Následující příklad kódu přidá účastníka konzoly původce volání pracovního postupu.
+ Následující příklad kódu přidá účastníka konzoly do pracovního postupu původce.
 
 ```csharp
 ConsoleTrackingParticipant customTrackingParticipant = new ConsoleTrackingParticipant()
@@ -107,14 +107,14 @@ WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
 invoker.Extensions.Add(customTrackingParticipant);
 ```
 
-### <a name="emitting-custom-tracking-records"></a>Generování vlastní záznamy sledování
- Tento příklad také ukazuje možnost generování <xref:System.Activities.Tracking.CustomTrackingRecord> objekty z vlastního pracovního postupu aktivity:
+### <a name="emitting-custom-tracking-records"></a>Emitování vlastních záznamů sledování
+ Tato ukázka také ukazuje možnost generovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty z vlastní aktivity pracovního postupu:
 
-- <xref:System.Activities.Tracking.CustomTrackingRecord> Objekty jsou vytvořeny a naplněny s uživatelem definované datové části, který je žádoucí, aby měl vyzařovaného se záznamem.
+- <xref:System.Activities.Tracking.CustomTrackingRecord> Objekty jsou vytvořeny a naplněny uživatelsky definovanými daty, která mají být vygenerována záznamem.
 
-- <xref:System.Activities.Tracking.CustomTrackingRecord> Je vygenerován pomocí volání metody sledování <xref:System.Activities.ActivityContext>.
+- Je vyvolána voláním metody Track v <xref:System.Activities.ActivityContext>. <xref:System.Activities.Tracking.CustomTrackingRecord>
 
- Následující příklad ukazuje, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objektů v rámci vlastní aktivity.
+ Následující příklad ukazuje, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty v rámci vlastní aktivity.
 
 ```csharp
 // Create the Custom Tracking Record
@@ -131,23 +131,23 @@ CustomTrackingRecord customRecord = new CustomTrackingRecord("OrderIn")
 context.Track(customRecord);
 ```
 
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+#### <a name="to-use-this-sample"></a>Použití této ukázky
 
-1. Pomocí sady Visual Studio 2010, otevřete soubor řešení CustomTrackingSample.sln.
+1. Pomocí sady Visual Studio 2010 otevřete soubor řešení CustomTrackingSample. sln.
 
-2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3. Abyste mohli spustit řešení, stiskněte CTRL + F5.
+3. Pokud chcete řešení spustit, stiskněte klávesy CTRL + F5.
 
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
+> `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Ukázky monitorování technologie AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

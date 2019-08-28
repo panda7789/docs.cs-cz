@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-ms.openlocfilehash: 3bb41fa476f15c5fc16a942cc0c82fd8e0aba7bb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b56fc09b33a846fe94a52e19dc4b9c806d79c121
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911670"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044109"
 ---
 # <a name="ui-automation-events-for-clients"></a>Události automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
@@ -44,7 +44,7 @@ ms.locfileid: "69911670"
 > Chcete-li zpracovat události uzavřené v okně, přetypujte typ argumentu, který je předán obslužné rutině události jako <xref:System.Windows.Automation.WindowClosedEventArgs>. Vzhledem k tomu, že `sender` <xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A> elementprooknojižneníplatný,nemůžetepoužítparametrpronačteníinformací;[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] použijte místo toho.  
   
 > [!CAUTION]
->  Pokud vaše aplikace může přijímat události sami [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], nepoužívejte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] vlákno vaší aplikace k přihlášení k odběru událostí nebo k odhlášení odběru. To může vést k nepředvídatelnému chování. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
+> Pokud vaše aplikace může přijímat události sami [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], nepoužívejte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] vlákno vaší aplikace k přihlášení k odběru událostí nebo k odhlášení odběru. To může vést k nepředvídatelnému chování. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
   
  Při vypnutí nebo pokud [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události již nejsou důležité pro aplikaci, klienti automatizace uživatelského rozhraní by měli volat jednu z následujících metod.  
   

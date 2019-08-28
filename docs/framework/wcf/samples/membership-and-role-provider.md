@@ -2,12 +2,12 @@
 title: Členství a poskytovatel rolí
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: 894fcef0cbb25f85043aa6f5c55c45bae5161546
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 139d85a1ec36509690f35f24c7ddf04716a7e909
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948550"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039440"
 ---
 # <a name="membership-and-role-provider"></a>Členství a poskytovatel rolí
 Ukázka členství a zprostředkovatele rolí předvádí, jak může služba k ověřování a autorizaci klientů použít poskytovatele členství a rolí ASP.NET.  
@@ -123,10 +123,10 @@ Ukázka členství a zprostředkovatele rolí předvádí, jak může služba k 
 2. Ujistěte se, že jste nakonfigurovali [databázi ASP.NET aplikační služby](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    >  Pokud používáte edici SQL Server Express, název serveru je .\SQLEXPRESS. Tento server by měl být použit při konfiguraci databáze ASP.NET Aplikační služby a také v připojovacím řetězci Web. config.  
+    > Pokud používáte edici SQL Server Express, název serveru je .\SQLEXPRESS. Tento server by měl být použit při konfiguraci databáze ASP.NET Aplikační služby a také v připojovacím řetězci Web. config.  
   
     > [!NOTE]
-    >  Účet pracovního procesu ASP.NET musí mít oprávnění pro databázi, která je vytvořena v tomto kroku. Provedete to pomocí nástroje Sqlcmd nebo SQL Server Management Studio.  
+    > Účet pracovního procesu ASP.NET musí mít oprávnění pro databázi, která je vytvořena v tomto kroku. Provedete to pomocí nástroje Sqlcmd nebo SQL Server Management Studio.  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle následujících pokynů.  
   

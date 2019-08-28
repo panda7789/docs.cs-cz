@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: 7dba7afe9ab0348082ec9538b268a387b64ad050
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 05b5ab19c5206395ab138465eccf2035b5cebe3e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950685"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046488"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které provádějí mnoho úloh současně, stále reagují na interakci s uživatelem, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje, které jsou nezbytné pro vytváření vysoce výkonných aplikací s více vlákny, ale používání těchto nástrojů efektivně vyžaduje významné prostředí pro vícevláknové softwarové inženýry. Pro relativně jednoduché vícevláknové aplikace <xref:System.ComponentModel.BackgroundWorker> poskytuje komponenta jasné řešení. Pro propracovanější asynchronní aplikace zvažte implementaci třídy, která odpovídá asynchronnímu vzoru založenému na událostech.  
@@ -45,7 +45,7 @@ Aplikace, které provádějí mnoho úloh současně, stále reagují na interak
  Asynchronní vzor založený na událostech vyžaduje zrušení asynchronní operace a <xref:System.Windows.Forms.PictureBox> ovládací prvek tento požadavek podporuje s jeho <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> metodou. Volání <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> odesílá požadavek na zastavení čeká na stažení a při zrušení <xref:System.Windows.Forms.PictureBox.LoadCompleted> úlohy dojde k vyvolání události.  
   
 > [!CAUTION]
->  Je možné, že stahování bude dokončeno pouze <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> v případě, že je žádost provedena, takže <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> nemusí odrážet požadavek na zrušení. Označuje se jako *konflikt časování* a jedná se o běžný problém v programování s více vlákny. Další informace o problémech v programování s více vlákny najdete v tématu [osvědčené postupy spravovaného vlákna](../../../docs/standard/threading/managed-threading-best-practices.md).  
+> Je možné, že stahování bude dokončeno pouze <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> v případě, že je žádost provedena, takže <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> nemusí odrážet požadavek na zrušení. Označuje se jako *konflikt časování* a jedná se o běžný problém v programování s více vlákny. Další informace o problémech v programování s více vlákny najdete v tématu [osvědčené postupy spravovaného vlákna](../../../docs/standard/threading/managed-threading-best-practices.md).  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>Charakteristiky asynchronního vzoru založeného na událostech  
  Asynchronní vzor založený na událostech může v závislosti na složitosti operací podporovaných určitou třídou trvat několik forem. Nejjednodušší třídy mohou mít jednu**asynchronní** metodu _methodName_a odpovídající událost _methodName_**Completed** . Složitější třídy mohou mít několik asynchronních metod _methodName_ , z nichž každá má odpovídající událost _methodName_**Completed** , a také synchronní verze těchto metod. Třídy mohou volitelně podporovat zrušení, vytváření sestav o průběhu a přírůstkové výsledky pro každou asynchronní metodu.  

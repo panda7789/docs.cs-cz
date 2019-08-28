@@ -2,22 +2,22 @@
 title: Ukázky rozšíření silného typování
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: eeef3fd05c66031fb2be573b1c1f56a35a3301ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1fd873e02dcc1fc824c8b17c52231c80c61e7c60
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007783"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045488"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Ukázky rozšíření silného typování
-Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy pro účely tohoto příkladu. Tyto vzory se dají v této ukázce jsme vám ukázali lze však použít se všemi syndikace třídy, které podporují dat rozšíření.  
+Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídu pro účely tohoto příkladu. Vzory znázorněné v této ukázce však lze použít se všemi třídami syndikace, které podporují data rozšíření.  
   
- Objektového modelu syndikace (<xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, a související třídy) podporuje volného typu přístup k datům rozšíření pomocí <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> vlastnosti. Tento příklad ukazuje, jak poskytovat přístup k datům rozšíření s silného typu pomocí implementace vlastní třídy odvozené z <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> , uvolněte některá rozšíření specifické pro aplikaci jako silného typu vlastnosti.  
+ Model objektu syndikace (<xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>a související třídy) podporuje volně typovaného přístupu k datům <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> rozšíření pomocí vlastností a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> . Tento příklad ukazuje, jak poskytnout silně typovaného přístupu k datům rozšíření implementací vlastních odvozených tříd <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> , které zpřístupňují určitá rozšíření specifická pro aplikaci jako vlastnosti silného typu.  
   
- Jako příklad Tato ukázka předvádí, jak implementovat rozšíření element definovaný v RFC rozšíření dělení na vlákna navrhovaných Atom. Toto je pouze pro demonstrační účely a tento příklad nemá představovat úplnou implementaci daného navrhovaných specifikace.  
+ Příklad ukazuje tento příklad, jak implementovat rozšiřující element definovaný v navrhovaných rozšířeních vláken Atoming pro vlákna RFC. Toto je jenom pro demonstrační účely a tato ukázka není zamýšlená jako úplná implementace navržené specifikace.  
   
-## <a name="sample-xml"></a>Ukázkový soubor XML  
- Následující ukázkový kód XML zobrazuje položka Atom 1.0 ještě `<in-reply-to>` element rozšíření.  
+## <a name="sample-xml"></a>Ukázkový kód XML  
+ Následující příklad XML ukazuje položku Atom 1,0 s přídavným `<in-reply-to>` prvkem rozšíření.  
   
 ```xml  
 <entry>  
@@ -40,10 +40,10 @@ Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> tříd
 </entry>  
 ```  
   
- `<in-reply-to>` Prvek určuje tři povinné atributy (`ref`, `type` a `href`) a zároveň přítomnost další rozšíření atributy a elementy rozšíření.  
+ Element určuje tři požadované `type` atributy (`ref`a `href`), přičemž zároveň umožňuje přítomnost dalších atributů rozšíření a elementů rozšíření. `<in-reply-to>`  
   
-## <a name="modeling-the-in-reply-to-element"></a>In – odpovědi na prvku modelu  
- V této ukázce `<in-reply-to>` element je modelovaná jako CLR, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>, což umožňuje jeho použití s <xref:System.Runtime.Serialization.DataContractSerializer>. Také implementuje některé metody a vlastnosti pro přístup k datům element, jak je znázorněno v následujícím ukázkovém kódu.  
+## <a name="modeling-the-in-reply-to-element"></a>Modelování elementu in-reply-to  
+ V této ukázce `<in-reply-to>` je prvek modelován jako CLR, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>, což <xref:System.Runtime.Serialization.DataContractSerializer>umožňuje jeho použití s. Také implementuje některé metody a vlastnosti pro přístup k datům elementu, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 [XmlRoot(ElementName = "in-reply-to", Namespace = "http://contoso.org/syndication/thread/1.0")]  
@@ -86,9 +86,9 @@ public class InReplyToElement : IXmlSerializable
 }  
 ```  
   
- `InReplyToElement` Třída implementuje vlastnosti pro požadovaný atribut (`HRef`, `MediaType`, a `Source`) a také kolekce pro uložení <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A>.  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> `Source``HRef` `MediaType`Třída implementuje vlastnosti pro požadovaný atribut (, a) a také kolekce, které mají být uloženy a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A>. `InReplyToElement`  
   
- `InReplyToElement` Implementuje třída <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, což umožňuje přímou kontrolu nad jak instance objektů se čtou a zapisují do souboru XML. `ReadXml` Metoda nejprve čte hodnoty `Ref`, `HRef`, `Source`, a `MediaType` vlastnosti z <xref:System.Xml.XmlReader> do něho předaný. Všechny neznámé atributy jsou uloženy v <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekce. Přečtení všechny atributy <xref:System.Xml.XmlReader.ReadStartElement> je volána k přechodu čtenáře na další prvek. Vzhledem k tomu, že element modelovaná Tato třída nemá žádné požadované podřízené položky, získat podřízené prvky do vyrovnávací paměti do `XElement` instance a uložená v <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> kolekce, jak je znázorněno v následujícím kódu.  
+ `InReplyToElement` Třída<xref:System.Xml.Serialization.IXmlSerializable> implementuje rozhraní, které umožňuje přímou kontrolu nad tím, jak se instance objektů čtou a zapisují do formátu XML. `Source` `HRef` `Ref`Metoda nejprve přečte hodnoty vlastností`MediaType` ,, a z<xref:System.Xml.XmlReader>předanédo. `ReadXml` Všechny neznámé atributy jsou uloženy v <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekci. Po načtení <xref:System.Xml.XmlReader.ReadStartElement> všech atributů je volána pro posunutí čtenáře k dalšímu prvku. Vzhledem k tomu, že element, který je modelem této třídy, nemá žádné požadované podřízené položky, `XElement` podřízené prvky budou uloženy do <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> vyrovnávací paměti do instancí a uloženy v kolekci, jak je znázorněno v následujícím kódu.  
   
 ```  
 public void ReadXml(System.Xml.XmlReader reader)  
@@ -144,7 +144,7 @@ public void ReadXml(System.Xml.XmlReader reader)
 }  
 ```  
   
- V `WriteXml`, `InReplyToElement` metoda nejprve zapíše hodnoty `Ref`, `HRef`, `Source`, a `MediaType` vlastnosti jako atributy ve formátu XML (`WriteXml` není odpovídají za zápis skutečné vnější element samostatně jako, který provádí volající `WriteXml`). Také zapíše obsah <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> Writer, jak je znázorněno v následujícím kódu.  
+ `WriteXml` `Ref` `HRef` `Source`V nástroji`WriteXml` metoda nejprve zapisuje hodnoty vlastností`MediaType` ,, a jako atributy XML (není odpovědná za zápis skutečného vnějšího prvku. `InReplyToElement` sám sebe, jako to, jak to dělá `WriteXml`volající z). Také zapisuje obsah <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> do zapisovače, jak je znázorněno v následujícím kódu.  
   
 ```  
 public void WriteXml(System.Xml.XmlWriter writer)  
@@ -185,9 +185,9 @@ public void WriteXml(System.Xml.XmlWriter writer)
 ```  
   
 ## <a name="threadedfeed-and-threadeditem"></a>ThreadedFeed a ThreadedItem  
- V ukázce `SyndicationItems` s `InReplyTo` rozšíření jsou modelovány pomocí `ThreadedItem` třídy. Podobně `ThreadedFeed` třída je `SyndicationFeed` jehož položky jsou všechny výskyty `ThreadedItem`.  
+ V ukázce s `SyndicationItems` `InReplyTo` rozšířeními, která `ThreadedItem` jsou modelována třídou. Podobně `ThreadedFeed` třída `ThreadedItem`je, jejíž položky jsou všechny instance. `SyndicationFeed`  
   
- `ThreadedFeed` Třída dědí z `SyndicationFeed` a přepíše `OnCreateItem` se vraťte `ThreadedItem`. Také implementuje metodu pro přístup k `Items` kolekci jako `ThreadedItems`, jak je znázorněno v následujícím kódu.  
+ Třída dědí z `SyndicationFeed` `OnCreateItem`aPřepisuje pro vrácení. `ThreadedItem` `ThreadedFeed` Také implementuje metodu pro přístup do `Items` kolekce jako `ThreadedItems`, jak je znázorněno v následujícím kódu.  
   
 ```  
 public class ThreadedFeed : SyndicationFeed  
@@ -211,7 +211,7 @@ public class ThreadedFeed : SyndicationFeed
 }  
 ```  
   
- Třída `ThreadedItem` dědí z `SyndicationItem` a zpřístupňuje `InReplyToElement` jako vlastnost silného typu. To umožňuje pohodlný programový přístup k `InReplyTo` dat rozšíření. Implementuje navíc `TryParseElement` a `WriteElementExtensions` pro čtení a zápis dat rozšíření, jak je znázorněno v následujícím kódu.  
+ Třída `ThreadedItem` dědí z `SyndicationItem` a vytváří `InReplyToElement` jako vlastnost silného typu. To zajišťuje pohodlný programový přístup k `InReplyTo` datům rozšíření. Také implementuje `TryParseElement` a `WriteElementExtensions` pro čtení a zápis jeho dat rozšíření, jak je znázorněno v následujícím kódu.  
   
 ```  
 public class ThreadedItem : SyndicationItem  
@@ -270,19 +270,19 @@ public class ThreadedItem : SyndicationItem
 }  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  

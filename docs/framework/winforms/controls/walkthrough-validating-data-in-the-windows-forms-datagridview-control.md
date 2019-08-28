@@ -12,87 +12,91 @@ helpviewer_keywords:
 - data validation [Windows Forms], Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: a4f1d015-2969-430c-8ea2-b612d179c290
-ms.openlocfilehash: c14edebb7fd5ee133ce60769327e6b32dac1c7af
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 89569feb0cb741f56d09f4e58154b4eecb5a89d4
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623711"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046383"
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView
-Při zobrazení funkce vstupní data pro uživatele máte často ověřit data do svého formuláře. <xref:System.Windows.Forms.DataGridView> Třída poskytuje pohodlný způsob, jak provádět ověřování předtím, než se zaměřuje na úložiště dat data. Data můžete ověřit pomocí manipulace <xref:System.Windows.Forms.DataGridView.CellValidating> událost, která je vyvolána <xref:System.Windows.Forms.DataGridView> při změně aktuální buňky.  
-  
- V tomto podrobném návodu, načte řádky z `Customers` tabulky v ukázkové databázi Northwind a jejich zobrazení <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Když uživatel upraví buňky v `CompanyName` sloupce a pokouší se ponechte buňku, <xref:System.Windows.Forms.DataGridView.CellValidating> obslužná rutina události prozkoumá nový řetězec názvu společnosti k Ujistěte se, že je neprázdné; Pokud je nová hodnota je prázdný řetězec, <xref:System.Windows.Forms.DataGridView> zabrání uživatele kurzoru z něj odejít buňku, dokud nebude zadán neprázdný řetězec.  
-  
- Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Ověřování dat v ovládacím prvku Windows Forms DataGridView](how-to-validate-data-in-the-windows-forms-datagridview-control.md).  
-  
-## <a name="prerequisites"></a>Požadavky  
- K dokončení tohoto návodu budete potřebovat:  
-  
-- Přístup k serveru, která obsahuje ukázkovou databázi Northwind SQL Server.  
-  
-## <a name="creating-the-form"></a>Vytvoření formuláře  
-  
-#### <a name="to-validate-data-entered-in-a-datagridview"></a>Ověření dat zadané v ovládacím prvku DataGridView  
-  
-1. Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje <xref:System.Windows.Forms.DataGridView> ovládacího prvku a <xref:System.Windows.Forms.BindingSource> komponenty.  
-  
-     Následující příklad kódu poskytuje základní inicializace a zahrnuje `Main` metoda.  
-  
-     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#01)]
-     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#01)]  
+
+Když pro uživatele zobrazíte funkce pro zadávání dat, často je nutné ověřit data zadaná do formuláře. <xref:System.Windows.Forms.DataGridView> Třída nabízí pohodlný způsob, jak provést ověření před potvrzením dat do úložiště dat. Data lze ověřit zpracováním <xref:System.Windows.Forms.DataGridView.CellValidating> události, která je vyvolána <xref:System.Windows.Forms.DataGridView> při změně aktuální buňky.
+
+V tomto návodu navedete načtení řádků z `Customers` tabulky v ukázkové databázi Northwind a zobrazíte je <xref:System.Windows.Forms.DataGridView> v ovládacím prvku. Když uživatel upraví buňku ve `CompanyName` sloupci a pokusí se ji opustit <xref:System.Windows.Forms.DataGridView.CellValidating> , obslužná rutina události ověří nový řetězec názvu společnosti, aby se zajistilo, že není prázdný. Pokud je nová hodnota prázdným řetězcem, <xref:System.Windows.Forms.DataGridView> zabrání se ukazateli uživatele. z buňky opustí, dokud nebude zadán neprázdný řetězec.
+
+Postup kopírování kódu v tomto tématu jako jediného výpisu naleznete v [tématu How to: Ověří data v ovládacím prvku](how-to-validate-data-in-the-windows-forms-datagridview-control.md)DataGridView model Windows Forms.
+
+## <a name="prerequisites"></a>Požadavky
+
+Aby bylo možné dokončit tento návod, budete potřebovat:
+
+- Přístup k serveru, který má ukázkovou databázi Northwind SQL Server.
+
+## <a name="creating-the-form"></a>Vytvoření formuláře
+
+#### <a name="to-validate-data-entered-in-a-datagridview"></a>Ověření dat zadaných v ovládacím prvku DataGridView
+
+1. Vytvořte třídu, která je odvozena <xref:System.Windows.Forms.Form> z a <xref:System.Windows.Forms.DataGridView> obsahuje ovládací prvek a <xref:System.Windows.Forms.BindingSource> komponentu.
+
+    Následující příklad kódu poskytuje základní inicializaci a obsahuje `Main` metodu.
+
+    [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#01)]
+    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#01)]
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#02](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#02)]
-    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#02](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#02)]  
-  
-2. Implementujte metodu v definici třídy formuláře pro zpracování podrobností o připojení k databázi.  
-  
-     Tento příklad kódu používá `GetData` metodu, která vrací mají údaj vyplněný <xref:System.Data.DataTable> objektu. Ujistěte se, že jste nastavili `connectionString` proměnných na hodnotu, která je vhodná pro vaši databázi.  
-  
+    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#02](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#02)]
+
+2. Implementujte metodu v definici třídy formuláře pro zpracování podrobností o připojení k databázi.
+
+    Tento příklad kódu používá `GetData` metodu, která vrací naplněný <xref:System.Data.DataTable> objekt. Ujistěte se, že jste nastavili `connectionString` proměnnou na hodnotu, která je vhodná pro vaši databázi.
+
     > [!IMPORTANT]
-    >  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Použití ověřování Windows, označované také jako integrované zabezpečení, je bezpečnější způsob řízení přístupu k databázi. Další informace najdete v tématu [chrání informace o připojení](../../data/adonet/protecting-connection-information.md).  
-  
-     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#30)]
-     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#30)]  
-  
-3. Implementujte obslužnou rutinu pro daný formulář <xref:System.Windows.Forms.Form.Load> událost, která inicializuje <xref:System.Windows.Forms.DataGridView> a <xref:System.Windows.Forms.BindingSource> a nastaví datovou vazbu.  
-  
-     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#10)]
-     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#10)]  
-  
-4. Implementace obslužné rutiny pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku <xref:System.Windows.Forms.DataGridView.CellValidating> a <xref:System.Windows.Forms.DataGridView.CellEndEdit> události.  
-  
-     <xref:System.Windows.Forms.DataGridView.CellValidating> Obslužná rutina události je, kde můžete určit, zda je hodnota buňky v `CompanyName` sloupec je prázdný. Pokud se hodnota buňky ověření nezdaří, nastavte <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType> třídu `true`. To způsobí, že <xref:System.Windows.Forms.DataGridView> ovládací prvek zabránit kurzor z něj odejít buňku. Nastavte <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> vlastnost na řádku, který má vysvětlující řetězec. Zobrazí se ikona chyby s popisem, který obsahuje text chyby. V <xref:System.Windows.Forms.DataGridView.CellEndEdit> nastavena obslužná rutina události, <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> vlastnost na řádku, který má prázdný řetězec. <xref:System.Windows.Forms.DataGridView.CellEndEdit> Dojde k události, pouze když buňku opustí režim úprav, což nelze provést, pokud selže ověření.  
-  
-     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
-     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]  
-  
-## <a name="testing-the-application"></a>Testování aplikace  
- Teď můžete otestovat formulář, abyste měli jistotu, že se chová podle očekávání.  
-  
-#### <a name="to-test-the-form"></a>K otestování formuláře  
-  
-- Kompilace a spuštění aplikace.  
-  
-     Zobrazí se <xref:System.Windows.Forms.DataGridView> naplněný daty z `Customers` tabulky. Když dvakrát kliknete na buňku `CompanyName` sloupce, můžete upravit její hodnotu. Pokud odstranění všech znaků a stisknutím klávesy tabulátor ukončete buňce <xref:System.Windows.Forms.DataGridView> zabraňuje ukončení. Když zadáte neprázdný řetězec do buňky, <xref:System.Windows.Forms.DataGridView> řízení umožňuje ukončete buňce.  
-  
-## <a name="next-steps"></a>Další kroky  
- Tato aplikace získáte základní znalosti o <xref:System.Windows.Forms.DataGridView> možnosti ovládacího prvku. Můžete přizpůsobit vzhled a chování <xref:System.Windows.Forms.DataGridView> ovládacího prvku v několika ohledech:  
-  
-- Změna stylů ohraničení a záhlaví. Další informace najdete v tématu [jak: Změna ohraničení a styly mřížky v Windows Forms DataGridView](change-the-border-and-gridline-styles-in-the-datagrid.md).  
-  
-- Povolit nebo zakázat vstup uživatele <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Další informace najdete v tématu [jak: Zamezení přidávání řádků a odstranění v Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md), a [jak: Přepnutí sloupců jen pro čtení v Windows Forms DataGridView – ovládací prvek](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md).  
-  
-- Zkontrolujte chyby související s databáze uživatelský vstup. Další informace najdete v tématu [názorný postup: Zpracování chyb vzniklých při zadávání dat v Windows Forms DataGridView – ovládací prvek](handling-errors-that-occur-during-data-entry-in-the-datagrid.md).  
-  
-- Zpracování velmi rozsáhlým datovým sadám pomocí virtuální režim. Další informace najdete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
-  
-- Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md).  
-  
+    > Ukládání citlivých informací, jako je například heslo, v rámci připojovacího řetězce může ovlivnit zabezpečení aplikace. Použití ověřování systému Windows, označovaného také jako integrované zabezpečení, je bezpečnější způsob, jak řídit přístup k databázi. Další informace najdete v tématu [ochrana informací o připojení](../../data/adonet/protecting-connection-information.md).
+
+    [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#30)]
+    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#30)]
+
+3. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.Form.Load> událost formuláře, která <xref:System.Windows.Forms.DataGridView> Inicializuje a <xref:System.Windows.Forms.BindingSource> a nastaví datovou vazbu.
+
+    [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#10)]
+    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#10)]
+
+4. Implementujte obslužné rutiny <xref:System.Windows.Forms.DataGridView> pro <xref:System.Windows.Forms.DataGridView.CellValidating> události <xref:System.Windows.Forms.DataGridView.CellEndEdit> ovládacího prvku a.
+
+    Obslužná rutina `CompanyName`událostije tam, kde určíte, zda je hodnota buňky ve sloupci prázdná. <xref:System.Windows.Forms.DataGridView.CellValidating> Pokud hodnota buňky neprojde ověřením, nastavte <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost <xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType> třídy na `true`. To způsobí, <xref:System.Windows.Forms.DataGridView> že ovládací prvek zabrání ukazateli opustit buňku. <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> Nastavte vlastnost na řádku na vysvětlující řetězec. Tím se zobrazí ikona chyby s popisem, který obsahuje text chyby. V obslužné rutině <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A>událostinastavte vlastnost na řádku na prázdný řetězec. <xref:System.Windows.Forms.DataGridView.CellEndEdit> K <xref:System.Windows.Forms.DataGridView.CellEndEdit> události dojde pouze v případě, že buňka ukončuje režim úprav, kterou nemůže provést, pokud se ověření nezdařilo.
+
+    [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
+    [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]
+
+## <a name="testing-the-application"></a>Testování aplikace
+
+Nyní můžete testovat formulář, abyste se ujistili, že se chová podle očekávání.
+
+#### <a name="to-test-the-form"></a>Testování formuláře
+
+- Zkompilujte a spusťte aplikaci.
+
+  V `Customers` tabulce se zobrazí <xref:System.Windows.Forms.DataGridView> vyplněná data. Když dvakrát kliknete na buňku ve `CompanyName` sloupci, můžete tuto hodnotu upravit. Pokud odstraníte všechny znaky a zaškrtnete klávesu TAB, zabráníte tím ukončení <xref:System.Windows.Forms.DataGridView> této buňky. Když do buňky zadáte neprázdný řetězec, <xref:System.Windows.Forms.DataGridView> ovládací prvek vám umožní ukončit tuto buňku.
+
+## <a name="next-steps"></a>Další kroky
+
+Tato aplikace vám poskytne základní informace o <xref:System.Windows.Forms.DataGridView> schopnostech ovládacího prvku. Vzhled a chování <xref:System.Windows.Forms.DataGridView> ovládacího prvku můžete přizpůsobit několika způsoby:
+
+- Změnit styly ohraničení a záhlaví. Další informace najdete v tématu [jak: Změňte styly ohraničení a mřížky v ovládacím prvku](change-the-border-and-gridline-styles-in-the-datagrid.md)DataGridView model Windows Forms.
+
+- Povolí nebo zakáže vstup uživatele k <xref:System.Windows.Forms.DataGridView> ovládacímu prvku. Další informace najdete v tématu [jak: Zabraňte přidávání a odstraňování řádků v ovládacím prvku](prevent-row-addition-and-deletion-datagridview.md)DataGridView model Windows Forms a [postupy: Zpřístupněte sloupce jen pro čtení v ovládacím prvku](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)DataGridView model Windows Forms.
+
+- Ověřte vstup uživatele o chybách souvisejících s databází. Další informace najdete v tématu [Návod: Zpracování chyb, ke kterým došlo při zadávání dat v ovládacím prvku](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)DataGridView model Windows Forms.
+
+- Zpracování velmi velkých datových sad pomocí virtuálního režimu. Další informace najdete v tématu [Návod: Implementace virtuálního režimu v ovládacím prvku](implementing-virtual-mode-wf-datagridview-control.md)DataGridView model Windows Forms.
+
+- Přizpůsobení vzhledu buněk Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku](customize-the-appearance-of-cells-in-the-datagrid.md) model Windows Forms DataGridView a [postup: Nastavte styly písma a barev v ovládacím prvku](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)DataGridView model Windows Forms.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
 - [Zadávání dat v ovládacím prvku Windows Forms DataGridView](data-entry-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Ověřování dat v ovládacím prvku Windows Forms DataGridView](how-to-validate-data-in-the-windows-forms-datagridview-control.md)
-- [Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
+- [Postupy: Ověřit data v ovládacím prvku DataGridView model Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md)
+- [Návod: Zpracování chyb, ke kterým došlo při zadávání dat v ovládacím prvku model Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
 - [Ochrana informací o připojení](../../data/adonet/protecting-connection-information.md)

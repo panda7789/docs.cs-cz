@@ -12,149 +12,149 @@ helpviewer_keywords:
 - data binding [Windows Forms], interfaces
 - IDataErrorInfo interface [Windows Forms], Windows Forms data binding
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
-ms.openlocfilehash: 591b76ca6b5cd3a9180487c79293d5fc3b7991af
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 9f102b584d2ed0b5a9d2bbb0e7ce3f7871ec40b2
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882347"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046362"
 ---
 # <a name="interfaces-related-to-data-binding"></a>Rozhraní související s datovou vazbou
 
-Pomocí ADO.NET můžete vytvořit mnoha různými datovými strukturami tak, aby odpovídala vazby potřebám vaší aplikace a data, která pracujete. Můžete chtít vytvořit vlastní třídy, které poskytují nebo využívají data v modelu Windows Forms. Tyto objekty lze nabízejí různé úrovně funkčnosti a složitosti, na základní datové vazby k poskytování podpory během návrhu, kontroly chyb, oznámení o změně nebo dokonce i podporu pro strukturované vrátit zpět změny provedené na vlastní data.
+Pomocí ADO.NET můžete vytvořit mnoho různých datových struktur, které budou vyhovovat potřebám vazby vaší aplikace a datům, se kterými pracujete. Můžete chtít vytvořit vlastní třídy, které poskytují nebo využívají data v model Windows Forms. Tyto objekty mohou nabízet různé úrovně funkcí a složitosti, od základních datových vazeb až po návrhovou podporu, kontrolu chyb, oznámení o změně nebo dokonce podporu pro strukturované vrácení změn provedených v samotných datech.
 
-## <a name="consumers-of-data-binding-interfaces"></a>Příjemci rozhraní datové vazby
+## <a name="consumers-of-data-binding-interfaces"></a>Spotřebitelé rozhraní datových vazeb
 
-Následující části popisují dvě skupiny objektů, rozhraní. První skupina seznam rozhraní, které jsou implementované u zdrojů dat autory zdroje dat. Tato rozhraní jsou navržené tak být využívány službou spotřebitelé zdroje dat, které jsou ve většině případů, které ovládací prvky Windows Forms nebo komponenty. Druhé skupině obsahuje seznam rozhraní, které jsou určeny k použití autoři komponenty. Autoři komponenty použití těchto rozhraní při vytváření komponenty, která podporuje datovou vazbu pro modul datové vazby Windows Forms. Můžete implementovat tyto rozhraní v rámci třídy související s formuláři a povolují datové vazby; každý případ představuje třídu, která implementuje rozhraní, které umožňuje interakci s daty. Visual Studio rychlé (RAD) data návrhové prostředí nástroje pro vývoj aplikací už využít výhod této funkce.
+Následující části popisují dvě skupiny objektů rozhraní. První skupina uvádí rozhraní, která jsou implementována na zdrojích dat autory zdrojů dat. Tato rozhraní jsou navržena tak, aby byla využívána spotřebiteli zdroje dat, který je ve většině případů model Windows Forms ovládacích prvků nebo komponent. Druhá skupina vypisuje rozhraní navržená pro použití tvůrci součástí. Autoři součástí používají tato rozhraní při vytváření komponenty, která podporuje datovou vazbu, která má být využívána model Windows Forms modul vázání dat. Můžete implementovat tato rozhraní v rámci tříd přidružených k formuláři pro povolení datové vazby; každý případ prezentuje třídu, která implementuje rozhraní, které umožňuje interakci s daty. Nástroje pro návrh dat pro vývoj aplikací pro Visual Studio Rapid (RAD) už tuto funkci využívají.
 
-### <a name="interfaces-for-implementation-by-data-source-authors"></a>Rozhraní pro implementaci autory zdroje dat
+### <a name="interfaces-for-implementation-by-data-source-authors"></a>Rozhraní pro implementaci autory zdrojů dat
 
-Následující rozhraní jsou navrženy pro ovládací prvky Windows Forms využívat:
+Následující rozhraní jsou navržena tak, aby byla využívána model Windows Formsmi ovládacími prvky:
 
-- <xref:System.Collections.IList> Rozhraní
+- <xref:System.Collections.IList>prostředí
 
-  Třídu, která implementuje <xref:System.Collections.IList> rozhraní může být <xref:System.Array>, <xref:System.Collections.ArrayList>, nebo <xref:System.Collections.CollectionBase>. Toto jsou indexované seznamy položek typu <xref:System.Object>. Tyto seznamy musí obsahovat homogenní typů, protože typ Určuje první položku indexu. <xref:System.Collections.IList> bude k dispozici pro vazbu jenom v době běhu.
-
-  > [!NOTE]
-  >  Pokud chcete vytvořit seznam obchodních objektů pro vazbu s Windows Forms, měli byste zvážit použití <xref:System.ComponentModel.BindingList%601>. <xref:System.ComponentModel.BindingList%601> Je rozšiřitelný třída, která implementuje rozhraní primární vyžadované pro obousměrný Windows Forms – datová vazba.
-
-- <xref:System.ComponentModel.IBindingList> Rozhraní
-
-  Třídu, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní umožňuje mnohem vyšší úroveň funkcí datové vazby. Tato implementace nabízí základní možnosti řazení a oznámení o změně, jak když v seznamu položek změnu (třetí položka v seznamu zákazníků má například změna do pole adresy), i když samotný seznam změní (například počet položek v seznamu, které zvětší nebo zmenší). Upozornění na změnu je důležité, pokud chcete mít více ovládacích prvků vázaných ke stejným datům, a chcete změny dat v jednom z ovládacích prvků na jiné vázané ovládací prvky.
+  Třída, která <xref:System.Collections.IList> implementuje rozhraní <xref:System.Array>, může být, <xref:System.Collections.ArrayList>nebo <xref:System.Collections.CollectionBase>. Jedná se o indexované seznamy položek typu <xref:System.Object>. Tyto seznamy musí obsahovat homogenní typy, protože první položka indexu Určuje typ. <xref:System.Collections.IList>bude k dispozici pro vazbu pouze v době běhu.
 
   > [!NOTE]
-  > Oznámení o změně je povolený pro <xref:System.ComponentModel.IBindingList> rozhraní prostřednictvím <xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A> vlastnost které, když `true`, vyvolá <xref:System.ComponentModel.IBindingList.ListChanged> určující seznam změnit nebo položku v seznamu událostí, změnit.
+  > Chcete-li vytvořit seznam obchodních objektů pro vazbu s model Windows Forms, měli byste zvážit použití <xref:System.ComponentModel.BindingList%601>. <xref:System.ComponentModel.BindingList%601> Je rozšiřitelná třída, která implementuje primární rozhraní požadovaná pro obousměrnou model Windows Forms datovou vazbu.
 
-  Typ změny je popsán <xref:System.ComponentModel.ListChangedType> vlastnost <xref:System.ComponentModel.ListChangedEventArgs> parametru. Proto při každé aktualizaci datového modelu, všechny závislé zobrazení, jako je například jiných ovládacích prvků vázaných ke stejnému zdroji dat, bude také aktualizovat. Ale bude nutné upozornit seznamu při změnách tak, aby může vyvolat seznam objekty obsažené v seznamu <xref:System.ComponentModel.IBindingList.ListChanged> událostí.
+- <xref:System.ComponentModel.IBindingList>prostředí
 
-  > [!NOTE]
-  > <xref:System.ComponentModel.BindingList%601> Poskytuje obecnou implementaci <xref:System.ComponentModel.IBindingList> rozhraní.
-
-- <xref:System.ComponentModel.IBindingListView> Rozhraní
-
-  Třídu, která implementuje <xref:System.ComponentModel.IBindingListView> rozhraní poskytuje všechny funkce, které jsou součástí implementace <xref:System.ComponentModel.IBindingList>, stejně jako filtrování a pokročilé funkce řazení. Tato implementace nabízí založené na řetězci filtrování a řazení více sloupců s páry směr popisovače vlastnosti.
-
-- <xref:System.ComponentModel.IEditableObject> Rozhraní
-
-  Třídu, která implementuje <xref:System.ComponentModel.IEditableObject> rozhraní umožňuje řídit, kdy na tento objekt dojde ke změně trvalého objektu. Tato implementace zajišťuje <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, a <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> metody, které umožňují snadno vrátit zpět změny provedené v objektu. Tady je stručné vysvětlení fungování <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, a <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> metod a jak fungují společně s možností vzájemné umožňující možné vrátit zpět změny provedené v datech:
-
-  - <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> Metoda signály start úpravy objektu. Objekt, který implementuje toto rozhraní bude nutné ukládat žádné aktualizace po <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> volání metody tak, že aktualizace můžete zahodit Pokud <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> metoda je volána. V datové vazbě Windows Forms, můžete volat <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> více než jednou v rámci oboru jednoho upravit transakci (třeba <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>). Implementace <xref:System.ComponentModel.IEditableObject> měli sledovat, jestli se <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> již byla volána a ignorovat následných volání <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>. Tuto metodu lze volat vícekrát, proto je důležité, že jsou následných volání nedestruktivní; To znamená následné <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> volání nelze zničit aktualizace, které byly provedeny nebo změnit data, která byla uložena v prvním <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> volání.
-
-  - <xref:System.ComponentModel.IEditableObject.EndEdit%2A> Metoda nabízených oznámení změny od <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> byla volána na základní objekt, pokud objekt je aktuálně v režimu úprav.
-
-  - <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> Metoda zahodí všechny změny provedené objektu.
-
-  Další informace o tom, jak <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, a <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> metody práce, naleznete v tématu [uložit data zpět do databáze](/visualstudio/data-tools/save-data-back-to-the-database).
-
-  Transakční vyskytují funkci dat používá <xref:System.Windows.Forms.DataGridView> ovládacího prvku.
-
-- <xref:System.ComponentModel.ICancelAddNew> Rozhraní
-
-  Třídu, která implementuje <xref:System.ComponentModel.ICancelAddNew> obvykle implementuje rozhraní <xref:System.ComponentModel.IBindingList> rozhraní a umožňuje vrátit zpět přidání provedené ke zdroji dat s <xref:System.ComponentModel.IBindingList.AddNew%2A> metody. Pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList> rozhraní, měli byste také mít ho implementovat <xref:System.ComponentModel.ICancelAddNew> rozhraní.
-
-- <xref:System.ComponentModel.IDataErrorInfo> Rozhraní
-
-  Třídu, která implementuje <xref:System.ComponentModel.IDataErrorInfo> rozhraní umožňuje objekty nabízí informace o vlastní chybě vázané ovládací prvky:
-
-  - <xref:System.ComponentModel.IDataErrorInfo.Error%2A> Vlastnost vrací text obecné chybové zprávy (například "došlo k chybě").
-
-  - <xref:System.ComponentModel.IDataErrorInfo.Item%2A> Vlastnost vrátí řetězec s určité chybové zprávě ve sloupci (například "hodnota v `State` sloupec není platný").
-
-- <xref:System.Collections.IEnumerable> Rozhraní
-
-  Třídu, která implementuje <xref:System.Collections.IEnumerable> rozhraní obvykle využívá technologie ASP.NET. Podpora Windows Forms pro toto rozhraní je dostupná jenom <xref:System.Windows.Forms.BindingSource> komponenty.
+  Třída, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní, poskytuje mnohem vyšší úroveň funkcí datové vazby. Tato implementace nabízí základní možnosti řazení a oznámení o změně, pro kdy se změní položky seznamu (například třetí položka v seznamu zákazníků má změnu v poli adresa) a také při změně samotného seznamu (například počet položek v seznamu se zvětšuje nebo zmenšuje). Oznámení o změně je důležité, pokud máte v plánu mít více ovládacích prvků vázaných na stejná data a chcete, aby se změny dat provedené v jednom z ovládacích prvků rozšířily do dalších vázaných ovládacích prvků.
 
   > [!NOTE]
-  > <xref:System.Windows.Forms.BindingSource> Komponenty zkopíruje všechny <xref:System.Collections.IEnumerable> položek do samostatného seznamu pro účely vazby.
+  > Oznámení o změně je povoleno pro <xref:System.ComponentModel.IBindingList> rozhraní <xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A> prostřednictvím vlastnosti <xref:System.ComponentModel.IBindingList.ListChanged> , která při `true`události vyvolá událost, která indikuje, že se seznam změnil nebo se změnila položka v seznamu.
 
-- <xref:System.ComponentModel.ITypedList> Rozhraní
-
-  Třídy kolekcí, která implementuje <xref:System.ComponentModel.ITypedList> rozhraní umožňuje řídit pořadí a sadu vlastností, které jsou vystaveny vázaného ovládacího prvku.
+  Typ změny je popsán <xref:System.ComponentModel.ListChangedType> vlastností <xref:System.ComponentModel.ListChangedEventArgs> parametru. Všechny závislé pohledy, jako jsou například jiné ovládací prvky vázané na stejný zdroj dat, budou proto aktualizovány také v případě, že dojde k aktualizaci datového modelu. Objekty, které jsou obsaženy v seznamu, ale budou muset při změně seznamu upozornění zobrazit, aby seznam mohl vyvolat <xref:System.ComponentModel.IBindingList.ListChanged> událost.
 
   > [!NOTE]
-  > Při implementaci <xref:System.ComponentModel.ITypedList.GetItemProperties%2A> metody a <xref:System.ComponentModel.PropertyDescriptor> pole nemá hodnotu null, že poslední položka v poli bude popisovač vlastnosti, která popisuje vlastnosti seznamu, který je jiný seznam položek.
+  > Poskytuje obecnou implementaci <xref:System.ComponentModel.IBindingList>rozhraní. <xref:System.ComponentModel.BindingList%601>
 
-- <xref:System.ComponentModel.ICustomTypeDescriptor> Rozhraní
+- <xref:System.ComponentModel.IBindingListView>prostředí
 
-  Třídu, která implementuje <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní poskytuje dynamických informací o sobě. Toto rozhraní je podobný <xref:System.ComponentModel.ITypedList> ale používá se pro objekty, spíše než seznamy. Toto rozhraní je používán <xref:System.Data.DataRowView> do projektu schématu podkladových řádků. Jednoduchá implementace <xref:System.ComponentModel.ICustomTypeDescriptor> je poskytován <xref:System.ComponentModel.CustomTypeDescriptor> třídy.
+  Třída, která implementuje <xref:System.ComponentModel.IBindingListView> rozhraní <xref:System.ComponentModel.IBindingList>, poskytuje všechny funkce implementace a také filtrování a pokročilé funkce řazení. Tato implementace nabízí filtrování založené na řetězcích a více sloupců s páry popisovačů vlastností.
 
-  > [!NOTE]
-  > Pro podporu návrhu vazbu na typy, které implementují <xref:System.ComponentModel.ICustomTypeDescriptor>, musíte také implementovat typ <xref:System.ComponentModel.IComponent> existovat jako instance na formulář.
+- <xref:System.ComponentModel.IEditableObject>prostředí
 
-- <xref:System.ComponentModel.IListSource> Rozhraní
+  Třída, která implementuje <xref:System.ComponentModel.IEditableObject> rozhraní, umožňuje objektu řídit, kdy jsou změny tohoto objektu provedeny trvalé. Tato implementace poskytuje <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>metody, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>a <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> , které umožňují vrátit zpět změny provedené v objektu. Toto je stručné vysvětlení fungování <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> metod, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, a, jak fungují společně s sebou, aby bylo možné vrátit změny provedené v datech:
 
-  Třídu, která implementuje <xref:System.ComponentModel.IListSource> rozhraní umožňuje vytvořit vazbu na základě seznamu na jiné seznam objektů. <xref:System.ComponentModel.IListSource.GetList%2A> Metoda <xref:System.ComponentModel.IListSource> se používá k vrácení umožňujících vazbu seznamu z objektu, který nedědí od <xref:System.Collections.IList>. <xref:System.ComponentModel.IListSource> používá <xref:System.Data.DataSet> třídy.
+  - <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> Metoda signalizuje začátek úpravy objektu. Objekt, který implementuje toto rozhraní, bude muset ukládat jakékoli aktualizace po <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> volání metody takovým způsobem, že aktualizace mohou být zahozeny, <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> Pokud je metoda volána. V model Windows Forms vazby <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> dat můžete volat vícekrát v rámci oboru jedné úpravy transakce ( <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>například <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> <xref:System.ComponentModel.IEditableObject.EndEdit%2A>,,). Implementace by měly sledovat, zda <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> již bylo voláno a ignorovat následná volání na <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>. <xref:System.ComponentModel.IEditableObject> Vzhledem k tomu, že tuto metodu lze volat víckrát, je důležité, aby následné volání na ni byla nedestruktivní; To znamená, že <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> následná volání nemohou zničit aktualizace, které byly provedeny, nebo změnit data, která byla uložena při <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> prvním volání.
 
-- <xref:System.ComponentModel.IRaiseItemChangedEvents> Rozhraní
+  - Metoda vloží všechny změny, protože <xref:System.ComponentModel.IEditableObject.BeginEdit%2A> byly volány do podkladového objektu, pokud je objekt aktuálně v režimu úprav. <xref:System.ComponentModel.IEditableObject.EndEdit%2A>
 
-  Třídu, která implementuje <xref:System.ComponentModel.IRaiseItemChangedEvents> rozhraní je s možností vazby seznam, který také implementuje <xref:System.ComponentModel.IBindingList> rozhraní. Toto rozhraní se používá k označení, pokud váš typ vyvolá <xref:System.ComponentModel.IBindingList.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged> prostřednictvím jeho <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> vlastnost.
+  - <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> Metoda zahodí všechny změny provedené v objektu.
 
-  > [!NOTE]
-  > Měli byste implementovat <xref:System.ComponentModel.IRaiseItemChangedEvents> Pokud zdroj dat obsahuje vlastnost, která má seznam událostí převodu je popsáno výše a interakci s <xref:System.Windows.Forms.BindingSource> komponenty. V opačném případě <xref:System.Windows.Forms.BindingSource> také provede vlastnost do seznamu událostí převod výsledkem je pomalejší výkon.
+  Další informace o <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>fungování metod, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>a <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> naleznete v tématu [uložení dat zpět do databáze](/visualstudio/data-tools/save-data-back-to-the-database).
 
-- <xref:System.ComponentModel.ISupportInitialize> Rozhraní
+  Tento transakční pojem datových funkcí je používán <xref:System.Windows.Forms.DataGridView> ovládacím prvkem.
 
-  Komponenty, která implementuje <xref:System.ComponentModel.ISupportInitialize> rozhraní využívá výhod optimalizací služby batch pro nastavení vlastností a inicializace závislé na společné vlastnosti. <xref:System.ComponentModel.ISupportInitialize> Obsahuje dvě metody:
+- <xref:System.ComponentModel.ICancelAddNew>prostředí
 
-  - <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> signalizuje, že se, že inicializace objektu se spouští.
+  Třída, která implementuje <xref:System.ComponentModel.ICancelAddNew> rozhraní, obvykle <xref:System.ComponentModel.IBindingList> implementuje rozhraní a umožňuje vrátit zpět sčítání provedené ve zdroji <xref:System.ComponentModel.IBindingList.AddNew%2A> dat metodou. Pokud váš zdroj dat implementuje <xref:System.ComponentModel.IBindingList> rozhraní, měli byste také <xref:System.ComponentModel.ICancelAddNew> implementovat rozhraní.
 
-  - <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> signalizuje, že se, že inicializace objektu se nepřipojujte.
+- <xref:System.ComponentModel.IDataErrorInfo>prostředí
 
-- <xref:System.ComponentModel.ISupportInitializeNotification> Rozhraní
+  Třída, která implementuje <xref:System.ComponentModel.IDataErrorInfo> rozhraní, umožňuje objektům nabízet vlastní informace o chybách vázaným ovládacím prvkům:
 
-  Komponenty, která implementuje <xref:System.ComponentModel.ISupportInitializeNotification> rozhraní také implementuje <xref:System.ComponentModel.ISupportInitialize> rozhraní. Toto rozhraní umožňuje informovat ostatní <xref:System.ComponentModel.ISupportInitialize> komponenty, že inicializace je dokončena. <xref:System.ComponentModel.ISupportInitializeNotification> Rozhraní obsahuje dva členy:
+  - <xref:System.ComponentModel.IDataErrorInfo.Error%2A> Vlastnost vrátí obecný text chybové zprávy (například "došlo k chybě").
 
-  - <xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A> Vrátí `boolean` hodnotu, která udává, zda je komponenta inicializována.
+  - Vlastnost vrátí řetězec se specifickou chybovou zprávou ze sloupce (například "hodnota `State` ve sloupci je neplatná"). <xref:System.ComponentModel.IDataErrorInfo.Item%2A>
 
-  - <xref:System.ComponentModel.ISupportInitializeNotification.Initialized> nastane, když <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> je volána.
+- <xref:System.Collections.IEnumerable>prostředí
 
-- <xref:System.ComponentModel.INotifyPropertyChanged> Rozhraní
-
-  Třída, která implementuje toto rozhraní je typ, který vyvolá událost, když se změní některý z jeho hodnot vlastností. Toto rozhraní je určena k nahrazení vzor s událost změny pro každou vlastnost ovládacího prvku. Při použití v <xref:System.ComponentModel.BindingList%601>, by měly implementovat obchodní objekt <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a BindingList\`1 budou převedeny <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události <xref:System.ComponentModel.BindingList%601.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged>.
+  Třída, která implementuje <xref:System.Collections.IEnumerable> rozhraní, je obvykle spotřebovaná pomocí ASP.NET. Podpora model Windows Forms pro toto rozhraní je k dispozici pouze <xref:System.Windows.Forms.BindingSource> prostřednictvím součásti.
 
   > [!NOTE]
-  > Změna oznámení probíhá vytvoření vazby mezi vazby klienta a data vašeho vázaný zdroj dat typu zdroje by měly buď implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní (upřednostňováno) nebo vám může poskytnout *propertyName* `Changed` události pro typ vazby, ale by neměly provést obojí.
+  > Komponenta zkopíruje všechny <xref:System.Collections.IEnumerable> položky do samostatného seznamu pro účely vazby. <xref:System.Windows.Forms.BindingSource>
 
-### <a name="interfaces-for-implementation-by-component-authors"></a>Rozhraní pro implementaci autoři komponenty
+- <xref:System.ComponentModel.ITypedList>prostředí
 
-Následující rozhraní jsou navrženy pro použití modulem datové vazby Windows Forms:
-
-- <xref:System.Windows.Forms.IBindableComponent> Rozhraní
-
-  Třída, která implementuje toto rozhraní je komponenty – ovládací prvek, který podporuje datovou vazbu. Tato třída vrátí datové vazby a kontextu vazby součásti prostřednictvím <xref:System.Windows.Forms.IBindableComponent.DataBindings%2A> a <xref:System.Windows.Forms.IBindableComponent.BindingContext%2A> vlastnosti tohoto rozhraní.
+  Třída kolekce, která implementuje <xref:System.ComponentModel.ITypedList> rozhraní, poskytuje možnost řídit pořadí a sadu vlastností vystavených pro vázaný ovládací prvek.
 
   > [!NOTE]
-  > Pokud vaše komponenta dědí z <xref:System.Windows.Forms.Control>, není potřeba implementovat <xref:System.Windows.Forms.IBindableComponent> rozhraní.
+  > Při implementaci <xref:System.ComponentModel.ITypedList.GetItemProperties%2A> metody <xref:System.ComponentModel.PropertyDescriptor> a pole není null, poslední položka v poli bude popisovač vlastnosti, který popisuje vlastnost seznamu, která je další seznam položek.
 
-- <xref:System.Windows.Forms.ICurrencyManagerProvider> Rozhraní
+- <xref:System.ComponentModel.ICustomTypeDescriptor>prostředí
 
-  Třídu, která implementuje <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní je komponenta, která poskytuje vlastní <xref:System.Windows.Forms.CurrencyManager> ke správě vazeb spojených s Tato konkrétní komponenta. Přístup k vlastní <xref:System.Windows.Forms.CurrencyManager> je poskytován <xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A> vlastnost.
+  Třída, která implementuje <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní, poskytuje dynamické informace o sobě. Toto rozhraní je podobné, <xref:System.ComponentModel.ITypedList> ale používá se spíše pro objekty, nikoli pro seznamy. Toto rozhraní se používá k <xref:System.Data.DataRowView> vytvoření projektového schématu podkladových řádků. Jednoduchá implementace <xref:System.ComponentModel.ICustomTypeDescriptor> <xref:System.ComponentModel.CustomTypeDescriptor> třídy je poskytována třídou.
 
   > [!NOTE]
-  > Třída, která dědí z <xref:System.Windows.Forms.Control> spravuje vazby automaticky prostřednictvím jeho <xref:System.Windows.Forms.Control.BindingContext%2A> vlastnosti, takže případy, ve kterých je nutné implementovat <xref:System.Windows.Forms.ICurrencyManagerProvider> jsou velmi malý.
+  > Pro podporu vazby při návrhu na typy, které implementují <xref:System.ComponentModel.ICustomTypeDescriptor>, musí být typ také implementován <xref:System.ComponentModel.IComponent> a existovat jako instance ve formuláři.
+
+- <xref:System.ComponentModel.IListSource>prostředí
+
+  Třída, která implementuje <xref:System.ComponentModel.IListSource> rozhraní, povoluje vazbu založenou na seznamu pro objekty, které nejsou typu list. Metoda je použita k vrácení seznamu s možností vazby z objektu, který nedědí z <xref:System.Collections.IList>. <xref:System.ComponentModel.IListSource.GetList%2A> <xref:System.ComponentModel.IListSource> <xref:System.ComponentModel.IListSource>je používán <xref:System.Data.DataSet> třídou.
+
+- <xref:System.ComponentModel.IRaiseItemChangedEvents>prostředí
+
+  Třída, která implementuje <xref:System.ComponentModel.IRaiseItemChangedEvents> rozhraní, je seznam s možností vazby, který <xref:System.ComponentModel.IBindingList> implementuje i rozhraní. Toto rozhraní slouží k označení, zda váš typ vyvolá <xref:System.ComponentModel.IBindingList.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged> prostřednictvím jeho <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> vlastnosti.
+
+  > [!NOTE]
+  > Měli byste implementovat, <xref:System.ComponentModel.IRaiseItemChangedEvents> Pokud váš zdroj dat poskytuje vlastnost k vypsání výše popsaného převodu události a interakci <xref:System.Windows.Forms.BindingSource> s komponentou. V opačném případě bude také provedeno vlastnost k vypsání převodu události, což vede k nižšímu výkonu. <xref:System.Windows.Forms.BindingSource>
+
+- <xref:System.ComponentModel.ISupportInitialize>prostředí
+
+  Komponenta, která implementuje <xref:System.ComponentModel.ISupportInitialize> rozhraní, využívá výhody optimalizace dávek pro nastavení vlastností a inicializaci souběžně závislých vlastností. <xref:System.ComponentModel.ISupportInitialize> Obsahuje dvě metody:
+
+  - <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A>signalizuje, že se spouští inicializace objektu.
+
+  - <xref:System.ComponentModel.ISupportInitialize.EndInit%2A>signalizuje, že se dokončuje inicializace objektu.
+
+- <xref:System.ComponentModel.ISupportInitializeNotification>prostředí
+
+  Komponenta, která implementuje <xref:System.ComponentModel.ISupportInitializeNotification> rozhraní, <xref:System.ComponentModel.ISupportInitialize> implementuje také rozhraní. Toto rozhraní vám umožní informovat ostatní <xref:System.ComponentModel.ISupportInitialize> komponenty, které se inicializace dokončila. <xref:System.ComponentModel.ISupportInitializeNotification> Rozhraní obsahuje dva členy:
+
+  - <xref:System.ComponentModel.ISupportInitializeNotification.IsInitialized%2A>`boolean` vrátí hodnotu, která označuje, zda je komponenta inicializována.
+
+  - <xref:System.ComponentModel.ISupportInitializeNotification.Initialized>nastane, <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> když se zavolá.
+
+- <xref:System.ComponentModel.INotifyPropertyChanged>prostředí
+
+  Třída, která implementuje toto rozhraní, je typ, který vyvolá událost, když se změní kterákoli jeho hodnota vlastnosti. Toto rozhraní je navrženo tak, aby nahradilo vzor, který má událost změny pro každou vlastnost ovládacího prvku. Při <xref:System.ComponentModel.BindingList%601>použití v nástroji by obchodní objekt měl <xref:System.ComponentModel.INotifyPropertyChanged> implementovat rozhraní a BindingList\`1 převede <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události na <xref:System.ComponentModel.BindingList%601.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged>.
+
+  > [!NOTE]
+  > Aby mohlo dojít ke změně v vazbě mezi vázaným klientem a zdrojem dat, váš typ zdroje vázaných dat by měl buď implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní (upřednostňovaná), nebo můžete zadat události *PropertyName* `Changed` pro vázaný typ. ale neměli byste dělat obojí.
+
+### <a name="interfaces-for-implementation-by-component-authors"></a>Rozhraní pro implementaci pomocí autorů součástí
+
+Následující rozhraní jsou navržena pro využití model Windows Forms modul vázání dat:
+
+- <xref:System.Windows.Forms.IBindableComponent>prostředí
+
+  Třída, která implementuje toto rozhraní, je neovládací komponenta, která podporuje datovou vazbu. Tato třída vrací datové vazby a kontext vazby součásti prostřednictvím <xref:System.Windows.Forms.IBindableComponent.DataBindings%2A> vlastností a <xref:System.Windows.Forms.IBindableComponent.BindingContext%2A> tohoto rozhraní.
+
+  > [!NOTE]
+  > Pokud vaše komponenta dědí z <xref:System.Windows.Forms.Control>, není nutné <xref:System.Windows.Forms.IBindableComponent> implementovat rozhraní.
+
+- <xref:System.Windows.Forms.ICurrencyManagerProvider>prostředí
+
+  Třída, která implementuje <xref:System.Windows.Forms.ICurrencyManagerProvider> rozhraní, je komponenta, která poskytuje vlastní <xref:System.Windows.Forms.CurrencyManager> správu vazeb přidružených k této konkrétní komponentě. Přístup k vlastnímu <xref:System.Windows.Forms.CurrencyManager> je poskytován <xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A> vlastností.
+
+  > [!NOTE]
+  > Třída, která dědí z <xref:System.Windows.Forms.Control> spravuje vazby automaticky prostřednictvím své <xref:System.Windows.Forms.Control.BindingContext%2A> vlastnosti, takže případy, kdy je nutné implementovat rozhraní <xref:System.Windows.Forms.ICurrencyManagerProvider> , jsou poměrně zřídka.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
-- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md)
+- [Postupy: Vytvoření jednoduchého ovládacího prvku vázaného na formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

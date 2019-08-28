@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: 6fd504269ae9afbfd02b58276582a644674e1e0f
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 32df98852b28963ffb748895156f7d9977c74b92
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040323"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046139"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 
@@ -35,19 +35,19 @@ Nakonec tento návod ukáže rozdíl mezi soukromými a chráněnými ovládací
 > [!CAUTION]
 > Ne všechny ovládací prvky podporují vizuální dědění ze základního formuláře. Následující ovládací prvky nepodporují Scénář popsaný v tomto návodu:
 >
->  <xref:System.Windows.Forms.WebBrowser>
+> - <xref:System.Windows.Forms.WebBrowser>
 >
->  <xref:System.Windows.Forms.ToolStrip>
+> - <xref:System.Windows.Forms.ToolStrip>
 >
->  <xref:System.Windows.Forms.ToolStripPanel>
+> - <xref:System.Windows.Forms.ToolStripPanel>
 >
->  <xref:System.Windows.Forms.TableLayoutPanel>
+> - <xref:System.Windows.Forms.TableLayoutPanel>
 >
->  <xref:System.Windows.Forms.FlowLayoutPanel>
+> - <xref:System.Windows.Forms.FlowLayoutPanel>
 >
->  <xref:System.Windows.Forms.DataGridView>
+> - <xref:System.Windows.Forms.DataGridView>
 >
->  Tyto ovládací prvky ve zděděném formuláři jsou vždycky jen pro čtení, bez ohledu na modifikátory, které`private`používáte `protected`(, `public`nebo).
+> Tyto ovládací prvky ve zděděném formuláři jsou vždycky jen pro čtení, bez ohledu na modifikátory, které`private`používáte `protected`(, `public`nebo).
 
 ## <a name="create-a-class-library-project-containing-a-base-form"></a>Vytvořit projekt knihovny tříd obsahující základní formulář
 
@@ -61,7 +61,7 @@ Nakonec tento návod ukáže rozdíl mezi soukromými a chráněnými ovládací
 
 5. V nabídce **soubor** klikněte na příkaz **Uložit vše** a uložte projekt a soubory do výchozího umístění.
 
- Následující dva postupy přidávají tlačítka do základního formuláře. K demonstraci vizuální dědičnosti získáte tlačítka různé úrovně přístupu nastavením jejich `Modifiers` vlastností.
+Následující dva postupy přidávají tlačítka do základního formuláře. K demonstraci vizuální dědičnosti získáte tlačítka různé úrovně přístupu nastavením jejich `Modifiers` vlastností.
 
 ## <a name="add-a-button-that-inheritors-of-the-base-form-can-modify"></a>Přidat tlačítko, které dědí dědění základního formuláře, se může změnit.
 
@@ -135,7 +135,7 @@ Nakonec tento návod ukáže rozdíl mezi soukromými a chráněnými ovládací
 
 5. Otevřete zděděný formulář (**Form2**) v Návrháři tak, že na něj dvakrát kliknete, pokud ještě není otevřený.
 
-     V Návrháři mají zděděná tlačítka symbol (![Snímek obrazovky Visual Basic symbolu dědičnosti](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) v horním rohu, což označuje, že jsou zděděné.
+    V Návrháři mají zděděná tlačítka symbol (![Snímek obrazovky Visual Basic symbolu dědičnosti](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) v horním rohu, což označuje, že jsou zděděné.
 
 6. Vyberte tlačítko **vyslovit Hello** a sledujte úchyty pro změnu velikosti. Vzhledem k tomu, že je toto tlačítko chráněno, mohou dědit jej přesunout, změnit jeho popisek a provést další úpravy.
 

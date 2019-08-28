@@ -22,12 +22,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: df2bd232a870e17eeb5106cf0b60a9e77641969d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4474b217147aca74f2c6e5376c8f55318a05bf4a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963534"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046504"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Povoluje rutinu zpracování chyb a určuje umístění rutiny v rámci procedury; lze také použít k zakázání rutiny zpracování chyb. `On Error` Příkaz se používá při zpracování nestrukturovaných chyb a lze jej použít namísto strukturovaného zpracování výjimek. [Strukturované zpracování výjimek](../../../standard/exceptions/index.md) je integrováno do .NET, je obecně efektivnější, a proto se doporučuje při zpracování běhových chyb v aplikaci.
@@ -104,7 +104,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  [!code-vb[VbVbalrErrorHandling#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#19)]
 
 > [!CAUTION]
->  Systémové chyby během volání knihoven DLL (Dynamic-Link Library) systému Windows nevyvolávají výjimky a nemohou být zachyceny pomocí Visual Basic soutisku chyb. Při volání funkcí knihoven DLL byste měli kontrolovat každou vrácenou hodnotu pro úspěch nebo neúspěch (podle specifikací rozhraní API) a v případě selhání kontrolovat hodnotu `Err` `LastDLLError` vlastnosti objektu.
+> Systémové chyby během volání knihoven DLL (Dynamic-Link Library) systému Windows nevyvolávají výjimky a nemohou být zachyceny pomocí Visual Basic soutisku chyb. Při volání funkcí knihoven DLL byste měli kontrolovat každou vrácenou hodnotu pro úspěch nebo neúspěch (podle specifikací rozhraní API) a v případě selhání kontrolovat hodnotu `Err` `LastDLLError` vlastnosti objektu.
 
 ## <a name="example"></a>Příklad
  Tento příklad nejprve používá `On Error GoTo` příkaz k určení umístění rutiny zpracování chyb v rámci procedury. V příkladu se při pokusu o dělení nulou vygeneruje chybová zpráva číslo 6. Chyba je zpracována v rutině zpracování chyb a ovládací prvek je poté vrácen do příkazu, který způsobil chybu. `On Error GoTo 0` Příkaz vypne soutisk chyb. `On Error Resume Next` Pak příkaz slouží k odložení soutisku chyb, takže kontext pro chybu vygenerovanou dalším příkazem může být pro některé z nich známý. Všimněte si `Err.Clear` , že se po zpracování `Err` chyby používá k vymazání vlastností objektu.

@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: 8512dbddc5d27e75d98d281c0bdccf142a113d7f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dfc0dfcd3b4d814a158b328ef202d5438e583a8c
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961729"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039818"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování, byly zabezpečené. Zvýšením počtu zpráv zjišťování se zabezpečením sníží riziko různých typů útoků (Změna zprávy, odmítnutí služby, opětovné přehrání, falšování identity). Tato ukázka implementuje vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery). Ukázka podporuje [specifikaci zjišťování 2005](https://go.microsoft.com/fwlink/?LinkId=177912) i [verzi 1,1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -67,10 +67,10 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 3. Až budete s ukázkou hotovi, spusťte skript Cleanup. bat, který odebere certifikáty vytvořené pro tuto ukázku.  
   
 > [!IMPORTANT]
->  Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  
