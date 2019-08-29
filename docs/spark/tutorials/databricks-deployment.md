@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: ca9e93a413622c84325ca9fc8bac17268b990c5a
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 77c2d93ae324b6acbf8fc8dc25cd3e4d1a652f48
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "69577059"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107356"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -18,17 +18,17 @@ V tomto kurzu se naučíte nasadit rozhraní .NET pro Apache Spark aplikaci do d
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
-> * Příprava Microsoft. spark. Worker
-> * Publikování aplikace Spark .NET
-> * Nasazení aplikace do datacihlů
-> * Spuštění aplikace
+> - Příprava Microsoft. spark. Worker
+> - Publikování aplikace Spark .NET
+> - Nasazení aplikace do datacihlů
+> - Spuštění aplikace
 
 ## <a name="prerequisites"></a>Požadavky
 
 Než začnete, udělejte toto:
 
-* Stáhněte si rozhraní příkazového [řádku](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html)datacihly.
-* Stáhněte si [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do svého místního počítače. Toto je pomocný skript, který později použijete ke kopírování rozhraní .NET pro Apache Spark závislé soubory do pracovních uzlů clusteru Spark.
+- Stáhněte si rozhraní příkazového [řádku](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html)datacihly.
+- Stáhněte si [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do svého místního počítače. Toto je pomocný skript, který později použijete ke kopírování rozhraní .NET pro Apache Spark závislé soubory do pracovních uzlů clusteru Spark.
 
 ## <a name="prepare-worker-dependencies"></a>Příprava závislostí pracovního procesu
 
@@ -62,9 +62,9 @@ Než začnete, udělejte toto:
 
 4. Nahrajte do distribuovaného systému souborů (například DBFS), ke kterému má cluster přístup, následující:
 
-   * `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Tento JAR je součástí balíčku NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) a je umístěný ve výstupním adresáři sestavení vaší aplikace.
-   * `<your app>.zip`
-   * Soubory (jako jsou soubory závislosti nebo společná data dostupná pro každého pracovního procesu) nebo sestavení (například knihovny DLL, které obsahují uživatelem definované funkce nebo knihovny, na kterých je vaše aplikace závislá), aby se umístily do pracovního adresáře každého prováděcího modulu.
+   - `microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar`: Tento JAR je součástí balíčku NuGet [Microsoft. Spark](https://www.nuget.org/packages/Microsoft.Spark/) a je umístěný ve výstupním adresáři sestavení vaší aplikace.
+   - `<your app>.zip`
+   - Soubory (jako jsou soubory závislosti nebo společná data dostupná pro každého pracovního procesu) nebo sestavení (například knihovny DLL, které obsahují uživatelem definované funkce nebo knihovny, na kterých je vaše aplikace závislá), aby se umístily do pracovního adresáře každého prováděcího modulu.
 
 ## <a name="deploy-to-databricks"></a>Nasazení do Databricks
 
@@ -168,7 +168,7 @@ Příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applicat
 
 3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste nasadili rozhraní .NET pro Apache Spark aplikaci na datacihly. Pokud se chcete dozvědět víc o datacihlách, přejděte k dokumentaci Azure Databricks.
 
