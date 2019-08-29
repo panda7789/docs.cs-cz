@@ -1,120 +1,120 @@
 ---
-title: 'Kurz: Analýza webu komentáře – binární klasifikace'
-description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z webu komentářů a provede příslušnou akci. Používá klasifikátor binární mínění C# v sadě Visual Studio.
+title: 'Kurz: Analyzovat komentáře webu – binární klasifikace'
+description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z komentářů k webu a provede příslušnou akci. Mínění třídění binárních souborů používá C# v aplikaci Visual Studio.
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 2dc4d68eb6a3aa5890e4d091e33c4624d79317e9
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 4daa7734f12c57a177fab3c62fdd96bda22838af
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238375"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107169"
 ---
-# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza sentimentu komentářů k webu pomocí binární klasifikace ML.NET
+# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza mínění komentářů k webu pomocí binární klasifikace v ML.NET
 
-V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z webu komentářů a provede příslušnou akci. Používá klasifikátor binární mínění C# v sadě Visual Studio 2017.
+V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která klasifikuje mínění z komentářů k webu a provede příslušnou akci. Mínění třídění binárních souborů používá C# v aplikaci Visual Studio 2017.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
-> * Vytvoření konzolové aplikace
-> * Příprava dat
-> * Načtení dat
-> * Vytvoření a trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu vytvoří předpověď
-> * Zobrazit výsledky
+> - Vytvoření konzolové aplikace
+> - Příprava dat
+> - Načtení dat
+> - Sestavování a výuka modelu
+> - Vyhodnocení modelu
+> - Použití modelu k vytvoření předpovědi
+> - Zobrazit výsledky
 
-Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) .
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s úlohou "Vývoj pro různé platformy .NET Core" nainstalovaná
+- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy
 
-* [Datová sada UCI subjektivního hodnocení s popiskem věty](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (soubor ZIP)
+- [Datová sada vět mínění](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) s popiskem (Soubor ZIP)
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvoření **konzolovou aplikaci .NET Core** nazývá "SentimentAnalysis".
+1. Vytvořte **konzolovou aplikaci .NET Core** nazvanou "SentimentAnalysis".
 
-2. Vytvořte adresář *Data* ve vašem projektu a uložte soubory datové sady.
+2. Vytvořte v projektu adresář s názvem *data* a uložte soubory sady dat.
 
-3. Nainstalujte **balíček NuGet Microsoft.ML**:
+3. Nainstalujte **balíček NuGet Microsoft.ml**:
 
-    V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku a pak vyberte **Procházet** kartu. Vyhledejte **Microsoft.ML**, vyberte balíček a pak vyberte **nainstalovat** tlačítko. Pokračujte s instalací souhlasit s licenčními podmínkami pro balíček, který zvolíte. Totéž proveďte pro **Microsoft.ML.FastTree** balíček NuGet.
+    V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. Jako zdroj balíčku zvolte "nuget.org" a pak vyberte kartu **Procházet** . Vyhledejte **Microsoft.ml**, vyberte požadovaný balíček a pak vyberte tlačítko **instalovat** . Pokračujte v instalaci tak, že souhlasíte s licenčními podmínkami pro zvolený balíček. Totéž udělejte pro balíček NuGet **Microsoft. ml. FastTree** .
 
 ## <a name="prepare-your-data"></a>Příprava dat
 
 > [!NOTE]
-> Datové sady pro účely tohoto kurzu jsou ze "From skupiny na jednotlivé popisky pomocí podrobné funkce" Kotzias et. Al. Konference KDD 2015 a hostované v UCI Machine Learning úložiště – Dua, D. a Karra Taniskidou, E. (2017). UCI strojového učení úložiště [http://archive.ics.uci.edu/ml ]. Irvine, certifikační Autorita: University of California, z informací o škole a počítačových věd.
+> Datové sady pro tento kurz jsou ze skupiny "z" na jednotlivé štítky pomocí hlubokých funkcí, Kotzias et. Al,. KONFERENCE KDD 2015 a hostuje se v úložišti UCI Machine Learning – Dua, D. a Karra Taniskidou, E. (2017). UCI Machine Learning úložiště [http://archive.ics.uci.edu/ml ]. Irvine, certifikační autorita: University of California, školní informace a počítačové vědy.
 
-1. Stáhněte si [soubor ZIP datové sady UCI subjektivního hodnocení s popiskem věty](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho.
+1. Stáhněte [soubor zip datové sady mínění](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)s popiskem a rozbalte ho.
 
-2. Kopírovat `yelp_labelled.txt` soubor do *Data* adresáře, které jste vytvořili.
+2. Zkopírujte soubor do adresáře dat, který jste vytvořili. `yelp_labelled.txt`
 
-3. V Průzkumníku řešení klikněte pravým tlačítkem myši `yelp_labeled.txt` a vyberte možnost **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
+3. V Průzkumník řešení klikněte pravým tlačítkem na `yelp_labeled.txt` soubor a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definovat cesty
+### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definování cest
 
-1. Přidejte následující další `using` příkazy k hornímu okraji *Program.cs* souboru:
+1. Do horní části souboru `using` *program.cs* přidejte následující dodatečné příkazy:
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddUsings "Add necessary usings")]
 
-2. Vytvořte dvě globální pole pro uložení naposledy stažené datovou sadu cesta k souboru a cesta k souboru uloženého modelu:
+2. Vytvořte dvě globální pole, která budou uchovávat nedávno staženou cestu k souboru datové sady a uloženou cestu k souboru modelu:
 
-    * `_dataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.
-    * `_modelPath` obsahuje cestu k uložení naučeného modelu.
+    - `_dataPath`má cestu k datové sadě, která se používá ke výukě modelu.
+    - `_modelPath`má cestu, kde je uložený model trained.
 
-3. Přidejte následující kód na řádku vpravo nahoře `Main` metodu pro zadání cesty:
+3. Přidejte následující kód na řádek přímo nad `Main` metodu pro určení cest:
 
     [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
-4. Dále vytvořte třídy pro vstupní data a předpovědi. Přidejte novou třídu do projektu:
+4. Dále vytvořte třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
-    - V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **nová položka**.
+    - V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
 
-    - V **přidat novou položku** dialogu **třídy** a změnit **název** pole *SentimentData.cs*. Vyberte **přidat** tlačítko.
+    - V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** .
 
-5. *SentimentData.cs* soubor se otevře v editoru kódu. Přidejte následující `using` příkaz do horní části *SentimentData.cs*:
+5. V editoru kódu se otevře soubor *SentimentData.cs* . Do horní části `using` *SentimentData.cs*přidejte následující příkaz:
 
     [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#AddUsings "Add necessary usings")]
 
-6. Odeberte stávající definice třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, možnosti *SentimentData.cs* souboru:
+6. Odeberte existující definici třídy a přidejte následující kód, který má dvě třídy `SentimentData` a `SentimentPrediction`, do souboru *SentimentData.cs* :
 
     [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/SentimentAnalysis/SentimentData.cs#DeclareTypes "Declare data record types")]
 
-### <a name="how-the-data-was-prepared"></a>Jak se připravit data
-Třída vstupní datová sada `SentimentData`, má `string` pro komentáře uživatelů (`SentimentText`) a `bool` (`Sentiment`) hodnotu 1 (pozitivní) nebo 0 (negativní) mínění. Obě pole mají [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) atributy připojené k nim, který popisuje soubor pořadí dat u každého pole.  Kromě toho `Sentiment` má vlastnost [Názevsloupce](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) atribut nastavit jako `Label` pole. Následující příklad souboru nemá řádek záhlaví a vypadá takto:
+### <a name="how-the-data-was-prepared"></a>Způsob přípravy dat
+Vstupní třída datové sady, `SentimentData` `string` má hodnotu pro `bool` komentáře uživatele (`SentimentText`) a hodnotu (`Sentiment`) pro mínění (kladné) nebo 0 (negativní). Obě pole mají [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) atributy, které jsou k nim připojeny, což popisuje pořadí datových souborů jednotlivých polí.  Kromě toho `Sentiment` má vlastnost atribut [ColumnName](xref:Microsoft.ML.Data.ColumnNameAttribute.%23ctor%2A) k `Label` označení jako pole. Následující ukázkový soubor neobsahuje řádek záhlaví a vypadá takto:
 
 |SentimentText                         |Mínění (popisek) |
 |--------------------------------------|----------|
-|Waitress pomalý trochu ve službě.|    0     |
-|Povrch ovšem není vhodné.                    |    0     |
-|WOW... Miluju toto místo.              |    1     |
-|Služba se velmi výzvy.              |    1     |
+|Waitress bylo v provozu trochu pomalé.|    0     |
+|Crust není dobrá.                    |    0     |
+|Wow... Tohle místo.              |    1     |
+|Služba byla velmi výzvou.              |    1     |
 
-`SentimentPrediction` je třída předpovědi používá po cvičení modelu. Dědí z `SentimentData` tak, aby vstupní `SentimentText` lze zobrazit společně s předpovědi výstup. `Prediction` Je logická hodnota, která tento model předpovídá, pokud je zadán s nový vstup `SentimentText`.
+`SentimentPrediction`je třída předpovědi, která se používá po školení modelu. Dědí z `SentimentData` , aby se vstup `SentimentText` mohl zobrazit společně s předpovědí výstupu. Logická hodnota je hodnota, kterou model předpovídá, pokud je zadán s novým vstupem `SentimentText`. `Prediction`
 
-Třídy výstupu `SentimentPrediction` obsahuje dvě vlastnosti, která se počítá podle modelu: `Score` -základního skóre počítá podle modelu, a `Probability` -skóre kalibrován pravděpodobnosti, že má pozitivní zabarvení textu.
+Třída `SentimentPrediction` Output obsahuje dvě další vlastnosti, které jsou vypočítány `Score` modelem: – nezpracované skóre počítané modelem a `Probability` – skóre, které se kalibruje na pravděpodobnost textu s kladným míněníem.
 
-Pro účely tohoto kurzu je nejdůležitější vlastnost `Prediction`.
+V tomto kurzu je `Prediction`nejdůležitější vlastností.
 
 ## <a name="load-the-data"></a>Načtení dat
-Data v ML.NET je vyjádřena jako [IDataView třídy](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popisují tabulková data (číselné a textové). Data je možné načíst z textového souboru nebo v reálném čase (například SQL databázi nebo soubory protokolů) do `IDataView` objektu.
+Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView`je flexibilní a efektivní způsob, jak popsat tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do `IDataView` objektu.
 
-[MLContext třídy](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ML.NET. Inicializace `mlContext` vytvoří nové ML.NET prostředí, které mohou být sdíleny napříč objekty pracovního postupu vytváření modelu. Je to podobné, koncepčně `DBContext` v Entity Framework.
+[Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET. Inicializace `mlContext` vytvoří nové prostředí ml.NET, které se dá sdílet v rámci objektů pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v Entity Framework.
 
-Příprava aplikace a pak načíst data:
+Aplikaci připravíte a pak načtěte data:
 
-1. Nahraďte `Console.WriteLine("Hello World!")` řádku v `Main` metodu, jak deklarovat a inicializovat proměnnou mlContext následujícím kódem:
+1. Nahraďte `Main` řádek v metodě následujícím kódem pro deklaraci a inicializaci proměnné mlContext: `Console.WriteLine("Hello World!")`
 
     [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateMLContext "Create the ML Context")]
 
-2. Přidejte následující položky jako další řádek kódu `Main()` metody:
+2. Přidejte následující jako další řádek kódu v `Main()` metodě:
 
     [!code-csharp[CallLoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallLoadData)]
 
-3. Vytvořte `LoadData()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:
+3. Vytvořte metodu hned `Main()` za metodou pomocí následujícího kódu: `LoadData()`
 
     ```csharp
     public static TrainTestData LoadData(MLContext mlContext)
@@ -123,46 +123,46 @@ Příprava aplikace a pak načíst data:
     }
     ```
 
-    `LoadData()` Metoda spustí následující úlohy:
+    `LoadData()` Metoda provádí následující úlohy:
 
-    * Načte data.
-    * Rozdělí načíst datovou sadu na trénování a testování datových sad.
-    * Vrátí hodnotu rozdělení trénují a testují datové sady.
+    - Načte data.
+    - Rozdělí načtenou datovou sadu do sady výukových a testovacích datových sad.
+    - Vrátí rozdělený vlak a testovací datové sady.
 
-4. Přidejte následující kód jako první řádek `LoadData()` metody:
+4. Do prvního řádku `LoadData()` metody přidejte následující kód:
 
     [!code-csharp[LoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#LoadData "loading dataset")]
 
-    [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a přečte v souboru. Přijímá proměnné cesty dat a vrátí `IDataView`.
+    [LoadFromTextFile ()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte data v souboru. Převezme proměnné cesty k datům a vrátí `IDataView`.
 
-### <a name="split-the-dataset-for-model-training-and-testing"></a>Rozdělení datové sady pro trénování a testování modelu
+### <a name="split-the-dataset-for-model-training-and-testing"></a>Rozdělení datové sady pro školení modelů a testování
 
-Při přípravě na model, použijte část datové sady pro trénování a část datové sady, testování přesnosti modelu.
+Při přípravě modelu použijete část datové sady ke školení a část datové sady k otestování přesnosti modelu.
 
-1. Načtená data rozdělením potřebné datové sady, přidejte následující kód jako další řádek `LoadData()` metody:
+1. Chcete-li rozdělit načtená data do potřebných datových sad, přidejte následující kód jako další řádek v `LoadData()` metodě:
 
     [!code-csharp[SplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#SplitData "Split the Data")]
 
-    Předchozí kód používá [TrainTestSplit()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) metodu rozdělit načíst datovou sadu na trénování a testování datových sad a vrátit je do [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) třídy. Zadejte procento dat pomocí nastavení testu `testFraction`parametru. Výchozí hodnota je 10 %, v tomto případě je použít 20 % k vyhodnocení další data.
+    Předchozí kód používá metodu [TrainTestSplit ()](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit%2A) pro rozdělení načtené datové sady do vlakových a testovacích datových sad a jejich vrácení do třídy [TrainTestData](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) . Zadejte procento testovací sady dat s `testFraction`parametrem. Výchozí hodnota je 10%, v tomto případě použijete 20% k vyhodnocení více dat.
 
-2. Vrátit `splitDataView` na konci `LoadData()` metody:
+2. Vraťte se `splitDataView` na konec `LoadData()` metody:
 
     [!code-csharp[ReturnSplitData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#ReturnSplitData)]
 
-## <a name="build-and-train-the-model"></a>Vytvoření a trénování modelu
+## <a name="build-and-train-the-model"></a>Sestavování a výuka modelu
 
-1. Přidejte následující volání `BuildAndTrainModel`metody jako další řádek kódu v `Main()` metody:
+1. Do metody přidejte následující volání `BuildAndTrainModel`metody jako další řádek kódu `Main()` v metodě:
 
     [!code-csharp[CallBuildAndTrainModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallBuildAndTrainModel)]
 
-    `BuildAndTrainModel()` Metoda spustí následující úlohy:
+    `BuildAndTrainModel()` Metoda provádí následující úlohy:
 
-    * Extrahuje a transformuje data.
-    * Trénovat modelu.
-    * Předpovídá subjektivního hodnocení na základě dat testu.
-    * Vrátí hodnotu modelu.
+    - Extrahuje a transformuje data.
+    - Navlakuje model.
+    - Předpovídá mínění na základě testovacích dat.
+    - Vrátí model.
 
-2. Vytvořte `BuildAndTrainModel()` metoda, hned za `Main()` metodu, pomocí následujícího kódu:
+2. Vytvořte metodu hned `Main()` za metodou pomocí následujícího kódu: `BuildAndTrainModel()`
 
     ```csharp
     public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView splitTrainSet)
@@ -171,50 +171,50 @@ Při přípravě na model, použijte část datové sady pro trénování a čá
     }
     ```
 
-### <a name="extract-and-transform-the-data"></a>Extrahovat a transformaci dat
+### <a name="extract-and-transform-the-data"></a>Extrakce a transformace dat
 
-1. Volání `FeaturizeText` jako další řádek kódu:
+1. Zavolat `FeaturizeText` jako další řádek kódu:
 
     [!code-csharp[FeaturizeText](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#FeaturizeText "Featurize the text")]
 
-    `FeaturizeText()` Metoda v předchozím kódu převede textový sloupec (`SentimentText`) na číselný typ klíče `Features` sloupec používá algoritmu strojového učení a přidá ho jakou novou datovou sadu sloupce:
+    Metoda v předchozím kódu převede textový sloupec (`SentimentText`) na sloupec typu `Features` číselného klíče, který používá algoritmus strojového učení, a přidá ho jako sloupec nové datové sady: `FeaturizeText()`
 
     |SentimentText                         |Mínění |Funkce              |
     |--------------------------------------|----------|----------------------|
-    |Waitress pomalý trochu ve službě.|    0     |[0.76, 0.65, 0.44,...] |
-    |Povrch ovšem není vhodné.                    |    0     |[0,98, 0.43, 0.54,...] |
-    |WOW... Miluju toto místo.              |    1     |[0.35, 0.73, 0.46,...] |
-    |Služba se velmi výzvy.              |    1     |[0.39, 0, 0,75,...]    |
+    |Waitress bylo v provozu trochu pomalé.|    0     |[0,76, 0,65, 0,44,...] |
+    |Crust není dobrá.                    |    0     |[0,98, 0,43, 0,54,...] |
+    |Wow... Tohle místo.              |    1     |[0,35, 0,73, 0,46,...] |
+    |Služba byla velmi výzvou.              |    1     |[0,39, 0, 0,75,...]    |
 
-### <a name="add-a-learning-algorithm"></a>Přidat algoritmu učení
+### <a name="add-a-learning-algorithm"></a>Přidání sledovacího algoritmu
 
-Tato aplikace používá klasifikační algoritmus, který slouží ke kategorizaci položky nebo řádky s daty. Aplikace slouží ke kategorizaci komentáře webu jako kladné nebo záporné, takže pomocí binární klasifikace úlohy.
+Tato aplikace používá klasifikační algoritmus, který kategorizuje položky nebo řádky dat. Aplikace rozděluje komentáře k webu buď jako kladné, nebo záporné, takže použijte úlohu binární klasifikace.
 
-Přidat úlohy strojového učení do definice transformace dat přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()`:
+Přidejte úlohu Machine Learning do definice transformace dat tak, že přidáte následující kód jako další řádek kódu v `BuildAndTrainModel()`:
 
 [!code-csharp[SdcaLogisticRegressionBinaryTrainer](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddTrainer "Add a SdcaLogisticRegressionBinaryTrainer")]
 
-[SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) je vaše klasifikace cvičení algoritmu. To se připojí `estimator` a přijímá natrénuje `SentimentText` (`Features`) a `Label` vstupní parametry učit se z historických dat.
+[SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) je váš vyhodnocovací školicí algoritmus. Tento `estimator` údaj je připojen k a přijímá natrénuje `SentimentText` (`Features`) a `Label` vstupní parametry pro získání informací z historických dat.
 
 ### <a name="train-the-model"></a>Trénování modelu
 
-Přizpůsobit modelu, který má `splitTrainSet` data a vrátit trénovaného modelu přidáním následujícího kódu jako další řádek kódu v `BuildAndTrainModel()` metody:
+Přizpůsobte si model `splitTrainSet` datům a vraťte vyškolený model přidáním následujícího jako další řádek kódu `BuildAndTrainModel()` v metodě:
 
 [!code-csharp[TrainModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#TrainModel "Train the model")]
 
-[Fit()](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) metoda trénovat modelu transformace datové sady a aplikováním školení.
+Metoda [přizpůsobení () nasadí](xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer.Fit%28Microsoft.ML.IDataView,Microsoft.ML.IDataView%29) váš model pomocí transformace datové sady a použití školení.
 
-### <a name="return-the-model-trained-to-use-for-evaluation"></a>Vrátí že model se trénuje má použít pro hodnocení
+### <a name="return-the-model-trained-to-use-for-evaluation"></a>Vrátí vyškolený model, který se má použít pro vyhodnocení.
 
- Model na konci vrátit `BuildAndTrainModel()` metody:
+ Vrátí model na konci `BuildAndTrainModel()` metody:
 
 [!code-csharp[ReturnModel](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#ReturnModel "Return the model")]
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Poté, co váš model se trénuje, použijte test ověřit data výkonu modelu.
+Po vyzkoušení modelu použijte data testu a ověřte výkon modelu.
 
-1. Vytvořte `Evaluate()` metoda, hned za `BuildAndTrainModel()`, následujícím kódem:
+1. Vytvořte metodu, hned po `BuildAndTrainModel()`, s následujícím kódem: `Evaluate()`
 
     ```csharp
     public static void Evaluate(MLContext mlContext, ITransformer model, IDataView splitTestSet)
@@ -223,44 +223,44 @@ Poté, co váš model se trénuje, použijte test ověřit data výkonu modelu.
     }
     ```
 
-    `Evaluate()` Metoda spustí následující úlohy:
+    `Evaluate()` Metoda provádí následující úlohy:
 
-    * Načte datovou sadu testů.
-    * Chyba při vyhodnocování BinaryClassification vytvoří.
-    * Vyhodnotí modelu a vytvoří metriky.
-    * Zobrazuje metriky.
+    - Načte testovací datovou sadu.
+    - Vytvoří vyhodnocovací filtr BinaryClassification.
+    - Vyhodnotí model a vytvoří metriky.
+    - Zobrazí metriky.
 
-2. Přidejte volání do nové metody z `Main()` metody, v rámci `BuildAndTrainModel()` volání metody, pomocí následujícího kódu:
+2. Přidejte volání do metody New z `Main()` metody přímo `BuildAndTrainModel()` pod voláním metody pomocí následujícího kódu:
 
     [!code-csharp[CallEvaluate](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallEvaluate "Call the Evaluate method")]
 
-3. Transformace `splitTestSet` data přidáním následujícího kódu do `Evaluate()`:
+3. Transformujte `Evaluate()`data přidáním následujícího kódu do: `splitTestSet`
 
     [!code-csharp[PredictWithTransformer](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#TransformData "Predict using the Transformer")]
 
-    Předchozí kód používá [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metoda k následné predikci pro více poskytuje vstupní řádky z datové sady testů.
+    Předchozí kód používá metodu [Transform ()](xref:Microsoft.ML.ITransformer.Transform%2A) k vytvoření předpovědi pro více zadaných vstupních řádků testovací sady dat.
 
-4. Přidáním následujícího kódu jako další řádek kódu ve vyhodnocení modelu `Evaluate()` metody:
+4. Vyhodnoťte model přidáním následujícího jako další řádek kódu v `Evaluate()` metodě:
 
     [!code-csharp[ComputeMetrics](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Evaluate "Compute Metrics")]
 
-Jakmile budete mít do predikce. Nastavte (`predictions`), [Evaluate()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) metoda vyhodnocuje modelu, který porovnává predikované hodnoty s skutečnou `Labels` datovou sadu testů a vrátí [ CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) objektu, na jaký je výkon modelu.
+Po nastavení`predictions`předpovědi () Metoda [Evaluate ()](xref:Microsoft.ML.BinaryClassificationCatalog.Evaluate%2A) posuzuje model, který porovnává předpovězené hodnoty se skutečnou `Labels` hodnotou v testovací sadě a vrátí [CalibratedBinaryClassificationMetrics](xref:Microsoft.ML.Data.CalibratedBinaryClassificationMetrics) objekt, na kterém model probíhá.
 
-### <a name="displaying-the-metrics-for-model-validation"></a>Zobrazení metrik pro ověření modelu
+### <a name="displaying-the-metrics-for-model-validation"></a>Zobrazení metrik pro ověřování modelu
 
-Použijte následující kód k zobrazení metriky:
+K zobrazení metrik použijte následující kód:
 
 [!code-csharp[DisplayMetrics](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DisplayMetrics "Display selected metrics")]
 
-* `Accuracy` Metrika získá přesnost modelu, který je poměr správné predikce v testovací sadě.
+- `Accuracy` Metrika získá přesnost modelu, což je poměr správných předpovědi v sadě testů.
 
-* `AreaUnderRocCurve` Metrika vyjadřuje důvěru modelu je správně klasifikace třídy kladné a záporné. Chcete, aby `AreaUnderRocCurve` bude blízko jeden nejvíce.
+- `AreaUnderRocCurve` Metrika označuje, jak jistotu model správně klasifikuje pozitivní a negativní třídy. Chcete, aby `AreaUnderRocCurve` byl co nejblíže k jednomu.
 
-* `F1Score` Metrika získá modelu F1 skóre, které je míra rovnováhu mezi [přesnost](../resources/glossary.md#precision) a [spojené s vracením](../resources/glossary.md#recall).  Chcete, aby `F1Score` bude blízko jeden nejvíce.
+- Metrika získá skóre modelu F1, což je míra rovnováhy mezi přesností a [](../resources/glossary.md#precision) odvoláním. [](../resources/glossary.md#recall) `F1Score`  Chcete, aby `F1Score` byl co nejblíže k jednomu.
 
-### <a name="predict-the-test-data-outcome"></a>Předpověď data výsledek testu
+### <a name="predict-the-test-data-outcome"></a>Předpověď výsledku testovacích dat
 
-1. Vytvořte `UseModelWithSingleItem()` metoda, hned za `Evaluate()` metodu, pomocí následujícího kódu:
+1. Vytvořte metodu hned `Evaluate()` za metodou pomocí následujícího kódu: `UseModelWithSingleItem()`
 
     ```csharp
     private static void UseModelWithSingleItem(MLContext mlContext, ITransformer model)
@@ -269,42 +269,42 @@ Použijte následující kód k zobrazení metriky:
     }
     ```
 
-    `UseModelWithSingleItem()` Metoda spustí následující úlohy:
+    `UseModelWithSingleItem()` Metoda provádí následující úlohy:
 
-    * Vytvoří jeden komentář testovací data.
-    * Předpovídá subjektivního hodnocení na základě dat testu.
-    * Kombinuje testovací data a předpovědi pro vytváření sestav.
-    * Zobrazí predikované výsledky.
+    - Vytvoří jeden komentář testovacích dat.
+    - Předpovídá mínění na základě testovacích dat.
+    - Kombinuje testovací data a předpovědi pro vytváření sestav.
+    - Zobrazí předpovězené výsledky.
 
-2. Přidejte volání do nové metody z `Main()` metody, v rámci `Evaluate()` volání metody, pomocí následujícího kódu:
+2. Přidejte volání do metody New z `Main()` metody přímo `Evaluate()` pod voláním metody pomocí následujícího kódu:
 
     [!code-csharp[CallUseModelWithSingleItem](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithSingleItem "Call the UseModelWithSingleItem method")]
 
-3. Přidejte následující kód k vytvoření jako první řádek `UseModelWithSingleItem()` metody:
+3. Přidejte následující kód, který chcete vytvořit jako první řádek v `UseModelWithSingleItem()` metodě:
 
     [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
 
-    [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je vhodné rozhraní API, což vám umožní předat a pak proveďte predikcí na jednu instanci data.
+    [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje předat a následně provést předpovědi pro jednu instanci dat.
 
-4. Přidejte komentář k otestování trénovaného modelu předpovědi v `UseModelWithSingleItem()` metodu tak, že vytvoříte instanci `SentimentData`:
+4. Přidejte komentář k otestování předpovědi vyškolených modelů v `UseModelWithSingleItem()` metodě vytvořením `SentimentData`instance:
 
     [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
 
-5. Předání dat komentář test `Prediction Engine` přidáním následujícího kódu jako další řádky kódu ve `UseModelWithSingleItem()` metody:
+5. Předání dat testovacích komentářů do do `Prediction Engine` přidejte následujícím způsobem jako další řádky kódu `UseModelWithSingleItem()` v metodě:
 
     [!code-csharp[Predict](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Predict "Create a prediction of sentiment")]
 
-    [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) predikcí na jednom řádku dat díky funkce.
+    Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden řádek dat.
 
-6. Zobrazení `SentimentText` a odpovídající předpovědí mínění pomocí následujícího kódu:
+6. Zobrazit `SentimentText` a odpovídající předpovědi mínění pomocí následujícího kódu:
 
     [!code-csharp[OutputPrediction](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#OutputPrediction "Display prediction output")]
 
-## <a name="use-the-model-for-prediction"></a>Použití modelu pro předpověď
+## <a name="use-the-model-for-prediction"></a>Použití modelu předpovědi
 
-### <a name="deploy-and-predict-batch-items"></a>Nasazení a předvídání položky služby batch
+### <a name="deploy-and-predict-batch-items"></a>Nasazení a předpověď položek Batch
 
-1. Vytvořte `UseModelWithBatchItems()` metoda, hned za `UseModelWithSingleItem()` metodu, pomocí následujícího kódu:
+1. Vytvořte metodu hned `UseModelWithSingleItem()` za metodou pomocí následujícího kódu: `UseModelWithBatchItems()`
 
     ```csharp
     public static void UseModelWithBatchItems(MLContext mlContext, ITransformer model)
@@ -313,40 +313,40 @@ Použijte následující kód k zobrazení metriky:
     }
     ```
 
-    `UseModelWithBatchItems()` Metoda spustí následující úlohy:
+    `UseModelWithBatchItems()` Metoda provádí následující úlohy:
 
-    * Vytvoří služby batch testovací data.
-    * Předpovídá subjektivního hodnocení na základě dat testu.
-    * Kombinuje testovací data a předpovědi pro vytváření sestav.
-    * Zobrazí predikované výsledky.
+    - Vytvoří data dávkového testu.
+    - Předpovídá mínění na základě testovacích dat.
+    - Kombinuje testovací data a předpovědi pro vytváření sestav.
+    - Zobrazí předpovězené výsledky.
 
-2. Přidejte volání do nové metody z `Main` metody, v rámci `UseModelWithSingleItem()` volání metody, pomocí následujícího kódu:
+2. Přidejte volání do metody New z `Main` metody přímo `UseModelWithSingleItem()` pod voláním metody pomocí následujícího kódu:
 
     [!code-csharp[CallPredictModelBatchItems](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithBatchItems "Call the CallUseModelWithBatchItems method")]
 
-3. Přidat nějaké komentáře k otestování trénovaného modelu prognózy v `UseModelWithBatchItems()` metody:
+3. Přidejte některé komentáře, abyste otestovali předpovědi vyškolených modelů `UseModelWithBatchItems()` v metodě:
 
     [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssues "Create test data for predictions")]
 
-### <a name="predict-comment-sentiment"></a>Předpověď mínění komentář
+### <a name="predict-comment-sentiment"></a>Předpověď komentáře mínění
 
-Použít model k predikci komentář data subjektivního hodnocení s využitím [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metody:
+Pomocí modelu předpovědět data komentáře mínění pomocí metody [Transform ()](xref:Microsoft.ML.ITransformer.Transform%2A) :
 
 [!code-csharp[Predict](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#Prediction "Create predictions of sentiments")]
 
-### <a name="combine-and-display-the-predictions"></a>Spojit a zobrazit předpovědi
+### <a name="combine-and-display-the-predictions"></a>Kombinování a zobrazení předpovědi
 
 Vytvořte hlavičku pro předpovědi pomocí následujícího kódu:
 
 [!code-csharp[OutputHeaders](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#AddInfoMessage "Display prediction outputs")]
 
-Protože `SentimentPrediction` je zděděno od `SentimentData`, `Transform()` metoda vyplní `SentimentText` s předpokládanou pole. Procesu ML.NET zpracovává, jednotlivé komponenty přidá sloupce, a to usnadňuje zobrazení výsledků:
+Vzhledem `SentimentPrediction` k tomu, `SentimentData`že je `Transform()` zděděn z `SentimentText` , metoda naplněná předpovězenými poli. Jako procesy procesu ML.NET jednotlivé komponenty přidávají sloupce a díky tomu je snadné zobrazit výsledky:
 
 [!code-csharp[DisplayPredictions](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#DisplayResults "Display the predictions")]
 
 ## <a name="results"></a>Výsledky
 
-Výsledky by měl vypadat přibližně takto. Během zpracování zprávy se zobrazují. Může se zobrazit upozornění nebo zpracování zpráv. Ty se odebraly z následujících výsledků pro přehlednost.
+Výsledky by měly vypadat podobně jako následující. Během zpracování se zobrazí zprávy. Můžou se zobrazovat upozornění nebo zpracovávat zprávy. Tyto výsledky byly z důvodu srozumitelnosti odebrány z následujících výsledků.
 
 ```console
 Model quality metrics evaluation
@@ -373,24 +373,24 @@ Press any key to continue . . .
 
 ```
 
-Blahopřejeme! Teď jste úspěšně sestaven model strojového učení pro klasifikaci a předvídat zprávy mínění.
+Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění.
 
-Vytváření modelů po úspěšné je iterativní proces. Tento model má nižší počáteční kvalita jako kurz používá malé datové sady poskytují rychlý model školení. Pokud si nejste spokojeni s kvalitou modelu, můžete zkusit ho vylepšit tím, že poskytuje větší cvičných datových sad nebo výběrem jiné trénování algoritmů s různými [hyperparametry](../resources/glossary.md##hyperparameter) pro jednotlivé algoritmy.
+Sestavování úspěšných modelů je iterativní proces. Tento model má počáteční nižší kvalitu, protože kurz používá pro zajištění rychlého školení modelů malé datové sady. Pokud nejste spokojeni s kvalitou modelu, můžete se pokusit ho zlepšit poskytnutím větších školicích datových sad nebo výběrem různých školicích algoritmů s různými [parametry Hyper-](../resources/glossary.md##hyperparameter) v pro každý algoritmus.
 
-Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.
+Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) .
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
-> * Vytvoření konzolové aplikace
-> * Příprava dat
-> * Načtení dat
-> * Vytvoření a trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu vytvoří předpověď
-> * Zobrazit výsledky
+> - Vytvoření konzolové aplikace
+> - Příprava dat
+> - Načtení dat
+> - Sestavování a výuka modelu
+> - Vyhodnocení modelu
+> - Použití modelu k vytvoření předpovědi
+> - Zobrazit výsledky
 
-Přejděte k dalšímu kurzu, kde Další informace
+Pokud se chcete dozvědět víc, přejděte k dalšímu kurzu.
 > [!div class="nextstepaction"]
 > [Klasifikace problému](github-issue-classification.md)

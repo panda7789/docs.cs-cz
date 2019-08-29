@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2881ef5b4cbc5850fde64fc68640021ebf42df43
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 964c788c5fc1ac791ed3ddd20c9c5c972d07b2c1
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666468"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106879"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -26,12 +26,12 @@ Vzor pro likvidaci objektu, na který se říká [vzor Dispose](../../../docs/st
   
 Vzor Dispose má dvě varianty:  
   
-* Zabalíte každý nespravovaný prostředek, který typ používá v bezpečném popisovači (to znamená ve třídě odvozené <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>z). V tomto případě implementujete <xref:System.IDisposable> rozhraní a další `Dispose(Boolean)` metodu. Toto je doporučená varianta a nevyžaduje přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metody.  
+- Zabalíte každý nespravovaný prostředek, který typ používá v bezpečném popisovači (to znamená ve třídě odvozené <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>z). V tomto případě implementujete <xref:System.IDisposable> rozhraní a další `Dispose(Boolean)` metodu. Toto je doporučená varianta a nevyžaduje přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metody.  
   
   > [!NOTE]
   > Obor názvů poskytuje sadu tříd odvozených z <xref:System.Runtime.InteropServices.SafeHandle>, které jsou uvedeny v části [použití bezpečných popisovačů](#SafeHandles) . <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType> Pokud nemůžete najít třídu, která je vhodná pro uvolnění nespravovaného prostředku, můžete implementovat vlastní podtřídu <xref:System.Runtime.InteropServices.SafeHandle>třídy.  
   
-* Implementujete <xref:System.IDisposable> rozhraní a další `Dispose(Boolean)` metodu <xref:System.Object.Finalize%2A?displayProperty=nameWithType> a také přepíšete metodu. Je nutné přepsat <xref:System.Object.Finalize%2A> , aby bylo zajištěno, že nespravované prostředky budou <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> odstraněny, pokud vaše implementace není volána příjemcem vašeho typu. Použijete-li doporučený postup popsaný v předchozí odrážce <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> , třída to provede vaším jménem.  
+- Implementujete <xref:System.IDisposable> rozhraní a další `Dispose(Boolean)` metodu <xref:System.Object.Finalize%2A?displayProperty=nameWithType> a také přepíšete metodu. Je nutné přepsat <xref:System.Object.Finalize%2A> , aby bylo zajištěno, že nespravované prostředky budou <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> odstraněny, pokud vaše implementace není volána příjemcem vašeho typu. Použijete-li doporučený postup popsaný v předchozí odrážce <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> , třída to provede vaším jménem.  
   
 Aby bylo možné zajistit, aby se prostředky vždy vyčistily <xref:System.IDisposable.Dispose%2A> , je třeba volat metodu vícekrát, aniž by došlo k vyvolání výjimky.  
   
@@ -42,9 +42,9 @@ Příklad kódu, který je k <xref:System.GC.KeepAlive%2A?displayProperty=nameWi
 
 Rozhraní vyžaduje implementaci jediné metody bez parametrů, <xref:System.IDisposable.Dispose%2A>. <xref:System.IDisposable> Nicméně vzor Dispose vyžaduje, aby `Dispose` byly implementovány dvě metody:  
   
-* Veřejná nevirtuální (`NonInheritable` v Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace, která nemá žádné parametry.  
+- Veřejná nevirtuální (`NonInheritable` v Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace, která nemá žádné parametry.  
   
-* Chráněná virtuální (`Overridable` v Visual Basic) `Dispose` metoda, jejíž signatura je:  
+- Chráněná virtuální (`Overridable` v Visual Basic) `Dispose` metoda, jejíž signatura je:  
   
   [!code-csharp[Conceptual.Disposable#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#8)]
   [!code-vb[Conceptual.Disposable#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#8)]  
@@ -64,9 +64,9 @@ Ve druhém přetížení je <xref:System.Boolean> parametr *disposing* , který 
   
 Tělo metody sestává ze dvou bloků kódu:  
   
-* Blok, který uvolní nespravované prostředky. Tento blok se provede bez ohledu na hodnotu `disposing` parametru.  
+- Blok, který uvolní nespravované prostředky. Tento blok se provede bez ohledu na hodnotu `disposing` parametru.  
   
-* Podmíněný blok, který uvolní spravované prostředky. Tento blok `disposing` se spustí, pokud je `true`hodnota. Mezi uvolněné spravované prostředky patří:  
+- Podmíněný blok, který uvolní spravované prostředky. Tento blok `disposing` se spustí, pokud je `true`hodnota. Mezi uvolněné spravované prostředky patří:  
   
   **Spravované objekty, které <xref:System.IDisposable>implementují.** Podmíněný blok lze použít k volání jejich <xref:System.IDisposable.Dispose%2A> implementace. Pokud jste použili bezpečný popisovač k zabalení nespravovaného prostředku, měli byste zavolat <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> implementaci zde.  
   
@@ -81,11 +81,11 @@ Pokud implementujete vzor Dispose pro základní třídu, musíte poskytnout ná
 > [!IMPORTANT]
 > Tento model byste měli implementovat pro všechny základní třídy, které <xref:System.IDisposable.Dispose> implementují a `sealed` nejsou`NotInheritable` (v Visual Basic).  
   
-* Implementace, která `Dispose(Boolean)` volá metodu. <xref:System.IDisposable.Dispose%2A>  
+- Implementace, která `Dispose(Boolean)` volá metodu. <xref:System.IDisposable.Dispose%2A>  
   
-* `Dispose(Boolean)` Metoda, která provádí skutečnou práci uvolnění prostředků.  
+- `Dispose(Boolean)` Metoda, která provádí skutečnou práci uvolnění prostředků.  
   
-* Buď třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> , která zabalí váš nespravovaný prostředek (doporučeno), nebo přepíše <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metodu. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, která vám uvolní, abyste ji nemuseli nakódovat.  
+- Buď třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> , která zabalí váš nespravovaný prostředek (doporučeno), nebo přepíše <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metodu. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, která vám uvolní, abyste ji nemuseli nakódovat.  
   
 Zde je obecný vzor pro implementaci vzoru dispose pro základní třídu, která používá bezpečný popisovač.  
   
@@ -107,9 +107,9 @@ Zde je obecný vzor pro implementaci vzoru dispose pro základní třídu, kter�
 
 Třída odvozená od třídy, která implementuje <xref:System.IDisposable> rozhraní, by neměla implementovat <xref:System.IDisposable>, protože implementace <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> základní třídy je zděděna svými odvozenými třídami. Pokud chcete namísto toho implementovat pro odvozenou třídu vzor Dispose, musíte poskytnout následující:  
   
-* `protected Dispose(Boolean)` Metoda, která přepíše metodu základní třídy a provede skutečnou práci uvolnění prostředků odvozené třídy. Tato metoda by měla také volat `Dispose(Boolean)` metodu základní třídy a předat její stav disposing argumentu.  
+- `protected Dispose(Boolean)` Metoda, která přepíše metodu základní třídy a provede skutečnou práci uvolnění prostředků odvozené třídy. Tato metoda by měla také volat `Dispose(Boolean)` metodu základní třídy a předat její stav disposing argumentu.  
   
-* Buď třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> , která zabalí váš nespravovaný prostředek (doporučeno), nebo přepíše <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metodu. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, která vám uvolní, abyste ji nemuseli nakódovat. Pokud zadáte finalizační metodu, měla by volat `Dispose(Boolean)` přetížení s argumentem `false`disposing.  
+- Buď třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> , která zabalí váš nespravovaný prostředek (doporučeno), nebo přepíše <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metodu. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, která vám uvolní, abyste ji nemuseli nakódovat. Pokud zadáte finalizační metodu, měla by volat `Dispose(Boolean)` přetížení s argumentem `false`disposing.  
   
 Toto je obecný vzor implementace vzoru Dispose pro odvozenou třídu, která používá bezpečný popisovač:  
   
@@ -134,15 +134,15 @@ Psaní kódu pro finalizační metodu objektu je složitý úkol, který může 
   
 Třídy odvozené od <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> třídy zjednodušují problémy životního cyklu objektů přiřazením a uvolněním popisovačů bez přerušení. Obsahují důležitou finalizační metodu, která se zaručeně spustí během uvolňování domény aplikace. Další informace o výhodách používání bezpečného popisovače najdete v tématu <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>. Následující odvozené třídy v <xref:Microsoft.Win32.SafeHandles> oboru názvů poskytují bezpečné popisovače:  
   
-* Třídy, a<xref:Microsoft.Win32.SafeHandles.SafePipeHandle> pro soubory, soubory mapované paměti a kanály. <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle>  
+- Třídy, a<xref:Microsoft.Win32.SafeHandles.SafePipeHandle> pro soubory, soubory mapované paměti a kanály. <xref:Microsoft.Win32.SafeHandles.SafeFileHandle> <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle>  
   
-* <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle> Třída pro zobrazení paměti.  
+- <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle> Třída pro zobrazení paměti.  
   
-* Třídy, a<xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle>prokonstrukcekryptografie. <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle> <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle>  
+- Třídy, a<xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle>prokonstrukcekryptografie. <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle> <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle>  
   
-* <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> Třída pro klíče registru.  
+- <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> Třída pro klíče registru.  
   
-* <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> Třída pro obslužné rutiny čekání.  
+- <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> Třída pro obslužné rutiny čekání.  
   
 <a name="base"></a>   
 ## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-base-class"></a>Používání bezpečného popisovače pro implementaci vzoru Dispose pro základní třídu

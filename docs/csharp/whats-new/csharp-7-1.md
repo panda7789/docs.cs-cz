@@ -2,12 +2,12 @@
 title: Co je nového v C# 7,1
 description: Přehled nových funkcí v C# 7,1.
 ms.date: 04/09/2019
-ms.openlocfilehash: 18306da709ea30f03f6c42b4a917e9b39695eb16
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: ee68cbf129d02fc58155a603d6a3f63cfb182cd0
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796592"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105554"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7,1
 
@@ -17,13 +17,13 @@ C#7,1 přidá prvek konfigurace [výběru jazykové verze](../language-reference
 
 Nové funkce jazyka v této verzi jsou:
 
-* [`async``Main` metoda](#async-main)
+- [`async``Main` metoda](#async-main)
   - Vstupní bod aplikace může mít `async` modifikátor.
-* [`default`literálové výrazy](#default-literal-expressions)
+- [`default`literálové výrazy](#default-literal-expressions)
   - Můžete použít výchozí literálové výrazy ve výchozích hodnotových výrazech, pokud cílový typ lze odvodit.
-* [Odvozené názvy elementů řazené kolekce členů](#inferred-tuple-element-names)
+- [Odvozené názvy elementů řazené kolekce členů](#inferred-tuple-element-names)
   - Názvy prvků řazené kolekce členů lze odvodit z inicializace řazené kolekce členů v mnoha případech.
-* [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
+- [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
   - Můžete použít výrazy porovnávání vzorů u proměnných, jejichž typ je parametr obecného typu.
 
 Nakonec má kompilátor dvě možnosti `-refout` a odkaz na `-refonly` [generování sestavení odkazu](#reference-assembly-generation).

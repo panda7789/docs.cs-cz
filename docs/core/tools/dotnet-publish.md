@@ -2,12 +2,12 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt .NET Core do adresáře.
 ms.date: 05/29/2018
-ms.openlocfilehash: 8cefeae17e464e14abc54dce1feb414a72c44164
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 972937ac1bc32b3749d4e1b6b8874c3516f5680c
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331030"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105137"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -49,10 +49,10 @@ dotnet publish [-h|--help]
 
 `dotnet publish`zkompiluje aplikaci, přečte prostřednictvím svých závislostí zadaných v souboru projektu a publikuje výslednou sadu souborů do adresáře. Výstup obsahuje následující prostředky:
 
-* Kód zprostředkujícího jazyka (IL) v sestavení s příponou *DLL* .
-* soubor *. DEPS. JSON* , který obsahuje všechny závislosti projektu.
-* soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime, který aplikace očekává, a další možnosti konfigurace pro modul runtime (například typ uvolňování paměti).
-* Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
+- Kód zprostředkujícího jazyka (IL) v sestavení s příponou *DLL* .
+- soubor *. DEPS. JSON* , který obsahuje všechny závislosti projektu.
+- soubor *. runtimeconfig. JSON* , který určuje sdílený modul runtime, který aplikace očekává, a další možnosti konfigurace pro modul runtime (například typ uvolňování paměti).
+- Závislosti aplikace, které jsou zkopírovány z mezipaměti NuGet do výstupní složky.
 
 Výstup `dotnet publish` příkazu je připravený k nasazení do hostitelského systému (například server, počítač, Mac, notebook) k provedení. Jedná se o jediný oficiálně podporovaný způsob, jak připravit aplikaci pro nasazení. V závislosti na typu nasazení, které projekt určuje, hostující systém může nebo nemusí mít nainstalovaný modul .NET Core Shared runtime. Další informace najdete v tématu [nasazení aplikace .NET Core](../deploying/index.md). Adresářovou strukturu publikované aplikace najdete v tématu [Struktura adresáře](/aspnet/core/hosting/directory-structure).
 

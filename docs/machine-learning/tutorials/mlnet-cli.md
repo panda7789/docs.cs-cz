@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 403b1759164d588cb5af49c6cb05e001b030235f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c0e188286821f0e3822fde4af74a1561edfbb868
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963606"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107274"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Automatické generování binárního klasifikátoru pomocí rozhraní příkazového řádku
 
@@ -19,11 +19,11 @@ Naučte se používat rozhraní příkazového řádku ML.NET k automatickému g
 
 V tomto kurzu provedete následující kroky:
 > [!div class="checklist"]
-> * Příprava dat pro vybraný úkol strojového učení
-> * Spuštění příkazu ' mlnet auto-vlak ' z rozhraní příkazového řádku
-> * Kontrola výsledků metrik kvality
-> * Pochopení vygenerovaného C# kódu pro použití modelu ve vaší aplikaci
-> * Prozkoumejte vygenerovaný C# kód, který se použil pro výuku modelu.
+> - Příprava dat pro vybraný úkol strojového učení
+> - Spuštění příkazu ' mlnet auto-vlak ' z rozhraní příkazového řádku
+> - Kontrola výsledků metrik kvality
+> - Pochopení vygenerovaného C# kódu pro použití modelu ve vaší aplikaci
+> - Prozkoumejte vygenerovaný C# kód, který se použil pro výuku modelu.
 
 > [!NOTE]
 > Toto téma odkazuje na nástroj CLI ML.NET, který je aktuálně ve verzi Preview, a materiál může být změněn. Další informace najdete [v úvodu k ml.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
@@ -259,11 +259,11 @@ Je zajímavá možnost porovnat zvolený algoritmus a konfiguraci kanálu v kurz
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
-> * Příprava dat pro vybraný úkol ML (problém, který se má vyřešit)
-> * Spuštění příkazu ' mlnet auto-vlak ' v nástroji CLI
-> * Kontrola výsledků metrik kvality
-> * Pochopení generovaného C# kódu pro spuštění modelu (kód pro použití v aplikaci koncového uživatele)
-> * Prozkoumejte vygenerovaný C# kód, který se použil ke studiu "nejlepší kvality" modelu (vzdělávací účely).
+> - Příprava dat pro vybraný úkol ML (problém, který se má vyřešit)
+> - Spuštění příkazu ' mlnet auto-vlak ' v nástroji CLI
+> - Kontrola výsledků metrik kvality
+> - Pochopení generovaného C# kódu pro spuštění modelu (kód pro použití v aplikaci koncového uživatele)
+> - Prozkoumejte vygenerovaný C# kód, který se použil ke studiu "nejlepší kvality" modelu (vzdělávací účely).
 
 > [!div class="nextstepaction"]
 > [Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET](../automate-training-with-cli.md)

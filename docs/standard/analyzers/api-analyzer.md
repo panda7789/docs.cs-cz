@@ -1,77 +1,77 @@
 ---
-title: Analyzátor rozhraní API .NET
-description: Zjistěte, jak analyzátor rozhraní API .NET vám může pomoct detekovat zastaralé rozhraní API a problémy s kompatibilitou platformy.
+title: Analyzátor rozhraní .NET API
+description: Přečtěte si, jak může analyzátor rozhraní .NET API pomáhat detekovat zastaralá rozhraní API a problémy s kompatibilitou platforem.
 author: oliag
 ms.author: mairaw
 ms.date: 04/26/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 892fb5cc9fba3434b0884c88b97f784d58093303
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2d97921a3e98d85ac1e58c7686eadef3e979211f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063343"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107371"
 ---
-# <a name="net-api-analyzer"></a>Analyzátor rozhraní API .NET
+# <a name="net-api-analyzer"></a>Analyzátor rozhraní .NET API
 
-Analyzátor rozhraní API .NET je Roslyn analyzátor, který zjišťuje potenciální rizika kompatibility pro C# rozhraní API na různých platformách a detekuje volání rozhraní API nepoužívané. Může být užitečné pro všechny C# vývojáři v jakékoli fázi vývoje.
+Analyzátor rozhraní .NET API je nástroj Roslyn Analyzer, který zjišťuje potenciální rizika kompatibility pro C# rozhraní API na různých platformách a detekuje volání zastaralých rozhraní API. Může být užitečné pro všechny C# vývojáře v jakékoli fázi vývoje.
 
-Analyzátor rozhraní API se dodává jako balíček NuGet [Microsoft.DotNet.Analyzers.Compatibility](https://www.nuget.org/packages/Microsoft.DotNet.Analyzers.Compatibility/). Po odkazovat v projektu, automaticky sleduje kód a určuje problematických použití rozhraní API. Kliknutím na žárovku můžete také získat návrhy na možné opravy. V rozevírací nabídce zahrnuje možnost potlačit upozornění.
+Analyzátor API se dodává jako balíček NuGet [Microsoft. dotnet. analyzers. Compatibility](https://www.nuget.org/packages/Microsoft.DotNet.Analyzers.Compatibility/). Poté, co na něj odkazujete v projektu, automaticky monitoruje kód a indikuje problematické využití rozhraní API. Kliknutím na žárovku můžete také získat návrhy na možné opravy. Rozevírací nabídka obsahuje možnost pro potlačení upozornění.
 
 > [!NOTE]
-> Analyzátor rozhraní .NET API je stále o předběžnou verzi.
+> Analyzátor rozhraní .NET API je stále předběžnou verzí.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* Visual Studio 2017 a novějších verzí nebo Visual Studio pro Mac (všechny verze).
+- Visual Studio 2017 a novější verze nebo Visual Studio pro Mac (všechny verze).
 
-## <a name="discovering-deprecated-apis"></a>Zjišťování zastaralá rozhraní API
+## <a name="discovering-deprecated-apis"></a>Zjišťují se zastaralá rozhraní API.
 
-### <a name="what-are-deprecated-apis"></a>Co jsou zastaralé rozhraní API?
+### <a name="what-are-deprecated-apis"></a>Co jsou zastaralá rozhraní API?
 
-Řada .NET je sada velké produkty, které jsou neustále aktualizovány na dokázaly lépe vyhovět potřebám zákazníků. Je přirozené přestat používat některá rozhraní API a je nahradit za nové. Rozhraní API se považuje za zastaralý, lepší alternativou existuje. Jedním ze způsobů informovat, že rozhraní API je zastaralý a neměl by se používat je označit pomocí <xref:System.ObsoleteAttribute> atribut. Nevýhody tohoto přístupu je, že existuje pouze jedno ID diagnostiky pro všechny zastaralé rozhraní API (pro C#, [CS0612](../../csharp/misc/cs0612.md)). To znamená, že:
-- Není možné mít vyhrazené dokumenty pro každý případ.
-- Není možné potlačit určité upozornění. Můžete potlačit všech nebo žádných z nich.
-- Pokud chcete informovat uživatele o nové vyřazení odkazované sestavení nebo cílení balíčku musí být aktualizovány.
+Rodina .NET je sada velkých produktů, které se neustále upgradují tak, aby lépe vyhovovaly potřebám zákazníků. Je přirozené zastaralá některá rozhraní API a nahrazovat je novými. Rozhraní API se považuje za zastaralé, pokud existuje lepší alternativa. Jedním ze <xref:System.ObsoleteAttribute> způsobů, jak informovat o tom, že rozhraní API je zastaralé a nemělo by se používat, je označit s atributem. Nevýhodou tohoto přístupu je, že existuje jenom jedno ID diagnostiky pro všechna zastaralá C#rozhraní API (pro, [CS0612](../../csharp/misc/cs0612.md)). To znamená, že:
+- U každého případu není možné mít vyhrazené dokumenty.
+- Není možné potlačit určitou kategorii upozornění. Můžete potlačit buď všechny, nebo žádné z nich.
+- Chcete-li informovat uživatele o nové zastaralosti, je nutné aktualizovat odkazované sestavení nebo balíček cílení.
 
-Analyzátor rozhraní API používá rozhraní API specifické chybové kódy, které začínají s DE (což je zkratka pro vyřazení chyba), která umožňuje ovládat zobrazení jednotlivých upozornění. Zastaralé rozhraní API identifikovat analyzátor jsou definovány v [dotnet/platform – compat](https://github.com/dotnet/platform-compat) úložiště.
+Analyzátor API používá kódy chyb specifické pro rozhraní API, které začínají na DE (což představuje chybu při vyřazení), která umožňuje kontrolu nad zobrazením jednotlivých upozornění. Zastaralá rozhraní API identifikovaná analyzátorem jsou definována v úložišti [dotnet/Platform-kompatibility](https://github.com/dotnet/platform-compat) .
 
-### <a name="using-the-api-analyzer"></a>Analyzátor rozhraní API pomocí
+### <a name="using-the-api-analyzer"></a>Použití analyzátoru rozhraní API
 
-Když zastaralé rozhraní API, například <xref:System.Net.WebClient>, se používá v kódu, analyzátor rozhraní API zvýrazní ho s řádkem zelenou vlnovkou. Při najetí myší na volání rozhraní API, zobrazí se žárovka s informacemi o vyřazení podpory rozhraní API, jako v následujícím příkladu:
+Pokud se v kódu používá zastaralé rozhraní API <xref:System.Net.WebClient>, jako je například, analyzátor rozhraní API ho zvýrazní zelenou vlnovkou. Když najedete myší na volání rozhraní API, zobrazí se žárovka s informacemi o zastaralém rozhraní API, jako v následujícím příkladu:
 
-!["Snímek obrazovky WebClient rozhraní API s zelenou vlnovkou čáru a návrhy na levé straně"](media/api-analyzer/green-squiggle.jpg)
+![Snímek obrazovky rozhraní API pro WebClient se zelenou vlnovkou a žárovkou na levé straně](media/api-analyzer/green-squiggle.jpg)
 
-**Seznam chyb** okno obsahuje upozornění s jedinečným ID rozhraní API nepoužívané, jak je znázorněno v následujícím příkladu (`DE004`): 
+Okno **Seznam chyb** obsahuje upozornění s jedinečným ID na zastaralé rozhraní API, jak je znázorněno v následujícím příkladu (`DE004`): 
 
-!["Snímek obrazovky okna Seznam chyb, které se zobrazují upozornění na ID a description"](media/api-analyzer/warnings-id-and-descriptions.jpg "okna Seznam chyb, který obsahuje upozornění.")
+![Snímek obrazovky okna Seznam chyb zobrazující ID a popis upozornění](media/api-analyzer/warnings-id-and-descriptions.jpg "Seznam chyb okno, které obsahuje upozornění.")
 
-Po kliknutí na ID, přejděte na webové stránce s podrobnými informacemi o Proč se přestala nabízet rozhraní API a návrhy týkající se alternativní rozhraní API, která lze použít.
+Kliknutím na ID přejdete na webovou stránku s podrobnými informacemi o tom, proč se rozhraní API zastaralo, a návrhy týkající se alternativních rozhraní API, která se dají použít.
 
-Všechna upozornění můžete potlačit pomocí pravým tlačítkem na zvýrazněné člena a výběrem **potlačit \<ID diagnostiky >**. Existují dva způsoby, jak potlačit upozornění: 
+Všechna upozornění lze potlačit kliknutím pravým tlačítkem na zvýrazněný člen a výběrem možnosti **potlačit \<ID diagnostiky >** . Existují dva způsoby, jak potlačit upozornění: 
 
-* [místně (ve zdroji)](#suppressing-warnings-locally)
-* [(v souboru potlačení)](#suppressing-warnings-globally) – doporučené
+- [místně (ve zdroji)](#suppressing-warnings-locally)
+- [globálně (v souboru potlačení)](#suppressing-warnings-globally) – doporučeno
 
-### <a name="suppressing-warnings-locally"></a>Potlačení upozornění místně
+### <a name="suppressing-warnings-locally"></a>Místní potlačení upozornění
 
-Potlačení upozornění místně, klikněte pravým tlačítkem na člena chcete potlačit upozornění pro a pak vyberte **rychlé akce a Refaktoringy** > **potlačit *ID diagnostiky* \<ID diagnostiky >** > **ve zdroji**. [#Pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) upozornění direktivy preprocesoru je přidán do zdrojového kódu v rámci definice: !["Snímek kódu, které jsou uvedeny s zakázat varování #pragma"](media/api-analyzer/suppress-in-source.jpg)
+Chcete-li potlačit upozornění místně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a** > refaktoringy >  **potlačit ID diagnostiky *ID*\<diagnostiky >**  **ve zdroji**. Do vašeho zdrojového kódu je v definovaném oboru přidána direktiva preprocesoru upozornění [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) : !["Snímek obrazovky s kódem s rámcem #pragma vypnutí upozornění"](media/api-analyzer/suppress-in-source.jpg)
 
-### <a name="suppressing-warnings-globally"></a>Potlačení upozornění globálně
+### <a name="suppressing-warnings-globally"></a>Globální potlačení upozornění
 
-Potlačit upozornění globálně, klikněte pravým tlačítkem na člena chcete potlačit upozornění pro a pak vyberte **rychlé akce a Refaktoringy** > **potlačit *ID diagnostiky* \<ID diagnostiky >** > **v souboru potlačení**.
+Chcete-li potlačit upozornění globálně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a** > refaktoringy >  **potlačit ID diagnostiky *ID*\<diagnostiky >** **v souboru potlačení**.
 
-!["Snímek obrazovky WebClient rozhraní API s zelenou vlnovkou čáru a návrhy na levé straně"](media/api-analyzer/suppress-in-sup-file.jpg)
+![Snímek obrazovky rozhraní API pro WebClient se zelenou vlnovkou a žárovkou na levé straně](media/api-analyzer/suppress-in-sup-file.jpg)
 
-A *GlobalSuppressions.cs* přidá soubor do projektu po první potlačení. Nové globální potlačení se připojují k tomuto souboru.
+Po prvním potlačení se do projektu přidá soubor *GlobalSuppressions.cs* . K tomuto souboru se připojí nová globální potlačení.
 
-!["Snímek obrazovky WebClient rozhraní API s zelenou vlnovkou čáru a návrhy na levé straně"](media/api-analyzer/suppression-file.jpg)
+![Snímek obrazovky rozhraní API pro WebClient se zelenou vlnovkou a žárovkou na levé straně](media/api-analyzer/suppression-file.jpg)
 
-Globální potlačení je doporučeným způsobem, jak zajistit konzistenci použití rozhraní API napříč projekty.
+Globální potlačení je doporučený způsob, jak zajistit konzistenci využití rozhraní API napříč projekty.
 
-## <a name="discovering-cross-platform-issues"></a>Zjišťování problémů napříč platformami
+## <a name="discovering-cross-platform-issues"></a>Zjišťování problémů s více platformami
 
-Podobně jako zastaralé rozhraní API, analyzátor identifikuje všechna rozhraní API, které nejsou napříč platformami. Například <xref:System.Console.WindowWidth?displayProperty=nameWithType> funguje na Windows, ale není v Linuxu a macOS. ID diagnostiky se zobrazí v **seznam chyb** okna. Že upozornění můžete potlačit kliknutím pravým tlačítkem myši a vyberete **rychlé akce a Refaktoringy**. Na rozdíl od vyřazení případy, které mají dvě možnosti (nadále používat zastaralé člena a potlačit upozornění nebo není vůbec používat), zde vyvíjíte kódu pouze pro určité platformy, můžete potlačit všechna upozornění pro jiné platformy, ne plán pro spouštění vašeho kódu. K tomu stačí úpravou souboru projektu a přidejte `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platformách se ignoruje. Přípustné hodnoty jsou: `Linux`, `macOS`, a `Windows`.
+Podobně jako zastaralá rozhraní API nástroj Analyzer identifikuje všechna rozhraní API, která nejsou pro různé platformy. Například funguje ve <xref:System.Console.WindowWidth?displayProperty=nameWithType> Windows, ale ne v systémech Linux a MacOS. ID diagnostiky se zobrazí v okně **Seznam chyb** . Toto upozornění můžete potlačit tak, že kliknete pravým tlačítkem a vyberete **rychlé akce a**refaktoringy. Na rozdíl od zastaralých případů, kde máte dvě možnosti (můžete buď dál používat zastaralé členy a potlačit upozornění, nebo je nepoužívat vůbec), pokud vyvíjíte kód jenom pro určité platformy, můžete potlačit všechna upozornění pro všechny ostatní platformy, které nepoužíváte. Naplánujte spuštění kódu v. K tomu stačí upravit soubor projektu a přidat `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platforem, které mají být ignorovány. Přípustné hodnoty jsou: `Linux`, `macOS`a `Windows`.
 
 ```xml
 <PropertyGroup>
@@ -79,7 +79,7 @@ Podobně jako zastaralé rozhraní API, analyzátor identifikuje všechna rozhra
 </PropertyGroup>
 ```
 
-Pokud váš kód cílí na různé platformy a chcete využít rozhraní API není podporována na některé z nich, můžete chránit tuto část kódu pomocí `if` – příkaz:
+Pokud váš kód cílí na více platforem a chcete využít výhod rozhraní API, které není na některých z nich podporováno, můžete tuto část kódu `if` chránit příkazem:
 
 ```csharp
 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -89,29 +89,29 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 }
 ```
 
-Můžete také podmíněné kompilaci na cílové rozhraní framework nebo operační systém, ale aktuálně je potřeba udělat [ručně](../frameworks.md#how-to-specify-target-frameworks).
+Můžete také podmíněně kompilovat na cílové rozhraní nebo operační systém, ale v tuto chvíli je nutné provést [ručně](../frameworks.md#how-to-specify-target-frameworks).
 
-## <a name="supported-diagnostics"></a>Podporované diagnostiky
+## <a name="supported-diagnostics"></a>Podporovaná Diagnostika
 
-V současné době analyzátor zpracovává následujících případech:
+Analyzátor v současné době zpracovává následující případy:
 
-* Použití standardních rozhraní API .NET, která vyvolá <xref:System.PlatformNotSupportedException> (PC001).
-* Použití standardních rozhraní API .NET, která není k dispozici v rozhraní .NET Framework 4.6.1 (PC002).
-* Použití nativních rozhraní API, která neexistuje v UPW (PC003).
-* Využití Delegate.BeginInvoke a EndInvoke u rozhraní API (PC004).
-* Využití rozhraní API, která je označena jako zastaralá (DEXXXX).
+- Použití rozhraní API pro .NET Standard, které <xref:System.PlatformNotSupportedException> vyvolá (PC001).
+- Použití rozhraní .NET Standard API, které není k dispozici v .NET Framework 4.6.1 (PC002).
+- Použití nativního rozhraní API, které neexistuje v UWP (PC003).
+- Použití rozhraní API Delegate. BeginInvoke a EndInvoke u delegujících (PC004).
+- Použití rozhraní API, které je označeno jako zastaralé (pro odstranění XXXX).
 
-## <a name="ci-machine"></a>Položky konfigurace počítače
+## <a name="ci-machine"></a>Počítač CI
 
-Všechny tyto Diagnostika je k dispozici pouze v rozhraní IDE, ale také v příkazovém řádku jako část sestavení vašeho projektu, která obsahuje CI server.
+Všechna tato diagnostika jsou k dispozici nejen v integrovaném vývojovém prostředí (IDE), ale také na příkazovém řádku jako součást sestavení projektu, který zahrnuje server CI.
 
-## <a name="configuration"></a>Konfigurace
+## <a name="configuration"></a>Konfiguraci
 
-Uživatel rozhodne, jak by měly být považovány Diagnostika: jako upozornění, chyby, návrhy nebo jej nejprve vypnout. Například jako architekt, se můžete rozhodnout, že problémy s kompatibilitou by měla být považována za chyby, volání některá rozhraní API nepoužívané vygenerovat upozornění, zatímco ostatní návrhy generovat jenom. To můžete nakonfigurovat samostatně podle ID diagnostiky a projektu. Provedete to tak v **Průzkumníku řešení**, přejděte **závislosti** uzlu projektu. Rozbalte uzly **závislosti** > **analyzátory** > **Microsoft.DotNet.Analyzers.Compatibility**. Klikněte pravým tlačítkem na ID diagnostiky, vyberte **nastavit závažnost pravidla nastavit** a vyberte požadovanou možnost.
+Uživatel rozhodne, jak by měla být Diagnostika zpracována: jako upozornění, chyby, návrhy nebo je vypnuto. Například jako architekt se můžete rozhodnout, že problémy s kompatibilitou by měly být považovány za chyby, volání některých zastaralých rozhraní API generují upozornění, zatímco ostatní generují pouze návrhy. Můžete ji nakonfigurovat samostatně podle ID diagnostiky a podle projektu. Provedete to tak, že v **Průzkumník řešení**přejdete do uzlu **závislosti** v projektu. Rozbalte uzel **závislosti** > uzlů**analyzátory** > **Microsoft. dotnet. Analyzer. Compatibility**. Klikněte pravým tlačítkem na ID diagnostiky, vyberte **nastavit závažnost sady pravidel** a vyberte požadovanou možnost.
 
-!["Snímek Průzkumník řešení zobrazující diagnostiky a zobrazení dialogu se nastavit závažnost pravidla"](media/api-analyzer/disable-notifications.jpg)
+![Snímek obrazovky Průzkumník řešení znázorňující diagnostiku a automaticky otevírané okno se závažností sady pravidel "](media/api-analyzer/disable-notifications.jpg)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do rozhraní API analyzátor](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) blogový příspěvek.
-- [Analyzátor rozhraní API](https://youtu.be/eeBEahYXGd0) ukázkové video na YouTube.
+- [Představujeme](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) Blogový příspěvek k analyzátoru API.
+- Ukázkové video [analyzátoru API](https://youtu.be/eeBEahYXGd0) na YouTube

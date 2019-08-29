@@ -3,12 +3,12 @@ title: Začínáme se službou Azure Blob Storage s využitím F#
 description: Ukládejte nestrukturovaná data v cloudu pomocí služby Azure Blob Storage.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: c8b42339ff1d76f262e956b5e34cc598e0fc855d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c765f38cba7642e813a5966d3b7754c5ce45abbd
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630506"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107112"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob Storage s využitím F\#
 
@@ -186,9 +186,9 @@ Další informace o rozdílech mezi třemi typy objektů BLOB najdete v tématu 
 
 Aby bylo možné podporovat souběžný přístup k objektu BLOB z více klientů nebo instancí více procesů, můžete použít **značky ETag** nebo zapůjčení.
 
-* **Značka ETag** – poskytuje způsob, jak zjistit, že objekt BLOB nebo kontejner byl upraven jiným procesem.
+- **Značka ETag** – poskytuje způsob, jak zjistit, že objekt BLOB nebo kontejner byl upraven jiným procesem.
 
-* **Zapůjčení** – poskytuje způsob, jak získat přístup výhradního, obnovitelného, zápisu nebo odstranění objektu BLOB po určitou dobu.
+- **Zapůjčení** – poskytuje způsob, jak získat přístup výhradního, obnovitelného, zápisu nebo odstranění objektu BLOB po určitou dobu.
 
 Další informace najdete v tématu [Správa souběžnosti v Microsoft Azure Storage](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/).
 
@@ -220,7 +220,7 @@ Ve výchozím nastavení jsou data objektů BLOB v účtu úložiště dostupná
 
 Azure Storage podporuje šifrování dat objektů BLOB v klientovi i na serveru.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Teď, když jste se naučili základy služby Blob Storage, můžete získat další informace pomocí těchto odkazů.
 

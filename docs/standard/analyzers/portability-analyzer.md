@@ -4,12 +4,12 @@ description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k 
 ms.date: 07/18/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 32b4f980061b0975c413a8cde436074f76cfabc9
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: fdd2e9f288649b35b778b5da505408822e0ea8fe
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433942"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107507"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
@@ -17,11 +17,11 @@ Chcete, aby vaše knihovny podporovaly více platforem? Chcete zjistit, kolik pr
 
 ## <a name="common-targets"></a>Společné cíle
 
-* [.NET Core](../../core/index.md): Má modulární návrh, který využívá souběžné a cílené scénáře pro různé platformy. Vedle sebe vám umožní přijmout nové verze .NET Core bez porušení dalších aplikací. Pokud je vaším cílem, aby vaše aplikace podporovala více platforem .NET Core, jedná se o doporučený cíl. 
-* . [NET Standard](../../standard/net-standard.md): Zahrnuje rozhraní API .NET Standard dostupná pro všechny implementace rozhraní .NET. Pokud vaším cílem je, aby se vaše knihovna spouštěla na všech platformách podporovaných rozhraním .NET, je to doporučený cíl.  
-* [ASP.NET Core](/aspnet/core): Moderní webové rozhraní postavené na .NET Core. Pokud je vaším cílem, aby vaše webová aplikace podporovala více platforem na .NET Core, jedná se o doporučený cíl.
-* Rozšíření .NET Core + [Platform](../../core/porting/windows-compat-pack.md): Zahrnuje rozhraní API .NET Core kromě sady Windows Compatibility Pack, která poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos vaší aplikace z .NET Framework do .NET Core ve Windows.
-* Rozšíření .NET Standard + [platforma](../../core/porting/windows-compat-pack.md): Zahrnuje .NET Standard rozhraní API kromě sady Windows Compatibility Pack, která poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos knihovny z .NET Framework do .NET Core ve Windows.
+- [.NET Core](../../core/index.md): Má modulární návrh, který využívá souběžné a cílené scénáře pro různé platformy. Vedle sebe vám umožní přijmout nové verze .NET Core bez porušení dalších aplikací. Pokud je vaším cílem, aby vaše aplikace podporovala více platforem .NET Core, jedná se o doporučený cíl. 
+- . [NET Standard](../../standard/net-standard.md): Zahrnuje rozhraní API .NET Standard dostupná pro všechny implementace rozhraní .NET. Pokud vaším cílem je, aby se vaše knihovna spouštěla na všech platformách podporovaných rozhraním .NET, je to doporučený cíl.  
+- [ASP.NET Core](/aspnet/core): Moderní webové rozhraní postavené na .NET Core. Pokud je vaším cílem, aby vaše webová aplikace podporovala více platforem na .NET Core, jedná se o doporučený cíl.
+- Rozšíření .NET Core + [Platform](../../core/porting/windows-compat-pack.md): Zahrnuje rozhraní API .NET Core kromě sady Windows Compatibility Pack, která poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos vaší aplikace z .NET Framework do .NET Core ve Windows.
+- Rozšíření .NET Standard + [platforma](../../core/porting/windows-compat-pack.md): Zahrnuje .NET Standard rozhraní API kromě sady Windows Compatibility Pack, která poskytuje mnoho dostupných technologií .NET Framework. Toto je doporučený cíl pro přenos knihovny z .NET Framework do .NET Core ve Windows.
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>Jak používat analyzátor přenositelnosti .NET
 
@@ -38,9 +38,9 @@ Chcete-li analyzovat celý projekt v aplikaci Visual Studio, klikněte pravým t
 
 Můžete také použít konzolovou [aplikaci ApiPort](https://aka.ms/apiportdownload). 
 
-* Chcete-li analyzovat aktuální adresář, zadejte následující příkaz:`ApiPort.exe analyze -f .`
-* Chcete-li analyzovat konkrétní seznam souborů. dll, zadejte následující příkaz:`ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
-* Spusťte `ApiPort.exe -?` , abyste získali další nápovědu.
+- Chcete-li analyzovat aktuální adresář, zadejte následující příkaz:`ApiPort.exe analyze -f .`
+- Chcete-li analyzovat konkrétní seznam souborů. dll, zadejte následující příkaz:`ApiPort.exe analyze -f first.dll -f second.dll -f third.dll`
+- Spusťte `ApiPort.exe -?` , abyste získali další nápovědu.
 
 Doporučujeme, abyste zahrnuli všechny související soubory exe a DLL, které vlastníte a chcete portovat, a vyloučíte soubory, na kterých vaše aplikace závisí, ale nevlastníte a nemůžete port. Tím získáte nejvíc relevantní sestavu přenositelnosti.  
 

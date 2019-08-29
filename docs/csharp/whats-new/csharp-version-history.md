@@ -3,12 +3,12 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 8230efcbcdd67cc99f321efc6509df3665d9f2f7
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 9962dcb0192fb27ff21b24e985a6a897703720c7
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363874"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105673"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 
@@ -19,11 +19,11 @@ Tento článek poskytuje historii všech hlavních vydání C# jazyka. Tým C# p
 
 Nástroje C# pro sestavení považují nejnovější jazykovou verzi za výchozí verzi. V dalších článcích v této části můžou být vydávané body mezi hlavními vydáními, které jsou podrobně popsané. Chcete-li používat nejnovější funkce v bodu vydání, je nutné [nakonfigurovat verzi jazyka kompilátoru](../language-reference/configure-language-version.md) a vybrat verzi. Od C# 7,0 se vydává tři body:
 
-* [C# 7.3](csharp-7-3.md):
+- [C# 7.3](csharp-7-3.md):
   - C#7,3 je k dispozici počínaje sadou [Visual Studio 2017 verze 15,7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) a [.NET Core 2,1 SDK](../../core/whats-new/dotnet-core-2-1.md).
-* [ C# 7,2](csharp-7-2.md):
+- [ C# 7,2](csharp-7-2.md):
   - C#7,2 je k dispozici počínaje sadou [Visual Studio 2017 verze 15,5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)a [.NET Core 2,0 SDK](../../core/whats-new/dotnet-core-2-0.md).
-* [C# 7.1](csharp-7-1.md):
+- [C# 7.1](csharp-7-1.md):
   - C#7,1 je k dispozici počínaje sadou [Visual Studio 2017 verze 15,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) a [.NET Core 2,0 SDK](../../core/whats-new/dotnet-core-2-0.md).
 
 ## <a name="c-version-10"></a>C#verze 1,0
@@ -124,7 +124,7 @@ C#verze 5,0 byla zaměřená na verzi tohoto jazyka. Skoro veškerá snaha o tut
 
 ### <a name="see-also"></a>Viz také
 
-* [Projekt kódu: Atributy informací o volajícím v C# 5,0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
+- [Projekt kódu: Atributy informací o volajícím v C# 5,0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
 
 Atribut informace o volajícím umožňuje snadno načíst informace o kontextu, ve kterém je spuštěno bez použití na tunu kódu reflexe. Obsahuje mnoho použití v diagnostice a úlohy protokolování.
 

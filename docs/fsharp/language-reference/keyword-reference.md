@@ -2,12 +2,12 @@
 title: Referenční dokumentace klíčových slov
 description: Vyhledá odkazy na informace o všech klíčových F# slovech jazyka.
 ms.date: 05/16/2016
-ms.openlocfilehash: 680b270a99eff7aa98652579d2fd31b4b05080ca
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 8c2df9d081caae48489e3e316ca158f3b9106efb
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733485"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107042"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -92,44 +92,44 @@ V následující tabulce jsou uvedena F# všechna klíčová slova v abecedním 
 
 Následující tokeny jsou vyhrazené v F# , protože jsou klíčovými slovy v jazyce OCaml:
 
-* `asr`
-* `land`
-* `lor`
-* `lsl`
-* `lsr`
-* `lxor`
-* `mod`
-* `sig`
+- `asr`
+- `land`
+- `lor`
+- `lsl`
+- `lsr`
+- `lxor`
+- `mod`
+- `sig`
 
 Použijete-li `--mlcompatibility` možnost kompilátoru, jsou výše uvedená klíčová slova k dispozici pro použití jako identifikátory.
 
 Následující tokeny jsou vyhrazené jako klíčová slova pro budoucí rozšiřování F# jazyka:
 
-* `atomic`
-* `break`
-* `checked`
-* `component`
-* `const`
-* `constraint`
-* `constructor`
-* `continue`
-* `eager`
-* `event`
-* `external`
-* `functor`
-* `include`
-* `method`
-* `mixin`
-* `object`
-* `parallel`
-* `process`
-* `protected`
-* `pure`
-* `sealed`
-* `tailcall`
-* `trait`
-* `virtual`
-* `volatile`
+- `atomic`
+- `break`
+- `checked`
+- `component`
+- `const`
+- `constraint`
+- `constructor`
+- `continue`
+- `eager`
+- `event`
+- `external`
+- `functor`
+- `include`
+- `method`
+- `mixin`
+- `object`
+- `parallel`
+- `process`
+- `protected`
+- `pure`
+- `sealed`
+- `tailcall`
+- `trait`
+- `virtual`
+- `volatile`
 
 ## <a name="see-also"></a>Viz také:
 

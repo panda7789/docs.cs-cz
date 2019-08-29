@@ -1,106 +1,106 @@
 ---
 title: Sestavení .NET Core ze zdroje
-description: Zjistěte, jak sestavení .NET Core a .NET Core CLI ze zdrojového kódu.
+description: Naučte se, jak vytvořit .NET Core a .NET Core CLI ze zdrojového kódu.
 author: bleroy
 ms.date: 06/28/2017
 ms.custom: seodec18
-ms.openlocfilehash: 523b537ba07afd1b6c56192c5e2589082fe5820f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dcd7c909325eec5a79db74098d7ac880000eafa1
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650879"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105383"
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje
 
-Možnost vyvíjet aplikace .NET Core z jeho zdrojový kód je důležité několika různými způsoby: usnadňuje na port .NET Core pro nové platformy, umožňuje příspěvky a opravy produktu a umožňuje vytvářet vlastní verze rozhraní .NET.
-Tento článek obsahuje pokyny pro vývojáře, kteří chtějí vytvářet a distribuovat vlastní verzi .NET Core.
+Možnost sestavování .NET Core z jeho zdrojového kódu je důležitá v různých způsobech: usnadňuje portování .NET Core na nové platformy, umožňuje příspěvky a opravy produktu a umožňuje vytváření vlastních verzí rozhraní .NET.
+Tento článek obsahuje pokyny pro vývojáře, kteří chtějí sestavovat a distribuovat vlastní verze .NET Core.
 
 ## <a name="build-the-clr-from-source"></a>Sestavení CLR ze zdroje
 
-Zdrojový kód pro .NET CoreCLR najdete v [dotnet/coreclr](https://github.com/dotnet/coreclr/) úložišti na Githubu.
+Zdrojový kód pro .NET CoreCLR najdete v úložišti [dotnet/CoreCLR](https://github.com/dotnet/coreclr/) na GitHubu.
 
-Sestavení aktuálně závisí na následujících požadavků:
+Sestavení v současné době závisí na následujících předpokladech:
 
-* [Git](https://git-scm.com/)
-* [CMake](https://cmake.org/)
-* [Python](https://www.python.org/)
-* Kompilátor jazyka C++.
+- [Git](https://git-scm.com/)
+- [CMake](https://cmake.org/)
+- [Python](https://www.python.org/)
+- C++ kompilátor.
 
-Po instalaci těchto nezbytných podmínkách, můžete vytvořit CLR vyvoláním skript sestavení (`build.cmd` na Windows, nebo `build.sh` v Linuxu a macOS) na základě [dotnet/coreclr](https://github.com/dotnet/coreclr/) úložiště.
+Po instalaci těchto požadavků můžete sestavit modul CLR vyvoláním skriptu sestavení (`build.cmd` ve Windows nebo `build.sh` na platformě Linux a MacOS) na bázi úložiště [dotnet/CoreCLR](https://github.com/dotnet/coreclr/) .
 
-Instalace komponent se liší v závislosti na operačním systému (OS). Přečtěte si pokyny sestavení pro konkrétní operační systém:
+Instalace komponent se liší v závislosti na operačním systému (OS). Podívejte se na pokyny pro sestavení pro konkrétní operační systém:
 
-* [Windows](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md)
-* [Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/building/linux-instructions.md)
-* [macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
-* [FreeBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/freebsd-instructions.md)
-* [NetBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/netbsd-instructions.md)
+- [Windows](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md)
+- [Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/building/linux-instructions.md)
+- [macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
+- [FreeBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/freebsd-instructions.md)
+- [NetBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/netbsd-instructions.md)
 
-Nevzniká žádný napříč vytváření přes operační systém (pouze pro ARM, které je postavené na X64).  
-Musíte být na konkrétní platformě k vytvoření této platformy.  
+V operačním systému neexistují žádné křížové sestavování (jenom pro ARM, které je postavené na platformě x64).  
+Musíte být na konkrétní platformě pro sestavení této platformy.  
 
 Sestavení má dvě hlavní `buildTypes`:
 
-* Ladění (výchozí) – zkompiluje modul runtime s minimální optimalizace a kontroly za běhu další (kontrolních příkazů). Toto omezení úroveň optimalizace a další kontroly zpomalit spuštění modulu runtime, ale jsou důležité pro ladění. Toto je doporučené nastavení pro vývojová a testovací prostředí.
-* Release – zkompiluje modul runtime se úplná optimalizace a bez kontroly další za běhu. To povede k mnohem rychlejšímu běhu výkon, ale může trvat delší dobu sestavení a může být obtížné ladit. Předejte `release` k buildu skript, který tuto možnost vyberte, typ sestavení.
+- Ladit (výchozí) – zkompiluje modul runtime s minimálními optimalizacemi a dalšími kontrolami za běhu (kontrolní výrazy). Toto snížení úrovně optimalizace a další kontroly pomaleji spouštění za běhu, ale jsou cenné pro ladění. Toto je doporučené nastavení pro vývojová a testovací prostředí.
+- Release – zkompiluje modul runtime s úplnými optimalizacemi a bez dalších kontrol za běhu. Výsledkem bude mnohem rychlejší doba běhu, ale může trvat delší dobu, než se sestaví a může být obtížné ho ladit. Pro `release` výběr tohoto typu sestavení předejte skriptu sestavení.
 
-Kromě toho ve výchozím nastavení sestavení nejen vytvoří spustitelné soubory modulu runtime, ale zároveň vytvoří všechny testy.
-Existuje mnoho zkoušky významné množství času, které není nezbytné, pokud chcete experimentovat s změny.
-Můžete přeskočit sestavení testů tak, že přidáte `skiptests` argument na skript sestavení, jako v následujícím příkladu (nahradit `.\build` s `./build.sh` na počítačích Unix):
+Kromě toho ve výchozím nastavení sestavení nejen vytvoří běhové spustitelné soubory, ale také vytvoří všechny testy.
+Existuje poměrně několik testů, které zabírají značnou dobu, která není nutná, pokud chcete experimentovat pouze se změnami.
+Můžete přeskočit sestavení testů přidáním `skiptests` argumentu do skriptu sestavení, jako v následujícím příkladu (nahraďte `.\build` je v počítačích se `./build.sh` systémem UNIX):
 
 ```bat
     .\build skiptests
 ```
 
-Předchozí příklad ukázal, jak vytvořit `Debug` charakter, který má kontrol za vývoj (kontrolní výrazy) povolené i zakázané optimalizace. K sestavení charakter (plné rychlosti) verzi, postupujte takto:
+Předchozí příklad ukázal, jak sestavit `Debug` charakter, který má povolené kontroly doby vývoje (kontrolní výrazy) a optimalizace, které jsou zakázané. Chcete-li sestavit charakter vydaných verzí (s plnou rychlostí), postupujte takto:
 
 ```bat
     .\build release skiptests
 ```
 
-Můžete najít další možnosti sestavení se sestavením pomocí /? nebo – help kvalifikátoru.
+Další možnosti sestavení můžete najít pomocí sestavení pomocí-? nebo – kvalifikátor pomocníka.
 
-### <a name="using-your-build"></a>Pomocí sestavení
+### <a name="using-your-build"></a>Použití sestavení
 
-Sestavení umístí všechny jeho generované soubory v rámci `bin` adresáři základní úložiště.
-Je *bin\Log* adresáře, který obsahuje soubory protokolu vygenerované během sestavování (nejužitečnější, když sestavení selže).
-Aktuální výstup je umístěn v *bin\Product\[platformy]. [ Architektura procesoru]. [typ sestavení]*  adresář, jako například *bin\Product\Windows_NT.x64.Release*.
+Sestavení umístí všechny své vygenerované soubory `bin` do adresáře na bázi úložiště.
+K dispozici je adresář *bin\Log* , který obsahuje soubory protokolu generované během sestavení (nejužitečnější při neúspěšném sestavení).
+Skutečný výstup je umístěný v *bin\Product\[platformě]. [ Architektura procesoru]. [typ sestavení]* Adresář, například *bin\Product\Windows_NT.x64.Release*.
 
-'Nezpracovanou' výstupy sestavení je někdy užitečné, obvykle vás zajímá jenom balíčky NuGet, které jsou umístěny v `.nuget\pkg` podadresář předchozí výstupní adresář.
+Zatímco výstup "raw" sestavení je někdy užitečné, obvykle se zajímá pouze o balíčky NuGet, které jsou umístěny v `.nuget\pkg` podadresáři předchozího výstupního adresáře.
 
-Existují dva základní postupy pro použití nového modulu runtime:
+Existují dvě základní techniky použití nového modulu runtime:
 
- 1. **Můžete vytvořit aplikaci dotnet.exe a NuGet**.
-    Zobrazit [pomocí sestavení](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingYourBuild.md) pokyny k vytvoření programu, který používá nový modul runtime pomocí balíčků NuGet jste právě vytvořili a "dotnet" rozhraní příkazového řádku (CLI). Tato technika je, že vývojáři – modul runtime očekávané způsob, jak můžou využívat nové prostředí runtime.
+ 1. **K vytvoření aplikace použijte dotnet. exe a NuGet**.
+    Pokyny k vytvoření programu, který používá váš nový modul runtime, pomocí balíčků NuGet, které jste právě vytvořili, a rozhraní příkazového řádku dotnet (CLI) najdete v tématu [použití sestavení](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingYourBuild.md) . Tato technika je předpokládaný způsob, jakým vývojáři mimo modul runtime využívají nový modul runtime.
 
- 2. **Ke spuštění aplikace pomocí nezabalené knihovny DLL použijte corerun.exe**.
-    Toto úložiště také definuje jednoduché hostitelské volá corerun.exe, který nemá žádné závislosti na webu NuGet.
-    Musíte určit hostitele získání požadovaných knihoven DLL, které skutečně používáte, a budete muset ručně shromáždit je společně.
-    Tato technika je používána všemi testy v [dotnet/coreclr](https://github.com/dotnet/coreclr) úložiště a je užitečné pro rychlé místní "úpravy kompilace – ladění" smyčka například předběžné testování částí.
-    Zobrazit [spouštění aplikací .NET Core s CoreRun.exe](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingCoreRun.md) podrobnosti o použití této techniky.
+ 2. Pomocí souboru korutiny **. exe spusťte aplikaci pomocí nebalených knihoven DLL**.
+    Toto úložiště také definuje jednoduchého hostitele s názvem spoluspustit. exe, který neprovádí žádnou závislost na NuGet.
+    Je nutné sdělit hostiteli, kde mají získat požadované knihovny DLL, které skutečně používáte, a je nutné je ručně shromáždit společně.
+    Tato technika je používána všemi testy v úložišti [dotnet/CoreCLR](https://github.com/dotnet/coreclr) a je užitečná pro rychlou místní smyčku "Edit-Compile-debug", jako je například předběžné testování částí.
+    Podrobnosti o použití této techniky najdete v tématu [spouštění aplikací .NET Core pomocí souboru. exe.](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingCoreRun.md)
 
-## <a name="build-the-cli-from-source"></a>Rozhraní příkazového řádku ze zdroje sestavení
+## <a name="build-the-cli-from-source"></a>Sestavení CLI ze zdroje
 
-Zdrojový kód pro rozhraní příkazového řádku .NET Core najdete v [dotnet/cli](https://github.com/dotnet/cli/) úložišti na Githubu.
+Zdrojový kód pro .NET Core CLI lze nalézt v úložišti [dotnet/CLI](https://github.com/dotnet/cli/) na GitHubu.
 
-Aby bylo možné sestavit rozhraní příkazového řádku .NET Core, potřebujete následující v počítači byly nainstalovány.
+Aby bylo možné sestavit .NET Core CLI, potřebujete na svém počítači nainstalované následující.
 
-* Windows a Linuxu:
-  * Git na CESTĚ
-* macOS:
-  * Git na CESTĚ
-  * Xcode
-  * OpenSSL
+- Windows & Linux:
+  - Git v cestě
+- MacOS
+  - Git v cestě
+  - Xcode
+  - OpenSSL
 
-Aby bylo možné sestavit, spustit `build.cmd` na Windows, nebo `build.sh` v Linuxu a macOS z kořenového adresáře. Pokud nechcete, aby ke spuštění testů, spouštění `build.cmd -t:Compile` nebo `./build.sh -t:Compile`. K vytvoření rozhraní příkazového řádku v systému macOS Sierra, je nutné nastavit proměnnou prostředí DOTNET_RUNTIME_ID spuštěním `export DOTNET_RUNTIME_ID=osx.10.11-x64`.
+Aby bylo možné sestavovat `build.cmd` , spouštět v systému `build.sh` Windows nebo v systémech Linux a MacOS z kořenového adresáře. Pokud nechcete spouštět testy, spusťte příkaz `build.cmd -t:Compile` nebo. `./build.sh -t:Compile` Chcete-li sestavit rozhraní příkazového řádku v macOS Sierra, je nutné nastavit proměnnou prostředí DOTNET_RUNTIME_ID `export DOTNET_RUNTIME_ID=osx.10.11-x64`spuštěním.
 
-### <a name="using-your-build"></a>Pomocí sestavení
+### <a name="using-your-build"></a>Použití sestavení
 
-Použití `dotnet` spustitelného souboru z *artefakty / {os} – {arch} / stage2* můžete vyzkoušet na nově vytvořený rozhraní příkazového řádku. Pokud chcete použít výstup při vyvolání sestavení `dotnet` na aktuální konzolu, můžete také přidat *artefakty / {os} – {arch} / stage2* k CESTĚ.
+Použijte spustitelný soubor z *artefaktů/{OS}-{arch}/STAGE2* a vyzkoušejte nově sestavené rozhraní příkazového řádku. `dotnet` Pokud chcete použít výstup sestavení při vyvolání `dotnet` z aktuální konzoly, můžete také přidat artefakty */{OS}-{arch}/STAGE2* do cesty.
 
 ## <a name="see-also"></a>Viz také:
 
-- [.NET core Common Language Runtime (CoreCLR)](https://github.com/dotnet/coreclr/blob/master/README.md)
-- [Příručka pro vývojáře rozhraní příkazového řádku .NET core](https://github.com/dotnet/cli/blob/master/Documentation/project-docs/developer-guide.md)
+- [Modul CLR (Common Language Runtime) .NET Core (CoreCLR)](https://github.com/dotnet/coreclr/blob/master/README.md)
+- [.NET Core CLI příručka pro vývojáře](https://github.com/dotnet/cli/blob/master/Documentation/project-docs/developer-guide.md)
 - [Vytváření distribučních balíčků .NET Core](./distribution-packaging.md)

@@ -4,12 +4,12 @@ description: Postup pro automatické učení modelu Machine Learning pomocí Tv�
 author: natke
 ms.date: 08/07/2019
 ms.custom: overview
-ms.openlocfilehash: a871c3a3751a93bdf0104c873215b164616f0664
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 715c9f5854d9691fd9fc2cd771d38456405836ec
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611461"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104857"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je tvůrce modelů a jak to funguje?
 
@@ -133,11 +133,11 @@ Tvůrce modelů rozdělí školicí data do sady školení a sady testů. Školi
 
 Pokud vaše skóre výkonu vašeho modelu není tak dobré, jak chcete, můžete:
 
-* Naučit se delší dobu. Pomocí automatizovaného strojového učení se navíc snaží vyzkoušet více algoritmů a nastavení.
+- Naučit se delší dobu. Pomocí automatizovaného strojového učení se navíc snaží vyzkoušet více algoritmů a nastavení.
 
-* Přidejte další data. V některých případech se množství dat nestačí pro výuku vysoce kvalitního modelu strojového učení.
+- Přidejte další data. V některých případech se množství dat nestačí pro výuku vysoce kvalitního modelu strojového učení.
 
-* Vyvážení dat Pro úlohy klasifikace se ujistěte, že je sada školení vyrovnávána napříč kategoriemi. Například pokud máte čtyři třídy pro 100 ukázky a dvě první třídy (značky 1 a značka2) se používají pro 90 záznamů, ale ostatní dvě (značka3 a tag4) se používají jenom u zbývajících 10 záznamů, nedostatek vyvážených dat může způsobit, že váš model bude bojovat do typu korespondenční ectly předpověď značka3 nebo tag4.
+- Vyvážení dat Pro úlohy klasifikace se ujistěte, že je sada školení vyrovnávána napříč kategoriemi. Například pokud máte čtyři třídy pro 100 ukázky a dvě první třídy (značky 1 a značka2) se používají pro 90 záznamů, ale ostatní dvě (značka3 a tag4) se používají jenom u zbývajících 10 záznamů, nedostatek vyvážených dat může způsobit, že váš model bude bojovat do typu korespondenční ectly předpověď značka3 nebo tag4.
 
 ## <a name="code"></a>Kód
 

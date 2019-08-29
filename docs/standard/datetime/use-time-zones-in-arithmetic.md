@@ -12,55 +12,55 @@ helpviewer_keywords:
 ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d504aa9ad7d6e4084192a2434ac408e8fa7a041
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 417d8f00c9323f096a2d6228e853a55b1573f48c
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588537"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106719"
 ---
 # <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů
 
-Obvykle při provádění datum a čas aritmetické pomocí <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnot, výsledek neodráží všechna pravidla úpravy časového pásma. To platí i v případě, časovém pásmu z hodnoty data a času je jasně údaje (například když <xref:System.DateTime.Kind%2A> je nastavena na <xref:System.DateTimeKind.Local>). Toto téma ukazuje, jak provádět aritmetické operace na hodnoty data a času, které patří do určitého časového pásma. Výsledky aritmetické operace bude odrážet pravidla úpravy časového pásma.
+Obvykle při provádění aritmetických operací s <xref:System.DateTime> <xref:System.DateTimeOffset> daty a časem a hodnotami neodráží výsledek žádná pravidla upravující časová pásma. To platí i v případě, že časové pásmo hodnoty data a času je jasně identifikovatelné (například když <xref:System.DateTime.Kind%2A> je vlastnost nastavena na <xref:System.DateTimeKind.Local>hodnotu). V tomto tématu se dozvíte, jak provádět aritmetické operace s hodnotami data a času, které patří do konkrétního časového pásma. Výsledky aritmetických operací budou odrážet pravidla upravující časové pásmo.
 
-### <a name="to-apply-adjustment-rules-to-date-and-time-arithmetic"></a>Použít pravidla úpravy aritmetika data a času
+### <a name="to-apply-adjustment-rules-to-date-and-time-arithmetic"></a>Použití pravidel úprav pro aritmetické operace s daty a časem
 
-1. Implementujte některé metody, které úzce párování hodnoty data a času s časovým pásmem, do které patří. Například definice struktury, která obsahuje datum a čas a její časové pásmo. Následující příklad používá tento přístup k propojení <xref:System.DateTime> hodnotu s časovým pásmem.
+1. Implementujte některé metody, které budou úzce připojovat hodnotu data a času s časovým pásmem, ke kterému patří. Například deklarujete strukturu, která obsahuje hodnotu data a času a příslušné časové pásmo. Následující příklad používá tento přístup k propojení <xref:System.DateTime> hodnoty s časovým pásmem.
 
    [!code-csharp[System.DateTimeOffset.Conceptual#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual6.cs#6)]
    [!code-vb[System.DateTimeOffset.Conceptual#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual6.vb#6)]
 
-2. Převod času na koordinovaný univerzální čas (UTC) pomocí volání buď <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A> metoda nebo <xref:System.TimeZoneInfo.ConvertTime%2A> metody.
+2. Převeďte čas na koordinovaný světový čas (UTC) voláním <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A> metody <xref:System.TimeZoneInfo.ConvertTime%2A> nebo metody.
 
-3. Proveďte aritmetickou operaci na čas UTC.
+3. Proveďte aritmetickou operaci v čase UTC.
 
-4. Převést čas od času UTC na časové pásmo přidružené původní čas voláním <xref:System.TimeZoneInfo.ConvertTime%28System.DateTime%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> metody.
+4. Převeďte čas z času UTC na původní přiřazené časové pásmo, a to voláním <xref:System.TimeZoneInfo.ConvertTime%28System.DateTime%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> metody.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad přidá dvě hodiny a 30 minut do 9. března 2008 v 1:30 hod Střední (běžný čas). Časové pásmo přechodu na letní čas dojde později, 30 minut ve 2:00:00 9. března, 2008. Protože příklad následující čtyři kroky uvedené v předchozí části, správně hlásí ve výsledné dobu 5:00:00. 9. března, 2008.
+Následující příklad přidá dvě hodiny a třicet minut do 9. března 2008, v 1:30 dop. Střední oblast (běžný čas) Přechod časového pásma na letní čas probíhá třicet minut později, v 2:00 ráno. 9\. března 2008. Vzhledem k tomu, že příklad následuje po čtyřech krocích uvedených v předchozí části, správně oznamuje výsledný čas jako 5:00 dop. 9\. března 2008.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#8](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual8.cs#8)]
 [!code-vb[System.DateTimeOffset.Conceptual#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual8.vb#8)]
 
-Obě <xref:System.DateTime> a <xref:System.DateTimeOffset> hodnoty nejsou přidruženy k libovolné časové pásmo, do kterého může patřit. Pokud chcete provést tak, aby automaticky použije pravidla úpravy časového pásma aritmetika data a času, musí být časové pásmo, do které žádné datum a čas, hodnotu patří okamžitě identifikovatelné. To znamená, že datum a čas a její přidružené časového pásma musí být úzce spojeny. Existuje několik způsobů, jak to provést, mezi které patří následující:
+Z časového <xref:System.DateTimeOffset> pásma, ke kterému by mohly patřit, i hodnoty ajsouodasociovány.<xref:System.DateTime> Chcete-li provádět aritmetické operace s datem a časem způsobem, který automaticky aplikuje pravidla pro úpravu časového pásma, časové pásmo, do kterého patří jakákoli hodnota data a času, musí být ihned identifikovatelné. To znamená, že datum a čas a jeho přidružené časové pásmo musí být úzce spojeny. To lze provést několika způsoby, mezi které patří následující:
 
-* Předpokládejme, že, která se použijí všechny časy v aplikaci patří konkrétní časové pásmo. I když v některých případech je vhodné, tento přístup nabízí omezené flexibilitu a přenositelnost může být omezená.
+- Předpokládejte, že všechny časy používané v aplikaci patří do konkrétního časového pásma. I když je to v některých případech vhodné, nabízí tento přístup omezená flexibilitu a možnou omezené přenositelnost.
 
-* Definice typu, který úzce spojuje datum a čas s časovým pásmem jeho přidružené zahrnutím i jako pole typu. Tento přístup se používá v příkladu kódu, který definuje strukturu ukládat data a času a časového pásma ve dvou polích člena.
+- Definujte typ, který pevně Couples datum a čas s přidruženým časovým pásmem zahrnutím jako polí typu. Tento přístup se používá v příkladu kódu, který definuje strukturu pro uložení data a času a časového pásma do dvou polí členů.
 
-Příklad ukazuje, jak k provádění aritmetických operací na <xref:System.DateTime> hodnoty tak, aby na výsledek jsou použita pravidla úpravy časového pásma. Ale <xref:System.DateTimeOffset> hodnoty můžete použít stejně snadno. Následující příklad ukazuje, jak může kód v původním příkladu je adaptovat k použití <xref:System.DateTimeOffset> místo <xref:System.DateTime> hodnoty.
+Tento příklad ukazuje, jak provádět aritmetické operace <xref:System.DateTime> s hodnotami, takže pravidla úpravy časového pásma se aplikují na výsledek. <xref:System.DateTimeOffset> Hodnoty však lze použít stejně snadno. Následující příklad ukazuje, jak může být kód v původním příkladu přizpůsoben pro použití <xref:System.DateTimeOffset> <xref:System.DateTime> namísto hodnot.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual6.cs#7)]
 [!code-vb[System.DateTimeOffset.Conceptual#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual6.vb#7)]
 
-Všimněte si, že pokud je toto přidání je jednoduše provedeno na <xref:System.DateTimeOffset> hodnoty bez nejprve převodu na čas UTC, výsledek odráží správného bodu v čase, ale její posun toto nereflektuje určeného časového pásma.
+Všimněte si, že pokud je toto sčítání provedeno na <xref:System.DateTimeOffset> základě hodnoty, aniž byste ji nejprve převedli na čas UTC, výsledek odráží správný bod v čase, ale jeho posun nereflektuje, že určené časové pásmo pro daný čas.
 
 ## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
 
-* Že <xref:System> obor názvů je importovat s `using` – příkaz (vyžadováno za kód jazyka C#).
+- Tento obor názvů se naimportuje `using` pomocí příkazu (vyžaduje C# se v kódu). <xref:System>
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,15 +2,15 @@
 title: 'Kurz: Vytvoření faktoru pro vystavování filmů – vytváření matic'
 description: V tomto kurzu se dozvíte, jak v konzolové aplikaci .NET Core sestavit doporučení pro film pomocí ML.NET. Postup používá C# a Visual Studio 2019.
 author: briacht
-ms.date: 07/09/2019
+ms.date: 08/26/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 82da512d437ed2c5c28601c34687494b8be4d046
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 97bdef3daa296dcb88cbb158a14668205df6fee3
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666688"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107260"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Kurz: Vytvoření doporučení pro film pomocí Matrix factorizaton s ML.NET
 
@@ -160,7 +160,7 @@ Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.ID
 
 [LoadFromTextFile ()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte data v souboru. Převezme proměnné cesty k datům a vrátí `IDataView`. V takovém případě zadáte cestu k `Test` souborům a `Train` a určíte hlavičku textového souboru (takže může použít názvy sloupců správně) a oddělovač dat znaků čárky (výchozí oddělovač je karta).
 
-Přidejte následující dva řádky kódu `Main()` v metodě pro volání vaší `LoadData()` metody a vraťte `Train` data a `Test` :
+Do `Main()` metody přidejte následující kód pro `LoadData()` volání metody a vraťte `Train` data a `Test` :
 
 [!code-csharp[LoadDataMain](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#LoadDataMain "Add LoadData method to Main")]
 
@@ -462,7 +462,7 @@ Jedním z běžných potíží při filtrování spolupráce je problém s stude
 
 Data použitá v tomto kurzu jsou odvozena z [datové sady MovieLens](http://files.grouplens.org/datasets/movielens/).
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 

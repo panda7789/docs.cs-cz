@@ -8,71 +8,71 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 154640499e99767f73a148c6980e6a2a4cfbce2f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 56f0ebccc1bd46a26b5247ac2668e963cbeac828
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623778"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106488"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
 ## <a name="introduction"></a>Úvod
-Kompatibilita je velmi důležité cílem každé vydané verze rozhraní .NET. Kompatibilita se zajistí, že každá verze sčítání, takže předchozí verze budou i nadále fungovat. Změny v předchozí funkci (pro zlepšení výkonu, problémů zabezpečení nebo opravovat chyby) na druhé straně může způsobit problémy s kompatibilitou v existujícím kódu nebo existující aplikace, které běží v novější verzi. Rozhraní .NET Framework rozpoznává změny cíle a změny v modulu runtime. Změny cíle ovlivňují aplikace, které cílení na konkrétní verzi rozhraní .NET Framework, ale jsou spuštěny na novější verzi. Změny v modulu runtime ovlivňují všechny aplikace spuštěné na konkrétní verzi.
+Kompatibilita je velice důležitým cílem každé verze rozhraní .NET. Kompatibilita zajišťuje, že každá verze je doplňková, takže předchozí verze budou fungovat i nadále. Na druhé straně změny předchozí funkce (za účelem vylepšení výkonu, řešení potíží se zabezpečením nebo opravy chyb) můžou způsobit problémy s kompatibilitou v existujícím kódu nebo v existujících aplikacích, které běží v novější verzi. .NET Framework rozpoznává změny cíle a změny v běhu. Změny cíle ovlivňují aplikace, které cílí na konkrétní verzi .NET Framework, ale běží v novější verzi. Změny v modulu runtime ovlivňují všechny aplikace spuštěné v konkrétní verzi.
 
-Každé aplikaci, která cílí na určitou verzi rozhraní .NET Framework, která je možné zadat tak:
+Každá aplikace cílí na konkrétní verzi .NET Framework, kterou lze určit pomocí:
 
-* Definování cílové rozhraní v sadě Visual Studio.
-* Určení cílové rozhraní v souboru projektu.
-* Použití <xref:System.Runtime.Versioning.TargetFrameworkAttribute> ke zdrojovému kódu.
+- Definování cílové architektury v aplikaci Visual Studio.
+- Určení cílové architektury v souboru projektu.
+- Aplikuje <xref:System.Runtime.Versioning.TargetFrameworkAttribute> se na zdrojový kód.
 
-Při spuštění na novější verzi, než jaké byla cílem rozhraní .NET Framework použije quirked chování tak, aby napodoboval starší cílených verzích. Jinými slovy aplikace bude v novější verzi rozhraní Framework, ale fungovat jako, pokud je spuštěn na starší verzi. Mnohé z problémů s kompatibilitou mezi verzemi rozhraní .NET Framework jsou zmírnit prostřednictvím této quirking modelu. Verze rozhraní .NET Framework, která je určena cílová verze sestavení položka aplikační domény, na kterém kód běží v aplikace cílena. Všechny další sestavení v určené doméně aplikace načíst tuto verzi rozhraní .NET Framework. Například v případě spustitelného souboru, rozhraní framework spustitelný cíle je režim kompatibility všechna sestavení v dané doméně aplikace bude spuštěna pod.
+Při spuštění v novější verzi, než je cílová, .NET Framework použije chování quirked k napodobování starší cílové verze. Jinými slovy, aplikace bude spuštěna v novější verzi rozhraní, ale funguje jako v případě, že běží na starší verzi. Mnohé z problémů s kompatibilitou mezi verzemi .NET Framework jsou zmírnit prostřednictvím tohoto modelu quirking. Verze .NET Framework, na kterou aplikace cílí, je určena cílovou verzí záznamu pro doménu aplikace, ve které kód běží. Všechna další sestavení načtená v této cílové doméně aplikace, která .NET Framework verzi. Například v případě spustitelného souboru je rozhraní, které cílí na spustitelný soubor, v režimu kompatibility všechna sestavení v dané doméně AppDomain budou spouštěna v.
 
 ## <a name="runtime-changes"></a>Změny v modulu runtime
 
-Problémy za běhu jsou ty, které vznikají při nový modul runtime je umístěn na počítači a jsou spouštěny stejné binární soubory, ale zobrazuje různé chování. Pokud byl zkompilován do binárního souboru pro rozhraní .NET Framework 4.0, poběží v rozhraní .NET Framework 4.0 režimu kompatibility na verze 4.5 nebo novější. Mnoho změn, které ovlivňují 4.5 nebude mít vliv na binární soubor pro 4.0. To je specifická pro domény aplikace a závisí na nastavení vstupní sestavení.
+Problémy za běhu jsou ty, které vznikají při umístění nového modulu runtime do počítače a spuštění stejných binárních souborů, ale je vidět jiné chování. Pokud byl binární soubor kompilován pro .NET Framework 4,0, bude spuštěn v režimu kompatibility .NET Framework 4,0 na 4,5 nebo novějších verzích. Mnohé změny, které ovlivňují 4,5, nebudou mít vliv na binární kompilováno pro 4,0. To je specifické pro doménu AppDomain a závisí na nastavení položky sestavení.
 
-## <a name="retargeting-changes"></a>Odlišnosti ve změnách cílení
+## <a name="retargeting-changes"></a>Změny cíle
 
-Změna cílení problémy jsou ty, které vznikají při sestavení, které se cílí na 4.0 je nyní nastaveno na cíl 4.5. Teď do nové funkce, jakož i potenciální problémy s kompatibilitou na staré funkce požádá o sestavení. Znovu, to závisí na vstupní sestavení tak, která používá sestavení aplikace konzoly nebo web, na který odkazuje na sestavení.
+Změny cíle se projevují v případě, že sestavení, které cílí na 4,0, je teď nastavené na target 4,5. Nyní se sestavení výslovný do nových funkcí a také potenciální problémy s kompatibilitou se starými funkcemi. Znovu, toto je určeno sestavením záznamu, aby Konzolová aplikace používala sestavení, nebo web, který odkazuje na sestavení.
 
-## <a name="net-compatibility-diagnostics"></a>Diagnostika Kompatibilita rozhraní .NET
+## <a name="net-compatibility-diagnostics"></a>Diagnostika kompatibility rozhraní .NET
 
-Diagnostika kompatibility .NET jsou s využitím Roslynu analyzátory, které pomáhají identifikovat problémy s kompatibilitou aplikace mezi verzemi rozhraní .NET Framework. Tento seznam obsahuje všechny analyzátory, které jsou k dispozici, i když pouze podmnožinu budou platit pro všechny konkrétní migrace. Analyzátory určí problémy, které se dají použít pro plánované migrace a bude pouze přinášet ty.
+Diagnostika kompatibility rozhraní .NET jsou Roslyn analyzátory založené na technologii, které vám pomůžou identifikovat problémy s kompatibilitou aplikací mezi verzemi .NET Framework. Tento seznam obsahuje všechny dostupné analyzátory, i když se u jakékoli konkrétní migrace uplatní jenom podmnožina. Analyzátory určí, které problémy se vztahují k plánované migraci, a budou je jenom naploché.
 
-Všechny problémy obsahuje následující informace:
+Každý problém zahrnuje následující informace:
 
-- Popis co se změnilo z předchozí verze.
+- Popis toho, co se změnilo v předchozí verzi.
 
-- Změna ovlivní jak zákazníky a určuje, zda je možné zachovat kompatibilitu mezi verzemi žádné alternativní řešení.
+- Jaký vliv má změna na zákazníky a zda jsou k dispozici jakákoli alternativní řešení pro zachování kompatibility napříč verzemi.
 
-- Posouzení jak důležité je změnu. Potíže s kompatibilitou aplikace jsou rozdělené následujícím způsobem:
+- Posouzení důležitosti změny. Problémy s kompatibilitou aplikací jsou zařazené do kategorií následujícím způsobem:
 
     |   |   |
     |---|---|
-    |Hlavní|Významnou změnu, která ovlivňuje mnoho aplikací nebo vyžaduje podstatné změny kódu.|
-    |Vedlejší|Změna, která ovlivňuje menší počet aplikací nebo která vyžaduje méně závažnou změnu kódu.|
-    |Okrajový případ|Změna, která ovlivňuje aplikace v rámci velmi specifický, běžné scénáře.|
-    |Transparentní|K změně znatelný vliv na uživatele nebo vývojáře aplikace.|
+    |Hlavní|Významná změna ovlivňující velký počet aplikací nebo vyžaduje značnou úpravu kódu.|
+    |Vedlejší|Změna, která má vliv na malý počet aplikací nebo které vyžadují menší úpravu kódu.|
+    |Okrajový případ|Změna ovlivňující aplikace v rámci velmi konkrétních neobvyklých scénářů.|
+    |Transparentní|Změna bez znatelného efektu pro vývojáře nebo uživatele aplikace.|
 
-- Verze označuje, jakmile změny nejprve se zobrazí v rámci. Některé změny zavedené v konkrétní verzi a vrátit v novější verzi který je označen jako dobře.
+- Verze označuje, kdy se změna v rozhraní zobrazí jako první. Některé změny jsou představeny v konkrétní verzi a vráceny v pozdější verzi. To je také uvedeno.
 
 - Typ změny:
 
     |   |   |
     |---|---|
-    |Změna cílení|Změna ovlivní aplikace, které jsou rekompilovány cílit na novou verzi rozhraní .NET Framework.|
-    |Modul runtime|Tato změna má vliv na existující aplikaci, která cílí na předchozí verzi rozhraní .NET Framework, ale funguje na novější verzi.|
+    |Změna cílení|Tato změna ovlivní aplikace, které jsou znovu zkompilovány, aby byly cíleny na novou verzi .NET Framework.|
+    |Modul runtime|Tato změna má vliv na existující aplikaci, která cílí na předchozí verzi .NET Framework, ale běží v novější verzi.|
 
-- Ovlivněné API, pokud existuje.
+- Ovlivněná rozhraní API, pokud existují.
 
 - ID dostupné diagnostiky
 
 ## <a name="usage"></a>Použití
-Pokud chcete začít, vyberte typ kompatibility změny níže:
+Začněte tím, že vyberete typ změny kompatibility níže:
 
-* [Odlišnosti ve změnách cílení](./retargeting/index.md)
-* [Změny v modulu runtime](./runtime/index.md)
+- [Odlišnosti ve změnách cílení](./retargeting/index.md)
+- [Změny v modulu runtime](./runtime/index.md)
 
 ## <a name="see-also"></a>Viz také:
 

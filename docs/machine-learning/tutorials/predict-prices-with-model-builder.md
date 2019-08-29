@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4471e4feffb23b7f256ada2116444aaa7899e209
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 1bdbe31e16408da2d7dfe17941c90a022f3d8c32
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611453"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107146"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -21,12 +21,12 @@ Naučte se používat Tvůrce modelů ML.NET k vytvoření regresního modelu ()
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
-> * Příprava a pochopení dat
-> * Zvolit scénář
-> * Načtení dat
-> * Trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu pro předpovědi
+> - Příprava a pochopení dat
+> - Zvolit scénář
+> - Načtení dat
+> - Trénování modelu
+> - Vyhodnocení modelu
+> - Použití modelu pro předpovědi
 
 > [!NOTE]
 > Tvůrce modelů je aktuálně ve verzi Preview.
@@ -59,13 +59,13 @@ Každý řádek v `taxi-fare-train.csv` datové sadě obsahuje podrobnosti o ces
 
     Poskytnutá datová sada obsahuje následující sloupce:
 
-    * **vendor_id:** ID dodavatele taxislužby je funkce.
-    * **rate_code:** Typ rychlosti taxislužby Trip je funkce.
-    * **passenger_count:** Počet cestujících na cestách je funkce.
-    * **trip_time_in_secs:** Doba, po kterou cesta trvala.
-    * **trip_distance:** Vzdálenost na cestách je funkce.
-    * **payment_type:** Způsob platby (hotovost nebo platební karta) je funkce.
-    * **fare_amount:** Celková částka taxislužby jízdné je štítek.
+    - **vendor_id:** ID dodavatele taxislužby je funkce.
+    - **rate_code:** Typ rychlosti taxislužby Trip je funkce.
+    - **passenger_count:** Počet cestujících na cestách je funkce.
+    - **trip_time_in_secs:** Doba, po kterou cesta trvala.
+    - **trip_distance:** Vzdálenost na cestách je funkce.
+    - **payment_type:** Způsob platby (hotovost nebo platební karta) je funkce.
+    - **fare_amount:** Celková částka taxislužby jízdné je štítek.
 
 `label` Je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu poskytnete pro `label`předpověď. V tomto případě se zbytek sloupců používá jako funkce nebo vstupy pro předpověď množství tarifů.
 
@@ -190,12 +190,12 @@ Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešen
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
-> * Příprava a pochopení dat
-> * Zvolit scénář
-> * Načtení dat
-> * Trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu pro předpovědi
+> - Příprava a pochopení dat
+> - Zvolit scénář
+> - Načtení dat
+> - Trénování modelu
+> - Vyhodnocení modelu
+> - Použití modelu pro předpovědi
 
 ### <a name="additional-resources"></a>Další prostředky
 

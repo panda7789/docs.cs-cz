@@ -1,226 +1,226 @@
 ---
-title: Dokumentace kódu pomocí komentářů XML
-description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
+title: Dokumentace kódu s komentáři XML
+description: Naučte se dokumentovat kód pomocí dokumentačních komentářů XML a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 17a6beabf7e8a917c461dae4d92f1cfbb0d9de71
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b6744921f4703f53a16b6bdadcfbf375c2fb3332
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633740"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104774"
 ---
-# <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
+# <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu s komentáři XML
 
-Dokumentační komentáře XML jsou zvláštním druhem komentáře přidané v předchozím kroku definice uživatelem definovaného typu nebo člena.
-Jsou speciální, protože mohou být zpracovány kompilátor generuje soubor dokumentace XML v době kompilace.
-Soubor XML generované kompilátorem lze distribuovat spolu s sestavení .NET, tak, aby sada Visual Studio a jiná Integrovaná vývojová prostředí pomocí technologie IntelliSense můžete zobrazit rychlé informace o typech nebo členech. Kromě toho lze spustit soubor XML prostřednictvím nástrojů jako [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) ke generování websites referenční dokumentace rozhraní API.
+Komentáře dokumentace XML jsou zvláštním druhem komentáře, přidané nad definici libovolného uživatelsky definovaného typu nebo člena.
+Jsou speciální, protože mohou být zpracovány kompilátorem pro generování souboru dokumentace XML v době kompilace.
+Soubor XML generovaný kompilátorem lze distribuovat společně s sestavením .NET tak, aby Visual Studio a jiné prostředí pro vývoj mohli používat technologii IntelliSense k zobrazení rychlých informací o typech nebo členech. Kromě toho lze spustit soubor XML prostřednictvím nástrojů jako [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) ke generování websites referenční dokumentace rozhraní API.
 
-Dokumentační komentáře XML, stejně jako všechny ostatní komentáře ignorovány kompilátorem.
+Komentáře dokumentace XML, stejně jako všechny ostatní komentáře, jsou kompilátorem ignorovány.
 
-Soubor XML v době kompilace můžete vygenerovat pomocí jedné z následujících akcí:
+Soubor XML můžete vygenerovat v době kompilace jedním z následujících způsobů:
 
-- Pokud vyvíjíte aplikaci .NET Core z příkazového řádku, můžete přidat [DocumentationFile element](/visualstudio/msbuild/common-msbuild-project-properties) k `<PropertyGroup>` část souboru projektu CSPROJ. Následující příklad generuje soubor XML v adresáři projektu se stejným názvem kořenového jako sestavení:
+- Pokud vyvíjíte aplikaci pomocí .NET Core z příkazového řádku, můžete přidat [element DocumentationFile](/visualstudio/msbuild/common-msbuild-project-properties) do `<PropertyGroup>` oddílu souboru projektu. csproj. Následující příklad generuje soubor XML v adresáři projektu se stejným kořenovým názvem souboru jako sestavení:
 
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
    ```
 
-   Můžete také zadat přesné absolutní nebo relativní cestu a název souboru XML. Následující příklad generuje soubor XML ve stejném adresáři jako ladicí verze aplikace:
+   Můžete také zadat přesný absolutní nebo relativní cestu a název souboru XML. Následující příklad vygeneruje soubor XML ve stejném adresáři jako ladicí verze aplikace:
 
    ```xml
    <DocumentationFile>bin\Debug\netcoreapp2.1\App.xml</DocumentationFile>
    ```
 
-- Pokud vyvíjíte aplikace pomocí sady Visual Studio, klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V dialogovém okně Vlastnosti vyberte **sestavení** kartě a zaškrtněte **soubor dokumentace XML**. Můžete také změnit umístění, do které kompilátor zapíše soubor.
+- Pokud vyvíjíte aplikaci pomocí sady Visual Studio, klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V dialogovém okně Vlastnosti vyberte kartu **sestavení** a Prohlédněte si **soubor dokumentace XML**. Můžete také změnit umístění, do kterého kompilátor zapisuje soubor.
 
-- Pokud kompilujete aplikace rozhraní .NET Framework z příkazového řádku, přidejte [/doc – možnost kompilátoru](language-reference/compiler-options/doc-compiler-option.md) při kompilaci.  
+- Pokud kompilujete .NET Framework aplikaci z příkazového řádku, přidejte při kompilaci [možnost kompilátoru/doc](language-reference/compiler-options/doc-compiler-option.md) .  
 
-Dokumentační komentáře XML používat Trojitá lomítka (`///`) a XML formátovaný text komentáře. Příklad:
+Komentáře dokumentace XML používají tři lomítka (`///`) a tělo komentáře ve formátu XML. Příklad:
 
 [!code-csharp[XML Documentation Comment](../../samples/snippets/csharp/concepts/codedoc/xml-comment.cs)]
 
-## <a name="walkthrough"></a>Názorný postup
+## <a name="walkthrough"></a>Podrobné
 
-Projděme si velmi základní matematické knihovny k tomu, aby noví vývojáři pochopit/přispívat a vývojářům třetích stran pomocí dokumentace.
+Pojďme si projít dokumentací velmi základní knihovny pro matematiku, která usnadňuje novým vývojářům pochopit/přispět a umožnit vývojářům třetích stran použití.
 
-Zde je kód pro jednoduché matematické knihovny:
+Tady je kód pro jednoduchou knihovnu Math:
 
 [!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
-Ukázka knihovny podporuje čtyři hlavní aritmetické operace `add`, `subtract`, `multiply` a `divide` na `int` a `double` datové typy.
+Ukázková knihovna podporuje čtyři hlavní aritmetické `add`operace `subtract` `multiply` , `divide` `int` a a datové typy. `double`
 
-Nyní chcete být schopni vytvořit dokument referenční dokumentace rozhraní API z kódu pro vývojáře třetích stran, kteří používají knihovny ale nemají přístup ke zdrojovému kódu.
-Jak už bylo zmíněno dříve dokumentační značky XML slouží k dosažení tohoto cíle. Nyní jste se seznámili s standardních tagů XML C# kompilátor podporuje.
+Nyní chcete být schopni vytvořit referenční dokument rozhraní API z kódu pro vývojáře třetích stran, kteří používají vaši knihovnu, ale nemají přístup ke zdrojovému kódu.
+Jak bylo zmíněno dříve, můžete k tomuto účelu použít Tagy dokumentace XML. Nyní budete zavedeni do standardních značek XML, které C# podporuje kompilátor.
 
 ## <a name="summary"></a>\<summary>
 
 `<summary>` Značka přidá stručné informace o typu nebo členu.
-Vám předvedu jeho použití tak, že ji přidáte `Math` třídy definice a první `Add` metody. Můžete použít i pro zbývající část kódu.
+Ukážeme jeho použití tím, že ho přidáte do `Math` definice třídy a první `Add` metody. Nebojte se použít pro zbytek kódu.
 
 [!code-csharp[Summary Tag](../../samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
-`<summary>` Značka je velmi důležité, a doporučujeme, abyste ho použili protože obsah není primární zdroj informací pro typ nebo člen v IntelliSense nebo dokument referenční dokumentace rozhraní API.
+`<summary>` Označení je velmi důležité a doporučujeme, abyste ho zahrnuli, protože jeho obsah je primárním zdrojem informací o typu nebo členu v IntelliSense nebo dokumentu Reference k rozhraním API.
 
-## <a name="remarks"></a>\<REMARKS >
+## <a name="remarks"></a>\<Poznámky >
 
-`<remarks>` Značky doplňuje informace o typech nebo členech, který `<summary>` poskytuje značky. V tomto příkladu budete stačí přidat jej do třídy.
+Tag doplňuje informace o typech nebo členech `<summary>` , které poskytuje značka. `<remarks>` V tomto příkladu ho stačí přidat do třídy.
 
 [!code-csharp[Remarks Tag](../../samples/snippets/csharp/concepts/codedoc/remarks-tag.cs)]
 
-## <a name="returns"></a>\<Vrátí >
+## <a name="returns"></a>\<returns>
 
-`<returns>` Značky popisuje vrácenou hodnotu deklarace metody.
-Jak předtím následující příklad ukazuje `<returns>` značky na první `Add` metoda. Můžete provést stejný na jiné metody.
+`<returns>` Značka popisuje návratovou hodnotu deklarace metody.
+Jak dřív, následující příklad ilustruje `<returns>` značku první `Add` metody. Stejný postup můžete provést i pro jiné metody.
 
 [!code-csharp[Returns Tag](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
 
-## <a name="value"></a>\<Hodnota >
+## <a name="value"></a>\<value>
 
-`<value>` Značka je podobný `<returns>` značku, s tím rozdílem, že ji použijete k vlastnosti.
-Za předpokladu, že vaše `Math` knihovny měl statickou vlastnost s názvem `PI`, zde je, jak můžete využít tuto značku:
+Značka je podobná `<returns>` značce, s tím rozdílem, že ji použijete pro vlastnosti. `<value>`
+Za předpokladu, že vaše `Math` knihovna má zavolanou `PI`statickou vlastnost, použijte tuto značku:
 
 [!code-csharp[Value Tag](../../samples/snippets/csharp/concepts/codedoc/value-tag.cs)]
 
 ## <a name="example"></a>\<Příklad >
 
-Můžete použít `<example>` značka, které zahrnují příklad v dokumentaci XML.
-To zahrnuje použití podřízených `<code>` značky.
+`<example>` Značku můžete použít k zahrnutí příkladu do XML dokumentace.
+To zahrnuje použití podřízené `<code>` značky.
 
 [!code-csharp[Example Tag](../../samples/snippets/csharp/concepts/codedoc/example-tag.cs)]
 
-`code` Zachová značka konce řádků a odsazení delší příklady.
+`code` Značka zachovává zalomení řádků a odsazení po delších příkladech.
 
 ## <a name="para"></a>\<para>
 
-Můžete použít `<para>` značku k naformátování obsahu v rámci své nadřazené značky. `<para>` obvykle slouží uvnitř značky, například `<remarks>` nebo `<returns>`, k rozdělení textového na odstavcích.
-Obsah můžete naformátovat `<remarks>` značky pro vaší definice třídy.
+Použijete `<para>` značku k formátování obsahu v rámci své nadřazené značky. `<para>`se obvykle používá uvnitř značky, jako `<remarks>` je například nebo `<returns>`, k rozdělení textu do odstavců.
+Můžete naformátovat obsah `<remarks>` značky pro definici třídy.
 
 [!code-csharp[Para Tag](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
 
 ## <a name="c"></a>\<c>
 
-Stále na téma formátování, použijte `<c>` značky pro označení část textu jako kód.
-Je třeba `<code>` značky, ale vložená. To je užitečné, pokud chcete zobrazit příklad rychlý kód jako součást obsahu na značku.
-Umožňuje aktualizovat dokumentaci pro `Math` třídy.
+Stále v tématu formátování, použijte `<c>` značku pro označení části textu jako kódu.
+Vypadá to jako `<code>` značka, ale je vložená. Je užitečné, pokud chcete zobrazit rychlý příklad kódu jako součást obsahu značky.
+Pojďme aktualizovat dokumentaci pro `Math` třídu.
 
 [!code-csharp[C Tag](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
 
-## <a name="exception"></a>\<exception>
+## <a name="exception"></a>\<> výjimky
 
-S použitím `<exception>` značky, informovat vaše vývojáře, metoda může vyvolat specifických výjimek.
-Na vaše `Math` knihovny, vidíme, že oba `Add` metody vyvolání výjimky, pokud je splněna určitá podmínka. Není to zřejmé, je však tento celé číslo `Divide` metoda vyvolá také, pokud `b` parametru je nula. Nyní přidáte výjimky dokumentace v této metodě.
+Pomocí `<exception>` značky můžete vývojářům informovat o tom, že metoda může vyvolat konkrétní výjimky.
+Při hledání v `Math` knihovně vidíte, že obě `Add` metody vyvolávají výjimku, pokud je splněna určitá podmínka. Není tak zřejmé, ale je to, že `Divide` celočíselná metoda vyvolá i v `b` případě, že je parametr nula. Nyní přidejte do této metody dokumentaci k výjimce.
 
 [!code-csharp[Exception Tag](../../samples/snippets/csharp/concepts/codedoc/exception-tag.cs)]
 
-`cref` Atributu představuje odkaz na výjimku, která je k dispozici z prostředí aktuální kompilace.
-To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení. Kompilátor vydá upozornění, pokud jeho hodnotu nelze přeložit.
+`cref` Atribut představuje odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace.
+Může to být libovolný typ definovaný v projektu nebo odkazované sestavení. Kompilátor vydá upozornění, pokud jeho hodnotu nelze vyřešit.
 
-## <a name="see"></a>\<see>
+## <a name="see"></a>\<viz >
 
-`<see>` Značky vám umožní vytvářet prokliknutelný odkaz na stránku dokumentace pro jiný element kódu. V našem dalším příkladu vytvoříme prokliknutelný odkaz mezi těmito dvěma `Add` metody.
+`<see>` Značka umožňuje vytvořit odkaz s možnostmi kliknutí na stránku dokumentace pro jiný prvek kódu. V našem dalším příkladu vytvoříme odkaz kliknutí mezi těmito dvěma `Add` způsoby.
 
 [!code-csharp[See Tag](../../samples/snippets/csharp/concepts/codedoc/see-tag.cs)]
 
-`cref` Je **požadované** atribut, který představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
-To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
+Je vyžadovaný atribut, který představuje odkaz na typ nebo jeho člen, který je k dispozici z aktuálního prostředí kompilace. `cref`
+Může to být libovolný typ definovaný v projektu nebo odkazované sestavení.
 
 ## <a name="seealso"></a>\<SeeAlso >
 
-Můžete použít `<seealso>` značka stejným způsobem provedete `<see>` značky. Jediným rozdílem je, že jeho obsah je obvykle umístěn v části "V části Viz také". Tady přidáme `seealso` značku na celé číslo `Add` metoda odkazovat na jiné metody ve třídě, které přijímají celočíselné parametry:
+`<seealso>` Značku můžete použít stejným způsobem `<see>` jako značku. Jediným rozdílem je, že jeho obsah je obvykle umístěn v části "viz také". Tady přidáme `seealso` značku na celočíselnou `Add` metodu, která bude odkazovat na jiné metody ve třídě, které přijímají celočíselné parametry:
 
 [!code-csharp[Seealso Tag](../../samples/snippets/csharp/concepts/codedoc/seealso-tag.cs)]
 
-`cref` Atributu představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
-To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
+`cref` Atribut představuje odkaz na typ nebo jeho člen, který je k dispozici z aktuálního prostředí kompilace.
+Může to být libovolný typ definovaný v projektu nebo odkazované sestavení.
 
-## <a name="param"></a>\<Param >
+## <a name="param"></a>\<param>
 
-Můžete použít `<param>` značka, které popisují parametry metody. Tady je příklad, double `Add` metody: Je zadán parametr popisuje značky v **požadované** `name` atribut.
+Použijte `<param>` značku k popisu parametrů metody. Tady je příklad metody Double `Add` : Parametr, který popisuje tag, je určen v **požadovaném** `name` atributu.
 
 [!code-csharp[Param Tag](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
 ## <a name="typeparam"></a>\<typeparam >
 
-Použijete `<typeparam>` označit stejně jako `<param>` značky, ale pro obecný typ nebo metoda deklarace k popisu obecný parametr.
-Přidat rychlé obecnou metodu pro vaše `Math` třídy zkontrolujte, jestli jedna množství je větší než druhý.
+Použijte `<typeparam>` tag stejně jako tag, `<param>` ale pro deklarace obecného typu nebo metody pro popis obecného parametru.
+Přidejte do své `Math` třídy rychlou obecnou metodu, abyste zkontrolovali, jestli je jedno množství větší než jiné.
 
 [!code-csharp[Typeparam Tag](../../samples/snippets/csharp/concepts/codedoc/typeparam-tag.cs)]
 
-## <a name="paramref"></a>\<paramref>
+## <a name="paramref"></a>\<paramref >
 
-V některých případech může být uprostřed popisující, co dělá metodu v co může být `<summary>` značku a budete chtít vytvořit odkaz na parametr. `<paramref>` Značky se skvěle hodí pro právě to. Pojďme na základě aktualizace souhrn naše double `Add` metody. Podobně jako `<param>` značky název parametru je zadán v **požadované** `name` atribut.
+Někdy se může stát, že popíšete, co metoda v co by mohla být `<summary>` značka, a můžete chtít vytvořit odkaz na parametr. `<paramref>` Označení je skvělé jenom pro toto. Pojďme aktualizovat souhrn naší metody založené na `Add` zdvojnásobení. Podobně jako `name` značka je název parametru zadán v požadovaném atributu. `<param>`
 
 [!code-csharp[Paramref Tag](../../samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
 ## <a name="typeparamref"></a>\<typeparamref >
 
-Použijete `<typeparamref>` označit stejně jako `<paramref>` značky, ale pro obecný typ nebo metoda deklarace k popisu obecný parametr.
-Můžete použít stejné obecné metody, které jste dříve vytvořili.
+Použijte `<typeparamref>` tag stejně jako tag, `<paramref>` ale pro deklarace obecného typu nebo metody pro popis obecného parametru.
+Můžete použít stejnou obecnou metodu, kterou jste vytvořili dříve.
 
 [!code-csharp[Typeparamref Tag](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
 
-## <a name="list"></a>\<list>
+## <a name="list"></a>\<seznam >
 
-Můžete použít `<list>` značku a informací o formátování dokumentaci jako uspořádaného seznamu, neuspořádaný seznam nebo tabulku.
-Ujistěte se, Neseřazený seznam všech matematické operace vaše `Math` knihovna podporuje.
+Pomocí `<list>` značky můžete formátovat informace o dokumentaci jako seřazený seznam, neuspořádaný seznam nebo tabulku.
+Vytvořte neuspořádaný seznam každé matematické operace, kterou vaše `Math` knihovna podporuje.
 
 [!code-csharp[List Tag](../../samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
-Můžete dělat seřazený seznam nebo tabulku můžete změnit `type` atribut `number` nebo `table`v uvedeném pořadí.
+Seřazený seznam nebo tabulku můžete vytvořit tak, že změníte `type` atribut na `number` nebo `table`v uvedeném pořadí.
 
-### <a name="putting-it-all-together"></a>Vložení všechno dohromady
+### <a name="putting-it-all-together"></a>Společné umístění
 
-Pokud jste postupovali podle tohoto kurzu a v případě potřeby použít značky pro váš kód, váš kód by teď měl vypadat nějak takto:
+Pokud jste postupovali podle tohoto kurzu a v případě potřeby použili značky v kódu, váš kód by měl nyní vypadat podobně jako následující:
 
 [!code-csharp[Tagged Library](../../samples/snippets/csharp/concepts/codedoc/tagged-library.cs)]
 
-V kódu můžete vygenerovat kompletní s křížovými odkazy kliknout, čímž podrobnou dokumentaci webu. Ale se potýkají s dalším problémem: váš kód přestal těžko čitelný.
-Existuje mnoho informace probrat se, že to bude připomínající každý vývojář, který chce, abyste mohli přispívat na tento kód.
-Naštěstí je značky XML, které vám to vyřešit:
+Z kódu můžete vygenerovat podrobný web dokumentace s dalšími odkazy, které lze kliknutím Procházet. Ale máte s ním jiný problém: váš kód se těžko čte.
+K dispozici je mnoho informací, které by bylo možné proprosévání, takže se jedná o Nightmare pro každého vývojáře, který chce přispívat k tomuto kódu.
+Naštěstí se značka XML, která vám může pomáhat s tímto:
 
-## <a name="include"></a>\<Zahrnout >
+## <a name="include"></a>\<zahrnout >
 
-`<include>` Značky umožňuje odkazovat na komentáře v samostatném souboru jazyka XML, které popisují typy a členy ve zdrojovém kódu, na rozdíl od uvedení dokumentační komentáře přímo v souboru zdrojového kódu.
+`<include>` Značka vám umožní odkazovat na komentáře v samostatném souboru XML, který popisuje typy a členy ve zdrojovém kódu, a to na rozdíl od umístění komentářů k dokumentaci přímo do souboru zdrojového kódu.
 
-Teď se chystáte přesunout všechny značky XML do samostatného souboru XML s názvem `docs.xml`. Nebojte se, že název souboru cokoliv, co chcete.
+Nyní budete přesouvat všechny značky XML do samostatného souboru XML s názvem `docs.xml`. Bez ohledu na název souboru si ho pojmenujte.
 
 [!code-xml[Sample XML](../../samples/snippets/csharp/concepts/codedoc/include.xml)]
 
-V souboru XML výše uvedené se zobrazí každý člen dokumentační komentáře přímo uvnitř značky s názvem po co dělají. Můžete použít vlastní strategii.
-Teď, když máte komentáře XML v samostatném souboru, Podívejme se, jak váš kód lze pracovat pomocí `<include>` značky:
+Ve výše uvedeném kódu XML se komentáře k dokumentaci jednotlivých členů zobrazují přímo uvnitř značky s názvem, a to podle toho, co dělají. Můžete zvolit vlastní strategii.
+Teď, když máte komentáře XML v samostatném souboru, Podívejme se, jak je možné váš kód udělat čitelnější pomocí `<include>` značky:
 
 [!code-csharp[Include Tag](../../samples/snippets/csharp/concepts/codedoc/include-tag.cs)]
 
-A že máte: našeho kódu je zpět ke a nebyly ztraceny žádné informace o dokumentaci.
+A tam máte: náš kód je zpátky čitelný a neztratily se žádné informace o dokumentaci.
 
-`file` Atribut představuje název souboru XML, který obsahuje dokumentaci.
+`file` Atribut představuje název souboru XML obsahujícího dokumentaci.
 
-`path` Atributu představuje [XPath](../standard/data/xml/xpath-queries-and-namespaces.md) dotaz pro `tag name` k dispozici v zadaném `file`.
+Atribut představuje dotaz [XPath](../standard/data/xml/xpath-queries-and-namespaces.md) `tag name` na přítomný v zadaném `file`. `path`
 
-`name` Atribut představuje název specifikátor ve značce, který předchází komentáře.
+`name` Atribut představuje specifikátor názvu ve značce, který předchází komentář.
 
-`id` Atribut, který lze použít místo `name` představuje ID značky, které předchází komentáře.
+Atribut, který lze použít `name` místo představuje ID značky, která předchází komentář. `id`
 
-### <a name="user-defined-tags"></a>Uživatelem definované značky
+### <a name="user-defined-tags"></a>Uživatelsky definované značky
 
-Všechny značky uvedených výše představují ty, které jsou rozpoznány modulem pro kompilátor jazyka C#. Uživatel je však můžete definovat jejich vlastní značky.
-Nástroje, jako je Sandcastle přenést podpory pro další značky, jako jsou [ `<event>` ](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm), [ `<note>` ](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) a dokonce i podporu [dokumentace obory názvů](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
-Vlastní nebo nástroje pro generování interní dokumentace lze také pomocí standardních značek a může podporovat více formátů výstupu z HTML do formátu PDF.
+Všechny značky, které jsou uvedeny výše, představují ty, které jsou rozpoznávány C# kompilátorem. Uživatel však může definovat vlastní značky.
+Nástroje jako Sandcastle přinášejí podporu pro další značky [`<event>`](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm), [`<note>`](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) jako je, a dokonce podporují dokumentující se [obory názvů](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
+Je také možné použít vlastní nebo interní nástroje pro tvorbu dokumentace se standardními značkami a více výstupních formátů z formátu HTML do formátu PDF.
 
 ## <a name="recommendations"></a>Doporučení
 
-Dokumentace kódu se doporučuje pro mnoho důvodů, proč. Následují některé osvědčené postupy, hlavní scénáře použití a věci, které byste měli znát při použití dokumentace XML značky v kódu jazyka C#.
+Dokumentování kódu se doporučuje z mnoha důvodů. Níže jsou uvedeny některé osvědčené postupy, obecné scénáře použití a věci, které byste měli znát při použití značek dokumentace XML ve vašem C# kódu.
 
-* Pro účely konzistence musí být zdokumentována všechny veřejně viditelné typy a jejich členy. Pokud musíte to provést, to všechno.
-* Soukromé členy můžete rovněž popsány pomocí komentářů XML. Nicméně tato třída zveřejňuje vnitřní (potenciálně důvěrné) fungování své knihovny.
-* Minimálně, by měly mít typy a členové `<summary>` značku, protože jeho obsah je potřeba pro technologii IntelliSense.
-* Text dokumentace by měly být zapsány pomocí úplných větách končí plně zastaví.
-* Částečné třídy jsou plně podporované a informace o dokumentaci se nedá zřetězit do jedna položka u tohoto typu.
-* Kompilátor ověří syntaxi `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>` a `<typeparam>` značky.
-- Kompilátor ověří parametry, které obsahují cesty k souborům a odkazy na ostatní části kódu.
+- V zájmu konzistence by měly být zdokumentovány všechny veřejně viditelné typy a jejich členové. Pokud to musíte udělat, udělejte to vše.
+- Soukromé členy lze také zdokumentovat pomocí komentářů XML. To však zpřístupňuje vnitřní (potenciálně důvěrné) pracovní účely vaší knihovny.
+- Minimální typy a jejich členové by měli mít `<summary>` značku, protože její obsah je potřebný pro IntelliSense.
+- Text dokumentace by měl být napsán pomocí úplných vět končících s úplnými pozastávkami.
+- Částečné třídy jsou plně podporovány a informace o dokumentaci budou zřetězeny do jediné položky pro daný typ.
+- Kompilátor `<exception>`ověřuje syntaxi značek, `<include>`, `<param>` `<see>`, a.`<seealso>` `<typeparam>`
+- Kompilátor ověřuje parametry, které obsahují cesty k souborům a odkazy na jiné části kódu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [XML – dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/index.md)
-- [Doporučené značky pro dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [Komentáře dokumentace XML (C# Průvodce programováním)](programming-guide/xmldoc/index.md)
+- [Doporučené značky pro dokumentační komentáře (C# Průvodce programováním)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

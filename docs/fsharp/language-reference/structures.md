@@ -2,12 +2,12 @@
 title: Struktury
 description: Přečtěte si F# o struktuře, je typ kompaktního objektu často efektivnější než třída pro typy s malým množstvím dat a jednoduchým chováním.
 ms.date: 05/16/2016
-ms.openlocfilehash: e638b450fe43e0993c9980cade246c3f26d25e2d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1e9652cc4776e4d1d52eb20e41b6dd87a6c5ba05
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630770"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106816"
 ---
 # <a name="structures"></a>Struktury
 
@@ -66,10 +66,10 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 Struktura "`byref`-like" v F# je typ hodnoty vázaný na zásobník. Nikdy se nepřiřazuje na spravovanou haldu. `byref`Struktura podobná struktuře je užitečná pro vysoce výkonné programování, protože je vynutila sadou silných kontrol životního cyklu životnosti a nezachycení. Pravidla jsou:
 
-* Mohou být použity jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
-* Nemohou být statické nebo členy instance třídy nebo normální struktury.
-* Nemohou být zachyceny žádnou uzavírací konstrukcí (`async` metody nebo výrazy lambda).
-* Nelze je použít jako obecný parametr.
+- Mohou být použity jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
+- Nemohou být statické nebo členy instance třídy nebo normální struktury.
+- Nemohou být zachyceny žádnou uzavírací konstrukcí (`async` metody nebo výrazy lambda).
+- Nelze je použít jako obecný parametr.
 
 I když tato pravidla velmi silně omezují využití, jejich účelem je plnit vysoce výkonné výpočetní prostředí bezpečným způsobem.
 

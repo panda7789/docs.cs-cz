@@ -16,71 +16,71 @@ helpviewer_keywords:
 ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d5f807481468b61365c8b4d8412f12a4741ebb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 01314c160fc531f5c97a1369c8444dce7f590d53
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912753"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106618"
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>Provádění aritmetických operací s daty a časy
 
-I když obě <xref:System.DateTime> a <xref:System.DateTimeOffset> struktury poskytovaly členy, které provádějí aritmetické operace na hodnotách, se velmi liší výsledky aritmetické operace. Toto téma popisuje tyto rozdíly, se vztahují na časové pásmo sledování data a času a popisuje, jak k provádění plně časové pásmo vědět operací pomocí data a času.
+<xref:System.DateTime> Ikdyžstrukturyiposkytujíčleny,kteříprovádějíaritmetickéoperacesjejichhodnotami,výsledkyaritmetickýchoperací<xref:System.DateTimeOffset> se velmi liší. V tomto tématu se tyto rozdíly prozkoumají, pokud jde o stupně povědomí časových pásem v datech data a času a popisuje, jak provádět operace s neomezenou časovou zónou pomocí dat data a času.
 
-## <a name="comparisons-and-arithmetic-operations-with-datetime-values"></a>Porovnání a aritmetické operace s hodnotami data a času
+## <a name="comparisons-and-arithmetic-operations-with-datetime-values"></a>Porovnávání a aritmetické operace s hodnotami DateTime
 
-<xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Vlastnost umožňuje <xref:System.DateTimeKind> hodnota, která má být přiřazena k datu a času, který označuje, zda představuje místní čas, koordinovaný univerzální čas (UTC) nebo čas v nespecifikovaného časového pásma. Ale tyto informace omezené časové pásmo se ignoruje při porovnávání nebo provádění v aritmetice kalendářních a časových <xref:System.DateTimeKind> hodnoty. Dokládá následující příklad, který porovná aktuální místní čas s aktuálním časem UTC.
+<xref:System.DateTime.Kind%2A?displayProperty=nameWithType> Vlastnost umožňujepřiřadithodnotukdatuačasukoznačení,zdapředstavujemístníčas,koordinovanýsvětovýčas(UTC)nebočasvneurčenémčasovém<xref:System.DateTimeKind> pásmu. Tyto informace o omezeném časovém pásmu se ale ignorují při porovnávání nebo provádění aritmetických operací s <xref:System.DateTimeKind> hodnotami data a času. Následující příklad, který porovnává aktuální místní čas s aktuálním časem UTC, znázorňuje toto.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual2.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual2.vb#2)]
 
-<xref:System.DateTime.CompareTo%28System.DateTime%29> Metoda hlásí, že je starší než místní čas (nebo menší než), který označuje čas UTC a operace odčítání rozdíl mezi UTC a lokálního časového systému v USA Tichomořském časovém pásmu je sedm hodin. Ale vzhledem k tomu, že tyto dvě hodnoty poskytují různé reprezentace jediný bod v čase, je jasné v tomto případě, že tento časový interval je zcela odvoditelný posun místního časového pásma od času UTC.
+<xref:System.DateTime.CompareTo%28System.DateTime%29> Metoda hlásí, že místní čas je dřívější než (nebo je menší než) čas UTC a operace odčítání označuje rozdíl mezi časem UTC a místním časem pro systém v USA. Tichomoří (standardní časové pásmo) je sedm hodin. Vzhledem k tomu, že tyto dvě hodnoty poskytují různé reprezentace jednoho bodu v čase, je v tomto případě jasné, že tento časový interval je zcela přizpůsoben posunu místního časového pásma od času UTC.
 
-Obecně platí <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost nemá vliv na výsledky vrácené <xref:System.DateTime.Kind> porovnání a aritmetické operace metody (jak určuje porovnání dvou identických bodů v čase), i když může ovlivnit interpretace výsledků. Příklad:
+Obecně platí, že <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost nemá vliv na výsledky <xref:System.DateTime.Kind> vrácené porovnáním a aritmetickými metodami (jako porovnání dvou identických bodů v čase), přestože může ovlivnit výklad těchto výsledků. Příklad:
 
-* Výsledek všechny aritmetické operace provedené na dvě hodnoty datum a čas, jehož <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> obě vlastnosti rovnat <xref:System.DateTimeKind> odráží skutečný časový interval mezi dvěma hodnotami. Obdobně porovnání dvou tyto hodnoty data a času přesně odráží vztah mezi časy.
+- Výsledek jakékoli aritmetické operace provedené na dvou hodnotách data a času, <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> jejichž vlastnosti oba <xref:System.DateTimeKind> odpovídají, odráží skutečný časový interval mezi dvěma hodnotami. Podobně porovnání dvou těchto hodnot data a času přesně odráží vztah mezi časy.
 
-* Výsledek všechny aritmetické operace nebo porovnání provedené na dvě hodnoty datum a čas, jehož <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> obě vlastnosti rovnat <xref:System.DateTimeKind> nebo na dvě hodnoty data a času s různými <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> hodnoty vlastností odráží rozdíl v čase mezi dvěma hodnotami.
+- Výsledek jakékoli aritmetické operace nebo operace porovnání provedené na dvou hodnotách data a času <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> , jejichž vlastnosti <xref:System.DateTimeKind> jsou stejné nebo u dvou hodnot data a času <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> s různými hodnotami vlastností, odráží rozdíl v časovém intervalu. mezi dvěma hodnotami.
 
-* Aritmetické operace nebo jejich porovnávání operací na hodnotách místní data a času Neberte v úvahu, jestli konkrétní hodnoty je nejednoznačný nebo není platný, ani přebírají účet efekt pravidla jakékoli úpravy, které vyplývají z místního časového pásma přechod do nebo z letního času Úspora času.
+- Aritmetické operace nebo operace porovnání s místními hodnotami data a času neuvažují o tom, zda je určitá hodnota nejednoznačná nebo neplatná, ani nebere v úvahu účinek všech pravidel úprav, která vznikne přechodum z místního časového pásma do nebo z oblasti letního času. šetří se čas.
 
-* Všechny operace, která porovnává nebo vypočítá rozdíl mezi místním časem a UTC zahrnuje časový interval, který se rovná posun místního časového pásma od UTC ve výsledku.
+- Jakákoli operace, která porovnává nebo vypočítá rozdíl mezi časem UTC a místním časem, obsahuje časový interval, který se rovná posunu místního časového pásma od času UTC ve výsledku.
 
-* Všechny operace, která porovnává nebo vypočítá rozdíl mezi nespecifikovaný čas a čas UTC nebo místního času odráží jednoduché čas. Rozdíly v časových pásmech nejsou považovány za a výsledek neodráží aplikace pravidla úpravy časového pásma.
+- Jakákoli operace, která porovnává nebo vypočítá rozdíl mezi nespecifikovaným časem a buď časem UTC, nebo místním časem, odráží jednoduchou časovou prodlevu. Rozdíly v časovém pásmu se nepovažují a výsledek neodráží použití pravidel úprav časových pásem.
 
-* Všechny operace, která porovnává nebo vypočítá rozdíl mezi dvěma tento parametr zadán časy mohou zahrnovat neznámý interval, který zobrazuje rozdíl mezi časem v různých časových pásmech.
+- Jakákoli operace, která porovnává nebo vypočítá rozdíl mezi dvěma nespecifikovanými časy, může zahrnovat neznámý interval, který odráží rozdíl mezi časem ve dvou různých časových pásmech.
 
-Existuje mnoho scénářů, ve které časové pásmo rozdíly nemají vliv na data a času výpočty (diskuzi o některé z nich, naleznete v tématu [volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)) nebo ve kterém kontextu data a času definuje datový význam porovnání nebo aritmetických operací.
+Existuje mnoho scénářů, ve kterých rozdíly v časovém pásmu neovlivňují výpočty data a času (pro diskuzi některé z těchto možností, viz [Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)) nebo v němž kontext dat data a času. definuje význam porovnání nebo aritmetické operace.
 
-## <a name="comparisons-and-arithmetic-operations-with-datetimeoffset-values"></a>Porovnání a aritmetické operace s hodnotami DateTimeOffset
+## <a name="comparisons-and-arithmetic-operations-with-datetimeoffset-values"></a>Porovnávání a aritmetické operace s hodnotami DateTimeOffset
 
-A <xref:System.DateTimeOffset> hodnota obsahuje nejen data a času, ale také posunu, který jednoznačně určuje tento data a času relativně k času UTC. To umožňuje definovat rovnost trochu jinak než pro <xref:System.DateTimeOffset> hodnoty. Vzhledem k tomu <xref:System.DateTime> jsou hodnoty stejné, pokud mají stejné datum a čas, <xref:System.DateTimeOffset> jsou hodnoty stejné, pokud oba odkazují na stejný bod v čase. Díky tomu <xref:System.DateTimeOffset> hodnotu přesné a méně náročná na vyhodnocení při použití v porovnávání a ve většině aritmetické operace, které určují interval mezi dvěma data a časy. V následujícím příkladu, který je <xref:System.DateTimeOffset> ekvivalentní k předchozímu příkladu, který porovnání místní a standardem UTC <xref:System.DateTimeOffset> hodnoty, ukazuje rozdíl v chování.
+<xref:System.DateTimeOffset> Hodnota zahrnuje nejen datum a čas, ale také posun, který jednoznačně definuje toto datum a čas relativní ke standardu UTC. Díky tomu je možné definovat rovnost trochu jinak než u <xref:System.DateTimeOffset> hodnot. Vzhledem <xref:System.DateTime> k tomu, že hodnoty jsou stejné, pokud mají stejnou hodnotu data <xref:System.DateTimeOffset> a času, hodnoty jsou stejné, pokud obě odkazují na stejný bod v čase. Díky tomu je <xref:System.DateTimeOffset> hodnota přesnější a méně v potřebu výkladu při použití v porovnání a ve většině aritmetických operací, které určují interval mezi dvěma daty a časy. Následující příklad, který je <xref:System.DateTimeOffset> ekvivalentem předchozího příkladu, který porovnává místní a UTC <xref:System.DateTimeOffset> hodnoty, ilustruje tento rozdíl v chování.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual3.cs#3)]
 [!code-vb[System.DateTimeOffset.Conceptual#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual3.vb#3)]
 
-V tomto příkladu <xref:System.DateTimeOffset.CompareTo%2A> metoda označuje, že aktuálním místním časem a do aktuálního času UTC jsou stejné a odečtení <xref:System.DateTimeOffset.CompareTo(System.DateTimeOffset)> hodnoty označuje, že je rozdíl mezi dvěma časy <xref:System.TimeSpan.Zero?displayProperty=nameWithType>.
+V tomto příkladu <xref:System.DateTimeOffset.CompareTo%2A> metoda označuje, že aktuální místní čas a aktuální čas UTC jsou stejné a <xref:System.DateTimeOffset.CompareTo(System.DateTimeOffset)> odečtení hodnot značí, že rozdíl mezi dvěma časy je <xref:System.TimeSpan.Zero?displayProperty=nameWithType>.
 
-Hlavní omezení použití <xref:System.DateTimeOffset> hodnoty v aritmetice kalendářních a časových je, že i když <xref:System.DateTimeOffset> hodnoty mají některé časové pásmo, nejsou plně časové pásmo vědět. I když <xref:System.DateTimeOffset> hodnoty posunu zahrnuje posun časového pásma od UTC při <xref:System.DateTimeOffset> proměnná je první přiřazená hodnota, tak se stane po tomto datu informace o časovém pásmu. Protože už nejsou přímo spojené s identifikací času, sčítání a odčítání datum a čas intervalů, které nebere v úvahu pravidla úpravy časového pásma.
+Hlavní omezení použití <xref:System.DateTimeOffset> hodnot v aritmetických operacích data a času je tím <xref:System.DateTimeOffset> , že i když hodnoty mají nějaké informace o časovém pásmu, nepodporují neomezenou časovou zónu. I když posun <xref:System.DateTimeOffset> hodnotyodrážíposunčasovéhopásmaodčasuUTC,kdyžjeproměnnénejprvepřiřazenahodnota,dojdekjejímuodstoupení<xref:System.DateTimeOffset> od časového pásma. Vzhledem k tomu, že již není přímo spojen s identifikovatelným časem, sčítání a odčítání časových intervalů nebere v úvahu pravidla úpravy časového pásma.
 
-Pro ilustraci, přechodu na letní čas v USA. Vyvolá se centrální standardního časového pásma ve 2:00:00 9. března, 2008. To znamená, že přidáte dva a půl hodiny interval centrální běžný čas 1:30 hod 9. března, 2008 mohou být vráceny datum a čas 5:00:00. 9. března, 2008. Jak ukazuje následující příklad, výsledek součtu je však 4:00:00. 9. března, 2008. Všimněte si, že tento výsledek této operace představují správného bodu v čase, i když není čas v časovém pásmu, které nás zajímá (tedy nemá očekávaný časové pásmo posun).
+Pro ilustraci se jedná o přechod na letní čas v USA. Centrální standardní časové pásmo se vyskytuje v 2:00 ráno. 9\. března 2008. To znamená, že přidání dvou a půl hodinového intervalu do centrálního standardního času 1:30 dop. 9\. března 2008 by měl vytvořit datum a čas 5:00 dop. 9\. března 2008. Jak ukazuje následující příklad, výsledek přidání je 4:00 dop. 9\. března 2008. Všimněte si, že tento výsledek této operace představuje správný bod v čase, i když se nejedná o čas v časovém pásmu, ve kterém se zajímá (to znamená, že nemá očekávané posunutí časového pásma).
 
 [!code-csharp[System.DateTimeOffset.Conceptual#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual4.cs#4)]
 [!code-vb[System.DateTimeOffset.Conceptual#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual4.vb#4)]
 
-## <a name="arithmetic-operations-with-times-in-time-zones"></a>Aritmetické operace s časem v časových pásmech
+## <a name="arithmetic-operations-with-times-in-time-zones"></a>Aritmetické operace s časy v časových pásmech
 
-<xref:System.TimeZoneInfo> Třída zahrnuje celou řadu metod pro převod, které se automaticky aplikují úpravy při převést časy z jedné časové pásmo na jiný. Patří mezi ně například:
+<xref:System.TimeZoneInfo> Třída obsahuje počet metod převodu, které automaticky aplikují úpravy při převodu časů z jednoho časového pásma na jiný. Patří mezi ně například:
 
-* <xref:System.TimeZoneInfo.ConvertTime%2A> a <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A> metody, které převést časy mezi jakékoli dvě časových pásem.
+- Metody <xref:System.TimeZoneInfo.ConvertTime%2A> a<xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A> , které převádějí časy mezi dvěma časovými pásmy.
 
-* <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> a <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A> metody, které Převeďte čas v určitém časovém pásmu na UTC, nebo převést na čas v určitém časovém pásmu UTC.
+- Metody <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> a<xref:System.TimeZoneInfo.ConvertTimeToUtc%2A> , které převádějí čas v konkrétním časovém pásmu na čas UTC nebo převádějí čas UTC na čas v konkrétním časovém pásmu.
 
-Podrobnosti najdete v tématu [převádění časových údajů mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md).
+Podrobnosti najdete v tématu [Převod časů mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md).
 
-<xref:System.TimeZoneInfo.ConvertTimeToUtc(System.DateTime)> Třída neposkytuje žádné metody, které automaticky používají pravidla pro úpravy při provádění aritmetika data a času. Můžete to však provést převod čas v časovém pásmu UTC, provádí aritmetické operace a pak převod ze standardu UTC zpět na čas v časovém pásmu. Podrobnosti najdete v tématu [jak: Používání časových pásem v aritmetice kalendářních a časových](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md).
+<xref:System.TimeZoneInfo.ConvertTimeToUtc(System.DateTime)> Třída neposkytuje žádné metody, které automaticky použijí pravidla úprav při provádění aritmetických operací s daty a časem. To však lze provést převedením času v časovém pásmu na čas UTC, provedením aritmetické operace a následným převodem z formátu UTC zpět na čas v časovém pásmu. Podrobnosti najdete v tématu [How to: V aritmetických operacích](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)data a času používejte časová pásma.
 
-Například následující kód je podobný jako předchozí kód, který přidá dvě a půl hodiny 2:00:00 9. března, 2008. Ale protože centrální běžný čas převede na UTC předtím, než provede aritmetika data a času a poté převádí výsledek od času UTC zpět na střed (běžný čas), výsledný čas odráží zóny centrální běžný čas přechodu na letní čas čas.
+Například následující kód je podobný předchozímu kódu, který přidal dvě až půl hodiny do 2:00 dop. 9\. března 2008. Vzhledem k tomu, že převede centrální standardní čas na čas UTC před tím, než provede aritmetické operace data a času, a poté převede výsledek z času UTC zpět na střední čas, výsledný čas odráží přechod centrálního standardního časového pásma na letní čas. interval.
 
 [!code-csharp[System.DateTimeOffset.Conceptual#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/cs/Conceptual5.cs#5)]
 [!code-vb[System.DateTimeOffset.Conceptual#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual/vb/Conceptual5.vb#5)]
@@ -88,4 +88,4 @@ Například následující kód je podobný jako předchozí kód, který přid�
 ## <a name="see-also"></a>Viz také:
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-- [Postupy: Používání časových pásem v aritmetice kalendářních a časových](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)
+- [Postupy: Použití časových pásem v aritmetickém datu a čase](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)

@@ -1,61 +1,61 @@
 ---
-title: 'Návod: Uchování objektu pomocíC#'
+title: 'Návod: Zachování objektu pomocíC#'
 ms.date: 04/26/2018
-ms.openlocfilehash: 85b58e93d667d39800538bb2c29d4ba69146e7f3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88fb589ca2f9a24f861b528bfd601f837e9aac5f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680581"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105926"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C\#
 
-Serializace můžete použít k uchování dat objektu mezi instancemi, které vám umožní uložení hodnot a načíst je další čas, který je vytvořena instance objektu.
+Můžete použít serializaci k uchování dat objektu mezi instancemi, což umožňuje ukládat hodnoty a načíst je při příštím vytvoření instance objektu.
 
-V tomto návodu vytvoříte základní `Loan` objektu a zachovat data do souboru. Když znovu vytvoříte objekt se budou ze souboru načítat data.
-
-> [!IMPORTANT]
-> Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace musí vytvořit soubor, musí mít tuto aplikaci `Create` oprávnění pro složku. Oprávnění jsou nastavená pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění, nižší oprávnění. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a udělit pouze `Read` oprávnění do jednoho souboru (místo vytvořit oprávnění pro složku). Navíc je bezpečnější zapsat data do uživatelské složky než do kořenové složky nebo ve složce Program Files.
+V tomto návodu vytvoříte základní `Loan` objekt a zachová jeho data do souboru. Po opětovném vytvoření objektu načtěte data ze souboru.
 
 > [!IMPORTANT]
-> V tomto příkladu ukládá data v binárním formátu souboru. Tyto formáty by neměla používat pro citlivá data, jako jsou hesla nebo informace o platební kartě.
+> Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace musí vytvořit soubor, musí mít `Create` Tato aplikace oprávnění pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze `Write` oprávnění a menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` oprávnění pouze k jednomu souboru (místo oprávnění k vytvoření složky). Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky Program Files.
+
+> [!IMPORTANT]
+> Tento příklad ukládá data v binárním souboru formátu. Tyto formáty by se neměly používat pro citlivá data, jako jsou hesla nebo informace o kreditních kartách.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* Sestavte a spusťte, nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core).
+- Pro sestavení a spuštění nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core).
 
-* Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
+- Pokud jste to ještě neudělali, nainstalujte svůj oblíbený editor kódu.
 
 > [!TIP]
-> Je potřeba nainstalovat editor kódu? Try [Visual Studio](https://visualstudio.com/downloads)!
+> Potřebujete nainstalovat editor kódu? Vyzkoušejte [Visual Studio](https://visualstudio.com/downloads)!
 
-* V příkladu vyžaduje C# 7.3. Zobrazit [vyberte verzi jazyka C#](../../../language-reference/configure-language-version.md) 
+- Příklad vyžaduje C# 7,3. Viz [ C# vyberte jazykovou verzi](../../../language-reference/configure-language-version.md) . 
 
-Můžete prozkoumat ukázkový kód online [v úložišti GitHub s ukázkami .NET](https://github.com/dotnet/samples/tree/master/csharp/serialization).
+Ukázkový kód si můžete prohlédnout online [v úložišti GitHub Samples .NET](https://github.com/dotnet/samples/tree/master/csharp/serialization).
 
-## <a name="creating-the-loan-object"></a>Vytvoření objektu půjčky
+## <a name="creating-the-loan-object"></a>Vytvoření objektu výpůjčky
 
-Prvním krokem je vytvoření `Loan` třídy a Konzolová aplikace, která používá třídu:
+Prvním krokem je vytvoření `Loan` třídy a konzolové aplikace, která používá třídu:
 
-1. Vytvořte novou aplikaci. Typ `dotnet new console -o serialization` vytvořte novou konzolovou aplikaci v podadresáři s názvem `serialization`.
-1. Otevřete aplikaci ve svém editoru a přidejte novou třídu s názvem `Loan.cs`.
-1. Přidejte následující kód, který vaše `Loan` třídy:
+1. Vytvořte novou aplikaci. Zadejte `dotnet new console -o serialization` , chcete-li vytvořit novou konzolovou aplikaci v podadresáři s názvem `serialization`.
+1. Otevřete aplikaci v editoru a přidejte novou třídu s názvem `Loan.cs`.
+1. Do `Loan` třídy přidejte následující kód:
 
 [!code-csharp[Loan class definition](../../../../../samples/csharp/serialization/Loan.cs#1)]
 
-Budete také muset vytvořit aplikaci, která se používá `Loan` třídy.
+Také budete muset vytvořit aplikaci, která používá `Loan` třídu.
 
-## <a name="serialize-the-loan-object"></a>Serializace objektu půjčky
+## <a name="serialize-the-loan-object"></a>Serializace objektu výpůjčky
 
 1. Otevřít `Program.cs`. Přidejte následující kód:
 
 [!code-csharp[Create a loan object](../../../../../samples/csharp/serialization/Program.cs#1)]
 
-Přidat obslužnou rutinu události pro `PropertyChanged` událost a několik řádků změnit `Loan` objektu a zobrazte změny. Můžete zobrazit dodatky v následujícím kódu:
+Přidejte obslužnou rutinu události pro `PropertyChanged` událost a několik řádků pro `Loan` úpravu objektu a zobrazte změny. Můžete zobrazit Přidání v následujícím kódu:
 
 [!code-csharp[Listening for the PropertyChanged event](../../../../../samples/csharp/serialization/Program.cs#2)]
 
-V tomto okamžiku můžete spuštění kódu a zobrazit aktuální výstup:
+V tomto okamžiku můžete spustit kód a zobrazit aktuální výstup:
 
 ```console
 New customer value: Henry Clay
@@ -63,43 +63,43 @@ New customer value: Henry Clay
 7.1
 ```
 
-Spuštění této aplikace opakovaně vždy zapíše stejné hodnoty. Pokaždé, když program spustíte, je vytvořen nový objekt půjčky. V praxi úrokové sazby změnit pravidelně, ale ne nutně pokaždé, když je aplikace spuštěna. Serializační kód znamená, že zachovat nejnovější úrokové sazby mezi instancemi aplikace. V dalším kroku se přesně to provést přidáním serializace do třídy půjčky.
+Spuštění této aplikace opakovaně vždy zapisuje stejné hodnoty. Nový objekt výpůjčky se vytvoří pokaždé, když spustíte program. V reálném světě se úrokové sazby pravidelně mění, ale nemusí nutně pokaždé, když je aplikace spuštěná. Serializační kód znamená, že zachováte nejnovější úrokovou sazbu mezi instancemi aplikace. V dalším kroku provedete to tak, že do třídy výpůjčky přidáte serializaci.
 
-## <a name="using-serialization-to-persist-the-object"></a>Pomocí serializace k uchování objektu
+## <a name="using-serialization-to-persist-the-object"></a>Zachování objektu pomocí serializace
 
-Aby bylo možné zachovat hodnoty pro třídu půjček, musíte nejprve označte třídu `Serializable` atribut. Přidejte následující kód, výše půjčky definice třídy:
+Aby bylo možné zachovat hodnoty pro třídu výpůjčky, musíte nejprve označit třídu `Serializable` atributem. Do definice třídy výpůjčky přidejte následující kód:
 
 [!code-csharp[Loan class definition](../../../../../samples/csharp/serialization/Loan.cs#2)]
 
-<xref:System.SerializableAttribute> Sděluje kompilátoru, že všechno, co ve třídě, můžete nastavit jako trvalý, do souboru. Vzhledem k tomu, `PropertyChanged` události nepředstavuje součástí graf objektu, který by měla být uložena, nesmí být serializován. Mohlo by serializaci všechny objekty, které jsou připojené k této události. Můžete přidat <xref:System.NonSerializedAttribute> deklarace pole pro `PropertyChanged` obslužné rutiny události.
+Rozhraní <xref:System.SerializableAttribute> instruuje kompilátor, že všechno ve třídě lze trvale uložit do souboru. Vzhledem k `PropertyChanged` tomu, že událost nepředstavuje součást grafu objektů, která by měla být uložena, neměla by být serializována. Tím by došlo k serializaci všech objektů, které jsou k této události připojeny. Můžete přidat <xref:System.NonSerializedAttribute> do deklarace pole `PropertyChanged` pro obslužnou rutinu události.
 
 [!code-csharp[Disable serialization for the event handler](../../../../../samples/csharp/serialization/Loan.cs#3)]
 
-Od verze C# 7.3, můžete připojit atributy na pomocné pole automaticky implementované vlastnosti pomocí `field` cílovou hodnotu. Následující kód přidává `TimeLastLoaded` vlastnost a označí je jako nelze serializovat:
+Počínaje C# 7,3 můžete k poli pro zálohování automaticky implementované vlastnosti připojit atributy pomocí `field` cílové hodnoty. Následující kód přidá `TimeLastLoaded` vlastnost a označí ji jako neserializovatelný:
 
 [!code-csharp[Disable serialization for an auto-implemented property](../../../../../samples/csharp/serialization/Loan.cs#4)]
 
-Dalším krokem je přidání Serializační kód do aplikace LoanApp. Aby bylo možné serializovat třídu a zápis do souboru, je použít <xref:System.IO> a <xref:System.Runtime.Serialization.Formatters.Binary> obory názvů. Abyste nemuseli zadávat plně kvalifikované názvy, můžete přidat odkazy na obory názvů nezbytné, jak je znázorněno v následujícím kódu:
+Dalším krokem je přidání kódu serializace do aplikace LoanApp. Aby bylo možné serializovat třídu a zapsat ji do souboru, použijte <xref:System.IO> obory názvů a. <xref:System.Runtime.Serialization.Formatters.Binary> Chcete-li se vyhnout psaní plně kvalifikovaných názvů, můžete přidat odkazy na nezbytné obory názvů, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[Adding namespaces for serialization](../../../../../samples/csharp/serialization/Program.cs#3)]
 
-Dalším krokem je přidání kódu k deserializaci objektu ze souboru při vytvoření objektu. Přidejte konstanty do třídy pro název souboru serializovaná data, jak je znázorněno v následujícím kódu:
+Dalším krokem je přidání kódu k deserializaci objektu ze souboru při vytvoření objektu. Do třídy přidejte konstantu pro název souboru serializovaných dat, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[Define the name of the saved file](../../../../../samples/csharp/serialization/Program.cs#4)]
 
-V dalším kroku přidejte následující kód po řádek, který vytvoří `TestLoan` objektu:
+Dále přidejte následující kód za řádek, který vytvoří `TestLoan` objekt:
 
 [!code-csharp[Read from a file if it exists](../../../../../samples/csharp/serialization/Program.cs#5)]
 
-Nejdřív musíte zkontrolovat, zda soubor existuje. Pokud existuje, vytvořit <xref:System.IO.Stream> třídy ke čtení binárního souboru a <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> třídy pro převod souboru. Také je potřeba převést z typu datový proud na typ objektu půjčky.
+Nejdřív musíte ověřit, že soubor existuje. Pokud existuje, vytvořte <xref:System.IO.Stream> třídu pro čtení binárního souboru <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a třídu pro překlad souboru. Také je nutné převést typ datového proudu na typ objektu výpůjčky.
 
-Dále je nutné přidat kód k serializaci třídy do souboru. Přidejte následující kód za existující kód ve třídě `Main` metody:
+Dále je nutné přidat kód k serializaci třídy do souboru. Za existující kód v `Main` metodě přidejte následující kód:
 
 [!code-csharp[Save the existing Loan object](../../../../../samples/csharp/serialization/Program.cs#6)]
 
-V tomto okamžiku můžete znovu sestavte a spusťte aplikaci. Při prvním spuštění, Všimněte si, že začíná 7.5 úrokové sazby a poté změní na 7.1. Ukončete aplikaci a znovu jej spusťte. Teď se aplikace zobrazí zprávu, aby četl uloženého souboru a úrokové sazby 7.1 ještě před kód, který změní.
+V tuto chvíli můžete znovu sestavit a spustit aplikaci. Při prvním spuštění si všimněte, že úrokové sazby začínají na 7,5 a pak se změní na 7,1. Ukončete aplikaci a pak ji znovu spusťte. Nyní aplikace vytiskne zprávu, že si uložil uložený soubor, a úrokovou sazbu je 7,1 ještě před kódem, který ho změnil.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Serializace (C#)](index.md)
+- [SerializaceC#()](index.md)
 - [Průvodce programováním v jazyce C#](../..//index.md)

@@ -1,5 +1,5 @@
 ---
-title: Doporučené postupy pro výjimky – .NET
+title: Osvědčené postupy pro výjimky – .NET
 ms.date: 12/05/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,92 +9,92 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: d212ba9beaa0ccc229204045c5a8174381440dfc
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: e12a83d3932d11baa086310ab0be23fb431459fc
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67860152"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107194"
 ---
-# <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
+# <a name="best-practices-for-exceptions"></a>Osvědčené postupy pro výjimky
 
 Za účelem zamezení pádu aplikace zpracovává dobře navržená aplikace výjimky a chyby. Tato část popisuje osvědčené postupy pro zpracování a vytváření výjimek.
 
-## <a name="use-trycatchfinally-blocks-to-recover-from-errors-or-release-resources"></a>Pomocí konstrukce try/catch/finally bloky zotavit z chyb nebo uvolnění prostředků
+## <a name="use-trycatchfinally-blocks-to-recover-from-errors-or-release-resources"></a>Pro zotavení z chyb nebo uvolnění prostředků použijte bloky try/catch/finally.
 
-Použití `try` / `catch` okolo kódu, který může potenciálně generovat výjimku ***a*** kódu můžete obnovit z této výjimky. V `catch` blokuje vždy nutné výjimky seřazovat od nejvíce odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Více odvozeného výjimky nejsou zpracovávány klauzule catch, který předchází klauzuli catch. výjimky základní třídy. Pokud váš kód nelze obnovit z výjimky, nezachycujte tuto výjimku. Povolte další metody v zásobníku volání, pokud je to možné obnovit.
+Používejte `try` bloky/kolem kódu, který může potenciálně generovat výjimku ***a*** váš kód může z této výjimky obnovit. `catch` V `catch` blocích vždy seřazení výjimek z největší odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Další odvozené výjimky nejsou zpracovány klauzulí catch, která předchází klauzuli catch pro základní třídu výjimky. Když se váš kód nemůže zotavit z výjimky, nezachyťte tuto výjimku. Pokud je to možné, povolte metody další v zásobníku volání pro obnovení.
 
-Vyčistěte prostředky přidělené s oběma `using` příkazy, nebo `finally` bloky. Preferovat `using` příkazy automaticky vyčistit prostředky, pokud jsou výjimky vyvolány. Použití `finally` bloky chcete vyčistit prostředky, které Neimplementujte <xref:System.IDisposable>. V kódu `finally` klauzule je téměř vždy spuštěn i v případě, že jsou výjimky vyvolány.
+Vyčistěte prostředky přidělené `using` buď pomocí příkazů `finally` , nebo bloků. Preferovat `using` příkazy k automatickému vyčištění prostředků, když jsou vyvolány výjimky. Pomocí `finally` bloků vyčistěte prostředky, které neimplementují <xref:System.IDisposable>. Kód v `finally` klauzuli je téměř vždy spouštěn i v případě, že jsou výjimky vyvolány.
 
-## <a name="handle-common-conditions-without-throwing-exceptions"></a>Zpracování běžných podmínek bez vyvolání výjimky
+## <a name="handle-common-conditions-without-throwing-exceptions"></a>Zpracování běžných podmínek bez vyvolání výjimek
 
-Podmínky, které by mohly nastat, ale může být spuštění výjimky, zvažte jejich zpracování tak, aby se vyhnete výjimku. Například pokud se pokusíte uzavřít připojení, který je už zavřený, získáte `InvalidOperationException`. Který můžete vyhnout použitím `if` příkaz a zkontrolujte stav připojení před dalším pokusem ho zavřít.
+Pro podmínky, které se pravděpodobně vyskytují, ale mohou aktivovat výjimku, zvažte jejich zpracování způsobem, který se vyhne výjimce. Například pokud se pokusíte zavřít připojení, které je již uzavřeno, získáte `InvalidOperationException`. Je možné vyhnout se tomu pomocí `if` příkazu ke kontrole stavu připojení před pokusem o jeho zavření.
 
 [!code-cpp[Conceptual.Exception.Handling#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#2)]
 [!code-csharp[Conceptual.Exception.Handling#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#2)]
 [!code-vb[Conceptual.Exception.Handling#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#2)]
 
-Pokud se nezaregistrují stav připojení před zavřením, můžete zachytit `InvalidOperationException` výjimky.
+Pokud před zavřením nezkontrolujete stav připojení, můžete `InvalidOperationException` výjimku zachytit.
 
 [!code-cpp[Conceptual.Exception.Handling#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#3)]
 [!code-csharp[Conceptual.Exception.Handling#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#3)]
 [!code-vb[Conceptual.Exception.Handling#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#3)]
 
-Metoda zvolit, závisí na očekáváte, jak často má k události docházet.
+Metoda, kterou zvolíte, závisí na tom, jak často očekáváte, že k události dojde.
 
 - Použijte zpracování výjimek, pokud k události nedochází velmi často, tzn. pokud k události dochází výjimečně a značí chybu (jako například neočekávaný konec souboru). Při používání zpracování výjimek je za běžných podmínek provedena menší část kódu.
 
-- Pokud k události dochází rutinně a může být považována za součást běžného provedení Zkontrolujte chybové stavy v kódu. Při kontrole běžné chybové stavy, menší část kódu je provést, protože byste se vyhnout výjimky.
+- Zkontroluje chybové podmínky v kódu, pokud k události dochází rutinně a mohla by být považována za součást normálního spuštění. Při kontrole běžných chybových stavů se spustí méně kódu, protože se vyhnete výjimkám.
 
-## <a name="design-classes-so-that-exceptions-can-be-avoided"></a>Třídy Navrhujte tak, aby výjimky se můžete vyhnout.
+## <a name="design-classes-so-that-exceptions-can-be-avoided"></a>Třídy návrhu tak, aby bylo možné vyhnout se výjimkám
 
-Třída může poskytnout metody nebo vlastnosti, které vám umožní vyhnout volání, která se aktivuje výjimku. Například <xref:System.IO.FileStream> třída poskytuje metody, které pomáhají určit, zda bylo dosaženo konce souboru. Ty je možné, aby výjimka, která je vyvolána, pokud čtení za koncem souboru. Následující příklad znázorňuje způsob čtení do konce souboru bez vyvolání výjimky.
+Třída může poskytovat metody nebo vlastnosti, které umožňují vyhnout se volání, které by aktivovalo výjimku. Například <xref:System.IO.FileStream> Třída poskytuje metody, které vám pomůžou určit, zda bylo dosaženo konce souboru. Ty lze použít k zamezení výjimky, která je vyvolána, pokud přečtení za koncem souboru. Následující příklad ukazuje, jak číst na konec souboru bez vyvolání výjimky.
 
 [!code-cpp[Conceptual.Exception.Handling#5](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#5)]
 [!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
 [!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]
 
-Jiný způsob, jak zabránit výjimky je vrátit hodnotu null (nebo výchozí) pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad výkonu pro aplikaci.
+Dalším způsobem, jak se vyhnout výjimkám, je vrátit hodnotu null (nebo výchozí) pro extrémně běžné chybové případy namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null (nebo výchozí) v těchto případech minimalizujete dopad na výkon aplikace.
 
-U typů hodnot jestli se má použít `Nullable<T>` nebo výchozí, jak je vaše označení chyb je něco, co brát v potaz u konkrétní aplikace. S použitím `Nullable<Guid>`, `default` stane `null` místo `Guid.Empty`. Přidání některých časy `Nullable<T>` může být jasnější hodnotu je k dispozici nebo chybí. Jindy, přidání `Nullable<T>` můžete vytvořit další případy a zkontrolujte, jestli nejsou potřebné, slouží pouze k vytvoření potenciální zdroje chyb. 
+Pro typy hodnot, zda se má `Nullable<T>` použít nebo jako výchozí používat jako indikátor chyb, je třeba zvážit konkrétní aplikaci. Pomocí `Nullable<Guid>`, `default` se místo`null` . `Guid.Empty` V některých případech se `Nullable<T>` dá přidat, takže pokud je hodnota přítomná nebo chybí, může to být jasné. Jinak přidávání `Nullable<T>` může vytvořit další případy, které kontrolují, že nepotřebujete, a sloužit jenom k vytváření potenciálních zdrojů chyb. 
 
-## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení chybový kód
+## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení kódu chyby
 
-Výjimky Ujistěte se, že selhání nedojde protože volání, že kód nezaškrtli návratový kód.
+Výjimky zajišťují, že chyby nejdou nekontrolují, protože volání kódu nevrátilo návratový kód.
 
-## <a name="use-the-predefined-net-exception-types"></a>Použijte předdefinované typy výjimek .NET
+## <a name="use-the-predefined-net-exception-types"></a>Použít předdefinované typy výjimek .NET
 
-Zavádí novou třídu výjimek pouze v případě, že neplatí předdefinované jeden. Příklad:
+Zaveďte novou třídu výjimky pouze v případě, že není použita předdefinovaná. Příklad:
 
-- Vyvolání <xref:System.InvalidOperationException> výjimku, pokud vlastnost set nebo metoda volání není vhodné aktuální stav objektu.
+- Vyvolejte <xref:System.InvalidOperationException> výjimku, pokud sada vlastností nebo volání metody není vhodné vzhledem k aktuálnímu stavu objektu.
 
-- Vyvolání <xref:System.ArgumentException> výjimky nebo jeden z předdefinovaných tříd, které jsou odvozeny z <xref:System.ArgumentException> Pokud jsou předány neplatné parametry.
+- Vyvolejte <xref:System.ArgumentException> výjimku nebo jednu z předdefinovaných tříd, které jsou odvozeny z, pokud jsou předány neplatné parametry. <xref:System.ArgumentException>
 
-## <a name="end-exception-class-names-with-the-word-exception"></a>Názvy tříd výjimek ukončujte slovem End `Exception`
+## <a name="end-exception-class-names-with-the-word-exception"></a>Ukončení názvů tříd výjimek pomocí slova`Exception`
 
-Při vlastní výjimky je nezbytné, pojmenujte ji odpovídajícím způsobem a odvozovat z <xref:System.Exception> třídy. Příklad:
+Pokud je nezbytná vlastní výjimka, pojmenujte ji odpovídajícím způsobem a odvodit ji od <xref:System.Exception> třídy. Příklad:
 
 [!code-cpp[Conceptual.Exception.Handling#4](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#4)]
 [!code-csharp[Conceptual.Exception.Handling#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#4)]
 [!code-vb[Conceptual.Exception.Handling#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#4)]
 
-## <a name="include-three-constructors-in-custom-exception-classes"></a>Zahrnout tři konstruktory ve třídách vlastní výjimky
+## <a name="include-three-constructors-in-custom-exception-classes"></a>Zahrnout tři konstruktory do vlastních tříd výjimek
 
-Použijte aspoň tři běžné konstruktory při vytváření vlastních tříd výjimek: konstruktor bez parametrů, konstruktor, který přijímá řetězcovou zprávu a konstruktor, který přijímá řetězcovou zprávu a vnitřní výjimku.
+Při vytváření vlastních tříd výjimek použijte alespoň tři společné konstruktory: konstruktor bez parametrů, konstruktor, který přijímá zprávu řetězce, a konstruktor, který přijímá zprávu řetězce a vnitřní výjimku.
 
-* <xref:System.Exception.%23ctor>, který používá výchozí hodnoty.
+- <xref:System.Exception.%23ctor>, který používá výchozí hodnoty.
 
-* <xref:System.Exception.%23ctor%28System.String%29>, která přijímá řetězcovou zprávu.
+- <xref:System.Exception.%23ctor%28System.String%29>, který přijímá řetězcovou zprávu.
 
-* <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, která přijímá řetězcovou zprávu a vnitřní výjimku.
+- <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, který přijímá řetězcovou zprávu a vnitřní výjimku.
 
-Příklad najdete v tématu [jak: Vytvořit uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md).
+Příklad naleznete v tématu [How to: Vytvořte uživatelsky definované výjimky](how-to-create-user-defined-exceptions.md).
 
-## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>Ujistěte se, že data výjimky je k dispozici, když je kód spuštěn vzdáleně
+## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>Ujistěte se, že data výjimky jsou k dispozici, když se kód spustí vzdáleně.
 
-Při vytváření uživatelsky definovaných výjimek, ujistěte se, že je k dispozici pro kód, který je prováděn vzdáleně metadata pro výjimky.
+Při vytváření uživatelem definovaných výjimek se ujistěte, že metadata pro výjimky jsou k dispozici pro kód, který se spouští vzdáleně.
 
-Například na implementace .NET, které podporují domén aplikace, může dojít k výjimkám mezi doménami aplikace. Předpokládejme, že doména aplikace A vytvoří doménu aplikace B, která spustí kód, který vyvolá výjimku. Doména aplikace A k správně zachytila a zpracovala výjimku musí být schopna najít sestavení obsahující výjimku domény aplikace b Pokud doména aplikace B vyvolá výjimku, která je součástí sestavení v rámci její základ cesty aplikace, ale není pod základ cesty aplikace příslušné domény aplikace, doména aplikace A nebudete moci najít výjimku a modul common language runtime vyvolá výjimku <xref:System.IO.FileNotFoundException> výjimky. Této situaci zamezíte tak, že nasadíte sestavení obsahující informace o výjimce dvěma způsoby:
+Například u implementací rozhraní .NET, které podporují aplikační domény, se může vyskytnout výjimka napříč doménami aplikace. Předpokládejme, že doména aplikace A vytvoří doménu aplikace B, která spustí kód, který vyvolá výjimku. Aby mohla doména aplikace A správně zachytit a zpracovat výjimku, musí být schopna najít sestavení, které obsahuje výjimku vyvolanou aplikační doménou B. Pokud doména aplikace B vyvolá výjimku, která je obsažena v sestavení v rámci jeho základu aplikace, ale ne v rámci databáze aplikace a, domény aplikace a nebude schopna najít výjimku a modul CLR vyvolá <xref:System.IO.FileNotFoundException> výjimku. Této situaci zamezíte tak, že nasadíte sestavení obsahující informace o výjimce dvěma způsoby:
 
 - Sestavení umístěte do společného základu cesty aplikace sdíleného oběma doménami aplikace.
 
@@ -102,25 +102,25 @@ Například na implementace .NET, které podporují domén aplikace, může doj�
 
 - Pokud domény nesdílejí společný základ cesty aplikace, podepište sestavení obsahující informace o výjimce silným názvem a nasaďte sestavení do globální mezipaměti sestavení (GAC).
 
-## <a name="use-grammatically-correct-error-messages"></a>Používejte gramaticky správné chybové zprávy
+## <a name="use-grammatically-correct-error-messages"></a>Použití gramaticky správných chybových zpráv
 
-Zápis vymazat věty a zahrnout koncové interpunkce. Jednotlivé věty v řetězci přiřazené <xref:System.Exception.Message?displayProperty=nameWithType> vlastnost by měla končit tečkou. Například "The log table došlo k přetečení." by být řetězec odpovídající zprávu.
+Pište jasné věty a zahrňte koncovou interpunkci. Každá věta v řetězci přiřazená <xref:System.Exception.Message?displayProperty=nameWithType> vlastnosti by měla končit tečkou. Například "došlo k přetečení tabulky protokolu". by byl vhodný řetězec zprávy.
 
-## <a name="include-a-localized-string-message-in-every-exception"></a>Přiložit zprávu lokalizované řetězce v každé výjimce
+## <a name="include-a-localized-string-message-in-every-exception"></a>Zahrnout do každé výjimky lokalizovanou zprávu řetězce
 
-Chybová zpráva, která se uživateli je odvozen z <xref:System.Exception.Message?displayProperty=nameWithType> vlastnost, která byla vyvolána výjimka a nikoli z názvu třídy výjimek. Obvykle přiřadit hodnotu <xref:System.Exception.Message?displayProperty=nameWithType> vlastnost tím, že předáte řetězec zprávy `message` argument [výjimky konstruktoru](xref:System.Exception.%23ctor%2A).
+Chybová zpráva, kterou uživatel vidí, je odvozena z <xref:System.Exception.Message?displayProperty=nameWithType> vlastnosti výjimky, která byla vyvolána, a nikoli z názvu třídy Exception. Obvykle přiřadíte hodnotu k <xref:System.Exception.Message?displayProperty=nameWithType> vlastnosti předáním řetězce `message` zprávy argumentu [konstruktoru výjimky](xref:System.Exception.%23ctor%2A).
 
-V případě lokalizovaných aplikací by měly poskytnout řetězce lokalizované zpráv pro každou výjimku, kterou vaše aplikace může vyvolat. Soubory prostředků vám poskytují lokalizované chybové zprávy. Informace o lokalizaci aplikací a načítání lokalizovaných řetězců naleznete v tématu [prostředky v desktopových aplikací](../../framework/resources/index.md) a <xref:System.Resources.ResourceManager?displayProperty=nameWithType>.
+Pro lokalizované aplikace byste měli poskytnout lokalizovaný řetězec zprávy pro všechny výjimky, které může vaše aplikace vyvolat. Soubory prostředků můžete použít k poskytnutí lokalizovaných chybových zpráv. Informace o lokalizaci aplikací a načítání lokalizovaných řetězců naleznete v tématu [prostředky v aplikacích klasické pracovní plochy](../../framework/resources/index.md) a <xref:System.Resources.ResourceManager?displayProperty=nameWithType>.
 
-## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>Vlastní výjimky zadejte další vlastnosti podle potřeby
+## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>V možnosti vlastní výjimky zadejte podle potřeby další vlastnosti.
 
-Zadejte další vlastnosti pro výjimku (kromě řetězec vlastní zprávu) pouze v případě, že existuje programový scénář, kde Další informace jsou užitečné. Například <xref:System.IO.FileNotFoundException> poskytuje <xref:System.IO.FileNotFoundException.FileName> vlastnost.
+Poskytněte další vlastnosti pro výjimku (kromě vlastního řetězce zprávy) pouze v případě, že existuje programový scénář, kde jsou další informace užitečné. <xref:System.IO.FileNotFoundException> Například<xref:System.IO.FileNotFoundException.FileName> poskytuje vlastnost.
 
-## <a name="place-throw-statements-so-that-the-stack-trace-will-be-helpful"></a>Příkaz throw místo tak, že bude užitečné trasování zásobníku
+## <a name="place-throw-statements-so-that-the-stack-trace-will-be-helpful"></a>Umístěte příkazy throw tak, aby trasování zásobníku bylo užitečné.
 
-Trasování zásobníků začíná u příkazu, kde je vyvolána výjimka a končí `catch` příkaz, který zachytí výjimku.
+Trasování zásobníku začíná příkazem, kde je vyvolána výjimka a končí v `catch` příkazu, který zachycuje výjimku.
 
-## <a name="use-exception-builder-methods"></a>Použijte metody tvůrce výjimky
+## <a name="use-exception-builder-methods"></a>Použití metod Tvůrce výjimek
 
 Pro třídu je běžné vyvolat stejnou výjimku z různých míst v rámci příslušné implementace. Abyste zabránili nadbytečnému kódu, použijte pomocné metody k vytvoření výjimky a vrácení výjimky. Příklad:
 
@@ -128,11 +128,11 @@ Pro třídu je běžné vyvolat stejnou výjimku z různých míst v rámci p�
 [!code-csharp[Conceptual.Exception.Handling#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]
 [!code-vb[Conceptual.Exception.Handling#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#6)]
 
-V některých případech je vhodnější použít konstruktor k vytvoření výjimky. Příkladem je třídy globálních výjimek, jako <xref:System.ArgumentException>.
+V některých případech je vhodnější použít konstruktor výjimky k sestavení výjimky. Příkladem je globální třída výjimek, jako je <xref:System.ArgumentException>.
 
-## <a name="restore-state-when-methods-dont-complete-due-to-exceptions"></a>Obnovit stav, když metody není dokončit z důvodu výjimky
+## <a name="restore-state-when-methods-dont-complete-due-to-exceptions"></a>Obnovit stav, když se metody nedokončují kvůli výjimkám
 
-Volající by měl předpokládat, že při vyvolání výjimky z metody nedojde k žádným vedlejším účinkům. Například pokud máte kód, který převede peníze odebrání z jednoho účtu a uložení do jiného účtu, a je vyvolána výjimka při provádění uložení, nechcete stažení zůstávají v platnosti.
+Volající by měl předpokládat, že při vyvolání výjimky z metody nedojde k žádným vedlejším účinkům. Například pokud máte kód, který přenáší peníze odebráním z jednoho účtu a uložením do jiného účtu, a při provádění zálohy dojde k výjimce, nechcete, aby stažení zůstalo v platnosti.
 
 ```csharp
 public void TransferFunds(Account from, Account to, decimal amount)
@@ -151,9 +151,9 @@ Public Sub TransferFunds(from As Account, [to] As Account, amount As Decimal)
 End Sub
 ```
 
-Výše uvedené metody přímo nevyvolá žádné výjimky, ale musí být napsaný defenzivně, takže pokud se nezdaří operace uložení, stažení je obrácený.
+Výše uvedená metoda přímo nevyvolává žádné výjimky, ale musí být zapsána defensively, aby v případě, že operace vkladu nebyla úspěšná, je zrušení vrácení zpět.
 
-Jedním ze způsobů tuto situaci je zachytit žádné výjimky vyvolané uložení transakce a vrátit zpět stažení.
+Jedním ze způsobů, jak tuto situaci zpracovat, je zachytit jakékoli výjimky vyvolané vkladovou transakcí a vrátit zpět odstoupení.
 
 ```csharp
 private static void TransferFunds(Account from, Account to, decimal amount)
@@ -183,7 +183,7 @@ Private Shared Sub TransferFunds(from As Account, [to] As Account, amount As Dec
 End Sub
 ```
 
-Tento příklad ukazuje použití metody `throw` pro opětovné vyvolání původní výjimku, která usnadní volajícím zobrazila skutečná příčinu problému bez nutnosti k prozkoumání <xref:System.Exception.InnerException> vlastnost. Alternativou je novou výjimku a zahrnují původní výjimku jako vnitřní výjimka:
+Tento příklad znázorňuje použití `throw` pro opětovné vyvolání původní výjimky, která může usnadnit volajícím zobrazit skutečnou příčinu problému bez nutnosti <xref:System.Exception.InnerException> prozkoumávat vlastnost. Alternativou je vyvolat novou výjimku a zahrnout původní výjimku jako vnitřní výjimku:
 
 ```csharp
 catch (Exception ex)

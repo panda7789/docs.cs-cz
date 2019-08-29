@@ -12,20 +12,20 @@ helpviewer_keywords:
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 074b97f29946390170abe3c40d71d2ee2cb214ce
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 9f165ab5b79abbc2b5464f40a27a580d26af163a
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666481"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106941"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Použití objektů, které implementují IDisposable
 
 Systém uvolňování paměti modulu CLR (Common Language Runtime) uvolňuje paměť využívané spravovanými objekty, ale typy, které <xref:System.IDisposable> používají nespravované prostředky, implementují rozhraní, aby bylo možné uvolnit paměť přidělené těmto nespravovaným prostředkům. Po dokončení použití objektu, který implementuje <xref:System.IDisposable>, byste měli zavolat <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementaci objektu. Toto lze provést jedním ze dvou způsobů:  
   
-* C# Pomocí příkazu nebo příkazu Visual Basic `Using` `using` .  
+- C# Pomocí příkazu nebo příkazu Visual Basic `Using` `using` .  
   
-* Implementací `try/finally` bloku.  
+- Implementací `try/finally` bloku.  
 
 ## <a name="the-using-statement"></a>Pomocí příkazu using
 
@@ -49,9 +49,9 @@ Příkaz také umožňuje získat více prostředků v jednom příkazu, který 
 
 Místo zabalení `try/finally` bloku `using` v příkazu můžete zvolit přímé implementace `try/finally` bloku. Může se jednat o váš vlastní styl psaní kódu nebo tak můžete činit z jednoho z následujících důvodů:  
   
-* Chcete-li `catch` zahrnout blok pro zpracování jakýchkoli výjimek vyvolaných `try` v bloku. V opačném případě jakékoli výjimky vyvolané `using` příkazem nejsou ošetřeny, stejně jako jakékoli výjimky vyvolané `using` v rámci bloku, `try/catch` Pokud není přítomen blok.  
+- Chcete-li `catch` zahrnout blok pro zpracování jakýchkoli výjimek vyvolaných `try` v bloku. V opačném případě jakékoli výjimky vyvolané `using` příkazem nejsou ošetřeny, stejně jako jakékoli výjimky vyvolané `using` v rámci bloku, `try/catch` Pokud není přítomen blok.  
   
-* Pro vytvoření instance objektu, který implementuje <xref:System.IDisposable> , jehož obor není místní pro blok, ve kterém je deklarována.  
+- Pro vytvoření instance objektu, který implementuje <xref:System.IDisposable> , jehož obor není místní pro blok, ve kterém je deklarována.  
   
 Následující příklad je `try/catch/finally` podobný předchozímu příkladu s tím rozdílem, že používá blok pro vytvoření instance, použití a uvolnění <xref:System.IO.StreamReader> objektu a ke zpracování <xref:System.IO.StreamReader> jakýchkoli výjimek vyvolaných konstruktorem a jeho <xref:System.IO.StreamReader.ReadToEnd%2A> metodou. Všimněte si, že kód v `finally` bloku kontroluje, zda objekt, který <xref:System.IDisposable> implementuje `null` , <xref:System.IDisposable.Dispose%2A> není před voláním metody. V takovém případě může dojít k <xref:System.NullReferenceException> výjimce za běhu.  
   

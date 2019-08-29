@@ -1,33 +1,33 @@
 ---
 title: Nativní interoperabilita – .NET
-description: Zjistěte, jak spolupracovat s nativními komponentami v rozhraní .NET.
+description: Naučte se, jak používat nativní komponenty v .NET.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: b01ea9c17db6da32755309d9c1c2359cecaa1155
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 3ca213bc7228d2e4337607df2d47b334c5bea14f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65062709"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106808"
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 
-Následující články popisují různé způsoby provedení "nativní interoperabilita" v rozhraní .NET.
+Následující články ukazují různé způsoby provádění "nativní interoperability" v rozhraní .NET.
 
-Existuje několik důvodů, proč byste to provádět volání do nativního kódu:
+Existuje několik důvodů, proč byste chtěli volat do nativního kódu:
 
-* Operační systémy jsou dostupné velký objem rozhraní API, která nejsou k dispozici v knihoven spravovaných tříd. Typickým příkladem pro tento scénář bude přístup k hardwaru nebo operačního systému funkce správy.
-* Komunikace s ostatními součástmi, které máte, nebo můžete vytvořit instrukce ABI ve stylu jazyka C (nativní instrukce ABI), jako je například kód v Javě, který je zveřejněný prostřednictvím [Java Native Interface (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jiného spravovaného jazyka, který by mohla vést nativní součásti.
-* Na Windows většina softwaru, který se nainstaluje, jako je například sada Microsoft Office, zaregistruje komponenty modelu COM, které představují své programy a vývojářům umožňuje automatizovat je nebo je používat. Tento proces také vyžaduje nativní interoperabilita.
+- Operační systémy dodávají velké množství rozhraní API, která nejsou součástí knihoven spravované třídy. Hlavní příklad tohoto scénáře by byl přístup k funkcím správy hardwaru nebo operačního systému.
+- Komunikace s dalšími komponentami, které mají nebo mohou vytvořit instrukce ABI ve stylu jazyka C (nativní instrukce ABI), jako je kód Java, který je zveřejněn prostřednictvím [rozhraní Java Native Interface (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jakýkoli jiný spravovaný jazyk, který by mohl vytvořit nativní komponentu.
+- Ve Windows většina softwaru, který se instaluje, jako je systém Microsoft Office sada, registruje komponenty modelu COM, které reprezentují své programy, a umožňuje vývojářům jejich automatizaci nebo použití. To také vyžaduje nativní interoperabilitu.
 
-Tento seznam nezahrnuje všechny potenciální situace a scénáře, ve kterých by vývojář chcete/typu/potřeba rozhraní s nativními komponentami. Knihovna tříd rozhraní .NET, například používá interoperabilitu nativní podporu k implementaci přiměřený počet jejích rozhraní API, jako je podpora konzoly a manipulaci s, přístupu k systému souborů a další. Je důležité si uvědomit, že je k dispozici možnost v případě potřeby.
+Předchozí seznam nepokrývá všechny možné situace a scénáře, ve kterých by měl vývojář chtít, aby mohl používat rozhraní s nativními součástmi. Knihovna tříd .NET, například používá nativní podporu interoperability k implementaci spravedlivého počtu jeho rozhraní API, jako je podpora konzoly a manipulace, přístup k systému souborů a další. Je ale důležité si uvědomit, že v případě potřeby máte možnost.
 
 > [!NOTE]
-> Většina příkladů v této části se zobrazí pro všechny tři podporované platformy pro .NET Core (Windows, Linux a macOS). Ale příklady krátký a příkladů, stačí jeden vzorek je zobrazit, který používá rozšíření (to znamená "knihovny dll" pro knihovny) a názvy souborů Windows. To neznamená, že tyto funkce nejsou k dispozici v systému Linux nebo macOS, bylo provedeno pouze pro usnadnění práce saké.
+> Většina příkladů v této části se zobrazí pro všechny tři podporované platformy pro .NET Core (Windows, Linux a macOS). V některých krátkých a ilustrativních příkladech se však zobrazí pouze jedna ukázka, která používá názvy souborů a rozšíření systému Windows (tj. "dll" pro knihovny). To neznamená, že tyto funkce nejsou k dispozici v systému Linux nebo macOS, ale byly provedeny pouze v zájmu usnadnění práce.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Vyvolání platformy (nespravovaného)](pinvoke.md)
+- [Vyvolání platformy (volání nespravovaného objektu)](pinvoke.md)
 - [Zařazování typů](type-marshaling.md)
-- [Osvědčené postupy nativní interoperabilita](best-practices.md)
+- [Nativní osvědčené postupy interoperability](best-practices.md)

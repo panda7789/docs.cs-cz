@@ -4,12 +4,12 @@ description: Popis podrobností algoritmu satelitního načítání sestavení v
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: bd703bc9f2c9af1f8ba3c6c892f963efc679d14b
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: bfdc1d8179d46a13b3d137a87397fa3e573da33c
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70017338"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105313"
 ---
 # <a name="satellite-assembly-loading-algorithm"></a>Algoritmus načítání satelitních sestavení
 
@@ -32,8 +32,8 @@ Záložní proces prostředku .NET Core zahrnuje následující kroky:
 1. `active` Určete<xref:System.Runtime.Loader.AssemblyLoadContext> instanci. Ve všech případech `active` je instancí spouštěným <xref:System.Runtime.Loader.AssemblyLoadContext>sestavením.
 
 2. `active` Instance se pokusí načíst satelitní sestavení pro požadovanou jazykovou verzi v pořadí podle priority podle:
-    * Kontroluje se její mezipaměť.
-    * Kontrola adresáře aktuálně spuštěného sestavení pro podadresář, který odpovídá požadovanému <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (například `es-MX`).
+    - Kontroluje se její mezipaměť.
+    - Kontrola adresáře aktuálně spuštěného sestavení pro podadresář, který odpovídá požadovanému <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (například `es-MX`).
 
         > [!NOTE]
         > Tato funkce nebyla implementována v .NET Core před 3,0.
@@ -43,13 +43,13 @@ Záložní proces prostředku .NET Core zahrnuje následující kroky:
         > - Přesně rozlišovat velká a malá písmena.
         > - V malých malých písmenech.
 
-    * `active` Pokud<xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> je instance, spusťte výchozí logiku pro [zjišťování sestavení (prostředků)](default-probing.md#satellite-resource-assembly-probing) .
+    - `active` Pokud<xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> je instance, spusťte výchozí logiku pro [zjišťování sestavení (prostředků)](default-probing.md#satellite-resource-assembly-probing) .
 
-    * <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> Volání funkce.
+    - <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> Volání funkce.
 
-    * Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost.
+    - Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost.
 
-    * Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
+    - Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
 
 3. Pokud je načteno satelitní sestavení:
    - <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType> Událost je vyvolána.

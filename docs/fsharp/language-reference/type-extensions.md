@@ -2,20 +2,20 @@
 title: Rozšíření typů
 description: Přečtěte F# si, jak rozšíření typu umožňují přidat nové členy do dříve definovaného typu objektu.
 ms.date: 02/08/2019
-ms.openlocfilehash: 502b8636052139b39c800447870c6076a8cd2643
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5d31d87095d3381e66dc32da4b6d7bb746886406
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630197"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106846"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
-Přípony typů (označované také jako _rozšíření) představují_řadu funkcí, které umožňují přidat nové členy do dříve definovaného typu objektu. K třem funkcím patří:
+Přípony typů (označovanétaké jako rozšíření) představují řadu funkcí, které umožňují přidat nové členy do dříve definovaného typu objektu. K třem funkcím patří:
 
-* Rozšíření vnitřních typů
-* Volitelná rozšíření typu
-* Metody rozšíření
+- Rozšíření vnitřních typů
+- Volitelná rozšíření typu
+- Metody rozšíření
 
 Každý lze použít v různých scénářích a má různé kompromisy.
 
@@ -66,9 +66,9 @@ type Variant with
 
 Použití rozšíření typu umožňuje oddělit jednotlivé z následujících možností:
 
-* Deklarace `Variant` typu
-* Funkce pro tisk `Variant` třídy v závislosti na jejím "tvaru"
-* Způsob přístupu k funkcím tisku pomocí notace typu Object- `.`Style
+- Deklarace `Variant` typu
+- Funkce pro tisk `Variant` třídy v závislosti na jejím "tvaru"
+- Způsob přístupu k funkcím tisku pomocí notace typu Object- `.`Style
 
 Jedná se o alternativu k definování všeho jako člena v `Variant`. I když se nejedná o nepodstatný lepší přístup, může to být v některých situacích čisticí reprezentace funkcí.
 
@@ -121,9 +121,9 @@ type IEnumerable<'T> with
 
 Neexistuje žádný způsob, jak tento kód získat pro práci s volitelným rozšířením typu:
 
-* Jak je, má `Sum` člen jiné omezení na `'T` (`static member get_Zero` a `static member (+)`), než určuje přípona typu.
-* Změna rozšíření typu na má stejné omezení, jako `Sum` by se už neshodovalo s definovaným `IEnumerable<'T>`omezením.
-* Když `member this.Sum` se `member inline this.Sum` změní na, dojde k chybě, že se neshodují omezení typu.
+- Jak je, má `Sum` člen jiné omezení na `'T` (`static member get_Zero` a `static member (+)`), než určuje přípona typu.
+- Změna rozšíření typu na má stejné omezení, jako `Sum` by se už neshodovalo s definovaným `IEnumerable<'T>`omezením.
+- Když `member this.Sum` se `member inline this.Sum` změní na, dojde k chybě, že se neshodují omezení typu.
 
 Co je žádoucí, jsou statické metody, které jsou "float in Space" a mohou být prezentovány, jako kdyby rozšíří typ. Tady jsou metody rozšíření, které jsou nezbytné.
 
@@ -150,22 +150,22 @@ Při použití tohoto kódu se tento kód zobrazí, jako by `Sum` byl definován
 
 Přípony typů mají také následující atributy:
 
-* Libovolný typ, který lze použít, lze rozšířit.
-* Vnitřní a volitelné rozšíření typu mohou definovat _libovolný_ typ člena, nikoli pouze metody. Vlastnosti rozšíření jsou také možné, například.
-* Token v syntaxi představuje instanci volaného typu, stejně jako běžné členy. [](type-extensions.md#syntax) `self-identifier`
-* Rozšířené členy mohou být statické nebo členy instance.
-* Proměnné typu v rozšíření typu se musí shodovat s omezeními deklarovaného typu.
+- Libovolný typ, který lze použít, lze rozšířit.
+- Vnitřní a volitelné rozšíření typu mohou definovat _libovolný_ typ člena, nikoli pouze metody. Vlastnosti rozšíření jsou také možné, například.
+- Token v syntaxi představuje instanci volaného typu, stejně jako běžné členy. [](type-extensions.md#syntax) `self-identifier`
+- Rozšířené členy mohou být statické nebo členy instance.
+- Proměnné typu v rozšíření typu se musí shodovat s omezeními deklarovaného typu.
 
 Pro přípony typů existují taky tato omezení:
 
-* Rozšíření typu nepodporují virtuální ani abstraktní metody.
-* Rozšíření typu nepodporují metody přepisu jako rozšíření.
-* Rozšíření typu nepodporují [staticky vyřešené parametry typu](./generics/statically-resolved-type-parameters.md).
-* Volitelná rozšíření typu nepodporují konstruktory jako rozšíření.
-* Pro [zkratky typu](type-abbreviations.md)nelze definovat rozšíření typu.
-* Přípony typů nejsou platné pro `byref<'T>` (i když mohou být deklarovány).
-* Přípony typů nejsou platné pro atributy (i když mohou být deklarovány).
-* Můžete definovat rozšíření, která přetěžují jiné metody se stejným názvem, ale F# kompilátor dává přednost metodám bez rozšíření, pokud dojde k nejednoznačnému volání.
+- Rozšíření typu nepodporují virtuální ani abstraktní metody.
+- Rozšíření typu nepodporují metody přepisu jako rozšíření.
+- Rozšíření typu nepodporují [staticky vyřešené parametry typu](./generics/statically-resolved-type-parameters.md).
+- Volitelná rozšíření typu nepodporují konstruktory jako rozšíření.
+- Pro [zkratky typu](type-abbreviations.md)nelze definovat rozšíření typu.
+- Přípony typů nejsou platné pro `byref<'T>` (i když mohou být deklarovány).
+- Přípony typů nejsou platné pro atributy (i když mohou být deklarovány).
+- Můžete definovat rozšíření, která přetěžují jiné metody se stejným názvem, ale F# kompilátor dává přednost metodám bez rozšíření, pokud dojde k nejednoznačnému volání.
 
 Nakonec, pokud existuje více rozšíření vnitřního typu pro jeden typ, všechny členy musí být jedinečné. Pro volitelná rozšíření typu můžou mít členové v různých typech rozšíření stejného typu stejné názvy. K chybám nejednoznačnosti dochází pouze v případě, že klientský kód otevírá dva různé obory, které definují stejné názvy členů.
 

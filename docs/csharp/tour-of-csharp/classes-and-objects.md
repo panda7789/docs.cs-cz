@@ -3,12 +3,12 @@ title: Třídy a objekty v C# -A prohlídku C# jazyka
 description: Začínáte C#? Přečtěte si tento přehled tříd, objektů a dědičnosti.
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: ff83a3198c6c9fb4c4a438d2486614a211c913ec
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: be8e760b19b7ca5305918ecfdbf9ad797d7e76b2
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971460"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105633"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -32,42 +32,42 @@ Paměť obsazená objektem je automaticky uvolněna v případě, že objekt ji�
 
 Následující příklad obsahuje přehled druhů členů, které třída může obsahovat.
 
-* Konstanty
+- Konstanty
   - Konstantní hodnoty přidružené ke třídě
-* Pole
+- Pole
   - Proměnné třídy
-* Metody
+- Metody
   - Výpočty a akce, které mohou být provedeny třídou
-* Vlastnosti
+- Vlastnosti
   - Akce spojené s čtením a zápisem s názvem vlastnosti třídy
-* Indexery
+- Indexery
   - Akce přidružené k indexování instancí třídy, jako je pole
-* Události
+- Události
   - Oznámení, která mohou být vygenerována třídou
-* Operátory
+- Operátory
   - Převody a operátory výrazů podporované třídou
-* Konstruktory
+- Konstruktory
   - Akce vyžadované pro inicializaci instancí třídy nebo samotné třídy
-* Finalizační metody
+- Finalizační metody
   - Akce, které se mají provést před tím, než se instance třídy trvale zahodí
-* Typy
+- Typy
   - Vnořené typy deklarované třídou
 
 ## <a name="accessibility"></a>Usnadnění
 
 Každý člen třídy má přidruženou přístupnost, která řídí oblasti textu programu, které mají přístup k členu. Existuje šest možných forem usnadnění přístupu. Tyto jsou shrnuté níže.
 
-* `public`
+- `public`
   - Přístup není omezený
-* `protected`
+- `protected`
   - Přístup omezený na tuto třídu nebo třídy odvozené z této třídy
-* `internal`
+- `internal`
   - Přístup omezený na aktuální sestavení (. exe,. dll atd.)
-* `protected internal`
+- `protected internal`
   - Přístup omezený na obsahující třídu, třídy odvozené od obsahující třídy nebo třídy v rámci stejného sestavení
-* `private`
+- `private`
   - Přístup omezený na tuto třídu
-* `private protected`
+- `private protected`
   - Přístup omezený na obsahující třídu nebo třídy odvozené z nadřazeného typu v rámci stejného sestavení
 
 ## <a name="type-parameters"></a>Parametry typu

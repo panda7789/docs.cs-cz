@@ -1,113 +1,113 @@
 ---
-title: 'Kurz: Zápis první opravu analyzátoru a kódu'
-description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a oprava kódu pomocí sady SDK kompilátoru .NET (Roslyn API).
+title: 'Kurz: Zápis prvního analyzátoru a opravy kódu'
+description: V tomto kurzu najdete podrobné pokyny k sestavení analyzátoru a opravy kódu pomocí sady .NET Compiler SDK (rozhraní Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 45529a72e3c64a573bfc043fe44da29caed1a0c4
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
+ms.openlocfilehash: d6645a2a6e83f68c1959c255756393c9251dc1ba
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870552"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105760"
 ---
-# <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
+# <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis prvního analyzátoru a opravy kódu
 
-Sada SDK platformy kompilátoru .NET poskytuje nástroje, které potřebujete k vytvoření vlastní upozornění tento cíl C# nebo kódu jazyka Visual Basic. Vaše **analyzátor** obsahuje kód, který rozpozná porušení pravidla. Vaše **opravu kódu** obsahuje kód, který opraví porušení zásady. Pravidla, která můžete implementovat můžou být čímkoli od strukturu kódu na kódování styl konvence pojmenování a další. .NET Compiler Platform poskytuje rozhraní pro spuštění analýzy jako vývojáři psaní kódu a funkce všech rozhraní Visual Studia pro opravu kódu: zobrazující podtržení vlnovkou v editoru Visual Studio seznamu chyb, vytváření "žárovky" vyplnění návrhy a zobrazuje bohaté možnosti ve verzi preview návrhy jejich oprav.
+Sada .NET Compiler Platform SDK poskytuje nástroje, které potřebujete k vytváření vlastních upozornění, která C# cílí na nebo Visual Basic kódu. Váš **analyzátor** obsahuje kód, který rozpoznává porušení vašeho pravidla. **Oprava kódu** obsahuje kód, který vyřeší porušení. Pravidla, která implementujete, může být cokoli od struktury kódu až po kódování stylu a vytváření názvů. .NET Compiler Platform poskytuje rozhraní pro spouštění analýzy, protože vývojáři píší kód a všechny funkce uživatelského rozhraní sady Visual Studio pro úpravu kódu: zobrazení vlnovek v editoru, vyplnění sady Visual Studio Seznam chyb a vytvoření "žárovky". návrhy a zobrazují bohatou verzi Preview navrhovaných oprav.
 
-V tomto kurzu prozkoumáte vytváření **analyzátor** a je v doprovodné **opravu kódu** pomocí rozhraní Roslyn API. Analyzátor je způsob, jak provést analýzu zdrojového kódu a ohlásit problém pro uživatele. Analyzátor Volitelně můžete zadat taky opravy kódu, který představuje úpravy zdrojového kódu uživatele. Tento kurz vytvoří analyzátor, který hledá místní deklarace proměnných, které mohou být deklarovány pomocí `const` modifikátor ale nejsou. Související opravu kódu upravuje tyto deklarace pro přidání `const` modifikátor.
+V tomto kurzu se seznámíte s vytvořením analyzátoru a s doprovodnou **opravou kódu** pomocí rozhraní API Roslyn. Analyzátor je způsob, jak provádět analýzu zdrojového kódu a nahlásit problém uživateli. V případě potřeby může analyzátor také poskytnout opravu kódu, která představuje úpravu zdrojového kódu uživatele. V tomto kurzu se vytvoří analyzátor, který najde deklarace místních proměnných, které by se `const` daly deklarovat pomocí modifikátoru, ale ne. Oprava doprovodného kódu upraví tyto deklarace a přidá `const` modifikátor.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
-* [Visual Studio 2019](https://www.visualstudio.com/downloads)
+- [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
+- [Visual Studio 2019](https://www.visualstudio.com/downloads)
 
-Budete muset nainstalovat **sada SDK platformy kompilátoru .NET** prostřednictvím instalačního Visual Studio:
+**.NET COMPILER Platform SDK** budete muset nainstalovat pomocí instalování sady Visual Studio:
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
-Existuje několik kroků k vytvoření a ověření vašich analyzer:
+Existuje několik kroků k vytvoření a ověření analyzátoru:
 
 1. Vytvořte řešení.
-1. Registrace analyzátoru název a popis.
-1. Sestavy analyzátoru upozornění a doporučení.
-1. Implementujte opravu kódu tak, aby přijímal doporučení.
-1. Vylepšení analýzy prostřednictvím testů jednotek.
+1. Zaregistrujte název a popis analyzátoru.
+1. Upozornění a doporučení analyzátoru sestav.
+1. Implementací opravy kódu přijměte doporučení.
+1. Zlepšete analýzu prostřednictvím jednotkových testů.
 
-## <a name="explore-the-analyzer-template"></a>Prozkoumání šablony analyzátoru
+## <a name="explore-the-analyzer-template"></a>Prozkoumat šablonu analyzátoru
 
-Vaše analyzátor ohlásí uživateli žádné místní deklarace proměnných, které lze převést na lokální konstanty. Zvažte například následující kód:
+Analyzátor hlásí uživateli všechny deklarace místních proměnných, které lze převést na místní konstanty. Zvažte například následující kód:
 
 ```csharp
 int x = 0;
 Console.WriteLine(x);
 ```
 
-Ve výše uvedeném kódu `x` přiřazena konstantní hodnotou a se nikdy nemění. Mohou být deklarovány pomocí `const` modifikátor:
+Ve výše uvedeném `x` kódu je přiřazena konstantní hodnota a nikdy se nemění. Dá se deklarovat pomocí `const` modifikátoru:
 
 ```csharp
 const int x = 0;
 Console.WriteLine(x);
 ```
 
-Součástí analýzy k určení, zda proměnné může být změněna na konstantní vyžadující syntaktické analýzy, konstantní analýzy inicializačního výrazu a analýzy datového toku k zajištění, že proměnná je nikdy zapsána do. Na platformě kompilátoru .NET poskytuje rozhraní API, která usnadňují provádění této analýzy. Prvním krokem je vytvoření nového jazyka C# **analyzátor s opravu kódu** projektu.
+Analýza, která určuje, zda může být proměnná vytvořena, je vyžadována syntaktickou analýzou, konstantní analýzou výrazu inicializátoru a analýzou toku dat, aby se zajistilo, že proměnná nebude nikdy zapsána do. .NET Compiler Platform poskytuje rozhraní API, která usnadňují provádění této analýzy. Prvním krokem je vytvoření nového C# **analyzátoru s projektem opravit kód** .
 
-* V sadě Visual Studio, zvolte **soubor > Nový > projekt...**  zobrazíte dialogové okno Nový projekt.
-* V části **Visual C# > rozšíření**, zvolte **Analyzátor se oprava kódu (.NET Standard)** .
-* Pojmenujte svůj projekt "**MakeConst**" a klikněte na tlačítko OK.
+- V aplikaci Visual Studio vyberte **soubor > nový > projekt...** zobrazí se dialogové okno Nový projekt.
+- V **části C# rozšiřitelnost vizuálního >** vyberte **analyzátor s opravou kódu (.NET Standard)** .
+- Pojmenujte projekt "**MakeConst**" a klikněte na tlačítko OK.
 
-Vytvoří analyzátor s šablonou opravu kódu tři projekty: jeden obsahuje analyzer a oprava kódu, projekt testování částí je druhý a třetí je projekt VSIX. Výchozí spouštěný projekt je projekt VSIX. Stisknutím klávesy **F5** ke spuštění projektu VSIX. Otevře se druhá instance sady Visual Studio, který byl načten nový analyzátor.
-
-> [!TIP]
-> Při spuštění vaší analyzer spusťte druhé kopie sady Visual Studio. Tato druhá kopie využívá k ukládání nastavení různých podregistru. Která umožňuje rozlišovat visual nastavení v dvě kopie sady Visual Studio. Můžete si vybrat jiný motiv pro experimentální spuštění sady Visual Studio. Kromě toho není roaming nastavení nebo přihlášení k Visual Studio spustit účtu pomocí experimentální instanci sady Visual Studio. Která udržuje jiné nastavení.
-
-Ve druhé instanci aplikace Visual Studio, který jste právě spustili vytvořte nový projekt konzolové aplikace jazyka C# (.NET Core nebo projekt se rozhraní .NET Framework pracovat – analyzátory práce na úrovni zdroje.) Najeďte myší token s podtržení vlnovkou a zobrazí se text upozornění poskytované analyzátor.
-
-Šablona vytvoří analyzátor, který bude hlásit upozornění na deklaraci typu, kde název typu obsahuje malá písmena, jak je znázorněno na následujícím obrázku:
-
-![Analyzátor reporting upozornění](media/how-to-write-csharp-analyzer-code-fix/report-warning.png)
-
-Šablona také nabízí opravu kódu, který změní libovolný typ název obsahuje malá písmena na velká písmena. Kliknutím na žárovku, zobrazí se upozornění zobrazíte navrhované změny. Přijetí aktualizací navrhované změny, název typu a všechny odkazy na tento typ v řešení. Teď, když už víte, počáteční analyzátor v akci, zavřete druhou instanci aplikace Visual Studio a vraťte se do projektu analyzátor.
-
-Není nutné ke spuštění druhé kopie sady Visual Studio a vytvořte nový kód pro testování každé změně ve vaší analyzátor. Šablona vytvoří projekt testu jednotek také za vás. Tento projekt obsahuje dva testy. `TestMethod1` ukazuje typický formát test, který analyzuje kódu bez aktivace diagnostiky. `TestMethod2` ukazuje formátu test, který se spustí Diagnostika a poté použije opravu navrhované kódu. Během vytváření analyzer a oprava kódu bude psaní testů pro různý kód struktury ověřit svou práci. Testy jednotek pro analyzátory jsou mnohem rychleji než při testování interaktivně pomocí sady Visual Studio.
+Analyzátor se šablonou opravy kódu vytvoří tři projekty: jeden obsahuje analyzátor a opravu kódu, druhým je projekt testu jednotek a třetí je projekt VSIX. Výchozí spouštěný projekt je projekt VSIX. Stisknutím klávesy **F5** spusťte projekt VSIX. Tím se spustí druhá instance sady Visual Studio, která zavedla nový analyzátor.
 
 > [!TIP]
-> Analyzátor testování jednotek je skvělý nástroj, když víte, jaký kód konstrukce by měl a nesmí aktivovat váš analyzátor. Načítají se vaše analyzátor v jiné kopii sady Visual Studio je skvělý nástroj pro zkoumání a najít konstrukce, které vás nemusí mít myslet na ještě.
+> Při spuštění analyzátoru spustíte druhou kopii sady Visual Studio. Tato druhá kopie používá k uložení nastavení jiný podregistr registru. To umožňuje odlišit nastavení vizuálu v obou kopiích sady Visual Studio. Můžete vybrat jiný motiv pro experimentální běh sady Visual Studio. Kromě toho nevytvářejte roaming nastavení ani přihlášení k účtu aplikace Visual Studio pomocí experimentálního spuštění sady Visual Studio. Který udržuje nastavení odlišně.
 
-## <a name="create-analyzer-registrations"></a>Vytvoření registrace analyzátoru
+Ve druhé instanci sady Visual Studio, kterou jste právě spustili, vytvořte nový C# projekt konzolové aplikace (.NET Core nebo .NET Framework projekt budou fungovat na úrovni zdroje.) Najeďte myší na token podtrženým vlnovkou a zobrazí se text upozornění, který je k dispozici v analyzátoru.
 
-Šablona vytvoří počáteční `DiagnosticAnalyzer` třídy v **MakeConstAnalyzer.cs** souboru. Tento počáteční analyzátor ukazuje dvě důležité vlastnosti každé analyzátor.
+Šablona vytvoří analyzátor, který ohlásí upozornění na každou deklaraci typu, kde název typu obsahuje malá písmena, jak je znázorněno na následujícím obrázku:
 
-* Musíte zadat každou diagnostického analyzátoru `[DiagnosticAnalyzer]` atribut, který popisuje pracuje na jazyk.
-* Každý diagnostického analyzátoru musí být odvozen od <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> třídy.
+![Upozornění pro generování sestav analyzátoru](media/how-to-write-csharp-analyzer-code-fix/report-warning.png)
 
-Šablona také ukazuje základní funkce, které jsou součástí žádné analyzer:
+Šablona také poskytuje opravu kódu, která změní jakýkoli název typu obsahující malá písmena na velká písmena. Můžete kliknout na žárovku, která se zobrazuje s upozorněním, a zobrazit navrhované změny. Přijetí navrhovaných změn aktualizuje název typu a všechny odkazy na daný typ v řešení. Teď, když jste viděli počáteční analyzátor v akci, zavřete druhou instanci sady Visual Studio a vraťte se do projektu analyzátoru.
 
-1. Zaregistrujte akce. Akce představují změny kódu, které by měly aktivovat váš analyzátor pro zkoumání kódu pro porušení. Když Visual Studio zjistí úpravy kódu, které odpovídají registrované akce, volá metodu v analyzéru registrovaný.
-1. Vytvoření diagnostiky. Když vaše analyzátor zjistí narušení, vytvoří objekt diagnostické, využívající Visual Studio na upozornění pro uživatele porušení zásady.
+Nemusíte spouštět druhou kopii sady Visual Studio a vytvořit nový kód pro otestování všech změn v analyzátoru. Šablona také vytvoří projekt testu jednotek za vás. Tento projekt obsahuje dva testy. `TestMethod1`zobrazuje typický formát testu, který analyzuje kód bez aktivace diagnostiky. `TestMethod2`zobrazuje formát testu, který aktivuje diagnostiku a poté použije navrhovanou opravu kódu. Při sestavování analyzátoru a opravy kódu budete psát testy pro různé struktury kódu, abyste ověřili svoji práci. Testy jednotek pro analyzátory jsou mnohem rychlejší než interaktivní testování pomocí sady Visual Studio.
 
-Zaregistrovat akce v přepsání metody <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer.Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)?displayProperty=nameWithType> metoda. V tomto kurzu budete navštívíte **syntaxe uzly** hledá místní deklarace a zjistili, který z nich jsou konstantní hodnoty. Pokud deklarace může být konstantní, bude vaše analyzátor vytvořit a nahlaste diagnostiku.
+> [!TIP]
+> Testy jednotek analyzátoru jsou skvělým nástrojem, když víte, které konstrukce kódu by měly a nemají aktivovat analyzátor. Načítání analyzátoru v jiné kopii sady Visual Studio je skvělý nástroj pro zkoumání a hledání konstrukcí, na které jste se ještě nemuseli myslet.
 
-Prvním krokem je aktualizace konstanty registrace a `Initialize` metoda tak tyto konstanty označení vaší analyzátor "Ujistěte se, Const". Většina řetězcové konstanty jsou definovány v souboru prostředků řetězce. Měli byste postupovat podle této normy pro jednodušší lokalizace. Otevřít **Resources.resx** souboru **MakeConst** analyzátor projektu. Zobrazí se editor prostředků. Aktualizace řetězcové prostředky následujícím způsobem:
+## <a name="create-analyzer-registrations"></a>Vytvoření registrací analyzátoru
 
-* Změna `AnalyzerTitle` na "Proměnná může být změněna na konstantní".
-* Změna `AnalyzerMessageFormat` do "Může být změněna na konstantní".
-* Změna `AnalyzerDescription` aby "konstanty".
+Šablona vytvoří počáteční `DiagnosticAnalyzer` třídu v souboru **MakeConstAnalyzer.cs** . Tento počáteční analyzátor zobrazuje dvě důležité vlastnosti každého analyzátoru.
 
-Změnit také, **modifikátor přístupu** rozevíracího seznamu `public`. Který usnadňuje použití tyto konstanty při testech jednotek. Jakmile budete hotovi, editor prostředků by měla vypadat jako postupujte podle obrázku je vidět:
+- Každý diagnostický analyzátor musí poskytovat `[DiagnosticAnalyzer]` atribut, který popisuje jazyk, na kterém pracuje.
+- Každý diagnostický analyzátor musí být odvozen od <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> třídy.
 
-![Aktualizovat prostředky řetězců](media/how-to-write-csharp-analyzer-code-fix/update-string-resources.png)
+Šablona také zobrazuje základní funkce, které jsou součástí jakéhokoli analyzátoru:
 
-Zbývající změny jsou v souboru analyzátor. Otevřít **MakeConstAnalyzer.cs** v sadě Visual Studio. Změňte registrované akce z jednoho, který funguje na symboly, který funguje na syntaxi. V `MakeConstAnalyzerAnalyzer.Initialize` metoda, vyhledejte řádek, který registruje akce na symboly:
+1. Proveďte registraci akcí. Akce reprezentují změny kódu, které by měly aktivovat analyzátor, aby prozkoumali kód pro porušení. Když Visual Studio detekuje úpravy kódu, které odpovídají zaregistrované akci, volá metodu zaregistrovanou analyzátorem.
+1. Vytvořte diagnostiku. Když analyzátor zjistí porušení, vytvoří objekt diagnostiky, který Visual Studio používá k upozorňování uživatele na porušení.
+
+Akce zaregistrujete v přepsání <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer.Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)?displayProperty=nameWithType> metody. V tomto kurzu navštívíte **uzly syntaxe** , které hledají místní deklarace, a zjistíte, které z nich mají konstantní hodnoty. Pokud by deklarace mohla být konstantní, analyzátor vytvoří a nahlásí diagnostiku.
+
+Prvním krokem je aktualizovat konstanty a `Initialize` metodu registrace, aby tyto konstanty označovaly analyzátor "Make const". Většina řetězcových konstant je definována v souboru prostředků řetězce. Pro snazší lokalizaci byste měli postupovat podle tohoto postupu. Otevřete soubor **Resources. resx** pro projekt analyzátoru **MakeConst** . Tím se zobrazí editor prostředků. Aktualizujte prostředky řetězce následujícím způsobem:
+
+- Možnost `AnalyzerTitle` změnit na proměnnou lze vytvořit jako konstantu.
+- Možnost `AnalyzerMessageFormat` změnit na lze nastavit jako konstantu.
+- Změňte `AnalyzerDescription` na "vytvořit konstantu".
+
+Také změňte rozevírací seznam **modifikátor přístupu** na `public`. To usnadňuje používání těchto konstant v testování částí. Po dokončení by se měl editor prostředků zobrazit tak, jak ukazuje následující obrázek:
+
+![Aktualizace prostředků řetězců](media/how-to-write-csharp-analyzer-code-fix/update-string-resources.png)
+
+Zbývající změny jsou v souboru analyzátoru. Otevřete **MakeConstAnalyzer.cs** v aplikaci Visual Studio. Změňte zaregistrovanou akci z jedné, která funguje na symbolech, které fungují na syntaxi. `MakeConstAnalyzerAnalyzer.Initialize` V metodě Najděte řádek, který zaregistruje akci na symboly:
 
 ```csharp
 context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
 ```
 
-Nahraďte ho následující řádek:
+Nahraďte ji následujícím řádkem:
 
 [!code-csharp[Register the node action](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstAnalyzer.cs#RegisterNodeAction "Register a node action")]
 
-Po této změně můžete odstranit `AnalyzeSymbol` metody. Tento analyzátor kontroluje <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.LocalDeclarationStatement?displayProperty=nameWithType>, nikoli <xref:Microsoft.CodeAnalysis.SymbolKind.NamedType?displayProperty=nameWithType> příkazy. Všimněte si, že `AnalyzeNode` má červenou vlnovkou pod ním. Kód, který jste právě přidali odkazy `AnalyzeNode` metodu, která nebyla deklarována. Deklarujte metody pomocí následujícího kódu:
+Po této změně můžete `AnalyzeSymbol` metodu odstranit. Tento analyzátor prověřuje <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.LocalDeclarationStatement?displayProperty=nameWithType>příkazy, <xref:Microsoft.CodeAnalysis.SymbolKind.NamedType?displayProperty=nameWithType> nikoli. Všimněte si `AnalyzeNode` , že pod ní jsou červené vlnovky. Kód, který jste právě přidali, `AnalyzeNode` odkazuje na metodu, která nebyla deklarována. Deklarujte tuto metodu pomocí následujícího kódu:
 
 ```csharp
 private void AnalyzeNode(SyntaxNodeAnalysisContext context)
@@ -115,28 +115,28 @@ private void AnalyzeNode(SyntaxNodeAnalysisContext context)
 }
 ```
 
-Změnit `Category` "Využití" v **MakeConstAnalyzer.cs** jak je znázorněno v následujícím kódu:
+V **MakeConstAnalyzer.cs** změňte na"využití",jakjeznázorněnovnásledujícím`Category` kódu:
 
 ```csharp
 private const string Category = "Usage";
 ```
 
-## <a name="find-local-declarations-that-could-be-const"></a>Najít místní deklarace, které by mohly být const
+## <a name="find-local-declarations-that-could-be-const"></a>Najde místní deklarace, které by mohly být const.
 
-Je čas zápisu první verzi `AnalyzeNode` metody. Měl by vypadat pro jeden místní deklarace, které by mohly `const` , ale není k dispozici, jako v následujícím kódu:
+Je čas zapsat první verzi `AnalyzeNode` metody. Měl by hledat jednu místní deklaraci, která by mohla `const` být, ale ne, podobně jako v následujícím kódu:
 
 ```csharp
 int x = 0;
 Console.WriteLine(x);
 ```
 
-Prvním krokem je najít místní deklarace. Přidejte následující kód, který `AnalyzeNode` v **MakeConstAnalyzer.cs**:
+Prvním krokem je najít místní deklarace. Do `AnalyzeNode` **MakeConstAnalyzer.cs**přidejte následující kód:
 
 ```csharp
 var localDeclaration = (LocalDeclarationStatementSyntax)context.Node;
 ```
 
-Toto přetypování vždy úspěšná, protože vaše analyzátor zaregistrovat pro změny místní deklarace a jenom místní deklarace. Žádný jiný typ uzlu aktivuje volání dané k vaší `AnalyzeNode` metody. Dále zkontrolujte deklaraci pro všechny `const` modifikátory. Pokud je najít, vrátí okamžitě. Následující kód vyhledá všechny `const` modifikátory u místní deklarace:
+Toto přetypování vždy proběhne úspěšně, protože analyzátor zaregistroval pro změny místních deklarací a pouze místní deklarace. Žádný jiný typ uzlu neaktivuje volání `AnalyzeNode` metody. V dalším kroku ověřte deklaraci všech `const` modifikátorů. Pokud je najdete, vraťte se hned. Následující kód vyhledá všechny `const` modifikátory v místní deklaraci:
 
 ```csharp
 // make sure the declaration isn't already const:
@@ -146,9 +146,9 @@ if (localDeclaration.Modifiers.Any(SyntaxKind.ConstKeyword))
 }
 ```
 
-A konečně, je potřeba zkontrolovat, že může být proměnná `const`. To znamená, že provedení, ji není nikdy přiřazeno po inicializaci.
+Nakonec je nutné ověřit, zda může být `const`proměnná. To znamená, že se po inicializaci nikdy nepřiřazuje.
 
-Budete provádět některé pomocí sémantické analýzy <xref:Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>. Můžete použít `context` argument k určení, zda mohou být vytvořeny deklarace lokální proměnné `const`. A <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> představuje všech sémantických informací v jediném souboru. Můžete další informace najdete v článku určeného po [sémantickým modelům](../work-with-semantics.md). Budete používat <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> provádět analýzy toku dat v příkazu místní deklarace. Potom použijte výsledky této analýzy toku dat k zajištění, že místní proměnná není zapsán s novou hodnotou někde jinde. Volání <xref:Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol%2A> metodu rozšíření k získání <xref:Microsoft.CodeAnalysis.ILocalSymbol> pro proměnnou a zkontrolujte, že se nenachází se <xref:Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside%2A?displayProperty=nameWithType> kolekce dat tok analýzy. Přidejte následující kód do konce `AnalyzeNode` metody:
+Pomocí nástroje se <xref:Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext>provede nějaká Sémantická analýza. `context` Argument můžete použít k určení, zda lze vytvořit `const`deklaraci lokální proměnné. <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> Představuje všechny sémantické informace v jednom zdrojovém souboru. Další informace najdete v článku, který pokrývá [sémantické modely](../work-with-semantics.md). Použijete <xref:Microsoft.CodeAnalysis.SemanticModel?displayProperty=nameWithType> k provedení analýzy toku dat v příkazu místní deklarace. Pak použijete výsledky této analýzy toku dat, abyste zajistili, že místní proměnná nebude zapsána novou hodnotou kdekoli jinde. Zavolejte metodu <xref:Microsoft.CodeAnalysis.ILocalSymbol>rozšířenípro načtení proměnné a ověřte, že není obsažena <xref:Microsoft.CodeAnalysis.DataFlowAnalysis.WrittenOutside%2A?displayProperty=nameWithType> v kolekci analýzy toku dat. <xref:Microsoft.CodeAnalysis.ModelExtensions.GetDeclaredSymbol%2A> Na konec `AnalyzeNode` metody přidejte následující kód:
 
 ```csharp
 // Perform data flow analysis on the local declaration.
@@ -164,47 +164,47 @@ if (dataFlowAnalysis.WrittenOutside.Contains(variableSymbol))
 }
 ```
 
-Kód, který právě přidali zajistí, že proměnné není upraven a proto nelze realizovat `const`. Je čas vyvolání diagnostiky. Přidejte následující kód jako poslední řádek v `AnalyzeNode`:
+Právě přidaný kód zajišťuje, že proměnná nebude změněna, a je proto možné ji `const`vytvořit. Je čas vyvolat diagnostiku. Jako poslední řádek `AnalyzeNode`přidejte následující kód:
 
 ```csharp
 context.ReportDiagnostic(Diagnostic.Create(Rule, context.Node.GetLocation()));
 ```
 
-Průběh můžete zkontrolovat stisknutím kombinace kláves **F5** ke spouštění vaší analyzer. Můžete načíst konzolové aplikace, kterou jste vytvořili dříve a pak přidejte následující kód testu:
+Svůj průběh můžete zjistit stisknutím klávesy **F5** ke spuštění analyzátoru. Můžete načíst konzolovou aplikaci, kterou jste vytvořili dříve, a pak přidat následující zkušební kód:
 
 ```csharp
 int x = 0;
 Console.WriteLine(x);
 ```
 
-Žárovky by se měla objevit a vaše analyzátor ohlaste diagnostiku. Ale žárovky stále používá vygenerovanou šablonu opravu kódu a zjistíte, že ji můžete nastavit na velká písmena. V další části vysvětluje, jak napsat kód opravy.
+Měla by se zobrazit žárovka a analyzátor by měl ohlásit diagnostiku. Žárovka však stále používá opravu kódu vygenerovanou šablonou a oznamuje vám, že může být proveden na velká písmena. V další části se dozvíte, jak napsat opravu kódu.
 
-## <a name="write-the-code-fix"></a>Zápis opravy kódu
+## <a name="write-the-code-fix"></a>Zapsat opravu kódu
 
-Analyzátor můžete zadat jednu nebo více oprav kódu. Oprava kódu definuje úpravy, které řeší nahlášeného problému. Pro analyzátor, který jste vytvořili mohli zajistit opravu kódu, který se vkládá const – klíčové slovo:
+Analyzátor může poskytovat jednu nebo více oprav kódu. Oprava kódu definuje úpravu, která řeší nahlášený problém. Pro analyzátor, který jste vytvořili, můžete zadat opravu kódu, která vloží klíčové slovo const:
 
 ```csharp
 const int x = 0;
 Console.WriteLine(x);
 ```
 
-Uživatel vybere z žárovky uživatelského rozhraní v editoru a sady Visual Studio změny kódu.
+Uživatel zvolí tuto možnost z uživatelského rozhraní žárovky v editoru a Visual Studio změní kód.
 
-Otevřít **MakeConstCodeFixProvider.cs** soubory přidané pomocí šablony.  Tato oprava kódu je již svázanou s ID diagnostiky vytvářených diagnostického analyzátoru, ale ještě neimplementuje transformace správný kód. Nejdřív byste měli odebrat některé kód šablony. Změna názvu řetězec "Zkontrolujte konstanta":
+Otevřete soubor **MakeConstCodeFixProvider.cs** , který šablona přidala.  Tato oprava kódu je již zapojena do ID diagnostiky vytvořeného analyzátorem diagnostiky, ale ještě neimplementuje správnou transformaci kódu. Nejprve byste měli odebrat některý kód šablony. Změňte řetězec nadpisu na "vytvořit konstantu":
 
 [!code-csharp[Update the CodeFix title](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CodeFixTitle "Update the CodeFix title")]
 
-V dalším kroku odstranit `MakeUppercaseAsync` metody. To už neplatí.
+Dále odstraňte `MakeUppercaseAsync` metodu. Už se nepoužívá.
 
-Všichni poskytovatelé opravu kódu jsou odvozeny z <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider>. Všechny přepsat <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)?displayProperty=nameWithType> hlášení opravy kódu k dispozici. V `RegisterCodeFixesAsync`, změňte typ uzlu předchůdce hledáte k <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> tak, aby odpovídaly diagnostiky:
+Všichni poskytovatelé oprav kódu jsou <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider>odvozeni z. Všechny jsou popsány <xref:Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider.RegisterCodeFixesAsync(Microsoft.CodeAnalysis.CodeFixes.CodeFixContext)?displayProperty=nameWithType> , aby nahlásily dostupné opravy kódu. V `RegisterCodeFixesAsync`nástroji změňte typ nadřazeného uzlu, který hledáte <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> , aby odpovídal diagnostice:
 
 [!code-csharp[Find local declaration node](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FindDeclarationNode  "Find the local declaration node that raised the diagnostic")]
 
-V dalším kroku změňte poslední řádek k registraci opravu kódu. Jste kód opravili správně vytvoří nový dokument, který je výsledkem přidání `const` modifikátor na existující deklaraci:
+Dále změňte poslední řádek pro registraci opravy kódu. Vaše oprava vytvoří nový dokument, který je výsledkem přidání `const` modifikátoru k existující deklaraci:
 
 [!code-csharp[Register the new code fix](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#RegisterCodeFix  "Register the new code fix")]
 
-Můžete si všimnout červenou vlnovkou v kódu, kterou jste právě přidali na symbol `MakeConstAsync`. Přidat deklaraci `MakeConstAsync` , jako je následující kód:
+Všimněte si červené vlnovky v kódu, který jste právě přidali na symbol `MakeConstAsync`. Přidejte deklaraci `MakeConstAsync` jako následující kód:
 
 ```csharp
 private async Task<Document> MakeConstAsync(Document document,
@@ -214,13 +214,13 @@ private async Task<Document> MakeConstAsync(Document document,
 }
 ```
 
-Vaše nová `MakeConstAsync` metoda provede transformaci <xref:Microsoft.CodeAnalysis.Document> představující uživatele zdrojový soubor do nového <xref:Microsoft.CodeAnalysis.Document> , která teď obsahuje `const` deklarace.
+Vaše nová `MakeConstAsync` metoda provede <xref:Microsoft.CodeAnalysis.Document> transformaci zdrojového souboru uživatele do `const` nového <xref:Microsoft.CodeAnalysis.Document> , který nyní obsahuje deklaraci.
 
-Vytvoření nového `const` – klíčové slovo token pro vložení do přední části příkazu deklarace. Dejte pozor, abyste nejdřív odebrat všechny úvodní triviální prvek z první token příkazu deklarace a připojte ji k `const` token. Přidejte následující kód, který `MakeConstAsync` metody:
+Vytvoříte nový `const` token klíčového slova pro vložení na začátek prohlášení. Buďte opatrní, abyste nejdřív odebrali všechny úvodní minihry z prvního tokenu příkazu deklarace a připojili ho k `const` tokenu. Do `MakeConstAsync` metody přidejte následující kód:
 
 [!code-csharp[Create a new const keyword token](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CreateConstToken  "Create the new const keyword token")]
 
-V dalším kroku přidejte `const` token deklarace pomocí následujícího kódu:
+Dále přidejte `const` token k deklaraci pomocí následujícího kódu:
 
 ```csharp
 // Insert the const token into the modifiers list, creating a new modifiers list.
@@ -231,41 +231,41 @@ var newLocal = trimmedLocal
     .WithDeclaration(localDeclaration.Declaration);
 ```
 
-V dalším kroku naformátujte nové deklarace tak, aby odpovídaly pravidla formátování C#. Lepší prostředí pro formátování provedené změny tak, aby odpovídaly existujícího kódu vytvoří. Přidejte následující příkaz ihned po existující kód:
+Dále naformátujte novou deklaraci tak C# , aby odpovídala pravidlům formátování. Formátování změn tak, aby odpovídalo existujícímu kódu, vytvoří lepší prostředí. Přidejte následující příkaz hned za existující kód:
 
 [!code-csharp[Format the new declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FormatLocal  "Format the new declaration")]
 
-Nový obor názvů se vyžaduje pro tento kód. Přidejte následující `using` příkaz do horní části souboru:
+Pro tento kód je vyžadován nový obor názvů. Do horní části `using` souboru přidejte následující příkaz:
 
 ```csharp
 using Microsoft.CodeAnalysis.Formatting;
 ```
 
-Posledním krokem je provést úpravy. K tomuto procesu tři kroky:
+Posledním krokem je provedení úprav. Tento postup má tři kroky:
 
-1. Získejte popisovač pro k existujícímu dokumentu.
-1. Vytvoření nového dokumentu tak, že nahradíte existující deklarace s novou deklaraci.
+1. Získejte popisovač pro existující dokument.
+1. Vytvořte nový dokument nahrazením existující deklarace novou deklarací.
 1. Vrátí nový dokument.
 
-Přidejte následující kód do konce `MakeConstAsync` metody:
+Na konec `MakeConstAsync` metody přidejte následující kód:
 
 [!code-csharp[replace the declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceDocument  "Generate a new document by replacing the declaration")]
 
-Jste kód opravili správně kódu připravená k vyzkoušení.  Stisknutím klávesy F5 spusťte analyzátor projektu ve druhé instanci aplikace Visual Studio. Ve druhé instanci aplikace Visual Studio vytvořte nový projekt konzolové aplikace jazyka C# a přidejte několik místní deklarace proměnných inicializována s konstantní hodnoty do metody Main. Uvidíte, že jsou hlášeny jako varování, jak je uvedeno níže.
+Oprava kódu je připravená k vyzkoušení.  Stisknutím klávesy F5 spusťte projekt analyzátoru v druhé instanci aplikace Visual Studio. Ve druhé instanci sady Visual Studio vytvořte nový C# projekt konzolové aplikace a přidejte několik deklarací místních proměnných inicializovaných s konstantními hodnotami do metody Main. Uvidíte, že jsou hlášeny jako upozornění, jak je uvedeno níže.
 
-![Může být const upozornění](media/how-to-write-csharp-analyzer-code-fix/make-const-warning.png)
+![Může vytvořit konstantní upozornění.](media/how-to-write-csharp-analyzer-code-fix/make-const-warning.png)
 
-Jsme udělali spoustu průběh. Existují podtržení vlnovkou v rámci deklarace, které mohou být provedeny `const`. Ale bude stále na práci není. To funguje správně, pokud přidáte `const` deklaracích počínaje `i`, pak `j` a nakonec `k`. Ale pokud přidáte `const` modifikátor v jiném pořadí, počínaje `k`, vaše analyzátor vytvoří chyby: `k` nejde použít deklaraci `const`, není-li `i` a `j` jsou již `const`. Máte s nimi dělat další analýzy k zajištění, že zpracovávat různé způsoby proměnné mohou být deklarovány a inicializovány.
+Provedli jste spoustu pokroku. V deklaracích, které mohou být provedeny `const`, jsou vlnovky. I když ale pořád funguje. To funguje dobře `i`, pokud přidáte `const` do deklarací, které začínají na, `j` a nakonec `k`a nakonec. Pokud `const` však přidáte modifikátor v jiném pořadí, `k`počínaje verzí, váš analyzátor vytvoří chyby: `k` nelze deklarovat `const`, pokud `i` již `const`nejsou a `j` . Máte možnost provést další analýzu, abyste se ujistili, že je možné zpracovat různé způsoby, které lze deklarovat a inicializovat.
 
-## <a name="build-data-driven-tests"></a>Vytvořit testy řízené daty
+## <a name="build-data-driven-tests"></a>Vytváření testů řízených daty
 
-Analyzátoru a kódu opravit práce v jednoduchém případě jedné deklarace, které můžete provést const. Existuje mnoho příkazy možné deklarace, kde je tato implementace chyby. Při práci s knihovnou testovací jednotky zapsány pomocí šablony budete řešit tyto případy. Je mnohem rychlejší než opakovaného otevírání druhé kopie sady Visual Studio.
+Analyzátor a oprava kódu fungují na jednoduchém případu jedné deklarace, která může být vytvořena jako const. Existuje mnoho možných příkazů deklarace, kde tato implementace způsobuje chyby. Tyto případy se řeší při práci s knihovnou testu jednotek zapsanou šablonou. Je mnohem rychlejší než opakované otevření druhé kopie sady Visual Studio.
 
-Otevřít **MakeConstUnitTests.cs** souboru v projektu testování částí. Šablona vytvoří dva testy, které následují dvě běžné vzory pro analyzátor a testování částí opravu kódu. `TestMethod1` ukazuje, že vzor pro test, který zajišťuje, analyzátor nebude hlásit Diagnostika v případě, že by se neměly. `TestMethod2` ukazuje vzor pro vytváření sestav Diagnostika a spuštěný opravu kódu.
+Otevřete soubor **MakeConstUnitTests.cs** v projektu testování částí. Šablona vytvořila dva testy, které následují dva běžné vzory pro analyzátor a opravu testování částí kódu. `TestMethod1`zobrazuje vzor testu, který zajišťuje, že analyzátor neohlásí diagnostiku, pokud by neměl. `TestMethod2`zobrazuje vzor pro vytváření sestav diagnostiky a spuštění opravy kódu.
 
-Kód pro téměř každý test pro vaše analyzátor používá jednu z těchto dvou vzorků. Pro první krok můžete tyto testy Přepracujte jako testy řízené daty. Pak bude možné snadno vytvořit nové testy tak, že přidáte nový řetězec konstanty k reprezentaci různých testovací vstupy.
+Kód pro téměř každý test pro analyzátor následuje po jednom z těchto dvou vzorů. V prvním kroku můžete tyto testy přepracovat jako testy řízené daty. Pak bude snadné vytvořit nové testy přidáním nových řetězcových konstant pro reprezentaci různých testovacích vstupů.
 
-Z důvodu efektivity prvním krokem je lze refaktorovat dva testy do testy řízené daty. Potom stačí definovat několik řetězcové konstanty pro každý nový test. Při vaší refaktoring přejmenování obě metody lepší názvy. Nahraďte `TestMethod1` je vyvolána s tímto testem, který zajišťuje žádné diagnostiky:
+V rámci efektivity je prvním krokem refaktorování dvou testů do testů řízených daty. Pak stačí definovat několik řetězcových konstant pro každý nový test. I když refaktoring, přejmenujte obě metody pro lepší názvy. Nahraďte `TestMethod1` tímto testem, který zajišťuje, že se neaktivuje žádná diagnostika:
 
 ```csharp
 [DataTestMethod]
@@ -276,9 +276,9 @@ public void WhenTestCodeIsValidNoDiagnosticIsTriggered(string testCode)
 }
 ```
 
-Nový řádek dat pro tento test můžete vytvořit tak, že definujete jakékoli fragment kódu, který by nemělo způsobit vaší diagnostiky pro aktivaci upozornění. Toto přetížení `VerifyCSharpDiagnostic` úspěšný, pokud neexistují žádné diagnostiky pro fragment kódu zdroje.
+Můžete vytvořit nový řádek dat pro tento test definováním jakékoli fragmenty kódu, který by neměl způsobit, že diagnostika spustí upozornění. Toto přetížení předává, `VerifyCSharpDiagnostic` když není pro fragment zdrojového kódu aktivována žádná Diagnostika.
 
-V dalším kroku nahraďte `TestMethod2` tento test, který zajišťuje diagnostiky se vyvolá, a oprava kódu u zdroje fragment kódu:
+Dále nahraďte `TestMethod2` tímto testem, který zajistí vyvolání diagnostiky, a opravu kódu použitou pro fragment zdrojového kódu:
 
 ```csharp
 [DataTestMethod]
@@ -306,15 +306,15 @@ public void WhenDiagnosticIsRaisedFixUpdatesCode(
 }
 ```
 
-Předchozí kód také provedli několik změn kódu, který sestaví očekávaný výsledek diagnostiky. Používá veřejné konstanty zaregistrovaný v `MakeConst` analyzátor. Kromě toho používá dva řetězcové konstanty pro zdroje vstupu a oprava. Přidejte následující konstanty na řetězec `UnitTest` třídy:
+Předchozí kód také provedl několik změn kódu, který vytváří očekávaný výsledek diagnostiky. Používá veřejné konstanty registrované v `MakeConst` analyzátoru. Kromě toho používá dvě řetězcové konstanty pro vstupní a pevný zdroj. Do `UnitTest` třídy přidejte následující řetězcové konstanty:
 
 [!code-csharp[string constants for fix test](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
 
-Spusťte tyto dva testy, abyste měli jistotu, že bude úspěšné. V sadě Visual Studio, otevřete **Průzkumník testů** tak, že vyberete **testovací** > **Windows** > **Průzkumník testů**.  Stiskněte klávesu **spustit všechny** odkaz.
+Spusťte tyto dva testy, abyste se ujistili, že jsou průchody. V aplikaci Visual Studio otevřete **Průzkumníka testů** výběrem **test** > **Průzkumník testů** **systému Windows** > .  Stiskněte odkaz **Spustit vše** .
 
 ## <a name="create-tests-for-valid-declarations"></a>Vytvořit testy pro platné deklarace
 
-Jako obecné pravidlo má analyzátory ukončit co nejrychleji, provádění minimálním úsilím. Visual Studio volání analyzátory zaregistrovaný jako uživatelského kódu pro úpravy. Schopnost reagovat je klíčovým požadavkem. Existuje několik testovacích případů pro kód, který by neměl zvýšit vaši diagnostiky. Vaše analyzátor již zpracovává jeden z těchto testů, případ, kdy se po jejich inicializaci přiřazenou proměnnou. Přidejte následující konstantu řetězce do testů pro reprezentaci případ:
+Obecně platí, že analyzátory by měly skončit co nejrychleji, což má minimální práci. Visual Studio volá zaregistrované analyzátory jako kód úprav uživatele. Odezva je klíčovým požadavkem. Existuje několik testovacích případů pro kód, který by neměl vyvolat diagnostiku. Analyzátor již zpracovává jeden z těchto testů, případ, kdy je přiřazena proměnná po inicializaci. Přidejte následující řetězcovou konstantu do testů pro reprezentaci tohoto případu:
 
 [!code-csharp[variable assigned](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VariableAssigned "a variable that is assigned after being initialized won't raise the diagnostic")]
 
@@ -327,25 +327,25 @@ Pak přidejte řádek dat pro tento test, jak je znázorněno v následujícím 
 public void WhenTestCodeIsValidNoDiagnosticIsTriggered(string testCode)
 ```
 
-Tento test úspěšný také. V dalším kroku přidejte konstanty pro podmínky, které nebyly dosud zpracovány:
+Tento test se také projde. Dále přidejte konstanty pro podmínky, které jste ještě nezpracovali:
 
-* Deklarace, které jsou již `const`, protože jsou již const:
+- Deklarace, které jsou `const`již, protože jsou již const:
 
    [!code-csharp[already const declaration](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#AlreadyConst "a declaration that is already const should not raise the diagnostic")]
 
-* Deklarace, které mají žádný inicializátor, protože neexistuje žádná hodnota používat:
+- Deklarace, které nemají žádný inicializátor, protože neexistuje žádná hodnota, která se má použít:
 
    [!code-csharp[declarations that have no initializer](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#NoInitializer "a declaration that has no initializer should not raise the diagnostic")]
 
-* Deklarace, kde inicializátor není konstantní, protože nemohou být konstanty z doby kompilace:
+- Deklarace, kde inicializátor není konstanta, protože nemohou být konstanty v čase kompilace:
 
    [!code-csharp[declarations where the initializer isn't const](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#InitializerNotConstant "a declaration where the initializer is not a compile-time constant should not raise the diagnostic")]
 
-Může být ještě složitější, protože C# umožňuje více deklarací jako jeden příkaz. Vezměte v úvahu následující řetězcová konstanta testovacího případu:
+Může být ještě složitější, protože C# umožňuje více deklarací v rámci jednoho příkazu. Vezměte v úvahu následující řetězcové konstanty testovacího případu:
 
 [!code-csharp[multiple initializers](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#MultipleInitializers "A declaration can be made constant only if all variables in that statement can be made constant")]
 
-Proměnná `i` provádět – konstanta, ale proměnná `j` nelze. Proto tento příkaz nelze nastavit jako deklarace const. Přidat `DataRow` deklarace pro tyto testy:
+Proměnná `i` může být vytvořená jako konstanta, ale `j` proměnná ale nemůže. Proto tento příkaz nelze vytvořit jako deklaraci konstanty. `DataRow` Přidejte deklarace pro všechny tyto testy:
 
 ```csharp
 [DataTestMethod]
@@ -358,17 +358,17 @@ Proměnná `i` provádět – konstanta, ale proměnná `j` nelze. Proto tento p
 public void WhenTestCodeIsValidNoDiagnosticIsTriggered(string testCode)
 ```
 
-Znovu spusťte testy a zobrazí se vám tyto nové testovací případy selhání.
+Spusťte testy znovu a uvidíte, že tyto nové testovací případy selžou.
 
-## <a name="update-your-analyzer-to-ignore-correct-declarations"></a>Aktualizujte vaše analyzátor ignorovat správné deklarace
+## <a name="update-your-analyzer-to-ignore-correct-declarations"></a>Aktualizace analyzátoru tak, aby ignoroval správné deklarace
 
-V analyzéru je potřeba určitá vylepšení `AnalyzeNode` metoda odfiltrovat kód, který splňuje tyto podmínky. Všechny související podmínky jsou podobné změny budou opravit tyto podmínky. Proveďte následující změny `AnalyzeNode`:
+K odfiltrování kódu, který splňuje `AnalyzeNode` tyto podmínky, potřebujete nějaké vylepšení metody analyzátoru. Jsou to všechny související podmínky, takže podobné změny vyřeší všechny tyto podmínky. Proveďte následující změny `AnalyzeNode`:
 
-* Sémantická analýza prozkoumat jedné deklarace proměnné. Tento kód musí být v `foreach` smyčku, která zkontroluje všechny proměnné deklarované ve stejném příkazu.
-* Každou deklaraci proměnných musí mít inicializátor.
-* Inicializátor každé deklarované proměnné musí být konstanta za kompilace.
+- Vaše Sémantická analýza prozkoumala deklaraci jedné proměnné. Tento kód musí být ve `foreach` smyčce, která prověřuje všechny proměnné deklarované ve stejném příkazu.
+- Každá deklarovaná proměnná musí mít inicializátor.
+- Každý inicializátor deklarované proměnné musí být konstanta v čase kompilace.
 
-Ve vaší `AnalyzeNode` metoda, nahraďte původní sémantické analýzy:
+`AnalyzeNode` V metodě nahraďte původní sémantickou analýzu:
 
 ```csharp
 // Perform data flow analysis on the local declaration.
@@ -384,7 +384,7 @@ if (dataFlowAnalysis.WrittenOutside.Contains(variableSymbol))
 }
 ```
 
-Pomocí následujícího fragmentu kódu:
+s následujícím fragmentem kódu:
 
 ```csharp
 // Ensure that all variables in the local declaration have initializers that
@@ -419,40 +419,40 @@ foreach (var variable in localDeclaration.Declaration.Variables)
 }
 ```
 
-První `foreach` smyčky zkontroluje každou deklaraci proměnné pomocí syntaktické analýzy. První kontrola zaručuje, že má proměnná inicializátor. Druhý kontrola zaručuje, že inicializátoru je konstanta. Druhý smyčka má původní sémantické analýzy. Sémantické kontroly jsou v samostatné smyčky, protože má větší vliv na výkon. Znovu spusťte testy a měli byste vidět jejich předávání.
+První `foreach` smyčka prověřuje každou deklaraci proměnné pomocí syntaktické analýzy. První ověření zaručuje, že proměnná má inicializátor. Druhá kontrolu garantuje, že inicializátor je konstanta. Druhá smyčka má původní sémantickou analýzu. Sémantické kontroly jsou samostatné smyčky, protože mají větší vliv na výkon. Spusťte testy znovu a měli byste je vidět, že jsou všechny passované.
 
-## <a name="add-the-final-polish"></a>Přidejte poslední polština
+## <a name="add-the-final-polish"></a>Přidat konečný polský
 
-Už jste téměř hotovi. Existuje několik další podmínky pro vaše analyzátor pro zpracování. Visual Studio volá analyzátory, když uživatel píše kód. Je často případ, který vaše analyzátor bude volána pro kód, který nepodporuje kompilaci. Diagnostického analyzátoru `AnalyzeNode` metoda nekontroluje, jestli je konstantní hodnoty lze převést na typ proměnné. Ano, aktuální implementace využívá elastic převést nesprávná deklarace například int i = "abc" "na lokální konstanta. Přidáte konstantu zdrojové řetězce pro tuto podmínku:
+Už jste téměř hotovi. Analyzátor může zpracovat několik dalších podmínek. Visual Studio volá analyzátory, zatímco uživatel píše kód. Často se jedná o případ, kdy se analyzátor bude volat pro kód, který se nekompiluje. `AnalyzeNode` Metoda diagnostického analyzátoru nekontroluje, zda je konstantní hodnota převoditelná na typ proměnné. Aktuální implementace tak bude Happily převést nesprávnou deklaraci, jako je int i = "ABC", na místní konstantu. Přidat řetězcovou konstantu zdrojového řetězce pro tuto podmínku:
 
 [!code-csharp[Mismatched types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
 
-Kromě toho nejsou správně zpracovány typy odkazů. Pouze konstantní hodnota povolená pro typ odkazu je `null`, s výjimkou v tomto případě <xref:System.String?displayProperty=nameWIthType>, což umožňuje řetězcové literály. Jinými slovy `const string s = "abc"` je právní, ale `const object s = "abc"` není. Tento fragment kódu ověří tuto podmínku:
+Odkazové typy se navíc nezpracovávají správně. Jediná hodnota konstanty povolená pro odkazový typ `null`je, s výjimkou <xref:System.String?displayProperty=nameWIthType>případu, který umožňuje řetězcové literály. Jinými slovy, `const string s = "abc"` je právní, ale `const object s = "abc"` není. Tento fragment kódu ověřuje tuto podmínku:
 
 [!code-csharp[Reference types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsntString "When the variable type is a reference type other than string, there's no diagnostic")]
 
-Bude důkladné, budete muset přidat další test, abyste měli jistotu, že můžete vytvořit deklaraci konstanty pro řetězec. Následující fragment kódu definuje kód, který vyvolá diagnostickou i kód po použití opravy:
+Chcete-li být důkladnější, je nutné přidat další test, abyste se ujistili, že můžete vytvořit konstantní deklarace pro řetězec. Následující fragment kódu definuje kód, který vyvolává diagnostiku, a kód po použití opravy:
 
 [!code-csharp[string reference types raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#ConstantIsString "When the variable type is string, it can be constant")]
 
-Nakonec pokud je proměnná deklarována s `var` – klíčové slovo, nemá špatného opravu kódu a generuje `const var` prohlášení, což není podporováno v jazyce C#. Chcete-li vyřešit tuto chybu, musíte nahradit opravu kódu `var` – klíčové slovo s názvem odvozený typ:
+Nakonec, pokud je proměnná deklarována s `var` klíčovým slovem, oprava kódu nesprávné věci a `const var` vygeneruje deklaraci, která není C# jazykem podporována. Chcete-li opravit tuto chybu, oprava kódu musí nahradit `var` klíčové slovo názvem odvozeného typu:
 
 [!code-csharp[var references need to use the inferred types](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#VarDeclarations "Declarations made using var must have the type replaced with the inferred type")]
 
-Tyto změny aktualizují data řádku deklarace pro oba testy. Následující kód ukazuje tyto testy se všechny atributy řádků dat:
+Tyto změny aktualizují deklarace datových řádků pro oba testy. Následující kód ukazuje tyto testy se všemi atributy datových řádků:
 
 [!code-csharp[The finished tests](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FinishedTests "The finished tests for the make const analyzer")]
 
-Naštěstí všechny výše uvedené chyby se dají řešit pomocí stejné techniky, které právě jste se dozvěděli.
+Naštěstí můžete všechny výše uvedené chyby vyřešit pomocí stejných technik, které jste právě naučili.
 
-Chcete-li oprava první chyby, nejdřív otevřete **DiagnosticAnalyzer.cs** a vyhledejte smyčky foreach, kde každý z místní deklarace inicializátory jsou zkontrolovány Ujistěte se, že jsou přiřazení konstantní hodnoty. Okamžitě _před_ první smyčka foreach, volání `context.SemanticModel.GetTypeInfo()` načíst podrobnosti o deklarovaný typ lokální deklarace:
+Chcete-li opravit první chybu, nejprve otevřete **DiagnosticAnalyzer.cs** a vyhledejte smyčku foreach, kde jsou zkontrolovány jednotlivé Inicializátory místní deklarace, aby bylo zajištěno, že jsou přiřazeny pomocí konstantních hodnot. Bezprostředně _před_ první smyčkou foreach volejte `context.SemanticModel.GetTypeInfo()` , aby načetla podrobné informace o deklarovaném typu místní deklarace:
 
 ```csharp
 var variableTypeName = localDeclaration.Declaration.Type;
 var variableType = context.SemanticModel.GetTypeInfo(variableTypeName).ConvertedType;
 ```
 
-Potom v rámci vaší `foreach` opakovat, zkontrolujte každý inicializační výraz, ujistěte se, že je lze převést na typ proměnné. Přidejte následující kontroly až se ujistíte, že inicializátoru je konstanta:
+Potom v rámci `foreach` smyčky zkontrolujte každý inicializátor a ujistěte se, že je převoditelné na typ proměnné. Po ověření, že inicializátor je konstanta, přidejte následující kontrolu:
 
 ```csharp
 // Ensure that the initializer value can be converted to the type of the
@@ -464,7 +464,7 @@ if (!conversion.Exists || conversion.IsUserDefined)
 }
 ```
 
-Další změně staví na poslední z nich. Před uzavírací složenou závorku prvního foreach smyčky, přidejte následující kód pro kontrolu typu místní deklarace při konstanty je řetězec nebo hodnota null.
+Další změny se vytvoří po poslední. Před pravou složenou závorkou první smyčky foreach přidejte následující kód pro zkontrolování typu místní deklarace, je-li konstanta řetězec nebo hodnota null.
 
 ```csharp
 // Special cases:
@@ -485,30 +485,30 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 }
 ```
 
-Je nutné napsat kód o něco více ve zprostředkovateli opravu kódu k nahrazení var' – klíčové slovo s názvem správného typu. Vraťte se na **CodeFixProvider.cs**. Kód, který přidáte provede následující kroky:
+Chcete-li nahradit klíčové slovo var správným názvem typu, je nutné ve svém poskytovateli opravy kódu napsat trochu větší kód. Vraťte se na **CodeFixProvider.cs**. Kód, který přidáte, provede následující kroky:
 
-* Zkontrolujte, jestli je deklarace `var` deklarace, a pokud je:
-* Vytvoření nového typu odvozeného typu.
-* Ujistěte se, že deklarace typu není alias. Pokud ano, je možné deklarovat `const var`.
-* Ujistěte se, že `var` není název typu v rámci tohoto programu. (Pokud ano, `const var` je platný).
-* Zjednodušení úplný název typu
+- Ověřte, zda je `var` deklarace deklarace, a pokud je:
+- Vytvoří nový typ pro odvozený typ.
+- Ujistěte se, že deklarace typu není alias. V takovém případě je právní deklarace `const var`platná.
+- Ujistěte se, `var` že v tomto programu není název typu. (Pokud ano, `const var` je právní).
+- Zjednodušit úplný název typu
 
-Že zdá se, že velké množství kódu. Není. Nahraďte řádek, který deklaruje a inicializuje `newLocal` následujícím kódem. Prochází hned po inicializaci `newModifiers`:
+Tyto zvuky jako velké množství kódu. Není to. Nahraďte řádek, který deklaruje a inicializuje `newLocal` , pomocí následujícího kódu. Hned po inicializaci `newModifiers`:
 
 [!code-csharp[Replace Var designations](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceVar "Replace a var designation with the explicit type")]
 
-Bude nutné, aby vám ho přidal `using` příkaz k použití <xref:Microsoft.CodeAnalysis.Simplification.Simplifier> typu:
+Je nutné přidat jeden `using` příkaz pro <xref:Microsoft.CodeAnalysis.Simplification.Simplifier> použití typu:
 
 ```csharp
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-Spuštění testů a bude by všechny úspěšné. Spuštěním na dokončení analyzátor Blahopřání sami. Načíst, stiskněte Ctrl + F5 ke spuštění projektu analyzátor v druhé instance sady Visual Studio s rozšířením Roslyn ve verzi Preview.
+Spusťte testy a všechny by měly být passované. Congratulate se tak, že spustíte kompletní analyzátor. Stisknutím kombinace kláves CTRL + F5 spusťte projekt analyzátoru v druhé instanci sady Visual Studio s načteným rozšířením Roslyn Preview.
 
-* Ve druhé instanci aplikace Visual Studio vytvořte nový projekt konzolové aplikace jazyka C# a přidejte `int x = "abc";` do metody Main. Díky první oprava chyby bez upozornění by se měly hlásit pro deklarace lokální proměnné (i když dochází k chybě kompilátoru podle očekávání).
-* V dalším kroku přidejte `object s = "abc";` do metody Main. Z důvodu druhý oprava chyby by se měly hlásit bez upozornění.
-* Nakonec přidejte další místní proměnná, která používá `var` – klíčové slovo. Uvidíte, že upozornění je hlášeno a návrh se zobrazí pod vlevo.
-* Přesune blikající kurzor editoru přes podtržení vlnovkou a stiskněte klávesu Ctrl +. Chcete-li zobrazit opravu navrhované kódu. Po výběru kód opravit, Všimněte si, že var' – klíčové slovo nyní správně zpracovaly.
+- Ve druhé instanci sady Visual Studio vytvořte nový C# projekt konzolové aplikace a přidejte `int x = "abc";` ho do metody Main. Děkujeme, že při první opravě chyby by se pro tuto místní proměnnou proměnné nemělo hlásit žádné upozornění (i když dojde k chybě kompilátoru, jak se očekávalo).
+- Dále přidejte `object s = "abc";` do metody Main. Z důvodu druhé opravy chyby by se nemělo hlásit žádné upozornění.
+- Nakonec přidejte další místní proměnnou, která používá `var` klíčové slovo. Uvidíte, že se nahlásí upozornění a na levé straně se zobrazí návrh.
+- Přesuňte kurzor editoru na podtržení vlnovkou a stiskněte kombinaci kláves CTRL +. pro zobrazení navrhované opravy kódu. Po výběru opravy kódu si všimněte, že klíčové slovo var se nyní zpracovává správně.
 
 Nakonec přidejte následující kód:
 
@@ -518,11 +518,11 @@ int j = 32;
 int k = i + j;
 ```
 
-Po provedení těchto změn získat červenou vlnovkou jenom na prvních dvou proměnných. Přidat `const` zároveň `i` a `j`, a získat nové upozornění `k` vzhledem k tomu, že teď může být `const`.
+Po těchto změnách získáte červené vlnovky pouze první dvě proměnné. Přidejte `const` do obou `i` `k` `const`a `j`a zobrazí se nové upozornění, protože se teď může jednat o.
 
-Blahopřejeme! Vytvořili jste své první rozšíření .NET Compiler Platform, který provádí analýzu kódu na průběžné rozpoznat potíže a nabízí rychlé opravy na opravu. Na cestě když jste se naučili řadu kódu rozhraní API, která jsou součástí sady SDK platformy kompilátoru .NET (rozhraní Roslyn API). Můžete zkontrolovat práce proti [úplnou vzorovou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) v našem úložišti GitHub s ukázkami. Nebo si můžete stáhnout [soubor zip dokončení projektu](https://github.com/dotnet/samples/blob/master/csharp/roslyn-sdk/Tutorials/MakeConst.zip)
+Blahopřejeme! Vytvořili jste první rozšíření .NET Compiler Platform, které provádí průběžnou analýzu kódu k detekci problému a nabízí rychlou opravu pro její opravu. Na cestě jste se naučili mnoho rozhraní API kódu, která jsou součástí sady .NET Compiler Platform SDK (rozhraní API Roslyn). Práci s [dokončenou ukázkou](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/Tutorials/MakeConst) najdete v našem úložišti GitHub Samples. Nebo si můžete stáhnout [soubor zip dokončeného projektu](https://github.com/dotnet/samples/blob/master/csharp/roslyn-sdk/Tutorials/MakeConst.zip)
 
 ## <a name="other-resources"></a>Další zdroje
 
 - [Začínáme s analýzou syntaxe](../get-started/syntax-analysis.md)
-- [Začínáme s sémantická analýza](../get-started/semantic-analysis.md)
+- [Začínáme se sémantickou analýzou](../get-started/semantic-analysis.md)

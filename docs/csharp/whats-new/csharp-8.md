@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: bf67baba926effd012ae01d3d802ba921e41ad5a
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 14c86fe4b1ecd1c89ebbbb082c5c9956bc51e03e
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363893"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105513"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -16,10 +16,10 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Členové jen pro čtení](#readonly-members)
 - [Výchozí členové rozhraní](#default-interface-members)
 - [Vylepšení porovnávání vzorů](#more-patterns-in-more-places):
-  * [Výrazy Switch](#switch-expressions)
-  * [Vzory vlastností](#property-patterns)
-  * [Vzory řazené kolekce členů](#tuple-patterns)
-  * [Poziční vzory](#positional-patterns)
+  - [Výrazy Switch](#switch-expressions)
+  - [Vzory vlastností](#property-patterns)
+  - [Vzory řazené kolekce členů](#tuple-patterns)
+  - [Poziční vzory](#positional-patterns)
 - [Používání deklarací](#using-declarations)
 - [Statické místní funkce](#static-local-functions)
 - [Struktury odkazů na jedno použití](#disposable-ref-structs)

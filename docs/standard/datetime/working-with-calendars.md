@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28e1979b6ceb1b343764900cc7d49a576a7a4030
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e92d5564308d31609b9fb024f3d3368a19b76b1d
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630545"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106704"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -30,39 +30,39 @@ Ačkoli hodnoty data a času představují konkrétní časový okamžik, je ře
 
 Všechny kalendáře v rozhraní .NET jsou odvozeny z <xref:System.Globalization.Calendar?displayProperty=nameWithType> třídy, která poskytuje implementaci základního kalendáře. Jedna z tříd, která dědí z <xref:System.Globalization.Calendar> třídy, <xref:System.Globalization.EastAsianLunisolarCalendar> je třída, která je základní třídou pro všechny lunasolární kalendáře. Rozhraní .NET zahrnuje následující implementace kalendáře:
 
-* <xref:System.Globalization.ChineseLunisolarCalendar>, který představuje čínský lunasolární kalendář.
+- <xref:System.Globalization.ChineseLunisolarCalendar>, který představuje čínský lunasolární kalendář.
 
-* <xref:System.Globalization.GregorianCalendar>, který představuje gregoriánský kalendář. Tento kalendář je dále rozdělen na podtypy (například arabština a Střední východ francouzštiny), které jsou definovány <xref:System.Globalization.GregorianCalendarTypes?displayProperty=nameWithType> výčtem. <xref:System.Globalization.GregorianCalendar.CalendarType%2A?displayProperty=nameWithType> Vlastnost určuje podtyp gregoriánského kalendáře.
+- <xref:System.Globalization.GregorianCalendar>, který představuje gregoriánský kalendář. Tento kalendář je dále rozdělen na podtypy (například arabština a Střední východ francouzštiny), které jsou definovány <xref:System.Globalization.GregorianCalendarTypes?displayProperty=nameWithType> výčtem. <xref:System.Globalization.GregorianCalendar.CalendarType%2A?displayProperty=nameWithType> Vlastnost určuje podtyp gregoriánského kalendáře.
 
-* <xref:System.Globalization.HebrewCalendar>, který představuje hebrejský kalendář.
+- <xref:System.Globalization.HebrewCalendar>, který představuje hebrejský kalendář.
 
-* <xref:System.Globalization.HijriCalendar>, který představuje kalendář hidžra.
+- <xref:System.Globalization.HijriCalendar>, který představuje kalendář hidžra.
 
-* <xref:System.Globalization.JapaneseCalendar>, který představuje japonský kalendář.
+- <xref:System.Globalization.JapaneseCalendar>, který představuje japonský kalendář.
 
-* <xref:System.Globalization.JapaneseLunisolarCalendar>, který představuje Japonský lunasolární kalendář.
+- <xref:System.Globalization.JapaneseLunisolarCalendar>, který představuje Japonský lunasolární kalendář.
 
-* <xref:System.Globalization.JulianCalendar>, který představuje juliánské kalendář.
+- <xref:System.Globalization.JulianCalendar>, který představuje juliánské kalendář.
 
-* <xref:System.Globalization.KoreanCalendar>, který představuje korejský kalendář.
+- <xref:System.Globalization.KoreanCalendar>, který představuje korejský kalendář.
 
-* <xref:System.Globalization.KoreanLunisolarCalendar>, který představuje korejský lunasolární kalendář.
+- <xref:System.Globalization.KoreanLunisolarCalendar>, který představuje korejský lunasolární kalendář.
 
-* <xref:System.Globalization.PersianCalendar>, který představuje perské kalendář.
+- <xref:System.Globalization.PersianCalendar>, který představuje perské kalendář.
 
-* <xref:System.Globalization.TaiwanCalendar>, který představuje Tchajwanský kalendář.
+- <xref:System.Globalization.TaiwanCalendar>, který představuje Tchajwanský kalendář.
 
-* <xref:System.Globalization.TaiwanLunisolarCalendar>, který představuje tchajwanský lunasolární kalendář.
+- <xref:System.Globalization.TaiwanLunisolarCalendar>, který představuje tchajwanský lunasolární kalendář.
 
-* <xref:System.Globalization.ThaiBuddhistCalendar>, který představuje thajský buddhistický kalendář.
+- <xref:System.Globalization.ThaiBuddhistCalendar>, který představuje thajský buddhistický kalendář.
 
-* <xref:System.Globalization.UmAlQuraCalendar>, který představuje kalendářní Kalendář Um Al-Qura.
+- <xref:System.Globalization.UmAlQuraCalendar>, který představuje kalendářní Kalendář Um Al-Qura.
 
 Kalendář lze použít jedním ze dvou způsobů:
 
-* Jako kalendář, který používá konkrétní jazyková verze. Každý <xref:System.Globalization.CultureInfo> objekt má aktuální kalendář, což je kalendář, který objekt aktuálně používá. Řetězcové vyjádření hodnot data a času automaticky odrážejí aktuální jazykovou verzi a aktuální kalendář. Aktuálním kalendářem je obvykle výchozí kalendář dané jazykové verze. <xref:System.Globalization.CultureInfo>objekty mají také volitelné kalendáře, které zahrnují další kalendáře, které může jazyková verze používat.
+- Jako kalendář, který používá konkrétní jazyková verze. Každý <xref:System.Globalization.CultureInfo> objekt má aktuální kalendář, což je kalendář, který objekt aktuálně používá. Řetězcové vyjádření hodnot data a času automaticky odrážejí aktuální jazykovou verzi a aktuální kalendář. Aktuálním kalendářem je obvykle výchozí kalendář dané jazykové verze. <xref:System.Globalization.CultureInfo>objekty mají také volitelné kalendáře, které zahrnují další kalendáře, které může jazyková verze používat.
 
-* Jako samostatný kalendář, který není závislý na konkrétní jazykové verzi. V tomto případě <xref:System.Globalization.Calendar> jsou metody použity pro vyjádření kalendářních dat jako hodnoty, které odpovídají kalendáři.
+- Jako samostatný kalendář, který není závislý na konkrétní jazykové verzi. V tomto případě <xref:System.Globalization.Calendar> jsou metody použity pro vyjádření kalendářních dat jako hodnoty, které odpovídají kalendáři.
 
 Všimněte si, že šest tříd <xref:System.Globalization.ChineseLunisolarCalendar>kalendáře <xref:System.Globalization.JapaneseLunisolarCalendar>– <xref:System.Globalization.JulianCalendar>, <xref:System.Globalization.KoreanLunisolarCalendar>, <xref:System.Globalization.PersianCalendar>,, <xref:System.Globalization.TaiwanLunisolarCalendar> a – lze použít pouze jako samostatné kalendáře. Tyto kalendáře nepoužívá žádná jazyková verze jako výchozí kalendář nebo jako volitelný kalendář.
 

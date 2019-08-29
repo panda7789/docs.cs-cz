@@ -1,69 +1,69 @@
 ---
-ms.openlocfilehash: 21266130bd44d45d03f85cdeee9480b7a9944b55
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 303d6790f1e4a42b021de3a214e3e7b44e1a4320
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876937"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104632"
 ---
-# <a name="contributing"></a>Přispívání
+# <a name="contributing"></a>Zvaní
 
-Děkujeme vám za váš zájem o přispívání do dokumentace k .NET.
+Děkujeme za váš zájem o přispívání do dokumentace k .NET.
 
-> Máme právě přesun Naše pokyny v průvodci pro přispěvatele webu. 
-> Nové doprovodné materiály naleznete [Přehled Průvodce pro přispěvatele Microsoftu Docs](https://docs.microsoft.com/contribute/).
+> Právě probíhá přesouvání našich pokynů do Průvodce příspěvkem v rámci nejrůznějších webů. 
+> Nové doprovodné materiály najdete v tématu [Přehled průvodce Microsoft Docsem přispěvatelem](https://docs.microsoft.com/contribute/).
 
-Dokument uvádí i proces pro přispívání do článků a ukázky kódu, které jsou hostované na [webu Dokumentace k .NET](https://docs.microsoft.com/dotnet). Příspěvky může být stejně jednoduché jako opravy překlep nebo komplexního, jako nové články.
+Dokument popisuje proces pro přispívání do článků a ukázek kódu, které jsou hostovány na [webu dokumentace rozhraní .NET](https://docs.microsoft.com/dotnet). Příspěvky můžou být jednoduché jako překlepné opravy nebo jako nové články.
 
-* [Proces pro přispívání](#process-for-contributing)
-* [C# Interaktivní prostředí](#the-c-interactive-experience)
-* [Pro a proti](#dos-and-donts)
-* [Přispěvatel licenční smlouvy](#contributor-license-agreement)
+- [Proces pro přispívání](#process-for-contributing)
+- [C# Interaktivní prostředí](#the-c-interactive-experience)
+- [DOs a DON'Ts](#dos-and-donts)
+- [Licenční smlouva přispěvatele](#contributor-license-agreement)
 
-Toto úložiště obsahuje rámcové dokumentaci pro rozhraní .NET. Webu s dokumentací .NET je sestaven z více úložišť kromě tohle:
+Toto úložiště obsahuje koncepční dokumentaci pro .NET. Kromě tohoto nástroje je web dokumentace .NET sestaven z více úložišť:
 
 - [Ukázky kódu a fragmenty kódu](https://github.com/dotnet/samples)
 - [Referenční dokumentace rozhraní API](https://github.com/dotnet/dotnet-api-docs)
-- [Odkaz na sadu SDK platformy kompilátoru .NET](https://github.com/dotnet/roslyn-api-docs)
+- [Referenční informace k sadě .NET Compiler Platform SDK](https://github.com/dotnet/roslyn-api-docs)
 
-Tady jsou sledovány problémy a úkoly pro všechna tato úložiště.
+Tady se sledují problémy a úkoly pro všechna tato úložiště.
 
 ## <a name="process-for-contributing"></a>Proces pro přispívání
 
-Potřebujete základní znalosti o [Git a webu GitHub.com](https://guides.github.com/activities/hello-world/).
+Budete potřebovat základní porozumění [Gitu a GitHub.com](https://guides.github.com/activities/hello-world/).
 
-**Krok 1:** Přeskočte tento krok pro malé změny (například, pokud oprava překlep nebo okamžitě otevřít žádost o přijetí změn k vyřešení problému, který najdete v dokumentaci). Pokud vás zajímá vytváření nového obsahu nebo důkladně pozměňovacího existující obsah, otevřete [problém](https://github.com/dotnet/docs/issues) popisující, co chcete udělat.
-Obsah uvnitř **dokumentace** složky je uspořádaný do oddílů, které se projeví v tabulce obsah (TOC). Definujte, kde budou umístěny na téma v obsahu. Získáte zpětnou vazbu na váš návrh.
+**Krok 1:** Přeskočit tento krok pro malé změny (například pokud opravíte překlep nebo hned otevřete žádost o přijetí změn, které řeší problém, který najdete v dokumentaci). Pokud vás zajímá psaní nového obsahu nebo důkladné revize stávajícího obsahu, otevřete [problém](https://github.com/dotnet/docs/issues) popisující, co chcete udělat.
+Obsah uvnitř složky **docs** je uspořádán do oddílů, které se projeví v obsahu (obsahu). Definujte, kde bude téma umístěno v obsahu. Získejte zpětnou vazbu k vašemu návrhu.
 
 -nebo-
 
-Můžete také z existující problémy pro které komunitní příspěvky jsou uvítací. [Projekty .NET komunitní přispěvatelé](https://github.com/dotnet/docs/projects/35) obsahuje mnoho pracovních položek, které jsou k dispozici pro komunitní přispěvatelé. V závislosti na vašich zájmech a výši závazku můžete vybrat z problémů v následujících kategoriích:
+Můžete si také vybrat z existujících problémů, pro které jsou příspěvky komunitou Welcome. [Projekty pro přispěvatele komunity .NET](https://github.com/dotnet/docs/projects/35) obsahují mnoho pracovních položek, které jsou k dispozici pro komunitní přispěvatele. V závislosti na vašich zájmech a úrovni závazku si můžete vybrat z problémů v následujících kategoriích:
 
-- **Údržba**. Tato kategorie zahrnuje poměrně jednoduchý příspěvky, jako například opravujete odkazy poškozený nebo není správný, přidání chybějící příklady kódu nebo adresování omezené obsahu problémy. V některých případech může tyto problémy týkají velkého počtu souborů. V takovém případě by měl dejte nám vědět, co jste chtěli pracovat na předtím, než začnete.
+- **Údržba**. Tato kategorie zahrnuje poměrně jednoduché příspěvky, jako je třeba oprava poškozených nebo nesprávných odkazů, přidávání chybějících příkladů kódu nebo adresování omezených problémů s obsahem. V některých případech mohou tyto problémy pobývat se velkým počtem souborů. V takovém případě byste měli sdělit, na co byste chtěli pracovat, než začnete.
 
-- **Obsah aktualizace**. Enormity doc set, obsah jednoduše stanou zastaralými a vyžaduje revizi. Kromě toho pro celou řadu z důvodu nějaký obsah byl duplikován nebo dokonce triplicated. Aktualizace obsahu zahrnuje a ujistěte se, že jednotlivá témata jsou aktuální nebo pozměňovacího obsahu v oblasti funkce pro odstranění duplicity a ujistěte se, že všechny jedinečné obsah se zachová menší dokumentaci nastavit.
+- **Aktualizace obsahu**. Vzhledem k enormity sady dokumentů se obsah snadno zastará a vyžaduje revizi. Kromě toho z různých důvodů byl nějaký obsah duplikován nebo dokonce triplicated. Aktualizace obsahu zahrnuje kontrolu aktuálnosti jednotlivých témat nebo revizi obsahu v oblasti funkcí, aby eliminace duplicit a zajistila zachování veškerého jedinečného obsahu v menší sadě dokumentace.
 
-- **Vytváření nového obsahu**. Pokud vás zajímá vytváření vlastní téma, seznam těchto problémů, témata, která nám jasné, že jsme chtěli přidat do sady naší dokumentace. Dejte nám vědět, než můžete začít pracovat na téma, i když. Pokud vás zajímá vytváření tématu, který tu není uvedený, otevřete problém. 
+- **Nový obsah**, který se vytváří. Pokud vás zajímá vytváření vlastního tématu, tato témata obsahují seznam problémů, které bychom chtěli přidat do naší sady dokumentů. Dejte nám prosím jistotu, než začnete pracovat na tématu, i když. Pokud vás zajímá psaní tématu, které tady není uvedené, otevřete problém. 
 
-Můžete se také podívat na naše [hlásit problémy](https://github.com/dotnet/docs/issues) seznamu a volunteer pracovat na ty, které vás zajímají. Používáme [nahoru pro vezme](https://github.com/dotnet/docs/labels/up-for-grabs) popisku na značky problémy, které jsou otevřené pro příspěvek. 
+Můžete si také prohlédnout náš seznam [otevřených problémů](https://github.com/dotnet/docs/issues) a začít pracovat s těmi, které vás zajímají. Pomocí popisku [up-for-drapáky](https://github.com/dotnet/docs/labels/up-for-grabs) označíte problémy otevřené pro příspěvky. 
 
-**Krok 2:** Fork `dotnet/docs`, `dotnet/samples` nebo `dotnet/dotnet-api-docs` úložišť jako potřeby a vytvořit větev pro vaše změny.
+**Krok 2:** Rozvětvení nebo`dotnet/dotnet-api-docs`úložišť podle potřeby a vytvoření větve pro změny. `dotnet/samples` `dotnet/docs`
 
-Pro malé změny můžete použít webového rozhraní na Githubu. Stačí kliknout **upravte soubor ve svém forku tohoto projektu** na soubor, který chcete změnit. GitHub vytvoří novou větev pro vás, když odešlete změny.
+Pro malé změny můžete použít webové rozhraní GitHubu. Jednoduše klikněte na soubor, ve kterém se nachází **ve větvi tohoto projektu** , na soubor, který chcete změnit. GitHub vytvoří novou větev při odeslání změn.
 
 **Krok 3:** Proveďte změny v této nové větvi.
 
-Pokud je nové téma, můžete to [soubor šablony](./styleguide/template.md) jako výchozí bod. Obsahuje pokyny pro zápis a také vysvětluje metadat, vyžaduje se pro každý článek, jako je například informace o autorovi.
+Pokud se jedná o nové téma, můžete tento [soubor šablony](./styleguide/template.md) použít jako výchozí bod. Obsahuje pokyny pro zápis a také vysvětluje metadata požadovaná pro každý článek, například informace o autorovi.
 
-Přejděte do složky, která odpovídá umístění obsahu pro váš článek v kroku 1.
-Tato složka obsahuje soubory Markdown pro všechny články v této části.
-V případě potřeby vytvořte novou složku pro soubory pro obsah. Je volána v hlavním článku pro daný oddíl *index.md*.
-Pro obrázky a další statické prostředky, vytvořte podsložku nazvanou **media** ve složce, která obsahuje váš článek, pokud ještě neexistuje. Uvnitř **média** složce vytvořte podsložku s názvem článku (s výjimkou souboru indexu).
-Zahrnout větší ukázky *ukázky* složku v kořenovém adresáři úložiště.
+Přejděte do složky, která odpovídá umístění obsahu určenému pro váš článek v kroku 1.
+Tato složka obsahuje soubory Markdownu pro všechny články v této části.
+V případě potřeby vytvořte novou složku, do které se umístí soubory pro svůj obsah. Hlavní článek pro tento oddíl se nazývá *index.MD*.
+V případě obrázků a dalších statických prostředků vytvořte podsložku s názvem **Media** ve složce, která obsahuje váš článek, pokud ještě neexistuje. Uvnitř složky **Media** vytvořte podsložku s názvem článku (kromě souboru indexu).
+Do složky Samples v kořenovém adresáři úložiště přidejte větší vzorky.
 
-Ujistěte se, postupujte podle lze patřičnou syntaxi Markdown. Další informace najdete v tématu [průvodce správným stylem](./styleguide/template.md).
+Nezapomeňte postupovat podle správné syntaxe Markdownu. Další informace najdete v příručce k [stylu](./styleguide/template.md).
 
-### <a name="example-structure"></a>Ukázková struktura
+### <a name="example-structure"></a>Příklad struktury
 
 ```
 docs
@@ -76,82 +76,82 @@ docs
             portability_report.png
 ```
 
-**Krok 4:** Odeslat žádost o přijetí změn požádat o (o přijetí změn) z vaší větve do `dotnet/docs/master`.
+**Krok 4:** Odešlete žádost o přijetí změn z větve do `dotnet/docs/master`.
 
-Vaše žádost o přijetí změn by *vždy* cílové hlavní větvi. Měli byste *nikdy* otevřete žádost o přijetí změn živé větve cílí.
+Vaše žádost o přijetí změn by měla *vždycky* cílit na hlavní větev. *Nikdy* byste neměli otevřít žádost o přijetí změn, která se zaměřuje na živou větev.
 
-Každé žádosti o přijetí změn by měl obvykle adres jedním problémem po jednom. Žádosti o přijetí změn můžete změnit jeden nebo více souborů. Pokud jste adresování více opravy na jiné soubory, jsou upřednostňované samostatné žádosti o přijetí změn.
+Každá žádost o přijetí změn by obvykle měla řešit jeden problém v jednom okamžiku. Žádosti o přijetí změn můžou upravovat jeden nebo víc souborů. Pokud řešíte více oprav v různých souborech, jsou upřednostňovány samostatné pr.
 
-Pokud vaše žádost o přijetí změn řeší stávající problém, přidejte `Fixes #Issue_Number` – klíčové slovo na zprávu potvrzení nebo popis žádosti o přijetí změn. Tímto způsobem, problém je automaticky uzavřena žádosti o přijetí změn se sloučí. Další informace najdete v tématu [uzavírá chyby prostřednictvím zprávy potvrzení](https://help.github.com/articles/closing-issues-via-commit-messages/).
+Pokud vaše žádost o přijetí změn řeší existující problém, přidejte `Fixes #Issue_Number` klíčové slovo do zprávy potvrzení nebo popisu žádosti o přijetí změn. Tímto způsobem se problém automaticky uzavře při sloučení žádosti o přijetí změn. Další informace najdete v tématu [uzavírání problémů prostřednictvím zpráv potvrzení](https://help.github.com/articles/closing-issues-via-commit-messages/).
 
-Tým .NET zkontrolujte vaše žádost o přijetí změn a umožňují zjistit, pokud jsou nezbytné, aby ho schválit aktualizace/změny.
+Tým .NET zkontroluje vaši žádost o přijetí změn a nabídne vám informace o tom, jestli jsou nějaké jiné aktualizace nebo změny potřebné k jejímu schválení.
 
-**Krok 5:** Proveďte potřebné změny do vaší větve, jak je popsáno s týmem.
+**Krok 5:** Proveďte všechny nezbytné aktualizace vaší větve, jak je popsáno v týmu.
 
-Programu dojde ke sloučení vaší žádosti o přijetí změn do hlavní větve po použití zpětnou vazbu a vaše schválení.
+Když se vaše žádost o přijetí změn a vaše změna schválí, budou služby správy slučovat do hlavní větve.
 
-Některé čím dál jsme nasdílení změn všechna potvrzení změn z hlavní větve do živé větve a pak budete moci zobrazit svůj příspěvek, za provozu na https://docs.microsoft.com/dotnet/.
+Na některém tempo zadáváme všechna potvrzení změn z hlavní větve do živé větve a potom budete moct svůj příspěvek zobrazit živě na https://docs.microsoft.com/dotnet/.
 
-### <a name="contributing-to-samples"></a>Přispívání do vzorků
+### <a name="contributing-to-samples"></a>Přispívání do ukázek
 
-Provedeme následující rozlišení pro kód, který existuje v našem úložišti:
+U kódu, který existuje v našem úložišti, provedeme následující rozdíl:
 
-- ukázky: čtenáři můžete stáhnout a spuštění ukázek. Všechny ukázky by měl být kompletních aplikací nebo knihovnami. Pokud vzorovým kódem se vytvoří knihovnu, měl by obsahovat testování částí nebo aplikaci, která umožňuje uživatelům spouštět kód.
+- Ukázky: čtenáři můžou stáhnout a spustit ukázky. Všechny ukázky by měly být kompletní aplikace nebo knihovny. Kde ukázka vytvoří knihovnu, měla by zahrnovat testy jednotek nebo aplikaci, která umožňuje čtenářům spustit kód.
 
-- fragmenty kódu: ilustrují menší koncept nebo úkolu. Jsou kompilovány, ale nejsou určeny k dokončení aplikace.
+- Fragmenty: ilustruje menší koncept nebo úlohu. Zkompiluje, ale nejsou určeny k dokončení aplikací.
 
-Všechny odpovídající kód [dotnet/samples](https://github.com/dotnet/samples) úložiště. Pracujeme na tom k modelu, kde naše ukázky strukturu složek odpovídá strukturu složek naší dokumentace. Standardy, které budeme postupovat podle jsou:
+Celý kód v úložišti [dotnet/Samples](https://github.com/dotnet/samples) . Pracujeme na modelu, ve kterém struktura složek ukázky odpovídá naší struktuře složek docs. Níže jsou uvedené standardy:
 
-- Na nejvyšší úrovni *fragmenty* složka obsahuje fragmenty kódu pro malé a soustředěné ukázky.
-- Ukázky referenční dokumentace rozhraní API se ve složce podle tohoto vzoru: *fragmenty /\<jazyk > /api/\<oboru názvů > /\<apiname >*.
-- Složky nejvyšší úrovně v shodovat s další složky nejvyšší úrovně *dokumentace* úložiště. Například má úložiště dokumentů *machine-learning/kurzy* složky a ukázky pro službu machine learning kurzy jsou v *ukázky/machine-learning/kurzy* složky.
+- Složka fragmenty na nejvyšší úrovni obsahuje fragmenty pro malé a cílené ukázky.
+- Ukázky odkazů na rozhraní API byly ve složce za tímto vzorem: *fragmenty\</jazyk >\<obor názvů/API/\<>/apiname >* .
+- Ostatní složky nejvyšší úrovně odpovídají složkám nejvyšší úrovně v úložišti *docs* . Například úložiště docs má složku *Machine-Learning/kurzy* a ukázky pro kurzy strojového učení jsou ve složce Samples/ *Machine-Learning/kurzy* .
 
-Kromě toho všechny ukázky v části *core* a *standardní* složky by měl sestavit a spustit na všech platformách podporovaných aplikací .NET Core. Náš systém sestavení CI, která vynutí. Na nejvyšší úrovni *framework* složka obsahuje ukázky, které jsou pouze integrované a ověřit na Windows.
+Kromě toho by se všechny ukázky v rámci *základní* a *standardní* složky měly sestavit a spustit na všech platformách, které .NET Core podporuje. Náš systém sestavení CI bude vyhovět. Složka *architektury* nejvyšší úrovně obsahuje ukázky, které jsou sestaveny a ověřovány ve Windows.
 
-Možná budeme dále tyto adresáře, protože úložiště dokumentů přidá nový obsah. Například přidáme Xamarin adresářů, jako je třeba `xamarin-ios` a `xamarin-android` adresáře.
+Tyto adresáře můžeme rozšířit, protože úložiště docs přidává nový obsah. Například přidáme adresáře Xamarin, jako `xamarin-ios` jsou a `xamarin-android` adresáře.
 
-By měl obsahovat každou úplnou ukázku, kterou vytvoříte *readme.md* souboru. Tento soubor by měl obsahovat krátký popis ukázky (jeden nebo dva odstavce). Vaše *readme.md* by vám měl sdělit čtenáři co se dozvíte, ve kterých tuto ukázku. *Readme.md* soubor by měl také obsahovat odkaz na dokument za provozu na [webu Dokumentace k .NET](https://docs.microsoft.com/dotnet/welcome).
-Pokud chcete zjistit, kde se daný soubor v úložišti mapuje na dané lokalitě, nahraďte `/docs` v cestě k úložišti s `https://docs.microsoft.com/dotnet`.
+Každá kompletní ukázka, kterou vytvoříte, by měla obsahovat soubor *Readme.MD* . Tento soubor by měl obsahovat krátký popis ukázky (jeden nebo dva odstavce). Váš *Readme.MD* by měl sdělit čtenářům, co se dozví, pomocí této ukázky. Soubor *Readme.MD* by měl také obsahovat odkaz na živý dokument na [webu dokumentace k rozhraní .NET](https://docs.microsoft.com/dotnet/welcome).
+Pokud chcete zjistit, kde se daný soubor v úložišti mapuje k dané lokalitě, `/docs` nahraďte v `https://docs.microsoft.com/dotnet`cestě k úložišti.
 
-Vaše téma se bude také obsahovat odkazy na ukázky. Přímý odkaz na složku ukázky na Githubu.
+Vaše téma bude obsahovat také odkazy na ukázku. Odkaz přímo na složku ukázky na GitHubu.
 
-Další informace najdete v tématu [ukázky Readme](https://github.com/dotnet/samples/blob/master/README.md).
+Další informace najdete v [souboru Readme ukázek](https://github.com/dotnet/samples/blob/master/README.md).
 
 ## <a name="the-c-interactive-experience"></a>C# Interaktivní prostředí
 
-Krátké ukázky kódu v C# můžete použít `csharp-interactive` značku jazyka k určení C# ukázky, která běží v prohlížeči. (Ukázky použití vloženého kódu `csharp-interactive` označit, pro zahrnuté ze zdroje, fragment kódu používá `code-csharp-interactive` značka.) Tyto ukázky kódu zobrazit okno kódu a oknem výstupu v následujícím článku. V okně výstupu se zobrazí všechny výstupy z provádění interaktivního kódu, jakmile uživatel má spuštění ukázky. 
+Krátké ukázky kódu v C# nástroji můžou použít `csharp-interactive` značku jazyka k určení C# ukázky, která běží v prohlížeči. (Vložené ukázky kódu používají `csharp-interactive` značku pro fragmenty, které jsou součástí zdroje, `code-csharp-interactive` použijte značku.) Tyto ukázky kódu zobrazují okno kódu a výstupní okno v článku. V okně výstup se zobrazí jakýkoli výstup z provádění interaktivního kódu, jakmile uživatel spustí ukázku. 
 
-C# Interaktivní změní, jak Pracujeme s ukázkami. Návštěvníci můžete spuštění ukázky pro zobrazení výsledků. Řadě faktorů pomůže určit, pokud ukázkový nebo odpovídající text by měl obsahovat informace o výstupu.
+C# Interaktivní prostředí mění způsob práce s ukázkami. Návštěvníci můžou ukázku spustit, aby se zobrazily výsledky. Řada faktorů vám pomůže určit, zda má vzorek nebo odpovídající text obsahovat informace o výstupu.
 
-### <a name="when-to-display-the-expected-output-without-running-the-sample"></a>Kdy se má zobrazit očekávaný výstup bez spuštění ukázky
+### <a name="when-to-display-the-expected-output-without-running-the-sample"></a>Kdy zobrazit očekávaný výstup bez spuštění ukázky
 
-- Články, které jsou určené pro začátečníky by měla poskytnout výstup tak, aby se čtenáři můžete porovnat výstup své práce očekávané odpovědí.
-- Ukázky, ve kterém je nedílnou součástí tématu výstupu by se zobrazit tento výstup. Například články o formátovaný text by měl zobrazit v textovém formátu bez spuštění ukázky.
-- Když vzorku a očekávaný výstup je krátký, zvažte zobrazující výstup. Uloží hodně času.
-- Články s vysvětlením, jak aktuální jazykové verze invariantní jazykovou verzi vliv výstup nebo by měl vysvětlit očekávaný výstup. Interaktivní okno REPL (čtení vyhodnotit smyčka tisku) běží na hostiteli se systémem Linux. Výchozí jazykovou verzi a invariantní jazyková verze generovat různé výstup na různé operační systémy a počítače. Článek by měl v systémech Windows, Linux a Mac popisují výstup.
+- Články určené pro začátečníky by měly poskytovat výstup, aby čtenáři mohli porovnat výstup své práce s očekávanou odpovědí.
+- Ukázky, ve kterých je výstup celočíselný pro téma, by měl zobrazit tento výstup. Například články týkající se formátovaného textu by měly zobrazovat textový formát bez spuštění ukázky.
+- Pokud je ukázka i očekávaný výstup krátká, zvažte zobrazení výstupu. Šetří čas.
+- Články vysvětlující, jak aktuální jazyková verze nebo invariantní jazyková verze ovlivňují výstup by měly vysvětlit očekávaný výstup. Interaktivní REPL (čtení vyhodnocení tiskové smyčky) běží na hostiteli se systémem Linux. Výchozí jazyková verze a invariantní jazyková verze vytváří různý výstup v různých operačních systémech a počítačích. Článek by měl vysvětlit výstup v systémech Windows, Linux a Mac.
 
-### <a name="when-to-exclude-expected-output-from-the-sample"></a>Kdy se mají vyloučit očekávaný výstup z ukázky 
+### <a name="when-to-exclude-expected-output-from-the-sample"></a>Kdy se má vyřadit očekávaný výstup z ukázky 
 
-- Články, ve kterém ukázka generuje větší výstup, který by neměl obsahovat v komentářích. Po spuštění ukázky zakrývá kód.
-- Články, kde ukázce tématu, ale výstup není celočíselný k jeho pochopení. Například kód, který spustí dotaz LINQ vysvětlují syntaxe dotazu a pak zobrazí všechny položky v kolekci výstup.
+- Články, ve kterých ukázka vygeneruje větší výstup by neměl obsahovat v komentářích. Po spuštění ukázkového kódu ho skryje.
+- Články, ve kterých Ukázka ukazuje téma, ale výstup není integrální pro porozumění. Například kód, který spouští dotaz LINQ pro vysvětlení syntaxe dotazu a následně zobrazuje každou položku v kolekci výstupu.
 
-## <a name="dos-and-donts"></a>Pro a proti
+## <a name="dos-and-donts"></a>DOs a DON'Ts
 
-Následující seznam uvádí některé hlavní pravidla, které jste měli vzít v úvahu při při přispívání do dokumentace k .NET:
+Následující seznam obsahuje pravidla pro GUID, která byste měli mít na paměti při přispívání do dokumentace rozhraní .NET:
 
-- **Není** překvapí nám s žádostí o přijetí změn velké. Místo toho založte problém a vytvořit diskusi tak jsme můžou dohodnout na směru, než investovat velké množství času.
-- **PROVEĎTE** čtení [průvodce správným stylem](./styleguide/template.md) a [pro hlasové hovory a tón](./styleguide/voice-tone.md) pokyny.
-- **PROVEĎTE** použít [šablony](./styleguide/template.md) soubor jako výchozí bod své práce.
-- **PROVEĎTE** vytvořit samostatné větvi ve vašem forku před zahájením práce v článcích.
-- **PROVEĎTE** postupujte [pracovního postupu GitHub Flow](https://guides.github.com/introduction/flow/).
-- **PROVEĎTE** blogu a tweet (nebo cokoli jiného) vaše příspěvky, často!
+- Nedělejte si u velkých žádostí o přijetí změn. Místo toho nahlaste problém a začněte diskuzi, abychom mohli vyjádřit souhlas s orientací ještě před tím, než investovat velké množství času.
+- Přečtěte si článek [Průvodce stylem](./styleguide/template.md) a pokyny pro [hlasové a tónové](./styleguide/voice-tone.md) funkce.
+- Použijte soubor [šablony](./styleguide/template.md) jako výchozí bod vaší práce.
+- Než začnete pracovat na článcích, vytvořte na svém rozvětve samostatnou větev.
+- Postupujte podle [pracovního postupu Flow GitHub](https://guides.github.com/introduction/flow/).
+- **Udělejte to** na blogu (nebo cokoli) o příspěvcích, často!
 
-> Poznámka: můžete si všimnout, že některá témata jsou aktuálně po všech pokynů tady zadané a na [průvodce správným stylem](./styleguide/template.md) také. Pracujeme dosahování konzistence v celém webu. Zkontrolujte seznam [hlásit problémy](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) jsme se aktuálně sledování pro tento konkrétní cíl.
+> Poznámka: můžete si všimnout, že některá témata aktuálně nejsou v současné době podle všech uvedených pokynů a také v [Průvodci styly](./styleguide/template.md) . Pracujeme na dosažení konzistence v celé lokalitě. Podívejte se na seznam [otevřených problémů](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Aguidelines-adherence) , které aktuálně sledujeme pro konkrétní cíl.
 
-## <a name="contributor-license-agreement"></a>Přispěvatel licenční smlouvy
+## <a name="contributor-license-agreement"></a>Licenční smlouva přispěvatele
 
-Musíte podepsat [.NET Foundation licenční smlouvy (CLA)](https://cla.dotnetfoundation.org) předtím, než se vaše žádost o přijetí změn sloučí. Toto je jednorázový požadavek pro projekty .NET Foundation. Další informace o [licenční smlouvy (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement) v encyklopedii Wikipedia.
+Před sloučením žádosti o přijetí změn musíte podepsat [licenční smlouvu .NET Foundation (cla)](https://cla.dotnetfoundation.org) . Jedná se o jednorázový požadavek pro projekty v rozhraní .NET Foundation. Můžete si přečíst další informace o [licenčních smlouvách k příspěvcích (cla)](https://en.wikipedia.org/wiki/Contributor_License_Agreement) na Wikipedii.
 
-Smlouva: [net-foundation příspěvek licence agreement.pdf](https://github.com/dotnet/home/blob/master/guidance/net-foundation-contribution-license-agreement.pdf)
+Smlouva: [NET-Foundation-Contribution-License-Agreement. PDF](https://github.com/dotnet/home/blob/master/guidance/net-foundation-contribution-license-agreement.pdf)
 
-Není nutné k podepsání smlouvy předem. Můžete klonování forku a odeslání vaší žádosti o přijetí změn jako obvykle. Když se vaše žádost o přijetí změn, je klasifikován sloupcem robotem. Pokud je jednoduchá změna (například jste opravili překlep), pak žádosti o přijetí změn je označena `cla-not-required`. V opačném případě je klasifikován tak `cla-required`. Po podepsání CLA aktuální a všechny budoucí žádosti jsou označeny jako `cla-signed`.
+Smlouvu nemusíte podepsat předem. Můžete naklonovat, rozvětvit a odeslat žádost o přijetí změn obvyklým způsobem. Když je vaše žádost o přijetí změn vytvořená, klasifikuje ji robotka CLA. Pokud je změna triviální (například jste opravili překlep), je žádost o přijetí změn označena `cla-not-required`. V opačném případě je klasifikován `cla-required`jako. Po podepsání CLA se aktuální a všechny budoucí žádosti o přijetí změn označí jako `cla-signed`.

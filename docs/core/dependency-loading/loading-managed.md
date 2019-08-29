@@ -4,12 +4,12 @@ description: Popis podrobností algoritmu načítání spravovaného sestavení 
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: f368e2c20039f8679186a8d806850c9c92be8d3a
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: bf95cbd0eebed064f0198ae9b0f7a4288a938f8a
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70017335"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105369"
 ---
 # <a name="managed-assembly-loading-algorithm"></a>Algoritmus načítání spravovaného sestavení
 
@@ -48,20 +48,20 @@ Následující algoritmus popisuje, jak modul runtime načítá spravované sest
     - Viz tabulka výše.
 
 2. Pro metody aktivní <xref:System.Runtime.Loader.AssemblyLoadContext> načte sestavení. `Load-by-name` V pořadí podle priority podle:
-    * Probíhá kontrola `cache-by-name`.
+    - Probíhá kontrola `cache-by-name`.
 
-    * <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> Volání funkce.
+    - <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> Volání funkce.
 
-    * Kontroluje se <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> mezipaměť instancí a spouští se [výchozí logika pro zjišťování spravovaného sestavení](default-probing.md#managed-assembly-default-probing) .
+    - Kontroluje se <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> mezipaměť instancí a spouští se [výchozí logika pro zjišťování spravovaného sestavení](default-probing.md#managed-assembly-default-probing) .
 
-    * Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost pro aktivní AssemblyLoadContext.
+    - Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost pro aktivní AssemblyLoadContext.
 
-    * Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
+    - Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
 
 3. Pro ostatní typy zatížení `active` <xref:System.Runtime.Loader.AssemblyLoadContext> načte sestavení. V pořadí podle priority podle:
-    * Probíhá kontrola `cache-by-name`.
+    - Probíhá kontrola `cache-by-name`.
 
-    * Načítání ze zadané cesty nebo nezpracovaného objektu sestavení.
+    - Načítání ze zadané cesty nebo nezpracovaného objektu sestavení.
 
 4. V obou případech, pokud je sestavení nově načteno, pak:
    - <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType> Událost je vyvolána.

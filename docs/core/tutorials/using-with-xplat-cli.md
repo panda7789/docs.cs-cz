@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 08/07/2019
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 88e9501a776a026a311c5002674c15acf2324f2b
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: a680a4b58927d915e887eea43a72983a5b349682
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868595"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105048"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -47,8 +47,8 @@ Podívejme se na stručný návod:
 
    Soubor projektu určuje vše potřebné k obnovení závislostí a sestavování programu.
 
-   * `OutputType` Značka určuje, že vytváříme spustitelný soubor, a to v jiných slovech konzolové aplikace.
-   * `TargetFramework` Značka určuje, jakou implementaci .NET cílíme. V pokročilém scénáři můžete zadat více cílových rozhraní a sestavit je pro všechny v rámci jedné operace. V tomto kurzu se podíváme na vytváření jenom pro .NET Core 2,1.
+   - `OutputType` Značka určuje, že vytváříme spustitelný soubor, a to v jiných slovech konzolové aplikace.
+   - `TargetFramework` Značka určuje, jakou implementaci .NET cílíme. V pokročilém scénáři můžete zadat více cílových rozhraní a sestavit je pro všechny v rámci jedné operace. V tomto kurzu se podíváme na vytváření jenom pro .NET Core 2,1.
 
    `Program.cs`:
 

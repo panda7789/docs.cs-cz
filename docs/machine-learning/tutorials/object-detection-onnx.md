@@ -3,15 +3,15 @@ title: 'Kurz: Rozpoznávání objektů pomocí hloubkového učení s ONNX a ML.
 description: V tomto kurzu se dozvíte, jak pomocí předem připraveného modelu ONNX hloubkového učení v ML.NET detekovat objekty v obrázcích.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 08/01/2019
+ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e44ea5795beb90bafe3faf0bafb463d49ba1fc41
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: deb7258326428cca01ea8734e0dc010c29177cfa
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868729"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106864"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: Rozpoznávání objektů pomocí ONNX v ML.NET
 
@@ -21,11 +21,11 @@ Naučte se používat předem vyškolený model ONNX v ML.NET ke zjišťování 
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
-> * Pochopení problému
-> * Zjistěte, co je ONNX a jak funguje s ML.NET
-> * Pochopení modelu
-> * Opakované použití předem připraveného modelu
-> * Detekovat objekty s načteným modelem
+> - Pochopení problému
+> - Zjistěte, co je ONNX a jak funguje s ML.NET
+> - Pochopení modelu
+> - Opakované použití předem připraveného modelu
+> - Detekovat objekty s načteným modelem
 
 ## <a name="pre-requisites"></a>Požadavky
 
@@ -117,7 +117,7 @@ Teď, když máte obecné informace o tom, co ONNX je a jak malý YOLOv2 funguje
 
 Otevřete soubor *program.cs* a na začátek souboru přidejte následující `using` další příkazy:
 
-[!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L1-L9)]
+[!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L1-L7)]
 
 Dále definujte cesty různých prostředků. 
 
@@ -125,7 +125,7 @@ Dále definujte cesty různých prostředků.
 
     [!code-csharp [GetAbsolutePath](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L66-L74)]
 
-1. Pak uvnitř `Main` metody vytvořte pole pro uložení umístění vašich assetů:
+1. Pak uvnitř `Main` metody vytvořte pole pro uložení umístění vašich assetů.
 
     [!code-csharp [AssetDefinition](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L17-L21)]
 
@@ -178,76 +178,6 @@ Vytvořte třídu předpovědi v adresáři *datastruktuře* .
 
 [!code-csharp [InitMLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L24)]
 
-### <a name="add-helper-methods"></a>Přidat pomocné metody
-
-Poté, co model provede předpovědi, která se běžně označuje jako bodování, a výstupy byly zpracovány, musí být na obrázku vykreslena ohraničující pole. Uděláte to tak, že přidáte metodu nazvanou `DrawBoundingBox` `GetAbsolutePath` pod insode metody *program.cs*.
-
-```csharp
-private static void DrawBoundingBox(string inputImageLocation, string outputImageLocation, string imageName, IList<YoloBoundingBox> filteredBoundingBoxes)
-{
-
-}
-```
-
-Nejdřív načtěte obrázek a v `DrawBoundingBox` metodě Získejte rozměry výšky a šířky.
-
-[!code-csharp [LoadImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L78-L81)]
-
-Pak vytvořte smyčku For-Each k iterování každého ohraničovacího pole zjištěného modelem.
-
-```csharp
-foreach (var box in filteredBoundingBoxes)
-{
-
-}
-```
-
-Uvnitř smyčky for-each Získejte rozměry ohraničovacího rámečku.
-
-[!code-csharp [GetBBoxDimensions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L86-L89)]
-
-Vzhledem k tomu, že rozměry ohraničovacího rámečku odpovídají vstupnímu typu `416 x 416`, Škálujte rozměry ohraničovacího pole tak, aby odpovídaly skutečné velikosti obrázku.
-
-[!code-csharp [ScaleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L92-L95)]
-
-Pak definujte šablonu pro text, který se apear nad každým ohraničujícím polem. Text bude obsahovat třídu objektu uvnitř příslušného ohraničovacího rámečku a také jistotu.
-
-[!code-csharp [DefineBBoxText](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L98)]
-
-Chcete-li kreslit na obrázek, převeďte jej na [`Graphics`](xref:System.Drawing.Graphics) objekt.
-
-```csharp
-using (Graphics thumbnailGraphic = Graphics.FromImage(image))
-{
-    
-}
-```
-
-[`Graphics`](xref:System.Drawing.Graphics) V bloku `using` kódu vyladění nastavení objektu grafiky.
-
-[!code-csharp [TuneGraphicSettings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L102-L104)]
-
-Níže můžete nastavit možnosti písma a barvy pro text a ohraničovací rámeček.
-
-[!code-csharp [SetColorOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L106-L114)]
-
-Vytvořte a vyplňte obdélník nad ohraničujícím polem, který bude obsahovat text pomocí [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle*) metody. To vám pomůže kontrastovat text a zlepšit čitelnost.
-
-[!code-csharp [DrawTextBackground](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L117)]
-
-Pak nakreslete text a ohraničovací rámeček na obrázku pomocí [`DrawString`](xref:System.Drawing.Graphics.DrawString*) metod a. [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle*)
-
-[!code-csharp [DrawClassAndBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L118-L121)]
-
-Mimo smyčku For-Each přidejte kód pro uložení obrázků v `outputDirectory`.
-
-[!code-csharp [SaveImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L125-L130)]
-
-Chcete-li získat další zpětnou vazbu, že aplikace provádí předpovědi podle očekávání za běhu, přidejte `LogDetectedObjects` metodu nazvanou `DrawBoundingBox` pod metodu v souboru *program.cs* pro výstup zjištěných objektů do konzoly.
-
-[!code-csharp [LogOuptuts](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L133-L143)]
-
-Obě tyto metody budou užitečné, pokud model vyprodukuje výstupy a ty byly zpracovány. Nejprve ale vytvořte funkci pro zpracování výstupů modelu.
 
 ## <a name="create-a-parser-to-post-process-model-outputs"></a>Vytvoření analyzátoru pro výstupy modelu po zpracování
 
@@ -344,7 +274,7 @@ Nyní, když jsou vytvořeny třídy dimenzí a ohraničujících polí, je čas
     - `CELL_HEIGHT`je výška jedné buňky v mřížce obrázku.
     - `channelStride`je počáteční pozice aktuální buňky v mřížce.
 
-    Když model narazí na obrázek, rozdělí `416px x 416px`vstup do mřížky buněk na `13 x 13`velikost. Každá buňka obsahuje hodnotu `32px x 32px`. V každé buňce jsou 5 ohraničujících polí, z nichž každý obsahuje 5 funkcí (x, y, Šířka, Výška, spolehlivost). Kromě toho každý ohraničovací rámeček obsahuje pravděpodobnost každé třídy, která v tomto případě je 20. Každá buňka proto obsahuje 125 informací (5 funkcí + 20 pravděpodobností třídy). 
+    Když model vytvoří předpověď, označovanou také jako bodování, rozdělí `416px x 416px` vstupní obrázek do mřížky buněk `13 x 13`velikosti. Každá buňka obsahuje hodnotu `32px x 32px`. V každé buňce jsou 5 ohraničujících polí, z nichž každý obsahuje 5 funkcí (x, y, Šířka, Výška, spolehlivost). Kromě toho každý ohraničovací rámeček obsahuje pravděpodobnost každé třídy, která v tomto případě je 20. Každá buňka proto obsahuje 125 informací (5 funkcí + 20 pravděpodobností třídy). 
 
 `channelStride` Pro všechna 5 ohraničovacích rámečků vytvořte seznam ukotvení:
 
@@ -560,7 +490,7 @@ Stejně jako u následného zpracování je několik kroků v postupu hodnocení
 
     [!code-csharp [LoadModelLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L47-L49)]
 
-    Kanály ml.NET obvykle očekávají, že data budou fungovat při [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) volání metody. V takovém případě se použije proces podobný školení. Vzhledem k tomu, že nedojde k žádnému skutečnému školení, je přijatelné použít [`IDataView`](xref:Microsoft.ML.IDataView)prázdné. Vytvořte nový [`IDataView`](xref:Microsoft.ML.IDataView) pro kanál z prázdného seznamu.
+    Kanály ml.NET musí znát schéma dat, aby fungovalo při [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) volání metody. V takovém případě se použije proces podobný školení. Vzhledem k tomu, že nedojde k žádnému skutečnému školení, je přijatelné použít [`IDataView`](xref:Microsoft.ML.IDataView)prázdné. Vytvořte nový [`IDataView`](xref:Microsoft.ML.IDataView) pro kanál z prázdného seznamu.
 
     [!code-csharp [LoadEmptyIDV](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L52)]    
 
@@ -608,7 +538,13 @@ Už to skoro je! Teď je čas na to, aby se všechno používalo.
 
 ## <a name="detect-objects"></a>Detekovat objekty
 
-Po dokončení celého nastavení je čas detekovat některé objekty. V rámci metody třídy program.cs přidejte příkaz try-catch. `Main`
+Po dokončení celého nastavení je čas detekovat některé objekty. Začněte tím, že přidáte odkazy na skore a analyzátor ve vaší třídě *program.cs* .
+
+[!code-csharp [ReferenceScorerParser](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L8-L9)]
+
+### <a name="score-and-parse-model-outputs"></a>Skóre a analýza výstupů modelu
+
+V rámci metody třídy program.cs přidejte příkaz try-catch. `Main`
 
 ```csharp
 try
@@ -633,7 +569,78 @@ Nyní je čas pro krok po zpracování. Vytvořte instanci `YoloOutputParser` a 
 
 [!code-csharp [ParsePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L39-L44)]
 
-Až se výstup modelu zpracuje, je čas vykreslit ohraničovací rámečky na obrázcích. Vytvořte smyčku for-Loop pro iteraci každého z imagí s hodnocením.
+Až se výstup modelu zpracuje, je čas vykreslit ohraničovací rámečky na obrázcích. 
+
+### <a name="visualize-predictions"></a>Vizualizovat předpovědi
+
+Poté, co model vyhodnotí obrázky a byly zpracovány výstupy, musí být ohraničovací pole vykreslena na obrázku. Uděláte to tak, že do *program.cs*přidáte `DrawBoundingBox` metodu, `GetAbsolutePath` která je volána pod metodou.
+
+```csharp
+private static void DrawBoundingBox(string inputImageLocation, string outputImageLocation, string imageName, IList<YoloBoundingBox> filteredBoundingBoxes)
+{
+
+}
+```
+
+Nejdřív načtěte obrázek a v `DrawBoundingBox` metodě Získejte rozměry výšky a šířky.
+
+[!code-csharp [LoadImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L78-L81)]
+
+Pak vytvořte smyčku For-Each k iterování každého ohraničovacího pole zjištěného modelem.
+
+```csharp
+foreach (var box in filteredBoundingBoxes)
+{
+
+}
+```
+
+Uvnitř smyčky for-each Získejte rozměry ohraničovacího rámečku.
+
+[!code-csharp [GetBBoxDimensions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L86-L89)]
+
+Vzhledem k tomu, že rozměry ohraničovacího rámečku odpovídají vstupnímu typu `416 x 416`, Škálujte rozměry ohraničovacího pole tak, aby odpovídaly skutečné velikosti obrázku.
+
+[!code-csharp [ScaleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L92-L95)]
+
+Pak definujte šablonu pro text, který se apear nad každým ohraničujícím polem. Text bude obsahovat třídu objektu uvnitř příslušného ohraničovacího rámečku a také jistotu.
+
+[!code-csharp [DefineBBoxText](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L98)]
+
+Chcete-li kreslit na obrázek, převeďte jej na [`Graphics`](xref:System.Drawing.Graphics) objekt.
+
+```csharp
+using (Graphics thumbnailGraphic = Graphics.FromImage(image))
+{
+    
+}
+```
+
+[`Graphics`](xref:System.Drawing.Graphics) V bloku `using` kódu vyladění nastavení objektu grafiky.
+
+[!code-csharp [TuneGraphicSettings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L102-L104)]
+
+Níže můžete nastavit možnosti písma a barvy pro text a ohraničovací rámeček.
+
+[!code-csharp [SetColorOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L106-L114)]
+
+Vytvořte a vyplňte obdélník nad ohraničujícím polem, který bude obsahovat text pomocí [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle*) metody. To vám pomůže kontrastovat text a zlepšit čitelnost.
+
+[!code-csharp [DrawTextBackground](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L117)]
+
+Pak nakreslete text a ohraničovací rámeček na obrázku pomocí [`DrawString`](xref:System.Drawing.Graphics.DrawString*) metod a. [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle*)
+
+[!code-csharp [DrawClassAndBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L118-L121)]
+
+Mimo smyčku For-Each přidejte kód pro uložení obrázků v `outputDirectory`.
+
+[!code-csharp [SaveImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L125-L130)]
+
+Pro další zpětnou vazbu, kterou aplikace provádí předpovědi podle očekávání za běhu, přidejte metodu, `LogDetectedObjects` která je `DrawBoundingBox` volána pod metodou v souboru *program.cs* pro výstup zjištěných objektů do konzoly.
+
+[!code-csharp [LogOuptuts](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L133-L143)]
+
+Teď, když máte pomocné metody k vytvoření vizuální zpětné vazby z předpovědi, přidejte smyčku for-Loop k iterování všech imagí s hodnocením.
 
 ```csharp
 for (var i = 0; i < images.Count(); i++)
@@ -650,7 +657,7 @@ Níže použijte `DrawBoundingBox` metodu pro vykreslení ohraničujících pol�
 
 [!code-csharp [DrawBBoxes](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L52)]
 
-Nakonec přidejte do `LogDetectedObjects` metody logiku protokolování.
+Nakonec použijte `LogDetectedObjects` metodu pro výstup předpovědi do konzoly.
 
 [!code-csharp [LogPredictionsOutput](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L54)]
 
@@ -704,11 +711,11 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
-> * Pochopení problému
-> * Zjistěte, co je ONNX a jak funguje s ML.NET
-> * Pochopení modelu
-> * Opakované použití předem připraveného modelu
-> * Detekovat objekty s načteným modelem
+> - Pochopení problému
+> - Zjistěte, co je ONNX a jak funguje s ML.NET
+> - Pochopení modelu
+> - Opakované použití předem připraveného modelu
+> - Detekovat objekty s načteným modelem
 
 Podívejte se na úložiště GitHub Samples Machine Learning a prozkoumejte ukázku detekce rozbaleného objektu.
 > [!div class="nextstepaction"]

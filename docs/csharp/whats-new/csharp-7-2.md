@@ -1,61 +1,61 @@
 ---
-title: Co je nového v jazyce C# 7.2
-description: Přehled nových funkcí v jazyce C# 7.2.
+title: Co je nového v C# 7,2
+description: Přehled nových funkcí v C# 7,2.
 ms.date: 08/16/2017
-ms.openlocfilehash: 79402c9b569cb6848aaf240d83ba71338d525b35
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: a2010b2bda769a625deb545964a2cc127aaf2e06
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347417"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105744"
 ---
-# <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
+# <a name="whats-new-in-c-72"></a>Co je nového v C# 7,2
 
-C# 7.2 je jiný bod. Tato verze přidává řadu užitečných funkcí.
-Jeden motiv pro tuto verzi je efektivnější práci s typy hodnot se vyhnout zbytečným kopie nebo přidělení.
+C#7,2 je další vydání bodu, které přidává řadu užitečných funkcí.
+Jeden motiv pro tuto verzi je efektivnější pracovat s typy hodnot, protože se vyhnete zbytečným kopiím nebo přidělením.
 
-Zbývající součásti jsou malé, nice mají funkce.
+Zbývající funkce jsou malé, skvělé funkce.
 
-Používá C# 7.2 [výběr verze jazyka](../language-reference/configure-language-version.md) konfigurační prvek a vyberte verzi jazyka kompilátoru.
+C#7,2 používá prvek konfigurace [výběru jazykové verze](../language-reference/configure-language-version.md) k výběru verze jazyka kompilátoru.
 
-Nové funkce jazyků v této verzi jsou:
+Nové funkce jazyka v této verzi jsou:
 
-* [Techniky pro psaní bezpečného kódu efektivní](#safe-efficient-code-enhancements)
-  - Kombinace syntaxe vylepšení, které umožňují práci s typy hodnot pomocí odkazové sémantiky.
-* [Nekoncové pojmenované argumenty](#non-trailing-named-arguments)
-  - Pojmenované argumenty může být následován poziční argumenty.
-* [Úvodní podtržítka v numerických literálech](#leading-underscores-in-numeric-literals)
-  - Číselné literály teď můžou mít úvodní podtržítka před všechny tištěné číslice.
-* [`private protected` Modifikátor přístupu](#private-protected-access-modifier)
-  - `private protected` Modifikátor přístupu umožňuje přístup pro odvozené třídy ve stejném sestavení.
-* [Podmíněné `ref` výrazy](#conditional-ref-expressions)
-  - Výsledek podmíněného výrazu (`?:`) teď může být odkaz.
+- [Techniky pro psaní bezpečného efektivního kódu](#safe-efficient-code-enhancements)
+  - Kombinace vylepšení syntaxe, která umožňuje práci s typy hodnot pomocí sémantiky odkazů.
+- [Nekoncové pojmenované argumenty](#non-trailing-named-arguments)
+  - Pojmenované argumenty mohou následovat Poziční argumenty.
+- [Počáteční podtržítka v numerických literálech](#leading-underscores-in-numeric-literals)
+  - Číselné literály teď můžou mít počáteční podtržítka před všemi vytištěnými číslicemi.
+- [`private protected`modifikátor přístupu](#private-protected-access-modifier)
+  - Modifikátor `private protected` přístupu umožňuje přístup pro odvozené třídy ve stejném sestavení.
+- [Podmíněné `ref` výrazy](#conditional-ref-expressions)
+  - Výsledek podmíněného výrazu (`?:`) nyní může být odkazem.
 
-Zbývající část tohoto článku poskytuje přehled o jednotlivých funkcí. Pro jednotlivé funkce dozvíte zdůvodnění. Dozvíte syntaxe. Můžete prozkoumat tyto funkce v prostředí pomocí `dotnet try` globální nástroje:
+Zbývající část tohoto článku poskytuje přehled jednotlivých funkcí. U každé funkce se dozvíte, co je důvod na pozadí. Naučíte se syntaxí. Pomocí `dotnet try` globálního nástroje můžete prozkoumat tyto funkce ve vašem prostředí:
 
-1. Nainstalujte [dotnet – zkuste](https://github.com/dotnet/try/blob/master/README.md#setup) globální nástroj.
-1. Klonování [dotnet/try-samples](https://github.com/dotnet/try-samples) úložiště.
-1. Nastavit aktuální adresář *csharp7* podadresář pro *try-samples* úložiště.
+1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
+1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
+1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *Try-Samples* .
 1. Spusťte `dotnet try`.
 
-## <a name="safe-efficient-code-enhancements"></a>Vylepšení bezpečné efektivní kódu
+## <a name="safe-efficient-code-enhancements"></a>Bezpečné efektivní vylepšení kódu
 
-Jazykových funkcí 7.2 zavedený umožňují pracovat s typy hodnot a zároveň pomocí odkazové sémantiky. Jsou určené ke zvýšení výkonu minimalizací kopírování hodnotové typy bez dalších nákladů na přidělení paměti spojených s použitím typy odkazů. Mezi funkce patří:
+Jazykové funkce představené v 7,2 umožňují pracovat s typy hodnot při použití sémantiky odkazů. Jsou navržené tak, aby zvýšily výkon tím, že minimalizují typy hodnot, aniž by došlo k přidělení paměti spojené s použitím typů odkazů. Mezi funkce patří:
 
-- `in` Modifikátor parametrů k určení, zda je argument předaný odkazem, ale nedojde ke změně ve volané metody. Přidání `in` modifikátor na argument [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes).
-- `ref readonly` Modifikátor metoda vrátí hodnotu označující, že metoda vrátí jeho hodnota podle odkazu, ale neumožňuje zápisy do tohoto objektu. Přidání `ref readonly` modifikátor [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes), pokud je vrácená přiřadit hodnotu. Přidávání `readonly` Modifikátor pro stávající `ref` návratový příkaz je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Vyžaduje volající aktualizovat deklarace `ref` místní proměnné k zahrnutí `readonly` modifikátor.
-- `readonly struct` Deklarace můžete určit, že struktura je neměnná a mají být předány jako `in` parametr metody jeho členů. Přidání `readonly` modifikátor na existující deklaraci struktury [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
-- `ref struct` Deklarace můžete určit, že typu Struktura přistupuje k nim spravované paměti přímo a musí vždy zásobníku přidělovat. Přidávání `ref` Modifikátor pro stávající `struct` deklarace je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). A `ref struct` nemůže být členem třídy nebo použít v jiných umístěních, kde mohou být přiděleny do haldy.
+- `in` Modifikátor u parametrů pro určení, že argument je předán odkazem, ale není upravován metodou volané. Přidání modifikátoru k argumentu je [Změna ve zdroji kompatibilní se zdrojem](version-update-considerations.md#source-compatible-changes). `in`
+- `ref readonly` Modifikátor metody se vrátí, aby označoval, že metoda vrací svou hodnotu odkazem, ale nepovoluje zápisy do tohoto objektu. Přidání modifikátoru je změna ve zdroji, která je [kompatibilní se zdrojem](version-update-considerations.md#source-compatible-changes), pokud je vrácená hodnota přiřazena k hodnotě. `ref readonly` Přidání modifikátoru k existujícímu `ref` příkazu return je [nekompatibilní změna.](version-update-considerations.md#incompatible-changes) `readonly` Vyžaduje, aby volající aktualizovali deklaraci `ref` místních proměnných, aby `readonly` obsahoval modifikátor.
+- Deklarace, která označuje, že struktura je neměnný a měla by být předána `in` jako parametr jeho členským metodám. `readonly struct` Přidání modifikátoru k existující deklaraci struktury je [binární kompatibilní změna.](version-update-considerations.md#binary-compatible-changes) `readonly`
+- `ref struct` Deklarace, která označuje, že typ struktury přistupuje přímo k spravované paměti a musí se vždy přidělit zásobníku. Přidání modifikátoru k existující `struct` deklaraci je [nekompatibilní změna.](version-update-considerations.md#incompatible-changes) `ref` Objekt `ref struct` nemůže být členem třídy ani použit v jiných umístěních, kde může být přidělena na haldu.
 
-Můžete si přečíst další informace o všech těchto změn v [psát bezpečný kód efektivní](../write-safe-efficient-code.md).
+Můžete si přečíst další informace o všech těchto změnách v [bezpečném kódu pro zápis](../write-safe-efficient-code.md).
 
 ## <a name="non-trailing-named-arguments"></a>Nekoncové pojmenované argumenty
 
-Volání metody teď může použít pojmenované argumenty, které předcházet poziční argumenty, pokud tyto pojmenované argumenty jsou do správné polohy. Další informace najdete v části [pojmenované a nepovinné argumenty](../programming-guide/classes-and-structs/named-and-optional-arguments.md).
+Volání metody teď můžou používat pojmenované argumenty, které předcházejí Poziční argumenty, pokud jsou tyto pojmenované argumenty ve správných pozicích. Další informace naleznete u [pojmenovaných a nepovinných argumentů](../programming-guide/classes-and-structs/named-and-optional-arguments.md).
 
-## <a name="leading-underscores-in-numeric-literals"></a>Úvodní podtržítka v numerických literálech
+## <a name="leading-underscores-in-numeric-literals"></a>Počáteční podtržítka v numerických literálech
 
-Implementace podpory pro oddělovače číslic v jazyce C# 7.0 neměli povolit `_` bude první znak hodnota literálu. Hex a binární číselné literály teď začít s `_`.
+Implementace podpory pro oddělovače číslic v C# 7,0 neumožňuje, `_` aby byl prvním znakem hodnoty literálu. Šestnáctkové a binární číselné literály mohou nyní začínat `_`znakem.
 
 Příklad:
 
@@ -63,20 +63,20 @@ Příklad:
 int binaryValue = 0b_0101_0101;
 ```
 
-## <a name="private-protected-access-modifier"></a>_privátní, chráněné_ modifikátor přístupu
+## <a name="_private-protected_-access-modifier"></a>modifikátor privátního chráněného přístupu
 
-New – modifikátor přístupu složené: `private protected` označuje, že můžou být dostupné členy obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Zatímco `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení, `private protected` omezuje přístup k odvozené typy deklarované ve stejném sestavení.
+Nový modifikátor složeného přístupu: `private protected` označuje, že člen může být přístupný pomocí obsahující třídy nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. I `protected internal` když umožňuje přístup odvozenými třídami nebo třídami, které jsou ve `private protected` stejném sestavení, omezují přístup k odvozeným typům deklarovaným ve stejném sestavení.
 
-Další informace najdete v části [modifikátorů přístupu](../language-reference/keywords/access-modifiers.md) v referenční dokumentaci jazyka.
+Další informace najdete v tématu [modifikátory přístupu](../language-reference/keywords/access-modifiers.md) v referenční příručce jazyka.
 
 ## <a name="conditional-ref-expressions"></a>Podmíněné `ref` výrazy
 
-Nakonec podmíněného výrazu může vytvořit výsledek ref místo hodnoty výsledku. Například měli byste napsat následující příkaz pro načtení odkazu na první prvek v jednom ze dvou polí:
+Nakonec podmíněný výraz může namísto výsledku hodnoty vytvořit ref výsledek. Například zapíšete následující příkaz, který načte odkaz na první prvek v jednom ze dvou polí:
 
 ```csharp
 ref var r = ref (arr != null ? ref arr[0] : ref otherArr[0]);
 ```
 
-Proměnná `r` je odkaz na první hodnota v jednom `arr` nebo `otherArr`.
+Proměnná `r` je odkaz na první hodnotu `arr` v nebo `otherArr`.
 
-Další informace najdete v tématu [podmiňovací operátor (?:) ](../language-reference/operators/conditional-operator.md) v referenční dokumentaci jazyka.
+Další informace naleznete v tématu [podmíněný operátor (?:)](../language-reference/operators/conditional-operator.md) v referenční příručce jazyka.

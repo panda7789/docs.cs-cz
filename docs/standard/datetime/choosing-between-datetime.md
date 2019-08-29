@@ -15,30 +15,30 @@ helpviewer_keywords:
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d2ae7430c10254274eed6fb8a602aa8bc11bffb
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 1c4eb8c174e70b6761784a5defe12dc8a8a1e42b
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988493"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107082"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
 
 Aplikace .NET, které používají informace o datu a čase, jsou velmi rozdílné a můžou tyto informace použít několika způsoby. Mezi běžně používané informace o datu a času patří následující:
 
-* Aby odrážela pouze datum, takže časové údaje nejsou důležité.
+- Aby odrážela pouze datum, takže časové údaje nejsou důležité.
 
-* Odrážející jenom čas, takže informace o datu nejsou důležité.
+- Odrážející jenom čas, takže informace o datu nejsou důležité.
 
-* Aby odrážela abstraktní datum a čas, který není vázán na určitý čas a místo (například většina obchodů v mezinárodním řetězci otevřeném v pracovních dnech v 9:00 ráno).
+- Aby odrážela abstraktní datum a čas, který není vázán na určitý čas a místo (například většina obchodů v mezinárodním řetězci otevřeném v pracovních dnech v 9:00 ráno).
 
-* Chcete-li načíst informace o datu a čase ze zdrojů mimo rozhraní .NET, obvykle v případě, kdy jsou informace o datu a čase uloženy v jednoduchém datovém typu.
+- Chcete-li načíst informace o datu a čase ze zdrojů mimo rozhraní .NET, obvykle v případě, kdy jsou informace o datu a čase uloženy v jednoduchém datovém typu.
 
-* Pro jednoznačnou a jednoznačně identifikují jediný bod v čase. Některé aplikace vyžadují, aby bylo datum a čas dvojznačné jenom v hostitelském systému. jiné vyžadují, aby byly v rámci systémů jednoznačně deserializovatelné a používané v jiném systému kdekoli na světě, ale data serializovaná v jednom systému.
+- Pro jednoznačnou a jednoznačně identifikují jediný bod v čase. Některé aplikace vyžadují, aby bylo datum a čas dvojznačné jenom v hostitelském systému. jiné vyžadují, aby byly v rámci systémů jednoznačně deserializovatelné a používané v jiném systému kdekoli na světě, ale data serializovaná v jednom systému.
 
-* Chcete-li zachovat více souvisejících časů (například místní čas žadatele a čas serveru pro webový požadavek).
+- Chcete-li zachovat více souvisejících časů (například místní čas žadatele a čas serveru pro webový požadavek).
 
-* K provedení aritmetického zpracování data a času, případně s výsledkem jednoznačně a jednoznačně identifikuje jediný bod v čase.
+- K provedení aritmetického zpracování data a času, případně s výsledkem jednoznačně a jednoznačně identifikuje jediný bod v čase.
 
 Rozhraní .NET zahrnuje <xref:System.DateTime>typy <xref:System.DateTimeOffset>, <xref:System.TimeSpan>, a <xref:System.TimeZoneInfo> , které lze použít k sestavování aplikací pracujících s daty a časy.
 
@@ -51,19 +51,19 @@ Rozhraní .NET zahrnuje <xref:System.DateTime>typy <xref:System.DateTimeOffset>,
 
 <xref:System.DateTime> Struktura je vhodná pro aplikace, které mají následující:
 
-* Pracují pouze s kalendářními daty.
+- Pracují pouze s kalendářními daty.
 
-* Pracujte pouze s časy.
+- Pracujte pouze s časy.
 
-* Pracujte s abstraktními daty a časy.
+- Pracujte s abstraktními daty a časy.
 
-* Pracujte s daty a časy, pro které chybí informace o časovém pásmu.
+- Pracujte s daty a časy, pro které chybí informace o časovém pásmu.
 
-* Pracovat pouze s časovými údaji a časem UTC.
+- Pracovat pouze s časovými údaji a časem UTC.
 
-* Načte informace o datu a čase ze zdrojů mimo rozhraní .NET, jako jsou databáze SQL. Obvykle tyto zdroje ukládají informace o datu a čase v jednoduchém formátu, který je kompatibilní se <xref:System.DateTime> strukturou.
+- Načte informace o datu a čase ze zdrojů mimo rozhraní .NET, jako jsou databáze SQL. Obvykle tyto zdroje ukládají informace o datu a čase v jednoduchém formátu, který je kompatibilní se <xref:System.DateTime> strukturou.
 
-* Provádění aritmetických operací s datem a časem, ale s obecnými výsledky. Například v operaci sčítání, která přidá šest měsíců do konkrétní datum a čas, často není důležité, aby byl výsledek upraven pro letní čas.
+- Provádění aritmetických operací s datem a časem, ale s obecnými výsledky. Například v operaci sčítání, která přidá šest měsíců do konkrétní datum a čas, často není důležité, aby byl výsledek upraven pro letní čas.
 
 Pokud konkrétní <xref:System.DateTime> hodnota představuje UTC, tato hodnota data a času je v přenositelnosti často nejednoznačná nebo omezená. Pokud <xref:System.DateTime> například hodnota představuje místní čas, je přenosné v rámci tohoto místního časového pásma (tj. Pokud je hodnota deserializována v jiném systému ve stejném časovém pásmu, tato hodnota stále jednoznačně identifikuje jediný bod v čase). Mimo místní časové pásmo může mít tato <xref:System.DateTime> hodnota více výkladů. Pokud je <xref:System.DateTime.Kind%2A> <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>vlastnost hodnoty, je ještě méně přenosná: je nyní nejednoznačná v rámci stejného časového pásma a případně i ve stejném systému, ve kterém byla poprvé serializována. Pouze pokud <xref:System.DateTime> hodnota představuje UTC, tato hodnota jednoznačně identifikuje jediný bod v čase bez ohledu na systém nebo časové pásmo, ve kterém je hodnota použita.
 
@@ -76,11 +76,11 @@ Pokud konkrétní <xref:System.DateTime> hodnota představuje UTC, tato hodnota 
 
 Typ zahrnuje všechny funkce <xref:System.DateTime> typu společně s vědomím časového pásma. <xref:System.DateTimeOffset> To je vhodné pro aplikace, které provedly následující akce:
 
-* Jedinečně a jednoznačně identifikují jediný bod v čase. <xref:System.DateTimeOffset> Typ lze použít k jednoznačnému definování významu "nyní", k protokolování časů transakcí, k protokolování časů události systému nebo aplikace a k záznamu časů vytváření a úprav souborů.
+- Jedinečně a jednoznačně identifikují jediný bod v čase. <xref:System.DateTimeOffset> Typ lze použít k jednoznačnému definování významu "nyní", k protokolování časů transakcí, k protokolování časů události systému nebo aplikace a k záznamu časů vytváření a úprav souborů.
 
-* Proveďte obecné aritmetické operace data a času.
+- Proveďte obecné aritmetické operace data a času.
 
-* Zachovejte více souvisejících časů, pokud jsou tyto časy uloženy jako dvě samostatné hodnoty nebo jako dva členy struktury.
+- Zachovejte více souvisejících časů, pokud jsou tyto časy uloženy jako dvě samostatné hodnoty nebo jako dva členy struktury.
 
 > [!NOTE]
 > Tato použití pro <xref:System.DateTimeOffset> hodnoty jsou mnohem častější než u <xref:System.DateTime> hodnot. V důsledku <xref:System.DateTimeOffset> toho by se měl považovat za výchozí typ data a času pro vývoj aplikací.
@@ -96,9 +96,9 @@ Výstup ukazuje, že každá hodnota data a času v tomto příkladu může pat�
 
 <xref:System.TimeSpan> Struktura představuje časový interval. Mezi dvě Typická použití patří:
 
-* Odráží časový interval mezi dvěma hodnotami data a času. Například odečtením jedné <xref:System.DateTime> hodnoty z jiné <xref:System.TimeSpan> vrátí hodnotu.
+- Odráží časový interval mezi dvěma hodnotami data a času. Například odečtením jedné <xref:System.DateTime> hodnoty z jiné <xref:System.TimeSpan> vrátí hodnotu.
 
-* Měření uplynulého času. Například <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> vlastnost <xref:System.Diagnostics.Stopwatch> vrací hodnotu, která odráží časový interval, který uplynul od volání jedné z metod, která začíná měřit uplynulý čas. <xref:System.TimeSpan>
+- Měření uplynulého času. Například <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> vlastnost <xref:System.Diagnostics.Stopwatch> vrací hodnotu, která odráží časový interval, který uplynul od volání jedné z metod, která začíná měřit uplynulý čas. <xref:System.TimeSpan>
 
 Hodnotu lze použít také jako náhradu <xref:System.DateTime> hodnoty, pokud tato hodnota odráží čas bez odkazů na konkrétní den. <xref:System.TimeSpan> Toto použití je podobné <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType> vlastnostem a, která vrací hodnotu,kterápředstavuječasbezodkazovánínadatum.<xref:System.TimeSpan> <xref:System.TimeSpan> Struktura může například sloužit ke znázornění každodenního otevření nebo ukončení obchodu nebo může být použita k vyjádření času, kdy dojde k jakékoli běžné události.
 

@@ -2,12 +2,12 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 17bbbe33e7cb7b13d6fb1c0e44bb77dd2bbe7020
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 347ad691b8d439fdf1696f790d4a838a73c57b5a
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626349"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105155"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -55,15 +55,15 @@ Chování `dotnet restore` příkazu je ovlivněno nastavením v souboru *NuGet.
 
 Existují tři specifická nastavení, která `dotnet restore` ignorují:
 
-* [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
+- [bindingRedirects](/nuget/schema/nuget-config-file#bindingredirects-section)
 
   Přesměrování vazby nefungují s `<PackageReference>` prvky a .NET Core podporuje `<PackageReference>` pouze prvky pro balíčky NuGet.
 
-* [řešení](/nuget/schema/nuget-config-file#solution-section)
+- [řešení](/nuget/schema/nuget-config-file#solution-section)
 
   Toto nastavení je specifické pro Visual Studio a neplatí pro .NET Core. .NET Core nepoužívá `packages.config` soubor a místo toho používá `<PackageReference>` elementy pro balíčky NuGet.
 
-* [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
+- [trustedSigners](/nuget/schema/nuget-config-file#trustedsigners-section)
 
   Toto nastavení se nedá použít, protože [NuGet zatím nepodporuje ověřování](https://github.com/NuGet/Home/issues/7939) pro důvěryhodné balíčky v různých platformách.
 

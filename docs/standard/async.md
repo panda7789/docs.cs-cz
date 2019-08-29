@@ -1,48 +1,48 @@
 ---
-title: Přehled asynchronních
-description: Zjistěte, jak je asynchronní programování představuje klíčovou techniku, která umožňuje jednoduché blokování vstupně-výstupní operace a souběžné operace s více jádry.
+title: Asynchronní přehled
+description: Přečtěte si, jak je asynchronní programování klíčovou technikou, která usnadňuje zpracování blokujících vstupně-výstupních operací a souběžných operací s více jádry.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
-ms.openlocfilehash: aa08389d896fa81dbed8a63bb22a97e151016392
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2f76eb7d2b769b59809bec81aefacb7cec90a450
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628797"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106691"
 ---
-# <a name="async-overview"></a>Přehled asynchronních
+# <a name="async-overview"></a>Asynchronní přehled
 
-Není to tak dávno aplikace rychleji jednoduše si koupíte novější počítač nebo server a potom tento trend se zastavilo. Ve skutečnosti obrácený. Mobilní telefony zobrazovaly s jedním jádrem frekvenci 1ghz ARM čipy a jiné úlohy serveru přešla do virtuálních počítačů. Uživatelé stále chtějí responzivní uživatelské rozhraní a vlastníkům obchodních chtít, aby servery, které se škálují podle jejich společnosti. Přechod na mobilní a cloudové a naplnění připojeného k Internetu z > uživatelé 3B má za následek novou sadu vzorů softwaru. 
+Ještě nejste tak dlouho, ale aplikace jsou rychlejší, protože si koupíte novější počítač nebo server a tento trend se zastavil. Ve skutečnosti se vrátila zpět. Mobilní telefony se zobrazily s 1GHz s jedním jádrem ARM a úlohami serveru, které jsou převedené na virtuální počítače. Uživatelé pořád chtějí reagovat na uživatelské rozhraní a obchodní vlastníci, kteří chtějí servery, které se škálují podle jejich podnikání. Přechod do mobilního a cloudu a naplnění Internetu připojeného k Internetu z >ch verzí 3B uživatelů má za následek novou sadu vzorů softwaru. 
 
-* Klientské aplikace se očekává, že byly vždy na, vždy připojen a neustále responzivní na interakci uživatele (například touch) s hodnocením vysokou app storu!
-* Očekává se, že služby zpracovávat řádně vertikální navýšení a snížení špičkami v provozu. 
+- Očekává se, že klientské aplikace budou vždycky zapnuté, vždy se připojí a nepřetržitě reagují na interakci s uživatelem (například dotykové ovládání) s vysokým hodnocením v obchodě s aplikacemi.
+- U služeb se očekává, že budou zpracovávat špičky v provozu díky řádnému škálování směrem nahoru a dolů. 
 
-Představuje klíčovou techniku, která umožňuje jednoduché blokování vstupně-výstupní operace a souběžné operace s více jádry je asynchronní programování. .NET poskytuje možnosti pro aplikace a služby jako responzivního a elastické se snadným ovládáním, úroveň jazyka asynchronní programovací modely v C#, VB, a F#.
+Asynchronní programování je klíčovou technikou, která usnadňuje zpracování blokujících vstupně-výstupních operací a souběžných operací s více jádry. .NET poskytuje možnosti pro aplikace a služby, které je možné reagovat a elastický pomocí snadno použitelných, asynchronních programovacích modelů na úrovni C#jazyka v jazycích, F#VB a.
 
 ## <a name="why-write-async-code"></a>Proč psát asynchronní kód?
 
-Moderní aplikace využívat rozsáhlé vstupně-výstupní operace souboru a sítě. Vstupně-výstupní operace rozhraní API tradičně bloku ve výchozím nastavení, výsledkem je špatné uživatelských prostředí a využití hardwaru Pokud nechcete učí a používají složité vzorce. Úkolově orientovanou asynchronní rozhraní API a úrovni jazyka asynchronní programovací model Invertovat tento model, provádění asynchronní provádění výchozím nastavení se několik nových konceptů a další.
+Moderní aplikace využívají v/v rozsáhlé soubory a síťové operace. I/O rozhraní API tradičně standardně blokují, což má za následek špatné uživatelské prostředí a využití hardwaru, pokud se nechcete naučit a používat náročné vzory. Asynchronní rozhraní API založené na úlohách a jejich modul asynchronního programování na úrovni jazyka invertují tento model, což provádí asynchronní spouštění ve výchozím nastavení s několika novými koncepty pro učení.
 
 Asynchronní kód má následující vlastnosti:
 
-* Další požadavky na server zpracovává pomocí čekajících vláken zpracovávat další požadavky při čekání na vstupně-výstupních požadavků k vrácení.
-* Umožňuje UI se více přizpůsobovat čekajících vláken interakce s uživatelským rozhraním při čekání na vstupně-výstupních požadavků a přechod dlouhotrvající práci do jiné jader procesoru.
-* Řadu novějších rozhraní API .NET jsou asynchronní.
-* Je snadné napsat asynchronní kód v .NET!
+- Zpracovává více požadavků serveru tím, že vrací vlákna pro zpracování více požadavků při čekání na vrácení vstupně-výstupních požadavků.
+- Umožňuje, aby uživatelská rozhraní lépe reagovaly tím, že při čekání na požadavky na vstupně-výstupní operace vychází z vlákna na interakci uživatelského rozhraní a přechodem dlouhotrvající práce na jiné jádra procesoru.
+- Mnohé z novějších rozhraní API .NET jsou asynchronní.
+- Psaní asynchronního kódu v rozhraní .NET je snadné.
 
 ## <a name="whats-next"></a>Co dále?
 
-Další informace najdete v tématu [asynchronní do hloubky](async-in-depth.md) tématu.
+Další informace naleznete [v tématu Async v](async-in-depth.md) rámci hloubky.
 
-[Asynchronous Programming Patterns](asynchronous-programming-patterns/index.md) téma poskytuje přehled o tři asynchronních programovacích vzorech podporovány v rozhraní .NET:  
+Téma o [asynchronních programovacích vzorcích](asynchronous-programming-patterns/index.md) poskytuje přehled tří asynchronních programovacích vzorů podporovaných v rozhraní .NET:  
   
-- [Asynchronní Programovací Model (APM)](asynchronous-programming-patterns/asynchronous-programming-model-apm.md) (starší verze)  
+- [Asynchronní programovací model (APM)](asynchronous-programming-patterns/asynchronous-programming-model-apm.md) dřívější  
   
-- [Událost asynchronní vzor založený (EAP)](asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) (starší verze)  
+- [Asynchronní vzor založený na událostech (EAP)](asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) dřívější  
   
-- [Založený na úlohách asynchronního vzoru (TAP)](asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (doporučeno pro vývoj nových projektů)  
+- [Asynchronní vzor založený na úlohách (klepnutím)](asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) (doporučuje se pro nový vývoj)  
 
-Další informace o doporučených programovací model založený na úlohách najdete v článku [asynchronní programování založené na úlohách](parallel-programming/task-based-asynchronous-programming.md) tématu.
+Další informace o doporučeném programovacím modelu založeném na úlohách naleznete v tématu věnovaném [asynchronnímu programování založenému](parallel-programming/task-based-asynchronous-programming.md) na úlohách.

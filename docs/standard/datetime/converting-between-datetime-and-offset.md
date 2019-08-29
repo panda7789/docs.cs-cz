@@ -18,116 +18,116 @@ helpviewer_keywords:
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d4bce84d26e8f498f065c887b583e18d8ea7c786
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb91ed8edd0c5cd3cb1d051157596f311718195d
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901924"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107066"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Převádění mezi DateTime a DateTimeOffset
 
-I když <xref:System.DateTimeOffset> struktura zajišťuje vyšší stupeň časové pásmo než <xref:System.DateTime> strukturu, <xref:System.DateTime> ve volání metody se běžně používají parametry. Z toho důvodu schopnost převést <xref:System.DateTimeOffset> hodnoty <xref:System.DateTime> hodnoty a naopak je zvlášť důležité. Toto téma ukazuje, jak k provádění těchto převodů způsobem, který uchovává co nejvíce informací časové pásmo.
+I když <xref:System.DateTime> <xref:System.DateTime> struktura poskytuje větší stupeň povědomí o časovém pásmu než struktura, parametry jsou používány častěji při volání metody. <xref:System.DateTimeOffset> Z tohoto důvodu je možnost převést <xref:System.DateTimeOffset> hodnoty na <xref:System.DateTime> hodnoty a naopak velmi důležitá. V tomto tématu se dozvíte, jak provádět tyto převody způsobem, který zachovává co možná nejvíce informací o časovém pásmu.
 
 > [!NOTE]
-> Jak <xref:System.DateTime> a <xref:System.DateTimeOffset> typy mají určitá omezení, když představují časy v časových pásmech. S jeho <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTime> může reflektovat pouze koordinovaný univerzální čas (UTC) a místní časové pásmo systému. <xref:System.DateTimeOffset> odráží časový posun od času UTC, ale neodráží aktuální časové pásmo, ke kterému posun patří. Podrobnosti o časové hodnoty a podpora pro časová pásma najdete v tématu [volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).
+> Typy<xref:System.DateTimeOffset> i mají určitá omezení, pokud představují časy v časových pásmech. <xref:System.DateTime> S jeho <xref:System.DateTime.Kind%2A> <xref:System.DateTime> vlastností je možné odrážet pouze koordinovaný světový čas (UTC) a místní časové pásmo systému. <xref:System.DateTimeOffset>odráží časový posun od času UTC, ale neodráží skutečné časové pásmo, do kterého tento posun patří. Podrobnosti o hodnotách času a podpoře časových pásem najdete v tématu [Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md).
 
-## <a name="conversions-from-datetime-to-datetimeoffset"></a>Převody z data a času do struktury DateTimeOffset
+## <a name="conversions-from-datetime-to-datetimeoffset"></a>Převody z DateTime na DateTimeOffset
 
-<xref:System.DateTimeOffset> Struktura poskytuje dva způsoby ekvivalentní k provedení <xref:System.DateTime> k <xref:System.DateTimeOffset> převodu, které jsou vhodné pro většinu převody:
+Struktura poskytuje dva podobné způsoby, jak <xref:System.DateTimeOffset> provést <xref:System.DateTime> převod, který je vhodný pro většinu převodů: <xref:System.DateTimeOffset>
 
-* <xref:System.DateTimeOffset.%23ctor%2A> Konstruktor, který vytvoří nový <xref:System.DateTimeOffset> objektu na základě <xref:System.DateTime> hodnotu.
+- Konstruktor, který vytvoří nový <xref:System.DateTimeOffset> objekt založený na <xref:System.DateTime> hodnotě. <xref:System.DateTimeOffset.%23ctor%2A>
 
-* Operátor implicitního převodu, který vám umožní přiřadit <xref:System.DateTime> hodnota, která se <xref:System.DateTimeOffset> objektu.
+- Operátor implicitního převodu, který umožňuje přiřadit <xref:System.DateTime> hodnotu <xref:System.DateTimeOffset> objektu.
 
-Pro čas UTC a místním <xref:System.DateTime> hodnot, <xref:System.DateTimeOffset.Offset%2A> vlastnost výsledné <xref:System.DateTimeOffset> hodnotu přesně odráží posun UTC nebo místního času. Například následující kód převede čas UTC na její ekvivalentní <xref:System.DateTimeOffset> hodnotu.
+Pro UTC a místní <xref:System.DateTime> hodnoty <xref:System.DateTimeOffset.Offset%2A> vlastnost výsledné <xref:System.DateTimeOffset> hodnoty přesně odráží časový posun UTC nebo místní časové pásmo. Například následující kód převede čas UTC na jeho ekvivalentní <xref:System.DateTimeOffset> hodnotu.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#1)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#1)]
 
-V takovém případě posun `utcTime2` proměnná je 00:00. Podobně, následující kód převede místní čas na její ekvivalentní <xref:System.DateTimeOffset> hodnotu.
+V tomto případě je posun `utcTime2` proměnné 00:00. Podobně následující kód převede místní čas na <xref:System.DateTimeOffset> odpovídající hodnotu.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#2)]
 
-Ale pro <xref:System.DateTime> hodnoty, jejichž <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>, tyto převod dvě metody vytvoření <xref:System.DateTimeOffset> hodnota, jejíž posun je posun místního časového pásma. To je ukázáno v následujícím příkladu, který běží v USA. Tichomořském časovém pásmu.
+Nicméně pro <xref:System.DateTime> hodnoty, jejichž <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>, tyto dvě metody převodu vytvoří <xref:System.DateTimeOffset> hodnotu, jejíž posun je v místním časovém pásmu. To je znázorněno v následujícím příkladu, který je spuštěný v USA. Tichomoří (standardní časové pásmo)
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#3)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#3)]
 
-Pokud <xref:System.DateTime> hodnota odráží datum a čas ve něco jiného než místního časového pásma nebo čas UTC, můžete ji převést <xref:System.DateTimeOffset> hodnotu a zachování její informace o časovém pásmu voláním přetížené <xref:System.DateTimeOffset.%23ctor%2A> konstruktoru. Například následující příklad vytvoří instance <xref:System.DateTimeOffset> objekt, který odráží – střed (běžný čas).
+Pokud hodnota odráží datum a čas v jiném než místním časovém pásmu nebo UTC, můžete ji převést <xref:System.DateTimeOffset> na hodnotu a zachovat informace o časovém pásmu <xref:System.DateTimeOffset.%23ctor%2A> voláním přetíženého konstruktoru. <xref:System.DateTime> Například následující příklad vytvoří instanci <xref:System.DateTimeOffset> objektu, který odráží centrální standardní čas.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#4)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#4)]
 
-Druhý parametr tohoto přetížení konstruktoru <xref:System.TimeSpan> objekt, který představuje časový posun od času UTC, by měl být načten voláním <xref:System.TimeZoneInfo.GetUtcOffset%28System.DateTime%29?displayProperty=nameWithType> metoda času od odpovídajícího časového pásma. Jediný parametr metody je <xref:System.DateTime> hodnotu, která představuje datum a čas, který má být převeden. Podporuje-li časové pásmo letního času, tento parametr umožňuje metodou ke zjištění odpovídající posun pro tento konkrétní datum a čas.
+Druhý parametr pro přetížení tohoto konstruktoru, <xref:System.TimeSpan> objekt, který představuje posun času od času UTC, by měl být načten <xref:System.TimeZoneInfo.GetUtcOffset%28System.DateTime%29?displayProperty=nameWithType> voláním metody odpovídajícího časového pásma času. Jediným parametrem metody je <xref:System.DateTime> hodnota, která představuje datum a čas, který má být převeden. Pokud časové pásmo podporuje letní čas, tento parametr umožňuje metodě určit odpovídající posun pro konkrétní datum a čas.
 
-## <a name="conversions-from-datetimeoffset-to-datetime"></a>Převody z DateTimeOffset na data a času
+## <a name="conversions-from-datetimeoffset-to-datetime"></a>Převody z DateTimeOffset na DateTime
 
-<xref:System.DateTimeOffset.DateTime%2A> Vlastnost se nejčastěji používá k provedení <xref:System.DateTimeOffset> k <xref:System.DateTime> převodu. Vrátí se však <xref:System.DateTime> jehož hodnota <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Unspecified>, jak ukazuje následující příklad.
+Vlastnost se nejčastěji používá <xref:System.DateTimeOffset> k <xref:System.DateTime> převodu. <xref:System.DateTimeOffset.DateTime%2A> Nicméně vrátí <xref:System.DateTime> hodnotu, jejíž <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Unspecified>, jak ukazuje následující příklad.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#5)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#5)]
 
-To znamená, že všechny informace o <xref:System.DateTimeOffset> vztahu hodnoty na čas UTC je ztracena při převodu při <xref:System.DateTimeOffset.DateTime%2A> vlastnost se používá. Tato akce ovlivní <xref:System.DateTimeOffset> hodnoty, které odpovídají na čas UTC nebo místního času v systému, protože <xref:System.DateTimeOffset.DateTime%2A> struktura odráží pouze dva časových pásem v jeho <xref:System.DateTime.Kind%2A> vlastnost.
+To znamená, že <xref:System.DateTimeOffset> <xref:System.DateTimeOffset.DateTime%2A> při použití vlastnosti jsou všechny informace o vztahu hodnoty ke standardu UTC ztraceny převodem. To má <xref:System.DateTimeOffset> vliv na hodnoty, které odpovídají času UTC nebo místnímu času systému, <xref:System.DateTimeOffset.DateTime%2A> protože struktura odráží pouze dvě časová pásma ve své <xref:System.DateTime.Kind%2A> vlastnosti.
 
-Pro zachování co nejvíce informací časové pásmo při převodu <xref:System.DateTimeOffset> k <xref:System.DateTime> hodnotu, můžete použít <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> a <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti.
+Chcete-li zachovat co nejvíce informací o časovém pásmu <xref:System.DateTimeOffset> při převodu <xref:System.DateTime> na hodnotu <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> , můžete použít vlastnosti a <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> .
 
 ### <a name="converting-a-utc-time"></a>Převod času UTC
 
-Označuje, že převedená <xref:System.DateTimeOffset.DateTime%2A> hodnotu času UTC, můžete načíst hodnotu <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> vlastnost. Se liší od <xref:System.DateTimeOffset.DateTime%2A> vlastnost dvěma způsoby:
+Pro indikaci, že <xref:System.DateTimeOffset.DateTime%2A> převedená hodnota je čas UTC, můžete načíst hodnotu <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> vlastnosti. Liší se od <xref:System.DateTimeOffset.DateTime%2A> vlastnosti dvěma způsoby:
 
-* Vrátí <xref:System.DateTime> hodnota, jejíž <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTimeKind.Utc>.
+- Vrátí <xref:System.DateTime> hodnotu, jejíž <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Utc>.
 
-* Pokud <xref:System.DateTimeOffset.Offset%2A> není rovno hodnota vlastnosti <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, převede čas na čas UTC.
+- Pokud se <xref:System.DateTimeOffset.Offset%2A> hodnota vlastnosti nerovná <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, převede se čas na čas UTC.
 
 > [!NOTE]
-> Pokud vaše aplikace vyžaduje, aby převést <xref:System.DateTime> hodnoty jednoznačně identifikují jediný bod v čase, měli byste zvážit použití <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> vlastnost, aby se zpracovávaly všechny <xref:System.DateTimeOffset> k <xref:System.DateTime> převody.
+> Pokud vaše aplikace <xref:System.DateTime> vyžaduje jednoznačně identifikovat konkrétní bod v čase, měli byste zvážit <xref:System.DateTimeOffset.UtcDateTime%2A?displayProperty=nameWithType> použití <xref:System.DateTime> vlastnosti pro zpracování všech <xref:System.DateTimeOffset> převodů.
 
-Následující kód používá <xref:System.DateTimeOffset.UtcDateTime%2A> vlastnost převést <xref:System.DateTimeOffset> hodnota, jejíž posun se rovná <xref:System.TimeSpan.Zero?displayProperty=nameWithType> k <xref:System.DateTime> hodnotu.
+Následující kód používá <xref:System.DateTimeOffset.UtcDateTime%2A> vlastnost k <xref:System.DateTimeOffset> převedení <xref:System.TimeSpan.Zero?displayProperty=nameWithType> hodnoty, jejíž <xref:System.DateTime> posun se rovná hodnotě.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#6)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#6)]
 
-Následující kód používá <xref:System.DateTimeOffset.UtcDateTime%2A> vlastnost k provedení převodu časového pásma a převod typu na <xref:System.DateTimeOffset> hodnotu.
+Následující kód používá <xref:System.DateTimeOffset.UtcDateTime%2A> vlastnost k provedení převodu časového pásma a převodu typu <xref:System.DateTimeOffset> na hodnotu.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#12)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#12)]
 
-### <a name="converting-a-local-time"></a>Převod místní čas
+### <a name="converting-a-local-time"></a>Převod místního času
 
-Označuje, že <xref:System.DateTimeOffset> hodnota představuje místní čas, můžete předat <xref:System.DateTime> hodnoty vrácené <xref:System.DateTimeOffset.DateTime%2A?displayProperty=nameWithType> vlastnost `static` (`Shared` v jazyce Visual Basic) <xref:System.DateTime.SpecifyKind%2A> metoda. Metoda vrátí datum a čas do něho předaný jako svůj první parametr, ale nastaví <xref:System.DateTime.Kind%2A> vlastnost na hodnotu zadanou pomocí její druhý parametr. Následující kód používá <xref:System.DateTime.SpecifyKind%2A> metoda při převodu <xref:System.DateTimeOffset> hodnota, jejíž posun odpovídá u místního časového pásma.
+Chcete-li označit <xref:System.DateTimeOffset> , že hodnota představuje místní čas, můžete <xref:System.DateTime> předat hodnotu vrácenou <xref:System.DateTimeOffset.DateTime%2A?displayProperty=nameWithType> vlastností do `static` metody (`Shared` in Visual Basic) <xref:System.DateTime.SpecifyKind%2A> . Metoda vrátí datum a čas předaný do tohoto parametru jako svůj první parametr, ale nastaví <xref:System.DateTime.Kind%2A> vlastnost na hodnotu určenou jeho druhým parametrem. Následující kód používá <xref:System.DateTime.SpecifyKind%2A> metodu při <xref:System.DateTimeOffset> převodu hodnoty, jejíž posun odpovídá místnímu časovému pásmu.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#7)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#7)]
 
-Můžete také použít <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnost převést <xref:System.DateTimeOffset> hodnota, která má místní <xref:System.DateTime> hodnotu. <xref:System.DateTime.Kind%2A> Vlastnost vráceného <xref:System.DateTime> hodnotu <xref:System.DateTimeKind.Local>. Následující kód používá <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnost při převodu <xref:System.DateTimeOffset> hodnota, jejíž posun odpovídá u místního časového pásma. 
+<xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> Vlastnost můžete použít také k <xref:System.DateTimeOffset> převedení hodnoty na lokální <xref:System.DateTime> hodnotu. Vlastnost vrácené <xref:System.DateTime> hodnoty je<xref:System.DateTimeKind.Local>. <xref:System.DateTime.Kind%2A> Následující kód používá <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnost při <xref:System.DateTimeOffset> převodu hodnoty, jejíž posun odpovídá místnímu časovému pásmu. 
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]
 
-Při načtení <xref:System.DateTime> hodnotu pomocí <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti, vlastnosti `get` přistupující objekt nejprve převede <xref:System.DateTimeOffset> hodnotu na čas UTC, převede ho na místní čas voláním <xref:System.DateTimeOffset.ToLocalTime%2A> metoda. To znamená, že můžete načíst hodnotu z <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnost k provedení převodu časového pásma ve stejnou dobu, že provádíte převod typů. Také znamená, že při provádění převodu se použijí pravidla úpravy místního časového pásma. Následující kód ukazuje použití <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnost typu a převodu časového pásma.
+Když <xref:System.DateTime> načtete hodnotu `get` <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> pomocí vlastnosti, přistupující objekt vlastnosti nejprve převede <xref:System.DateTimeOffset> hodnotu na <xref:System.DateTimeOffset.ToLocalTime%2A> UTC a pak ji převede na místní čas voláním metody. To znamená, že můžete načíst hodnotu z <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti a provést konverzi časového pásma ve stejnou dobu, jakou provádíte převod typu. Také to znamená, že pravidla úpravy v místním časovém pásmu jsou aplikována při provádění převodu. Následující kód ilustruje použití <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> vlastnosti k provedení jak typu, tak konverze časového pásma.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#11)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#11)]
 
 ### <a name="a-general-purpose-conversion-method"></a>Metoda převodu pro obecné účely
 
-Následující příklad definuje metodu s názvem `ConvertFromDateTimeOffset` , která převede <xref:System.DateTimeOffset> hodnoty <xref:System.DateTime> hodnoty. Na základě jeho posunu, určuje, zda <xref:System.DateTimeOffset> hodnota je čas UTC nebo místního času, nějakou dobu a definuje vrácené datum a čas hodnotu <xref:System.DateTime.Kind%2A> vlastnost odpovídajícím způsobem.
+Následující příklad definuje metodu s názvem `ConvertFromDateTimeOffset` , která převádí <xref:System.DateTimeOffset> hodnoty na <xref:System.DateTime> hodnoty. Na základě jeho posunu určuje, zda <xref:System.DateTimeOffset> je hodnota čas UTC, místní čas nebo nějaký jiný čas, a podle toho definuje vrácenou <xref:System.DateTime.Kind%2A> vlastnost hodnoty data a času.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#8)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#8)]
 
-Následující příklad volá `ConvertFromDateTimeOffset` způsobů, jak převést <xref:System.DateTimeOffset> hodnoty, které představuje čas UTC, místní čas a čas v USA. Centrální standardního časového pásma.
+Následující příklad volá `ConvertFromDateTimeOffset` metodu pro převod <xref:System.DateTimeOffset> hodnot, které reprezentují čas UTC, místní čas a čas v USA. Centrální standardní časové pásmo.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#9)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#9)]
 
-Všimněte si, že tento kód vytvoří dva předpoklady, které v závislosti na aplikaci a zdroj jeho hodnoty data a času, nemusí být vždy platný:
+Všimněte si, že tento kód vytváří dvě předpoklady, které v závislosti na aplikaci a zdroji svých hodnot data a času nemusí být vždy platné:
 
-* Předpokládá, že datum a čas hodnota, jejíž posun je <xref:System.TimeSpan.Zero?displayProperty=nameWithType> představuje čas UTC. Ve skutečnosti UTC není čas v určitém časovém pásmu, ale čas, u kterých jsou standardizované časy v časových pásmech na světě. Časová pásma může mít také posun <xref:System.TimeSpan.Zero>.
+- Předpokládá, že hodnota data a času, jejíž posun je <xref:System.TimeSpan.Zero?displayProperty=nameWithType> reprezentující čas UTC. Ve skutečnosti UTC není čas v konkrétním časovém pásmu, ale čas ve vztahu k tomu, kdy jsou standardizovány časy v časových pásmech světa. Časová pásma mohou také mít posun na <xref:System.TimeSpan.Zero>.
 
-* Předpokládá, že datum a čas, jejíž posun se rovná u místní časové pásmo představuje místní časové pásmo. Protože hodnoty data a času jsou oddělen od původní časové pásmo, nemusí to být případ. Datum a čas může být vytvořená v jiném časovém pásmu se stejný posun.
+- Předpokládá, že datum a čas, jehož posun se rovná tomuto místnímu časovému pásmu, představuje místní časové pásmo. Vzhledem k tomu, že hodnoty data a času jsou z původního časového pásma odasociovány, nemusí se jednat o případ; Datum a čas mohou mít původ v jiném časovém pásmu se stejným posunem.
 
 ## <a name="see-also"></a>Viz také:
 

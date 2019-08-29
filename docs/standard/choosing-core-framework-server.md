@@ -4,12 +4,12 @@ description: Průvodce implementací rozhraní .NET, který byste měli zvážit
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 6bdcb002c2e37f45c298259c2867a631b38152ca
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 520920566e8a55eef2d506dc4a8085f57ef1c0bb
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630860"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107280"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -17,18 +17,18 @@ Existují dvě podporované implementace pro vytváření aplikací na straně s
 
 Pro serverovou aplikaci použijte .NET Core v těchto případech:
 
-* Máte různé požadavky na více platforem.
-* Cílíte na mikroslužby.
-* Používáte kontejnery Docker.
-* Potřebujete vysoce výkonné a škálovatelné systémy.
-* Pro každou aplikaci potřebujete souběžnou verzi rozhraní .NET.
+- Máte různé požadavky na více platforem.
+- Cílíte na mikroslužby.
+- Používáte kontejnery Docker.
+- Potřebujete vysoce výkonné a škálovatelné systémy.
+- Pro každou aplikaci potřebujete souběžnou verzi rozhraní .NET.
 
 Pro serverovou aplikaci použijte .NET Framework v těchto případech:
 
-* Vaše aplikace aktuálně používá .NET Framework (doporučení je místo migrace).
-* Vaše aplikace používá knihovny .NET třetích stran nebo balíčky NuGet, které nejsou k dispozici pro .NET Core.
-* Vaše aplikace používá technologie .NET, které nejsou k dispozici pro .NET Core.
-* Vaše aplikace používá platformu, která nepodporuje .NET Core.
+- Vaše aplikace aktuálně používá .NET Framework (doporučení je místo migrace).
+- Vaše aplikace používá knihovny .NET třetích stran nebo balíčky NuGet, které nejsou k dispozici pro .NET Core.
+- Vaše aplikace používá technologie .NET, které nejsou k dispozici pro .NET Core.
+- Vaše aplikace používá platformu, která nepodporuje .NET Core.
 
 ## <a name="when-to-choose-net-core"></a>Kdy zvolit .NET Core
 
@@ -85,15 +85,15 @@ Takže v případě, že knihovny nebo balíčky NuGet využívají technologie,
 
 Některé technologie .NET Framework nejsou dostupné v .NET Core. Některé z nich mohou být k dispozici v novějších verzích .NET Core. Ostatní se nevztahují na nové vzory aplikací, na které cílí .NET Core, a nemusí být nikdy k dispozici. V následujícím seznamu jsou uvedeny nejběžnější technologie, které se v .NET Core nenašly:
 
-* Aplikace webových formulářů ASP.NET: Webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
+- Aplikace webových formulářů ASP.NET: Webové formuláře ASP.NET jsou k dispozici pouze v .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Neexistují žádné plány k převedení ASP.NET webových formulářů do .NET Core.
 
-* Aplikace webových stránek ASP.NET: Webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core. 
+- Aplikace webových stránek ASP.NET: Webové stránky ASP.NET nejsou zahrnuté do ASP.NET Core. 
 
-* Implementace služeb WCF. I když existuje [Knihovna WCF-Client](https://github.com/dotnet/wcf) ke využívání služeb WCF z .NET Core, implementace serveru WCF je aktuálně dostupná jenom v .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je považován za budoucí.
+- Implementace služeb WCF. I když existuje [Knihovna WCF-Client](https://github.com/dotnet/wcf) ke využívání služeb WCF z .NET Core, implementace serveru WCF je aktuálně dostupná jenom v .NET Framework. Tento scénář není součástí aktuálního plánu pro .NET Core, ale je považován za budoucí.
 
-* Služby související s pracovním postupem: Programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET Data Services") jsou k dispozici pouze v .NET Framework.  Neexistují žádné plány, jak přenést WF/WCF + WF/WCF Data Services do .NET Core.
+- Služby související s pracovním postupem: Programovací model Windows Workflow Foundation (WF), služby pracovních postupů (WCF + WF v jedné službě) a WCF Data Services (dříve označované jako "ADO.NET Data Services") jsou k dispozici pouze v .NET Framework.  Neexistují žádné plány, jak přenést WF/WCF + WF/WCF Data Services do .NET Core.
 
-* Jazyková podpora: Visual Basic a F# jsou aktuálně podporovány v rozhraní .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v tématu [Možnosti šablony pro dotnet New](../core/tools/dotnet-new.md#arguments).
+- Jazyková podpora: Visual Basic a F# jsou aktuálně podporovány v rozhraní .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných šablon projektů naleznete v tématu [Možnosti šablony pro dotnet New](../core/tools/dotnet-new.md#arguments).
 
 Kromě oficiálního plánu jsou k dispozici i další rozhraní .NET Core. Úplný seznam najdete v tématu CoreFX problémy označené jako [port-to-Core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek společnosti Microsoft, aby tyto komponenty byly součástí .NET Core. Jednoduše zachytíte přáním z komunity. Pokud se zajímáte o jakékoli součásti označené jako `port-to-core`, účastní se diskuzí na GitHubu. A pokud si myslíte, že chybí něco, zapište nový problém do [úložiště CoreFX](https://github.com/dotnet/corefx/issues/new).
 

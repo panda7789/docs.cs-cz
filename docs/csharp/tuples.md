@@ -3,12 +3,12 @@ title: Typy řazené C# kolekce členů – Průvodce
 description: Další informace o nepojmenovaných a pojmenovaných typech řazených kolekcí členů vC#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: dc02fceb2901fb9cb7bf71869213d8b178520900
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 00330af38044b07128551b7dc74c7d831c7a5626
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988412"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105901"
 ---
 # <a name="c-tuple-types"></a>C#typy řazené kolekce členů
 
@@ -40,7 +40,7 @@ Všechny typy jsou *proměnlivé struktury.* `ValueTuple` Každé pole člena je
 `Item1` `Item2` `Tuple` Struktura obsahuje pole s názvy,, `Item3`a tak dále, podobně jako vlastnosti definované v existujících typech. `ValueTuple`
 Tyto názvy jsou jedinými názvy, které můžete použít pro nepojmenované *řazené kolekce členů*. Pokud neposkytnete žádné alternativní názvy polí do řazené kolekce členů, vytvořili jste nepojmenované řazené kolekce členů:
 
-[!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]
+[!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]
 
 Řazená kolekce členů v předchozím příkladu byla inicializována pomocí literálových konstant a nebude mít názvy prvků vytvořené pomocí *projekce názvů polí řazené kolekce členů* v C# 7,1.
 
@@ -49,13 +49,13 @@ Pojmenované řazené kolekce členů mají stále `Item1`elementy `Item2`s `Ite
 Mají však také synonyma pro libovolný z těchto elementů, které máte pojmenovány.
 Pojmenovanou řazenou kolekci členů vytvoříte zadáním názvů pro každý prvek. Jedním ze způsobů, jak zadat názvy v rámci inicializace řazené kolekce členů:
 
-[!code-csharp[NamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#02_NamedTuple "Named tuple")]
+[!code-csharp[NamedTuple](../../samples/snippets/csharp/tuples/program.cs#02_NamedTuple "Named tuple")]
 
 Tato synonyma jsou zpracovávána kompilátorem a jazykem, aby bylo možné používat pojmenované řazené kolekce členů efektivně. IDEs a editory můžou tyto sémantické názvy číst pomocí rozhraní Roslyn API. Na prvky pojmenované řazené kolekce členů můžete odkazovat pomocí těchto sémantických názvů kdekoli ve stejném sestavení. Kompilátor nahradí názvy, které jste definovali `Item*` , ekvivalenty při generování zkompilovaného výstupu. Kompilovaný jazyk MSIL (Microsoft Intermediate Language) neobsahuje názvy, které jste těmto prvkům zadali.
 
 Počínaje C# 7,1 se názvy polí pro řazené kolekce členů můžou poskytovat z proměnných používaných k inicializaci řazené kolekce členů. Tato metoda je označována jako **[Inicializátory projekcí řazené kolekce členů](#tuple-projection-initializers)** . Následující kód vytvoří řazenou kolekci členů `accumulation` s názvem `count` s prvky (celé číslo) `sum` a (Double).
 
-[!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "Named tuple")]
+[!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
 Kompilátor musí komunikovat s názvy, které jste vytvořili pro řazené kolekce členů, které jsou vráceny z veřejných metod nebo vlastností. V těchto případech kompilátor přidá <xref:System.Runtime.CompilerServices.TupleElementNamesAttribute> atribut metody. Tento atribut obsahuje <xref:System.Runtime.CompilerServices.TupleElementNamesAttribute.TransformNames> vlastnost seznamu, která obsahuje názvy zadané pro každý prvek v řazené kolekci členů.
 
@@ -69,11 +69,11 @@ Je důležité pochopit tyto základní základy nových řazených kolekcí čl
 Obecně se Inicializátory řazené kolekce členů pracují pomocí názvů proměnných nebo polí z pravé strany příkazu inicializace řazené kolekce členů.
 Pokud je zadán explicitní název, který má přednost před libovolným názvem projektu. Například v následujícím `explicitFieldOne` inicializátoru jsou prvky a `explicitFieldTwo`, nikoli `localVariableOne` a `localVariableTwo`:
 
-[!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionExample_Explicit "Explicitly named tuple")]
+[!code-csharp[ExplicitNamedTuple](../../samples/snippets/csharp/tuples/program.cs#ProjectionExample_Explicit "Explicitly named tuple")]
 
 Pro jakékoli pole, kde není zadáno explicitní jméno, je projekt použit s implicitním názvem. Neexistuje žádný požadavek na poskytování sémantických názvů buď explicitně, nebo implicitně. Následující inicializátor má názvy `Item1`polí, jejichž hodnota je `42` a `stringContent`, jejíž hodnota je "odpověď na vše":
 
-[!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#MixedTuple "mixed tuple")]
+[!code-csharp[MixedTuple](../../samples/snippets/csharp/tuples/program.cs#MixedTuple "mixed tuple")]
 
 Existují dvě podmínky, kdy názvy polí kandidátů nejsou promítnuty do pole řazené kolekce členů:
 
@@ -82,7 +82,7 @@ Existují dvě podmínky, kdy názvy polí kandidátů nejsou promítnuty do pol
 
 Tyto podmínky zabraňují nejednoznačnosti. Tyto názvy by způsobily nejednoznačnost, pokud byly použity jako názvy polí v řazené kolekci členů. Ani jedna z těchto podmínek nezpůsobí chyby při kompilaci. Místo toho pro prvky bez projektových názvů nejsou pro ně sémanticky pojmenovány.  Následující příklady znázorňují tyto podmínky:
 
-[!code-csharp-interactive[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "tuples where projections are not performed")]
+[!code-csharp-interactive[Ambiguity](../../samples/snippets/csharp/tuples/program.cs#ProjectionAmbiguities "tuples where projections are not performed")]
 
 Tyto situace nezpůsobují chyby kompilátoru, protože by se jednalo o zásadní změnu kódu napsaného pomocí C# 7,0, pokud nedošlo k dispozici pro název pole řazené kolekce členů.
 
@@ -90,24 +90,24 @@ Tyto situace nezpůsobují chyby kompilátoru, protože by se jednalo o zásadn�
 
 Počínaje C# 7,3, typy řazené kolekce členů `==` podporují `!=` operátory a. Tyto operátory pracují pomocí porovnání jednotlivých členů levého argumentu s každým členem pravého argumentu v daném pořadí. Tyto porovnávací krátkodobé okruhy. Přestanou vyhodnocovat členy, jakmile se jeden pár nerovná. Následující příklady kódu používají `==`, ale pravidla porovnání platí pro. `!=` Následující příklad kódu ukazuje porovnání rovnosti pro dvě páry celých čísel:
 
-[!code-csharp-interactive[TupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#Equality "Testing tuples for equality")]
+[!code-csharp-interactive[TupleEquality](../../samples/snippets/csharp/tuples/program.cs#Equality "Testing tuples for equality")]
 
 Existuje několik pravidel, která umožňují pohodlnější testy rovnosti řazené kolekce členů. Rovnost řazené kolekce členů provádí převedené [převody](~/_csharplang/spec/conversions.md#lifted-conversion-operators) , pokud je jedna z řazených kolekcí členů s možnou hodnotou null, jak je znázorněno v následujícím kódu:
 
-[!code-csharp-interactive[NullableTupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#NullableEquality "Comparing Tuples and nullable tuples")]
+[!code-csharp-interactive[NullableTupleEquality](../../samples/snippets/csharp/tuples/program.cs#NullableEquality "Comparing Tuples and nullable tuples")]
 
 Rovnost řazené kolekce členů také provádí implicitní převody na každého členu obou řazených kolekcí členů. Patří mezi ně zrušené převody, rozšiřující převody nebo jiné implicitní převody. Následující příklady ukazují, že celočíselná hodnota 2 – řazená kolekce členů může být porovnána s dlouhou meziřazenou kolekcí členů z důvodu implicitního převodu z celého čísla na Long:
 
-[!code-csharp-interactive[SnippetMemberConversions](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberConversions "converting tuples for equality tests")]
+[!code-csharp-interactive[SnippetMemberConversions](../../samples/snippets/csharp/tuples/program.cs#SnippetMemberConversions "converting tuples for equality tests")]
 
 Názvy členů řazené kolekce členů se neúčastní testů pro rovnost. Pokud je však jeden z operandů literál řazené kolekce členů s explicitními názvy, kompilátor vygeneruje upozornění CS8383, pokud tyto názvy neodpovídají názvům jiného operandu.
 V případě, kdy jsou oba operandy literály řazené kolekce členů, je upozornění na pravém operandu, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp-interactive[MemberNames](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberNames "Tuple member names do not participate in equality tests")]
+[!code-csharp-interactive[MemberNames](../../samples/snippets/csharp/tuples/program.cs#SnippetMemberNames "Tuple member names do not participate in equality tests")]
 
 A konečně, řazené kolekce členů můžou obsahovat vnořené řazené kolekce členů. Rovnost řazené kolekce členů porovnává "tvar" každého operandu prostřednictvím vnořených řazených kolekcí členů, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp-interactive[NestedTuples](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
+[!code-csharp-interactive[NestedTuples](../../samples/snippets/csharp/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
 
 Jedná se o chybu při kompilaci pro porovnání dvou řazených kolekcí členů s rovností (nebo nerovnosti), pokud mají různé tvary. Kompilátor se nebude pokoušet o žádné dekonstrukci vnořených řazených kolekcí členů, aby je bylo možné porovnat.
 
@@ -118,14 +118,14 @@ Pojďme se podívat na typy přiřazení, která jsou povolená mezi typy řazen
 
 Vezměte v úvahu tyto proměnné, které se používají v následujících příkladech:
 
-[!code-csharp[VariableCreation](../../samples/snippets/csharp/tuples/tuples/program.cs#03_VariableCreation "Variable creation")]
+[!code-csharp[VariableCreation](../../samples/snippets/csharp/tuples/program.cs#03_VariableCreation "Variable creation")]
 
 První dvě proměnné `unnamed` a `anonymous` nemají pro prvky k dispozici sémantické názvy. Názvy polí jsou `Item1` a `Item2`.
 Poslední dvě proměnné `named` a `differentName` mají pro prvky zadány sémantické názvy. Tyto dvě řazené kolekce členů mají různé názvy pro prvky.
 
 Všechny čtyři tyto řazené kolekce členů mají stejný počet elementů (označovaných jako mohutnost) a typy těchto elementů jsou identické. Proto všechna tato přiřazení fungují:
 
-[!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/tuples/program.cs#04_VariableAssignment "Variable assignment")]
+[!code-csharp[VariableAssignment](../../samples/snippets/csharp/tuples/program.cs#04_VariableAssignment "Variable assignment")]
 
 Všimněte si, že názvy řazených kolekcí členů nejsou přiřazeny. Hodnoty prvků jsou přiřazeny podle pořadí prvků v řazené kolekci členů.
 
@@ -142,7 +142,7 @@ named = differentShape;
 
 Jedním z nejběžnějších použití pro řazené kolekce členů je jako návratová hodnota metody. Pojďme si projít jeden příklad. Zvažte tuto metodu, která vypočítá směrodatnou odchylku pro posloupnost čísel:
 
-[!code-csharp[StandardDeviation](../../samples/snippets/csharp/tuples/tuples/statistics.cs#05_StandardDeviation "Compute Standard Deviation")]
+[!code-csharp[StandardDeviation](../../samples/snippets/csharp/tuples/statistics.cs#05_StandardDeviation "Compute Standard Deviation")]
 
 > [!NOTE]
 > Tyto příklady vypočítají nesprávnou směrodatnou odchylku vzorků.
@@ -153,21 +153,21 @@ Předchozí kód následuje vzorec Textbook pro směrodatnou odchylku. Vytvář�
 
 Existuje alternativní vzorec, který počítá směrodatnou odchylku pomocí pouze jednoho výčtu sekvence.  Tento výpočet vytvoří dvě hodnoty, protože sestaví sekvenci: součet všech položek v sekvenci a součet každé hodnoty čtverce:
 
-[!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/tuples/statistics.cs#06_SumOfSquaresFormula "Compute Standard Deviation using the sum of squares")]
+[!code-csharp[SumOfSquaresFormula](../../samples/snippets/csharp/tuples/statistics.cs#06_SumOfSquaresFormula "Compute Standard Deviation using the sum of squares")]
 
 Tato verze sestaví sekvenci přesně jednou. Nejedná se ale o opakovaně použitelný kód. Jak budete pracovat, zjistíte, že mnoho různých statistických výpočtů používá počet položek v sekvenci, součet sekvence a součet čtverců sekvence. Pojďme tuto metodu Refaktorovat a napsat metodu nástroje, která vytvoří všechny tři tyto hodnoty. Všechny tři hodnoty mohou být vráceny jako řazené kolekce členů.
 
 Pojďme tuto metodu aktualizovat tak, aby tři hodnoty vypočítané během výčtu byly uloženy v řazené kolekci členů. Vytváří tuto verzi:
 
-[!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#07_TupleVersion "Refactor to use tuples")]
+[!code-csharp[TupleVersion](../../samples/snippets/csharp/tuples/statistics.cs#07_TupleVersion "Refactor to use tuples")]
 
 Podpora refaktoringu sady Visual Studio usnadňuje extrakci funkcí základních statistik do privátní metody. Poskytuje `private static` metodu, která vrací typ řazené kolekce členů se třemi `Sum`hodnotami, `SumOfSquares`a `Count`:
 
-[!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#08_TupleMethodVersion "After extracting utility method")]
+[!code-csharp[TupleMethodVersion](../../samples/snippets/csharp/tuples/statistics.cs#08_TupleMethodVersion "After extracting utility method")]
  
 Jazyk umožňuje několik dalších možností, které můžete použít, pokud chcete udělat několik rychlých úprav ručně. Nejprve můžete použít `var` deklaraci k inicializaci výsledku řazené kolekce členů `ComputeSumAndSumOfSquares` z volání metody. V `ComputeSumAndSumOfSquares` rámci metody můžete také vytvořit tři diskrétní proměnné. Finální verze je zobrazená v následujícím kódu:
 
-[!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/tuples/statistics.cs#09_CleanedTupleVersion "After final cleanup")]
+[!code-csharp[CleanedTupleVersion](../../samples/snippets/csharp/tuples/statistics.cs#09_CleanedTupleVersion "After final cleanup")]
 
 Tato konečná verze se dá použít pro libovolnou metodu, která potřebuje tyto tři hodnoty, nebo jakoukoli její podmnožinu.
 
@@ -203,11 +203,11 @@ Výsledky dotazu byste měli zamítnout do posloupnosti objektů, které byly an
 Vrácení sekvence typu řazené kolekce členů je jednoduché a názvy a typy prvků jsou k dispozici v době kompilace a prostřednictvím nástrojů IDE.
 Zvažte například aplikaci ToDo. Můžete definovat třídu podobnou následující, aby představovala jedinou položku v seznamu ToDo:
 
-[!code-csharp[ToDoItem](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#14_ToDoItem "To Do Item")]
+[!code-csharp[ToDoItem](../../samples/snippets/csharp/tuples/projectionsample.cs#14_ToDoItem "To Do Item")]
 
 Vaše mobilní aplikace mohou podporovat kompaktní formu aktuálních položek ToDo, které zobrazují pouze nadpis. Tento dotaz LINQ by provedl projekci, která obsahuje pouze ID a název. Metoda, která vrací sekvenci řazených kolekcí členů vyjadřuje tento návrh dobře:
 
-[!code-csharp[QueryReturningTuple](../../samples/snippets/csharp/tuples/tuples/projectionsample.cs#15_QueryReturningTuple "Query returning a tuple")]
+[!code-csharp[QueryReturningTuple](../../samples/snippets/csharp/tuples/projectionsample.cs#15_QueryReturningTuple "Query returning a tuple")]
 
 > [!NOTE]
 > V C# 7,1 řazené kolekce členů umožňují vytvořit pojmenované řazené kolekce členů pomocí prvků podobným způsobem jako pojmenovávání vlastností v anonymních typech. Ve výše uvedeném kódu `select` příkaz v projekci dotazu vytvoří řazenou kolekci členů, která obsahuje prvky `ID` a. `Title`
@@ -218,11 +218,11 @@ Pojmenovaná řazená kolekce členů může být součástí signatury. Umožň
 
 Můžete odbalit všechny položky v řazené kolekci členů tím, že dekonstruujete řazenou kolekci členů vrácenou metodou. Existují tři různé přístupy k dekonstrukci řazených kolekcí členů.  Nejprve můžete explicitně deklarovat typ každého pole uvnitř závorek a vytvořit tak diskrétní proměnné pro každý prvek řazené kolekce členů:
 
-[!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/tuples/statistics.cs#10_Deconstruct "Deconstruct")]
+[!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/statistics.cs#10_Deconstruct "Deconstruct")]
 
 Můžete také deklarovat implicitně typové proměnné pro každé pole v řazené kolekci členů pomocí `var` klíčového slova vně závorek:
 
-[!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/tuples/statistics.cs#11_DeconstructToVar "Deconstruct to Var")]
+[!code-csharp[DeconstructToVar](../../samples/snippets/csharp/tuples/statistics.cs#11_DeconstructToVar "Deconstruct to Var")]
 
 Také je právní použití `var` klíčového slova s libovolnou nebo všemi deklaracemi proměnných uvnitř závorek. 
 
@@ -253,21 +253,21 @@ Libovolný typ řazené kolekce členů lze dekonstruovat, jak je uvedeno výše
 
 Autor typu může definovat jednu nebo více `Deconstruct` metod, které přiřazují hodnoty k libovolnému `out` počtu proměnných reprezentujícím datové prvky, které tvoří typ. Například následující `Person` typ `Deconstruct` definuje metodu, která dekonstruuje objekt Person do prvků představujících křestní jméno a příjmení:
 
-[!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]
+[!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]
 
 Metoda dekonstrukce umožňuje přiřazení z `Person` a do dvou řetězců, které `FirstName` představují vlastnosti a `LastName` :
 
-[!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/tuples/program.cs#12A_DeconstructType "Deconstruct a class type")]
+[!code-csharp[Deconstruct Type](../../samples/snippets/csharp/tuples/program.cs#12A_DeconstructType "Deconstruct a class type")]
 
 Můžete povolit dekonstrukci i pro typy, které jste nevytvořili.
 `Deconstruct` Metoda může být metoda rozšíření, která odbalí přístupné datové členy objektu. Níže uvedený `Student` příklad ukazuje typ, odvozený `Person` z typu, a metodu rozšíření `Student` , která dekonstruujee `LastName`do tří proměnných `GPA`, reprezentující `FirstName`, a:
 
-[!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/tuples/person.cs#13_ExtensionDeconstructMethod "Type with a deconstruct extension method")]
+[!code-csharp[ExtensionDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#13_ExtensionDeconstructMethod "Type with a deconstruct extension method")]
 
 Objekt má nyní dvě dostupné `Deconstruct` metody: metodu rozšíření deklarovanou pro `Student` typy a člena `Person` typu. `Student` Obě jsou v oboru, což umožňuje `Student` , aby bylo možné ho rozdělit do dvou proměnných nebo tří.
 Pokud každému studentovi přiřadíte tři proměnné, vrátí se všechna jeho křestní jméno, příjmení a GPA. Pokud do dvou proměnných přiřadíte studenta, vrátí se pouze jméno a příjmení.
 
-[!code-csharp[Deconstruct extension method](../../samples/snippets/csharp/tuples/tuples/program.cs#13A_DeconstructExtension "Deconstruct a class type using an extension method")]
+[!code-csharp[Deconstruct extension method](../../samples/snippets/csharp/tuples/program.cs#13A_DeconstructExtension "Deconstruct a class type using an extension method")]
 
 Měli byste pečlivě definovat více `Deconstruct` metod ve třídě nebo hierarchii tříd. Více `Deconstruct` metod, které mají stejný `out` počet parametrů, může rychle způsobit nejednoznačnosti. Volající nemusí být schopni snadno volat požadovanou `Deconstruct` metodu.
 

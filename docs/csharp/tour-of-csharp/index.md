@@ -1,78 +1,78 @@
 ---
-title: Prohlídku C# - C# Průvodce
-description: Teprve se C#? Naučte se základy jazyka.
+title: Prohlídka C# – C# Průvodce
+description: Začínáte C#? Seznamte se se základy jazyka.
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: c3a117d660c02702e900b827c2eed9c6b56b5606
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eaaa5a259f0776a2749ed899d0406aee041a8442
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706530"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105653"
 ---
-# <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka
+# <a name="a-tour-of-the-c-language"></a>Prohlídka C# jazyka
 
-C# (čteno "v tématu Sharp") je jednoduchý, moderní, objektově orientované a bezpečnost typů programovací jazyk. C#má jeho kořeny řady jazyků C a bude okamžitě znát programátory C, C++, Javy a JavaScriptu. Tato ukázka poskytuje přehled o součástech jazyka. Pokud chcete prozkoumat jazyka pomocí interaktivního příklady, vyzkoušejte naše [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzy.
+C#(vyslovit "viz Sharp") je jednoduchý, moderní, objektově orientovaný programovací jazyk, který je typově bezpečný. C#má své kořeny v řadě jazyků C a bude se okamžitě seznámit s programátory jazyka C C++,, Java a JavaScriptu. Tato prohlídka poskytuje přehled o hlavních součástech jazyka. Pokud chcete prozkoumat jazyk pomocí interaktivních příkladů, vyzkoušejte naše [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzů.
 
-C# je objektově orientovaný jazyk, ale jazyka C# dále zahrnuje podporu pro ***komponenty objektově orientovaný*** programování. Návrh moderní softwaru stále spoléhá na softwarové komponenty v podobě samostatné a popisující samy sebe balíčky funkcí. Klíčem k takové součásti je, že představují programovací model s vlastnosti, metody a události; mají atributy, které poskytují deklarativní informace o komponentě; a zahrnují vlastní dokumentace. C#poskytuje pro podporu těchto konceptů, což přímo vytvoří jazyk C# velmi přirozeného jazyka, ve kterém chcete vytvořit a používat softwarové součásti.
+C#je objektově orientovaný jazyk, ale C# dále zahrnuje podporu pro programování ***orientované na komponenty*** . Moderní návrh softwaru se stále spoléhá na softwarové komponenty ve formě integrovaných a samoobslužných balíčků funkcí. Klíč k takovým součástem je, že prezentují programovací model s vlastnostmi, metodami a událostmi. mají atributy, které poskytují deklarativní informace o komponentě. a obsahují vlastní dokumentaci. C#poskytuje jazykové konstrukce pro podporu přímo těchto konceptů C# a vytváří tak velmi přirozený jazyk pro vytváření a používání softwarových komponent.
 
-Několik C# funkce podpory ve vytváření robustních a odolných aplikací: ***Uvolňování paměti*** automaticky uvolní paměť obsazena nedostupný nepoužívaných objektů; ***zpracování výjimek*** přináší strukturovaných a rozšiřitelné přístup k detekce chyb a obnovení; a ***zajišťující bezpečnost typů*** návrh jazyka znemožňuje čtení z neinicializovaného proměnné k indexování pole, mimo jejich rozsah nebo k provádění zaškrtnuté políčko typu přetypování.
+Několik C# funkcí pomáhá při konstrukci robustních a odolných aplikací: ***Uvolňování*** paměti automaticky uvolňuje paměť, kterou zabírá nedosažitelné nepoužívané objekty; ***zpracování výjimek*** poskytuje strukturovaný a rozšiřitelný přístup k detekci a obnovení chyb. a ***typově bezpečný*** návrh tohoto jazyka znemožňuje čtení z neinicializovaných proměnných, pro indexaci polí nad rámec jejich hranic nebo pro provedení nezaškrtnutých přetypování typu.
 
-C# má ***unified systém typů***. Všechny typy C#, včetně primitivní typy, jako například `int` a `double`, dědit z jednoho kořene `object` typu. Proto sdílejí sadu běžných operací pro všechny typy a hodnoty libovolného typu lze ukládat, přenášet a provozován konzistentním způsobem. Kromě toho C# podporuje uživatelem definované referenční typy a typy hodnot, povolení dynamické přidělování objektů a úložiště v řádku zjednodušené struktur.
+C#má ***jednotný systém typů***. Všechny C# typy, včetně primitivních typů `int` , jako jsou a `double`, dědí z jednoho `object` kořenového typu. Všechny typy tedy sdílí sadu běžných operací a hodnoty libovolného typu mohou být uloženy, přepravovány a provozovány konzistentním způsobem. Kromě toho C# podporuje uživatelsky definované typy odkazů i typy hodnot, což umožňuje dynamické přidělování objektů a také vložené úložiště lehkých struktur.
 
-Chcete-li zajistit C# programů a knihoven můžete v průběhu času vyvíjejí kompatibilní způsobem, mnoho důraz na ***správy verzí*** v C#návrh. Mnoho programovacích jazyků věnovat trochu tento problém, a v důsledku toho jsou zavedeny programy napsané v těchto jazyků přerušení častěji, než pokud je novější verze závislé knihovny. Aspekty C#je návrh, který byly přímo ovlivňován aspekty správy verzí obsahovat samostatné `virtual` a `override` modifikátory, pravidla pro řešení přetížení metody a podpora deklarací členů explicitního rozhraní.
+Aby bylo zajištěno, že se programy a knihovny můžou v průběhu času vyvíjejí kompatibilním způsobem, je mnohem zdůrazněno, že C# se v návrhu používá ***Správa verzí*** C#. Řada programovacích jazyků platíte jenom malým pozornostům tohoto problému. v důsledku toho jsou programy napsané v těchto jazycích častěji využívány, pokud jsou zavedeny novější verze závislých knihoven. C#Aspekty návrhu, které byly přímo ovlivněny aspekty správy verzí, zahrnují samostatné `virtual` a `override` modifikátory, pravidla pro řešení přetížení metod a podporu explicitních deklarací členů rozhraní.
 
-## <a name="hello-world"></a>Ahoj světe
+## <a name="hello-world"></a>Hello World
 
-Program "Hello, World" tradičně slouží k uvození programovací jazyk. Tady je v jazyce C#:
+Program "Hello, World" se tradičně používá k zavedení programovacího jazyka. Tady je C#:
 
 [!code-csharp[Hello World](../../../samples/snippets/csharp/tour/hello/Program.cs#L1-L8)]
 
-Zdrojové soubory jazyka C# obvykle mají příponu `.cs`. Za předpokladu, že program "Hello, World" je uložen v souboru `hello.cs`, program může být zkompilovány pomocí příkazového řádku:
+C#zdrojové soubory mají obvykle příponu `.cs`souboru. Za předpokladu, že je program "Hello, World" uložen `hello.cs`v souboru, program může být zkompilován pomocí příkazového řádku:
 
 ```console
 csc hello.cs
 ```
 
-produkuje spustitelného sestavení s názvem hello.exe. Výstup vytvořeného touto aplikací při spuštění je:
+který vytváří spustitelné sestavení s názvem Hello. exe. Výstup vytvořený touto aplikací při spuštění:
 
 ```console
 Hello, World
 ```
 
 > [!IMPORTANT]
-> `csc` Příkaz kompiluje pro úplné rozhraní framework a možná není k dispozici na všech platformách.
+> Příkaz `csc` se zkompiluje pro celou platformu a nemusí být k dispozici na všech platformách.
 
-Program "Hello, World" začíná `using` direktiva, která odkazuje `System` oboru názvů. Obory názvů umožňují hierarchické uspořádání programy jazyka C# a knihovny. Obory názvů obsahují typy a jiných oborech názvů – například `System` obor názvů obsahuje několik typů, například `Console` třída odkazovaná v programu a několik jiných oborech názvů, jako například `IO` a `Collections`. A `using` umožňuje direktiva, která odkazuje na daný obor názvů nekvalifikované použití typů, které jsou členy tohoto oboru názvů. Z důvodu `using` direktiv, můžete použít program `Console.WriteLine` jako zkratka pro `System.Console.WriteLine`.
+Program "Hello, World" začíná `using` direktivou, která odkazuje na `System` obor názvů. Obory názvů poskytují hierarchické prostředky pro C# uspořádání programů a knihoven. Obory názvů obsahují `System` typy a jiné obory názvů, například obor názvů obsahuje počet typů, jako je `Console` například třída odkazovaná v programu, a řadu `IO` dalších oborů názvů, například a `Collections`. `using` Direktiva, která odkazuje na daný obor názvů, umožňuje nekvalifikované použití typů, které jsou členy tohoto oboru názvů. Z `using` důvodu direktivy může program použít `Console.WriteLine` jako zkrácený pro `System.Console.WriteLine`.
 
-`Hello` Třídy deklarované jako programem "Hello, World" obsahuje jeden člen metodu s názvem `Main`. `Main` Metoda je deklarována s modifikátorem statické. Zatímco instanční metody může odkazovat na konkrétní nadřazeného objektu instanci pomocí klíčového slova `this`, statické metody fungovat bez ohledu na konkrétní objekt. Podle konvence statickou metodu s názvem `Main` slouží jako vstupní bod programu.
+Třída deklarovaná programem "Hello, World" má jednoho člena, metodu s názvem `Main`. `Hello` `Main` Metoda je deklarována se statickým modifikátorem. I když metody instance mohou odkazovat na konkrétní ohraničující objekt instance pomocí klíčového `this`slova, statické metody pracují bez odkazů na konkrétní objekt. Podle konvence, statická metoda s `Main` názvem slouží jako vstupní bod programu.
 
-Výstup programu je vytvořen `WriteLine` metodu `Console` třídy v `System` oboru názvů. Tato třída poskytuje standardní knihovny tříd rozhraní, které ve výchozím nastavení, je automaticky odkazován kompilátorem.
+Výstup programu je vytvořen `WriteLine` metodou `Console` třídy v `System` oboru názvů. Tuto třídu poskytují standardní knihovny tříd, které jsou ve výchozím nastavení automaticky odkazovány kompilátorem.
 
-Další informace o mnohem víc C#.  V následujících tématech přehledu elementů C# jazyka. Tyto přehledy zadání základních informací o všechny prvky jazyka, který se vám poskytnou informace potřebné k Ponořte se hlouběji do prvků C# jazyka:
+Máte spoustu dalších informací o C#.  Následující témata obsahují přehled prvků C# jazyka. Tato přehledy poskytnou základní informace o všech prvcích jazyka a poskytují informace potřebné k podrobně hlouběji do prvků C# jazyka:
 
-* [Struktura programu](program-structure.md)
-  - Informace o klíčových konceptech organizace v C# jazyka: ***programy***, ***obory názvů***, ***typy***, ***členy***a ***sestavení***.
-* [Typy a proměnné](types-and-variables.md)
-  - Další informace o ***typů hodnot***, ***referenční typy***, a ***proměnné*** v C# jazyka.
-* [Výrazy](expressions.md)
-  - ***Výrazy*** se vytvářejí na základě ***operandy*** a ***operátory***. Výrazy výsledkem hodnota.
-* [Příkazy](statements.md)
-  - Použijete ***příkazy*** vyjádřit akce programu.
-* [Třídy a objekty](classes-and-objects.md)
-  - ***Třídy*** jsou nejvíce základní typy jazyka C#. ***Objekty*** jsou instancemi třídy. Třídy jsou sestaveny na základě ***členy***, které jsou také uvedené v tomto tématu.
-* [Struktury](structs.md)
-  - ***Struktury*** jsou datové struktury, které na rozdíl od tříd, jsou typy hodnot.
-* [Pole](arrays.md)
-  - ***Pole*** je datová struktura, která obsahuje několik proměnných, které jsou přístupné prostřednictvím vypočítané indexy.
-* [Rozhraní](interfaces.md)
-  - ***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
-* [Výčty](enums.md)
-  - ***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant.
-* [Delegáti](delegates.md)
-  - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
-* [Atributy](attributes.md)
-  * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.
+- [Struktura programu](program-structure.md)
+  - Naučte se klíčové organizační koncepty v C# jazyce: ***programy***, ***obory názvů***, ***typy***, ***členy***a ***sestavení***.
+- [Typy a proměnné](types-and-variables.md)
+  - Přečtěte si o ***typech hodnot***, ***odkazových typech***a ***proměnných*** v C# jazyce.
+- [Výrazy](expressions.md)
+  - ***Výrazy*** jsou vytvořené z ***operandů*** a ***operátorů***. Výrazy vytvoří hodnotu.
+- [Příkazy](statements.md)
+  - Pomocí ***příkazů*** můžete vyjádřit akce programu.
+- [Třídy a objekty](classes-and-objects.md)
+  - ***Třídy*** jsou základem C#typů. ***Objekty*** jsou instancemi třídy. Třídy jsou sestaveny pomocí ***členů***, které jsou také pokryty v tomto tématu.
+- [Struktury](structs.md)
+  - ***Struktury*** jsou datové struktury, které jsou na rozdíl od tříd typy hodnot.
+- [Pole](arrays.md)
+  - ***Pole*** je datová struktura, která obsahuje počet proměnných, které jsou dostupné prostřednictvím počítaných indexů.
+- [Rozhraní](interfaces.md)
+  - ***Rozhraní*** definuje kontrakt, který může být implementován pomocí tříd a struktur. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů, které definuje – určuje pouze členy, které musí být poskytnuty třídami nebo strukturami, které implementují rozhraní.
+- [Výčty](enums.md)
+  - ***Typ výčtu*** je jedinečný typ hodnoty se sadou pojmenovaných konstant.
+- [Delegáti](delegates.md)
+  - ***Typ delegáta*** představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Delegáti umožňují zacházet s metodami jako s entitami, které lze přiřadit proměnným a předávat jako parametry. Delegáti jsou podobní pojmu ukazatelů na funkce nalezené v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce jsou delegáti objektově orientované a typově bezpečné.
+- [Atributy](attributes.md)
+  - ***Atributy*** umožňují programům určit další deklarativní informace o typech, členech a jiných entitách.
 
 > [!div class="step-by-step"]
 > [Next](program-structure.md)

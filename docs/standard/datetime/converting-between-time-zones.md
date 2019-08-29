@@ -1,5 +1,5 @@
 ---
-title: Převádění časových údajů mezi časovými pásmy
+title: Převádění časů mezi časovými pásmy
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,108 +14,108 @@ helpviewer_keywords:
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e08e90f61429f01f360808866fdc3d963323ba23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5b78e3985169954d71b479aa2e8a034f61afc01
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901810"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106974"
 ---
-# <a name="converting-times-between-time-zones"></a>Převádění časových údajů mezi časovými pásmy
+# <a name="converting-times-between-time-zones"></a>Převádění časů mezi časovými pásmy
 
-Se stává čím dál důležitější pro každou aplikaci, která pracuje s daty a časy zpracovávat rozdíly v časových pásmech. Aplikace již nebude předpokládat, který celou dobu může být vyjádřena v místním čase, což je čas k dispozici <xref:System.DateTime> struktury. Webové stránky, která zobrazí aktuální čas ve východní části USA, například chybět důvěryhodnost zákazníkovi ve východní Asii. Toto téma vysvětluje, jak převést časy z jedné časové pásmo, jakož i jak převést <xref:System.DateTimeOffset> hodnoty, které mají omezenou časové pásmo.
+U každé aplikace, která pracuje s daty a časy, je stále důležitější pro zpracování rozdílů mezi časovými pásmy. Aplikace již nemůže předpokládat, že všechny časy mohou být vyjádřeny v místním čase, což je čas dostupný ze <xref:System.DateTime> struktury. Například webová stránka, která zobrazuje aktuální čas ve východní části USA, nebude mít u zákazníka ve východní Asie hodnotu věrohodnosti. Toto téma vysvětluje, jak převést časy z jednoho časového pásma na jiný a jak převést <xref:System.DateTimeOffset> hodnoty, které mají omezené povědomí o časovém pásmu.
 
-## <a name="converting-to-coordinated-universal-time"></a>Převod na koordinovaný univerzální čas
+## <a name="converting-to-coordinated-universal-time"></a>Převod na koordinovaný světový čas
 
-Koordinovaný univerzální čas (UTC) je standardní čas vysokou přesností, atomické. Na světě časových pásem jsou vyjádřeny jako kladné nebo záporné posun od času UTC. Čas UTC poskytne druh časového pásma zdarma nebo neutrální času časového pásma. Pomocí času UTC se doporučuje, pokud datum a čas pro přenositelnost mezi počítači je důležité. (Podrobnosti a další osvědčené postupy použití dat a časů, naleznete v tématu [kódování osvědčených postupů pomocí data a času v rozhraní .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10)).) Převod na standard UTC jednotlivých časových pásmech usnadňuje porovnávání času.
+Koordinovaný světový čas (UTC) je Standard s vysokou přesností. Světová časová pásma jsou vyjádřena jako kladná nebo záporná posun od času UTC. UTC tedy poskytuje typ časového pásma volná a neutrální čas v časovém pásmu. Použití času UTC se doporučuje v případě, kdy je důležité přenositelnost data a času napříč počítači. (Podrobnosti a další osvědčené postupy, které používají data a časy, najdete v tématu [osvědčené postupy pro kódování pomocí DateTime v .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10)).) Převod jednotlivých časových pásem na čas UTC usnadňuje porovnávání času.
 
 > [!NOTE]
-> Můžete také serializovat <xref:System.DateTimeOffset> struktura jednoznačně představují jediný bod v čase. Protože <xref:System.DateTimeOffset> objekty ukládají hodnoty data a času spolu s jeho posun od času UTC, vždy představují určitého bodu v čase ve vztahu k času UTC.
+> Můžete také serializovat <xref:System.DateTimeOffset> strukturu tak, aby jednoznačně představovala jediný bod v čase. Vzhledem <xref:System.DateTimeOffset> k tomu, že objekty ukládají hodnotu data a času spolu s jejich posunem od času UTC, vždy reprezentují konkrétní bod v čase ve vztahu k času UTC.
 
-Nejjednodušší způsob, jak převést čas na čas UTC je volání `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> metody. Přesné převodu provedený metodou závisí na hodnotu `dateTime` parametru <xref:System.DateTime.Kind%2A> vlastnost, jak ukazuje následující tabulka.
+Nejjednodušší způsob, jak převést čas na čas UTC, je zavolat `static` metodu (`Shared` v Visual Basic). <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> Přesný převod prováděný metodou závisí na hodnotě `dateTime` <xref:System.DateTime.Kind%2A> vlastnosti parametru, jak je uvedeno v následující tabulce.
 
 | `DateTime.Kind`            | Konverze                                                                     |
 | -------------------------- | ------------------------------------------------------------------------------ |
-| `DateTimeKind.Local`       | Místní čas převede na UTC.                                                    |
-| `DateTimeKind.Unspecified` | Předpokládá, `dateTime` parametr je místní čas a převede místní čas na čas UTC. |
-| `DateTimeKind.Utc`         | Vrátí `dateTime` parametr beze změny.                                    |
+| `DateTimeKind.Local`       | Převede místní čas na čas UTC.                                                    |
+| `DateTimeKind.Unspecified` | Předpokládá, `dateTime` že parametr je místní čas a převede místní čas na UTC. |
+| `DateTimeKind.Utc`         | `dateTime` Vrátí parametr beze změny.                                    |
 
-Následující kód aktuální místní čas převede na UTC a zobrazí výsledek do konzoly.
+Následující kód převede aktuální místní čas na čas UTC a zobrazí výsledek pro konzolu.
 
 [!code-csharp[System.TimeZone2.Concepts#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#6)]
 [!code-vb[System.TimeZone2.Concepts#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#6)]
 
-Pokud se hodnoty data a času nepředstavuje UTC, nebo místního času <xref:System.DateTime.ToUniversalTime%2A> vrátí metoda pravděpodobně chybný výsledek. Můžete však použít <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> způsobů, jak převést datum a čas, od zadané časové pásmo. (Další informace o načítání <xref:System.TimeZoneInfo> najdete v článku, který představuje cílové časové pásmo [hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md).) Následující kód používá <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> způsobů, jak převést východní běžný čas na čas UTC.
+Pokud hodnota data a času nepředstavuje buď místní čas, nebo UTC, <xref:System.DateTime.ToUniversalTime%2A> metoda bude nejspíš vracet chybný výsledek. Můžete však použít <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> metodu k převedení data a času ze zadaného časového pásma. (Podrobnosti o načtení <xref:System.TimeZoneInfo> objektu, který představuje cílové časové pásmo, najdete v tématu [vyhledání časových pásem definovaných v místním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md).) Následující kód používá <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> metodu k převodu východního standardního času na čas UTC.
 
 [!code-csharp[System.TimeZone2.Concepts#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#7)]
 [!code-vb[System.TimeZone2.Concepts#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#7)]
 
-Všimněte si, že tato metoda vyvolá <xref:System.ArgumentException> Pokud <xref:System.DateTime> objektu <xref:System.DateTime.Kind%2A> vlastnost a časové pásmo se neshodují. Pokud dojde k neshodě <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Local?displayProperty=nameWithType> ale <xref:System.TimeZoneInfo> objekt nepředstavuje místnímu časovému pásmu, nebo, pokud <xref:System.DateTime.Kind%2A> vlastnost je <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> ale <xref:System.TimeZoneInfo> objektu se nerovná <xref:System.TimeZoneInfo.Utc?displayProperty=nameWithType>.
+Všimněte si, že tato metoda <xref:System.ArgumentException> vyvolá výjimku <xref:System.DateTime> , pokud <xref:System.DateTime.Kind%2A> se neshoduje vlastnost objektu a časové pásmo. K neshodě dojde, <xref:System.DateTime.Kind%2A> Pokud je <xref:System.DateTimeKind.Local?displayProperty=nameWithType> vlastnost, <xref:System.TimeZoneInfo> ale objekt nepředstavuje místní časové pásmo <xref:System.TimeZoneInfo> , nebo pokud <xref:System.DateTime.Kind%2A> je <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> vlastnost, ale objekt se nerovná <xref:System.TimeZoneInfo.Utc?displayProperty=nameWithType>.
 
-Provést všechny tyto metody <xref:System.DateTime> hodnoty jako parametry a vraťte se <xref:System.DateTime> hodnotu. Pro <xref:System.DateTimeOffset> hodnot, <xref:System.DateTimeOffset> má strukturu <xref:System.DateTimeOffset.ToUniversalTime%2A> instanci metody, která převede datum a čas aktuální instance na čas UTC. Následující příklad volá <xref:System.DateTimeOffset.ToUniversalTime%2A> způsobů, jak převést místním časem a dalších několikrát koordinovaný univerzální čas (UTC).
+Všechny tyto metody přijímají <xref:System.DateTime> hodnoty jako parametry a <xref:System.DateTime> vracejí hodnotu. Pro <xref:System.DateTimeOffset> hodnoty <xref:System.DateTimeOffset> má<xref:System.DateTimeOffset.ToUniversalTime%2A> struktura metodu instance, která převede datum a čas aktuální instance na čas UTC. Následující příklad volá <xref:System.DateTimeOffset.ToUniversalTime%2A> metodu pro převod místního času a několik dalších časů na koordinovaný světový čas (UTC).
 
 [!code-csharp[System.DateTimeOffset.Methods#16](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Methods/cs/Methods.cs#16)]
 [!code-vb[System.DateTimeOffset.Methods#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Methods/vb/Methods.vb#16)]
 
-## <a name="converting-utc-to-a-designated-time-zone"></a>Převod na požadovaném časovém pásmu UTC
+## <a name="converting-utc-to-a-designated-time-zone"></a>Převod UTC na určené časové pásmo
 
-Převod času UTC na místní čas, najdete v části "převodu času UTC na místní čas", který následuje. Chcete-li převést UTC na čas v časovém pásmu, který určíte, zavolejte <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> metody. Tato metoda přebírá dva parametry:
+Chcete-li převést čas UTC na místní čas, přečtěte si následující oddíl "převod UTC na místní čas". Chcete-li převést čas UTC na čas v jakémkoli časovém pásmu, které <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A> určíte, zavolejte metodu. Metoda používá dva parametry:
 
-* Chcete-li převést na UTC. Musí se jednat <xref:System.DateTime> hodnota, jejíž <xref:System.DateTime.Kind%2A> je nastavena na `Unspecified` nebo `Utc`.
+- ČAS UTC, který se má převést. Musí to být <xref:System.DateTime> hodnota, jejíž <xref:System.DateTime.Kind%2A> vlastnost je nastavena na `Unspecified` nebo `Utc`.
 
-* Časové pásmo pro čas UTC pro převod.
+- Časové pásmo k převedení UTC na.
 
-Následující kód UTC převede na střed (běžný čas).
+Následující kód převede čas UTC na střední (běžný čas).
 
 [!code-csharp[System.TimeZone2.Concepts#8](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#8)]
 [!code-vb[System.TimeZone2.Concepts#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#8)]
 
-## <a name="converting-utc-to-local-time"></a>Převod času UTC na místní čas
+## <a name="converting-utc-to-local-time"></a>Převod UTC na místní čas
 
-Chcete-li převést UTC na místní čas, zavolejte <xref:System.DateTime.ToLocalTime%2A> metodu <xref:System.DateTime> objekt, jehož čas, který chcete převést. Přesné chování metody závisí na hodnotě objektu <xref:System.DateTime.Kind%2A> vlastnost, jak ukazuje následující tabulka.
+Chcete-li převést čas UTC na místní čas <xref:System.DateTime.ToLocalTime%2A> , zavolejte metodu <xref:System.DateTime> objektu, jehož čas chcete převést. Přesné chování metody závisí na hodnotě <xref:System.DateTime.Kind%2A> vlastnosti objektu, jak je uvedeno v následující tabulce.
 
 | `DateTime.Kind`            | Konverze                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------- |
-| `DateTimeKind.Local`       | Vrátí <xref:System.DateTime> nezměněnou hodnotu.                                      |
-| `DateTimeKind.Unspecified` | Předpokládá, že <xref:System.DateTime> hodnota a převede na UTC na místní čas UTC. |
-| `DateTimeKind.Utc`         | Převede <xref:System.DateTime> hodnotu na místní čas.                                 |
+| `DateTimeKind.Local`       | <xref:System.DateTime> Vrátí hodnotu beze změny.                                      |
+| `DateTimeKind.Unspecified` | Předpokládá, že <xref:System.DateTime> hodnota je UTC a převede čas UTC na místní čas. |
+| `DateTimeKind.Utc`         | <xref:System.DateTime> Převede hodnotu na místní čas.                                 |
 
 > [!NOTE]
-> <xref:System.TimeZone.ToLocalTime%2A?displayProperty=nameWithType> Metoda chová stejně jako `DateTime.ToLocalTime` metody. To přijímá jeden parametr, což je hodnota data a času pro převod.
+> Metoda <xref:System.TimeZone.ToLocalTime%2A?displayProperty=nameWithType> se chová stejně `DateTime.ToLocalTime` jako metoda. Přijímá jeden parametr, což je hodnota data a času, která se má převést.
 
-Čas v libovolném požadovaném časovém pásmu na místní čas můžete také převádět pomocí `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.ConvertTime%2A?displayProperty=nameWithType> metody. Tato technika je popsáno v další části.
+Můžete také převést čas v jakémkoli určeném časovém pásmu na místní čas pomocí `static` metody (`Shared` v Visual Basic). <xref:System.TimeZoneInfo.ConvertTime%2A?displayProperty=nameWithType> Tato technika je popsána v následující části.
 
-## <a name="converting-between-any-two-time-zones"></a>Převod mezi každými dvěma časovými pásmy
+## <a name="converting-between-any-two-time-zones"></a>Převod mezi dvěma časovými pásmy
 
-Je možné převádět mezi dvě časová pásma pomocí některé z následujících dvou `static` (`Shared` v jazyce Visual Basic) metody <xref:System.TimeZoneInfo> třídy:
+Můžete převádět mezi dvěma časovými pásmy pomocí kterékoli z následujících dvou `static` metod (`Shared` v <xref:System.TimeZoneInfo> Visual Basic) třídy:
 
-* <xref:System.TimeZoneInfo.ConvertTime%2A>
+- <xref:System.TimeZoneInfo.ConvertTime%2A>
 
-  Tato metoda parametry jsou hodnoty data a času pro převod, `TimeZoneInfo` objekt, který reprezentuje časovém pásmu z hodnoty data a času a `TimeZoneInfo` objekt, který představuje časové pásmo, které chcete převést na hodnotu data a času.
+  Parametry této metody jsou hodnota data a času, která se má převést, `TimeZoneInfo` objekt, který představuje časové pásmo hodnoty data a času, `TimeZoneInfo` a objekt, který představuje časové pásmo pro převod hodnoty data a času na.
 
-* <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A>
+- <xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A>
 
-  Tato metoda parametry jsou datum a čas k převedení, identifikátor datum a časové pásmo času a identifikátor časového pásma převést na hodnotu data a času.
+  Parametry této metody jsou hodnota data a času pro převod, identifikátor časového pásma hodnoty data a času a identifikátor časového pásma, na které má být převedena hodnota data a času.
 
-Obě metody vyžadují, aby <xref:System.DateTime.Kind%2A> vlastnosti hodnoty data a času pro převod a <xref:System.TimeZoneInfo> odpovídají objektu nebo časové pásmo identifikátor, který představuje jeho časového pásma mezi sebou. V opačném případě <xref:System.ArgumentException> je vyvolána výjimka. Například pokud `Kind` vlastnosti hodnoty data a času je `DateTimeKind.Local`, je vyvolána výjimka, pokud `TimeZoneInfo` objekt předán jako parametr do metody není shodný s `TimeZoneInfo.Local`. Pokud identifikátor jako parametr předán metodě není roven také vyvolána výjimka `TimeZoneInfo.Local.Id`.
+Obě metody vyžadují, aby <xref:System.DateTime.Kind%2A> vlastnost hodnoty data a času pro převod <xref:System.TimeZoneInfo> a objekt nebo identifikátor časového pásma, který představuje své časové pásmo, odpovídala sobě. V opačném případě je vyvolána výjimka. <xref:System.ArgumentException> Například pokud `Kind` vlastnost hodnoty data a času je `DateTimeKind.Local`, je vyvolána `TimeZoneInfo` výjimka, pokud je objekt předán jako `TimeZoneInfo.Local`parametr metody, nerovná se. Výjimka je také vyvolána, pokud se identifikátor předaný jako parametr metodě nerovná `TimeZoneInfo.Local.Id`.
 
-V následujícím příkladu <xref:System.TimeZoneInfo.ConvertTime%2A> způsobů, jak převést z Havajské ostrovy (běžný čas) na místní čas.
+Následující příklad používá <xref:System.TimeZoneInfo.ConvertTime%2A> metodu pro převod z havajština standardního času na místní čas.
 
 [!code-csharp[System.TimeZone2.Concepts#9](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#9)]
 [!code-vb[System.TimeZone2.Concepts#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#9)]
 
-## <a name="converting-datetimeoffset-values"></a>Převod hodnoty DateTimeOffset
+## <a name="converting-datetimeoffset-values"></a>Převádění hodnot DateTimeOffset
 
-Hodnoty data a času reprezentována <xref:System.DateTimeOffset> objekty nejsou plně časového pásma vědět, protože objekt je oddělen od svého časového pásma v době, kdy je vytvořen. Ale v mnoha případech aplikace jednoduše převést datum a čas založený na dvou různých posun od času UTC, nikoli na čas zejména časových pásem. Chcete-li provést tento převod, můžete volat aktuální instance <xref:System.DateTimeOffset.ToOffset%2A> metody. Jediný parametr metody je posun novou hodnotu data a času, která metoda se vrátí.
+Hodnoty data a času reprezentované <xref:System.DateTimeOffset> objekty nejsou plně v časovém pásmu, protože objekt je v době, kdy je vytvořen, odstraněný v časovém pásmu. V mnoha případech však aplikace jednoduše potřebuje převést datum a čas na základě dvou různých posunů od času UTC, nikoli podle času v konkrétních časových pásmech. Chcete-li provést tento převod, můžete zavolat <xref:System.DateTimeOffset.ToOffset%2A> metodu aktuální instance. Jediným parametrem metody je posun nové hodnoty data a času, kterou metoda vrátí.
 
-Například pokud datum a čas uživatele o pro webové stránky se označuje a serializuje jako řetězec ve formátu MM/dd/rrrr hh: mm: zzzz následující `ReturnTimeOnServer` metoda převede na datum a čas na webovém serveru této hodnotě data a času.
+Například pokud je datum a čas požadavku uživatele na webovou stránku známo a serializován jako řetězec ve formátu mm/dd/rrrr hh: mm: SS zzzz, následující `ReturnTimeOnServer` metoda převede tuto hodnotu data a času na webový server na datum a čas.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/TimeConversions.cs#1)]
 [!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions.vb#1)] 
 
-Pokud metodě je předána řetězec "9/1/2007 5:32:07 -05:00", která představuje datum a čas v časovém pásmu dříve než čas UTC pět hodin, vrátí hodnotu 9/1/2007 3:32:07: 00 -07:00 pro server umístěný v USA. Tichomořském časovém pásmu.
+Pokud je metodě předán řetězec "9/1/2007 5:32:07 -05:00", který představuje datum a čas v časovém pásmu 5 hodin před časem UTC, vrátí 9/1/2007 3:32:07 dop. 07:00 pro server umístěný v USA. Tichomoří (standardní časové pásmo)
 
-<xref:System.TimeZoneInfo> Třída také obsahuje přetížení <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> metodu, která provádí převody s <xref:System.DateTimeOffset.ToOffset(System.TimeSpan)> hodnoty. Parametry metody <xref:System.DateTimeOffset> hodnoty a odkazu na časové pásmo, do kterého se má převést čas. Volání metody vrátí <xref:System.DateTimeOffset> hodnotu. Například `ReturnTimeOnServer` metoda v předchozím příkladu může být přepsán následujícím způsobem pro volání <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29> metody.
+Třída také obsahuje přetížení <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29?displayProperty=nameWithType> metody, která provádí převody časového pásma s <xref:System.DateTimeOffset.ToOffset(System.TimeSpan)> hodnotami. <xref:System.TimeZoneInfo> Parametry metody jsou <xref:System.DateTimeOffset> hodnota a odkaz na časové pásmo, do kterého má být čas převeden. Volání metody vrací <xref:System.DateTimeOffset> hodnotu. Například `ReturnTimeOnServer` metoda v předchozím příkladu může být přepsána následujícím způsobem pro <xref:System.TimeZoneInfo.ConvertTime%28System.DateTimeOffset%2CSystem.TimeZoneInfo%29> volání metody.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/timeconversions2.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions2.vb#2)]

@@ -11,51 +11,51 @@ helpviewer_keywords:
 ms.assetid: 2cf5fb25-492c-4875-9245-98cac8348e97
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c98f47613479c40804dce254261c560d829d91c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6e98d5d8240492ca30da2825b72277d7a35f97f6
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586353"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106787"
 ---
 # <a name="how-to-resolve-ambiguous-times"></a>Postupy: Řešení nejednoznačných časových údajů
 
-Nejednoznačný čas je čas, který se mapuje na více než jeden koordinovaný univerzální čas (UTC). K tomu dochází, když čas dojde k přenastavení zpět v čase, například při přechodu z časové pásmo letního času na jeho (běžný čas). Při zpracování nejednoznačný čas, můžete provést jednu z následujících:
+Nejednoznačný čas je čas, který se mapuje na více než jeden koordinovaný světový čas (UTC). K tomu dochází, když se změní čas v čase, například během přechodu z letního času v časovém pásmu do standardního času. Při zpracování dvojznačného času můžete provést jednu z následujících akcí:
 
-* Zkontrolujte předpoklady o způsobu, jakým času mapuje na čas UTC. Můžete například předpokládat, který nejednoznačný čas je vždy vyjádřené v časovém pásmu (běžný čas).
+- Zajistěte, aby se čas namapoval na čas UTC. Můžete například předpokládat, že nejednoznačná doba je vždy vyjádřena v časovém pásmu standardního času.
 
-* Nejednoznačný čas je to položka data zadaná uživatelem,-li to můžete nechat pro uživatele, aby se vyřešit nejednoznačnost.
+- Pokud je nejednoznačným časem položka dat zadaná uživatelem, můžete ji ponechat uživateli, aby vyřešila nejednoznačnost.
 
-Toto téma ukazuje, jak vyřešit nejednoznačný čas za předpokladu, že představuje časové pásmo (běžný čas).
+V tomto tématu se dozvíte, jak vyřešit dvojznačný čas za předpokladu, že představuje standardní čas časového pásma.
 
-### <a name="to-map-an-ambiguous-time-to-a-time-zones-standard-time"></a>K namapování nejednoznačný čas na časové pásmo (běžný čas)
+### <a name="to-map-an-ambiguous-time-to-a-time-zones-standard-time"></a>Chcete-li namapovat nejednoznačný čas na běžný čas v časovém pásmu
 
-1. Volání <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> metodou ke zjištění, zda je nejednoznačný čas.
+1. <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> Zavolejte metodu pro zjištění, zda je čas nejednoznačný.
 
-2. Pokud čas je nejednoznačný, odečíst čas <xref:System.TimeSpan> vrácený časové pásmo <xref:System.TimeZoneInfo.BaseUtcOffset%2A> vlastnost.
+2. Pokud je čas dvojznačný, odečíst čas od <xref:System.TimeSpan> objektu vráceného <xref:System.TimeZoneInfo.BaseUtcOffset%2A> vlastností časového pásma.
 
-3. Volání `static` (`Shared` v jazyce Visual Basic .NET) <xref:System.DateTime.SpecifyKind%2A> metody nastavte čas UTC data a času hodnoty <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>.
+3. <xref:System.DateTime.SpecifyKind%2A> <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> <xref:System.DateTime.Kind%2A> Zavolejte metodu`Shared` (in Visual Basic .NET), chcete-li nastavit vlastnost hodnoty data a času UTC na hodnotu. `static`
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak převést nejednoznačný čas na čas UTC podle předpokladu, že představuje místní časové pásmo (běžný čas).
+Následující příklad ukazuje, jak převést dvojznačný čas na čas UTC za předpokladu, že představuje standardní čas místního časového pásma.
 
 [!code-csharp[System.TimeZone2.Concepts#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#10)]
 [!code-vb[System.TimeZone2.Concepts#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#10)]
 
-V příkladu se skládá z metodu s názvem `ResolveAmbiguousTime` , který určuje, zda <xref:System.DateTime> předaná hodnota je nejednoznačný. Pokud hodnota je nejednoznačný, metoda vrátí <xref:System.DateTime> hodnotu, která představuje odpovídající čas UTC. Tato metoda obsluhuje tento převod tak, že se hodnota místní časové pásmo <xref:System.TimeZoneInfo.BaseUtcOffset%2A> vlastnost z místního času.
+Příklad se skládá z metody s názvem `ResolveAmbiguousTime` , která určuje, <xref:System.DateTime> zda je předaná hodnota nejednoznačná. Pokud je hodnota dvojznačná, metoda vrátí <xref:System.DateTime> hodnotu, která představuje odpovídající čas UTC. Metoda zpracovává tento převod odečtením hodnoty <xref:System.TimeZoneInfo.BaseUtcOffset%2A> vlastnosti místního časového pásma z místního času.
 
-Obvykle je zpracována nejednoznačný čas voláním <xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> metody k načtení pole <xref:System.TimeSpan> posuny objektů, které obsahují možná nejednoznačný čas UTC. V tomto příkladu je však libovolného předpokladu, že by vždy nejednoznačný čas musí být mapováno na časové pásmo (běžný čas). <xref:System.TimeZoneInfo.BaseUtcOffset%2A> Vlastnost vrací posun mezi UTC a časové pásmo (běžný čas).
+Obvykle je nejednoznačná doba zpracována voláním <xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> metody pro načtení <xref:System.TimeSpan> pole objektů, které obsahují nejednoznačná časová posun UTC. Tento příklad ale provede libovolný předpoklad, že nejednoznačný čas by měl být vždy namapován na standardní čas časového pásma. <xref:System.TimeZoneInfo.BaseUtcOffset%2A> Vlastnost vrací posun mezi časem UTC a standardním časem časového pásma.
 
-V tomto příkladu jsou všechny odkazy na místní časové pásmo provedené prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost; místní čas, zóna není nikdy přiřazeno do proměnné objektu. Toto je doporučený postup, protože volání <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> metoda zruší platnost objektů přiřazené k místním časovém pásmu.
+V tomto příkladu jsou všechny odkazy na místní časové pásmo provedeny prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnosti; místní časové pásmo není nikdy přiřazeno k objektové proměnné. Toto je doporučený postup, protože volání <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> metody zruší platnost všech objektů, které jsou přiřazeny k místnímu časovému pásmu.
 
 ## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
 
-* Že <xref:System> obor názvů je importovat s `using` – příkaz (vyžadováno za kód jazyka C#).
+- Tento obor názvů se naimportuje `using` pomocí příkazu (vyžaduje C# se v kódu). <xref:System>
 
 ## <a name="see-also"></a>Viz také:
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-- [Postupy: Umožnit uživatelům řešení nejednoznačných časových údajů](../../../docs/standard/datetime/let-users-resolve-ambiguous-times.md)
+- [Postupy: Umožnit uživatelům řešení nejednoznačných časů](../../../docs/standard/datetime/let-users-resolve-ambiguous-times.md)

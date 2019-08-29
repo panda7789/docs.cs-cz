@@ -1,46 +1,46 @@
 ---
-title: Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
+title: Ladění stromů výrazů v aplikaci Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 9aead09e0e9469f13e2d6befbad444d3c7fecabd
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 3334828475ef5d933ea660ea33ae264d4ccce172
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66196026"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106866"
 ---
-# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
-Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů. Pokud chcete získat rychlý přehled toho, stromové struktury výrazu, můžete použít `DebugView` vlastnost, která představuje stromů výrazů [pomocí speciální syntaxe](debugview-syntax.md). (Všimněte si, že `DebugView` je k dispozici pouze v režimu ladění.)  
+# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Ladění stromů výrazů v aplikaci Visual Studio (Visual Basic)
+Při ladění aplikací můžete analyzovat strukturu a obsah stromů výrazů. Chcete-li získat rychlý přehled stromové struktury výrazu, můžete použít `DebugView` vlastnost, která představuje stromy výrazů [pomocí speciální syntaxe](debugview-syntax.md). (Všimněte si `DebugView` , že je k dispozici pouze v režimu ladění.)  
 
 ![Nástroj DebugView stromu výrazu v ladicím programu sady Visual Studio](media/debugging-expression-trees-in-visual-studio/debugview_vb.png)
 
-Protože `DebugView` je řetězec, můžete použít [integrované Vizualizátor textu](https://docs.microsoft.com/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer) zobrazíte na více řádcích, tak, že vyberete **Vizualizátor textu** z ikony lupy vedle `DebugView` Popisek.
+Vzhledem `DebugView` k tomu, že je řetězec, můžete k jeho zobrazení na více řádcích použít [vestavěný Vizualizér textu](https://docs.microsoft.com/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer) , a to tak, že vyberete **Vizualizér textu** z ikony lupy vedle `DebugView` popisku.
 
- ![Vizualizátor textu použitý k výsledkům 'nástroj DebugView.](media/debugging-expression-trees-in-visual-studio/string_visualizer_vb.png)
+ ![U výsledků nástroj DebugView se použije Vizualizér textu](media/debugging-expression-trees-in-visual-studio/string_visualizer_vb.png)
 
-Alternativně můžete nainstalovat a používat [vlastní vizualizér](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data) pro stromy výrazů, jako například:
+Alternativně můžete nainstalovat a používat [vlastní Vizualizér](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data) pro stromy výrazů, například:
 
-* [Čitelný výrazy](https://github.com/agileobjects/ReadableExpressions) ([licencí MIT](https://github.com/agileobjects/ReadableExpressions/blob/master/LICENSE.md), k dispozici na [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers)), vykreslí stromu výrazů jako C# kódu:
+- [Čitelné výrazy](https://github.com/agileobjects/ReadableExpressions) ([Licence MIT](https://github.com/agileobjects/ReadableExpressions/blob/master/LICENSE.md), která je k dispozici na [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers)), vykreslí C# strom výrazu jako kód:
 
-  ![Čitelný výrazy vizualizéru](media/debugging-expression-trees-in-visual-studio/readable_expressions_visualizer.png)
+  ![Vizualizér čitelných výrazů](media/debugging-expression-trees-in-visual-studio/readable_expressions_visualizer.png)
 
-* [Vizualizéru stromu výrazu](https://github.com/zspitz/ExpressionToString#visual-studio-debugger-visualizer-for-expression-trees) ([licencí MIT](https://github.com/zspitz/ExpressionToString/blob/master/LICENSE)), poskytuje grafické zobrazení stromu výrazů, vlastnosti a související objekty; a může mít za následek stromu výrazů kódu jazyka Visual Basic:
+- [Vizualizér stromu výrazů](https://github.com/zspitz/ExpressionToString#visual-studio-debugger-visualizer-for-expression-trees) ([Licence MIT](https://github.com/zspitz/ExpressionToString/blob/master/LICENSE)), poskytuje grafické zobrazení stromu výrazů, jeho vlastností a souvisejících objektů. a lze strom výrazu vykreslit pomocí Visual Basicho kódu:
 
-  ![ExpressionToString vizualizéru](media/debugging-expression-trees-in-visual-studio/expression_to_string_visualizer_vb.png)
+  ![Vizualizér ExpressionToString](media/debugging-expression-trees-in-visual-studio/expression_to_string_visualizer_vb.png)
 
-### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Chcete-li otevřít vizualizér pro strom výrazu.  
+### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Otevření Vizualizér pro strom výrazu  
   
-1. Klikněte na ikonu lupy, které se zobrazí vedle stromu výrazů v **DataTips**, **Watch** okně **automatické hodnoty** okna, nebo **lokální** okna.  
+1. Klikněte na ikonu lupy, která se zobrazí vedle stromu výrazu v části **datatipů**, v okně **kukátka** , okně **Automatické** hodnoty nebo v **místním** okně.  
   
-     Zobrazí seznam k dispozici vizualizéry.: 
+     Zobrazí se seznam dostupných vizualizací.: 
 
-      ![Otevírání vizualizéry ze sady Visual Studio](media/debugging-expression-trees-in-visual-studio/expression_tree_visualizers_vb.png)
+      ![Otevírání vizualizují ze sady Visual Studio](media/debugging-expression-trees-in-visual-studio/expression_tree_visualizers_vb.png)
 
-2. Klikněte na vizualizaci, kterou chcete použít.  
+2. Klikněte na vizualizér, který chcete použít.  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
 - [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
 - [Vytváření vlastních vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)
-- [`DebugView` Syntaxe](debugview-syntax.md)
+- [`DebugView`syntaktick](debugview-syntax.md)

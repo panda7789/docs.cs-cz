@@ -1,45 +1,45 @@
 ---
-title: Zásadní změny a knihoven .NET
-description: Doporučení osvědčených postupů pro navigaci rozbíjející změny v při vytváření knihovny .NET.
+title: Přerušující změny a knihovny .NET
+description: Doporučení osvědčených postupů pro navigaci při zásadních změnách při vytváření knihoven .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: a5cfd2dfb544b2e47a87bd0939990ae73e5eda9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6881b8737d9dd3fa7fa71f099fa1dc97b747033d
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946979"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104662"
 ---
 # <a name="breaking-changes"></a>Změny způsobující chyby
 
-Je důležité pro knihovnu .NET najít rovnováhu mezi stabilitu pro stávající uživatele a inovace v budoucnosti. Další knihovny autoři Refaktoring a jiný pohled kód, dokud je ideálním řešením, ale vaše stávající uživatele dopadem na dřívější kód má negativní dopad, zejména pro knihovny nízké úrovně.
+Je důležité, aby knihovna .NET vyhledala rovnováhu mezi stabilitou stávajících uživatelů a inovací pro budoucnost. Autoři knihoven se zabývat refaktoringem a přemýšlení kódu, dokud nebudou dokonalé, ale rozdělení stávajících uživatelů má negativní dopad, zejména pro knihovny nízké úrovně.
 
-## <a name="project-types-and-breaking-changes"></a>Typy projektů a nejnovější změny
+## <a name="project-types-and-breaking-changes"></a>Typy projektů a průlomové změny
 
-Použití knihovny .NET komunitou změní účinek rozbíjející změny v vývojáři představující koncové uživatele.
+Způsob, jakým komunita rozhraní .NET používá knihovnu, mění vliv na zásadní změny pro vývojáře koncových uživatelů.
 
-* **Nízká a střední úrovně knihovny** jako serializátor, analyzátor HTML, objektově relační Mapovač databáze nebo webové rozhraní jsou nejvíce ovlivněné rozbíjející změny.
+- **Knihovny nízké úrovně a střední úrovně** , jako je serializátor, analyzátor HTML, databázový objekt – relační Mapovač nebo webové rozhraní, jsou ovlivněny zásadními změnami.
 
-  Balíčky stavebních bloků se používají vývojáři představující koncové uživatele k vytváření aplikací a dalších knihoven jako závislostí NuGet. Například vytváříte aplikaci a pomocí open source klientské volání webové služby. Nejnovější aktualizace na závislost, kterou klient používá není něco, co můžete opravit. Je open source klientské, kterou je potřeba změnit a nemáte žádnou kontrolu nad ním. Budete muset najít kompatibilní verze knihoven nebo odeslat oprava klientské knihovny a počkat na novou verzi. Nejhorším situace je, pokud budete chtít používat dva knihovny, které jsou závislé na vzájemně nekompatibilní verze knihovny třetí.
+  Stavební balíčky jsou používány vývojáři koncových uživatelů k vytváření aplikací a dalších knihoven jako závislostí NuGet. Například vytváříte aplikaci a používáte Open sourceho klienta pro volání webové služby. Zásadní aktualizace závislosti, kterou klient používá, není něco, co můžete opravit. Je to open source klient, který je třeba změnit a nemáte nad ním žádnou kontrolu. Je nutné najít kompatibilní verze knihoven nebo odeslat opravu klientské knihovně a počkat na novou verzi. Nejhorším případem je, že chcete použít dvě knihovny, které závisejí na vzájemně nekompatibilní verzi třetí knihovny.
 
-* **Základní knihovny** jako sada uživatelského rozhraní jsou méně citlivé na rozbíjející změny v ovládacích prvcích.
+- **Knihovny vysoké úrovně** , jako je sada ovládacích prvků uživatelského rozhraní, jsou méně citlivé na přerušující změny.
 
-  Základní knihovny je odkazováno přímo v aplikaci koncového uživatele. Pokud dojde k rozbíjející změny, Vývojář můžete aktualizovat na nejnovější verzi, nebo můžete upravit své aplikace pro spolupráci s narušující změně.
+  Knihovny vysoké úrovně jsou přímo odkazovány v aplikaci koncového uživatele. V případě, že dojde k zásadním změnám, může vývojář zvolit aktualizaci na nejnovější verzi nebo může upravit svou aplikaci tak, aby fungovala s průlomovou změnou.
 
-**PROVEĎTE ✔️** přemýšlení o použití knihovny. Jaký vliv budou změny způsobující chyby mít na aplikací a knihoven, které ji používají?
+**✔️** se zamyslete nad tím, jak se vaše knihovna bude používat. Jaký vliv budou tyto změny u aplikací a knihoven, které ji používají?
 
-**PROVEĎTE ✔️** minimalizovat změny způsobující chyby při vývoji nízké úrovně knihovny .NET.
+Při vývoji knihovny .NET nízké úrovně je **✔️** minimalizovat zásadní změny.
 
-**✔️ ZVAŽTE** publikování hlavní přepsání knihovny jako nový balíček NuGet.
+**✔️ zvažte** publikování většího přepsání knihovny jako nového balíčku NuGet.
 
-## <a name="types-of-breaking-changes"></a>Typy změny způsobující chyby
+## <a name="types-of-breaking-changes"></a>Typy přerušujících změn
 
-Zásadní změny se dělí do různých kategorií a nejsou rovnoměrně dopad.
+Zásadní změny spadají do různých kategorií a nejsou stejně ovlivněny.
 
-### <a name="source-breaking-change"></a>Rozbíjející změny zdroje
+### <a name="source-breaking-change"></a>Změna konce zdroje
 
-Zdroj narušující změna nemá vliv na provádění programu, ale způsobí chyby při kompilaci, které se je znovu zkompilovat aplikaci. Například nová přetížení, můžete vytvořit nejednoznačnost volání metod, které byly dříve jednoznačný nebo přejmenováno parametr přeruší volajícím, které používají pojmenované parametry.
+Zásadní změna zdroje neovlivní spuštění programu, ale způsobí chyby při kompilaci při příštím kompilování aplikace. Například nové přetížení může vytvořit nejednoznačnost v voláních metody, které byly dříve dvojznačné, nebo přejmenovaný parametr způsobí přerušení volajících, které používají pojmenované parametry.
 
 ```csharp
 public class Task
@@ -48,35 +48,35 @@ public class Task
 }
 ```
 
-Protože zdroji narušující změna je škodlivých pouze když vývojáři znovu zkompilovat svých aplikací, je nejméně rušivé narušující změně. Vývojáři můžete snadno vyřešit vlastní přerušeno zdrojový kód.
+Vzhledem k tomu, že se změna zdrojového kódu neškodí jenom v případě, že vývojáři znovu zkompiluje své aplikace, je to nejmenší přerušení při změně. Vývojáři můžou snadno opravit svůj vlastní poškozený zdrojový kód.
 
-### <a name="behavior-breaking-change"></a>Rozbíjející změny chování
+### <a name="behavior-breaking-change"></a>Změna narušení chování
 
-Změny chování jsou nejběžnějším typem rozbíjející změny: téměř všechny změny v chování, které by mohly narušit někdo. Změny do knihovny, jako jsou podpisy metod výjimky vyvolána nebo vstupní nebo výstupní formáty dat, může všechny mít negativní vliv na zákazníky knihovny. I oprava chyby kvalifikovat jako rozbíjející změny, pokud uživatelé spoléhali na dříve nefunkční chování.
+Změny chování jsou nejběžnějším typem zásadní změny: téměř jakákoli změna v chování může poškodit někoho. Změny v knihovně, jako jsou signatury metod, vyvolané výjimky nebo vstupní nebo výstupní datové formáty, by mohly mít negativní vliv na uživatele knihovny. I Oprava chyby se může kvalifikovat jako zásadní změna, pokud se uživatelé spoléhali na dříve přerušené chování.
 
-Přidání funkcí a vylepšení chybné chování je dobrá věc, ale bez péče o to může být velmi obtížné pro stávající uživatele k upgradu. Jedním z přístupů k pomáhá vývojářům řešit rozbíjející změny v chování je skrýt za nastavení. Nastavení umožňují vývojářům aktualizovat na nejnovější verzi knihovny, zatímco ve stejnou dobu, zvolíte-li vyjádřit výslovný souhlas nebo vyjádřit výslovný nesouhlas rozbíjející změny. Tato strategie umožňuje vývojářům dění přičemž umožníte jejich časově náročný kód upravit v čase.
+Přidání funkcí a vylepšení špatného chování je vhodné, ale bez péče může být pro stávající uživatele velmi obtížné provést upgrade. Jedním ze způsobů, jak přispět vývojářům v práci s zásadními změnami chování, je skrýt ho za nastavením. Nastavení umožní vývojářům aktualizace na nejnovější verzi vaší knihovny současně se zvolením možnosti výslovný souhlas nebo odhlášení nedostatku změn. Tato strategie umožňuje vývojářům zůstat v aktuálním stavu, zatímco umožní přizpůsobovat jejich využívání kódu v průběhu času.
 
-Například technologie ASP.NET Core MVC má koncept [verze kompatibility](/aspnet/core/mvc/compatibility-version) aplikací, které mění funkcí aktivovaných a deaktivovaných na `MvcOptions`.
+ASP.NET Core MVC má například koncept [verze kompatibility](/aspnet/core/mvc/compatibility-version) , který upravuje Funkce povolené a zakázané na `MvcOptions`.
 
-**✔️ ZVAŽTE** opuštění nové funkce ve výchozím nastavení, dojde k jejich vliv na stávající uživatele a umožňuje vývojářům vyjádřit výslovný souhlas s funkcí s nastavením.
+**✔️ zvažte** , že se ve výchozím nastavení vypnou nové funkce, pokud mají vliv na existující uživatele a umožní vývojářům, aby se k této funkci přihlásili pomocí nastavení.
 
-### <a name="binary-breaking-change"></a>Binární zásadní změna
+### <a name="binary-breaking-change"></a>Změna binárního poškození
 
-Zásadní změna binární soubor se stane, když změníte veřejné rozhraní API knihovny, tak sestavení zkompilována proti starší verze knihovny není nadále možné volat rozhraní API. Například Změna signatury metody tak, že přidáte nový parametr způsobí, že sestavení, proti starší verzi knihovny vyvolávat <xref:System.MissingMethodException>.
+K binárnímu poškození dojde, když změníte veřejné rozhraní API vaší knihovny, takže sestavení kompilována proti starším verzím knihovny již nebudou schopna volat rozhraní API. Například změna signatury metody přidáním nového parametru způsobí, že sestavení zkompilované na starší verzi knihovny vyvolají <xref:System.MissingMethodException>.
 
-Zásadní změna binární soubor může také dojít k narušení **celé sestavení**. Přejmenování sestavení `AssemblyName` změní identitu sestavení, jako se přidání, odebrání nebo změna silný klíč názvů sestavení. Změna identity sestavení budou přerušeny všechny zkompilovaný kód, který se používá.
+Binární zásadní změna může také poškodit **celé sestavení**. Přejmenováním sestavení pomocí `AssemblyName` dojde ke změně identity sestavení, jako je přidání, odebrání nebo změna klíče silného pojmenování sestavení. Změna identity sestavení způsobí přerušení veškerého zkompilovaného kódu, který ho používá.
 
-**❌ NEPODPORUJÍ** změnit název sestavení.
+**❌** Neměňte název sestavení.
 
-**❌ NEPODPORUJÍ** přidat, odebrat nebo změnit silného pojmenování klíče.
+**❌** Nepřidávat, odebírat ani měnit silný názvový klíč.
 
-**✔️ ZVAŽTE** místo abstraktní základní třídy rozhraní.
+**✔️ zvažte** použití abstraktních základních tříd namísto rozhraní.
 
-> Přidání nic do rozhraní způsobí, že existující typy, které je implementují selhání. Abstraktní základní třída umožňuje přidat výchozí virtuální implementace.
+> Přidání cokoli do rozhraní způsobí, že existující typy, které ji implementují, selžou. Abstraktní základní třída umožňuje přidat výchozí virtuální implementaci.
 
-**✔️ ZVAŽTE** uvedení <xref:System.ObsoleteAttribute> na typy a členy, které máte v úmyslu odebrat. Pokyny pro aktualizaci kódu, aby již nebudete používat zastaralé rozhraní API by měl mít atribut.
+**✔️ je vhodné** umístit <xref:System.ObsoleteAttribute> na typy a členy, které mají být v úmyslu odebrány. Atribut by měl obsahovat pokyny pro aktualizaci kódu, aby již nepoužíval zastaralé rozhraní API.
 
-> Kód, který volá typy a metody s <xref:System.ObsoleteAttribute> zprávou zadaný pro atribut vygeneruje upozornění sestavení. Uživatelé dávající upozornění, kteří používají zastaralé rozhraní API zařízení surface čas k migraci tak, že je odebraný zastaralá rozhraní API, většina jsou jeho použití.
+> Kód, který volá typy a metody pomocí <xref:System.ObsoleteAttribute> , vytvoří upozornění sestavení se zprávou poskytnutou atributu. Upozornění dávají uživatelům, kteří používají zastaralý čas na ploše rozhraní API k migraci, takže po odebrání zastaralého rozhraní API už ho nepoužívají.
 
 ```csharp
 public class Document
@@ -94,15 +94,15 @@ public class Document
 }
 ```
 
-**✔️ ZVAŽTE** typy a metody s <xref:System.ObsoleteAttribute> po neomezenou dobu v knihovnách úrovni střední a nízká.
+**✔️** je <xref:System.ObsoleteAttribute> vhodné zachovat typy a metody s neomezenou dobu v knihovně nízké a střední úrovně.
 
-> Odebírá se rozhraní API je binární soubor narušující změna. Vzhledem k tomu udržování zastaralých typů a metod, pokud jejich údržba je s nízkými náklady a velké množství technického dluhu nepřidává do své knihovny. Není odebírání typů a metod může pomoci zabránit nejhorším scénáře uvedených výše.
+> Odebrání rozhraní API je binární zásadní změna. Vzhledem k tomu, že udržování zastaralých typů a metod, pokud je zachování nízkých nákladů, nepřidává do knihovny velké množství technického dluhu. Neodebrání typů a metod může přispět k tomu, abyste se vyhnuli nejhorším scénářům uvedeným výše.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Verze a aktualizace důležité informace pro vývojáře v C#](../../csharp/whats-new/version-update-considerations.md)
-- [Úplnou příručku k rozhraní API rozbíjející změny v rozhraní .NET](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)
-- [CoreFX narušující Změna pravidla](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/breaking-change-rules.md)
+- [Požadavky na verzi a aktualizace C# pro vývojáře](../../csharp/whats-new/version-update-considerations.md)
+- [Konečný průvodce pro změny v .NET v rozhraní API](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)
+- [CoreFX přerušující pravidla změny](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/breaking-change-rules.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](versioning.md)

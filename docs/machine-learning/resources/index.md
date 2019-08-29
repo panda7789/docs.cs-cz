@@ -1,20 +1,21 @@
 ---
-title: Počítač studijní materiály
-description: Prozkoumejte tyto prostředky ML.NET, která vám pomůže s vlastní vytvoření řešení AI a integraci do svých aplikací .NET.
+title: Prostředky strojového učení
+description: Prozkoumejte tyto ML.NET prostředky, které vám pomůžou při vytváření a integraci vlastních řešení AI do vašich aplikací .NET.
 ms.custom: seodec18
-ms.date: 03/01/2019
-ms.openlocfilehash: 9a4c0633034a73f2531aea19c2efe23ff6b41cef
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 08/26/2019
+ms.openlocfilehash: c33494f3c5144ad20c6317d18b13a6775cd01299
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645143"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106835"
 ---
-# <a name="machine-learning-resources"></a>Počítač studijní materiály 
+# <a name="machine-learning-resources"></a>Prostředky strojového učení 
 
-Následující [ML.NET](../index.yml) prostředků mohou být užitečné k sestavení vlastních řešení AI a integrovat do vašich aplikací .NET:
+Následující prostředky [ml.NET](../index.yml) mohou být užitečné při vytváření vlastních řešení AI a jejich integraci do aplikací .NET:
 
-- [Machine learning Glosář](glossary.md): obsahuje důležité strojového učení definice období.
-- [Základy služby Machine learning](basics.md): odkazy na studijních materiálů, abyste mohli začít s machine learningem.
-- [Služby Machine learning úlohy](tasks.md): Popisuje různé strojového učení podporované ML.NET scénáře použití.
-- [Transformace dat](transforms.md): poskytuje přehled transformací dat nepodporuje ML.NET.
+- [Glosář strojového učení](glossary.md): obsahuje důležité definice termínu strojového učení.
+- [Základy strojového učení](basics.md): poskytuje odkazy na studijní materiály, které vám pomohou začít se službou Machine Learning.
+- [Úlohy strojového učení](tasks.md): popisuje různé scénáře použití strojového učení, které podporuje ml.NET.
+- [IDataView Type System](https://xadupre.github.io/machinelearningext/mlnetdocs/idataviewtypesystem.html): poskytuje podrobné vysvětlení rozhraní [IDataView](xref:Microsoft.ML.IDataView) a jeho typu systému.
+- [Transformace dat](transforms.md): poskytuje přehled transformací dat podporovaných nástrojem ml.NET.

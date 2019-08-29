@@ -3,12 +3,12 @@ title: C#Typy a proměnné – prohlídka C# jazyka
 description: Informace o definování typů a deklaraci proměnných vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: f06894d986973e4394b0586906d67ef41a9d9152
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 22a91b101d5361091b09217d4562703851c86940
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67661071"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105591"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -18,31 +18,31 @@ C#typy hodnot jsou dále rozděleny na *jednoduché typy*, *výčtové typy*, *t
 
 Následující text uvádí přehled C#systému typů.
 
-* [Typy hodnot][ValueTypes]
+- [Typy hodnot][ValueTypes]
   - [Jednoduché typy][SimpleTypes]
-    * Podepsané integrály `sbyte`: `short`, `int`,,`long`
-    * Unsigned integrál: `byte`, `ushort`, `uint`,`ulong`
-    * Znaky Unicode:`char`
-    * Binární bod IEEE s plovoucí desetinnou čárkou: `float`,`double`
-    * Desetinná čárka s vysokou přesností:`decimal`
-    * Datového`bool`
+    - Podepsané integrály `sbyte`: `short`, `int`,,`long`
+    - Unsigned integrál: `byte`, `ushort`, `uint`,`ulong`
+    - Znaky Unicode:`char`
+    - Binární bod IEEE s plovoucí desetinnou čárkou: `float`,`double`
+    - Desetinná čárka s vysokou přesností:`decimal`
+    - Datového`bool`
   - [Výčtové typy][EnumTypes]
-    * Uživatelem definované typy formuláře`enum E {...}`
+    - Uživatelem definované typy formuláře`enum E {...}`
   - [Typy struktury][StructTypes]
-    * Uživatelem definované typy formuláře`struct S {...}`
+    - Uživatelem definované typy formuláře`struct S {...}`
   - [Typy hodnot s možnou hodnotou null][NullableTypes]
-    * Rozšíření všech ostatních typů hodnot s `null` hodnotou
-* [Typy odkazů][ReferenceTypes]
+    - Rozšíření všech ostatních typů hodnot s `null` hodnotou
+- [Typy odkazů][ReferenceTypes]
   - [Typy tříd][ClassTypes]
-    * Nejvyšší základní třída všech ostatních typů:`object`
-    * Řetězce Unicode:`string`
-    * Uživatelem definované typy formuláře`class C {...}`
+    - Nejvyšší základní třída všech ostatních typů:`object`
+    - Řetězce Unicode:`string`
+    - Uživatelem definované typy formuláře`class C {...}`
   - [Typy rozhraní][InterfaceTypes]
-    * Uživatelem definované typy formuláře`interface I {...}`
+    - Uživatelem definované typy formuláře`interface I {...}`
   - [Typy polí][ArrayTypes]
-    * Jednoduché a multidimenzionální, například `int[]` a`int[,]`
+    - Jednoduché a multidimenzionální, například `int[]` a`int[,]`
   - [Typy delegátů][DelegateTypes]
-    * Uživatelem definované typy formuláře`delegate int D(...)`
+    - Uživatelem definované typy formuláře`delegate int D(...)`
 
 [ValueTypes]: ../language-reference/keywords/value-types-table.md
 [SimpleTypes]: ../language-reference/keywords/value-types.md#simple-types
@@ -89,19 +89,19 @@ C#Sjednocený typ systému efektivně znamená, že typy hodnot se můžou stát
 
 Existuje několik druhů *proměnných* v C#, včetně polí, prvků pole, místních proměnných a parametrů. Proměnné reprezentují umístění úložiště a každá proměnná má typ, který určuje, jaké hodnoty mohou být uloženy v proměnné, jak je znázorněno níže.
 
-* Typ hodnoty, která není null
+- Typ hodnoty, která není null
   - Hodnota, která má přesný typ
-* Typ hodnoty s možnou hodnotou null
+- Typ hodnoty s možnou hodnotou null
   - `null` Hodnota nebo hodnota daného přesného typu
-* odkazy objektů
+- odkazy objektů
   - `null` Odkaz, odkaz na objekt libovolného typu odkazu, nebo odkaz na zabalenou hodnotu libovolného typu hodnoty
-* Typ třídy
+- Typ třídy
   - `null` Odkaz, odkaz na instanci tohoto typu třídy nebo odkaz na instanci třídy odvozené z tohoto typu třídy
-* Typ rozhraní
+- Typ rozhraní
   - `null` Odkaz, odkaz na instanci typu třídy, která implementuje tento typ rozhraní, nebo odkaz na zabalenou hodnotu typu hodnoty, který implementuje tento typ rozhraní
-* Typ pole
+- Typ pole
   - `null` Odkaz, odkaz na instanci tohoto typu pole nebo odkaz na instanci kompatibilního typu pole
-* Typ delegáta
+- Typ delegáta
   - `null` Odkaz nebo odkaz na instanci kompatibilního typu delegáta
 
 > [!div class="step-by-step"]

@@ -1,6 +1,6 @@
 ---
-title: Požadavky na systém rozhraní .NET framework
-description: Zjistěte, jaké jsou hardware, operační systém a softwarové požadavky pro instalaci rozhraní .NET Framework 4.5 a novější verze.
+title: .NET Framework požadavky na systém
+description: Zjistěte, jaký je hardware, operační systém a požadavky na software pro instalaci .NET Framework 4,5 a novějších verzí.
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 helpviewer_keywords:
@@ -12,103 +12,103 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6d89f3f4d97fe4cbe3b660b74537f8c8368b492a
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: bed0084fd576ba9b9f9eeb51e9e2466938e43490
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052772"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106513"
 ---
-# <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
+# <a name="net-framework-system-requirements"></a>.NET Framework požadavky na systém
 
-Tabulky v tomto tématu poskytují hardware, operační systém a softwarové požadavky pro tyto verze rozhraní .NET Framework:
+Tabulky v tomto tématu poskytují požadavky na hardware, operační systém a software pro následující verze .NET Framework:
 
-* Rozhraní .NET framework 4.5 a jeho novější vydání (4.5.1 a 4.5.2).
-* Rozhraní .NET framework 4.6 a jeho novější vydání (4.6.1 a 4.6.2).
-* Rozhraní .NET framework 4.7 a jeho novější vydání (4.7.1 a 4.7.2).
-* .NET Framework 4.8
+- .NET Framework 4,5 a jeho vydání bodů (4.5.1 a 4.5.2).
+- .NET Framework 4,6 a jeho vydání bodů (4.6.1 a 4.6.2).
+- .NET Framework 4,7 a jeho vydání bodů (4.7.1 a 4.7.2).
+- .NET Framework 4,8
 
-Informace o rozhraní .NET Framework verze starší než .NET Framework 4.5, najdete v [rozhraní .NET Framework verze a závislosti](../migration-guide/versions-and-dependencies.md).
+Informace o .NET Framework verzích starších než .NET Framework 4,5 najdete v tématu [.NET Framework verzích a závislostí](../migration-guide/versions-and-dependencies.md).
 
-Vývojová prostředí, které umožňují vývoj aplikací pro rozhraní .NET Framework mají samostatnou sadu požadavků.
+Vývojová prostředí, která umožňují vyvíjet aplikace pro .NET Framework mají samostatnou sadu požadavků.
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Informace o stažení a odkazy najdete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).
+Informace o stažení a odkazy najdete v tématu [instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).
 
-Informace na životní cyklus podpory verzí rozhraní .NET Framework najdete v tématu [životní cyklus podpory Microsoft](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
+Informace o životním cyklu podpory verze .NET Framework najdete v tématu [životní cyklus podpora Microsoftu](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
 
 ## <a name="hardware-requirements"></a>Hardwarové požadavky
 
 |                          |        |
 | ------------------------ | ------ |
-| **Procesor**            | 1 GHz  |
-| **PAMĚŤ RAM**                  | 512 MB |
+| **Mobilních**            | 1 GHz  |
+| **SRAM**                  | 512 MB |
 | **Místo na disku (minimální)** |        |
-| 32bitová                   | 4.5 GB |
-| 64bitová                   | 4.5 GB |
+| 32bitová                   | 4,5 GB |
+| 64bitová                   | 4,5 GB |
 
 ## <a name="installation-requirements"></a>Požadavky na instalaci
 
-Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud nemáte oprávnění správce k počítači, ve kterém chcete nainstalovat rozhraní .NET Framework, obraťte se na správce sítě.
+.NET Framework vyžaduje k instalaci oprávnění správce. Pokud nemáte práva správce k počítači, do kterého chcete nainstalovat .NET Framework, obraťte se na správce sítě.
 
 ## <a name="supported-client-operating-systems"></a>Podporované klientské operační systémy
 
-| Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovat samostatně |
+| Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovatelné samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows 10. května 2019 Update | 32bitová verze a 64bitová verze | .NET Framework 4.8 | -- |
-| Windows 10. října 2018 Update | 32bitová verze a 64bitová verze | .NET Framework 4.7.2 | .NET Framework 4.8 |
-| Aktualizace Windows 10. dubna 2018 | 32bitová verze a 64bitová verze | .NET Framework 4.7.2 |.NET Framework 4.8|
-| Windows 10 Fall Creators Update | 32bitová verze a 64bitová verze | .NET Framework 4.7.1 | .NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows 10 Creators Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows 10 Anniversary Update | 32bitová verze a 64bitová verze | .NET Framework 4.6.2 |Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8  |
-| Windows 10 November Update | 32bitová verze a 64bitová verze | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
-| Windows 10 | 32bitová verze a 64bitová verze | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
-| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32bitové, 64bitové a ARM | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| [!INCLUDE[win8](../../../includes/win8-md.md)] | 32bitové, 64bitové a ARM | .NET Framework 4.5 | .NET Framework 4.5.1<br /><br />.NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1 |
-| Windows 7 SP1|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows Vista SP2|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
-| Windows XP |32bitová verze a 64bitová verze | -- | .NET Framework 4 |
+| Windows 10 Květen 2019 Update | 32-bit a 64-bit | .NET Framework 4,8 | -- |
+| Windows 10 říjen 2018 – aktualizace | 32-bit a 64-bit | .NET Framework 4.7.2 | .NET Framework 4,8 |
+| Aktualizace Windows 10. dubna 2018 | 32-bit a 64-bit | .NET Framework 4.7.2 |.NET Framework 4,8|
+| Aktualizace Creators v systému Windows 10 | 32-bit a 64-bit | .NET Framework 4.7.1 | .NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows 10 Creators Update | 32-bit a 64-bit | Rozhraní .NET framework 4.7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows 10 Anniversary Update | 32-bit a 64-bit | .NET Framework 4.6.2 |Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8  |
+| Listopadová aktualizace pro Windows 10 | 32-bit a 64-bit | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
+| Windows 10 | 32-bit a 64-bit | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
+| [!INCLUDE[win81](../../../includes/win81-md.md)] | 32 bitů, 64 bitů a ARM | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| [!INCLUDE[win8](../../../includes/win8-md.md)] | 32 bitů, 64 bitů a ARM | .NET Framework 4.5 | .NET Framework 4.5.1<br /><br />.NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1 |
+| Windows 7 SP1|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Vista SP2|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
+| Windows XP |32-bit a 64-bit | -- | .NET Framework 4 |
 
  **Poznámky:**
 
-- Rozhraní .NET Framework vyžaduje v systémech Windows 7, Windows 7 SP1. Pokud jste ve Windows 7 a aktualizací Service Pack 1 ještě nenainstalovali, musíte provést před instalací rozhraní .NET Framework.
+- V systémech Windows 7 .NET Framework vyžaduje systém Windows 7 SP1. Pokud jste v systému Windows 7 a ještě jste nenainstalovali aktualizaci Service Pack 1, musíte to provést před instalací .NET Framework.
 
-- Rozhraní .NET framework 4.5 je podporovaná v prostředí Windows Preinstallation Environment (Windows PE). Ne všechny funkce jsou podporovány v systému Windows PE.
+- .NET Framework 4,5 se podporuje v Windows Preinstallation Environment (Windows PE). V systému Windows PE nejsou podporovány všechny funkce.
 
-- Rozhraní .NET framework 4 podporuje také platformě IA64.
+- .NET Framework 4 také podporuje platformu IA64.
 
-- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a instalovat důležité aktualizace, které jsou k dispozici [webu Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení.
+- U všech platforem doporučujeme upgradovat na nejnovější aktualizaci Service Pack systému Windows a nainstalovat důležité aktualizace, které jsou k dispozici na [webu Web Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) , aby se zajistila nejlepší kompatibilita a zabezpečení.
 
-- V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a | nativní 64bitové zpracování.
+- V 64 operačních systémech podporuje .NET Framework rozhraní WOW64 (32-bit Processing v počítači s 64) a | nativní zpracování 64.
 
 ## <a name="supported-server-operating-systems"></a>Podporované serverové operační systémy
 
-| Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovat samostatně |
+| Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovatelné samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows Server. 2019 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4.8 |
-| Windows Server verze 1809 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4.8 |
-| Windows Server, version 1803 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4.8 |
+| Windows Server. 2019 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
+| Windows Server verze 1809 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
+| Windows Server verze 1803 | 64bitová | .NET Framework 4.7.2 | .NET Framework 4,8 |
 | Windows Server verze 1709 | 64bitová | .NET Framework 4.7.1 | .NET Framework 4.7.2|
-| Windows Server 2016 | 64bitová | .NET Framework 4.6.2 | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows Server 2012 R2 | 64bitová | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows Server 2012 (64-bit edition) | 64bitová| .NET Framework 4.5 | .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows Server 2008 R2 SP1|64bitová | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows Server 2008 SP2|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
+| Windows Server 2016 | 64bitová | .NET Framework 4.6.2 | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2012 R2 | 64bitová | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2012 (64-bit Edition) | 64bitová| .NET Framework 4.5 | .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2008 R2 SP1|64bitová | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4,8 |
+| Windows Server 2008 SP2|32-bit a 64-bit | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
 
  **Poznámky:**
 
-- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] zahrnuje rozhraní .NET Framework 4.5, takže není nutné instalovat samostatně. Obdobně [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] zahrnuje rozhraní .NET Framework 4.5.1.
+- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]zahrnuje .NET Framework 4,5, takže je nemusíte instalovat samostatně. [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] Podobně zahrnuje .NET Framework 4.5.1.
 
-- Rozhraní .NET Framework má omezenou podporu pro roli Server Core v systému Windows Server 2008 R2 SP1 nebo novější. Zobrazit [funkce rozhraní .NET Core Server](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) seznam nepodporované rozhraní API.
+- .NET Framework má omezené podpory pro roli jádra serveru s Windows Serverem 2008 R2 SP1 nebo novějším. Seznam nepodporovaných rozhraní API najdete v tématu [funkce jádra serveru .NET](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) .
 
-- Rozhraní .NET Framework není podporováno v systému Windows Server 2008 R2 pro procesory Itanium.
+- .NET Framework není podporován v systémech Windows Server 2008 R2 pro počítače s procesorem Itanium.
 
-- V systému Windows Server 2008 SP2 rozhraní .NET Framework není podporováno v roli jádra serveru.
+- V systému Windows Server 2008 SP2 není .NET Framework v roli jádro serveru podporováno.
 
-- Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a kritické aktualizace dostupné z [webu Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení. U některých operačních systémů může být požadována instalace nejnovější aktualizace Service Pack pro Windows.
+- U všech platforem doporučujeme upgradovat na nejnovější aktualizaci Service Pack systému Windows a důležité aktualizace, které jsou k dispozici na [webu Web Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) , aby se zajistila nejvyšší kompatibilita a zabezpečení. V některých operačních systémech může být nutné nainstalovat nejnovější aktualizaci Service Pack systému Windows.
 
-- V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a nativní 64bitové zpracování.
+- V 64 operačních systémech podporuje .NET Framework rozhraní WOW64 (32-bit Processing v počítači s 64) a 64 nativní 16bitové zpracování.
 
 ## <a name="see-also"></a>Viz také:
 

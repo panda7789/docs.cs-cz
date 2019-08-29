@@ -1,74 +1,74 @@
 ---
-title: Postup instalace nástroje ML.NET rozhraní příkazového řádku (CLI)
-description: Přehled a instalace nástroje ML.NET rozhraní příkazového řádku (CLI).
+title: Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
+description: Přehled a instalace nástroje rozhraní příkazového řádku ML.NET (CLI).
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 4888acd10570318ef53dc4b1a5a4ff5d8dc0c99b
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 8b6de466a6cf72b44a16c80fc024671bc4e975e8
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832923"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106897"
 ---
-# <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Postup instalace nástroje ML.NET rozhraní příkazového řádku (CLI)
+# <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 
-ML.NET CLI (rozhraní příkazového řádku) je nástroj, který můžete spustit na libovolné příkazového řádku (Windows, Mac nebo Linux) pro vytváření kvalitní ML.NET modely a zdrojový kód podle cvičných datových sad, které zadáte.
+ML.NET CLI (rozhraní příkazového řádku) je nástroj, který můžete spustit na jakémkoli příkazovém řádku (Windows, Mac nebo Linux) pro vytváření kvalitních ML.NET modelů a zdrojového kódu na základě školení datových sad, které poskytnete.
 
 > [!NOTE]
-> Toto téma odkazuje na ML.NET rozhraní příkazového řádku a ML.NET AutoML, které jsou aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.
+> Toto téma odkazuje na ML.NET CLI a ML.NET AutoML, které jsou momentálně ve verzi Preview, a materiál může být změněn.
 
 ## <a name="pre-requisites"></a>Požadavky
 
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [Sada .NET Core 2,2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
-- (Volitelné) [Visual Studio 2017 nebo 2019](https://visualstudio.microsoft.com/vs/)
+- Volitelné [Visual Studio 2017 nebo 2019](https://visualstudio.microsoft.com/vs/)
 
-Můžete spustit buď generované C# projekty s Visual Studio F5 nebo pomocí kódu `dotnet run` (.NET Core CLI).
+Můžete buď spustit vygenerované C# projekty kódu v aplikaci Visual Studio F5 nebo with `dotnet run` (.NET Core CLI).
 
-Poznámka: Pokud po instalaci [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) `dotnet tool` příkaz nefunguje, odhlásit z Windows a znovu se přihlaste.
+Poznámka: Pokud po instalaci [sady .NET Core 2,2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) `dotnet tool` nefunguje příkaz, odhlaste se z Windows a znovu se přihlaste.
 
 ## <a name="install"></a>Instalace
 
-Rozhraní příkazového řádku ML.NET je nainstalována jako jakékoli jiné dotnet globální nástroj. Můžete použít `dotnet tool install` rozhraní příkazového řádku .NET Core. 
+Rozhraní příkazového řádku ML.NET je nainstalováno jako jakýkoli jiný globální nástroj dotnet. Použijete `dotnet tool install` příkaz .NET Core CLI. 
 
-Následující příklad ukazuje, jak nainstalovat rozhraní příkazového řádku ML.NET výchozí umístění kanál NuGet:
+Následující příklad ukazuje, jak nainstalovat rozhraní příkazového řádku ML.NET ve výchozím umístění informačního kanálu NuGet:
 
 ```console
 dotnet tool install -g mlnet
 ```
 
-Pokud nástroj nejde nainstalovat, (tj. Pokud není k dispozici na výchozím nastavení informačního kanálu NuGet), zobrazí se chybové zprávy. Zkontrolujte, že se kontroluje informační kanály, které jste očekávali.
+Pokud nástroj není možné nainstalovat (to znamená, pokud není k dispozici ve výchozím kanálu NuGet), zobrazí se chybové zprávy. Ověřte, zda jsou kontrolovány informační kanály, které jste očekávali.
 
-Pokud je instalace úspěšná, zobrazí se zpráva zobrazující příkazu používaný k volání nástroje a verze nainstalovaná, podobně jako v následujícím příkladu:
+Pokud je instalace úspěšná, zobrazí se zpráva s příkazem použitým pro volání nástroje a nainstalované verze, podobně jako v následujícím příkladu:
 
 ```console
 You can invoke the tool using the following command: mlnet
 Tool 'mlnet' (version 'X.X.X') was successfully installed.
 ```
 
-Můžete potvrdit, že instalace proběhla úspěšně tak, že zadáte následující příkaz:
+Instalaci můžete ověřit tak, že zadáte následující příkaz:
 
 ```console
 mlnet
 ```
 
-Měli byste vidět nápovědy pro příkazy dostupné pro nástroj mlnet například příkaz "Automatické – train".
+Měli byste vidět nápovědu k dostupným příkazům pro nástroj mlnet, jako je například příkaz Auto-vlak.
 
-## <a name="install-a-specific-release-version"></a>Instalace konkrétní verze
+## <a name="install-a-specific-release-version"></a>Instalace konkrétní vydané verze
 
-Pokud se snažíte nainstalovat předběžné verzi nebo konkrétní verzi nástroje, můžete zadat [framework](../../standard/frameworks.md) v následujícím formátu:
+Pokud se pokoušíte nainstalovat předběžnou verzi nebo konkrétní verzi nástroje, můžete určit [rozhraní](../../standard/frameworks.md) pomocí následujícího formátu:
 
 ```console
 dotnet tool install -g mlnet --framework <FRAMEWORK>
 ```
 
-Můžete také zkontrolovat, pokud je tak, že zadáte následující příkaz správně nainstalován balíček:
+Můžete také zjistit, jestli je balíček správně nainstalovaný, zadáním následujícího příkazu:
 
 ```console
 dotnet tool list -g
 ```
 
-## <a name="uninstall-the-cli-package"></a>Odinstalovat balíček rozhraní příkazového řádku
+## <a name="uninstall-the-cli-package"></a>Odinstalace balíčku CLI
 
 Zadejte následující příkaz pro odinstalaci balíčku z místního počítače:
 
@@ -76,39 +76,39 @@ Zadejte následující příkaz pro odinstalaci balíčku z místního počíta�
 dotnet tool uninstall mlnet -g
 ```
 
-## <a name="update-the-cli-package"></a>Aktualizovat balíček rozhraní příkazového řádku
+## <a name="update-the-cli-package"></a>Aktualizace balíčku CLI
 
-Zadejte následující příkaz k aktualizaci balíčku z místního počítače:
+Zadáním následujícího příkazu aktualizujete balíček z místního počítače:
 
 ```console
 dotnet tool update -g mlnet
 ```
 
-## <a name="set-up-cli-suggestions-tab-based-auto-completion"></a>Nastavení rozhraní příkazového řádku návrhy (založené na kartě Automatické dokončování)
+## <a name="set-up-cli-suggestions-tab-based-auto-completion"></a>Nastavení návrhů CLI (automatické dokončování založené na kartě)
 
-Vzhledem k tomu, že rozhraní příkazového řádku ML.NET vychází `System.CommandLine`, obsahuje integrovanou podporu dokončování pomocí tabulátoru.
+Vzhledem k tomu, že rozhraní příkazového řádku ml.NET je založené na `System.CommandLine`, má vestavěnou podporu pro dokončování karet.
 
-V následující animaci je uveden příklad toho, jak funguje automatické dokončování pomocí tabulátoru:
+Příklad toho, jak funguje automatické dokončování karet, je znázorněno v následující animaci:
 
 ![obrázek](./media/cli-tab-completion.gif)
 
-"Založené na kartě Automatické dokončování" (parametr návrhy) funguje na *prostředí Windows PowerShell* a *bash v systému macOS nebo Linux* ale nebudou fungovat ve *Windows CMD*.
+Automatické dokončování na kartě (návrhy parametrů) funguje v *prostředí Windows PowerShell* a *MacOS/Linux bash* , ale nebude fungovat na *Windows CMD*.
 
-Ho Pokud chcete povolit, v aktuální verzi preview, musí koncový uživatel provést několik kroků jednou pro každé prostředí, které jsou uvedené níže. Až to uděláte, budou fungovat dokončování pro všechny aplikace napsané s využitím `System.CommandLine` například ML.NET rozhraní příkazového řádku.
+Aby ho bylo možné povolit, musí koncový uživatel v aktuální verzi Preview pro každé prostředí provést několik kroků, které jsou uvedené níže. Až to uděláte, dokončování budou fungovat pro všechny aplikace napsané pomocí `System.CommandLine` , jako je ml.NET CLI.
 
-Na počítači, kde byste chtěli povolit dokončení budete muset udělat dvě věci.
+V počítači, ve kterém chcete povolit dokončování, budete muset provést dvě věci.
 
-1. Nainstalujte `dotnet-suggest` globální nástroj spuštěním následujícího příkazu:
+1. `dotnet-suggest` Globální nástroj nainstalujete spuštěním následujícího příkazu:
 
     ```console
     dotnet tool install dotnet-suggest -g
     ```
 
-2. Přidáte skript odpovídající překrytí k vašemu profilu prostředí. Budete muset vytvořit prostředí soubor profilu. Skript překrytí bude předávat dokončení požadavků z vašeho prostředí `dotnet-suggest` nástroj, který deleguje na příslušné `System.CommandLine`– na základě aplikace.
+2. Přidejte příslušný skript pro překrytí do profilu prostředí. Možná budete muset vytvořit soubor profilu prostředí. Skript překrytí přepošle žádosti o dokončení z vašeho `dotnet-suggest` prostředí do nástroje, který deleguje na `System.CommandLine`příslušnou aplikaci.
 
-    * Pro prostředí bash, přidejte obsah [dotnet navrhnout shim.bash](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.bash) k `~/.bash_profile`.
+    - Pro bash přidejte obsah pole [dotnet-navrhuje-Shim. bash](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.bash) `~/.bash_profile`.
 
-    * Pro PowerShell, přidejte obsah [dotnet navrhnout shim.ps1](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.ps1) k vašemu profilu prostředí PowerShell. Můžete najít očekávanou cestou k vašemu profilu prostředí PowerShell spuštěním následujícího příkazu v konzole:
+    - V případě PowerShellu přidejte do svého profilu PowerShellu obsah [dotnet-Suggest-Shim. ps1](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.ps1) . Očekávanou cestu k profilu PowerShellu můžete najít spuštěním následujícího příkazu v konzole:
 
     ```console
     echo $profile
@@ -118,23 +118,23 @@ Na počítači, kde byste chtěli povolit dokončení budete muset udělat dvě 
 
 ## <a name="installation-directory"></a>Instalační adresář
 
-Rozhraní příkazového řádku ML.NET mohou být nainstalovány ve výchozím adresáři nebo v konkrétním umístění. Výchozí adresáře jsou:
+ML.NET CLI se dá nainstalovat do výchozího adresáře nebo do konkrétního umístění. Výchozí adresáře jsou:
 
-| Operační systém          | Cesta                          |
+| OS          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-Tato místa jsou přidány do cesty uživatele při prvním spuštění sady SDK, tak že nainstalované nástroje pro globální mohou být volány.
+Tato umístění jsou přidána do cesty uživatele při prvním spuštění sady SDK, takže je možné nainstalovanou sadu globálních nástrojů volat přímo.
 
-Poznámka: globální nástroje jsou specifické pro uživatele, počítače nejsou globální. Jsou specifické pro uživatele znamená, že nemůžete nainstalovat globální nástroj, který je k dispozici pro všechny uživatele počítače. Nástroj je k dispozici pouze pro každý uživatelský profil ve kterém byl nainstalován nástroj.
+Poznámka: globální nástroje jsou specifické pro uživatele, ne jako globální počítač. To znamená, že nemůžete nainstalovat globální nástroj, který je k dispozici pro všechny uživatele počítače. Nástroj je k dispozici pouze pro každý profil uživatele, ve kterém byl nástroj nainstalován.
 
-Globální nástroje můžete také nainstalovat v konkrétní adresář. Při instalaci v konkrétní adresář, uživatel musí zajistit příkaz je k dispozici, včetně tohoto adresáře v cestě, voláním příkazu se do adresáře určeného, nebo zavolání nástroj v rámci zadaného adresáře.
-Rozhraní příkazového řádku .NET Core nepodporuje toto umístění v tomto případě automaticky přidat do proměnné prostředí PATH.
+Globální nástroje je také možné nainstalovat do konkrétního adresáře. Při instalaci do konkrétního adresáře musí uživatel ověřit, zda je příkaz k dispozici, zahrnutím tohoto adresáře do cesty, voláním příkazu se zadaným adresářem nebo voláním nástroje ze zadaného adresáře.
+V takovém případě .NET Core CLI nepřidá toto umístění automaticky do proměnné prostředí PATH.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Začínáme s ML.NET rozhraní příkazového řádku nástroje.](../tutorials/mlnet-cli.md)
-- [Automaticky trénování modelů pomocí nástroje příkazového řádku ML.NET](../automate-training-with-cli.md)
-- [Rozhraní příkazového řádku ML.NET automaticky trénování příkaz referenční příručka](../reference/ml-net-cli-reference.md) 
-- [Telemetrie v rozhraní příkazového řádku ML.NET](../resources/ml-net-cli-telemetry.md)
+- [Kurz k Začínáme pomocí nástroje CLI ML.NET](../tutorials/mlnet-cli.md)
+- [Automatické učení modelů pomocí nástroje CLI ML.NET](../automate-training-with-cli.md)
+- [Referenční příručka k příkazu ML.NET CLI pro automatické učení](../reference/ml-net-cli-reference.md) 
+- [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)

@@ -2,12 +2,12 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 7240e78614353249c82e84feac66137828a589ed
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 225046992badba7013193163a191dbf068f0da6a
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630997"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106966"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 
@@ -22,17 +22,17 @@ Pokud nechcete sestavovat aplikace sami, můžete si stáhnout "asynchronní vzo
 V tomto návodu provedete následující úlohy:
 
 > [!div class="checklist"]
-> * [Vytvoření aplikace WPF](#create-a-wpf-application)
-> * [Návrh jednoduchého MainWindow WPF](#design-a-simple-wpf-mainwindow)
-> * [Přidat odkaz](#add-a-reference)
-> * [Přidat nezbytné příkazy Imports](#add-necessary-imports-statements)
-> * [Vytvoření synchronní aplikace](#create-a-synchronous-application)
-> * [Test synchronního řešení](#test-the-synchronous-solution)
-> * [Převést GetURLContents na asynchronní metodu](#convert-geturlcontents-to-an-asynchronous-method)
-> * [Převést SumPageSizes na asynchronní metodu](#convert-sumpagesizes-to-an-asynchronous-method)
-> * [Převést startButton_Click na asynchronní metodu](#convert-startbutton_click-to-an-asynchronous-method)
-> * [Testování asynchronního řešení](#test-the-asynchronous-solution)
-> * [Nahraďte metodu GetURLContentsAsync metodou .NET Framework.](#replace-the-geturlcontentsasync-method-with-a-net-framework-method)
+> - [Vytvoření aplikace WPF](#create-a-wpf-application)
+> - [Návrh jednoduchého MainWindow WPF](#design-a-simple-wpf-mainwindow)
+> - [Přidat odkaz](#add-a-reference)
+> - [Přidat nezbytné příkazy Imports](#add-necessary-imports-statements)
+> - [Vytvoření synchronní aplikace](#create-a-synchronous-application)
+> - [Test synchronního řešení](#test-the-synchronous-solution)
+> - [Převést GetURLContents na asynchronní metodu](#convert-geturlcontents-to-an-asynchronous-method)
+> - [Převést SumPageSizes na asynchronní metodu](#convert-sumpagesizes-to-an-asynchronous-method)
+> - [Převést startButton_Click na asynchronní metodu](#convert-startbutton_click-to-an-asynchronous-method)
+> - [Testování asynchronního řešení](#test-the-asynchronous-solution)
+> - [Nahraďte metodu GetURLContentsAsync metodou .NET Framework.](#replace-the-geturlcontentsasync-method-with-a-net-framework-method)
 
 Kompletní asynchronní příklad najdete v části [příklad](#example) .
 
@@ -355,7 +355,7 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
 
     Převod `SumPageSizes` na`SumPageSizesAsync` je dokončen.
 
-## <a name="convert-startbuttonclick-to-an-asynchronous-method"></a>Převést startButton_Click na asynchronní metodu
+## <a name="convert-startbutton_click-to-an-asynchronous-method"></a>Převést startButton_Click na asynchronní metodu
 
 1. V obslužné rutině události změňte název volané metody z `SumPageSizes` na `SumPageSizesAsync`, pokud jste to ještě neudělali.
 

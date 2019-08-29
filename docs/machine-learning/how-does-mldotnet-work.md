@@ -1,17 +1,17 @@
 ---
 title: Co je ML.NET a jak to funguje?
 description: ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti, aby používala ML.NET. Tento článek vysvětluje základy strojového učení v ML.NET.
-ms.date: 07/17/2019
+ms.date: 08/26/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 23e71e86b75854042068b6a68f90cf995749ee58
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: af91819c66a2376f446d0f18537d2f6e718b446e
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331578"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104886"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -161,7 +161,7 @@ Metriky vyhodnocení vám sdělí, že chyba je nízká-delšími a že korelace
 
 V této části projdeme vzory architektury ML.NET. Pokud jste zkušený vývojář .NET, budete znát některé z těchto vzorů a některé z nich budou méně známé. Držte se těsně, zatímco jsme podrobněi.
 
-Aplikace ml.NET začíná <xref:Microsoft.ML.MLContext> objektem. Tento objekt typu Singleton obsahuje katalogy. Katalog je továrna pro načítání dat a ukládání, transformaci, školitele a součásti operací s modelem. Každý objekt katalogu obsahuje metody pro vytvoření různých typů komponent:
+Aplikace ml.NET začíná <xref:Microsoft.ML.MLContext> objektem. Tento objekt typu Singletonobsahuje katalogy. Katalog je továrna pro načítání dat a ukládání, transformaci, školitele a součásti operací s modelem. Každý objekt katalogu obsahuje metody pro vytvoření různých typů komponent:
 
 |||||
 |-|-|-|-|
@@ -229,7 +229,7 @@ Vstupní data můžete transformovat do předpovědi hromadně nebo v jednom vst
 
 V jádru kanálu strojového učení ML.NET jsou objekty [DataView](xref:Microsoft.ML.IDataView) .
 
-Každá transformace v kanálu má vstupní schéma (názvy dat, typy a velikost, které transformace očekává, aby se na jejím vstupu zobrazila); a výstupní schéma (názvy dat, typy a velikosti, které transformace vytvoří po transformaci). 
+Každá transformace v kanálu má vstupní schéma (názvy dat, typy a velikost, které transformace očekává, aby se na jejím vstupu zobrazila); a výstupní schéma (názvy dat, typy a velikosti, které transformace vytvoří po transformaci). Následující dokument poskytuje podrobné vysvětlení [rozhraní IDataView a jeho typu systému](https://xadupre.github.io/machinelearningext/mlnetdocs/idataviewtypesystem.html).
 
 Pokud výstupní schéma z jedné transformace v kanálu neodpovídá vstupnímu schématu další transformace, ML.NET vyvolá výjimku.
 
@@ -275,6 +275,6 @@ V aplikacích pracujících v reálném čase bude váš kód pro školení a vy
 
 Informace o tom, jak vytvářet aplikace s využitím různých úloh strojového učení s více realistickými [](./tutorials/index.md)datovými sadami, najdete v těchto kurzech.
 
-Případně si můžete přečíst konkrétní témata podrobněji v tématu [návody.](./how-to-guides/index.md)
+Případně si můžete přečíst konkrétní témata podrobněji v tématu návody. [](./how-to-guides/index.md)
 
 A pokud máte Super nás, můžete podrobně přímo do [Referenční dokumentace k rozhraní API](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet).

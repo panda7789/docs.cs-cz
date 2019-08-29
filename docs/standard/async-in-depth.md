@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 6f1900eaabafe2931d88959bf79bf4ca1f5bc98b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 776949e86f6eb3fa6a193b303f4c731e20bac1a5
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666583"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107314"
 ---
 # <a name="async-in-depth"></a>Asynchronní v hloubkě
 
@@ -21,8 +21,8 @@ Zápisy do vstupně-výstupních operací a asynchronního kódu vázaného na p
 
 Úkoly jsou konstrukce používané k implementaci toho, co je známo jako [model příslib souběžnosti](https://en.wikipedia.org/wiki/Futures_and_promises).  V krátkém případě vám nabídne "příslib", který se v pozdější fázi dokončí, takže budete mít k dispozici příslib s čistým rozhraním API.
 
-* `Task`představuje jednu operaci, která nevrací hodnotu.
-* `Task<T>`představuje jednu operaci, která vrací hodnotu typu `T`.
+- `Task`představuje jednu operaci, která nevrací hodnotu.
+- `Task<T>`představuje jednu operaci, která vrací hodnotu typu `T`.
 
 Je důležité mít důvod na úlohy, jako abstrakce práce, které provádí asynchronně, a *ne* abstrakce nad vlákny. Ve výchozím nastavení se úlohy spouštějí v aktuálním vlákně a podle potřeby deleguje práci s operačním systémem. Volitelně je možné úlohy explicitně požadovat, aby se spouštěly na samostatném vlákně přes `Task.Run` rozhraní API.
 
@@ -90,9 +90,9 @@ I když výše se může zdát, že je třeba udělat spoustu práce, která se 
 
 0-1————————————————————————————————————————————————–2-3
 
-* Čas strávený z `0` bodů `1` na je vše až do chvíle, kdy asynchronní metoda neposkytne řízení volajícímu.
-* Čas strávený z `1` bodů `2` na je čas strávený na vstupu a výstupu bez nákladů na procesor.
-* Nakonec čas strávený z bodů `2` na `3` je předání řízení zpět (a potenciálně hodnoty) asynchronní metodě, při které je prováděna znovu.
+- Čas strávený z `0` bodů `1` na je vše až do chvíle, kdy asynchronní metoda neposkytne řízení volajícímu.
+- Čas strávený z `1` bodů `2` na je čas strávený na vstupu a výstupu bez nákladů na procesor.
+- Nakonec čas strávený z bodů `2` na `3` je předání řízení zpět (a potenciálně hodnoty) asynchronní metodě, při které je prováděna znovu.
 
 ### <a name="what-does-this-mean-for-a-server-scenario"></a>Co to znamená pro serverový scénář?
 

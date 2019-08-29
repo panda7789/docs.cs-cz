@@ -2,12 +2,12 @@
 title: Parametry a argumenty
 description: Přečtěte F# si o jazykové podpoře pro definování parametrů a předávání argumentů funkcím, metodám a vlastnostem.
 ms.date: 05/16/2016
-ms.openlocfilehash: 561cefb1d437b2f38f6ee4ca37cd955235ca06fa
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 67e82d031c4b22bc30a6f278d9698298ccff2e21
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627312"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106593"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
@@ -163,9 +163,9 @@ V tomto případě kompilátor vygeneruje upozornění a bude zcela ignorovat ob
 
 Předání F# hodnoty odkazem zahrnuje [byrefs](byrefs.md), které jsou spravované typy ukazatelů. Pokyny pro typ, který se má použít, jsou následující:
 
-* Použijte `inref<'T>` , pokud potřebujete jen číst ukazatel.
-* Použijte `outref<'T>` , pokud potřebujete zapisovat jenom na ukazatel.
-* Použijte `byref<'T>` , pokud potřebujete číst a zapisovat do ukazatele.
+- Použijte `inref<'T>` , pokud potřebujete jen číst ukazatel.
+- Použijte `outref<'T>` , pokud potřebujete zapisovat jenom na ukazatel.
+- Použijte `byref<'T>` , pokud potřebujete číst a zapisovat do ukazatele.
 
 ```fsharp
 let example1 (x: inref<int>) = printfn "It's %d" x
