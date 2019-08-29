@@ -1,8 +1,8 @@
 ---
-title: Reflexe v rozhraní .NET Framework
+title: Odraz v .NET
 ms.date: 03/30/2017
 helpviewer_keywords:
-- assemblies [.NET Framework], reflection
+- assemblies [.NET], reflection
 - EventInfo class, reflection
 - common language runtime, reflection
 - FieldInfo class, reflection
@@ -23,14 +23,14 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8d34c5386d0ede578fec097279e9de135f4b6cc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 56c3b536954118b80db2ae7f2f0d0ffdc74bac68
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940033"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133748"
 ---
-# <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
+# <a name="reflection-in-net"></a>Odraz v .NET
 <xref:System.Reflection> Třídy v oboru názvů spolu s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../app-domains/assemblies-in-the-common-language-runtime.md) a typech, které jsou v nich definovány, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a [typy hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
   
  Modul [CLR (Common Language Runtime)](../../standard/clr.md) spravuje [aplikační domény](../../../docs/framework/app-domains/application-domains.md), které tvoří hranice kolem objektů, které mají stejný obor aplikace. Tato Správa zahrnuje načtení každého sestavení do příslušné aplikační domény a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
@@ -62,9 +62,9 @@ ms.locfileid: "69940033"
  Existují i jiné způsoby, jak reflexe. Kompilátory pro jazyky, jako je JScript, používají reflexi k vytváření tabulek symbolů. Třídy v <xref:System.Runtime.Serialization> oboru názvů používají reflexi pro přístup k datům a určují, která pole se mají zachovat. Třídy v <xref:System.Runtime.Remoting> oboru názvů používají reflexi nepřímo prostřednictvím serializace.  
   
 ## <a name="runtime-types-in-reflection"></a>Typy runtime v reflexi  
- Reflexe poskytuje třídy, <xref:System.Type> jako <xref:System.Reflection.MethodInfo>jsou a, k reprezentaci typů, členů, parametrů a dalších entit kódu. Pokud však použijete reflexi, nepracujete přímo s těmito třídami, přičemž většina z`MustInherit` nich je abstraktní (v Visual Basic). Místo toho pracujete s typy poskytnutými modulem CLR (Common Language Runtime).  
+ Reflexe poskytuje třídy, <xref:System.Type> jako <xref:System.Reflection.MethodInfo>jsou a, k reprezentaci typů, členů, parametrů a dalších entit kódu. Nicméně při použití reflexe nepracujete přímo s těmito třídami, přičemž většina z nich je abstraktní`MustInherit` (v Visual Basic). Místo toho pracujete s typy poskytnutými modulem CLR (Common Language Runtime).  
   
- Například C# `typeof` při použití operátoru (`GetType` v Visual Basic) k získání <xref:System.Type> objektu je objekt skutečně `RuntimeType`. `RuntimeType`je odvozen z <xref:System.Type>a poskytuje implementace všech abstraktních metod.  
+ Například C# `typeof` při použití operátoru (`GetType` v Visual Basic) k získání <xref:System.Type> objektu je objekt skutečně `RuntimeType`. `RuntimeType`je odvozen z <xref:System.Type> a poskytuje implementace všech abstraktních metod.  
   
  Tyto běhové třídy `internal` jsou`Friend` (v Visual Basic). Nejsou dokumentovány odděleně od jejich základních tříd, protože jejich chování je popsáno v dokumentaci základní třídy.  
   

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 65725851cb413e28ceff0d1c9c4b62b76c4fff18
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 44f98a6d7bf8358baf3b123b2d3b1d13009098a6
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817882"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133754"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabezpečení, využívá také funkce zabezpečení základní platformy, která zahrnuje operační systém, modul CLR a Internet Explorer. Tyto vrstvy se kombinují a [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují silný a odolný model zabezpečení, který se pokusí vyhnout jakémukoli jedinému bodu selhání, jak je znázorněno na následujícím obrázku:  
@@ -33,7 +33,7 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
 
 <a name="Operating_System_Security"></a>   
 ## <a name="operating-system-security"></a>Zabezpečení operačního systému  
- Minimální úroveň operačního systému, kterou vyžaduje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] Jádro [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] nástroje nabízí několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace systému Windows, včetně těch, které [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]jsou vytvořeny pomocí nástroje. [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]zahrnuje funkce [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zabezpečení a rozšiřuje je. Toto téma popisuje rozsah těchto funkcí zabezpečení, které jsou důležité pro [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], a také způsob, jakým [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] se integruje s nimi za účelem zajištění další ochrany.  
+Jádro systému Windows poskytuje několik funkcí zabezpečení, které tvoří základ zabezpečení pro všechny aplikace systému Windows, včetně těch, které jsou vytvořeny pomocí WPF. Toto téma popisuje širokou škálu těchto funkcí zabezpečení, které jsou důležité pro WPF, a také způsob, jakým se WPF integruje s nimi za účelem zajištění další ochrany.  
   
 <a name="Microsoft_Windows_XP_Service_Pack_2__SP2_"></a>   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
@@ -57,21 +57,21 @@ I když Windows Presentation Foundation (WPF) poskytuje celou řadu služeb zabe
   
 <a name="Windows_Vista"></a>   
 ### <a name="windows-vista"></a>Windows Vista  
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] uživatelé se budou moci vytěžit z dalších vylepšení zabezpečení operačního systému, včetně přístupu uživatelů s minimálními oprávněními, kontroly integrity kódu a izolace oprávnění.  
+Uživatelé WPF v systému Windows Vista budou těžit z dalších vylepšení zabezpečení operačního systému, včetně přístupu uživatelů s minimálními oprávněními, kontroly integrity kódu a izolace oprávnění.  
   
 #### <a name="user-account-control-uac"></a>Řízení uživatelských účtů (UAC)  
  V současné době se uživatelé systému Windows spouštějí s oprávněními správce, protože mnoho aplikací vyžaduje tyto požadavky buď k instalaci, nebo k provedení. Jedním z příkladů je možnost psát výchozí nastavení aplikace do registru.  
   
  Spuštění s oprávněními správce ve skutečnosti znamená, že aplikace se spouštějí z procesů, kterým jsou udělena oprávnění správce. Dopad tohoto zabezpečení je takový, že veškerý škodlivý kód, který by napadený procesem spuštěným s oprávněními správce, automaticky zdědí tato oprávnění, včetně přístupu k důležitým systémovým prostředkům.  
   
- Jedním ze způsobů, jak chránit před touto bezpečnostní hrozbou, je spouštění aplikací s minimálním množstvím oprávnění, která jsou vyžadována. Tato funkce se označuje jako princip nejnižších oprávnění a je základní funkcí [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] operačního systému. Tato funkce se nazývá řízení uživatelských účtů (UAC) a [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] nástroj řízení uživatelských účtů používá dva klíčové způsoby:  
+ Jedním ze způsobů, jak chránit před touto bezpečnostní hrozbou, je spouštění aplikací s minimálním množstvím oprávnění, která jsou vyžadována. Tato funkce se označuje jako princip nejnižších oprávnění a je základní funkcí operačního systému Windows. Tato funkce se nazývá řízení uživatelských účtů (UAC) a pomocí nástroje řízení uživatelských účtů (UAC) se používá v těchto dvou klíčových způsobech:  
   
 - Spuštění většiny aplikací s oprávněními nástroje řízení uživatelských účtů ve výchozím nastavení, i když je uživatel správcem; s oprávněními správce budou spuštěny pouze aplikace, které potřebují oprávnění správce. Aby bylo možné spustit s oprávněními správce, aplikace musí být explicitně označeny buď v manifestu aplikace, nebo jako položka v zásadách zabezpečení.  
   
 - Pro zajištění řešení kompatibility, jako je virtualizace. Mnoho aplikací se třeba pokouší zapisovat do umístění s omezeným přístupem, jako je C:\Program Files. Pro aplikace spuštěné v nástroji Řízení uživatelských účtů existuje alternativní umístění pro jednotlivé uživatele, které pro zápis do nástroje nevyžaduje oprávnění správce. Pro aplikace, které běží v nástroji Řízení uživatelských účtů, Nástroj UAC virtualizuje C:\Program Files, takže aplikace, které jsou zapsány do této služby, jsou ve skutečnosti zapsány do alternativního umístění pro jednotlivé uživatele. Tento druh práce s kompatibilitou umožňuje operačnímu systému spouštět mnoho aplikací, které se dřív nepodařilo spustit v nástroji Řízení uživatelských účtů.  
   
 #### <a name="code-integrity-checks"></a>Kontroly integrity kódu  
- [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]zahrnuje hlubší kontroly integrity kódu, které vám pomůžou zabránit vkládání škodlivého kódu do systémových souborů nebo do jádra při zatížení/běhu. To překračuje ochranu systémových souborů.  
+ Systém Windows Vista zahrnuje hlubší kontroly integrity kódu, které zabraňují v vkládání škodlivého kódu do systémových souborů nebo do jádra za běhu za běhu. To překračuje ochranu systémových souborů.  
   
 <a name="Limited_Rights_Process_for_Browser_Hosted_Applications"></a>   
 ### <a name="limited-rights-process-for-browser-hosted-applications"></a>Proces omezených práv pro aplikace hostované v prohlížeči  

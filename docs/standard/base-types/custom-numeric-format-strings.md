@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a0eab81c3cad67c2b7fdd7ba42294864acd4a554
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5cacccc182b3361ffd635f2b5f32ce8c17100d08
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046566"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133631"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
@@ -32,7 +32,7 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 Vlastní řetězce číselného formátu jsou podporovány některými přetíženími `ToString` metody pro všechny číselné typy. Například můžete zadat řetězec číselného formátu do <xref:System.Int32.ToString%28System.String%29> metody <xref:System.Int32> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> typu. Vlastní řetězce číselného formátu jsou podporovány také [funkcí složeného formátování](../../../docs/standard/base-types/composite-formatting.md)aplikace .NET, která je používána některými `Write` <xref:System.Console> a `WriteLine` <xref:System.String.Format%2A?displayProperty=nameWithType> metodami třídy a <xref:System.IO.StreamWriter> , metody a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metoda. Funkce [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) podporuje také vlastní řetězce číselného formátu.
 
 > [!TIP]
-> Můžete si stáhnout [formátovací nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikaci, která umožňuje použít řetězce formátu buď na číselné, nebo na hodnoty data a času a zobrazuje výsledný řetězec.
+> Můžete si stáhnout **formátovací nástroj**, aplikaci .net Core model Windows Forms, která umožňuje použití řetězců formátu na číselné hodnoty nebo hodnoty data a času a zobrazuje výsledný řetězec. Zdrojový kód je k dispozici pro [C#](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs) a [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb).
 
 <a name="table"></a>Následující tabulka popisuje vlastní specifikátory číselného formátu a zobrazuje ukázkový výstup vyprodukovaný každým specifikátorem formátu. Další informace o použití vlastních číselných formátovacích řetězců naleznete v části [poznámky](#NotesCustomFormatting) a v části [příklad](#example) pro komplexní ilustraci jejich použití.
 
@@ -293,4 +293,5 @@ Následující příklad ukazuje dva vlastní číselné formátovací řetězce
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
 - [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Postupy: Doplnit číslo počátečními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
-- [Ukázka: Nástroj pro formátování .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+- [Ukázka: nástroj formátování WinForms pro .NET CoreC#()](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
+- [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)

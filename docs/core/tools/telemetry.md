@@ -1,133 +1,141 @@
 ---
-title: Telemetrická data sady SDK .NET core
-description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzy, která data se shromažďují a jak ji zakázat.
-author: richlander
-ms.date: 06/20/2018
+title: Telemetrie .NET Core SDK
+description: Objevte funkce telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání.
+author: KathleenDollard
+ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 40d9f3f698f513306e087753b4c33d09e8df0046
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 253f69392f034e330a75ed387d9346e8a5ae2a08
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397760"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133697"
 ---
-# <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
+# <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
-[.NET Core SDK](index.md) zahrnuje [funkce telemetrie](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry) , který shromažďuje informace o využití. Je důležité, že tým rozhraní .NET rozumí použití nástroje tak může zlepšit. Další informace najdete v tématu [co jsme se naučili v .NET Core SDK Telemetrie](https://devblogs.microsoft.com/dotnet/what-weve-learned-from-net-core-sdk-telemetry/).
+[.NET Core SDK](index.md) obsahuje funkci telemetrie, která shromažďuje data o využití a informace o výjimkách při selhání .NET Core CLI. .NET Core CLI se dodává s .NET Core SDK a je to sada operací, které umožňují sestavovat, testovat a publikovat aplikace .NET Core. Je důležité, aby tým .NET pochopil, jak se nástroje používají, aby bylo možné je zlepšit. Informace o selháních pomáhají týmu vyřešit problémy a opravovat chyby.
 
-Shromážděná data jsou anonymní a publikované v souhrnné podobě k použití Microsoftem a komunitou v části [Creative Commons Attribution License](https://creativecommons.org/licenses/by/4.0/).
+Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení. 
 
 ## <a name="scope"></a>Scope
 
-`dotnet` Příkaz se používá ke spuštění aplikace a rozhraní příkazového řádku .NET Core. `dotnet` Telemetrii neshromažďuje příkazu samého. Příkazy rozhraní příkazového řádku .NET Core spuštěné `dotnet` příkaz shromažďovat telemetrická data.
+`dotnet`má dvě funkce: spouštění aplikací a provádění příkazů CLI. Telemetrii *není shromažďována* při `dotnet` použití ke spuštění aplikace v následujícím formátu:
 
-Telemetrie *není povoleno* při použití `dotnet` s příkazem pro samotného, není příkaz připojit:
+- `dotnet [path-to-app].dll`
 
-- `dotnet`
-- `dotnet [path-to-app]`
-
-Telemetrie *je povoleno* při použití [příkazy rozhraní příkazového řádku .NET Core](index.md), jako například:
+Telemetrie *se shromáždí* při použití některého z [.NET Core CLI příkazů](index.md), jako je například:
 
 - `dotnet build`
 - `dotnet pack`
-- `dotnet restore`
 - `dotnet run`
 
-## <a name="how-to-opt-out"></a>Jak se chcete odhlásit
+## <a name="how-to-opt-out"></a>Jak odhlásit
 
-Ve výchozím nastavení je povolena funkce telemetrická data sady SDK .NET Core. Vyjádřit výslovný nesouhlas funkce telemetrie nastavením `DOTNET_CLI_TELEMETRY_OPTOUT` proměnnou prostředí, aby `1` nebo `true`.
+Funkce telemetrie .NET Core SDK je ve výchozím nastavení povolená. Chcete-li se odhlásit z funkce telemetrie, `DOTNET_CLI_TELEMETRY_OPTOUT` nastavte proměnnou prostředí `1` na `true`nebo. 
 
-## <a name="data-points"></a>Datové body
+V případě, že dojde k úspěšné instalaci, posílá instalační program .NET Core SDK také jednu položku telemetrie. Pokud se chcete odhlásit, `DOTNET_CLI_TELEMETRY_OPTOUT` nastavte proměnnou prostředí před instalací .NET Core SDK.
 
-Funkci shromažďuje následující data:
+## <a name="disclosure"></a>Námitk
 
-- Časové razítko volání&#8224;
-- Příkaz vyvolána (například "sestavení")&#8224;
-- Tři octet IP adresy použité k určení zeměpisného umístění&#8224;
-- `ExitCode` příkaz
-- Nástroj test runner (pro projekty testů)
-- Operační systém a verze&#8224;
-- Určuje, zda jsou k dispozici v uzlu moduly runtime ID modulu runtime
-- Verze .NET core SDK&#8224;
-
-&#8224;Tato metrika je publikována.
-
-Počínaje .NET Core 2.0 SDK, jsou shromažďovány nové datové body:
-
-- `dotnet` příkaz možností a argumentů: pouze známé možnosti a argumenty jsou shromážděná (ne libovolné řetězce).
-- Určuje, zda sada SDK je spuštěn v kontejneru.
-- Cílové architektury.
-- Hodnoty hash adresy MAC: kryptograficky (SHA256) anonymní a jedinečné ID pro počítač. Tato metrika není publikována.
-- Hodnoty hash aktuálního pracovního adresáře.
-
-Funkci neshromažďuje osobní údaje, jako jsou uživatelská jména nebo e-mailové adresy. Nebude Kontrola kódu a nebude extrahovat citlivých dat na úrovni projektu, jako je například název, úložiště nebo autora. Data se odesílají bezpečně na servery Microsoftu pomocí [Microsoft Azure Application Insights](https://azure.microsoft.com/services/application-insights/) technologie, uchovávat v části s omezeným přístupem a publikování na základě striktní bezpečnostní opatření z zabezpečené [službyAzureStorage](https://azure.microsoft.com/services/storage/) systémy.
-
-Tým .NET chce vědět, jak se používají nástroje a pokud pracují dobře, nejsou sestavení pomocí nástrojů. Pokud máte podezření, že se citlivá data nebo, který sbírá telemetrických dat dat se nezabezpečeným způsobem nebo neoprávněně zpracována, založte problém v [dotnet/cli](https://github.com/dotnet/cli/issues) úložiště pro šetření.
-
-## <a name="published-data"></a>Publikovaná data
-
-Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v tématu [Data o využití sady SDK .NET Core](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md). Jsou sloupce datového souboru:
-
-- Timestamp
-- Occurrences&#8224;
-- Příkaz
-- Geography&#8225;
-- OSFamily
-- RuntimeID
-- OSVersion
-- SDKVersion
-
-&#8224;*Výskyty* sloupec zobrazuje agregace počet použití tohoto příkazu pro tento řádek metrik daný den.
-
-&#8225;Obvykle *zeměpisné oblasti* sloupec zobrazuje název země/oblasti. V některých případech se v tomto sloupci, ať už z důvodu výzkumných pracovníků pomocí platformy .NET Core v Antarktida nebo nesprávné umístění dat zobrazí kontinent Antarktida.
-
-### <a name="example"></a>Příklad
-
-| Timestamp      | Výskyty | Příkaz | Zeměpisné oblasti | OSFamily | RuntimeID     | OSVersion | SDKVersion |
-| -------------- | ----------- | ------- | --------- | -------- | ------------- | --------- | ---------- |
-| 4/16/2017 0:00 | 8           | Spuštění     | Uganda    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |
-
-### <a name="datasets"></a>Datové sady
-
-- [2016 - 3. ČTVRTLETÍ](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q3.tsv)
-- [2016 – 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2016-q4.tsv)
-- [2017 - Q1](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q1.tsv)
-- [2017 - Q2](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q2.tsv)
-- [2017 - Q3](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q3.tsv)
-- [2017 - 4.](https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-2017-q4.tsv)
-
-Další datové sady jsou odeslány pomocí standardní formát adresy URL. Nahraďte `<YEAR>` rokem a nahradit `<QUARTER>` s čtvrtletí v roce (použijte `1`, `2`, `3`, nebo `4`). Soubory jsou v hodnoty oddělené tabulátorem (*TSV*) formát.
-
-`https://dotnetcli.blob.core.windows.net/usagedata/dotnet-cli-usage-<YEAR>-q<QUARTER>.tsv`
-
-## <a name="license"></a>Licence
-
-Je distribuce Microsoftu .NET Core licenci [licenční podmínky pro Software společnosti Microsoft: Knihovna rozhraní Microsoft .NET](https://aka.ms/dotnet-core-eula). Podrobnosti o shromažďování dat a zpracování najdete v části s názvem "Data".
-
-[Balíčky .NET NuGet](https://www.nuget.org/profiles/dotnetframework) používají stejné licence, ale nepovolí telemetrie (naleznete v tématu [oboru](#scope)).
-
-## <a name="disclosure"></a>Zpřístupnění
-
-.NET Core SDK zobrazí při prvním spuštění jednu z následující text [příkazy rozhraní příkazového řádku .NET Core](index.md) (například `dotnet restore`). Text může mírně lišit v závislosti na verzi sady SDK, kterou používáte. Toto prostředí "prvního spuštění" je, jak Microsoft upozorní vás na shromažďování dat.
+.NET Core SDK zobrazí text podobný následujícímu při prvním spuštění jednoho z [.NET Core CLI příkazů](index.md) (například `dotnet build`). Text se může v závislosti na verzi sady SDK, kterou používáte, mírně lišit. Toto je postup "prvního spuštění", který vás Microsoft upozorní na shromažďování dat.
 
 ```console
-Welcome to .NET Core!
----------------------
-Learn more about .NET Core: https://aka.ms/dotnet-docs
-Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli-docs
-
 Telemetry
 ---------
-The .NET Core tools collect usage data in order to help us improve your experience.
-The data is anonymous and doesn't include command-line arguments.
-The data is collected by Microsoft and shared with the community.
-You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+The .NET Core tools collect usage data in order to help us improve your experience. The data is anonymous. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
 
 Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
 
+## <a name="data-points"></a>Datové body
+
+Funkce telemetrie neshromažďuje osobní údaje, jako jsou uživatelská jména nebo e-mailové adresy. Nekontroluje váš kód a neextrahuje data na úrovni projektu, jako je název, úložiště nebo autor. Data se odesílají zabezpečeně na servery Microsoftu pomocí [Azure monitor](https://azure.microsoft.com/services/monitor/) technologie, která se drží pod omezeným přístupem, a publikují se v rámci striktních bezpečnostních mechanismů pro [Azure Storage](https://azure.microsoft.com/services/storage/) systémy.
+
+Ochrana vašich osobních údajů je pro nás důležitá. Pokud máte podezření, že telemetrie shromažďuje citlivá data nebo jsou data nezabezpečená nebo nevhodně zpracovaná, zapište problém do úložiště [dotnet/CLI](https://github.com/dotnet/cli/issues) nebo odešlete e-mail k [dotnet@microsoft.com](mailto:dotnet@microsoft.com) šetření.
+
+Funkce telemetrie shromažďuje následující data:
+
+| Verze sady SDK | Data |
+|--------------|------|
+| Všechny          | Časové razítko vyvolání |
+| Všechny          | Byl vyvolán příkaz (například "Build"), který začíná hodnotou hash 2,1. |
+| Všechny          | Tři oktety, které se používají k určení geografického umístění. |
+| Všechny          | Operační systém a verze. |
+| Všechny          | ID modulu runtime (RID), na kterém je sada SDK spuštěná. |
+| Všechny          | Verze .NET Core SDK |
+| Všechny          | Profil telemetrie: volitelná hodnota se používá jenom s výslovným výslovným souhlasem uživatele a používá se interně v Microsoftu. |
+| > = 2.0        | Argumenty a možnosti příkazu: několik argumentů a možností je shromažďováno (nejedná se o libovolný řetězec). Viz [shromážděné možnosti](#collected-options). Hodnota hash po 2.1.300 |
+| > = 2.0         | Určuje, jestli je sada SDK spuštěná v kontejneru. |
+| > = 2.0         | Cílová rozhraní (z `TargetFramework` události) vyhodnotí hodnotu hash začínající v 2,1. |
+| > = 2.0         | Adresa MAC Access Control médií (MAC): kryptograficky (SHA256) anonymní a jedinečné ID pro počítač. |
+| > = 2.0         | Aktuální pracovní adresář má hodnotu hash. |
+| > = 2.0         | Sestava úspěšné instalace s názvem souboru EXE instalačního programu s algoritmem hash |
+| > = 2.1.300     | Verze jádra. |
+| > = 2.1.300     | Verze nebo verze LIBC. |
+| > = 3.0.100     | Určuje, zda byl výstup přesměrován (true nebo false). |
+| > = 3.0.100     | V případě selhání CLI/SDK je typ výjimky a jeho trasování zásobníku (do odeslaného trasování zásobníku je zahrnut pouze kód CLI/SDK). Další informace najdete v tématu [shromážděná telemetrie výjimek při selhání .NET Core CLI/SDK](#net-core-clisdk-crash-exception-telemetry-collected). |
+
+### <a name="collected-options"></a>Shromážděné možnosti
+
+Některé příkazy odesílají další data. Podmnožina příkazů odesílá první argument:
+
+| Příkaz               | Data prvního argumentu byla odeslána.                |
+|-----------------------|-----------------------------------------|
+| `dotnet help <arg>`   | Dotaz na příkaz se dotazuje na.  |
+| `dotnet new <arg>`    | Název šablony (s algoritmem hash)             |
+| `dotnet add <arg>`    | Slovo `package` nebo .`reference`      |
+| `dotnet remove <arg>` | Slovo `package` nebo .`reference`      |
+| `dotnet list <arg>`   | Slovo `package` nebo .`reference`      |
+| `dotnet sln <arg>`    | Slovo `add`, `list`, nebo `remove`.    |
+| `dotnet nuget <arg>`  | Slovo `delete`, `locals`, nebo `push`. |
+
+Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu s jejich hodnotami:
+
+| Možnost                  | Příkazy                                                                                       |
+|-------------------------|------------------------------------------------------------------------------------------------|
+| `--verbosity`           | Všechny příkazy                                                                                   |
+| `--language`            | `dotnet new`                                                                                   |
+| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
+| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
+| `--runtime`             | `dotnet build`,`dotnet publish`                                                              |
+| `--platform`            | `dotnet vstest`                                                                                |
+| `--logger`              | `dotnet vstest`                                                                                |
+| `--sdk-package-version` | `dotnet migrate`                                                                               |
+
+S výjimkou `--sdk-package-version`ajsouvšechny ostatní hodnoty hash od .NET Core 2.1.100 SDK. `--verbosity`
+
+## <a name="net-core-clisdk-crash-exception-telemetry-collected"></a>Shromážděná telemetrie výjimek při selhání .NET Core CLI/SDK
+
+Pokud .NET Core CLI/SDK selže, shromažďuje název výjimky a trasování zásobníku kódu CLI/SDK. Tyto informace jsou shromažďovány k vyhodnocení problémů a zlepšení kvality .NET Core SDK a CLI. Tento článek poskytuje informace o datech, která shromažďujeme. Poskytuje také tipy k tomu, jak si uživatelé, kteří vytvářejí svou vlastní verzi .NET Core SDK, můžou zabránit nechtěnému zveřejnění osobních nebo citlivých informací.
+
+### <a name="types-of-collected-data"></a>Typy shromážděných dat
+
+.NET Core CLI shromažďuje informace pouze o výjimkách CLI/SDK, nikoli výjimkách v aplikaci. Shromážděná data obsahují název výjimky a trasování zásobníku. Toto trasování zásobníku je kódu CLI/SDK.
+
+Následující příklad znázorňuje druh shromažďovaných dat:
+
+```
+System.IO.IOException
+at System.ConsolePal.WindowsConsoleStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+at System.IO.StreamWriter.Write(Char[] buffer)
+at System.IO.TextWriter.WriteLine()
+at System.IO.TextWriter.SyncTextWriter.WriteLine()
+at Microsoft.DotNet.Cli.Utils.Reporter.WriteLine()
+at Microsoft.DotNet.Tools.Run.RunCommand.EnsureProjectIsBuilt()
+at Microsoft.DotNet.Tools.Run.RunCommand.Execute()
+at Microsoft.DotNet.Tools.Run.RunCommand.Run(String[] args)
+at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, ITelemetry telemetryClient)
+at Microsoft.DotNet.Cli.Program.Main(String[] args)
+```
+
+### <a name="avoid-inadvertent-disclosure-information"></a>Vyhněte se neúmyslným informacím o zveřejnění
+
+Přispěvatelé .NET Core a všichni ostatní spouštějí verzi .NET Core SDK, kterou samy vytvořili, by měli zvážit cestu ke svému zdrojovému kódu sady SDK. Pokud dojde k chybě při použití .NET Core SDK, které je vlastní sestavení ladění nebo nakonfigurováno pomocí vlastních souborů symbolů sestavení, bude cesta ke zdrojovému souboru sady SDK z sestavovacího počítače shromažďována jako součást trasování zásobníku a není použita hodnota hash.
+
+Z tohoto důvodu by se vlastní sestavení .NET Core SDK neměla nacházet v adresářích, jejichž názvy cest zveřejňují osobní nebo citlivé informace. 
+
 ## <a name="see-also"></a>Viz také:
 
-- [Co jsme se naučili z telemetrická data sady SDK .NET Core](https://devblogs.microsoft.com/dotnet/what-weve-learned-from-net-core-sdk-telemetry/)
-- [Odkaz na zdroj telemetrie (úložišti dotnet/cli)](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)
-- [Data o využití sady SDK .NET core](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md)
+- [Data telemetrie .NET Core CLI-2019 Q2](https://dotnet.microsoft.com/platform/telemetry/dotnet-core-cli-2019q2)
+- [Zdroj odkazů telemetrie (úložiště dotnet/CLI)](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)

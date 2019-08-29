@@ -10,18 +10,18 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: 35b46d2030ee887eb98618fbed127097cec1f0c5
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e0f7bd553096be0674827aa0498a53df5247940e
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044201"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133769"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
 > Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
   
- [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]umožňuje uživatelům změnit nastavení bodů na palec (dpi) tak, aby se většina [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvků na obrazovce zobrazovala větší. I když je tato funkce dlouhodobě dostupná [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]v, v předchozích verzích bylo škálování nutné implementovat aplikacemi. V [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]nástroji Správce oken plochy provádí výchozí škálování pro všechny aplikace, které nezpracovávají vlastní škálování. Klientské aplikace automatizace uživatelského rozhraní musí tuto funkci vzít v úvahu.  
+Počínaje systémem Windows Vista umožňuje Windows uživatelům změnit nastavení bodů na palec (dpi) tak, aby se většina prvků uživatelského rozhraní (UI) na obrazovce zobrazovala větší. I když je tato funkce ve Windows dlouhodobě dostupná, v předchozích verzích bylo škálování nutné implementovat aplikacemi. Počínaje systémem Windows Vista Správce oken plochy provádí výchozí škálování pro všechny aplikace, které nezpracovávají jejich vlastní škálování. Klientské aplikace automatizace uživatelského rozhraní musí tuto funkci vzít v úvahu.  
   
 <a name="Scaling_in_Windows_Vista"></a>   
 ## <a name="scaling-in-windows-vista"></a>Škálování v systému Windows Vista  

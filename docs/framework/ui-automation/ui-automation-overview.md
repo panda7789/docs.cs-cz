@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: af4abf060e9a8606f69a94f27ecd76487a2ff51c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 968660f2fa043ee4028cb144f368d9380729ffef
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914594"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133803"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -26,7 +26,7 @@ ms.locfileid: "69914594"
   
  Klientské aplikace automatizace uživatelského rozhraní lze zapsat s jistotou, že budou fungovat na více architekturách. Základní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] masky jsou jakékoli rozdíly v rozhraních, které jsou základem různých [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]částí. `Content` Například [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnost [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] tlačítka <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>, vlastnost`Caption` tlačítkaa`ALT` vlastnost obrázku HTML jsou namapovány na jedinou vlastnost, v zobrazení. [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje plnou funkčnost v [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)]a [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
+Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaných operačních systémech Windows, na kterých běží .NET Framework (viz článek [.NET Framework požadavky na systém](../get-started/system-requirements.md) nebo verze .NET Core počínaje .net Core 3,0.  
   
  Zprostředkovatelé automatizace uživatelského rozhraní nabízejí určitou podporu pro klientské aplikace Microsoft Active Accessibility prostřednictvím integrované přemostění služby.  
   

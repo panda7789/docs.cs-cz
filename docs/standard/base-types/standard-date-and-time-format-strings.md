@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 247a77eb2fc5341f611e86f920daac488015a680
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c8a4c1c9450d624b6c4903f9f7978e931e74551c
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040477"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133828"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 
@@ -32,7 +32,7 @@ ms.locfileid: "70040477"
 - Chcete-li definovat textovou reprezentaci hodnoty data a času, která může být převedena <xref:System.DateTimeOffset> na <xref:System.DateTime> hodnotu nebo pomocí operace analýzy.
 
 > [!TIP]
-> Můžete si stáhnout [formátovací nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikaci, která umožňuje použít řetězce formátu buď na číselné, nebo na hodnoty data a času a zobrazuje výsledný řetězec.
+> Můžete si stáhnout **formátovací nástroj**, aplikaci .net Core model Windows Forms, která umožňuje použití řetězců formátu na číselné hodnoty nebo hodnoty data a času a zobrazuje výsledný řetězec. Zdrojový kód je k dispozici pro [C#](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs) a [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb).
 
 Řetězce standardního formátu data a času lze použít s <xref:System.DateTime> <xref:System.DateTimeOffset> hodnotami i.
 
@@ -454,4 +454,5 @@ Formátování je ovlivněno vlastnostmi aktuálního <xref:System.Globalization
 - <xref:System.DateTimeOffset?displayProperty=nameWithType>
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
 - [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
-- [Ukázka: Nástroj pro formátování .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+- [Ukázka: nástroj formátování WinForms pro .NET CoreC#()](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
+- [Ukázka: nástroj formátování WinForms pro .NET Core (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)
