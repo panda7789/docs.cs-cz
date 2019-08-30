@@ -24,7 +24,7 @@
               href: keywords/char.md
             - name: enum
               href: keywords/enum.md
-            - name: struct
+            - name: 'struct '
               href: keywords/struct.md
         - name: Typy odkazů
           items:
@@ -85,6 +85,7 @@
           href: keywords/abstract.md
         - name: async
           href: keywords/async.md
+          displayName: await
         - name: const
           href: keywords/const.md
         - name: event
@@ -177,7 +178,7 @@
           href: keywords/out-parameter-modifier.md
     - name: Klíčová slova oboru názvů
       items:
-        - name: Obor názvů
+        - name: – obor názvů
           href: keywords/namespace.md
         - name: používání
           items:
@@ -201,23 +202,19 @@
           href: keywords/new-constraint.md
         - name: kde
           href: keywords/where-generic-type-constraint.md
-    - name: Klíčová slova operátorů
-      items:
-        - name: await
-          href: keywords/await.md
     - name: Klíčová slova přístupu
       items:
         - name: base
           href: keywords/base.md
-        - name: tohoto provozu
+        - name: this
           href: keywords/this.md
     - name: Literálová klíčová slova
       items:
         - name: 'null'
           href: keywords/null.md
-        - name: true (pravda)
+        - name: 'true'
           href: keywords/true-literal.md
-        - name: false (nepravda)
+        - name: 'false'
           href: keywords/false-literal.md
         - name: default
           href: keywords/default.md
@@ -239,7 +236,7 @@
           href: keywords/set.md
         - name: when (podmínka filtru)
           href: keywords/when.md
-        - name: hodnota
+        - name: value
           href: keywords/value.md
         - name: yield
           href: keywords/yield.md
@@ -327,6 +324,9 @@
     - name: ':: – operátor'
       href: operators/namespace-alias-qualifier.md
       displayName: 'namespace alias qualifier, global namespace'
+    - name: await – operátor
+      href: operators/await.md
+      displayName: async
     - name: výchozí operátor
       href: operators/default.md
       displayName: 'default value, default literal, type default'
@@ -375,7 +375,7 @@
       href: preprocessor-directives/preprocessor-error.md
     - name: '#line'
       href: preprocessor-directives/preprocessor-line.md
-    - name: '#.'
+    - name: '#oblast'
       href: preprocessor-directives/preprocessor-region.md
     - name: '#endregion'
       href: preprocessor-directives/preprocessor-endregion.md
@@ -533,7 +533,7 @@
       href: ../../../_csharplang/spec/expressions.md
     - name: Příkazy
       href: ../../../_csharplang/spec/statements.md
-    - name: Obory názvů
+    - name: Jmenné prostory
       href: ../../../_csharplang/spec/namespaces.md
     - name: Třídy
       href: ../../../_csharplang/spec/classes.md
