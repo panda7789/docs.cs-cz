@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: e0c8f52193639c067252878127ee95a0897b9582
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 71e3781b08bca3441dbd55704bcb0f7de635097e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922445"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168638"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 
@@ -27,7 +27,7 @@ public async Task<int> ExampleMethodAsync()
 }  
 ```  
 
-Pokud začínáte s asynchronním programováním nebo nerozumíte, jak asynchronní metoda používá `await` klíčové slovo pro potenciálně dlouhodobě spuštěnou práci bez blokování vlákna volajícího, přečtěte si Úvod do [asynchronního programování s použitím modifikátoru Async a očekává](../../programming-guide/concepts/async/index.md)se. Následující kód byl nalezen v asynchronní metodě a volá <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> metodu: 
+Pokud začínáte s asynchronním programováním nebo nerozumíte, jak asynchronní metoda používá [ `await` operátor](../operators/await.md) pro potenciálně dlouhotrvající práci bez blokování vlákna volajícího, přečtěte si Úvod do [asynchronního programování s Async a await](../../programming-guide/concepts/async/index.md) Následující kód byl nalezen v asynchronní metodě a volá <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> metodu:
   
 ```csharp  
 string contents = await httpClient.GetStringAsync(requestUrl);  
@@ -87,6 +87,6 @@ Další informace a příklady naleznete v tématu [Async Return Types](../../pr
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
-- [await](./await.md)
+- [await](../operators/await.md)
 - [Návod: Přístup k webu pomocí modifikátoru Async a operátoru await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../programming-guide/concepts/async/index.md)

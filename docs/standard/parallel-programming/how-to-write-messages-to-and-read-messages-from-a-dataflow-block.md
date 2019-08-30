@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6cc4dc3a0692000958d66222e6cdc30acf874189
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 22d0f8abd1481bfd75a0d08f49b28cebf78bb4cb
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666368"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169153"
 ---
 # <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
 Tento dokument popisuje, jak pomocí knihovny TPL Dataflow zapisovat zprávy do a číst zprávy z bloku toku dat. Knihovna TPL Dataflow poskytuje synchronní i asynchronní metody pro zápis zpráv do a čtení zpráv z bloku toku dat. Tento dokument používá <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídu. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třída ukládá zprávy do vyrovnávací paměti a chová se jako zdroj zprávy i jako cíl zprávy.  
@@ -40,7 +40,7 @@ Tento dokument popisuje, jak pomocí knihovny TPL Dataflow zapisovat zprávy do 
  [!code-vb[TPLDataflow_ReadWrite#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_readwrite/vb/dataflowreadwrite.vb#4)]  
   
 ## <a name="writing-to-and-reading-from-a-dataflow-block-asynchronously"></a>Asynchronní zápis a čtení z bloku toku dat  
- Následující příklad používá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> metodu pro asynchronní zápis <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> do objektu a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A> metodu pro asynchronní čtení ze stejného objektu. Tento příklad používá operátory [Async](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/keywords/await.md) ([Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic) k asynchronnímu posílání dat do a čtení dat z cílového bloku. Tato <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> metoda je užitečná v případě, že je nutné povolit blok toku dat pro odložení zpráv. Tato <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A> metoda je užitečná, když chcete pracovat s daty, když budou data k dispozici. Další informace o tom, jak se zprávy šíří mezi bloky zpráv, najdete v oddílu předání zprávy do [toku](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)dat.  
+ Následující příklad používá <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> metodu pro asynchronní zápis <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> do objektu a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A> metodu pro asynchronní čtení ze stejného objektu. Tento příklad používá operátory [Async](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/operators/await.md) ([Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic) k asynchronnímu posílání dat do a čtení dat z cílového bloku. Tato <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> metoda je užitečná v případě, že je nutné povolit blok toku dat pro odložení zpráv. Tato <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A> metoda je užitečná, když chcete pracovat s daty, když budou data k dispozici. Další informace o tom, jak se zprávy šíří mezi bloky zpráv, najdete v oddílu předání zprávy do [toku](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)dat.  
   
  [!code-csharp[TPLDataflow_ReadWrite#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_readwrite/cs/dataflowreadwrite.cs#5)]
  [!code-vb[TPLDataflow_ReadWrite#5](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_readwrite/vb/dataflowreadwrite.vb#5)]  

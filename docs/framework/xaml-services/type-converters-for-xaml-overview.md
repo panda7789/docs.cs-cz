@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: a94f1f358a2d0fbfd489ac3d34375b6f883dd4fa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e401b40e1c11504e3c27d5b3601d71ef8f5821e1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965445"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169009"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Převaděče typů poskytují logiku pro zapisovač objektů, který se převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V .NET Framework služby XAML musí být konvertor typu třída, která je odvozena z <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují cestu pro uložení XAML a lze je použít k serializaci objektu do řetězcové notace v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typu v jazyce XAML, a poskytuje rady pro <xref:System.ComponentModel.TypeConverter>implementaci pro přepsání metody.  
@@ -93,9 +93,9 @@ Převaděče typů poskytují logiku pro zapisovač objektů, který se převede
   
 <a name="Applying_the_TypeConverterAttribute"></a>   
 ## <a name="applying-the-typeconverterattribute"></a>Použití TypeConverterAttribute  
- Pro vlastní převaděč typu, který se má použít jako převaděč typu pro vlastní třídu .NET Framework XAML Services, je nutné použít [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> na definici vaší třídy. Typ <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> , který zadáte prostřednictvím atributu, musí být název typu vašeho převaděče vlastního typu. Použijete-li tento atribut, pokud procesor XAML zpracuje hodnoty, kde typ vlastnosti používá vlastní typ třídy, může vstupní řetězce a vracet instance objektů.  
+ Pro vlastní převaděč typu, který se má použít jako převaděč typu pro vlastní třídu .NET Framework XAML Services, je nutné použít <xref:System.ComponentModel.TypeConverterAttribute> na definici vaší třídy. Typ <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> , který zadáte prostřednictvím atributu, musí být název typu vašeho převaděče vlastního typu. Použijete-li tento atribut, pokud procesor XAML zpracuje hodnoty, kde typ vlastnosti používá vlastní typ třídy, může vstupní řetězce a vracet instance objektů.  
   
- Můžete také zadat konvertor typu na základě jednotlivých vlastností. [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] Namísto použití `get` / `set` s definicí třídy ji aplikujte na definici vlastnosti (hlavní definice, nikoli na implementaci v rámci IT). <xref:System.ComponentModel.TypeConverterAttribute> Typ vlastnosti se musí shodovat s typem, který je zpracován vaším vlastním převaděčem typu. Při použití tohoto atributu, pokud procesor XAML zpracovává hodnoty této vlastnosti, může zpracovat vstupní řetězce a vracet instance objektů. Technika konvertoru typu pro jednotlivé vlastnosti je obzvláště užitečná, pokud se rozhodnete použít typ vlastnosti z Microsoft .NET Framework nebo z jiné knihovny, kde nemůžete určit definici třídy a nemůžete <xref:System.ComponentModel.TypeConverterAttribute> použít.  
+ Můžete také zadat konvertor typu na základě jednotlivých vlastností. Namísto použití <xref:System.ComponentModel.TypeConverterAttribute> s definicí třídy ji aplikujte na definici vlastnosti (hlavní definice, nikoli na `get` / `set` implementaci v rámci IT). Typ vlastnosti se musí shodovat s typem, který je zpracován vaším vlastním převaděčem typu. Při použití tohoto atributu, pokud procesor XAML zpracovává hodnoty této vlastnosti, může zpracovat vstupní řetězce a vracet instance objektů. Technika konvertoru typu pro jednotlivé vlastnosti je obzvláště užitečná, pokud se rozhodnete použít typ vlastnosti z Microsoft .NET Framework nebo z jiné knihovny, kde nemůžete určit definici třídy a nemůžete <xref:System.ComponentModel.TypeConverterAttribute> použít.  
   
  Chcete-li zadat chování převodu typu pro vlastního připojeného člena, <xref:System.ComponentModel.TypeConverterAttribute> použijte `Get` pro přístupovou metodu vzoru implementace pro připojeného člena.  
   

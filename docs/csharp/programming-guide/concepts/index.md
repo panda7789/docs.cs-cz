@@ -2,12 +2,12 @@
 title: Koncepty programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 7668ca6bba0b938e569886cfa9f1985eaa48c5d0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594992"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168346"
 ---
 # <a name="programming-concepts-c"></a>Koncepty programování (C#)
 Tato část vysvětluje koncepty programování v C# jazyce.  
@@ -17,7 +17,7 @@ Tato část vysvětluje koncepty programování v C# jazyce.
 |Název|Popis|  
 |-----------|-----------------|  
 |[Sestavení v .NET](../../../standard/assembly/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
-|[Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./async/index.md)|Popisuje, jak zapisovat asynchronní řešení pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/keywords/await.md) v C#. Obsahuje návod.|  
+|[Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./async/index.md)|Popisuje, jak zapisovat asynchronní řešení pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/operators/await.md) v C#. Obsahuje návod.|  
 |[Atributy (C#)](./attributes/index.md)|Popisuje, jak poskytnout další informace o programovacích prvcích, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
 |[Informace o volajícím (C#)](./caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace zahrnují cestu k souboru a číslo řádku zdrojového kódu a název člena volajícího.|  
 |[Kolekce (C#)](./collections.md)|Popisuje některé z typů kolekcí poskytovaných .NET Framework. Ukazuje, jak používat jednoduché kolekce a kolekce párů klíč/hodnota.|  

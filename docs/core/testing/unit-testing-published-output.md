@@ -1,32 +1,32 @@
 ---
-title: Testování publikované výstup s dotnet test
-description: Zjistěte, jak spustit testy na publikované knihovny, místo na zdrojový kód, pomocí příkazu dotnet vstest.
+title: Testování publikovaného výstupu pomocí dotnet VSTest
+description: Naučte se spouštět testy publikovaných knihoven místo ve zdrojovém kódu pomocí příkazu dotnet VSTest.
 author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 660b966c6d02353b855e5728094083042a561558
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ac03053bc762d0176e087545871ca8a145cd41e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665816"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168296"
 ---
-# <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s dotnet test
+# <a name="test-published-output-with-dotnet-vstest"></a>Testování publikovaného výstupu pomocí dotnet VSTest
 
-Je možné spustit testy na výstupu už byla publikována s použitím `dotnet vstest` příkazu. Bude to fungovat u xUnit, MSTest a NUnit testy. Jednoduše vyhledejte soubor knihovny DLL, která byla součástí publikovaný výstup a spusťte:
+Můžete spustit testy na již publikovaný výstup pomocí `dotnet vstest` příkazu. To bude fungovat na testech xUnit, MSTest a NUnit. Jednoduše Najděte soubor DLL, který byl součástí publikovaného výstupu a spusťte:
 
-```
+```console
 dotnet vstest <MyPublishedTests>.dll
 ```
 
-kde `<MyPublishedTests>` je název publikované testovacího projektu.
+Kde `<MyPublishedTests>` je název vašeho publikovaného testovacího projektu.
 
 ## <a name="example"></a>Příklad
 
-Následující příkazy ukazují, spouštění testů na publikované knihovny DLL.
+Následující příkazy ukazují spuštění testů na publikované knihovně DLL.
 
-```
+```console
 dotnet new mstest -o MyProject.Tests
 cd MyProject.Tests
 dotnet publish -o out
@@ -34,7 +34,7 @@ dotnet vstest out/MyProject.Tests.dll
 ```
 
 > [!NOTE]
-> Poznámka: Pokud vaše aplikace cílí na rozhraní než `netcoreapp` můžete nadále spouštět `dotnet vstest` příkaz předáním s příznakem framework cíleného rozhraní. Například, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`. Ve verzi Visual Studio 2017 Update 5 je automaticky rozpoznán požadované rozhraní.
+> Poznámka: Pokud je vaše aplikace cílena na jiné než `netcoreapp` tento rámec, můžete přesto `dotnet vstest` spustit příkaz předáním cílového rozhraní s příznakem rozhraní. Například, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`. V aplikaci Visual Studio 2017 Update 5 se požadované rozhraní automaticky detekuje.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 0ec741d085ca52d52999d2e10cf5f687cc885219
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c50d9e8db2668f2138653858e42b8ed07d3e1e9
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921795"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168952"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které program přijímá, jsou vyjádřeny v příkazech. Mezi běžné akce patří deklarace proměnných, přiřazování hodnot, volání metod, smyčky přes kolekce a větvení do jednoho nebo jiného bloku kódu v závislosti na dané podmínce. Pořadí, ve kterém se příkazy spouštějí v programu, se nazývá tok řízení nebo tok provádění. Tok řízení se může při každém spuštění programu lišit v závislosti na tom, jak program reaguje na vstup, který obdrží v době běhu.  
@@ -32,7 +32,7 @@ Akce, které program přijímá, jsou vyjádřeny v příkazech. Mezi běžné a
 |Jump – příkazy|Příkazy skoku přenášejí řízení na jiný oddíl kódu. Další informace naleznete v následujících tématech:<br /><br /> [přerušení](../../language-reference/keywords/break.md), [pokračovat](../../language-reference/keywords/continue.md), [výchozí](../../language-reference/keywords/switch.md), [Přejít](../../language-reference/keywords/goto.md), [vrátit](../../language-reference/keywords/return.md), [Dej](../../language-reference/keywords/yield.md)|  
 |Příkazy zpracování výjimek|Příkazy zpracování výjimek umožňují bezproblémové obnovení z mimořádných podmínek, ke kterým dojde v době běhu. Další informace naleznete v následujících tématech:<br /><br /> [throw](../../language-reference/keywords/throw.md), [try-catch](../../language-reference/keywords/try-catch.md), [try-finally](../../language-reference/keywords/try-finally.md), [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)|  
 |[Zaškrtnuto a nezaškrtnuto](../../language-reference/keywords/checked-and-unchecked.md)|Zaškrtnuté a nezaškrtnuté příkazy umožňují určit, jestli numerické operace můžou způsobit přetečení, pokud je výsledek uložený v proměnné, která je moc malá pro uložení výsledné hodnoty. Další informace naleznete v tématu [checked](../../language-reference/keywords/checked.md) a [](../../language-reference/keywords/unchecked.md)Unchecked.|  
-|`await` Příkaz|Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/keywords/await.md) v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.<br /><br /> Jednoduchý příklad naleznete v části [metody](../classes-and-structs/methods.md)"asynchronní metody". Další informace naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md).|  
+|`await` Příkaz|Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/operators/await.md) v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.<br /><br /> Jednoduchý příklad naleznete v části [metody](../classes-and-structs/methods.md)"asynchronní metody". Další informace naleznete v tématu [asynchronní programování s Async a await](../concepts/async/index.md).|  
 |`yield return` Příkaz|Iterátor provádí vlastní iteraci v kolekci, jako je například seznam nebo pole. Iterátor používá příkaz [yield return](../../language-reference/keywords/yield.md) k vrácení každého elementu v jednom okamžiku. Při dosažení `yield return` příkazu je aktuální umístění v kódu zapamatovatelné. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.<br /><br /> Další informace najdete v tématu [iterátory](../concepts/iterators.md).|  
 |`fixed` Příkaz|Příkaz fixed brání systému uvolňování paměti v přemístění pohyblivé proměnné. Další informace naleznete v tématu [fixed](../../language-reference/keywords/fixed-statement.md).|  
 |`lock` Příkaz|Příkaz lock umožňuje omezit přístup k blokům kódu pouze na jedno vlákno v jednom okamžiku. Další informace najdete v tématu [Lock](../../language-reference/keywords/lock-statement.md).|  

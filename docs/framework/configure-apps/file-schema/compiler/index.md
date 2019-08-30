@@ -11,25 +11,22 @@ helpviewer_keywords:
 - language providers, settings schema
 - compiler configuration settings
 ms.assetid: c020b139-8699-4f0d-9ac9-70d0c5b2a8c8
-ms.openlocfilehash: 4900c391ae94447cdf4be331a27f6f3398e9129a
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: a651e4ca76fda9e65ea4a5848c19b1f0ebfe91b1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659723"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168927"
 ---
 # <a name="compiler-and-language-provider-settings-schema"></a>Schéma nastavení kompilátoru a poskytovatele jazyka
 Nastavení zprostředkovatele kompilátoru a jazyka určují prvky konfigurace kompilátoru pro dostupné poskytovatele jazyků. Každý prvek konfigurace kompilátoru Určuje název typu poskytovatele kódu, parametry kompilátoru, podporované názvy jazyků a podporovaná rozšíření souborů.  
   
- .NET Framework definuje počáteční nastavení kompilátoru v konfiguračním souboru počítače (Machine. config). Vývojáři a dodavatelé kompilátoru můžou přidat konfigurační nastavení pro novou <xref:System.CodeDom.Compiler.CodeDomProvider> implementaci. <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> Použijte metodu k programovému vytvoření výčtu poskytovatele jazyka a nastavení konfigurace kompilátoru v počítači.  
+.NET Framework definuje počáteční nastavení kompilátoru v konfiguračním souboru počítače (Machine. config). Vývojáři a dodavatelé kompilátoru můžou přidat konfigurační nastavení pro novou <xref:System.CodeDom.Compiler.CodeDomProvider> implementaci. <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> Použijte metodu k programovému vytvoření výčtu poskytovatele jazyka a nastavení konfigurace kompilátoru v počítači.  
   
- [\<Element > Konfigurace](../configuration-element.md)  
-  
- [\<system.codedom>](system-codedom-element.md)  
-  
- [\<compilers>](compilers-element.md)  
-  
- [\<> kompilátoru](compiler-element.md)  
+[ **\<> Konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. CodeDom >** ](system-codedom-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> kompilátorů**](compilers-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> kompilátoru**](compiler-element.md)  
   
 |Prvek|Popis|  
 |-------------|-----------------|  

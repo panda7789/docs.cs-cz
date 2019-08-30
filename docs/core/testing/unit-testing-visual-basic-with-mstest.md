@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: 6081e7b6b52d85615cfde701e364eb87d69f42bf
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9daa152c319f8cc72b4fd230758f2063cebf2a9a
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626427"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168220"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-mstest"></a>Testování částí Visual Basic knihoven .NET Core pomocí příkazu dotnet test a MSTest
 
@@ -22,7 +22,7 @@ Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-VB-MSTes
 V tomto novém adresáři spusťte příkaz [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nové řešení. Tento postup usnadňuje správu knihovny tříd i projektu testu jednotek.
 V adresáři řešení vytvořte adresář *PrimeService* . Máte zatím následující strukturu adresářů a souborů:
 
-```
+```console
 /unit-testing-vb-mstest
     unit-testing-vb-mstest.sln
     /PrimeService
@@ -48,7 +48,7 @@ Změňte adresář zpátky na adresář *testování částí-VB-using-MSTest* .
 
 Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
-```
+```console
 /unit-testing-vb-mstest
     unit-testing-vb-mstest.sln
     /PrimeService
@@ -69,7 +69,7 @@ Nastavte adresář *PrimeService. Tests* na aktuální adresář a vytvořte nov
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali MSTest a MSTest Runner. Nyní přidejte `PrimeService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```
+```console
 dotnet add reference ../PrimeService/PrimeService.vbproj
 ```
 
@@ -77,7 +77,7 @@ Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet
 
 Máte následující konečné rozložení řešení:
 
-```
+```console
 /unit-testing-vb-mstest
     unit-testing-vb-mstest.sln
     /PrimeService

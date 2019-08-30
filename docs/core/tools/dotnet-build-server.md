@@ -1,17 +1,17 @@
 ---
-title: příkaz DotNet serveru sestavení
-description: Příkaz dotnet sestavení serveru komunikuje se servery tím, že sestavení.
+title: dotnet – sestavení – příkaz serveru
+description: Příkaz dotnet Build-Server komunikuje s servery spuštěnými sestavením.
 ms.date: 04/24/2019
-ms.openlocfilehash: fa663bc045e8abfc3375a0226be7d16331b49740
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b2dfd5f317466f18d9246bd1fb281a92c42f6d9d
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632087"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168113"
 ---
-# <a name="dotnet-build-server"></a>DotNet – server sestavení
+# <a name="dotnet-build-server"></a>dotnet build-server
 
-**Tento článek se týká: ✓** sady SDK .NET Core 2.1 a novějších verzích
+**Tento článek se týká: ✓** .net Core 2,1 SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
@@ -19,11 +19,11 @@ ms.locfileid: "65632087"
 
 ## <a name="name"></a>Name
 
-`dotnet build-server` -Komunikuje se servery pro spuštění sestavení.
+`dotnet build-server`-Komunikuje se servery spuštěnými sestavením.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
-```
+```console
 dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
 dotnet build-server shutdown [-h|--help]
 dotnet build-server [-h|--help]
@@ -33,22 +33,22 @@ dotnet build-server [-h|--help]
 
 * **`shutdown`**
 
-  Vypne sestavovací servery, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnout.
+  Ukončí sestavovací servery, které jsou spuštěny z dotnet. Ve výchozím nastavení jsou všechny servery vypnuté.
 
 ## <a name="options"></a>Možnosti
 
 * **`-h|--help`**
 
-  Vytiskne krátký nápovědy pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 * **`--msbuild`**
 
-  Ukončí MSBuild serveru sestavení.
+  Vypne server sestavení MSBuild.
 
 * **`--razor`**
 
-  Server sestavení vypne syntaxi Razor.
+  Vypne server sestavení Razor.
 
 * **`--vbcscompiler`**
 
-  Vypne jazyce Visual Basic / server sestavení kompilátor jazyka C#.
+  Ukončí server sestavení VB/C# Compiler.

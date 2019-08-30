@@ -2,12 +2,12 @@
 title: Úloha asynchronního programovacího modelu (klepnutím) s modifikátorem AsyncC#a await ()
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: bfe32b2eaefb9ce813ca74bed450a935e33dc9d4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: abe1ab777a17ba8cba15a27b02d389a9ede3caf0
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595599"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167902"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 
@@ -38,7 +38,7 @@ Asynchronní přístup přidává ekvivalent automatického přenosu do seznamu 
 
 ## <a name="BKMK_HowtoWriteanAsyncMethod"></a>Asynchronní metody se snáze zapisují
 
-Klíčová slova [](../../../language-reference/keywords/await.md) [Async](../../../language-reference/keywords/async.md) a await C# v jsou srdcem asynchronního programování. Pomocí těchto dvou klíčových slov můžete použít prostředky v .NET Framework, .NET Core nebo v prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytvoříte synchronní metodu. Asynchronní metody, které definujete pomocí `async` klíčového slova, jsou označovány jako *asynchronní metody*.
+Klíčová slova [](../../../language-reference/operators/await.md) [Async](../../../language-reference/keywords/async.md) a await C# v jsou srdcem asynchronního programování. Pomocí těchto dvou klíčových slov můžete použít prostředky v .NET Framework, .NET Core nebo v prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytvoříte synchronní metodu. Asynchronní metody, které definujete pomocí `async` klíčového slova, jsou označovány jako *asynchronní metody*.
 
 Následující příklad ukazuje asynchronní metodu. Téměř vše v rámci kódu by vám mělo být zcela známé.
 
@@ -156,7 +156,7 @@ Asynchronní přístup při asynchronním programování se doporučuje v témě
 
 Pokud určíte, že metoda je asynchronní metodou pomocí modifikátoru [Async](../../../language-reference/keywords/async.md) , povolíte následující dvě možnosti.
 
-- Označená asynchronní metoda může použít [operátor await](../../../language-reference/keywords/await.md) k určení bodů zavěšení. `await` Operátor instruuje kompilátor, že asynchronní metoda nemůže pokračovat za tento bod, dokud není dokončen očekávaný asynchronní proces. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.
+- Označená asynchronní metoda může použít [operátor await](../../../language-reference/operators/await.md) k určení bodů zavěšení. `await` Operátor instruuje kompilátor, že asynchronní metoda nemůže pokračovat za tento bod, dokud není dokončen očekávaný asynchronní proces. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.
 
      Pozastavení asynchronní metody ve `await` výrazu nepředstavuje příkaz exit z metody a `finally` bloky nejsou spuštěny.
 
@@ -168,7 +168,7 @@ Asynchronní metoda obvykle obsahuje jeden nebo více výskytů `await` operáto
 
 - [async](../../../language-reference/keywords/async.md)
 
-- [await](../../../language-reference/keywords/await.md)
+- [await](../../../language-reference/operators/await.md)
 
 ## <a name="BKMK_ReturnTypesandParameters"></a>Návratové typy a parametry
 
@@ -343,6 +343,7 @@ namespace AsyncFirstExample
 ## <a name="see-also"></a>Viz také:
 
 - [async](../../../language-reference/keywords/async.md)
-- [await](../../../language-reference/keywords/await.md)
+- [await](../../../language-reference/operators/await.md)
 - [Asynchronní programování](../../../async.md)
 - [Asynchronní přehled](../../../../standard/async.md)
+ 

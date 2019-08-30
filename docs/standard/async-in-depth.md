@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 776949e86f6eb3fa6a193b303f4c731e20bac1a5
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 91fd37ce329c03b43b5472e4579be7f5ef961738
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107314"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169111"
 ---
 # <a name="async-in-depth"></a>Asynchronní v hloubkě
 

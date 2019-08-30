@@ -5,12 +5,12 @@ author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
 ms.custom: seodec18
-ms.openlocfilehash: 8100add17b61424624f27de705728935f3a1160b
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ae4ddd4df902cf8c3d50e50614b12af8dc0aebed
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038029"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168158"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# částí pomocí MSTest a .NET Core
 
@@ -20,7 +20,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 
 Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-using-MSTest* pro uložení řešení. V tomto novém adresáři spusťte příkaz [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nový soubor řešení pro knihovnu tříd a testovací projekt. Potom vytvořte adresář *PrimeService* . Následující osnova ukazuje strukturu adresářů a souborů, které jsou tak daleko:
 
-```
+```console
 /unit-testing-using-mstest
     unit-testing-using-mstest.sln
     /PrimeService
@@ -49,7 +49,7 @@ Změňte adresář zpátky na adresář s *testováním jednotek pomocí-MSTest*
 
 Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
-```
+```console
 /unit-testing-using-mstest
     unit-testing-using-mstest.sln
     /PrimeService
@@ -70,7 +70,7 @@ Nastavte adresář *PrimeService. Tests* na aktuální adresář a vytvořte nov
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali sadu MSTest SDK, MSTest test Framework a MSTest Runner. Nyní přidejte `PrimeService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```
+```console
 dotnet add reference ../PrimeService/PrimeService.csproj
 ```
 
@@ -78,7 +78,7 @@ Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet
 
 Následující osnova znázorňuje konečné rozložení řešení:
 
-```
+```console
 /unit-testing-using-mstest
     unit-testing-using-mstest.sln
     /PrimeService

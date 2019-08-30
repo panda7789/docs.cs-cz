@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 723f07fb3fb4eda1c0071eec2b1d012948a10f77
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 08b5dee94a9a23fdd1c9e635aa2ef848f59e86cf
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666559"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169137"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
 Při použití asynchronního vzoru založeného na úlohách (klepnutím) pro práci s asynchronními operacemi můžete pomocí zpětných volání dosáhnout čekání bez blokování.  Pro úlohy je to dosaženo prostřednictvím metod <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>, jako je. Jazyková asynchronní podpora skrývá zpětná volání tím, že umožňuje v normálním toku řízení očekávat asynchronní operace a kód generovaný kompilátorem poskytuje stejnou podporu na úrovni API.
 
 ## <a name="suspending-execution-with-await"></a>Pozastavení provádění s operátorem await
- Počínaje .NET Framework 4,5 můžete použít klíčové slovo [await](../../csharp/language-reference/keywords/await.md) C# v a [operátor await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic k asynchronnímu await <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objektům. Když očekáváte <xref:System.Threading.Tasks.Task> `await` , je výraz typu `void`. Když očekáváte <xref:System.Threading.Tasks.Task%601> `await` , je výraz typu `TResult`. `await` Výraz musí být uvnitř těla asynchronní metody. Další informace o C# a Visual Basic podpoře jazyků v .NET Framework 4,5 naleznete v tématu Specifikace jazyka C# a Visual Basic.
+ Počínaje .NET Framework 4,5 můžete použít klíčové slovo [await](../../csharp/language-reference/operators/await.md) C# v a [operátor await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic k asynchronnímu await <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objektům. Když očekáváte <xref:System.Threading.Tasks.Task> `await` , je výraz typu `void`. Když očekáváte <xref:System.Threading.Tasks.Task%601> `await` , je výraz typu `TResult`. `await` Výraz musí být uvnitř těla asynchronní metody. Další informace o C# a Visual Basic podpoře jazyků v .NET Framework 4,5 naleznete v tématu Specifikace jazyka C# a Visual Basic.
 
  V rámci pokrývá funkce await nainstaluje zpětné volání na úkol pomocí pokračování.  Toto zpětné volání pokračuje asynchronní metodou v okamžiku pozastavení. Pokud je asynchronní metoda obnovena, pokud se očekávaná operace úspěšně dokončila a byla <xref:System.Threading.Tasks.Task%601>a `TResult` , je vrácena.  <xref:System.Threading.Tasks.Task> Pokud nebo <xref:System.Threading.Tasks.Task%601> , který byl <xref:System.Threading.Tasks.TaskStatus.Canceled> ukončen<xref:System.OperationCanceledException> ve stavu, je vyvolána výjimka.  <xref:System.Threading.Tasks.Task> Pokud nebo <xref:System.Threading.Tasks.Task%601> , který byl ukončen ve <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu, je vyvolána výjimka, která způsobila chybu. `Task` Může dojít k chybě v důsledku více výjimek, ale je šířena pouze jedna z těchto výjimek. <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> Nicméně vlastnost<xref:System.AggregateException> vrací výjimku, která obsahuje všechny chyby.
 

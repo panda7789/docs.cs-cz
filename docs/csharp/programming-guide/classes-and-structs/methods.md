@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 6e7a1dfc739278eecfa8582bb0a9f8938c561acf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 92787b7a64f0d77aea625625722ef18f7efb9dab
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924460"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168492"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že budou příkazy provedeny voláním metody a zadáním požadovaných argumentů metody. V C#je každá spuštěná instrukce provedena v kontextu metody. Metoda Main je vstupním bodem pro každou C# aplikaci a je volána modulem CLR (Common Language Runtime) při spuštění programu.  
@@ -113,7 +113,7 @@ public static void FillMatrix(int[,] matrix)
 ## <a name="async-methods"></a>Asynchronní metody  
  Pomocí asynchronní funkce můžete vyvolat asynchronní metody bez použití explicitních zpětných volání nebo ruční rozdělení kódu napříč více metodami nebo lambda výrazy. 
   
- Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/keywords/await.md) v metodě. Když ovládací prvek dosáhne výrazu await v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.  
+ Pokud označíte metodu pomocí modifikátoru [Async](../../language-reference/keywords/async.md) , můžete použít operátor [await](../../language-reference/operators/await.md) v metodě. Když ovládací prvek dosáhne výrazu await v asynchronní metodě, ovládací prvek se vrátí volajícímu a průběh v metodě je pozastaven, dokud není dokončen očekávaný úkol. Po dokončení úlohy může provádění pokračovat v metodě.  
   
 > [!NOTE]
 > Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.  

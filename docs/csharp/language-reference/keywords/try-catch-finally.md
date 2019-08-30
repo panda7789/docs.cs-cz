@@ -1,5 +1,5 @@
 ---
-title: try-catch-finally – C# odkaz
+title: try-catch-finally- C# reference
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - finally blocks [C#]
 - try-catch statement [C#]
 ms.assetid: a1b443b0-ff7a-43ab-b835-0cc9bfbd15ca
-ms.openlocfilehash: 787005ec09a2c5c4f0e5033c83fd6a7ab7875b7e
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 9f2c82fb140e18454491660d17b570db0a8a2aef
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422166"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168592"
 ---
 # <a name="try-catch-finally-c-reference"></a>try-catch-finally (Referenční dokumentace jazyka C#)
 
-Společné využití `catch` a `finally` společně se získat a používat prostředky v `try` blokovat, řešil výjimečných okolností v `catch` blokovat a uvolnit tak prostředky v `finally` bloku.
+`catch` Společné použití `finally` nástroje a `finally` společně je získání `try` a používání prostředků v `catch` bloku, zaznamenání mimořádných okolností v bloku a uvolnění prostředků do bloku.
 
- Další informace a příklady opětném vyvolávání výjimky, naleznete v tématu [bloku try-catch](try-catch.md) a [vyvolání výjimky](../../../standard/exceptions/index.md). Další informace o `finally` blokovat, najdete v článku [try-finally](try-finally.md).
+ Další informace a příklady pro opětovné vyvolání výjimek naleznete v tématu [try-catch](try-catch.md) and [throw Exceptions](../../../standard/exceptions/index.md). Další informace o `finally` bloku naleznete v tématu [try-finally](try-finally.md).
 
 ## <a name="example"></a>Příklad
 
@@ -28,14 +28,14 @@ Společné využití `catch` a `finally` společně se získat a používat pros
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace naleznete v části [příkaz try](~/_csharplang/spec/statements.md#the-try-statement) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
 - [throw](throw.md)
-- [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [Postupy: Explicitně vyvolat výjimky](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
 - [using – příkaz](using-statement.md)

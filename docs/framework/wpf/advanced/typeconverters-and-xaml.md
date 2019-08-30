@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-ms.openlocfilehash: 0b64088f43b69a982fc305fc16ad10edd1faa593
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8c39fe75eea5042657cab533a0a557d966802a1b
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966058"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169024"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka XAML. V .NET Framework <xref:System.ComponentModel.TypeConverter> třída zachovává konkrétní účel jako součást implementace spravované vlastní třídy, kterou lze použít jako hodnotu vlastnosti v použití atributu XAML. Pokud píšete vlastní třídu a chcete, aby byly instance vaší třídy použitelné jako hodnoty nastavitelných atributů XAML, může být nutné použít <xref:System.ComponentModel.TypeConverterAttribute> pro třídu, zapsat vlastní <xref:System.ComponentModel.TypeConverter> třídu nebo obojí.  
@@ -103,9 +103,9 @@ Toto téma zavádí účel konverze typu z řetězce jako obecné funkce jazyka 
   
 <a name="Applying_the_TypeConverterAttribute"></a>   
 ## <a name="applying-the-typeconverterattribute"></a>Použití TypeConverterAttribute  
- Aby byl váš vlastní konvertor typu použit jako převaděč jako typ pro vlastní třídu procesorem XAML, je nutné použít [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> pro definici vaší třídy. Typ <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> , který zadáte prostřednictvím atributu, musí být název typu vašeho převaděče vlastního typu. Při použití tohoto atributu, když procesor XAML zpracovává hodnoty, kde typ vlastnosti používá vlastní typ třídy, může vstupní řetězce a vracet instance objektů.  
+ Aby byl váš vlastní konvertor typu použit jako převaděč jako typ pro vlastní třídu procesorem XAML, je nutné použít <xref:System.ComponentModel.TypeConverterAttribute> pro definici vaší třídy. Typ <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> , který zadáte prostřednictvím atributu, musí být název typu vašeho převaděče vlastního typu. Při použití tohoto atributu, když procesor XAML zpracovává hodnoty, kde typ vlastnosti používá vlastní typ třídy, může vstupní řetězce a vracet instance objektů.  
   
- Můžete také zadat konvertor typu na základě jednotlivých vlastností. [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] Namísto použití `get` / `set` s definicí třídy ji aplikujte na definici vlastnosti (hlavní definice, nikoli na implementaci v rámci IT). <xref:System.ComponentModel.TypeConverterAttribute> Typ vlastnosti se musí shodovat s typem, který je zpracován vaším vlastním převaděčem typu. Při použití tohoto atributu, pokud XAMLprocessor zpracovává hodnoty této vlastnosti, může zpracovat vstupní řetězce a vracet instance objektů. Technika konvertoru typu pro jednotlivé vlastnosti je obzvláště užitečná, pokud se rozhodnete použít typ vlastnosti z Microsoft .NET Framework nebo z jiné knihovny, kde nemůžete určit definici třídy a nemůžete <xref:System.ComponentModel.TypeConverterAttribute> použít.  
+ Můžete také zadat konvertor typu na základě jednotlivých vlastností. Namísto použití <xref:System.ComponentModel.TypeConverterAttribute> s definicí třídy ji aplikujte na definici vlastnosti (hlavní definice, nikoli na `get` / `set` implementaci v rámci IT). Typ vlastnosti se musí shodovat s typem, který je zpracován vaším vlastním převaděčem typu. Při použití tohoto atributu, pokud procesor XAML zpracovává hodnoty této vlastnosti, může zpracovat vstupní řetězce a vracet instance objektů. Technika konvertoru typu pro jednotlivé vlastnosti je obzvláště užitečná, pokud se rozhodnete použít typ vlastnosti z Microsoft .NET Framework nebo z jiné knihovny, kde nemůžete určit definici třídy a nemůžete <xref:System.ComponentModel.TypeConverterAttribute> použít.  
   
 ## <a name="see-also"></a>Viz také:
 

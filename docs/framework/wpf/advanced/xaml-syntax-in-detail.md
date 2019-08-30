@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 3ac7d79660830601ca69951e56763fc923692b0e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09f0a1b34e88be995fb9a386161a930457e4bb56
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958789"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168994"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](xaml-overview-wpf.md).  
@@ -62,7 +62,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
 - Počáteční značka musí být dokončena pravou ostrou závorkou (>). Další prvky objektu, prvky vlastností nebo vnitřní text mohou následovat po počáteční značce. Přesně to, co může být obsaženo, je obvykle omezeno objektovým modelem elementu. Ekvivalentní uzavírací značka pro element Object musí existovat také ve správném vnořování a zůstatku s dalšími páry značek Open a závěrky.  
   
- Jazyk XAML, jak je implementován rozhraním .NET, obsahuje sadu pravidel, která mapují prvky objektů na typy, atributy na vlastnosti nebo události a obory názvů XAML na obory názvů CLR plus sestavení. Pro WPF a .NET Framework prvky objektu XAML mapují na [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] typy tak, jak jsou definovány v odkazovaných sestaveních a atributy jsou mapovány na členy těchto typů. Při odkazování typu CLR v jazyce XAML máte přístup i k zděděným členům tohoto typu.  
+ Jazyk XAML, jak je implementován rozhraním .NET, obsahuje sadu pravidel, která mapují prvky objektů na typy, atributy na vlastnosti nebo události a obory názvů XAML na obory názvů CLR plus sestavení. Pro WPF a .NET se prvky objektů XAML mapují na typy .NET, jak jsou definovány v odkazovaných sestaveních a atributy jsou mapovány na členy těchto typů. Při odkazování typu CLR v jazyce XAML máte přístup i k zděděným členům tohoto typu.  
   
  Například následující příklad je syntaxe element objektu, který vytváří instanci nové instance <xref:System.Windows.Controls.Button> třídy a také <xref:System.Windows.FrameworkElement.Name%2A> určuje atribut a hodnotu pro tento atribut:  
   

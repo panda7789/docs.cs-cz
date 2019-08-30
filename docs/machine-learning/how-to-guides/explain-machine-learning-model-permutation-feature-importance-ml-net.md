@@ -1,48 +1,48 @@
 ---
-title: Vysvětlují modelu predikce na základě důležitosti funkce permutaci
-description: Pochopení důležitosti funkce modelů s důležitostí permutaci funkce v ML.NET
-ms.date: 05/02/2019
+title: Vysvětlete předpovědi modelů pomocí funkce permutace důležitost
+description: Pochopení funkcí důležitosti modelů s funkcí permutace v ML.NET
+ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 1037a1f1c21ef2c9b9a87a070a7d2003c1e76eb4
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 9617582c79b2278e3a68e7acf84568247b81eca1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307374"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167658"
 ---
-# <a name="explain-model-predictions-using-permutation-feature-importance"></a>Vysvětlují modelu predikce na základě důležitosti funkce permutaci
+# <a name="explain-model-predictions-using-permutation-feature-importance"></a>Vysvětlete předpovědi modelů pomocí funkce permutace důležitost
 
-Zjistěte, jak popisují ML.NET strojového učení předpovědí modelu podle principy, které funkce příspěvek muset predikce na základě důležitosti funkce permutací (PFI).
+Naučte se vysvětlovat ML.NET Machine Learning model předpovědi tím, že porozumíte funkcím příspěvku předpovědi pomocí funkce permutace důležitost (PFI).
 
-Modely strojového učení se často představit jako černé skříňky, které se daly přijímat vstupy a generovat výstup. Zprostředkující kroky nebo interakcí mezi funkcí, které ovlivňují výstupu jsou zřídka pochopitelné. Machine learning zavedeném do více aspektů každodenního života jako je například zdravotní péče, je naprosto pochopit, proč strojového učení rozhodnutí, která využívá model dělá. Například pokud Diagnostika vyrábí celá modelu strojového učení, odborníci v oblasti zdravotní péče potřebovat způsob, jak prozkoumat faktory, které byly přidány do toho, že Diagnostika. Poskytuje správné diagnostiku dokonce vytvářet velký rozdíl na, jestli pacienta má rychlé obnovení, nebo ne. Čím vyšší stupeň explainability v modelu, větší jistotou pracovníky tudíž přijmout nebo odmítnout rozhodnutí modelem.
+Modely strojového učení se často považovat za černé čtverečky, které přijímají vstupy a generují výstup. Zprostředkující kroky nebo interakce mezi funkcemi, které ovlivňují výstup, se zřídka rozumí. Vzhledem k tomu, že je strojové učení zahrnuté do více aspektů každodenního života, jako je zdravotní péče, je velmi důležité pochopit, proč model strojového učení provádí rozhodnutí. Například pokud jsou diagnostiky provedeny modelem strojového učení, odborníci na zdravotní péči potřebují způsob, jak se podívat na faktory, které se při diagnostikování prováděly. Poskytnutí správné diagnostiky by mohlo způsobit velký rozdíl na tom, jestli má pacient rychlejší obnovení. Čím vyšší je úroveň vyjasnění v modelu, větší spolehlivé odborníky na zdravotní péči musí přijmout nebo odmítnout rozhodnutí učiněná modelem.
 
-Různých technik vytváření slouží k vysvětlení modelů, z nichž jeden je PFI. PFI je technika, použít k vysvětlení klasifikačních a regresních modelů, které se [společnosti Breiman *doménových struktur Random* papíru](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)(viz část 10). Na vysoké úrovni je způsob, jakým funguje tak, že náhodně přesouvání dat jednu funkci současně pro celou datovou sadu a výpočtu, kolik metrika výkonu zájmu snižuje. Čím větší změny, důležitější, je tato funkce. 
+K vysvětlení modelů, z nichž jeden je PFI, se používají různé techniky. PFI je technika, která se používá k vysvětlení klasifikací a regresních modelů, které jsou nechte inspirovaty pomocí [ *náhodných doménových struktur* Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)(viz oddíl 10). Na nejvyšší úrovni je způsob, jakým funguje, náhodným pohybem dat pro celou datovou sadu a výpočtem množství metriky výkonu, které se v zájmu sníží. Čím větší je tato změna, tím důležitější je funkce. 
 
-Kromě toho zvýrazněním nejdůležitější funkce tvůrci modelu soustředit se na pomocí některé podsady lépe vystihuje funkcí, které může potenciálně snížit šum a čas školení.
+Kromě toho zvýrazňováním nejdůležitějších funkcí se mohou tvůrci modelů soustředit na použití podmnožiny smysluplných funkcí, které mohou potenciálně snižovat dobu šumu a školení.
 
 ## <a name="load-the-data"></a>Načtení dat
 
-Funkce v datové sadě, se používají pro tuto ukázku se ve sloupcích 1 – 12. Cílem je možnost předvídat `Price`. 
+Funkce v datové sadě používané pro tuto ukázku jsou ve sloupcích 1-12. Cílem je předpovědět `Price`. 
 
 | Sloupec | Funkce | Popis 
 | --- | --- | --- |
-| 1 | CrimeRate | Za hlavu crime
-| 2 | ResidentialZones | Domácí zón ve městě
-| 3 | CommercialZones | Domácí bez zón ve městě
-| 4 | NearWater | Blízkosti textu vody
-| 5 | ToxicWasteLevels | Toxicity úrovně (PPM)
-| 6 | AverageRoomNumber | Průměrný počet místnosti interně
-| 7 | HomeAge | Stáří Domovská stránka
-| 8 | BusinessCenterDistance | Vzdálenost do nejbližší oblasti podnikání
-| 9 | HighwayAccess | Blízkosti dálnice
-| 10 | TaxRate | Sazba daně vlastnost
-| 11 | StudentTeacherRatio | Poměr studentů pro učitele
-| 12 | PercentPopulationBelowPoverty | Procento naplnění žijete pod chudoby
-| 13 | Cena | Cena Domovská stránka
+| 1 | CrimeRate | Sazba za trestných činů za hlavu
+| 2 | ResidentialZones | Místní zóny ve městě
+| 3 | CommercialZones | Jiné než místní zóny ve městě
+| 4 | NearWater | Blízkost k tělo vody
+| 5 | ToxicWasteLevels | Úrovně toxicity (PPM)
+| 6 | AverageRoomNumber | Průměrný počet místností v domu
+| 7 | Domovská stránka | Stáří domů
+| 8 | BusinessCenterDistance | Vzdálenost k nejbližší obchodní oblasti
+| 9 | HighwayAccess | Blízkost k dálnicím
+| 10 | TaxRate | Daňová sazba vlastnosti
+| 11 | StudentTeacherRatio | Poměr studentů k učitelům
+| 12 | PercentPopulationBelowPoverty | Procento populace žijících po chudobě
+| 13 | Cena | Cena domovské stránky
 
-Ukázkové datové sady, která je zobrazena níže:
+Ukázka datové sady je uvedena níže:
 
 ```text
 1,24,13,1,0.59,3,96,11,23,608,14,13,32
@@ -50,7 +50,7 @@ Ukázkové datové sady, která je zobrazena níže:
 2,98,16,1,0.25,10,5,1,8,689,13,36,12
 ```
 
-Data v této ukázce můžete modelovány pomocí třídy jako `HousingPriceData`:
+Data v této ukázce lze modelovat podle třídy, jako `HousingPriceData` je a načtena [`IDataView`](xref:Microsoft.ML.IDataView)do.
 
 ```csharp
 class HousingPriceData
@@ -97,11 +97,9 @@ class HousingPriceData
 }
 ```
 
-Načtení dat do [ `IDataView` ](xref:Microsoft.ML.IDataView).
-
 ## <a name="train-the-model"></a>Trénování modelu
 
-Následující vzorový kód ukazuje procesu trénování modelu lineární regrese k předvídání cen organizace.
+Následující ukázka kódu znázorňuje proces školení modelu lineární regrese k předvídání cen za domácnosti.
 
 ```csharp
 // 1. Get the column name of input features.
@@ -128,9 +126,9 @@ var sdcaEstimator = mlContext.Regression.Trainers.Sdca();
 var sdcaModel = sdcaEstimator.Fit(preprocessedTrainData);
 ```
 
-## <a name="explain-the-model-with-permutation-feature-importance-pfi"></a>Vysvětlují modelu s permutaci funkce význam (PFI)
+## <a name="explain-the-model-with-permutation-feature-importance-pfi"></a>Vysvětlení modelu s funkcí permutace – důležitost (PFI)
 
-Používá ML.NET [ `PermutationFeatureImportance` ](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) metodu pro příslušné úlohy.
+V ml.NET použijte [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) metodu pro příslušnou úlohu.
 
 ```csharp
 ImmutableArray<RegressionMetricsStatistics> permutationFeatureImportance = 
@@ -139,9 +137,9 @@ ImmutableArray<RegressionMetricsStatistics> permutationFeatureImportance =
         .PermutationFeatureImportance(sdcaModel, preprocessedTrainData, permutationCount:3);
 ```
 
-Výsledek použití [ `PermutationFeatureImportance` ](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) na trénovací datové sady je [ `ImmutableArray` ](xref:System.Collections.Immutable.ImmutableArray) z [ `RegressionMetricsStatistics` ](xref:Microsoft.ML.Data.RegressionMetricsStatistics) objekty. [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics) poskytuje souhrnné statistiky, jako je průměr a směrodatné odchylky pro více pozorování [ `RegressionMetrics` ](xref:Microsoft.ML.Data.RegressionMetrics) rovna počtu permutací určené `permutationCount` parametru.
+Výsledkem použití [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) v datové sadě školení [`ImmutableArray`](xref:System.Collections.Immutable.ImmutableArray) je [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics) objekt. [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics)poskytuje souhrnnou statistiku, například střední hodnotu a směrodatnou odchylku pro více pozorování [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics) rovnající se počtu permutací určených `permutationCount` parametrem.
 
-Význam, nebo v tomto případě absolutní průměrná snížení spolehlivosti R metrika vypočte tak, že [ `PermutationFeatureImportance` ](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) lze pak provést řazení z vašich nejdůležitějších a nejméně důležitá.  
+Důležitost, nebo v tomto případě je absolutní průměrná míra snížení metriky R-čtverce vypočítaná pomocí [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) lze seřadit od nejdůležitějších po nejméně důležité.  
 
 ```csharp
 // Order features by importance
@@ -158,21 +156,21 @@ foreach (var feature in featureImportanceMetrics)
 }
 ```
 
-Tisk hodnoty pro každé z těchto funkcí v `featureImportanceMetrics` vygenerují výstup podobný tomu níže. Mějte na paměti, která by se měl zobrazit odlišné výsledky vzhledem k tomu, že tyto hodnoty se liší podle data, která jsou uvedeny.  
+Tisk hodnot pro jednotlivé funkce v `featureImportanceMetrics` nástroji by vygeneroval výstup podobný tomuto:. Mějte na paměti, že byste měli očekávat, že byste měli zobrazit různé výsledky, protože tyto hodnoty se liší v závislosti na datech, která jsou uvedena.  
 
-| Funkce | Změnit na spolehlivosti R |
+| Funkce | Změnit na R-čtvercový |
 |:--|:--:|
-HighwayAccess       |   -0.042731
-StudentTeacherRatio |   -0.012730
-BusinessCenterDistance| -0.010491
-TaxRate             |   -0.008545
-AverageRoomNumber   |   -0.003949
-CrimeRate           |   -0.003665
-CommercialZones     |   0.002749
-HomeAge             |   -0.002426
-ResidentialZones    |   -0.002319
-NearWater           |   0.000203
-PercentPopulationLivingBelowPoverty|    0.000031
-ToxicWasteLevels    |   -0.000019
+HighwayAccess       |   -0,042731
+StudentTeacherRatio |   -0,012730
+BusinessCenterDistance| -0,010491
+TaxRate             |   -0,008545
+AverageRoomNumber   |   -0,003949
+CrimeRate           |   -0,003665
+CommercialZones     |   0,002749
+Domovská stránka             |   -0,002426
+ResidentialZones    |   -0,002319
+NearWater           |   0,000203
+PercentPopulationLivingBelowPoverty|    0,000031
+ToxicWasteLevels    |   -0,000019
 
-Podívali se do na pět nejdůležitější funkce pro tuto datovou sadu, cena house předpovídané pomocí tohoto modelu je ovlivněno umístění v blízkosti dálnice, studenty, vyučující poměr školy v oblasti, blízkosti hlavní zaměstnání centra, sazba daně vlastnost a Průměrný počet místnosti na domovské stránce.
+Podíváme se na pět nejdůležitějších funkcí pro tuto datovou sadu. cena na pracovišti, kterou tento model předpovídá, je ovlivněná jeho blízkostí vůči dálnicím, poměru učitelů v oblasti škol v oblasti, blízkost k hlavním pracovním centrům, daňové sazbě vlastností a Průměrný počet místností v domácnosti

@@ -1,26 +1,26 @@
 ---
-title: Trénování modelu strojového učení pomocí křížového ověření
-description: Zjistěte, jak můžete vytvářet robustnější modely strojového učení v ML.NET křížového ověření. Křížové ověření je školení a model hodnocení technika, která rozdělí data do několika oddílů a trénovat více algoritmy v těchto oddílech.
-ms.date: 06/25/2019
+title: Výuka modelu strojového učení pomocí vzájemného ověřování
+description: Naučte se používat vzájemné ověřování k vytváření robustnějších modelů strojového učení v ML.NET. Křížové ověřování je technikou pro vyhodnocení školení a modelů, které rozdělí data do několika oddílů a navlakuje více algoritmů na těchto oddílech.
+ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to,title-hack-0625
-ms.openlocfilehash: c68c2b61054f59f03b4743ec30a694e94086ebab
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: f29103d0cf59cdec10a641b05ce359bf95c01ccd
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397650"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169061"
 ---
-# <a name="train-a-machine-learning-model-using-cross-validation"></a>Trénování modelu strojového učení pomocí křížového ověření
+# <a name="train-a-machine-learning-model-using-cross-validation"></a>Výuka modelu strojového učení pomocí vzájemného ověřování
 
-Zjistěte, jak použijete k natrénování robustnější modely machine learning v ML.NET křížového ověření. 
+Naučte se používat vzájemné ověřování k výuce robustnějších modelů strojového učení v ML.NET. 
 
-Křížové ověření je školení a model hodnocení technika, která rozdělí data do několika oddílů a trénovat více algoritmy v těchto oddílech. Tento postup zlepšuje odolnost modelu tím, že se data z procesu trénování. Kromě vylepšení výkonu na neviditelný pozorování, v prostředí omezené dat může být efektivní nástroj pro trénování modelů s menší datové sady.
+Křížové ověřování je technikou pro vyhodnocení školení a modelů, které rozdělí data do několika oddílů a navlakuje více algoritmů na těchto oddílech. Tento postup zvyšuje odolnost modelu tím, že podrží data z procesu školení. Kromě zlepšení výkonu u nezpracovaných pozorování v prostředích s omezenými daty může být účinný nástroj pro školení modelů s menší datovou sadou.
 
 ## <a name="the-data-and-data-model"></a>Data a datový model
 
-Zadaný data ze souboru, který má následující formát:
+Zadaná data ze souboru, který má následující formát:
 
 ```text
 Size (Sq. ft.), HistoricalPrice1 ($), HistoricalPrice2 ($), HistoricalPrice3 ($), Current Price ($)
@@ -30,7 +30,7 @@ Size (Sq. ft.), HistoricalPrice1 ($), HistoricalPrice2 ($), HistoricalPrice3 ($)
 1120.00, 47504.98, 45129.73, 43775.84, 46792.41
 ```
 
-Data můžete modelovány pomocí třídy jako `HousingData`:
+Data lze modelovat podle třídy, jako `HousingData` je a načtena [`IDataView`](xref:Microsoft.ML.IDataView)do.
 
 ```csharp
 public class HousingData
@@ -48,13 +48,11 @@ public class HousingData
 }
 ```
 
-Načtení dat do do [ `IDataView` ](xref:Microsoft.ML.IDataView).
-
 ## <a name="prepare-the-data"></a>Příprava dat
 
-Předběžně zpracovat data před sestavením modelu strojového učení. V této ukázce `Size` a `HistoricalPrices` sloupce jsou sloučeny do jednoho funkce vektor, který je použita pro nový sloupec s názvem `Features` pomocí [ `Concatenate` ](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) metody. Kromě získávání dat do formátu očekávaném ML.NET algoritmy, zřetězení sloupce optimalizuje následné operace v kanálu použitím operace pro zřetězených sloupců místo jednotlivých samostatné sloupce. 
+Předem zpracujte data před jejich použitím k sestavení modelu Machine Learning. V této ukázce `Size` jsou sloupce a `HistoricalPrices` sloučeny do jediného vektoru funkce, který je výstupem do [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) nového sloupce s `Features` názvem pomocí metody. Kromě získání dat do formátu očekávaného algoritmy ML.NET optimalizuje sloupce následné operace v kanálu, a to použitím operace jednou pro zřetězený sloupec místo každého samostatného sloupce. 
 
-Jakmile sloupce, které jsou sloučeny do jednoho vektoru [ `NormalizeMinMax` ](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) platí pro `Features` sloupce, chcete-li získat `Size` a `HistoricalPrices` ve stejném rozsahu od 0 – 1. 
+Jakmile jsou sloupce zkombinovány do jednoho vektoru, [`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) je použita `Features` na sloupec pro získání `Size` a `HistoricalPrices` ve stejném rozsahu mezi 0-1. 
 
 ```csharp
 // Define data prep estimator
@@ -69,12 +67,12 @@ ITransformer dataPrepTransformer = dataPrepEstimator.Fit(data);
 IDataView transformedData = dataPrepTransformer.Transform(data);
 ```
 
-## <a name="train-model-with-cross-validation"></a>Trénování modelu s křížové ověření
+## <a name="train-model-with-cross-validation"></a>Výuka modelu pomocí vzájemného ověřování
 
-Jakmile byl předem zpracovaných dat, je čas pro trénování modelu. Nejdřív vyberte algoritmus, který nejlépe odpovídá strojového učení úloh, která se má provést. Protože předpovězené hodnoty je číselně průběžné hodnota, je úloha regrese. Jeden z algoritmů regrese implementované ML.NET je [ `StochasticDualCoordinateAscentCoordinator` ](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) algoritmus. Pro trénování modelu s použitím křížového ověření [ `CrossValidate` ](xref:Microsoft.ML.RegressionCatalog.CrossValidate*) metody. 
+Jakmile jsou data předem zpracovaná, je čas je vyškolit. Nejdřív vyberte algoritmus, který nejlépe odpovídá úloze strojového učení, která se má provést. Vzhledem k tomu, že předpokládaná hodnota je numericky souvislá hodnota, je úkol regresní. Jedním z regresních algoritmů implementovaných pomocí ml.NET [`StochasticDualCoordinateAscentCoordinator`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) je algoritmus. Pro výuku modelu pomocí křížového ověřování použijte [`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*) metodu. 
 
 > [!NOTE]
-> I když tato ukázka používá model lineární regrese, CrossValidate se vztahuje na všechny ostatní strojového učení úkoly v ML.NET s výjimkou detekce anomálií.
+> I když tato ukázka používá model lineární regrese, CrossValidate se vztahuje na všechny ostatní úlohy strojového učení v ML.NET s výjimkou detekce anomálií.
 
 ```csharp
 // Define StochasticDualCoordinateAscent algorithm estimator
@@ -84,18 +82,18 @@ IEstimator<ITransformer> sdcaEstimator = mlContext.Regression.Trainers.Sdca();
 var cvResults = mlContext.Regression.CrossValidate(transformedData, sdcaEstimator, numberOfFolds: 5);
 ```
 
-[`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*) provádí následující operace:
+[`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*)provede následující operace:
 
-1. Rozděluje data do několika oddílů, které se rovná hodnotě zadané v `numberOfFolds` parametru. Výsledek každý oddíl je [ `TrainTestData` ](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) objektu.
-1. Model se trénuje na všech oddílů pomocí zadaného strojového učení algoritmu odhaduje na trénovací datové sady.
-1. Každý model výkonu je vyhodnocen pomocí [ `Evaluate` ](xref:Microsoft.ML.RegressionCatalog.Evaluate*) metodu na testovací datové sady. 
-1. Model spolu s jeho metriky se vrátí pro každou modelů.
+1. Rozdělí data do několika oddílů, které se rovnají hodnotě zadané v `numberOfFolds` parametru. Výsledkem každého oddílu je [`TrainTestData`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) objekt.
+1. Model se vystavuje na každém oddílu pomocí zadaného algoritmu strojového učení Estimator v sadě školicích dat.
+1. Výkon každého modelu se vyhodnocuje pomocí [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) metody v sadě testovacích dat. 
+1. Model spolu s jeho metrikami se vrátí pro každý model.
 
-Výsledek je uložen v `cvResults` je kolekce [ `CrossValidationResult` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) objekty. Tento objekt obsahuje trénovaného modelu, stejně jako metriky, které jsou obě přístupné formuláře [ `Model` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) a [ `Metrics` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics) vlastnosti v uvedeném pořadí. V této ukázce `Model` vlastnost je typu [ `ITransformer` ](xref:Microsoft.ML.ITransformer) a `Metrics` vlastnost je typu [ `RegressionMetrics` ](xref:Microsoft.ML.Data.RegressionMetrics). 
+Výsledek uložený v `cvResults` je [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) kolekce objektů. Tento objekt zahrnuje trained model a také metriky, které jsou přístupné ve [`Model`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) formě vlastností a. [`Metrics`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics) V této ukázce `Model` je vlastnost typu [`ITransformer`](xref:Microsoft.ML.ITransformer) a `Metrics` vlastnost je typu [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics). 
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Metriky pro různé trénované modely přístupné prostřednictvím `Metrics` vlastnost jednotlivých [ `CrossValidationResult` ](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) objektu. V takovém případě [spolehlivosti R metrika](https://en.wikipedia.org/wiki/Coefficient_of_determination) se často a ukládají v proměnné `rSquared`. 
+Metriky pro různé vyškolené modely jsou dostupné prostřednictvím `Metrics` vlastnosti jednotlivého [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) objektu. V tomto případě je k dispozici [metrika R-kvadrát](https://en.wikipedia.org/wiki/Coefficient_of_determination) , která je uložena v `rSquared`proměnné. 
 
 ```csharp
 IEnumerable<double> rSquared = 
@@ -103,7 +101,7 @@ IEnumerable<double> rSquared =
         .Select(fold => fold.Metrics.RSquared);
 ```
 
-Je-li si prohlédnout obsah `rSquared` proměnné, výstup by měl být pět hodnoty v rozsahu od 0-1, kde blíže 1 znamená, že nejlepší. Použití metrik, jako je spolehlivosti R, vyberte modelů z nejlepších nejhorší provádění. Vyberte hlavní model k predikci nebo provádět další operace s.
+Pokud provedete kontrolu obsahu `rSquared` proměnné, výstup by měl mít pět hodnot od 0-1, kde blíže k 1 znamená nejlepší. Pomocí metrik, jako je R-kvadrát, vyberte modely od nejvyšších po nejhorší výkon. Pak vyberte horní model, který bude předpovědi, nebo proveďte další operace s.
 
 ```csharp
 // Select all models

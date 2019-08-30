@@ -1,17 +1,17 @@
 ---
-title: čištění příkaz DotNet
-description: Příkaz dotnet clean odstraní aktuální adresář.
+title: dotnet – příkaz Vyčištění
+description: Příkaz dotnet Cleanup vyčistí aktuální adresář.
 ms.date: 06/26/2019
-ms.openlocfilehash: 36630c046ff8f1ad8d513b4e64cfb74a8625776b
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 113bc076b9f14a471c631801fe4a7cb1e044a411
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422022"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168061"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Toto téma platí pro: ✓** .NET Core 1.x sady SDK a novějších verzích
+**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -19,11 +19,11 @@ ms.locfileid: "67422022"
 
 ## <a name="name"></a>Name
 
-`dotnet clean` -Vyčistí výstup projektu.
+`dotnet clean`– Vyčistí výstup projektu.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
-```
+```console
 dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] 
     [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
@@ -31,57 +31,57 @@ dotnet clean [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet clean` Příkaz vyčistí výstupního předchozím sestavením. Je implementován jako [cíl nástroje MSBuild](/visualstudio/msbuild/msbuild-targets), takže projekt je vyhodnocen při spuštění příkazu. Pouze výstupů během sestavení se vytvořila vymazána. Obě zprostředkující (*obj*) a závěrečný výstup (*bin*) se čištění složky.
+`dotnet clean` Příkaz vyčistí výstup předchozího buildu. Je implementována jako [cíl nástroje MSBuild](/visualstudio/msbuild/msbuild-targets), takže projekt je vyhodnocen při spuštění příkazu. Vyčištěny jsou pouze výstupy vytvořené během sestavení. Jsou vyčištěny mezilehlé složky (*obj*) i finální výstupní složky (*bin*).
 
 ## <a name="arguments"></a>Arguments
 
 `PROJECT | SOLUTION`
 
-Nástroj MSBuild projekt nebo řešení pro čištění. Pokud není zadán soubor projektu nebo řešení, MSBuild vyhledá aktuální pracovní adresář pro soubor, který má příponu souboru, který končí na *proj* nebo *sln*a použije tento soubor.
+Projekt nebo řešení MSBuild, které se má vyčistit Pokud není zadán soubor projektu nebo řešení, nástroj MSBuild vyhledá aktuální pracovní adresář pro soubor s příponou souboru, který končí v *proj* nebo *sln*, a použije tento soubor.
 
 ## <a name="options"></a>Možnosti
 
 * **`-c|--configuration {Debug|Release}`**
 
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je pouze při čištění, pokud jste zadali během doby sestavení vyžaduje.
+  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je vyžadována pouze při čištění, pokud jste ji zadali během sestavování.
 
 * **`-f|--framework <FRAMEWORK>`**
 
-  [Framework](../../standard/frameworks.md) , který byl zadán v okamžiku sestavení. Rozhraní musí být definován v [soubor projektu](csproj.md). Pokud jste zadali rozhraní v okamžiku sestavení, je nutné zadat rozhraní framework při čištění souboru.
+  [Rozhraní](../../standard/frameworks.md) , které bylo zadáno v čase sestavení. Rozhraní musí být definováno v [souboru projektu](csproj.md). Pokud jste v době sestavení zadali rozhraní, je nutné při čištění zadat rozhraní.
 
 * **`-h|--help`**
 
-  Vytiskne krátký nápovědy pro příkaz.
+  Vypíše krátkou nápovědu k příkazu.
 
 * **`--interactive`**
 
-  Povoluje příkazu zastavit a počkat na vstup uživatele nebo akce. Například k dokončení ověřování. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+  Umožňuje zastavení příkazu zastavit a počkat na vstup nebo akci uživatele. Například k dokončení ověřování. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`--nologo`**
 
-  Nezobrazí úvodní nápis a zprávu o autorských právech. Tato možnost je k dispozici, protože .NET Core 3.0 SDK.
+  Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Adresář, který obsahuje artefakty sestavení k odstranění. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
+  Adresář obsahující artefakty sestavení, které mají být vyčištěny. `-f|--framework <FRAMEWORK>` Zadejte přepínač s přepínačem výstupní adresář, pokud jste zadali rozhraní při sestavení projektu.
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Vyčištění výstupní složky zadaného modulu runtime. Používá se při [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) byl vytvořen. Možnost dostupné od verze rozhraní .NET Core 2.0 SDK.
+  Vyčistí výstupní složku zadaného modulu runtime. Tato funkce se používá, když se vytvořilo [samostatné nasazení](../deploying/index.md#self-contained-deployments-scd) . Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`. Výchozí hodnota je `normal`.
+  Nastaví úroveň podrobností MSBuild. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Výchozí hodnota je `normal`.
 
 ## <a name="examples"></a>Příklady
 
-* Vyčištění výchozí sestavení projektu:
+* Vyčistit výchozí sestavení projektu:
 
   ```console
   dotnet clean
   ```
 
-* Vyčistěte projekt vyvíjené v konfiguraci vydané verze:
+* Vyčištění projektu vytvořeného pomocí konfigurace vydané verze:
 
   ```console
   dotnet clean --configuration Release

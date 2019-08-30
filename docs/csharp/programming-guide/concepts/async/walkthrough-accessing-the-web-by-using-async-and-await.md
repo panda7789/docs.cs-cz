@@ -2,12 +2,12 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 986f3985783c6ae941d437fe557998f67557f5af
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0c80bb079e66a56d6bbc30ba43269aee7ac4ab5b
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595507"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168362"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)
 
@@ -237,7 +237,7 @@ Všimněte si, že pro zobrazení počtů trvá několik sekund. Během této do
 
 2. `GetResponseAsync`<xref:System.Threading.Tasks.Task%601>vrátí. V tomto případě má `TResult` *vrácená proměnná úlohy*typ. <xref:System.Net.WebResponse> Úkol je příslib k vytvoření skutečného `WebResponse` objektu po stažení požadovaných dat a dokončení úlohy.
 
-     Chcete-li `WebResponse` načíst hodnotu z úkolu, použijte operátor [await](../../../language-reference/keywords/await.md) `GetResponseAsync`pro volání metody, jak ukazuje následující kód.
+     Chcete-li `WebResponse` načíst hodnotu z úkolu, použijte operátor [await](../../../language-reference/operators/await.md) `GetResponseAsync`pro volání metody, jak ukazuje následující kód.
 
     ```csharp
     using (WebResponse response = await webReq.GetResponseAsync())
@@ -692,7 +692,7 @@ namespace AsyncExampleWPF
 
 - [Asynchronní Ukázka: Přístup k webovému návoduC# (a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [async](../../../language-reference/keywords/async.md)
-- [await](../../../language-reference/keywords/await.md)
+- [await](../../../language-reference/operators/await.md)
 - [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)
 - [Asynchronní návratové typyC#()](./async-return-types.md)
 - [Asynchronní programování založené na úlohách (klepnutím)](https://www.microsoft.com/download/details.aspx?id=19957)

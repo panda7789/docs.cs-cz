@@ -5,12 +5,12 @@ ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 1052ab7d7c6fd948f59c5956b918fbfd01899a1a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d16d8fee58f4480bc83da884caf0ff15981b09af
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608681"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168617"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 
@@ -20,7 +20,7 @@ Kontextové klíčové slovo se používá k poskytnutí konkrétního významu 
 |-------------|-----------------|  
 |[add](./add.md)|Definuje vlastní přistupující událost, která je vyvolána, když se kód klienta přihlašuje k odběru události.|  
 |[async](./async.md)|Označuje, že upravená metoda, výraz lambda nebo anonymní metoda jsou asynchronní.|  
-|[await](./await.md)|Pozastaví asynchronní metodu, dokud není dokončen očekávaný úkol.|  
+|[await](../operators/await.md)|Pozastaví asynchronní metodu, dokud není dokončen očekávaný úkol.|  
 |[dynamic](./dynamic.md)|Definuje odkazový typ, který umožňuje operace obejít kontrolu typu při kompilaci.|  
 |[get](./get.md)|Definuje metodu přistupujícího objektu pro vlastnost nebo indexer.|  
 |[global](../operators/namespace-alias-qualifier.md)|Alias globálního oboru názvů, který je jinak nepojmenovaný.|  

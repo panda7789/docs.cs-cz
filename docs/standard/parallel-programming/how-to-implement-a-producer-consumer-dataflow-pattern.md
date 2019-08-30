@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 044e726a1c668335780fe3d4322fbce83d8dcbba
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 6f57c0e2098cbd73edc34f34ba6e309bbf68fac9
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666359"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167921"
 ---
 # <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>Postupy: Implementace vzoru toku dat producent–příjemce
 Tento dokument popisuje, jak pomocí knihovny TPL Dataflow implementovat vzor producent-příjemce. V tomto vzoru *producent* posílá zprávy do bloku zpráv a *příjemce* čte zprávy z tohoto bloku.  
@@ -27,7 +27,7 @@ Tento dokument popisuje, jak pomocí knihovny TPL Dataflow implementovat vzor pr
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje základní model producent-příjemce, který používá tok dat. Metoda zapisuje pole, která obsahují náhodné bajty dat <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> objektu, a `Consume` metoda čte bajty z <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType> objektu. `Produce` Vyvoláním <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> rozhraní anamístojejichodvozenýchtypůmůžetenapsatopakovaněpoužitelnýkód,kterýmůžefungovatnanejrůznějšíchtypechblokůtokudat.<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> V tomto příkladu se <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> používá třída. Vzhledem k tomu, že Třídafungujejakozdrojovýblokijakocílovýblok,můžeproducentapříjemcepoužítsdílenýobjektkpřenosudat.<xref:System.Threading.Tasks.Dataflow.BufferBlock%601>  
   
- `Produce` Metoda<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> volá metodu ve smyčce k synchronnímu zápisu dat do cílového bloku. Poté, co <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> Metodazapíševšechnadatadocílovéhobloku,zavolámetoduproindikaci,žebloknikdynebudemítkdispozici`Produce` další data. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> [](../../visual-basic/language-reference/operators/await-operator.md) [](../../csharp/language-reference/keywords/async.md) [](../../visual-basic/language-reference/modifiers/async.md) [](../../csharp/language-reference/keywords/await.md) Metoda používá operátory async a await (Async a await v Visual Basic) k asynchronnímu výpočtu celkového počtu bajtů, které jsou přijímány od objektu. `Consume` Pro asynchronní `Consume` fungování metoda <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A> volá metodu pro příjem oznámení, když má zdrojový blok k dispozici data, a pokud zdrojový blok nebude mít k dispozici další data.  
+ `Produce` Metoda<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> volá metodu ve smyčce k synchronnímu zápisu dat do cílového bloku. Poté, co <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete%2A> Metodazapíševšechnadatadocílovéhobloku,zavolámetoduproindikaci,žebloknikdynebudemítkdispozici`Produce` další data. <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> [](../../visual-basic/language-reference/operators/await-operator.md) [](../../csharp/language-reference/keywords/async.md) [](../../visual-basic/language-reference/modifiers/async.md) [](../../csharp/language-reference/operators/await.md) Metoda používá operátory async a await (Async a await v Visual Basic) k asynchronnímu výpočtu celkového počtu bajtů, které jsou přijímány od objektu. `Consume` Pro asynchronní `Consume` fungování metoda <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A> volá metodu pro příjem oznámení, když má zdrojový blok k dispozici data, a pokud zdrojový blok nebude mít k dispozici další data.  
   
  [!code-csharp[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_producerconsumer/cs/dataflowproducerconsumer.cs#1)]
  [!code-vb[TPLDataflow_ProducerConsumer#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_producerconsumer/vb/dataflowproducerconsumer.vb#1)]  

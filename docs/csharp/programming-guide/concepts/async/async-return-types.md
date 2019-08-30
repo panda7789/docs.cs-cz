@@ -2,12 +2,12 @@
 title: Asynchronní návratové typyC#()
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: f40592038ce16173e6dced5e8bcb914cfeb1b1f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c0dae6b4357ce89325ecb9b7d70ffd79f4e9417
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922042"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168401"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typyC#()
 Asynchronní metody mohou mít následující návratové typy:
@@ -31,7 +31,7 @@ V následujícím příkladu `GetLeisureHours` asynchronní metoda `return` obsa
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-returns1.cs)]
 
-Když `GetLeisureHours` je volána z výrazu await `ShowTodaysInfo` v metodě, výraz await načte celočíselnou `leisureHours`hodnotu (hodnotu), která `GetLeisureHours` je uložena v úkolu vráceném metodou. Další informace o výrazech await naleznete v tématu [await](../../../language-reference/keywords/await.md).  
+Když `GetLeisureHours` je volána z výrazu await `ShowTodaysInfo` v metodě, výraz await načte celočíselnou `leisureHours`hodnotu (hodnotu), která `GetLeisureHours` je uložena v úkolu vráceném metodou. Další informace o výrazech await naleznete v tématu [await](../../../language-reference/operators/await.md).  
   
 Můžete lépe porozumět tomu `GetLeisureHours` `await`, jak se to stane, oddělením volání z aplikace, jak ukazuje následující kód. Volání metody `GetLeisureHours` , která není okamžitě očekávána `Task<int>`, vrátí, jak byste očekávali od deklarace metody. Úkol je přiřazen k `integerTask` proměnné v příkladu. Protože `integerTask` je,obsahuje<xref:System.Threading.Tasks.Task%601.Result> vlastnost typu `TResult`. <xref:System.Threading.Tasks.Task%601> V tomto případě `TResult` představuje typ Integer. Při `await` použití na `integerTask`je výraz await vyhodnocen jako `integerTask`obsah <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnosti. Hodnota je přiřazena `ret` proměnné.  
   
@@ -83,4 +83,4 @@ Rozhraní .NET poskytuje <xref:System.Threading.Tasks.ValueTask%601?displayPrope
 - [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Řízení toku v asynchronních programechC#()](./control-flow-in-async-programs.md)
 - [async](../../../language-reference/keywords/async.md)
-- [await](../../../language-reference/keywords/await.md)
+- [await](../../../language-reference/operators/await.md)

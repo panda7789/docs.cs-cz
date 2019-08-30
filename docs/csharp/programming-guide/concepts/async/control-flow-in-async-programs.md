@@ -2,18 +2,18 @@
 title: Řízení toku v asynchronních programechC#()
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 8adf4bcf193d9fa8d7335996539933ce71282bac
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: bac47393814737b0e6f635845f5dfcd95bad6328
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595845"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168467"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Řízení toku v asynchronních programechC#()
 
 Pomocí `async` klíčových slov a `await` můžete snadno psát a spravovat asynchronní programy. Pokud ale nerozumíte tomu, jak program funguje, může se stát, že se výsledky neočekávaně neznají. Toto téma sleduje tok řízení pomocí jednoduchého asynchronního programu, který vám ukáže, kdy se ovládací prvek přesouvá z jedné metody na jinou a jaké informace se přenášejí pokaždé.
 
-Obecně je třeba označit metody, které obsahují asynchronní kód, pomocí modifikátoru [Async (C#)](../../../language-reference/keywords/async.md) . V metodě, která je označena modifikátorem Async, můžete použít operátor [await (C#)](../../../language-reference/keywords/await.md) k určení, kde metoda pozastaví čekání na dokončení volaného asynchronního procesu. Další informace naleznete v tématu [asynchronní programování s Async a await (C#)](./index.md).
+Obecně je třeba označit metody, které obsahují asynchronní kód, pomocí modifikátoru [Async (C#)](../../../language-reference/keywords/async.md) . V metodě, která je označena modifikátorem Async, můžete použít operátor [await (C#)](../../../language-reference/operators/await.md) k určení, kde metoda pozastaví čekání na dokončení volaného asynchronního procesu. Další informace naleznete v tématu [asynchronní programování s Async a await (C#)](./index.md).
 
 Následující příklad používá asynchronní metody ke stažení obsahu zadaného webu jako řetězce a k zobrazení délky řetězce. Příklad obsahuje následující dvě metody.
 

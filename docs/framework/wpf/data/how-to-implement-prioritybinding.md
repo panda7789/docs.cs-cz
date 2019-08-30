@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-ms.openlocfilehash: ad19db9d686469e3ade1ff188553fceb8d525674
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4be1ce434eb1e169e8a19b56c92ca1efb48773d2
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937446"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169090"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
 <xref:System.Windows.Data.PriorityBinding>v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sadě Works zadáním seznamu vazeb. Seznam vazeb je seřazen od nejvyšší priority až po nejnižší prioritu. Pokud vazba s nejvyšší prioritou vrátí hodnotu úspěšně při zpracování, pak není nikdy nutné zpracovat ostatní vazby v seznamu. Může se jednat o případ, že je vyhodnocování vazby s nejvyšší prioritou trvat dlouhou dobu, bude použita další nejvyšší priorita, která vrátí hodnotu, dokud vazba s vyšší prioritou nevrátí hodnotu úspěšně.  
@@ -27,7 +27,7 @@ ms.locfileid: "69937446"
  Přístupový objekt `SlowestDP` Get čeká po dobu 5 sekund, než vrátí hodnotu `_slowestDP` datového členu.  
   
 > [!NOTE]
-> Tento příklad je určen pouze pro demonstrační účely. [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] Pokyny pro definování vlastností, jejichž pořadí je pomalejší než sada polí, jsou doporučeny. Další informace naleznete v tématu [Výběr mezi vlastnostmi a metodami](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
+> Tento příklad je určen pouze pro demonstrační účely. Pokyny pro rozhraní .NET doporučují před definováním vlastností, které jsou objednávkami s nižšími rozměry, než je sada polí. Další informace naleznete v tématu [Výběr mezi vlastnostmi a metodami](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
   
  [!code-csharp[PriorityBinding#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
  [!code-vb[PriorityBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  

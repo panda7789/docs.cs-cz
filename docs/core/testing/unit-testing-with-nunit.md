@@ -4,12 +4,12 @@ description: Seznamte se s koncepty C# testování částí v a .NET Core pomoc�
 author: rprouse
 ms.date: 08/31/2018
 ms.custom: seodec18
-ms.openlocfilehash: 927facd271d6590cac2b0ce10790a16c88482020
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 22475fcbd9e971f4c544c020d9198fadee4548b1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733418"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168129"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# částí pomocí nunit a .NET Core
 
@@ -30,7 +30,7 @@ dotnet new sln
  
 Potom vytvořte adresář *PrimeService* . Následující osnova ukazuje strukturu adresářů a souborů, které jsou tak daleko:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService
@@ -69,7 +69,7 @@ dotnet sln add PrimeService/PrimeService.csproj
 
 Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService
@@ -98,7 +98,7 @@ Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet
 
 Následující osnova znázorňuje konečné rozložení řešení:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService

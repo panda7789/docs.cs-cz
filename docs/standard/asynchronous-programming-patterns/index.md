@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e3535e2979d2430fcb434a578f94d8d5b3925631
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 36798fabcd42cf7e04b0a6f288736503eecad88b
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666569"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169128"
 ---
 # <a name="asynchronous-programming-patterns"></a>Vzorce asynchronního programování
 
 .NET nabízí tři vzory pro provádění asynchronních operací:  
 
-- **Asynchronní vzor založený na úlohách (klepněte)** , který používá jedinou metodu představující zahájení a dokončení asynchronní operace. Klepněte na zavedený .NET Framework 4. **Je to doporučený přístup k asynchronnímu programování v rozhraní .NET.** Klíčová slova [](../../csharp/language-reference/keywords/await.md) [Async](../../csharp/language-reference/keywords/async.md) a await C# v a operátory [Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic přidat jazykovou podporu pro klepněte. Další informace najdete v tématu [asynchronní vzor založený na úlohách (klepněte)](task-based-asynchronous-pattern-tap.md).  
+- **Asynchronní vzor založený na úlohách (klepněte)** , který používá jedinou metodu představující zahájení a dokončení asynchronní operace. Klepněte na zavedený .NET Framework 4. **Je to doporučený přístup k asynchronnímu programování v rozhraní .NET.** Klíčová slova [](../../csharp/language-reference/operators/await.md) [Async](../../csharp/language-reference/keywords/async.md) a await C# v a operátory [Async](../../visual-basic/language-reference/modifiers/async.md) a [await](../../visual-basic/language-reference/operators/await-operator.md) v Visual Basic přidat jazykovou podporu pro klepněte. Další informace najdete v tématu [asynchronní vzor založený na úlohách (klepněte)](task-based-asynchronous-pattern-tap.md).  
 
 - Asynchronní vzor založený na událostech **(EAP)** , což je starší model založený na událostech pro zajištění asynchronního chování. Vyžaduje metodu, která má `Async` příponu a jednu nebo více událostí, typy delegátů události a `EventArg`odvozené typy. Protokol EAP byl představený v .NET Framework 2,0. Už se nedoporučuje pro nový vývoj. Další informace najdete v tématu [asynchronní vzor založený na událostech (EAP)](event-based-asynchronous-pattern-eap.md).  
 

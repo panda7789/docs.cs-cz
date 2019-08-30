@@ -1,84 +1,84 @@
 ---
-title: Metody – Průvodce v C#
-description: Přehled metody, metoda parametry a návratové hodnoty metod
+title: Metody – C# Průvodce
+description: Přehled metod, parametrů metod a návratových hodnot metody
 author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 0decc563fdcf068c0b9dc88a55b2bd6f4e3657cd
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: b95818e06d37b0e98bf55428ff97dd476f92fac7
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025091"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168516"
 ---
 # <a name="methods"></a>Metody
 
-Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. `Main` Metoda je vstupní bod pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.
+Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že budou příkazy provedeny voláním metody a zadáním požadovaných argumentů metody. V C#je každá spuštěná instrukce provedena v kontextu metody. Metoda je vstupním bodem pro každou C# aplikaci a je volána modulem CLR (Common Language Runtime) při spuštění programu. `Main`
 
 > [!NOTE]
-> Toto téma popisuje pojmenované metody. Informace o anonymní funkce, najdete v části [anonymní funkce](programming-guide/statements-expressions-operators/anonymous-functions.md).
+> Toto téma popisuje pojmenované metody. Informace o anonymních funkcích naleznete v tématu [Anonymous Functions](programming-guide/statements-expressions-operators/anonymous-functions.md).
 
 Toto téma obsahuje následující oddíly:
 
-- [Podpisy metod](#signatures)
-- [Volání metody](#invocation)
+- [Signatury metod](#signatures)
+- [Vyvolání metody](#invocation)
 - [Zděděné a přepsané metody](#inherited)
 - [Předávání parametrů](#passing)
   - [Předávání parametrů podle hodnoty](#byval)
-  - [Předávání parametrů odkazem.](#byref)
+  - [Předávání parametrů odkazem](#byref)
   - [Pole parametrů](#paramarray)
 - [Volitelné parametry a argumenty](#optional)
 - [Návratové hodnoty](#return)
-- [Rozšiřující metody](#extension)
+- [Metody rozšíření](#extension)
 - [Asynchronní metody](#async)
 - [Členové tvoření výrazy](#expr)
 - [Iterátory](#iterators)
 
 <a name="signatures"></a>
 
-## <a name="method-signatures"></a>Podpisy metod
+## <a name="method-signatures"></a>Signatury metod
 
 Metody jsou deklarovány v `class` nebo `struct` zadáním:
 
-- Volitelný přístup na úrovni, jako například `public` nebo `private`. Výchozí hodnota je `private`.
-- Volitelné modifikátory jako `abstract` nebo `sealed`.
-- Návratová hodnota nebo `void` Pokud metoda nemá žádný.
+- Volitelná úroveň přístupu, například `public` nebo. `private` Výchozí hodnota je `private`.
+- Volitelné modifikátory, například `abstract` nebo `sealed`.
+- Návratová hodnota, nebo `void` Pokud metoda nemá žádný.
 - Název metody.
-- Všechny parametry metody. Parametry metody jsou uzavřeny v závorkách a odděleny čárkami. Prázdných kulatých závorek znamenat, že metoda nevyžaduje žádné parametry.
+- Jakékoli parametry metody. Parametry metody jsou uzavřeny v závorkách a jsou odděleny čárkami. Prázdné kulaté závorky označují, že metoda nepožaduje žádné parametry.
 
-Tyto části společně tvoří podpisu metody.
+Tyto části dohromady tvoří signaturu metody.
 
 > [!NOTE]
-> Návratový typ metody není součástí podpis metody pro účely přetížení metody. Je však součást podpisu metody při určování kompatibility mezi delegáta a, který odkazuje na metodu.
+> Návratový typ metody není součástí signatury metody pro účely přetěžování metody. Je však součástí signatury metody při určování kompatibility mezi delegátem a metodou, na kterou odkazuje.
 
 Následující příklad definuje třídu s názvem `Motorcycle` , která obsahuje pět metod:
 
 [!code-csharp[csSnippets.Methods#40](../../samples/snippets/csharp/concepts/methods/methods40.cs#40)]
 
-Všimněte si, `Motorcycle` třída zahrnuje přetěžované metody, `Drive`. Dvě metody se stejným názvem, ale musí být rozlišené pomocí jejich typy parametrů.
+Všimněte si, `Motorcycle` že třída obsahuje přetíženou `Drive`metodu. Dvě metody mají stejný název, ale musí být odlišeny jejich typy parametrů.
 
 <a name="invocation"></a>
 
-## <a name="method-invocation"></a>Volání metody
+## <a name="method-invocation"></a>Vyvolání metody
 
-Metody mohou být buď *instance* nebo *statické*. Volání metody instance vyžaduje vytvoření instance objektu a volat metodu na objektu. Metoda instance pracuje na tuto instanci a jeho data. Volání statické metody pomocí odkazu na název typu, do kterého metoda patří; statické metody se nevztahují na instance data. Pokus o volání statické metody instancí objektu generuje chybu kompilátoru.
+Metody mohou být buď *instance* , nebo *statické*. Vyvolání metody instance vyžaduje vytvoření instance objektu a volání metody v tomto objektu. Metoda instance pracuje s touto instancí a jejími daty. Vyvoláte statickou metodu odkazem na název typu, ke kterému patří metoda; statické metody nepracují s daty instance. Pokus o volání statické metody prostřednictvím instance objektu vygeneruje chybu kompilátoru.
 
-Volání metody je například přístup k poli. Po názvu objektu (Pokud voláte metodu instance) nebo název typu (při volání `static` metoda), přidejte tečku, názvu metody a závorky. Argumenty jsou uvedeny v závorkách a odděleny čárkami.
+Volání metody je například přístup k poli. Za název objektu (Pokud voláte metodu instance) nebo název typu (Pokud voláte `static` metodu), přidejte tečku, název metody a závorky. Argumenty jsou uvedeny v závorkách a jsou odděleny čárkami.
 
-Definice metody určuje názvy a typy všech parametrů, které jsou požadovány. Když volající vyvolá metodu, poskytne konkrétní hodnoty, nazývaných argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale název argumentu, pokud se používá ve volajícím kódu, nemusí být stejné jako parametr s názvem definovaný v metodě. V následujícím příkladu `Square` metoda obsahuje jeden parametr typu `int` s názvem *můžu*. První metoda volání předá `Square` metody a proměnné typu `int` s názvem *num*; druhý, číselnou konstantu; a třetí, výraz.
+Definice metody určuje názvy a typy parametrů, které jsou požadovány. Když volající vyvolá metodu, poskytne konkrétní hodnoty nazvané argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale název argumentu, pokud je jeden použit v volajícím kódu, nemusí být stejný jako parametr s názvem definovaným v metodě. V následujícím příkladu `Square` metoda zahrnuje jeden parametr typu `int` s názvem *i*. První volání metody předá `Square` metodu proměnné typu `int` s názvem *NUM*; Second, číselnou konstantou a třetí výrazem.
 
 [!code-csharp[csSnippets.Methods#74](../../samples/snippets/csharp/concepts/methods/params74.cs#74)]
 
-Nejběžnější forma volání metody použít poziční argumenty; poskytne argumenty ve stejném pořadí jako parametry metod. Metody `Motorcycle` třídy proto lze volat jako v následujícím příkladu. Volání `Drive` metody, například obsahuje dva argumenty, které odpovídají na dva parametry syntaxe metody. První změní hodnotu `miles` parametr, druhá hodnota `speed` parametru.
+Nejběžnější forma volání metody použila Poziční argumenty; dodává argumenty ve stejném pořadí jako parametry metody. Metody `Motorcycle` třídy lze proto volat jako v následujícím příkladu. Volání `Drive` metody, například obsahuje dva argumenty, které odpovídají dvěma parametrům v syntaxi metody. První se zobrazí jako hodnota `miles` parametru, druhá hodnota `speed` parametru.
 
 [!code-csharp[csSnippets.Methods#41](../../samples/snippets/csharp/concepts/methods/methods40.cs#41)]
 
-Můžete také použít *pojmenované argumenty* místo poziční argumenty při volání metody. Při použití pojmenované argumenty, zadejte název parametru, za nímž následuje dvojtečka (":") a argument. Argumenty metody se může zobrazit v libovolném pořadí, dokud nejsou všechny povinné argumenty. Následující příklad používá pojmenované argumenty k vyvolání `TestMotorcycle.Drive` metody. V tomto příkladu jsou pojmenované argumenty předány v opačném pořadí ze seznamu parametrů metody.
+Při vyvolání metody lze také použít *pojmenované argumenty* namísto pozičních argumentů. Při použití pojmenovaných argumentů zadáte název parametru následovaný dvojtečkou (":") a argumentem. Argumenty metody mohou být zobrazeny v libovolném pořadí, pokud jsou k dispozici všechny požadované argumenty. Následující příklad používá pojmenované argumenty pro vyvolání `TestMotorcycle.Drive` metody. V tomto příkladu jsou pojmenované argumenty předány v opačném pořadí ze seznamu parametrů metody.
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/named1.cs#45)]
 
-Můžete vyvolat metodu pomocí obou poziční argumenty a pojmenované argumenty. Ale poziční argument nemůže následovat za pojmenovaným argumentem. Následující příklad popisuje vyvolání `TestMotorcycle.Drive` metoda z předchozího příkladu pomocí jednoho poziční argument a jeden pojmenovaný argument.
+Metodu lze vyvolat pomocí pozičních argumentů i pojmenovaných argumentů. Poziční argument však nemůže následovat za pojmenovaným argumentem. Následující příklad vyvolá `TestMotorcycle.Drive` metodu z předchozího příkladu pomocí jednoho pozičního argumentu a jednoho pojmenovaného argumentu.
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 
@@ -86,11 +86,11 @@ Můžete vyvolat metodu pomocí obou poziční argumenty a pojmenované argument
 
 ## <a name="inherited-and-overridden-methods"></a>Zděděné a přepsané metody
 
-Kromě členy, které jsou explicitně definovány v rámci typu Typ dědí členy definované v její základní třídy. Protože všechny typy v systému spravovaný typ dědí přímo nebo nepřímo <xref:System.Object> třídu, všechny typy dědit její členy jako <xref:System.Object.Equals(System.Object)>, <xref:System.Object.GetType>, a <xref:System.Object.ToString>. Následující příklad definuje `Person` třídy, vytvoří dvě `Person` objektů a volá `Person.Equals` metodou ke zjištění, zda dva objekty rovnají. `Equals` Metody, ale není definovaný v `Person` třída; je zděděno od <xref:System.Object>.
+Kromě členů, které jsou explicitně definovány v typu, dědí typ členy definované v jeho základních třídách. Vzhledem k <xref:System.Object> tomu, že všechny typy v systému spravovaného typu dědí přímo nebo nepřímo z třídy, všechny typy dědí své členy <xref:System.Object.Equals(System.Object)>, <xref:System.Object.GetType>například, <xref:System.Object.ToString>a. Následující příklad definuje `Person` třídu, vytvoří instanci dvou `Person` `Person.Equals` objektů a zavolá metodu pro určení, zda jsou dva objekty stejné. Metoda však není definována `Person` ve třídě. je zděděna z <xref:System.Object>. `Equals`
 
 [!code-csharp[csSnippets.Methods#104](../../samples/snippets/csharp/concepts/methods/inherited1.cs#104)]
 
-Typy lze přepsat pomocí zděděných členů `override` – klíčové slovo a zajistit pomocí implementace přepsané metody. Podpis metody musí být stejné jako u přepsané metody. Následující příklad je podobný předchozímu, s tím rozdílem, že přepíše <xref:System.Object.Equals(System.Object)> metody. (Přepíše také <xref:System.Object.GetHashCode> metody, protože tyto dvě metody jsou určená k zajištění konzistentní výsledky.)
+Typy mohou přepsat zděděné členy pomocí `override` klíčového slova a poskytnutím implementace pro potlačenou metodu. Signatura metody musí být stejná jako u přepsané metody. Následující příklad je podobný předchozímu, s tím rozdílem, že Přepisuje <xref:System.Object.Equals(System.Object)> metodu. (Také přepisuje <xref:System.Object.GetHashCode> metodu, protože tyto dvě metody jsou určeny k zajištění konzistentních výsledků.)
 
 [!code-csharp[csSnippets.Methods#105](../../samples/snippets/csharp/concepts/methods/overridden1.cs#105)]
 
@@ -98,53 +98,53 @@ Typy lze přepsat pomocí zděděných členů `override` – klíčové slovo a
 
 ## <a name="passing-parameters"></a>Předávání parametrů
 
-Typy v jazyce C# jsou buď *typů hodnot* nebo *referenční typy*. Seznam typů předdefinovaných hodnot najdete v tématu [typy a proměnné](./tour-of-csharp/types-and-variables.md). Ve výchozím nastavení typy hodnot a odkazové typy jsou předávány na metodu hodnotou.
+Typy v C# jsou buď *typy hodnot* nebo typy *odkazů*. Seznam předdefinovaných hodnotových typů naleznete v tématu [typy a proměnné](./tour-of-csharp/types-and-variables.md). Ve výchozím nastavení jsou typy hodnot a odkazové typy předány metodě podle hodnoty.
 
 <a name="byval"></a>
 
 ### <a name="passing-parameters-by-value"></a>Předávání parametrů podle hodnoty
 
-Pokud typ hodnoty je předán do metody podle hodnoty, kopii objektu namísto objektu samotného je předán metodě. Proto změny objektu volané metody nemají žádný vliv na původní objekt, když ovládací prvek vrátí volajícímu.
+Když je typ hodnoty předán metodě podle hodnoty, kopie objektu namísto samotného objektu je předána metodě. Proto změny objektu v volané metodě nemají žádný vliv na původní objekt, když se ovládací prvek vrátí volajícímu.
 
-Následující příklad předává typu hodnoty metodě podle hodnoty a volané metody se pokusí změnit hodnotu typu hodnoty. Definuje proměnnou typu `int`, které je typ hodnoty, inicializuje jeho hodnotu na 20 a předává je na metodu s názvem `ModifyValue` , která se změní hodnota proměnné na 30. Když metoda vrátí, ale hodnota proměnné zůstane beze změny.
+Následující příklad předává typ hodnoty metodě podle hodnoty a volaná metoda se pokusí změnit hodnotu typu hodnoty. Definuje proměnnou typu `int`, což je hodnotový typ, inicializuje hodnotu na 20 a předá ji metodě s názvem `ModifyValue` , která změní hodnotu proměnné na 30. Když se metoda vrátí, hodnota proměnné ale zůstane beze změny.
 
 [!code-csharp[csSnippets.Methods#10](../../samples/snippets/csharp/concepts/methods/byvalue10.cs#10)]
 
-Pokud objekt typu odkazu je předán do metody podle hodnoty, odkaz na objekt je předán podle hodnoty. To znamená metoda obdrží, nikoli samotného objektu, ale argument, který označuje umístění objektu. Pokud změníte členem objektu pomocí tohoto odkazu, změna se projeví v objektu při vrácení ovládacího prvku k volání metody. Ale nahradit objekt předaný metodě nemá žádný vliv na původní objekt při ovládací prvek vrátí volajícímu.
+Když je objekt typu odkazu předán metodě podle hodnoty, odkaz na objekt je předán podle hodnoty. To znamená, že metoda nepřijímá samotný objekt, ale argument, který označuje umístění objektu. Pokud změníte člena objektu pomocí tohoto odkazu, změna se projeví v objektu, když se ovládací prvek vrátí volající metodě. Nahrazení objektu předaného metodě ale nemá žádný vliv na původní objekt, když se ovládací prvek vrátí volajícímu.
 
-Následující příklad definuje třídu (což je odkazový typ) s názvem `SampleRefType`. Vytvoření instance `SampleRefType` objektu, přiřadí 44 k jeho `value` pole a předá objekt, který má `ModifyObject` metoda. V tomto příkladu provede v podstatě totéž, jako předchozí příklad – předá argumentu podle hodnoty metody. Ale protože odkazový typ se používá, výsledek se liší. Úpravy, které se provádí v `ModifyObject` k `obj.value` pole také změny `value` pole argumentu `rt`v `Main` metoda 33, jak výstup z příkladu ukazuje.
+Následující příklad definuje třídu (což je odkazový typ) s názvem `SampleRefType`. Vytvoří instanci `SampleRefType` objektu, přiřadí 44 k příslušnému `value` poli a `ModifyObject` předá objekt metodě. V tomto příkladu je totéž jako v předchozím příkladu – předává argument podle hodnoty metodě. Protože je však použit typ odkazu, výsledek je jiný. Změny `ModifyObject` provedené v `value` politaké`rt` změní`Main` pole argumentu v metodě na 33, jak ukazuje výstup z příkladu. `obj.value`
 
 [!code-csharp[csSnippets.Methods#42](../../samples/snippets/csharp/concepts/methods/byvalue42.cs#42)]
 
 <a name="byref"></a>
 
-### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem.
+### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem
 
-Předávání parametru podle odkazu, pokud chcete změňte hodnotu argumentu v metodě a chcete, aby odrážela tuto změnu, když ovládací prvek vrátí volajícímu metody. Parametr předávání pomocí odkazu, použijte [ `ref` ](language-reference/keywords/ref.md) nebo [ `out` ](language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také předat hodnotu s odkazem na vyhnout kopírování, ale stále zabránit změny pomocí [ `in` ](language-reference/keywords/in-parameter-modifier.md) – klíčové slovo.
+Parametr předáte odkazem, pokud chcete změnit hodnotu argumentu v metodě a chcete tuto změnu odrážet, když se ovládací prvek vrátí volající metodě. Chcete-li předat parametr odkazem, použijte [`ref`](language-reference/keywords/ref.md) klíčové slovo or. [`out`](language-reference/keywords/out-parameter-modifier.md) Můžete také předat hodnotu odkazem, aby nedocházelo ke kopírování, ale stále nebránili úpravám pomocí [`in`](language-reference/keywords/in-parameter-modifier.md) klíčového slova.
 
-Následující příklad je stejný jako předchozímu, s tím rozdílem, hodnota je předán odkazem na `ModifyValue` metody. Při změně hodnoty parametru v `ModifyValue` metoda změnu v hodnotě se projeví, když ovládací prvek vrátí volajícímu.
+Následující příklad je stejný jako předchozí, s výjimkou, že hodnota je předána odkazem na `ModifyValue` metodu. Když je v `ModifyValue` metodě upravena hodnota parametru, změna hodnoty se projeví, když se ovládací prvek vrátí volajícímu.
 
 [!code-csharp[csSnippets.Methods#106](../../samples/snippets/csharp/concepts/methods/byref106.cs#106)]
 
-Běžným vzorem, který používá parametry ref zahrnuje prohození hodnoty proměnných. Dvě proměnné, které předáte metodě odkazem a metodu Zamění jejich obsah. Následující příklad zaměňuje celočíselné hodnoty.
+Společný vzor, který používá parametry ref, zahrnuje Záměna hodnot proměnných. Pomocí odkazu předáte do metody dvě proměnné a metoda zamění jejich obsah. Následující příklad odměňuje celočíselné hodnoty.
 
 [!code-csharp[csSnippets.Methods#106](../../samples/snippets/csharp/concepts/methods/swap107.cs#107)]
 
-Předávání parametrů typu odkazu můžete změnit hodnotu referenční samotné, nikoli hodnotu jeho jednotlivé prvky nebo pole.
+Předání parametru referenčního typu umožňuje změnit hodnotu samotného odkazu, nikoli hodnotu jeho jednotlivých prvků nebo polí.
 
 <a name="paramarray"></a>
 
 ### <a name="parameter-arrays"></a>Pole parametrů
 
-V některých případech je omezující požadavek zadat přesný počet argumentů pro metodu. S použitím `params` – klíčové slovo k označení, že je parametr pole parametrů, povolíte metodu volat s proměnným počtem argumentů. Parametr označené `params` – klíčové slovo musí být typu pole a musí být posledním parametrem v seznamu parametrů metody.
+V některých případech je požadavek, který určíte přesný počet argumentů pro metodu, omezující. Pomocí `params` klíčového slova k označení, že parametr je pole parametrů, umožníte volání metody s proměnným počtem argumentů. Parametr označený `params` klíčovým slovem musí být typu pole a musí být posledním parametrem v seznamu parametrů metody.
 
-Volající lze poté vyvolat metodu v jednom ze tří způsobů:
+Volající pak může metodu vyvolat jedním ze tří způsobů:
 
-- Předáním pole příslušného typu, který obsahuje požadovaný počet prvků.
-- Předáním čárkou oddělený seznam jednotlivé argumenty příslušného typu metody.
-- Tak, že neposkytnete argument pole parametrů.
+- Předáním pole vhodného typu, který obsahuje požadovaný počet prvků.
+- Předáním čárkami odděleného seznamu jednotlivých argumentů příslušného typu metodě.
+- Neposkytnutím argumentu pro pole parametrů.
 
-Následující příklad definuje metodu s názvem `GetVowels` , která vrací všemi samohláskami z pole parametrů. `Main` Metoda ukazuje všechny tři způsoby volání metody. Volající není nutné zadat všechny argumenty pro parametry, které zahrnují `params` modifikátor. V takovém případě je parametr `null`.
+Následující příklad definuje metodu s názvem `GetVowels` , která vrátí všechny samohlásky z pole parametrů. `Main` Metoda znázorňuje všechny tři způsoby volání metody. Volající nejsou vyžadováni k zadání argumentů pro parametry, které obsahují `params` modifikátor. V takovém případě je `null`parametr.
 
 [!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 
@@ -152,55 +152,55 @@ Následující příklad definuje metodu s názvem `GetVowels` , která vrací v
 
 ## <a name="optional-parameters-and-arguments"></a>Volitelné parametry a argumenty
 
-Definice metody můžete určit, že její parametry jsou povinné a že jsou volitelné. Ve výchozím nastavení parametry jsou povinné. Volitelné parametry jsou určeny včetně výchozí hodnota parametru v definici metody. Při volání metody pro volitelný parametr není zadaný žádný argument, je použita výchozí hodnota.
+Definice metody může určovat, že jeho parametry jsou povinné nebo jsou nepovinné. Ve výchozím nastavení jsou vyžadovány parametry. Volitelné parametry jsou určeny zahrnutím výchozí hodnoty parametru v definici metody. Pokud je metoda volána, pokud není zadán žádný argument pro volitelný parametr, je místo toho použita výchozí hodnota.
 
-Výchozí hodnota parametru musí mít přiřazenou pomocí jedné z následující typy výrazů:
+Výchozí hodnota parametru musí být přiřazena jedním z následujících typů výrazů:
 
-- Toto je konstanta, třeba řetězec nebo číslo.
-- Výraz ve tvaru `new ValType`, kde `ValType` je typ hodnoty. Všimněte si, že tím se vyvolá typ hodnoty implicitní konstruktor bez parametrů, která není skutečný člen daného typu.
-- Výraz ve tvaru `default(ValType)`, kde `ValType` je typ hodnoty.
+- Konstanta, jako je například řetězcový literál nebo číslo.
+- Výraz formuláře `new ValType`, kde `ValType` je hodnotový typ. Všimněte si, že tato hodnota vyvolá implicitní konstruktor bez parametrů, který není skutečným členem tohoto typu.
+- Výraz formuláře `default(ValType)`, kde `ValType` je hodnotový typ.
 
-Pokud metoda obsahuje povinných a volitelných parametrů, volitelné parametry jsou definované na konci seznamu parametrů, až poté, co všechny požadované parametry.
+Pokud metoda zahrnuje vyžadované i volitelné parametry, jsou nepovinné parametry definovány na konci seznamu parametrů po všech požadovaných parametrech.
 
-Následující příklad definuje metodu, `ExampleMethod`, který má vyžadující jeden a dva volitelné parametry.
+Následující příklad definuje metodu `ExampleMethod`, která má jeden požadovaný a dva volitelné parametry.
 
 [!code-csharp[csSnippets.Methods#21](../../samples/snippets/csharp/concepts/methods/optional1.cs#21)]
 
-Pokud metoda s více volitelných argumentů je vyvolán pomocí poziční argumenty, volající musí zadat argument pro všechny volitelné parametry z první z nich pro poslední, pro který je zadán argument. V případě třídy `ExampleMethod` metody, například, pokud volající poskytuje argument `description` parametr, je nutné také jednu třídu dodat pro `optionalInt` parametru. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` je platná metoda volání; `opt.ExampleMethod(2, , "Addition of 2 and 0");` generuje "chybí Argument." chybu kompilátoru.
+Pokud je metoda s více volitelnými argumenty vyvolána pomocí pozičních argumentů, volající musí zadat argument pro všechny volitelné parametry od prvního do posledního, pro který je zadán argument. V případě `ExampleMethod` metody, například pokud volající zadá argument `description` pro parametr, musí `optionalInt` také dodat jednu pro parametr. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");`je platné volání metody; `opt.ExampleMethod(2, , "Addition of 2 and 0");` vygeneruje chybu kompilátoru "chybí argument".
 
-Pokud je metoda volána pomocí pojmenovaných argumentů nebo ke kombinaci komponent poziční a pojmenované argumenty, volající vynechat žádné argumenty, které následují poslední poziční argument ve volání metody.
+Pokud je metoda volána pomocí pojmenovaných argumentů nebo kombinace pozičních a pojmenovaných argumentů, volající může vynechat všechny argumenty, které následují jako poslední poziční argument ve volání metody.
 
-Následující příklad volá `ExampleMethod` metoda třikrát.  První dvě metody volání využívat poziční argumenty. První vynechá oba volitelné argumenty, zatímco druhý vynechá posledním argumentem. Třetí volání metody poskytuje poziční argument pro parametr povinný, ale používá pojmenovaný argument zadat hodnotu, která `description` parametr při vynechání `optionalInt` argument.
+Následující příklad volá `ExampleMethod` metodu třikrát.  První dvě volání metody používají Poziční argumenty. První vynechá jak nepovinné argumenty, zatímco druhá vynechává poslední argument. Třetí metoda volá poziční argument pro požadovaný parametr, ale používá pojmenovaný argument k zadání hodnoty `description` parametru při vynechání `optionalInt` argumentu.
 
 [!code-csharp[csSnippets.Methods#22](../../samples/snippets/csharp/concepts/methods/optional1.cs#22)]
 
-Má vliv na použití volitelných parametrů *rozlišení přetěžování*, nebo způsob, ve kterém kompilátor jazyka C# určuje, které konkrétní přetížení má vyvolat volání metody, následujícím způsobem:
+Použití volitelných parametrů má vliv na *rozlišení přetěžování*nebo způsob, jakým C# kompilátor určuje, které konkrétní přetížení by mělo být vyvoláno voláním metody, následovně:
 
-- Metoda, indexer nebo konstruktor je kandidátem pro spuštění, pokud každý ze svých parametrů je nepovinný nebo odpovídá podle názvu nebo podle pozice jediný argument ve volání příkazu, a že argument lze převést na typ parametru.
-- Pokud je nalezen více než jeden Release candidate, pravidla rozlišení přetížení pro upřednostňované převody se aplikují na argumenty, které jsou explicitně zadány. Vynechaný argumenty pro volitelné parametry jsou ignorovány.
-- Pokud dvě kandidáty jsou považovány za stejnou měrou bezproblémový, předvoleb přejde na Release candidate, který nemá žádné volitelné parametry, které byly vynechány argumenty ve volání. Toto je důsledkem obecné předvoleb v rozlišení přetížení pro kandidáty, které mají méně parametrů.
+- Metoda, indexer nebo konstruktor je kandidátem na provedení, pokud jsou jednotlivé parametry buď volitelné, nebo odpovídají, podle názvu nebo podle pozice, k jednomu argumentu v příkazu volání a tento argument lze převést na typ parametru.
+- Pokud je nalezen více než jeden kandidát, budou pravidla rozlišení přetížení pro preferované převody použita na argumenty, které jsou explicitně určeny. Vynechané argumenty pro volitelné parametry jsou ignorovány.
+- Pokud jsou dva kandidáty odůvodněné stejně dobré, preference směřuje k kandidátovi, který nemá nepovinné parametry pro to, které argumenty byly ve volání vynechány. Jedná se o důsledek Obecné předvolby v řešení přetížení pro kandidáty, které mají méně parametrů.
 
 <a name="return"></a>
 
 ## <a name="return-values"></a>Vrácené hodnoty
 
-Metody může vrátit hodnotu volajícímu. Pokud je návratový typ (typ uveden před název metody) `void`, metoda může vrátit hodnotu pomocí `return` – klíčové slovo. Příkaz s `return` – klíčové slovo následované proměnná, konstanta nebo výraz, který odpovídá návratový typ, vrátí tuto hodnotu volajícímu metody. Metody s jiný než void vrací typ jsou nutné k použití `return` – klíčové slovo vrátit hodnotu. `return` – Klíčové slovo také zastaví provádění metody.
+Metody mohou vracet hodnotu volajícímu. Pokud návratový typ (typ uvedený před názvem metody) `void`není, metoda může vracet hodnotu `return` pomocí klíčového slova. Příkaz s `return` klíčovým slovem následovaným proměnnou, konstantou nebo výrazem, který odpovídá typu vrácené hodnoty, vrátí tuto hodnotu volajícímu metody. Metody s návratovým typem, který není typu void, jsou vyžadovány k použití `return` klíčového slova k vrácení hodnoty. `return` Klíčové slovo také zastaví provádění metody.
 
-Pokud je návratový typ `void`, `return` příkaz bez hodnoty je stále užitečná pro zastavení provádění metody. Bez `return` – klíčové slovo, metoda se zastaví provádění dosáhne konce bloku kódu.
+Pokud je `void`návratový typ `return` , příkaz bez hodnoty je stále užitečný k zastavení provádění metody. `return` Bez klíčového slova, Metoda zastaví provádění, když dosáhne konce bloku kódu.
 
-Například tyto dvě metody použít `return` – klíčové slovo do vrací celá čísla:
+Například tyto dvě metody používají `return` klíčové slovo k vrácení celých čísel:
 
 [!code-csharp[csSnippets.Methods#44](../../samples/snippets/csharp/concepts/methods/return44.cs#44)]
 
-Na používání hodnoty vrátil z metody, můžete použít volání metody volání metody samotný kdekoli, že by stačit hodnotu stejného typu. Můžete také přiřadit návratovou hodnotu proměnné. Například následující dva příklady provedení stejného cíle:
+Chcete-li použít hodnotu vrácenou metodou, volající metoda může použít samotné volání metody kdekoli kdekoliv, kde bude stačit hodnota stejného typu. Vrácenou hodnotu můžete také přiřadit proměnné. Například následující dva příklady kódu mají stejný cíl:
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/return44.cs#45)]
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/return44.cs#46)]
 
-Použití místní proměnné, v tomto případě `result`pro ukládání hodnota je volitelná. To může pomoci čitelnost kódu nebo může být nezbytné, pokud je potřeba uložit původní hodnoty argumentu pro celý rozsah metody.
+Použití místní proměnné v tomto případě `result`pro uložení hodnoty je volitelné. Může to usnadnit čitelnost kódu nebo může být nutné, pokud potřebujete uložit původní hodnotu argumentu pro celý rozsah metody.
 
-V některých případech budete chtít vaše metoda vrátit více než jednu hodnotu. Od verze C# 7.0, můžete tuto operaci provést snadno pomocí *typy řazené kolekce členů* a *literálech řazené kolekce členů*. Typ řazené kolekce členů definuje datové typy elementů řazené kolekce členů. Literálech řazené kolekce členů zadejte skutečné hodnoty vrácené řazené kolekce členů. V následujícím příkladu `(string, string, string, int)` definuje typ řazené kolekce členů, který je vrácený `GetPersonalInfo` metody. Výraz `(per.FirstName, per.MiddleName, per.LastName, per.Age)` řazené kolekce členů je literál; metoda vrátí název první a poslední spolu s věk, nástroje `PersonInfo` objektu.
+V některých případech budete chtít, aby metoda vracela více než jednu hodnotu. Počínaje C# 7,0 můžete to provést snadno pomocí *typů řazené kolekce členů* a *literálů řazené kolekce členů*. Typ řazené kolekce členů definuje datové typy elementů řazené kolekce členů. Literály řazené kolekce členů poskytují skutečné hodnoty vrácených řazené kolekce členů. V následujícím příkladu `(string, string, string, int)` definuje typ řazené kolekce členů, který je vrácen `GetPersonalInfo` metodou. Výraz `(per.FirstName, per.MiddleName, per.LastName, per.Age)` je literál řazené kolekce členů; metoda vrátí první, střední a poslední název spolu s stářím `PersonInfo` objektu.
 
 ```csharp
 public (string, string, string, int) GetPersonalInfo(string id)
@@ -210,14 +210,14 @@ public (string, string, string, int) GetPersonalInfo(string id)
 }
 ```
 
-Volající je pak mohou využívat vrácené řazené kolekce členů s kódem, jako je následující:
+Volající pak může využít vrácenou řazenou kolekci členů s kódem podobným následujícímu:
 
 ```csharp
 var person = GetPersonalInfo("111111111")
 Console.WriteLine("{person.Item1} {person.Item3}: age = {person.Item4}");
 ```
 
-Lze také přiřadit názvy elementů řazené kolekce členů v definici typu řazené kolekce členů. Následující příklad ukazuje alternativní verze `GetPersonalInfo` metodu, která se používá s názvem prvky:
+Názvy lze také přiřadit prvkům řazené kolekce členů v definici typu řazené kolekce členů. Následující příklad ukazuje alternativní verzi `GetPersonalInfo` metody, která používá pojmenované prvky:
 
 ```csharp
 public (string FName, string MName, string LName, int Age) GetPersonalInfo(string id)
@@ -227,56 +227,56 @@ public (string FName, string MName, string LName, int Age) GetPersonalInfo(strin
 }
 ```
 
-Předchozí volání `GetPersonInfo` metoda pak lze upravit následujícím způsobem:
+Předchozí volání `GetPersonInfo` metody lze upravit následujícím způsobem:
 
 ```csharp
 var person = GetPersonalInfo("111111111");
 Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
 ```
 
-Pokud metoda pole je předán jako argument a změní hodnotu jednotlivých prvků, není nutné pro metodu vrátit pole, i když můžete k tomu dobrý styl nebo funkční toku hodnot.  Je to proto, že C# projde všechny typy odkazů podle hodnoty a odkazu na pole má hodnotu ukazatele na pole. V následujícím příkladu se změní na obsah `values` pole, které probíhají v `DoubleValues` metody jsou pozorovat podle veškerý kód, který obsahuje odkaz na pole.
+Pokud je metoda předána poli jako argument a upravuje hodnotu jednotlivých prvků, není nutné, aby metoda vracela pole, i když se můžete rozhodnout pro dobrý styl nebo funkční tok hodnot.  Důvodem je, C# že předává všechny typy odkazů podle hodnoty a hodnota odkazu na pole je ukazatel na pole. V následujícím příkladu jsou změny obsahu `values` pole, které je provedeno `DoubleValues` v metodě, pozorovatelný jakýmkoli kódem, který má odkaz na pole.
 
 [!code-csharp[csSnippets.Methods#101](../../samples/snippets/csharp/concepts/methods/returnarray1.cs#101)]
 
 <a name="extension"></a>
 
-## <a name="extension-methods"></a>Rozšiřující metody
+## <a name="extension-methods"></a>Metody rozšíření
 
-Obvykle existují dva způsoby, jak přidat metodu k existujícímu typu:
+Obvykle existují dva způsoby, jak přidat metodu do existujícího typu:
 
-- Upravte zdrojový kód tohoto typu. Nemůže to provedete, samozřejmě, pokud nejste vlastníkem tohoto typu zdrojového kódu. A to se stane rozbíjející změny, pokud je také přidat všechny privátní datová pole pro podporu metodu.
-- Definujte novou metodu v odvozené třídě. Metodu nelze přidat tímto způsobem použití dědičnosti pro ostatní typy, jako je například struktury a výčty. Ani jej lze "Přidání" metodu pro zapečetěnou třídu.
+- Upravte zdrojový kód pro daný typ. Nemůžete to provést, Pokud nevlastníte zdrojový kód typu. A tato změna se změní i v případě, že přidáte jakákoli soukromá datová pole, která by podporovala metodu.
+- Definujte novou metodu v odvozené třídě. Metodu nelze přidat tímto způsobem pomocí dědičnosti pro jiné typy, jako jsou například struktury a výčty. Ani jej nelze použít pro přidání metody do zapečetěné třídy.
 
-Metody rozšíření umožňují "přidávat" metody do existujícího typu bez změny samotného typu nebo implementaci nová metoda ve zděděném typu. Metoda rozšíření také nemusí nacházet ve stejném sestavení, typ, který rozšiřuje. Rozšiřující metody volání, jako by šlo definovaný člen typu.
+Metody rozšíření umožňují přidat metodu do existujícího typu bez změny samotného typu nebo implementací nové metody ve zděděném typu. Metoda rozšíření také nemusí být umístěna ve stejném sestavení jako typ, který rozšiřuje. Zavoláte metodu rozšíření, jako by šlo o definovaného člena typu.
 
-Další informace najdete v tématu [rozšiřující metody](programming-guide/classes-and-structs/extension-methods.md).
+Další informace naleznete v tématu [metody rozšíření](programming-guide/classes-and-structs/extension-methods.md).
 
 <a name="async"></a>
 
 ## <a name="async-methods"></a>Asynchronní metody
 
-Při použití asynchronní funkce, se dají vyvolat asynchronní metody bez použití explicitní zpětná volání nebo Ruční rozdělení kódu mezi více metodách a výrazech lambda.
+Pomocí asynchronní funkce můžete vyvolat asynchronní metody bez použití explicitních zpětných volání nebo ruční rozdělení kódu napříč více metodami nebo lambda výrazy.
 
-Pokud určíte metodu s [asynchronní](language-reference/keywords/async.md) modifikátor, můžete použít [await](language-reference/keywords/await.md) operátor v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek vrátí volajícímu, pokud není dokončen očekávaný úkol a průběh v metodě s `await` – klíčové slovo je pozastaveno, dokud nebude dokončen očekávaný úkol. Po dokončení úlohy se provádění může pokračovat v metodě.
+Pokud označíte metodu pomocí modifikátoru [Async](language-reference/keywords/async.md) , můžete použít operátor [await](language-reference/operators/await.md) v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek se vrátí volajícímu, pokud se očekávaný úkol nedokončil a průběh metody `await` s klíčovým slovem je pozastaven až do dokončení očekávané úlohy. Po dokončení úlohy může provádění pokračovat v metodě.
 
 > [!NOTE]
-> Asynchronní metoda vrátí řízení volajícímu, když nalezne první očekávaný objekt, který ještě není dokončeno nebo získá konec asynchronní metody podle toho, co nastane dříve.
+> Asynchronní metoda se vrátí volajícímu, když dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo získá na konec asynchronní metody, podle toho, co nastane dříve.
 
-Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>, nebo `void`. `void` Typ vrácení se používá především k definování obslužných rutin událostí, kde `void` je požadován návratový typ. Asynchronní metody vracející `void` nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá. Od verze C# 7.0, asynchronní metoda může mít [jakýkoli návratový typ takový](./whats-new/csharp-7.md#generalized-async-return-types).
+Asynchronní metoda může mít návratový typ <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>nebo `void`. Návratový typ se používá primárně k definování obslužných rutin událostí, `void` kde je požadován návratový typ. `void` Asynchronní metoda, která se `void` vrátí, nemůže být očekávána a volající metody vracející typ void nemůže zachytit výjimky, které metoda vyvolá. Počínaje C# 7,0 může asynchronní metoda mít [jakýkoli návratový typ podobný tomuto úkolu](./whats-new/csharp-7.md#generalized-async-return-types).
 
-V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový příkaz, který vrátí celé číslo. Protože se jedná o asynchronní metodu, jeho deklarace metody musí mít typ vrácené hodnoty `Task<int>`. Vzhledem k tomu, že je návratový typ `Task<int>`, vyhodnocení `await` výrazu v `DoSomethingAsync` vytváří celého čísla, následujícím způsobem `int result = await delayTask` příkaz ukazuje.
+V následujícím příkladu `DelayAsync` je asynchronní metoda, která má návratový příkaz, který vrací celé číslo. Vzhledem k tomu, že se jedná o asynchronní metodu, její deklarace metody musí mít `Task<int>`návratový typ. Vzhledem k tomu, že `Task<int>`návratový typ je, vyhodnocení `await` výrazu v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující `int result = await delayTask` příkaz.
 
 [!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
 
-Asynchronní metoda nemůže deklarovat všechny [v](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md), nebo [si](language-reference/keywords/out-parameter-modifier.md) parametry, ale může volat metody, které mají tyto parametry.
+Asynchronní metoda nemůže deklarovat jakýkoli parametr [in](language-reference/keywords/in-parameter-modifier.md), [ref](language-reference/keywords/ref.md)nebo [out](language-reference/keywords/out-parameter-modifier.md) , ale může volat metody, které mají tyto parametry.
 
- Další informace o metodách async naleznete v tématu [Asynchronous Programming with Async and Await](async.md), [tok řízení v asynchronních programech](programming-guide/concepts/async/control-flow-in-async-programs.md), a [Async Return Types](programming-guide/concepts/async/async-return-types.md).
+ Další informace o asynchronních metodách naleznete v tématu [asynchronní programování s Async a await](async.md), [řízení toku v asynchronních programech](programming-guide/concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](programming-guide/concepts/async/async-return-types.md).
 
 <a name="expr"></a>
 
 ## <a name="expression-bodied-members"></a>Členové tvoření výrazy
 
-Je běžné mít definice metod, které jednoduše okamžitě vrátí výsledek výrazu nebo, které mají jeden příkaz jako tělo metody.  Existuje místní syntaxe pro definování těchto metod pomocí `=>`:
+Je běžné mít definice metod, které se jednoduše vrátí s výsledkem výrazu nebo které mají jediný příkaz jako tělo metody.  Pro definování takových metod je k dispozici zástupce syntaxe `=>`pomocí příkazu:
 
 ```csharp
 public Point Move(int dx, int dy) => new Point(x + dx, y + dy);
@@ -287,15 +287,15 @@ public string Name => First + " " + Last;
 public Customer this[long id] => store.LookupCustomer(id);
 ```
 
-Pokud metoda vrátí `void` nebo je asynchronní metody, výrazu příkazu (stejně jako výrazy lambda) musí být tělo metody.  Pro vlastnostmi a indexery, musí být jen pro čtení a je velmi riskantní používat `get` – klíčové slovo přistupujícího objektu.
+Pokud metoda vrátí `void` nebo je asynchronní metodou, tělo metody musí být výraz příkazu (totéž jako u výrazů lambda).  U vlastností a indexerů musí být jen pro čtení a nepoužívejte klíčové slovo přistupující k `get` objektu.
 
 <a name="iterators"></a>
 
 ## <a name="iterators"></a>Iterátory
 
-Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když `yield return` je dosažen příkaz aktuální umístění se uloží, tak, aby volající mohl požadovat další prvek v sekvenci.
+Iterátor provádí vlastní iteraci v kolekci, jako je například seznam nebo pole. Iterátor používá příkaz [yield return](language-reference/keywords/yield.md) k vrácení každého elementu v jednom okamžiku. Při dosažení `yield return` příkazu je aktuální umístění zapamatovatelné, aby volající mohl požádat o další prvek v sekvenci.
 
-Návratový typ iterátor může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.
+Návratový typ <xref:System.Collections.IEnumerable>iterátoru může být, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.
 
 Další informace najdete v tématu [iterátory](programming-guide/concepts/iterators.md).
 

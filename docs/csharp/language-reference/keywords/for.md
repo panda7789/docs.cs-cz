@@ -1,5 +1,5 @@
 ---
-title: C# pro příkaz
+title: C#příkaz for
 ms.date: 06/13/2018
 f1_keywords:
 - for
@@ -7,87 +7,87 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: a0252493ffd251b8d760927345c71e2f5ef55aaa
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 61315a04ca8d5a619a3dcaf43b15a309919d3c42
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401510"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167873"
 ---
 # <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 
-`for` Příkaz opakuje příkaz nebo blok příkazů během zadaný logický výraz je vyhodnocen jako `true`.
+Příkaz provede příkaz nebo blok příkazů, zatímco se zadaný logický výraz vyhodnotí `true`jako. `for`
 
-Na libovolný bod v rámci `for` blok příkazů, můžete přerušit ze smyčky s použitím [přerušení](break.md) příkazu nebo kroku na následující iteraci ve smyčce pomocí [pokračovat](continue.md) příkazu. Také můžete ukončit `for` smyčky pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.
+V jakémkoli bodě `for` bloku příkazu můžete přerušit smyčku pomocí příkazu [Break](break.md) nebo krokovat s další iterací ve smyčce pomocí příkazu [Continue](continue.md) . `for` Můžete také ukončit smyčku příkazy [goto](goto.md), [return](return.md)nebo [throw](throw.md) .
 
-## <a name="structure-of-the-for-statement"></a>Struktura `for` – příkaz
+## <a name="structure-of-the-for-statement"></a>`for` Struktura příkazu
 
-`for` Definuje příkaz *inicializátor*, *podmínku*, a *iterátoru* oddíly:
+Příkaz definuje oddíly *inicializátoru*, *podmínky*a *iterátoru* : `for`
 
 ```csharp
 for (initializer; condition; iterator)
     body
 ```
 
-Všechny tři oddíly jsou volitelné. Tělo smyčky je příkaz nebo blok příkazů.
+Všechny tři oddíly jsou volitelné. Tělo smyčky je buď příkaz, nebo blok příkazů.
 
-Následující příklad ukazuje `for` všechny oddíly definované příkazem:
+Následující příklad ukazuje `for` příkaz se všemi definovanými oddíly:
 
 [!code-csharp-interactive[for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#5)]
 
-### <a name="the-initializer-section"></a>*Inicializátor* oddílu
+### <a name="the-initializer-section"></a>Oddíl *inicializátoru*
 
-Příkazy v *inicializátor* oddílu jsou spouštěny pouze jednou, před vstupem smyčky. *Inicializátor* oddíl je některý z následujících:
+Příkazy v sekci *inicializátoru* jsou spouštěny pouze jednou před vstupem do smyčky. Oddíl *inicializátoru* je jedním z následujících způsobů:
 
-- Deklarace a inicializace proměnné místní smyčky, která není přístupná z mimo smyčku.
+- Deklarace a inicializace proměnné lokální smyčky, k nimž nelze přicházet z vnější smyčky.
 
-- Nula nebo více výrazy příkazu z následujícího seznamu, oddělené čárkami:
+- Nula nebo více výrazů příkazů z následujícího seznamu oddělených čárkami:
 
-  - [přiřazení](../operators/assignment-operator.md) – příkaz
+  - příkaz [přiřazení](../operators/assignment-operator.md)
 
   - vyvolání metody
 
-  - Přidání předpony nebo přípony [přírůstek](../operators/arithmetic-operators.md#increment-operator-) výraz, jako například `++i` nebo `i++`
+  - výraz pro `++i` [přírůstek](../operators/arithmetic-operators.md#increment-operator-) předpony nebo přípony, například nebo`i++`
 
-  - Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
+  - výraz pro `--i` [snížení](../operators/arithmetic-operators.md#decrement-operator---) předpony nebo přípony, například nebo`i--`
 
-  - Vytvoření objektu pomocí [nové](../operators/new-operator.md) – operátor
+  - Vytvoření objektu pomocí operátoru [New](../operators/new-operator.md)
 
-  - [operátor await](await.md) výraz
+  - výraz [await](../operators/await.md)
 
-*Inicializátor* oddílu ve výše uvedeném příkladu deklaruje a inicializuje proměnnou místní smyčky `i`:
+Oddíl *inicializátoru* v předchozím příkladu deklaruje a inicializuje proměnnou `i`lokální smyčky:
 
 ```csharp
 int i = 0
 ```
 
-### <a name="the-condition-section"></a>*Podmínku* oddílu
+### <a name="the-condition-section"></a>Oddíl *Condition*
 
-*Podmínku* část, pokud jsou k dispozici, musí být logický výraz. Tento výraz je vyhodnocen před každou iteraci smyčky. Pokud *podmínku* části není k dispozici nebo je logický výraz vyhodnocen `true`, další iteraci smyčky je provedeno; jinak, je ukončen smyčky.
+Oddíl *podmínky* , pokud je přítomen, musí být logický výraz. Tento výraz je vyhodnocen před každou iterací smyčky. Pokud oddíl *Podmínka* není přítomen nebo je logický výraz vyhodnocen `true`jako, je provedena iterace další smyčky. v opačném případě se smyčka ukončí.
 
-*Podmínku* oddílu ve výše uvedeném příkladu určuje Pokud smyčku ukončí založena na hodnotě proměnné cyklu místní:
+Oddíl *Condition* v předchozím příkladu určuje, zda se smyčka ukončí na základě hodnoty proměnné lokální smyčky:
 
 ```csharp
 i < 5
 ```
 
-### <a name="the-iterator-section"></a>*Iterátoru* oddílu
+### <a name="the-iterator-section"></a>Oddíl *iterátoru*
 
-*Iterátoru* oddíl definuje, co se stane po každé iteraci těla smyčky. *Iterátoru* oddíl obsahuje nula nebo více z následujících výrazy příkazu, oddělené čárkami:
+Oddíl *iterátor* určuje, co se stane po každé iteraci těla smyčky. Oddíl *iterátoru* obsahuje nula nebo více následujících výrazů příkazu, které jsou odděleny čárkami:
 
-- [přiřazení](../operators/assignment-operator.md) – příkaz
+- příkaz [přiřazení](../operators/assignment-operator.md)
 
 - vyvolání metody
 
-- Přidání předpony nebo přípony [přírůstek](../operators/arithmetic-operators.md#increment-operator-) výraz, jako například `++i` nebo `i++`
+- výraz pro `++i` [přírůstek](../operators/arithmetic-operators.md#increment-operator-) předpony nebo přípony, například nebo`i++`
 
-- Přidání předpony nebo přípony [snížení](../operators/arithmetic-operators.md#decrement-operator---) výraz, jako například `--i` nebo `i--`
+- výraz pro `--i` [snížení](../operators/arithmetic-operators.md#decrement-operator---) předpony nebo přípony, například nebo`i--`
 
-- Vytvoření objektu pomocí [nové](../operators/new-operator.md) – operátor
+- Vytvoření objektu pomocí operátoru [New](../operators/new-operator.md)
 
-- [operátor await](await.md) výraz
+- výraz [await](../operators/await.md)
 
-*Iterátoru* proměnná místní smyčky zvýší části v předchozím příkladu:
+Oddíl *iterátoru* v příkladu výše zvyšuje proměnnou místní smyčky:
 
 ```csharp
 i++
@@ -95,21 +95,21 @@ i++
 
 ## <a name="examples"></a>Příklady
 
-Následující příklad ukazuje několik méně běžné použití `for` části příkazu: přiřazení hodnoty proměnné vnější smyčky v *inicializátor* části volání metody v obou  *Inicializátor* a *iterátoru* oddíly a změnou hodnoty dvou proměnných ve *iterátoru* oddílu. Vyberte **spustit** ke spuštění příkladu kódu. Potom můžete upravit kód a potom ho spusťte znovu.
+Následující příklad znázorňuje několik méně běžných použití `for` oddílu příkazu: přiřazení hodnoty k proměnné vnější smyčky v sekci *inicializátoru* , vyvolání metody v *inicializátoru* a *iterátoru* oddíly a změny hodnot dvou proměnných v části *iterátor* . Vyberte **Spustit** a spusťte ukázkový kód. Potom můžete kód upravit a znovu spustit.
 
 [!code-csharp-interactive[not typical for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#6)]
 
-Následující příklad definuje nekonečné `for` smyčka:
+Následující příklad definuje nekonečnou `for` smyčku:
 
 [!code-csharp[infinite for loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#7)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [pro příkaz](~/_csharplang/spec/statements.md#the-for-statement) část [ C# specifikace jazyka](../language-specification/index.md).
+Další informace naleznete v části [for Statement](~/_csharplang/spec/statements.md#the-for-statement) tématu [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [foreach, in](foreach-in.md)

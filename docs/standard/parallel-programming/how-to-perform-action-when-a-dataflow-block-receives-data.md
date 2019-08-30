@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54eb9723f44924919ca1b4631e35e1e4da4af2af
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 17167467f52ab9afb8d7500f4f0eb744d8f60a6e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666348"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169026"
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Postupy: Provádění akcí po přijetí dat do bloku toku dat
 *Spuštění typů bloků toku* dat volá uživatelem poskytnutý delegát, když obdrží data. Třídy <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType> a<xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> jsou spouštěny typy bloků datového toku. Můžete použít `delegate` klíčové slovo (`Sub` v Visual Basic),, <xref:System.Action%601> <xref:System.Func%602>nebo lambda výraz, když zadáte pracovní funkci pro spuštění bloku toku dat. Tento dokument popisuje, jak použít <xref:System.Func%602> a lambda výrazy k provedení akce v blocích spuštění.  
@@ -34,7 +34,7 @@ ms.locfileid: "69666348"
  Souhrn oddílů typů delegátů v dokumentu [toku](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) dat shrnuje typy delegátů, které lze poskytnout <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>objektům, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602>a <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> . Tabulka také určuje, zda typ delegáta funguje synchronně nebo asynchronně.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Tento příklad poskytuje delegát typu <xref:System.Func%602> <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> pro objekt k synchronnímu provedení úlohy bloku toku dat. Chcete-li povolit, aby se blok toku dat choval asynchronně, zadejte delegáta typu <xref:System.Func%601> do bloku toku dat. Když se blok toku dat chová asynchronně, úloha bloku toku dat je dokončena až po dokončení vráceného <xref:System.Threading.Tasks.Task%601> objektu. Následující příklad upravuje `CountBytes` metodu a používá operátory [Async](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/keywords/await.md) ([Async](../../visual-basic/language-reference/modifiers/async.md) a await v Visual Basic [](../../visual-basic/language-reference/operators/await-operator.md) ) k asynchronnímu výpočtu celkového počtu bajtů, které jsou v zadaném souboru nulové. <xref:System.IO.FileStream.ReadAsync%2A> Metoda provádí asynchronní operace čtení souborů.  
+ Tento příklad poskytuje delegát typu <xref:System.Func%602> <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> pro objekt k synchronnímu provedení úlohy bloku toku dat. Chcete-li povolit, aby se blok toku dat choval asynchronně, zadejte delegáta typu <xref:System.Func%601> do bloku toku dat. Když se blok toku dat chová asynchronně, úloha bloku toku dat je dokončena až po dokončení vráceného <xref:System.Threading.Tasks.Task%601> objektu. Následující příklad upravuje `CountBytes` metodu a používá operátory [Async](../../csharp/language-reference/keywords/async.md) a [await](../../csharp/language-reference/operators/await.md) ([Async](../../visual-basic/language-reference/modifiers/async.md) a await v Visual Basic [](../../visual-basic/language-reference/operators/await-operator.md) ) k asynchronnímu výpočtu celkového počtu bajtů, které jsou v zadaném souboru nulové. <xref:System.IO.FileStream.ReadAsync%2A> Metoda provádí asynchronní operace čtení souborů.  
   
  [!code-csharp[TPLDataflow_ExecutionBlocks#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#2)]
  [!code-vb[TPLDataflow_ExecutionBlocks#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_executionblocks/vb/dataflowexecutionblocks.vb#2)]  

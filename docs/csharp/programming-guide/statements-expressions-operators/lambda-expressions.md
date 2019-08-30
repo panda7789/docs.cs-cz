@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 36dab520d67d08d1b3304f1453bfb2c07a2f1c32
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 1a608a9102e5fb19e40294761c0de98f7e008133
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671698"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168983"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Průvodce programováním)
 
@@ -90,7 +90,7 @@ Výrazy lambda příkazu nejde použít k vytváření stromů výrazů.
   
 ## <a name="async-lambdas"></a>Asynchronní výrazy lambda
 
-Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/keywords/await.md) . Například následující příklad model Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync`.
+Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí klíčových slov [Async](../../language-reference/keywords/async.md) a [await](../../language-reference/operators/await.md) . Například následující příklad model Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync`.
 
 ```csharp
 public partial class Form1 : Form
