@@ -2,24 +2,24 @@
 title: 'Postupy: Ladit prázdné sady výsledků dotazu (C#)'
 ms.date: 07/20/2015
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
-ms.openlocfilehash: 06c878a7751a14a3043b450d9242037ca91ad754
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 12d2132f1f088050fdd109d067069870b82f2661
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710134"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205314"
 ---
-# <a name="how-to-debug-empty-query-results-sets-c"></a><span data-ttu-id="ebe74-102">Postupy: Ladit prázdné sady výsledků dotazu (C#)</span><span class="sxs-lookup"><span data-stu-id="ebe74-102">How to: Debug Empty Query Results Sets (C#)</span></span>
-<span data-ttu-id="ebe74-103">Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ebe74-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
+# <a name="how-to-debug-empty-query-results-sets-c"></a><span data-ttu-id="674a3-102">Postupy: Ladit prázdné sady výsledků dotazu (C#)</span><span class="sxs-lookup"><span data-stu-id="674a3-102">How to: Debug Empty Query Results Sets (C#)</span></span>
+<span data-ttu-id="674a3-103">Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="674a3-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
   
- <span data-ttu-id="ebe74-104">První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů a je dotaz na něj nesprávně.</span><span class="sxs-lookup"><span data-stu-id="ebe74-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
+ <span data-ttu-id="674a3-104">První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů a je dotaz na něj nesprávně.</span><span class="sxs-lookup"><span data-stu-id="674a3-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
   
- <span data-ttu-id="ebe74-105">Druhá sada příkladů ukazuje nezbytné opravy, aby bylo možné dotazovat XML v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ebe74-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
+ <span data-ttu-id="674a3-105">Druhá sada příkladů ukazuje nezbytné opravy, aby bylo možné dotazovat XML v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="674a3-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
   
- <span data-ttu-id="ebe74-106">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="ebe74-106">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="674a3-106">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="674a3-106">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ebe74-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="ebe74-107">Example</span></span>  
- <span data-ttu-id="ebe74-108">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdnou sadu výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="ebe74-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
+## <a name="example"></a><span data-ttu-id="674a3-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="674a3-107">Example</span></span>  
+ <span data-ttu-id="674a3-108">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdnou sadu výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="674a3-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -40,17 +40,17 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- <span data-ttu-id="ebe74-109">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="ebe74-109">This example produces the following result:</span></span>  
+ <span data-ttu-id="674a3-109">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="674a3-109">This example produces the following result:</span></span>  
   
-```  
+```output  
 Result set follows:  
 End of result set  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ebe74-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="ebe74-110">Example</span></span>  
- <span data-ttu-id="ebe74-111">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.</span><span class="sxs-lookup"><span data-stu-id="ebe74-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
+## <a name="example"></a><span data-ttu-id="674a3-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="674a3-110">Example</span></span>  
+ <span data-ttu-id="674a3-111">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.</span><span class="sxs-lookup"><span data-stu-id="674a3-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
   
- <span data-ttu-id="ebe74-112">Řešením je deklarovat a inicializovat <xref:System.Xml.Linq.XNamespace> objekt a použít ho při zadávání <xref:System.Xml.Linq.XName> objektů.</span><span class="sxs-lookup"><span data-stu-id="ebe74-112">The solution is to declare and initialize an <xref:System.Xml.Linq.XNamespace> object, and to use it when specifying <xref:System.Xml.Linq.XName> objects.</span></span> <span data-ttu-id="ebe74-113">V tomto případě argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody <xref:System.Xml.Linq.XName> je objekt.</span><span class="sxs-lookup"><span data-stu-id="ebe74-113">In this case, the argument to the <xref:System.Xml.Linq.XContainer.Elements%2A> method is an <xref:System.Xml.Linq.XName> object.</span></span>  
+ <span data-ttu-id="674a3-112">Řešením je deklarovat a inicializovat <xref:System.Xml.Linq.XNamespace> objekt a použít ho při zadávání <xref:System.Xml.Linq.XName> objektů.</span><span class="sxs-lookup"><span data-stu-id="674a3-112">The solution is to declare and initialize an <xref:System.Xml.Linq.XNamespace> object, and to use it when specifying <xref:System.Xml.Linq.XName> objects.</span></span> <span data-ttu-id="674a3-113">V tomto případě argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody <xref:System.Xml.Linq.XName> je objekt.</span><span class="sxs-lookup"><span data-stu-id="674a3-113">In this case, the argument to the <xref:System.Xml.Linq.XContainer.Elements%2A> method is an <xref:System.Xml.Linq.XName> object.</span></span>  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -72,9 +72,9 @@ foreach (XElement el in c1)
 Console.WriteLine("End of result set");  
 ```  
   
- <span data-ttu-id="ebe74-114">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="ebe74-114">This example produces the following result:</span></span>  
+ <span data-ttu-id="674a3-114">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="674a3-114">This example produces the following result:</span></span>  
   
-```  
+```output  
 Result set follows:  
 1  
 2  

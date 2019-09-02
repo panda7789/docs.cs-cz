@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: ec4ad84a39afe21ef77507732e5e0e417d45f3e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91c635e2bc2ed617e8c45171d9ec7d7359b9ca88
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034519"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205488"
 ---
-# <a name="adding-data-to-a-datatable"></a><span data-ttu-id="cb57f-102">Přidání dat do datové tabulky</span><span class="sxs-lookup"><span data-stu-id="cb57f-102">Adding Data to a DataTable</span></span>
-<span data-ttu-id="cb57f-103">Po vytvoření <xref:System.Data.DataTable> a definovat jeho strukturu pomocí sloupců a omezení, můžete přidat nové řádky dat do tabulky.</span><span class="sxs-lookup"><span data-stu-id="cb57f-103">After you create a <xref:System.Data.DataTable> and define its structure using columns and constraints, you can add new rows of data to the table.</span></span> <span data-ttu-id="cb57f-104">Chcete-li přidat nový řádek, deklarovat novou proměnnou jako typ <xref:System.Data.DataRow>.</span><span class="sxs-lookup"><span data-stu-id="cb57f-104">To add a new row, declare a new variable as type <xref:System.Data.DataRow>.</span></span> <span data-ttu-id="cb57f-105">Nový **DataRow** objekt je vrácen při volání <xref:System.Data.DataTable.NewRow%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="cb57f-105">A new **DataRow** object is returned when you call the <xref:System.Data.DataTable.NewRow%2A> method.</span></span> <span data-ttu-id="cb57f-106">**DataTable** vytvoří **DataRow** objektu na základě struktury tabulky, tak jak je definoval <xref:System.Data.DataColumnCollection>.</span><span class="sxs-lookup"><span data-stu-id="cb57f-106">The **DataTable** then creates the **DataRow** object based on the structure of the table, as defined by the <xref:System.Data.DataColumnCollection>.</span></span>  
+# <a name="adding-data-to-a-datatable"></a><span data-ttu-id="598d2-102">Přidání dat do datové tabulky</span><span class="sxs-lookup"><span data-stu-id="598d2-102">Adding Data to a DataTable</span></span>
+<span data-ttu-id="598d2-103">Po vytvoření <xref:System.Data.DataTable> a definování struktury pomocí sloupců a omezení můžete do tabulky přidat nové řádky dat.</span><span class="sxs-lookup"><span data-stu-id="598d2-103">After you create a <xref:System.Data.DataTable> and define its structure using columns and constraints, you can add new rows of data to the table.</span></span> <span data-ttu-id="598d2-104">Chcete-li přidat nový řádek, deklarujte novou proměnnou jako <xref:System.Data.DataRow>typ.</span><span class="sxs-lookup"><span data-stu-id="598d2-104">To add a new row, declare a new variable as type <xref:System.Data.DataRow>.</span></span> <span data-ttu-id="598d2-105">Při volání <xref:System.Data.DataTable.NewRow%2A> metody je vrácen nový objekt DataRow.</span><span class="sxs-lookup"><span data-stu-id="598d2-105">A new **DataRow** object is returned when you call the <xref:System.Data.DataTable.NewRow%2A> method.</span></span> <span data-ttu-id="598d2-106">Objekt **DataTable** potom vytvoří objekt **DataRow** na základě struktury tabulky, jak je definováno v <xref:System.Data.DataColumnCollection>.</span><span class="sxs-lookup"><span data-stu-id="598d2-106">The **DataTable** then creates the **DataRow** object based on the structure of the table, as defined by the <xref:System.Data.DataColumnCollection>.</span></span>  
   
- <span data-ttu-id="cb57f-107">Následující příklad ukazuje, jak vytvořit nový řádek voláním **NewRow** metody.</span><span class="sxs-lookup"><span data-stu-id="cb57f-107">The following example demonstrates how to create a new row by calling the **NewRow** method.</span></span>  
+ <span data-ttu-id="598d2-107">Následující příklad ukazuje, jak vytvořit nový řádek voláním metody **NewRow** .</span><span class="sxs-lookup"><span data-stu-id="598d2-107">The following example demonstrates how to create a new row by calling the **NewRow** method.</span></span>  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -25,7 +25,7 @@ Dim workRow As DataRow = workTable.NewRow()
 DataRow workRow = workTable.NewRow();  
 ```  
   
- <span data-ttu-id="cb57f-108">Pak můžete pracovat s nově přidaný řádek pomocí index nebo název sloupce, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="cb57f-108">You then can manipulate the newly added row using an index or the column name, as shown in the following example.</span></span>  
+ <span data-ttu-id="598d2-108">Následně můžete pomocí indexu nebo názvu sloupce manipulovat s nově přidaným řádkem, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="598d2-108">You then can manipulate the newly added row using an index or the column name, as shown in the following example.</span></span>  
   
 ```vb  
 workRow("CustLName") = "Smith"  
@@ -37,7 +37,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- <span data-ttu-id="cb57f-109">Po vložení dat do nového řádku, **přidat** metoda se používá k přidání řádku, který má <xref:System.Data.DataRowCollection>, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="cb57f-109">After data is inserted into the new row, the **Add** method is used to add the row to the <xref:System.Data.DataRowCollection>, shown in the following code.</span></span>  
+ <span data-ttu-id="598d2-109">Po vložení dat do nového řádku je použita metoda **Add** k přidání řádku do <xref:System.Data.DataRowCollection>, který je zobrazen v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="598d2-109">After data is inserted into the new row, the **Add** method is used to add the row to the <xref:System.Data.DataRowCollection>, shown in the following code.</span></span>  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -47,7 +47,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- <span data-ttu-id="cb57f-110">Můžete také volat **přidat** způsob, jak přidat nový řádek předáním pole hodnot, zadaný jako <xref:System.Object>, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="cb57f-110">You can also call the **Add** method to add a new row by passing in an array of values, typed as <xref:System.Object>, as shown in the following example.</span></span>  
+ <span data-ttu-id="598d2-110">Můžete také zavolat metodu **Add** pro přidání nového řádku předáním pole hodnot, <xref:System.Object>jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="598d2-110">You can also call the **Add** method to add a new row by passing in an array of values, typed as <xref:System.Object>, as shown in the following example.</span></span>  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -57,9 +57,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- <span data-ttu-id="cb57f-111">Předá pole hodnot typu **objekt**, možnosti **přidat** metoda vytvoří nový řádek do tabulky a nastaví její hodnoty sloupců na hodnoty v poli objektu.</span><span class="sxs-lookup"><span data-stu-id="cb57f-111">Passing an array of values, typed as **Object**, to the **Add** method creates a new row inside the table and sets its column values to the values in the object array.</span></span> <span data-ttu-id="cb57f-112">Všimněte si, že hodnoty v poli odpovídají postupně na sloupce v pořadí, v jakém jsou uvedeny v tabulce.</span><span class="sxs-lookup"><span data-stu-id="cb57f-112">Note that values in the array are matched sequentially to the columns, based on the order in which they appear in the table.</span></span>  
+ <span data-ttu-id="598d2-111">Předání pole hodnot, které je zadáno jako **objekt**, do metody **Add** vytvoří nový řádek v tabulce a nastaví hodnoty jejich sloupce na hodnoty v poli objektů.</span><span class="sxs-lookup"><span data-stu-id="598d2-111">Passing an array of values, typed as **Object**, to the **Add** method creates a new row inside the table and sets its column values to the values in the object array.</span></span> <span data-ttu-id="598d2-112">Všimněte si, že hodnoty v poli jsou podle pořadí, ve kterém jsou uvedeny v tabulce, porovnány se sloupci.</span><span class="sxs-lookup"><span data-stu-id="598d2-112">Note that values in the array are matched sequentially to the columns, based on the order in which they appear in the table.</span></span>  
   
- <span data-ttu-id="cb57f-113">Následující příklad přidá 10 řádků na nově vytvořený **zákazníkům** tabulky.</span><span class="sxs-lookup"><span data-stu-id="cb57f-113">The following example adds 10 rows to the newly created **Customers** table.</span></span>  
+ <span data-ttu-id="598d2-113">Následující příklad přidá 10 řádků do tabulky nově vytvořené **zákazníky** .</span><span class="sxs-lookup"><span data-stu-id="598d2-113">The following example adds 10 rows to the newly created **Customers** table.</span></span>  
   
 ```vb  
 Dim workRow As DataRow  
@@ -85,11 +85,11 @@ for (int i = 0; i <= 9; i++)
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="cb57f-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb57f-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="598d2-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="598d2-114">See also</span></span>
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
-- [<span data-ttu-id="cb57f-115">Manipulace s daty v datové tabulce</span><span class="sxs-lookup"><span data-stu-id="cb57f-115">Manipulating Data in a DataTable</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [<span data-ttu-id="cb57f-116">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="cb57f-116">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [<span data-ttu-id="598d2-115">Manipulace s daty v datové tabulce</span><span class="sxs-lookup"><span data-stu-id="598d2-115">Manipulating Data in a DataTable</span></span>](manipulating-data-in-a-datatable.md)
+- [<span data-ttu-id="598d2-116">ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="598d2-116">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

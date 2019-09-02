@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: 2d3dc99d78ee9ceb3e8e1cac22fc5571cc1545ba
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 9bff69e28aa17da87da7e94d4e110c0375f043ae
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504106"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203701"
 ---
-# <a name="generating-strongly-typed-datasets"></a><span data-ttu-id="dfe7d-102">Generování datových sad se silnými typy</span><span class="sxs-lookup"><span data-stu-id="dfe7d-102">Generating Strongly Typed DataSets</span></span>
-<span data-ttu-id="dfe7d-103">Zadané schéma XML, který vyhovuje schématu XML definice jazyk (XSD) standard, můžete vygenerovat silného typu <xref:System.Data.DataSet> nástrojem XSD.exe s Windows Software Development Kit (SDK).</span><span class="sxs-lookup"><span data-stu-id="dfe7d-103">Given an XML Schema that complies with the XML Schema definition language (XSD) standard, you can generate a strongly typed <xref:System.Data.DataSet> using the XSD.exe tool provided with the Windows Software Development Kit (SDK).</span></span>  
+# <a name="generating-strongly-typed-datasets"></a><span data-ttu-id="e8aff-102">Generování datových sad se silnými typy</span><span class="sxs-lookup"><span data-stu-id="e8aff-102">Generating Strongly Typed DataSets</span></span>
+<span data-ttu-id="e8aff-103">Vzhledem ke schématu XML, které vyhovuje standardu XSD (XML Schema Definition Language), můžete vytvořit silně typované <xref:System.Data.DataSet> pomocí nástroje XSD. exe, který je součástí sady Windows Software Development Kit (SDK).</span><span class="sxs-lookup"><span data-stu-id="e8aff-103">Given an XML Schema that complies with the XML Schema definition language (XSD) standard, you can generate a strongly typed <xref:System.Data.DataSet> using the XSD.exe tool provided with the Windows Software Development Kit (SDK).</span></span>  
   
- <span data-ttu-id="dfe7d-104">(Vytvoření xsd z tabulky databáze najdete v tématu <xref:System.Data.DataSet.WriteXmlSchema%2A> nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).</span><span class="sxs-lookup"><span data-stu-id="dfe7d-104">(To create an xsd from database tables, see <xref:System.Data.DataSet.WriteXmlSchema%2A> or [Working with Datasets in Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).</span></span>  
+ <span data-ttu-id="e8aff-104">(Chcete-li vytvořit XSD z databázových tabulek <xref:System.Data.DataSet.WriteXmlSchema%2A> , přečtěte si nebo [práce s datovými sadami v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).</span><span class="sxs-lookup"><span data-stu-id="e8aff-104">(To create an xsd from database tables, see <xref:System.Data.DataSet.WriteXmlSchema%2A> or [Working with Datasets in Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)).</span></span>  
   
- <span data-ttu-id="dfe7d-105">Následující kód ukazuje syntaxi pro generování **datovou sadu** pomocí tohoto nástroje.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-105">The following code shows the syntax for generating a **DataSet** using this tool.</span></span>  
+ <span data-ttu-id="e8aff-105">Následující kód ukazuje syntaxi pro generování **datové sady** pomocí tohoto nástroje.</span><span class="sxs-lookup"><span data-stu-id="e8aff-105">The following code shows the syntax for generating a **DataSet** using this tool.</span></span>  
   
 ```  
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- <span data-ttu-id="dfe7d-106">V této syntaxe `/d` směrnice instruuje nástroj v režimu generování **datovou sadu**a `/l:` instruuje nástroj jaký jazyk se má použít (například C# nebo Visual Basic .NET).</span><span class="sxs-lookup"><span data-stu-id="dfe7d-106">In this syntax, the `/d` directive tells the tool to generate a **DataSet**, and the `/l:` tells the tool what language to use (for example, C# or Visual Basic .NET).</span></span> <span data-ttu-id="dfe7d-107">Volitelný `/eld` direktiva Určuje, že vám pomůže LINQ to DataSet dotaz vygenerovaný **datové sady.**</span><span class="sxs-lookup"><span data-stu-id="dfe7d-107">The optional `/eld` directive specifies that you can use LINQ to DataSet to query against the generated **DataSet.**</span></span> <span data-ttu-id="dfe7d-108">Tato možnost se používá při `/d` je také zadán.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-108">This option is used when the `/d` option is also specified.</span></span> <span data-ttu-id="dfe7d-109">Další informace najdete v tématu [dotazování typované datové sady](../../../../../docs/framework/data/adonet/querying-typed-datasets.md).</span><span class="sxs-lookup"><span data-stu-id="dfe7d-109">For more information, see [Querying Typed DataSets](../../../../../docs/framework/data/adonet/querying-typed-datasets.md).</span></span> <span data-ttu-id="dfe7d-110">Volitelný `/n:` – direktiva Určuje nástroj, který také generovat obor názvů pro **datovou sadu** volá **XSDSchema.Namespace**.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-110">The optional `/n:` directive tells the tool to also generate a namespace for the **DataSet** called **XSDSchema.Namespace**.</span></span> <span data-ttu-id="dfe7d-111">Výstup příkazu je XSDSchemaFileName.cs, které je možné zkompilovat a použít v aplikaci ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-111">The output of the command is XSDSchemaFileName.cs, which can be compiled and used in an ADO.NET application.</span></span> <span data-ttu-id="dfe7d-112">Generovaný kód lze zkompilovat jako knihovny nebo modulu.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-112">The generated code can be compiled as a library or a module.</span></span>  
+ <span data-ttu-id="e8aff-106">V této syntaxi `/d` direktiva instruuje nástroj, aby vygeneroval **datovou sadu**, `/l:` a sdělí nástroji, který jazyk má použít (například C# nebo Visual Basic .NET).</span><span class="sxs-lookup"><span data-stu-id="e8aff-106">In this syntax, the `/d` directive tells the tool to generate a **DataSet**, and the `/l:` tells the tool what language to use (for example, C# or Visual Basic .NET).</span></span> <span data-ttu-id="e8aff-107">Volitelná `/eld` direktiva určuje, že můžete použít LINQ to DataSet k dotazování proti vygenerované **datové sadě.**</span><span class="sxs-lookup"><span data-stu-id="e8aff-107">The optional `/eld` directive specifies that you can use LINQ to DataSet to query against the generated **DataSet.**</span></span> <span data-ttu-id="e8aff-108">Tato možnost se používá, když `/d` je také určena možnost.</span><span class="sxs-lookup"><span data-stu-id="e8aff-108">This option is used when the `/d` option is also specified.</span></span> <span data-ttu-id="e8aff-109">Další informace najdete v tématu [dotazování na typové datové sady](../querying-typed-datasets.md).</span><span class="sxs-lookup"><span data-stu-id="e8aff-109">For more information, see [Querying Typed DataSets](../querying-typed-datasets.md).</span></span> <span data-ttu-id="e8aff-110">Volitelná `/n:` direktiva říká nástroji, aby vygenerovala obor názvů pro **datovou sadu** s názvem **xsdschema. Namespace**.</span><span class="sxs-lookup"><span data-stu-id="e8aff-110">The optional `/n:` directive tells the tool to also generate a namespace for the **DataSet** called **XSDSchema.Namespace**.</span></span> <span data-ttu-id="e8aff-111">Výstup příkazu je XSDSchemaFileName.cs, který lze zkompilovat a použít v aplikaci ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="e8aff-111">The output of the command is XSDSchemaFileName.cs, which can be compiled and used in an ADO.NET application.</span></span> <span data-ttu-id="e8aff-112">Vygenerovaný kód může být kompilován jako knihovna nebo modul.</span><span class="sxs-lookup"><span data-stu-id="e8aff-112">The generated code can be compiled as a library or a module.</span></span>  
   
- <span data-ttu-id="dfe7d-113">Následující kód ukazuje syntaxi pro kompilaci vygenerovaného kódu jako knihovny pomocí kompilátoru jazyka C# (csc.exe).</span><span class="sxs-lookup"><span data-stu-id="dfe7d-113">The following code shows the syntax for compiling the generated code as a library using the C# compiler (csc.exe).</span></span>  
+ <span data-ttu-id="e8aff-113">Následující kód ukazuje syntaxi pro zkompilování generovaného kódu jako knihovny pomocí C# kompilátoru (CSc. exe).</span><span class="sxs-lookup"><span data-stu-id="e8aff-113">The following code shows the syntax for compiling the generated code as a library using the C# compiler (csc.exe).</span></span>  
   
 ```  
 csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll  
 ```  
   
- <span data-ttu-id="dfe7d-114">`/t:` Směrnice instruuje nástroj pro kompilaci do knihovny a `/r:` direktivy zadat závislé knihovny požadovaných pro kompilaci.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-114">The `/t:` directive tells the tool to compile to a library, and the `/r:` directives specify dependent libraries required to compile.</span></span> <span data-ttu-id="dfe7d-115">Výstup příkazu je XSDSchemaFileName.dll, které mohou být předána do kompilátor při kompilaci aplikace pomocí technologie ADO.NET `/r:` směrnice.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-115">The output of the command is XSDSchemaFileName.dll, which can be passed to the compiler when compiling an ADO.NET application with the `/r:` directive.</span></span>  
+ <span data-ttu-id="e8aff-114">Direktiva instruuje nástroj, aby jej mohl kompilovat do knihovny `/r:` a direktivy určují závislé knihovny vyžadované ke kompilaci. `/t:`</span><span class="sxs-lookup"><span data-stu-id="e8aff-114">The `/t:` directive tells the tool to compile to a library, and the `/r:` directives specify dependent libraries required to compile.</span></span> <span data-ttu-id="e8aff-115">Výstup příkazu je XSDSchemaFileName. dll, který může být předán kompilátoru při kompilování aplikace ADO.NET s `/r:` direktivou.</span><span class="sxs-lookup"><span data-stu-id="e8aff-115">The output of the command is XSDSchemaFileName.dll, which can be passed to the compiler when compiling an ADO.NET application with the `/r:` directive.</span></span>  
   
- <span data-ttu-id="dfe7d-116">Následující kód ukazuje syntaxi pro přístup k oboru názvů předán XSD.exe v aplikaci ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-116">The following code shows the syntax for accessing the namespace passed to XSD.exe in an ADO.NET application.</span></span>  
+ <span data-ttu-id="e8aff-116">Následující kód ukazuje syntaxi pro přístup k oboru názvů předanému do souboru XSD. exe v aplikaci ADO.NET.</span><span class="sxs-lookup"><span data-stu-id="e8aff-116">The following code shows the syntax for accessing the namespace passed to XSD.exe in an ADO.NET application.</span></span>  
   
 ```vb  
 Imports XSDSchema.Namespace  
@@ -43,7 +43,7 @@ Imports XSDSchema.Namespace
 using XSDSchema.Namespace;  
 ```  
   
- <span data-ttu-id="dfe7d-117">Následující příklad kódu používá typovaného **datovou sadu** s názvem **CustomerDataSet** načíst seznam zákazníků **Northwind** databáze.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-117">The following code example uses a typed **DataSet** named **CustomerDataSet** to load a list of customers from the **Northwind** database.</span></span> <span data-ttu-id="dfe7d-118">Po načtení dat pomocí **vyplnit** metody v příkladu prochází každého zákazníka v **zákazníkům** tabulky pomocí zadaného **CustomersRow** ( **Objekt DataRow**) objektu.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-118">Once the data is loaded using the **Fill** method, the example loops through each customer in the **Customers** table using the typed **CustomersRow** (**DataRow**) object.</span></span> <span data-ttu-id="dfe7d-119">To poskytuje přímý přístup k **CustomerID** sloupců, nikoli až **DataColumnCollection**.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-119">This provides direct access to the **CustomerID** column, as opposed to through the **DataColumnCollection**.</span></span>  
+ <span data-ttu-id="e8aff-117">Následující příklad kódu používá typovou datovou **sadu** s názvem **CustomerDataSet** k načtení seznamu zákazníků z databáze **Northwind** .</span><span class="sxs-lookup"><span data-stu-id="e8aff-117">The following code example uses a typed **DataSet** named **CustomerDataSet** to load a list of customers from the **Northwind** database.</span></span> <span data-ttu-id="e8aff-118">Jakmile se data načtou pomocí metody **Fill** , příklad projde každý zákazník v tabulce **Customers** pomocí typovaného objektu **CustomersRow** (**DataRow**).</span><span class="sxs-lookup"><span data-stu-id="e8aff-118">Once the data is loaded using the **Fill** method, the example loops through each customer in the **Customers** table using the typed **CustomersRow** (**DataRow**) object.</span></span> <span data-ttu-id="e8aff-119">To poskytuje přímý přístup k sloupci **KódZákazníka** , na rozdíl od přes DataColumnCollection.</span><span class="sxs-lookup"><span data-stu-id="e8aff-119">This provides direct access to the **CustomerID** column, as opposed to through the **DataColumnCollection**.</span></span>  
   
 ```vb  
 Dim customers As CustomerDataSet= New CustomerDataSet()  
@@ -73,7 +73,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
   Console.WriteLine(customerRow.CustomerID);  
 ```  
   
- <span data-ttu-id="dfe7d-120">Následuje schéma XML pro příklad.</span><span class="sxs-lookup"><span data-stu-id="dfe7d-120">Following is the XML Schema used for the example.</span></span>  
+ <span data-ttu-id="e8aff-120">Následuje schéma XML použité pro příklad.</span><span class="sxs-lookup"><span data-stu-id="e8aff-120">Following is the XML Schema used for the example.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -94,10 +94,10 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="dfe7d-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dfe7d-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e8aff-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e8aff-121">See also</span></span>
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataSet>
-- [<span data-ttu-id="dfe7d-122">Typové datové sady</span><span class="sxs-lookup"><span data-stu-id="dfe7d-122">Typed DataSets</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)
-- [<span data-ttu-id="dfe7d-123">Datové sady, datové tabulky a datová zobrazení</span><span class="sxs-lookup"><span data-stu-id="dfe7d-123">DataSets, DataTables, and DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [<span data-ttu-id="dfe7d-124">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="dfe7d-124">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [<span data-ttu-id="e8aff-122">Typové datové sady</span><span class="sxs-lookup"><span data-stu-id="e8aff-122">Typed DataSets</span></span>](typed-datasets.md)
+- [<span data-ttu-id="e8aff-123">Datové sady, datové tabulky a datová zobrazení</span><span class="sxs-lookup"><span data-stu-id="e8aff-123">DataSets, DataTables, and DataViews</span></span>](index.md)
+- [<span data-ttu-id="e8aff-124">ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="e8aff-124">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
