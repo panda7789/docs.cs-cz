@@ -1,321 +1,321 @@
 ---
-title: Vyhodnotit změny způsobující chyby – .NET Core
-description: Další informace o způsobech, ve kterém pokouší zachovat kompatibilitu mezi verzemi rozhraní .NET pro vývojáře v .NET Core.
+title: Vyhodnotit přerušující změny – .NET Core
+description: Přečtěte si o způsobech, kterými se .NET Core snaží zachovat kompatibilitu pro vývojáře napříč verzemi .NET.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/10/2019
 ms.openlocfilehash: c68a19b8b98a98bb9c64f5b9fa60b378935e6e93
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 09/02/2019
 ms.locfileid: "67736555"
 ---
-# <a name="evaluate-breaking-changes-in-net-core"></a>Vyzkoušejte nejnovější změny v rozhraní .NET Core
+# <a name="evaluate-breaking-changes-in-net-core"></a>Vyhodnotit poslední změny v .NET Core
 
-V průběhu jeho historie se pokusil .NET udržují vysokou úroveň kompatibility z verze na verzi a mezi verzí rozhraní .NET. Tento postup se opakuje na hodnotu true pro .NET Core. I když novou technologii, která je nezávislá rozhraní .NET Framework lze považovat za .NET Core, dvou hlavních faktorech omezit schopnost .NET Core odchýlení od rozhraní .NET Framework:
+V průběhu své historie se .NET pokusilo udržet vysokou úroveň kompatibility z verze na verzi a v různých charakterech rozhraní .NET. To platí i pro .NET Core. I když .NET Core se dá považovat za novou technologii, která je nezávislá na .NET Framework, dva hlavní faktory omezují schopnost .NET Core odchýlit se od .NET Framework:
 
-- Velký počet vývojáři původně vyvinutý nebo pokračovat ve vývoji aplikací využívajících rozhraní .NET Framework. Očekávají konzistentní chování napříč implementace .NET.
+- Velký počet vývojářů byl buď původně vyvinutý, nebo pokračoval v vývoji .NET Frameworkch aplikací. Očekávají konzistentní chování napříč implementacemi rozhraní .NET.
 
-- Projekty .NET standard knihovny umožňují vývojářům vytvářet knihovny, které se zaměřují společné rozhraní API, které sdílí .NET Core a .NET Framework. Vývojáři očekávat, že knihovny použít v aplikaci .NET Core by se chovají stejně jako stejnou knihovnu použít v aplikaci .NET Framework.
+- Projekty knihovny .NET Standard umožňují vývojářům vytvářet knihovny, které cílí na společná rozhraní API sdílená pomocí .NET Core a .NET Framework. Vývojáři očekávají, že se knihovna používaná v aplikaci .NET Core musí chovat stejně jako stejná knihovna, jakou používá aplikace .NET Framework.
 
-Vývojáři a informace o kompatibilitě mezi implementace .NET očekávat vysoké úrovně kompatibility ve verzích .NET Core. Zejména by měl kód napsaný pro starší verzi .NET Core běžely na novější verzi .NET Core. Celá řada vývojářů ve skutečnosti očekávají, že nová rozhraní API v .NET Core nově vydané verze by měl být také kompatibilní s předběžnou verzí, ve kterých byly zavedeny těchto rozhraní API.
+Společně s kompatibilitou mezi implementacemi .NET očekávají vývojáři vysokou úroveň kompatibility napříč verzemi .NET Core. Konkrétně kód napsaný pro starší verzi rozhraní .NET Core by měl běžet plynule v novější verzi .NET Core. Mnoho vývojářů předpokládá, že nová rozhraní API nalezená v nově vydaných verzích rozhraní .NET Core by měla být také kompatibilní s předběžnými verzemi, ve kterých byla tato rozhraní API zavedena.
 
-Tento článek popisuje kategorie kompatibility změny (nebo změny způsobující chyby) a způsob, ve kterém tým .NET vyhodnotí změny v každém z těchto kategorií. Vysvětlení, jak tým .NET blíží možných nejnovějších změn je zvláště užitečné pro vývojáře, kteří jsou otevření žádosti o přijetí změn v [dotnet/corefx](https://github.com/dotnet/corefx) úložiště GitHub, které upravují chování stávajících rozhraní API.
-
-> [!NOTE]
-> Definice kategorií kompatibility, jako je například binární kompatibilitu a zpětnou kompatibilitu, naleznete v tématu [narušující změně kategorií](categories.md).
-
-Následující části popisuje kategorie změny provedené v rozhraní API pro .NET Core a jejich dopad na kompatibilitu aplikací. Ikona ✔️ naznačuje, že konkrétní druh změn je povoleno, ❌ označuje, že je zakázané a ❓ označuje změnu, která můžou nebo nemusí být povolený. Změny v této poslední kategorii vyžadují posouzení a vyhodnocení jak předvídatelné, jasné a konzistentní předchozí chování byla.
+Tento článek popisuje kategorie změn kompatibility (nebo zásadní změny) a způsob, jakým tým .NET vyhodnocuje změny v každé z těchto kategorií. Porozumění způsobu, jakým tým .NET získává možné nepotřebné změny, je zvláště užitečné pro vývojáře, kteří otevírají žádosti o přijetí změn v úložišti [dotnet/corefx](https://github.com/dotnet/corefx) GitHubu, které upravují chování existujících rozhraní API.
 
 > [!NOTE]
-> Kromě slouží jako vodítko, jak vyhodnotit změny knihovny .NET Core, vývojáře knihovny můžete také tato kritéria použít k vyhodnocení, změny v jejich knihovny cílené na více verzí a implementace .NET.
+> Definici kategorií kompatibility, jako je binární kompatibilita a zpětná kompatibilita, najdete v tématu [přerušující kategorie změn](categories.md).
 
-## <a name="modifications-to-the-public-contract"></a>Úpravy veřejný kontrakt
+Následující části popisují kategorie změn provedených v rozhraních API .NET Core a jejich dopad na kompatibilitu aplikací. Ikona ✔️ označuje, že je povolen určitý druh změny, ❌ indikuje, že není povolený, a ❓ indikuje změnu, která může nebo nemusí být povolená. Změny v této poslední kategorii vyžadují rozhodnutí a vyhodnocení toho, jak bylo předchozí chování předvídatelné, zjevné a konzistentní.
 
-Změny v této kategorii *upravit* veřejnou oblast typu. Většina změn v této kategorii nejsou povoleny, protože porušují *zpětné kompatibility* (možnost aplikace, která byla vytvořena pomocí předchozí verze rozhraní API spouštět bez nutnosti rekompilace na novější verzi).
+> [!NOTE]
+> Kromě toho, že slouží jako vodítko, jak jsou vyhodnocovány změny knihoven .NET Core, mohou vývojáři knihovny použít také k vyhodnocení změn ve svých knihovnách, které cílí na více implementací a verzí rozhraní .NET.
+
+## <a name="modifications-to-the-public-contract"></a>Úpravy veřejné smlouvy
+
+Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina změn v této kategorii není povolená, protože narušují *zpětnou kompatibilitu* (schopnost aplikace, která byla vyvinutá pomocí předchozí verze rozhraní API, aby se spustila bez překompilace na novější verzi).
 
 ### <a name="types"></a>Typy
 
-- **✔️ Odebrání implementaci rozhraní z typu, pokud rozhraní je již implementováno prostřednictvím základní typ**
+- **✔️ odebrání implementace rozhraní z typu, když je rozhraní už implementované základním typem.**
 
-- **Přidání nové implementace rozhraní na typ ❓**
+- **❓ Přidání nové implementace rozhraní do typu**
 
-  To je přijatelné změnit, protože nepříznivě neovlivní stávající klienty. Všechny změny na typ musí pracovat v rámci hranic přijatelné změny, které jsou zde definovány pro novou implementaci zůstat přijatelné. Při přidávání rozhraní, které mají bezprostřední vliv na schopnost návrháře je nutné extrémně opatrní nebo spotřebovanými serializátor pro generování kódu nebo data, která nemůže být nižší úrovně. Příkladem je <xref:System.Runtime.Serialization.ISerializable> rozhraní.
+  Jedná se o přijatelnou změnu, protože nepříznivě neovlivní stávající klienty. Všechny změny typu musí fungovat v rámci hranic přijatelných změn, které jsou zde definovány, aby nová implementace zůstala přijatelná. Při přidávání rozhraní, která přímo ovlivňují schopnost návrháře nebo serializátoru vytvořit kód nebo data, která nelze spotřebovat na nižší úroveň, je nezbytné extrémní opatrnost. Příkladem je <xref:System.Runtime.Serialization.ISerializable> rozhraní.
 
-- **❓ Představujeme novou základní třídu**
+- **❓ Představení nové základní třídy**
 
-  Typ může být zavedeno v hierarchii mezi dva existující typy, pokud ji nemá žádné zavést nové [abstraktní](../../csharp/language-reference/keywords/abstract.md) členy nebo měnit sémantiku nebo chování existující typy. Například v rozhraní .NET Framework 2.0 <xref:System.Data.Common.DbConnection> stal nové základní třída pro třídy <xref:System.Data.SqlClient.SqlConnection>, které dříve měly odvozena přímo z <xref:System.ComponentModel.Component>.
+  Typ lze začlenit do hierarchie mezi dvěma existujícími typy, pokud nezavádí žádné nové [abstraktní](../../csharp/language-reference/keywords/abstract.md) členy nebo nemění sémantiku nebo chování stávajících typů. Například v .NET Framework 2,0 se <xref:System.Data.Common.DbConnection> třída stala novou základní třídou pro <xref:System.Data.SqlClient.SqlConnection>, která byla dříve odvozena přímo z <xref:System.ComponentModel.Component>.
 
-- **✔️ Přesunutí typu z jednoho sestavení do druhého**
+- **✔️ Přesunutí typu z jednoho sestavení na jiný**
 
-  Všimněte si, že *staré* sestavení musí být označeny pomocí <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> , která odkazuje na nové sestavení.
+  Všimněte si, že *původní* sestavení musí být označeno <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> s, které odkazuje na nové sestavení.
 
-- **✔️ Změna [struktura](../../csharp/language-reference/keywords/struct.md) typ, který `readonly struct` typu**
+- **✔️ Změna typu [struktury](../../csharp/language-reference/keywords/struct.md) na `readonly struct` typ**
 
-  Všimněte si, že změna `readonly struct` typ, který `struct` typ není povolený.
+  Všimněte si, že `readonly struct` Změna typu `struct` na typ není povolená.
   
-- **✔️ Přidání [zapečetěné](../../csharp/language-reference/keywords/sealed.md) nebo [abstraktní](../../csharp/language-reference/keywords/abstract.md) – klíčové slovo do typu, pokud nejsou žádné *přístupné* konstruktory (veřejné nebo chráněné)**
+- **✔️ přidání klíčového slova [sealed](../../csharp/language-reference/keywords/sealed.md) nebo [abstract](../../csharp/language-reference/keywords/abstract.md) do typu, pokud nejsou k dispozici žádné (veřejné nebo chráněné) konstruktory**
 
-- **✔️ Rozbalení viditelnosti typu**
+- **✔️ rozšíření viditelnosti typu**
 
-- **❌ Změna oboru názvů nebo název typu**
+- **❌ Změna oboru názvů nebo názvu typu**
 
-- **❌ Přejmenování nebo odstranění veřejného typu**
+- **❌ Přejmenování nebo odebrání veřejného typu**
 
-   Tím je prolomen veškerý kód, který používá typ přejmenovaných nebo odebrané.
+   Tím dojde k zalomení veškerého kódu, který používá přejmenovaný nebo odebraný typ.
 
-- **Změna základního typu výčtu ❌**
+- **❌ Změna základního typu výčtu**
 
-   Toto je za kompilace a chování rozbíjející změny, stejně jako binární zásadní změnu, která může být argumenty atributu nelze analyzovat.
+   Toto je zásadní změna v době kompilace a chování a také binární zásadní změna, která může nastavit argumenty atributu jako neanalyzovatelné.
 
-- **Typ, který byl dříve nezapečetěné zapečetění ❌**
+- **❌ Zapečetění typu, který se dřív nezapečetěný**
 
-- **Přidání rozhraní ke sadu základních typů rozhraní ❌**
+- **❌ Přidání rozhraní do sady základních typů rozhraní**
 
-   Pokud rozhraní implementuje rozhraní, které dříve neimplementovala, všechny typy, které implementované původní verzi rozhraní jsou přerušená.
+   Pokud rozhraní implementuje rozhraní, které dříve neimplementovalo, všechny typy, které implementují původní verzi rozhraní, jsou přerušeny.
 
-- **❓ Odebrání sady základní třídy nebo rozhraní ze sady implementovaných rozhraní třídy**
+- **❓ Odebrání třídy ze sady základních tříd nebo z rozhraní ze sady implementovaných rozhraní**
 
-  Existuje jedna výjimka z pravidla pro odebrání rozhraní: můžete přidat implementaci rozhraní, který je odvozen z rozhraní odebrané. Například můžete odebrat <xref:System.IDisposable> Pokud tento typ nebo rozhraní nyní implementuje <xref:System.ComponentModel.IComponent>, která implementuje <xref:System.IDisposable>.
+  Pravidlo pro odebrání rozhraní obsahuje jednu výjimku: můžete přidat implementaci rozhraní, které je odvozeno z odebraného rozhraní. Například můžete odebrat <xref:System.IDisposable> , pokud typ nebo rozhraní nyní implementuje <xref:System.ComponentModel.IComponent>, které implementuje <xref:System.IDisposable>.
 
-- **❌ Změna `readonly struct` typ, který [struktura](../../csharp/language-reference/keywords/struct.md) typu**
+- **❌ Změna `readonly struct` typu na typ [struktury](../../csharp/language-reference/keywords/struct.md)**
 
-  Všimněte si, že změna `struct` typ, který `readonly struct` typ je povolený.
+  Všimněte si, že změna `struct` typu `readonly struct` na typ je povolena.
 
-- **❌ Změna [struktura](../../csharp/language-reference/keywords/struct.md) typ, který `ref struct` typ a naopak**
+- **❌ Změna typu [struktury](../../csharp/language-reference/keywords/struct.md) na `ref struct` typ a naopak**
 
-- **❌ Snižuje viditelnost typu**
+- **❌ Snížení viditelnosti typu**
 
-   Viditelnost typu je však povoleno.
+   Nicméně zvýšení viditelnosti typu je povoleno.
 
 ### <a name="members"></a>Členové
 
-- **Rozbalení viditelnost člena, který není ✔️ [virtuální](../../csharp/language-reference/keywords/sealed.md)**
+- **✔️ rozšíření viditelnosti členu, který není [virtuální](../../csharp/language-reference/keywords/sealed.md)**
 
-- **✔️ Přidání abstraktní člen veřejný typ, který nemá žádné *přístupné* konstruktory (veřejné nebo chráněné), nebo typ je [zapečetěné](../../csharp/language-reference/keywords/sealed.md)**
+- **✔️ Přidání abstraktního člena k veřejnému typu, který nemá žádné *přístupné* (veřejné nebo chráněné) konstruktory nebo je typ [zapečetěný](../../csharp/language-reference/keywords/sealed.md)**
 
-  Ale přidání abstraktní člen na typ, který má přístupné konstruktory (veřejné nebo chráněné) a není `sealed` není povolený.
+  Nicméně přidání abstraktního člena do typu, který má přístupné (veřejné nebo chráněné) konstruktory a `sealed` není povoleno.
 
-- **✔️ Omezení viditelnost [chráněné](../../csharp/language-reference/keywords/protected.md) členský typ nemá žádné přístupné konstruktory (veřejné nebo chráněné), nebo je typ [zapečetěné](../../csharp/language-reference/keywords/sealed.md)**
+- **✔️ omezit viditelnost chráněného člena, [](../../csharp/language-reference/keywords/protected.md) když typ nemá žádné přístupné (veřejné nebo chráněné) konstruktory nebo je typ [zapečetěný](../../csharp/language-reference/keywords/sealed.md) .**
 
-- **✔️ Přesunutí člena do výše v hierarchii než ze kterého byla odebrána typ třídy**
+- **✔️ přesunu člena do třídy vyšší v hierarchii, než je typ, ze kterého byl odebrán**
 
 - **✔️ Přidání nebo odebrání přepsání**
 
-  Mějte na paměti, Představujeme přepsání může způsobit předchozí spotřebitele mají přeskočit při volání metody přepsání [základní](../../csharp/language-reference/keywords/base.md).
+  Všimněte si, že zavedení přepsání může způsobit, že předchozí příjemci přeskočí přepsání při volání [základny](../../csharp/language-reference/keywords/base.md).
 
-- **✔️ Přidáním konstruktoru do třídy, spolu s výchozí (bezparametrový) konstruktor, pokud třída již dříve měli žádné konstruktory**
+- **✔️ Přidání konstruktoru do třídy spolu s výchozím konstruktorem (bez parametrů), pokud třída předtím neměla žádné konstruktory**
 
-   Ale přidáním konstruktoru do třídy, které dříve měly žádné konstruktory *bez* přidání konstruktor bez parametrů není povoleno.
+   Nicméně přidání konstruktoru do třídy, která dříve neměla žádné konstruktory bez přidání konstruktoru *bez* parametrů, není povoleno.
 
-- **✔️ Změna člena z [abstraktní](../../csharp/language-reference/keywords/abstract.md) k [virtuální](../../csharp/language-reference/keywords/virtual.md)**
+- **✔️ Změna členu z [abstract](../../csharp/language-reference/keywords/abstract.md) na [Virtual](../../csharp/language-reference/keywords/virtual.md)**
 
-- **✔️ Změny z `ref readonly` k `ref` návratovou hodnotu (s výjimkou virtuální metody nebo rozhraní)**
+- **✔️ Změna z `ref readonly` `ref` na návratovou hodnotu (s výjimkou virtuálních metod nebo rozhraní)**
 
-- **✔️ Odebrání [jen pro čtení](../../csharp/language-reference/keywords/readonly.md) z pole, pokud typ statického pole je typu proměnlivé hodnoty**
+- **✔️ odstranění [jen pro čtení](../../csharp/language-reference/keywords/readonly.md) z pole, pokud statický typ pole není proměnlivý typ hodnoty.**
 
-- **Volání nové události, která nebyla dříve definovali ✔️**
+- **✔️ volání nové události, která nebyla dříve definovaná.**
 
-- **Přidání nového pole instance na typ ❓**
+- **❓ Přidání nového pole instance do typu**
 
-   Tato změna má vliv na serializace.
+   Tato změna ovlivňuje serializaci.
 
-- **❌ Přejmenování nebo odstranění veřejný člen nebo parametr**
+- **❌ Přejmenování nebo odebrání veřejného členu nebo parametru**
 
-   Tím je prolomen veškerý kód, který používá přejmenovaných nebo odebraný člen nebo parametr.
+   Tím dojde k rozdělení veškerého kódu, který používá přejmenovaný nebo odebraný člen nebo parametr.
 
-   Všimněte si, že to zahrnuje odebrání nebo přejmenování getter nebo setter z vlastnosti, jakož i přejmenování nebo odstranění výčet členů.
+   Všimněte si, že to zahrnuje odebrání nebo přejmenování metody getter nebo setter z vlastnosti a také přejmenování nebo odebrání členů výčtu.
 
-- **Přidání člena do rozhraní ❌**
+- **❌ Přidání člena do rozhraní**
 
-- **Změna hodnoty veřejný člen nebo konstanta výčtu ❌**
+- **❌ Změna hodnoty veřejné konstanty nebo člena výčtu**
 
-- **❌ Změnou typu vlastnosti, pole, parametr nebo návratovou hodnotu**
+- **❌ Změna typu vlastnosti, pole, parametru nebo návratové hodnoty**
 
-- **❌ Přidání, odebrání nebo změně pořadí parametrů**
+- **❌ Přidání, odebrání nebo změna pořadí parametrů**
 
-- **❌ Přidání nebo odebrání [v](../../csharp/language-reference/keywords/in.md), [si](../../csharp/language-reference/keywords/out.md) , nebo [ref](../../csharp/language-reference/keywords/ref.md) – klíčové slovo z parametru**
+- **❌ Přidání nebo odebrání klíčového slova [in](../../csharp/language-reference/keywords/in.md), [out](../../csharp/language-reference/keywords/out.md) nebo [ref](../../csharp/language-reference/keywords/ref.md) z parametru**
 
-- **❌ Přejmenování parametru (včetně změna jeho velikosti písmen)**
+- **❌ Přejmenování parametru (včetně změny jeho velikosti)**
 
-  To je považováno za rozbíjející dva důvody:
+  To se považuje za porušení dvou důvodů:
   
-  - To naruší s pozdní vazbou scénářů, jako je pozdní vazba funkce v jazyce Visual Basic a [dynamické](../../csharp/language-reference/keywords/dynamic.md) v C#.
+  - Dojde k přerušení scénářů s pozdní vazbou, jako je funkce pozdní vazby [](../../csharp/language-reference/keywords/dynamic.md) v Visual Basic C#a dynamické v.
   
-  - To naruší [zdroje kompatibility](categories.md#source-compatibility) když vývojáři [pojmenované argumenty](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments).
+  - Pokud vývojáři používají [pojmenované argumenty](../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md#named-arguments), dojde k přerušení [kompatibility zdrojů](categories.md#source-compatibility) .
 
-- **❌ Změny z `ref` vracet hodnotu `ref readonly` návratová hodnota**
+- **❌ Změně `ref` návratové hodnoty `ref readonly` na návratovou hodnotu**
 
-- **❌️ Změny z `ref readonly` k `ref` návratová hodnota na virtuální metody nebo rozhraní**
+- **❌️ Změna z `ref readonly` `ref` na návratovou hodnotu u virtuální metody nebo rozhraní**
 
-- **❌ Přidání nebo odebrání [abstraktní](../../csharp/language-reference/keywords/abstract.md) od člena**
+- **❌ Přidávání nebo odebírání [abstraktu](../../csharp/language-reference/keywords/abstract.md) ze člena**
 
-- **❌ Odebírá [virtuální](../../csharp/language-reference/keywords/virtual.md) – klíčové slovo z člena**
+- **❌ Odebrání klíčového slova [Virtual](../../csharp/language-reference/keywords/virtual.md) ze člena**
 
-  To často není k zásadní změně protože C# kompilátor může vygenerovat [Call, callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) Intermediate Language (IL) pokyny k volání nevirtuální metody (`callvirt` provádí kontrolu hodnot null, zatímco nebude normální volání ), toto chování není konstantní z několika důvodů:
-  - C#není pouze jazyk, který cílí na .NET.
+  I když se tato často nejedná o zásadní změnu C# , protože kompilátor chce vygenerovat instrukce [callvirt](<xref:System.Reflection.Emit.OpCodes.Callvirt>) Intermediate Language (IL) pro volání nevirtuálních metod`callvirt` (provede kontrolu null, zatímco normální volání ne), toto chování není. inproměnná z několika důvodů:
+  - C#není jediným jazykem, který cílí na .NET.
   
-  - C# Kompilátoru stále pokusí optimalizovat `callvirt` normální volání pokaždé, když se do cílové metody je nevirtuální a není pravděpodobně null (například pro metodu prostřednictvím [?. operátor šíření hodnoty null](../../csharp/language-reference/operators/member-access-operators.md#null-conditional-operators--and-)).
+  - C# Kompilátor se stále častěji snaží optimalizovat `callvirt` na normální volání, kdykoli je cílová metoda nevirtuální a pravděpodobně není null (například metoda, kterou lze použít prostřednictvím operátoru [šíření?. null](../../csharp/language-reference/operators/member-access-operators.md#null-conditional-operators--and-)).
   
-  Provádění virtuální metoda znamená, že uživatelský kód často skončili byste volání bez prakticky.
+  Vytvořením metody Virtual by kód příjemce často ukončil volání, které není prakticky.
 
-- **❌ Přidání [virtuální](../../csharp/language-reference/keywords/virtual.md) – klíčové slovo ke členovi**
+- **❌ Přidání klíčového slova [Virtual](../../csharp/language-reference/keywords/virtual.md) do člena**
 
-- **❌, že virtuální člen abstraktní**
+- **❌ Vytvoření abstrakce virtuálního členu**
 
-  A [virtuální člen](../../csharp/language-reference/keywords/virtual.md) obsahuje implementace metody, které *může být* přepsána odvozenou třídou. [Abstraktní člen](../../csharp/language-reference/keywords/abstract.md) poskytuje implementaci a *musí být* přepsat.
+  [Virtuální člen](../../csharp/language-reference/keywords/virtual.md) poskytuje implementaci metody, kterou *lze* přepsat odvozenou třídou. [Abstraktní člen](../../csharp/language-reference/keywords/abstract.md) neposkytuje žádnou implementaci a *musí být* přepsán.
 
-- **❌ Přidání abstraktní člen veřejný typ, který má přístupné konstruktory (veřejné nebo chráněné) a že není [zapečetěné](../../csharp/language-reference/keywords/sealed.md)**
+- **❌ Přidání abstraktního člena k veřejnému typu, který má přístupné (veřejné nebo chráněné) konstruktory, které nejsou [zapečetěné](../../csharp/language-reference/keywords/sealed.md)**
 
-- **❌ Přidání nebo odebrání [statické](../../csharp/language-reference/keywords/static.md) – klíčové slovo z člena**
+- **❌ Přidání nebo odebrání klíčového slova [static](../../csharp/language-reference/keywords/static.md) ze člena**
 
-- **Přidání přetížení, které vylučuje existující přetížení a definuje různé chování ❌**
+- **❌ Přidání přetížení, které vylučuje existující přetížení a definuje jiné chování**
 
-  Tím je prolomen existující klienti, kteří byly vázána na předchozí přetížení. Například pokud třída má jednu verzi metody, která přijímá <xref:System.UInt32>, stávající příjemce se úspěšně vytvořit vazbu tohoto přetížení při předávání <xref:System.Int32> hodnotu. Ale pokud přidáte přetížení, která přijímá <xref:System.Int32>při opětovné kompilaci nebo pomocí pozdní vazby, kompilátor nyní vytvoří vazbu nové přetížení. Pokud různé chování vyplývá, je to zásadní změnu.
+  Tím dojde k přerušení stávajících klientů vázaných na předchozí přetížení. Například pokud má třída jedinou verzi metody, která přijímá <xref:System.UInt32>, existující příjemce se úspěšně připojí k tomuto přetížení při <xref:System.Int32> předání hodnoty. Nicméně pokud přidáte přetížení, které přijímá <xref:System.Int32>, při opětovném kompilování nebo použití pozdní vazby, kompilátor nyní váže k novému přetížení. Pokud dojde k různým výsledkům chování, jedná se o zásadní změnu.
 
-- **❌ Přidáním konstruktoru do třídy, které dříve měly žádný konstruktor bez přidání konstruktor bez parametrů**
+- **❌ Přidání konstruktoru do třídy, která dříve neměla žádný konstruktor bez přidání konstruktoru bez parametrů**
 
-- **❌️ Přidání [jen pro čtení](../../csharp/language-reference/keywords/readonly.md) na pole**
+- **❌️ Přidání [ReadOnly](../../csharp/language-reference/keywords/readonly.md) do pole**
 
-- **❌ Snižuje viditelnost člena**
+- **❌ Snížení viditelnosti člena**
 
-   Jedná se o snižuje viditelnost [chráněné](../../csharp/language-reference/keywords/protected.md) člen, když nejsou *přístupné* konstruktory (veřejné nebo chráněné) a typ je *není* [ zapečetěné](../../csharp/language-reference/keywords/sealed.md). Pokud to není tento případ, snižuje viditelnost chráněný člen je povolený.
+   To zahrnuje snížení viditelnosti [chráněného](../../csharp/language-reference/keywords/protected.md) člena, pokud jsou *přístupné* (veřejné nebo chráněné) konstruktory a typ není [zapečetěný](../../csharp/language-reference/keywords/sealed.md). V takovém případě se omezení viditelnosti chráněného člena povoluje.
 
-   Všimněte si, že není povoleno zvýšení viditelnosti člena.
+   Všimněte si, že zvýšení viditelnosti člena je povoleno.
 
-- **❌ Změnu typu člena**
+- **❌ Změna typu člena**
 
-   Návratová hodnota metody nebo typ pole nebo vlastnost nelze upravovat. Například podpis metody, která se vrátí <xref:System.Object> nelze změnit na vrácení <xref:System.String>, nebo naopak.
+   Vrácenou hodnotu metody nebo typu pole nelze změnit. Například signatura metody, která vrací hodnotu <xref:System.Object> <xref:System.String>, nemůže být změněna, aby vracela, nebo naopak.
 
-- **❌ Přidání pole do struktury, které dříve měly žádný stav**
+- **❌ Přidání pole do struktury, která dřív neměla žádný stav**
 
-  Pravidla jednoznačného přiřazení umožňují použití neinicializované proměnné tak dlouho, dokud bezstavové struktura je typ proměnné. Pokud struktura stavové, kód může skončit s neinicializovaná data. Toto je potenciálně zdroj dopadem na dřívější kód a binární narušující změna.
+  Pravidla pro jednoznačné přiřazení umožňují použití neinicializovaných proměnných, pokud typ proměnné je Bezstavová struktura. Pokud je struktura nastavená jako stavová, může kód končit neinicializovanými daty. To může být i poškození zdroje a binární změna.
 
-- **❌ Ohlásí, existující událost v případě, že se nikdy vyvolala před**
+- **❌ Vypálení existující události, když nebyla nikdy aktivována**
 
 ## <a name="behavioral-changes"></a>Změny chování
 
 ### <a name="assemblies"></a>Sestavení
 
-- **✔️ Zajištění přenositelnosti sestavení, když stejných platformách jsou stále podporovány.**
+- **✔️ přenos sestavení v případě, že jsou stejné platformy stále podporovány**
 
-- **Změna názvu sestavení ❌**
-- **❌ Změna veřejný klíč sestavení**
+- **❌ Změna názvu sestavení**
+- **❌ Změna veřejného klíče sestavení**
 
 ### <a name="properties-fields-parameters-and-return-values"></a>Vlastnosti, pole, parametry a návratové hodnoty
 
-- **✔️ Změnou hodnoty vlastnosti, pole, návratová hodnota nebo [si](../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr více odvozený typ**
+- **✔️ Změna hodnoty vlastnosti, pole, návratové hodnoty nebo parametru [out](../../csharp/language-reference/keywords/out-parameter-modifier.md) na více odvozený typ**
 
-  Například metoda, která vrací typ <xref:System.Object> můžete vrátit <xref:System.String> instance. (Však podpis metody nelze změnit.)
+  Například metoda, která vrací typ <xref:System.Object> , může <xref:System.String> vracet instanci. (Signatura metody se ale nemůže změnit.)
 
-- **✔️ Zvýšení rozsahu přijaté hodnoty pro vlastnost nebo parametr, pokud člen není [virtuální](../../csharp/language-reference/keywords/virtual.md)**
+- **✔️ zvýšení rozsahu přijatelných hodnot pro vlastnost nebo parametr, pokud člen není [virtuální](../../csharp/language-reference/keywords/virtual.md) .**
 
-  Všimněte si, že při rozsah hodnot, které může být předán metodě nebo člen vrací můžete rozšířit, nelze typ parametru nebo člen. Například když hodnoty předané metodě můžete rozšířit z 0-124 na 0 – 255, typ parametru nelze změnit z <xref:System.Byte> k <xref:System.Int32>.
+  Všimněte si, že zatímco rozsah hodnot, které lze předat metodě nebo které mohou být vráceny členem, lze rozšířit, parametr nebo typ člena nemůže. Například zatímco hodnoty předané metodě lze rozšířit z 0-124 na 0-255, typ parametru nemůže být změněn z <xref:System.Byte> na. <xref:System.Int32>
 
-- **❌ Zvýšení rozsahu přijaté hodnoty pro vlastnost nebo parametr, pokud je člen [virtuální](../../csharp/language-reference/keywords/virtual.md)**
+- **❌ Zvýšení rozsahu přijatelných hodnot pro vlastnost nebo parametr, pokud je člen [virtuální](../../csharp/language-reference/keywords/virtual.md)**
 
-   Tato změna přeruší stávající přepsaného členy, které nebude fungovat správně pro delší rozsah hodnot.
+   Tato změna rozdělí existující přepsané členy, které nebudou správně fungovat pro rozšířený rozsah hodnot.
 
-- **❌ Snížení rozsah platných hodnot pro vlastnost nebo parametr**
+- **❌ Snížení rozsahu přijatelných hodnot pro vlastnost nebo parametr**
 
-- **Zvýšení rozsahu ❌ vrácené hodnoty pro vlastnosti, pole, návratová hodnota nebo [si](../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr**
+- **❌ Zvýšení rozsahu vrácených hodnot pro vlastnost, pole, návratovou hodnotu nebo [výstupní](../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr**
 
-- **❌ Změna vrácených hodnot pro vlastnosti, pole, metoda návratovou hodnotu, nebo [si](../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr**
+- **❌ Změnu vrácených hodnot pro vlastnost, pole, návratovou hodnotu metody nebo [výstupní](../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr**
 
-- **Změna výchozí hodnoty vlastnosti, pole nebo parametr ❌**
+- **❌ Změna výchozí hodnoty vlastnosti, pole nebo parametru**
 
-- **❌ Změna přesnosti číselná návratová hodnota**
+- **❌ Měnící přesnost číselné návratové hodnoty**
 
-- **Změna ❓ A parsování vstupu a vyvolání nové výjimky (i v případě, že analýza chování není uveden v dokumentaci**
+- **❓ Změnu v analýze vstupu a vyvolání nových výjimek (i v případě, že se v dokumentaci nezadá chování při analýze)**
 
 ### <a name="exceptions"></a>Výjimky
 
-- **✔️ Vyvolání výjimky více odvozený než existující výjimky**
+- **✔️ vyvolání více odvozené výjimky, než je stávající výjimka**
 
-  Protože nová výjimka je podtřídou existující výjimky, pokračuje v předchozí kód zpracování výjimek pro zpracování výjimky. Metody vytváření a načítání jazykové verze v rozhraní .NET Framework 4, například začal vyvolávat <xref:System.Globalization.CultureNotFoundException> místo <xref:System.ArgumentException> Pokud jazykové verze se nenašla. Protože <xref:System.Globalization.CultureNotFoundException> je odvozena z <xref:System.ArgumentException>, to je přijatelné změnit.
+  Vzhledem k tomu, že nová výjimka je podtřídou existující výjimky, pokračuje zpracování předchozí kódu zpracováním výjimky. Například v .NET Framework 4, metody vytváření a načítání jazykové verze začaly vyvolat <xref:System.Globalization.CultureNotFoundException> namísto <xref:System.ArgumentException> , pokud nebyla nalezena jazyková verze. Vzhledem <xref:System.Globalization.CultureNotFoundException> k tomu, <xref:System.ArgumentException>že je odvozen z, jedná se o přijatelnou změnu.
 
-- **Vyvolání více specifické výjimky než ✔️ <xref:System.NotSupportedException>, <xref:System.NotImplementedException>, <xref:System.NullReferenceException>**
+- **✔️ vyvolává konkrétnější výjimku, než <xref:System.NotSupportedException>,, <xref:System.NotImplementedException><xref:System.NullReferenceException>**
 
-- **Došlo k výjimce, která se považuje za neopravitelné ✔️**
+- **✔️a se vyvolala výjimka, která je považována za neodstranitelnou.**
 
-  Neopravitelné výjimky by neměly být zachycovány, ale místo toho by měla být zpracovány vysoké úrovně obslužné rutiny catch – to všechno. Uživatelé se tedy, že kód, který zachytává tyto explicitní výjimky. Neopravitelné výjimky jsou:
+  Neodstranitelné výjimky by neměly být zachyceny, ale místo toho by měly být zpracovány pomocí obslužné rutiny catch na vysoké úrovni. Proto se neočekává, že uživatelé budou mít kód, který tyto explicitní výjimky zachytí. Neobnovitelné výjimky jsou:
 
   - <xref:System.AccessViolationException>
   - <xref:System.ExecutionEngineException>
   - <xref:System.Runtime.InteropServices.SEHException>
   - <xref:System.StackOverflowException>
 
-- **✔️ Vyvolání nové výjimky novou cestu kódu**
+- **✔️ vyvolání nové výjimky v nové cestě kódu**
 
-  Výjimka musíte použít pouze pro nový kód – cestu, který je proveden pomocí nové hodnoty parametru nebo stav, a existující kód, který nemůže provést, který cílí na předchozí verzi.
+  Výjimka se musí vztahovat pouze k nové cestě kódu, která je spuštěna s novými hodnotami parametrů nebo stavem, a nelze ji spustit pomocí stávajícího kódu, který cílí na předchozí verzi.
 
-- **Odebrání výjimky umožňující robustnější chování nebo nové scénáře ✔️**
+- **✔️ odebrání výjimky pro zajištění robustnějšího chování nebo nových scénářů**
 
-  Například `Divide` metodu, která dříve pouze kladné hodnoty zpracovat a došlo <xref:System.ArgumentOutOfRangeException> jinak je změnit, aby bez vyvolání výjimky nepodporuje záporné i kladné hodnoty.
+  Například `Divide` metoda, která dříve zpracovala pouze kladné hodnoty a <xref:System.ArgumentOutOfRangeException> vyvolala jinak, může být změněna tak, aby podporovala záporné i kladné hodnoty bez vyvolání výjimky.
 
-- **✔️ Změnu textu chybovou zprávu**
+- **✔️ Změna textu chybové zprávy**
 
-  Vývojáři, neměli byste tedy spoléhat na textu chybové zprávy, které také změní na základě jazykové verze uživatele.
+  Vývojáři by neměli spoléhat na text chybových zpráv, které se také mění v závislosti na jazykové verzi uživatele.
 
-- **❌ Došlo k výjimce ve všech ostatních případech není uvedené výš**
+- **❌ Vyvolání výjimky v jakémkoli jiném případě, který není uveden výše.**
 
-- **Odebrání výjimky ve všech ostatních případech není uvedené výš ❌**
+- **❌ Odebrání výjimky v jakémkoli jiném případě, který není uvedený výše**
 
 ### <a name="attributes"></a>Atributy
 
-- **Změna hodnoty atributu, který je ✔️ *není* pozorovat**
+- **✔️ Změna hodnoty atributu, který není pozorovatelný**
 
-- **❌ Změnit hodnotu atributu, který *je* pozorovat**
+- **❌ Změna hodnoty atributu, který *je* pozorovatelný**
 
-- **❓ Odebrat atribut**
+- **❓ Odebrání atributu**
 
-  Ve většině případů odebrání atributu (například <xref:System.NonSerializedAttribute>) je zásadní změnu.
+  Ve většině případů je odebrání atributu (například <xref:System.NonSerializedAttribute>) zásadní změnou.
 
 ## <a name="platform-support"></a>Podpora platforem
 
-- **Podporuje operace na platformě, která se dříve podporovaly ✔️**
+- **✔️ podporující operaci na platformě, která nebyla dřív podporovaná**
 
-- **❌ Není podpory nebo nyní vyžadování konkrétního service pack pro operace, který byl dříve podporován na platformě**
+- **❌ Nepodporují nebo ještě nevyžadují konkrétní aktualizaci Service Pack pro operaci, která byla dřív podporovaná na platformě.**
 
-## <a name="internal-implementation-changes"></a>Vnitřní implementace změny
+## <a name="internal-implementation-changes"></a>Změny interní implementace
 
-- **❓ Změna útoku na vnitřní typ**
+- **❓ Změna oblasti povrchu interního typu**
 
-   Tyto změny jsou obecně povoleny, i když jsou přerušit privátní reflexe. V některých případech, kdy Oblíbené knihovny třetích stran nebo velký počet vývojáře závisí na interních rozhraních API, nemusí být povolený tyto změny.
+   Tyto změny jsou obecně povoleny, i když přeruší soukromý odraz. V některých případech, kde jsou oblíbené knihovny třetích stran nebo velký počet vývojářů závislé na interních rozhraních API, nemusí být tyto změny povolené.
 
-- **❓ Změna vnitřní implementace členu**
+- **❓ Změna interní implementace člena**
 
-  Tyto změny jsou obecně povoleny, i když jsou přerušit privátní reflexe. V některých případech, pokud kód zákazníka často závisí na reflexi privátní nebo kde změna představuje nežádoucí vedlejší účinky, nemusí být povolený tyto změny.
+  Tyto změny jsou obecně povoleny, i když přeruší soukromý odraz. V některých případech, kde kód zákazníka často závisí na soukromé reflexi nebo kde změna zavádí nezamýšlené vedlejší účinky, nemusí být tyto změny povoleny.
 
-- **Zlepšení výkonu operace ✔️**
+- **✔️ zlepšení výkonu operace**
 
-   Schopnost upravovat výkonu operace je nezbytné, ale tyto změny může dojít k narušení kódu, která závisí na aktuální rychlost operace. To platí zejména pro kód, který závisí na načasování asynchronních operací. Všimněte si, že změna výkonu by neměla mít žádný vliv na jiné chování rozhraní API dotyčný; v opačném případě se zásadní změnu.
+   Možnost upravit výkon operace je zásadní, ale tyto změny mohou přerušit kód, který spoléhá na aktuální rychlost operace. To platí zejména pro kód, který závisí na časování asynchronních operací. Všimněte si, že změna výkonu by neměla mít žádný vliv na jiné chování rozhraní API. v opačném případě bude změna zálomena.
 
-- **✔️ Nepřímo (a často nepříznivě) Změna výkonu operace**
+- **✔️ nepřímo (a často nepříznivě) měnit výkon operace.**
 
-  Pokud se dané změny není kategorizována jako zásadní nějakého jiného důvodu, je to přijatelné. Často akce nezbytné mají být provedeny, který může obsahovat další operace nebo přidá nové funkce. To bude téměř vždy mít vliv na výkon, ale může být nezbytné, aby rozhraní API ve funkci dotaz podle očekávání.
+  Pokud se změna nedělí z nějakého jiného důvodu jako porušení, je to přijatelné. Často je potřeba provést akce, které mohou zahrnovat dodatečné operace nebo které přidávají nové funkce. To bude téměř vždy mít vliv na výkon, ale může být nezbytné, aby rozhraní API fungovalo podle očekávání.
 
 - **❌ Změna synchronního rozhraní API na asynchronní (a naopak)**
 
 ## <a name="code-changes"></a>Změny kódu
 
-- **✔️ Přidání [params](../../csharp/language-reference/keywords/params.md) na parametr**
+- **✔️ Přidání [parametrů](../../csharp/language-reference/keywords/params.md) do parametru**
 
-- **❌ Změna [struktura](../../csharp/language-reference/keywords/struct.md) k [třídy](../../csharp/language-reference/keywords/class.md) a naopak**
+- **❌ Změnu [struktury](../../csharp/language-reference/keywords/struct.md) na [třídu](../../csharp/language-reference/keywords/class.md) a naopak**
 
-- **❌ Přidání [zaškrtnutí](../../csharp/language-reference/keywords/virtual.md) – klíčové slovo k bloku kódu**
+- **❌ Přidání klíčového slova [checked](../../csharp/language-reference/keywords/virtual.md) do bloku kódu**
 
-   Tato změna může způsobit, že kód, který dříve provedený vyvolání <xref:System.OverflowException> a nemůže být přijata.
+   Tato změna může způsobit, že kód, který dřív provedl k vyvolání <xref:System.OverflowException> a, je nepřijatelný.
 
-- **❌ Odebrání [params](../../csharp/language-reference/keywords/params.md) z parametru**
+- **❌ Odebírání [parametrů](../../csharp/language-reference/keywords/params.md) z parametru**
 
-- **Změna pořadí, ve kterém jsou vyvolávány události ❌**
+- **❌ Změna pořadí, ve kterém jsou události aktivovány**
 
-  Vývojáři můžou očekávat rozumně události, která se aktivuje ve stejném pořadí a kód vývojáře často závisí na pořadí, ve kterém jsou vyvolávány události.
+  Vývojáři mohou rozumně očekávat, že události budou aktivovány ve stejném pořadí a kód pro vývojáře často závisí na pořadí, ve kterém jsou události vyvolány.
 
-- **❌ Odebrání vyvolání události pro danou akci**
+- **❌ Odebrání vyvolání události na dané akci**
 
-- **Jsou volány ❌ změna počet, kolikrát daný události**
+- **❌ Změnu počtu volání daných událostí**
 
-- **❌ Přidání <xref:System.FlagsAttribute> na typ výčtu**
+- **❌ Přidání <xref:System.FlagsAttribute> do výčtového typu**
