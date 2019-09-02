@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: 18d8a22e20626a30585f556f97b54c65f1ab46a2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19b62c24d00903d1494a755dbeabb460935cdacd
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645781"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205937"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implementace explicitní transakce přes CommittableTransaction
 <xref:System.Transactions.CommittableTransaction> Třída poskytuje explicitní způsob pro použití transakcí, na rozdíl od použití aplikacemi <xref:System.Transactions.TransactionScope> třídy implicitně. Je užitečné pro aplikace, které chcete použít stejnou transakci napříč několika volání funkce nebo více vláken volání. Na rozdíl od <xref:System.Transactions.TransactionScope> třídy pro zápis do aplikace potřebuje konkrétně volat <xref:System.Transactions.CommittableTransaction.Commit%2A> a <xref:System.Transactions.Transaction.Rollback%2A> metody za účelem potvrzení nebo přerušení transakce.  
@@ -43,7 +43,7 @@ ms.locfileid: "64645781"
   
  Můžete volat <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> odesláním holdup potvrzení na vlákno z fondu podprocesů. Můžete také volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> k určení, pokud transakce ve skutečnosti byla. Je-li transakce se nepodařilo zapsat z jakéhokoli důvodu <xref:System.Transactions.CommittableTransaction.EndCommit%2A> vyvolá výjimka transakce. Pokud není v čase ještě potvrzené transakce <xref:System.Transactions.CommittableTransaction.EndCommit%2A> je volána, volajícího bude blokován, dokud nebude transakce potvrzena nebo zrušena.  
   
- Nejjednodušší způsob, jak provést asynchronní zápis je poskytnutím metoda zpětného volání, která se má volat po dokončení potvrzení. Je však třeba volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> metodu na původní <xref:System.Transactions.CommittableTransaction> objekt použitý k vyvolání volání. Chcete-li získat tento objekt, můžete přetypovat dolů *IAsyncResult* parametru metody zpětného volání, protože <xref:System.Transactions.CommittableTransaction> implementuje třída <xref:System.IAsyncResult> třídy.  
+ Nejjednodušší způsob, jak provést asynchronní zápis je poskytnutím metoda zpětného volání, která se má volat po dokončení potvrzení. Je však třeba volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> metodu na původní <xref:System.Transactions.CommittableTransaction> objekt použitý k vyvolání volání. Chcete-li získat tento objekt, můžete přetypování parametru *IAsyncResult* metody zpětného volání, protože <xref:System.Transactions.CommittableTransaction> třída implementuje <xref:System.IAsyncResult> třídu.  
   
  Následující příklad ukazuje, jak lze provést asynchronní zápis.  
   
@@ -87,5 +87,5 @@ void OnCommitted(IAsyncResult asyncResult)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Implementace implicitní transakce s využitím oboru transakcí](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)
-- [Zpracování transakcí](../../../../docs/framework/data/transactions/index.md)
+- [Implementace implicitní transakce s využitím oboru transakcí](implementing-an-implicit-transaction-using-transaction-scope.md)
+- [Zpracování transakcí](index.md)

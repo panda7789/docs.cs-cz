@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
-ms.openlocfilehash: b56d2f8cd46f3184f1001c8bd6a70dbfc4968968
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 64ba7a8e6bd6361e14d1f16576e377575b088bbe
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937034"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205151"
 ---
 # <a name="creating-a-datatable"></a>Vytvoření datové tabulky
 , Který představuje jednu tabulku relačních dat v paměti, lze vytvořit a použít nezávisle, nebo mohou být použity jinými .NET Framework objekty, nejčastěji jako člen <xref:System.Data.DataSet>. <xref:System.Data.DataTable>  
@@ -53,8 +53,8 @@ DataTable customersTable = customers.Tables.Add("CustomersTable");
 
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataTableCollection>
-- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
-- [Naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
+- [Datové tabulky](datatables.md)
+- [Naplnění datové sady z adaptéru dat](../populating-a-dataset-from-a-dataadapter.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

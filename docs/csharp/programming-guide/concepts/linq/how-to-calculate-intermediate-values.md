@@ -2,12 +2,12 @@
 title: 'Postupy: Vypočítat mezilehlé hodnoty (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7fd3001f-f8f9-4bce-879f-d4c7af8a04fe
-ms.openlocfilehash: 7b2dfc4e26fc7648cbd93b1e590079e4b105ad43
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: fe3f992e85b3fb508fced943e1428a4fb6ae2490
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594132"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205378"
 ---
 # <a name="how-to-calculate-intermediate-values-c"></a>Postupy: Vypočítat mezilehlé hodnoty (C#)
 Tento příklad ukazuje, jak vypočítat mezilehlé hodnoty, které lze použít při řazení, filtrování a výběr.  
@@ -31,7 +31,7 @@ foreach (decimal ex in extensions)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 55.92  
 73.50  
 89.99  
@@ -59,7 +59,7 @@ foreach (decimal ex in extensions)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 55.92  
 73.50  
 89.99  

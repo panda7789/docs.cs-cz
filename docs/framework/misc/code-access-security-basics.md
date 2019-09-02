@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bbf97b3bc72a12f8920e3a3cace3f7c31ed1e71a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d77683dde24eeec5de7f1e541a6cc86f3b0c6617
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910988"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205635"
 ---
 # <a name="code-access-security-basics"></a>Základy zabezpečení přístupu kódu
 
@@ -32,13 +32,13 @@ Aby bylo možné zapisovat efektivní aplikace zaměřené na modul CLR (Common 
 
 - **Zabezpečené knihovny tříd**: Zabezpečená knihovna tříd používá požadavky na zabezpečení, aby zajistila, že volající knihovny mají oprávnění pro přístup k prostředkům, které knihovna zpřístupňuje. Například knihovna zabezpečených tříd může mít metodu pro vytváření souborů, které by vyžadovaly, že volající mají oprávnění k vytváření souborů. .NET Framework se skládá z bezpečnostních knihoven tříd. Měli byste si uvědomit o oprávněních potřebných pro přístup k libovolné knihovně, kterou používá váš kód. Další informace najdete v části [použití zabezpečených knihoven tříd](#secure_library) dále v tomto tématu.
 
-- **Transparentní kód**: Počínaje .NET Framework 4, kromě určení konkrétních oprávnění, musíte také určit, jestli by měl být váš kód spuštěný jako transparentní z hlediska zabezpečení. Kód transparentní z hlediska zabezpečení nemůže volat typy nebo členy, které jsou identifikovány jako kritické pro zabezpečení. Toto pravidlo se vztahuje na aplikace s plnou důvěryhodností i částečně důvěryhodné aplikace. Další informace najdete v tématu [Kód transparentní pro zabezpečení](../../../docs/framework/misc/security-transparent-code.md).
+- **Transparentní kód**: Počínaje .NET Framework 4, kromě určení konkrétních oprávnění, musíte také určit, jestli by měl být váš kód spuštěný jako transparentní z hlediska zabezpečení. Kód transparentní z hlediska zabezpečení nemůže volat typy nebo členy, které jsou identifikovány jako kritické pro zabezpečení. Toto pravidlo se vztahuje na aplikace s plnou důvěryhodností i částečně důvěryhodné aplikace. Další informace najdete v tématu [Kód transparentní pro zabezpečení](security-transparent-code.md).
 
 <a name="typesafe_code"></a>
 
 ## <a name="writing-verifiably-type-safe-code"></a>Zápis ověřitelného kódu bezpečného typu
 
-Kompilace just-in-time (JIT) provádí proces ověření, který prověřuje kód a pokusí se zjistit, zda je kód typově bezpečný. Kód, který je ověřen při ověřování, je typově bezpečný, se nazývá *ověřitelný kód zajišťující bezpečnost typů*. Kód může být typově bezpečný, ale nemusí být ověřitelný typově bezpečný, protože má omezení procesu ověřování nebo kompilátoru. Ne všechny jazyky jsou typově bezpečné a některé kompilátory jazyka, jako je Microsoft Visual C++, nemůžou generovat ověřitelný kód zabezpečený typově bezpečným způsobem. Chcete-li zjistit, zda kompilátor jazyka, který používáte, vygeneruje ověřitelný typově bezpečný kód, prostudujte si dokumentaci k kompilátoru. Použijete-li kompilátor jazyka, který generuje ověřitelný kód ověřovatele pouze v případě, že se vyhnete určitým jazykovým konstrukcím, můžete použít [Nástroj Nástroj PEVerify](../../../docs/framework/tools/peverify-exe-peverify-tool.md) k určení, zda je kód ověřovatelně typově bezpečný.
+Kompilace just-in-time (JIT) provádí proces ověření, který prověřuje kód a pokusí se zjistit, zda je kód typově bezpečný. Kód, který je ověřen při ověřování, je typově bezpečný, se nazývá *ověřitelný kód zajišťující bezpečnost typů*. Kód může být typově bezpečný, ale nemusí být ověřitelný typově bezpečný, protože má omezení procesu ověřování nebo kompilátoru. Ne všechny jazyky jsou typově bezpečné a některé kompilátory jazyka, jako je Microsoft Visual C++, nemůžou generovat ověřitelný kód zabezpečený typově bezpečným způsobem. Chcete-li zjistit, zda kompilátor jazyka, který používáte, vygeneruje ověřitelný typově bezpečný kód, prostudujte si dokumentaci k kompilátoru. Použijete-li kompilátor jazyka, který generuje ověřitelný kód ověřovatele pouze v případě, že se vyhnete určitým jazykovým konstrukcím, můžete použít [Nástroj Nástroj PEVerify](../tools/peverify-exe-peverify-tool.md) k určení, zda je kód ověřovatelně typově bezpečný.
 
 Kód, který není ověřitelný typově bezpečný, se může pokusit provést, pokud zásady zabezpečení umožní kódu obejít ověření. Nicméně, protože bezpečnost typů je podstatnou součástí mechanismu modulu runtime pro izolaci sestavení, zabezpečení nelze spolehlivě vyhovět, pokud kód narušuje pravidla bezpečnosti typů. Ve výchozím nastavení může být kód, který není typově bezpečný, spuštěn pouze v případě, že pochází z místního počítače. Mobilní kód by proto měl být typově bezpečný.
 
@@ -55,7 +55,7 @@ Zabezpečení přístupu kódu neeliminuje možnost lidské chyby při psaní k�
 Deklarativní syntaxe zabezpečení používá [atributy](../../standard/attributes/index.md) k umístění informací o zabezpečení do [metadat](../../standard/metadata-and-self-describing-components.md) vašeho kódu. Atributy lze umístit na úrovni sestavení, třídy nebo člena, chcete-li určit typ požadavku, poptávku nebo přepsání, který chcete použít. Žádosti se používají v aplikacích, které cílí na modul CLR (Common Language Runtime), aby informovaly systém zabezpečení modulu runtime o oprávněních, která vaše aplikace potřebuje nebo nechce. Požadavky a přepsání se používají v knihovnách k ochraně prostředků před volajícími nebo pro přepsání výchozího chování zabezpečení.
 
 > [!NOTE]
-> V .NET Framework 4 existovaly důležité změny modelu a terminologie zabezpečení .NET Framework. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
+> V .NET Framework 4 existovaly důležité změny modelu a terminologie zabezpečení .NET Framework. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../security/security-changes.md).
 
 Aby bylo možné použít deklarativní volání zabezpečení, je nutné inicializovat stavová data objektu oprávnění tak, aby představovalo konkrétní tvar oprávnění, která potřebujete. Každé integrované oprávnění má atribut, který je předaný <xref:System.Security.Permissions.SecurityAction> výčtu k popisu typu operace zabezpečení, kterou chcete provést. Nicméně oprávnění také přijímají vlastní parametry, které jsou pro ně výhradně.
 
@@ -105,7 +105,7 @@ Imperativní syntaxe zabezpečení vydá bezpečnostní volání vytvořením no
 
 Před provedením tohoto volání zabezpečení je nutné inicializovat stavová data objektu oprávnění tak, aby představovalo konkrétní tvar oprávnění, která potřebujete. Například při vytváření <xref:System.Security.Permissions.FileIOPermission> objektu můžete použít konstruktor k inicializaci objektu **FileIOPermission** tak, aby představoval buď neomezený přístup ke všem souborům, nebo žádný přístup k souborům. Nebo můžete použít jiný objekt **FileIOPermission** , předání parametrů, které určují typ přístupu, který má objekt představovat (tj. čtení, připojení nebo zápis) a jaké soubory chcete objektu chránit.
 
-Kromě použití imperativní syntaxe zabezpečení k vyvolání jediného objektu zabezpečení jej můžete použít k inicializaci skupiny oprávnění v sadě oprávnění. Například tato technika je jediným způsobem, jak spolehlivě provést volání [Assert](../../../docs/framework/misc/using-the-assert-method.md) u více oprávnění v jedné metodě. Pomocí tříd <xref:System.Security.NamedPermissionSet> a vytvořte skupinu oprávnění a pak zavolejte odpovídající metodu pro vyvolání požadovaného bezpečnostního volání. <xref:System.Security.PermissionSet>
+Kromě použití imperativní syntaxe zabezpečení k vyvolání jediného objektu zabezpečení jej můžete použít k inicializaci skupiny oprávnění v sadě oprávnění. Například tato technika je jediným způsobem, jak spolehlivě provést volání [Assert](using-the-assert-method.md) u více oprávnění v jedné metodě. Pomocí tříd <xref:System.Security.NamedPermissionSet> a vytvořte skupinu oprávnění a pak zavolejte odpovídající metodu pro vyvolání požadovaného bezpečnostního volání. <xref:System.Security.PermissionSet>
 
 K provedení požadavků a přepsání, ale ne požadavků, lze použít imperativní syntaxi. Můžete použít imperativní syntaxi pro požadavky a přepsání namísto deklarativní syntaxe, pokud informace, které potřebujete k inicializaci stavu oprávnění, se nazývají pouze v době běhu. Například pokud chcete zajistit, že volající mají oprávnění ke čtení určitého souboru, ale neznáte název tohoto souboru, dokud nespustíte čas spuštění, použijte imperativní požadavek. Můžete také použít imperativní kontroly namísto deklarativních kontrol, pokud potřebujete určit dobu běhu, ať už podmínka obsahuje, a na základě výsledku testu udělat požadavek na zabezpečení (nebo ne).
 
@@ -164,8 +164,8 @@ Pokud chcete, aby aplikace prováděla operaci, která vyžaduje přístup k nes
 - <xref:System.Security.Permissions.FileIOPermission>
 - <xref:System.Security.NamedPermissionSet>
 - <xref:System.Security.Permissions.SecurityAction>
-- [Uplatňuje](../../../docs/framework/misc/using-the-assert-method.md)
-- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
-- [Základy zabezpečení přístupu ke kódu](../../../docs/framework/misc/code-access-security-basics.md)
+- [Uplatňuje](using-the-assert-method.md)
+- [Zabezpečení přístupu kódu](code-access-security.md)
+- [Základy zabezpečení přístupu ke kódu](code-access-security-basics.md)
 - [Atributy](../../standard/attributes/index.md)
 - [Metadata a komponenty popisující samy sebe](../../standard/metadata-and-self-describing-components.md)

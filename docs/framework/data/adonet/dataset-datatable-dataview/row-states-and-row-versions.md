@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
-ms.openlocfilehash: 83147c3f9d70434f5c8dd34e2e56f44f71adc53d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24d0d44f5964708164f89b0d9fa6c4c1aac7da0b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607875"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204504"
 ---
 # <a name="row-states-and-row-versions"></a>Stavy řádků a verze řádků
-ADO.NET spravuje řádků v tabulkách stavy řádků a verze. Stav řádek znamená stavový řádek; verze řádků Udržovat hodnoty uložené v řádku, jako jsou změny, včetně aktuální a původní, výchozí hodnoty. Například po provedení změny na sloupec v řádku, řádku budou mít stav řádku `Modified`, a dvě verze řádků: `Current`, který obsahuje hodnoty aktuálního řádku a `Original`, obsahující hodnoty řádků dříve, než byl sloupec upravit.  
+ADO.NET spravuje řádky v tabulkách pomocí stavů a verzí řádků. Stav řádku určuje stav řádku; verze řádků udržují hodnoty uložené v řádku beze změny, včetně aktuálních, původních a výchozích hodnot. Například po provedení úprav sloupce v řádku bude mít řádek stav `Modified`řádku a dvě verze řádku: `Current`, který obsahuje hodnoty aktuálního řádku, a `Original`, který obsahuje hodnoty řádků před tím, než byl sloupec změn.  
   
- Každý <xref:System.Data.DataRow> má objekt <xref:System.Data.DataRow.RowState%2A> vlastnost, která můžete zkoumat, chcete-li zjistit aktuální stav řádku. Následující tabulka obsahuje stručný popis jednotlivých `RowState` hodnota výčtu.  
+ Každý <xref:System.Data.DataRow> objekt<xref:System.Data.DataRow.RowState%2A> má vlastnost, kterou můžete prozkoumávat, abyste určili aktuální stav řádku. Následující tabulka obsahuje stručný popis každé `RowState` hodnoty výčtu.  
   
 |Hodnota RowState|Popis|  
 |--------------------|-----------------|  
-|<xref:System.Data.DataRowState.Unchanged>|Byly provedeny žádné změny od posledního volání `AcceptChanges` nebo od řádku vytvořil `DataAdapter.Fill`.|  
-|<xref:System.Data.DataRowState.Added>|Řádek byl přidán do tabulky, ale `AcceptChanges` se nevolala.|  
-|<xref:System.Data.DataRowState.Modified>|Některé prvek řádku byl změněn.|  
-|<xref:System.Data.DataRowState.Deleted>|Na řádku byla odstraněna z tabulky, a `AcceptChanges` se nevolala.|  
-|<xref:System.Data.DataRowState.Detached>|Řádek není součástí žádné `DataRowCollection`. `RowState` Nově vytvořený řádku je nastavena na `Detached`. Po nové `DataRow` se přidá do `DataRowCollection` voláním `Add` metoda, hodnota `RowState` je nastavena na `Added`.<br /><br /> `Detached` je také nastavena pro řádek, který byl odebrán z `DataRowCollection` pomocí `Remove` metodu, nebo `Delete` následuje metoda `AcceptChanges` – metoda.|  
+|<xref:System.Data.DataRowState.Unchanged>|Od posledního volání do `AcceptChanges` nebo od chvíle, kdy byl řádek vytvořen pomocí `DataAdapter.Fill`, nebyly provedeny žádné změny.|  
+|<xref:System.Data.DataRowState.Added>|Řádek byl přidán do tabulky, ale `AcceptChanges` nebyl volán.|  
+|<xref:System.Data.DataRowState.Modified>|Byl změněn nějaký element řádku.|  
+|<xref:System.Data.DataRowState.Deleted>|Řádek byl odstraněn z tabulky a `AcceptChanges` nebyl volán.|  
+|<xref:System.Data.DataRowState.Detached>|Řádek není součástí žádného `DataRowCollection`řádku. Nově vytvořený řádek je nastaven na `Detached`hodnotu. `RowState` Po přidání nového `DataRow` do rozhraní `DataRowCollection` voláním `Add` metody je hodnota `RowState` vlastnosti nastavena na `Added`.<br /><br /> `Detached`je také nastaveno pro řádek, `DataRowCollection` který byl odebrán z `Remove` `Delete` metody pomocí metody, nebo metodou následovanou `AcceptChanges` metodou.|  
   
- Když `AcceptChanges` je volán na <xref:System.Data.DataSet>, <xref:System.Data.DataTable> , nebo <xref:System.Data.DataRow>, všechny řádky se stavem řádek `Deleted` se odeberou. Zbývající řádky jsou uvedeny ve stavu řádku `Unchanged`a hodnotami ve `Original` jsou přepsány verze řádku `Current` řádek hodnoty verze. Když `RejectChanges` nazývá všechny řádky se stavem řádek `Added` se odeberou. Zbývající řádky jsou uvedeny ve stavu řádku `Unchanged`a hodnotami ve `Current` jsou přepsány verze řádku `Original` řádek hodnoty verze.  
+ Když `AcceptChanges` je volána <xref:System.Data.DataSet>na, <xref:System.Data.DataTable> `Deleted` nebo <xref:System.Data.DataRow>, jsou odebrány všechny řádky se stavem řádku. Zbývajícím řádkům je uveden stav `Unchanged`řádku a hodnoty `Original` ve verzi řádku `Current` jsou přepsány hodnotami verze řádku. Při `RejectChanges` volání se odeberou všechny řádky se `Added` stavem řádku. Zbývajícím řádkům je uveden stav `Unchanged`řádku a hodnoty `Current` ve verzi řádku `Original` jsou přepsány hodnotami verze řádku.  
   
- Verze odlišný řádek řádku můžete zobrazit pomocí předání <xref:System.Data.DataRowVersion> parametr odkazem na sloupec, jak je znázorněno v následujícím příkladu.  
+ Můžete zobrazit různé verze řádku předáním <xref:System.Data.DataRowVersion> parametru s odkazem na sloupec, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim custRow As DataRow = custTable.Rows(0)  
@@ -39,18 +39,18 @@ DataRow custRow = custTable.Rows[0];
 string custID = custRow["CustomerID", DataRowVersion.Original].ToString();  
 ```  
   
- Následující tabulka obsahuje stručný popis jednotlivých `DataRowVersion` hodnota výčtu.  
+ Následující tabulka obsahuje stručný popis každé `DataRowVersion` hodnoty výčtu.  
   
 |Hodnota DataRowVersion|Popis|  
 |--------------------------|-----------------|  
-|<xref:System.Data.DataRowVersion.Current>|Aktuální hodnoty řádku. Tato verze řádků pro řádky s neexistuje `RowState` z `Deleted`.|  
-|<xref:System.Data.DataRowVersion.Default>|Výchozí verze řádků pro konkrétní řádek. Výchozí verze řádků pro `Added`, `Modified`, nebo `Deleted` řádek je `Current`. Výchozí verze řádků pro `Detached` řádek je `Proposed`.|  
-|<xref:System.Data.DataRowVersion.Original>|Původní hodnoty řádku. Tato verze řádků pro řádky s neexistuje `RowState` z `Added`.|  
-|<xref:System.Data.DataRowVersion.Proposed>|Navrhované hodnoty řádku. Tato verze řádku existuje během operace úpravy na řádku, nebo pro řádek, který není součástí `DataRowCollection`.|  
+|<xref:System.Data.DataRowVersion.Current>|Aktuální hodnoty pro řádek Tato verze řádku neexistuje pro řádky s `RowState`. `Deleted`|  
+|<xref:System.Data.DataRowVersion.Default>|Výchozí verze řádku pro určitý řádek Výchozí verze řádku `Added`pro, `Modified`nebo `Deleted` je `Current`. Výchozí verze řádku pro `Detached` řádek je. `Proposed`|  
+|<xref:System.Data.DataRowVersion.Original>|Původní hodnoty pro řádek Tato verze řádku neexistuje pro řádky s `RowState`. `Added`|  
+|<xref:System.Data.DataRowVersion.Proposed>|Navrhované hodnoty pro řádek Tato verze řádku existuje během operace Edit na řádku nebo pro řádek, který není součástí `DataRowCollection`.|  
   
- Můžete otestovat, jestli `DataRow` má verzi konkrétního řádku voláním <xref:System.Data.DataRow.HasVersion%2A> metoda a předávání `DataRowVersion` jako argument. Například `DataRow.HasVersion(DataRowVersion.Original)` vrátí `false` pro nově přidané řádky před `AcceptChanges` byla volána.  
+ Můžete otestovat, zda `DataRow` má konkrétní verzi řádku <xref:System.Data.DataRow.HasVersion%2A> voláním metody a předáním `DataRowVersion` jako argumentu. Například `DataRow.HasVersion(DataRowVersion.Original)` `AcceptChanges` vrátí `false` pro nově přidané řádky před voláním.  
   
- Následující příklad kódu zobrazuje hodnoty v odstraněné řádky tabulky. `Deleted` není nutné řádků `Current` verze řádku, takže je nutné předat `DataRowVersion.Original` při přístupu k hodnot sloupců.  
+ Následující příklad kódu zobrazuje hodnoty ze všech odstraněných řádků v tabulce. `Deleted`řádky nemají verzi `DataRowVersion.Original` řádku,takžejenutnépřipřístupukhodnotám`Current` sloupců předat.  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  
@@ -96,7 +96,7 @@ foreach (DataRow delRow in delRows)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Adaptéry a čtečky dat](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [Adaptéry a čtečky dat](../dataadapters-and-datareaders.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

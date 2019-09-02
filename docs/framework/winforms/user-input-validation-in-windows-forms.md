@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user input [Windows Forms], validating in Windows Forms
 - validating user input [Windows Forms], Windows Forms
 ms.assetid: 4ec07681-1dee-4bf9-be5e-718f635a33a1
-ms.openlocfilehash: 0a1d6c4c18e658d71f1baf90763e121314ea35d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7ee99d1b264f508882418c83da8e82759b0d95fa
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916295"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206133"
 ---
 # <a name="user-input-validation-in-windows-forms"></a>Ověřování uživatelského vstupu ve Windows Forms
 Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, že jsou data platná, než je aplikace použije. Můžete vyžadovat, aby určitá textová pole nebyla nulová, aby pole bylo formátováno jako telefonní číslo nebo jiný typ dat ve správném formátu, nebo aby řetězec neobsahoval žádné nezabezpečené znaky, které by bylo možné použít k ohrožení zabezpečení databáze. Model Windows Forms poskytuje několik způsobů, jak ověřit vstup ve vaší aplikaci.  
@@ -85,7 +85,7 @@ Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, �
   
 - Voláním <xref:System.Windows.Forms.Form.Close%2A> metody prostřednictvím kódu programu.  
   
- V některých případech však můžete chtít uživateli nechat formulář zavřít bez ohledu na to, zda jsou hodnoty v ovládacích prvcích platné. Můžete přepsat ověřování a zavřít formulář, který stále obsahuje neplatná data, vytvořením obslužné rutiny pro <xref:System.Windows.Forms.Form.Closing> událost formuláře. V případě události nastavte <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost na `false`hodnotu. Tím se formulář vynutí zavřít. Další informace a příklad naleznete v tématu <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>.  
+ V některých případech však můžete chtít uživateli nechat formulář zavřít bez ohledu na to, zda jsou hodnoty v ovládacích prvcích platné. Můžete přepsat ověřování a zavřít formulář, který stále obsahuje neplatná data, vytvořením obslužné rutiny pro <xref:System.Windows.Forms.Form.FormClosing> událost formuláře. V případě události nastavte <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost na `false`hodnotu. Tím se formulář vynutí zavřít. Další informace a příklad naleznete v tématu <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>.  
   
 > [!NOTE]
 > Pokud vynutíte zavření formuláře tímto způsobem, ztratí se všechna data v ovládacích prvcích formuláře, které ještě nebyly uloženy. Kromě toho modální formuláře neověřují obsah ovládacích prvků, když jsou zavřeny. K uzamknutí fokusu na ovládací prvek můžete stále používat ověřování ovládacího prvku, ale nemusíte mít obavy o chování spojené s zavřením formuláře.  
@@ -93,7 +93,7 @@ Když uživatelé zadávají do aplikace data, možná budete chtít ověřit, �
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>
-- <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.FormClosingEventArgs?displayProperty=nameWithType>
 - [Ovládací prvek MaskedTextBox](./controls/maskedtextbox-control-windows-forms.md)
 - [Příklady regulárních výrazů](../../standard/base-types/regular-expression-examples.md)

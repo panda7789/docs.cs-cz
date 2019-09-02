@@ -1,7 +1,7 @@
 ---
-title: $ – interpolace řetězců - C# odkaz
+title: $-odinterpolace řetězců C# – referenční informace
 ms.custom: seodec18
-description: Interpolace řetězců poskytuje čitelné a pohodlné syntaxe pro formátování výstupní řetězec než tradiční řetězec složené formátování.
+description: Interpolace řetězců poskytuje čitelnější a pohodlný Syntax pro formátování výstupu řetězce než tradiční složené formátování řetězce.
 ms.date: 04/29/2019
 f1_keywords:
 - $_CSharpKeyword
@@ -13,91 +13,91 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: bc27eedcf1957a109a9bcb80cf9a49e9606921fd
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 1f0d63a549daa9fecd0cce3a7e5a6496929c37d2
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66250999"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202967"
 ---
-# <a name="---string-interpolation-c-reference"></a>$ – interpolace řetězců (referenční dokumentace jazyka C#)
+# <a name="---string-interpolation-c-reference"></a>$-Řetězcová interpolaceC# (Referenční dokumentace)
 
-`$` Speciální znak identifikuje řetězcového literálu jako *interpolovaný řetězec*. Interpolované řetězce se řetězcový literál, který může obsahovat *interpolace výrazy*. Po vyřešení interpolovaného řetězce do výsledného řetězce položky pomocí interpolace výrazů jsou nahrazené řetězcové reprezentace výsledku výrazu. Tato funkce je dostupná v jazyce C# 6 a novější verze jazyka.
+Speciální znak identifikuje řetězcový literál jako *interpolovaná řetězec.* `$` Interpolovaná řetězcová konstanta je řetězcový literál, který může obsahovat *výrazy interpolace*. Když je interpolovaná řetězcová událost přeložena na výsledný řetězec, položky s výrazy interpolace jsou nahrazeny řetězcovými reprezentacemi výsledků výrazu. Tato funkce je k dispozici v C# 6 a novějších verzích jazyka.
 
-Interpolace řetězců poskytuje čitelné a pohodlné syntaxe pro vytvoření formátovaného řetězce než [řetězec složené formátování](../../../standard/base-types/composite-formatting.md) funkce. Následující příklad používá obě funkce stejný výstup:
+Interpolace řetězců poskytuje čitelnější a pohodlný Syntax pro vytváření formátovaných řetězců, než je funkce [složeného formátování řetězce](../../../standard/base-types/composite-formatting.md) . Následující příklad používá obě funkce k produkci stejného výstupu:
 
 [!code-csharp-interactive[compare with composite formatting](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#1)]
 
-## <a name="structure-of-an-interpolated-string"></a>Struktura interpolovaného řetězce
+## <a name="structure-of-an-interpolated-string"></a>Struktura interpolované řetězce
 
-K identifikaci řetězcového literálu jako interpolovaném řetězci, předřaďte ji `$` symbol. Nemůže obsahovat žádné prázdné znaky. mezi `$` a `"` , který spouští řetězcový literál. To způsobí chybu kompilace.
+Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho `$` symbolem. Mezi `$` znakem `"` a, který začíná řetězcovým literálem, nelze zadat prázdný znak. V důsledku toho dojde k chybě při kompilaci.
 
-Struktura položky s výrazem interpolace vypadá takto:
+Struktura položky s výraz interpolace je následující:
 
-```
+```csharp
 {<interpolationExpression>[,<alignment>][:<formatString>]}
 ```
 
-Prvky v hranatých závorkách jsou volitelné. Následující tabulka popisuje jednotlivé prvky:
+Prvky v hranatých závorkách jsou volitelné. V následující tabulce jsou popsány jednotlivé prvky:
 
 |Prvek|Popis|
 |-------------|-----------------|
-|`interpolationExpression`|Výraz, který vytváří výsledek, který má být formátováno. Řetězcové vyjádření sady `null` výsledkem je <xref:System.String.Empty?displayProperty=nameWithType>.|
-|`alignment`|Konstantní výraz, jehož hodnota definuje minimální počet znaků v řetězcovou reprezentaci výsledek výrazu interpolace. Pokud je pozitivní, řetězcové vyjádření zarovnán doprava; záporná, je zarovnaná doleva. Další informace najdete v tématu [součást zarovnání](../../../standard/base-types/composite-formatting.md#alignment-component).|
-|`formatString`|Formátovací řetězec, který je podporována typem výsledku výrazu. Další informace najdete v tématu [součást řetězec formátu](../../../standard/base-types/composite-formatting.md#format-string-component).|
+|`interpolationExpression`|Výraz, který generuje výsledek, který má být formátován. Řetězcová reprezentace `null` výsledku je <xref:System.String.Empty?displayProperty=nameWithType>.|
+|`alignment`|Konstantní výraz, jehož hodnota určuje minimální počet znaků v řetězcové reprezentaci výsledku výrazu interpolace. Je-li kladné, Řetězcová reprezentace je zarovnána doprava; Pokud je záporná, zůstane zarovnaná doleva. Další informace najdete v tématu [součást zarovnání](../../../standard/base-types/composite-formatting.md#alignment-component).|
+|`formatString`|Řetězec formátu, který je podporován typem výsledku výrazu. Další informace naleznete v tématu [formátovací řetězec – komponenta](../../../standard/base-types/composite-formatting.md#format-string-component).|
 
-Následující příklad používá volitelný formátování komponent popsaných výše:
+Následující příklad používá volitelné formátovací komponenty popsané výše:
 
 [!code-csharp-interactive[specify alignment and format string](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#2)]
 
 ## <a name="special-characters"></a>Speciální znaky
 
-Zahrnout závorek "{" nebo "}", text vytvořené metodou interpolovaného řetězce, použijte dva složené závorky, "{{" nebo "}}". Další informace najdete v tématu [uvozovací znaky složených závorek](../../../standard/base-types/composite-formatting.md#escaping-braces).
+Chcete-li do textu vytvořeného interpolované řetězce zahrnout složené závorky "{" nebo "}", použijte dvě složené závorky "{{" nebo "}}". Další informace naleznete v tématu [uvozovací závorky](../../../standard/base-types/composite-formatting.md#escaping-braces).
 
-Jako dvojtečka (":") má zvláštní význam výrazu položky interpolace, aby bylo možné používat [podmiňovací operátor](../operators/conditional-operator.md) ve výrazu interpolace, použijte tento výraz v závorkách.
+Jelikož dvojtečka (":") má zvláštní význam v položce výrazu interpolace, aby bylo možné použít [podmíněný operátor](../operators/conditional-operator.md) ve výrazu interpolace, vložte tento výraz do závorek.
 
-Následující příklad ukazuje, jak zahrnout složené závorky do výsledného řetězce a jak pomocí podmíněného operátoru ve výrazu interpolace:
+Následující příklad ukazuje, jak zahrnout složenou závorku ve výsledném řetězci a jak používat podmíněný operátor ve výrazu interpolace:
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Doslovný interpolovaný řetězec začíná `$` znak následovaný `@` znak. Další informace o doslovném řetězci, najdete v článku [řetězec](../keywords/string.md) a [Doslovný identifikátor](verbatim.md) témata.
+Doslovné interpolující řetězec začíná `$` znakem následovaným `@` znakem. Další informace o doslovnéch řetězcích naleznete v tématech [řetězec](../keywords/string.md) a [doslovného identifikátoru](verbatim.md) .
 
 > [!NOTE]
-> `$` Token se musí nacházet před `@` token začal v doslovném interpolovaném řetězci.
+> Token se musí vyskytovat `@` před tokenem v doslovném řetězci. `$`
 
 ## <a name="implicit-conversions-and-specifying-iformatprovider-implementation"></a>Implicitní převody a určení `IFormatProvider` implementace
 
-Existují tři implicitní převody z interpolovaném řetězci:
+Existují tři implicitní převody z interpolované řetězce:
 
-1. Převod interpolované řetězce, který se <xref:System.String> instanci, která je výsledkem řešení interpolovaný řetězec s výrazem interpolace položky nahrazeny správně formátovaná řetězcové reprezentace jejich výsledky. Tento převod používá aktuální jazykové verze.
+1. Převod interpolované řetězcové na <xref:System.String> instanci, která je výsledkem interpolované řetězcové překladu s položkami výrazu interpolace, které se nahrazují správně formátovanými řetězcovými reprezentacemi jejich výsledků. Tento převod používá aktuální jazykovou verzi.
 
-1. Převod interpolované řetězce, který se <xref:System.FormattableString> instanci, která představuje složený řetězec formátu spolu s výsledky výrazu, který má být formátováno. Který vám umožní vytvořit více výsledný řetězec s specifické pro jazykovou verzi obsahu z jedné <xref:System.FormattableString> instance. Provedete to, který volat jednu z následujících metod:
+1. Převod interpolované řetězcové na <xref:System.FormattableString> instanci, která představuje složený řetězec formátu společně s výsledky výrazu, který má být formátován. To umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z <xref:System.FormattableString> jedné instance. Chcete-li to provést, zavolejte jednu z následujících metod:
 
-      - A <xref:System.FormattableString.ToString> přetížení, které vytváří výsledný řetězec pro <xref:System.Globalization.CultureInfo.CurrentCulture>.
-      - <xref:System.FormattableString.Invariant%2A> Metodu, která vytváří výsledný řetězec pro <xref:System.Globalization.CultureInfo.InvariantCulture>.
-      - A <xref:System.FormattableString.ToString(System.IFormatProvider)> metodu, která vytváří výsledný řetězec pro zadanou jazykovou verzi.
+      - Přetížení, které vytváří výsledný řetězec <xref:System.Globalization.CultureInfo.CurrentCulture>pro. <xref:System.FormattableString.ToString>
+      - Metoda, která vytváří výsledný řetězec <xref:System.Globalization.CultureInfo.InvariantCulture>pro. <xref:System.FormattableString.Invariant%2A>
+      - <xref:System.FormattableString.ToString(System.IFormatProvider)> Metoda, která vytváří výsledný řetězec pro zadanou jazykovou verzi.
 
-    Můžete také použít <xref:System.FormattableString.ToString(System.IFormatProvider)> metodu k dispozici na uživatelem definované implementace <xref:System.IFormatProvider> rozhraní, které podporuje vlastní formátování. Další informace najdete v tématu [vlastní formátování pomocí ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter).
+    Můžete také použít <xref:System.FormattableString.ToString(System.IFormatProvider)> metodu k poskytnutí uživatelsky definované implementace <xref:System.IFormatProvider> rozhraní, které podporuje vlastní formátování. Další informace najdete v tématu [vlastní formátování pomocí ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter).
 
-1. Převod interpolovaného řetězce do <xref:System.IFormattable> , jež lze také vytvořit více výsledek řetězce s obsahem specifické pro jazykovou verzi z jedné <xref:System.IFormattable> instance.
+1. Převod interpolované řetězce na <xref:System.IFormattable> instanci, která také umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z jedné <xref:System.IFormattable> instance.
 
-Následující příklad používá implicitní převod na <xref:System.FormattableString> vytvořit specifické pro jazykovou verzi výsledný řetězec:
+Následující příklad používá implicitní převod na <xref:System.FormattableString> k vytvoření řetězců výsledků specifických pro jazykovou verzi:
 
 [!code-csharp-interactive[create culture-specific result strings](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#4)]
 
 ## <a name="additional-resources"></a>Další zdroje
 
-Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace v C# ](../../tutorials/exploration/interpolated-strings.yml) interaktivního kurzu. Můžete také zkontrolovat další [interpolace v C# ](../../tutorials/string-interpolation.md) kurz, který ukazuje, jak využívat interpolované řetězce k vytvoření formátovaného řetězce.
+Pokud s interpolací řetězce začínáte, přečtěte si téma o [interpolaci C# řetězce v](../../tutorials/exploration/interpolated-strings.yml) interaktivním kurzu. Můžete také [v C# ](../../tutorials/string-interpolation.md) kurzu ověřit jinou řetězcovou interpolaci, která ukazuje, jak použít interpolované řetězce pro vytváření formátovaných řetězců.
 
-## <a name="compilation-of-interpolated-strings"></a>Kompilace interpolované řetězce
+## <a name="compilation-of-interpolated-strings"></a>Kompilace interpolovaná řetězce
 
-Pokud interpolovaný řetězec má typ `string`, obvykle se transformuje na <xref:System.String.Format%2A?displayProperty=nameWithType> volání metody. Kompilátor může nahradit <xref:System.String.Format%2A?displayProperty=nameWithType> s <xref:System.String.Concat%2A?displayProperty=nameWithType> Pokud analyzovat chování by ekvivalentní zřetězení.
+Pokud má interpolující řetězec typ `string`, je obvykle transformovaná <xref:System.String.Format%2A?displayProperty=nameWithType> na volání metody. Kompilátor může nahradit <xref:System.String.Format%2A?displayProperty=nameWithType> , <xref:System.String.Concat%2A?displayProperty=nameWithType> Pokud bylo analyzované chování ekvivalentní zřetězení.
 
-Pokud interpolovaný řetězec má typ <xref:System.IFormattable> nebo <xref:System.FormattableString>, kompilátor vygeneruje volání <xref:System.Runtime.CompilerServices.FormattableStringFactory.Create%2A?displayProperty=nameWithType> metody.
+Pokud má interpolující řetězec typ <xref:System.IFormattable> nebo <xref:System.FormattableString>, kompilátor <xref:System.Runtime.CompilerServices.FormattableStringFactory.Create%2A?displayProperty=nameWithType> vygeneruje volání metody.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [interpolovaných řetězců](~/_csharplang/spec/expressions.md#interpolated-strings) část [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
+Další informace naleznete v části [interpolované řetězce](~/_csharplang/spec/expressions.md#interpolated-strings) ve [ C# specifikaci jazyka](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Viz také:
 
@@ -109,4 +109,4 @@ Další informace najdete v tématu [interpolovaných řetězců](~/_csharplang/
 - [Řetězce](../../programming-guide/strings/index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Speciální znaky v jazyce C#](index.md)
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)

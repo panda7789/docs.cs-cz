@@ -2,51 +2,51 @@
 title: Použití XML v datové sadě
 ms.date: 03/30/2017
 ms.assetid: 35138159-e199-49ec-baf7-1ec6777e171e
-ms.openlocfilehash: 9e586ff0c6f28dd5919bc8b1bc640389a5cad610
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba68f0fbe84a9877596ddfefd56f71a5889cf8de
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607084"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203138"
 ---
 # <a name="using-xml-in-a-dataset"></a>Použití XML v datové sadě
-Pomocí ADO.NET můžete přejít k vyplnění <xref:System.Data.DataSet> z datový proud XML nebo dokumentu. Můžete použít na datový proud XML nebo dokument, předejte <xref:System.Data.DataSet> data, informace o schématu nebo obojí. Dodané z datový proud XML nebo dokumentu je možné kombinovat s existující data nebo informace o schématu již v <xref:System.Data.DataSet>.  
+Pomocí ADO.NET můžete vyplnit <xref:System.Data.DataSet> datový proud XML nebo dokument. Datový proud XML nebo dokument můžete použít k poskytnutí <xref:System.Data.DataSet> dat, informací o schématu nebo obojího. Informace poskytnuté z datového proudu XML nebo dokumentu lze kombinovat se stávajícími informacemi o schématu, které <xref:System.Data.DataSet>již existují v nástroji.  
   
- ADO.NET také umožňuje vytvořit reprezentaci v jazyce XML <xref:System.Data.DataSet>, s nebo bez jeho schématu, aby bylo možné přenést <xref:System.Data.DataSet> přes HTTP používají jiné aplikace nebo XML povolené platformy. V reprezentaci XML <xref:System.Data.DataSet>, data je napsána v XML a schéma, pokud je zahrnuty vložené v reprezentaci, je zapsáno s použitím jazyka pro definici schématu XML (XSD). XML a schéma XML poskytují pohodlný formát pro přenos obsahu <xref:System.Data.DataSet> do a ze vzdálených klientů.  
+ ADO.NET také umožňuje vytvořit reprezentaci <xref:System.Data.DataSet>XML s a bez jejího schématu, aby bylo možné <xref:System.Data.DataSet> přenést přenos přes protokol HTTP pro použití jinou aplikací nebo platformou podporující XML. V jazyce XML reprezentace <xref:System.Data.DataSet>a jsou data zapsána do XML a schématu, pokud je vložena do reprezentace, jsou zapsána pomocí jazyka XML Schema Definition Language (XSD). Schéma XML a XML poskytují pohodlný formát pro přenos obsahu <xref:System.Data.DataSet> a ze vzdálených klientů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md)  
- Poskytuje podrobné informace o formát DiffGram formátu XML ke čtení a zápis obsahu <xref:System.Data.DataSet>.  
+ [DiffGrams](diffgrams.md)  
+ Poskytuje podrobné informace o formátu DiffGram, formátu XML, který se používá ke čtení a zápisu obsahu <xref:System.Data.DataSet>.  
   
- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
- Tento článek popisuje různé možnosti, které je třeba zvážit při načítání obsahu <xref:System.Data.DataSet> z dokumentu XML.  
+ [Načtení datové sady z XML](loading-a-dataset-from-xml.md)  
+ Popisuje různé možnosti, které je <xref:System.Data.DataSet> třeba vzít v úvahu při načítání obsahu z dokumentu XML.  
   
- [Kopírování obsahu datové sady jako dat XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
- Popisuje, jak generovat obsah <xref:System.Data.DataSet> jako XML data a různé možnosti formátu XML, můžete použít.  
+ [Kopírování obsahu datové sady jako dat XML](writing-dataset-contents-as-xml-data.md)  
+ Popisuje, jak vygenerovat obsah a <xref:System.Data.DataSet> jako data XML, a různé možnosti formátu XML, které můžete použít.  
   
- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
- Tento článek popisuje <xref:System.Data.DataSet> metody používané k načtení schématu <xref:System.Data.DataSet> ze souboru XML.  
+ [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)  
+ Popisuje metody používané pro načtení schématu <xref:System.Data.DataSet> z kódu XML. <xref:System.Data.DataSet>  
   
- [Zápis informací o schématu datové sady jako XSD](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-schema-information-as-xsd.md)  
- Popisuje využití pro schématu XML a tom, jak vygenerovat z <xref:System.Data.DataSet>.  
+ [Zápis informací o schématu datové sady jako XSD](writing-dataset-schema-information-as-xsd.md)  
+ Popisuje použití pro schéma XML a způsob, jak jej vygenerovat <xref:System.Data.DataSet>.  
   
- [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
- Tento článek popisuje funkce dostupné v rozhraní .NET Framework synchronní přístup k relačních a hierarchických zobrazení jedné sady dat a ukazuje, jak vytvořit relaci mezi synchronním <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument>.  
+ [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)  
+ Popisuje možnosti dostupné v .NET Framework synchronního přístupu k relačním i hierarchickým zobrazením jedné sady dat a ukazuje, jak vytvořit synchronní vztah mezi <xref:System.Data.DataSet> <xref:System.Xml.XmlDataDocument>a a.  
   
- [Vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
- Tento článek popisuje význam vnořené <xref:System.Data.DataRelation> objekty při vyjadřování obsah <xref:System.Data.DataSet> jako data XML a popisuje, jak je vytvářet.  
+ [Vnoření datových relací](nesting-datarelations.md)  
+ Popisuje důležitost vnořených <xref:System.Data.DataRelation> objektů, které představují obsah a <xref:System.Data.DataSet> jako data XML, a popisuje, jak je vytvořit.  
   
- [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Popisuje relační struktury nebo schématu, <xref:System.Data.DataSet> , který je vytvořen ze schématu XML.  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Popisuje relační strukturu neboli schéma <xref:System.Data.DataSet> , které je vytvořeno ze schématu XML.  
   
- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
- Popisuje výsledný relační struktury nebo schématu, <xref:System.Data.DataSet> , který je vytvořen při odvodit z elementů XML.  
+ [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)  
+ Popisuje výslednou relační strukturu neboli schéma <xref:System.Data.DataSet> , které je vytvořeno při odvození z prvků XML.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
- Popisuje ADO.NET architektura a komponenty a jejich použití pro přístup k stávajících zdrojů dat stejně jako ke správě dat aplikací.  
+ [Přehled ADO.NET](../ado-net-overview.md)  
+ Popisuje architekturu a komponenty ADO.NET a jejich použití pro přístup k existujícím zdrojům dat a také ke správě aplikačních dat.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

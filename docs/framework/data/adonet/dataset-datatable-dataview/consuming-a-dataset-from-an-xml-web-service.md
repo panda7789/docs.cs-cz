@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: acf5af755d6322f75a616005cc904d464564bc81
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 962163b51507647fd975815c214891a6d692e66c
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915819"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203943"
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Spotřebování datové sady z webové služby XML
-<xref:System.Data.DataSet> Bylo navrženo s odpojeným návrhem, v rámci kterého se usnadnil pohodlný přenos dat přes Internet. **Datová sada** je "serializovatelný" v tom, že ji lze zadat jako vstup nebo výstup z webových služeb XML bez jakéhokoli dalšího kódování požadovaného pro streamování obsahu **datové sady** z webové služby XML do klienta a zpět. **Datová sada** je implicitně převedena na datový proud XML pomocí formátu DiffGram, který je odeslán přes síť a následně znovu sestaven z datového proudu XML jako **datová sada** na přijímacím konci. Získáte tak velmi jednoduchou a flexibilní metodu pro přenášení a vracení relačních dat pomocí webových služeb XML. Další informace o formátu formátu DiffGram naleznete v tématu [DiffGram](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
+<xref:System.Data.DataSet> Bylo navrženo s odpojeným návrhem, v rámci kterého se usnadnil pohodlný přenos dat přes Internet. **Datová sada** je "serializovatelný" v tom, že ji lze zadat jako vstup nebo výstup z webových služeb XML bez jakéhokoli dalšího kódování požadovaného pro streamování obsahu **datové sady** z webové služby XML do klienta a zpět. **Datová sada** je implicitně převedena na datový proud XML pomocí formátu DiffGram, který je odeslán přes síť a následně znovu sestaven z datového proudu XML jako **datová sada** na přijímacím konci. Získáte tak velmi jednoduchou a flexibilní metodu pro přenášení a vracení relačních dat pomocí webových služeb XML. Další informace o formátu formátu DiffGram naleznete v tématu [DiffGram](diffgrams.md).  
   
  Následující příklad ukazuje, jak vytvořit webovou službu XML a klienta, které používají datovou **sadu** pro přenos relačních dat (včetně upravených dat) a řešení všech aktualizací zpátky do původního zdroje dat.  
   
@@ -157,7 +157,7 @@ ms.locfileid: "69915819"
     }  
     ```  
   
-     V typickém scénáři by byla metoda **UpdateCustomers** zapsána k zachycení optimistického narušení souběžnosti. Pro zjednodušení tento příklad nezahrnuje. Další informace o optimistické souběžnosti naleznete v tématu [Optimistická souběžnost](../../../../../docs/framework/data/adonet/optimistic-concurrency.md).  
+     V typickém scénáři by byla metoda **UpdateCustomers** zapsána k zachycení optimistického narušení souběžnosti. Pro zjednodušení tento příklad nezahrnuje. Další informace o optimistické souběžnosti naleznete v tématu [Optimistická souběžnost](../optimistic-concurrency.md).  
   
 2. Vytvoří proxy webové služby XML.  
   
@@ -261,11 +261,11 @@ ms.locfileid: "69915819"
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET](../../../../../docs/framework/data/adonet/index.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
-- [Naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)
+- [ADO.NET](../index.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [Datové tabulky](datatables.md)
+- [Naplnění datové sady z adaptéru dat](../populating-a-dataset-from-a-dataadapter.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](../updating-data-sources-with-dataadapters.md)
+- [Parametry adaptéru dat](../dataadapter-parameters.md)
 - [Nástroj Web Services Description Language (WSDL. exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

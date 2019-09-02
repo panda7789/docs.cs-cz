@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e824fd686176d83c26ca2c042348c9423fbcc884
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ee78c1c1f92515472bb3ea3ce77405a5e3447fd9
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910743"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206113"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpečení kódu obálky
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -47,7 +47,7 @@ ms.locfileid: "69910743"
 ## <a name="link-demands-and-wrappers"></a>Požadavky na propojení a obálky  
  Speciální případ ochrany s požadavky propojení byl posílen v infrastruktuře zabezpečení, ale stále je zdrojem možných slabých stránek v kódu.  
   
- Pokud plně důvěryhodný kód volá vlastnost, událost nebo metodu chráněnou [LinkDemand](../../../docs/framework/misc/link-demands.md), volání je úspěšné, pokud je splněna kontrolní oprávnění **LinkDemand** pro volajícího. Kromě toho, pokud plně důvěryhodný kód zveřejňuje třídu, která přebírá název vlastnosti a volá svůj přístupový objekt **Get** pomocí reflexe, volání metody **Get** je úspěšné, i když uživatelský kód nemá právo na přístup k této vlastnosti. Důvodem je, že **LinkDemand** kontroluje pouze bezprostředního volajícího, což je plně důvěryhodný kód. V podstatě plně důvěryhodný kód provádí privilegované volání jménem uživatelského kódu bez toho, aby se zajistilo, že kód uživatele má oprávnění k provedení tohoto volání.  
+ Pokud plně důvěryhodný kód volá vlastnost, událost nebo metodu chráněnou [LinkDemand](link-demands.md), volání je úspěšné, pokud je splněna kontrolní oprávnění **LinkDemand** pro volajícího. Kromě toho, pokud plně důvěryhodný kód zveřejňuje třídu, která přebírá název vlastnosti a volá svůj přístupový objekt **Get** pomocí reflexe, volání metody **Get** je úspěšné, i když uživatelský kód nemá právo na přístup k této vlastnosti. Důvodem je, že **LinkDemand** kontroluje pouze bezprostředního volajícího, což je plně důvěryhodný kód. V podstatě plně důvěryhodný kód provádí privilegované volání jménem uživatelského kódu bez toho, aby se zajistilo, že kód uživatele má oprávnění k provedení tohoto volání.  
   
  Aby se zabránilo takovému bezpečnostnímu otvoru, modul CLR (Common Language Runtime) rozšiřuje kontrolu na úplný požadavek na procházení zásobníku na jakémkoli nepřímém volání metody, konstruktoru, vlastnosti nebo události chráněné **LinkDemand**. Tato ochrana má za následek nějaké náklady na výkon a mění sémantiku kontroly zabezpečení. úplný požadavek na procházení zásobníku může selhat, pokud by byla úspěšná i jedna úroveň kontroly.  
   
@@ -73,10 +73,10 @@ ms.locfileid: "69910743"
   
 - <xref:System.Security.Permissions.SecurityAction.Demand>Určuje procházení zásobníku zabezpečení přístupu kódu. Všichni volající v zásobníku musí mít zadané oprávnění nebo identitu předat. **Poptávka** probíhá při každém volání, protože zásobník může obsahovat různé volající. Při opakovaném volání metody se k této kontrole zabezpečení dojde pokaždé, když. **Poptávka** je dobrá ochrana před útoky luring; zjistí se neoprávněný kód, který se pokouší získat přes.  
   
-- K [LinkDemand](../../../docs/framework/misc/link-demands.md) dojde v době kompilace JIT (just-in-time) a kontroluje pouze bezprostředního volajícího. Tato kontrolu zabezpečení nekontroluje volajícího volajícího. Po dokončení této kontroly se neúčtují žádné další nároky na zabezpečení bez ohledu na to, kolikrát volající může zavolat. Neexistuje ale ani ochrana před luring útoky. S **LinkDemand**, jakýkoliv kód, který projde test a může odkazovat na váš kód, může potenciálně přerušit zabezpečení tím, že umožňuje škodlivému kódu volat pomocí autorizovaného kódu. Proto nepoužívejte **LinkDemand** , pokud všechny možné slabiny nemůžete důkladně zabránit.  
+- K [LinkDemand](link-demands.md) dojde v době kompilace JIT (just-in-time) a kontroluje pouze bezprostředního volajícího. Tato kontrolu zabezpečení nekontroluje volajícího volajícího. Po dokončení této kontroly se neúčtují žádné další nároky na zabezpečení bez ohledu na to, kolikrát volající může zavolat. Neexistuje ale ani ochrana před luring útoky. S **LinkDemand**, jakýkoliv kód, který projde test a může odkazovat na váš kód, může potenciálně přerušit zabezpečení tím, že umožňuje škodlivému kódu volat pomocí autorizovaného kódu. Proto nepoužívejte **LinkDemand** , pokud všechny možné slabiny nemůžete důkladně zabránit.  
   
     > [!NOTE]
-    > V .NET Framework 4 byly požadavky propojení nahrazeny <xref:System.Security.SecurityCriticalAttribute> atributem v <xref:System.Security.SecurityRuleSet.Level2> sestaveních. <xref:System.Security.SecurityCriticalAttribute> Je ekvivalentem požadavku propojení pro úplný vztah důvěryhodnosti, ale má vliv také na pravidla dědičnosti. Další informace o této změně najdete v tématu [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
+    > V .NET Framework 4 byly požadavky propojení nahrazeny <xref:System.Security.SecurityCriticalAttribute> atributem v <xref:System.Security.SecurityRuleSet.Level2> sestaveních. <xref:System.Security.SecurityCriticalAttribute> Je ekvivalentem požadavku propojení pro úplný vztah důvěryhodnosti, ale má vliv také na pravidla dědičnosti. Další informace o této změně najdete v tématu [Kód transparentní pro zabezpečení, úroveň 2](security-transparent-code-level-2.md).  
   
  Další preventivní opatření nutná při použití **LinkDemand** musí být naprogramována individuálně; systém zabezpečení může pomáhat s vynucováním. Jakékoli omyly otevírá slabá místa zabezpečení. Veškerý autorizovaný kód, který používá váš kód, musí být zodpovědný za implementaci dalšího zabezpečení pomocí následujícího postupu:  
   

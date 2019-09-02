@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c34f531d-4b9b-4071-b2d7-342c402aa586
-ms.openlocfilehash: 7c80294c4bc879e6a1df4c9d1170eef14b8b83de
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 46109ee1781b8b509df87b4203c51a55b9f596ae
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915816"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205102"
 ---
 # <a name="datarow-deletion"></a>Odstranění datového řádku
 Existují dvě metody, které <xref:System.Data.DataRow> lze použít k odstranění objektu <xref:System.Data.DataTable> z objektu: <xref:System.Data.DataRow.Delete%2A> metodu <xref:System.Data.DataRowCollection> **Remove** objektu a metodu objektu **DataRow** . Zatímco metoda odstraní **objekt DataRow** z **kolekci DataRowCollection**, <xref:System.Data.DataRow.Delete%2A> metoda označí řádek pouze pro odstranění. <xref:System.Data.DataRowCollection.Remove%2A> Ke skutečnému odebrání dojde, když aplikace zavolá metodu **AcceptChanges** . Pomocí nástroje <xref:System.Data.DataRow.Delete%2A>můžete programově ověřit, které řádky jsou označené k odstranění, než je skutečně odeberete. Když je řádek označený k odstranění, jeho <xref:System.Data.DataRow.RowState%2A> vlastnost je nastavena na. <xref:System.Data.DataRow.Delete%2A>  
@@ -49,5 +49,5 @@ workRow.Delete();
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

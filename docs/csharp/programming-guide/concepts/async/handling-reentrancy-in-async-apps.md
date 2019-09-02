@@ -2,12 +2,12 @@
 title: Zpracování Vícenásobný přístup v asynchronních aplikacíchC#()
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 78d6b786e5d54a75325d8a7a31b3e12eef7184e8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3b6c5e29559a5350bdce7ad8bcf971281bb79994
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595637"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204294"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Zpracování Vícenásobný přístup v asynchronních aplikacíchC#()
 
@@ -36,7 +36,7 @@ V příkladu v tomto tématu uživatelé zvolí tlačítko **Spustit** pro zahá
 
 Následující příklad ukazuje očekávaný výstup, pokud uživatel klikne na tlačítko **Start** pouze jednou. Seznam stažených webů se zobrazí v bajtech v bajtech každé lokality. Celkový počet bajtů se zobrazí na konci.
 
-```
+```output
 1. msdn.microsoft.com/library/hh191443.aspx                83732
 2. msdn.microsoft.com/library/aa578028.aspx               205273
 3. msdn.microsoft.com/library/jj155761.aspx                29019
@@ -51,7 +51,7 @@ TOTAL bytes returned:  890591
 
 Pokud však uživatel zvolí tlačítko více než jednou, obslužná rutina události je vyvolána opakovaně a proces stahování je znovu zadán pokaždé. Výsledkem je, že několik asynchronních operací je současně spuštěno, výstup vynechává výsledky a celkový počet bajtů je matoucí.
 
-```
+```output
 1. msdn.microsoft.com/library/hh191443.aspx                83732
 2. msdn.microsoft.com/library/aa578028.aspx               205273
 3. msdn.microsoft.com/library/jj155761.aspx                29019
@@ -270,7 +270,7 @@ async Task AccessTheWebAsync(CancellationToken ct)
 
 Pokud při spuštění této aplikace několikrát kliknete na tlačítko **Start** , mělo by se jednat o výsledky, které se podobají následujícímu výstupu.
 
-```
+```output
 1. msdn.microsoft.com/library/hh191443.aspx                83732
 2. msdn.microsoft.com/library/aa578028.aspx               205273
 3. msdn.microsoft.com/library/jj155761.aspx                29019
@@ -308,7 +308,7 @@ Chcete-li nastavit tento scénář, proveďte následující změny základního
 
 Následující výstup ukazuje výsledek, pokud uživatel zvolí tlačítko **Start** pouze jednou. Označení písmenem (a) označuje, že výsledek je od první zvolené tlačítko **Start** . Čísla zobrazují pořadí adres URL v seznamu cílů stahování.
 
-```
+```output
 #Starting group A.
 #Task assigned for group A.
 
@@ -328,7 +328,7 @@ TOTAL bytes returned:  918876
 
 Pokud uživatel třikrát zvolí tlačítko **Start** , aplikace vytvoří výstup podobný následujícímu řádku. Informační řádky, které začínají znakem křížku (#) sledují průběh aplikace.
 
-```
+```output
 #Starting group A.
 #Task assigned for group A.
 
@@ -499,7 +499,7 @@ Výstup ukazuje následující vzory.
 
 - Skupinu lze spustit, když se v předchozí skupině zobrazuje výstup, ale zobrazení výstupu předchozí skupiny není přerušeno.
 
-    ```
+    ```output
     #Starting group A.
     #Task assigned for group A. Download tasks are active.
 
@@ -537,7 +537,7 @@ Výstup ukazuje následující vzory.
 
 - Ve výstupu se vždy zobrazí následující dva řádky společně. Kód se nikdy nepřerušil mezi zahájením operace skupiny v `StartButton_Click` a přiřazením úlohy pro `pendingWork`skupinu.
 
-    ```
+    ```output
     #Starting group B.
     #Task assigned for group B. Download tasks are active.
     ```

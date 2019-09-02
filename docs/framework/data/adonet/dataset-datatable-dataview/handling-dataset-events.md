@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54edefe0-bc38-419b-b486-3d8a0c356f13
-ms.openlocfilehash: 8b93b0564bbd6d760193f11d23d97ccb2cb4c943
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 88f35d90f02b44b88f4bb7c6fac6a94a09afe81a
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928519"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204849"
 ---
 # <a name="handling-dataset-events"></a>Zpracování událostí datové sady
 Objekt poskytuje tři události: <xref:System.ComponentModel.MarshalByValueComponent.Disposed>, <xref:System.Data.DataSet.Initialized>, a <xref:System.Data.DataSet.MergeFailed>. <xref:System.Data.DataSet>  
@@ -53,11 +53,11 @@ private static void DataSetMergeFailed(
 > [!NOTE]
 > Objekty `DataSet` a `DataTable` dědíz<xref:System.ComponentModel.MarshalByValueComponent> rozhraní a podporují ho pro vzdálenou komunikaci. <xref:System.Runtime.Serialization.ISerializable> Toto jsou jediné ADO.NET objekty, které je možné vzdáleně vymezit. Další informace najdete v tématu [Vzdálená komunikace rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)).  
   
- Informace o dalších událostech, které jsou k dispozici při práci s a `DataSet`, naleznete v tématu [zpracování událostí DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md) a [zpracování událostí DataAdapter](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ Informace o dalších událostech, které jsou k dispozici při práci s a `DataSet`, naleznete v tématu [zpracování událostí DataTable](handling-datatable-events.md) a [zpracování událostí DataAdapter](../handling-dataadapter-events.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
 - [Ověřování dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/t3b36awf(v=vs.120))
-- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [Načítání a úpravy dat v ADO.NET](../retrieving-and-modifying-data.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

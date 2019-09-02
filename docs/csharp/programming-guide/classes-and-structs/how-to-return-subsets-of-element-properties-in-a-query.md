@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 9238e2e312021958ad62eeba89fe8b72c113e0d7
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 2c9fea2189819058187020c2e67b8826659fbed4
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596844"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205443"
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Postupy: Vrácení podmnožiny vlastností elementu v dotazu (C# Průvodce programováním)
 Použít anonymní typ ve výrazu dotazu, když platí obě tyto podmínky:  
@@ -21,7 +21,7 @@ Použít anonymní typ ve výrazu dotazu, když platí obě tyto podmínky:
   
  Pokud chcete pouze vrátit jednu vlastnost nebo pole z každého elementu zdroje, můžete pouze použít operátor tečka v `select` klauzuli. Například pro vrácení pouze `ID` každého z nich `student`zapište `select` klauzuli následujícím způsobem:  
   
-```  
+```csharp  
 select student.ID;  
 ```  
   
@@ -32,7 +32,7 @@ select student.ID;
   
  Všimněte si, že anonymní typ používá názvy zdrojového elementu pro jeho vlastnosti, pokud nejsou zadány žádné názvy. Chcete-li zadat nové názvy vlastností v anonymním typu, zapište `select` příkaz následujícím způsobem:  
   
-```  
+```csharp  
 select new { First = student.FirstName, Last = student.LastName };  
 ```  
   

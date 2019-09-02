@@ -11,17 +11,17 @@ helpviewer_keywords:
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ca30448c24efc48be3d68c6b3fa03c949b72d1a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d1c108e75c0e2da3d513669f5b8b02bada43b983
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910709"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206076"
 ---
 # <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Transparentnost pomáhá vývojářům psát bezpečnější .NET Framework knihovny, které zpřístupňují funkce částečně důvěryhodnému kódu. Transparentnost první úrovně byla představena v .NET Framework verze 2,0 a byla primárně používána pouze v rámci společnosti Microsoft. Počínaje .NET Framework 4 můžete použít [transparentnost úrovně 2](../../../docs/framework/misc/security-transparent-code-level-2.md). Transparentnost první úrovně ale byla zachovaná, takže můžete identifikovat starší kód, který musí běžet s předchozími pravidly zabezpečení.  
+ Transparentnost pomáhá vývojářům psát bezpečnější .NET Framework knihovny, které zpřístupňují funkce částečně důvěryhodnému kódu. Transparentnost první úrovně byla představena v .NET Framework verze 2,0 a byla primárně používána pouze v rámci společnosti Microsoft. Počínaje .NET Framework 4 můžete použít [transparentnost úrovně 2](security-transparent-code-level-2.md). Transparentnost první úrovně ale byla zachovaná, takže můžete identifikovat starší kód, který musí běžet s předchozími pravidly zabezpečení.  
   
 > [!IMPORTANT]
 > Měli byste zadat transparentnost první úrovně pouze pro kompatibilitu; To znamená, že zadejte úroveň 1 pouze pro kód vyvinutý s .NET Framework 3,5 nebo starším, který používá <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nebo nepoužívá model transparentnosti. Například použijte transparentnost první úrovně pro sestavení .NET Framework 2,0, která umožňují volání z částečně důvěryhodných volajících (APTCA). Pro kód vyvinutý pro .NET Framework 4 vždy použijte transparentnost úrovně 2.  
@@ -132,5 +132,5 @@ public class B
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md)
-- [Změny zabezpečení](../../../docs/framework/security/security-changes.md)
+- [Kód transparentní pro zabezpečení, úroveň 2](security-transparent-code-level-2.md)
+- [Změny zabezpečení](../security/security-changes.md)

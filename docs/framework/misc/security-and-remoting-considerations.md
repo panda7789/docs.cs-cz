@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bb5727bab8e06decde6ccff8b84515f82c3d491a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2d4d3b009e5792685ea39a3bcc2a15e082e1b8de
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910691"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206094"
 ---
 # <a name="security-and-remoting-considerations"></a>Důležité informace o zabezpečení a vzdálené komunikaci
 Vzdálená komunikace umožňuje nastavit transparentní volání mezi doménami aplikace, procesy nebo počítači. Procházení zásobníku zabezpečení přístupu kódu ale nemůže mezi procesy nebo počítači překročit hranice (používá se mezi aplikačními doménami stejného procesu).  
   
  Jakákoliv třída, která je vzdáleně (odvozená od <xref:System.MarshalByRefObject> třídy), musí převzít zodpovědnost za zabezpečení. Kód by měl být použit pouze v uzavřených prostředích, kde může být volající kód implicitně důvěryhodný, nebo by volání vzdálené komunikace měla být navržena tak, aby nepředmětoval chráněný kód na vnější položku, která by mohla být použita škodlivě.  
   
- Obecně by nikdy neměly vystavovat metody, vlastnosti nebo události, které jsou chráněny pomocí deklarativního [LinkDemand](../../../docs/framework/misc/link-demands.md) a <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> kontroly zabezpečení. U vzdálené komunikace nejsou tyto kontroly vynutily. Další kontroly zabezpečení, například <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](../../../docs/framework/misc/using-the-assert-method.md)a tak dále, pracují mezi doménami aplikace v rámci procesu, ale nefungují ve scénářích mezi procesy a mezi počítači.  
+ Obecně by nikdy neměly vystavovat metody, vlastnosti nebo události, které jsou chráněny pomocí deklarativního [LinkDemand](link-demands.md) a <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> kontroly zabezpečení. U vzdálené komunikace nejsou tyto kontroly vynutily. Další kontroly zabezpečení, například <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](using-the-assert-method.md)a tak dále, pracují mezi doménami aplikace v rámci procesu, ale nefungují ve scénářích mezi procesy a mezi počítači.  
   
 ## <a name="protected-objects"></a>Chráněné objekty  
  Některé objekty samy uchovávají stav zabezpečení. Tyto objekty by neměly být předány nedůvěryhodnému kódu, což by pak získalo autorizaci zabezpečení nad rámec svých vlastních oprávnění.  

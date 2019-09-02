@@ -2,12 +2,12 @@
 title: Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
 ms.date: 03/30/2017
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
-ms.openlocfilehash: 4cd229737d7569afe84d945dce0fbb6867f3ef76
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7070d82c430b762059153c544e26478dc2d7ae39
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948709"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205879"
 ---
 # <a name="security-trust-levels-in-accessing-resources"></a>Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
 Toto téma popisuje, jak je omezen přístup na studijních materiálech, které <xref:System.Transactions> zveřejňuje.  
@@ -38,7 +38,7 @@ Toto téma popisuje, jak je omezen přístup na studijních materiálech, které
   
  Chcete-li povolit obnovení, tento typ aplikace má možnost trvale spotřebovávat systémové prostředky. Toto je vzhledem k tomu, že správce obnovitelných transakcí musí mějte na paměti, transakcí, které mají potvrzeny, dokud můžete ověřit, že všechny správce trvalý prostředků, které se účastní transakce přijali výsledek. Proto tento typ aplikace vyžaduje plnou důvěryhodnost a by neměl být spuštěn, není-li poskytovaná úroveň vztahu důvěryhodnosti.  
   
- Další informace o trvalých zařazení a obnovení najdete v tématu [zařazení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) a [provádění témat pro obnovení](../../../../docs/framework/data/transactions/performing-recovery.md) .  
+ Další informace o trvalých zařazení a obnovení najdete v tématu [zařazení prostředků jako účastníků v transakci](enlisting-resources-as-participants-in-a-transaction.md) a [provádění témat pro obnovení](performing-recovery.md) .  
   
  Aplikace, které provádějí starší verze definiční pracovat s modelu COM + jsou také nutné mít plnou důvěryhodnost.  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Řízení typu projekce (C#)'
 ms.date: 07/20/2015
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-ms.openlocfilehash: 559cfb2a38ba76fb37a17100f0441498223852d7
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a44f7616beba3e07f6e44cc279c67468abc779e3
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594017"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204089"
 ---
 # <a name="how-to-control-the-type-of-a-projection-c"></a>Postupy: Řízení typu projekce (C#)
 Projekcí je proces pořízení jedné sady dat, její filtrování, změna jejího tvaru a dokonce i změna jejího typu. Většina výrazů dotazů provádí projekce. Většina výrazů dotazu zobrazených v této části je <xref:System.Collections.Generic.IEnumerable%601> vyhodnocena <xref:System.Xml.Linq.XElement>jako z, ale můžete řídit typ projekce pro vytváření kolekcí jiných typů. V tomto tématu se dozvíte, jak to provést.  
@@ -62,7 +62,7 @@ class Program
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 GREAL:Great Lakes Food Market:Howard Snyder  
 HUNGC:Hungry Coyote Import Store:Yoshi Latimer  
 LAZYK:Lazy K Kountry Store:John Steel  

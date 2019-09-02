@@ -5,12 +5,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: 2689b2c8-b4dc-4b71-b9bd-f95e619122d7
-ms.openlocfilehash: bc406659bec3fd8d5da87b597356a3411c7a2605
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 619c3ffbc68c8c72ea9dd6545ab8da536380483b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567395"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206166"
 ---
 # <a name="mcprocesscontent-attribute"></a>mc:ProcessContent – atribut
 Určuje, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] které prvky mají stále obsah zpracovaný relevantními nadřazenými prvky, a to i v případě, že je přímý nadřazený [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] element ignorován procesorem z důvodu určení [atributu MC: ignorováno](mc-ignorable-attribute.md). Atribut podporuje kompatibilitu značek pro vlastní mapování oboru názvů a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správu verzí. `mc:ProcessContent`  
@@ -44,7 +44,7 @@ Určuje, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]
   
  V atributu lze zadat více předpon pomocí oddělovače mezer, například: `mc:ProcessContent="ignore:Element1 ignore:Element2"`.  
   
- [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] Obor názvů definuje jiné elementy a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](https://go.microsoft.com/fwlink/?LinkId=73824).  
+ `http://schemas.openxmlformats.org/markup-compatibility/2006` Obor názvů definuje jiné elementy a atributy, které nejsou zdokumentovány v této oblasti sady SDK. Další informace najdete v tématu [specifikace kompatibility značek XML](https://go.microsoft.com/fwlink/?LinkId=73824).  
   
 ## <a name="see-also"></a>Viz také:
 

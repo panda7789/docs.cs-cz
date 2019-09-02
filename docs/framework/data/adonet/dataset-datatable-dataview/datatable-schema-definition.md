@@ -2,12 +2,12 @@
 title: Definice schématu datové tabulky
 ms.date: 03/30/2017
 ms.assetid: efbcdda4-f5a9-421d-8be2-4c194c74552f
-ms.openlocfilehash: 20fee4316ad95c0f8716a0f374410009ea129222
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0d2609801da3bc336c54d32068246027cfd6d3aa
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952349"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204988"
 ---
 # <a name="datatable-schema-definition"></a>Definice schématu datové tabulky
 Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Definujete schéma <xref:System.Data.DataTable> s použitím <xref:System.Data.DataColumn> objektů <xref:System.Data.ForeignKeyConstraint> i objektů a <xref:System.Data.UniqueConstraint> . Sloupce v tabulce lze namapovat na sloupce ve zdroji dat, obsahovat počítané hodnoty z výrazů, automaticky zvyšovat jejich hodnoty nebo obsahovat hodnoty primárního klíče.  
@@ -20,22 +20,22 @@ Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Defi
 > Vlastnost objektu DataTable nemá vliv na toto chování. <xref:System.Data.DataTable.CaseSensitive%2A> Vlastnost **CaseSensitive** se vztahuje na data v tabulce a ovlivňuje řazení, vyhledávání, filtrování, vynucování omezení atd., ale nikoli odkazy na sloupce, relace a omezení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přidání sloupců do datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-columns-to-a-datatable.md)  
+ [Přidání sloupců do datové tabulky](adding-columns-to-a-datatable.md)  
  Popisuje, jak definovat sloupce tabulky pomocí objektů DataColumn .  
   
- [Vytváření sloupců výrazů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-expression-columns.md)  
+ [Vytváření sloupců výrazů](creating-expression-columns.md)  
  Vysvětluje, jak lze vlastnost **Expression** sloupce použít k výpočtu hodnot na základě hodnot z jiných sloupců na řádku.  
   
- [Vytváření sloupců s automatickým navyšováním](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)  
+ [Vytváření sloupců s automatickým navyšováním](creating-autoincrement-columns.md)  
  Popisuje, jak lze nastavit sloupec tak, aby automaticky zvyšován číselné hodnoty, aby se zajistila jedinečná hodnota sloupce na řádek.  
   
- [Definování primárních klíčů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)  
+ [Definování primárních klíčů](defining-primary-keys.md)  
  Popisuje, jak zadat primární klíč tabulky z jednoho nebo více objektů DataColumn .  
   
- [Omezení datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)  
+ [Omezení datových tabulek](datatable-constraints.md)  
  Popisuje, jak definovat cizí klíč a jedinečná omezení pro sloupce v tabulce.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
+- [Datové tabulky](datatables.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

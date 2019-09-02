@@ -2,27 +2,27 @@
 title: Mapování implicitních relací mezi elementy ve vnořeném schématu
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-ms.openlocfilehash: 6fcb0b9bb7c947359c2334d3d116f5317f84af83
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e9ea85db98a577991e06e0239a0738a2ca5bada6
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586809"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203478"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapování implicitních relací mezi elementy ve vnořeném schématu
-Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořené do jiné. V takovém případě proces mapování použije výchozí mapování a vytvoří v následující <xref:System.Data.DataSet>:  
+Schéma jazyka XML Schema Definition Language (XSD) může mít vnořené typy vnořené uvnitř sebe. V tomto případě proces mapování použije výchozí mapování a vytvoří následující <xref:System.Data.DataSet>:  
   
-- Jednu tabulku pro každý z komplexních typů (nadřazené a podřízené).  
+- Jedna tabulka pro každý ze složitých typů (nadřazených a podřízených).  
   
-- Pokud neexistuje žádné omezení unique u nadřazené, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulky.  
+- Pokud v nadřazeném prvku neexistuje žádné jedinečné omezení, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id, kde *TableName* je název nadřazené tabulky.  
   
-- Omezení primárního klíče na identifikaci další sloupec jako primární klíč nadřazené tabulky (nastavením **isprimarykey hodnotu** vlastnost **True**). Omezení jmenuje omezení\# kde \# je 1, 2, 3 a tak dále. Například výchozí název pro první omezení je Constraint1.  
+- Omezení primárního klíče v nadřazené tabulce, které identifikuje další sloupec jako primární klíč (nastavením vlastnosti **IsPrimaryKey** na **hodnotu true**). Omezení je pojmenované jako omezení\# , \# kde je 1, 2, 3 atd. Výchozím názvem pro první omezení je například Constraint1.  
   
-- Omezení cizího klíče v podřízené tabulce, určení dalších sloupců jako cizí klíč odkazující na primární klíč nadřazené tabulky. Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.  
+- Omezení cizího klíče v podřízené tabulce identifikující další sloupec jako cizí klíč odkazující na primární klíč nadřazené tabulky. Omezení je pojmenované *ParentTable_ChildTable* , kde *Parent* je název nadřazené tabulky a podřízená tabulka je název podřízené tabulky.  
   
-- Datová relace mezi nadřazenými a podřízenými tabulkami.  
+- Vztah dat mezi nadřazenými a podřízenými tabulkami.  
   
- Následující příklad ukazuje schématu kde **OrderDetail** je podřízený prvek **pořadí**.  
+ Následující příklad ukazuje schéma, kde **OrderDetail** je podřízeným prvkem **Order**.  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -54,16 +54,16 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
 </xs:schema>  
 ```  
   
- Proces mapování schématu XML vytvoří následující **datovou sadu**:  
+ Proces mapování schématu XML vytvoří v **datové sadě**následující:  
   
-- **Pořadí** a **OrderDetail** tabulky.  
+- **Objednávka** a tabulka **OrderDetail**  
   
     ```  
     Order(OrderNumber, EmpNumber, Order_Id)  
     OrderDetail(OrderNo, ItemNo, Order_Id)  
     ```  
   
-- Omezení unique u **pořadí** tabulky. Všimněte si, že **isprimarykey hodnotu** je nastavena na **True**.  
+- Jedinečné omezení v tabulce **Order** . Všimněte si, že vlastnost **IsPrimaryKey** je nastavena na **hodnotu true**.  
   
     ```  
     ConstraintName: Constraint1  
@@ -73,7 +73,7 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
     IsPrimaryKey: True  
     ```  
   
-- Omezení cizího klíče na **OrderDetail** tabulky.  
+- Omezení cizího klíče v tabulce **OrderDetail**  
   
     ```  
     ConstraintName: Order_OrderDetail  
@@ -84,7 +84,7 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
     RelatedColumns: Order_Id   
     ```  
   
-- Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .  
+- Vztah mezi tabulkami **Order** a **OrderDetail** . **Vnořená** vlastnost pro tento vztah je nastavena na **hodnotu true** , protože prvky **Order** a **OrderDetail** jsou vnořené ve schématu.  
   
     ```  
     ParentTable: Order  
@@ -99,6 +99,6 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)
-- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
+- [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

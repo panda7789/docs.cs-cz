@@ -2,12 +2,12 @@
 title: Hledání textu v dokumentech aplikace WordC#()
 ms.date: 07/20/2015
 ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
-ms.openlocfilehash: 99a6bc2bb08af47ab725ef94ae8cd77d54cbad0a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 173472b9dbd669476c3e5529655d111b88b0dba2
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594337"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205397"
 ---
 # <a name="finding-text-in-word-documents-c"></a>Hledání textu v dokumentech aplikace WordC#()
 Toto téma rozšiřuje předchozí dotazy, aby bylo možné něco využít: vyhledá všechny výskyty řetězce v dokumentu.  
@@ -167,7 +167,7 @@ class Program
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 StyleName:Code >        Console.WriteLine("Hello World");<  
 StyleName:Code >Hello World<  
 ```  
@@ -314,7 +314,7 @@ class Program
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 StyleName:Code ><  
 ```  
   

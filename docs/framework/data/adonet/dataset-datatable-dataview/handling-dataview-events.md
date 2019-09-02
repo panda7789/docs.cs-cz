@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
-ms.openlocfilehash: 6c2e554b7e6bde3e82190f70723f272b0d39a18a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3a1077bff9bf457b4aef0b05357d4a9260f8973
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880032"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204819"
 ---
 # <a name="handling-dataview-events"></a>Zpracování událostí zobrazení dat
-Můžete použít <xref:System.Data.DataView.ListChanged> událost <xref:System.Data.DataView> k určení, jestli má aktualizované zobrazení. Aktualizace, které vyvolávají události zahrnují přidání, odstranění nebo úprava řádků v podkladové tabulce; Přidání nebo odstranění sloupce do schématu podkladové tabulce. a změna v nadřazené nebo podřízené relace. **ListChanged** události také vás upozorní, pokud seznam řádků se vám zobrazuje významně změnil z důvodu použití nového pořadí řazení nebo filtru.  
+Můžete použít <xref:System.Data.DataView.ListChanged> událost <xref:System.Data.DataView> k určení, zda bylo zobrazení aktualizováno. Aktualizace, které vyvolávají událost, zahrnují přidání, odstranění nebo úpravu řádku v podkladové tabulce; Přidání nebo odstranění sloupce ve schématu podkladové tabulky; a změna v relaci nadřazeného nebo podřízeného vztahu. Událost **ListChanged** vás také upozorní, pokud se seznam zobrazených řádků významně změnil v důsledku použití nového pořadí řazení nebo filtru.  
   
- **ListChanged** implementuje událostí **ListChangedEventHandler** delegáta z <xref:System.ComponentModel> obor názvů a přijímá jako vstup <xref:System.ComponentModel.ListChangedEventArgs> objektu. Můžete určit, jaký typ změn došlo k použití <xref:System.ComponentModel.ListChangedType> hodnota výčtu v **ListChangedType** vlastnost **ListChangedEventArgs** objektu. Změny, které zahrnují přidání, odstranění nebo Přesun řádků, nový index řádku přidané nebo přesunut a předchozí index odstraněném řádku lze přistupovat pomocí **NewIndex** vlastnost **ListChangedEventArgs** objektu. V případě řádku přesunutý předchozí index řádku přesunutý lze přistupovat pomocí **OldIndex** vlastnost **ListChangedEventArgs** objektu.  
+ Událost **ListChanged** implementuje <xref:System.ComponentModel> delegáta **ListChangedEventHandler** <xref:System.ComponentModel.ListChangedEventArgs> oboru názvů a přijímá jako vstup objekt. Můžete určit, jaký typ změny došlo, pomocí <xref:System.ComponentModel.ListChangedType> hodnoty výčtu ve vlastnosti **ListChangedType** objektu **ListChangedEventArgs** . Pro změny, které zahrnují přidání, odstranění nebo přesunutí řádků, je k novému indexu přidaných nebo přesunutých řádků a k předchozímu indexu odstraněného řádku možné přistupovat pomocí vlastnosti **NewIndex** objektu **ListChangedEventArgs** . V případě přesunutého řádku je k předchozímu indexu přesunutého řádku možné přistupovat pomocí vlastnosti **OldIndex** objektu **ListChangedEventArgs** .  
   
- **Objekt DataViewManager** taky zpřístupňuje **ListChanged** události, které vás upozorní, pokud tabulky byly přidány nebo odebrány nebo pokud byla provedena změna **vztahy** kolekce základní **datovou sadu**.  
+ Objekt **DataViewManager** také zpřístupňuje událost **ListChanged** , která vás upozorní, pokud byla tabulka přidána nebo odebrána, nebo pokud byla provedena změna v kolekci Relations podkladové **datové sady**.  
   
- Následující příklad kódu ukazuje, jak přidat **ListChanged** obslužné rutiny události.  
+ Následující příklad kódu ukazuje, jak přidat obslužnou rutinu události **ListChanged** .  
   
 ```vb  
 AddHandler custView.ListChanged, _  
@@ -55,5 +55,5 @@ protected static void OnListChanged(object sender,
 
 - <xref:System.Data.DataView>
 - <xref:System.ComponentModel.ListChangedEventHandler>
-- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zobrazení dat](dataviews.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

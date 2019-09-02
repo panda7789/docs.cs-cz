@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e981d75ead5ec2e7f95a854da8c0fa42f476d9da
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1157d93585a564f83bf3809ba2fc3a26949fb711
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910790"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206123"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -40,7 +40,7 @@ ms.locfileid: "69910790"
   
 - Vyžadovat odvozené třídy, které přepíší konkrétní metody, aby měly zadanou identitu nebo oprávnění.  
   
- Následující příklad ukazuje, jak přispět k ochraně veřejné třídy pro omezený přístup tím, že vyžaduje, aby volající byli podepsáni pomocí konkrétního silného názvu. Tento příklad používá <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s poptávkou pro silný název. Informace o tom, jak podepsat sestavení se silným názvem, naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md).  
+ Následující příklad ukazuje, jak přispět k ochraně veřejné třídy pro omezený přístup tím, že vyžaduje, aby volající byli podepsáni pomocí konkrétního silného názvu. Tento příklad používá <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s poptávkou pro silný název. Informace o tom, jak podepsat sestavení se silným názvem, naleznete v tématu [vytváření a používání sestavení se silným názvem](../app-domains/create-and-use-strong-named-assemblies.md).  
   
 ```vb  
 <StrongNameIdentityPermissionAttribute(SecurityAction.Demand, PublicKey := "…hex…", Name := "App1", Version := "0.0.0.0")>  _  
@@ -60,9 +60,9 @@ public class Class1
  Použijte deklarace uvedené v této části, chcete-li zabránit konkrétním třídám a metodám, a také k vlastnostem a událostem, od použití částečně důvěryhodným kódem. Použitím těchto deklarací u třídy můžete použít ochranu na všechny metody, vlastnosti a události. Upozorňujeme však, že přístup k poli není ovlivněn deklarativním zabezpečením. Všimněte si také, že požadavky na propojení můžou chránit jenom před okamžitými volajícími a můžou se i nadále luring útoky.  
   
 > [!NOTE]
-> Nový model transparentnosti se zavedl do .NET Framework 4. [Kód transparentní z hlediska zabezpečení, model úrovně 2,](../../../docs/framework/misc/security-transparent-code-level-2.md) identifikuje zabezpečený kód <xref:System.Security.SecurityCriticalAttribute> s atributem. Kód kritický pro zabezpečení vyžaduje, aby volající a dědice byly plně důvěryhodné. Sestavení, která jsou spuštěna pod pravidly zabezpečení přístupu kódu z dřívějších .NET Framework verzí, mohou volat sestavení úrovně 2. V takovém případě budou atributy kritické pro zabezpečení považovány za požadavky propojení pro úplný vztah důvěryhodnosti.  
+> Nový model transparentnosti se zavedl do .NET Framework 4. [Kód transparentní z hlediska zabezpečení, model úrovně 2,](security-transparent-code-level-2.md) identifikuje zabezpečený kód <xref:System.Security.SecurityCriticalAttribute> s atributem. Kód kritický pro zabezpečení vyžaduje, aby volající a dědice byly plně důvěryhodné. Sestavení, která jsou spuštěna pod pravidly zabezpečení přístupu kódu z dřívějších .NET Framework verzí, mohou volat sestavení úrovně 2. V takovém případě budou atributy kritické pro zabezpečení považovány za požadavky propojení pro úplný vztah důvěryhodnosti.  
   
- V sestavení se silným názvem je [LinkDemand](../../../docs/framework/misc/link-demands.md) použit pro všechny veřejně přístupné metody, vlastnosti a události v rámci omezení jejich použití pro plně důvěryhodné volající. Chcete-li tuto funkci zakázat, je nutné <xref:System.Security.AllowPartiallyTrustedCallersAttribute> použít atribut. Proto explicitní označení tříd pro vyloučení nedůvěryhodných volajících je nezbytné pouze pro nepodepsaná sestavení nebo sestavení s tímto atributem; Tyto deklarace lze použít k označení podmnožiny typů, které nejsou určeny pro nedůvěryhodné volající.  
+ V sestavení se silným názvem je [LinkDemand](link-demands.md) použit pro všechny veřejně přístupné metody, vlastnosti a události v rámci omezení jejich použití pro plně důvěryhodné volající. Chcete-li tuto funkci zakázat, je nutné <xref:System.Security.AllowPartiallyTrustedCallersAttribute> použít atribut. Proto explicitní označení tříd pro vyloučení nedůvěryhodných volajících je nezbytné pouze pro nepodepsaná sestavení nebo sestavení s tímto atributem; Tyto deklarace lze použít k označení podmnožiny typů, které nejsou určeny pro nedůvěryhodné volající.  
   
  Následující příklady ukazují, jak zabránit používání tříd a členů pomocí nedůvěryhodného kódu.  
   

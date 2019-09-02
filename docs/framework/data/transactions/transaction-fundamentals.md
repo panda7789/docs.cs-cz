@@ -2,17 +2,17 @@
 title: Principy transakcí
 ms.date: 03/30/2017
 ms.assetid: 353f4ee2-e6bf-4b1c-b1c8-385fc8a486c0
-ms.openlocfilehash: 49e44ce1112a44c105f47560017331afe4454a0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2df782a40c74c69981e7c25300acdf18f9de3cde
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793513"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205858"
 ---
 # <a name="transaction-fundamentals"></a>Principy transakcí
 Transakce vazby společně více úloh. Představte si například, že aplikace provede dvě úlohy. Nejprve vytvoří nové tabulky v databázi. Dále volá specializovanou objekt ke sběru, formátování a data vložit do nové tabulky. Tyto dvě úlohy jsou související a dokonce i vzájemně závislé, tak, že chcete se vyhnout, vytvářet nové tabulky, není-li vyplní jej s daty. Provádění oba úkoly v rámci jedné transakce vynucuje mezi nimi spojení. Pokud jako druhý krok nezdaří, prvního úkolu je vrátit zpět do bodu předtím, než byla vytvořena nová tabulka.  
   
- Aby bylo zajištěno předvídatelný chování, musí mít všechny transakce základní vlastnosti ACID (atomické, konzistentní, izolované a trvalý). Tyto vlastnosti posílit úlohu důležitými podnikovými transakce jako all-or-none tvrzení. Další informace o kyseliny naleznete [kyseliny vlastnosti](https://go.microsoft.com/fwlink/?LinkId=98791). V souhrnu kyselina zaručuje, že sadu související úlohy úspěch nebo neúspěch jako jednotku. V transakci buď zpracování terminologie, transakce potvrzení nebo přerušení. Pro určitou transakci potvrdit musí všichni účastníci zaručit, že změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud ještě jeden účastník neprovede této záruky, celá transakce nezdaří. Všechny změny dat v rámci oboru transakce jsou vrácena zpět do určitého bodu sady.  
+ Aby bylo zajištěno předvídatelný chování, musí mít všechny transakce základní vlastnosti ACID (atomické, konzistentní, izolované a trvalý). Tyto vlastnosti posílit úlohu důležitými podnikovými transakce jako all-or-none tvrzení. Další informace o KYSELINě najdete v tématu [vlastnosti kyseliny](https://go.microsoft.com/fwlink/?LinkId=98791). V souhrnu kyselina zaručuje, že sadu související úlohy úspěch nebo neúspěch jako jednotku. V transakci buď zpracování terminologie, transakce potvrzení nebo přerušení. Pro určitou transakci potvrdit musí všichni účastníci zaručit, že změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud ještě jeden účastník neprovede této záruky, celá transakce nezdaří. Všechny změny dat v rámci oboru transakce jsou vrácena zpět do určitého bodu sady.  
   
  Transakce mohou být omezeny na jednoho datového zdroje, například určitého fronty databáze nebo zprávy. V tomto případě místní transakce je spravován transakce správcem poskytované <xref:System.Transactions> , který generuje zvýšení výkonu. Řídí zdrojů dat, jsou tyto transakce efektivní a snadno spravovat.  
   
@@ -20,10 +20,10 @@ Transakce vazby společně více úloh. Představte si například, že aplikace
   
  Pokud vyvíjíte transakční aplikace pomocí tříd poskytovaných <xref:System.Transactions>, není nutné starat o jaký typ transakcí, které potřebujete, nebo jejich zapojení správce transakcí. <xref:System.Transactions> Infrastruktury automaticky spravuje tyto pro vás.  
   
- Při vytváření transakcí, můžete určit úroveň izolace, která se použije pro transakce. Úroveň izolace, určené <xref:System.Transactions.IsolationLevel> výčtu, určuje, jaké úroveň přístupu ostatní transakce bude mít k datům ovlivněno vaši transakci.  
+ Při vytváření transakcí, můžete určit úroveň izolace, která se použije pro transakce. Úroveň izolace definovaná <xref:System.Transactions.IsolationLevel> výčtem určuje, jakou úroveň přístupu budou mít ostatní transakce data ovlivněná vaší transakcí.  
   
- Můžete vytvořit transakce pomocí technologie ADO.NET, <xref:System.EnterpriseServices>, nebo transakční programovací model poskytované <xref:System.Transactions> oboru názvů. [Funkce poskytované přes System.Transactions](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md) téma popisuje funkce, které můžete použít k zápisu transakční aplikace pomocí <xref:System.Transactions> oboru názvů.  
+ Můžete vytvořit transakce pomocí ADO.NET, <xref:System.EnterpriseServices>nebo transakčního programovacího modelu poskytnutého <xref:System.Transactions> oborem názvů. [Funkce poskytované v tématu System. Transactions](features-provided-by-system-transactions.md) popisuje funkce, které lze použít k zápisu transakční aplikace pomocí <xref:System.Transactions> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce poskytované přes System.Transactions](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)
+- [Funkce poskytované přes System.Transactions](features-provided-by-system-transactions.md)

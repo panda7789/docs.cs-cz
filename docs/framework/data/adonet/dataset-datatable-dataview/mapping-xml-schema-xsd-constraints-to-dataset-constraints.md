@@ -2,47 +2,47 @@
 title: Mapování omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-ms.openlocfilehash: cdbfba96c4cfe52cfbd58246be60842540a84754
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b0082b534b8df10ac5277cf2f5aa5b2d2e40c11b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64604003"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204630"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování omezení schématu XML (XSD) k omezením datové sady
-Schéma XML definice jazyk (XSD) umožňuje zadat pro prvky a atributy, které definuje omezení. Při mapování schématu XML na relační schéma v <xref:System.Data.DataSet>, omezení schématu XML se mapují na odpovídající omezení relačních tabulek a sloupců v rámci **datovou sadu**.  
+Jazyk definice schématu XML (XSD) umožňuje určení omezení pro prvky a atributy, které definuje. Při mapování schématu XML na relační schéma v <xref:System.Data.DataSet>, jsou omezení schématu XML mapována na odpovídající relační omezení pro tabulky a sloupce v rámci **datové sady**.  
   
- Tato část pojednává o mapování následující omezení schématu XML:  
+ Tato část popisuje mapování následujících omezení schématu XML:  
   
-- Omezení jedinečnosti zadat pomocí **jedinečný** elementu.  
+- Omezení jedinečnosti zadané pomocí jedinečného prvku.  
   
-- Omezení pro klíč zadaný pomocí **klíč** elementu.  
+- Omezení klíče zadané pomocí klíčového elementu.  
   
-- Omezení keyref zadat pomocí **keyref** elementu.  
+- Omezení keyref zadané pomocí elementu **keyref**  
   
- Pomocí omezení na elementu nebo atributu zadejte určitá omezení na hodnoty elementu v žádné instanci dokumentu. Například klíče omezení na **CustomerID** podřízený prvek **zákazníka** element ve schématu znamená, že hodnoty **CustomerID** musí být podřízený element Jedinečný v žádné instanci dokumentu, a že nejsou povoleny hodnoty null.  
+ Pomocí omezení pro element nebo atribut zadáte určitá omezení pro hodnoty prvku v jakékoli instanci dokumentu. Například omezení klíče u podřízeného prvku **KódZákazníka** elementu Customer ve schématu označuje, že hodnoty podřízeného prvku **KódZákazníka** musí být jedinečné v jakékoli instanci dokumentu a že hodnoty null nejsou povoleny.  
   
- Omezení je taky možné specifikovat mezi elementy a atributy v dokumentu, aby bylo možné navázat relaci v rámci dokumentu. Key ani keyref omezení se používají ve schématu zadat omezení v rámci dokumentu, výsledkem je vztah mezi dokumentu elementů a atributů.  
+ Omezení lze také zadat mezi elementy a atributy v dokumentu, aby bylo možné vytvořit relaci v rámci dokumentu. Omezení Key a keyref se používají ve schématu k určení omezení v rámci dokumentu, což má za následek relaci mezi prvky dokumentu a atributy.  
   
- Proces mapování převede odpovídající omezení u tabulky vytvořené v rámci těchto omezení schématu **datovou sadu**.  
+ Proces mapování převede Tato omezení schématu na vhodná omezení pro tabulky vytvořené v rámci **datové sady**.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Popisuje prvky schématu XML použitý k vytvoření jedinečné omezení **datovou sadu**.  
+ [Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady](map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Popisuje prvky schématu XML používané k vytváření jedinečných omezení v **datové sadě**.  
   
- [Mapování klíčových omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Popisuje prvky schématu XML použitý k vytvoření omezení klíče (jedinečná omezení kde nejsou povoleny hodnoty null) **datovou sadu**.  
+ [Mapování klíčových omezení schématu XML (XSD) k omezením datové sady](map-key-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Popisuje prvky schématu XML, které se používají k vytvoření omezení klíče (jedinečná omezení, kde nejsou povoleny hodnoty null) v **datové sadě**.  
   
- [Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Popisuje prvky schématu XML použitý k vytvoření keyref omezení (cizí klíč) **datovou sadu**.  
+ [Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady](map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Popisuje prvky schématu XML používané k vytvoření omezení keyref (cizí klíč) v **datové sadě**.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Popisuje relační struktury nebo schématu, **datovou sadu** , který je vytvořen ze schématu XSD.  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Popisuje relační strukturu neboli schéma pro **datovou sadu** , která je vytvořena ze schématu XSD.  
   
- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- Popisuje prvky schématu XML použitý k vytvoření relace mezi sloupci tabulky v **datovou sadu**.  
+ [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)  
+ Popisuje prvky schématu XML, které slouží k vytvoření vztahů mezi sloupci tabulky v **datové sadě**.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

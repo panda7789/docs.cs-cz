@@ -1,45 +1,45 @@
 ---
-title: Vytvoření globální nástroje .NET Core
-description: Popisuje, jak vytvořit globální nástroj. Nástroj globální je konzolová aplikace, která se instaluje prostřednictvím rozhraní příkazového řádku .NET Core.
+title: Postup vytvoření globálního nástroje .NET Core
+description: Popisuje, jak vytvořit globální nástroj. Globální nástroj je Konzolová aplikace, která je nainstalována prostřednictvím .NET Core CLI.
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: 3d0a64d0473f51d73892cd40633e2982c1130469
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: f60e26d14e89b6b7c34b32bf9a114fe4ad691981
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61647941"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202768"
 ---
-# <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
+# <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globálního nástroje .NET Core pomocí .NET Core CLI
 
-V tomto článku se naučíte, jak vytvořit a balíček globální nástroje .NET Core. Rozhraní příkazového řádku .NET Core umožňuje vytvořit konzolovou aplikaci jako globální nástroj, který ostatní snadno nainstalovat a spustit. Globální nástroje .NET core jsou balíčky NuGet, které jsou instalovány z rozhraní příkazového řádku .NET Core. Další informace o těchto nástrojích, globální, naleznete v tématu [globální nástroje .NET Core přehled](global-tools.md).
+V tomto článku se naučíte, jak vytvořit a zabalit globální nástroj .NET Core. .NET Core CLI umožňuje vytvořit konzolovou aplikaci jako globální nástroj, který mohou uživatelé snadno nainstalovat a spustit. Globální nástroje .NET Core jsou balíčky NuGet, které jsou nainstalované z .NET Core CLI. Další informace o globálních nástrojích najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
 
 [!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
 
 ## <a name="create-a-project"></a>Vytvoření projektu
 
-Tento článek používá rozhraní příkazového řádku .NET Core k vytváření a správě projektu.
+Tento článek používá .NET Core CLI k vytvoření a správě projektu.
 
-Náš příklad nástroj bude konzolovou aplikaci, která generuje bot ASCII a vytiskne zprávu. Nejprve vytvořte novou konzolovou aplikaci .NET Core.
+Náš ukázkový nástroj bude Konzolová aplikace, která generuje robota ASCII a vytiskne zprávu. Nejprve vytvořte novou konzolovou aplikaci .NET Core.
 
 ```console
 dotnet new console -o botsay
 ```
 
-Přejděte `botsay` adresář vytvořený v předchozím příkazu.
+Přejděte do `botsay` adresáře vytvořeného předchozím příkazem.
 
-## <a name="add-the-code"></a>Přidejte kód
+## <a name="add-the-code"></a>Přidat kód
 
-Otevřít `Program.cs` souboru v oblíbeném textovém editoru, jako například `vim` nebo [Visual Studio Code](https://code.visualstudio.com/).
+Otevřete soubor v oblíbeném textovém editoru, jako je `vim` například nebo [Visual Studio Code](https://code.visualstudio.com/). `Program.cs`
 
-Přidejte následující `using` směrnice do horní části souboru, to pomáhá zkrátit kódu zobrazíte informace o verzi aplikace.
+Do horní části `using` souboru přidejte následující direktivu, což pomůže zkrátit kód a zobrazit informace o verzi aplikace.
 
 ```csharp
 using System.Reflection;
 ```
 
-Dále přejděte dolů `Main` metody. Metoda nahraďte následující kód pro zpracování argumentů příkazového řádku pro vaši aplikaci. Pokud byly předány žádné argumenty, zobrazí se krátký nápovědu. V opačném případě všechny tyto argumenty jsou transformuje na řetězec a vytisknout s roboty.
+Potom přejděte dolů k `Main` metodě. Nahraďte metodu následujícím kódem pro zpracování argumentů příkazového řádku pro vaši aplikaci. Pokud nebyly předány žádné argumenty, zobrazí se krátká zpráva help. V opačném případě jsou všechny tyto argumenty transformovány do řetězce a vytištěny s robotem.
 
 ```csharp
 static void Main(string[] args)
@@ -62,9 +62,9 @@ static void Main(string[] args)
 }
 ```
 
-### <a name="create-the-bot"></a>Vytvořte robota
+### <a name="create-the-bot"></a>Vytvoření robota
 
-V dalším kroku přidejte novou metodu s názvem `ShowBot` , která použije parametr řetězce. Tato metoda vytiskne zprávu a ASCII bot. Kód ASCII bot byla získána z [dotnetbot](https://github.com/dotnet/core/blob/master/samples/dotnetsay/Program.cs) vzorku.
+Dále přidejte novou metodu s názvem `ShowBot` , která přijímá řetězcový parametr. Tato metoda vytiskne zprávy a robota ASCII. Z ukázky [dotnetbot](https://github.com/dotnet/core/blob/master/samples/dotnetsay/Program.cs) byl vytvořen kód bot standardu ASCII.
 
 ```csharp
 static void ShowBot(string message)
@@ -113,9 +113,9 @@ static void ShowBot(string message)
 }
 ```
 
-### <a name="test-the-tool"></a>Testovací nástroje
+### <a name="test-the-tool"></a>Otestování nástroje
 
-Spusťte projekt a zobrazit výstup. Vyzkoušejte tyto odchylky z příkazového řádku, pokud chcete zobrazit odlišné výsledky:
+Spusťte projekt a podívejte se na výstup. Zkuste tyto variace příkazového řádku pro zobrazení různých výsledků:
 
 ```csharp
 dotnet run
@@ -123,20 +123,20 @@ dotnet run -- "Hello from the bot"
 dotnet run -- hello from the bot
 ```
 
-Všechny argumenty po `--` oddělovače jsou předány do vaší aplikace.
+Všechny argumenty za `--` oddělovačem jsou předány do aplikace.
 
-## <a name="setup-the-global-tool"></a>Instalační program nástroje global
+## <a name="setup-the-global-tool"></a>Nastavení globálního nástroje
 
-Před aktualizací Service pack a distribuce aplikace jako globální nástroj, budete muset upravit soubor projektu. Otevřít `botsay.csproj` a přidejte tři nové uzly XML k `<Project><PropertyGroup>` uzlu:
+Předtím, než budete moci zabalit a distribuovat aplikaci jako globální nástroj, je nutné upravit soubor projektu. Otevřete soubor a přidejte do uzlu tři nové uzly XML: `<Project><PropertyGroup>` `botsay.csproj`
 
 - `<PackAsTool>`\
-[POVINNÉ] Označuje, že aplikace se zabalí pro instalaci jako globální nástroj.
+POŽADOVANOU Označuje, že aplikace bude zabalena pro instalaci jako globální nástroj.
 
 - `<ToolCommandName>`\
-[VOLITELNÉ] Alternativní název pro nástroj, jinak název příkazu pro nástroj bude mít název souboru projektu. Může mít několik nástrojů v balíčku, při výběru že jedinečný a popisný název pomáhá odlišil od jiných nástrojů ve stejném balíku.
+VOLITELNÉ Alternativní název nástroje, jinak bude název příkazu pro nástroj pojmenován za souborem projektu. V balíčku můžete mít několik nástrojů, přičemž volba jedinečného a popisného názvu pomůže odlišit od ostatních nástrojů ve stejném balíčku.
 
 - `<PackageOutputPath>`\
-[VOLITELNÉ] Kde se budou vytvářet balíček NuGet. Balíček NuGet je globální nástroje .NET Core CLI používá k instalaci nástroj.
+VOLITELNÉ Kde bude vytvořen balíček NuGet. Balíček NuGet je to, co .NET Core CLI globální nástroje používají k instalaci vašeho nástroje.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -154,7 +154,7 @@ Před aktualizací Service pack a distribuce aplikace jako globální nástroj, 
 </Project>
 ```
 
-I když `<PackageOutputPath>` je volitelný, jeho použití v tomto příkladu. Ujistěte se, že ji nastavíte: `<PackageOutputPath>./nupkg</PackageOutputPath>`.
+I když `<PackageOutputPath>` je volitelný, použijte ho v tomto příkladu. Ujistěte se, že jste ji `<PackageOutputPath>./nupkg</PackageOutputPath>`nastavili:.
 
 Dále vytvořte balíček NuGet pro vaši aplikaci.
 
@@ -162,7 +162,7 @@ Dále vytvořte balíček NuGet pro vaši aplikaci.
 dotnet pack
 ```
 
-`botsay.1.0.0.nupkg` Vytvoří soubor ve složce identifikován `<PackageOutputPath>` hodnotu XML z `botsay.csproj` soubor, který v tomto příkladu je `./nupkg` složky. To usnadňuje instalaci a testování. Pokud chcete uvolnit nástroj veřejně, nahrajte ho do <https://www.nuget.org>. Až nástroj je k dispozici na webu NuGet, vývojáři můžete provést instalaci celou uživatele pomocí nástroje `--global` možnost [instalace nástrojů dotnet](dotnet-tool-install.md) příkazu.
+Soubor je vytvořen ve složce identifikované `<PackageOutputPath>` hodnotou XML ze `botsay.csproj` `./nupkg` souboru, který je v tomto příkladu složkou. `botsay.1.0.0.nupkg` To usnadňuje instalaci a testování. Pokud chcete veřejně vydávat nástroj, nahrajte ho do <https://www.nuget.org>. Jakmile je nástroj k dispozici v NuGet, vývojáři můžou provést instalaci nástroje pro všechny uživatele pomocí `--global` možnosti instalačního příkazu [nástroje dotnet](dotnet-tool-install.md) .
 
 Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 
@@ -170,23 +170,23 @@ Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 dotnet tool install --global --add-source ./nupkg botsay
 ```
 
-`--add-source` Určuje parametr příkazového řádku .NET Core pro dočasně použití `./nupkg` složky (naše `<PackageOutputPath>` složky) jako další zdroj datového kanálu pro balíčky NuGet. Další informace o instalaci nástrojů pro globální, naleznete v tématu [globální nástroje .NET Core přehled](global-tools.md).
+Parametr oznamuje .NET Core CLI dočasné `./nupkg` použití složky (naší `<PackageOutputPath>` složky) jako dalšího zdrojového kanálu pro balíčky NuGet. `--add-source` Další informace o instalaci globálních nástrojů najdete v tématu [Přehled globálních nástrojů .NET Core](global-tools.md).
 
-Pokud je instalace úspěšná, zobrazí se zpráva zobrazující příkazu používaný k volání nástroje a verze nainstalovaná, podobně jako v následujícím příkladu:
+Pokud je instalace úspěšná, zobrazí se zpráva s příkazem použitým pro volání nástroje a nainstalované verze, podobně jako v následujícím příkladu:
 
-```
+```output
 You can invoke the tool using the following command: botsay
 Tool 'botsay' (version '1.0.0') was successfully installed.
 ```
 
-Nyní byste měli být schopni zadejte `botsay` a získat odpověď z nástroje.
+Nyní byste měli být schopni zadat `botsay` a získat odpověď z nástroje.
 
 > [!NOTE]
-> Pokud byla instalace úspěšná, ale nemůžete použít `botsay` příkazu, budete muset otevřít nové zařízení k aktualizaci cesty.
+> Pokud byla instalace úspěšná, ale nemůžete použít `botsay` příkaz, možná budete muset otevřít nový terminál, aby se cesta aktualizovala.
 
-## <a name="remove-the-tool"></a>Odeberte nástroj
+## <a name="remove-the-tool"></a>Odebrat nástroj
 
-Jakmile budete mít experimentování s nástroji, můžete ho odebrat pomocí následujícího příkazu:
+Až budete s nástrojem hotovi, můžete ho odebrat pomocí následujícího příkazu:
 
 ```console
 dotnet tool uninstall -g botsay

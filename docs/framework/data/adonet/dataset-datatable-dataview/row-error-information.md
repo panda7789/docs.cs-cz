@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
-ms.openlocfilehash: 89889c5543e6518046bb59b59646ecba715f5e03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af000d104a3b0821e69f11c1bce1392f04fe8f5e
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607563"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203235"
 ---
 # <a name="row-error-information"></a>Informace o chybě na řádku
-Abyste se vyhnuli nutnosti reakce na chyby řádek při úpravách hodnoty v <xref:System.Data.DataTable>, můžete přidat informace o chybě na řádku pro pozdější použití. <xref:System.Data.DataRow> Objekt, který poskytuje <xref:System.Data.DataRow.RowError%2A> vlastnost pro každý řádek pro tento účel. Přidání dat do **RowError** vlastnost **DataRow** nastaví <xref:System.Data.DataRow.HasErrors%2A> vlastnost **DataRow** k **true**. Pokud **DataRow** je součástí **DataTable**, a **DataRow.HasErrors** je **true**, **DataTable.HasErrors** vlastnost je také **true**. To platí i pro **datovou sadu** ke kterému **DataTable** patří. Při testování pro nalezení chyb, můžete zkontrolovat **HasErrors** a určí, pokud informace o chybě se přidala do všech řádků. Pokud **HasErrors** je **true**, můžete použít <xref:System.Data.DataTable.GetErrors%2A> metodu **DataTable** se vraťte a prozkoumat pouze řádky s chybami, jak je znázorněno v následujícím příkladu.  
+Abyste se vyhnuli nutnosti reagovat na chyby řádku při úpravách <xref:System.Data.DataTable>hodnot v, můžete na řádek přidat informace o chybě pro pozdější použití. <xref:System.Data.DataRow> Objekt<xref:System.Data.DataRow.RowError%2A> poskytuje vlastnost na každém řádku pro tento účel. Přidání dat do vlastnosti **RowError** objektu **DataRow** nastaví <xref:System.Data.DataRow.HasErrors%2A> vlastnost **DataRow** na **hodnotu true**. Pokud je **objekt DataRow** součástí **objektu DataTable**a vlastnost **DataRow. HasErrors** má **hodnotu true**, vlastnost **DataTable. HasErrors** má také **hodnotu true**. To platí i pro datovou **sadu** , ke které patří tabulka **DataTable** . Při testování chyb můžete zaškrtnout vlastnost **HasErrors** a zjistit, zda byly do libovolného řádku přidány informace o chybě. Pokud má HasErrors **hodnotu true**, <xref:System.Data.DataTable.GetErrors%2A> můžete použít metodu **DataTable** k vrácení a prohlédnutí pouze řádků s chybami, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -82,5 +82,5 @@ protected static void OnRowChanged(
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataTable>
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

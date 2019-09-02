@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 29d1e5ae494b2fff4e13886159bb937041152382
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 56d1d11240934036994a14e454cf1a1d8b95226a
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607892"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204533"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provedení dotazu XPath u datové sady
-Vztah mezi synchronizovaný <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje použití XML služby, jako je jazyk XML Path (XPath) dotazu, které přistupují k **XmlDataDocument** a mohou provádět určité funkce snadněji než přímý přístup k **datovou sadu** přímo. Například místo použití **vyberte** metodu <xref:System.Data.DataTable> k procházení vztahů s dalšími tabulkami v **datovou sadu**, provedením dotazu XPath na **XmlDataDocument**  , který se synchronizuje s **datovou sadu**, k získání seznamu elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, vícesměrového vysílání jako <xref:System.Xml.XmlElement> uzlů, může pak být předán **GetRowFromElement** metodu **XmlDataDocument**, který vrátí odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky synchronizovaných **datovou sadu**.  
+Vztah mezi synchronizovaným <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat služby XML, jako je dotaz jazyka XML Path (XPath), který přistupuje k **objektu XmlDataDocument** a umožňuje pohodlnější fungování určitých funkcí než přímý přístup k **datové sadě** . Například namísto použití metody **Select** objektu <xref:System.Data.DataTable> pro navigaci na relace s jinými tabulkami v **datové sadě**můžete provést dotaz XPath v **objektu XmlDataDocument** , který je synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, přetypování jako <xref:System.Xml.XmlElement> uzly, mohou být předány metodě **GetRowFromElement** **objektu XmlDataDocument**, aby vracely vyhovující <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizovaných.  **Datová sada**.  
   
- Například následující vzorový kód provede dotaz XPath "podřízený". **Datovou sadu** je vyplněna tři tabulky: **Zákazníci**, **objednávky**, a **OrderDetails**. V ukázce je prvním vytvoření vztah nadřízenosti a podřízenosti mezi **zákazníkům** a **objednávky** tabulky a mezi **objednávky** a **OrderDetails** tabulky. Dotaz XPath je pak provede se vraťte **XmlNodeList** z **zákazníkům** uzly tam, kde podřízený **OrderDetails** uzel nemá **ProductID**uzel s hodnotou 43. V podstatě vzorku dotazu XPath používá k určení, které zákazníci si objednali produktu, který má **ProductID** 43.  
+ Například následující ukázka kódu provede "podřízený" dotaz XPath. **Datová sada** je vyplněna třemi tabulkami: **Zákazníci**, **objednávky**a **OrderDetails**. V ukázce je relace nadřazený-podřízený nejprve vytvořena mezi tabulkami **zákazníci** a **objednávky** a mezi tabulkami Orders a **OrderDetails** . Pak se provede dotaz XPath, který vrátí **XmlNodeList** uzly, kde má uzel **OrderDetails** uzel **ProductID** s hodnotou 43. V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt s **ProductID** 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -103,5 +103,5 @@ foreach (XmlNode xmlNode in nodeList)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

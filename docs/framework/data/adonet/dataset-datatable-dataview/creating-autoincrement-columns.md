@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cf09732a-ab54-4d98-89e2-4d0a1f28fbce
-ms.openlocfilehash: 99c52b93cee858511d50aba2f30f2b9f96d91ccd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2548ad9382b406978dac0a3d366207626278f501
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034369"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205128"
 ---
 # <a name="creating-autoincrement-columns"></a>Vytváření sloupců s automatickým navyšováním
-Aby se zajistilo jedinečný sloupec hodnot, můžete nastavit hodnoty ve sloupcích se zvýší automaticky při přidání nových řádků do tabulky. Vytvoření automatickým přírůstkem <xref:System.Data.DataColumn>, nastavte <xref:System.Data.DataColumn.AutoIncrement%2A> vlastnost sloupec, který se **true**. <xref:System.Data.DataColumn> Pak začíná hodnota definovaná v <xref:System.Data.DataColumn.AutoIncrementSeed%2A> vlastnost a u každého řádku přidat hodnotu **AutoIncrement** sloupec zvýší o hodnotu definovanou v <xref:System.Data.DataColumn.AutoIncrementStep%2A> vlastnost sloupce.  
+Chcete-li zajistit jedinečné hodnoty sloupce, můžete nastavit hodnoty sloupce tak, aby byly automaticky zvyšovány při přidání nových řádků do tabulky. Chcete-li vytvořit automatické přičítání <xref:System.Data.DataColumn>, <xref:System.Data.DataColumn.AutoIncrement%2A> nastavte vlastnost sloupce na **hodnotu true**. Pak začíná <xref:System.Data.DataColumn.AutoIncrementSeed%2A> hodnotou definovanou ve vlastnosti a každým řádkem přidaným do sloupce <xref:System.Data.DataColumn.AutoIncrementStep%2A> autoincrements se zvyšuje hodnota definovaná ve vlastnosti sloupce. <xref:System.Data.DataColumn>  
   
- Pro **AutoIncrement** sloupce, doporučujeme, aby <xref:System.Data.DataColumn.ReadOnly%2A> vlastnost **DataColumn** nastavit na **true**.  
+ Pro sloupce AutoIncrement doporučujeme, aby <xref:System.Data.DataColumn.ReadOnly%2A> vlastnost DataColumn byla nastavena na **hodnotu true**.  
   
- Následující příklad ukazuje, jak vytvořit sloupec, který se spustí s hodnotou 200 a přidá postupně v krocích 3.  
+ Následující příklad ukazuje, jak vytvořit sloupec, který začíná hodnotou 200 a postupně se přidá do kroků 3.  
   
 ```vb  
 Dim workColumn As DataColumn = workTable.Columns.Add( _  
@@ -38,6 +38,6 @@ workColumn.AutoIncrementStep = 3;
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Data.DataColumn>
-- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
-- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Definice schématu datové tabulky](datatable-schema-definition.md)
+- [Datové tabulky](datatables.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

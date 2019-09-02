@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 7975e17bd957a822bf3d60d487eb928cee84bd28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08149de9222c34928078c0ca9d88096f7a4a88d1
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607320"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203271"
 ---
 # <a name="nesting-datarelations"></a>Vnoření datových relací
-Jednotlivé tabulky v relační znázornění dat, obsahovat řádky, které se vztahují k navzájem pomocí sloupec nebo sadu sloupců. V ADO.NET <xref:System.Data.DataSet>, relace mezi tabulkami se implementuje pomocí <xref:System.Data.DataRelation>. Když vytvoříte **DataRelation**, vztahy nadřazenosti a podřízenosti sloupce, které se spravují jenom do relace. Tabulky a sloupce jsou samostatné entity. V Hierarchická reprezentace dat, které obsahuje XML nadřazené a podřízené vztahy jsou reprezentovány nadřazené elementy, které obsahují vnořené podřízené prvky.  
+V relačních zastoupeních dat jednotlivé tabulky obsahují řádky, které jsou vzájemně propojené pomocí sloupce nebo sady sloupců. V ADO.NET <xref:System.Data.DataSet>je relace mezi tabulkami implementována <xref:System.Data.DataRelation>pomocí. Při vytváření objektu **DataRelation**jsou vztahy nadřazenosti a podřízenosti sloupců spravovány pouze prostřednictvím vztahu. Tabulky a sloupce jsou samostatné entity. V hierarchickém znázornění dat, která poskytuje XML, jsou vztahy typu nadřazený-podřízený zastoupeny nadřazenými prvky, které obsahují vnořené podřízené prvky.  
   
- Pro usnadnění vnoření podřízené objekty při **datovou sadu** synchronizována s <xref:System.Xml.XmlDataDocument> nebo zapsat jako dat XML pomocí **WriteXml**, **DataRelation** Zpřístupňuje **vnořené** vlastnost. Nastavení **vnořené** vlastnost **DataRelation** k **true** způsobí, že podřízené řádky vztahu, chcete-li být vnořen v rámci nadřazeného sloupce při zápisu jako XML data nebo synchronizovat se službou **XmlDataDocument**. **Vnořené** vlastnost **DataRelation** je **false**, ve výchozím nastavení.  
+ Pro usnadnění vnoření podřízených objektů, pokud je **datová sada** synchronizována s <xref:System.Xml.XmlDataDocument> nebo zapsaná jako XML data pomocí funkce **WriteXml**, objekt DataRelation zpřístupňuje **vnořenou** vlastnost. Nastavení **vnořené** vlastnosti DataRelation na **hodnotu true** způsobí, že podřízené řádky relace budou vnořené do nadřazeného sloupce, pokud jsou zapsány jako data XML nebo synchronizovány pomocí **objektu XmlDataDocument**. Ve výchozím nastavení je vnořená vlastnost DataRelation nastavena na **hodnotu false**.  
   
- Představte si třeba následující **datovou sadu**.  
+ Zvažte například následující **datovou sadu**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -59,9 +59,9 @@ DataRelation customerOrders = dataSet.Relations.Add(
   dataSet.Tables["Orders"].Columns["CustomerID"]);  
 ```  
   
- Protože **vnořené** vlastnost **DataRelation** není nastaven na **true** pro tuto **datovou sadu**, nejsou vnořené podřízené objekty v rámci nadřazené prvky při to **datovou sadu** je vyjádřena jako XML data. Transformace reprezentace XML **datovou sadu** , který obsahuje související **datovou sadu**s s-nested datové relace může způsobit snížení výkonu. Doporučujeme vám, že byste vnořit datové relace. Chcete-li to provést, nastavte **vnořené** vlastnost **true**. Teprve pak píšete kód v šabloně stylů XSLT, který používá výrazy dotazu XPath hierarchické shora dolů k vyhledání a transformovat data.  
+ Vzhledem k tomu, že vlastnost **Nested** objektu DataRelation není pro tuto **datovou sadu**nastavena na **hodnotu true** , podřízené objekty nejsou vnořené v rámci nadřazených elementů, pokud je tato **datová sada** reprezentována jako data XML. Transformace reprezentace XML pro **datovou sadu** , která obsahuje související **datovou sadu**s nevnořenými datovými relacemi, může způsobit pomalý výkon. Doporučujeme, abyste provedli vnořování datových vztahů. To provedete tak, že nastavíte vnořenou vlastnost na **hodnotu true**. Potom v šabloně stylů XSLT napíšete kód, který použije k vyhledání a transformaci dat horních hierarchické výrazy XPath.  
   
- Následující příklad kódu ukazuje výsledek z volání **WriteXml** na **datovou sadu**.  
+ Následující příklad kódu ukazuje výsledek volání **WriteXml** na **datovou sadu**.  
   
 ```xml  
 <CustomerOrders>  
@@ -91,7 +91,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
 </CustomerOrders>  
 ```  
   
- Všimněte si, že **zákazníkům** elementu a **objednávky** prvky jsou uvedeny jako prvky na stejné úrovni. Pokud byste chtěli **objednávky** prvků, které se zobrazují jako podřízené objekty daného jejich příslušné nadřazené elementy **vnořené** vlastnost **DataRelation** by bylo potřeba nastavit na **true** a přidejte následující:  
+ Všimněte si, že elementy Customers a Orders se zobrazují jako elementy na stejné úrovni. Pokud jste chtěli, aby se prvky **objednávky** zobrazovaly jako podřízené objekty svých příslušných nadřazených prvků, je nutné, aby byla **vnořená** vlastnost DataRelation nastavena na **hodnotu true** a přidáte následující:  
   
 ```vb  
 customerOrders.Nested = True  
@@ -101,7 +101,7 @@ customerOrders.Nested = True
 customerOrders.Nested = true;  
 ```  
   
- Následující kód ukazuje, co výsledný výstup bude vypadat, se **objednávky** vnořené elementy v rámci svých odpovídajících nadřazené prvky.  
+ Následující kód ukazuje, jaký výsledný výstup by vypadal jako, s prvky **Orders** vnořené v rámci svých příslušných nadřazených prvků.  
   
 ```xml  
 <CustomerOrders>  
@@ -133,7 +133,7 @@ customerOrders.Nested = true;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Přidání datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Přidání datových relací](adding-datarelations.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

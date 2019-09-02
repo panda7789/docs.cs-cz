@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: ec4ad84a39afe21ef77507732e5e0e417d45f3e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91c635e2bc2ed617e8c45171d9ec7d7359b9ca88
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034519"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205488"
 ---
 # <a name="adding-data-to-a-datatable"></a>Přidání dat do datové tabulky
-Po vytvoření <xref:System.Data.DataTable> a definovat jeho strukturu pomocí sloupců a omezení, můžete přidat nové řádky dat do tabulky. Chcete-li přidat nový řádek, deklarovat novou proměnnou jako typ <xref:System.Data.DataRow>. Nový **DataRow** objekt je vrácen při volání <xref:System.Data.DataTable.NewRow%2A> metody. **DataTable** vytvoří **DataRow** objektu na základě struktury tabulky, tak jak je definoval <xref:System.Data.DataColumnCollection>.  
+Po vytvoření <xref:System.Data.DataTable> a definování struktury pomocí sloupců a omezení můžete do tabulky přidat nové řádky dat. Chcete-li přidat nový řádek, deklarujte novou proměnnou jako <xref:System.Data.DataRow>typ. Při volání <xref:System.Data.DataTable.NewRow%2A> metody je vrácen nový objekt DataRow. Objekt **DataTable** potom vytvoří objekt **DataRow** na základě struktury tabulky, jak je definováno v <xref:System.Data.DataColumnCollection>.  
   
- Následující příklad ukazuje, jak vytvořit nový řádek voláním **NewRow** metody.  
+ Následující příklad ukazuje, jak vytvořit nový řádek voláním metody **NewRow** .  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -25,7 +25,7 @@ Dim workRow As DataRow = workTable.NewRow()
 DataRow workRow = workTable.NewRow();  
 ```  
   
- Pak můžete pracovat s nově přidaný řádek pomocí index nebo název sloupce, jak je znázorněno v následujícím příkladu.  
+ Následně můžete pomocí indexu nebo názvu sloupce manipulovat s nově přidaným řádkem, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workRow("CustLName") = "Smith"  
@@ -37,7 +37,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- Po vložení dat do nového řádku, **přidat** metoda se používá k přidání řádku, který má <xref:System.Data.DataRowCollection>, jak je znázorněno v následujícím kódu.  
+ Po vložení dat do nového řádku je použita metoda **Add** k přidání řádku do <xref:System.Data.DataRowCollection>, který je zobrazen v následujícím kódu.  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -47,7 +47,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- Můžete také volat **přidat** způsob, jak přidat nový řádek předáním pole hodnot, zadaný jako <xref:System.Object>, jak je znázorněno v následujícím příkladu.  
+ Můžete také zavolat metodu **Add** pro přidání nového řádku předáním pole hodnot, <xref:System.Object>jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -57,9 +57,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- Předá pole hodnot typu **objekt**, možnosti **přidat** metoda vytvoří nový řádek do tabulky a nastaví její hodnoty sloupců na hodnoty v poli objektu. Všimněte si, že hodnoty v poli odpovídají postupně na sloupce v pořadí, v jakém jsou uvedeny v tabulce.  
+ Předání pole hodnot, které je zadáno jako **objekt**, do metody **Add** vytvoří nový řádek v tabulce a nastaví hodnoty jejich sloupce na hodnoty v poli objektů. Všimněte si, že hodnoty v poli jsou podle pořadí, ve kterém jsou uvedeny v tabulce, porovnány se sloupci.  
   
- Následující příklad přidá 10 řádků na nově vytvořený **zákazníkům** tabulky.  
+ Následující příklad přidá 10 řádků do tabulky nově vytvořené **zákazníky** .  
   
 ```vb  
 Dim workRow As DataRow  
@@ -91,5 +91,5 @@ for (int i = 0; i <= 9; i++)
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

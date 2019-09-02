@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 77bf117b8835623d768f8b8b0ec3e4195174cad7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 105537a5fccef6de7266407c78cc915f8c5d8678
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043951"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204056"
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidání sloupců do datové tabulky
 Obsahuje kolekci objektů, na které odkazuje vlastnost Columns v tabulce. <xref:System.Data.DataTable> <xref:System.Data.DataColumn> Tato kolekce sloupců, spolu s omezeními, definuje schéma nebo strukturu tabulky.  
@@ -44,7 +44,7 @@ workTable.Columns.Add("CustFName", typeof(String));
 workTable.Columns.Add("Purchases", typeof(Double));  
 ```  
   
- V příkladu si všimněte, že vlastnosti pro sloupec **custid** jsou nastaveny tak, aby nepovolovaly hodnoty **DBNull** a omezily hodnoty tak, aby byly jedinečné. Pokud však definujete sloupec **custid** jako sloupec primárního klíče tabulky, vlastnost **AllowDBNull** bude automaticky nastavena na **hodnotu false** a vlastnost **Unique** bude automaticky nastavena na **hodnotu true**. Další informace najdete v tématu [Definování primárních klíčů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md).  
+ V příkladu si všimněte, že vlastnosti pro sloupec **custid** jsou nastaveny tak, aby nepovolovaly hodnoty **DBNull** a omezily hodnoty tak, aby byly jedinečné. Pokud však definujete sloupec **custid** jako sloupec primárního klíče tabulky, vlastnost **AllowDBNull** bude automaticky nastavena na **hodnotu false** a vlastnost **Unique** bude automaticky nastavena na **hodnotu true**. Další informace najdete v tématu [Definování primárních klíčů](defining-primary-keys.md).  
   
 > [!CAUTION]
 > Pokud pro sloupec není zadán název sloupce, sloupec má při přidání do objektu DataColumnCollection přírůstkový výchozí název sloupce*N,* který začíná na "Sloupec1". Doporučujeme vyhnout se konvenci pojmenování "Column*N*" při zadání názvu sloupce, protože zadané jméno může být v konfliktu s existujícím výchozím názvem sloupce v objektu DataColumnCollection. Pokud zadaný název již existuje, je vyvolána výjimka.  
@@ -56,6 +56,6 @@ workTable.Columns.Add("Purchases", typeof(Double));
 - <xref:System.Data.DataColumn>
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataTable>
-- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
-- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
+- [Definice schématu datové tabulky](datatable-schema-definition.md)
+- [Datové tabulky](datatables.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

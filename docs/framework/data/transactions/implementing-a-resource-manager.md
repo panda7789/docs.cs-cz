@@ -2,19 +2,19 @@
 title: Implementace správce prostředků
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: f3e29dae095fbe56181cf7b67787c1044efa07ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f64a729f49d546dd16c25a2be1f9bd64a2ca8f63
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793702"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205946"
 ---
 # <a name="implementing-a-resource-manager"></a>Implementace správce prostředků
 Každý prostředek, který používá v transakci spravuje správce prostředků, jejichž akce jsou koordinovaný správcem transakcí. Správci prostředků pracují ve spolupráci se správcem transakcí k poskytování aplikací s zárukou atomicitu a izolaci. Microsoft SQL Server, fronty zpráv trvalý, tabulky hodnot hash v paměti jsou všechny příklady správci prostředků.  
   
  Správce prostředků spravuje trvalé nebo přechodné data. Životnost (nebo naopak nestálosti) materiálu manager odkazuje na tom, zda správce prostředků podporuje obnovení po selhání. Pokud správce prostředků podporuje obnovení po selhání, přenese data do trvalého úložiště během fáze 1 (připravit) tak, pokud správce prostředků nebude fungovat, můžete zařadit do transakce při obnovení, znovu a správné činnostem podle oznámení obdržená z správce transakcí. Obecně platí správci těkavých prostředků spravovat těkavých prostředků, jako jsou například struktury dat v paměti (například v paměti zpracováván jako transakce hashtable) a správci trvalý prostředků spravovat prostředky, které mají více trvalé záložní úložiště (například databáze jehož záložní úložiště je disku).  
   
- Chcete-li, aby zdroj k účasti v transakci musí zařadit do transakce. <xref:System.Transactions.Transaction> Třída definuje sadu metod, jejichž názvy začínají řetězcem **Enlist** , poskytují tuto funkci. Různé **Enlist** metody, které odpovídají na různé typy zařazení, které mohou mít správce prostředků. Konkrétně používají <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody pro těkavých materiály a <xref:System.Transactions.Transaction.EnlistDurable%2A> metody pro trvalý zdroje. Pro jednoduchost, jakmile se rozhodnete, zda se má použít <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metoda založená na podporu své prostředků životnost, by měl zařazení materiálu k účasti na dvě fáze potvrzení (2PC) implementací <xref:System.Transactions.IEnlistmentNotification> rozhraní pro váš správce prostředků. Další informace o 2PC naleznete v tématu [potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md).  
+ Chcete-li, aby zdroj k účasti v transakci musí zařadit do transakce. Třída definuje sadu metod, jejichž názvy začínají na zařazení, které tuto funkci poskytují. <xref:System.Transactions.Transaction> Různé metody **zařazení** odpovídají různým typům zařazení, které může mít správce prostředků. Konkrétně používají <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody pro těkavých materiály a <xref:System.Transactions.Transaction.EnlistDurable%2A> metody pro trvalý zdroje. Pro jednoduchost, jakmile se rozhodnete, zda se má použít <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metoda založená na podporu své prostředků životnost, by měl zařazení materiálu k účasti na dvě fáze potvrzení (2PC) implementací <xref:System.Transactions.IEnlistmentNotification> rozhraní pro váš správce prostředků. Další informace o 2PC naleznete v tématu [potvrzení transakce v jedné fázi a několika fázích](committing-a-transaction-in-single-phase-and-multi-phase.md).  
   
  Pomocí zapsání správce prostředků zajišťuje, že ji zpětná volání získá ze Správce transakcí při potvrzení nebo přerušení transakce. Existuje jedna instance <xref:System.Transactions.IEnlistmentNotification> za zařazení. Obvykle je jeden zařazení na transakci, ale můžete zvolit správce prostředků k zařazení vícekrát v rámci jedné transakce.  
   
@@ -30,27 +30,27 @@ Každý prostředek, který používá v transakci spravuje správce prostředk�
   
  V souhrnu protokol dvoufázového potvrzení a správci prostředků spojují k provádění transakcí, atomické a trvalý.  
   
- <xref:System.Transactions.Transaction> Třída rovněž poskytuje <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> metodu k zařazení možné zařazení pro jedné fáze (PSPE). To umožňuje trvalý prostředku manager (SV) pro hostování a "vlastní" transakce, který lze později eskalován jej lze spravovat pomocí příkaz MSDTC v případě potřeby. Další informace najdete v části [optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ <xref:System.Transactions.Transaction> Třída rovněž poskytuje <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> metodu k zařazení možné zařazení pro jedné fáze (PSPE). To umožňuje trvalý prostředku manager (SV) pro hostování a "vlastní" transakce, který lze později eskalován jej lze spravovat pomocí příkaz MSDTC v případě potřeby. Další informace o této části najdete v tématu [optimalizace pomocí potvrzení jedné fáze a jediné fáze s jedním fází](optimization-spc-and-promotable-spn.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- Obecně, za nímž následuje správce prostředků kroky jsou popsány v následujících tématech.  
+ Postup, který je obecně následován správcem prostředků, je popsaný v následujících tématech.  
   
- [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Uvedení prostředků jako účastníků v transakci](enlisting-resources-as-participants-in-a-transaction.md)  
   
  Popisuje, jak lze prostředek trvalé nebo přechodné zařazení v transakci.  
   
- [Potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Potvrzení transakce v jedné fázi a více fázích](committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Popisuje, jak správce prostředků reaguje na potvrzení oznámení a připravit potvrzení.  
   
- [Provedení obnovení](../../../../docs/framework/data/transactions/performing-recovery.md)  
+ [Provedení obnovení](performing-recovery.md)  
   
  Popisuje, jak obnoví správce trvalý prostředků z selhání.  
   
- [Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
+ [Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům](security-trust-levels-in-accessing-resources.md)  
   
  Popisuje, jak tři úrovně důvěryhodnosti pro System.Transactions omezit přístup k studijních materiálech, které <xref:System.Transactions> zveřejňuje.  
   
- [Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení](optimization-spc-and-promotable-spn.md)  
   
  Popisuje postupy pro optimalizaci implementace správce prostředků k dispozici.

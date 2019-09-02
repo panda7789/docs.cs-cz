@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f08008a9-042e-4de9-94f3-4f0e502b1eb5
-ms.openlocfilehash: 0300ceab16d9a94bd04468f7acd105e69d13e643
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a970ebda76f5bb6bdea704dabef2ee305436c613
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879837"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205011"
 ---
 # <a name="datatable-edits"></a>Úpravy datových tabulek
-Když provedete změny hodnot sloupce v <xref:System.Data.DataRow>, změny se okamžitě umístí v aktuálním stavu řádku. <xref:System.Data.DataRowState> Je nastaven na **změněné**, a změny budou přijímat nebo odmítat. pomocí <xref:System.Data.DataRow.AcceptChanges%2A> nebo <xref:System.Data.DataRow.RejectChanges%2A> metody **DataRow**. **DataRow** také poskytuje tři metody, které vám umožní pozastavit stavu řádku, pokud jeho úpravě. Tyto metody jsou <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>, a <xref:System.Data.DataRow.CancelEdit%2A>.  
+Když provedete změny v hodnotách sloupců <xref:System.Data.DataRow>v, změny se okamžitě umístí do aktuálního stavu řádku. <xref:System.Data.DataRow.AcceptChanges%2A> <xref:System.Data.DataRow.RejectChanges%2A>Je pak nastaveno na hodnotu změněno a změny jsou přijímány nebo odmítnuty pomocí metod nebo objektu DataRow. <xref:System.Data.DataRowState> **Objekt DataRow** také nabízí tři metody, které lze použít k pozastavení stavu řádku při jeho úpravách. Tyto metody jsou <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>a <xref:System.Data.DataRow.CancelEdit%2A>.  
   
- Při změně hodnot sloupce v **DataRow** přímo **DataRow** spravuje hodnoty ve sloupcích pomocí **aktuální**, **výchozí**, a **Původní** verze řádků. Kromě těchto verze řádků **funkce BeginEdit**, **EndEdit –**, a **metodu CancelEdit** metody používají čtvrtý řádek verze: **Navrhované**. Další informace o verzích řádku, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+ Když upravujete hodnoty sloupců přímo v objektu **DataRow** , **objekt DataRow** spravuje hodnoty sloupců pomocí **aktuální**, **výchozí**a **původní** verze řádku. Kromě těchto verzí řádků používají metody **metody BeginEdit**, **metodu EndEdit volat**a **CancelEdit** verzi čtvrtého řádku: **Navrženo**. Další informace o verzích řádků najdete v tématu [stavy řádků a verze řádků](row-states-and-row-versions.md).  
   
- **Navrhované** verze řádku existuje během operace úprav, který začíná voláním **funkce BeginEdit** a, který končí buď pomocí **EndEdit –** nebo **metodu CancelEdit,**  nebo voláním **metoda AcceptChanges** nebo **RejectChanges**.  
+ **Navrhovaná** verze řádku existuje během operace Edit, která začíná voláním **metody BeginEdit** a končí buď pomocí **metodu EndEdit volat** nebo **CancelEdit,** nebo voláním **AcceptChanges** nebo **RejectChanges**.  
   
- Během operace úprav, můžete použít logiku ověřování pro jednotlivé sloupce vyhodnocením **ProposedValue** v **ColumnChanged** událost **DataTable**. **ColumnChanged** událostí obsahuje **DataColumnChangeEventArgs** odkaz, který zachovat sloupec, který se mění a do **ProposedValue**. Po vyhodnocení navrhovanou hodnotu, můžete ho upravit nebo zrušit úpravy. Po ukončení úpravy řádku přesune z celkového počtu **navrhované** stavu.  
+ Během operace Edit můžete použít logiku ověřování pro jednotlivé sloupce vyhodnocením **ProposedValue** v události **ColumnChanged** **objektu DataTable**. Událost **ColumnChanged** obsahuje **DataColumnChangeEventArgs** , která uchovává odkaz na sloupec, který se mění a na **ProposedValue**. Jakmile vyhodnocujete navrhovanou hodnotu, můžete ji buď změnit, nebo zrušit její úpravy. Po ukončení úprav se řádek přesune z **navrhovaného** stavu.  
   
- Změny můžete potvrdit voláním **EndEdit –**, nebo můžete je zrušit po zavolání **metodu CancelEdit**. Všimněte si, že při **EndEdit –** potvrďte provedené úpravy **datovou sadu** skutečně nepřijímá změny do **metoda AcceptChanges** je volána. Všimněte si také, že pokud zavoláte **metoda AcceptChanges** před být ukončeny úprav s **EndEdit –** nebo **metodu CancelEdit**, skončila úpravy a **navrhované** hodnoty řádků jsou přijati pro obě **aktuální** a **původní** verze řádků. Stejným způsobem volání **RejectChanges** končí úpravy a zahodí **aktuální** a **navrhované** verze řádků. Volání **EndEdit –** nebo **metodu CancelEdit** po volání **metoda AcceptChanges** nebo **RejectChanges** nemá žádný vliv, protože již má úpravy byla ukončena.  
+ Úpravy můžete potvrdit voláním **metodu EndEdit volat**, nebo je můžete zrušit voláním **CancelEdit**. Všimněte si, že i když **metodu EndEdit volat** potvrdí vaše úpravy, **datová sada** ve skutečnosti nepřijme změny, dokud nebudete volat metodu **AcceptChanges** . Všimněte si také, že pokud zavoláte metodu **AcceptChanges** před ukončením úprav pomocí **metodu EndEdit volat** nebo **CancelEdit**, dokončí se úpravy a **navrhované** hodnoty řádků budou přijaty jak pro **aktuální** , tak pro **původní** verze řádků. Stejným způsobem volání **RejectChanges** ukončí úpravu a zahodí verze **aktuálního** a **navrhovaného** řádku. Volání **metodu EndEdit volat** nebo **CancelEdit** po volání metody **AcceptChanges** nebo **RejectChanges** nemá žádný účinek, protože úpravy již byly ukončeny.  
   
- Následující příklad ukazuje, jak používat **funkce BeginEdit** s **EndEdit –** a **metodu CancelEdit**. Příklad také kontroluje **ProposedValue** v **ColumnChanged** událostí a určuje, jestli se má zrušit úpravy.  
+ Následující příklad ukazuje, jak používat **metody BeginEdit** s **metodu EndEdit volat** a **CancelEdit**. Příklad také zkontroluje **ProposedValue** v události **ColumnChanged** a rozhodne, zda chcete úpravu zrušit.  
   
 ```vb  
 Dim workTable As DataTable = New DataTable  
@@ -91,6 +91,6 @@ protected static void OnColumnChanged(
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataRowVersion>
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [Zpracování událostí datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [Zpracování událostí datové tabulky](handling-datatable-events.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

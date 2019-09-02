@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: 210d15187cd539cdae6e38fdcb708b4b9f81c073
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 146854b592dd83efe87c54e1f5f99f110b81c1a5
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988302"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203681"
 ---
 # <a name="handling-datatable-events"></a>Zpracování událostí datové tabulky
 <xref:System.Data.DataTable> Objekt poskytuje řadu událostí, které mohou být zpracovány aplikací. Následující tabulka popisuje `DataTable` události.  
@@ -81,7 +81,7 @@ ms.locfileid: "69988302"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [Zpracování událostí adaptéru dat](../../../../../docs/framework/data/adonet/handling-dataadapter-events.md)
-- [Zpracování událostí datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [Zpracování událostí adaptéru dat](../handling-dataadapter-events.md)
+- [Zpracování událostí datové sady](handling-dataset-events.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

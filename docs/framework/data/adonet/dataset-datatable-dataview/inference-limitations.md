@@ -2,17 +2,17 @@
 title: Odvození omezení
 ms.date: 03/30/2017
 ms.assetid: 78517994-5d57-44f8-9d20-38812977de09
-ms.openlocfilehash: 308d2ffdd9e2cb16626861e25613657f341a4ccb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4e0f63776162b60c9333ba47be58ea78a9b6805d
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879642"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204829"
 ---
 # <a name="inference-limitations"></a>Odvození omezení
-Proces odvození <xref:System.Data.DataSet> schéma ze souboru XML může vést k různými schématy v závislosti na prvky XML v jednotlivých dokumentech. Představte si třeba následující dokumenty XML.  
+Proces odvození <xref:System.Data.DataSet> schématu z kódu XML může mít za následek různá schémata v závislosti na prvcích XML v jednotlivých dokumentech. Zvažte například následující dokumenty XML.  
   
- Dokument1:  
+ Document1  
   
 ```xml  
 <DocumentElement>  
@@ -21,7 +21,7 @@ Proces odvození <xref:System.Data.DataSet> schéma ze souboru XML může vést 
 </DocumentElement>  
 ```  
   
- Document2:  
+ Document2  
   
 ```xml  
 <DocumentElement>  
@@ -29,36 +29,36 @@ Proces odvození <xref:System.Data.DataSet> schéma ze souboru XML může vést 
 </DocumentElement>  
 ```  
   
- Pro "Dokument1," vytvoří procesu odvození **datovou sadu** s názvem "Prvek DocumentElement" a tabulku s názvem "Element1", "Element1" představuje opakující se prvek proto.  
+ Pro "Document1", proces odvození vytvoří datovou **sadu** s názvem "DocumentElement" a tabulku s názvem "Element1", protože "Element1" je opakující se element.  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |Element1_Text|  
 |--------------------|  
 |Text1|  
 |Text2|  
   
- Ale pro "Document2," vytvoří procesu odvození **datovou sadu** s názvem "NewDataSet" a tabulku s názvem "Prvek DocumentElement." "Element1" je odvozen jako sloupec, protože nemá žádné atributy a žádné podřízené prvky.  
+ Pro "Document2" ale proces odvození vytvoří **datovou sadu** s názvem "NewDataSet" a tabulku s názvem "DocumentElement". "Element1" je odvozen jako sloupec, protože nemá žádné atributy a žádné podřízené prvky.  
   
- **DataSet:** NewDataSet  
+ **Integrován** NewDataSet  
   
- **Tabulka:** Prvek DocumentElement  
+ **Stolní** DocumentElement  
   
-|element1|  
+|Element1|  
 |--------------|  
 |Text1|  
   
- Tyto dva dokumenty XML byl asi zamýšlený k vytvoření stejné schéma, ale procesu odvození vytváří velmi odlišné výsledky podle elementů obsažených v jednotlivých dokumentech.  
+ Tyto dva dokumenty XML mohou být určeny k vytvoření stejného schématu, ale proces odvození vytváří velmi různé výsledky na základě prvků obsažených v jednotlivých dokumentech.  
   
- Aby se zabránilo nedostatky, které mohou nastat při generování schématu z dokumentu XML, doporučujeme explicitně zadat pomocí jazyka pro definici schématu XML (XSD) nebo XML-Data Reduced (XDR) při načítání schématu **datovou sadu** z SOUBOR XML. Další informace o explicitním zadáním **datovou sadu** schéma pomocí schématu XML, naleznete v tématu [odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).  
+ Aby nedocházelo ke konfliktům, ke kterým může dojít při generování schématu z dokumentu XML, doporučujeme při načítání **datové sady** z XML explicitně zadat schéma pomocí jazyka XSD (XML Schema Definition Language) nebo souboru XDR (XML – data s omezením). Další informace o explicitním určení schématu **datové sady** pomocí schématu XML naleznete v tématu [odvozování relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

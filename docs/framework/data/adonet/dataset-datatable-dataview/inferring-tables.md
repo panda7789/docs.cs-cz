@@ -2,24 +2,24 @@
 title: Odvozování tabulek
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 174d305688c7090c163df60a11e233aea24b8f79
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 84cee828f2d3c918a12e449da5b01a3d72d86333
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587365"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203517"
 ---
 # <a name="inferring-tables"></a>Odvozování tabulek
-Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET nejdřív zjistí prvky XML, které představují tabulky. Tabulka pro za následek následující struktury XML **datovou sadu** schématu:  
+Při odvozování schématu pro <xref:System.Data.DataSet> z dokumentu XML ADO.NET nejprve Určuje, které elementy XML reprezentují tabulky. Následující struktury XML vedou v tabulce pro schéma **datové sady** :  
   
 - Elementy s atributy  
   
-- Elementů s podřízenými prvky  
+- Prvky s podřízenými prvky  
   
 - Opakující se elementy  
   
 ## <a name="elements-with-attributes"></a>Elementy s atributy  
- Prvky, které mají atributy určené v nich za následek odvozené tabulky. Zvažte například následující kód XML:  
+ Prvky, které mají v nich atributy, mají za následek odvozené tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -28,19 +28,19 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 </DocumentElement>  
 ```  
   
- Odvození proces vytvoří tabulku s názvem "Element1."  
+ Proces odvození vytvoří tabulku s názvem "Element1".  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
-|value1||  
-|value2|Text1|  
+|Hodnota1||  
+|Argument|Text1|  
   
-## <a name="elements-with-child-elements"></a>Elementů s podřízenými prvky  
- Prvky, které mají podřízené prvky výsledek v odvozené tabulky. Zvažte například následující kód XML:  
+## <a name="elements-with-child-elements"></a>Prvky s podřízenými prvky  
+ Elementy, které mají podřízené elementy, mají za následek odvozené tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -50,17 +50,17 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 </DocumentElement>  
 ```  
   
- Odvození proces vytvoří tabulku s názvem "Element1."  
+ Proces odvození vytvoří tabulku s názvem "Element1".  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |ChildElement1|  
 |-------------------|  
 |Text1|  
   
- Dokumentu nebo kořenový element výsledek odvozené tabulky, pokud má atributy nebo podřízené prvky, které jsou odvozeny jako sloupce. Pokud má element dokumentu žádné atributy a žádné podřízené prvky, které by odvodit jako sloupce, jako je odvozený element **datovou sadu**. Zvažte například následující kód XML:  
+ Pokud obsahuje atributy nebo podřízené elementy, které jsou odvozeny jako sloupce, je výsledkem dokumentu nebo kořenového prvku odvozená tabulka. Pokud element dokumentu nemá žádné atributy a žádné podřízené prvky, které by byly odvozeny jako sloupce, je element odvozen jako **datová sada**. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -69,17 +69,17 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 </DocumentElement>  
 ```  
   
- Odvození proces vytvoří tabulku s názvem "Prvek DocumentElement."  
+ Proces odvození vytvoří tabulku s názvem "DocumentElement".  
   
- **DataSet:** NewDataSet  
+ **Integrován** NewDataSet  
   
- **Tabulka:** Prvek DocumentElement  
+ **Stolní** DocumentElement  
   
-|element1|element2|  
+|Element1|Element2|  
 |--------------|--------------|  
 |Text1|Text2|  
   
- Vezměte v úvahu taky následující kód XML:  
+ Případně zvažte následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -87,18 +87,18 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 </DocumentElement>  
 ```  
   
- Odvození proces vytvoří **datovou sadu** s názvem "Prvek DocumentElement", který obsahuje tabulku s názvem "Element1."  
+ Proces odvození vytvoří datovou **sadu** s názvem "DocumentElement", která obsahuje tabulku s názvem "Element1".  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |attr1|attr2|  
 |-----------|-----------|  
-|value1|value2|  
+|Hodnota1|Argument|  
   
 ## <a name="repeating-elements"></a>Opakující se elementy  
- Prvky, které opakují výsledek v jedné odvozené tabulky. Zvažte například následující kód XML:  
+ Prvky, které se opakují, v jedné odvozené tabulce. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -107,11 +107,11 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
 </DocumentElement>  
 ```  
   
- Odvození proces vytvoří tabulku s názvem "Element1."  
+ Proces odvození vytvoří tabulku s názvem "Element1".  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |Element1_Text|  
 |--------------------|  
@@ -120,9 +120,9 @@ Po odvození schématu pro <xref:System.Data.DataSet> z dokumentu XML, ADO.NET n
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

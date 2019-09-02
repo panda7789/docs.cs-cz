@@ -2,12 +2,12 @@
 title: 'Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ)C#()'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 3fe1f9dbac864f4eca8ea92f84c35d290ab14642
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 414d9764d8de0a1d7cd395a3192a097d48983856
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594099"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205362"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ)C#()
 Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a následně seřadit výsledky. Konkrétně ukazuje, jak provést jednoduché zřetězení, sjednocení a průnik dvou sad textových řádků.  
@@ -16,7 +16,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
   
 1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:  
   
-    ```  
+    ```text  
     Bankov, Peter  
     Holm, Michael  
     Garcia, Hugo  
@@ -31,7 +31,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
   
 2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé běžné názvy.  
   
-    ```  
+    ```text  
     Liu, Jinghao  
     Bankov, Peter  
     Holm, Michael  

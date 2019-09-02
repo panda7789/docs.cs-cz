@@ -1,23 +1,23 @@
 ---
 title: Uspořádání a testování projektů pomocí příkazového řádku .NET Core
-description: Tento kurz vysvětluje, jak uspořádat a Testovací projekty .NET Core z příkazového řádku.
+description: V tomto kurzu se dozvíte, jak organizovat a testovat projekty .NET Core z příkazového řádku.
 author: cartermp
 ms.date: 09/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: ef7263985288445fca273f37389876aeac2f136b
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: a8724c971521b8d65700d61a1ce523c1dfdddf0a
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66051959"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202996"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
-V tomto kurzu následuje [Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku](using-with-xplat-cli.md), přechod nad rámec vytváření jednoduchou konzolovou aplikaci pro vývoj pokročilých a dobře organizovaný aplikací. Po ukazuje, jak na složky slouží k uspořádání kódu, tento kurz ukazuje, jak rozšířit aplikaci konzoly pomocí [xUnit](https://xunit.github.io/) testování.
+V tomto kurzu [se seznámíte s .NET Core v systému Windows, Linux nebo MacOS pomocí příkazového řádku](using-with-xplat-cli.md), který vám přesáhne vytvoření jednoduché aplikace konzoly pro vývoj aplikací pro pokročilé a dobře uspořádané aplikace. Po zobrazení, jak používat složky k uspořádání kódu, se v tomto kurzu dozvíte, jak roztáhnout konzolovou aplikaci pomocí testovacího rozhraní [xUnit](https://xunit.github.io/) .
 
 ## <a name="using-folders-to-organize-code"></a>Použití složek k uspořádání kódu
 
-Pokud chcete zavést nové typy do konzolové aplikace, provedete to tak, že přidáte soubory, které obsahují typy pro aplikace. Například pokud přidáte soubory, které obsahují `AccountInformation` a `MonthlyReportRecords` typy do projektu, je struktura souboru projektu bez stromové struktury a usnadňuje přechod:
+Pokud chcete zavést nové typy do konzolové aplikace, můžete to udělat tak, že přidáte soubory, které obsahují typy do aplikace. Například pokud přidáte soubory obsahující `AccountInformation` a `MonthlyReportRecords` typy do projektu, struktura souboru projektu je plochá a Snadná navigace:
 
 ```
 /MyProject
@@ -27,9 +27,9 @@ Pokud chcete zavést nové typy do konzolové aplikace, provedete to tak, že p�
 |__Program.cs
 ```
 
-Ale toto funguje, pouze i když je poměrně malá velikost vašeho projektu. Můžete si představit, co se stane, pokud je 20 typy přidat do projektu? Projekt jednoznačně by se snadno procházet a udržovat s, který mnoho souborů littering kořenový adresář projektu.
+To však funguje i v případě, že velikost projektu je poměrně malá. Můžete si představit, co se stane, když do projektu přidáte 20 typů? Projekt nebude možné snadno procházet a udržovat s tím, že mnoho souborů zachovává kořenový adresář projektu.
 
-K uspořádání projekt, vytvořte novou složku s názvem *modely* pro uložení souborů typů. Umístěte soubory typu do *modely* složky:
+Chcete-li uspořádat projekt, vytvořte novou složku a pojmenujte *modely* IT tak, aby obsahovaly soubory typu. Do složky *modely* umístěte soubory typu:
 
 ```
 /MyProject
@@ -40,17 +40,17 @@ K uspořádání projekt, vytvořte novou složku s názvem *modely* pro uložen
 |__Program.cs
 ```
 
-Projekty, které logicky skupiny soubory do složek, které jsou snadno procházet a udržovat. V další části vytvořit složitější vzorek se složkami a testování částí.
+Projekty, které logicky seskupují soubory do složek, lze snadno procházet a udržovat. V další části vytvoříte složitější vzorek pomocí složek a testování částí.
 
-## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a>Uspořádání a testování s využitím ukázkové NewTypes mazlíčků
+## <a name="organizing-and-testing-using-the-newtypes-pets-sample"></a>Uspořádání a testování pomocí ukázky NewTypes pro domácí zvířata
 
-### <a name="building-the-sample"></a>Vytváření vzorku
+### <a name="building-the-sample"></a>Vytvoření ukázky
 
-Následující postup, můžete buď absolvovat pomocí [NewTypes domácí zvířata ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) nebo vytvořit vlastní soubory a složky. Typy jsou logicky uspořádány do struktury složek, který umožňuje přidání dalších typů později, a testy jsou také logicky umístěny ve složkách umožňující přidání další testy později.
+V následujících krocích můžete postupovat podle toho, jak se používá [Ukázka NewTypes pro domácí](https://github.com/dotnet/samples/tree/master/core/console-apps/NewTypesMsBuild) prostředí, nebo můžete vytvořit vlastní soubory a složky. Typy jsou logicky uspořádány do struktury složek, která umožňuje přidání dalších typů později a testy jsou také logicky umístěny do složky umožňující přidání dalších testů později.
 
-Ukázka obsahuje dva typy `Dog` a `Cat`a je jim implementovat obecné rozhraní `IPet`. Pro `NewTypes` projektu, vaším cílem je uspořádat domácí mazlíček souvisejících typů do *Mazlíčci* složky. Pokud se později přidá jinou sadu typů *WildAnimals* například přejdou na *NewTypes* složce společně s *Mazlíčci* složky. *WildAnimals* složka může obsahovat typy pro zvířata, které nejsou mazlíčků, jako například `Squirrel` a `Rabbit` typy. Tímto způsobem přidávání typů projektu zůstane dobře uspořádané.
+Ukázka obsahuje dva typy `Dog` a `Cat`a má k `IPet`implementaci společné rozhraní. Pro projekt je vaším cílem organizovat do domácí složky domácí typy, které souvisejí s PET. `NewTypes` Pokud se později přidá další sada typů, *WildAnimals* se například umístí do složky *NewTypes* vedle složky *domácí* . Složka *WildAnimals* může obsahovat typy pro zvířata, která nejsou domácí, například `Squirrel` a `Rabbit` typy. Tímto způsobem, že se přidávají typy, projekt zůstane dobře uspořádaný.
 
-Vytvořte následující strukturu složek s obsahem souboru uvedené:
+Vytvořte následující strukturu složek se zvýrazněným obsahem souboru:
 
 ```
 /NewTypes
@@ -90,28 +90,28 @@ Spusťte následující příkaz:
 dotnet run
 ```
 
-Získáte následující výstup:
+Získejte následující výstup:
 
 ```console
 Woof!
 Meow!
 ```
 
-Volitelné cvičení: Můžete přidat nový domácí mazlíčky typ, například `Bird`, rozšířením tento projekt. Ujistěte se, zobrazení z ptačí perspektivy `TalkToOwner` Poskytněte metodu `Tweet!` na vlastníka. Znovu spusťte aplikaci. Výstup bude zahrnovat `Tweet!`
+Volitelné cvičení: Můžete přidat nový typ PET, `Bird`jako je, tím, že rozšíříte tento projekt. Nastavit `TalkToOwner` metodu ptáku jako `Tweet!` vlastníka. Spusťte aplikaci znovu. Výstup bude obsahovat`Tweet!`
 
 ### <a name="testing-the-sample"></a>Testování ukázky
 
-`NewTypes` Projekt je na místě a uspořádán udržováním mazlíčci související typy ve složce. V dalším kroku vytvoření testovacího projektu a začít psát testy s [xUnit](https://xunit.github.io/) rozhraní pro testování. Testování částí umožňuje automaticky zjišťovat chování domácí mazlíčky typů potvrďte, že funguje správně.
+`NewTypes` Projekt je na místě a organizujete ho tím, že ve složce zachováte typy související s dalšími místy. Dále vytvořte testovací projekt a začněte psát testy pomocí testovacího rozhraní [xUnit](https://xunit.github.io/) . Testování částí vám umožní automaticky kontrolovat chování typů PET a ověřit tak, že fungují správně.
 
-Přejděte zpět na *src* složky a vytvořit *testování* složka s *NewTypesTests* složky v něm. Na příkazovém řádku z *NewTypesTests* složce spusťte `dotnet new xunit`. To vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.
+Přejděte zpět do složky *Src* a vytvořte *testovací* složku se složkou *NewTypesTests* v ní. Na příkazovém řádku ze složky *NewTypesTests* spusťte `dotnet new xunit`. Tím se vytvoří dva soubory: *NewTypesTests. csproj* a *UnitTest1.cs*.
 
-Projekt testů nelze aktuálně typy v testu `NewTypes` a vyžaduje odkaz na projekt `NewTypes` projektu. Chcete-li přidat odkaz na projekt, použijte [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+Testovací projekt aktuálně nemůže testovat typy v `NewTypes` a vyžaduje odkaz `NewTypes` na projekt. Chcete-li přidat odkaz na projekt, [`dotnet add reference`](../tools/dotnet-add-reference.md) použijte příkaz:
 
-```
+```console
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 
-Nebo máte také možnost ručně přidáte odkaz na projekt tak, že přidáte `<ItemGroup>` uzlu *NewTypesTests.csproj* souboru:
+Nebo máte také možnost ručně přidat odkaz na projekt přidáním `<ItemGroup>` uzlu do souboru *NewTypesTests. csproj* :
 
 ```xml
 <ItemGroup>
@@ -123,14 +123,14 @@ Nebo máte také možnost ručně přidáte odkaz na projekt tak, že přidáte 
 
 [!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
 
-*NewTypesTests.csproj* soubor obsahuje následující:
+Soubor *NewTypesTests. csproj* obsahuje následující:
 
-* Odkaz na balíček `Microsoft.NET.Test.Sdk`, .NET testování infrastruktury
-* Odkaz na balíček `xunit`, xUnit testování
-* Odkaz na balíček `xunit.runner.visualstudio`, nástroj test runner
-* Odkaz na projekt `NewTypes`, kód pro testování
+* Odkaz na balíček `Microsoft.NET.Test.Sdk`, na který je infrastruktura testování .NET
+* Odkaz na balíček `xunit`, na rozhraní xUnit Testing
+* Odkaz na balíček `xunit.runner.visualstudio`, na, Test Runner
+* Odkaz na projekt `NewTypes`na, kód k otestování
 
-Změňte název *UnitTest1.cs* k *PetTests.cs* a nahraďte kód v souboru následujícím kódem:
+Změňte název *UnitTest1.cs* na *PetTests.cs* a nahraďte kód v souboru následujícím kódem:
 
 ```csharp
 using System;
@@ -159,12 +159,12 @@ public class PetTests
 }
 ```
 
-Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který provede `Tweet!` vlastníkovi, přidejte testovací metody pro *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda se dá použít správně `Bird` Zadejte.
+Volitelné cvičení: `Bird` Pokud jste přidali typ dříve, který `Tweet!` vydává vlastníkovi, přidejte testovací metodu do `TalkToOwner` souboru *PetTests.cs* , `BirdTalkToOwnerReturnsTweet`abyste zkontrolovali, zda metoda pro daný `Bird` typ funguje správně.
 
 > [!NOTE]
-> I když můžete očekávat, že `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výraz se `Assert.NotEqual` kontroly Určuje, že tyto hodnoty jsou *nerovná*. Vždy nejprve vytvořte test selhání za účelem ověření logiky testu. Jakmile potvrdíte, že se test nezdaří, upravte kontrolní výraz, aby test proběhl úspěšně.
+> I když očekáváte, `expected` že `actual` hodnoty a jsou stejné, počáteční kontrolní výraz s `Assert.NotEqual` touto kontrolou určí, že tyto hodnoty nejsou *stejné*. Před prvním vytvořením testu, který se nezdařil, je zkontrolovat logiku testu. Po potvrzení, že se test nezdařil, upravte kontrolní výraz, aby bylo možné test předat.
 
-Následuje ukázka struktury dokončený projekt:
+Následuje ukázka kompletní struktury projektu:
 
 ```
 /NewTypes
@@ -182,13 +182,13 @@ Následuje ukázka struktury dokončený projekt:
       |__NewTypesTests.csproj
 ```
 
-Spustit v *test/NewTypesTests* adresáře. Obnovit testovací projekt s [ `dotnet restore` ](../tools/dotnet-restore.md) příkazu. Spustit testy pomocí [ `dotnet test` ](../tools/dotnet-test.md) příkazu. Tento příkaz spustí nástroj test runner zadané v souboru projektu.
+Začněte v adresáři *test/NewTypesTests* . Obnovte testovací projekt pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu. Spusťte testy pomocí [`dotnet test`](../tools/dotnet-test.md) příkazu. Tento příkaz spustí Test Runner zadaný v souboru projektu.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Podle očekávání, testování selže a konzoly se zobrazí následující výstup:
+Jak bylo očekáváno, testování se nezdařilo a konzola zobrazí následující výstup:
 
-```
+```output
 Test run for c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp2.1\NewTypesTests.dll(.NETCoreApp,Version=v2.1)
 Microsoft (R) Test Execution Command Line Tool Version 15.8.0
 Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -216,13 +216,13 @@ Test Run Failed.
 Test execution time: 1.7000 Seconds
 ```
 
-Změnit kontrolní výrazy testy z `Assert.NotEqual` k `Assert.Equal`:
+Změňte kontrolní výrazy testů z `Assert.NotEqual` na: `Assert.Equal`
 
 [!code-csharp[PetTests class](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
 
-Znovu spusťte testy s `dotnet test` příkazů a získat následující výstup:
+Znovu spusťte testy pomocí `dotnet test` příkazu a získejte následující výstup:
 
-```
+```output
 Test run for c:\Users\ronpet\repos\samples\core\console-apps\NewTypesMsBuild\test\NewTypesTests\bin\Debug\netcoreapp2.1\NewTypesTests.dll(.NETCoreApp,Version=v2.1)
 Microsoft (R) Test Execution Command Line Tool Version 15.8.0
 Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -234,6 +234,6 @@ Test Run Successful.
 Test execution time: 1.6029 Seconds
 ```
 
-Testuje se předá. Domácí mazlíčky typy metody vrací správné hodnoty, když mluvíme vlastníkovi.
+Testy proběhly úspěšně. Metody typu PET vrací správné hodnoty při komunikaci s vlastníkem.
 
-Když jste se naučili techniky k uspořádání a testování projektů s použitím xUnit. Pomocí následujících postupů jejich použití ve vašich vlastních projektů přejdete vpřed. *Šťastné kódování!*
+Naučili jste se techniky pro organizování a testování projektů pomocí xUnit. Pokud je chcete použít ve svých vlastních projektech, přečtěte si tyto postupy. *Šťastné kódování!*

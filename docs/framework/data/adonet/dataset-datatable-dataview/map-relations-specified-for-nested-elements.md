@@ -2,17 +2,17 @@
 title: Mapování relací zadaných pro vnořené elementy
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
-ms.openlocfilehash: cd0fd66fe70be4b8dea14ac7420e95c4b8bb1158
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 510a5e676df7bac274c6086b94e9a23e7540da20
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64604007"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204634"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>Mapování relací zadaných pro vnořené elementy
-Schéma může obsahovat **msdata:Relationship** poznámky k explicitnímu zadání mapování mezi dva prvky ve schématu. Dva prvky určené ve **msdata:Relationship** může být vnořena ve schématu, ale nemusí být. Proces mapování využívá **msdata:Relationship** ve schématu pro generování primární klíč nebo relace cizího klíče mezi dvěma sloupci.  
+Schéma může zahrnovat anotaci **msdata: Relationship** pro explicitní určení mapování mezi dvěma prvky ve schématu. Dva prvky určené v **msdata: vztah** může být vnořen ve schématu, ale nemusí být. Proces mapování používá **msdata: Relationship** ve schématu k vygenerování vztahu primárního klíče/cizího klíče mezi dvěma sloupci.  
   
- Následující příklad ukazuje schématu XML, ve kterém **OrderDetail** prvek je podřízený prvek **pořadí**. **Msdata:Relationship** identifikuje tento vztah nadřízenosti a podřízenosti a určuje, že **OrderNumber** sloupec výsledné **pořadí** tabulka má vztah k **OrderNo** sloupec výsledné **OrderDetail** tabulky.  
+ Následující příklad ukazuje schéma XML, ve kterém je element **OrderDetail** podřízeným prvkem **Order**. **Msdata: Relationship** identifikuje tuto relaci typu nadřazený-podřízený a určí, že sloupec **OrderNumber** výsledné tabulky **objednávky** souvisí se sloupcem **OrderNo** výsledné tabulky **OrderDetail** .  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -52,16 +52,16 @@ Schéma může obsahovat **msdata:Relationship** poznámky k explicitnímu zadá
 </xs:schema>  
 ```  
   
- Proces mapování schématu XML vytvoří následující <xref:System.Data.DataSet>:  
+ Proces mapování schématu XML vytvoří následující v <xref:System.Data.DataSet>:  
   
-- **Pořadí** a **OrderDetail** tabulky.  
+- **Objednávka** a tabulka **OrderDetail**  
   
     ```  
     Order(OrderNumber, EmpNumber)  
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
-- Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .  
+- Vztah mezi tabulkami **Order** a **OrderDetail** . **Vnořená** vlastnost pro tento vztah je nastavena na **hodnotu true** , protože prvky **Order** a **OrderDetail** jsou vnořené ve schématu.  
   
     ```  
     ParentTable: Order  
@@ -72,10 +72,10 @@ Schéma může obsahovat **msdata:Relationship** poznámky k explicitnímu zadá
     Nested: True  
     ```  
   
- Proces mapování nevytvoří žádná omezení.  
+ Proces mapování nevytváří žádná omezení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)
-- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
+- [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

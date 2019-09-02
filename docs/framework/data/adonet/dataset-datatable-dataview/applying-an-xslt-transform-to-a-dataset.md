@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 56f6e13763b5230e046c0838892393b3672a54be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8bff92fe40ec668dfa634c3b97f2f1df238f159b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937040"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203961"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
 Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **datové sady** jako data XML. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** se <xref:System.Xml.XmlDataDocument> sadou vám ale umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž byste museli nejdřív zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
@@ -59,7 +59,7 @@ Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **dato
  Následující kód vyplní **datovou sadu** a použije šablonu stylů XSLT.  
   
 > [!NOTE]
-> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** <xref:System.Data.DataRelation> vlastnost na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** <xref:System.Data.DataRelation> vlastnost na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -125,5 +125,5 @@ writer.Close();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
+- [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

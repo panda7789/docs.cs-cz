@@ -2,17 +2,17 @@
 title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: 4b7b216e58f36302db29c4b4b5176339521b0f17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83dce7173c016a7d7d2d626bb7a3606de29d54ae
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607914"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204465"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
-Pokud nejsou vnořené elementy, vytvoří se žádné implicitní vztahy. Můžete však explicitně zadat relací mezi elementy, které nejsou vnořené pomocí **msdata:Relationship** poznámky.  
+Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Můžete však explicitně zadat vztahy mezi prvky, které nejsou vnořeny pomocí anotace **msdata: Relationship** .  
   
- Následující příklad ukazuje schématu XML, ve kterém **msdata:Relationship** je určena anotace mezi **pořadí** a **OrderDetail** prvky, které nejsou vnořené. **Msdata:Relationship** poznámka určena jako podřízený prvek **schématu** elementu.  
+ Následující příklad ukazuje schéma XML, ve kterém je zadána anotace **msdata: Relationship** mezi prvky **Order** a **OrderDetail** , které nejsou vnořené. Poznámka **msdata: Relationship** je zadána jako podřízený element elementu **Schema** .  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -53,7 +53,7 @@ Pokud nejsou vnořené elementy, vytvoří se žádné implicitní vztahy. Můž
 </xs:schema>  
 ```  
   
- Vytvoří proces mapování schématu XML definice jazyk (XSD) schématu <xref:System.Data.DataSet> s **pořadí** a **OrderDetail** tabulky a relace určena v rozsahu mezi těmito dvěma tabulkami, jak je znázorněno níže.  
+ Proces mapování schématu XSD (XML Schema Definition Language) vytvoří <xref:System.Data.DataSet> s tabulkami **Order** a **OrderDetail** a vztah zadaný mezi těmito dvěma tabulkami, jak je znázorněno níže.  
   
 ```  
 RelationName: OrdOrderDetailRelation  
@@ -66,6 +66,6 @@ Nested: False
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)
-- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
+- [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

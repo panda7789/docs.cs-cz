@@ -2,17 +2,17 @@
 title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
-ms.openlocfilehash: 2bf736445a041ec678ab30474da51fddfba1773b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b9e6fb4ce1c2c7ee7d081a1cb2106d30960853c7
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934483"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204889"
 ---
 # <a name="diffgrams"></a>DiffGrams
 Formát DiffGram je formát XML, který identifikuje aktuální a původní verzi datových prvků. <xref:System.Data.DataSet> Používá formát formátu DiffGram k načtení a uchování jeho obsahu a k serializaci jeho obsahu pro přenos přes síťové připojení. Když je zapsán jako formát formátu DiffGram, naplní formát DiffGram všemi potřebnými informacemi, aby bylo možné obsah přesně znovu vytvořit, ale ne schématu <xref:System.Data.DataSet>, včetně hodnot sloupců z **originálu** i <xref:System.Data.DataSet>  **Aktuální** verze řádku, informace o chybě řádku a pořadí řádků.  
   
- Při odesílání a načítání <xref:System.Data.DataSet> z webové služby XML je formát formátu DiffGram implicitně použit. Kromě <xref:System.Data.DataSet> toho při načítání obsahu z XML pomocí metody **ReadXml** nebo při psaní obsahu <xref:System.Data.DataSet> v XML pomocí metody **WriteXml** můžete určit, že se má obsah číst nebo zapisovat jako formát formátu DiffGram. Další informace naleznete v tématu [načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis obsahu datové sady jako XML data](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Při odesílání a načítání <xref:System.Data.DataSet> z webové služby XML je formát formátu DiffGram implicitně použit. Kromě <xref:System.Data.DataSet> toho při načítání obsahu z XML pomocí metody **ReadXml** nebo při psaní obsahu <xref:System.Data.DataSet> v XML pomocí metody **WriteXml** můžete určit, že se má obsah číst nebo zapisovat jako formát formátu DiffGram. Další informace naleznete v tématu [načtení datové sady z XML](loading-a-dataset-from-xml.md) a [zápis obsahu datové sady jako XML data](writing-dataset-contents-as-xml-data.md).  
   
  Přestože formát formátu DiffGram je primárně používán .NET Framework jako formát serializace pro obsah a <xref:System.Data.DataSet>, můžete také pomocí formátu DiffGram upravovat data v tabulkách v databázi Microsoft SQL Server.  
   
@@ -133,8 +133,8 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Kopírování obsahu datové sady jako dat XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Kopírování obsahu datové sady jako dat XML](writing-dataset-contents-as-xml-data.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
 - [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

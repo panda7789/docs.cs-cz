@@ -5,78 +5,78 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5e9309a-3ebb-4a9c-9d78-21c4e2bafc5b
-ms.openlocfilehash: 153c96860005046e4cc16d5a965bd569e3519b52
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5a8040a803fbc9b098fc1b56e0f5d837c4cdb94
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607927"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203359"
 ---
 # <a name="merging-dataset-contents"></a>Slučování obsahu datové sady
 
-Můžete použít <xref:System.Data.DataSet.Merge%2A> metoda sloučit obsah <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, nebo <xref:System.Data.DataRow> pole do existujícího `DataSet`. Několik faktorů a možnosti ovlivnit jak nová data se sloučí do existujícího `DataSet`.
+Můžete použít <xref:System.Data.DataSet.Merge%2A> metodu pro sloučení obsahu <xref:System.Data.DataSet>, <xref:System.Data.DataTable>nebo <xref:System.Data.DataRow> pole do existující `DataSet`. Několik faktorů a možností má vliv na to, jak se nová data `DataSet`sloučí do existující.
 
 ## <a name="primary-keys"></a>Primární klíče
 
-Pokud v tabulce přijímat nová data a schéma z sloučení nemá primární klíč, nové řádky z příchozích dat jsou porovnány s existující řádky, které mají stejný <xref:System.Data.DataRowVersion.Original> hodnoty primárního klíče jako ty v příchozích datech. Pokud sloupce z příchozího schématu odpovídají existujícím schématu, se mění data v existující řádky. Sloupce, které se neshodují s existujícím schématu jsou ignorována nebo přidávat na základě <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> parametru. Nové řádky s hodnoty primárního klíče, které se neshodují žádné existující řádky jsou připojena k existující tabulce.
+Pokud tabulka přijímající nová data a schéma ze sloučení má primární klíč, budou nové řádky z příchozích dat spárovány se stávajícími řádky, které mají stejné <xref:System.Data.DataRowVersion.Original> hodnoty primárního klíče jako v příchozích datech. Pokud se sloupce z příchozího schématu shodují s hodnotami stávajícího schématu, data ve stávajících řádcích se upraví. Sloupce, které neodpovídají existujícímu schématu, se buď ignorují, nebo přidají na základě <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> parametru. Nové řádky s hodnotami primárního klíče, které se neshodují s žádnými existujícími řádky, se připojí k existující tabulce.
 
-Pokud příchozí nebo existující řádky mají stav řádku <xref:System.Data.DataRowState.Added>, jejich hodnoty primárního klíče jsou porovnány pomocí <xref:System.Data.DataRowVersion.Current> hodnota primárního klíče `Added` řádek, protože žádné `Original` existuje verze řádku.
+Pokud příchozí nebo existující řádky mají <xref:System.Data.DataRowState.Added>stav řádku, jsou jejich primární hodnoty porovnány <xref:System.Data.DataRowVersion.Current> pomocí hodnoty `Added` primárního klíče řádku, protože neexistuje žádná `Original` verze řádku.
 
-Pokud příchozí tabulky a existující tabulky obsahují sloupec se stejným názvem, ale různé datové typy, je vyvolána výjimka a <xref:System.Data.DataSet.MergeFailed> událost `DataSet` je vyvolána. Pokud příchozí tabulky a existující tabulku definovali klíče, ale primární klíče jsou pro různé sloupce, je vyvolána výjimka a `MergeFailed` událost `DataSet` je vyvolána.
+Pokud příchozí tabulka a stávající tabulka obsahují sloupec se stejným názvem, ale s různými datovými typy, je vyvolána výjimka a <xref:System.Data.DataSet.MergeFailed> událost `DataSet` je vyvolána. Pokud má v příchozí tabulce a existující tabulce definované klíče, ale primární klíče jsou pro různé sloupce, je vyvolána výjimka a `MergeFailed` událost `DataSet` je vyvolána.
 
-Pokud v tabulce příjem nových dat z sloučení nemá primární klíč, nové řádky z příchozích dat nejde spárovat existující řádky v tabulce a místo toho jsou připojeny k existující tabulce.
+Pokud tabulka přijímající nová data ze sloučení nemá primární klíč, nové řádky z příchozích dat nelze spárovat s existujícími řádky v tabulce a jsou místo toho připojeny k existující tabulce.
 
 ## <a name="table-names-and-namespaces"></a>Názvy tabulek a obory názvů
 
-<xref:System.Data.DataTable> Volitelně je možné přiřadit objekty <xref:System.Data.DataTable.Namespace%2A> hodnotu vlastnosti. Když <xref:System.Data.DataTable.Namespace%2A> hodnoty jsou přiřazeny, <xref:System.Data.DataSet> může obsahovat více <xref:System.Data.DataTable> objektů se stejným <xref:System.Data.DataTable.TableName%2A> hodnotu. Během operace sloučení obou <xref:System.Data.DataTable.TableName%2A> a <xref:System.Data.DataTable.Namespace%2A> slouží k identifikaci cílové sloučení. Pokud ne <xref:System.Data.DataTable.Namespace%2A> byla přiřazena, pouze <xref:System.Data.DataTable.TableName%2A> se používá k identifikaci cílové sloučení.
+<xref:System.Data.DataTable>objektům lze volitelně přiřadit <xref:System.Data.DataTable.Namespace%2A> hodnotu vlastnosti. Při <xref:System.Data.DataTable.Namespace%2A> přiřazení <xref:System.Data.DataTable> <xref:System.Data.DataTable.TableName%2A> hodnot může obsahovat více objektů se stejnou hodnotou. <xref:System.Data.DataSet> Během slučovacích operací <xref:System.Data.DataTable.TableName%2A> a <xref:System.Data.DataTable.Namespace%2A> slouží k identifikaci cíle sloučení. Pokud není přiřazeno, použije se k <xref:System.Data.DataTable.TableName%2A> identifikaci cíle sloučení jenom. <xref:System.Data.DataTable.Namespace%2A>
 
 > [!NOTE]
-> Toto chování změnit ve verzi 2.0 rozhraní .NET Framework. Ve verzi 1.1 obory názvů byly podporovány, ale během operace sloučení byly ignorovány. Z tohoto důvodu <xref:System.Data.DataSet> , která používá <xref:System.Data.DataTable.Namespace%2A> hodnoty vlastností budou mít různé chování v závislosti na tom, kterou verzi rozhraní .NET Framework, kterou používáte. Předpokládejme například, že máte dva `DataSets` obsahující `DataTables` se stejným <xref:System.Data.DataTable.TableName%2A> hodnoty vlastnosti, ale odlišným <xref:System.Data.DataTable.Namespace%2A> hodnot vlastností. Ve verzi 1.1 rozhraní .NET Framework, různých <xref:System.Data.DataTable.Namespace%2A> názvy se bude ignorovat při slučování dvou <xref:System.Data.DataSet> objekty. Nicméně od verze 2.0, slučování způsobí, že dvě nové `DataTables` byly vytvořeny v cílové <xref:System.Data.DataSet>. Původní `DataTables` nebude mít sloučení.
+> Toto chování se změnilo ve verzi 2,0 .NET Framework. Ve verzi 1,1 byly podporovány obory názvů, ale byly ignorovány během slučovacích operací. Z <xref:System.Data.DataSet> tohoto důvodu bude mít použití <xref:System.Data.DataTable.Namespace%2A> hodnot vlastností různé chování v závislosti na tom, kterou verzi .NET Framework používáte. Předpokládejme například, že máte `DataSets` dvě obsahující `DataTables` stejné <xref:System.Data.DataTable.TableName%2A> hodnoty vlastností, ale jiné <xref:System.Data.DataTable.Namespace%2A> hodnoty vlastností. Ve verzi 1,1 .NET Framework budou při slučování těchto dvou <xref:System.Data.DataTable.Namespace%2A> <xref:System.Data.DataSet> objektů ignorovány různé názvy. Počínaje verzí 2,0 ale sloučení způsobí, že se v cíli `DataTables` <xref:System.Data.DataSet>vytvoří dva nové. Původní `DataTables` akce sloučení nebude ovlivněna.
 
 ## <a name="preservechanges"></a>PreserveChanges
 
-Při předání `DataSet`, `DataTable`, nebo `DataRow` pole na `Merge` metodu, můžete zahrnout volitelné parametry, které určují, jestli chcete zachovat změny v existujícím `DataSet`a způsob zpracování nových elementů schématu nalezeno v příchozích datech. První z těchto parametrů po příchozích dat je logický příznak <xref:System.Data.LoadOption.PreserveChanges>, která určuje, jestli chcete zachovat změny v existujícím `DataSet`. Pokud `PreserveChanges` příznak je nastaven na `true`, příchozí hodnoty Nepřepisovat existující hodnoty `Current` řádek verzi existující řádek. Pokud `PreserveChanges` příznak je nastaven na `false`, příchozí hodnoty přepsat existující hodnoty `Current` řádek verzi existující řádek. Pokud `PreserveChanges` příznak není zadán, je nastavena na `false` ve výchozím nastavení. Další informace o verzích řádku, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).
+Pokud předáte `DataSet`do `DataTable` metodypole`Merge` , `DataRow` nebo, můžete zahrnout volitelné parametry, které určují, zda se mají zachovat změny v existujících `DataSet`a jak zpracovat nové prvky schématu, které byly nalezeny v příchozích datech. První z těchto parametrů po příchozích datech je logický příznak, <xref:System.Data.LoadOption.PreserveChanges>který určuje, jestli se mají změny v existujícím `DataSet`případě zachovat. Pokud je `true`příznak nastaven na hodnotu, příchozí hodnoty `Current` nepřepisují existující hodnoty v existujícím řádku ve verzi. `PreserveChanges` Pokud je `false`příznak nastaven na hodnotu, příchozí hodnoty přepíší existující hodnoty v existujícím `Current` řádku ve verzi. `PreserveChanges` Pokud příznak není zadán, je `false` nastaven jako výchozí. `PreserveChanges` Další informace o verzích řádků najdete v tématu [stavy řádků a verze řádků](row-states-and-row-versions.md).
 
-Když `PreserveChanges` je `true`, data z existující řádek je udržována v <xref:System.Data.DataRowVersion.Current> řádek verzi existující řádek dat z <xref:System.Data.DataRowVersion.Original> řádek verzi existující řádek je přepsán pomocí dat z `Original` řádek verze z příchozího řádku. <xref:System.Data.DataRow.RowState%2A> Existující řádek se nastaví na <xref:System.Data.DataRowState.Modified>. Vztahují se tyto výjimky:
+`PreserveChanges` <xref:System.Data.DataRowVersion.Current> <xref:System.Data.DataRowVersion.Original> `Original` V takovém případě jsou data z existujícího řádku udržována ve verzi řádku stávajícího řádku, zatímco data z verze stávajícího řádku jsou přepsána daty z řádku `true` verze příchozího řádku Existující řádek je nastaven na <xref:System.Data.DataRowState.Modified>hodnotu. <xref:System.Data.DataRow.RowState%2A> Platí následující výjimky:
 
-- Pokud stávající řádek má `RowState` z `Deleted`tento `RowState` zůstává `Deleted` a není nastavená na `Modified`. V takovém případě data z příchozího řádku stále se uloží do `Original` řádek verzi existující řádek přepsání `Original` řádek verzi existující řádek (Pokud má příchozího řádku `RowState` z `Added`).
+- Pokud existující `RowState` řádek má `Deleted`, `RowState` `Modified`zůstává `Deleted` a není nastaven na. V takovém případě se data z příchozího řádku budou `Original` ukládat i ve verzi řádku existujícího řádku, `Original` která přepíše verzi stávajícího řádku (Pokud `Added`vstupní řádek neobsahuje `RowState` ).
 
-- Pokud má příchozího řádku `RowState` z `Added`, data z `Original` řádek verzi existující řádek nedojde k přepsání s daty z příchozího řádku, protože nemá příchozího řádku `Original` verze řádku.
+- Pokud `RowState` má vstupní řádek hodnotu `Added` `Original` , data z verze stávajícího řádku nebudou přepsána daty z příchozího řádku, `Original` protože příchozí řádek neobsahuje verzi řádku.
 
-Když `PreserveChanges` je `false`, i `Current` a `Original` verze řádků v existující řádek jsou přepsány s daty z příchozího řádku a `RowState` existující řádek se nastaví na `RowState` z příchozího řádku. Vztahují se tyto výjimky:
+`PreserveChanges` `RowState` V případě `RowState` , verze řádku a`Original`ve stávajícím řádku jsou přepsány daty z příchozího řádku a stávající řádek je nastaven na vstupní řádek. `Current` `false` Platí následující výjimky:
 
-- Pokud má příchozího řádku `RowState` z `Unchanged` a stávající řádek má `RowState` z `Modified`, `Deleted`, nebo `Added`, `RowState` existující řádek se nastaví na `Modified`.
+- Pokud `RowState` má vstupní řádek `Unchanged` a a `Deleted` `Added` `Modified`stávající řádek má `RowState` , nebo ,`RowState` je existující řádek nastaven na hodnotu. `Modified`
 
-- Pokud má příchozího řádku `RowState` z `Added`, a stávající řádek má `RowState` z `Unchanged`, `Modified`, nebo `Deleted`, `RowState` existující řádek se nastaví na `Modified`. Kromě toho data z `Original` řádek verzi existující řádek není přepsán pomocí dat z příchozího řádku, protože příchozího řádku nemá `Original` verze řádku.
+- `RowState` Pokud má `Modified` `RowState` `RowState` `Modified`vstupní řádek a a `Deleted`stávající řádek má ,,nebo,jeexistujícířádeknastavennahodnotu.`Unchanged` `Added` Také data z `Original` verze stávajícího řádku nejsou přepsána daty z příchozího řádku, protože příchozí řádek `Original` neobsahuje verzi řádku.
 
 ## <a name="missingschemaaction"></a>MissingSchemaAction
 
-Můžete použít nepovinnou <xref:System.Data.MissingSchemaAction> parametr `Merge` metody určíte, jak `Merge` zpracuje schéma elementů v příchozí data, která nejsou součástí existující `DataSet`.
+Můžete použít volitelný <xref:System.Data.MissingSchemaAction> parametr `Merge` metody k určení, jak `Merge` bude zpracovávat prvky schématu v příchozích datech, které nejsou součástí existující `DataSet`.
 
 Následující tabulka popisuje možnosti pro `MissingSchemaAction`.
 
-|Možnost MissingSchemaAction|Popis|
+|MissingSchemaAction – možnost|Popis|
 |--------------------------------|-----------------|
-|<xref:System.Data.MissingSchemaAction.Add>|Přidat nové informace o schématu `DataSet` a naplňte jimi nové sloupce s příchozí hodnoty. Toto nastavení je výchozí.|
-|<xref:System.Data.MissingSchemaAction.AddWithKey>|Přidat nové schéma a informacemi o primárním klíči pro `DataSet` a naplňte jimi nové sloupce s příchozí hodnoty.|
-|<xref:System.Data.MissingSchemaAction.Error>|Vyvolejte výjimku, pokud informace o neodpovídající schématu dochází.|
+|<xref:System.Data.MissingSchemaAction.Add>|Přidejte nové informace o schématu do `DataSet` a naplňte nové sloupce vstupními hodnotami. Toto nastavení je výchozí.|
+|<xref:System.Data.MissingSchemaAction.AddWithKey>|Přidejte informace o novém schématu a primárním klíči do `DataSet` a naplňte nové sloupce vstupními hodnotami.|
+|<xref:System.Data.MissingSchemaAction.Error>|Vyvolejte výjimku, pokud se zjistily neshodné informace o schématu.|
 |<xref:System.Data.MissingSchemaAction.Ignore>|Ignorujte nové informace o schématu.|
 
 ## <a name="constraints"></a>Omezení
 
-S `Merge` metody omezení nejsou zkontrolován, dokud všechna nová data je přidaný do stávající `DataSet`. Po přidání data na aktuální hodnoty v jsou vynucena omezení `DataSet`. Ujistěte se, že váš kód zpracovává všechny výjimky, které mohou být vyvolány z důvodu narušení omezení.
+U metody nejsou kontrolována omezení, dokud nebudou do stávajících `DataSet`dat přidána všechna nová data. `Merge` Po přidání dat jsou omezení uplatněna na aktuální hodnoty v `DataSet`. Je nutné zajistit, že váš kód zpracovává všechny výjimky, které mohou být vyvolány z důvodu porušení omezení.
 
-Představte si případ, kdy existující řádek v `DataSet` je `Unchanged` řádek s hodnotu primárního klíče 1. Během operace merge s `Modified` příchozího řádku s `Original` hodnotu primárního klíče 2 a `Current` hodnotu primárního klíče 1, stávající řádek a příchozího řádku nejsou považovány za odpovídající, protože `Original` hodnoty primárního klíče se liší. Však při dokončení sloučení a omezení jsou ověřeny, bude vyvolána výjimka vzhledem k tomu, `Current` hodnoty primárního klíče porušení omezení unique pro sloupec primárního klíče.
+Vezměte v úvahu případ, kdy existující řádek v `DataSet` `Unchanged` je řádek s hodnotou primárního klíče 1. Během `Modified` operace sloučení se vstupním řádkem `Original` s `Current` hodnotou primárního klíče na hodnotě 2 a hodnotou primárního klíče 1 se existující řádek a `Original` vstupní řádek nepovažují za shodu, protože hodnoty primárního klíče jednotlivých. Když je však dokončeno sloučení a jsou kontrolována omezení, bude vyvolána výjimka, protože `Current` hodnoty primárního klíče narušují omezení UNIQUE pro sloupec primárního klíče.
 
 > [!NOTE]
-> Když se řádky vložily do tabulky databáze obsahující automatické zvyšování hodnoty sloupce jako je například sloupec identity, identity sloupce hodnotu vrácenou příkazem insert nemusí odpovídat hodnotě v `DataSet`, způsobí vrácené řádky, které se mají připojit místo sloučeny. Další informace najdete v tématu [načítání Identity nebo automatického číslování hodnoty](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).
+> Když jsou řádky vloženy do tabulky databáze obsahující automatické zvyšování sloupce, jako je například sloupec identity, hodnota sloupce identity vrácená vložením nesmí odpovídat hodnotě v `DataSet`objektu, což způsobí, že vracené řádky budou namísto sloučení sloučeny. Další informace najdete v tématu [načtení hodnot identity nebo hodnot typu AutoNumber](../retrieving-identity-or-autonumber-values.md).
 
-Následující příklad kódu Sloučí dvě `DataSet` objekty s různými schématy do jedné `DataSet` kombinované schémata dvě příchozí `DataSet` objekty.
+Následující příklad kódu sloučí dva `DataSet` objekty s různými schématy do jednoho `DataSet` s kombinovanými schématy dvou příchozích `DataSet` objektů.
 
 [!code-csharp[DataWorks DataSet.Merge#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.Merge/CS/source.cs#1)]
 [!code-vb[DataWorks DataSet.Merge#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.Merge/VB/source.vb#1)]
 
-Následující příklad kódu používá existující `DataSet` s aktualizacemi a předá tyto aktualizace se mají `DataAdapter` ke zpracování ve zdroji dat. Výsledky se pak sloučit do původního `DataSet`. Po zamítnutí změn, které vedly k chybě, sloučené změny jsou potvrzeny s `AcceptChanges`.
+Následující příklad kódu používá existující `DataSet` s aktualizacemi a předá tyto aktualizace `DataAdapter` ke zpracování ve zdroji dat. Výsledky se pak sloučí do původní `DataSet`. Po zamítnutí změn, které vedly k chybě, se sloučené změny potvrdí pomocí `AcceptChanges`.
 
 [!code-csharp[DataWorks DataSet.MergeAcceptChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.MergeAcceptChanges/CS/source.cs#1)]
 [!code-vb[DataWorks DataSet.MergeAcceptChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.MergeAcceptChanges/VB/source.vb#1)]
@@ -86,9 +86,9 @@ Následující příklad kódu používá existující `DataSet` s aktualizacemi
 
 ## <a name="see-also"></a>Viz také:
 
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)
-- [Adaptéry a čtečky dat](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Načítání hodnot identity nebo automatického číslování](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [Stavy řádků a verze řádků](row-states-and-row-versions.md)
+- [Adaptéry a čtečky dat](../dataadapters-and-datareaders.md)
+- [Načítání a úpravy dat v ADO.NET](../retrieving-and-modifying-data.md)
+- [Načítání hodnot identity nebo automatického číslování](../retrieving-identity-or-autonumber-values.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,24 +2,24 @@
 title: Generování relací datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
-ms.openlocfilehash: 2cf6d2ed949a3efa39c0f1c049bc03e7a5b0eb0b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fd32d024acca393dcc8241f047a305e763682866
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621084"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204860"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování relací datové sady ze schématu XML (XSD)
-V <xref:System.Data.DataSet>, formuláře přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřízenosti a podřízenosti. Existují tři způsoby, jak reprezentaci **datovou sadu** vztahu v rámci schématu schématu XML definice jazyk (XSD):  
+V a <xref:System.Data.DataSet>tvoří přidružení mezi dvěma nebo více sloupci vytvořením vztahu nadřízený-podřízený. Existují tři způsoby, jak znázornit relaci **datové sady** v rámci schématu XSD (XML Schema Definition Language):  
   
 - Zadejte vnořené komplexní typy.  
   
-- Použití **msdata:Relationship** poznámky.  
+- Použijte anotaci **msdata: Relationship** .  
   
-- Zadejte **xs:keyref** bez **msdata:ConstraintOnly** poznámky.  
+- Určete **xs: keyref** bez anotace **msdata: ConstraintOnly** .  
   
 ## <a name="nested-complex-types"></a>Vnořené komplexní typy  
- Vnořené komplexní typ definice ve schématu označují vztahy nadřazenosti a podřízenosti prvků. Následující fragment XML schéma ukazuje, že **OrderDetail** je podřízený prvek **pořadí** elementu.  
+ Vnořené definice komplexního typu ve schématu označují vztahy nadřazenosti a podřízenosti prvků. Následující fragment schématu XML ukazuje, že **OrderDetail** je podřízeným prvkem elementu **Order** .  
   
 ```xml  
 <xs:element name="Order">  
@@ -33,10 +33,10 @@ V <xref:System.Data.DataSet>, formuláře přidružení mezi dvěma nebo více s
 </xs:element>  
 ```  
   
- Proces mapování schématu XML vytvoří tabulky v **datovou sadu** , které odpovídají vnořené komplexní typy ve schématu. Vytvoří také další sloupce, které se používají jako nadřazený**-** podřízené sloupce pro generované tabulky. Všimněte si, že tyto nadřazené**-** podřízené sloupce zadejte relace, která není stejné jako zadání omezení primárního klíče a cizího klíče.  
+ Proces mapování schématu XML vytvoří tabulky v **datové sadě** , které odpovídají vnořeným komplexním typům ve schématu. Vytvoří také další sloupce, které jsou používány jako nadřazené **-** podřízené sloupce pro vygenerované tabulky. Všimněte si, že **-** tyto nadřazené podřízené sloupce určují relace, které se neshodují s určením omezení primárního klíče nebo cizího klíče.  
   
-## <a name="msdatarelationship-annotation"></a>MSDATA:Relationship poznámky  
- **Msdata:Relationship** anotace umožňuje explicitně určit vztahů nadřazenosti a podřízenosti mezi elementy ve schématu, které nejsou vnořené. Následující příklad ukazuje strukturu **vztah** elementu.  
+## <a name="msdatarelationship-annotation"></a>msdata: Poznámka vztahu  
+ Anotace **msdata: Relationship** umožňuje explicitně zadat vztahy nadřazenosti a podřízenosti mezi prvky ve schématu, které nejsou vnořené. Následující příklad ukazuje strukturu elementu **Relationship** .  
   
 ```xml  
 <msdata:Relationship name="CustOrderRelationship"    
@@ -46,9 +46,9 @@ msdata:parentkey=""
 msdata:childkey="" />  
 ```  
   
- Atributy **msdata:Relationship** anotace identifikaci prvků, které jsou zahrnuté ve vztahu nadřazený podřízený, stejně jako **vlastnosti parentkey** a **childkey** elementy a atributy, které jsou součástí relace. Proces mapování používá tyto informace k vygenerování tabulek v **datovou sadu** a vytvořte primární klíč, cizí klíče vztah mezi těmito tabulkami.  
+ Atributy **msdata:** anotace Relationship identifikují prvky zahrnuté v relaci nadřazený-podřízený a také elementy **vlastnosti ParentKey** a **ChildKey** a atributy, které jsou součástí relace. Proces mapování používá tyto informace ke generování tabulek v **datové sadě** a k vytvoření vztahu primárního klíče/cizího klíče mezi těmito tabulkami.  
   
- Například následující fragment schéma určuje **pořadí** a **OrderDetail** elementů na stejné úrovni (ne vnořenou). Určuje schéma **msdata:Relationship** poznámky, které určuje vztah nadřízenosti a podřízenosti mezi těmito dvěma elementy. V takovém případě explicitního vztahu musí být zadán pomocí **msdata:Relationship** poznámky.  
+ Například následující fragment schématu určuje **pořadí** a **OrderDetail** prvky na stejné úrovni (nevnořený). Schéma určuje anotaci **msdata: Relationship** , která určuje vztah nadřazenosti a podřízenosti mezi těmito dvěma prvky. V takovém případě je nutné zadat explicitní relaci pomocí poznámky **msdata: Relationship** .  
   
 ```xml  
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
@@ -78,25 +78,25 @@ msdata:childkey="" />
   </xs:annotation>  
 ```  
   
- Používá proces mapování **vztah** prvku k vytvoření vztahu nadřazený podřízený mezi **OrderNumber** sloupec **pořadí** tabulky a **OrderNo** sloupec v **OrderDetail** v tabulku **datovou sadu**. Proces mapování pouze určuje vztah; neurčuje automaticky jakákoliv omezení u hodnot v těchto sloupcích, stejně jako primární klíč nebo omezení cizího klíče v relační databáze.  
+ Proces mapování používá element **Relationship** k vytvoření vztahu nadřízený-podřízený mezi sloupcem **OrderNumber** v tabulce **Order** a sloupcem **OrderNo** v tabulce **OrderDetail** v **datové sadě**. Proces mapování určuje pouze vztah; neurčuje automaticky žádná omezení pro hodnoty v těchto sloupcích, stejně jako omezení primárního klíče a cizího klíče v relačních databázích.  
   
 ### <a name="in-this-section"></a>V tomto oddílu  
- [Mapování implicitních relací mezi elementy ve vnořeném schématu](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-implicit-relations-between-nested-schema-elements.md)  
- Popisuje omezení a vztahy, které se implicitně vytvářejí v **datovou sadu** při výskytu vnořené elementy ve schématu XML.  
+ [Mapování implicitních relací mezi elementy ve vnořeném schématu](map-implicit-relations-between-nested-schema-elements.md)  
+ Popisuje omezení a vztahy, které jsou implicitně vytvořeny v **datové sadě** , pokud jsou ve schématu XML zjištěny vnořené prvky.  
   
- [Mapování relací zadaných pro vnořené elementy](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/map-relations-specified-for-nested-elements.md)  
- Popisuje, jak nastavit explicitně vztahy v **datovou sadu** pro vnořené prvky ve schématu XML.  
+ [Mapování relací zadaných pro vnořené elementy](map-relations-specified-for-nested-elements.md)  
+ Popisuje způsob explicitního nastavování vztahů v **datové sadě** pro vnořené prvky ve schématu XML.  
   
- [Určení relací mezi elementy bez vnoření](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/specify-relations-between-elements-with-no-nesting.md)  
- Popisuje, jak vytvořit vztahy v **datovou sadu** mezi prvky schématu XML, které nejsou vnořené.  
+ [Určení relací mezi elementy bez vnoření](specify-relations-between-elements-with-no-nesting.md)  
+ Popisuje, jak vytvořit relace v **datové sadě** mezi prvky schématu XML, které nejsou vnořené.  
   
 ### <a name="related-sections"></a>Související oddíly  
- [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Popisuje relační struktury nebo schématu, **datovou sadu** , který je vytvořen z jazyk (XSD) schématu definice schématu XML.  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Popisuje relační strukturu neboli schéma pro **datovou sadu** , která je vytvořena ze schématu XSD (XML Schema Definition Language).  
   
- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- Popisuje prvky schématu XML použitý k vytvoření jedinečné a cizího klíče omezení **datovou sadu**.  
+ [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ Popisuje prvky schématu XML, které slouží k vytváření omezení jedinečného a cizího klíče v **datové sadě**.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

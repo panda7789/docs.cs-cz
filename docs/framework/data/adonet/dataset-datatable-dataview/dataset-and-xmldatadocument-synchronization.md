@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-ms.openlocfilehash: 7763e7065e74d99ee5521ea1e4f48fa0108f235a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3bbe28423385cae0f09f301c03b2b1a59edf101d
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623396"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205066"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Synchronizace datové sady a datového dokumentu XML
-ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. Hierarchický přístup k datům můžete použít třídy XML, který je k dispozici v rozhraní .NET Framework. Tyto dvě reprezentace dat v minulosti, již byly použity samostatně. Ale rozhraní .NET Framework umožňuje v reálném čase, která je synchronní přístup k relačních a hierarchických reprezentace dat prostřednictvím **datovou sadu** objektu a <xref:System.Xml.XmlDataDocument> objektu v uvedeném pořadí.  
+ADO.NET <xref:System.Data.DataSet> poskytuje relační znázornění dat. Pro hierarchický přístup k datům můžete použít třídy XML, které jsou k dispozici v .NET Framework. V minulosti se tato dvě reprezentace dat používala samostatně. .NET Framework však umožňuje synchronní přístup k relačním i hierarchickému znázornění dat prostřednictvím objektu **DataSet** a <xref:System.Xml.XmlDataDocument> objektu v reálném čase.  
   
- Při **datovou sadu** synchronizována s **XmlDataDocument**, oba objekty pracujete jediné datové sady. To znamená, že pokud je provedena změna **datovou sadu**, změna se projeví ve **XmlDataDocument**a naopak. Vztah mezi **datovou sadu** a **XmlDataDocument** vytvoří velkou flexibilitu tím, že jednu aplikaci, pro přístup k celé sadě služeb vytvořených pomocí jediné sady dat kolem **datovou sadu** (jako je například ovládací prvky webových formulářů a Windows Forms a návrháři Visual Studio .NET), a také sadu XML služeb včetně XML Path, šablony stylů XSL (Extensible Language) a transformace XSL (XSLT) Jazyk (XPath). Není potřeba vybrat sadu služeb k cílové aplikaci; obě jsou k dispozici.  
+ Pokud je **datová sada** synchronizována s **objektu XmlDataDocument**, oba objekty pracují s jedinou sadou dat. To znamená, že pokud je provedena změna v **datové sadě**, změna se projeví v **objektu XmlDataDocument**a naopak. Vztah mezi datovou **sadou** a **objektu XmlDataDocument** vytváří skvělou flexibilitu tím, že umožňuje jediné aplikaci, která používá jedinou sadu dat, přístup k celé sadě služeb postavené kolem **datové sady** (například webové formuláře a Ovládací prvky model Windows Forms a Visual Studio .NET Designer) a také sadu XML Services, včetně jazyka XSL (Extensible Stylesheet Language), XSL Transformes (XSLT) a jazyka XML Path (XPath). Nemusíte vybírat, kterou sadu služeb chcete s aplikací cílit; jsou k dispozici obě.  
   
- Existuje několik způsobů, které můžete synchronizovat **datovou sadu** s **XmlDataDocument**. Můžete:  
+ Existuje několik způsobů, jak můžete **datovou sadu** synchronizovat s **objektu XmlDataDocument**. Můžete:  
   
-- Naplnit **datovou sadu** schéma (tedy relační struktury) a data a pak je synchronizovat s novou **XmlDataDocument**. To poskytuje hierarchické zobrazení stávajících relačních dat. Příklad:  
+- Naplňte **datovou sadu** pomocí schématu (tj. relační struktury) a dat a pak ji synchronizujte s novým **objektu XmlDataDocument**. Tato část poskytuje hierarchické zobrazení existujících relačních dat. Příklad:  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -37,11 +37,11 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
     XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
     ```  
   
-- Naplnit **datovou sadu** jenom se schématem (jako jsou silného typu **datovou sadu**), proveďte synchronizaci s **XmlDataDocument**a pak načíst  **Objekt XmlDataDocument** z dokumentu XML. To poskytuje relační zobrazení existující hierarchická data. Názvy tabulek a názvy sloupců v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
+- Naplňte **datovou sadu** pouze schématu (například **datovou sadu**se silnými typy), synchronizujte ji s **objektu XmlDataDocument**a pak načtěte **objektu XmlDataDocument** z dokumentu XML. To poskytuje relační pohled na existující hierarchická data. Názvy tabulek a sloupců ve schématu **datové sady** se musí shodovat s názvy elementů XML, se kterými se mají synchronizovat. Toto porovnávání rozlišuje velká a malá písmena.  
   
-     Všimněte si, že schéma **datovou sadu** potřebuje pouze tak, aby odpovídaly elementů XML, které chcete vystavit v relačním zobrazení. Tímto způsobem může mít velmi velké dokumentů XML a velmi malé relační "okno" pro daný dokument. **XmlDataDocument** zachová celý dokument XML, i když **datovou sadu** zpřístupňuje pouze malou část. (Podrobný příklad tohoto objektu, najdete v části [synchronizace datové sady s datovým dokumentem XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md).)  
+     Všimněte si, že schéma **datové sady** musí odpovídat pouze elementům XML, které mají být vystavení v relačním zobrazení. Tímto způsobem můžete mít velmi velký dokument XML a velmi malé relační "okno" v tomto dokumentu. **Objektu XmlDataDocument** zachovává celý dokument XML, i když **datová sada** zpřístupňuje jenom malou část. (Podrobný příklad naleznete v tématu [synchronizace datové sady s objektu XmlDataDocument](synchronizing-a-dataset-with-an-xmldatadocument.md).)  
   
-     Následující příklad kódu ukazuje postup vytvoření **datovou sadu** a naplnění jeho schématu, a synchronizace s **XmlDataDocument**. Všimněte si, že **datovou sadu** pouze musí odpovídat prvky ze schématu **XmlDataDocument** , kterou chcete zpřístupnit pomocí **datovou sadu**.  
+     Následující příklad kódu ukazuje kroky pro vytvoření **datové sady** a naplnění schématu a následné synchronizaci s **objektu XmlDataDocument**. Všimněte si, že schéma **datové sady** musí odpovídat pouze prvkům z **objektu XmlDataDocument** , které chcete zpřístupnit pomocí **datové sady**.  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -61,11 +61,11 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
-     Nelze načíst **XmlDataDocument** Pokud synchronizována s **datovou sadu** , který obsahuje data. bude vyvolána výjimka.  
+     Nelze načíst **objektu XmlDataDocument** , pokud je synchronizován s **datovou sadou** , která obsahuje data. Vyvolá se výjimka.  
   
-- Vytvořte nový **XmlDataDocument** a načtěte ho z dokumentu XML a pak přístup k relačním zobrazení dat pomocí **datovou sadu** vlastnost **XmlDataDocument**. Je nutné nastavit schéma **datovou sadu** před zobrazením datům v **XmlDataDocument** pomocí **datovou sadu**. Znovu, názvy tabulek a sloupců názvy v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
+- Vytvořte nový **objektu XmlDataDocument** a načtěte ho z dokumentu XML a potom k relačnímu zobrazení dat použijte vlastnost **DataSet** třídy **objektu XmlDataDocument**. Než budete moct zobrazit všechna data v **objektu XmlDataDocument** pomocí **datové sady**, musíte nastavit schéma **datové sady** . Názvy tabulek a názvy sloupců ve schématu **datové sady** se znovu musí shodovat s názvy elementů XML, se kterými se mají synchronizovat. Toto porovnávání rozlišuje velká a malá písmena.  
   
-     Následující příklad kódu ukazuje, jak získat přístup k relačním zobrazení dat v **XmlDataDocument**.  
+     Následující příklad kódu ukazuje, jak získat přístup k relačnímu zobrazení dat v **objektu XmlDataDocument**.  
   
     ```vb  
     Dim xmlDoc As XmlDataDocument = New XmlDataDocument  
@@ -85,33 +85,33 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
- Další výhodou synchronizace **XmlDataDocument** s **datovou sadu** je, že se zachová věrnost dokumentu XML. Pokud **datovou sadu** se vyplní z dokumentu XML pomocí **ReadXml**, když se data zapíšou zpátky jako dokument XML pomocí **WriteXml** může výrazně lišit od původní dokument XML. Je to proto, **datovou sadu** nespravuje formátování, například mezery nebo hierarchické informace, jako například pořadí elementů z dokumentu XML. **Datovou sadu** také neobsahuje prvky z dokumentu XML, které byly ignorovány, protože neodpovídá schématu **datovou sadu**. Synchronizace **XmlDataDocument** s **datovou sadu** umožňuje formátování a hierarchické struktury elementu původního dokumentu XML na webu **XmlDataDocument**, zatímco **datovou sadu** obsahuje pouze data spolu se schématem informace, třeba **datovou sadu**.  
+ Další výhodou synchronizace **objektu XmlDataDocument** s datovou **sadou** je, že se zachová věrnost dokumentu XML. Pokud je **datová sada** naplněna z dokumentu XML pomocí **ReadXml**, když jsou data zapsána zpět jako dokument XML pomocí **WriteXml** , může se výrazně lišit od původního dokumentu XML. Důvodem je, že **datová sada** neuchovává formátování, jako jsou prázdné znaky nebo hierarchické informace, jako je například pořadí prvků, z dokumentu XML. **Datová sada** neobsahuje také prvky z dokumentu XML, které byly ignorovány, protože neodpovídaly schématu sady **dat**. Synchronizace **objektu XmlDataDocument** s datovou **sadou** umožňuje zachovat formátování a hierarchické struktury prvků původního dokumentu XML, který má být udržován v **objektu XmlDataDocument**, zatímco **datová sada** obsahuje pouze data a informace o schématu, které jsou vhodné pro **datovou sadu**.  
   
- Při synchronizaci **datovou sadu** s **XmlDataDocument**, výsledky můžou lišit v závislosti na tom, jestli se vaše <xref:System.Data.DataRelation> jsou vnořené objekty. Další informace najdete v tématu [vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+ Při synchronizaci **datové sady** s **objektu XmlDataDocument**se mohou výsledky lišit v závislosti na tom, zda <xref:System.Data.DataRelation> jsou objekty vnořené. Další informace najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Synchronizace datové sady s datovým dokumentem XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md)  
- Ukazuje synchronizace silného typu **datovou sadu**, s minimálními schématu s **XmlDataDocument**.  
+ [Synchronizace datové sady s datovým dokumentem XML](synchronizing-a-dataset-with-an-xmldatadocument.md)  
+ Ukazuje, jak synchronizovat silně typovou **datovou sadu**s minimálním schématem s **objektu XmlDataDocument**.  
   
- [Provedení dotazu XPath u datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/performing-an-xpath-query-on-a-dataset.md)  
- Ukazuje provedení dotazu XPath na obsah **datovou sadu**.  
+ [Provedení dotazu XPath u datové sady](performing-an-xpath-query-on-a-dataset.md)  
+ Ukazuje, jak provést dotaz XPath na obsah **datové sady**.  
   
- [Použití transformace XSLT u datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/applying-an-xslt-transform-to-a-dataset.md)  
- Ukazuje použití transformace XSLT s obsahem **datovou sadu**.  
+ [Použití transformace XSLT u datové sady](applying-an-xslt-transform-to-a-dataset.md)  
+ Ukazuje použití transformace XSLT na obsah **datové sady**.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- Popisuje, jak **datovou sadu** komunikuje s XML jako zdroj dat, včetně načítání a při zachování obsahu **datovou sadu** jako XML data.  
+ [Použití XML v datové sadě](using-xml-in-a-dataset.md)  
+ Popisuje, jak **datová sada** komunikuje s XML jako zdroj dat, včetně načítání a uchovávání obsahu **datové sady** jako XML data.  
   
- [Vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)  
- Tento článek popisuje význam vnořené **DataRelation** objekty při vyjadřování obsah **datovou sadu** jako data XML a popisuje, jak vytvořit tyto vztahy.  
+ [Vnoření datových relací](nesting-datarelations.md)  
+ Popisuje důležitost vnořených objektů **DataRelation** při reprezentaci obsahu **datové sady** jako XML dat a popisuje, jak tyto relace vytvořit.  
   
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- Popisuje **datovou sadu** a jak ji používat ke správě dat aplikací a k interakci se zdroji dat, včetně relačních databází a XML.  
+ [Datové sady, datové tabulky a datová zobrazení](index.md)  
+ Popisuje **datovou sadu** a její použití ke správě aplikačních dat a k interakci se zdroji dat, včetně relačních databází a XML.  
   
  <xref:System.Xml.XmlDataDocument>  
- Obsahuje referenční informace o **XmlDataDocument** třídy.  
+ Obsahuje referenční informace o třídě **objektu XmlDataDocument** .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

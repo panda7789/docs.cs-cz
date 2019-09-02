@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e2d1a6fe-31f9-4b83-9728-06c406a3394e
-ms.openlocfilehash: bbcc666b99c2bade479e5ee51750b043c820845d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a8589b157bc2579a03d856b73802abc9a4b42855
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879902"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204073"
 ---
 # <a name="acceptchanges-and-rejectchanges"></a>Metody AcceptChanges a RejectChanges
-Po ověření správnosti změny provedené v datech <xref:System.Data.DataTable>, může přijmout změny pomocí <xref:System.Data.DataRow.AcceptChanges%2A> metodu <xref:System.Data.DataRow>, <xref:System.Data.DataTable>, nebo <xref:System.Data.DataSet>, který bude nastaven **aktuální** řádek hodnoty, které mají být **původní** hodnoty a nastaví **RowState** vlastnost **Unchanged**. Přijetí nebo zamítnutí změn vymaže si některé **RowError** informace a nastaví **HasErrors** vlastnost **false**. Aktualizace dat ve zdroji dat může také ovlivnit přijetí nebo zamítnutí změn. Další informace najdete v tématu [aktualizace zdroje dat pomocí adaptérů dat](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
+<xref:System.Data.DataTable>Jakmile ověříte přesnost změn provedených v datech v, můžete přijmout změny <xref:System.Data.DataRow> <xref:System.Data.DataRow.AcceptChanges%2A> pomocí metody, <xref:System.Data.DataTable>nebo <xref:System.Data.DataSet>, která nastaví hodnoty **aktuálního** řádku na hodnotu  **Původní** hodnoty a nastaví vlastnost **RowState** na hodnotu Unchanged. Přijetí nebo zamítnutí změn vymaže všechny **RowError** informace a vlastnost **HasErrors** nastaví na **hodnotu false**(NEPRAVDA). Přijímání nebo zamítnutí změn také může ovlivnit aktualizaci dat ve zdroji dat. Další informace najdete v tématu [aktualizace datových zdrojů pomocí datových adaptérů](../updating-data-sources-with-dataadapters.md).  
   
- Pokud existují omezení cizího klíče na **DataTable**, změny přijímat nebo odmítat. pomocí **metoda AcceptChanges** a **RejectChanges** se rozšíří na podřízených řádků  **Objekt DataRow** podle **ForeignKeyConstraint.AcceptRejectRule**. Další informace najdete v tématu [omezení datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).  
+ Pokud v **objektu DataTable**existují omezení cizího klíče, změny přijaté nebo odmítnuté metodou **AcceptChanges** a **RejectChanges** se šíří do podřízených řádků objektu **DataRow** podle  **Objekt ForeignKeyConstraint. AcceptRejectRule**. Další informace naleznete v tématu [omezení DataTable](datatable-constraints.md).  
   
- Následující příklad zkontroluje pro řádky s chybami, řeší chyby, kde je to možné a odmítne řádky, ve kterém k chybě se nepodařilo najít. Všimněte si, že pro vyřešení chyby, **RowError** hodnota je nastaven na prázdný řetězec, příčinou **HasErrors** vlastnost nastavili na **false**. Když všechny řádky s chybami byly vyřešené nebo zamítnuté **metoda AcceptChanges** nazývá potvrďte všechny změny pro celý **DataTable**.  
+ Následující příklad zkontroluje řádky s chybami, vyřeší případné chyby a odmítne řádky, ve kterých nelze chybu vyřešit. Všimněte si, že pro vyřešené chyby je hodnota **RowError** obnovena na prázdný řetězec, což způsobí, že vlastnost **HasErrors** bude nastavena na **hodnotu false**. Když všechny řádky s chybami byly vyřešeny nebo odmítnuty, je volána metoda **AcceptChanges** pro přijetí všech změn pro celý **objekt DataTable**.  
   
 ```vb  
 If workTable.HasErrors Then  
@@ -61,5 +61,5 @@ workTable.AcceptChanges();
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataTable>
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

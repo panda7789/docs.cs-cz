@@ -1,29 +1,29 @@
 ---
-title: Translating Expression Trees
-description: Zjistěte, jak chcete navštívit každý uzel ve stromu výrazů při sestavování upravenou kopii tohoto stromu výrazu.
+title: Překládání stromů výrazů
+description: Naučte se navštívit jednotlivé uzly ve stromové struktuře výrazů a přitom sestavovat upravenou kopii tohoto stromu výrazů.
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: 4c14837c1d92845991d8ea9990b77eb9052757d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3c575876b6d53e9db366f59ad45aac714923c45
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646550"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202947"
 ---
-# <a name="translating-expression-trees"></a>Translating Expression Trees
+# <a name="translating-expression-trees"></a>Překládání stromů výrazů
 
-[Předchozí – Vytváření výrazů](expression-trees-building.md)
+[Předchozí výrazy sestavení](expression-trees-building.md)
 
-V této závěrečné sekci dozvíte, jak chcete navštívit každý uzel ve stromu výrazů při sestavování upravenou kopii tohoto stromu výrazu. Jedná se o techniky, které budete používat v dva důležité scénáře. Prvním je pochopit algoritmy vyjádřená strom výrazu tak, aby jej lze přeložit do jiného prostředí. Druhým je, když chcete změnit algoritmus, který byl vytvořen. To může být přidání protokolování, zachytí volání metod a sledovat jejich, nebo pro jiné účely.
+V této poslední části se dozvíte, jak při sestavování upravené kopie stromu výrazu navštívit jednotlivé uzly ve stromové struktuře výrazů. Jedná se o techniky, které použijete ve dvou důležitých scénářích. První je pochopit algoritmy vyjádřené stromem výrazu, aby bylo možné je přeložit do jiného prostředí. Druhá je, když chcete změnit algoritmus, který byl vytvořen. To může být přidání protokolování, zachytávání volání metod a jejich sledování nebo jiné účely.
 
-## <a name="translating-is-visiting"></a>Překlad je návštěva
+## <a name="translating-is-visiting"></a>Probíhá překládání.
 
-Kód sestavení pro převod strom výrazu je rozšířením co jste viděli již k navštívení všechny uzly ve stromu. Když jste přeložit strom výrazu, najdete všechny uzly a při jejich návštěvě, vytváření nového stromu. Nové stromové struktury mohou obsahovat odkazy na původní uzly nebo nové uzly, které jste umístili ve stromové struktuře.
+Kód, který sestavíte k překladu stromu výrazů, je rozšířením toho, co jste už viděli pro návštěvě všech uzlů ve stromu. Při převodu stromu výrazu navštívíte všechny uzly a při jejich návštěvě sestavíte nový strom. Nový strom může obsahovat odkazy na původní uzly nebo nové uzly, které jste umístili do stromu.
 
-Podívejme se to v praxi navštívit strom výrazů a vytvořením nové větve s některé uzly nahrazení. V tomto příkladu podíváme nahradit libovolná konstanta s konstantou, která je větší, desetkrát.
-V opačném případě Ponecháme stromu výrazů beze změn. Namísto hodnotou konstanty pro čtení a jeho nahrazení atributem nové konstantou, uděláme toto nahrazení nahrazením konstantního uzlu nový uzel, který provede násobení.
+Pojďme to vidět v akci návštěvou stromu výrazů a vytvořením nového stromu s některými náhradními uzly. V tomto příkladu nahradíme všechny konstanty konstantou, která je desetkrát větší.
+V opačném případě ponecháme strom výrazu beze změny. Místo přečtení hodnoty konstanty a její nahrazení novou konstantou provedeme tuto náhradu nahrazením konstantního uzlu novým uzlem, který provede násobení.
 
-Jakmile najdete konstantního uzlu, můžete zde vytvářet nový uzel násobení, jehož potomci se původní konstantní a konstanty `10`:
+Zde můžete po nalezení konstantního uzlu vytvořit nový uzel násobení, jehož podřízené položky jsou původní konstantou, a konstanta `10`:
 
 ```csharp
 private static Expression ReplaceNodes(Expression original)
@@ -43,7 +43,7 @@ private static Expression ReplaceNodes(Expression original)
 }
 ```
 
-Nahrazením původní uzel dosadit, je vytvořen nový stromu, který obsahuje úpravy. Abychom mohli ověřit, který kompilaci a spouštění stromu nahrazené.
+Nahrazením původního uzlu nahraďte nový strom, který obsahuje naše úpravy. Můžeme ověřit, že kompilování a provádění nahrazeného stromu.
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
@@ -57,14 +57,14 @@ var answer = func();
 Console.WriteLine(answer);
 ```
 
-Vytvoření nové větve je kombinací navštívit uzlů ve stromu existující a vytváření nových uzlů a jejich vložení do stromu.
+Sestavování nového stromu je kombinace návštěvy uzlů v existujícím stromu a vytvoření nových uzlů a jejich vložení do stromu.
 
-Tento příklad ukazuje důležitost stromů výrazů jsou neměnné. Všimněte si, že nové větve vytvořené výše obsahuje kombinaci nově vytvořené uzly a uzly ze stávající strom. Který je bezpečné, protože uzly ve stromu existující nelze upravovat. To může způsobit velké paměti efektivitu.
-Stejné uzly je možné v rámci stromu, nebo více stromy výrazů. Protože uzly nelze upravovat, může být stejném uzlu znovu použít vždy, když své potřeby.
+Tento příklad ukazuje důležitost stromů výrazů, které jsou neměnné. Všimněte si, že nový strom vytvořený výše obsahuje kombinaci nově vytvořených uzlů a uzlů z existujícího stromu. To je bezpečné, protože uzly ve stávajícím stromu nelze upravovat. To může mít za následek výrazné zvýšení efektivity paměti.
+Stejné uzly lze použít v celém stromu nebo v několika stromech výrazů. Vzhledem k tomu, že uzly nelze upravovat, lze stejný uzel znovu použít vždy, když je to potřeba.
 
-## <a name="traversing-and-executing-an-addition"></a>Procházení a provádění doplněk
+## <a name="traversing-and-executing-an-addition"></a>Procházení a provádění přidání
 
-Můžeme to ověřit tak vytváření druhé návštěvníka, který vás provede přidáním uzlů stromu a vypočítá výsledek. Můžete to provést tak, že několik úprav návštěvník, který jste zatím viděli. V této nové verzi návštěvníka vrátí částečného součtu operace přidání do této chvíle. Pro konstantní výraz, který je jednoduše hodnotu konstantní výraz. Pro přidání výrazu výsledkem je součet operandů levé a pravé, jakmile byla z těchto stromů provázány.
+Pojďme to ověřit vytvořením druhého návštěvníka, který projde stromem přidaných uzlů a vypočítá výsledek. Můžete to udělat tak, že provedete několik úprav návštěvníka, který jste doposud viděli. V této nové verzi návštěvník vrátí částečný součet operace sčítání do tohoto bodu. Pro konstantní výraz, který je jednoduše hodnotou konstantního výrazu. Pro výraz sčítání je výsledkem součet levého a pravého operandu, jakmile byly tyto stromy přecházet.
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));
@@ -89,11 +89,11 @@ var theSum = aggregate(sum);
 Console.WriteLine(theSum);
 ```
 
-Je hodně Zde uveďte kód, ale popsané koncepty se velmi přístupné.
-Tento kód navštíví podřízené objekty první hledání hloubku. Pokud se setká konstantního uzlu, návštěvníka hodnotu konstanty. Poté, co návštěvníka navštíví i podřízené položky, tyto podřízené objekty se vypočítat součet vypočítat pro dílčí stromové struktuře. Přidání uzlu můžete nyní výpočetní jeho součet.
-Jakmile navštívili všech uzlů ve stromu výrazu součet bude vypočítání. Sledování spuštění spuštěním ukázky v ladicím programu a trasování provádění.
+Tady je trochu kód, ale koncepty jsou velmi dostupné.
+Tento kód po prvním hledání navštíví podřízené objekty. Když narazí na konstantní uzel, návštěvník vrátí hodnotu konstanty. Po navštívení návštěvníka budou tyto podřízené položky vypočítány součtem vypočítaným pro tento dílčí strom. Uzel sčítání teď může vypočítat jeho součet.
+Po navštívení všech uzlů ve stromu výrazů bude součet vypočítán. Spuštění můžete trasovat spuštěním ukázky v ladicím programu a trasováním provádění.
 
-Pojďme usnadňují sledování, jak se analyzují uzly a jak se počítají součet tak, že procházení stromu. Tady je aktualizovanou verzi agregační metoda, která obsahuje hodně trasovací informace:
+Podívejme se, jak sledovat, jak se uzly analyzují, a jak se součet vypočítává pomocí procházení stromu. Zde je aktualizovaná verze agregované metody, která obsahuje poměrně bitovou část trasovacích informací:
 
 ```csharp
 private static int Aggregate(Expression exp)
@@ -122,9 +122,9 @@ private static int Aggregate(Expression exp)
 }
 ```
 
-Spuštění ve stejném výrazu poskytuje následující výstup:
+Spuštění na stejném výrazu vrací následující výstup:
 
-```
+```output
 10
 Found Addition Expression
 Computing Left node
@@ -151,17 +151,17 @@ Computed sum: 10
 10
 ```
 
-Trasování výstupu a můžete pokračovat ve výše uvedeném kódu. Je třeba možnost pracovat na více systémů jak kód navštíví každý uzel a kód vypočítá součet prochází stromu a zjistí součet.
+Sledujte výstup a sledujte v kódu výše. Měli byste být schopni pracovat s tím, jak kód navštíví každý uzel, a vypočítat součet při jeho průchodu stromovou strukturou a vyhledá součet.
 
-Teď se podívejme se na různé spuštěný proces, pomocí výrazu Dal `sum1`:
+Nyní se podívejme na jiný běh s výrazem zadaným `sum1`:
 
 ```csharp
 Expression<Func<int> sum1 = () => 1 + (2 + (3 + 4));
 ```
 
-Zde se nachází výstup z zkoumání tento výraz:
+Zde je výstup prozkoumání tohoto výrazu:
 
-```
+```output
 Found Addition Expression
 Computing Left node
 Found Constant: 1
@@ -187,13 +187,13 @@ Computed sum: 10
 10
 ```
 
-I když je poslední odpovědí je stejný, přechod zálohovaných stromové struktury se úplně. Uzly se přesunul v jiném pořadí, protože stromu byl zkonstruován pomocí různých operací, ke kterým dochází poprvé.
+I když je konečná odpověď stejná, je procházení stromové struktury zcela jiné. Uzly se cestují v jiném pořadí, protože strom byl vytvořen s různými operacemi, které nastaly jako první.
 
-## <a name="learning-more"></a>Další informace
+## <a name="learning-more"></a>Učení více
 
-Tento příklad ukazuje malou část kódu, který by sestavení k procházení a interpretovat algoritmy reprezentována strom výrazu. Úplné informace veškeré práce potřebné k vytvoření knihovny obecné účely, který překládá stromů výrazů do jiného jazyka, přečtěte si prosím [tuto řadu](https://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) podle Matt Warren. To obsahuje skvělé podrobnosti o tom, jak přeložit některý kód, který může pro vás ve stromu výrazu.
+Tato ukázka ukazuje malou podmnožinu kódu, který byste vytvořili pro procházení a interpretaci algoritmů, které jsou zastoupeny stromem výrazů. Kompletní diskuzi o všech potřebách potřebných k sestavení knihovny pro obecné účely, která překládá stromy výrazů do jiného jazyka, si prosím přečtěte v [této řadě](https://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) podkladem Warren. To je velmi podrobné informace o tom, jak přeložit libovolný kód, který můžete najít ve stromu výrazu.
 
-Doufám, že už teď víte, výkon služby stromy výrazů.
-Můžete prozkoumat sadu kódu, proveďte požadované změny by rádi, že kód a provést změny verze. Protože jsou neměnné stromů výrazů, můžete vytvořit nové stromové struktury pomocí komponenty větvích. Tím se minimalizují množství paměti, které jsou potřebné k vytvoření stromů výrazu upravené.
+Doufám, že teď jste viděli skutečnou sílu stromů výrazů.
+Můžete zkontrolovat sadu kódu, provést všechny změny, které byste chtěli v kódu, a provést změněnou verzi. Vzhledem k tomu, že stromy výrazů jsou neměnné, můžete vytvořit nové stromy pomocí komponent existujících stromů. Tím se minimalizuje množství paměti potřebné k vytvoření upravených stromů výrazů.
 
-[Další--Sečetl](expression-trees-summary.md)
+[Další – součet](expression-trees-summary.md)

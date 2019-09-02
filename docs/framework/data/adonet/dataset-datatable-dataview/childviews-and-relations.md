@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
-ms.openlocfilehash: 0e56b97ad7b375c69184e0f1928183612abfef42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2bbd0d980b65bfbc9240faa8506f2e41875ec6e6
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034447"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205180"
 ---
 # <a name="childviews-and-relations"></a>ChildViews a relace
-Pokud existuje relace mezi tabulkami v <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky ze související podřízené tabulce pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> pro řádky v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich souvisejících **produkty** abecedně seřazené podle **CategoryName** a **ProductName** .  
+Pokud existuje relace mezi <xref:System.Data.DataSet>tabulkami v, můžete <xref:System.Data.DataView> vytvořit obsahující řádky z související <xref:System.Data.DataRowView.CreateChildView%2A> podřízené tabulky <xref:System.Data.DataRowView> pomocí metody pro řádky v nadřazené tabulce. Například následující kód zobrazuje **kategorie** a jejich související **produkty** v abecedním pořadí seřazené podle **CategoryName** a **ProductName**.  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  
@@ -78,5 +78,5 @@ foreach (DataRowView catDRV in catView)
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataView>
 - <xref:System.Data.DataRowView>
-- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zobrazení dat](dataviews.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

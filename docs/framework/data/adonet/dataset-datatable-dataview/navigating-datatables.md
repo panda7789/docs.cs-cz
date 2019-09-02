@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 202026a1-ec79-435e-b507-12a77f5011b2
-ms.openlocfilehash: 91db42acb0e09b8fc99b0ee710a60800d40938ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5837d647b72f8dd17c4a6d3664faf8976243d36
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607261"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204555"
 ---
 # <a name="navigating-datatables"></a>Navigace v datových tabulkách
-<xref:System.Data.DataTableReader> Získá obsah jednoho nebo více <xref:System.Data.DataTable> objekty ve formě jednoho nebo více sad výsledků dotazu jen pro čtení, pouze vpřed.  
+Získá obsah jednoho nebo více <xref:System.Data.DataTable> objektů ve formě jedné nebo více sad výsledků pouze pro čtení, které jsou jen pro čtení. <xref:System.Data.DataTableReader>  
   
- A <xref:System.Data.DataTableReader> může obsahovat více sad výsledků dotazu, pokud je vytvořena pomocí <xref:System.Data.DataSet.CreateDataReader%2A> metody. Po více než jednu sadu výsledků, <xref:System.Data.DataTableReader.NextResult%2A> metoda Posune kurzor na další sadu výsledků. Jedná se o proces pouze vpřed. Není možné vrátit na předchozí sadu výsledků dotazu.  
+ Může obsahovat více sad výsledků, pokud je vytvořen <xref:System.Data.DataSet.CreateDataReader%2A> pomocí metody. <xref:System.Data.DataTableReader> Pokud je k dispozici více než jedna sada výsledků <xref:System.Data.DataTableReader.NextResult%2A> , metoda přesune kurzor na další sadu výsledků dotazu. Toto je proces jenom pro přeposílání. Není možné se vrátit k předchozí sadě výsledků.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `TestConstructor` metoda vytvoří dva <xref:System.Data.DataTable> instancí. Pro ukázání tento konstruktor pro <xref:System.Data.DataTableReader> třídy, vzorovým kódem se vytvoří nový **třída DataTableReader** na základě pole, která obsahuje dvě **DataTables**a provádí jednoduché operace Tisk obsahu z prvního několik sloupců do okna konzoly.  
+ V následujícím příkladu `TestConstructor` metoda vytvoří dvě <xref:System.Data.DataTable> instance. Aby bylo možné předvést tento konstruktor pro <xref:System.Data.DataTableReader> třídu, ukázka vytvoří novou **třídu DataTableReader** založenou na poli, které obsahuje dvě **tabulky**DataTables a provede jednoduchou operaci, vytištění obsahu z prvních několika. sloupce do okna konzoly.  
   
  [!code-csharp[DataWorks DataTableReader.NextResult#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.NextResult/CS/source.cs#1)]
  [!code-vb[DataWorks DataTableReader.NextResult#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.NextResult/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Čtečky datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatablereaders.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Čtečky datových tabulek](datatablereaders.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

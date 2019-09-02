@@ -2,12 +2,12 @@
 title: Hledání výchozího stylu odstavce (C#)
 ms.date: 07/20/2015
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-ms.openlocfilehash: 702d3906f51b996f59dcd15067702b6de07c60a5
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 45a3e293a88fc0d7fc6aa70d21d1d3a6a8bb9b13
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594375"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204101"
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>Hledání výchozího stylu odstavce (C#)
 Prvním úkolem při manipulaci s informacemi v WordprocessingML dokumentu je najít výchozí styl odstavců v dokumentu.  
@@ -79,7 +79,7 @@ Console.WriteLine("The default style is: {0}", defaultStyle);
 ### <a name="comments"></a>Komentáře  
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 The default style is: Normal  
 ```  
   
@@ -87,4 +87,3 @@ The default style is: Normal
  V dalším příkladu vytvoříte podobný dotaz, který najde všechny odstavce v dokumentu a jejich styly:  
   
 - [Načítání odstavců a jejich stylů (C#)](./retrieving-the-paragraphs-and-their-styles.md)  
-  

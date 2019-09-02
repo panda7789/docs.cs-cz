@@ -2,30 +2,30 @@
 title: Odvozování sloupců
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-ms.openlocfilehash: 53e77f624c5af8f61a32d5b1399d2728f32011a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 651d132fd76ba9015d4730a5e519bc679608e275
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034278"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203590"
 ---
 # <a name="inferring-columns"></a>Odvozování sloupců
-Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulka pro <xref:System.Data.DataSet>, pak odvodí sloupce pro tyto tabulky. ADO.NET 2.0 zavedl nový modul odvození schématu, která odvodí typ dat silného typu pro každou **simpleType** elementu. V předchozích verzích, datový typ vyvozeným **simpleType** element se vždy **XSD: String**.  
+Jakmile ADO.NET zjistí z dokumentu XML <xref:System.Data.DataSet>, které prvky mají být odvozeny jako tabulky pro,, pak odvodí sloupce pro tyto tabulky. ADO.NET 2,0 představil nový modul odvození schématu, který odvodí datový typ silného typu pro každý element **simpleType** . V předchozích verzích byl datový typ odvozeného elementu **simpleType** vždy **xsd: String**.  
   
-## <a name="migration-and-backward-compatibility"></a>Migrace a zpětné kompatibility  
- **ReadXml** metoda přebírá argument typu **InferSchema**. Tento argument můžete zadat odvození chování, které jsou kompatibilní s předchozími verzemi. Dostupné hodnoty pro **InferSchema** výčtu jsou uvedeny v následující tabulce.  
+## <a name="migration-and-backward-compatibility"></a>Migrace a zpětná kompatibilita  
+ Metoda **ReadXml** přebírá argument typu **InferSchema**. Tento argument umožňuje určit chování při odvozování kompatibilní s předchozími verzemi. Dostupné hodnoty pro výčet **InferSchema** jsou uvedeny v následující tabulce.  
   
  <xref:System.Data.XmlReadMode.InferSchema>  
- Poskytuje zpětnou kompatibilitu tím, že vždy odvození jednoduchý typ jako <xref:System.String>.  
+ Poskytuje zpětnou kompatibilitu tím, že vždy odvozuje jednoduchý typ <xref:System.String>jako.  
   
  <xref:System.Data.XmlReadMode.InferTypedSchema>  
- Odvodí typ dat silného typu. Vyvolá výjimku, pokud je použita s <xref:System.Data.DataTable>.  
+ Odvodí datový typ silného typu. Vyvolá výjimku, pokud se používá s <xref:System.Data.DataTable>.  
   
  <xref:System.Data.XmlReadMode.IgnoreSchema>  
- Ignoruje všechny vložené schéma a načte data do existující <xref:System.Data.DataSet> schématu.  
+ Ignoruje všechna vložená schémata a čte data do <xref:System.Data.DataSet> stávajícího schématu.  
   
 ## <a name="attributes"></a>Atributy  
- Jak jsou definovány v [odvozování tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-tables.md), element s atributy se odvodit jako tabulku. Atributy daného prvku se pak odvodit jako sloupce pro tabulku. **ColumnMapping** vlastnost sloupců bude nastavena na **MappingType.Attribute**, aby bylo zajištěno, že názvy sloupců zapisují jako atributy, pokud schéma se zapíšou zpátky do XML. Hodnoty atributů jsou uloženy v řádku v tabulce. Zvažte například následující kód XML:  
+ Jak je definováno v [tabulkách odvození](inferring-tables.md), element s atributy bude odvozen jako tabulka. Atributy daného prvku budou následně odvozeny jako sloupce pro tabulku. Vlastnost **ColumnMapping** sloupců bude nastavena na **MappingType. Attribute**, aby bylo zajištěno, že názvy sloupců budou zapsány jako atributy, pokud je schéma zapsáno zpět do formátu XML. Hodnoty atributů jsou uloženy v řádku tabulky. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -33,18 +33,18 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
 </DocumentElement>  
 ```  
   
- Procesu odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **attr1** a **attr2**. **ColumnMapping** vlastnost obou sloupců bude nastavena na **MappingType.Attribute**.  
+ Proces odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **attr1** a **attr2**. Vlastnost **ColumnMapping** obou sloupců bude nastavena na **MappingType. Attribute**.  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |attr1|attr2|  
 |-----------|-----------|  
-|value1|value2|  
+|Hodnota1|Argument|  
   
-## <a name="elements-without-attributes-or-child-elements"></a>Prvky bez atributy nebo podřízené prvky  
- Pokud element nemá žádné podřízené prvky a atributy, se odvodit jako sloupec. **ColumnMapping** vlastnost sloupec bude nastavena na **MappingType.Element**. Text pro podřízené prvky je uložen v řádku v tabulce. Zvažte například následující kód XML:  
+## <a name="elements-without-attributes-or-child-elements"></a>Prvky bez atributů nebo podřízených elementů  
+ Pokud element nemá žádné podřízené elementy nebo atributy, bude odvozen jako sloupec. Vlastnost **ColumnMapping** sloupce bude nastavena na **MappingType. element**. Text podřízených elementů je uložený v řádku v tabulce. Zvažte například následující kód XML:  
   
 ```xml  
 <DocumentElement>  
@@ -55,11 +55,11 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
 </DocumentElement>  
 ```  
   
- Procesu odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **ChildElement1** a **ChildElement2**. **ColumnMapping** vlastnost obou sloupců bude nastavena na **MappingType.Element**.  
+ Proces odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **ChildElement1** a **ChildElement2**. Vlastnost **ColumnMapping** obou sloupců bude nastavena na **MappingType. element**.  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |ChildElement1|ChildElement2|  
 |-------------------|-------------------|  
@@ -67,9 +67,9 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

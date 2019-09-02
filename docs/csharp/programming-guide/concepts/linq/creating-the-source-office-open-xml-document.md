@@ -1,31 +1,31 @@
 ---
-title: Vytvoření zdrojového dokumentu Office Open XML (C#)
+title: Vytvoření zdrojového dokumentuC#XML pro Office Open
 ms.date: 07/20/2015
 ms.assetid: 653c8cdb-73be-4dc2-927f-924cfb4ed9ed
-ms.openlocfilehash: 024b6c80cdedf38fd2dcee77562c0105df7bd033
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: d6c4d8866bba58e86735099a62041894a9faa9b1
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690106"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204154"
 ---
-# <a name="creating-the-source-office-open-xml-document-c"></a>Vytvoření zdrojového dokumentu Office Open XML (C#)
+# <a name="creating-the-source-office-open-xml-document-c"></a>Vytvoření zdrojového dokumentuC#XML pro Office Open
 
-Toto téma ukazuje, jak vytvořit dokumentu Office Open XML WordprocessingML, použít další příklady v tomto kurzu. Pokud budete postupovat podle těchto pokynů, výstup bude odpovídat výstup poskytovaný v každém příkladu.
+V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML WordprocessingML, který se používá v dalších příkladech tohoto kurzu. Pokud budete postupovat podle těchto pokynů, váš výstup bude odpovídat výstupu uvedenému v každém příkladu.
 
-Příklady v tomto kurzu ale bude fungovat s libovolný platný dokument WordprocessingML.
+Příklady v tomto kurzu ale budou fungovat s jakýmkoli platným dokumentem WordprocessingML.
 
-Vytvoření dokumentu, který tento kurz používá, musí mít buď Microsoft Office 2007 nebo novější, nebo musí mít Microsoft Office 2003 Microsoft Office Compatibility Pack pro Word, Excel a PowerPoint 2007 formátů.
+Pokud chcete vytvořit dokument, který používá tento kurz, musíte mít nainstalovanou systém Microsoft Office 2007 nebo novější, nebo musíte mít systém Microsoft Office 2003 pomocí sady systém Microsoft Office Compatibility Pack pro Word, Excel a PowerPoint 2007 formats.
 
 ## <a name="creating-the-wordprocessingml-document"></a>Vytvoření dokumentu WordprocessingML
 
 #### <a name="to-create-the-wordprocessingml-document"></a>Vytvoření dokumentu WordprocessingML
 
-1. Vytvoříte nový textový dokument aplikace Microsoft Word.
+1. Vytvoří nový dokument aplikace Microsoft Word.
 
-2. Vložte následující text do nového dokumentu:
+2. Vložte do nového dokumentu následující text:
 
-    ```
+    ```text
     Parsing WordprocessingML with LINQ to XML
 
     The following example prints to the console.
@@ -43,13 +43,13 @@ Vytvoření dokumentu, který tento kurz používá, musí mít buď Microsoft O
     Hello World
     ```
 
-3. Naformátuje styl "Nadpis 1" na prvním řádku.
+3. Naformátuje první řádek stylem "Nadpis 1".
 
-4. Vyberte řádky, které obsahují kód jazyka C#. První řádek začíná `using` – klíčové slovo. Poslední řádek je poslední pravou složenou závorku. Formátování řádků s Kurýrní písma. Formát se nový styl a pojmenujte nový styl "Kód".
+4. Vyberte řádky, které obsahují C# kód. První řádek začíná `using` klíčovým slovem. Poslední řádek představuje poslední pravou závorku. Naformátujte čáry pomocí písma Courier. Naformátujte je pomocí nového stylu a pojmenujte nový styl "Code".
 
-5. Nakonec označit celý řádek, který obsahuje výstup a naformátovat ho `Code` style.
+5. Nakonec vyberte celý řádek obsahující výstup a naformátujte ho pomocí `Code` stylu.
 
-6. Uložte dokument a pojmenujte ho SampleDoc.docx.
+6. Uložte dokument a pojmenujte ho SampleDoc. docx.
 
     > [!NOTE]
-    > Pokud používáte aplikaci Microsoft Word 2003, vyberte **dokument aplikace Word 2007** v **uložit jako typ** rozevíracího seznamu.
+    > Pokud používáte Microsoft Word 2003, vyberte v rozevíracím seznamu **Uložit jako typ** možnost **dokument Word 2007** .

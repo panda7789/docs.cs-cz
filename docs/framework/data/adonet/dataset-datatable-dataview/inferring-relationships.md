@@ -2,15 +2,15 @@
 title: Odvozování relací
 ms.date: 03/30/2017
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
-ms.openlocfilehash: f8a9aba493dfe82466608ea60932ddfec5ef64f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92a4953dc7f5119ffbf171ff2a7bf5b58e896638
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879668"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204768"
 ---
 # <a name="inferring-relationships"></a>Odvozování relací
-Pokud element, který je odvozený jako tabulka má podřízený element, který je také odvodit jako tabulku <xref:System.Data.DataRelation> mezi dvěma tabulkami se nevytvoří. Nový sloupec s názvem **ParentTableName_Id** se přidají do tabulky vytvořené pro nadřazený element a tabulku vytvořenou pro podřízený element. **ColumnMapping** vlastnost tohoto sloupce identity bude nastavena na **MappingType.Hidden**. Sloupec bude automatické zvyšování hodnoty primárního klíče pro nadřazené tabulky a se použije pro **DataRelation** mezi dvěma tabulkami. Datový typ sloupce identity přidání bude **System.Int32**, na rozdíl od datového typu všechny ostatní odvozené sloupců, což je **System.String**. A <xref:System.Data.ForeignKeyConstraint> s **DeletRule** = **Cascade** také vytvoří nový sloupec v nadřazené a podřízené tabulky.  
+Pokud prvek, který je odvozen jako tabulka, má podřízený element, který je také odvozen jako tabulka, <xref:System.Data.DataRelation> vytvoří se mezi těmito dvěma tabulkami. Nový sloupec s názvem **ParentTableName_Id** se přidá do tabulky vytvořené pro nadřazený element a vytvoří se tabulka vytvořená pro podřízený element. Vlastnost **ColumnMapping** tohoto sloupce identity bude nastavena na **MappingType. Hidden**. Sloupec bude automaticky zvyšovat primární klíč pro nadřazenou tabulku a bude použit pro **relaci DataRelation** mezi oběma tabulkami. Datový typ sloupce přidáno identity bude **System. Int32**, na rozdíl od datového typu všech ostatních odvozených sloupců, což je **System. String**. A <xref:System.Data.ForeignKeyConstraint> s **DeleteRule** = **Cascade** se vytvoří také pomocí nového sloupce v nadřazené i podřízené tabulce.  
   
  Zvažte například následující kód XML:  
   
@@ -23,58 +23,58 @@ Pokud element, který je odvozený jako tabulka má podřízený element, který
 </DocumentElement>  
 ```  
   
- Procesu odvození vytvoří dvě tabulky: **Element1** a **ChildElement1**.  
+ Proces odvození vytvoří dvě tabulky: **Element1** a **ChildElement1**.  
   
- **Element1** tabulka bude mít dva sloupce: **Element1_Id** a **ChildElement2**. **ColumnMapping** vlastnost **Element1_Id** sloupec bude nastaven na **MappingType.Hidden**. **ColumnMapping** vlastnost **ChildElement2** sloupec bude nastaven na **MappingType.Element**. **Element1_Id** sloupec bude nastaven jako primární klíč **Element1** tabulky.  
+ Tabulka **Element1** bude mít dva sloupce: **Element1_Id** a **ChildElement2**. Vlastnost **ColumnMapping** sloupce **Element1_Id** bude nastavena na **MappingType. Hidden**. Vlastnost **ColumnMapping** sloupce **ChildElement2** bude nastavena na **MappingType. element**. Sloupec **Element1_Id** se nastaví jako primární klíč tabulky **Element1** .  
   
- **ChildElement1** tabulka bude mít tři sloupce: **attr1**, **attr2** a **Element1_Id**. **ColumnMapping** vlastnost **attr1** a **attr2** sloupce se nastaví na **MappingType.Attribute**. **ColumnMapping** vlastnost **Element1_Id** sloupec bude nastaven na **MappingType.Hidden**.  
+ Tabulka **ChildElement1** bude mít tři sloupce: **attr1**, **attr2** a **Element1_Id**. Vlastnost **ColumnMapping** pro sloupce **attr1** a **attr2** se nastaví na **MappingType. Attribute**. Vlastnost **ColumnMapping** sloupce **Element1_Id** bude nastavena na **MappingType. Hidden**.  
   
- A **DataRelation** a **Objekt ForeignKeyConstraint** se vytvoří pomocí **Element1_Id** sloupců z obou tabulek.  
+ **DataRelation** a **Objekt ForeignKeyConstraint** se vytvoří pomocí sloupců **Element1_Id** z obou tabulek.  
   
- **DataSet:** Prvek DocumentElement  
+ **Integrován** DocumentElement  
   
- **Tabulka:** element1  
+ **Stolní** Element1  
   
 |Element1_Id|ChildElement2|  
 |------------------|-------------------|  
 |0|Text2|  
   
- **Tabulka:** ChildElement1  
+ **Stolní** ChildElement1  
   
 |attr1|attr2|Element1_Id|  
 |-----------|-----------|------------------|  
-|value1|value2|0|  
+|Hodnota1|Argument|0|  
   
- **DataRelation:** Element1_ChildElement1  
+ **DataRelation** Element1_ChildElement1  
   
- **ParentTable:** element1  
+ **Nadřazená tabulka:** Element1  
   
  **ParentColumn:** Element1_Id  
   
- **Tabulka:** ChildElement1  
+ **Podřízená tabulka:** ChildElement1  
   
  **ChildColumn:** Element1_Id  
   
- **Vnořené:** Pravda  
+ **Vnořen** Pravda  
   
- **ForeignKeyConstraint:** Element1_ChildElement1  
+ **Objekt ForeignKeyConstraint** Element1_ChildElement1  
   
- **Sloupec:** Element1_Id  
+ **Kolo** Element1_Id  
   
- **ParentTable:** element1  
+ **Nadřazená tabulka:** Element1  
   
- **Tabulka:** ChildElement1  
+ **Podřízená tabulka:** ChildElement1  
   
- **DeletRule:** Kaskádové  
+ **DeleteRule:** Nášejí  
   
  **AcceptRejectRule:** Žádné  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Vnoření datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md)
-- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
+- [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
+- [Vnoření datových relací](nesting-datarelations.md)
+- [Použití XML v datové sadě](using-xml-in-a-dataset.md)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

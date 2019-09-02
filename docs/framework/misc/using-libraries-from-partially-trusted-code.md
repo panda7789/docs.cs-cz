@@ -11,24 +11,24 @@ helpviewer_keywords:
 ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e08cb1b3f4708b4314f0cd663f70fa10aaa1aded
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 50428e4e28df812a3a0c985d0d1876dab7b5279c
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910683"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206030"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>Používání knihoven z částečně důvěryhodného kódu
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
 > [!NOTE]
-> Toto téma řeší chování sestavení se silným názvem a vztahuje se pouze na sestavení [úrovně 1](../../../docs/framework/misc/security-transparent-code-level-1.md) . [Kód transparentní pro zabezpečení, sestavení úrovně 2](../../../docs/framework/misc/security-transparent-code-level-2.md) v .NET Framework 4 nebo novějších není ovlivněn silnými názvy. Další informace o změnách v systému zabezpečení najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+> Toto téma řeší chování sestavení se silným názvem a vztahuje se pouze na sestavení [úrovně 1](security-transparent-code-level-1.md) . [Kód transparentní pro zabezpečení, sestavení úrovně 2](security-transparent-code-level-2.md) v .NET Framework 4 nebo novějších není ovlivněn silnými názvy. Další informace o změnách v systému zabezpečení najdete v tématu [změny zabezpečení](../security/security-changes.md).  
   
- Aplikacím, které přijímají méně než úplný vztah důvěryhodnosti od svého hostitele nebo izolovaného prostoru (sandbox), není povoleno volat sdílené spravované knihovny, pokud modul pro zápis knihovny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> je výslovně nepovoluje prostřednictvím použití atributu. Proto musí autoři aplikací vědět, že některé knihovny nebudou pro ně z částečně důvěryhodného kontextu k dispozici. Ve výchozím nastavení je částečně důvěryhodný všechen kód, který se spouští v [izolovaném prostoru (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md) s částečným vztahem důvěryhodnosti a není v seznamu sestavení s úplným vztahem důvěryhodnosti. Neočekáváte-li, že se váš kód má spustit z částečně důvěryhodného kontextu nebo bude volán částečně důvěryhodným kódem, nemusíte mít obavy z informací v této části. Nicméně pokud píšete kód, který musí komunikovat s částečně důvěryhodným kódem nebo pracovat z částečně důvěryhodného kontextu, měli byste vzít v úvahu následující faktory:  
+ Aplikacím, které přijímají méně než úplný vztah důvěryhodnosti od svého hostitele nebo izolovaného prostoru (sandbox), není povoleno volat sdílené spravované knihovny, pokud modul pro zápis knihovny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> je výslovně nepovoluje prostřednictvím použití atributu. Proto musí autoři aplikací vědět, že některé knihovny nebudou pro ně z částečně důvěryhodného kontextu k dispozici. Ve výchozím nastavení je částečně důvěryhodný všechen kód, který se spouští v [izolovaném prostoru (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md) s částečným vztahem důvěryhodnosti a není v seznamu sestavení s úplným vztahem důvěryhodnosti. Neočekáváte-li, že se váš kód má spustit z částečně důvěryhodného kontextu nebo bude volán částečně důvěryhodným kódem, nemusíte mít obavy z informací v této části. Nicméně pokud píšete kód, který musí komunikovat s částečně důvěryhodným kódem nebo pracovat z částečně důvěryhodného kontextu, měli byste vzít v úvahu následující faktory:  
   
 - Knihovny musí být podepsány se silným názvem, aby je bylo možné sdílet s více aplikacemi. Silné názvy umožňují <xref:System.AppDomain>, aby váš kód byl umístěn do globální mezipaměti sestavení (GAC) nebo přidaný do seznamu plně důvěryhodných izolovaného prostoru (sandboxing) a umožnil uživatelům ověření, že z vás skutečně pochází konkrétní mobilní kód.  
   
-- Ve výchozím nastavení provádí sdílené knihovny se silným názvem [1](../../../docs/framework/misc/security-transparent-code-level-1.md) , které mají pro úplný vztah důvěryhodnosti automaticky implicitní [LinkDemand](../../../docs/framework/misc/link-demands.md) , a to bez toho, aby zapisovač knihovny musel dělat cokoli.  
+- Ve výchozím nastavení provádí sdílené knihovny se silným názvem [1](security-transparent-code-level-1.md) , které mají pro úplný vztah důvěryhodnosti automaticky implicitní [LinkDemand](link-demands.md) , a to bez toho, aby zapisovač knihovny musel dělat cokoli.  
   
 - Pokud volající nemá úplný vztah důvěryhodnosti, ale přesto se pokusí zavolat takovou knihovnu, modul runtime vyvolá výjimku <xref:System.Security.SecurityException> a volající není povolen odkaz na knihovnu.  
   
@@ -53,4 +53,4 @@ ms.locfileid: "69910683"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
+- [Zabezpečení přístupu kódu](code-access-security.md)

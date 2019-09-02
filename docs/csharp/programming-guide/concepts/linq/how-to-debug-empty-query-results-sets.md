@@ -2,12 +2,12 @@
 title: 'Postupy: Ladit prázdné sady výsledků dotazu (C#)'
 ms.date: 07/20/2015
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
-ms.openlocfilehash: 06c878a7751a14a3043b450d9242037ca91ad754
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 12d2132f1f088050fdd109d067069870b82f2661
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710134"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205314"
 ---
 # <a name="how-to-debug-empty-query-results-sets-c"></a>Postupy: Ladit prázdné sady výsledků dotazu (C#)
 Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.  
@@ -42,7 +42,7 @@ Console.WriteLine("End of result set");
   
  Tento příklad vytvoří následující výsledek:  
   
-```  
+```output  
 Result set follows:  
 End of result set  
 ```  
@@ -74,7 +74,7 @@ Console.WriteLine("End of result set");
   
  Tento příklad vytvoří následující výsledek:  
   
-```  
+```output  
 Result set follows:  
 1  
 2  

@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-ms.openlocfilehash: 82f840ab7dd26a4888ebf024d696f2c70701eb18
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b704deeffcd06bca09b6c26d60a66218b46fc55c
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607229"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203166"
 ---
 # <a name="the-load-method"></a>Metoda Load
-Můžete použít <xref:System.Data.DataTable.Load%2A> metodu pro načtení <xref:System.Data.DataTable> s řádky ze zdroje dat. Toto je přetěžované metody, které ve své nejjednodušší podobě přijímá jeden parametr, **DataReader**. V tomto formuláři jednoduše načte **DataTable** s řádky. Volitelně můžete zadat **LoadOption** parametr řídit, jak data je přidána do **DataTable**.  
+Pomocí <xref:System.Data.DataTable.Load%2A> metody lze <xref:System.Data.DataTable> načíst řádky ze zdroje dat. Toto je přetížená metoda, která v nejjednodušším tvaru přijímá jeden parametr, objekt DataReader. V tomto formuláři jednoduše načte **objekt DataTable** s řádky. Volitelně můžete zadat parametr **LoadOption** pro řízení způsobu přidání dat do **objektu DataTable**.  
   
- **LoadOption** parametr je zvlášť užitečné v případech, kde **DataTable** již obsahuje řádky dat, protože popisuje, jak příchozí data ze zdroje dat se zkombinuje s daty už v tabulce. Například **PreserveCurrentValues** (výchozí) určuje, že v případech, kde je řádek označený jako **přidané** v **DataTable**, **původní** hodnotu nebo jednotlivé sloupce je nastavena na odpovídající řádek obsah ze zdroje dat. **Aktuální** hodnotu zachová hodnoty přiřazené při přidání řádku a **RowState** řádku, který bude nastavena na **změněné**.  
+ Parametr **LoadOption** je zvláště užitečný v případech, kdy **objekt DataTable** již obsahuje řádky dat, protože popisuje, jak budou příchozí data ze zdroje dat kombinována s daty, která jsou již v tabulce. Například **PreserveCurrentValues** (výchozí) určuje, že v případech, kde je řádek označen jako přidaný v **objektu DataTable**, je **původní** hodnota nebo každý sloupec nastaven na obsah odpovídajícího řádku ze zdroje dat. **Aktuální** hodnota zachová hodnoty přiřazené při přidání řádku a **RowState** řádku se nastaví na hodnotu **změněno**.  
   
  Následující tabulka obsahuje stručný popis <xref:System.Data.LoadOption> hodnot výčtu.  
   
 |Hodnota LoadOption|Popis|  
 |----------------------|-----------------|  
-|**OverwriteRow**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** a **aktuální** hodnoty sloupce se nahradí hodnotami v řádku příchozí a **RowState** je nastavena na **Unchanged**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** se přidají **RowState** hodnotu **Unchanged**.<br /><br /> Tato možnost platit aktualizuje obsah **DataTable** tak, aby odpovídalo obsah datového zdroje.|  
-|**PreserveCurrentValues (výchozí)**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** je hodnota nastavená na obsah z příchozího řádku a **Aktuální** hodnota se nezmění.<br /><br /> Pokud **RowState** je **přidané** nebo **změněné**, je nastaven na hodnotu **změněné**.<br /><br /> Pokud **RowState** byl **odstraněné**, zůstane **odstraněné**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** jsou přidány a **RowState** je nastavena na **Unchanged**.|  
-|**UpdateCurrentValues**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **aktuální** zkopírování hodnoty do **původní**hodnotu a **aktuální** hodnota je nastaven na obsah z příchozího řádku.<br /><br /> Pokud **RowState** v **DataTable** byl **přidané**, **RowState** zůstává **přidané**. Pro řádky jsou označeny jako **změněné** nebo **odstraněné**, **RowState** je **změněné**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** jsou přidány a **RowState** je nastavena na **přidané**.|  
+|**OverwriteRow**|Pokud mají vstupní řádky stejnou hodnotu **PrimaryKey** jako řádek, který už je v **objektu DataTable**, nahradí se **původní** a **aktuální** hodnota každého sloupce hodnotami v poli příchozí řádek a vlastnost **RowState** je nastavena na hodnotu **Beze změny**.<br /><br /> Řádky ze zdroje dat, které ještě neexistují v **objektu DataTable** , jsou přidány s hodnotou **RowState** **beze změny**.<br /><br /> Tato možnost v důsledku toho aktualizuje obsah **objektu DataTable** tak, aby odpovídal obsahu zdroje dat.|  
+|**PreserveCurrentValues (výchozí)**|Pokud mají vstupní řádky stejnou hodnotu **PrimaryKey** jako řádek, který je již v **objektu DataTable**, je **původní** hodnota nastavena na obsah příchozího řádku a **aktuální** hodnota se nemění.<br /><br /> Pokud je **RowState** **přidáno** nebo **upraveno**, je nastaveno na hodnotu **změněno**.<br /><br /> Pokud se **RowState** **odstranil**, zůstane **Odstraněný**.<br /><br /> Řádky ze zdroje dat, které ještě neexistují v **objektu DataTable** , jsou přidány a vlastnost **RowState** je nastavena na hodnotuUnchanged.|  
+|**UpdateCurrentValues**|Pokud mají vstupní řádky stejnou hodnotu **PrimaryKey** jako řádek, který je již v **objektu DataTable**, je **aktuální** hodnota zkopírována do **původní** hodnoty a **aktuální** hodnota je poté nastavena na obsah příchozího řádku.<br /><br /> Pokud byl **přidán** **RowState** v **objektu DataTable** , **RowState** zůstane **přidán**. Pro řádky označené jako **upravené** neboodstraněné se **změní** **RowState** .<br /><br /> Řádky ze zdroje dat, které ještě neexistují v **objektu DataTable** , jsou přidány a **RowState** je nastaven na hodnotu **přidáno**.|  
   
- Následující ukázkový používá **zatížení** metodu pro zobrazení seznamu datum narození pro zaměstnance v **Northwind** databáze.  
+ Následující příklad používá metodu **Load** k zobrazení seznamu narozenin pro zaměstnance v databázi **Northwind** .  
   
 ```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
@@ -70,5 +70,5 @@ End Sub
   
 ## <a name="see-also"></a>Viz také:
 
-- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

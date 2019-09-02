@@ -2,12 +2,12 @@
 title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 98c43b6af2913b9737085d2d983b37c6da4c1724
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 29b905c42f15cad4eb8521c4d702b56093982445
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934469"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203774"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část poskytuje přehled o tom, jak je relační schéma a `DataSet` sestaveno z dokumentu schématu XSD (XML Schema Definition Language). Obecně platí, že pro `complexType` každý podřízený element elementu schématu je tabulka generována `DataSet`v. Struktura tabulky je určena definicí komplexního typu. Tabulky jsou vytvořeny v `DataSet` prvku pro prvky nejvyšší úrovně ve schématu. Tabulka je však vytvořena pouze pro element `complexType` nejvyšší úrovně, je- `complexType` li element vnořen uvnitř jiného `complexType` prvku, v `DataTable` takovém případě je `DataSet`vnořený `complexType` prvek mapován na v rámci.  
@@ -83,17 +83,17 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
 ```  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  Popisuje prvky schématu XML, které se používají k vytvoření jedinečnosti a omezení cizího klíče v `DataSet`.  
   
- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)  
  Popisuje prvky schématu XML, které slouží k vytvoření vztahů mezi sloupci tabulky v `DataSet`.  
   
- [Omezení schématu XML a relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/xml-schema-constraints-and-relationships.md)  
+ [Omezení schématu XML a relací](xml-schema-constraints-and-relationships.md)  
  Popisuje `DataSet`, jak jsou relace vytvořeny implicitně při použití elementů schématu XML k vytvoření omezení v.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Použití XML v datové sadě](using-xml-in-a-dataset.md)  
  Popisuje, jak načíst a zachovat relační strukturu a data ve `DataSet` formě dat XML.  
   
 ## <a name="see-also"></a>Viz také:

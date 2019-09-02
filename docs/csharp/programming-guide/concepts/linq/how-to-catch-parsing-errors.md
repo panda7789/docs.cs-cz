@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Zachycení chyb při analýze (C#)'
+title: 'Postupy: Chyby analýzy zachycení (C#)'
 ms.date: 07/20/2015
 ms.assetid: bfb612d4-5605-48ef-8c93-915cf9d5dcfb
-ms.openlocfilehash: 094485b24cdccee7898bd0344aa7c100e26bf4e9
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4195ff50d1b4d23cd9eb07fc27f20861d1504672
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487482"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204148"
 ---
-# <a name="how-to-catch-parsing-errors-c"></a>Postupy: Zachycení chyb při analýze (C#)
-Toto téma ukazuje, jak detekovat XML chybně vytvořený nebo je neplatný.  
+# <a name="how-to-catch-parsing-errors-c"></a>Postupy: Chyby analýzy zachycení (C#)
+V tomto tématu se dozvíte, jak zjistit chybně vytvořený nebo neplatný kód XML.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je implementováno pomocí <xref:System.Xml.XmlReader>. Pokud je předán chybně vytvořený nebo neplatný XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], základní <xref:System.Xml.XmlReader> třída vyvolá výjimku. Různé metody, které analyzovat soubor XML, jako například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, nebude zachytávat výjimky; výjimku pak může být zachycena vaší aplikace.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je implementován pomocí <xref:System.Xml.XmlReader>. Pokud je předaný [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]chybně vytvořen nebo je neplatný kód XML <xref:System.Xml.XmlReader> , bude podkladová třída generovat výjimku. Různé metody, které analyzují kód XML, <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>například, nezachycují výjimku; výjimku lze následně zachytit v aplikaci.  
   
 ## <a name="example"></a>Příklad  
- Následující kód se pokusí analyzovat kód XML je neplatný:  
+ Následující kód se pokusí analyzovat neplatný kód XML:  
   
 ```csharp  
 try {  
@@ -34,11 +34,11 @@ catch (System.Xml.XmlException e)
 }  
 ```  
   
- Při spuštění tohoto kódu vyvolala následující výjimku:  
+ Při spuštění tohoto kódu vyvolá následující výjimku:  
   
-```  
+```console  
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
- Informace o výjimkách, které můžete očekávat, že <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, a <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> metody vyvolání, najdete v článku <xref:System.Xml.XmlReader> dokumentaci.  
+ Informace o výjimkách <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, které lze očekávat, že <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> metody <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, a mohou být vyvolávat, naleznete <xref:System.Xml.XmlReader> v dokumentaci.  
   

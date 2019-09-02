@@ -7,26 +7,26 @@ helpviewer_keywords:
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15e693f716d02e6f7ef8b666ddf51a8bd352f642
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 9563dae9ba5d144300549e7f33f5f5a9feb1d410
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690280"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205622"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Kompatibilita a migrace zásad zabezpečení přístupu kódu
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
-Část zásad zabezpečení přístupu kódu (CAS) byly provedeny zastaralé v rozhraní .NET Framework 4. V důsledku toho může dojít upozornění kompilace a výjimky běhového modulu při volání zásad zastaralé typy a členy [explicitně](#explicit_use) nebo [implicitně](#implicit_use) (pomocí jiných typů a členů).
+Část zásad zabezpečení přístupu kódu (CAS) byla v .NET Framework 4 zastaralá. V důsledku toho může dojít k upozorněním na kompilaci a výjimkám modulu runtime, pokud voláte zastaralé typy zásad a členy [explicitně](#explicit_use) nebo [implicitně](#implicit_use) (prostřednictvím jiných typů a členů).
 
-Můžete se vyhnout upozornění a chyby buď:
+Upozornění a chyby můžete zabránit pomocí těchto akcí:
 
-- [Migrace](#migration) na rozhraní .NET Framework 4 nahrazení pro zastaralý volání.
+- [Migrace](#migration) na .NET Framework 4 nahrazení pro zastaralá volání.
 
    \- nebo –
 
-- Použití [ \<NetFx40_LegacySecurityPolicy > element konfigurace](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) do starší chování zásad CAS.
+- Pomocí elementu NetFx40_LegacySecurityPolicy > [Configuration se můžete vyjádřit ke staršímu chování zásad CAS. \<](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)
 
 Toto téma obsahuje následující oddíly:
 
@@ -36,17 +36,17 @@ Toto téma obsahuje následující oddíly:
 
 - [Chyby a upozornění](#errors_and_warnings)
 
-- [Migrace: Nahrazení pro zastaralý volání](#migration)
+- [Migrace Náhrada pro zastaralá volání](#migration)
 
-- [Kompatibility: Pomocí možnosti zásad CAS starší verze](#compatibility)
+- [Režim Použití možnosti starší verze zásad CAS](#compatibility)
 
 <a name="explicit_use"></a>
 
 ## <a name="explicit-use"></a>Explicitní použití
 
-Členy, které přímo pracovat s zásady zabezpečení nebo vyžadují zásady CAS do izolovaného prostoru jsou zastaralé a vygeneruje chyby ve výchozím nastavení.
+Členové, kteří přímo pracují se zásadami zabezpečení nebo vyžadují zásady CAS pro izolovaný prostor (sandbox), jsou zastaralé a ve výchozím nastavení vytvoří chyby.
 
-Mezi ty patří:
+Příklady těchto akcí:
 
 - <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType>
 
@@ -72,9 +72,9 @@ Mezi ty patří:
 
 ## <a name="implicit-use"></a>Implicitní použití
 
-Několik přetížení načítání sestavení vytvořit chyby z důvodu jejich implicitního použití zásad CAS. Tato přetížení používají <xref:System.Security.Policy.Evidence> parametr, který se používá k řešení certifikační Autority zásad a poskytnout oprávnění udělit sady pro sestavení.
+Několik přetížení načítání sestavení vytváří chyby kvůli implicitnímu použití zásad CAS. Tato přetížení přebírají <xref:System.Security.Policy.Evidence> parametr, který se používá k vyřešení zásad CAS a poskytnutí oprávnění pro udělení oprávnění pro sestavení.
 
-Zde je několik příkladů: Zastaralá přetížení jsou ty, které trvat <xref:System.Security.Policy.Evidence> jako parametr:
+Zde je několik příkladů: Zastaralá přetížení jsou ta, která přijímá <xref:System.Security.Policy.Evidence> jako parametr:
 
 - <xref:System.Activator.CreateInstanceFrom%2A?displayProperty=nameWithType>
 
@@ -98,23 +98,23 @@ Zde je několik příkladů: Zastaralá přetížení jsou ty, které trvat <xre
 
 ## <a name="errors-and-warnings"></a>Chyby a upozornění
 
-Zastaralé typy a členy vytvořit následující chybové zprávy při jejich použití. Všimněte si, že <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> samotného typu není zastaralá.
+Zastaralé typy a členy vytváří při použití následující chybové zprávy. Všimněte si, <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> že samotný typ není zastaralý.
 
-Upozornění kompilace:
+Upozornění při kompilaci:
 
 `warning CS0618: '<API Name>' is obsolete: 'This method is obsolete and will be removed in a future release of the .NET Framework. Please use <suggested alternate API>. See <link> for more information.'`
 
-Výjimka za běhu:
+Běhová výjimka:
 
 <xref:System.NotSupportedException>: `This method uses CAS policy, which has been obsoleted by the .NET Framework. In order to enable CAS policy for compatibility reasons, please use the <NetFx40_LegacySecurityPolicy> configuration switch. Please see <link> for more information.`
 
 <a name="migration"></a>
 
-## <a name="migration-replacement-for-obsolete-calls"></a>Migrace: Nahrazení pro zastaralý volání
+## <a name="migration-replacement-for-obsolete-calls"></a>Migrace Náhrada pro zastaralá volání
 
-### <a name="determining-an-assemblys-trust-level"></a>Určení úroveň důvěryhodnosti sestavení
+### <a name="determining-an-assemblys-trust-level"></a>Určení úrovně důvěryhodnosti sestavení
 
-Zásady CAS z se často používá k určení sestavení nebo doména aplikace oprávnění sada udělení oprávnění nebo úroveň důvěryhodnosti. Rozhraní .NET Framework 4 zveřejňuje následující užitečné vlastnosti, které není potřeba řešit zásady zabezpečení:
+Zásada CAS se často používá k určení sady oprávnění pro udělení oprávnění nebo domény aplikace nebo úrovně důvěryhodnosti. .NET Framework 4 zpřístupňuje následující užitečné vlastnosti, které nepotřebují vyřešit zásady zabezpečení:
 
 - <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>
 
@@ -126,26 +126,26 @@ Zásady CAS z se často používá k určení sestavení nebo doména aplikace o
 
 ### <a name="application-domain-sandboxing"></a>Sandboxing domény aplikace
 
-<xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> Metoda se obvykle používá pro sandboxing sestavení v doméně aplikace. Zpřístupňuje rozhraní .NET Framework 4 členy, které není nutné používat <xref:System.Security.Policy.PolicyLevel> pro tento účel. Další informace najdete v tématu [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
+<xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> Metoda se obvykle používá pro sandboxing sestavení v doméně aplikace. .NET Framework 4 zpřístupňuje členy, které pro tento účel nemusíte používat <xref:System.Security.Policy.PolicyLevel> . Další informace najdete v tématu [jak: Spustit částečně důvěryhodný kód v izolovaném](how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).
 
-### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>Určení sady bezpečné nebo přiměřené oprávnění pro částečně důvěryhodný kód.
+### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>Určení bezpečné nebo přiměřené sady oprávnění pro částečně důvěryhodný kód
 
-Hostitelé často nutné určit oprávnění, které jsou vhodné pro kód izolace (sandbox), které jsou hostované. Před rozhraní .NET Framework 4, zásady CAS poskytují způsob, jak to provést pomocí <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> metody. Jako náhradu, poskytuje rozhraní .NET Framework 4 <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> metodu, která vrací sadu pro zadaný důkazy bezpečný, standardní oprávnění.
+Hostitelé často potřebují určit oprávnění, která jsou vhodná pro hostovaný kód izolovaného prostoru (sandbox). Předtím, než .NET Framework 4, poskytuje zásada CAS způsob, jak to provést s <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> metodou. V rámci nahrazení .NET Framework 4 poskytuje <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> metodu, která vrací bezpečnou standardní sadu oprávnění pro poskytnuté legitimace.
 
-### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Non-Sandboxing scénáře: Přetížení pro načtení sestavení
+### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Scénáře, které nepatří do izolovaného prostoru: Přetížení pro načtení sestavení
 
-Použití parametrů, které jinak nejsou k dispozici, namísto sandboxing sestavení může být důvod pomocí přetížení načtení sestavení. Od verze rozhraní .NET Framework 4, načíst sestavení přetížení, které nevyžadují, aby <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objektu jako parametr, například <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, povolit tento scénář.
+Důvodem použití přetížení zatížení sestavení může být použití parametrů, které nejsou jinak k dispozici, namísto sestavování sestavení v izolovaném prostoru. Počínaje .NET Framework 4 se přetížení zátěže sestavení, která nevyžadují <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objekt jako parametr, <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>například, povoluje tento scénář.
 
-Pokud chcete do izolovaného prostoru sestavení, použijte <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení.
+Pokud chcete sestavení izolovaného prostoru (sandbox), <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> použijte přetížení.
 
 <a name="compatibility"></a>
 
-## <a name="compatibility-using-the-cas-policy-legacy-option"></a>Kompatibility: Pomocí možnosti zásad CAS starší verze
+## <a name="compatibility-using-the-cas-policy-legacy-option"></a>Režim Použití možnosti starší verze zásad CAS
 
-[ \<NetFx40_LegacySecurityPolicy > element konfigurace](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) umožňuje určit, který proces nebo knihovna používá starší zásadu CAS. Po povolení tohoto prvku přetížení zásady a důkazy bude fungovat stejně jako v předchozích verzích rozhraní.
+[Prvek konfigurace > NetFx40_LegacySecurityPolicyumožňujeurčit,žeprocesneboknihovnapoužívástaršízásadyCAS.\<](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) Pokud povolíte tento prvek, přetížení zásad a legitimace budou fungovat stejně jako v předchozích verzích rozhraní.
 
 > [!NOTE]
-> Na základě verze modulu runtime, je specifikováno chování zásady CAS, tak úprava zásad CAS pro jednu verzi modulu runtime neovlivní zásady CAS z jiné verze.
+> Chování zásad CAS je určeno pro verzi modulu runtime, takže změna zásad CAS pro jednu verzi modulu runtime nemá vliv na zásady CAS jiné verze.
 
 ```xml
 <configuration>
@@ -157,5 +157,5 @@ Pokud chcete do izolovaného prostoru sestavení, použijte <xref:System.AppDoma
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Postupy: Spustit částečně důvěryhodný kód v izolovaném prostoru](how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Pokyny pro zabezpečené kódování](../../standard/security/secure-coding-guidelines.md)

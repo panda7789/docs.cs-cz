@@ -2,12 +2,12 @@
 title: dotnet – příkaz
 description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI nástroje) a jeho využití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 7e1915610732151487353f2d14586597f801ddfb
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 61542a3fff8bba6e2c3e55a4db5a746620d79ca1
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167908"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202506"
 ---
 # <a name="dotnet-command"></a>dotnet – příkaz
 
@@ -22,22 +22,23 @@ ms.locfileid: "70167908"
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
 ```console
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
-    [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
+    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
 ```console
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
-    [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
+    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx]
+    [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 ```console
-dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
-    [-h|--help] [--info] [-v|--verbosity] [--version]
+dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
+    [--fx-version] [-h|--help] [--info] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 ---
@@ -54,11 +55,17 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 `--additional-deps <PATH>`
 
-Cesta k dalšímu souboru *. DEPS. JSON* .
+Cesta k dodatečnému souboru *. DEPS. JSON* .
 
 `--additionalprobingpath <PATH>`
 
 Cesta obsahující zásady a sestavení pro zjišťování k testování
+
+`--depsfile`
+
+Cesta k souboru *DEPS. JSON* .
+
+Soubor *DEPS. JSON* obsahuje seznam závislostí, závislosti kompilace a informace o verzi používané k řešení konfliktů sestavení. Další informace o tomto souboru najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) na GitHubu.
 
 `-d|--diagnostics`
 
@@ -93,6 +100,12 @@ Definuje chování v případě, že požadovaná sdílená architektura není k
 
  Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
+`--runtimeconfig`
+
+Cesta k souboru *runtimeconfig. JSON* .
+
+Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další informace najdete v tématu [běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) na GitHubu.
+
 `-v|--verbosity <LEVEL>`
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
@@ -105,11 +118,17 @@ Vytiskne verzi .NET Core SDK, která se používá.
 
 `--additional-deps <PATH>`
 
-Cesta k dalšímu souboru *. DEPS. JSON* .
+Cesta k dodatečnému souboru *. DEPS. JSON* .
 
 `--additionalprobingpath <PATH>`
 
 Cesta obsahující zásady a sestavení pro zjišťování k testování
+
+`--depsfile`
+
+Cesta k souboru *DEPS. JSON* .
+
+Soubor *DEPS. JSON* obsahuje seznam závislostí, závislosti kompilace a informace o verzi používané k řešení konfliktů sestavení. Další podrobnosti o tomto souboru najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-d|--diagnostics`
 
@@ -131,6 +150,12 @@ Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí
 
  Zakáže posunutí dílčí verze, pokud je nastaveno `0`na. Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 
+`--runtimeconfig`
+
+Cesta k souboru *runtimeconfig. JSON* .
+
+Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další podrobnosti najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+
 `-v|--verbosity <LEVEL>`
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]` Nepodporováno v každém příkazu; Pokud chcete zjistit, zda je tato možnost k dispozici, zobrazte konkrétní příkazová stránka.
@@ -144,6 +169,12 @@ Vytiskne verzi .NET Core SDK, která se používá.
 `--additionalprobingpath <PATH>`
 
 Cesta obsahující zásady a sestavení pro zjišťování k testování
+
+`--depsfile`
+
+Cesta k souboru *DEPS. JSON* .
+
+Soubor *DEPS. JSON* obsahuje seznam závislostí, závislosti kompilace a informace o verzi používané k řešení konfliktů sestavení. Další podrobnosti o tomto souboru najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-d|--diagnostics`
 
@@ -160,6 +191,12 @@ Vytiskne dokumentaci pro daný příkaz, například `dotnet build --help`. `dot
 `--info`
 
 Vytiskne podrobné informace o instalaci .NET Core a počítačovém prostředí, jako je aktuální operační systém, a potvrzení SHA verze .NET Core.
+
+`--runtimeconfig`
+
+Cesta k souboru *runtimeconfig. JSON* .
+
+Soubor *runtimeconfig. JSON* je konfigurační soubor obsahující konfigurační nastavení modulu runtime. Další podrobnosti najdete v tématu [běhové konfigurační soubory na GitHubu](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-v|--verbosity <LEVEL>`
 
@@ -355,3 +392,7 @@ Určuje umístění indexu údržby používaného sdíleným hostitelem při na
 Určuje, jestli se data o využití nástrojů .NET Core shromažďují a odesílají do Microsoftu. Nastavte na `true` výslovný souhlas funkce telemetrie (hodnoty `true`, `1`nebo `yes` přijmout). V opačném případě `false` nastavte, aby se přihlásil k funkcím `0`telemetrie ( `no` hodnoty `false`, nebo přijaty). Pokud není nastavená, je výchozí `false` nastavení a funkce telemetrie je aktivní.
 
 ---
+
+## <a name="see-also"></a>Viz také:
+
+- [Běhové konfigurační soubory](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)

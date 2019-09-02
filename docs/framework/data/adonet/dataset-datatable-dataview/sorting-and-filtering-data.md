@@ -5,42 +5,42 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
-ms.openlocfilehash: 68b2f75681bef6c43b7eb2072d6e9266408ca102
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0907aa2a66e1bf51fefc7bed8ea2612cc0c830fa
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607184"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203231"
 ---
 # <a name="sorting-and-filtering-data"></a>Řazení a filtrování dat
-<xref:System.Data.DataView> Poskytuje několik možností, jak řazení a filtrování dat v <xref:System.Data.DataTable>:  
+Poskytuje několik způsobů řazení a filtrování dat <xref:System.Data.DataTable>v: <xref:System.Data.DataView>  
   
-- Můžete použít <xref:System.Data.DataView.Sort%2A> vlastnosti a určit jeden nebo více sloupců, pořadí řazení a zahrnují (vzestupně) ASC a DESC (sestupně) parametry.  
+- <xref:System.Data.DataView.Sort%2A> Vlastnost můžete použít k určení řazení jednoho nebo více sloupců a zahrnutí parametrů ASC (vzestupně) a desc (sestupně).  
   
-- Můžete použít <xref:System.Data.DataView.ApplyDefaultSort%2A> automaticky vytvořit pořadí řazení ve vzestupném pořadí, nastavenou na sloupec primárního klíče nebo sloupců v tabulce. <xref:System.Data.DataView.ApplyDefaultSort%2A> platí, jen když **řazení** vlastnost je odkaz s hodnotou null nebo prázdný řetězec, a pokud tabulka má definován primární klíč.  
+- <xref:System.Data.DataView.ApplyDefaultSort%2A> Vlastnost můžete použít k automatickému vytvoření pořadí řazení ve vzestupném pořadí podle sloupce primárního klíče nebo sloupce v tabulce. <xref:System.Data.DataView.ApplyDefaultSort%2A>platí pouze v případě, že vlastnost **Sort** je odkaz s hodnotou null nebo prázdný řetězec, a pokud je pro tabulku definována primární klíč.  
   
-- Můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti a určit tak podmnožiny řádků podle jejich hodnoty sloupce. Další informace o zobrazení platných výrazů pro **RowFilter** vlastnost, naleznete v tématu referenční informace pro <xref:System.Data.DataColumn.Expression%2A> vlastnost <xref:System.Data.DataColumn> třídy.  
+- <xref:System.Data.DataView.RowFilter%2A> Vlastnost můžete použít k určení podmnožiny řádků na základě hodnot jejich sloupců. Podrobnosti o platných výrazech pro vlastnost **RowFilter vyžaduje hodnotu** naleznete v referenčních informacích k <xref:System.Data.DataColumn.Expression%2A> vlastnosti <xref:System.Data.DataColumn> třídy.  
   
-     Pokud chcete vrátit výsledky konkrétní dotaz na data, na rozdíl od poskytují dynamický náhled na podmnožinu dat, může použít <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody **DataView** k dosažení nejlepšího výkonu dosáhnete spíše než nastavení **RowFilter** vlastnost. Nastavení **RowFilter** vlastnost znovu sestaví index pro data, přidání režie pro vaši aplikaci a snížit výkon. **RowFilter** vlastnost je nejvhodnější v aplikace vázané na data kde vázaného ovládacího prvku zobrazí filtrované výsledky. **Najít** a **FindRows** metody využívat bez nutnosti index znovu sestavit aktuální index. Další informace o **najít** a **FindRows** metody, naleznete v tématu [vyhledání řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md).  
+     Pokud chcete vrátit výsledky konkrétního dotazu na data, na rozdíl od poskytování dynamického zobrazení podmnožiny dat, použijte <xref:System.Data.DataView.Find%2A> metody nebo <xref:System.Data.DataView.FindRows%2A> objektu **DataView** k dosažení nejlepšího výkonu místo nastavení  **Vlastnost RowFilter vyžaduje hodnotu** Nastavením vlastnosti **RowFilter vyžaduje hodnotu** se znovu sestaví index dat, zvýší se režie do vaší aplikace a zmenší se výkon. Vlastnost **RowFilter vyžaduje hodnotu** se nejlépe používá v aplikaci vázané na data, kde vázaný ovládací prvek zobrazuje filtrované výsledky. Metody **find** a **FindRows** využívají aktuální index bez nutnosti opětovného vytvoření indexu. Další informace o metodách **find** a **FindRows** najdete v tématu [Vyhledání řádků](finding-rows.md).  
   
-- Můžete použít <xref:System.Data.DataView.RowStateFilter%2A> vlastnosti a určit, jaké verze řádků k zobrazení. **DataView** implicitně spravuje verzi řádku, která se má zveřejnit, v závislosti na **RowState** základní řádku. Například pokud **Vlastnost RowStateFilter** je nastavena na **DataViewRowState.Deleted**, **DataView** zpřístupňuje **původní** verze řádku všechny **odstraněné** řádky, protože neexistuje žádný **aktuální** verze řádku. Můžete určit, kterou verzi řádku řádku je vystaven pomocí **RowVersion** vlastnost **DataRowView**.  
+- <xref:System.Data.DataView.RowStateFilter%2A> Vlastnost můžete použít k určení, které verze řádků se mají zobrazit. **Objekt DataView** implicitně spravuje, která verze řádku má být vystavení v závislosti na **RowState** základního řádku. Pokud je například **vlastnost RowStateFilter** nastaveno na **DataViewRowState. Deleted**, zobrazení **DataView** zpřístupní **původní** verzi všech odstraněných řádků, protože neexistuje žádná verze **aktuálního** řádku. Můžete určit, která verze řádku řádku je zveřejněna, pomocí vlastnosti **rowversion** třídy **DataRowView**.  
   
-     V následující tabulce jsou uvedeny možnosti **DataViewRowState**.  
+     V následující tabulce jsou uvedeny možnosti pro **DataViewRowState**.  
   
-    |Hodnota DataViewRowState možnosti|Popis|  
+    |DataViewRowState možnosti|Popis|  
     |------------------------------|-----------------|  
-    |**CurrentRows**|**Aktuální** verze řádku všech **Unchanged**, **přidané**, a **změněné** řádků. Toto nastavení je výchozí.|  
-    |**Přidat**|**Aktuální** verze řádku všech **přidané** řádků.|  
-    |**Odstranit**|**Původní** verze řádku všech **odstraněné** řádků.|  
-    |**ModifiedCurrent**|**Aktuální** verze řádku všech **změněné** řádků.|  
-    |**ModifiedOriginal**|**Původní** verze řádku všech **změněné** řádků.|  
-    |**Žádné**|Žádné řádky.|  
-    |**OriginalRows**|**Původní** verze řádku všech **Unchanged**, **změněné**, a **odstraněné** řádků.|  
-    |**beze změny**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
+    |**CurrentRows**|**Aktuální** verze řádku všech nezměněných,přidaných a **upravených** řádků. Toto nastavení je výchozí.|  
+    |**Přidat**|**Aktuální** verze řádku všech přidaných řádků.|  
+    |**Odstraňování**|**Původní** verze řádků všech odstraněných řádků.|  
+    |**ModifiedCurrent**|**Aktuální** verze řádků všech změněných řádků.|  
+    |**ModifiedOriginal**|**Původní** verze řádků všech upravených řádků.|  
+    |**Žádné**|Žádné řádky|  
+    |**OriginalRows**|**Původní** verze řádku všech nezměněných, **upravených**a odstraněných řádků.|  
+    |**Oproti**|**Aktuální** verze řádku všech nezměněných řádků.|  
   
- Další informace o stavy řádků a verze řádků, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+ Další informace o stavech řádků a verzích řádků najdete v tématu [stavy řádků a verze řádků](row-states-and-row-versions.md).  
   
- Následující příklad kódu vytvoří zobrazení, zobrazí všechny produkty, kde počet jednotek v zásobách je menší než nebo rovna úrovni přesunout v pořadí řazení nejprve podle ID dodavatele a poté podle názvu produktu.  
+ Následující příklad kódu vytvoří zobrazení, ve kterém se zobrazí všechny produkty, u kterých je počet jednotek v zásobách menší nebo roven úrovni přeřazení, seřazené podle prvního podle ID dodavatele a potom podle názvu produktu.  
   
 ```vb  
 Dim prodView As DataView = New DataView(prodDS.Tables("Products"), _  
@@ -62,5 +62,5 @@ DataView prodView = new DataView(prodDS.Tables["Products"],
 - <xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType>
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
-- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zobrazení dat](dataviews.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

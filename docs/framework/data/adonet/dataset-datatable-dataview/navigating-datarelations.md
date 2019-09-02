@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5e673f4-9b44-45ae-aaea-c504d1cc5d3e
-ms.openlocfilehash: f4dfccad23bf5d15f5cbd0a33e76a136417e13ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7b1717317bb119538497f60bae48ec1da2286c8
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607256"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203320"
 ---
 # <a name="navigating-datarelations"></a>Navigace v datových relacích
-Jednou z primárních funkcí <xref:System.Data.DataRelation> je umožnit navigace z jednoho <xref:System.Data.DataTable> do jiného v rámci <xref:System.Data.DataSet>. To umožňuje načíst všechny související <xref:System.Data.DataRow> objektů v jednom **DataTable** při jediném **DataRow** z se souvisejícím **DataTable**. Například po vytvoření **DataRelation** mezi tabulku zákazníků a tabulku objednávek, můžete načíst všechny objednávky řádky pro konkrétní zákazníky řádku pomocí **GetChildRows**.  
+Jednou z primárních funkcí <xref:System.Data.DataRelation> je umožnění navigace z jednoho <xref:System.Data.DataTable> na jiný v rámci <xref:System.Data.DataSet>. To umožňuje <xref:System.Data.DataRow> načíst všechny související objekty v jednom **objektu DataTable** , pokud je předána jedna třída **DataRow** ze souvisejícího **objektu DataTable**. Například po vytvoření datarelace mezi tabulkou zákazníků a tabulkou objednávky můžete načíst všechny řádky objednávky pro konkrétní řádek zákazníka pomocí **Metoda GetChildRows**.  
   
- Následující příklad kódu vytvoří **DataRelation** mezi **zákazníkům** tabulky a **objednávky** tabulku **datovou sadu** a vrátí všechny objednávky pro každého zákazníka.  
+ Následující příklad kódu vytvoří datovou **relaci** mezi tabulkou **Customers** a tabulkou **objednávky** **datové sady** a vrátí všechny objednávky pro každého zákazníka.  
   
  [!code-csharp[DataWorks Data.DataTableRelation#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks Data.DataTableRelation/CS/source.cs#1)]
  [!code-vb[DataWorks Data.DataTableRelation#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.DataTableRelation/VB/source.vb#1)]  
   
- Následující příklad je založen na předchozím příkladu společně týkající se čtyřmi tabulkami a procházení těchto relací. Stejně jako v předchozím příkladu **CustomerID** se vztahuje **zákazníkům** tabulky **objednávky** tabulky. Pro každého zákazníka v **zákazníkům** všechny podřízené řádky v tabulky **objednávky** tabulky jsou určeny, aby mohla vrátit číslo objednávky určitého zákazníka má a jejich **OrderID** hodnoty.  
+ Následující příklad sestaví v předchozím příkladu se souvisejícími čtyřmi tabulkami a naviguje se na tyto vztahy. Jak je uvedeno v předchozím příkladu, pole **KódZákazníka** se týká tabulky Customers v tabulce Orders. Pro každého zákazníka v tabulce **Customers (zákazníci** ) se určí všechny podřízené řádky v tabulce **Orders** , aby bylo možné vrátit počet objednávek, které konkrétní zákazník má, a jejich hodnoty **ČísloObjednávky** .  
   
- Rozšířené příkladu také vrátí hodnoty z **OrderDetails** a **produkty** tabulky. **Objednávky** tabulka má vztah k **OrderDetails** tabulky pomocí **OrderID** určit pro jednotlivé objednávky zákazníka, jaké produktů a množství byly seřazeny. Protože **OrderDetails** tabulka obsahuje pouze **ProductID** seřazený produktu **OrderDetails** souvisí s **produkty** pomocí **ProductID** cílem vrátit **ProductName**. V této relaci **produkty** je nadřazená tabulka a **OrderDetails** je podřízená tabulka. V důsledku toho při iterace **OrderDetails** tabulky, **GetParentRow** je volána k získání související **ProductName** hodnotu.  
+ Rozbalený příklad také vrátí hodnoty z tabulek **OrderDetails** a **Products** . Tabulka **Orders** se vztahuje k tabulce **OrderDetails** s využitím hodnoty **ČísloObjednávky** k určení, jaké produkty a množství byly objednány pro každé pořadí zákazníků. Protože tabulka **OrderDetails** obsahuje pouze **ProductID** objednaného produktu, **OrderDetails** se vztahuje k produktům, které používají **ProductID** za účelem vrácení **NázevVýrobku**. V této relaci je tabulka **Products** nadřazená a tabulka **Podrobnosti objednávky** je podřízená položka. Výsledkem je, že při iteraci v tabulce **OrderDetails** se volá **Metoda GetParentRow** , aby se načetla související hodnota **NázevVýrobku** .  
   
- Všimněte si, že **DataRelation** se vytvoří pro **zákazníkům** a **objednávky** tabulky, není zadána žádná hodnota pro **createConstraints**příznak (výchozí hodnota je **true**). Předpokladem je, že všechny řádky v tabulce **objednávky** tabulka obsahovat **CustomerID** hodnotu, která existuje v nadřazeném prvku **zákazníkům** tabulky. Pokud **CustomerID** existuje v **objednávky** tabulku, která neexistuje v **zákazníkům** tabulky, <xref:System.Data.ForeignKeyConstraint> způsobí vyvolání výjimky.  
+ Všimněte si, že při vytvoření datarelationu pro tabulky **zákazníci** a **objednávky** není pro příznak **createConstraints** zadána žádná hodnota (výchozí hodnota je **true**). To předpokládá, že všechny řádky v tabulce **Orders** mají hodnotu **CustomerID** , která existuje v tabulce nadřazených **zákazníků** . Pokud v tabulce Orders existuje **ID zákazníka** , které v tabulce <xref:System.Data.ForeignKeyConstraint> Customers neexistuje, způsobí výjimka výjimku.  
   
- Pokud podřízený sloupec může obsahovat hodnoty, které nebude obsahovat nadřazený sloupec, nastavit **createConstraints** příznak **false** při přidávání **DataRelation**. V tomto příkladu **createConstraints** příznak je nastaven na **false** pro **DataRelation** mezi **objednávky** tabulky a  **OrderDetails** tabulky. To umožňuje aplikaci vrátí všechny záznamy z **OrderDetails** tabulky a pouze podmnožinu záznamů z **objednávky** tabulky bez generování událostí výjimky za běhu. Rozšířené ukázka generuje výstup ve formátu.  
+ Pokud podřízený sloupec může obsahovat hodnoty, které nadřazený sloupec neobsahuje, nastavte příznak **createConstraints** na **hodnotu false** při přidávání objektu DataRelation. V příkladu je příznak **createConstraints** nastaven na **hodnotu false** pro DataRelation mezi tabulkou Orders a tabulkou **OrderDetails** . To umožňuje aplikaci vracet všechny záznamy z tabulky **OrderDetails** a pouze podmnožinu záznamů z tabulky Orders, aniž by generovaly výjimku za běhu. Rozbalený vzorek generuje výstup v následujícím formátu.  
   
 ```  
 Customer ID: NORTS  
@@ -44,12 +44,12 @@ Customer ID: NORTS
           Quantity: 3  
 ```  
   
- Následující příklad kódu je rozbalený ukázka kde hodnoty z **OrderDetails** a **produkty** tabulky jsou vráceny pomocí pouze podmnožinu záznamů v **objednávky**tabulky se vrací.  
+ Následující příklad kódu je rozbalený vzorek, ve kterém jsou vráceny hodnoty z tabulek **OrderDetails** a **Products** s vrácenou pouze podmnožinou záznamů v tabulce **Orders** .  
   
  [!code-csharp[DataWorks Data.DataTableNavigation#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks Data.DataTableNavigation/CS/source.cs#1)]
  [!code-vb[DataWorks Data.DataTableNavigation#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.DataTableNavigation/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Datové sady, datové tabulky a datová zobrazení](index.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
-ms.openlocfilehash: 72af4b049153ce647cc1ceb2d40c3b17cc7ed988
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ff2b6b6d00c854d07f36d37986268a388c7f31b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880058"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203713"
 ---
 # <a name="finding-rows"></a>Hledání řádků
-Můžete hledat pomocí řádků podle jejich hodnoty klíče řazení <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>. Rozlišování velikosti písmen vyhledávání hodnoty v **najít** a **FindRows** metody je určeno **CaseSensitive** vlastnost základního <xref:System.Data.DataTable>. Hledání hodnoty musí odpovídat existující hodnoty klíče řazení v plné výši k vrácení výsledku.  
+Můžete vyhledat řádky podle jejich hodnot klíče řazení pomocí <xref:System.Data.DataView.Find%2A> metod <xref:System.Data.DataView>a <xref:System.Data.DataView.FindRows%2A> . Rozlišuje velká a malá písmena vyhledávacích hodnot v metodách **find** a **FindRows** je určena vlastností **CaseSensitive** podkladového <xref:System.Data.DataTable>výrazu. Aby bylo možné vrátit výsledek, musí hodnoty hledání odpovídat existujícím hodnotám klíčového řazení v celém rozsahu.  
   
- **Najít** metoda vrátí celé číslo s indexem <xref:System.Data.DataRowView> , které by odpovídalo kritériím hledání. Pokud více než jeden řádek odpovídá kritériím hledání, pouze index první odpovídající **DataRowView** je vrácena. Pokud se nenajdou žádné shody, **najít** vrátí hodnotu -1.  
+ Metoda **find** vrátí celé číslo s indexem <xref:System.Data.DataRowView> , který odpovídá kritériím hledání. Pokud kritériím vyhledávání odpovídá více než jeden řádek, vrátí se pouze index prvního odpovídajícího **DataRowViewu** . Nejsou-li nalezeny žádné shody, funkce **find** vrátí hodnotu-1.  
   
- Chcete-li vrátit výsledky hledání, které odpovídají více řádků, použijte **FindRows** metody. **FindRows** funguje stejně jako **najít** metody, s tím rozdílem, že se vrátí **DataRowView** pole, které odkazuje na všechny odpovídající řádky **DataView**. Pokud se nenajdou žádné shody, **DataRowView** pole bude prázdný.  
+ Chcete-li vrátit výsledky hledání, které odpovídají více řádkům, použijte metodu **FindRows** . **FindRows** funguje stejně jako metoda **find** s tím rozdílem, že vrátí pole **DataRowView** , které odkazuje na všechny odpovídající řádky v objektu **DataView**. Pokud se nenajde žádná shoda, pole **DataRowView** bude prázdné.  
   
- Použít **najít** nebo **FindRows** metod je nutné zadat řazení order buď nastavením **ApplyDefaultSort** k **true** nebo s použitím **Řazení** vlastnost. Pokud není zadána žádná pořadí řazení, je vyvolána výjimka.  
+ Chcete-li použít metody **find** nebo **FindRows** , je nutné zadat pořadí řazení buď nastavením **ApplyDefaultSort** na **hodnotu true** nebo pomocí vlastnosti **Sort** . Pokud není zadáno žádné pořadí řazení, je vyvolána výjimka.  
   
- **Najít** a **FindRows** metody pole hodnot, které přijímají jako vstup, jehož délka shoduje s počtem sloupců v pořadí řazení. V případě řazení na jeden sloupec můžete předat hodnotu single. Pro pořadí řazení, který obsahuje více sloupců můžete předat pole objektů. Všimněte si, že pro řazení do více sloupců, hodnoty v poli objektu musí odpovídat pořadí sloupce zadané v **řazení** vlastnost **DataView**.  
+ Metody **find** a **FindRows** přebírají pole hodnot jako vstup, jejichž délka odpovídá počtu sloupců v pořadí řazení. V případě řazení v jednom sloupci můžete předat jednu hodnotu. Pro pořadí řazení obsahující více sloupců předáte pole objektů. Všimněte si, že pro řazení více sloupců musí hodnoty v poli objektu odpovídat pořadí sloupců, které jsou zadány ve vlastnosti **Sort** objektu **DataView**.  
   
- Následující příklad kódu ukazuje **najít** proti volané metody **DataView** s jedním sloupcem pořadí řazení.  
+ Následující příklad kódu ukazuje metodu **find** , která je volána proti zobrazení **DataView** s jedním sloupcem řazení.  
   
 ```vb  
 Dim custView As DataView = _  
@@ -55,7 +55,7 @@ else
     custView[rowIndex]["CompanyName"].ToString());  
 ```  
   
- Pokud vaše **řazení** vlastnost určuje více sloupců, musí předat objekt pole s hodnotami vyhledávání pro každý sloupec v pořadí zadaném **řazení** vlastnosti, jako v následujícím příkladu kódu.  
+ Pokud vlastnost **Sort** určuje více sloupců, musíte předat pole objektu s hodnotami hledání pro každý sloupec v pořadí určeném vlastností **Sort** , jak je uvedeno v následujícím příkladu kódu.  
   
 ```vb  
 Dim custView As DataView = _  
@@ -97,5 +97,5 @@ else
 
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
-- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zobrazení dat](dataviews.md)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: Řízení toku v asynchronních programechC#()
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: bac47393814737b0e6f635845f5dfcd95bad6328
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 99f80a86f14179c5f270064a9f96e35f8611ef13
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168467"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204439"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Řízení toku v asynchronních programechC#()
 
@@ -60,7 +60,7 @@ public partial class MainWindow : Window
 
 Každé z označených umístění, "jedna" až "šest", zobrazí informace o aktuálním stavu programu. Vytvoří se následující výstup:
 
-```text
+```output
 ONE:   Entering startButton_Click.
            Calling AccessTheWebAsync.
 
@@ -240,7 +240,7 @@ Chcete-li spustit projekt, proveďte následující kroky:
 
     Zobrazí se následující výstup:
 
-    ```text
+    ```output
     ONE:   Entering startButton_Click.
                Calling AccessTheWebAsync.
 
@@ -292,7 +292,7 @@ Task<string> getStringTask = client.GetStringAsync("https://msdn.microsoft.com")
 
  Úkol si můžete představit jako příslib tím, že `client.GetStringAsync` budete chtít vytvořit skutečný řetězec nakonec. Pokud `AccessTheWebAsync` v tuto chvíli funguje práce, která nezávisí na přislíbeném řetězci z `client.GetStringAsync`, může tato práce pokračovat během `client.GetStringAsync` čekání. V příkladu představují následující řádky výstupu, které jsou označeny "tři", možnost provést nezávislou práci.
 
-```
+```output
 THREE: Back in AccessTheWebAsync.
            Task getStringTask is started.
            About to await getStringTask & return a Task<int> to startButton_Click.
@@ -327,7 +327,7 @@ Task<int> getLengthTask = AccessTheWebAsync();
 
  Stejně jako `AccessTheWebAsync`v `startButton_Click` aplikaci může pokračovat v práci, která nezávisí na výsledcích asynchronní úlohy (`getLengthTask`), dokud není očekávána úloha. Následující výstupní řádky označují, že fungují.
 
-```
+```output
 FOUR:  Back in startButton_Click.
            Task getLengthTask is started.
            About to await getLengthTask -- no caller to return to.
@@ -347,7 +347,7 @@ int contentLength = await getLengthTask;
 
 Když `client.GetStringAsync` signalizuje, že je dokončeno, zpracování `AccessTheWebAsync` v nástroji je uvolněno z pozastavení a může pokračovat za příkazem await. Následující řádky výstupu reprezentují pokračování zpracování.
 
-```
+```output
 FIVE:  Back in AccessTheWebAsync.
            Task getStringTask is complete.
            Processing the return statement.
@@ -368,7 +368,7 @@ Když `AccessTheWebAsync` signalizuje, že je dokončeno, zpracování může po
 
 Následující řádky výstupu reprezentují pokračování zpracování v `startButton_Async`:
 
-```
+```output
 SIX:   Back in startButton_Click.
            Task getLengthTask is finished.
            Result from AccessTheWebAsync is stored in contentLength.

@@ -2,51 +2,51 @@
 title: Odvození relační struktury datové sady z XML
 ms.date: 03/30/2017
 ms.assetid: cd2f41c6-6785-420e-aa43-3ceb0bdccdce
-ms.openlocfilehash: 9a9dc7d94728ea797a8930d3f77068fdd3ebfb5c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b1932807058777a532457c99efc49f3ddfdf4ae
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034239"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204806"
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační struktury datové sady z XML
-Relační struktury nebo schématu, nástroje <xref:System.Data.DataSet> se skládá z tabulky, sloupce, omezení a vztahy. Při načítání <xref:System.Data.DataSet> ze souboru XML, můžete předem definovaná schématu, ale mohou být vytvořeny, explicitně nebo prostřednictvím odvození z XML načítán. Další informace o načítání schématu a obsah <xref:System.Data.DataSet> ze souboru XML, naleznete v tématu [načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [načítání informace schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  
+Relační struktura neboli schéma <xref:System.Data.DataSet> se skládá z tabulek, sloupců, omezení a vztahů. Při načítání <xref:System.Data.DataSet> z kódu XML může být schéma předdefinovaný nebo může být vytvořeno buď explicitně, nebo prostřednictvím odvození, od načtení XML. Další informace o načtení schématu a obsahu <xref:System.Data.DataSet> z jazyka XML naleznete v tématu [načtení datové sady z XML](loading-a-dataset-from-xml.md) a [načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md).  
   
- Pokud schéma <xref:System.Data.DataSet> se vytváří ze souboru XML, upřednostňovanou metodou je nutné explicitně zadat pomocí buď schéma XML definice jazyk (XSD) schématu (jak je popsáno v [odvozování relační struktury datové sady ze schématu XML (XSD) ](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)) nebo XML Data snižuje (XDR). Pokud není k dispozici v jazyce XML schématu žádné schéma XML nebo XDR schéma <xref:System.Data.DataSet> lze odvodit z struktura XML elementů a atributů.  
+ Je-li schéma <xref:System.Data.DataSet> z kódu XML vytvořeno, upřednostňovanou metodou je explicitní určení schématu pomocí jazyka XSD (XML Schema Definition Language) (jak je popsáno v tématu odvozování [relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)) nebo XML – zmenšeno na data (XDR). Pokud není v kódu XML k dispozici žádné schéma XML nebo schéma XDR, schéma <xref:System.Data.DataSet> lze odvodit ze struktury elementů XML a atributů.  
   
- Tato část popisuje pravidla pro <xref:System.Data.DataSet> odvození schématu zobrazením elementů XML a atributy a jejich strukturu a výsledné odvodit <xref:System.Data.DataSet> schématu.  
+ Tato část popisuje pravidla pro <xref:System.Data.DataSet> odvození schématu zobrazením elementů XML a atributů a jejich struktury a výsledného <xref:System.Data.DataSet> odvozeného schématu.  
   
- Ne všechny atributy v dokumentu XML musí být součástí procesu odvození. Namespace kvalifikovaný atributy mohou zahrnovat metadata, která jsou důležité pro dokument XML, ale nikoli pro <xref:System.Data.DataSet> schématu. Pomocí <xref:System.Data.DataSet.InferXmlSchema%2A>, můžete určit obory názvů mají ignorovat během procesu odvození. Další informace najdete v tématu [načítání informace schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  
+ Ne všechny atributy, které jsou k dispozici v dokumentu XML, by měly být zahrnuty v procesu odvození. Atributy kvalifikované pro obor názvů můžou zahrnovat metadata, která jsou důležitá pro dokument XML, ale ne <xref:System.Data.DataSet> pro schéma. Pomocí <xref:System.Data.DataSet.InferXmlSchema%2A>můžete zadat obory názvů, které budou ignorovány během procesu odvození. Další informace naleznete v tématu [načítání informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Souhrn procesu odvození schématu datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/summary-of-the-dataset-schema-inference-process.md)  
- Poskytuje podrobný přehled pravidla pro odvození schématu <xref:System.Data.DataSet> ze souboru XML.  
+ [Souhrn procesu odvození schématu datové sady](summary-of-the-dataset-schema-inference-process.md)  
+ Poskytuje souhrnný přehled pravidel pro odvození schématu <xref:System.Data.DataSet> z XML.  
   
- [Odvozování tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-tables.md)  
+ [Odvozování tabulek](inferring-tables.md)  
  Popisuje elementy XML, které jsou odvozeny jako tabulky v <xref:System.Data.DataSet>.  
   
- [Odvozování sloupců](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-columns.md)  
+ [Odvozování sloupců](inferring-columns.md)  
  Popisuje elementy XML a atributy, které jsou odvozeny jako sloupce tabulky.  
   
- [Odvozování relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-relationships.md)  
- Popisuje <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty vytvořené pro vnořený, odvozené tabulky.  
+ [Odvozování relací](inferring-relationships.md)  
+ Popisuje objekty <xref:System.Data.ForeignKeyConstraint> a vytvořené pro vnořené a odvozené tabulky. <xref:System.Data.DataRelation>  
   
- [Odvození textu elementu](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-element-text.md)  
- Popisuje sloupce, které jsou vytvořeny pro text v elementů XML a vysvětluje, kdy text v elementů XML je ignorován.  
+ [Odvození textu elementu](inferring-element-text.md)  
+ Popisuje sloupce, které jsou vytvořeny pro text v prvcích XML a vysvětluje, kdy se text v prvcích XML ignoruje.  
   
- [Odvození omezení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inference-limitations.md)  
- Tento článek popisuje omezení pro odvození schématu.  
+ [Odvození omezení](inference-limitations.md)  
+ Popisuje omezení odvození schématu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- Popisuje, jak <xref:System.Data.DataSet> objekt pracuje s daty XML.  
+ [Použití XML v datové sadě](using-xml-in-a-dataset.md)  
+ Popisuje, <xref:System.Data.DataSet> jak objekt komunikuje s daty XML.  
   
- [Odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
- Popisuje relační struktury nebo schématu, <xref:System.Data.DataSet> , který je vytvořen z jazyk (XSD) schématu definice schématu XML.  
+ [Odvozování relační struktury datové sady ze schématu XML (XSD)](deriving-dataset-relational-structure-from-xml-schema-xsd.md)  
+ Popisuje relační strukturu neboli schéma <xref:System.Data.DataSet> , které je vytvořeno ze schématu XSD (XML Schema Definition Language).  
   
- [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
- Popisuje ADO.NET architektura a komponenty a jejich použití pro přístup k existujícím zdrojům dat a spravovat data aplikací.  
+ [Přehled ADO.NET](../ado-net-overview.md)  
+ Popisuje architekturu a komponenty ADO.NET a jejich použití pro přístup k existujícím zdrojům dat a správě dat aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

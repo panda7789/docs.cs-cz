@@ -2,12 +2,12 @@
 title: Zrušení asynchronních úloh po uplynutí časového intervalu (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
-ms.openlocfilehash: e00ff51e987275c6c84822f7095c82ed03b53176
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 110c4700d0d2afc87f9144bf258cdd4991f107f4
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595755"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204345"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Zrušení asynchronních úloh po uplynutí časového intervalu (C#)
 
@@ -76,7 +76,7 @@ private async void startButton_Click(object sender, RoutedEventArgs e)
 
  Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby. Následující výstup je ukázka.
 
-```
+```output
 Length of the downloaded string: 35990.
 
 Length of the downloaded string: 407399.

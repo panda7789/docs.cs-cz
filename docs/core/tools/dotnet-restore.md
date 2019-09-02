@@ -2,12 +2,12 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 347ad691b8d439fdf1696f790d4a838a73c57b5a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 56d99a4edd69246632560065c415a3f41ac3e1b5
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105155"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202823"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -21,7 +21,7 @@ ms.locfileid: "70105155"
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
-```
+```console
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity] [--interactive]
 dotnet restore [-h|--help]
@@ -29,7 +29,7 @@ dotnet restore [-h|--help]
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-```
+```console
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]

@@ -2,12 +2,12 @@
 title: dotnet publish – příkaz
 description: Příkaz dotnet publish publikuje projekt .NET Core do adresáře.
 ms.date: 05/29/2018
-ms.openlocfilehash: 972937ac1bc32b3749d4e1b6b8874c3516f5680c
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 188a136c3e024f71f9b3e89d8e797fa3053f7e4c
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105137"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202594"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -21,7 +21,7 @@ ms.locfileid: "70105137"
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
-```
+```console
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
@@ -29,7 +29,7 @@ dotnet publish [-h|--help]
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2,0](#tab/netcore20)
 
-```
+```console
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
@@ -37,7 +37,7 @@ dotnet publish [-h|--help]
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-```
+```console
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
     [--version-suffix]
 dotnet publish [-h|--help]

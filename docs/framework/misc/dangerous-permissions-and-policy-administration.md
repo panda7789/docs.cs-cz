@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f79fd3e0678fc0bba0d3074904f9ce9460fc6c20
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ffe4f3e000c80610d5a105dddef90f9cfd51f0dc
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910933"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205584"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Správa nebezpečných oprávnění a zásad
 Některé z chráněných operací, pro které .NET Framework poskytují oprávnění, můžou potenciálně dovolit obejít systém zabezpečení. Tato nebezpečná oprávnění by měla být udělena pouze důvěryhodnému kódu a pak pouze podle potřeby. Není obvykle žádná obrana proti škodlivému kódu, pokud jim byla udělena tato oprávnění.  
   
 > [!NOTE]
-> V .NET Framework 4 existovaly důležité změny modelu a terminologie zabezpečení .NET Framework. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+> V .NET Framework 4 existovaly důležité změny modelu a terminologie zabezpečení .NET Framework. Další informace o těchto změnách najdete v tématu [změny zabezpečení](../security/security-changes.md).  
   
  Nebezpečná oprávnění jsou vysvětlena v následující tabulce.  
   
@@ -32,7 +32,7 @@ Některé z chráněných operací, pro které .NET Framework poskytují oprávn
 |<xref:System.Security.Permissions.SecurityPermissionFlag.SkipVerification>|Bez ověření může kód provádět cokoli.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence>|Neověřené legitimace můžou podvést zásady zabezpečení.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy>|Možnost upravovat zásady zabezpečení může zabezpečení zakázat.|  
-|<xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter>|Použití serializace může obejít mechanismy přístupnosti. Podrobnosti najdete v tématu [zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md).|  
+|<xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter>|Použití serializace může obejít mechanismy přístupnosti. Podrobnosti najdete v tématu [zabezpečení a serializace](security-and-serialization.md).|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>|Možnost nastavit aktuální objekt zabezpečení může být obtížné zabezpečení na základě rolí.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>|Manipulace s vlákny je nebezpečná, protože stav zabezpečení je přidružený k vláknům.|  
 |<xref:System.Security.Permissions.ReflectionPermission>||  
