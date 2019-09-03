@@ -49,11 +49,11 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jednu z následujících
 |`\f`|Odpovídá posunu `\u000C`formuláře.|  
 |`\n`|Odpovídá novému řádku `\u000A`.|  
 |`\e`|Odpovídá řídicímu znaku `\u001B`,.|  
-|`\`*NNN*| Odpovídá znaku ASCII, kde *NNN* sestává ze dvou nebo tří číslic, které reprezentují osmičkový kód znaku. Například `\040` představuje znak mezery. Tato konstrukce je interpretována jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo, pokud odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
+|`\`*NNN*&#124; Odpovídá znaku ASCII, kde *NNN* sestává ze dvou nebo tří číslic, které reprezentují osmičkový kód znaku. Například `\040` představuje znak mezery. Tato konstrukce je interpretována jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo, pokud odpovídá číslu zachytávající skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
 |`\x` *nn*|Odpovídá znaku ASCII, kde *NN* je dvouciferné hexadecimální kód znaku.|  
 |`\c` *X*|Odpovídá řídicímu znaku ASCII, kde X je písmeno řídicího znaku. Například `\cC` je CTRL-C.|  
 |`\u` *nnnn*|Odpovídá jednotce kódu UTF-16, jejíž hodnota je *nnnn* hexadecimální. **Poznámka:**  Rozhraní .NET nepodporuje řídicí znak "Perl 5", který se používá k zadání kódování Unicode. Řídicí znak jazyka Perl 5 `\x{`má formulář *####* `…}`, kde *####* `…` je řada hexadecimálních číslic. Místo toho použijte `\u` *nnnn*.|  
-|`\`| Pokud následuje znak, který není rozpoznán jako řídicí znak, odpovídá tomuto znaku. Například `\*` odpovídá znaku hvězdička (*) a je stejný jako `\x2A`.|  
+|`\`&#124; Pokud následuje znak, který není rozpoznán jako řídicí znak, odpovídá tomuto znaku. Například `\*` odpovídá znaku hvězdička (*) a je stejný jako `\x2A`.|  
   
 ## <a name="an-example"></a>Příklad  
  Následující příklad ukazuje použití znakových řídicích znaků v regulárním výrazu. Analyzuje řetězec, který obsahuje názvy největších měst a jejich populace na světě v 2009. Název každého města je oddělený od jeho populace tabulátorem (`\t`) nebo svislým pruhem&#124; ( `\u007c`nebo). Jednotlivá města a jejich populace jsou vzájemně oddělené návratem na začátek řádku a řádkovým kanálem.  
