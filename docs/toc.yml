@@ -160,8 +160,6 @@
           href: core/tutorials/with-visual-studio.md
         - name: Vytvoření aplikace Hello World v jazyce Visual Basic pomocí .NET Core v sadě Visual Studio 2017
           href: core/tutorials/vb-with-visual-studio.md
-        - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
-          href: core/tutorials/creating-app-with-plugin-support.md
         - name: 'Ladění aplikace Hello World v jazyce C# nebo Visual Basic .NET Core pomocí sady Visual Studio 2017'
           href: core/tutorials/debugging-with-visual-studio.md
         - name: Publikování aplikace Hello World pomocí sady Visual Studio 2017
@@ -219,6 +217,8 @@
           href: core/tutorials/testing-with-cli.md
         - name: Vývoj knihoven pomocí nástrojů pro různé platformy
           href: core/tutorials/libraries.md
+        - name: Vytvoření aplikace .NET Core pomocí modulů plug-in
+          href: core/tutorials/creating-app-with-plugin-support.md
         - name: Vývoj aplikací ASP.NET Core
           href: core/tutorials/aspnet-core.md
         - name: Hostování .NET Core z nativního kódu
