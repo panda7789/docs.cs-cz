@@ -26,12 +26,14 @@
                   href: bindingredirect-element.md
                 - name: Element <codeBase>
                   href: codebase-element.md
+                - name: Element <publisherPolicy>
+                  href: publisherpolicy-element.md
             - name: Element <probing>
               href: probing-element.md
-            - name: Element <publisherPolicy>
-              href: publisherpolicy-element.md
             - name: Element <qualifyAssembly>
               href: qualifyassembly-element.md
+            - name: Element <supportPortability>
+              href: supportportability-element.md
         - name: Element <bypassTrustedAppStrongNames>
           href: bypasstrustedappstrongnames-element.md
         - name: Element <CompatSortNLSVersion>
@@ -82,23 +84,6 @@
           href: relativebindforresources-element.md
         - name: Element <shadowCopyVerifyByTimestamp>
           href: shadowcopyverifybytimestamp-element.md
-        - name: Element <supportPortability>
-          href: supportportability-element.md
-        - name: <system.runtime.caching> – element (nastavení mezipaměti)
-          href: system-runtime-caching-element-cache-settings.md
-          items:
-            - name: <memoryCache> – element (nastavení mezipaměti)
-              href: memorycache-element-cache-settings.md
-              items:
-                - name: <namedCaches> – element (nastavení mezipaměti)
-                  href: namedcaches-element-cache-settings.md
-                  items:
-                    - name: <add> – element pro <namedCaches>
-                      href: add-element-for-namedcaches.md
-                    - name: <clear> – element pro <namedCaches>
-                      href: clear-element-for-namedcaches.md
-                    - name: <remove> – element pro <namedCaches>
-                      href: remove-element-for-namedcaches.md
         - name: Element <Thread_UseAllCpuGroups>
           href: thread-useallcpugroups-element.md
         - name: Element <ThrowUnobservedTaskExceptions>
@@ -111,3 +96,18 @@
           href: userandomizedstringhashalgorithm-element.md
         - name: Element <UseSmallInternalThreadStacks>
           href: usesmallinternalthreadstacks-element.md
+    - name: <system.runtime.caching> – element (nastavení mezipaměti)
+      href: system-runtime-caching-element-cache-settings.md
+      items:
+        - name: <memoryCache> – element (nastavení mezipaměti)
+          href: memorycache-element-cache-settings.md
+          items:
+            - name: <namedCaches> – element (nastavení mezipaměti)
+              href: namedcaches-element-cache-settings.md
+              items:
+                - name: <add> – element pro <namedCaches>
+                  href: add-element-for-namedcaches.md
+                - name: <clear> – element pro <namedCaches>
+                  href: clear-element-for-namedcaches.md
+                - name: <remove> – element pro <namedCaches>
+                  href: remove-element-for-namedcaches.md
