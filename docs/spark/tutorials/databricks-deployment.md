@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 77c2d93ae324b6acbf8fc8dc25cd3e4d1a652f48
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 3c9169e2936742c82ba27327ac07f0aa1b4c645c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107356"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254046"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-databricks"></a>Nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -27,7 +27,7 @@ V tomto kurzu se naučíte:
 
 Než začnete, udělejte toto:
 
-- Stáhněte si rozhraní příkazového [řádku](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html)datacihly.
+- Stáhněte si rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html).
 - Stáhněte si [install-Worker.sh](https://github.com/dotnet/spark/blob/master/deployment/install-worker.sh) do svého místního počítače. Toto je pomocný skript, který později použijete ke kopírování rozhraní .NET pro Apache Spark závislé soubory do pracovních uzlů clusteru Spark.
 
 ## <a name="prepare-worker-dependencies"></a>Příprava závislostí pracovního procesu
@@ -68,10 +68,10 @@ Než začnete, udělejte toto:
 
 ## <a name="deploy-to-databricks"></a>Nasazení do Databricks
 
-[](https://databricks.com) Datacihly představují platformu, která poskytuje cloudové zpracování velkých objemů dat pomocí Apache Spark.
+[Datacihly](https://databricks.com) představují platformu, která poskytuje cloudové zpracování velkých objemů dat pomocí Apache Spark.
 
 > [!Note] 
-> Datacihly [Azure Databricks](https://azure.microsoft.com/services/databricks/) a [AWS](https://databricks.com/aws) jsou založené na systému Linux. Proto pokud vás zajímá nasazení vaší aplikace do datacihly, ujistěte se, že je vaše aplikace .NET Standard kompatibilní a že ke kompilaci vaší aplikace použijete [kompilátor .NET Core](https://dotnet.microsoft.com/download) .
+> [Datacihly](https://databricks.com/aws) [Azure Databricks](https://azure.microsoft.com/services/databricks/) a AWS jsou založené na systému Linux. Proto pokud vás zajímá nasazení vaší aplikace do datacihly, ujistěte se, že je vaše aplikace .NET Standard kompatibilní a že ke kompilaci vaší aplikace použijete [kompilátor .NET Core](https://dotnet.microsoft.com/download) .
 
 Datacihly umožňují odesílat rozhraní .NET pro aplikace Apache Spark do existujícího aktivního clusteru nebo vytvořit nový cluster při každém spuštění úlohy. K tomu je potřeba, aby byl **Microsoft. spark. Worker** nainstalovaný předtím, než odešlete rozhraní .NET pro aplikaci Apache Spark.
 
@@ -84,7 +84,7 @@ Tento krok se vyžaduje jenom jednou pro cluster.
 
 2. Upravte **DB-init.sh** tak, aby odkazoval na verzi **Microsoft. spark. Worker** , kterou chcete stáhnout a nainstalovat do clusteru.
 
-3. Nainstalujte rozhraní příkazového [řádku](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html)datacihly.
+3. Nainstalujte rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html).
 
 4. [Nastavte podrobnosti ověření](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html#set-up-authentication) pro rozhraní PŘÍKAZového řádku datacihly.
 
@@ -96,7 +96,7 @@ Tento krok se vyžaduje jenom jednou pro cluster.
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
    ```
 
-6. Přejděte do pracovního prostoru Databricks. V nabídce na levé straně vyberte clustery a pak vyberte **vytvořit cluster**.
+6. Přejděte do pracovního prostoru Databricks. V nabídce na levé straně vyberte **clustery** a pak vyberte **vytvořit cluster**.
 
 7. Po správné konfiguraci clusteru nastavte **skript init** a vytvořte cluster.
 
@@ -119,15 +119,15 @@ Můžete použít `set JAR` nebo `spark-submit` k odeslání vaší úlohy do da
 3. Nastavte parametry odpovídajícím způsobem.
 
    ```
-   Main Class: org.apache.spark.deploy.DotnetRunner
+   Main Class: org.apache.spark.deploy.dotnet.DotnetRunner
    Arguments /dbfs/apps/<your-app-name>.zip <your-app-main-class>
    ```
  
-4. Nakonfigurujte **cluster** tak, aby odkazoval na existující cluster, který jste vytvořili v předchozí části.
+4. Nakonfigurujte **cluster** tak, aby odkazoval na existující **cluster, který** jste vytvořili v předchozí části.
 
 #### <a name="publish-and-run-your-app"></a>Publikování a spuštění vaší aplikace
 
-1. Použijte rozhraní příkazového [řádku](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html) datacihly k nahrání vaší aplikace do vašeho clusteru datacihly.
+1. Použijte rozhraní příkazového [řádku datacihly](https://docs.databricks.com/user-guide/dev-tools/databricks-cli.html) k nahrání vaší aplikace do vašeho clusteru datacihly.
 
       ```bash
       cd <path-to-your-app-publish-directory>
@@ -163,12 +163,12 @@ Příkaz [Spark-Submit](https://spark.apache.org/docs/latest/submitting-applicat
 2. Nakonfigurujte `spark-submit` pomocí následujících parametrů:
 
       ```bash
-      ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
+      ["--files","/dbfs/<path-to>/<app assembly/file to deploy to worker>","--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/<path-to>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar","/dbfs/<path-to>/<app name>.zip","<app bin name>","app arg1","app arg2"]
       ```
 
 3. V pracovním prostoru datacihly přejdete do svého clusteru datacihly. V části **úlohy**vyberte požadovanou úlohu a spusťte úlohu kliknutím na **Spustit nyní** .
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste nasadili rozhraní .NET pro Apache Spark aplikaci na datacihly. Pokud se chcete dozvědět víc o datacihlách, přejděte k dokumentaci Azure Databricks.
 
