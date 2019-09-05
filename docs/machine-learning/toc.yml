@@ -1,74 +1,49 @@
-- name: Průvodce ML.NET
+- name: ML.NET
   href: index.yml
 - name: Přehled
   expanded: true
   items:
-    - name: Co je ML.NET a jak funguje?
-      href: how-does-mldotnet-work.md
+    - name: rozhraní API
+      items:
+        - name: Rozhraní ML.NET API
+          href: how-does-mldotnet-work.md
+    - name: Nástroje
+      items:
+        - name: Nástroj ML.NET Model Builder
+          href: automate-training-with-model-builder.md
+        - name: Rozhraní příkazového řádku ML.NET
+          href: automate-training-with-cli.md
 - name: Kurzy
   items:
-    - name: Přehled
-      href: tutorials/index.md
-    - name: Analýza mínění (binární klasifikace)
-      href: tutorials/sentiment-analysis.md
-    - name: Kategorizace problémů podpory (vícetřídová klasifikace)
-      href: tutorials/github-issue-classification.md
-    - name: Předvídání cen (regrese)
-      href: tutorials/predict-prices.md
-    - name: Kategorizace datových sady Iris flower (clustering K-Means)
-      href: tutorials/iris-clustering.md
-    - name: Doporučování videí (faktorizace matice)
-      href: tutorials/movie-recommendation.md
-    - name: Klasifikace obrázků (přenos učení)
-      href: tutorials/image-classification.md
-    - name: Analýza prodeje produktu (detekce anomálií)
-      href: tutorials/sales-anomaly-detection.md
-    - name: Detekce objektů v obrázcích (detekce objektů)
-      href: tutorials/object-detection-onnx.md
-- name: Návody
-  items:
-    - name: Načtení dat
-      href: how-to-guides/load-data-ml-net.md
-    - name: Příprava dat
-      href: how-to-guides/prepare-data-ml-net.md
-    - name: 'Trénování, vyhodnocení a vysvětlení modelu'
+    - name: rozhraní API
       items:
-        - name: Trénování a vyhodnocení modelu
-          href: how-to-guides/train-machine-learning-model-ml-net.md
-        - name: Trénování modelu pomocí křížového ověření
-          href: how-to-guides/train-machine-learning-model-cross-validation-ml-net.md
-        - name: Kontrola přechodných hodnot dat v kanálu
-          href: how-to-guides/inspect-intermediate-data-ml-net.md
-        - name: Určení důležitosti funkcí modelu pomocí PFI
-          href: how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md
-    - name: Použití vytrénovaného modelu
+        - name: Přehled
+          href: tutorials/index.md
+        - name: Analýza mínění (binární klasifikace)
+          href: tutorials/sentiment-analysis.md
+        - name: Kategorizace problémů podpory (vícetřídová klasifikace)
+          href: tutorials/github-issue-classification.md
+        - name: Předvídání cen (regrese)
+          href: tutorials/predict-prices.md
+        - name: Kategorizace datových sady Iris flower (clustering K-Means)
+          href: tutorials/iris-clustering.md
+        - name: Doporučování videí (faktorizace matice)
+          href: tutorials/movie-recommendation.md
+        - name: Klasifikace obrázků (přenos učení)
+          href: tutorials/image-classification.md
+        - name: Analýza prodeje produktu (detekce anomálií)
+          href: tutorials/sales-anomaly-detection.md
+        - name: Detekce objektů v obrázcích (detekce objektů)
+          href: tutorials/object-detection-onnx.md
+    - name: Nástroje
       items:
-        - name: Uložení a načtení modelu
-          href: how-to-guides/save-load-machine-learning-models-ml-net.md
-        - name: Využití modelu k předpovědím
-          href: how-to-guides/machine-learning-model-predictions-ml-net.md
-        - name: Opakované trénování modelu
-          href: how-to-guides/retrain-model-ml-net.md
-        - name: Nasazení modelu do Azure Functions
-          href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
-        - name: Nasazení modelu do webového rozhraní API
-          href: how-to-guides/serve-model-web-api-ml-net.md
-    - name: Infer.NET
-      items:
-        - name: Pravděpodobnostní programování s Infer.NET
-          href: how-to-guides/matchup-app-infer-net.md
-- name: Odkaz
+        - name: Předpovídání cen pomocí nástroje Model Builder
+          href: tutorials/predict-prices-with-model-builder.md
+        - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
+          href: tutorials/mlnet-cli.md
+- name: Koncepty
   items:
-    - name: Referenční dokumentace ke knihovně API
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
-    - name: "Reference k\_rozhraním API verze Preview"
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
-- name: Prostředky
-  href: resources/index.md
-  items:
-    - name: Slovníček
-      href: resources/glossary.md
-    - name: Úkoly
+    - name: Úlohy ML.NET (typy modelů)
       href: resources/tasks.md
     - name: Algoritmy
       href: how-to-choose-an-ml-net-algorithm.md
@@ -78,33 +53,65 @@
       href: resources/metrics.md
     - name: Vylepšení přesnosti modelu
       href: resources/improve-machine-learning-model-ml-net.md
-- name: Automatizované strojové učení (verze Preview)
+- name: Návody
   items:
-    - name: Přehled
-      href: automl-overview.md
-    - name: Model Builder
+    - name: rozhraní API
       items:
-        - name: Co je Model Builder?
-          href: automate-training-with-model-builder.md
+        - name: Načtení dat
+          href: how-to-guides/load-data-ml-net.md
+        - name: Příprava dat
+          href: how-to-guides/prepare-data-ml-net.md
+        - name: 'Trénování, vyhodnocení a vysvětlení modelu'
+          items:
+            - name: Trénování a vyhodnocení modelu
+              href: how-to-guides/train-machine-learning-model-ml-net.md
+            - name: Trénování modelu pomocí křížového ověření
+              href: how-to-guides/train-machine-learning-model-cross-validation-ml-net.md
+            - name: Kontrola přechodných hodnot dat v kanálu
+              href: how-to-guides/inspect-intermediate-data-ml-net.md
+            - name: Určení důležitosti funkcí modelu pomocí PFI
+              href: how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md
+        - name: Použití vytrénovaného modelu
+          items:
+            - name: Uložení a načtení modelu
+              href: how-to-guides/save-load-machine-learning-models-ml-net.md
+            - name: Využití modelu k předpovědím
+              href: how-to-guides/machine-learning-model-predictions-ml-net.md
+            - name: Opakované trénování modelu
+              href: how-to-guides/retrain-model-ml-net.md
+            - name: Nasazení modelu do Azure Functions
+              href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
+            - name: Nasazení modelu do webového rozhraní API
+              href: how-to-guides/serve-model-web-api-ml-net.md
+    - name: Nástroje
+      items:
         - name: Instalace nástroje Model Builder
           href: how-to-guides/install-model-builder.md
-        - name: Předpovídání cen pomocí nástroje Model Builder
-          href: tutorials/predict-prices-with-model-builder.md
-    - name: Rozhraní příkazového řádku ML.NET
-      items:
         - name: Instalace rozhraní příkazového řádku
           href: how-to-guides/install-ml-net-cli.md
-        - name: Automatizované strojové učení
-          href: automate-training-with-cli.md
-        - name: Automatické generování binárního klasifikátoru
-          href: tutorials/mlnet-cli.md
-        - name: Reference k rozhraní příkazového řádku
-          href: reference/ml-net-cli-reference.md
-        - name: Telemetrie rozhraní příkazového řádku
-          href: resources/ml-net-cli-telemetry.md
-    - name: Rozhraní API pro automatizované strojové učení
-      items:
         - name: Použití rozhraní API pro automatizované strojové učení
           href: how-to-guides/how-to-use-the-automl-api.md
-        - name: "referenční dokumentace k\_rozhraní API"
+    - name: Infer.NET
+      items:
+        - name: Pravděpodobnostní programování s Infer.NET
+          href: how-to-guides/matchup-app-infer-net.md
+- name: Odkaz
+  items:
+    - name: rozhraní API
+      items:
+        - name: Reference k rozhraní ML.NET API
+          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
+        - name: "Reference k\_rozhraní ML.NET API verze Preview"
+          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
+    - name: Nástroje
+      items:
+        - name: Reference k rozhraní příkazového řádku
+          href: reference/ml-net-cli-reference.md
+        - name: Reference k rozhraní ML.NET AutoML API
           href: 'https://docs.microsoft.com/dotnet/api/index?view=automl-dotnet'
+- name: Prostředky
+  items:
+    - name: Slovníček
+      href: resources/glossary.md
+    - name: Telemetrie rozhraní příkazového řádku
+      href: resources/ml-net-cli-telemetry.md
