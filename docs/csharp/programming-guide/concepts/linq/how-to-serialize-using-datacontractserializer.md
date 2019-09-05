@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí třídy DataContractSerializer (C#)'
+title: 'Postupy: Serializace pomocí třídyC#DataContractSerializer ()'
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 7175b5051d318e7f214b4c2f7d96d44acf7a0a48
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 2b4800e2c6d210d62ab3093b673898a147c1f92d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484918"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253346"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="efd28-102">Postupy: Serializace pomocí třídy DataContractSerializer (C#)</span><span class="sxs-lookup"><span data-stu-id="efd28-102">How to: Serialize Using DataContractSerializer (C#)</span></span>
-<span data-ttu-id="efd28-103">Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="efd28-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
+# <a name="how-to-serialize-using-datacontractserializer-c"></a><span data-ttu-id="b4a8b-102">Postupy: Serializace pomocí třídyC#DataContractSerializer ()</span><span class="sxs-lookup"><span data-stu-id="b4a8b-102">How to: Serialize Using DataContractSerializer (C#)</span></span>
+<span data-ttu-id="b4a8b-103">Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="b4a8b-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="efd28-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="efd28-104">Example</span></span>  
- <span data-ttu-id="efd28-105">Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty.</span><span class="sxs-lookup"><span data-stu-id="efd28-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="efd28-106">K textovým souborům je serializuje a deserializuje je z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="efd28-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
+## <a name="example"></a><span data-ttu-id="b4a8b-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b4a8b-104">Example</span></span>  
+ <span data-ttu-id="b4a8b-105">Následující příklad vytvoří počet objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty.</span><span class="sxs-lookup"><span data-stu-id="b4a8b-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="b4a8b-106">Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="b4a8b-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
   
 ```csharp  
 using System;  
@@ -80,9 +80,9 @@ public class XElementNullContainer
 }  
 ```  
   
- <span data-ttu-id="efd28-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="efd28-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="b4a8b-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b4a8b-107">This example produces the following output:</span></span>  
   
-```  
+```output  
 Testing for type: System.Xml.Linq.XElement  
   Deserialized type: System.Xml.Linq.XElement  
 Testing for type: XElementContainer  
@@ -90,4 +90,3 @@ Testing for type: XElementContainer
 Testing for type: XElementNullContainer  
   Deserialized type: XElementNullContainer  
 ```  
-  

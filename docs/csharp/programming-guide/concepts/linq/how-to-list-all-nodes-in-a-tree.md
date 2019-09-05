@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Výpis všech uzlů ve stromu (C#)'
+title: 'Postupy: Vypsat všechny uzly ve stromu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-ms.openlocfilehash: 16d61e146e3721d8d5110d89e651aeb33ee556cd
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a6c50bba528dd250195edea80bcaebea08fa701c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486674"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253567"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-c"></a><span data-ttu-id="eef1e-102">Postupy: Výpis všech uzlů ve stromu (C#)</span><span class="sxs-lookup"><span data-stu-id="eef1e-102">How to: List All Nodes in a Tree (C#)</span></span>
-<span data-ttu-id="eef1e-103">Někdy je užitečné pro výpis všech uzlů ve stromu.</span><span class="sxs-lookup"><span data-stu-id="eef1e-103">Sometimes it is helpful to list all nodes in a tree.</span></span> <span data-ttu-id="eef1e-104">To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu.</span><span class="sxs-lookup"><span data-stu-id="eef1e-104">This can be useful when learning exactly how a method or property affects the tree.</span></span> <span data-ttu-id="eef1e-105">Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.</span><span class="sxs-lookup"><span data-stu-id="eef1e-105">One approach to listing all nodes in a textual form is to generate an XPath expression that exactly and specifically identifies any node in the tree.</span></span>  
+# <a name="how-to-list-all-nodes-in-a-tree-c"></a><span data-ttu-id="b5e47-102">Postupy: Vypsat všechny uzly ve stromu (C#)</span><span class="sxs-lookup"><span data-stu-id="b5e47-102">How to: List All Nodes in a Tree (C#)</span></span>
+<span data-ttu-id="b5e47-103">Někdy je užitečné zobrazit seznam všech uzlů ve stromu.</span><span class="sxs-lookup"><span data-stu-id="b5e47-103">Sometimes it is helpful to list all nodes in a tree.</span></span> <span data-ttu-id="b5e47-104">To může být užitečné při učení přesně o tom, jak metoda nebo vlastnost ovlivňuje strom.</span><span class="sxs-lookup"><span data-stu-id="b5e47-104">This can be useful when learning exactly how a method or property affects the tree.</span></span> <span data-ttu-id="b5e47-105">Jedním z přístupů k výpisu všech uzlů v textovém formuláři je vygenerování výrazu XPath, který přesně a konkrétně identifikuje libovolný uzel ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="b5e47-105">One approach to listing all nodes in a textual form is to generate an XPath expression that exactly and specifically identifies any node in the tree.</span></span>  
   
- <span data-ttu-id="eef1e-106">Není velmi užitečné ke spuštění výrazů XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="eef1e-106">It is not particularly helpful to execute XPath expressions using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span> <span data-ttu-id="eef1e-107">Výrazy XPath jsou horší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou výrazně výkonnější.</span><span class="sxs-lookup"><span data-stu-id="eef1e-107">XPath expressions have poorer performance than [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries, and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries are much more powerful.</span></span> <span data-ttu-id="eef1e-108">Nicméně jako způsob, jak identifikovat uzlů ve stromu XML, XPath funguje dobře.</span><span class="sxs-lookup"><span data-stu-id="eef1e-108">However, as a way to identify nodes in the XML tree, XPath works well.</span></span>  
+ <span data-ttu-id="b5e47-106">Není obzvláště užitečné spouštět výrazy XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b5e47-106">It is not particularly helpful to execute XPath expressions using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span></span> <span data-ttu-id="b5e47-107">Výrazy XPath mají slabší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou mnohem výkonnější.</span><span class="sxs-lookup"><span data-stu-id="b5e47-107">XPath expressions have poorer performance than [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries, and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries are much more powerful.</span></span> <span data-ttu-id="b5e47-108">Nicméně jako způsob identifikace uzlů ve stromu XML funguje výraz XPath dobře.</span><span class="sxs-lookup"><span data-stu-id="b5e47-108">However, as a way to identify nodes in the XML tree, XPath works well.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="eef1e-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="eef1e-109">Example</span></span>  
- <span data-ttu-id="eef1e-110">Tento příklad ukazuje funkci s názvem `GetXPath` , který generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="eef1e-110">This example shows an function named `GetXPath` that generates a specific XPath expression for any node in the XML tree.</span></span> <span data-ttu-id="eef1e-111">Generuje odpovídající výrazy XPath i v případě, že uzly jsou v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="eef1e-111">It generates appropriate XPath expressions even when nodes are in a namespace.</span></span> <span data-ttu-id="eef1e-112">Výrazy XPath jsou generovány pomocí předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="eef1e-112">The XPath expressions are generated by using namespace prefixes.</span></span>  
+## <a name="example"></a><span data-ttu-id="b5e47-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="b5e47-109">Example</span></span>  
+ <span data-ttu-id="b5e47-110">Tento příklad ukazuje funkci nazvanou `GetXPath` , která generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML.</span><span class="sxs-lookup"><span data-stu-id="b5e47-110">This example shows an function named `GetXPath` that generates a specific XPath expression for any node in the XML tree.</span></span> <span data-ttu-id="b5e47-111">Generuje vhodné výrazy XPath i v případě, že uzly jsou v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b5e47-111">It generates appropriate XPath expressions even when nodes are in a namespace.</span></span> <span data-ttu-id="b5e47-112">Výrazy XPath jsou generovány pomocí předpon oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b5e47-112">The XPath expressions are generated by using namespace prefixes.</span></span>  
   
- <span data-ttu-id="eef1e-113">Příklad poté vytvoří malý stromu XML, který obsahuje příklad z několika typů uzlů.</span><span class="sxs-lookup"><span data-stu-id="eef1e-113">The example then creates a small XML tree that contains an example of several types of nodes.</span></span> <span data-ttu-id="eef1e-114">Pak Iteruje přes podřízených uzlů a vytiskne výraz XPath pro každý uzel.</span><span class="sxs-lookup"><span data-stu-id="eef1e-114">It then iterates through the descendant nodes and prints the XPath expression for each node.</span></span>  
+ <span data-ttu-id="b5e47-113">Příklad následně vytvoří malý strom XML, který obsahuje příklad několika typů uzlů.</span><span class="sxs-lookup"><span data-stu-id="b5e47-113">The example then creates a small XML tree that contains an example of several types of nodes.</span></span> <span data-ttu-id="b5e47-114">Poté provede iteraci podřízenými uzly a vytiskne výraz XPath pro každý uzel.</span><span class="sxs-lookup"><span data-stu-id="b5e47-114">It then iterates through the descendant nodes and prints the XPath expression for each node.</span></span>  
   
- <span data-ttu-id="eef1e-115">Můžete si všimnout, že deklarace XML není ve stromu na uzel.</span><span class="sxs-lookup"><span data-stu-id="eef1e-115">You will notice that the XML declaration is not a node in the tree.</span></span>  
+ <span data-ttu-id="b5e47-115">Všimněte si, že deklarace XML není uzel ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="b5e47-115">You will notice that the XML declaration is not a node in the tree.</span></span>  
   
- <span data-ttu-id="eef1e-116">Toto je soubor XML, který obsahuje několik typů uzlů:</span><span class="sxs-lookup"><span data-stu-id="eef1e-116">The following is an XML file that contains several types of nodes:</span></span>  
+ <span data-ttu-id="b5e47-116">Níže je soubor XML, který obsahuje několik typů uzlů:</span><span class="sxs-lookup"><span data-stu-id="b5e47-116">The following is an XML file that contains several types of nodes:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -37,9 +37,9 @@ ms.locfileid: "66486674"
 </Root>  
 ```  
   
- <span data-ttu-id="eef1e-117">Následuje seznam uzlů ve výše uvedené stromu XML, vyjádřené jako výrazy XPath:</span><span class="sxs-lookup"><span data-stu-id="eef1e-117">The following is the list of nodes in the above XML tree, expressed as XPath expressions:</span></span>  
+ <span data-ttu-id="b5e47-117">Následuje seznam uzlů ve výše uvedeném stromu XML, vyjádřené jako výrazy XPath:</span><span class="sxs-lookup"><span data-stu-id="b5e47-117">The following is the list of nodes in the above XML tree, expressed as XPath expressions:</span></span>  
   
-```  
+```text  
 /processing-instruction()  
 /Root  
 /Root/@AttName  
@@ -315,9 +315,9 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="eef1e-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="eef1e-118">This example produces the following output:</span></span>  
+ <span data-ttu-id="b5e47-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b5e47-118">This example produces the following output:</span></span>  
   
-```  
+```output  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <?target data?>  
 <Root AttName="An Attribute" xmlns:aw="http://www.adventure-works.com">  

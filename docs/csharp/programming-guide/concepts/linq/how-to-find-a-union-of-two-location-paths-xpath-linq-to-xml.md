@@ -2,26 +2,26 @@
 title: 'Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 9fc88a8784958294ba6077893a5d54110de335a0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ebb2ddc3a7ba5e08e99cecca01294e5ad3182e8b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593739"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253849"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a><span data-ttu-id="60666-102">Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="60666-102">How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="60666-103">XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.</span><span class="sxs-lookup"><span data-stu-id="60666-103">XPath allows you to find the union of the results of two XPath location paths.</span></span>  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a><span data-ttu-id="24a4a-102">Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="24a4a-102">How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="24a4a-103">XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.</span><span class="sxs-lookup"><span data-stu-id="24a4a-103">XPath allows you to find the union of the results of two XPath location paths.</span></span>  
   
- <span data-ttu-id="60666-104">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="60666-104">The XPath expression is:</span></span>  
+ <span data-ttu-id="24a4a-104">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="24a4a-104">The XPath expression is:</span></span>  
   
  `//Category|//Price`  
   
- <span data-ttu-id="60666-105">Stejné výsledky můžete dosáhnout pomocí <xref:System.Linq.Enumerable.Concat%2A> standardního operátoru dotazu.</span><span class="sxs-lookup"><span data-stu-id="60666-105">You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.</span></span>  
+ <span data-ttu-id="24a4a-105">Stejné výsledky můžete dosáhnout pomocí <xref:System.Linq.Enumerable.Concat%2A> standardního operátoru dotazu.</span><span class="sxs-lookup"><span data-stu-id="24a4a-105">You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="60666-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="60666-106">Example</span></span>  
- <span data-ttu-id="60666-107">V tomto příkladu jsou vyhledány všechny `Category` prvky a všechny `Price` prvky a zřetězeny do jedné kolekce.</span><span class="sxs-lookup"><span data-stu-id="60666-107">This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection.</span></span> <span data-ttu-id="60666-108">Všimněte si, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] že dotaz <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> volá k řazení výsledků.</span><span class="sxs-lookup"><span data-stu-id="60666-108">Note that the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results.</span></span> <span data-ttu-id="60666-109">Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.</span><span class="sxs-lookup"><span data-stu-id="60666-109">The results of the XPath expression evaluation are also in document order.</span></span>  
+## <a name="example"></a><span data-ttu-id="24a4a-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="24a4a-106">Example</span></span>  
+ <span data-ttu-id="24a4a-107">V tomto příkladu jsou vyhledány všechny `Category` prvky a všechny `Price` prvky a zřetězeny do jedné kolekce.</span><span class="sxs-lookup"><span data-stu-id="24a4a-107">This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection.</span></span> <span data-ttu-id="24a4a-108">Všimněte si, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] že dotaz <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> volá k řazení výsledků.</span><span class="sxs-lookup"><span data-stu-id="24a4a-108">Note that the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results.</span></span> <span data-ttu-id="24a4a-109">Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.</span><span class="sxs-lookup"><span data-stu-id="24a4a-109">The results of the XPath expression evaluation are also in document order.</span></span>  
   
- <span data-ttu-id="60666-110">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Číselná data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="60666-110">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="24a4a-110">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Číselná data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="24a4a-110">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument data = XDocument.Load("Data.xml");  
@@ -48,9 +48,9 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="60666-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="60666-111">This example produces the following output:</span></span>  
+ <span data-ttu-id="24a4a-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="24a4a-111">This example produces the following output:</span></span>  
   
-```  
+```output  
 Results are identical  
 <Category>A</Category>  
 <Price>24.50</Price>  

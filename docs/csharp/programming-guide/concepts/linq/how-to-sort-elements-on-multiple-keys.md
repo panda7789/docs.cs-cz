@@ -2,22 +2,22 @@
 title: 'Postupy: Seřadit elementy ve více klíčíchC#()'
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: 4029e88ced11cdc2e95fdfd212fecb3e3b194436
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 13444214efb2d7c4bcfec712d565d114abced204
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592445"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253320"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="bc226-102">Postupy: Seřadit elementy ve více klíčíchC#()</span><span class="sxs-lookup"><span data-stu-id="bc226-102">How to: Sort Elements on Multiple Keys (C#)</span></span>
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="9f27b-102">Postupy: Seřadit elementy ve více klíčíchC#()</span><span class="sxs-lookup"><span data-stu-id="9f27b-102">How to: Sort Elements on Multiple Keys (C#)</span></span>
 
-<span data-ttu-id="bc226-103">V tomto tématu se dozvíte, jak řadit podle více klíčů.</span><span class="sxs-lookup"><span data-stu-id="bc226-103">This topic shows how to sort on multiple keys.</span></span>
+<span data-ttu-id="9f27b-103">V tomto tématu se dozvíte, jak řadit podle více klíčů.</span><span class="sxs-lookup"><span data-stu-id="9f27b-103">This topic shows how to sort on multiple keys.</span></span>
 
-## <a name="example"></a><span data-ttu-id="bc226-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="bc226-104">Example</span></span>
+## <a name="example"></a><span data-ttu-id="9f27b-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="9f27b-104">Example</span></span>
 
-<span data-ttu-id="bc226-105">V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.</span><span class="sxs-lookup"><span data-stu-id="bc226-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>
+<span data-ttu-id="9f27b-105">V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.</span><span class="sxs-lookup"><span data-stu-id="9f27b-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>
 
-<span data-ttu-id="bc226-106">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="bc226-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>
+<span data-ttu-id="9f27b-106">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="9f27b-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -36,9 +36,9 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-<span data-ttu-id="bc226-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="bc226-107">This code produces the following output:</span></span>
+<span data-ttu-id="9f27b-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9f27b-107">This code produces the following output:</span></span>
 
-```
+```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997
@@ -63,11 +63,11 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ```
 
-## <a name="example"></a><span data-ttu-id="bc226-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="bc226-108">Example</span></span>
+## <a name="example"></a><span data-ttu-id="9f27b-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="9f27b-108">Example</span></span>
 
-<span data-ttu-id="bc226-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="bc226-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="bc226-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="bc226-110">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>
+<span data-ttu-id="9f27b-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9f27b-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="9f27b-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="9f27b-110">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>
 
-<span data-ttu-id="bc226-111">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="bc226-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>
+<span data-ttu-id="9f27b-111">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="9f27b-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");
@@ -88,9 +88,9 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-<span data-ttu-id="bc226-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="bc226-112">This code produces the following output:</span></span>
+<span data-ttu-id="9f27b-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9f27b-112">This code produces the following output:</span></span>
 
-```
+```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997
