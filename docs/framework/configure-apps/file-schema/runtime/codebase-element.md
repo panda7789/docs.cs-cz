@@ -9,18 +9,22 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-ms.openlocfilehash: a06daa0b2aa5374c9959cbbe778d62856819a40e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: bd170b817c5ccc337711f8f79968653c29f3eda4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663870"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252748"
 ---
 # <a name="codebase-element"></a>\<> – element codeBase
 
 Určuje, kde modul CLR (Common Language Runtime) může najít sestavení.
 
-\<Configuration > \<runtime > \<assemblyBinding > \<dependentAssembly – \<> kódu >
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<codeBase>**
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -2,12 +2,12 @@
 title: 'Postupy: Načtení hodnoty atributu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 817bbe89-5979-4234-bf0c-46f63692ac8c
-ms.openlocfilehash: 54ea4b532669ed2c615fcde02011fdd1228705a3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 635aee3bd08618b94fb5c091f8eef212c067acef
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592465"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253385"
 ---
 # <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-c"></a>Postupy: Načtení hodnoty atributu (LINQ to XML) (C#)
 V tomto tématu se dozvíte, jak získat hodnotu atributů. Existují dva hlavní způsoby: Můžete přetypovat <xref:System.Xml.Linq.XAttribute> na požadovaný typ; operátor explicitního převodu pak převede obsah elementu nebo atributu na zadaný typ. Alternativně můžete použít <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost. Přetypování je však všeobecně lepším přístupem. Pokud přetypování atributu na typ s možnou hodnotou null, kód je jednodušší zapsat při načítání hodnoty atributu, který může nebo nemusí existovat. Příklady této techniky naleznete v tématu [How to: Načtení hodnoty elementu (LINQ to XML) (C#).](./how-to-retrieve-the-value-of-an-element-linq-to-xml.md)  
@@ -26,7 +26,7 @@ Console.WriteLine(str);
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 <Root Attr="abcde" />  
 abcde  
 ```  
@@ -45,7 +45,7 @@ Console.WriteLine(str);
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 abcde  
 ```  
   

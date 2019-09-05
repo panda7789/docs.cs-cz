@@ -2,19 +2,19 @@
 title: 'Postupy: Dotazování objektu ArrayList pomocí LINQC#()'
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
-ms.openlocfilehash: dca201a23b316cc16bc746ea920303814c8c7c87
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 51c42296b8acb6be1c9c4505f9af3d6fbaf248ce
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592931"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253442"
 ---
 # <a name="how-to-query-an-arraylist-with-linq-c"></a>Postupy: Dotazování objektu ArrayList pomocí LINQC#()
 Při použití LINQ k dotazování na neobecné <xref:System.Collections.IEnumerable> kolekce <xref:System.Collections.ArrayList>, jako je například, je nutné explicitně deklarovat typ proměnné rozsahu, aby odrážel konkrétní typ objektů v kolekci. Například pokud máte <xref:System.Collections.ArrayList> `Student` objekt, vaše [klauzule FROM](../../../language-reference/keywords/from-clause.md) by měla vypadat takto:  
   
-```  
+```csharp  
 var query = from Student s in arrList  
-...  
+//...
 ```  
   
  Zadáním typu proměnné rozsahu budete přetypování do každé položky v poli <xref:System.Collections.ArrayList> `Student`do.  

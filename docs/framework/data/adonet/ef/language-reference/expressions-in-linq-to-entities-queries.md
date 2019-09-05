@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d70b502f-6a15-4120-b4fe-500b173ad9cc
-ms.openlocfilehash: 383339241194c56d0c3178f538f2ac08b2f1b437
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5262d2bca07525aba6db5303e730c8b358641d52
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950393"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250976"
 ---
 # <a name="expressions-in-linq-to-entities-queries"></a>Výrazy v dotazech LINQ to Entities
 Výraz je fragment kódu, který lze vyhodnotit na jedinou hodnotu, objekt, metodu nebo obor názvů. Výrazy mohou obsahovat hodnotu literálu, volání metody, operátor a jeho operandy nebo jednoduchý název. Jednoduché názvy mohou být název proměnné, typ členu, parametr metody, obor názvů nebo typ. Výrazy mohou používat operátory, které zase používají jiné výrazy jako parametry, nebo volání metody, jejichž parametry jsou zapínají jiné volání metody. Výrazy mohou proto být v rozsahu od jednoduchých až po velmi složité.  
@@ -26,16 +26,16 @@ Výraz je fragment kódu, který lze vyhodnotit na jedinou hodnotu, objekt, meto
 > Konkrétní jazykové konstrukce, jako C# `unchecked`například, nemají v LINQ to Entities žádný význam.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Výrazy konstant](../../../../../../docs/framework/data/adonet/ef/language-reference/constant-expressions.md)  
+ [Výrazy konstant](constant-expressions.md)  
   
- [Výrazy porovnání](../../../../../../docs/framework/data/adonet/ef/language-reference/comparison-expressions.md)  
+ [Výrazy porovnání](comparison-expressions.md)  
   
- [Porovnávání s hodnotou Null](../../../../../../docs/framework/data/adonet/ef/language-reference/null-comparisons.md)  
+ [Porovnávání s hodnotou Null](null-comparisons.md)  
   
- [Výrazy inicializace](../../../../../../docs/framework/data/adonet/ef/language-reference/initialization-expressions.md)  
+ [Výrazy inicializace](initialization-expressions.md)  
   
  [Relace, navigační vlastnosti a cizí klíče](/ef/ef6/fundamentals/relationships)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)
+- [ADO.NET Entity Framework](../index.md)

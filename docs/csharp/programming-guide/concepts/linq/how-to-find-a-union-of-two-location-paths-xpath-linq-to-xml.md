@@ -2,12 +2,12 @@
 title: 'Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 9fc88a8784958294ba6077893a5d54110de335a0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ebb2ddc3a7ba5e08e99cecca01294e5ad3182e8b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593739"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253849"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: Najít sjednocení dvou cest umístění (XPath-LINQ to XML) (C#)
 XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.  
@@ -50,7 +50,7 @@ foreach (XElement el in list1)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Results are identical  
 <Category>A</Category>  
 <Price>24.50</Price>  

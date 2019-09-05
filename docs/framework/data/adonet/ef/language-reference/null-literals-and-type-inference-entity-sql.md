@@ -1,45 +1,45 @@
 ---
-title: Literály s hodnotou Null a odvození typu proměnné (Entity SQL)
+title: Literály s hodnotou null a odvození typu (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
-ms.openlocfilehash: 3fea03146549f3d42bf08bbd5e7ce355d25bd4eb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb2d9184e17ee2a9916a731eb20eefa105a73753
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641816"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249821"
 ---
-# <a name="null-literals-and-type-inference-entity-sql"></a>Literály s hodnotou Null a odvození typu proměnné (Entity SQL)
-Literály s hodnotou Null, musí být kompatibilní s žádným typem v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] systém typů. Typu literál s hodnotou null odvození správně, ale pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] má určitá omezení pro použití literál s hodnotou null.  
+# <a name="null-literals-and-type-inference-entity-sql"></a>Literály s hodnotou null a odvození typu (Entity SQL)
+Literály null jsou kompatibilní s jakýmkoli typem v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] systému typů. Nicméně pro typ literálu s hodnotou null, který má být odvozen správně, ukládá [!INCLUDE[esql](../../../../../../includes/esql-md.md)] určitá omezení, kde lze použít literál null.  
   
-## <a name="typed-nulls"></a>Zadané hodnoty Null  
- Zadané hodnoty Null lze použít kdekoli. Odvození typu proměnné není požadované pro zadané hodnoty Null, protože typ je znám. Například můžete vytvořit s hodnotou null typu Int16 následujícím [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vytvořit:  
+## <a name="typed-nulls"></a>Typové hodnoty null  
+ Typové hodnoty null lze použít kdekoli. Odvození typu není vyžadováno pro zadané hodnoty null, protože je znám typ. Například můžete vytvořit hodnotu null typu Int16 s následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] konstrukcí:  
   
  `(cast(null as Int16))`  
   
-## <a name="free-floating-null-literals"></a>Plovoucí literály s hodnotou Null  
- Plovoucí literály s hodnotou null lze použít v následujících kontextů:  
+## <a name="free-floating-null-literals"></a>Volné literály s nulovým číslem  
+ Volné literály s hodnotou null lze použít v následujících kontextech:  
   
-- Jako argument výraz PŘETYPOVÁNÍ nebo POVAŽOVAT. Toto je doporučený postup pro vytvoření zadaný nulový výraz.  
+- Jako argument pro výraz CAST nebo považovat. Toto je doporučený způsob vytvoření typovaného výrazu s hodnotou null.  
   
-- Jako argument metody nebo funkce. Platí standardní přetížení pravidla.  
+- Jako argument metody nebo funkce. Platí standardní pravidla přetížení.  
   
-- Jako jeden z argumentů pro aritmetický výraz jako +, -, nebo /. Další argumenty nemůžou být literály s hodnotou null, jinak odvození typu proměnné není možné.  
+- Jako jeden z argumentů aritmetického výrazu, jako je například +,-nebo/. Ostatní argumenty nemohou být literály null, jinak odvození typu není možné.  
   
-- Jako některý z argumentů na logický výraz (AND, OR, nebo ne). Všechny argumenty jsou známé jako typu Boolean.  
+- Jako kterýkoli z argumentů logického výrazu (a, nebo). Všechny argumenty jsou známy jako typ Boolean.  
   
-- Jako argument výraz IS NULL a IS NOT NULL.  
+- , Protože argument má hodnotu NULL nebo není NULL výraz.  
   
-- Jako jeden nebo více argumentů STEJNÉHO výrazu. Všechny argumenty jsou má být řetězce.  
+- Jako jeden nebo více argumentů výrazu LIKE. Očekává se, že všechny argumenty budou řetězce.  
   
-- Jako jeden nebo více argumentů konstruktoru s názvem typu.  
+- Jako jeden nebo více argumentů konstruktoru pojmenovaného typu.  
   
-- Jako jeden nebo více argumentů pro konstruktor multiset. Alespoň jeden argument pro konstruktor multiset musí být výraz, který není literál s hodnotou null.  
+- Jako jeden nebo více argumentů konstruktoru multiset. Nejméně jeden argument konstruktoru multiset musí být výraz, který není literál s hodnotou null.  
   
-- Jako jeden nebo více výrazů ve výrazu případu potom nebo jinak. Nejméně jeden z výrazů v výraz CASE pak nebo jinak musí být výrazem jiným než literál s hodnotou null.  
+- Jako jeden nebo více výrazů THEN nebo ELSE ve výrazu CASE. Nejméně jeden z výrazů THEN nebo ELSE ve výrazu CASE musí být výrazem jiným než literál s hodnotou null.  
   
- Plovoucí literály s hodnotou null nelze použít v jiných scénářích. Například nelze je použít jako argumenty pro konstruktor row.  
+ V jiných scénářích nelze použít prázdné literály s nulovým číslem. Nelze je například použít jako argumenty konstruktoru řádku.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Přehled Entity SQL](entity-sql-overview.md)

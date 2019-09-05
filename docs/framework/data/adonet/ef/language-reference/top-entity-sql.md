@@ -1,17 +1,17 @@
 ---
-title: TOP (Entity SQL)
+title: HORNÍ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4a4a0954-82e2-4eae-bcaf-7c4552f3532d
-ms.openlocfilehash: e7c6cf6b67dc3af29f7ca8fb22af419235a9b833
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b55519b7f95deb6463af4c0a6a2a53975e5b5a2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879759"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248975"
 ---
-# <a name="top-entity-sql"></a>TOP (Entity SQL)
+# <a name="top-entity-sql"></a>HORNÍ (Entity SQL)
 
-Klauzule SELECT může mít volitelné dílčí klauzule TOP následující volitelný modifikátor ALL/DISTINCT. Dílčí klauzule TOP Určuje, že bude vrácen pouze první sada řádků z výsledku dotazu.
+Klauzule SELECT může mít volitelnou klauzuli TOP sub podle volitelného modifikátoru ALL/DISTINCT. Dílčí klauzule TOP určuje, že z výsledku dotazu bude vrácena pouze první sada řádků.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,40 +21,40 @@ Klauzule SELECT může mít volitelné dílčí klauzule TOP následující voli
 
 ## <a name="arguments"></a>Arguments
 
-`n` Číselný výraz, který určuje počet řádků, který se má vrátit. `n` může být jeden číselný literál nebo jeden parametr.
+`n`Číselný výraz, který určuje počet vrácených řádků. `n`může být jeden numerický literál nebo jeden parametr.
 
 ## <a name="remarks"></a>Poznámky
 
-HLAVNÍ výraz musí být jeden číselný literál nebo jeden parametr. Pokud se používá konstantní literál, typ literálu musí být implicitně možné zvýšit na Edm.Int64 (byte, int16, int32 nebo int64 nebo libovolný typ zprostředkovatele, který se mapuje na typ, který je možné zvýšit na Edm.Int64) a jeho hodnota musí být větší než nebo rovna hodnotě nula. Jinak bude vyvolána výjimka. Pokud parametr je používán jako výraz, typ parametru musí být také implicitně možné zvýšit na Edm.Int64, ale nebudou žádné ověření skutečný parametr hodnoty během kompilace vzhledem k tomu, že hodnoty parametrů jsou pozdní omezená.
+Výraz TOP musí být buď jeden numerický literál, nebo jeden parametr. Je-li použit konstantní literál, musí být literální typ implicitně propagačním objektem EDM. Int64 (Byte, Int16, Int32 nebo Int64 nebo libovolný typ poskytovatele, který je namapován na typ, který je možné použít na EDM. Int64) a jeho hodnota musí být větší než nebo rovna nule. Jinak bude vyvolána výjimka. Pokud je parametr použit jako výraz, musí být typ parametru také implicitně propagačním objektem EDM. Int64, ale během kompilace nebude nijak ověřována skutečná hodnota parametru, protože hodnoty parametrů jsou zpožděny.
 
-Následuje příklad konstantní výraz TOP:
+Následuje příklad konstantního výrazu TOP:
 
 ```sql
 select distinct top(10) c.a1, c.a2 from T as a
 ```
 
-Následuje příklad parametrizované HORNÍM výrazu:
+Následuje příklad parametrizovaného HORNÍho výrazu:
 
 ```sql
 select distinct top(@topParam) c.a1, c.a2 from T as a
 ```
 
-Začátek je Nedeterministický, pokud dotaz má řazení proběhnout. Pokud budete potřebovat deterministické výsledky, použijte [přeskočit](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md) a [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) dílčí ustanovení [klauzule ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) klauzuli. TOP a SKIP/LIMIT se vzájemně vylučují.
+Klauzule TOP není deterministické, pokud dotaz není seřazen. Pokud vyžadujete deterministický výsledek, použijte dílčí klauzule [Skip](skip-entity-sql.md) a [limit](limit-entity-sql.md) v klauzuli [ORDER by](order-by-entity-sql.md) . Klauzule TOP a SKIP a LIMIT se vzájemně vylučují.
 
 ## <a name="example"></a>Příklad
 
-Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá k určení nejvyšší jeden řádek, který se má vrátit z výsledku dotazu horní části. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:
+Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz použije začátek k určení horního řádku, který se má vrátit z výsledku dotazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:
 
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.
 
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:
 
     [!code-csharp[DP EntityServices Concepts 2#TOP](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#top)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)
-- [SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)
-- [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)
-- [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [SELECT](select-entity-sql.md)
+- [SKIP](skip-entity-sql.md)
+- [LIMIT](limit-entity-sql.md)
+- [ORDER BY](order-by-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

@@ -3,12 +3,12 @@ title: Bezpečně aktualizovat rozhraní pomocí výchozích členů rozhraní v
 description: V tomto rozšířeném kurzu se seznámíte s tím, jak můžete bezpečně přidat nové funkce do stávajících definic rozhraní bez přerušení všech tříd a struktur, které implementují toto rozhraní.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 2d7265b7705fc931d356a3b7fe3504ab7f21c0b3
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 9e0e4324b2474292064a760db9727d7dec6561d4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971441"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252908"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizace rozhraní s výchozími členy rozhraní C# v 8,0
 
@@ -37,7 +37,7 @@ Definují druhé rozhraní, které představuje objednávku:
 
 Z těchto rozhraní může tým sestavit knihovnu pro své uživatele a vytvořit tak lepší prostředí pro své zákazníky. Jejich cílem bylo vytvoření hlubšího vztahu se stávajícími zákazníky a vylepšení jejich vztahů s novými zákazníky.
 
-Teď je čas upgradovat knihovnu pro další verzi. Jedna z požadovaných funkcí umožňuje zákazníkům, kteří mají spoustu objednávek, věrnostní slevu. Tato nová věrnostní sleva se použije vždy, když zákazník provede objednávku. Konkrétní sleva je vlastnost každého jednotlivého zákazníka. Každá implementace ICustomer může u věrnostní slevy nastavit různá pravidla. 
+Teď je čas upgradovat knihovnu pro další verzi. Jedna z požadovaných funkcí umožňuje zákazníkům, kteří mají spoustu objednávek, věrnostní slevu. Tato nová věrnostní sleva se použije vždy, když zákazník provede objednávku. Konkrétní sleva je vlastnost každého jednotlivého zákazníka. Každá implementace `ICustomer` nástroje může nastavit jiná pravidla pro věrnostní slevu. 
 
 Nejpřirozenější způsob, jak tuto funkci přidat, je vylepšit `ICustomer` rozhraní s metodou pro použití věrnostní slevy. Tento návrh návrhu způsobil obavy mezi zkušenými vývojáři: "Rozhraní jsou po vydání proměnlivá. Toto je zásadní změna. " C#8,0 přidává *výchozí implementaci rozhraní* pro upgrade rozhraní. Autoři knihovny mohou přidat nové členy do rozhraní a poskytnout výchozí implementaci pro tyto členy.
 
@@ -47,7 +47,7 @@ Implementace výchozích rozhraní umožňují vývojářům upgradovat rozhran�
 
 Tým se dohodl s nejpravděpodobnější výchozí implementací: věrnostní sleva pro zákazníky.
 
-Upgrade by měl poskytovat funkce pro nastavení dvou vlastností: počet objednávek potřebných k poskytnutí slevy a procento slevy. Díky tomu je ideální scénář pro výchozí členy rozhraní. Můžete přidat metodu do rozhraní ICustomer a poskytnout nejpravděpodobnější implementaci. Všechny stávající a jakékoli nové implementace mohou použít výchozí implementaci nebo zadat vlastní.
+Upgrade by měl poskytovat funkce pro nastavení dvou vlastností: počet objednávek potřebných k poskytnutí slevy a procento slevy. Díky tomu je ideální scénář pro výchozí členy rozhraní. Do `ICustomer` rozhraní můžete přidat metodu a poskytnout nejpravděpodobnější implementaci. Všechny stávající a jakékoli nové implementace mohou použít výchozí implementaci nebo zadat vlastní.
 
 Nejdřív přidejte do implementace novou metodu:
 
@@ -69,7 +69,7 @@ To je dobrý začátek. Výchozí implementace je ale příliš omezující. Mno
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionTwo)]
 
-V této malém fragmentu kódu se zobrazuje celá řada nových možností jazyka. Rozhraní teď můžou zahrnovat statické členy, včetně polí a metod. Jsou povolené taky různé modifikátory přístupu. Další pole jsou soukromá, nová metoda je veřejná. Všechny modifikátory jsou povoleny u členů rozhraní.
+V této malém fragmentu kódu je zobrazený velký počet nových možností jazyka. Rozhraní teď můžou zahrnovat statické členy, včetně polí a metod. Jsou povolené taky různé modifikátory přístupu. Další pole jsou soukromá, nová metoda je veřejná. Všechny modifikátory jsou povoleny u členů rozhraní.
 
 Aplikace, které používají obecný vzorec pro výpočet věrnostní slevy, ale jiné parametry, nepotřebují zadat vlastní implementaci; mohou nastavovat argumenty prostřednictvím statické metody. Například následující kód nastaví "zhodnocení zákazníka", které vyměňuje každého zákazníka s více než jedním měsícem členství:
 

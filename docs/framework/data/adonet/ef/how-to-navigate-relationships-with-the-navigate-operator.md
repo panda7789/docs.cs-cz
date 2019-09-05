@@ -5,32 +5,32 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 79996d2d-9b03-4a9d-82cc-7c5e7c2ad93d
-ms.openlocfilehash: 94789bcc007056a26d206903dc554ffe35999823
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8c23e00112859ffa9949d268c3263f73d3a714f
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607946"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251437"
 ---
 # <a name="how-to-navigate-relationships-with-the-navigate-operator"></a>Postupy: Procházení relací pomocí navigačního operátoru
-Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst <xref:System.Data.Metadata.Edm.RefType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>.  
+Toto téma ukazuje, jak spustit příkaz pro koncepční model pomocí <xref:System.Data.EntityClient.EntityCommand> objektu a jak <xref:System.Data.Metadata.Edm.RefType> načíst výsledky pomocí <xref:System.Data.EntityClient.EntityDataReader>.  
   
-### <a name="to-run-the-code-in-this-example"></a>Chcete-li spustit kód v tomto příkladu  
+### <a name="to-run-the-code-in-this-example"></a>Spuštění kódu v tomto příkladu  
   
-1. Přidat [AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) do vašeho projektu a konfigurace projektu pro použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
+1. Přidejte do svého projektu [model AdventureWorks Sales](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) a nakonfigurujte projekt tak, aby používal [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Použijte průvodce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))model EDM (Entity Data Model).  
   
-2. V kódové stránce pro vaši aplikaci, přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):  
+2. Na kódové stránce vaší aplikace přidejte následující `using` příkazy (`Imports` v Visual Basic):  
   
      [!code-csharp[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#namespaces)]
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak procházení vztahů v [!INCLUDE[esql](../../../../../includes/esql-md.md)] pomocí [NAVIGOVAT](../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md) operátor. `Navigate` Operátor používá následující parametry: instance entity, typ vztahu, end relace a zahájení relace. Volitelně můžete předat pouze instance entitu a typ vztahu, který má `Navigate` operátor.  
+ Následující příklad ukazuje, jak navigovat relace v [!INCLUDE[esql](../../../../../includes/esql-md.md)] nástroji pomocí operátoru [Navigace](./language-reference/navigate-entity-sql.md) . `Navigate` Operátor přebírá následující parametry: instance entity, typ vztahu, konec relace a začátek relace. Volitelně můžete `Navigate` operátorovi předat jenom instanci entity a typ vztahu.  
   
  [!code-csharp[DP EntityServices Concepts#NavigateWithNavOperatorWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#navigatewithnavoperatorwithentitycommand)]
  [!code-vb[DP EntityServices Concepts#NavigateWithNavOperatorWithEntityCommand](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#navigatewithnavoperatorwithentitycommand)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md)
-- [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
+- [Zprostředkovatel EntityClient pro Entity Framework](entityclient-provider-for-the-entity-framework.md)
+- [Jazyk Entity SQL](./language-reference/entity-sql-language.md)

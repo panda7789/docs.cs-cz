@@ -2,12 +2,12 @@
 title: TREAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-ms.openlocfilehash: 15664da02189dd618784d55c07aaf4db38a2f656
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b7393bef32b3e057eca51eb516cb72cd2de126c2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929294"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248958"
 ---
 # <a name="treat-entity-sql"></a>TREAT (Entity SQL)
 Zpracovává objekt určitého základního typu jako objekt zadaného odvozeného typu.  
@@ -62,11 +62,11 @@ WHERE p IS OF (NamespaceName.Employee)
 |`TREAT (RowType AS RowType)`|Vyvolá výjimku.|  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor považovat pro převod objektu typu kurzu na kolekci objektů typu OnsiteCourse. Dotaz je založen na školním [modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor považovat pro převod objektu typu kurzu na kolekci objektů typu OnsiteCourse. Dotaz je založen na [školním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
  [!code-csharp[DP EntityServices Concepts 2#TREAT_ISOF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#treat_isof)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Strukturované typy s možnou hodnotou Null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Strukturované typy s možnou hodnotou Null](nullable-structured-types-entity-sql.md)

@@ -2,24 +2,24 @@
 title: Matematické kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-ms.openlocfilehash: f575785bb198251ef50ba3563e736946253c9526
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9417ff9836912017c9d88bb24a18849aaac2836a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760633"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250311"
 ---
 # <a name="math-canonical-functions"></a>Matematické kanonické funkce
 
-Entita SQL obsahuje následující matematické kanonické funkce:
+Entity SQL obsahuje následující matematické kanonické funkce:
   
-## <a name="absvalue"></a>Abs(Value)
+## <a name="absvalue"></a>ABS (hodnota)
 
 Vrátí absolutní hodnotu `value`.
 
 **Argumenty**
 
-`Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, A `Decimal`.
+`Int16`A `Int32` ,,`Int64`, ,`Single`,a. `Double` `Byte` `Decimal`
 
 **Návratová hodnota**
 
@@ -29,13 +29,13 @@ Typ `value`.
 
 `Abs(-2)`
 
-## <a name="ceilingvalue"></a>CEILING(Value)
+## <a name="ceilingvalue"></a>Strop (hodnota)
 
 Vrátí nejmenší celé číslo, které není menší než `value`.
 
 **Argumenty**
 
-A `Single`, `Double`, a `Decimal`.
+A `Single`, `Double`a .`Decimal`
 
 **Návratová hodnota**
 
@@ -46,13 +46,13 @@ Typ `value`.
 [!code-csharp[DP EntityServices Concepts#EDM_CEILING](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_ceiling)]
 [!code-sql[DP EntityServices Concepts#EDM_CEILING](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_ceiling)]
 
-## <a name="floorvalue"></a>Floor(Value)
+## <a name="floorvalue"></a>Floor (hodnota)
 
 Vrátí největší celé číslo, které není větší než `value`.
 
 **Argumenty**
 
-A `Single`, `Double`, a `Decimal`.
+A `Single`, `Double`a .`Decimal`
 
 **Návratová hodnota**
 
@@ -65,14 +65,14 @@ Typ `value`.
 
 ## <a name="powervalue-exponent"></a>Napájení (hodnota, exponent)
 
-Vrátí výsledek zadaného `value` do zadaného `exponent`.
+Vrátí výsledek zadaný `value` na určenou `exponent`hodnotu.
 
 **Argumenty**
 
 |  |  |
 |--|--|
-|`value` | `Int32, Int64, Double`, Nebo `Decimal`. |
-|`exponent` | `Int64`, `Double`, Nebo `Decimal`. |
+|`value` | A `Int32, Int64, Double`, nebo `Decimal`. |
+|`exponent` | A `Int64`, `Double`nebo .`Decimal` |
 
 **Návratová hodnota**
 
@@ -82,13 +82,13 @@ Typ `value`.
 
 `Power(748.58,2)`
 
-## <a name="roundvalue"></a>Round(Value)
+## <a name="roundvalue"></a>Round (hodnota)
 
-Vrátí celočíselnou část `value`, zaokrouhlený na nejbližší celé číslo.
+Vrátí celočíselnou část `value`zaokrouhlenou na nejbližší celé číslo.
 
 **Argumenty**
 
-A `Single`, `Double`, a `Decimal`.
+A `Single`, `Double`a .`Decimal`
 
 **Návratová hodnota**
 
@@ -98,16 +98,16 @@ Typ `value`.
 
 `Round(748.58)`
 
-## <a name="roundvalue-digits"></a>Round (hodnota číslic)
+## <a name="roundvalue-digits"></a>Round (hodnota; číslice)
 
-Vrátí `value`, zaokrouhleno na nejbližší zadaný `digits`.
+Vrátí zaokrouhlit na nejbližší určený `digits`. `value`
 
 **Argumenty**
 
 |  |  |
 |--|--|
-|`value`|`Double` nebo `Decimal`.|
-|`digits`|`Int16` nebo `Int32`.|
+|`value`|`Double`nebo `Decimal`.|
+|`digits`|`Int16`nebo `Int32`.|
 
 **Návratová hodnota**
 
@@ -117,16 +117,16 @@ Typ `value`.
 
 `Round(748.58,1)`
 
-## <a name="truncatevalue-digits"></a>Zkrátit (hodnota číslic)
+## <a name="truncatevalue-digits"></a>Zkrátit (hodnota, číslice)
 
-Vrátí `value`, došlo ke zkrácení na nejbližší zadaný `digits`.
+Vrátí hodnotu `digits`, která je zkrácena na nejbližší určenou. `value`
 
 **Argumenty**
 
 |  |  |
 |--|--|
-|`value`|`Double` nebo `Decimal`.|
-|`digits`|`Int16` nebo `Int32`.|
+|`value`|`Double`nebo `Decimal`.|
+|`digits`|`Int16`nebo `Int32`.|
 
 **Návratová hodnota**
 
@@ -136,10 +136,10 @@ Typ `value`.
 
 `Truncate(748.58,1)`  
   
- Tyto funkce vrátí `null` Pokud tento parametr zadaný `null` vstupu.  
+ Tyto funkce budou v `null` případě zadaného `null` vstupu vráceny.  
   
- Ekvivalentní funkce je k dispozici ve zprostředkovateli spravovaného klienta Microsoft SQL. Další informace najdete v tématu [SqlClient pro funkce Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).  
+ Ekvivalentní funkce jsou k dispozici ve spravovaném zprostředkovateli klienta Microsoft SQL. Další informace najdete v tématu [SqlClient for Entity Framework Functions](../sqlclient-for-ef-functions.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+- [Kanonické funkce](canonical-functions.md)

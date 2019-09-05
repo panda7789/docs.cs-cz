@@ -2,22 +2,22 @@
 title: Mapování na základě atributů
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-ms.openlocfilehash: 41152aa81ab84a2ab77e9a4ebf16e102ee5c0e3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1e11a2efc3d1afa56a27d6e2c60149a509511080
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964096"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248067"
 ---
 # <a name="attribute-based-mapping"></a>Mapování na základě atributů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mapuje databázi SQL Server na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model buď použitím atributů, nebo pomocí externího mapovacího souboru. Toto téma popisuje přístup založený na atributech.  
   
- Ve své nejvíc základní formě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databázi <xref:System.Data.Linq.DataContext>na, tabulku na třídu a sloupce a relace na vlastnosti těchto tříd. Můžete také použít atributy k mapování hierarchie dědičnosti v objektovém modelu. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Ve své nejvíc základní formě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje databázi <xref:System.Data.Linq.DataContext>na, tabulku na třídu a sloupce a relace na vlastnosti těchto tříd. Můžete také použít atributy k mapování hierarchie dědičnosti v objektovém modelu. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
- Vývojáři, kteří používají Visual Studio, obvykle provádějí mapování na základě atributů pomocí Návrhář relací objektů. Můžete také použít nástroj příkazového řádku SQLMetal, nebo můžete atributy ručně zakódovat. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
+ Vývojáři, kteří používají Visual Studio, obvykle provádějí mapování na základě atributů pomocí Návrhář relací objektů. Můžete také použít nástroj příkazového řádku SQLMetal, nebo můžete atributy ručně zakódovat. Další informace najdete v tématu [jak: Vygenerujte objektový model v Visual Basic nebo C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md).  
   
 > [!NOTE]
-> Můžete také mapovat pomocí externího souboru XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+> Můžete také mapovat pomocí externího souboru XML. Další informace najdete v tématu [externí mapování](external-mapping.md).  
   
  Následující části popisují mapování na základě atributů podrobněji. Další informace najdete v <xref:System.Data.Linq.Mapping> tématu obor názvů.  
   
@@ -64,7 +64,7 @@ ms.locfileid: "69964096"
 > Hodnoty vlastností úložiště AssociationAttribute a ColumnAttribute rozlišují velká a malá písmena. Například zajistěte, aby hodnoty použité v atributu vlastnosti AssociationAttribute. Storage odpovídaly velikosti písmen pro odpovídající názvy vlastností používané jinde v kódu. To platí pro všechny programovací jazyky rozhraní .NET, i ty, které se obvykle nerozlišují bez rozlišení velkých a malých písmen, včetně Visual Basic. Další informace o vlastnosti úložiště naleznete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
 ## <a name="associationattribute-attribute"></a>AssociationAttribute – atribut  
- Pomocí tohoto atributu určíte vlastnost, která představuje přidružení v databázi, jako je cizí klíč vztahu k primárnímu klíči. Další informace o relacích najdete v [tématu How to: Mapování databázových](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md)vztahů.  
+ Pomocí tohoto atributu určíte vlastnost, která představuje přidružení v databázi, jako je cizí klíč vztahu k primárnímu klíči. Další informace o relacích najdete v [tématu How to: Mapování databázových](how-to-map-database-relationships.md)vztahů.  
   
  Následující tabulka obsahuje popis vlastností tohoto atributu.  
   
@@ -144,4 +144,4 @@ ms.locfileid: "69964096"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Referenční informace](reference.md)

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
-ms.openlocfilehash: b47a46f9fd9ef3ef1935fa7a88c2e60fe80db09d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0bebc8d890325ec4ab090470952e11b90d0e37ef
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964131"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248122"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET a LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je součástí řady technologií ADO.NET. Vychází ze služeb poskytovaných modelem poskytovatele ADO.NET. Proto můžete kombinovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód s existujícími aplikacemi ADO.NET a migrovat aktuální ADO.NET řešení do [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Následující obrázek poskytuje podrobný pohled na vztah.  
   
- ![LINQ to SQL a ADO.NET](../../../../../../docs/framework/data/adonet/sql/linq/media/dlinq-3.png "DLinq_3")  
+ ![LINQ to SQL a ADO.NET](./media/dlinq-3.png "DLinq_3")  
   
 ## <a name="connections"></a>Připojení  
  Existující připojení ADO.NET můžete při vytváření vytvořit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. <xref:System.Data.Linq.DataContext> Tato dodaná připojení <xref:System.Data.Linq.DataContext> používají všechny operace proti (včetně dotazů). Pokud je připojení již otevřeno, ponechá ho v době, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kdy jste s ním skončili.  
@@ -59,5 +59,5 @@ ms.locfileid: "69964131"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Postupy: Opakované použití připojení mezi příkazem ADO.NET a DataContext](../../../../../../docs/framework/data/adonet/sql/linq/how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md)
+- [Základní informace](background-information.md)
+- [Postupy: Opakované použití připojení mezi příkazem ADO.NET a DataContext](how-to-reuse-a-connection-between-an-ado-net-command-and-a-datacontext.md)

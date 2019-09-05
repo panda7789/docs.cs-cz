@@ -9,19 +9,19 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-ms.openlocfilehash: 3cf99a4dcf64b82846729d8663e398385b7a1086
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e703b9739ea93d3c7bf08371bc264bbdcb05b716
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663456"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252326"
 ---
 # <a name="runtime-element"></a>\<Běhový > element
 
 Poskytuje informace používané modulem CLR (Common Language Runtime) ke konfiguraci aplikací.
 
-\<> Konfigurace \
-\<> modulu runtime
+[ **\<> Konfigurace**](../configuration-element.md)  
+&nbsp;&nbsp; **\<> modulu runtime**  
 
 ## <a name="syntax"></a>Syntaxe
 

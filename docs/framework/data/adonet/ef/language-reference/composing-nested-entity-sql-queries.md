@@ -2,18 +2,18 @@
 title: Sestavování dotazů s vnořeným jazykem Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: 4d6892e96cfbc9c5ba9d389aa03588c5133c7943
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3aa2e53b584eece9cc5e2d26791c78ffe33f9e35
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606222"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251139"
 ---
 # <a name="composing-nested-entity-sql-queries"></a>Sestavování dotazů s vnořeným jazykem Entity SQL
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] je bohatou jazykovou funkční. Základním pilířem pracovního [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od běžných SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezena pouze na sadu tabulkovém výsledku: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje vytváření složitých výrazů, které můžou mít literály, parametry nebo vnořené výrazy. Hodnotu ve výrazu můžete s parametry nebo vytvořit další výrazu.  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]je bohatě funkční jazyk. Stavební blok [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od konvenčního [!INCLUDE[esql](../../../../../../includes/esql-md.md)] SQL není omezení na sadu tabulkových výsledků: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje vytváření složitých výrazů, které mohou mít literály, parametry nebo vnořené výrazy. Hodnota ve výrazu může být Parametrizovaná nebo složená z nějakého jiného výrazu.  
   
 ## <a name="nested-expressions"></a>Vnořené výrazy  
- Vnořený výraz může být umístěna kdekoli hodnotu typu, který vrátí je přijat. Příklad:  
+ Vnořený výraz lze umístit kamkoli na libovolnou hodnotu typu, který vrátí. Příklad:  
   
 ```  
 -- Returns a hierarchical collection of three elements at top-level.   
@@ -25,7 +25,7 @@ ROW(@x, {@x}, {@x, 4, 5}, {@x, 7, 8, 9})
 {{{@x}}};  
 ```  
   
- Vnořený dotaz je možné použít v klauzuli projekce. Příklad:  
+ Vnořený dotaz může být umístěn v klauzuli projekce. Příklad:  
   
 ```  
 -- Returns a collection of rows where each row contains an Address entity.  
@@ -35,7 +35,7 @@ SELECT address, (SELECT DEREF(soh)
                     AS salesOrderHeader FROM AdventureWorksEntities.Address AS address  
 ```  
   
- V [!INCLUDE[esql](../../../../../../includes/esql-md.md)], vnořené dotazy musí být vždy uzavřen v závorkách:  
+ V [!INCLUDE[esql](../../../../../../includes/esql-md.md)]nástroji musí být vnořené dotazy vždy uzavřeny v závorkách:  
   
 ```  
 -- Pseudo-Entity SQL  
@@ -46,19 +46,19 @@ UNION ALL
 FROM … );  
 ```  
   
- Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Postupy: Pořadí sjednocení dva dotazy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100)).  
+ Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Postupy: Seřazení sjednocení dvou dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100)).  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
- Vnořené dotazy v klauzuli projektu může získat přeloženy do kartézský součin dotazy na serveru. V některých back-end serverů, včetně serveru SQL Server to může způsobit TempDB tabulka, která má být velmi rozsáhlé, což nepříznivě ovlivnit výkon serveru.  
+ Vnořené dotazy v klauzuli Project mohou být přeloženy do Kartézskémch dotazů na produkt na serveru. V některých back-end serverech, včetně serveru SQL, to může způsobit, že by tabulka TempDB byla velmi velká, což může negativně ovlivnit výkon serveru.  
   
- Následuje příklad tohoto dotazu:  
+ Následuje příklad takového dotazu:  
   
 ```  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## <a name="ordering-nested-queries"></a>Řazení vnořené dotazy  
- V rozhraní Entity Framework může být vnořený výraz umístěna kdekoli v dotazu. Protože Entity SQL umožňuje velkou flexibilitu při psaní dotazů, je možné napsat dotaz, který obsahuje má za výsledek řazení vnořené dotazů. Nezachová se však pořadí vnořeného dotazu.  
+## <a name="ordering-nested-queries"></a>Řazení vnořených dotazů  
+ V Entity Framework vnořený výraz může být umístěn kdekoli v dotazu. Vzhledem k tomu, že Entity SQL umožňuje při psaní dotazů značnou flexibilitu, je možné napsat dotaz, který obsahuje řazení vnořených dotazů. Pořadí vnořeného dotazu se ale nezachová.  
   
 ```  
 -- The following query will order the results by last name.  
@@ -77,4 +77,4 @@ SELECT C2.FirstName, C2.LastName
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Přehled Entity SQL](entity-sql-overview.md)

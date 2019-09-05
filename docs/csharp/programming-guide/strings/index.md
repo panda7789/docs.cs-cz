@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: d9453f931bba9b1d3b5db3b4f80aa365677c0b76
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 8dacd4bf0102ccc2e769d10ce51e481b36004c3a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988416"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252977"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> , jehož hodnota je text. Interně je text uložen jako sekvenční kolekce <xref:System.Char> objektů jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost řetězce představuje `Char` počet objektů, které obsahuje, nikoli počet znaků Unicode. <xref:System.String.Length%2A> Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte <xref:System.Globalization.StringInfo> objekt.  
@@ -107,7 +107,7 @@ Další informace o formátování typů .NET naleznete [v tématu formátován�
 ## <a name="null-strings-and-empty-strings"></a>Řetězce s hodnotou null a prázdné řetězce  
  Prázdný řetězec je instancí <xref:System.String?displayProperty=nameWithType> objektu, který obsahuje nula znaků. Prázdné řetězce jsou často používány v různých programovacích scénářích, které představují prázdné textové pole. Můžete volat metody v prázdných řetězcích, protože jsou <xref:System.String?displayProperty=nameWithType> platné objekty. Prázdné řetězce jsou inicializovány následujícím způsobem:  
   
-```  
+```csharp  
 string s = String.Empty;  
 ```  
   

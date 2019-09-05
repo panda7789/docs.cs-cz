@@ -2,53 +2,53 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 8cadb234ffc0f00049edd0c09475031eeec275df
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5c0b7c32e00a0cc90367a559a41f5a7ab59a33a4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662260"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251393"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
-Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
+Tato část popisuje známé problémy týkající se .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient).  
   
-## <a name="trailing-spaces-in-string-functions"></a>Koncové mezery v řetězcové funkce  
- SQL Server ignoruje koncové mezery v řetězcové hodnoty. Proto předávání koncové mezery v řetězci může vést k nepředvídatelným výsledkům, dokonce i chyby.  
+## <a name="trailing-spaces-in-string-functions"></a>Koncové mezery v řetězcových funkcích  
+ SQL Server ignoruje koncové mezery v řetězcových hodnotách. Proto předání koncových mezer v řetězci může vést k nepředvídatelným výsledkům, dokonce i selháním.  
   
- Pokud je třeba mít koncové mezery do řetězce, měli byste zvážit připojení prázdný znak na konci, tak, aby SQL Server není oříznutí řetězce. Pokud koncové mezery nejsou vyžadovány, má být oříznut předtím, než jsou předány dolů kanálu dotazu.  
+ Pokud je nutné mít v řetězci koncové mezery, měli byste zvážit připojení prázdného znaku na konci, takže SQL Server řetězec neořízne. Pokud nejsou koncové mezery požadovány, měly by být oříznuty předtím, než budou předány do kanálu dotazu.  
   
-## <a name="right-function"></a>RIGHT – funkce  
- Pokud non -`null` předanou jako první argument a 0 je předána jako druhý argument `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`, 0`)`, `NULL` místo bude vrácena hodnota `empty` řetězec.  
+## <a name="right-function"></a>PRAVÁ funkce  
+ Pokud je hodnota bez`null` hodnoty předána jako první argument a 0 se předává jako druhý argument do `RIGHT(nvarchar(max)`, 0`)` nebo `RIGHT(varchar(max)`0`)`, `NULL` hodnota se vrátí místo `empty` řetězce.  
   
-## <a name="cross-and-outer-apply-operators"></a>RŮZNÉ a vnější použít operátory  
- RŮZNÉ a operátoru OUTER APPLY operátory byly zavedeny v systému SQL Server 2005. V některých případech může být vytvoření kanálu dotazu příkaz jazyka Transact-SQL, který obsahuje operátory CROSS APPLY a/nebo operátoru OUTER APPLY. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí systému SQL Server starších než SQL Server 2005 nepodporuje tyto operátory, tyto dotazy se nedá spustit na těchto zprostředkovatelů back-endu.  
+## <a name="cross-and-outer-apply-operators"></a>Operátory použití mezi a VNĚJŠÍmi operátory  
+ Operátory VZÁJEMNÉho a VNĚJŠÍho použití byly představeny v SQL Server 2005. V některých případech může kanál dotazů vytvořit příkaz jazyka Transact-SQL, který obsahuje operátory KŘÍŽového nebo VNĚJŠÍho použití. Vzhledem k tomu, že někteří poskytovatelé back-end, včetně verzí SQL Server starších než SQL Server 2005, tyto operátory nepodporují, takové dotazy nelze na těchto back-end poskytovateli spustit.  
   
- Následují některé typické scénáře, které by mohly vést k přítomnost CROSS APPLY a/nebo operátoru OUTER APPLY operátory v dotazu výstup:  
+ Níže jsou uvedeny některé typické scénáře, které by mohly vést k přítomnosti operátorů VZÁJEMNÉho použití nebo VNĚJŠÍho použití v dotazu na výstup:  
   
-- Korelační poddotaz s stránkování.  
+- Korelační poddotaz se stránkováním.  
   
-- `AnyElement` Přes korelovaný poddotaz, nebo kolekci vytvořenou testovaným navigace.  
+- `AnyElement` Přes korelační poddotaz nebo přes kolekci vytvořenou navigací.  
   
-- LINQ dotazy, které používají seskupení metody, které přijímají elementu selektor.  
+- Dotazy LINQ používající seskupovací metody, které přijímají selektor elementu.  
   
-- Dotaz, ve kterém je explicitně zadán CROSS APPLY nebo operátoru OUTER APPLY  
+- Explicitně se zadává dotaz, ve kterém se explicitně zařadí nebo nastaví vnější.  
   
-- Vytvořit dotaz, který má DEREF přes konstrukci REF.  
+- Dotaz, který má DEREF konstrukci nad konstrukcí REF.  
   
-## <a name="skip-operator"></a>Operátor SKIP  
- Pokud používáte SQL Server 2000, pomocí přeskočit s klauzulí ORDER BY v neklíčových sloupců může vrátit nesprávné výsledky. Větší než zadaný počet řádků se možná přeskočí, pokud neklíčový sloupec v sobě obsahuje duplicitní data. To je způsobeno jak SKIP je přeložen pro SQL Server 2000. Například následující dotaz, více než pět řádků možná přeskočí, pokud `E.NonKeyColumn` obsahují duplicitní hodnoty:  
+## <a name="skip-operator"></a>SKIP – operátor  
+ Pokud používáte SQL Server 2000, může při použití příkazu přeskočit s řazením na jiné než klíčové sloupce vracet nesprávné výsledky. Pokud neklíčový sloupec obsahuje duplicitní data, může být vynecháno více než zadaný počet řádků. Je to kvůli tomu, jak je PŘESKOČENí přeloženo pro SQL Server 2000. Například v následujícím dotazu může být vynecháno více než pět řádků, pokud `E.NonKeyColumn` má duplicitní hodnoty:  
   
 ```  
 SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L  
 ```  
   
-## <a name="targeting-the-correct-sql-server-version"></a>Cílení na verzi serveru SQL správný  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Cílí na základě verze systému SQL Server, který je zadán v dotaz jazyka Transact-SQL `ProviderManifestToken` atribut schématu elementu v souboru modelu (ssdl) úložiště. Tato verze se může lišit od verze skutečné jste připojeni k serveru SQL. Například, pokud používáte SQL Server 2005 ale vaše `ProviderManifestToken` atribut je nastaven na 2008, nebude možné provést vygenerovaný dotaz jazyka Transact-SQL na serveru. Například nebude ve starších verzích systému SQL Server spustit dotaz, který používá typy čas nové datum, které byly zavedeny v systému SQL Server 2008. Pokud používáte SQL Server 2005, ale vaše `ProviderManifestToken` atribut je nastaven na 2000, může méně optimalizované vygenerovaný dotaz jazyka Transact-SQL nebo může se zobrazit výjimka, která říká, že dotaz se nepodporuje. Další informace najdete v části různé a vnější použít operátory, dříve v tomto tématu.  
+## <a name="targeting-the-correct-sql-server-version"></a>Cílení na správnou verzi SQL Server  
+ Cílí na dotaz Transact-SQL na základě verze SQL Server, která je zadána `ProviderManifestToken` v atributu schématu elementu v souboru modelu úložiště (. ssdl). [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Tato verze se může lišit od verze samotného SQL Server, ke které jste se připojili. Například pokud používáte SQL Server 2005, ale `ProviderManifestToken` atribut je nastaven na 2008, vygenerovaný dotaz Transact-SQL se nemusí na serveru spustit. Například dotaz, který používá nové typy data a času, které byly představeny v SQL Server 2008, nebude proveden v dřívějších verzích SQL Server. Pokud používáte SQL Server 2005, ale váš `ProviderManifestToken` atribut je nastaven na 2000, vygenerovaný dotaz Transact-SQL může být méně optimalizovaný nebo se může zobrazit výjimka, která říká, že dotaz není podporován. Další informace najdete v části různé a vnější operátory použití výše v tomto tématu.  
   
- Určitého chování, databáze, závisí na nastavení databáze úroveň kompatibility. Pokud vaše `ProviderManifestToken` atribut je nastaven na 2005 a je vaše verze systému SQL Server 2005, ale je úroveň kompatibility databáze nastavený na "80" (SQL Server 2000), vygenerované příkazů jazyka Transact-SQL bude cílené na systém SQL Server 2005, ale nebude možné provést z důvodu očekávaným způsobem nastavení úrovně kompatibility. Například můžete přijít pořadí informace pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v modulu pro výběr.  
+ Určité chování databáze závisí na úrovni kompatibility nastavené na databázi. Pokud je `ProviderManifestToken` atribut nastavený na 2005 a vaše verze SQL Server je 2005, ale úroveň kompatibility databáze je nastavená na "80" (SQL Server 2000), vygenerovaná procedura Transact-SQL bude cílena na SQL Server 2005, ale nemusí se spouštět podle očekávání z důvodu nastavení úrovně kompatibility. Například může dojít ke ztrátě informací o řazení, pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v selektoru.  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
- Vnořené dotazy v klauzuli projekce může získat přeloženy do kartézský součin dotazy na serveru. U některých back-end serverů, včetně serveru SQL Server to může způsobit TempDB tabulka, která má být poměrně velké. To může snížit výkon serveru.  
+ Vnořené dotazy v klauzuli projekce můžou být přeložené do Kartézskémch dotazů na produkt na serveru. Na některých back-end serverech, včetně serveru SQL, to může způsobit, že tabulka TempDB bude velmi velká. To může snížit výkon serveru.  
   
  Následuje příklad vnořeného dotazu v klauzuli projekce:  
   
@@ -56,10 +56,10 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## <a name="server-generated-guid-identity-values"></a>Server generované hodnoty Identity identifikátor GUID  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje generovaný serverem identifikátor GUID typu hodnot identity, ale poskytovateli musí podporovat, vrátí hodnotu, generovaný serverem identity po vložila řádek. Od verze SQL Server 2005, může vrátit identifikátor GUID typu generovaný serverem v databázi serveru SQL Server prostřednictvím [klauzuli OUTPUT](https://go.microsoft.com/fwlink/?LinkId=169400) .  
+## <a name="server-generated-guid-identity-values"></a>Vygenerované hodnoty identity GUID serveru  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje hodnoty identity typu GUID generované serverem, ale poskytovatel musí po vložení řádku podporovat vrácení hodnoty identity vygenerované serverem. Počínaje SQL Server 2005 můžete vrátit typ GUID generovaný serverem v databázi SQL Server prostřednictvím [klauzule OUTPUT](https://go.microsoft.com/fwlink/?LinkId=169400) .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md)
-- [Známé problémy a aspekty u LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md)
+- [SqlClient pro Entity Framework](sqlclient-for-the-entity-framework.md)
+- [Známé problémy a aspekty u LINQ to Entities](./language-reference/known-issues-and-considerations-in-linq-to-entities.md)

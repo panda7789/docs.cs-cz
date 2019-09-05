@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a293af73fde5ee72ba02c7e6613e9c57eae1b9b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 083e3ba21dcd196eacfe3d9fd649c211da9dc125
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658950"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252853"
 ---
 # <a name="appdomainmanagerassembly-element"></a>\<appDomainManagerAssembly – element >
 Určuje sestavení, které poskytuje správce aplikační domény pro výchozí doménu aplikace v procesu.  
   
- \<> Konfigurace  
-\<> modulu runtime  
-\<appDomainManagerAssembly>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainManagerAssembly>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

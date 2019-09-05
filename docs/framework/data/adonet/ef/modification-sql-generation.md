@@ -2,24 +2,24 @@
 title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: 13ed7186981e82d47f00b6a38a4328ed75f527f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab0c18473e73b2d6fe9eb45c43e9b47947a55d99
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034126"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248577"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 
-Tato část popisuje, jak vyvinout úprav modulu generování SQL pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překládá úpravy stromu příkazů na příslušné příkazy SQL INSERT, UPDATE nebo DELETE.
+Tato část popisuje, jak vytvořit modul SQL pro úpravu úprav pro poskytovatele (databáze kompatibilní s SQL: 1999). Tento modul zodpovídá za překlad stromu příkazů změny do odpovídajících příkazů SQL INSERT, UPDATE nebo DELETE.
 
-Informace o generování SQL pro příkazy select, naleznete v tématu [generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md).
+Informace o generování SQL pro příkazy SELECT najdete v tématu [generování SQL](sql-generation.md).
 
-## <a name="overview-of-modification-command-trees"></a>Přehled úprav stromů příkazů
+## <a name="overview-of-modification-command-trees"></a>Přehled stromů příkazů pro změnu
 
-Modul generování SQL úpravy vygeneruje úpravu konkrétních databází SQL příkazy podle daného vstupního DbModificationCommandTree.
+Modul úprav SQL Generation vygeneruje příkazy SQL změny specifické pro databázi na základě daného vstupního DbModificationCommandTree.
 
-Objektová reprezentace modelu úprav operace DML (vložení, aktualizace nebo odstranění), je DbModificationCommandTree dědění z DbCommandTree. Existují tři implementace DbModificationCommandTree:
+DbModificationCommandTree je reprezentace objektového modelu operace DML změny (operace vložení, aktualizace nebo odstranění), která dědí z DbCommandTree. Existují tři implementace DbModificationCommandTree:
 
 - DbInsertCommandTree
 
@@ -27,15 +27,15 @@ Objektová reprezentace modelu úprav operace DML (vložení, aktualizace nebo o
 
 - DbDeleteCommandTree
 
-DbModificationCommandTree a jeho implementace, které jsou vytvářeny [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vždycky reprezentuje operaci jeden řádek. Tato část popisuje tyto typy s jejich omezení v rozhraní .NET Framework verze 3.5.
+DbModificationCommandTree a jeho implementace, které jsou vytvářeny [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vždy, představují operaci s jedním řádkem. Tato část popisuje tyto typy s omezeními v .NET Framework verze 3,5.
 
-![Diagram](../../../../../docs/framework/data/adonet/ef/media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
+![Diagram](./media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
 
-DbModificationCommandTree má vlastnost Target, který představuje cíl pro operaci úpravy nastavit. Vlastnost Expression cíle, která definuje vstupní sady je vždy DbScanExpression.  DbScanExpression může představovat tabulku nebo zobrazení nebo sady dat definované pomocí dotazu vlastnost metadat "Definice dotazu" jejím cílem je-li jinou hodnotu než null.
+DbModificationCommandTree má cílovou vlastnost, která představuje cílovou sadu pro operaci úpravy. Vlastnost Expression cíle definující vstupní sadu je vždy DbScanExpression.  DbScanExpression může představovat tabulku nebo zobrazení nebo sadu dat, která je definována s dotazem, pokud vlastnost metadat "definující dotaz" cílového objektu nemá hodnotu null.
 
-DbScanExpression, který představuje dotaz mohl pouze dosáhnout zprostředkovatele jako cíl změny pokud sada byl definován pomocí definování dotazů v modelu, ale byla zadána žádná funkce pro odpovídající operaci úprav. Poskytovatelé nemusí být schopni poskytovat podporu takové situaci (SqlClient, například nemá).
+DbScanExpression, který představuje dotaz, by mohl kontaktovat poskytovatele jako cíl změny, pokud byla sada definována pomocí definičního dotazu v modelu, ale není k dispozici žádná funkce pro odpovídající operaci úprav. Poskytovatelé nemusí být schopni podporovat takový scénář (například není).
 
-DbInsertCommandTree představuje operaci insert jednoho řádku vyjádřené jako strom příkazů.
+DbInsertCommandTree představuje operaci vložení jednoho řádku vyjádřenou jako strom příkazů.
 
 ```csharp
 public sealed class DbInsertCommandTree : DbModificationCommandTree {
@@ -44,41 +44,41 @@ public sealed class DbInsertCommandTree : DbModificationCommandTree {
 }
 ```
 
-DbUpdateCommandTree představuje operaci aktualizace jednoho řádku vyjádřené jako strom příkazů.
+DbUpdateCommandTree představuje operaci aktualizace s jedním řádkem, která je vyjádřena jako strom příkazů.
 
-DbDeleteCommandTree představuje operaci odstranění jednoho řádku vyjádřené jako strom příkazů.
+DbDeleteCommandTree představuje operaci odstranění jednoho řádku vyjádřenou jako strom příkazů.
 
-### <a name="restrictions-on-modification-command-tree-properties"></a>Omezení vlastnosti stromu příkazu Úpravy
+### <a name="restrictions-on-modification-command-tree-properties"></a>Omezení vlastností stromu příkazů pro úpravy
 
-Následující informace a omezení platí pro vlastnosti úpravy příkazu stromu.
+Následující informace a omezení se vztahují na vlastnosti stromu příkazů pro úpravy.
 
-#### <a name="returning-in-dbinsertcommandtree-and-dbupdatecommandtree"></a>Vrací DbInsertCommandTree a DbUpdateCommandTree
+#### <a name="returning-in-dbinsertcommandtree-and-dbupdatecommandtree"></a>Vracení v DbInsertCommandTree a DbUpdateCommandTree
 
-Pokud není null, Returning označuje, že příkaz vrátí čtečku. Příkaz v opačném případě by měl vrátit skalární hodnotu určující počet ovlivněných řádků (přidají nebo aktualizují).
+Pokud hodnota, která není null, vrátí, že příkaz vrátí čtecí modul. V opačném případě by příkaz měl vracet skalární hodnotu určující počet ovlivněných řádků (vloženo nebo aktualizováno).
 
-Hodnota Returning specifikuje projekci výsledků, který se má vrátit na základě vloženého nebo aktualizovaný řádek. Může být pouze typu představuje řádek, kde každý z jejích argumentů je DbPropertyExpression přes DbVariableReferenceExpression představující odkaz na cíl odpovídající DbModificationCommandTree DbNewInstanceExpression. Vlastnosti reprezentované DbPropertyExpressions používá ve vlastnosti Returning jsou vždy úložiště vygeneruje nebo vypočítané hodnoty. V DbInsertCommandTree Returning není null při alespoň jedné vlastnosti takové tabulky, ve kterém je vložen řádku je zadán jako úložiště vygeneruje nebo vypočítat (označené jako StoreGeneratedPattern.Identity nebo StoreGeneratedPattern.Computed v ssdl). V DbUpdateCommandTrees, Returning není null při alespoň jedné vlastnosti takové tabulky, ve kterém se aktualizuje řádek je zadán jako úložiště vypočítat (označené jako StoreGeneratedPattern.Computed v ssdl).
+Návratová hodnota určuje projekci výsledků, které se mají vrátit na základě vloženého nebo aktualizovaného řádku. Může být pouze typu DbNewInstanceExpression představující řádek, přičemž každý z jeho argumentů je DbPropertyExpression přes DbVariableReferenceExpression představující odkaz na cíl odpovídající DbModificationCommandTree. Vlastnosti reprezentované DbPropertyExpressions použitou ve vlastnosti vracející se vždy ukládají vygenerované nebo počítané hodnoty. V DbInsertCommandTree není vrácení hodnoty null, pokud alespoň jedna vlastnost tabulky, do které je řádek vkládán, je zadána jako vygenerované nebo počítané úložiště (označeno jako StoreGeneratedPattern. identity nebo StoreGeneratedPattern. vypočítané ve SSDL). V DbUpdateCommandTrees není vrácení hodnoty null, pokud alespoň jedna vlastnost tabulky, ve které je řádek aktualizován, je zadána jako vypočtené úložiště (označeno jako StoreGeneratedPattern. vypočítané ve SSDL).
 
-#### <a name="setclauses-in-dbinsertcommandtree-and-dbupdatecommandtree"></a>SetClauses DbInsertCommandTree a DbUpdateCommandTree
+#### <a name="setclauses-in-dbinsertcommandtree-and-dbupdatecommandtree"></a>SetClauses v DbInsertCommandTree a DbUpdateCommandTree
 
-SetClauses určuje seznam insert nebo update nastavit klauzule, které definují operaci insert nebo update.
+SetClauses určuje seznam klauzulí INSERT nebo Update set, které definují operaci INSERT nebo Update.
 
 ```
 The elements of the list are specified as type DbModificationClause, which specifies a single clause in an insert or update modification operation. DbSetClause inherits from DbModificationClause and specifies the clause in a modification operation that sets the value of a property. Beginning in version 3.5 of the .NET Framework, all elements in SetClauses are of type SetClause.
 ```
 
-Vlastnost určuje vlastnost, která by se měla aktualizovat. Je vždy DbPropertyExpression nad DbVariableReferenceExpression, který představuje odkaz na cíl odpovídající DbModificationCommandTree.
+Vlastnost určuje vlastnost, která má být aktualizována. Je vždy DbPropertyExpression prostřednictvím DbVariableReferenceExpression, který představuje odkaz na cíl odpovídajícího DbModificationCommandTree.
 
-Hodnota určuje novou hodnotu, pomocí kterého se má aktualizovat vlastnost. Je buď typu DbConstantExpression nebo DbNullExpression.
+Hodnota určuje novou hodnotu, se kterou chcete vlastnost aktualizovat. Je to buď typ DbConstantExpression nebo DbNullExpression.
 
-#### <a name="predicate-in-dbupdatecommandtree-and-dbdeletecommandtree"></a>Predikátu v DbUpdateCommandTree a DbDeleteCommandTree
+#### <a name="predicate-in-dbupdatecommandtree-and-dbdeletecommandtree"></a>Predikát v DbUpdateCommandTree a DbDeleteCommandTree
 
-Predikát určuje predikát, který umožňuje určit, které členy cílové kolekce by měl aktualizovat ani odstranit. Strom výrazů, které se skládají z následující dílčí DbExpressions je:
+Predikát určuje predikát použitý k určení, které členy cílové kolekce by měly být aktualizovány nebo smazány. Jedná se o strom výrazu sestavený z následující podmnožiny DbExpressions:
 
-- Objekt DbComparisonExpression druhu rovná se správné podřízené se DbPropertyExpression s omezeným přístupem níže a levém podřízený objekt DbConstantExpression.
+- Objekt DbComparisonExpression je rovno, s pravou podřízenou položkou DbPropertyExpression tak, jak je omezená, a levou podřízenou DbConstantExpression.
 
 - DbConstantExpression
 
-- Objekt DbIsNullExpression přes DbPropertyExpression s omezeným přístupem níže
+- DbIsNullExpression přes DbPropertyExpression na omezenou hodnotu
 
 - DbPropertyExpression přes DbVariableReferenceExpression představující odkaz na cíl odpovídající DbModificationCommandTree.
 
@@ -88,35 +88,35 @@ Predikát určuje predikát, který umožňuje určit, které členy cílové ko
 
 - DbOrExpression
 
-## <a name="modification-sql-generation-in-the-sample-provider"></a>Úpravy generování SQL ve zprostředkovateli ukázek
+## <a name="modification-sql-generation-in-the-sample-provider"></a>Úprava generování SQL ve zprostředkovateli vzorků
 
-[Ukázka zprostředkovatele Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Je zaměřen na databázi systému SQL Server 2005 a je implementovaný jako obálka nad zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.
+[Poskytovatel ukázkového Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje komponenty zprostředkovatelů dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Cílí na databázi SQL Server 2005 a implementuje se jako obálka na úrovni System. data. SqlClient ADO.NET 2,0 Zprostředkovatel dat.
 
-Modul generování SQL úpravy ukázkového poskytovatele (umístěný v souboru SQL Generation\DmlSqlGenerator.cs) přijímá vstupní DbModificationCommandTree a vytvoří jeden úprav příkazu SQL pravděpodobně následovaný příkazem SELECT se vraťte Čtečka případného DbModificationCommandTree. Všimněte si, že tvar příkazy generované je ovlivněna cílová databáze systému SQL Server.
+Modul úprav SQL pro generování ukázkového poskytovatele (umístěný v souboru SQL Generation\DmlSqlGenerator.cs) přebírá vstupní DbModificationCommandTree a vytvoří jediný příkaz SQL, který je možná následován příkazem SELECT, který vrátí čtenář, pokud je určený parametrem DbModificationCommandTree. Všimněte si, že tvar generovaných příkazů je ovlivněn cílovou SQL Server databází.
 
-### <a name="helper-classes-expressiontranslator"></a>Pomocné rutiny třídy: ExpressionTranslator
+### <a name="helper-classes-expressiontranslator"></a>Pomocné třídy: ExpressionTranslator
 
-ExpressionTranslator slouží jako běžné zjednodušené převaděč pro všechny úpravy příkaz stromu vlastnosti typu DbExpression. Podporuje překlad pouze typy výrazů ke kterým jsou omezeny vlastnosti stromu příkazů úpravy a vytvořené s konkrétní omezení na paměti.
+ExpressionTranslator slouží jako společný odlehčený překladatel pro všechny vlastnosti stromu příkazů pro změnu typu DbExpression. Podporuje převod pouze typů výrazů, pro které jsou vlastnosti stromu příkazů změny omezené a jsou sestaveny s konkrétními omezeními.
 
-Následující informace popisují navštívit typy konkrétní výrazů (uzly s triviální překlady jsou vynechány).
+Následující informace jsou popsány v tématu návštěvy specifických typů výrazů (uzly s triviálními překlady jsou vynechány).
 
 ### <a name="dbcomparisonexpression"></a>DbComparisonExpression
 
-Když je vytvořený ExpressionTranslator pomocí preserveMemberValues = true, a když konstanty na pravé straně je objekt DbConstantExpression (namísto DbNullExpression), přiřadí levý operand (DbPropertyExpressions) s, který DbConstantExpression. Který se používá, pokud vratky příkazu Select je potřeba vygenerovat k identifikaci ovlivněných řádků.
+Když je ExpressionTranslator vytvořen pomocí preserveMemberValues = true a pokud je konstanta pravého DbConstantExpression (namísto DbNullExpression), přidružuje levý operand (DbPropertyExpressions) k tomuto DbConstantExpression. Který se používá v případě, že je nutné vygenerovat návratový příkaz SELECT pro identifikaci ovlivněného řádku.
 
 ### <a name="dbconstantexpression"></a>DbConstantExpression
 
-Pro každý navštívených – konstanta se vytvoří parametr.
+Pro každou navštívenou konstantu je vytvořen parametr.
 
 ### <a name="dbpropertyexpression"></a>DbPropertyExpression
 
-Vzhledem k tomu, že Instance DbPropertyExpression vždy představuje vstupní tabulky, není-li generování vytvořil alias (která situace nastane pouze ve scénářích aktualizace při se používá proměnnou tabulky), žádný alias musí být zadaná pro vstup; překlad výchozí název vlastnosti.
+Vzhledem k tomu, že instance DbPropertyExpression vždy představuje vstupní tabulku, pokud generace nevytvořila alias (ke kterému dochází pouze ve scénářích aktualizace při použití proměnné tabulky), není pro vstup nutné zadat žádný alias. překlad je ve výchozím nastavení název vlastnosti.
 
-## <a name="generating-an-insert-sql-command"></a>Generování příkazu Insert SQL
+## <a name="generating-an-insert-sql-command"></a>Generování příkazu INSERT SQL
 
-Pro daný DbInsertCommandTree ve zprostředkovateli ukázek následuje příkazu insert generované některou ze šablon dvě vložit níže.
+V případě daného DbInsertCommandTree ve zprostředkovateli ukázky se za generovaným příkazem INSERT používá jedna z následujících dvou šablon pro vložení.
 
-První šablona má příkaz provádět na základě hodnot v seznamu SetClauses insert a příkaz SELECT pro vrácení vlastnosti zadaná ve vlastnosti Returning vloženého řádku, pokud vlastnost Returning nebyl prázdný. Element predikátu "\@ @ROWCOUNT > 0" je hodnota true, pokud byl vložen řádek. Element predikátu "keyMemberI = keyValueI &#124; scope_identity()" má tvar "keyMemberI = scope_identity()" pouze v případě keyMemberI je klíče generované úložištěm, protože scope_identity() vrátí poslední hodnotu identity, které jsou vloženy do identity ( sloupec generovaných úložištěm).
+První šablona obsahuje příkaz pro vložení hodnot v seznamu SetClauses a příkaz SELECT, který vrátí vlastnosti zadané ve vlastnosti vracející vloženého řádku, pokud vlastnost vracející nebyla null. Element predikátu "\@ @ROWCOUNT > 0" má hodnotu true, pokud byl řádek vložen. Element predikátu "SCOPE_IDENTITY členi = klíč hodnota &#124; SCOPE_IDENTITY ()" převezme tvar "členi = ()" pouze v případě, že je klíčovým členem klíč generovaný úložištěm, protože SCOPE_IDENTITY () vrátí hodnotu poslední identity vloženou do identity ( sloupec generovaný úložištěm.
 
 ```sql
 -- first insert Template
@@ -128,7 +128,7 @@ VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]
 ```
 
-Druhá šablona je potřeba, je-li vložit určuje vložení řádku, kde primární klíč se generuje úložiště, ale není typu integer a proto jej nelze použít s scope_identity()). Používá se také při složené klíče generované úložištěm.
+Druhá šablona je potřebná v případě, že vložení určuje vložení řádku, ve kterém je primární klíč uložen, ale není typu Integer, a proto jej nelze použít s SCOPE_IDENTITY ()). Používá se také v případě, že je k dispozici složený klíč generovaný úložištěm.
 
 ```sql
 -- second insert template
@@ -144,7 +144,7 @@ JOIN <target> AS t ON g.KeyMember0 = t.KeyMember0 AND … g.KeyMemberN = t.KeyMe
  WHERE @@ROWCOUNT > 0
 ```
 
-Následuje příklad, který používá model, který je součástí ukázkového zprostředkovatele. Generuje příkazu k vložení z DbInsertCommandTree.
+Následuje příklad, který používá model, který je součástí poskytovatele ukázek. Vygeneruje příkaz INSERT z DbInsertCommandTree.
 
 Následující kód vloží kategorii:
 
@@ -158,7 +158,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }
 ```
 
-Tento kód vytvoří následující stromu příkazů, který se předá do zprostředkovatele:
+Tento kód vytvoří následující strom příkazů, který je předán poskytovateli:
 
 ```
 DbInsertCommandTree
@@ -187,7 +187,7 @@ DbInsertCommandTree
       |_Var(target).CategoryID
 ```
 
-Příkaz úložiště, který vytváří zprostředkovateli ukázek je následující příkaz SQL:
+Příkaz Store, který generuje vzorový poskytovatel, je následující příkaz SQL:
 
 ```sql
 insert [dbo].[Categories]([CategoryName], [Description], [Picture])
@@ -197,9 +197,9 @@ from [dbo].[Categories]
 where @@ROWCOUNT > 0 and [CategoryID] = scope_identity()
 ```
 
-## <a name="generating-an-update-sql-command"></a>Generování SQL příkazu k aktualizaci
+## <a name="generating-an-update-sql-command"></a>Generování příkazu Update SQL
 
-Pro daný DbUpdateCommandTree příkazu generované aktualizace podle následující šablony:
+Pro daný DbUpdateCommandTree je vygenerovaný příkaz Update založen na následující šabloně:
 
 ```sql
 -- UPDATE Template
@@ -212,11 +212,11 @@ WHERE <predicate>
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]
 ```
 
-Klauzule set je klauzule set falešné ("@i = 0") pouze v případě, že jsou zadány bez klauzule set. Tím je zajištěno, že žádné úložiště počítané sloupce jsou přepočítány.
+Klauzule SET má nafalešnou klauzuli set (@i = 0), pouze pokud nejsou zadány žádné klauzule SET. K tomu je potřeba zajistit, aby se přepočítaly všechny počítané sloupce v úložišti.
 
-Pouze v případě, že vlastnost Returning není null, vyberte příkaz vygeneruje se vraťte se do vlastností zadaná ve vlastnosti Returning.
+Pouze v případě, že návratová vlastnost nemá hodnotu null, je vygenerován příkaz SELECT, který vrátí vlastnosti zadané ve vlastnosti vráceno.
 
-Následující příklad používá model, který je součástí ukázkového zprostředkovatele k vygenerování příkazu k aktualizaci.
+Následující příklad používá model, který je součástí poskytovatele Sample k vygenerování aktualizačního příkazu.
 
 Následující kód uživatele aktualizuje kategorii:
 
@@ -228,7 +228,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }
 ```
 
-Tento uživatelský kód vytvoří následující stromu příkazů, který se předá do zprostředkovatele:
+Tento uživatelský kód vytvoří následující strom příkazů, který se předává poskytovateli:
 
 ```
 DbUpdateCommandTree
@@ -249,7 +249,7 @@ DbUpdateCommandTree
 |_Returning
 ```
 
-Ukázka zprostředkovatele vytvoří následující příkaz úložiště:
+Ukázkový poskytovatel vytvoří následující příkaz úložiště:
 
 ```sql
 update [dbo].[Categories]
@@ -257,9 +257,9 @@ set [CategoryName] = @p0
 where ([CategoryID] = @p1)
 ```
 
-### <a name="generating-a-delete-sql-command"></a>Generování SQL příkazu Delete
+### <a name="generating-a-delete-sql-command"></a>Generování příkazu Delete SQL
 
-Pro daný DbDeleteCommandTree generované příkazem k odstranění podle následující šablony:
+Pro daný DbDeleteCommandTree je vygenerovaný příkaz DELETE založen na následující šabloně:
 
 ```sql
 -- DELETE Template
@@ -267,9 +267,9 @@ DELETE <target>
 WHERE <predicate>
 ```
 
-Následující příklad používá model, který je součástí ukázkového zprostředkovatele k vygenerování příkazu pro odstranění.
+Následující příklad používá model, který je součástí poskytovatele Sample k vygenerování příkazu DELETE.
 
-Následující kód uživatele odstraní kategorie:
+Následující kód uživatele odstraní kategorii:
 
 ```csharp
 using (NorthwindEntities northwindContext = new NorthwindEntities()) {
@@ -279,7 +279,7 @@ using (NorthwindEntities northwindContext = new NorthwindEntities()) {
 }
 ```
 
-Tento uživatelský kód vytvoří následující stromu příkazů, která je předána zprostředkovateli.
+Tento uživatelský kód vytvoří následující strom příkazů, který je předán poskytovateli.
 
 ```
 DbDeleteCommandTree
@@ -293,7 +293,7 @@ DbDeleteCommandTree
     |_10
 ```
 
-Následující příkaz úložiště je vytvořen poskytovatelem vzorku:
+Následující příkaz pro uložení je vytvořen poskytovatelem ukázky:
 
 ```sql
 delete [dbo].[Categories]
@@ -302,4 +302,4 @@ where ([CategoryID] = @p0)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
+- [Zápis zprostředkovatele dat Entity Framework](writing-an-ef-data-provider.md)

@@ -1,17 +1,17 @@
 ---
-title: NAVIGATE (Entity SQL)
+title: NAVIGACE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
-ms.openlocfilehash: 6ce88cecf210d8b3cf541fe7e870e19a59e344ec
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 2c6c2ae4c593da1d5fe8cdf3015eb0e31e4b12b5
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307326"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249942"
 ---
-# <a name="navigate-entity-sql"></a>NAVIGATE (Entity SQL)
+# <a name="navigate-entity-sql"></a>NAVIGACE (Entity SQL)
 
-Přejde přes vztahu mezi entitami.
+Přejde přes vztah navázaný mezi entitami.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,27 +21,27 @@ navigate(instance-expression, [relationship-type], [to-end [, from-end] ])
 
 ## <a name="arguments"></a>Arguments
 
-`instance-expression` Instance entity.
+`instance-expression`Instance entity
 
-`relationship-type` Název typu relace ze souboru Konceptuální schéma definici jazyka (CSDL). `relationship-type` Je kvalifikovány jako \<oboru názvů >.\< Název typu vztahu >.
+`relationship-type`Název typu relace ze souboru CSDL (konceptuální schéma Definition Language). Je kvalifikován jako \<obor názvů >.\< `relationship-type` název typu vztahu >.
 
-`to` Konci vztahu.
+`to`Konec relace.
 
-`from` Začátek relace.
+`from`Začátek vztahu
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud Kardinalita do konce je 1, bude návratovou hodnotou `Ref<T>`. Pokud se Kardinalita ukončení je n, bude návratovou hodnotou `Collection<Ref<T>>`.
+Pokud mohutnost pro končí 1, návratová hodnota bude `Ref<T>`. Pokud mohutnost, která má končit, je n, návratová hodnota bude `Collection<Ref<T>>`.
 
 ## <a name="remarks"></a>Poznámky
 
-Relace jsou prvotřídní konstrukce v modelu Entity Data Model (EDM). Vztah lze navázat mezi dva nebo více typů entit a uživatelé mohou přejít přes vztah konce (entita). `from` a `to` jsou podmíněně volitelné, pokud nedochází k nejednoznačnosti v překlad v rámci relace.
+Relace jsou konstrukce první třídy v model EDM (Entity Data Model) (EDM). Vztahy lze navázat mezi dvěma nebo více typy entit a uživatelé mohou procházet relaci z jednoho elementu end (entity) na jiný. `from`a `to` jsou podmíněně nepovinné, pokud v rámci vztahu nedochází k nejednoznačnosti v překladu názvů.
 
-NAVIGOVAT je platný v prostoru O a C.
+NAVIGACE je platná v prostoru O a C.
 
-Obecný tvar konstrukci navigace je následující:
+Obecná forma pro navigační konstrukce je následující:
 
-přejděte (`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ]])
+Navigate (`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ]])
 
 Příklad:
 
@@ -50,35 +50,35 @@ Select o.Id, navigate(o, OrderCustomer, Customer, Order)
 From LOB.Orders as o
 ```
 
-Kde je OrderCustomer `relationship`, a odběratele a objednávky `to-end` (zákazníka) a `from-end` (pořadí) vztahu. Pokud byl OrderCustomer relaci n: 1, je výsledný typ výraz navigate Ref\<zákazníků >.
+Kde OrderCustomer je `relationship`, a zákazník a objednávka `to-end` jsou (zákazník) a `from-end` (objednávka) vztahu. Pokud byl OrderCustomer relace typu n:1, pak je výsledným typem výrazu Navigate odkaz\<Customer >.
 
-Jednodušší formu tento výraz je následující:
+Jednodušší tvar tohoto výrazu je následující:
 
 ```sql
 Select o.Id, navigate(o, OrderCustomer)
 From LOB.Orders as o
 ```
 
-Podobně v dotazu má následující formu, výraz navigate byste mohli vytvořit kolekci < Ref\<pořadí >>.
+Podobně v dotazu následujícího formuláře by výraz Navigate vytvořil kolekci < ref\<> >.
 
 ```sql
 Select c.Id, navigate(c, OrderCustomer, Order, Customer)
 From LOB.Customers as c
 ```
 
-Výraz instance musí být typu entity nebo ref.
+Výrazem instance musí být typ entity nebo ref.
 
 ## <a name="example"></a>Příklad
 
-Následující dotaz Entity SQL používá operátor NAVIGOVAT přejít přes vztahu mezi adresu a SalesOrderHeader typy entit. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:
+Následující Entity SQL dotaz používá operátor navigace k přechodu mezi vztahem vytvořeným mezi typy entit adresa a SalesOrderHeader. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:
 
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.
 
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:
 
  [!code-csharp[DP EntityServices Concepts 2#NAVIGATE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#navigate)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Postupy: Procházení relací pomocí navigačního operátoru](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Postupy: Navigace v relacích pomocí operátoru navigace](navigate-entity-sql.md)

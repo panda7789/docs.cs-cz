@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19ebad32ad8c7018b910a3d230f43031008dcdc7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: aa03179df1cd2595b4be428106dd3ec10b309317
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927387"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252552"
 ---
 # <a name="gcserver-element"></a>\<gcServer – element >
 Určuje, zda modul CLR (Common Language Runtime) spouští uvolňování paměti serveru.  
   
- \<> Konfigurace  
-\<> modulu runtime  
-\<gcServer>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -1,16 +1,16 @@
 ---
-title: ROW (Entity SQL)
+title: ŘÁDEK (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 06da96e8-55d7-486c-991a-4e514d837ff9
-ms.openlocfilehash: 676080a6cc4208ea1a4d72b85a4a55e01fafe638
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dfd0031f49cbdf41797cecf21c149fafde4d7a8c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641451"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249251"
 ---
-# <a name="row-entity-sql"></a>ROW (Entity SQL)
-Sestaví anonymní, strukturálně typy záznamů z jedné nebo více hodnot.  
+# <a name="row-entity-sql"></a>ŘÁDEK (Entity SQL)
+Vytvoří anonymní, strukturální záznamy typu z jedné nebo více hodnot.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,42 +20,42 @@ ROW ( expression [ AS alias ] [,...] )
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný dotaz výraz, který vrací hodnotu k sestavení kompletních v typu řádku.  
+ Libovolný platný výraz dotazu, který vrací hodnotu pro sestavení typu řádku.  
   
  `alias`  
- Určuje alias pro hodnotu zadanou v typu řádku. Pokud není k dispozici jako alias, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí vygenerovat alias na základě [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pravidel pro vytvoření aliasu.  
+ Určuje alias pro hodnotu zadanou v typu řádku. Pokud alias není k dispozici, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nástroj se pokusí vygenerovat alias na základě [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pravidel generování aliasů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Typ řádku.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití konstruktorů řádek v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] k sestavení kompletních anonymní, strukturálně typy záznamů z jedné nebo více hodnot. Výsledný typ konstruktoru řádku je typ řádku, jejichž pole typy odpovídají typům hodnot, které byly použity k vytvoření řádku. Například následující výraz vytvoří hodnotu typu `Record(a int, b string, c int)`.  
+ Použijete konstruktory řádků v rozhraní [!INCLUDE[esql](../../../../../../includes/esql-md.md)] k sestavení anonymních strukturovaných typů záznamů z jedné nebo více hodnot. Typ výsledku konstruktoru řádku je typ řádku, jehož typy polí odpovídají typům hodnot, které byly použity k vytvoření řádku. Například následující výraz vytvoří hodnotu typu `Record(a int, b string, c int)`.  
   
 ```  
 ROW(1 AS a, "abc" AS b, a+34 AS c)  
 ```  
   
- Pokud nezadáte alias pro výraz v konstruktoru row, Entity Framework se pokusí vygenerovat. Další informace najdete v tématu "Pravidla pro aliasy" část [identifikátory](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md) tématu.  
+ Pokud neposkytnete alias pro výraz v konstruktoru řádku, Entity Framework se pokusí jednu vygenerovat. Další informace najdete v části pravidla aliasing v tématu [identifikátory](identifiers-entity-sql.md) .  
   
- Výraz aliasing v konstruktoru row platí následující pravidla:  
+ Následující pravidla platí pro aliasy výrazů v konstruktoru řádku:  
   
-- Výrazy v konstruktoru row nelze odkazovat na jiné aliasy v konstruktoru stejné.  
+- Výrazy v konstruktoru řádku nemůžou odkazovat na jiné aliasy ve stejném konstruktoru.  
   
-- Dvou výrazů ve stejné konstruktor row nemůže mít stejný alias.  
+- Dva výrazy v konstruktoru stejného řádku nemohou mít stejný alias.  
   
- Další informace o konstruktorech dotazu naleznete v tématu [vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ Další informace o konstruktorech dotazů naleznete v tématu [sestavování typů](constructing-types-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá operátor řádek k vytvoření anonymní, strukturálně typy záznamů. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá operátor řádku k vytvoření anonymních strukturovaných záznamů typu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#ROW](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#row)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Definice typů](../../../../../../docs/framework/data/adonet/ef/language-reference/type-definitions-entity-sql.md)
+- [Vytváření typů](constructing-types-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Definice typů](type-definitions-entity-sql.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Projekt a nový typ (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: bec4e7c7d87dffb90b49b76aa00a5de093d68436
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 32c3de9f4dd967cf0aafa7f4e571d8714ca41e3a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593044"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253509"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Postupy: Projekt a nový typ (LINQ to XML) (C#)
 
@@ -53,7 +53,7 @@ Tento příklad používá <xref:System.Xml.Linq.XContainer.Element%2A> metodu, 
 
 Tento příklad vytvoří následující výstup:
 
-```console
+```output
 Lawnmower:1
 Baby Monitor:2
 ```

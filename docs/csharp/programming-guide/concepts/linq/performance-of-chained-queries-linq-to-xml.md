@@ -2,12 +2,12 @@
 title: Výkon zřetězených dotazů (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
-ms.openlocfilehash: dfd7698d0bdd24a75458a581dfd42c3d21325e6f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7deff9205e6535877efabd85257baa5b3906f41a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591579"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253125"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>Výkon zřetězených dotazů (LINQ to XML) (C#)
 
@@ -37,7 +37,7 @@ foreach (var i in query2)
 
 Tento příklad vytvoří následující výstup:
 
-```
+```output
 4
 ```
 

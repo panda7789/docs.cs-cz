@@ -2,12 +2,12 @@
 title: 'Postupy: Zápis dotazů s komplexním filtrováním (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4065d901-cf89-4e47-8bf9-abb65acfb003
-ms.openlocfilehash: 3fe62b4a3c78c61de28311adf3feec1a613ff167
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7759a02c1b9ef0ae0c1af4bfb2600543b21cdf0f
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592168"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253193"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-c"></a>Postupy: Zápis dotazů s komplexním filtrováním (C#)
 Někdy budete chtít zapisovat LINQ to XML dotazy se složitými filtry. Například může být nutné najít všechny prvky, které mají podřízený element s určitým názvem a hodnotou. Toto téma poskytuje příklad zápisu dotazu se složitým filtrováním.  
@@ -37,7 +37,7 @@ foreach (XElement el in purchaseOrders)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 99505  
 ```  
   
@@ -65,7 +65,7 @@ foreach (XElement el in purchaseOrders)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 99505  
 ```  
   

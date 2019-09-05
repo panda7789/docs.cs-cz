@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2268d07fb643621c944ef9bf561156b5332aaafc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 83980d315c83aa5cc23944dbd271c29e0ed83206
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920708"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252469"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources – element >
 Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena plná důvěryhodnost v .NET Framework 4 a novějších.
@@ -20,9 +20,9 @@ Určuje, zda mají být sestavení načtena ze vzdálených zdrojů udělena pln
 > [!NOTE]
 > Pokud jste byli přesměrováni na tento článek z důvodu chybové zprávy v seznamu chyb projektu sady Visual Studio nebo chyba sestavení, přečtěte [si téma How to: Použijte sestavení z webu v aplikaci Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100)).  
   
- \<> Konfigurace  
-\<> modulu runtime  
-\<loadFromRemoteSources>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<loadFromRemoteSources >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -1,16 +1,16 @@
 ---
-title: – FUNKCE (Entity SQL)
+title: FUNKCE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: efab5f1abbc5e0c22e404c37dc80dd5aafa09ce1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae8da3985f11a2e9f52852876a21f50a412e3b27
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879603"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250941"
 ---
-# <a name="function-entity-sql"></a>– FUNKCE (Entity SQL)
-Definuje funkci v rozsahu příkazu dotazu Entity SQL.  
+# <a name="function-entity-sql"></a>FUNKCE (Entity SQL)
+Definuje funkci v oboru příkazu Entity SQL dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,30 +30,30 @@ FUNCTION function-name
   
 ## <a name="arguments"></a>Arguments  
  `function-name`  
- Název funkce.  
+ Název funkce  
   
  `parameter-name`  
  Název parametru ve funkci.  
   
  `function_expression`  
- Platný výraz Entity SQL, který je funkce. Příkaz ve funkci dají dále rozvíjet `parameter_name` parametry předané do funkce.  
+ Platný výraz Entity SQL, který je funkcí. Příkaz ve funkci může působit na `parameter_name` parametry předané do funkce.  
   
  `data_type`  
  Název podporovaného typu.  
   
  KOLEKCE (< type_definition`>` )  
- Výraz, který vrátí kolekci podporovaných typů, řádky nebo odkazy.  
+ Výraz, který vrací kolekci podporovaných typů, řádků nebo odkazů.  
   
- REF **(**`data_type`**)**  
- Výraz, který vrátí odkaz na typ entity.  
+ REF **(** `data_type` **)**  
+ Výraz, který vrací odkaz na typ entity.  
   
- ROW **(**`row_expression`**)**  
- Výraz, který vrátí anonymní, typované strukturálně záznamů z jedné nebo více hodnot. Další informace najdete v tématu [řádek](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md).  
+ ROW **(** `row_expression` **)**  
+ Výraz, který vrací anonymní, strukturální záznamy typu z jedné nebo více hodnot. Další informace najdete v části [řádek](row-entity-sql.md).  
   
 ## <a name="remarks"></a>Poznámky  
- Více funkcí se stejným názvem, mohou být deklarovány jako vložené, jako signatur funkce se liší. Další informace najdete v tématu [rozlišení přetížení funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-overload-resolution-entity-sql.md).  
+ Je možné deklarovat vložené více funkcí se stejným názvem, pokud se signatury funkce liší. Další informace najdete v tématu [řešení přetížení funkce](function-overload-resolution-entity-sql.md).  
   
- Vložená funkce lze volat v příkazu k Entity SQL až po je definována v tomto příkazu. Ale vložená funkce lze volat jiné vložené funkce před nebo po definování volané funkce. V následujícím příkladu volání funkcí A funkci B předtím, než je definována funkce B:  
+ Vloženou funkci lze volat v příkazu Entity SQL pouze poté, co byla definována v tomto příkazu. Vložená funkce může být však volána uvnitř jiné vložené funkce buď před, nebo po definování volané funkce. V následujícím příkladu funkce Function A funkce B před definováním funkce B:  
   
  `Function A() as ('A calls B. ' + B())`  
   
@@ -61,21 +61,21 @@ FUNCTION function-name
   
  `A()`  
   
- Další informace najdete v tématu [jak: Volání uživatelem definované funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
+ Další informace najdete v tématu [jak: Volání uživatelsky definované funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
   
- Funkce mohou být deklarovány také v modelu, samotného. Funkce deklarované v modelu jsou provedeny stejným způsobem jako funkce deklarovaná vložené v příkazu. Další informace najdete v tématu [uživatelsky definovaných funkcí](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md).  
+ Funkce lze také deklarovat v samotném modelu. Funkce deklarované v modelu jsou spouštěny stejným způsobem jako funkce deklarované jako vložené v příkazu. Další informace najdete v tématu [uživatelsky definované funkce](user-defined-functions-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Pomocí následujícího příkazu Entity SQL definuje funkci `Products` , který přebírá hodnotu celého čísla pro filtrování vrácených produktů.  
+ Následující Entity SQL příkaz definuje funkci `Products` , která přebírá celočíselnou hodnotu pro filtrování vrácených produktů.  
   
  [!code-csharp[DP EntityServices Concepts 2#FUNCTION1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function1)]  
   
 ## <a name="example"></a>Příklad  
- Pomocí následujícího příkazu Entity SQL definuje funkci `StringReturnsCollection` , který vezme kolekci řetězce vráceného kontaktů filtr.  
+ Následující Entity SQL příkaz definuje funkci `StringReturnsCollection` , která přebírá kolekci řetězců k filtrování vrácených kontaktů.  
   
  [!code-csharp[DP EntityServices Concepts 2#FUNCTION2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Jazyk Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Jazyk Entity SQL](entity-sql-language.md)

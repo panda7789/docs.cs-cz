@@ -2,12 +2,12 @@
 title: 'Postupy: Streamování fragmentů XML z objektuC#XmlReader ()'
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: c27c2165af95b8b781564e14efc0668f596e3057
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e5aeb5111931ff6a35a3b7806abc24e0fbbf9621
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592405"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253294"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Postupy: Streamování fragmentů XML z objektuC#XmlReader ()
 V případě potřeby zpracování velkých souborů XML nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamovat fragmenty <xref:System.Xml.XmlReader>pomocí.  
@@ -75,7 +75,7 @@ static void Main(string[] args)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 bbb  
 ccc  
 ```  

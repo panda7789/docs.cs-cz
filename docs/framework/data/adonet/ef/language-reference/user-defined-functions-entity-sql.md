@@ -1,19 +1,19 @@
 ---
-title: Uživatelem definované funkce (Entity SQL)
+title: Uživatelsky definované funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 3f9e6bbd-8e5a-43e1-809f-f8a61338e522
-ms.openlocfilehash: 4922e7fada676a6c26042236ccdb6315d6d455ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ddafb18a10ff2313fd27eab453907054a35218a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879746"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248774"
 ---
-# <a name="user-defined-functions-entity-sql"></a>Uživatelem definované funkce (Entity SQL)
-Entita SQL podporuje volání uživatelem definované funkce v dotazu. Můžete definovat tyto vložené funkce s dotazem (viz [jak: Volání uživatelem definované funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))) nebo v rámci koncepčního modelu (viz [jak: Definování vlastních funkcí v konceptuálním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))). Konceptuální model funkce jsou definované jako příkazu k Entity SQL v [DefiningExpression](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#definingexpression-element-csdl) prvek [funkce](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#function-element-csdl) element v konceptuálním modelu.  
+# <a name="user-defined-functions-entity-sql"></a>Uživatelsky definované funkce (Entity SQL)
+Entity SQL podporuje volání uživatelsky definovaných funkcí v dotazu. Tyto funkce můžete definovat jako vložené společně s dotazem ( [viz How to: Zavolejte uživatelsky definovanou funkci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))) nebo jako součást koncepčního modelu (viz [How to: Definujte vlastní funkce v koncepčním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))). Funkce koncepčního modelu jsou definovány jako Entity SQL příkaz v elementu [DefiningExpression](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#definingexpression-element-csdl) elementu [Function](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#function-element-csdl) v koncepčním modelu.  
   
- Entita SQL vám umožní definovat funkce v dotazu příkazu samého. [Funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) operátor definuje vložených funkcí. Můžete definovat více funkcí stačí jediný příkaz, a tyto funkce může mít stejný název funkce, jako signatur funkce jsou jedinečné. Další informace najdete v tématu [rozlišení přetížení funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-overload-resolution-entity-sql.md).  
+ Entity SQL umožňuje definovat funkce v samotném příkazu dotazu. Operátor [funkce](function-entity-sql.md) definuje vložené funkce. V jednom příkazu můžete definovat více funkcí a tyto funkce mohou mít stejný název funkce, pokud jsou signatury funkcí jedinečné. Další informace najdete v tématu [řešení přetížení funkce](function-overload-resolution-entity-sql.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)
+- [Funkce](functions-entity-sql.md)

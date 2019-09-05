@@ -2,12 +2,12 @@
 title: Základní datové typy
 ms.date: 03/30/2017
 ms.assetid: eca2c472-9548-4800-bd31-5d8d9f11752b
-ms.openlocfilehash: b01a49afa99fc7ecdb7a113a5056e37d901527a1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e85adb928925bf161e6e2d6ef935a20606f8eb32
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964069"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248027"
 ---
 # <a name="basic-data-types"></a>Základní datové typy
 Vzhledem k tomu, že se LINQ to SQL dotazy přeloží do jazyka Transact-SQL před jejich spuštěním na Microsoft SQL Server. LINQ to SQL podporuje většinu stejných integrovaných funkcí, které SQL Server používá pro základní datové typy.  
@@ -24,5 +24,5 @@ Vzhledem k tomu, že se LINQ to SQL dotazy přeloží do jazyka Transact-SQL př
   
 ## <a name="see-also"></a>Viz také:
 
-- [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Mapování typů SQL a CLR](sql-clr-type-mapping.md)
+- [Datové typy a funkce](data-types-and-functions.md)

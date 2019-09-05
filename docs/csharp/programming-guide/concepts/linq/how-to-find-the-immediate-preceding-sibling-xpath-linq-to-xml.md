@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Najde bezprostřední předchozí položku na stejné úrovni (XPath-LINQ to XMLC#) ().'
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
-ms.openlocfilehash: 7d1d49f262b13f769ab1d28de8b75d214d8abe64
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: bc0a3250cf1f56ebf9a367f6472be8f3230cee5a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486710"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253631"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)
-Někdy budete chtít najít okamžité předcházející na stejné k uzlu. Z důvodu rozdíly v sémantice poziční predikáty. pro předchozí osy na stejné úrovni ve výrazu XPath, nikoli [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], to je jedna z zajímavější porovnání.  
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: Najde bezprostřední předchozí položku na stejné úrovni (XPath-LINQ to XMLC#) ().
+Někdy chcete najít bezprostřední předchozí položku na stejné úrovni jako uzel. Z důvodu rozdílu v sémantikě pozičních predikátů pro předchozí osy na stejné úrovni ve výrazu XPath, na [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]rozdíl od, jde o jedno z zajímavějších porovnání.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz používá <xref:System.Linq.Enumerable.Last%2A> operátor najít poslední uzel v kolekci vrácené poskytovatelem <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>. Výraz XPath naopak používá k nalezení prvku bezprostředně předcházející predikátu s hodnotou 1.  
+ V tomto příkladu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotaz <xref:System.Linq.Enumerable.Last%2A> pomocí operátoru najde poslední uzel <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A>v kolekci, kterou vrátí. Naopak výraz XPath používá predikát s hodnotou 1 pro nalezení bezprostředně předcházejícího prvku.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -47,7 +47,7 @@ Console.WriteLine(el1);
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Results are identical  
 <Child3 />  
 ```  

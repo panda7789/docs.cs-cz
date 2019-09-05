@@ -3,17 +3,18 @@ title: <system.identityModel.services>
 ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
-ms.openlocfilehash: bef061c5c982fb0e740f889336a3b334bc19225e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e9488c0681e1a5f0fe94112a36b65ec73bf9fd09
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943662"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251811"
 ---
 # <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
 Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.  
   
- \<system.identityModel.services>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp; **\<> System. identityModel. Services**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +44,7 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
  `<system.identityModel.services>` Přidejte oddíl do konfiguračního souboru aplikace a poskytněte tak nastavení pro Sam a WSFAM.  
   
 > [!IMPORTANT]
-> <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy nebo k poskytnutí řízení přístupu založeného na deklaracích ve vašem kódu se Správce autorizací deklarací identity<xref:System.Security.Claims.ClaimsAuthorizationManager>() a zásady, které se používají `<identityConfiguration>` k rozhodování o autorizaci, nakonfigurují prostřednictvím prvek, který je implicitně nebo explicitně odkazován z `<federationConfiguration>` prvku v této části. Další informace naleznete v poznámkách pod [ \<prvkem federationConfiguration >](federationconfiguration.md) .  
+> <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy nebo k poskytnutí řízení přístupu založeného na deklaracích ve vašem kódu se Správce autorizací deklarací identity<xref:System.Security.Claims.ClaimsAuthorizationManager>() a zásady, které se používají `<identityConfiguration>` k rozhodování o autorizaci, nakonfigurují prostřednictvím prvek, který je implicitně nebo explicitně odkazován z `<federationConfiguration>` prvku v této části. Další informace naleznete v **poznámkách** pod [ \<prvkem federationConfiguration >](federationconfiguration.md) .  
   
  Oddíl je reprezentován <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection>třídou. `<system.identityModel.services>` Kolekce podřízených `<federationConfiguration>` prvků nakonfigurovaných v oddílu je reprezentována <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> třídou.  
   

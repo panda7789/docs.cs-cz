@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 2104cb4e853888efffe6b289ac1400530be25473
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 5113de6d8d333983e6e26579ff9803a9f5a62816
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015600"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254178"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
 Toto téma poskytuje přehled nastavení registru Microsoft ClearType používaných aplikacemi WPF.  
@@ -19,7 +19,7 @@ Toto téma poskytuje přehled nastavení registru Microsoft ClearType používan
 ## <a name="technology-overview"></a>Přehled technologie  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]aplikace, které vykreslují text na zobrazovací zařízení, používají funkce technologie ClearType k zajištění vylepšeného prostředí pro čtení. ClearType je softwarová technologie vyvinutá Microsoftem, která vylepšuje čitelnost textu v existujících LCDs (Liquid Crystal displeje), jako jsou obrazovky přenosné počítače, obrazovky Pocket PC a monitor plochých panelů. Technologie ClearType funguje tak, že přistupuje k jednotlivým prvkům svislého barevného pruhu v každém pixelu obrazovky LCD. Další informace o technologii ClearType najdete v tématu [Přehled technologie ClearType](cleartype-overview.md).  
   
- Text vykreslený pomocí technologie ClearType se může při zobrazení na různých displejích výrazně lišit. Například malý počet monitorů implementuje prvky barevného pruhu v modrém, zeleném a červeném pořadí, nikoli v běžnější červené, zelené, modré ( [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]) objednávce.  
+ Text vykreslený pomocí technologie ClearType se může při zobrazení na různých displejích výrazně lišit. Například malý počet monitorů implementuje prvky barevného pruhu v modrém, zeleném a červeném pořadí, nikoli v případě běžnějšího červeného, zeleného, modrého (RGB) objednávky.  
   
  Text vykreslený pomocí technologie ClearType se může také výrazně lišit při prohlížení jednotlivci, kteří mají různou úroveň citlivosti barev. Někteří jednotlivci mohou detekovat mírné rozdíly v barvě lépe než jiné.  
   

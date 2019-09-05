@@ -2,12 +2,12 @@
 title: 'Postupy: Najít seznam podřízených elementů (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c589dd8-f680-4cdb-9d6a-78d57e2555e8
-ms.openlocfilehash: 8a2ddc13a0a48fbe30ce629527149bacaaab3fd1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 63b0fec504ff8424e9e96318c46191a150b72f46
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253838"
 ---
 # <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-c"></a>Postupy: Najít seznam podřízených elementů (XPath-LINQ to XML) (C#)
 Toto téma porovnává osu podřízených elementů XPath [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s <xref:System.Xml.Linq.XContainer.Elements%2A> osou.  
@@ -40,7 +40,7 @@ foreach (XElement el in list1)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Results are identical  
 <Name>Ellen Adams</Name>  
 <Street>123 Maple Street</Street>  
@@ -49,4 +49,3 @@ Results are identical
 <Zip>10999</Zip>  
 <Country>USA</Country>  
 ```  
-  

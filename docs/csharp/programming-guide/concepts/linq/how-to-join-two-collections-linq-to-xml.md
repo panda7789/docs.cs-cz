@@ -2,12 +2,12 @@
 title: 'Postupy: Spojit dvě kolekce (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
-ms.openlocfilehash: aa774e23cfd232709f9824826f5084fe6049ef37
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 82083a24da9a5356a8ff8e8430b61bb5d41f7c72
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593195"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253581"
 ---
 # <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: Spojit dvě kolekce (LINQ to XML) (C#)
 Element nebo atribut v dokumentu XML může někdy odkazovat na jiný element nebo atribut. Například [ukázkový soubor XML: Dokument XML Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` prvek`CustomerID` obsahuje atribut. Každý `Order` prvek`CustomerID` obsahuje element. Element v každé objednávce odkazuje `CustomerID` na atribut v zákazníkovi. `CustomerID`  
@@ -76,7 +76,7 @@ if (!errors)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 Attempting to validate, custOrdDoc validated  
 <Root>  
   <Order>  

@@ -8,19 +8,19 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 67ead643afd34b4c3422d85e6f7876879de477ba
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e36e2ed96a0748a69f2bd9ee32432901f0bf0898
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927233"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252291"
 ---
 # <a name="systemruntimecaching-element-cache-settings"></a>\<System. Runtime. Caching > element (nastavení mezipaměti)
 
 Poskytuje konfiguraci pro výchozí implementaci v paměti <xref:System.Runtime.Caching.ObjectCache> `memoryCache` prostřednictvím záznamu v konfiguračním souboru.  
   
- \<> Konfigurace  
-\<system.runtime.caching>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp; **\<System. Runtime. Caching >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

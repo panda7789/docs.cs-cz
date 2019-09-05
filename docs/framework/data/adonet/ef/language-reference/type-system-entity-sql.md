@@ -2,55 +2,55 @@
 title: Systém typů (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 818a505b-a196-41dd-aaac-2ccd5f7a2f1a
-ms.openlocfilehash: d86c97834b9cc6698da8664ff2a09ceda7cc0043
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7f9b41181d9a7a7f23123f2e1b71893000b34d4a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641234"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248941"
 ---
 # <a name="type-system-entity-sql"></a>Systém typů (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje několik typů:  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje několik typů:  
   
-- (Jednoduchý) primitivní typy, jako `Int32` a `String.`  
+- Primitivní (jednoduché) typy `Int32` jako a`String.`  
   
-- Nominální typy, které jsou definovány ve schématu, jako například <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.ComplexType>, a <xref:System.Data.Metadata.Edm.RelationshipType>.  
+- Nominální typy, které jsou definovány ve schématu, například <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.ComplexType>a <xref:System.Data.Metadata.Edm.RelationshipType>.  
   
-- Anonymní typy, které nejsou explicitně definovány ve schématu: <xref:System.Data.Metadata.Edm.CollectionType>, <xref:System.Data.Metadata.Edm.RowType>, a <xref:System.Data.Metadata.Edm.RefType>.  
+- Anonymní typy, které nejsou definovány ve schématu explicitně: <xref:System.Data.Metadata.Edm.CollectionType>, <xref:System.Data.Metadata.Edm.RowType>a <xref:System.Data.Metadata.Edm.RefType>.  
   
- Tato část popisuje anonymní typy, které nejsou explicitně definovány ve schématu však není podporovaná Entity SQL. Informace o typech primitivní a nominální najdete v tématu [koncepční Model typy (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#conceptual-model-types-csdl).  
+ Tato část popisuje anonymní typy, které nejsou explicitně definovány ve schématu, ale jsou podporovány Entity SQL. Informace o primitivních a nominálních typech naleznete v tématu [typy konceptuálních modelů (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#conceptual-model-types-csdl).  
   
-## <a name="rows"></a>Řádky  
- Struktura řádek závisí na pořadí zadaném a pojmenované členy, které se skládá z řádku. Typ řádku nemá žádná identita a nejde ji zdědit z. Instance stejného typu řádku jsou rovnocenné, pokud jsou v uvedeném pořadí ekvivalentních členy. Řádky mít žádné chování, mimo jejich ekvivalence strukturální a nemají žádný ekvivalent v modulu common language runtime. Struktury obsahující řádky nebo kolekce řádků může způsobit dotazů. Rozhraní API vazby mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy a jazyk hostitelského definuje, jak jsou realizované řádků v dotazu, který vytváří výsledek. Informace o tom, jak vytvořit instanci řádku najdete v tématu [vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+## <a name="rows"></a>Tabulky  
+ Struktura řádku závisí na sekvenci typovaného a pojmenovaného člena, ze kterého se řádek skládá. Typ řádku nemá žádnou identitu a nedá se dědit z. Instance stejného typu řádku jsou ekvivalentní, pokud jsou členy ekvivalentní. Řádky nemají žádné chování nad jejich strukturální rovnocennost a nemají ekvivalent v modulu CLR (Common Language Runtime). Dotazy mohou mít za následek struktury, které obsahují řádky nebo kolekce řádků. Vazba rozhraní API mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy a jazykem hostitele definuje způsob, jakým jsou řádky realizovány v dotazu, který vytvořil výsledek. Informace o tom, jak vytvořit instanci řádku, naleznete v tématu [sestavování typů](constructing-types-entity-sql.md).  
   
 ## <a name="collections"></a>Kolekce  
- Typy kolekce představují nula nebo víc instancí jiné objekty. Informace o tom, jak vytvořit kolekci, najdete v části [vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ Typy kolekce reprezentují nula nebo více instancí jiných objektů. Informace o tom, jak sestavit kolekci, naleznete v tématu [konstrukce typů](constructing-types-entity-sql.md).  
   
 ## <a name="references"></a>Odkazy  
- Odkaz je logický ukazatel na konkrétní entitu v sadě konkrétní entity.  
+ Odkaz je logický ukazatel na konkrétní entitu v konkrétní sadě entit.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje následující operátory sestavit, dekonstruovat a procházejte odkazy:  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]podporuje následující operátory pro konstrukci, dekonstrukci a navigaci prostřednictvím odkazů:  
   
-- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)  
+- [REF](ref-entity-sql.md)  
   
-- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)  
+- [CREATEREF](createref-entity-sql.md)  
   
-- [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)  
+- [KEY](key-entity-sql.md)  
   
-- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)  
+- [DEREF](deref-entity-sql.md)  
   
- Odkaz můžete procházet pomocí operátoru přístupu (tečka) člena (`.`). Následující fragment kódu extrahuje Vlastnost Id (pořadí) tak, že přejdete prostřednictvím vlastnosti r (odkaz).  
+ Můžete procházet odkazem pomocí operátoru`.`přístupu členů (tečka) (). Následující fragment kódu extrahuje vlastnost ID (z pořadí) přechodem na vlastnost r (Reference).  
   
 ```  
 select o2.r.Id   
 from (select ref(o) as r from LOB.Orders as o) as o2   
 ```  
   
- Pokud je hodnota odkaz null nebo cílem odkazu ještě neexistuje, výsledek je null.  
+ Pokud má referenční hodnota hodnotu null nebo pokud cíl odkazu neexistuje, výsledek je null.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)
-- [Specifikace CSDL, SSDL a MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Přehled Entity SQL](entity-sql-overview.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [CAST](cast-entity-sql.md)
+- [Specifikace CSDL, SSDL a MSL](csdl-ssdl-and-msl-specifications.md)

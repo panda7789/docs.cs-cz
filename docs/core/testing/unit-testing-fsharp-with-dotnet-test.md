@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3a9744bfebd93c5004011819b8c6e739e84b97d0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 8ef4489fffa8a0876f7f8dcfd1463965c177646a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626490"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253944"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -62,7 +62,7 @@ Nastavte adresář *MathService. Tests* na aktuální adresář a vytvořte nov�
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali xUnit a xUnit Runner. Nyní přidejte `MathService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```
+```console
 dotnet add reference ../MathService/MathService.fsproj
 ```
 

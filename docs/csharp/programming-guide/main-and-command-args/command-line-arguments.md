@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 345840ad45add21c6088abd0fb45e2e591b7df21
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6f071f907fe38b226a5083699e758bc5fb8bffce
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923888"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252995"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty `Main` metody lze odeslat definováním metody v jednom z následujících způsobů:  
@@ -28,19 +28,19 @@ Argumenty `Main` metody lze odeslat definováním metody v jednom z následujíc
   
  Můžete také převést řetězcové argumenty na číselné typy pomocí <xref:System.Convert> třídy `Parse` nebo metody. Například následující příkaz převede `string` `long` na číslo pomocí <xref:System.Int64.Parse%2A> metody:  
   
-```  
+```csharp  
 long num = Int64.Parse(args[0]);  
 ```  
   
  Je také možné použít C# typ `long`, který aliasy: `Int64`  
   
-```  
+```csharp  
 long num = long.Parse(args[0]);  
 ```  
   
  Ke stejnému účelu můžete `Convert` použít také `ToInt64` metodu třídy:  
   
-```  
+```csharp  
 long num = Convert.ToInt64(s);  
 ```  
   

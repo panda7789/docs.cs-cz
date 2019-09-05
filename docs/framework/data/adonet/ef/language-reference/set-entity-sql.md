@@ -1,16 +1,16 @@
 ---
-title: SET (Entity SQL)
+title: NASTAVIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 28b4deac-c7e4-4f09-b428-4d352ef2dc94
-ms.openlocfilehash: 4e2a387cf400a881dfd91c61b36ee3ce0f5a4431
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76999bcbbb3b63fd945d2048734c58d97de8baea
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797771"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249242"
 ---
-# <a name="set-entity-sql"></a>SET (Entity SQL)
-Pro převedení na kolekci objektů sady pomocí získávání novou kolekci s odstraněnými všechny duplicitní prvky je použit výraz sady.  
+# <a name="set-entity-sql"></a>NASTAVIT (Entity SQL)
+Výraz MNOŽINy se používá k převodu kolekce objektů na sadu pomocí získání nové kolekce s odebranými duplicitními prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,26 +20,26 @@ SET ( expression )
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný výraz platný dotaz, který vrátí kolekci.  
+ Libovolný platný výraz dotazu, který vrací kolekci.  
   
 ## <a name="remarks"></a>Poznámky  
- Výraz sady `SET(c)` je logicky ekvivalentní následující příkaz:  
+ Výraz `SET(c)` množiny je logicky ekvivalentní následujícímu příkazu SELECT:  
   
 ```  
 SELECT VALUE DISTINCT c FROM c  
 ```  
   
- `SET` je jedním z [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinové operátory. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sadu operátorů jsou vyhodnocovány zleva doprava. Zobrazit [EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md) prioritu informace pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinové operátory.  
+ `SET`je jedním z [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množin operátorů. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory set jsou vyhodnocovány zleva doprava. Viz [s výjimkou](except-entity-sql.md) pro informace o [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prioritách pro množinové operátory.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá pro převod na kolekci objektů do sady výraz sady. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá výraz SET pro převod kolekce objektů do sady. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
-2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#SET](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#set)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

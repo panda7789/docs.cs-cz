@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte, jak kontejnerizace aplikaci .NET Core p
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 81b3ce2d6ebb73648d9026c92f490dcc723014f6
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: ec1c6eb5c1a78a631b8205da5d082e44884cde7a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331042"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253947"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace aplikace .NET Core
 
@@ -60,7 +60,7 @@ dotnet new console -o app -n myapp
 
 Váš strom složek bude vypadat následovně:
 
-```console
+```
 docker-working
 │   global.json
 │
@@ -75,7 +75,7 @@ docker-working
             project.assets.json
 ```
 
-Příkaz vytvoří novou složku s názvem App a vygeneruje aplikaci Hello World.  `dotnet new` Zadejte složku *aplikace* a spusťte příkaz `dotnet run`. Zobrazí se následující výstup:
+Příkaz vytvoří novou složku s názvem App a vygeneruje aplikaci Hello World. `dotnet new` Zadejte složku *aplikace* a spusťte příkaz `dotnet run`. Zobrazí se následující výstup:
 
 ```console
 > dotnet run
@@ -184,7 +184,7 @@ Příkaz instruuje Docker, aby vyčetl obrázek s příznakem **2,2** z úloži�
 
 Uložte soubor *souboru Dockerfile* . Adresářová struktura pracovní složky by měla vypadat takto. Některé soubory hlubší úrovně a složky byly vyjmuty, aby se ušetřilo místo v tomto článku:
 
-```console
+```
 docker-working
 │   Dockerfile
 │   global.json
@@ -347,7 +347,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 Docker poskytuje `docker run` příkaz pro vytvoření a spuštění kontejneru jako jediného příkazu. Tento příkaz eliminuje nutnost spuštění `docker create` a pak. `docker start` Tento příkaz lze také nastavit tak, aby při zastavení kontejneru automaticky odstranil kontejner. Například použijte `docker run -it --rm` k provedení dvou věcí, nejdřív, automatické použití aktuálního terminálu k připojení ke kontejneru a po dokončení kontejneru ho odeberte:
 
-```
+```console
 > docker run -it --rm myimage
 Counter: 1
 Counter: 2
@@ -359,14 +359,14 @@ Counter: 5
 
 V `docker run -it`systému, příkaz <kbd>CTRL + C</kbd> zastaví proces, který je spuštěn v kontejneru, který zase zastaví kontejner. Vzhledem k `--rm` tomu, že byl zadán parametr, kontejner je automaticky odstraněn při zastavení procesu. Ověřte, že neexistuje:
 
-```
+```console
 > docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS    PORTS   NAMES
 ```
 
 ### <a name="change-the-entrypoint"></a>Změnit vstupní bod
 
-Příkaz také umožňuje `ENTRYPOINT` upravit příkaz z souboru Dockerfile a spustit něco jiného, ale pouze pro tento kontejner.  `docker run` Například použijte následující příkaz ke spuštění `bash` nebo. `cmd.exe` V případě potřeby upravte příkaz.
+Příkaz také umožňuje `ENTRYPOINT` upravit příkaz z souboru Dockerfile a spustit něco jiného, ale pouze pro tento kontejner. `docker run` Například použijte následující příkaz ke spuštění `bash` nebo. `cmd.exe` V případě potřeby upravte příkaz.
 
 #### <a name="windows"></a>Windows
 V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe`. Stisknutím <kbd>kombinace kláves CTRL + C</kbd> ukončíte proces a zastavíte kontejner.
@@ -452,7 +452,7 @@ docker rmi mcr.microsoft.com/dotnet/core/runtime:2.2
 > [!NOTE]
 > Soubory obrázků můžou být velké. Obvykle byste odebrali dočasné kontejnery, které jste vytvořili při testování a vývoji vaší aplikace. Při plánování vytváření dalších imagí na základě tohoto modulu runtime obvykle zachováte základní image s nainstalovaným modulem runtime.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 * [Vyzkoušejte si kurz ASP.NET Core mikroslužeb.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 * [Projděte si služby Azure, které podporují kontejnery.](https://azure.microsoft.com/overview/containers/)

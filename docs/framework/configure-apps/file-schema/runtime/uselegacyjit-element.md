@@ -4,20 +4,20 @@ ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d79479d1836963fcbdaaf8d40bfc3648b88c4a3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3b783a82b1ef964de308532ef544bbfab2397400
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663414"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252228"
 ---
 # <a name="uselegacyjit-element"></a>\<useLegacyJit – element >
 
 Určuje, zda modul CLR (Common Language Runtime) používá starší 64 kompilátor JIT pro kompilaci za běhu.  
   
-\<> Konfigurace  
-\<> modulu runtime  
-\<useLegacyJit>
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<useLegacyJit>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

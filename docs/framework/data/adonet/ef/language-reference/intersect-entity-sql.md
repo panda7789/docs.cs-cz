@@ -1,16 +1,16 @@
 ---
-title: INTERSECT (Entity SQL)
+title: Průsečík (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 93c6fe33-f341-4b52-911e-adf503891951
-ms.openlocfilehash: 85b0abb03161b2df0cfc4ddf6cafc92fb7de9d95
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a943de89de37d00cc2a643b443da7ef1fd3380b9
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780377"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250602"
 ---
-# <a name="intersect-entity-sql"></a>INTERSECT (Entity SQL)
-Vrátí kolekci všech jedinečných hodnot, které jsou vráceny ve výrazech dotazů na levé straně a pravé straně INTERSECT operandu. Všechny výrazy musí být stejného typu nebo typu běžné základní nebo odvozené jako `expression`.  
+# <a name="intersect-entity-sql"></a>Průsečík (Entity SQL)
+Vrátí kolekci všech jedinečných hodnot, které jsou vráceny výrazy dotazu na levé a pravé straně operandu INTERSECT. Všechny výrazy musí být stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,23 +20,23 @@ expression INTERSECT expression
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný výraz platný dotaz, který vrátí kolekce k porovnání s kolekci vrácené z jiného výrazu dotazu.  
+ Libovolný platný výraz dotazu, který vrátí kolekci pro porovnání s kolekcí vrácenou z jiného výrazu dotazu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Kolekce stejného typu nebo typu běžné základní nebo odvozené jako `expression`.  
+ Kolekce stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="remarks"></a>Poznámky  
- INTERSECT je jedním z [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinové operátory. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sadu operátorů jsou vyhodnocovány zleva doprava. Priorita informace pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nastavit operátory, naleznete v tématu [EXCEPT](../../../../../../docs/framework/data/adonet/ef/language-reference/except-entity-sql.md).  
+ Průsečík je jeden ze [!INCLUDE[esql](../../../../../../includes/esql-md.md)] sad operátorů. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory set jsou vyhodnocovány zleva doprava. Informace o prioritách pro [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinové operátory naleznete v tématu [Except](except-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá operátor INTERSECT vrátí kolekci všech jedinečných hodnot, které jsou vráceny ve výrazech dotazů na levé straně a pravé straně INTERSECT operandu. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz pomocí operátoru INTERSECT vrátí kolekci všech jedinečných hodnot, které jsou vráceny výrazy dotazu na levé a pravé straně operandu INTERSECT. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#INTERSECT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#intersect)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

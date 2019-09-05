@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí třídy XmlSerializer (C#)'
+title: 'Postupy: Serializace pomocí XmlSerializerC#()'
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: 2a9d51bbae905a128d6d5846423a5c02fe1d67d0
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a3b9976dc4aaf132e8c3c8f03c678724db2b6989
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484877"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253323"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>Postupy: Serializace pomocí třídy XmlSerializer (C#)
-Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Xml.Serialization.XmlSerializer>.  
+# <a name="how-to-serialize-using-xmlserializer-c"></a>Postupy: Serializace pomocí XmlSerializerC#()
+Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Serializuje je datový proud paměti a deserializuje je z datového proudu paměti.  
+ Následující příklad vytvoří počet objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je zaserializace do paměťového proudu a pak je deserializace z paměťového proudu.  
   
 ```csharp  
 using System;  
@@ -80,7 +80,7 @@ class XLinqTest
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Testing for type: XElementNullContainer  
   Deserialized type: XElementNullContainer  
 Testing for type: System.Xml.Linq.XElement  

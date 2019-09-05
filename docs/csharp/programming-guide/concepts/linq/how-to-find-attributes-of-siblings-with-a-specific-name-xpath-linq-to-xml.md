@@ -2,12 +2,12 @@
 title: 'Postupy: Najde atributy na stejné úrovni s konkrétním názvem (XPath-LINQ to XML) (C#).'
 ms.date: 07/20/2015
 ms.assetid: c3133d64-523f-422d-8838-73d36b945ca0
-ms.openlocfilehash: 78795f164490dddd6bdc8dae04961c028228ab0c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0d7842f190f7ce7869668929b69c2336d33c6183
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593526"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253726"
 ---
 # <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Postupy: Najde atributy na stejné úrovni s konkrétním názvem (XPath-LINQ to XML) (C#).
 Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu. V kolekci jsou vráceny pouze atributy s určitým názvem.  
@@ -49,7 +49,7 @@ foreach (XAttribute el in list1)
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Results are identical  
 id="bk101"  
 id="bk102"  

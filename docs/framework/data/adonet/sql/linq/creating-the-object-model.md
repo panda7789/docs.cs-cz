@@ -2,40 +2,40 @@
 title: Vytvoření objektového modelu
 ms.date: 03/30/2017
 ms.assetid: 27afce86-9b1d-45fb-8e0b-636bf671a236
-ms.openlocfilehash: 0f1a0d035f2b11f33a9899ededd876155d45de3c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 68fb4ce79b5ee2277821e8a06ceab910cf35480a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743586"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247721"
 ---
 # <a name="creating-the-object-model"></a>Vytvoření objektového modelu
-Můžete vytvořit objektový model z existující databáze a použití modelu ve svém výchozím stavu. Můžete také upravit mnoho aspektů modelu a jeho chování.  
+Můžete vytvořit objektový model z existující databáze a použít model ve svém výchozím stavu. Můžete také přizpůsobit mnoho aspektů modelu a jeho chování.  
   
- Pokud používáte Visual Studio, můžete vytvořit objektový model Návrhář relací objektů.  
+ Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů k vytvoření objektového modelu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
- Popisuje, jak pomocí nástroje příkazového řádku SQLMetal. Také obsahuje odkaz na Návrhář relací objektů pro uživatele sady Visual Studio  
+ [Postupy: Generování objektového modelu v Visual Basic neboC#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)  
+ Popisuje způsob použití nástroje příkazového řádku SQLMetal. Také poskytuje odkaz na Návrhář relací objektů pro uživatele sady Visual Studio  
   
- [Postupy: Generování objektového modelu jako externího souboru](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
- Popisuje, jak generovat soubor mapování externí namísto použití založených na atributech mapování.  
+ [Postupy: Generování objektového modelu jako externího souboru](how-to-generate-the-object-model-as-an-external-file.md)  
+ Popisuje, jak vygenerovat soubor externího mapování namísto použití mapování založeného na atributech.  
   
- [Postupy: Generování přizpůsobeného kódu úpravou souboru DBML](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-customized-code-by-modifying-a-dbml-file.md)  
- Popisuje, jak generovat jazyka Visual Basic nebo C# kódu ze souboru DBML metadat.  
+ [Postupy: Generování přizpůsobeného kódu úpravou souboru DBML](how-to-generate-customized-code-by-modifying-a-dbml-file.md)  
+ Popisuje, jak generovat Visual Basic nebo C# kód ze souboru s metadaty dbml.  
   
- [Postupy: Ověření DBML a externí soubory mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)  
- Popisuje, jak ověřit mapování souborů, které jste upravili (rozšířené).  
+ [Postupy: Ověřit soubory DBML a externí mapování](how-to-validate-dbml-and-external-mapping-files.md)  
+ Popisuje, jak ověřit mapovací soubory, které jste upravili (rozšířené).  
   
- [Postupy: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)  
- Popisuje, jak přidat příslušné atributy k nastavení entit jako serializovatelných.  
+ [Postupy: Vytváření entit serializovatelných](how-to-make-entities-serializable.md)  
+ Popisuje, jak přidat vhodné atributy pro vytváření entit serializovatelných.  
   
- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)  
- Popisuje, jak psát vlastní kód mapování, nebo si přizpůsobit kódu, který byl automaticky generované pomocí editoru kódu.  
+ [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](how-to-customize-entity-classes-by-using-the-code-editor.md)  
+ Popisuje způsob použití editoru kódu k zápisu vlastního kódu mapování nebo přizpůsobení kódu, který byl automaticky vygenerován.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)  
- Poskytuje podrobnosti o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model.  
+ [Objektový model LINQ to SQL](the-linq-to-sql-object-model.md)  
+ Poskytuje podrobnosti o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektovém modelu.  
   
- [Typické postupy použití LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/typical-steps-for-using-linq-to-sql.md)  
- Vysvětluje obvyklé kroky, které můžete provést k implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.
+ [Typické postupy použití LINQ to SQL](typical-steps-for-using-linq-to-sql.md)  
+ Vysvětluje typické kroky, kterými se řídí implementace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.

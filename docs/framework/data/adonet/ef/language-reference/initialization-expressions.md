@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 98daef1f-15d4-483e-985c-d78ea3abe8c8
-ms.openlocfilehash: 78bafcad0a0f34c74ea58f107621ad145c1b405b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 109be8ef2bf41326fcab5896ecdc359859683345
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631533"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250674"
 ---
 # <a name="initialization-expressions"></a>Výrazy inicializace
-Výraz inicializace inicializuje nový objekt. Většina výrazy inicializace jsou podporované. zahrnuje to nové C# 3.0 a výrazy jazyka Visual Basic 9.0 inicializace. Následující typy lze inicializovat a vrácené LINQ dotazu entity:  
+Inicializační výraz inicializuje nový objekt. Většina inicializačních výrazů je podporovaná, včetně C# většiny nových Visual Basicch inicializačních výrazů 3,0 a 9,0. Následující typy lze inicializovat a vracet LINQ to Entitiesm dotazem:  
   
-- Kolekce nulu nebo více objektů zadané entity nebo projekce komplexní typy, které jsou definované v konceptuálním modelu.  
+- Kolekce nula nebo více typových objektů entit nebo projekce komplexních typů, které jsou definovány v koncepčním modelu.  
   
-- Typy CLR nepodporuje [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+- Typy CLR podporované [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
   
 - Vložené kolekce.  
   
 - Anonymní typy.  
   
- Inicializace anonymního typu můžete vidět v následujícím příkladu v syntaxi výrazů dotazů:  
+ V následujícím příkladu se v syntaxi výrazu dotazu zobrazuje příklad inicializace anonymního typu:  
   
  [!code-csharp[DP L2E Conceptual Examples#AnonymousTypeInitialization](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#anonymoustypeinitialization)]
  [!code-vb[DP L2E Conceptual Examples#AnonymousTypeInitialization](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#anonymoustypeinitialization)]  
   
- Následující příklad v syntaxi dotazů založených na volání metody ukazuje inicializaci anonymního typu:  
+ Následující příklad v syntaxi dotazu založeného na metodách ukazuje inicializaci anonymního typu:  
   
  [!code-csharp[DP L2E Conceptual Examples#AnonymousTypeInitialization_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#anonymoustypeinitialization_mq)]
  [!code-vb[DP L2E Conceptual Examples#AnonymousTypeInitialization_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#anonymoustypeinitialization_mq)]  
   
- Inicializace uživatelsky definované třídy, je také podporována. C# 3.0 a Visual Basic 9.0 inicializace vzor je podporován a předpokládá, že vlastnost getter a setter jsou symetrické. Následující příklad v syntaxe výrazu dotazu ukazuje vlastní třídu během inicializace v dotazu:  
+ Podporuje se i uživatelsky definovaná inicializace třídy. Inicializační C# vzor 3,0 a Visual Basic 9,0 je podporován a předpokládá, že metoda getter a setter vlastnosti je symetrická. Následující příklad v syntaxi výrazu dotazu ukazuje vlastní třídu, která je inicializována v dotazu:  
   
  [!code-csharp[DP L2E Conceptual Examples#MyOrder](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myorder)]
  [!code-vb[DP L2E Conceptual Examples#MyOrder](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myorder)]  
@@ -41,11 +41,11 @@ Výraz inicializace inicializuje nový objekt. Většina výrazy inicializace js
  [!code-csharp[DP L2E Conceptual Examples#TypeInitialization](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#typeinitialization)]
  [!code-vb[DP L2E Conceptual Examples#TypeInitialization](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#typeinitialization)]  
   
- Následující příklad v syntaxi dotazů založených na volání metody ukazuje vlastní třídu během inicializace v dotazu:  
+ Následující příklad syntaxe dotazu založeného na metodách zobrazuje vlastní třídu, která je inicializována v dotazu:  
   
  [!code-csharp[DP L2E Conceptual Examples#TypeInitialization_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#typeinitialization_mq)]
  [!code-vb[DP L2E Conceptual Examples#TypeInitialization_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#typeinitialization_mq)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výrazy v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)
+- [Výrazy v dotazech LINQ to Entities](expressions-in-linq-to-entities-queries.md)

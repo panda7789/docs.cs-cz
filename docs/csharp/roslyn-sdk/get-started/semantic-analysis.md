@@ -1,84 +1,84 @@
 ---
-title: Začínáme s sémantická analýza
-description: Tento kurz obsahuje přehled práce s sémantické analýzy pomocí sady .NET SDK kompilátoru.
+title: Začínáme se sémantickou analýzou
+description: Tento kurz poskytuje přehled o práci se sémantickou analýzou pomocí sady .NET Compiler SDK.
 ms.date: 02/06/2018
 ms.custom: mvc
-ms.openlocfilehash: 188104c3430b4ca32578cd35d3e161a6eb0e0e1a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80a814054ab95a5b6585289e8580a725b18ca44e
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61676063"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252937"
 ---
-# <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantická analýza
+# <a name="get-started-with-semantic-analysis"></a>Začínáme se sémantickou analýzou
 
-Tento kurz předpokládá, že jste obeznámeni s rozhraním API syntaxe. [Vám umožní začít analýza syntaxe](syntax-analysis.md) článek obsahuje úvod dostatečná.
+V tomto kurzu se předpokládá, že jste obeznámeni s rozhraním API syntaxe. Článek Začínáme [s analýzou syntaxe](syntax-analysis.md) poskytuje dostatečný Úvod.
 
-V tomto kurzu, můžete prozkoumat **Symbol** a **vazba rozhraní API**. Tato rozhraní API poskytují informace o _sémantický význam_ programu. Umožňují o typech reprezentována žádný symbol ve svém programu otázek a odpovědí.
+V tomto kurzu prozkoumáte **symbol** a **vazby rozhraní API**. Tato rozhraní API poskytují informace o _sémantickém významu_ programu. Umožňují klást dotazy a odpovídat na typy reprezentované libovolným symbolem v programu.
 
-Budete muset nainstalovat **sada SDK platformy kompilátoru .NET**:
+Budete muset nainstalovat **sadu .NET Compiler Platform SDK**:
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
-## <a name="understanding-compilations-and-symbols"></a>Principy kompilace a symboly
+## <a name="understanding-compilations-and-symbols"></a>Porozumění kompilacím a symbolům
 
-Při práci více s využitím .NET SDK kompilátoru, byste se seznámit s rozdíly mezi syntaxe rozhraní API a sémantické rozhraní API. **Syntaxe API** můžete se podívat _struktura_ programu. Často však chcete rozsáhlejší informace o sémantiku nebo _význam_ programu. Když dojde ke ztrátě kódu souboru nebo fragment kódu jazyka Visual Basic nebo C# mohou být v izolaci analyzovány syntakticky, není smysluplné klást otázky, jako "Jaký je typ této proměnné" v takový. Význam názvu typu může být závislá na odkazy na sestavení, importů oboru názvu nebo jiné soubory kódu. Tyto otázky jsou zodpovězeny pomocí **sémantické API**, konkrétně <xref:Microsoft.CodeAnalysis.Compilation?displayProperty=nameWithType> třídy.
+Při práci více se sadou .NET Compiler SDK se můžete seznámit s rozdíly mezi syntaxí API a sémantickým rozhraním API. **Rozhraní API syntaxe** vám umožní podívat se na _strukturu_ programu. Nicméně často potřebujete bohatší informace o sémantikě nebo _významu_ programu. Přestože volný soubor kódu nebo fragment kódu jazyka VB nebo C# kódu lze syntakticky analyzovat v izolaci, není smysluplné klást otázky, jako je například typ této proměnné, v vaku. Význam názvu typu může být závislý na odkazech na sestavení, na importech oboru názvů nebo v jiných souborech kódu. Tyto otázky jsou zodpovězeny pomocí **sémantického rozhraní API**, konkrétně <xref:Microsoft.CodeAnalysis.Compilation?displayProperty=nameWithType> třídy.
 
-Instance <xref:Microsoft.CodeAnalysis.Compilation> je obdobou do jednoho projektu, jak je vidět v kompilátoru a představuje vše potřebné pro kompilaci programu Visual Basic nebo C#. **Kompilace** zahrnuje sadu zdrojových souborů ke kompilaci, odkazy na sestavení a možnosti kompilátoru. Můžete odůvodnitelný význam kódu pomocí všechny ostatní informace v tomto kontextu. A <xref:Microsoft.CodeAnalysis.Compilation> umožňuje najít **symboly** -entity jako jsou typy, obory názvů, členy a proměnné, které názvy a jiných výrazech odkazovat. Proces přiřazení názvy a výrazy s **symboly** nazývá **vazby**.
+Instance <xref:Microsoft.CodeAnalysis.Compilation> je analogická k jednomu projektu, jak je vidět kompilátorem a představuje vše potřebné pro zkompilování Visual Basic nebo C# programu. **Kompilace** obsahuje sadu zdrojových souborů, které mají být zkompilovány, odkazy na sestavení a možnosti kompilátoru. Důvody týkající se významu kódu můžete získat pomocí všech dalších informací v tomto kontextu. Umožňuje vyhledat symboly – entity, jako jsou typy, obory názvů, členy a proměnné, které názvy a další výrazy odkazují na. <xref:Microsoft.CodeAnalysis.Compilation> Proces přidružení názvů a výrazů se **symboly** se nazývá **vazba**.
 
-Stejně jako <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, <xref:Microsoft.CodeAnalysis.Compilation> je abstraktní třídy odvozené konfigurace specifické pro jazyk. Při vytváření instance kompilace, je nutné vyvolat výrobní metoda na <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation?displayProperty=nameWithType> (nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicCompilation?displayProperty=nameWithType>) třídy.
+Jako <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>jeabstraktnítřída sderivátyspecifickýmiprojazyk.<xref:Microsoft.CodeAnalysis.Compilation> Při vytváření instance kompilace musíte vyvolat metodu objektu pro vytváření ve <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation?displayProperty=nameWithType> třídě (nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicCompilation?displayProperty=nameWithType>).
 
 ## <a name="querying-symbols"></a>Dotazování na symboly
 
-V tomto kurzu se podíváte na "Hello World" program znovu. Tento čas dotazování symboly v programu pochopit, jaké typy představují tyto symboly. Dotazování pro typy v oboru názvů a zjistěte, jak najít dostupné metody na typu.
+V tomto kurzu se podíváte na Hello World program znovu. Tentokrát zadáte dotaz na symboly v programu, abyste pochopili, jaké typy symbolů představuje. Budete dotazováni na typy v oboru názvů a naučíte se najít metody dostupné pro typ.
 
-Zobrazí se dokončený kód pro tuto ukázku v [našeho úložiště GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SemanticQuickStart).
+Dokončený kód pro tuto ukázku najdete v [našem úložišti GitHub](https://github.com/dotnet/samples/tree/master/csharp/roslyn-sdk/SemanticQuickStart).
 
 > [!NOTE]
-> Typy stromu syntaxe. použít k podrobnému popisu různé prvky syntaxe, které jsou platné v různých umístěních v programu dědičnosti. Pomocí těchto rozhraní API často znamená, že vlastnosti přetypování nebo členy kolekce na konkrétní odvozené typy. V následujících příkladech jsou přiřazení a položky CAST samostatných příkazů pomocí explicitně proměnných. Si můžete přečíst kód chcete zobrazit návratové typy rozhraní API a modulu runtime typu vrácených objektů. V praxi je běžné použití implicitně typované proměnné a závisí na názvy rozhraní API pro popis typu objektů zkoumají.
+> Typy stromové struktury syntaxe používají dědičnost k popisu různých syntaktických prvků, které jsou platné v různých umístěních v programu. Použití těchto rozhraní API často znamená přetypování vlastností nebo členů kolekce na konkrétní odvozené typy. V následujících příkladech je přiřazení a přetypování samostatné příkazy pomocí explicitně typových proměnných. Můžete si přečíst kód a zobrazit návratové typy rozhraní API a typ modulu runtime vrácených objektů. V praxi je obvyklejší používat implicitně typové proměnné a spoléhat na názvy rozhraní API k popisu typu testovaných objektů.
 
-Vytvoření nového jazyka C# **samostatný nástroj pro analýzu kódu** projektu:
+Vytvořit nový C# projekt **Nástroje pro analýzu samostatného kódu** :
 
-* V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt.
-* V části **Visual C#** > **rozšiřitelnost**, zvolte **samostatný nástroj pro analýzu kódu**.
-* Pojmenujte svůj projekt "**SemanticQuickStart**" a klikněte na tlačítko OK.
+* V aplikaci Visual Studio vyberte **soubor** > **Nový** > **projekt** a zobrazte tak dialogové okno Nový projekt.
+* V části **rozšiřitelnost**  >  **vizuálu C#** vyberte **Nástroj pro analýzu**samostatného kódu.
+* Pojmenujte projekt "**SemanticQuickStart**" a klikněte na tlačítko OK.
 
-Chystáte se analyzovat základní "Hello World!" Program je uvedeno výše.
-Přidejte text pro program Hello World jako konstanta ve vaší `Program` třídy:
+Chystáte se analyzovat základní "Hello World!" program byl zobrazen výše.
+Přidejte text pro Hello World program jako konstantu do vaší `Program` třídy:
 
 [!code-csharp[Declare the program test](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#1 "Declare a constant string for the program text to analyze")]
 
-Dále přidejte následující kód k vytvoření stromu syntaxe v kódu text `programText` konstantní.  Přidejte následující řádek, který vaše `Main` metody:
+Dále přidejte následující kód, který sestaví strom syntaxe pro text kódu v `programText` konstantě.  Do `Main` metody přidejte následující řádek:
 
 [!code-csharp[Create the tree](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#2 "Create the syntax tree")]
 
-V dalším kroku sestavení <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation> ze stromu, který jste už vytvořili. Ukázka "Hello World" spoléhá na <xref:System.String> a <xref:System.Console> typy. Potřebujete odkazovat na sestavení, který deklaruje tyto dva typy v kompilaci. Přidejte následující řádek, který vaše `Main` metodu pro vytvoření kompilace stromu syntaxe, včetně odkazu na odpovídající sestavení:
+Dále Sestavte <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation> ze stromu, který jste už vytvořili. Ukázka "Hello World" spoléhá na <xref:System.String> typy a. <xref:System.Console> Musíte odkazovat na sestavení, které deklaruje tyto dva typy v kompilaci. Přidejte následující řádek do `Main` metody pro vytvoření kompilace stromu syntaxe, včetně odkazu na příslušné sestavení:
 
 [!code-csharp[Create the compilation](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#3 "Create the compilation for the semantic model")]
 
-<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> Metoda přidá odkazy na sestavení. <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile%2A?displayProperty=nameWithType> Metoda načte sestavení jako odkaz.
+<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> Metoda přidá odkazy na kompilaci. <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile%2A?displayProperty=nameWithType> Metoda načte sestavení jako odkaz.
 
 ## <a name="querying-the-semantic-model"></a>Dotazování sémantického modelu
 
-Jakmile budete mít <xref:Microsoft.CodeAnalysis.Compilation> můžete požádat pro <xref:Microsoft.CodeAnalysis.SemanticModel> pro všechny <xref:Microsoft.CodeAnalysis.SyntaxTree> součástí, která <xref:Microsoft.CodeAnalysis.Compilation>. Sémantický model si lze představit jako zdroj pro všechny informace, které by obvykle získáte z technologie intellisense. A <xref:Microsoft.CodeAnalysis.SemanticModel> lze zodpovědět otázky typu "Co jsou názvy v oboru na tomto místě?", "co mohou členové jsou přístupné z této metody?", "jaké proměnné se používají v tomto bloku textu?" a "Co tento název nebo výraz odkazovat?" Přidejte tento příkaz vytvoří sémantického modelu:
+Jakmile budete mít k <xref:Microsoft.CodeAnalysis.Compilation> dispozici, můžete si ji <xref:Microsoft.CodeAnalysis.SemanticModel> vyžádat <xref:Microsoft.CodeAnalysis.SyntaxTree> pro všechny, <xref:Microsoft.CodeAnalysis.Compilation>které obsahují. Sémantický model si můžete představit jako zdroj pro všechny informace, které byste normálně získali z IntelliSense. <xref:Microsoft.CodeAnalysis.SemanticModel> Může odpovídat na otázky, jako je "Jaké názvy jsou v oboru v tomto umístění?", "které členy jsou přístupné z této metody?" "," Jaké proměnné jsou použity v tomto bloku textu? "" a "čemu tento název/výraz odkazují na?" Přidáním tohoto příkazu vytvořte sémantický model:
 
 [!code-csharp[Create the semantic model](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#4 "Create the semantic model")]
 
-## <a name="binding-a-name"></a>Vytvoření vazby názvu
+## <a name="binding-a-name"></a>Vazba názvu
 
-<xref:Microsoft.CodeAnalysis.Compilation> Vytvoří <xref:Microsoft.CodeAnalysis.SemanticModel> z <xref:Microsoft.CodeAnalysis.SyntaxTree>. Po vytvoření modelu, můžete dát dotaz na hledání první `using` směrnice a získat informace o symbolech pro `System` oboru názvů. Přidejte následující dva řádky do vaší `Main` metodu pro vytvoření sémantického modelu a načtení symbolů pro první příkaz using:
+<xref:Microsoft.CodeAnalysis.Compilation> Vytvoří z.<xref:Microsoft.CodeAnalysis.SemanticModel> <xref:Microsoft.CodeAnalysis.SyntaxTree> Po vytvoření modelu se můžete dotazovat na jeho první `using` direktivu a načíst informace o symbolech `System` pro obor názvů. Přidejte tyto dva řádky do `Main` metody, abyste vytvořili sémantický model a načetli symbol pro první příkaz using:
 
 [!code-csharp[Find the namespace symbol for the first using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#5 "Find the namespace symbol for the first using")]
 
-Předchozí kód ukazuje, jak vytvořit vazbu názvu v prvním `using` směrnice pro načtení <xref:Microsoft.CodeAnalysis.SymbolInfo?displayProperty=nameWithType> pro `System` oboru názvů. Předchozí kód také ukazuje, že používáte **syntaxe modelu** najít struktury kódu; použijete **sémantického modelu** pochopit jeho význam. **Syntaxe modelu** najde řetězec `System` v pomocí příkazu. **Sémantického modelu** má všechny informace týkající se typy definované v `System` oboru názvů.
+Předchozí kód ukazuje, jak vytvořit název v první `using` direktivě pro <xref:Microsoft.CodeAnalysis.SymbolInfo?displayProperty=nameWithType> načtení pro `System` obor názvů. Předchozí kód také ukazuje použití **modelu syntaxe** k nalezení struktury kódu; použijte **sémantický model** pro pochopení svého významu. **Model syntaxe** vyhledá řetězec `System` v příkazu Using. **Sémantický model** obsahuje všechny informace o typech definovaných v `System` oboru názvů.
 
-Z <xref:Microsoft.CodeAnalysis.SymbolInfo> objektu můžete získat <xref:Microsoft.CodeAnalysis.ISymbol?displayProperty=nameWithType> pomocí <xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> vlastnost. Tato vlastnost vrátí symbol, na který odkazuje tento výraz. Výrazy, které není odkazují na nic (jako je například číselné literály) této vlastnosti je `null`. Když <xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> nemá hodnotu null, <xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> označuje typ symbolu. V tomto příkladu <xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> je vlastnost <xref:Microsoft.CodeAnalysis.SymbolKind.Namespace?displayProperty=nameWithType>. Přidejte následující kód, který vaše `Main` metody. Načtení symbolů pro `System` obor názvů a zobrazí všechny podřízené obory názvů deklarovaný v `System` obor názvů:
+Z objektu můžete <xref:Microsoft.CodeAnalysis.ISymbol?displayProperty=nameWithType> získat pomocí <xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> vlastnosti. <xref:Microsoft.CodeAnalysis.SymbolInfo> Tato vlastnost vrací symbol, na který tento výraz odkazuje. Pro výrazy, které neodkazují na cokoli (například číselné literály) Tato vlastnost `null`je. Pokud není null <xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> , označuje typ symbolu. <xref:Microsoft.CodeAnalysis.SymbolInfo.Symbol?displayProperty=nameWithType> V tomto příkladu <xref:Microsoft.CodeAnalysis.ISymbol.Kind?displayProperty=nameWithType> <xref:Microsoft.CodeAnalysis.SymbolKind.Namespace?displayProperty=nameWithType>je vlastnost. Do `Main` metody přidejte následující kód. Načte symbol pro `System` obor názvů a potom zobrazí všechny podřízené obory názvů deklarované `System` v oboru názvů:
 
 [!code-csharp[Display all the child namespaces](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#6 "Display all the child namespaces from this compilation")]
 
-Spusťte program a zobrazí se následující výstup:
+Spusťte program a měl by se zobrazit následující výstup:
 
-```
+```output
 System.Collections
 System.Configuration
 System.Deployment
@@ -97,45 +97,45 @@ Press any key to continue . . .
 ```
 
 > [!NOTE]
-> Výstup nezahrnuje každého oboru názvů, který je z podřízených oborů názvů `System` oboru názvů. Zobrazí každý obor názvů, který je k dispozici v této kompilaci, která odkazuje pouze na sestavení kde `System.String` je deklarována. Všechny obory názvů deklarovaný v jiných sestaveních nejsou známá, mají tato kompilace
+> Výstup nezahrnuje každý obor názvů, který je podřízeným oborem `System` názvů oboru názvů. Zobrazuje každý obor názvů, který je k dispozici v této kompilaci, který odkazuje pouze `System.String` na sestavení, které je deklarováno. V této kompilaci nejsou známy žádné obory názvů deklarované v jiných sestaveních.
 
-### <a name="binding-an-expression"></a>Vazba výraz
+### <a name="binding-an-expression"></a>Vazba výrazu
 
-Předchozí kód ukazuje, jak najít symbol vazbou na název. Existují jiné výrazy v programu v C#, která může být vázaný, které nejsou názvy. Abychom si předvedli tuto funkci, umožňuje přístup k vazby na jednoduché řetězcový literál.
+Předchozí kód ukazuje, jak najít symbol pomocí vazby na název. V C# programu existují další výrazy, které mohou být vázány na názvy. K tomu, aby bylo možné tuto funkci předvést, pojďme přistoupit k vazbě na jednoduchý řetězcový literál.
 
-Program "Hello World" obsahuje <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax?displayProperty=nameWithType>, "Hello, World!" řetězec se zobrazí v konzole.
+Program "Hello World" obsahuje <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax?displayProperty=nameWithType>, "Hello, World!" řetězec zobrazený v konzole.
 
-Vyhledejte "Hello, World!" řetězec, který vyhledává jeden řetězcový literál v programu. Poté po nacházíte uzel syntaxe, získejte informace o typu pro tento uzel z sémantického modelu. Přidejte následující kód, který vaše `Main` metody:
+Najdete "Hello, World!" řetězec vyhledáním jediného řetězcového literálu v programu. Po umístění uzlu syntaxe získáte informace o typu pro tento uzel ze sémantického modelu. Do `Main` metody přidejte následující kód:
 
 [!code-csharp[Find the namespace symbol for the only using](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#7 "Find the namespace symbol for the only using")]
 
-<xref:Microsoft.CodeAnalysis.TypeInfo?displayProperty=nameWithType> Struktura zahrnuje <xref:Microsoft.CodeAnalysis.TypeInfo.Type?displayProperty=nameWithType> vlastnost, která umožňuje přístup k sémantické informace o typu literál. V tomto příkladu to `string` typu. Přidání deklarace, která se přiřadí tuto vlastnost na místní proměnnou:
+<xref:Microsoft.CodeAnalysis.TypeInfo?displayProperty=nameWithType> Struktura<xref:Microsoft.CodeAnalysis.TypeInfo.Type?displayProperty=nameWithType> obsahuje vlastnost, která umožňuje přístup k sémantickým informacím o typu literálu. V tomto příkladu je to `string` typ. Přidejte deklaraci, která přiřadí tuto vlastnost místní proměnné:
 
 [!code-csharp[Find the semantic information about the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#8 "Use the string literal to access the semantic information in the string type.")]
 
-K dokončení tohoto kurzu Vytvořme dotaz LINQ, který vytvoří posloupnost všechny veřejné metody deklarované `string` typ, který vrací `string`. Tento dotaz získá složitá, takže můžeme sestavit řádek po řádku, pak rekonstrukci jako jeden dotaz. Zdroj pro tento dotaz je posloupnost všechny členy deklarované `string` typu:
+Pro dokončení tohoto kurzu sestavíme dotaz LINQ, který vytvoří sekvenci všech veřejných metod deklarovaných v `string` typu, který `string`vrací. Tento dotaz je složitý, takže ho sestavíme řádek po řádku a pak ho znovu sestavíte jako jeden dotaz. Zdroj pro tento dotaz je sekvence všech členů deklarovaných u `string` tohoto typu:
 
 [!code-csharp[Access the sequence of members on the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#9 "Access the sequence of members on the string type.")]
 
-Této zdrojové sekvence obsahuje všechny členy, včetně vlastností a polí, takže filtrovat pomocí <xref:System.Collections.Immutable.ImmutableArray%601.OfType%2A?displayProperty=nameWithType> metodu najít prvky, které jsou <xref:Microsoft.CodeAnalysis.IMethodSymbol?displayProperty=nameWithType> objekty:
+Tato zdrojová sekvence obsahuje všechny členy, včetně vlastností a polí, takže je vyfiltrujte <xref:System.Collections.Immutable.ImmutableArray%601.OfType%2A?displayProperty=nameWithType> pomocí metody pro nalezení prvků, <xref:Microsoft.CodeAnalysis.IMethodSymbol?displayProperty=nameWithType> které jsou objekty:
 
 [!code-csharp[Filter the sequence to only methods](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#10 "Find the subset of the collection that is the methods.")]
 
-V dalším kroku přidejte další filtrem pro vrácení pouze těch metod, které jsou veřejné a návratový `string`:
+Dále přidejte další filtr, který vrátí pouze ty metody, které jsou veřejné a vrátí `string`:
 
 [!code-csharp[Filter on return type and accessibility](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#11 "Find only the public methods that return a string.")]
 
-Vyberte pouze vlastnost name a pouze odlišné názvy odstraněním všech přetížení:
+Vyberte pouze vlastnost název a jedinečné názvy odebráním všech přetížení:
 
 [!code-csharp[find the distinct names.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#12 "Use the string literal to access the semantic information in the string type.")]
 
-Můžete také sestavit celý dotaz pomocí syntaxe dotazu LINQ a zobrazte všechny názvy metod v konzole:
+Můžete také vytvořit úplný dotaz pomocí syntaxe dotazu LINQ a pak zobrazit všechny názvy metod v konzole:
 
 [!code-csharp[build and display the results of this query.](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#13 "Build and display the results of the query.")]
 
-Sestavte program a spusťte ho. Byste měli vidět následující výstup:
+Sestavte program a spusťte ho. Měl by se zobrazit následující výstup:
 
-```
+```output
 Join
 Substring
 Trim
@@ -160,4 +160,4 @@ IsInterned
 Press any key to continue . . .
 ```
 
-Rozhraní API pro sémantické jste použili k vyhledání a zobrazení informací o symbolech, které jsou součástí tohoto programu.
+Použili jste sémantické rozhraní API k vyhledání a zobrazení informací o symbolech, které jsou součástí tohoto programu.

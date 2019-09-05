@@ -2,22 +2,22 @@
 title: Stručné reference k Entity SQL
 ms.date: 03/30/2017
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
-ms.openlocfilehash: b4e3eaf8abd82b63fa2663b47f878ecfa9584897
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7780359d981b130118cb73d4892f3dcb4b6e2e7d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785252"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251031"
 ---
 # <a name="entity-sql-quick-reference"></a>Stručné reference k Entity SQL
-Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy. Dotazy v tomto tématu jsou založeny na modelu AdventureWorks Sales.  
+V tomto tématu najdete stručný přehled [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazů. Dotazy v tomto tématu jsou založené na modelu prodeje společnosti AdventureWorks.  
   
 ## <a name="literals"></a>Literály  
   
 ### <a name="string"></a>String  
- Existují řetězcové literály znaků Unicode a kódování Unicode. Řetězce Unicode jsou předponou N. Například `N'hello'`.  
+ Existují řetězcové literály znaků Unicode a non-Unicode. K řetězcům Unicode jsou předpony N. Například `N'hello'`.  
   
- Následuje příklad Non-Unicode řetězcového literálu:  
+ Následuje příklad řetězcového literálu, který není Unicode:  
   
 ```  
 'hello'  
@@ -27,12 +27,12 @@ Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |Dobrý den|  
   
 ### <a name="datetime"></a>DateTime  
- V literálech datum a čas datum a čas části jsou povinné. Neexistují žádné výchozí hodnoty.  
+ V literálech DateTime jsou části data a času povinné. Neexistují žádné výchozí hodnoty.  
   
  Příklad:  
   
@@ -46,10 +46,10 @@ DATETIME '2006-12-25 01:01'
   
 |Value|  
 |-----------|  
-|12/25/2006 1:01:00: 00|  
+|12/25/2006 1:01:00 DOP.|  
   
 ### <a name="integer"></a>Integer  
- Literály celých čísel může být typu Int32 (123), UInt32 (123U), Int64 (123L) a UInt64 (123UL).  
+ Celočíselné literály můžou být typu Int32 (123), UInt32 (123U), Int64 (123L) a UInt64 (123UL).  
   
  Příklad:  
   
@@ -67,12 +67,12 @@ DATETIME '2006-12-25 01:01'
 |3|  
   
 ### <a name="other"></a>Ostatní  
- Ostatní literály, které podporuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou identifikátor Guid, binární soubor, Float nebo Double, Decimal, a `null`. Hodnota Null, literály v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou považovány za kompatibilní se každý jiný typ v konceptuálním modelu.  
+ Jiné literály podporované nástrojem [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou GUID, binary, float/Double, Decimal a. `null` Literály null v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou považovány za kompatibilní s každým jiným typem v koncepčním modelu.  
   
-## <a name="type-constructors"></a>Konstruktory typu  
+## <a name="type-constructors"></a>Konstruktory typů  
   
 ### <a name="row"></a>ROW  
- [ŘÁDEK](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md) vytvoří anonymní, typované strukturálně (záznamů) hodnotu jako v: `ROW(1 AS myNumber, ‘Name’ AS myName).`  
+ [Řádek](row-entity-sql.md) vytvoří anonymní, strukturálně napsané (záznam) hodnoty jako v:`ROW(1 AS myNumber, ‘Name’ AS myName).`  
   
  Příklad:  
   
@@ -83,15 +83,15 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
   
  Výstup:  
   
-|ProductID|Název|  
+|ProductID|Name|  
 |---------------|----------|  
-|1|Měnitelné závodu|  
-|879|Univerzální kol samostatné|  
-|712|AWC Logo zakončení|  
+|1|Přizpůsobitelná rasy|  
+|879|Stojan kol pro všechny účely|  
+|712|Zakončení loga AWC|  
 |...|...|  
   
 ### <a name="multiset"></a>MULTISET  
- [MULTISET](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md) konstrukce kolekcí, jako například:  
+ [MULTISET](multiset-entity-sql.md) sestaví kolekce, například:  
   
  `MULTISET(1,2,2,3)` `--same as`-`{1,2,2,3}.`  
   
@@ -105,10 +105,10 @@ SELECT VALUE product FROM AdventureWorksEntities.Product AS product WHERE produc
   
 |ProductID|Název|ProductNumber|…|  
 |---------------|----------|-------------------|-------|  
-|842|Touring-Panniers, Large|PA-T100|…|  
+|842|Touring – Panniers, velký|PA-T100|…|  
   
 ### <a name="object"></a>Objekt  
- [Konstruktor typu s názvem](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md) vytvoří (pojmenované) uživatelem definované objekty, jako například `person("abc", 12)`.  
+ [Konstruktor pojmenovaného typu](named-type-constructor-entity-sql.md) konstrukce (pojmenované) uživatelsky definované objekty, například `person("abc", 12)`.  
   
  Příklad:  
   
@@ -130,7 +130,7 @@ AS o
 ## <a name="references"></a>Odkazy  
   
 ### <a name="ref"></a>REF  
- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md) vytvoří odkaz na instanci typu entity. Například následující dotaz vrátí odkazy na jednotlivé entity pořadí v sadě entit objednávky:  
+ [Odkaz vytvoří odkaz](ref-entity-sql.md) na instanci typu entity. Následující dotaz například vrátí odkazy na každou entitu objednávky v sadě entit Orders:  
   
 ```  
 SELECT REF(o) AS OrderID FROM Orders AS o  
@@ -145,7 +145,7 @@ SELECT REF(o) AS OrderID FROM Orders AS o
 |3|  
 |...|  
   
- Následující příklad používá vlastnost extrakce – operátor (.) pro přístup k vlastnosti entity. Při extrakci operátor vlastnost se používá, odkaz je automaticky přes ukazatel.  
+ Následující příklad používá operátor extrakce vlastností (.) pro přístup k vlastnosti entity. Při použití operátoru extrakce vlastností je odkaz automaticky odkázat.  
   
  Příklad:  
   
@@ -158,13 +158,13 @@ SELECT VALUE REF(p).Name FROM
   
 |Value|  
 |-----------|  
-|Měnitelné závodu|  
-|Univerzální kol samostatné|  
-|AWC Logo zakončení|  
+|Přizpůsobitelná rasy|  
+|Stojan kol pro všechny účely|  
+|Zakončení loga AWC|  
 |...|  
   
 ### <a name="deref"></a>DEREF  
- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md) přístupů přes ukazatel, hodnota odkazu a vytváří výsledek, který přístup přes ukazatel. Například následující dotaz vyprodukuje entity pořadí pro každé pořadí v sadě entit objednávky: `SELECT DEREF(o2.r) FROM (SELECT REF(o) AS r FROM LOB.Orders AS o) AS o2`...  
+ [DEREF](deref-entity-sql.md) odkazuje na referenční hodnotu a vytváří výsledek tohoto odkázání. Následující dotaz například vytváří entity objednávek pro jednotlivé objednávky v sadě entit Orders: `SELECT DEREF(o2.r) FROM (SELECT REF(o) AS r FROM LOB.Orders AS o) AS o2`..  
   
  Příklad:  
   
@@ -177,13 +177,13 @@ SELECT VALUE DEREF(REF(p)).Name FROM
   
 |Value|  
 |-----------|  
-|Měnitelné závodu|  
-|Univerzální kol samostatné|  
-|AWC Logo zakončení|  
+|Přizpůsobitelná rasy|  
+|Stojan kol pro všechny účely|  
+|Zakončení loga AWC|  
 |...|  
   
 ### <a name="createref-and-key"></a>CREATEREF A KLÍČ  
- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md) vytvoří odkaz předáním klíče. [KLÍČ](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md) extrahuje část výraz s odkaz na typ klíče.  
+ [CREATEREF](createref-entity-sql.md) vytvoří odkaz, který projde klíč. [Klíč](key-entity-sql.md) extrahuje klíčovou část výrazu s odkazem na typ.  
   
  Příklad:  
   
@@ -204,7 +204,7 @@ SELECT VALUE Key(CreateRef(AdventureWorksEntities.Product, row(p.ProductID)))
 ## <a name="functions"></a>Funkce  
   
 ### <a name="canonical"></a>Canonical  
- Obor názvů pro [kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md) je Edm, stejně jako v `Edm.Length("string")`. Není nutné zadat obor názvů, pokud jiný obor názvů se importuje, který obsahuje funkce se stejným názvem jako kanonické funkce. Pokud dva obory názvů mají stejnou funkci, uživatel by měl konkrétní úplný název.  
+ Obor názvů pro [kanonické funkce](canonical-functions.md) je EDM, jako `Edm.Length("string")`v. Není nutné zadávat obor názvů, pokud není importován jiný obor názvů, který obsahuje funkci se stejným názvem jako kanonická funkce. Pokud mají dva obory názvů stejnou funkci, měl by uživatel určit celé jméno.  
   
  Příklad:  
   
@@ -222,8 +222,8 @@ SELECT Length(c. FirstName) As NameLen FROM
 |6|  
 |5|  
   
-### <a name="microsoft-provider-specific"></a>Specifické pro společnost Microsoft poskytovatele  
- [Funkce specifické pro zprostředkovatele Microsoft](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md) v `SqlServer` oboru názvů.  
+### <a name="microsoft-provider-specific"></a>Specifické pro poskytovatele Microsoftu  
+ [Funkce specifické pro poskytovatele společnosti Microsoft](../sqlclient-for-ef-functions.md) jsou v `SqlServer` oboru názvů.  
   
  Příklad:  
   
@@ -242,7 +242,7 @@ SELECT SqlServer.LEN(c.EmailAddress) As EmailLen FROM
 |26|  
   
 ## <a name="namespaces"></a>Jmenné prostory  
- [POMOCÍ](../../../../../../docs/framework/data/adonet/ef/language-reference/using-entity-sql.md) určuje oborů názvů používaných ve výrazu dotazu.  
+ [Použití](using-entity-sql.md) určuje obory názvů použité ve výrazu dotazu.  
   
  Příklad:  
   
@@ -252,12 +252,12 @@ using SqlServer; LOWER('AA');
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |aa|  
   
 ## <a name="paging"></a>Stránkování  
- Stránkování může být vyjádřena pomocí deklarace [přeskočit](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md) a [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) dílčí klauzule [klauzule ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) klauzuli.  
+ Stránkování lze vyjádřit deklarováním dílčích klauzulí [Skip](skip-entity-sql.md) a [limit](limit-entity-sql.md) na klauzuli [ORDER by](order-by-entity-sql.md) .  
   
  Příklad:  
   
@@ -268,14 +268,14 @@ SELECT c.ContactID as ID, c.LastName as Name FROM
   
  Výstup:  
   
-|ID|Název|  
+|id|Name|  
 |--------|----------|  
 |10|Adina|  
 |11|Agcaoili|  
 |12|Aguilar|  
   
 ## <a name="grouping"></a>Seskupování  
- [SESKUPENÍ podle](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) výrazu mají být umístěny.  
+ [Seskupení podle](group-by-entity-sql.md) určuje skupiny, do kterých se mají umístit objekty vrácené výrazem dotazu ([Select](select-entity-sql.md)).  
   
  Příklad:  
   
@@ -288,13 +288,13 @@ SELECT VALUE name FROM AdventureWorksEntities.Product as P
   
 |name|  
 |----------|  
-|Sestavení místo LL Horská oblast|  
-|Sestavení licence ML Horská oblast|  
-|HL Mountain místo sestavení|  
+|Sestavení pro horská místa|  
+|Sestavení ML horských sedadel|  
+|HL – sestavení pracovních stanic|  
 |...|  
   
 ## <a name="navigation"></a>Navigace  
- Operátor navigace vztah umožňuje přejít nad vztah z entit (od konce) do jiného (Chcete-li ukončit). [NAVIGOVAT](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md) přijímá typ vztahu kvalifikovány jako \<oboru názvů >.\< Název typu vztahu >. Přejděte vrátí Ref\<T > Pokud Kardinalita do konce je 1. Pokud Kardinalita do konce je n, kolekce < Ref\<T >> bude vrácen.  
+ Operátor navigace mezi relacemi umožňuje procházet relaci z jedné entity (od konce) do jiné (do konce). [Navigace](navigate-entity-sql.md) bere typ vztahu kvalifikovaný jako \<obor názvů >.\< název typu vztahu >. Funkce Navigate vrátí\<ref T >, pokud mohutnost má končit 1. Pokud mohutnost do konce má hodnotu n, vrátí se kolekce < ref\<T > >.  
   
  Příklad:  
   
@@ -315,8 +315,8 @@ SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM
   
 ## <a name="select-value-and-select"></a>VYBERTE HODNOTU A VYBERTE  
   
-### <a name="select-value"></a>VYBERTE HODNOTU  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje klauzule SELECT VALUE pro přeskočení konstrukce implicitní řádek. V klauzuli SELECT VALUE lze zadat pouze jednu položku. Při těchto klauzulí se používá, je vytvořen žádný řádek obálku kolem položek v klauzuli SELECT a kolekce na požadovaný tvar je možné vytvořit, například: `SELECT VALUE a`.  
+### <a name="select-value"></a>VYBRAT HODNOTU  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje klauzuli SELECT VALUE pro přeskočení vytváření implicitních řádků. V klauzuli SELECT VALUE lze zadat pouze jednu položku. Je-li použita taková klauzule, není kolem položek v klauzuli SELECT vytvořena obálka řádku a může být vytvořena kolekce požadovaného tvaru, například: `SELECT VALUE a`.  
   
  Příklad:  
   
@@ -326,29 +326,29 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
   
  Výstup:  
   
-|Název|  
+|Name|  
 |----------|  
-|Měnitelné závodu|  
-|Univerzální kol samostatné|  
-|AWC Logo zakončení|  
+|Přizpůsobitelná rasy|  
+|Stojan kol pro všechny účely|  
+|Zakončení loga AWC|  
 |...|  
   
 ### <a name="select"></a>SELECT  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] také poskytuje konstruktoru řádku k vytvoření libovolné řádky. Vyberte použije jeden nebo více prvků v projekci a výsledky datového záznamu vložením polí, například: `SELECT a, b, c`.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]také poskytuje konstruktor Row pro vytvoření libovolných řádků. Vyberte možnost přebírá jeden nebo více prvků v projekci a výsledkem je datový záznam s poli, například: `SELECT a, b, c`.  
   
  Příklad:  
   
- Vyberte p.Name, p.ProductID z AdventureWorksEntities.Product jako p výstup:  
+ Jako výstup p vyberte p.Name, p. ProductID z AdventureWorksEntities. Product:  
   
-|Název|ProductID|  
+|Name|ProductID|  
 |----------|---------------|  
-|Měnitelné závodu|1|  
-|Univerzální kol samostatné|879|  
-|AWC Logo zakončení|712|  
+|Přizpůsobitelná rasy|1|  
+|Stojan kol pro všechny účely|879|  
+|Zakončení loga AWC|712|  
 |...|...|  
   
 ## <a name="case-expression"></a>VÝRAZ CASE  
- [Výraz malá a velká](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md) vyhodnotí sadu logických výrazů k určení výsledků.  
+ [Výraz Case](case-entity-sql.md) vyhodnocuje sadu logických výrazů pro určení výsledku.  
   
  Příklad:  
   
@@ -358,11 +358,11 @@ CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
-|HODNOTA TRUE|  
+|PODMÍNKA|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Přehled Entity SQL](entity-sql-overview.md)

@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Výpis všech uzlů ve stromu (C#)'
+title: 'Postupy: Vypsat všechny uzly ve stromu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-ms.openlocfilehash: 16d61e146e3721d8d5110d89e651aeb33ee556cd
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a6c50bba528dd250195edea80bcaebea08fa701c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486674"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253567"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: Výpis všech uzlů ve stromu (C#)
-Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  
+# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: Vypsat všechny uzly ve stromu (C#)
+Někdy je užitečné zobrazit seznam všech uzlů ve stromu. To může být užitečné při učení přesně o tom, jak metoda nebo vlastnost ovlivňuje strom. Jedním z přístupů k výpisu všech uzlů v textovém formuláři je vygenerování výrazu XPath, který přesně a konkrétně identifikuje libovolný uzel ve stromové struktuře.  
   
- Není velmi užitečné ke spuštění výrazů XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath jsou horší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou výrazně výkonnější. Nicméně jako způsob, jak identifikovat uzlů ve stromu XML, XPath funguje dobře.  
+ Není obzvláště užitečné spouštět výrazy XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath mají slabší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou mnohem výkonnější. Nicméně jako způsob identifikace uzlů ve stromu XML funguje výraz XPath dobře.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje funkci s názvem `GetXPath` , který generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje odpovídající výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpony oboru názvů.  
+ Tento příklad ukazuje funkci nazvanou `GetXPath` , která generuje konkrétní výraz XPath pro libovolný uzel ve stromové struktuře XML. Generuje vhodné výrazy XPath i v případě, že uzly jsou v oboru názvů. Výrazy XPath jsou generovány pomocí předpon oboru názvů.  
   
- Příklad poté vytvoří malý stromu XML, který obsahuje příklad z několika typů uzlů. Pak Iteruje přes podřízených uzlů a vytiskne výraz XPath pro každý uzel.  
+ Příklad následně vytvoří malý strom XML, který obsahuje příklad několika typů uzlů. Poté provede iteraci podřízenými uzly a vytiskne výraz XPath pro každý uzel.  
   
- Můžete si všimnout, že deklarace XML není ve stromu na uzel.  
+ Všimněte si, že deklarace XML není uzel ve stromové struktuře.  
   
- Toto je soubor XML, který obsahuje několik typů uzlů:  
+ Níže je soubor XML, který obsahuje několik typů uzlů:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
@@ -37,9 +37,9 @@ Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užiteč
 </Root>  
 ```  
   
- Následuje seznam uzlů ve výše uvedené stromu XML, vyjádřené jako výrazy XPath:  
+ Následuje seznam uzlů ve výše uvedeném stromu XML, vyjádřené jako výrazy XPath:  
   
-```  
+```text  
 /processing-instruction()  
 /Root  
 /Root/@AttName  
@@ -317,7 +317,7 @@ class Program
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <?target data?>  
 <Root AttName="An Attribute" xmlns:aw="http://www.adventure-works.com">  

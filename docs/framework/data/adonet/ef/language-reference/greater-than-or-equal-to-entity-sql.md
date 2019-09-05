@@ -1,16 +1,16 @@
 ---
-title: '>= (Větší než nebo rovno) (Entity SQL)'
+title: '>= (Je větší než nebo rovno) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 70780ac4-0123-4da8-b731-8af856daffe3
-ms.openlocfilehash: b5a8a834c325cca38e2c106ca3f8ee829dd699b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb97786687616ff92f0e4402c86aef02de2e70c9
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034148"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250870"
 ---
-# <a name="-greater-than-or-equal-to-entity-sql"></a>> = (větší než nebo rovno) (Entity SQL)
-Porovná dva výrazy k určení, zda levý výraz má hodnotu větší než nebo rovna hodnotě pravý výraz.  
+# <a name="-greater-than-or-equal-to-entity-sql"></a>> = (je větší než nebo rovno) (Entity SQL)
+Porovná dva výrazy a určí, zda má levý výraz hodnotu větší nebo rovnu pravému výrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,20 +20,20 @@ expression >= expression
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný výraz. Implicitně převést datové typy musí mít oba výrazy.  
+ Libovolný platný výraz. Oba výrazy musí mít implicitně převoditelné datové typy.  
   
 ## <a name="result-types"></a>Typy výsledků  
- `true` Pokud levý výraz má hodnotu větší než nebo rovna hodnotě pravý výraz; v opačném případě `false`.  
+ `true`Pokud má levý výraz hodnotu větší než nebo rovna pravému výrazu; v opačném případě. `false`  
   
 ## <a name="example"></a>Příklad  
- Pomocí následujícího dotazu Entity SQL > = – operátor porovnání k porovnání dvou výrazů slouží k určení, zda levý výraz má hodnotu větší než nebo rovna hodnotě pravý výraz. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz pomocí operátoru > = Compare Porovná dva výrazy a určí, zda má levý výraz hodnotu větší nebo rovnu pravému výrazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#GREATER_OR_EQUALS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#greater_or_equals)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

@@ -3,19 +3,20 @@ title: <claimsAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
-ms.openlocfilehash: 3602a4805e86833ba6070d801cef6758aaee8a5c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c901daf4d442a206345301795c7a4bdc076329cd
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941819"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252094"
 ---
 # <a name="claimsauthenticationmanager"></a>\<claimsAuthenticationManager>
 Zaregistruje Správce ověřování deklarací identity pro příchozí deklarace identity.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<claimsAuthenticationManager>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Komponenty ClaimsAuthenticationManager >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

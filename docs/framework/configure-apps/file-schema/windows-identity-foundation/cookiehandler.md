@@ -3,19 +3,20 @@ title: <cookieHandler>
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-ms.openlocfilehash: 1c044f7346fabc77d7744f42c5bfd3d86d72402e
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 853dc9817d080e59ac7a792576eda862bd0b1f1d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988342"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252027"
 ---
 # <a name="cookiehandler"></a>\<cookieHandler>
 <xref:System.IdentityModel.Services.SessionAuthenticationModule> Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , jak bude (SAM) používat ke čtení a zápisu souborů cookie.  
   
- \<system.identityModel.services>  
-\<federationConfiguration>  
-\<cookieHandler>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> System. identityModel. Services**](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<cookieHandler >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

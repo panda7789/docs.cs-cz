@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: 55290e8f14f81c50239097905e5407dbcf547c4c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4af35b3ad1277723d4102b3aeac48748588ef8bf
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968225"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70244008"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -36,7 +36,7 @@ Příklad položky upravitelného seznamu
   
 - <xref:System.Windows.Automation.Provider.IValueProvider>nepodporuje načítání informací o formátování nebo hodnot podřetězců. Implementujte <xref:System.Windows.Automation.Provider.ITextProvider> v těchto scénářích.  
   
-- <xref:System.Windows.Automation.Provider.IValueProvider>musí být implementována ovládacími prvky, jako je ovládací prvek výběru [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] barvy z (viz níže), který podporuje mapování řetězců mezi hodnotou barvy (například "žlutá") a ekvivalentní vnitřní [!INCLUDE[TLA#tla_rgb](../../../includes/tlasharptla-rgb-md.md)] strukturou.  
+- <xref:System.Windows.Automation.Provider.IValueProvider>musí být implementována ovládacími prvky, jako je ovládací prvek výběru [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] výběru barvy z (zobrazeno níže), který podporuje mapování řetězců mezi hodnotou barvy (například "žlutá") a ekvivalentní vnitřní strukturou RGB.  
   
  ![Výběr barvy se žlutým zvýrazněním](../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Příklad mapování řetězců vzorníku barev  

@@ -2,15 +2,15 @@
 title: ISOF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b2b0d34-d0a7-4bcd-baf2-58aa8456d00b
-ms.openlocfilehash: 097d6e7d452ee62a2c8934d2c5fcfdddbeaffc73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b746a82f72fc7f42f9d91ddd0a7d6f4f86ac0bb
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772369"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250579"
 ---
 # <a name="isof-entity-sql"></a>ISOF (Entity SQL)
-Určuje, zda je typ výrazu zadaný typ nebo některý z jeho podtypy.  
+Určuje, zda je typ výrazu zadaného typu nebo některého z jeho podtypů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,42 +20,42 @@ expression IS [ NOT ] OF ( [ ONLY ] type )
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný výraz platného dotazu k určení typu.  
+ Libovolný platný výraz dotazu pro určení typu.  
   
  NOT  
- Neguje modelu EDM. Výsledek logickou hodnotu je z.  
+ Negace datového modelu EDM. Logický výsledek pro je.  
   
  POUZE  
- Určuje, že se vrátí `true` pouze tehdy, pokud `expression` je typu `type` a nikoli jakákoliv některou jeho podtypy.  
+ Určuje, že se vrátí `true` pouze v `expression` případě, že `type` je typu, a ne některého z jeho podtypů.  
   
  `type`  
- Typ, který chcete testovat `expression` proti. Typ musí být kvalifikovaný v oboru názvů.  
+ Typ, pro který `expression` se má testovat. Typ musí být kvalifikovaný v oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Pokud `expression` je typu T a T je základní typ nebo odvozeným typem `type`; hodnota null, pokud `expression` je za běhu hodnotu null; v opačném případě `false`.  
+ `true`Pokud `expression` je typu t a T je buď základní typ, nebo odvozený `type`typ; null, pokud `expression` má hodnotu null za běhu, jinak `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Výrazy `expression IS NOT OF (type)` a `expression IS NOT OF (ONLY type)` syntakticky odpovídajících `NOT (expression IS OF (type))` a `NOT (expression IS OF (ONLY type))`v uvedeném pořadí.  
+ Výrazy `expression IS NOT OF (type)` a `expression IS NOT OF (ONLY type)` `NOT (expression IS OF (ONLY type))`jsousyntaktickyekvivalentní a v uvedeném pořadí. `NOT (expression IS OF (type))`  
   
- V následující tabulce jsou uvedeny chování `IS OF` operátor přes některé typické - rohové a vzory. Všechny výjimky jsou vyvolány ze strany klienta předtím, než je volán za zprostředkovatele:  
+ Následující tabulka ukazuje chování `IS OF` operátora v některých typických a rohových vzorcích. Všechny výjimky jsou vyvolány na straně klienta před vyvoláním zprostředkovatele:  
   
 |Vzor|Chování|  
 |-------------|--------------|  
-|NULL je typu (EntityType)|Vyvolá výjimku|  
-|NULL je typu (ComplexType)|Vyvolá výjimku|  
-|NULL je z (RowType)|Vyvolá výjimku|  
-|POVAŽOVAT (třída EntityType hodnotu null jako) je typu (EntityType)|Vrátí DBNull|  
-|POVAŽOVAT (null jako ComplexType) je typu (ComplexType)|Vyvolá výjimku|  
-|POVAŽOVAT (null jako RowType) je z (RowType)|Vyvolá výjimku|  
-|JE typ entity typu (EntityType)|Vrátí hodnotu true nebo false|  
-|Typ ComplexType je typu (ComplexType)|Vyvolá výjimku|  
-|JE RowType z (RowType)|Vyvolá výjimku|  
+|hodnota null je typu (EntityType).|Vyvolá|  
+|hodnota null je (ComplexType).|Vyvolá|  
+|hodnota null je (RowType).|Vyvolá|  
+|ZPRACOVÁVÁ se (hodnota null jako EntityType) je typu (EntityType).|Vrátí hodnotu DBNull.|  
+|ZPRACOVÁVÁ se (hodnota null jako ComplexType) je (ComplexType).|Vyvolá|  
+|ZPRACOVÁVÁ se (hodnota null jako RowType) je (RowType).|Vyvolá|  
+|EntityType je typu (EntityType).|Vrátí hodnotu true nebo false.|  
+|ComplexType je typu (ComplexType).|Vyvolá|  
+|RowType je (RowType)|Vyvolá|  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá operátor je určit typ výrazu dotazu a pak používá operátor POVAŽOVAT převést objekt typu kurzu ke kolekci objektů typu OnsiteCourse. Dotaz je založen na [školní modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor is of k určení typu výrazu dotazu a poté pomocí operátoru "považovat" převést objekt typu kurz na kolekci objektů typu OnsiteCourse. Dotaz je založen na [školním modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)).  
   
  [!code-csharp[DP EntityServices Concepts 2#TREAT_ISOF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#treat_isof)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

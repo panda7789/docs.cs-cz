@@ -2,15 +2,15 @@
 title: (Modulo) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 243ddc4f-3c4e-41e1-a3ef-4ed39e36248b
-ms.openlocfilehash: e2d2c4cd6fd62cf5785d6b69aa399a74f8d04d30
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a30306539d45c3718d2e948e9717997bbe2104fa
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760477"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250087"
 ---
 # <a name="modulo-entity-sql"></a>(Modulo) (Entity SQL)
-Vrátí zbytek jeden výraz hodnotou druhého.  
+Vrátí zbytek jednoho výrazu děleného jiným.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,23 +20,23 @@ dividend % divisor
   
 ## <a name="arguments"></a>Arguments  
  `dividend`  
- Číselný výraz, který se má dělit. `dividend` je libovolný platný výraz některou z číselných datových typů.  
+ Číselný výraz, který se má rozdělit `dividend`je libovolný platný výraz libovolného číselného datového typu.  
   
  `divisor`  
- Číselný výraz, který se má dělit dělenec. `divisor` je libovolný platný výraz některou z číselných datových typů.  
+ Číselný výraz, podle kterého se má dělenec rozdělit. `divisor`je libovolný platný výraz libovolného číselného datového typu.  
   
 ## <a name="result-types"></a>Typy výsledků  
  Edm.Int32  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá aritmetického operátoru % vrátit zbývající jeden výraz hodnotou druhého. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz pomocí aritmetického operátoru% vrátí zbytek jednoho výrazu děleného jiným. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#MODULO](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#modulo)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

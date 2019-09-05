@@ -2,17 +2,17 @@
 title: Začínáme (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 4735a220-3301-4ec4-8833-7209abb7208f
-ms.openlocfilehash: d13b6357022a134c0c1a52c5bb2c309d1e57d8a0
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 68dbd3457a8ae578e52a10e4eeb4222c91af16b1
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878723"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251556"
 ---
 # <a name="getting-started-entity-framework"></a>Začínáme (Entity Framework)
-ADO.NET [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje datově orientovaných aplikací a služeb a poskytuje platformu pro programování s daty, která vyvolá úroveň abstrakce z logické relační úrovně pro koncepční úroveň. Protože vývojářům umožňuje pracovat s daty na vyšší úrovni abstrakce, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje kódu, která je nezávislá jádro konkrétní datové úložiště nebo relační schéma. Další informace najdete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md).  
+ADO.NET [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje aplikace a služby zaměřené na data a poskytuje platformu pro programování na základě dat, která vyvolává úroveň abstrakce z logické relační úrovně až po koncepční úroveň. Tím, že vývojářům umožní pracovat s daty na větší úrovni abstrakce, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje kód, který je nezávislý na konkrétním modulu úložiště dat nebo relačním schématu. Další informace najdete v tématu [přehled Entity Framework](overview.md).  
   
- Chcete-li začít rychle používat nejnovější verzi rozhraní Entity Framework, přečtěte si téma [Začínáme](https://go.microsoft.com/fwlink/?LinkId=235280)  
+ Pokud chcete rychle začít používat nejnovější verzi Entity Framework, [Přečtěte si téma Začínáme](https://go.microsoft.com/fwlink/?LinkId=235280) .  
   
 ## <a name="see-also"></a>Viz také:
 

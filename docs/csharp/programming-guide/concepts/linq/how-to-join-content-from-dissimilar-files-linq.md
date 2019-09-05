@@ -2,12 +2,12 @@
 title: 'Postupy: Spojení obsahu z nepodobných souborů (LINQ)C#()'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: 14f9c9917aedbc0beeeddae789b835613d1badc8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: eb2e5d8e598b7b671afe9271e6e591c5ce0ada2b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593155"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253554"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: Spojení obsahu z nepodobných souborů (LINQ)C#()
 
@@ -17,7 +17,7 @@ Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami
   
 1. Zkopírujte následující řádky do souboru s názvem *skóre. csv* a uložte ho do složky vašeho projektu. Soubor představuje data v tabulce. Sloupec 1 je ID studenta a sloupce 2 až 5 jsou skóre testů.  
   
-    ```  
+    ```csv  
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -34,7 +34,7 @@ Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami
   
 2. Zkopírujte následující řádky do souboru s názvem *Names. csv* a uložte ho do složky projektu. Tento soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.  
   
-    ```  
+    ```csv  
     Omelchenko,Svetlana,111  
     O'Donnell,Claire,112  
     Mortensen,Sven,113  

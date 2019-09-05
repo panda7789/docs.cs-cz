@@ -2,15 +2,15 @@
 title: + (Zřetězení řetězců) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 580130fa-6c7c-4f76-a47d-d22c27ccadf6
-ms.openlocfilehash: 5f2c031218a9e533889c696bc592e73a27b51d06
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ef482a1206dea98cfb5a0ba5071acc130ef0cd18
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797667"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249022"
 ---
 # <a name="-string-concatenation-entity-sql"></a>+ (Zřetězení řetězců) (Entity SQL)
-Spojuje dva řetězce.  
+Zřetězí dva řetězce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,21 +20,21 @@ expression + expression
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný výraz modelu EDM. Řetězec datové typy. Oba výrazy musí být stejného typu dat nebo jeden výraz musí být možné implicitně převést na datový typ jiný výraz.  
+ Libovolný platný výraz modelu EDM. Řetězcové datové typy. Oba výrazy musí být stejného datového typu nebo jeden výraz musí být možné implicitně převést na datový typ druhého výrazu.  
   
 ## <a name="result-types"></a>Typy výsledků  
- Datový typ, který je výsledkem implicitních typů povýšení dvou argumentů. Další informace o podpoře implicitních typů, najdete v části [systém typů](../../../../../../docs/framework/data/adonet/ef/language-reference/type-system-entity-sql.md).  
+ Datový typ, který je výsledkem propagace implicitního typu obou argumentů. Další informace o implicitním typu povýšení naleznete v tématu [Type System](type-system-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá + operátor spojuje dva řetězce. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá operátor + k zřetězení dvou řetězců. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
-2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#CONCAT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#concat)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
 - [Typy konceptuálních modelů (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#conceptual-model-types-csdl)

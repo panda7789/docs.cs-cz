@@ -2,12 +2,12 @@
 title: Požadavky na výkon (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: 4836125205f3d4cbbe852c92f2a88aca331ded70
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 99969d7991f613bd8049aac81669583372e0f2c6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962252"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248522"
 ---
 # <a name="performance-considerations-entity-framework"></a>Požadavky na výkon (Entity Framework)
 Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje několik důležitých informací, které vám pomůžou zlepšit výkon Entity Framework aplikací.  
@@ -20,7 +20,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
 |Načítají se metadata.|Mírná|Jednou v každé doméně aplikace.|Metadata modelu a mapování používaná Entity Framework jsou načtena do <xref:System.Data.Metadata.Edm.MetadataWorkspace>. Tato metadata jsou v mezipaměti globálně a jsou k dispozici pro <xref:System.Data.Objects.ObjectContext> jiné instance ve stejné aplikační doméně.|  
 |Otevírání připojení k databázi|Střední<sup>1</sup>|Podle potřeby.|Vzhledem k tomu, že otevřené připojení k databázi spotřebovává cenný prostředek, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] otevře a zavře připojení databáze pouze podle potřeby. Připojení můžete také explicitně otevřít. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).|  
 |Generování zobrazení|Vysoká|Jednou v každé doméně aplikace. (Může být vygenerováno předem.)|Předtím, než Entity Framework může spustit dotaz na koncepční model nebo uložit změny do zdroje dat, je nutné pro přístup k databázi vygenerovat sadu zobrazení místních dotazů. Kvůli vysokým nákladům na generování těchto zobrazení můžete zobrazení předem vygenerovat a přidat je do projektu v době návrhu. Další informace najdete v tématu [jak: Předem vygenerujte zobrazení pro zlepšení výkonu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))dotazů.|  
-|Příprava dotazu|Střední<sup>2</sup>|Jednou pro každý jedinečný dotaz.|Zahrnuje náklady na vytvoření příkazu dotazu, vygenerování stromu příkazů na základě modelu a mapování metadat a definování tvaru vrácených dat. Vzhledem k tomu, že Entity SQL příkazy dotazů a dotazy LINQ jsou ukládány do mezipaměti, pozdější spuštění stejného dotazu trvá méně času. Můžete přesto použít zkompilované dotazy LINQ k omezení těchto nákladů v pozdějším spuštění a zkompilované dotazy mohou být efektivnější než dotazy LINQ, které jsou automaticky uloženy v mezipaměti. Další informace najdete v tématu [kompilované dotazy (LINQ to Entities)](../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md). Obecné informace o provádění dotazů LINQ naleznete v tématu [LINQ to Entities](../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md). **Poznámka:**  LINQ to Entities dotazy, které aplikují `Enumerable.Contains` operátor na kolekce v paměti, nejsou automaticky ukládány do mezipaměti. V kompilovaných dotazech LINQ se taky Parametrizace kolekce v paměti, které se nepovolují.|  
+|Příprava dotazu|Střední<sup>2</sup>|Jednou pro každý jedinečný dotaz.|Zahrnuje náklady na vytvoření příkazu dotazu, vygenerování stromu příkazů na základě modelu a mapování metadat a definování tvaru vrácených dat. Vzhledem k tomu, že Entity SQL příkazy dotazů a dotazy LINQ jsou ukládány do mezipaměti, pozdější spuštění stejného dotazu trvá méně času. Můžete přesto použít zkompilované dotazy LINQ k omezení těchto nákladů v pozdějším spuštění a zkompilované dotazy mohou být efektivnější než dotazy LINQ, které jsou automaticky uloženy v mezipaměti. Další informace najdete v tématu [kompilované dotazy (LINQ to Entities)](./language-reference/compiled-queries-linq-to-entities.md). Obecné informace o provádění dotazů LINQ naleznete v tématu [LINQ to Entities](./language-reference/linq-to-entities.md). **Poznámka:**  LINQ to Entities dotazy, které aplikují `Enumerable.Contains` operátor na kolekce v paměti, nejsou automaticky ukládány do mezipaměti. V kompilovaných dotazech LINQ se taky Parametrizace kolekce v paměti, které se nepovolují.|  
 |Provádění dotazu|Nízká úroveň<sup>2</sup>|Jednou pro každý dotaz.|Náklady na provedení příkazu proti zdroji dat pomocí poskytovatele dat ADO.NET. Vzhledem k tomu, že většina zdrojů dat ukládá plány dotazů do mezipaměti, může pozdější spuštění stejného dotazu trvat i kratší dobu.|  
 |Načítání a ověřování typů|Nízká úroveň<sup>3</sup>|Jednou pro každou <xref:System.Data.Objects.ObjectContext> instanci.|Typy jsou načteny a ověřovány proti typům, které definuje koncepční model.|  
 |Sledování|Nízká úroveň<sup>3</sup>|Jednou pro každý objekt, který dotaz vrátí. <sup>4</sup>|Pokud dotaz používá možnost sloučení <xref:System.Data.Objects.MergeOption.NoTracking> , tato fáze nemá vliv na výkon.<br /><br /> Pokud <xref:System.Data.Objects.MergeOption.AppendOnly>dotaz používá <xref:System.Data.Objects.MergeOption.PreserveChanges> možnost,<xref:System.Data.Objects.MergeOption.OverwriteChanges> nebo sloučení, výsledky dotazu jsou sledovány v. <xref:System.Data.Objects.ObjectStateManager> Vygeneruje <xref:System.Data.Objects.ObjectStateEntry> <xref:System.Data.Objects.ObjectStateManager>se pro každý sledovaný objekt, který dotaz vrátí a který se použije k vytvoření v. <xref:System.Data.EntityKey> Pokud je nalezen <xref:System.Data.Objects.ObjectStateEntry> existující objekt <xref:System.Data.EntityKey>pro, je vrácen existující objekt. Je-li použita <xref:System.Data.Objects.MergeOption.OverwriteChanges> možnost nebo, je objekt aktualizován před jeho vrácením. <xref:System.Data.Objects.MergeOption.PreserveChanges><br /><br /> Další informace najdete v tématu věnovaném [rozlišení identity, správě stavů a Change Tracking](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896269(v=vs.100)).|  
@@ -32,7 +32,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
   
  <sup>3</sup> celkové náklady se zvyšují úměrně k počtu objektů vrácených dotazem.  
   
- <sup>4</sup> tato režie není pro dotazy EntityClient nutná, protože dotazy EntityClient vracejí <xref:System.Data.EntityClient.EntityDataReader> místo objektů. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+ <sup>4</sup> tato režie není pro dotazy EntityClient nutná, protože dotazy EntityClient vracejí <xref:System.Data.EntityClient.EntityDataReader> místo objektů. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="additional-considerations"></a>Další požadavky  
  Následují další skutečnosti, které mohou ovlivnit výkon aplikací Entity Framework.  
@@ -41,10 +41,10 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
  Vzhledem k tomu, že dotazy můžou být náročné na prostředky, zvažte, v jakém místě v kódu a na jakém počítači se dotaz spustí.  
   
 #### <a name="deferred-versus-immediate-execution"></a>Odložené versus okamžité provedení  
- Při vytváření <xref:System.Data.Objects.ObjectQuery%601> dotazu LINQ se dotaz nemůže spustit okamžitě. Provádění dotazu `foreach` je odloženo, dokud nebudou požadovány výsledky, například během výčtu (C#) nebo `For Each` (Visual Basic) nebo <xref:System.Collections.Generic.List%601> když je přiřazen k vyplňování kolekce. Spuštění dotazu začíná ihned při <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> volání metody <xref:System.Data.Objects.ObjectQuery%601> na nebo při volání metody LINQ, která vrací dotaz typu <xref:System.Linq.Enumerable.First%2A> singleton, například nebo <xref:System.Linq.Enumerable.Any%2A>. Další informace najdete v tématu [dotazy objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)) a [provádění dotazů (LINQ to Entities)](../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md).  
+ Při vytváření <xref:System.Data.Objects.ObjectQuery%601> dotazu LINQ se dotaz nemůže spustit okamžitě. Provádění dotazu `foreach` je odloženo, dokud nebudou požadovány výsledky, například během výčtu (C#) nebo `For Each` (Visual Basic) nebo <xref:System.Collections.Generic.List%601> když je přiřazen k vyplňování kolekce. Spuštění dotazu začíná ihned při <xref:System.Data.Objects.ObjectQuery%601.Execute%2A> volání metody <xref:System.Data.Objects.ObjectQuery%601> na nebo při volání metody LINQ, která vrací dotaz typu <xref:System.Linq.Enumerable.First%2A> singleton, například nebo <xref:System.Linq.Enumerable.Any%2A>. Další informace najdete v tématu [dotazy objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)) a [provádění dotazů (LINQ to Entities)](./language-reference/query-execution.md).  
   
 #### <a name="client-side-execution-of-linq-queries"></a>Spuštění dotazů LINQ na straně klienta  
- I když se spustí dotaz LINQ v počítači, který je hostitelem zdroje dat, mohou být některé části dotazu LINQ vyhodnoceny v klientském počítači. Další informace najdete v části spuštění úložiště v tématu [spuštění dotazu (LINQ to Entities)](../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md).  
+ I když se spustí dotaz LINQ v počítači, který je hostitelem zdroje dat, mohou být některé části dotazu LINQ vyhodnoceny v klientském počítači. Další informace najdete v části spuštění úložiště v tématu [spuštění dotazu (LINQ to Entities)](./language-reference/query-execution.md).  
   
 ### <a name="query-and-mapping-complexity"></a>Složitost dotazů a mapování  
  Složitost jednotlivých dotazů a mapování v modelu entity model bude mít výrazný vliv na výkon dotazů.  
@@ -155,4 +155,4 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
   
 ## <a name="see-also"></a>Viz také:
 
-- [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)
+- [Důležité informace o vývoji a nasazení](development-and-deployment-considerations.md)

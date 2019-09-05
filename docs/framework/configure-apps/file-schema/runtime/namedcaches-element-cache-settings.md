@@ -6,20 +6,20 @@ helpviewer_keywords:
 - caching [.NET Framework], configuration
 - <namedCaches> element
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
-ms.openlocfilehash: 9cedd462aa539745ddab844dff158912914cb024
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 4587234ad91fa3b1abbb376bd7ae517d5abea6c3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663584"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252452"
 ---
 # <a name="namedcaches-element-cache-settings"></a>\<namedCaches – element > (nastavení mezipaměti)
 Určuje kolekci konfiguračních nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance. Vlastnost odkazuje na kolekci konfiguračních nastavení z jednoho nebo více `namedCaches` prvků konfiguračního souboru. <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>  
   
- \<> Konfigurace  
-\<System. Runtime. Caching >  
-\<memoryCache>  
-\<namedCaches>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. Runtime. Caching >** ](system-runtime-caching-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<memoryCache >** ](memorycache-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<namedCaches >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,7 +56,9 @@ Určuje kolekci konfiguračních nastavení pro pojmenované <xref:System.Runtim
   
 |Prvek|Popis|  
 |-------------|-----------------|  
+|[\<> Konfigurace](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
 |[\<memoryCache>](memorycache-element-cache-settings.md)|Definuje prvek, který se používá ke konfiguraci mezipaměti založené na <xref:System.Runtime.Caching.MemoryCache> třídě.|  
+|[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou integrovány do .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
  Oddíl konfigurace mezipaměti paměti v souboru Web. `add`config může obsahovat atributy, `remove`a `clear` pro `namedCaches` kolekci. Každá `namedCaches` položka je jednoznačně identifikována `name` atributem.  

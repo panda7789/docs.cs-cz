@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4aa90a378630c9aff74923d8e8600aed15a77a5e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 581b19cf74dcb5c2d5c4a549847629503fe0b6ff
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663506"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252361"
 ---
 # <a name="qualifyassembly-element"></a>\<qualifyAssembly – element >
 Určuje úplný název sestavení, které by mělo být dynamicky načteno při použití částečného názvu.  
   
- \<> Konfigurace  
-\<> modulu runtime  
-\<assemblyBinding >  
-\<qualifyAssembly >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<qualifyAssembly>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

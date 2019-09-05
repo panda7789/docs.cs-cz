@@ -2,12 +2,12 @@
 title: Logické datové typy
 ms.date: 03/30/2017
 ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
-ms.openlocfilehash: f200445d2ba7846f9dc467c7f06bce4225c88865
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9fa3327315593bd54fc51f67bf9964da8d683c5d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964083"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248058"
 ---
 # <a name="boolean-data-types"></a>Logické datové typy
 Logické operátory pracují podle očekávání v modulu CLR (Common Language Runtime), s tím rozdílem, že chování při krátkém okruhu není přeloženo. Například operátor Visual Basic `AndAlso` se chová `And` jako operátor. Operátor C# `&&` se chovájakooperátor.`&`  
@@ -25,4 +25,4 @@ Logické operátory pracují podle očekávání v modulu CLR (Common Language R
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Datové typy a funkce](data-types-and-functions.md)

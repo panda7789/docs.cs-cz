@@ -2,15 +2,15 @@
 title: Refaktoring pomocí funkce Pure (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
-ms.openlocfilehash: d1c4b1fc59e52fbd72dec1ee0e73e7198a083868
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591319"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253083"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí funkce Pure (C#)
-Následující příklad refaktoruje předchozí příklad refaktoringu [pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)pro použití funkce Pure v tomto příkladu, kód pro vyhledání textu odstavce je přesunut na čistě statickou metodu. `ParagraphText`  
+Následující příklad [refaktoruje předchozí příklad refaktoringu pomocí metody rozšíření (C#)](./refactoring-using-an-extension-method.md)pro použití funkce Pure v tomto příkladu, kód pro vyhledání textu odstavce je přesunut na čistě statickou metodu. `ParagraphText`  
   
 ## <a name="example"></a>Příklad  
  Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Refaktoring Code se volá v komentářích v následujícím kódu.  
@@ -156,7 +156,7 @@ class Program
   
  Tento příklad vytvoří stejný výstup jako před refaktoringem:  
   
-```  
+```output  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
 StyleName:Normal ><  
 StyleName:Normal >The following example prints to the console.<  

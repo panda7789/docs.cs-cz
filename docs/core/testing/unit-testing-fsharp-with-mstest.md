@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3b93f4ed21d9d5eccf1dd02f253e7456aec02807
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 96c6e5860866b302491ad882ef325d45feab9c39
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626461"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253931"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a MSTest
 
@@ -41,7 +41,7 @@ Změňte adresář zpátky na adresář *testování částí s* adresářem-FSh
 
 Dále vytvořte adresář *MathService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
-```
+```console
 /unit-testing-with-fsharp
     unit-testing-with-fsharp.sln
     /MathService
@@ -62,7 +62,7 @@ Nastavte adresář *MathService. Tests* na aktuální adresář a vytvořte nov�
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali MSTest a MSTest Runner. Nyní přidejte `MathService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```
+```console
 dotnet add reference ../MathService/MathService.fsproj
 ```
 

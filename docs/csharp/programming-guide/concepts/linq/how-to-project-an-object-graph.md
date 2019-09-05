@@ -2,12 +2,12 @@
 title: 'Postupy: Projekt grafu objektů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: dcfdd8cba95d729a1f9bda3adb4b5fd8690b724a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: b00e350dd5bf00a5939547b3ed1651b2a6645197
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592987"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253483"
 ---
 # <a name="how-to-project-an-object-graph-c"></a>Postupy: Projekt grafu objektů (C#)
 Toto téma ukazuje, jak projektovat nebo naplnit objekt grafu z XML.  
@@ -218,7 +218,7 @@ class Program {
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 PurchaseOrderNumber: 99503  
 OrderDate: 10/20/1999  
   

@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 859e8a12421ea92aa48c54317e052683eb8e83f8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b1ac2900707ddb39c62b34b0ebfbc4547cdd2653
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663488"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252350"
 ---
 # <a name="relativebindforresources-element"></a>\<relativeBindForResources – element >
 Optimalizuje sondu pro satelitní sestavení.  
   
- \<Element > Konfigurace  
-\<Běhový > element  
-\<relativeBindForResources – element >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> modulu runtime**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<relativeBindForResources>**  
   
 ## <a name="syntax"></a>Syntaxe  
   

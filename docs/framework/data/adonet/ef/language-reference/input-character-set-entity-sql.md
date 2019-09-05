@@ -2,32 +2,32 @@
 title: Vstupní znaková sada (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 13d291d3-e6bc-4719-b953-758b61a590b6
-ms.openlocfilehash: 3795660cf6086aa67596f31e49c4d950aa653d86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1c6475704ec384800af0b678edd943246bf8044
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780416"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250643"
 ---
 # <a name="input-character-set-entity-sql"></a>Vstupní znaková sada (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] přijímá zakódován do kódování UTF-16 znaků UNICODE.  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]přijímá znaky UNICODE kódované v UTF-16.  
   
- Řetězcové literály může obsahovat libovolný UTF-16 znak uzavřen v jednoduchých uvozovkách. Například N "文字列リテラル". Srovnání řetězcové literály se používají původní hodnoty UTF-16. Například N'ABC "se liší v japonštině a latinky kódové stránky.  
+ Řetězcové literály můžou obsahovat libovolný znak UTF-16 uzavřený v jednoduchých uvozovkách. Například N ' 文字列リテラル '. Když jsou porovnávány řetězcové literály, jsou použity původní hodnoty UTF-16. Například N'ABC ' se liší v japonštině a znakových znakech latinky.  
   
- Komentáře mohou obsahovat libovolný znak kódování UTF-16.  
+ Komentáře mohou obsahovat libovolný znak UTF-16.  
   
- Identifikátory uvozené uvozovacími znaky může obsahovat libovolný znak kódování UTF-16 uzavřeny do hranatých závorek. Například [エスケープされた識別子]. Porovnání identifikátory UTF-16 uvozen řídicími znaky, velká a malá písmena. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zpracovává verzích zpravodaje, které se zobrazí stejná, ale jsou z různých znakových stránek jako jiné znaky. Například [ABC] odpovídá [abc] Pokud odpovídající znaky jsou od stejné znakové stránky. Nicméně pokud dva stejné identifikátory jsou z různých znakových stránek, nejsou ekvivalentní.  
+ Řídicí identifikátory můžou obsahovat libovolný znak UTF-16 uzavřený v hranatých závorkách. Například [エスケープされた識別子]. Porovnání identifikátorů Escape ve formátu UTF-16 rozlišuje velká a malá písmena. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]zpracovává verze písmen, které vypadají stejně, ale z různých znakových stránek jako jiné znaky. Například [ABC] je ekvivalentem [abc], pokud jsou odpovídající znaky ze stejné znakové stránky. Pokud jsou však stejné dva identifikátory z různých znakových stránek, nejsou ekvivalentní.  
   
- Prázdné místo je libovolný znak bílého prostoru řádku UTF-16.  
+ Prázdné místo je libovolný prázdný znak UTF-16.  
   
- Nový řádek je všechny normalizované znak nového řádku UTF-16. Například "\n" a "\r\n" jsou považovány za znaky nového řádku, ale '\r; není znak nového řádku.  
+ Nový řádek je libovolný normalizovaný znak nového řádku UTF-16. Například "\n" a "\r\n" se považují za znaky nového řádku, ale "\r" není znak nového řádku.  
   
- Klíčová slova, výrazy a interpunkční znaménka, může být libovolný znak UTF-16, které normalizuje do latiny. Například vyberte v japonské znaková stránka je platný – klíčové slovo.  
+ Klíčová slova, výrazy a interpunkční znaménka můžou obsahovat libovolný znak UTF-16, který se normalizuje na latinku. Například vyberte v japonské znakové stránce platné klíčové slovo.  
   
- Klíčová slova, výrazy a interpunkční znaménka lze pouze znaky latinky. `SELECT` v japonské znakové stránce není klíčové slovo. +,-, \*, /, =, (,), ", [,] a jiné jazykové konstrukce není v uvozovkách zde lze pouze znaky latinky.  
+ Klíčová slova, výrazy a interpunkční znaménka můžou být jenom Latinská písmena. `SELECT`v japonské znakové stránce není klíčové slovo. +,-, \*,/, =, (,), ', [,] a jakékoli jiné jazykové konstrukce, které nejsou uvedené v uvozovkách, můžou být jenom latinkou.  
   
- Jednoduché identifikátory lze pouze znaky latinky. Tím se vyhnete nejednoznačnosti při porovnání, protože jsou porovnány původní hodnoty. ABC například bude v japonštině a latinky kódové stránky liší.  
+ Jednoduché identifikátory můžou být jenom Latinská písmena. Tím se vyhnete nejednoznačnosti během porovnání, protože se porovnávají původní hodnoty. Například ABC by se lišilo v japonštině a znakových znakech latinky.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Přehled Entity SQL](entity-sql-overview.md)

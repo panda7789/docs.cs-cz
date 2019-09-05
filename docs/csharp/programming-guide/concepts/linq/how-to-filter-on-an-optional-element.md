@@ -2,12 +2,12 @@
 title: 'Postupy: Filtrovat podle volitelného prvku (C#)'
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
-ms.openlocfilehash: 403c331787df7eb538302df2ecc332a663e68d71
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0f8e17d99085ad04ed76b83bce806418ca6d60cd
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593793"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253823"
 ---
 # <a name="how-to-filter-on-an-optional-element-c"></a>Postupy: Filtrovat podle volitelného prvku (C#)
 Někdy je vhodné vyfiltrovat element, i když si nejste jistí, že existuje v dokumentu XML. Hledání by mělo být provedeno, aby v případě, že konkrétní prvek nemá podřízený element, neaktivovali výjimku odkazu s hodnotou null filtrováním. V následujícím příkladu `Child5` element `Type` nemá podřízený element, ale dotaz se stále provede správně.  
@@ -47,7 +47,7 @@ foreach(string str in cList)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 Child One Text  
 Child Two Text  
 Child Four Text  
@@ -89,7 +89,7 @@ foreach (string str in cList)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 Child One Text  
 Child Two Text  
 Child Four Text  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4354e5eb-dd45-469d-97fb-1c495705ee59
-ms.openlocfilehash: 6ddd6ebc6215ec17fa416fb0de8f81cf631365db
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b7f483d8dc7c6d0160ec211140726c9d732f0268
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936046"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250811"
 ---
 # <a name="how-to-call-custom-database-functions"></a>Postupy: Volání vlastních databázových funkcí
 Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v databázi nástroje v rámci LINQ to Entities dotazů.  
@@ -63,4 +63,4 @@ Toto téma popisuje, jak volat vlastní funkce, které jsou definovány v datab�
 ## <a name="see-also"></a>Viz také:
 
 - [Soubor. edmx – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
-- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+- [Dotazy v technologii LINQ to Entities](queries-in-linq-to-entities.md)

@@ -2,15 +2,15 @@
 title: PŘÍPAD (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
-ms.openlocfilehash: 3fc916d201ec79c753e06ccfcd6514761f826eb7
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 79544f4180313a008669c56c4f2740c889043c6d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489497"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251251"
 ---
 # <a name="case-entity-sql"></a>PŘÍPAD (Entity SQL)
-Vyhodnotí sadu `Boolean` výrazy k určení výsledků.  
+Vyhodnotí sadu `Boolean` výrazů pro určení výsledku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,38 +26,38 @@ END
   
 ## <a name="arguments"></a>Arguments  
  `n`  
- Je zástupný symbol, který označuje, že více při `Boolean_expression` pak `result_expression` klauzule můžete použít.  
+ Je zástupný symbol, který označuje, že `Boolean_expression` lze `result_expression` použít více klauzulí When Then.  
   
- POTOM `result_expression`  
- Výraz dochází při `Boolean_expression` vyhodnotí jako `true`. `result expression` Je libovolný platný výraz.  
+ STISKNUTÍM`result_expression`  
+ Je výraz vrácený při `Boolean_expression` vyhodnocování. `true` `result expression`je libovolný platný výraz.  
   
  ELSE `else_result_expression`  
- Se výraz vrátí, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání vyhodnocen jako `true`, případě vrátí hodnotu null. `else_result_expression` Je libovolný platný výraz. Datové typy `else_result_expression` a jakékoli `result_expression` musí být stejný nebo musí být proveden implicitní převod.  
+ Je výraz vrácený, pokud není vyhodnocena `true`žádná operace porovnání. Pokud je tento argument vynechán a žádná operace porovnání není vyhodnocena `true`jako, vrátí Case hodnotu null. `else_result_expression`je libovolný platný výraz. Datové typy `else_result_expression` a Any `result_expression` musí být stejné nebo musí být implicitní převod.  
   
- KDY `Boolean_expression`  
- Je `Boolean` výraz vyhodnocen při použití hledaný případu formátu. `Boolean_expression` je libovolný platný `Boolean` výrazu.  
+ KDY`Boolean_expression`  
+ `Boolean` Je výraz vyhodnocen při použití formátu případu hledání. `Boolean_expression`je libovolný platný `Boolean` výraz.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí nejvyšší prioritu typ ze sady typů v `result_expression` a volitelné `else_result_expression`.  
+ Vrátí nejvyšší prioritu typu ze sady typů v `result_expression` a volitelné. `else_result_expression`  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz case se podobá výraz case příkazů jazyka Transact-SQL. Výraz case můžete provádět řadu podmíněné testů, abyste zjistili výrazu, který předá odpovídající výsledek. Tato forma výraz case se vztahuje na řadu jeden nebo více `Boolean` výrazy k určení správné výsledný výraz.  
+ Výraz [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Case se podobá výrazu Case Transact-SQL. Výraz Case použijete k vytvoření řady podmíněných testů, které určují, který výraz bude poskytovat odpovídající výsledek. Tato forma výrazu Case se vztahuje na řadu jednoho nebo více `Boolean` výrazů pro určení správného výsledného výrazu.  
   
- Funkce CASE se vyhodnotí `Boolean_expression` pro každou klauzuli WHEN v pořadí zadané a vrátí `result_expression` prvního `Boolean_expression` vyhodnocenou nečíselnou `true`. Zbývající výrazy se nevyhodnocují. Pokud ne `Boolean_expression` vyhodnotí jako `true`, vrátí databázový stroj `else_result_expression` Pokud není zadána klauzule ELSE, nebo hodnotu null, pokud není zadána žádná klauzule ELSE.  
+ Funkce Case vyhodnocuje `Boolean_expression` každou klauzuli when v zadaném pořadí a vrátí `result_expression` `true`první `Boolean_expression` , která je vyhodnocena jako. Zbývající výrazy nejsou vyhodnocovány. Pokud není `true`vyhodnocena, databázový stroj vrátí `else_result_expression` klauzuli if, pokud je zadána klauzule else, nebo hodnotu null, pokud není zadána klauzule else. `Boolean_expression`  
   
- CASE – příkaz nemůže vrátit použita třída multiset.  
+ Příkaz CASE nemůže vracet multiset.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá k vyhodnocení sady výraz CASE `Boolean` výrazů, aby bylo možné zjistit výsledek. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá výraz Case k vyhodnocení sady `Boolean` výrazů za účelem určení výsledku. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
-2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#CASE_WHEN_THEN_ELSE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#case_when_then_else)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)
-- [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [THEN](then-entity-sql.md)
+- [SELECT](select-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

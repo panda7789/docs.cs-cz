@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
-ms.openlocfilehash: 83b7533f66c68dd25f21906394a40c956c9b88b8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 787ead2c52f874af2ca1a02bf009da40cee875ae
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936005"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250774"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: Volání modelově definovaných funkcí jako objektových metod
-Toto téma popisuje, jak volat funkci definovanou modelem jako metodu <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu pro vlastní třídu. *Funkce definovaná modelem* je funkce, která je definována v koncepčním modelu. Postupy v tématu popisují způsob volání těchto funkcí přímo místo jejich volání z LINQ to Entities dotazů. Informace o volání funkcí definovaných modelem v LINQ to Entitiesch dotazech naleznete [v tématu How to: Volání funkcí definovaných modelem v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  
+Toto téma popisuje, jak volat funkci definovanou modelem jako metodu <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu pro vlastní třídu. *Funkce definovaná modelem* je funkce, která je definována v koncepčním modelu. Postupy v tématu popisují způsob volání těchto funkcí přímo místo jejich volání z LINQ to Entities dotazů. Informace o volání funkcí definovaných modelem v LINQ to Entitiesch dotazech naleznete [v tématu How to: Volání funkcí definovaných modelem v dotazech](how-to-call-model-defined-functions-in-queries.md).  
   
  Bez ohledu na to, zda zavoláte funkci <xref:System.Data.Objects.ObjectContext> definovanou modelem jako metodu nebo jako statickou metodu pro vlastní třídu, je nutné nejprve namapovat metodu na funkci <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>definovanou modelem. Pokud však definujete metodu <xref:System.Data.Objects.ObjectContext> třídy, je nutné <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> použít vlastnost k zveřejnění poskytovatele LINQ, zatímco při definování statické metody pro vlastní třídu je nutné použít <xref:System.Linq.IQueryable.Provider%2A> vlastnost k vystavení poskytovatele LINQ. Další informace najdete v příkladech, které následují níže uvedené postupy.  
   
@@ -108,5 +108,5 @@ Toto téma popisuje, jak volat funkci definovanou modelem jako metodu <xref:Syst
 ## <a name="see-also"></a>Viz také:
 
 - [Soubor. edmx – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
-- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
-- [Volání funkcí v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)
+- [Dotazy v technologii LINQ to Entities](queries-in-linq-to-entities.md)
+- [Volání funkcí v dotazech LINQ to Entities](calling-functions-in-linq-to-entities-queries.md)

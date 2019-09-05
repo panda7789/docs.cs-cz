@@ -13,12 +13,12 @@ ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
 author: rpetrusha
 ms.author: ronpet
 ms.custom: serodec18
-ms.openlocfilehash: 8d887bb32d1bdd398353d00aba16c2cc8adfcacb
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: a945c53f3206f29cf2b07fea86ba3e8e3af11645
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988823"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254228"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v .NET
 <a name="top"></a>Modul regulárních výrazů v rozhraní .NET je účinný, plně funkční nástroj, který zpracovává text na základě porovnávání vzorů, nikoli porovnávání a porovnávání literálního textu. Ve většině případů provádí porovnání vzorů rychle a efektivně. V některých případech se však může zdát, že je modul regulárních výrazů velmi pomalý. V extrémních případech se může dokonce zdát, že přestal při zpracování relativně malého vstupu odpovídat po dobu hodin nebo dokonce dní.  
@@ -96,7 +96,7 @@ ms.locfileid: "69988823"
 > Způsob volání metod (statické, interpretované, zkompilované) ovlivňuje výkon, pokud pro volání metod použijete stejný regulární výraz, nebo pokud aplikace příliš často používá objekty regulárních výrazů.  
   
 ### <a name="static-regular-expressions"></a>Statické regulární výrazy  
- Statické metody regulárních výrazů jsou vhodnou alternativou k opakovanému vytváření instancí objektů regulárních výrazů se stejným regulárním výrazem. Na rozdíl od vzorů regulárních výrazů používaných objekty regulárních výrazů jsou kódy operací nebo zkompilovaný kód MSIL (Microsoft intermediate language) ze vzorů používaných pro volání metod instance interně ukládány do mezipaměti pomocí modulu regulárních výrazů.  
+ Statické metody regulárních výrazů jsou vhodnou alternativou k opakovanému vytváření instancí objektů regulárních výrazů se stejným regulárním výrazem. Na rozdíl od vzorů regulárních výrazů používaných objekty regulárních výrazů, jsou kódy operací nebo zkompilovaný jazyk MSIL (Microsoft Intermediate Language) ze vzorů používaných ve statických voláních metod ukládány do mezipaměti interně modulem regulárních výrazů.  
   
  Například pro ověření uživatelského vstupu volá obslužná rutina události často jinou metodu. To se odrazí v následujícím kódu, ve kterém <xref:System.Windows.Forms.Button> se <xref:System.Windows.Forms.Control.Click> událost ovládacího prvku používá k volání metody s názvem `IsValidCurrency`, která kontroluje, zda uživatel zadal symbol měny následovaný alespoň jednou desítkovou číslicí.  
   

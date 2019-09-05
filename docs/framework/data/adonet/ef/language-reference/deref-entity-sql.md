@@ -2,15 +2,15 @@
 title: DEREF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
-ms.openlocfilehash: 1ba562ba6542e6ab0d62f1f8348434ae4f4c9b13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10c5ecb2b44c85dccd758cc1cf63a152da045cc1
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785304"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251082"
 ---
 # <a name="deref-entity-sql"></a>DEREF (Entity SQL)
-Přístupů přes ukazatel referenčními hodnotami a vytváří výsledek, který přístup přes ukazatel.  
+Odkazuje na referenční hodnotu a vytvoří výsledek tohoto předaného odkazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,27 +20,27 @@ SELECT DEREF ( o.expression ) from Table as o;
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný výraz platný dotaz, který vrátí kolekci.  
+ Libovolný platný výraz dotazu, který vrací kolekci.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Hodnota entity, na který odkazuje.  
+ Hodnota odkazované entity  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor DEREF přístupů přes ukazatel, hodnota odkazu a vytváří výsledek, který přístup přes ukazatel. Například pokud `r` odkaz na typ ref\<T >, `Deref(r)` je výraz typu `T` , která poskytuje entita odkazuje `r`. Pokud hodnota odkazu je null nebo je nepropojená (to znamená, že cíl odkazu neexistuje), výsledek operátoru DEREF má hodnotu null.  
+ Operátor DEREF odkazuje na referenční hodnotu a generuje výsledek tohoto odkázání. Například `r` Pokud je odkaz typu ref\<T >, `Deref(r)` je výraz typu `T` , který má za důsledek entitu, na kterou odkazuje `r`. Pokud má referenční hodnota hodnotu null nebo je dangling (to znamená, že cíl odkazu neexistuje), výsledek operátoru DEREF má hodnotu null.  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá operátor DEREF pokouší dereferencovat referenčními hodnotami a přístupu přes ukazatel výsledku, který vytvoří. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz pomocí operátoru DEREF odkazuje na referenční hodnotu a vytvoří výsledek tohoto zpětného odkazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
-2. Následující dotaz předejte jako argument k metodě ExecutePrimitiveTypeQuery:  
+2. Předat následující dotaz jako argument metodě ExecutePrimitiveTypeQuery:  
   
  [!code-csharp[DP EntityServices Concepts 2#DEREF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#deref)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)
-- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)
-- [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)
-- [Strukturované typy s možnou hodnotou Null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [REF](ref-entity-sql.md)
+- [CREATEREF](createref-entity-sql.md)
+- [KEY](key-entity-sql.md)
+- [Strukturované typy s možnou hodnotou Null](nullable-structured-types-entity-sql.md)

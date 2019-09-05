@@ -6,19 +6,19 @@ helpviewer_keywords:
 - caching [.NET Framework], configuration
 - memoryCache element
 ms.assetid: 182a622f-f7cf-472d-9d0b-451d2fd94525
-ms.openlocfilehash: 46f430f7cf112da40aa3b25bfb280c5014612eae
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 25467fc751ad772e74ca714e6059bc5134300ed6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663621"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252488"
 ---
 # <a name="memorycache-element-cache-settings"></a>\<memoryCache – Element > (nastavení mezipaměti)
 Definuje prvek, který se používá ke konfiguraci mezipaměti založené na <xref:System.Runtime.Caching.MemoryCache> třídě. Třída definuje element MemoryCache, který můžete použít ke konfiguraci mezipaměti. [](memorycache-element-cache-settings.md) <xref:System.Runtime.Caching.Configuration.MemoryCacheElement> V jedné aplikaci lze <xref:System.Runtime.Caching.MemoryCache> použít více instancí třídy. Každý `memoryCache` prvek v konfiguračním souboru může obsahovat nastavení pro pojmenovanou <xref:System.Runtime.Caching.MemoryCache> instanci.  
   
- \<> Konfigurace  
-\<system.runtime.caching>  
-\<memoryCache>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. Runtime. Caching >** ](system-runtime-caching-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<memoryCache >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,6 +55,7 @@ Definuje prvek, který se používá ke konfiguraci mezipaměti založené na <x
   
 |Prvek|Popis|  
 |-------------|-----------------|  
+|[\<> Konfigurace](../configuration-element.md)|Určuje kořenový element v každém konfiguračním souboru, který je používán modulem CLR (Common Language Runtime) a .NET Framework aplikacemi.|  
 |[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Obsahuje typy, které umožňují implementovat ukládání výstupu do mezipaměti v aplikacích, které jsou integrovány do .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  

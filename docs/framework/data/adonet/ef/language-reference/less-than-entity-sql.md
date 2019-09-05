@@ -1,16 +1,16 @@
 ---
-title: < (Menší než) (Entity SQL)
+title: < (Méně než) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 1fc2a039-3ad6-4b3c-b41d-09932e803f86
-ms.openlocfilehash: 1ca1cbdf1282782295b659393e8f54aae3ec5649
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1d19c9017a4b789b40332e4eca522e9758dcdf2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772297"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250457"
 ---
-# <a name="-less-than-entity-sql"></a>\< (Méně než) (Entity SQL)
-Porovná dva výrazy k určení, zda levý výraz má hodnotu menší, než pravý výraz.  
+# <a name="-less-than-entity-sql"></a>\<(Menší než) (Entity SQL)
+Porovná dva výrazy a určí, zda má levý výraz hodnotu menší než pravý výraz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,20 +20,20 @@ expression < expression
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný výraz. Implicitně převést datové typy musí mít oba výrazy.  
+ Libovolný platný výraz. Oba výrazy musí mít implicitně převoditelné datové typy.  
   
 ## <a name="result-types"></a>Typy výsledků  
- `true` Pokud levý výraz má hodnotu menší, než pravý výraz; v opačném případě `false`.  
+ `true`Pokud má levý výraz hodnotu menší než pravý výraz; v opačném případě. `false`  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá < – operátor porovnání k porovnání dvou výrazů slouží k určení, zda levý výraz má hodnotu menší, než pravý výraz. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz pomocí operátoru porovnání < Porovná dva výrazy a určí, zda má levý výraz hodnotu menší než pravý výraz. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#LESS](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#less)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

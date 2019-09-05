@@ -2,15 +2,15 @@
 title: Předpoklady migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: 8370156d2bd0f3858d7fa0936fa967a658e6e910
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3554f530acf0e3ca3e66dddf74f63e7ede03708e
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929311"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248556"
 ---
 # <a name="migration-considerations-entity-framework"></a>Předpoklady migrace (Entity Framework)
-ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Jedním z nejdůležitějších z těchto výhod je možnost použít koncepční model k oddělení datových struktur používaných aplikací ze schématu ve zdroji dat. Díky tomu můžete snadno provádět budoucí změny modelu úložiště nebo samotného zdroje dat, aniž byste museli provádět kompenzační změny aplikace. Další informace o výhodách použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]naleznete v tématu [Entity Framework Overview](../../../../../docs/framework/data/adonet/ef/overview.md) a [model EDM (Entity Data Model)](../../../../../docs/framework/data/adonet/entity-data-model.md).  
+ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Jedním z nejdůležitějších z těchto výhod je možnost použít koncepční model k oddělení datových struktur používaných aplikací ze schématu ve zdroji dat. Díky tomu můžete snadno provádět budoucí změny modelu úložiště nebo samotného zdroje dat, aniž byste museli provádět kompenzační změny aplikace. Další informace o výhodách použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]naleznete v tématu [Entity Framework Overview](overview.md) a [model EDM (Entity Data Model)](../entity-data-model.md).  
   
  Chcete-li využít výhod [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] ,můžetemigrovatexistujícíaplikacina.[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Některé úlohy jsou společné pro všechny migrované aplikace. Mezi tyto běžné úlohy patří upgrade aplikace na použití .NET Framework od verze 3,5 Service Pack 1 (SP1), definování modelů a mapování a konfigurace Entity Framework. Při migraci aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]nástroje jsou k dispozici další předpoklady. Tyto požadavky závisí na typu migrované aplikace a na konkrétních funkcích aplikace. Toto téma poskytuje informace, které vám pomůžou vybrat nejlepší přístup k použití při upgradu existující aplikace.  
   
@@ -23,7 +23,7 @@ ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Je
   
 - Pro velkou nebo složitou aplikaci není nutné migrovat celou aplikaci na Entity Framework najednou. Nicméně jakákoli část aplikace, která nepoužívá Entity Framework, musí být při změně zdroje dat stále změněna.  
   
-- Připojení zprostředkovatele dat používaného Entity Framework lze sdílet s ostatními částmi aplikace, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] protože používá poskytovatele dat ADO.NET pro přístup ke zdroji dat. Například poskytovatel SqlClient používá Entity Framework k přístupu k databázi SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+- Připojení zprostředkovatele dat používaného Entity Framework lze sdílet s ostatními částmi aplikace, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] protože používá poskytovatele dat ADO.NET pro přístup ke zdroji dat. Například poskytovatel SqlClient používá Entity Framework k přístupu k databázi SQL Server. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="common-migration-tasks"></a>Běžné úlohy migrace  
  Cesta k migraci existující aplikace na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategii přístupu k datům. Při migraci existující aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]nástroje je však nutné vždy provést následující úlohy.  
@@ -46,7 +46,7 @@ ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Je
   
 3. Zadejte připojovací řetězec.  
   
-     Při provádění dotazů na koncepční model používáspeciálněformátovanýpřipojovacířetězec.[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Tento připojovací řetězec zapouzdřuje informace o modelu a mapování souborů a připojení ke zdroji dat. Další informace najdete v tématu [jak: Zadejte připojovací řetězec](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
+     Při provádění dotazů na koncepční model používáspeciálněformátovanýpřipojovacířetězec.[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Tento připojovací řetězec zapouzdřuje informace o modelu a mapování souborů a připojení ke zdroji dat. Další informace najdete v tématu [jak: Zadejte připojovací řetězec](how-to-define-the-connection-string.md).  
   
 4. Nakonfigurujte projekt sady Visual Studio.  
   
@@ -60,13 +60,13 @@ ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Je
   
 - Zobrazení tabulkových dat pomocí čtecího modulu dat.  
 
-  Můžete zvážit provedení [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazu pomocí poskytovatele EntityClient a vytvoření výčtu prostřednictvím vráceného <xref:System.Data.EntityClient.EntityDataReader> objektu. Tuto možnost proveďte pouze v případě, že vaše aplikace zobrazuje tabulková data pomocí čtecího modulu dat a nevyžaduje funkce [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] poskytované pro vyhodnocování data do objektů, sledování změn a provádění aktualizací. Můžete dál používat stávající přístup k datům, který umožňuje aktualizace zdroje dat, ale můžete použít stávající připojení, ke kterému se přistupuje z <xref:System.Data.EntityClient.EntityConnection.StoreConnection%2A> <xref:System.Data.EntityClient.EntityConnection>vlastnosti. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+  Můžete zvážit provedení [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazu pomocí poskytovatele EntityClient a vytvoření výčtu prostřednictvím vráceného <xref:System.Data.EntityClient.EntityDataReader> objektu. Tuto možnost proveďte pouze v případě, že vaše aplikace zobrazuje tabulková data pomocí čtecího modulu dat a nevyžaduje funkce [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] poskytované pro vyhodnocování data do objektů, sledování změn a provádění aktualizací. Můžete dál používat stávající přístup k datům, který umožňuje aktualizace zdroje dat, ale můžete použít stávající připojení, ke kterému se přistupuje z <xref:System.Data.EntityClient.EntityConnection.StoreConnection%2A> <xref:System.Data.EntityClient.EntityConnection>vlastnosti. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](entityclient-provider-for-the-entity-framework.md).  
   
 - Práce s datovými sadami.  
 
-  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje mnoho stejných funkcí poskytovaných datovou sadou, včetně trvalosti v paměti, sledování změn, datových vazeb a serializace objektů jako XML data. Další informace naleznete v tématu [práce s objekty](../../../../../docs/framework/data/adonet/ef/working-with-objects.md).  
+  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje mnoho stejných funkcí poskytovaných datovou sadou, včetně trvalosti v paměti, sledování změn, datových vazeb a serializace objektů jako XML data. Další informace naleznete v tématu [práce s objekty](working-with-objects.md).  
   
-  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Pokud neposkytuje funkci datové sady, kterou vaše aplikace potřebuje, můžete přesto využít výhod dotazů LINQ pomocí LINQ to DataSet. Další informace najdete v tématu [LINQ to DataSet](../../../../../docs/framework/data/adonet/linq-to-dataset.md).  
+  [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Pokud neposkytuje funkci datové sady, kterou vaše aplikace potřebuje, můžete přesto využít výhod dotazů LINQ pomocí LINQ to DataSet. Další informace najdete v tématu [LINQ to DataSet](../linq-to-dataset.md).  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>Pokyny pro aplikace, které vážou data s ovládacími prvky  
  .NET Framework umožňuje zapouzdřit data ve zdroji dat, jako je například datová sada nebo ovládací prvek zdroje dat ASP.NET, a následně navazovat prvky uživatelského rozhraní na tyto datové ovládací prvky. Následující seznam popisuje, jak svázat ovládací prvky s Entity Frameworkmi daty.  
@@ -92,7 +92,7 @@ ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Je
   
 - Aplikace, které používají data XML.  
 
-  Serializace objektů umožňuje vytvářet [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] datové služby. Tyto služby poskytují data aplikacím, které využívají data XML, jako jsou například internetové aplikace založené na AJAX. V těchto případech zvažte použití nástroje [!INCLUDE[ssAstoria](../../../../../includes/ssastoria-md.md)]. Tyto datové služby jsou založené na model EDM (Entity Data Model) a poskytují dynamický přístup k datům entit pomocí akcí protokolu HTTP Standard representational state transfer (REST), jako například GET, PUT a POST. Další informace najdete v tématu [4.5 služby WCF Data](../../../../../docs/framework/data/wcf/index.md).  
+  Serializace objektů umožňuje vytvářet [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] datové služby. Tyto služby poskytují data aplikacím, které využívají data XML, jako jsou například internetové aplikace založené na AJAX. V těchto případech zvažte použití nástroje [!INCLUDE[ssAstoria](../../../../../includes/ssastoria-md.md)]. Tyto datové služby jsou založené na model EDM (Entity Data Model) a poskytují dynamický přístup k datům entit pomocí akcí protokolu HTTP Standard representational state transfer (REST), jako například GET, PUT a POST. Další informace najdete v tématu [4.5 služby WCF Data](../../wcf/index.md).  
   
   [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nepodporuje datový typ native-XML. To znamená, že když je entita namapována na tabulku se sloupcem XML, je ekvivalentní vlastnost entity pro sloupec XML řetězec. Objekty mohou být odpojeny a serializovány jako XML. Další informace naleznete v tématu [serializace objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
@@ -104,5 +104,5 @@ ADO.NET Entity Framework poskytuje několik výhod pro existující aplikaci. Je
   
 ## <a name="see-also"></a>Viz také:
 
-- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
-- [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)
+- [Důležité informace o nasazení](deployment-considerations.md)
+- [Terminologie Entity Framework](terminology.md)

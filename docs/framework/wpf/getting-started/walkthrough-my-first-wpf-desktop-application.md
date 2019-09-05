@@ -11,12 +11,12 @@ ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
 ms.custom: vs-dotnet
-ms.openlocfilehash: 9d5b5b8a479efd3918dc23616aa331cc07a901ac
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 4919424339df1f8d2c68465bd9f9af42f344fe37
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972138"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254074"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
 
@@ -55,7 +55,7 @@ Prvním krokem je vytvoření infrastruktury aplikace, která zahrnuje definici 
 
 1. Vytvoření nového projektu aplikace WPF v Visual Basic nebo vizuálu C# s názvem **`ExpenseIt`** :
 
-   1. Otevřete Visual Studio a v nabídce Začínáme vyberte **vytvořit nový projekt** .
+   1. Otevřete Visual Studio a **v nabídce Začínáme** vyberte **vytvořit nový projekt** .
 
       Otevře se dialogové okno **vytvořit nový projekt** .
 
@@ -143,7 +143,7 @@ V této části přidáte do aplikace dvě stránky a image.
 
 1. <xref:System.Windows.Controls.Page.Title%2A> Nastavtena`ExpenseIt - Home`.
 
-1. Nastavte hodnoty prvku `DesignWidth`ana 300 pixelů. `DesignHeight`
+1. Nastavte na 350 pixelů `DesignWidth` a na 500 pixelů. `DesignHeight`
 
     XAML se teď zobrazí jako Visual Basic:
 
@@ -184,7 +184,7 @@ V této části přidáte do aplikace dvě stránky a image.
 
 1. <xref:System.Windows.Controls.Page.Title%2A> Nastavtena`ExpenseIt - View Expense`.
 
-1. Nastavte hodnoty prvku `DesignWidth`ana 300 pixelů. `DesignHeight`
+1. Nastavte na 350 pixelů `DesignWidth` a na 500 pixelů. `DesignHeight` 
 
     *ExpenseReportPage. XAML* teď vypadá jako na následujícím Visual Basic:
 
@@ -251,7 +251,7 @@ V této části vytvoříte tabulku s jedním sloupcem se třemi řádky a okraj
    ```
 
    > [!TIP]
-   > Hodnoty okrajů můžete nastavit také v okně **vlastnosti** v kategorii **rozložení** :
+   > Hodnoty **okrajů** můžete nastavit také v okně **vlastnosti** v kategorii **rozložení** :
    >
    > ![Hodnoty okrajů v okno Vlastnosti](./media/properties-margin.png)
 

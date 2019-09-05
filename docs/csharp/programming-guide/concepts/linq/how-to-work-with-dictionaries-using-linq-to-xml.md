@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Práce se slovníky pomocí LINQ to XML (C#)'
+title: 'Postupy: Práce se slovníky pomocí LINQ to XMLC#()'
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 196720ff9c17e62f8da9e65e1b8c481fed5074cc
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 55512e6039010d74d390c805c119935c436f9834
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484710"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253243"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: Práce se slovníky pomocí LINQ to XML (C#)
-Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML. Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: Práce se slovníky pomocí LINQ to XMLC#()
+Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá určitou formu funkční konstrukce, ve kterém dotaz nové projekty <xref:System.Xml.Linq.XElement> objekty a výsledné kolekce je předán jako argument pro konstruktor kořenové <xref:System.Xml.Linq.XElement> objektu.  
+ V tomto příkladu se používá forma konstrukce funkčnosti, ve které se dotazuje <xref:System.Xml.Linq.XElement> na nové objekty a výsledná kolekce se předává jako argument konstruktoru kořenového <xref:System.Xml.Linq.XElement> objektu.  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  
@@ -28,7 +28,7 @@ XElement root = new XElement("Root",
 Console.WriteLine(root);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Root>  
@@ -40,7 +40,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří slovník ze souboru XML.  
+ Následující kód vytvoří slovník z XML.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -57,12 +57,11 @@ foreach (string str in dict.Keys)
     Console.WriteLine("{0}:{1}", str, dict[str]);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
-```  
+```output  
 Child1:Value1  
 Child2:Value2  
 Child3:Value3  
 Child4:Value4  
 ```  
-  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aedbecc1-c33c-4fb4-8861-fdf7e1dc6b8a
-ms.openlocfilehash: 08cc8aedac545ffa5648034119fc2267c860d499
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 63f4cb3cbb90afc37629b336972b5e09d20346b3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963282"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247532"
 ---
 # <a name="customizing-operations-by-using-stored-procedures"></a>Přizpůsobení operací pomocí uložených procedur
 Uložené procedury reprezentují běžný přístup k přepsání výchozího chování. Příklady v tomto tématu ukazují, jak lze použít vygenerované obálky metody pro uložené procedury a jak lze přímo volat uložené procedury.  
@@ -18,7 +18,7 @@ Uložené procedury reprezentují běžný přístup k přepsání výchozího c
  Pokud používáte aplikaci Visual Studio, můžete použít Návrhář relací objektů k přiřazení uložených procedur k provádění vložení, aktualizace a odstranění.  
   
 > [!NOTE]
-> Chcete-li načíst zpět hodnoty generované databází, použijte výstupní parametry v uložených procedurách. Pokud nemůžete použít výstupní parametry, zapište implementaci částečné metody namísto spoléhání na přepisy vygenerované Návrhář relací objektů. Členy mapované na hodnoty generované databází musí být po `INSERT` `UPDATE` úspěšném dokončení operací nastaveny na příslušné hodnoty. Další informace najdete v tématu [zodpovědnosti vývojáře při přepisu výchozího chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
+> Chcete-li načíst zpět hodnoty generované databází, použijte výstupní parametry v uložených procedurách. Pokud nemůžete použít výstupní parametry, zapište implementaci částečné metody namísto spoléhání na přepisy vygenerované Návrhář relací objektů. Členy mapované na hodnoty generované databází musí být po `INSERT` `UPDATE` úspěšném dokončení operací nastaveny na příslušné hodnoty. Další informace najdete v tématu [zodpovědnosti vývojáře při přepisu výchozího chování](responsibilities-of-the-developer-in-overriding-default-behavior.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -49,4 +49,4 @@ Uložené procedury reprezentují běžný přístup k přepsání výchozího c
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odpovědnosti vývojáře při přepisu výchozího chování](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md)
+- [Odpovědnosti vývojáře při přepisu výchozího chování](responsibilities-of-the-developer-in-overriding-default-behavior.md)

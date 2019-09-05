@@ -2,24 +2,24 @@
 title: Práce se zprostředkovateli dat
 ms.date: 03/30/2017
 ms.assetid: b6ae53f4-34f8-4510-ad98-ff1e46621526
-ms.openlocfilehash: b7fc40eb66b1885e3e4964bd216f996b34d96dbf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 728bcbcdaa3bd405be00b75da7eb62e653a99e5d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763890"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248149"
 ---
 # <a name="working-with-data-providers"></a>Práce se zprostředkovateli dat
-Témata v této části popisují službami a poskytovateli, které transformují dotazy na koncepční model na nativní dotazy na zdroj dat, která je podporována rozhraním Entity Framework.  
+Témata v této části popisují služby a poskytovatele, kteří transformují dotazy na koncepční model na nativní dotazy proti zdroji dat, který je podporován Entity Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md)  
+ [Připojovací řetězce](connection-strings.md)  
   
- [Zprostředkovatelé dat Entity Framework](../../../../../docs/framework/data/adonet/ef/data-providers.md)  
+ [Zprostředkovatelé dat Entity Framework](data-providers.md)  
   
- [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)  
+ [Zápis zprostředkovatele dat Entity Framework](writing-an-ef-data-provider.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
-- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)
+- [Jazyk Entity SQL](./language-reference/entity-sql-language.md)
+- [ADO.NET Entity Framework](index.md)

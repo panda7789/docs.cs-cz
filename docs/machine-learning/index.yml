@@ -6,20 +6,18 @@ metadata:
   title: 'Dokumentace k ML.NET – kurzy, Reference k rozhraní API'
   meta.description: 'Learn how to use ML.NET, an open-source and cross-platform machine learning framework you can use to build custom machine learning solutions and integrate them into .NET applications. Incorporate AI into your apps using the .NET skills you already have and without leaving .NET.'
   ms.topic: landing-page
-  ms.date: 04/18/2019
-  ms.author: cgronlun
-  author: cjgronlund
+  ms.date: 08/15/2019
+  ms.author: nakersha
+  author: natke
 abstract:
   description: 'Naučte se používat ML.NET, open source a rozhraní Machine Learning pro různé platformy k vytváření vlastních řešení strojového učení a jejich integraci do aplikací .NET. Návody, příklady kódu, Reference k rozhraní API a další dokumentace ukazují, jak.'
 sections:
-  - title: Začínáme
-    items:
-      - type: paragraph
-        text: 'Pokud se chcete dozvědět, jak je aplikace Machine Learning vytvořená pomocí ML.NET, přečtěte si téma <a href="/dotnet/machine-learning/how-does-mldotnet-work">co je ml.NET a jak to</a>funguje? Nebo Začněte přidáním balíčku NuGet <b>Microsoft.ml</b> do aplikace.'
   - title: Podrobné kurzy
     items:
       - type: paragraph
         text: 'Naučte se vytvářet běžná řešení pomocí ML.NET:'
+      - type: paragraph
+        text: '<b>Vývoj s využitím rozhraní ml.NET API</b>:'
       - type: list
         style: unordered
         items:
@@ -30,13 +28,40 @@ sections:
           - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">Vytvoření doporučení pro film pro vyfaktoringování pomocí Matrixu</a>
           - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Sestavení vlastního klasifikátoru imagí pomocí TensorFlow</a>
           - html: <a href="/dotnet/machine-learning/tutorials/object-detection-onnx">Rozpoznávání objektů v obrázcích pomocí ONNX</a>
-  - title: Referenční materiály a zdroje informací
-    items:
       - type: paragraph
-        text: 'Rozhraní ML.NET API má dvě sady balíčků: součásti vydané verze a součásti verze Preview. Rozhraní API pro vydávání verzí obsahuje komponenty pro zpracování dat, algoritmy pro binární klasifikaci, klasifikaci více tříd, regresi, detekci anomálií, časovou řadu a prognózy, hodnocení, ukládání a načítání modelů, ONNX a TensorFlow zpracování modelů a mnohem více! Rozhraní API pro náhled obsahuje algoritmy pro úlohy doporučení a podporu pro standardní modely hloubkového učení.'
+        text: '<b>Použití Tvůrce modelů</b>, grafické rozšíření sady Visual Studio:'
       - type: list
         style: unordered
         items:
-          - html: <a href="/dotnet/api/?view=ml-dotnet">ROZHRANÍ API PRO ML.NET</a>
-          - html: <a href="/dotnet/api/?view=ml-dotnet-preview">Rozhraní API pro ML.NET Preview</a>
-          - html: '<a href="https://github.com/dotnet/machinelearning-samples/blob/master/README.md">Ukázky ML.NET: C#aniF#</a>'
+          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices-with-model-builder">Předpověď cen pomocí Tvůrce modelů</a>
+      - type: paragraph
+        text: '<b>Spusťte rozhraní příkazového řádku ml.NET</b>:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/machine-learning/tutorials/mlnet-cli">Analýza mínění pomocí rozhraní příkazového řádku ML.NET</a>
+  - title: Ukázky
+    items:
+      - type: paragraph
+        text: 'Další informace najdete v části <a href="https://github.com/dotnet/machinelearning-samples">úložiště ukázek</a> na GitHubu pro aplikace v C# a F#.'
+  - title: Reference
+    items:
+      - type: paragraph
+        text: <b>Rozhraní ML.NET API</b>
+      - type: list
+        style: unordered
+        items:
+          - html: '<a href="/dotnet/api/?view=ml-dotnet">Rozhraní API Release ml.NET</a> obsahuje komponenty pro zpracování dat, algoritmy pro binární klasifikaci, klasifikaci více tříd, regresi, detekci anomálií, časovou řadu a prognózy, hodnocení, ukládání a načítání modelů, ONNX a TensorFlow. zpracování modelů a mnoho dalšího.'
+          - html: <a href="/dotnet/api/?view=ml-dotnet-preview">Rozhraní API Preview ml.NET</a> obsahuje algoritmy pro úlohy doporučení a podporu pro standardní modely hloubkového učení.
+      - type: paragraph
+        text: <b>Rozhraní AutoML API</b>
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/api/index?view=automl-dotnet">Rozhraní API pro automatické ML</a>
+      - type: paragraph
+        text: <b>Reference k rozhraní příkazového řádku ML.NET</b>
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/machine-learning/reference/ml-net-cli-reference">Reference k příkazům rozhraní příkazového řádku ML.NET</a>

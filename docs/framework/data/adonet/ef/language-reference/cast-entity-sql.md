@@ -2,12 +2,12 @@
 title: Přetypování (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: 253dcf092deadd1049d0556af4ea0630602110d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 385f9a8057ea6aa3637f7fae6fec79154ac625ba
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935813"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251235"
 ---
 # <a name="cast-entity-sql"></a>Přetypování (Entity SQL)
 Převede výraz jednoho datového typu na jiný.  
@@ -23,7 +23,7 @@ CAST ( expression AS data_type )
  Libovolný platný výraz, který lze převést `data_type`na.  
   
  `data_type`  
- Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. `data_type` Použitá velikost závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md). Pokud je spuštěn dotaz s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
+ Cílový datový typ zadaný systémem. Musí se jednat o primitivní (skalární) typ. `data_type` Použitá velikost závisí na prostoru dotazu. Pokud je dotaz spuštěn s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v koncepčním modelu. Další informace najdete v tématu [specifikace CSDL](csdl-specification.md). Pokud je spuštěn dotaz s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je typ modulu CLR (Common Language Runtime).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrací stejnou hodnotu jako `data_type`.  
@@ -53,7 +53,7 @@ CAST( e as T )
 ## <a name="example"></a>Příklad  
  Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor přetypování k přetypování výrazu jednoho datového typu na jiný. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
 2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
@@ -61,4 +61,4 @@ CAST( e as T )
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

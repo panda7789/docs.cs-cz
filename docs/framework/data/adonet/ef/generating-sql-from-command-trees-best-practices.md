@@ -2,20 +2,20 @@
 title: Generování SQL ze stromů příkazů – osvědčené postupy
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 6ac46b577f071bca6c79e23b8b77f9b267ac879b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 366e27f8c8a04c5d2507ab37459ad6d5abc255ae
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606664"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251578"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování SQL ze stromů příkazů – osvědčené postupy
 
-Stromy příkazů výstup dotazu věrně modelovala dotazů v SQL anyAttribute. Existují však některé běžné problémy pro zprostředkovatele modulů pro zápis při generování SQL ze strom výstup příkazu. Toto téma popisuje tyto problémy. V dalším tématu se zprostředkovateli ukázek ukazuje, jak tyto problémy.
+Ve stromových strukturách příkazů pro výstup dotazu jsou dotazy vyhodnotit v SQL. Existují však některé běžné výzvy pro zapisovače poskytovatele při generování SQL z výstupního stromu příkazů. Toto téma popisuje tyto výzvy. V dalším tématu poskytovatel ukázkových řešení ukazuje, jak tyto výzvy vyřešit.
 
-## <a name="group-dbexpression-nodes-in-a-sql-select-statement"></a>Seskupování uzlů DbExpression v příkazu SQL SELECT
+## <a name="group-dbexpression-nodes-in-a-sql-select-statement"></a>Seskupení uzlů DbExpression v příkazu SQL SELECT
 
-Typické příkaz jazyka SQL má vnořené struktury následujícím tvaru:
+Typický příkaz SQL má vnořenou strukturu následujícího tvaru:
 
 ```sql
 SELECT …
@@ -25,11 +25,11 @@ GROUP BY …
 ORDER BY …
 ```
 
-Jednu či více klauzulí může být prázdný.  Vnořený příkaz SELECT může dojít v žádném z řádků.
+Jedna nebo více klauzulí může být prázdné.  Vnořený příkaz SELECT může nastat v některém z řádků.
 
-Je to možné překlad dotazu stromu příkazů do příkazu SQL SELECT byste mohli vytvořit jeden poddotaz pro každý relační operátor. Nicméně, které by mohlo dojít k zbytečné vnořené poddotazy, které by bylo obtížné číst.  Na některá úložiště dat může provést dotaz špatně.
+Možný převod stromu příkazů dotazu na příkaz SQL SELECT by vytvořil jeden poddotaz pro každý relační operátor. To by ale vedlo k zbytečným vnořeným poddotazům, které by bylo obtížné přečíst.  V některých úložištích dat může dotaz fungovat špatně.
 
-Jako příklad zvažte následující stromu příkazů dotazů
+Podívejte se například na následující strom příkazů dotazu.
 
 ```
 Project (
@@ -41,7 +41,7 @@ a.x,
 )
 ```
 
-Neefektivní překlad byste mohli vytvořit:
+Neefektivní překlad by vytvořil:
 
 ```sql
 SELECT a.x
@@ -50,11 +50,11 @@ FROM (   SELECT *
          WHERE b.y = 5) as a
 ```
 
-Všimněte si, že každý uzel relační výraz stane nový příkaz SQL SELECT.
+Všimněte si, že každý uzel relačních výrazů se stal novým příkazem SQL SELECT.
 
-Proto je potřeba agregovat tolik uzly výrazu nejdříve do jednoho příkazu SQL SELECT při zachování správnosti.
+Proto je důležité agregovat co nejvíce uzlů výrazů do jednoho příkazu SELECT jazyka SQL a přitom zachovat správnost.
 
-Výsledkem těchto agregace pro příklad uvedený výše by byl:
+Výsledek takové agregace pro příklad uvedený výše by byl:
 
 ```sql
 SELECT b.x
@@ -64,9 +64,9 @@ WHERE b.y = 5
 
 ## <a name="flatten-joins-in-a-sql-select-statement"></a>Sloučit spojení v příkazu SQL SELECT
 
-Jeden případ agregaci více uzlů do jednoho příkazu SQL SELECT je agregovat více spojení výrazů do jednoho příkazu SQL SELECT. DbJoinExpression představuje jeden spojení mezi dvěma vstupy. Ale v rámci jednoho příkazu SQL SELECT, je možné zadat více než jedno spojení. V takovém případě spojení jsou prováděny v uvedeném pořadí.
+Jeden případ agregace více uzlů do jednoho příkazu SELECT SQL sestaví více výrazů JOIN do jednoho příkazu SELECT jazyka SQL. DbJoinExpression představuje jedno spojení mezi dvěma vstupy. V rámci jednoho příkazu SELECT jazyka SQL je však možné zadat více než jedno spojení. V takovém případě se spojení provádějí v zadaném pořadí.
 
-Spine spojení LEFT, můžete snadněji sloučí (spojení, které se zobrazují jako levého potomka jiného spojení) do jednoho příkazu SQL SELECT. Představte si třeba následující příkaz stromu dotazu:
+Spojení s levou hřbetou, (spojení, která se zobrazují jako levý podřízený objekt jiného spojení), lze snadněji sloučit do jednoho příkazu SELECT jazyka SQL. Zvažte například následující strom příkazů dotazu:
 
 ```
 InnerJoin(
@@ -79,7 +79,7 @@ InnerJoin(
 )
 ```
 
-To může být správně přeloženy do:
+To se dá správně přeložit na:
 
 ```sql
 SELECT *
@@ -88,7 +88,7 @@ LEFT OUTER JOIN TableB as c ON b.y = c.x
 INNER JOIN TableC as d ON b.y = d.z
 ```
 
-Však-levé straně spine spojení nelze snadno sloučí a by se neměl pokoušet linearizace. Například příkaz spojení do ní následující dotaz stromu:
+Spojení páteře bez levého hřbetu ale nejdou snadno sloučit a neměli byste je slučovat. Například spojení v následujícím stromu příkazů dotazu:
 
 ```
 InnerJoin(
@@ -101,7 +101,7 @@ InnerJoin(
 )
 ```
 
-By byl přeložen na příkazu SQL SELECT s poddotazu.
+By byl přeložen na příkaz jazyka SQL SELECT s poddotazem.
 
 ```sql
 SELECT *
@@ -113,40 +113,40 @@ INNER JOIN (SELECT *
 ON b.y = d.z
 ```
 
-## <a name="input-alias-redirecting"></a>Vstupní Alias přesměrování
+## <a name="input-alias-redirecting"></a>Přesměrování vstupního aliasu
 
-Abychom vysvětlili, přesměrování vstupní alias, vezměte v úvahu struktura relační výrazy, jako je například DbFilterExpression DbProjectExpression, objekt DbCrossJoinExpression, DbJoinExpression, DbSortExpression, Dbgroupaggregate, objektu DbApplyExpression, a DbSkipExpression.
+Chcete-li vysvětlovat přesměrování vstupu aliasu, zvažte strukturu relačních výrazů, například DbFilterExpression, DbProjectExpression, DbCrossJoinExpression, DbJoinExpression, DbSortExpression, DbGroupAggregate, argumenty DbApplyExpression pro a DbSkipExpression.
 
-Každý z těchto typů má jednu nebo více vlastností vstup, které popisují vstupní kolekce a odpovídající pro každý vstupní vazby proměnné se používá k reprezentaci všech prvků objektu vstup během procházení kolekce. Proměnné vazby se používá k odkazování na element input, například v predikátu vlastnost DbFilterExpression nebo vlastnost projekce DbProjectExpression.
+Každý z těchto typů má jednu nebo více vstupních vlastností popisujících vstupní kolekci a proměnná vazby odpovídající jednotlivým vstupům slouží k reprezentaci každého prvku daného vstupu během průchodu kolekcí. Proměnná vazby se používá při odkazování na element input, například ve vlastnosti predikátu DbFilterExpression nebo vlastnosti projekce třídy DbProjectExpression.
 
-Když může agregaci více uzlů relační výraz do jednoho příkazu SQL SELECT a vyhodnocení výrazu, který je součástí výrazu relační (například část vlastnosti projekce DbProjectExpression) proměnné vazby, kterou používá nesmí být stejný jako alias vstupu, jak víc vazeb výrazu musel být přesměrováno do jedné míry.  Tento problém se nazývá přejmenování alias.
+Při agregaci dalších uzlů relačních výrazů do jednoho příkazu SELECT jazyka SQL a vyhodnocení výrazu, který je součástí relačního výrazu (například část vlastnosti projekce DbProjectExpression), kterou proměnnou vazby může používat. nesmí být stejný jako alias vstupu, protože vícenásobné vazby výrazů by musely být přesměrovány do jednoho rozsahu.  Tento problém se nazývá přejmenování aliasu.
 
-Podívejte se na první příklad v tomto tématu. Pokud se tím překlad naivní a překladu a.x projekce (DbPropertyExpression (a, x)), je správné a přeloží ji do `a.x` máme alias vstupu jako "a" tak, aby odpovídaly vazby proměnné.  Ale při agregování obou uzlů v jediném příkazu SQL SELECT, budete muset překládat stejnou DbPropertyExpression do `b.x`, jako vstup byl vytvořen alias s "b".
+Vezměte v úvahu první příklad v tomto tématu. Pokud se provádí překlad Naive a překlad projekce a. x (DbPropertyExpression (a, x)), je správné ho přeložit do `a.x` , protože máme alias vstupu jako "a", aby se shodoval s proměnnou vazby.  Při agregaci uzlů do jednoho příkazu SELECT SQL je však nutné přeložit stejný DbPropertyExpression do `b.x`, protože vstup byl aliasem "b".
 
-## <a name="join-alias-flattening"></a>Připojte se k vyrovnání Alias
+## <a name="join-alias-flattening"></a>Spojit sloučení aliasů
 
-Na rozdíl od libovolný jiný relační výraz ve výstupu příkazu stromu DbJoinExpression Vypíše typ výsledku, který je řádek skládající se z dva sloupce, z nichž každý představuje jednu ze vstupů. Při vytváření DbPropertyExpression pro přístup k skalární vlastnost pocházející z spojení, je prostřednictvím jiného DbPropertyExpression.
+Na rozdíl od jakéhokoli jiného relačního výrazu ve stromové struktuře příkazu OUTPUT DbJoinExpression vypíše výsledný typ, který je řádek sestávající ze dvou sloupců, z nichž každý odpovídá jednomu ze vstupů. Když je DbPropertyExpression sestaven pro přístup k skalární vlastnosti pocházející z JOIN, je nad jinou DbPropertyExpression.
 
-Mezi příklady patří "a.b.y" v příkladu 2 a "b.c.y" v příkladu 3. Ale v odpovídajících příkazů SQL tyto jsou označovány jako "b.y". Re aliasy se nazývá spojení sloučení alias.
+Mezi příklady patří "a. b. y" v příkladu 2 a "b. c. y" v příkladu 3. V odpovídajících příkazech SQL se však říká "b. y". Tento opakovaný alias se nazývá sloučení aliasů spojování.
 
-## <a name="column-name-and-extent-alias-renaming"></a>Název sloupce a míry Alias přejmenování
+## <a name="column-name-and-extent-alias-renaming"></a>Název sloupce a přejmenování aliasu rozsahu
 
-Pokud je dotaz SQL SELECT, který obsahuje spojení dokončit projekce, při vytváření výčtu všech zúčastněných sloupců ze vstupů, kolize názvů může dojít, jako více než jeden vstup může mít stejný název sloupce. Použijte jiný název sloupce, aby se zabránilo kolize.
+Pokud je dotaz SELECT SQL, který má spojení, dokončen s projekcí, při vytváření výčtu všech zúčastněných sloupců ze vstupů může dojít ke kolizi názvů, protože více než jeden vstup může mít stejný název sloupce. Chcete-li se vyhnout kolizi, použijte jiný název sloupce.
 
-Navíc při sloučení spojení, tabulky (nebo poddotazy) může mít kolize aliasy ve které malá a velká tyto nutné přejmenovat.
+Také při sloučení spojení mohou mít zúčastněné tabulky (nebo poddotazy) kolizi s aliasy, v takovém případě je třeba je přejmenovat.
 
-## <a name="avoid-select-"></a>Vyhněte se vybrat *
+## <a name="avoid-select-"></a>Vyhněte se výběru *
 
-Nepoužívejte `SELECT *` k výběru ze základních tabulek. V modelu úložiště [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace může obsahovat pouze podmnožinu sloupců, které jsou v tabulce databáze. V takovém případě `SELECT *` může způsobit nesprávný výsledek. Místo toho měli byste určit všechny zúčastněné sloupce s použitím názvy sloupců z typ výsledku zúčastněných výrazů.
+Nepoužívejte `SELECT *` k výběru ze základních tabulek. Model úložiště v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikaci může obsahovat jenom podmnožinu sloupců, které se nacházejí v tabulce databáze. V takovém případě `SELECT *` může způsobit nesprávný výsledek. Místo toho byste měli zadat všechny účastnící se sloupce pomocí názvů sloupců z výsledného typu výrazů, které se účastní.
 
 ## <a name="reuse-of-expressions"></a>Opakované použití výrazů
 
-Výrazy mohou být znovu použity ve stromu příkazů dotazů předávány [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Nepředpokládejte, že každý výraz se vyskytuje jenom jednou v dotazu strom příkazů.
+Výrazy se můžou znovu použít ve stromu příkazů dotazu, který [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]předává. Nepředpokládáme, že se každý výraz ve stromu příkazů dotazu vyskytuje jenom jednou.
 
-## <a name="mapping-primitive-types"></a>Mapování primitivní typy
+## <a name="mapping-primitive-types"></a>Mapování primitivních typů
 
-Při mapování typů koncepční (EDM) na poskytovatele typů, byste měli namapovat na nejširší typ (Int32) tak, aby se vešly všechny možné hodnoty. Navíc neměla být mapování pro typy, které nelze použít pro mnoho operací, jako jsou typy objektů BLOB (například `ntext` v systému SQL Server).
+Při mapování koncepčních typů (EDM) na typy poskytovatelů byste měli mapovat na nejširší typ (Int32) tak, aby se všechny možné hodnoty vešly. Nepoužívejte také mapování na typy, které nelze použít pro mnoho operací, jako jsou typy objektů BLOB (například `ntext` v SQL Server).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
+- [Generování SQL](sql-generation.md)

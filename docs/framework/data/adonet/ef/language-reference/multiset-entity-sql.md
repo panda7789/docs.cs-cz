@@ -2,12 +2,12 @@
 title: MULTISET (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: eb90a377-e47a-43a5-b308-e993b6d611e6
-ms.openlocfilehash: eb676feeb168e1fb184f3869a18e138bff34211b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8e02d2d3171c9f08333ecef7ee22e65100bdf822
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929344"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250096"
 ---
 # <a name="multiset-entity-sql"></a>MULTISET (Entity SQL)
 Vytvoří instanci multiset ze seznamu hodnot. Všechny hodnoty v konstruktoru MULTISET musí být kompatibilního typu `T`. Prázdné konstruktory multiset nejsou povoleny.  
@@ -28,7 +28,7 @@ or
  Kolekce typu MULTISET\<T >.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje tři druhy konstruktorů: konstruktory řádků, konstruktory objektů a konstruktory multiset (nebo Collection). Další informace naleznete v tématu [sestavování typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]poskytuje tři druhy konstruktorů: konstruktory řádků, konstruktory objektů a konstruktory multiset (nebo Collection). Další informace naleznete v tématu [sestavování typů](constructing-types-entity-sql.md).  
   
  Konstruktor multiset vytvoří instanci multiset ze seznamu hodnot. Všechny hodnoty v konstruktoru musí být kompatibilního typu.  
   
@@ -44,7 +44,7 @@ or
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá operátor MULTISET k vytvoření instance MULTISET ze seznamu hodnot. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
 2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
@@ -52,5 +52,5 @@ or
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Vytváření typů](constructing-types-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

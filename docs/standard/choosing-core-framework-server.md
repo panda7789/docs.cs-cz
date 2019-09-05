@@ -4,12 +4,12 @@ description: Průvodce implementací rozhraní .NET, který byste měli zvážit
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 520920566e8a55eef2d506dc4a8085f57ef1c0bb
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 37f7a4e3d543711af9ef40e458edfa1cac076db2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107280"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254205"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -28,7 +28,7 @@ Pro serverovou aplikaci použijte .NET Framework v těchto případech:
 - Vaše aplikace aktuálně používá .NET Framework (doporučení je místo migrace).
 - Vaše aplikace používá knihovny .NET třetích stran nebo balíčky NuGet, které nejsou k dispozici pro .NET Core.
 - Vaše aplikace používá technologie .NET, které nejsou k dispozici pro .NET Core.
-- Vaše aplikace používá platformu, která nepodporuje .NET Core.
+- Vaše aplikace používá platformu, která nepodporuje .NET Core. Rozhraní .NET Core podporují Windows, macOS a Linux.
 
 ## <a name="when-to-choose-net-core"></a>Kdy zvolit .NET Core
 

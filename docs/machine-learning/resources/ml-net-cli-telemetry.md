@@ -2,14 +2,14 @@
 title: Kolekce telemetrie pomocí ML.NET CLI
 description: Přečtěte si o funkcích telemetrie ML.NET CLI, které shromažďují informace o využití pro analýzu, shromažďovaná data a jejich zakázání. Vyhledejte také odkazy na licenční smlouvu .NET a informace o dodržování předpisů v Microsoft GDPRe.
 ms.topic: conceptual
-ms.date: 05/05/2019
+ms.date: 09/03/2019
 ms.custom: ''
-ms.openlocfilehash: b9f6ccf7ff76f0cf4ce806f39909b7607a20b9f6
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: e7b3b3d7789f2368ebc4448e73add817986a5906
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567488"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254000"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Kolekce telemetrie pomocí rozhraní příkazového řádku ML.NET
 
@@ -36,14 +36,14 @@ Telemetrii *je povolena* při spuštění [příkazu CLI ml.NET](../reference/ml
 
 Funkce telemetrie ML.NET CLI je ve výchozím nastavení povolená.
 
-Odsouhlasit funkci `MLDOTNET_CLI_TELEMETRY_OPTOUT` telemetrie nastavením proměnné prostředí na `1` nebo `true`. Tato proměnná prostředí se globálně vztahuje k nástroji rozhraní .NET CLI.
+Odsouhlasit funkci `MLDOTNET_CLI_TELEMETRY_OPTOUT` telemetrie nastavením proměnné prostředí na `1` nebo `true`. Tato proměnná prostředí se globálně aplikuje na nástroj ML.NET CLI.
 
 ## <a name="data-points-collected"></a>Shromážděné datové body
 
 Tato funkce shromažďuje následující data:
 
 - Jaký příkaz byl vyvolán, například`auto-train`
-- Použité názvy parametrů příkazového řádku (tj. název sady dat, popisek-sloupec-název, ml-úloha, výstup-cesta, maximální doba průzkumu-čas, podrobnosti)
+- Použité názvy parametrů příkazového řádku (to znamená "DataSet-Name; Label-column-name, ml-Task, Output-Path, Max-prozkoumává-Time, verbose")
 - Adresa MAC s algoritmem hash: kryptograficky (SHA256) anonymní a jedinečné ID pro počítač
 - Časové razítko vyvolání
 - Tři oktety: IP adresa (nikoli plná IP adresa) se používá jenom k určení geografického umístění.
@@ -57,7 +57,7 @@ Tato funkce shromažďuje následující data:
 Data se na servery Microsoftu odesílají zabezpečeně pomocí technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) , která se drží pod omezeným přístupem, a používají se v rámci přísných bezpečnostních mechanismů pro systémy zabezpečení [Azure Storage](https://azure.microsoft.com/services/storage/) .
 
 ### <a name="data-points-not-collected"></a>Datové body nejsou shromažďovány.
-Funkce telemetrie neshromažďuje:
+*Funkce telemetrie* neshromažďuje:
 - osobní údaje, jako jsou uživatelská jména
 - názvy souborů DataSet
 - data ze souborů datové sady

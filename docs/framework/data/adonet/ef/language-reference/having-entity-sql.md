@@ -2,12 +2,12 @@
 title: MÁ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b5d52d97-8372-4335-beac-2d0b79dc3707
-ms.openlocfilehash: 76a63140668fb1f41cf9e6f901d9a43240a1d098
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fe8a177b83932c1c7607f8444c05292c0ee29684
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936073"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250852"
 ---
 # <a name="having-entity-sql"></a>MÁ (Entity SQL)
 Určuje podmínku vyhledávání pro skupinu nebo agregaci.  
@@ -26,7 +26,7 @@ Určuje podmínku vyhledávání pro skupinu nebo agregaci.
  Klauzule HAVING se používá k určení dodatečné podmínky filtrování na výsledku seskupení. Není-li ve výrazu dotazu zadána klauzule GROUP BY, je použita implicitní skupina s jedním množinou.  
   
 > [!NOTE]
-> Se dá použít jenom s příkazem [Select](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) . Pokud se nepoužije [Group by](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) , chová se jako klauzule WHERE.  
+> Se dá použít jenom s příkazem [Select](select-entity-sql.md) . Pokud se nepoužije [Group by](group-by-entity-sql.md) , chová se jako klauzule WHERE.  
   
  Klauzule HAVING funguje podobně jako klauzule WHERE s tím rozdílem, že se používá po operaci GROUP BY. To znamená, že klauzule HAVING může vytvořit pouze odkazy na aliasy seskupení a agregace, jak je znázorněno v následujícím příkladu.  
   
@@ -40,7 +40,7 @@ HAVING SUM(o.Quantity) > 1
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá operátory HAVING a GROUP BY k určení podmínky vyhledávání pro skupinu nebo agregaci. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
 2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
@@ -48,5 +48,5 @@ HAVING SUM(o.Quantity) > 1
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Výrazy dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Výrazy dotazu](query-expressions-entity-sql.md)

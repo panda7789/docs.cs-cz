@@ -1,16 +1,16 @@
 ---
-title: '! (NOT) (Entity SQL)'
+title: '! MĚNÍ (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: a1447a34-df06-4393-93c3-0612ebd41abc
-ms.openlocfilehash: 51d3bdbc4adb0b5fd6275629219698dd9b42fa86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4055d56d878b817fe88bb0dacb53ea39061bc4b2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760373"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249865"
 ---
-# <a name="-not-entity-sql"></a>! (NOT) (Entity SQL)
-Neguje `Boolean` výrazu.  
+# <a name="-not-entity-sql"></a>! MĚNÍ (Entity SQL)
+Negace `Boolean` výrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,17 +25,17 @@ or
  Libovolný platný výraz, který vrací logickou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Vykřičník (!) obsahuje stejné funkce jako operátor NOT.  
+ Vykřičník (!) má stejnou funkci jako operátor NOT.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL Neguje pomocí operátoru NOT `Boolean` výrazu. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
+ Následující Entity SQL dotaz používá operátor NOT pro negaci `Boolean` výrazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
   
-2. Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
+2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
   
  [!code-csharp[DP EntityServices Concepts 2#NOT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#not)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

@@ -2,28 +2,28 @@
 title: Důležité informace o vývoji a nasazení
 ms.date: 03/30/2017
 ms.assetid: 535e6611-02de-484c-b5ff-6ffeed04d740
-ms.openlocfilehash: d0402fde61b1bfcdee6e0e8e435d35e59ad76b6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f6c34a9cfae08e189b89ad772321b2e43799660
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606638"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251587"
 ---
 # <a name="development-and-deployment-considerations"></a>Důležité informace o vývoji a nasazení
-Témata v této části řešení potíží s vzít v úvahu při vývoji nebo nasazení aplikace, která je založena na rozhraní ADO.NET Entity Framework.  
+Témata v této části řeší problémy, které je potřeba vzít v úvahu při vývoji nebo nasazení aplikace, která je založená na ADO.NET Entity Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Důležité informace o zabezpečení](../../../../../docs/framework/data/adonet/ef/security-considerations.md)  
+ [Důležité informace o zabezpečení](security-considerations.md)  
   
- [Důležité informace o výkonu](../../../../../docs/framework/data/adonet/ef/performance-considerations.md)  
+ [Důležité informace o výkonu](performance-considerations.md)  
   
- [Důležité informace o migraci](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)  
+ [Důležité informace o migraci](migration-considerations.md)  
   
- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
+ [Důležité informace o nasazení](deployment-considerations.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)
-- [Přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md)
-- [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md)
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [ADO.NET Entity Framework](index.md)
+- [Přehled Entity Framework](overview.md)
+- [Začínáme](getting-started.md)
+- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

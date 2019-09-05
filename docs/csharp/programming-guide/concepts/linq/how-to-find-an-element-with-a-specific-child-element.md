@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání elementu s konkrétním podřízeným elementem (C#)'
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 80539c7ccd21bc38967479d7b724e6f3361d24ac
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f007bddcbecc1cb938d05c7d444d29b6047749e8
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593545"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253745"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Postupy: Vyhledání elementu s konkrétním podřízeným elementem (C#)
 Toto téma ukazuje, jak najít konkrétní prvek, který má podřízený element s konkrétní hodnotou.  
@@ -29,7 +29,7 @@ foreach (XElement el in tests)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 0002  
 0006  
 ```  
@@ -52,7 +52,7 @@ foreach (XElement el in tests)
   
  Tento kód generuje následující výstup:  
   
-```  
+```output  
 0002  
 0006  
 ```  

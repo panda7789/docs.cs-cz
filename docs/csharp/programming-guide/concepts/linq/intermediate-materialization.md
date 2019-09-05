@@ -2,12 +2,12 @@
 title: Zprostředkující materializace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-ms.openlocfilehash: 273cd68b9714287f259e763c9b7c534aac1931e6
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: af1eb7df7da02d8e72fc102cda4ee5f329dc7974
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592129"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253166"
 ---
 # <a name="intermediate-materialization-c"></a>Zprostředkující materializace (C#)
 Pokud nejste opatrní, v některých situacích můžete významně změnit velikost paměti a profilu výkonu aplikace tím, že ve svých dotazech dojde k předčasnému materializování kolekcí. Některé standardní operátory dotazu způsobují materializaci své zdrojové kolekce před tím, než budou vracet jediný element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> první projde celou zdrojovou kolekcí a pak seřadí všechny položky a nakonec vyřadí první položku. To znamená, že je nákladné získat první položku seřazené kolekce. u každé položky pak není nákladné. To je smysl: To by nebylo možné, aby tento operátor dotazu jinak nepoužil.  
@@ -66,7 +66,7 @@ class Program
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 ToUpper: source >abc<  
 ToUpper: source >def<  
 ToUpper: source >ghi<  

@@ -5,119 +5,119 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
-ms.openlocfilehash: 66964497159c5c03a9070090ee60b43fa7d31abf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 79a14e787b4fe1aa1b16ad661b11a43b12bdd718
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032877"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247383"
 ---
 # <a name="data-binding"></a>Datová vazba
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje vytvoření vazby na běžné ovládací prvky, jako je například ovládací prvky mřížky. Konkrétně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje základních sekvencí pro vytvoření vazby na mřížky dat a zpracování vazby hlavní podrobnosti, jak jde o zobrazení a aktualizace.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje vazbu na běžné ovládací prvky, jako jsou například ovládací prvky mřížky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Konkrétně definuje základní vzory pro svázání s datovou mřížkou a zpracování vazby s hlavními údaji, a to s ohledem na zobrazení a aktualizaci.
 
-## <a name="underlying-principle"></a>Základní zásady
+## <a name="underlying-principle"></a>Základní princip
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazů jazyka SQL spuštěn na databázi. Výsledky jsou silně typované `IEnumerable`. Protože tyto objekty jsou běžné běžně používané objekty jazyka runtime (CLR), obyčejné objekt datové vazby slouží k zobrazení výsledků. Na druhé straně operace změny (vložení, aktualizace a odstranění) vyžadují další kroky.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]přeloží [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy na SQL pro spuštění v databázi. Výsledky jsou silného typu `IEnumerable`. Vzhledem k tomu, že tyto objekty jsou běžné objekty modulu CLR (Common Language Runtime), lze použít k zobrazení výsledků standardní datovou vazbu objektu. Na druhé straně operace změny (vložení, aktualizace a odstranění) vyžadují další kroky.
 
 ## <a name="operation"></a>Operace
 
-Implicitně vazby ovládacích prvků Windows Forms je dosaženo implementací <xref:System.ComponentModel.IListSource>. Obecné zdroje dat <xref:System.Data.Linq.Table%601> (`Table<T>` v C# nebo `Table(Of T)` v jazyce Visual Basic) a obecná `DataQuery` byla aktualizována, aby implementace <xref:System.ComponentModel.IListSource>. Uživatelské rozhraní (UI) datové vazby moduly (Windows Forms a Windows Presentation Foundation) i testování, zda svá data zdroje implementuje <xref:System.ComponentModel.IListSource>. Proto zápis přímého použití dotazu ke zdroji dat ovládacího prvku implicitně volání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kolekce generace, jako v následujícím příkladu:
+Implicitní vazba na ovládací prvky model Windows Forms je zajištěna implementací <xref:System.ComponentModel.IListSource>. Zdroje dat Obecné <xref:System.Data.Linq.Table%601> (`Table<T>` v C# nebo `Table(Of T)` v Visual Basic) a obecné `DataQuery` byly aktualizovány pro implementaci <xref:System.ComponentModel.IListSource>. Moduly uživatelského rozhraní (UI) datové vazby (model Windows Forms a Windows Presentation Foundation) otestují, zda jejich implementace <xref:System.ComponentModel.IListSource>jejich zdroje dat. Proto zápis přímého vlivu dotazu na zdroj dat ovládacího prvku implicitně volá [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] generování kolekce, jako v následujícím příkladu:
 
 [!code-csharp[DLinqDataBinding#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDataBinding/cs/Program.cs#1)]
 [!code-vb[DLinqDataBinding#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDataBinding/vb/Module1.vb#1)]
 
-Stejné dochází u Windows Presentation Foundation:
+Totéž dojde u Windows Presentation Foundation:
 
 [!code-csharp[DLinqDataBinding#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDataBinding/cs/Program.cs#2)]
 [!code-vb[DLinqDataBinding#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDataBinding/vb/Module1.vb#2)]
 
-Kolekce generace jsou implementovány pomocí obecného <xref:System.Data.Linq.Table%601> a obecná `DataQuery` v <xref:System.ComponentModel.IListSource.GetList%2A>.
+Generace kolekcí jsou implementovány obecnými <xref:System.Data.Linq.Table%601> a obecnými `DataQuery` v <xref:System.ComponentModel.IListSource.GetList%2A>.
 
-## <a name="ilistsource-implementation"></a>Implementace rozhraní IListSource
+## <a name="ilistsource-implementation"></a>Implementace IListSource
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje <xref:System.ComponentModel.IListSource> ve dvou umístěních:
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]implementuje <xref:System.ComponentModel.IListSource> se ve dvou umístěních:
 
-- Zdroj dat je <xref:System.Data.Linq.Table%601>: [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přejde k vyplnění tabulky `DataBindingList` kolekce, která uchovává odkaz na tabulku.
+- Zdroj dat je <xref:System.Data.Linq.Table%601>: [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umožňuje přejít `DataBindingList` do tabulky a vyplnit kolekci, která bude uchovávat odkaz na tabulku.
 
 - Zdroj dat je <xref:System.Linq.IQueryable%601>. Existují dva scénáře:
 
-  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] najde základní <xref:System.Data.Linq.Table%601> z <xref:System.Linq.IQueryable%601>edition umožňuje zdroji a situace je stejný jako v prvním odrážce.
+  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] najde základní <xref:System.Data.Linq.Table%601> z rozhraní <xref:System.Linq.IQueryable%601>, zdroj umožňuje vydání edice a tato situace je stejná jako v prvním odrážce.
 
-  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nelze najít základní <xref:System.Data.Linq.Table%601>, zdroj neumožňuje edition (například `groupby`). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Umožňuje dotazu k vyplnění obecný `SortableBindingList`, což je jednoduchý <xref:System.ComponentModel.BindingList%601> , který implementuje funkci řazení pro T entity pro danou vlastnost.
+  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nelze najít základní <xref:System.Data.Linq.Table%601>, zdroj nepovoluje `groupby`edici (například). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]projde dotazem, aby vyplnil obecný `SortableBindingList`, což je jednoduché <xref:System.ComponentModel.BindingList%601> , které implementuje funkci řazení pro entity T pro danou vlastnost.
 
 ## <a name="specialized-collections"></a>Specializované kolekce
 
-Pro mnoho funkcí, které jsou popsané dříve v tomto dokumentu <xref:System.ComponentModel.BindingList%601> byla zaměřena na některé jiné třídy. Tyto třídy jsou Obecné `SortableBindingList` a obecná `DataBindingList`. Obě jsou deklarovány jako vnitřní.
+Pro mnoho funkcí popsaných výše v tomto <xref:System.ComponentModel.BindingList%601> dokumentu bylo specializované na některé jiné třídy. Tyto třídy jsou obecné `SortableBindingList` a obecné `DataBindingList`. Obě jsou deklarovány jako interní.
 
-### <a name="generic-sortablebindinglist"></a>Obecný SortableBindingList
+### <a name="generic-sortablebindinglist"></a>Obecné SortableBindingList
 
-Tato třída dědí z <xref:System.ComponentModel.BindingList%601>, a je seřaditelné verze <xref:System.ComponentModel.BindingList%601>. Řazení je řešení v paměti a nikdy kontaktuje samotná databáze. <xref:System.ComponentModel.BindingList%601> implementuje <xref:System.ComponentModel.IBindingList> ale nepodporuje řazení ve výchozím nastavení. Ale <xref:System.ComponentModel.BindingList%601> implementuje <xref:System.ComponentModel.IBindingList> s virtuální *core* metody. Snadno můžete přepsat tyto metody. Obecný `SortableBindingList` přepíše <xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>, <xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>, <xref:System.ComponentModel.BindingList%601.SortDirectionCore%2A>, a <xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>. `ApplySortCore` je volán <xref:System.ComponentModel.IBindingList.ApplySort%2A> a seřadí seznam položek T pro danou vlastnost.
+Tato třída dědí z <xref:System.ComponentModel.BindingList%601>a je seřaditelné <xref:System.ComponentModel.BindingList%601>verze. Řazení je řešení v paměti, které nikdy nekontaktuje samotnou databázi. <xref:System.ComponentModel.BindingList%601>implementuje <xref:System.ComponentModel.IBindingList> , ale nepodporuje řazení ve výchozím nastavení. <xref:System.ComponentModel.BindingList%601> Nicméně implementuje <xref:System.ComponentModel.IBindingList> s virtuálními *základními* metodami. Tyto metody můžete snadno přepsat. Obecná `SortableBindingList` přepsání <xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>, <xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>, a<xref:System.ComponentModel.BindingList%601.SortDirectionCore%2A>. <xref:System.ComponentModel.BindingList%601.ApplySortCore%2A> `ApplySortCore`je volána <xref:System.ComponentModel.IBindingList.ApplySort%2A> a seřadí seznam T položek pro danou vlastnost.
 
-Je vyvolána výjimka, pokud vlastnost nepatří do T.
+Výjimka je vyvolána, pokud vlastnost nepatří T.
 
-K dosažení řazení, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří obecný `SortableBindingList.PropertyComparer` třídu odvozenou od obecného <xref:System.Collections.Generic.Comparer%601.System%23Collections%23IComparer%23Compare%2A> a implementuje výchozí porovnávací metody pro daný typ T, `PropertyDescriptor`a směr. Tato třída dynamicky vytvoří `Comparer` t, kde T je `PropertyType` z `PropertyDescriptor`. Pak je výchozí porovnávací metody načten z statické Obecné `Comparer`. Výchozí instance je získat pomocí reflexe.
+Chcete-li dosáhnout [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řazení, vytvoří `SortableBindingList.PropertyComparer` obecnou třídu, která <xref:System.Collections.Generic.Comparer%601.System%23Collections%23IComparer%23Compare%2A> dědí z obecného a implementuje výchozí `PropertyDescriptor`porovnávací metodu pro daný typ T, a a směr. Tato třída dynamicky vytvoří hodnotu `Comparer` t, kde t `PropertyType` je `PropertyDescriptor`. Pak je výchozí porovnávací hodnota načtena ze statického `Comparer`obecného. Výchozí instance je získána pomocí reflexe.
 
-Obecný `SortableBindingList` je také základní třídu pro `DataBindingList`. Obecný `SortableBindingList` nabízí dvě virtuální metody pro pozastavení nebo obnovení položek přidat nebo odebrat sledování. Tyto dvě metody slouží pro základní funkce, jako je například řazení, ale bude ve skutečnosti provádí velké třídy typu obecného `DataBindingList`.
+Obecná `SortableBindingList` je také základní třídou pro `DataBindingList`. Obecné `SortableBindingList` nabízí dvě virtuální metody pro pozastavení nebo obnovení položek přidat/odebrat sledování. Tyto dvě metody lze použít pro základní funkce, jako je například řazení, ale budou skutečně implementovány pomocí horních tříd `DataBindingList`, jako je obecná.
 
-### <a name="generic-databindinglist"></a>Obecný DataBindingList
+### <a name="generic-databindinglist"></a>Obecné DataBindingList
 
-Tato třída dědí z obecného `SortableBindingLIst`. Obecný `DataBindingList` uchovává odkaz na základní obecný `Table` z obecného `IQueryable` použít pro počáteční naplnění kolekce. Obecný `DatabindingList` přidá do kolekce sledování pro položku Přidat nebo odebrat tak, že přepíšete `InsertItem`() a `RemoveItem`(). Také implementuje abstraktní operací pozastavit/pokračovat funkce vytvořit sledování podmíněné sledování. Díky této funkci můžete obecný `DataBindingList` využít výhod polymorfní používání funkce sledování nadřazené třídy.
+Tato třída dědí z obecného `SortableBindingLIst`. Obecný `DataBindingList` udržuje odkaz na základní obecný `Table` `IQueryable` základ, který se používá pro počáteční vyplňování kolekce. Generic `DatabindingList` přidá sledování pro položku Přidat/odebrat do kolekce přepsáním `InsertItem`() a `RemoveItem`(). K zajištění podmíněného sledování implementuje taky abstraktní funkci Pozastavení/obnovení. Tato funkce umožňuje obecné `DataBindingList` využití všech polymorfních funkcí sledování nadřazených tříd.
 
-## <a name="binding-to-entitysets"></a>Vytvoření vazby na objekty EntitySet
+## <a name="binding-to-entitysets"></a>Vazba na objekty EntitySets
 
-Vytvoření vazby na `EntitySet` je zvláštní případ, protože `EntitySet` už je kolekce, která implementuje <xref:System.ComponentModel.IBindingList>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přidá řazení a zrušení (<xref:System.ComponentModel.ICancelAddNew>) podporují. `EntitySet` Třída představují vnitřní seznam používá k uložení entity. Tento seznam je nízké úrovně podle obecného pole, obecné kolekce `ItemList` třídy.
+Vazba na `EntitySet` je zvláštní případ, protože `EntitySet` je již kolekce implementovaná <xref:System.ComponentModel.IBindingList>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Přidá podporu řazení a zrušení (<xref:System.ComponentModel.ICancelAddNew>). `EntitySet` Třída používá interní seznam pro ukládání entit. Tento seznam je kolekce nižší úrovně založená na obecném poli obecné `ItemList` třídy.
 
 ### <a name="adding-a-sorting-feature"></a>Přidání funkce řazení
 
-Pole nabízejí sort – metoda (`Array.Sort()`), který lze použít s `Comparer` z T. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá Obecné `SortableBindingList.PropertyComparer` třídy je popsáno výše v tomto tématu můžete získat `Comparer` pro vlastnost a směr, který má být seřazená podle. `ApplySort` Metoda je přidána do obecného `ItemList` k volání této funkce.
+Pole`Array.Sort()`nabízejí metodu řazení (), kterou lze použít `Comparer` s metodou T. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá obecnou `SortableBindingList.PropertyComparer` třídu popsanou dříve v tomto tématu k získání této `Comparer` vlastnosti a směru řazení. Metoda je přidána do obecného `ItemList` pro volání této funkce. `ApplySort`
 
-Na `EntitySet` straně, teď musíte deklarovat řazení podpory:
+`EntitySet` Na straně sebe teď musíte deklarovat podporu řazení:
 
-- <xref:System.ComponentModel.IBindingList.SupportsSorting%2A> Vrátí `true`.
+- <xref:System.ComponentModel.IBindingList.SupportsSorting%2A>Vrátí `true`.
 
-- <xref:System.ComponentModel.IBindingList.ApplySort%2A> volání `entities.ApplySort()` a potom `OnListChanged()`.
+- <xref:System.ComponentModel.IBindingList.ApplySort%2A>volání `entities.ApplySort()` a potom `OnListChanged()`.
 
-- <xref:System.ComponentModel.IBindingList.SortDirection%2A> a <xref:System.ComponentModel.IBindingList.SortProperty%2A> vlastnosti zpřístupnit aktuální definice řazení, který je uložený v místním členy.
+- <xref:System.ComponentModel.IBindingList.SortDirection%2A>a <xref:System.ComponentModel.IBindingList.SortProperty%2A> vlastnosti zpřístupňují aktuální definici řazení, která je uložena v místních členech.
 
-Při použití System.Windows.Forms.BindingSource a vytvořit vazbu element EntitySet\<TEntity > k System.Windows.Forms.BindingSource.DataSource, je třeba volat vlastnost EntitySet\<TEntity >. GetNewBindingList aktualizovat BindingSource.List.
+Použijete-li System. Windows. Forms. BindingSource a navážete\<objekt EntitySet TEntity > na System. Windows. Forms. BindingSource. DataSource, je nutné volat\<EntitySet TEntity >. GetNewBindingList k aktualizaci objektu BindingSource. list.
 
-Pokud můžete použít System.Windows.Forms.BindingSource a nastavit vlastnost BindingSource.DataMember a nastavit BindingSource.DataSource na třídu, která má vlastnost s názvem v BindingSource.DataMember, který zpřístupňuje vlastnost EntitySet\<TEntity >, které není nutné volat objekt EntitySet\<TEntity >. GetNewBindingList aktualizovat BindingSource.List ale můžete ztratit možnost řazení.
+Použijete-li System. Windows. Forms. BindingSource a nastavte vlastnost BindingSource. DataMember a nastavte vlastnost BindingSource. DataSource na třídu, která má vlastnost s názvem v objektu BindingSource. DataMember, která zpřístupňuje\<> EntitySet TEntity, je nemusíte volat EntitySet\<TEntity >. GetNewBindingList k aktualizaci objektu BindingSource. list, ale ztratíte možnosti řazení.
 
 ## <a name="caching"></a>Ukládání do mezipaměti
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provádění dotazů <xref:System.ComponentModel.IListSource.GetList%2A>. Pokud třída Windows Forms BindingSource splňuje toto rozhraní, zavolá GetList() po třech čas pro jedno připojení. Chcete-li této situaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje mezipaměti na jednu instanci k ukládání a vždy vrátí stejné generované kolekce.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]dotazy implementují <xref:System.ComponentModel.IListSource.GetList%2A>. Pokud třída model Windows Forms BindingSource splňuje toto rozhraní, volá GetList () tři časy pro jedno připojení. Tuto situaci můžete obejít tak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , že implementuje mezipaměť na instanci, která se uloží, a vždycky vrátí stejnou vygenerovanou kolekci.
 
 ## <a name="cancellation"></a>Zrušení
 
-<xref:System.ComponentModel.IBindingList> definuje <xref:System.ComponentModel.IBindingList.AddNew%2A> metodu, která používá ovládací prvky k vytvoření nové položky z vázaného kolekce. `DataGridView` Ovládací prvek zobrazí tato funkce velmi dobře při poslední viditelné řádek obsahuje hvězdičku v jeho záhlaví. Barva hvězdičky se dozvíte, které můžete přidat novou položku.
+<xref:System.ComponentModel.IBindingList><xref:System.ComponentModel.IBindingList.AddNew%2A> definuje metodu, která je používána ovládacími prvky pro vytvoření nové položky z vázané kolekce. `DataGridView` Ovládací prvek zobrazí tuto funkci velmi dobře, když poslední viditelný řádek obsahuje hvězdičku ve své hlavičce. Hvězdička vám ukáže, že můžete přidat novou položku.
 
-Kromě této funkce můžete také implementovat kolekce <xref:System.ComponentModel.ICancelAddNew>. Tato funkce umožňuje pro ovládací prvky zrušit nebo ověřit, že nový upravovat položky ověřena nebo ne.
+Kromě této funkce může kolekce také implementovat <xref:System.ComponentModel.ICancelAddNew>. Tato funkce umožňuje ovládacím prvkům zrušit nebo ověřit, zda byla nová upravená položka ověřena nebo nikoli.
 
-<xref:System.ComponentModel.ICancelAddNew> je implementován ve všech [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kolekce datové vazby (obecný `SortableBindingList` a obecná `EntitySet`). V obou implementacích kód provede následujícím způsobem:
+<xref:System.ComponentModel.ICancelAddNew>je implementováno ve [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] všech kolekcích vázaných `SortableBindingList` na datové `EntitySet`vazby (Obecné a obecné). V obou implementacích provede kód následující:
 
-- Umožňuje vložit a potom se odeberou z kolekce položek.
+- Umožňuje vkládání položek a jejich odebrání z kolekce.
 
-- Nesleduje změny, tak dlouho, dokud rozhraní nesměrují edici.
+- Nesleduje změny, dokud uživatelské rozhraní nepotvrdí edici.
 
-- Nesleduje změny tak dlouho, dokud se zruší edice (<xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>).
+- Nesleduje změny, dokud je edice zrušená (<xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>).
 
-- Umožňuje sledování při vydání se zaměřuje (<xref:System.ComponentModel.ICancelAddNew.EndNew%2A>).
+- Umožňuje sledování, je-li edice potvrzena (<xref:System.ComponentModel.ICancelAddNew.EndNew%2A>).
 
-- Umožňuje kolekci chovat normálně Pokud nová položka nepochází z <xref:System.ComponentModel.IBindingList.AddNew%2A>.
+- Umožňuje, aby se kolekce normálně chovala v případě, že nová položka <xref:System.ComponentModel.IBindingList.AddNew%2A>nepochází z.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Tato část vám sdělí několik položek, které vám mohou pomoci vyřešit vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] datové vazby aplikace.
+V této části se volá několik položek, které mohou pomoct [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] při odstraňování problémů s vašimi aplikacemi datových vazeb.
 
-- Je nutné použít vlastnosti; použití pouze pole není dostatečná. Formuláře Windows vyžadují toto využití.
+- Je nutné použít vlastnosti; použití pouze polí není dostačující. Model Windows Forms vyžadují toto použití.
 
-- Ve výchozím nastavení `image`, `varbinary`, a `timestamp` databáze typy namapovat na pole bajtů. Protože `ToString()` není podporován v tomto scénáři nelze zobrazit tyto objekty.
+- Ve výchozím nastavení `image`jsou `varbinary`typy databází mapovány na pole bajtů. `timestamp` Vzhledem `ToString()` k tomu, že není v tomto scénáři podporován, nelze tyto objekty zobrazit.
 
-- Člen třídy, která je namapována na primární klíč má setter, ale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje změnu identity objektu. Primární či jedinečný klíč, který se používá v mapování proto nelze aktualizovat v databázi. Změna v mřížce dojde k výjimce při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.
+- Člen třídy mapovaný k primárnímu klíči má metodu Setter, ale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje změnu identity objektu. Proto primární/jedinečný klíč, který se používá v mapování, nelze v databázi aktualizovat. Změna v mřížce způsobí při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>výjimku.
 
-- Pokud entita je hranice ve dvou samostatných mřížky (například jeden hlavní server a další podrobnosti), `Delete` hlavní mřížky se nerozšíří do podrobností mřížky.
+- Pokud je entita svázaná ve dvou samostatných Gridech (například jeden hlavní a další podrobnosti), `Delete` v hlavní mřížce se nerozšíří do mřížky podrobností.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Základní informace](background-information.md)

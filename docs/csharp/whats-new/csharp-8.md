@@ -1,17 +1,17 @@
 ---
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
-ms.date: 02/12/2019
-ms.openlocfilehash: 14c86fe4b1ecd1c89ebbbb082c5c9956bc51e03e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.date: 09/02/2019
+ms.openlocfilehash: 7210f2e978f307b3ecef2eff272fea0d19025de6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105513"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252904"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
-Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již. 
+Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 
 - [Členové jen pro čtení](#readonly-members)
 - [Výchozí členové rozhraní](#default-interface-members)
@@ -26,6 +26,7 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
+- [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
 
 > [!NOTE]
 > Tento článek byl naposledy aktualizován na C# verzi 8,0 Preview 5.
@@ -376,7 +377,8 @@ Asynchronní streamy si můžete vyzkoušet sami v našem kurzu [vytváření a 
 
 Rozsahy a indexy poskytují stručnou syntaxi pro určení dílčích rozsahů v poli, <xref:System.Span%601>nebo. <xref:System.ReadOnlySpan%601>
 
-Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory.
+Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
+
 - <xref:System.Index?displayProperty=nameWithType>představuje index do sekvence.
 - `^` Operátor, který určuje, že index je relativní ke konci sekvence.
 - <xref:System.Range?displayProperty=nameWithType>představuje dílčí rozsah sekvence.
@@ -444,3 +446,7 @@ var text = words[phrase];
 ```
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
+
+## <a name="enhancement-of-interpolated-verbatim-strings"></a>Vylepšení interpolované doslovného řetězce
+
+[](../language-reference/tokens/interpolated.md) `$@"..."` `@$"..."` Pořadí a `@`tokeny v interpolované doslovném řetězci mohou být libovolné: a jsou platné interpolované řetězce. `$` V dřívějších C# verzích `$` se token `@` musí vyskytovat před tokenem.

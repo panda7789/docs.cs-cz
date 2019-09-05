@@ -1,21 +1,21 @@
 ---
-title: Strukturované typy s možnou hodnotou Null (Entity SQL)
+title: Strukturované typy s možnou hodnotou null (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ae006fa9-997e-45bb-8a04-a7f62026171e
-ms.openlocfilehash: 6e1669bdc62de379051df60d6650fddb0c808da4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b078ae458aba73e82957f84408b1000b216aef9
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641834"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249805"
 ---
-# <a name="nullable-structured-types-entity-sql"></a>Strukturované typy s možnou hodnotou Null (Entity SQL)
-A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se liší od existující instanci, ve kterém mají všechny vlastnosti `null` hodnoty.  
+# <a name="nullable-structured-types-entity-sql"></a>Strukturované typy s možnou hodnotou null (Entity SQL)
+`null` Instance strukturovaného typu je instance, která neexistuje. To se liší od existující instance, ve které všechny vlastnosti mají `null` hodnoty.  
   
- Toto téma popisuje strukturované typy s možnou hodnotou Null, včetně typů, které jsou s možnou hodnotou Null a vzor, který kód produktu `null` výskyty strukturované typy s možnou hodnotou Null.  
+ Toto téma popisuje strukturované typy s možnou hodnotou null, včetně typů s možnou hodnotou null `null` a které vzory kódu vytváří instance strukturovaných typů s možnou hodnotou null.  
   
-## <a name="kinds-of-nullable-structured-types"></a>Strukturované typy s možnou hodnotou Null  
- Existují tři druhy typů s povolenou hodnotou Null struktury:  
+## <a name="kinds-of-nullable-structured-types"></a>Druhy strukturovaných typů s možnou hodnotou null  
+ Existují tři typy struktury s možnou hodnotou null:  
   
 - Typy řádků.  
   
@@ -23,22 +23,22 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
   
 - Typy entit.  
   
-## <a name="code-patterns-that-produce-null-instances-of-structured-types"></a>Vzory v kódu, které vyvolávají Null instancemi strukturované typy  
- Následující scénáře vytvoření `null` instancí:  
+## <a name="code-patterns-that-produce-null-instances-of-structured-types"></a>Vzory kódu, které vytváří instance s hodnotou Null strukturovaných typů  
+ Následující scénáře poskytují `null` instance:  
   
-- Strukturování `null` jako strukturovaný typ.:  
+- Tvarování `null` jako strukturovaného typu:  
   
     ```  
     TREAT (NULL AS StructuredType)  
     ```  
   
-- Upcasting základního typu odvozeného typu:  
+- Přetypování základního typu na odvozený typ:  
   
     ```  
     TREAT (BaseType AS DerivedType)  
     ```  
   
-- Vnější spojení na false podmínku:  
+- Vnější spojení při nepravdivém stavu:  
   
     ```  
     Collection1 LEFT OUTER JOIN Collection2  
@@ -59,19 +59,19 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
     ON FalseCondition  
     ```  
   
-- Přesměrování `null` odkaz:  
+- Přesměrování `null` odkazu:  
   
     ```  
     DEREF(NullRef)  
     ```  
   
-- Získání ANYELEMENT z prázdné kolekce:  
+- Získávání ANYELEMENT z prázdné kolekce:  
   
     ```  
     ANYELEMENT(EmptyCollection)  
     ```  
   
-- Kontrola `null` instance strukturovaných typů:  
+- Probíhá kontrola `null` instancí strukturovaných typů:  
   
     ```csharp  
     ...  
@@ -90,4 +90,4 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Přehled Entity SQL](entity-sql-overview.md)

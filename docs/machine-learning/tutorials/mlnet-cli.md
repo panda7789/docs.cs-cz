@@ -1,19 +1,19 @@
 ---
-title: Automatické generování binárního klasifikátoru pomocí rozhraní příkazového řádku ML.NET
+title: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 description: Automatické generování modelu ML a souvisejícího C# kódu z ukázkové datové sady
 author: cesardl
 ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: c0e188286821f0e3822fde4af74a1561edfbb868
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 7b740f2c93096c971da009e8abf6865ac1b8e966
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107274"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254163"
 ---
-# <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Automatické generování binárního klasifikátoru pomocí rozhraní příkazového řádku
+# <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
 Naučte se používat rozhraní příkazového řádku ML.NET k automatickému generování modelu C# ml.NET a základního kódu. Zadáte datovou sadu a úlohu strojového učení, kterou chcete implementovat, a rozhraní příkazového řádku používá modul AutoML k vytvoření generování modelu a zdrojového kódu nasazení a také binárního modelu.
 
@@ -113,7 +113,7 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 
     Nicméně existují případy, kdy měření se metrikou přesnosti není dostatečné, zejména v případě, že je popisek (0 a 1 v tomto případě) v testovací datové sadě nevyvážený.
 
-    Další metriky a podrobnější **informace o metrikách** , jako je přesnost, AUC, AUCPR, F1-skore využívané k vyhodnocení různých modelů, si můžete přečíst v tématu [Principy metrik ml.NET](../resources/metrics.md) .
+    Další metriky a **podrobnější informace o metrikách** , jako je přesnost, AUC, AUCPR, F1-skore využívané k vyhodnocení různých modelů, si můžete přečíst v tématu [Principy metrik ml.NET](../resources/metrics.md) .
 
     > [!NOTE]
     > Tuto velmi stejnou datovou sadu můžete vyzkoušet a zadat několik minut `--max-exploration-time` (např. 3 minuty, takže zadáte 180 sekund), což vám pro tuto datovou sadu vyhledá lepší "nejlepší model", a to s jinou konfigurací školicího kanálu (což je poměrně malé, 1000 řádky). 
@@ -174,7 +174,7 @@ Tyto vyčíslované prostředky jsou vysvětleny v následujících krocích kur
 
 - První řádek kódu jednoduše vytvoří `MLContext` objekt potřebný při každém spuštění kódu ml.NET. 
 
-- Druhý řádek kódu je komentovaný, protože model nepotřebujete vyškolit, protože už ho pro vás vyškole nástroj CLI a uložil se do serializovaného modelu. Soubor ZIP. Pokud ale chcete vidět, *jak byl model* vyškolený rozhraním příkazového řádku, můžete tento řádek odkomentovat a spustit/ladit školicí kód, který se používá pro konkrétní model ml.
+- Druhý řádek kódu je komentovaný, protože model nepotřebujete vyškolit, protože už ho pro vás vyškole nástroj CLI a uložil se do serializovaného modelu. Soubor ZIP. Pokud ale chcete vidět, *jak byl model vyškolený* rozhraním příkazového řádku, můžete tento řádek odkomentovat a spustit/ladit školicí kód, který se používá pro konkrétní model ml.
 
 - Ve třetím řádku kódu načtete model z serializovaného modelu. Soubor zip s `mlContext.Model.Load()` rozhraním API zadáním cesty k tomuto modelu. Soubor ZIP.
 
@@ -255,7 +255,7 @@ Je zajímavá možnost porovnat zvolený algoritmus a konfiguraci kanálu v kurz
 - [Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)](../how-to-guides/install-ml-net-cli.md)
 - [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]

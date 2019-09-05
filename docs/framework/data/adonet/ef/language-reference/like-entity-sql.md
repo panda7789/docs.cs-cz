@@ -2,12 +2,12 @@
 title: LIKE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 58828b812ce374a664e4d232b707f22d5ca438c1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbe27f6e25c9d69f092a060fa2c3fbf0abc93318
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912288"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250502"
 ---
 # <a name="like-entity-sql"></a>LIKE (Entity SQL)
 Určuje, zda určitý znak `String` odpovídá zadanému vzoru.  
@@ -68,7 +68,7 @@ match [NOT] LIKE pattern [ESCAPE escape]
 ## <a name="example"></a>Příklad  
  Následující dva [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy používají operátory LIKE a Escape k určení, zda konkrétní řetězec znaků odpovídá zadanému vzoru. První dotaz vyhledá `Name` znak, který začíná znaky `Down_`. Tento dotaz používá možnost Escape, protože podtržítko (`_`) je zástupným znakem. Bez určení možnosti Escape dotaz vyhledá všechny `Name` hodnoty, které začínají slovem `Down` následovaným libovolným jedním znakem, který je jiný než znak podtržítka. Dotazy jsou založené na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
 2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
@@ -76,4 +76,4 @@ match [NOT] LIKE pattern [ESCAPE escape]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Reference k Entity SQL](entity-sql-reference.md)

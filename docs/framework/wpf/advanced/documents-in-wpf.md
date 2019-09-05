@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 9fac4e1a98f67c6d5d946ade1b7f2115ce0d5f8e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 92a72bdc99471e14f607e674104e7faa3e796975
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964878"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254152"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]nabízí široké spektrum funkcí dokumentu, které umožňují vytvářet obsah s vysokou přesností, který je navržený tak, aby byl snadněji přistupný a čtený než v předchozích generacích systému Windows. Kromě rozšířených funkcí a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje také integrované služby pro zobrazení, balení a zabezpečení dokumentů. Toto téma poskytuje Úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
@@ -63,13 +63,13 @@ ms.locfileid: "69964878"
   
  Architektura [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] balíčku slouží jako základ pro řadu klíčových technologií:  
   
-- [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]dokumenty, které [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]odpovídají.  
+- Dokumenty XPS, které odpovídají specifikaci XPS (XML Paper Specification).  
   
 - Systém Microsoft Office "12" otevřených dokumentů formátu XML (. docx).  
   
 - Vlastní formáty úložiště pro vlastní návrh aplikace  
   
- Na základě rozhraní API pro balíčky je <xref:System.Windows.Xps.Packaging.XpsDocument> speciálně navržen pro ukládání [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dokumentů s pevným obsahem. Je samostatný dokument, který se dá otevřít v prohlížeči, který se zobrazuje <xref:System.Windows.Controls.DocumentViewer> v ovládacím prvku, je směrován do tiskové fronty [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]nebo je výstup přímo na tiskárně kompatibilní. <xref:System.Windows.Xps.Packaging.XpsDocument>  
+ Na základě rozhraní API pro balíčky je <xref:System.Windows.Xps.Packaging.XpsDocument> speciálně navržen pro ukládání [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dokumentů s pevným obsahem. Je samostatný dokument, který se dá otevřít v prohlížeči, který se zobrazuje <xref:System.Windows.Controls.DocumentViewer> v ovládacím prvku, je směrován do tiskové fronty nebo výstup přímo do tiskárny kompatibilní s XPS. <xref:System.Windows.Xps.Packaging.XpsDocument>  
   
  Následující části poskytují další informace o <xref:System.IO.Packaging.Package> rozhraních API a <xref:System.Windows.Xps.Packaging.XpsDocument> poskytovaných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]pomocí nástroje.  
   
@@ -125,15 +125,15 @@ ms.locfileid: "69964878"
   
 <a name="XPS_Documents"></a>   
 ## <a name="xps-documents"></a>Dokumenty XPS  
- [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)]dokument je balíček, který obsahuje jeden nebo více pevných dokumentů společně se všemi prostředky a informacemi potřebnými pro vykreslování.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]je také nativní [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát souboru tiskové fronty.  <xref:System.Windows.Xps.Packaging.XpsDocument> Je uložený ve standardní datové sadě zip a může zahrnovat kombinaci XML a binárních komponent, jako jsou obrázky a soubory písem. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebnými k úplnému vygenerování dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> Návrh poskytuje jedno řešení dokumentu s vysokou přesností, které podporuje více použití:  
+ Dokument XPS (XML Paper Specification) je balíček, který obsahuje jeden nebo více pevných dokumentů společně se všemi prostředky a informacemi potřebnými pro vykreslování.  XPS je také nativní [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát souboru tiskové fronty.  <xref:System.Windows.Xps.Packaging.XpsDocument> Je uložený ve standardní datové sadě zip a může zahrnovat kombinaci XML a binárních komponent, jako jsou obrázky a soubory písem. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebnými k úplnému vygenerování dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> Návrh poskytuje jedno řešení dokumentu s vysokou přesností, které podporuje více použití:  
   
 - Čtení, zápis a ukládání obsahu a prostředků s pevným dokumentem jako jednoho, přenosného a snadno distribuovaného souboru.  
   
-- Zobrazení dokumentů [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] v aplikaci prohlížeče.  
+- Zobrazení dokumentů v aplikaci prohlížeč XPS.  
   
 - Probíhá výstup dokumentů v nativním výstupním formátu [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]zařazování tisku.  
   
-- Směrování dokumentů přímo na [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]tiskárnu kompatibilní s.  
+- Směrování dokumentů přímo do tiskárny kompatibilní s XPS.  
   
 ## <a name="see-also"></a>Viz také:
 

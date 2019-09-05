@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c27cb89c-1c1d-4988-9f38-950eda3cb275
-ms.openlocfilehash: b9e8cf238d35ec9a6fc9c6d013c4d92b00dced78
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84de36b79ed646d73a8f2d8e00c26d8dcf6de4b7
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955793"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249510"
 ---
 # <a name="query-expression-syntax-examples-filtering"></a>Příklady syntaxe výrazů dotazů: Filtrování
-Příklady v tomto tématu ukazují, jak použít `Where` metody a `Where…Contains` k dotazování [modelu prodeje AdventureWorks](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe výrazu dotazu. Poznámka, kde...`Contains` nelze použít jako součást [zkompilovaného dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
+Příklady v tomto tématu ukazují, jak použít `Where` metody a `Where…Contains` k dotazování [modelu prodeje AdventureWorks](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe výrazu dotazu. Poznámka, kde...`Contains` nelze použít jako součást [zkompilovaného dotazu](compiled-queries-linq-to-entities.md).  
   
  Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
   
@@ -67,4 +67,4 @@ Příklady v tomto tématu ukazují, jak použít `Where` metody a `Where…Cont
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+- [Dotazy v technologii LINQ to Entities](queries-in-linq-to-entities.md)

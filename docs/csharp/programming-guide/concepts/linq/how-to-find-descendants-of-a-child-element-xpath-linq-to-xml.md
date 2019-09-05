@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Najde následníky podřízeného elementu (XPath-LINQ to XML) (C#).'
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: a049ede1d533c4afc67892b7889debbe673e51c8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: f17d723aa03c45daa4e7e741ea6b14c637537ccf
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485481"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253706"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (C#)
-Toto téma ukazuje, jak získat následnickým elementům podřízeného elementu s konkrétním názvem.  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Postupy: Najde následníky podřízeného elementu (XPath-LINQ to XML) (C#).
+Toto téma ukazuje, jak získat odvozené prvky podřízeného elementu s konkrétním názvem.  
   
  Výraz XPath je:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad napodobuje problémy s extrahují text z reprezentace XML textovém dokumentu. První vybere všechny `Paragraph` elementy a pak ji vybere všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. To nevybere následníka `Text` prvky `Comment` elementu.  
+ Tento příklad simuluje problémy extrakce textu z reprezentace XML dokumentu zpracování slova. Nejprve vybere všechny `Paragraph` prvky a potom vybere všechny `Text` následníky každého `Paragraph` prvku. Tato možnost nevybere následníky `Text` `Comment` elementu.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -70,7 +70,7 @@ Console.WriteLine(str2);
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```output  
 Results are identical  
 This is the start of a sentence.  This is a second sentence.  
 ```  

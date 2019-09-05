@@ -2,15 +2,15 @@
 title: Seskupit podle (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-ms.openlocfilehash: d9074b1c2ea4f8f9206c8de1e658c1aac762a74f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 641231825ca00c6accd19039ba1ec403208a077e
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936095"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250898"
 ---
 # <a name="group-by-entity-sql"></a>Seskupit podle (Entity SQL)
-Určuje skupiny, do kterých se mají umístit objekty vrácené výrazem dotazu ([Select](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)).  
+Určuje skupiny, do kterých se mají umístit objekty vrácené výrazem dotazu ([Select](select-entity-sql.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,12 +57,12 @@ GROUP BY Q   -- BAD
 GROUP BY 1   -- BAD, a constant is not allowed  
 ```  
   
- Příklad použití klauzule GROUP BY naleznete v tématu [having](../../../../../../docs/framework/data/adonet/ef/language-reference/having-entity-sql.md).  
+ Příklad použití klauzule GROUP BY naleznete v tématu [having](having-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá operátor GROUP BY k určení skupin, do kterých jsou objekty vraceny dotazem. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
+1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-primitivetype-results.md)PrimitiveType.  
   
 2. Předat následující dotaz jako argument `ExecutePrimitiveTypeQuery` metodě:  
   
@@ -70,5 +70,5 @@ GROUP BY 1   -- BAD, a constant is not allowed
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Výrazy dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
+- [Reference k Entity SQL](entity-sql-reference.md)
+- [Výrazy dotazu](query-expressions-entity-sql.md)

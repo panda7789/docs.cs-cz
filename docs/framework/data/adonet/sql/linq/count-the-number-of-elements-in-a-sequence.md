@@ -5,33 +5,33 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ccbe5d54-c9eb-4b14-b0ab-f628483c5f99
-ms.openlocfilehash: b39b0a1487c9f250e32b13330f2f70b7e3c7c877
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74e24aeb64b0097cba3975e76475034e6bb9544d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032920"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247705"
 ---
 # <a name="count-the-number-of-elements-in-a-sequence"></a>Určení počtu prvků v posloupnosti
-Použití <xref:System.Linq.Enumerable.Count%2A> operátor ke zjištění počtu prvků v posloupnosti.  
+<xref:System.Linq.Enumerable.Count%2A> Pomocí operátoru můžete spočítat počet prvků v sekvenci.  
   
- Běží tento dotaz s ukázkovou databází Northwind vytvoří výstup `91`.  
+ Spuštění tohoto dotazu proti ukázkové databázi Northwind vytvoří výstup `91`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí počet `Customers` v databázi.  
+ Následující příklad spočítá počet `Customers` v databázi.  
   
  [!code-csharp[DLinqQueryExamples#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#4)]
  [!code-vb[DLinqQueryExamples#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#4)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí počet produktů v databázi, které dosud nebyly vyřazeny.  
+ Následující příklad spočítá počet produktů v databázi, které nebyly ukončeny.  
   
- Spuštěním tohoto příkladu s ukázkovou databází Northwind vytvoří výstup `69`.  
+ Spuštění tohoto příkladu pro ukázkovou databázi Northwind vytvoří výstup `69`.  
   
  [!code-csharp[DLinqQueryExamples#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#5)]
  [!code-vb[DLinqQueryExamples#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
-- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Agregační dotazy](aggregate-queries.md)
+- [Stažení ukázkových databází](downloading-sample-databases.md)
