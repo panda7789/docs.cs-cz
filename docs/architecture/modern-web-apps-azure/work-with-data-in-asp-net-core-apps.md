@@ -1,0 +1,518 @@
+---
+title: Práce s daty v aplikacích ASP.NET Core
+description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azure | Práce s daty v aplikacích ASP.NET Core
+author: ardalis
+ms.author: wiwagn
+ms.date: 01/30/2019
+ms.openlocfilehash: 3b251003a2da998936a11acff3cc2975c4b78838
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373997"
+---
+# <a name="working-with-data-in-aspnet-core-apps"></a><span data-ttu-id="fbacd-103">Práce s daty v aplikacích ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="fbacd-103">Working with Data in ASP.NET Core Apps</span></span>
+
+> <span data-ttu-id="fbacd-104">"Data jsou úžasné a budou naposledy delší než systémy samotné."</span><span class="sxs-lookup"><span data-stu-id="fbacd-104">"Data is a precious thing and will last longer than the systems themselves."</span></span>
+>
+> <span data-ttu-id="fbacd-105">Tim Berners-Novák</span><span class="sxs-lookup"><span data-stu-id="fbacd-105">Tim Berners-Lee</span></span>
+
+<span data-ttu-id="fbacd-106">Přístup k datům je důležitou součástí téměř libovolné softwarové aplikace.</span><span class="sxs-lookup"><span data-stu-id="fbacd-106">Data access is an important part of almost any software application.</span></span> <span data-ttu-id="fbacd-107">ASP.NET Core podporuje celou řadu možností přístupu k datům, včetně Entity Framework Core (a také Entity Framework 6), a může fungovat s libovolným rozhraním .NET Data Access Framework.</span><span class="sxs-lookup"><span data-stu-id="fbacd-107">ASP.NET Core supports a variety of data access options, including Entity Framework Core (and Entity Framework 6 as well), and can work with any .NET data access framework.</span></span> <span data-ttu-id="fbacd-108">Volba rozhraní pro přístup k datům, která se má použít, závisí na potřebách aplikace.</span><span class="sxs-lookup"><span data-stu-id="fbacd-108">The choice of which data access framework to use depends on the application's needs.</span></span> <span data-ttu-id="fbacd-109">Díky abstrakci těchto voleb z projektů ApplicationCore a uživatelských rozhraní a zapouzdřování podrobností o implementaci v infrastruktuře vám pomůže vydávat volně spojený testovatelné software.</span><span class="sxs-lookup"><span data-stu-id="fbacd-109">Abstracting these choices from the ApplicationCore and UI projects, and encapsulating implementation details in Infrastructure, helps to produce loosely coupled, testable software.</span></span>
+
+## <a name="entity-framework-core-for-relational-databases"></a><span data-ttu-id="fbacd-110">Entity Framework Core (pro relační databáze)</span><span class="sxs-lookup"><span data-stu-id="fbacd-110">Entity Framework Core (for relational databases)</span></span>
+
+<span data-ttu-id="fbacd-111">Pokud vytváříte novou ASP.NET Core aplikaci, která potřebuje pracovat s relačními daty, je doporučeným způsobem, jak vaše aplikace přistupuje k datům, je Entity Framework Core (EF Core).</span><span class="sxs-lookup"><span data-stu-id="fbacd-111">If you're writing a new ASP.NET Core application that needs to work with relational data, then Entity Framework Core (EF Core) is the recommended way for your application to access its data.</span></span> <span data-ttu-id="fbacd-112">EF Core je objektově-relační Mapovač (O/RM), který umožňuje vývojářům v rozhraní .NET zachovat objekty do a ze zdroje dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-112">EF Core is an object-relational mapper (O/RM) that enables .NET developers to persist objects to and from a data source.</span></span> <span data-ttu-id="fbacd-113">Eliminuje nutnost, že většina vývojářů kódu pro přístup k datům obvykle vyžaduje zápis.</span><span class="sxs-lookup"><span data-stu-id="fbacd-113">It eliminates the need for most of the data access code developers would typically need to write.</span></span> <span data-ttu-id="fbacd-114">Podobně jako u ASP.NET Core se EF Core od základu přepsala pro podporu modulárních aplikací pro více platforem.</span><span class="sxs-lookup"><span data-stu-id="fbacd-114">Like ASP.NET Core, EF Core has been rewritten from the ground up to support modular cross-platform applications.</span></span> <span data-ttu-id="fbacd-115">Přidáte ho do vaší aplikace jako balíček NuGet, nakonfigurujete ho při spuštění a vyžádáte ho přes vkládání závislostí všude, kde ho potřebujete.</span><span class="sxs-lookup"><span data-stu-id="fbacd-115">You add it to your application as a NuGet package, configure it in Startup, and request it through dependency injection wherever you need it.</span></span>
+
+<span data-ttu-id="fbacd-116">Pokud chcete použít EF Core s databází SQL Server, spusťte následující příkaz dotnet CLI:</span><span class="sxs-lookup"><span data-stu-id="fbacd-116">To use EF Core with a SQL Server database, run the following dotnet CLI command:</span></span>
+
+```console
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+```
+
+<span data-ttu-id="fbacd-117">Přidání podpory pro zdroj dat pro nedostatek paměti pro testování:</span><span class="sxs-lookup"><span data-stu-id="fbacd-117">To add support for an InMemory data source, for testing:</span></span>
+
+```console
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+```
+
+### <a name="the-dbcontext"></a><span data-ttu-id="fbacd-118">DbContext</span><span class="sxs-lookup"><span data-stu-id="fbacd-118">The DbContext</span></span>
+
+<span data-ttu-id="fbacd-119">Chcete-li pracovat s EF Core, potřebujete podtřídu <xref:Microsoft.EntityFrameworkCore.DbContext>třídy.</span><span class="sxs-lookup"><span data-stu-id="fbacd-119">To work with EF Core, you need a subclass of <xref:Microsoft.EntityFrameworkCore.DbContext>.</span></span> <span data-ttu-id="fbacd-120">Tato třída uchovává vlastnosti představující kolekce entit, se kterými bude aplikace pracovat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-120">This class holds properties representing collections of the entities your application will work with.</span></span> <span data-ttu-id="fbacd-121">Ukázka eShopOnWeb zahrnuje CatalogContext s kolekcemi pro položky, značky a typy:</span><span class="sxs-lookup"><span data-stu-id="fbacd-121">The eShopOnWeb sample includes a CatalogContext with collections for items, brands, and types:</span></span>
+
+```csharp
+public class CatalogContext : DbContext
+{
+    public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
+    {
+
+    }
+
+    public DbSet<CatalogItem> CatalogItems { get; set; }
+
+    public DbSet<CatalogBrand> CatalogBrands { get; set; }
+
+    public DbSet<CatalogType> CatalogTypes { get; set; }
+}
+```
+
+<span data-ttu-id="fbacd-122">Vaše DbContext musí mít konstruktor, který přijímá DbContextOptions a předávat tento argument základnímu konstruktoru DbContext.</span><span class="sxs-lookup"><span data-stu-id="fbacd-122">Your DbContext must have a constructor that accepts DbContextOptions and pass this argument to the base DbContext constructor.</span></span> <span data-ttu-id="fbacd-123">Všimněte si, že pokud máte ve své aplikaci pouze jeden DbContext, můžete předat instanci DbContextOptions, ale pokud máte více než jeden, musíte použít typ Generic DbContextOptions\<T > a předat do svého typu DbContext jako obecný parametr.</span><span class="sxs-lookup"><span data-stu-id="fbacd-123">Note that if you have only one DbContext in your application, you can pass an instance of DbContextOptions, but if you have more than one you must use the generic DbContextOptions\<T> type, passing in your DbContext type as the generic parameter.</span></span>
+
+### <a name="configuring-ef-core"></a><span data-ttu-id="fbacd-124">Konfigurace EF Core</span><span class="sxs-lookup"><span data-stu-id="fbacd-124">Configuring EF Core</span></span>
+
+<span data-ttu-id="fbacd-125">Ve vaší aplikaci ASP.NET Core obvykle ve své metodě ConfigureServices nakonfigurujete EF Core.</span><span class="sxs-lookup"><span data-stu-id="fbacd-125">In your ASP.NET Core application, you'll typically configure EF Core in your ConfigureServices method.</span></span> <span data-ttu-id="fbacd-126">EF Core používá DbContextOptionsBuilder, který podporuje několik užitečných metod rozšíření pro zjednodušení konfigurace.</span><span class="sxs-lookup"><span data-stu-id="fbacd-126">EF Core uses a DbContextOptionsBuilder, which supports several helpful extension methods to streamline its configuration.</span></span> <span data-ttu-id="fbacd-127">Chcete-li nakonfigurovat CatalogContext pro použití databáze SQL Server s připojovacím řetězcem definovaným v konfiguraci, přidejte do ConfigureServices následující kód:</span><span class="sxs-lookup"><span data-stu-id="fbacd-127">To configure CatalogContext to use a SQL Server database with a connection string defined in Configuration, you would add the following code to ConfigureServices:</span></span>
+
+```csharp
+services.AddDbContext<CatalogContext>(options => options.UseSqlServer (Configuration.GetConnectionString("DefaultConnection")));
+```
+
+<span data-ttu-id="fbacd-128">Použití databáze v paměti:</span><span class="sxs-lookup"><span data-stu-id="fbacd-128">To use the in-memory database:</span></span>
+
+```csharp
+services.AddDbContext<CatalogContext>(options =>
+    options.UseInMemoryDatabase());
+```
+
+<span data-ttu-id="fbacd-129">Jakmile nainstalujete EF Core, vytvoříte podřízený typ DbContext a nakonfigurujete ho v ConfigureServices, jste připraveni použít EF Core.</span><span class="sxs-lookup"><span data-stu-id="fbacd-129">Once you have installed EF Core, created a DbContext child type, and configured it in ConfigureServices, you are ready to use EF Core.</span></span> <span data-ttu-id="fbacd-130">Můžete požádat o instanci DbContext typu v jakékoli službě, která ji potřebuje, a začít pracovat s trvalými entitami pomocí LINQ, jako kdyby byly jednoduše v kolekci.</span><span class="sxs-lookup"><span data-stu-id="fbacd-130">You can request an instance of your DbContext type in any service that needs it, and start working with your persisted entities using LINQ as if they were simply in a collection.</span></span> <span data-ttu-id="fbacd-131">EF Core provádí překlad výrazů LINQ do dotazů SQL a ukládá a načítá vaše data.</span><span class="sxs-lookup"><span data-stu-id="fbacd-131">EF Core does the work of translating your LINQ expressions into SQL queries to store and retrieve your data.</span></span>
+
+<span data-ttu-id="fbacd-132">Můžete zobrazit dotazy EF Core spouštíte konfigurací protokolovacího nástroje a zajištěním jeho úrovně na alespoň informace, jak je znázorněno na obrázku 8-1.</span><span class="sxs-lookup"><span data-stu-id="fbacd-132">You can see the queries EF Core is executing by configuring a logger and ensuring its level is set to at least Information, as shown in Figure 8-1.</span></span>
+
+![Protokolování dotazů EF Core do konzoly](./media/image8-1.png)
+
+<span data-ttu-id="fbacd-134">**Obrázek 8-1**.</span><span class="sxs-lookup"><span data-stu-id="fbacd-134">**Figure 8-1**.</span></span> <span data-ttu-id="fbacd-135">Protokolování dotazů EF Core do konzoly</span><span class="sxs-lookup"><span data-stu-id="fbacd-135">Logging EF Core queries to the console</span></span>
+
+### <a name="fetching-and-storing-data"></a><span data-ttu-id="fbacd-136">Načítají se a ukládají se data.</span><span class="sxs-lookup"><span data-stu-id="fbacd-136">Fetching and storing Data</span></span>
+
+<span data-ttu-id="fbacd-137">Chcete-li načíst data z EF Core, přistupujete k příslušné vlastnosti a pomocí LINQ můžete filtrovat výsledek.</span><span class="sxs-lookup"><span data-stu-id="fbacd-137">To retrieve data from EF Core, you access the appropriate property and use LINQ to filter the result.</span></span> <span data-ttu-id="fbacd-138">Můžete také použít LINQ k provedení projekce a transformovat výsledek z jednoho typu na jiný.</span><span class="sxs-lookup"><span data-stu-id="fbacd-138">You can also use LINQ to perform projection, transforming the result from one type to another.</span></span> <span data-ttu-id="fbacd-139">Následující příklad by načetl CatalogBrands seřazený podle názvu, vyfiltroval podle jejich povolených vlastností a propnul na SelectListItem typ:</span><span class="sxs-lookup"><span data-stu-id="fbacd-139">The following example would retrieve CatalogBrands, ordered by name, filtered by their Enabled property, and projected onto a SelectListItem type:</span></span>
+
+```csharp
+var brandItems = await _context.CatalogBrands
+    .Where(b => b.Enabled)
+    .OrderBy(b => b.Name)
+    .Select(b => new SelectListItem {
+        Value = b.Id, Text = b.Name })
+    .ToListAsync();
+```
+
+<span data-ttu-id="fbacd-140">Ve výše uvedeném příkladu je důležité přidat volání do ToListAsync, aby se dotaz spustil okamžitě.</span><span class="sxs-lookup"><span data-stu-id="fbacd-140">It's important in the above example to add the call to ToListAsync in order to execute the query immediately.</span></span> <span data-ttu-id="fbacd-141">V opačném případě příkaz přiřadí rozhraní\<IQueryable SelectListItem > k brandItems, které nebude provedeno, dokud není vyhodnoceno.</span><span class="sxs-lookup"><span data-stu-id="fbacd-141">Otherwise, the statement will assign an IQueryable\<SelectListItem> to brandItems, which will not be executed until it is enumerated.</span></span> <span data-ttu-id="fbacd-142">Existují specialisté a nevýhody vrácení výsledků IQueryable z metod.</span><span class="sxs-lookup"><span data-stu-id="fbacd-142">There are pros and cons to returning IQueryable results from methods.</span></span> <span data-ttu-id="fbacd-143">Umožňuje, aby byl dotaz EF Core dále upravován, ale může také vést k chybám, ke kterým dochází pouze za běhu, pokud jsou do dotazu přidány operace, které EF Core nelze přeložit.</span><span class="sxs-lookup"><span data-stu-id="fbacd-143">It allows the query EF Core will construct to be further modified, but can also result in errors that only occur at runtime, if operations are added to the query that EF Core cannot translate.</span></span> <span data-ttu-id="fbacd-144">Obecně je bezpečnější předat jakékoli filtry do metody, která provádí přístup k datům, a vrátit zpět kolekci v paměti (například seznam\<T >) jako výsledek.</span><span class="sxs-lookup"><span data-stu-id="fbacd-144">It's generally safer to pass any filters into the method performing the data access, and return back an in-memory collection (for example, List\<T>) as the result.</span></span>
+
+<span data-ttu-id="fbacd-145">EF Core sleduje změny entit, které načítá z Persistence.</span><span class="sxs-lookup"><span data-stu-id="fbacd-145">EF Core tracks changes on entities it fetches from persistence.</span></span> <span data-ttu-id="fbacd-146">Chcete-li uložit změny ve sledované entitě, stačí zavolat metodu SaveChanges na DbContext, čímž se zajistí, že se jedná o stejnou instanci DbContext, která byla použita k načtení entity.</span><span class="sxs-lookup"><span data-stu-id="fbacd-146">To save changes to a tracked entity, you just call the SaveChanges method on the DbContext, making sure it's the same DbContext instance that was used to fetch the entity.</span></span> <span data-ttu-id="fbacd-147">Přidávání a odebírání entit je přímo provedeno na příslušné vlastnosti Negenerickými a volání metody SaveChanges ke spuštění databázových příkazů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-147">Adding and removing entities is directly done on the appropriate DbSet property, again with a call to SaveChanges to execute the database commands.</span></span> <span data-ttu-id="fbacd-148">Následující příklad ukazuje přidávání, aktualizování a odebírání entit z Persistence.</span><span class="sxs-lookup"><span data-stu-id="fbacd-148">The following example demonstrates adding, updating, and removing entities from persistence.</span></span>
+
+```csharp
+// create
+var newBrand = new CatalogBrand() { Brand = "Acme" };
+_context.Add(newBrand);
+await _context.SaveChangesAsync();
+
+// read and update
+var existingBrand = _context.CatalogBrands.Find(1);
+existingBrand.Brand = "Updated Brand";
+await _context.SaveChangesAsync();
+
+// read and delete (alternate Find syntax)
+var brandToDelete = _context.Find<CatalogBrand>(2);
+_context.CatalogBrands.Remove(brandToDelete);
+await _context.SaveChangesAsync();
+```
+
+<span data-ttu-id="fbacd-149">EF Core podporuje synchronní i asynchronní metody pro načítání a ukládání.</span><span class="sxs-lookup"><span data-stu-id="fbacd-149">EF Core supports both synchronous and async methods for fetching and saving.</span></span> <span data-ttu-id="fbacd-150">Ve webových aplikacích se doporučuje použít vzor Async/await s asynchronními metodami, aby se vlákna webového serveru neblokovala při čekání na dokončení operací přístupu k datům.</span><span class="sxs-lookup"><span data-stu-id="fbacd-150">In web applications, it's recommended to use the async/await pattern with the async methods, so that web server threads are not blocked while waiting for data access operations to complete.</span></span>
+
+### <a name="fetching-related-data"></a><span data-ttu-id="fbacd-151">Načítají se související data.</span><span class="sxs-lookup"><span data-stu-id="fbacd-151">Fetching related data</span></span>
+
+<span data-ttu-id="fbacd-152">Když EF Core načítá entity, naplní všechny vlastnosti, které jsou uloženy přímo s touto entitou v databázi.</span><span class="sxs-lookup"><span data-stu-id="fbacd-152">When EF Core retrieves entities, it populates all of the properties that are stored directly with that entity in the database.</span></span> <span data-ttu-id="fbacd-153">Navigační vlastnosti, jako jsou například seznamy souvisejících entit, nejsou naplněny a mohou mít hodnotu nastavenou na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="fbacd-153">Navigation properties, such as lists of related entities, are not populated and may have their value set to null.</span></span> <span data-ttu-id="fbacd-154">Tím se zajistí, že EF Core nenačítá víc dat, než je potřeba, což je zvláště důležité pro webové aplikace, které musí rychle zpracovávat požadavky a vracet odpovědi účinným způsobem.</span><span class="sxs-lookup"><span data-stu-id="fbacd-154">This ensures EF Core is not fetching more data than is needed, which is especially important for web applications, which must quickly process requests and return responses in an efficient manner.</span></span> <span data-ttu-id="fbacd-155">Chcete-li zahrnout relace s entitou pomocí _Eager načítání_, zadejte vlastnost pomocí metody include Extension na dotaz, jak je znázorněno níže:</span><span class="sxs-lookup"><span data-stu-id="fbacd-155">To include relationships with an entity using _eager loading_, you specify the property using the Include extension method on the query, as shown:</span></span>
+
+```csharp
+// .Include requires using Microsoft.EntityFrameworkCore
+var brandsWithItems = await _context.CatalogBrands
+    .Include(b => b.Items)
+    .ToListAsync();
+```
+
+<span data-ttu-id="fbacd-156">Můžete zahrnout více relací a můžete také zahrnout dílčí relace pomocí ThenInclude.</span><span class="sxs-lookup"><span data-stu-id="fbacd-156">You can include multiple relationships, and you can also include sub-relationships using ThenInclude.</span></span> <span data-ttu-id="fbacd-157">EF Core spustí jeden dotaz, který načte výslednou sadu entit.</span><span class="sxs-lookup"><span data-stu-id="fbacd-157">EF Core will execute a single query to retrieve the resulting set of entities.</span></span> <span data-ttu-id="fbacd-158">Alternativně můžete zahrnout navigační vlastnosti navigačních vlastností předáním ".". – řetězec oddělený řetězcem `.Include()` metody rozšíření, například:</span><span class="sxs-lookup"><span data-stu-id="fbacd-158">Alternately you can include navigation properties of navigation properties by passing a '.'-separated string to the `.Include()` extension method, like so:</span></span>
+
+```csharp
+    .Include(“Items.Products”)
+```
+
+<span data-ttu-id="fbacd-159">Kromě zapouzdření logiky filtrování může specifikace určit tvar dat, která mají být vrácena, včetně vlastností, které mají být naplněny.</span><span class="sxs-lookup"><span data-stu-id="fbacd-159">In addition to encapsulating filtering logic, a specification can specify the shape of the data to be returned, including which properties to populate.</span></span> <span data-ttu-id="fbacd-160">Ukázka eShopOnWeb obsahuje několik specifikací, které ukazují, jak zapouzdřit Eager načítání informací v rámci specifikace.</span><span class="sxs-lookup"><span data-stu-id="fbacd-160">The eShopOnWeb sample includes several specifications that demonstrate encapsulating eager loading information within the specification.</span></span> <span data-ttu-id="fbacd-161">To, jak se specifikace používá jako součást dotazu, vidíte tady:</span><span class="sxs-lookup"><span data-stu-id="fbacd-161">You can see how the specification is used as part of a query here:</span></span>
+
+```csharp
+// Includes all expression-based includes
+query = specification.Includes.Aggregate(query,
+            (current, include) => current.Include(include));
+
+// Include any string-based include statements
+query = specification.IncludeStrings.Aggregate(query,
+            (current, include) => current.Include(include));
+```
+
+<span data-ttu-id="fbacd-162">Další možností načítání souvisejících dat je použití _explicitního načítání_.</span><span class="sxs-lookup"><span data-stu-id="fbacd-162">Another option for loading related data is to use _explicit loading_.</span></span> <span data-ttu-id="fbacd-163">Explicitní načítání umožňuje načíst další data do entity, která již byla načtena.</span><span class="sxs-lookup"><span data-stu-id="fbacd-163">Explicit loading allows you to load additional data into an entity that has already been retrieved.</span></span> <span data-ttu-id="fbacd-164">Vzhledem k tomu, že se jedná o samostatný požadavek na databázi, není doporučeno používat webové aplikace, což by mělo minimalizovat počet přenosů databáze odeslaných na požadavek.</span><span class="sxs-lookup"><span data-stu-id="fbacd-164">Since this involves a separate request to the database, it's not recommended for web applications, which should minimize the number of database round trips made per request.</span></span>
+
+<span data-ttu-id="fbacd-165">_Opožděné načítání_ je funkce, která automaticky načte související data, která jsou odkazována aplikací.</span><span class="sxs-lookup"><span data-stu-id="fbacd-165">_Lazy loading_ is a feature that automatically loads related data as it is referenced by the application.</span></span> <span data-ttu-id="fbacd-166">EF Core přidaná podpora pro opožděné načítání ve verzi 2,1.</span><span class="sxs-lookup"><span data-stu-id="fbacd-166">EF Core has added support for lazy loading in version 2.1.</span></span> <span data-ttu-id="fbacd-167">Opožděné načítání není ve výchozím nastavení povolené a vyžaduje instalaci `Microsoft.EntityFrameworkCore.Proxies`.</span><span class="sxs-lookup"><span data-stu-id="fbacd-167">Lazy loading is not enabled by default and requires installing the `Microsoft.EntityFrameworkCore.Proxies`.</span></span> <span data-ttu-id="fbacd-168">Stejně jako u explicitního načítání by se obvykle mělo pro webové aplikace zakázat opožděné načítání, protože jeho použití bude mít za následek další databázové dotazy v rámci každé webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-168">As with explicit loading, lazy loading should typically be disabled for web applications, since its use will result in additional database queries being made within each web request.</span></span> <span data-ttu-id="fbacd-169">Režijní náklady spojené s opožděným načtením se bohužel často neúčtují v době vývoje, pokud je latence malá a často jsou datové sady používané pro testování malé.</span><span class="sxs-lookup"><span data-stu-id="fbacd-169">Unfortunately, the overhead incurred by lazy loading often goes unnoticed at development time, when latency is small and often the data sets used for testing are small.</span></span> <span data-ttu-id="fbacd-170">Nicméně v produkčním prostředí s více uživateli, více daty a větší latencí můžou další požadavky databáze často způsobit špatný výkon webových aplikací, které využívají opožděné načítání.</span><span class="sxs-lookup"><span data-stu-id="fbacd-170">However, in production, with more users, more data, and more latency, the additional database requests can often result in poor performance for web applications that make heavy use of lazy loading.</span></span>
+
+[<span data-ttu-id="fbacd-171">Vyhnout se entitám opožděného načítání ve webových aplikacích</span><span class="sxs-lookup"><span data-stu-id="fbacd-171">Avoid Lazy Loading Entities in Web Applications</span></span>](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
+
+### <a name="encapsulating-data"></a><span data-ttu-id="fbacd-172">Zapouzdření dat</span><span class="sxs-lookup"><span data-stu-id="fbacd-172">Encapsulating data</span></span>
+
+<span data-ttu-id="fbacd-173">EF Core podporuje několik funkcí, které umožní vašemu modelu správně zapouzdřit svůj stav.</span><span class="sxs-lookup"><span data-stu-id="fbacd-173">EF Core supports several features that allow your model to properly encapsulate its state.</span></span> <span data-ttu-id="fbacd-174">Běžným problémem v doménových modelech je to, že zveřejňují vlastnosti navigace v kolekci jako veřejně přístupné typy seznamů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-174">A common problem in domain models is that they expose collection navigation properties as publicly accessible list types.</span></span> <span data-ttu-id="fbacd-175">To umožňuje všem spolupracovníkům manipulovat s obsahem těchto typů kolekcí, což může obejít důležité obchodní pravidla související s kolekcí, což může opustit objekt v neplatném stavu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-175">This allows any collaborator to manipulate the contents of these collection types, which may bypass important business rules related to the collection, possibly leaving the object in an invalid state.</span></span> <span data-ttu-id="fbacd-176">Řešením je vystavit přístup jen pro čtení k souvisejícím kolekcím a explicitně poskytnout metody definující způsoby, kterými je můžou klienti manipulovat, jako v tomto příkladu:</span><span class="sxs-lookup"><span data-stu-id="fbacd-176">The solution to this is to expose read-only access to related collections, and explicitly provide methods defining ways in which clients can manipulate them, as in this example:</span></span>
+
+```csharp
+public class Basket : BaseEntity
+{
+    public string BuyerId { get; set; }
+    private readonly List<BasketItem> _items = new List<BasketItem>();
+    public IReadOnlyCollection<BasketItem> Items => _items.AsReadOnly();
+
+    public void AddItem(int catalogItemId, decimal unitPrice, int quantity = 1)
+    {
+        if (!Items.Any(i => i.CatalogItemId == catalogItemId))
+        {
+            _items.Add(new BasketItem()
+            {
+                CatalogItemId = catalogItemId,
+                Quantity = quantity,
+                UnitPrice = unitPrice
+            });
+            return;
+        }
+        var existingItem = Items.FirstOrDefault(i => i.CatalogItemId == catalogItemId);
+        existingItem.Quantity += quantity;
+    }
+}
+```
+
+<span data-ttu-id="fbacd-177">Všimněte si, že tento typ entity nevystavuje `ICollection` veřejnou `List` vlastnost nebo `IReadOnlyCollection` , ale místo toho zveřejňuje typ, který zabalí základní typ seznamu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-177">Note that this entity type doesn’t expose a public `List` or `ICollection` property, but instead exposes an `IReadOnlyCollection` type that wraps the underlying List type.</span></span> <span data-ttu-id="fbacd-178">Při použití tohoto modelu můžete určit, že se má Entity Framework Core použít pole pro zálohování, například:</span><span class="sxs-lookup"><span data-stu-id="fbacd-178">When using this pattern, you can indicate to Entity Framework Core to use the backing field like so:</span></span>
+
+```csharp
+private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
+{
+    var navigation = builder.Metadata.FindNavigation(nameof(Basket.Items));
+
+    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+}
+```
+
+<span data-ttu-id="fbacd-179">Dalším způsobem, jak můžete zlepšit model domény, je použití objektů hodnot pro typy, které postrádají identitu a jsou rozlišeny jenom jejich vlastnostmi.</span><span class="sxs-lookup"><span data-stu-id="fbacd-179">Another way in which you can improve your domain model is through the use of value objects for types that lack identity and are only distinguished by their properties.</span></span> <span data-ttu-id="fbacd-180">Použití takových typů jako vlastností vašich entit může pomoci udržet logiku specifickou pro objekt hodnoty, kde patří, a může zabránit duplicitní logice mezi několika entitami, které používají stejný pojem.</span><span class="sxs-lookup"><span data-stu-id="fbacd-180">Using such types as properties of your entities can help keep logic specific to the value object where it belongs, and can avoid duplicate logic between multiple entities that use the same concept.</span></span> <span data-ttu-id="fbacd-181">V Entity Framework Core můžete zachovat objekty hodnot ve stejné tabulce jako jejich vlastnící entita nakonfigurováním typu jako vlastněné entity, například takto:</span><span class="sxs-lookup"><span data-stu-id="fbacd-181">In Entity Framework Core, you can persist value objects in the same table as their owning entity by configuring the type as an owned entity, like so:</span></span>
+
+```csharp
+private void ConfigureOrder(EntityTypeBuilder<Order> builder)
+{
+    builder.OwnsOne(o => o.ShipToAddress);
+}
+```
+
+<span data-ttu-id="fbacd-182">V tomto příkladu `ShipToAddress` je vlastnost typu `Address`.</span><span class="sxs-lookup"><span data-stu-id="fbacd-182">In this example, the `ShipToAddress` property is of type `Address`.</span></span> <span data-ttu-id="fbacd-183">`Address`je objekt hodnoty s několika vlastnostmi, jako jsou `Street` a `City`.</span><span class="sxs-lookup"><span data-stu-id="fbacd-183">`Address` is a value object with several properties such as `Street` and `City`.</span></span> <span data-ttu-id="fbacd-184">EF Core provede mapování `Order` objektu na jeho tabulku s jedním sloupcem `Address` na vlastnost a prefixuje název každého sloupce s názvem vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-184">EF Core maps the `Order` object to its table with one column per `Address` property, prefixing each column name with the name of the property.</span></span> <span data-ttu-id="fbacd-185">V tomto příkladu `Order` tabulka by obsahovala sloupce `ShipToAddress_Street` jako a `ShipToAddress_City`.</span><span class="sxs-lookup"><span data-stu-id="fbacd-185">In this example, the `Order` table would include columns such as `ShipToAddress_Street` and `ShipToAddress_City`.</span></span>
+
+[<span data-ttu-id="fbacd-186">EF Core 2,2 zavádí podporu pro kolekce vlastněných entit</span><span class="sxs-lookup"><span data-stu-id="fbacd-186">EF Core 2.2 introduces support for collections of owned entities</span></span>](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
+
+### <a name="resilient-connections"></a><span data-ttu-id="fbacd-187">Odolná připojení</span><span class="sxs-lookup"><span data-stu-id="fbacd-187">Resilient connections</span></span>
+
+<span data-ttu-id="fbacd-188">Externí prostředky, jako jsou databáze SQL, mohou být občas nedostupné.</span><span class="sxs-lookup"><span data-stu-id="fbacd-188">External resources like SQL databases may occasionally be unavailable.</span></span> <span data-ttu-id="fbacd-189">V případech dočasné nedostupnosti mohou aplikace použít logiku opakování, aby nedošlo k vyvolání výjimky.</span><span class="sxs-lookup"><span data-stu-id="fbacd-189">In cases of temporary unavailability, applications can use retry logic to avoid raising an exception.</span></span> <span data-ttu-id="fbacd-190">Tato technika se běžně označuje jako _odolnost připojení_.</span><span class="sxs-lookup"><span data-stu-id="fbacd-190">This technique is commonly referred to as _connection resiliency_.</span></span> <span data-ttu-id="fbacd-191">Můžete implementovat [vlastní opakování pomocí exponenciální omezení rychlosti](https://docs.microsoft.com/azure/architecture/patterns/retry) techniky tím, že zkusíte opakovat pokus s exponenciálním zvýšením čekací doby, dokud nedosáhnete maximálního počtu opakování.</span><span class="sxs-lookup"><span data-stu-id="fbacd-191">You can implement your [own retry with exponential backoff](https://docs.microsoft.com/azure/architecture/patterns/retry) technique by attempting to retry with an exponentially increasing wait time, until a maximum retry count has been reached.</span></span> <span data-ttu-id="fbacd-192">Tato technika zahrnuje skutečnost, že prostředky cloudu můžou být občas nedostupné po krátkou dobu, což vede k selhání některých požadavků.</span><span class="sxs-lookup"><span data-stu-id="fbacd-192">This technique embraces the fact that cloud resources might intermittently be unavailable for short periods of time, resulting in failure of some requests.</span></span>
+
+<span data-ttu-id="fbacd-193">Pro Azure SQL DB už Entity Framework Core k dispozici odolnost interního připojení k databázi a logiku opakování.</span><span class="sxs-lookup"><span data-stu-id="fbacd-193">For Azure SQL DB, Entity Framework Core already provides internal database connection resiliency and retry logic.</span></span> <span data-ttu-id="fbacd-194">Pro každé připojení DbContext ale musíte povolit strategii spouštění Entity Framework, pokud chcete mít odolná EF Core připojení.</span><span class="sxs-lookup"><span data-stu-id="fbacd-194">But you need to enable the Entity Framework execution strategy for each DbContext connection if you want to have resilient EF Core connections.</span></span>
+
+<span data-ttu-id="fbacd-195">Například následující kód na úrovni připojení EF Core umožňuje odolné připojení SQL, které se opakuje, pokud se připojení nepovede.</span><span class="sxs-lookup"><span data-stu-id="fbacd-195">For instance, the following code at the EF Core connection level enables resilient SQL connections that are retried if the connection fails.</span></span>
+
+```csharp
+// Startup.cs from any ASP.NET Core Web API
+public class Startup
+{
+    public IServiceProvider ConfigureServices(IServiceCollection services)
+    {
+        //...
+        services.AddDbContext<OrderingContext>(options =>
+        {
+            options.UseSqlServer(Configuration["ConnectionString"],
+            sqlServerOptionsAction: sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorNumbersToAdd: null);
+        });
+    });
+}
+//...
+```
+
+#### <a name="execution-strategies-and-explicit-transactions-using-begintransaction-and-multiple-dbcontexts"></a><span data-ttu-id="fbacd-196">Strategie provádění a explicitní transakce pomocí BeginTransaction a více DbContexts</span><span class="sxs-lookup"><span data-stu-id="fbacd-196">Execution strategies and explicit transactions using BeginTransaction and multiple DbContexts</span></span>
+
+<span data-ttu-id="fbacd-197">Když jsou v EF Core připojení povolené opakované pokusy, každá operace, kterou provedete pomocí EF Core, se stal svou vlastní operací vyvolaly.</span><span class="sxs-lookup"><span data-stu-id="fbacd-197">When retries are enabled in EF Core connections, each operation you perform using EF Core becomes its own retriable operation.</span></span> <span data-ttu-id="fbacd-198">Každý dotaz a každé volání metody SaveChanges se bude opakovat jako jednotka, pokud dojde k přechodnému selhání.</span><span class="sxs-lookup"><span data-stu-id="fbacd-198">Each query and each call to SaveChanges will be retried as a unit if a transient failure occurs.</span></span>
+
+<span data-ttu-id="fbacd-199">Nicméně pokud váš kód inicializuje transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba považovat za jednotku. vše uvnitř transakce se musí vrátit zpátky, pokud dojde k selhání.</span><span class="sxs-lookup"><span data-stu-id="fbacd-199">However, if your code initiates a transaction using BeginTransaction, you are defining your own group of operations that need to be treated as a unit; everything inside the transaction has to be rolled back if a failure occurs.</span></span> <span data-ttu-id="fbacd-200">Pokud se pokusíte provést tuto transakci při použití strategie provádění EF (opakování zásad) a zahrnete do něj několik DbContexts, zobrazí se výjimka podobná následující.</span><span class="sxs-lookup"><span data-stu-id="fbacd-200">You will see an exception like the following if you attempt to execute that transaction when using an EF execution strategy (retry policy) and you include several SaveChanges from multiple DbContexts in it.</span></span>
+
+<span data-ttu-id="fbacd-201">System.InvalidOperationException: Nakonfigurovaná strategie provádění SqlServerRetryingExecutionStrategy nepodporuje transakce iniciované uživatelem.</span><span class="sxs-lookup"><span data-stu-id="fbacd-201">System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user initiated transactions.</span></span> <span data-ttu-id="fbacd-202">K provedení všech operací v transakci jako jednotky vyvolaly použijte strategii spuštění vrácenou funkcí DbContext. Database. CreateExecutionStrategy ().</span><span class="sxs-lookup"><span data-stu-id="fbacd-202">Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.</span></span>
+
+<span data-ttu-id="fbacd-203">Řešením je ruční vyvolání strategie provádění EF s delegátem, který představuje všechno, co je třeba provést.</span><span class="sxs-lookup"><span data-stu-id="fbacd-203">The solution is to manually invoke the EF execution strategy with a delegate representing everything that needs to be executed.</span></span> <span data-ttu-id="fbacd-204">Pokud dojde k přechodnému selhání, strategie provádění znovu vyvolá delegáta.</span><span class="sxs-lookup"><span data-stu-id="fbacd-204">If a transient failure occurs, the execution strategy will invoke the delegate again.</span></span> <span data-ttu-id="fbacd-205">Následující kód ukazuje, jak implementovat tento přístup:</span><span class="sxs-lookup"><span data-stu-id="fbacd-205">The following code shows how to implement this approach:</span></span>
+
+```csharp
+// Use of an EF Core resiliency strategy when using multiple DbContexts
+// within an explicit transaction
+// See:
+// https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency
+var strategy = _catalogContext.Database.CreateExecutionStrategy();
+await strategy.ExecuteAsync(async () =>
+{
+    // Achieving atomicity between original Catalog database operation and the
+    // IntegrationEventLog thanks to a local transaction
+    using (var transaction = _catalogContext.Database.BeginTransaction())
+    {
+        _catalogContext.CatalogItems.Update(catalogItem);
+        await _catalogContext.SaveChangesAsync();
+
+        // Save to EventLog only if product price changed
+        if (raiseProductPriceChangedEvent)
+        await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
+        transaction.Commit();
+    }
+});
+```
+
+<span data-ttu-id="fbacd-206">První DbContext je \_catalogContext a druhý DbContext je \_v rámci objektu integrationEventLogService.</span><span class="sxs-lookup"><span data-stu-id="fbacd-206">The first DbContext is the \_catalogContext and the second DbContext is within the \_integrationEventLogService object.</span></span> <span data-ttu-id="fbacd-207">Nakonec se akce potvrzení provede více DbContexts a použije se strategie provádění EF.</span><span class="sxs-lookup"><span data-stu-id="fbacd-207">Finally, the Commit action would be performed multiple DbContexts and using an EF Execution Strategy.</span></span>
+
+> ### <a name="references--entity-framework-core"></a><span data-ttu-id="fbacd-208">Odkazy – Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="fbacd-208">References – Entity Framework Core</span></span>
+>
+> - <span data-ttu-id="fbacd-209">**EF Core docs**</span><span class="sxs-lookup"><span data-stu-id="fbacd-209">**EF Core Docs**</span></span>  
+>   <https://docs.microsoft.com/ef/>
+> - <span data-ttu-id="fbacd-210">**EF Core: Související data**</span><span class="sxs-lookup"><span data-stu-id="fbacd-210">**EF Core: Related Data**</span></span>  
+>   <https://docs.microsoft.com/ef/core/querying/related-data>
+> - <span data-ttu-id="fbacd-211">**Vyhněte se entitám opožděného načítání v aplikacích ASPNET**</span><span class="sxs-lookup"><span data-stu-id="fbacd-211">**Avoid Lazy Loading Entities in ASPNET Applications**</span></span>  
+>   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
+
+## <a name="ef-core-or-micro-orm"></a><span data-ttu-id="fbacd-212">EF Core nebo mikroorm?</span><span class="sxs-lookup"><span data-stu-id="fbacd-212">EF Core or micro-ORM?</span></span>
+
+<span data-ttu-id="fbacd-213">I když je EF Core skvělou volbou pro správu trvalosti a většina z nich zapouzdřuje podrobnosti databáze od vývojářů aplikací, není jedinou volbou.</span><span class="sxs-lookup"><span data-stu-id="fbacd-213">While EF Core is a great choice for managing persistence, and for the most part encapsulates database details from application developers, it is not the only choice.</span></span> <span data-ttu-id="fbacd-214">Další oblíbenou alternativou Open Source je [dapperem](https://github.com/StackExchange/Dapper), což se říká mikroorm.</span><span class="sxs-lookup"><span data-stu-id="fbacd-214">Another popular open source alternative is [Dapper](https://github.com/StackExchange/Dapper), a so-called micro-ORM.</span></span> <span data-ttu-id="fbacd-215">Mikroorm je odlehčený a méně plnohodnotný nástroj pro mapování objektů na datové struktury.</span><span class="sxs-lookup"><span data-stu-id="fbacd-215">A micro-ORM is a lightweight, less full-featured tool for mapping objects to data structures.</span></span> <span data-ttu-id="fbacd-216">V případě Dapperem se záměr jejich návrhu zaměřuje na výkon, místo úplného zapouzdření základních dotazů, které používá k načtení a aktualizaci dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-216">In the case of Dapper, its design goals focus on performance, rather than fully encapsulating the underlying queries it uses to retrieve and update data.</span></span> <span data-ttu-id="fbacd-217">Vzhledem k tomu, že se nejedná o abstraktní SQL z vývojářů, Dapperem je "blíže k metalu" a vývojářům umožňuje psát přesné dotazy, které chtějí použít pro danou operaci přístupu k datům.</span><span class="sxs-lookup"><span data-stu-id="fbacd-217">Because it doesn't abstract SQL from the developer, Dapper is "closer to the metal" and lets developers write the exact queries they want to use for a given data access operation.</span></span>
+
+<span data-ttu-id="fbacd-218">EF Core má dvě důležité funkce, které nabízí oddělení IT od Dapperem, ale také přidávají k jeho režijnímu výkonu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-218">EF Core has two significant features it provides which separate it from Dapper but also add to its performance overhead.</span></span> <span data-ttu-id="fbacd-219">První je převod z výrazů LINQ do jazyka SQL.</span><span class="sxs-lookup"><span data-stu-id="fbacd-219">The first is translation from LINQ expressions into SQL.</span></span> <span data-ttu-id="fbacd-220">Tyto překlady jsou ukládány do mezipaměti, ale i tak, aby při prvním spuštění bylo režie.</span><span class="sxs-lookup"><span data-stu-id="fbacd-220">These translations are cached, but even so there is overhead in performing them the first time.</span></span> <span data-ttu-id="fbacd-221">Druhým je sledování změn u entit (aby bylo možné vygenerovat efektivní příkazy aktualizace).</span><span class="sxs-lookup"><span data-stu-id="fbacd-221">The second is change tracking on entities (so that efficient update statements can be generated).</span></span> <span data-ttu-id="fbacd-222">Toto chování je možné vypnout pro konkrétní dotazy pomocí rozšíření AsNotTracking.</span><span class="sxs-lookup"><span data-stu-id="fbacd-222">This behavior can be turned off for specific queries by using the AsNotTracking extension.</span></span> <span data-ttu-id="fbacd-223">EF Core také generuje dotazy SQL, které jsou obvykle velice efektivní a v jakémkoliv případě zcela přijatelné z hlediska výkonu, ale pokud potřebujete lepší kontrolu nad přesným dotazem, který se má provést, můžete předat vlastní SQL (nebo spustit uloženou proceduru) pomocí EF. Jádro.</span><span class="sxs-lookup"><span data-stu-id="fbacd-223">EF Core also generates SQL queries that usually are very efficient and in any case perfectly acceptable from a performance standpoint, but if you need fine control over the precise query to be executed, you can pass in custom SQL (or execute a stored procedure) using EF Core, too.</span></span> <span data-ttu-id="fbacd-224">V takovém případě Dapperem stále vykonává EF Core, ale jenom mírně.</span><span class="sxs-lookup"><span data-stu-id="fbacd-224">In this case, Dapper still outperforms EF Core, but only slightly.</span></span> <span data-ttu-id="fbacd-225">Julie Lerman prezentuje údaje o výkonu v jeho 2016 článku na webu MSDN [dapperem, Entity Framework a hybridních aplikacích](https://msdn.microsoft.com/magazine/mt703432.aspx).</span><span class="sxs-lookup"><span data-stu-id="fbacd-225">Julie Lerman presents some performance data in her May 2016 MSDN article [Dapper, Entity Framework, and Hybrid Apps](https://msdn.microsoft.com/magazine/mt703432.aspx).</span></span> <span data-ttu-id="fbacd-226">Další data srovnávacích testů výkonu pro celou řadu metod přístupu k datům najdete na [webu dapperem](https://github.com/StackExchange/Dapper).</span><span class="sxs-lookup"><span data-stu-id="fbacd-226">Additional performance benchmark data for a variety of data access methods can be found on [the Dapper site](https://github.com/StackExchange/Dapper).</span></span>
+
+<span data-ttu-id="fbacd-227">Chcete-li zjistit, jak se syntaxe Dapperem liší od EF Core, zvažte tyto dvě verze stejné metody pro načtení seznamu položek:</span><span class="sxs-lookup"><span data-stu-id="fbacd-227">To see how the syntax for Dapper varies from EF Core, consider these two versions of the same method for retrieving a list of items:</span></span>
+
+```csharp
+// EF Core
+private readonly CatalogContext _context;
+public async Task<IEnumerable<CatalogType>> GetCatalogTypes()
+{
+    return await _context.CatalogTypes.ToListAsync();
+}
+
+// Dapper
+private readonly SqlConnection _conn;
+public async Task<IEnumerable<CatalogType>> GetCatalogTypesWithDapper()
+{
+    return await _conn.QueryAsync<CatalogType>("SELECT * FROM CatalogType");
+}
+```
+
+<span data-ttu-id="fbacd-228">Pokud potřebujete vytvořit složitější grafy objektů pomocí Dapperem, je potřeba napsat přidružené dotazy sami (na rozdíl od přidání zahrnutí jako při EF Core).</span><span class="sxs-lookup"><span data-stu-id="fbacd-228">If you need to build more complex object graphs with Dapper, you need to write the associated queries yourself (as opposed to adding an Include as you would in EF Core).</span></span> <span data-ttu-id="fbacd-229">To je podporováno prostřednictvím nejrůznějších syntaxí, včetně funkce s názvem vícenásobné mapování, které umožňuje mapovat jednotlivé řádky na více mapovaných objektů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-229">This is supported through a variety of syntaxes, including a feature called Multi Mapping that lets you map individual rows to multiple mapped objects.</span></span> <span data-ttu-id="fbacd-230">Například vzhledem k tomu, že daný příspěvek třídy se vlastníkem vlastnosti typu uživatel, vrátí následující SQL všechna potřebná data:</span><span class="sxs-lookup"><span data-stu-id="fbacd-230">For example, given a class Post with a property Owner of type User, the following SQL would return all of the necessary data:</span></span>
+
+```sql
+select * from #Posts p
+left join #Users u on u.Id = p.OwnerId
+Order by p.Id
+```
+
+<span data-ttu-id="fbacd-231">Každý vrácený řádek obsahuje data uživatelů i post.</span><span class="sxs-lookup"><span data-stu-id="fbacd-231">Each returned row includes both User and Post data.</span></span> <span data-ttu-id="fbacd-232">Vzhledem k tomu, že data uživatelů by měla být připojena k post data prostřednictvím její vlastnosti Owner, je použita následující funkce:</span><span class="sxs-lookup"><span data-stu-id="fbacd-232">Since the User data should be attached to the Post data via its Owner property, the following function is used:</span></span>
+
+```csharp
+(post, user) => { post.Owner = user; return post; }
+```
+
+<span data-ttu-id="fbacd-233">Úplný výpis kódu, který vrátí kolekci příspěvků s vlastností Owner naplněnou s přidruženými uživatelskými daty, by byl:</span><span class="sxs-lookup"><span data-stu-id="fbacd-233">The full code listing to return a collection of posts with their Owner property populated with the associated user data would be:</span></span>
+
+```csharp
+var sql = @"select * from #Posts p
+left join #Users u on u.Id = p.OwnerId
+Order by p.Id";
+var data = connection.Query<Post, User, Post>(sql,
+(post, user) => { post.Owner = user; return post;});
+```
+
+<span data-ttu-id="fbacd-234">Vzhledem k tomu, že nabízí méně zapouzdření, Dapperem vyžaduje, aby si vývojáři dozvěděli více o tom, jak jsou jejich data uložená, jak je efektivně dotazovat, a zapsali další kód pro jeho načtení.</span><span class="sxs-lookup"><span data-stu-id="fbacd-234">Because it offers less encapsulation, Dapper requires developers know more about how their data is stored, how to query it efficiently, and write more code to fetch it.</span></span> <span data-ttu-id="fbacd-235">Při změně modelu místo pouhého vytvoření nové migrace (jiné funkce EF Core) a aktualizace informací o mapování na jednom místě v DbContext musí být všechny ovlivněné dotazy aktualizované.</span><span class="sxs-lookup"><span data-stu-id="fbacd-235">When the model changes, instead of simply creating a new migration (another EF Core feature), and/or updating mapping information in one place in a DbContext, every query that is impacted must be updated.</span></span> <span data-ttu-id="fbacd-236">Tyto dotazy neposkytují žádné záruky při kompilaci, takže se můžou za běhu poškodit v reakci na změny modelu nebo databáze. díky tomu se chyby detekuje rychleji.</span><span class="sxs-lookup"><span data-stu-id="fbacd-236">These queries have no compile time guarantees, so they may break at runtime in response to changes to the model or database, making errors more difficult to detect quickly.</span></span> <span data-ttu-id="fbacd-237">V systému Exchange pro tyto kompromisy nabízí Dapperem extrémně vysoký výkon.</span><span class="sxs-lookup"><span data-stu-id="fbacd-237">In exchange for these tradeoffs, Dapper offers extremely fast performance.</span></span>
+
+<span data-ttu-id="fbacd-238">Pro většinu aplikací a pro většinu částí téměř všech aplikací nabízí EF Core přijatelný výkon.</span><span class="sxs-lookup"><span data-stu-id="fbacd-238">For most applications, and most parts of almost all applications, EF Core offers acceptable performance.</span></span> <span data-ttu-id="fbacd-239">Proto se přínosy pro produktivitu vývojářů můžou snížit na výkon.</span><span class="sxs-lookup"><span data-stu-id="fbacd-239">Thus, its developer productivity benefits are likely to outweigh its performance overhead.</span></span> <span data-ttu-id="fbacd-240">V případě dotazů, které mohou využívat ukládání do mezipaměti, může být samotný dotaz proveden pouze v malém procentu času, což vede k poměrně malým rozdílům ve výkonu dotazů moot.</span><span class="sxs-lookup"><span data-stu-id="fbacd-240">For queries that can benefit from caching, the actual query may only be executed a tiny percentage of the time, making relatively small query performance differences moot.</span></span>
+
+## <a name="sql-or-nosql"></a><span data-ttu-id="fbacd-241">SQL nebo NoSQL</span><span class="sxs-lookup"><span data-stu-id="fbacd-241">SQL or NoSQL</span></span>
+
+<span data-ttu-id="fbacd-242">Tradičně jsou relační databáze, jako je SQL Server, na webu Marketplace pro trvalé úložiště dat, ale nejedná se o jediné dostupné řešení.</span><span class="sxs-lookup"><span data-stu-id="fbacd-242">Traditionally, relational databases like SQL Server have dominated the marketplace for persistent data storage, but they are not the only solution available.</span></span> <span data-ttu-id="fbacd-243">Databáze NoSQL, jako je [MongoDB](https://www.mongodb.com/what-is-mongodb) , nabízejí odlišný přístup k ukládání objektů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-243">NoSQL databases like [MongoDB](https://www.mongodb.com/what-is-mongodb) offer a different approach to storing objects.</span></span> <span data-ttu-id="fbacd-244">Místo mapování objektů na tabulky a řádky je další možností serializace celého grafu objektů a uložení výsledku.</span><span class="sxs-lookup"><span data-stu-id="fbacd-244">Rather than mapping objects to tables and rows, another option is to serialize the entire object graph, and store the result.</span></span> <span data-ttu-id="fbacd-245">Nejnižšími výhodami tohoto přístupu je jednoduchost a výkon.</span><span class="sxs-lookup"><span data-stu-id="fbacd-245">The benefits of this approach, at least initially, are simplicity and performance.</span></span> <span data-ttu-id="fbacd-246">Je velmi jednodušší uložit jeden serializovaný objekt s klíčem, než aby bylo možné objekt rozložit na mnoho tabulek se vztahy a aktualizacemi a řádky, které se mohly změnit od posledního načtení objektu z databáze.</span><span class="sxs-lookup"><span data-stu-id="fbacd-246">It's certainly simpler to store a single serialized object with a key than to decompose the object into many tables with relationships and update and rows that may have changed since the object was last retrieved from the database.</span></span> <span data-ttu-id="fbacd-247">Podobně načítání a deserializace jednoho objektu z úložiště založeného na klíčích je obvykle mnohem rychlejší a jednodušší než složitá spojení nebo více databázových dotazů, které jsou nutné k úplnému vytvoření stejného objektu z relační databáze.</span><span class="sxs-lookup"><span data-stu-id="fbacd-247">Likewise, fetching and deserializing a single object from a key-based store is typically much faster and easier than complex joins or multiple database queries required to fully compose the same object from a relational database.</span></span> <span data-ttu-id="fbacd-248">Chybějící zámky, transakce nebo pevné schéma také usnadňují NoSQL databází snadněji škálování napříč mnoha počítači a podporují velmi velké datové sady.</span><span class="sxs-lookup"><span data-stu-id="fbacd-248">The lack of locks or transactions or a fixed schema also makes NoSQL databases very amenable to scaling across many machines, supporting very large datasets.</span></span>
+
+<span data-ttu-id="fbacd-249">Na druhé straně databáze NoSQL (jak jsou obvykle volány) mají své nevýhody.</span><span class="sxs-lookup"><span data-stu-id="fbacd-249">On the other hand, NoSQL databases (as they are typically called) have their drawbacks.</span></span> <span data-ttu-id="fbacd-250">Relační databáze používají normalizaci k vymáhání konzistence a vyhnout se duplikaci dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-250">Relational databases use normalization to enforce consistency and avoid duplication of data.</span></span> <span data-ttu-id="fbacd-251">Tím se zmenší celková velikost databáze a zajistí, že aktualizace sdílených dat budou k dispozici okamžitě v rámci databáze.</span><span class="sxs-lookup"><span data-stu-id="fbacd-251">This reduces the total size of the database and ensures that updates to shared data are available immediately throughout the database.</span></span> <span data-ttu-id="fbacd-252">V relační databázi může tabulka adres odkazovat na tabulku zemí podle ID, takže pokud se změnil název země nebo oblasti, budou se záznamy adres těžit z této aktualizace, aniž by bylo nutné je aktualizovat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-252">In a relational database, an Address table might reference a Country table by ID, such that if the name of a country/region were changed, the address records would benefit from the update without themselves having to be updated.</span></span> <span data-ttu-id="fbacd-253">V databázi NoSQL se ale adresa a přidružená země můžou serializovat jako součást mnoha uložených objektů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-253">However, in a NoSQL database, Address and its associated Country might be serialized as part of many stored objects.</span></span> <span data-ttu-id="fbacd-254">Aktualizace názvu země nebo oblasti by vyžadovala aktualizaci všech takových objektů, nikoli jednoho řádku.</span><span class="sxs-lookup"><span data-stu-id="fbacd-254">An update to a country/region name would require all such objects to be updated, rather than a single row.</span></span> <span data-ttu-id="fbacd-255">Relační databáze mohou také zajistit relační integritu vynucením pravidel, jako jsou cizí klíče.</span><span class="sxs-lookup"><span data-stu-id="fbacd-255">Relational databases can also ensure relational integrity by enforcing rules like foreign keys.</span></span> <span data-ttu-id="fbacd-256">Databáze NoSQL obvykle nenabízejí taková omezení pro svá data.</span><span class="sxs-lookup"><span data-stu-id="fbacd-256">NoSQL databases typically do not offer such constraints on their data.</span></span>
+
+<span data-ttu-id="fbacd-257">Jiné databáze složitosti NoSQL musí řešit správu verzí.</span><span class="sxs-lookup"><span data-stu-id="fbacd-257">Another complexity NoSQL databases must deal with is versioning.</span></span> <span data-ttu-id="fbacd-258">Když se změní vlastnosti objektu, nemusí být možné deserializovat z minulých verzí, které byly uloženy.</span><span class="sxs-lookup"><span data-stu-id="fbacd-258">When an object's properties change, it may not be able to be deserialized from past versions that were stored.</span></span> <span data-ttu-id="fbacd-259">Proto musí být všechny existující objekty, které mají serializovanou (předchozí) verzi objektu, aktualizovány tak, aby odpovídaly novému schématu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-259">Thus, all existing objects that have a serialized (previous) version of the object must be updated to conform to its new schema.</span></span> <span data-ttu-id="fbacd-260">Nejedná se o koncepční rozdíl od relační databáze, kde změny schématu někdy vyžadují skripty aktualizace nebo aktualizace mapování.</span><span class="sxs-lookup"><span data-stu-id="fbacd-260">This is not conceptually different from a relational database, where schema changes sometimes require update scripts or mapping updates.</span></span> <span data-ttu-id="fbacd-261">Počet položek, které je třeba upravit, je však často mnohem větší v přístupu NoSQL, protože existuje více duplicit dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-261">However, the number of entries that must be modified is often much greater in the NoSQL approach, because there is more duplication of data.</span></span>
+
+<span data-ttu-id="fbacd-262">Je možné, že databáze NoSQL ukládá více verzí objektů, ale některé pevné relační databáze schémat obvykle nepodporují.</span><span class="sxs-lookup"><span data-stu-id="fbacd-262">It's possible in NoSQL databases to store multiple versions of objects, something fixed schema relational databases typically do not support.</span></span> <span data-ttu-id="fbacd-263">Nicméně v tomto případě bude kód vaší aplikace muset brát v úvahu existenci předchozích verzí objektů a přidává další složitost.</span><span class="sxs-lookup"><span data-stu-id="fbacd-263">However, in this case your application code will need to account for the existence of previous versions of objects, adding additional complexity.</span></span>
+
+<span data-ttu-id="fbacd-264">Databáze NoSQL obvykle vynutily [kyselinu](https://en.wikipedia.org/wiki/ACID), což znamená, že výhody výkonu i škálovatelnosti oproti relačním databázím.</span><span class="sxs-lookup"><span data-stu-id="fbacd-264">NoSQL databases typically do not enforce [ACID](https://en.wikipedia.org/wiki/ACID), which means they have both performance and scalability benefits over relational databases.</span></span> <span data-ttu-id="fbacd-265">Jsou vhodné pro extrémně velké datové sady a objekty, které nejsou vhodné pro úložiště v normalizovaných strukturách tabulek.</span><span class="sxs-lookup"><span data-stu-id="fbacd-265">They're well-suited to extremely large datasets and objects that are not well-suited to storage in normalized table structures.</span></span> <span data-ttu-id="fbacd-266">Neexistuje žádný důvod, proč jediná aplikace nemůže využívat relační i NoSQL databáze, a to s využitím každého z nich, kde se nejlépe hodí.</span><span class="sxs-lookup"><span data-stu-id="fbacd-266">There is no reason why a single application cannot take advantage of both relational and NoSQL databases, using each where it is best suited.</span></span>
+
+## <a name="azure-documentdb"></a><span data-ttu-id="fbacd-267">DocumentDB Azure</span><span class="sxs-lookup"><span data-stu-id="fbacd-267">Azure DocumentDB</span></span>
+
+<span data-ttu-id="fbacd-268">Azure DocumentDB je plně spravovaná databázová služba NoSQL, která nabízí cloudové úložiště dat bez schématu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-268">Azure DocumentDB is a fully managed NoSQL database service that offers cloud-based schema-free data storage.</span></span> <span data-ttu-id="fbacd-269">DocumentDB je postavená na zajištění rychlého a předvídatelného výkonu, vysoké dostupnosti, elastického škálování a globální distribuce.</span><span class="sxs-lookup"><span data-stu-id="fbacd-269">DocumentDB is built for fast and predictable performance, high availability, elastic scaling, and global distribution.</span></span> <span data-ttu-id="fbacd-270">I když se jedná o databázi NoSQL, můžou vývojáři používat pro data JSON bohatou a známou schopnost dotazů SQL.</span><span class="sxs-lookup"><span data-stu-id="fbacd-270">Despite being a NoSQL database, developers can use rich and familiar SQL query capabilities on JSON data.</span></span> <span data-ttu-id="fbacd-271">Všechny prostředky v DocumentDB se ukládají jako dokumenty JSON.</span><span class="sxs-lookup"><span data-stu-id="fbacd-271">All resources in DocumentDB are stored as JSON documents.</span></span> <span data-ttu-id="fbacd-272">Prostředky se spravují jako _položky_, což jsou dokumenty obsahující metadata a _kanály_, které jsou kolekcemi položek.</span><span class="sxs-lookup"><span data-stu-id="fbacd-272">Resources are managed as _items_, which are documents containing metadata, and _feeds_, which are collections of items.</span></span> <span data-ttu-id="fbacd-273">Obrázek 8-2 ukazuje vztah mezi různými DocumentDB prostředky.</span><span class="sxs-lookup"><span data-stu-id="fbacd-273">Figure 8-2 shows the relationship between different DocumentDB resources.</span></span>
+
+![Hierarchický vztah mezi prostředky v DocumentDB, databázi NoSQL JSON](./media/image8-2.png)
+
+<span data-ttu-id="fbacd-275">**Obrázek 8-2.**</span><span class="sxs-lookup"><span data-stu-id="fbacd-275">**Figure 8-2.**</span></span> <span data-ttu-id="fbacd-276">Organizace prostředků DocumentDB</span><span class="sxs-lookup"><span data-stu-id="fbacd-276">DocumentDB resource organization.</span></span>
+
+<span data-ttu-id="fbacd-277">Dotazovací jazyk DocumentDB je jednoduché, ale výkonné rozhraní pro dotazování dokumentů JSON.</span><span class="sxs-lookup"><span data-stu-id="fbacd-277">The DocumentDB query language is a simple yet powerful interface for querying JSON documents.</span></span> <span data-ttu-id="fbacd-278">Jazyk podporuje podmnožinu gramatiky ANSI SQL a přidává hlubokou integraci objektu JavaScriptu, polí, konstrukce objektu a vyvolání funkce.</span><span class="sxs-lookup"><span data-stu-id="fbacd-278">The language supports a subset of ANSI SQL grammar and adds deep integration of JavaScript object, arrays, object construction, and function invocation.</span></span>
+
+<span data-ttu-id="fbacd-279">**Odkazy – DocumentDB**</span><span class="sxs-lookup"><span data-stu-id="fbacd-279">**References – DocumentDB**</span></span>
+
+- <span data-ttu-id="fbacd-280">Úvod do DocumentDB</span><span class="sxs-lookup"><span data-stu-id="fbacd-280">DocumentDB Introduction</span></span>  
+  <https://docs.microsoft.com/azure/documentdb/documentdb-introduction>
+
+## <a name="other-persistence-options"></a><span data-ttu-id="fbacd-281">Další možnosti trvalosti</span><span class="sxs-lookup"><span data-stu-id="fbacd-281">Other persistence options</span></span>
+
+<span data-ttu-id="fbacd-282">Kromě možností relačního a NoSQL úložiště mohou aplikace ASP.NET Core používat Azure Storage k ukládání nejrůznějších formátů dat a souborů v cloudovém škálovatelném způsobem.</span><span class="sxs-lookup"><span data-stu-id="fbacd-282">In addition to relational and NoSQL storage options, ASP.NET Core applications can use Azure Storage to store a variety of data formats and files in a cloud-based, scalable fashion.</span></span> <span data-ttu-id="fbacd-283">Azure Storage je široce škálovatelná, takže můžete začít ukládat malé objemy dat a škálovat je tak, aby se ukládaly stovky nebo terabajty, pokud je vaše aplikace vyžaduje.</span><span class="sxs-lookup"><span data-stu-id="fbacd-283">Azure Storage is massively scalable, so you can start out storing small amounts of data and scale up to storing hundreds or terabytes if your application requires it.</span></span> <span data-ttu-id="fbacd-284">Azure Storage podporuje čtyři druhy dat:</span><span class="sxs-lookup"><span data-stu-id="fbacd-284">Azure Storage supports four kinds of data:</span></span>
+
+- <span data-ttu-id="fbacd-285">Blob Storage nestrukturovaných textových nebo binárních úložišť, označovaných také jako úložiště objektů.</span><span class="sxs-lookup"><span data-stu-id="fbacd-285">Blob Storage for unstructured text or binary storage, also referred to as object storage.</span></span>
+
+- <span data-ttu-id="fbacd-286">Table Storage strukturovaných datových sad, které jsou přístupné prostřednictvím klíčů řádků.</span><span class="sxs-lookup"><span data-stu-id="fbacd-286">Table Storage for structured datasets, accessible via row keys.</span></span>
+
+- <span data-ttu-id="fbacd-287">Queue Storage pro spolehlivé zasílání zpráv na základě fronty.</span><span class="sxs-lookup"><span data-stu-id="fbacd-287">Queue Storage for reliable queue-based messaging.</span></span>
+
+- <span data-ttu-id="fbacd-288">File Storage pro přístup ke sdíleným souborům mezi virtuálními počítači Azure a místními aplikacemi.</span><span class="sxs-lookup"><span data-stu-id="fbacd-288">File Storage for shared file access between Azure virtual machines and on-premises applications.</span></span>
+
+<span data-ttu-id="fbacd-289">**Odkazy – Azure Storage**</span><span class="sxs-lookup"><span data-stu-id="fbacd-289">**References – Azure Storage**</span></span>
+
+- <span data-ttu-id="fbacd-290">Azure Storage Úvod</span><span class="sxs-lookup"><span data-stu-id="fbacd-290">Azure Storage Introduction</span></span>  
+  <https://docs.microsoft.com/azure/storage/storage-introduction>
+
+## <a name="caching"></a><span data-ttu-id="fbacd-291">Ukládání do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="fbacd-291">Caching</span></span>
+
+<span data-ttu-id="fbacd-292">V případě webových aplikací by měly být jednotlivé webové žádosti dokončeny v nejkratší možné době.</span><span class="sxs-lookup"><span data-stu-id="fbacd-292">In web applications, each web request should be completed in the shortest time possible.</span></span> <span data-ttu-id="fbacd-293">Toho můžete dosáhnout tak, že omezíte počet externích volání, které server musí provést, aby se žádost dokončila.</span><span class="sxs-lookup"><span data-stu-id="fbacd-293">One way to achieve this is to limit the number of external calls the server must make to complete the request.</span></span> <span data-ttu-id="fbacd-294">Ukládání do mezipaměti zahrnuje ukládání kopie dat na server (nebo jiné úložiště dat, které je snazší dotazovat se na zdroj dat).</span><span class="sxs-lookup"><span data-stu-id="fbacd-294">Caching involves storing a copy of data on the server (or another data store that is more easily queried than the source of the data).</span></span> <span data-ttu-id="fbacd-295">Webové aplikace a zejména tradiční webové aplikace bez ověřování hesla potřebují pro každý požadavek sestavit celé uživatelské rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fbacd-295">Web applications, and especially non-SPA traditional web applications, need to build the entire user interface with every request.</span></span> <span data-ttu-id="fbacd-296">To často znamená, že mnoho stejných databázových dotazů opakovaně vychází z jednoho požadavku uživatele na další.</span><span class="sxs-lookup"><span data-stu-id="fbacd-296">This frequently involves making many of the same database queries repeatedly from one user request to the next.</span></span> <span data-ttu-id="fbacd-297">Ve většině případů se tato data mění zřídka, proto existuje málo důvodů, jak ji z databáze trvale vyžádat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-297">In most cases, this data changes rarely, so there is little reason to constantly request it from the database.</span></span> <span data-ttu-id="fbacd-298">ASP.NET Core podporuje ukládání odpovědí do mezipaměti, pro ukládání celých stránek do mezipaměti a ukládání dat do mezipaměti, které podporuje podrobnější chování ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-298">ASP.NET Core supports response caching, for caching entire pages, and data caching, which supports more granular caching behavior.</span></span>
+
+<span data-ttu-id="fbacd-299">Při implementaci ukládání do mezipaměti je důležité mít na paměti oddělení obav.</span><span class="sxs-lookup"><span data-stu-id="fbacd-299">When implementing caching, it's important to keep in mind separation of concerns.</span></span> <span data-ttu-id="fbacd-300">Vyhněte se implementaci logiky ukládání do mezipaměti v logice přístupu k datům nebo v uživatelském rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fbacd-300">Avoid implementing caching logic in your data access logic, or in your user interface.</span></span> <span data-ttu-id="fbacd-301">Místo toho zapouzdřujte ukládání do mezipaměti ve vlastních třídách a pomocí konfigurace spravujte jeho chování.</span><span class="sxs-lookup"><span data-stu-id="fbacd-301">Instead, encapsulate caching in its own classes, and use configuration to manage its behavior.</span></span> <span data-ttu-id="fbacd-302">Postupuje podle otevřených/uzavřených a jednoduchých zodpovědností a usnadňuje vám správu způsobu ukládání do mezipaměti ve vaší aplikaci během rozšiřování.</span><span class="sxs-lookup"><span data-stu-id="fbacd-302">This follows the Open/Closed and Single Responsibility principles, and will make it easier for you to manage how you use caching in your application as it grows.</span></span>
+
+### <a name="aspnet-core-response-caching"></a><span data-ttu-id="fbacd-303">Ukládání odpovědí do mezipaměti ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="fbacd-303">ASP.NET Core response caching</span></span>
+
+<span data-ttu-id="fbacd-304">ASP.NET Core podporuje dvě úrovně ukládání odpovědí do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-304">ASP.NET Core supports two levels of response caching.</span></span> <span data-ttu-id="fbacd-305">První úroveň neukládá do mezipaměti cokoli na serveru, ale přidává hlavičky HTTP, které instruují klienty a proxy servery k ukládání odpovědí do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-305">The first level does not cache anything on the server, but adds HTTP headers that instruct clients and proxy servers to cache responses.</span></span> <span data-ttu-id="fbacd-306">To je implementováno přidáním atributu ResponseCache na jednotlivé řadiče nebo akce:</span><span class="sxs-lookup"><span data-stu-id="fbacd-306">This is implemented by adding the ResponseCache attribute to individual controllers or actions:</span></span>
+
+```csharp
+    [ResponseCache(Duration = 60)]
+    public IActionResult Contact()
+    { }
+
+    ViewData["Message"] = "Your contact page.";
+    return View();
+}
+```
+
+<span data-ttu-id="fbacd-307">V předchozím příkladu bude k odpovědi přidáno následující záhlaví, které dává klientům pokyn, aby výsledky do mezipaměti po dobu až 60 sekund.</span><span class="sxs-lookup"><span data-stu-id="fbacd-307">The previous example will result in the following header being added to the response, instructing clients to cache the result for up to 60 seconds.</span></span>
+
+<span data-ttu-id="fbacd-308">Cache-Control: Public, Max-Age = 60</span><span class="sxs-lookup"><span data-stu-id="fbacd-308">Cache-Control: public,max-age=60</span></span>
+
+<span data-ttu-id="fbacd-309">Aby bylo možné do aplikace přidat ukládání do mezipaměti na straně serveru, musíte odkazovat na balíček NuGet Microsoft. AspNetCore. ResponseCaching a pak přidat middleware pro ukládání odpovědí do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-309">In order to add server-side in-memory caching to the application, you must reference the Microsoft.AspNetCore.ResponseCaching NuGet package, and then add the Response Caching middleware.</span></span> <span data-ttu-id="fbacd-310">Tento middleware je nakonfigurovaný jak v ConfigureServices, tak v konfiguraci při spuštění:</span><span class="sxs-lookup"><span data-stu-id="fbacd-310">This middleware is configured in both ConfigureServices and Configure in Startup:</span></span>
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddResponseCaching();
+}
+
+public void Configure(IApplicationBuilder app)
+{
+    app.UseResponseCaching();
+}
+```
+
+<span data-ttu-id="fbacd-311">Middleware pro ukládání odpovědí do mezipaměti bude automaticky ukládat odpovědi na základě sady podmínek, které můžete přizpůsobit.</span><span class="sxs-lookup"><span data-stu-id="fbacd-311">The Response Caching Middleware will automatically cache responses based on a set of conditions, which you can customize.</span></span> <span data-ttu-id="fbacd-312">Ve výchozím nastavení se do mezipaměti ukládají pouze odpovědi 200 (OK) požadované prostřednictvím metody GET nebo HEAD.</span><span class="sxs-lookup"><span data-stu-id="fbacd-312">By default, only 200 (OK) responses requested via GET or HEAD methods are cached.</span></span> <span data-ttu-id="fbacd-313">Kromě toho musí mít požadavky odpověď s hlavičkou Cache-Control: Public header a nesmí obsahovat hlavičky pro Authorization nebo Set-cookie.</span><span class="sxs-lookup"><span data-stu-id="fbacd-313">In addition, requests must have a response with a Cache-Control: public header, and cannot include headers for Authorization or Set-Cookie.</span></span> <span data-ttu-id="fbacd-314">Podívejte se na [úplný seznam podmínek ukládání do mezipaměti, které používá middleware pro ukládání odpovědí do mezipaměti](/aspnet/core/performance/caching/middleware#conditions-for-caching).</span><span class="sxs-lookup"><span data-stu-id="fbacd-314">See a [complete list of the caching conditions used by the response caching middleware](/aspnet/core/performance/caching/middleware#conditions-for-caching).</span></span>
+
+### <a name="data-caching"></a><span data-ttu-id="fbacd-315">Ukládání dat do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="fbacd-315">Data caching</span></span>
+
+<span data-ttu-id="fbacd-316">Místo (nebo kromě) ukládání úplných webových odpovědí do mezipaměti můžete ukládat výsledky jednotlivých dotazů na data.</span><span class="sxs-lookup"><span data-stu-id="fbacd-316">Rather than (or in addition to) caching full web responses, you can cache the results of individual data queries.</span></span> <span data-ttu-id="fbacd-317">V takovém případě můžete použít v ukládání do mezipaměti na webovém serveru nebo použít [distribuovanou mezipaměť](/aspnet/core/performance/caching/distributed).</span><span class="sxs-lookup"><span data-stu-id="fbacd-317">For this, you can use in memory caching on the web server, or use [a distributed cache](/aspnet/core/performance/caching/distributed).</span></span> <span data-ttu-id="fbacd-318">V této části se dozvíte, jak implementovat v mezipaměti paměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-318">This section will demonstrate how to implement in memory caching.</span></span>
+
+<span data-ttu-id="fbacd-319">Přidáte podporu pro ukládání do mezipaměti (nebo distribuované) do mezipaměti v ConfigureServices:</span><span class="sxs-lookup"><span data-stu-id="fbacd-319">You add support for memory (or distributed) caching in ConfigureServices:</span></span>
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMemoryCache();
+    services.AddMvc();
+}
+```
+
+<span data-ttu-id="fbacd-320">Nezapomeňte přidat také balíček NuGet Microsoft. Extensions. Caching. Memory.</span><span class="sxs-lookup"><span data-stu-id="fbacd-320">Be sure to add the Microsoft.Extensions.Caching.Memory NuGet package as well.</span></span>
+
+<span data-ttu-id="fbacd-321">Po přidání služby si vyžádáte IMemoryCache prostřednictvím injektáže závislosti, kdykoli budete potřebovat přístup do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-321">Once you've added the service, you request IMemoryCache via dependency injection wherever you need to access the cache.</span></span> <span data-ttu-id="fbacd-322">V tomto příkladu používá CachedCatalogService vzor návrhu proxy (nebo dekoratér) tím, že poskytuje alternativní implementaci ICatalogService, která řídí přístup k základní implementaci CatalogService (nebo k tomu přidává chování).</span><span class="sxs-lookup"><span data-stu-id="fbacd-322">In this example, the CachedCatalogService is using the Proxy (or Decorator) design pattern, by providing an alternative implementation of ICatalogService that controls access to (or adds behavior to) the underlying CatalogService implementation.</span></span>
+
+```csharp
+public class CachedCatalogService : ICatalogService
+{
+    private readonly IMemoryCache _cache;
+    private readonly CatalogService _catalogService;
+    private static readonly string _brandsKey = "brands";
+    private static readonly string _typesKey = "types";
+    private static readonly string _itemsKeyTemplate = "items-{0}-{1}-{2}-{3}";
+    private static readonly TimeSpan _defaultCacheDuration = TimeSpan.FromSeconds(30);
+    public CachedCatalogService(IMemoryCache cache,
+    CatalogService catalogService)
+    {
+        _cache = cache;
+        _catalogService = catalogService;
+    }
+
+    public async Task<IEnumerable<SelectListItem>> GetBrands()
+    {
+        return await _cache.GetOrCreateAsync(_brandsKey, async entry =>
+        {
+            entry.SlidingExpiration = _defaultCacheDuration;
+            return await _catalogService.GetBrands();
+        });
+    }
+
+    public async Task<Catalog> GetCatalogItems(int pageIndex, int itemsPage, int? brandID, int? typeId)
+    {
+        string cacheKey = String.Format(_itemsKeyTemplate, pageIndex, itemsPage, brandID, typeId);
+        return await _cache.GetOrCreateAsync(cacheKey, async entry =>
+        {
+            entry.SlidingExpiration = _defaultCacheDuration;
+            return await _catalogService.GetCatalogItems(pageIndex, itemsPage, brandID, typeId);
+        });
+    }
+
+    public async Task<IEnumerable<SelectListItem>> GetTypes()
+    {
+        return await _cache.GetOrCreateAsync(_typesKey, async entry =>
+        {
+            entry.SlidingExpiration = _defaultCacheDuration;
+            return await _catalogService.GetTypes();
+        });
+    }
+}
+```
+
+<span data-ttu-id="fbacd-323">Chcete-li nakonfigurovat aplikaci tak, aby používala verzi služby uloženou v mezipaměti, ale stále umožňuje službě získat v jejím konstruktoru instanci CatalogService, kterou potřebuje, přidejte do ConfigureServices následující:</span><span class="sxs-lookup"><span data-stu-id="fbacd-323">To configure the application to use the cached version of the service, but still allow the service to get the instance of CatalogService it needs in its constructor, you would add the following in ConfigureServices:</span></span>
+
+```csharp
+services.AddMemoryCache();
+services.AddScoped<ICatalogService, CachedCatalogService>();
+services.AddScoped<CatalogService>();
+```
+
+<span data-ttu-id="fbacd-324">V takovém případě se databáze volá do načtení dat katalogu pouze jednou za minutu, nikoli u všech požadavků.</span><span class="sxs-lookup"><span data-stu-id="fbacd-324">With this in place, the database calls to fetch the catalog data will only be made once per minute, rather than on every request.</span></span> <span data-ttu-id="fbacd-325">V závislosti na provozu na lokalitu může to mít velký dopad na počet dotazů provedených v databázi a na průměrnou dobu načítání stránky pro domovskou stránku, která v současné době závisí na všech třech dotazech vystavených touto službou.</span><span class="sxs-lookup"><span data-stu-id="fbacd-325">Depending on the traffic to the site, this can have a very significant impact on the number of queries made to the database, and the average page load time for the home page that currently depends on all three of the queries exposed by this service.</span></span>
+
+<span data-ttu-id="fbacd-326">K problému, který nastane při implementaci ukládání do mezipaměti, je _zastaralá data_ – to znamená, že data, která se změnila ve zdroji, ale zastaralá verze zůstávají v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="fbacd-326">An issue that arises when caching is implemented is _stale data_ – that is, data that has changed at the source but an out of date version remains in the cache.</span></span> <span data-ttu-id="fbacd-327">Jednoduchým způsobem, jak tento problém zmírnit, je použití malých mezipamětí, protože u zaneprázdněné aplikace je k rozšíření dat délky v mezipaměti omezená další výhoda.</span><span class="sxs-lookup"><span data-stu-id="fbacd-327">A simple way to mitigate this issue is to use small cache durations, since for a busy application there is limited additional benefit to extending the length data is cached.</span></span> <span data-ttu-id="fbacd-328">Představte si například stránku, která vytváří jeden databázový dotaz a je požadována desetkrát za sekundu.</span><span class="sxs-lookup"><span data-stu-id="fbacd-328">For example, consider a page that makes a single database query, and is requested 10 times per second.</span></span> <span data-ttu-id="fbacd-329">Pokud se tato stránka ukládá do mezipaměti po dobu jedné minuty, bude se počet dotazů databáze za minutu odpustit z 600 na 1, což snižuje 99,8%.</span><span class="sxs-lookup"><span data-stu-id="fbacd-329">If this page is cached for one minute, it will result in the number of database queries made per minute to drop from 600 to 1, a reduction of 99.8%.</span></span> <span data-ttu-id="fbacd-330">Pokud místo toho jste udělali dobu trvání mezipaměti, celkové snížení by bylo 99,997%, ale teď je pravděpodobnost výrazně větší i potenciální stáří zastaralých dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-330">If instead the cache duration were made one hour, the overall reduction would be 99.997%, but now the likelihood and potential age of stale data are both increased dramatically.</span></span>
+
+<span data-ttu-id="fbacd-331">Další možností je proaktivně odebrat položky mezipaměti, když jsou data, která obsahují, aktualizována.</span><span class="sxs-lookup"><span data-stu-id="fbacd-331">Another approach is to proactively remove cache entries when the data they contain is updated.</span></span> <span data-ttu-id="fbacd-332">Jednotlivé položky lze odebrat, pokud je její klíč znám:</span><span class="sxs-lookup"><span data-stu-id="fbacd-332">Any individual entry can be removed if its key is known:</span></span>
+
+```csharp
+_cache.Remove(cacheKey);
+```
+
+<span data-ttu-id="fbacd-333">Pokud vaše aplikace zpřístupňuje funkce pro aktualizaci záznamů, které ukládá do mezipaměti, můžete odebrat odpovídající položky mezipaměti v kódu, který provádí aktualizace.</span><span class="sxs-lookup"><span data-stu-id="fbacd-333">If your application exposes functionality for updating entries that it caches, you can remove the corresponding cache entries in your code that performs the updates.</span></span> <span data-ttu-id="fbacd-334">V některých případech se může jednat o mnoho různých položek závislých na konkrétní sadě dat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-334">Sometimes there may be many different entries that depend on a particular set of data.</span></span> <span data-ttu-id="fbacd-335">V takovém případě může být užitečné vytvořit závislosti mezi položkami mezipaměti pomocí CancellationChangeToken.</span><span class="sxs-lookup"><span data-stu-id="fbacd-335">In that case, it can be useful to create dependencies between cache entries, by using a CancellationChangeToken.</span></span> <span data-ttu-id="fbacd-336">S CancellationChangeToken můžete vypršet platnost několika záznamů v mezipaměti tím, že token zrušíte.</span><span class="sxs-lookup"><span data-stu-id="fbacd-336">With a CancellationChangeToken, you can expire multiple cache entries at once by cancelling the token.</span></span>
+
+```csharp
+// configure CancellationToken and add entry to cache
+var cts = new CancellationTokenSource();
+_cache.Set("cts", cts);
+_cache.Set(cacheKey,
+itemToCache,
+new CancellationChangeToken(cts.Token));
+
+// elsewhere, expire the cache by cancelling the token\
+_cache.Get<CancellationTokenSource>("cts").Cancel();
+```
+
+<span data-ttu-id="fbacd-337">Ukládání do mezipaměti může výrazně zlepšit výkon webových stránek, které opakovaně vyžádají stejné hodnoty z databáze.</span><span class="sxs-lookup"><span data-stu-id="fbacd-337">Caching can dramatically improve the performance of web pages that repeatedly request the same values from the database.</span></span> <span data-ttu-id="fbacd-338">Nezapomeňte změřit přístup k datům a výkon stránky před použitím ukládání do mezipaměti a použít ukládání do mezipaměti jenom v případě, že je potřeba zlepšení.</span><span class="sxs-lookup"><span data-stu-id="fbacd-338">Be sure to measure data access and page performance before applying caching, and only apply caching where you see a need for improvement.</span></span> <span data-ttu-id="fbacd-339">Ukládání do mezipaměti spotřebovává prostředky paměti webového serveru a zvyšuje složitost aplikace, takže je důležité, abyste s touto technikou nemuseli předčasně optimalizovat.</span><span class="sxs-lookup"><span data-stu-id="fbacd-339">Caching consumes web server memory resources and increases the complexity of the application, so it’s important you don’t prematurely optimize using this technique.</span></span>
+
+>[!div class="step-by-step"]
+><span data-ttu-id="fbacd-340">[Předchozí](develop-asp-net-core-mvc-apps.md)Další
+>[](test-asp-net-core-mvc-apps.md)</span><span class="sxs-lookup"><span data-stu-id="fbacd-340">[Previous](develop-asp-net-core-mvc-apps.md)
+[Next](test-asp-net-core-mvc-apps.md)</span></span>
