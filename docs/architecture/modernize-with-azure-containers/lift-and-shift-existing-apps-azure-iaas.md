@@ -2,18 +2,18 @@
 title: Přezvednutí a posunutí stávajících aplikací .NET do Azure IaaS (cloudová infrastruktura – připravená)
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: e25ddbf9b6e62c264f3f4d4580d7df3553d262ea
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ae181784e7de5f66b34d2dc38c6e9ec2e004a0c3
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660741"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373984"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Přezvednutí a posunutí stávajících aplikací .NET do Azure IaaS (cloudová infrastruktura – připravená)
 
 > Vidění Jako první krok, pokud chcete snížit svou místní investici a celkové náklady na údržbu hardwaru a sítě, stačí znovu hostovat své stávající aplikace v cloudu.
 
-Než se pustíte do migrace stávajících aplikací na platformu IaaS (infrastruktura jako služba) Azure, je důležité analyzovat důvody, *Proč* byste chtěli migrovat přímo na IaaS v Azure. Scénář v této úrovni zralosti v podstatě je začít používat virtuální počítače v cloudu a nemusíte dál používat svou stávající místní infrastrukturu.
+Než *se pustíte do migrace* stávajících aplikací na platformu IaaS (infrastruktura jako služba) Azure, je důležité analyzovat důvody, *Proč* byste chtěli migrovat přímo na IaaS v Azure. Scénář v této úrovni zralosti v podstatě je začít používat virtuální počítače v cloudu a nemusíte dál používat svou stávající místní infrastrukturu.
 
 Dalším bodem k analýze je, *Proč* možná budete chtít migrovat na čistý IaaS Cloud místo pouhého přidávání pokročilejších spravovaných služeb v Azure. Určete, jaké případy můžou na prvním místě vyžadovat IaaS.
 
@@ -21,7 +21,7 @@ Obrázek 2-1 umisťuje aplikace připravené pro cloudovou infrastrukturu do vys
 
 ![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-1.png)
 
-> **Obrázek 2-1.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-1.** Umístění aplikací připravených pro cloudovou infrastrukturu
 
 ## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Proč migrovat existující webové aplikace .NET do Azure IaaS
 
@@ -65,7 +65,7 @@ Obrázek 2-2 ukazuje integrované mapování závislostí pro všechna připojen
 
 ![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-2.png)
 
-> **Obrázek 2-2.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-2.** Umístění aplikací připravených pro cloudovou infrastrukturu
 
 ## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>Migrace stávajících virtuálních počítačů do virtuálních počítačů Azure pomocí Azure Site Recovery
 
@@ -77,7 +77,7 @@ Obrázek 2-3 ukazuje spuštění několika migrací virtuálních počítačů p
 
 ![Umístění aplikací připravených pro cloudovou infrastrukturu](./media/image2-3.png)
 
-> **Obrázek 2-3.** Umístění aplikací připravených pro cloudovou infrastrukturu
+**Obrázek 2-3.** Umístění aplikací připravených pro cloudovou infrastrukturu
 
 ### <a name="additional-resources"></a>Další zdroje
 

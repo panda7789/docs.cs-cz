@@ -2,12 +2,12 @@
 title: Modernizovat stávající aplikace .NET pro cloudově optimalizované aplikace
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: 00385ac1e2f41d2005606fa7f943618ec253ffc2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 92dc0cde11bb35797fe3c4e8442a2a6514a27e08
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68677024"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374065"
 ---
 # <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a>Modernizovat stávající aplikace .NET pro cloudově optimalizované aplikace
 
@@ -19,7 +19,7 @@ Pokud chcete využít výhody cloudu a nových technologií, jako jsou kontejner
 
 ![Umísťování cloudově optimalizovaných aplikací](./media/image1.png)
 
-> **Obrázek 4-1.** Umísťování cloudově optimalizovaných aplikací
+**Obrázek 4-1.** Umísťování cloudově optimalizovaných aplikací
 
 >[!div class="step-by-step"]
 >[Předchozí](../migrate-your-relational-databases-to-azure.md)Další

@@ -14,12 +14,12 @@ ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 2fbb0715d148b443b1eca8f400e4ad43eb51fa43
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 4fd1f1dc0c2c0ad9ae2009ed592e48b8eeaa2783
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015737"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373677"
 ---
 # <a name="walkthrough-serialize-collections-of-standard-types"></a>Návod: Serializace kolekcí standardních typů
 
@@ -90,8 +90,8 @@ Chcete-li otestovat chování serializace ovládacího prvku, umístěte ho do f
 
 5. Zadejte několik řetězců v **editoru kolekce řetězců**. Oddělte je stisknutím klávesy **ENTER** na konci každého řetězce. Po dokončení zadávání řetězců klikněte na **OK** .
 
-> [!NOTE]
-> Řetězce, které jste zadali, se <xref:System.Windows.Forms.TextBox> zobrazí v `SerializationDemoControl`části.
+    > [!NOTE]
+    > Řetězce, které jste zadali, se <xref:System.Windows.Forms.TextBox> zobrazí v `SerializationDemoControl`části.
 
 6. V **Průzkumník řešení**klikněte na tlačítko **Zobrazit všechny soubory** .
 

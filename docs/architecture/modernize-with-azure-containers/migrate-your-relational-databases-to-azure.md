@@ -2,12 +2,12 @@
 title: Migrace relačních databází do Azure
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | migrace relačních databází do Azure
 ms.date: 04/28/2018
-ms.openlocfilehash: 982050d99aaa66cde1168a2f2fa64ed5f3e9163b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b2153e65a12706b97fae11c5f23846c83bcd6642
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660733"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374100"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do Azure
 
@@ -17,7 +17,7 @@ V Azure můžete své databázové servery migrovat přímo do virtuálních po�
 
 ![Cesty migrace databáze v Azure](./media/image3-1.png)
 
-> **Obrázek 3-1.** Cesty migrace databáze v Azure
+**Obrázek 3-1.** Cesty migrace databáze v Azure
 
 ## <a name="when-to-migrate-to-azure-sql-database-managed-instance"></a>Kdy migrovat na Azure SQL Database spravovanou instanci
 

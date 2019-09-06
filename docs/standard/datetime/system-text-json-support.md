@@ -1,5 +1,5 @@
 ---
-title: Podpora DateTime a DateTimeOffset v System. text. JSON
+title: Podpora DateTime a DateTimeOffset v System.Text.Json
 description: Přehled způsobu, jakým jsou typy DateTime a DateTimeOffset podporovány v knihovně System. text. JSON.
 ms.technology: dotnet-standard
 author: layomia
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 182694a3d2df02d5e2c709e33a02bd9fa7d20383
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5bff01b10b2bdea4fdcfee86e348c47f44d50103
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69973191"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374480"
 ---
-# <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Podpora DateTime a DateTimeOffset v System. text. JSON
+# <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Podpora DateTime a DateTimeOffset v System.Text.Json
 
 Knihovna System. text. JSON analyzuje a zapisuje <xref:System.DateTime> <xref:System.DateTimeOffset> a hodnotuje hodnoty podle rozšířeného profilu ISO 8601:-2019.
 [Převaděče](https://docs.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1?view=netcore-3.0) poskytují vlastní podporu pro serializaci a deserializaci <xref:System.Text.Json.JsonSerializer>pomocí.

@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Nasazení stávajících aplikací .NET jako kontejnerů Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: ba9af3fc3a5bf285830bb873fa6a5da8390dc6b4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4d58be828418abe4964e26a983f194fd5d30b93d
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68677027"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374020"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -51,9 +51,9 @@ Významná vylepšení flexibility, přenositelnosti a kontroly nakonec vedou k 
 
 [Docker](https://www.docker.com/) je [Open source projekt](https://github.com/docker/docker) , který automatizuje nasazení aplikací jako přenosných a vlastních kontejnerů, které mohou běžet v cloudu nebo místně. Docker je také [Společnost](https://www.docker.com/) , která propaguje a vyvíjí tuto technologii. Společnost funguje ve spolupráci s dodavateli pro Cloud, Linux a Windows, včetně Microsoftu.
 
-![](./media/image6.png)
+![Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.](./media/image6.png)
 
-> **Obrázek 4-6.** Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.
+**Obrázek 4-6.** Docker nasazuje kontejnery ve všech vrstvách hybridního cloudu.
 
 Pro uživatele, kteří se s virtuálními počítači seznámili, se kontejnery můžou zdát jako výjimečně podobné. Kontejner spouští operační systém, který má systém souborů a je k němu možné přistupovat přes síť, stejně jako fyzický nebo virtuální počítač. Technologie a koncepce za kontejnery se ale výrazně liší od virtuálních počítačů. Z pohledu vývojáře musí být kontejner zpracován podobně jako jeden proces. Ve skutečnosti má kontejner jeden vstupní bod pro jeden proces.
 
@@ -83,9 +83,9 @@ Pro Linux je k dispozici několik distribuce a podporují se v oficiálních bit
 
 Obrázek 4-7 ukazuje verze operačních systémů, které lze cílit, v závislosti na verzi .NET Framework aplikace.
 
-![](./media/image7.png)
+![Operační systémy cílí na základě verze .NET Framework](./media/image7.png)
 
-> **Obrázek 4-7.** Operační systémy cílí na základě verze .NET Framework
+**Obrázek 4-7.** Operační systémy cílí na základě verze .NET Framework
 
 Ve scénářích migrace pro existující nebo starší aplikace, které jsou založené na .NET Framework aplikacích, jsou hlavní závislosti ve Windows a IIS. Jedinou možností je použít image Docker na základě jádra Windows serveru a .NET Framework.
 
@@ -138,9 +138,9 @@ Spuštění kontejneru ve Windows s nebo bez izolace Hyper-V je rozhodnutí za b
 V předchozích částech bylo vysvětleno, jaké jsou výhody kontejnerů Docker a také podrobnosti o konkrétních imagích kontejnerů pro aplikace .NET. Všechny obecné informace jsou zásadním účelem pro vývoj nebo kontejnerizaceí aplikace.
 Při zvažování prostředí produkčního nasazení nebo dokonce řešení pro řešení QA a vývoj a testování ale Microsoft Azure poskytuje otevřenou a širokou škálu voleb, úplný ekosystém kontejnerů v cloudu (viz diagram níže). V závislosti na potřebách konkrétní aplikace byste měli zvolit jeden nebo jiný produkt Azure.
 
-![](./media/image7.5.png)
+![Ekosystém kontejnerů v Azure](./media/image7.5.png)
 
-> **Obrázek 4 – 7.5** Ekosystém kontejnerů v Azure
+**Obrázek 4 – 7.5** Ekosystém kontejnerů v Azure
 
 Z ekosystému kontejnerů v Azure tyto produkty podporují kontejnery považované za infrastrukturu:
 - **Azure Container Instances (ACI)**

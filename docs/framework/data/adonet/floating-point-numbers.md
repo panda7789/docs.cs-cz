@@ -2,23 +2,23 @@
 title: Čísla s plovoucí desetinnou čárkou
 ms.date: 03/30/2017
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
-ms.openlocfilehash: d1c033d7999fa403aaf18fccb765da178cba169a
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 1f76a6ab8cc2a44580229014dd8ebae6b317921f
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882045"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374418"
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
-Toto téma popisuje některé z problémů, které vývojáři často dojde při práci s čísly s plovoucí desetinnou čárkou v ADO.NET. Tyto jsou způsobené tím, že počítače ukládána čísla s plovoucí desetinnou čárkou a nejsou specifická pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  
+Toto téma popisuje některé problémy, se kterými se vývojáři často setkávají při práci s čísly s plovoucí desetinnou čárkou v ADO.NET. Tyto problémy způsobují způsob, jakým počítače ukládají čísla s plovoucí desetinnou čárkou a nejsou specifické pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> je <xref:System.Data.OracleClient>například nebo.  
   
- Čísla s plovoucí desetinnou čárkou obvykle nemají přesné binárního formátu. Místo toho počítače ukládá přibližný počet. V různou dobu může být různý počet číslic binární soubor používá k reprezentování číslo. Když plovoucí bodu, že číslo je převedeno z jednoho znázornění na jiné vyjádření nejmenších platných číslicích toto číslo může mírně lišit. Převod je obvykle dochází, když číslo přetypováno z jednoho typu na jiný typ. Změna vyvolá se, zda převod vyvolá se v rámci databáze, mezi typy, které představují hodnot v databázi nebo mezi typy. Z důvodů těchto změn může mít čísla, která by byla logicky stejné změny v jejich nejméně významných číslic, které způsobí tak, aby měly různé hodnoty. Počet číslic v číslo může být větší nebo menší, než se očekávalo. Když naformátovaná jako řetězec, číslo nemusí zobrazit očekávané hodnotě.  
+ Čísla s plovoucí desetinnou čárkou většinou nemají přesnou binární reprezentaci. Místo toho počítač ukládá přibližné číslo. V různých časech lze použít různé číslice binárních číslic, které reprezentují číslo. Když je číslo s plovoucí desetinnou čárkou převedeno z jedné reprezentace na jiné reprezentace, nejnižší významné číslice tohoto čísla se mohou mírně lišit. K převodu obvykle dochází, když je číslo přetypování z jednoho typu na jiný typ. K této změně dochází, je-li převod v rámci databáze, mezi typy, které reprezentují hodnoty databáze nebo mezi typy. Z důvodu těchto změn mohou mít počty, které logicky mají stejnou hodnotu, pravděpodobně změny v jejich nejméně významných číslicích, což způsobí, že mají různé hodnoty. Počet číslic přesnosti v čísle může být větší nebo menší, než se očekávalo. Při formátování jako řetězce nesmí číslo zobrazovat očekávanou hodnotu.  
   
- Pro minimalizaci negativních dopadů, měli byste použít nejvíce odpovídá mezi číselnými typy, které je k dispozici. Například pokud pracujete s SQL serverem, přesné číselná hodnota může změnit hodnotu příkazů jazyka Transact-SQL aplikace skutečný typ při převodu na hodnotu typu float. V rozhraní .NET Framework, převádění <xref:System.Single> k <xref:System.Double> může také vést k neočekávaným výsledkům. V obou těchto případech je dobrou strategii, aby všechny hodnoty v aplikace využívají stejné číselného typu. Můžete také použít typ desetinné číslo-přesnost nebo přetypovat na typ desetinné číslo-přesnost s plovoucí desetinnou čárkou čísla, než začnete pracovat s nimi.  
+ K minimalizaci těchto efektů byste měli použít nejbližší shodu mezi číselnými typy, které jsou vám k dispozici. Například pokud pracujete se SQL Server, může se přesná číselná hodnota změnit, pokud převedete hodnotu Transact-SQL reálného typu na hodnotu typu float. V .NET Framework může převod typu <xref:System.Single> na a <xref:System.Double> také způsobit neočekávané výsledky. V obou těchto případech je dobré zajistit, aby všechny hodnoty v aplikaci používaly stejný číselný typ. Před tím, než s nimi budete pracovat, můžete také použít desítkový typ s pevnou přesností nebo přetypovat čísla s plovoucí desetinnou čárkou na typ desetinné číslo s pevnou přesností.  
   
- Chcete-li vyřešit problémy s porovnání rovnosti, vezměte v úvahu kódování aplikace tak, aby se ignorují odchylky v nejmenších platných číslicích. Například namísto porovnání najdete v článku, zda jsou stejné dvě čísla, odečte jednu číslici od jiné číslo. Pokud rozdíl je v rámci přijatelných okraji zaokrouhlení, můžete aplikace řešte čísel jakoby se shodují.  
+ Chcete-li vyřešit problémy s porovnáním rovnosti, zvažte kódování aplikace tak, aby variace nejméně významných číslic byly ignorovány. Například místo porovnání, abyste viděli, zda jsou dvě čísla shodná, ododečte jedno číslo od druhého čísla. Je-li rozdíl v rámci přijatelného rozpětí zaokrouhlení, může aplikace zacházet s čísly, jako kdyby byly stejné.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](/cpp/build/reference/why-floating-point-numbers-may-lose-precision)
+- [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](/cpp/build/why-floating-point-numbers-may-lose-precision)
 - [Přehled ADO.NET](ado-net-overview.md)

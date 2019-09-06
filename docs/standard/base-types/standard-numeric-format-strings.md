@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06a6403d12645f96e39407f38d944f2e7682d65d
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: c99e3bc59266846fcd5c5774b6050b4e075cbc3f
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133843"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374497"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -55,7 +55,7 @@ Standardní řetězce číselného formátu jsou podporovány v:
 
 |Specifikátor formátu|Name|Popis|Příklady|
 |----------------------|----------|-----------------|--------------|
-|"C" nebo "c"|Měna|Vyústit Hodnota měny.<br /><br /> Podporováno: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet desetinných číslic.<br /><br /> Výchozí specifikátor přesnosti: <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>Definováno.<br /><br /> Další informace: [Specifikátor formátu měny ("C")](#CFormatString).|123,456 ("C", en-US) – >`$123.46`<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 €<br /><br /> 123,456 ("C", ja-JP)-> ¥123<br /><br /> -123,456 ("C3", en-US)->`($123.456)`<br /><br /> -123,456 ("C3", fr-FR)->-€123 456<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
+|"C" nebo "c"|Měna|Vyústit Hodnota měny.<br /><br /> Podporováno: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet desetinných číslic.<br /><br /> Výchozí specifikátor přesnosti: <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A?displayProperty=nameWithType>Definováno.<br /><br /> Další informace: [Specifikátor formátu měny ("C")](#CFormatString).|123,456 ("C", en-us)-> \\$123,46<br /><br /> 123,456 ("C", fr-FR)-> 123, 46 €<br /><br /> 123,456 ("C", ja-JP)-> ¥123<br /><br /> -123,456 ("C3", en-us)-> (\\$123,456)<br /><br /> -123,456 ("C3", fr-FR)->-€123 456<br /><br /> -123.456 ("C3", ja-JP) -> -¥123.456|
 |"D" nebo "d"|Desetinné číslo|Vyústit Celočíselné číslice s volitelným záporným znaménkem<br /><br /> Podporováno: Pouze integrální typy.<br /><br /> Specifikátor přesnosti: Minimální počet číslic<br /><br /> Výchozí specifikátor přesnosti: Vyžaduje se minimální počet číslic.<br /><br /> Další informace: [Specifikátor formátu desítkového čísla ("D")](#DFormatString).|1234 ("D")-> 1234<br /><br /> -1234 ("D6")->-001234|
 |"E" nebo "e"|Exponenciální (vědecký) zápis|Vyústit Exponenciální notace<br /><br /> Podporováno: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet desetinných číslic.<br /><br /> Výchozí specifikátor přesnosti: 6.<br /><br /> Další informace: [Exponenciální specifikátor formátu ("E")](#EFormatString).|1052,0329112756 ("E", en-US)-> 1.052033 E + 003<br /><br /> 1052,0329112756 ("e", fr-FR)-> 1, 052033e + 003<br /><br /> -1052,0329112756 ("E2", en-US)->-1,05 e + 003<br /><br /> -1052,0329112756 ("E2", fr-FR)->-1, 05E + 003|
 |"F" nebo "f"|Pevná desetinná čárka|Vyústit Celočíselná a desítková čísla s volitelným záporným znaménkem.<br /><br /> Podporováno: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet desetinných číslic.<br /><br /> Výchozí specifikátor přesnosti: <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>Definováno.<br /><br /> Další informace: [Specifikátor formátu s pevnou desetinnou čárkou ("F")](#FFormatString).|1234,567 ("F", en-US)-> 1234,57<br /><br /> 1234,567 ("F", de-DE)-> 1234, 57<br /><br /> 1234 ("F1", en-US)-> 1234,0<br /><br /> 1234 ("F1", de-DE) -> 1234,0<br /><br /> -1234,56 ("F4", en-US)->-1234,5600<br /><br /> -1234,56 ("F4", de-DE)->-1234, 1234,5600|

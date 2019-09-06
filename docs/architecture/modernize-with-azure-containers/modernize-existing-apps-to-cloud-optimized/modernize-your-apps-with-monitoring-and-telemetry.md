@@ -2,12 +2,12 @@
 title: Modernizace aplikací pomocí monitorování a telemetrie
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Modernizovat své aplikace s využitím monitorování a telemetrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 5bffb336234f63dca150acc9ef31f9efa2e3937b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 65c464e27e326f6a60b4879ec787253dea019d92
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676979"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373956"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -21,7 +21,7 @@ Obrázek 4-10 ukazuje příklad toho, jak Application Insights monitoruje aplika
 
 ![Řídicí panel monitorování Application Insights](./media/image10.png)
 
-> **Obrázek 4-10.** Řídicí panel monitorování Application Insights
+**Obrázek 4-10.** Řídicí panel monitorování Application Insights
 
 ## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>Monitorujte infrastrukturu Docker pomocí Log Analytics a jejího řešení pro monitorování kontejnerů.
 
@@ -45,7 +45,7 @@ Obrázek 4-11 ukazuje vztahy mezi různými hostiteli a agenty kontejnerů a OMS
 
 ![Log Analytics řešení pro monitorování kontejnerů](./media/image11.png)
 
-> **Obrázek 4-11.** Log Analytics řešení pro monitorování kontejnerů
+**Obrázek 4-11.** Log Analytics řešení pro monitorování kontejnerů
 
 Řešení monitorování kontejnerů Log Analytics můžete použít k těmto akcím:
 

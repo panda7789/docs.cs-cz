@@ -1,13 +1,13 @@
 ---
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
-ms.date: 09/02/2019
-ms.openlocfilehash: 7210f2e978f307b3ecef2eff272fea0d19025de6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.date: 09/04/2019
+ms.openlocfilehash: b281c55a5911d81503a6af80e393469be1124280
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252904"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374012"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -26,6 +26,7 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
+- [Nespravované konstruované typy](#unmanaged-constructed-types)
 - [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
 
 > [!NOTE]
@@ -446,6 +447,33 @@ var text = words[phrase];
 ```
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
+
+## <a name="unmanaged-constructed-types"></a>Nespravované konstruované typy
+
+V C# 7,3 a starších verzích konstruovaný typ (typ, který obsahuje alespoň jeden argument typu) nemůže být [nespravovaný typ](../language-reference/builtin-types/unmanaged-types.md). Počínaje C# 8,0, konstruovaný typ hodnoty je nespravovaný, pokud obsahuje pole pouze nespravovaných typů.
+
+Například s ohledem na následující definice obecného `Coords<T>` typu:
+
+```csharp
+public struct Coords<T>
+{
+    public T X;
+    public T Y;
+}
+```
+
+typ je nespravovaný typ v C# 8,0 a novějším. `Coords<int>` Podobně jako u jakéhokoli nespravovaného typu můžete vytvořit ukazatel na proměnnou tohoto typu nebo [přidělit blok paměti v zásobníku](../language-reference/operators/stackalloc.md) pro instance tohoto typu:
+
+```csharp
+Span<Coords<int>> coordinates = stackalloc[]
+{
+    new Coords<int> { X = 0, Y = 0 },
+    new Coords<int> { X = 0, Y = 3 },
+    new Coords<int> { X = 4, Y = 0 }
+};
+```
+
+Další informace naleznete v tématu [nespravované typy](../language-reference/builtin-types/unmanaged-types.md).
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Vylepšení interpolované doslovného řetězce
 

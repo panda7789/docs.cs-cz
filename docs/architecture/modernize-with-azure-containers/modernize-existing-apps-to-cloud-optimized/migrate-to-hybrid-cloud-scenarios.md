@@ -2,12 +2,12 @@
 title: Scénáře migrace do hybridního cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Scénáře migrace do hybridního cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: 04c618681c61f5584e641e0a4735e1261ab34fa3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 313608c41427b3833bbc873398595ceb37bd7c7d
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676991"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373949"
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Scénáře migrace do hybridního cloudu
 
@@ -27,7 +27,7 @@ Obrázek 4-13 ukazuje přehled skutečné hybridní cloudové platformy, kterou 
 
 ![Hybridní cloudová platforma Microsoft s Azure Stack a Azure](./media/image13.jpg)
 
-> **Obrázek 4-13.** Hybridní cloudová platforma Microsoft s Azure Stack a Azure
+**Obrázek 4-13.** Hybridní cloudová platforma Microsoft s Azure Stack a Azure
 
 Azure Stack se nabízí ve dvou možnostech nasazení, které odpovídají vašim potřebám:
 

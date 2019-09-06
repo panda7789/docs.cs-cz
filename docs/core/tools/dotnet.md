@@ -2,12 +2,12 @@
 title: dotnet – příkaz
 description: Přečtěte si o příkazu dotnet (obecný ovladač pro .NET Core CLI nástroje) a jeho využití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 61542a3fff8bba6e2c3e55a4db5a746620d79ca1
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 328fd24cd72110bd235c177398f6f147fbb9d144
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202506"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373750"
 ---
 # <a name="dotnet-command"></a>dotnet – příkaz
 
@@ -94,9 +94,9 @@ Zobrazí nainstalované sady SDK .NET Core.
 `--roll-forward-on-no-candidate-fx <N>`
 
 Definuje chování v případě, že požadovaná sdílená architektura není k dispozici. `N` může být:
-* `0`– Zakažte u sebe i menší verzi.
-* `1`– Navýšení se dopředá na podverzi, ale ne na hlavní verzi. Toto je výchozí chování.
-* `2`– Posunutí posunu k dílčím a hlavním verzím
+- `0`– Zakažte u sebe i menší verzi.
+- `1`– Navýšení se dopředá na podverzi, ale ne na hlavní verzi. Toto je výchozí chování.
+- `2`– Posunutí posunu k dílčím a hlavním verzím
 
  Další informace najdete v tématu o tom, jak [Posunout](../whats-new/dotnet-core-2-1.md#roll-forward)nahoru.
 

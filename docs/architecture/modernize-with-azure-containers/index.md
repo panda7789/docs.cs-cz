@@ -2,12 +2,12 @@
 title: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 description: Naučte se přezvednout a přemodernizovat stávající aplikace do cloudu Azure a kontejnerů pomocí této elektronické knihy.
 ms.date: 04/28/2018
-ms.openlocfilehash: ab2b58441af7aed6a8cd868751339b555a345565
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 99265e6179554214ae1684b6ea266693be7f80c1
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660854"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374168"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows (druhá edice)
 
@@ -66,13 +66,13 @@ Organizace se obvykle rozhodnou přesunout do cloudu s cílem zajistit flexibili
 
 Pro migraci aplikací do cloudu není k dispozici jediná jedna velikost. Správná strategie migrace pro vás bude záviset na potřebách a prioritách vaší organizace a na typu aplikací, které migrujete. Ne všechny aplikace zaručují investici přechodu na model[PaaS](https://azure.microsoft.com/overview/what-is-paas/)(Platform as a Service) nebo pro vývoj modelu aplikace [Cloud Native](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) . V mnoha případech můžete postupovat podle fáze nebo přírůstkového přístupu k investicím do cloudu, a to na základě vašich obchodních potřeb.
 
-Pro moderní aplikace s nejlepší dlouhodobou flexibilitou a hodnotou pro organizaci můžete využít výhod investování do architektury cloudových *nativních* aplikací. U aplikací, které jsou existujícími nebo staršími prostředky, se však klíč věnuje minimálnímu času a penězi (bez změny architektury ani změny kódu) při jejich přesunu do cloudu, aby se mohly realizovat významné výhody.
+Pro moderní aplikace s nejlepší dlouhodobou flexibilitou a hodnotou pro organizaci můžete využít výhod investování do architektury *cloudových nativních* aplikací. U aplikací, které jsou existujícími nebo staršími prostředky, se však klíč věnuje minimálnímu času a penězi (bez změny architektury ani změny kódu) při jejich přesunu do cloudu, aby se mohly realizovat významné výhody.
 
 Obrázek 1-1 ukazuje možné cesty, které můžete provést při přesunu stávajících aplikací .NET do cloudu v přírůstkových fázích.
 
  ![Cesty k modernizaci pro stávající aplikace a služby .NET](./media/image1-1.png)
 
-> **Obrázek 1-1**. Cesty k modernizaci pro stávající aplikace a služby .NET
+**Obrázek 1-1**. Cesty k modernizaci pro stávající aplikace a služby .NET
 
 Každý přístup k migraci má jiné výhody a důvody pro jeho použití. Když migrujete aplikace do cloudu, můžete zvolit jeden z nich, nebo vybrat některé součásti z více přístupů. Jednotlivé aplikace nejsou omezeny pouze na jediný přístup nebo na stav splatnosti. Například společný hybridní přístup by měl určité místní komponenty a další komponenty v cloudu.
 
@@ -111,7 +111,7 @@ Obrázek 1-2 ukazuje primární technologie a styly architektury používané v 
 
 ![Primární technologie pro každou úroveň splatnosti pro modernizaci stávající webové aplikace .NET](./media/image1-2.png)
 
-> **Obrázek 1-2.** Primární technologie pro každou úroveň splatnosti pro modernizaci stávající webové aplikace .NET
+**Obrázek 1-2.** Primární technologie pro každou úroveň splatnosti pro modernizaci stávající webové aplikace .NET
 
 Obrázek 1-2 zvýrazňuje nejběžnější scénáře, ale mnoho hybridních a smíšených variant je možné, pokud je to architektura. Například modely splatnosti se vztahují nejen na architektury monolitické ve stávajících webových aplikacích, ale také na orientaci služeb, N-vrstvách a jiné varianty stylu architektury. Vyšší fokus nebo procento na jednom nebo jiném typu architektury a související technologie určují celkovou úroveň zralosti vašich aplikací.
 
@@ -129,7 +129,7 @@ Obrázek 1-3 ukazuje interní technologie, které můžete použít pro každou 
 
 ![Interní technologie pro každou úroveň zralosti](./media/image1-3.png)
 
-> **Obrázek 1-3.** Interní technologie pro každou úroveň zralosti
+**Obrázek 1-3.** Interní technologie pro každou úroveň zralosti
 
 ## <a name="lift-and-shift-scenario"></a>Scénář zvednutí a posunutí
 
@@ -137,7 +137,7 @@ U migrací z převedených a Shift Pamatujte na to, že ve scénářích vaší 
 
 ![Příklad čistě IaaS scénáře v cloudu](./media/image1-4.png)
 
-> **Obrázek 1-4**. Příklad čistě IaaS scénáře v cloudu
+**Obrázek 1-4**. Příklad čistě IaaS scénáře v cloudu
 
 ## <a name="modernization-scenarios"></a>Scénáře modernizace
 
@@ -145,13 +145,13 @@ V případě scénářů pro moderní účely je možné, že máte čistě clou
 
 ![Příklad scénáře "výběr a výběr" s databází na IaaS, DevOps a prostředcích kontejnerů](./media/image1-5.png)
 
-> **Obrázek 1-5.** Příklad scénáře "výběr a výběr" s databází na IaaS, DevOps a prostředcích kontejnerů
+**Obrázek 1-5.** Příklad scénáře "výběr a výběr" s databází na IaaS, DevOps a prostředcích kontejnerů
 
 Teď jako ideální scénář pro mnoho stávajících .NET Frameworkch aplikací, které se mají migrovat, můžete migrovat na cloudově optimalizovanou aplikaci a získat tak významné výhody před malým množstvím práce. Tento přístup také nastavíte pro Cloud Native jako možný budoucí vývoj. Obrázek 1-6 ukazuje příklad.
 
 ![Ukázkový scénář pro cloudově optimalizované aplikace s kontejnery Windows a spravovanými službami](./media/image1-6.png)
 
-> **Obrázek 1-6.** Ukázkový scénář pro cloudově optimalizované aplikace s kontejnery Windows a spravovanými službami
+**Obrázek 1-6.** Ukázkový scénář pro cloudově optimalizované aplikace s kontejnery Windows a spravovanými službami
 
 Ještě dál můžete rozšířit svou stávající cloudovou aplikaci tím, že přidáte několik mikroslužeb pro konkrétní scénáře. Tím byste částečně přesunuli na úroveň cloudového nativního modelu, což není hlavním soustředěním na stávající doprovodné materiály.
 
@@ -161,7 +161,7 @@ Tato příručka se zabývá konkrétní podmnožinou ukázkových scénářů, 
 
 ![V této příručce se nezabývá Cloud – nativní.](./media/image1-7.png)
 
-> **Obrázek 1-7.** V této příručce se nezabývá Cloud – nativní.
+**Obrázek 1-7.** V této příručce se nezabývá Cloud – nativní.
 
 Tato příručka je zaměřená na konkrétní. Zobrazuje cestu, kterou můžete provést, abyste dosáhli přezvednutí a posunutí stávajících aplikací .NET, aniž byste museli měnit architekturu a bez jakýchkoli změn kódu. Nakonec vám ukáže, jak nastavit optimalizaci cloudu aplikace.
 

@@ -2,22 +2,22 @@
 title: Co jsou nativní cloudové aplikace?
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Co jsou aplikace Cloud Native?
 ms.date: 04/28/2018
-ms.openlocfilehash: 26adb87c426442ebf0e88165e521819e3a49d175
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 86153b04790eb21276e58b3fe33c0a680d9ea1c4
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676931"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373921"
 ---
 # <a name="what-about-cloud-native-applications"></a>Co jsou nativní cloudové aplikace?
 
-I když [nativní](https://azure.microsoft.com/overview/cloudnative/) aplikace v cloudu nejsou hlavním soustředěním tohoto průvodce, je užitečné pochopit tuto úroveň zralosti a odlišit ji od cloudově optimalizovaných aplikací.
+I když nativní aplikace v [cloudu](https://azure.microsoft.com/overview/cloudnative/) nejsou hlavním soustředěním tohoto průvodce, je užitečné pochopit tuto úroveň zralosti a odlišit ji od cloudově optimalizovaných aplikací.
 
 Obrázek 4-3 pozice cloudových nativních aplikací v úrovni vyspělosti aplikací:
 
 ![Umísťování cloudových nativních aplikací](./media/image3.png)
 
-> **Obrázek 4-3.** Umísťování cloudových nativních aplikací
+**Obrázek 4-3.** Umísťování cloudových nativních aplikací
 
 Úroveň zralosti nativní v cloudu obvykle vyžaduje nové investice do vývoje. Přechod na nativní úroveň cloudu je typicky založený na potřebě modernizovat aplikací tak, aby bylo možné výrazně zlepšit škálování ve velkých aplikacích, a to vytvořením autonomních subsystémů (mikroslužby), které se dají nasadit a škálovat nezávisle. z jiných oblastí aplikace při současném snížení nákladů a zvýšení flexibility vývoje částí autonomní aplikace, které poskytují významné konkurenční výhody.
 
@@ -25,9 +25,9 @@ Hlavní pilíře nativních aplikací pro Cloud jsou založené na přístupech 
 
 Obrázek 4-4 ukazuje hlavní charakteristiky modelu nativního cloudu.
 
-> ![Nativní charakteristiky cloudu jsou mikroslužby, kontejnery, odolné proti cloudu, Orchestrace a bez serveru.](./media/image4.png)
->
-> **Obrázek 4-4.** Nativní charakteristiky cloudu
+![Nativní charakteristiky cloudu jsou mikroslužby, kontejnery, odolné proti cloudu, Orchestrace a bez serveru.](./media/image4.png)
+
+**Obrázek 4-4.** Nativní charakteristiky cloudu
 
 Kromě toho můžete rozšířit základní moderní webové aplikace a cloudové nativní aplikace tím, že přidáte další služby, jako je například aplikace umělal Intelligence (AI), Machine Learning (ML) a IoT. Některé z těchto služeb můžete použít k rozšiřování libovolných možných cloudově optimalizovaných přístupů.
 

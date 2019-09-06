@@ -2,12 +2,12 @@
 title: Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: 5d25fb0d15ff7b9f04b9491454d1368e4aa7f593
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5f44029a214cf1f366fc787e27a9ac34599c4dca
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68677039"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373975"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu
 
@@ -29,7 +29,7 @@ Odolná aplikace jako ta, která je znázorněna na obrázku 4-9, by měla imple
 
 ![Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu](./media/image9.png)
 
-> **Obrázek 4-9.** Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu
+**Obrázek 4-9.** Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu
 
 Tyto techniky můžete použít v prostředcích HTTP i v databázových prostředcích. Na obrázku 4-9 je aplikace založená na architektuře 3, takže tyto techniky budete potřebovat na úrovni služeb (HTTP) a na úrovni datové vrstvy (TCP). V aplikaci monolitické, která kromě databáze nástroje používá jenom jednu vrstvu aplikace (žádné další služby ani mikroslužby), může být dostatečné pro zpracování přechodných chyb na úrovni připojení databáze. V takovém scénáři je vyžadována pouze určitá konfigurace připojení k databázi.
 

@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: deb7258326428cca01ea8734e0dc010c29177cfa
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: a5a11bc49fa834ebd6945e47767deb559244b459
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106864"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374518"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Kurz: Rozpoznávání objektů pomocí ONNX v ML.NET
 
@@ -57,25 +57,25 @@ Mezi případy použití při detekci objektu patří:
 
 ## <a name="select-a-deep-learning-model"></a>Vyberte model hloubkového učení.
 
-Obsáhlý Learning je podmnožinou strojového učení. Aby bylo možné naučit modely hloubkového učení, jsou potřeba velké množství dat. Vzory v datech jsou reprezentovány řadou vrstev. Vztahy v datech jsou kódovány jako připojení mezi vrstvami, které obsahují váhy. Čím vyšší je váha, tím silnější je vztah. Souhrnně je tato série vrstev a připojení známá jako umělá neuronové síť. Více vrstev v síti, "hlubší", je díky tomu rozsáhlá neuronové síť. 
+Obsáhlý Learning je podmnožinou strojového učení. Aby bylo možné naučit modely hloubkového učení, jsou potřeba velké množství dat. Vzory v datech jsou reprezentovány řadou vrstev. Vztahy v datech jsou kódovány jako připojení mezi vrstvami, které obsahují váhy. Čím vyšší je váha, tím silnější je vztah. Souhrnně je tato série vrstev a připojení známá jako umělá neuronové síť. Více vrstev v síti, "hlubší", je díky tomu rozsáhlá neuronové síť.
 
-Existují různé typy sítí neuronové, nejběžnější jsou vícevrstvé Perceptron (MLP), konvoluční neuronové Network (CNN) a znovu aktuální neuronové síť (RNN). Nejzákladnější je MLP, který mapuje sadu vstupů na sadu výstupů. Tato neuronové síť je dobrá, pokud data neobsahují prostorová nebo časová komponenta. CNN využívá vrstvy konvoluční ke zpracování prostorových informací obsažených v datech. Dobrým případem použití pro DNN je zpracování obrazu k detekci přítomnosti funkce v oblasti obrázku (například je tam uprostřed obrázku nějaký nos?). Nakonec RNN umožní, aby se jako vstup použila trvalá stavová nebo paměť. RNN se používají pro analýzu časových řad, kde je důležité sekvenční řazení a kontext událostí. 
+Existují různé typy sítí neuronové, nejběžnější jsou vícevrstvé Perceptron (MLP), konvoluční neuronové Network (CNN) a znovu aktuální neuronové síť (RNN). Nejzákladnější je MLP, který mapuje sadu vstupů na sadu výstupů. Tato neuronové síť je dobrá, pokud data neobsahují prostorová nebo časová komponenta. CNN využívá vrstvy konvoluční ke zpracování prostorových informací obsažených v datech. Dobrým případem použití pro DNN je zpracování obrazu k detekci přítomnosti funkce v oblasti obrázku (například je tam uprostřed obrázku nějaký nos?). Nakonec RNN umožní, aby se jako vstup použila trvalá stavová nebo paměť. RNN se používají pro analýzu časových řad, kde je důležité sekvenční řazení a kontext událostí.
 
 ### <a name="understand-the-model"></a>Pochopení modelu
 
-Detekce objektu je úloha zpracování obrázku. Proto se většina modelů hloubkového učení, které jsou vyškolené k vyřešení tohoto problému, DNN. Model použitý v tomto kurzu je malý model YOLOv2, což je kompaktnější verze modelu YOLOv2 popsané v dokumentu: ["YOLO9000: Lepší, rychlejší a silnější "od Redmon a Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Drobný YOLOv2 je vyškolená pro datovou sadu Pascal a skládá se z 15 vrstev, které mohou odhadnout 20 různých tříd objektů. Vzhledem k tomu, že malá YOLOv2 je Zhuštěná verze původního modelu YOLOv2, je mezi rychlostí a přesností provedeno kompromis. Různé vrstvy, které tvoří model, lze vizuálně vymezit pomocí nástrojů, jako je Netron. Kontrola modelu by způsobila mapování propojení mezi všemi vrstvami tvořící neuronové síť, kde každá z vrstev obsahuje název vrstvy spolu s rozměry příslušného vstupu/výstupu. Datové struktury používané k popisu vstupů a výstupů modelu jsou známé jako modely. Křížové procesory si můžete představit jako kontejnery, které ukládají data v N-dimenzích. V případě malých YOLOv2 je `image` název vstupní vrstvy a očekává se tensor dimenzí. `3 x 416 x 416` Název výstupní vrstvy je `grid` a generuje výstupní tensor dimenzí. `125 x 13 x 13`  
+Detekce objektu je úloha zpracování obrázku. Proto se většina modelů hloubkového učení, které jsou vyškolené k vyřešení tohoto problému, DNN. Model použitý v tomto kurzu je malý model YOLOv2, což je kompaktnější verze modelu YOLOv2 popsané v dokumentu: ["YOLO9000: Lepší, rychlejší a silnější "od Redmon a Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Drobný YOLOv2 je vyškolená pro datovou sadu Pascal a skládá se z 15 vrstev, které mohou odhadnout 20 různých tříd objektů. Vzhledem k tomu, že malá YOLOv2 je Zhuštěná verze původního modelu YOLOv2, je mezi rychlostí a přesností provedeno kompromis. Různé vrstvy, které tvoří model, lze vizuálně vymezit pomocí nástrojů, jako je Netron. Kontrola modelu by způsobila mapování propojení mezi všemi vrstvami tvořící neuronové síť, kde každá z vrstev obsahuje název vrstvy spolu s rozměry příslušného vstupu/výstupu. Datové struktury používané k popisu vstupů a výstupů modelu jsou známé jako modely. Křížové procesory si můžete představit jako kontejnery, které ukládají data v N-dimenzích. V případě malých YOLOv2 je `image` název vstupní vrstvy a očekává se tensor dimenzí. `3 x 416 x 416` Název výstupní vrstvy je `grid` a generuje výstupní tensor dimenzí. `125 x 13 x 13`
 
 ![](./media/object-detection-onnx/netron-model-map.png)
 
-Model YOLO přebírá obrázek `3(RGB) x 416px x 416px`. Model provede tento vstup a předá jej prostřednictvím různých vrstev a vytvoří výstup. Výstup rozdělí vstupní obrázek do `13 x 13` mřížky, přičemž každou buňku v mřížce `125` tvoří hodnoty. 
+Model YOLO přebírá obrázek `3(RGB) x 416px x 416px`. Model provede tento vstup a předá jej prostřednictvím různých vrstev a vytvoří výstup. Výstup rozdělí vstupní obrázek do `13 x 13` mřížky, přičemž každou buňku v mřížce `125` tvoří hodnoty.
 
 ### <a name="what-is-an-onnx-model"></a>Co je model ONNX?
 
-Open neuronové Network Exchange (ONNX) je open source formát pro modely AI. ONNX podporuje interoperabilitu mezi platformami. To znamená, že můžete model vytvořit v jedné z mnoha oblíbených rozhraní pro strojové učení, jako je PyTorch, převést ho do formátu ONNX a spotřebovat model ONNX v jiném rozhraní jako ML.NET. Další informace najdete na [webu ONNX](https://onnx.ai/). 
+Open neuronové Network Exchange (ONNX) je open source formát pro modely AI. ONNX podporuje interoperabilitu mezi platformami. To znamená, že můžete model vytvořit v jedné z mnoha oblíbených rozhraní pro strojové učení, jako je PyTorch, převést ho do formátu ONNX a spotřebovat model ONNX v jiném rozhraní jako ML.NET. Další informace najdete na [webu ONNX](https://onnx.ai/).
 
 ![](./media/object-detection-onnx/onnx-frameworks.png)
 
-Předem vyškolený neYOLOv2 model je uložený ve formátu ONNX, serializovaná reprezentace vrstev a zjištěné vzory těchto vrstev. V ml.NET se vzájemná spolupráce s ONNX dosahuje [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) pomocí [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) balíčků NuGet a. [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) Balíček obsahuje řadu transformací, které přijímají obrázek a zakódují je do numerických hodnot, které lze použít jako vstup do předpovědi nebo školicího kanálu. [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) Balíček využívá modul runtime ONNX k načtení modelu ONNX a použije ho k tomu, aby předpovědi na základě poskytnutého vstupu. 
+Předem vyškolený neYOLOv2 model je uložený ve formátu ONNX, serializovaná reprezentace vrstev a zjištěné vzory těchto vrstev. V ml.NET se vzájemná spolupráce s ONNX dosahuje [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) pomocí [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) balíčků NuGet a. [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) Balíček obsahuje řadu transformací, které přijímají obrázek a zakódují je do numerických hodnot, které lze použít jako vstup do předpovědi nebo školicího kanálu. [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) Balíček využívá modul runtime ONNX k načtení modelu ONNX a použije ho k tomu, aby předpovědi na základě poskytnutého vstupu.
 
 ![](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
@@ -89,10 +89,10 @@ Teď, když máte obecné informace o tom, co ONNX je a jak malý YOLOv2 funguje
 
 1. Nainstalujte **balíček NuGet Microsoft.ml**:
 
-    - V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. 
-    - Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet a vyhledejte **Microsoft.ml**. 
-    - Vyberte tlačítko **instalovat** . 
-    - Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** . 
+    - V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
+    - Jako zdroj balíčku zvolte "nuget.org", vyberte kartu Procházet a vyhledejte **Microsoft.ml**.
+    - Vyberte tlačítko **instalovat** .
+    - Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
     - Opakujte tyto kroky pro **Microsoft. ml. ImageAnalytics** a **Microsoft. ml. OnnxTransformer**.
 
 ### <a name="prepare-your-data-and-pre-trained-model"></a>Příprava dat a předem vyškoleného modelu
@@ -101,12 +101,12 @@ Teď, když máte obecné informace o tom, co ONNX je a jak malý YOLOv2 funguje
 
 1. Zkopírujte adresář do adresáře projektu *ObjectDetection.* `assets` Tento adresář a jeho podadresáře obsahují soubory obrázků (kromě nemalého modelu YOLOv2, který si stáhnete a přidáte v dalším kroku) potřebného pro tento kurz.
 
-1. Stáhněte si [malý YOLOv2 model](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) z [modelu ONNX](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny_yolov2)pro zoologickéii a rozbalte ho.
+1. Stáhněte si [malý YOLOv2 model](https://onnxzoo.blob.core.windows.net/models/opset_8/tiny_yolov2/tiny_yolov2.tar.gz) z [modelu ONNX pro zoologickéii](https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/tiny_yolov2)a rozbalte ho.
 
     Otevřete příkazový řádek a zadejte následující příkaz:
 
     ```shell
-    tar -xvzf tiny_yolov2.tar.gz 
+    tar -xvzf tiny_yolov2.tar.gz
     ```
 
 1. Zkopírujte extrahovaný `model.onnx` soubor z adresáře a pak ho přejmenujte do adresáře `assets\Model` projektu ObjectDetection a přejmenujte ho na. `TinyYolo2_model.onnx` Tento adresář obsahuje model potřebný pro tento kurz.
@@ -119,9 +119,9 @@ Otevřete soubor *program.cs* a na začátek souboru přidejte následující `u
 
 [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L1-L7)]
 
-Dále definujte cesty různých prostředků. 
+Dále definujte cesty různých prostředků.
 
-1. Nejprve do `Program` třídy přidejte `GetAbsolutePath` metodu `Main` pod metodu. 
+1. Nejprve do `Program` třídy přidejte `GetAbsolutePath` metodu `Main` pod metodu.
 
     [!code-csharp [GetAbsolutePath](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L66-L74)]
 
@@ -133,17 +133,17 @@ Přidejte do projektu nový adresář, do kterého se budou ukládat vstupní da
 
 V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a pak vyberte **Přidat** > **novou složku**. Když se nová složka zobrazí v Průzkumník řešení, pojmenujte ji "datastructures".
 
-Vytvořte vstupní datovou třídu v nově vytvořených adresářích datastrukturas.
+Vytvořte vstupní datovou třídu v nově vytvořených adresářích *Datastrukturas* .
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na adresář datastrukturas a pak vyberte **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na adresář *datastrukturas* a pak vyberte **Přidat** > **novou položku**.
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *ImageNetData.cs*. Pak vyberte tlačítko **Přidat** .
-     
+
     V editoru kódu se otevře soubor *ImageNetData.cs* . Do horní části `using` *ImageNetData.cs*přidejte následující příkaz:
 
     [!code-csharp [ImageNetDataUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/DataStructures/ImageNetData.cs#L1-L4)]
 
     Odeberte existující definici třídy a přidejte následující kód pro `ImageNetData` třídu do souboru *ImageNetData.cs* :
-    
+
     [!code-csharp [ImageNetDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/DataStructures/ImageNetData.cs#L8-L23)]
 
     `ImageNetData`je třída vstupních dat obrázku a obsahuje následující <xref:System.String> pole:
@@ -155,7 +155,7 @@ Vytvořte vstupní datovou třídu v nově vytvořených adresářích datastruk
 
 Vytvořte třídu předpovědi v adresáři *datastruktuře* .
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na adresář datastrukturas a pak vyberte **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na adresář *datastrukturas* a pak vyberte **Přidat** > **novou položku**.
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *ImageNetPrediction.cs*. Pak vyberte tlačítko **Přidat** .
 
     V editoru kódu se otevře soubor *ImageNetPrediction.cs* . Do horní části `using` *ImageNetPrediction.cs*přidejte následující příkaz:
@@ -178,7 +178,6 @@ Vytvořte třídu předpovědi v adresáři *datastruktuře* .
 
 [!code-csharp [InitMLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L24)]
 
-
 ## <a name="create-a-parser-to-post-process-model-outputs"></a>Vytvoření analyzátoru pro výstupy modelu po zpracování
 
 Model segmentuje obrázek do `13 x 13` mřížky, kde je `32px x 32px`každá buňka mřížky. Každá buňka mřížky obsahuje 5 potenciálních ohraničovacích rámečků objektů. Ohraničující rámeček má 25 prvků:
@@ -188,7 +187,7 @@ Model segmentuje obrázek do `13 x 13` mřížky, kde je `32px x 32px`každá bu
 - `x`pozice x středu ohraničovacího boxu vzhledem k buňce mřížky, ke které je přidružena.
 - `y`pozice y ohraničovacího boxu v středu vzhledem k buňce mřížky, ke které je přidružena.
 - `w`Šířka ohraničovacího rámečku
-- `h`Výška ohraničovacího rámečku 
+- `h`Výška ohraničovacího rámečku
 - `o`Hodnota spolehlivosti, kterou objekt existuje v ohraničujícím poli, označované také jako skóre objektu.
 - `p1-p20`pravděpodobnost třídy pro každou 20 tříd, které jsou předpovězeny modelem.
 
@@ -207,7 +206,7 @@ Výstup dat modelu obsahuje souřadnice a rozměry ohraničujících polí objek
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na adresář *YoloParser* a pak vyberte **Přidat** > **novou položku**.
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *DimensionsBase.cs*. Pak vyberte tlačítko **Přidat** .
 
-    V editoru kódu se otevře soubor *DimensionsBase.cs* . Odeberte všechny `using` příkazy a existující definici třídy. 
+    V editoru kódu se otevře soubor *DimensionsBase.cs* . Odeberte všechny `using` příkazy a existující definici třídy.
 
     Do souboru DimensionsBase.cs přidejte následující kód `DimensionsBase` pro třídu:
 
@@ -236,7 +235,7 @@ Dále vytvořte třídu pro vaše ohraničovací rámečky.
     Odeberte existující `YoloBoundingBox` definici třídy a přidejte následující kód `YoloBoundingBox` pro třídu do souboru *YoloBoundingBox.cs* :
 
     [!code-csharp [YoloBoundingBoxClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloBoundingBox.cs#L7-L21)]
-    
+
     `YoloBoundingBox`má následující pole:
 
     - `Dimensions`obsahuje rozměry ohraničovacího rámečku.
@@ -262,7 +261,7 @@ Nyní, když jsou vytvořeny třídy dimenzí a ohraničujících polí, je čas
 
 1. Uvnitř definice `YoloOutputParser` třídy přidejte následující konstantu a pole.
 
-    [!code-csharp [ParserVarDefinitions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L12-L21)]    
+    [!code-csharp [ParserVarDefinitions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L12-L21)]
 
     - `ROW_COUNT`je počet řádků v mřížce, na který je obrázek rozdělen.
     - `COL_COUNT`je počet sloupců v mřížce, na který je obrázek rozdělen.
@@ -274,17 +273,17 @@ Nyní, když jsou vytvořeny třídy dimenzí a ohraničujících polí, je čas
     - `CELL_HEIGHT`je výška jedné buňky v mřížce obrázku.
     - `channelStride`je počáteční pozice aktuální buňky v mřížce.
 
-    Když model vytvoří předpověď, označovanou také jako bodování, rozdělí `416px x 416px` vstupní obrázek do mřížky buněk `13 x 13`velikosti. Každá buňka obsahuje hodnotu `32px x 32px`. V každé buňce jsou 5 ohraničujících polí, z nichž každý obsahuje 5 funkcí (x, y, Šířka, Výška, spolehlivost). Kromě toho každý ohraničovací rámeček obsahuje pravděpodobnost každé třídy, která v tomto případě je 20. Každá buňka proto obsahuje 125 informací (5 funkcí + 20 pravděpodobností třídy). 
+    Když model vytvoří předpověď, označovanou také jako bodování, rozdělí `416px x 416px` vstupní obrázek do mřížky buněk `13 x 13`velikosti. Každá buňka obsahuje hodnotu `32px x 32px`. V každé buňce jsou 5 ohraničujících polí, z nichž každý obsahuje 5 funkcí (x, y, Šířka, Výška, spolehlivost). Kromě toho každý ohraničovací rámeček obsahuje pravděpodobnost každé třídy, která v tomto případě je 20. Každá buňka proto obsahuje 125 informací (5 funkcí + 20 pravděpodobností třídy).
 
 `channelStride` Pro všechna 5 ohraničovacích rámečků vytvořte seznam ukotvení:
 
-[!code-csharp [ParserAnchors](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L23-L26)]   
+[!code-csharp [ParserAnchors](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L23-L26)]
 
 Kotvy jsou předem definované poměry výšky a šířky ohraničujících polí. Většina objektů nebo tříd zjištěných modelem má podobné poměry. To je výhodné při vytváření ohraničujících rámečků. Místo předpovědi ohraničujících polí se počítá posun z předdefinovaných dimenzí a proto se zkrátí výpočet vyžadovaný pro předpověď ohraničovacího rámečku. Tyto poměry kotvy jsou obvykle počítány na základě použité datové sady. V tomto případě, protože je známá datová sada a hodnoty byly předem vypočítány, kotvy mohou být pevně kódované.
 
 Dále definujte popisky nebo třídy, které bude model předpovědět. Tento model předpovídá 20 tříd, které jsou podmnožinou celkového počtu tříd předpokládaných původním YOLOv2m modelem.
 
-Přidejte seznam popisků pod `anchors`. 
+Přidejte seznam popisků pod `anchors`.
 
 [!code-csharp [ParserLabels](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L28-L34)]
 
@@ -294,7 +293,7 @@ Ke každé z těchto tříd jsou přiřazeny barvy. Přiřaďte barvy vaší tř
 
 ### <a name="create-helper-functions"></a>Vytváření pomocných funkcí
 
-Ve fázi následného zpracování se účastní řada kroků. V takovém případě je možné využít několik pomocných metod. 
+Ve fázi následného zpracování se účastní řada kroků. V takovém případě je možné využít několik pomocných metod.
 
 Pomocné metody používané v analyzátoru jsou:
 
@@ -322,7 +321,7 @@ public IList<YoloBoundingBox> ParseOutputs(float[] yoloModelOutputs, float thres
 
 }
 ```
-    
+
 Vytvořte seznam pro ukládání ohraničujících polí a definujte proměnné uvnitř `ParseOutputs` metody.
 
 [!code-csharp [BBoxList](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L155)]
@@ -419,7 +418,7 @@ Uvnitř tohoto cyklu for-Loop ověřte, zda je možné zpracovat aktuální ohra
 ```csharp
 if (isActiveBoxes[i])
 {
-    
+
 }
 ```
 
@@ -492,7 +491,7 @@ Stejně jako u následného zpracování je několik kroků v postupu hodnocení
 
     Kanály ml.NET musí znát schéma dat, aby fungovalo při [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) volání metody. V takovém případě se použije proces podobný školení. Vzhledem k tomu, že nedojde k žádnému skutečnému školení, je přijatelné použít [`IDataView`](xref:Microsoft.ML.IDataView)prázdné. Vytvořte nový [`IDataView`](xref:Microsoft.ML.IDataView) pro kanál z prázdného seznamu.
 
-    [!code-csharp [LoadEmptyIDV](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L52)]    
+    [!code-csharp [LoadEmptyIDV](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L52)]
 
     Níže definujte kanál. Kanál se skládá ze čtyř transformací.
 
@@ -569,7 +568,7 @@ Nyní je čas pro krok po zpracování. Vytvořte instanci `YoloOutputParser` a 
 
 [!code-csharp [ParsePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L39-L44)]
 
-Až se výstup modelu zpracuje, je čas vykreslit ohraničovací rámečky na obrázcích. 
+Až se výstup modelu zpracuje, je čas vykreslit ohraničovací rámečky na obrázcích.
 
 ### <a name="visualize-predictions"></a>Vizualizovat předpovědi
 
@@ -603,7 +602,7 @@ Vzhledem k tomu, že rozměry ohraničovacího rámečku odpovídají vstupnímu
 
 [!code-csharp [ScaleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L92-L95)]
 
-Pak definujte šablonu pro text, který se apear nad každým ohraničujícím polem. Text bude obsahovat třídu objektu uvnitř příslušného ohraničovacího rámečku a také jistotu.
+Pak definujte šablonu pro text, který se zobrazí nad každým ohraničujícím polem. Text bude obsahovat třídu objektu uvnitř příslušného ohraničovacího rámečku a také jistotu.
 
 [!code-csharp [DefineBBoxText](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L98)]
 
@@ -612,7 +611,7 @@ Chcete-li kreslit na obrázek, převeďte jej na [`Graphics`](xref:System.Drawin
 ```csharp
 using (Graphics thumbnailGraphic = Graphics.FromImage(image))
 {
-    
+
 }
 ```
 
@@ -638,7 +637,7 @@ Mimo smyčku For-Each přidejte kód pro uložení obrázků v `outputDirectory`
 
 Pro další zpětnou vazbu, kterou aplikace provádí předpovědi podle očekávání za běhu, přidejte metodu, `LogDetectedObjects` která je `DrawBoundingBox` volána pod metodou v souboru *program.cs* pro výstup zjištěných objektů do konzoly.
 
-[!code-csharp [LogOuptuts](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L133-L143)]
+[!code-csharp [LogOutputs](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L133-L143)]
 
 Teď, když máte pomocné metody k vytvoření vizuální zpětné vazby z předpovědi, přidejte smyčku for-Loop k iterování všech imagí s hodnocením.
 
@@ -665,9 +664,9 @@ Po příkazu try-catch přidejte další logiku, která indikuje, že proces je 
 
 [!code-csharp [EndProcessLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L62-L63)]
 
-A to je vše! 
+A to je vše!
 
-## <a name="results"></a>Výsledky 
+## <a name="results"></a>Výsledky
 
 Po provedení předchozích kroků spusťte konzolovou aplikaci (CTRL + F5). Výsledky by měly být podobné následujícímu výstupu. Můžou se zobrazovat upozornění nebo zprávy o zpracování, ale tyto zprávy se z následujících výsledků odebraly z důvodu srozumitelnosti.
 
@@ -701,7 +700,7 @@ person and its Confidence score: 0.5551759
 ========= End of Process..Hit any Key ========
 ```
 
-Chcete-li zobrazit obrázky s ohraničujícími poli, přejděte do `assets/images/output/` adresáře. Níže je ukázka z jedné ze zpracovaných imagí. 
+Chcete-li zobrazit obrázky s ohraničujícími poli, přejděte do `assets/images/output/` adresáře. Níže je ukázka z jedné ze zpracovaných imagí.
 
 ![](./media/object-detection-onnx/image3.jpg)
 

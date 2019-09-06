@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 3ea5519259ba2ee31bfd6bc25f6bedf1f1250799
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 61cd7b61a586afa2addd55acff7cac6d16d92a1f
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401543"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374528"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 
@@ -197,9 +197,9 @@ Nezapomeňte implementovat CLR `get` a `set` přistupující objekty, jak je pop
 
 K vlastním ovládacím prvkům byste měli implementovat připojené vlastnosti pomocí následujících pokynů:
 
-- `public`  Mítformu<xref:System.Windows.DependencyProperty.RegisterAttached%2A> PropertyName, která byla vytvořena pomocí metody.`Property` `static` `readonly` <xref:System.Windows.DependencyProperty> Název vlastnosti, která je předána <xref:System.Windows.DependencyProperty.RegisterAttached%2A> , musí odpovídat hodnotě *PropertyName*.
+- `public` Mítformu<xref:System.Windows.DependencyProperty.RegisterAttached%2A> PropertyName, která byla vytvořena pomocí metody.`Property` `static` `readonly` <xref:System.Windows.DependencyProperty> Název vlastnosti, která je předána <xref:System.Windows.DependencyProperty.RegisterAttached%2A> , musí odpovídat hodnotě *PropertyName*.
 
-- Implementujte dvojici `public` `static` metod CLR s `Set`názvem *PropertyName* a `Get` *PropertyName*. Obě metody by měly přijmout třídu odvozenou <xref:System.Windows.DependencyProperty> z jako jejich první argument. Metoda propertyName také přijímá argument, jehož typ odpovídá zaregistrovanému datovému typu pro vlastnost.  `Set` Metoda propertyName by měla vracet hodnotu stejného typu.  `Get` Pokud metoda propertyName chybí, vlastnost je označena jen pro čtení.  `Set`
+- Implementujte dvojici `public` `static` metod CLR s `Set`názvem *PropertyName* a `Get` *PropertyName*. Obě metody by měly přijmout třídu odvozenou <xref:System.Windows.DependencyProperty> z jako jejich první argument. Metoda propertyName také přijímá argument, jehož typ odpovídá zaregistrovanému datovému typu pro vlastnost. `Set` Metoda propertyName by měla vracet hodnotu stejného typu. `Get` Pokud metoda propertyName chybí, vlastnost je označena jen pro čtení. `Set`
 
 - `Set` Hodnoty PropertyName `Get`a *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> na metody <xref:System.Windows.DependencyObject.SetValue%2A> a cílového objektu závislosti v uvedeném pořadí. Návrháři mohou přistupovat k vlastnosti připojené voláním prostřednictvím obálky metody nebo přímým voláním cílového objektu závislosti.
 
@@ -264,7 +264,7 @@ Prostředky, které jsou specifické pro motiv, jsou uchovávány ve slovníku p
 
 Nemusíte definovat prostředek pro každý motiv. Pokud prostředek není definován pro konkrétní motiv, ovládací prvek zkontroluje `Classic.xaml` prostředek. Pokud prostředek není definován v souboru, který odpovídá aktuálnímu motivu nebo v `Classic.xaml`, ovládací prvek používá obecný prostředek, který je v souboru slovníku prostředků s názvem. `generic.xaml`  `generic.xaml` Soubor je umístěn ve stejné složce jako soubory slovníku prostředků specifické pro motiv. I `generic.xaml` když neodpovídá konkrétnímu motivu systému Windows, je stále slovník na úrovni motivu.
 
-[Vlastní ovládací prvek NumericUpDown s podporou pro automatizaci motivů a uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=160025) obsahuje dva `NumericUpDown` slovníky prostředků pro ovládací prvek: jeden je v souboru Generic. XAML a jeden je v Luna. NormalColor. XAML.  Můžete spustit aplikaci a přepnout mezi motivem stříbrného v systému Windows XP a jiným motivem a zobrazit rozdíl mezi těmito dvěma šablonami ovládacích prvků. (Pokud používáte systém Windows Vista, můžete přejmenovat Luna. NormalColor. XAML na Aero. NormalColor. XAML a přepínat mezi dvěma motivy, například Windows Classic a výchozím motivem pro systém Windows Vista.)
+Vlastní [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp) ovládací prvek nebo [Visual Basicec](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) NumericUpDown s podporou motivů a automatizace uživatelského rozhraní obsahuje dva `NumericUpDown` slovníky prostředků pro ovládací prvek: jeden je v souboru Generic. XAML a druhý je v Luna. NormalColor. XAML. 
 
 Když umístíte <xref:System.Windows.Controls.ControlTemplate> do některého ze souborů slovníku prostředků specifických pro motiv, je nutné vytvořit statický konstruktor pro váš ovládací prvek a <xref:System.Windows.DependencyProperty.OverrideMetadata%28System.Type%2CSystem.Windows.PropertyMetadata%29> volat metodu na <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>, jak je znázorněno v následujícím příkladu.
 

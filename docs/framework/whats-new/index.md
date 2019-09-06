@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c15b2c27e51557494f10c2445d75a4bd56c47f91
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: bbf7c1203a1f6089eefce3ed2876c9ade91cc697
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69987246"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374453"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -65,7 +65,7 @@ Můžete cílit .NET Framework 4,8 v sadě Visual Studio 2012 nebo novější in
 - [Windows Presentation Foundation (WPF)](#wpf48)
 - [Modul CLR (Common Language Runtime)](#clr48)
 
-Vylepšené přístupnost, která aplikaci umožňuje zajistit vhodné prostředí pro uživatele technologie pro usnadnění práce, je nadále hlavním cílem .NET Framework 4,8. Informace o vylepšeních usnadnění v .NET Framework 4,8 najdete v tématu [co je nového v](whats-new-in-accessibility.md)přístupnosti v .NET Framework.
+Vylepšené přístupnost, která aplikaci umožňuje zajistit vhodné prostředí pro uživatele technologie pro usnadnění práce, je nadále hlavním cílem .NET Framework 4,8. Informace o vylepšeních usnadnění v .NET Framework 4,8 najdete v tématu [co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md).
 
 <a name="core48" />
 
@@ -174,7 +174,7 @@ Stav služby se dá zobrazit v HTML zadáním řetězce dotazu, jako `https://co
 
 **Vylepšení vysokého rozlišení DPI**
 
-V .NET Framework 4,8 WPF přidává podporu pro sledování rozlišení DPI podle monitoru v2 a škálování ve smíšeném režimu. Další informace o vývoji vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/desktop/hidpi/high-dpi-desktop-application-development-on-windows) .
+V .NET Framework 4,8 WPF přidává podporu pro sledování rozlišení DPI podle monitoru v2 a škálování ve smíšeném režimu. Další informace o vývoji vysokého rozlišení DPI najdete v tématu [vývoj desktopových aplikací s vysokým rozlišením v systému Windows](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows) .
 
 .NET Framework 4,8 vylepšuje podporu hostovaných HWND a model Windows Forms spolupráce v aplikacích WPF s vysokým rozlišením DPI na platformách, které podporují škálování DPI ve smíšeném režimu (od aktualizace Windows 10. dubna 2018). Když jsou hostované ovládací prvky HWND nebo model Windows Forms vytvořeny jako okna s rozlišením DPI ve smíšeném režimu pomocí volání [SetThreadDpiHostingBehavior](/windows/desktop/api/winuser/nf-winuser-setthreaddpihostingbehavior) a [SetThreadDpiAwarenessContext](/windows/desktop/api/winuser/nf-winuser-setthreaddpiawarenesscontext), mohou být hostovány v aplikaci WPF pro monitor v2 a mají velikost a správně škálovat. Takový hostovaný obsah se nevykresluje s nativním rozlišením DPI; operační systém místo toho škáluje hostovaný obsah na příslušnou velikost. Podpora režimu sledování DPI v rámci monitoru v2 také umožňuje hostování ovládacích prvků WPF (tj. nadřazených) v nativním okně aplikace s vysokým rozlišením DPI.
 
@@ -211,7 +211,7 @@ Modul runtime v .NET Framework 4,8 obsahuje následující změny a vylepšení:
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
 
-Dalším cílem .NET Framework 4.7.2 je lepší přístupnost, která umožňuje aplikaci poskytovat vhodné prostředí pro uživatele technologie usnadnění. Informace o vylepšeních usnadnění v .NET Framework 4.7.2 najdete v tématu [co je nového v](whats-new-in-accessibility.md)přístupnosti v .NET Framework.
+Dalším cílem .NET Framework 4.7.2 je lepší přístupnost, která umožňuje aplikaci poskytovat vhodné prostředí pro uživatele technologie usnadnění. Informace o vylepšeních usnadnění v .NET Framework 4.7.2 najdete v tématu [co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md).
 
 <a name="core-472" />
 
@@ -394,9 +394,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 [Vkládání závislostí (di)](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) odděluje objekty a jejich závislosti tak, že kód objektu již není nutné změnit pouze proto, že došlo ke změně závislosti. Při vývoji aplikací ASP.NET, které cílí na .NET Framework 4.7.2, můžete:
 
-- Použijte metodu setter založenou na rozhraních a na bázi konstruktoru v obslužných [rutinách a modulech](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [instancích stránky](xref:System.Web.UI.Page)a [uživatelských ovládacích prvcích](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektů webové aplikace ASP.NET.
+- Použijte metodu setter založenou na rozhraních a na bázi konstruktoru v [obslužných rutinách a modulech](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [instancích stránky](xref:System.Web.UI.Page)a [uživatelských ovládacích prvcích](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektů webové aplikace ASP.NET.
 
-- Používejte vkládání na základě rozhraní a založených na rozhraních v [obslužných rutinách a modulech](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), instancích [stránky](xref:System.Web.UI.Page)a [uživatelských ovládacích prvcích](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektů webu ASP.NET.
+- Používejte vkládání na základě rozhraní a založených na rozhraních v [obslužných rutinách a modulech](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [instancích stránky](xref:System.Web.UI.Page)a [uživatelských ovládacích prvcích](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) projektů webu ASP.NET.
 
 - Připojte se k různým rozhraním injektáže pro vkládání závislostí.
 
@@ -597,7 +597,7 @@ V případě model Windows Forms aplikace není pro úspěšné nasazení ClickO
 - [Sítě](#net471)
 - [ASP.NET](#asp-net471)
 
-Navíc je hlavní fokus v .NET Framework 4.7.1 vylepšený přístupnost, což aplikaci umožňuje zajistit vhodné prostředí pro uživatele technologie usnadnění. Informace o vylepšeních usnadnění v .NET Framework 4.7.1 najdete v tématu [co je nového v](whats-new-in-accessibility.md)přístupnosti v .NET Framework.
+Navíc je hlavní fokus v .NET Framework 4.7.1 vylepšený přístupnost, což aplikaci umožňuje zajistit vhodné prostředí pro uživatele technologie usnadnění. Informace o vylepšeních usnadnění v .NET Framework 4.7.1 najdete v tématu [co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md).
 
 <a name="core471" />
 
@@ -1305,7 +1305,7 @@ Aby mohli uživatelé získat přístup k Always Encrypted chráněným pomocí 
 
 **Vylepšené <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> chování připojení pro AlwaysOn**
 
-SqlClient nyní automaticky poskytuje rychlejší připojení ke skupině dostupnosti AlwaysOn (AG). Transparentně detekuje, jestli se vaše aplikace připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti, a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musela aplikace nastavit připojovací řetězec tak, aby obsahovala `"MultisubnetFailover=true"` , aby označovala, že se připojil ke skupině dostupnosti AlwaysOn. Bez nastavení klíčového slova Connection `true`na se může u aplikace při připojování ke skupině dostupnosti AlwaysOn vyskytnout časový limit. V této verzi nemusí aplikace nastavovat <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> `true` již. Další informace o podpoře SqlClient pro skupiny dostupnosti Always On najdete v článku [Podpora SqlClient pro vysokou dostupnost a zotavení po havárii](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
+SqlClient nyní automaticky poskytuje rychlejší připojení ke skupině dostupnosti AlwaysOn (AG). Transparentně detekuje, jestli se vaše aplikace připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti, a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musela aplikace nastavit připojovací řetězec tak, aby obsahovala `"MultisubnetFailover=true"` , aby označovala, že se připojil ke skupině dostupnosti AlwaysOn. Bez nastavení klíčového slova Connection `true`na se může u aplikace při připojování ke skupině dostupnosti AlwaysOn vyskytnout časový limit. V této *verzi nemusí aplikace* nastavovat <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> `true` již. Další informace o podpoře SqlClient pro skupiny dostupnosti Always On najdete v článku [Podpora SqlClient pro vysokou dostupnost a zotavení po havárii](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
 <a name="WPF461" />
 
@@ -1453,7 +1453,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Algoritmy hash s náhodným řetězcem**
 
-    .NET Framework 4,5 představil [algoritmus hash](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md)s náhodným řetězcem. ASP.NET ho ale nepodporuje, protože některé funkce ASP.NET jsou závislé na stabilním kódu hash. V .NET Framework 4,6 jsou nyní podporovány algoritmy hash s náhodným řetězcem. Pokud chcete tuto funkci povolit, použijte `aspnet:UseRandomizedStringHashAlgorithm` nastavení konfigurace.
+    .NET Framework 4,5 představil [algoritmus hash s náhodným řetězcem](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md). ASP.NET ho ale nepodporuje, protože některé funkce ASP.NET jsou závislé na stabilním kódu hash. V .NET Framework 4,6 jsou nyní podporovány algoritmy hash s náhodným řetězcem. Pokud chcete tuto funkci povolit, použijte `aspnet:UseRandomizedStringHashAlgorithm` nastavení konfigurace.
 
     ```xml
     <appSettings>
