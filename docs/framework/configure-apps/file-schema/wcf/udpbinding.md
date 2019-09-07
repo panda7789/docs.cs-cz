@@ -2,19 +2,20 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: 743eaa281fef233ddc2e8af5cee890bd10ce0963
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9ee6d4b5e623248499adc43bb176d96bfc9cd1a8
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941190"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399253"
 ---
 # <a name="udpbinding"></a>\<udpBinding >
 Prvek konfigurace, který slouží ke konfiguraci <xref:System.ServiceModel.UdpBinding> vazby.  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<udpBinding >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<udpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -2,23 +2,24 @@
 title: <authentication><clientCertificate> elementu
 ms.date: 03/30/2017
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
-ms.openlocfilehash: 4a7fee3bd8441a9612e954160397cc56aca163d1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 99084f6b7afbdd8586ee706cd6ec44b349d81ff2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926512"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398269"
 ---
 # <a name="authentication-of-clientcertificate-element"></a>\<ověřování > \<elementu ClientCertificate >
 Určuje chování ověřování pro klientské certifikáty používané službou.  
   
- \<system.ServiceModel>  
-\<> chování  
-\<serviceBehaviors>  
-\<> chování  
-\<serviceCredentials>  
-\<clientCertificate>  
-\<> ověřování  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCredentials >** ](servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> clientCertificate**](clientcertificate-of-servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> ověřování**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -79,7 +80,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
 |[\<clientCertificate>](clientcertificate-of-servicecredentials.md)|Definuje certifikát X. 509, který se používá k ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<authentication>` Prvek odpovídá<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídě. Umožňuje vám přizpůsobit způsob ověřování klientů. Můžete nastavit `certificateValidationMode` atribut na `None`, `ChainTrust` `PeerOrChainTrust` ,,`Custom`nebo. `PeerTrust` Ve výchozím nastavení je úroveň nastavena na `ChainTrust`hodnotu, která určuje, že každý certifikát musí být nalezen v hierarchii certifikátů končících kořenovou *autoritou* v horní části řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu na `PeerOrChainTrust`, což znamená, že jsou přijímány certifikáty vystavené svým držitelem (vztah důvěryhodnosti peering) i certifikáty, které jsou v důvěryhodném řetězci. Tato hodnota se používá při vývoji a ladění klientů a služeb vzhledem k tomu, že certifikáty vystavené svým držitelem nemusejí být zakoupeny důvěryhodnou autoritou. Při nasazování klienta použijte `ChainTrust` místo něj hodnotu.  
+ `<authentication>` Prvek odpovídá<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> třídě. Umožňuje vám přizpůsobit způsob ověřování klientů. Můžete nastavit `certificateValidationMode` atribut na `None`, `ChainTrust` `PeerOrChainTrust` ,,`Custom`nebo. `PeerTrust` Ve výchozím nastavení je úroveň nastavena na `ChainTrust`hodnotu, která určuje, že každý certifikát musí být nalezen v hierarchii certifikátů končících *kořenovou autoritou* v horní části řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu na `PeerOrChainTrust`, což znamená, že jsou přijímány certifikáty vystavené svým držitelem (vztah důvěryhodnosti peering) i certifikáty, které jsou v důvěryhodném řetězci. Tato hodnota se používá při vývoji a ladění klientů a služeb vzhledem k tomu, že certifikáty vystavené svým držitelem nemusejí být zakoupeny důvěryhodnou autoritou. Při nasazování klienta použijte `ChainTrust` místo něj hodnotu.  
   
  Můžete také nastavit hodnotu na `Custom`. Pokud je nastaveno na `Custom` hodnotu, je nutné také `customCertificateValidatorType` nastavit atribut na sestavení a typ použitý k ověření certifikátu. Chcete-li vytvořit vlastní validátor, je nutné dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy. Další informace najdete v tématu [jak: Vytvořte službu, která využívá vlastní validátor](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)certifikátů.  
   

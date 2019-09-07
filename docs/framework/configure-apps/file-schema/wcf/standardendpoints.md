@@ -2,17 +2,19 @@
 title: <standardEndpoints>
 ms.date: 03/30/2017
 ms.assetid: d62153d7-a6e6-462a-a784-cca61e9c2ba1
-ms.openlocfilehash: f40353d36464c2e759bf2058b244cb854b19806c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 76a5303650c4e2b2887d29f511d3088c78b58fe2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930792"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399517"
 ---
 # <a name="standardendpoints"></a>\<Oddílu StandardEndpoints >
 Tento konfigurační oddíl umožňuje definovat kolekci standardních koncových bodů, které jsou opakovaně použitelnými koncovými body. Standardní koncový bod bude mít jednu nebo víc atributů adresa, vazba a kontraktu nastavenou na pevnou hodnotu. Například ve koncovém bodě zjišťování je smlouva opravena. Pomocí standardních koncových bodů můžete také rozšířenit koncový bod služby s novými vlastnostmi podobnými definování vlastních vazeb.  
   
- \<system.ServiceModel>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Oddílu StandardEndpoints >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +41,7 @@ Tento konfigurační oddíl umožňuje definovat kolekci standardních koncovýc
 |[\<mexEndpoint>](mexendpoint.md)|Definuje standardní koncový bod s pevnou smlouvou IMetadataExchange. Vzhledem k tomu, že všechny koncové body výměny metadat určují jako kontrakt IMetadataExchange, můžete použít tento standardní bod, místo abyste ho nadefinovali sami.|  
 |[\<udpAnnouncementEndpoint>](udpannouncementendpoint.md)|Definuje standardní koncový bod, který používají služby k posílání zpráv oznámení přes vazbu UDP. Má pevnou smlouvu a podporuje dvě verze zjišťování. Navíc má pevnou vazbu UDP a výchozí hodnotu adresy uvedené ve specifikacích WS-Discovery (WS-Discovery duben 2005 nebo WS-Discovery verze 1,1). Můžete zadat adresu vícesměrového vysílání, která se má použít pro odesílání a příjem zpráv s oznámením.|  
 |[\<udpDiscoveryEndpoint>](udpdiscoveryendpoint.md)|Definuje standardní koncový bod, který je předem nakonfigurovaný pro operace zjišťování prostřednictvím vazby vícesměrového vysílání UDP. Tento koncový bod má pevný kontrakt a podporuje dvě verze protokolu WS-Discovery. Kromě toho má pevnou vazbu UDP a výchozí adresu uvedenou ve specifikacích WS-Discovery (WS-Discovery duben 2005 nebo WS-Discovery V 1.1).|  
-|[\<webHttpEndpoint>](webhttpendpoint.md)|Definuje standardní koncový bod s pevnou [ \<](webhttp.md) [ \<vazbou WebHttpBinding >](webhttpbinding.md) , která automaticky přidá chování >u protokolu WebHttp. Tento koncový bod použijte při psaní služby REST.|  
+|[\<webHttpEndpoint>](webhttpendpoint.md)|Definuje standardní koncový bod s pevnou [ \<vazbou WebHttpBinding >](webhttpbinding.md) [ \<, která automaticky přidá chování >u protokolu WebHttp](webhttp.md) . Tento koncový bod použijte při psaní služby REST.|  
 |[\<webScriptEndpoint>](webscriptendpoint.md)|Definuje standardní koncový bod s pevnou [ \<vazbou WebHttpBinding >](webhttpbinding.md) [ \<](enablewebscript.md) , který automaticky přidá chování enableWebScript >. Tento koncový bod použijte při psaní služby, která se volá z aplikace ASP.NET AJAX.|  
 |[\<workflowControlEndpoint>](workflowcontrolendpoint.md)|Definuje standardní koncový bod pro řízení spouštění instancí pracovního postupu (vytvořit, spustit, pozastavit, ukončit atd.).|  
   

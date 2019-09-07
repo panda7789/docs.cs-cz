@@ -2,21 +2,22 @@
 title: <security> z <basicHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
-ms.openlocfilehash: f84f6c0f9988dd2d07377bf694286922db9d8364
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 00a933892376c2dc9771752beaf76d4994554968
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936806"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399885"
 ---
 # <a name="security-of-basichttpbinding"></a>\<> zabezpečení > \<BasicHttpBinding
 Definuje možnosti [ \<zabezpečení BasicHttpBinding >](basichttpbinding.md).  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<basicHttpBinding>  
-\<> vazby  
-\<> zabezpečení  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<basicHttpBinding >** ](basichttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
   
 ## <a name="syntax"></a>Syntaxe  
   

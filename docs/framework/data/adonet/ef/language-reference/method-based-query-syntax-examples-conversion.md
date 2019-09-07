@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 19f66872-d5ab-49f8-969f-e53f9632a13d
-ms.openlocfilehash: 5506c37ea4f313599f666014fd305a79f5cc7ffb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: a78588cb4bd09f8a8a8ce8ed4a60dd45fce1d386
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250238"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397484"
 ---
 # <a name="method-based-query-syntax-examples-conversion"></a>Příklady syntaxe dotazů založených na volání metody: Konverze
-Příklady v tomto tématu <xref:System.Linq.Enumerable.ToArray%2A>ukazují, <xref:System.Linq.Enumerable.ToDictionary%2A> jak používat metody a <xref:System.Linq.Enumerable.ToList%2A> k dotazování [modelu prodeje společnosti AdventureWorks](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazu založeného na metodách. Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
+Příklady v tomto tématu <xref:System.Linq.Enumerable.ToArray%2A>ukazují, <xref:System.Linq.Enumerable.ToDictionary%2A> jak používat metody a <xref:System.Linq.Enumerable.ToList%2A> k dotazování [modelu prodeje společnosti AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) pomocí syntaxe dotazu založeného na metodách. Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
   
  Příklady v tomto tématu používají následující `using` / `Imports` příkazy:  
   

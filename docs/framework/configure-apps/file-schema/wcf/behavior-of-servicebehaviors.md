@@ -2,12 +2,12 @@
 title: <behavior> z <serviceBehaviors>
 ms.date: 03/30/2017
 ms.assetid: 78fc0a08-55de-416a-ac12-a5e6ffc9a987
-ms.openlocfilehash: 8c847368934cc4cd8ccaab017ede00b7b8963897
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a17fac5c519f41588ef90383f024e645b809b49b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926405"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400611"
 ---
 # <a name="behavior-of-servicebehaviors"></a>\<chování > \<serviceBehaviors >
 `behavior` Element obsahuje nastavení pro chování služby kolekce. Každý chování je indexované podle jeho `name`. Služby se můžou propojit s každým chováním prostřednictvím tohoto názvu `behaviorConfiguration` pomocí atributu [ \<> elementu koncového bodu](endpoint-element.md) . To umožňuje koncové body sdílení obvyklé chování konfigurace bez předefinování nastavení. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
@@ -15,10 +15,11 @@ ms.locfileid: "69926405"
 > [!NOTE]
 > Prvky chování specifické pro aktivity pracovních postupů systému Windows, jako [ \<](../windows-workflow-foundation/sendmessagechannelcache.md) je například prvek sendMessageChannelCache >, jsou popsány v [ \< \<části chování > stránky > serviceBehaviors](../windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md) .  
   
- \<system.ServiceModel>  
-\<> chování  
-\<serviceBehaviors>  
-\<> chování  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> chování**  
   
 ## <a name="syntax"></a>Syntaxe  
   

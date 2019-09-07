@@ -21,12 +21,12 @@ helpviewer_keywords:
 - If function [Visual Basic], and If...Then...Else statements
 - Else statement [Visual Basic]
 ms.assetid: 790068a2-1307-4e28-8a72-be5ebda099e9
-ms.openlocfilehash: e0b365afaa8cf7dff130cf01d2937be629e5f7a8
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: db81a1c41809b563d5f9d0777c3feb064c5e540b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400714"
 ---
 # <a name="ifthenelse-statement-visual-basic"></a>If...Then...Else – příkaz (Visual Basic)
 
@@ -34,7 +34,7 @@ Podmíněně spustí skupinu příkazů v závislosti na hodnotě výrazu.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 ' Multiline syntax:
 If condition [ Then ]
     [ statements ]
@@ -61,7 +61,7 @@ Tento článek obsahuje několik příkladů, které ilustrují použití `If`..
 `condition` \
 Povinný parametr. Vyjádření. Je nutné vyhodnotit na `True` nebo `False`, nebo na datový typ, který je implicitně převoditelný na `Boolean`.
 
-Pokud je výraz proměnnou s [možnou hodnotou null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` , která je vyhodnocena jako [Nothing](../../../visual-basic/language-reference/nothing.md), je podmínka považována `False` za, `Else` Pokud je výraz a je proveden blok.
+Pokud je výraz proměnnou s [možnou hodnotou null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` , která se vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), je `False`zpracována podmínka, jako by byl výraz, a `ElseIf` bloky jsou vyhodnoceny `Else` , pokud existují, nebo blok je provedeno, pokud existuje.
 
 `Then` \
 Vyžadované v syntaxi na jednom řádku; volitelné v syntaxi na více řádků.

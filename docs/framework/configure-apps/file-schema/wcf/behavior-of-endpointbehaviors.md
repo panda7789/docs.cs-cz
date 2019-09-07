@@ -2,20 +2,21 @@
 title: <behavior> z <endpointBehaviors>
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: f14e80798a9b088508f23d718c8b386286ad65a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 81c9ec7bd82fa0b947e438632b293ab9110067f5
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919846"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398243"
 ---
 # <a name="behavior-of-endpointbehaviors"></a>\<chování > \<endpointBehaviors >
 `behavior` Element obsahuje kolekci nastavení chování koncového bodu. Každý chování je indexované podle jeho `name`. Koncové body se můžou propojit s každým chováním prostřednictvím tohoto názvu. [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]Od, není nutné, aby vazby a chování měly název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).  
   
- \<system.ServiceModel>  
-\<> chování  
-\<endpointBehaviors>  
-\<> chování  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> chování**  
   
 ## <a name="syntax"></a>Syntaxe  
   

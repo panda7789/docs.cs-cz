@@ -2,18 +2,19 @@
 title: <diagnostics>
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-ms.openlocfilehash: 170cae5b328c86073c1d8e7710bb19e98ab5688c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2749bc6c66d491a8a160d98b508fb43aa027b806
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925879"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398042"
 ---
 # <a name="diagnostics"></a>\<> diagnostiky
 `diagnostics` Prvek definuje nastavení, které může být použito správcem pro kontrolu a kontrolu v době běhu.  
   
- \<system.ServiceModel>  
-\<> diagnostiky  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> diagnostiky**  
   
 ## <a name="syntax"></a>Syntaxe  
   

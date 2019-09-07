@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 505491fa-5920-43ce-8a96-c25389e125d8
-ms.openlocfilehash: 231fe6072d9a9a561aa91d3cb52fa6963f2d72dd
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3a9203a51bbb61b32300919656084d7d95ddfa79
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250068"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397312"
 ---
 # <a name="method-based-query-syntax-examples-projection"></a>Příklady syntaxe dotazů založených na volání metody: Projekce
-Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> metody a <xref:System.Linq.Enumerable.SelectMany%2A> k dotazování [modelu prodeje společnosti AdventureWorks](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazu založeného na metodách. Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
+Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> metody a <xref:System.Linq.Enumerable.SelectMany%2A> k dotazování [modelu prodeje společnosti AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) pomocí syntaxe dotazu založeného na metodách. Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
   
  Příklady v tomto tématu používají následující `using` / `Imports` příkazy:  
   

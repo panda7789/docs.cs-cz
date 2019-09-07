@@ -2,21 +2,22 @@
 title: <security> z <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: 1bbc3a460ce707e71b72a469af2e03acd8dc79e5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c780b157d0d566e24c6826c253401a51fbfab69d
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936688"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399844"
 ---
 # <a name="security-of-netmsmqbinding"></a>\<> zabezpečení > \<NetMsmqBinding
 Definuje nastavení zabezpečení pro vazbu služby MSMQ. Určuje, zda je povoleno přenosu nebo zabezpečení SOAP, a pokud ano, jaký režim ověřování a úrovně ochrany se používají.  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<netMsmqBinding>  
-\<> vazby  
-\<> zabezpečení  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netMsmqBinding >** ](netmsmqbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
   
 ## <a name="syntax"></a>Syntaxe  
   

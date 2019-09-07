@@ -2,21 +2,22 @@
 title: <serviceAuthorization> – element
 ms.date: 03/30/2017
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-ms.openlocfilehash: b73e2049afb460bf9be8b76ee272ba0547b61453
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b636b7006900ecff1be553cf32105df7cea7e800
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936401"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399692"
 ---
 # <a name="serviceauthorization-element"></a>\<serviceAuthorization – element >
 Určuje nastavení, které autorizují přístup k operacím služby.  
   
- \<system.ServiceModel>  
-\<> chování  
-\<serviceBehaviors>  
-\<> chování  
-\<serviceAuthorization>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceAuthorization >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -93,7 +94,7 @@ Určuje nastavení, které autorizují přístup k operacím služby.
 </behaviors>
 ```  
   
- Podrobný příklad použití tohoto prvku konfigurace najdete v tématu [autorizace přístupu k operacím služby](../../../wcf/samples/authorizing-access-to-service-operations.md) a zásadám [autorizace](../../../wcf/samples/authorization-policy.md).  
+ Podrobný příklad použití tohoto prvku konfigurace najdete v tématu [autorizace přístupu k operacím služby](../../../wcf/samples/authorizing-access-to-service-operations.md) a [zásadám autorizace](../../../wcf/samples/authorization-policy.md).  
   
 ## <a name="see-also"></a>Viz také:
 

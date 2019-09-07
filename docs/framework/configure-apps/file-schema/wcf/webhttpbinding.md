@@ -2,19 +2,20 @@
 title: <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-ms.openlocfilehash: 70c99c29d4febae51b9fed54d37d681ff922f9f6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ba4780cb73011fd7841fa41e1fac8d467f9f6a2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940492"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399169"
 ---
 # <a name="webhttpbinding"></a>\<webHttpBinding>
 Definuje prvek vazby, který se používá ke konfiguraci koncových bodů pro webové služby Windows Communication Foundation (WCF), které reagují na požadavky HTTP namísto zpráv SOAP.  
   
-\<system.ServiceModel>  
-\<> vazeb  
-\<webHttpBinding>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webHttpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

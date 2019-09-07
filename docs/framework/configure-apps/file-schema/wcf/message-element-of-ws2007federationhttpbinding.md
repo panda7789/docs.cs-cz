@@ -2,22 +2,23 @@
 title: <message>prvek elementu<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: 4340727026cb151f2efe813dfa005c1c5a1908be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b1128bda6068a1fe3d8f5bb5ac29cc349f023b5b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931627"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397853"
 ---
 # <a name="message-element-of-ws2007federationhttpbinding"></a>\<> prvku \<zprávy > WS2007FederationHttpBinding
 Definuje nastavení pro zabezpečení na úrovni zprávy pro [ \<element WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<ws2007FederationHttpBinding>  
-\<> vazby  
-\<> zabezpečení  
-\<> zprávy  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007FederationHttpBinding >** ](ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-element-of-ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
   
 ## <a name="syntax"></a>Syntaxe  
   

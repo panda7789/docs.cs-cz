@@ -2,18 +2,19 @@
 title: <net.pipe>
 ms.date: 03/30/2017
 ms.assetid: 6a0f0318-f8f6-466c-9fae-199d7274a82e
-ms.openlocfilehash: 7d868d84318db8c9fe188293154dc275060a3952
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dd984b2ab89060451b1b2d02c324e803766908ce
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933186"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397716"
 ---
 # <a name="netpipe"></a>\<> NET. pipe
 Určuje nastavení konfigurace pro aktivační službu pojmenovaného kanálu, která spravuje životnost připojení pojmenovaného kanálu a zpracovává požadavky na aktivaci přicházející přes pojmenované kanály.  
   
- \<system.serviceModel.activation>  
-\<> NET. pipe  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel. Activation >** ](system-servicemodel-activation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> NET. pipe**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -2,18 +2,19 @@
 title: <dataContractSerializer>z < System. Runtime. Serialization >
 ms.date: 03/30/2017
 ms.assetid: d9b3d625-be3f-4768-8e0d-1b7e6929f6a8
-ms.openlocfilehash: 380d9ba5b8407d78b5045fd34fcdf37c0818d6f9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eb556f533af1f99049382e9a2e34465f88d563db
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919353"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398082"
 ---
 # <a name="datacontractserializer-of-systemruntimeserialization"></a>\<dataContractSerializer> of \<system.runtime.serialization>
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- \<system.runtime.serialization>  
-\<dataContractSerializer>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. Runtime. Serialization – >** ](system-runtime-serialization.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> dataContractSerializer**  
   
 ## <a name="syntax"></a>Syntaxe  
   

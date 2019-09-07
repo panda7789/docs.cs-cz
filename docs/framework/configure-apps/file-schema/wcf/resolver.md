@@ -2,21 +2,22 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: e3a9ee00aab6ab48a1ba891565b63824e62b20fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fb974492dee6b2a4244cedc06e3f5e40334dd02a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934214"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399986"
 ---
 # <a name="resolver"></a>\<> překladače
 Určuje rovnocenný překladač, který se používá k překladu ID partnerské sítě na sadu adres partnerských uzlů, které představují několik uzlů, které se účastní sítě.  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<netPeerBinding>  
-\<> vazby  
-\<> překladače  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> překladače**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +50,7 @@ Určuje rovnocenný překladač, který se používá k překladu ID partnerské
 |[\<> vazby](../../../misc/binding.md)|Definuje všechny schopnosti [ \<vazby NetPeerTcpBinding >](netpeertcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Překladač názvů partnerů je služba zjišťování, kterou používají rovnocenné kanály k nalezení partnerských uzlů, které se účastní sdílené sítě. Používá se také k registraci uzlu se sdílenou sítí, mechanizmus, který je partnerský uzel známý a dostupný z partnerské sítě. Další informace o překladačích peer-to najdete [](../../../wcf/feature-details/peer-resolvers.md)v tématu věnovaném překladačům peer.  
+ Překladač názvů partnerů je služba zjišťování, kterou používají rovnocenné kanály k nalezení partnerských uzlů, které se účastní sdílené sítě. Používá se také k registraci uzlu se sdílenou sítí, mechanizmus, který je partnerský uzel známý a dostupný z partnerské sítě. Další informace o překladačích peer-to najdete v tématu věnovaném [překladačům](../../../wcf/feature-details/peer-resolvers.md)peer.  
   
 ## <a name="see-also"></a>Viz také:
 

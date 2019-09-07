@@ -2,21 +2,22 @@
 title: <security> z <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: bed7f4ce325e0d5e387e310ca15a3b72ac93f18e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b6a1c952b1ae65c8fb6f17237b5c15f3a8d4844a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399751"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<> zabezpečení > \<WSDualHttpBinding
 Definuje možnosti [ \<zabezpečení WSDualHttpBinding >](wsdualhttpbinding.md).  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<wsDualHttpBinding>  
-\<> vazby  
-\<> zabezpečení  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsDualHttpBinding >** ](wsdualhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zabezpečení**  
   
 ## <a name="syntax"></a>Syntaxe  
   

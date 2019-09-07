@@ -2,22 +2,23 @@
 title: <message> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 621abbde-590b-454d-90ac-68dc3c69c720
-ms.openlocfilehash: 30507e44997a2e0fcc43494332e87edb2cc37aa3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8cb8879d866eca3b1dafbd139de39373874dad14
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931447"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397792"
 ---
 # <a name="message-of-wshttpbinding"></a>\<> zpráv > \<WSHttpBinding
 Definuje nastavení pro zabezpečení [ \<WSHttpBinding >](wshttpbinding.md)na úrovni zprávy.  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<wsHttpBinding>  
-\<> vazby  
-\<> zabezpečení  
-\<> zprávy  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsHttpBinding >** ](wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> zabezpečení**](security-of-wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> zprávy**  
   
 ## <a name="syntax"></a>Syntaxe  
   

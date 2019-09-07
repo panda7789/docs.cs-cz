@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: c873961982cd1642d8b354e5d77b06105c0b7a1e
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: d6b2975b8e0338b121d00f5ec7f4ffb69d32ab6a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364304"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400738"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 
@@ -85,9 +85,6 @@ Tento základní příklad smyčky uzlů jazyka XAML pro načtení je transparen
 ### <a name="accessing-xaml-beyond-the-node-loop-concept"></a>Přístup k XAML za koncept smyčky uzlu
 
 Existují potenciálně jiné způsoby, jak pracovat s reprezentacemi XAML jinou než jako smyčka uzlu XAML. Například může existovat čtečka XAML, která může číst indexovaný uzel nebo konkrétně přistupuje k uzlům, a to `x:Name` `x:Uid`přímo pomocí, nebo prostřednictvím jiných identifikátorů. .NET Framework služby XAML neposkytuje úplnou implementaci, ale poskytuje navrhovaný vzor prostřednictvím služeb a typů podpory. Další informace naleznete v tématu <xref:System.Xaml.IXamlIndexingReader> a <xref:System.Xaml.XamlNodeList>.
-
-> [!TIP]
-> Microsoft taky vytvoří mimo IP síť, která je známá jako Microsoft XAML Toolkit. Tato verze mimo IP síť je stále ve fázích předběžného vydání. Nicméně pokud jste ochotni pracovat s předběžnými komponentami, Microsoft XAML Toolkit poskytuje některé zajímavé prostředky pro nástroje jazyka XAML a statickou analýzu jazyka XAML. Microsoft XAML Toolkit obsahuje rozhraní API XAML DOM, podporu analýzy FxCop a kontext schématu XAML pro Silverlight. Další informace najdete v tématu [Microsoft XAML Toolkit](https://code.msdn.microsoft.com/XAML).
 
 <a name="working_with_the_current_node"></a>
 

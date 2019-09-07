@@ -3,20 +3,21 @@ title: <tracking>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: fd9b50ed-98a1-4518-836d-e4e02c670822
-ms.openlocfilehash: 79230c65d8eb8c15cef5dce73698448ca7b1e003
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 28d73bb74c4a49052589040adc26194b1300668c
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947317"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397607"
 ---
 # <a name="tracking"></a>\<sledování >
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  
   
  Další informace o sledování pracovního postupu a jeho konfiguraci najdete v tématu [sledování pracovních postupů a trasování](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) a [Konfigurace sledování pracovního postupu](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
-\<system.serviceModel>  
-\<sledování >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<souborů. > ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<sledování >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

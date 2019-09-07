@@ -2,18 +2,21 @@
 title: <system.serviceModel.activation>
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
-ms.openlocfilehash: b29f7173b4d75ec9adff37449d3d56266f01a03c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e00bbad452398e7f8f4f50208da572986391fc9e
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61759158"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399480"
 ---
 # <a name="systemservicemodelactivation"></a>\<system.serviceModel.activation>
-Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe. Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config. Konkrétně obsahuje všechna nastavení celý počítač, musí být nakonfigurované.  
+Tento oddíl konfigurace představuje nastavení konfigurace pro nástroj SMSvcHost. exe. Konfigurační prvky lze konfigurovat v souboru SMSvcHost. exe. config. Konkrétně zahrnuje všechna nastavení celého počítače, která musí být nakonfigurovaná.  
+
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp; **\<System. serviceModel. Activation >**  
   
 ## <a name="sample-configuration-file"></a>Ukázkový konfigurační soubor  
- Následuje ukázkový soubor konfigurace (konfigurace SMSvcHost.exe.config), který je používán procesem naslouchací proces SMSvcHost.exe.  
+ Následuje ukázkový konfigurační soubor (SMSvcHost. exe. config), který je používán procesem naslouchacího procesu SMSvcHost. exe.  
   
 ```xml  
 <configuration>

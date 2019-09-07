@@ -2,19 +2,21 @@
 title: <netHttpsBinding>
 ms.date: 03/30/2017
 ms.assetid: ff122116-6042-4792-9f21-275b4f97a105
-ms.openlocfilehash: 7f4bde18876c5e65adf3da100f180b9b18892d98
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cca1a0fb3857973634862ac9757e66251eedb891
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933105"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400206"
 ---
 # <a name="nethttpsbinding"></a>\<netHttpsBinding>
 Představuje vazbu, kterou může služba Windows Communication Foundation (WCF) použít ke konfiguraci a zpřístupnění koncových bodů, které mohou komunikovat přes protokol HTTPS. Při použití se duplexní smlouvou se použijí webové sokety, jinak se bude používat protokol HTTPS.  
   
- Kořenový element  
-Další element  
-  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<netHttpsBinding >**  
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

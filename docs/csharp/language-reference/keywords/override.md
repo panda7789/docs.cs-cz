@@ -1,5 +1,5 @@
 ---
-title: Modifikátor - přepsat C# odkaz
+title: přepis – modifikátor C# – referenční informace
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,38 +8,38 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: cedce26373c49d33ee17602b621f71ef6732d145
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: bbdbcaf466e0b4dca4b78902ca9e7a49b02ac718
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401548"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70394239"
 ---
 # <a name="override-c-reference"></a>override (Referenční dokumentace jazyka C#)
 
-`override` Modifikátor je potřeba rozšířit nebo upravit abstraktní nebo virtuální provádění zděděné metody, vlastnosti, indexeru nebo události.
+`override` Modifikátor je vyžadován pro rozšiřování nebo úpravu abstraktní nebo virtuální implementace zděděné metody, vlastnosti, indexeru nebo události.
 
 ## <a name="example"></a>Příklad
 
-V tomto příkladu `Square` třída musí poskytovat implementaci přepsané `Area` protože `Area` se dědí z abstraktní `ShapesClass`:
+V tomto příkladu `Square` třída musí poskytovat přepsanou implementaci, `GetArea` protože `GetArea` je zděděna z abstraktní `Shape` třídy:
 
 [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
 
-`override` Metody poskytuje novou implementaci člena, který je zděděn ze základní třídy. Metoda, která je přepsána `override` prohlášení je označován jako přepsané základní metodě. Přepsané základní metoda musí mít stejný podpis jako `override` metody. Informace o dědičnosti, naleznete v tématu [dědičnosti](../../programming-guide/classes-and-structs/inheritance.md).
+`override` Metoda poskytuje novou implementaci člena, který je zděděn ze základní třídy. Metoda, která je přepsána `override` deklarací, je označována jako přepsaná základní metoda. Přepsaná základní metoda musí mít stejnou signaturu jako `override` metoda. Informace o dědičnosti naleznete v tématu [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md).
 
-Nevirtuální nebo statické metody nelze přepsat. Přepsané základní metoda musí být `virtual`, `abstract`, nebo `override`.
+Nemůžete přepsat nevirtuální nebo statickou metodu. Přepsaná základní metoda musí být `virtual`, `abstract`nebo `override`.
 
-`override` Deklarace nemůže změnit přístupnost `virtual` metody. Obě `override` metoda a `virtual` metoda musí mít stejný [úrovně modifikátor přístupu](access-modifiers.md).
+Deklarace nemůže změnit přístupnost `virtual` metody. `override` Metoda i metoda musí mít stejný [Modifikátor úrovně přístupu.](access-modifiers.md) `override` `virtual`
 
-Nelze použít `new`, `static`, nebo `virtual` modifikátory upravit `override` metody.
+Nemůžete použít `new`modifikátory, `virtual` `static`nebo pro úpravu `override` metody.
 
-Přepsání deklarace vlastnost musíte zadat přesně stejné modifikátor přístupu, typ a název jako zděděné vlastnosti a musí být přepsané vlastnosti `virtual`, `abstract`, nebo `override`.
+Přepisující deklaraci vlastnosti musí jako zděděné vlastnosti zadat přesně stejný modifikátor přístupu, typ a název a přepsanou vlastnost musí být `virtual`, `abstract`nebo `override`.
 
-Další informace o tom, jak používat `override` – klíčové slovo, naleznete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [znalost, kdy použít nová klíčová slova Override a](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
+Další informace o použití `override` klíčového slova naleznete v tématu [Správa verzí pomocí klíčových slov override a New](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a znalost, [kdy použít klíčová slova override a New](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad definuje základní třídu s názvem `Employee`a odvozená třída s názvem `SalesEmployee`. `SalesEmployee` Třída zahrnuje další pole, `salesbonus`a přepíše metodu `CalculatePay` aby vzít v úvahu.
+Tento příklad definuje základní třídu s názvem `Employee`a odvozenou třídu s názvem `SalesEmployee`. Třída obsahuje pole navíc, a přepisuje metodu `CalculatePay` , aby ji bylo možné vzít v úvahu. `salesbonus` `SalesEmployee`
 
 [!code-csharp[csrefKeywordsModifiers#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#9)]
 
@@ -49,12 +49,12 @@ Tento příklad definuje základní třídu s názvem `Employee`a odvozená tř�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)
+- [C#Odkaz](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Dědičnost](../../programming-guide/classes-and-structs/inheritance.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory](modifiers.md)
 - [abstract](abstract.md)
 - [virtual](virtual.md)
-- [Nový (modifikátor)](new-modifier.md)
+- [New (modifikátor)](new-modifier.md)
 - [Polymorfismus](../../programming-guide/classes-and-structs/polymorphism.md)

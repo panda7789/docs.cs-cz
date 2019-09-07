@@ -2,22 +2,23 @@
 title: <parameter>
 ms.date: 03/30/2017
 ms.assetid: 0fb41e2d-64f7-44ab-993e-05892eac6d82
-ms.openlocfilehash: c3f2179835ad1232e115cad0decdd3d41bbdc160
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 07fa410109a7bd2fa315132c4737301698bb3a93
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932838"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400115"
 ---
 # <a name="parameter"></a>\<> parametru
 Určuje obecný parametr, je-li deklarovaný typ obecný typ.  
   
- \<system.runtime.serialization>  
-\<dataContractSerializer>  
-\<declaredTypes – element >  
-\<Přidat > element pro \<> declaredTypes  
-\<Třída KnownType – element >  
-\<parametr > element  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. Runtime. Serialization – >** ](system-runtime-serialization.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dataContractSerializer**](datacontractserializer.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<declaredTypes >** ](declaredtypes.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Přidat >** ](add-of-declaredtypes-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Třída KnownType >** ](knowntype.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> parametru**  
   
 ## <a name="syntax"></a>Syntaxe  
   

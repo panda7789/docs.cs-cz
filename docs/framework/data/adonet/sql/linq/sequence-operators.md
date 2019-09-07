@@ -2,26 +2,26 @@
 title: Operátory sekvence
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-ms.openlocfilehash: 96f36681c4933d3aa15547c00e003b6d9c18d704
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d975949d95c7cd0a4009ef9e988d3625a46defef
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398534"
 ---
 # <a name="sequence-operators"></a>Operátory sekvence
-Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více následujících vlastností:  
+Obecně řečeno, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více z následujících vlastností:  
   
 - Využijte výraz lambda s parametrem index.  
   
-- Spolehněte se na vlastnosti sekvenčních řádky, jako například <xref:System.Linq.Queryable.TakeWhile%2A>.  
+- Spoléhá se na vlastnosti sekvenčních řádků, jako je <xref:System.Linq.Queryable.TakeWhile%2A>například.  
   
-- Spoléhají na implementaci libovolného modulu CLR, jako je třeba <xref:System.Collections.Generic.IComparer%601>.  
+- Spoléhá se na libovolnou implementaci CLR, <xref:System.Collections.Generic.IComparer%601>jako je například.  
   
-|Příklady nepodporované|  
+|Příklady nepodporovaných|  
 |-----------------------------|  
 |<xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
-|<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
+|<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.TakeWhile%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.TakeWhile%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
@@ -42,8 +42,8 @@ Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.
 |<xref:System.Linq.Enumerable.Aggregate%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2C%60%601%2CSystem.Func%7B%60%601%2C%60%600%2C%60%601%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
-## <a name="differences-from-net"></a>Rozdíl oproti .NET  
- Všechny podporované pracovní operátory sekvence podle očekávání v modulu common language runtime (CLR) s výjimkou `Average`. `Average` Vrátí hodnotu stejného typu jako typ se byla, že v modulu CLR `Average` vždy vrátí buď <xref:System.Double> nebo <xref:System.Decimal>. Pokud source argument není explicitně přetypování na double nebo decimal nebo modulu pro výběr přetypování na double nebo decimal, výsledný SQL budou také mít takový převod a výsledkem bude podle očekávání.  
+## <a name="differences-from-net"></a>Rozdíly od .NET  
+ Všechny podporované operátory sekvence fungují podle očekávání v modulu CLR (Common Language Runtime) s výjimkou `Average`. `Average`vrací hodnotu stejného typu, který je typu průměrně, zatímco v modulu CLR `Average` vždy vrací <xref:System.Double> buď nebo <xref:System.Decimal>. Pokud je zdrojový argument explicitně převeden na typ Double/Decimal nebo se selektor přeskočí na hodnotu Double/Decimal, výsledný SQL také bude mít takový převod a výsledek bude podle očekávání.  
   
 ## <a name="see-also"></a>Viz také:
 

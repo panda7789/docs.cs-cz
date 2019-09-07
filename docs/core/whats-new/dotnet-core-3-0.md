@@ -6,24 +6,25 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 08/21/2019
-ms.openlocfilehash: f62afe79ec3ace98a3bd8997e20672bef81b89c4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.date: 09/05/2019
+ms.openlocfilehash: 2d18e7750e0c2e2a44028d1e906a8536e47d979d
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037839"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70394287"
 ---
-# <a name="whats-new-in-net-core-30-preview-8"></a>Co je nového v .NET Core 3,0 (Preview 8)
+# <a name="whats-new-in-net-core-30-preview-9"></a>Co je nového v .NET Core 3,0 (Preview 9)
 
-Tento článek popisuje, co je v .NET Core 3,0 (v Preview 8) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 (v Preview 9) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
-.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme použít [nejnovější verzi sady Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview)nebo Visual Studio Code s rozšířením OmniSharp.
+.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme používat [Visual Studio 2019 16,3 Preview 3](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pro Mac 8,3](https://docs.microsoft.com/visualstudio/mac/install-preview?view=vsmac-2019)nebo [Visual Studio Code](https://code.visualstudio.com/) s  **C# rozšířením**.
 
-[Stáhněte si a začněte s .NET Core 3,0 Preview 8](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
+[Stáhněte si a začněte používat .NET Core 3,0 Preview 9](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
 Další informace o jednotlivých vydaných verzích Preview najdete v následujících oznámeních:
 
+- [Oznámení .NET Core 3,0 Preview 9](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-9/)
 - [Oznámení .NET Core 3,0 Preview 8](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/)
 - [Oznámení .NET Core 3,0 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/)
 - [Oznámení .NET Core 3,0 Preview 6](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/)
@@ -35,9 +36,9 @@ Další informace o jednotlivých vydaných verzích Preview najdete v následuj
 
 ## <a name="production-supported-preview"></a>Verze Preview podporovaná v produkci
 
-.NET Core Preview 8 se považuje za produkčního, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v Preview 8, najdete v tématu [Preview 8 oznámení](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/).
+.NET Core Preview 9 se považuje za produkčního, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v Preview 9, najdete v [oznámení verze Preview 9](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-9/).
 
-Pokud používáte předchozí verzi Preview, musíte přejít na verzi Preview 8, abyste pokračovali v podpoře ".
+Pokud používáte předchozí verzi Preview, musíte přejít na verzi Preview 9, abyste pokračovali v používání možnosti "podpora živě".
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
@@ -94,7 +95,7 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ## <a name="net-platform-dependent-intrinsics"></a>Vnitřní objekty závislé na platformě .NET
 
-Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady instrukcí pro **manipulaci** . Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně.
+Byla přidána rozhraní API, která umožňují přístup k určitým pokynům pro procesor orientovaným na výkon, jako jsou **SIMD** nebo sady **instrukcí pro manipulaci** . Tyto pokyny vám pomůžou dosáhnout výrazného zlepšení výkonu v některých scénářích, jako je efektivní zpracování dat paralelně.
 
 V případě potřeby se pomocí těchto pokynů Vylepšete knihovny .NET, aby se zlepšil výkon.
 
@@ -240,7 +241,7 @@ U globálních i místních nástrojů se vyžaduje kompatibilní verze modulu r
 - Proměnná prostředí:`DOTNET_ROLL_FORWARD`
 - Argument příkazového řádku:`--roll-forward`
 
-Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je výchozí hodnota podverze.
+Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno, je výchozí hodnota **podverze** .
 
 - **LatestPatch**\
 Vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.
@@ -434,7 +435,7 @@ Zde je příklad deserializace řetězce JSON na objekt. Můžete použít řet�
 
 ### <a name="windows-native-interop"></a>Nativní spolupráce Windows
 
-Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání**nespravovaného voláním .net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
+Systém Windows nabízí bohatě nativní rozhraní API ve formě plochých rozhraní API jazyka C, COM a WinRT. I když .NET Core podporuje **volání nespravovaného voláním**.net Core 3,0, přidává možnost **vytvořit rozhraní API modelu COM** a **aktivovat rozhraní API WinRT**. Příklad kódu naleznete v [ukázce v aplikaci Excel](https://github.com/dotnet/samples/tree/master/core/extensions/ExcelDemo).
 
 ## <a name="http2-support"></a>Podpora HTTP/2
 

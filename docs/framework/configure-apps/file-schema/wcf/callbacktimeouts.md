@@ -2,21 +2,22 @@
 title: <callbackTimeouts>
 ms.date: 03/30/2017
 ms.assetid: d7fcfc5f-6d35-491e-8fa6-2f964c1e792f
-ms.openlocfilehash: d57a888a19e684ac13632c1ab2476e304667c3e3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e1b40718638ded54e59743730159ea6e65a51a57
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919668"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398188"
 ---
 # <a name="callbacktimeouts"></a>\<callbackTimeouts>
 Určuje hodnotu časového limitu při toku transakcí ze serveru tak, aby client.in scénář kontraktu pro oboustranný zpětný pokus.  
   
- \<system.ServiceModel>  
-\<> chování  
-\<endpointBehaviors>  
-\<> chování  
-\<callbackTimeOuts >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<callbackTimeOuts >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

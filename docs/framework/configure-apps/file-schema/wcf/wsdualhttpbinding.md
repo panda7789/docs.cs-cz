@@ -4,19 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
-ms.openlocfilehash: 8fd758258a34fd63882c3d06b49cbe53bd2d105d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca841499f5a1584d5fd5c1bb763da4f3460c4f13
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915128"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399044"
 ---
 # <a name="wsdualhttpbinding"></a>\<wsDualHttpBinding>
 Definuje bezpečnou, spolehlivou a interoperabilní vazbu, která je vhodná pro duplexní kontrakty služeb nebo komunikace prostřednictvím zprostředkovatelů SOAP.  
   
- \<system.ServiceModel>  
-\<> vazeb  
-\<wsDualHttpBinding>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<wsDualHttpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

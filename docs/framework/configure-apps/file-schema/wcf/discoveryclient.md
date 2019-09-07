@@ -2,21 +2,22 @@
 title: <discoveryClient>
 ms.date: 03/30/2017
 ms.assetid: a78f74c3-1152-4149-ab29-3f12d316caeb
-ms.openlocfilehash: f9d7e3a4957d2a8f30724f0bfc04e58a57fc5f7d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5e586437e3b269d361c254744e820ee8e8c0ca0a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919276"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400400"
 ---
 # <a name="discoveryclient"></a>\<discoveryClient>
 Konfigurační prvek pro vytvoření vlastní vazby, která umožňuje klientské aplikaci automaticky vyhledat zjistitelnou službu a najít její adresu za běhu.  
   
-\<system.serviceModel>  
-\<> vazeb  
-\<customBinding >  
-\<> vazby  
-\<discoveryClient>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> vazeb**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> vazby**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Objektem DiscoveryClient zahozena >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
