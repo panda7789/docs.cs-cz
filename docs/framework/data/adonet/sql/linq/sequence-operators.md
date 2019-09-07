@@ -2,26 +2,26 @@
 title: Operátory sekvence
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-ms.openlocfilehash: 96f36681c4933d3aa15547c00e003b6d9c18d704
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d975949d95c7cd0a4009ef9e988d3625a46defef
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398534"
 ---
-# <a name="sequence-operators"></a><span data-ttu-id="d5c21-102">Operátory sekvence</span><span class="sxs-lookup"><span data-stu-id="d5c21-102">Sequence Operators</span></span>
-<span data-ttu-id="d5c21-103">Obecně řečeno [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více následujících vlastností:</span><span class="sxs-lookup"><span data-stu-id="d5c21-103">Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support sequence operators that have one or more of the following qualities:</span></span>  
+# <a name="sequence-operators"></a><span data-ttu-id="2476b-102">Operátory sekvence</span><span class="sxs-lookup"><span data-stu-id="2476b-102">Sequence Operators</span></span>
+<span data-ttu-id="2476b-103">Obecně řečeno, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje operátory sekvence, které mají jednu nebo více z následujících vlastností:</span><span class="sxs-lookup"><span data-stu-id="2476b-103">Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support sequence operators that have one or more of the following qualities:</span></span>  
   
-- <span data-ttu-id="d5c21-104">Využijte výraz lambda s parametrem index.</span><span class="sxs-lookup"><span data-stu-id="d5c21-104">Take a lambda with an index parameter.</span></span>  
+- <span data-ttu-id="2476b-104">Využijte výraz lambda s parametrem index.</span><span class="sxs-lookup"><span data-stu-id="2476b-104">Take a lambda with an index parameter.</span></span>  
   
-- <span data-ttu-id="d5c21-105">Spolehněte se na vlastnosti sekvenčních řádky, jako například <xref:System.Linq.Queryable.TakeWhile%2A>.</span><span class="sxs-lookup"><span data-stu-id="d5c21-105">Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.</span></span>  
+- <span data-ttu-id="2476b-105">Spoléhá se na vlastnosti sekvenčních řádků, jako je <xref:System.Linq.Queryable.TakeWhile%2A>například.</span><span class="sxs-lookup"><span data-stu-id="2476b-105">Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.</span></span>  
   
-- <span data-ttu-id="d5c21-106">Spoléhají na implementaci libovolného modulu CLR, jako je třeba <xref:System.Collections.Generic.IComparer%601>.</span><span class="sxs-lookup"><span data-stu-id="d5c21-106">Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.</span></span>  
+- <span data-ttu-id="2476b-106">Spoléhá se na libovolnou implementaci CLR, <xref:System.Collections.Generic.IComparer%601>jako je například.</span><span class="sxs-lookup"><span data-stu-id="2476b-106">Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.</span></span>  
   
-|<span data-ttu-id="d5c21-107">Příklady nepodporované</span><span class="sxs-lookup"><span data-stu-id="d5c21-107">Examples of Unsupported</span></span>|  
+|<span data-ttu-id="2476b-107">Příklady nepodporovaných</span><span class="sxs-lookup"><span data-stu-id="2476b-107">Examples of Unsupported</span></span>|  
 |-----------------------------|  
 |<xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
-|<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
+|<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.TakeWhile%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.TakeWhile%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
@@ -42,9 +42,9 @@ ms.locfileid: "64616118"
 |<xref:System.Linq.Enumerable.Aggregate%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2C%60%601%2CSystem.Func%7B%60%601%2C%60%600%2C%60%601%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
-## <a name="differences-from-net"></a><span data-ttu-id="d5c21-108">Rozdíl oproti .NET</span><span class="sxs-lookup"><span data-stu-id="d5c21-108">Differences from .NET</span></span>  
- <span data-ttu-id="d5c21-109">Všechny podporované pracovní operátory sekvence podle očekávání v modulu common language runtime (CLR) s výjimkou `Average`.</span><span class="sxs-lookup"><span data-stu-id="d5c21-109">All supported sequence operators work as expected in the common language runtime (CLR) except for `Average`.</span></span> <span data-ttu-id="d5c21-110">`Average` Vrátí hodnotu stejného typu jako typ se byla, že v modulu CLR `Average` vždy vrátí buď <xref:System.Double> nebo <xref:System.Decimal>.</span><span class="sxs-lookup"><span data-stu-id="d5c21-110">`Average` returns a value of the same type as the type being averaged, whereas in the CLR `Average` always returns either a <xref:System.Double> or a <xref:System.Decimal>.</span></span> <span data-ttu-id="d5c21-111">Pokud source argument není explicitně přetypování na double nebo decimal nebo modulu pro výběr přetypování na double nebo decimal, výsledný SQL budou také mít takový převod a výsledkem bude podle očekávání.</span><span class="sxs-lookup"><span data-stu-id="d5c21-111">If the source argument is explicitly cast to double / decimal or the selector casts to double / decimal, the resulting SQL will also have such a conversion and the result will be as expected.</span></span>  
+## <a name="differences-from-net"></a><span data-ttu-id="2476b-108">Rozdíly od .NET</span><span class="sxs-lookup"><span data-stu-id="2476b-108">Differences from .NET</span></span>  
+ <span data-ttu-id="2476b-109">Všechny podporované operátory sekvence fungují podle očekávání v modulu CLR (Common Language Runtime) s výjimkou `Average`.</span><span class="sxs-lookup"><span data-stu-id="2476b-109">All supported sequence operators work as expected in the common language runtime (CLR) except for `Average`.</span></span> <span data-ttu-id="2476b-110">`Average`vrací hodnotu stejného typu, který je typu průměrně, zatímco v modulu CLR `Average` vždy vrací <xref:System.Double> buď nebo <xref:System.Decimal>.</span><span class="sxs-lookup"><span data-stu-id="2476b-110">`Average` returns a value of the same type as the type being averaged, whereas in the CLR `Average` always returns either a <xref:System.Double> or a <xref:System.Decimal>.</span></span> <span data-ttu-id="2476b-111">Pokud je zdrojový argument explicitně převeden na typ Double/Decimal nebo se selektor přeskočí na hodnotu Double/Decimal, výsledný SQL také bude mít takový převod a výsledek bude podle očekávání.</span><span class="sxs-lookup"><span data-stu-id="2476b-111">If the source argument is explicitly cast to double / decimal or the selector casts to double / decimal, the resulting SQL will also have such a conversion and the result will be as expected.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d5c21-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d5c21-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2476b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2476b-112">See also</span></span>
 
-- [<span data-ttu-id="d5c21-113">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="d5c21-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [<span data-ttu-id="2476b-113">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="2476b-113">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

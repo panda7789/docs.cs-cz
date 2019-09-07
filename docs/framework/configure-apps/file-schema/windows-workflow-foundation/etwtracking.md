@@ -3,23 +3,24 @@ title: <etwTracking>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: cb45c82e-6ea1-4c4d-924c-118a25ae1f35
-ms.openlocfilehash: 653693fef92072cb1e6e23234359b765f0f18fc9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 094fbf95042c00287fb8dfcca28753cfe501a8d8
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940220"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398759"
 ---
-# <a name="etwtracking"></a><span data-ttu-id="7ea22-101">\<etwTracking></span><span class="sxs-lookup"><span data-stu-id="7ea22-101">\<etwTracking></span></span>
-<span data-ttu-id="7ea22-102">Chování služby, které umožňuje službě využívat sledování ETW pomocí <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span><span class="sxs-lookup"><span data-stu-id="7ea22-102">A service behavior that allows a service to utilize ETW tracking using an <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>  
+# <a name="etwtracking"></a><span data-ttu-id="2a7ed-101">\<etwTracking></span><span class="sxs-lookup"><span data-stu-id="2a7ed-101">\<etwTracking></span></span>
+<span data-ttu-id="2a7ed-102">Chování služby, které umožňuje službě využívat sledování ETW pomocí <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-102">A service behavior that allows a service to utilize ETW tracking using an <xref:System.Activities.Tracking.EtwTrackingParticipant>.</span></span>  
   
-<span data-ttu-id="7ea22-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="7ea22-103">\<system.ServiceModel></span></span>  
-<span data-ttu-id="7ea22-104">\<> chování</span><span class="sxs-lookup"><span data-stu-id="7ea22-104">\<behaviors></span></span>  
-<span data-ttu-id="7ea22-105">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="7ea22-105">\<serviceBehaviors></span></span>  
-<span data-ttu-id="7ea22-106">\<> chování</span><span class="sxs-lookup"><span data-stu-id="7ea22-106">\<behavior></span></span>  
-<span data-ttu-id="7ea22-107">\<etwTracking></span><span class="sxs-lookup"><span data-stu-id="7ea22-107">\<etwTracking></span></span>  
+<span data-ttu-id="2a7ed-103">[ **\<> Konfigurace**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="2a7ed-103">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="2a7ed-104">&nbsp;&nbsp;[ **\<souborů. > ServiceModel**](system-servicemodel-of-workflow.md)</span><span class="sxs-lookup"><span data-stu-id="2a7ed-104">&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)</span></span>\
+<span data-ttu-id="2a7ed-105">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors-of-workflow.md)</span><span class="sxs-lookup"><span data-stu-id="2a7ed-105">&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors-of-workflow.md)</span></span>\
+<span data-ttu-id="2a7ed-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors-of-workflow.md)</span><span class="sxs-lookup"><span data-stu-id="2a7ed-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors-of-workflow.md)</span></span>\
+<span data-ttu-id="2a7ed-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-servicebehaviors-of-workflow.md)</span><span class="sxs-lookup"><span data-stu-id="2a7ed-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors-of-workflow.md)</span></span>\
+<span data-ttu-id="2a7ed-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<etwTracking >**</span><span class="sxs-lookup"><span data-stu-id="2a7ed-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<etwTracking>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7ea22-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ea22-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2a7ed-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2a7ed-109">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -31,33 +32,33 @@ ms.locfileid: "69940220"
 </behaviors>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7ea22-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7ea22-109">Attributes and Elements</span></span>  
- <span data-ttu-id="7ea22-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7ea22-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2a7ed-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="2a7ed-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="2a7ed-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7ea22-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="7ea22-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="2a7ed-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="2a7ed-112">Attributes</span></span>  
   
-|<span data-ttu-id="7ea22-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="7ea22-112">Attribute</span></span>|<span data-ttu-id="7ea22-113">Popis</span><span class="sxs-lookup"><span data-stu-id="7ea22-113">Description</span></span>|  
+|<span data-ttu-id="2a7ed-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="2a7ed-113">Attribute</span></span>|<span data-ttu-id="2a7ed-114">Popis</span><span class="sxs-lookup"><span data-stu-id="2a7ed-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="7ea22-114">Název_profilu</span><span class="sxs-lookup"><span data-stu-id="7ea22-114">profileName</span></span>|<span data-ttu-id="7ea22-115">Řetězec, který určuje název profilu sledování přidružené k tomuto chování.</span><span class="sxs-lookup"><span data-stu-id="7ea22-115">A string that specifies the name of the tracking profile associated with this behavior.</span></span>|  
+|<span data-ttu-id="2a7ed-115">Název_profilu</span><span class="sxs-lookup"><span data-stu-id="2a7ed-115">profileName</span></span>|<span data-ttu-id="2a7ed-116">Řetězec, který určuje název profilu sledování přidružené k tomuto chování.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-116">A string that specifies the name of the tracking profile associated with this behavior.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="7ea22-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7ea22-116">Child Elements</span></span>  
- <span data-ttu-id="7ea22-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="7ea22-117">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="2a7ed-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="2a7ed-117">Child Elements</span></span>  
+ <span data-ttu-id="2a7ed-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="2a7ed-118">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="7ea22-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7ea22-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="2a7ed-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="2a7ed-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="7ea22-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="7ea22-119">Element</span></span>|<span data-ttu-id="7ea22-120">Popis</span><span class="sxs-lookup"><span data-stu-id="7ea22-120">Description</span></span>|  
+|<span data-ttu-id="2a7ed-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="2a7ed-120">Element</span></span>|<span data-ttu-id="2a7ed-121">Popis</span><span class="sxs-lookup"><span data-stu-id="2a7ed-121">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7ea22-121">\<chování > \<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="7ea22-121">\<behavior> of \<serviceBehaviors></span></span>](behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="7ea22-122">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="7ea22-122">Specifies a behavior element.</span></span>|  
+|[<span data-ttu-id="2a7ed-122">\<chování > \<serviceBehaviors ></span><span class="sxs-lookup"><span data-stu-id="2a7ed-122">\<behavior> of \<serviceBehaviors></span></span>](behavior-of-servicebehaviors-of-workflow.md)|<span data-ttu-id="2a7ed-123">Určuje chování element.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-123">Specifies a behavior element.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7ea22-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7ea22-123">Remarks</span></span>  
- <span data-ttu-id="7ea22-124">Po přidání do služby konfiguraci chování, tento element konfigurace konfigurovat účastníkem sledování na službě pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="7ea22-124">When added to the service’s behavior configuration, this configuration element configures a tracking participant on a workflow service.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2a7ed-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2a7ed-124">Remarks</span></span>  
+ <span data-ttu-id="2a7ed-125">Po přidání do služby konfiguraci chování, tento element konfigurace konfigurovat účastníkem sledování na službě pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-125">When added to the service’s behavior configuration, this configuration element configures a tracking participant on a workflow service.</span></span>  
   
- <span data-ttu-id="7ea22-125">Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média.</span><span class="sxs-lookup"><span data-stu-id="7ea22-125">Tracking participants are used to get the tracking data emitted from the workflow and store it into different mediums.</span></span> <span data-ttu-id="7ea22-126">Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.</span><span class="sxs-lookup"><span data-stu-id="7ea22-126">Likewise, any post processing on the tracking Records can also be done within the tracking participant.</span></span>  
+ <span data-ttu-id="2a7ed-126">Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-126">Tracking participants are used to get the tracking data emitted from the workflow and store it into different mediums.</span></span> <span data-ttu-id="2a7ed-127">Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-127">Likewise, any post processing on the tracking Records can also be done within the tracking participant.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7ea22-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="7ea22-127">Example</span></span>  
- <span data-ttu-id="7ea22-128">Následující příklad konfigurace ukazuje standardní účastník sledování ETW konfigurován v souboru Web.config.</span><span class="sxs-lookup"><span data-stu-id="7ea22-128">The following configuration example shows the standard ETW tracking participant being configured in the Web.config file.</span></span>  
+## <a name="example"></a><span data-ttu-id="2a7ed-128">Příklad</span><span class="sxs-lookup"><span data-stu-id="2a7ed-128">Example</span></span>  
+ <span data-ttu-id="2a7ed-129">Následující příklad konfigurace ukazuje standardní účastník sledování ETW konfigurován v souboru Web.config.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-129">The following configuration example shows the standard ETW tracking participant being configured in the Web.config file.</span></span>  
   
- <span data-ttu-id="7ea22-129">ID zprostředkovatele, které používá účastník sledování ETW k zápisu záznamů sledování do ETW, je definováno v  **\<části > diagnostiky** .</span><span class="sxs-lookup"><span data-stu-id="7ea22-129">The Provider Id that the ETW Tracking Participant uses for writing the Tracking Records to ETW is defined in the **\<diagnostics>** section.</span></span> <span data-ttu-id="7ea22-130">Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru.</span><span class="sxs-lookup"><span data-stu-id="7ea22-130">The tracking participant has a profile associated with it to specify the tracking records it has subscribed to.</span></span> <span data-ttu-id="7ea22-131">Tato definice je definována atributem  **\<** proformátu elementu add >.</span><span class="sxs-lookup"><span data-stu-id="7ea22-131">This is defined by the **profileName** attribute of the **\<add>** element.</span></span> <span data-ttu-id="7ea22-132">Po definování je účastník sledování přidán do  **\<chování služby etwTracking >** Service.</span><span class="sxs-lookup"><span data-stu-id="7ea22-132">Once these are defined, the Tracking Participant is added to the **\<etwTracking>** service behavior.</span></span> <span data-ttu-id="7ea22-133">Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.</span><span class="sxs-lookup"><span data-stu-id="7ea22-133">This will add the selected Tracking Participants to the Workflow instance’s extensions, so that they begin to receive the Tracking Records.</span></span>  
+ <span data-ttu-id="2a7ed-130">ID zprostředkovatele, které používá účastník sledování ETW k zápisu záznamů sledování do ETW, je definováno v  **\<části > diagnostiky** .</span><span class="sxs-lookup"><span data-stu-id="2a7ed-130">The Provider Id that the ETW Tracking Participant uses for writing the Tracking Records to ETW is defined in the **\<diagnostics>** section.</span></span> <span data-ttu-id="2a7ed-131">Účastník sledování má vlastní profil přidružen k určení záznamy sledování, které se přihlásí k odběru.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-131">The tracking participant has a profile associated with it to specify the tracking records it has subscribed to.</span></span> <span data-ttu-id="2a7ed-132">Tato definice je definována atributem  **\<** **proformátu** elementu add >.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-132">This is defined by the **profileName** attribute of the **\<add>** element.</span></span> <span data-ttu-id="2a7ed-133">Po definování je účastník sledování přidán do  **\<chování služby etwTracking >** Service.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-133">Once these are defined, the Tracking Participant is added to the **\<etwTracking>** service behavior.</span></span> <span data-ttu-id="2a7ed-134">Vybrané sledování účastníci bude přidán do instance pracovního postupu rozšíření, tak, aby začnou záznamy sledování.</span><span class="sxs-lookup"><span data-stu-id="2a7ed-134">This will add the selected Tracking Participants to the Workflow instance’s extensions, so that they begin to receive the Tracking Records.</span></span>  
   
 ```xml  
 <configuration>   
@@ -84,9 +85,9 @@ ms.locfileid: "69940220"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7ea22-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7ea22-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2a7ed-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2a7ed-135">See also</span></span>
 
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
-- [<span data-ttu-id="7ea22-135">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="7ea22-135">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [<span data-ttu-id="7ea22-136">Účastníci sledování</span><span class="sxs-lookup"><span data-stu-id="7ea22-136">Tracking Participants</span></span>](../../../windows-workflow-foundation/tracking-participants.md)
+- [<span data-ttu-id="2a7ed-136">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="2a7ed-136">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [<span data-ttu-id="2a7ed-137">Účastníci sledování</span><span class="sxs-lookup"><span data-stu-id="2a7ed-137">Tracking Participants</span></span>](../../../windows-workflow-foundation/tracking-participants.md)
