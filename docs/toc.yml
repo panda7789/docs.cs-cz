@@ -262,7 +262,7 @@
     - name: Docker
       items:
         - name: Úvod k .NET a Dockeru
-          href: core/docker/intro-net-docker.md
+          href: core/docker/introduction.md
         - name: Kontejnerizace aplikace .NET Core
           href: core/docker/build-container.md
         - name: Nástroje kontejneru v sadě Visual Studio
