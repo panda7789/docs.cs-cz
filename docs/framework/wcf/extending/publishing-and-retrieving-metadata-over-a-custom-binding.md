@@ -2,34 +2,34 @@
 title: Publikování a načítání metadat prostřednictvím vlastní vazby
 ms.date: 03/30/2017
 ms.assetid: 904e11b4-d90e-45c6-9ee5-c3472c90008c
-ms.openlocfilehash: 33777358262465e9ecbadd75df8abf066bafcd01
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 329daa39a14ed4c839ecbaa6cf9df036ceabee34
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991208"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795512"
 ---
 # <a name="publishing-and-retrieving-metadata-over-a-custom-binding"></a>Publikování a načítání metadat prostřednictvím vlastní vazby
-<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> Poskytuje podporu pro přidání koncový bod metadat služby. Tyto koncové body metadat můžou reagovat na požadavky HTTP GET na adresu URL, která má `?wsdl` querystring a k přenosu WS požadavky metody GET jak je definováno ve specifikaci WS-MetadataExchange (MEX). Koncové body MEX implementovat <xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> kontraktu.  
+<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> Poskytuje podporu pro přidání koncového bodu metadat ke službě. Tyto koncové body metadat mohou reagovat na požadavky HTTP GET na adrese URL, které `?wsdl` mají QueryString a požadavky GET na WS-Transfer, jak jsou definovány ve specifikaci WS-MetadataExchange (MEX). Koncové body MEX implementují <xref:System.ServiceModel.Description.IMetadataExchange?displayProperty=nameWithType> kontrakt.  
   
-## <a name="publishing-metadata-over-a-custom-binding"></a>Publikování metadat prostřednictvím vlastní vazby  
- Koncové body metadat GET protokolu HTTP a HTTPS GET koncové body metadat se povoluje nastavením <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A?displayProperty=nameWithType> vlastností `true`. Vazby pro tyto koncové body se nedá nakonfigurovat.  
+## <a name="publishing-metadata-over-a-custom-binding"></a>Publikování metadat přes vlastní vazbu  
+ Koncové body metadat HTTP GET a HTTPS GET metadat jsou povoleny nastavením <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A?displayProperty=nameWithType> vlastností nebo <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A?displayProperty=nameWithType> na `true`. Vazby pro tyto koncové body nelze konfigurovat.  
   
- <xref:System.ServiceModel.Description.IMetadataExchange> Smlouvy, ale je možné s jakýmkoli koncovým bodem, včetně těch, které používají vlastní vazby, protože <xref:System.ServiceModel.Description.IMetadataExchange> koncové body jsou stejné pro všechny ostatní služby Windows Communication Foundation (WCF) koncového bodu služby. Pokud víte, jak upravit konfiguraci vazeb poskytovaných systémem nebo víte, jak nakonfigurovat <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>, pak můžete nakonfigurovat vazby pro použití s <xref:System.ServiceModel.Description.IMetadataExchange> koncového bodu.  
+ Kontrakt se ale dá použít s jakýmkoli koncovým bodem, včetně těch, které používají vlastní vazby, protože <xref:System.ServiceModel.Description.IMetadataExchange> koncové body jsou identické s jakýmkoli jiným koncovým bodem služby Windows Communication Foundation (WCF). <xref:System.ServiceModel.Description.IMetadataExchange> Pokud víte, jak upravit konfiguraci vazby poskytnuté systémem, nebo víte <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>, jak nakonfigurovat, můžete nakonfigurovat vazbu pro použití <xref:System.ServiceModel.Description.IMetadataExchange> s koncovým bodem.  
   
 ## <a name="retrieving-metadata-over-a-custom-binding"></a>Načítání metadat prostřednictvím vlastní vazby  
- Metadata mohou být načteny z Get protokolu HTTP a HTTPS Get koncové body metadat pomocí standardní požadavků protokolu HTTP nebo HTTPS GET.  
+ Metadata lze načíst z koncových bodů metadat HTTP GET a HTTPS GET pomocí standardních požadavků GET HTTP nebo HTTPS.  
   
- K načtení metadat z koncových bodů metadat MEX můžete obvykle použít jednu z standardní vazby MEX podporuje WCF. Další informace naleznete v tématu <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Typu a nástroje Svcutil.exe automaticky vybrat jeden z těchto standardních MEX vazeb na základě adresy koncového bodu Zadaná metadata.  
+ Pokud chcete načíst metadata z koncového bodu metadat MEX, můžete obecně použít jednu ze standardních vazeb MEX podporovaných službou WCF. Další informace naleznete v tématu <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> Typ a nástroj Svcutil. exe automaticky vybere jednu z těchto standardních vazeb MEX založenou na adrese zadaného koncového bodu metadat.  
   
- Pokud koncový bod metadat MEX používá jinou vazbou než standardní vazby MEX, můžete nakonfigurovat vazby používá <xref:System.ServiceModel.Description.MetadataExchangeClient> pomocí kódu nebo za poskytování <xref:System.ServiceModel.Description.IMetadataExchange> konfigurace koncového bodu klienta. Nástroje Svcutil.exe automaticky načte z konfiguračního souboru <xref:System.ServiceModel.Description.IMetadataExchange> klienta konfigurace koncového bodu, který má stejný název jako schéma identifikátoru URI pro adresu koncového bodu metadat.  
+ Pokud koncový bod metadat MEX používá jinou vazbu než jednu ze standardních vazeb MEX, můžete nakonfigurovat vazbu používanou <xref:System.ServiceModel.Description.MetadataExchangeClient> pomocí kódu nebo <xref:System.ServiceModel.Description.IMetadataExchange> poskytnutím konfigurace koncového bodu klienta. Nástroj Svcutil. exe automaticky načte z konfiguračního souboru <xref:System.ServiceModel.Description.IMetadataExchange> konfiguraci koncového bodu klienta, která má stejný název jako schéma identifikátoru URI pro adresu koncového bodu metadat.  
   
 ## <a name="security"></a>Zabezpečení  
- Při publikování metadat prostřednictvím vlastní vazby, ujistěte se, že vazba poskytuje podporu zabezpečení, kterou vyžaduje vaše metadata. Například, zpřístupnění informací zabránit a zajistit váš klient má oprávnění získat metadata, můžete nastavit metadata a vaše aplikace lépe zabezpečit tím, že nakonfigurujete vaše <xref:System.ServiceModel.Description.IMetadataExchange> koncový bod tak, aby vyžadovala ověřování a šifrování. Ukázka [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukazuje tento scénář.  
+ Když publikujete metadata přes vlastní vazbu, zajistěte, aby vazba poskytovala podporu zabezpečení, kterou vaše metadata vyžaduje. Pokud například chcete zabránit vyzrazení informací a zajistit, aby měl váš klient právo získat metadata, můžete svá metadata a aplikace lépe zabezpečit tím, že nakonfigurujete <xref:System.ServiceModel.Description.IMetadataExchange> koncový bod tak, aby vyžadoval ověřování a šifrování. Tento scénář ukazuje ukázkový [Vlastní zabezpečený koncový bod metadat](../samples/custom-secure-metadata-endpoint.md) .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
-- [Vazby WS-MetadataExchange](../../../../docs/framework/wcf/extending/ws-metadataexchange-bindings.md)
-- [Postupy: Konfigurace vlastního protokolu WS-Metadata Exchange vazby](../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
-- [Postupy: Načítání metadat přes vazbu jiného typu než MEX](../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)
+- [Zabezpečení služeb](../securing-services.md)
+- [Vazby WS-MetadataExchange](ws-metadataexchange-bindings.md)
+- [Postupy: Konfigurace vlastní vazby WS-Metadata Exchange](how-to-configure-a-custom-ws-metadata-exchange-binding.md)
+- [Postupy: Načtení metadat přes vazbu, která není MEX](how-to-retrieve-metadata-over-a-non-mex-binding.md)

@@ -2,12 +2,12 @@
 title: Použití XML v datové sadě
 ms.date: 03/30/2017
 ms.assetid: 35138159-e199-49ec-baf7-1ec6777e171e
-ms.openlocfilehash: ba68f0fbe84a9877596ddfefd56f71a5889cf8de
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: ca04f524685e080be6af12a4df6eda585a908683
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203138"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784251"
 ---
 # <a name="using-xml-in-a-dataset"></a>Použití XML v datové sadě
 Pomocí ADO.NET můžete vyplnit <xref:System.Data.DataSet> datový proud XML nebo dokument. Datový proud XML nebo dokument můžete použít k poskytnutí <xref:System.Data.DataSet> dat, informací o schématu nebo obojího. Informace poskytnuté z datového proudu XML nebo dokumentu lze kombinovat se stávajícími informacemi o schématu, které <xref:System.Data.DataSet>již existují v nástroji.  
@@ -49,4 +49,4 @@ Pomocí ADO.NET můžete vyplnit <xref:System.Data.DataSet> datový proud XML ne
 ## <a name="see-also"></a>Viz také:
 
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

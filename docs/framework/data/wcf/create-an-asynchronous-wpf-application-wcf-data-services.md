@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření asynchronní Windows Presentation Framework aplikace (WCF Data Services)'
+title: 'Postupy: Vytvoření asynchronní aplikace Windows Presentation Framework (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,29 +7,29 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, asynchronous operations
 ms.assetid: 834614df-1427-4839-b0be-90f68e5afffd
-ms.openlocfilehash: c5dc4e34711cdb128eb012633bad104d0060be71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 820cb4aa39b49d63cf1acc31e6eb5aa56fd1ba03
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765851"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790989"
 ---
-# <a name="how-to-create-an-asynchronous-windows-presentation-framework-application-wcf-data-services"></a>Postupy: Vytvoření asynchronní Windows Presentation Framework aplikace (WCF Data Services)
-S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat data z datové služby na prvek uživatelského rozhraní aplikace Windows Presentation Framework (WPF). Další informace najdete v tématu [vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md). Operace se datové služby můžete také spustit v asynchronním režimu, které umožní aplikaci reagovat při čekání na odpověď na žádost o službu data i nadále. Aplikace pro Silverlight vyžadovaných pro přístup ke službě data asynchronně. Další informace najdete v tématu [asynchronních operací](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).  
+# <a name="how-to-create-an-asynchronous-windows-presentation-framework-application-wcf-data-services"></a>Postupy: Vytvoření asynchronní aplikace Windows Presentation Framework (WCF Data Services)
+Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroje můžete navazovat data získaná z datové služby na prvek uživatelského rozhraní aplikace WPF (Windows Presentation Framework). Další informace najdete v tématu [vázání dat na ovládací prvky](binding-data-to-controls-wcf-data-services.md). V asynchronním způsobu můžete také provádět operace s datovou službou. to umožňuje, aby aplikace při čekání na odpověď na požadavek datové služby pokračovala v reakci. K asynchronnímu přístupu k datové službě se vyžadují aplikace pro Silverlight. Další informace najdete v tématu [asynchronní operace](asynchronous-operations-wcf-data-services.md).  
   
- Toto téma ukazuje, jak přístup ke službě data asynchronně a svázat výsledky na elementy aplikaci WPF. Příklady v tomto tématu ukázková datová služba Northwind a klientská data automaticky generované služby třídy. Tuto službu a třídy dat klientů jsou vytvořeny po dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ Toto téma ukazuje, jak přistupovat k datové službě asynchronně a navazovat výsledky na prvky aplikace WPF. Příklady v tomto tématu používají ukázkovou datovou službu Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md).  
   
 ## <a name="example"></a>Příklad  
- Následující XAML definuje okno aplikace WPF.  
+ Následující kód XAML definuje okno aplikace WPF.  
   
  [!code-xaml[Astoria Northwind Client#WpfDataBindingAsyncXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerordersasync.xaml#wpfdatabindingasyncxaml)]  
   
 ## <a name="example"></a>Příklad  
- Na následující stránce použití modelu code-behind pro soubor XAML provede asynchronního dotazu pomocí datové služby a sváže s výsledky prvků v okně WPF.  
+ Následující stránka s kódem na pozadí pro soubor XAML spustí asynchronní dotaz pomocí datové služby a vytvoří vazby výsledků na prvky v okně WPF.  
   
  [!code-csharp[Astoria Northwind Client#WpfDataBindingAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerordersasync.xaml.cs#wpfdatabindingasync)]
  [!code-vb[Astoria Northwind Client#WpfDataBindingAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerordersasync.xaml.vb#wpfdatabindingasync)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+- [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)

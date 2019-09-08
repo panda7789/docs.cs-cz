@@ -2,42 +2,42 @@
 title: Koncepty modelu EDM (Entity Data Model)
 ms.date: 03/30/2017
 ms.assetid: c635a16d-6674-45aa-9344-dcb7df992bab
-ms.openlocfilehash: 2efa54b6bd656129812cc9dd7c2ce38a4fb2a89a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e4fc0c960d7dac289852df3b080c7e49d1d1c10
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879269"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795559"
 ---
 # <a name="entity-data-model-key-concepts"></a>Koncepty modelu EDM (Entity Data Model)
-Entity Data Model (EDM) používá k popisu struktury dat tři klíčové koncepty: *typ entity*, *typ přidružení*, a *vlastnost*. Jedná se o nejdůležitějších pojmů v popisu struktury dat v jakékoli implementaci modelu EDM.  
+Model EDM (Entity Data Model) (EDM) používá tři klíčové koncepty pro popis struktury dat: *typ entity*, *typ přidružení*a *vlastnost*. Jedná se o nejdůležitější koncepty v popisu struktury dat v jakékoli implementaci modelu EDM.  
   
 ## <a name="entity-type"></a>Typ entity  
- [Typ entity](../../../../docs/framework/data/adonet/entity-type.md) je základním stavebním blokem pro popis struktury data pomocí modelu Entity Data Model. V konceptuálním modelu typy entit se vytvářejí na základě [vlastnosti](../../../../docs/framework/data/adonet/property.md) a popisu struktury koncepty nejvyšší úrovně, jako je například Zákazníci a objednávky v podnikových aplikací. Stejným způsobem, že definice třídy v počítačový program je šablona pro instance třídy, typ entity je šablona pro entity. Entita představuje konkrétní objekt (například konkrétního zákazníka nebo pořadí). Každá entita musí mít jedinečnou [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) v rámci [sadu entit](../../../../docs/framework/data/adonet/entity-set.md).  Sadu entit je kolekci instancí typu konkrétní entity. Sady entit (a [sad přidružení](../../../../docs/framework/data/adonet/association-set.md)) jsou logicky seskupeny do [kontejneru entity](../../../../docs/framework/data/adonet/entity-container.md).  
+ [Typ entity](entity-type.md) je základní stavební blok pro popis struktury dat s model EDM (Entity Data Model). V koncepčním modelu jsou typy entit postavené z [vlastností](property.md) a popisují strukturu konceptů nejvyšší úrovně, jako jsou například zákazníci a objednávky v obchodní aplikaci. Stejným způsobem, že definice třídy v počítačovém programu je šablonou pro instance třídy, je typ entity šablona pro entity. Entita představuje konkrétní objekt (například konkrétního zákazníka nebo objednávky). Každá entita musí mít v [sadě entit](entity-set.md)jedinečný [klíč entity](entity-key.md) .  Sada entit je kolekcí instancí konkrétního typu entity. Sady entit (a [sady přidružení](association-set.md)) jsou logicky seskupeny v [kontejneru entit](entity-container.md).  
   
- Dědičnost je podporované prostřednictvím typů entit: jeden typ entity tedy může být odvozena z jiného. Další informace najdete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).  
+ Dědičnost je podporována s typy entit: to znamená, že jeden typ entity lze odvodit z jiné třídy. Další informace najdete v tématu [model EDM (Entity Data Model): Dědičnost](entity-data-model-inheritance.md).  
   
 ## <a name="association-type"></a>Typ přidružení  
- [Typ přidružení](../../../../docs/framework/data/adonet/association-type.md) (také nazývané přidružení) je základním stavebním blokem popisující relace v modelu Entity Data Model. Přidružení v konceptuálním modelu, představuje vztah mezi dvěma typy entit (jako je například odběratele a objednávky). Každé přidružení má dva [zakončení](../../../../docs/framework/data/adonet/association-end.md) , které určují typy entit, která je součástí přidružení. Každý end přidružení určuje také [násobnost end přidružení](../../../../docs/framework/data/adonet/association-end-multiplicity.md) , která určuje počet entit, které může být na této straně asociace. Násobnost end přidružení může mít hodnotě jedna (1), žádný nebo jeden (0..1), nebo mnoho (*). Entity na jednom konci asociace je přístupná prostřednictvím [navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md), nebo prostřednictvím cizí klíče, pokud jsou zveřejněné na typ entity. Další informace najdete v tématu [vlastnost cizího klíče](../../../../docs/framework/data/adonet/foreign-key-property.md).  
+ [Typ přidružení](association-type.md) (označovaný také jako asociace) je základní stavební blok pro popis vztahů v model EDM (Entity Data Model). V koncepčním modelu představuje přidružení vztah mezi dvěma typy entit (například zákazník a objednávka). Každé přidružení má dvě [zakončení přidružení](association-end.md) , která určují typy entit zahrnuté do přidružení. Každé zakončení přidružení také určuje [násobnost zakončení přidružení](association-end-multiplicity.md) , která označuje počet entit, které mohou být na tomto konci přidružení. Násobnost zakončení přidružení může mít hodnotu jedna (1), 0 nebo 1 (0.. 1) nebo mnoho (\*). K entitám na jednom konci přidružení lze použít [navigační vlastnosti](navigation-property.md)nebo prostřednictvím cizích klíčů, pokud jsou vystaveny na typu entity. Další informace najdete v tématu [vlastnost cizího klíče](foreign-key-property.md).  
   
- V aplikaci, která představuje instance přidružení konkrétní přidružení (například přidružení mezi instance zákazníka a instance pořadí). Přidružení instance jsou logicky seskupeny do [sada přidružení](../../../../docs/framework/data/adonet/association-set.md). Přidružení sad (a [sad entit](../../../../docs/framework/data/adonet/entity-set.md)) jsou logicky seskupeny do [kontejneru entity](../../../../docs/framework/data/adonet/entity-container.md).  
+ V aplikaci instance přidružení představuje konkrétní přidružení (například přidružení mezi instancí zákazníka a instancemi objednávky). Instance přidružení jsou logicky seskupeny v [sadě přidružení](association-set.md). Sady přidružení (a [sady entit](entity-set.md)) jsou logicky seskupeny v [kontejneru entit](entity-container.md).  
   
 ## <a name="property"></a>Vlastnost  
- [Typy entit](../../../../docs/framework/data/adonet/entity-type.md) obsahovat [vlastnosti](../../../../docs/framework/data/adonet/property.md) , které definují jejich strukturu a vlastnosti. Například typ entity zákazník může mít vlastnosti, jako je ID zákazníka, název a adresu.  
+ [Typy entit](entity-type.md) obsahují [vlastnosti](property.md) , které definují jejich strukturu a charakteristiky. Například typ entity Zákazník může mít vlastnosti, jako je například KódZákazníka, jméno a adresa.  
   
- Vlastnosti v konceptuálním modelu jsou podobná vlastnosti definované ve třídě v počítačový program. Stejným způsobem, že vlastnosti třídy definovat tvar třídy a budou mít informace o objektech vlastnosti v konceptuálním modelu definovat tvar typu entity a nesou informaci o instancí typu entity.  
+ Vlastnosti v koncepčním modelu jsou analogické k vlastnostem definovaným ve třídě v počítačovém programu. Stejně jako vlastnosti třídy definují tvar třídy a přenášejí informace o objektech, vlastnosti v koncepčním modelu definují tvar typu entity a přenášejí informace o instancích typu entity.  
   
- Vlastnost může obsahovat primitivní datové (například řetězec, celé číslo nebo hodnotu typu Boolean) nebo strukturovaná data (například komplexní typ). Další informace najdete v tématu [modelu Entity Data Model: Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).  
+ Vlastnost může obsahovat primitivní data (například řetězec, celé číslo nebo logickou hodnotu) nebo strukturovaná data (například komplexní typ). Další informace najdete v tématu [model EDM (Entity Data Model): Primitivní datové typy](entity-data-model-primitive-data-types.md).  
   
-## <a name="representations-of-a-conceptual-model"></a>Reprezentace konceptuálního modelu  
- A *koncepčního modelu* je konkrétní reprezentace struktura některá data jako entit a vztahů. Jeden způsob, jak reprezentaci konceptuálního modelu je diagram. Následující diagram znázorňuje Koncepční model s tři typy entit (`Book`, `Publisher`, a `Author`) a dvě přidružení (`PublishedBy` a `WrittenBy`):  
+## <a name="representations-of-a-conceptual-model"></a>Reprezentace koncepčního modelu  
+ *Koncepční model* je konkrétní reprezentace struktury některých dat jako entity a vztahy. Jedním ze způsobů, jak znázornit koncepční model, je s diagramem. Následující diagram představuje koncepční model se třemi typy entit (`Book`, `Publisher` `Author`a) a dvěma přidruženími (`PublishedBy` a `WrittenBy`):  
   
- ![Diagram znázorňující konceptuálního modelu s tři typy entit.](./media/entity-data-model-key-concepts/conceptual-model-entity-types-associations.gif)  
+ ![Diagram znázorňující koncepční model se třemi typy entit.](./media/entity-data-model-key-concepts/conceptual-model-entity-types-associations.gif)  
   
- Tento zápis, má ale některé nedostatky při rozhodování o takzvané některé podrobnosti o tomto modelu. Například se předávají informace o nastavení vlastnosti typu a entit v diagramu. Bohatost konceptuálního modelu můžete jasněji předávají pomocí jazyka specifického pro doménu (DSL). [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá založený na formátu XML DSL, která volá *Konceptuální schéma definici jazyka* ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Toto je CSDL definici konceptuálního modelu ve výše uvedeném diagramu:  
+ Tato reprezentace ale obsahuje několik nedostatků, když k nim dojdou nějaké podrobnosti o modelu. Například typ vlastnosti a informace sady entit nejsou v diagramu předány. Bohatost koncepčního modelu může být od jazyka specifického pro doménu (DSL) výrazně vyjádřena podrobněji. [Entity Framework ADO.NET](./ef/index.md) používá pro definování konceptuálních modelů DSL založenou na jazyce XML s[](./ef/language-reference/csdl-specification.md)názvem *koncepčního jazyka definic (CSDL Schema Definition Language* ). Následuje definice koncepčního modelu v diagramu výše:  
   
  [!code-xml[EDM_Example_Model#EDMExampleCSDL](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#edmexamplecsdl)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)

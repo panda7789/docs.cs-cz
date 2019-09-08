@@ -2,20 +2,20 @@
 title: Kolekce schémat ODBC
 ms.date: 03/30/2017
 ms.assetid: 1bb126a5-ceec-4649-a4bc-8aa19e801046
-ms.openlocfilehash: ffe80120ceffbe29c0a117cf1194860c5782be8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f0240e99d2420b0956d3c144f837b39e094bb78a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772044"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794714"
 ---
 # <a name="odbc-schema-collections"></a>Kolekce schémat ODBC
 
-Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft SQL Server, Oracle a Microsoft Jet.
+Tato část pojednává o podpoře kolekcí schémat pro ovladače ODBC pro Microsoft SQL Server, Oracle a Microsoft Jet.
 
-## <a name="microsoft-sql-server-odbc-driver"></a>Ovladač ODBC Microsoft SQL Server
+## <a name="microsoft-sql-server-odbc-driver"></a>Microsoft SQL Server ovladač ODBC
 
-Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité schéma kromě společné kolekce schémat:
+Ovladač Microsoft SQL Server ODBC podporuje kromě běžných kolekcí schémat následující konkrétní kolekce schémat:
 
 - Tabulky
 
@@ -33,17 +33,17 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 
 ### <a name="tables-and-views"></a>Tabulky a zobrazení
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_CAT|String|
 |TABLE_SCHEM|String|
 |TABLE_NAME|String|
 |TABLE_TYPE|String|
-|POZNÁMKY|String|
+|MARK|String|
 
 ### <a name="indexes"></a>Indexy
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_CAT|String|
 |TABLE_SCHEM|String|
@@ -51,7 +51,7 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |NON_UNIQUE|Int16|
 |INDEX_QUALIFIER|String|
 |INDEX_NAME|String|
-|TYP|Int16|
+|TEXTOVÝ|Int16|
 |ORDINAL_POSITION|Int16|
 |COLUMN_NAME|String|
 |ASC_OR_DESC|String|
@@ -63,7 +63,7 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 
 ### <a name="columns"></a>Sloupce
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_CAT|String|
 |TABLE_SCHEM|String|
@@ -75,8 +75,8 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |BUFFER_LENGTH|Int32|
 |DECIMAL_DIGITS|Int16|
 |NUM_PREC_RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |COLUMN_DEF|String|
 |SQL_DATA_TYPE|Int16|
 |SQL_DATETIME_SUB|Int16|
@@ -89,7 +89,7 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 
 ### <a name="procedures"></a>Procedury
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_CAT|String|
 |PROCEDURE_SCHEM|String|
@@ -97,12 +97,12 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |NUM_INPUT_PARAMS|Int32|
 |NUM_OUTPUT_PARAMS|Int32|
 |NUM_RESULT_SETS|Int32|
-|POZNÁMKY|String|
+|MARK|String|
 |PROCEDURE_TYPE|Int16|
 
 ### <a name="procedurecolumns"></a>ProcedureColumns
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_CAT|String|
 |PROCEDURE_SCHEM|String|
@@ -115,8 +115,8 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |BUFFER_LENGTH|Int32|
 |DECIMAL_DIGITS|Int16|
 |NUM_PREC_RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |COLUMN_DEF|String|
 |SQL_DATA_TYPE|Int16|
 |SQL_DATETIME_SUB|Int16|
@@ -129,7 +129,7 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 
 ### <a name="procedureparameters"></a>ProcedureParameters
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_CAT|String|
 |PROCEDURE_SCHEM|String|
@@ -142,8 +142,8 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |BUFFER_LENGTH|Int32|
 |DECIMAL_DIGITS|Int16|
 |NUM_PREC_RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |COLUMN_DEF|String|
 |SQL_DATA_TYPE|Int16|
 |SQL_DATETIME_SUB|Int16|
@@ -154,9 +154,9 @@ Ovladače ODBC Microsoft SQL Server podporuje následující kolekce určité sc
 |SS_TYPE_SCHEMA|String|
 |SS_DATA_TYPE|Byte|
 
-## <a name="microsoft-oracle-odbc-driver"></a>Ovladač ODBC Microsoft Oracle
+## <a name="microsoft-oracle-odbc-driver"></a>Ovladač Microsoft Oracle ODBC
 
-Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce určité schéma kromě společné kolekce schémat:
+Ovladač Microsoft SQL Server Oracle ODBC podporuje kromě běžných kolekcí schémat i následující konkrétní kolekce schémat:
 
 - Tabulky
 
@@ -174,17 +174,17 @@ Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce urč
 
 ### <a name="tables-and-views"></a>Tabulky a zobrazení
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_QUALIFIER|String|
 |TABLE_OWNER|String|
 |TABLE_NAME|String|
 |TABLE_TYPE|String|
-|POZNÁMKY|String|
+|MARK|String|
 
 ### <a name="columns"></a>Sloupce
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_QUALIFIER|String|
 |TABLE_OWNER|String|
@@ -192,17 +192,17 @@ Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce urč
 |COLUMN_NAME|String|
 |DATA_TYPE|Int16|
 |TYPE_NAME|String|
-|PŘESNOST|Int32|
-|DÉLKA|Int32|
-|ŠKÁLOVÁNÍ|Int16|
+|ČÍSLIC|Int32|
+|ČASOVÝ|Int32|
+|KAPACITY|Int16|
 |RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |ORDINAL_POSITION|Int32|
 
 ### <a name="procedures"></a>Procedury
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_QUALIFIER|String|
 |PROCEDURE_OWNER|String|
@@ -210,12 +210,12 @@ Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce urč
 |NUM_INPUT_PARAMS|Int16|
 |NUM_OUTPUT_PARAMS|Int16|
 |NUM_RESULT_SETS|Int16|
-|POZNÁMKY|String|
+|MARK|String|
 |PROCEDURE_TYPE|Int16|
 
 ### <a name="procedurecolumns"></a>ProcedureColumns
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_QUALIFIER|String|
 |PROCEDURE_OWNER|String|
@@ -224,18 +224,18 @@ Ovladače ODBC Microsoft SQL Server Oracle podporuje následující kolekce urč
 |COLUMN_TYPE|Int16|
 |DATA_TYPE|Int16|
 |TYPE_NAME|String|
-|PŘESNOST|Int32|
-|DÉLKA|Int32|
-|ŠKÁLOVÁNÍ|Int16|
+|ČÍSLIC|Int32|
+|ČASOVÝ|Int32|
+|KAPACITY|Int16|
 |RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
-|PŘETÍŽENÍ|Int32|
+|POVOLENO|Int16|
+|MARK|String|
+|METODY|Int32|
 |ORDINAL_POSITION|Int32|
 
-## <a name="microsoft-jet-odbc-driver"></a>Ovladač ODBC Microsoft Jet
+## <a name="microsoft-jet-odbc-driver"></a>Ovladač Microsoft Jet ODBC Driver
 
-Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kromě společné kolekce schémat:
+Ovladač Microsoft Jet ODBC podporuje kromě běžných kolekcí schémat i následující konkrétní kolekce schémat:
 
 - Tabulky
 
@@ -253,17 +253,17 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 
 ### <a name="tables-and-views"></a>Tabulky a zobrazení
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_QUALIFIER|String|
 |TABLE_OWNER|String|
 |TABLE_NAME|String|
 |TABLE_TYPE|String|
-|POZNÁMKY|String|
+|MARK|String|
 
 ### <a name="columns"></a>Sloupce
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |TABLE_QUALIFIER|String|
 |TABLE_OWNER|String|
@@ -271,17 +271,17 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 |COLUMN_NAME|String|
 |DATA_TYPE|Int16|
 |TYPE_NAME|String|
-|PŘESNOST|Int32|
-|DÉLKA|Int32|
-|ŠKÁLOVÁNÍ|Int16|
+|ČÍSLIC|Int32|
+|ČASOVÝ|Int32|
+|KAPACITY|Int16|
 |RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |ORDINAL_POSITION|Int32|
 
 ### <a name="procedures"></a>Procedury
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_QUALIFIER|String|
 |PROCEDURE_OWNER|String|
@@ -289,12 +289,12 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 |NUM_INPUT_PARAMS|Int16|
 |NUM_OUTPUT_PARAMS|Int16|
 |NUM_RESULT_SETS|Int16|
-|POZNÁMKY|String|
+|MARK|String|
 |PROCEDURE_TYPE|Int16|
 
 ### <a name="procedurecolumns"></a>ProcedureColumns
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_QUALIFIER|String|
 |PROCEDURE_OWNER|String|
@@ -303,18 +303,18 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 |COLUMN_TYPE|Int16|
 |DATA_TYPE|Int16|
 |TYPE_NAME|String|
-|PŘESNOST|Int32|
-|DÉLKA|Int32|
-|ŠKÁLOVÁNÍ|Int16|
+|ČÍSLIC|Int32|
+|ČASOVÝ|Int32|
+|KAPACITY|Int16|
 |RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
-|PŘETÍŽENÍ|Int32|
+|POVOLENO|Int16|
+|MARK|String|
+|METODY|Int32|
 |ORDINAL_POSITION|Int32|
 
 ### <a name="procedureparameters"></a>ProcedureParameters
 
-|Názevsloupce|DataType|
+|ColumnName|DataType|
 |----------------|--------------|
 |PROCEDURE_CAT|String|
 |PROCEDURE_SCHEM|String|
@@ -327,8 +327,8 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 |BUFFER_LENGTH|Int32|
 |DECIMAL_DIGITS|Int16|
 |NUM_PREC_RADIX|Int16|
-|S POVOLENOU HODNOTOU NULL|Int16|
-|POZNÁMKY|String|
+|POVOLENO|Int16|
+|MARK|String|
 |COLUMN_DEF|String|
 |SQL_DATA_TYPE|Int16|
 |SQL_DATETIME_SUB|Int16|
@@ -338,4 +338,4 @@ Ovladač ODBC Microsoft Jet podporuje následující kolekce určité schéma kr
 
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

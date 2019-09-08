@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd1ec9caa70dd7016253ae4385b16dbfb982f956
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 455f71c5b576d1b57db591dab2a3e59f8a5eed67
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742016"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777282"
 ---
 # <a name="exporttype-method"></a>ExportType – metoda
-Určuje, že je typem exportovatelné.  
+Určuje, že je možné exportovat typ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ HRESULT ExportType(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení, ze které chcete exportovat.  
+ ID sestavení, ze kterého se má exportovat  
   
  `FileToken`  
- Token nebo sestavení ID souboru pro soubor, který definuje typ exportovatelné.  
+ Token souboru nebo ID sestavení souboru, který definuje exportovatelný typ.  
   
  `TypeToken`  
- Token typu má být provedeno exportovatelné.  
+ Token typu, který se má provést export.  
   
  `pszTypename`  
- Plně kvalifikovaný název typu má být provedeno exportovatelné.  
+ Plně kvalifikovaný název typu, který se dá exportovat.  
   
  `dwFlags`  
- `ComType` označí jako `tdPublic` nebo `tdNested`. Tento parametr může být předán [defineexportedtype – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType`příznaky jako `tdPublic` nebo `tdNested`. Tento parametr může být předán [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Přijme token pro exportovaný typ.  
+ Přijímá token pro exportovaný typ.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

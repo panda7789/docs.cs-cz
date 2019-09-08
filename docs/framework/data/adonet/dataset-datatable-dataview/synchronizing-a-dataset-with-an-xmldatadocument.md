@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: f788e1732f083c01542fcdacdfc042553741350b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 272b76c0448da9e069fba331c3ae99c1de02ed16
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204419"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784264"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace datové sady s datovým dokumentem XML
-Tato část ukazuje jeden krok ve zpracování nákupní objednávky pomocí silného typu <xref:System.Data.DataSet> synchronizovaného <xref:System.Xml.XmlDataDocument>s. Níže uvedené příklady vytvoří datovou **sadu** s minimalizovaným schématem, které odpovídá pouze části zdrojového dokumentu XML. Příklady používají **objektu XmlDataDocument** k zachování přesnosti zdrojového dokumentu XML, který umožňuje použít datovou sadu k vystavení podmnožiny dokumentu XML.  
+Tato část ukazuje jeden krok ve zpracování nákupní objednávky pomocí silného typu <xref:System.Data.DataSet> synchronizovaného <xref:System.Xml.XmlDataDocument>s. Níže uvedené příklady vytvoří **datovou sadu** s minimalizovaným schématem, které odpovídá pouze části zdrojového dokumentu XML. Příklady používají **objektu XmlDataDocument** k zachování přesnosti zdrojového dokumentu XML, který umožňuje použít **datovou** sadu k vystavení podmnožiny dokumentu XML.  
   
  Následující dokument XML obsahuje všechny informace týkající se nákupní objednávky: informace o zákazníkovi, objednané položky, informace o dodávce atd.  
   
@@ -109,7 +109,7 @@ Tato část ukazuje jeden krok ve zpracování nákupní objednávky pomocí sil
 </PurchaseOrder>  
 ```  
   
- Jedním z kroků při zpracování informací o nákupních objednávkách obsažených v předchozím dokumentu XML je, aby bylo pořadí vyplněné z aktuálního inventáře společnosti. Zaměstnanec zodpovědný za naplnění objednávky z datového skladu společnosti nemusí zobrazovat celý obsah objednávky nákupu; potřebují pouze zobrazit informace o produktu v objednávce. Chcete-li zobrazit pouze informace o produktu z dokumentu XML, vytvořte datovou **sadu** silného typu se schématem, která je zapsána jako schéma XML Schema Definition Language (XSD), která je mapována na produkty a množství seřazené. Další informace o objektech **DataSet** se silnými typy najdete v tématu [typové datové sady](typed-datasets.md).  
+ Jedním z kroků při zpracování informací o nákupních objednávkách obsažených v předchozím dokumentu XML je, aby bylo pořadí vyplněné z aktuálního inventáře společnosti. Zaměstnanec zodpovědný za naplnění objednávky z datového skladu společnosti nemusí zobrazovat celý obsah objednávky nákupu; potřebují pouze zobrazit informace o produktu v objednávce. Chcete-li zobrazit pouze informace o produktu z dokumentu XML, vytvořte **datovou sadu** silného typu se schématem, která je zapsána jako schéma XML Schema Definition Language (XSD), která je mapována na produkty a množství seřazené. Další informace o objektech **DataSet** se silnými typy najdete v tématu [typové datové sady](typed-datasets.md).  
   
  Následující kód ukazuje schéma, ze kterého je pro tuto ukázku vygenerována **datová sada** silného typu.  
   
@@ -159,7 +159,7 @@ Tato část ukazuje jeden krok ve zpracování nákupní objednávky pomocí sil
   
  Všimněte si, že schéma pro **datovou sadu**obsahuje pouze informace z prvků **OrderDetails** a **Products** v původním dokumentu XML. Synchronizace **datové sady** s **objektu XmlDataDocument** zajistí, že prvky, které nejsou součástí **datové sady** , budou uchovány v dokumentu XML.  
   
- S **datovou sadou** silného typu vygenerovanou ze schématu XML (s oborem názvů **Northwind. FillOrder**) může být část původního dokumentu XML vystavena synchronizací **datové sady** s načteným **objektu XmlDataDocument** . ze zdrojového dokumentu XML. Všimněte si, že **datová sada** generovaná ze schématu obsahuje strukturu, ale žádná data. Data jsou vyplněna při načtení XML do **objektu XmlDataDocument**. Pokud se pokusíte načíst **objektu XmlDataDocument** , který byl synchronizován s datovou **sadou** , která již obsahuje data, bude vyvolána výjimka.  
+ S **datovou sadou** silného typu vygenerovanou ze schématu XML (s oborem názvů **Northwind. FillOrder**) může být část původního dokumentu XML vystavena synchronizací **datové sady** s načteným **objektu XmlDataDocument** . ze zdrojového dokumentu XML. Všimněte si, že **datová sada** generovaná ze schématu obsahuje strukturu, ale žádná data. Data jsou vyplněna při načtení XML do **objektu XmlDataDocument**. Pokud se pokusíte načíst **objektu XmlDataDocument** , který byl synchronizován s **datovou sadou** , která již obsahuje data, bude vyvolána výjimka.  
   
  Po aktualizaci **datové sady** (a **objektu XmlDataDocument**) může **objektu XmlDataDocument** následně zapisovat upravený dokument XML s prvky ignorovánými **datovou sadou** , jak je znázorněno níže. Ve scénáři nákupní objednávky po vyplňování položek objednávky může být upravený dokument XML předán k dalšímu kroku v pořadí objednávek, například k expedičnímu oddělení společnosti.  
   
@@ -234,4 +234,4 @@ public class Sample
 ## <a name="see-also"></a>Viz také:
 
 - [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

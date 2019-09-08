@@ -2,12 +2,12 @@
 title: Vytváření rolí aplikací na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: e7060e1b171ee1791b9986250fe6f2050ec77acd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 212bda6f64829792e965dd6714428a05b30c995b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961170"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794273"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Vytváření rolí aplikací na SQL Serveru
 Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci místo databázové role nebo uživatele. Uživatelé se mohou připojit k databázi, aktivovat aplikační roli a převzít oprávnění udělená aplikaci. Oprávnění udělená aplikační roli jsou platná po dobu trvání připojení.  
@@ -47,9 +47,9 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
   
  Možná budete chtít vzít v úvahu následující alternativy.  
   
-- Používejte přepínání kontextu pomocí příkazu Spustit jako s klauzulemi NO REVERT a COOKIE. Můžete vytvořit uživatelský účet v databázi, která není namapovaná na přihlášení. Pak k tomuto účtu přiřadíte oprávnění. Použití příkazu Spustit jako s uživatelem bez přihlášení je bezpečnější, protože se jedná o oprávnění, které není založené na heslech. Další informace najdete v tématu [přizpůsobení oprávnění pomocí zosobnění v SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Používejte přepínání kontextu pomocí příkazu Spustit jako s klauzulemi NO REVERT a COOKIE. Můžete vytvořit uživatelský účet v databázi, která není namapovaná na přihlášení. Pak k tomuto účtu přiřadíte oprávnění. Použití příkazu Spustit jako s uživatelem bez přihlášení je bezpečnější, protože se jedná o oprávnění, které není založené na heslech. Další informace najdete v tématu [přizpůsobení oprávnění pomocí zosobnění v SQL Server](customizing-permissions-with-impersonation-in-sql-server.md).  
   
-- Podepište uložené procedury pomocí certifikátů a přidělíte oprávnění pouze pro provedení těchto postupů. Další informace najdete v tématu [Podepisování uložených procedur v SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Podepište uložené procedury pomocí certifikátů a přidělíte oprávnění pouze pro provedení těchto postupů. Další informace najdete v tématu [Podepisování uložených procedur v SQL Server](signing-stored-procedures-in-sql-server.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
@@ -60,7 +60,7 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

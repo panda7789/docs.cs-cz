@@ -2,63 +2,62 @@
 title: Přehled ADO.NET
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 0a47a2734e68b4c00aab077191d5257386cd6602
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 2d21e5b73757280b679a9c5cd04a56339e7e967e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877214"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785105"
 ---
 # <a name="adonet-overview"></a>Přehled ADO.NET
-ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat jako SQL Server a XML a ke zdrojům dat prostřednictvím OLE DB a ODBC. Sdílení dat aplikace pro koncové uživatele slouží k připojení k těmto zdrojům dat a načtení, zpracování a aktualizace dat, které obsahují ADO.NET.  
+ADO.NET poskytuje konzistentní přístup ke zdrojům dat, jako jsou SQL Server a XML, a zdrojům dat, které jsou zpřístupněny prostřednictvím OLE DB a rozhraní ODBC. Aplikace příjemce pro sdílení dat můžou pomocí ADO.NET se připojit k těmto zdrojům dat a načítat, zpracovávat a aktualizovat data, která obsahují.  
   
- ADO.NET odděluje přístup k datům z manipulace s daty do samostatné součásti, které lze použít samostatně nebo v kombinaci. ADO.NET obsahuje zprostředkovatele dat .NET Framework pro připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do technologie ADO.NET <xref:System.Data.DataSet> objektu, aby bylo možné vystavit uživatele ad hoc způsobem, v kombinaci s daty z více zdrojů nebo předány mezi vrstvami. `DataSet` Objekt také lze použít bez ohledu na jejich zprostředkovatele dat .NET Framework ke správě dat místní aplikace nebo zdroj XML.  
+ ADO.NET odděluje přístup k datům z manipulace s daty do diskrétních součástí, které lze použít samostatně nebo společně. ADO.NET zahrnuje .NET Framework poskytovatelé dat pro připojení k databázi, spouštění příkazů a načítání výsledků. Tyto výsledky se buď zpracovávají přímo, umístěné v objektu ADO.NET <xref:System.Data.DataSet> , aby je bylo možné uživatelům zpřístupnit ad hoc způsobem, v kombinaci s daty z více zdrojů nebo mezi vrstvami. `DataSet` Objekt lze také použít nezávisle .NET Framework poskytovatel dat ke správě dat v místní aplikaci nebo zdroji z XML.  
   
- Třídy rozhraní ADO.NET se nacházejí v System.Data.dll a jsou integrovány s nalezené v System.Xml.dll třídy XML. Ukázkový kód, který se připojuje k databázi, načte data z něj a potom tato data zobrazí v okně konzoly, naleznete v tématu [příklady kódu ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md).  
+ Třídy ADO.NET se nacházejí v System. data. dll a jsou integrovány s třídami XML nalezenými v souboru System. XML. dll. Pro vzorový kód, který se připojuje k databázi, načte z něj data a pak tato data zobrazí v okně konzoly, viz [Příklady kódu ADO.NET](ado-net-code-examples.md).  
   
- ADO.NET poskytuje funkce pro vývojáře, kteří psaní spravovaného kódu podobně jako funkce poskytované vývojářům nativní součást object model (COM) podle objektů ADO (ActiveX Data). Doporučujeme používat technologie ADO.NET, není objekt ADO, pro přístup k datům v aplikacích .NET.  
+ ADO.NET poskytuje funkce vývojářům, kteří napíší spravovaný kód podobně jako funkce poskytované vývojářům modelu COM (Component Object Model) pomocí rozhraní ADO (ActiveX Data Objects) (ADO). Pro přístup k datům v aplikacích .NET doporučujeme používat ADO.NET, ne ADO.  
   
- ADO.NET obsahuje velmi přímočarou metodou přístup k datům v rámci rozhraní .NET Framework. Abstrakce vyšší úrovně, která umožňuje aplikacím tak, aby odpovídaly Koncepční model místo základní model úložiště, najdete v článku [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).  
+ ADO.NET poskytuje nejpřímější způsob přístupu k datům v rámci .NET Framework. Pro abstrakci vyšší úrovně, která umožňuje aplikacím pracovat s koncepčním modelem namísto základního modelu úložiště, se podívejte na [ADO.NET Entity Framework](./ef/index.md).  
   
- **Zásady ochrany osobních údajů**: Sestavení System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, knihovně System.Data.Linq.dll, System.Data.SqlServerCe.dll a System.Data.DataSetExtensions.dll nerozlišuje mezi uživatele veřejné data a osobní data.  Tato sestavení shromažďovat, ukládat ani přenosu dat soukromých kteréhokoli uživatele. Aplikace třetích stran může však shromažďování, ukládání nebo přenosu dat soukromých uživatele tato sestavení používají.  
+ **Prohlášení o zásadách ochrany osobních údajů**: System. data. dll, System. data. Design. dll, System. data. OracleClient. dll, System. data. SqlXml. dll, System. data. Linq. dll, System. data. SqlServerCe. dll a System. data. DataSetExtensions. dll nerozlišuje mezi sestaveními uživatele soukromá data a nesoukromá data.  Tato sestavení neshromažďují, neukládají ani nepřenosují soukromá data uživatele. Aplikace třetích stran však mohou pomocí těchto sestavení shromažďovat, ukládat nebo přenášet privátní data uživatele.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Architektura ADO.NET](../../../../docs/framework/data/adonet/ado-net-architecture.md)  
- Poskytuje přehled o architektuře a komponenty rozhraní ADO.NET.  
+ [Architektura ADO.NET](ado-net-architecture.md)  
+ Poskytuje přehled o architektuře a komponentách ADO.NET.  
   
- [Možnosti a pokyny pro ADO.NET](../../../../docs/framework/data/adonet/ado-net-technology-options-and-guidelines.md)  
- Popisuje produkty a technologie, které jsou součástí datové platformy Entity.  
+ [Možnosti a pokyny pro ADO.NET](ado-net-technology-options-and-guidelines.md)  
+ Popisuje produkty a technologie, které jsou součástí platformy dat entity.  
   
- [LINQ a ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)  
- Popisuje, jak je implementovaná Language-Integrated Query (LINQ) v ADO.NET a poskytuje odkazy na související témata.  
+ [LINQ a ADO.NET](linq-and-ado-net.md)  
+ Popisuje, jakým způsobem je jazykově integrovaný dotaz (LINQ) implementován v ADO.NET a obsahuje odkazy na související témata.  
   
- [Zprostředkovatelé dat .NET Framework](../../../../docs/framework/data/adonet/data-providers.md)  
- Poskytuje přehled návrhu zprostředkovatele dat .NET Framework a zprostředkovatele dat .NET Framework, které jsou součástí technologie ADO.NET.  
+ [Zprostředkovatelé dat .NET Framework](data-providers.md)  
+ Poskytuje přehled návrhu .NET Frameworkho poskytovatele dat a .NET Framework zprostředkovatelů dat, které jsou součástí ADO.NET.  
   
- [Datové sady ADO.NET](../../../../docs/framework/data/adonet/ado-net-datasets.md)  
- Najdete zde přehled `DataSet` návrhu a komponenty.  
+ [Datové sady ADO.NET](ado-net-datasets.md)  
+ Poskytuje přehled `DataSet` návrhu a součástí.  
   
- [Souběžné spouštění v ADO.NET](../../../../docs/framework/data/adonet/side-by-side-execution.md)  
- Tento článek popisuje rozdíly v ADO.NET verze a jejich vliv na provádění vedle sebe a kompatibilitu aplikací.  
+ [Souběžné spouštění v ADO.NET](side-by-side-execution.md)  
+ Popisuje rozdíly ve verzích ADO.NET a jejich vlivu na souběžné spouštění a kompatibilitu aplikací.  
   
- [Příklady kódu ADO.NET](../../../../docs/framework/data/adonet/ado-net-code-examples.md)  
- Obsahuje ukázky kódu, které načítají data pomocí zprostředkovatele dat ADO.NET.  
+ [Příklady kódu ADO.NET](ado-net-code-examples.md)  
+ Poskytuje ukázky kódu, které načítají data pomocí zprostředkovatelů dat ADO.NET.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
- Představuje funkce, které jsou nové v rozhraní ADO.NET.  
+ [Novinky v ADO.NET](whats-new.md)  
+ Přináší nové funkce, které jsou v ADO.NET novinkou.  
   
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- Popisuje zabezpečené drželi osvědčených kódovacích postupů při použití technologie ADO.NET.  
+ [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)  
+ Popisuje postupy zabezpečeného kódování při použití ADO.NET.  
   
- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- Popisuje mapování datového typu mezi datovými typy rozhraní .NET Framework a zprostředkovatele dat .NET Framework.  
+ [Mapování datového typu v ADO.NET](data-type-mappings-in-ado-net.md)  
+ Popisuje mapování datových typů mezi .NET Frameworkmi datovými typy a .NET Framework zprostředkovateli dat.  
   
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- Popisuje, jak se připojit ke zdroji dat, načtení dat a upravovat data. Jedná se o `DataReaders` a `DataAdapters`.  
+ [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)  
+ Popisuje, jak se připojit ke zdroji dat, jak načítat data a upravovat data. To zahrnuje `DataReaders` a `DataAdapters`.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
+- [ADO.NET](index.md)
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 57629d8f-393e-4677-8b83-29ffde27f5fc
-ms.openlocfilehash: 19badb009ebe95c52ab1dbbaef96f280c769553b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d496167b7bce31491402414c43ae0bcdee423b89
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205153"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786503"
 ---
 # <a name="creating-a-dataset"></a>Vytvoření datové sady
 Vytvoříte instanci <xref:System.Data.DataSet> <xref:System.Data.DataSet> voláním konstruktoru. Volitelně můžete zadat argument name. Pokud neurčíte název pro <xref:System.Data.DataSet>, název je nastaven na "NewDataSet".  
@@ -31,4 +31,4 @@ DataSet customerOrders = new DataSet("CustomerOrders");
 
 - [Naplnění datové sady z adaptéru dat](../populating-a-dataset-from-a-dataadapter.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

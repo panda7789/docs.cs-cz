@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
-ms.openlocfilehash: bb3f35f17b2dd451b41035c8e34f7b3a886a26e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8667cffb032daf0043915d3bee7127ef9b70756b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878288"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794516"
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Provádění dávkových operací pomocí adaptérů dat
-Umožňuje podporu služby batch v ADO.NET <xref:System.Data.Common.DataAdapter> pro operace INSERT, UPDATE a DELETE ze skupin <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable> na server, místo abyste odesílali jednu operaci najednou. Snížení počet zpátečních cest k serveru se obvykle vytváří nárůstu výkonu. Pro zprostředkovatele dat .NET pro SQL Server jsou podporovány dávkové aktualizace (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  
+Dávková podpora v ADO.NET umožňuje <xref:System.Data.Common.DataAdapter> Seskupit operace vložení, aktualizace a odstranění <xref:System.Data.DataSet> ze serveru nebo <xref:System.Data.DataTable> na server, místo aby bylo možné současně odeslat jednu operaci. Snížení počtu zpátečních cest k serveru obvykle vede k výraznému nárůstu výkonu. Aktualizace služby Batch jsou podporované pro zprostředkovatele dat .NET pro SQL Server (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  
   
- Při aktualizaci databáze se změní z <xref:System.Data.DataSet> v předchozích verzích technologie ADO.NET, `Update` metodu `DataAdapter` provést aktualizace databáze pro jeden řádek. Jak provést iteraci přes řádky v zadané <xref:System.Data.DataTable>, přezkoumání všech <xref:System.Data.DataRow> zobrazíte, pokud má byla změněna. Pokud řádek měl byl upraven, a volat odpovídající `UpdateCommand`, `InsertCommand`, nebo `DeleteCommand`, v závislosti na hodnotě <xref:System.Data.DataRow.RowState%2A> vlastnost pro tento řádek. Každá aktualizace řádku podílejí síťové cesty k databázi.  
+ Při aktualizaci databáze se změnami z <xref:System.Data.DataSet> verze v předchozích verzích nástroje ADO.NET `Update` Metoda `DataAdapter` provedených aktualizací do databáze po jednom řádku. Jak prochází řádky v určeném <xref:System.Data.DataTable>, <xref:System.Data.DataRow> prozkoumali jste je, abyste viděli, zda byla upravena. Pokud byl řádek upraven, byl označován jako `UpdateCommand`příslušný, `InsertCommand`nebo `DeleteCommand`v závislosti na hodnotě <xref:System.Data.DataRow.RowState%2A> vlastnosti pro daný řádek. Každá aktualizace řádku zahrnovala síťovou zpáteční cestu k databázi.  
   
- Spouštění pomocí technologie ADO.NET 2.0 <xref:System.Data.Common.DbDataAdapter> zpřístupňuje <xref:System.Data.Common.DbDataAdapter.UpdateBatchSize%2A> vlastnost. Nastavení `UpdateBatchSize` na kladné celé číslo hodnoty způsobí, že aktualizace databáze, kterou chcete odeslat jako dávek zadané velikosti. Například nastavení `UpdateBatchSize` 10 se skupině 10 samostatných příkazů a odeslat jako jedné dávce. Nastavení `UpdateBatchSize` na hodnotu 0 způsobí, že <xref:System.Data.Common.DataAdapter> použít největší velikost dávky, který dokáže pracovat na serveru. Nastavení na 1 zakáže dávkové aktualizace s odesíláním řádky jsou postupně po jednom.  
+ Počínaje verzí ADO.NET 2,0 <xref:System.Data.Common.DbDataAdapter> <xref:System.Data.Common.DbDataAdapter.UpdateBatchSize%2A> zpřístupňuje vlastnost. `UpdateBatchSize` Nastavení na kladnou celočíselnou hodnotu způsobí, že se aktualizace databáze odešlou jako dávky zadané velikosti. Například nastavení na hodnotu `UpdateBatchSize` 10 bude seskupovat 10 samostatných příkazů a odešle je jako jednu dávku. Nastavení na hodnotu 0 způsobí, že <xref:System.Data.Common.DataAdapter> bude používat největší velikost dávky, kterou může server zpracovat. `UpdateBatchSize` Nastavení na hodnotu 1 zakáže dávkové aktualizace, protože řádky jsou odesílány po jednom.  
   
- Provádění velmi velký batch může snížit výkon. Proto byste měli testovat pro nastavení velikosti dávky optimální před implementací vaší aplikace.  
+ Spuštění extrémně velké dávky může snížit výkon. Proto byste měli před implementací aplikace otestovat nastavení optimální velikosti dávky.  
   
-## <a name="using-the-updatebatchsize-property"></a>Pomocí vlastnosti UpdateBatchSize  
- Pokud se povolí aktualizace služby batch, <xref:System.Data.IDbCommand.UpdatedRowSource%2A> hodnotou vlastnosti Vlastnost DataAdapter `UpdateCommand`, `InsertCommand`, a `DeleteCommand` by mělo být nastavené <xref:System.Data.UpdateRowSource.None> nebo <xref:System.Data.UpdateRowSource.OutputParameters>. Při provádění dávky aktualizací, příkaz <xref:System.Data.IDbCommand.UpdatedRowSource%2A> hodnotou vlastnosti <xref:System.Data.UpdateRowSource.FirstReturnedRecord> nebo <xref:System.Data.UpdateRowSource.Both> je neplatný.  
+## <a name="using-the-updatebatchsize-property"></a>Použití vlastnosti UpdateBatchSize  
+ Pokud jsou <xref:System.Data.IDbCommand.UpdatedRowSource%2A> povoleny aktualizace dávky, hodnota vlastnosti `UpdateCommand`DataAdapter, `InsertCommand`a `DeleteCommand` by měla být nastavena na <xref:System.Data.UpdateRowSource.None> nebo <xref:System.Data.UpdateRowSource.OutputParameters>. Při provádění aktualizace dávky je <xref:System.Data.IDbCommand.UpdatedRowSource%2A> <xref:System.Data.UpdateRowSource.FirstReturnedRecord> hodnota vlastnosti příkazu nebo <xref:System.Data.UpdateRowSource.Both> neplatná.  
   
- Následující postup demonstruje použití `UpdateBatchSize` vlastnost. Podle postupu přebírá dva argumenty <xref:System.Data.DataSet> objekt, který má sloupce představující **ProductCategoryID** a **název** pole v **Production.ProductCategory**tabulky a celé číslo představující velikost dávky (počet řádků v dávce). Kód vytvoří novou <xref:System.Data.SqlClient.SqlDataAdapter> objekt nastavení jeho <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>, a <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> vlastnosti. Kód předpokládá, <xref:System.Data.DataSet> objekt má upravit řádky. Nastaví `UpdateBatchSize` vlastnost a provede aktualizaci.  
+ Následující postup demonstruje použití `UpdateBatchSize` vlastnosti. Procedura přijímá dva argumenty <xref:System.Data.DataSet> , objekt, který má sloupce reprezentující pole **ProductCategoryID** a **Name** v tabulce **produkčního sloupce ProductCategory** a celé číslo představující velikost dávky (počet řádky v dávce). Kód vytvoří nový <xref:System.Data.SqlClient.SqlDataAdapter> objekt, nastaví jeho <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>vlastnosti, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>a <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A> . Kód předpokládá, že <xref:System.Data.DataSet> objekt má změněné řádky. Nastaví `UpdateBatchSize` vlastnost a provede aktualizaci.  
   
 ```vb  
 Public Sub BatchUpdate( _  
@@ -125,25 +125,25 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
 }  
 ```  
   
-## <a name="handling-batch-update-related-events-and-errors"></a>Zpracování dávkové aktualizace související události a chyby  
- **DataAdapter** má dvě aktualizace související události: **RowUpdating** a **RowUpdated**. V předchozích verzích technologie ADO.NET Pokud dávkové zpracování je zakázané, každá z těchto událostí se vygeneruje jednou pro každý řádek zpracování. **RowUpdating** je generovaná, než dojde k aktualizaci, a **RowUpdated** se vygeneruje po dokončení aktualizace databáze.  
+## <a name="handling-batch-update-related-events-and-errors"></a>Zpracování událostí a chyb souvisejících s aktualizací Batch  
+ Objekt **DataAdapter** má dvě události související s aktualizací: **RowUpdating** a **RowUpdated metody Update**. Pokud je v předchozích verzích ADO.NET zakázané dávkové zpracování, každá z těchto událostí se vygeneruje jednou pro každý zpracovávaný řádek. **RowUpdating** se vygeneruje před tím, než dojde k aktualizaci, a po dokončení aktualizace databáze se vygeneruje **RowUpdated metody Update** .  
   
-### <a name="event-behavior-changes-with-batch-updates"></a>Událost změny chování s aktualizacemi služby Batch  
- Pokud je povoleno dávkové zpracování, více řádků se aktualizují v rámci operace izolované databáze. Proto pouze jeden `RowUpdated` dojde k události pro jednotlivé dávky, zatímco `RowUpdating` pro každý řádek zpracování dojde k události. Při zpracování dávky je zakázaná, jsou vyvolávány dvě události s 1: 1 prokládání, pokud jeden `RowUpdating` událost a jedna `RowUpdated` fire události pro řádek a potom na jeden `RowUpdating` a jeden `RowUpdated` fire události pro další řádek, dokud se všechny řádky jsou zpracovávány.  
+### <a name="event-behavior-changes-with-batch-updates"></a>Změny chování události v dávkových aktualizacích  
+ Pokud je povoleno dávkové zpracování, v rámci jedné databáze se aktualizuje více řádků. Proto se pro každou `RowUpdated` dávku vyvolá jenom jedna událost, `RowUpdating` zatímco pro každý zpracovávaný řádek dojde k události. Když je dávkové zpracování zakázané, jsou tyto dvě události vyvolány pomocí prokládání 1:1, kdy jedna `RowUpdating` událost a jedna `RowUpdated` aktivovaná událost pro řádek a pak jedna `RowUpdating` a jedna `RowUpdated` událost pro další řádek, až do všech řádků. jsou zpracovávány.  
   
-### <a name="accessing-updated-rows"></a>Přístup k aktualizované řádky  
- Pokud je zakázáno dávkové zpracování, řádek aktualizuje lze přistupovat pomocí <xref:System.Data.Common.RowUpdatedEventArgs.Row%2A> vlastnost <xref:System.Data.Common.RowUpdatedEventArgs> třídy.  
+### <a name="accessing-updated-rows"></a>Přístup k aktualizovaným řádkům  
+ Když je dávkové zpracování zakázané, k řádku, který se má aktualizovat, <xref:System.Data.Common.RowUpdatedEventArgs.Row%2A> se dá dostat <xref:System.Data.Common.RowUpdatedEventArgs> pomocí vlastnosti třídy.  
   
- Pokud je povolená dávkové zpracování, jeden `RowUpdated` vygenerování události pro více řádků. Proto se hodnota `Row` vlastnost pro každý řádek má hodnotu null. `RowUpdating` události jsou i nadále vygenerována pro každý řádek. <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> Metodu <xref:System.Data.Common.RowUpdatedEventArgs> třída umožňuje přístup k zpracovaných řádků zkopírováním odkazy na řádky do pole. Pokud jsou zpracovávány žádné řádky, `CopyToRows` vyvolá <xref:System.ArgumentNullException>. Použití <xref:System.Data.Common.RowUpdatedEventArgs.RowCount%2A> vlastnost vrátí počet zpracovaných před voláním řádků <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> metody.  
+ Pokud je povoleno dávkové zpracování, je vygenerována jedna `RowUpdated` událost pro více řádků. Proto hodnota `Row` vlastnosti pro každý řádek má hodnotu null. `RowUpdating`události jsou stále generovány pro každý řádek. <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> Metoda<xref:System.Data.Common.RowUpdatedEventArgs> třídy umožňuje přístup ke zpracovaným řádkům zkopírováním odkazů na řádky do pole. Pokud nejsou zpracovávány žádné řádky, `CopyToRows` <xref:System.ArgumentNullException>vyvolá. Použijte vlastnost k vrácení počtu zpracovaných řádků před <xref:System.Data.Common.RowUpdatedEventArgs.CopyToRows%2A> voláním metody. <xref:System.Data.Common.RowUpdatedEventArgs.RowCount%2A>  
   
-### <a name="handling-data-errors"></a>Chyby zpracování dat  
- Spuštění dávky má stejný účinek jako spuštění všech jednotlivých příkazů. Příkazy jsou spouštěny v pořadí, příkazy byly přidány do služby batch. Zpracování chyb v dávkovém režimu stejným způsobem jako při dávkovém režimu je zakázané. Každý řádek se zpracovávají odděleně. Pouze řádky, které byly úspěšně zpracovány v databázi budou aktualizovány v odpovídající <xref:System.Data.DataRow> v rámci <xref:System.Data.DataTable>.  
+### <a name="handling-data-errors"></a>Zpracování chyb dat  
+ Dávkové zpracování má stejný účinek jako spuštění každého jednotlivého příkazu. Příkazy jsou spouštěny v pořadí, v jakém byly do dávky přidány příkazy. Chyby jsou zpracovávány stejným způsobem v dávkovém režimu, protože jsou v režimu dávky zakázané. Každý řádek se zpracovává samostatně. Pouze řádky, které byly úspěšně zpracovány v databázi, budou aktualizovány v odpovídajícím <xref:System.Data.DataRow> <xref:System.Data.DataTable>rámci.  
   
- Zprostředkovatel dat a serveru back-end databáze určují, které konstrukce SQL jsou podporovány pro spuštění dávky. Pokud příkazu není podporováno se odešle ke spuštění může být vyvolána výjimka.  
+ Poskytovatel dat a back-end databázový server určují, které konstrukce SQL jsou podporovány pro provádění dávky. Výjimka může být vyvolána, pokud je odeslán nepodporovaný příkaz ke spuštění.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)
+- [Zpracování událostí adaptéru dat](handling-dataadapter-events.md)
+- [Přehled ADO.NET](ado-net-overview.md)

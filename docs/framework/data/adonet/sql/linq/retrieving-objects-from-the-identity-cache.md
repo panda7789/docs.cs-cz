@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-ms.openlocfilehash: ef771d924d9b508c29061f75a45808b5f81abb53
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d14b15f72bd196d8b3a61f22c614516e17d2e95b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963837"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781239"
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Načítání objektů z mezipaměti identit
 Toto téma popisuje typy LINQ to SQL dotazů, které vracejí objekt z mezipaměti identit, která je spravována pomocí <xref:System.Data.Linq.DataContext>.  
@@ -20,7 +20,7 @@ Toto téma popisuje typy LINQ to SQL dotazů, které vracejí objekt z mezipamě
  Obecně platí, že pokud LINQ to SQL dotaz vrátí objekt z mezipaměti identity, musí být dotaz založen na primárním klíči objektu a musí vracet jeden objekt. Konkrétně musí být dotaz v jednom z obecných formulářů uvedených níže.  
   
 > [!NOTE]
-> Předem zkompilované dotazy nebudou vracet objekty z mezipaměti identit. Další informace o předem kompilovaných dotazech naleznete v <xref:System.Data.Linq.CompiledQuery> tématech [a postupy: Ukládat a znovu používat](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)dotazy.  
+> Předem zkompilované dotazy nebudou vracet objekty z mezipaměti identit. Další informace o předem kompilovaných dotazech naleznete v <xref:System.Data.Linq.CompiledQuery> tématech [a postupy: Ukládat a znovu používat](how-to-store-and-reuse-queries.md)dotazy.  
   
  Aby bylo možné načíst objekt z mezipaměti identit, musí být dotaz v jedné z následujících obecných forem:  
   
@@ -66,7 +66,7 @@ Toto téma popisuje typy LINQ to SQL dotazů, které vracejí objekt z mezipamě
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
+- [Koncepty dotazů](query-concepts.md)
+- [Identita objektu](object-identity.md)
+- [Základní informace](background-information.md)
+- [Identita objektu](object-identity.md)

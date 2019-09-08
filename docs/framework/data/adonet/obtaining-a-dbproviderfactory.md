@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: dd4bca48c35b9b636a96fe5d4a724272abc4f71d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bde442e344ae8aa710d75c61d0957bff9264bf01
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934406"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783544"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
 Proces získání a <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o poskytovateli dat <xref:System.Data.Common.DbProviderFactories> do třídy. Na základě těchto informací <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří továrnu poskytovatele silného typu. Například pro vytvoření <xref:System.Data.SqlClient.SqlClientFactory>můžete předat `GetFactory` řetězec s názvem poskytovatele zadaným jako "System. data. SqlClient". Druhé přetížení `GetFactory` <xref:System.Data.DataRow>přebírá. Po vytvoření továrny poskytovatele pak můžete použít jeho metody k vytvoření dalších objektů. Některé metody `SqlClientFactory` zahrnutí <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -34,7 +34,7 @@ Proces získání a <xref:System.Data.Common.DbProviderFactory> zahrnuje předá
 </system.data>  
 ```  
   
- Invariantní atribut identifikuje základního zprostředkovatele dat. Tato syntaxe názvů se třemi částmi se používá také při vytváření nového objektu pro vytváření a identifikaci poskytovatele v konfiguračním souboru aplikace tak, aby se v době běhu mohl načíst název poskytovatele společně s jeho přidruženým připojovacím řetězcem.  
+ **Invariantní** atribut identifikuje základního zprostředkovatele dat. Tato syntaxe názvů se třemi částmi se používá také při vytváření nového objektu pro vytváření a identifikaci poskytovatele v konfiguračním souboru aplikace tak, aby se v době běhu mohl načíst název poskytovatele společně s jeho přidruženým připojovacím řetězcem.  
   
 ## <a name="retrieving-provider-information"></a>Načítání informací o poskytovateli  
  Informace o všech poskytovatelích dat nainstalovaných v místním počítači můžete získat pomocí <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> metody. Vrátí <xref:System.Data.DataTable> název s názvem **DbProviderFactories** , který obsahuje sloupce popsané v následující tabulce.  
@@ -79,7 +79,7 @@ Proces získání a <xref:System.Data.Common.DbProviderFactory> zahrnuje předá
 ```  
   
 ### <a name="retrieving-a-connection-string-by-provider-name"></a>Načítání připojovacího řetězce podle názvu poskytovatele  
- Aby bylo možné vytvořit továrnu poskytovatele, je nutné dodat připojovací řetězec i název poskytovatele. Tento příklad ukazuje, jak načíst připojovací řetězec z konfiguračního souboru aplikace předáním názvu poskytovatele v neutrálním formátu "*System. data. ProviderName*". Kód prochází pomocí <xref:System.Configuration.ConnectionStringSettingsCollection>. Vrátí <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> při úspěchu, jinak `null` (`Nothing` v Visual Basic). Pokud je pro poskytovatele k dispozici více položek, vrátí se první nalezený. Další informace a příklady načítání připojovacích řetězců z konfiguračních souborů najdete v tématu [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+ Aby bylo možné vytvořit továrnu poskytovatele, je nutné dodat připojovací řetězec i název poskytovatele. Tento příklad ukazuje, jak načíst připojovací řetězec z konfiguračního souboru aplikace předáním názvu poskytovatele v neutrálním formátu "*System. data. ProviderName*". Kód prochází pomocí <xref:System.Configuration.ConnectionStringSettingsCollection>. Vrátí <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> při úspěchu, jinak `null` (`Nothing` v Visual Basic). Pokud je pro poskytovatele k dispozici více položek, vrátí se první nalezený. Další informace a příklady načítání připojovacích řetězců z konfiguračních souborů najdete v tématu [připojovací řetězce a konfigurační soubory](connection-strings-and-configuration-files.md).  
   
 > [!NOTE]
 > Odkaz na `System.Configuration.dll` je vyžadován, aby bylo možné kód spustit.  
@@ -97,7 +97,7 @@ Proces získání a <xref:System.Data.Common.DbProviderFactory> zahrnuje předá
   
 ## <a name="see-also"></a>Viz také:
 
-- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
-- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
+- [DbProviderFactories](dbproviderfactories.md)
+- [Připojovací řetězce](connection-strings.md)
 - [Použití tříd konfigurace](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))
 - [Přehled ADO.NET](ado-net-overview.md)

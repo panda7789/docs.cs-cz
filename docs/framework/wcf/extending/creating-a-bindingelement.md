@@ -2,33 +2,33 @@
 title: Vytvoření BindingElement
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: 0c08494315f43f35f60d70abf643f596a013c302
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b760f9373e64e153bd5a21469eb7a503283d35c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587351"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795821"
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
-Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>v uvedeném pořadí) jsou místo, kde se spojená s objekty pro vytváření kanálů a moduly pro naslouchání kanálů model aplikace Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanálů vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavky na povolení s využitím kanálu ve službě WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit používání instrukcí z aplikace, jak je popsáno v kroku 4 [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
+Vazby a prvky vazby (objekty, které <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> přesahují <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>a v uvedeném pořadí) jsou místo, kde je model aplikace Windows Communication Foundation (WCF) spojený s objekty pro vytváření kanálů a naslouchacími procesy kanálu. Bez vazeb vyžaduje použití vlastních kanálů programování na úrovni kanálu, jak je popsáno v tématu [programování na úrovni kanálu služby](service-channel-level-programming.md) a [programování na úrovni kanálu klienta](client-channel-level-programming.md). Toto téma popisuje minimální požadavek na povolení použití kanálu v technologii WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolení použití z aplikace, jak je popsáno v kroku 4 [Vývoj kanálů](developing-channels.md).  
   
 ## <a name="overview"></a>Přehled  
- Vytváření <xref:System.ServiceModel.Channels.BindingElement> pro váš kanál umožňuje vývojářům používat v aplikaci WCF. <xref:System.ServiceModel.Channels.BindingElement> objekty lze z <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> třídy připojit aplikaci WCF na váš kanál bez nutnosti informace přesný typ kanálu.  
+ Vytvořením <xref:System.ServiceModel.Channels.BindingElement> pro kanál umožníte vývojářům používat ho v aplikaci WCF. <xref:System.ServiceModel.Channels.BindingElement>objekty lze použít z <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> třídy pro připojení aplikace WCF k kanálu bez nutnosti zadávat přesné informace o typu vašeho kanálu.  
   
- Jednou <xref:System.ServiceModel.Channels.BindingElement> byl vytvořen, můžete povolit další funkce, v závislosti na vašich požadavků ve zbývajících krocích vývoj kanálu je popsáno v následující [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
+ Po vytvoření můžete povolit více funkcí v závislosti na vašich požadavcích podle pokynů pro vývoj zbývajících kanálů popsaných v tématu [Vývoj kanálů.](developing-channels.md) <xref:System.ServiceModel.Channels.BindingElement>  
   
 ## <a name="adding-a-binding-element"></a>Přidání elementu vazby  
- Chcete-li implementovat vlastní <xref:System.ServiceModel.Channels.BindingElement>, zápis, která dědí z třídy <xref:System.ServiceModel.Channels.BindingElement>. Například, pokud jste vytvořili `ChunkingChannel` , rozdělte objemné zprávy do bloků dat a sestavení na druhém konci, můžete použít tento kanál ve vazbě implementací <xref:System.ServiceModel.Channels.BindingElement> a konfiguraci vazby pro použití. Zbývající část tohoto tématu používá `ChunkingChannel` jako příklad k předvedení požadavky implementace element vazby.  
+ Chcete-li implementovat <xref:System.ServiceModel.Channels.BindingElement>vlastní, zapište třídu, která <xref:System.ServiceModel.Channels.BindingElement>dědí z. Pokud jste například vytvořili `ChunkingChannel` a mohli rozdělit velké zprávy do bloků dat a znovu je sestavit na druhý konec, můžete tento kanál použít v jakékoli vazbě <xref:System.ServiceModel.Channels.BindingElement> implementací a konfigurací vazby pro jeho použití. Zbývající část tohoto tématu používá `ChunkingChannel` jako příklad k předvedení požadavků implementace prvku vazby.  
   
- A `ChunkingBindingElement` zodpovídá za vytvoření `ChunkingChannelFactory` a `ChunkingChannelListener`. Přepíše <xref:System.ServiceModel.Channels.BindingElement.CanBuildChannelFactory%2A> a <xref:System.ServiceModel.Channels.BindingElement.CanBuildChannelListener%2A> implementace a kontroly, které je parametr typu <xref:System.ServiceModel.Channels.IDuplexSessionChannel> (v našem příkladu to je jediný tvar kanálu podporována `ChunkingChannel`) a další prvky vazby ve vazbě podporu tohoto tvar kanálu.  
+ Je zodpovědný za `ChunkingChannelFactory` vytváření a `ChunkingChannelListener`. `ChunkingBindingElement` Přepisuje <xref:System.ServiceModel.Channels.BindingElement.CanBuildChannelFactory%2A> a <xref:System.ServiceModel.Channels.BindingElement.CanBuildChannelListener%2A> implementuje a kontroluje, zda je <xref:System.ServiceModel.Channels.IDuplexSessionChannel> parametr typu (v našem příkladu je to jediný tvar kanálu podporovaný rozhraním `ChunkingChannel`) a že ostatní prvky vazby ve vazbě tuto podporu podporují. obrazec kanálu  
   
- <xref:System.ServiceModel.Channels.BindingElement.BuildChannelFactory%2A> nejprve zkontroluje, že požadovaný tvar kanálu může být sestaven a potom získá seznam zpráv akce, které mají být rozdělený do bloků dat. Potom vytvoří nový `ChunkingChannelFactory`, předají se jí výroba vnitřního kanálu. (Pokud vytváříte element vazby přenosu, tento prvek je poslední v zásobníku vazby a proto musíte vytvořit naslouchací proces kanálu nebo objekt pro vytváření kanálů.)  
+ <xref:System.ServiceModel.Channels.BindingElement.BuildChannelFactory%2A>Nejdřív zkontroluje, jestli je možné vytvořit požadovaný obrazec kanálu, a pak získá seznam akcí zprávy, které se mají zablokovat. Pak vytvoří nový `ChunkingChannelFactory`a předá objekt pro vytváření interních kanálů. (Pokud vytváříte element vazby přenosu, tento prvek je poslední v zásobníku vazby, a proto musí vytvořit naslouchací proces kanálu nebo objekt pro vytváření kanálů.)  
   
- <xref:System.ServiceModel.Channels.BindingElement.BuildChannelListener%2A> má podobné implementace pro vytvoření `ChunkingChannelListener` a předají se jí vnitřního kanálu naslouchacího procesu.  
+ <xref:System.ServiceModel.Channels.BindingElement.BuildChannelListener%2A>má podobnou implementaci pro vytvoření `ChunkingChannelListener` a předání naslouchací proces vnitřního kanálu.  
   
- Další příklad použití přenosový kanál [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka poskytuje následující přepsání.  
+ Dalším příkladem použití transportního kanálu [je přenos: Ukázka](../samples/transport-udp.md) UDP poskytuje následující přepsání.  
   
- V ukázce je element vazby `UdpTransportBindingElement`, která je odvozena z <xref:System.ServiceModel.Channels.TransportBindingElement>. Přepíše následujících metod k vytváření továrny připojená ke kanálu.  
+ V ukázce je prvek vazby, který je `UdpTransportBindingElement`odvozen z. <xref:System.ServiceModel.Channels.TransportBindingElement> Přepíše následující metody pro sestavení továrn přidružených k kanálu.  
   
 ```csharp  
 public IChannelFactory<TChannel> BuildChannelFactory<TChannel>(BindingContext context)  
@@ -42,37 +42,37 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
 }  
 ```  
   
- Také obsahuje členy pro klonování `BindingElement` a vrácení naše schéma (soap.udp).  
+ Obsahuje také členy pro klonování `BindingElement` a vracení našeho schématu (SOAP. UDP).  
   
-#### <a name="protocol-binding-elements"></a>Prvky vazeb protokolu  
- Nové prvky vazeb můžete nahradit nebo rozšířit některý z elementů vazby součástí, přidáte nové přenosy, kódování nebo vyšší úrovně protokoly. Chcete-li vytvořit nový prvek vazby protokolu, začněte tím, že rozšíření <xref:System.ServiceModel.Channels.BindingElement> třídy. Minimálně musíte pak implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A?displayProperty=nameWithType> a implementovat `ChannelProtectionRequirements` pomocí <xref:System.ServiceModel.Channels.IChannel.GetProperty%2A?displayProperty=nameWithType>. Tím se vrátí <xref:System.ServiceModel.Security.ChannelProtectionRequirements> pro tento element vazby.  Další informace naleznete v tématu <xref:System.ServiceModel.Security.ChannelProtectionRequirements>.  
+#### <a name="protocol-binding-elements"></a>Prvky vazby protokolu  
+ Nové prvky vazby mohou nahradit nebo rozšířit libovolné vložené prvky vazby, přidat nové přenosy, kódování nebo protokoly vyšší úrovně. Chcete-li vytvořit nový element vazby protokolu, začněte tím, <xref:System.ServiceModel.Channels.BindingElement> že rozšíříte třídu. Přinejmenším je nutné implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A?displayProperty=nameWithType> a `ChannelProtectionRequirements` implementovat použití <xref:System.ServiceModel.Channels.IChannel.GetProperty%2A?displayProperty=nameWithType>. Tato funkce vrátí <xref:System.ServiceModel.Security.ChannelProtectionRequirements> pro tento prvek vazby.  Další informace naleznete v tématu <xref:System.ServiceModel.Security.ChannelProtectionRequirements>.  
   
- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> by měl vrátit novou kopii tohoto prvku vazby. Jako osvědčený postup doporučujeme, abyste tento element vazby autory implementace <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovací konstruktor, který volá základní konstruktor, poté duplicity všechna další pole v této třídě.  
+ <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>by měl vracet novou kopii tohoto elementu vazby. Jako osvědčený postup doporučujeme, aby tvůrci elementů vazby implementovali <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovacího konstruktoru, který volá konstruktor základní kopie, a potom naklonuje všechna další pole v této třídě.  
   
-#### <a name="transport-binding-elements"></a>Elementů přenosové vazby  
- Chcete-li vytvořit nový Element vazby přenosu, rozšířit <xref:System.ServiceModel.Channels.TransportBindingElement> rozhraní. Minimálně musíte pak implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> metoda a <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A?displayProperty=nameWithType> vlastnost.  
+#### <a name="transport-binding-elements"></a>Elementy vazby přenosu  
+ Chcete-li vytvořit nový prvek vazby přenosu, rozšíříte <xref:System.ServiceModel.Channels.TransportBindingElement> rozhraní. Přinejmenším je nutné implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> metodu <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A?displayProperty=nameWithType> a vlastnost.  
   
- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> – By měl vrátit novou kopii tohoto prvku vazby.  Jako osvědčený postup doporučujeme, že autoři prvku vazby implementovat klonování pomocí konstruktoru kopie, která volá základní konstruktor, a pak duplicity všechna další pole v této třídě.  
+ <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>– Má vrátit novou kopii tohoto elementu vazby.  Jako osvědčený postup doporučujeme, aby autoři elementů vazby implementovali klon pomocí kopírovacího konstruktoru, který volá konstruktor základní kopie, a potom naklonuje všechna další pole v této třídě.  
   
- <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> – Tím <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> získat schéma identifikátoru URI vrátí vlastnost reprezentována element vazby protokolu přenosu. Například <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType> vrátit "http" a "net.tcp" z jejich odpovídajících <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> vlastnosti.  
+ <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A>– Vlastnost <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> get vrátí schéma identifikátoru URI pro transportní protokol reprezentovaný prvkem vazby. Například <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> a vrátí "http" a "NET. TCP" z odpovídajících vlastností. <xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType>  
   
 #### <a name="encoding-binding-elements"></a>Kódování elementů vazby  
- Pokud chcete vytvořit nové kódování vazby prvky, začněte tím, že rozšíření <xref:System.ServiceModel.Channels.BindingElement> třídy a implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement?displayProperty=nameWithType> třídy. Minimálně musíte pak implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A?displayProperty=nameWithType> metody a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A?displayProperty=nameWithType> vlastnost.  
+ Chcete-li vytvořit nové prvky vazby kódování, začněte rozšířením <xref:System.ServiceModel.Channels.BindingElement> třídy a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement?displayProperty=nameWithType> implementací třídy. Minimální je nutné implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>metody, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A?displayProperty=nameWithType> vlastnost.  
   
-- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>. Vrátí novou kopii tohoto prvku vazby. Jako osvědčený postup doporučujeme, abyste tento element vazby autory implementace <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovací konstruktor, který volá základní konstruktor, poté duplicity všechna další pole v této třídě.  
+- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>. Vrátí novou kopii tohoto elementu vazby. Jako osvědčený postup doporučujeme, aby tvůrci elementů vazby implementovali <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovacího konstruktoru, který volá konstruktor základní kopie, a potom naklonuje všechna další pole v této třídě.  
   
-- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageEncoderFactory>, která poskytuje popisovač pro daná třída, která implementuje nový kodér a který by měl rozšířit <xref:System.ServiceModel.Channels.MessageEncoder>. Další informace naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncoderFactory> a <xref:System.ServiceModel.Channels.MessageEncoder>.  
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A>. Vrátí, který poskytuje popisovač ke skutečné třídě, která implementuje váš nový kodér a který by měl být rozšířen <xref:System.ServiceModel.Channels.MessageEncoder>. <xref:System.ServiceModel.Channels.MessageEncoderFactory> Další informace naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncoderFactory> a <xref:System.ServiceModel.Channels.MessageEncoder>.  
   
-- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageVersion> použít v platném kódování, která představuje verze protokolu SOAP a WS-Addressing používá.  
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A>. <xref:System.ServiceModel.Channels.MessageVersion> Vrátí použitý v tomto kódování, který představuje verze protokolu SOAP a adresování, které se používají.  
   
- Úplný seznam všech volitelné metody a vlastnosti pro uživatelem definované kódování elementy vazby, naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
+ Úplný seznam volitelných metod a vlastností pro uživatelsky definované prvky vazby kódování naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
- Další informace o vytváření nového elementu vazby najdete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
+ Další informace o vytvoření nového prvku vazby naleznete v tématu [vytváření uživatelsky definovaných vazeb](creating-user-defined-bindings.md).  
   
- Po vytvoření element vazby kanálu vrátit [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md) tématu Určuje, zda chcete přidat konfigurační soubor podporu prvek vazby, pokud a jak přidat podporu publikování metadat, a zda a jak vytvořit vazbu definovaný uživatelem, který používá vaše element vazby.  
+ Po vytvoření prvku vazby pro váš kanál se vraťte do tématu [vývojové kanály](developing-channels.md) , abyste viděli, zda chcete přidat podporu konfiguračního souboru do prvku vazby, pokud a jak přidat podporu publikace metadat a zda a jak konstrukce uživatelsky definované vazby, která používá váš element vazby.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Channels.BindingElement>
-- [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md)
-- [Přenos: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [Vývoj kanálů](developing-channels.md)
+- [Přepravu UDP](../samples/transport-udp.md)

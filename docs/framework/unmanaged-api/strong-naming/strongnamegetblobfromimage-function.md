@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b076c39ccf40ca5b613cab94ecc75716158d97a9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86b99b29a85f498a6bfa0363a446bf589876bff9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780126"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799086"
 ---
 # <a name="strongnamegetblobfromimage-function"></a>StrongNameGetBlobFromImage – funkce
-Získá binární vyjádření této bitové kopie sestavení na adrese zadaná paměťová.  
+Načte binární reprezentaci image sestavení v zadané adrese paměti.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamegetblobfromimage –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameGetBlobFromImage –](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ BOOLEAN StrongNameGetBlobFromImage (
   
 ## <a name="parameters"></a>Parametry  
  `pbBase`  
- [in] Adresa paměti pro manifest sestavení pro mapovanou.  
+ pro Adresa paměti namapovaného manifestu sestavení.  
   
  `dwLength`  
- [in] Velikost v bajtech bitové kopie `pbBase`.  
+ pro Velikost obrázku `pbBase`v bajtech.  
   
  `pbBlob`  
- [in] Vyrovnávací paměť obsahuje binární vyjádření této image.  
+ pro Vyrovnávací paměť obsahující binární reprezentaci obrázku.  
   
  `pcbBlob`  
- [out v] Požadovanou maximální velikost v bajtech, `pbBlob`. Po návratu, skutečná velikost v bajtech, z `pbBlob`.  
+ [in, out] Požadovaná maximální velikost (v bajtech `pbBlob`). Po vrácení se skutečnou velikostí v bajtech `pbBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameGetBlobFromImage` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameGetBlobFromImage` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameGetBlobFromImage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
-- [StrongNameGetBlob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameGetBlobFromImage – metoda](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
+- [StrongNameGetBlob – metoda](../hosting/iclrstrongname-strongnamegetblob-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

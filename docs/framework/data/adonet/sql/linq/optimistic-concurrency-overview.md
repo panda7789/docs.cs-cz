@@ -2,12 +2,12 @@
 title: 'Optimistická metoda souběžného zpracování: Přehled'
 ms.date: 03/30/2017
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
-ms.openlocfilehash: a61d4c5b35f3797539fe845045b8a959b0351350
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fa7d423c0abc07e0d97f7d0d4d557aa11d675ee4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938628"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792923"
 ---
 # <a name="optimistic-concurrency-overview"></a>Optimistická metoda souběžného zpracování: Přehled
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje optimistické řízení souběžnosti. Následující tabulka popisuje podmínky, které platí pro optimistickou souběžnost [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v dokumentaci:  
@@ -44,26 +44,26 @@ ms.locfileid: "69938628"
 |User1|Alfred||Marketing|  
 |Přidal||Marie|Služba|  
   
- Tyto konflikty můžete vyřešit různými způsoby. Další informace najdete v tématu [jak: Spravujte konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)změn.  
+ Tyto konflikty můžete vyřešit různými způsoby. Další informace najdete v tématu [jak: Spravujte konflikty](how-to-manage-change-conflicts.md)změn.  
   
 ## <a name="conflict-detection-and-resolution-checklist"></a>Kontrolní seznam pro detekci konfliktů a rozlišení  
  Konflikty můžete detekovat a řešit na libovolné úrovni podrobností. V jednom krajním případě můžete vyřešit všechny konflikty jedním ze tří způsobů (viz <xref:System.Data.Linq.RefreshMode>) bez dalšího zvážení. V ostatních extrémních případech můžete určit určitou akci pro každý typ konfliktu u každého člena v konfliktu.  
   
 - Zadejte nebo opravte <xref:System.Data.Linq.Mapping.UpdateCheck> možnosti v objektovém modelu.  
   
-     Další informace najdete v tématu [jak: Určete, kteří členové jsou testováni pro konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-which-members-are-tested-for-concurrency-conflicts.md)souběžnosti.  
+     Další informace najdete v tématu [jak: Určete, kteří členové jsou testováni pro konflikty](how-to-specify-which-members-are-tested-for-concurrency-conflicts.md)souběžnosti.  
   
 - V bloku try/catch volání metody <xref:System.Data.Linq.DataContext.SubmitChanges%2A>určete, kde má být vyvolána výjimka.  
   
-     Další informace najdete v tématu [jak: Určete, kdy jsou vyvolány](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-when-concurrency-exceptions-are-thrown.md)výjimky souběžnosti.  
+     Další informace najdete v tématu [jak: Určete, kdy jsou vyvolány](how-to-specify-when-concurrency-exceptions-are-thrown.md)výjimky souběžnosti.  
   
 - Určete, kolik podrobností o konfliktech chcete načíst, a odpovídajícím způsobem zahrňte kód do bloku try/catch.  
   
-     Další informace najdete v tématu [jak: Načtení informací o](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-entity-conflict-information.md) konfliktech [entit a postupy: Načte informace o](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-member-conflict-information.md)konfliktu členů.  
+     Další informace najdete v tématu [jak: Načtení informací o](how-to-retrieve-entity-conflict-information.md) konfliktech [entit a postupy: Načte informace o](how-to-retrieve-member-conflict-information.md)konfliktu členů.  
   
 - Dokóduzahrňtezpůsob,jakýmchcetevyřešitrůznékonflikty,kteréjstezjistili./ `try` `catch`  
   
-     Další informace najdete v tématu [jak: Vyřešte konflikty tím, že zachováte hodnoty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)databáze a [postupy: Řešení konfliktů přepsáním hodnot](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)databáze a [postupy: Vyřešte konflikty sloučením s hodnotami](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-merging-with-database-values.md)databáze.  
+     Další informace najdete v tématu [jak: Vyřešte konflikty tím, že zachováte hodnoty](how-to-resolve-conflicts-by-retaining-database-values.md)databáze a [postupy: Řešení konfliktů přepsáním hodnot](how-to-resolve-conflicts-by-overwriting-database-values.md)databáze a [postupy: Vyřešte konflikty sloučením s hodnotami](how-to-resolve-conflicts-by-merging-with-database-values.md)databáze.  
   
 ## <a name="linq-to-sql-types-that-support-conflict-discovery-and-resolution"></a>LINQ to SQL typy, které podporují zjišťování a řešení konfliktů  
  Třídy a funkce pro podporu řešení konfliktů v rámci optimistická souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] systému zahrnují následující:  
@@ -90,4 +90,4 @@ ms.locfileid: "69938628"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Postupy: Správa konfliktů změn](how-to-manage-change-conflicts.md)

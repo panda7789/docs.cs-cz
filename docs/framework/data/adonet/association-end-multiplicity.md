@@ -2,36 +2,36 @@
 title: association end multiplicity
 ms.date: 03/30/2017
 ms.assetid: 340926ee-aefb-4bef-92cc-453e5251fd03
-ms.openlocfilehash: e889394dc28bfe1352bd4c8497d5a74919279fe7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cdcf69e7118620b2f8febd02d7695d429bf8cc2c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592622"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786941"
 ---
 # <a name="association-end-multiplicity"></a>association end multiplicity
-*Násobnost end přidružení* definuje počet [typ entity](../../../../docs/framework/data/adonet/entity-type.md) instancí, které mohou být na jednom konci [přidružení](../../../../docs/framework/data/adonet/association-type.md).  
+*Násobnost zakončení přidružení* definuje počet instancí [typu entity](entity-type.md) , které mohou být na jednom konci [přidružení](association-type.md).  
   
- Násobnost end přidružení může mít jednu z následujících hodnot:  
+ Násobnost zakončení přidružení může mít jednu z následujících hodnot:  
   
-- jedna (1): Označuje, že tuto instanci typu přesně jedna entita existuje na konci přidružení.  
+- jedna (1): Označuje, že na konci přidružení existuje přesně jedna instance typu entity.  
   
-- nula nebo jedna (0..1): Udává, že existuje žádnou nebo jednou instancí typu entity na konci přidružení.  
+- nula nebo jedna (0.. 1): Označuje, že na konci přidružení existují žádné nebo jedna instance typu entity.  
   
-- Mnoho (\*): Udává, že existuje žádného, jednoho nebo více instancí typu entity na konci přidružení.  
+- mnoho (\*): Označuje, že na konci přidružení existují žádné instance typu entity nula, jedna nebo více.  
   
- Asociace je často vyznačují Násobnosti zakončení její přidružení. Například, pokud konce asociace mají násobnosti jeden (1) a mnoho (\*), přidružení je označováno jako jeden mnoho přidružení. V následujícím příkladu `PublishedBy` přidružení je přidružení jednoho k několika (vydavatel publikuje mnoho knih a knihy se publikuje vydavatele). `WrittenBy` Přidružení je přidružení many-to-many (knihu můžete mít více autoři a autor můžete psát více seznamů).  
+ Přidružení je často charakteristické násobnostmi koncovosti přidružení. Například pokud končí přidružení násobnosti jedna (1) a many (\*), přidružení se nazývá přidružení 1:1. V následujícím `PublishedBy` příkladu je přidružení přidružení typu 1: n (vydavatel zveřejňuje mnoho knih a kniha je publikována jedním vydavatelem). `WrittenBy` Přidružení je asociace typu m:n (kniha může mít více autorů a autor může zapisovat několik knih).  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy` a `WrittenBy`. Konec asociace `PublishedBy` přidružení se `Book` a `Publisher` typy entit. Násobnost `Publisher` end je jedna (1) a násobnost `Book` end je mnoho (\*).  
+ Následující diagram znázorňuje koncepční model se dvěma přidruženími: `PublishedBy` a. `WrittenBy` Přidružení `PublishedBy` jsouzakončenápro`Publisher` přidružení jsou typy entit a.`Book` Násobnost elementu `Publisher` end je jedna (1) a násobnost elementu `Book` end je mnoho (\*).  
   
- ![Příklad modelu s tři typy entit](./media/association-end-multiplicity/example-model-three-entity-types.gif)  
+ ![Vzorový model se třemi typy entit](./media/association-end-multiplicity/example-model-three-entity-types.gif)  
   
- ADO.NET Entity Framework používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `PublishedBy` přidružení, které jsou zobrazeny ve výše uvedeném diagramu:  
+ ADO.NET Entity Framework používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje `PublishedBy` přidružení zobrazené v diagramu výše:  
   
  [!code-xml[EDM_Example_Model#AssociationExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#associationexample)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)

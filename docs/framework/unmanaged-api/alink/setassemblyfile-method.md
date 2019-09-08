@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b7be346f1c92c877932957787b0747515c144752
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 76d341aca7c96e5932a1fc155ccaee17ce6585da
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741546"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777000"
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile – metoda
-Přiřadí název sestavení, které má být sestaven. Není pro použití při vytváření nevázaných moduly.  
+Přiřadí název sestavení, které má být sestaveno. Nepoužívá se při výrobě nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,22 +42,22 @@ HRESULT SetAssemblyFile(
  Plně kvalifikovaný název souboru manifestu.  
   
  `pEmitter`  
- Ukazatel na [imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní.  
+ Ukazatel na rozhraní [IMetaDataEmit Interface](../metadata/imetadataemit-interface.md) .  
   
  `afFlags`  
- Označí příznakem, jak jsou definovány v [assemblyflags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md).  
+ Příznaky definované ve [výčtu AssemblyFlags –](../metadata/assemblyflags-enumeration.md).  
   
  `pAssemblyID`  
- Ukazatel na ID výsledné sestavení.  
+ Ukazatel na ID výsledného sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

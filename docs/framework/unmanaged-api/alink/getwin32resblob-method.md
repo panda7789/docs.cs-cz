@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bdc1ef6490f250ebe93b0482adf244adfc0ffd56
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b26f08548ac964fae2f4d64db50167add327eb2d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741784"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777366"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
-Načte objekt blob prostředků Win32. Tuto metodu volejte po nastavení možností sestavení.  
+Načte objekt BLOB prostředku Win32. Po nastavení možností sestavení volejte tuto metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ HRESULT GetWin32ResBlob(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
  `FileToken`  
- Soubor tokenu se používá k načtení názvu souboru, který má být použit při vytváření prostředků Win32 verze  
+ Token souboru, který se používá k načtení názvu souboru, který se má použít při vytváření prostředku verze Win32  
   
  `fDll`  
- TRUE, pokud je soubor knihovny DLL, false EXE.  
+ TRUE, pokud je soubor DLL, false pro EXE.  
   
  `pszIconFile`  
- Volitelné ikony k vložení do objektu blob prostředků.  
+ Volitelná ikona, která se má vložit do objektu BLOB prostředku  
   
  `ppResBlob`  
- Přijímá objekt blob prostředků.  
+ Přijímá objekt BLOB prostředku.  
   
  `pcbResBlob`  
- Získá velikost objektu blob.  
+ Přijímá velikost objektu BLOB.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

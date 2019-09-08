@@ -2,12 +2,12 @@
 title: Externí mapování
 ms.date: 03/30/2017
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-ms.openlocfilehash: 70372473eb2de5d3c4751e237e7beb66315b690e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 39cdd7b23bd90ff8938dda9eee630149ce6ddbea
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950331"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793998"
 ---
 # <a name="external-mapping"></a>Externí mapování
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje *externí mapování*, což je proces, při kterém použijete samostatný soubor XML k určení mapování mezi datovým modelem databáze a objektovým modelem. Mezi výhody použití externího mapovacího souboru patří následující:  
@@ -23,7 +23,7 @@ ms.locfileid: "69950331"
   
 - Soubor mapování musí být soubor XML.  
   
-- Soubor mapování XML musí být platný pro soubor definice schématu XML. Další informace najdete v tématu [jak: Ověřte soubory DBML a externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)souborů.  
+- Soubor mapování XML musí být platný pro soubor definice schématu XML. Další informace najdete v tématu [jak: Ověřte soubory DBML a externí mapování](how-to-validate-dbml-and-external-mapping-files.md)souborů.  
   
 - Externí mapování Přepisuje mapování na základě atributů. Jinými slovy, pokud použijete externí zdroj mapování k vytvoření <xref:System.Data.Linq.DataContext>, ignorují se <xref:System.Data.Linq.DataContext> všechny mapování atributů, které jste vytvořili pro třídy. Toto chování je pravdivé bez ohledu na to, zda je třída obsažena v externím mapování souboru.  
   
@@ -32,10 +32,10 @@ ms.locfileid: "69950331"
 ## <a name="xml-schema-definition-file"></a>Soubor definice schématu XML  
  Externí mapování v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nástroji musí být platné pro následující definici schématu XML.  
   
- Rozliší tento soubor definice schématu ze souboru definice schématu, který se používá k ověření souboru DBML. Další informace naleznete v tématu [generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).  
+ Rozliší tento soubor definice schématu ze souboru definice schématu, který se používá k ověření souboru DBML. Další informace naleznete v tématu [generování kódu v LINQ to SQL](code-generation-in-linq-to-sql.md)).  
   
 > [!NOTE]
-> Uživatelé sady Visual Studio budou také tento soubor XSD v dialogovém okně schémat XML vyhledat jako "LinqToSqlMapping. xsd". Chcete-li tento soubor správně použít pro ověření externího souboru mapování, [Přečtěte si téma How to: Ověřte soubory DBML a externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)souborů.  
+> Uživatelé sady Visual Studio budou také tento soubor XSD v dialogovém okně schémat XML vyhledat jako "LinqToSqlMapping. xsd". Chcete-li tento soubor správně použít pro ověření externího souboru mapování, [Přečtěte si téma How to: Ověřte soubory DBML a externí mapování](how-to-validate-dbml-and-external-mapping-files.md)souborů.  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -143,6 +143,6 @@ elementFormDefault="qualified" >
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Postupy: Generování objektového modelu jako externího souboru](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
+- [Generování kódu v LINQ to SQL](code-generation-in-linq-to-sql.md)
+- [Referenční informace](reference.md)
+- [Postupy: Generování objektového modelu jako externího souboru](how-to-generate-the-object-model-as-an-external-file.md)

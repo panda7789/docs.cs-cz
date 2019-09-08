@@ -2,12 +2,12 @@
 title: Autorizace a oprávnění na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: 66bf347543641808cc463d8035223fcf59b08231
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c9b041a078494cd29d6cab5297728d233dafa236
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918101"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782597"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění na SQL Serveru
 Při vytváření databázových objektů musíte explicitně udělit oprávnění, aby je bylo možné uživatelům zpřístupnit. Každý zabezpečitelný objekt má oprávnění, která lze udělit objektu zabezpečení pomocí příkazů oprávnění.  
@@ -60,9 +60,9 @@ Při vytváření databázových objektů musíte explicitně udělit oprávněn
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)
-- [Serverové a databázové role na SQL Serveru](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)
-- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Ověřování v SQL Serveru](authentication-in-sql-server.md)
+- [Serverové a databázové role na SQL Serveru](server-and-database-roles-in-sql-server.md)
+- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](ownership-and-user-schema-separation-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

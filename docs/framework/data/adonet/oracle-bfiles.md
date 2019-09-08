@@ -2,36 +2,36 @@
 title: Soubory Oracle BFILE
 ms.date: 03/30/2017
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-ms.openlocfilehash: 2d7db741cea5421b2391588c0479f44e2b478ca3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 214140bb8fcf43154b014ea3db609d355a27af7c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626425"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794625"
 ---
 # <a name="oracle-bfiles"></a>Soubory Oracle BFILE
-Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s Oracle <xref:System.Data.OracleClient.OracleType.BFile> datového typu.  
+Zprostředkovatel dat .NET Framework pro Oracle obsahuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s datovým typem Oracle. <xref:System.Data.OracleClient.OracleType.BFile>  
   
- Oracle **BFILE** je datový typ Oracle **LOB** datový typ, který obsahuje odkaz na binárních dat a maximální velikost 4 GB. Oracle **BFILE** se liší od jiných Oracle **LOB** datové typy v tom, že jeho data se ukládají v fyzický soubor v operačním systému místo na serveru. Všimněte si, **BFILE** datový typ poskytuje přístup jen pro čtení k datům.  
+ Datový typ Oracle **BFILE** je typ dat **LOB** Oracle, který obsahuje odkaz na binární data s maximální velikostí 4 gigabajtů. Oracle **BFILE** se liší od jiných datových typů typu Oracle **LOB** v tom, že jeho data se ukládají do fyzického souboru v operačním systému místo na serveru. Všimněte si, že datový typ **BFILE** poskytuje přístup k datům jen pro čtení.  
   
- Další vlastnosti **BFILE** datový typ, který odlišit od **LOB** se, že datový typ:  
+ Další vlastnosti datového typu **BFILE** , které ho odlišují od datového typu **LOB** , jsou tyto:  
   
-- Obsahuje Nestrukturovaná data.  
+- Obsahuje nestrukturovaná data.  
   
-- Podporuje bloků na straně serveru.  
+- Podporuje rozblokování na straně serveru.  
   
-- Odkazovat na používá sémantiku kopírování. Například, pokud provádíte operaci kopírování na **BFILE**, pouze **BFILE** zkopíruje Lokátor (což je odkaz na soubor). Data v souboru není zkopírován.  
+- Používá sémantiku kopírování odkazů. Například při provádění operace kopírování na **BFILE**se zkopíruje pouze **BFILE** Lokátor (což je odkaz na soubor). Data v souboru se nekopírují.  
   
- **BFILE** datový typ by měl použít pro odkazování na objekty LOBs, které jsou velké a proto není praktické ukládá do databáze. Další režii klienta, server a komunikace je zahrnuta při použití **BFILE** datový typ ve srovnání s **LOB** datového typu. Je mnohem efektivnější pro přístup k **BFILE** Pokud potřebujete získat malé množství dat. To je mnohem efektivnější pro přístup k databázi rezidentní objekty LOBs, pokud je třeba získat celý objekt.  
+ Datový typ **BFILE** by se měl používat pro odkazování na objekty LOBs sy, které jsou velké velikosti, a proto není praktické ukládat do databáze. Při použití datového typu **BFILE** v porovnání s datovým typem **LOB** je zapojená další režie klienta, serveru a komunikace. Přístup k **BFILE** je efektivnější, jenom když potřebujete získat jen malé množství dat. Přístup k objekty LOBs s rezidentu v databázi je efektivnější, pokud potřebujete získat celý objekt.  
   
- Každý NENULOVOU **OracleBFile** objekt je přidružený dvě entity, které definují umístění podkladový fyzický soubor:  
+ Každý objekt **OracleBFile** , který nemá hodnotu null, je přidružen ke dvěma entitám, které definují umístění podkladového fyzického souboru:  
   
-1. Objekt adresáře Oracle, což je alias databáze pro adresář v systému souborů, a  
+1. Objekt adresáře Oracle, který je aliasem databáze pro adresář v systému souborů a  
   
-2. Název souboru základního fyzického souboru, který je umístěn v adresáři přidružená k objektu adresáře.  
+2. Název souboru podkladového fyzického souboru, který je umístěn v adresáři přidruženém k objektu adresáře.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad jazyka C# ukazuje, jak můžete vytvořit **BFILE** Oracle tabulce a potom ho načíst ve formě **OracleBFile** objektu. Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleBFile** **Seek** a **čtení** metody. Všimněte si, že chcete-li použít tento příklad, musíte nejprve vytvořit adresář s názvem "c:\\\bfiles" a soubor s názvem "MyFile.jpg" na serveru Oracle.  
+ Následující C# příklad ukazuje, jak můžete vytvořit **BFILE** v tabulce Oracle a pak ho načíst ve formě objektu **OracleBFile** . Příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a metod **hledání** a **čtení** **OracleBFile** . Všimněte si, že aby bylo možné tuto ukázku použít, musíte nejprve na serveru Oracle vytvořit adresář s\\názvem "c: \bfiles" a souborem s názvem "MyFile. jpg".  
   
 ```csharp  
 using System;  
@@ -88,5 +88,5 @@ public class Sample
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oracle a ADO.NET](oracle-and-adonet.md)
+- [Přehled ADO.NET](ado-net-overview.md)

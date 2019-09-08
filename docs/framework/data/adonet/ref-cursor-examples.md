@@ -2,29 +2,29 @@
 title: Příklady REF CURSOR
 ms.date: 03/30/2017
 ms.assetid: c257da03-c6c9-4cf8-b591-b7740a962c40
-ms.openlocfilehash: dfad86c6d5c99d7a1b99d7cfbde165d5ec39f5f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24830452e6d1ab11605ffa88a925fbc55c80b9bf
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651672"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794704"
 ---
 # <a name="ref-cursor-examples"></a>Příklady REF CURSOR
-Příklady REF CURSOR se skládají z následující tři příklady Microsoft Visual Basic, které ukazují používání typů REF CURSOR.  
+Příklady REFERENČNÍch ukazatelů se skládají z následujících tří příkladů Visual Basic společnosti Microsoft, které ukazují použití odkazů REF.  
   
 |Ukázka|Popis|  
 |------------|-----------------|  
-|[Parametry REF CURSOR v čtečce OracleDataReader](../../../../docs/framework/data/adonet/ref-cursor-parameters-in-an-oracledatareader.md)|Tento příklad spustí PL/uložené procedury SQL, který vrací parametr REF CURSOR a přečte hodnotu jako <xref:System.Data.OracleClient.OracleDataReader>.|  
-|[Načítání dat z více typů REF CURSOR pomocí čtečky OracleDataReader](../../../../docs/framework/data/adonet/retrieving-data-from-multiple-ref-cursors.md)|Tento příklad spustí PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a čte hodnoty pomocí **připojení OracleDataReader**.|  
-|[Naplnění datové sady pomocí jednoho nebo více typů REF CURSOR](../../../../docs/framework/data/adonet/filling-a-dataset-using-one-or-more-ref-cursors.md)|Tento příklad spustí PL/SQL uložené procedury, která vrací dva parametry REF CURSOR a doplní <xref:System.Data.DataSet> s řádky, které jsou vráceny.|  
+|[Parametry REF CURSOR v čtečce OracleDataReader](ref-cursor-parameters-in-an-oracledatareader.md)|Tento příklad provede uloženou proceduru PL/SQL, která vrací parametr REF CURSOR a přečte hodnotu jako <xref:System.Data.OracleClient.OracleDataReader>.|  
+|[Načítání dat z více typů REF CURSOR pomocí čtečky OracleDataReader](retrieving-data-from-multiple-ref-cursors.md)|Tento příklad provede uloženou proceduru PL/SQL, která vrátí dva parametry REF CURSOR a přečte hodnoty pomocí **OracleDataReader**.|  
+|[Naplnění datové sady pomocí jednoho nebo více typů REF CURSOR](filling-a-dataset-using-one-or-more-ref-cursors.md)|Tento příklad provede uloženou proceduru PL/SQL, která vrátí dva parametry REF CURSOR a vyplní <xref:System.Data.DataSet> řádky, které jsou vráceny.|  
   
- Pokud chcete použít tyto příklady, budete muset vytvořit tabulky Oracle a je nutné vytvořit balíček PL/SQL a tělo balíčku.  
+ Chcete-li použít tyto příklady, budete pravděpodobně muset vytvořit tabulky Oracle a musíte vytvořit balíček PL/SQL a tělo balíčku.  
   
 ## <a name="creating-the-oracle-tables"></a>Vytváření tabulek Oracle  
- Tyto příklady použití tabulek, které jsou definovány ve schématu Oracle Scott/tygr. Oracle Scott/Tiger schématu je součástí většiny instalací Oracle. Pokud toto schéma neexistuje, můžete použít soubor příkazů SQL v {OracleHome}\rdbms\admin\scott.sql vytvářet tabulky a indexy, které používají tyto příklady.  
+ V těchto příkladech se používají tabulky definované ve schématu Oracle Scott/tygr. Schéma Oracle Scott/tygr je součástí většiny instalací Oracle. Pokud toto schéma neexistuje, můžete k vytvoření tabulek a indexů používaných v těchto příkladech použít soubor příkazů SQL v {OracleHome} \rdbms\admin\scott.SQL.  
   
-## <a name="creating-the-oracle-package-and-package-body"></a>Vytváření balíčku Oracle a tělo balíčku  
- Tyto příklady vyžadují následující balíček PL/SQL a tělo balíčku na serveru. Vytvořte následující balíček Oracle na serveru Oracle.  
+## <a name="creating-the-oracle-package-and-package-body"></a>Vytvoření balíčku a textu balíčku Oracle  
+ Tyto příklady vyžadují následující balíček PL/SQL a tělo balíčku na vašem serveru. Na serveru Oracle vytvořte následující balíček Oracle.  
   
 ```sql
 CREATE OR REPLACE PACKAGE CURSPKG AS   
@@ -37,7 +37,7 @@ END CURSPKG;
 /   
 ```  
   
- Vytvořte následující tělo balíčku Oracle na serveru Oracle.  
+ Na serveru Oracle vytvořte následující text balíčku Oracle.  
   
 ```sql
 CREATE OR REPLACE PACKAGE BODY CURSPKG AS  
@@ -81,5 +81,5 @@ END CURSPKG;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Soubory Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Soubory Oracle REF CURSOR](oracle-ref-cursors.md)
+- [Přehled ADO.NET](ado-net-overview.md)

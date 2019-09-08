@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 77f25e1c52f10a1724bf81a3fa533739e15085c4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 4c8b26651a1f4050145b6d43e03f9d4cc3d68202
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204710"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785278"
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načtení datové sady z XML
 Obsah ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu. Kromě toho s .NET Framework máte skvělou flexibilitu nad tím, které informace jsou načteny z XML a jak se vytváří schéma nebo relační struktura <xref:System.Data.DataSet> .  
@@ -32,7 +32,7 @@ Obsah ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML ne
 > Pokud předáte **třídu XmlReader** k **ReadXml** , která je umístěna do dokumentu XML, **ReadXml** se přečte do dalšího uzlu elementu a bude se považovat za kořenový prvek, který se bude načítat až do konce uzlu elementu. To se nevztahuje, pokud zadáte **XmlReadMode. fragment**.  
   
 ## <a name="dtd-entities"></a>Entity DTD  
- Pokud váš kód XML obsahuje entity definované v rámci schématu definice typu dokumentu (DTD), bude vyvolána výjimka, pokud se pokusíte načíst objekt <xref:System.Data.DataSet> předáním názvu souboru, datového proudu nebo neověření objektu **XmlReader** do **ReadXml**. Místo toho musíte vytvořit **XmlValidatingReader**s **EntityHandling** nastavenou na **EntityHandling. ExpandEntities**a předat **XmlValidatingReader** ReadXml. **XmlValidatingReader** rozšíří entity před jejich čtením <xref:System.Data.DataSet>.  
+ Pokud váš kód XML obsahuje entity definované v rámci schématu definice typu dokumentu (DTD), bude vyvolána výjimka, pokud se pokusíte načíst objekt <xref:System.Data.DataSet> předáním názvu souboru, datového proudu nebo neověření objektu **XmlReader** do **ReadXml**. Místo toho musíte vytvořit **XmlValidatingReader**s **EntityHandling** nastavenou na **EntityHandling. ExpandEntities**a předat **XmlValidatingReader** **ReadXml.** **XmlValidatingReader** rozšíří entity před jejich čtením <xref:System.Data.DataSet>.  
   
  Následující příklady kódu ukazují, jak načíst <xref:System.Data.DataSet> z datového proudu XML. První příklad ukazuje název souboru předávaný do metody **ReadXml** . Druhý příklad ukazuje řetězec, který obsahuje kód XML, který je načítán <xref:System.IO.StringReader>pomocí.  
   
@@ -124,4 +124,4 @@ foreach (DataTable dataTable in dataSet.Tables)
 - [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
 - [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -5,12 +5,12 @@ ms.assetid: b27c779b-9355-4dc7-b95f-7dfd504b6e48
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 618abc8e681a6f43a1054d0ca2cec2fbdec853f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1366e8f5f79a8e695e52c405e20a894861453ae7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943565"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781778"
 ---
 # <a name="how-to-map-inheritance-hierarchies"></a>Postupy: Mapování hierarchií dědičnosti
 Chcete-li implementovat mapování [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]dědičnosti v nástroji, je nutné zadat atributy a vlastnosti atributu pro kořenovou třídu Hierarchie dědičnosti, jak je popsáno v následujícím postupu. Vývojáři, kteří používají Visual Studio, mohou použít Návrhář relací objektů k mapování hierarchií dědičnosti. Viz [jak: Nakonfigurujte dědičnost pomocí návrháře](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)O/R.  
@@ -52,5 +52,5 @@ Chcete-li implementovat mapování [!INCLUDE[vbteclinq](../../../../../../includ
   
 ## <a name="see-also"></a>Viz také:
 
-- [Podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md)
-- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Podpora dědičnosti](inheritance-support.md)
+- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](how-to-customize-entity-classes-by-using-the-code-editor.md)

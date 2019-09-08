@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 993848711f41c9e03b969a3c611982a5c8bc860d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 24f7e2d5a547b78ceb4808feaf581c6f49807cf7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742217"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787628"
 ---
 # <a name="createalink-function"></a>CreateALink – funkce
-Vytvoří instanci propojovacího programu sestavení a nastaví ukazatel na rozhraní zadané.  
+Vytvoří instanci linkeru sestavení a nastaví ukazatel na zadané rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,12 +40,12 @@ HRESULT CreateALink (
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`riid`|Fyzický název jedné z propojovacího programu sestavení rozhraní.|  
-|`ppInterface`|Umístění, které při úspěšném dokončení obsahuje ukazatel `riid` rozhraní.|  
+|`riid`|Fyzický název jednoho z rozhraní linkeru sestavení.|  
+|`ppInterface`|Umístění, které po úspěšném dokončení obsahuje ukazatel na `riid` rozhraní.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Knihovna**: alink.dll  
+ **Knihovna**: ALink. dll  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

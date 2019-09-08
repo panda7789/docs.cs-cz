@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 714e252f-c053-4bbb-b1f3-924111cd4d97
-ms.openlocfilehash: 0d757e3c37f347014eb2ef90b4e61ddd205dd012
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: da4e5e8fe4682191a0c8e2b0ce6a7b945fe63deb
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938671"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781470"
 ---
 # <a name="how-to-use-scalar-valued-user-defined-functions"></a>Postupy: Použití uživatelem definovaných funkcí se skalárními hodnotami
 Metodu klienta definovanou pro třídu lze namapovat na uživatelsky definovanou funkci pomocí <xref:System.Data.Linq.Mapping.FunctionAttribute> atributu. Všimněte si, že tělo metody vytvoří výraz, který zachycuje záměr volání metody, a předá tento výraz <xref:System.Data.Linq.DataContext> pro účely překladu a provedení.  
   
 > [!NOTE]
-> K přímému provedení dojde pouze v případě, že je funkce volána mimo dotaz. Další informace najdete v tématu [jak: Volání uživatelsky definovaných funkcí je](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)vloženo.  
+> K přímému provedení dojde pouze v případě, že je funkce volána mimo dotaz. Další informace najdete v tématu [jak: Volání uživatelsky definovaných funkcí je](how-to-call-user-defined-functions-inline.md)vloženo.  
   
 ## <a name="example"></a>Příklad  
  Následující kód SQL prezentuje uživatelsky definovanou funkci `ReverseCustName()`s skalární hodnotou.  
@@ -39,4 +39,4 @@ END
   
 ## <a name="see-also"></a>Viz také:
 
-- [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)
+- [Uživatelem definované funkce](user-defined-functions.md)

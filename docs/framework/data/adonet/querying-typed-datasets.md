@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ad712fa1-2baf-462a-b163-574cce6d376a
-ms.openlocfilehash: d956fd5f07c108146d20623bcf811266380c132c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 55714c4dae73cd17a849cc35681797dfa4266e3b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651737"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782964"
 ---
-# <a name="query-typed-datasets"></a>Dotazování typové datové sady
+# <a name="query-typed-datasets"></a>Datové sady s typovým dotazem
 
-Pokud schéma <xref:System.Data.DataSet> je znám v době návrhu aplikací, doporučujeme použít zadaný <xref:System.Data.DataSet> při použití technologie LINQ to DataSet. Zadaný <xref:System.Data.DataSet> je třída, která je odvozena z <xref:System.Data.DataSet>. V důsledku toho dědí všechny metody, události a vlastnosti <xref:System.Data.DataSet>. Kromě toho typovaného <xref:System.Data.DataSet> poskytuje silného typu metody, události a vlastnosti. To znamená, že dostanete tabulky a sloupce podle názvu, namísto použití metody založené na kolekci. Díky tomu dotazy, jednodušší a lépe čitelný. Další informace najdete v tématu [typované datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).
+Pokud je schéma v <xref:System.Data.DataSet> době návrhu aplikace známo, doporučujeme při použití LINQ to DataSet zadat <xref:System.Data.DataSet> typ. Typ je třída, která je odvozena z typu <xref:System.Data.DataSet>. <xref:System.Data.DataSet> V takovém případě dědí všechny metody, události a vlastnosti <xref:System.Data.DataSet>. Kromě toho zadaný <xref:System.Data.DataSet> typ poskytuje metody, události a vlastnosti silného typu. To znamená, že můžete získat přístup k tabulkám a sloupcům podle názvu namísto použití metod založených na kolekcích. Díky tomu jsou dotazy jednodušší a čitelnější. Další informace najdete v tématu [typové datové sady](./dataset-datatable-dataview/typed-datasets.md).
 
-Technologie LINQ to DataSet také podporuje dotazování typovaného <xref:System.Data.DataSet>. S typovaného <xref:System.Data.DataSet>, není nutné museli používat obecná <xref:System.Data.DataRowExtensions.Field%2A> metoda nebo <xref:System.Data.DataRowExtensions.SetField%2A> metody pro přístup k datům sloupce. Názvy vlastností jsou k dispozici v době kompilace, protože je součástí informací o typu <xref:System.Data.DataSet>. Technologie LINQ to DataSet poskytuje přístup k hodnotám sloupce jako správný typ, tak, aby při kompilaci kódu místo v době běhu jsou zachyceny chyby typu neshoda.
+LINQ to DataSet také podporuje dotazování na typovaném <xref:System.Data.DataSet>typu. Se zadaným typem <xref:System.Data.DataSet>není nutné pro přístup k datům sloupce používat obecnou <xref:System.Data.DataRowExtensions.Field%2A> metodu <xref:System.Data.DataRowExtensions.SetField%2A> nebo metodu. Názvy vlastností jsou k dispozici v době kompilace, protože informace o typu jsou <xref:System.Data.DataSet>obsaženy v. LINQ to DataSet poskytuje přístup k hodnotám sloupců jako správný typ, takže pokud je kód kompilován při kompilaci namísto za běhu, jsou zachyceny chyby typu Neshoda typů.
 
-Před zahájením dotazování typovaného <xref:System.Data.DataSet>, musíte vygenerovat třídu pomocí **Návrhář DataSet** v sadě Visual Studio. Další informace najdete v tématu [vytvoření a konfigurace datové sady](/visualstudio/data-tools/create-and-configure-datasets-in-visual-studio).
+Předtím <xref:System.Data.DataSet>, než můžete začít dotazovat se na typ, musíte vygenerovat třídu pomocí **Návrháře DataSet v sadě** Visual Studio. Další informace najdete v tématu [Vytvoření a konfigurace datových sad](/visualstudio/data-tools/create-and-configure-datasets-in-visual-studio).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje dotaz nad typovaného <xref:System.Data.DataSet>:
+Následující příklad ukazuje dotaz na základě zadaného <xref:System.Data.DataSet>typu:
 
 ```csharp
 var query = from o in orders
@@ -60,6 +60,6 @@ Next
 
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)
-- [Dotazy na křížovou tabulku](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)
-- [Dotazy na jednu tabulku](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)
+- [Dotazy na datové sady](querying-datasets-linq-to-dataset.md)
+- [Dotazy na křížovou tabulku](cross-table-queries-linq-to-dataset.md)
+- [Dotazy na jednu tabulku](single-table-queries-linq-to-dataset.md)

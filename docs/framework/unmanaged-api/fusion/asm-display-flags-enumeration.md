@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 70b40095ffcfea37414b7de2a678ad8555423b12
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8befdb454a564ec834532653dd44cf230fa43d79
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778554"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795213"
 ---
-# <a name="asmdisplayflags-enumeration"></a>ASM_DISPLAY_FLAGS – výčet
-Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, sestavení, jejichž zobrazované jméno bude možné načíst podle [iassemblyname::GetDisplayName –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) metody.  
+# <a name="asm_display_flags-enumeration"></a>ASM_DISPLAY_FLAGS – výčet
+Označuje verzi, sestavení, jazykovou verzi, podpis atd. pro sestavení, jejichž zobrazovaný název bude načten metodou [IAssemblyName::](iassemblyname-getdisplayname-method.md) GetDisplayName.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,18 +52,18 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- `ASM_DISPLAYF_FULL` odráží všechny změny provedené na verzi [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu. Nepředpokládejte, že vrácená hodnota je neměnná.  
+ `ASM_DISPLAYF_FULL`odráží všechny změny provedené ve verzi objektu [IAssemblyName](iassemblyname-interface.md) . Nepředpokládá, že vrácená hodnota je neměnná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [Výčty pro fúze](fusion-enumerations.md)

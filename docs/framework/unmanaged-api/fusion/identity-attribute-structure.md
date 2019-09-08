@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: de1646cdbc11369b43a821d8b762879d1df7ed2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0bcabb32d50b236d42a555c073b50ba3a234dde
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751532"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796484"
 ---
-# <a name="identityattribute-structure"></a>IDENTITY_ATTRIBUTE – struktura
-Obsahuje informace o atributu metadata o [idefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instance.  
+# <a name="identity_attribute-structure"></a>IDENTITY_ATTRIBUTE – struktura
+Obsahuje informace o atributech metadat instance [IDefinitionIdentity –](idefinitionidentity-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +40,24 @@ typedef struct _IDENTITY_ATTRIBUTE {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pszNamespace`|Ukazatel na řetězec znaků zakončené znakem null, který obsahuje obor názvů příslušný atribut nachází v.|  
-|`pszName`|Ukazatel na řetězec znaků zakončené znakem null, který obsahuje název atributu.|  
-|`pszValue`|Ukazatel na řetězec znaků zakončené znakem null, který obsahuje hodnotu atributu.|  
+|`pszNamespace`|Ukazatel na řetězec znaků zakončený hodnotou null, který obsahuje obor názvů, ve kterém je atribut.|  
+|`pszName`|Ukazatel na řetězec znaků zakončený hodnotou null, který obsahuje název atributu.|  
+|`pszValue`|Ukazatel na řetězec znaků zakončený hodnotou null, který obsahuje hodnotu atributu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IDENTITY_ATTRIBUTE` Struktura obsahuje tři ukazatele na řetězce znaků zakončených znakem null. Tyto tři řetězce popisu jeden atribut.  
+ `IDENTITY_ATTRIBUTE` Struktura obsahuje tři ukazatele na řetězce znaků zakončených hodnotou null. Tyto tři řetězce popisují jeden atribut.  
   
- Instance `IDENTITY_ATTRIBUTE` struktura je přidružený k instanci [identity_attribute_blob –](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-blob-structure.md) struktury. `IDENTITY_ATTRIBUTE` Struktura obsahuje skutečné řetězce a odpovídající `IDENTITY_ATTRIBUTE_BLOB` struktura obsahuje seznam posunutí pro tři řetězce, uvedené v `IDENTITY_ATTRIBUTE` struktury.  
+ Instance `IDENTITY_ATTRIBUTE` struktury je přidružená k instanci struktury [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . Struktura obsahuje skutečné řetězce a odpovídající `IDENTITY_ATTRIBUTE_BLOB` struktura obsahuje seznam posunů ke `IDENTITY_ATTRIBUTE` třem řetězcům uvedeným ve struktuře. `IDENTITY_ATTRIBUTE`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IDefinitionIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)
-- [IDENTITY_ATTRIBUTE_BLOB – struktura](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-blob-structure.md)
-- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [IDefinitionIdentity – rozhraní](idefinitionidentity-interface.md)
+- [IDENTITY_ATTRIBUTE_BLOB – struktura](identity-attribute-blob-structure.md)
+- [Struktury pro fúze](fusion-structures.md)

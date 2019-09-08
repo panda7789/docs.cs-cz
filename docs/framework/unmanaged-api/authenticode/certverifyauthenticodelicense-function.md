@@ -10,12 +10,12 @@ api_type:
 ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8736da6c8db876b3dadb3b906a586633be176cf6
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 3d8ab96c758b946684af78bfa21822fdaf96530a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038328"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786968"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>Funkce CertVerifyAuthenticodeLicense
 Ověřuje platnost licence na technologii Authenticode pro technologii Authenticode.  
@@ -53,20 +53,20 @@ HRESULT CertVerifyAuthenticodeLicense (
 - AXL_TRUST_MICROSOFT_ROOT_ONLY  
   
  `pSignerInfo`  
- mimo Pro získání informací o podepisující osobě. Pokud licence není podepsaná, `dwError` je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeSignerInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodesignerinfo-function.md) po použití.  
+ mimo Pro získání informací o podepisující osobě. Pokud licence není podepsaná, `dwError` je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeSignerInfo](certfreeauthenticodesignerinfo-function.md) po použití.  
   
- Viz [Struktura AXL_AUTHENTICODE_SIGNER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-signer-info-structure.md).  
+ Viz [Struktura AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md).  
   
  `pTimestamperInfo`  
- mimo Pro získání informací o časovém razítku, pokud je k dispozici. Pokud licence nebyla označena časovým razítkem `dwError` , je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeTimestamperInfo](../../../../docs/framework/unmanaged-api/authenticode/certfreeauthenticodetimestamperinfo-function.md) po použití.  
+ mimo Pro získání informací o časovém razítku, pokud je k dispozici. Pokud licence nebyla označena časovým razítkem `dwError` , je nastavená na TRUST_E_NOSIGNATURE. Je zodpovědností volajícího uvolnit prostředky pomocí funkce [CertFreeAuthenticodeTimestamperInfo](certfreeauthenticodetimestamperinfo-function.md) po použití.  
   
- Viz [Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-timestamper-info-structure.md).  
+ Viz [Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO](axl-authenticode-timestamper-info-structure.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Vrátí `S_OK` , pokud bylo úspěšné. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
-- [GetHashFromHandle – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromhandle-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [Authenticode](index.md)
+- [GetHashFromHandle – metoda](../hosting/iclrstrongname-gethashfromhandle-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

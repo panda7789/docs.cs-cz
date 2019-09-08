@@ -16,37 +16,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d8d59ef282818dd9852d0ff8d2ec2abd40986d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aee9b986c1e26c1b2e34dac7151a00172451bbad
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697924"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796549"
 ---
 # <a name="iassemblyname-interface"></a>IAssemblyName – rozhraní
-Poskytuje metody pro popisující a práci s jedinečnou identitu sestavení.  
+Poskytuje metody pro popis a práci s jedinečnou identitou sestavení.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-clone-method.md)|Vytvoří Mělkou kopii to `IAssemblyName` objektu.|  
-|[Finalize – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-finalize-method.md)|To umožňuje `IAssemblyName` objektu k uvolnění prostředků a provádět jiné operace čištění před jeho destruktoru je volána.|  
-|[GetDisplayName – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md)|Získá popisný název sestavení odkazuje situace `IAssemblyName` objektu.|  
-|[GetName – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getname-method.md)|Získá název jednoduchý a nešifrované sestavení odkazuje situace `IAssemblyName` objektu.|  
-|[GetProperty – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getproperty-method.md)|Získá ukazatel na vlastnost odkazuje zadanou `PropertyId`.|  
-|[GetVersion – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getversion-method.md)|Získá informace o verzi pro sestavení odkazuje situace `IAssemblyName` objektu.|  
-|[IsEqual – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md)|Určuje, zda zadané `IAssemblyName` objekt rovná tomuto `IAssemblyName`podle zadané porovnávací příznaky.|  
-|[SetProperty – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-setproperty-method.md)|Nastaví hodnotu vlastnosti odkazuje zadaný `PropertyId`.|  
+|[Clone – metoda](iassemblyname-clone-method.md)|Vytvoří kopii tohoto `IAssemblyName` objektu bez podstruktury.|  
+|[Finalize – metoda](iassemblyname-finalize-method.md)|Umožňuje tomuto `IAssemblyName` objektu uvolnit prostředky a provést jiné operace čištění před voláním jeho destruktoru.|  
+|[GetDisplayName – metoda](iassemblyname-getdisplayname-method.md)|Získá popisný název sestavení, na které odkazuje tento `IAssemblyName` objekt.|  
+|[GetName – metoda](iassemblyname-getname-method.md)|Získá jednoduchý, nešifrovaný název sestavení, na který odkazuje tento `IAssemblyName` objekt.|  
+|[GetProperty – metoda](iassemblyname-getproperty-method.md)|Získá ukazatel na vlastnost, na kterou odkazuje zadaný `PropertyId`.|  
+|[GetVersion – metoda](iassemblyname-getversion-method.md)|Získá informace o verzi sestavení, na které odkazuje tento `IAssemblyName` objekt.|  
+|[IsEqual – metoda](iassemblyname-isequal-method.md)|Určuje `IAssemblyName`, zda je `IAssemblyName` zadaný objekt na základě zadaných příznaků porovnávání stejný.|  
+|[SetProperty – metoda](iassemblyname-setproperty-method.md)|Nastaví hodnotu vlastnosti, na kterou odkazuje zadaný `PropertyId`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
-- [IAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)
+- [IAssemblyEnum – rozhraní](iassemblyenum-interface.md)

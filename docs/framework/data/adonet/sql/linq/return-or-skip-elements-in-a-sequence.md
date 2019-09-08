@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
-ms.openlocfilehash: 75cb5ea166c36de5c0921fbbd830021719497cda
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a5c32afc913443787ad8371f31f1fe330b126398
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963863"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792753"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Vrácení nebo přeskočení prvků v posloupnosti
 <xref:System.Linq.Queryable.Take%2A> Operátor můžete použít k vrácení daného počtu prvků v sekvenci a následném přeskočení na zbytek.  
@@ -18,7 +18,7 @@ ms.locfileid: "69963863"
  <xref:System.Linq.Queryable.Skip%2A> Operátor můžete použít k přeskočení určitého počtu prvků v sekvenci a následnému vrácení zbytku.  
   
 > [!NOTE]
-> <xref:System.Linq.Enumerable.Take%2A>a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, pokud se používají v dotazech proti SQL Server 2000. Další informace najdete v části "přeskočení a přijetí výjimek v SQL Server 2000" v tématu [řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> <xref:System.Linq.Enumerable.Take%2A>a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, pokud se používají v dotazech proti SQL Server 2000. Další informace najdete v části "přeskočení a přijetí výjimek v SQL Server 2000" v tématu [řešení potíží](troubleshooting.md).  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]překládá <xref:System.Linq.Queryable.Skip%2A> se pomocí poddotazu s klauzulí SQL `NOT EXISTS` . Tento převod má následující omezení:  
   
@@ -80,5 +80,5 @@ ORDER BY [t0].[CustomerID]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+- [Příklady dotazů](query-examples.md)
+- [Převod standardních operátorů dotazů](standard-query-operator-translation.md)

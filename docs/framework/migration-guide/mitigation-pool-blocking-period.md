@@ -1,29 +1,29 @@
 ---
-title: 'Omezení rizik: Období blokování fondu'
+title: Zmírnění Doba blokování fondu
 ms.date: 03/30/2017
 ms.assetid: 92d2de20-79be-4df1-b182-144143a8866a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 01bd548bbafda34202705dda3dda148aae941e2b
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 71f1b06e53b3851ca3f65edc1755527779b42a67
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251103"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70789967"
 ---
-# <a name="mitigation-pool-blocking-period"></a>Omezení rizik: Období blokování fondu
-Odebrali jsme blokování období fondu připojení pro připojení k databázím Azure SQL.  
+# <a name="mitigation-pool-blocking-period"></a>Zmírnění Doba blokování fondu
+Bylo odebráno období blokování fondu připojení pro připojení k databázím Azure SQL.  
   
 ## <a name="additional-description"></a>Další popis  
- V rozhraní .NET Framework 4.6.1 a starší verze pokud aplikace zjistí chyba přechodného připojení při připojování k databázi, pokus o připojení se nedá opakovat, rychle, protože fond připojení ukládá do mezipaměti, chyby a znovu vyvolá po dobu 5 sekund do 1 min. Další informace najdete v tématu [SQL sdružování připojení serveru (ADO.NET)](../../../docs/framework/data/adonet/sql-server-connection-pooling.md). Toto chování je problematické pro připojení k databázím Azure SQL, které často dojde k přechodným chybám, které jsou obvykle obnovila během několika sekund. Funkce připojení k fondu blokování znamená, že aplikace nemůže připojit k databázi rozsáhlé dobu, i v případě, že databáze je k dispozici. Toto chování je zvláště problematický pro webové aplikace, které se připojovat k databázím Azure SQL a, které je potřeba vykreslit během několika sekund.  
+ Pokud se v .NET Framework 4.6.1 a starších verzích při připojování k databázi stala chyba přechodného připojení, pokus o připojení se nedá opakovat, protože fond připojení tuto chybu ukládá do mezipaměti a znovu ho vyvolá po dobu 5 sekund až 1. dlouhé. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../data/adonet/sql-server-connection-pooling.md). Toto chování je problematické pro připojení k databázím Azure SQL, což často selhává kvůli přechodným chybám, které se obvykle obnovují během několika sekund. Funkce blokování fondu připojení znamená, že se aplikace nemůže po rozsáhlé době připojit k databázi, a to i v případě, že je databáze k dispozici. Toto chování je obzvláště problematické u webových aplikací, které se připojují k databázím SQL Azure a které je potřeba vykreslit během několika sekund.  
   
- Od verze rozhraní .NET Framework 4.6.2, pro připojení k otevření žádosti o známých databází Azure SQL (*. database.windows.net, \*. database.chinacloudapi.cn, \*. database.usgovcloudapi.net, \*. database.cloudapi.de ), otevřete chyb připojení nejsou uložené v mezipaměti. Pro všechny ostatní pokusy o připojení pokračuje v období blokování fondu připojení vynucení.  
+ Počínaje .NET Framework 4.6.2, pro žádosti o otevření připojení ke známým databázím SQL Azure (*. Database.Windows.NET \*,. Database.chinacloudapi.cn \*,. Database.usgovcloudapi.NET \*,. Database.cloudapi.de ), chyby otevření připojení nejsou ukládány do mezipaměti. U všech dalších pokusů o připojení se i nadále vynutilo období blokování fondu připojení.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna umožňuje otevřít pokus o připojení k opakovat okamžitě pro Azure SQL Database, následné vylepšení výkonu aplikací povolenou podporu cloudu.  
+ Tato změna umožňuje okamžité opakování pokusu o připojení pro databáze SQL Azure, což zlepšuje výkon aplikací s podporou cloudu.  
   
 ## <a name="mitigation"></a>Zmírnění  
- U aplikací, které jsou této změně nepříznivě ovlivněny doby blokování fond připojení se dá nakonfigurovat nastavení nové <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A?displayProperty=nameWithType> vlastnost.  Hodnota vlastnosti je členem skupiny <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=nameWithType> výčet, který může mít jednu ze tří hodnot:  
+ U aplikací, u kterých tato změna nepříznivě ovlivnila, je možné nastavit dobu blokování fondu připojení nastavením nové <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A?displayProperty=nameWithType> vlastnosti.  Hodnota vlastnosti je členem <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=nameWithType> výčtu, který může převzít jednu ze tří hodnot:  
   
 - <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock?displayProperty=nameWithType>
   
@@ -31,8 +31,8 @@ Odebrali jsme blokování období fondu připojení pro připojení k databází
   
 - <xref:System.Data.SqlClient.PoolBlockingPeriod.NeverBlock?displayProperty=nameWithType>
   
- Předchozí chování můžete obnovit nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> vlastnost <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock?displayProperty=nameWithType>.  
+ Předchozí chování lze obnovit nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> vlastnosti na. <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6-2.md)
+- [Změny v modulu runtime](runtime-changes-in-the-net-framework-4-6-2.md)

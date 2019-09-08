@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: fc338b176ee0b20800b83febe05ed2fe695cecb0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3891cae272d93c2bb1ba8929a40fbdb8c332765c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949818"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785652"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET Framework
 Zprostředkovatel dat .NET Framework slouží k připojení k databázi, provádění příkazů a načítání výsledků. Tyto výsledky jsou buď zpracovávány přímo, umístěny v <xref:System.Data.DataSet> a, aby je bylo možné zpřístupnit uživateli podle potřeby, v kombinaci s daty z více zdrojů nebo vzdáleně vydanými mezi vrstvami. Poskytovatelé dat .NET Framework jsou odlehčení a vytvářejí minimální vrstvu mezi zdrojem dat a kódem a zvyšují výkon, aniž by došlo ke ztrátě funkčnosti.  
@@ -54,12 +54,12 @@ Zprostředkovatel dat .NET Framework slouží k připojení k databázi, provád
 > [!NOTE]
 > .NET Framework Zprostředkovatel dat pro rozhraní ODBC má podobnou architekturu .NET Framework Zprostředkovatel dat pro OLE DB. například volá součást služby ODBC.  
   
- ![Poskytovatelé dat](../../../../docs/framework/data/adonet/media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
+ ![Poskytovatelé dat](./media/netdataproviders-bpuedev11.gif "NETDataProviders_bpuedev11")  
 Porovnání Zprostředkovatel dat .NET Framework pro SQL Server a .NET Framework Zprostředkovatel dat pro OLE DB  
   
  Zprostředkovatel dat .NET Framework pro třídy SQL Server jsou umístěny v <xref:System.Data.SqlClient> oboru názvů.  
   
- Zprostředkovatel dat .NET Framework pro SQL Server podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro SQL Server ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ Zprostředkovatel dat .NET Framework pro SQL Server podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro SQL Server ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows nebo <xref:System.Transactions>. Další informace najdete v tématu [transakce a souběžnost](transactions-and-concurrency.md).  
   
  Následující příklad kódu ukazuje, jak zahrnout `System.Data.SqlClient` obor názvů do vašich aplikací.  
   
@@ -72,7 +72,7 @@ using System.Data.SqlClient;
 ```  
   
 ## <a name="net-framework-data-provider-for-ole-db"></a>.NET Framework Zprostředkovatel dat OLE DB  
- .NET Framework Zprostředkovatel dat pro OLE DB (OleDb) používá nativní OLE DB prostřednictvím zprostředkovatele komunikace s objekty COM k povolení přístupu k datům. Zprostředkovatel dat .NET Framework pro OLE DB podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro OLE DB ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows Component Services. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ .NET Framework Zprostředkovatel dat pro OLE DB (OleDb) používá nativní OLE DB prostřednictvím zprostředkovatele komunikace s objekty COM k povolení přístupu k datům. Zprostředkovatel dat .NET Framework pro OLE DB podporuje místní i distribuované transakce. U distribuovaných transakcí .NET Framework Zprostředkovatel dat pro OLE DB ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows Component Services. Další informace najdete v tématu [transakce a souběžnost](transactions-and-concurrency.md).  
   
  Následující tabulka uvádí poskytovatele, kteří byli otestováni pomocí ADO.NET.  
   
@@ -100,7 +100,7 @@ using System.Data.OleDb;
 ```  
   
 ## <a name="net-framework-data-provider-for-odbc"></a>.NET Framework Zprostředkovatel dat pro rozhraní ODBC  
- .NET Framework Zprostředkovatel dat pro rozhraní ODBC (ODBC) používá nativního správce ovladačů ODBC (DM) k povolení přístupu k datům. Zprostředkovatel dat ODBC podporuje místní i distribuované transakce. U distribuovaných transakcí poskytovatel dat ODBC ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ .NET Framework Zprostředkovatel dat pro rozhraní ODBC (ODBC) používá nativního správce ovladačů ODBC (DM) k povolení přístupu k datům. Zprostředkovatel dat ODBC podporuje místní i distribuované transakce. U distribuovaných transakcí poskytovatel dat ODBC ve výchozím nastavení automaticky zařadí do transakce a získá podrobnosti transakcí ze služby komponent Windows. Další informace najdete v tématu [transakce a souběžnost](transactions-and-concurrency.md).  
   
  V následující tabulce jsou uvedeny ovladače rozhraní ODBC testované pomocí ADO.NET.  
   
@@ -126,7 +126,7 @@ using System.Data.Odbc;
 > Zprostředkovatel dat .NET Framework pro ODBC vyžaduje MDAC 2,6 nebo novější verzi a doporučuje se MDAC 2,8 SP1. MDAC 2,8 SP1 si můžete stáhnout z [centra pro vývojáře pro přístup k datům a úložiště](https://go.microsoft.com/fwlink/?linkid=4173).  
   
 ## <a name="net-framework-data-provider-for-oracle"></a>Zprostředkovatel dat .NET Framework pro Oracle  
- Zprostředkovatel dat .NET Framework pro Oracle (OracleClient) umožňuje přístup k datům do zdrojů dat Oracle prostřednictvím softwaru pro připojení klienta Oracle. Zprostředkovatel dat podporuje verzi klientského softwaru Oracle 8.1.7 nebo novější. Zprostředkovatel dat podporuje místní i distribuované transakce. Další informace najdete v tématu [transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md).  
+ Zprostředkovatel dat .NET Framework pro Oracle (OracleClient) umožňuje přístup k datům do zdrojů dat Oracle prostřednictvím softwaru pro připojení klienta Oracle. Zprostředkovatel dat podporuje verzi klientského softwaru Oracle 8.1.7 nebo novější. Zprostředkovatel dat podporuje místní i distribuované transakce. Další informace najdete v tématu [transakce a souběžnost](transactions-and-concurrency.md).  
   
  .NET Framework Zprostředkovatel dat pro Oracle vyžaduje před připojením ke zdroji dat Oracle klientský software Oracle (verze 8.1.7 nebo novější) v systému.  
   
@@ -159,6 +159,5 @@ using System.Data.OracleClient;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)

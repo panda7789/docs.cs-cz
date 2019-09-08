@@ -2,29 +2,29 @@
 title: Data FILESTREAM
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: 4edd03a38f8f5df6cb4fb9c2446f966dfe601564
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 87bed5dd345c240cc00b2c36aa976ec53fe63b93
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490076"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794092"
 ---
 # <a name="filestream-data"></a>Data FILESTREAM
 
-Atribut úložiště FILESTREAM je binárních (objektů BLOB) data uložená v sloupce varbinary(max). Před FILESTREAM ukládání binárních dat vyžaduje speciální zacházení. Nestrukturovaných dat, jako jsou textové dokumenty, obrázky a videa, je často uložená mimo databázi kvůli tomu obtížné spravovat.
+Atribut úložiště FILESTREAM je pro binární data (BLOB) uložená ve sloupci varbinary (max). Před FILESTREAM ukládá binární data požadovaná speciální zpracování. Nestrukturovaná data, jako jsou textové dokumenty, obrázky a videa, se často ukládají mimo databázi, což usnadňuje správu.
 
 > [!NOTE]
-> Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro práci s daty FILESTREAM pomocí SqlClient.
+> Abyste mohli pracovat s daty FILESTREAM pomocí SqlClient, musíte nainstalovat .NET Framework 3,5 SP1 (nebo novější).
 
-Určení u sloupce varbinary(max) FILESTREAM atribut způsobí, že Server SQL pro ukládání dat v místním systému souborů NTFS místo v souboru databáze. I když se ukládají odděleně, můžete použít stejné příkazy jazyka Transact-SQL, které jsou podporovány pro práci s daty varbinary(max), který je uložen v databázi.
+Zadání atributu FILESTREAM u sloupce varbinary (max) způsobí, že SQL Server ukládat data do místního systému souborů NTFS místo do databázového souboru. I když je uložen samostatně, můžete použít stejné příkazy jazyka Transact-SQL, které jsou podporovány pro práci s daty varbinary (max) uloženými v databázi.
 
-## <a name="sqlclient-support-for-filestream"></a>Podpora klienta SqlClient pro FILESTREAM
+## <a name="sqlclient-support-for-filestream"></a>Podpora SqlClient pro FILESTREAM
 
-Zprostředkovatel dat .NET Framework pro SQL Server, <xref:System.Data.SqlClient>, podporuje čtení a zápis do data FILESTREAM s využitím <xref:System.Data.SqlTypes.SqlFileStream> třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream` dědí z <xref:System.IO.Stream> třídu, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenosu dat z datového proudu do datové struktury, jako například pole bajtů. Zápis přenáší data z strukturu dat do datového proudu.
+Zprostředkovatel dat .NET Framework pro SQL Server, <xref:System.Data.SqlClient>podporuje čtení a zápis dat FILESTREAM <xref:System.Data.SqlTypes.SqlFileStream> pomocí třídy definované v <xref:System.Data.SqlTypes> oboru názvů. `SqlFileStream`dědí z <xref:System.IO.Stream> třídy, která poskytuje metody pro čtení a zápis do datových proudů. Čtení z datového proudu přenáší data z datového proudu do datové struktury, jako je například pole bajtů. Zápis přenáší data z datové struktury do datového proudu.
 
-### <a name="creating-the-sql-server-table"></a>Vytváří se tabulka SQL serveru
+### <a name="creating-the-sql-server-table"></a>Vytvoření tabulky SQL Server
 
-Následující příkazy jazyka Transact-SQL vytvoří tabulku s názvem Zaměstnanci a vloží řádek s daty. Jakmile povolíte úložiště FILESTREAM, můžete použít tuto tabulku ve spojení s příklady kódu, které následují. Odkazy na zdroje v SQL Server Books Online jsou umístěny na konci tohoto tématu.
+Následující příkazy jazyka Transact-SQL vytvoří tabulku s názvem zaměstnanci a vloží řádek dat. Po povolení úložiště FILESTREAM můžete tuto tabulku použít ve spojení s příklady kódu, které následují. Odkazy na prostředky v SQL Server Knihy online najdete na konci tohoto tématu.
 
 ```sql
 CREATE TABLE employees
@@ -42,11 +42,11 @@ GO
 
 ### <a name="example-reading-overwriting-and-inserting-filestream-data"></a>Příklad: Čtení, přepsání a vkládání dat FILESTREAM
 
-Následující příklad ukazuje, jak přečíst data z FILESTREAM. Kód získá logickou cestu k souboru nastavení `FileAccess` k `Read` a `FileOptions` k `SequentialScan`. Kód poté načte bajtů z SqlFileStream do vyrovnávací paměti. Bajty jsou pak zapsány do okna konzoly.
+Následující příklad ukazuje, jak číst data z FILESTREAM. Kód získá `FileAccess` logickou cestu k souboru, nastaví na `Read` a `FileOptions` `SequentialScan`hodnotu na. Kód pak přečte bajty z SqlFileStream do vyrovnávací paměti. Bajty se pak zapíší do okna konzoly.
 
-Ukázka také ukazuje, jak zapisovat data FILESTREAM, ve kterém všechna existující data přepsána. Kód získá logickou cestu k souboru a vytvoří `SqlFileStream`a nastavte `FileAccess` k `Write` a `FileOptions` k `SequentialScan`. Jeden bajt je zapsán do `SqlFileStream`, nahraďte všechna data v souboru.
+Ukázka také ukazuje, jak zapisovat data do FILESTREAM, ve kterém jsou přepsána všechna stávající data. Kód Získá logickou cestu k souboru a vytvoří `SqlFileStream`, `FileAccess` nastaví `Write` na a `FileOptions` `SequentialScan`na. Do rozhraní `SqlFileStream`se zapíše jeden bajt, který nahradí všechna data v souboru.
 
-Ukázka také ukazuje, jak zapsat data do FILESTREAM pomocí metody hledání pro připojení dat na konec souboru. Kód získá logickou cestu k souboru a vytvoří `SqlFileStream`a nastavte `FileAccess` k `ReadWrite` a `FileOptions` k `SequentialScan`. Tento kód použije metody Seek hledání na konci souboru, jeden bajt připojení k existujícímu souboru.
+Ukázka také ukazuje, jak zapisovat data do FILESTREAM pomocí metody Seek pro připojení dat na konec souboru. Kód Získá logickou cestu k souboru a vytvoří `SqlFileStream`, `FileAccess` nastaví `ReadWrite` na a `FileOptions` `SequentialScan`na. Kód používá metodu hledání k hledání na konec souboru a připojuje k existujícímu souboru jeden bajt.
 
 ```csharp
 using System;
@@ -171,22 +171,22 @@ namespace FileStreamTest
 }
 ```
 
-Další příklad naleznete v tématu [postupy při ukládání a načítání binárních dat do sloupce datového proudu souboru](https://www.codeproject.com/Articles/32216/How-to-store-and-fetch-binary-data-into-a-file-str).
+Další ukázku najdete v tématu [jak ukládat a načítat binární data do sloupce datového proudu souborů](https://www.codeproject.com/Articles/32216/How-to-store-and-fetch-binary-data-into-a-file-str).
 
-## <a name="resources-in-sql-server-books-online"></a>Prostředky v Online knihách serveru SQL
+## <a name="resources-in-sql-server-books-online"></a>Prostředky v SQL Server Knihy online
 
-Kompletní dokumentaci k FILESTREAM je umístěn v následujících částech v SQL Server Books Online.
+Kompletní dokumentace pro FILESTREAM je k dispozici v následujících částech SQL Server Knihy online.
 
 |Téma|Popis|
 |-----------|-----------------|
-|[FILESTREAM (SQL Server)](/sql/relational-databases/blob/filestream-sql-server)|Popisuje použití úložiště FILESTREAM a popisuje integraci této služby databázového stroje SQL Server pomocí systému souborů NTFS.|
-|[Vytvoření klientské aplikace pro FILESTREAM Data](/sql/relational-databases/blob/create-client-applications-for-filestream-data)|Popisuje funkce rozhraní Windows API pro práci s daty FILESTREAM.|
-|[FILESTREAM a další funkce SQL serveru](/sql/relational-databases/blob/filestream-compatibility-with-other-sql-server-features)|Obsahuje důležité informace, pokyny a omezení pro používání dat FILESTREAM s jinými funkcemi systému SQL Server.|
+|[FILESTREAM (SQL Server)](/sql/relational-databases/blob/filestream-sql-server)|Popisuje, kdy použít úložiště FILESTREAM a jak integruje SQL Server databázový stroj se systémem souborů NTFS.|
+|[Vytváření klientských aplikací pro data FILESTREAM](/sql/relational-databases/blob/create-client-applications-for-filestream-data)|Popisuje funkce rozhraní Windows API pro práci s daty FILESTREAM.|
+|[FILESTREAM a další SQL Server funkce](/sql/relational-databases/blob/filestream-compatibility-with-other-sql-server-features)|Obsahuje informace, pokyny a omezení pro používání dat FILESTREAM s jinými funkcemi SQL Server.|
 
 ## <a name="see-also"></a>Viz také:
 
-- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Zabezpečení přístupu ke kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)
-- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Datové typy SQL Serveru a ADO.NET](sql-server-data-types.md)
+- [Načítání a úpravy dat v ADO.NET](../retrieving-and-modifying-data.md)
+- [Zabezpečení přístupu ke kódu a ADO.NET](../code-access-security.md)
+- [Binární a vysoké hodnoty na SQL Serveru](sql-server-binary-and-large-value-data.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

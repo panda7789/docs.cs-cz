@@ -1,26 +1,26 @@
 ---
-title: 'Omezení rizik: X509CertificateClaimSet.FindClaims Method'
+title: Zmírnění X509CertificateClaimSet.FindClaims Method
 ms.date: 03/30/2017
 ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7fb1eb0c502584caac11ca3dde6e7e646b29cfe
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: ffc03e6c88a2aabb967587d8b1ee7d0b784b4e7d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251094"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70778936"
 ---
-# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Omezení rizik: X509CertificateClaimSet.FindClaims Method
-Počínaje aplikací určených pro rozhraní .NET Framework 4.6.1, <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí přiřadit `claimType` argument u všech položek DNS v jeho poli SAN.  
+# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Zmírnění X509CertificateClaimSet.FindClaims Method
+Počínaje aplikacemi, které cílí na .NET Framework 4.6.1, <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> se metoda pokusí `claimType` porovnat argument se všemi položkami DNS v poli sítě SAN.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna ovlivní pouze aplikace, které cílové verze rozhraní .NET Framework počínaje .NET Framework 4.6.1.  
+ Tato změna ovlivní pouze aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1.  
   
- Pro aplikace, které cílí na předchozí verze rozhraní .NET Framework <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí porovnat `claimType` argument pouze s poslední položky DNS.  
+ U aplikací, které cílí na předchozí verze .NET Framework, se <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda pokusí `claimType` porovnat argument pouze s poslední položkou DNS.  
   
 ## <a name="mitigation"></a>Zmírnění  
- Pokud tuto změnu nežádoucí, aplikací s cílovou verzí rozhraní .NET Framework počínaje .NET Framework 4.6.1 můžete zrušit jej tak, že přidáte následující konfigurační nastavení [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurační soubor aplikace:  
+ Pokud je tato změna nežádoucí, aplikace, které cílí na verze .NET Framework počínaje .NET Framework 4.6.1, se můžou odhlásit přidáním následujícího nastavení konfigurace do [ \<oddílu běhového >](../configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace. :  
   
 ```xml  
 <runtime>  
@@ -28,7 +28,7 @@ Počínaje aplikací určených pro rozhraní .NET Framework 4.6.1, <xref:System
 </runtime>  
 ```  
   
- Kromě toho, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.6.1 a novějších verzích můžete přejít k toto chování tak, že přidáte následující konfigurační nastavení [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace:  
+ Kromě toho aplikace, které cílí na předchozí verze .NET Framework, ale běží v .NET Framework 4.6.1 a novějších verzích se můžou k tomuto chování vyjádřit přidáním následujícího nastavení konfigurace do [ \<části modulu runtime >](../configure-apps/file-schema/runtime/runtime-element.md) konfigurační soubor aplikace:  
   
 ```xml  
 <runtime>  
@@ -38,4 +38,4 @@ Počínaje aplikací určených pro rozhraní .NET Framework 4.6.1, <xref:System
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)
+- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6-1.md)

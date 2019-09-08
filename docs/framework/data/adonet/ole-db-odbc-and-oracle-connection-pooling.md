@@ -2,12 +2,12 @@
 title: Sdružování připojení OLE DB, ODBC a Oracle
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 7552f4a95af51774071f0a4017637570d648dd86
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b83b53550964b3149f3bc711eaf119e749d1834b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929258"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794689"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Sdružování připojení OLE DB, ODBC a Oracle
 Připojení sdružování můžou významně zlepšit výkon a škálovatelnost vaší aplikace. Tato část popisuje sdružování připojení pro poskytovatele .NET Framework dat pro OLE DB, ODBC a Oracle.  
@@ -70,6 +70,6 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
   
 ## <a name="see-also"></a>Viz také:
 
-- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
-- [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sdružování připojení](connection-pooling.md)
+- [Čítače výkonu](performance-counters.md)
+- [Přehled ADO.NET](ado-net-overview.md)

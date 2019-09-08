@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31dec878c92e2e2196ab2d586a78578b7244a41a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aed70a78e2513f4d63fbf8ca8868f26efbac9ae8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742238"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787662"
 ---
 # <a name="addimport-method"></a>AddImport – metoda
 Přidá importy do sestavení.  
@@ -40,25 +40,25 @@ HRESULT AddImport(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Jedinečné ID sestavení potřeba rozšířit.  
+ Jedinečné ID sestavení, které se má rozšířit  
   
  `ImportToken`  
- Jedinečné ID získaných [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), souboru k importu.  
+ Jedinečné ID, které bylo načteno z [metody importFile –](importfile-method.md)souboru, který má být importován.  
   
  `dwFlags`  
- COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ Značky `ffContainsNoMetaData` modelu COM+ FileDef jako a `ffWriteable`. `dwFlags`je předán [metodě DefineFile –](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pFileToken`  
- Ukazatel na token, který přijímá ID pro výsledný soubor.  
+ Ukazatel na token, který obdrží ID pro výsledný soubor.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

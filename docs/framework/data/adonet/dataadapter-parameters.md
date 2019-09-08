@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: 772763b5927ca845d6c2ccba50382652e410ae4f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 83fc3101b0eb428def6cbc446e634e9bb45de350
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951231"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785606"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
 <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>Má čtyři vlastnosti, které se používají k načtení dat z a aktualizace dat na zdroj dat: vlastnost vrací data ze zdroje dat a vlastnosti, a se používají ke správě. <xref:System.Data.Common.DbDataAdapter> změny ve zdroji dat. Vlastnost musí být nastavena před `Fill` voláním metody `DataAdapter`. `SelectCommand` `Update` Vlastnosti `InsertCommand`, `UpdateCommand`nebo `DeleteCommand` musíbýtnastavenypřed<xref:System.Data.DataTable>voláním metody ,vzávislostinatom,`DataAdapter` jaké změny byly provedeny v datech v. Například pokud byly přidány řádky, `InsertCommand` musí být nastavena před voláním. `Update` Při `Update` zpracovávání vloženého, aktualizovaného nebo odstraněného řádku `DataAdapter` používá příslušná `Command` vlastnost ke zpracování akce. Aktuální informace o změněném řádku jsou předány `Command` objektu `Parameters` prostřednictvím kolekce.  
@@ -39,7 +39,7 @@ parameter.SourceVersion = DataRowVersion.Original
  Metoda kolekce přebírá název parametru, datový typ, velikost (Pokud je k dispozici pro typ) <xref:System.Data.Common.DbParameter.SourceColumn%2A> a `DataTable`název z. `Parameters` `Add` Všimněte si, <xref:System.Data.Common.DbParameter.SourceVersion%2A> že `@CustomerID` parametr je nastaven na `Original`hodnotu. Tím se zaručí, že existující řádek ve zdroji dat se aktualizuje, pokud se v úpravě <xref:System.Data.DataRow>změnila hodnota určujícího sloupce nebo sloupce. V takovém případě `Original` bude hodnota řádku odpovídat aktuální hodnotě ve zdroji dat `Current` a hodnota řádku by obsahovala aktualizovanou hodnotu. Pro parametr není nastavená `Current` a používá výchozí hodnotu řádku. `@CompanyName` `SourceVersion`  
   
 > [!NOTE]
-> `Fill` Pro operace `DataAdapter` a`Get` metod ,jetyp.NETFrameworkodvozenodtypuvrácenéhoposkytovatelemdat.NETFramework.`DataReader` Odvozené .NET Framework typy a přístupové metody pro datové typy Microsoft SQL Server, OLE DB a ODBC jsou popsány v tématu [mapování datových typů v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
+> `Fill` Pro operace `DataAdapter` a`Get` metod ,jetyp.NETFrameworkodvozenodtypuvrácenéhoposkytovatelemdat.NETFramework.`DataReader` Odvozené .NET Framework typy a přístupové metody pro datové typy Microsoft SQL Server, OLE DB a ODBC jsou popsány v tématu [mapování datových typů v ADO.NET](data-type-mappings-in-ado-net.md).  
   
 ## <a name="parametersourcecolumn-parametersourceversion"></a>Parametr. SourceColumn, Parameter. SourceVersion  
  A mohou být předány `Parameter`jako argumenty konstruktorunebonastavenyjakovlastnostiexistující.`Parameter` `SourceVersion` `SourceColumn` `SourceColumn` Je název `Parameter` z, <xref:System.Data.DataRow> kde bude <xref:System.Data.DataColumn> načtena hodnota. Určuje verzi, kterou`DataAdapter` používá k načtení hodnoty. `DataRow` `SourceVersion`  
@@ -166,9 +166,9 @@ adapter.Fill(customers, "Customers");
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Příkazy a parametry](commands-and-parameters.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)
+- [Úpravy dat pomocí uložených procedur](modifying-data-with-stored-procedures.md)
+- [Mapování datového typu v ADO.NET](data-type-mappings-in-ado-net.md)
+- [Přehled ADO.NET](ado-net-overview.md)

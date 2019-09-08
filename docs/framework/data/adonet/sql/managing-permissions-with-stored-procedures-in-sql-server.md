@@ -2,67 +2,67 @@
 title: Správa oprávnění pomocí uložených procedur na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 1a057ed88c792dfdeb89227d6cf1957f74b6d7a1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 412d2a0a292e2ac83e6c42cf721c83e63633408c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623414"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780949"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL Serveru
-Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je k implementaci všech přístup k datům pomocí uložených procedur a uživatelem definované funkce. Odvolat nebo odepřít všechna oprávnění pro příslušné objekty, jako jsou tabulky a udělení oprávnění EXECUTE na uložené procedury. Tím se vytvoří efektivně bezpečnostní hraniční sítě kolem dat a databázových objektů.  
+Jednou z metod vytvoření více řádků obrany v databázi je implementace veškerého přístupu k datům pomocí uložených procedur nebo uživatelsky definovaných funkcí. Odvoláte nebo odepřete všechna oprávnění k podkladovým objektům, jako jsou tabulky, a udělte oprávnění k provádění uložených procedur. Tím se efektivně vytvoří hraniční zabezpečení kolem vašich dat a databázových objektů.  
   
-## <a name="stored-procedure-benefits"></a>Výhody uložené procedury  
- Uložené procedury nabízí tyto výhody:  
+## <a name="stored-procedure-benefits"></a>Výhody uložených procedur  
+ Uložené procedury mají následující výhody:  
   
-- Pravidel pro logiku a obchodní data, lze zapouzdřit tak, aby uživatelé můžete přístup k datům a objekty pouze způsobem, že vývojáři a správci databází.  
+- Data logiky a podnikových pravidel je možné zapouzdřit, aby uživatelé měli přístup k datům a objektům pouze způsobem, který mají vývojáři a správci databází v úmyslu.  
   
-- Parametrizované uložené procedury, které byly ověřeny všechny uživatele, je možné zabránit útokům prostřednictvím injektáže SQL. Pokud používáte dynamic SQL, nezapomeňte parametrizovat příkazům a nikdy Nezahrnovat hodnoty parametrů přímo do řetězce dotazu.  
+- Parametrizované uložené procedury, které ověřují všechny vstupy uživatelů, se dají použít k vzdoruje útoku prostřednictvím injektáže SQL. Použijete-li Dynamic SQL, nezapomeňte příkazy parametrizovat a nikdy Nezahrnovat hodnoty parametrů přímo do řetězce dotazu.  
   
-- Ad hoc dotazy a data změny může být zakázáno. To zabrání uživatelům neúmyslně nebo záměrně – došlo k poškození dat nebo provádění dotazů, které zhoršit výkon na serveru nebo v síti.  
+- Je možné, že se nepovolí ad hoc dotazy a změny dat. To zabrání uživatelům v škodlivých nebo neúmyslném zničení dat nebo provádění dotazů, které mají vliv na výkon serveru nebo sítě.  
   
-- Chyby mohou být zpracovány v kódu procedury bez předávaný přímo do klientské aplikace. To zabrání chybové zprávy se vrátilo, který může pomoci při zjišťování útoku. Protokolování chyb a zpracování na serveru.  
+- Chyby lze zpracovat v kódu procedury bez předání přímo klientským aplikacím. To brání tomu, aby se vracely chybové zprávy, které by mohly pomoci při útoku na zjišťování. Protokoluje chyby a zpracuje je na serveru.  
   
-- Uložené procedury lze zapsat jednou a přistupuje mnoho aplikací.  
+- Uložené procedury lze zapsat jednou a k nim mají pøístup mnoho aplikací.  
   
-- Klientské aplikace není nutné znát základní datové struktury. Uložená procedura kódu můžete změnit bez nutnosti změn v klientských aplikacích za předpokladu, změny nemají vliv na seznamy parametrů nebo vrácena datové typy.  
+- Klientské aplikace nepotřebují znát žádné informace o podkladových datových strukturách. Uložený kód procedury lze změnit bez nutnosti změny v klientských aplikacích, pokud změny neovlivňují seznamy parametrů ani vrácené datové typy.  
   
-- Uložené procedury může snížit síťový provoz díky kombinaci více operací do jedné protokolu TDS.  
+- Uložené procedury mohou snížit zatížení sítě kombinací více operací do jednoho volání procedury.  
   
-## <a name="stored-procedure-execution"></a>Provedení uložené procedury  
- Uložené procedury Využijte výhod vlastnictví řetězení k poskytnutí přístupu k datům tak, aby uživatelé nepotřebují mít explicitní oprávnění pro přístup k databázové objekty. Řetěz vlastnictví existuje, když objekty, které přistupují k sobě navzájem postupně jsou vlastněné stejným uživatelem. Například ostatní uložené procedury lze volat uloženou proceduru nebo uložené procedury lze přistupovat k více tabulek. Pokud mají všechny objekty v řetězu certifikátů spuštění stejného vlastníka, pak SQL Server kontroluje pouze oprávnění ke spuštění pro volající, není volajícího oprávnění na jiné objekty. Proto je nutné udělit pouze oprávnění spouštět na uložené procedury; můžete odvolat nebo odebrat všechna oprávnění k podkladové tabulky.  
+## <a name="stored-procedure-execution"></a>Spuštění uložené procedury  
+ Uložené procedury využívají výhod zřetězení vlastnictví k poskytnutí přístupu k datům, aby uživatelé nemuseli mít explicitní oprávnění k přístupu k databázovým objektům. Řetěz vlastnictví existuje, pokud objekty, které jsou na sobě navzájemně přistupují, jsou vlastněny stejným uživatelem. Například uložená procedura může volat jiné uložené procedury nebo uložená procedura může získat přístup k několika tabulkám. Pokud mají všechny objekty v řetězci spuštění stejný vlastník, pak SQL Server pouze kontroluje oprávnění EXECUTE pro volajícího, nikoli oprávnění volajícího pro jiné objekty. Proto musíte pro uložené procedury udělit pouze oprávnění ke spouštění. v podkladových tabulkách můžete odvolat nebo odepřít všechna oprávnění.  
   
 ## <a name="best-practices"></a>Doporučené postupy  
- Jednoduše zápis uložených procedur není dost informací k odpovídajícím způsobem zabezpečení aplikace. Měli byste také zvážit následující možných bezpečnostních děr.  
+ Pouhým zápisem uložených procedur nestačí dostatečně zabezpečit svoji aplikaci. Měli byste také zvážit následující potenciální bezpečnostní otvory.  
   
-- Udělení oprávnění EXECUTE na uložené procedury pro databázové role, které chcete mít možnost přístupu k datům.  
+- Udělte oprávnění EXECUTE pro uložené procedury databázových rolí, které chcete mít přístup k datům.  
   
-- Odvolat či odepřít všechna oprávnění k podkladové tabulky pro všechny role a uživatele v databázi, včetně `public` role. Z veřejné dědí oprávnění všichni uživatelé. Proto odepřením oprávnění `public` znamená to jenom vlastníci a `sysadmin` členové mají přístup; všichni ostatní uživatelé nebudou moci dědit oprávnění z členství v jiných rolích.  
+- Odvolat nebo odepřít všechna oprávnění k podkladovým tabulkám pro všechny role a uživatele v databázi, včetně `public` role. Všichni uživatelé dědí oprávnění z veřejného. Proto odepření oprávnění `public` znamená, že mají přístup pouze `sysadmin` vlastníci a členové; všichni ostatní uživatelé nebudou moci dědit oprávnění z členství v jiných rolích.  
   
-- Bez přidání uživatele nebo role, aby `sysadmin` nebo `db_owner` role. Správci systému a vlastníci databáze můžete přístup ke všem objektům v databázi.  
+- Nepřidávejte uživatele nebo role do `sysadmin` rolí nebo. `db_owner` Správci systému a vlastníci databází mají přístup ke všem databázovým objektům.  
   
-- Zakažte `guest` účtu. To zabrání anonymním uživatelům s připojením k databázi. Ve výchozím nastavení nové databáze je zakázána účet guest.  
+- Zakažte `guest` účet. Tato akce zabrání anonymním uživatelům v připojení k databázi. Účet hosta je ve výchozím nastavení v nových databázích zakázán.  
   
-- Implementace chyba zpracování a protokolu chyb.  
+- Implementuje zpracování chyb a protokolování chyb.  
   
-- Vytvořte parametrizované uložené procedury, které byly ověřeny všechny uživatelský vstup. Zpracovávat veškerý vstup uživatele jako nedůvěryhodné.  
+- Vytvořte parametrizované uložené procedury, které ověřují všechny vstupy uživatele. Považovat všechny vstupy uživatelů za nedůvěryhodné.  
   
-- Vyhněte dynamic SQL, pokud není nezbytně nutné. Použijte funkci QUOTENAME() příkazů jazyka Transact-SQL k vymezení hodnotu řetězce a escape jakékoli výskyt oddělovače ve vstupním řetězci.  
+- Vyhněte se dynamickému SQL, pokud není nezbytně nutné. Použijte funkci Transact-SQL QUOTa () k vymezení řetězcové hodnoty a řídicího znaku ve vstupním řetězci.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
 |Resource|Popis|  
 |--------------|-----------------|  
-|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](https://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
+|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [injektáže SQL](https://go.microsoft.com/fwlink/?LinkId=98234) na SQL Server Knihy online|Témata popisují postup vytvoření uložených procedur a způsobu, jakým funguje injektáže SQL.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
-- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](writing-secure-dynamic-sql-in-sql-server.md)
+- [Podepisování uložených procedur na SQL Serveru](signing-stored-procedures-in-sql-server.md)
+- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](customizing-permissions-with-impersonation-in-sql-server.md)
+- [Úpravy dat pomocí uložených procedur](../modifying-data-with-stored-procedures.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

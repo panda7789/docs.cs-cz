@@ -2,12 +2,12 @@
 title: Mapování implicitních relací mezi elementy ve vnořeném schématu
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-ms.openlocfilehash: e9ea85db98a577991e06e0239a0738a2ca5bada6
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f4b1b9e45f0cda976719b991c336463e0af05f12
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203478"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784438"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapování implicitních relací mezi elementy ve vnořeném schématu
 Schéma jazyka XML Schema Definition Language (XSD) může mít vnořené typy vnořené uvnitř sebe. V tomto případě proces mapování použije výchozí mapování a vytvoří následující <xref:System.Data.DataSet>:  
@@ -18,7 +18,7 @@ Schéma jazyka XML Schema Definition Language (XSD) může mít vnořené typy v
   
 - Omezení primárního klíče v nadřazené tabulce, které identifikuje další sloupec jako primární klíč (nastavením vlastnosti **IsPrimaryKey** na **hodnotu true**). Omezení je pojmenované jako omezení\# , \# kde je 1, 2, 3 atd. Výchozím názvem pro první omezení je například Constraint1.  
   
-- Omezení cizího klíče v podřízené tabulce identifikující další sloupec jako cizí klíč odkazující na primární klíč nadřazené tabulky. Omezení je pojmenované *ParentTable_ChildTable* , kde *Parent* je název nadřazené tabulky a podřízená tabulka je název podřízené tabulky.  
+- Omezení cizího klíče v podřízené tabulce identifikující další sloupec jako cizí klíč odkazující na primární klíč nadřazené tabulky. Omezení je pojmenované *ParentTable_ChildTable* , kde *Parent* je název nadřazené tabulky a *Podřízená* tabulka je název podřízené tabulky.  
   
 - Vztah dat mezi nadřazenými a podřízenými tabulkami.  
   
@@ -101,4 +101,4 @@ Schéma jazyka XML Schema Definition Language (XSD) může mít vnořené typy v
 
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

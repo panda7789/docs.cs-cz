@@ -5,53 +5,53 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
-ms.openlocfilehash: fc14b6a2b3782ae7ed3d26f9878646f004504d1c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 050c1a67a367a6dd5175c535fe89fb0010ae8cbc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660561"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790292"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Použití datové služby v klientské aplikaci (WCF Data Services)
-Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu zadáním identifikátor URI pro webový prohlížeč. Identifikátor URI poskytuje adresu prostředku a zpráv žádostí se odesílají na tyto adresy k přístupu nebo změnám podkladová data, která představuje prostředek. Prohlížeč vydá příkaz HTTP GET a vrátí jako požadovaný prostředek [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
+Ke službě, která zpřístupňuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál, můžete přistupovat zadáním identifikátoru URI do webového prohlížeče. Identifikátor URI poskytuje adresu prostředku a žádosti se odesílají na tyto adresy pro přístup k datům, která tento prostředek představuje, nebo jejich změnu. Prohlížeč vydá příkaz HTTP GET a vrátí požadovaný prostředek jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál. Další informace najdete v tématu [přístup ke službě z webového prohlížeče](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
   
- I když může být užitečné pro testování, které webový prohlížeč [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba vrací očekávaná data produkční [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby, které můžete také vytvářet, aktualizovat a odstraňovat data jsou obecně dostupné přes kód aplikace nebo skriptovacích jazyků na webové stránce. Toto téma obsahuje přehled o tom, jak přistupovat k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály z klientské aplikace.  
+ I když může být webový prohlížeč užitečný pro testování, že [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba vrátí očekávaná data, provozní [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby, které umožňují také vytvářet, aktualizovat a odstraňovat data, jsou obecně dostupné pomocí kódu aplikace nebo skriptovacích jazyků. na webové stránce. Toto téma poskytuje přehled o tom, jak získat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] přístup k informačním kanálům z klientské aplikace.  
   
-## <a name="accessing-and-changing-data-using-rest-semantics"></a>Přístup k a se měnícími daty pomocí sémantiky REST  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] pomáhá zajistit interoperabilitu mezi službami, které zveřejňují [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály a aplikací, které využívají [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály. Aplikace získávat přístup a měnit data v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-odesláním zprávy s požadavkem na konkrétní akci HTTP a s identifikátorem URI, který adresuje prostředek entity, proti kterému by provádět akce na základě služby. Když je nutné zadat entity data, je předána jako datové části je konkrétně kódovaný v textu zprávy.  
+## <a name="accessing-and-changing-data-using-rest-semantics"></a>Přístup k datům a jejich změna pomocí sémantiky REST  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]pomáhá zajistit interoperabilitu mezi službami, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] které zveřejňují informační kanály [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a aplikace, které využívají informační kanály. Aplikace přistupují a mění data v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]rámci služby odesláním zpráv požadavku na konkrétní akci HTTP a s identifikátorem URI, který řeší prostředek entity, vůči kterému by měla být akce provedena. Když je nutné zadat data entity, je zadána jako přímo kódovaná datová část v těle zprávy.  
   
 ### <a name="http-actions"></a>Akce HTTP  
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje následující akce HTTP k provedení vytvořit, číst, aktualizovat a odstraňovat operace s daty entit, který představuje adresovaný prostředků:  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]aplikace podporuje následující akce protokolu HTTP k provádění operací vytvoření, čtení, aktualizace a odstranění u dat entity, která je předmětem odkazovaného prostředku:  
   
-- **HTTP GET** – jedná se o výchozí akci, když prostředek přistupuje z prohlížeče. Žádné datové části není zadána ve zprávy s požadavkem, a vrátí odpověď metody s datovou částí, která obsahuje požadovaná data.  
+- **HTTP GET** – jedná se o výchozí akci, když je prostředek přístupný z prohlížeče. Ve zprávě požadavku není zadána žádná datová část a je vrácena metoda odpovědi s datovou částí, která obsahuje požadovaná data.  
   
-- **HTTP POST** – vloží nový data entity do zadaného prostředku. Dat má být vložen je zadána v datové části zprávy s požadavkem. Datová část zprávy s odpovědí obsahuje data pro nově vytvořené entity. To zahrnuje všechny automaticky generované hodnoty klíče. Hlavička také obsahuje identifikátor URI, který adresuje nový prostředek entity.  
+- **Http post** – vloží data nové entity do poskytnutého prostředku. Data, která mají být vložena, jsou uvedena v datové části zprávy požadavku. Datová část zprávy s odpovědí obsahuje data pro nově vytvořenou entitu. To zahrnuje všechny automaticky vygenerované hodnoty klíčů. Záhlaví obsahuje také identifikátor URI, který řeší nový prostředek entity.  
   
-- **HTTP DELETE** -odstraní data entity, který představuje zadaný prostředek. Datovou část, která není součástí zprávy požadavku nebo odpovědi.  
+- **Http Delete** – odstraní data entity, která zadaný prostředek představuje. V žádostech a odpovědích není přítomna datová část.  
   
-- **HTTP PUT** – nahradí stávající data entity na požadovaný prostředek s novými daty, která je zadaná v datové části zprávy s požadavkem.  
+- **HTTP PUT** – nahradí existující data entity požadovaným prostředkem novými daty, která jsou uvedena v datové části zprávy požadavku.  
   
-- **Sloučit HTTP** – z důvodu nedostatečné efektivity při provádění delete, za nímž následuje vložení ve zdroji dat stejně, chcete-li změnit entity data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zavádí novou akci HTTP SLOUČENÍ. Datová část požadavku obsahuje vlastnosti, které musí být změněny na prostředek adresovaný entity. Protože sloučit HTTP není definováno ve specifikaci protokolu HTTP, může vyžadovat další zpracování směrovat žádost HTTP sloučit prostřednictvím jinou hodnotu než[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] clustery serverů.  
+- **Sloučení http** – kvůli neefektivitám při provádění odstranění, po kterém následuje vložení ve zdroji dat, aby se změnila data entity [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] , zavádí novou akci sloučení http. Datová část zprávy požadavku obsahuje vlastnosti, které se musí změnit u prostředku s adresovánou entitou. Protože sloučení http není ve specifikaci http definované, může vyžadovat další zpracování pro směrování požadavku HTTP Merge přes[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] nepodporující servery.  
   
  Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkId=185792).  
   
-### <a name="payload-formats"></a>Formáty datových částí  
- Pro HTTP PUT, POST protokolu HTTP nebo HTTP SLOUČENÍ žádosti datovou část zprávy požadavku obsahuje data entity, která odesíláte do datové služby. Obsah datové části závisí na formát dat zprávy. Odpovědí HTTP na všechny akce s výjimkou odstranění, také obsahovat tyto datové části. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje následující formáty datové části pro přístup k a změna dat uložených ve službě:  
+### <a name="payload-formats"></a>Formáty datové části  
+ V případě požadavku HTTP PUT, HTTP POST nebo HTTP MERGE datová část zprávy požadavku obsahuje data entity, která odešlete do datové služby. Obsah datové části závisí na formátu dat zprávy. Odpovědi HTTP na všechny akce kromě možnosti odstranit také obsahují takovou datovou část. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje následující formáty datové části pro přístup k datům a jejich změnu pomocí služby:  
   
-- **Atom** – kódování zpráv na základě jazyka XML, který je definován [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření Atom publikování protokol (AtomPub) umožňující výměny dat prostřednictvím protokolu HTTP webové informační kanály, podcasty, wikiweby a založený na formátu XML internetové funkce. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkId=185794).  
+- **Atom** – kódování zpráv založené na jazyce XML, které je definováno [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření protokolu AtomPub (Atom Publishing Protocol) pro povolení výměny dat přes protokol HTTP pro webové informační kanály, podcasty, wiki a internetové funkce založené na jazyce XML. Další informace najdete v tématu [OData: Formát](https://go.microsoft.com/fwlink/?LinkId=185794)Atom.  
   
-- **JSON** – zápis JSON (JavaScript Object) je formát pro výměnu zjednodušené data, která je založena na podmnožinu programovací jazyk JavaScript. Další informace najdete v tématu [OData: Formát JSON](https://go.microsoft.com/fwlink/?LinkId=185795).  
+- **JSON** -JavaScript Object Notation (JSON) je odlehčený formát pro výměnu dat, který je založen na podmnožině programovacího jazyka JavaScript. Další informace najdete v tématu [OData: Formát](https://go.microsoft.com/fwlink/?LinkId=185795)JSON.  
   
- Formát zprávy datové části je požadováno v záhlaví zprávy s požadavkem HTTP. Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkID=185792).  
+ Formát zprávy datové části je požadován v hlavičce zprávy s požadavkem protokolu HTTP. Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkID=185792).  
   
-## <a name="accessing-and-changing-data-using-client-libraries"></a>Přístup a změnu dat s využitím klientské knihovny  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které vám umožní snadněji využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] obálek rozhraní .NET Framework a klienta založeného na technologii Silverlight aplikace. Tyto knihovny zjednodušují posílat a přijímat zprávy HTTP. Převede uzel se také datovou část zprávy do CLR objektů, které představují entity data. Tyto klientské knihovny funkce dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy umožňují dotazování datové služby a poté pracovat s daty vrácenou entitu jako objekty CLR. Další informace najdete v tématu [klientské knihovny WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md) a [služeb WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
+## <a name="accessing-and-changing-data-using-client-libraries"></a>Přístup k datům a jejich změna pomocí klientských knihoven  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]obsahuje klientské knihovny, které vám umožní snadněji využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál z .NET Framework a klientské aplikace založené na technologii Silverlight. Tyto knihovny zjednodušují posílání a přijímání zpráv HTTP. Také přeloží datovou část zprávy na objekty CLR, které představují data entity. Klientské knihovny funkce jsou dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a. <xref:System.Data.Services.Client.DataServiceQuery%601> Tyto třídy vám umožní dotazovat se na datovou službu a pak pracovat s vrácenými daty entity jako s objekty CLR. Další informace najdete v tématu [WCF Data Services Klientská knihovna](wcf-data-services-client-library.md) a [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
   
- Můžete použít **přidat odkaz na službu** dialogového okna v sadě Visual Studio se přidat odkaz na datovou službu. Tento nástroj požaduje metadata služby ze služby využívaných dat a vygeneruje <xref:System.Data.Services.Client.DataServiceContext> , která představuje datové služby a také vygeneruje tříd klientské datové služby, které představují entity. Další informace najdete v tématu [generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md).  
+ Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na datovou službu. Tento nástroj požaduje metadata služby z odkazované datové služby a generuje <xref:System.Data.Services.Client.DataServiceContext> , který představuje datovou službu, a generuje také třídy služby data klienta, které představují entity. Další informace najdete v tématu [generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md).  
   
- Nejsou k dispozici, můžete využívat programovací knihovny [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu do jiných typů klientských aplikací. Další informace najdete v tématu [OData SDK](https://go.microsoft.com/fwlink/?LinkId=185796).  
+ K dispozici jsou programové knihovny, které můžete použít k využívání [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu v jiných typech klientských aplikací. Další informace najdete v tématu [sada OData SDK](https://go.microsoft.com/fwlink/?LinkId=185796).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)
-- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Přístup k prostředkům datové služby](accessing-data-service-resources-wcf-data-services.md)
+- [Rychlý start](quickstart-wcf-data-services.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5b5f7ce6a4ce8f542b3c49fe4749bfde23ecf84
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 58919936bdc62d52437f429146f04c66d49294b2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744488"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796580"
 ---
 # <a name="iassemblynamegetversion-method"></a>IAssemblyName::GetVersion – metoda
-Získá informace o verzi pro sestavení odkazuje situace [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
+Získá informace o verzi sestavení, na které odkazuje tento objekt [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT GetVersion (
   
 ## <a name="parameters"></a>Parametry  
  `pdwVersionHi`  
- [out] 32 bitů verze.  
+ mimo Horní 32 bitů verze  
   
  `pdwVersionLow`  
- [out] Nízká 32 bitů na verzi.  
+ mimo Dolní 32 bitů verze  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)

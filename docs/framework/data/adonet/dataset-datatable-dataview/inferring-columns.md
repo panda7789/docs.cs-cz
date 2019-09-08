@@ -2,12 +2,12 @@
 title: Odvozování sloupců
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-ms.openlocfilehash: 651d132fd76ba9015d4730a5e519bc679608e275
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2718cbcf29799f99c8648b129fdb6079a6f6d344
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203590"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786173"
 ---
 # <a name="inferring-columns"></a>Odvozování sloupců
 Jakmile ADO.NET zjistí z dokumentu XML <xref:System.Data.DataSet>, které prvky mají být odvozeny jako tabulky pro,, pak odvodí sloupce pro tyto tabulky. ADO.NET 2,0 představil nový modul odvození schématu, který odvodí datový typ silného typu pro každý element **simpleType** . V předchozích verzích byl datový typ odvozeného elementu **simpleType** vždy **xsd: String**.  
@@ -72,4 +72,4 @@ Jakmile ADO.NET zjistí z dokumentu XML <xref:System.Data.DataSet>, které prvky
 - [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
 - [Použití XML v datové sadě](using-xml-in-a-dataset.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f08008a9-042e-4de9-94f3-4f0e502b1eb5
-ms.openlocfilehash: a970ebda76f5bb6bdea704dabef2ee305436c613
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 689a297eb5368d35c2e7dd034426edbe665e7ed2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205011"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785382"
 ---
 # <a name="datatable-edits"></a>Úpravy datových tabulek
 Když provedete změny v hodnotách sloupců <xref:System.Data.DataRow>v, změny se okamžitě umístí do aktuálního stavu řádku. <xref:System.Data.DataRow.AcceptChanges%2A> <xref:System.Data.DataRow.RejectChanges%2A>Je pak nastaveno na hodnotu změněno a změny jsou přijímány nebo odmítnuty pomocí metod nebo objektu DataRow. <xref:System.Data.DataRowState> **Objekt DataRow** také nabízí tři metody, které lze použít k pozastavení stavu řádku při jeho úpravách. Tyto metody jsou <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>a <xref:System.Data.DataRow.CancelEdit%2A>.  
@@ -93,4 +93,4 @@ protected static void OnColumnChanged(
 - <xref:System.Data.DataRowVersion>
 - [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
 - [Zpracování událostí datové tabulky](handling-datatable-events.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

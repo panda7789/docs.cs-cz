@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
-ms.openlocfilehash: b4a61306cd9b61f84eff16ffaac302317b6dfe44
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c4e782b670bfc74a651ce38457c05d9acfcf0e8c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959181"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783907"
 ---
 # <a name="establishing-the-connection"></a>Navazování připojení
-Chcete-li se připojit k Microsoft SQL Server <xref:System.Data.SqlClient.SqlConnection> , použijte pro SQL Server objekt zprostředkovatel dat .NET Framework. Chcete-li se připojit k OLE DB zdroji dat, <xref:System.Data.OleDb.OleDbConnection> použijte pro OLE DB objekt zprostředkovatel dat .NET Framework. Chcete-li se připojit ke zdroji dat ODBC, <xref:System.Data.Odbc.OdbcConnection> použijte objekt zprostředkovatel dat .NET Framework pro rozhraní ODBC. Chcete-li se připojit ke zdroji dat Oracle, <xref:System.Data.OracleClient.OracleConnection> použijte objekt zprostředkovatel dat .NET Framework pro Oracle. Informace o bezpečném ukládání a načítání připojovacích řetězců najdete v tématu [ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
+Chcete-li se připojit k Microsoft SQL Server <xref:System.Data.SqlClient.SqlConnection> , použijte pro SQL Server objekt zprostředkovatel dat .NET Framework. Chcete-li se připojit k OLE DB zdroji dat, <xref:System.Data.OleDb.OleDbConnection> použijte pro OLE DB objekt zprostředkovatel dat .NET Framework. Chcete-li se připojit ke zdroji dat ODBC, <xref:System.Data.Odbc.OdbcConnection> použijte objekt zprostředkovatel dat .NET Framework pro rozhraní ODBC. Chcete-li se připojit ke zdroji dat Oracle, <xref:System.Data.OracleClient.OracleConnection> použijte objekt zprostředkovatel dat .NET Framework pro Oracle. Informace o bezpečném ukládání a načítání připojovacích řetězců najdete v tématu [ochrana informací o připojení](protecting-connection-information.md).  
   
 ## <a name="closing-connections"></a>Uzavírání připojení  
  Doporučujeme, abyste připojení vždy zavřeli, až ho budete používat, aby bylo možné připojení vrátit do fondu. Blok v Visual Basic nebo C# automaticky odstraní připojení, když kód ukončí blok, i v případě neošetřené výjimky. `Using` Další informace naleznete v tématu [using Statement](../../../csharp/language-reference/keywords/using-statement.md) a [using příkaz using](../../../visual-basic/language-reference/statements/using-statement.md) .  
   
- Můžete také použít `Close` metody nebo `Dispose` objektu Connection pro poskytovatele, kterého používáte. Nemusejí být do fondu přidány ani vráceny připojení, která nejsou explicitně zavřena. Například připojení, které se odchází z oboru, ale které nebylo explicitně uzavřeno, bude vráceno do fondu připojení pouze v případě, že byla dosažena maximální velikost fondu a připojení je stále platné. Další informace najdete v tématu [sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md).  
+ Můžete také použít `Close` metody nebo `Dispose` objektu Connection pro poskytovatele, kterého používáte. Nemusejí být do fondu přidány ani vráceny připojení, která nejsou explicitně zavřena. Například připojení, které se odchází z oboru, ale které nebylo explicitně uzavřeno, bude vráceno do fondu připojení pouze v případě, že byla dosažena maximální velikost fondu a připojení je stále platné. Další informace najdete v tématu [sdružování připojení OLE DB, ODBC a Oracle](ole-db-odbc-and-oracle-connection-pooling.md).  
   
 > [!NOTE]
-> Nevolejte `Close` ani `Dispose` na **připojení**, objekt DataReadernebo žádný jiný spravovaný objekt v `Finalize` metodě vaší třídy. V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, `Finalize` nezahrnujte metodu do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
+> Nevolejte `Close` ani `Dispose` na **připojení**, objekt **DataReader**nebo žádný jiný spravovaný objekt v `Finalize` metodě vaší třídy. V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, `Finalize` nezahrnujte metodu do definice třídy. Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
-> Události přihlášení a odhlášení nebudou na serveru vyvolány, když je připojení načteno z nebo vráceno do fondu připojení, protože připojení není ve skutečnosti při návratu do fondu připojení ukončeno. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+> Události přihlášení a odhlášení nebudou na serveru vyvolány, když je připojení načteno z nebo vráceno do fondu připojení, protože připojení není ve skutečnosti při návratu do fondu připojení ukončeno. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](sql-server-connection-pooling.md).  
   
 ## <a name="connecting-to-sql-server"></a>Připojování k SQL Server  
- Zprostředkovatel dat .NET Framework pro SQL Server podporuje formát připojovacího řetězce, který se podobá formátu připojovacího řetězce OLE DB (ADO). Platný název a hodnoty formátu řetězce naleznete <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> v vlastnosti <xref:System.Data.SqlClient.SqlConnection> objektu. Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> třídu k vytvoření syntakticky platných připojovacích řetězců za běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+ Zprostředkovatel dat .NET Framework pro SQL Server podporuje formát připojovacího řetězce, který se podobá formátu připojovacího řetězce OLE DB (ADO). Platný název a hodnoty formátu řetězce naleznete <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> v vlastnosti <xref:System.Data.SqlClient.SqlConnection> objektu. Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> třídu k vytvoření syntakticky platných připojovacích řetězců za běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](connection-string-builders.md).  
   
  Následující příklad kódu ukazuje, jak vytvořit a otevřít připojení k databázi SQL Server.  
   
@@ -144,7 +144,7 @@ nwindConn.Open();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
-- [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Připojovací řetězce](connection-strings.md)
+- [Sdružování připojení OLE DB, ODBC a Oracle](ole-db-odbc-and-oracle-connection-pooling.md)
+- [Přehled ADO.NET](ado-net-overview.md)

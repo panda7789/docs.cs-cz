@@ -2,23 +2,23 @@
 title: entity set
 ms.date: 03/30/2017
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
-ms.openlocfilehash: 4473b74a4142bb49076068b50dc8b6f9c2c0d54a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b74d6bf373925ac90a998e2c4425c053e533f82a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959237"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784001"
 ---
 # <a name="entity-set"></a>entity set
-*Sada entit* je logický kontejner pro instance [typu entity](../../../../docs/framework/data/adonet/entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v [tématu model EDM (Entity Data Model): Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).) Vztah mezi typem entity a sadou entit je podobný relaci mezi řádkem a tabulkou v relační databázi: Podobně jako u řádku typ entity popisuje datovou strukturu a, podobně jako tabulka, sada entit obsahuje instance dané struktury. Sada entit není konstrukcí modelování dat; nepopisuje strukturu dat. Místo toho sada entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například modul CLR (Common Language Runtime) nebo databáze SQL Server) k seskupení instancí typů entit tak, aby bylo možné je namapovat na úložiště dat.  
+*Sada entit* je logický kontejner pro instance [typu entity](entity-type.md) a instance libovolného typu odvozeného z tohoto typu entity. (Informace o odvozených typech naleznete v [tématu model EDM (Entity Data Model): Dědičnost](entity-data-model-inheritance.md).) Vztah mezi typem entity a sadou entit je podobný relaci mezi řádkem a tabulkou v relační databázi: Podobně jako u řádku typ entity popisuje datovou strukturu a, podobně jako tabulka, sada entit obsahuje instance dané struktury. Sada entit není konstrukcí modelování dat; nepopisuje strukturu dat. Místo toho sada entit poskytuje konstrukci pro prostředí hostování nebo úložiště (například modul CLR (Common Language Runtime) nebo databáze SQL Server) k seskupení instancí typů entit tak, aby bylo možné je namapovat na úložiště dat.  
   
- Sada entit je definována v rámci [kontejneru entit](../../../../docs/framework/data/adonet/entity-container.md), což je logické seskupení sad entit a [sad přidružení](../../../../docs/framework/data/adonet/association-set.md).  
+ Sada entit je definována v rámci [kontejneru entit](entity-container.md), což je logické seskupení sad entit a [sad přidružení](association-set.md).  
   
  Aby v sadě entit existovala instance typu entity, musí být splněny následující podmínky:  
   
 - Typ instance je buď stejný jako typ entity, na které je založena sada entit, nebo typ instance je podtypem typu entity.  
   
-- [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) pro instanci je v sadě entit jedinečný.  
+- [Klíč entity](entity-key.md) pro instanci je v sadě entit jedinečný.  
   
 - Instance neexistuje v žádné jiné sadě entit.  
   
@@ -36,7 +36,7 @@ ms.locfileid: "69959237"
   
  ![Snímek obrazovky, který zobrazuje příklad sady.](./media/entity-set/sets-example-association.gif)  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje kontejner entit s jednou sadou entit pro každý typ entity v koncepčním modelu uvedeném výše. Všimněte si, že název a typ entity pro každou sadu entit jsou definovány pomocí atributů XML.  
+ [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje kontejner entit s jednou sadou entit pro každý typ entity v koncepčním modelu uvedeném výše. Všimněte si, že název a typ entity pro každou sadu entit jsou definovány pomocí atributů XML.  
   
  [!code-xml[EDM_Example_Model#EntityContainerExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entitycontainerexample)]  
   
@@ -46,5 +46,5 @@ ms.locfileid: "69959237"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)

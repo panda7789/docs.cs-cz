@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 74445b03e78ff68426f60c3e306d9151d0ba288a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f062f47790136e8cd39c6751b7c75eef660c2b9a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780996"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799136"
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen – funkce
-Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  
+Vytvoří nový pár veřejného a privátního klíče pro použití se silným názvem.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameKeyGen –](../hosting/iclrstrongname-strongnamekeygen-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,40 +41,40 @@ BOOLEAN StrongNameKeyGen (
   
 ## <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [in] Název požadovaný kontejner klíče. `wszKeyContainer` musí být neprázdný řetězec, nebo null, pokud chcete generovat dočasný název.  
+ pro Požadovaný název kontejneru klíčů. `wszKeyContainer`aby bylo možné vytvořit dočasný název, musí být neprázdný řetězec nebo hodnota null.  
   
  `dwFlags`  
- [in] Určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
+ pro Určuje, jestli se má zaregistrovaný klíč ponechat. Podporovány jsou následující hodnoty:  
   
-- 0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
+- 0x00000000 – používá se `wszKeyContainer` , pokud je null k vygenerování dočasného názvu kontejneru klíčů.  
   
-- 0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
+- 0x00000001 (`SN_LEAVE_KEY`) – určuje, že klíč by měl zůstat registrovaný.  
   
  `ppbKeyBlob`  
- [out] Vrácený pár veřejného a privátního klíče.  
+ mimo Vrácený pár veřejného a privátního klíče.  
   
  `pcbKeyBlob`  
- [out] Velikost v bajtech, z `ppbKeyBlob`.  
+ mimo Velikost v bajtech `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- `StrongNameKeyGen` Funkce vytvoří klíče 1 024 bitů. Po načtení klíče, měli byste zavolat [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce přidělená paměť uvolnit.  
+ `StrongNameKeyGen` Funkce vytvoří 1024 bitový klíč. Po načtení klíče byste měli zavolat funkci [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) a uvolnit tak přidělenou paměť.  
   
- Pokud `StrongNameKeyGen` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameKeyGen` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameKeyGen – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)
-- [StrongNameKeyGenEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameKeyGen – metoda](../hosting/iclrstrongname-strongnamekeygen-method.md)
+- [StrongNameKeyGenEx – metoda](../hosting/iclrstrongname-strongnamekeygenex-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

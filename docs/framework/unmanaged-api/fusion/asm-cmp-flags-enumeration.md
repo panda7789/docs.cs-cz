@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28157d2ed223d89af4b4314035e7c03d572be7b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a56785d84a07122080efda22d41ec43721474789
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778563"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795261"
 ---
-# <a name="asmcmpflags-enumeration"></a>ASM_CMP_FLAGS – výčet
-Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, dvě sestavení, který se má porovnat pomocí [iassemblyname::isequal –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) metody.  
+# <a name="asm_cmp_flags-enumeration"></a>ASM_CMP_FLAGS – výčet
+Označuje verzi, sestavení, jazykovou verzi, signaturu a tak dále, ze dvou sestavení, která mají být porovnány metodou [IAssemblyName:: EQUAL](iassemblyname-isequal-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,15 +68,15 @@ typedef enum {
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [Výčty pro fúze](fusion-enumerations.md)

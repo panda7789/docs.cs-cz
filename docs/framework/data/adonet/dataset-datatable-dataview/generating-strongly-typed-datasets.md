@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: 9bff69e28aa17da87da7e94d4e110c0375f043ae
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f1c1fd77bed700fae8e5a658da8b267120518ca9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203701"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786302"
 ---
 # <a name="generating-strongly-typed-datasets"></a>Generování datových sad se silnými typy
 Vzhledem ke schématu XML, které vyhovuje standardu XSD (XML Schema Definition Language), můžete vytvořit silně typované <xref:System.Data.DataSet> pomocí nástroje XSD. exe, který je součástí sady Windows Software Development Kit (SDK).  
@@ -43,7 +43,7 @@ Imports XSDSchema.Namespace
 using XSDSchema.Namespace;  
 ```  
   
- Následující příklad kódu používá typovou datovou **sadu** s názvem **CustomerDataSet** k načtení seznamu zákazníků z databáze **Northwind** . Jakmile se data načtou pomocí metody **Fill** , příklad projde každý zákazník v tabulce **Customers** pomocí typovaného objektu **CustomersRow** (**DataRow**). To poskytuje přímý přístup k sloupci **KódZákazníka** , na rozdíl od přes DataColumnCollection.  
+ Následující příklad kódu používá typovou **datovou sadu** s názvem **CustomerDataSet** k načtení seznamu zákazníků z databáze **Northwind** . Jakmile se data načtou pomocí metody **Fill** , příklad projde každý zákazník v tabulce **Customers** pomocí typovaného objektu **CustomersRow** (**DataRow**). To poskytuje přímý přístup k sloupci **KódZákazníka** , na rozdíl od přes **DataColumnCollection**.  
   
 ```vb  
 Dim customers As CustomerDataSet= New CustomerDataSet()  
@@ -100,4 +100,4 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
 - <xref:System.Data.DataSet>
 - [Typové datové sady](typed-datasets.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

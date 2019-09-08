@@ -2,12 +2,12 @@
 title: 'Návod: Dotazování napříč relacemi (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: a9e0583b14c07df2b1de23ba37fa88552a4c5c7c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ebf96bc575ef68e1190c5b9be7111902c0f69fef
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946944"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780998"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Návod: Dotazování napříč relacemi (C#)
 Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* pro reprezentaci vztahů cizího klíče v databázi.  
@@ -17,7 +17,7 @@ Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/
  Tento návod byl napsán s použitím nastavení C# vizuálního vývoje.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Musíte mít dokončený [Návod: Jednoduchý objektový model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Tento návod sestaví sestavení, včetně přítomnosti souboru northwnd. mdf v c:\linqtest5.  
+ Musíte mít dokončený [Návod: Jednoduchý objektový model a dotaz (C#)](walkthrough-simple-object-model-and-query-csharp.md). Tento návod sestaví sestavení, včetně přítomnosti souboru northwnd. mdf v c:\linqtest5.  
   
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze tří hlavních úloh:  
@@ -86,8 +86,8 @@ Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/
 4. V okně konzoly stiskněte klávesu ENTER a zastavte ladění.  
   
 ## <a name="next-steps"></a>Další kroky  
- V dalším návodu ([Návod: Manipulace s daty (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)) ukazuje, jak manipulovat s daty. Tento návod nevyžaduje, abyste uložili dva návody v této sérii, které jste již dokončili.  
+ V dalším návodu ([Návod: Manipulace s daty (C#)](walkthrough-manipulating-data-csharp.md)) ukazuje, jak manipulovat s daty. Tento návod nevyžaduje, abyste uložili dva návody v této sérii, které jste již dokončili.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Učení podle návodů](learning-by-walkthroughs.md)

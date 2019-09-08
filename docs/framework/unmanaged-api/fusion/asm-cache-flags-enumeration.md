@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27caa9916b5adab2b2049a8f66ac34fed40e4d7f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0e3e9da3db71d3e24b2a60ff032a631680055b88
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778573"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795284"
 ---
-# <a name="asmcacheflags-enumeration"></a>ASM_CACHE_FLAGS – výčet
-Určuje zdroj sestavení, která je reprezentována [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) v globální mezipaměti sestavení.  
+# <a name="asm_cache_flags-enumeration"></a>ASM_CACHE_FLAGS – výčet
+Určuje zdroj sestavení, který je reprezentován [IAssemblyCacheItem](iassemblycacheitem-interface.md) v globální mezipaměti sestavení (GAC).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,23 +42,23 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ASM_CACHE_ZAP`|Vytvoří výčet mezipaměti předkompilovaných sestavení pomocí Ngen.exe.|  
-|`ASM_CACHE_GAC`|Vytvoří výčet globální mezipaměti sestavení.|  
-|`ASM_CACHE_DOWNLOAD`|Vytvoří výčet sestavení, které byly staženy na vyžádání nebo která byla vytvořena stínová kopie.|  
-|`ASM_CACHE_ROOT`|Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu k mezipaměti globálního sestavení pro modul common language runtime (CLR) verze 2.0. Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).|  
-|`ASM_CACHE_ROOT_EX`|Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu do globální mezipaměti sestavení pro modul CLR verze 4. Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).|  
+|`ASM_CACHE_ZAP`|Vytvoří výčet mezipaměti předkompilovaných sestavení pomocí nástroje Ngen. exe.|  
+|`ASM_CACHE_GAC`|Vytvoří výčet globální mezipaměti sestavení (GAC).|  
+|`ASM_CACHE_DOWNLOAD`|Vytvoří výčet sestavení, která byla stažena na vyžádání nebo která byla Stínově zkopírována.|  
+|`ASM_CACHE_ROOT`|Označuje, že funkce [GetCachePath –](getcachepath-function.md) by měla vracet cestu k globální mezipaměti sestavení (Common Language Runtime) verze 2,0. Smysluplný pouze v kontextu volání [GetCachePath –](getcachepath-function.md).|  
+|`ASM_CACHE_ROOT_EX`|Označuje, že funkce [GetCachePath –](getcachepath-function.md) by měla vracet cestu k globální mezipaměti sestavení pro CLR verze 4. Smysluplný pouze v kontextu volání [GetCachePath –](getcachepath-function.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetCachePath – funkce](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md)
-- [IAssemblyCacheItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)
-- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [GetCachePath – funkce](getcachepath-function.md)
+- [IAssemblyCacheItem – rozhraní](iassemblycacheitem-interface.md)
+- [Výčty pro fúze](fusion-enumerations.md)

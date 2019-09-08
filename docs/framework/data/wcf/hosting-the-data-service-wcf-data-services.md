@@ -8,37 +8,37 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-ms.openlocfilehash: c240a76ea54d57456ff13fee7a48981354f669de
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: ea60ac132fdd94d4e3a3676891964070b7150857
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881276"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780268"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
-Pomocí služeb WCF Data Services, můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definován jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv požadavků, provádění aktualizací na zdroji dat a vygenerování zprávy odpovědi, podle požadavků OData. Datové služby však nelze svázat a síťových soketů naslouchat příchozím požadavkům HTTP. Pro tato požadované funkce, která využívá datová služba hostitelská komponenta.
+Pomocí WCF Data Services můžete vytvořit službu, která zpřístupňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál. Tato datová služba je definována jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkce potřebné ke zpracování zpráv požadavků, provádění aktualizací proti zdroji dat a generování zpráv odpovědí podle požadavků OData. Datová služba ale nemůže navazovat a naslouchat síťovému soketu pro příchozí požadavky HTTP. Pro tuto požadovanou funkci datová služba spoléhá na komponentu hostování.
 
- Hostitele datové služby se provádí tyto úlohy jménem datové služby:
+ Hostitel datové služby provádí následující úkoly jménem datové služby:
 
-- Čeká na požadavky a směrovat tyto žádosti do datové služby.
+- Naslouchá žádostem a směruje tyto požadavky na datovou službu.
 
-- Vytvoří instance služby data pro každý požadavek.
+- Vytvoří instanci datové služby pro každý požadavek.
 
-- Požadavky, že datové služby zpracování příchozího požadavku.
+- Požaduje, aby datová služba zpracovala příchozí požadavek.
 
 - Odešle odpověď jménem datové služby.
 
- Pro zjednodušení, který je hostitelem datové služby, služeb WCF Data Services slouží k integraci s Windows Communication Foundation (WCF). Data service poskytuje výchozí implementaci WCF, která slouží jako hostitele datové služby v aplikaci technologie ASP.NET. Proto může hostovat datové služby v jednom z následujících způsobů:
+ Aby bylo možné zjednodušit hostování datové služby, WCF Data Services je navržena pro integraci s Windows Communication Foundation (WCF). Datová služba poskytuje výchozí implementaci služby WCF, která slouží jako hostitel datové služby v aplikaci ASP.NET. Proto můžete hostovat datovou službu jedním z následujících způsobů:
 
-- V aplikaci technologie ASP.NET.
+- V aplikaci ASP.NET.
 
-- Ve spravované aplikaci, která podporuje v místním prostředí služby WCF.
+- Ve spravované aplikaci, která podporuje samoobslužně hostované služby WCF.
 
-- V některých jiných vlastního hostitele datové služby.
+- V některém jiném vlastním hostiteli datové služby.
 
-## <a name="hosting-a-data-service-in-an-aspnet-application"></a>Hostující datovou službu v aplikaci ASP.NET
+## <a name="hosting-a-data-service-in-an-aspnet-application"></a>Hostování datové služby v aplikaci ASP.NET
 
-Při použití **přidat novou položku** dialogového okna v sadě Visual Studio 2015 k definování datových služeb v aplikaci ASP.NET, nástroj vygeneruje dva nové soubory v projektu. První soubor musí `.svc` rozšíření a předá instrukci modul runtime WCF na tom, jak vytvořit instanci datové služby. Následuje příklad tohoto souboru pro datová služba Northwind ukázka vytvořit při dokončení [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md):
+Při použití dialogového okna **Přidat novou položku** v aplikaci Visual Studio 2015 k definování datové služby v aplikaci ASP.NET generuje nástroj v projektu dva nové soubory. První soubor má `.svc` rozšíření a instruuje modul runtime WCF, jak vytvořit instanci datové služby. Následuje příklad tohoto souboru pro ukázkovou datovou službu Northwind vytvořenou po dokončení [rychlého](quickstart-wcf-data-services.md)startu:
 
 ```
 <%@ ServiceHost Language="C#"
@@ -48,33 +48,33 @@ Při použití **přidat novou položku** dialogového okna v sadě Visual Studi
     Service="NorthwindService.Northwind" %>
 ```
 
- Tato direktiva řekne aplikaci vytvořit hostitele služby pro třídu pojmenované datové služby pomocí <xref:System.Data.Services.DataServiceHostFactory> třídy.
+ Tato direktiva oznamuje aplikaci, aby vytvořila hostitele služby pro třídu pojmenované datové služby pomocí <xref:System.Data.Services.DataServiceHostFactory> třídy.
 
- Na stránce použití modelu code-behind pro `.svc` soubor obsahuje třídu, která je implementace data samotné služby, která je definovaná následujícím způsobem pro ukázková datová služba Northwind:
+ Stránka s kódem na pozadí pro `.svc` soubor obsahuje třídu, která je implementací samotné datové služby, která je definována následujícím způsobem pro ukázkovou datovou službu Northwind:
 
  [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
  [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
- Vzhledem k tomu, že datové služby se chová jako služba WCF, datové služby se integruje s ASP.NET a následuje programovacího modelu WCF Web. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md) a [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md).
+ Vzhledem k tomu, že se datová služba chová jako služba WCF, datová služba se integruje s ASP.NET a sleduje model webového programování WCF. Další informace najdete v tématu model programování [služeb WCF a ASP.NET](../../wcf/feature-details/wcf-services-and-aspnet.md) a [WCF web http](../../wcf/feature-details/wcf-web-http-programming-model.md).
 
-## <a name="self-hosted-wcf-services"></a>Služby WCF v místním prostředí
- Protože zahrnuje implementace WCF služby WCF Data Services podporují datové služby jako služba WCF s vlastním hostováním. Služba může být v jakékoli aplikaci rozhraní .NET Framework, jako je například konzolové aplikace v místním prostředí. <xref:System.Data.Services.DataServiceHost> Třída, která dědí z <xref:System.ServiceModel.Web.WebServiceHost>, se používá k vytvoření instance služby data na konkrétní adrese.
+## <a name="self-hosted-wcf-services"></a>Samoobslužné služby WCF
+ Protože zahrnuje implementaci WCF, WCF Data Services podporu samoobslužného hostování datové služby jako služby WCF. Služba může být samoobslužně hostována v libovolné .NET Framework aplikaci, jako je například Konzolová aplikace. Třída, která dědí z <xref:System.ServiceModel.Web.WebServiceHost>, slouží k vytvoření instance datové služby na konkrétní adrese. <xref:System.Data.Services.DataServiceHost>
 
- Hostování na vlastním lze použít pro vývoj a testování vzhledem k tomu, že se zjednoduší nasazení a řešení potíží se službou. Tento typ hostování však neposkytuje pokročilé hostování a správu funkce poskytované rozhraním ASP.NET nebo internetové informační služby (IIS). Další informace najdete v tématu [hostování ve spravované aplikaci](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md).
+ Samoobslužné hostování lze použít pro vývoj a testování, protože může usnadnit jeho nasazení a odstraňování potíží. Tento druh hostování ale neposkytuje pokročilé funkce pro hostování a správu, které poskytuje ASP.NET nebo Internetová informační služba (IIS). Další informace najdete v tématu [hostování ve spravované aplikaci](../../wcf/feature-details/hosting-in-a-managed-application.md).
 
-## <a name="defining-a-custom-data-service-host"></a>Definování hostitele vlastní datové služby
- V případech, kde je příliš omezující implementace hostitele WCF můžete také definovat vlastní hostitele datové služby. Všechny třídy, která implementuje <xref:System.Data.Services.IDataServiceHost> rozhraní může sloužit jako síťovým hostitelem datové služby. Musí implementovat vlastního hostitele <xref:System.Data.Services.IDataServiceHost> rozhraní a být schopná zpracovat tyto základní povinnosti hostitele datové služby:
+## <a name="defining-a-custom-data-service-host"></a>Definování vlastního hostitele datové služby
+ V případech, kdy je implementace hostitele WCF příliš omezující, můžete také definovat vlastního hostitele pro datovou službu. Libovolná třída, <xref:System.Data.Services.IDataServiceHost> která implementuje rozhraní, může být použita jako síťový hostitel pro datovou službu. Vlastní hostitel musí implementovat <xref:System.Data.Services.IDataServiceHost> rozhraní a být schopný zvládnout následující základní zodpovědnosti hostitele datové služby:
 
-- Zadejte datové služby s kořenovou cestou za služby.
+- Zadejte datovou službu s kořenovou cestou služby.
 
-- Zpracovat informace hlavičky požadavku a odpovědi na příslušné <xref:System.Data.Services.IDataServiceHost> implementace členu.
+- Zpracujte informace hlavičky žádosti a odpovědi příslušné <xref:System.Data.Services.IDataServiceHost> implementaci člena.
 
-- Zpracování výjimek vyvolaných datové služby.
+- Zpracování výjimek vyvolaných datovou službou.
 
-- Ověření parametrů v řetězci dotazu.
+- Ověřte parametry v řetězci dotazu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
-- [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)
-- [Konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)
+- [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)
+- [Vystavení dat jako služby](exposing-your-data-as-a-service-wcf-data-services.md)
+- [Konfigurace datové služby](configuring-the-data-service-wcf-data-services.md)

@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76ada8400573dd61c25e0dce3f49ce66b5fb30c1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 29f492173a7fd22ab497d6e0096798e164fccf26
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773811"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796302"
 ---
 # <a name="nukedownloadedcache-function"></a>NukeDownloadedCache – funkce
-Odstraní běžné mezipaměť pro stahování language runtime (CLR).  
+Odstraní mezipaměť pro stažení modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT NukeDownloadedCache();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb modelu COM, jak je definovaný ve WinError.h.  
+ Tato metoda vrátí standardní chybové kódy modelu COM, jak je definováno v WinError. h.  
   
 ## <a name="remarks"></a>Poznámky  
- Mezipaměť pro stahování CLR je oblast, kde jsou uložené sestavení se silným názvem, které byly staženy z adresy URL pro opakované použití je to možné.  
+ Mezipaměť pro stažení CLR je oblast, kde jsou uložena sestavení se silným názvem, která jsou stažena z adresy URL pro možné opakované použití.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Soubor Fusion.dll a knihovny Mscorwks.dll. Ujistěte se, že můžete cílit na správnou verzi rozhraní .NET Framework pomocí soubor Fusion.dll namísto knihovny Mscorwks.dll.  
+ **Knihovna** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [CreateHistoryReader – funkce](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)
-- [GetHistoryFileDirectory – funkce](../../../../docs/framework/unmanaged-api/fusion/gethistoryfiledirectory-function.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [CreateHistoryReader – funkce](createhistoryreader-function.md)
+- [GetHistoryFileDirectory – funkce](gethistoryfiledirectory-function.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

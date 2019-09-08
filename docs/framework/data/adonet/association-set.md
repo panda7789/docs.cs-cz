@@ -2,45 +2,45 @@
 title: association set
 ms.date: 03/30/2017
 ms.assetid: a65247b6-ce59-44ea-974c-14ae20a7995f
-ms.openlocfilehash: b7ded35986d27dedccbc3846f8791974bb225398
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 43ab6cf9f1ee8cb971810add6b9a89467726f3e2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592570"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785040"
 ---
 # <a name="association-set"></a>association set
-*Sada přidružení* je logický kontejner [přidružení](../../../../docs/framework/data/adonet/association-type.md) instance stejného typu. Skupinu přidružení není konstrukce; modelování dat nepopisuje to znamená, že struktura dat nebo vztahy. Místo toho přidružení sady zajišťující konstrukci prostředí hostování nebo úložiště (například do databáze SQL serveru nebo modul common language runtime) do skupiny přidružení instance tak, že je možné mapovat do úložiště dat.  
+*Sada přidružení* je logický kontejner pro instance [přidružení](association-type.md) stejného typu. Sada přidružení není konstrukcí modelování dat; To znamená, že nepopisuje strukturu dat nebo relací. Místo toho poskytuje sada přidružení konstrukci pro prostředí hostování nebo úložiště (například modul CLR (Common Language Runtime) nebo databáze SQL Server) k seskupení instancí přidružení, aby bylo možné je namapovat na úložiště dat.  
   
- Skupinu přidružení je definována v rámci [kontejneru entity](../../../../docs/framework/data/adonet/entity-container.md), což je logické seskupení [sad entit](../../../../docs/framework/data/adonet/entity-set.md) a sad přidružení.  
+ Sada přidružení je definována v rámci [kontejneru entit](entity-container.md), což je logické seskupení [sad entit](entity-set.md) a sad přidružení.  
   
- Definici pro skupinu přidružení obsahuje následující informace:  
+ Definice sady přidružení obsahuje následující informace:  
   
-- Název sady přidružení. (Povinné)  
+- Název sady přidružení. Požadovanou  
   
-- Přidružení, které bude obsahovat instancí. (Povinné)  
+- Přidružení, které bude obsahovat instance. Požadovanou  
   
-- Dvě [přidružení nastavení zakončení](../../../../docs/framework/data/adonet/association-set-end.md).  
+- [Končí dvě sady přidružení](association-set-end.md).  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy`, a `WrittenBy`. I když se informace o sadách přidružení se předávají v diagramu, následující diagram znázorňuje příklad sad přidružení a sady entit na základě tohoto modelu.  
+ Následující diagram znázorňuje koncepční model se dvěma přidruženími: `PublishedBy`a. `WrittenBy` I když informace o sadách přidružení nejsou předány v diagramu, další diagram zobrazuje příklad sad přidružení a sad entit založených na tomto modelu.  
   
- ![Příklad modelu s tři typy entit](./media/association-set/example-model-three-entity-types.gif)  
+ ![Vzorový model se třemi typy entit](./media/association-set/example-model-three-entity-types.gif)  
   
- Následující příklad ukazuje skupinu přidružení (`PublishedBy`) a dvě sady entit (`Books` a `Publishers`) založené na konceptuální model, uvedené výše. BI v `Books` sadu entit představuje instanci `Book` typ entity v době běhu. Obdobně Pj představuje `Publisher` instance v `Publishers` sady entit. BiPj představuje instanci `PublishedBy` přidružení v `PublishedBy` sada přidružení.  
+ Následující příklad ukazuje sadu přidružení (`PublishedBy`) a dvě sady entit (`Books` a `Publishers`) na základě koncepčního modelu uvedeného výše. BI v `Books` sadě entit představuje instanci `Book` typu entity v době běhu. Podobně PJ představuje `Publisher` instanci `Publishers` v sadě entit. BiPj představuje instanci `PublishedBy` přidružení `PublishedBy` v sadě přidružení.  
   
- ![Snímek obrazovky zobrazující příklad sady.](./media/association-set/sets-example-association.gif)  
+ ![Snímek obrazovky, který zobrazuje příklad sady.](./media/association-set/sets-example-association.gif)  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje kontejneru entity s jeden přidružení nastavení pro každé přidružení ve výše uvedeném diagramu. Všimněte si, že název a přidružení pro každé přidružení nastavení jsou definovány pomocí atributů XML.  
+ [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje kontejner entit s jednou sadou přidružení pro každé přidružení v diagramu výše. Všimněte si, že název a přidružení pro každou sadu přidružení jsou definovány pomocí atributů XML.  
   
  [!code-xml[EDM_Example_Model#EntityContainerExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entitycontainerexample)]  
   
- Je možné definovat více sad přidružení za přidružení, pokud žádné sdílené složky nastaví dva přidružení [přidružení nastavit konec](../../../../docs/framework/data/adonet/association-set-end.md). Definuje kontejner služby entity se dvěma sadami přidružení pro následující CSDL `WrittenBy` přidružení. Všimněte si, že byla definovaná pro více sad entit `Book` a `Author` typy entit a nastavit žádné přidružení sdílené složky přidružení nastavit konec.  
+ Pro každé přidružení je možné definovat několik sad přidružení, pokud žádné dvě sady přidružení nesdílejí [zakončení sady přidružení](association-set-end.md). Následující CSDL definuje kontejner entit se dvěma sadami přidružení pro `WrittenBy` přidružení. Všimněte si, že několik sad entit bylo definováno pro `Book` typy `Author` entit a a že žádná sada přidružení nesdílí sadu přidružení end.  
   
  [!code-xml[EDM_Example_Model#MultipleAssociationSets](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books3.edmx#multipleassociationsets)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
-- [foreign key property](../../../../docs/framework/data/adonet/foreign-key-property.md)
+- [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)
+- [foreign key property](foreign-key-property.md)

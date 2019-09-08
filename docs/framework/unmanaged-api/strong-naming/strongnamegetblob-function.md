@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 12daac766a09c297bfa129f69342ebad20977e7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2d5b3d1d39b5d4c5b7d4db073b3ffaf1c6b88373
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780139"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799099"
 ---
 # <a name="strongnamegetblob-function"></a>StrongNameGetBlob – funkce
-Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese.  
+Vyplní zadanou vyrovnávací paměť binární reprezentací spustitelného souboru na zadané adrese.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamegetblob –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameGetBlob –](../hosting/iclrstrongname-strongnamegetblob-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ BOOLEAN StrongNameGetBlob (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [in] Platnou cestu ke spustitelnému souboru, který se má načíst.  
+ pro Platná cesta ke spustitelnému souboru, který se má načíst.  
   
  `pbBlob`  
- [in] Vyrovnávací paměť, do kterého chcete načíst spustitelný soubor.  
+ pro Vyrovnávací paměť, do které se má načíst spustitelný soubor.  
   
  `pcbBlob`  
- [out v] Požadovanou maximální velikost v bajtech, `pbBlob`. Po návratu, skutečná velikost v bajtech, z `pbBlob`.  
+ [in, out] Požadovaná maximální velikost (v bajtech `pbBlob`). Po vrácení se skutečnou velikostí v bajtech `pbBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameGetBlob` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameGetBlob` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameGetBlob – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md)
-- [StrongNameGetBlobFromImage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameGetBlob – metoda](../hosting/iclrstrongname-strongnamegetblob-method.md)
+- [StrongNameGetBlobFromImage – metoda](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

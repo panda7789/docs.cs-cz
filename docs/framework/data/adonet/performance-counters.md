@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 360e4a956aec74b6b71185d6acf2f4071d22e2ae
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a529cae724d24b47d856f86744eebe87d68cb158
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951210"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783313"
 ---
 # <a name="performance-counters-in-adonet"></a>Čítače výkonu v ADO.NET
 ADO.NET 2,0 představil rozšířenou podporu pro čítače výkonu, které zahrnují podporu <xref:System.Data.SqlClient> pro <xref:System.Data.OracleClient>i. Čítače <xref:System.Data.SqlClient> výkonu dostupné v předchozích verzích ADO.NET byly zastaralé a nahrazeny novými čítači výkonu popsanými v tomto tématu. Pomocí čítačů výkonu ADO.NET můžete monitorovat stav aplikace a prostředky připojení, které používá. Čítače výkonu lze monitorovat pomocí nástroje sledování výkonu systému Windows nebo lze programově přistupovat pomocí <xref:System.Diagnostics.PerformanceCounter> třídy <xref:System.Diagnostics> v oboru názvů.  
@@ -396,9 +396,9 @@ class Program
 
 ## <a name="see-also"></a>Viz také:
 
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Sdružování připojení OLE DB, ODBC a Oracle](ole-db-odbc-and-oracle-connection-pooling.md)
 - [Čítače výkonu pro ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/fxk122b4(v=vs.100))
-- [Běhová profilace](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)
+- [Běhová profilace](../../debug-trace-profile/runtime-profiling.md)
 - [Úvod do monitorování mezních hodnot výkonu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bd20x32d(v=vs.90))
 - [Přehled ADO.NET](ado-net-overview.md)

@@ -2,17 +2,17 @@
 title: Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
-ms.openlocfilehash: 231f23ccf47f60b902fdd5c66b63fe1a750445f9
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 4aa94dfaf088a2a934c8901e2720f166d3a38dae
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203416"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784406"
 ---
 # <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
 Ve schématu XSD (XML Schema Definition Language) definuje **jedinečný** element omezení jedinečnosti pro element nebo atribut. V procesu překladu schématu XML do relačního schématu je jedinečné omezení zadané u elementu nebo atributu ve schématu XML mapováno na jedinečné omezení v <xref:System.Data.DataTable> v odpovídajícím <xref:System.Data.DataSet> generovaném objektu.  
   
- Následující tabulka popisuje atributy **msdata** , které lze zadat v jedinečném prvku .  
+ Následující tabulka popisuje atributy **msdata** , které lze zadat v **jedinečném** prvku.  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
@@ -97,4 +97,4 @@ ConstraintName: SomeName
 
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

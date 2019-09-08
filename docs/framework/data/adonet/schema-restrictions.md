@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-ms.openlocfilehash: 1a2c32d133799ee5338c18d0f51bced49cb3dc4b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d0250e573dc24bfcad97a2f2606cb2e6c8e520da
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963185"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782756"
 ---
 # <a name="schema-restrictions"></a>Omezení schématu
-Druhý volitelný parametr metody GetSchema je omezení, která slouží k omezení množství vrácených informací o schématu a je předána metodě GetSchema jako poli řetězců. Pozice v poli určuje hodnoty, které lze předat, a to je ekvivalentní k číslu omezení.  
+Druhý volitelný parametr metody **GetSchema** je omezení, která slouží k omezení množství vrácených informací o schématu a je předána metodě **GetSchema** jako poli řetězců. Pozice v poli určuje hodnoty, které lze předat, a to je ekvivalentní k číslu omezení.  
   
  Například následující tabulka popisuje omezení podporovaná kolekcí schémat "Tables" pomocí Zprostředkovatel dat .NET Framework pro SQL Server. Další omezení pro kolekce schémat SQL Server jsou uvedena na konci tohoto tématu.  
   
@@ -25,7 +25,7 @@ Druhý volitelný parametr metody GetSchema je omezení, která slouží k omeze
 |TableType|@TableType|TABLE_TYPE|4|  
   
 ## <a name="specifying-restriction-values"></a>Určení hodnot omezení  
- Chcete-li použít jedno z omezení kolekce schématu "Tables", jednoduše vytvořte pole řetězců se čtyřmi prvky a potom umístěte hodnotu do prvku, který odpovídá číslu omezení. Chcete-li například omezit tabulky vrácené metodou GetSchema pouze na tabulky ve schématu "Sales", nastavte druhý prvek pole na "Sales", než jej předáte metodě GetSchema.  
+ Chcete-li použít jedno z omezení kolekce schématu "Tables", jednoduše vytvořte pole řetězců se čtyřmi prvky a potom umístěte hodnotu do prvku, který odpovídá číslu omezení. Chcete-li například omezit tabulky vrácené metodou **GetSchema** pouze na tabulky ve schématu "Sales", nastavte druhý prvek pole na "Sales", než jej předáte metodě **GetSchema** .  
   
 > [!NOTE]
 > Kolekce omezení pro `SqlClient` a `OracleClient` mají další `ParameterName` sloupec. Výchozí sloupec omezení je stále pro zpětnou kompatibilitu, ale v současné době se ignoruje. Parametrizované dotazy místo nahrazení řetězců by měly být použity k minimalizaci rizika útoku prostřednictvím injektáže SQL při zadávání hodnot omezení.  
@@ -263,4 +263,4 @@ class Program
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

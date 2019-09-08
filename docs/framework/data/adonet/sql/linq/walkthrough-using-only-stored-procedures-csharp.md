@@ -2,19 +2,19 @@
 title: 'Návod: Použití jen uložených procedur (C#)'
 ms.date: 03/30/2017
 ms.assetid: ecde4bf2-fa4d-4252-b5e4-96a46b9e097d
-ms.openlocfilehash: 69419dd5bb49c2e47315d0079df3a7b575ad9afd
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: f980402c976db9ee327a7b726e36a0a4d9d6d73f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971767"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792113"
 ---
 # <a name="walkthrough-using-only-stored-procedures-c"></a>Návod: Použití jen uložených procedur (C#)
 
 Tento názorný postup poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům, a to provedením uložených procedur. Tento přístup často používají správci databáze k omezení způsobu přístupu k úložišti dat.
 
 > [!NOTE]
-> Uložené procedury v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikacích můžete použít také k přepsání výchozího chování, zejména pro `Create`procesy, `Update`a `Delete` . Další informace najdete v tématu [přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).
+> Uložené procedury v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikacích můžete použít také k přepsání výchozího chování, zejména pro `Create`procesy, `Update`a `Delete` . Další informace najdete v tématu [přizpůsobení operací vložení, aktualizace a odstranění](customizing-insert-update-and-delete-operations.md).
 
 Pro účely tohoto Názorného postupu použijete dvě metody, které byly namapovány na uložené procedury v ukázkové databázi Northwind: CustOrdersDetail a CustOrderHist. Mapování probíhá při spuštění nástroje příkazového řádku SqlMetal pro vygenerování C# souboru. Další informace najdete v části požadavky dále v tomto návodu.
 
@@ -32,7 +32,7 @@ Tento návod vyžaduje následující:
 
 - Ukázkovou databázi Northwind
 
-     Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze zkopírujte soubor northwnd. mdf do složky c:\linqtest7.
+     Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](downloading-sample-databases.md). Po stažení databáze zkopírujte soubor northwnd. mdf do složky c:\linqtest7.
 
 - Soubor C# kódu vygenerovaný z databáze Northwind.
 
@@ -40,7 +40,7 @@ Tento návod vyžaduje následující:
 
      **SQLMetal/Code: "c:\linqtest7\northwind.cs"/Language: CSharp "c:\linqtest7\northwnd.mdf"/sprocs/Functions/pluralize**
 
-     Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).
+     Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../tools/sqlmetal-exe-code-generation-tool.md).
 
 ## <a name="overview"></a>Přehled
 
@@ -199,5 +199,5 @@ Tento projekt můžete vylepšit tím, že provedete nějaké změny. Můžete n
 
 ## <a name="see-also"></a>Viz také:
 
-- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
-- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Učení podle návodů](learning-by-walkthroughs.md)
+- [Uložené procedury](stored-procedures.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Omezení rizik: Dotykové ovládání založená na ukazatelích a podpora pera'
+title: Zmírnění Dotyková podpora na základě ukazatele a stylusu
 ms.date: 04/07/2017
 helpviewer_keywords:
 - retargeting changes
@@ -9,40 +9,40 @@ helpviewer_keywords:
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9264d8eb7923663061f9bccfffe5b8f5254549f0
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 67e41450ed69d73a4b27b0aa37974ae01be69687
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379892"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779237"
 ---
-# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Omezení rizik: Dotykové ovládání založená na ukazatelích a podpora pera
+# <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Zmírnění Dotyková podpora na základě ukazatele a stylusu
 
-Aplikace WPF, které cílí .NET Framework 4.7 a běží v systémech Windows od verze Windows 10 Creators Update můžete povolit volitelné `WM_POINTER`– na základě WPF touch/stylus zásobníku.
+Aplikace WPF, které cílí na .NET Framework 4,7 a jsou spuštěné v systémech Windows počínaje systémem Windows 10 Creators Update, mohou `WM_POINTER`povolit volitelnou sadu WPF Touch/stylusu.
 
 ## <a name="impact"></a>Dopad
 
-Vývojáři, kteří explicitně nepovolíte podporu dotykového ovládání/stylus založená na ukazatelích měli vidět žádné změny v chování touch/stylus WPF.
+Vývojáři, kteří explicitně nepovolili podporu dotykového ovládání a stylusu na základě ukazatele, by se v chování WPF Touch/Stylus nezměnily.
 
-Toto jsou aktuální známé problémy s nepovinným `WM_POINTER`– na základě touch/stylus zásobníku:
+Tady jsou uvedené aktuální známé problémy s volitelným `WM_POINTER`tónovým nebo stylusem stackem:
 
-- Žádná podpora pro rukopis v reálném čase.
+- Žádná podpora pro psaní rukou v reálném čase.
 
-   Zatímco rukopis a stylus moduly plug-in i nadále fungovat, jsou spravována na vlákně uživatelského rozhraní, což může vést k nižšímu výkonu.
+   I když rukopisné moduly plug-in a stylusy jsou stále funkční, jsou zpracovávány ve vlákně uživatelského rozhraní, což může vést k špatnému výkonu.
 
-- Chování změny z důvodu změn v podpoře z dotykového ovládání/stylus událostí na události myši.
+- Změny chování z důvodu změn v povýšení událostí dotykové/Stylus na události myši.
 
-  - Manipulace s může chovat jinak.
+  - Manipulace se může chovat jinak.
 
-  - Přetažení nezobrazí odpovídající zpětné vazby pro dotykové ovládání. (Netýká tužkou.)
+  - Přetažením nebudete mít k dispozici odpovídající zpětnou vazbu k dotykovému vstupu. (To nemá vliv na vstup stylusu.)
 
-  - Dotykové ovládání/stylus událostí, nepůjdou už přetažení.
+  - Přetažení už nejde iniciovat na událostech Touch/stylusu.
 
-      To může potenciálně způsobit aplikace přestane reagovat, dokud se detekuje vstup z myši. Vývojáři by místo toho zahájit přetáhněte a vyřadit z události myši.
+      To může potenciálně způsobit, že aplikace přestane reagovat, dokud se nezjistí vstup z myši. Místo toho by vývojáři měli zahájit přetahování z událostí myši.
 
-## <a name="opting-in-to-wmpointer-based-touchstylus-support"></a>Vyjádření výslovného souhlasu s na základě WM_POINTER touch/stylus podpory
+## <a name="opting-in-to-wm_pointer-based-touchstylus-support"></a>PřiWM_POINTERte se k podpoře dotykového ovládání a stylusu.
 
-Vývojáři, kteří si přejete povolit tento zásobník můžete do souboru app.config své aplikace přidejte následující:
+Vývojáři, kteří chtějí tuto sadu povolit, mohou do souboru App. config aplikace přidat následující:
 
 ```xml
 <configuration>
@@ -52,8 +52,8 @@ Vývojáři, kteří si přejete povolit tento zásobník můžete do souboru ap
 </configuration>
 ```
 
-Odebírá se tento záznam a nastaví její hodnotu na `false` vypne této volitelné zásobníku.
+Odebráním této položky nebo nastavením její hodnoty `false` dojde k vypnutí tohoto volitelného zásobníku.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Změny cílení v rozhraní .NET Framework 4.7](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-7.md)
+- [Změna cílení změn v .NET Framework 4,7](retargeting-changes-in-the-net-framework-4-7.md)

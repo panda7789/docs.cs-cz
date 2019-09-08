@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-ms.openlocfilehash: 3bbe28423385cae0f09f301c03b2b1a59edf101d
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: e76e81153cb7d074fe975744c6b6041ee04be90f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205066"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785426"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Synchronizace datové sady a datového dokumentu XML
 ADO.NET <xref:System.Data.DataSet> poskytuje relační znázornění dat. Pro hierarchický přístup k datům můžete použít třídy XML, které jsou k dispozici v .NET Framework. V minulosti se tato dvě reprezentace dat používala samostatně. .NET Framework však umožňuje synchronní přístup k relačním i hierarchickému znázornění dat prostřednictvím objektu **DataSet** a <xref:System.Xml.XmlDataDocument> objektu v reálném čase.  
   
- Pokud je **datová sada** synchronizována s **objektu XmlDataDocument**, oba objekty pracují s jedinou sadou dat. To znamená, že pokud je provedena změna v **datové sadě**, změna se projeví v **objektu XmlDataDocument**a naopak. Vztah mezi datovou **sadou** a **objektu XmlDataDocument** vytváří skvělou flexibilitu tím, že umožňuje jediné aplikaci, která používá jedinou sadu dat, přístup k celé sadě služeb postavené kolem **datové sady** (například webové formuláře a Ovládací prvky model Windows Forms a Visual Studio .NET Designer) a také sadu XML Services, včetně jazyka XSL (Extensible Stylesheet Language), XSL Transformes (XSLT) a jazyka XML Path (XPath). Nemusíte vybírat, kterou sadu služeb chcete s aplikací cílit; jsou k dispozici obě.  
+ Pokud je **datová sada** synchronizována s **objektu XmlDataDocument**, oba objekty pracují s jedinou sadou dat. To znamená, že pokud je provedena změna v **datové sadě**, změna se projeví v **objektu XmlDataDocument**a naopak. Vztah mezi **datovou sadou** a **objektu XmlDataDocument** vytváří skvělou flexibilitu tím, že umožňuje jediné aplikaci, která používá jedinou sadu dat, přístup k celé sadě služeb postavené kolem **datové sady** (například webové formuláře a Ovládací prvky model Windows Forms a Visual Studio .NET Designer) a také sadu XML Services, včetně jazyka XSL (Extensible Stylesheet Language), XSL Transformes (XSLT) a jazyka XML Path (XPath). Nemusíte vybírat, kterou sadu služeb chcete s aplikací cílit; jsou k dispozici obě.  
   
  Existuje několik způsobů, jak můžete **datovou sadu** synchronizovat s **objektu XmlDataDocument**. Můžete:  
   
@@ -85,7 +85,7 @@ ADO.NET <xref:System.Data.DataSet> poskytuje relační znázornění dat. Pro hi
     xmlDoc.Load("XMLDocument.xml");  
     ```  
   
- Další výhodou synchronizace **objektu XmlDataDocument** s datovou **sadou** je, že se zachová věrnost dokumentu XML. Pokud je **datová sada** naplněna z dokumentu XML pomocí **ReadXml**, když jsou data zapsána zpět jako dokument XML pomocí **WriteXml** , může se výrazně lišit od původního dokumentu XML. Důvodem je, že **datová sada** neuchovává formátování, jako jsou prázdné znaky nebo hierarchické informace, jako je například pořadí prvků, z dokumentu XML. **Datová sada** neobsahuje také prvky z dokumentu XML, které byly ignorovány, protože neodpovídaly schématu sady **dat**. Synchronizace **objektu XmlDataDocument** s datovou **sadou** umožňuje zachovat formátování a hierarchické struktury prvků původního dokumentu XML, který má být udržován v **objektu XmlDataDocument**, zatímco **datová sada** obsahuje pouze data a informace o schématu, které jsou vhodné pro **datovou sadu**.  
+ Další výhodou synchronizace **objektu XmlDataDocument** s **datovou sadou** je, že se zachová věrnost dokumentu XML. Pokud je **datová sada** naplněna z dokumentu XML pomocí **ReadXml**, když jsou data zapsána zpět jako dokument XML pomocí **WriteXml** , může se výrazně lišit od původního dokumentu XML. Důvodem je, že **datová sada** neuchovává formátování, jako jsou prázdné znaky nebo hierarchické informace, jako je například pořadí prvků, z dokumentu XML. **Datová sada** neobsahuje také prvky z dokumentu XML, které byly ignorovány, protože neodpovídaly schématu sady **dat**. Synchronizace **objektu XmlDataDocument** s **datovou sadou** umožňuje zachovat formátování a hierarchické struktury prvků původního dokumentu XML, který má být udržován v **objektu XmlDataDocument**, zatímco **datová sada** obsahuje pouze data a informace o schématu, které jsou vhodné pro **datovou sadu**.  
   
  Při synchronizaci **datové sady** s **objektu XmlDataDocument**se mohou výsledky lišit v závislosti na tom, zda <xref:System.Data.DataRelation> jsou objekty vnořené. Další informace najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
   
@@ -114,4 +114,4 @@ ADO.NET <xref:System.Data.DataSet> poskytuje relační znázornění dat. Pro hi
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

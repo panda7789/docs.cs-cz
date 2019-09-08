@@ -8,41 +8,41 @@ helpviewer_keywords:
 ms.assetid: fba62a55-36bd-401e-bcd2-5be8e2d34891
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 487f3d7b31e0b7bd09dbaff7b823678118f68092
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a876e4db7656c7a9976aee61931af29078e410c0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789763"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777164"
 ---
 # <a name="ialink2-interface"></a>IALink2 – rozhraní
-Doplňuje [ialink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md) deklarováním metody, které pracují na novější rozhraní metadat jako [imetadataemit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md). Ialink2 – kromě toho deklaruje metody, které poskytují flexibilitu další využití nad původní ialink – rozhraní.  
+Doplňuje [rozhraní IALink –](ialink-interface.md) deklarováním metod, které pracují s novějšími rozhraními metadat, jako je například [rozhraní IMetaDataEmit2](../metadata/imetadataemit2-interface.md). Ialink2 – navíc deklaruje metody, které poskytují větší flexibilitu využití v původních rozhraních IALink –.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [AddFile2 – metoda](../../../../docs/framework/unmanaged-api/alink/addfile2-method.md)  
+ [AddFile2 – metoda](addfile2-method.md)  
   
- [EmitAssembly – metoda](../../../../docs/framework/unmanaged-api/alink/emitassembly-method.md)  
+ [EmitAssembly – metoda](emitassembly-method.md)  
   
- [EmitInternalExportedTypes – metoda](../../../../docs/framework/unmanaged-api/alink/emitinternalexportedtypes-method.md)  
+ [EmitInternalExportedTypes – metoda](emitinternalexportedtypes-method.md)  
   
- [GetFileDef – metoda](../../../../docs/framework/unmanaged-api/alink/getfiledef-method.md)  
+ [GetFileDef – metoda](getfiledef-method.md)  
   
  GetPublicKeyToken – metoda  
   
- [GetScope2 – metoda](../../../../docs/framework/unmanaged-api/alink/getscope2-method.md)  
+ [GetScope2 – metoda](getscope2-method.md)  
   
- [ImportFileEx – metoda](../../../../docs/framework/unmanaged-api/alink/importfileex-method.md)  
+ [ImportFileEx – metoda](importfileex-method.md)  
   
- [ImportFileEx2 – metoda](../../../../docs/framework/unmanaged-api/alink/importfileex2-method.md)  
+ [ImportFileEx2 – metoda](importfileex2-method.md)  
   
- [ImportTypes2 – metoda](../../../../docs/framework/unmanaged-api/alink/importtypes2-method.md)  
+ [ImportTypes2 – metoda](importtypes2-method.md)  
   
- [SetAssemblyFile2 – metoda](../../../../docs/framework/unmanaged-api/alink/setassemblyfile2-method.md)  
+ [SetAssemblyFile2 – metoda](setassemblyfile2-method.md)  
   
- [SetPEKind – metoda](../../../../docs/framework/unmanaged-api/alink/setpekind-method.md)  
+ [SetPEKind – metoda](setpekind-method.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Rozhraní API ALink](index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

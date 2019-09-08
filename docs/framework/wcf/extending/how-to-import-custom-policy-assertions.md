@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-ms.openlocfilehash: 627b68d707dbedfaf6a291f2ab22dbc9a4f60835
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 4510eac2d9c1b3bb64420b0678b3a47a90887188
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363853"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795619"
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Postupy: Import kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad popisují možnosti a požadavky koncového bodu služby.  Klientské aplikace mohou použít kontrolní výrazy zásad v metadatech služby ke konfiguraci vazby klienta nebo k přizpůsobení kontraktu služby pro koncový bod služby.  
@@ -25,7 +25,7 @@ Kontrolní výrazy zásad popisují možnosti a požadavky koncového bodu služ
   
 3. Pomocí konfiguračního souboru. Projděte si následující postupy.  
   
-4. Pomocí konfiguračního souboru s [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Projděte si následující postupy.  
+4. Pomocí konfiguračního souboru s [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Projděte si následující postupy.  
   
 5. Vložením programu pro import zásad. Projděte si následující postupy.  
   
@@ -44,7 +44,7 @@ Kontrolní výrazy zásad popisují možnosti a požadavky koncového bodu služ
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>Vložení vlastního nástroje pro import zásad do systému metadat pomocí konfiguračního souboru  
   
-1. Do `<extensions>` [prvku policyImporters\<>](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) elementu v konfiguračním souboru klienta přidejte typ dovozce.  
+1. Do `<extensions>` [prvku policyImporters\<>](../../configure-apps/file-schema/wcf/policyimporters.md) elementu v konfiguračním souboru klienta přidejte typ dovozce.  
   
      [!code-xml[CustomPolicySample#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.exe.config#7)]   
   
@@ -55,9 +55,9 @@ Kontrolní výrazy zásad popisují možnosti a požadavky koncového bodu služ
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-svcutilexe"></a>Vložení vlastního nástroje pro import zásad do systému metadat pomocí Svcutil. exe  
   
-1. Do `<extensions>` [prvku policyImporters\<>](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) v konfiguračním souboru Svcutil. exe. config přidejte typ dovozce. Pomocí `/svcutilConfig` možnosti můžete také odkazovat na Svcutil. exe a načíst typy pro import zásad zaregistrované v jiném konfiguračním souboru.  
+1. Do `<extensions>` [prvku policyImporters\<>](../../configure-apps/file-schema/wcf/policyimporters.md) v konfiguračním souboru Svcutil. exe. config přidejte typ dovozce. Pomocí `/svcutilConfig` možnosti můžete také odkazovat na Svcutil. exe a načíst typy pro import zásad zaregistrované v jiném konfiguračním souboru.  
   
-2. Pomocí nástroje pro dopředné metadata [(Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) můžete importovat metadata a automaticky vyvolávat import.  
+2. Pomocí nástroje pro dopředné metadata [(Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) můžete importovat metadata a automaticky vyvolávat import.  
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-programmatically"></a>Programové vložení vlastního nástroje pro import zásad do systému metadat  
   
@@ -68,4 +68,4 @@ Kontrolní výrazy zásad popisují možnosti a požadavky koncového bodu služ
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
-- [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)
+- [Rozšíření systému metadat](extending-the-metadata-system.md)

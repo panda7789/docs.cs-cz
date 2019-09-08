@@ -2,12 +2,12 @@
 title: Odvození omezení
 ms.date: 03/30/2017
 ms.assetid: 78517994-5d57-44f8-9d20-38812977de09
-ms.openlocfilehash: 4e0f63776162b60c9333ba47be58ea78a9b6805d
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 10347abc5b01edb4ec6fbf97221d44f4bfb88f54
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204829"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784577"
 ---
 # <a name="inference-limitations"></a>Odvození omezení
 Proces odvození <xref:System.Data.DataSet> schématu z kódu XML může mít za následek různá schémata v závislosti na prvcích XML v jednotlivých dokumentech. Zvažte například následující dokumenty XML.  
@@ -29,7 +29,7 @@ Proces odvození <xref:System.Data.DataSet> schématu z kódu XML může mít za
 </DocumentElement>  
 ```  
   
- Pro "Document1", proces odvození vytvoří datovou **sadu** s názvem "DocumentElement" a tabulku s názvem "Element1", protože "Element1" je opakující se element.  
+ Pro "Document1", proces odvození vytvoří **datovou sadu** s názvem "DocumentElement" a tabulku s názvem "Element1", protože "Element1" je opakující se element.  
   
  **Integrován** DocumentElement  
   
@@ -61,4 +61,4 @@ Proces odvození <xref:System.Data.DataSet> schématu z kódu XML může mít za
 - [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
 - [Použití XML v datové sadě](using-xml-in-a-dataset.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

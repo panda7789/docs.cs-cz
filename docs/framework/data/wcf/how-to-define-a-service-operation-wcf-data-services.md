@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování operace služby (WCF Data Services)'
+title: 'Postupy: Definovat operaci služby (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,36 +8,36 @@ helpviewer_keywords:
 - Service Operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
-ms.openlocfilehash: dbd14ba9ed24fb3f18946e817f61f8cbf2e9b1b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3154fadeda400440f68a184b430b7ff15a02203d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936549"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780086"
 ---
-# <a name="how-to-define-a-service-operation-wcf-data-services"></a>Postupy: Definování operace služby (WCF Data Services)
+# <a name="how-to-define-a-service-operation-wcf-data-services"></a>Postupy: Definovat operaci služby (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zveřejněte metody, které jsou definovány na serveru jako servisní operace. Operace služby umožňují datové služby a zajistit tak přístup prostřednictvím identifikátoru URI metodě, která je definována na serveru. K definování operace služby, použít [`WebGet]` nebo `[WebInvoke]` atribut do metody. Pro podporu operátorů dotazu, musí vrátit operace služby <xref:System.Linq.IQueryable%601> instance. Operace služby může přístup k podkladovému zdroji dat prostřednictvím <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> vlastnost <xref:System.Data.Services.DataService%601>. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Vystavte metody, které jsou definovány na serveru jako operace služby. Operace služby umožňují datové službě poskytovat přístup prostřednictvím identifikátoru URI metodě, která je definována na serveru. Chcete-li definovat operaci služby, použijte atribut`WebGet]` [ `[WebInvoke]` nebo pro metodu. Aby bylo možné podporovat operátory dotazů, musí operace služby vracet <xref:System.Linq.IQueryable%601> instanci. Operace služby mohou přistupovat k základnímu zdroji dat prostřednictvím <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> vlastnosti <xref:System.Data.Services.DataService%601>v. Další informace najdete v tématu [provozní operace](service-operations-wcf-data-services.md).
 
-V příkladu v tomto tématu je definována operace služby s názvem `GetOrdersByCity` , která vrací vyfiltrované <xref:System.Linq.IQueryable%601> instanci `Orders` a související `Order_Details` objekty. V příkladu přistupuje <xref:System.Data.Objects.ObjectContext> instanci, která je zdrojem dat pro datová služba Northwind vzorku. Tato služba se vytvoří při dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).
+Příklad v tomto tématu definuje operaci služby s `GetOrdersByCity` názvem, která vrací filtrovanou <xref:System.Linq.IQueryable%601> instanci `Orders` a související `Order_Details` objekty. V příkladu se přistupuje k <xref:System.Data.Objects.ObjectContext> instanci, která je zdrojem dat pro ukázkovou datovou službu Northwind. Tato služba se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md).
 
-### <a name="to-define-a-service-operation-in-the-northwind-data-service"></a>K definování operace služby v datová služba Northwind
+### <a name="to-define-a-service-operation-in-the-northwind-data-service"></a>Definování operace služby v datové službě Northwind
 
-1. V projektu služby Northwind data otevřete soubor Northwind.svc.
+1. V projektu datové služby Northwind otevřete soubor Northwind. svc.
 
-2. V `Northwind` tříd, definice služby operace metodu s názvem `GetOrdersByCity` následujícím způsobem:
+2. Ve třídě Definujte metodu operace služby s názvem `GetOrdersByCity` následujícím způsobem: `Northwind`
 
      [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationdef)]
      [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationdef)]
 
-3. V `InitializeService` metodu `Northwind` třídy, přidejte následující kód k umožnění přístupu k operace služby:
+3. `InitializeService` V metodě `Northwind` třídy přidejte následující kód pro povolení přístupu k operaci služby:
 
      [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationconfig)]
      [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationconfig)]
 
-### <a name="to-query-the-getordersbycity-service-operation"></a>K dotazování GetOrdersByCity operace služby
+### <a name="to-query-the-getordersbycity-service-operation"></a>Dotazování na operaci služby GetOrdersByCity
 
-- Ve webovém prohlížeči zadejte jeden z následujících identifikátorů URI k vyvolání operace služby, který je definován v následujícím příkladu:
+- Ve webovém prohlížeči zadejte jeden z následujících identifikátorů URI pro vyvolání operace služby, která je definována v následujícím příkladu:
 
   - `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'`
 
@@ -47,14 +47,14 @@ V příkladu v tomto tématu je definována operace služby s názvem `GetOrders
 
 ## <a name="example"></a>Příklad
 
-Následující příklad implementuje operace služby s názvem `GetOrderByCity` na datová služba Northwind. Tato operace používá rozhraní ADO.NET Entity Framework vrátit sadu `Orders` a související `Order_Details` objektů jako <xref:System.Linq.IQueryable%601> instance podle zadané město.
+Následující příklad implementuje operaci služby s názvem `GetOrderByCity` ve službě Northwind data Service. Tato operace používá Entity Framework ADO.NET k vrácení sady `Orders` a souvisejících `Order_Details` objektů jako <xref:System.Linq.IQueryable%601> instance na základě zadaného názvu města.
 
 > [!NOTE]
-> Operátory dotazu jsou podporované na tomto koncovém bodu služby operaci, protože metoda vrátí <xref:System.Linq.IQueryable%601> instance.
+> Operátory dotazů jsou podporovány u tohoto koncového bodu operace služby, protože metoda <xref:System.Linq.IQueryable%601> vrací instanci.
 
 [!code-csharp[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperation)]
 [!code-vb[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperation)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+- [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)

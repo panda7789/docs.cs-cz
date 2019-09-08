@@ -2,41 +2,41 @@
 title: Zabezpečení SQL Serveru Express
 ms.date: 03/30/2017
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-ms.openlocfilehash: f4291de89b397f60aedd35b89d6aa3130d348be5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 55f1d141e50ed7afd851d7330cfaf2e3b6380f18
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876782"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791687"
 ---
 # <a name="sql-server-express-security"></a>Zabezpečení SQL Serveru Express
-Microsoft SQL Server Express Edition (SQL Server Express) je založena na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti je vypnuto ve výchozím nastavení. To snižuje styčné plochy, které je k dispozici pro uživatele se zlými úmysly útoku.  
+Edice Microsoft SQL Server Express (SQL Server Express) je založená na Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržený tak, aby nepostradatelné funkce a připojení k síti byly ve výchozím nastavení vypnuté. Tím se snižuje plocha dostupná pro útok uživatele se zlými úmysly.  
   
- SQL Server Express je obvykle nainstalován jako pojmenovanou instanci. Výchozí název instance je `SQLExpress`. Pojmenovaná instance je identifikován síťový název počítače a název instance, který zadáte během instalace.  
+ SQL Server Express je obvykle nainstalován jako pojmenovaná instance. Výchozí název instance je `SQLExpress`. Pojmenovaná instance je identifikována síťovým názvem počítače a názvem instance, kterou zadáte během instalace.  
   
 ## <a name="network-access"></a>Přístup k síti  
- Z bezpečnostních důvodů jsou zakázané síťové protokoly v serveru SQL Server Express ve výchozím nastavení. Tím je zabráněno útokům mimo uživatelů, které by mohlo ohrozit počítače, který je hostitelem instance serveru SQL Server Express. Musíte explicitně povolit připojení k síti a spustit službu SQL Server Browser se připojit k instanci systému SQL Server Express z jiného počítače.  
+ Z bezpečnostních důvodů jsou síťové protokoly ve výchozím nastavení v SQL Server Express zakázané. Tím zabráníte útokům z externích uživatelů, kteří by mohli ohrozit počítač, který je hostitelem instance SQL Server Express. Musíte explicitně povolit připojení k síti a spustit službu SQL Server Browser pro připojení k instanci SQL Server Express z jiného počítače.  
   
- Po povolení připojení k síti na instanci systému SQL Server Express má stejné požadavky na zabezpečení jako v jiných edicích systému SQL Server.  
+ Po povolení připojení k síti má instance SQL Server Express stejné požadavky na zabezpečení jako ostatní edice SQL Server.  
   
 ## <a name="user-instances"></a>Uživatelské instance  
- Uživatelské instance se samostatnou instanci SQL Server Express. databázový stroj, který je generován nadřazené instancí systému SQL Server Express. Hlavním cílem uživatelskou instanci je umožnit uživatelům, kteří používají Windows pod účtem uživatele nejnižší oprávnění na správce systému (`sysadmin`) oprávnění na instanci systému SQL Server Express na místním počítači. Uživatelské instance nejsou určené pro uživatele, kteří jsou správci systému ve svých počítačích.  
+ Uživatelská instance je samostatná instance SQL Server Express databázového stroje, který je generován nadřazenou instancí SQL Server Express. Hlavním cílem uživatelské instance je dovolit uživatelům, kteří používají Windows pod uživatelským účtem s minimálním oprávněním, mít oprávnění správce systému (`sysadmin`) na instanci SQL Server Express v místním počítači. Uživatelské instance nejsou určeny pro uživatele, kteří jsou správci systému na svých počítačích.  
   
- Z primární instance systému SQL Server nebo SQL Server Express jménem uživatele je vygenerovat uživatelskou instanci. Spuštění jako procesu uživatele v kontextu zabezpečení Windows uživatele, ne jako službu. Přihlášení serveru SQL Server jsou zakázány; jsou podporovány pouze přihlašovací údaje Windows. To zabraňuje spuštění softwaru na uživatelskou instanci v provádění, které uživatel nebude mít oprávnění k provedení změny v celém systému. Uživatelské instance se také označuje jako instance podřízené domény nebo klienta a se někdy označuje na pomocí zkratky RANU ("Spustit jako běžný uživatel").  
+ Uživatelská instance je vygenerována z primární instance SQL Server nebo SQL Server Express jménem uživatele. Spouští se jako proces uživatele v kontextu zabezpečení systému Windows uživatele, nikoli jako služba. Přihlášení SQL Server nejsou povolena. podporují se jenom přihlašovací údaje systému Windows. Tím se zabrání tomu, aby software spuštěný na uživatelské instanci prováděl změny v rámci systému, které by uživatel neměl mít oprávnění k provedení. Uživatelská instance je také označována jako podřízená nebo klientská instance a je někdy označována pomocí zkratky RANU ("spustit jako normální uživatel").  
   
- Každý uživatel instance je izolovaná od své nadřazené instance a z dalších uživatelské instance běží na stejném počítači. Databáze nainstalovaná v uživatelských instancích jsou otevřeny v režimu jednoho uživatele. více uživatelů se nemůže připojit k nim. Replikace, distribuované dotazy a vzdálená připojení jsou zakázané pro uživatelské instance. Při připojení k uživatelské instanci, uživatelé nebudou mít žádná zvláštní oprávnění v instanci systému SQL Server Express nadřazené.  
+ Jednotlivé uživatelské instance jsou izolované od své nadřazené instance a z jiných instancí uživatelů spuštěných ve stejném počítači. Databáze nainstalované v uživatelských instancích jsou otevřené jenom v jednouživatelském režimu. k nim se nelze připojit více uživatelů. Replikace, distribuované dotazy a vzdálená připojení jsou pro uživatelské instance zakázané. Při připojení k uživatelské instanci nemají uživatelé žádná zvláštní oprávnění pro nadřazenou instanci SQL Server Express.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace o systému SQL Server Express viz následující prostředky.  
+ Další informace o SQL Server Express najdete v následujících zdrojích informací.  
   
 |||  
 |-|-|  
-|[Microsoft SQL Server 2005 Express Edition Books Online](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms165706(v=sql.90))|Kompletní dokumentaci k SQL serveru 2005 Express Edition.|  
-|[Uživatelské instance nejsou jiným uživatelům dovoleny](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms143684(v=sql.100)) v Online knihách serveru SQL|Popisuje, jak vytvářet a nasazovat uživatelské instance.|  
-|[Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojení k uživatelské instanci pomocí <xref:System.Data.SqlClient.SqlConnection>, dobu života instance uživatele a scénáře instance pro uživatele.|  
+|[Online knihy pro edice Microsoft SQL Server 2005 Express](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms165706(v=sql.90))|Dokončete dokumentaci pro SQL Server 2005 Express Edition.|  
+|[Uživatelské instance pro uživatele bez oprávnění správce](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms143684(v=sql.100)) v SQL Server Knihy online|Popisuje, jak vytvořit a nasadit uživatelské instance.|  
+|[Uživatelské instance SQL Serveru Express](sql-server-express-user-instances.md)|Popisuje schopnosti uživatelské instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelské instance, připojení k uživatelské instanci pomocí <xref:System.Data.SqlClient.SqlConnection>scénářů, uživatelské instance a scénářů uživatelské instance.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)
-- [Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server – zabezpečení](sql-server-security.md)
+- [Uživatelské instance SQL Serveru Express](sql-server-express-user-instances.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

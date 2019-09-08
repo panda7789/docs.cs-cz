@@ -2,25 +2,25 @@
 title: Mapování omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-ms.openlocfilehash: b0082b534b8df10ac5277cf2f5aa5b2d2e40c11b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: b44c3193e1b9e2e52e086111eab0ab0b0cae5c97
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204630"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786071"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování omezení schématu XML (XSD) k omezením datové sady
 Jazyk definice schématu XML (XSD) umožňuje určení omezení pro prvky a atributy, které definuje. Při mapování schématu XML na relační schéma v <xref:System.Data.DataSet>, jsou omezení schématu XML mapována na odpovídající relační omezení pro tabulky a sloupce v rámci **datové sady**.  
   
  Tato část popisuje mapování následujících omezení schématu XML:  
   
-- Omezení jedinečnosti zadané pomocí jedinečného prvku.  
+- Omezení jedinečnosti zadané pomocí **jedinečného** prvku.  
   
-- Omezení klíče zadané pomocí klíčového elementu.  
+- Omezení klíče zadané pomocí **klíčového** elementu.  
   
 - Omezení keyref zadané pomocí elementu **keyref**  
   
- Pomocí omezení pro element nebo atribut zadáte určitá omezení pro hodnoty prvku v jakékoli instanci dokumentu. Například omezení klíče u podřízeného prvku **KódZákazníka** elementu Customer ve schématu označuje, že hodnoty podřízeného prvku **KódZákazníka** musí být jedinečné v jakékoli instanci dokumentu a že hodnoty null nejsou povoleny.  
+ Pomocí omezení pro element nebo atribut zadáte určitá omezení pro hodnoty prvku v jakékoli instanci dokumentu. Například omezení klíče u podřízeného prvku **KódZákazníka** elementu **Customer** ve schématu označuje, že hodnoty podřízeného prvku **KódZákazníka** musí být jedinečné v jakékoli instanci dokumentu a že hodnoty null nejsou povoleny.  
   
  Omezení lze také zadat mezi elementy a atributy v dokumentu, aby bylo možné vytvořit relaci v rámci dokumentu. Omezení Key a keyref se používají ve schématu k určení omezení v rámci dokumentu, což má za následek relaci mezi prvky dokumentu a atributy.  
   
@@ -45,4 +45,4 @@ Jazyk definice schématu XML (XSD) umožňuje určení omezení pro prvky a atri
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

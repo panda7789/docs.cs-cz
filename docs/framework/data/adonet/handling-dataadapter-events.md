@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: a63e65289a51a7647270a978cec11ef6bc201e45
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8438a7b54ca19625687ab96386384cf62ae62d11
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962758"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783794"
 ---
 # <a name="handling-dataadapter-events"></a>Zpracování událostí adaptéru dat
 ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupňuje tři události, které můžete použít k reakci na změny dat ve zdroji dat. `DataAdapter` Události jsou uvedeny v následující tabulce.  
@@ -188,8 +188,8 @@ protected static void FillError(object sender, FillErrorEventArgs args)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Zpracování událostí datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-dataset-events.md)
-- [Zpracování událostí datové tabulky](../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Zpracování událostí datové sady](./dataset-datatable-dataview/handling-dataset-events.md)
+- [Zpracování událostí datové tabulky](./dataset-datatable-dataview/handling-datatable-events.md)
 - [Události](../../../standard/events/index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

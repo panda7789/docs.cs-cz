@@ -2,37 +2,37 @@
 title: Příkazy a parametry
 ms.date: 03/30/2017
 ms.assetid: b623f810-d871-49a5-b0f5-078cc3c34db6
-ms.openlocfilehash: a769e8cbd5138e78136df018abe058ac6c568951
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 1d0c3adb56e5ff44b5c5e065ac040f25584a1946
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59198124"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784951"
 ---
 # <a name="commands-and-parameters"></a>Příkazy a parametry
-Po navázání připojení ke zdroji dat, můžete spouštět příkazy a vracení výsledků z zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí jednoho z konstruktorů příkaz pro zprostředkovatele dat .NET Framework, kterou pracujete. Konstruktory může trvat volitelné argumenty, jako je například příkazu SQL ke spuštění ve zdroji dat <xref:System.Data.Common.DbConnection> objektu, nebo <xref:System.Data.Common.DbTransaction> objektu. Tyto objekty lze také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metodu `DbConnection` objektu. Příkaz jazyka SQL prováděný pomocí příkazu lze konfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnost.  
+Po navázání připojení ke zdroji dat můžete provádět příkazy a vracet výsledky ze zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí jednoho z konstruktorů příkazu pro poskytovatele .NET Framework dat, se kterým pracujete. Konstruktory mohou mít volitelné argumenty, jako je například příkaz jazyka SQL, který má být spuštěn ve zdroji <xref:System.Data.Common.DbConnection> dat, objektu <xref:System.Data.Common.DbTransaction> nebo objektu. Tyto objekty můžete také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metody `DbConnection` objektu. Příkazy jazyka SQL spouštěné příkazem lze konfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnosti.  
   
- Má každý zprostředkovatele dat .NET Framework je součástí rozhraní .NET Framework `Command` objektu. Obsahuje zprostředkovatele dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu zprostředkovatele dat .NET Framework pro SQL Server obsahuje <xref:System.Data.SqlClient.SqlCommand> objektu zprostředkovatele dat .NET Framework pro ODBC zahrnuje <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu.  
+ Každý .NET Framework poskytovatel dat, který je součástí .NET Framework, `Command` obsahuje objekt. Zprostředkovatel dat .NET Framework pro OLE DB obsahuje <xref:System.Data.OleDb.OleDbCommand> objekt, .NET Framework Zprostředkovatel dat pro SQL Server <xref:System.Data.SqlClient.SqlCommand> obsahuje objekt, .NET Framework Zprostředkovatel dat pro rozhraní ODBC zahrnuje <xref:System.Data.Odbc.OdbcCommand> objekt a .NET Framework Zprostředkovatel dat pro Oracle obsahuje <xref:System.Data.OracleClient.OracleCommand> objekt.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)  
- Popisuje ADO.NET `Command` objekt a jak ho použít ke spuštění dotazů a příkazů proti zdroji dat.  
+ [Spuštění příkazu](executing-a-command.md)  
+ Popisuje objekt ADO.NET `Command` a jeho použití ke spouštění dotazů a příkazů pro zdroj dat.  
   
- [Konfigurace parametrů a datové typy parametrů](../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- Popisuje práci s `Command` parametry, včetně směr, datových typů a syntaxe parametru.  
+ [Konfigurace parametrů a datové typy parametrů](configuring-parameters-and-parameter-data-types.md)  
+ Popisuje práci s `Command` parametry, včetně směrů, datových typů a syntaxe parametrů.  
   
- [Generování příkazů s CommandBuilders](../../../../docs/framework/data/adonet/generating-commands-with-commandbuilders.md)  
- Popisuje, jak můžete automaticky generovat příkazy INSERT, UPDATE a DELETE pro příkaz tvůrci `DataAdapter` , který má příkazu SELECT jedné tabulky.  
+ [Generování příkazů s CommandBuilders](generating-commands-with-commandbuilders.md)  
+ Popisuje, jak používat sestavovatele příkazů k automatickému generování příkazů INSERT, Update a DELETE pro objekt `DataAdapter` , který má příkaz pro výběr s jednou tabulkou.  
   
- [Získání jedné hodnoty z databáze](../../../../docs/framework/data/adonet/obtaining-a-single-value-from-a-database.md)  
- Popisuje způsob použití `ExecuteScalar` metodu `Command` objektu, který chcete vrátit jednu hodnotu z databázového dotazu.  
+ [Získání jedné hodnoty z databáze](obtaining-a-single-value-from-a-database.md)  
+ Popisuje způsob použití `ExecuteScalar` metody `Command` objektu pro vrácení jedné hodnoty z databázového dotazu.  
   
- [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- Popisuje, jak zprostředkovatel dat slouží ke spuštění uložené procedury nebo data (příkazy DDL definition language).  
+ [Použití příkazů pro změny dat](using-commands-to-modify-data.md)  
+ Popisuje, jak použít poskytovatele dat ke spouštění uložených procedur nebo příkazů DDL (Data Definition Language).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Datové sady, datové tabulky a datová zobrazení](./dataset-datatable-dataview/index.md)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Přehled ADO.NET](ado-net-overview.md)

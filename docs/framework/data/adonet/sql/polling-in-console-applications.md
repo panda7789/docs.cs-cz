@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-ms.openlocfilehash: 31239033c56303af33899ac88f1745e90f052377
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b21b2bdf3447e3a61c8fff0a311b4144ecaecb2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645952"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791931"
 ---
 # <a name="polling-in-console-applications"></a>Dotazování v konzolových aplikacích
-Asynchronních operací v ADO.NET umožňují zahájit časově náročné databázových operací na jedno vlákno při provádění dalších úloh v jiném vlákně. Ve většině scénářů si ale můžete se nakonec se dostanete do bodu, kde vaše aplikace by neměl pokračovat až do dokončení operace databáze. Pro tyto případy je užitečné k dotazování asynchronní operace k určení, zda operace byla dokončena nebo ne.  
+Asynchronní operace v ADO.NET umožňují iniciovat časově náročné databázové operace v jednom vláknu a provádět další úlohy v jiném vlákně. Ve většině scénářů ale nakonec budete mít k dispozici bod, ve kterém by aplikace neměla pokračovat, dokud se operace databáze nedokončí. V takových případech je vhodné provést dotazování asynchronní operace, aby bylo možné zjistit, zda operace byla dokončena nebo nikoli.  
   
- Můžete použít <xref:System.IAsyncResult.IsCompleted%2A> vlastnost a zjistěte, jestli dokončení operace.  
+ <xref:System.IAsyncResult.IsCompleted%2A> Vlastnost můžete použít k zjištění, zda byla operace dokončena nebo nikoli.  
   
 ## <a name="example"></a>Příklad  
- Následující aplikace konzoly aktualizace dat v rámci **AdventureWorks** ukázkovou databázi dělat svou práci asynchronně. Abyste mohli simulovat dlouhotrvající proces, v tomto příkladu vloží text příkazu příkaz WAITFOR. Za normálních okolností byste se nepouštěli aby vaše příkazy se spouští pomaleji, ale uděláte v tomto případě je snazší ukazují asynchronní chování.  
+ Následující Konzolová aplikace aktualizuje data v rámci ukázkové databáze **AdventureWorks** a provede její asynchronní zpracování. Aby bylo možné emulovat dlouhotrvající proces, tento příklad vloží příkaz WAITFOR do textu příkazu. Za normálních okolností se nepokoušíte, aby příkazy běžely pomaleji, ale v takovém případě usnadňuje předvedení asynchronního chování.  
   
 ```vb  
 Imports System  
@@ -192,5 +192,5 @@ class Class1
   
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní operace](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Asynchronní operace](asynchronous-operations.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

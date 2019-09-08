@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1d50c8b4-f550-4775-bbb6-eab6e874cb43
-ms.openlocfilehash: 50887acefdd5d0feaf9d0885e9ee842f44f0ef65
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bc490b579e841a0e9b3724fe0e8789cc9411683d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915055"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782191"
 ---
 # <a name="group-elements-in-a-sequence"></a>Seskupení prvků v posloupnosti
 <xref:System.Linq.Enumerable.GroupBy%2A> Operátor seskupí prvky sekvence. V následujících příkladech se používá databáze Northwind.  
   
 > [!NOTE]
-> Hodnoty null sloupce v <xref:System.Linq.Enumerable.GroupBy%2A> dotazech mohou někdy <xref:System.InvalidOperationException>vyvolat. Další informace najdete v části "GroupBy InvalidOperationException" tématu [řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> Hodnoty null sloupce v <xref:System.Linq.Enumerable.GroupBy%2A> dotazech mohou někdy <xref:System.InvalidOperationException>vyvolat. Další informace najdete v části "GroupBy InvalidOperationException" tématu [řešení potíží](troubleshooting.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklady oddílů `Products` podle `CategoryID`.  
@@ -74,5 +74,5 @@ ms.locfileid: "69915055"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Příklady dotazů](query-examples.md)
+- [Stažení ukázkových databází](downloading-sample-databases.md)

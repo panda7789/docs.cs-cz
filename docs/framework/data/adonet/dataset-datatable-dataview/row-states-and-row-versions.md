@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
-ms.openlocfilehash: 24d0d44f5964708164f89b0d9fa6c4c1aac7da0b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 70596d6acb62fa01092e5e55dd3b6c84eb162b5d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204504"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784339"
 ---
 # <a name="row-states-and-row-versions"></a>Stavy řádků a verze řádků
 ADO.NET spravuje řádky v tabulkách pomocí stavů a verzí řádků. Stav řádku určuje stav řádku; verze řádků udržují hodnoty uložené v řádku beze změny, včetně aktuálních, původních a výchozích hodnot. Například po provedení úprav sloupce v řádku bude mít řádek stav `Modified`řádku a dvě verze řádku: `Current`, který obsahuje hodnoty aktuálního řádku, a `Original`, který obsahuje hodnoty řádků před tím, než byl sloupec změn.  
@@ -99,4 +99,4 @@ foreach (DataRow delRow in delRows)
 - [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
 - [Adaptéry a čtečky dat](../dataadapters-and-datareaders.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

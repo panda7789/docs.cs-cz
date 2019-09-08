@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2b84dfe-7fec-489a-92de-45215cec4518
-ms.openlocfilehash: 22614be8e53d975c4efdf7004f41906c58639c61
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d32faf026789923ca4343271c9fd1b6bbdb068df
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938693"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793089"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Postupy: Použití uložených procedur mapovaných pro vícečetné tvary výsledků
 Pokud uložená procedura může vracet více tvarů výsledků, nemůže být návratový typ silným typem pro jeden obrazec projekce. I [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] když může generovat všechny možné typy projekce, nemůže znát pořadí, ve kterém se budou vracet.  
   
- Porovnejte tento scénář s uloženými procedurami, které vydávají více výsledných tvarů postupně. Další informace najdete v tématu [jak: Použijte uložené procedury mapované pro obrazce](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md)sekvenčních výsledků.  
+ Porovnejte tento scénář s uloženými procedurami, které vydávají více výsledných tvarů postupně. Další informace najdete v tématu [jak: Použijte uložené procedury mapované pro obrazce](how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md)sekvenčních výsledků.  
   
  <xref:System.Data.Linq.Mapping.ResultTypeAttribute> Atribut je použit pro uložené procedury, které vracejí více výsledků typů pro určení sady typů, které může procedura vracet.  
   
@@ -45,4 +45,4 @@ else if(@shape = 2)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Uložené procedury](stored-procedures.md)

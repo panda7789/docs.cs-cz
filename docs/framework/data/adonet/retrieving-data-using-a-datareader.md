@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: 561ebd7ac6948fa42f73ebb4f1eb97c574e6d7e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3add49d48a569664d4cbb6b5c26d5f3379b6f18
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963165"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794410"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Načtení dat pomocí datového objektu DataReader
-Chcete-li načíst datapomocí objektu DataReader, vytvořte instanci **objektu Command** a pak vytvořte objekt DataReader voláním **příkazu Command. ExecuteReader** pro načtení řádků ze zdroje dat. Objekt **DataReader** poskytuje datový proud bez vyrovnávací paměti, který umožňuje procedurální logice efektivně zpracovávat výsledky ze zdroje dat postupně. Objekt **DataReader** je dobrou volbou při načítání velkých objemů dat, protože data nejsou ukládána v paměti.
+Chcete-li načíst data pomocí objektu **DataReader**, vytvořte instanci objektu **Command** a pak vytvořte objekt **DataReader** voláním **příkazu Command. ExecuteReader** pro načtení řádků ze zdroje dat. Objekt **DataReader** poskytuje datový proud bez vyrovnávací paměti, který umožňuje procedurální logice efektivně zpracovávat výsledky ze zdroje dat postupně. Objekt **DataReader** je dobrou volbou při načítání velkých objemů dat, protože data nejsou ukládána v paměti.
 
-Následující příklad znázorňuje použití objektu DataReader, který `reader` představuje platný objekt DataReader `command` a představuje platný objekt příkazu.  
+Následující příklad znázorňuje použití objektu **DataReader**, který `reader` představuje platný objekt DataReader `command` a představuje platný objekt příkazu.  
 
 ```csharp
 reader = command.ExecuteReader();  
@@ -25,7 +25,7 @@ reader = command.ExecuteReader();
 reader = command.ExecuteReader()
 ```  
 
-K získání řádku z výsledků dotazu použijte metodu **DataReader. Read** . Do každého sloupce vráceného řádku můžete přistupovat předáním názvu nebo pořadového čísla sloupce do objektu DataReader. Pro nejlepší výkon ale DataReader poskytuje řadu metod, které umožňují přístup k hodnotám sloupců v jejich nativních datových typech (GetDateTime, GetDouble, GetGUID, GetInt32a tak dále). Seznam typových přístupových metod pro datačtecí metody specifických proposkytovatele dat naleznete v tématech <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.SqlClient.SqlDataReader>. Použití typových přístupových metod, pokud víte, že podkladový datový typ snižuje množství konverze typu požadované při načítání hodnoty sloupce.  
+K získání řádku z výsledků dotazu použijte metodu **DataReader. Read** . Do každého sloupce vráceného řádku můžete přistupovat předáním názvu nebo pořadového čísla sloupce do objektu **DataReader**. Pro nejlepší výkon ale **DataReader** poskytuje řadu metod, které umožňují přístup k hodnotám sloupců v jejich nativních datových typech (**GetDateTime**, **GetDouble**, **GetGUID**, **GetInt32**a tak dále). Seznam typových přístupových metod pro **datačtecí**metody specifických pro poskytovatele dat naleznete v tématech <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.SqlClient.SqlDataReader>. Použití typových přístupových metod, pokud víte, že podkladový datový typ snižuje množství konverze typu požadované při načítání hodnoty sloupce.  
   
  Následující příklad provede iteraci objektu **DataReader** a vrátí dva sloupce z každého řádku.  
   
@@ -33,11 +33,11 @@ K získání řádku z výsledků dotazu použijte metodu **DataReader. Read** .
  [!code-vb[DataWorks SqlClient.HasRows#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.HasRows/VB/source.vb#1)]  
   
 ## <a name="closing-the-datareader"></a>Zavření objektu DataReader  
- Po dokončení používání objektu DataReader vždy zavolejte metodu **Close** .  
+ Po dokončení používání objektu **DataReader** vždy zavolejte metodu **Close** .  
   
- Pokud váš **příkaz** obsahuje výstupní parametry nebo návratové hodnoty, tyto hodnoty nejsou k dispozici , dokud není DataReader uzavřen.  
+ Pokud váš **příkaz** obsahuje výstupní parametry nebo návratové hodnoty, tyto hodnoty nejsou k dispozici, dokud není **DataReader** uzavřen.  
   
- Když je objekt DataReader otevřený, **připojení** je používáno výhradně tímto objektem DataReader. Pro **připojení**nemůžete spustit žádné příkazy, včetně vytvoření jinéhoobjektu DataReader, dokud nebude původní DataReader uzavřený.  
+ Když je objekt **DataReader** otevřený, **připojení** je používáno výhradně tímto objektem **DataReader**. Pro **připojení**nemůžete spustit žádné příkazy, včetně vytvoření jiného objektu **DataReader**, dokud nebude původní **DataReader** uzavřený.  
   
 > [!NOTE]
 > Nevolejte funkci **Close** nebo **Dispose** pro **připojení**, objekt **DataReader**nebo jakýkoli jiný spravovaný objekt v metodě **Finalize** třídy. V finalizační metodě pouze uvolní nespravované prostředky, které vaše třída vlastní. Pokud vaše třída nevlastní žádné nespravované prostředky, nezahrnujte do definice třídy metodu **Finalize** . Další informace najdete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).  
@@ -49,15 +49,15 @@ K získání řádku z výsledků dotazu použijte metodu **DataReader. Read** .
  [!code-vb[DataWorks SqlClient.NextResult#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.NextResult/VB/source.vb#1)]  
   
 ## <a name="getting-schema-information-from-the-datareader"></a>Získávání informací o schématu z objektu DataReader  
- Když je objekt DataReader otevřený, můžete načíst informace o schématu aktuální sady výsledků pomocí metody GetSchema. GetSchemas vrátí <xref:System.Data.DataTable> objekt naplněný řádky a sloupci, které obsahují informace o schématu pro aktuální sadu výsledků dotazu. **Objekt DataTable** obsahuje jeden řádek pro každý sloupec sady výsledků dotazu. Každý sloupec tabulky schématu se mapuje na vlastnost sloupců vrácených v řádcích sady výsledků, kde **ColumnName** je název vlastnosti a hodnota sloupce je hodnota vlastnosti. Následující příklad vypíše informace o schématu pro **DataReader**.  
+ Když je objekt **DataReader** otevřený, můžete načíst informace o schématu aktuální sady výsledků pomocí metody **GetSchema** . **GetSchemas** vrátí <xref:System.Data.DataTable> objekt naplněný řádky a sloupci, které obsahují informace o schématu pro aktuální sadu výsledků dotazu. **Objekt DataTable** obsahuje jeden řádek pro každý sloupec sady výsledků dotazu. Každý sloupec tabulky schématu se mapuje na vlastnost sloupců vrácených v řádcích sady výsledků, kde **ColumnName** je název vlastnosti a hodnota sloupce je hodnota vlastnosti. Následující příklad vypíše informace o schématu pro **DataReader**.  
   
  [!code-csharp[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetSchemaTable#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetSchemaTable/VB/source.vb#1)]  
   
 ## <a name="working-with-ole-db-chapters"></a>Práce s OLE DB kapitolami  
- Hierarchické sady řádků nebo kapitoly (OLE DB typu **DBTYPE_HCHAPTER**, ADO Type **adChapter**), lze <xref:System.Data.OleDb.OleDbDataReader>načíst pomocí. Pokud je jako objekt DataReader vrácen dotaz, který obsahujekapitolu, je tato kapitola vrácena jako sloupec v objektu **DataReader** a je vystavena jako objekt DataReader.  
+ Hierarchické sady řádků nebo kapitoly (OLE DB typu **DBTYPE_HCHAPTER**, ADO Type **adChapter**), lze <xref:System.Data.OleDb.OleDbDataReader>načíst pomocí. Pokud je jako objekt **DataReader**vrácen dotaz, který obsahuje kapitolu, je tato kapitola vrácena jako sloupec v objektu **DataReader** a je vystavena jako objekt **DataReader** .  
   
- Datovou **sadu** ADO.NET lze také použít k reprezentaci hierarchických sad řádků pomocí vztahů nadřazenosti a podřízenosti mezi tabulkami. Další informace najdete v tématu [datové sady, datové tabulky a datazobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
+ **Datovou sadu** ADO.NET lze také použít k reprezentaci hierarchických sad řádků pomocí vztahů nadřazenosti a podřízenosti mezi tabulkami. Další informace najdete v tématu [datové sady, datové tabulky a datazobrazení](./dataset-datatable-dataview/index.md).  
   
  Následující příklad kódu používá poskytovatele MSDataShape k vygenerování sloupce kapitoly objednávek pro každého zákazníka v seznamu zákazníků.  
   
@@ -255,11 +255,11 @@ adapter.Fill(ds);
 ```
 
 > [!NOTE]
-> Abyste se vyhnuli **OverflowException**, doporučujeme, abyste před uložením hodnoty v <xref:System.Data.DataRow>. také pokaždé konverze z typu čísla Oracle na platný typ .NET Framework. <xref:System.Data.Common.DataAdapter.FillError> Událost můžete použít k určení, zda došlo k **OverflowException** . Další informace o <xref:System.Data.Common.DataAdapter.FillError> události naleznete v tématu [zpracování událostí DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+> Abyste se vyhnuli **OverflowException**, doporučujeme, abyste před uložením hodnoty v <xref:System.Data.DataRow>. také pokaždé konverze z typu čísla Oracle na platný typ .NET Framework. <xref:System.Data.Common.DataAdapter.FillError> Událost můžete použít k určení, zda došlo k **OverflowException** . Další informace o <xref:System.Data.Common.DataAdapter.FillError> události naleznete v tématu [zpracování událostí DataAdapter](handling-dataadapter-events.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Příkazy a parametry](commands-and-parameters.md)
+- [Načítání informací o databázovém schématu](retrieving-database-schema-information.md)
+- [Přehled ADO.NET](ado-net-overview.md)

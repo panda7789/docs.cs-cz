@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
-ms.openlocfilehash: 0b2bfd1b0490572e78c8ce365491a8d48db87684
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3e811410ea9fdd4be0cbd84b895483f69f58b0d0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204574"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786055"
 ---
 # <a name="modifying-dataviews"></a>Úpravy zobrazení dat
 Pomocí <xref:System.Data.DataView> můžete přidat, odstranit nebo upravit řádky dat v podkladové tabulce. Možnost použít zobrazení **DataView** ke změně dat v podkladové tabulce je ovládána nastavením jedné ze tří logických vlastností objektu **DataView**. Tyto vlastnosti jsou <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>a <xref:System.Data.DataView.AllowDelete%2A>. Ve výchozím nastavení jsou nastaveny na **hodnotu true** .  
@@ -57,4 +57,4 @@ newDRV.EndEdit();
 - <xref:System.Data.DataView>
 - <xref:System.Data.DataRowView>
 - [Zobrazení dat](dataviews.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

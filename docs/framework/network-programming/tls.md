@@ -12,18 +12,18 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: f3b0fe20ae9f6eb50f26d044f18e02214ce97757
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 87ca9b75d641035b268c6737822f198d1eea87e3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038460"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777507"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Osvědčené postupy TLS (Transport Layer Security) s .NET Framework
 
 Protokol TLS (Transport Layer Security) je oborovým standardem, který pomáhá chránit soukromí informací přenášených přes Internet. [TLS 1,2](https://tools.ietf.org/html/rfc5246) je standard, který poskytuje vylepšení zabezpečení v předchozích verzích. Protokol TLS 1,2 bude nakonec nahrazen nejnovějším vydaným standardem [tls 1,3](https://tools.ietf.org/html/rfc8446) , který je rychlejší a má vyšší zabezpečení. Tento článek obsahuje doporučení pro zabezpečení .NET Frameworkch aplikací, které používají protokol TLS.
 
-Aby se zajistilo, že .NET Framework aplikace zůstanou zabezpečené, neměla by být verze TLS pevně zakódované. .NET Framework aplikace by měly používat verzi TLS, kterou operační systém (OS) podporuje.
+Aby se zajistilo, že .NET Framework aplikace zůstanou zabezpečené, **neměla by být** verze TLS pevně zakódované. .NET Framework aplikace by měly používat verzi TLS, kterou operační systém (OS) podporuje.
 
 Tento dokument cílí na vývojáře, kteří jsou:
 
@@ -50,7 +50,7 @@ Pokud se nemůžete vyhnout zakódujeme verze protokolu, důrazně doporučujeme
 
 WCF podporuje TLS 1.0, 1,1 a 1,2 jako výchozí v .NET Framework 4,7. Počínaje .NET Framework 4.7.1 se standardně pro WCF používá nakonfigurovaná verze operačního systému. Pokud je aplikace explicitně nakonfigurovaná pomocí `SslProtocols.None`, WCF při použití přenosu NetTcp použije výchozí nastavení operačního systému.
 
-Otázky k tomuto dokumentu můžete klást v doporučených postupech pro [zabezpečení TLS (Transport Layer Security)](https://github.com/dotnet/docs/issues/4675)na githubu .NET Framework.
+Otázky k tomuto dokumentu můžete klást v [doporučených postupech pro zabezpečení TLS (Transport Layer Security)](https://github.com/dotnet/docs/issues/4675)na githubu .NET Framework.
 
 ## <a name="audit-your-code-and-make-code-changes"></a>Audit kódu a provádění změn kódu
 
@@ -66,7 +66,9 @@ V následujících částech se dozvíte, jak ověřit, že nepoužíváte konkr
 
 ### <a name="for-http-networking"></a>Pro sítě HTTP
 
-<xref:System.Net.ServicePointManager>, pomocí .NET Framework 4,7 a novějších verzí se ve výchozím nastavení používá operační systém, který vybírá nejlepší protokol zabezpečení a verzi. Pokud je to možné, získáte výchozí nejlepší volbu pro <xref:System.Net.ServicePointManager.SecurityProtocol> operační systém, pokud je to možné, nenastavíte hodnotu vlastnosti. V opačném případě ji <xref:System.Net.SecurityProtocolType.SystemDefault>nastavte na.
+<xref:System.Net.ServicePointManager>pomocí .NET Framework 4,7 a novějších verzí použije výchozí protokol zabezpečení nakonfigurovaný v operačním systému. Chcete-li nastavit výchozí operační systém, pokud je to možné, nenastavujte hodnotu <xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> vlastnosti, která je <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>výchozím nastavením.
+
+Vzhledem k tomu, že <xref:System.Net.ServicePointManager> nastavenízpůsobí,žebudepoužívatvýchozíprotokolzabezpečenínakonfigurovanýoperačnímsystémem,vašeaplikacemůžeběžetodlišněvzávislostinaoperačnímsystému,nakterémjespuštěný.<xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType> Například Windows 7 SP1 používá TLS 1,0, zatímco Windows 8 a Windows 10 používají TLS 1,2.
 
 Zbývající část tohoto článku není relevantní, pokud cílíte .NET Framework 4,7 nebo novějších verzí pro sítě HTTP.
 
@@ -98,7 +100,7 @@ Pokud používáte vlastní vazbu:
 - Nakonfigurujte WCF tak, aby operační systém mohl zvolit nejlepší protokol <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols> zabezpečení nastavením použít. <xref:System.Security.Authentication.SslProtocols.None?displayProperty=nameWithType>
 - **Nebo** nakonfigurujte protokol použitý s cestou `system.serviceModel/bindings/customBinding/binding/sslStreamSecurity:sslProtocols`konfigurace.
 
-Pokud nepoužíváte vlastní vazbu **a** nakonfigurujete vazbu WCF pomocí konfigurace, nastavte protokol použitý s cestou `system.serviceModel/bindings/netTcpBinding/binding/security/transport:sslProtocols`konfigurace.
+Pokud nepoužíváte vlastní vazbu **a** nakonfigurujete vazbu **WCF pomocí konfigurace** , nastavte protokol použitý s cestou `system.serviceModel/bindings/netTcpBinding/binding/security/transport:sslProtocols`konfigurace.
 
 ### <a name="for-wcf-message-security-with-certificate-credentials"></a>Pro zabezpečení zpráv WCF s přihlašovacími údaji certifikátu
 

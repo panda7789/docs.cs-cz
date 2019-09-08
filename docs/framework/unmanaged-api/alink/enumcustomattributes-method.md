@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 09ccf731f0494b6eda49f6a15d04970a723c473b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d8827f46a12bd090fa27e71072d833607d34677
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742054"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777359"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes – metoda
-Načte vlastní atributy úrovně sestavení.  
+Načte vlastní atributy na úrovni sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ HRESULT EnumCustomAttributes(
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- Popisovač výčtu.  
+ Popisovač čítače.  
   
  `tkType`  
- Typ atributů, které chcete vytvořit výčet. Použití `mdTokenNill` pro všechny atributy.  
+ Typ atributů, které mají být vyčísleny. Použijte `mdTokenNill` pro všechny atributy.  
   
  `rCustomValues`  
- Přijímá tokeny vlastních atributů.  
+ Přijímá vlastní tokeny atributů.  
   
  `cMax`  
  Určuje velikost `rCustomValues` pole.  
   
  `pcCustomValues`  
- Volitelně přijímá počet hodnoty tokenu.  
+ Volitelně přijímá počet hodnot tokenu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

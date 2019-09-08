@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4e530831-695e-49ff-8f0b-e5b0c526b8eb
-ms.openlocfilehash: f9664d8e7bc221da68492140f30419ea8fb0d316
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f86e9100489ddf35d8ef5f98e386306a7dbfd4ed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204362"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784176"
 ---
 # <a name="writing-dataset-schema-information-as-xsd"></a>Zápis informací o schématu datové sady jako XSD
 Schéma můžete zapsat <xref:System.Data.DataSet> jako schéma XML schématu definice jazyka (XSD), abyste ho mohli přenést s použitím nebo bez souvisejících dat v dokumentu XML. Schéma XML lze zapsat do souboru, datového proudu, <xref:System.Xml.XmlWriter>nebo řetězce; je užitečné pro vygenerování **datové sady**silného typu. Další informace o objektech **DataSet** se silnými typy najdete v tématu [typové datové sady](typed-datasets.md).  
@@ -39,7 +39,7 @@ dataSet.WriteXmlSchema(writer);
 writer.Close();  
 ```  
   
- Chcete-li získat schéma **datové sady** a zapsat je jako řetězec schématu XML, použijte metodu GetXmlSchema, jak je znázorněno v následujícím příkladu.  
+ Chcete-li získat schéma **datové sady** a zapsat je jako řetězec schématu XML, použijte metodu **GetXmlSchema** , jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim schemaString As String = dataSet.GetXmlSchema()  
@@ -55,4 +55,4 @@ string schemaString = dataSet.GetXmlSchema();
 - [Kopírování obsahu datové sady jako dat XML](writing-dataset-contents-as-xml-data.md)
 - [Typové datové sady](typed-datasets.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

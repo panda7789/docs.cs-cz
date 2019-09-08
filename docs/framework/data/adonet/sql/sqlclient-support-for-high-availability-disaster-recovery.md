@@ -2,12 +2,12 @@
 title: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 104fdd78ce3f4b9c18f09fc41fddebe46815d217
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b51c3cb1eb3c8726b7de007a1c1519eae0733392
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938475"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791610"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podporu SqlClient (přidáno v .NET Framework 4,5) pro zajištění vysoké dostupnosti, zotavení po havárii--Skupiny dostupnosti AlwaysOn.  Do SQL Server 2012 byla přidána funkce Skupiny dostupnosti AlwaysOn. Další informace o Skupiny dostupnosti AlwaysOn najdete v tématu SQL Server Books Online.  
@@ -98,5 +98,5 @@ Toto téma popisuje podporu SqlClient (přidáno v .NET Framework 4,5) pro zaji�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Funkce SQL Serveru a ADO.NET](sql-server-features-and-adonet.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

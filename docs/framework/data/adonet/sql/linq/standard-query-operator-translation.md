@@ -5,50 +5,50 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: 1bba36579fce4fe78289ccb986073280b531420a
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 4df1653b7bd6865ad9f5d7d3fb9be6815dcfe018
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661878"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781012"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Standardní operátory dotazu se přeloží na příkazy jazyka SQL. Procesor dotazů databáze určuje sémantika provádění SQL překladu.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]přeloží standardní operátory dotazu na příkazy SQL. Procesor dotazů databáze určuje sémantiku provádění překladu SQL.
 
-Standardní operátoři dotazu jsou definováni proti *pořadí*. Sekvence je *seřazené* a spoléhá na referenční identitě pro každý prvek pořadí. Další informace najdete v tématu [přehled standardních operátorů dotazu (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) nebo [přehled operátory standardního dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
+Standardní operátory dotazu jsou definovány pro *sekvence*. Sekvence je *seřazena* a spoléhá na referenční identitu pro každý prvek sekvence. Další informace najdete v tématu Přehled [standardních operátorů dotazůC#()](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) nebo [standardní operátory dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
 
-SQL se především se týká *neuspořádaná sady hodnot*. Řazení je obvykle výslovně uvedeno, následné zpracování operace, která se použije na výsledek dotazu, nikoli mezilehlých výsledků. Identita je definovaná pomocí hodnoty. Z tohoto důvodu jsou dotazy SQL pochopitelné řešit multisets (*kontejnery objektů a dat*) namísto *nastaví*.
+SQL slouží hlavně pro *neuspořádané sady hodnot*. Řazení je obvykle výslovně uvedeno, operace následného zpracování, která je použita na konečný výsledek dotazu, nikoli na mezilehlé výsledky. Identita je definována hodnotami. Z tohoto důvodu jsou dotazy SQL srozumitelné pro práci s více sadami (*penalt*) místo *sad*.
 
-Následující odstavce popisují rozdíly mezi standardní operátory dotazu a jejich překlad SQL pro zprostředkovatel SQL Server pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].
+Následující odstavce popisují rozdíly mezi standardními operátory dotazů a jejich překladem SQL pro poskytovatele SQL Server pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].
 
-## <a name="operator-support"></a>Podpora – operátor
+## <a name="operator-support"></a>Podpora operátorů
 
-### <a name="concat"></a>concat
+### <a name="concat"></a>Spojuje
 
-<xref:System.Linq.Enumerable.Concat%2A> Metoda je definována pro uspořádaný multisets, kde příjemce a pořadím argumentu shodují. <xref:System.Linq.Enumerable.Concat%2A> funguje jako `UNION ALL` přes multisets, za nímž následuje běžné pořadí.
+<xref:System.Linq.Enumerable.Concat%2A> Metoda je definována pro seřazené množiny, kde pořadí přijímače a pořadí argumentu jsou stejné. <xref:System.Linq.Enumerable.Concat%2A>funguje stejně `UNION ALL` jako více sad následovaných běžným pořadím.
 
-Posledním krokem je řazení SQL předtím, než se produkují výsledky. <xref:System.Linq.Enumerable.Concat%2A> Nezachovávat hodnotu pořadí z jejích argumentů. Aby odpovídající řazení, musí explicitně řazení výsledků <xref:System.Linq.Enumerable.Concat%2A>.
+Poslední krok je seřazen v SQL před vytvořením výsledků. <xref:System.Linq.Enumerable.Concat%2A>nezachovává pořadí argumentů. Aby bylo zajištěno vhodné řazení, je nutné explicitně seřadit výsledky <xref:System.Linq.Enumerable.Concat%2A>.
 
-### <a name="intersect-except-union"></a>Intersect, s výjimkou sjednocení
+### <a name="intersect-except-union"></a>Průsečík, s výjimkou sjednocení
 
-<xref:System.Linq.Enumerable.Intersect%2A> a <xref:System.Linq.Enumerable.Except%2A> metody jsou pouze na sady dobře definované. Sémantika pro multisets není definován.
+Metody <xref:System.Linq.Enumerable.Intersect%2A> a<xref:System.Linq.Enumerable.Except%2A> jsou dobře definovány pouze pro sady. Sémantika pro více sad není definována.
 
-<xref:System.Linq.Enumerable.Union%2A> Je definována metoda pro multisets jako Neseřazený zřetězení multisets (efektivně výsledek klauzuli UNION ALL v SQL).
+<xref:System.Linq.Enumerable.Union%2A> Metoda je definována pro množiny jako neuspořádané zřetězení množin (efektivně výsledek klauzule UNION ALL v SQL).
 
-### <a name="take-skip"></a>Take, Skip
+### <a name="take-skip"></a>Vzít, přeskočit
 
-<xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> metody jsou dobře definované pouze proti *seřazené sady*. Sémantika pro Neseřazený sady nebo multisets nejsou definovány.
+<xref:System.Linq.Enumerable.Take%2A>metody <xref:System.Linq.Enumerable.Skip%2A> a jsou dobře definovány pouze proti *seřazeným sadám*. Sémantika pro neuspořádané sady nebo více sad není definována.
 
 > [!NOTE]
-> <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, když se používají v dotazech pro SQL Server 2000. Další informace najdete v tématu "Přeskočit a převzít výjimky v systému SQL Server 2000" položka v [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).
+> <xref:System.Linq.Enumerable.Take%2A>a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, pokud se používají v dotazech proti SQL Server 2000. Další informace najdete v části "přeskočení a přijetí výjimek v SQL Server 2000" v tématu [řešení potíží](troubleshooting.md).
 
-Z důvodu omezení řazení SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pokusí přesunout řazení argument z těchto metod na výsledek metody. Představte si třeba následující [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazu:
+Z důvodu omezení pro řazení v SQL se [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pokusí přesunout řazení argumentu těchto metod do výsledku metody. Zvažte například následující [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz:
 
 [!code-csharp[DLinqSQOTranslation#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#1)]
 [!code-vb[DLinqSQOTranslation#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#1)]
 
-Vygenerovaný SQL pro tento kód přesune řazení do konce a následujícím způsobem:
+Vygenerovaný SQL pro tento kód přesune řazení na konec následujícím způsobem:
 
 ```sql
 SELECT TOP 1 [t0].[CustomerID], [t0].[CompanyName],
@@ -66,50 +66,50 @@ WHERE (NOT (EXISTS(
 ORDER BY [t0].[CustomerID]
 ```
 
-Je zřejmé, že všechny zadané řazení musí být konzistentní při <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> jsou zřetězen dohromady. V opačném případě nejsou výsledky definovány.
+Je zřejmé, že všechna zadaná řazení musí být konzistentní, když <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> zřetězené dohromady. V opačném případě nejsou výsledky definovány.
 
-Obě <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> jsou jasně definované pro záporná, konstantní celočíselné argumenty, které jsou založené na specifikaci standardního operátoru dotazu.
+<xref:System.Linq.Enumerable.Take%2A> A<xref:System.Linq.Enumerable.Skip%2A> jsou dobře definovány pro nezáporné, konstantní celočíselné argumenty založené na standardní specifikaci operátoru dotazu.
 
-### <a name="operators-with-no-translation"></a>Operátory se žádný překlad
+### <a name="operators-with-no-translation"></a>Operátory bez překladu
 
-Následující metody nepřekládá podle [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Nejběžnějším důvodem je rozdíl mezi Neseřazený multisets a pořadí.
+Následující metody nejsou přeloženy pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Nejběžnějším důvodem je rozdíl mezi neseřazenými množinami a sekvencemi.
 
-|Operátory|Důvody|
+|Operátory|Dobře chápete důvody|
 |---------------|---------------|
-|<xref:System.Linq.Enumerable.TakeWhile%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>|Dotazy SQL pracují s multisets, ne podle pořadí. `ORDER BY` je nutné poslední klauzule použít na výsledky. Z tohoto důvodu neexistuje žádný překlad pro obecné účely pro tyto dvě metody.|
-|<xref:System.Linq.Enumerable.Reverse%2A>|Překlad tuto metodu je možné seřazené sady, ale není aktuálně přeložit modulem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
-|<xref:System.Linq.Enumerable.Last%2A>, <xref:System.Linq.Enumerable.LastOrDefault%2A>|Převod z těchto metod je možné seřazené sady, ale není aktuálně přeložit modulem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
-|<xref:System.Linq.Enumerable.ElementAt%2A>, <xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|Dotazy SQL pracují s multisets, ne na indexovanou pořadí.|
-|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A> (přetížení s výchozí argument)|Obecně platí nelze zadat výchozí hodnotu pro libovolný záznam. Hodnoty Null pro řazené kolekce členů je možné v některých případech prostřednictvím vnější spojení.|
+|<xref:System.Linq.Enumerable.TakeWhile%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>|Dotazy SQL pracují s více sadami, nikoli v sekvencích. `ORDER BY`musí se jednat o poslední klauzuli použitou pro výsledky. Z tohoto důvodu neexistuje žádný překlad pro obecné účely těchto dvou metod.|
+|<xref:System.Linq.Enumerable.Reverse%2A>|Překlad této metody je možný pro seřazenou sadu, ale není aktuálně přeložen pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
+|<xref:System.Linq.Enumerable.Last%2A>, <xref:System.Linq.Enumerable.LastOrDefault%2A>|Překlad těchto metod je možný pro seřazenou sadu, ale není aktuálně přeložen pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|
+|<xref:System.Linq.Enumerable.ElementAt%2A>, <xref:System.Linq.Enumerable.ElementAtOrDefault%2A>|Dotazy SQL pracují s více sadami, nikoli s indexovanými sekvencemi.|
+|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A>(Overload s výchozím ARG)|Obecně platí, že u libovolné řazené kolekce členů nejde zadat výchozí hodnotu. Hodnoty null pro řazené kolekce členů jsou možné v některých případech prostřednictvím vnějších spojení.|
 
-## <a name="expression-translation"></a>Výraz posunutí
+## <a name="expression-translation"></a>Překlad výrazu
 
-### <a name="null-semantics"></a>Sémantika s hodnotou Null
+### <a name="null-semantics"></a>Sémantika null
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepředstavuje sémantiku porovnání null v SQL. Operátory porovnání jsou syntakticky převedeny na jejich ekvivalenty SQL. Z tohoto důvodu odrážet sémantiku sémantiku SQL, který se definuje na základě nastavení serveru nebo připojení. Například dvě hodnoty null se považují za nestejné podle výchozího nastavení systému SQL Server, ale můžete změnit nastavení, chcete-li změnit sémantiku. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nebere v úvahu nastavení serveru při překládá dotazy.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]neukládá sémantiku porovnání s hodnotou null na SQL. Operátory porovnání jsou syntakticky přeloženy na jejich ekvivalenty SQL. Z tohoto důvodu sémantika odráží sémantiku SQL, která je definovaná nastavením serveru nebo připojení. Například dvě hodnoty null se považují za neshodné s výchozím SQL Server nastavením, ale můžete změnit nastavení pro změnu sémantiky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nebere v úvahu nastavení serveru při překládání dotazů.
 
-Porovnání s literál null se přeloží na odpovídající verzi SQL (`is null` nebo `is not null`).
+Porovnání s literálem null je přeloženo na odpovídající verzi SQL (`is null` nebo `is not null`).
 
-Hodnota `null` kolace je určené systému SQL Server. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nedojde ke změně kolace.
+Hodnota `null` v kolaci je definována SQL Server. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nemění kolaci.
 
 ### <a name="aggregates"></a>Agregace
 
-Metoda standardního operátoru dotazu aggregate <xref:System.Linq.Enumerable.Sum%2A> vyhodnocen jako nula k prázdné sekvenci nebo sekvenci, která obsahuje pouze hodnoty Null. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], sémantika SQL jsou ponechány beze změny, a <xref:System.Linq.Enumerable.Sum%2A> vyhodnotí jako `null` místo nula k prázdné sekvenci nebo sekvenci, která obsahuje pouze hodnoty Null.
+Agregační metoda <xref:System.Linq.Enumerable.Sum%2A> standardního operátoru dotazu vyhodnocuje nulu pro prázdnou sekvenci nebo pro sekvenci, která obsahuje pouze hodnoty null. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]systému jsou sémantika jazyka SQL ponechána beze změny a <xref:System.Linq.Enumerable.Sum%2A> vyhodnocena `null` jako místo nuly pro prázdnou sekvenci nebo pro sekvenci, která obsahuje pouze hodnoty null.
 
-Platí omezení SQL na mezilehlých výsledků agregace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. <xref:System.Linq.Enumerable.Sum%2A> 32-bit integer není počítaný množství pomocí 64-bit výsledky. Přetečení může dojít k pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překlad <xref:System.Linq.Enumerable.Sum%2A>i v případě implementace standardní operátor dotazu nezpůsobí přetečení pro odpovídající sekvence v paměti.
+Omezení SQL pro mezilehlé výsledky se vztahují na agregace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Počet <xref:System.Linq.Enumerable.Sum%2A> celočíselných hodnot v čísle 32 není počítán pomocí 64 bitových výsledků. Přetečení může nastat pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Linq.Enumerable.Sum%2A>překlad, i když standardní implementace operátoru dotazu nezpůsobí přetečení odpovídající posloupnosti v paměti.
 
-Podobně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překlad <xref:System.Linq.Enumerable.Average%2A> celého čísla je vypočítán hodnoty jako `integer`, ne jako `double`.
+`integer` `double`Podobně je [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Linq.Enumerable.Average%2A> převod celočíselných hodnot vypočítán jako, nikoli jako.
 
 ### <a name="entity-arguments"></a>Argumenty entity
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Umožňuje typy entit, který se má použít v <xref:System.Linq.Enumerable.GroupBy%2A> a <xref:System.Linq.Enumerable.OrderBy%2A> metody. V překladu těchto operátorů použijte argument typu je považovány za ekvivalentní se zadáním všechny členy tohoto typu. Například následující kód je ekvivalentní:
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]umožňuje použít typy entit v <xref:System.Linq.Enumerable.GroupBy%2A> metodách a. <xref:System.Linq.Enumerable.OrderBy%2A> V překladu těchto operátorů je použití argumentu typu považováno za ekvivalent pro určení všech členů tohoto typu. Například následující kód je ekvivalentní:
 
 [!code-csharp[DLinqSQOTranslation#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#2)]
 [!code-vb[DLinqSQOTranslation#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#2)]
 
-### <a name="equatable--comparable-arguments"></a>Equatable / srovnatelné argumenty
+### <a name="equatable--comparable-arguments"></a>Nejrovnější/porovnatelné argumenty
 
-Rovnost hodnoty argumentů se vyžaduje k provedení následujících metod:
+V implementaci následujících metod je vyžadována rovnost argumentů:
 
 - <xref:System.Linq.Enumerable.Contains%2A>
 
@@ -121,21 +121,21 @@ Rovnost hodnoty argumentů se vyžaduje k provedení následujících metod:
 
 - <xref:System.Linq.Enumerable.Except%2A>
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje rovnosti a porovnání pro *plochý* argumenty, ale ne pro argumenty, které jsou nebo obsahovat sekvence. Plochý argumentu je typ, který je možné mapovat na řádku SQL. Projekce jednoho nebo více typů entit, které se dá určit staticky neobsahují sekvenci se považuje za argumentem bez stromové struktury.
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje rovnost a porovnávání pro *rovné* argumenty, ale ne pro argumenty, které jsou nebo obsahují sekvence. Plochý argument je typ, který lze namapovat na řádek SQL. Projekce jednoho nebo více typů entit, které lze staticky určit, aby neobsahovala sekvenci, je považována za plochý argument.
 
-Následuje několik příkladů argumentů bez stromové struktury:
+Následují příklady plochých argumentů:
 
 [!code-csharp[DLinqSQOTranslation#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#3)]
 [!code-vb[DLinqSQOTranslation#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#3)]
 
-Následují příklady argumenty jiných ploché (hierarchické).
+Následují příklady neplochých (hierarchických) argumentů.
 
 [!code-csharp[DLinqSQOTranslation#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#4)]
 [!code-vb[DLinqSQOTranslation#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#4)]
 
-### <a name="visual-basic-function-translation"></a>Funkce převodu jazyka Visual Basic
+### <a name="visual-basic-function-translation"></a>Visual Basic překlad funkce
 
-Následující pomocná funkce, které se používají v kompilátoru jazyka Visual Basic jsou přeloženy na odpovídající SQL operátory a funkce:
+Následující pomocné funkce, které jsou používány kompilátorem Visual Basic, jsou přeloženy do odpovídajících funkcí a operátorů SQL:
 
 - `CompareString`
 
@@ -145,34 +145,34 @@ Následující pomocná funkce, které se používají v kompilátoru jazyka Vis
 
 - `IIf (in Microsoft.VisualBasic.Interaction)`
 
-Převod metody:
+Metody převodu:
 
 |||||
 |-|-|-|-|
-|ToBoolean|Tosbyte –|Tobyte –|Tochar –|
-|ToCharArrayRankOne|Do data|Todecimal –|Todouble –|
+|ToBoolean|ToSByte –|ToByte –|ToChar –|
+|ToCharArrayRankOne|V tomto|ToDecimal –|ToDouble –|
 |ToInteger|ToUInteger|ToLong|ToULong|
-|ToShort|ToUShort|Tosingle –|ToString|
+|ToShort|ToUShort|ToSingle –|Metodu|
 
 ## <a name="inheritance-support"></a>Podpora dědičnosti
 
-### <a name="inheritance-mapping-restrictions"></a>Omezení pro mapování dědičnosti
+### <a name="inheritance-mapping-restrictions"></a>Omezení mapování dědičnosti
 
-Další informace najdete v tématu [jak: Mapování hierarchií dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md).
+Další informace najdete v tématu [jak: Mapování hierarchií](how-to-map-inheritance-hierarchies.md)dědičnosti.
 
 ### <a name="inheritance-in-queries"></a>Dědičnost v dotazech
 
-Přetypování C# jsou podporovány pouze v projekci. Přetypování, které se používají jinde nepřekládá a budou ignorovány. Kromě SQL názvy funkcí, SQL ve skutečnosti provádí pouze ekvivalent modulu common language runtime (CLR) <xref:System.Convert>. To znamená SQL, můžete změnit hodnoty jednoho typu na jiný. Neexistuje žádný ekvivalent přetypování, protože neexistuje žádný koncept opětovná interpretace bity stejné jako u jiného typu CLR. To je důvod, proč a C# přetypování funguje jenom místně. Není vzdálený.
+C#přetypování jsou podporovaná jenom v projekci. Přetypování, která jsou používána jinde, nejsou přeložena a jsou ignorována. Z nezávisle na názvech funkcí SQL provádí SQL skutečně pouze ekvivalent modulu CLR (Common Language Runtime <xref:System.Convert>). To znamená, že SQL může změnit hodnotu jednoho typu na jiný. Neexistuje žádný ekvivalent přetypování CLR, protože neexistuje koncept přeinterpretace stejných bitů jako u jiného typu. To je důvod, C# proč přetypování funguje pouze místně. Nejedná se o vzdálenou.
 
-Operátory, `is` a `as`a `GetType` metoda nejsou omezeni `Select` operátor. Jejich lze použít v jiných operátorů dotazu také.
+Operátory, `is` `Select` a `as` a`GetType` metody nejsou omezeny na operátor. Je možné je použít také v jiných operátorech dotazu.
 
 ## <a name="sql-server-2008-support"></a>SQL Server 2008 Support
 
-Počínaje rozhraním .NET Framework 3.5 SP1, LINQ to SQL podporuje mapování na nové datum a čas typy zavedena v systému SQL Server 2008. Existují ale určitá omezení do technologie LINQ to SQL operátorů dotazu, které můžete použít při práci s hodnotami, které jsou namapované na tyto nové typy.
+Počínaje verzí .NET Framework 3,5 SP1 LINQ to SQL podporuje mapování na nové typy data a času zavedené pomocí SQL Server 2008. Existují však určitá omezení pro operátory LINQ to SQL dotazů, které lze použít při práci s hodnotami mapovanými na tyto nové typy.
 
-### <a name="unsupported-query-operators"></a>Dotaz se nepodporuje operátory
+### <a name="unsupported-query-operators"></a>Nepodporované operátory dotazů
 
-Následující operátory dotazu nejsou podporovány u hodnot, které jsou namapované na nové typy data a času systému SQL Server: `DATETIME2`, `DATE`, `TIME`, a `DATETIMEOFFSET`.
+Následující operátory dotazu nejsou podporovány v hodnotách mapovaných na `DATETIME2`nové SQL Server typy data a času:, `DATE`, `TIME` `DATETIMEOFFSET`a.
 
 - `Aggregate`
 
@@ -184,61 +184,61 @@ Následující operátory dotazu nejsou podporovány u hodnot, které jsou namap
 
 - `Sum`
 
-Další informace o mapování pro tyto typy data a času systému SQL Server najdete v tématu [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).
+Další informace o mapování na tyto SQL Server typy data a času naleznete v tématu [mapování typu SQL-CLR](sql-clr-type-mapping.md).
 
 ## <a name="sql-server-2005-support"></a>SQL Server 2005 Support
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje následující funkce SQL Server 2005:
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nepodporuje následující funkce SQL Server 2005:
 
 - Uložené procedury napsané pro SQL CLR.
 
-- Uživatelem definovaného typu.
+- Uživatelem definovaný typ.
 
-- Funkce dotazu XML.
+- Funkce dotazů XML.
 
 ## <a name="sql-server-2000-support"></a>SQL Server 2000 Support
 
-Vliv na následující omezení systému SQL Server 2000 (ve srovnání se Microsoft SQL Server 2005) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.
+Následující omezení SQL Server 2000 (v porovnání s Microsoft SQL Server 2005) mají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vliv na podporu.
 
-### <a name="cross-apply-and-outer-apply-operators"></a>Křížové použití a vnější použít operátory
+### <a name="cross-apply-and-outer-apply-operators"></a>Operátory vzájemného použití a vnějšího použití
 
-Tyto operátory nejsou k dispozici v systému SQL Server 2000. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí řadu přepisů pro jejich nahrazení odpovídající spojení.
+Tyto operátory nejsou k dispozici v SQL Server 2000. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pokusí se o řadu přepsání, která je nahradí příslušnými spojeními.
 
-`Cross Apply` a `Outer Apply` jsou generovány pro navigaci vztah. Sadu dotazů, pro které je možné takové přepisů není dobře definováno. Z tohoto důvodu minimální sadu dotazů, který je podporován pro SQL Server 2000 je sada, která nezahrnuje vztah navigace.
+`Cross Apply`a `Outer Apply` jsou generovány pro navigaci relací. Sada dotazů, pro které jsou takové přepisy možné, není dobře definována. Z tohoto důvodu je minimální sada dotazů, které jsou podporovány pro SQL Server 2000, sadou, která nezahrnuje navigaci relací.
 
-### <a name="text--ntext"></a>text / ntext
+### <a name="text--ntext"></a>text/ntext
 
-Datové typy `text`  /  `ntext` nelze použít v určité operace dotazů vůči `varchar(max)`  /  `nvarchar(max)`, které podporuje Microsoft SQL Server 2005.
+Datové typy `text`  /  `varchar(max)`  / nelze použít v určitých operacích dotazu proti`nvarchar(max)`, které jsou podporovány Microsoft SQL Server 2005. `ntext`
 
-Žádné řešení, protože je k dispozici pro toto omezení. Konkrétně byste měli nelze použít `Distinct()` na některý z výsledků, který obsahuje členy, které jsou mapovány na `text` nebo `ntext` sloupce.
+Pro toto omezení není k dispozici žádné řešení. Konkrétně nemůžete použít `Distinct()` na žádný výsledek, který obsahuje členy mapované na `text` nebo `ntext` sloupce.
 
-### <a name="behavior-triggered-by-nested-queries"></a>Chování aktivuje vnořené dotazy
+### <a name="behavior-triggered-by-nested-queries"></a>Chování aktivované vnořenými dotazy
 
-SQL Server 2000 (prostřednictvím SP4) vazače má některá specifika, které jsou aktivovány vnořené dotazy. Sadu dotazů SQL, který spouští tyto specifika není dobře definováno. Z tohoto důvodu nelze definovat sadu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy, které může způsobit, že výjimky serveru SQL Server.
+Pořadač SQL Server 2000 (přes SP4) obsahuje některé idiosyncrasies, které se spouštějí ve vnořených dotazech. Sada dotazů SQL, které aktivují tyto idiosyncrasies, není správně definovaná. Z tohoto důvodu nemůžete definovat sadu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazů, které by mohly způsobit SQL Server výjimky.
 
 ### <a name="skip-and-take-operators"></a>Přeskočit a převzít operátory
 
-<xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, když se používají v dotazech pro SQL Server 2000. Další informace najdete v tématu "Přeskočit a převzít výjimky v systému SQL Server 2000" položka v [Poradce při potížích s](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).
+<xref:System.Linq.Enumerable.Take%2A>a <xref:System.Linq.Enumerable.Skip%2A> mají určitá omezení, pokud se používají v dotazech proti SQL Server 2000. Další informace najdete v části "přeskočení a přijetí výjimek v SQL Server 2000" v tématu [řešení potíží](troubleshooting.md).
 
 ## <a name="object-materialization"></a>Materializace objektů
 
-Materializace vytvoří objekty CLR z řádků, které jsou vráceny dotazy SQL jeden nebo více.
+Materializace vytvoří objekty CLR z řádků, které jsou vráceny jedním nebo více dotazy jazyka SQL.
 
-- Následující volání jsou *spuštěn lokálně* jako součást materializace:
+- Následující volání se *spouštějí místně* jako součást materializace:
 
   - Konstruktory
 
-  - `ToString` metody v projekce
+  - `ToString`metody v projekce
 
-  - Přetypování typu v projekce
+  - Typy přetypování v projekce
 
-- Metody, které následují <xref:System.Linq.Enumerable.AsEnumerable%2A> metodu *spuštěn lokálně*. Tato metoda nezpůsobí okamžité spuštění.
+- Metody, které následují <xref:System.Linq.Enumerable.AsEnumerable%2A> metodu jsou *spouštěny místně*. Tato metoda nezpůsobí okamžité provedení.
 
-- Můžete použít `struct` jako návratový typ výsledku dotazu, nebo jako člen typu výsledku. Entity jsou musí být třídy. Anonymní typy jsou vyhodnocena jako instance třídy, ale pojmenované struktury (jiné entity) lze použít v projekci.
+- Můžete použít `struct` jako návratový typ výsledku dotazu nebo jako člen typu výsledku. Entity jsou nutné pro třídy. Anonymní typy jsou materializované jako instance třídy, ale pojmenované struktury (jiné než entity) se dají použít v projekci.
 
-- Člen návratový typ výsledku dotazu nemůže být typu <xref:System.Linq.IQueryable%601>. Je vyhodnocena jako místní kolekce.
+- Člen návratového typu výsledku dotazu může být typu <xref:System.Linq.IQueryable%601>. Je vyhodnocena jako místní kolekce.
 
-- Následující metody způsobit, že *okamžité materializace* sekvence, která se použijí metody pro:
+- Následující metody způsobují *okamžitou materializaci* sekvence, na kterou jsou metody aplikovány:
 
   - <xref:System.Linq.Enumerable.ToList%2A>
 
@@ -248,9 +248,9 @@ Materializace vytvoří objekty CLR z řádků, které jsou vráceny dotazy SQL 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Vrácení nebo přeskočení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)
-- [Zřetězení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)
-- [Vrácení rozdílů množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)
-- [Vrácení průniku množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)
-- [Vrácení sjednocení množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)
+- [Referenční informace](reference.md)
+- [Vrácení nebo přeskočení prvků v posloupnosti](return-or-skip-elements-in-a-sequence.md)
+- [Zřetězení dvou sekvencí](concatenate-two-sequences.md)
+- [Vrácení rozdílů množin mezi dvěma sekvencemi](return-the-set-difference-between-two-sequences.md)
+- [Vrácení průniku množin mezi dvěma sekvencemi](return-the-set-intersection-of-two-sequences.md)
+- [Vrácení sjednocení množin mezi dvěma sekvencemi](return-the-set-union-of-two-sequences.md)

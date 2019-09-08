@@ -2,18 +2,18 @@
 title: Kolekce schémat OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
-ms.openlocfilehash: 6c3441e86d4c5267418cf8002ba17d539c464d5c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d5718c12100ebea49a6b6fab29a3790918c6ad3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645901"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783445"
 ---
 # <a name="ole-db-schema-collections"></a>Kolekce schémat OLE DB
-Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.  
+Tato část pojednává o podpoře kolekcí schémat pro poskytovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.  
   
-## <a name="microsoft-sql-server-ole-db-provider"></a>Zprostředkovatel Microsoft SQL serveru OLE DB  
- Microsoft SQL Server OLE DB ovladač podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
+## <a name="microsoft-sql-server-ole-db-provider"></a>Poskytovatel Microsoft SQL Server OLE DB  
+ Ovladač Microsoft SQL Server OLE DB podporuje kromě běžných kolekcí schémat následující konkrétní kolekce schémat:  
   
 - Tabulky  
   
@@ -29,21 +29,21 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
   
 ### <a name="tables"></a>Tabulky  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |TABLE_GUID|Guid|  
-|POPIS|String|  
+|NÁZEV|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -72,7 +72,7 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |DOMAIN_CATALOG|String|  
 |DOMAIN_SCHEMA|String|  
 |DOMAIN_NAME|String|  
-|POPIS|String|  
+|NÁZEV|String|  
 |COLUMN_LCID|Int32|  
 |COLUMN_COMPFLAGS|Int32|  
 |COLUMN_SORTID|Int32|  
@@ -81,20 +81,20 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
 |PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
 |PROCEDURE_DEFINITION|String|  
-|POPIS|String|  
+|NÁZEV|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -110,20 +110,20 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
-|POPIS|String|  
+|NÁZEV|String|  
 |TYPE_NAME|String|  
 |LOCAL_TYPE_NAME|String|  
   
 ### <a name="catalog"></a>Katalog  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |CATALOG_NAME|String|  
-|POPIS|String|  
+|NÁZEV|String|  
   
 ### <a name="indexes"></a>Indexy  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -132,9 +132,9 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |INDEX_SCHEMA|String|  
 |INDEX_NAME|String|  
 |PRIMARY_KEY|Boolean|  
-|UNIQUE|Boolean|  
+|TABULKA|Boolean|  
 |CLUSTERED|Boolean|  
-|TYP|Int32|  
+|TEXTOVÝ|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
@@ -145,14 +145,14 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |COLUMN_NAME|String|  
 |COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
-|KOLACE|Int16|  
+|VELKÉ|Int16|  
 |KARDINALITA|Desetinné číslo|  
 |STRÁNKY|Int32|  
 |FILTER_CONDITION|String|  
 |INTEGROVANÉ|Boolean|  
   
-## <a name="microsoft-oracle-ole-db-provider"></a>Zprostředkovatel OLE DB Microsoft Oracle  
- Oracle OLE DB ovladač Microsoft podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
+## <a name="microsoft-oracle-ole-db-provider"></a>Zprostředkovatel Microsoft Oracle OLE DB  
+ Microsoft Oracle OLE DB Driver podporuje kromě běžných kolekcí schémat následující konkrétní kolekce schémat:  
   
 - Tabulky  
   
@@ -170,21 +170,21 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
   
 ### <a name="tables"></a>Tabulky  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |TABLE_GUID|Guid|  
-|POPIS|String|  
+|NÁZEV|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -213,24 +213,24 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |DOMAIN_CATALOG|String|  
 |DOMAIN_SCHEMA|String|  
 |DOMAIN_NAME|String|  
-|POPIS|String|  
+|NÁZEV|String|  
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
 |PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
 |PROCEDURE_DEFINITION|String|  
-|POPIS|String|  
+|NÁZEV|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
@@ -247,12 +247,12 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
-|POPIS|String|  
-|PŘETÍŽENÍ|Int16|  
+|NÁZEV|String|  
+|METODY|Int16|  
   
 ### <a name="views"></a>Zobrazení  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -260,13 +260,13 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |VIEW_DEFINITION|String|  
 |CHECK_OPTION|Boolean|  
 |IS_UPDATABLE|Boolean|  
-|POPIS|String|  
+|NÁZEV|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="indexes"></a>Indexy  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -275,9 +275,9 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |INDEX_SCHEMA|String|  
 |INDEX_NAME|String|  
 |PRIMARY_KEY|Boolean|  
-|UNIQUE|Boolean|  
+|TABULKA|Boolean|  
 |CLUSTERED|Boolean|  
-|TYP|Int32|  
+|TEXTOVÝ|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
@@ -288,14 +288,14 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |COLUMN_NAME|String|  
 |COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
-|KOLACE|Int16|  
+|VELKÉ|Int16|  
 |KARDINALITA|Desetinné číslo|  
 |STRÁNKY|Int32|  
 |FILTER_CONDITION|String|  
 |INTEGROVANÉ|Boolean|  
   
 ## <a name="microsoft-jet-ole-db-provider"></a>Zprostředkovatel Microsoft Jet OLE DB  
- Microsoft Jet OLE DB ovladač podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
+ Ovladač Microsoft Jet OLE DB podporuje kromě běžných kolekcí schémat následující konkrétní kolekce schémat:  
   
 - Tabulky  
   
@@ -309,21 +309,21 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
   
 ### <a name="tables"></a>Tabulky  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |TABLE_GUID|Guid|  
-|POPIS|String|  
+|NÁZEV|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -352,24 +352,24 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |DOMAIN_CATALOG|String|  
 |DOMAIN_SCHEMA|String|  
 |DOMAIN_NAME|String|  
-|POPIS|String|  
+|NÁZEV|String|  
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
 |PROCEDURE_SCHEMA|String|  
 |PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
 |PROCEDURE_DEFINITION|String|  
-|POPIS|String|  
+|NÁZEV|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="views"></a>Zobrazení  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -377,13 +377,13 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |VIEW_DEFINITION|String|  
 |CHECK_OPTION|Boolean|  
 |IS_UPDATABLE|Boolean|  
-|POPIS|String|  
+|NÁZEV|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="indexes"></a>Indexy  
   
-|Názevsloupce|DataType|  
+|ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
 |TABLE_SCHEMA|String|  
@@ -392,9 +392,9 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |INDEX_SCHEMA|String|  
 |INDEX_NAME|String|  
 |PRIMARY_KEY|Boolean|  
-|UNIQUE|Boolean|  
+|TABULKA|Boolean|  
 |CLUSTERED|Boolean|  
-|TYP|Int32|  
+|TEXTOVÝ|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
@@ -405,7 +405,7 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 |COLUMN_NAME|String|  
 |COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
-|KOLACE|Int16|  
+|VELKÉ|Int16|  
 |KARDINALITA|Desetinné číslo|  
 |STRÁNKY|Int32|  
 |FILTER_CONDITION|String|  
@@ -413,4 +413,4 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

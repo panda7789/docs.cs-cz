@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: a29efbc1b4d886afe4329df011b522e4d589e2ee
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: afafe5d1eaddaef3b9f0069908b365e40ea4ed29
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949495"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785679"
 ---
 # <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců
 V dřívějších verzích ADO.NET se neobjevila kontrola připojovacích řetězců s zřetězenými řetězcovými hodnotami, takže v době běhu se nesprávné klíčové slovo vygenerovalo jako <xref:System.ArgumentException>nesprávné. Každé z zprostředkovatelů .NET Framework dat podporuje odlišnou syntaxi pro klíčová slova připojovacích řetězců, která vytvořila v případě ručního vytvoření platných připojovacích řetězců. Pro vyřešení tohoto problému ADO.NET 2,0 pro každého poskytovatele dat .NET Framework zavedla nové tvůrci připojovacích řetězců. Každý poskytovatel dat obsahuje třídu Tvůrce připojovacích řetězců silného typu, která <xref:System.Data.Common.DbConnectionStringBuilder>dědí z. V následující tabulce jsou uvedeny poskytovatelé dat .NET Framework a jejich přidružené třídy Tvůrce připojovacích řetězců.  
@@ -59,7 +59,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
  Jeden z přetížených konstruktorů pro Tvůrce připojovacích řetězců přijímá <xref:System.String> jako argument, který umožňuje zadat částečný připojovací řetězec, který lze následně dokončit ze vstupu uživatele. Částečný připojovací řetězec může být uložen do konfiguračního souboru a načten v době běhu.  
   
 > [!NOTE]
-> Obor názvů umožňuje programový přístup ke konfiguračním souborům, které <xref:System.Web.Configuration.WebConfigurationManager> používají <xref:System.Configuration.ConfigurationManager> pro webové aplikace a aplikace systému Windows. <xref:System.Configuration> Další informace o práci s připojovacími řetězci a konfiguračními soubory najdete v tématu [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+> Obor názvů umožňuje programový přístup ke konfiguračním souborům, které <xref:System.Web.Configuration.WebConfigurationManager> používají <xref:System.Configuration.ConfigurationManager> pro webové aplikace a aplikace systému Windows. <xref:System.Configuration> Další informace o práci s připojovacími řetězci a konfiguračními soubory najdete v tématu [připojovací řetězce a konfigurační soubory](connection-strings-and-configuration-files.md).  
   
 ### <a name="example"></a>Příklad  
  Tento příklad ukazuje načtení částečného připojovacího řetězce z konfiguračního souboru a jeho dokončení <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A>nastavením vlastností <xref:System.Data.SqlClient.SqlConnectionStringBuilder>, <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserID%2A>a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> . Konfigurační soubor je definován následujícím způsobem.  
@@ -81,6 +81,6 @@ initial catalog="AdventureWorks;NewValue=Bad"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
-- [Ochrana osobních údajů a zabezpečení dat](../../../../docs/framework/data/adonet/privacy-and-data-security.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Připojovací řetězce](connection-strings.md)
+- [Ochrana osobních údajů a zabezpečení dat](privacy-and-data-security.md)
+- [Přehled ADO.NET](ado-net-overview.md)

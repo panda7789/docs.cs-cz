@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 825bb945e0d8662a4dadc9d688de6a677165df4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b293c30060107d18c6b609efc82c4128a73cc1c7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741480"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787205"
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile – metoda
-Umožňuje zadat nebo obnovit soubor manifestu, který používá propojovací program při vytváření sestavení.  
+Umožňuje určit nebo obnovit soubor manifestu, který Linker používá při vytváření sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT SetManifestFile(
 ## <a name="parameters"></a>Parametry  
  `pszFile`  
   
- Název souboru manifestu, jejichž obsah jsou vloženy do objektu blob prostředky Win32.  
+ Název souboru manifestu, jehož obsah je umístěn do objektu BLOB prostředků Win32.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="remarks"></a>Poznámky  
- Před požadující Win32ResBlob volejte to. Hodnota `pszFile` parametr je název souboru manifestu, jejichž obsah čtou a vložit prostředky Win32 s ID RT_MANIFEST. Při volání s použitím parametr hodnotu NULL, se vymaže všechny dříve čtení manifestu. To umožňuje z nich se má obnovit stav linkeru, inicializuje.  
+ Před dotazem na Win32ResBlobu tento hovor zavolejte. Hodnota `pszFile` parametru je název souboru manifestu, jehož obsah je čten a umístěn do prostředků Win32 s ID RT_MANIFEST. Pokud je volána pomocí parametru NULL, všechny dříve přečtené manifesty jsou vymazány. To umožňuje, aby se stav linkeru obnovil na čas inicializace.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje aLink.h  
+ Vyžaduje aLink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink3 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [IALink3 – rozhraní](ialink3-interface.md)
+- [Rozhraní API ALink](index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)
