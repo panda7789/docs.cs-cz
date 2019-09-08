@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: 4eb96eaf409fd34e9b10a469ed31fbbe18ebac5e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 9250ca09fb5e28655e39f8d91d991fdb3bffcdbd
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045996"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795744"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Odesílatelé jsou odpovědni za příjem příchozích zpráv ze základních kanálů, jejich překlad na vyvolání metod v kódu aplikace a odeslání výsledků zpět volajícímu. Rozšíření dispečera umožňují upravit toto zpracování.  Můžete implementovat zprávy nebo inspektory parametrů, které kontrolují nebo mění obsah zpráv nebo parametrů.  Můžete změnit způsob, jakým jsou zprávy směrovány na operace, nebo poskytovat jiné funkce.
 
-Toto téma popisuje, jak použít <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy a <xref:System.ServiceModel.Dispatcher.DispatchOperation> v aplikaci služby Windows Communication Foundation (WCF) pro úpravu výchozího chování dispečera nebo zachycení nebo změny zpráv, parametrů nebo vrácení. hodnoty před nebo po odeslání nebo jejich načtení z vrstvy kanálu. Další informace o ekvivalentním zpracování zpráv modulu runtime klienta najdete v tématu [rozšíření klientů](../../../../docs/framework/wcf/extending/extending-clients.md). Pro pochopení role, kterou <xref:System.ServiceModel.IExtensibleObject%601> typy hrají při přístupu ke sdílenému stavu mezi různými objekty vlastního nastavení modulu runtime, se podívejte na téma [rozšiřitelné objekty](../../../../docs/framework/wcf/extending/extensible-objects.md).
+Toto téma popisuje, jak použít <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy a <xref:System.ServiceModel.Dispatcher.DispatchOperation> v aplikaci služby Windows Communication Foundation (WCF) pro úpravu výchozího chování dispečera nebo zachycení nebo změny zpráv, parametrů nebo vrácení. hodnoty před nebo po odeslání nebo jejich načtení z vrstvy kanálu. Další informace o ekvivalentním zpracování zpráv modulu runtime klienta najdete v tématu [rozšíření klientů](extending-clients.md). Pro pochopení role, kterou <xref:System.ServiceModel.IExtensibleObject%601> typy hrají při přístupu ke sdílenému stavu mezi různými objekty vlastního nastavení modulu runtime, se podívejte na téma [rozšiřitelné objekty](extensible-objects.md).
 
 ## <a name="dispatchers"></a>Dispečery
 
@@ -22,11 +22,11 @@ Vrstva modelu služby provádí převod mezi programovacím modelem vývojáře 
 
 Dispečer kanálu (a doprovodný <xref:System.ServiceModel.Channels.IChannelListener>nástroj) vyžádá zprávy z kanálu identifikátor a předá zprávy příslušnému odesilateli koncových bodů. Každý dispečer koncového bodu <xref:System.ServiceModel.Dispatcher.DispatchRuntime> má a směruje zprávy na příslušné <xref:System.ServiceModel.Dispatcher.DispatchOperation>, což zodpovídá za volání metody, která implementuje operaci. Různé volitelné a požadované třídy rozšíření jsou vyvolány způsobem. V tomto tématu se dozvíte, jak se tyto části vejdou dohromady, a jak můžete upravit vlastnosti a zapojit vlastní kód v nástroji, aby se rozšířily základní funkce.
 
-Vlastnosti dispečera a upravené objekty přizpůsobení jsou vloženy pomocí objektů služby, koncového bodu, kontraktu nebo chování operací. Toto téma nepopisuje použití chování. Další informace o typech použitých pro vložení úprav dispečera najdete v tématu [Konfigurace a rozšíření modulu runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md).
+Vlastnosti dispečera a upravené objekty přizpůsobení jsou vloženy pomocí objektů služby, koncového bodu, kontraktu nebo chování operací. Toto téma nepopisuje použití chování. Další informace o typech použitých pro vložení úprav dispečera najdete v tématu [Konfigurace a rozšíření modulu runtime s chováním](configuring-and-extending-the-runtime-with-behaviors.md).
 
 Následující obrázek poskytuje podrobný pohled na položky architektury v rámci služby.
 
-![Běhová architektura Dispatch](../../../../docs/framework/wcf/extending/media/wcfc-dispatchruntimearchc.gif "wcfc_DispatchRuntimeArchc")
+![Běhová architektura Dispatch](./media/wcfc-dispatchruntimearchc.gif "wcfc_DispatchRuntimeArchc")
 
 ### <a name="channel-dispatchers"></a>Odesílání kanálů
 
@@ -44,30 +44,30 @@ Použijte k získání dvou hlavních bodů rozšíření modelu služby <xref:S
 
 K dispozici je několik důvodů pro rozšiřování dispečera:
 
-- Vlastní ověření zprávy Uživatelé mohou vyhovět, že je zpráva platná pro určité schéma. To se dá udělat implementací rozhraní pro zachycování zpráv. Příklad naleznete v tématu [inspektoři zpráv](../../../../docs/framework/wcf/samples/message-inspectors.md).
+- Vlastní ověření zprávy Uživatelé mohou vyhovět, že je zpráva platná pro určité schéma. To se dá udělat implementací rozhraní pro zachycování zpráv. Příklad naleznete v tématu [inspektoři zpráv](../samples/message-inspectors.md).
 
 - Vlastní protokolování zpráv. Uživatelé mohou kontrolovat a protokolovat některé sady zpráv aplikace, které jsou spouštěny prostřednictvím koncového bodu. Můžete to také provést pomocí rozhraní pro zachycování zpráv.
 
 - Vlastní transformace zpráv Uživatelé mohou použít určité transformace na zprávu v modulu runtime (například pro správu verzí). To se dá provést znovu s rozhraními pro zachycování zpráv.
 
-- Vlastní datový model. Uživatelé mohou mít model serializace dat jiný než podporované ve výchozím nastavení ve službě WCF (konkrétně <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>, a nezpracované zprávy). To lze provést implementací rozhraní formátovacích zpráv. Příklad naleznete v tématu [formátovací modul operací a selektor operací](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).
+- Vlastní datový model. Uživatelé mohou mít model serializace dat jiný než podporované ve výchozím nastavení ve službě WCF (konkrétně <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>, <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>, a nezpracované zprávy). To lze provést implementací rozhraní formátovacích zpráv. Příklad naleznete v tématu [formátovací modul operací a selektor operací](../samples/operation-formatter-and-operation-selector.md).
 
 - Ověřování vlastního parametru. Uživatelé můžou vyhovět tomu, že typové parametry jsou platné (na rozdíl od XML). To lze provést pomocí rozhraní Inspector pro parametry.
 
-- Odesílání vlastních operací. Uživatelé mohou implementovat odesílání na něco jiného než akce – například u prvku tělo nebo na vlastní vlastnost zprávy. To lze provést pomocí <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. Příklad naleznete v tématu [formátovací modul operací a selektor operací](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md).
+- Odesílání vlastních operací. Uživatelé mohou implementovat odesílání na něco jiného než akce – například u prvku tělo nebo na vlastní vlastnost zprávy. To lze provést pomocí <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> rozhraní. Příklad naleznete v tématu [formátovací modul operací a selektor operací](../samples/operation-formatter-and-operation-selector.md).
 
-- Sdružování objektů. Uživatelé můžou místo přidělení nového pro každé volání vytvořit fond instancí. To lze implementovat pomocí rozhraní poskytovatele instancí. Příklad najdete v tématu [sdružování](../../../../docs/framework/wcf/samples/pooling.md).
+- Sdružování objektů. Uživatelé můžou místo přidělení nového pro každé volání vytvořit fond instancí. To lze implementovat pomocí rozhraní poskytovatele instancí. Příklad najdete v tématu [sdružování](../samples/pooling.md).
 
 - Leasing instance. Uživatelé můžou implementovat způsob zapůjčení pro dobu života instance, podobně jako u .NET Framework vzdálené komunikace. To lze provést pomocí rozhraní pro životní dobu kontextu instance.
 
 - Vlastní zpracování chyb. Uživatelé můžou řídit, jak se zpracovávají místní chyby, a jak se chyby sdělují klientům zpátky. To lze implementovat pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.
 
-- Vlastní autorizační chování. Uživatelé můžou implementovat vlastní řízení přístupu tím, že rozšíří pracovní části kontraktu nebo operace a přidají kontroly zabezpečení na základě tokenů přítomných ve zprávě. To lze provést buď pomocí rozhraní zachytávací zprávy, nebo parametrů. Příklady najdete v tématu [rozšiřitelnost zabezpečení](../../../../docs/framework/wcf/samples/security-extensibility.md).
+- Vlastní autorizační chování. Uživatelé můžou implementovat vlastní řízení přístupu tím, že rozšíří pracovní části kontraktu nebo operace a přidají kontroly zabezpečení na základě tokenů přítomných ve zprávě. To lze provést buď pomocí rozhraní zachytávací zprávy, nebo parametrů. Příklady najdete v tématu [rozšiřitelnost zabezpečení](../samples/security-extensibility.md).
 
   > [!CAUTION]
   > Vzhledem k tomu, že změna vlastností zabezpečení má potenciál narušit zabezpečení aplikací WCF, důrazně doporučujeme, abyste před nasazením provedli úpravy související se zabezpečením a důkladně se otestovali.
 
-- Vlastní validátory runtime služby WCF. Můžete nainstalovat vlastní validátory, které prozkoumají služby, kontrakty a vazby, aby vynutily zásady na podnikové úrovni vzhledem k aplikacím WCF. (Například viz [How to: Zamčení koncových bodů v](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)podniku.)
+- Vlastní validátory runtime služby WCF. Můžete nainstalovat vlastní validátory, které prozkoumají služby, kontrakty a vazby, aby vynutily zásady na podnikové úrovni vzhledem k aplikacím WCF. (Například viz [How to: Zamčení koncových bodů v](how-to-lock-down-endpoints-in-the-enterprise.md)podniku.)
 
 ### <a name="using-the-dispatchruntime-class"></a>Použití třídy DispatchRuntime
 
@@ -137,6 +137,6 @@ Následující vlastnosti řídí spuštění za běhu na úrovni operace:
 
 - <xref:System.ServiceModel.Dispatcher.DispatchRuntime>
 - <xref:System.ServiceModel.Dispatcher.DispatchOperation>
-- [Postupy: Kontrola a úprava zpráv ve službě](../../../../docs/framework/wcf/extending/how-to-inspect-and-modify-messages-on-the-service.md)
-- [Postupy: Kontrola nebo úprava parametrů](../../../../docs/framework/wcf/extending/how-to-inspect-or-modify-parameters.md)
-- [Postupy: Zamčení koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)
+- [Postupy: Kontrola a úprava zpráv ve službě](how-to-inspect-and-modify-messages-on-the-service.md)
+- [Postupy: Kontrola nebo úprava parametrů](how-to-inspect-or-modify-parameters.md)
+- [Postupy: Zamčení koncových bodů v podniku](how-to-lock-down-endpoints-in-the-enterprise.md)

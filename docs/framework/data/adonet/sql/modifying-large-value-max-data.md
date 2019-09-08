@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 19d0c78221f35bd36edce85a60a4a7a2f985bc38
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 34f0a61329667a42aa42693e93169a5b6fb0aa5e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947012"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792037"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Datové typy large object (LOB) překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, a `nvarchar` `varbinary` datové typy, které umožňují úložiště hodnot až do velikosti 2 ^ 32 bajtů. Sloupce tabulky a proměnné Transact-SQL mohou určovat `varchar(max)`, `nvarchar(max)`nebo `varbinary(max)` datové typy. V ADO.NET `max` lze datové typy načíst `DataReader`pomocí a a lze je také zadat jako vstupní i výstupní hodnoty parametrů bez speciálního zpracování. U velkých `varchar` datových typů lze data načíst a aktualizovat přírůstkově.  
@@ -251,7 +251,7 @@ WHERE   DocumentID=@DocumentID
   
 ## <a name="see-also"></a>Viz také:
 
-- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Binární a vysoké hodnoty na SQL Serveru](sql-server-binary-and-large-value-data.md)
+- [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)
+- [Operace dat na SQL Serveru v ADO.NET](sql-server-data-operations.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

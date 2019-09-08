@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
-ms.openlocfilehash: 4eb211ed13b5f2fe066cd7570c97ae324b187b34
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: db0df68aa89cdd5c8bf94ad95a2b8bc9b36d5685
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203507"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786217"
 ---
 # <a name="loading-dataset-schema-information-from-xml"></a>Načtení informací o schématu datové sady z XML
-Schéma <xref:System.Data.DataSet> (jeho tabulky, sloupce, relace a omezení) lze definovat programově, vytvořené metodami <xref:System.Data.Common.DataAdapter> **Fill** nebo **FillSchema** , nebo načteny z dokumentu XML. Chcete-li načíst informace o schématu **datové sady** z dokumentu XML, lze použít metodu **ReadXmlSchema** nebo **InferXmlSchema** pro datovou **sadu**. **ReadXmlSchema** umožňuje načíst nebo odvodit informace o schématu **datové sady** z dokumentu, který obsahuje schéma XSD (XML Schema Definition Language), nebo dokumentu XML s vloženým schématem XML. **InferXmlSchema** umožňuje odvodit schéma z dokumentu XML a ignorovat určité obory názvů XML, které zadáte.  
+Schéma <xref:System.Data.DataSet> (jeho tabulky, sloupce, relace a omezení) lze definovat programově, vytvořené metodami <xref:System.Data.Common.DataAdapter> **Fill** nebo **FillSchema** , nebo načteny z dokumentu XML. Chcete-li načíst informace o schématu **datové sady** z dokumentu XML, lze použít metodu **ReadXmlSchema** nebo **InferXmlSchema** pro **datovou sadu**. **ReadXmlSchema** umožňuje načíst nebo odvodit informace o schématu **datové sady** z dokumentu, který obsahuje schéma XSD (XML Schema Definition Language), nebo dokumentu XML s vloženým schématem XML. **InferXmlSchema** umožňuje odvodit schéma z dokumentu XML a ignorovat určité obory názvů XML, které zadáte.  
   
 > [!NOTE]
 > Řazení tabulky v **sadě dat** nemusí být zachováno, pokud použijete webové služby nebo serializaci XML k přenosu **datové sady** , která byla vytvořena v paměti, pomocí konstrukcí XSD (jako jsou vnořené relace). Proto by příjemce **datové sady** neměl záviset na řazení tabulky v tomto případě. Řazení tabulky je však vždy zachované, pokud je schéma přenášené **datové sady** načteno ze souborů XSD namísto vytvoření v paměti.  
@@ -54,7 +54,7 @@ xmlStream.Close();
 ```  
   
 ## <a name="inferxmlschema"></a>InferXmlSchema  
- Můžete také instruovat **datovou sadu** , aby odvodit schéma z dokumentu XML pomocí metody **InferXmlSchema** **datové sady**. **InferXmlSchema** funguje stejně jako **ReadXml** s XmlReadModeem **InferSchema** ( načítá data a také odvodit schéma) a **ReadXmlSchema** , pokud dokument, který čte, neobsahuje žádné vložené schéma. **InferXmlSchema** však poskytuje další funkce, které vám umožní určit konkrétní obory názvů XML, které se mají ignorovat při odvození schématu. **InferXmlSchema** přebírá dva povinné argumenty: umístění dokumentu XML, určené názvem souboru, datovým proudem nebo **XmlReader**; a pole řetězců pro obory názvů XML, které bude operace ignorovat.  
+ Můžete také instruovat **datovou sadu** , aby odvodit schéma z dokumentu XML pomocí metody **InferXmlSchema** **datové sady**. **InferXmlSchema** funguje stejně jako **ReadXml** s **XmlReadModeem** **InferSchema** (načítá data a také odvodit schéma) a **ReadXmlSchema** , pokud dokument, který čte, neobsahuje žádné vložené schéma. **InferXmlSchema** však poskytuje další funkce, které vám umožní určit konkrétní obory názvů XML, které se mají ignorovat při odvození schématu. **InferXmlSchema** přebírá dva povinné argumenty: umístění dokumentu XML, určené názvem souboru, datovým proudem nebo **XmlReader**; a pole řetězců pro obory názvů XML, které bude operace ignorovat.  
   
  Zvažte například následující kód XML:  
   
@@ -73,7 +73,7 @@ xmlStream.Close();
 </NewDataSet>  
 ```  
   
- Z důvodu atributů zadaných pro prvky v předchozím dokumentu XML, by metoda **ReadXmlSchema** a metoda **ReadXml** s XmlReadModeem **InferSchema** vytvořila tabulky pro každý prvek v dokumentů **Kategorie**, **KódKategorie**, **CategoryName**, **Description**, **Products**, **ProductID**, **ReorderLevel**a **ukončeno**. (Další informace najdete v tématu [odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md).) Vhodnější strukturou je však vytvořit pouze tabulky **Categories** a **Products** a následně vytvořit sloupce **KódKategorie**, **CategoryName**a **Description** v tabulce categories ( **kategorie** ) a  **ProductID**, **ReorderLevel**a **vyřazené** sloupce v tabulce **Products** . Aby bylo zajištěno, že odvozené schéma ignoruje atributy zadané v elementech XML, použijte metodu **InferXmlSchema** a určete obor názvů XML pro **officedata** , jak je znázorněno v následujícím příkladu.  
+ Z důvodu atributů zadaných pro prvky v předchozím dokumentu XML, by metoda **ReadXmlSchema** a metoda **ReadXml** s **XmlReadModeem** **InferSchema** vytvořila tabulky pro každý prvek v dokumentů **Kategorie**, **KódKategorie**, **CategoryName**, **Description**, **Products**, **ProductID**, **ReorderLevel**a **ukončeno**. (Další informace najdete v tématu [odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md).) Vhodnější strukturou je však vytvořit pouze tabulky **Categories** a **Products** a následně vytvořit sloupce **KódKategorie**, **CategoryName**a **Description** v tabulce **categories (kategorie** ) a  **ProductID**, **ReorderLevel**a **vyřazené** sloupce v tabulce **Products** . Aby bylo zajištěno, že odvozené schéma ignoruje atributy zadané v elementech XML, použijte metodu **InferXmlSchema** a určete obor názvů XML pro **officedata** , jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -92,4 +92,4 @@ dataSet.InferXmlSchema("input_od.xml", new string[] "urn:schemas-microsoft-com:o
 - [Odvození relační struktury datové sady z XML](inferring-dataset-relational-structure-from-xml.md)
 - [Načtení datové sady z XML](loading-a-dataset-from-xml.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -9,58 +9,58 @@ helpviewer_keywords:
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bd84d84706a0d61f26b576b7300fae87fbe602e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 677bee7319a80e405098f0dd5c8684765806c5f7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984162"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796883"
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
-Tato část obsahuje informace o nespravované rozhraní API, která je možné spravovat souvisejícím s kódem aplikace, jako je například hostitelská prostředí modulu runtime, kompilátory, disassemblery, obfuscators, ladicí programy a profilery.  
+Tato část obsahuje informace o nespravovaných rozhraních API, která mohou používat aplikace související se spravovaným kódem, jako jsou hostitelé modulu runtime, kompilátory, rozdávající, deassemblery, ladicí programy a profilery.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Běžné typy dat](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
- Uvádí běžné typy dat, které se používají, zejména v nespravované profilování a ladění v rozhraní API.  
+ [Běžné typy dat](common-data-types-unmanaged-api-reference.md)  
+ Obsahuje seznam běžných používaných datových typů, zejména v nespravovaných profilech a rozhraní API pro ladění.  
   
- [ALink](../../../docs/framework/unmanaged-api/alink/index.md)  
- Popisuje rozhraní API ALink, který podporuje vytvoření nevázaného modulů a sestavení rozhraní .NET Framework.  
+ [ALink](./alink/index.md)  
+ Popisuje rozhraní API ALink, které podporuje vytváření .NET Framework sestavení a nevázaných modulů.  
   
- [Authenticode](../../../docs/framework/unmanaged-api/authenticode/index.md)  
- Podporuje modul vytváření a ověřování Authenticode XrML licence.  
+ [Authenticode](./authenticode/index.md)  
+ Podporuje modul pro vytváření a ověřování licencí Authenticode.  
   
- [Konstanty](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
- Popisuje, které jsou definovány v CorSym.idl konstanty.  
+ [Konstanty](constants-unmanaged-api-reference.md)  
+ Popisuje konstanty, které jsou definovány v CorSym. idl.  
   
  [Vlastní atributy rozhraní](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms231946(v=vs.100))  
- Popisuje komponenty object model (COM) vlastní atributy rozhraní.  
+ Popisuje vlastní atributy rozhraní modelu COM (Component Object Model).  
   
- [Ladění](../../../docs/framework/unmanaged-api/debugging/index.md)  
- Popisuje rozhraní API pro ladění, která umožňuje ladicí program k ladění kódu spuštěného v prostředí common language runtime (CLR).  
+ [Ladění](./debugging/index.md)  
+ Popisuje rozhraní API pro ladění, které umožňuje ladicímu programu ladit kód, který běží v prostředí modulu CLR (Common Language Runtime).  
   
- [Úložiště symbolů diagnostiky](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
- Popisuje úložiště symbolů diagnostiky rozhraní API, která umožňuje kompilátoru generovat informace o symbolech pro použití ladicím programem.  
+ [Úložiště symbolů diagnostiky](./diagnostics/index.md)  
+ Popisuje rozhraní API pro úložiště symbolů diagnostiky, které umožňuje kompilátoru generovat informace o symbolech pro použití v ladicím programu.  
   
- [Fúze](../../../docs/framework/unmanaged-api/fusion/index.md)  
- Popisuje rozhraní API fusion, které umožňuje hostitelský modul runtime pro přístup k vlastnosti prostředků aplikace Pokud chcete najít správné verze prvků tyto prostředky pro aplikaci.  
+ [Fúze](./fusion/index.md)  
+ Popisuje rozhraní API pro syntézu, které umožňuje hostiteli modulu runtime získat přístup k vlastnostem prostředků aplikace, aby bylo možné najít správné verze těchto prostředků pro aplikaci.  
   
- [Hostování](../../../docs/framework/unmanaged-api/hosting/index.md)  
- Popisuje hostujícího rozhraní API, která umožňuje nespravovaným hostitelům k integraci modulu CLR do svých aplikací.  
+ [Hostování](./hosting/index.md)  
+ Popisuje hostující rozhraní API, které umožňuje nespravovaným hostitelům integrovat CLR do svých aplikací.  
   
- [Metadata](../../../docs/framework/unmanaged-api/metadata/index.md)  
- Popisuje metadat rozhraní API, které umožňuje klientovi jako je například kompilátor generovat nebo získat přístup k metadatům komponenty bez typů načítání platformou CLR.  
+ [Metadata](./metadata/index.md)  
+ Popisuje rozhraní API metadat, které umožňuje klientovi, jako je například kompilátor, generovat nebo přistupovat k metadatům komponenty bez typů načítaných modulem CLR.  
   
- [Profilace](../../../docs/framework/unmanaged-api/profiling/index.md)  
- Popisuje rozhraní profilování API umožňuje profileru sledujte provádění programu CLR.  
+ [Profilace](./profiling/index.md)  
+ Popisuje rozhraní API profilování, které umožňuje profileru monitorovat provádění programu modulem CLR.  
   
- [Vytváření silných názvů](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
- Popisuje silné pojmenovávání API, které umožňuje klientovi spravovat podepisování sestavení silným názvem.  
+ [Vytváření silných názvů](./strong-naming/index.md)  
+ Popisuje rozhraní API pro silné pojmenování, které umožňuje klientovi spravovat podepisování silného názvu pro sestavení.  
 
  [WMI a čítače výkonu](wmi/index.md)  
- Popisuje rozhraní API, který obalují volání knihovny Windows Management Instrumentation (WMI).
+ Popisuje rozhraní API, která zabalí volání do knihoven rozhraní WMI (Windows Management Instrumentation) (WMI).
   
- [Pomocné funkce Tlbexp](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- Popisuje dva pomocné funkce a rozhraní Exportér knihovny typů (Tlbexp.exe) během procesu převodu sestavení na typu knihovny.  
+ [Pomocné funkce Tlbexp](./tlbexp/index.md)  
+ V této části najdete popis dvou pomocných funkcí a rozhraní, které používá Exportér knihovny typů (Tlbexp. exe) během procesu převodu sestavení na typ knihovny.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  

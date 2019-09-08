@@ -4,15 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
-ms.openlocfilehash: 4f6203fd6ae69315e7efaaa3c17bb4132bd175d8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 917797700c3e403971ce6f48174a282b1102f127
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930847"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799318"
 ---
 # <a name="string-functions-visual-basic"></a>Funkce řetězce (Visual Basic)
-V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje k vyhledávání a manipulaci s řetězci.  
+
+V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje ve <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> třídě pro hledání a manipulaci s řetězci. Je možné je považovat za Visual Basic vnitřních funkcí; To znamená, že je nemusíte volat jako explicitní členy třídy, jak je znázorněno v příkladu. Další metody a v některých případech doplňkové metody jsou k dispozici ve <xref:System.String?displayProperty=nameWithType> třídě. 
   
 |.NET Framework – metoda|Popis|  
 |---------------------------|-----------------|  
@@ -48,33 +49,38 @@ V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje k vy
   
  Můžete použít příkaz [Compare Option](../../../visual-basic/language-reference/statements/option-compare-statement.md) k nastavení, zda jsou řetězce porovnány pomocí pořadí řazení textu bez ohledu na velikost písmen určeného národním prostředím systému (`Text`) nebo vnitřními binárními reprezentacemi znaků (`Binary`). Výchozí metoda porovnání textu je `Binary`.  
   
-## <a name="example"></a>Příklad  
- Tento příklad používá `UCase` funkci k vrácení velkých a malých písmen řetězce.  
+## <a name="example-ucase"></a>Příklad: UCase
+
+Tento příklad používá `UCase` funkci k vrácení velkých a malých písmen řetězce.  
+[!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
   
- [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
+## <a name="example-ltrim"></a>Příklad: LTrim
+
+Tento příklad používá `LTrim` funkci k obložení úvodních mezer `RTrim` a funkce pro obložení koncových mezer z řetězcové proměnné. Používá `Trim` funkci pro odložení obou typů mezer.  
   
-## <a name="example"></a>Příklad  
- Tento příklad používá `LTrim` funkci k obložení úvodních mezer `RTrim` a funkce pro obložení koncových mezer z řetězcové proměnné. Používá `Trim` funkci pro odložení obou typů mezer.  
+[!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
   
- [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
+## <a name="example-mid"></a>Příklad: Mid
+
+Tento příklad používá `Mid` funkci k vrácení zadaného počtu znaků z řetězce.  
+
+[!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
+
+## <a name="example-len"></a>Příklad: Funkce
+
+Tento příklad používá `Len` k vrácení počtu znaků v řetězci.  
   
-## <a name="example"></a>Příklad  
- Tento příklad používá `Mid` funkci k vrácení zadaného počtu znaků z řetězce.  
+[!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
   
- [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
+## <a name="example-instr"></a>Příklad: InStr
+
+Tento příklad používá `InStr` funkci k vrácení pozice prvního výskytu jednoho řetězce v jiném.  
   
-## <a name="example"></a>Příklad  
- Tento příklad používá `Len` k vrácení počtu znaků v řetězci.  
+[!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
   
- [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
-  
-## <a name="example"></a>Příklad  
- Tento příklad používá `InStr` funkci k vrácení pozice prvního výskytu jednoho řetězce v jiném.  
-  
- [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
-  
-## <a name="example"></a>Příklad  
- Tento příklad ukazuje různá použití `Format` funkce pro formátování hodnot `String` pomocí formátů i uživatelsky definovaných formátů. V případě oddělovače data`/`(), oddělovače`:`času () a indikátory AM/PM`t` ( `tt`a) je skutečný formátovaný výstup zobrazený systémem závislý na nastavení národního prostředí, které kód používá. Když jsou časy a kalendářní data zobrazeny ve vývojovém prostředí, je použit krátký formát času a formát krátkého data národního prostředí kódu.  
+## <a name="example-format"></a>Příklad: Formát
+
+Tento příklad ukazuje různá použití `Format` funkce pro formátování hodnot `String` pomocí formátů i uživatelsky definovaných formátů. V případě oddělovače data`/`(), oddělovače`:`času () a indikátory AM/PM`t` ( `tt`a) je skutečný formátovaný výstup zobrazený systémem závislý na nastavení národního prostředí, které kód používá. Když jsou časy a kalendářní data zobrazeny ve vývojovém prostředí, je použit krátký formát času a formát krátkého data národního prostředí kódu.  
   
 > [!NOTE]
 > Pro národní prostředí, která používají 24hodinové hodiny, se indikátory AM/PM (`t` a `tt`) nezobrazí nic.  
@@ -86,3 +92,4 @@ V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje k vy
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
 - [Souhrn manipulace s řetězci](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)
+- [Metody třídy System. String]<xref:System.String#methods?displayProperty=nameWithType>

@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
-ms.openlocfilehash: 2e1cf9efcf47fc70421c64541aead5fb36d8c9d1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: be0aea66f0923b8b353f42cecc9360731efc7bb9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61916770"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792844"
 ---
 # <a name="querying-across-relationships"></a>Dotazování napříč relacemi
-Odkazy na jiné objekty nebo kolekce jiných objektů ve svých definicích třídy přímo odpovídají vztahy cizího klíče v databázi. Tyto vztahy můžete použít při dotazování pomocí zápisu s tečkou pro přístup k vlastnosti relace a přejít z jednoho objektu na jiný. Tyto operace přístupu přeložit více komplexním spojením nebo korelační poddotazy v ekvivalentní SQL.  
+Odkazy na jiné objekty nebo kolekce jiných objektů v definicích vaší třídy přímo odpovídají vztahům cizího klíče v databázi. Tyto relace můžete použít při dotazování pomocí zápisu teček pro přístup k vlastnostem vztahu a přechodu z jednoho objektu na jiný. Tyto operace přístupu se převádějí na složitější spojení nebo korelační poddotazy v ekvivalentním SQL.  
   
- Například následující dotaz přejde z objednávek zákazníků jako způsob, jak omezit výsledky pouze příkazy pro zákazníci, kteří žijí v Londýně.  
+ Například následující dotaz přechází z objednávek na zákazníky jako způsob, jak omezit výsledky jenom na objednávky pro zákazníky, kteří se nacházejí v Londýně.  
   
  [!code-csharp[DLinqQueryConcepts#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#3)]
  [!code-vb[DLinqQueryConcepts#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#3)]  
   
- Pokud neexistuje vlastnosti vztahu potřeba je napsat ručně jako *spojení*stejně, jako byste to udělali v dotazu SQL, stejně jako v následujícím kódu:  
+ Pokud vlastnosti vztahu neexistují, musíte je napsat ručně jako *spojení*, stejně jako v dotazu SQL, jako v následujícím kódu:  
   
  [!code-csharp[DLinqQueryConcepts#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#4)]
  [!code-vb[DLinqQueryConcepts#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#4)]  
   
- Můžete použít *vztah* vlastnost pro definování této konkrétní relaci jednou. Potom můžete pohodlnější tečkové syntaxe. Ale vlastnosti vztahu existovat ještě důležitější, protože objekt doménově specifické modely jsou obvykle definovány jako hierarchie nebo grafy. Objekty, které můžete programovat proti odkazují na jiné objekty. Je pouze odpovídající objektu do objektu relace cizího klíče styl vztahy v databázích všechno nejlepší shoda. Přístup k vlastnostem poskytuje pohodlný způsob, jak napsat spojení.  
+ Můžete použít vlastnost *Relationship* k definování tohoto konkrétního vztahu v jednom okamžiku. Pak můžete použít pohodlnější syntaxi teček. Ale vlastnosti vztahu existují důležitější, protože objektové modely specifické pro doménu jsou obvykle definovány jako hierarchie nebo grafy. Objekty, které program mají, mají odkazy na jiné objekty. Je to jenom šťastný výskyt, který vztahy mezi objekty a objekty odpovídají vztahům na základě vztahu cizího klíče v databázích. Přístup k vlastnostem pak poskytuje pohodlný způsob, jak psát spojení.  
   
- S ohledem na to jsou vlastnosti relace důležitějším na straně výsledků dotazu než jako součást samotný dotaz. Po dotaz načte data o určitého zákazníka, definice třídy označuje, že zákazníci mají objednávky. Jinými slovy, můžete očekávat `Orders` vlastnost určitého zákazníka kolekce, který je naplněn všech objednávek tohoto zákazníka. To je ve skutečnosti smlouvu, kterou jste deklarovali definováním třídy tímto způsobem. Byste měli vidět objednávky existuje i v případě, že dotaz nezažádali objednávky. Očekáváte, že váš model objektu udržovat dojem, že se jedná o rozšíření v paměti z databáze se souvisejícími objekty, které jsou okamžitě dostupné.  
+ Z toho vyplývá, že vlastnosti vztahu jsou důležitější než na straně výsledků dotazu, než jako součást dotazu samotného. Poté, co dotaz načte data o konkrétním zákazníkovi, definice třídy označuje, že zákazníci mají objednávky. Jinými slovy, očekáváte `Orders` , že vlastnost určitého zákazníka bude kolekce, která je vyplněna všemi objednávkami tohoto zákazníka. To je ve skutečnosti kontrakt, který jste deklarovali definováním tříd tímto způsobem. Očekává se, že se zobrazí objednávky i v případě, že dotaz nepožadoval objednávky. Očekáváte, že objektový model udržuje iluzi, že se jedná o příponu v paměti databáze se souvisejícími objekty hned dostupnými.  
   
- Teď, když máte relace, můžete psát dotazy rekapitulací vztah vlastnosti definované ve třídách. Tyto relace odkazy odpovídají vztahy cizího klíče v databázi. Operace, které používají tyto vztahy přeložit na složitější spojení v ekvivalentní SQL. Tak dlouho, dokud relace byla definována (pomocí <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut), nemají explicitní spojení v kódu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Teď, když máte relace, můžete napsat dotazy odkazem na vlastnosti vztahu definované ve vašich třídách. Tyto odkazy na relace odpovídají vztahům cizího klíče v databázi. Operace, které tyto relace používají, se převádějí do složitějších spojení v ekvivalentním kódu SQL. Pokud jste definovali relaci (pomocí <xref:System.Data.Linq.Mapping.AssociationAttribute> atributu), nemusíte kód explicitní [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]spojení nakódovat.  
   
- Zachovat tento dojem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje techniky označované jako *odložené načítání*. Další informace najdete v tématu [odložené versus okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+ Pro usnadnění zachování tohoto iluze [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implementuje techniku s názvem *odložené načítání*. Další informace najdete v tématu [odložené porovnání a okamžité načítání](deferred-versus-immediate-loading.md).  
   
- Vezměte v úvahu následující dotaz SQL, projektů seznam `CustomerID` - `OrderID` dvojice:  
+ Vezměte v úvahu následující dotaz SQL pro projektování seznamu `CustomerID` - `OrderID` párů:  
   
 ```  
 SELECT t0.CustomerID, t1.OrderID  
@@ -42,16 +42,16 @@ FROM   Customers AS t0 INNER JOIN
 WHERE  (t0.City = @p0)  
 ```  
   
- Získání stejných výsledků pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], je použít `Orders` vlastnost odkazovat již existuje ve `Customer` třídy. `Orders` Informace potřebné k provedení dotazu a projekt obsahuje odkaz `CustomerID` - `OrderID` dvojice, stejně jako v následujícím kódu:  
+ Chcete-li získat stejné výsledky pomocí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], použijte `Customer` odkaz na `Orders` vlastnost již existující ve třídě. Odkaz poskytuje potřebné informace pro spuštění dotazu - a `OrderID` `CustomerID` projekt párů, jak je uvedeno v následujícím kódu: `Orders`  
   
  [!code-csharp[DLinqQueryConcepts#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#5)]
  [!code-vb[DLinqQueryConcepts#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#5)]  
   
- Můžete také provést opačně. To znamená, můžete dát dotaz na `Orders` a použít jeho `Customer` vztah odkazu na přístup k informacím o přidruženého `Customer` objektu. Následující kód projekty stejné `CustomerID` - `OrderID` dvojice stejně jako předtím, ale tentokrát dotazováním `Orders` místo `Customers`.  
+ Můžete také provést zpětný chod. To znamená, že se můžete `Orders` dotazovat a `Customer` použít svůj odkaz na relaci pro přístup k `Customer` informacím o přidruženém objektu. Následující kód projektuje `CustomerID` stejné - `OrderID` páry jako `Orders` předtím, `Customers`ale tentokrát se dotazuje namísto.  
   
  [!code-csharp[DLinqQueryConcepts#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#6)]
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
+- [Koncepty dotazů](query-concepts.md)

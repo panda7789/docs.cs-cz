@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 714ec7bda4f6c79b789d6c3029b68a04cef1342b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ed9149eb5b88d648c02863e0fb0101e5503e1c73
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041230"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782140"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 
 V následujících částech najdete odpovědi na některé běžné problémy, se kterými se můžete [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]setkat při implementaci nástroje.
 
-Další problémy jsou řešeny při [řešení potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).
+Další problémy jsou řešeny při [řešení potíží](troubleshooting.md).
 
 ## <a name="cannot-connect"></a>Nejde se připojit
 
 Otázka: Nemůžu se připojit k databázi.
 
-A. Ujistěte se, že je připojovací řetězec správný a že je spuštěná instance SQL Server. Upozorňujeme také, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] že je nutné povolit protokol pojmenovaných kanálů. Další informace najdete v tématu [výukové postupy](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
+A. Ujistěte se, že je připojovací řetězec správný a že je spuštěná instance SQL Server. Upozorňujeme také, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] že je nutné povolit protokol pojmenovaných kanálů. Další informace najdete v tématu [výukové postupy](learning-by-walkthroughs.md).
 
 ## <a name="changes-to-database-lost"></a>Změny databáze ztraceny
 
@@ -40,7 +40,7 @@ Přesné podrobnosti o využití připojení závisí na následujících inform
 
 - Stav připojení, <xref:System.Data.Linq.DataContext> je-li objekt vytvořen pomocí objektu připojení.
 
-- Nastavení připojovacího řetězce (například povolení více aktivních sad výsledků (MARS). Další informace najdete v tématu [několik aktivních sad výsledků dotazu (MARS)](../../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md).
+- Nastavení připojovacího řetězce (například povolení více aktivních sad výsledků (MARS). Další informace najdete v tématu [několik aktivních sad výsledků dotazu (MARS)](../multiple-active-result-sets-mars.md).
 
 ## <a name="updating-without-querying"></a>Aktualizace bez dotazování
 
@@ -56,7 +56,7 @@ A. I [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] když n
 
 Otázka: Dotaz vrací neočekávané výsledky. Jak se dá zkontrolovat, co se děje?
 
-A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]poskytuje několik nástrojů pro kontrolu kódu SQL, který generuje. Jedním z nejdůležitějších je <xref:System.Data.Linq.DataContext.Log%2A>. Další informace najdete v tématu [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md).
+A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]poskytuje několik nástrojů pro kontrolu kódu SQL, který generuje. Jedním z nejdůležitějších je <xref:System.Data.Linq.DataContext.Log%2A>. Další informace najdete v tématu [Podpora ladění](debugging-support.md).
 
 ## <a name="unexpected-stored-procedure-results"></a>Neočekávané výsledky uložených procedur
 
@@ -110,13 +110,13 @@ select nax(i) AS MaxResult from t where name like 'hello'
 end
 ```
 
-Další informace najdete v tématu [přizpůsobení operací pomocí uložených procedur](../../../../../../docs/framework/data/adonet/sql/linq/customizing-operations-by-using-stored-procedures.md).
+Další informace najdete v tématu [přizpůsobení operací pomocí uložených procedur](customizing-operations-by-using-stored-procedures.md).
 
 ## <a name="serialization-errors"></a>Chyby serializace
 
 Otázka: Při pokusu o serializaci se zobrazí následující chyba: Zadejte System. data. Linq. ChangeTracker + StandardChangeTracker... není označen jako serializovatelný. "
 
-A. Generování kódu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nástroji <xref:System.Runtime.Serialization.DataContractSerializer> podporuje serializaci. <xref:System.Xml.Serialization.XmlSerializer> Nepodporuje nebo <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Další informace naleznete v tématu [serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md).
+A. Generování kódu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nástroji <xref:System.Runtime.Serialization.DataContractSerializer> podporuje serializaci. <xref:System.Xml.Serialization.XmlSerializer> Nepodporuje nebo <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Další informace naleznete v tématu [serializace](serialization.md).
 
 ## <a name="multiple-dbml-files"></a>Více souborů DBML
 
@@ -210,13 +210,13 @@ Otázka: Je k dispozici konstrukce, která může <xref:System.Data.Linq.DataCon
 
 A. Nepokoušejte se znovu použít instance <xref:System.Data.Linq.DataContext>. Každá <xref:System.Data.Linq.DataContext> z nich udržuje stav (včetně mezipaměti identit) pro jednu konkrétní relaci úprav/dotazů. Chcete-li získat nové instance založené na aktuálním stavu databáze, použijte novou <xref:System.Data.Linq.DataContext>.
 
-Můžete dál používat základní sdružování připojení ADO.NET. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).
+Můžete dál používat základní sdružování připojení ADO.NET. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../sql-server-connection-pooling.md).
 
 ## <a name="second-datacontext-is-not-updated"></a>Druhý kontext kontextu není aktualizován.
 
 Otázka: Použil ( <xref:System.Data.Linq.DataContext> a) jsem jednu instanci pro ukládání hodnot do databáze. Druhý <xref:System.Data.Linq.DataContext> ve stejné databázi ale neodráží aktualizované hodnoty. Druhá <xref:System.Data.Linq.DataContext> instance se jeví pro vrácení hodnot uložených v mezipaměti.
 
-A. Toto chování je záměrné. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nadále vrací stejné instance nebo hodnoty, které jste viděli v první instanci. Při provádění aktualizací se používá Optimistická souběžnost. Původní data se používají ke kontrole stavu aktuální databáze a k vyhodnocení, že se ve skutečnosti stále nezměnila. Pokud došlo ke změně, dojde ke konfliktu a aplikace ji musí vyřešit. Jednou z možností aplikace je obnovit původní stav do stavu aktuální databáze a pokusit se o aktualizaci. Další informace najdete v tématu [jak: Spravujte konflikty](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)změn.
+A. Toto chování je záměrné. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nadále vrací stejné instance nebo hodnoty, které jste viděli v první instanci. Při provádění aktualizací se používá Optimistická souběžnost. Původní data se používají ke kontrole stavu aktuální databáze a k vyhodnocení, že se ve skutečnosti stále nezměnila. Pokud došlo ke změně, dojde ke konfliktu a aplikace ji musí vyřešit. Jednou z možností aplikace je obnovit původní stav do stavu aktuální databáze a pokusit se o aktualizaci. Další informace najdete v tématu [jak: Spravujte konflikty](how-to-manage-change-conflicts.md)změn.
 
 Můžete také nastavit <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> hodnotu false, která vypne ukládání do mezipaměti a sledování změn. Pak můžete načíst nejnovější hodnoty pokaždé, když budete dotazováni.
 
@@ -228,6 +228,6 @@ A. Režim jen pro čtení vypne schopnost kontextu sledovat změny.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Odstraňování potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)
-- [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)
+- [Referenční informace](reference.md)
+- [Odstraňování potíží](troubleshooting.md)
+- [Zabezpečení v LINQ to SQL](security-in-linq-to-sql.md)

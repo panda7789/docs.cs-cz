@@ -2,12 +2,12 @@
 title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: 83dce7173c016a7d7d2d626bb7a3606de29d54ae
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d6cd6f04a9fdeafe7c419b40023af6c71d553ac7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204465"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784282"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
 Nejsou-li prvky vnořené, nejsou vytvořeny žádné implicitní vztahy. Můžete však explicitně zadat vztahy mezi prvky, které nejsou vnořeny pomocí anotace **msdata: Relationship** .  
@@ -68,4 +68,4 @@ Nested: False
 
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

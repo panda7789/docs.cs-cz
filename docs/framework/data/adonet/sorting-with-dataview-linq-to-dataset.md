@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
-ms.openlocfilehash: 496d6f6ffef8d15e368979a67a8beed62ab86c38
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 481a56f923c4218cd8689c578ce990785aee0ab3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918195"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782720"
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>Řazení pomocí zobrazení dat (LINQ to DataSet)
 Možnost řadit data na základě určitých kritérií a potom data prezentovat klientovi prostřednictvím ovládacího prvku uživatelského rozhraní je důležitým aspektem datových vazeb. <xref:System.Data.DataView>nabízí několik způsobů řazení dat a vrácení řádků dat seřazených podle konkrétních kritérií řazení. Kromě funkcí <xref:System.Data.DataView> řazení založených na řetězci vám také umožní používat [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] výrazy pro kritéria řazení. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]výrazy umožňují mnohem složitější a výkonné operace řazení než řazení založené na řetězci. Toto téma popisuje oba přístupy k řazení pomocí <xref:System.Data.DataView>.  
@@ -20,7 +20,7 @@ Možnost řadit data na základě určitých kritérií a potom data prezentovat
   
  Řazení založené na výrazu nabízí výkonnější a složitější řazení než zjednodušené řazení založené na řetězcích. Všimněte si, že řazení založené na řetězcích a výrazech se vzájemně vylučují. Pokud je založen <xref:System.Data.DataView.Sort%2A> na typu <xref:System.Data.DataView> String po vytvoření z dotazu, filtr založený na výrazu odvozený z dotazu je vymazán a nemůže být resetován.  
   
- Index pro <xref:System.Data.DataView> je sestaven <xref:System.Data.DataView> při vytvoření a při změně jakékoli informace o řazení nebo filtrování. Dosáhnete nejlepšího výkonu tím, že zadáte kritéria řazení v LINQ to DataSet dotaz, <xref:System.Data.DataView> ze kterého se vytvoří, a neupravují informace o řazení později. Další informace najdete v tématu [výkon objektu DataView](../../../../docs/framework/data/adonet/dataview-performance.md).  
+ Index pro <xref:System.Data.DataView> je sestaven <xref:System.Data.DataView> při vytvoření a při změně jakékoli informace o řazení nebo filtrování. Dosáhnete nejlepšího výkonu tím, že zadáte kritéria řazení v LINQ to DataSet dotaz, <xref:System.Data.DataView> ze kterého se vytvoří, a neupravují informace o řazení později. Další informace najdete v tématu [výkon objektu DataView](dataview-performance.md).  
   
 > [!NOTE]
 > Ve většině případů výrazy použité pro řazení by neměly mít vedlejší účinky a musí být deterministické. Výrazy by neměly obsahovat ani žádnou logiku, která závisí na nastaveném počtu spuštění, protože operace řazení mohou být provedeny libovolným počtem opakování.  
@@ -48,7 +48,7 @@ Možnost řadit data na základě určitých kritérií a potom data prezentovat
   
  Funkce řazení založené na řetězci a na základě výrazů se vzájemně vylučují. Nastavením vlastnosti se zruší řazení založené na výrazu zděděné z dotazu <xref:System.Data.DataView> , ze kterého byl vytvořen. <xref:System.Data.DataView.Sort%2A>  
   
- Další informace o filtrování na základě <xref:System.Data.DataView.Sort%2A> řetězců najdete v tématu [řazení a filtrování dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
+ Další informace o filtrování na základě <xref:System.Data.DataView.Sort%2A> řetězců najdete v tématu [řazení a filtrování dat](./dataset-datatable-dataview/sorting-and-filtering-data.md).  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.DataView> z tabulky kontaktů a seřadí řádky podle příjmení v sestupném pořadí a křestní jméno ve vzestupném pořadí:  
@@ -83,6 +83,6 @@ Možnost řadit data na základě určitých kritérií a potom data prezentovat
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
-- [Filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)
+- [Datová vazba a LINQ to DataSet](data-binding-and-linq-to-dataset.md)
+- [Filtrování se zobrazením dat](filtering-with-dataview-linq-to-dataset.md)
 - [Řazení dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb546145(v=vs.120))

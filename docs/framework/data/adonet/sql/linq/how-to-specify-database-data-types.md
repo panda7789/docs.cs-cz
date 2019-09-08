@@ -2,27 +2,27 @@
 title: 'Postupy: Zadání datových typů v databázi'
 ms.date: 03/30/2017
 ms.assetid: 2228fdad-7e6a-4b1b-b4d1-79d0198b7c28
-ms.openlocfilehash: 67f23ff06aefbcff4ba7e2eaab63d9b8493b9717
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 09ca8dc6fa440138523bcd2905335a04517dd806
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033667"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793268"
 ---
 # <a name="how-to-specify-database-data-types"></a>Postupy: Zadání datových typů v databázi
-Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnosti <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut zadat přesný text, který definuje sloupce v tabulce deklaraci T-SQL.  
+Použijte vlastnost u<xref:System.Data.Linq.Mapping.ColumnAttribute> atributu k určení přesného textu, který definuje sloupec v deklaraci tabulky T-SQL. <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]  
   
- Je nutné zadat <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost jenom v případě, že máte v plánu používat <xref:System.Data.Linq.DataContext.CreateDatabase%2A> vytvořit instanci databáze.  
+ Vlastnost je nutné zadat <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> pouze v případě, že plánujete použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A> k vytvoření instance databáze.  
   
  Příklady kódu naleznete v tématu <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>.  
   
-### <a name="to-specify-text-to-define-a-data-type-in-a-t-sql-table"></a>Pokud chcete zadat text k definování typů dat v tabulce T-SQL  
+### <a name="to-specify-text-to-define-a-data-type-in-a-t-sql-table"></a>Určení textu pro definování datového typu v tabulce T-SQL  
   
-1. Přidat <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut.  
+1. <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> Přidejte vlastnost<xref:System.Data.Linq.Mapping.ColumnAttribute> do atributu.  
   
-2. Nastavte hodnotu <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnost přesný text, který používá T-SQL.  
+2. Nastavte hodnotu <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A> vlastnosti na přesný text, který je používán T-SQL.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
-- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Objektový model LINQ to SQL](the-linq-to-sql-object-model.md)
+- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](how-to-customize-entity-classes-by-using-the-code-editor.md)
