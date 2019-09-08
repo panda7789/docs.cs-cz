@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 27ad89f1910bc7bb08a23c9fdb0d50828fb8b5e6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e8a22e958740b69ba0e09bf062bf4d86075c3ff1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741433"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777020"
 ---
-# <a name="setnonassemblyflags-method"></a><span data-ttu-id="0277f-102">SetNonAssemblyFlags – metoda</span><span class="sxs-lookup"><span data-stu-id="0277f-102">SetNonAssemblyFlags Method</span></span>
-<span data-ttu-id="0277f-103">Nastaví příznaky, které nejsou specifické pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="0277f-103">Sets flags that are not assembly-specific.</span></span>  
+# <a name="setnonassemblyflags-method"></a><span data-ttu-id="44261-102">SetNonAssemblyFlags – metoda</span><span class="sxs-lookup"><span data-stu-id="44261-102">SetNonAssemblyFlags Method</span></span>
+<span data-ttu-id="44261-103">Nastaví příznaky, které nejsou specifické pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="44261-103">Sets flags that are not assembly-specific.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0277f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0277f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="44261-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="44261-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetNonAssemblyFlags(  
@@ -34,18 +34,18 @@ HRESULT SetNonAssemblyFlags(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0277f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0277f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="44261-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="44261-105">Parameters</span></span>  
  `afFlags`  
- <span data-ttu-id="0277f-106">Příznaky ALink.</span><span class="sxs-lookup"><span data-stu-id="0277f-106">ALink flags.</span></span>  
+ <span data-ttu-id="44261-106">Příznaky ALink</span><span class="sxs-lookup"><span data-stu-id="44261-106">ALink flags.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0277f-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0277f-107">Return Value</span></span>  
- <span data-ttu-id="0277f-108">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="0277f-108">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="44261-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="44261-107">Return Value</span></span>  
+ <span data-ttu-id="44261-108">Vrací S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="44261-108">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0277f-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0277f-109">Requirements</span></span>  
- <span data-ttu-id="0277f-110">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="0277f-110">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="44261-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="44261-109">Requirements</span></span>  
+ <span data-ttu-id="44261-110">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="44261-110">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0277f-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0277f-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44261-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="44261-111">See also</span></span>
 
-- [<span data-ttu-id="0277f-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0277f-112">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="0277f-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0277f-113">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="0277f-114">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="0277f-114">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="44261-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="44261-112">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="44261-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="44261-113">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="44261-114">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="44261-114">ALink API</span></span>](index.md)

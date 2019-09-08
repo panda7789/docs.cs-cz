@@ -18,39 +18,39 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76ada8400573dd61c25e0dce3f49ce66b5fb30c1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 29f492173a7fd22ab497d6e0096798e164fccf26
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773811"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796302"
 ---
-# <a name="nukedownloadedcache-function"></a><span data-ttu-id="ed95f-102">NukeDownloadedCache – funkce</span><span class="sxs-lookup"><span data-stu-id="ed95f-102">NukeDownloadedCache Function</span></span>
-<span data-ttu-id="ed95f-103">Odstraní běžné mezipaměť pro stahování language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="ed95f-103">Deletes the common language runtime (CLR) download cache.</span></span>  
+# <a name="nukedownloadedcache-function"></a><span data-ttu-id="e9743-102">NukeDownloadedCache – funkce</span><span class="sxs-lookup"><span data-stu-id="e9743-102">NukeDownloadedCache Function</span></span>
+<span data-ttu-id="e9743-103">Odstraní mezipaměť pro stažení modulu CLR (Common Language Runtime).</span><span class="sxs-lookup"><span data-stu-id="e9743-103">Deletes the common language runtime (CLR) download cache.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ed95f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ed95f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e9743-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e9743-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT NukeDownloadedCache();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="ed95f-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ed95f-105">Return Value</span></span>  
- <span data-ttu-id="ed95f-106">Tato metoda vrací standardní kódy chyb modelu COM, jak je definovaný ve WinError.h.</span><span class="sxs-lookup"><span data-stu-id="ed95f-106">This method returns standard COM error codes, as defined in WinError.h.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e9743-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e9743-105">Return Value</span></span>  
+ <span data-ttu-id="e9743-106">Tato metoda vrátí standardní chybové kódy modelu COM, jak je definováno v WinError. h.</span><span class="sxs-lookup"><span data-stu-id="e9743-106">This method returns standard COM error codes, as defined in WinError.h.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ed95f-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ed95f-107">Remarks</span></span>  
- <span data-ttu-id="ed95f-108">Mezipaměť pro stahování CLR je oblast, kde jsou uložené sestavení se silným názvem, které byly staženy z adresy URL pro opakované použití je to možné.</span><span class="sxs-lookup"><span data-stu-id="ed95f-108">The CLR download cache is the area where strong-named assemblies that are downloaded from a URL are stored for possible reuse.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e9743-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e9743-107">Remarks</span></span>  
+ <span data-ttu-id="e9743-108">Mezipaměť pro stažení CLR je oblast, kde jsou uložena sestavení se silným názvem, která jsou stažena z adresy URL pro možné opakované použití.</span><span class="sxs-lookup"><span data-stu-id="e9743-108">The CLR download cache is the area where strong-named assemblies that are downloaded from a URL are stored for possible reuse.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ed95f-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ed95f-109">Requirements</span></span>  
- <span data-ttu-id="ed95f-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ed95f-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e9743-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e9743-109">Requirements</span></span>  
+ <span data-ttu-id="e9743-110">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e9743-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ed95f-111">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="ed95f-111">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="e9743-111">**Hlaviček** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="e9743-111">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="ed95f-112">**Knihovna:** Soubor Fusion.dll a knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="ed95f-112">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="ed95f-113">Ujistěte se, že můžete cílit na správnou verzi rozhraní .NET Framework pomocí soubor Fusion.dll namísto knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="ed95f-113">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
+ <span data-ttu-id="e9743-112">**Knihovna** Fusion. dll a knihovny Mscorwks. dll.</span><span class="sxs-lookup"><span data-stu-id="e9743-112">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="e9743-113">Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e9743-113">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
   
- <span data-ttu-id="ed95f-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ed95f-114">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
+ <span data-ttu-id="e9743-114">**Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e9743-114">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ed95f-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ed95f-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e9743-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9743-115">See also</span></span>
 
-- [<span data-ttu-id="ed95f-116">CreateHistoryReader – funkce</span><span class="sxs-lookup"><span data-stu-id="ed95f-116">CreateHistoryReader Function</span></span>](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)
-- [<span data-ttu-id="ed95f-117">GetHistoryFileDirectory – funkce</span><span class="sxs-lookup"><span data-stu-id="ed95f-117">GetHistoryFileDirectory Function</span></span>](../../../../docs/framework/unmanaged-api/fusion/gethistoryfiledirectory-function.md)
-- [<span data-ttu-id="ed95f-118">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="ed95f-118">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="e9743-116">CreateHistoryReader – funkce</span><span class="sxs-lookup"><span data-stu-id="e9743-116">CreateHistoryReader Function</span></span>](createhistoryreader-function.md)
+- [<span data-ttu-id="e9743-117">GetHistoryFileDirectory – funkce</span><span class="sxs-lookup"><span data-stu-id="e9743-117">GetHistoryFileDirectory Function</span></span>](gethistoryfiledirectory-function.md)
+- [<span data-ttu-id="e9743-118">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="e9743-118">Fusion Global Static Functions</span></span>](fusion-global-static-functions.md)

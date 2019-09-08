@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd1ec9caa70dd7016253ae4385b16dbfb982f956
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 455f71c5b576d1b57db591dab2a3e59f8a5eed67
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742016"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777282"
 ---
-# <a name="exporttype-method"></a><span data-ttu-id="e535c-102">ExportType – metoda</span><span class="sxs-lookup"><span data-stu-id="e535c-102">ExportType Method</span></span>
-<span data-ttu-id="e535c-103">Určuje, že je typem exportovatelné.</span><span class="sxs-lookup"><span data-stu-id="e535c-103">Specifies that a type is exportable.</span></span>  
+# <a name="exporttype-method"></a><span data-ttu-id="8becd-102">ExportType – metoda</span><span class="sxs-lookup"><span data-stu-id="8becd-102">ExportType Method</span></span>
+<span data-ttu-id="8becd-103">Určuje, že je možné exportovat typ.</span><span class="sxs-lookup"><span data-stu-id="8becd-103">Specifies that a type is exportable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e535c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e535c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8becd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8becd-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ExportType(  
@@ -39,33 +39,33 @@ HRESULT ExportType(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e535c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e535c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="8becd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8becd-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="e535c-106">ID sestavení, ze které chcete exportovat.</span><span class="sxs-lookup"><span data-stu-id="e535c-106">ID of the assembly to export from.</span></span>  
+ <span data-ttu-id="8becd-106">ID sestavení, ze kterého se má exportovat</span><span class="sxs-lookup"><span data-stu-id="8becd-106">ID of the assembly to export from.</span></span>  
   
  `FileToken`  
- <span data-ttu-id="e535c-107">Token nebo sestavení ID souboru pro soubor, který definuje typ exportovatelné.</span><span class="sxs-lookup"><span data-stu-id="e535c-107">File token or assembly ID of file that defines the exportable type.</span></span>  
+ <span data-ttu-id="8becd-107">Token souboru nebo ID sestavení souboru, který definuje exportovatelný typ.</span><span class="sxs-lookup"><span data-stu-id="8becd-107">File token or assembly ID of file that defines the exportable type.</span></span>  
   
  `TypeToken`  
- <span data-ttu-id="e535c-108">Token typu má být provedeno exportovatelné.</span><span class="sxs-lookup"><span data-stu-id="e535c-108">Token of type to be made exportable.</span></span>  
+ <span data-ttu-id="8becd-108">Token typu, který se má provést export.</span><span class="sxs-lookup"><span data-stu-id="8becd-108">Token of type to be made exportable.</span></span>  
   
  `pszTypename`  
- <span data-ttu-id="e535c-109">Plně kvalifikovaný název typu má být provedeno exportovatelné.</span><span class="sxs-lookup"><span data-stu-id="e535c-109">Fully qualified type name to be made exportable.</span></span>  
+ <span data-ttu-id="8becd-109">Plně kvalifikovaný název typu, který se dá exportovat.</span><span class="sxs-lookup"><span data-stu-id="8becd-109">Fully qualified type name to be made exportable.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="e535c-110">`ComType` označí jako `tdPublic` nebo `tdNested`.</span><span class="sxs-lookup"><span data-stu-id="e535c-110">`ComType` flags such as `tdPublic` or `tdNested`.</span></span> <span data-ttu-id="e535c-111">Tento parametr může být předán [defineexportedtype – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span><span class="sxs-lookup"><span data-stu-id="e535c-111">This parameter may be passed to [DefineExportedType Method](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).</span></span>  
+ <span data-ttu-id="8becd-110">`ComType`příznaky jako `tdPublic` nebo `tdNested`.</span><span class="sxs-lookup"><span data-stu-id="8becd-110">`ComType` flags such as `tdPublic` or `tdNested`.</span></span> <span data-ttu-id="8becd-111">Tento parametr může být předán [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).</span><span class="sxs-lookup"><span data-stu-id="8becd-111">This parameter may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).</span></span>  
   
  `pType`  
- <span data-ttu-id="e535c-112">Přijme token pro exportovaný typ.</span><span class="sxs-lookup"><span data-stu-id="e535c-112">Receives token for exported type.</span></span>  
+ <span data-ttu-id="8becd-112">Přijímá token pro exportovaný typ.</span><span class="sxs-lookup"><span data-stu-id="8becd-112">Receives token for exported type.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e535c-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e535c-113">Return Value</span></span>  
- <span data-ttu-id="e535c-114">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="e535c-114">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="8becd-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8becd-113">Return Value</span></span>  
+ <span data-ttu-id="8becd-114">Vrací S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="8becd-114">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e535c-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e535c-115">Requirements</span></span>  
- <span data-ttu-id="e535c-116">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="e535c-116">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8becd-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8becd-115">Requirements</span></span>  
+ <span data-ttu-id="8becd-116">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="8becd-116">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e535c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e535c-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8becd-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8becd-117">See also</span></span>
 
-- [<span data-ttu-id="e535c-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e535c-118">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="e535c-119">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e535c-119">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="e535c-120">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="e535c-120">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="8becd-118">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8becd-118">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="8becd-119">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8becd-119">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="8becd-120">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="8becd-120">ALink API</span></span>](index.md)
