@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a98273307003485202d8c12d5c27fda04ff5a0ae
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5af7dc4e1694b66fc4a5ce37e515c71e9fa3db49
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629878"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796741"
 ---
-# <a name="iassemblycacheitemcreatestream-method"></a><span data-ttu-id="47798-102">IAssemblyCacheItem::CreateStream – metoda</span><span class="sxs-lookup"><span data-stu-id="47798-102">IAssemblyCacheItem::CreateStream Method</span></span>
+# <a name="iassemblycacheitemcreatestream-method"></a><span data-ttu-id="1a4e0-102">IAssemblyCacheItem::CreateStream – metoda</span><span class="sxs-lookup"><span data-stu-id="1a4e0-102">IAssemblyCacheItem::CreateStream Method</span></span>
 
-<span data-ttu-id="47798-103">Vytvoří datový proud se zadaným názvem a formát.</span><span class="sxs-lookup"><span data-stu-id="47798-103">Creates a stream with the specified name and format.</span></span>
+<span data-ttu-id="1a4e0-103">Vytvoří datový proud se zadaným názvem a formátem.</span><span class="sxs-lookup"><span data-stu-id="1a4e0-103">Creates a stream with the specified name and format.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="47798-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="47798-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="1a4e0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1a4e0-104">Syntax</span></span>
 
 ```cpp
 HRESULT CreateStream (
@@ -41,34 +41,34 @@ HRESULT CreateStream (
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="47798-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="47798-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="1a4e0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1a4e0-105">Parameters</span></span>
 
 `dwFlags`\
-<span data-ttu-id="47798-106">[in] Příznaky definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="47798-106">[in] Flags defined in Fusion.idl.</span></span>
+<span data-ttu-id="1a4e0-106">pro Příznaky definované v Fusion. idl</span><span class="sxs-lookup"><span data-stu-id="1a4e0-106">[in] Flags defined in Fusion.idl.</span></span>
 
 `pszStreamName`\
-<span data-ttu-id="47798-107">[in] Název datového proudu, který se má vytvořit.</span><span class="sxs-lookup"><span data-stu-id="47798-107">[in] The name of the stream to be created.</span></span>
+<span data-ttu-id="1a4e0-107">pro Název streamu, který se má vytvořit</span><span class="sxs-lookup"><span data-stu-id="1a4e0-107">[in] The name of the stream to be created.</span></span>
 
 `dwFormat`\
-<span data-ttu-id="47798-108">[in] Formát souboru, který má být datovým proudem.</span><span class="sxs-lookup"><span data-stu-id="47798-108">[in] The format of the file to be streamed.</span></span>
+<span data-ttu-id="1a4e0-108">pro Formát souboru, který se má streamovat</span><span class="sxs-lookup"><span data-stu-id="1a4e0-108">[in] The format of the file to be streamed.</span></span>
 
 `dwFormatFlags`\
-<span data-ttu-id="47798-109">[in] Příznaky formátu konkrétní definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="47798-109">[in] Format-specific flags defined in Fusion.idl.</span></span>
+<span data-ttu-id="1a4e0-109">pro Příznaky specifické pro formát definované v Fusion. idl.</span><span class="sxs-lookup"><span data-stu-id="1a4e0-109">[in] Format-specific flags defined in Fusion.idl.</span></span>
 
 `ppIStream`\
-<span data-ttu-id="47798-110">[out] Ukazatel na adresu vráceného [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.</span><span class="sxs-lookup"><span data-stu-id="47798-110">[out] A pointer to the address of the returned [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.</span></span>
+<span data-ttu-id="1a4e0-110">mimo Ukazatel na adresu vrácené instance [IStream](/windows/desktop/api/objidl/nn-objidl-istream) .</span><span class="sxs-lookup"><span data-stu-id="1a4e0-110">[out] A pointer to the address of the returned [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.</span></span>
 
 `puliMaxSize`\
-<span data-ttu-id="47798-111">[in, volitelné] Maximální velikost datového proudu odkazuje `ppIStream`.</span><span class="sxs-lookup"><span data-stu-id="47798-111">[in, optional] The maximum size of the stream referenced by `ppIStream`.</span></span>
+<span data-ttu-id="1a4e0-111">[in, volitelné] Maximální velikost datového proudu, na který odkazuje `ppIStream`.</span><span class="sxs-lookup"><span data-stu-id="1a4e0-111">[in, optional] The maximum size of the stream referenced by `ppIStream`.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="47798-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="47798-112">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="1a4e0-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1a4e0-112">Requirements</span></span>
 
-<span data-ttu-id="47798-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="47798-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="1a4e0-113">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1a4e0-113">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="47798-114">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="47798-114">**Header:** Fusion.h</span></span>
+<span data-ttu-id="1a4e0-114">**Hlaviček** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="1a4e0-114">**Header:** Fusion.h</span></span>
 
-<span data-ttu-id="47798-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="47798-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+<span data-ttu-id="1a4e0-115">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1a4e0-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="47798-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47798-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1a4e0-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a4e0-116">See also</span></span>
 
-- [<span data-ttu-id="47798-117">IAssemblyCacheItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="47798-117">IAssemblyCacheItem Interface</span></span>](iassemblycacheitem-interface.md)
+- [<span data-ttu-id="1a4e0-117">IAssemblyCacheItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1a4e0-117">IAssemblyCacheItem Interface</span></span>](iassemblycacheitem-interface.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0dd96b10b5ee2880e0f9ee18048ec8ba2ee0b5ab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20e2bff4257df64f761fd8fff880643d4e786748
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779056"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796455"
 ---
-# <a name="iinstallreferenceenumgetnextinstallreferenceitem-method"></a><span data-ttu-id="c60b6-102">IInstallReferenceEnum::GetNextInstallReferenceItem – metoda</span><span class="sxs-lookup"><span data-stu-id="c60b6-102">IInstallReferenceEnum::GetNextInstallReferenceItem Method</span></span>
-<span data-ttu-id="c60b6-103">Získá ukazatel na další [iinstallreferenceitem –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md) objektů obsažených v tomto [iinstallreferenceenum –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="c60b6-103">Gets a pointer to the next [IInstallReferenceItem](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md) object contained in this [IInstallReferenceEnum](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) object.</span></span>  
+# <a name="iinstallreferenceenumgetnextinstallreferenceitem-method"></a><span data-ttu-id="a3dfd-102">IInstallReferenceEnum::GetNextInstallReferenceItem – metoda</span><span class="sxs-lookup"><span data-stu-id="a3dfd-102">IInstallReferenceEnum::GetNextInstallReferenceItem Method</span></span>
+<span data-ttu-id="a3dfd-103">Získá ukazatel na další objekt [IInstallReferenceItem –](iinstallreferenceitem-interface.md) obsažený v tomto objektu [IInstallReferenceEnum –](iinstallreferenceenum-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="a3dfd-103">Gets a pointer to the next [IInstallReferenceItem](iinstallreferenceitem-interface.md) object contained in this [IInstallReferenceEnum](iinstallreferenceenum-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c60b6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c60b6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a3dfd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a3dfd-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetNextInstallReferenceItem (  
@@ -37,24 +37,24 @@ HRESULT GetNextInstallReferenceItem (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c60b6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c60b6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a3dfd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a3dfd-105">Parameters</span></span>  
  `ppRefItem`  
- <span data-ttu-id="c60b6-106">[out] Vrácený `IInstallReferenceItem` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="c60b6-106">[out] The returned `IInstallReferenceItem` pointer.</span></span>  
+ <span data-ttu-id="a3dfd-106">mimo Vrácený `IInstallReferenceItem` ukazatel.</span><span class="sxs-lookup"><span data-stu-id="a3dfd-106">[out] The returned `IInstallReferenceItem` pointer.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="c60b6-107">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="c60b6-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="c60b6-108">`dwFlags` musí být 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="c60b6-108">`dwFlags` must be 0 (zero).</span></span>  
+ <span data-ttu-id="a3dfd-107">pro Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="a3dfd-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="a3dfd-108">`dwFlags`musí mít hodnotu 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="a3dfd-108">`dwFlags` must be 0 (zero).</span></span>  
   
  `pvReserved`  
- <span data-ttu-id="c60b6-109">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="c60b6-109">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="c60b6-110">`pvReserved` musí být referencí s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="c60b6-110">`pvReserved` must be a null reference.</span></span>  
+ <span data-ttu-id="a3dfd-109">pro Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="a3dfd-109">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="a3dfd-110">`pvReserved`musí se jednat o odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="a3dfd-110">`pvReserved` must be a null reference.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c60b6-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c60b6-111">Requirements</span></span>  
- <span data-ttu-id="c60b6-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c60b6-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a3dfd-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a3dfd-111">Requirements</span></span>  
+ <span data-ttu-id="a3dfd-112">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a3dfd-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c60b6-113">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="c60b6-113">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="a3dfd-113">**Hlaviček** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="a3dfd-113">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="c60b6-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c60b6-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="a3dfd-114">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a3dfd-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c60b6-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c60b6-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3dfd-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a3dfd-115">See also</span></span>
 
-- [<span data-ttu-id="c60b6-116">IInstallReferenceItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c60b6-116">IInstallReferenceItem Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
-- [<span data-ttu-id="c60b6-117">IInstallReferenceEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c60b6-117">IInstallReferenceEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md)
+- [<span data-ttu-id="a3dfd-116">IInstallReferenceItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a3dfd-116">IInstallReferenceItem Interface</span></span>](iinstallreferenceitem-interface.md)
+- [<span data-ttu-id="a3dfd-117">IInstallReferenceEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a3dfd-117">IInstallReferenceEnum Interface</span></span>](iinstallreferenceenum-interface.md)
