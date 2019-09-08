@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a2c5c3bbbcf3cf4b87a5f68006c1625666d13926
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e471ee99af57ef980850c0a5d3e4f5f2973967ac
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753886"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796602"
 ---
-# <a name="iassemblynamegetname-method"></a><span data-ttu-id="9ad55-102">IAssemblyName::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="9ad55-102">IAssemblyName::GetName Method</span></span>
-<span data-ttu-id="9ad55-103">Získá název jednoduchý a nešifrované sestavení odkazuje situace [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="9ad55-103">Gets the simple, unencrypted name of the assembly referenced by this [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.</span></span>  
+# <a name="iassemblynamegetname-method"></a><span data-ttu-id="30438-102">IAssemblyName::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="30438-102">IAssemblyName::GetName Method</span></span>
+<span data-ttu-id="30438-103">Získá jednoduchý, nešifrovaný název sestavení, na který odkazuje tento objekt [IAssemblyName](iassemblyname-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="30438-103">Gets the simple, unencrypted name of the assembly referenced by this [IAssemblyName](iassemblyname-interface.md) object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9ad55-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ad55-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="30438-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="30438-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetName (  
@@ -36,20 +36,20 @@ HRESULT GetName (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9ad55-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9ad55-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="30438-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="30438-105">Parameters</span></span>  
  `lpcwBuffer`  
- <span data-ttu-id="9ad55-106">[out v] Velikost `pwzName` v široké znaky, jako je znak, který ukončovací znak null.</span><span class="sxs-lookup"><span data-stu-id="9ad55-106">[in, out] The size of `pwzName` in wide characters, including the null terminator character.</span></span>  
+ <span data-ttu-id="30438-106">[in, out] Velikost `pwzName` v různých znacích, včetně ukončovacího znaku null.</span><span class="sxs-lookup"><span data-stu-id="30438-106">[in, out] The size of `pwzName` in wide characters, including the null terminator character.</span></span>  
   
  `pwzName`  
- <span data-ttu-id="9ad55-107">[out] Vyrovnávací paměti, která bude uchovávat název odkazovaného sestavení.</span><span class="sxs-lookup"><span data-stu-id="9ad55-107">[out] A buffer to hold the name of the referenced assembly.</span></span>  
+ <span data-ttu-id="30438-107">mimo Vyrovnávací paměť pro uchování názvu odkazovaného sestavení.</span><span class="sxs-lookup"><span data-stu-id="30438-107">[out] A buffer to hold the name of the referenced assembly.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9ad55-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9ad55-108">Requirements</span></span>  
- <span data-ttu-id="9ad55-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9ad55-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="30438-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="30438-108">Requirements</span></span>  
+ <span data-ttu-id="30438-109">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="30438-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9ad55-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="9ad55-110">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="30438-110">**Hlaviček** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="30438-110">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="9ad55-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ad55-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="30438-111">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="30438-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9ad55-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ad55-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="30438-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="30438-112">See also</span></span>
 
-- [<span data-ttu-id="9ad55-113">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ad55-113">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [<span data-ttu-id="30438-113">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="30438-113">IAssemblyName Interface</span></span>](iassemblyname-interface.md)

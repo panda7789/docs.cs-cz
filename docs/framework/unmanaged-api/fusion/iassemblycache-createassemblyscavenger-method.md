@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99b7142a60f979210c44497ce33af3ed1ca5c105
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 851abcae9c3edea5c971bd2bc4523c3cec757cc9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770982"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796815"
 ---
-# <a name="iassemblycachecreateassemblyscavenger-method"></a><span data-ttu-id="df184-102">IAssemblyCache::CreateAssemblyScavenger – metoda</span><span class="sxs-lookup"><span data-stu-id="df184-102">IAssemblyCache::CreateAssemblyScavenger Method</span></span>
-<span data-ttu-id="df184-103">Vyhrazené pro interní použití technologie fusion.</span><span class="sxs-lookup"><span data-stu-id="df184-103">Reserved for internal use by the fusion technology.</span></span>  
+# <a name="iassemblycachecreateassemblyscavenger-method"></a><span data-ttu-id="ee737-102">IAssemblyCache::CreateAssemblyScavenger – metoda</span><span class="sxs-lookup"><span data-stu-id="ee737-102">IAssemblyCache::CreateAssemblyScavenger Method</span></span>
+<span data-ttu-id="ee737-103">Vyhrazeno pro interní použití technologií Fusion.</span><span class="sxs-lookup"><span data-stu-id="ee737-103">Reserved for internal use by the fusion technology.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="df184-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="df184-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ee737-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ee737-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateAssemblyScavenger (  
@@ -35,17 +35,17 @@ HRESULT CreateAssemblyScavenger (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="df184-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="df184-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ee737-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ee737-105">Parameters</span></span>  
  `ppUnkReserved`  
- <span data-ttu-id="df184-106">[out] Vrácený `IUnknown` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="df184-106">[out] The returned `IUnknown` pointer.</span></span>  
+ <span data-ttu-id="ee737-106">mimo Vrácený `IUnknown` ukazatel.</span><span class="sxs-lookup"><span data-stu-id="ee737-106">[out] The returned `IUnknown` pointer.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="df184-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="df184-107">Requirements</span></span>  
- <span data-ttu-id="df184-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="df184-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ee737-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ee737-107">Requirements</span></span>  
+ <span data-ttu-id="ee737-108">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ee737-108">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="df184-109">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="df184-109">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="ee737-109">**Hlaviček** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="ee737-109">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="df184-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="df184-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ee737-110">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ee737-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="df184-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="df184-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ee737-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ee737-111">See also</span></span>
 
-- [<span data-ttu-id="df184-112">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="df184-112">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [<span data-ttu-id="ee737-112">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee737-112">IAssemblyCache Interface</span></span>](iassemblycache-interface.md)

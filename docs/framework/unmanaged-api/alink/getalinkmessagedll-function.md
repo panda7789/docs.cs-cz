@@ -17,27 +17,27 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 41e79a4c9587e3e738039cbf6a84087a2e7fc9b1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 323e53c45a26d5703548ebe9863978f6d3929f0b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741958"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787474"
 ---
-# <a name="getalinkmessagedll-function"></a><span data-ttu-id="34bee-102">GetALinkMessageDll – funkce</span><span class="sxs-lookup"><span data-stu-id="34bee-102">GetALinkMessageDll Function</span></span>
-<span data-ttu-id="34bee-103">Vyhledá a načte knihovna DLL zprávy.</span><span class="sxs-lookup"><span data-stu-id="34bee-103">Finds and loads the message DLL.</span></span> <span data-ttu-id="34bee-104">Vrátí hodnotu 0, pokud knihovna DLL zprávy nelze umístěný nebo načíst.</span><span class="sxs-lookup"><span data-stu-id="34bee-104">Returns 0 if the message DLL could not be located or loaded.</span></span> <span data-ttu-id="34bee-105">Knihovna DLL zprávy musí být buď v podadresáři, jehož název je ID jazyka, nebo v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="34bee-105">The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.</span></span>  
+# <a name="getalinkmessagedll-function"></a><span data-ttu-id="3e057-102">GetALinkMessageDll – funkce</span><span class="sxs-lookup"><span data-stu-id="3e057-102">GetALinkMessageDll Function</span></span>
+<span data-ttu-id="3e057-103">Vyhledá a načte knihovnu DLL zpráv.</span><span class="sxs-lookup"><span data-stu-id="3e057-103">Finds and loads the message DLL.</span></span> <span data-ttu-id="3e057-104">Vrátí hodnotu 0, pokud nebyla nalezena nebo načtena knihovna DLL zpráv.</span><span class="sxs-lookup"><span data-stu-id="3e057-104">Returns 0 if the message DLL could not be located or loaded.</span></span> <span data-ttu-id="3e057-105">Knihovna DLL zpráv by měla být buď v podadresáři, jejíž název je ID jazyka nebo v aktuálním adresáři.</span><span class="sxs-lookup"><span data-stu-id="3e057-105">The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="34bee-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="34bee-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3e057-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e057-106">Syntax</span></span>  
   
 ```cpp  
 HINSTANCE WINAPI GetALinkMessageDll();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="34bee-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="34bee-107">Requirements</span></span>  
- <span data-ttu-id="34bee-108">**Záhlaví:** alink.h</span><span class="sxs-lookup"><span data-stu-id="34bee-108">**Header:** alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3e057-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3e057-107">Requirements</span></span>  
+ <span data-ttu-id="3e057-108">**Záhlaví:** ALink. h</span><span class="sxs-lookup"><span data-stu-id="3e057-108">**Header:** alink.h</span></span>  
   
- <span data-ttu-id="34bee-109">**Knihovna**: alink.dll</span><span class="sxs-lookup"><span data-stu-id="34bee-109">**Library**: alink.dll</span></span>  
+ <span data-ttu-id="3e057-109">**Knihovna**: ALink. dll</span><span class="sxs-lookup"><span data-stu-id="3e057-109">**Library**: alink.dll</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="34bee-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="34bee-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3e057-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3e057-110">See also</span></span>
 
-- [<span data-ttu-id="34bee-111">Al.exe (linker sestavení)</span><span class="sxs-lookup"><span data-stu-id="34bee-111">Al.exe (Assembly Linker)</span></span>](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [<span data-ttu-id="3e057-111">Al.exe (linker sestavení)</span><span class="sxs-lookup"><span data-stu-id="3e057-111">Al.exe (Assembly Linker)</span></span>](../../tools/al-exe-assembly-linker.md)
