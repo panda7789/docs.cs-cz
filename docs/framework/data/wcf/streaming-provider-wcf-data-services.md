@@ -10,135 +10,135 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: eff4ee3cb8502645d3b6d9a8986c9c410fe73f1a
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3660194a93a0528c4e5b466fb63801a8b1e12d2f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877593"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779779"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 
-Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.
+Datová služba může vystavovat rozsáhlá binární data objektů. Tato binární data mohou představovat video a audio streamy, obrázky, soubory dokumentů nebo jiné typy binárních médií. Když entita v datovém modelu obsahuje jednu nebo více binárních vlastností, vrátí datová služba tato binární data zakódovaná jako základní-64 uvnitř záznamu v kanálu odpovědí. Vzhledem k tomu, že načítání a serializace velkých binárních dat tímto způsobem může [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] ovlivnit výkon, definuje mechanismus pro načítání binárních dat nezávisle na entitě, ke které patří. Toho je možné dosáhnout oddělením binárních dat z entity do jednoho nebo více datových proudů.
 
-- Mediální zdroj - binární data, která patří do entity, jako jsou videa, zvuk, image nebo jiný typ média datový proud prostředků.
+- Media Resource – binární data, která patří do určité entity, jako je video, zvuk, obrázek nebo jiný typ datového proudu mediálních prostředků.
 
-- Odkaz na médium položky - entita, která obsahuje odkaz na datový proud prostředků souvisejících média.
+- Položka odkazu na média – entita, která má odkaz na související datový proud mediálních prostředků.
 
-S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], definovat datový proud binárních prostředků díky implementaci zprostředkovatele streamovaná data. Streamování implementace poskytovatele poskytuje datové služby s datový proud prostředků média přidružený k konkrétní entity jako <xref:System.IO.Stream> objektu. Tato implementace umožňuje datové službě dovoluje přijímají a vrací zdroje médií prostřednictvím protokolu HTTP jako binární datové proudy zadaného typu MIME.
+S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]definujete datový proud binárních prostředků implementací poskytovatele dat streamování. Implementace poskytovatele streamování poskytuje datovou službu datovým proudem mediálních prostředků přidruženým ke konkrétní entitě jako <xref:System.IO.Stream> objekt. Tato implementace umožňuje datové službě přijímat a vracet mediální prostředky přes HTTP jako binární datové proudy zadaného typu MIME.
 
-Konfigurace datové služby podporovat datový proud binárních dat vyžaduje následující kroky:
+Konfigurace datové služby pro podporu streamování binárních dat vyžaduje následující kroky:
 
-1. Atribut jeden nebo více entit v datovém modelu, jak položkou odkazu na média. Tyto entity by neměl obsahovat binární data, která mají Streamovat. Žádné binární vlastnosti entity jsou vždy vrátí v položce jako kódování base-64 binární.
+1. Jeden nebo více entit v datovém modelu jako položka odkaz na médium Tyto entity by neměly zahrnovat binární data, která se mají streamovat. Všechny binární vlastnosti entity se vždycky vrátí v položce jako binární soubor s kódováním Base-64.
 
 2. Implementujte rozhraní T:System.Data.Services.Providers.IDataServiceStreamProvider.
 
-3. Definování datové služby, který implementuje <xref:System.IServiceProvider> rozhraní. Služba používá data <xref:System.IServiceProvider.GetService%2A> implementace pro přístup k streamování implementace poskytovatele dat. Tato metoda vrátí odpovídající streamování implementace poskytovatele.
+3. Definujte datovou službu, která implementuje <xref:System.IServiceProvider> rozhraní. Datová služba používá <xref:System.IServiceProvider.GetService%2A> implementaci pro přístup k implementaci zprostředkovatele datových proudů. Tato metoda vrátí příslušnou implementaci poskytovatele streamování.
 
-4. Povolte datové proudy velké zprávy v konfiguraci webové aplikace.
+4. V konfiguraci webové aplikace povolte velké proudy zpráv.
 
-5. Povolení přístupu k binární prostředky na serveru nebo ve zdroji dat.
+5. Povolte přístup k binárním prostředkům na serveru nebo ve zdroji dat.
 
-Příklady v tomto tématu jsou založené na vzorku služba pro streamování fotek, která je podrobně popsané v příspěvku [datové služby streamování řady zprostředkovatele: Implementace zprostředkovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Zdrojový kód pro tuto službu ukázka je k dispozici na [streamování fotek ukázková Data pro službu stránky](https://go.microsoft.com/fwlink/?LinkID=198988) Galerie kódu MSDN.
+Příklady v tomto tématu jsou založené na ukázkové službě streamování fotek, která je popsaná v podrobných popisech [v rámci série zprostředkovatelů streamování Data Services: Implementace poskytovatele streamování (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989) Zdrojový kód této ukázkové služby je k dispozici na [ukázkové stránce Stream Photo data Service](https://go.microsoft.com/fwlink/?LinkID=198988) na webu MSDN Code.
 
-## <a name="defining-a-media-link-entry-in-the-data-model"></a>Definování položku Media Link Entry v datovém modelu
+## <a name="defining-a-media-link-entry-in-the-data-model"></a>Definování položky s odkazem na média v datovém modelu
 
-Zprostředkovatel zdroje dat určuje způsob, jakým, že entita je definován jako položku media link entry v datovém modelu.
+Zprostředkovatel zdroje dat určuje způsob, jakým je entita definovaná jako položka odkazu na média v datovém modelu.
 
 **Zprostředkovatel Entity Framework**
 
-Označuje, že entita položkou odkazu na média, přidejte `HasStream` atributu na definici typu entity v konceptuálním modelu, jako v následujícím příkladu:
+Chcete-li označit, že entita je položkou Media Link entry `HasStream` , přidejte atribut do definice typu entity v koncepčním modelu, jak je uvedeno v následujícím příkladu:
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-Musíte taky přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` k entitě nebo do kořenového adresáře souboru .edmx nebo .csdl, který definuje datový model.
+Také je nutné přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` buď k entitě, nebo ke kořenu souboru. edmx nebo. csdl, který definuje datový model.
 
-Příklad z datové služby, který používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje prostředkem média, najdete v příspěvku [datové služby streamování poskytovatele řady: Implementace zprostředkovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989).
+Příklad datové služby, která využívá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele a zpřístupňuje mediální prostředek, najdete [v části Data Services seriál poskytovatele streamování: Implementace poskytovatele streamování (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989)
 
 **Zprostředkovatel reflexe**
 
-Označuje, že entita položkou odkazu na média, přidejte <xref:System.Data.Services.Common.HasStreamAttribute> do třídy, která definuje typ entity v zprostředkovatel reflexe.
+Chcete-li označit, že entita je položkou Media Link entry <xref:System.Data.Services.Common.HasStreamAttribute> , přidejte do třídy, která definuje typ entity v poskytovateli reflexe.
 
-**Poskytovatel služeb vlastních dat**
+**Vlastní poskytovatel datových služeb**
 
-Při použití vlastních zprostředkovatelů, můžete implementovat <xref:System.Data.Services.Providers.IDataServiceMetadataProvider> rozhraní definují metadata pro datové služby. Další informace najdete v tématu [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md). Označuje, že datový proud binární prostředek patří do <xref:System.Data.Services.Providers.ResourceType> nastavením <xref:System.Data.Services.Providers.ResourceType.IsMediaLinkEntry%2A> vlastnost `true` na <xref:System.Data.Services.Providers.ResourceType> , který představuje typ entity, která je položka media link entry.
+Při použití vlastních poskytovatelů služeb implementujete <xref:System.Data.Services.Providers.IDataServiceMetadataProvider> rozhraní k definování metadat pro datovou službu. Další informace najdete v tématu [Vlastní poskytovatelé datových služeb](custom-data-service-providers-wcf-data-services.md). Určíte, že binární datový proud prostředků patří do <xref:System.Data.Services.Providers.ResourceType> objektu <xref:System.Data.Services.Providers.ResourceType.IsMediaLinkEntry%2A> nastavením vlastnosti `true` <xref:System.Data.Services.Providers.ResourceType> na hodnotu, která představuje typ entity, což je položka odkazu na média.
 
 ## <a name="implementing-the-idataservicestreamprovider-interface"></a>Implementace rozhraní IDataServiceStreamProvider
 
-K vytvoření datové služby, který podporuje binární datové proudy, je nutné implementovat <xref:System.Data.Services.Providers.IDataServiceStreamProvider> rozhraní. Tato implementace umožňuje službě data a vrátit binární data jako datový proud do klienta a zpracování binárních dat jako datový proud odeslaných z klienta. Datové služby vytvoří instanci tohoto rozhraní pokaždé, když jej potřebuje přístup k binárních dat jako datový proud. <xref:System.Data.Services.Providers.IDataServiceStreamProvider> Rozhraní určuje následující členy:
+Chcete-li vytvořit datovou službu, která podporuje binární datové proudy, <xref:System.Data.Services.Providers.IDataServiceStreamProvider> je nutné implementovat rozhraní. Tato implementace umožňuje datové službě vracet binární data jako datový proud klientovi a využívat binární data jako datový proud odeslaný z klienta. Datová služba vytvoří instanci tohoto rozhraní, kdykoli potřebuje přístup k binárním datům jako datový proud. <xref:System.Data.Services.Providers.IDataServiceStreamProvider> Rozhraní určuje následující členy:
 
 |Název členu|Popis|
 |-----------------|-----------------|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>|Tato metoda vyvolá datové službě dovoluje při odstranění jeho položka media link entry odstranění odpovídající mediální zdroj. Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, tato metoda obsahuje kód, který odstraní přidružené položka zadaná media link entry mediální zdroj.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>|Tato metoda vyvolá datové služby se vraťte mediální zdroj jako datový proud. Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, tato metoda obsahuje kód, který poskytuje datový proud, který je používán službou data do prostředku vrátit média, který je spojen s položka zadaná media link entry.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStreamUri%2A>|Tato metoda vyvolána datová služba vrátit identifikátor URI, který slouží k vyžádání mediální zdroj pro položka media link entry. Tato hodnota se používá k vytvoření `src` atribut v obsahu elementu položka media link entry a, který slouží k vyžádání datového proudu. Při návratu tato metoda `null`, datové služby automaticky určuje identifikátor URI. Tuto metodu použijte, pokud je potřeba zadat klientů s přímým přístupem k binárních dat bez použití zprostředkovatele datový proud.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamContentType%2A>|Tato metoda vyvolá datové službě dovoluje návratová hodnota Content-Type mediální zdroj, který je přidružen položka zadaná media link entry.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamETag%2A>|Datová služba k vrácení eTag datový proud, který je spojen s zadaná entita byla tato metoda vyvolána. Tato metoda se používá při správě souběžnosti pro binární data. Když tato metoda vrátí hodnotu null, nesleduje datové služby souběžnosti.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A>|Datová služba k získání datového proudu, který se používá při přijímání datový proud odeslaných z klienta byla tato metoda vyvolána. Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, musí vracet zapisovatelný datový proud, do které datové služby zápisy přijatá data datového proudu.|
-|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.ResolveType%2A>|Vrátí název typu kvalifikovaného oboru názvů, který představuje typ, který modul runtime služby data musíte vytvořit pro položka media link entry, který je spojen s datovým proudem pro mediální zdroj, který bude vložen.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>|Tato metoda je vyvolána datovou službou k odstranění odpovídajícího mediálního prostředku, pokud je odstraněna její položka odkazu na média. Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, tato metoda obsahuje kód, který odstraní mediální zdroj přidružený k dodanému záznamu média.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>|Tato metoda je vyvolána datovou službou, aby vracela mediální prostředek jako datový proud. Když implementujete <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, tato metoda obsahuje kód, který poskytuje datový proud, který je používán datovou službou, na prostředek vráceného média, který je přidružen k zadané položce Media Link.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStreamUri%2A>|Tato metoda je vyvolána datovou službou, která vrací identifikátor URI, který se používá k vyžádání mediálního prostředku pro položku odkazu na média. Tato hodnota se používá k vytvoření `src` atributu v elementu Content položky odkazu na média a který se používá k vyžádání datového proudu. Když tato metoda vrátí `null`, datová služba automaticky určí identifikátor URI. Tuto metodu použijte, pokud potřebujete poskytnout klientům přímý přístup k binárním datům bez použití poskytovatele datových proudů.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamContentType%2A>|Tato metoda je vyvolána datovou službou, aby vracela hodnotu typu obsahu mediálního prostředku, který je přidružen k zadané položce s odkazem na médium.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetStreamETag%2A>|Tato metoda je vyvolána datovou službou pro vrácení eTag datového proudu, který je přidružen k zadané entitě. Tato metoda se používá, když spravujete souběžnost pro binární data. Pokud tato metoda vrátí hodnotu null, datová služba nesleduje souběžnost.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A>|Tato metoda je vyvolána datovou službou, aby získala datový proud, který se používá při přijímání datového proudu odeslaného z klienta. Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>nástroje je nutné vrátit zapisovatelný datový proud, do kterého datová služba zapisuje přijatá data datového proudu.|
+|<xref:System.Data.Services.Providers.IDataServiceStreamProvider.ResolveType%2A>|Vrátí název typu kvalifikovaný obor názvů, který představuje typ, který musí modul runtime datové služby vytvořit pro položku odkazu na média přidruženou k datovému proudu pro mediální prostředek, který se právě vkládá.|
 
-## <a name="creating-the-streaming-data-service"></a>Vytvoření datových proudů datové služby
+## <a name="creating-the-streaming-data-service"></a>Vytvoření služby streamování dat
 
-K poskytování [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] modulu runtime s přístupem k <xref:System.Data.Services.Providers.IDataServiceStreamProvider> implementace, datové služby, kterou vytvoříte musí implementovat taky <xref:System.IServiceProvider> rozhraní. Následující příklad ukazuje, jak implementovat <xref:System.IServiceProvider.GetService%2A> metoda vrátí instanci `PhotoServiceStreamProvider` třídu, která implementuje <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
+Aby [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] modul runtime poskytoval přístup <xref:System.Data.Services.Providers.IDataServiceStreamProvider> k implementaci, je nutné, aby datová služba také implementovala <xref:System.IServiceProvider> rozhraní. Následující příklad ukazuje, jak implementovat <xref:System.IServiceProvider.GetService%2A> metodu pro návrat instance `PhotoServiceStreamProvider` třídy, která implementuje <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
 
 [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
 [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]
 
-Obecné informace o tom, jak vytvořit datovou službu, naleznete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).
+Obecné informace o tom, jak vytvořit datovou službu, najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
 
-## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení velké binární datové proudy v hostitelském prostředí
+## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Povolení rozsáhlých binárních proudů v hostitelském prostředí
 
-Při vytváření datové služby ve webové aplikaci ASP.NET, Windows Communication Foundation (WCF) slouží k implementaci protokolu HTTP. Ve výchozím nastavení WCF omezení velikosti zpráv HTTP na pouze 65 kB. Aby bylo možné do datového proudu velkému objemu binárních dat do a z datové služby, musíte také nakonfigurovat webovou aplikaci povolit velkých binárních souborů a použití datových proudů pro přenos. Chcete-li to provést, přidejte následující kód do `<configuration />` prvek souboru Web.config aplikace:
+Při vytváření datové služby ve webové aplikaci v ASP.NET se k poskytování implementace protokolu HTTP používá Windows Communication Foundation (WCF). Ve výchozím nastavení služba WCF omezuje velikost zpráv HTTP pouze na 65 KB pro bajtů. Aby bylo možné streamovat rozsáhlá binární data do a z datové služby, musíte také nakonfigurovat webovou aplikaci tak, aby povolovala velké binární soubory a používala datové proudy k přenosu. Chcete-li to provést, přidejte následující do `<configuration />` prvku souboru Web. config aplikace:
 
 > [!NOTE]
-> Je nutné použít <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> přenosový režim na binární data ve zprávách žádost a odpověď streamování a nejsou ukládány do vyrovnávací paměti ve WCF.
+> Je nutné použít <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> režim přenosu, abyste zajistili, že se binární data v žádostech a zprávách o odezvě streamují do vyrovnávací paměti WCF.
 
-Další informace najdete v tématu [streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md) a [přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md).
+Další informace najdete v tématu [streamování přenosů zpráv](../../wcf/feature-details/streaming-message-transfer.md) a přenosových [kvót](../../wcf/feature-details/transport-quotas.md).
 
-Ve výchozím nastavení Internetové informační služby (IIS) také omezuje množství požadavků na 4MB. Pokud chcete povolit datové služby přijímat datové proudy, které jsou větší než 4MB, když ve službě IIS, musíte taky nastavit `maxRequestLength` atribut [httpRuntime – Element (schéma nastavení technologie ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) v `<system.web />` konfiguračního oddílu jako můžete vidět v následujícím příkladu:
+Ve výchozím nastavení omezuje služba Internetová informační služba (IIS) také velikost požadavků na 4 MB. Chcete-li službě Data Service povolit příjem datových proudů větších než 4 MB při spuštění služby IIS, je `maxRequestLength` nutné také nastavit atribut `<system.web />` [prvku httpRuntime (schéma nastavení ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) v oddílu konfigurace, jak je znázorněno v následujícím příkladu. případě
 
 ## <a name="using-data-streams-in-a-client-application"></a>Použití datových proudů v klientské aplikaci
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst i aktualizovat tyto materiály vystavené jako binární datové proudy na straně klienta. Další informace najdete v tématu [práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md).
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst a aktualizovat tyto vystavené prostředky jako binární datové proudy na klientovi. Další informace najdete v tématu [práce s binárními daty](working-with-binary-data-wcf-data-services.md).
 
-## <a name="considerations-for-working-with-a-streaming-provider"></a>Důležité informace týkající se práce se zprostředkovateli datových proudů
+## <a name="considerations-for-working-with-a-streaming-provider"></a>Pokyny pro práci s poskytovatelem streamování
 
-Níže jsou věci k uvážení při implementaci zprostředkovatele datových proudů a když je přístup k prostředkům média z datové služby.
+Níže jsou uvedené věci, které je potřeba zvážit při implementaci poskytovatele streamování a při přístupu k prostředkům médií z datové služby.
 
-- Požadavky na SLOUČENÍ nejsou podporovány pro prostředky médií. Chcete-li změnit mediální zdroj existující entity použijte požadavek PUT.
+- Žádosti o sloučení nejsou u mediálních prostředků podporovány. Použijte požadavek PUT ke změně mediálního prostředku existující entity.
 
-- Požadavek POST nelze použít k vytvoření nového média odkazů. Místo toho musíte vydat požadavek POST vytvořit nový prostředek služby media a datové služby vytvoří nové médium odkazů s výchozími hodnotami. Tato nová entita je možné aktualizovat podle další požadavek SLOUČENÍ nebo PUT. Zvažte možnost ukládání do mezipaměti entity, kde můžete provést aktualizace v zneškodňovatel, jako je například nastavení hodnoty vlastnosti na hodnotu záhlaví zkráceného názvu stránky v požadavku POST.
+- Požadavek POST nelze použít k vytvoření nové položky odkaz na médium. Místo toho musíte vydat požadavek POST pro vytvoření nového mediálního prostředku a datová služba vytvoří novou položku odkazu na média s výchozími hodnotami. Tuto novou entitu je možné aktualizovat následnou SLOUČENÍm nebo požadavkem PUT. Můžete také zvážit, že entitu budete ukládat do mezipaměti a dělat v ní aktualizace, jako je například nastavení hodnoty vlastnosti na hodnotu záhlaví v žádosti POST.
 
-- Při přijetí požadavku POST data servisní volání <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> a vytvoří prostředek služby media dříve, než se zavolá <xref:System.Data.Services.IUpdatable.SaveChanges%2A> k vytvoření médií záznamu odkazu.
+- Po přijetí žádosti post služba data Service zavolá <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> k vytvoření mediálního prostředku před tím, než se zavolá <xref:System.Data.Services.IUpdatable.SaveChanges%2A> , aby vytvořila položku odkazu na média.
 
-- Implementace <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> by neměly vracet <xref:System.IO.MemoryStream> objektu. Pokud použijete tento druh datového proudu, dojde k potížím prostředků paměti když služba přijímá velmi velkých datových proudů.
+- Implementace <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> by neměla <xref:System.IO.MemoryStream> vracet objekt. Pokud použijete tento druh streamu, dojde k problémům se zdrojem paměti, když služba obdrží velmi velké datové proudy.
 
-- Tady jsou věci k uvážení při ukládání zdroje médií v databázi:
+- Při ukládání mediálních prostředků do databáze zvažte následující věci:
 
-  - Binární vlastnost, která je příslušný mediální zdroj by neměl být zařazen datového modelu. Všechny vlastnosti, které jsou zveřejněné v datovém modelu se vrátí v položce v odpovědi informačního kanálu.
+  - Binární vlastnost, která je zdrojem médií, by neměla být součástí datového modelu. Všechny vlastnosti vystavené v datovém modelu jsou vraceny v záznamu v kanálu odpovědí.
 
-  - Zlepšení výkonu pomocí velké binární datový proud, doporučujeme vám, že vytvoříte vlastní datový proud třídu pro ukládání binárních dat v databázi. Tato třída je vrácený vaše <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> provádění a odešle binární data do databáze v blocích. Pro databázi serveru SQL Server doporučujeme použít FILESTREAM pro streamování dat do databáze, pokud binárních dat je větší než 1MB.
+  - Chcete-li zvýšit výkon pomocí velkého binárního datového proudu, doporučujeme vytvořit vlastní třídu datového proudu pro ukládání binárních dat v databázi. Tuto třídu vrátí vaše <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> implementace a pošle binární data do databáze v blocích. V případě SQL Server databáze doporučujeme použít k streamování dat do databáze FILESTREAM, pokud jsou binární data větší než 1 MB.
 
-  - Ujistěte se, že vaše databáze je navržená k ukládání binární velké datové proudy, které se mají přijímat datové služby.
+  - Ujistěte se, že je vaše databáze navržená tak, aby ukládala binární velké proudy, které má vaše datová služba přijmout.
 
-  - Když klient odešle požadavek POST vložit položku media link entry s prostředkem média v rámci jednoho požadavku <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> je volána k získání datového proudu před datové služby vloží nové entity do databáze. Streamování implementaci zprostředkovatele musí být schopna zpracovávat toto chování služby data. Zvažte použití samostatná data pro tabulku pro ukládání binárních dat nebo úložiště na datový proud v souboru až po entity byla vložena do databáze.
+  - Když klient odešle požadavek post, aby vložil záznam o médiu s mediálním prostředkem v jediném požadavku, <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> se zavolá, aby získal datový proud předtím, než datová služba vloží novou entitu do databáze. Implementace poskytovatele streamování musí být schopná zpracovat chování této datové služby. Zvažte použití samostatné tabulky dat k uložení binárních dat nebo uložení datového proudu do souboru, dokud se entita do databáze nevloží.
 
-- Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>, <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>, nebo <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> metody, musíte použít značku eTag a Content-Type hodnoty, které jsou dodávány jako parametry metody. Nenastavujte eTag nebo záhlaví Content-Type v vaše <xref:System.Data.Services.Providers.IDataServiceStreamProvider> používaná implementace poskytovatele.
+- Při implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>metody, <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>nebo <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> je nutné použít hodnoty ETag a Content-Type, které jsou zadány jako parametry metody. V <xref:System.Data.Services.Providers.IDataServiceStreamProvider> implementaci zprostředkovatele nenastavujte záhlaví ETag nebo Content-Type.
 
-- Ve výchozím nastavení klient odešle velké binární datové proudy s použitím bloku HTTP Transfer-Encoding. Protože je ASP.NET Development Server nepodporuje tento typ kódování, nelze použít tento webový server k hostování datových proudů datových služeb, musíte přijmout velké binární datové proudy. Další informace o serveru ASP.NET Development Server, naleznete v tématu [webové servery v sadě Visual Studio pro webové projekty ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120)).
+- Ve výchozím nastavení klient odesílá velké binární proudy pomocí bloku HTTP Transfer-Encoding. Vzhledem k tomu, že vývojový server ASP.NET nepodporuje tento druh kódování, nelze tento webový server použít k hostování datové služby streamování, která musí přijímat velké binární proudy. Další informace o ASP.NET vývojovém serveru naleznete v tématu [webové servery v aplikaci Visual Studio pro webové projekty ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120)).
 
 <a name="versioning"></a>
 
 ## <a name="versioning-requirements"></a>Požadavky na správu verzí
 
-Zprostředkovatel streamování má následující [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol požadavků na správu verzí:
+Zprostředkovatel streamování má následující [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] požadavky na správu verzí protokolu:
 
-- Zprostředkovatel streamování vyžaduje, aby podporoval službu dat verzi 2.0 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol a novějších verzích.
+- Zprostředkovatel streamování vyžaduje, aby datová služba podporovala verzi 2,0 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu a novějších verzí.
 
-Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).
+Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
-- [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)
-- [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)
+- [Zprostředkovatelé datových služeb](data-services-providers-wcf-data-services.md)
+- [Vlastní zprostředkovatelé datových služeb](custom-data-service-providers-wcf-data-services.md)
+- [Práce s binárními daty](working-with-binary-data-wcf-data-services.md)

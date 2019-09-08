@@ -1,51 +1,51 @@
 ---
-title: 'Omezení rizik: Normalizace cesta'
+title: Zmírnění Normalizace cest
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b1c704113c8e05e493cdb3ef24f6376ab54b1cb
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: bc5ea69d80a225adfc2f409e8303ee1c241398db
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251117"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779345"
 ---
-# <a name="mitigation-path-normalization"></a>Omezení rizik: Normalizace cesta
-Počínaje aplikací cílového rozhraní .NET Framework 4.6.2, cesta normalizace v rozhraní .NET Framework byl změněn.  
+# <a name="mitigation-path-normalization"></a>Zmírnění Normalizace cest
+Počínaje aplikacemi cílíte na .NET Framework 4.6.2, normalizace cest v .NET Framework se změnila.  
   
-## <a name="what-is-path-normalization"></a>Co je cesta normalizace?  
- Normalizace cestu zahrnuje upravuje řetězec, který identifikuje cestu nebo soubor, který vyhovuje na platnou cestu na cílovém operačním systému. Normalizace obvykle zahrnuje:  
+## <a name="what-is-path-normalization"></a>Co je normalizace cest?  
+ Normalizace cesty zahrnuje úpravu řetězce, který identifikuje cestu nebo soubor tak, aby splňoval platnou cestu v cílovém operačním systému. Normalizace obvykle zahrnuje:  
   
-- Kanonizace oddělovače komponentu a adresáře.  
+- Kanonizace součásti a oddělovače adresářů.  
   
-- Použití aktuální adresář pro relativní cestu.  
+- Použití aktuálního adresáře na relativní cestu.  
   
-- Hodnocení relativní adresáře (`.`) nebo nadřazený adresář (`..`) v cestě.  
+- Vyhodnocení relativního adresáře (`.`) nebo nadřazeného adresáře (`..`) v cestě.  
   
-- Oříznutí zadané znaky.  
+- Ořezávání zadaných znaků.  
   
 ## <a name="the-changes"></a>Změny  
- Počínaje aplikací využívajících rozhraní .NET Framework 4.6.2, cesta normalizace došlo ke změně následujícími způsoby:  
+ Počínaje aplikacemi, které cílí na .NET Framework 4.6.2, se normalizace cesty změnila následujícími způsoby:  
   
-- Modul runtime odloží do operačního systému [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) funkce normalizace cesty.  
+- Modul runtime se odkládá na funkci [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) operačního systému k normalizaci cest.  
   
-- Normalizace už zahrnuje ořezávání konec segmenty adresáře (například mezeru na konci názvu adresáře).  
+- Normalizace už nezahrnuje oříznutí konce segmentů adresáře (například místa na konci názvu adresáře).  
   
-- Podpora pro zařízení syntaxe cesty v režimu plné důvěryhodnosti, včetně `\\.\` a pro rozhraní API vstupně-výstupní operace souboru v mscorlib.dll, `\\?\`.  
+- Podpora syntaxe cesty zařízení v úplném vztahu důvěryhodnosti, `\\.\` včetně a, pro vstupně-výstupní rozhraní API souborů v knihovně Mscorlib `\\?\`. dll.  
   
-- Modul runtime nelze ověřit zařízení syntaxe cesty.  
+- Modul runtime neověřuje cestu k syntaxi zařízení.  
   
-- Použití syntaxe zařízení pro přístup k alternativní datové proudy je podporované.  
+- Podporuje se použití syntaxe zařízení pro přístup k alternativním datovým proudům.  
   
 ## <a name="impact"></a>Dopad  
 
-Pro aplikace, které cílí .NET Framework 4.6.2 nebo novější, tyto změny jsou standardně povoleny. By měl pomáhají zvýšit výkon při povolení metody pro přístup k dříve nedostupných cesty.  
+U aplikací, které cílí na .NET Framework 4.6.2 nebo novějším, jsou tyto změny ve výchozím nastavení zapnuté. Měli byste zvýšit výkon a zároveň povolit přístup k dříve nepřístupným cestám k těmto metodám.  
   
-Aplikace, které cílí na rozhraní .NET Framework 4.6.1 a starší verze, ale jsou spuštěny v rozhraní .NET Framework 4.6.2 nebo novější se tato změna nemá vliv.  
+Aplikace, které cílí na .NET Framework 4.6.1 a starší verze, ale jsou spuštěné v .NET Framework 4.6.2 nebo novějším, tato změna neovlivní.  
   
 ## <a name="mitigation"></a>Zmírnění  
- Aplikace, které cílí .NET Framework 4.6.2 nebo novější můžete zrušit to změnit a použít starší verzi normalizace přidáním následujícího [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace:  
+ Aplikace, které cílí na .NET Framework 4.6.2 nebo novější, si mohou tuto změnu odhlásit a použít starší normalizaci přidáním následujícího do [ \<části > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) v konfiguračním souboru aplikace:  
   
 ```xml  
 <runtime>  
@@ -53,7 +53,7 @@ Aplikace, které cílí na rozhraní .NET Framework 4.6.1 a starší verze, ale 
 </runtime>  
 ```  
   
-Aplikace, které cílí na rozhraní .NET Framework 4.6.1 nebo starší ale jsou spuštěny v rozhraní .NET Framework 4.6.2 nebo novější můžete povolit změny normalizace cestu tak, že přidáte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část soubor .configuration aplikace:  
+Aplikace, které cílí na .NET Framework 4.6.1 nebo starší, ale běží na .NET Framework 4.6.2 nebo novějším, můžou povolit normalizaci cest přidáním následujícího řádku do [ \<oddílu > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) v aplikaci. konfigurace souborů  
   
 ```xml  
 <runtime>  
@@ -63,4 +63,4 @@ Aplikace, které cílí na rozhraní .NET Framework 4.6.1 nebo starší ale jsou
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6-2.md)

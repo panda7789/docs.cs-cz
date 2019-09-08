@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ff226ce3-f6b5-47a1-8d22-dc78b67e07f5
-ms.openlocfilehash: a93cb9da44985fa29a4975875564b384117ce76f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3e28adc2cf7c24cee9ee344eb78404f01b79793
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938457"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780715"
 ---
 # <a name="sqldependency-in-an-aspnet-application"></a>SqlDependency v aplikaci ASP.NET
 Příklad v této části ukazuje, jak nepřímo použít <xref:System.Data.SqlClient.SqlDependency> objekt ASP.NET. <xref:System.Web.Caching.SqlCacheDependency> <xref:System.Web.Caching.SqlCacheDependency> Objekt<xref:System.Data.SqlClient.SqlDependency> používá k naslouchání oznámení a k správné aktualizaci mezipaměti.  
   
 > [!NOTE]
-> Vzorový kód předpokládá, že jste povolili oznámení dotazů spuštěním skriptů v části [Povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).  
+> Vzorový kód předpokládá, že jste povolili oznámení dotazů spuštěním skriptů v části [Povolení oznámení dotazů](enabling-query-notifications.md).  
   
 ## <a name="about-the-sample-application"></a>O ukázkové aplikaci  
  Ukázková aplikace používá jednu webovou stránku ASP.NET k zobrazení informací o produktu z databáze **AdventureWorks** SQL Server v <xref:System.Web.UI.WebControls.GridView> ovládacím prvku. Při načtení stránky kód zapíše aktuální čas do <xref:System.Web.UI.WebControls.Label> ovládacího prvku. Pak definuje <xref:System.Web.Caching.SqlCacheDependency> objekt a nastaví vlastnosti <xref:System.Web.Caching.Cache> objektu pro uložení dat mezipaměti až po dobu tří minut. Kód se pak připojí k databázi a načte data. Po načtení stránky a spuštění aplikace ASP.NET se načtou data z mezipaměti, kterou můžete ověřit tak, že si myslíte, že se čas na stránce nemění. Pokud se data monitorují, ASP.NET zruší platnost mezipaměti a znovu naplní `GridView` ovládací prvek novými daty a aktualizuje čas zobrazený `Label` v ovládacím prvku.  
@@ -59,5 +59,5 @@ Příklad v této části ukazuje, jak nepřímo použít <xref:System.Data.SqlC
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oznámení pro dotazy na SQL Serveru](query-notifications-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

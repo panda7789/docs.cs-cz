@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: a12fa587d5df0ed95dd0f15ccfbe2ef886185b9e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0926e3c6513a698ae47b9983d0e6ad195394a4df
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934118"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780611"
 ---
 # <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
-Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky. Podobně mnoho uložené procedury provést akci, ale nevracejí řádky. Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
+Příkazy jazyka SQL, které upravují data (například INSERT, UPDATE nebo DELETE), nevrací řádky. Podobně mnoho uložených procedur provádí akci, ale nevrací řádky. Chcete-li provést příkazy, které nevracejí řádky, vytvořte objekt **příkazu** s příslušným příkazem SQL a **připojením**, včetně požadovaných **parametrů**. Spusťte příkaz s metodou **ExecuteNonQuery** objektu **Command** .  
   
- **Metodu ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněny příkazu nebo uložené procedury, která se spustil. Pokud více příkazy jsou spouštěny, vrácená hodnota je součtem záznamů ovlivněný všechny příkazy spuštění.  
+ Metoda **ExecuteNonQuery** vrací celé číslo, které představuje počet řádků ovlivněných příkazem nebo uloženou procedurou, která byla provedena. Pokud je spuštěno více příkazů, vrácená hodnota je součet záznamů ovlivněných všemi provedenými příkazy.  
   
 ## <a name="example"></a>Příklad  
- Příkaz INSERT k vložení záznamu do databáze pomocí provádí následující příklad kódu **metodu ExecuteNonQuery**.  
+ Následující příklad kódu provede příkaz INSERT pro vložení záznamu do databáze pomocí **ExecuteNonQuery**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +42,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- Následující příklad kódu Spustí uloženou proceduru vytvořen ukázkový kód v [provádění operací katalogu](../../../../docs/framework/data/adonet/performing-catalog-operations.md). Žádné řádky jsou vráceny pomocí uložené procedury, takže **metodu ExecuteNonQuery** metoda se používá, ale zobrazí vstupní parametr uložené procedury a vrátí výstupní parametr a návratové hodnoty.  
+ Následující příklad kódu provede uloženou proceduru vytvořenou vzorovým kódem při [provádění operací katalogu](performing-catalog-operations.md). Uložený postup nevrátí žádné řádky, takže se použije metoda **ExecuteNonQuery** , ale uložená procedura obdrží vstupní parametr a vrátí výstupní parametr a návratovou hodnotu.  
   
- Pro <xref:System.Data.OleDb.OleDbCommand> objektu, **ReturnValue** parametr musí být přidané do **parametry** kolekce první.  
+ Pro objekt je nutné nejprve přidat parametr **ReturnValue** do kolekce Parameters. <xref:System.Data.OleDb.OleDbCommand>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -93,7 +93,7 @@ Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Použití příkazů pro změny dat](using-commands-to-modify-data.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)
+- [Příkazy a parametry](commands-and-parameters.md)
+- [Přehled ADO.NET](ado-net-overview.md)

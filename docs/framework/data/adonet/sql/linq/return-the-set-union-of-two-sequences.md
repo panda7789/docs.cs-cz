@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
-ms.openlocfilehash: 9ade12c42ac6a307c341bc5be26430fb56e51ee5
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 1b981d3002cf4a23897ce98927aebe96086f8a4a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380031"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781232"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>Vrácení sjednocení množin mezi dvěma sekvencemi
-Použití <xref:System.Linq.Queryable.Union%2A> operátor vrácení sjednocení množin mezi dvěma sekvencemi.  
+<xref:System.Linq.Queryable.Union%2A> Použijte operátor k vrácení sjednocení se dvěma sekvencemi.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Queryable.Union%2A> k vrácení sekvence všech zemích nebo oblastech, ve kterém se buď `Customers` nebo `Employees`.  
+ Tento příklad používá <xref:System.Linq.Queryable.Union%2A> k vrácení posloupnosti všech zemí nebo oblastí, ve kterých existuje buď `Customers` nebo `Employees`.  
   
  [!code-csharp[DLinqQueryExamples#43](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#43)]
  [!code-vb[DLinqQueryExamples#43](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#43)]  
   
- V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:System.Linq.Queryable.Union%2A> operátor je pro multisets definován jako Neseřazený zřetězení multisets (efektivně výsledek [ `UNION ALL` ](https://docs.microsoft.com/sql/t-sql/language-elements/set-operators-union-transact-sql?view=sql-server-2017) klauzuli v SQL).
+ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]je [`UNION ALL`](https://docs.microsoft.com/sql/t-sql/language-elements/set-operators-union-transact-sql?view=sql-server-2017) operátor definován pro množiny jako neuspořádané zřetězení množin (efektivně výsledek klauzule v jazyce SQL). <xref:System.Linq.Queryable.Union%2A>
 
-Další informace a příklady najdete v tématu <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>.
+Další informace a příklady naleznete v tématu <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+- [Příklady dotazů](query-examples.md)
+- [Převod standardních operátorů dotazů](standard-query-operator-translation.md)

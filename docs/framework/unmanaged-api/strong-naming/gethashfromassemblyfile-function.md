@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 026115adc01e7dcdac3012255f0378cff6348f89
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9f984d44d0a8acb85562a58653dfd2882053a0ce
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780692"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799285"
 ---
 # <a name="gethashfromassemblyfile-function"></a>GetHashFromAssemblyFile – funkce
-Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu.  
+Načte hodnotu hash zadaného souboru sestavení pomocí zadaného algoritmu hash.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::gethashfromassemblyfile –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: GetHashFromAssemblyFile –](../hosting/iclrstrongname-gethashfromassemblyfile-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ HRESULT GetHashFromAssemblyFile (
   
 ## <a name="parameters"></a>Parametry  
  `szFilePath`  
- [in] Cesta k souboru, který má být mají hodnotu hash.  
+ pro Cesta k souboru, který se má vyhodnotit  
   
  `piHashAlg`  
- [out v] Konstanta, která určuje algoritmus hash. Použít nulu pro výchozí hashovací algoritmus.  
+ [in, out] Konstanta, která určuje algoritmus hash. Pro výchozí algoritmus hash použijte nulu.  
   
  `pbHash`  
- [out] Vrácená hodnota hash vyrovnávací paměti.  
+ mimo Vrácená vyrovnávací paměť hash.  
   
  `cchHash`  
- [in] Požadovaná maximální velikost `pbHash`.  
+ pro Požadovaná maximální velikost `pbHash`.  
   
  `pchHash`  
- [out] Velikost v bajtech, vrátil z `pbHash`.  
+ mimo Vrácená velikost (v bajtech `pbHash`).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetHashFromAssemblyFile – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md)
-- [GetHashFromAssemblyFileW – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [GetHashFromAssemblyFile – metoda](../hosting/iclrstrongname-gethashfromassemblyfile-method.md)
+- [GetHashFromAssemblyFileW – metoda](../hosting/iclrstrongname-gethashfromassemblyfilew-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

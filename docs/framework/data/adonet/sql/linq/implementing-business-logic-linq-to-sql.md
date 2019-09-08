@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: 31a5aa0f147d43e94ce885c541f11b9aec4ae6d2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5261aab1ef6641651f856b8ebb024f64ad32ee59
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938656"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781438"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Implementace obchodní logiky (LINQ to SQL)
 Termín "obchodní logika" v tomto tématu se týká libovolných vlastních pravidel nebo ověřovacích testů, které se použijí na data před jejich vložením, aktualizací a odstraněním z databáze. Obchodní logika se také někdy označuje jako "obchodní pravidla" nebo "logika domény". V n-vrstvých aplikacích je obvykle navržen jako logická vrstva, aby ji bylo možné upravovat nezávisle na prezentační vrstvě nebo vrstvě přístupu k datům. Obchodní logiku může vyvolávat vrstva přístupu k datům před nebo po jakékoli aktualizaci, vložení nebo odstranění dat v databázi.  
@@ -188,4 +188,4 @@ partial class Customer
 - [Částečné třídy a metody](../../../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
 - [Částečné metody](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)
 - [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
-- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../tools/sqlmetal-exe-code-generation-tool.md)

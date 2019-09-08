@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 75ba3fd634b108c996e848f48000ffcd0600b00c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e66196e2bd2cb326ca3f5badc67bcf8d81e5fc3c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774580"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799171"
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob – struktura
-Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  
+Představuje v binárním formátu veřejný klíč páru veřejného a privátního klíče.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,24 +41,24 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SigAlgId`|Identifikátor pro algoritmus podpisu (typu `ALG_ID`, jak jsou definovány v WinCrypt.h) veřejného klíče.|  
-|`HashAlgId`|Identifikátor algoritmu hash (typu `ALG_ID`, jak jsou definovány v WinCrypt.h) veřejného klíče.|  
-|`cbPublicKey`|Délka klíče v bajtech.|  
-|`PublicKey`|Proměnné délky bajtové pole obsahující hodnotu klíče ve formátu vrácený rozhraní CryptoAPI.|  
+|`SigAlgId`|Identifikátor algoritmu podpisu (typu `ALG_ID`, jak je definován v Wincrypt. h) veřejného klíče.|  
+|`HashAlgId`|Identifikátor algoritmu hash (typu `ALG_ID`, jak je definován v Wincrypt. h) veřejného klíče.|  
+|`cbPublicKey`|Délka klíče v bajtech|  
+|`PublicKey`|Bajtové pole s proměnlivou délkou, které obsahuje hodnotu klíče ve formátu vráceném rozhraním CryptoAPI.|  
   
 ## <a name="remarks"></a>Poznámky  
- `PublicKeyBlob` Struktura používá [strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [strongnamesignaturegeneration –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)a další funkce silným názvem k reprezentaci veřejného klíče dvojice veřejného/soukromého klíče.  
+ Strukturu používá StrongNameGetPublicKey –, [StrongNameSignatureGeneration –](strongnamesignaturegeneration-function.md)a další funkce se silným názvem, které reprezentují veřejný klíč páru veřejného a privátního klíče. [](strongnamegetpublickey-function.md) `PublicKeyBlob`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameGetPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md)
-- [StrongNameSignatureGeneration – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)
+- [StrongNameGetPublicKey – funkce](strongnamegetpublickey-function.md)
+- [StrongNameSignatureGeneration – funkce](strongnamesignaturegeneration-function.md)

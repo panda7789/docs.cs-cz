@@ -2,35 +2,35 @@
 title: N-vrstvé a vzdálené aplikace s LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 854a1cdd-53cb-45f5-83ca-63962a9b3598
-ms.openlocfilehash: 31f06fd5e840c51c0133d22078d79cd4f945c369
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 94ca057da10c3570e85e17b5caec2d86154d8a3f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660923"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781414"
 ---
 # <a name="n-tier-and-remote-applications-with-linq-to-sql"></a>N-vrstvé a vzdálené aplikace s LINQ to SQL
-Můžete vytvářet n vrstvá nebo vícevrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Obvykle [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kontext dat, tříd entit a logiky konstrukce dotazů jsou umístěny ve střední vrstvě jako vrstva přístupu k datům (DAL). Obchodní logika a veškerých dat, dočasné je zcela implementovat v částečné třídy a metody entity a kontext dat, nebo se dá implementovat v samostatné třídy.
+Můžete vytvářet n-vrstvé a vícevrstvé aplikace, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]používají. Obvykle se datový kontext, třídy entit a logika vytváření dotazů nacházejí na střední úrovni jako vrstva přístupu k datům (dal). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Obchodní logika a jakákoli netrvalá data lze implementovat zcela v částečných třídách a metodách entit a kontextu dat, nebo je lze implementovat do samostatných tříd.
 
- Klient nebo prezentační vrstvy volá metody na střední vrstvě pro vzdálené rozhraní a DAL na dané úrovni spustí dotazy nebo uložené procedury, které jsou mapovány na <xref:System.Data.Linq.DataContext> metody. Střední vrstva vrací data klientů obvykle jako reprezentace XML entity nebo objekty proxy.
+ Klient nebo prezentační vrstva volá metody ve vzdáleném rozhraní střední vrstvy a dal na této úrovni spustí dotazy nebo uložené procedury, které jsou namapovány na <xref:System.Data.Linq.DataContext> metody. Střední úroveň vrátí data klientům obvykle jako reprezentace XML entit nebo objektů proxy.
 
- Ve střední vrstvě entity jsou vytvořeny pomocí kontext dat, který sleduje jejich stavu a spravuje pro odložené načítání z a odeslání změn do databáze. Tyto entity jsou "připojené" k `DataContext`. Ale po entity, které se odesílají na jinou vrstvu prostřednictvím serializace, budou odpojená, což znamená, že `DataContext` se už ke sledování jejich stavu. Entity, které klient posílá zpět aktualizací musíte znova připojit ke kontextu dat před [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] můžete odeslat změny do databáze. Klient je odpovědný za poskytnutí původní hodnoty a/nebo časová razítka zpět do střední vrstvy, pokud jsou požadované kontroly optimistické souběžnosti.
+ Na střední úrovni jsou entity vytvořeny pomocí kontextu dat, který sleduje jejich stav a spravuje odložené načtení a odeslání změn do databáze. Tyto entity jsou "připojené" k `DataContext`. Po odeslání entit do jiné úrovně prostřednictvím serializace však dojde k jejich odpojení, což znamená, že `DataContext` již nebude sledovat jejich stav. Entity, které klient odesílá zpět pro aktualizace, musí být před [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] odesláním změn do databáze znovu připojeny k datovému kontextu. Klient zodpovídá za poskytnutí původních hodnot nebo časových razítek zpět do střední vrstvy, pokud jsou vyžadovány pro optimistické kontroly souběžnosti.
 
- V aplikacích ASP.NET <xref:System.Web.UI.WebControls.LinqDataSource> spravuje většinu Tato složitost. Další informace najdete v tématu [Přehled ovládacího prvku webového serveru zdroje dat LinqDataSource](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)).
+ V aplikacích <xref:System.Web.UI.WebControls.LinqDataSource> ASP.NET spravuje většinu této složitosti. Další informace naleznete v tématu [Přehled ovládacího prvku webového serveru LinqDataSource](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)).
 
 ## <a name="additional-resources"></a>Další prostředky
- Další informace o tom, jak implementovat n vrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], naleznete v následujících tématech:
+ Další informace o implementaci n-vrstvých aplikací, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], najdete v následujících tématech:
 
-- [N-vrstvé nastavení LINQ to SQL s ASP.NET](../../../../../../docs/framework/data/adonet/sql/linq/linq-to-sql-n-tier-with-aspnet.md)
+- [N-vrstvé nastavení LINQ to SQL s ASP.NET](linq-to-sql-n-tier-with-aspnet.md)
 
-- [N-vrstvé nastavení LINQ to SQL s webovými službami](../../../../../../docs/framework/data/adonet/sql/linq/linq-to-sql-n-tier-with-web-services.md) 
+- [N-vrstvé nastavení LINQ to SQL s webovými službami](linq-to-sql-n-tier-with-web-services.md) 
 
-- [Implementace N-vrstvé obchodní logiky](../../../../../../docs/framework/data/adonet/sql/linq/implementing-business-logic-linq-to-sql.md)
+- [Implementace N-vrstvé obchodní logiky](implementing-business-logic-linq-to-sql.md)
 
-- [Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md)
+- [Operace načítání dat a vytvoření, aktualizace a odstranění v N-úrovňových aplikacích (LINQ to SQL)](data-retrieval-and-cud-operations-in-n-tier-applications.md)
 
- Další informace o n vrstvé aplikace, které používají datové sady ADO.NET naleznete v tématu [práce s datovými sadami ve vícevrstvých aplikacích](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications).
+ Další informace o n-vrstvých aplikacích, které používají ADO.NET datové sady, najdete v tématu [práce s datovými sadami v n-vrstvých aplikacích](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Základní informace](background-information.md)

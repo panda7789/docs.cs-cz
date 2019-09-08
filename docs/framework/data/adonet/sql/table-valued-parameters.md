@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 59c6732dacf225097e22957ebe6536308a2798d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 316ccb19ca9e384be97a83e992af46934702aa0c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938451"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780686"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
 Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace do SQL Server bez vyžadování více zpátečních cest nebo speciální logiky na straně serveru pro zpracování dat. K zapouzdření řádků dat v klientské aplikaci a posílání dat na server v jednom parametrizovaném příkazu můžete použít parametry s hodnotou tabulky. Příchozí datové řádky jsou uloženy v proměnné tabulky, které lze následně provozovat pomocí jazyka Transact-SQL.  
@@ -274,8 +274,8 @@ insertCommand.ExecuteNonQuery()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Příkazy a parametry](../../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)
-- [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)
+- [Příkazy a parametry](../commands-and-parameters.md)
+- [Parametry adaptéru dat](../dataadapter-parameters.md)
+- [Operace dat na SQL Serveru v ADO.NET](sql-server-data-operations.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

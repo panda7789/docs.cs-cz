@@ -6,52 +6,52 @@ helpviewer_keywords:
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: 5d14a1be3cd40ace2e31fec6f44a86707e5c4476
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 545442b0086361c8ce8c0482801afc10b1fee96e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875196"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779679"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientská knihovna pro WCF Data Services
-Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]– na základě dat služby, pokud může odeslat požadavek HTTP a procesu služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, vrací datovou službu. Tato spolupráce umožňuje získat přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povolené rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které poskytují pohodlnější a pestřejší prostředí programovací spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály z rozhraní .NET Framework nebo aplikací založené na technologii Silverlight.  
+Každá aplikace může komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]datovou službou založenou na datech, pokud může odeslat požadavek HTTP a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zpracovat informační kanál, který vrátí datová služba. Tato interoperabilita vám umožní přístup [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]ke službám z široké škály aplikací s podporou webu. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]obsahuje klientské knihovny, které poskytují bohatší programovací prostředí při využívání [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálů z .NET Framework nebo aplikací založených na programu Silverlight.  
   
- Dva hlavní třídy klientské knihovny jsou <xref:System.Data.Services.Client.DataServiceContext> třídy a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy. <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdří operace, které jsou podporovány pro zadané datové služby. I když [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jsou bezstavové, kontext je. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídy pro uchování stavu na straně klienta mezi interakcemi s datové služby za účelem podpory funkcí, jako je správa změn. Tato třída také spravuje identity a sleduje změny. <xref:System.Data.Services.Client.DataServiceQuery%601> Třída reprezentuje dotazu na sadu konkrétní entity.  
+ Dvě hlavní třídy klientské knihovny jsou <xref:System.Data.Services.Client.DataServiceContext> třídy <xref:System.Data.Services.Client.DataServiceQuery%601> a třídy. <xref:System.Data.Services.Client.DataServiceContext> Třída zapouzdřuje operace, které jsou podporovány pro zadanou datovou službu. I [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] když jsou služby bezstavové, kontext není. Proto můžete použít <xref:System.Data.Services.Client.DataServiceContext> třídu k údržbě stavu klienta mezi interakcemi s datovou službou, aby bylo možné podporovat funkce, jako je například Správa změn. Tato třída také spravuje identity a sleduje změny. <xref:System.Data.Services.Client.DataServiceQuery%601> Třída reprezentuje dotaz na konkrétní sadu entit.  
   
- Tato část popisuje, jak pomocí klientských knihoven pro přístup a změnu dat z klientské aplikace rozhraní .NET Framework. Další informace o tom, jak používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny s aplikací založené na technologii Silverlight, naleznete v tématu [služeb WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=186016). Ostatní klientské knihovny jsou k dispozici, díky kterým můžete využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu do jiných typů aplikací. Další informace najdete v tématu [OData SDK](https://go.microsoft.com/fwlink/?LinkID=185796).  
+ Tato část popisuje, jak používat klientské knihovny pro přístup k datům z klientské aplikace .NET Framework a jejich změně. Další informace o použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny s aplikací založenou na programu Silverlight naleznete v tématu [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=186016). K dispozici jsou další klientské knihovny, které umožňují využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál v jiných typech aplikací. Další informace najdete v tématu [sada OData SDK](https://go.microsoft.com/fwlink/?LinkID=185796).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  
- Popisuje, jak generovat klientskou knihovnu a tříd klientské datové služby, které jsou založeny na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
+ [Generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md)  
+ Popisuje, jak vygenerovat klientské knihovny a třídy služby dat klienta založené na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačních kanálech.  
   
- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- Popisuje, jak provádět dotazy pomocí klientské knihovny datové služby z aplikace založené na rozhraní .NET Framework.  
+ [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)  
+ Popisuje, jak zadat dotaz na datovou službu z aplikace založené na .NET Framework pomocí klientských knihoven.  
   
- [Načtení odloženého obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)  
- Popisuje, jak načíst další obsah, které nejsou zahrnuty v odpovědi na počáteční dotaz.  
+ [Načtení odloženého obsahu](loading-deferred-content-wcf-data-services.md)  
+ V této části najdete popis postupu při načítání dalšího obsahu, který není zahrnutý v počáteční reakci na dotaz.  
   
- [Aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md)  
- Popisuje postup vytvoření, úprava a odstranění entit a vztahů s využitím klientské knihovny.  
+ [Aktualizace datové služby](updating-the-data-service-wcf-data-services.md)  
+ Popisuje, jak vytvářet, upravovat a odstraňovat entity a vztahy pomocí klientských knihoven.  
   
- [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
- Popisuje zařízení poskytovaných klientských knihoven pro práci s datovou službu v asynchronním režimu.  
+ [Asynchronní operace](asynchronous-operations-wcf-data-services.md)  
+ Popisuje zařízení poskytovaná klientskými knihovnami pro práci s datovou službou asynchronním způsobem.  
   
- [Operace dávkování](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
- Popisuje, jak odesílat více požadavků do datové služby v jedné dávce pomocí klientské knihovny.  
+ [Operace dávkování](batching-operations-wcf-data-services.md)  
+ V této části najdete popis postupu odesílání více požadavků do datové služby v jedné dávce pomocí klientských knihoven.  
   
- [Vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)  
- Popisuje, jak svázat ovládací prvky [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu vrácené službou data.  
+ [Vazba dat k ovládacím prvkům](binding-data-to-controls-wcf-data-services.md)  
+ Popisuje, jak navazovat ovládací prvky [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] na informační kanál vrácený datovou službou.  
   
- [Operace volání služeb](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md)  
- Popisuje, jak použít knihovnu klienta k volání operací služby.  
+ [Operace volání služeb](calling-service-operations-wcf-data-services.md)  
+ Popisuje, jak používat klientskou knihovnu pro volání operací služby.  
   
- [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)  
- Popisuje možnosti pro správu chování klientské knihovny.  
+ [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md)  
+ Popisuje možnosti správy chování klientské knihovny.  
   
- [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
- Popisuje, jak získávat přístup a měnit binárních dat vrácených datovou službou jako datový proud.  
+ [Práce s binárními daty](working-with-binary-data-wcf-data-services.md)  
+ Popisuje způsob přístupu a změny binárních dat vrácených datovou službou jako datový proud.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
-- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+- [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)
+- [Začínáme](getting-started-with-wcf-data-services.md)

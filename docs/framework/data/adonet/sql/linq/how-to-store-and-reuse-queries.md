@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a012bd79-1809-45e3-adea-0229532396cc
-ms.openlocfilehash: f8400b214bc9ba3a28eeec05f6171953b42bc6f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c023f7610576c017c91fdb919322acdf9003767a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938748"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781637"
 ---
 # <a name="how-to-store-and-reuse-queries"></a>Postupy: Uložení a opakované použití dotazů
-V případě, že máte aplikaci, která spouští strukturální podobné dotazy mnohokrát, můžete často zvýšit výkon kompilováním dotazu jednou a jeho spuštěním několikrát s různými parametry. Aplikace může například potřebovat načíst všechny zákazníky, kteří jsou v určitém městě, kde město je určeno za běhu uživatelem ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje použití zkompilovaných *dotazů* pro tento účel.  
+V případě, že máte aplikaci, která spouští strukturální podobné dotazy mnohokrát, můžete často zvýšit výkon kompilováním dotazu jednou a jeho spuštěním několikrát s různými parametry. Aplikace může například potřebovat načíst všechny zákazníky, kteří jsou v určitém městě, kde město je určeno za běhu uživatelem ve formuláři. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje použití *zkompilovaných dotazů* pro tento účel.  
   
 > [!NOTE]
 > Tento vzor použití představuje nejběžnější použití kompilovaných dotazů. Další přístupy jsou možné. Například zkompilované dotazy mohou být uloženy jako statické členy v částečné třídě, která rozšiřuje kód generovaný návrhářem.  
@@ -36,5 +36,5 @@ V případě, že máte aplikaci, která spouští strukturální podobné dotaz
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Data.Linq.CompiledQuery>
-- [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Koncepty dotazů](query-concepts.md)
+- [Dotazování na databázi](querying-the-database.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e4ab2c4c-9433-4eba-9e9a-096de406cafb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b56840ce68caa3eed50773668c64e2622a646ddf
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 5b0a27eae744fb22c87634aaf6a0274a9825d981
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68892075"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776466"
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>Běžné typy dat (referenční dokumentace nespravovaného rozhraní API)
 Toto téma obsahuje seznam jednoduchých datových typů používaných nespravovanými rozhraními API pro .NET Framework, které jsou definoványC++ `typedef` pomocí C/příkazy. Tyto datové typy jsou obvykle aliasy pro C++C++ /primitivní datové typy. Hodnoty těchto datových typů jsou obvykle neprůhledné; To znamená, že jsou vráceny určitou funkcí nebo metodou, aby mohly být předány jiným funkcím nebo metodám bez úprav.  
@@ -38,9 +38,9 @@ Toto téma obsahuje seznam jednoduchých datových typů používaných nespravo
 |ProcessID|`typedef UINT_PTR ProcessID;`|corprof.h|Identifikátor spravovaného procesu.|  
 |ReJITID|`typedef UINT_PTR ReJITID;`|corprof.h|Identifikátor funkce zpracovaných kompilátorem JIT|  
 |SIZE_T|`typedef ULONG_PTR SIZE_T;`|CorSym. h|Ukazatel na 64ovou adresu paměti.|
-|TASKID|`typedef UINT64 TASKID;`|CorDebug. h, Mscoree. h|Identifikátor instance [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)|  
+|TASKID|`typedef UINT64 TASKID;`|CorDebug. h, Mscoree. h|Identifikátor instance [ICLRTask](./hosting/iclrtask-interface.md)|  
 |IDvlákna|`typedef UINT_PTR ThreadID;`|corprof.h|Identifikátor spravovaného vlákna.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace o nespravovaném rozhraní API](../../../docs/framework/unmanaged-api/index.md)
+- [Referenční informace o nespravovaném rozhraní API](index.md)

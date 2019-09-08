@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ba049723710b378a90d17c67735a05e8a09d05d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 59b4df08157ce14a58393e54b671e8f41b8998ed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636851"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799229"
 ---
 # <a name="gethashfromblob-function"></a>GetHashFromBlob – funkce
 
-Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadané hashovacího algoritmu.
+Načte hodnotu hash sestavení v zadané adrese paměti pomocí zadaného algoritmu hash.
 
-Tato funkce je zastaralá. Použití [iclrstrongname::gethashfromblob –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md) metoda místo.
+Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: GetHashFromBlob –](../hosting/iclrstrongname-gethashfromblob-method.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,32 +45,32 @@ HRESULT GetHashFromBlob (
 ## <a name="parameters"></a>Parametry
 
 `pbBlob`\
-[in] Ukazatel na adresu blok paměti určený k hashovat.
+pro Ukazatel na adresu bloku paměti, který má být použit jako hash.
 
 `cchBlob`\
-[in] Délka v bajtech, bloku paměti.
+pro Délka bloku paměti (v bajtech).
 
 `piHashAlg`\
-[out v] Konstanta, která určuje algoritmus hash. Použít nulu pro výchozí algoritmus.
+[in, out] Konstanta, která určuje algoritmus hash. Pro výchozí algoritmus použijte nulu.
 
 `pbHash`\
-[out] Vrácená hodnota hash vyrovnávací paměti.
+mimo Vrácená vyrovnávací paměť hash.
 
 `cchHash`\
-[in] Požadovaná maximální velikost `pbHash`.
+pro Požadovaná maximální velikost `pbHash`.
 
 `pchHash`\
-[out] Velikost v bajtech, vráceného `pbHash`.
+mimo Velikost vracené `pbHash`velikosti (v bajtech)
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** StrongName.h
+**Hlaviček** StrongName. h
 
-**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll
+**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

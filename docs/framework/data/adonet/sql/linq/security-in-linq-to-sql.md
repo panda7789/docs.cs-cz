@@ -2,38 +2,38 @@
 title: Zabezpečení v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: d49787f7-414e-4c71-aa33-80a5895536b1
-ms.openlocfilehash: c07d8c6a22326397a21219ddd660a44f9282ece0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f1ebf2f72fbfe3b27b9fbfd41f0dd65c70103620
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616133"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781183"
 ---
 # <a name="security-in-linq-to-sql"></a>Zabezpečení v LINQ to SQL
-Bezpečnostní rizika jsou vždy k dispozici, když se připojíte k databázi. I když LINQ to SQL může zahrnovat některé nové způsoby, jak pracovat s daty v systému SQL Server, neposkytuje žádné další bezpečnostní mechanismy.  
+Bezpečnostní rizika jsou vždy přítomna při připojení k databázi. I když LINQ to SQL může zahrnovat některé nové způsoby práce s daty v SQL Server, neposkytuje žádné další mechanismy zabezpečení.  
   
-## <a name="access-control-and-authentication"></a>Řízení přístupu a ověřování  
- Technologie LINQ to SQL nemá vlastní mechanismy modelu nebo ověřování uživatelů. Pomocí zabezpečení SQL serveru můžete řídit přístup k databázi, databázové tabulky, zobrazení a uložených procedur, které jsou mapovány na objektový model. Udělit minimální požadovaný přístup pro uživatele a vyžadovat silná hesla k ověřování uživatelů.  
+## <a name="access-control-and-authentication"></a>Access Control a ověřování  
+ LINQ to SQL nemá vlastní uživatelský model nebo ověřovací mechanismy. Pomocí SQL Server zabezpečení můžete řídit přístup k databázi, databázovým tabulkám, zobrazením a uloženým procedurám, které jsou namapovány na objektový model. Udělte minimálnímu požadovanému přístupu uživatelům a vyžadovat silná hesla pro ověřování uživatelů.  
   
 ## <a name="mapping-and-schema-information"></a>Mapování a informace o schématu  
- V systému souborů je k dispozici pro všechny s přístupem k těmto souborům SQL a CLR databáze a mapování schématu informace o typu v objektovém modelu nebo externí mapování souboru. Předpokládejme, že bude k dispozici všem, kdo má přístup k modelu objektu nebo externí mapování souboru informací o schématu. Aby se zabránilo další rozšíření přístup na informace o schématu, použijte mechanismy zabezpečení souboru k zabezpečení zdrojových souborů a souborů mapování.  
+ Mapování typů SQL-CLR a informace o schématu databáze v objektovém modelu nebo externím souboru mapování jsou k dispozici pro všechny s přístupem k souborům v systému souborů. Předpokládejte, že informace o schématu budou k dispozici všem uživatelům, kteří mají přístup k objektovému modelu nebo externímu souboru mapování. Aby nedocházelo k širšímu přístupu k informacím o schématu, použijte mechanismy zabezpečení souborů k zabezpečení zdrojových souborů a souborů mapování.  
   
 ## <a name="connection-strings"></a>Připojovací řetězce  
- Použití hesel v připojovacích řetězcích mělo by se vyhnout, kdykoli je to možné. Nejenže je připojovací řetězec ohrožení zabezpečení v sama o sobě, ale připojovací řetězec může také přidat ve formátu prostého textu objektový model nebo externí mapování souboru při použití nástroje příkazového řádku Návrhář relací objektů nebo SQLMetal. Každý, kdo má přístup k modelu objektu nebo externí mapování souboru prostřednictvím systému souborů (Pokud je zahrnutý v připojovacím řetězci) viděl heslo připojení.  
+ Pokud je to možné, měli byste se vyhnout používání hesel v připojovacích řetězcích. Pouze připojovací řetězec je bezpečnostním řetězcem, který má své právo napravo, ale připojovací řetězec může být také přidán jako nešifrovaný text do objektového modelu nebo externího mapování souboru při použití Návrhář relací objektů nebo nástroje příkazového řádku SQLMetal. Kdokoli, kdo má přístup k objektovému modelu nebo k souboru externího mapování přes systém souborů, může zobrazit heslo připojení (Pokud je součástí připojovacího řetězce).  
   
- Chcete-li minimalizovat rizika, používejte integrované zabezpečení pro důvěryhodného připojení se serverem SQL Server. Když použijete tento přístup, není nutné ukládat hesla v připojovacím řetězci. Další informace najdete v tématu [SQL Server – zabezpečení](../../../../../../docs/framework/data/adonet/sql/sql-server-security.md).  
+ K minimalizaci takových rizik použijte integrované zabezpečení a vytvořte důvěryhodné připojení pomocí SQL Server. Pomocí tohoto přístupu není nutné ukládat heslo do připojovacího řetězce. Další informace najdete v tématu [SQL Server Security](../sql-server-security.md).  
   
- Chybí integrované zabezpečení bude potřeba heslo prostého textu v připojovacím řetězci. Nejlepší způsob, jak zabezpečit připojovací řetězec, ve vzestupném pořadí podle rizika, vypadá takto:  
+ V případě nepřítomnosti integrovaného zabezpečení bude v připojovacím řetězci potřeba heslo pro vymazání textu. Nejlepším způsobem, jak přispět k zabezpečení připojovacího řetězce, je ve vzestupném pořadí rizika následující:  
   
 - Použijte integrované zabezpečení.  
   
-- Zabezpečený připojovací řetězce s hesly a minimalizovat předávání kolem připojovací řetězce.  
+- Zabezpečte připojovací řetězce s hesly a minimalizujte předávání řetězců připojení.  
   
-- Použití <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> třídy místo připojovacího řetězce, protože omezuje trvání vystavení. Technologie LINQ to SQL <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> můžete vytvořit instanci třídy pomocí <xref:System.Data.SqlClient.SqlConnection>.  
+- Místo připojovacího řetězce použijte třídu,protožeomezujedobutrváníexpozice.<xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> Pro třídu <xref:System.Data.Linq.DataContext?displayProperty=nameWithType> LINQ to SQL lze vytvořit instanci <xref:System.Data.SqlClient.SqlConnection>pomocí.  
   
-- Minimalizovat životnosti a dotykového ovládání bodů pro všechny řetězce připojení.  
+- Minimalizujte životnost a dotykové body pro všechny připojovací řetězce.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)
+- [Základní informace](background-information.md)
+- [Nejčastější dotazy](frequently-asked-questions.md)

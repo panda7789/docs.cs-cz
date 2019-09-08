@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8f6016fc43700fda36c6d94408019d25f89bb36b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 91db9d8c6fccf75bc9025a9487517e8c55d016cc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044211"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779206"
 ---
 # <a name="mitigation-product-versioning"></a>Zmírnění Správa verzí produktu
 
@@ -31,7 +31,7 @@ Níže jsou uvedené podrobné změny:
 
 Obecně platí, že by aplikace měly záviset na doporučených technikách zjišťování, jako je běhová verze .NET Framework a instalační adresář:
 
-- Chcete-li zjistit verzi modulu runtime .NET Framework, přečtěte si téma [How to: Určete, které verze .NET Framework jsou](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)nainstalovány.
+- Chcete-li zjistit verzi modulu runtime .NET Framework, přečtěte si téma [How to: Určete, které verze .NET Framework jsou](how-to-determine-which-versions-are-installed.md)nainstalovány.
 
 - Chcete-li určit instalační cestu pro .NET Framework, použijte hodnotu `InstallPath` položky `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full` v klíči.
 
@@ -44,4 +44,4 @@ Obecně platí, že by aplikace měly záviset na doporučených technikách zji
 
 ## <a name="see-also"></a>Viz také:
 
-- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+- [Změny v modulu runtime](runtime-changes-in-the-net-framework-4-6.md)
