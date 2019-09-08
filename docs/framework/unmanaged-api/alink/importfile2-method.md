@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1193af7b7375dfd3367c12fdb0067c9c30c614f0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a03fc24e5ef932d13c0d195f53c703cdd3ff45ff
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741747"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776935"
 ---
-# <a name="importfile2-method"></a><span data-ttu-id="7c0b3-102">ImportFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="7c0b3-102">ImportFile2 Method</span></span>
-<span data-ttu-id="7c0b3-103">Importuje nevázaného modulů a sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-103">Imports assemblies and unbound modules.</span></span> <span data-ttu-id="7c0b3-104">Tato metoda je jako [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), ale funguje i v případě, že importovaný soubor buď neexistuje na disku.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-104">This method is like [ImportFile Method](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), but works even if the file being imported does not exist on disk.</span></span>  
+# <a name="importfile2-method"></a><span data-ttu-id="d0567-102">ImportFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="d0567-102">ImportFile2 Method</span></span>
+<span data-ttu-id="d0567-103">Importuje sestavení a nevázané moduly.</span><span class="sxs-lookup"><span data-stu-id="d0567-103">Imports assemblies and unbound modules.</span></span> <span data-ttu-id="d0567-104">Tato metoda se podobá [metodě importFile –](importfile-method.md), ale funguje i v případě, že soubor, který importujete, na disku neexistuje.</span><span class="sxs-lookup"><span data-stu-id="d0567-104">This method is like [ImportFile Method](importfile-method.md), but works even if the file being imported does not exist on disk.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c0b3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c0b3-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d0567-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0567-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT ImportFile2(  
@@ -40,36 +40,36 @@ HRESULT ImportFile2(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7c0b3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7c0b3-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d0567-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d0567-106">Parameters</span></span>  
  `pszFilename`  
- <span data-ttu-id="7c0b3-107">Název souboru k importu.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-107">Name of file to be imported.</span></span>  
+ <span data-ttu-id="d0567-107">Název souboru, který se má importovat</span><span class="sxs-lookup"><span data-stu-id="d0567-107">Name of file to be imported.</span></span>  
   
  `pszTargetName`  
- <span data-ttu-id="7c0b3-108">Volitelné výstupní název souboru, který slouží k přejmenování souboru, jako je propojený do sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-108">Optional output file name that can be used to rename the file as it is linked into the assembly.</span></span>  
+ <span data-ttu-id="d0567-108">Volitelný název výstupního souboru, který lze použít k přejmenování souboru, protože je propojen do sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0567-108">Optional output file name that can be used to rename the file as it is linked into the assembly.</span></span>  
   
  `pAssemblyScopeIn`  
- <span data-ttu-id="7c0b3-109">Volitelné oboru [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-109">Optional scope [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface.</span></span>  
+ <span data-ttu-id="d0567-109">Volitelné rozhraní oboru [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md)</span><span class="sxs-lookup"><span data-stu-id="d0567-109">Optional scope [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface.</span></span>  
   
  `fSmartImport`  
- <span data-ttu-id="7c0b3-110">Při hodnotě TRUE se používá importtypes –, jinak se import je nutné provést ručně.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-110">If TRUE, ImportTypes is used, otherwise importing must be performed manually.</span></span>  
+ <span data-ttu-id="d0567-110">Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.</span><span class="sxs-lookup"><span data-stu-id="d0567-110">If TRUE, ImportTypes is used, otherwise importing must be performed manually.</span></span>  
   
  `pImportToken`  
- <span data-ttu-id="7c0b3-111">Přijímá ID pro soubor nebo sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-111">Receives the ID for the file or assembly.</span></span>  
+ <span data-ttu-id="d0567-111">Přijímá ID souboru nebo sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0567-111">Receives the ID for the file or assembly.</span></span>  
   
  `ppAssemblyScope`  
- <span data-ttu-id="7c0b3-112">Přijímá [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-112">Receives the [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface.</span></span> <span data-ttu-id="7c0b3-113">Hodnota NULL, pokud soubor není sestavení.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-113">NULL if the file is not an assembly.</span></span>  
+ <span data-ttu-id="d0567-112">Přijímá rozhraní [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="d0567-112">Receives the [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface.</span></span> <span data-ttu-id="d0567-113">Hodnota NULL, pokud soubor není sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0567-113">NULL if the file is not an assembly.</span></span>  
   
  `pdwCountOfScopes`  
- <span data-ttu-id="7c0b3-114">Přijímá soubory a/nebo importovat obory nenašel.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-114">Receives the found of files and/or scopes imported.</span></span>  
+ <span data-ttu-id="d0567-114">Přijímá nalezené soubory nebo obory, které byly importovány.</span><span class="sxs-lookup"><span data-stu-id="d0567-114">Receives the found of files and/or scopes imported.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="7c0b3-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7c0b3-115">Return Value</span></span>  
- <span data-ttu-id="7c0b3-116">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-116">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d0567-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d0567-115">Return Value</span></span>  
+ <span data-ttu-id="d0567-116">Vrací S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="d0567-116">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7c0b3-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c0b3-117">Requirements</span></span>  
- <span data-ttu-id="7c0b3-118">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="7c0b3-118">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d0567-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d0567-117">Requirements</span></span>  
+ <span data-ttu-id="d0567-118">Vyžaduje ALink. h.</span><span class="sxs-lookup"><span data-stu-id="d0567-118">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c0b3-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c0b3-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d0567-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0567-119">See also</span></span>
 
-- [<span data-ttu-id="7c0b3-120">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c0b3-120">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="7c0b3-121">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c0b3-121">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="7c0b3-122">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="7c0b3-122">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="d0567-120">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0567-120">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="d0567-121">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0567-121">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="d0567-122">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="d0567-122">ALink API</span></span>](index.md)
