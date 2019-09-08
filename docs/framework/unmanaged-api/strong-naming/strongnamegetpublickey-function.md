@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6e9e5c199ad437290d7bf19d65b5f29a0abed5e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae87ebd0b8225f14ca029fac80528d47f5a866cf
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780113"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799056"
 ---
 # <a name="strongnamegetpublickey-function"></a>StrongNameGetPublicKey – funkce
-Získá veřejný klíč z páru klíčů privátní nebo veřejné. Pár klíčů může být zadán buď jako název kontejneru klíčů ve zprostředkovateli kryptografických služeb (CSP), nebo jako nezpracovaný kolekce bajtů.  
+Získá veřejný klíč z páru privátních a veřejných klíčů. Pár klíčů je možné zadat buď jako název kontejneru klíčů v rámci zprostředkovatele kryptografických služeb (CSP), nebo jako nezpracovaných kolekcí bajtů.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamegetpublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameGetPublicKey –](../hosting/iclrstrongname-strongnamegetpublickey-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,44 +43,44 @@ BOOLEAN StrongNameGetPublicKey (
   
 ## <a name="parameters"></a>Parametry  
  `szKeyContainer`  
- [in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče. Pokud `pbKeyBlob` má hodnotu null, `szKeyContainer` musíte zadat platný kontejner ve zprostředkovateli CSP. V takovém případě `StrongNameGetPublicKey` extrahuje veřejný klíč z páru klíčů ukládat do kontejneru.  
+ pro Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče. Pokud `pbKeyBlob` má hodnotu null `szKeyContainer` , musí v rámci CSP určovat platný kontejner. V tomto případě `StrongNameGetPublicKey` extrahuje veřejný klíč z páru klíčů, který je uložený v kontejneru.  
   
- Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).  
+ Pokud `pbKeyBlob` hodnota není null, předpokládá se, že dvojice klíčů bude obsažena v binárním velkém objektu (BLOB) klíče.  
   
- Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů. Jiné typy klíčů jsou v tuto chvíli nepodporuje.  
+ Klíče musí být 1024-bit Rivest-Shamir-Adleman (RSA) Signing Keys. V tuto chvíli není podporovaný žádný jiný typ klíčů.  
   
  `pbKeyBlob`  
- [in] Ukazatel na pár veřejného a privátního klíče. Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce. Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `szKeyContainer` se předpokládá, že obsahuje pár klíčů.  
+ pro Ukazatel na pár veřejného a privátního klíče. Tato dvojice je ve formátu vytvořeném funkcí Win32 `CryptExportKey` . Pokud `pbKeyBlob` má hodnotu null, předpokládá se, že `szKeyContainer` kontejner klíčů určený parametrem obsahuje dvojici klíčů.  
   
  `cbKeyBlob`  
- [in] Velikost v bajtech, z `pbKeyBlob`.  
+ pro Velikost v bajtech `pbKeyBlob`.  
   
  `ppbPublicKeyBlob`  
- [out] Vrácené veřejného klíče objektu BLOB. `ppbPublicKeyBlob` Parametr je přidělí modul common language runtime a vrátit zpět volajícímu. Volající musí uvolnit paměť pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.  
+ mimo Vrácený objekt BLOB veřejného klíče. `ppbPublicKeyBlob` Parametr je přidělen modulem CLR (Common Language Runtime) a vrácen volajícímu. Volající musí uvolnit paměť pomocí funkce [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) .  
   
  `pcbPublicKeyBlob`  
- [out] Velikost veřejného klíče vráceného objektu BLOB.  
+ mimo Velikost vráceného objektu BLOB veřejného klíče.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Veřejný klíč je součástí [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) struktury.  
+ Veřejný klíč je obsažen ve struktuře [PublicKeyBlob –](publickeyblob-structure.md) .  
   
- Pokud `StrongNameGetPublicKey` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameGetPublicKey` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
-- [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
-- [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
+- [StrongNameGetPublicKey – metoda](../hosting/iclrstrongname-strongnamegetpublickey-method.md)
+- [StrongNameTokenFromPublicKey – metoda](../hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)
+- [PublicKeyBlob – struktura](publickeyblob-structure.md)

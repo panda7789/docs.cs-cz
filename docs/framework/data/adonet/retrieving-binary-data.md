@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 56c5a9e3-31f1-482f-bce0-ff1c41a658d0
-ms.openlocfilehash: 068b84e8704b54e6aea148ec5fc5bf9f0c4cb958
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9acda6631e17031a81ba06d9530739a586fac7ff
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664282"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794429"
 ---
 # <a name="retrieving-binary-data"></a>Načítání binárních dat
-Ve výchozím nastavení **DataReader** načte příchozích dat jako řádek, jakmile celý řádek dat je k dispozici. Binární rozsáhlé objekty (objekty BLOB) potřebovat odlišnému způsobu zacházení však, protože mohou obsahovat GB dat, která nemůže být obsažena v jediném řádku. **Command.ExecuteReader** metoda má přetížení, které bude trvat <xref:System.Data.CommandBehavior> argument, chcete-li změnit výchozí chování **DataReader**. Můžete předat <xref:System.Data.CommandBehavior.SequentialAccess> k **ExecuteReader** metody, chcete-li změnit výchozí chování **DataReader** tak, aby místo načítání řádky dat, bude načítat data postupně po přijetí. To je ideální pro načtení objektů BLOB nebo další velké datové struktury. Všimněte si, že toto chování může záviset na datovém zdroji. Například vrácení objektu BLOB z aplikace Microsoft Access načte celý objekt BLOB se načtena do paměti, spíše než postupně po přijetí.  
+Ve výchozím nastavení datový objekt **DataReader** načte příchozí data jako řádek, jakmile bude k dispozici celý řádek dat. Binární rozsáhlé objekty (BLOB) vyžadují jiné zacházení, protože mohou obsahovat gigabajty dat, které nemohou být obsaženy na jednom řádku. Metoda **Command. ExecuteReader** má přetížení, které převezme <xref:System.Data.CommandBehavior> argument pro úpravu výchozího chování objektu **DataReader**. Chcete-li <xref:System.Data.CommandBehavior.SequentialAccess> změnit výchozí chování objektu **DataReader** , můžete předat metodě **ExecuteReader** , aby se místo načítání řádků dat načetla data postupně po přijetí. To je ideální pro načítání objektů BLOB nebo jiných velkých datových struktur. Všimněte si, že toto chování může záviset na zdroji dat. Například vrácení objektu BLOB z aplikace Microsoft Access načte celý objekt BLOB, který se načítá do paměti, a ne postupně, jak je přijatý.  
   
- Při nastavení **DataReader** používat **SequentialAccess**, je důležité si uvědomit pořadí, ve kterém můžete přístup k polím vrátila. Výchozí chování **DataReader**, což způsobí načtení celý řádek, jakmile je k dispozici, umožňuje přístup k polím vrátil v libovolném pořadí, dokud se na další řádek je pro čtení. Při použití **SequentialAccess** však musí přístup k polím, vrátí **DataReader** v pořadí. Například pokud dotaz vrátí tři sloupce, třetí z nich je objekt BLOB, musí vracet hodnoty polí prvního a druhého před přístup k datům objektu BLOB do třetího pole. Je-li získat přístup k poli třetí před první nebo druhé pole, první a druhé pole hodnoty již nejsou k dispozici. Důvodem je, že **SequentialAccess** byl změněn **DataReader** vrátit data v pořadí a dat není k dispozici po **DataReader** má čtení za ho.  
+ Při nastavování objektu **DataReader** pro použití **SequentialAccess**je důležité poznamenat sekvenci, ve které se budou vracet pole. Výchozí chování objektu **DataReader**, který načte celý řádek, jakmile je k dispozici, umožňuje přístup k polím vráceným v libovolném pořadí, dokud nebude načten další řádek. Při použití **SequentialAccess** ale musíte získat přístup k polím vráceným pomocí objektu **DataReader** v daném pořadí. Například pokud váš dotaz vrátí tři sloupce, třetí z nich je objekt BLOB, je nutné vrátit hodnoty prvních a druhých polí před přístupem k datům objektu BLOB ve třetím poli. Pokud přistupujete k třetímu poli před prvním nebo druhým polem, hodnoty v polích First a Second nebudou již k dispozici. Důvodem je to, že **SequentialAccess** změnil **DataReader** tak, aby vracel data v sekvenci, a data nejsou k dispozici poté, co je v objektu **DataReader** načteno za poslední.  
   
- Při přístupu k datům v poli objektů BLOB, použijte **GetBytes** nebo **provedení metody GetChars** zadaný přistupující objekty **DataReader**, který vyplnit pole s daty. Můžete také použít **GetString** znaková data; ale. Pokud chcete ušetřit prostředky systému nebudete chtít načíst celou hodnotu objektu BLOB do proměnné jeden řetězec. Místo toho můžete zadat konkrétní vyrovnávací paměť o velikosti dat, který se má vrátit a počáteční umístění prvního bajtu nebo znaku číst z vrácená data. **Provedení metody GetBytes** a **provedení metody GetChars** vrátí `long` hodnotu, která představuje počet bajtů nebo znaků, které jsou vráceny. Pokud předáte do pole null **GetBytes** nebo **provedení metody GetChars**, dlouhou hodnotu vrácenou hodnotou celkový počet bajtů nebo znaků v objektu BLOB. Volitelně můžete zadat index v poli jako počáteční pozice pro data čtená.  
+ Při přístupu k datům v poli objektu BLOB použijte přístupové objekty typovaného typu **GetBytes** nebo **GetChars** objektu **DataReader**, který plní pole daty. Pro znaková data můžete také použít **GetString** ; naopak. Chcete-li ušetřit systémové prostředky, nebudete pravděpodobně chtít načíst celou hodnotu objektu BLOB do jediné řetězcové proměnné. Místo toho můžete zadat konkrétní velikost vyrovnávací paměti, která se má vrátit, a počáteční umístění prvního bajtu nebo znaku, který se má načíst ze vrácených dat. **GetByte** a **GetChars** vrátí `long` hodnotu, která představuje počet vrácených bajtů nebo znaků. Pokud předáte pole hodnoty null do **GetBytes** nebo **GetChars**, vrátí se hodnota Long, což bude celkový počet bajtů nebo znaků v objektu BLOB. Volitelně můžete zadat index v poli jako počáteční pozici pro čtená data.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí ID vydavatele a logo z **pubs** ukázkovou databázi na serveru Microsoft SQL Server. ID vydavatele (`pub_id`) je znak pole, které je logo bitové kopie, což je objekt BLOB. Protože **logo** rastrový obrázek je pole, v příkladu vrací binární data s využitím **GetBytes**. Všimněte si, že ID vydavatele přistupuje pro aktuální řádek dat před loga, protože pole musí mít přístup postupně.  
+ Následující příklad vrátí ID vydavatele a logo z ukázkové databáze **pubs** v Microsoft SQL Server. Vydavatel ID (`pub_id`) je pole znaků a logo je obrázek, který je objektem BLOB. Vzhledem k tomu, že pole **loga** je rastrový obrázek, příklad vrátí binární data pomocí **GetBytes**. Všimněte si, že ID vydavatele je k dispozici pro aktuální řádek dat před logem, protože pole musí být přistupovaná sekvenčně.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -155,5 +155,5 @@ connection.Close();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Binární a vysoké hodnoty na SQL Serveru](../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Binární a vysoké hodnoty na SQL Serveru](./sql/sql-server-binary-and-large-value-data.md)
+- [Přehled ADO.NET](ado-net-overview.md)

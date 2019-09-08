@@ -7,26 +7,26 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c082e5dbb1f7b2bb8c5236d0c480302a6e387ebe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2e4e3b1768086a1c57979a4c74643036294299a3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910995"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787748"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
   
 > [!NOTE]
-> Informace o stažení a instalaci .NET Framework najdete v tématu [instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).  
+> Informace o stažení a instalaci .NET Framework najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md).  
   
  Následující tabulka shrnuje .NET Framework historii verzí a koreluje každou verzi se sadou Visual Studio, Windows a Windows serverem. Sada Visual Studio poskytuje možnost zacílení na více verzí, takže nejste omezeni uvedenou verzí rozhraní .NET Framework.  
   
  Každá nová verze rozhraní .NET Framework zachovává funkce předchozích verzí a přidává nové funkce. Modul CLR je identifikován vlastním číslem verze. Číslo verze rozhraní .NET Framework je při každém vydání zvýšeno, i když není vždy zvýšena verze modulu CLR. Například .NET Framework 4, 4,5 a novější verze zahrnují modul CLR 4, ale .NET Framework 2,0, 3,0 a 3,5 zahrnují 2,0 CLR. (Verze 3 CLR neexistovala.)  
   
- Úplný seznam podporovaných operačních systémů najdete v části [požadavky na systém](../../../docs/framework/get-started/system-requirements.md) . Informace ke stažení najdete v tématu [instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md). Informace o určení, které verze .NET Framework jsou nainstalovány v počítači, naleznete v [tématu How to: Určete, které verze .NET Framework jsou](how-to-determine-which-versions-are-installed.md)nainstalovány.  
+ Úplný seznam podporovaných operačních systémů najdete v části [požadavky na systém](../get-started/system-requirements.md) . Informace ke stažení najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md). Informace o určení, které verze .NET Framework jsou nainstalovány v počítači, naleznete v [tématu How to: Určete, které verze .NET Framework jsou](how-to-determine-which-versions-are-installed.md)nainstalovány.  
   
- V tabulce jsou verze .NET Framework nainstalované na verzích operačního systému označené ✓em v části **zahrnuté v/můžou být nainstalované v systému Windows** a **zahrnuté v/může být nainstalované ve sloupcích Windows serveru** musí být [povolené v ovládacím prvku. Panel](../../../docs/framework/install/dotnet-35-windows-10.md) (pro systém Windows) nebo povolený prostřednictvím Správce serveru (pro Windows Server).  
+ V tabulce jsou verze .NET Framework nainstalované na verzích operačního systému označené ✓em v části **zahrnuté v/můžou být nainstalované v systému Windows** a **zahrnuté v/může být nainstalované ve sloupcích Windows serveru** musí být [povolené v ovládacím prvku. Panel](../install/dotnet-35-windows-10.md) (pro systém Windows) nebo povolený prostřednictvím Správce serveru (pro Windows Server).  
 
 [!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
  
@@ -53,7 +53,7 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 
 <sup>\*</sup>&nbsp;&nbsp;.NET Framework musí být v tomto operačním systému povolená přes [Ovládací panely (pro Windows) nebo správce serveru (pro Windows Server)](../install/dotnet-35-windows-10.md#enable-the-net-framework-35-in-control-panel).
 
- Obecně platí, že byste neměli odinstalovávat verze rozhraní .NET Framework, které jsou nainstalovány ve vašem počítači, protože na konkrétní verzi může záviset aplikace, kterou používáte, a ta se může poškodit, pokud je verze odebrána. V jednom počítači můžete najednou načíst několik verzí rozhraní .NET Framework. To znamená, že můžete nainstalovat .NET Framework bez nutnosti odinstalování předchozích verzí. Další informace najdete v tématu [Začínáme](../../../docs/framework/get-started/index.md).
+ Obecně platí, že byste neměli odinstalovávat verze rozhraní .NET Framework, které jsou nainstalovány ve vašem počítači, protože na konkrétní verzi může záviset aplikace, kterou používáte, a ta se může poškodit, pokud je verze odebrána. V jednom počítači můžete najednou načíst několik verzí rozhraní .NET Framework. To znamená, že můžete nainstalovat .NET Framework bez nutnosti odinstalování předchozích verzí. Další informace najdete v tématu [Začínáme](../get-started/index.md).
 
 ## <a name="targeting-and-running-net-framework-apps-for-version-45-and-later"></a>Cílení a spuštění aplikací .NET Framework pro verzi 4,5 a novější  
  .NET Framework 4,5 je místní aktualizace, která nahrazuje .NET Framework 4 ve vašem počítači a podobně .NET Framework 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8 jsou místní aktualizace .NET Framework 4,5, což znamená, že používají stejný modul runtime. verze, ale aktualizované verze sestavení a zahrnutí nových typů a členů. Po instalaci jedné z těchto aktualizací by se .NET Framework 4, .NET Framework 4,5, .NET Framework 4,6 nebo .NET Framework 4,7, aby aplikace běžely i bez nutnosti opětovné kompilace. Opačně to však neplatí. Nedoporučujeme spouštět aplikace, které cílí na novější verzi .NET Framework ve starší verzi .NET Framework. Například nedoporučujeme spouštět aplikaci cíle .NET Framework 4,6 na .NET Framework 4,5. Platí následující pokyny:  
@@ -64,19 +64,19 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
   
      .NET Framework 4.5.1 a .NET Framework 4,5 se tady používají jenom jako příklady. Tento princip platí pro všechny aplikace, které cílí na novější verzi .NET Framework než ta, která je nainstalovaná v systému, na kterém je spuštěná.  
   
- Některé změny v .NET Framework mohou vyžadovat změny kódu vaší aplikace. než začnete používat stávající aplikace s .NET Framework 4,5 nebo novějšími verzemi, podívejte se na [kompatibilitu aplikací](application-compatibility.md) . Další informace o instalaci aktuální verze najdete v tématu [instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md). Informace o podpoře pro .NET Framework najdete v tématu [Zásady životního cyklu podpory Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Podpora Microsoftu.  
+ Některé změny v .NET Framework mohou vyžadovat změny kódu vaší aplikace. než začnete používat stávající aplikace s .NET Framework 4,5 nebo novějšími verzemi, podívejte se na [kompatibilitu aplikací](application-compatibility.md) . Další informace o instalaci aktuální verze najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md). Informace o podpoře pro .NET Framework najdete v tématu [Zásady životního cyklu podpory Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Podpora Microsoftu.  
   
 ## <a name="targeting-and-running-apps-for-older-versions"></a>Zacílení a spuštění aplikací pro starší verze  
 
-.NET Framework verze 2,0, 3,0 a 3,5 jsou sestavené se stejnou verzí modulu CLR (CLR 2,0). Tyto verze představují sousední vrstvy jedné instalace. Každá verze je postupně sestavena nad předchozí verzí. Na jednom počítači není možné spouštět verze 2.0, 3.0 a 3.5 současně. Při instalaci verze 3.5 automaticky získáte vrstvy 2.0 a 3.0 a aplikace, které byly vytvořeny pro verze 2.0, 3.0 a 3.5, lze spustit na verzi 3.5. .NET Framework 4 ale tento přístup k vrstvení a novější verze (.NET Framework 4,5, 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8) také reprezentují po sobě jdoucí vrstvy jedné instalace.  Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spuštění více verzí modulu CLR v jednom procesu. Další informace naleznete v tématu [sestavení a souběžné spouštění](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md).  
+.NET Framework verze 2,0, 3,0 a 3,5 jsou sestavené se stejnou verzí modulu CLR (CLR 2,0). Tyto verze představují sousední vrstvy jedné instalace. Každá verze je postupně sestavena nad předchozí verzí. Na jednom počítači není možné spouštět verze 2.0, 3.0 a 3.5 současně. Při instalaci verze 3.5 automaticky získáte vrstvy 2.0 a 3.0 a aplikace, které byly vytvořeny pro verze 2.0, 3.0 a 3.5, lze spustit na verzi 3.5. .NET Framework 4 ale tento přístup k vrstvení a novější verze (.NET Framework 4,5, 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8) také reprezentují po sobě jdoucí vrstvy jedné instalace.  Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spuštění více verzí modulu CLR v jednom procesu. Další informace naleznete v tématu [sestavení a souběžné spouštění](../app-domains/assemblies-and-side-by-side-execution.md).  
   
- Kromě toho, pokud je vaše aplikace cílena na verzi 2,0, 3,0 nebo 3,5, mohou být uživatelé požádáni o povolení .NET Framework 3,5 na počítači se systémem Windows 8, Windows 8.1 nebo Windows 10 před tím, než budou moci aplikaci spustit. Další informace najdete v tématu [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).  
+ Kromě toho, pokud je vaše aplikace cílena na verzi 2,0, 3,0 nebo 3,5, mohou být uživatelé požádáni o povolení .NET Framework 3,5 na počítači se systémem Windows 8, Windows 8.1 nebo Windows 10 před tím, než budou moci aplikaci spustit. Další informace najdete v tématu [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).  
   
-## <a name="next-steps"></a>Další postup  
+## <a name="next-steps"></a>Další kroky  
   
-- Pokud s .NET Framework začínáte, přečtěte si [Přehled](../../../docs/framework/get-started/overview.md) úvodních konceptů a funkcí.  
+- Pokud s .NET Framework začínáte, přečtěte si [Přehled](../get-started/overview.md) úvodních konceptů a funkcí.  
   
-- Nové funkce a vylepšení .NET Framework 4,5 a jejich vydání najdete v tématu [co je nového v .NET Framework](../../../docs/framework/whats-new/index.md).  
+- Nové funkce a vylepšení .NET Framework 4,5 a jejich vydání najdete v tématu [co je nového v .NET Framework](../whats-new/index.md).  
   
 - Informace o migraci aplikace z .NET Framework 4 do .NET Framework 4,5 a jejich vydání najdete v [Průvodci migrací](index.md).  
   
@@ -86,4 +86,4 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 
 - [Kompatibilita verzí](version-compatibility.md)
 - [Zásady životního cyklu podpory pro Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)
-- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)

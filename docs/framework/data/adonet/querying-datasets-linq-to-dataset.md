@@ -1,30 +1,30 @@
 ---
-title: Dotazy na datové sady (LINQ to DataSet)
+title: Dotazování na datové sady (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: bb68d2e4-623d-4d60-85e3-965254f6fee7
-ms.openlocfilehash: ec4ee345835294499f7ac9f665a9b79e2efc0f64
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 79a9b320fbdbfecc3f7d531d992b1529873871a5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504664"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783045"
 ---
-# <a name="querying-datasets-linq-to-dataset"></a>Dotazy na datové sady (LINQ to DataSet)
-Po <xref:System.Data.DataSet> objekt naplněné daty, můžete začít ho dotazování. Formulování dotazy pomocí jazyka LINQ k datové sadě je podobný používání [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] proti jiné [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]– povolené zdroje. Nezapomeňte však, že při použití [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazuje přes <xref:System.Data.DataSet> objekt dotazujete výčet <xref:System.Data.DataRow> objekty namísto výčet vlastního typu. To znamená, že můžete použít některý z členů <xref:System.Data.DataRow> tříd ve vaší [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazy. Umožňuje vytvořit bohatě vybaveným a komplexní dotazy.  
+# <a name="querying-datasets-linq-to-dataset"></a>Dotazování na datové sady (LINQ to DataSet)
+Po naplnění <xref:System.Data.DataSet> objektu daty můžete začít dotazovat se na něj. Formulace dotazů pomocí LINQ to DataSet je podobná [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] použití s [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]jinými zdroji dat s podporou. Nezapomeňte však, že pokud používáte [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazy <xref:System.Data.DataSet> přes objekt, který se <xref:System.Data.DataRow> dotazuje na výčet objektů, místo výčtu vlastního typu. To znamená, že můžete použít libovolný ze členů <xref:System.Data.DataRow> třídy [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] v dotazech. To vám umožní vytvářet bohatě komplexní dotazy.  
   
- Stejně jako v jiných implementacích [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], můžete vytvoření LINQ to DataSet dotazy ve dvou různých formách: výraz syntaxe využívající dotazy a syntaxe dotazů založených na volání metody. Můžete použít syntaxe výrazu dotazu nebo syntaxe dotazů založených na volání metody k provedení dotazů na jedné tabulky v <xref:System.Data.DataSet>, proti více tabulek v <xref:System.Data.DataSet>, nebo na tabulky v typovaného <xref:System.Data.DataSet>.  
+ Stejně jako u jiných implementací [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]nástroje můžete vytvářet LINQ to DataSet dotazy ve dvou různých formulářích: Syntaxe výrazů dotazů a syntaxe dotazů založených na metodách. Pomocí syntaxe výrazu dotazu nebo syntaxe dotazu založeného na metodách můžete provádět dotazy na jednotlivé tabulky v <xref:System.Data.DataSet>, proti několika tabulkám <xref:System.Data.DataSet>v nebo v tabulkách v <xref:System.Data.DataSet>typu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Dotazy na jednu tabulku](../../../../docs/framework/data/adonet/single-table-queries-linq-to-dataset.md)  
+ [Dotazy na jednu tabulku](single-table-queries-linq-to-dataset.md)  
  Popisuje, jak provádět dotazy na jednu tabulku.  
   
- [Dotazy na křížovou tabulku](../../../../docs/framework/data/adonet/cross-table-queries-linq-to-dataset.md)  
- Popisuje, jak provádět dotazy na křížovou tabulku.  
+ [Dotazy na křížovou tabulku](cross-table-queries-linq-to-dataset.md)  
+ Popisuje postup provádění dotazů mezi tabulkami.  
   
- [Dotazy na typové datové sady](../../../../docs/framework/data/adonet/querying-typed-datasets.md)  
- Popisuje, jak provádět dotazy zadali <xref:System.Data.DataSet> objekty.  
+ [Dotazy na typové datové sady](querying-typed-datasets.md)  
+ Popisuje, jak zadávat dotazy <xref:System.Data.DataSet> na typové objekty.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
-- [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
+- [Příklady LINQ to DataSet](linq-to-dataset-examples.md)
+- [Načtení dat do datové sady](loading-data-into-a-dataset.md)

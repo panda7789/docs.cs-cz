@@ -2,52 +2,51 @@
 title: Datové sady ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: da6fb7bbe82e37787615518fa74a0d84bf95758f
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: acbe5a549539a77d63332687486cbe8744592f8b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504271"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786984"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
-<xref:System.Data.DataSet> Centrální podporuje odpojen, je objekt distribuovaných scénářích data pomocí ADO.NET. **Datovou sadu** rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat je. Je možné s několika a odlišných zdrojů dat, s daty XML nebo ke správě dat místní aplikace. **Datovou sadu** představuje ucelenou sadu dat, včetně souvisejících tabulek, omezení a relace mezi tabulkami. Je vidět na následujícím obrázku **datovou sadu** objektový model.  
+<xref:System.Data.DataSet> Objekt je centrální pro podporu odpojených a distribuovaných datových scénářů pomocí ADO.NET. **Datová sada** je reprezentace dat rezidentního v paměti, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat. Dá se použít s více a různými zdroji dat, s daty XML nebo pro správu místních dat do aplikace. **Datová sada** představuje kompletní sadu dat, včetně souvisejících tabulek, omezení a vztahů mezi tabulkami. Na následujícím obrázku je znázorněn objektový model **DataSet** .  
   
- ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
-Model objektu DataSet  
+ ![Obrázek ADO.NET](./media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
+Objektový model DataSet  
   
- Metody a objektů v **datovou sadu** jsou konzistentní s těmi v modelu relační databáze.  
+ Metody a objekty v **datové sadě** jsou konzistentní s hodnotami v modelu relační databáze.  
   
- **Datovou sadu** můžete také zachovat a znovu načíst jeho obsah ve formátu XML a její schéma jako jazyk (XSD) schématu definice schématu XML. Další informace najdete v tématu [použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md).  
+ **Datová sada** může také uchovávat a znovu načíst obsah jako XML a jeho schéma jako schéma XML Schema Definition Language (XSD). Další informace naleznete v tématu [using XML in a DataSet](./dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
-## <a name="the-datatablecollection"></a>DataTableCollection  
- Technologie ADO.NET **datovou sadu** obsahuje kolekci nula nebo více tabulek reprezentována <xref:System.Data.DataTable> objekty. <xref:System.Data.DataTableCollection> Obsahuje všechny **DataTable** objekty v **datovou sadu**.  
+## <a name="the-datatablecollection"></a>Tabulka DataTableCollection  
+ **Datová sada** ADO.NET obsahuje kolekci nula nebo více tabulek reprezentovaných <xref:System.Data.DataTable> objekty. Obsahuje všechny objekty **DataTable** v **datové sadě.** <xref:System.Data.DataTableCollection>  
   
- A **DataTable** je definována v <xref:System.Data> obor názvů a představuje jednu tabulku dat rezidentní. Obsahuje kolekci sloupců reprezentované <xref:System.Data.DataColumnCollection>a omezení reprezentována <xref:System.Data.ConstraintCollection>, které společně definují schéma tabulky. A **DataTable** obsahuje také kolekci řádků reprezentována <xref:System.Data.DataRowCollection>, který obsahuje data v tabulce. Spolu s aktuálním stavu <xref:System.Data.DataRow> zachová svůj aktuální a původní verze identifikovat změny hodnot uložených na řádku.  
+ V <xref:System.Data> oboru názvů je definován **objekt DataTable** a představuje jednu tabulku rezidentních dat v paměti. Obsahuje kolekci sloupců reprezentovaných <xref:System.Data.DataColumnCollection>a omezení reprezentovaná <xref:System.Data.ConstraintCollection>, která společně definují schéma tabulky. **DataTable** také obsahuje kolekci řádků reprezentovaných <xref:System.Data.DataRowCollection>, která obsahuje data v tabulce. Spolu s jeho aktuálním stavem si <xref:System.Data.DataRow> uchová jak aktuální, tak původní verzi, aby bylo možné identifikovat změny hodnot uložených na řádku.  
   
-## <a name="the-dataview-class"></a>DataView – třída  
- A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkce, která se často používá v aplikacích datové vazby. Použití <xref:System.Data.DataView>, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků. Další informace najdete v tématu [zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  
+## <a name="the-dataview-class"></a>Třída DataView  
+ Umožňuje vytvářet různá zobrazení dat uložených <xref:System.Data.DataTable>v nástroji, což je funkce, která se často používá v aplikacích s datovou vazbou. <xref:System.Data.DataView> <xref:System.Data.DataView>Pomocí můžete vystavit data v tabulce s různými objednávkami řazení a data můžete filtrovat podle stavu řádku nebo podle výrazu filtru. Další informace naleznete v tématu [DataViews](./dataset-datatable-dataview/dataviews.md).  
   
 ## <a name="the-datarelationcollection"></a>DataRelationCollection  
- A **datovou sadu** obsahuje vztahy v jeho <xref:System.Data.DataRelationCollection> objektu. Vztah, reprezentovaný <xref:System.Data.DataRelation> objektu přiřadí řádky v jedné **DataTable** s řádky v jiném **DataTable**. Relace je obdobou spojení cestu, která mohou existovat mezi sloupce primární a cizí klíče v relační databázi. A **DataRelation** identifikuje odpovídající sloupce v dvě tabulky **datovou sadu**.  
+ **Datová sada** obsahuje relace ve svém <xref:System.Data.DataRelationCollection> objektu. Vztah reprezentovaný <xref:System.Data.DataRelation> objektem, přidruží řádky v jednom objektu **DataTable** k řádkům v jiném **objektu DataTable**. Vztah je podobný cestě spojení, která může existovat mezi sloupci primárního a cizího klíče v relační databázi. **DataRelation** identifikuje vyhovující sloupce ve dvou tabulkách **datové sady**.  
   
- Vztahy povolení navigace z jedné tabulky do jiného **datovou sadu**. Základní elementy **DataRelation** jsou název vztahu, název tabulky se související a souvisejících sloupců v každé tabulce. Relace se dají vytvářet pomocí více než jeden sloupec tak, že zadáte pole <xref:System.Data.DataColumn> objekty jako klíčové sloupce. Když přidáte vztah k <xref:System.Data.DataRelationCollection>, můžete volitelně přidat **UniqueKeyConstraint** a **Objekt ForeignKeyConstraint** vynucovat omezení integrity, když dojde ke změně související sloupec hodnoty.  
+ Relace umožňují navigaci z jedné tabulky do druhé v **datové sadě**. Základními prvky **DataRelation** jsou název vztahu, Název souvisejících tabulek a související sloupce v každé tabulce. Relace lze vytvořit s více než jedním sloupcem na tabulku zadáním pole <xref:System.Data.DataColumn> objektů jako klíčových sloupců. Když přidáte relaci do <xref:System.Data.DataRelationCollection>, můžete volitelně přidat **UniqueKeyConstraint** a **Objekt ForeignKeyConstraint** pro vynutit omezení integrity při změně v souvisejících hodnotách sloupce.  
   
- Další informace najdete v tématu [přidání datových relací](../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md).  
+ Další informace najdete v tématu [Přidání datových vztahů](./dataset-datatable-dataview/adding-datarelations.md).  
   
 ## <a name="xml"></a>XML  
- Můžete přejít k vyplnění **datovou sadu** z datový proud XML nebo dokumentu. Můžete použít na datový proud XML nebo dokument, předejte **datovou sadu** data, informace o schématu nebo obojí. Dodané z datový proud XML nebo dokumentu je možné kombinovat s existující data nebo informace o schématu již v **datovou sadu**. Další informace najdete v tématu [použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md).  
+ **Datovou sadu** můžete vyplnit z datového proudu XML nebo dokumentu. Pomocí datového proudu nebo dokumentu XML můžete zadat **datovou sadu** , údaje o schématu nebo obojí. Informace předávané z datového proudu XML nebo dokumentu lze kombinovat s existujícími informacemi nebo schématy, které jsou již v **datové sadě**přítomny. Další informace naleznete v tématu [using XML in a DataSet](./dataset-datatable-dataview/using-xml-in-a-dataset.md).  
   
 ## <a name="extendedproperties"></a>ExtendedProperties  
- **Datovou sadu**, **DataTable**, a **DataColumn** mají **ExtendedProperties** vlastnost. **ExtendedProperties** je **PropertyCollection třídy DirectoryEntry** umístění vlastní informace, například příkaz SELECT, který se použil k vygenerování sadu výsledků dotazu nebo při generování data. **ExtendedProperties** přetrvává shromažďování informací o schématu pro **datovou sadu**.  
+ Všechny **datové sady**, **DataTable**a **DataColumn** mají vlastnost **ExtendedProperties** . **ExtendedProperties** je **vlastnostcollection** , kde lze umístit vlastní informace, například příkaz SELECT, který byl použit k vygenerování sady výsledků, nebo čas, kdy byla data vygenerována. Kolekce **ExtendedProperties** je trvale uložena s informacemi o schématu pro **datovou sadu**.  
   
 ## <a name="linq-to-dataset"></a>LINQ na DataSet  
- Technologie LINQ to DataSet poskytuje integrovaný jazyk dotazování určené pro odpojené data uložená v datové sadě. Technologie LINQ to DataSet používá standardní [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] syntaxe a poskytuje kontrola syntaxe v době kompilace, psát statické a podporu technologie IntelliSense při použití integrovaného vývojového prostředí sady Visual Studio.  
+ LINQ to DataSet poskytuje možnosti dotazování integrované v jazyce pro odpojená data uložená v datové sadě. LINQ to DataSet používá standardní [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] syntaxi a poskytuje kontrolu syntaxe v době kompilace, statické typování a podporu technologie IntelliSense při použití integrovaného vývojového prostředí (IDE) sady Visual Studio.  
   
- Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
+ Další informace najdete v tématu [LINQ to DataSet](linq-to-dataset.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)
+- [Datové sady, datové tabulky a datová zobrazení](./dataset-datatable-dataview/index.md)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)

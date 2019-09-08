@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ffeb04ddcec290f899556bf0d8078acfb06707ac
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c855d6f85c3cbfa6d81a1fbce3ef5b83abb3f583
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778602"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795404"
 ---
 # <a name="createassemblycache-function"></a>CreateAssemblyCache – funkce
-Získá ukazatel na novou [iassemblycache –](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance, který představuje globální mezipaměti sestavení.  
+Získá ukazatel na novou instanci [IAssemblyCache](iassemblycache-interface.md) , která představuje globální mezipaměť sestavení (GAC).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT CreateAssemblyCache (
   
 ## <a name="parameters"></a>Parametry  
  `ppAsmCache`  
- [out] Vrácený `IAssemblyCache` ukazatele.  
+ mimo Vrácený `IAssemblyCache` ukazatel.  
   
  `dwReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `dwReserved` musí být 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwReserved`musí mít hodnotu 0 (nula).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
-- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+- [IAssemblyCache – rozhraní](iassemblycache-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)
+- [Globální mezipaměť sestavení](../../app-domains/gac.md)

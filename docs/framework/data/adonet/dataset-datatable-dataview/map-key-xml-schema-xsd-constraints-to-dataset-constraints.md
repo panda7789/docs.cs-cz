@@ -2,12 +2,12 @@
 title: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: d6fcdae77c2f2ac07ea5cd16baf07cd5de36d25b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 8543f5b34ee2a80ff0154897cf7678b244a8d357
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203474"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786102"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí elementu **Key** . Element nebo atribut, u kterého je zadáno omezení klíče, musí mít jedinečné hodnoty v libovolné instanci schématu a nesmí mít hodnoty null.  
@@ -54,7 +54,7 @@ Ve schématu můžete zadat omezení klíče pro element nebo atribut pomocí el
 </xs:schema>   
 ```  
   
- **Klíčový** prvek určuje, že hodnoty podřízeného prvku **KódZákazníka** elementu Customers musí mít jedinečné hodnoty a nesmí mít hodnoty null. V rámci překladu schématu XML Schema Definition Language (XSD) vytvoří proces mapování následující tabulku:  
+ **Klíčový** prvek určuje, že hodnoty podřízeného prvku **KódZákazníka** elementu **Customers** musí mít jedinečné hodnoty a nesmí mít hodnoty null. V rámci překladu schématu XML Schema Definition Language (XSD) vytvoří proces mapování následující tabulku:  
   
 ```  
 Customers(CustomerID, CompanyName, Phone)  
@@ -82,4 +82,4 @@ TableName: customers
 
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

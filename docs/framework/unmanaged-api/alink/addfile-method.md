@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ff6bde5009e834bfca156fe4d3ad16da53ded85
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1406c68f1f6abff4d140b131f5f630d0fd767e1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742382"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787684"
 ---
 # <a name="addfile-method"></a>AddFile – metoda
-Přidá soubory do sestavení. Lze použít také k vytvoření nevázaného moduly.  
+Přidá soubory do sestavení. Lze také použít k vytvoření nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ HRESULT AddFile(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Jedinečné ID sestavení potřeba rozšířit.  
+ Jedinečné ID sestavení, které se má rozšířit  
   
  `pszFilename`  
- Plně kvalifikovaný název souboru má být přidána.  
+ Plně kvalifikovaný název souboru, který se má přidat  
   
  `dwFlags`  
- COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ Značky `ffContainsNoMetaData` modelu COM+ FileDef jako a `ffWriteable`. `dwFlags`je předán [metodě DefineFile –](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
- [Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní použít ke generování metadat, v případě potřeby.  
+ Rozhraní [rozhraní IMetaDataEmit](../metadata/imetadataemit-interface.md) , které se v případě potřeby používá k vygenerování metadat.  
   
  `pFileToken`  
- Ukazatel na kam se má jedinečné ID přidaný soubor uložit.  
+ Ukazatel na místo, kde bude uloženo jedinečné ID přidaného souboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9876e3ba5ea67442714c2d00b1901c25e54494f2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f19dd114925ed1fd12bcc0056411c3e3d4181215
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741635"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777096"
 ---
 # <a name="importtypes-method"></a>ImportTypes – metoda
-Inicializuje import typy z každého oboru importují prostřednictvím [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md).  
+Inicializuje import typů z každého oboru importovaného pomocí [metody importFile –](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ HRESULT ImportTypes(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení pro import do.  
+ ID sestavení, do kterého se má importovat  
   
  `FileToken`  
- ID souboru pro import z.  
+ ID souboru, ze kterého se má importovat  
   
  `dwScope`  
- Založený na nule oboru k importu.  
+ Rozsah založený na nule pro import.  
   
  `phEnum`  
- Získá popisovač výčtu pro typy v tomto oboru.  
+ Přijímá popisovač enumerátoru pro typy v tomto oboru.  
   
  `ppImportScope`  
- Volitelně obdrží [imetadataimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní.  
+ Volitelně přijímá rozhraní [rozhraní IMetaDataImport](../metadata/imetadataimport-interface.md) .  
   
  `pdwCountOfTypes`  
  Volitelně přijímá počet typů v označeném rozsahu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

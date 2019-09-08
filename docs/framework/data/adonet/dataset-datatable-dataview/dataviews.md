@@ -2,17 +2,17 @@
 title: Zobrazení dat
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: f362e4807bce4fb0e3e8c9ae8cdd6b4704fc28aa
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 8a06accb11631f2dce6b0d39587d7274223c0e68
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203801"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786342"
 ---
 # <a name="dataviews"></a>Zobrazení dat
 Umožňuje vytvářet různá zobrazení dat uložených <xref:System.Data.DataTable>v nástroji, což je funkce, která se často používá v aplikacích s datovou vazbou. <xref:System.Data.DataView> Pomocí objektu **DataView**můžete vystavit data v tabulce s různými objednávkami řazení a data můžete filtrovat podle stavu řádku nebo podle výrazu filtru.  
   
- Zobrazení **DataView** poskytuje dynamický pohled na data v podkladovém **objektu DataTable**: obsah, řazení a členství odrážejí změny při jejich výskytu. Toto chování se liší od metody **Select** **objektu DataTable**, <xref:System.Data.DataRow> která vrací pole z tabulky založené na konkrétním filtru nebo pořadí řazení: Tento obsah odráží změny v podkladové tabulce, ale její členství a řazení zůstane statické. Dynamické možnosti zobrazení dat usnadňují použití datových vazeb v aplikacích.  
+ Zobrazení **DataView** poskytuje dynamický pohled na data v podkladovém **objektu DataTable**: obsah, řazení a členství odrážejí změny při jejich výskytu. Toto chování se liší od metody **Select** **objektu DataTable**, <xref:System.Data.DataRow> která vrací pole z tabulky založené na konkrétním filtru nebo pořadí řazení: Tento obsah odráží změny v podkladové tabulce, ale její členství a řazení zůstane statické. Dynamické možnosti zobrazení dat usnadňují použití datových **vazeb v aplikacích** .  
   
  Zobrazení **DataView** poskytuje dynamické zobrazení jedné sady dat, podobně jako zobrazení databáze, na které můžete použít různá kritéria řazení a filtrování. Na rozdíl od zobrazení databáze však nelze **objekt DataView** zpracovat jako tabulku a nemůže poskytnout zobrazení spojených tabulek. Nemůžete také vyloučit sloupce, které existují ve zdrojové tabulce, ani přidat sloupce, například výpočetní sloupce, které neexistují ve zdrojové tabulce.  
   
@@ -41,7 +41,7 @@ Umožňuje vytvářet různá zobrazení dat uložených <xref:System.Data.DataT
  Popisuje, jak používat událost **ListChanged** k získání oznámení při aktualizaci obsahu nebo objednávky zobrazení **dat** .  
   
  [Správa zobrazení dat](managing-dataviews.md)  
- Popisuje, jak používat objekt **DataViewManager** ke správě nastavení zobrazení pro každou tabulku v **datové sadě**.  
+ Popisuje, jak používat objekt **DataViewManager** **ke správě nastavení** zobrazení pro každou tabulku v **datové sadě**.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [ASP.NET – webové aplikace](https://docs.microsoft.com/previous-versions/655cec97(v=vs.100))  
@@ -61,4 +61,4 @@ Umožňuje vytvářet různá zobrazení dat uložených <xref:System.Data.DataT
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

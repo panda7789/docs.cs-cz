@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8093a702069e4ecd4dad761ad0a431abe81d6141
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 53384a5aa7f8d11f868057f892f7b60aac2e9f02
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780424"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799039"
 ---
 # <a name="strongnamehashsize-function"></a>StrongNameHashSize – funkce
-Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.  
+Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí zadaného algoritmu hash.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamehashsize –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameHashSize –](../hosting/iclrstrongname-strongnamehashsize-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,27 +39,27 @@ BOOLEAN StrongNameHashSize (
   
 ## <a name="parameters"></a>Parametry  
  `ulHashAlg`  
- [in] Hashovací algoritmus, který slouží k výpočtu velikosti vyrovnávací paměti.  
+ pro Algoritmus hash používaný k výpočtu velikosti vyrovnávací paměti.  
   
  `pcbSize`  
- [out] Velikost vrácené vyrovnávací paměti v bajtech.  
+ mimo Vrácená velikost vyrovnávací paměti (v bajtech).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameHashSize` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameHashSize` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameHashSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameHashSize – metoda](../hosting/iclrstrongname-strongnamehashsize-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

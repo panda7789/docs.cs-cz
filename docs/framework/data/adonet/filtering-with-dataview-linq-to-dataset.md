@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-ms.openlocfilehash: aaa9ac0514f3e79f101bbcd9cbab60929f91d4fd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9cbd3d52c0e751097a937fa8781171c8c2a0058f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959132"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795044"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování pomocí zobrazení dat (LINQ to DataSet)
 Možnost filtrovat data pomocí konkrétních kritérií a potom data prezentovat klientovi prostřednictvím ovládacího prvku uživatelského rozhraní je důležitým aspektem datových vazeb. <xref:System.Data.DataView>poskytuje několik způsobů, jak filtrovat data a vracet podmnožiny datových řádků splňujících konkrétní kritéria filtru. Kromě schopností <xref:System.Data.DataView> filtrování založeného na řetězci také poskytuje možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]výrazy umožňují mnohem složitější a výkonné operace filtrování, než filtrování založené na řetězcích.  
@@ -59,7 +59,7 @@ Možnost filtrovat data pomocí konkrétních kritérií a potom data prezentova
  [!code-vb[DP DataView Samples#SoundEx](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#soundex)]  
   
 ## <a name="using-the-rowfilter-property"></a>Použití vlastnosti RowFilter vyžaduje hodnotu  
- Stávající funkce <xref:System.Data.DataView> filtrování na základě řetězců stále funguje v kontextu LINQ to DataSet. Další informace o filtrování na základě <xref:System.Data.DataView.RowFilter%2A> řetězců najdete v tématu [řazení a filtrování dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
+ Stávající funkce <xref:System.Data.DataView> filtrování na základě řetězců stále funguje v kontextu LINQ to DataSet. Další informace o filtrování na základě <xref:System.Data.DataView.RowFilter%2A> řetězců najdete v tématu [řazení a filtrování dat](./dataset-datatable-dataview/sorting-and-filtering-data.md).  
   
  Následující příklad vytvoří <xref:System.Data.DataView> z tabulky kontaktů a poté <xref:System.Data.DataView.RowFilter%2A> nastaví vlastnost tak, aby vracela řádky, kde příjmení kontaktu je "Zhu":  
   
@@ -71,7 +71,7 @@ Možnost filtrovat data pomocí konkrétních kritérií a potom data prezentova
  [!code-csharp[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromquerywheresetrowfilter)]
  [!code-vb[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromquerywheresetrowfilter)]  
   
- Pokud chcete vrátit výsledky konkrétního dotazu na data, na rozdíl od poskytnutí dynamického zobrazení podmnožiny dat, můžete <xref:System.Data.DataView.Find%2A> místo nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnosti použít metody <xref:System.Data.DataView>nebo <xref:System.Data.DataView.FindRows%2A> . Tato <xref:System.Data.DataView.RowFilter%2A> vlastnost se nejlépe používá v aplikaci vázané na data, kde vázaný ovládací prvek zobrazuje filtrované výsledky. <xref:System.Data.DataView.RowFilter%2A> Nastavením vlastnosti se znovu sestaví index dat, zvýší se režie do vaší aplikace a zmenší se výkon. Metody <xref:System.Data.DataView.Find%2A> a<xref:System.Data.DataView.FindRows%2A> používají aktuální index, aniž by bylo nutné znovu sestavit index. Pokud budete volat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> pouze jednou, měli byste použít stávající <xref:System.Data.DataView>. Pokud se chystáte zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> víckrát, měli byste vytvořit nový <xref:System.Data.DataView> , chcete-li znovu sestavit index ve sloupci, který chcete vyhledat, a pak zavolat <xref:System.Data.DataView.Find%2A> metody nebo <xref:System.Data.DataView.FindRows%2A> . Další informace o <xref:System.Data.DataView.Find%2A> metodách a <xref:System.Data.DataView.FindRows%2A> najdete v tématu [Vyhledání řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md) a výkonu zobrazení [dat](../../../../docs/framework/data/adonet/dataview-performance.md).  
+ Pokud chcete vrátit výsledky konkrétního dotazu na data, na rozdíl od poskytnutí dynamického zobrazení podmnožiny dat, můžete <xref:System.Data.DataView.Find%2A> místo nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnosti použít metody <xref:System.Data.DataView>nebo <xref:System.Data.DataView.FindRows%2A> . Tato <xref:System.Data.DataView.RowFilter%2A> vlastnost se nejlépe používá v aplikaci vázané na data, kde vázaný ovládací prvek zobrazuje filtrované výsledky. <xref:System.Data.DataView.RowFilter%2A> Nastavením vlastnosti se znovu sestaví index dat, zvýší se režie do vaší aplikace a zmenší se výkon. Metody <xref:System.Data.DataView.Find%2A> a<xref:System.Data.DataView.FindRows%2A> používají aktuální index, aniž by bylo nutné znovu sestavit index. Pokud budete volat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> pouze jednou, měli byste použít stávající <xref:System.Data.DataView>. Pokud se chystáte zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> víckrát, měli byste vytvořit nový <xref:System.Data.DataView> , chcete-li znovu sestavit index ve sloupci, který chcete vyhledat, a pak zavolat <xref:System.Data.DataView.Find%2A> metody nebo <xref:System.Data.DataView.FindRows%2A> . Další informace o <xref:System.Data.DataView.Find%2A> metodách a <xref:System.Data.DataView.FindRows%2A> najdete v tématu [Vyhledání řádků](./dataset-datatable-dataview/finding-rows.md) a výkonu zobrazení [dat](dataview-performance.md).  
   
 ## <a name="clearing-the-filter"></a>Mazání filtru  
  Filtr na <xref:System.Data.DataView> může být vymazán po nastavení filtrování <xref:System.Data.DataView.RowFilter%2A> pomocí vlastnosti. Filtr na <xref:System.Data.DataView> může být smazán dvěma různými způsoby:  
@@ -94,5 +94,5 @@ Možnost filtrovat data pomocí konkrétních kritérií a potom data prezentova
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
-- [Řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)
+- [Datová vazba a LINQ to DataSet](data-binding-and-linq-to-dataset.md)
+- [Řazení se zobrazením dat](sorting-with-dataview-linq-to-dataset.md)

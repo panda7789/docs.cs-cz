@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7da0986269189ba5c2dfa0f10d509bf51deb446d
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: d8ea7df9396e9199d04ad5609daa9d2b01761f36
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040205"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798890"
 ---
 # <a name="gettypelibinfo-function"></a>GetTypeLibInfo – funkce
 Vrátí informace o zadané knihovně typů prozkoumáním její struktury [TLIBATTR](https://docs.microsoft.com/windows/win32/api/oaidl/ns-oaidl-tlibattr) .  
@@ -59,12 +59,12 @@ HRESULT GetTypeLibInfo(
  mimo Číslo dílčí verze knihovny typů. Například pro verzi *x. y*je číslo dílčí verze *y*.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce je volána nástrojem [Tlbexp. exe (Exportér knihovny typů).](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) `GetTypeLibInfo` Tento nástroj generuje knihovnu typů, která popisuje typy v sestavení modulu CLR (Common Language Runtime).  
+ Funkce je volána nástrojem [Tlbexp. exe (Exportér knihovny typů).](../../tools/tlbexp-exe-type-library-exporter.md) `GetTypeLibInfo` Tento nástroj generuje knihovnu typů, která popisuje typy v sestavení modulu CLR (Common Language Runtime).  
   
  Pokud je libovolný parametr null, funkce vrátí hodnotu `HRESULT` z. `E_POINTER` V opačném případě `S_OK`vrátí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlaviček** TlbRef. h  
   
@@ -74,5 +74,5 @@ HRESULT GetTypeLibInfo(
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pomocné funkce Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
+- [Pomocné funkce Tlbexp](index.md)
 - [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

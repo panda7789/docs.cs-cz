@@ -2,12 +2,12 @@
 title: Koncový bod
 ms.date: 03/30/2017
 ms.assetid: fe63370d-81a1-40f3-97c2-59cb357c78d2
-ms.openlocfilehash: 4562481e8b0b18c0ea0d9df0af3427ffe6419821
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 03c401358839671d750985b95b1aada599931aad
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963602"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795905"
 ---
 # <a name="endpoint"></a>Koncový bod
 Koncový bod  
@@ -33,101 +33,101 @@ class Endpoint
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída koncový bod definuje následující metodu.  
+ Třída Endpoint definuje následující metodu.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetOperationCounterInstanceName](../../../../../docs/framework/wcf/diagnostics/wmi/getoperationcounterinstancename.md)|Načte název instance čítače výkonu operace|  
+|[GetOperationCounterInstanceName](getoperationcounterinstancename.md)|Načte název instance čítače výkonu operace.|  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída koncový bod má následující vlastnosti:  
+ Třída Endpoint má následující vlastnosti:  
   
 ### <a name="address"></a>Adresa  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Identifikátor URI, který obsahuje adresu koncového bodu.  
   
 ### <a name="addressheaders"></a>AddressHeaders  
  Datový typ: pole řetězců  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Kolekce záhlaví adres připojených k tomuto koncovému bodu.  
+ Kolekce hlaviček adres připojených k tomuto koncovému bodu.  
   
 ### <a name="addressidentity"></a>AddressIdentity  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Identita koncového bodu.  
   
 ### <a name="appdomainid"></a>AppDomainId  
  Datový typ: sint32  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Id domény, která hostí koncový bod.  
+ ID domény AppDomain, která hostuje koncový bod.  
   
 ### <a name="behaviors"></a>Chování  
- Datový typ: Chování pole  
+ Datový typ: Pole chování  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Kolekce vlastností implementovaná tímto koncovým bodem.  
+ Kolekce chování implementovaná tímto koncovým bodem  
   
 ### <a name="binding"></a>Vazba  
  Datový typ: Vazba  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Vazba používaný tímto koncovým bodem.  
+ Vazba, kterou tento koncový bod používá.  
   
-### <a name="contractname"></a>ContractName  
+### <a name="contractname"></a>Kontrakt  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Řetězec, který určuje, jaký kontrakt tento koncový bod vystavuje.  
+ Řetězec, který určuje, který kontrakt tento koncový bod vystavuje.  
   
 ### <a name="counterinstancename"></a>CounterInstanceName  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Název instance čítače výkonu koncového bodu.  
+ Název instance čítačů výkonu koncového bodu.  
   
 ### <a name="listenuri"></a>ListenUri  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Identifikátor Uri koncového bodu naslouchá.  
+ Identifikátor URI, na kterém je koncový bod naslouchá.  
   
-### <a name="name"></a>Název  
+### <a name="name"></a>Name  
  Datový typ: řetězec  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
  Jedinečný název tohoto koncového bodu.  
   
 ### <a name="processid"></a>ID procesu  
  Datový typ: sint32  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Proces Id procesu, který je hostitelem koncového bodu.  
+ ID procesu, který hostuje koncový bod.  
   
 ### <a name="ref"></a>ref  
  Datový typ: Kontrakt  
   
- Typ přístupu: jen pro čtení  
+ Typ přístupu: Jen pro čtení  
   
- Kontrakt tento koncový bod vystavuje.  
+ Kontrakt, který tento koncový bod zveřejňuje.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
+|TVOŘÍCÍ|Deklarováno v souboru ServiceModel. mof.|  
 |---------|-----------------------------------|  
-|Obor názvů|Definované v root\ServiceModel|
+|Obor názvů|Definováno v root\ServiceModel|

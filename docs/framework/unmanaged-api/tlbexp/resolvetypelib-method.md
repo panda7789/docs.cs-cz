@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f274befe78e45be3e53335572fd9c1e0b401fd3
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ce0f11547d4b16516b7c78d1b1947f5c4bc831a3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040177"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798797"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib – metoda
 Vyřeší jednoduchý název knihovny typů vrácením jeho plně kvalifikované cesty.  
@@ -61,12 +61,12 @@ HRESULT ResolveTypeLib(
  mimo Ukazatel na parametr [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , který obsahuje úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda je volána [funkcí LoadTypeLibWithResolver –](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md) během zpracování [Tlbexp. exe (Exportér knihovny typů).](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) `ResolveTypeLib`  
+ Metoda je volána [funkcí LoadTypeLibWithResolver –](loadtypelibwithresolver-function.md) během zpracování [Tlbexp. exe (Exportér knihovny typů).](../../tools/tlbexp-exe-type-library-exporter.md) `ResolveTypeLib`  
   
  Vlastní implementace tohoto rozhraní musí vracet [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , který obsahuje úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
  **Hlaviček** TlbRef. idl, TlbRef. h  
   
@@ -76,5 +76,5 @@ HRESULT ResolveTypeLib(
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pomocné funkce Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
+- [Pomocné funkce Tlbexp](index.md)
 - [LoadTypeLibEx](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

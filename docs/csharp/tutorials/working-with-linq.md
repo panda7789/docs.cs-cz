@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte generovat sekvence pomocí LINQ, metody zápisu pro použití v dotazech LINQ a rozlišovat mezi Eager a opožděným hodnocením.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 3cbafbb6aeed3abdd6d83ead613b29de738d5604
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f80567510509ba0c7f205ccbd5e587f9ad31f531
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587175"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785865"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -30,7 +30,7 @@ V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit 
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [.NET Core](https://www.microsoft.com/net/core) . Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
+Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce pro [stažení jádra .NET](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 

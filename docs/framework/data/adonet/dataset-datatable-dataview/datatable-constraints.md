@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-ms.openlocfilehash: 68b99e834428261d59c5fb27277b24eb0f6e77e4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3f3055b11f0e682ae5a9578289e30dc2716343fe
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205051"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785399"
 ---
 # <a name="datatable-constraints"></a>Omezení datových tabulek
 Pomocí omezení můžete vynutit omezení pro data v <xref:System.Data.DataTable>nástroji, aby bylo možné zachovat integritu dat. Omezení je automatické pravidlo, které se použije u sloupce nebo souvisejících sloupců, které určuje průběh akce, když je hodnota řádku nějakým způsobem změněna. Omezení jsou vynutit, pokud `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> má **hodnotu true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, <xref:System.Data.DataSet.EnforceConstraints%2A> naleznete v referenčním tématu.  
@@ -29,7 +29,7 @@ Pomocí omezení můžete vynutit omezení pro data v <xref:System.Data.DataTabl
 |**SetDefault**|Nastaví hodnoty v souvisejících řádcích na výchozí hodnotu.|  
 |**Žádné**|Neprovádět žádnou akci na souvisejících řádcích. Toto nastavení je výchozí.|  
   
- **Objekt ForeignKeyConstraint** může omezit a rozšířit změny v souvisejících sloupcích. V závislosti na vlastnostech nastavených pro **Objekt ForeignKeyConstraint** sloupce platí, že pokud je vlastnost **EnforceConstraints** pro datovou **sadu** **true**, provádění určitých operací na nadřazeném řádku způsobí výjimku. Například pokud vlastnost **DeleteRule** třídy **Objekt ForeignKeyConstraint** je **none**, nadřazený řádek nelze odstranit, pokud má podřízené řádky.  
+ **Objekt ForeignKeyConstraint** může omezit a rozšířit změny v souvisejících sloupcích. V závislosti na vlastnostech nastavených pro **Objekt ForeignKeyConstraint** sloupce platí, že pokud je vlastnost **EnforceConstraints** pro **datovou sadu** **true**, provádění určitých operací na nadřazeném řádku způsobí výjimku. Například pokud vlastnost **DeleteRule** třídy **Objekt ForeignKeyConstraint** je **none**, nadřazený řádek nelze odstranit, pokud má podřízené řádky.  
   
  Omezení cizího klíče můžete vytvořit mezi jednotlivými sloupci nebo mezi polem sloupců pomocí konstruktoru **Objekt ForeignKeyConstraint** . Výsledný objekt **Objekt ForeignKeyConstraint** předejte metodě **Add** vlastnosti **omezení** tabulky, což je objekt **ConstraintCollection**. Můžete také předat argumenty konstruktoru do několika přetížení metody **Add** třídy **ConstraintCollection** a vytvořit tak **Objekt ForeignKeyConstraint**.  
   
@@ -100,4 +100,4 @@ custDS.Tables["Customers"].Constraints.Add(custUnique);
 - <xref:System.Data.UniqueConstraint>
 - [Definice schématu datové tabulky](datatable-schema-definition.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -2,52 +2,52 @@
 title: Adaptéry a čtečky dat
 ms.date: 03/30/2017
 ms.assetid: cc952ca2-ec19-46ab-9189-15174b52cb74
-ms.openlocfilehash: af1d44b1e320557ab7906ce65dbeb5415b5c09dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 20c6d514e70d2e4db451e0fff02e72688bf7d0ba
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189680"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786647"
 ---
 # <a name="dataadapters-and-datareaders"></a>Adaptéry a čtečky dat
-Můžete použít ADO.NET **DataReader** načíst jen pro čtení, dopředné datový proud s daty z databáze. Výsledky se vrátí jako dotaz spustí a jsou uloženy v síti vyrovnávací paměti na straně klienta, dokud si je vyžádat použití **čtení** metodu **DataReader**. Použití **DataReader** může zvýšit výkon aplikace, tak načítání dat, jako je k dispozici i (ve výchozím nastavení) ukládání pouze jeden řádek v daný okamžik v paměti a snížení režie systému.  
+Pomocí objektu **DataReader** ADO.NET můžete načíst proud dat pouze pro čtení z databáze. Výsledky jsou vraceny při spuštění dotazu a jsou uloženy v síťové vyrovnávací paměti klienta, dokud je nepožadujete pomocí metody **Read** objektu **DataReader**. Použití objektu **DataReader** může zvýšit výkon aplikace načtením dat, jakmile jsou k dispozici, a (ve výchozím nastavení) ukládat pouze jeden řádek v čase paměti a snížit zatížení systému.  
   
- A <xref:System.Data.Common.DataAdapter> slouží k načtení dat ze zdroje dat a naplnění tabulky v rámci <xref:System.Data.DataSet>. `DataAdapter` Také řeší změny provedené `DataSet` zpět do zdroje dat. `DataAdapter` Používá `Connection` objekt zprostředkovatele dat .NET Framework pro připojení ke zdroji dat a používá `Command` objekty k načtení dat z a řešení změn ke zdroji dat.  
+ Slouží k načtení dat ze zdroje dat a naplnění tabulek <xref:System.Data.DataSet>v rámci. <xref:System.Data.Common.DataAdapter> Také řeší změny provedené v `DataSet` zpátky na zdroj dat. `DataAdapter` Používá objekt poskytovatele .NET Framework dat pro připojení ke zdroji dat a používá `Command` objekty k načtení dat z a řešení změn ve zdroji dat. `Connection` `DataAdapter`  
   
- Má každý zprostředkovatele dat .NET Framework je součástí rozhraní .NET Framework <xref:System.Data.Common.DbDataReader> a <xref:System.Data.Common.DbDataAdapter> objektu: obsahuje zprostředkovatele dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbDataReader> a <xref:System.Data.OleDb.OleDbDataAdapter> objektu zprostředkovatele dat .NET Framework pro SQL Server obsahuje <xref:System.Data.SqlClient.SqlDataReader> a <xref:System.Data.SqlClient.SqlDataAdapter> objektu zprostředkovatele dat .NET Framework pro ODBC zahrnuje <xref:System.Data.Odbc.OdbcDataReader> a <xref:System.Data.Odbc.OdbcDataAdapter> objektu a zprostředkovatele dat .NET Framework pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleDataReader> a <xref:System.Data.OracleClient.OracleDataAdapter> objektu.  
+ Každý .NET Framework poskytovatel dat, který je součástí .NET Framework, <xref:System.Data.Common.DbDataReader> má <xref:System.Data.Common.DbDataAdapter> a a objekt: .NET Framework <xref:System.Data.OleDb.OleDbDataReader> zprostředkovatel dat pro <xref:System.Data.OleDb.OleDbDataAdapter> OLE DB obsahuje objekt a, .NET Framework Zprostředkovatel dat pro SQL. Server obsahuje <xref:System.Data.SqlClient.SqlDataReader> <xref:System.Data.SqlClient.SqlDataAdapter> objekt a a .NET Framework <xref:System.Data.Odbc.OdbcDataReader> zprostředkovatel dat pro <xref:System.Data.Odbc.OdbcDataAdapter> rozhraní ODBC obsahuje objekt a a .NET Framework Zprostředkovatel dat pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleDataReader> a. <xref:System.Data.OracleClient.OracleDataAdapter> objekt.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Načítání dat pomocí čtečky dat](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md)  
- Popisuje ADO.NET **DataReader** objekt a jak ji používat k vrátit datový proud výsledků ze zdroje dat.  
+ [Načítání dat pomocí čtečky dat](retrieving-data-using-a-datareader.md)  
+ Popisuje objekt **DataReader** ADO.NET a jeho použití k vrácení datového proudu výsledků ze zdroje dat.  
   
- [Naplnění datové sady z adaptéru dat](../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
- Popisuje, jak vyplnit `DataSet` s tabulkami, sloupci a řádky pomocí `DataAdapter`.  
+ [Naplnění datové sady z adaptéru dat](populating-a-dataset-from-a-dataadapter.md)  
+ Popisuje, jak vyplnit `DataSet` tabulky, sloupce a řádky pomocí tabulek, sloupců a řádků. `DataAdapter`  
   
- [Parametry adaptéru dat](../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
- Popisuje způsob použití parametrů pro příkaz Vlastnosti `DataAdapter` včetně postup mapování obsahu sloupce v `DataSet` parametru příkazu.  
+ [Parametry adaptéru dat](dataadapter-parameters.md)  
+ Popisuje, jak použít parametry s vlastnostmi `DataAdapter` příkazu, včetně způsobu mapování obsahu sloupce `DataSet` v nástroji na parametr příkazu.  
   
- [Přidání existujících omezení do datové sady](../../../../docs/framework/data/adonet/adding-existing-constraints-to-a-dataset.md)  
- Popisuje postup přidání existujících omezení `DataSet`.  
+ [Přidání existujících omezení do datové sady](adding-existing-constraints-to-a-dataset.md)  
+ Popisuje, jak přidat existující omezení do `DataSet`.  
   
- [Mapování adaptéru dat, datové tabulky a datového sloupce](../../../../docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)  
+ [Mapování adaptéru dat, datové tabulky a datového sloupce](dataadapter-datatable-and-datacolumn-mappings.md)  
  Popisuje, jak nastavit `DataTableMappings` a `ColumnMappings` pro `DataAdapter`.  
   
- [Stránkování prostřednictvím výsledku dotazu](../../../../docs/framework/data/adonet/paging-through-a-query-result.md)  
- Poskytuje příklad zobrazení výsledků dotazu jako stránky s daty.  
+ [Stránkování prostřednictvím výsledku dotazu](paging-through-a-query-result.md)  
+ Poskytuje příklad zobrazení výsledků dotazu jako stránek dat.  
   
- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
- Popisuje způsob použití `DataAdapter` změny v řešení `DataSet` zpět do databáze.  
+ [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)  
+ Popisuje, jak použít `DataAdapter` k vyřešení změn `DataSet` v databázi.  
   
- [Zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)  
+ [Zpracování událostí adaptéru dat](handling-dataadapter-events.md)  
  Popisuje `DataAdapter` události a jejich použití.  
   
- [Provádění dávkových operací pomocí adaptérů dat](../../../../docs/framework/data/adonet/performing-batch-operations-using-dataadapters.md)  
- Popisuje zlepšení výkonu aplikací snížením počet zpátečních cest k serveru SQL Server, při použití aktualizací od `DataSet`.  
+ [Provádění dávkových operací pomocí adaptérů dat](performing-batch-operations-using-dataadapters.md)  
+ Popisuje zvýšení výkonu aplikace tím, že omezuje počet přenosů, které se SQL Server při aplikování `DataSet`aktualizací z.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Příkazy a parametry](commands-and-parameters.md)
+- [Transakce a souběžnost](transactions-and-concurrency.md)
+- [Datové sady, datové tabulky a datová zobrazení](./dataset-datatable-dataview/index.md)
+- [Přehled ADO.NET](ado-net-overview.md)

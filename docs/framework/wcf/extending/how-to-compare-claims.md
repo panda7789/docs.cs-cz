@@ -8,16 +8,16 @@ helpviewer_keywords:
 - claims [WCF], comparing
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
-ms.openlocfilehash: e2d3d33900dd894eea77420aac444ebde0df9a43
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 29254bd661e72b926b21695ccb646480c53b5475
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68970765"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797098"
 ---
 # <a name="how-to-compare-claims"></a>Postupy: Porovnání deklarací
 
-K provedení kontroly autorizace se používá infrastruktura modelu identity v Windows Communication Foundation (WCF). Běžným úkolem je například porovnat deklarace identity v kontextu autorizace s deklaracemi, které jsou potřeba k provedení požadované akce, nebo získat přístup k požadovanému prostředku. Toto téma popisuje, jak porovnat deklarace identity, včetně předdefinovaných a vlastních typů deklarací identity. Další informace o infrastruktuře modelu identity najdete v tématu [Správa deklarací identity a autorizace pomocí modelu identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
+K provedení kontroly autorizace se používá infrastruktura modelu identity v Windows Communication Foundation (WCF). Běžným úkolem je například porovnat deklarace identity v kontextu autorizace s deklaracemi, které jsou potřeba k provedení požadované akce, nebo získat přístup k požadovanému prostředku. Toto téma popisuje, jak porovnat deklarace identity, včetně předdefinovaných a vlastních typů deklarací identity. Další informace o infrastruktuře modelu identity najdete v tématu [Správa deklarací identity a autorizace pomocí modelu identity](../feature-details/managing-claims-and-authorization-with-the-identity-model.md).
 
 Porovnání deklarací identity zahrnuje porovnání tří částí deklarace identity (typu, práva a prostředku) se stejnými částmi v jiné deklaraci identity, aby bylo možné zjistit, zda jsou stejné. Podívejte se na téma v následujícím příkladu.
 
@@ -74,5 +74,5 @@ Následující příklad ukazuje porovnání vlastních deklarací identity, u k
 
 ## <a name="see-also"></a>Viz také:
 
-- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
-- [Postupy: Vytvoření vlastní deklarace identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+- [Správa deklarací identity a autorizace pomocí modelu identit](../feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Postupy: Vytvoření vlastní deklarace identity](how-to-create-a-custom-claim.md)

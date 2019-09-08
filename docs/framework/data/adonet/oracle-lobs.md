@@ -2,28 +2,28 @@
 title: Soubory Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 3f4550344ee09620ae17de5bfcba36b3075a0f47
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a52203ad62e8761897f7b2bef90f1915db9433f8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771940"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783329"
 ---
 # <a name="oracle-lobs"></a>Soubory Oracle LOB
-Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.  
+Zprostředkovatel dat .NET Framework pro Oracle obsahuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci s datovými typy společnosti Oracle **LOB** .  
   
- **OracleLob** může být jedna z těchto <xref:System.Data.OracleClient.OracleType> datové typy:  
+ **Vlastnost OracleLob** může být jeden z těchto <xref:System.Data.OracleClient.OracleType> typů dat:  
   
 |Datový typ|Popis|  
 |---------------|-----------------|  
-|**Objekt blob**|Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB. To se mapuje **pole** typu **bajtů**.|  
-|**Clob**|Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB. To se mapuje na **řetězec**.|  
-|**NClob**|Oracle **NCLOB** datový typ, který obsahuje znak data podle národního znakovou sadu na serveru s maximální velikost 4 GB. To se mapuje na **řetězec**.|  
+|**Objekt blob**|Datový typ Oracle **BLOB** , který obsahuje binární data s maximální velikostí 4 gigabajtů. Tato část je mapována na **pole** typu **Byte**.|  
+|**Clob**|Typ dat **datový typ CLOB** Oracle, který obsahuje znaková data na základě výchozí znakové sady na serveru, maximální velikosti 4 gigabajty. Toto je mapováno na **řetězec**.|  
+|**NClob**|Datový typ Oracle **NCLOB** , který obsahuje znaková data, na základě národní znakové sady na serveru, která má maximální velikost 4 gigabajty. Toto je mapováno na **řetězec**.|  
   
- **OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že jsou data uložená na serveru místo ve fyzických souborů v operačním systému. Na rozdíl od může být objekt pro čtení a zápis **OracleBFile**, což je vždy jen pro čtení.  
+ **Vlastnost OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že data jsou uložená na serveru místo do fyzického souboru v operačním systému. Může to být také objekt pro čtení i zápis, na rozdíl od **OracleBFile**, který je vždy jen pro čtení.  
   
-## <a name="creating-retrieving-and-writing-to-a-lob"></a>Vytvářet, načítat a zápis do objektu LOB  
- Následující příklad jazyka C# ukazuje, jak můžete vytvořit objekty LOBs v tabulce Oracle a pak načíst a zápis do nich ve formě **OracleLob** objekty. Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleLob** **čtení** a **zápisu** metody. V příkladu se používá Oracle **BLOB**, **datový typ CLOB**, a **NCLOB** datové typy.  
+## <a name="creating-retrieving-and-writing-to-a-lob"></a>Vytváření, načítání a zápis do objektu LOB  
+ Následující C# příklad ukazuje, jak můžete vytvořit objekty LOBs s v tabulce Oracle a pak je načíst a zapsat do těchto formulářů ve formě objektů **vlastnost OracleLob** . Příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a metod **čtení** a **zápisu** **vlastnost OracleLob** . V tomto příkladu se používají datové typy Oracle **BLOB**, **datový typ CLOB**a **NCLOB** .  
   
 ```csharp  
 using System;  
@@ -215,8 +215,8 @@ public class LobExample
 }  
 ```  
   
-## <a name="creating-a-temporary-lob"></a>Vytváří se dočasný OBJEKT  
- Následující příklad jazyka C# ukazuje, jak vytvořit dočasný OBJEKT.  
+## <a name="creating-a-temporary-lob"></a>Vytvoření dočasného objektu LOB  
+ Následující C# příklad ukazuje, jak vytvořit dočasný objekt LOB.  
   
 ```csharp  
 OracleConnection conn = new OracleConnection(  
@@ -249,5 +249,5 @@ tx.Commit();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oracle a ADO.NET](oracle-and-adonet.md)
+- [Přehled ADO.NET](ado-net-overview.md)

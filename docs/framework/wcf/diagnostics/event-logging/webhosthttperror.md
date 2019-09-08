@@ -2,24 +2,24 @@
 title: WebHostHttpError
 ms.date: 03/30/2017
 ms.assetid: dff35e7e-5571-463d-abcf-7e048381f91f
-ms.openlocfilehash: 95890c2ac220ef6fd452ff6472828b4f8a08693d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2178731b6b2fa76efa471b3f2d6d8363f04d9d38
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944271"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796054"
 ---
 # <a name="webhosthttperror"></a>WebHostHttpError
-Id: 110  
+Účet 110  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: ServiceModel  
+ Kategorií ServiceModel  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že došlo k výjimce WebHost HTTP. Události jsou uvedeny informace o odesílateli, HtmlErrorMessage, výjimky, název procesu a ID procesu.  
+ Tato událost označuje, že došlo k výjimce webhost HTTP. Událost uvádí informace o odesílateli, HtmlErrorMessage, výjimku, název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

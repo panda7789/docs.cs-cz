@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fba17a2ffad9220acdbc79726efe0d3d4184978a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 193604068e379d62107b25f2bc348cd7c8bc6e98
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697976"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796708"
 ---
 # <a name="iassemblycacheitem-interface"></a>IAssemblyCacheItem – rozhraní
-Představuje jedno sestavení v globální mezipaměti sestavení.  
+Představuje jedno sestavení v globální mezipaměti sestavení (GAC).  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[AbortItem – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-abortitem-method.md)|Umožňuje sestavení v globální mezipaměti sestavení před jejich provedl operace čištění.|  
-|[Commit – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-commit-method.md)|Potvrzení odkaz na sestavení v mezipaměti na paměť.|  
-|[CreateStream – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-createstream-method.md)|Vytvoří datový proud se zadaným názvem a formát.|  
+|[AbortItem – metoda](iassemblycacheitem-abortitem-method.md)|Umožňuje sestavení v globální mezipaměti sestavení provést operace vyčištění před jeho uvolněním.|  
+|[Commit – metoda](iassemblycacheitem-commit-method.md)|Potvrdí odkaz na sestavení v mezipaměti do paměti.|  
+|[CreateStream – metoda](iassemblycacheitem-createstream-method.md)|Vytvoří datový proud se zadaným názvem a formátem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
-- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
-- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)
+- [Globální mezipaměť sestavení](../../app-domains/gac.md)
+- [IAssemblyCache – rozhraní](iassemblycache-interface.md)

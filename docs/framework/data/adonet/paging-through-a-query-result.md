@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fa360c46-e5f8-411e-a711-46997771133d
-ms.openlocfilehash: 023efcc15d7080afc1583f4ad8984e152b86cf23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1dbaa159314bf7bb05ff75287f601f619834fd7c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878381"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794622"
 ---
 # <a name="paging-through-a-query-result"></a>Stránkování prostřednictvím výsledku dotazu
-Stránkování prostřednictvím výsledku dotazu je proces vrácení výsledků dotazu v menších podmnožin data nebo stránky. To je běžný postup pro zobrazení výsledků pro uživatele v malé bloky snadno spravovat.  
+Stránkování prostřednictvím výsledku dotazu je proces vrácení výsledků dotazu v menších podmnožinách dat nebo na stránkách. To je běžný postup pro zobrazení výsledků pro uživatele v malých, snadno ovladatelném bloku.  
   
- **DataAdapter** poskytuje zařízení pro vrácení pouze jednu stránku dat prostřednictvím přetížení **vyplnit** metody. Ale to nemusí být nejlepší volbou pro stránkování výsledků velký dotazu, protože i když **DataAdapter** vyplní cíl <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> pouze požadované záznamy, prostředky, které vrátí celý dotaz se stále používají. Pro vrácení stránky s dat ze zdroje dat bez použití prostředky pro vrácení celý dotaz, zadejte další kritéria dotazu, které omezení počtu řádků vrátí jenom ty povinné.  
+ Objekt **DataAdapter** poskytuje zařízení pro vrácení pouze stránky dat prostřednictvím přetížení metody **Fill** . To však nemusí být nejlepší volbou pro stránkování prostřednictvím velkých výsledků dotazu, protože ačkoliv modul **DataAdapter** vyplní cíl <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> pouze požadované záznamy, prostředky, které mají vracet celý dotaz, jsou stále používány. . Chcete-li vrátit stránku dat ze zdroje dat bez použití prostředků, které vrátí celý dotaz, zadejte další kritéria pro dotaz, který zmenší počet vrácených řádků pouze na ty, které jsou požadovány.  
   
- Použít **vyplnit** metodu pro návrat na stránku, zadejte **startRecord** parametr u prvního záznamu v stránku dat a **maxRecords** parametr po dobu záznamy na stránce data.  
+ Chcete-li použít metodu **Fill** k vrácení stránky dat, zadejte parametr **startRecord** pro první záznam na stránce dat a parametr **MaxRecords** pro počet záznamů na stránce dat.  
   
- Následující příklad kódu ukazuje, jak používat **vyplnit** metoda vrací první stránka výsledků dotazu, kde je velikost stránky je pět záznamů.  
+ Následující příklad kódu ukazuje, jak použít metodu **Fill** k vrácení první stránky výsledku dotazu, kde je velikost stránky pět záznamů.  
   
 ```vb  
 Dim currentIndex As Integer = 0  
@@ -46,7 +46,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- V předchozím příkladu **datovou sadu** je pouze vyplněna pět záznamů, ale celou **objednávky** je vrácena tabulka. K vyplnění **datovou sadu** tyto stejné pět záznamů, ale vracejí pouze pět záznamů, použijte horní a klauzule WHERE v příkazu jazyka SQL, jako v následujícím příkladu kódu.  
+ V předchozím příkladu je **datová sada** vyplněna pouze pěti záznamy, ale celá tabulka **Orders** je vrácena. Chcete-li **datovou sadu** vyplnit pomocí těchto pěti záznamů, ale vrátit pouze pět záznamů, použijte klauzuli TOP a WHERE v příkazu jazyka SQL, jako v následujícím příkladu kódu.  
   
 ```vb  
 Dim pageSize As Integer = 5  
@@ -71,7 +71,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, "Orders");  
 ```  
   
- Všimněte si, že při procházení výsledky dotazu v tímto způsobem, musíte zachovat jedinečný identifikátor, který řadí řádků, abyste mohli předat jedinečné ID pro příkaz, který vrátí na další stránku záznamy, jak je znázorněno v následujícím příkladu kódu.  
+ Všimněte si, že pokud je výsledkem stránkování přes dotaz, je nutné zachovat jedinečný identifikátor, který řádky seřadí, aby bylo možné předat jedinečné ID do příkazu, který vrátí další stránku záznamů, jak je znázorněno v následujícím příkladu kódu.  
   
 ```vb  
 Dim lastRecord As String = _  
@@ -83,7 +83,7 @@ string lastRecord =
   dataSet.Tables["Orders"].Rows[pageSize - 1]["OrderID"].ToString();  
 ```  
   
- Se vraťte na další stránku záznamy pomocí přetížení **vyplnit** metodu, která přebírá **startRecord** a **maxRecords** parametry, zvyšovat index aktuální záznam podle velikost stránky a vyplnění tabulky. Mějte na paměti, že databázový server vrátí výsledky celý dotaz i v případě, že pouze jednu stránku záznamů, které se přidá do **datovou sadu**. V následujícím příkladu kódu jsou vymazány řádky tabulky předtím, než jsou vyplněny na další stránku. Můžete chtít zachovat určitý počet vrácených řádků v místní mezipaměti pro omezení cesty k databázi serveru.  
+ Chcete-li vrátit další stránku záznamů pomocí přetížení metody **Fill** , která přijímá parametry **startRecord** a **MaxRecords** , zvyšte aktuální index záznamu velikostí stránky a vyplňte tabulku. Pamatujte, že databázový server vrátí výsledky celého dotazu, i když do **datové sady**se přidá jenom jedna stránka záznamů. V následujícím příkladu kódu jsou před vyplněním další stránky dat vymazány řádky tabulky. Je možné, že budete chtít zachovat určitý počet vrácených řádků v místní mezipaměti pro omezení cest k databázovému serveru.  
   
 ```vb  
 currentIndex = currentIndex + pageSize  
@@ -101,7 +101,7 @@ dataSet.Tables["Orders"].Rows.Clear();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- Pokud chcete vrátit na další stránku záznamů bez nutnosti databázový server vrátí celý dotaz, zadejte omezující kritéria k příkazu SELECT. Protože předchozí příklad zachovají vrátí poslední záznam, můžete použít v klauzuli WHERE, chcete-li určit výchozí bod pro dotaz, jak je znázorněno v následujícím příkladu kódu.  
+ Chcete-li vrátit další stránku záznamů, aniž by měl databázový server vracet celý dotaz, zadejte omezující kritéria do příkazu SELECT. Vzhledem k tomu, že předchozí příklad zachovává poslední vrácenou položku, můžete ji použít v klauzuli WHERE k určení počátečního bodu pro dotaz, jak je znázorněno v následujícím příkladu kódu.  
   
 ```vb  
 orderSQL = "SELECT TOP " & pageSize & _  
@@ -125,5 +125,5 @@ adapter.Fill(dataSet, "Orders");
   
 ## <a name="see-also"></a>Viz také:
 
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Přehled ADO.NET](ado-net-overview.md)

@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1988b79c-3bfc-4c5c-a08a-86cf638bbe17
-ms.openlocfilehash: ccd2e37457e686bc5faed6d8979c2b266d05c829
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 18a7eceeec63d9caadefab8d98942f10d82c99ca
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943441"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793361"
 ---
 # <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Postupy: Řešení konfliktů sloučením s hodnotami v databázi
-Pro sjednocení rozdílů mezi očekávanými a skutečnými hodnotami databáze předtím, než se pokusíte znovu odeslat změny <xref:System.Data.Linq.RefreshMode.KeepChanges> , můžete použít ke sloučení hodnot databáze s aktuálními hodnotami členů klienta. Další informace najdete v tématu [Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+Pro sjednocení rozdílů mezi očekávanými a skutečnými hodnotami databáze předtím, než se pokusíte znovu odeslat změny <xref:System.Data.Linq.RefreshMode.KeepChanges> , můžete použít ke sloučení hodnot databáze s aktuálními hodnotami členů klienta. Další informace najdete v tématu [Optimistická souběžnost: Přehled](optimistic-concurrency-overview.md).  
   
 > [!NOTE]
 > Ve všech případech se záznam v klientovi poprvé aktualizuje načtením aktualizovaných dat z databáze. Tato akce zajistí, že se další pokus o aktualizaci nebude při stejných kontrolách souběžnosti selhat.  
@@ -42,6 +42,6 @@ Pro sjednocení rozdílů mezi očekávanými a skutečnými hodnotami databáze
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Řešení konfliktů přepsáním hodnot databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)
-- [Postupy: Řešení konfliktů zachováním hodnot databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)
-- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Postupy: Řešení konfliktů přepsáním hodnot databáze](how-to-resolve-conflicts-by-overwriting-database-values.md)
+- [Postupy: Řešení konfliktů zachováním hodnot databáze](how-to-resolve-conflicts-by-retaining-database-values.md)
+- [Postupy: Správa konfliktů změn](how-to-manage-change-conflicts.md)

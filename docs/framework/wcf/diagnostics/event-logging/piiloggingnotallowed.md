@@ -2,24 +2,24 @@
 title: PiiLoggingNotAllowed
 ms.date: 03/30/2017
 ms.assetid: fc34a0b6-fee7-4da4-b146-b0c1c8b7519a
-ms.openlocfilehash: 7e1ee746c16eabfa84d96d9157a6248f640e5a1d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 24b31c33b31bb0ef763de30ce24fbc28f03aa039
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999149"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797654"
 ---
 # <a name="piiloggingnotallowed"></a>PiiLoggingNotAllowed
-Id: 108  
+Účet 108  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: Trasování  
+ Kategorií Trasování  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že žádné známé PII není přihlašováno. Přihlášení známého PII není povoleno. Chcete-li povolit přihlášení známého PII, nastavte "enableLoggingKnownPii" na `true` v souboru Machine.config. Události jsou uvedeny, název procesu a ID procesu.  
+ Tato událost označuje, že se nezaznamenává žádný známý PII. Protokolování známého PII není povoleno. Pokud chcete umožňovat protokolování známého PII, nastavte `true` v souboru Machine. config možnost "enableLoggingKnownPii". Událost obsahuje název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

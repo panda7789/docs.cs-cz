@@ -2,12 +2,12 @@
 title: Manipulace s daty v datové tabulce
 ms.date: 03/30/2017
 ms.assetid: 5cb86d48-a987-4af4-80e0-8cc2c8373d62
-ms.openlocfilehash: 83b1a4b6c0e477ac918a2bb4e454718fc58ece0b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 421680a4f39dd68c09dfe20e62f2eec86259b9f0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203488"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786149"
 ---
 # <a name="manipulating-data-in-a-datatable"></a>Manipulace s daty v datové tabulce
 Po vytvoření <xref:System.Data.DataTable> <xref:System.Data.DataSet>v můžete provádět stejné aktivity, které byste měli použít při použití tabulky v databázi. V tabulce můžete přidávat, zobrazovat, upravovat a odstraňovat data. můžete monitorovat chyby a události; a můžete zadávat dotazy na data v tabulce. Při úpravách dat v **objektu DataTable**můžete také ověřit, zda jsou změny přesné, a určit, zda chcete změny programově přijmout nebo odmítnout.  
@@ -41,4 +41,4 @@ Po vytvoření <xref:System.Data.DataTable> <xref:System.Data.DataSet>v můžete
 
 - [Datové tabulky](datatables.md)
 - [Zpracování událostí datové tabulky](handling-datatable-events.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -2,24 +2,24 @@
 title: WmiExecMethodFailed
 ms.date: 03/30/2017
 ms.assetid: 8cb52fa8-0c36-4761-bf8e-2d7e1b73372e
-ms.openlocfilehash: 49ad18549a65373d6a06e99c8ccdbd65be870a5a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b81ce8305b4cec87b8fcfaeb26da669766ca2b0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944206"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797394"
 ---
 # <a name="wmiexecmethodfailed"></a>WmiExecMethodFailed
-Id: 125  
+Účet 125  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: ServiceModel  
+ Kategorií ServiceModel  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že požadavek WMI ExecMethod nebyl zpracován. Uvádí události výjimky, název procesu a ID procesu.  
+ Tato událost označuje, že žádost WMI ExecMethod nebyla zpracována. Událost obsahuje seznam výjimek, názvu procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

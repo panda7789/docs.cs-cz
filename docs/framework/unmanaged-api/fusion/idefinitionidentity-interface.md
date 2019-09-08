@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4ff23330f307c10eac134048de39a6e19a67c75b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84c595bfdcca84ee43a53e2ea913cc978ae0953e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697534"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796525"
 ---
 # <a name="idefinitionidentity-interface"></a>IDefinitionIdentity – rozhraní
 Představuje jedinečný podpis kódu, který definuje aplikaci v aktuálním oboru.  
@@ -30,18 +30,18 @@ Představuje jedinečný podpis kódu, který definuje aplikaci v aktuálním ob
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IDefinitionIdentity::Clone`|Získá ukazatel rozhraní na nový `IDefinitionIdentity` objekt, který je totožný s tím `IDefinitionIdentity`, s výjimkou změn zadaného atributu.|  
-|`IDefinitionIdentity::EnumAttributes`|Získá ukazatel rozhraní k [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) objekt obsahující atributy přidružené k tomuto `IDefinitionIdentity`.|  
+|`IDefinitionIdentity::Clone`|Získá ukazatel rozhraní na nový `IDefinitionIdentity` objekt, který je identický `IDefinitionIdentity`s výjimkou určených změn atributů.|  
+|`IDefinitionIdentity::EnumAttributes`|Získá ukazatel rozhraní na objekt [IEnumIDENTITY_ATTRIBUTE](ienumidentity-attribute-interface.md) , který obsahuje atributy přidružené k tomuto `IDefinitionIdentity`.|  
 |`IDefinitionIdentity::GetAttribute`|Získá hodnotu atributu se zadaným názvem v určeném oboru názvů.|  
-|`IDefinitionIdentity::SetAttribute`|Nastaví atribut, který má zadaný název v určeném oboru názvů se zadanou hodnotou.|  
+|`IDefinitionIdentity::SetAttribute`|Nastaví atribut, který má zadaný název v zadaném oboru názvů na zadanou hodnotu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)

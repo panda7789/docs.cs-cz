@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7121ace6777e7cf947fcc6ff30b1ea314851feff
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 353898b72f41acd0c49a43ff05e54f61b99444c4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636706"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798991"
 ---
 # <a name="strongnamekeyinstall-function"></a>StrongNameKeyInstall – funkce
 
 Importuje pár veřejného a privátního klíče do kontejneru.
 
-Tato funkce je zastaralá. Použití [iclrstrongname::strongnamekeyinstall –](../hosting/iclrstrongname-strongnamekeyinstall-method.md) metoda místo.
+Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameKeyInstall –](../hosting/iclrstrongname-strongnamekeyinstall-method.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,33 +42,33 @@ BOOLEAN StrongNameKeyInstall (
 ## <a name="parameters"></a>Parametry
 
 `wszKeyContainer`\
-[in] Název kontejneru klíčů. `wszKeyContainer` musí být neprázdný řetězec.
+pro Název kontejneru klíčů. `wszKeyContainer`musí být neprázdný řetězec.
 
 `pbKeyBlob`\
-[in] Binární pár klíčů.
+pro Dvojice binárních klíčů.
 
 `cbKeyBlob`\
-[in] Velikost v bajtech, z `pbKeyBlob`.
+pro Velikost v bajtech `pbKeyBlob`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-`true` Při úspěšném dokončení; v opačném případě `false`.
+`true`Po úspěšném dokončení; v opačném případě. `false`
 
 ## <a name="remarks"></a>Poznámky
 
-Použití [strongnamekeydelete –](strongnamekeydelete-function.md) funkce pro odstranění kontejneru klíčů.
+Pomocí funkce [StrongNameKeyDelete –](strongnamekeydelete-function.md) odstraňte kontejner klíčů.
 
-Pokud `StrongNameKeyInstall` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.
+Pokud se `StrongNameKeyInstall` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** StrongName.h
+**Hlaviček** StrongName. h
 
-**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll
+**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

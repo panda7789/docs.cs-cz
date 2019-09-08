@@ -2,12 +2,12 @@
 title: Element <httpDigest>
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-ms.openlocfilehash: f392ebf4eeb6a008952fd4d5ef4e301e57f6eb31
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 121df39c7e4ce4de5c1f0ef87921f6269d7cc1c0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397996"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785823"
 ---
 # <a name="httpdigest-element"></a>\<httpDigest – element >
 Určuje typ Digest, který se použije při ověřování klienta ke službě.  
@@ -23,7 +23,7 @@ Určuje typ Digest, který se použije při ověřování klienta ke službě.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<digest impersonationLevel="Identification/Impersonation/Delegation/Anonymous/None" />
+<httpDigest impersonationLevel="Identification/Impersonation/Delegation/Anonymous/None" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

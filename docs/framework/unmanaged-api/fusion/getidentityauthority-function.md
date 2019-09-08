@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c5e8dd4a9dbf301b0910eda220513e9a3ffdc1cb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f29246bdb929c8eaf1ebce726164d5cd2269b9f1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778635"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796869"
 ---
 # <a name="getidentityauthority-function"></a>GetIdentityAuthority – funkce
-Získá ukazatel [iidentityauthority –](../../../../docs/framework/unmanaged-api/fusion/iidentityauthority-interface.md) instance, která spravuje klíče pro objekty kódu.  
+Získá ukazatel na instanci [IIdentityAuthority –](iidentityauthority-interface.md) , která spravuje klíče pro objekty kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetIdentityAuthority (
   
 ## <a name="parameters"></a>Parametry  
  `ppIIdentityAuthority`  
- [out] Vrácený `IIdentityAuthority` ukazatele.  
+ mimo Vrácený `IIdentityAuthority` ukazatel.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IIdentityAuthority – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iidentityauthority-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [IIdentityAuthority – rozhraní](iidentityauthority-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

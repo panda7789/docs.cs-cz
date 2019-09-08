@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0e6250987997b8d1c833b7b33a985900510fb03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a2adf53d1e29fda077cdcf7b79891f6271993109
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742134"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787579"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
-Vytvoří sestavení. Volejte tuto metodu po všechny ostatní soubory zavřou, s výjimkou souboru sestavení. Nevolejte tuto metodu při vytváření nevázaného moduly.  
+Vytvoří sestavení. Tuto metodu volejte po zavření všech ostatních souborů s výjimkou souboru sestavení. Nevolejte tuto metodu při vytváření nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT EmitAssembly(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

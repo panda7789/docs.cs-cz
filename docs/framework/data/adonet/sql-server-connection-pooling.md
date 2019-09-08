@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 7581031b022c9c53568a616de66584be9ef7229c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2c73bec644a9a76ba05d3299183e8f1643c8e870
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041196"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794315"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
 Připojení k databázovému serveru se obvykle skládá z několika časově náročných kroků. Musí se navázat fyzický kanál, jako je například soket nebo pojmenovaný kanál. musí se vyskytnout počáteční Metoda handshake se serverem, informace o připojovacím řetězci musí být analyzovány, musí být spuštěny pro zařazení do aktuální transakce a tak dále.  
@@ -127,11 +127,11 @@ using (SqlConnection connection = new SqlConnection(
  Po aktivaci role SQL Server aplikace voláním `sp_setapprole` systémové uložené procedury nelze obnovit kontext zabezpečení tohoto připojení. Pokud je ale povoleno sdružování do fondu, bude se připojení vracet do fondu a při opětovném použití sdruženého připojení dojde k chybě. Další informace najdete v článku znalostní báze "[chyby rolí aplikace SQL s OLE DB sdružování zdrojů](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)."  
   
 ### <a name="application-role-alternatives"></a>Alternativy aplikační role  
- Doporučujeme, abyste využili výhod mechanismů zabezpečení, které můžete použít místo aplikačních rolí. Další informace najdete v tématu [vytváření aplikačních rolí v SQL Server](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md).  
+ Doporučujeme, abyste využili výhod mechanismů zabezpečení, které můžete použít místo aplikačních rolí. Další informace najdete v tématu [vytváření aplikačních rolí v SQL Server](./sql/creating-application-roles-in-sql-server.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
-- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)
-- [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sdružování připojení](connection-pooling.md)
+- [SQL Server a ADO.NET](./sql/index.md)
+- [Čítače výkonu](performance-counters.md)
+- [Přehled ADO.NET](ado-net-overview.md)

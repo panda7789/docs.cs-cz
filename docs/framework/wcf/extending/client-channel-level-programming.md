@@ -5,45 +5,45 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3b787719-4e77-4e77-96a6-5b15a11b995a
-ms.openlocfilehash: ea56c99d7d122dd20fc217f8ecb2937bcf81bec3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f24c558b1d5303b2417416beb14555539f498ea
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923263"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797267"
 ---
 # <a name="client-channel-level-programming"></a>Programování na úrovni kanálu klienta
-Toto téma popisuje, jak psát aplikace klienta Windows Communication Foundation (WCF) bez použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> třídy a jeho přidruženého objektu modelu.  
+Toto téma popisuje, jak vytvořit klientskou aplikaci Windows Communication Foundation (WCF) bez použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> třídy a jejího přidruženého objektového modelu.  
   
 ## <a name="sending-messages"></a>Odesílání zpráv  
- Až bude připravená pro zasílání zpráv a příjem a zpracování odpovědi, se vyžaduje následující kroky:  
+ Aby bylo možné odesílat zprávy a přijímat a zpracovávat odpovědi, je nutné provést následující kroky:  
   
-1. Vytvoření vazby.  
+1. Vytvořte vazbu.  
   
-2. Vytvoření objektu pro vytváření kanálů.  
+2. Sestavte objekt pro vytváření kanálů.  
   
-3. Vytvoření kanálu.  
+3. Vytvořte kanál.  
   
-4. Odešle žádost a čtení odpovědi.  
+4. Odešlete žádost a přečtěte odpověď.  
   
 5. Zavřete všechny objekty kanálu.  
   
 #### <a name="creating-a-binding"></a>Vytvoření vazby  
- Podobně jako přijímající případu (naleznete v tématu [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)), odesílání zpráv začíná tím, že vytvoříte vazbu. Tento příklad vytvoří nový <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> a přidá <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> jeho elementů kolekce.  
+ Podobně jako u přijímajícího případu (viz [programování na úrovni kanálu služby](service-channel-level-programming.md)), odesílání zpráv začíná vytvořením vazby. Tento příklad vytvoří nový <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> přidá do kolekce elementů.  
   
-#### <a name="building-a-channelfactory"></a>Vytváření třídy ChannelFactory  
- Místo vytváření <xref:System.ServiceModel.Channels.IChannelListener?displayProperty=nameWithType>, tentokrát vytvoříme <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> voláním <xref:System.ServiceModel.ChannelFactory.CreateFactory%2A?displayProperty=nameWithType> u vazby, kde je parametr typu <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>. Zatímco strana, která čeká na příchozí zprávy používají moduly pro naslouchání kanálů, objekty pro vytváření kanálů používá na straně, který inicializuje komunikaci k vytvoření kanálu. Stejně jako moduly pro naslouchání kanálů objekty pro vytváření kanálů musí byly nejprve otevřeny dříve, než je možné.  
+#### <a name="building-a-channelfactory"></a>Vytvoření třídy ChannelFactory  
+ Místo vytvoření <xref:System.ServiceModel.Channels.IChannelListener?displayProperty=nameWithType>, tentokrát <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> vytvoříme voláním <xref:System.ServiceModel.ChannelFactory.CreateFactory%2A?displayProperty=nameWithType> na vazbu, kde je <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>parametr typu. Zatímco naslouchací procesy kanálu používají stranu, která čeká na příchozí zprávy, používají se strany kanálů, které iniciují komunikaci k vytvoření kanálu. Stejně jako naslouchací procesy kanálu musí být nejprve otevřeny objekty pro vytváření kanálů, aby bylo možné je použít.  
   
 #### <a name="creating-a-channel"></a>Vytvoření kanálu  
- Potom říkáme <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> k vytvoření <xref:System.ServiceModel.Channels.IRequestChannel>. Toto volání přebírá adresu koncového bodu, se kterou chceme, aby na komunikaci pomocí nového kanálu vytváří. Jakmile budeme mít nějaký kanál, říkáme Otevřít na něj umístíte ve stavu Připraveno pro komunikaci. V závislosti na povaze přenos toto volání Open může iniciovat připojení ke koncovému bodu cíl nebo může nedělat nic vůbec v síti.  
+ Pak zavolejte <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.Channels.IRequestChannel>vytvořit. Toto volání přebírá adresu koncového bodu, se kterým chceme komunikovat pomocí nového vytvořeného kanálu. Jakmile budeme mít kanál, zavoláme na něj otevřené, abychom ho umístili do stavu připraveného ke komunikaci. V závislosti na povaze přenosu může toto volání Open iniciovat připojení k cílovému koncovému bodu nebo nemůže v síti vůbec nic dělat.  
   
-#### <a name="sending-a-request-and-reading-the-reply"></a>Odesílání požadavku a odpovědi pro čtení  
- Jakmile budeme mít otevřený kanálu, můžete vytvořit zprávu a pomocí metody požadavku kanálu můžete odeslat požadavek a čekat na odpověď opět online. Po návratu tato metoda máme zprávu odpovědi, který jsme může číst a zjistěte, co byla odpověď koncový bod.  
+#### <a name="sending-a-request-and-reading-the-reply"></a>Odeslání žádosti a čtení odpovědi  
+ Po otevření kanálu můžeme vytvořit zprávu a použít metodu žádosti kanálu k odeslání požadavku a počkat, až se odpověď vrátí zpět. Když se tato metoda vrátí, máme zprávu s odpovědí, kterou můžeme přečíst a zjistit, co byla odpověď koncového bodu.  
   
-#### <a name="closing-objects"></a>Zavírání objektů  
- Aby se zabránilo nevrácení prostředků, můžeme zavřít objekty používané v rámci komunikace, když už nejsou povinné.  
+#### <a name="closing-objects"></a>Zavření objektů  
+ Aby se předešlo nevracení prostředků, zavřou se objekty používané v komunikacích, když už je nepotřebujete.  
   
- Následující příklad kódu ukazuje základní klienta se objekt pro vytváření kanálů pro odeslání zprávy a čtení odpovědi.  
+ Následující příklad kódu ukazuje základního klienta využívajícího objekt pro vytváření kanálů k odeslání zprávy a načtení odpovědi.  
   
  [!code-csharp[ChannelProgrammingBasic#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/channelprogrammingbasic/cs/clientprogram.cs#2)]
  [!code-vb[ChannelProgrammingBasic#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/channelprogrammingbasic/vb/clientprogram.vb#2)]

@@ -2,12 +2,12 @@
 title: Principy změn stavů
 ms.date: 03/30/2017
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
-ms.openlocfilehash: 154f49e7da059d20d0751a73c664aa2a0f89be12
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9f72d113c7160bdb6c4c5680669243323a30a4c1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963075"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796937"
 ---
 # <a name="understanding-state-changes"></a>Principy změn stavů
 Toto téma popisuje stavy a přechody, které kanály obsahují, typy používané ke strukturování stavů kanálů a jejich implementaci.  
@@ -28,12 +28,12 @@ Toto téma popisuje stavy a přechody, které kanály obsahují, typy používan
   
  Každé <xref:System.ServiceModel.ICommunicationObject> začíná ve stavu Created (vytvořeno). V tomto stavu může aplikace nakonfigurovat objekt nastavením jeho vlastností. Jakmile je objekt v jiném než vytvořeném stavu, je považován za neproměnlivý.  
   
- ![Přechod stavu kanálu](../../../../docs/framework/wcf/extending/media/channelstatetranitionshighleveldiagram.gif "ChannelStateTranitionsHighLevelDiagram")  
+ ![Přechod stavu kanálu](./media/channelstatetranitionshighleveldiagram.gif "ChannelStateTranitionsHighLevelDiagram")  
 Obrázek 1. Stavový počítač objekt ICommunicationObject.  
   
  Windows Communication Foundation (WCF) poskytuje abstraktní základní třídu s názvem <xref:System.ServiceModel.Channels.CommunicationObject> , která <xref:System.ServiceModel.ICommunicationObject> implementuje a Stavový počítač kanálu. Následující obrázek je upravený diagram stavu, který je specifický pro <xref:System.ServiceModel.Channels.CommunicationObject>. Kromě <xref:System.ServiceModel.ICommunicationObject> stavového počítače ukazuje časování při vyvolání dalších <xref:System.ServiceModel.Channels.CommunicationObject> metod.  
   
- ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure5statetransitionsdetailsc.gif "wcfc_WCFChannelsigure5StateTransitionsDetailsc")  
+ ![Změny stavu](./media/wcfc-wcfchannelsigure5statetransitionsdetailsc.gif "wcfc_WCFChannelsigure5StateTransitionsDetailsc")  
 Obrázek 2. Implementace CommunicationObject stavového počítače objekt ICommunicationObject, včetně volání událostí a chráněných metod.  
   
 ### <a name="icommunicationobject-events"></a>Události objekt ICommunicationObject  
@@ -90,7 +90,7 @@ Obrázek 2. Implementace CommunicationObject stavového počítače objekt IComm
   
  Poté nastaví stav na otevírání a volání při otevření () (což vyvolává událost otevření), událost otevření () a otevřené () v tomto pořadí. Open () nastaví stav na otevřeno a vyvolá otevřenou událost. Pokud některý z těchto vyvolání vyvolá výjimku, příkaz Open () volá chybu () a umožňuje bublinu výjimky. Následující diagram znázorňuje otevření procesu podrobněji.  
   
- ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigurecoopenflowchartf.gif "wcfc_WCFChannelsigureCOOpenFlowChartf")  
+ ![Změny stavu](./media/wcfc-wcfchannelsigurecoopenflowchartf.gif "wcfc_WCFChannelsigureCOOpenFlowChartf")  
 Přepište metodu Open pro implementaci vlastní otevřené logiky, jako je například otevření objektu vnitřní komunikace.  
   
  Close – metoda  
@@ -101,7 +101,7 @@ Přepište metodu Open pro implementaci vlastní otevřené logiky, jako je nap�
   
  Metodu Close () lze volat v jakémkoli stavu. Pokusí se objekt zavřít normálně. Pokud dojde k chybě, dojde k ukončení objektu. Metoda neprovede nic, pokud je aktuální stav uzavřený nebo zavřený. V opačném případě nastaví stav na Zavřít. Pokud byl původní stav vytvořen, otevírání nebo chyba, volá funkci Abort () (viz následující diagram). Pokud byl původní stav otevřen, volání příkazu "Close ()" (což vyvolává událost ukončení), "Close" () a "Closed" () v tomto pořadí. Pokud některý z těchto vyvolá výjimku, volání Close () volá Abort () a umožňuje bublinu výjimky nahoru. -Closeed () nastaví stav na uzavřeno a vyvolá uzavřenou událost. Následující diagram znázorňuje proces zavření podrobněji.  
   
- ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsguire7ico-closeflowchartc.gif "wcfc_WCFChannelsguire7ICO – CloseFlowChartc")  
+ ![Změny stavu](./media/wcfc-wcfchannelsguire7ico-closeflowchartc.gif "wcfc_WCFChannelsguire7ICO – CloseFlowChartc")  
 Přepište metodu Close pro implementaci vlastní logiky ukončení, jako je například zavření objektu vnitřní komunikace. Veškerá plynulá uzavírací logika, která může být zablokovaná dlouhou dobu (například čekání na druhou stranu reakce), by měla být implementována v operaci Close (), protože má parametr timeout a protože není volána jako součást přerušení ().  
   
  Přerušení  
@@ -111,7 +111,7 @@ Po stavu: Stav je uzavřeno. Může vyvolat výjimku.
   
  Metoda Abort () nedělá nic, pokud je aktuální stav uzavřen nebo pokud byl objekt ukončen dříve (například může mít přerušení () prováděné v jiném vlákně). V opačném případě nastaví stav na zavírání a volání metody "Close" () (která vyvolává uzavírací událost), operace "Abort () a" uzavřeno "() v tomto pořadí () v tomto pořadí (nevolá funkci Close, protože objekt je právě ukončován, nikoli uzavřený). -Closeed () nastaví stav na uzavřeno a vyvolá uzavřenou událost. Pokud některý z těchto výjimek vyvolá výjimku, je znovu vyvolána volajícímu přerušení. Implementace příkazového začátku (), Closeed () a Abort () by neměly blokovat (například při vstupu/výstupu). Následující diagram znázorňuje proces přerušení podrobněji.  
   
- ![Změny stavu](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure8ico-abortflowchartc.gif "wcfc_WCFChannelsigure8ICO – AbortFlowChartc")  
+ ![Změny stavu](./media/wcfc-wcfchannelsigure8ico-abortflowchartc.gif "wcfc_WCFChannelsigure8ICO – AbortFlowChartc")  
 Přepište metodu-Abort pro implementaci vlastní logiky ukončení, jako je například ukončení objektu vnitřní komunikace.  
   
  Indikován  

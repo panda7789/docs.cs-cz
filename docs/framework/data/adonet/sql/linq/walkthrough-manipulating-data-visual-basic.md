@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: 9e6039feb68d18ff5ce16b7a0532710d672c296e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a74216c53c45790b974938c7155e0b5e1043ac13
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946953"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792284"
 ---
 # <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
 Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravu a odstranění dat v databázi. Budete používat kopii ukázkové databáze Northwind pro přidání zákazníka, změnu názvu zákazníka a odstranění objednávky.  
@@ -25,7 +25,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 - Ukázkovou databázi Northwind  
   
-     Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze zkopírujte soubor northwnd. mdf do složky c:\linqtest2.  
+     Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](downloading-sample-databases.md). Po stažení databáze zkopírujte soubor northwnd. mdf do složky c:\linqtest2.  
   
 - Visual Basic soubor kódu vygenerovaný z databáze Northwind.  
   
@@ -33,7 +33,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
      **SQLMetal/Code: "c:\linqtest2\northwind.vb"/Language: VB "C:\linqtest2\northwnd.mdf"/pluralize**  
   
-     Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+     Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze šesti hlavních úloh:  
@@ -188,4 +188,4 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Učení podle návodů](learning-by-walkthroughs.md)

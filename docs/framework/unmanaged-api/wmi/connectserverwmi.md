@@ -1,6 +1,6 @@
 ---
-title: Funkce ConnectServerWmi (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce ConnectServerWmi používá model DCOM k vytvoření připojení k oboru názvů WMI.
+title: ConnectServerWmi – funkce (Reference nespravovaného rozhraní API)
+description: Funkce ConnectServerWmi používá model DCOM k vytvoření připojení k oboru názvů rozhraní WMI.
 ms.date: 11/06/2017
 api_name:
 - ConnectServerWmi
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e88129f737ee493432d06acc6ad45f8653dd1eb4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2ebb268dcee877f4e9aea0c88852333897030dd1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636761"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798749"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 
-Připojení přes DCOM k oboru názvů WMI vytvoří v zadaném počítači.
+Vytvoří připojení prostřednictvím modelu DCOM k oboru názvů WMI v zadaném počítači.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -49,73 +49,73 @@ HRESULT ConnectServerWmi (
 ## <a name="parameters"></a>Parametry
 
 `strNetworkResource`\
-[in] Ukazatel na platný `BSTR` , který obsahuje cestu k objektu správný obor názvů rozhraní WMI. Zobrazit [poznámky](#remarks) části Další informace.
+pro Ukazatel na platný `BSTR` , který obsahuje cestu k objektu správného oboru názvů rozhraní WMI. Další informace najdete v části [poznámky](#remarks) .
 
 `strUser`\
-[in] Ukazatel na platný `BSTR` , která obsahuje uživatelské jméno. A `null` hodnota označuje aktuální kontext zabezpečení. Pokud se uživatel nachází v jiné doméně než tu, `strUser` může také obsahovat doména a uživatelské jméno oddělené zpětným lomítkem. `strUser` může být také ve formátu hlavního názvu (UPN) uživatele, například `userName@domainName`. Zobrazit [poznámky](#remarks) části Další informace.
+pro Ukazatel na platný `BSTR` , který obsahuje uživatelské jméno. `null` Hodnota označuje aktuální kontext zabezpečení. Pokud uživatel pochází z jiné domény než z aktuální, `strUser` může také obsahovat doménu a uživatelské jméno oddělené zpětným lomítkem. `strUser`může být také ve formátu hlavního názvu uživatele (UPN), například `userName@domainName`. Další informace najdete v části [poznámky](#remarks) .
 
 `strPassword`\
-[in] Ukazatel na platný `BSTR` obsahující heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo nulové délky.
+pro Ukazatel na platný `BSTR` , který obsahuje heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo s nulovou délkou.
 
 `strLocale`\
-[in] Ukazatel na platný `BSTR` určující správné národní prostředí pro načítání informací. Identifikátory národního prostředí Microsoft formát řetězce je "MS\_*xxx*", kde *xxx* je řetězce v šestnáctkovém formátu, který určuje identifikátor národního prostředí (LCID). Pokud je zadán neplatný národní prostředí, vrátí metoda `WBEM_E_INVALID_PARAMETER` s výjimkou Windows 7, které místo toho používají výchozí národní prostředí serveru. Pokud se používá null1 aktuálního národního prostředí.
+pro Ukazatel na platný `BSTR` , který označuje správné národní prostředí pro načtení informací. V případě identifikátorů národního prostředí společnosti Microsoft je formát řetězce "MS\_*xxx*", kde *xxx* je řetězec v šestnáctkovém formátu, který označuje identifikátor národního prostředí (LCID). Pokud je zadáno neplatné národní prostředí, vrátí `WBEM_E_INVALID_PARAMETER` se metoda s výjimkou systému Windows 7, kde je místo toho použito výchozí národní prostředí serveru. Pokud je použito ' NULL1 ', aktuální národní prostředí.
 
 `lSecurityFlags`\
-[in] Příznaky, které mají být předány `ConnectServerWmi` metody. Hodnotu nula (0) pro tento parametr je výsledkem volání `ConnectServerWmi` vrací pouze po navázání připojení k serveru. To může způsobit aplikace neodpovídá po neomezenou dobu Pokud na serveru se přeruší. Platné hodnoty jsou:
+pro Příznaky, které mají být `ConnectServerWmi` předána metodě. Hodnota nula (0) pro tento parametr způsobí, že volání `ConnectServerWmi` bude vráceno pouze po navázání připojení k serveru. To může způsobit, že aplikace nereaguje na neomezenou dobu, pokud je server poškozený. Další platné hodnoty jsou:
 
 | Konstanta  | Value  | Popis  |
 |---------|---------|---------|
 | `CONNECT_REPOSITORY_ONLY` | 0x40 | Vyhrazeno pro interní použití. Nepoužívejte. |
-| `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi` vrátí do dvou minut nebo i rychleji. |
+| `WBEM_FLAG_CONNECT_USE_MAX_WAIT` | 0x80 | `ConnectServerWmi`Vrátí dvě minuty nebo méně. |
 
 `strAuthority`\
-[in] Název domény uživatele. Může mít následující hodnoty:
+pro Název domény uživatele Může mít následující hodnoty:
 
-| Hodnota | Popis |
+| Value | Popis |
 |---------|---------|
-| Prázdné | Bude použito ověřování NTLM a používá NTLM domény aktuálního uživatele. Pokud `strUser` Určuje doménu (doporučené umístění), nesmí být zadané tady. Funkce vrátí `WBEM_E_INVALID_PARAMETER` při zadání domény v obou parametrech. |
-| Pomocí protokolu Kerberos:*hlavní název* | Používáno ověřování protokolem Kerberos a tento parametr obsahuje hlavní název Kerberos. |
-| NTLMDOMAIN:*název domény* | Ověřování NT LAN Manager se používá, a tento parametr obsahuje název domény NTLM. |
+| trhnout | Používá se ověřování NTLM a doména NTLM aktuálního uživatele se používá. Pokud `strUser` určuje doménu (doporučené umístění), nesmí se tady zadat. Funkce se vrátí `WBEM_E_INVALID_PARAMETER` , pokud zadáte doménu v obou parametrech. |
+| Kerberos:*hlavní název* | Použije se ověřování protokolem Kerberos a tento parametr obsahuje hlavní název protokolu Kerberos. |
+| NTLMDOMAIN:*název domény* | Použije se ověřování NT LAN Manageru a tento parametr obsahuje název domény NTLM. |
 
 `pCtx`\
-[in] Tento parametr je obvykle `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) podle jednoho nebo více dynamických tříd zprostředkovatelů je požadován objekt.
+pro Obvykle je `null`tento parametr. V opačném případě se jedná o ukazatel na objekt [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , který vyžaduje jeden nebo více zprostředkovatelů dynamické třídy.
 
 `ppNamespace`\
-[out] Po návratu funkce přijímá ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objekt vázán na určený obor názvů. Je nastaven tak, aby odkazoval na `null` když dojde k chybě.
+mimo Když se funkce vrátí, přijme ukazatel na objekt [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) vázaný na zadaný obor názvů. Je nastavená tak, aby `null` odkazovala na chybu.
 
 `impLevel`\
-[in] Úroveň zosobnění.
+pro Úroveň zosobnění.
 
 `authLevel`\
-[in] Úroveň autorizace.
+pro Úroveň autorizace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemLocator::ConnectServer](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemlocator-connectserver) metody.
+Tato funkce zalomí volání metody [IWbemLocator:: ConnectServer](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemlocator-connectserver) .
 
-Pro místní přístup k výchozí obor názvů `strNetworkResource` může být jednoduchý objekt cesta: "root\default" nebo "\\.\root\default". Pro přístup k výchozí obor názvů ve vzdáleném počítači pomocí modelu COM nebo Microsoft kompatibilní sítě, zahrnují název počítače: "\\myserver\root\default". Název počítače může také být, název DNS nebo IP adresu. `ConnectServerWmi` Funkce se také připojit pomocí počítače se systémem IPv6 pomocí adresy IPv6.
+Pro místní přístup k výchozímu oboru názvů `strNetworkResource` může být cesta jednoduchého objektu: "root\default" nebo "\\.\root\default". Pro přístup k výchozímu oboru názvů na vzdáleném počítači pomocí modelu COM nebo sítě kompatibilního se společností Microsoft zadejte název počítače\\: "myserver\root\default". Název počítače může být taky název DNS nebo IP adresa. `ConnectServerWmi` Funkce se také může připojit k počítačům s protokolem IPv6 pomocí adresy IPv6.
 
-`strUser` Nemůže být prázdný řetězec. Pokud je v zadané doméně `strAuthority`, se nesmí být i součástí `strUser`, nebo funkce vrátí `WBEM_E_INVALID_PARAMETER`.
+`strUser`nemůže být prázdný řetězec. Pokud je doména určena v `strAuthority`, nesmí být také obsažena v `strUser`nebo funkce vrácena `WBEM_E_INVALID_PARAMETER`.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
- **Záhlaví:** WMINet_Utils.idl
+ **Hlaviček** WMINet_Utils.idl
 
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

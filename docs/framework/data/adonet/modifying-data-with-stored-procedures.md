@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d8e9a46-1af6-4a02-bf61-969d77ae07e0
-ms.openlocfilehash: ebf5c61010a6f658d846ed435ea3a7d18d0d3832
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 46c92301b717e285c4c18241f84d0069069c7bdc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934440"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783523"
 ---
 # <a name="modifying-data-with-stored-procedures"></a>Úpravy dat pomocí uložených procedur
 Uložené procedury mohou přijímat data jako vstupní parametry a mohou vracet data jako výstupní parametry, sady výsledků nebo návratové hodnoty. Následující ukázka ukazuje, jak ADO.NET odesílá a přijímá vstupní parametry, výstupní parametry a návratové hodnoty. Příklad vloží nový záznam do tabulky, kde sloupec primárního klíče je sloupec identity v databázi SQL Server.  
@@ -41,7 +41,7 @@ RETURN @@ROWCOUNT
   
 ## <a name="see-also"></a>Viz také:
 
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Spuštění příkazu](../../../../docs/framework/data/adonet/executing-a-command.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Spuštění příkazu](executing-a-command.md)
+- [Přehled ADO.NET](ado-net-overview.md)

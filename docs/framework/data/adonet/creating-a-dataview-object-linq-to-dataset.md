@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
-ms.openlocfilehash: afa760d890cf2857737372af5a9d3ba7c2749e6c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 054898a3520cbc2b607fc26b94b72b9896ad9c71
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949420"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786681"
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ to DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v kontextu LINQ to DataSet. Můžete vytvořit <xref:System.Data.DataView> dotaz <xref:System.Data.DataTable>z LINQ to DataSet nebo ho můžete vytvořit ze zadaného nebo netypového <xref:System.Data.DataTable>typu. V obou případech vytvoříte <xref:System.Data.DataView> pomocí jedné <xref:System.Data.DataTableExtensions.AsDataView%2A> z rozšiřujících metod; <xref:System.Data.DataView> není přímo constructible v kontextu LINQ to DataSet.  
@@ -19,7 +19,7 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v kontextu LIN
   
  <xref:System.Data.DataView>vytvoří index, který významně zvyšuje výkon operací, které mohou používat index, jako je například filtrování a řazení. Index pro <xref:System.Data.DataView> je sestaven <xref:System.Data.DataView> při vytvoření a při změně jakékoli informace o řazení nebo filtrování. Vytvoření a nastavení informací o řazení nebo filtrování později způsobí, že se index sestaví alespoň dvakrát: Jakmile <xref:System.Data.DataView> se vytvoří, a znovu, když se změní kterákoli z vlastností řazení nebo filtru. <xref:System.Data.DataView>  
   
- Další informace o filtrování a řazení pomocí <xref:System.Data.DataView>nástroje naleznete v tématu [filtrování pomocí zobrazení dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení pomocí objektu DataView](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
+ Další informace o filtrování a řazení pomocí <xref:System.Data.DataView>nástroje naleznete v tématu [filtrování pomocí zobrazení dat](filtering-with-dataview-linq-to-dataset.md) a [řazení pomocí objektu DataView](sorting-with-dataview-linq-to-dataset.md).  
   
 ## <a name="creating-dataview-from-a-linq-to-dataset-query"></a>Vytvoření objektu DataView z LINQ to DataSetho dotazu  
  Objekt lze vytvořit z výsledků LINQ to DataSet dotaz, kde jsou výsledky <xref:System.Data.DataRow> projekcí objektů. <xref:System.Data.DataView> Nově vytvořená <xref:System.Data.DataView> metoda zdědí informace o filtrování a řazení z dotazu, ze kterého je vytvořena.  
@@ -72,6 +72,6 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v kontextu LIN
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
-- [Filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)
-- [Řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)
+- [Datová vazba a LINQ to DataSet](data-binding-and-linq-to-dataset.md)
+- [Filtrování se zobrazením dat](filtering-with-dataview-linq-to-dataset.md)
+- [Řazení se zobrazením dat](sorting-with-dataview-linq-to-dataset.md)

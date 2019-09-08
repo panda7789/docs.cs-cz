@@ -2,12 +2,12 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 02fe8d984f1287673477bb142b3f9626e248898e
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 8f726ca71ba955ef542d15e0e8318c2b310e607e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363746"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784905"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
@@ -57,23 +57,23 @@ Všechny připojovací řetězce sdílejí stejnou základní syntaxi popsanou v
 
 Psaní chyb může způsobit chyby. Například `Integrated Security=true` je platný, ale `IntegratedSecurity=true` způsobí chybu.
 
-Připojovací řetězce konstruované ručně v době spuštění z neověřeného vstupu uživatele jsou zranitelné vůči útokům prostřednictvím injektáže řetězce a ohrožení zabezpečení ve zdroji dat. Pro řešení těchto problémů zavedlo *ADO.NET* 2,0 [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md) pro každého poskytovatele dat *.NET Framework* . Tyto tvůrci připojovacích řetězců zpřístupňují parametry jako vlastnosti silného typu a umožňují ověření připojovacího řetězce před jeho odesláním do zdroje dat.
+Připojovací řetězce konstruované ručně v době spuštění z neověřeného vstupu uživatele jsou zranitelné vůči útokům prostřednictvím injektáže řetězce a ohrožení zabezpečení ve zdroji dat. Pro řešení těchto problémů zavedlo *ADO.NET* 2,0 [tvůrci připojovacích řetězců](connection-string-builders.md) pro každého poskytovatele dat *.NET Framework* . Tyto tvůrci připojovacích řetězců zpřístupňují parametry jako vlastnosti silného typu a umožňují ověření připojovacího řetězce před jeho odesláním do zdroje dat.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)\
+[Tvůrci připojovacích řetězců](connection-string-builders.md)\
 Ukazuje, jak použít `ConnectionStringBuilder` třídy pro vytvoření platných připojovacích řetězců za běhu.
 
-[Připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)\
+[Připojovací řetězce a konfigurační soubory](connection-strings-and-configuration-files.md)\
 Ukazuje, jak ukládat a načítat připojovací řetězce v konfiguračních souborech.
 
-[Syntaxe připojovacího řetězce](../../../../docs/framework/data/adonet/connection-string-syntax.md)\
+[Syntaxe připojovacího řetězce](connection-string-syntax.md)\
 Popisuje postup konfigurace připojovacích řetězců specifických pro konkrétní poskytovatele `SqlClient`pro `OracleClient`, `OleDb`, a `Odbc`.
 
-[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)\
+[Ochrana informací o připojení](protecting-connection-information.md)\
 Ukazuje techniky ochrany informací používaných pro připojení ke zdroji dat.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

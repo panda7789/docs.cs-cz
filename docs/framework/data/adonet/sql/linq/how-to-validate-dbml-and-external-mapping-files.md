@@ -2,12 +2,12 @@
 title: 'Postupy: Ověření DBML a externí soubory mapování'
 ms.date: 03/30/2017
 ms.assetid: d9ea37f5-0a9e-4401-8fc3-1e6fd44c49f9
-ms.openlocfilehash: 212d65dfe998b825dd40e564756083ed685dff6f
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b5901705ac7c0692025ff1f4a4b78f976d62176d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041133"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793049"
 ---
 # <a name="how-to-validate-dbml-and-external-mapping-files"></a>Postupy: Ověření DBML a externí soubory mapování
 
@@ -31,9 +31,9 @@ Externí soubory mapování a soubory. dbml, které upravíte, musí být ověř
 
 5. Všimněte si vhodné definice schématu pro svůj účel.
 
-    - DbmlSchema. xsd je definice schématu pro ověření souboru. dbml. Další informace naleznete v tématu [generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).
+    - DbmlSchema. xsd je definice schématu pro ověření souboru. dbml. Další informace naleznete v tématu [generování kódu v LINQ to SQL](code-generation-in-linq-to-sql.md).
 
-    - LinqToSqlMapping. xsd je definice schématu pro ověření externího souboru mapování XML. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).
+    - LinqToSqlMapping. xsd je definice schématu pro ověření externího souboru mapování XML. Další informace najdete v tématu [externí mapování](external-mapping.md).
 
 6. Ve sloupci **použít** na požadovaném řádku definice schématu kliknutím otevřete rozevírací seznam a pak klikněte na **použít toto schéma**.
 
@@ -53,9 +53,9 @@ Pokud z nějakého důvodu není příslušný soubor. xsd zobrazen v dialogové
 
 1. Vyhledejte téma nápovědy obsahující definici schématu, jak je popsáno dříve v tomto tématu.
 
-    - Pro soubory. dbml si přečtěte téma [generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).
+    - Pro soubory. dbml si přečtěte téma [generování kódu v LINQ to SQL](code-generation-in-linq-to-sql.md).
 
-    - Pro externí soubory mapování viz [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).
+    - Pro externí soubory mapování viz [externí mapování](external-mapping.md).
 
 2. Kliknutím na **Kopírovat kód** zkopírujte soubor kódu do schránky.
 
@@ -74,4 +74,4 @@ Pokud z nějakého důvodu není příslušný soubor. xsd zobrazen v dialogové
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Referenční informace](reference.md)

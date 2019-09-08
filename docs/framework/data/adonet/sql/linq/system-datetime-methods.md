@@ -2,18 +2,18 @@
 title: Metody System.DateTime
 ms.date: 03/30/2017
 ms.assetid: 4f80700c-e83f-4ab6-af0f-1c9a606e1133
-ms.openlocfilehash: 85af6f252362b811356d68a3ae220df2bb813882
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fba695975645ecb86a06b17f0664fdf37f8866a0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876769"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792416"
 ---
 # <a name="systemdatetime-methods"></a>Metody System.DateTime
-Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v technologii LINQ dotazy SQL. Pokud metoda, operátor nebo vlastnost není podporována, LINQ to SQL: nelze převést člena pro spuštění systému SQL Server. Můžete použít tyto členy ve vašem kódu, ale musí být vyhodnocují před dotazu je přeložen příkazů jazyka Transact-SQL nebo po výsledky byly načteny z databáze.  
+Následující LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v dotazech LINQ to SQL. Pokud metoda, operátor nebo vlastnost není podporována, LINQ to SQL nemůže přeložit člena ke spuštění v SQL Server. Tyto členy můžete použít ve vašem kódu, ale musí být vyhodnoceny, než je dotaz přeložen do jazyka Transact-SQL nebo po načtení výsledků z databáze.  
   
-## <a name="supported-systemdatetime-members"></a>Podporované System.DateTime členy  
- Jakmile mapován v objektovém modelu nebo externí mapování souboru LINQ to SQL umožňuje volat následující <xref:System.DateTime?displayProperty=nameWithType> členům uvnitř LINQ dotazy SQL.  
+## <a name="supported-systemdatetime-members"></a>Podporované členy System. DateTime  
+ Po namapování v objektovém modelu nebo v souboru externího mapování vám LINQ to SQL umožňuje volat následující <xref:System.DateTime?displayProperty=nameWithType> členy v rámci LINQ to SQL dotazů.  
   
 |Podporované <xref:System.DateTime> metody|Podporované <xref:System.DateTime> operátory|Podporované <xref:System.DateTime> vlastnosti|  
 |------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|  
@@ -31,8 +31,8 @@ Následující technologie LINQ to SQL podporované metody, operátory a vlastno
 |<xref:System.DateTime.Equals%28System.DateTime%29>||<xref:System.DateTime.Today%2A>|  
 |||<xref:System.DateTime.Year%2A>|  
   
-## <a name="members-not-supported-by-linq-to-sql"></a>Členové nejsou podporována technologií LINQ to SQL  
- Následující členy nejsou podporovány uvnitř LINQ dotazy SQL.  
+## <a name="members-not-supported-by-linq-to-sql"></a>Členové nejsou podporováni LINQ to SQL  
+ Následující členové nejsou podporováni v rámci LINQ to SQL dotazů.  
   
 |||  
 |-|-|  
@@ -46,17 +46,17 @@ Následující technologie LINQ to SQL podporované metody, operátory a vlastno
 |<xref:System.DateTime.FromFileTime%2A>|<xref:System.DateTime.FromFileTimeUtc%2A>|  
 |<xref:System.DateTime.FromOADate%2A>|<xref:System.DateTime.GetDateTimeFormats%2A>|  
   
-## <a name="method-translation-example"></a>Příklad překladu – metoda  
- Všechny metody podporována technologií LINQ to SQL jsou přeloženy na příkazů jazyka Transact-SQL, před jejich odesláním do systému SQL Server. Představte si třeba následující vzor.  
+## <a name="method-translation-example"></a>Příklad překladu metody  
+ Všechny metody podporované LINQ to SQL jsou přeloženy do jazyka Transact-SQL před odesláním do SQL Server. Zvažte například následující vzor.  
   
  `(dateTime1 – dateTime2).{Days, Hours, Milliseconds, Minutes, Months, Seconds, Years}`  
   
- Když je rozpoznán, je převeden do přímého volání SQL Server `DATEDIFF` fungovat, následovně:  
+ Je-li rozpoznána, je přeložena do přímého volání funkce SQL Server `DATEDIFF` následujícím způsobem:  
   
  `DATEDIFF({DatePart}, @dateTime1, @dateTime2)`  
   
-## <a name="sqlmethods-date-and-time-methods"></a>SQLMethods datum a čas metody  
- Kromě metod, které nabízí <xref:System.DateTime> strukturu, LINQ to SQL nabízí metody uvedené v následující tabulce z <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> tříd pro práci s datem a časem.  
+## <a name="sqlmethods-date-and-time-methods"></a>SQLMethods metody data a času  
+ Kromě metod, které jsou <xref:System.DateTime> nabízeny strukturou, LINQ to SQL nabízí metody uvedené v následující tabulce <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> z třídy pro práci s datem a časem.  
   
 ||||  
 |-|-|-|  
@@ -66,7 +66,7 @@ Následující technologie LINQ to SQL podporované metody, operátory a vlastno
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
-- [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Koncepty dotazů](query-concepts.md)
+- [Vytvoření objektového modelu](creating-the-object-model.md)
+- [Mapování typů SQL a CLR](sql-clr-type-mapping.md)
+- [Datové typy a funkce](data-types-and-functions.md)

@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 90820e49-9d46-41f6-9a3d-6c0741bbd8eb
-ms.openlocfilehash: f0a85232b753eed891cded4b0fb1154269b30dc9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 51ea09965c423f04c220260248c3501e061820cb
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606941"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784137"
 ---
 # <a name="dataview-performance"></a>Výkon zobrazení dat
-Toto téma popisuje použití přinese zlepšení výkonu <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView> třídy a ukládání do mezipaměti <xref:System.Data.DataView> ve webové aplikaci.  
+Toto téma popisuje výkonnostní <xref:System.Data.DataView.Find%2A> výhody použití metod <xref:System.Data.DataView> a <xref:System.Data.DataView.FindRows%2A> třídy a ukládání do mezipaměti <xref:System.Data.DataView> ve webové aplikaci.  
   
 ## <a name="find-and-findrows"></a>Najít a FindRows  
- <xref:System.Data.DataView> Vytvoří index. Index obsahuje klíče vytvořené z jednoho nebo více sloupců v tabulce nebo zobrazení. Tyto klíče jsou uložené ve struktuře, která umožňuje <xref:System.Data.DataView> najít řádek nebo řádky, které jsou spojené s klíčovými hodnotami rychle a efektivně. Operace, které používají index, jako je například filtrování a řazení, naleznete v tématu zvýšení výkonu. Index <xref:System.Data.DataView> tvoříme tak i v případě <xref:System.Data.DataView> se vytvoří a při řazení nebo filtrování informace změněny. Vytváření <xref:System.Data.DataView> a nastavení řazení nebo filtrování informací později způsobí indexu, který má být sestaven alespoň dvakrát: až při <xref:System.Data.DataView> je vytvořen, a znovu když některé vlastnosti řazení nebo filtrování se upraví. Další informace o filtrování a řazení ovládacími <xref:System.Data.DataView>, naleznete v tématu [filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md) a [řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md).  
+ <xref:System.Data.DataView>vytvoří index. Index obsahuje klíče sestavené z jednoho nebo více sloupců v tabulce nebo zobrazení. Tyto klíče jsou uloženy ve struktuře, která umožňuje <xref:System.Data.DataView> , aby bylo možné najít řádek nebo řádky přidružené k hodnotám klíčů rychle a efektivně. Operace, které používají index, jako je filtrování a třídění, se zvyšují z hlediska zvýšení výkonu. Index pro <xref:System.Data.DataView> je sestaven <xref:System.Data.DataView> při vytvoření a při změně jakékoli informace o řazení nebo filtrování. Vytvoření a nastavení informací o řazení nebo filtrování později způsobí, že se index sestaví alespoň dvakrát: Jakmile <xref:System.Data.DataView> se vytvoří, a znovu, když se změní kterákoli z vlastností řazení nebo filtru. <xref:System.Data.DataView> Další informace o filtrování a řazení pomocí <xref:System.Data.DataView>nástroje naleznete v tématu [filtrování pomocí zobrazení dat](filtering-with-dataview-linq-to-dataset.md) a [řazení pomocí objektu DataView](sorting-with-dataview-linq-to-dataset.md).  
   
- Pokud chcete vrátit výsledky konkrétní dotaz na data, jako proti poskytující dynamické zobrazení podmnožinu dat, můžete použít <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>, místo nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost. <xref:System.Data.DataView.RowFilter%2A> Vlastnost je nejvhodnější v aplikace vázané na data kde vázaného ovládacího prvku zobrazí filtrované výsledky. Nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnost znovu sestaví index pro data, přidání režie pro vaši aplikaci a snížit výkon. <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody používat aktuální index bez nutnosti index znovu sestavit. Pokud se chystáte zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> pouze jednou, měli byste použít stávající <xref:System.Data.DataView>. Pokud se chystáte zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> více než jednou, měli byste vytvořit nový <xref:System.Data.DataView> znovu sestavovat index pro sloupec, který chcete vyhledat a následně zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody. Další informace o <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody, naleznete v tématu [vyhledání řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md).  
+ Pokud chcete vrátit výsledky konkrétního dotazu na data, na rozdíl od poskytnutí dynamického zobrazení podmnožiny dat, můžete <xref:System.Data.DataView.Find%2A> místo nastavení <xref:System.Data.DataView.RowFilter%2A> vlastnosti použít metody <xref:System.Data.DataView>nebo <xref:System.Data.DataView.FindRows%2A> . Tato <xref:System.Data.DataView.RowFilter%2A> vlastnost se nejlépe používá v aplikaci vázané na data, kde vázaný ovládací prvek zobrazuje filtrované výsledky. <xref:System.Data.DataView.RowFilter%2A> Nastavením vlastnosti se znovu sestaví index dat, zvýší se režie do vaší aplikace a zmenší se výkon. Metody <xref:System.Data.DataView.Find%2A> a<xref:System.Data.DataView.FindRows%2A> používají aktuální index, aniž by bylo nutné znovu sestavit index. Pokud budete volat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> pouze jednou, měli byste použít stávající <xref:System.Data.DataView>. Pokud se chystáte zavolat <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> víckrát, měli byste vytvořit nový <xref:System.Data.DataView> , chcete-li znovu sestavit index ve sloupci, který chcete vyhledat, a pak zavolat <xref:System.Data.DataView.Find%2A> metody nebo <xref:System.Data.DataView.FindRows%2A> . Další informace o <xref:System.Data.DataView.Find%2A> metodách a <xref:System.Data.DataView.FindRows%2A> naleznete v tématu [Vyhledání řádků](./dataset-datatable-dataview/finding-rows.md).  
   
- V následujícím příkladu <xref:System.Data.DataView.Find%2A> metody k vyhledání kontakt s příjmení "Zhu".  
+ Následující příklad používá <xref:System.Data.DataView.Find%2A> metodu k vyhledání kontaktu s posledním názvem "Zhu".  
   
  [!code-csharp[DP DataView Samples#LDVFromQueryOrderByFind](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromqueryorderbyfind)]
  [!code-vb[DP DataView Samples#LDVFromQueryOrderByFind](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromqueryorderbyfind)]  
   
- V následujícím příkladu <xref:System.Data.DataView.FindRows%2A> metody k vyhledání všech červená barva produktů.  
+ Následující příklad používá <xref:System.Data.DataView.FindRows%2A> metodu k vyhledání všech červených barevných produktů.  
   
  [!code-csharp[DP DataView Samples#LDVFromQueryFindRows](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromqueryfindrows)]
  [!code-vb[DP DataView Samples#LDVFromQueryFindRows](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromqueryfindrows)]  
   
 ## <a name="aspnet"></a>ASP.NET  
- Technologie ASP.NET obsahuje mechanismus ukládání do mezipaměti, která umožňuje ukládat objekty, které vyžadují rozsáhlé server prostředky pro vytvoření v paměti. Ukládání do mezipaměti těchto typů prostředků může výrazně zlepšit výkon aplikace. Ukládání do mezipaměti je implementovaných <xref:System.Web.Caching.Cache> třídy s instancí mezipaměti, které jsou privátní pro danou aplikaci. Vzhledem k tomu, že vytvoření nového <xref:System.Data.DataView> objekt může být náročné, můžete chtít použít funkce ve webových aplikacích mezipaměti tak, aby <xref:System.Data.DataView> není nutné znovu sestavit pokaždé, když se aktualizuje webové stránky.  
+ ASP.NET má mechanismus ukládání do mezipaměti, který umožňuje ukládat objekty, které vyžadují rozsáhlé serverové prostředky k vytvoření v paměti. Ukládání těchto typů prostředků do mezipaměti může významně zlepšit výkon aplikace. Ukládání do mezipaměti je implementováno <xref:System.Web.Caching.Cache> třídou, s instancemi mezipaměti, které jsou pro každou aplikaci privátní. Vzhledem k tomu, <xref:System.Data.DataView> že vytvoření nového objektu může být náročné na prostředky, můžete použít tuto funkci ukládání do mezipaměti ve webových aplikacích <xref:System.Data.DataView> , aby se při každém obnovení webové stránky nemuselo znovu vytvářet.  
   
- V následujícím příkladu <xref:System.Data.DataView> se uloží do mezipaměti, takže není nutné data znovu seřadit při obnovení stránky.  
+ V následujícím příkladu <xref:System.Data.DataView> je uložen do mezipaměti, aby se data po obnovení stránky nemusela znovu řadit.  
   
 ```vb  
 If (Cache("ordersView") = Nothing) Then  
@@ -88,4 +88,4 @@ GridView1.DataBind();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
+- [Datová vazba a LINQ to DataSet](data-binding-and-linq-to-dataset.md)

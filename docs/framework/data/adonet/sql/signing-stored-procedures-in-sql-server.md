@@ -2,12 +2,12 @@
 title: Podepisování uložených procedur na SQL Serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: a30b5e28263c9f36e80c4e6b848033d5095b830b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8dc62527be7273d3ce3222d4d261b81bc40b1e19
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043934"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791809"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL Serveru
 
@@ -59,11 +59,11 @@ Další informace najdete v následujících materiálech.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
-- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Správa oprávnění pomocí uložených procedur na SQL Serveru](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](writing-secure-dynamic-sql-in-sql-server.md)
+- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](customizing-permissions-with-impersonation-in-sql-server.md)
+- [Úpravy dat pomocí uložených procedur](../modifying-data-with-stored-procedures.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

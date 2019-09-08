@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ee30d4f32e05fab27ae70052b28d3d152594cf90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2710d14d6e73879fd17a6b58659463ea205f2384
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778425"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795375"
 ---
 # <a name="createhistoryreader-function"></a>CreateHistoryReader – funkce
 Vytvoří čtečku historie pro zadaný soubor.  
@@ -37,26 +37,26 @@ HRESULT CreateHistoryReader (
   
 ## <a name="parameters"></a>Parametry  
  `wzFilePath`  
- [in] Cesta k souboru.  
+ pro Cesta k souboru.  
   
  `ppHistoryReader`  
- [out] Při úspěšném dokončení obsahuje ukazatel na historie čtečky.  
+ mimo Po úspěšném dokončení obsahuje ukazatel na čtečku historie.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM, jak je definovaný ve WinError.h, kromě hodnotami popsanými v následující tabulce.  
+ Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v WinError. h, kromě hodnot popsaných v následující tabulce.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Označuje, že metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|Označuje, že `wzFilePath` nebo `ppHistoryReader` jsou nastaveny na hodnotu Null.|  
+|E_INVALIDARG|Označuje, `wzFilePath` že `ppHistoryReader` nebo jsou nastaveny na odkaz s hodnotou null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Knihovna:** Fusion.dll  
+ **Knihovna** Fusion.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

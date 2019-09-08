@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99b7142a60f979210c44497ce33af3ed1ca5c105
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 851abcae9c3edea5c971bd2bc4523c3cec757cc9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770982"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796815"
 ---
 # <a name="iassemblycachecreateassemblyscavenger-method"></a>IAssemblyCache::CreateAssemblyScavenger – metoda
-Vyhrazené pro interní použití technologie fusion.  
+Vyhrazeno pro interní použití technologií Fusion.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +37,15 @@ HRESULT CreateAssemblyScavenger (
   
 ## <a name="parameters"></a>Parametry  
  `ppUnkReserved`  
- [out] Vrácený `IUnknown` ukazatele.  
+ mimo Vrácený `IUnknown` ukazatel.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [IAssemblyCache – rozhraní](iassemblycache-interface.md)

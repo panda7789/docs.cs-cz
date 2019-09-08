@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 335d80255f7a3f5a22e8a69aa91c9e5b0843ea1e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 763b7a776007c2ce8dac42c6a5f7f00f6eb58a10
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741587"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776953"
 ---
 # <a name="linkresource-method"></a>LinkResource – metoda
-Odkazy v prostředku.  
+Odkazy v prostředku  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT LinkResource(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
  `pszFileName`  
- Název souboru.  
+ Název souboru  
   
  `pszNewLocation`  
- Volitelné nový název souboru. Pokud není NULL, `pszFileName` bude zkopírován do pszNewLocation.  
+ Volitelný nový název souboru. Pokud hodnota není null, `pszFileName` bude zkopírována do pszNewLocation.  
   
  `pszResourceName`  
  Název prostředku.  
   
  `dwFlags`  
- Usnadnění označí jako `mrPublic` a `mrPrivate`. Tento parametr může být předán [definemanifestresource – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md).  
+ Příznaky přístupnosti `mrPublic` , `mrPrivate`jako jsou a. Tento parametr může být předán [metodě DefineManifestResource –](../metadata/imetadataassemblyemit-definemanifestresource-method.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

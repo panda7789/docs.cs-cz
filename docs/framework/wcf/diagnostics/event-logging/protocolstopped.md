@@ -2,24 +2,24 @@
 title: ProtocolStopped
 ms.date: 03/30/2017
 ms.assetid: bc4c892f-b5ed-40cd-979c-382f4bed41b6
-ms.openlocfilehash: b2c2ca8ac54e4a8cee18660f55a632fb5605c30b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4d2b9dd26e1b31322f09f68c6ee48182ccf88ab
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999008"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797593"
 ---
 # <a name="protocolstopped"></a>ProtocolStopped
-Id: 151  
+Účet 151  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: TransactionBridge  
+ Kategorií TransactionBridge  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že byla zastavena služba protokolu WS-Atomic Transactions. Událost obsahuje ID protokolu, názvu protokol, název procesu a ID procesu. .  
+ Tato událost označuje, že služba protokolu WS-Atomic Transaction Protocol byla zastavena. Událost obsahuje seznam ID protokolu, název protokolu, název procesu a ID procesu. .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

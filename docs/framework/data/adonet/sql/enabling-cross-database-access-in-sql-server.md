@@ -2,29 +2,29 @@
 title: Povolení přístupu mezi databázemi na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-ms.openlocfilehash: 50e2a9149074d2d29ff2e17fa2a339bd7820b984
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: f69a405a562bfae3bc283f2b3166812046be868e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490077"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794193"
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databázemi na SQL Serveru
-Vlastnictví mezidatabázové řetězení nastane, pokud postup v jedné databázi závisí na objektech v jiné databázi. Řetěz vlastnictví mezi databázemi funguje stejným způsobem jako v rámci jedné databáze řetězení vlastnictví, s tím rozdílem, že řetěz nepřerušený vlastnictví vyžaduje, aby všichni vlastníci objektu jsou namapovány na stejný přihlašovací účet. Pokud zdrojový objekt v databázi zdrojové a cílové objektů v cílové databáze jsou vlastněny stejný přihlašovací účet, nekontroluje systém SQL Server oprávnění u cílové objektů.  
+Řetězení vlastnictví mezi databázemi nastane, když procedura v jedné databázi závisí na objektech v jiné databázi. Řetěz vlastnictví mezi databázemi funguje stejným způsobem jako vlastnictví řetězení v rámci izolované databáze s tím rozdílem, že řetěz vlastnických vlastníků vyžaduje, aby všichni vlastníci objektu byli namapováni na stejný přihlašovací účet. Pokud zdrojový objekt ve zdrojové databázi a cílové objekty v cílových databázích patří do stejného přihlašovacího účtu, SQL Server nekontrolují oprávnění u cílových objektů.  
   
-## <a name="off-by-default"></a>Ve výchozím nastavení vypnuté  
- Řetězení vlastnictví napříč databázemi je ve výchozím nastavení vypnuté. Společnost Microsoft doporučuje zakázat vlastnictví mezidatabázové řetězení protože seznámí vás se nese následující rizika zabezpečení:  
+## <a name="off-by-default"></a>Vypnuto ve výchozím nastavení  
+ Vlastnictví řetězení napříč databázemi je ve výchozím nastavení vypnuté. Společnost Microsoft doporučuje, abyste zakázali řetězování vlastnictví mezi databázemi, protože vám odhalí následující rizika zabezpečení:  
   
-- Vlastníci a členové databáze `db_ddladmin` nebo `db_owners` databázové role můžete vytvořit objekty, které vlastní jiní uživatelé. Tyto objekty může potenciálně cílové objektů v jiných databázích. To znamená, že pokud povolíte vlastnictví mezidatabázové řetězení, je nutné plně důvěřovat tito uživatelé s daty ve všech databázích.  
+- Vlastníci databáze a členové `db_ddladmin` `db_owners` rolí databáze mohou vytvářet objekty, které vlastní jiní uživatelé. Tyto objekty můžou potenciálně cílit na objekty v jiných databázích. To znamená, že pokud povolíte řetězení vlastnictví mezi databázemi, musíte těmto uživatelům plně důvěřovat s daty ve všech databázích.  
   
-- Uživatelé s oprávněním vytvářet databáze můžete vytvářet nové databáze a připojit existující databáze. Pokud vlastnictví mezidatabázové řetězení je povoleno, mohou tito uživatelé přejdou objekty v jiných databázích, které jsou pravděpodobně nemá oprávnění z nově vytvořených nebo připojených databází, které vytvoří.  
+- Uživatelé s oprávněním vytvořit databázi mohou vytvářet nové databáze a připojovat existující databáze. Pokud je povoleno řetězení vlastnictví mezi databázemi, mohou tito uživatelé přistupovat k objektům v jiných databázích, ke kterým nemusí mít oprávnění z nově vytvořených nebo připojených databází, které vytvoří.  
   
-## <a name="enabling-cross-database-ownership-chaining"></a>Povolení vlastnictví mezidatabázové řetězení  
- Vlastnictví mezidatabázové řetězení musí být povolené jen v prostředích, kde můžete plně důvěřovat uživatelům s vysokou úrovní oprávnění. Můžete ji nakonfigurovat, během instalace pro všechny databáze nebo selektivně pro konkrétní databáze pomocí příkazů jazyka Transact-SQL `sp_configure` a `ALTER DATABASE`.  
+## <a name="enabling-cross-database-ownership-chaining"></a>Povolení řetězení vlastnictví mezi databázemi  
+ Řetězení vlastnictví mezi databázemi by mělo být povoleno pouze v prostředích, kde můžete plně důvěřovat vysoce privilegovaným uživatelům. Dá se nakonfigurovat při instalaci pro všechny databáze, nebo selektivně pro konkrétní databáze pomocí příkazů `sp_configure` jazyka Transact-SQL a. `ALTER DATABASE`  
   
- Chcete-li konfigurace selektivním vlastnictví mezidatabázové řetězení, použijte `sp_configure` vypnutí serveru. Pak pomocí příkazu ALTER DATABASE nastavit ON DB_CHAINING konfigurace vlastnictví mezidatabázové řetězení pro databáze, které je vyžadují.  
+ Pokud chcete selektivně nakonfigurovat řetězování vlastnictví mezi databázemi, použijte `sp_configure` ho pro vypnutí serveru. Pak použijte příkaz ALTER DATABASE s nastavením DB_CHAINING na ke konfiguraci řetězení vlastnictví mezi databázemi pouze pro databáze, které to vyžadují.  
   
- Následující příklad se zapne vlastnictví mezidatabázové řetězení pro všechny databáze:  
+ Následující ukázka zapne řetězení vlastnictví mezi databázemi pro všechny databáze:  
   
 ```  
 EXECUTE sp_configure 'show advanced', 1;  
@@ -33,28 +33,28 @@ EXECUTE sp_configure 'cross db ownership chaining', 1;
 RECONFIGURE;  
 ```  
   
- Následující příklad se zapne vlastnictví mezidatabázové řetězení pro konkrétní databáze:  
+ Následující ukázka zapne řetězení vlastnictví mezi databázemi pro konkrétní databáze:  
   
 ```  
 ALTER DATABASE Database1 SET DB_CHAINING ON;  
 ALTER DATABASE Database2 SET DB_CHAINING ON;  
 ```  
   
-### <a name="dynamic-sql"></a>Dynamic SQL  
- Vlastnictví mezidatabázové řetězení nebude fungovat v případech, ve kterých se spouští dynamicky vytvořené příkazy SQL, pokud existuje v databázi i databázi. Můžete obejít tím v systému SQL Server vytvořením uloženou proceduru, která přistupuje k datům v jiné databázi a podepisování postup certifikátem, který existuje v databázi i databázi. To poskytuje uživatelům přístup k databázi prostředky využívané třídou postupu bez nutnosti přidělit jim přístup k databázi nebo oprávnění.  
+### <a name="dynamic-sql"></a>Dynamické SQL  
+ Řetězení vlastnictví mezi databázemi nefunguje v případech, kdy se spustí dynamicky vytvořené příkazy SQL, pokud stejný uživatel v obou databázích neexistuje. Tuto možnost můžete v SQL Server obejít tak, že vytvoříte uloženou proceduru, která přistupuje k datům v jiné databázi a podepíše postup s certifikátem, který existuje v obou databázích. Uživatelé tak budou mít přístup k prostředkům databáze použitým postupem bez udělení přístupu k databázi nebo oprávnění.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
 |Resource|Popis|  
 |--------------|-----------------|  
-|[Rozšíření databáze zosobnění s použitím EXECUTE AS](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188304(v=sql.105)) a [různé možnost řetězení vlastnictví DB](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option).|Články popisují, jak nakonfigurovat vlastnictví mezidatabázové řetězení pro instanci systému SQL Server.|  
+|[Rozšíření zosobnění databáze pomocí možnosti Spustit jako](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188304(v=sql.105)) a [řetězení vlastnictví mezi databázemi](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option).|Články popisují, jak nakonfigurovat řetězení vlastnictví mezi databázemi pro instanci SQL Server.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Správa oprávnění pomocí uložených procedur na SQL Serveru](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](writing-secure-dynamic-sql-in-sql-server.md)
+- [Podepisování uložených procedur na SQL Serveru](signing-stored-procedures-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2bf67506fca161a64dd5d4ee915031c155c49241
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c71616d261f145574d580b68793ec91bb4ea3f42
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754028"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796640"
 ---
 # <a name="iassemblynameclone-method"></a>IAssemblyName::Clone – metoda
-Vytvoří Mělkou kopii to [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
+Vytvoří kopii tohoto objektu [IAssemblyName](iassemblyname-interface.md) bez podstruktury.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +37,15 @@ HRESULT Clone (
   
 ## <a name="parameters"></a>Parametry  
  `pName`  
- [out] Vrácené kopie tohoto `IAssemblyName` objektu.  
+ mimo Vrácená kopie tohoto `IAssemblyName` objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)

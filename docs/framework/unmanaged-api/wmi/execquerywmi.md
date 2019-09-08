@@ -1,5 +1,5 @@
 ---
-title: Funkce ExecQueryWmi (referenční dokumentace nespravovaného rozhraní API)
+title: ExecQueryWmi – funkce (Reference nespravovaného rozhraní API)
 description: Funkce ExecQueryWmi spustí dotaz pro načtení objektů.
 ms.date: 11/06/2017
 api_name:
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3db6ddf51b8e83635f594c4716b57551475dc96f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b8547d306819e85b838f1160d9912dd43e42f2f3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636585"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798686"
 ---
 # <a name="execquerywmi-function"></a>Funkce ExecQueryWmi
 
@@ -50,86 +50,86 @@ HRESULT ExecQueryWmi (
 ## <a name="parameters"></a>Parametry
 
 `strQueryLanguage`\
-[in] Řetězec s platnou dotazovací jazyk Windows Management podporuje. Musí být "WQL", používá zkratka dotazovacího jazyka rozhraní WMI.
+pro Řetězec s platným dotazovacím jazykem, který podporuje Správa systému Windows. Musí být "WQL", zkratka pro jazyk WQL (WMI Query Language).
 
 `strQuery`\
-[in] Text dotazu. Tento parametr nemůže mít `null`.
+pro Text dotazu Tento parametr nemůže být `null`.
 
 `lFlags`\
-[in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+pro Kombinace příznaků, které mají vliv na chování této funkce. Následující hodnoty jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-| Konstanta | Hodnota  | Popis  |
+| Konstanta | Value  | Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada funkce načte upravenou kvalifikátory uložené v lokalizovaných názvů národního prostředí aktuálního připojení. <br/> Pokud není sada, funkce načte jenom v kvalifikátorech uložené v oboru názvů okamžité. |
-| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. |
-| `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Vrátí enumerátor pouze vpřed. Obvykle dopředné enumerátory jsou rychlejší a využívat méně paměti, než je běžné výčty, ale nejsou povoleny volání [klonování](clone.md). |
-| `WBEM_FLAG_BIDIRECTIONAL` | 0 | Rozhraní WMI uchovává ukazatelů na objekty ve výčtu, dokud se neuvolní. |
-| `WBEM_FLAG_ENSURE_LOCATABLE` | 0x100 | Zajišťuje, že některé vrátí objekty mají dostatek informací v nich tak této vlastnosti systému jako **__PATH**, **__RELPATH**, a **__SERVER**, nejsou `null`. |
-| `WBEM_FLAG_PROTOTYPE` | 2 | Tento příznak se používá pro vytváření prototypů. Nelze spustit dotaz a místo toho vrátí objekt, který vypadá jako obvykle za následek objektu. |
-| `WBEM_FLAG_DIRECT_READ` | 0x200 | Způsobí, že přímý přístup k poskytovateli pro zadaný bez ohledu na jeho nadřazené třídu nebo jakékoli podtřídy třídy. |
+| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud je tato funkce nastavena, funkce načte změněné kvalifikátory uložené v lokalizovaném oboru názvů národního prostředí aktuálního připojení. <br/> Pokud není nastaveno, funkce načte pouze kvalifikátory uložené v bezprostředním oboru názvů. |
+| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí volání semisynchronní. |
+| `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Funkce vrátí enumerátor pouze s dopředné. Čítače pouze s dopředně jsou obvykle rychlejší a využívají méně paměti než konvenční enumerátory, ale neumožňují volání [klonování](clone.md). |
+| `WBEM_FLAG_BIDIRECTIONAL` | 0 | Rozhraní WMI uchovává ukazatele na objekty ve výčtu, dokud nebudou uvolněny. |
+| `WBEM_FLAG_ENSURE_LOCATABLE` | 0x100 | Zajistí, aby všechny vrácené objekty měly v nich dostatek informací, takže systémové vlastnosti, jako jsou **__PATH**, **__RELPATH**a `null`__SERVER, nejsou. |
+| `WBEM_FLAG_PROTOTYPE` | 2 | Tento příznak se používá pro vytváření prototypů. Nespustí dotaz a místo toho vrátí objekt, který vypadá jako typický objekt výsledku. |
+| `WBEM_FLAG_DIRECT_READ` | 0x200 | Způsobuje přímý přístup k poskytovateli pro třídu určenou bez ohledu na její nadřazenou třídu nebo žádné podtřídy. |
 
-Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD_ONLY` pro zajištění nejlepšího výkonu.
+Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD_ONLY` pro nejlepší výkon.
 
 `pCtx`\
-[in] Obvykle je tato hodnota `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , jež lze použít poskytovatele, který poskytuje požadované třídy.
+pro Obvykle je `null`tato hodnota. V opačném případě se jedná o ukazatel na instanci [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , kterou může použít poskytovatel, který poskytuje požadované třídy.
 
 `ppEnum`\
-[out] Pokud nenastane žádná chyba přijímá ukazatel na enumerátor, který umožňuje volajícímu načtení instancí v sadě výsledků dotazu. Dotaz může mít nula instancemi sady výsledků. Zobrazit [poznámky](#remarks) části Další informace.
+mimo Pokud nedojde k žádné chybě, přijme ukazatel na enumerátor, který umožňuje volajícímu načíst instance v sadě výsledků dotazu. Dotaz může mít sadu výsledků s nulovými instancemi. Další informace najdete v části [poznámky](#remarks) .
 
 `authLevel`\
-[in] Úroveň autorizace.
+pro Úroveň autorizace.
 
 `impLevel`\
-[in] Úroveň zosobnění.
+pro Úroveň zosobnění.
 
 `pCurrentNamespace`\
-[in] Ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objekt, který představuje aktuální obor názvů.
+pro Ukazatel na objekt [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) , který představuje aktuální obor názvů.
 
 `strUser`\
-[in] Uživatelské jméno. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Uživatelské jméno Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 `strPassword`\
-[in] Heslo. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Heslo. Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 `strAuthority`\
-[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Název domény uživatele Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení jeden nebo více tříd, které funkce může vrátit. |
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
+| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení jedné nebo více tříd, které může funkce vracet. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-| `WBEM_E_INVALID_QUERY` | 0x80041017 | Dotazu došlo k chybě syntaxe. |
-| `WBEM_E_INVALID_QUERY_TYPE` | 0x80041018 | Požadovaný jazyk dotazu není podporován. |
+| `WBEM_E_INVALID_QUERY` | 0x80041017 | Dotaz obsahoval chybu syntaxe. |
+| `WBEM_E_INVALID_QUERY_TYPE` | 0x80041018 | Požadovaný dotazovací jazyk není podporován. |
 | `WBEM_E_QUOTA_VIOLATION` | 0x8004106c | Dotaz je příliš složitý. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-| `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
-| `WBEM_E_NOT_FOUND` | 0x80041002 | Dotaz Určuje třídu, která neexistuje. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+| `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartována. Znovu zavolejte [ConnectServerWmi](connectserverwmi.md) . |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraním WMI se nezdařilo. |
+| `WBEM_E_NOT_FOUND` | 0x80041002 | Dotaz určuje třídu, která neexistuje. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemServices::ExecQuery](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-execquery) metody.
+Tato funkce zalomí volání metody [Služby IWbem:: ExecQuery](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-execquery) .
 
-Tato funkce zpracuje dotaz zadaný v `strQuery` parametr a vytvoří čítač přes který může volající přístup výsledky dotazu. Enumerátor je ukazatel [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) rozhraní; dotaz výsledky jsou instance třídy objektů k dispozici prostřednictvím [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) rozhraní.
+Tato funkce zpracuje dotaz zadaný v `strQuery` parametru a vytvoří enumerátor, přes který volající může získat přístup k výsledkům dotazu. Enumerátor je ukazatel na rozhraní [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) ; výsledky dotazu jsou instance objektů třídy, které jsou k dispozici prostřednictvím rozhraní [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-Existují omezení počtu `AND` a `OR` klíčová slova, které lze použít v dotazech WQL. Velký počet klíčových slov jazyka WQL použit ve složitých dotazů může způsobit rozhraní WMI se vraťte `WBEM_E_QUOTA_VIOLATION` (nebo 0x8004106c) kód chyby jako `HRESULT` hodnotu. Limit klíčová slova jazyka WQL závisí na tom, jak složitá je dotaz.
+Existují omezení pro počet `AND` a `OR` klíčová slova, která lze použít v dotazech jazyka WQL. Velký počet klíčových slov jazyka WQL používaných ve složitých dotazech může způsobit, že `WBEM_E_QUOTA_VIOLATION` rozhraní WMI vrátí kód chyby (nebo 0x8004106c `HRESULT` ) jako hodnotu. Omezení klíčových slov jazyka WQL závisí na tom, jak je dotaz složitý.
 
-Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud volání funkce neproběhne úspěšně, můžete získat další informace o chybě voláním funkce [GetErrorInfo](geterrorinfo.md) .
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

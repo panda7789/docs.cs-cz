@@ -1,6 +1,6 @@
 ---
-title: Klonovat – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: Klonování funkce vrátí nový objekt, který je kompletní klonu stávající.
+title: Clone – funkce (odkaz na nespravované rozhraní API)
+description: Funkce Clone vrátí nový objekt, který je úplným klonem aktuálního.
 ms.date: 11/06/2017
 api_name:
 - Clone
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80faf1a5a6297f5b105fdb609366f6774f8692b3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5957f591dca7df30178660eb3fb074567c285715
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761649"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798710"
 ---
 # <a name="clone-function"></a>Funkce Clone
-Vrátí nový objekt, který je kompletní klon aktuálního objektu.   
+Vrátí nový objekt, který je úplným klonem aktuálního objektu.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -41,38 +41,38 @@ HRESULT Clone (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `ppCopy`  
-[out] Nový objekt, který je kompletní jedinou z `ptr`. Tento argument nemůže být `null` pokud obdrží kopii aktuálního objektu.
+mimo Nový objekt, který je úplným jedinoum `ptr`. Tento argument nemůže být `null` , pokud obdrží kopii aktuálního objektu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null` byl zadán jako parametr, a není povoleno v použití těchto. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici ke klonování objektu. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null`byl zadán jako parametr a není platný v tomto použití. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K naklonování objektu není k dispozici dostatek paměti. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) .
 
-Klonovaný objekt je objekt modelu COM, který obsahuje počet odkazů hodnotu 1.
+Klonovaný objekt je objekt modelu COM, který má počet odkazů 1.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

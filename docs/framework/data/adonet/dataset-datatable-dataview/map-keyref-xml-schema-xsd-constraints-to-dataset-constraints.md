@@ -2,15 +2,15 @@
 title: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-ms.openlocfilehash: 611322065a4df53d1a3149ef4e1ca5592f149081
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: b5ffe69886b08903feab4373b1cd5c5244b3b3b9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203436"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784509"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
-Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu. To se podobá relaci cizího klíče v relační databázi. Pokud schéma určuje element **keyref** , je element převeden během procesu mapování schématu na odpovídající omezení cizího klíče pro sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení element **keyref** také generuje relaci s vlastnostmi **nadřazené tabulky**, podřízenosti, **ParentColumn**a **ChildColumn** , které jsou zadány v relaci.  
+Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu. To se podobá relaci cizího klíče v relační databázi. Pokud schéma určuje element **keyref** , je element převeden během procesu mapování schématu na odpovídající omezení cizího klíče pro sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení element **keyref** také generuje relaci s vlastnostmi **nadřazené tabulky**, **podřízenosti**, **ParentColumn**a **ChildColumn** , které jsou zadány v relaci.  
   
  Následující tabulka popisuje atributy **msdata** , které lze zadat v elementu **keyref** .  
   
@@ -66,7 +66,7 @@ Element **keyref** umožňuje vytvořit propojení mezi prvky v rámci dokumentu
 </xs:schema>  
 ```  
   
- Proces mapování schématu XSD (XML Schema Definition Language) vytvoří následující datovou **sadu** se dvěma tabulkami:  
+ Proces mapování schématu XSD (XML Schema Definition Language) vytvoří následující **datovou sadu** se dvěma tabulkami:  
   
 ```  
 OrderDetail(OrderNo, ItemNo) and  
@@ -113,4 +113,4 @@ Order(OrderNumber, EmpNumber)
 
 - [Mapování omezení schématu XML (XSD) k omezením datové sady](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Generování relací datové sady ze schématu XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

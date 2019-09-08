@@ -2,19 +2,19 @@
 title: 'Postupy: Import vlastního WSDL'
 ms.date: 03/30/2017
 ms.assetid: ddc3718d-ce60-44f6-92af-a5c67477dd99
-ms.openlocfilehash: d9a4609f08a95bbecca81aa6667102a0e4a73c67
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 930cb92d8193ba3ffc1f62191f2012e104091190
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767075"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797001"
 ---
 # <a name="how-to-import-custom-wsdl"></a>Postupy: Import vlastního WSDL
-Toto téma popisuje import vlastního WSDL. Pro zpracování vlastního WSDL, je nutné implementovat <xref:System.ServiceModel.Description.IWsdlImportExtension> rozhraní.  
+Toto téma popisuje, jak importovat vlastní WSDL. Chcete-li zpracovat vlastní WSDL, je nutné implementovat <xref:System.ServiceModel.Description.IWsdlImportExtension> rozhraní.  
   
 ### <a name="to-import-custom-wsdl"></a>Import vlastního WSDL  
   
-1. Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension>. Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension.BeforeImport%28System.Web.Services.Description.ServiceDescriptionCollection%2CSystem.Xml.Schema.XmlSchemaSet%2CSystem.Collections.Generic.ICollection%7BSystem.Xml.XmlElement%7D%29> metody k úpravě metadat před jejich importem. Implementace <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportEndpoint%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> a <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metody ke změně smlouvy a naimportované z metadat koncových bodů. Pro přístup k importované smlouvy nebo koncový bod, použijte odpovídající objekt kontextu (<xref:System.ServiceModel.Description.WsdlContractConversionContext> nebo <xref:System.ServiceModel.Description.WsdlEndpointConversionContext>):  
+1. Implementujte <xref:System.ServiceModel.Description.IWsdlImportExtension>. Implementujte <xref:System.ServiceModel.Description.IWsdlImportExtension.BeforeImport%28System.Web.Services.Description.ServiceDescriptionCollection%2CSystem.Xml.Schema.XmlSchemaSet%2CSystem.Collections.Generic.ICollection%7BSystem.Xml.XmlElement%7D%29> metodu pro úpravu metadat před jejich importem. Implementujte metody <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>apro úpravy smluv a koncových bodů importovaných z metadat. <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportEndpoint%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> Pro přístup k importované smlouvě nebo koncovému bodu použijte odpovídající objekt kontextu (<xref:System.ServiceModel.Description.WsdlContractConversionContext> nebo <xref:System.ServiceModel.Description.WsdlEndpointConversionContext>):  
   
     ```  
     public class WsdlDocumentationImporter : IWsdlImportExtension  
@@ -52,7 +52,7 @@ Toto téma popisuje import vlastního WSDL. Pro zpracování vlastního WSDL, je
        }  
     ```  
   
-2. Konfigurovat klientskou aplikaci používat Import vlastního WSDL. Všimněte si, že pokud používáte Svcutil.exe, měli byste přidat tuto konfiguraci do konfiguračního souboru pro Svcutil.exe (Svcutil.exe.config):  
+2. Nakonfigurujte klientskou aplikaci tak, aby používala vlastní Import WSDL. Všimněte si, že pokud používáte Svcutil. exe, měli byste tuto konfiguraci přidat do konfiguračního souboru pro Svcutil. exe (Svcutil. exe. config):  
   
     ```xml  
     <system.serviceModel>  
@@ -71,7 +71,7 @@ Toto téma popisuje import vlastního WSDL. Pro zpracování vlastního WSDL, je
         </system.serviceModel>  
     ```  
   
-3. Vytvořte nový <xref:System.ServiceModel.Description.WsdlImporter> instance (předávajícího <xref:System.ServiceModel.Description.MetadataSet> instance, která obsahuje dokumenty WSDL, které chcete importovat) a volat <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A>:  
+3. Vytvořte novou <xref:System.ServiceModel.Description.WsdlImporter> instanci (předáním <xref:System.ServiceModel.Description.MetadataSet> do instance obsahující dokumenty WSDL, které chcete importovat) a zavolejte <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A>:  
   
     ```  
     WsdlImporter importer = new WsdlImporter(metaDocs);          System.Collections.ObjectModel.Collection<ContractDescription> contracts  = importer.ImportAllContracts();  
@@ -79,6 +79,6 @@ Toto téma popisuje import vlastního WSDL. Pro zpracování vlastního WSDL, je
   
 ## <a name="see-also"></a>Viz také:
 
-- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
-- [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
-- [Vlastní publikování WSDL](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)
+- [Metadata](../feature-details/metadata.md)
+- [Export a import metadat](../feature-details/exporting-and-importing-metadata.md)
+- [Vlastní publikování WSDL](../samples/custom-wsdl-publication.md)

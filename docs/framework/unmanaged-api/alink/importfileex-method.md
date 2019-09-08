@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fcf714cb0c1c1dd59ae2ec56279870c0bb3e1c4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bd138d0418bb9667a86419d719bf0b95a4bb1b12
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741719"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777117"
 ---
 # <a name="importfileex-method"></a>ImportFileEx – metoda
-Importy určili sestavení nebo nevázaného modulu.  
+Importuje označené sestavení nebo nevázaný modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,28 +48,28 @@ HRESULT ImportFileEx(
  Volitelný název cílového souboru.  
   
  `fSmartImport`  
- Při hodnotě TRUE se používá importtypes –, jinak se import je nutné provést ručně.  
+ Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.  
   
  `dwOpenFlags`  
- Příznaky, které se mají předat podél [openscope – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md).  
+ Příznaky, které mají být předány do [metody OpenScope –](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Přijímá ID importovaný soubor.  
+ Získá ID importovaného souboru.  
   
  `ppAssemblyScope`  
- Přijímá obor importu sestavení [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní. Je nastavena na hodnotu NULL, pokud není soubor sestavení.  
+ Přijímá import sestavení oboru [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . Je nastaven na hodnotu NULL, pokud soubor není sestavení.  
   
  `pdwCountOfScopes`  
- Získá počet importovaných souborů a/nebo obory.  
+ Přijímá počet importovaných souborů a rozsahů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [Rozhraní API ALink](index.md)

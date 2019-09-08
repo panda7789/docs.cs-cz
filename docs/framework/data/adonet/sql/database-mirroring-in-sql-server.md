@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 89befaff-bb46-4290-8382-e67cdb0e3de9
-ms.openlocfilehash: 31fb8af4653cefc8027f4061b46b9a29d8d07f8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 81e8bd5ba9274c84ffe18f617978b61238ebeff2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963984"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782439"
 ---
 # <a name="database-mirroring-in-sql-server"></a>Zrcadlení databáze na SQL Serveru
 Zrcadlení databáze v SQL Server umožňuje uchovávat kopii SQL Server databáze na pohotovostním serveru. Zrcadlení zajišťuje, aby dvě samostatné kopie dat existovaly vždy a poskytovaly vysokou dostupnost a úplnou redundanci dat. Rozhraní .NET Zprostředkovatel dat pro SQL Server poskytuje implicitní podporu zrcadlení databáze, takže vývojář nemusí provádět žádné akce ani psát kód, jakmile byl nakonfigurován pro databázi SQL Server. Kromě toho <xref:System.Data.SqlClient.SqlConnection> objekt podporuje explicitní režim připojení, který umožňuje poskytovat název partnerského serveru pro převzetí služeb při selhání <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>v.  
@@ -65,4 +65,4 @@ string activeServer = connection.DataSource;
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

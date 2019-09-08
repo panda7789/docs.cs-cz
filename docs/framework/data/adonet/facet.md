@@ -2,15 +2,15 @@
 title: omezující vlastnost
 ms.date: 03/30/2017
 ms.assetid: 91c4e6aa-3e54-4b6c-a38a-abf27808cc85
-ms.openlocfilehash: 2b4a8a559d7297543812f3c67e3b90d06a011b0f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1ac46c882b266fbb73d5c709c9fdf297e2b55b1b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959106"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783979"
 ---
 # <a name="facet"></a>omezující vlastnost
-*Omezující* vlastnost se používá k přidání podrobností do definice vlastnosti primitivního typu. Definice [vlastnosti](../../../../docs/framework/data/adonet/property.md) obsahuje informace o typu vlastnosti, ale je to často více podrobností. Například typ entity v koncepčním modelu může mít vlastnost typu `String` , jejíž hodnota nemůže být nastavena na hodnotu null. Omezující vlastnosti umožňují zadat tuto úroveň podrobností.  
+*Omezující* vlastnost se používá k přidání podrobností do definice vlastnosti primitivního typu. Definice [vlastnosti](property.md) obsahuje informace o typu vlastnosti, ale je to často více podrobností. Například typ entity v koncepčním modelu může mít vlastnost typu `String` , jejíž hodnota nemůže být nastavena na hodnotu null. Omezující vlastnosti umožňují zadat tuto úroveň podrobností.  
   
  V následující tabulce jsou popsány omezující vlastnosti, které jsou podporovány v modelu EDM.  
   
@@ -30,11 +30,11 @@ ms.locfileid: "69959106"
 |`Unicode`|Určuje, zda je hodnota vlastnosti uložena jako Unicode.|`String`|  
   
 ## <a name="example"></a>Příklad  
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje `Book` typ entity. Všimněte si, že charakteristiky jsou implementovány jako atributy XML. Hodnoty omezující vlastnosti označují, že žádná vlastnost nemůže být nastavena na hodnotu null a že `Scale` `Revision` vlastnost `Precision` a vlastnosti jsou nastaveny na hodnotu 29.  
+ [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje `Book` typ entity. Všimněte si, že charakteristiky jsou implementovány jako atributy XML. Hodnoty omezující vlastnosti označují, že žádná vlastnost nemůže být nastavena na hodnotu null a že `Scale` `Revision` vlastnost `Precision` a vlastnosti jsou nastaveny na hodnotu 29.  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)

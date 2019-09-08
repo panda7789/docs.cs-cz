@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 81c0f8b4-ce35-4716-8651-b642d40648a2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c69be0de98e2996176e7360bae0bb0736c1a797
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 9aaa0258b53b6b39874c8c99c71ecf53cbdb8f97
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038444"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787075"
 ---
 # <a name="axl_authenticode_signer_info-structure"></a>Struktura AXL_AUTHENTICODE_SIGNER_INFO
 Definuje přihlašovací údaje Authenticode.  
@@ -42,4 +42,4 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+- [Authenticode](index.md)

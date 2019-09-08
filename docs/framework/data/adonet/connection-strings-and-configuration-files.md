@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 3a1b0b947b97eac52e06626d2ed6d47bb9700147
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a98239886d6745bbb6e13e71a12764008460cdd7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949450"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785671"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
-Vkládání připojovacích řetězců do kódu aplikace může vést k ohrožení zabezpečení a problémům s údržbou. Nešifrované připojovací řetězce zkompilované do zdrojového kódu aplikace lze zobrazit pomocí nástroje [Ildasm. exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) . Navíc platí, že pokud se připojovací řetězec někdy změní, vaše aplikace musí být znovu zkompilována. Z těchto důvodů doporučujeme ukládat připojovací řetězce do konfiguračního souboru aplikace.  
+Vkládání připojovacích řetězců do kódu aplikace může vést k ohrožení zabezpečení a problémům s údržbou. Nešifrované připojovací řetězce zkompilované do zdrojového kódu aplikace lze zobrazit pomocí nástroje [Ildasm. exe (IL Disassembler)](../../tools/ildasm-exe-il-disassembler.md) . Navíc platí, že pokud se připojovací řetězec někdy změní, vaše aplikace musí být znovu zkompilována. Z těchto důvodů doporučujeme ukládat připojovací řetězce do konfiguračního souboru aplikace.  
   
 ## <a name="working-with-application-configuration-files"></a>Práce s konfiguračními soubory aplikace  
  Konfigurační soubory aplikace obsahují nastavení, která jsou specifická pro konkrétní aplikaci. Například aplikace ASP.NET může mít jeden nebo více souborů **Web. config** a aplikace systému Windows může mít volitelný soubor **App. config** . Konfigurační soubory sdílejí společné prvky, i když se název a umístění konfiguračního souboru liší v závislosti na hostiteli aplikace.  
   
 ### <a name="the-connectionstrings-section"></a>Oddíl connectionStrings  
- Připojovací řetězce mohou být uloženy jako páry klíč/hodnota v sekci **connectionStrings** konfiguračního souboru aplikace. Podřízené elementy zahrnují **Přidání**, **zrušení**a **Odebrání**.  
+ Připojovací řetězce mohou být uloženy jako páry klíč/hodnota v sekci **connectionStrings** **konfiguračního souboru** aplikace. Podřízené elementy zahrnují **Přidání**, **zrušení**a **Odebrání**.  
   
  Následující fragment konfiguračního souboru ukazuje schéma a syntaxi pro uložení připojovacího řetězce. Atribut **Name** je název, který zadáte k jedinečné identifikaci připojovacího řetězce, aby jej bylo možné načíst v době běhu. Název **ProviderName** je neutrální název poskytovatele dat .NET Framework, který je zaregistrován v souboru Machine. config.  
   
@@ -36,12 +36,12 @@ Vkládání připojovacích řetězců do kódu aplikace může vést k ohrožen
 ```  
   
 > [!NOTE]
-> Můžete uložit část připojovacího řetězce do konfiguračního souboru a použít <xref:System.Data.Common.DbConnectionStringBuilder> třídu k jeho dokončení za běhu. To je užitečné ve scénářích, kdy neznáte prvky připojovacího řetězce před časem, nebo pokud nechcete ukládat citlivé informace do konfiguračního souboru. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+> Můžete uložit část připojovacího řetězce do konfiguračního souboru a použít <xref:System.Data.Common.DbConnectionStringBuilder> třídu k jeho dokončení za běhu. To je užitečné ve scénářích, kdy neznáte prvky připojovacího řetězce před časem, nebo pokud nechcete ukládat citlivé informace do konfiguračního souboru. Další informace najdete v tématu [tvůrci připojovacích řetězců](connection-string-builders.md).  
   
 ### <a name="using-external-configuration-files"></a>Použití externích konfiguračních souborů  
  Externí konfigurační soubory jsou samostatné soubory, které obsahují fragment konfiguračního souboru skládajícího se z jednoho oddílu. Na externí konfigurační soubor se pak odkazuje pomocí hlavního konfiguračního souboru. Uložení oddílu **connectionStrings** do fyzicky odděleného souboru je užitečné v situacích, kdy je možné upravit připojovací řetězce po nasazení aplikace. Například standardní chování ASP.NET je restartování domény aplikace při úpravě konfiguračních souborů, což vede ke ztrátě informací o stavu. Úpravy externího konfiguračního souboru ale nezpůsobí restart aplikace. Externí konfigurační soubory nejsou omezené na ASP.NET; je možné je používat i v aplikacích pro Windows. Kromě toho je možné k omezení přístupu k externím konfiguračním souborům použít oprávnění a zabezpečení přístupu k souborům. Práce s externími konfiguračními soubory v době běhu je transparentní a nevyžaduje žádné speciální kódování.  
   
- Chcete-li uložit připojovací řetězce v externím konfiguračním souboru, vytvořte samostatný soubor, který obsahuje pouze část connectionStrings. Nezahrnujte žádné další prvky, oddíly ani atributy. Tento příklad ukazuje syntaxi pro externí konfigurační soubor.  
+ Chcete-li uložit připojovací řetězce v externím konfiguračním souboru, vytvořte samostatný soubor, který obsahuje pouze část **connectionStrings** . Nezahrnujte žádné další prvky, oddíly ani atributy. Tento příklad ukazuje syntaxi pro externí konfigurační soubor.  
   
 ```xml  
 <connectionStrings>  
@@ -102,7 +102,7 @@ Vkládání připojovacích řetězců do kódu aplikace může vést k ohrožen
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a>Šifrování oddílů konfiguračního souboru pomocí chráněné konfigurace  
- ASP.NET 2,0 představil novou funkci nazvanou Protected *Configuration*, která umožňuje šifrování citlivých informací v konfiguračním souboru. I když jsou primárně určené pro ASP.NET, můžete chráněnou konfiguraci použít také k šifrování oddílů konfiguračního souboru v aplikacích pro Windows. Podrobný popis možností chráněné konfigurace najdete v tématu [šifrování informací o konfiguraci pomocí chráněné konfigurace](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
+ ASP.NET 2,0 představil novou funkci nazvanou *Protected Configuration*, která umožňuje šifrování citlivých informací v konfiguračním souboru. I když jsou primárně určené pro ASP.NET, můžete chráněnou konfiguraci použít také k šifrování oddílů konfiguračního souboru v aplikacích pro Windows. Podrobný popis možností chráněné konfigurace najdete v tématu [šifrování informací o konfiguraci pomocí chráněné konfigurace](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
   
  Následující fragment konfiguračního souboru ukazuje sekci **connectionStrings** poté, co byla zašifrována. **ConfigProtectionProvider** Určuje poskytovatele chráněné konfigurace, který se používá k šifrování a dešifrování připojovacích řetězců. Oddíl **EncryptedData** obsahuje text šifry.  
   
@@ -171,9 +171,9 @@ Vkládání připojovacích řetězců do kódu aplikace může vést k ohrožen
   
 ## <a name="see-also"></a>Viz také:
 
-- [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)
-- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+- [Tvůrci připojovacích řetězců](connection-string-builders.md)
+- [Ochrana informací o připojení](protecting-connection-information.md)
 - [Použití tříd konfigurace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
-- [Konfigurace aplikací](../../../../docs/framework/configure-apps/index.md)
+- [Konfigurace aplikací](../../configure-apps/index.md)
 - [Správa webu ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)

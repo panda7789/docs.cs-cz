@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a820d5d742c722b495a5a4b3952450a0434110fd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d4cf862ae3676b85a7fc3f09a4f5794e01284737
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741550"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787233"
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly – metoda
-Zavře soubor sestavení. Tuto metodu volejte, ukončete všechny ostatní soubory, ale před zavřením souboru sestavení. Nevolejte tuto metodu pro nevázaný moduly.  
+Zavře soubor sestavení. Tuto metodu zavolejte po zavření všech ostatních souborů, ale před zavřením souboru sestavení. Nevolejte tuto metodu pro nevázané moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT PreCloseAssembly(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

@@ -4,12 +4,12 @@ description: Průvodce implementací rozhraní .NET, který byste měli zvážit
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 37f7a4e3d543711af9ef40e458edfa1cac076db2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e5df362231b0786a58a4c3c9ae8f5a167930a12e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254205"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799251"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -108,6 +108,6 @@ Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NE
 - [Cílové architektury](frameworks.md)
 - [Průvodce platformou .NET Core](../core/index.md)
 - [Přenos z .NET Framework do .NET Core](../core/porting/index.md)
-- [Úvod k .NET a Dockeru](../core/docker/intro-net-docker.md)
+- [Úvod k .NET a Dockeru](../core/docker/introduction.md)
 - [Přehled komponent .NET](components.md)
 - [Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET](../architecture/microservices/index.md)

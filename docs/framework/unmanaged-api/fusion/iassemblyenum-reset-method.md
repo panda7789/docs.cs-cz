@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 075f952e6d5b3e863ca720bb206f33471809d09e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 633ff0f787b33d45a247f7a3f890a58973c87479
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67754091"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796625"
 ---
 # <a name="iassemblyenumreset-method"></a>IAssemblyEnum::Reset – metoda
-To obnoví [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) objektu na jeho výchozí pozici.  
+Obnoví tento objekt [IAssemblyEnum](iassemblyenum-interface.md) na počáteční pozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,12 +36,12 @@ HRESULT Reset (
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
+- [IAssemblyEnum – rozhraní](iassemblyenum-interface.md)

@@ -2,47 +2,47 @@
 title: Export vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
-ms.openlocfilehash: ecca7e311e113e2aade360e4718d1bed4ea7feef
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 540dd9011be83d349495a0b05283b83f3d55dc2c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627117"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797192"
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
-Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekci na paralelní standardizované reprezentaci, který můžou klienti použít k vysvětlení použití služby. Vlastní metadata se skládá z elementů XML, které nelze exportovat vývozci poskytované systémem metadat. Obvykle obsahuje vlastní prvky WSDL pro uživatelem definované chování a prvky vazeb a výrazů zásad o funkce a požadavky vazby a kontrakty.  
+V Windows Communication Foundation (WCF) je export metadat proces popsání koncových bodů služby a jejich prochází paralelně standardizovanými reprezentacemi, které mohou klienti použít k pochopení toho, jak službu používat. Vlastní metadata se skládají z elementů XML, které nemohou exportovat vývozci metadat systému. Obvykle to zahrnuje vlastní prvky WSDL pro uživatelsky definované chování a prvky vazby a kontrolní výrazy zásad týkající se možností a požadavků vazeb a smluv.  
   
- Tato část popisuje Export vlastního WSDL nebo kontrolní výrazy zásad a nezaměřuje na samotný proces exportu. Další informace o tom, jak používat typy, které export a import metadat bez ohledu na to, jestli metadata vlastní nebo vytvořen systému, naleznete v tématu [pro export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
+ Tato část popisuje Export vlastních kontrolních výrazů WSDL nebo zásad a nezaměřuje se na samotný proces exportu. Další informace o tom, jak používat typy, které exportují a importují metadata bez ohledu na to, jestli jsou metadata vlastní nebo založené na systému, najdete v tématu [Export a import metadat](../feature-details/exporting-and-importing-metadata.md).  
   
 ## <a name="overview"></a>Přehled  
- Při publikování metadat pomocí <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> je zkontrolován a XSD a WSDL – včetně kontrolní výrazy zásad - jsou generovány pro všechny vazby, které podporuje WCF pomocí poskytnuté systémem atributy a vazby a kontrakty. Nicméně vlastní chování atributů nebo elementů vazby vyžadují podporu předtím, než je možné exportovat správně.  
+ Když jsou metadata publikována pomocí <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> , je zkontrolováno a XSD a WSDL--včetně kontrolních výrazů zásad – jsou generovány pro všechny kontrakty a vazby, které může WCF podporovat pomocí atributů a vazeb poskytovaných systémem. Nicméně atributy vlastního chování nebo prvky vazby vyžadují podporu, aby bylo možné správně exportovat.  
   
  Tato část popisuje:  
   
-1. Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje data generování WSDL, před publikováním schématu WSDL.  
+1. Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> rozhraní, které zpřístupňuje data generování WSDL před publikováním WSDL.  
   
-2. Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní, které zpřístupňuje data zásad vám před exportem kontrolní výrazy zásad v datech WSDL.  
+2. Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní, které zpřístupňuje data zásad před exportem kontrolních výrazů zásad v datech WSDL.  
   
- Další informace o importu vlastního WSDL a kontrolní výrazy zásad najdete v tématu [import vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md).  
+ Další informace o importu vlastních kontrolních výrazů WSDL a zásad najdete v tématu [Import vlastních metadat pro rozšíření WCF](importing-custom-metadata-for-a-wcf-extension.md).  
   
-## <a name="exporting-custom-wsdl-elements"></a>Export vlastního WSDL prvků  
- Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension> na chování operace, kontrakt chování, chování koncového bodu nebo element vazby (<xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, <xref:System.ServiceModel.Description.IEndpointBehavior>, nebo <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> v uvedeném pořadí) a vložte chování nebo elementů vazby do Popis služby, která chcete exportovat. (Další informace o vkládání chování najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)). <xref:System.ServiceModel.Description.IWsdlExportExtension> Je volána pro každý koncový bod a každý koncový bod exportuje kontrakt nejprve pokud ho ještě již byla exportována. Můžete se zúčastnit buď procesu exportu v závislosti na vašich potřeb:  
+## <a name="exporting-custom-wsdl-elements"></a>Export vlastních elementů WSDL  
+ <xref:System.ServiceModel.Description.IContractBehavior><xref:System.ServiceModel.Description.IOperationBehavior> <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> <xref:System.ServiceModel.Description.IEndpointBehavior>Implementujte chování operace, chování kontraktu, chování koncového bodu nebo elementu vazby (,, nebo v uvedeném pořadí) a vložte chování nebo prvky vazby do <xref:System.ServiceModel.Description.IWsdlExportExtension> Popis služby, kterou se pokoušíte exportovat (Další informace o vkládání chování najdete v tématu [Konfigurace a rozšíření modulu runtime s chováním](configuring-and-extending-the-runtime-with-behaviors.md)). <xref:System.ServiceModel.Description.IWsdlExportExtension> Je volána pro každý koncový bod a každý koncový bod nejprve exportuje kontrakt, pokud ještě nebyl exportován. V závislosti na vašich potřebách se můžete zúčastnit buď procesu exportu:  
   
-- Použití <xref:System.ServiceModel.Description.WsdlContractConversionContext> upravit exportované metadat v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
+- Použijte k úpravě exportovaných metadat <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> v metodě. <xref:System.ServiceModel.Description.WsdlContractConversionContext>  
   
-- Použití <xref:System.ServiceModel.Description.WsdlEndpointConversionContext> upravit exportované metadata pro koncový bod <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> metody.  
+- Použijte k úpravě exportovaných metadat pro koncový bod <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> v metodě. <xref:System.ServiceModel.Description.WsdlEndpointConversionContext>  
   
- <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> Metoda je volána ve všech <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace v rámci <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> instanci, která je exportována.  <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> Metoda je volána ve všech <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace s <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instanci, která je exportována.  
+ Metoda je volána pro všechny <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace v rámci <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> exportované instance. <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A>  Metoda je volána pro všechny <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace s <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instancí, která je exportována. <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A>  
   
- Další informace najdete v tématu [jak: Export vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md) a ukázku [vlastní publikování WSDL](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md).  
+ Další informace najdete v tématu [jak: Exportujte vlastní WSDL](how-to-export-custom-wsdl.md) a ukázku [vlastní publikace WSDL](../samples/custom-wsdl-publication.md).  
   
 ## <a name="exporting-custom-policy-assertions"></a>Export kontrolních výrazů vlastních zásad  
- Implementace <xref:System.ServiceModel.Description.IPolicyExportExtension> na <xref:System.ServiceModel.Channels.BindingElement> a přidejte element vazby pro vazbu k zápisu kontrolních výrazů vlastních zásad o vazbách možnosti podpory a smlouvy do jazyka WSDL. <xref:System.ServiceModel.Description.IPolicyExportExtension> Je volána při exportu element implementované vazby ve vazbě a předává <xref:System.ServiceModel.Description.PolicyConversionContext> k <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> metody. Můžete použít metody na <xref:System.ServiceModel.Description.PolicyConversionContext> instance přidat kontrolní výrazy zásad připojen k Vazba WSDL na témata zpráv, operace nebo koncový bod.  
+ Implementujte na a a přidejte do vazby element vazby, abyste mohli napsat vlastní kontrolní výrazy zásad týkající se podpory vazeb a možností kontraktu do WSDL. <xref:System.ServiceModel.Channels.BindingElement> <xref:System.ServiceModel.Description.IPolicyExportExtension> Je volána jednou při exportu implementovaného prvku vazby ve vazbě a <xref:System.ServiceModel.Description.PolicyConversionContext> předá do <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> metody. <xref:System.ServiceModel.Description.IPolicyExportExtension> Můžete použít metody v <xref:System.ServiceModel.Description.PolicyConversionContext> instanci pro přidání k kontrolním výrazům zásad připojeným k vazbě WSDL v předmětech zprávy, operace nebo koncového bodu.  
   
- Další informace najdete v tématu [jak: Export kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-export-custom-policy-assertions.md).  
+ Další informace najdete v tématu [jak: Exportujte kontrolní výrazy](how-to-export-custom-policy-assertions.md)vlastních zásad.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Export vlastního WSDL](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)
-- [Postupy: Export kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-export-custom-policy-assertions.md)
-- [Import vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)
+- [Postupy: Exportovat vlastní WSDL](how-to-export-custom-wsdl.md)
+- [Postupy: Export kontrolních výrazů vlastních zásad](how-to-export-custom-policy-assertions.md)
+- [Import vlastních metadat pro rozšíření WCF](importing-custom-metadata-for-a-wcf-extension.md)

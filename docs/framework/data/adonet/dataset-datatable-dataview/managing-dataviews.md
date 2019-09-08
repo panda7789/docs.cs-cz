@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
-ms.openlocfilehash: c6dcc206775866fd9136e4f6f5f038d021d11433
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 5e85fccddf6359791ea702667a36b44f611815dc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204685"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784502"
 ---
 # <a name="managing-dataviews"></a>Správa zobrazení dat
 Můžete použít <xref:System.Data.DataViewManager> ke správě nastavení zobrazení pro všechny tabulky <xref:System.Data.DataView>v. Pokud máte ovládací prvek, který chcete vytvořit z více tabulek, jako je například mřížka, která naviguje mezi relacemi, je objekt **DataViewManager** ideální.  
   
  <xref:System.Data.DataViewSetting> Objekt **DataViewManager** obsahuje kolekci objektů, které se používají k nastavení nastavení zobrazení tabulek v <xref:System.Data.DataSet>. Obsahuje jeden <xref:System.Data.DataViewSetting> objekt pro každou tabulku v **datové sadě.** <xref:System.Data.DataViewSettingCollection> Můžete nastavit výchozí vlastnosti **ApplyDefaultSort**, **Sort**, **RowFilter vyžaduje hodnotu**a **vlastnost RowStateFilter** odkazované tabulky pomocí jejího **DataViewSetting**. Můžete odkazovat na **DataViewSetting** pro konkrétní tabulku podle názvu nebo ordinálního odkazu nebo předáním odkazu na tento konkrétní objekt tabulky. Ke kolekci objektů **DataViewSetting** můžete přistupovat v objektu **DataViewManager** pomocí vlastnosti **DataViewSettings** .  
   
- Následující příklad kódu vyplní **datovou sadu** pomocí SQL Server **Northwind** databáze tabulky **zákazníci**, **objednávky**a **Podrobnosti objednávky**, vytvoří vztahy mezi tabulkami, používá objekt **DataViewManager** k Nastavte výchozí nastavení **DataView** a naváže objekt **DataGrid** k objektu **DataViewManager**. Příklad nastaví výchozí nastavení zobrazení pro všechny tabulky v **datové sadě** pro řazení podle primárního klíče tabulky (**ApplyDefaultSort** = **true**) a pak upraví pořadí řazení tabulky **Customers** na Seřadit podle **CompanyName**.  
+ Následující příklad kódu vyplní **datovou sadu** pomocí SQL Server **Northwind** databáze tabulky **zákazníci**, **objednávky**a **Podrobnosti objednávky**, vytvoří vztahy mezi tabulkami, používá objekt **DataViewManager** k Nastavte výchozí nastavení **DataView** a naváže objekt **DataGrid** k objektu **DataViewManager**. Příklad **Nastaví výchozí nastavení** zobrazení pro všechny tabulky v **datové sadě** pro řazení podle primárního klíče tabulky (**ApplyDefaultSort** = **true**) a pak upraví pořadí řazení tabulky **Customers** na Seřadit podle **CompanyName**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  
@@ -126,4 +126,4 @@ grid.SetDataBinding(viewManager, "Customers");
 - <xref:System.Data.DataViewSetting>
 - <xref:System.Data.DataViewSettingCollection>
 - [Zobrazení dat](dataviews.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

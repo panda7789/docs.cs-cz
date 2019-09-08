@@ -1,6 +1,6 @@
 ---
-title: Funkce EndMethodEnumeration (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce EndMethodEnumeration ukončí sekvenci – metoda výčtu.
+title: EndMethodEnumeration – funkce (Reference nespravovaného rozhraní API)
+description: Funkce EndMethodEnumeration ukončí sekvenci výčtu metody.
 ms.date: 11/06/2017
 api_name:
 - EndMethodEnumeration
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f62ea692c055b0537394ad5e16501d4162faef12
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cdcf49bd748a423b1cebfba88644aa961f1c7b65
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746829"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799354"
 ---
 # <a name="endmethodenumeration-function"></a>Funkce EndMethodEnumeration
-Ukončí sekvenci výčet začít volání [funkce BeginMethodEnumeration](beginmethodenumeration.md).  
+Ukončí sekvenci výčtu spuštěnou voláním [funkce BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -40,33 +40,33 @@ HRESULT EndMethodEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Došlo k vnitřní chybě. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: EndMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-endmethodenumeration) .
 
-Volající začne, pomocí pořadí výčtu [funkce BeginMethodEnumeration](beginmethodenumeration.md)a pak zavolá [NextMethod funkce](nextmethod.md )dokud metoda vrátí `WBEM_S_NO_MORE_DATA`. Volající volitelně dokončením sekvence pomocí volání `EndMethodEnumeration`. Volající může již v rané fázi ukončit výčtu voláním `EndMethodEnumeration` kdykoli.
+Volající zahájí sekvenci výčtu pomocí [funkce BeginMethodEnumeration](beginmethodenumeration.md)a poté zavolá [funkci NextMethod](nextmethod.md ), dokud se metoda nevrátí `WBEM_S_NO_MORE_DATA`. Volající volitelně dokončí sekvenci voláním `EndMethodEnumeration`. Volající může ukončit výčet na začátku voláním `EndMethodEnumeration` kdykoli.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

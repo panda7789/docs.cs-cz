@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 016e2efae68c02c8c5a10ab74419599bc41be3a8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 90a70eaa2b5aeb8ef1f1659d7912b9ae5abc4eca
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959389"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794235"
 ---
 # <a name="date-and-time-data"></a>Kalendářní a časová data
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové typy dat zahrnují samostatné typy pro datum a čas a rozšířené datové typy s větším rozsahem, přesností a vědomím časového pásma. Počínaje verzí 3,5 .NET Framework Service Pack (SP) 1, .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>) poskytuje plnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Abyste mohli používat tyto nové funkce s SqlClient, musíte nainstalovat .NET Framework 3,5 SP1 (nebo novější).  
@@ -88,7 +88,7 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pro pomocí
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Získává nebo nastavuje, jestli je hodnota null. Když odešlete hodnotu parametru s hodnotou null na server, je nutné zadat <xref:System.DBNull> `null` místo (`Nothing` v Visual Basic). Další informace o hodnotách null databáze naleznete v tématu [zpracování hodnot null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md).|  
+|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Získává nebo nastavuje, jestli je hodnota null. Když odešlete hodnotu parametru s hodnotou null na server, je nutné zadat <xref:System.DBNull> `null` místo (`Nothing` v Visual Basic). Další informace o hodnotách null databáze naleznete v tématu [zpracování hodnot null](handling-null-values.md).|  
 |<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|Získá nebo nastaví maximální počet číslic, které se použijí k reprezentaci hodnoty. Toto nastavení se ignoruje u datových typů data a času.|  
 |<xref:System.Data.SqlClient.SqlParameter.Scale%2A>|Získá nebo nastaví počet desetinných míst, na které se vyřeší časová část hodnoty pro `Time`, `DateTime2`a `DateTimeOffset`. Výchozí hodnota je 0, což znamená, že skutečné měřítko je odvozeno od hodnoty a odesláno na server.|  
 |<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Ignoruje se pro datové typy data a času.|  
@@ -101,7 +101,7 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pro pomocí
 ### <a name="creating-parameters"></a>Vytváření parametrů  
  Můžete <xref:System.Data.SqlClient.SqlParameter> vytvořit objekt pomocí jeho konstruktoru nebo jeho přidáním <xref:System.Data.SqlClient.SqlCommand> <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> do kolekce voláním `Add` metody <xref:System.Data.SqlClient.SqlParameterCollection>. `Add` Metoda provede jako vstup buď argumenty konstruktoru, nebo existující objekt parametru.  
   
- Následující části tohoto tématu obsahují příklady, jak zadat parametry data a času. Další příklady práce s parametry najdete v tématu [Konfigurace parametrů a datových typů parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md) a [parametrů DataAdapter](../../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
+ Následující části tohoto tématu obsahují příklady, jak zadat parametry data a času. Další příklady práce s parametry najdete v tématu [Konfigurace parametrů a datových typů parametrů](../configuring-parameters-and-parameter-data-types.md) a [parametrů DataAdapter](../dataadapter-parameters.md).  
   
 ### <a name="date-example"></a>Příklad data  
  Následující fragment kódu ukazuje, jak zadat `date` parametr.  
@@ -241,7 +241,7 @@ command.Parameters.AddWithValue( _
   
 ## <a name="see-also"></a>Viz také:
 
-- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)
+- [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)
+- [Datové typy SQL Serveru a ADO.NET](sql-server-data-types.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

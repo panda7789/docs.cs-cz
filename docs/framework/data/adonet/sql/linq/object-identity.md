@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c788f2f9-65cc-4455-9907-e8388a268e00
-ms.openlocfilehash: dff5642b2490cd3935dba3b3d04cd62082249c32
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 053c861bae951f044d30d048951aa072b3d85a42
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915715"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792937"
 ---
 # <a name="object-identity"></a>Identita objektu
 Objekty v modulu runtime mají jedinečné identity. Dvě proměnné, které odkazují na stejný objekt, ve skutečnosti odkazují na stejnou instanci objektu. Vzhledem k tomu, že se změny provedené pomocí cesty přes jednu proměnnou projeví okamžitě po druhém.  
@@ -21,7 +21,7 @@ Objekty v modulu runtime mají jedinečné identity. Dvě proměnné, které odk
   
  U objektů, které očekáváte něco jiného. Očekáváte, že pokud budete chtít <xref:System.Data.Linq.DataContext> , aby se tytéž informace opakovaně vyžádaly, zobrazí se ve skutečnosti stejná instance objektu. Toto chování očekáváte, protože objekty mají zvláštní význam pro vaši aplikaci a očekáváte, že se budou chovat jako objekty. Navrhli jste je jako hierarchie nebo grafy. Očekáváte, že byste je načetli jako takové, a nedostanete tak velké množství replikovaných instancí, protože jste se o stejný úkol vyžádali více než jednou.  
   
- V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástrojispravujeidentituobjektu <xref:System.Data.Linq.DataContext> . Pokaždé, když načtete nový řádek z databáze, zapíše se řádek do tabulky identity podle jeho primárního klíče a vytvoří se nový objekt. Pokaždé, když načtete stejný řádek, původní instance objektu se vrátí zpět do aplikace. Tímto způsobem se <xref:System.Data.Linq.DataContext> přeloží koncept identity, jak je vidět databáze (tj. primární klíče), do konceptu identity, ke které se jazyk (tj. instance) zobrazuje. Aplikace uvidí pouze objekt ve stavu, ve kterém byl poprvé načten. Nová data, pokud jsou odlišná, se zahodí. Další informace najdete v tématu [načítání objektů z mezipaměti identit](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
+ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástrojispravujeidentituobjektu <xref:System.Data.Linq.DataContext> . Pokaždé, když načtete nový řádek z databáze, zapíše se řádek do tabulky identity podle jeho primárního klíče a vytvoří se nový objekt. Pokaždé, když načtete stejný řádek, původní instance objektu se vrátí zpět do aplikace. Tímto způsobem se <xref:System.Data.Linq.DataContext> přeloží koncept identity, jak je vidět databáze (tj. primární klíče), do konceptu identity, ke které se jazyk (tj. instance) zobrazuje. Aplikace uvidí pouze objekt ve stavu, ve kterém byl poprvé načten. Nová data, pokud jsou odlišná, se zahodí. Další informace najdete v tématu [načítání objektů z mezipaměti identit](retrieving-objects-from-the-identity-cache.md).  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Tento přístup používá ke správě integrity místních objektů za účelem podpory optimistické aktualizace. Vzhledem k tomu, že jedinými změnami, ke kterým dochází po prvním vytvoření objektu, jsou ty, které udělala aplikace, záměr aplikace je jasný. Pokud došlo ke změnám, které dostanou externí strana, jsou identifikovány v době `SubmitChanges()` volání.  
   
@@ -44,4 +44,4 @@ Objekty v modulu runtime mají jedinečné identity. Dvě proměnné, které odk
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Základní informace](background-information.md)

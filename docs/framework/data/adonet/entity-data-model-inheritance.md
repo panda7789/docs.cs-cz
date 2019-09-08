@@ -2,31 +2,31 @@
 title: Model EDM (Entity Data Model) Dědičnost
 ms.date: 03/30/2017
 ms.assetid: 42c7ef24-710a-4af9-8493-cd41c399ecb0
-ms.openlocfilehash: 9f77f2ebb86ea050c124fbd1c6f2b30ed9e75a1c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21dbdff63c07dbcdac8de7bf4b3a8e5d0ece7901
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667208"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784079"
 ---
 # <a name="entity-data-model-inheritance"></a>Model EDM (Entity Data Model) Dědičnost
-Entity Data Model (EDM) podporuje dědičnost [typy entit](../../../../docs/framework/data/adonet/entity-type.md). Dědičnost v modelu EDM je podobný dědičnosti tříd v objektově orientované programovací jazyky. Jako s třídami v objektově orientované jazyků v konceptuálním modelu můžete definovat typ entity ( *odvozeného typu*), která dědí z jiného typu entity ( *základní typ*). Ale na rozdíl od tříd v objektově orientované programování v konceptuálním modelu odvozený typ vždy zdědí všechny [vlastnosti](../../../../docs/framework/data/adonet/property.md) a [navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) základního typu. Nelze přepsat zděděné vlastnosti v odvozeném typu.  
+Model EDM (Entity Data Model) (EDM) podporuje dědičnost pro [typy entit](entity-type.md). Dědičnost v EDM je podobná dědičnosti pro třídy v objektově orientovaném programovacím jazyce. Podobně jako u tříd v objektově orientovaném jazyce, v koncepčním modelu můžete definovat typ entity ( *odvozený typ*), který dědí z jiného typu entity ( *základní typ*). Nicméně na rozdíl od tříd v objektově orientovaném programování, v koncepčním modelu odvozený typ vždy zdědí všechny [vlastnosti](property.md) a [navigační vlastnosti](navigation-property.md) základního typu. Zděděné vlastnosti nelze přepsat v odvozeném typu.  
   
- V konceptuálním modelu můžete vytvořit hierarchie dědičnosti, ve kterých odvozený typ dědí z jiného odvozeného typu. Typ v horní části hierarchie (jeden typ v hierarchii, která není odvozeným typem) se nazývá *kořenový typ*. V hierarchii dědičnosti [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) na kořenový typ musí být definován.  
+ V koncepčním modelu můžete vytvořit Hierarchie dědičnosti, ve kterých je odvozený typ děděn z jiného odvozeného typu. Typ v horní části hierarchie (jeden typ v hierarchii, který není odvozeným typem) se označuje jako *Kořenový typ*. V hierarchii dědičnosti musí být [klíč entity](entity-key.md) definován u kořenového typu.  
   
- Hierarchie dědičnosti, ve kterých odvozený typ dědí z více než jeden typ nelze vytvořit. Například v konceptuálním modelu s `Book` typ entity, můžete definovat odvozené typy `FictionBook` a `NonFictionBook` každý dědit z `Book`. Však nelze definovat poté typ, který zdědí vlastnosti z obou `FictionBook` a `NonFictionBook` typy.  
+ Nelze vytvořit Hierarchie dědičnosti, ve kterých je odvozený typ děděn z více než jednoho typu. `Book` Například v koncepčním modelu s typem entity můžete definovat odvozené typy `FictionBook` a `NonFictionBook` všechny z `Book`nich dědí. Nicméně nelze definovat typ, který dědí z obou `FictionBook` typů a. `NonFictionBook`  
   
 ## <a name="example"></a>Příklad  
 
-Následující diagram znázorňuje Koncepční model, čtyři typy entit: `Book`, `FictionBook`, `Publisher`, a `Author`. `FictionBook` Entity typu je odvozený typ dědí `Book` typu entity. `FictionBook` Typ dědí `ISBN (Key)`, `Title`, a `Revision` vlastnosti a definuje další vlastnosti s názvem `Genre`.  
+Následující diagram znázorňuje koncepční model se čtyřmi typy entit `Book`:, `FictionBook`, `Publisher` `Author`a. Typ entity je odvozený typ, který dědí `Book` z typu entity. `FictionBook` `FictionBook` Typ `Genre`dědí vlastnosti ,`Title` a`Revision` a definuje další vlastnost s názvem. `ISBN (Key)`  
   
- ![Diagram zobrazující průběh konceptuální model, čtyři typy entit.](./media/entity-data-model-inheritance/entity-type-inheritance.gif)  
+ ![Diagram znázorňující koncepční model se čtyřmi typy entit.](./media/entity-data-model-inheritance/entity-type-inheritance.gif)  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje typ entity, `FictionBook`, které dědí z `Book` typu (stejně jako v diagramu výše):  
+ [ADO.NET Entity Framework](./ef/index.md) používá pro definování konceptuálních modelů jazyk specifický pro doménu (DSL), který se nazývá jazyk[CSDL](./ef/language-reference/csdl-specification.md)(konceptuální schéma Definition Language). Následující CSDL definuje typ `FictionBook`entity,, který dědí `Book` z typu (jako v diagramu výše):  
   
  [!code-xml[EDM_Example_Model#DerivedType](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books5.edmx#derivedtype)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](entity-data-model.md)

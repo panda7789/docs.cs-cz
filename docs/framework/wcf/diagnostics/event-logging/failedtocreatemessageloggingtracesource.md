@@ -2,24 +2,24 @@
 title: FailedToCreateMessageLoggingTraceSource
 ms.date: 03/30/2017
 ms.assetid: 75e91aad-6d83-4e5e-8c70-fed1625e522f
-ms.openlocfilehash: e50c881bf10e05508408814c28c8570745b672fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44654b22bc83fcf681cee19a728993ba72efdb4b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774982"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797951"
 ---
 # <a name="failedtocreatemessageloggingtracesource"></a>FailedToCreateMessageLoggingTraceSource
-Id: 115  
+Účet 115  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: ServiceModel  
+ Kategorií ServiceModel  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že protokolování zpráv se nepodařilo vytvořit zdroj trasování. Uvádí události výjimky, název procesu a ID procesu.  
+ Tato událost označuje, že při protokolování zprávy se nepodařilo vytvořit zdroj trasování. Událost obsahuje seznam výjimek, názvu procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

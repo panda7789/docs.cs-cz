@@ -20,17 +20,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68be16c559431de871dc9ddb1963897b0927d49a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 197504cbb0dd66c0cf43dee718026fc63e918d60
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783169"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798849"
 ---
 # <a name="strongnametokenfrompublickey-function"></a>StrongNameTokenFromPublicKey – funkce
-Získá token představující veřejný klíč. Zkráceným tvarem veřejný klíč je token silného názvu.  
+Získá token představující veřejný klíč. Token silného názvu je zkrácenou formou veřejného klíče.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameTokenFromPublicKey –](../hosting/iclrstrongname-strongnametokenfrompublickey-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,36 +45,36 @@ BOOLEANStrongNameTokenFromPublicKey (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
- [in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.  
+ pro Struktura typu [PublicKeyBlob –](publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.  
   
  `cbPublicKeyBlob`  
- [in] Velikost v bajtech, z `pbPublicKeyBlob`.  
+ pro Velikost v bajtech `pbPublicKeyBlob`.  
   
  `ppbStrongNameToken`  
- [out] Silný název tokenu odpovídající klíči předaný `pbPublicKeyBlob`. Modul common language runtime přiděluje paměť ke vrácení tokenu. Volající musí uvolnit tato paměť pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.  
+ mimo Token silného názvu odpovídající předanému `pbPublicKeyBlob`klíči. Modul CLR (Common Language Runtime) přiděluje paměť, ve které má být token vrácen. Volající musí uvolnit tuto paměť pomocí funkce [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) .  
   
  `pcbStrongNameToken`  
- [out] Velikost v bajtech, token vrácený silného názvu.  
+ mimo Velikost vráceného tokenu silného názvu (v bajtech)  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Token silného názvu je zkrácený tvar veřejný klíč používaný pro úsporu místa při ukládání informací o klíči v metadatech. Konkrétně tokeny silným názvem se používají v odkazy na sestavení odkázat na závislého sestavení.  
+ Token silného názvu je zkrácený tvar veřejného klíče, který slouží k ukládání místa při ukládání klíčových informací v metadatech. Konkrétně tokeny se silným názvem se používají v odkazech na sestavení pro odkazování na závislé sestavení.  
   
- Pokud `StrongNameTokenFromPublicKey` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameTokenFromPublicKey` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně Mscoree. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
-- [StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
-- [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
+- [StrongNameTokenFromPublicKey – metoda](../hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
+- [StrongNameGetPublicKey – metoda](../hosting/iclrstrongname-strongnamegetpublickey-method.md)
+- [PublicKeyBlob – struktura](publickeyblob-structure.md)

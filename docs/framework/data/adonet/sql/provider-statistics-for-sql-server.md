@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: e13c4df87909629a45830e3b7950551434ed5ab1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b6fa4207531e86cbde8657d0c47596f22c886f89
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946577"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791868"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky zprostředkovatelů na SQL Serveru
 Počínaje verzí 2,0 .NET Framework .NET Framework Zprostředkovatel dat pro SQL Server podporuje statistiku runtime. Chcete-li vytvořit platný objekt připojení <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> , je nutné <xref:System.Data.SqlClient.SqlConnection> povolit statistiku nastavením vlastnosti objektu na `True` hodnotu. Po povolení statistik je můžete zkontrolovat jako "snímek v čase" načtením <xref:System.Collections.IDictionary> odkazu <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> prostřednictvím metody <xref:System.Data.SqlClient.SqlConnection> objektu. Seznam můžete zobrazit jako sadu položek slovníku dvojice název/hodnota. Tyto páry název/hodnota jsou neseřazené. V každém okamžiku můžete zavolat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu pro resetování čítačů. Pokud není shromažďování statistických údajů povolené, výjimka se nevygeneruje. Kromě toho, pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána, <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> aniž by byla volána jako první, jsou načtené hodnoty počátečními hodnotami pro každou položku. Pokud povolíte statistiku, spusťte aplikaci za chvíli a pak zakažte statistiku. načtené hodnoty budou odpovídat hodnotám shromážděným do okamžiku, kdy byly statistiky zakázány. Všechny shromážděné statistické hodnoty jsou založené na jednotlivých připojeních.  
@@ -340,5 +340,5 @@ namespace CS_Stats_Console_GetAll
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

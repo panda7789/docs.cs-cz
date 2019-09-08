@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f6f0cbc9-f7bf-4d6e-875f-ad1ba0b4aa62
-ms.openlocfilehash: fb27e11f81451d6a982edcf5b88b23861bef3c37
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 73c375f9acfd193680982994ed0852454cefebe5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938429"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791440"
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>Operace transakcí a hromadného kopírování
 Operace hromadného kopírování lze provádět jako izolované operace nebo jako součást transakce více kroků. Tato druhá možnost umožňuje provádět více než jednu operaci hromadného kopírování v rámci stejné transakce a provádět další databázové operace (například vložení, aktualizace a odstranění) a zároveň může potvrdit nebo vrátit zpět celou transakci.  
@@ -25,7 +25,7 @@ Operace hromadného kopírování lze provádět jako izolované operace nebo ja
  Operace hromadného kopírování je provedena s <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> vlastností nastavenou na hodnotu 10. Pokud operace narazí na neplatný řádek, je vyvolána výjimka. V tomto prvním příkladu je operace hromadného kopírování netransakční. Všechny dávky zkopírované až do bodu chyby jsou potvrzeny. dávka obsahující duplicitní klíč se vrátí zpět a operace hromadného kopírování se před zpracováním jiných dávek zastaví.  
   
 > [!NOTE]
-> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
+> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
   
  [!code-csharp[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.DefaultTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DefaultTransaction/VB/source.vb#1)]  
@@ -41,7 +41,7 @@ Operace hromadného kopírování lze provádět jako izolované operace nebo ja
  Následující Konzolová aplikace je podobná předchozímu příkladu s jednou výjimkou: V tomto příkladu operace hromadného kopírování spravuje své vlastní transakce. Všechny dávky zkopírované až do bodu chyby jsou potvrzeny. dávka obsahující duplicitní klíč se vrátí zpět a operace hromadného kopírování se před zpracováním jiných dávek zastaví.  
   
 > [!IMPORTANT]
-> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
+> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
   
  [!code-csharp[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.InternalTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.InternalTransaction/VB/source.vb#1)]  
@@ -54,12 +54,12 @@ Operace hromadného kopírování lze provádět jako izolované operace nebo ja
  Následující Konzolová aplikace je podobná prvnímu příkladu (bez transakčního příkazu) s jednou výjimkou: v tomto příkladu je operace hromadného kopírování zahrnuta ve větší, externí transakci. Pokud dojde k chybě narušení primárního klíče, celá transakce se vrátí zpět a do cílové tabulky se nepřidá žádné řádky.  
   
 > [!IMPORTANT]
-> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
+> Tato ukázka nebude spuštěna, pokud jste nevytvořili pracovní tabulky, jak je popsáno v tématu [hromadné kopírování – příklad nastavení](bulk-copy-example-setup.md). Tento kód je k dispozici k předvedení syntaxe pouze pro použití **SqlBulkCopy** . Pokud se zdrojové a cílové tabulky nacházejí ve stejné instanci SQL Server, je snazší a rychlejší použít příkaz Transact-SQL`INSERT … SELECT` ke zkopírování dat.  
   
  [!code-csharp[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/CS/source.cs#1)]
  [!code-vb[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operace hromadného kopírování na SQL Serveru](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Operace hromadného kopírování na SQL Serveru](bulk-copy-operations-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

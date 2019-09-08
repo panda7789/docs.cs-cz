@@ -2,12 +2,12 @@
 title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: f1061842343d7a700d3af5da5fdc6aec2f79396d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4beb9944a13fd2f76d7305b4d84230fcc33483be
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929214"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781313"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace nabízí několik návodů. Toto téma řeší některé obecné postupy (včetně řešení potíží) a poskytuje odkazy na několik podrobných návodů ke vstupní úrovni pro získání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]informací o nástroji.  
@@ -22,22 +22,22 @@ ms.locfileid: "69929214"
   
 |Cíle|Visual Basic|C#|  
 |---------------|------------------|---------|  
-|Vytvořte třídu entity a spusťte jednoduchý dotaz.|[Návod: Jednoduchý objektový model a dotaz (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[Návod: Jednoduchý objektový model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
-|Přidejte druhou třídu a spusťte složitější dotaz.<br /><br /> (Vyžaduje dokončení předchozího návodu).|[Návod: Dotazování napříč relacemi (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[Návod: Dotazování napříč relacemiC#()](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
-|Přidávat, měnit a odstraňovat položky v databázi.|[Návod: Manipulace s daty (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Návod: Manipulace s daty (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
-|Použijte uložené procedury.|[Návod: Použití pouze uložených procedur (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[Návod: Použití pouze uložených procedur (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
+|Vytvořte třídu entity a spusťte jednoduchý dotaz.|[Návod: Jednoduchý objektový model a dotaz (Visual Basic)](walkthrough-simple-object-model-and-query-visual-basic.md)|[Návod: Jednoduchý objektový model a dotaz (C#)](walkthrough-simple-object-model-and-query-csharp.md)|  
+|Přidejte druhou třídu a spusťte složitější dotaz.<br /><br /> (Vyžaduje dokončení předchozího návodu).|[Návod: Dotazování napříč relacemi (Visual Basic)](walkthrough-querying-across-relationships-visual-basic.md)|[Návod: Dotazování napříč relacemiC#()](walkthrough-querying-across-relationships-csharp.md)|  
+|Přidávat, měnit a odstraňovat položky v databázi.|[Návod: Manipulace s daty (Visual Basic)](walkthrough-manipulating-data-visual-basic.md)|[Návod: Manipulace s daty (C#)](walkthrough-manipulating-data-csharp.md)|  
+|Použijte uložené procedury.|[Návod: Použití pouze uložených procedur (Visual Basic)](walkthrough-using-only-stored-procedures-visual-basic.md)|[Návod: Použití pouze uložených procedur (C#)](walkthrough-using-only-stored-procedures-csharp.md)|  
   
 ## <a name="general"></a>Obecné  
  Následující informace, které se týkají těchto návodů, jsou obecně:  
   
 - Hlediska Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá Visual Studio jako integrované vývojové prostředí (IDE).  
   
-- Moduly SQL: Tyto návody jsou zapsány k implementaci pomocí SQL Server Express. Pokud nemáte SQL Server Express, můžete si ho zdarma stáhnout. Další informace najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- Moduly SQL: Tyto návody jsou zapsány k implementaci pomocí SQL Server Express. Pokud nemáte SQL Server Express, můžete si ho zdarma stáhnout. Další informace najdete v tématu [stažení ukázkových databází](downloading-sample-databases.md).  
   
     > [!NOTE]
-    > [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Návody používají název souboru jako připojovací řetězec. Pouhým zadáním názvu souboru je to pohodlí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , které poskytuje SQL Server Express uživatelům. Vždycky věnujte pozornost problémům se zabezpečením. Další informace najdete v tématu [zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+    > [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Návody používají název souboru jako připojovací řetězec. Pouhým zadáním názvu souboru je to pohodlí [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , které poskytuje SQL Server Express uživatelům. Vždycky věnujte pozornost problémům se zabezpečením. Další informace najdete v tématu [zabezpečení v LINQ to SQL](security-in-linq-to-sql.md).  
   
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Návody obvykle vyžadují ukázkovou databázi Northwind. Další informace najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]Návody obvykle vyžadují ukázkovou databázi Northwind. Další informace najdete v tématu [stažení ukázkových databází](downloading-sample-databases.md).  
   
 - Dialogová okna a příkazy nabídek, které vidíte v návodech, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici sady Visual Studio. Chcete-li změnit nastavení, klikněte na položku **Nastavení importu a exportu** v nabídce **nástroje** . Další informace najdete v tématu [Přizpůsobení integrovaného vývojového prostředí (IDE) sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
@@ -66,13 +66,13 @@ ms.locfileid: "69929214"
      Pokud provedete změnu, restartujte službu kliknutím na tlačítko **restartovat** .  
   
 ### <a name="protocols"></a>Protokolů  
- V některých případech se nemusí správně nastavit protokoly, aby vaše aplikace měla přístup k databázi. Například protokol pojmenovaných **kanálů** , který je požadován pro návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], není ve výchozím nastavení povolen.  
+ V některých případech se nemusí správně nastavit protokoly, aby vaše aplikace měla přístup k databázi. Například protokol **pojmenovaných kanálů** , který je požadován pro návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], není ve výchozím nastavení povolen.  
   
 ##### <a name="to-enable-the-named-pipes-protocol"></a>Povolení protokolu pojmenovaných kanálů  
   
 1. V levém podokně **SQL Server Configuration Manager**rozbalte položku **konfigurace sítě SQL Server 2005**a potom klikněte na **protokoly pro SQLEXPRESS**.  
   
-2. V pravém podokně se ujistěte, že je povolen protokol pojmenovaných **kanálů** . Pokud ne, klikněte pravým tlačítkem myši na položku **Názvové kanály** a potom klikněte na možnost **Povolit**.  
+2. V pravém podokně se ujistěte, že je povolen protokol **pojmenovaných kanálů** . Pokud ne, klikněte pravým tlačítkem myši na položku **Názvové kanály** a potom klikněte na možnost **Povolit**.  
   
      Budete muset službu zastavit a restartovat. Postupujte podle kroků v následujícím bloku.  
   
@@ -89,4 +89,4 @@ ms.locfileid: "69929214"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+- [Začínáme](getting-started.md)

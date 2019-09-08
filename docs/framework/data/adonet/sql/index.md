@@ -2,12 +2,12 @@
 title: SQL Server a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: c58c6da7a6028c9167c73af820e922f59b528f15
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b54725fa8dbff7db82ed197f4961e773a06895e4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938085"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782327"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server a ADO.NET
 Tato část popisuje funkce a chování, které jsou specifické pro .NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient>).  
@@ -18,22 +18,22 @@ Tato část popisuje funkce a chování, které jsou specifické pro .NET Framew
 > Chcete-li použít Zprostředkovatel dat .NET Framework pro SQL Server, aplikace musí odkazovat na <xref:System.Data.SqlClient> obor názvů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [SQL Server – zabezpečení](sql-server-security.md)  
  Poskytuje přehled SQL Serverch funkcí zabezpečení a scénářů aplikací pro vytváření zabezpečených aplikací ADO.NET, které cílí na SQL Server.  
   
- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ [Datové typy SQL Serveru a ADO.NET](sql-server-data-types.md)  
  Popisuje, jak pracovat s datovými typy SQL Server a jak komunikují s datovými typy .NET Framework.  
   
- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Binární a vysoké hodnoty na SQL Serveru](sql-server-binary-and-large-value-data.md)  
  Popisuje, jak pracovat s velkým množstvím dat v SQL Server.  
   
- [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
+ [Operace dat na SQL Serveru v ADO.NET](sql-server-data-operations.md)  
  Popisuje, jak pracovat s daty v SQL Server. Obsahuje oddíly o operacích hromadného kopírování, MARS, asynchronních operací a parametrech s hodnotou tabulky.  
   
- [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ [Funkce SQL Serveru a ADO.NET](sql-server-features-and-adonet.md)  
  Popisuje SQL Server funkce, které jsou užitečné pro vývojáře aplikací ADO.NET.  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](./linq/index.md)  
  V této části najdete popis základních stavebních bloků, procesů a technik potřebných pro vytváření aplikací LINQ to SQL.  
   
  Úplnou dokumentaci k databázovému stroji SQL Server najdete v tématu SQL Server Knihy online pro verzi SQL Server, kterou používáte.  
@@ -42,8 +42,8 @@ Tato část popisuje funkce a chování, které jsou specifické pro .NET Framew
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Mapování datového typu v ADO.NET](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
-- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Mapování datového typu v ADO.NET](../data-type-mappings-in-ado-net.md)
+- [Datové sady, datové tabulky a datová zobrazení](../dataset-datatable-dataview/index.md)
+- [Načítání a úpravy dat v ADO.NET](../retrieving-and-modifying-data.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a2c5c3bbbcf3cf4b87a5f68006c1625666d13926
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e471ee99af57ef980850c0a5d3e4f5f2973967ac
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753886"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796602"
 ---
 # <a name="iassemblynamegetname-method"></a>IAssemblyName::GetName – metoda
-Získá název jednoduchý a nešifrované sestavení odkazuje situace [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
+Získá jednoduchý, nešifrovaný název sestavení, na který odkazuje tento objekt [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT GetName (
   
 ## <a name="parameters"></a>Parametry  
  `lpcwBuffer`  
- [out v] Velikost `pwzName` v široké znaky, jako je znak, který ukončovací znak null.  
+ [in, out] Velikost `pwzName` v různých znacích, včetně ukončovacího znaku null.  
   
  `pwzName`  
- [out] Vyrovnávací paměti, která bude uchovávat název odkazovaného sestavení.  
+ mimo Vyrovnávací paměť pro uchování názvu odkazovaného sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)

@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a73530de-5a4e-4d9c-8d66-abb19c225b11
-ms.openlocfilehash: e51ebacb3f6be849f7b871f2d12db3ea7476b117
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bae10e823a274304f21292cf55947a4d4eaccc10
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877068"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781466"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Postupy: Použití uložených procedur mapovaných pro sekvenční tvary výsledků
-Tento druh uložené procedury lze generovat více než jeden prvek výsledek, ale vy víte, v jakém pořadí jsou vráceny výsledky. Tento scénář se scénářem, pokud si nejste jisti pořadí vrátí kontrast. Další informace najdete v tématu [jak: Použití uložených procedur mapovaných pro vícečetné tvary výsledků](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md).  
+Tento druh uložené procedury může generovat více než jeden obrazec výsledku, ale víte, v jakém pořadí se výsledky vrátí. Porovnejte tento scénář se scénářem, ve kterém neznáte sekvenci vrácených možností. Další informace najdete v tématu [jak: Použití uložených procedur mapovaných pro více tvarů](how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md)výsledků.  
   
 ## <a name="example"></a>Příklad  
- Tady je T-SQL uloženou proceduru, která postupně vrací vícečetné tvary výsledků:  
+ Zde je T-SQL uložené procedury, která vrací více výsledných tvarů postupně:  
   
 ```  
 CREATE PROCEDURE MultipleResultTypesSequentially  
@@ -29,11 +29,11 @@ select * from customers
  [!code-vb[DLinqSprox#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Podobně jako následujícím kódu můžete použít k provedení tuto uloženou proceduru.  
+ Chcete-li provést tuto uloženou proceduru, použijte kód podobný následujícímu.  
   
  [!code-csharp[DLinqSprox#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#7)]
  [!code-vb[DLinqSprox#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#7)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Uložené procedury](stored-procedures.md)

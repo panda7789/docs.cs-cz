@@ -2,17 +2,17 @@
 title: Kontextové připojení
 ms.date: 03/30/2017
 ms.assetid: e443ca86-9243-4234-a822-ed10a53a9de0
-ms.openlocfilehash: 83e9f4a9672d2703514c0a86ad8d41b968c255fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26578d0c6a5e4553e57673561f94090b9a1fd1a5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61915223"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791509"
 ---
 # <a name="the-context-connection"></a>Kontextové připojení
-Problém interní datové je poměrně běžný scénář. To znamená, že budete chtít na stejný server, na kterém common language runtime (CLR) uložená procedura nebo funkce provádí přistupuje. Jednou z možností je vytvořit připojení pomocí <xref:System.Data.SqlClient.SqlConnection>, zadejte připojovací řetězec, který odkazuje na místním serveru a otevřete připojení. To vyžaduje, když zadáváte přihlašovací údaje pro přihlášení. Připojení je v relaci jiné databáze než uloženou proceduru nebo funkci, mohou mít různé `SET` možnosti, je v samostatných transakcích, nezobrazí dočasné tabulky, a tak dále. Pokud vaše spravované uložené procedury nebo funkce kódu je spouštěn v procesu serveru SQL Server, bude to, že někdo připojené k tomuto serveru a provedený SQL příkaz jej lze vyvolat. Budete zřejmě chtít uložená procedura nebo funkce pro spuštění v kontextu tohoto připojení, spolu s jeho transakce `SET` možnosti a tak dále. Tomu se říká připojení kontextu.  
+Problémem interního přístupu k datům je poměrně běžný scénář. To znamená, že chcete získat přístup ke stejnému serveru, na kterém je spuštěna uložená procedura nebo funkce společného jazykového modulu runtime (CLR). Jednou z možností je vytvořit připojení pomocí <xref:System.Data.SqlClient.SqlConnection>, zadat připojovací řetězec, který odkazuje na místní server, a otevřít připojení. K tomu je potřeba zadat přihlašovací údaje pro přihlášení. Připojení je v jiné relaci databáze než uložená procedura nebo funkce, může mít různé `SET` možnosti, je v samostatné transakci, nezobrazuje vaše dočasné tabulky a tak dále. Pokud je vaše spravovaná uložená procedura nebo kód funkce prováděna v procesu SQL Server, je to proto, že někdo připojený k tomuto serveru a spustil příkaz SQL k jeho vyvolání. Pravděpodobně budete chtít, aby uložená procedura nebo funkce běžely v kontextu tohoto připojení, spolu s transakcí, `SET` možnostmi a tak dále. Označuje se jako připojení kontextu.  
   
- Připojení kontextu umožňuje spuštění příkazů jazyka Transact-SQL ve stejném kontextu, že váš kód byl spuštěn na prvním místě. Podrobnější informace najdete v tématu verze SQL Server Books Online pro verzi SQL serveru, který používáte.  
+ Připojení kontextu umožňuje spustit příkazy jazyka Transact-SQL ve stejném kontextu, jaký byl váš kód vyvolán na prvním místě. Podrobnější informace najdete v tématu verze SQL Server Knihy online pro verzi SQL Server, kterou používáte.  
   
  **SQL Server Books Online**  
   
@@ -20,4 +20,4 @@ Problém interní datové je poměrně běžný scénář. To znamená, že bude
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

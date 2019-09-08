@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d725228f2a7359d415673fdcb90d0cabae1a40be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dbb3ac150ebfe9fe3698427d8bb2bfb3e3347c07
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697339"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796464"
 ---
-# <a name="ienumidentityattribute-interface"></a>IEnumIDENTITY_ATTRIBUTE – rozhraní
+# <a name="ienumidentity_attribute-interface"></a>IEnumIDENTITY_ATTRIBUTE – rozhraní
 Slouží jako enumerátor pro atributy objektu kódu v aktuálním oboru.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IEnumIDENTITY_ATTRIBUTE::Clone`|Získá ukazatel rozhraní na nový `IEnumIDENTITY_ATTRIBUTE` , která obsahuje stejné členy jako to `IEnumIDENTITY_ATTRIBUTE`.|  
-|`IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer`|Zapíše data obsažená v elementech této `IEnumIDENTITY_ATTRIBUTE` do vyrovnávací paměti zadaná data.|  
-|`IEnumIDENTITY_ATTRIBUTE::Next`|Získá zadaný počet atributů, od aktuální pozice.|  
-|`IEnumIDENTITY_ATTRIBUTE::Reset`|Přesune ukazatel na instrukci na začátek `IEnumIDENTITY_ATTRIBUTE`.|  
-|`IEnumIDENTITY_ATTRIBUTE::Skip`|Přesune ukazatele na instrukci vpřed o zadaný počet prvků počínaje od aktuální pozice.|  
+|`IEnumIDENTITY_ATTRIBUTE::Clone`|Získá ukazatel rozhraní na nový `IEnumIDENTITY_ATTRIBUTE` , který obsahuje stejné členy jako to. `IEnumIDENTITY_ATTRIBUTE`|  
+|`IEnumIDENTITY_ATTRIBUTE::CurrentIntoBuffer`|Zapíše data obsažená v prvcích tohoto `IEnumIDENTITY_ATTRIBUTE` typu do zadané datové vyrovnávací paměti.|  
+|`IEnumIDENTITY_ATTRIBUTE::Next`|Získá zadaný počet atributů od aktuální pozice.|  
+|`IEnumIDENTITY_ATTRIBUTE::Reset`|Přesune ukazatel na instrukci na začátek tohoto `IEnumIDENTITY_ATTRIBUTE`.|  
+|`IEnumIDENTITY_ATTRIBUTE::Skip`|Přesune ukazatel na instrukci směrem nahoru o zadaný počet prvků od aktuální pozice.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)

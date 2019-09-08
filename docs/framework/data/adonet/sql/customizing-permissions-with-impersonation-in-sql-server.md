@@ -2,12 +2,12 @@
 title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: 52e11bd983a8c9155d90659834df03dea6449a8e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b5dcef80afffa7bb3722a09020c5445dbc47f16a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961114"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782468"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
 Mnoho aplikací používá pro přístup k datům uložené procedury, které se spoléhají na zřetězení vlastnictví, aby se omezil přístup k základním tabulkám. Můžete udělit oprávnění pro spouštění uložených procedur, odvolat nebo odepřít oprávnění pro základní tabulky. SQL Server nekontrolují oprávnění volajícího, pokud má uložená procedura a tabulky stejného vlastníka. Řetězení vlastnictví ale nefunguje, pokud objekty mají různé vlastníky nebo v případě dynamického SQL.  
@@ -54,7 +54,7 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 ### <a name="using-execute-as-with-revert"></a>Použití příkazu Spustit jako s příkazem REVERT  
  Pomocí příkazu Transact-SQL REVERT se můžete vrátit k původnímu kontextu spuštění.  
   
- Volitelná klauzule bez revertu souborů cookie @variableName= umožňuje přepnout kontext spuštění zpět na volajícího, @variableName Pokud proměnná obsahuje správnou hodnotu. To umožňuje přepnout kontext spuštění zpět na volající v prostředích, kde se používá sdružování připojení. Vzhledem k tomu, @variableName že hodnota je známa pouze volajícímu příkazu Spustit jako, volající může zaručit, že kontext spuštění nemůže být změněn koncovým uživatelem, který aplikaci vyvolá. Po zavření připojení se vrátí do fondu. Další informace o sdružování připojení v ADO.NET najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Volitelná klauzule bez revertu souborů cookie @variableName= umožňuje přepnout kontext spuštění zpět na volajícího, @variableName Pokud proměnná obsahuje správnou hodnotu. To umožňuje přepnout kontext spuštění zpět na volající v prostředích, kde se používá sdružování připojení. Vzhledem k tomu, @variableName že hodnota je známa pouze volajícímu příkazu Spustit jako, volající může zaručit, že kontext spuštění nemůže být změněn koncovým uživatelem, který aplikaci vyvolá. Po zavření připojení se vrátí do fondu. Další informace o sdružování připojení v ADO.NET najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../sql-server-connection-pooling.md).  
   
 ### <a name="specifying-the-execution-context"></a>Určení kontextu spuštění  
  Kromě určení uživatele můžete také použít příkaz Spustit jako s některým z následujících klíčových slov.  
@@ -67,11 +67,11 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Správa oprávnění pomocí uložených procedur na SQL Serveru](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](writing-secure-dynamic-sql-in-sql-server.md)
+- [Podepisování uložených procedur na SQL Serveru](signing-stored-procedures-in-sql-server.md)
+- [Úpravy dat pomocí uložených procedur](../modifying-data-with-stored-procedures.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

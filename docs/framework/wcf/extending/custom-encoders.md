@@ -2,72 +2,72 @@
 title: Vlastní kodéry
 ms.date: 03/30/2017
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-ms.openlocfilehash: d553859ed622cefffc946bca94796204b2fe6456
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 586207af0bfbe106512dfb61ee7439d4f5ce64c6
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587286"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797215"
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
 Toto téma popisuje, jak vytvořit vlastní kodéry.  
   
- Ve Windows Communication Foundation (WCF), je použít *vazby* určete, jak přenášet data přes síť mezi koncovými body. Vazba se skládá z posloupnosti *elementů vazby*. Vazba obsahuje volitelné protokol vazby prvky jako je zabezpečení, požadované *kodéru zpráv* element vazby a element vazby přenosu vyžaduje. Kodér zprávy je reprezentován element vazby kódování zprávy. Tři kodérů zprávy jsou součástí WCF: Binární soubor, mechanismus optimalizaci přenosu zprávu (MTOM) a Text.  
+ V Windows Communication Foundation (WCF) použijete *vazbu* k určení způsobu přenosu dat mezi koncovými body v síti. Vazba je tvořena sekvencí *prvků vazby*. Vazba obsahuje volitelné prvky vazby protokolu, jako je například zabezpečení, požadovaný element vazby *kodéru zprávy* a požadovaný prvek vazby přenosu. Kodér zprávy je reprezentován prvkem vazby kódování zprávy. WCF obsahuje tři kodéry zpráv: Binární, mechanizmus pro optimalizaci přenosu zpráv (MTOM) a text.  
   
- Element vazby kódování serializuje odchozí zprávu <xref:System.ServiceModel.Channels.Message> a předá ji do přenosu, nebo přijímá serializovanou formu zpráva z přenosu a předá ji do vrstvy protokolu, pokud jsou k dispozici, nebo k aplikaci, pokud není k dispozici.  
+ Element vazby kódování zprávy serializaci odchozí <xref:System.ServiceModel.Channels.Message> a předává do přenosu, nebo přijímá serializovanou formu zprávy z přenosu a předává ji do vrstvy protokolu, pokud je k dispozici, nebo do aplikace, pokud není k dispozici.  
   
- Transformují kodéry zpráva <xref:System.ServiceModel.Channels.Message> instance do a z síťové vyjádření. I když kodérů jsou popsány jako nesídlí nad přenosové vrstvy v zásobníku kanál, jsou umístěné v přenosové vrstvě. Přenosy (třeba HTTP) formátu zpráv podle požadavků standardu přenosu. Kodérů (například Xml na Text) jenom kódování zprávy.  
+ Kodéry zpráv transformují <xref:System.ServiceModel.Channels.Message> instance do a z reprezentace v rámci vedení. I když jsou kodéry popsány tak, aby se nacházely nad přenosovou vrstvou v zásobníku kanálů, jsou umístěny uvnitř přenosové vrstvy. Přenos (například HTTP) formátuje zprávu podle požadavků standardu transportu. Kodéry (například text XML) právě zakódují zprávu.  
   
- Při připojování k dříve existující klient nebo server, nemusí mít možnost použití určité zprávy kódování. Ale WCF služby můžou být přístupné přes několik koncových bodů, každý s kodéru různé zprávy. Při jedné kodér nepokrývá celý cílový pro vaši službu, vezměte v úvahu vystavení služby přes několik koncových bodů. Klientské aplikace pak můžou zvolit koncový bod, který je pro ně nejvhodnější. Pomocí více koncových bodů můžete zkombinovat s jinými prvky vazby výhody jiná zpráva kodérů.  
+ Pokud se připojujete k již existujícímu klientovi nebo serveru, možná nebudete mít možnost používat konkrétní kódování zprávy. Služby WCF však lze zpřístupnit prostřednictvím více koncových bodů, z nichž každý má jiný kodér zpráv. Pokud jeden kodér nepokrývá celou cílovou skupinu pro vaši službu, zvažte zveřejnění služby přes více koncových bodů. Klientské aplikace potom můžou zvolit koncový bod, který je pro ně nejvhodnější. Použití více koncových bodů umožňuje kombinovat výhody různých kodérů zpráv s dalšími prvky vazby.  
   
-## <a name="system-provided-encoders"></a>Poskytnuté systémem kodérů  
- WCF poskytuje několik vazeb poskytovaných systémem, které jsou navrženy pro nejčastější scénáře aplikací. Každá z těchto vazeb kombinovat přenosu, kodéru zpráv a dalších možností (například zabezpečení). Toto téma popisuje, jak rozšířit `Text`, `Binary`, a `MTOM` kodéry, které jsou součástí WCF, nebo vytvořte vlastní vlastní kodér zpráv. Kodér textu zprávy podporuje prostý XML encoding i kódování SOAP. Standardní režim kódování XML kodér textu zprávy se nazývá kodér POX ("Plain Old XML") pro jeho odlišení od založený na textu protokolu SOAP kódování.  
+## <a name="system-provided-encoders"></a>Kodéry poskytované systémem  
+ WCF poskytuje několik vazeb poskytovaných systémem, které jsou navržené tak, aby pokrývaly nejběžnější scénáře použití aplikací. Každá z těchto vazeb kombinuje přenos, kodér zpráv a další možnosti (například zabezpečení). Toto téma popisuje, jak můžete roztáhnout `Text`kodéry `MTOM` , `Binary`, a zprávy, které jsou součástí WCF, nebo vytvořit vlastní kodér. Kodér textu zprávy podporuje jak kódování ve formátu XML, tak i kódování SOAP. Režim prostého kódování XML kodéru textové zprávy se nazývá kodér POX ("obyčejný starý soubor XML"), který ho odlišuje od textového kódování SOAP založeného na textu.  
   
- Další informace o kombinacích prvky vazeb poskytovaných vazeb poskytovaných systémem, naleznete v části odpovídající v [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o kombinací prvků vazby poskytovaných pomocí vazeb poskytovaných systémem naleznete v odpovídající části [výběru přenosu](../feature-details/choosing-a-transport.md).  
   
-## <a name="how-to-work-with-system-provided-encoders"></a>Jak pracovat s poskytnutými systémem kodérů  
- Kódování se přidá do vazby pomocí třídy odvozené od <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
+## <a name="how-to-work-with-system-provided-encoders"></a>Jak pracovat s kodéry poskytnutými systémem  
+ Do vazby se přidá kódování pomocí třídy odvozené z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
- Poskytuje následující typy odvozené z elementů vazby WCF <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídu, která můžete zadat text, binárního souboru a kódování zpráv přenosu optimalizace mechanismus (MTOM):  
+ WCF poskytuje následující typy prvků vazby, které jsou odvozeny <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> ze třídy, která může poskytnout pro text, binární a kódování v mechanismu optimalizace přenosu zpráv (MTOM):  
   
-- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Většina interoperabilní, ale nejméně efektivní kodéru zpráv XML. Webová služba nebo klient webové služby obecně by rozuměla textové XML. Ale přenosu velkých bloků binárních dat jako text není efektivní.  
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Nejvíce interoperabilní, ale nejméně efektivní kodér pro zprávy XML. Webová služba nebo klient webové služby může obecně pochopit text XML. Nicméně přenos velkých bloků binárních dat jako textu není efektivní.  
   
-- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Představuje element vazby, který určuje kódování znaků a verzování zprávy použité pro binární soubor založené zprávy XML. Toto je nejefektivnější možnosti kódování, ale nejméně interoperabilní, protože je podporován pouze pomocí koncových bodů WCF.  
+- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Představuje prvek vazby, který určuje kódování znaků a verze zprávy používané pro binární zprávy XML. To je nejúčinnější z možností kódování, ale nejméně interoperabilní, protože jsou podporovány pouze koncovými body WCF.  
   
-- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>: Představuje element vazby, který určuje kódování znaků a správu verzí zpráv používá zprávy pomocí kódování zpráv přenosu optimalizace mechanismus (MTOM). MTOM je efektivní technologie pro přenos zpráv WCF binární data. Kodér MTOM se pokusí rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové formě, ale optimalizuje velkých bloků binárních dat jako ušetřený přenosem-je, bez převodu na text.  
+- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>: Představuje prvek vazby, který určuje kódování znaků a správu verzí zpráv používané pro zprávu pomocí kódování MTOM (Message reoptimizationing mechanism). MTOM je efektivní technologie pro přenos binárních dat ve zprávách WCF. Kodér MTOM se pokusí vyvážit efektivitu a spolupráci. Kódování MTOM přenáší většinu XML v textové podobě, ale optimalizuje velké bloky binárních dat jejich přenosem tak, jak jsou, bez konverze na text.  
   
- Element vazby vytvoří binární soubor, MTOM nebo text <xref:System.ServiceModel.Channels.MessageEncoderFactory>. Vytvoří objekt pro vytváření binární soubor, MTOM nebo text <xref:System.ServiceModel.Channels.MessageEncoderFactory> instance. Obvykle je zaznamenána pouze jedna instance. Ale pokud jsou použity relace, můžeme poskytovat různé kodér každé relaci. Binárního kodéru využívá to ke koordinaci dynamické slovníky (viz XML, infrastrukturu).  
+ Element Binding vytvoří binární, MTOM nebo text <xref:System.ServiceModel.Channels.MessageEncoderFactory>. Objekt pro vytváření vytvoří binární, MTOM nebo textovou <xref:System.ServiceModel.Channels.MessageEncoderFactory> instanci. Obvykle je k dispozici pouze jedna instance. Pokud se ale používají relace, může se každé relaci zadat jiný kodér. Binární kodér využívá tuto technologii ke koordinaci dynamických slovníků (viz infrastruktura XML).  
   
- <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> a <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> metody jsou základní u kodérů. Poskytují metody pro čtení z datového proudu nebo zpráva <xref:System.Byte> pole. Bajtová pole se používají při přenosu pracuje v režimu vyrovnávací paměti. Vždy se zprávy zapisují do datových proudů. Pokud přenos musí uložit do vyrovnávací paměti se zpráva, poskytuje datový proud, který nemá vyrovnávací paměti.  
+ Metody <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> a<xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> jsou jádrem kodéru. Metody poskytují pro čtení zprávy z datového proudu nebo z <xref:System.Byte> pole. Pole bajtů se používají, když přenos pracuje v režimu vyrovnávací paměti. Zprávy jsou vždy zapisovány do datových proudů. Pokud přenos musí zprávu ukládat do vyrovnávací paměti, poskytne datový proud, který ukládá do vyrovnávací paměti.  
   
- Zbývající členy fungují s typy médií obsahu, podpora, a <xref:System.ServiceModel.Channels.MessageEncoder.MessageVersion%2A>. Přenos volá tyto metody kodér k ověření, zda příchozí zpráva může dekódovat jím nebo k určení, zda je platný pro tento kodér odchozí zprávy.  
+ Zbytek členů pracuje s obsahem podpory, typy médií a <xref:System.ServiceModel.Channels.MessageEncoder.MessageVersion%2A>. Přenos volá tyto metody kodéru k otestování, zda je možné příchozí zprávu dekódovat, nebo zda je odchozí zpráva platná pro tento kodér.  
   
- Všechny tři implementace kodér přidá vlastnosti, které jsou relevantní pro konkrétní kódování a je plně konfigurovatelné. U kodérů také zveřejnit čtečky kvóty, které mají výchozí hodnoty zabezpečení. Diskuzi o kvóty najdete v článku XML, infrastrukturu.  
+ Každé ze tří implementací kodéru přidá vlastnosti, které jsou relevantní pro konkrétní kódování, a je plně konfigurovatelné. Kodéry také zveřejňují kvóty čtecího zařízení, které mají zabezpečené výchozí hodnoty. Diskuzi o kvótách najdete v tématu Infrastruktura XML.  
   
-## <a name="features-of-system-provided-encoders"></a>Funkce poskytované systémem kodérů  
- Existuje mnoho z funkcí poskytovaných službou kodérů poskytované systémem.  
+## <a name="features-of-system-provided-encoders"></a>Funkce kodérů poskytovaných systémem  
+ Kodéry poskytované systémem obsahují řadu funkcí.  
   
 ### <a name="pooling"></a>Sdružování  
- Každá implementace kodér pokusí fondu co největší míře. Omezení přidělení je klíče způsob, jak zlepšit výkon spravovaného kódu. K provedení této sdružování, implementace použít `SynchronizedPool` třídy. C# Soubor obsahuje popis Další optimalizace použitou touto třídou.  
+ Každé z těchto implementací kodéru se pokusí co nejvíce vyřadit z fondu. Snížení počtu přidělení je klíčovým způsobem, jak vylepšit výkon spravovaného kódu. Pro dosažení tohoto sdružování implementují implementace `SynchronizedPool` třídu. C# Soubor obsahuje popis dalších optimalizace používaných touto třídou.  
   
- <xref:System.Xml.XmlDictionaryReader> a <xref:System.Xml.XmlDictionaryWriter> instance jsou ve fondu a znovu inicializovat, aby se zabránilo přidělení nové značky pro každou zprávu. Pro čtenáře `OnClose` čtečky uvolňuje zpětného volání při `Close()` je volána. Kodér recykluje také některé objekty stavu zprávy používá při vytváření zpráv. Velikosti tyto fondy se dají konfigurovat pomocí `MaxReadPoolSize` a `MaxWritePoolSize` vlastnosti na každé tři třídy odvozené z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
+ <xref:System.Xml.XmlDictionaryReader>a <xref:System.Xml.XmlDictionaryWriter> instance jsou sdružené a znovu inicializované, aby nedocházelo k přidělování nových zpráv pro každou zprávu. Pro čtenáře, `OnClose` zpětné volání Redeklarace čtenáře při `Close()` volání metody. Kodér také recykluje některé objekty stavu zprávy používané při sestavování zpráv. Velikosti těchto fondů lze konfigurovat pomocí `MaxReadPoolSize` vlastností a `MaxWritePoolSize` na každé ze tří tříd odvozených z <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
 ### <a name="binary-encoding"></a>Binární kódování  
- Když binární kódování používá relace, řetězec dynamický slovník musí sdělí příjemce zprávy. To se provádí přidáním prefixu zprávu s řetězci dynamický slovník. Příjemce odstraní vypnout řetězce, se přidají do relace a zprávu zpracuje. Správně předávání řetězce slovníku vyžaduje, že přenos do vyrovnávací paměti.  
+ Když binární kódování používá relace, řetězec dynamického slovníku musí být sdělen příjemci zprávy. K tomu slouží předpona zprávy s dynamickými řetězci slovníku. Přijímač odliští řetězce, přidá je do relace a zpracuje zprávu. Správné předání řetězců slovníku vyžaduje, aby transport byl uložen do vyrovnávací paměti.  
   
- Řetězce jsou připojeny k zpráva o interní `AddSessionInformationToMessage` metody. Řetězce jako UTF-8 přidá do popředí předponu jejich délku zprávy. Hlavička slovníku celý je pak předponu délky jeho data. Zpětný provoz se provádí pomocí vnitřního `ExtractSessionInformationFromMessage` metody.  
+ Řetězce jsou připojeny k zprávě pomocí interní `AddSessionInformationToMessage` metody. Přidá řetězce jako UTF-8 do přední části zprávy s předponou. Celá hlavička slovníku je pak předpona s délkou jejich dat. Reverzní operace provádí interní `ExtractSessionInformationFromMessage` metodu.  
   
- Kromě zpracování dynamický slovník klíčů, jsou ve vyrovnávací paměti s relacemi zprávy přijímány jednoznačným způsobem. Místo vytváření čtečky přes dokument a její zpracování, používá vnitřní binárního kodéru `MessagePatterns` třídy dekonstruovat binárního datového proudu. Cílem je, že většina zprávy mají určitou sadu záhlaví, které se zobrazí v určitém pořadí při generování službou WCF. Zpráva této doby změny nepublikujete založené na co se očekává, že se rozdělí vzor systému. Pokud je úspěšná, inicializuje <xref:System.ServiceModel.Channels.MessageHeaders> objekt bez při parsování kódu XML. Pokud ne, vrátí se zpět na standardní metodu.  
+ Kromě zpracování dynamických klíčů slovníku se zprávy relací s vyrovnávací pamětí přijímají jedinečným způsobem. Místo vytvoření čtecího modulu v dokumentu a jeho zpracování použije binární kodér interní `MessagePatterns` třídu k dekonstrukci binárního datového proudu. Výsledkem je, že většina zpráv má určitou sadu hlaviček, která se zobrazí v určitém pořadí při generování službou WCF. Systém vzorků rozdělí zprávy na základě toho, co očekává. Pokud je úspěšná, inicializuje <xref:System.ServiceModel.Channels.MessageHeaders> objekt bez analýzy XML. V takovém případě se vrátí zpět ke standardní metodě.  
   
 ### <a name="mtom-encoding"></a>Kódování MTOM  
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> Třída nemá další konfigurační vlastnost s názvem <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement.MaxBufferSize%2A>. To umístí horní mez na tom, kolik dat je povoleno ji uložit do vyrovnávací paměti při čtení zprávy. XML informace o sadě (informační sadu) nebo jiné části MIME možná muset být sestavit všechny části MIME do jedné zprávy do vyrovnávací paměti.  
+ Třída má další vlastnost konfigurace s názvem <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement.MaxBufferSize%2A>. <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> Tím se umístí horní mez rozsahu dat, ke kterým může během procesu čtení zprávy docházet vyrovnávací paměť. Aby bylo možné překompilovat všechny části MIME do jediné zprávy, může být nutné ukládat do vyrovnávací paměti sadu informací XML (informační sada) nebo jiné části MIME.  
   
- Pro fungování s protokolem HTTP, poskytuje vnitřní třídu zpráv kodér MTOM některá interní rozhraní API pro `GetContentType` (což je také vnitřní) a `WriteMessage`, což je veřejná a mohou být přepsána nastaveními. Pokud chcete zajistit, aby hodnoty v hlavičkách protokolu HTTP svůj souhlas s hodnotami v hlavičky MIME se musí vyskytovat další komunikaci.  
+ Pro správnou práci s protokolem HTTP, interní třída kodéru zpráv MTOM poskytuje některá interní `GetContentType` rozhraní API pro (která jsou také `WriteMessage`interní) a, která je veřejná a může být přepsána. K zajištění toho, aby hodnoty hlaviček protokolu HTTP souhlasily s hodnotami v hlavičkách MIME, musí být k větší komunikace.  
   
- Kodér MTOM zpráv interně používá čtečky textu pro WCF a je podobný kodér textu. Hlavní rozdíl je, že optimalizuje velké skupiny binární soubor, nebo "Binární rozsáhlé objekty" objektů (BLOB), není jejich převedením do kódování Base-64 před je vložen do bajtů zpráv. Místo toho tyto objekty BLOB jsou udržovány extrahované a odkazované jako přílohy MIME.  
+ Kodér zprávy MTOM interně používá čtečky textu WCF a je podobný textu kodéru. Hlavním rozdílem je to, že optimalizuje velké bloky binárních souborů nebo "binárních velkých objektů" (blobů), protože je před vložením do bajtů zpráv nepřevádí na kódování Base-64. Místo toho se tyto objekty blob uchovávají a odkazují jako přílohy MIME.  
   
-## <a name="writing-your-own-encoder"></a>Zápis vlastní kodér  
- Pokud chcete implementovat vlastní vlastní kodér zpráv, je nutné zadat vlastní implementace následujících základních tříd abstraktu:  
+## <a name="writing-your-own-encoder"></a>Psaní vlastního kodéru  
+ Chcete-li implementovat vlastní kodér zpráv, je nutné poskytnout vlastní implementace následujících abstraktních základních tříd:  
   
 - <xref:System.ServiceModel.Channels.MessageEncoder>  
   
@@ -75,27 +75,27 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
   
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
   
- Převod z reprezentace v paměti zprávy na reprezentaci, jež lze zapsat do datového proudu je zapouzdřen v rámci <xref:System.ServiceModel.Channels.MessageEncoder> třídu, která slouží jako objekt pro vytváření pro XML čtečky a zapisovače XML, které podporují konkrétní typy kódování XML.  
+ Převod z reprezentace zprávy v paměti na reprezentaci, která může být zapsána do datového proudu, je zapouzdřen v rámci <xref:System.ServiceModel.Channels.MessageEncoder> třídy, která slouží jako továrna pro čtečky XML a zapisovače XML, které podporují konkrétní typy kódování XML.  
   
-- Jsou klíčové metody této třídy, které je nutné přepsat:  
+- Klíčové metody této třídy, které je nutné přepsat, jsou:  
   
-- <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> které přebírá <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> objektu a zapíše jej do <xref:System.IO.Stream> objektu.  
+- <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A>který přebírá <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> objekt a zapisuje ho <xref:System.IO.Stream> do objektu.  
   
-- <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> které přebírá <xref:System.IO.Stream> a záhlaví maximální velikost a vrací <xref:System.ServiceModel.Channels.Message> objektu.  
+- <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A>který přebírá <xref:System.IO.Stream> objekt a maximální velikost hlavičky a <xref:System.ServiceModel.Channels.Message> vrací objekt.  
   
- Je kód, který píšete v těchto metodách, který zpracovává převod mezi standardní přenosový protokol a vlastní kódování.  
+ Jedná se o kód, který zapisujete do těchto metod, který zpracovává převod mezi standardním transportním protokolem a vlastním kódováním.  
   
- Dál musíte kód třídu objektů factory, který vytváří vlastní kodér. Přepsat <xref:System.ServiceModel.Channels.MessageEncoderFactory.Encoder%2A> vrátit instanci vaší vlastní <xref:System.ServiceModel.Channels.MessageEncoder>.  
+ Dále je nutné vytvořit kód třídy továrny, která vytvoří vlastní kodér. Přepište <xref:System.ServiceModel.Channels.MessageEncoder>a vraťte instanci svého vlastního. <xref:System.ServiceModel.Channels.MessageEncoderFactory.Encoder%2A>  
   
- Připojte své vlastní <xref:System.ServiceModel.Channels.MessageEncoderFactory> na zásobník element vazby, který se používá ke konfiguraci služby ani klienta tak, že přepíšete <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> metoda vrátí instanci tento objekt pro vytváření.  
+ Pak připojte vlastní <xref:System.ServiceModel.Channels.MessageEncoderFactory> ke zásobníku prvků vazby, který se používá ke konfiguraci služby nebo klienta, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> přepsáním metody, která vrátí instanci tohoto objektu pro vytváření.  
   
- Existují dvě ukázky součástí WCF, které ilustrují tento proces se vzorovým kódem: [Vlastní kodér zpráv: Vlastní kodér textu](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md) a [vlastní kodér zpráv: Kompresní kodér](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md).  
+ Pro WCF jsou k dispozici dvě ukázky, které ilustrují tento proces s ukázkovým kódem: [Vlastní kodér zpráv: Vlastní kodér](../samples/custom-message-encoder-custom-text-encoder.md) textu a [vlastní kodér zpráv: Kompresní kodér](../samples/custom-message-encoder-compression-encoder.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.MessageEncoderFactory>
 - <xref:System.ServiceModel.Channels.MessageEncoder>
-- [Strukturální přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)
-- [Výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
-- [Volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+- [Strukturální přehled přenosu dat](../feature-details/data-transfer-architectural-overview.md)
+- [Výběr kodéru zprávy](../feature-details/choosing-a-message-encoder.md)
+- [Volba přenosu](../feature-details/choosing-a-transport.md)

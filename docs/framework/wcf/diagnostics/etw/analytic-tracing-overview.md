@@ -4,47 +4,47 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
-ms.openlocfilehash: b8241485d75932cd0b8be85d231897b0bc199f0a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6170accc01e837bba0afb446f67a6c6272e7dde7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592112"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798200"
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
-Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je vysoký výkon a nízkou úroveň podrobností funkce trasování nastavit nad Event Tracing for Windows (ETW). Trasování událostí pro Windows se spustí na úrovni jádra výrazně snížit nároky na operations trasování. To efektivně ukládá do vyrovnávací paměti události uživatele a jádra režimu a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování je k dispozici v případě, že generované a přijaté protokolování po něm.  
+Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] nástroji je funkce pro sledování událostí s vysokým výkonem a nízkou mírou podrobností nastavenou nad sledováním událostí pro Windows (ETW). ETW běží na úrovni jádra, aby významně snížila nároky na operace trasování. Efektivně ukládá do vyrovnávací paměti události režimu jádra a uživatele a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování jsou k dispozici v protokolech událostí poté, co byly vygenerovány a přijímány.  
   
- Další informace o trasování událostí pro Windows najdete v tématu [vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](https://go.microsoft.com/fwlink/?LinkId=164781).  
+ Další informace o trasování událostí pro Windows najdete v tématu [vylepšení ladění a ladění výkonu pomocí ETW](https://go.microsoft.com/fwlink/?LinkId=164781).  
   
- Kromě použití protokolů událostí systému Windows, zabezpečení a aplikací pro analýzu aplikace, [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavést další protokoly nejvyšší úrovně uzlu protokoly aplikací a služeb. Účelem tyto nové protokoly se k uložení událostí pro konkrétní aplikaci nebo konkrétní součást místo globální události, které mají vliv celý systém (jako je například typ události, které může zaznamenat protokolu událostí zabezpečení). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] sjednocuje a koreluje protokolování WCF trasování událostí, protokoly zpráv WCF, a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů protokoly aplikací a služeb.  
+ Kromě použití protokolů událostí systému Windows, zabezpečení a aplikací k analýze aplikace [!INCLUDE[wv](../../../../../includes/wv-md.md)] a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedení dalších protokolů v uzlu aplikace a služby na nejvyšší úrovni. Účelem těchto nových protokolů je ukládat události pro konkrétní aplikaci nebo konkrétní komponentu namísto globálních událostí, které mají vliv na systém (například typ událostí, které může protokol událostí zabezpečení zaznamenat). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)]sjednocuje a koreluje protokolování událostí trasování WCF, protokolů zpráv WCF a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů v protokolech aplikací a služeb.  
   
-## <a name="concepts-and-capabilities"></a>Koncepty a funkce  
- Následující koncepty a možnosti použít analytické trasování WCF.  
+## <a name="concepts-and-capabilities"></a>Koncepty a možnosti  
+ Následující koncepty a možnosti se vztahují na analytické trasování WCF.  
   
-### <a name="enabling-wcf-diagnostics-settings"></a>Povolení nastavení diagnostiky WCF  
- V rámci je povolená Diagnostika WCF \<system.serviceModel >\<diagnostiky > konfigurační oddíl.  
+### <a name="enabling-wcf-diagnostics-settings"></a>Povoluje se nastavení diagnostiky WCF.  
+ Diagnostika služby WCF je povolená \<v konfiguračním oddílu System\<. ServiceModel > Diagnostics >.  
   
 ```xml  
 <system.serviceModel>  
   <diagnostics>  
 ```  
   
- WCF nastavení diagnostiky pro virtuální aplikace hostované na Web služby IIS jsou povolené v jeho "souboru Web.config. Další možností je vytvořit soubor Web.config v dílčí adresáře v rámci aplikace.  Tato volba platí pro všechny služby v rámci podadresář nastavení.  Aby bylo zajištěno, že jsou nastavení diagnostiky pro všechny služby v rámci aplikace konzistentně inicializovány, byste nastavit v souboru Web.config v adresáře aplikace a není v jednotlivých podadresářích v rámci aplikace.  
+ Nastavení diagnostiky WCF pro virtuální aplikaci služby IIS hostovanou webovým prostředím jsou povolená v souboru Web. config. Další možností je vytvořit soubor Web. config v podadresáři v rámci aplikace.  Tato volba aplikuje nastavení na všechny služby v podadresáři.  Aby se zajistilo, že nastavení diagnostiky se konzistentně inicializuje pro všechny služby v rámci aplikace, měla by být nastavení v souboru Web. config v adresáři aplikace, a ne v jednom z dílčích adresářů v rámci aplikace.  
   
 ### <a name="channels"></a>Kanály  
- Trasování událostí pro Windows umožňuje softwarových komponent přímé trasování událostí pro konkrétní cílové skupiny pomocí kanálů. Například můžete poslat události pro správce systému na jeden kanál a události péče o tuto aplikaci vývojáře o jiném kanálu. Kanály jsou s názvem a registrovány s Windows, příjemci mohli zobrazit události kanál pomocí prohlížeče událostí.  
+ ETW umožňuje softwarovým součástem směrovat události trasování na konkrétní cílovou skupinu pomocí kanálů. Můžete například odesílat události pro správce systému do jednoho kanálu a události, které vývojáři aplikací postarou o jiný kanál. Kanály se nazývají a registrují ve Windows, aby si uživatelé mohli zobrazit události kanálu pomocí Prohlížeč událostí.  
   
- Analytické trasování funkce pro službu WCF v [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] zapíše do kanálu Microsoft-Windows--Server-aplikace. Tento kanál je navržená speciálně pro uživatele, kteří chtějí sledovat stav služeb WCF v produkčním prostředí. Definuje malá, sadu událostí, které lze použít v mnoha monitorování stavu a řešení potíží se scénáři.  
+ Funkce analytického trasování pro WCF v [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] zápisu do kanálu Microsoft-Windows-Application-Server-Applications. Tento kanál je navržený speciálně pro uživatele, kteří chtějí monitorovat stav služeb WCF v produkčním prostředí. Definuje malou sadu událostí, která se dá použít v mnoha scénářích monitorování stavu a odstraňování potíží.  
   
- Chcete-li manifest události trasování pro Windows tak, aby zprávy jsou správně dekódovat. v protokolu událostí, pomocí nástroje ServiceModelReg na příkazovém řádku takto:  
+ Chcete-li povolit trasování událostí pro manifest systému Windows, aby byly zprávy v protokolu událostí správně Dekódovatelné, použijte Nástroj ServiceModelReg na příkazovém řádku následujícím způsobem:  
   
  `ServiceModelReg.exe -i -c:etw`  
   
-### <a name="dynamic-configuration"></a>Dynamickou konfiguraci  
- Trasování událostí pro Windows infrastruktury umožňuje trasování, aby bylo možné povolené a nakonfigurované dynamické použití standardních nástrojů Windows. Další informace najdete v tématu [dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).  
+### <a name="dynamic-configuration"></a>Dynamická konfigurace  
+ Infrastruktura ETW umožňuje, aby bylo trasování povolené a nakonfigurované dynamicky pomocí standardních nástrojů Windows. Další informace najdete v tématu [dynamické povolení analytického trasování](dynamically-enabling-analytic-tracing.md).  
   
 ### <a name="message-flow-tracing"></a>Trasování toku zpráv  
- Další informace o tom, jak povolit trasování toku zpráv najdete v tématu [Konfigurace trasování toku zpráv](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md).  
+ Další informace o tom, jak povolit trasování toku zpráv, najdete v tématu [Konfigurace trasování toku zpráv](configuring-message-flow-tracing.md).  
   
 ### <a name="keywords"></a>klíčová slova  
- Klíčová slova se používají k filtrování zprávy trasování a definují, jaká součást rozhraní .NET Framework, protože ho události. Další informace najdete v tématu [dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md).
+ Klíčová slova slouží k filtrování zpráv trasování a definování součásti .NET Framework vyvolaly událost. Další informace najdete v tématu [dynamické povolení analytického trasování](dynamically-enabling-analytic-tracing.md).

@@ -2,24 +2,24 @@
 title: StartErrorPublish
 ms.date: 03/30/2017
 ms.assetid: d261929a-bd41-4611-8951-d1fb16bda0bc
-ms.openlocfilehash: 0fd0ddb5c8ea17dc2bc721da8e547af30c460277
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f4b8e11803dee757130e34726a384eb59af4e51c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998986"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797541"
 ---
 # <a name="starterrorpublish"></a>StartErrorPublish
-Id: 158  
+Účet 158  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: SMSvcHost  
+ Kategorií SMSvcHost  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že služba NT se nespustila. Naslouchání koncového bodu se nepodařilo publikovat. Události jsou uvedeny, název procesu a ID procesu.  
+ Tato událost indikuje, že se nepovedlo spustit službu NT. Koncový bod naslouchací služby nelze publikovat. Událost obsahuje název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 705771bb04088edf8276bf36432ef88ff288ba34
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38f98b971e430a2c35a4c484f4f9c4bf387c640c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751728"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798952"
 ---
 # <a name="strongnamesignaturesize-function"></a>StrongNameSignatureSize – funkce
-Vrátí velikost položky podpis silného názvu. `StrongNameSignatureSize` se obvykle používá kompilátory k určení, kolik místa vyhradit v souboru při vytváření sestavení se zpožděným podpisem.  
+Vrátí velikost podpisu silného názvu. `StrongNameSignatureSize`je obvykle používán kompilátory k určení, kolik místa lze v souboru vyhradit při vytváření sestavení se zpožděným podpisem.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamesignaturesize –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameSignatureSize –](../hosting/iclrstrongname-strongnamesignaturesize-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,30 +40,30 @@ BOOLEAN StrongNameSignatureSize (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
- [in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.  
+ pro Struktura typu [PublicKeyBlob –](publickeyblob-structure.md) , která obsahuje veřejnou část páru klíčů sloužící k vygenerování podpisu silného názvu.  
   
  `cbPublicKeyBlob`  
- [in] Velikost v bajtech, z `pbPublicKeyBlob`.  
+ pro Velikost v bajtech `pbPublicKeyBlob`.  
   
  `pcbSize`  
- [in] Počet bajtů vyžadovaných k uložení podpis silného názvu.  
+ pro Počet bajtů vyžadovaných k uložení podpisu silného názvu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameSignatureSize` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameSignatureSize` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameSignatureSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureSize – metoda](../hosting/iclrstrongname-strongnamesignaturesize-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

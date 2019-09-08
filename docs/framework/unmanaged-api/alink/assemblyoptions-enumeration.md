@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 324e30f6cbcaa1d1d81c7c03967dbb629d2cd6e9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 49e7b73559e8def890f8df8f596fbe8ad5bb5d3b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742262"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777480"
 ---
 # <a name="assemblyoptions-enumeration"></a>AssemblyOptions – výčet
 Vytvoří výčet možností sestavení.  
@@ -58,32 +58,32 @@ typedef enum _AssemblyOptions {
   
 |Pole|Popis|  
 |-----------|-----------------|  
-|optAssemTitle|String – představuje název sestavení.|  
-|optAssemDescription|String – obsahuje popis sestavení.|  
-|optAssemConfig|String – obsahuje konfiguraci sestavení.|  
-|optAssemOS|String – zakódován jako: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
+|optAssemTitle|Řetězec – představuje název sestavení.|  
+|optAssemDescription|Řetězec – obsahuje popis sestavení.|  
+|optAssemConfig|Řetězec – obsahuje konfiguraci sestavení.|  
+|optAssemOS|Řetězec kódovaný jako: "dwOSPlatformId. dwOSMajorVersion. dwOSMinorVersion".|  
 |optAssemProcessor|ULONG|  
-|optAssemLocale|String – obsahuje národní prostředí sestavení.|  
-|optAssemVersion|String – zakódován jako: "Major.Minor.Build.Revision".|  
-|optAssemCompany|String – obsahuje společnosti.|  
-|optAssemProduct|String – obsahuje název produktu.|  
-|optAssemProductVersion|Řetězec (označované také jako InformationalVersion).|  
-|optAssemCopyright|String – obsahuje informace o autorských právech.|  
-|optAssemTrademark|String – obsahuje informace o ochranných známkách.|  
+|optAssemLocale|Řetězec – obsahuje národní prostředí sestavení.|  
+|optAssemVersion|Řetězec kódovaný jako: "Hlavní_verze. podverze. sestavení. revize".|  
+|optAssemCompany|Řetězec – obsahuje společnost.|  
+|optAssemProduct|Řetězec – obsahuje název produktu.|  
+|optAssemProductVersion|String (označuje se také jako InformationalVersion).|  
+|optAssemCopyright|Řetězec – obsahuje informace o autorských právech.|  
+|optAssemTrademark|Řetězec – obsahuje informace o ochranných známkách.|  
 |optAssemKeyFile|String (název souboru).|  
-|optAssemKeyName|String (název klíče).|  
+|optAssemKeyName|Řetězec (název klíče).|  
 |optAssemAlgID|ULONG|  
 |optAssemFlags|ULONG|  
-|optAssemHalfSign|BOOL (označované také jako DelaySign).|  
-|optAssemFileVersion|String – kódovaný jako "Hlavníverze.podverze.Build.revize" – stejně jako ProductVersion.|  
-|optAssemSatelliteVer|String – kódovaný jako "Hlavníverze.podverze.Build.revize".|  
-|optLastAssemOption|Čítač Počet prvků.|  
+|optAssemHalfSign|Bool (označuje se také jako DelaySign).|  
+|optAssemFileVersion|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize" – stejné jako ProductVersion.|  
+|optAssemSatelliteVer|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize".|  
+|optLastAssemOption|Čítač počtu prvků.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** alink.h  
+ **Záhlaví:** ALink. h  
   
- **Knihovna**: alink.dll  
+ **Knihovna**: ALink. dll  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

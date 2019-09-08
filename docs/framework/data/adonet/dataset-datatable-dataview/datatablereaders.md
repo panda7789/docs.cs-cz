@@ -2,12 +2,12 @@
 title: DataTableReaders
 ms.date: 03/30/2017
 ms.assetid: 97546ae2-0e42-4d26-961d-e0b244d81ded
-ms.openlocfilehash: 1ff7868b59c6fdc4e6c443be1b831accc84f36a6
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 1559cde9cb786ccb2baf920347064b8b28d472c3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203815"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785341"
 ---
 # <a name="datatablereaders"></a>DataTableReaders
 Zobrazí obsah <xref:System.Data.DataTable> nebo<xref:System.Data.DataSet> ve formě jedné nebo více sad výsledků pouze pro čtení, které jsou jen pro čtení. <xref:System.Data.DataTableReader>  
@@ -26,4 +26,4 @@ Zobrazí obsah <xref:System.Data.DataTable> nebo<xref:System.Data.DataSet> ve fo
 ## <a name="see-also"></a>Viz také:
 
 - [Načítání a úpravy dat v ADO.NET](../retrieving-and-modifying-data.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

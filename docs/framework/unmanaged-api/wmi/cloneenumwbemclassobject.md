@@ -1,6 +1,6 @@
 ---
-title: Funkce CloneEnumWbemClassObject (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce CloneEnumWbemClassObject vytvoří kopii logické enumerátor.
+title: CloneEnumWbemClassObject – funkce (Reference nespravovaného rozhraní API)
+description: Funkce CloneEnumWbemClassObject vytvoří logickou kopii enumerátoru.
 ms.date: 11/06/2017
 api_name:
 - CloneEnumWbemClassObject
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab660769a49cf12b129cb7f44b8378053a231f8c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1605314f94fd82d2a2cd7be105dde9e273f607bc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761623"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798694"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>Funkce CloneEnumWbemClassObject
-Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve výčtu.
+Vytvoří logickou kopii enumerátoru a uchová jeho aktuální pozici ve výčtu.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -45,56 +45,56 @@ HRESULT CloneEnumWbemClassObject (
 ## <a name="parameters"></a>Parametry
 
 `ppEnum`\
-[out] Přijímá ukazatel na novou [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject).
+mimo Přijme ukazatel na nový [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject).
 
 `authLevel`\
-[in] Úroveň autorizace.
+pro Úroveň autorizace.
 
 `impLevel`\
-[in] Úroveň zosobnění.
+pro Úroveň zosobnění.
 
 `pCurrentEnumWbemClassObject`\
-[out] Ukazatel [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) instance ke klonování.
+mimo Ukazatel na instanci [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) , která se má klonovat
 
 `strUser`\
-[in] Uživatelské jméno. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Uživatelské jméno Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 `strPassword`\
-[in] Heslo. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Heslo. Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
-`strAuthority`\ [in] název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+`strAuthority`\ [in] název domény uživatele. Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Není k dispozici není dostatek paměti dokončit operaci. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení operace není k dispozici dostatek paměti. |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraním WMI se nezdařilo. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) metody.
+Tato funkce zalomí volání metody [IEnumWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) .
 
-Tato metoda provádí pouze kopie "co možná nejlepší". Vzhledem k dynamické povaze velký počet objektů CIM je možné, že nový čítač není výčet stejnou sadu objektů jako enumerátoru zdroje.
+Tato metoda vytvoří pouze "nejlepší úsilí". Vzhledem k dynamické povaze mnoha objektů CIM je možné, že nový enumerátor nevytvoří výčet stejné sady objektů jako zdrojový enumerátor.
 
-Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud volání funkce neproběhne úspěšně, můžete získat další informace o chybě voláním funkce [GetErrorInfo](geterrorinfo.md) .
 
 ## <a name="example"></a>Příklad
 
-Příklad najdete v tématu [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) metody.
+Příklad naleznete v tématu metoda [IEnumWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) .
 
 ## <a name="requirements"></a>Požadavky
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
- **Záhlaví:** WMINet_Utils.idl
+ **Hlaviček** WMINet_Utils.idl
 
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

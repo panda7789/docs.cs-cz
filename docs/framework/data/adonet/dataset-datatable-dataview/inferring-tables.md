@@ -2,12 +2,12 @@
 title: Odvozování tabulek
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 84cee828f2d3c918a12e449da5b01a3d72d86333
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 52ffd3fe90eb491dd01acf8538276cc828fdb309
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203517"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784493"
 ---
 # <a name="inferring-tables"></a>Odvozování tabulek
 Při odvozování schématu pro <xref:System.Data.DataSet> z dokumentu XML ADO.NET nejprve Určuje, které elementy XML reprezentují tabulky. Následující struktury XML vedou v tabulce pro schéma **datové sady** :  
@@ -87,7 +87,7 @@ Při odvozování schématu pro <xref:System.Data.DataSet> z dokumentu XML ADO.N
 </DocumentElement>  
 ```  
   
- Proces odvození vytvoří datovou **sadu** s názvem "DocumentElement", která obsahuje tabulku s názvem "Element1".  
+ Proces odvození vytvoří **datovou sadu** s názvem "DocumentElement", která obsahuje tabulku s názvem "Element1".  
   
  **Integrován** DocumentElement  
   
@@ -125,4 +125,4 @@ Při odvozování schématu pro <xref:System.Data.DataSet> z dokumentu XML ADO.N
 - [Načtení informací o schématu datové sady z XML](loading-dataset-schema-information-from-xml.md)
 - [Použití XML v datové sadě](using-xml-in-a-dataset.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

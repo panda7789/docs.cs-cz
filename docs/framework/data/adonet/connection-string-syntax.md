@@ -2,12 +2,12 @@
 title: Syntaxe připojovacího řetězce
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: 9b43dc780b8570bd671f6b5d9db14a0c98e822d8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 00b8dc4c7592daa200f1a2a6c3c7fa9a3c587087
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949473"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784912"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 Každý zprostředkovatel dat .NET Framework má `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> , a také vlastnost specifickou <xref:System.Data.Common.DbConnection.ConnectionString%2A> pro poskytovatele. Konkrétní syntaxi připojovacího řetězce pro každého poskytovatele je popsána `ConnectionString` v jeho vlastnosti. V následující tabulce jsou uvedeny čtyři poskytovatelé dat, kteří jsou součástí .NET Framework.  
@@ -30,7 +30,7 @@ Každý zprostředkovatel dat .NET Framework má `Connection` objekt, který dě
   
 - <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
   
- Tvůrci připojovacích řetězců umožňují vytvořit syntakticky platné připojovací řetězce za běhu, takže není nutné ručně zřetězit hodnoty připojovacího řetězce v kódu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+ Tvůrci připojovacích řetězců umožňují vytvořit syntakticky platné připojovací řetězce za běhu, takže není nutné ručně zřetězit hodnoty připojovacího řetězce v kódu. Další informace najdete v tématu [tvůrci připojovacích řetězců](connection-string-builders.md).  
 
 ## <a name="windows-authentication"></a>Ověřování systému Windows  
  Pro připojení ke zdrojům dat, které ji podporují, doporučujeme použít ověřování systému Windows (někdy označované jako *integrované zabezpečení*). Syntaxe, která je zaměstnána v připojovacím řetězci, se liší podle poskytovatele. V následující tabulce jsou uvedeny syntaxe ověřování systému Windows používané s poskytovateli dat .NET Framework.  
@@ -90,7 +90,7 @@ Můžete také nastavit <xref:System.Data.SqlClient.SqlConnectionStringBuilder.D
 ## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Připojení a připojení k SQL Server Express uživatelské instance  
  Uživatelské instance jsou funkcí v SQL Server Express. Umožňují uživateli, který běží na místním účtu systému Windows s minimálními oprávněními pro připojení a spuštění databáze SQL Server bez nutnosti oprávnění správce. Uživatelská instance se spustí s přihlašovacími údaji uživatele Windows, ne jako službou.  
   
- Další informace o práci s uživatelskými instancemi najdete v tématu [SQL Server Express uživatelské instance](../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md).  
+ Další informace o práci s uživatelskými instancemi najdete v tématu [SQL Server Express uživatelské instance](./sql/sql-server-express-user-instances.md).  
   
 ## <a name="using-trustservercertificate"></a>Použití TrustServerCertificate  
  `TrustServerCertificate` Klíčové slovo je platné pouze při připojení k instanci SQL Server s platným certifikátem. Pokud `TrustServerCertificate` je nastavená `true`na, transportní vrstva bude používat protokol SSL k šifrování kanálu a obejít procházení řetězu certifikátů za účelem ověření vztahu důvěryhodnosti.  
@@ -196,6 +196,6 @@ Data Source=Oracle9i;User ID=*****;Password=*****;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Připojovací řetězce](connection-strings.md)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Přehled ADO.NET](ado-net-overview.md)

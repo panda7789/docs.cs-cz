@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 381f796bec31bece354001ad46bf5079381d1b3d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ccfe40f218e3f09de53d6cb596a31b2520d9ff9b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914548"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783470"
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]
@@ -37,47 +37,47 @@ csc /r:System.Data.OracleClient.dll
 ```  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Požadavky na systém](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
+ [Požadavky na systém](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
  Popisuje požadavky na použití Zprostředkovatel dat .NET Framework pro Oracle a popisuje několik problémů, které je potřeba při použití použít.  
   
- [Soubory Oracle BFILE](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
+ [Soubory Oracle BFILE](oracle-bfiles.md)  
  <xref:System.Data.OracleClient.OracleBFile> Popisuje třídu, která se používá pro práci s datovým typem Oracle BFILE.  
   
- [Soubory Oracle LOB](../../../../docs/framework/data/adonet/oracle-lobs.md)  
+ [Soubory Oracle LOB](oracle-lobs.md)  
  <xref:System.Data.OracleClient.OracleLob> Popisuje třídu, která se používá pro práci s datovými typy společnosti Oracle LOB.  
   
- [Soubory Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+ [Soubory Oracle REF CURSOR](oracle-ref-cursors.md)  
  Popisuje podporu pro datový typ referenčního kurzoru Oracle REF.  
   
- [Typy Oracle](../../../../docs/framework/data/adonet/oracletypes.md)  
+ [Typy Oracle](oracletypes.md)  
  Popisuje struktury, které můžete použít pro práci s datovými typy Oracle <xref:System.Data.OracleClient.OracleNumber> , <xref:System.Data.OracleClient.OracleString>včetně a.  
   
- [Sekvence Oracle](../../../../docs/framework/data/adonet/oracle-sequences.md)  
+ [Sekvence Oracle](oracle-sequences.md)  
  Popisuje podporu pro načtení hodnot sekvence Oracle vygenerovaných serverem klíčů.  
   
- [Mapování datových typů Oracle](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
+ [Mapování datových typů Oracle](oracle-data-type-mappings.md)  
  Zobrazí seznam datových typů Oracle a jejich mapování na <xref:System.Data.OracleClient.OracleDataReader>.  
   
- [Distribuované transakce Oracle](../../../../docs/framework/data/adonet/oracle-distributed-transactions.md)  
+ [Distribuované transakce Oracle](oracle-distributed-transactions.md)  
  Popisuje, jak <xref:System.Data.OracleClient.OracleConnection> objekt automaticky zařadí do existující distribuované transakce, pokud určuje, že je transakce aktivní.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)  
  Popisuje postupy zabezpečeného kódování při použití ADO.NET.  
   
- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [Datové sady, datové tabulky a datová zobrazení](./dataset-datatable-dataview/index.md)  
  Popisuje, jak vytvořit a používat `DataSets`, `DataTables`zadat `DataSets`, a `DataViews`.  
   
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)  
  Popisuje, jak pracovat s daty v ADO.NET.  
   
- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
+ [SQL Server a ADO.NET](./sql/index.md)  
  Popisuje, jak pracovat s funkcemi a funkcemi, které jsou specifické pro SQL Server.  
   
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
+ [DbProviderFactories](dbproviderfactories.md)  
  Popisuje obecné třídy, které umožňují napsat kód nezávislý na poskytovateli v ADO.NET.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET](index.md)
+- [Přehled ADO.NET](ado-net-overview.md)

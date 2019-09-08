@@ -5,31 +5,31 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8fdd64af-6ad0-46cd-91c8-dbe26620eeb1
-ms.openlocfilehash: 27a48b7ffe5466c52f19f15cf3c1a6cb558028b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6a9dc82e0bb065b455c0208daaf2d28a74cd7e34
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607017"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784198"
 ---
 # <a name="dataset-specific-operator-examples-linq-to-dataset"></a>Příklady operátorů specifických pro datovou sadu (LINQ to DataSet)
-Příklady v tomto tématu ukazují, jak používat <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metoda a <xref:System.Data.DataRowComparer> třídy.  
+Příklady v tomto tématu ukazují, jak používat <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metodu <xref:System.Data.DataRowComparer> a třídu.  
   
- `FillDataSet` Metodu použitou v těchto příkladech je zadán v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
+ Metoda použitá v těchto příkladech je určena při [načítání dat do datové sady.](loading-data-into-a-dataset.md) `FillDataSet`  
   
- Příklady v tomto tématu použijte tabulky Kontakt, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
+ V příkladech v tomto tématu se používá tabulka Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
   
- V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
+ Příklady v tomto tématu používají následující `using` / `Imports` příkazy:  
   
  [!code-csharp[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#importsusing)]  
   
- Další informace najdete v tématu [jak: Vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
+ Další informace najdete v tématu [jak: Vytvoření projektu LINQ to DataSet v aplikaci Visual Studio](how-to-create-a-linq-to-dataset-project-in-vs.md).  
   
 ## <a name="copytodatatable"></a>CopyToDataTable  
   
 ### <a name="example"></a>Příklad  
- Tento příklad načte <xref:System.Data.DataTable> s výsledky dotazu pomocí <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metody.  
+ Tento příklad načte <xref:System.Data.DataTable> s výsledky dotazu <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> pomocí metody.  
   
  [!code-csharp[DP LINQ to DataSet Examples#LoadDataTableWithQueryResults](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#loaddatatablewithqueryresults)]
  [!code-vb[DP LINQ to DataSet Examples#LoadDataTableWithQueryResults](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#loaddatatablewithqueryresults)]  
@@ -37,11 +37,11 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Data.DataTableE
 ## <a name="datarowcomparer"></a>DataRowComparer  
   
 ### <a name="example"></a>Příklad  
- Tento příklad porovná dva řádky s různými daty pomocí <xref:System.Data.DataRowComparer>.  
+ Tento příklad porovnává dva různé datové řádky pomocí <xref:System.Data.DataRowComparer>.  
   
  [!code-csharp[DP LINQ to DataSet Examples#CompareDifferentDataRows](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#comparedifferentdatarows)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
-- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+- [Načtení dat do datové sady](loading-data-into-a-dataset.md)
+- [Příklady LINQ to DataSet](linq-to-dataset-examples.md)

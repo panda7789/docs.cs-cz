@@ -1,6 +1,6 @@
 ---
-title: GetErrorInfo – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetErrorInfo – načte informace o chybě z předchozího volání funkce.
+title: GetErrorInfo – funkce (odkaz na nespravované rozhraní API)
+description: Funkce GetErrorInfo načte informace o chybě z předchozího volání funkce.
 ms.date: 11/06/2017
 api_name:
 - GetErrorInfo
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e33a18487da420eb3b317bb70e0ac9e68b4b8ad6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ab801ec7899403f568d953535fcd430a862a2fd8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746551"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798577"
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo – funkce
 Načte informace o chybě z předchozího volání funkce.  
@@ -36,19 +36,19 @@ IErrorInfo* GetErrorInfo();
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Ukazatel na [IErrorInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) objektu, pokud bude volání funkce úspěšné, nebo `null` Pokud selže.
+Ukazatel na objekt [IErrorInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) , pokud je volání funkce úspěšné, nebo `null` Pokud selže.
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IComThreadingInfo::GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) metody.
+Tato funkce zalomí volání metody [IComThreadingInfo:: GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.def  
+ **Hlaviček** WMINet_Utils.def  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

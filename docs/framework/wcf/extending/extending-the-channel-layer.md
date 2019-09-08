@@ -4,25 +4,25 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - extending channels [WCF]
 ms.assetid: 4238db74-2fb6-4dc8-a326-f58527230810
-ms.openlocfilehash: e60d8ef1a5191c6407b01eb1a2456a06aeeb1914
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76ca76d7973403c657b8f68bfde9619df36f220e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857906"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797134"
 ---
 # <a name="extending-the-channel-layer"></a>Rozšíření vrstvy kanálu
-Kanál vrstvu je zodpovědná za výměny zpráv mezi klienty a služby. Rozšíření kanálu můžete implementovat nové funkce protokolu, jako je zabezpečení nebo přenos funkce, jako je například implementace nového síťového přenosu přenášet zprávy protokolu SOAP.  
+Vrstva kanálu zodpovídá za výměnu zpráv mezi klienty a službami. Rozšíření kanálů můžou implementovat nové funkce protokolu, jako je zabezpečení nebo funkce přenosu, jako je implementace nového síťového přenosu pro přenos zpráv SOAP.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md)  
- Poskytuje základní přehled o jaké kanály jsou funkce, které obsahují a jak pracují v službu a klientskou aplikaci.  
+ [Přehled modelu kanálu](channel-model-overview.md)  
+ Poskytuje podrobný přehled o tom, jaké kanály jsou, funkce, které poskytují, a jak fungují jak ve službě, tak v klientské aplikaci.  
   
- [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md)  
- Podrobně popisuje role, které přehrát různých typů kanálů infrastruktury, jak funguje životní cyklus pro modul a stavu stavu, způsob zpracování výjimek a chyb, jak implementovat podpora metadat a fungování kanálů pomocí zprávy kodérů.  
+ [Vývoj kanálů](developing-channels.md)  
+ Podrobně popisuje role, které jsou aktérem různých typů infrastruktury kanálu, jak funguje stavový modul a životní cyklus stavu, jak zpracovávat výjimky a chyby, jak implementovat podporu metadat a jak kanály fungují s kodéry zpráv.  
   
- [Vlastní kodéry](../../../../docs/framework/wcf/extending/custom-encoders.md)  
- Popisuje role, které hrají kodérů zpráv do kanálů a jak takovou sestavit.  
+ [Vlastní kodéry](custom-encoders.md)  
+ Popisuje roli, kterou kodéry zpráv hrají v kanálech a jak je sestavit.  
   
- [Vlastní upgrady streamů](../../../../docs/framework/wcf/extending/custom-stream-upgrades.md)  
- Popisuje postup upgradu datové proudy poskytované orientovaný na stream přenosy.
+ [Vlastní upgrady streamů](custom-stream-upgrades.md)  
+ Popisuje proces upgradu datových proudů poskytovaných přenosy orientovanými na proud.

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 56d1d11240934036994a14e454cf1a1d8b95226a
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204533"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784371"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provedení dotazu XPath u datové sady
 Vztah mezi synchronizovaným <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje využívat služby XML, jako je dotaz jazyka XML Path (XPath), který přistupuje k **objektu XmlDataDocument** a umožňuje pohodlnější fungování určitých funkcí než přímý přístup k **datové sadě** . Například namísto použití metody **Select** objektu <xref:System.Data.DataTable> pro navigaci na relace s jinými tabulkami v **datové sadě**můžete provést dotaz XPath v **objektu XmlDataDocument** , který je synchronizován s **datovou sadou**, a získat tak seznam elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, přetypování jako <xref:System.Xml.XmlElement> uzly, mohou být předány metodě **GetRowFromElement** **objektu XmlDataDocument**, aby vracely vyhovující <xref:System.Data.DataRow> odkazy na řádky tabulky v synchronizovaných.  **Datová sada**.  
   
- Například následující ukázka kódu provede "podřízený" dotaz XPath. **Datová sada** je vyplněna třemi tabulkami: **Zákazníci**, **objednávky**a **OrderDetails**. V ukázce je relace nadřazený-podřízený nejprve vytvořena mezi tabulkami **zákazníci** a **objednávky** a mezi tabulkami Orders a **OrderDetails** . Pak se provede dotaz XPath, který vrátí **XmlNodeList** uzly, kde má uzel **OrderDetails** uzel **ProductID** s hodnotou 43. V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt s **ProductID** 43.  
+ Například následující ukázka kódu provede "podřízený" dotaz XPath. **Datová sada** je vyplněna třemi tabulkami: **Zákazníci**, **objednávky**a **OrderDetails**. V ukázce je relace nadřazený-podřízený nejprve vytvořena mezi tabulkami **zákazníci** a **objednávky** a mezi tabulkami **Orders** a **OrderDetails** . Pak se provede dotaz XPath, který vrátí **XmlNodeList** **uzly,** kde má uzel **OrderDetails** uzel **ProductID** s hodnotou 43. V podstatě ukázka používá dotaz XPath k určení, kteří zákazníci objednali produkt s **ProductID** 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -104,4 +104,4 @@ foreach (XmlNode xmlNode in nodeList)
 ## <a name="see-also"></a>Viz také:
 
 - [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

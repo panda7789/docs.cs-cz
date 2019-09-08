@@ -2,12 +2,12 @@
 title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: cee579f272700ca37228bacecdf387d03637610a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0bfbd1523f1d5db4a94cf3af03a03779af14655d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963055"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795967"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuovaném systému, který obsahuje propojené služby, je nutné určit příčinné vztahy mezi službami. Je důležité pochopit různé komponenty, které byly součástí toku požadavků pro podporu kritických scénářů, jako je monitorování stavu, odstraňování potíží a analýza hlavní příčiny. Pokud chcete povolit korelaci trasování mezi různými službami, v .NET Framework 4 jsme přidali podporu prostřednictvím následujících funkcí:
@@ -18,7 +18,7 @@ V distribuovaném systému, který obsahuje propojené služby, je nutné určit
 
 - Sledování ETW pro WF: Tato funkce používá sledování záznamů generovaných službami WF k zajištění viditelnosti aktuálního stavu a průběhu pracovního postupu.
 
- Chyby zaznamenané v záznamu sledování nebo trasování lze použít k vyhledání vad kódu nebo nesprávně vytvořených zpráv. K určení aktivity selhání lze použít vlastnost ActivityId uzlu korelace v hlavičce zprávy události. Postup povolení trasování toku zpráv podle ID aktivity najdete v tématu [Konfigurace trasování toku zpráv](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Toto téma ukazuje, jak povolit trasování toku zpráv v projektu vytvořeném v Začínámem kurzu.
+ Chyby zaznamenané v záznamu sledování nebo trasování lze použít k vyhledání vad kódu nebo nesprávně vytvořených zpráv. K určení aktivity selhání lze použít vlastnost ActivityId uzlu korelace v hlavičce zprávy události. Postup povolení trasování toku zpráv podle ID aktivity najdete v tématu [Konfigurace trasování toku zpráv](./etw/configuring-message-flow-tracing.md). Toto téma ukazuje, jak povolit trasování toku zpráv v projektu vytvořeném v Začínámem kurzu.
 
 ### <a name="to-enable-message-flow-tracing-in-the-getting-started-tutorial"></a>Postup povolení trasování toku zpráv v Začínáme kurzu
 
@@ -26,7 +26,7 @@ V distribuovaném systému, který obsahuje propojené služby, je nutné určit
 
 2. Pokud jste nepovolili analytické trasování, rozbalte **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikační server – aplikace**. Vyberte **zobrazení**, **Zobrazte protokoly o ladění a ladění**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **Povolit protokol**. Nechejte Prohlížeč událostí otevřené, aby bylo možné zobrazit trasování.
 
-3. Otevřete ukázku vytvořenou v [Začínáme kurzu](../../../../docs/framework/wcf/getting-started-tutorial.md) v aplikaci Visual Studio 2012. Všimněte si, že je nutné spustit aplikaci Visual Studio 2012 jako správce, aby bylo možné službu vytvořit. Pokud máte nainstalované ukázky WCF, můžete otevřít [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.
+3. Otevřete ukázku vytvořenou v [Začínáme kurzu](../getting-started-tutorial.md) v aplikaci Visual Studio 2012. Všimněte si, že je nutné spustit aplikaci Visual Studio 2012 jako správce, aby bylo možné službu vytvořit. Pokud máte nainstalované ukázky WCF, můžete otevřít [Začínáme](../samples/getting-started-sample.md), který obsahuje dokončený projekt vytvořený v tomto kurzu.
 
 4. Klikněte pravým tlačítkem na projekt **služby** a vyberte **Přidat**, **Nová položka**. Vyberte **konfigurační soubor aplikace** a klikněte na **OK**.
 

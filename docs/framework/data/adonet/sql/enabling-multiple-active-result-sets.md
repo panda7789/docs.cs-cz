@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 5dd2bfa0884eac6864630bf393e232cf45bd1c99
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1f8cb573d051970414f3962057f6329683eea5bd
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938202"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782391"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
 Několik aktivních sad výsledků dotazu (MARS) je funkce, která funguje s SQL Server, aby bylo možné spouštět více dávek v jednom připojení. Když je u služby MARS povolený použití s SQL Server, přidá každý objekt příkazu k připojení relaci.  
@@ -68,7 +68,7 @@ string connectionString = "Data Source=MSSQL1;" +
  Operace MARS nejsou bezpečné pro přístup z více vláken.  
   
 ### <a name="connection-pooling"></a>Sdružování připojení  
- Připojení s povoleným MARSm jsou ve fondu jako jakékoli jiné připojení. Pokud aplikace otevře dvě připojení, jedna s povoleným MARS a jedna se zakázaným MARSm, jsou tato dvě připojení v samostatných fondech. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Připojení s povoleným MARSm jsou ve fondu jako jakékoli jiné připojení. Pokud aplikace otevře dvě připojení, jedna s povoleným MARS a jedna se zakázaným MARSm, jsou tato dvě připojení v samostatných fondech. Další informace najdete v tématu věnovaném [sdružování připojení SQL Server (ADO.NET)](../sql-server-connection-pooling.md).  
   
 ### <a name="sql-server-batch-execution-environment"></a>SQL Server prostředí pro spuštění dávky  
  Při otevření připojení je definováno výchozí prostředí. Toto prostředí se pak zkopíruje do logické relace MARS.  
@@ -113,5 +113,5 @@ string connectionString = "Data Source=MSSQL1;" +
   
 ## <a name="see-also"></a>Viz také:
 
-- [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Více aktivních sad výsledků (MARS)](multiple-active-result-sets-mars.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

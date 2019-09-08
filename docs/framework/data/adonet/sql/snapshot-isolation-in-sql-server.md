@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 9f9dfd4f1f299817aa424716aac4408a0b77a240
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2f17e9828f46e6355cdbbddb1b8a83f1188b1a01
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958012"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791741"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL Serveru
 Izolace snímků vylepšuje souběžnost pro aplikace OLTP.  
@@ -143,6 +143,6 @@ SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Přehled ADO.NET](../ado-net-overview.md)
 - [Průvodce zámkem transakcí a správou verzí řádků](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

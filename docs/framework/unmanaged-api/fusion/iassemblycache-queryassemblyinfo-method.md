@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a336e2d4516eaa43decf156f25a62729859a3ff0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 08b9fdee1138becd4cd5a933f96021c470aadf1f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778719"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796790"
 ---
 # <a name="iassemblycachequeryassemblyinfo-method"></a>IAssemblyCache::QueryAssemblyInfo – metoda
-Získá požadovaná data o zadané sestavení.  
+Načte požadovaná data o zadaném sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT QueryAssemblyInfo (
   
 ## <a name="parameters"></a>Parametry  
  `dwFlags`  
- [in] Příznaky definované v Fusion.idl. Podporovány jsou následující hodnoty:  
+ pro Příznaky definované v Fusion. idl Podporovány jsou následující hodnoty:  
   
-- QUERYASMINFO_FLAG_VALIDATE (0X00000001)  
+- QUERYASMINFO_FLAG_VALIDATE (0x00000001)  
   
-- QUERYASMINFO_FLAG_GETSIZE (0X00000002)  
+- QUERYASMINFO_FLAG_GETSIZE (0x00000002)  
   
  `pszAssemblyName`  
- [in] Název sestavení, pro kterou budou načtena data.  
+ pro Název sestavení, pro které budou načtena data  
   
  `pAsmInfo`  
- [out v] [Assembly_info –](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) strukturu, která obsahuje data o sestavení.  
+ [in, out] Struktura [ASSEMBLY_INFO](assembly-info-structure.md) , která obsahuje data o sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [IAssemblyCache – rozhraní](iassemblycache-interface.md)

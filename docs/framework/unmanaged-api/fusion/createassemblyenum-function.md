@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c56b0168df6e4aee69b5d3e5fbbe027ca2c8974a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1db72c44b53b5abff9aee35094abc1e0e577fad4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778452"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795386"
 ---
 # <a name="createassemblyenum-function"></a>CreateAssemblyEnum – funkce
-Získá ukazatel [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instanci, která můžete vytvořit výčet objektů v sestavení se zadaným [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md).  
+Získá ukazatel na instanci [IAssemblyEnum](iassemblyenum-interface.md) , která může vytvořit výčet objektů v sestavení pomocí zadaného [IAssemblyName](iassemblyname-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,34 +42,34 @@ HRESULT CreateAssemblyEnum (
   
 ## <a name="parameters"></a>Parametry  
  `pEnum`  
- [out] Ukazatel na umístění v paměti, který obsahuje požadované `IAssemblyEnum` ukazatele.  
+ mimo Ukazatel na umístění v paměti, které obsahuje požadovaný `IAssemblyEnum` ukazatel.  
   
  `pUnkReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pUnkReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pUnkReserved`musí se jednat o odkaz s hodnotou null.  
   
  `pName`  
- [in] `IAssemblyName` Požadovaná sestavení. Tento název se používá k filtrování výčtu. Může mít hodnotu null pro všechna sestavení v globální mezipaměti sestavení.  
+ pro `IAssemblyName` Z požadovaného sestavení. Tento název slouží k filtrování výčtu. Aby bylo možné vytvořit výčet všech sestavení v globální mezipaměti sestavení (GAC), může mít hodnotu null.  
   
  `dwFlags`  
- [in] Příznaky pro úpravu chování čítače výčtu. Tento parametr obsahuje přesně jeden bit z [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) výčtu.  
+ pro Příznaky pro úpravu chování čítače výčtu. Tento parametr obsahuje přesně jeden bit z výčtu [ASM_CACHE_FLAGS](asm-cache-flags-enumeration.md) .  
   
  `pvReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
   
 ## <a name="remarks"></a>Poznámky  
- `dwFlags` Parametr obsahuje přesně jeden bit z `ASM_CACHE_FLAGS` výčtu.  
+ Parametr obsahuje přesně jeden bit `ASM_CACHE_FLAGS` z výčtu. `dwFlags`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [IAssemblyEnum – rozhraní](iassemblyenum-interface.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

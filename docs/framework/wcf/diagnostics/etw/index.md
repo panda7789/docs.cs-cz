@@ -6,30 +6,30 @@ helpviewer_keywords:
 - administration [WCF], analytic tracing
 - analytic tracing [WCF]
 ms.assetid: 1d518e47-a38d-41e8-93d7-8c3b361f6a56
-ms.openlocfilehash: cff13439995d8a90da15b7afa15723f21574e35e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd745730ca186b9489c547f790c546e95bf96372
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61962042"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798087"
 ---
 # <a name="analytic-tracing-with-etw"></a>Analytické trasování s ETW
-Analytické trasování Windows Communication Foundation (WCF) nabízí způsob, jak zachytit diagnostické informace během provádění ve službě WCF. Události analytického trasování WCF jsou emitovány klíčových bodů v zásobníku WCF povolit Poradce při potížích pro služby WCF v produkčním prostředí. Analytické trasování pro služby WCF má minimální dopad na výkon server produktu, který je hostitelem [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby WCF, protože tyto události jsou velmi efektivně vygenerován pro relaci Event Tracing for Windows (ETW).  
+Analytické trasování Windows Communication Foundation (WCF) nabízí způsob, jak zachytit diagnostické informace během provádění služby WCF. Události analytického trasování WCF se generují na klíčových místech v zásobníku WCF, aby bylo možné řešit potíže se službami WCF v produkčním prostředí. Analytické trasování pro služby WCF má minimální dopad na výkon produktového serveru, který je hostitelem [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služeb WCF, protože tyto události jsou velmi efektivně generovány do relace trasování událostí pro Windows (ETW).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled analytického trasování](../../../../../docs/framework/wcf/diagnostics/etw/analytic-tracing-overview.md)  
- Tento článek popisuje princip analytické trasování WCF v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)].  
+ [Přehled analytického trasování](analytic-tracing-overview.md)  
+ Popisuje, jak funguje analytické trasování WCF [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)]v.  
   
- [Dynamické povolování analytického sledování](../../../../../docs/framework/wcf/diagnostics/etw/dynamically-enabling-analytic-tracing.md)  
- Popisuje, jak povolit nebo zakázat trasování dynamicky pomocí trasování událostí pro Windows.  
+ [Dynamické povolování analytického sledování](dynamically-enabling-analytic-tracing.md)  
+ Popisuje, jak povolit nebo zakázat trasování dynamicky pomocí ETW.  
   
- [Konfigurace trasování toku zpráv](../../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md)  
+ [Konfigurace trasování toku zpráv](configuring-message-flow-tracing.md)  
  Popisuje postup konfigurace trasování toku zpráv.  
   
- [Události analytického trasování – přehled](../../../../../docs/framework/wcf/diagnostics/etw/analytic-trace-event-reference.md)  
- Zobrazuje tabulku ID událostí s jejich úrovně události, zprávy o událostech a klíčová slova.  
+ [Události analytického trasování – přehled](analytic-trace-event-reference.md)  
+ Zobrazuje tabulku ID událostí s jejich úrovněmi události, zprávami o událostech a klíčovými slovy.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Služby WCF a Trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)
-- [Sledování událostí v Trasování událostí ve Windows](../../../../../docs/framework/windows-workflow-foundation/samples/tracking-events-into-event-tracing-in-windows.md)
+- [Služby WCF a Trasování událostí pro Windows](../../samples/wcf-services-and-event-tracing-for-windows.md)
+- [Sledování událostí v Trasování událostí ve Windows](../../../windows-workflow-foundation/samples/tracking-events-into-event-tracing-in-windows.md)

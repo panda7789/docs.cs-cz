@@ -2,12 +2,12 @@
 title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 29b905c42f15cad4eb8521c4d702b56093982445
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d15aa02b41b9a34b00298aeb32d2e3998de8feba
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203774"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786336"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část poskytuje přehled o tom, jak je relační schéma a `DataSet` sestaveno z dokumentu schématu XSD (XML Schema Definition Language). Obecně platí, že pro `complexType` každý podřízený element elementu schématu je tabulka generována `DataSet`v. Struktura tabulky je určena definicí komplexního typu. Tabulky jsou vytvořeny v `DataSet` prvku pro prvky nejvyšší úrovně ve schématu. Tabulka je však vytvořena pouze pro element `complexType` nejvyšší úrovně, je- `complexType` li element vnořen uvnitř jiného `complexType` prvku, v `DataTable` takovém případě je `DataSet`vnořený `complexType` prvek mapován na v rámci.  
@@ -98,4 +98,4 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
   
 ## <a name="see-also"></a>Viz také:
 
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

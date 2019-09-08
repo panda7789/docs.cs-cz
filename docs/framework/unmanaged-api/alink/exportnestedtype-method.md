@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7dfaedad48291ac09f6959bc7b314ae0d9da76e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 570e48788a11045882ef546bf6bc22315c2a02b0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742053"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777273"
 ---
 # <a name="exportnestedtype-method"></a>ExportNestedType – metoda
-Určuje vnořené typy jako exportovatelný. [ExportType – metoda](../../../../docs/framework/unmanaged-api/alink/exporttype-method.md) můžete také exportovat vnořené typy, ale tato metoda je rychlejší.  
+Určuje vnořené typy jako exportovatelné. [Metoda ExportType](exporttype-method.md) může také exportovat vnořené typy, ale tato metoda je rychlejší.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +43,34 @@ HRESULT ExportNestedType(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení, ze které chcete exportovat.  
+ ID sestavení, ze kterého se má exportovat  
   
  `FileToken`  
- Token souboru nebo sestavení souboru, který definuje typ má být provedeno exportovatelné.  
+ Token souboru nebo sestavení souboru, které definuje typ, který se dá exportovat.  
   
  `TypeToken`  
- Zadejte token typu má být provedeno exportovatelné.  
+ Typ tokenu typu, který se má provést export.  
   
  `ParentType`  
- Token nadřazeného typu.  
+ Token nadřazeného typu  
   
  `pszTypename`  
- Plně kvalifikovaný název typu pro export.  
+ Plně kvalifikovaný název typu, který se má exportovat  
   
  `dwFlags`  
- `ComType` označí jako `tdPublic` nebo `tdNested`. Tato hodnota může být předán [defineexportedtype – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType`příznaky jako `tdPublic` nebo `tdNested`. Tato hodnota může být předána [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Přijme token pro exportovaný typ.  
+ Přijímá token pro exportovaný typ.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

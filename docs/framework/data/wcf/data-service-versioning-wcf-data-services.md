@@ -1,79 +1,79 @@
 ---
-title: Správa verzí datové služby (WCF Data Services)
+title: Správa verzí datových služeb (WCF Data Services)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - versioning, WCF Data Services
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: 9a58f375821109c0ec5f2230ae330dc6a2caa102
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 03ac1e0a5fec2d7def91466a9dc31853e2007f57
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959489"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791067"
 ---
-# <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datové služby (WCF Data Services)
-[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvoření datové služby tak, aby klienti můžou přistupovat k datům jako prostředky pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje také definice operace služby. Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu mohou tyto datové služby musí změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musíte zvážit, jestli se má definovat novou verzi vaše data služby a jak nejlepší k minimalizaci vlivu na existující klientské aplikace. Toto téma obsahuje pokyny pro kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak služeb WCF Data Services zpracovává výměny mezi klienty a datových služeb, které podporují různé verze protokolu OData.
+# <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datových služeb (WCF Data Services)
+[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvořit datové služby, aby klienti měli přístup k datům jako k prostředkům pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje taky definici operací služby. Po počátečním nasazení a potenciálně během své životnosti může být potřeba tyto datové služby změnit z nejrůznějších důvodů, jako jsou třeba změny obchodních potřeb, požadavky na informace o technologii nebo řešení dalších problémů. Pokud provedete změny v existující datové službě, je nutné zvážit, zda chcete definovat novou verzi datové služby a jak nejlépe minimalizovat dopad na existující klientské aplikace. V tomto tématu najdete pokyny, kdy a jak vytvořit novou verzi datové služby. Popisuje také, jak WCF Data Services zpracovává výměnu mezi klienty a datovými službami, které podporují různé verze protokolu OData.
 
 ## <a name="versioning-a-wcf-data-service"></a>Správa verzí datové služby WCF
- Po nasazení dat. služby a spotřebovává data, změny ve službě data mohou mít potenciálně způsobit problémy s kompatibilitou s existujícím klientským aplikacím. Ale vzhledem k tomu, že změny jsou často vyžadované celkové obchodní potřeby služby, musíte zvážit, kdy a jak vytvořit novou verzi datové služby s nejmenší dopad na klientské aplikace.
+ Jakmile je datová služba nasazená a data se spotřebovávají, můžou změny v datové službě způsobovat problémy s kompatibilitou se stávajícími klientskými aplikacemi. Vzhledem k tomu, že změny jsou často vyžadovány celkovými obchodními požadavky služby, je nutné vzít v úvahu, kdy a jak vytvořit novou verzi datové služby s nejmenším dopadem na klientské aplikace.
 
-### <a name="data-model-changes-that-recommend-a-new-data-service-version"></a>Změn datových modelů, které doporučujeme nové verze datové služby
- Když zvažujete, jestli se má publikovat nové verze datové služby, je důležité pochopit, jak různé druhy změny mohou ovlivnit klientské aplikace. Změny dat službě, která může být nutné vytvořit novou verzi datové služby je možné rozdělit do těchto dvou kategorií:
+### <a name="data-model-changes-that-recommend-a-new-data-service-version"></a>Změny datového modelu, které doporučují novou verzi datové služby
+ Při zvažování, zda publikovat novou verzi datové služby, je důležité pochopit, jakým způsobem mohou mít různé druhy změn vliv na klientské aplikace. Změny datové služby, které mohou vyžadovat vytvoření nové verze datové služby, lze rozdělit do následujících dvou kategorií:
 
-- Změny v kontraktu služby, mezi které patří aktualizace operace služby, změny přístupnost sady entit (kanály), verze změn a další změny chování služby.
+- Změny kontraktu služby – což zahrnuje aktualizace operací služby, změny dostupnosti sad entit (informační kanály), změny verzí a další změny chování služby.
 
-- Změny v kontraktu dat, které zahrnují změny do datového modelu, informační kanál formáty nebo informačního kanálu vlastní nastavení.
+- Změny kontraktu dat, které zahrnují změny v datovém modelu, formátech informačního kanálu nebo přizpůsobení informačního kanálu.
 
- Následující podrobnosti tabulky, pro jaké typy změn byste měli zvážit publikování nové verze datové služby:
+ V následující tabulce najdete podrobné informace o tom, jaké druhy změn byste měli zvážit při publikování nové verze datové služby:
 
-|Typ změny|Vyžaduje nová verze|Není potřeba nové verze|
+|Typ změny|Vyžaduje novou verzi.|Nová verze není nutná.|
 |--------------------|----------------------------|----------------------------|
-|Operace služby|– Přidat nový parametr<br />– Změnit typ návratové hodnoty<br />-Odebrat operace služby|-Odstranit existující parametr<br />-Přidat nové operace služby|
-|Chování služby|– Zakažte počet požadavků<br />-Zakázat podporu projekce<br />-Zvýšení verze požadované datové služby|-Aktivovat počet požadavků<br />-Povolit podporu projekce<br />-Snížit verze požadované datové služby|
-|Sada entit oprávnění|-Omezení entity sady oprávnění<br />-Změna kódu odpovědi (nová hodnota první) <sup>1</sup>|-Zmírnit entity sady oprávnění<br />-Změna kódu odpovědi (stejné první hodnota)|
-|Vlastnosti entity|-Odebrat existující vlastnost nebo vztahu<br />-Přidat vlastnost se zakázanou<br />– Změnit existující vlastnosti|-Přidat vlastnost nullable<sup>2</sup>|
-|Sady entit|-Odebrat sady entit|-Přidat odvozený typ.<br />-Změna základního typu<br />– Přidání sady entit|
-|Přizpůsobení informačního kanálu|– Změnit vlastnost entity mapování||
+|Operace služby|-Přidat nový parametr<br />-Změnit návratový typ<br />-Odebrat operaci služby|-Odstranit existující parametr<br />-Přidat novou operaci služby|
+|Chování služby|-Zakázat požadavky na počet<br />-Zakázat podporu projekce<br />-Zvětšit požadovanou verzi datové služby|-Povolit požadavky na počet<br />-Povolit podporu projekce<br />-Snížit požadovanou verzi datové služby|
+|Oprávnění sady entit|– Omezit oprávnění sady entit<br />-Změnit kód odpovědi (nová první hodnota číslice) <sup>1</sup>|– Zmírnit oprávnění sady entit<br />-Změnit kód odpovědi (stejná první hodnota číslice)|
+|Vlastnosti entity|-Odebrat existující vlastnost nebo relaci<br />-Přidat vlastnost, která není null<br />-Změnit existující vlastnost|-Přidat vlastnost Nullable<sup>2</sup>|
+|Sady entit|-Odebrat sadu entit|-Přidat odvozený typ<br />-Změnit základní typ<br />-Přidat sadu entit|
+|Přizpůsobení informačního kanálu|-Změnit mapování vlastností entity||
 
- <sup>1</sup> to může záviset na tom, jak přísně klientská aplikace spoléhá na příjem určitý kód chyby.
+ <sup>1</sup> Tato funkce může záviset na tom, jak čistě klientská aplikace spoléhá na přijetí konkrétního kódu chyby.
 
- <sup>2</sup> můžete nastavit <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> vlastnost `true` na váš klient bude ignorovat nových vlastností odesílané datové služby, které nejsou definovány v klientském počítači. Ale při vkládání si vlastnosti nejsou zahrnuty klientem v požadavku POST jsou nastaveny na výchozí hodnoty. V případě aktualizací může přepíšou všechna existující data ve vlastnosti Neznámý pro klienta s výchozími hodnotami. V takovém případě by měl odeslat aktualizace jako požadavek SLOUČENÍ, což je výchozí hodnota. Další informace najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).
+ <sup>2</sup> <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> vlastnost můžete nastavit tak `true` , aby klienta ignorovala všechny nové vlastnosti odesílané datovou službou, které nejsou definované v klientovi. Pokud jsou však vložena vložení, vlastnosti nezahrnuté klientem v požadavku POST jsou nastaveny na výchozí hodnoty. U aktualizací se můžou všechna existující data ve vlastnosti, která je pro klienta neznámá, přepsat výchozími hodnotami. V takovém případě byste měli aktualizaci odeslat jako požadavek sloučení, což je výchozí nastavení. Další informace najdete v tématu [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md).
 
-### <a name="how-to-version-a-data-service"></a>Jak verze datové služby
- V případě potřeby, nová verze datové služby je definován tak, že vytvoříte novou instanci služby s modelem aktualizovanou smlouvy nebo data. Tato nová služba je pak vystavena s použitím nového identifikátoru URI koncového bodu, který by jej odlišovala z předchozí verze. Příklad:
+### <a name="how-to-version-a-data-service"></a>Postup verze datové služby
+ V případě potřeby je nová verze datové služby definovaná vytvořením nové instance služby s aktualizovaným servisním kontraktem nebo datovým modelem. Tato nová služba se pak zveřejní pomocí nového koncového bodu URI, který ho odlišuje od předchozí verze. Příklad:
 
-- Starší verze: `http://services.odata.org/Northwind/v1/Northwind.svc/`
+- Stará verze:`http://services.odata.org/Northwind/v1/Northwind.svc/`
 
-- Nová verze: `http://services.odata.org/Northwind/v2/Northwind.svc/`
+- Nová verze:`http://services.odata.org/Northwind/v2/Northwind.svc/`
 
- Při upgradu datové služby, klientům bude nutné také aktualizovat založené na nové metadat datové služby a použití nového kořenového identifikátoru URI. Pokud je to možné, je vhodné ponechat předchozí verzi datové služby na podporu klientů, které ještě nebyly upgradovány na použití nové verze. Starší verze datové služby lze odebrat, pokud už nepotřebujete. Měli byste zvážit zachování koncový bod datové služby identifikátory URI v externí konfigurační soubor.
+ Při upgradu datové služby bude potřeba, aby se klienti aktualizovali taky na základě nových metadat datové služby a nového kořenového identifikátoru URI. Pokud je to možné, měli byste zachovat předchozí verzi datové služby, aby podporovala klienty, kteří se ještě neupgradovali na použití nové verze. Starší verze datové služby se dají odebrat, když už je nepotřebujete. Měli byste zvážit zachování identifikátoru URI koncového bodu datové služby v externím konfiguračním souboru.
 
 ## <a name="odata-protocol-versions"></a>Verze protokolu OData
- Jak se vydávají nové verze protokolu OData, nemusí klientské aplikace používat stejné verze protokolu OData, který podporuje datové služby. Starší klientská aplikace může přístup ke službě data, která podporuje novější verze protokolu OData. Klientská aplikace může také používat novější verzi klientské knihovny služby WCF Data Services, která podporuje novější verze protokolu OData, než datové služby, která se právě využívají.
+ Při vydání nových verzí OData nemusí klientské aplikace používat stejnou verzi protokolu OData, jakou podporuje datová služba. Starší klientská aplikace může získat přístup k datové službě, která podporuje novější verzi OData. Klientská aplikace může také používat novější verzi knihovny WCF Data Services klienta, která podporuje novější verzi OData, než je služba, ke které se přistupovalo.
 
- Služby WCF Data Services využívá podpora poskytovaná OData ke zpracování scénářů správy verzí. Je také podpora pro vytvoření a používání metadat modelu dat k vytvoření klienta datové služby třídy, pokud klient používá jinou verzi protokolu OData, než data služba používá. Další informace najdete v tématu [OData: Protokol správy verzí](https://go.microsoft.com/fwlink/?LinkId=186071).
+ WCF Data Services využívá podporu poskytovanou službou OData ke zpracování takových scénářů správy verzí. Existuje také podpora pro generování a používání metadat datového modelu k vytváření tříd klientských datových služeb, když klient používá jinou verzi OData než datová služba používá. Další informace najdete v tématu [OData: Správa verzí](https://go.microsoft.com/fwlink/?LinkId=186071)protokolu.
 
 ### <a name="version-negotiation"></a>Vyjednávání verze
- Datové služby lze nastavit k definování nejvyšší verze protokolu OData, který bude používán službou, bez ohledu na verzi požadovaným klientem. Můžete to provést tak, že zadáte <xref:System.Data.Services.Common.DataServiceProtocolVersion> hodnota <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> vlastnost <xref:System.Data.Services.DataServiceBehavior> využívané ve službě data. Další informace najdete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).
+ Datovou službu lze nakonfigurovat tak, aby definovala nejvyšší verzi protokolu OData, kterou bude služba používat, bez ohledu na verzi, kterou klient požaduje. To lze provést zadáním <xref:System.Data.Services.Common.DataServiceProtocolVersion> hodnoty <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> vlastnosti <xref:System.Data.Services.DataServiceBehavior> používané datovou službou. Další informace najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
 
- Pokud aplikace používá tyto klientské knihovny služby WCF Data Services pro přístup k datové služby, knihovny automaticky nastaví tato záhlaví na správné hodnoty, podle verze protokolu OData a funkce, které se používají ve vaší aplikaci. Ve výchozím nastavení používá služeb WCF Data Services nejnižší verze protokolu, které podporuje požadovanou operaci.
+ Když aplikace používá klientské knihovny WCF Data Services pro přístup k datové službě, knihovny automaticky nastaví tyto hlavičky na správné hodnoty v závislosti na verzi OData a funkcích, které jsou používány ve vaší aplikaci. Ve výchozím nastavení používá WCF Data Services nejnižší verzi protokolu, která podporuje požadovanou operaci.
 
- Následující tabulka Podrobnosti verze rozhraní .NET Framework a Silverlight, které obsahují služeb WCF Data Services podporují pro konkrétní verze protokolu OData.
+ Následující tabulka obsahuje podrobnosti o verzích .NET Framework a Silverlightu, které zahrnují podporu WCF Data Services pro konkrétní verze protokolu OData.
 
-|Verze protokolu OData|Podpora zavedený...|
+|Verze protokolu OData|Podpora zavedená v...|
 |-----------------------------------------------------------------------------------|----------------------------|
-|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Aktualizace Service Pack 1 (SP1)<br />-Silverlight verze 3|
-|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />-Aktualizaci [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Můžete stáhnout a nainstalovat aktualizaci z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=158125).<br />-Silverlight verze 4|
-|verze 3|-Můžete stáhnout a nainstalovat verzi předběžné verze, která podporuje OData verze 3 z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=203885).|
+|Verze 1|-   [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]Service Pack 1 (SP1)<br />– Silverlight verze 3|
+|Verze 2|-   [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]<br />– Aktualizace [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] SP1. Aktualizaci můžete stáhnout a nainstalovat z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=158125).<br />– Silverlight verze 4|
+|Verze 3|– Můžete si stáhnout a nainstalovat předběžnou verzi, která podporuje OData verze 3 z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Verze metadat
- Ve výchozím nastavení používá služeb WCF Data Services verze 1.1 CSDL k reprezentaci datový model. To platí vždy pro datové modely, které jsou založeny na zprostředkovatel reflexe nebo poskytovatel služeb vlastní data. Pokud je však datového modelu definován pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], verze CSDL vrátil, je shodná s verzí, který je používán [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. Verze CSDL je určeno obor názvů [element schématu (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
+ Ve výchozím nastavení WCF Data Services používá ke znázornění datového modelu verzi 1,1 CSDL. To je vždy případ datových modelů, které jsou založeny na poskytovateli reflexe nebo vlastním poskytovateli datových služeb. Pokud je však datový model definován pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], je verze CSDL vracená stejně jako verze, kterou používá. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Verze CSDL je určena oborem názvů [elementu Schema (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
 
- `DataServices` Také obsahuje element vrácených metadat `DataServiceVersion` atribut, který má stejnou hodnotu jako `DataServiceVersion` záhlaví ve zprávě s odpovědí. Klientské aplikace, jako **přidat odkaz na službu** dialogové okno v sadě Visual Studio, tyto informace slouží ke generování tříd klientské datové služby, které fungují správně s verzí datové služby WCF, který hostitelem datové služby. Další informace najdete v tématu [OData: Protokol správy verzí](https://go.microsoft.com/fwlink/?LinkId=186071).
+ Element vrácených metadat `DataServiceVersion` obsahuje také atribut, což je stejná hodnota jako `DataServiceVersion` záhlaví ve zprávě odpovědi. `DataServices` Klientské aplikace, jako je například dialogové okno **Přidat odkaz na službu** v aplikaci Visual Studio, používají tyto informace k vygenerování tříd klientských datových služeb, které fungují správně s verzí WCF Data Services, která je hostitelem datové služby. Další informace najdete v tématu [OData: Správa verzí](https://go.microsoft.com/fwlink/?LinkId=186071)protokolu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
-- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+- [Zprostředkovatelé datových služeb](data-services-providers-wcf-data-services.md)
+- [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)

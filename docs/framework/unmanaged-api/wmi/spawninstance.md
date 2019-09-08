@@ -1,5 +1,5 @@
 ---
-title: Funkce SpawnInstance (referenční dokumentace nespravovaného rozhraní API)
+title: SpawnInstance – funkce (Reference nespravovaného rozhraní API)
 description: Funkce SpawnInstance vytvoří novou instanci třídy.
 ms.date: 11/06/2017
 api_name:
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 97a3ab62cda82526a7ad8b8e5d985d9fce7d6f07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 529905bd9286520a8e09479bfc95ef0b614f53e9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783073"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798216"
 ---
 # <a name="spawninstance-function"></a>SpawnInstance – funkce
 Vytvoří novou instanci třídy.    
@@ -41,43 +41,43 @@ HRESULT SpawnInstance (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lFlags`  
-[in] Vyhrazená. Tento parametr musí být 0.
+pro Rezervovaný. Tento parametr musí mít hodnotu 0.
 
 `ppNewInstance`  
-[out] Přijímá ukazatel na novou instanci třídy. Pokud dojde k chybě, není objekt vrácen, a `ppNewInstance` je bez jakýchkoli úprav vlevo.
+mimo Přijme ukazatel na novou instanci třídy. Pokud dojde k chybě, nový objekt se nevrátí a `ppNewInstance` zůstane beze změny.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr` není platnou definicí třídy a nelze vytvořit podřízený nové instance. Je neúplný nebo nebyl zaregistrován pomocí Windows Management voláním [PutClassWmi](putclasswmi.md). |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass` je `null`. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | `ptr`není platnou definicí třídy a nemůže vytvořit nové instance. Buď je neúplný, nebo nebyl zaregistrován u správy systému Windows voláním [PutClassWmi](putclasswmi.md). |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `ppNewClass`je `null`. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::SpawnInstance](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-spawninstance) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: SpawnInstance](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-spawninstance) .
 
-`ptr` musí být definice třídy získat ze správy Windows. (Všimněte si, že vytváření podřízeného procesu instanci z instance je podporováno, ale vrácená instance je prázdný). Pak použijete této definici třídy k vytvoření nové instance. Volání [PutInstanceWmi](putinstancewmi.md) funkce je nutný, pokud máte v úmyslu instance zápisu ke správě Windows.
+`ptr`musí se jednat o definici třídy získanou ze správy systému Windows. (Všimněte si, že vytvoření instance z instance je podporováno, ale vrácená instance je prázdná.) Tuto definici třídy pak můžete použít k vytvoření nových instancí. Pokud máte v úmyslu zapsat instanci do správy systému Windows, je třeba zadat volání funkce [PutInstanceWmi](putinstancewmi.md) .
 
-Nový objekt vrácený v `ppNewClass` automaticky stane podtřídu aktuálního objektu. Toto chování nelze přepsat. Neexistuje žádná další metoda, podle kterého je možné vytvořit podtřídy (odvozené třídy).
+Nový objekt vrácený `ppNewClass` automaticky se stal podtřídou aktuálního objektu. Toto chování nelze přepsat. Neexistuje žádná jiná metoda, pomocí které by bylo možné vytvořit podtřídy (odvozené třídy).
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

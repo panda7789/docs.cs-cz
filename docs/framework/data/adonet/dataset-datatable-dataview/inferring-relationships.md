@@ -2,12 +2,12 @@
 title: Odvozování relací
 ms.date: 03/30/2017
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
-ms.openlocfilehash: 92a4953dc7f5119ffbf171ff2a7bf5b58e896638
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 4c9c13453e4a830fcda337e8163649ba6491a995
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204768"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785373"
 ---
 # <a name="inferring-relationships"></a>Odvozování relací
 Pokud prvek, který je odvozen jako tabulka, má podřízený element, který je také odvozen jako tabulka, <xref:System.Data.DataRelation> vytvoří se mezi těmito dvěma tabulkami. Nový sloupec s názvem **ParentTableName_Id** se přidá do tabulky vytvořené pro nadřazený element a vytvoří se tabulka vytvořená pro podřízený element. Vlastnost **ColumnMapping** tohoto sloupce identity bude nastavena na **MappingType. Hidden**. Sloupec bude automaticky zvyšovat primární klíč pro nadřazenou tabulku a bude použit pro **relaci DataRelation** mezi oběma tabulkami. Datový typ sloupce přidáno identity bude **System. Int32**, na rozdíl od datového typu všech ostatních odvozených sloupců, což je **System. String**. A <xref:System.Data.ForeignKeyConstraint> s **DeleteRule** = **Cascade** se vytvoří také pomocí nového sloupce v nadřazené i podřízené tabulce.  
@@ -77,4 +77,4 @@ Pokud prvek, který je odvozen jako tabulka, má podřízený element, který je
 - [Vnoření datových relací](nesting-datarelations.md)
 - [Použití XML v datové sadě](using-xml-in-a-dataset.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

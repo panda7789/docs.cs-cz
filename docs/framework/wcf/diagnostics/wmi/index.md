@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: e1f5ccb8849d5f8f6bd9156cd428d395a86b1301
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 90aae0e22feec5d26fa7ee4c690904ed893489b4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046021"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795912"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za běhu prostřednictvím poskytovatele WCF rozhraní WMI (Windows Management Instrumentation) (WMI).  
@@ -17,7 +17,7 @@ Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za b
   
  Zprostředkovatel rozhraní WMI je komponenta, která zveřejňuje instrumentaci za běhu prostřednictvím rozhraní kompatibilního se standardem WBEM. Skládá se ze sady objektů WMI, které mají páry atribut/hodnota. Páry můžou být v mnoha jednoduchých typech. Nástroje pro správu se můžou ke službám připojit prostřednictvím rozhraní za běhu. WCF zpřístupňuje atributy služeb, jako jsou adresy, vazby, chování a naslouchací procesy.  
   
- Integrovaného zprostředkovatele WMI lze aktivovat v konfiguračním souboru aplikace. To se provádí pomocí `wmiProviderEnabled` atributu [ \<> diagnostiky](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) v [ \<části System. ServiceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , jak je znázorněno v následující ukázkové konfiguraci.  
+ Integrovaného zprostředkovatele WMI lze aktivovat v konfiguračním souboru aplikace. To se provádí pomocí `wmiProviderEnabled` atributu [ \<> diagnostiky](../../../configure-apps/file-schema/wcf/diagnostics.md) v [ \<části System. ServiceModel >](../../../configure-apps/file-schema/wcf/system-servicemodel.md) , jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <system.serviceModel>  
@@ -35,9 +35,9 @@ Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za b
 > [!CAUTION]
 > Pokud používáte metody poskytnuté .NET Framework pro programový přístup k datům WMI, měli byste si uvědomit, že tyto metody mohou vyvolat výjimky při navázání spojení. Připojení není během vytváření <xref:System.Management.ManagementObject> instance navázáno, ale na první požadavek týkající se skutečného výměny dat. Proto byste měli použít `try..catch` blok k zachycení možných výjimek.  
   
- V rozhraní WMI můžete změnit úroveň trasování a protokolování zpráv a také možnosti protokolování zpráv pro `System.ServiceModel` zdroj trasování. To lze provést přístupem k instanci [AppDomainInfo](../../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel` `TraceLevel`, `LogMessagesAtTransportLevel`, `LogMalformedMessages`a. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. Tím se efektivně povolí protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI.  
+ V rozhraní WMI můžete změnit úroveň trasování a protokolování zpráv a také možnosti protokolování zpráv pro `System.ServiceModel` zdroj trasování. To lze provést přístupem k instanci [AppDomainInfo](appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel` `TraceLevel`, `LogMessagesAtTransportLevel`, `LogMalformedMessages`a. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. Tím se efektivně povolí protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI.  
   
- Měli byste si uvědomit, že pokud pro protokolování zpráv nejsou k dispozici naslouchací procesy trasování `System.ServiceModel` zpráv, nebo pokud nejsou v konfiguračním souboru žádné naslouchací procesy trasování pro trasování, neprojeví se žádné změny, a to ani v případě, že se změny nepřijímají rozhraním WMI. Další informace o správném nastavení příslušného naslouchacího procesu najdete v tématu [Konfigurace protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) a [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Úroveň trasování všech ostatních zdrojů trasování určených konfigurací je platná při spuštění aplikace a nelze ji změnit.  
+ Měli byste si uvědomit, že pokud pro protokolování zpráv nejsou k dispozici naslouchací procesy trasování `System.ServiceModel` zpráv, nebo pokud nejsou v konfiguračním souboru žádné naslouchací procesy trasování pro trasování, neprojeví se žádné změny, a to ani v případě, že se změny nepřijímají rozhraním WMI. Další informace o správném nastavení příslušného naslouchacího procesu najdete v tématu [Konfigurace protokolování zpráv](../configuring-message-logging.md) a [Konfigurace trasování](../tracing/configuring-tracing.md). Úroveň trasování všech ostatních zdrojů trasování určených konfigurací je platná při spuštění aplikace a nelze ji změnit.  
   
  WCF zpřístupňuje `GetOperationCounterInstanceName` metodu pro skriptování. Tato metoda vrací název instance čítače výkonu, pokud jej zadáte s názvem operace. Neověřuje ale vaše zadání. Proto pokud zadáte nesprávný název operace, vrátí se nesprávný název čítače.  
   

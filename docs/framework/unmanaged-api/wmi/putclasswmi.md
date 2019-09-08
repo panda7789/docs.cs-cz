@@ -1,6 +1,6 @@
 ---
-title: Funkce PutClassWmi (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce PutClassWmi vytvoří novou třídu nebo aktualizuje nějakou existující.
+title: PutClassWmi – funkce (Reference nespravovaného rozhraní API)
+description: Funkce PutClassWmi vytvoří novou třídu nebo aktualizuje stávající.
 ms.date: 11/06/2017
 api_name:
 - PutClassWmi
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 422de614d2e2ddb93cc1e932a8672e1e8269b2c0
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7fcf879705135e0093868b48580a37f9d46aa594
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636650"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798391"
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 
-Vytvoří novou třídu nebo aktualizuje nějakou existující.
+Vytvoří novou třídu nebo aktualizuje stávající.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -43,65 +43,65 @@ HRESULT PutClassWmi (
 ## <a name="parameters"></a>Parametry
 
 `pObject`\
-[in] Ukazatel na platnou definicí třídy. To musí být správně inicializován se všemi hodnotami požadovaná vlastnost.
+pro Ukazatel na platnou definici třídy. Musí být správně inicializován se všemi požadovanými hodnotami vlastností.
 
 `lFlags`\
-[in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+pro Kombinace příznaků, které mají vliv na chování této funkce. Následující hodnoty jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada WMI neukládá všechny kvalifikátory s upravenou charakter. <br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou uloženy s touto instancí. |
-| `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte třídu, pokud ho neexistuje, nebo ho přepíše, pokud již existuje. |
-| `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizace třídy. Třída musí existovat volání k dosažení úspěchu. |
-| `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvořte třídu. Volání selže, pokud třída již existuje. |
-| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. |
-| `WBEM_FLAG_OWNER_UPDATE` | 0x10000 | Poskytovatelé nabízených oznámení musíte zadat Tento příznak, při volání metody `PutClassWmi` k označení, že došlo ke změně této třídy. |
-| `WBEM_FLAG_UPDATE_COMPATIBLE` | 0 | Umožňuje třídy aktualizace, pokud neexistují žádné odvozené třídy a bez instance dané třídy. Také umožňuje instalaci aktualizací ve všech případech, pokud se tato změna je to důležitý kvalifikátory, jako je například kvalifikátor popis. Pokud existuje instance dané třídy nebo změny jsou důležité kvalifikátory, že se aktualizace nezdaří. |
-| `WBEM_FLAG_UPDATE_SAFE_MODE` | 0x20 | Umožňuje instalaci aktualizací tříd, i když nejsou podřízené třídy za předpokladu, změna nezpůsobí žádné konflikty s podřízenými třídami. Tento příznak například umožňuje nové vlastnosti a přidat základní třídu, která se již bylo zmíněno dříve v některém z podřízených tříd. Pokud má třída instancí, že se aktualizace nezdaří. |
-| `WBEM_FLAG_UPDATE_FORCE_MODE` | 0x40 | Vynutí aktualizace tříd, pokud existuje konfliktní podřízené třídy. Například tento příznak vynutí aktualizaci v případě kvalifikátor třída je definována v podřízené třídy a základní třídy se pokusí přidat stejný kvalifikátor který je v konfliktu s existujícím. V režimu vynucení tis konflikt vyřešit odstraněním konfliktní kvalifikátoru v podřízené třídy. |
+| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud je nastaveno, WMI neukládá žádné kvalifikátory se změněným charakterem. <br> Pokud není nastavena, předpokládá se, že tento objekt není lokalizován a že jsou všechny kvalifikátory uloženy s touto instancí. |
+| `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte třídu, pokud neexistuje, nebo ji přepište, pokud již existuje. |
+| `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizujte třídu. Aby bylo volání úspěšné, musí třída existovat. |
+| `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvořte třídu. Volání se nezdařilo, pokud již třída existuje. |
+| `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí volání semisynchronní. |
+| `WBEM_FLAG_OWNER_UPDATE` | 0x10000 | Poskytovatelé nabízených oznámení musí při volání `PutClassWmi` označit, že se tato třída změnila, zadat tento příznak. |
+| `WBEM_FLAG_UPDATE_COMPATIBLE` | 0 | Umožňuje aktualizovat třídu, pokud nejsou žádné odvozené třídy a žádné instance této třídy. Také umožňuje aktualizace ve všech případech, pokud je změna pouze neimportované kvalifikátory, jako je například kvalifikátor Description. Pokud má třída instance nebo změny důležité kvalifikátory, aktualizace se nezdařila. |
+| `WBEM_FLAG_UPDATE_SAFE_MODE` | 0x20 | Umožňuje aktualizace tříd i v případě, že existují podřízené třídy, pokud změna nezpůsobí konflikty s podřízenými třídami. Tento příznak například umožňuje přidat novou vlastnost do základní třídy, která nebyla dříve uvedena v žádné z podřízených tříd. Pokud má třída instance, aktualizace se nezdařila. |
+| `WBEM_FLAG_UPDATE_FORCE_MODE` | 0x40 | vynutí aktualizace tříd, pokud existují konfliktní podřízené třídy. Například tento příznak vynutí aktualizaci, pokud je kvalifikátor třídy definován v podřízené třídě a základní třída se pokusí přidat stejný kvalifikátor, který je v konfliktu s existujícím. V režimu vynucení tis konflikt je vyřešen odstraněním kolidujícího kvalifikátoru v podřízené třídě. |
 
 `pCtx`\
-[in] Obvykle je tato hodnota `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , jež lze použít poskytovatele, který poskytuje požadované třídy.
+pro Obvykle je `null`tato hodnota. V opačném případě se jedná o ukazatel na instanci [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , kterou může použít poskytovatel, který poskytuje požadované třídy.
 
 `ppCallResult`\
-[out] Pokud `null`, tento parametr se nepoužívá. Pokud `lFlags` obsahuje `WBEM_FLAG_RETURN_IMMEDIATELY`, funkce vrátí hodnotu okamžitě s `WBEM_S_NO_ERROR`. `ppCallResult` Parametr přijímá ukazatel na novou [IWbemCallResult](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcallresult) objektu.
+mimo Pokud `null`je tento parametr nepoužitý. Pokud `lFlags` `WBEM_S_NO_ERROR`obsahuje `WBEM_FLAG_RETURN_IMMEDIATELY`, funkce vrátí hodnotu okamžitě s. Parametr obdrží ukazatel na nový objekt IWbemCallResult. [](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcallresult) `ppCallResult`
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k vytvoření nebo úpravě třídy. |
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
-| `WBEM_E_INVALID_CLASS` | 0x80041010 | Zadaná třída není platná. Obvykle to znamená, že `pObject` určuje objekt instance. |
+| `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k vytváření nebo změnám tříd. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
+| `WBEM_E_INVALID_CLASS` | 0x80041010 | Zadaná třída není platná. Obvykle to označuje, že `pObject` určuje objekt instance. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-| `WBEM_E_INVALID OPERATION` | 0x80041016 | Zadaná třída název je neplatný. |
-| `WBEM_E_CLASS_HAS_CHILDREN` | 0x80041025 | Byl proveden pokus o provést změny, které by způsobily neplatnost podtřídy. |
-| `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY` Byl zadán příznak, ale třída již existuje. |
-| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY` byl zadán v `lFlags`, a třída nebyla nalezena. |
-| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | Požadované vlastnosti pro třídy jsou všechny nastavené. |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-| `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_INVALID OPERATION` | 0x80041016 | Zadaný název třídy není platný. |
+| `WBEM_E_CLASS_HAS_CHILDREN` | 0x80041025 | Byl proveden pokus o provedení změny, která by způsobila neplatnost podtřídy. |
+| `WBEM_E_ALREADY_EXISTS` | 0x80041019 | `WBEM_FLAG_CREATE_ONLY` Příznak byl zadán, ale třída již existuje. |
+| `WBEM_E_NOT_FOUND` | 0x80041002 | `WBEM_FLAG_UPDATE_ONLY`byl zadán v `lFlags`a Třída nebyla nalezena. |
+| `WBEM_E_INCOMPLETE_CLASS` | 0x80041020 | Nebyly nastaveny všechny požadované vlastnosti pro třídy. |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+| `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartována. Znovu zavolejte [ConnectServerWmi](connectserverwmi.md) . |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Propojení vzdáleného volání procedur (RPC) mezi aktuálním procesem a rozhraním WMI se nezdařilo. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemServices::PutClass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-putclass) metody.
+Tato funkce zalomí volání metody [Služby IWbem::P utclass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-putclass) .
 
-Uživatel nemůže vytvořit třídy s názvy, které začínat ani končit znakem podtržítka.
+Uživatel nemůže vytvořit třídy s názvy, které začínají nebo končí znakem podtržítka.
 
-Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud volání funkce neproběhne úspěšně, můžete získat další informace o chybě voláním funkce [GetErrorInfo](geterrorinfo.md) .
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

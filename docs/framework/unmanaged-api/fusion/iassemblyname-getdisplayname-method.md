@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c434595414fd5bdabeae96d959aaa6be6d84af2b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38f48f2d95829d2c8111065e5f4ede4e43a16d63
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753973"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796663"
 ---
 # <a name="iassemblynamegetdisplayname-method"></a>IAssemblyName::GetDisplayName – metoda
-Získá popisný název sestavení odkazuje situace [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
+Získá název sestavení, na které odkazuje tento objekt [IAssemblyName](iassemblyname-interface.md) , do čitelného lidského.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetDisplayName (
   
 ## <a name="parameters"></a>Parametry  
  `szDisplayName`  
- [out] Vyrovnávací paměti řetězce, který obsahuje název odkazovaného sestavení.  
+ mimo Vyrovnávací paměť řetězců, která obsahuje název odkazovaného sestavení.  
   
  `pccDisplayName`  
- [out v] Velikost `szDisplayName` v širokých znaků včetně ukončovacího znaku null znaků.  
+ [in, out] Velikost `szDisplayName` v různých znacích včetně ukončovacího znaku null.  
   
  `dwDisplayFlags`  
- [in] Bitová kombinace hodnot [asm_display_flags –](../../../../docs/framework/unmanaged-api/fusion/asm-display-flags-enumeration.md) hodnoty, které ovlivňují funkce `szDisplayName`.  
+ pro Bitová kombinace hodnot [ASM_DISPLAY_FLAGS](asm-display-flags-enumeration.md) , které ovlivňují funkce `szDisplayName`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [Výčty pro fúze](fusion-enumerations.md)

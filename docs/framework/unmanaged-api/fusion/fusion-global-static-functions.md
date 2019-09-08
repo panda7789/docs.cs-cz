@@ -8,70 +8,70 @@ helpviewer_keywords:
 ms.assetid: 229b2188-9168-4b44-a987-e1f515494688
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 86cb59c0935c193a9865d5ace5fe11c96226d9e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6a8f15bc862c0486311960f7567c49424859846e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697716"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795315"
 ---
 # <a name="fusion-global-static-functions"></a>Fúze globálních statických funkcí
-Tato část popisuje nespravované globální statické funkce, které používá fusion rozhraní API.  
+Tato část popisuje nespravované globální statické funkce, které používá rozhraní API pro syntézu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ClearDownloadCache – funkce](../../../../docs/framework/unmanaged-api/fusion/cleardownloadcache-function.md)  
- Vymaže globální mezipaměti sestavení stažené sestavení.  
+ [ClearDownloadCache – funkce](cleardownloadcache-function.md)  
+ Vymaže globální mezipaměť sestavení (GAC) pro stažená sestavení.  
   
- [CompareAssemblyIdentity – funkce](../../../../docs/framework/unmanaged-api/fusion/compareassemblyidentity-function.md)  
- Porovná dvě identit sestavení pro určení, zda jsou ekvivalentní.  
+ [CompareAssemblyIdentity – funkce](compareassemblyidentity-function.md)  
+ Porovná dvě identity sestavení a určí, zda jsou ekvivalentní.  
   
- [CreateApplicationContext – funkce](../../../../docs/framework/unmanaged-api/fusion/createapplicationcontext-function.md)  
- Pouze pro interní účely. (Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.)  
+ [CreateApplicationContext – funkce](createapplicationcontext-function.md)  
+ Pouze interní. (Tato funkce podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.)  
   
- [CreateAssemblyCache – funkce](../../../../docs/framework/unmanaged-api/fusion/createassemblycache-function.md)  
- Získá ukazatel na novou [iassemblycache –](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance, který představuje globální mezipaměti sestavení.  
+ [CreateAssemblyCache – funkce](createassemblycache-function.md)  
+ Získá ukazatel na novou instanci [IAssemblyCache](iassemblycache-interface.md) , která představuje globální mezipaměť sestavení (GAC).  
   
- [CreateAssemblyEnum – funkce](../../../../docs/framework/unmanaged-api/fusion/createassemblyenum-function.md)  
- Získá ukazatel [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) instance, která reprezentuje seznam objektů, které existují v zadaném sestavení.  
+ [CreateAssemblyEnum – funkce](createassemblyenum-function.md)  
+ Získá ukazatel na instanci [IAssemblyEnum](iassemblyenum-interface.md) , která představuje seznam objektů, které existují v zadaném sestavení.  
   
- [CreateAssemblyNameObject – funkce](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md)  
- Získá ukazatel [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) instanci, která představuje jedinečné identity sestavení se zadaným názvem.  
+ [CreateAssemblyNameObject – funkce](createassemblynameobject-function.md)  
+ Získá ukazatel na instanci [IAssemblyName](iassemblyname-interface.md) , která představuje jedinečnou identitu sestavení se zadaným názvem.  
   
- [CreateHistoryReader – funkce](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)  
+ [CreateHistoryReader – funkce](createhistoryreader-function.md)  
  Vytvoří čtečku historie pro zadaný soubor.  
   
- [CreateInstallReferenceEnum – funkce](../../../../docs/framework/unmanaged-api/fusion/createinstallreferenceenum-function.md)  
- Získá ukazatel [iinstallreferenceenum –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) instanci, která představuje seznam aplikace odkazy na zadané sestavení.  
+ [CreateInstallReferenceEnum – funkce](createinstallreferenceenum-function.md)  
+ Získá ukazatel na instanci [IInstallReferenceEnum –](iinstallreferenceenum-interface.md) , která představuje seznam odkazů aplikace na zadané sestavení.  
   
- [GetAppIdAuthority – funkce](../../../../docs/framework/unmanaged-api/fusion/getappidauthority-function.md)  
- Získá ukazatel [iappidauthority –](../../../../docs/framework/unmanaged-api/fusion/iappidauthority-interface.md) instance, která spravuje klíče pro identity aplikací a odkazy.  
+ [GetAppIdAuthority – funkce](getappidauthority-function.md)  
+ Získá ukazatel na instanci [IAppIdAuthority –](iappidauthority-interface.md) , která spravuje klíče pro identity aplikace a odkazy.  
   
- [GetAssemblyIdentityFromFile – funkce](../../../../docs/framework/unmanaged-api/fusion/getassemblyidentityfromfile-function.md)  
- Získá ukazatel `IUnknown` objekt se zadaným `IID` v sestavení v cestě zadaného souboru.  
+ [GetAssemblyIdentityFromFile – funkce](getassemblyidentityfromfile-function.md)  
+ Získá ukazatel na `IUnknown` objekt, který je zadaný `IID` v sestavení v zadané cestě k souboru.  
   
- [GetCachePath – funkce](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md)  
- Získá cestu k sestavení v mezipaměti, pomocí zadané příznaky.  
+ [GetCachePath – funkce](getcachepath-function.md)  
+ Načte cestu k sestavení v mezipaměti pomocí zadaných příznaků.  
   
- [GetHistoryFileDirectory – funkce](../../../../docs/framework/unmanaged-api/fusion/gethistoryfiledirectory-function.md)  
- Načte cestu adresáře historie aplikace.  
+ [GetHistoryFileDirectory – funkce](gethistoryfiledirectory-function.md)  
+ Načte cestu k adresáři historie aplikace.  
   
- [GetIdentityAuthority – funkce](../../../../docs/framework/unmanaged-api/fusion/getidentityauthority-function.md)  
- Získá ukazatel [iidentityauthority –](../../../../docs/framework/unmanaged-api/fusion/iidentityauthority-interface.md) instance, která spravuje klíče pro objekty kódu.  
+ [GetIdentityAuthority – funkce](getidentityauthority-function.md)  
+ Získá ukazatel na instanci [IIdentityAuthority –](iidentityauthority-interface.md) , která spravuje klíče pro objekty kódu.  
   
- [IsFrameworkAssembly – funkce](../../../../docs/framework/unmanaged-api/fusion/isframeworkassembly-function.md)  
- Získá hodnotu, která určuje, zda se spravuje zadané sestavení.  
+ [IsFrameworkAssembly – funkce](isframeworkassembly-function.md)  
+ Získá hodnotu, která označuje, zda je zadané sestavení spravováno.  
   
- [NukeDownloadedCache – funkce](../../../../docs/framework/unmanaged-api/fusion/nukedownloadedcache-function.md)  
- Odstraní běžné mezipaměť pro stahování modulu runtime jazyka.  
+ [NukeDownloadedCache – funkce](nukedownloadedcache-function.md)  
+ Odstraní mezipaměť pro stažení modulu CLR (Common Language Runtime).  
   
- [PreBindAssemblyEx – funkce](../../../../docs/framework/unmanaged-api/fusion/prebindassemblyex-function.md)  
- Získá po zpracování zásad zobrazovaný název sestavení.  
+ [PreBindAssemblyEx – funkce](prebindassemblyex-function.md)  
+ Načte zobrazovaný název po zásadě pro sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [Rozhraní pro fúze](fusion-interfaces.md)  
   
- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)  
+ [Výčty pro fúze](fusion-enumerations.md)  
   
- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
+ [Struktury pro fúze](fusion-structures.md)  
   
- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+ [Globální mezipaměť sestavení](../../app-domains/gac.md)

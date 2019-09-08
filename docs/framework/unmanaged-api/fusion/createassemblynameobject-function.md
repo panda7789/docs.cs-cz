@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed26df6580aeaf2936bd50c9f1855a08ac68b90b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fb53014a28fb291b8463535addfb61e62d32d7d6
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778433"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795351"
 ---
 # <a name="createassemblynameobject-function"></a>CreateAssemblyNameObject – funkce
-Získá ukazatel rozhraní k [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) instanci, která představuje jedinečné identity sestavení se zadaným názvem.  
+Získá ukazatel rozhraní na instanci [IAssemblyName](iassemblyname-interface.md) , která představuje jedinečnou identitu sestavení se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ HRESULT CreateAssemblyNameObject (
   
 ## <a name="parameters"></a>Parametry  
  `ppAssemblyNameObj`  
- [out] Vrácený `IAssemblyName`.  
+ mimo Vráceno `IAssemblyName`.  
   
  `szAssemblyName`  
- [in] Název sestavení, pro který chcete vytvořit nový `IAssemblyName` instance.  
+ pro Název sestavení, pro které chcete vytvořit novou `IAssemblyName` instanci.  
   
  `dwFlags`  
- [in] Příznaky pro předání do konstruktoru objektu.  
+ pro Příznaky, které mají být předána konstruktoru objektu.  
   
  `pvReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
-ms.openlocfilehash: 42e7a715c8137574bff617715c1f174314080131
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b6b1eba063c9ec72ae14c12028dd0950b2ad95f5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943616"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793518"
 ---
 # <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relací
 V rámci třídy entity můžete kódovat jako odkazy na vlastnosti všechny relace dat, které budou vždy stejné. Například vzhledem k tomu, že zákazníci obvykle umísťují objednávky, je v ukázkové databázi Northwind vždy relace v modelu mezi zákazníky a jejich objednávkami.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<xref:System.Data.Linq.Mapping.AssociationAttribute> definuje atribut, který bude pomáhat tyto vztahy reprezentovat. Tento atribut se používá společně s <xref:System.Data.Linq.EntitySet%601> typy a <xref:System.Data.Linq.EntityRef%601> k reprezentaci toho, co by bylo relace cizího klíče v databázi. Další informace naleznete v části atributu přidružení v [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<xref:System.Data.Linq.Mapping.AssociationAttribute> definuje atribut, který bude pomáhat tyto vztahy reprezentovat. Tento atribut se používá společně s <xref:System.Data.Linq.EntitySet%601> typy a <xref:System.Data.Linq.EntityRef%601> k reprezentaci toho, co by bylo relace cizího klíče v databázi. Další informace naleznete v části atributu přidružení v [mapování na základě atributů](attribute-based-mapping.md).  
   
 > [!NOTE]
 > Hodnoty vlastností úložiště AssociationAttribute a ColumnAttribute rozlišují velká a malá písmena. Například zajistěte, aby hodnoty použité v atributu vlastnosti AssociationAttribute. Storage odpovídaly velikosti písmen pro odpovídající názvy vlastností používané jinde v kódu. To platí pro všechny programovací jazyky rozhraní .NET, i ty, které se obvykle nerozlišují bez rozlišení velkých a malých písmen, včetně Visual Basic. Další informace o vlastnosti úložiště naleznete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
@@ -48,12 +48,12 @@ V rámci třídy entity můžete kódovat jako odkazy na vlastnosti všechny rel
  Můžete také změnit situaci. Namísto použití `Customer` třídy pro popis přidružení mezi zákazníky a objednávkami, můžete `Order` použít třídu. `Order` Třída<xref:System.Data.Linq.EntityRef%601> používá typ k popisu vztahu zpět k zákazníkovi, jak je uvedeno v následujícím příkladu kódu.  
   
 > [!NOTE]
-> Třída podporuje *odložené načítání.* <xref:System.Data.Linq.EntityRef%601> Další informace *najdete v tématu* [odložené porovnání a okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+> Třída podporuje *odložené načítání.* <xref:System.Data.Linq.EntityRef%601> Další informace *najdete v tématu* [odložené porovnání a okamžité načítání](deferred-versus-immediate-loading.md).  
   
  [!code-csharp[DLinqCustomize#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#5)]
  [!code-vb[DLinqCustomize#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
-- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
+- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Objektový model LINQ to SQL](the-linq-to-sql-object-model.md)

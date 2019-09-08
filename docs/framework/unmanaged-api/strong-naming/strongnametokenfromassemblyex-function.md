@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14af44901e7c65933800e41328e95602ce715282
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c000aad12000a9c76fb6dd805a9b002c021be6ef
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783172"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798842"
 ---
 # <a name="strongnametokenfromassemblyex-function"></a>StrongNameTokenFromAssemblyEx – funkce
-Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí představující token veřejného klíče.  
+Vytvoří token silného názvu ze zadaného souboru sestavení a vrátí veřejný klíč, který token představuje.  
   
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnametokenfromassemblyex –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameTokenFromAssemblyEx –](../hosting/iclrstrongname-strongnametokenfromassemblyex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,41 +42,41 @@ BOOLEAN StrongNameTokenFromAssemblyEx (
   
 ## <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [in] Cesta k souboru (PE portable executable) pro sestavení.  
+ pro Cesta k přenosnému spustitelnému souboru (PE) pro sestavení.  
   
  `ppbStrongNameToken`  
- [out] Token vrácený silného názvu.  
+ mimo Vrácený token silného názvu.  
   
  `pcbStrongNameToken`  
- [out] Velikost v bajtech, silný název tokenu.  
+ mimo Velikost tokenu silného názvu v bajtech.  
   
  `ppbPublicKeyBlob`  
- [out] Vrácené veřejný klíč.  
+ mimo Vrácený veřejný klíč.  
   
  `pcbPublicKeyBlob`  
- [out] Velikost v bajtech, veřejného klíče.  
+ mimo Velikost veřejného klíče v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Zkráceným tvarem veřejný klíč je token silného názvu. Token je hodnota hash 64-bit, který je vytvořen z veřejného klíče použitý k podepsání sestavení. Token, který je součástí silného názvu pro sestavení a může číst z metadat sestavení.  
+ Token silného názvu je zkrácenou formou veřejného klíče. Token je 64 hodnota hash, která je vytvořena z veřejného klíče použitého k podepsání sestavení. Token je součástí silného názvu sestavení a lze ho číst z metadat sestavení.  
   
- Poté, co načítání klíče a token, který je vytvořen, měli byste zavolat [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce přidělená paměť uvolnit.  
+ Po načtení klíče a vytvoření tokenu byste měli zavolat funkci [StrongNameFreeBuffer –](strongnamefreebuffer-function.md) a uvolnit tak přidělenou paměť.  
   
- Pokud `StrongNameTokenFromAssemblyEx` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameTokenFromAssemblyEx` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně Mscoree. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameTokenFromAssemblyEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)
-- [StrongNameTokenFromAssembly – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassembly-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameTokenFromAssemblyEx – metoda](../hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)
+- [StrongNameTokenFromAssembly – metoda](../hosting/iclrstrongname-strongnametokenfromassembly-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

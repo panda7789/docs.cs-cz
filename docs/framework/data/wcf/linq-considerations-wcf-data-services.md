@@ -9,28 +9,28 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: d2d03e11c49d3bde042cc46811f21cc2d899b4b8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c0d2d1dac43dd178680adbc123d5ce4f88fc0cc0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952256"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779882"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Otázky LINQ (WCF Data Services)
-Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní. [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Další informace o sestavování a spouštění dotazů [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]na základě datové služby založené na službě najdete v tématu dotazování [datové služby](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní. [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Další informace o sestavování a spouštění dotazů [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]na základě datové služby založené na službě najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="composing-linq-queries"></a>Vytváření dotazů LINQ  
  LINQ umožňuje vytvářet dotazy proti kolekci objektů, které implementují <xref:System.Collections.Generic.IEnumerable%601>. Dialogové okno **Přidat odkaz na službu** v aplikaci Visual Studio a nástroj DataSvcUtil. exe slouží k vygenerování reprezentace [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby jako třídy kontejneru entit, ze <xref:System.Data.Services.Client.DataServiceContext>které dědí, a také objektů, které představují entity vracené v informačních kanálech Tyto nástroje také generují vlastnosti třídy kontejneru entit pro kolekce, které jsou zpřístupněny jako informační kanály služby. Každá z těchto vlastností třídy, která zapouzdřuje datovou službu, vrátí <xref:System.Data.Services.Client.DataServiceQuery%601>. Vzhledem k tomu, že <xref:System.Linq.IQueryable%601> TřídaimplementujerozhranídefinovanétechnologiíLINQ,můžetevytvořitdotazLINQnainformačníkanályvystavenédatovouslužbou,kteréjsoupřeloženyklientskouknihovnounaidentifikátorURIžádostiodotaz,kterýjeodeslándodatovéslužbyna<xref:System.Data.Services.Client.DataServiceQuery%601> realizaci.  
   
 > [!IMPORTANT]
-> Sada dotazů vyhodnotit v syntaxi LINQ je širší než ty, které jsou povoleny v syntaxi identifikátoru URI používané [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datovými službami. <xref:System.NotSupportedException> Je vyvolána, když dotaz nelze namapovat na identifikátor URI v cílové datové službě. Další informace naleznete v tématu [nepodporované metody LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
+> Sada dotazů vyhodnotit v syntaxi LINQ je širší než ty, které jsou povoleny v syntaxi identifikátoru URI používané [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] datovými službami. <xref:System.NotSupportedException> Je vyvolána, když dotaz nelze namapovat na identifikátor URI v cílové datové službě. Další informace naleznete v tématu [nepodporované metody LINQ](linq-considerations-wcf-data-services.md#unsupportedMethods) v tomto tématu.  
   
  Následující příklad je dotaz LINQ, který vrací `Orders` náklady na dopravné více než $30 a seřadí výsledky podle data expedice počínaje nejnovějším datem expedice:  
   
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]      
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]    
   
- Tento dotaz LINQ se převede na následující identifikátor URI dotazu, který se spustí pro službu [rychlého](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) startu dat založenou na Northwind:  
+ Tento dotaz LINQ se převede na následující identifikátor URI dotazu, který se spustí pro službu [rychlého](quickstart-wcf-data-services.md) startu dat založenou na Northwind:  
   
 ```  
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30  
@@ -46,11 +46,11 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klient je schopen přeložit oba druhy složených dotazů do identifikátoru URI dotazu a můžete roztáhnout dotaz LINQ připojením metod dotazu do výrazu dotazu. Při vytváření dotazů LINQ přidáním syntaxe metody do výrazu dotazu nebo <xref:System.Data.Services.Client.DataServiceQuery%601>dojde k přidání operací do identifikátoru URI dotazu v pořadí, ve kterém jsou metody volány. To je ekvivalentní volání <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metody pro přidání jednotlivých možností dotazu k identifikátoru URI dotazu.  
   
 ## <a name="executing-linq-queries"></a>Provádění dotazů LINQ  
- Některé metody dotazů LINQ, jako <xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29> je například nebo <xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>, při připojení k dotazu, způsobují spuštění dotazu. Dotaz je také proveden při implicitním vyčíslení výsledků, například během `foreach` smyčky nebo při přiřazení dotazu `List` do kolekce. Další informace najdete v tématu [dotazování datové služby](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+ Některé metody dotazů LINQ, jako <xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29> je například nebo <xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>, při připojení k dotazu, způsobují spuštění dotazu. Dotaz je také proveden při implicitním vyčíslení výsledků, například během `foreach` smyčky nebo při přiřazení dotazu `List` do kolekce. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
- Klient spustí dotaz LINQ ve dvou částech. Kdykoliv je to možné, výrazy LINQ v dotazu se nejprve vyhodnotí na klientovi a pak se vygeneruje dotaz založený na identifikátorech URI a pošle se do datové služby pro vyhodnocení dat ve službě. Další informace najdete v části [klient porovnání se serverem](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md#executingQueries) při dotazování [na datovou službu](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+ Klient spustí dotaz LINQ ve dvou částech. Kdykoliv je to možné, výrazy LINQ v dotazu se nejprve vyhodnotí na klientovi a pak se vygeneruje dotaz založený na identifikátorech URI a pošle se do datové služby pro vyhodnocení dat ve službě. Další informace najdete v části [klient porovnání se serverem](querying-the-data-service-wcf-data-services.md#executingQueries) při [dotazování na datovou službu](querying-the-data-service-wcf-data-services.md).  
   
- Pokud dotaz LINQ nelze přeložit v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]identifikátoru URI dotazu, který je kompatibilní, je vyvolána výjimka při pokusu o provedení. Další informace najdete v tématu [dotazování datové služby](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+ Pokud dotaz LINQ nelze přeložit v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]identifikátoru URI dotazu, který je kompatibilní, je vyvolána výjimka při pokusu o provedení. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="linq-query-examples"></a>Příklady dotazů LINQ  
  Příklady v následujících částech ukazují typy dotazů LINQ, které mohou být provedeny proti [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] službě.  
@@ -136,7 +136,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
 <a name="expand"></a>   
 ### <a name="expand"></a>Expand  
- Když se dotazuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] na datovou službu, můžete požádat o to, aby entity související s entitou, které cílí na dotaz, zahrnovaly vrácený kanál. Metoda je volána <xref:System.Data.Services.Client.DataServiceQuery%601> v pro sadu entit, která je cílem dotazu LINQ, spolu s názvem `path` sady entit, která je zadána jako parametr. <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> Další informace najdete v tématu [načítání odloženého obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).  
+ Když se dotazuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] na datovou službu, můžete požádat o to, aby entity související s entitou, které cílí na dotaz, zahrnovaly vrácený kanál. Metoda je volána <xref:System.Data.Services.Client.DataServiceQuery%601> v pro sadu entit, která je cílem dotazu LINQ, spolu s názvem `path` sady entit, která je zadána jako parametr. <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> Další informace najdete v tématu [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).  
   
  Následující příklady ukazují ekvivalentní způsoby použití <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metody v dotazu:  
   
@@ -212,7 +212,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
-- [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)
+- [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)
+- [Projekce dotazů](query-projections-wcf-data-services.md)
+- [Materializace objektů](object-materialization-wcf-data-services.md)
 - [OData: Konvence identifikátoru URI](https://go.microsoft.com/fwlink/?LinkID=185564)

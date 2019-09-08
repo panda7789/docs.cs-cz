@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0af3bd64-92a2-4b47-ae62-f5df35f131a6
-ms.openlocfilehash: 8ae8c8e020a3d8ada5bdcd5037187e6f3abd33a4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 1c4e0b368a8eb154207382ae70b9767f5a5fe64d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203848"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785433"
 ---
 # <a name="creating-expression-columns"></a>Vytváření sloupců výrazů
 Můžete definovat výraz pro sloupec, který umožňuje, aby obsahoval hodnotu vypočítanou z jiných hodnot sloupce ve stejném řádku nebo z hodnot sloupců s více řádky v tabulce. Chcete-li definovat výraz, který má být vyhodnocen, použijte <xref:System.Data.DataColumn.Expression%2A> vlastnost cílového sloupce a <xref:System.Data.DataColumn.ColumnName%2A> použijte vlastnost pro odkaz na jiné sloupce ve výrazu. <xref:System.Data.DataColumn.DataType%2A> Hodnota sloupce Expression musí být vhodná pro hodnotu, kterou výraz vrátí.  
@@ -23,7 +23,7 @@ Můžete definovat výraz pro sloupec, který umožňuje, aby obsahoval hodnotu 
 |Běhu|"JednotkováCena * množství"|  
 |Agregace|Sum (price)|  
   
- Můžete nastavit vlastnost **Expression** pro existující objekt DataColumn nebo můžete vlastnost zahrnout jako třetí argument <xref:System.Data.DataColumn> předaný konstruktoru, jak je znázorněno v následujícím příkladu.  
+ Můžete nastavit vlastnost **Expression** pro existující objekt **DataColumn** nebo můžete vlastnost zahrnout jako třetí argument <xref:System.Data.DataColumn> předaný konstruktoru, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workTable.Columns.Add("Total",Type.GetType("System.Double"))  
@@ -36,7 +36,7 @@ workTable.Columns.Add("Total", typeof(Double));
 workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");  
 ```  
   
- Výrazy můžou odkazovat na jiné sloupce výrazu; Nicméně cyklický odkaz, ve kterém dva výrazy odkazují na sebe navzájem, vygenerují výjimku. Pravidla týkající se psaní výrazů naleznete v tématu <xref:System.Data.DataColumn.Expression%2A> vlastnost třídy DataColumn.  
+ Výrazy můžou odkazovat na jiné sloupce výrazu; Nicméně cyklický odkaz, ve kterém dva výrazy odkazují na sebe navzájem, vygenerují výjimku. Pravidla týkající se psaní výrazů naleznete v tématu <xref:System.Data.DataColumn.Expression%2A> vlastnost třídy **DataColumn** .  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -45,4 +45,4 @@ workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");
 - <xref:System.Data.DataTable>
 - [Definice schématu datové tabulky](datatable-schema-definition.md)
 - [Datové tabulky](datatables.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

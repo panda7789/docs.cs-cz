@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
-ms.openlocfilehash: a620b7b15bb876d255fe787dc5d48aef14fb73e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 322325b765f62d04e5713557f2ef9c97e1746ae0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946614"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792054"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením několika aktivních sad výsledků (MARS) museli vývojáři použít k řešení určitých scénářů buď několik připojení, nebo ukazatele na straně serveru. Pokud se navíc v transakční situaci použilo víc připojení, vyžadují se vázaná připojení (s **sp_getbindtoken** a **sp_bindsession**). Následující scénáře ukazují, jak použít připojení s povoleným MARSm místo několika připojení.  
@@ -404,5 +404,5 @@ private static string GetConnectionString()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Více aktivních sad výsledků (MARS)](multiple-active-result-sets-mars.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

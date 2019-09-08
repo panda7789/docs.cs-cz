@@ -1,43 +1,43 @@
 ---
-title: Vytvoření datové tabulky z dotazu (LINQ to DataSet)
+title: Vytvoření objektu DataTable z dotazu (LINQ to DataSet)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: 88abd0e5b7f56702c7a7009842253d3ca552d01f
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 4b95ec5a3e83fa5553a154ed64704312726153cf
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504199"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785632"
 ---
-# <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření datové tabulky z dotazu (LINQ to DataSet)
-Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. Když prováděly operace s daty, nové <xref:System.Data.DataTable> se sloučí zpět do zdroje <xref:System.Data.DataTable>.  
+# <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření objektu DataTable z dotazu (LINQ to DataSet)
+Datová vazba je běžné použití <xref:System.Data.DataTable> objektu. Metoda přijímá výsledky dotazu a kopíruje data <xref:System.Data.DataTable>do, které lze následně použít pro datovou vazbu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Po provedení operací s daty se nový <xref:System.Data.DataTable> sloučí zpátky do zdroje. <xref:System.Data.DataTable>  
   
- <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda používá následující proces vytvoření <xref:System.Data.DataTable> z dotazu:  
+ Metoda používá následující proces k <xref:System.Data.DataTable> vytvoření z dotazu: <xref:System.Data.DataTableExtensions.CopyToDataTable%2A>  
   
-1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda duplicity <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Collections.IEnumerable> Zdroj má obecně pochází z LINQ dotaz výraz nebo metoda datové sady.  
+1. Metoda naklonuje <xref:System.Data.DataTable> ze zdrojové tabulky ( <xref:System.Data.DataTable> objekt, který implementuje <xref:System.Linq.IQueryable%601> rozhraní). <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> <xref:System.Collections.IEnumerable> Zdroj obecně pochází z výrazu LINQ to DataSet nebo dotazu metody.  
   
-2. Schéma klonované <xref:System.Data.DataTable> je sestaven z prvního sloupce ve výčtu <xref:System.Data.DataRow> objektu ve zdrojové tabulce a název klonovaného tabulky je název zdrojové tabulky obsahující slovo "dotazování" připojenou k němu.  
+2. Schéma klonování <xref:System.Data.DataTable> je postavené ze sloupců prvního <xref:System.Data.DataRow> výčtového objektu ve zdrojové tabulce a názvem klonované tabulky je název zdrojové tabulky, ke které se připojí Word "dotaz".  
   
-3. Pro každý řádek v tabulce zdrojový obsah řádku, který zkopíruje do nového <xref:System.Data.DataRow> objektu, který se pak vloží do naklonovaného tabulky. <xref:System.Data.DataRow.RowState%2A> a <xref:System.Data.DataRow.RowError%2A> vlastnosti jsou zachovány v operaci kopírování. <xref:System.ArgumentException> Je vyvolána, pokud <xref:System.Data.DataRow> objekty ve zdroji pocházejí z různých tabulek.  
+3. Pro každý řádek ve zdrojové tabulce se obsah řádku zkopíruje do nového <xref:System.Data.DataRow> objektu, který je pak vložen do klonované tabulky. Vlastnosti <xref:System.Data.DataRow.RowState%2A> a<xref:System.Data.DataRow.RowError%2A> jsou zachovány v rámci operace kopírování. Pokud jsou <xref:System.ArgumentException> objektyvezdrojizrůznýchtabulek,<xref:System.Data.DataRow> je vyvolána výjimka.  
   
-4. Klonované <xref:System.Data.DataTable> se vrátí po všech <xref:System.Data.DataRow> objekty ve vstupní tabulce dotazovatelné byly zkopírovány. Pokud zdrojové sekvence neobsahuje žádný <xref:System.Data.DataRow> objektů, metoda vrátí prázdnou <xref:System.Data.DataTable>.  
+4. Klonování <xref:System.Data.DataTable> se vrátí po zkopírování <xref:System.Data.DataRow> všech objektů ve vstupní tabulce Queryable. Pokud zdrojová sekvence neobsahuje žádné <xref:System.Data.DataRow> objekty, metoda vrátí prázdnou <xref:System.Data.DataTable>hodnotu.  
   
- Všimněte si, že volání <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> způsobí, že metoda vázán na zdrojovou tabulku k provedení dotazu.  
+ Všimněte si, že <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> volání metody způsobí provedení dotazu vázaného na zdrojovou tabulku.  
   
- Když <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metoda zaznamená nulový odkaz nebo typ s možnou hodnotou Null v řádku ve zdrojové tabulce, nahradí hodnotu s <xref:System.DBNull.Value>. Tímto způsobem, hodnoty null jsou zpracovány správně ve vráceném <xref:System.Data.DataTable>.  
+ Když metoda nalezne buď odkaz na hodnotu null nebo typ hodnoty s možnou hodnotou null v řádku ve zdrojové tabulce, nahradí <xref:System.DBNull.Value>hodnotu hodnotou. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Tímto způsobem se hodnoty null zpracovávají správně ve vrácených <xref:System.Data.DataTable>hodnotách.  
   
- Poznámka: <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá jako vstup dotazu, která vrací řádky z několika <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> objekty. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda zkopíruje data, ale nikoli vlastnosti ze zdroje <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> objekty na vrácenou <xref:System.Data.DataTable>. Je potřeba explicitně nastavit vlastnosti vráceného <xref:System.Data.DataTable>, jako například <xref:System.Data.DataTable.Locale%2A> a <xref:System.Data.DataTable.TableName%2A>.  
+ Poznámka: Metoda přijímá jako vstup dotaz, který může vracet řádky z více <xref:System.Data.DataTable> objektů nebo <xref:System.Data.DataSet>. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda zkopíruje data, ale nikoli vlastnosti ze zdroje <xref:System.Data.DataTable> nebo <xref:System.Data.DataSet> objektů do vráceného <xref:System.Data.DataTable>objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Budete muset explicitně nastavit vlastnosti vrácených <xref:System.Data.DataTable>, <xref:System.Data.DataTable.Locale%2A> například a <xref:System.Data.DataTable.TableName%2A>.  
   
- V následujícím příkladu dotazuje tabulku SalesOrderHeader pro objednávky po 8. srpna 2001 a používá <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metodu pro vytvoření <xref:System.Data.DataTable> z dotazu. <xref:System.Data.DataTable> Pak je vázán na <xref:System.Windows.Forms.BindingSource>, který funguje jako proxy pro <xref:System.Windows.Forms.DataGridView>.  
+ Následující příklad vyhledá tabulku SalesOrderHeader pro objednávky po 8. srpna 2001 a použije <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metodu k <xref:System.Data.DataTable> vytvoření z tohoto dotazu. Je pak svázán <xref:System.Windows.Forms.BindingSource>s, který <xref:System.Windows.Forms.DataGridView>funguje jako proxy pro. <xref:System.Data.DataTable>  
   
  [!code-csharp[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#copytodatatable1)]
  [!code-vb[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#copytodatatable1)]  
   
-## <a name="creating-a-custom-copytodatatablet-method"></a>Vytváření vlastních CopyToDataTable\<T > – metoda  
- Existující <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metody pracovat pouze s <xref:System.Collections.Generic.IEnumerable%601> zdroje kde obecný parametr `T` je typu <xref:System.Data.DataRow>. I když to je užitečné, neumožňuje tabulky vytvořit ze sekvence Skalární typy, dotazy, které vracejí anonymních typů nebo dotazy, které provádějí spojování tabulek platná. Příklad toho, jak implementovat dvě vlastní `CopyToDataTable` metody, které načíst tabulku ze sekvence skalární nebo anonymní typy, najdete v článku [jak: Implementace CopyToDataTable\<T > kde obecný typ není DataRow](../../../../docs/framework/data/adonet/implement-copytodatatable-where-type-not-a-datarow.md)s.  
+## <a name="creating-a-custom-copytodatatablet-method"></a>Vytvoření vlastní metody CopyToDataTable\<T >  
+ Stávající <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metody fungují pouze <xref:System.Collections.Generic.IEnumerable%601> ve zdroji, kde je obecný parametr `T` typu <xref:System.Data.DataRow>. I když je to užitečné, neumožňuje vytvářet tabulky ze sekvence skalárních typů, od dotazů, které vracejí anonymní typy, nebo z dotazů, které provádějí spojení tabulek. Příklad toho, jak implementovat dvě vlastní `CopyToDataTable` metody, které načítají tabulku ze sekvence skalárního nebo anonymního typu, naleznete v tématu [How to: Implementujte\<CopyToDataTable T >, kde obecný typ T není DataRow](implement-copytodatatable-where-type-not-a-datarow.md)s.  
   
  Příklady v této části používají následující vlastní typy:  
   
@@ -45,37 +45,37 @@ Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Dat
  [!code-vb[DP Custom CopyToDataTable Examples#ItemClass](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#itemclass)]  
   
 ### <a name="example"></a>Příklad  
- V tomto příkladu provádí spojení `SalesOrderHeader` a `SalesOrderDetail` tabulky k získání online objednávky z srpnu a vytvoří tabulku z dotazu.  
+ Tento příklad provede spojení `SalesOrderHeader` tabulek a a `SalesOrderDetail` získá online objednávky z měsíce srpna a vytvoří tabulku z dotazu.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#join)]
  [!code-vb[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#join)]  
   
 ### <a name="example"></a>Příklad  
- Následující příklad dotazuje kolekci položek cena je vyšší než 9,99 USD a vytvoří tabulku z výsledků dotazu.  
+ Následující příklad dotazuje kolekci pro položky Price větší než $9,99 a vytvoří tabulku z výsledků dotazu.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintotable)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsIntoTable](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsintotable)]  
   
 ### <a name="example"></a>Příklad  
- V následujícím příkladu dotazuje kolekci položek cena je vyšší než 9,99 a projekty výsledky. Vrácené posloupnosti anonymní typy se načtou do existující tabulky.  
+ Následující příklad dotazuje kolekci pro položky Price větší než 9,99 a výsledky projektů. Vrácená sekvence anonymních typů je načtena do existující tabulky.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintoexistingtable)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsintoexistingtable)]  
   
 ### <a name="example"></a>Příklad  
- V následujícím příkladu dotazuje kolekci položek cena je vyšší než 9,99 USD a projekty výsledky. Vrácené posloupnosti anonymní typy se načtou do existující tabulky. Schéma tabulky se automaticky rozšíří, protože `Book` a `Movies` typy jsou odvozeny z `Item` typu.  
+ Následující příklad dotazuje kolekci pro položky Price větší než $9,99 a výsledky projektů. Vrácená sekvence anonymních typů je načtena do existující tabulky. Schéma tabulky je automaticky rozbaleno, protože `Book` `Item` typy `Movies` a jsou odvozeny z typu.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsExpandSchema](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsexpandschema)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsExpandSchema](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsexpandschema)]  
   
 ### <a name="example"></a>Příklad  
- V následujícím příkladu dotazuje kolekci položek cena je vyšší než 9,99 USD a vrátí sekvenci <xref:System.Double>, který je načten do nové tabulky.  
+ Následující příklad vyhledá kolekci pro položky Price větší než $9,99 a vrátí sekvenci <xref:System.Double>, která je načtena do nové tabulky.  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadScalarSequence](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loadscalarsequence)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadScalarSequence](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loadscalarsequence)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
-- [Obecné pole a metody SetField](../../../../docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)
-- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+- [Průvodce programováním](programming-guide-linq-to-dataset.md)
+- [Obecné pole a metody SetField](generic-field-and-setfield-methods-linq-to-dataset.md)
+- [Příklady LINQ to DataSet](linq-to-dataset-examples.md)

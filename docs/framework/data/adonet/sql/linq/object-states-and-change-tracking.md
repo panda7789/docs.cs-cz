@@ -2,16 +2,16 @@
 title: Stavy objektů a sledování změn
 ms.date: 03/30/2017
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-ms.openlocfilehash: a60afab5158d0d5f66d12d6913ee890abc8ca730
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a9df200f4d2e5f64bf5883c7bc513ba7129dcaad
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043522"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781272"
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objekty se vždycky účastní vněkterých stavech. Například při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytváření nového objektu je objekt ve `Unchanged` stavu. Nový objekt, který sami vytvoříte, není známý pro <xref:System.Data.Linq.DataContext> a je ve `Untracked` stavu. Po úspěšném provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>se všechny objekty, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jsou v `Unchanged` tomto stavu, ví. (Jediná výjimka je reprezentovaná prvky, které byly úspěšně odstraněny z databáze, které jsou ve `Deleted` stavu a nepoužitelné v této <xref:System.Data.Linq.DataContext> instanci.)
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]objekty se vždycky účastní v některých *stavech*. Například při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytváření nového objektu je objekt ve `Unchanged` stavu. Nový objekt, který sami vytvoříte, není známý pro <xref:System.Data.Linq.DataContext> a je ve `Untracked` stavu. Po úspěšném provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>se všechny objekty, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] jsou v `Unchanged` tomto stavu, ví. (Jediná výjimka je reprezentovaná prvky, které byly úspěšně odstraněny z databáze, které jsou ve `Deleted` stavu a nepoužitelné v této <xref:System.Data.Linq.DataContext> instanci.)
 
 ## <a name="object-states"></a>Stavy objektů
 
@@ -21,7 +21,7 @@ V následující tabulce jsou uvedené možné stavy pro [!INCLUDE[vbtecdlinq](.
 |-----------|-----------------|
 |`Untracked`|Objekt, který není sledován [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástrojem. Mezi příklady patří následující:<br /><br /> – Objekt, na který se nedotazuje <xref:System.Data.Linq.DataContext> pomocí aktuálního (například nově vytvořeného objektu).<br />-Objekt vytvořený prostřednictvím deserializace<br />– Objekt, na který se dotazoval <xref:System.Data.Linq.DataContext>, je jiný.|
 |`Unchanged`|Objekt načtený pomocí aktuálního <xref:System.Data.Linq.DataContext> a neznámého objektu byl od vytvoření změněn.|
-|`PossiblyModified`|Objekt, který je *připojen* k <xref:System.Data.Linq.DataContext>. Další informace najdete v tématu [načtení dat a operace CUD v N-vrstvých aplikacích (LINQ to SQL)](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).|
+|`PossiblyModified`|Objekt, který je *připojen* k <xref:System.Data.Linq.DataContext>. Další informace najdete v tématu [načtení dat a operace CUD v N-vrstvých aplikacích (LINQ to SQL)](data-retrieval-and-cud-operations-in-n-tier-applications.md).|
 |`ToBeInserted`|Objekt, který nebyl načten pomocí aktuálního <xref:System.Data.Linq.DataContext>. Tím dojde k vytvoření `INSERT` databáze <xref:System.Data.Linq.DataContext.SubmitChanges%2A>během.|
 |`ToBeUpdated`|Objekt, který měl být od načtení změněn. Tím dojde k vytvoření `UPDATE` databáze <xref:System.Data.Linq.DataContext.SubmitChanges%2A>během.|
 |`ToBeDeleted`|Objekt označený k odstranění, který způsobuje databázi `DELETE` během. <xref:System.Data.Linq.DataContext.SubmitChanges%2A>|
@@ -31,7 +31,7 @@ V následující tabulce jsou uvedené možné stavy pro [!INCLUDE[vbtecdlinq](.
 
 Můžete explicitně požádat `Inserts` o použití <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>. `Inserts` Alternativně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] lze odvodit pomocí hledání objektů připojených k jednomu ze známých objektů, které je třeba aktualizovat. Například `Untracked` Pokud přidáte `Untracked` objekt <xref:System.Data.Linq.EntitySet%601> do <xref:System.Data.Linq.EntityRef%601> objektu`Untracked` nebo nastavíte objekt, provedete ho pomocí sledovaných objektů v grafu. Při zpracování <xref:System.Data.Linq.DataContext.SubmitChanges%2A> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projde sledované objekty a zjistí všechny dostupné trvalé trvalé objekty, které nejsou sledovány. Tyto objekty jsou kandidáty na vložení do databáze.
 
-Pro <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>třídy v hierarchii dědičnosti (`o`) také nastaví hodnotu člena určenou jako *diskriminátor* tak, aby odpovídala typu objektu `o`. V případě typu, který odpovídá výchozí hodnotě diskriminátoru, tato akce způsobí přepsání hodnoty diskriminátoru výchozí hodnotou. Další informace najdete v tématu [Podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md).
+Pro <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>třídy v hierarchii dědičnosti (`o`) také nastaví hodnotu člena určenou jako *diskriminátor* tak, aby odpovídala typu objektu `o`. V případě typu, který odpovídá výchozí hodnotě diskriminátoru, tato akce způsobí přepsání hodnoty diskriminátoru výchozí hodnotou. Další informace najdete v tématu [Podpora dědičnosti](inheritance-support.md).
 
 > [!IMPORTANT]
 > Objekt přidaný do `Table` není v mezipaměti identit. Mezipaměť identity odráží pouze to, co je načteno z databáze. Po volání <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>se přidaná entita nezobrazí v dotazech na databázi, dokud <xref:System.Data.Linq.DataContext.SubmitChanges%2A> není úspěšně dokončena.
@@ -69,5 +69,5 @@ Pokud aktualizujete požadovaný odkaz i odpovídající cizí klíč, musíte s
 
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Operace vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/insert-update-and-delete-operations.md)
+- [Základní informace](background-information.md)
+- [Operace vložení, aktualizace a odstranění](insert-update-and-delete-operations.md)

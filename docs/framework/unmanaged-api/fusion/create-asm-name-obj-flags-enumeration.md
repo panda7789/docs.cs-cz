@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 871ad81cd83c40d7299f39ede404e274b95b2ac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9897e396424b9076da8f30c61b5a14cfa9539690
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778455"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795420"
 ---
-# <a name="createasmnameobjflags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS – výčet
-Určuje atributy [iassemblyname – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu při jejím vytváření pomocí [createassemblynameobject –](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md) funkce.  
+# <a name="create_asm_name_obj_flags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS – výčet
+Určuje atributy objektu [rozhraní IAssemblyName](iassemblyname-interface.md) , když je vytvořen funkcí [CreateAssemblyNameObject –](createassemblynameobject-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,20 +44,20 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CANOF_PARSE_DISPLAY_NAME`|Označuje, že je parametr předaný textovou identitu.|  
+|`CANOF_PARSE_DISPLAY_NAME`|Označuje, že předaný parametr je textová identita.|  
 |`CANOF_SET_DEFAULT_VALUES`|Nastaví několik výchozích hodnot.|  
-|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Ověří pravidla sestavení typu friend (pouze název a veřejný klíč). Tento člen je jen pro interní použití.|  
-|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Kombinace `CANOF_PARSE_DISPLAY_NAME` a `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` příznaky. Tento člen je jen pro interní použití.|  
+|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Ověří pravidlo sestavení typu Friend (pouze název a veřejný klíč). Tento člen je určen pouze pro interní použití.|  
+|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Kombinace `CANOF_PARSE_DISPLAY_NAME` příznaků a `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` . Tento člen je určen pouze pro interní použití.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [CreateAssemblyNameObject – funkce](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md)
-- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [CreateAssemblyNameObject – funkce](createassemblynameobject-function.md)
+- [Výčty pro fúze](fusion-enumerations.md)

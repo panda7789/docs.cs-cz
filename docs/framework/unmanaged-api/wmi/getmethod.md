@@ -1,5 +1,5 @@
 ---
-title: Funkce GetMethod (referenční dokumentace nespravovaného rozhraní API)
+title: GetMethod – funkce (nespravované reference rozhraní API)
 description: Funkce GetMethod načte informace o metodě.
 ms.date: 11/06/2017
 api_name:
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 419fb33155cfa91199e52110da29efd44d606f4b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b9cc185bf8cccb8ed3c24e28954afd86464602d7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636609"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798564"
 ---
 # <a name="getmethod-function"></a>Funkce GetMethod
 
@@ -45,49 +45,49 @@ HRESULT GetMethod (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`\
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`\
-[in] Název metody. Tento parametr nemůže mít `null` a musí odkazovat na platný `LPCWSTR`.
+pro Název metody. Tento parametr nemůže být `null` a musí odkazovat na platný. `LPCWSTR`
 
 `lFlags`\
-[in] Vyhrazená. Tento parametr musí být 0.
+pro Rezervovaný. Tento parametr musí mít hodnotu 0.
 
 `ppInSignature`\
-[out] Ukazatel na adresu [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instanci, která popisuje vstupní parametry k metodě. Tento parametr se ignoruje, pokud je nastaveno na `null`.
+mimo Ukazatel na adresu instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , která popisuje parametry v parametrech metody. Tento parametr je ignorován, pokud je nastaven na `null`hodnotu.
 
 `ppOutSignature`\
-[out] Ukazatel na adresu [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instanci, která popisuje výstupní parametry metody. Tento parametr se ignoruje, pokud je nastaveno na `null`.
+mimo Ukazatel na adresu instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , která popisuje výstupní parametry metody. Tento parametr je ignorován, pokud je nastaven na `null`hodnotu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost nebyla nalezena. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) .
 
-Můžete nastavit správu Windows [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatel na `null` Pokud metoda nemá žádné parametry. v.
+Správa systému Windows může nastavit ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) na `null` hodnotu, pokud metoda nemá žádné parametry.
 
-V `ppInSignature` a `ppOutSignature` popisují ani výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](/windows/desktop/WmiSdk/--parameters). Vlastnosti v `ppInSignature` jsou pojmenovány `Param` *n*, kde *n* je pozice parametru v podpisu metody (například `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` se také nazývají `Param` *n*, a návratová hodnota se nazývá `ReturnValue`. Další informace a příklad najdete v tématu [IWbemClassObject::GetMethod metoda](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
+V `ppInSignature` systémech `ppOutSignature` a popište parametry a výstupní parametry v uvedeném pořadí jako vlastnosti `IWbemClassObject` instance třídy System Class [_Parameters](/windows/desktop/WmiSdk/--parameters). `ppInSignature` Vlastnosti v `Param`mají název *n*, kde *n* je pozice parametru v signatuře metody (například `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` jsou také pojmenované `Param` *n*a návratová hodnota je pojmenována `ReturnValue`. Další informace a příklad naleznete v tématu [Metoda IWbemclassObject:: GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

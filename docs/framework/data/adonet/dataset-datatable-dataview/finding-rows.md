@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
-ms.openlocfilehash: 2ff2b6b6d00c854d07f36d37986268a388c7f31b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: ad10557a55b498fe004bff6ce89801e975e7138b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203713"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786327"
 ---
 # <a name="finding-rows"></a>Hledání řádků
 Můžete vyhledat řádky podle jejich hodnot klíče řazení pomocí <xref:System.Data.DataView.Find%2A> metod <xref:System.Data.DataView>a <xref:System.Data.DataView.FindRows%2A> . Rozlišuje velká a malá písmena vyhledávacích hodnot v metodách **find** a **FindRows** je určena vlastností **CaseSensitive** podkladového <xref:System.Data.DataTable>výrazu. Aby bylo možné vrátit výsledek, musí hodnoty hledání odpovídat existujícím hodnotám klíčového řazení v celém rozsahu.  
@@ -98,4 +98,4 @@ else
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
 - [Zobrazení dat](dataviews.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

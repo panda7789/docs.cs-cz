@@ -2,24 +2,24 @@
 title: MessageAuthenticationFailure
 ms.date: 03/30/2017
 ms.assetid: cde6beae-2d57-447e-8885-a1cfc66bbcbb
-ms.openlocfilehash: d3fc6f2cccb5282ebf931dd63cff4ec2ab95a505
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: da150beedc98cfa1f8e4a4564906f5e11ef26c46
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969751"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797752"
 ---
 # <a name="messageauthenticationfailure"></a>MessageAuthenticationFailure
-Id: 170  
+Účet 170  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: SecurityAudit  
+ Kategorií SecurityAudit  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že ověření zprávy se nezdařilo. Události jsou uvedené služby, akce, identita klienta a aktivita ID.  
+ Tato událost označuje, že ověření zprávy se nezdařilo. Událost obsahuje seznam služby, akce, identitu klienta a ID aktivity.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

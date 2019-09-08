@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57d64096ea693be41359aef63c04674ca77769c6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 73c531378355100fdfca264ea9f96ff4d7c7ceda
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760973"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796688"
 ---
 # <a name="iassemblyenumgetnextassembly-method"></a>IAssemblyEnum::GetNextAssembly – metoda
-Získá ukazatel na další [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) obsažené v tomto [iassemblyenum –](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md) objektu.  
+Získá ukazatel na další [IAssemblyName](iassemblyname-interface.md) obsažený v tomto objektu [IAssemblyEnum](iassemblyenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetNextAssembly (
   
 ## <a name="parameters"></a>Parametry  
  `pvReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
   
  `ppName`  
- [out] Vrácený `IAssemblyName` ukazatele.  
+ mimo Vrácený `IAssemblyName` ukazatel.  
   
  `dwFlags`  
- [in] Vyhrazeno pro budoucí rozšíření. `dwFlags` musí být 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwFlags`musí mít hodnotu 0 (nula).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [IAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)
+- [IAssemblyEnum – rozhraní](iassemblyenum-interface.md)

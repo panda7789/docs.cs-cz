@@ -5,37 +5,37 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-ms.openlocfilehash: ef4831af0b7bafed7d40bd86d2684c73d84a0f93
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 1387dad1f588770384422bf579ed547271b30c0a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634164"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794550"
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítání hodnot identity nebo automatického číslování
 
-Primární klíče v relační databázi je sloupec nebo kombinace sloupců, které vždy obsahovat jedinečné hodnoty. Znalost hodnotu primárního klíče umožňuje najít řádek, který jej obsahuje. Relační databáze modulů, jako je SQL Server, Oracle a Microsoft Access/Jet podporu vytváření automatické zvyšování hodnoty sloupce, které lze označit jako primární klíče. Tyto hodnoty jsou generovány serveru při přidání řádků do tabulky. V systému SQL Server nastavit vlastnost identity pro sloupec, v databázi Oracle vytvoříte pořadí a v aplikaci Microsoft Access vytvořit sloupec automatického číslování.
+Primární klíč v relační databázi je sloupec nebo kombinace sloupců, které vždycky obsahují jedinečné hodnoty. Znalost hodnoty primárního klíče vám umožní najít řádek, který ho obsahuje. Relační databázové moduly, jako jsou SQL Server, Oracle a Microsoft Access/jet, podporují vytváření automaticky rostoucích sloupců, které se dají určit jako primární klíče. Tyto hodnoty jsou generovány serverem při přidávání řádků do tabulky. V SQL Server nastavíte vlastnost identity sloupce, v Oracle vytvoříte sekvenci a v Microsoft Access vytvoříte sloupec AutoNumber.
 
-A <xref:System.Data.DataColumn> je také možné generovat automaticky narůstající hodnoty tak, že nastavíte <xref:System.Data.DataColumn.AutoIncrement%2A> vlastnost na hodnotu true. Ale pravděpodobně skončíte se duplicitní hodnoty v samostatných instancích systému <xref:System.Data.DataTable>, pokud více klientských aplikací nezávisle na sobě generují automaticky narůstající hodnoty. Server pro generování hodnot automaticky narůstající eliminuje možným konfliktům tím, že každému uživateli načíst vygenerovanou hodnotu pro každý vložený řádek.
+Lze také použít ke generování automaticky rostoucích hodnot <xref:System.Data.DataColumn.AutoIncrement%2A> nastavením vlastnosti na hodnotu true. <xref:System.Data.DataColumn> Nicméně může dokončit duplicitními hodnotami v samostatných instancích a <xref:System.Data.DataTable>, pokud více klientských aplikací je nezávisle generuje automaticky zvyšovat hodnoty. Když server vygeneruje automaticky zvýší hodnoty, eliminuje potenciální konflikty tím, že umožňuje každému uživateli načíst vygenerovanou hodnotu pro každý vložený řádek.
 
-Během volání `Update` metodu `DataAdapter`, databáze může odesílat data zpět do aplikace ADO.NET jako výstupní parametry nebo jako první záznam vrácené sady výsledků příkazu SELECT provést ve stejné službě batch jako příkazu INSERT. Můžete tyto hodnoty načtete a aktualizovat odpovídající sloupce v ADO.NET <xref:System.Data.DataRow> aktualizuje.
+Během volání `Update` metody a `DataAdapter`může databáze odesílat data zpět do vaší aplikace ADO.NET jako výstupní parametry nebo jako první vrácený záznam sady výsledků příkazu SELECT prováděného ve stejné dávce jako příkaz INSERT. ADO.NET může tyto hodnoty načíst a aktualizovat odpovídající sloupce v <xref:System.Data.DataRow> aktualizovaném sloupci.
 
-Některé databáze modulů, jako je databázový stroj Microsoft Jet přístup nepodporuje výstupní parametry a nemůže zpracovat více příkazů v jedné dávce. Při práci s databázový stroj, můžete načíst nové automatické hodnota generovaná pro vloženého řádku spuštěním samostatného příkazu SELECT v obslužnou rutinu události pro `RowUpdated` událost `DataAdapter`.
+Některé databázové moduly, jako je databázový stroj Jet Microsoft Access, nepodporují výstupní parametry a nemohou zpracovávat více příkazů v rámci jedné dávky. Při práci s databázovým strojem Jet můžete načíst novou hodnotu AutoNumber vygenerovanou pro vložený řádek spuštěním samostatného příkazu SELECT v obslužné rutině události pro `RowUpdated` událost. `DataAdapter`
 
 > [!NOTE]
-> O alternativu k použití automatické zvyšování hodnoty má používat <xref:System.Guid.NewGuid%2A> metodu <xref:System.Guid> objekt ke generování identifikátoru GUID, nebo globálně jedinečný identifikátor v klientském počítači, který je možné zkopírovat do serveru, jako je vložen každý nový řádek. `NewGuid` Metoda generuje binární hodnotu 16 bajtů, který je vytvořen pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že se duplicitní žádná hodnota. V databázi serveru SQL Server je identifikátor GUID uložené v `uniqueidentifier` sloupec, který SQL Server může automaticky generovat pomocí příkazů jazyka Transact-SQL `NEWID()` funkce. Pomocí identifikátor GUID jako primární klíč může nepříznivě ovlivnit výkon. SQL Server poskytuje podporu pro `NEWSEQUENTIALID()` funkce, která generuje sekvenční identifikátor GUID, který není musí být globálně jedinečný, ale, který lze efektivněji indexovat.
+> Alternativou k použití automatického zvyšování hodnoty je použití <xref:System.Guid.NewGuid%2A> metody <xref:System.Guid> objektu k vygenerování identifikátoru GUID nebo globálně jedinečného identifikátoru v klientském počítači, který lze zkopírovat na server při vložení každého nového řádku. `NewGuid` Metoda generuje 16 bajtů binární hodnotu, která je vytvořena pomocí algoritmu, který poskytuje vysokou pravděpodobnost, že žádná hodnota nebude duplikována. V databázi SQL Server je identifikátor GUID uložen ve `uniqueidentifier` sloupci, který SQL Server může automaticky generovat pomocí funkce jazyka Transact-SQL. `NEWID()` Použití identifikátoru GUID jako primárního klíče může negativně ovlivnit výkon. SQL Server poskytuje podporu pro `NEWSEQUENTIALID()` funkci, která generuje sekvenční identifikátor GUID, u kterého není zaručeno, že bude globálně jedinečný, ale který bude možné indexovat efektivněji.
 
-## <a name="retrieving-sql-server-identity-column-values"></a>Načítání hodnot Identity sloupce SQL serveru
+## <a name="retrieving-sql-server-identity-column-values"></a>Načítají se SQL Server hodnoty sloupce identity.
 
-Při práci s Microsoft SQL Server, můžete vytvořit uloženou proceduru s výstupní parametr a vrátí hodnotu identity pro vloženého řádku. Následující tabulka popisuje tři funkce jazyka Transact-SQL v SQL serveru, který slouží k načtení hodnot identity sloupce.
+Při práci s Microsoft SQL Server můžete vytvořit uloženou proceduru s parametrem Output, která vrátí hodnotu identity vloženého řádku. Následující tabulka popisuje tři funkce jazyka Transact-SQL v SQL Server, které lze použít k načtení hodnot sloupce identity.
 
 |Funkce|Popis|
 |--------------|-----------------|
-|SCOPE_IDENTITY|Vrátí poslední hodnotu identity v aktuálním oboru spuštění. SCOPE_IDENTITY se doporučuje pro většinu scénářů.|
-|@@IDENTITY|Obsahuje poslední hodnotu identity, které jsou generovány v libovolné tabulce v aktuální relaci. @@IDENTITY může být ovlivněna aktivační události a nesmí vracet hodnotu identity, které jste očekávali.|
-|IDENT_CURRENT|Vrátí poslední hodnotu identity vygenerovat pro konkrétní tabulku v jakékoli relace a kteréhokoliv oboru.|
+|SCOPE_IDENTITY|Vrátí hodnotu poslední identity v rámci aktuálního oboru provádění. SCOPE_IDENTITY se doporučuje pro většinu scénářů.|
+|@@IDENTITY|Obsahuje hodnotu poslední identity vygenerovanou v libovolné tabulce v aktuální relaci. @@IDENTITY může být ovlivněn triggery a nemusí vracet hodnotu identity, kterou očekáváte.|
+|IDENT_CURRENT|Vrátí hodnotu poslední identity vygenerovanou pro konkrétní tabulku v jakékoli relaci a v jakémkoli oboru.|
 
- Následující uložené procedury ukazuje, jak vložit řádek do **kategorie** tabulky a použít výstupní parametr, který vrátí novou hodnotu identity generované funkcí SCOPE_IDENTITY() příkazů jazyka Transact-SQL.
+ Následující uložená procedura ukazuje, jak vložit řádek do tabulky **Categories** a použít výstupní parametr pro návrat nové hodnoty identity vygenerované funkcí Transact-SQL SCOPE_IDENTITY ().
 
 ```sql
 CREATE PROCEDURE dbo.InsertCategory
@@ -46,39 +46,39 @@ INSERT INTO Categories (CategoryName) VALUES(@CategoryName)
 SET @Identity = SCOPE_IDENTITY()
 ```
 
-Uložené procedury lze potom zadat jako zdroj <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> z <xref:System.Data.SqlClient.SqlDataAdapter> objektu. <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> Vlastnost <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> musí být nastaveno na <xref:System.Data.CommandType.StoredProcedure>. Výstup identity jsou načítána pro vytváření <xref:System.Data.SqlClient.SqlParameter> , který má <xref:System.Data.ParameterDirection> z <xref:System.Data.ParameterDirection.Output>. Při `InsertCommand` je zpracována, je identity automaticky navyšovaná hodnota vrátí a umístí do **CategoryID** sloupec aktuálního řádku. Pokud nastavíte <xref:System.Data.SqlClient.SqlCommand.UpdatedRowSource%2A> vlastnost příkazu pro vložení do `UpdateRowSource.OutputParameters` nebo `UpdateRowSource.Both`.
+Uloženou proceduru lze poté zadat jako zdroj <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> <xref:System.Data.SqlClient.SqlDataAdapter> objektu. Vlastnost musí být nastavena na <xref:System.Data.CommandType.StoredProcedure>hodnotu. <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> Výstup identity je načten vytvořením a <xref:System.Data.SqlClient.SqlParameter> , který <xref:System.Data.ParameterDirection> má <xref:System.Data.ParameterDirection.Output>. `UpdateRowSource.Both` <xref:System.Data.SqlClient.SqlCommand.UpdatedRowSource%2A> `UpdateRowSource.OutputParameters` Při zpracování jevrácenahodnotaautomatickyzvýšenáidentitaaumístěnadosloupceKódKategorieaktuálníhořádku,pokudnastavítevlastnostpříkazuVložitnanebona.`InsertCommand`
 
-Pokud váš příkaz insert provede dávky, která obsahuje příkaz INSERT a vyberte příkaz, který vrátí novou hodnotu identity, pak může načtení nové hodnoty tak, že nastavíte `UpdatedRowSource` vlastnost příkazu pro vložení do `UpdateRowSource.FirstReturnedRecord`.
+Pokud příkaz INSERT spustí dávku, která obsahuje příkaz INSERT a příkaz SELECT, který vrací novou hodnotu identity, můžete novou hodnotu načíst nastavením `UpdatedRowSource` vlastnosti pro příkaz INSERT na. `UpdateRowSource.FirstReturnedRecord`
 
 [!code-csharp[DataWorks SqlClient.RetrieveIdentityStoredProcedure#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.RetrieveIdentityStoredProcedure/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.RetrieveIdentityStoredProcedure#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.RetrieveIdentityStoredProcedure/VB/source.vb#1)]
 
-## <a name="merging-new-identity-values"></a>Sloučení nových hodnot Identity
+## <a name="merging-new-identity-values"></a>Slučují se nové hodnoty identity.
 
-Běžný scénář, kdy se má volat `GetChanges` metodu `DataTable` vytvořit kopii, která obsahuje pouze změněných řádků a použít novou kopii při volání `Update` metodu `DataAdapter`. To je užitečné, když potřebujete změněné řádky, které mají samostatná komponenta, která provede aktualizaci. Po aktualizaci, může obsahovat kopii nové hodnoty identity, které pak musí být sloučeny zpět do původní `DataTable`. Nové hodnoty identity můžou mít liší od původní hodnoty `DataTable`. K provedení sloučení, původní hodnoty **AutoIncrement** sloupců v kopie musí být zachovány, aby bylo možné najít a aktualizovat existující řádky v původní `DataTable`, místo přidávání nových řádků, který obsahuje nové hodnoty identity. Ale ve výchozím nastavení tyto původní hodnoty budou ztraceny po volání `Update` metodu `DataAdapter`, protože `AcceptChanges` je implicitně volána pro každou aktualizaci `DataRow`.
+Běžným `GetChanges` scénářem je zavolat metodu `DataTable` pro vytvoření kopie, která obsahuje pouze změněné řádky a použít `Update` novou kopii při volání metody typu `DataAdapter`. To je užitečné hlavně v případě, že je potřeba zařadit změněné řádky do samostatné součásti, která provádí aktualizaci. Po aktualizaci může kopie obsahovat nové hodnoty identity, které se pak musí sloučit zpátky do původní `DataTable`. Nové hodnoty identity se pravděpodobně liší od původních hodnot v `DataTable`. Aby bylo možné sloučení dokončit, musí být zachovány původní hodnoty sloupců **autoincrements** v kopii, aby bylo možné vyhledat a aktualizovat existující řádky v původním `DataTable`umístění, nikoli připojit nové řádky obsahující nové hodnoty identity. . Ve výchozím nastavení jsou však tyto původní hodnoty ztraceny po `Update` volání metody `DataAdapter`, protože `AcceptChanges` je implicitně volána pro každou aktualizaci `DataRow`.
 
-Existují dva způsoby, jak zachovat původní hodnoty `DataColumn` v `DataRow` během `DataAdapter` aktualizace:
+Existují dva způsoby, jak zachovat původní hodnoty `DataColumn` `DataRow` v v průběhu `DataAdapter` aktualizace:
 
-- První metoda zachování původní hodnoty, je nastavena `AcceptChangesDuringUpdate` vlastnost `DataAdapter` k `false`. Tato akce ovlivní všechny `DataRow` v `DataTable` aktualizuje. Další informace a příklady kódu naleznete v tématu <xref:System.Data.Common.DataAdapter.AcceptChangesDuringUpdate%2A>.
+- První metodou zachování původních hodnot je nastavení `AcceptChangesDuringUpdate` vlastnosti `DataAdapter` třídy na `false`. To má vliv `DataRow` na všechny `DataTable` aktualizované. Další informace a příklad kódu naleznete v tématu <xref:System.Data.Common.DataAdapter.AcceptChangesDuringUpdate%2A>.
 
-- Druhý způsob spočívá v psaní kódu v `RowUpdated` obslužná rutina události `DataAdapter` nastavit <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> k <xref:System.Data.UpdateStatus.SkipCurrentRow>. `DataRow` Se aktualizuje ale původní hodnotu každého `DataColumn` se zachovají. Tato metoda umožňuje zachovat původní hodnoty u některých řádků a ne pro ostatní uživatele. Například váš kód můžete zachovat původní hodnoty pro přidání řádků a nejsou upravené nebo odstraněné řádky nejprve kontrolou <xref:System.Data.Common.RowUpdatedEventArgs.StatementType%2A> a upravením <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> k <xref:System.Data.UpdateStatus.SkipCurrentRow> jenom pro řádky s `StatementType` z `Insert`.
+- Druhou metodou je `RowUpdated` napsat kód v obslužné rutině `DataAdapter` události pro nastavení <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> <xref:System.Data.UpdateStatus.SkipCurrentRow>na. Je `DataRow` aktualizována, ale původní hodnota `DataColumn` je zachována. Tato metoda umožňuje zachovat původní hodnoty pro některé řádky, nikoli pro jiné. Kód může například zachovat původní hodnoty pro přidané řádky, nikoli pro upravené nebo odstraněné řádky, <xref:System.Data.Common.RowUpdatedEventArgs.StatementType%2A> a to nejprve zaškrtnutím a potom <xref:System.Data.UpdateStatus.SkipCurrentRow> nastavením <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> pouze pro řádky s `StatementType` `Insert`.
 
-Když některý z těchto metod se používá k zachování původní hodnoty v `DataRow` během `DataAdapter` aktualizace, provede ADO.NET obnáší sérii akcí nastavit aktuální hodnoty `DataRow` na nové hodnoty vrácené výstupní parametry nebo první Vrátí řádek je sada výsledků dotazu stále zachováním původní hodnoty v jednotlivých `DataColumn`. Nejprve je potřeba `AcceptChanges` metodu `DataRow` volá se zachovat aktuální hodnoty jako původní hodnoty, a pak se přiřadí nové hodnoty. Po těchto akcí `DataRows` , který měl jejich <xref:System.Data.DataRow.RowState%2A> vlastnost nastavena na hodnotu <xref:System.Data.DataRowState.Added> budou mít jejich `RowState` nastavenou na <xref:System.Data.DataRowState.Modified>, které mohou neočekávané.
+Když se jedna z těchto metod používá k zachování původních hodnot v `DataRow` `DataAdapter` průběhu aktualizace, ADO.NET provede řadu akcí pro nastavení aktuálních hodnot `DataRow` na nové hodnoty vrácené výstupními parametry nebo prvním. vrácený řádek sady výsledků, zatímco stále se zachovává původní hodnota v každém z nich `DataColumn`. `AcceptChanges` Nejprve metoda `DataRow` je volána pro zachování aktuálních hodnot jako původních hodnot a následně jsou přiřazeny nové hodnoty. Po těchto akcích `DataRows` , které <xref:System.Data.DataRow.RowState%2A> mají vlastnost `RowState` nastavenou <xref:System.Data.DataRowState.Added> na <xref:System.Data.DataRowState.Modified>, bude mít vlastnost nastavenou na, což může být neočekávané.
 
-Jak jsou výsledky příkazu použity na každý <xref:System.Data.DataRow> aktualizuje závisí <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> vlastnosti každého <xref:System.Data.Common.DbCommand>. Tato vlastnost nastavena na hodnotu z `UpdateRowSource` výčtu.
+Způsob, jakým jsou výsledky příkazu aplikovány na každý <xref:System.Data.DataRow> aktualizovaný, je určen <xref:System.Data.Common.DbCommand.UpdatedRowSource%2A> vlastností každého <xref:System.Data.Common.DbCommand>. Tato vlastnost je nastavena na hodnotu z `UpdateRowSource` výčtu.
 
-Následující tabulka popisuje jak `UpdateRowSource` hodnoty výčtu mají vliv <xref:System.Data.DataRow.RowState%2A> vlastnost aktualizovaných řádků.
+Následující tabulka popisuje, jak `UpdateRowSource` hodnoty výčtu <xref:System.Data.DataRow.RowState%2A> ovlivňují vlastnost aktualizovaných řádků.
 
 |Název členu|Popis|
 |-----------------|-----------------|
-|<xref:System.Data.UpdateRowSource.Both>|`AcceptChanges` je volána a obě výstupní hodnoty parametrů a/nebo hodnoty v prvním řádku všechny sady vrácené výsledky jsou umístěny v `DataRow` aktualizuje. Pokud neexistují žádné hodnoty, které chcete použít, `RowState` bude <xref:System.Data.DataRowState.Unchanged>.|
-|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Pokud se vrátí řádek, `AcceptChanges` nazývá a řádek je namapována na změněný řádek v `DataTable`a nastavte `RowState` k `Modified`. Pokud se nevrátí žádný řádek, znamená `AcceptChanges` nevolá a `RowState` zůstává `Added`.|
-|<xref:System.Data.UpdateRowSource.None>|Vrácené parametry nebo řádků se ignorují. Neexistuje žádná volání `AcceptChanges` a `RowState` zůstává `Added`.|
-|<xref:System.Data.UpdateRowSource.OutputParameters>|`AcceptChanges` je volána a žádné výstupní parametry jsou mapovány na změněný řádek v `DataTable`a nastavte `RowState` k `Modified`. Pokud neexistují žádné výstupní parametry `RowState` bude `Unchanged`.|
+|<xref:System.Data.UpdateRowSource.Both>|`AcceptChanges`je zavolána a výstupní hodnoty parametrů a/nebo hodnoty v prvním řádku libovolné vrácené sady výsledků jsou umístěny do `DataRow` aktualizovaného. Pokud neexistují žádné hodnoty, které by bylo `RowState` možné použít <xref:System.Data.DataRowState.Unchanged>, bude.|
+|<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Pokud `AcceptChanges` byl vrácen řádek, je zavolán a řádek je namapován na změněný řádek `DataTable`v, nastavení `RowState` `Modified`na. Pokud není vrácen žádný řádek, `AcceptChanges` není voláno `RowState` a zůstane `Added`.|
+|<xref:System.Data.UpdateRowSource.None>|Všechny vrácené parametry nebo řádky jsou ignorovány. Není k `AcceptChanges` dispozici žádné volání `RowState` a zůstane `Added`.|
+|<xref:System.Data.UpdateRowSource.OutputParameters>|`AcceptChanges`je volána a všechny výstupní parametry jsou namapovány na změněný řádek v `DataTable`, `RowState` nastavení `Modified`na. Pokud žádné výstupní parametry neexistují, `RowState` `Unchanged`bude.|
 
 ### <a name="example"></a>Příklad
 
-Tento příklad ukazuje extrahování změněných řádků z `DataTable` a použití <xref:System.Data.SqlClient.SqlDataAdapter> k aktualizaci zdroje dat a načtení nové hodnoty sloupce identity. <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> Provádí dva příkazy jazyka Transact-SQL; první z nich je příkazu INSERT a druhý je příkaz SELECT, který používá funkci SCOPE_IDENTITY k načtení hodnoty identity.
+Tento příklad ukazuje extrakci změněných řádků z `DataTable` a <xref:System.Data.SqlClient.SqlDataAdapter> pomocí a k aktualizaci zdroje dat a načtení nové hodnoty sloupce identity. <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> Spustí dva příkazy jazyka Transact-SQL. první z nich je příkaz INSERT a druhý je příkaz SELECT, který používá funkci SCOPE_IDENTITY k načtení hodnoty identity.
 
 ```sql
 INSERT INTO dbo.Shippers (CompanyName)
@@ -87,43 +87,43 @@ SELECT ShipperID, CompanyName FROM dbo.Shippers
 WHERE ShipperID = SCOPE_IDENTITY();
 ```
 
-`UpdatedRowSource` Příkazu insert je nastavena na `UpdateRowSource.FirstReturnedRow` a <xref:System.Data.MissingSchemaAction> vlastnost `DataAdapter` je nastavena na `MissingSchemaAction.AddWithKey`. `DataTable` Zaplněný a přidá nový řádek do kódu `DataTable`. Změněné řádky jsou pak extrahovány do nového `DataTable`, které se předává `DataAdapter`, která aktualizuje server.
+<xref:System.Data.MissingSchemaAction> `DataAdapter` `MissingSchemaAction.AddWithKey`Vlastnost příkazu INSERT je nastavena na `UpdateRowSource.FirstReturnedRow` hodnotu a vlastnost je nastavena na hodnotu. `UpdatedRowSource` Je vyplněn a kód přidá nový řádek `DataTable`do. `DataTable` Změněné řádky jsou poté extrahovány do nového `DataTable`, který je předán `DataAdapter`do, který následně aktualizuje server.
 
 [!code-csharp[DataWorks SqlClient.MergeIdentity#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.MergeIdentity/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.MergeIdentity#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.MergeIdentity/VB/source.vb#1)]
 
-`OnRowUpdated` Kontroly obslužné rutiny události <xref:System.Data.Common.RowUpdatedEventArgs.StatementType%2A> z <xref:System.Data.SqlClient.SqlRowUpdatedEventArgs> k určení, zda je řádek vložení. Pokud se jedná, pak bude <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> je nastavena na <xref:System.Data.UpdateStatus.SkipCurrentRow>. Řádek je aktualizovat, ale původní hodnoty v řádku jsou zachovány. V hlavní části tohoto postupu <xref:System.Data.DataSet.Merge%2A> metoda je volána ke sloučení na novou hodnotu identity do původní `DataTable`a nakonec `AcceptChanges` je volána.
+Obslužná rutina <xref:System.Data.Common.RowUpdatedEventArgs.StatementType%2A>událostizkontroluje <xref:System.Data.SqlClient.SqlRowUpdatedEventArgs> , zda je řádek vložen. `OnRowUpdated` Pokud je, <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> vlastnost je nastavena na <xref:System.Data.UpdateStatus.SkipCurrentRow>. Řádek je aktualizován, ale původní hodnoty v řádku jsou zachovány. V hlavním těle postupu <xref:System.Data.DataSet.Merge%2A> je metoda volána pro sloučení nové hodnoty identity do původní `DataTable`a nakonec `AcceptChanges` je volána.
 
 [!code-csharp[DataWorks SqlClient.MergeIdentity#2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.MergeIdentity/CS/source.cs#2)]
 [!code-vb[DataWorks SqlClient.MergeIdentity#2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.MergeIdentity/VB/source.vb#2)]
 
-## <a name="retrieving-microsoft-access-autonumber-values"></a>Načítají se aplikace Microsoft Access automatické hodnoty
+## <a name="retrieving-microsoft-access-autonumber-values"></a>Načítání hodnot pro automatické číslování aplikace Microsoft Access
 
-Tato část obsahuje ukázky, která ukazuje, jak načíst `Autonumber` hodnoty z databáze Jet 4.0. Databázový stroj nepodporuje spouštění více příkazů v dávce nebo použití výstupních parametrů, takže není možné použít některou z následujících postupů a vrátí nový `Autonumber` hodnota přiřazená k vloženého řádku. Můžete však přidat kód pro `RowUpdated` obslužná rutina události, které provádí samostatné vyberte @@IDENTITY příkazem pro načtení nové `Autonumber` hodnotu.
+Tato část obsahuje ukázku, která ukazuje, jak načíst `Autonumber` hodnoty z databáze Jet 4,0. Databázový stroj Jet nepodporuje provádění více příkazů v dávce nebo použití výstupních parametrů, takže není možné použít některý z těchto postupů k vrácení nové `Autonumber` hodnoty přiřazené vloženému řádku. Můžete však přidat kód do `RowUpdated` obslužné rutiny události, která provede samostatný příkaz Select @@IDENTITY pro načtení nové `Autonumber` hodnoty.
 
 ### <a name="example"></a>Příklad
 
-Místo přidání informací pomocí schématu `MissingSchemaAction.AddWithKey`, tento příklad konfiguruje `DataTable` s správné schéma před voláním <xref:System.Data.OleDb.OleDbDataAdapter> tak, aby vyplnil `DataTable`. V takovém případě **CategoryID** sloupec je nakonfigurován pro snížení hodnoty přiřazené každý vložený řádek začínající od nuly, nastavením <xref:System.Data.DataColumn.AutoIncrement%2A> k `true`, <xref:System.Data.DataColumn.AutoIncrementSeed%2A> na hodnotu 0, a <xref:System.Data.DataColumn.AutoIncrementStep%2A> na hodnotu -1. Kód poté přidá dva nové řádky a používá `GetChanges` přidání změněných řádků do nového `DataTable` , který je předán `Update` metody.
+Namísto přidávání informací o schématu pomocí `MissingSchemaAction.AddWithKey`, tento příklad `DataTable` nakonfiguruje se správným <xref:System.Data.OleDb.OleDbDataAdapter> schématem před `DataTable`zavoláním metody k vyplnění. V tomto případě je sloupec **KódKategorie** nakonfigurovaný tak, aby se hodnota přiřazená každému vloženému <xref:System.Data.DataColumn.AutoIncrement%2A> řádku od nuly `true` <xref:System.Data.DataColumn.AutoIncrementSeed%2A> nastavila na hodnotu 0 a <xref:System.Data.DataColumn.AutoIncrementStep%2A> na hodnotu-1. Kód pak přidá dva nové řádky a použije `GetChanges` k přidání změněných řádků do nového `DataTable` `Update` , který je předán metodě.
 
 [!code-csharp[DataWorks OleDb.JetAutonumberMerge#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDb.JetAutonumberMerge/CS/source.cs#1)]
 [!code-vb[DataWorks OleDb.JetAutonumberMerge#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDb.JetAutonumberMerge/VB/source.vb#1)]
 
-`RowUpdated` Obslužná rutina události používá stejné open <xref:System.Data.OleDb.OleDbConnection> jako `Update` příkaz `OleDbDataAdapter`. Zkontroluje, `StatementType` z <xref:System.Data.OleDb.OleDbRowUpdatedEventArgs> pro vložení řádků. Pro každou vložit řádek novou <xref:System.Data.OleDb.OleDbCommand> se vytvoří ke spuštění vyberte @@IDENTITY příkaz na připojení, vrácení nové `Autonumber` hodnotu, která je umístěn v **CategoryID** sloupec `DataRow`. `Status` Vlastnost je nastaven na `UpdateStatus.SkipCurrentRow` potlačit skryté volání `AcceptChanges`. V hlavní části tohoto postupu `Merge` metoda je volána, chcete-li sloučit dvě `DataTable` objekty a nakonec `AcceptChanges` je volána.
+Obslužná rutina `Update` `OleDbDataAdapter` <xref:System.Data.OleDb.OleDbConnection> `RowUpdated` události používá stejné otevření jako příkaz. `StatementType` Kontroluje<xref:System.Data.OleDb.OleDbRowUpdatedEventArgs> pro vložené řádky. Pro každý vložený řádek je vytvořen <xref:System.Data.OleDb.OleDbCommand> nový příkaz pro spuštění příkazu Select @@IDENTITY v připojení, který vrací novou `Autonumber` hodnotu, která `DataRow`je umístěna do sloupce **KódKategorie** v. Vlastnost je pak nastavena na `UpdateStatus.SkipCurrentRow` hodnotu pro `AcceptChanges`potlačení skrytého volání. `Status` V hlavním těle procedury `Merge` je volána metoda pro sloučení těchto dvou `DataTable` objektů a nakonec `AcceptChanges` je volána metoda.
 
 [!code-csharp[DataWorks OleDb.JetAutonumberMerge#2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks OleDb.JetAutonumberMerge/CS/source.cs#2)]
 [!code-vb[DataWorks OleDb.JetAutonumberMerge#2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks OleDb.JetAutonumberMerge/VB/source.vb#2)]
 
-### <a name="retrieving-identity-values"></a>Načítání hodnot Identity
+### <a name="retrieving-identity-values"></a>Načítání hodnot identity
 
-Často nastavíme sloupec jako identitu při hodnoty ve sloupci musí být jedinečné. A někdy potřebujeme hodnotu identity nová data. Tato ukázka předvádí, jak načíst hodnoty identity:
+Často jsme nastavili sloupec jako identitu, pokud hodnoty ve sloupci musí být jedinečné. A někdy potřebujeme hodnotu identity nových dat. Tato ukázka předvádí, jak načíst hodnoty identity:
 
-- Vytvoří uloženou proceduru pro vkládání dat a vrátí hodnotu identity.
+- Vytvoří uloženou proceduru pro vložení dat a vrácení hodnoty identity.
 
-- Spustí příkaz pro vložení nová data a zobrazí výsledek.
+- Provede příkaz pro vložení nových dat a zobrazení výsledku.
 
-- Používá <xref:System.Data.SqlClient.SqlDataAdapter> vložte nová data a zobrazí výsledek.
+- Slouží <xref:System.Data.SqlClient.SqlDataAdapter> k vložení nových dat a zobrazení výsledku.
 
-Před kompilace a spuštění ukázky, musíte vytvořit ukázkové databáze pomocí následujícího skriptu:
+Před kompilací a spuštěním ukázky musíte vytvořit ukázkovou databázi pomocí následujícího skriptu:
 
 ```sql
 USE [master]
@@ -351,10 +351,10 @@ ALTER TABLE [dbo].[StudentGrade] CHECK CONSTRAINT [FK_StudentGrade_Student]
 GO
 ```
 
-Kód výpis takto:
+Následuje výpis kódu:
 
 > [!TIP]
-> Výpis kódu odkazuje na soubor databáze aplikace Access volá MySchool.mdb. Si můžete stáhnout MySchool.mdb (jako součást úplný ukázkový projekt C# nebo Visual Basic) z [code.msdn.microsoft.com](https://code.msdn.microsoft.com/How-to-Retrieve-the-511acece).
+> Výpis kódu odkazuje na soubor databáze Access s názvem MySchool. mdb. MySchool. mdb můžete stáhnout (jako součást úplného C# nebo Visual Basicho ukázkového projektu) z [Code.MSDN.Microsoft.com](https://code.msdn.microsoft.com/How-to-Retrieve-the-511acece).
 
 ```csharp
 using System;
@@ -538,10 +538,10 @@ class Program {
 
 ## <a name="see-also"></a>Viz také:
 
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Stavy řádků a verze řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)
-- [Metody AcceptChanges a RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)
-- [Slučování obsahu datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [Stavy řádků a verze řádků](./dataset-datatable-dataview/row-states-and-row-versions.md)
+- [Metody AcceptChanges a RejectChanges](./dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)
+- [Slučování obsahu datové sady](./dataset-datatable-dataview/merging-dataset-contents.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)
+- [Přehled ADO.NET](ado-net-overview.md)

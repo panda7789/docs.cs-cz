@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: ec1acc009e58408fc41c60134538340486f19f75
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eed8a1edaae5fab03ad9e78d29803676debd1b9a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949680"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796922"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
-Obvykle není nutné nastavovat identitu na službě, protože výběr typu přihlašovacích údajů klienta Určuje typ identity, která je vystavena v metadatech služby. Například následující konfigurační kód používá `clientCredentialType` [ \<prvek WSHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) a nastaví atribut na Windows.  
+Obvykle není nutné nastavovat identitu na službě, protože výběr typu přihlašovacích údajů klienta Určuje typ identity, která je vystavena v metadatech služby. Například následující konfigurační kód používá `clientCredentialType` [ \<prvek WSHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) a nastaví atribut na Windows.  
 
  Následující fragment kódu jazyka WSDL (Web Services Description Language) zobrazuje identitu dříve definovaného koncového bodu. V tomto příkladu je služba spuštěná jako Samoobslužná služba v rámci konkrétního uživatelského účtu (username@contoso.com), a proto Identita hlavního názvu uživatele (UPN) obsahuje název účtu. Hlavní název uživatele (UPN) je také označován jako přihlašovací jméno uživatele v doméně systému Windows.  
 
- Ukázkovou aplikaci, která demonstruje nastavení identity, najdete v tématu [Ukázka identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita služby a ověřování](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Ukázkovou aplikaci, která demonstruje nastavení identity, najdete v tématu [Ukázka identity služby](../samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita služby a ověřování](../feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Ověřování a identita protokolu Kerberos  
- Ve výchozím nastavení platí, že pokud je služba nakonfigurována pro použití pověření systému Windows, [ \<>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) element identity obsahující > userPrincipalName nebo [ \<element servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) vygenerováno v jazyce WSDL. Pokud je `LocalSystem`služba spuštěná pod účtem, `LocalService`nebo `NetworkService` , ve výchozím nastavení `host/` \<se ve formuláři názvu > *hostitele*vygeneruje hlavní název služby (SPN), protože tyto účty mají přístup k data hlavního názvu počítače. Pokud je služba spuštěná pod jiným účtem, Windows Communication Foundation (WCF) vygeneruje hlavní název uživatele (UPN) \<ve formátu`>` *username*>@<domainname. K tomu dochází, protože ověřování protokolem Kerberos vyžaduje, aby klient zadal hlavní název uživatele (UPN) nebo hlavní název služby, aby mohl ověřit službu.  
+ Ve výchozím nastavení platí, že pokud je služba nakonfigurována pro použití pověření systému Windows, [ \<>](../../configure-apps/file-schema/wcf/identity.md) [ \<](../../configure-apps/file-schema/wcf/userprincipalname.md) element identity obsahující > userPrincipalName nebo [ \<element servicePrincipalName >](../../configure-apps/file-schema/wcf/serviceprincipalname.md) vygenerováno v jazyce WSDL. Pokud je `LocalSystem`služba spuštěná pod účtem, `LocalService`nebo `NetworkService` , ve výchozím nastavení `host/` \<se ve formuláři názvu > *hostitele*vygeneruje hlavní název služby (SPN), protože tyto účty mají přístup k data hlavního názvu počítače. Pokud je služba spuštěná pod jiným účtem, Windows Communication Foundation (WCF) vygeneruje hlavní název uživatele (UPN) \<ve formátu`>` *username*>@<domainname. K tomu dochází, protože ověřování protokolem Kerberos vyžaduje, aby klient zadal hlavní název uživatele (UPN) nebo hlavní název služby, aby mohl ověřit službu.  
   
  Pomocí nástroje Setspn. exe můžete také zaregistrovat další hlavní název služby (SPN) s účtem služby v doméně. Pak můžete jako identitu služby použít hlavní název služby (SPN). Pokud si chcete nástroj stáhnout, [Přečtěte si téma Windows 2000 Resource Kit – nástroj: Setspn. exe](https://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji najdete v tématu [Přehled nástroje Setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
   
@@ -59,5 +59,5 @@ Obvykle není nutné nastavovat identitu na službě, protože výběr typu při
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření vlastního ověřovatele identity klienta](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
-- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Postupy: Vytvoření vlastního ověřovatele identity klienta](how-to-create-a-custom-client-identity-verifier.md)
+- [Identita a ověřování služby](../feature-details/service-identity-and-authentication.md)

@@ -2,12 +2,12 @@
 title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 1723552a48ebfa41e8d6a0f963154fc3b864119d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 49835ebf8ebe4d5bd200ed771477edc8af580b7d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957491"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794290"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
 SQL Server podporuje dva režimy ověřování, režim ověřování systému Windows a smíšený režim.  
@@ -69,7 +69,7 @@ SQL Server podporuje dva režimy ověřování, režim ověřování systému Wi
  SQL Server poskytuje mechanismy zásad hesel Windows pro SQL Server přihlášení, když běží v [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] systému nebo novějších verzích. Zásady složitosti hesla jsou navržené tak, aby se zvýšil počet útoků hrubou silou, a to zvýšením počtu možných hesel. SQL Server můžou použít stejné zásady složitosti a vypršení platnosti [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] používané v k heslům použitým v rámci SQL Server.  
   
 > [!IMPORTANT]
-> Zřetězení připojovacích řetězců ze vstupu uživatele může opustit útok prostřednictvím injektáže připojovacího řetězce. <xref:System.Data.SqlClient.SqlConnectionStringBuilder> Použijte k vytvoření syntakticky platných připojovacích řetězců v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
+> Zřetězení připojovacích řetězců ze vstupu uživatele může opustit útok prostřednictvím injektáže připojovacího řetězce. <xref:System.Data.SqlClient.SqlConnectionStringBuilder> Použijte k vytvoření syntakticky platných připojovacích řetězců v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
@@ -80,8 +80,8 @@ SQL Server podporuje dva režimy ověřování, režim ověřování systému Wi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Připojení ke zdroji dat](../connecting-to-a-data-source.md)
+- [Připojovací řetězce](../connection-strings.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

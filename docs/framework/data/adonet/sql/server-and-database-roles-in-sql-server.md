@@ -2,12 +2,12 @@
 title: Serverové a databázové role na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: 97ad04b1d081e5635104bdadb2d1a54402ffcca2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3e31aa67bfbaa541d8d1eb5b8b61dfd28182c72
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961120"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791778"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role na SQL Serveru
 Všechny verze SQL Server používají zabezpečení na základě rolí, které umožňuje přiřadit oprávnění k roli nebo skupině uživatelů namísto jednotlivých uživatelů. Pevné serverové a pevné databázové role mají přiřazenou pevnou sadu oprávnění.  
@@ -42,7 +42,7 @@ Všechny verze SQL Server používají zabezpečení na základě rolí, které 
  `dbo`Vlastníkem databáze je uživatelský účet, který má předpokládaná oprávnění k provádění všech aktivit v databázi. Členové pevné role serveru jsou automaticky namapováni na `dbo`. `sysadmin`  
   
 > [!NOTE]
-> `dbo`je také název schématu, jak je popsáno v části [vlastnictví a oddělení uživatelských schémat v SQL Server](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md).  
+> `dbo`je také název schématu, jak je popsáno v části [vlastnictví a oddělení uživatelských schémat v SQL Server](ownership-and-user-schema-separation-in-sql-server.md).  
   
  Tento `dbo` uživatelský účet se často zaměňuje `db_owner` s pevnou databázovou rolí. Rozsahem `db_owner` je databáze. `sysadmin` obor je celý server. Členství v `db_owner` roli `dbo` neuděluje oprávnění uživatele.  
   
@@ -63,9 +63,9 @@ Všechny verze SQL Server používají zabezpečení na základě rolí, které 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)
-- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)
-- [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Ověřování v SQL Serveru](authentication-in-sql-server.md)
+- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](ownership-and-user-schema-separation-in-sql-server.md)
+- [Autorizace a oprávnění na SQL Serveru](authorization-and-permissions-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

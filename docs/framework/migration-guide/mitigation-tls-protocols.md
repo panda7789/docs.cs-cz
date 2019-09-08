@@ -1,5 +1,5 @@
 ---
-title: 'Omezení rizik: Protokoly TLS'
+title: Zmírnění Protokoly TLS
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,41 +7,41 @@ dev_langs:
 ms.assetid: 33f97d13-3022-43da-8b18-cdb5c88df9c2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b21dc73454b96d3a192b47eb439bebf588059c24
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e98b447028ef9fa96233a71133aa82184d83cec8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599625"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779165"
 ---
-# <a name="mitigation-tls-protocols"></a>Omezení rizik: Protokoly TLS
-Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> třídy mohou používat jednu z těchto tří protokolů: Protokol TLS 1.0, Tls1.1 nebo Tls 1.2. SSL3.0 protokolu a šifer RC4 nejsou podporovány.  
+# <a name="mitigation-tls-protocols"></a>Zmírnění Protokoly TLS
+Počínaje .NET Framework 4,6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> mohou třídy a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> používat jeden z následujících tří protokolů: TLS 1.0, TLS 1.1 nebo TLS 1,2. Protokol SSL 3.0 a šifra šifry nejsou podporované.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna ovlivní:  
+ Tato změna má vliv na:  
   
-- Jakékoli aplikaci, která používá protokol SSL na serveru HTTPS nebo server websocket pomocí kteréhokoli z následujících typů: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.  
+- Libovolná aplikace, která používá protokol SSL ke komunikaci se serverem HTTPS nebo serverem soketu pomocí některého z následujících typů <xref:System.Net.Http.HttpClient>: <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.  
   
-- Libovolné aplikace na straně serveru, který nelze upgradovat pro podporu protokolu Tls 1.2, protokol TLS 1.0 nebo Tls1.1...  
+- Všechny aplikace na straně serveru, které nelze upgradovat, aby podporovaly protokol TLS 1.0, TLS 1.1 nebo TLS 1,2..  
   
 ## <a name="mitigation"></a>Zmírnění  
- Doporučené omezení rizik je upgrade aplikace straně serveru pro protokol TLS 1.0, Tls1.1 nebo Tls 1.2. Pokud to není proveditelné, nebo pokud jsou přerušená, klientské aplikace <xref:System.AppContext> třídy lze tuto funkci v některém ze dvou způsobů:  
+ Doporučené zmírnění je upgrade aplikace na straně serveru na TLS 1.0, TLS 1.1 nebo TLS 1,2. Pokud to není možné, nebo pokud jsou klientské aplikace poškozeny, <xref:System.AppContext> můžete tuto funkci použít k odhlášení z těchto funkcí jedním ze dvou způsobů:  
   
-- Programově pomocí fragmentu kódu, jako je následující:  
+- Prostřednictvím kódu programu, který je podobný následujícímu:  
   
      [!code-csharp[AppCompat.SSLProtocols#1](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.sslprotocols/cs/program.cs#1)]
      [!code-vb[AppCompat.SSLProtocols#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.sslprotocols/vb/module1.vb#1)]  
   
-     Vzhledem k tomu, <xref:System.Net.ServicePointManager> objekt je inicializován pouze jednou, definuje tato nastavení kompatibility musí být první věc, kterou aplikace dělá.  
+     Vzhledem k tomu, že se objektinicializujepouzejednou,definovánítěchtonastaveníkompatibilitymusíbýtprvnívěc,kterouaplikacedělá.<xref:System.Net.ServicePointManager>  
   
-- Přidejte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části souboru app.config:  
+- Přidáním následujícího řádku do [ \<části > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config:  
   
     ```xml  
     <AppContextSwitchOverrides value="Switch.System.Net.DontEnableSchUseStrongCrypto=true"/>  
     ```  
   
- Všimněte si však, že přestanete používat výchozí chování se nedoporučuje, protože je méně zabezpečené aplikace.  
+ Upozorňujeme však, že nedoporučujeme výchozí chování, protože aplikace snižuje zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: baa97bb32f8af4e034a78b44f9776be42c204b80
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b4ea05b0112af4c1dcb6308a08ab3b31c586fbe8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918738"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790865"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)][!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] používá k vystavení dat jako informačního kanálu. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál Atom, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu pro serializaci dat, jako jsou například entity a relace, do formátu XML, který lze zahrnout do textu zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [OData: Formát](https://go.microsoft.com/fwlink/?LinkID=185794)Atom.  
@@ -28,7 +28,7 @@ ms.locfileid: "69918738"
  Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete definovat alternativní mapování vlastností entit pro datovou část Atom ručním použitím atributů na typy entit v datovém modelu. Poskytovatel zdroje dat datové služby určuje, jak byste měli tyto atributy použít.  
   
 > [!IMPORTANT]
-> Když definujete vlastní kanály, musíte zaručit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md).  
+> Když definujete vlastní kanály, musíte zaručit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [projekce dotazů](query-projections-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Přizpůsobení informačních kanálů pomocí poskytovatele Entity Framework  
  Datový model, který se používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] u poskytovatele, je v souboru. edmx reprezentován jako XML. V tomto případě jsou atributy, které definují vlastní kanály, přidány do `EntityType` prvků a `Property` , které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definované [v \[MC-\]CSDL: Definiční formát](https://go.microsoft.com/fwlink/?LinkId=159072)definičního souboru schématu, což je formát [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] , který poskytovatel používá k definování datového modelu. Proto je nutné deklarovat atributy přizpůsobení kanálu v konkrétním oboru názvů schématu, který je definován jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment kódu XML ukazuje atributy přizpůsobení informačního kanálu `Property` aplikované na `Products` prvky typu `ProductName`entity, které definují `ReorderLevel`vlastnosti, `UnitsInStock` a.  
@@ -39,7 +39,7 @@ ms.locfileid: "69918738"
   
  [!code-xml[Astoria Custom Feeds#EdmFeedResultProduct](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/edmfeedresult.xml#edmfeedresultproduct)]  
   
- Další informace najdete v tématu [jak: Přizpůsobte kanály pomocí poskytovatele](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md)Entity Framework.  
+ Další informace najdete v tématu [jak: Přizpůsobte kanály pomocí poskytovatele](how-to-customize-feeds-with-ef-provider-wcf-data-services.md)Entity Framework.  
   
 > [!NOTE]
 > Vzhledem k tomu, že Entity Designer nepodporuje rozšíření datového modelu, je nutné ručně upravit soubor XML, který obsahuje datový model. Další informace o souboru. edmx, který generuje nástroje model EDM (Entity Data Model), najdete v tématu [Přehled souborů. edmx (Entity Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).  
@@ -63,7 +63,7 @@ ms.locfileid: "69918738"
  Chcete-li přizpůsobit kanály pro datový model, který byl implementován pomocí poskytovatele reflexe, přidejte jednu nebo více instancí <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> atributu do tříd, které reprezentují typy entit v datovém modelu. Vlastnosti <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> třídy odpovídají atributům přizpůsobení informačního kanálu, které jsou popsány v předchozí části. Následuje příklad deklarace `Order` typu s mapováním vlastního informačního kanálu definovaného pro obě vlastnosti.  
   
 > [!NOTE]
-> Datový model pro tento příklad je definován v tématu [postupy: Vytvořte datovou službu pomocí poskytovatele](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)reflexe.  
+> Datový model pro tento příklad je definován v tématu [postupy: Vytvořte datovou službu pomocí poskytovatele](create-a-data-service-using-rp-wcf-data-services.md)reflexe.  
   
  [!code-csharp[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_custom_feeds/cs/orderitems.svc.cs#customorderfeed)]
  [!code-vb[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_custom_feeds/vb/orderitems.svc.vb#customorderfeed)]  
@@ -72,13 +72,13 @@ ms.locfileid: "69918738"
   
  [!code-xml[Astoria Custom Feeds#IQueryableFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/iqueryablefeedresult.xml#iqueryablefeedresult)]  
   
- Další informace najdete v tématu [jak: Přizpůsobte kanály pomocí poskytovatele](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md)reflexe.  
+ Další informace najdete v tématu [jak: Přizpůsobte kanály pomocí poskytovatele](how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md)reflexe.  
   
 ## <a name="customizing-feeds-with-a-custom-data-service-provider"></a>Přizpůsobení informačních kanálů pomocí vlastního poskytovatele datových služeb  
- Přizpůsobení informačního kanálu pro datový model definovaný pomocí vlastního poskytovatele datové služby je definováno pro typ prostředku voláním metody <xref:System.Data.Services.Providers.ResourceType.AddEntityPropertyMappingAttribute%2A> <xref:System.Data.Services.Providers.ResourceType> , která představuje typ entity v datovém modelu. Další informace najdete v tématu [Vlastní poskytovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).  
+ Přizpůsobení informačního kanálu pro datový model definovaný pomocí vlastního poskytovatele datové služby je definováno pro typ prostředku voláním metody <xref:System.Data.Services.Providers.ResourceType.AddEntityPropertyMappingAttribute%2A> <xref:System.Data.Services.Providers.ResourceType> , která představuje typ entity v datovém modelu. Další informace najdete v tématu [Vlastní poskytovatelé datových služeb](custom-data-service-providers-wcf-data-services.md).  
   
 ## <a name="consuming-custom-feeds"></a>Spotřebovávání vlastních kanálů  
- Když vaše aplikace přímo spotřebovává [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál, musí být schopna zpracovat všechny přizpůsobené prvky a atributy ve vráceném kanálu. Pokud jste v datovém modelu implementovali vlastní kanály bez ohledu na zprostředkovatele datové služby, `$metadata` vrátí koncový bod vlastní informace o kanálu jako atributy vlastního kanálu ve službě CSDL vrácené datovou službou. Když použijete dialogové okno **Přidat odkaz na službu** nebo nástroj [DataSvcUtil. exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) ke generování tříd klientských dat, přizpůsobené atributy kanálu slouží k zajištění správného zpracování požadavků a odpovědí na datovou službu.  
+ Když vaše aplikace přímo spotřebovává [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál, musí být schopna zpracovat všechny přizpůsobené prvky a atributy ve vráceném kanálu. Pokud jste v datovém modelu implementovali vlastní kanály bez ohledu na zprostředkovatele datové služby, `$metadata` vrátí koncový bod vlastní informace o kanálu jako atributy vlastního kanálu ve službě CSDL vrácené datovou službou. Když použijete dialogové okno **Přidat odkaz na službu** nebo nástroj [DataSvcUtil. exe](wcf-data-service-client-utility-datasvcutil-exe.md) ke generování tříd klientských dat, přizpůsobené atributy kanálu slouží k zajištění správného zpracování požadavků a odpovědí na datovou službu.  
   
 ## <a name="feed-customization-considerations"></a>Požadavky na přizpůsobení informačního kanálu  
  Při definování mapování vlastních kanálů byste měli vzít v úvahu následující skutečnosti:  
@@ -90,9 +90,9 @@ ms.locfileid: "69918738"
   
 - Přizpůsobení informačního kanálu vyžaduje, aby klient i datová služba podporovaly verzi 2,0 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu a pozdějších verzí.  
   
- Další informace najdete v tématu [Správa verzí datových služeb](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
+ Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zprostředkovatel reflexe](../../../../docs/framework/data/wcf/reflection-provider-wcf-data-services.md)
-- [Zprostředkovatel Entity Framework](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
+- [Zprostředkovatel reflexe](reflection-provider-wcf-data-services.md)
+- [Zprostředkovatel Entity Framework](entity-framework-provider-wcf-data-services.md)

@@ -1,6 +1,6 @@
 ---
-title: Funkce NextMethod (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce NextMethod načte další metody ve výčtu.
+title: NextMethod – funkce (Reference nespravovaného rozhraní API)
+description: Funkce NextMethod načte další metodu ve výčtu.
 ms.date: 11/06/2017
 api_name:
 - NextMethod
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a730947b0c962d801975917cdf752136e7221c4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ee743a4499824bea723043d5a2c7d57d7cbd7106
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746486"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798431"
 ---
 # <a name="nextmethod-function"></a>NextMethod – funkce
-Načte další metody ve výčtu, která začíná volání [BeginMethodEnumeration](beginmethodenumeration.md).  
+Načte další metodu ve výčtu, který začíná voláním [BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -44,50 +44,50 @@ HRESULT NextMethod (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lFlags`  
-[in] Vyhrazená. Tento parametr musí být 0.
+pro Rezervovaný. Tento parametr musí mít hodnotu 0.
 
 `pName`  
-[out] Ukazatel, který odkazuje na `null` před voláním. Pokud funkce vrátí, adresa nového `BSTR` obsahující název metody. 
+mimo Ukazatel, na `null` který odkazuje před voláním. Když se funkce vrátí, adresa nového `BSTR` obsahující název metody. 
 
 `ppSignatureIn`  
-[out] Ukazatel, který přijímá ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , který obsahuje `in` parametrů metody. 
+mimo Ukazatel, který obdrží ukazatel na [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , který obsahuje `in` parametry pro metodu. 
 
 `ppSignatureOut`  
-[out] Ukazatel, který přijímá ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , který obsahuje `out` parametrů metody. 
+mimo Ukazatel, který obdrží ukazatel na [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , který obsahuje `out` parametry pro metodu. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_UNEXPECTED` | 0x8004101d | Došlo bez volání [ `BeginEnumeration` ](beginenumeration.md) funkce. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-| `WBEM_S_NO_MORE_DATA` | 0x40005 | Nejsou žádné další vlastnosti ve výčtu. |
+| `WBEM_E_UNEXPECTED` | 0x8004101d | [`BeginEnumeration`](beginenumeration.md) Funkci se nevolalo. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
+| `WBEM_S_NO_MORE_DATA` | 0x40005 | Ve výčtu nejsou žádné další vlastnosti. |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::NextMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-nextmethod) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: NextMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-nextmethod) .
 
-Volající začne pořadí výčtu voláním [BeginMethodEnumeration](beginmethodenumeration.md) pracovat a pak volá funkci [NextMethod], dokud se funkce vrátí `WBEM_S_NO_MORE_DATA`. Volitelně můžete volající dokončení sekvence pomocí volání [EndMethodEnumeration](endmethodenumeration.md). Volající může již v rané fázi ukončit výčtu voláním [EndMethodEnumeration](endmethodenumeration.md) kdykoli.
+Volající zahájí sekvenci výčtu voláním funkce [BeginMethodEnumeration](beginmethodenumeration.md) a poté zavolá funkci [NextMethod], dokud funkce nevrátí `WBEM_S_NO_MORE_DATA`. Volitelně volající sekvenci dokončí voláním [EndMethodEnumeration](endmethodenumeration.md). Volající může ukončit výčet na začátku voláním [EndMethodEnumeration](endmethodenumeration.md) v každém okamžiku.
 
 ## <a name="example"></a>Příklad
 
-Příklad C++, naleznete v tématu [IWbemClassObject::NextMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-nextmethod) metody.
+C++ Příklad naleznete v tématu metoda [IWbemclassObject:: NextMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-nextmethod) .
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

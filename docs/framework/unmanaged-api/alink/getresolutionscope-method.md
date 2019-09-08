@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c6c2e741df594e265fdef51a602a9a4927733b7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a2bfb43002b79fd3e499272b87756bdc3ab0b589
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741859"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787341"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope – metoda
-Načte oboru daného typu.  
+Načte rozsah daného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT GetResolutionScope(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
  `FileToken`  
- Soubor, který je potřeba zkontrolovat odkaz.  
+ Soubor, který je nutný pro odkaz.  
   
  `TargetFile`  
- Token souboru tento typ je definován v, obvykle získáte pomocí [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md).  
+ Token souboru, ve kterém je definován typ, obvykle načten pomocí [metody importFile –](importfile-method.md)  
   
  `pScope`  
- Přijímá sestavení nebo odkaz na modul.  
+ Přijme odkaz na sestavení nebo modul.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

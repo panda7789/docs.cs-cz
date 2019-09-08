@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: f9324370539b41d21365e0bd126c2f632ac67789
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: db538634dccf22fb954ccf0827909e5cf3563f77
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044287"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798171"
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 
@@ -47,7 +47,7 @@ Následující příklad ukazuje, jak povolit protokolování a zadat další mo
 </system.serviceModel>
 ```
 
-Další informace o nastavení protokolování zpráv najdete v tématu [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).
+Další informace o nastavení protokolování zpráv najdete v tématu [Doporučené nastavení pro trasování a protokolování zpráv](./tracing/recommended-settings-for-tracing-and-message-logging.md).
 
 Můžete použít `add` k zadání názvu a typu naslouchacího procesu, který chcete použít. V ukázkové konfiguraci má naslouchací proces název "zprávy" a přidává standardní .NET Framework trasování trasování (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který se má použít. Pokud používáte, musíte zadat umístění a název výstupního souboru do konfiguračního souboru. `System.Diagnostics.XmlWriterTraceListener` To se provádí nastavením `initializeData` na název souboru protokolu. V opačném případě systém vyvolá výjimku. Můžete také implementovat vlastní naslouchací proces, který vysílá protokoly do výchozího souboru.
 
@@ -62,7 +62,7 @@ Můžete použít `add` k zadání názvu a typu naslouchacího procesu, který 
 <source name="System.ServiceModel.MessageLogging" switchValue="Verbose">
 ```
 
-Chcete-li zakázat zdroj trasování `logMessagesAtServiceLevel`, použijte místo toho atributy `messageLogging` , `logMalformedMessages`a `logMessagesAtTransportLevel` elementu. Všechny tyto atributy byste měli nastavit na `false`. To lze provést pomocí konfiguračního souboru v předchozím příkladu kódu, prostřednictvím rozhraní Editor konfigurací uživatelského rozhraní nebo pomocí rozhraní WMI. Další informace o nástroji Editor konfigurací naleznete v tématu [Nástroj Configuration Editor (SvcConfigEditor. exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Další informace o rozhraní WMI najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).
+Chcete-li zakázat zdroj trasování `logMessagesAtServiceLevel`, použijte místo toho atributy `messageLogging` , `logMalformedMessages`a `logMessagesAtTransportLevel` elementu. Všechny tyto atributy byste měli nastavit na `false`. To lze provést pomocí konfiguračního souboru v předchozím příkladu kódu, prostřednictvím rozhraní Editor konfigurací uživatelského rozhraní nebo pomocí rozhraní WMI. Další informace o nástroji Editor konfigurací naleznete v tématu [Nástroj Configuration Editor (SvcConfigEditor. exe)](../configuration-editor-tool-svcconfigeditor-exe.md). Další informace o rozhraní WMI najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](./wmi/index.md).
 
 ## <a name="logging-levels-and-options"></a>Úrovně a možnosti protokolování
 
@@ -101,7 +101,7 @@ Kromě úrovní protokolování může uživatel zadat následující možnosti:
 
 Pokud v konfiguračním souboru není definován naslouchací proces trasování, negeneruje se výstup protokolování bez ohledu na zadanou úroveň protokolování.
 
-Možnosti protokolování zpráv, například atributy popsané v této části, lze změnit za běhu pomocí rozhraní WMI (Windows Management Instrumentation) (WMI). To lze provést přístupem k instanci [AppDomainInfo](../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`a `LogMalformedMessages`. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. To efektivně povoluje protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI. Další informace najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).
+Možnosti protokolování zpráv, například atributy popsané v této části, lze změnit za běhu pomocí rozhraní WMI (Windows Management Instrumentation) (WMI). To lze provést přístupem k instanci [AppDomainInfo](./wmi/appdomaininfo.md) , která zpřístupňuje tyto logické vlastnosti: `LogMessagesAtServiceLevel`, `LogMessagesAtTransportLevel`a `LogMalformedMessages`. Proto pokud nakonfigurujete naslouchací proces trasování pro protokolování zpráv, ale tyto možnosti nastavíte `false` na v konfiguraci, můžete je později změnit na `true` , pokud je aplikace spuštěná. To efektivně povoluje protokolování zpráv za běhu. Podobně platí, že pokud povolíte protokolování zpráv v konfiguračním souboru, můžete ho za běhu zakázat pomocí rozhraní WMI. Další informace najdete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](./wmi/index.md).
 
 `source` Pole v protokolu zpráv určuje, v němž kontextu je zpráva zaznamenána: při odesílání/přijímání zprávy požadavku, pro požadavek-odpověď nebo na jednosměrnou žádost, v modelu služby nebo transportní vrstvě nebo v případě poškozené zprávy.
 
@@ -174,6 +174,6 @@ Měli byste si uvědomit, že `type` atribut by měl být nastaven na kvalifikov
 
 ## <a name="see-also"></a>Viz také:
 
-- [\<messageLogging >](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
-- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
-- [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)
+- [\<messageLogging >](../../configure-apps/file-schema/wcf/messagelogging.md)
+- [Protokolování zpráv](message-logging.md)
+- [Doporučené nastavení pro trasování a protokolování zpráv](./tracing/recommended-settings-for-tracing-and-message-logging.md)

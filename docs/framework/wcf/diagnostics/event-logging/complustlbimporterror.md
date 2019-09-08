@@ -2,24 +2,24 @@
 title: ComPlusTLBImportError
 ms.date: 03/30/2017
 ms.assetid: fe087e97-efbb-4006-8465-ec2ff7860c7b
-ms.openlocfilehash: 96390bfffe93d2e6fc1e9d1d8693f81287331404
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 760097157699b5a5e2265a03daf663146e84792d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999398"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797990"
 ---
 # <a name="complustlbimporterror"></a>ComPlusTLBImportError
-Id: 132  
+Účet 132  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: ServiceModel  
+ Kategorií ServiceModel  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že došlo k chybě při importu knihovny typů. Událost obsahuje identifikátor IID, ID knihovny typů, výjimky, název procesu a ID procesu.  
+ Tato událost označuje, že při importu knihovny typů došlo k chybě. Událost obsahuje seznam identifikátorů IID, ID knihovny typů, výjimku, název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
-ms.openlocfilehash: 9d63b0b2c7d513d9f4db526b88a7c4e852637343
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 40caa07488cb40ca8e9e3eb3a570c325b92de491
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928636"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793302"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>Postupy: Načtení informací o konfliktech členů
-<xref:System.Data.Linq.MemberChangeConflict> Třídu můžete použít k načtení informací o jednotlivých členech v konfliktu. V tomto stejném kontextu můžete poskytnout vlastní zpracování konfliktu pro libovolného člena. Další informace najdete v tématu [Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+<xref:System.Data.Linq.MemberChangeConflict> Třídu můžete použít k načtení informací o jednotlivých členech v konfliktu. V tomto stejném kontextu můžete poskytnout vlastní zpracování konfliktu pro libovolného člena. Další informace najdete v tématu [Optimistická souběžnost: Přehled](optimistic-concurrency-overview.md).  
   
 ## <a name="example"></a>Příklad  
  Následující kód prochází <xref:System.Data.Linq.ObjectChangeConflict> objekty. Pro každý objekt pak prochází <xref:System.Data.Linq.MemberChangeConflict> objekty.  
@@ -26,4 +26,4 @@ ms.locfileid: "69928636"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Postupy: Správa konfliktů změn](how-to-manage-change-conflicts.md)

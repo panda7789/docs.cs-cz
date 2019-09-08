@@ -1,6 +1,6 @@
 ---
-title: Funkce BlessIWbemServicesObject (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce BlessIWbemServicesObject označuje, jestli přihlašovací údaje uživatele povolit přístup k objektu služby IWbem
+title: BlessIWbemServicesObject – funkce (Reference nespravovaného rozhraní API)
+description: Funkce BlessIWbemServicesObject určuje, jestli přihlašovací údaje uživatele povolují přístup k objektu služby IWbem.
 ms.date: 11/06/2017
 api_name:
 - BlessIWbemServicesObject
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7f24606e3b021b0df5bdbaab795e4f672f724fa
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94c6f47e67cf22f189719a8a9f56e830ee90227c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761711"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798723"
 ---
 # <a name="blessiwbemservicesobject-function"></a>Funkce BlessIWbemServicesObject
-Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu. 
+Určuje, zda přihlašovací údaje uživatele povolují přístup k zadanému objektu [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) . 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -44,43 +44,43 @@ HRESULT BlessIWbemServicesObject (
 ## <a name="parameters"></a>Parametry
 
 `pIWbemServices`\
-[in] Ukazatel na objekt služby WMI.
+pro Ukazatel na objekt služby WMI.
 
 `strUser`\
-[in] Uživatelské jméno.
+pro Uživatelské jméno
 
 `strPassword`\
-[in] Heslo přidružené k `strUser`.
+pro Heslo přidružené `strUser`k.
 
 `strAuthority`\
-[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+pro Název domény uživatele Další informace najdete v tématu funkce [ConnectServerWmi](connectserverwmi.md) .
 
 `impLevel`\
-[in] Úroveň zosobnění.
+pro Úroveň zosobnění.
 
 `authnLevel`\
-[in] Úroveň autorizace.
+pro Úroveň autorizace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *Winerror. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `E_INVALIDARG` | 0x80070057 | Jeden nebo více argumentů nejsou platné. |
-| `E_POINTER` | 0x80004003 | `pIWbemServices` je `null`. | 
-| `E_FAIL` | 0x80000008 | Došlo k nespecifikované chybě. |
-| `E_OUTOFMEMORY` | 0x80000002 | K provedení této operace není dostatek paměti. | 
-| `S_OK` | 0 | Volání funkce byla úspěšná. | 
+| `E_INVALIDARG` | 0x80070057 | Jeden nebo více argumentů je neplatných. |
+| `E_POINTER` | 0x80004003 | `pIWbemServices`je `null`. | 
+| `E_FAIL` | 0x80000008 | Došlo k neurčené chybě. |
+| `E_OUTOFMEMORY` | 0x80000002 | K provedení této operace je k dispozici dostatek paměti. | 
+| `S_OK` | 0 | Volání funkce bylo úspěšné. | 
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
- **Záhlaví:** WMINet_Utils.idl
+ **Hlaviček** WMINet_Utils.idl
 
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

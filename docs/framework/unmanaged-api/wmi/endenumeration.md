@@ -1,6 +1,6 @@
 ---
-title: Funkce EndEnumeration (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce EndEnumeration ukončí výčet.
+title: Funkce EndEnumeration – funkce (Reference nespravovaného rozhraní API)
+description: Funkce funkce EndEnumeration ukončí výčet.
 ms.date: 11/06/2017
 api_name:
 - EndEnumeration
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d5c576cb808ee92452c193c3fbce4f1d2c2cad05
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0065dcd25430e102b965d5598c7e9a04c7857eb3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636774"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798810"
 ---
 # <a name="endenumeration-function"></a>Funkce EndEnumeration
 
-Ukončí sekvenci výčet začít volání [funkce BeginEnumeration](beginenumeration.md).
+Ukončí sekvenci výčtu spuštěnou voláním [funkce funkce BeginEnumeration](beginenumeration.md).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -41,34 +41,34 @@ HRESULT EndEnumeration (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`\
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::EndEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: funkce EndEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-Volání `EndEnumeration` funkce se nevyžaduje, ale doporučuje se, protože ho uvolní prostředky spojené s výčtem. Prostředky však jsou automaticky uvolní, při spuštění další výčet nebo objekt uvolněn.
+Volání `EndEnumeration` funkce není vyžadováno, ale doporučuje se, protože uvolňuje prostředky přidružené k výčtu. Prostředky se ale oddělí automaticky při spuštění dalšího výčtu nebo uvolnění objektu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

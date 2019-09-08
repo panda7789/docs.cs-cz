@@ -2,12 +2,12 @@
 title: Ochrana osobních údajů a zabezpečení dat
 ms.date: 03/30/2017
 ms.assetid: 46fa5839-adf7-4c7c-bce3-71e941fa7de9
-ms.openlocfilehash: e4f603d35b4fc03eff990570e725a9d063c19faa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 04e405307d3aa42388c396cd69c465ba7ec70d35
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69988725"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783224"
 ---
 # <a name="privacy-and-data-security"></a>Ochrana osobních údajů a zabezpečení dat
 Zabezpečení a Správa citlivých informací v aplikaci ADO.NET závisí na základních produktech a technologiích, které jste použili k jejímu vytvoření. ADO.NET přímo neposkytuje služby pro zabezpečení nebo šifrování dat.  
@@ -18,7 +18,7 @@ Zabezpečení a Správa citlivých informací v aplikaci ADO.NET závisí na zá
  Na rozdíl od kryptografie, která umožňuje šifrování a pak dešifrování dat, je jednosměrnou metodou zpracování dat algoritmem hash. Data hash jsou užitečná, když chcete zabránit manipulaci tím, že zkontrolujete, že se data nezměnila: stejné vstupní řetězce, algoritmy hash vždy vytvoří identické krátké výstupní hodnoty, které lze snadno porovnat. [Zajištění integrity dat pomocí kódů hash](../../../standard/security/ensuring-data-integrity-with-hash-codes.md) popisuje, jak můžete generovat a ověřit hodnoty hash.  
   
 ## <a name="encrypting-configuration-files"></a>Šifrování konfiguračních souborů  
- Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečená. Připojovací řetězce uložené v konfiguračních souborech jsou uloženy ve standardních souborech XML, pro které .NET Framework definovaly společnou sadu prvků. Chráněná konfigurace umožňuje šifrovat citlivé informace v konfiguračním souboru. I když jsou primárně určené pro aplikace ASP.NET, chráněná konfigurace se dá použít taky k šifrování oddílů konfiguračního souboru v aplikacích pro Windows. Další informace najdete v tématu [ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
+ Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečená. Připojovací řetězce uložené v konfiguračních souborech jsou uloženy ve standardních souborech XML, pro které .NET Framework definovaly společnou sadu prvků. Chráněná konfigurace umožňuje šifrovat citlivé informace v konfiguračním souboru. I když jsou primárně určené pro aplikace ASP.NET, chráněná konfigurace se dá použít taky k šifrování oddílů konfiguračního souboru v aplikacích pro Windows. Další informace najdete v tématu [ochrana informací o připojení](protecting-connection-information.md).  
   
 ## <a name="securing-string-values-in-memory"></a>Zabezpečení řetězcových hodnot v paměti  
  <xref:System.String> Pokud objekt obsahuje citlivé informace, jako je například heslo, číslo platební karty nebo osobní údaje, existuje riziko, že tyto informace mohou být po použití odhaleny, protože aplikace nemůže odstranit data z paměti počítače.  
@@ -29,6 +29,6 @@ Zabezpečení a Správa citlivých informací v aplikaci ADO.NET závisí na zá
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)
+- [SQL Server – zabezpečení](./sql/sql-server-security.md)
+- [Přehled ADO.NET](ado-net-overview.md)

@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: 21ed620ab5b7a78fc4f396cc474e7c62b70f1ddd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8baf361ba66ba33927121ae20edcc6c12964c21c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946625"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792095"
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Možnosti použití LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje všechny klíčové funkce, které byste očekávali jako vývojář SQL. Můžete zadávat dotazy na informace a vkládat, aktualizovat a odstraňovat informace z tabulek.  
   
 ## <a name="selecting"></a>Výběr  
- Výběr (*projekce*) se dosahuje pouhým zápisem [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazu ve vlastním programovacím jazyce a následným spuštěním tohoto dotazu, který načte výsledky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]sám sebe převede všechny nezbytné operace na nezbytné operace SQL, se kterými jste se seznámili. Další informace najdete v tématu [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md).  
+ Výběr (*projekce*) se dosahuje pouhým zápisem [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazu ve vlastním programovacím jazyce a následným spuštěním tohoto dotazu, který načte výsledky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]sám sebe převede všechny nezbytné operace na nezbytné operace SQL, se kterými jste se seznámili. Další informace najdete v tématu [LINQ to SQL](index.md).  
   
  V následujícím příkladu se v okně konzoly načtou a zobrazují názvy společností zákazníků z Londýna.  
   
@@ -43,7 +43,7 @@ ms.locfileid: "69946625"
  Na `Delete` položku, odeberte položku z kolekce, do které patří, a potom zavolejte <xref:System.Data.Linq.DataContext.SubmitChanges%2A> <xref:System.Data.Linq.DataContext> na k potvrzení změny.  
   
 > [!NOTE]
-> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nerozpozná operace kaskádového odstranění. Pokud chcete odstranit řádek v tabulce s omezeními, přečtěte si téma [How to: Odstraní řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nerozpozná operace kaskádového odstranění. Pokud chcete odstranit řádek v tabulce s omezeními, přečtěte si téma [How to: Odstraní řádky z databáze](how-to-delete-rows-from-the-database.md).  
   
  V následujícím příkladu je zákazník, který `CustomerID` je z `98128` databáze načten. Po potvrzení, že se řádek zákazníka načetl, <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> se pak zavolá, aby se tento objekt odebral z kolekce. Nakonec se <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volá, aby se odstranění předalo do databáze.  
   
@@ -52,6 +52,6 @@ ms.locfileid: "69946625"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)
-- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
-- [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+- [Průvodce programováním](programming-guide.md)
+- [Objektový model LINQ to SQL](the-linq-to-sql-object-model.md)
+- [Začínáme](getting-started.md)

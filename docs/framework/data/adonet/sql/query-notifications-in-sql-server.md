@@ -2,66 +2,66 @@
 title: Oznámení pro dotazy na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: a68c01c7db782a9904ba36edec9d13332cab39a9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 94171c8dac59fc17b0dd699d87fc043651fa5b7a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645667"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791766"
 ---
 # <a name="query-notifications-in-sql-server"></a>Oznámení pro dotazy na SQL Serveru
-Oznámení dotazů založené na řešení infrastruktury služby Service Broker, povolit aplikace, která vás upozorní, když se data změnila. Tato funkce je zvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze, jako je například v případě webové aplikace a nutné upozornit, když je změněna zdrojová data.  
+Oznámení dotazů, která jsou postavená na Service Broker infrastruktuře, umožňují aplikacím upozorňování na změnu dat. Tato funkce je zvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze aplikace, jako je například webová aplikace, a musí být upozorněni, když se změní zdrojová data.  
   
- Oznámení dotazů pomocí ADO.NET můžete implementovat třemi způsoby:  
+ Existují tři způsoby, jak můžete implementovat oznámení dotazů pomocí ADO.NET:  
   
-1. Nízké úrovně implementace je poskytován `SqlNotificationRequest` třídy, která poskytuje funkce na straně serveru, můžete k provedení příkazu se žádost o oznámení.  
+1. Implementace nízké úrovně je poskytována `SqlNotificationRequest` třídou, která zveřejňuje na straně serveru, a umožňuje tak spustit příkaz s požadavkem na oznámení.  
   
-2. Poskytuje základní implementaci `SqlDependency` třídu, která je třída, která poskytuje vysokou úroveň abstrakce oznámení funkcí mezi zdrojová aplikace a SQL Server, můžete použít k detekci změn v závislosti Server. Ve většině případů toto je nejjednodušší a nejúčinnější způsob využití možnosti oznámení systému SQL Server ve spravované klientským aplikacím pomocí zprostředkovatele dat .NET Framework pro SQL Server.  
+2. Implementace vysoké úrovně je poskytována `SqlDependency` třídou, což je třída, která poskytuje souhrnnou abstrakci funkcí oznamování mezi zdrojovou aplikací a SQL Server a umožňuje použít závislost ke zjištění změn v WebServer. Ve většině případů je to nejjednodušší a nejúčinnější způsob, jak využít SQL Serverch oznámení pomocí spravovaných klientských aplikací pomocí .NET Framework Zprostředkovatel dat pro SQL Server.  
   
-3. Kromě toho webových aplikací vytvořených pomocí technologie ASP.NET 2.0 nebo novější můžete použít `SqlCacheDependency` pomocné třídy.  
+3. Kromě toho webové aplikace sestavené pomocí ASP.NET 2,0 nebo novější mohou používat `SqlCacheDependency` pomocné třídy.  
   
- Oznámení dotazů se používají pro aplikace, které je potřeba aktualizovat zobrazí nebo ukládá do mezipaměti v reakci na změny v podkladových datech. Microsoft SQL Server umožňuje aplikacím rozhraní .NET Framework odeslat příkaz k systému SQL Server a žádost o oznámení, pokud spuštění stejného příkazu byste mohli vytvořit sad výsledků dotazu liší od původně načten. Vygenerovat na serveru oznámení se posílají do fronty mohly být zpracovány později.  
+ Oznámení dotazů se používají pro aplikace, které vyžadují aktualizaci zobrazení nebo ukládání do mezipaměti v reakci na změny v podkladových datech. Microsoft SQL Server umožňuje aplikacím .NET Framework odeslat příkaz do SQL Server a požádat o oznámení při spuštění stejného příkazu by vzniklé sady výsledků liší od původně načtených. Oznámení vytvořená na serveru jsou odesílána prostřednictvím front ke zpracování později.  
   
- Můžete nastavit oznámení pro výběr a spouštění příkazů. Při použití příkazu EXECUTE, SQL Server zaregistruje oznámení pro příkaz provedený místo samotného příkaz EXECUTE. Příkaz musí splňovat požadavky a omezení pro příkaz SELECT. Pokud příkaz, který registruje upozornění obsahuje více než jeden výraz, databázový stroj vytvoří upozornění pro každý příkaz v dávce.  
+ Můžete nastavit oznámení pro příkazy SELECT a EXECUTE. Při použití příkazu EXECUTE SQL Server zaregistruje oznámení pro provedení příkazu, nikoli samotný příkaz EXECUTE. Příkaz musí splňovat požadavky a omezení příkazu SELECT. Když příkaz, který zaregistruje oznámení, obsahuje více než jeden příkaz, vytvoří databázový stroj oznámení pro každý příkaz v dávce.  
   
- Pokud vyvíjíte aplikaci kdy potřebujete spolehlivé sekunda oznámení při změně dat, přečtěte si oddíly **plánování strategie efektivní oznámení dotazů** a **alternativy k dotazu Oznámení** v [plánování oznámení](https://go.microsoft.com/fwlink/?LinkId=211984) téma v SQL Server Books Online. Další informace o oznámení dotazů a SQL Server Service Broker viz následující odkazy na témata v SQL Server Books Online.  
+ Pokud vyvíjíte aplikaci, kde při změně dat potřebujete spolehlivá e-mailová oznámení, přečtěte si oddíly **Plánování efektivní strategie oznámení** a **alternativ k dotazům na oznámení** v [plánování pro Téma oznámení](https://go.microsoft.com/fwlink/?LinkId=211984) v SQL Server Knihy online. Další informace o oznámeních a SQL Server Service Broker dotazů naleznete v následujících odkazech na témata v tématu SQL Server Books Online.  
   
- **Dokumentaci k SQL serveru**  
+ **Dokumentace k SQL Server**  
   
-- [Použití oznámení dotazů](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
+- [Pomocí oznámení dotazů](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms175110(v=sql.105))  
   
 - [Vytvoření dotazu pro oznámení](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
 - [Vývoj (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522889(v=sql.105))  
   
-- [Informační středisko pro vývojáře služby Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
+- [InfoCenter pro vývojáře Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
 - [Příručka pro vývojáře (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md)  
- Popisuje, jak používat oznámení dotazů, včetně požadavků na povolení a jejich používání.  
+ [Povolení oznámení dotazů](enabling-query-notifications.md)  
+ Popisuje, jak používat oznámení dotazů, včetně požadavků na jejich povolení a používání.  
   
- [SqlDependency v aplikaci ASP.NET](../../../../../docs/framework/data/adonet/sql/sqldependency-in-an-aspnet-app.md)  
- Ukazuje, jak pomocí dotazu oznámení z aplikace technologie ASP.NET.  
+ [SqlDependency v aplikaci ASP.NET](sqldependency-in-an-aspnet-app.md)  
+ Ukazuje, jak používat oznámení dotazů z aplikace ASP.NET.  
   
- [Detekce změn pomocí SqlDependency](../../../../../docs/framework/data/adonet/sql/detecting-changes-with-sqldependency.md)  
- Ukazuje, jak zjistit, že výsledky dotazu se bude lišit od těch, které původně obdrželi.  
+ [Detekce změn pomocí SqlDependency](detecting-changes-with-sqldependency.md)  
+ Ukazuje, jak rozpoznat, kdy se výsledky dotazu budou lišit od původně přijatých.  
   
- [Provádění SqlCommand pomocí SqlNotificationRequest](../../../../../docs/framework/data/adonet/sql/sqlcommand-execution-with-a-sqlnotificationrequest.md)  
- Ukazuje, konfigurace <xref:System.Data.SqlClient.SqlCommand> objektu pro práci s oznámení o dotazu.  
+ [Provádění SqlCommand pomocí SqlNotificationRequest](sqlcommand-execution-with-a-sqlnotificationrequest.md)  
+ Ukazuje konfiguraci <xref:System.Data.SqlClient.SqlCommand> objektu pro práci s oznámením dotazu.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Data.Sql.SqlNotificationRequest>  
- Popisuje <xref:System.Data.Sql.SqlNotificationRequest> třídy a všechny její členy.  
+ <xref:System.Data.Sql.SqlNotificationRequest> Popisuje třídu a všechny její členy.  
   
  <xref:System.Data.SqlClient.SqlDependency>  
- Popisuje <xref:System.Data.SqlClient.SqlDependency> třídy a všechny její členy.  
+ <xref:System.Data.SqlClient.SqlDependency> Popisuje třídu a všechny její členy.  
   
  <xref:System.Web.Caching.SqlCacheDependency>  
- Popisuje <xref:System.Web.Caching.SqlCacheDependency> třídy a všechny její členy.  
+ <xref:System.Web.Caching.SqlCacheDependency> Popisuje třídu a všechny její členy.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

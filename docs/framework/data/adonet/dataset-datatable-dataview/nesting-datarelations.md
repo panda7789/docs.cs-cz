@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 08149de9222c34928078c0ca9d88096f7a4a88d1
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 971a1bddc40521dc7381ecb2e39709c0fed282ed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203271"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785981"
 ---
 # <a name="nesting-datarelations"></a>Vnoření datových relací
 V relačních zastoupeních dat jednotlivé tabulky obsahují řádky, které jsou vzájemně propojené pomocí sloupce nebo sady sloupců. V ADO.NET <xref:System.Data.DataSet>je relace mezi tabulkami implementována <xref:System.Data.DataRelation>pomocí. Při vytváření objektu **DataRelation**jsou vztahy nadřazenosti a podřízenosti sloupců spravovány pouze prostřednictvím vztahu. Tabulky a sloupce jsou samostatné entity. V hierarchickém znázornění dat, která poskytuje XML, jsou vztahy typu nadřazený-podřízený zastoupeny nadřazenými prvky, které obsahují vnořené podřízené prvky.  
   
- Pro usnadnění vnoření podřízených objektů, pokud je **datová sada** synchronizována s <xref:System.Xml.XmlDataDocument> nebo zapsaná jako XML data pomocí funkce **WriteXml**, objekt DataRelation zpřístupňuje **vnořenou** vlastnost. Nastavení **vnořené** vlastnosti DataRelation na **hodnotu true** způsobí, že podřízené řádky relace budou vnořené do nadřazeného sloupce, pokud jsou zapsány jako data XML nebo synchronizovány pomocí **objektu XmlDataDocument**. Ve výchozím nastavení je vnořená vlastnost DataRelation nastavena na **hodnotu false**.  
+ Pro usnadnění vnoření podřízených objektů, pokud je **datová sada** synchronizována s <xref:System.Xml.XmlDataDocument> nebo zapsaná jako XML data pomocí funkce **WriteXml**, objekt **DataRelation** zpřístupňuje **vnořenou** vlastnost. Nastavení **vnořené** vlastnosti **DataRelation** na **hodnotu true** způsobí, že podřízené řádky relace budou vnořené do nadřazeného sloupce, pokud jsou zapsány jako data XML nebo synchronizovány pomocí **objektu XmlDataDocument**. Ve výchozím nastavení je **vnořená** vlastnost **DataRelation** nastavena na **hodnotu false**.  
   
  Zvažte například následující **datovou sadu**.  
   
@@ -59,7 +59,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
   dataSet.Tables["Orders"].Columns["CustomerID"]);  
 ```  
   
- Vzhledem k tomu, že vlastnost **Nested** objektu DataRelation není pro tuto **datovou sadu**nastavena na **hodnotu true** , podřízené objekty nejsou vnořené v rámci nadřazených elementů, pokud je tato **datová sada** reprezentována jako data XML. Transformace reprezentace XML pro **datovou sadu** , která obsahuje související **datovou sadu**s nevnořenými datovými relacemi, může způsobit pomalý výkon. Doporučujeme, abyste provedli vnořování datových vztahů. To provedete tak, že nastavíte vnořenou vlastnost na **hodnotu true**. Potom v šabloně stylů XSLT napíšete kód, který použije k vyhledání a transformaci dat horních hierarchické výrazy XPath.  
+ Vzhledem k tomu, že vlastnost **Nested** objektu **DataRelation** není pro tuto **datovou sadu**nastavena na **hodnotu true** , podřízené objekty nejsou vnořené v rámci nadřazených elementů, pokud je tato **datová sada** reprezentována jako data XML. Transformace reprezentace XML pro **datovou sadu** , která obsahuje související **datovou sadu**s nevnořenými datovými relacemi, může způsobit pomalý výkon. Doporučujeme, abyste provedli vnořování datových vztahů. To provedete tak, že nastavíte **vnořenou** vlastnost na **hodnotu true**. Potom v šabloně stylů XSLT napíšete kód, který použije k vyhledání a transformaci dat horních hierarchické výrazy XPath.  
   
  Následující příklad kódu ukazuje výsledek volání **WriteXml** na **datovou sadu**.  
   
@@ -91,7 +91,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
 </CustomerOrders>  
 ```  
   
- Všimněte si, že elementy Customers a Orders se zobrazují jako elementy na stejné úrovni. Pokud jste chtěli, aby se prvky **objednávky** zobrazovaly jako podřízené objekty svých příslušných nadřazených prvků, je nutné, aby byla **vnořená** vlastnost DataRelation nastavena na **hodnotu true** a přidáte následující:  
+ Všimněte si, že elementy **Customers** a **Orders** se zobrazují jako elementy na stejné úrovni. Pokud jste chtěli, aby se prvky **objednávky** zobrazovaly jako podřízené objekty svých příslušných nadřazených prvků, je nutné, aby byla **vnořená** vlastnost **DataRelation** nastavena na **hodnotu true** a přidáte následující:  
   
 ```vb  
 customerOrders.Nested = True  
@@ -136,4 +136,4 @@ customerOrders.Nested = true;
 - [Použití XML v datové sadě](using-xml-in-a-dataset.md)
 - [Přidání datových relací](adding-datarelations.md)
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

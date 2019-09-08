@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10eead2772a2bbd8abaf7b9c090a091687725972
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: adbbf94dc36c6d82360ed532b283cd666a1a52ed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778650"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796846"
 ---
 # <a name="gethistoryfiledirectory-function"></a>GetHistoryFileDirectory – funkce
-Načte cestu adresáře historie aplikace.  
+Načte cestu k adresáři historie aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,33 +37,33 @@ HRESULT GetHistoryFileDirectory (
   
 ## <a name="parameters"></a>Parametry  
  `wzDir`  
- [out] Vyrovnávací paměť pro cestu k adresáři aplikace historie.  
+ mimo Vyrovnávací paměť pro uložení cesty k adresáři historie aplikace  
   
  `pdwSize`  
- [out v] Délka vyrovnávací paměti.  
+ [in, out] Délka vyrovnávací paměti.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrací standardní kódy chyb modelu COM, jak jsou definovány v souboru WinError.h kromě následujících hodnot.  
+ Tato metoda vrací standardní chybové kódy modelu COM, jak jsou definovány v souboru WinError. h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`wzDir` nebo `pdwSize` má hodnotu null nebo verze řetězce je nesprávný.|  
+|E_INVALIDARG|`wzDir`nebo `pdwSize` je null nebo je řetězec verze nesprávný.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při úspěšném dokončení `pdwSize` argument je nastaven na délku řetězce cesty.  
+ Po úspěšném dokončení `pdwSize` je argument nastaven na délku řetězce cesty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Soubor Fusion.dll a knihovny Mscorwks.dll. Ujistěte se, že můžete cílit na správnou verzi rozhraní .NET Framework pomocí soubor Fusion.dll namísto knihovny Mscorwks.dll.  
+ **Knihovna** Fusion. dll a knihovny Mscorwks. dll. Použijte knihovnu Fusion. dll namísto knihovny Mscorwks. dll, abyste se ujistili, že cílíte na správnou verzi .NET Framework.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [CreateHistoryReader – funkce](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)
-- [NukeDownloadedCache – funkce](../../../../docs/framework/unmanaged-api/fusion/nukedownloadedcache-function.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [CreateHistoryReader – funkce](createhistoryreader-function.md)
+- [NukeDownloadedCache – funkce](nukedownloadedcache-function.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

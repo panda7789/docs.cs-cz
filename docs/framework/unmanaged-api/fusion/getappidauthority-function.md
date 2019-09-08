@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 536f3249593333234f7f09921007b483fb80cf79
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8471610008bee02c7cc4e7654b21d6aca5dcf53a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778586"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796282"
 ---
 # <a name="getappidauthority-function"></a>GetAppIdAuthority – funkce
-Získá ukazatel [iappidauthority –](../../../../docs/framework/unmanaged-api/fusion/iappidauthority-interface.md) instance, která spravuje klíče pro identity aplikací a odkazy.  
+Získá ukazatel na instanci [IAppIdAuthority –](iappidauthority-interface.md) , která spravuje klíče pro identity aplikace a odkazy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetAppIdAuthority (
   
 ## <a name="parameters"></a>Parametry  
  `ppIAppIdAuthority`  
- [out] Vrácený `IAppIdAuthority` ukazatele.  
+ mimo Vrácený `IAppIdAuthority` ukazatel.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAppIdAuthority – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iappidauthority-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [IAppIdAuthority – rozhraní](iappidauthority-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

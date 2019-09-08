@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: f76b1f0a09be2f745156437919f43ebaa8840519
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7cd02a0a315ffdb155af09ac4e4fabbea1724a4d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938484"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780835"
 ---
 # <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
 Edice Microsoft SQL Server Express (SQL Server Express) podporuje funkci uživatelské instance, která je k dispozici pouze při použití .NET Framework Zprostředkovatel dat pro SQL Server (`SqlClient`). Uživatelská instance je samostatná instance SQL Server Express databázového stroje, který je generován nadřazenou instancí. Uživatelské instance umožňují uživatelům, kteří nejsou správci na místních počítačích, připojovat se k SQL Server Express databází a připojovat se k nim. Každá instance se spouští v rámci kontextu zabezpečení jednotlivého uživatele, a to na základě jednoho jednotlivého uživatele.  
@@ -152,7 +152,7 @@ private static void OpenSqlConnection()
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
-- [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Připojovací řetězce](../connection-strings.md)
+- [Připojení ke zdroji dat](../connecting-to-a-data-source.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

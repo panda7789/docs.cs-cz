@@ -5,37 +5,37 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e491b9bf-741a-4296-9f51-76c25ddf6a82
-ms.openlocfilehash: 04353361f8356b1d2b2aa3b930bb9b5ab88b9c0b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a4971bc05b22c38790c5fd1493e70cccf5eaae16
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583685"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793779"
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>Postupy: Přímé spuštění dotazů SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překládá dotazy, který napíšete do parametrizované dotazy jazyka SQL (ve formě textu) a odesílá je do serveru SQL server pro zpracování.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]přeloží dotazy zapsané do parametrizovaných dotazů SQL (v textovém formátu) a pošle je do SQL serveru pro zpracování.  
   
- SQL nelze provést různými metodami, které mohou být místně dostupný vaší aplikaci. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se pokusí převést tyto místní metody na ekvivalentní operacemi a funkcemi, které jsou k dispozici v prostředí SQL. Většina metod a operátory pro předdefinované typy rozhraní .NET Framework mají přímé překlady příkazy jazyka SQL. Některé je možné vytvořit z funkcí, které jsou k dispozici. Ty, které není možné generovat výjimky za běhu. Další informace najdete v tématu [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
+ SQL nemůže spustit celou řadu metod, které mohou být k dispozici místně pro vaši aplikaci. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]pokusí se převést tyto místní metody na ekvivalentní operace a funkce, které jsou k dispozici v prostředí SQL. Většina metod a operátorů v .NET Framework předdefinovaných typů má přímé překlady do příkazů SQL. Některé mohou být vytvořeny z dostupných funkcí. Ty, které se nedají vyrobit, generují výjimky za běhu. Další informace naleznete v tématu [mapování typu SQL-CLR](sql-clr-type-mapping.md).  
   
- V případech, kde [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazu není dostatečná pro specializované úlohy, můžete použít <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> má metoda spustí dotaz SQL a poté převést výsledek dotazu přímo do objektů.  
+ V případech, kdy [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je dotaz nedostatečný pro specializovanou úlohu, lze <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> použít metodu pro spuštění dotazu SQL a následně převést výsledek dotazu přímo do objektů.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se předpokládá, že data `Customer` třídy se pak rozdělí více než dvě tabulky (customer1 a customer2). Dotaz vrátí sekvenci `Customer` objekty.  
+ V následujícím příkladu Předpokládejme, že data pro `Customer` třídu jsou rozložena do dvou tabulek (Customer1 a Customer2). Dotaz vrátí sekvenci `Customer` objektů.  
   
  [!code-csharp[DLinqQuerying#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQuerying/cs/Program.cs#4)]
  [!code-vb[DLinqQuerying#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQuerying/vb/Module1.vb#4)]  
   
- Za předpokladu, názvy sloupců v tabulkové výsledky odpovídají sloupec vlastnosti vaší entity třídy [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří objekty mimo jakýkoli dotaz SQL.  
+ Pokud názvy sloupců v tabulkových výsledcích odpovídají vlastnostem sloupce vaší třídy entity, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří objekty mimo libovolný dotaz SQL.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> Metoda také umožňuje pro parametry. Použijte například následující kód k provedení parametrický dotaz.  
+ <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> Metoda také umožňuje parametry. Použijte následující kód k provedení parametrizovaného dotazu.  
   
  [!code-csharp[DLinqQuerying#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQuerying/cs/Program.cs#5)]
  [!code-vb[DLinqQuerying#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQuerying/vb/Module1.vb#5)]  
   
- Parametry jsou vyjádřeny v textu dotazu pomocí stejné složených zápisu používají `Console.WriteLine()` a `String.Format()`. Ve skutečnosti `String.Format()` ve skutečnosti je volán na řetězec dotazu, který zadáte, nahraďte složených závorkách parametry s generované názvy parametrů, jako @p0, @p1 ..., @p(n).  
+ Parametry jsou vyjádřeny v textu dotazu pomocí stejného složeného zápisu `Console.WriteLine()` , který používá a. `String.Format()` Ve skutečnosti `String.Format()` je ve skutečnosti volána v řetězci dotazu, který zadáte, a nahrazením složených složených parametrů názvy @p0generovaných parametrů, jako například, @p1 ..., @p(n).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Základní informace](background-information.md)
+- [Dotazování na databázi](querying-the-database.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: 97df0bee10440dd03f07b980589d9dda85ce121e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 33f4263c747ac2590234493ec7cb9e6048ed2b96
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69909872"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794022"
 ---
 # <a name="large-udts"></a>Velké uživatelsky definované typy
 Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili systém skalárního typu serveru tím, že ukládá objekty modulu CLR (Common Language Runtime) do databáze SQL Server. UDT může obsahovat více prvků a může mít chování, na rozdíl od tradičních datových typů aliasů, které se skládají z jednoho SQL Server systémových dat.  
@@ -27,7 +27,7 @@ Uživatelsky definované typy (UDT) umožňují vývojářům, aby rozšířili 
 1. [Uživatelem definované typy CLR](https://go.microsoft.com/fwlink/?LinkId=98366)  
   
 ## <a name="retrieving-udt-schemas-using-getschema"></a>Načítání schémat UDT pomocí GetSchema  
- Metoda vrátí informace o schématu <xref:System.Data.DataTable>databáze v. <xref:System.Data.SqlClient.SqlConnection> <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> Další informace najdete v tématu [SQL Server kolekcí schémat](../../../../../docs/framework/data/adonet/sql-server-schema-collections.md).  
+ Metoda vrátí informace o schématu <xref:System.Data.DataTable>databáze v. <xref:System.Data.SqlClient.SqlConnection> <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> Další informace najdete v tématu [SQL Server kolekcí schémat](../sql-server-schema-collections.md).  
   
 ### <a name="getschematable-column-values-for-udts"></a>Hodnoty sloupce GetSchema pro UDT  
  <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A> Metoda vrátí<xref:System.Data.SqlClient.SqlDataReader> hodnotu ,kterápopisujemetadatasloupce.<xref:System.Data.DataTable> Následující tabulka popisuje rozdíly v metadatech sloupců pro velké UDT mezi SQL Server 2005 a SQL Server 2008.  
@@ -133,8 +133,8 @@ End Using
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Načítání informací o databázovém schématu](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
-- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)
+- [Načítání informací o databázovém schématu](../retrieving-database-schema-information.md)
+- [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)
+- [Binární a vysoké hodnoty na SQL Serveru](sql-server-binary-and-large-value-data.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

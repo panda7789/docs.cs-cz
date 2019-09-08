@@ -1,6 +1,6 @@
 ---
-title: Funkce GetQualifierSet (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetQualifierSet načte kvalifikátor nastavení pro třídu nebo instanci.
+title: GetQualifierSet – funkce (Reference nespravovaného rozhraní API)
+description: Funkce GetQualifierSet načte kvalifikátor sady pro třídu nebo instanci.
 ms.date: 11/06/2017
 api_name:
 - GetQualifierSet
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e392d3afcd81e6eace7a674788a2a957da28842c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 845d5ea93a06859840c87c65b415ead0f846d538
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746469"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798461"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
-Načte kvalifikátor, nastavte pro instanci třídy nebo definice třídy.
+Načte kvalifikátor sady pro instanci třídy nebo definici třídy.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -41,39 +41,39 @@ HRESULT GetQualifierSet (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `ppQualSet`  
-[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory třídy objektu. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel myši zůstane bez úprav. 
+mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům objektu třídy. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel zůstane beze změny. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
+|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je `null`. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::GetQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getqualifierset) metody. 
+Tato funkce zalomí volání metody [IWbemclassObject:: GetQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getqualifierset) . 
 
-[IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory. Tyto přidané, upravené nebo odstraněné kvalifikátory platí pro celou definici třídy nebo instance.
+[Ukazatel IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit tyto kvalifikátory. Tyto přidané, upravené nebo odstraněné kvalifikátory platí pro celou instanci nebo definici třídy.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

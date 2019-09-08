@@ -1,6 +1,6 @@
 ---
-title: Vytvoření aplikace WPF v aplikaci Visual Studio
-ms.date: 03/20/2019
+title: 'Kurz: Vytvoření první aplikace WPF v aplikaci Visual Studio 2019 – .NET Framework'
+ms.date: 09/06/2019
 dev_langs:
 - csharp
 - vb
@@ -8,44 +8,41 @@ helpviewer_keywords:
 - getting started [WPF], WPF
 - WPF [WPF], getting started
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
+ms.topic: tutorial
+ms.custom: vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.custom: vs-dotnet
-ms.openlocfilehash: 4919424339df1f8d2c68465bd9f9af42f344fe37
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c8b7f6f3bdbf3adc7c355e88cfe1f569cc0cb76f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254074"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799339"
 ---
-# <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
+# <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Kurz: Vytvoření první aplikace WPF v aplikaci Visual Studio 2019
 
 V tomto článku se dozvíte, jak vyvíjet desktopovou aplikaci Windows Presentation Foundation (WPF), která obsahuje prvky, které jsou společné pro většinu aplikací WPF: Jazyk Extensible Application Markup Language (XAML) (XAML) značky, kódu na pozadí, definice aplikací, ovládací prvky, rozložení, datové vazby a styly. K vývoji aplikace použijete Visual Studio. 
 
-Tento návod obsahuje následující kroky:
+V tomto kurzu se naučíte:
+> [!div class="checklist"]
+> - Vytvořte projekt WPF.
+> - Použijte XAML pro návrh vzhledu uživatelského rozhraní (UI) aplikace.
+> - Napíšete kód pro sestavení chování aplikace.
+> - Vytvořte definici aplikace pro správu aplikace.
+> - Přidejte ovládací prvky a vytvořte rozložení, abyste mohli vytvořit uživatelské rozhraní aplikace.
+> - Vytvářejte styly pro konzistentní vzhled v celém uživatelském rozhraní aplikace.
+> - Navažte uživatelské rozhraní na data a naplňte uživatelské rozhraní z dat a Udržujte data a uživatelské rozhraní synchronizované.
 
-- Použijte XAML pro návrh vzhledu uživatelského rozhraní (UI) aplikace.
-
-- Napíšete kód pro sestavení chování aplikace.
-
-- Vytvořte definici aplikace pro správu aplikace.
-
-- Přidejte ovládací prvky a vytvořte rozložení, abyste mohli vytvořit uživatelské rozhraní aplikace.
-
-- Vytvářejte styly pro konzistentní vzhled v celém uživatelském rozhraní aplikace.
-
-- Navažte uživatelské rozhraní na data a naplňte uživatelské rozhraní z dat a Udržujte data a uživatelské rozhraní synchronizované.
-
-Na konci tohoto návodu budete mít vytvořenou samostatnou aplikaci pro Windows, která uživatelům umožňuje zobrazit sestavy výdajů pro vybrané lidi. Aplikace se skládá z několika stránek WPF, které jsou hostovány v okně ve stylu prohlížeče.
+Na konci kurzu budete mít vytvořenou samostatnou aplikaci pro Windows, která uživatelům umožňuje zobrazit sestavy výdajů pro vybrané lidi. Aplikace se skládá z několika stránek WPF, které jsou hostovány v okně ve stylu prohlížeče.
 
 > [!TIP]
-> Vzorový kód, který se používá k sestavení tohoto návodu, je k dispozici pro C# Visual Basic i v [podrobném ukázkovém kódu aplikace WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/WalkthroughFirstWPFApp).
+> Vzorový kód, který se používá v tomto kurzu, je k dispozici pro C# Visual Basic i v [kurzu pro ukázkový kód aplikace WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/WalkthroughFirstWPFApp).
 >
-> C# **Pomocí \< rozevíracího seznamu v pravé horní části tohoto článku můžete přepínat jazyk kódu ukázkového kódu mezi a Visual Basic. />**
+> Můžete přepínat jazyk kódu ukázkového kódu mezi C# a Visual Basic pomocí selektoru jazyka v horní části této stránky.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Visual Studio 2017 nebo novější (Tento článek používá Visual Studio 2019)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou **vývoj desktopových aplikací .NET** .
 
    Další informace o instalaci nejnovější verze sady Visual Studio najdete v tématu [instalace sady Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -210,7 +207,7 @@ V této části přidáte do aplikace dvě stránky a image.
 
     [!code-vb[ExpenseIt#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]
 
-1. Přidejte do projektu obrázek s názvem *vodotisk. png* . Můžete vytvořit vlastní image, zkopírovat soubor z ukázkového kódu nebo ho získat [sem](https://raw.githubusercontent.com/microsoft/WPF-Samples/master/Getting%20Started/WalkthroughFirstWPFApp/csharp/watermark.png).
+1. Přidejte do projektu obrázek s názvem *vodotisk. png* . Můžete vytvořit vlastní image, zkopírovat soubor z ukázkového kódu nebo ho získat z úložiště GitHub [Microsoft/WPF-Samples](https://raw.githubusercontent.com/microsoft/WPF-Samples/master/Getting%20Started/WalkthroughFirstWPFApp/csharp/watermark.png) .
 
     1. Klikněte pravým tlačítkem myši na uzel projektu a vyberte možnost **Přidat** > **existující položku**nebo stiskněte klávesu **SHIFT**+**ALT**+**A**.
 
@@ -475,11 +472,8 @@ Následující ilustrace znázorňuje obě stránky `ExpenseIt` aplikace s ovlá
 > Tato ukázka demonstruje konkrétní funkci WPF a nedodržuje všechny osvědčené postupy pro věci, jako je zabezpečení, lokalizace a přístupnost. Pro komplexní pokrytí prostředí WPF a osvědčených postupů vývoje aplikací .NET si přečtěte následující témata:
 >
 > - [Usnadnění](../../ui-automation/accessibility-best-practices.md)
->
 > - [Zabezpečení](../security-wpf.md)
->
 > - [Globalizace a lokalizace WPF](../advanced/wpf-globalization-and-localization-overview.md)
->
 > - [Výkon WPF](../advanced/optimizing-wpf-application-performance.md)
 
 ## <a name="next-steps"></a>Další postup

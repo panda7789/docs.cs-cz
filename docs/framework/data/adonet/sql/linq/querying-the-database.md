@@ -2,46 +2,46 @@
 title: Dotazy do databáze
 ms.date: 03/30/2017
 ms.assetid: eefb8b0c-ff07-4e86-a3d3-567479523fe9
-ms.openlocfilehash: fdcfaa3fc0d08df07027d44399612fb688b920d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c48879d8e3ae699ef749fc14923358174010aae
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918031"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782068"
 ---
 # <a name="querying-the-database"></a>Dotazy do databáze
-Tato skupina témat popisuje, jak vyvíjet a spouštět dotazy v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projekty.  
+Tato skupina témat popisuje, jak vyvíjet a spouštět dotazy v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektech.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Dotaz na informace](../../../../../../docs/framework/data/adonet/sql/linq/how-to-query-for-information.md)  
- Stručně ukazuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy jsou v podstatě stejný jako [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazuje obecně.  
+ [Postupy: Dotaz na informace](how-to-query-for-information.md)  
+ Stručně ukazuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , jak jsou dotazy v podstatě stejné [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] jako dotazy všeobecně.  
   
- [Postupy: Načtení informací ve stavu jen pro čtení](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-information-as-read-only.md)  
- Popisuje, jak ke zvýšení výkonu dotazů při plánovaných žádné změny k datům.  
+ [Postupy: Načíst informace jen pro čtení](how-to-retrieve-information-as-read-only.md)  
+ Popisuje, jak zvýšit výkon dotazů, pokud nejsou plánovány žádné změny dat.  
   
- [Postupy: Ovládací prvek, kolik souvisejících dat](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md)  
- Popisuje, jak řídit, které související data načítají spolu s hlavní cíl.  
+ [Postupy: Určit, kolik souvisejících dat se načítají](how-to-control-how-much-related-data-is-retrieved.md)  
+ Popisuje, jak řídit, která související data jsou načítána společně s hlavním cílem.  
   
- [Postupy: Filtrování souvisejících dat](../../../../../../docs/framework/data/adonet/sql/linq/how-to-filter-related-data.md)  
- Popisuje, jak načíst související data pomocí poddotazu.  
+ [Postupy: Filtrovat související data](how-to-filter-related-data.md)  
+ Popisuje, jak načíst související data pomocí dílčího dotazu.  
   
- [Postupy: Vypnutí odloženého načítání](../../../../../../docs/framework/data/adonet/sql/linq/how-to-turn-off-deferred-loading.md)  
- Popisuje, jak vypnutí odloženého načítání.  
+ [Postupy: Vypnutí odloženého načítání](how-to-turn-off-deferred-loading.md)  
+ Popisuje postup vypnutí odloženého načítání.  
   
- [Postupy: Přímé spuštění dotazů SQL](../../../../../../docs/framework/data/adonet/sql/linq/how-to-directly-execute-sql-queries.md)  
+ [Postupy: Přímé spouštění dotazů SQL](how-to-directly-execute-sql-queries.md)  
  Popisuje, jak odesílat dotazy pomocí jazyka SQL.  
   
- [Postupy: Store a opakované použití dotazů](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)  
- Popisuje postup při kompilaci dotazu jednou, ale použít vícekrát s různými parametry.  
+ [Postupy: Ukládání a opakované použití dotazů](how-to-store-and-reuse-queries.md)  
+ Popisuje, jak zkompilovat dotaz jednou, ale použít ho několikrát s různými parametry.  
   
- [Postupy: Zpracování složených klíčů v dotazech](../../../../../../docs/framework/data/adonet/sql/linq/how-to-handle-composite-keys-in-queries.md)  
- Popisuje, jak zahrnout více než jeden sloupec do dotazu, kde operátor, který přijímá pouze jeden argument.  
+ [Postupy: Zpracování složených klíčů v dotazech](how-to-handle-composite-keys-in-queries.md)  
+ Popisuje, jak zahrnout více než jeden sloupec v dotazu, kde operátor přijímá pouze jeden argument.  
   
- [Postupy: Načtení mnoha objektů najednou](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-many-objects-at-once.md)  
- Popisuje způsob použití <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
+ [Postupy: Načíst více objektů najednou](how-to-retrieve-many-objects-at-once.md)  
+ Popisuje, jak používat <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
   
- [Postupy: Filtr na úrovni DataContext](../../../../../../docs/framework/data/adonet/sql/linq/how-to-filter-at-the-datacontext-level.md)  
- Popisuje další používání <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
+ [Postupy: Filtrovat na úrovni DataContext](how-to-filter-at-the-datacontext-level.md)  
+ Popisuje jiné použití <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A>.  
   
- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
+ [Příklady dotazů](query-examples.md)  
  Poskytuje mnoho příkladů dotazů.

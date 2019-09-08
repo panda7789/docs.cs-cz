@@ -2,12 +2,12 @@
 title: Metody System.TimeSpan
 ms.date: 03/30/2017
 ms.assetid: 9333fee8-1454-4374-855b-8c14c002f48f
-ms.openlocfilehash: ec27f8f17a6709efef1a8230b521778095ae1257
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9a7eb3c979219003d497ec752b36ec54ef081b43
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947094"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781041"
 ---
 # <a name="systemtimespan-methods"></a>Metody System.TimeSpan
 Podpora <xref:System.TimeSpan?displayProperty=nameWithType> členů značně závisí na verzích .NET Framework a Microsoft SQL Server, které používáte.  
@@ -34,11 +34,11 @@ Podpora <xref:System.TimeSpan?displayProperty=nameWithType> členů značně zá
 > Možnost mapování <xref:System.TimeSpan?displayProperty=nameWithType> na sloupec SQL `TIME` s LINQ to SQL vyžaduje .NET Framework 3,5 SP1 a novější. Datový typ `TIME` SQL je k dispozici pouze v Microsoft SQL Server 2008 a novějších.  
   
 ### <a name="addition-and-subtraction"></a>Sčítání a odčítání  
- I když typ <xref:System.TimeSpan?displayProperty=nameWithType> CLR podporuje sčítání a odčítání, typ SQL `TIME` není. Z tohoto důvodu budou dotazy LINQ to SQL generovat chyby, pokud se pokusí přidat a odčítání, pokud jsou namapovány na typ `TIME` SQL. Další informace o tom, jak pracovat s typy data a času SQL v [mapování typu SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md), najdete v dalších ohledech.  
+ I když typ <xref:System.TimeSpan?displayProperty=nameWithType> CLR podporuje sčítání a odčítání, typ SQL `TIME` není. Z tohoto důvodu budou dotazy LINQ to SQL generovat chyby, pokud se pokusí přidat a odčítání, pokud jsou namapovány na typ `TIME` SQL. Další informace o tom, jak pracovat s typy data a času SQL v [mapování typu SQL-CLR](sql-clr-type-mapping.md), najdete v dalších ohledech.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
-- [Mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Koncepty dotazů](query-concepts.md)
+- [Vytvoření objektového modelu](creating-the-object-model.md)
+- [Mapování typů SQL a CLR](sql-clr-type-mapping.md)
+- [Datové typy a funkce](data-types-and-functions.md)

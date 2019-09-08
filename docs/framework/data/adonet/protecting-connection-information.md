@@ -2,22 +2,22 @@
 title: Ochrana informací o připojení
 ms.date: 03/30/2017
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-ms.openlocfilehash: ccb039a79c76c31b905783b81710571d8c5ab82b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37aab00a967b9912ba01cc3f27f68f8a3e85fdb2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878927"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783055"
 ---
 # <a name="protecting-connection-information"></a>Ochrana informací o připojení
-Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečování aplikace. Připojovací řetězec představuje potenciální ohrožení zabezpečení, není-li zabezpečena. Ukládání informací o připojení ve formátu prostého textu nebo uchování v paměti rizika porušení zabezpečení celého systému. Připojovací řetězce vloženy do zdrojového kódu, lze jej číst pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zobrazíte jazyk Microsoft intermediate language (MSIL) v kompilovaném sestavení.  
+Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečená. Ukládání informací o připojení do prostého textu nebo jejich uchování v rizikech paměti, které napředá celému systému. Připojovací řetězce vložené do zdrojového kódu lze číst pomocí programu [Ildasm. exe (IL Disassembler)](../../tools/ildasm-exe-il-disassembler.md) k zobrazení jazyka MSIL (Microsoft Intermediate Language) v kompilovaném sestavení.  
   
- Ohrožení zabezpečení, které mohou vzniknout zahrnující připojovací řetězce na základě typu ověřování používá, jak připojovací řetězce jsou zachované v paměti a na disku a techniky slouží k vytvoření za běhu.  
+ Chyby zabezpečení související s připojovacími řetězci mohou vzniknout v závislosti na použitém typu ověřování, způsobu, jakým jsou připojovací řetězce uchovány v paměti a na disku, a techniky, které jsou použity k jejich sestavení za běhu.  
   
-## <a name="use-windows-authentication"></a>Používat ověřování Windows  
- Chcete-li pomoci omezit přístup na zdroji dat, musíte zabezpečit informace o připojení, jako je například název zdroje ID, heslo a dat uživatele. Abyste zabránili zveřejnění informací o uživateli, doporučujeme používat ověřování Windows (někdy označovány jako *integrované zabezpečení*) kdykoli je to možné. Ověřování Windows je v připojovacím řetězci zadané pomocí `Integrated Security` nebo `Trusted_Connection` klíčová slova, takže odpadá nutnost používat uživatelské jméno a heslo. Pokud používáte ověřování Windows, uživatelé budou ověření ve Windows a přístup k prostředkům serveru a databáze je určen tím, že uděluje oprávnění pro uživatele Windows a skupiny.  
+## <a name="use-windows-authentication"></a>Použít ověřování systému Windows  
+ Chcete-li omezit přístup ke zdroji dat, je nutné zabezpečit informace o připojení, jako je ID uživatele, heslo a název zdroje dat. Abyste se vyhnuli vystavení informací o uživateli, doporučujeme, abyste používali ověřování systému Windows (někdy označované jako *integrované zabezpečení*), kdykoli je to možné. Ověřování systému Windows je zadáno v připojovacím řetězci pomocí `Integrated Security` klíčových slov nebo `Trusted_Connection` , což eliminuje nutnost použít ID uživatele a heslo. Při použití ověřování systému Windows jsou uživatelé ověřováni systémem Windows a přístup k prostředkům serveru a databáze je určen pomocí udělení oprávnění pro uživatele a skupiny systému Windows.  
   
- V situacích, kdy není možné používat ověřování Windows musíte použít velmi opatrně, protože v připojovacím řetězci jsou vystaveny přihlašovací údaje uživatele. V aplikaci technologie ASP.NET můžete nakonfigurovat účet Windows jako dlouhodobý identitou, která se používá pro připojení k databázím a jiným síťovým prostředkům. Povolení zosobnění v elementu identity v **web.config** souboru a zadejte uživatelské jméno a heslo.  
+ V situacích, kdy není možné použít ověřování systému Windows, je nutné použít zvláštní péči, protože uživatelská pověření jsou zveřejněna v připojovacím řetězci. V aplikaci ASP.NET můžete nakonfigurovat účet systému Windows jako pevnou identitu, která se používá pro připojení k databázím a dalším síťovým prostředkům. Můžete povolit zosobnění v elementu identity v souboru **Web. config** a zadat uživatelské jméno a heslo.  
   
 ```xml  
 <identity impersonate="true"   
@@ -25,23 +25,23 @@ Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů
         password="*****" />  
 ```  
   
- Účet pevné identity musí být účet s nízkou úrovní oprávnění, který má oprávnění pouze nezbytné v databázi. Kromě toho by měla šifrovat konfiguračního souboru tak, aby uživatelské jméno a heslo nejsou zveřejněné ve formátu prostého textu.  
+ Pevný účet identity by měl být účet s nízkou úrovní oprávnění, kterému bylo uděleno pouze nezbytné oprávnění v databázi. Kromě toho byste měli šifrovat konfigurační soubor, aby se uživatelské jméno a heslo nezobrazovaly v nešifrovaném textu.  
   
-## <a name="do-not-use-universal-data-link-udl-files"></a>Soubory není použití univerzální datové propojení (UDL)  
- Vyhněte se ukládání připojovacích řetězců pro <xref:System.Data.OleDb.OleDbConnection> v souboru univerzální datové propojení (UDL). UDL jsou uložené ve formátu prostého textu a nelze zašifrovat. Soubor UDL je externí souborových prostředků do vaší aplikace a nelze zabezpečit nebo šifrované pomocí rozhraní .NET Framework.  
+## <a name="do-not-use-universal-data-link-udl-files"></a>Nepoužívat soubory UDL (Universal Data Link)  
+ Vyhněte se ukládání připojovacích <xref:System.Data.OleDb.OleDbConnection> řetězců do souboru UDL (Universal Data Link). UDL jsou uložené ve formátu prostého textu a nelze je šifrovat. Soubor UDL je externí prostředek založený na souboru pro vaši aplikaci a nemůže být zabezpečený ani zašifrovaný pomocí .NET Framework.  
   
-## <a name="avoid-injection-attacks-with-connection-string-builders"></a>Vyhněte se útoky prostřednictvím injektáže s tvůrci připojovacích řetězců  
- Útok prostřednictvím injektáže řetězec připojení může dojít, když dynamická zřetězení sloužící k sestavení na základě uživatelského zadání připojovacích řetězců. Pokud uživatelský vstup není ověřená a škodlivý text nebo znaky nejsou uvozeny řídicími znaky, útočník můžou mít přístup k citlivým datům nebo další prostředky na serveru. Chcete-li tento problém vyřešit, ADO.NET 2.0 zavedeny nové třídy tvůrce řetězec připojení k ověření syntaxe připojovacího řetězce a ujistěte se, že nejsou zavedena další parametry. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+## <a name="avoid-injection-attacks-with-connection-string-builders"></a>Vyhněte se útokům prostřednictvím injektáže pomocí tvůrců připojovacích řetězců  
+ Útok prostřednictvím injektáže připojovacího řetězce může nastat, pokud se k sestavení připojovacích řetězců na základě uživatelského vstupu používá dynamická zřetězení řetězců. Pokud vstup uživatele není ověřený a škodlivý text nebo znaky nejsou uvozeny, útočník může potenciálně přistupovat k citlivým datům nebo jiným prostředkům na serveru. Pro vyřešení tohoto problému zavedla ADO.NET 2,0 nové třídy Tvůrce připojovacích řetězců pro ověření syntaxe připojovacího řetězce a zajistěte, aby nebyly zavedeny další parametry. Další informace najdete v tématu [tvůrci připojovacích řetězců](connection-string-builders.md).  
   
-## <a name="use-persist-security-infofalse"></a>Použití trvalé informace o zabezpečení = False  
- Výchozí hodnota pro `Persist Security Info` má hodnotu false; doporučujeme používat toto výchozí nastavení ve všech připojovací řetězce. Nastavení `Persist Security Info` k `true` nebo `yes` umožňuje zabezpečené informace, včetně ID uživatele a heslo, chcete-li získat z připojení po jeho otevření. Když `Persist Security Info` je nastavena na `false` nebo `no`, informace o zabezpečení se zruší po se používá k otevření připojení, zajištění, že nedůvěryhodného zdroje nemá přístup k informacím o citlivé na zabezpečení.  
+## <a name="use-persist-security-infofalse"></a>Použít trvalé informace o zabezpečení = NEPRAVDA  
+ Výchozí hodnota pro `Persist Security Info` je false; doporučujeme použít tuto výchozí hodnotu ve všech připojovacích řetězcích. Nastavení `Persist Security Info` nebo umožňuje`yes` získat informace citlivé na zabezpečení, včetně ID a hesla uživatele, které mají být získány z připojení po `true` jeho otevření. Když `Persist Security Info` je nastavené `false` na `no`nebo, informace o zabezpečení se zahodí po použití k otevření připojení. tím se zajistí, že nedůvěryhodný zdroj nemá přístup k informacím citlivým na zabezpečení.  
   
 ## <a name="encrypt-configuration-files"></a>Šifrování konfiguračních souborů  
- Můžete také uložit připojovací řetězce v konfiguračních souborech, není potřeba, k vložení do kódu vaší aplikace. Konfigurační soubory jsou standardní soubory XML, pro které má definované rozhraní .NET Framework společnou sadu elementů. Připojovací řetězce v konfiguračních souborech jsou obvykle uložena v  **\<connectionStrings >** prvek **app.config** pro aplikace Windows nebo  **soubor Web.config** soubor pro aplikaci ASP.NET. Další informace o základní ukládání, načítání a šifrování připojovacího řetězce z konfiguračních souborů, najdete v části [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+ Připojovací řetězce můžete také ukládat v konfiguračních souborech, což eliminuje nutnost jejich vložení do kódu vaší aplikace. Konfigurační soubory jsou standardní soubory XML, pro které .NET Framework definovala společnou sadu prvků. Připojovací řetězce v konfiguračních souborech jsou obvykle uloženy  **\<v souboru connectionStrings >** elementu v **App. config** pro aplikaci systému Windows nebo v souboru **Web. config** pro aplikaci ASP.NET. Další informace o základech ukládání, načítání a šifrování připojovacích řetězců z konfiguračních souborů najdete v tématu [připojovací řetězce a konfigurační soubory](connection-strings-and-configuration-files.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Informace o konfiguraci chráněných konfigurace šifrování](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))
-- [Zabezpečení v rozhraní .NET](../../../standard/security/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)
+- [Šifrování informací o konfiguraci pomocí chráněné konfigurace](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))
+- [Zabezpečení v .NET](../../../standard/security/index.md)
+- [Přehled ADO.NET](ado-net-overview.md)

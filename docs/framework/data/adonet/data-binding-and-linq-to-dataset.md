@@ -2,39 +2,39 @@
 title: Datová vazba a LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: 310bff4a-32dd-4f20-a271-6dbd82912631
-ms.openlocfilehash: 125c9b7df0164092182506a7a71d4180b81d3ca6
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 563d57249daa3aa720da1d9654866727f770afb3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504111"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786698"
 ---
 # <a name="data-binding-and-linq-to-dataset"></a>Datová vazba a LINQ to DataSet
-*Vytváření datových vazeb* je proces, který vytvoří připojení mezi uživatelského rozhraní aplikace a obchodní logiky. Pokud data poskytuje správné oznámení, když se data změní jeho hodnotu vazbu se správným nastavením, elementy, které jsou vázány na data automaticky odrážejí změny. <xref:System.Data.DataSet> Je v paměti reprezentace dat, která poskytuje konzistentní relační programovací model, bez ohledu na zdroj dat obsahuje. ADO.NET 2.0 <xref:System.Data.DataView> umožňuje řazení a filtrování dat uložených v <xref:System.Data.DataTable>. Tato funkce se často používá v aplikacích datové vazby. Pomocí <xref:System.Data.DataView>, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků. Další informace o <xref:System.Data.DataView> objektu, najdete v článku [zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  
+*Datová vazba* je proces, který vytváří propojení mezi uživatelským rozhraním aplikace a obchodní logikou. Pokud má vazba správné nastavení a data poskytují správná oznámení, při změně její hodnoty prvky, které jsou vázány na data, se automaticky projeví změny. <xref:System.Data.DataSet> Je reprezentace dat v paměti, která poskytuje konzistentní relační programovací model bez ohledu na zdroj dat, který obsahuje. ADO.NET 2,0 <xref:System.Data.DataView> umožňuje řadit a filtrovat data uložená <xref:System.Data.DataTable>v. Tato funkce se často používá v aplikacích pro datovou vazbu. Pomocí <xref:System.Data.DataView>můžete vystavit data v tabulce s různými objednávkami řazení a data můžete filtrovat podle stavu řádku nebo podle výrazu filtru. Další informace o <xref:System.Data.DataView> objektu naleznete v tématu [DataViews](./dataset-datatable-dataview/dataviews.md).  
   
- Technologie LINQ to DataSet umožňuje vývojářům vytvářet složité a výkonné dotazy nad <xref:System.Data.DataSet> pomocí [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]. Však technologie LINQ to DataSet dotaz vrátí výčet <xref:System.Data.DataRow> objekty, které se snadno použít ve scénáři vazby. Abychom usnadnili vazby, můžete vytvořit <xref:System.Data.DataView> z technologie LINQ to DataSet dotazu. To <xref:System.Data.DataView> používá filtrování a řazení, zadaný v dotazu, ale je vhodnější pro vytváření datových vazeb. Technologie LINQ to DataSet rozšiřuje funkce <xref:System.Data.DataView> poskytnutím [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] založené na výrazu filtrování a řazení, což umožňuje mnohem komplexnější a výkonné operace filtrování a řazení než založené na řetězci filtrování a řazení.  
+ LINQ to DataSet umožňuje vývojářům vytvářet komplexní a výkonné dotazy přes <xref:System.Data.DataSet> pomocí. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] LINQ to DataSet dotaz však vrátí výčet <xref:System.Data.DataRow> objektů, které nelze snadno použít ve scénáři vazby. Aby bylo vytváření vazby snazší, můžete vytvořit <xref:System.Data.DataView> z LINQ to DataSetho dotazu. Používá <xref:System.Data.DataView> se k tomu filtrování a řazení zadané v dotazu, ale je vhodnější pro datovou vazbu. LINQ to DataSet rozšiřuje funkčnost <xref:System.Data.DataView> služby tím, že poskytuje [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] filtrování a řazení založené na výrazech, což umožňuje mnohem složitější a výkonné operace filtrování a řazení než filtrování a řazení založené na řetězci.  
   
- Všimněte si, <xref:System.Data.DataView> představuje samotný dotaz a není zobrazení nad dotaz. <xref:System.Data.DataView> , Jako je vázán na ovládací prvek uživatelského rozhraní <xref:System.Windows.Forms.DataGrid> nebo <xref:System.Windows.Forms.DataGridView>, poskytuje jednoduché datové vazby modelu. A <xref:System.Data.DataView> lze také vytvořit z <xref:System.Data.DataTable>, poskytuje výchozí zobrazení tabulky.  
+ Všimněte si, <xref:System.Data.DataView> že představuje samotný dotaz a není zobrazením nad dotazem. Je vázán k ovládacímu prvku uživatelského rozhraní, jako <xref:System.Windows.Forms.DataGrid> je například nebo <xref:System.Windows.Forms.DataGridView>, a poskytuje jednoduchý model vázání dat. <xref:System.Data.DataView> Lze také vytvořit z a <xref:System.Data.DataTable>a poskytnout tak výchozí zobrazení této tabulky. <xref:System.Data.DataView>  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření objektu zobrazení dat](../../../../docs/framework/data/adonet/creating-a-dataview-object-linq-to-dataset.md)  
- Poskytuje informace o vytváření <xref:System.Data.DataView>.  
+ [Vytvoření objektu zobrazení dat](creating-a-dataview-object-linq-to-dataset.md)  
+ Poskytuje informace o vytvoření <xref:System.Data.DataView>.  
   
- [Filtrování se zobrazením dat](../../../../docs/framework/data/adonet/filtering-with-dataview-linq-to-dataset.md)  
+ [Filtrování se zobrazením dat](filtering-with-dataview-linq-to-dataset.md)  
  Popisuje, jak filtrovat pomocí <xref:System.Data.DataView>.  
   
- [Řazení se zobrazením dat](../../../../docs/framework/data/adonet/sorting-with-dataview-linq-to-dataset.md)  
- Popisuje, jak řadit <xref:System.Data.DataView>.  
+ [Řazení se zobrazením dat](sorting-with-dataview-linq-to-dataset.md)  
+ V této části <xref:System.Data.DataView>najdete popis postupu při řazení pomocí.  
   
- [Dotazování na kolekci DataRowView v zobrazení dat](../../../../docs/framework/data/adonet/querying-the-datarowview-collection-in-a-dataview.md)  
- Poskytuje informace o vytváření dotazů <xref:System.Data.DataRowView> kolekce vystavené <xref:System.Data.DataView>.  
+ [Dotazování na kolekci DataRowView v zobrazení dat](querying-the-datarowview-collection-in-a-dataview.md)  
+ Poskytuje informace o dotazování <xref:System.Data.DataRowView> kolekce vystavené nástrojem. <xref:System.Data.DataView>  
   
- [Výkon zobrazení dat](../../../../docs/framework/data/adonet/dataview-performance.md)  
- Poskytuje informace o <xref:System.Data.DataView> a výkonu.  
+ [Výkon zobrazení dat](dataview-performance.md)  
+ Poskytuje informace o <xref:System.Data.DataView> výkonu a.  
   
- [Postupy: Připojení objektu DataView do ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/data/adonet/how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
- Popisuje, jak vytvořit vazbu <xref:System.Data.DataView> do objektu <xref:System.Windows.Forms.DataGridView>.  
+ [Postupy: Vytvoření vazby objektu DataView k ovládacímu prvku DataGridView model Windows Forms](how-to-bind-a-dataview-object-to-a-winforms-datagridview-control.md)  
+ Popisuje, jak vytvořit vazby <xref:System.Data.DataView> objektu <xref:System.Windows.Forms.DataGridView>k.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
+- [Průvodce programováním](programming-guide-linq-to-dataset.md)

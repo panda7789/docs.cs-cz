@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 5c0a3d14-5f26-4267-94a9-82c30f8db09a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f41a233e9b5338bdb0a324ff9af267a97821d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a95ff535a4d0847fbd4b8af28f873b67a1829a4f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967697"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798832"
 ---
 # <a name="tlbexp-helper-functions-unmanaged-api-reference"></a>Podpůrné funkce Tlbexp (referenční dokumentace nespravovaného rozhraní API)
-[Nástroje Exportér knihovny typů](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) dynamické knihovny DLL s názvem TlbRef.dll načte (Tlbexp.exe). Tato knihovna DLL obsahuje dvě pomocné funkce a rozhraní, které používá nástroj exportu během procesu převodu sestavení na typu knihovny.  
+[Nástroj pro Exportér knihovny typů](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp. exe) načítá dynamickou knihovnu DLL s názvem TlbRef. dll. Tato knihovna DLL obsahuje dvě pomocné funkce a rozhraní, které nástroj Exportér používá během procesu převodu sestavení na typ knihovny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [GetTypeLibInfo – funkce](../../../../docs/framework/unmanaged-api/tlbexp/gettypelibinfo-function.md)  
- Poskytuje informace o lokalizaci a operační systém pro knihovnu typů.  
+ [GetTypeLibInfo – funkce](gettypelibinfo-function.md)  
+ Poskytuje informace o lokalizaci a operačním systému pro knihovnu typů.  
   
- [LoadTypeLibWithResolver – funkce](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md)  
- Načte knihovnu typů pomocí implementace [itypelibresolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) vyřešit všechny odkazované knihovny typů.  
+ [LoadTypeLibWithResolver – funkce](loadtypelibwithresolver-function.md)  
+ Načte knihovnu typů pomocí implementace [rozhraní ITypeLibResolver –](itypelibresolver-interface.md) k překladu všech odkazovaných knihoven typů.  
   
- [ITypeLibResolver – rozhraní](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md)  
- Poskytuje [resolvetypelib – metoda](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), který vrátí plně kvalifikovanou cestu knihovny typů.
+ [ITypeLibResolver – rozhraní](itypelibresolver-interface.md)  
+ Poskytuje [metodu ResolveTypeLib –](resolvetypelib-method.md), která vrací plně kvalifikovanou cestu knihovny typů.

@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 92366190c769344b41923cbb25ed4b04afceaae9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1c28f32a4b24393483241bd2d7d6f550b8b65ba
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778667"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796905"
 ---
 # <a name="getcachepath-function"></a>GetCachePath – funkce
-Získá cestu k sestavení v mezipaměti, pomocí zadané příznaky.  
+Načte cestu k sestavení v mezipaměti pomocí zadaných příznaků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ HRESULT GetCachePath (
   
 ## <a name="parameters"></a>Parametry  
  `dwCacheFlags`  
- [in] [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) hodnotu, která určuje zdroj sestavení v mezipaměti.  
+ pro Hodnota [ASM_CACHE_FLAGS](asm-cache-flags-enumeration.md) , která označuje zdroj sestavení v mezipaměti.  
   
  `pwzCachePath`  
- [out] Vrácený ukazatel na cestu.  
+ mimo Vrácený ukazatel na cestu.  
   
  `pcchPath`  
- [out v] Požadovaná maximální délce `pwzCachePath`a po návratu, skutečná délka `pwzCachePath`.  
+ [in, out] Požadovaná maximální délka `pwzCachePath`a po návratu, skutečná `pwzCachePath`délka.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [ASM_CACHE_FLAGS – výčet](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [ASM_CACHE_FLAGS – výčet](asm-cache-flags-enumeration.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

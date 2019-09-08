@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 8bff92fe40ec668dfa634c3b97f2f1df238f159b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d9767844400d67e81c7065148b22c62352af0428
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203961"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784785"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
 Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **datové sady** jako data XML. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** se <xref:System.Xml.XmlDataDocument> sadou vám ale umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž byste museli nejdřív zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
   
- Následující příklad naplní datovou **sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Následuje obsah šablony stylů XSLT.  
+ Následující příklad naplní **datovou sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Následuje obsah šablony stylů XSLT.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -126,4 +126,4 @@ writer.Close();
 ## <a name="see-also"></a>Viz také:
 
 - [Synchronizace datové sady a datového dokumentu XML](dataset-and-xmldatadocument-synchronization.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

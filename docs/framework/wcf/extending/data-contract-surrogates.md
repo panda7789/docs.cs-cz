@@ -4,190 +4,190 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
-ms.openlocfilehash: 7b1e8585755bbbff900bd621d8bc3a25fd23961c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cc0772cbb35f7c149af7eac04239d7349fa79f27
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587508"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797198"
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
-Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat modelu. Tato funkce je určena pro použití pro nahrazení v situacích, ve kterém chcete změnit, jak je typ serializován, deserializované nebo předpokládaných do metadat uživatelů a přizpůsobení typu. Při některých scénářích, kde mohou být použity náhradní kontraktu dat. není určeno pro typ, polí a vlastností nejsou označené <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatelům, aby dynamicky se vytvářejí odchylky schématu.  
+*Náhrada* kontraktu dat je pokročilou funkcí založenou na modelu kontraktu dat. Tato funkce je navržena pro použití pro vlastní nastavení a nahrazování typů v situacích, kdy uživatelé chtějí změnit způsob, jakým je typ serializovaný, deserializovaný nebo projektový do metadat. Některé scénáře, kde je možné použít náhradní údaje, jsou v případě, že se kontrakt dat pro typ nezadal, pole a vlastnosti nejsou označeny <xref:System.Runtime.Serialization.DataMemberAttribute> atributem nebo uživatelé, kteří chtějí dynamicky vytvářet variace schémat.  
   
- Serializace a deserializace jsou možné díky náhrada kontraktu dat při použití <xref:System.Runtime.Serialization.DataContractSerializer> pro převod z rozhraní .NET Framework na vhodném formátu, jako je například XML. Náhrada kontraktu dat lze také upravit metadata export pro typy, při vytváření metadat reprezentace například dokumentů schématu XML (XSD). Při importu kód je vytvořen z metadat a zástupný lze použít v tomto případě k přizpůsobení generovaný kód.  
+ Serializace a deserializace se dokončí s náhradou kontraktu <xref:System.Runtime.Serialization.DataContractSerializer> dat při použití k převodu z .NET Framework do vhodného formátu, jako je například XML. Náhradu za kontrakt dat lze také použít ke změně metadat exportovaných pro typy při vytváření reprezentace metadat, jako jsou například dokumenty schématu XML (XSD). Při importu je kód vytvořen z metadat a v tomto případě lze použít náhradní číslo pro přizpůsobení vygenerovaného kódu.  
   
-## <a name="how-the-surrogate-works"></a>Jak funguje náhradní  
- Náhradní funguje tak, že mapování jednoho typu (typ "původní") k jinému typu (typ "surrogated"). Následující příklad ukazuje původní typ `Inventory` a nové náhradní `InventorySurrogated` typu. `Inventory` Typ není serializovatelný ale `InventorySurrogated` typ je:  
+## <a name="how-the-surrogate-works"></a>Jak náhradní funguje  
+ Náhradní funguje tak, že namapuje jeden typ ("původní" typ) na jiný typ ("typ" "" "". Následující příklad ukazuje původní typ `Inventory` a nový typ náhrady. `InventorySurrogated` Typ `Inventory` není serializovatelný, `InventorySurrogated` ale typ je:  
   
  [!code-csharp[C_IDataContractSurrogate#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#1)]  
   
- Protože kontrakt dat nebyla definována pro tuto třídu, převeďte na náhradní třídy s kontraktem dat třídy. Surrogated třídy můžete vidět v následujícím příkladu:  
+ Vzhledem k tomu, že se kontrakt dat pro tuto třídu nedefinoval, převeďte třídu na náhradní třídu s kontraktem dat. V následujícím příkladu je uvedena třída s zástupnou třídou:  
   
  [!code-csharp[C_IDataContractSurrogate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#2)]  
   
-## <a name="implementing-the-idatacontractsurrogate"></a>Implementace IDataContractSurrogate  
- Použití náhrady kontraktů dat implementují <xref:System.Runtime.Serialization.IDataContractSurrogate> rozhraní.  
+## <a name="implementing-the-idatacontractsurrogate"></a>Implementace rozhraní IDataContractSurrogate  
+ Chcete-li použít náhradní smlouvu o data, <xref:System.Runtime.Serialization.IDataContractSurrogate> implementujte rozhraní.  
   
- Tady je přehled jednotlivých metod <xref:System.Runtime.Serialization.IDataContractSurrogate> s možnou implementaci.  
+ Následuje přehled každé metody <xref:System.Runtime.Serialization.IDataContractSurrogate> s možnou implementací.  
   
 ### <a name="getdatacontracttype"></a>GetDataContractType  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda mapuje jednoho typu na jiný. Tato metoda je vyžadován pro serializaci, deserializace, import a export.  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda mapuje jeden typ na jiný. Tato metoda je vyžadována pro serializaci, deserializaci, import a export.  
   
- První úloha definuje, jaké typy budou mapována na jiné typy. Příklad:  
+ První úkol definuje, které typy budou namapovány na jiné typy. Příklad:  
   
  [!code-csharp[C_IDataContractSurrogate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#3)]  
   
-- Na serializaci, mapování vrácený touto metodou následně slouží k transformaci na původní instanci surrogated instanci voláním <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metody.  
+- U serializace je mapování vrácené touto metodou následně použito k transformaci původní instance na náhradní instanci voláním <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metody.  
   
-- K deserializaci používá mapování vrácený touto metodou serializátoru, který je k deserializaci do instance typu nahrazení. Následně volá <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> pro transformaci surrogated instance do instance původního typu.  
+- V případě deserializace je mapování vracené touto metodou použito serializátorem k deserializaci do instance náhradního typu. Následně volá <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> transformaci náhradní instance do instance původního typu.  
   
-- Při exportu se projeví náhradní typ vrácený touto metodou zobrazíte kontraktu dat sloužící ke generování metadat.  
+- Při exportu se typ náhrady vrácený touto metodou projeví pro získání kontraktu dat, který se má použít pro generování metadat.  
   
-- Při importu změní se počáteční typ náhradní typ, který se projeví zobrazíte kontraktu dat pro účely jako odkazující na podporu.  
+- Při importu se počáteční typ změní na typ náhrady, který se odráží k získání kontraktu dat, který se má použít pro účely, jako je například odkazování na podporu.  
   
- <xref:System.Type> Je parametr typu objektu, která je serializována, deserializované, importované nebo exportovaná. <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda musí vracet typ vstupu, pokud náhradní nezpracovává typ. V opačném případě vrátí surrogated příslušného typu. Pokud existuje několik typů náhradní mnoho mapování lze definovat v této metodě.  
+ <xref:System.Type> Parametr je typ objektu, který je serializován, je deserializovaný, importovaný nebo exportovaný. <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda musí vracet vstupní typ, pokud náhrada nezpracovává typ. Jinak vraťte odpovídající typ s náhradami. Pokud existuje několik náhradních typů, lze v této metodě definovat mnoho mapování.  
   
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda není volána pro předdefinované datové primitivy smlouvy, jako například <xref:System.Int32> nebo <xref:System.String>. U jiných typů, jako je například pole, uživatelem definované typy a další datové struktury bude tato metoda volána pro každý typ.  
+ Metoda není volána pro předdefinované primitivy kontraktu dat, <xref:System.Int32> například nebo <xref:System.String>. <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Pro jiné typy, jako jsou pole, uživatelsky definované typy a další datové struktury, bude tato metoda volána pro každý typ.  
   
- V předchozím příkladu metoda ověří, zda `type` parametr a `Inventory` lze porovnávat. Pokud ano, metoda mapuje na `InventorySurrogated`. Pokaždé, když serializace, se nazývá deserializace, schématu import nebo export schématu, tato funkce je volána nejprve určit mapování mezi typy.  
+ V předchozím příkladu metoda kontroluje, zda je `type` parametr a `Inventory` srovnatelný. Pokud ano, metoda ho mapuje na `InventorySurrogated`. Při každém volání serializace, deserializace, import schématu nebo exportu schématu je tato funkce volána jako první, aby bylo zjištěno mapování mezi typy.  
   
-### <a name="getobjecttoserialize-method"></a>GetObjectToSerialize – metoda  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> Metoda převede na původní instanci typu surrogated typu instance. Metoda se vyžaduje pro serializaci.  
+### <a name="getobjecttoserialize-method"></a>Metoda GetObjectToSerialize  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> Metoda převede původní instanci typu na instanci náhradního typu. Metoda je vyžadována pro serializaci.  
   
- Dalším krokem je určit způsob, jakým fyzické data budou zmapována z původní instance na zástupný implementací <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metody. Příklad:  
+ Dalším krokem je definovat způsob, jakým budou fyzická data namapována z původní instance na náhradu tím, že implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metodu. Příklad:  
   
  [!code-csharp[C_IDataContractSurrogate#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#4)]  
   
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> Metoda se volá, když je objekt serializován. Tato metoda přenosu dat z původního typu pole surrogated typu. Pole může být přímo mapována na náhradní pole nebo manipulaci s původní data mohou být uloženy v zástupný. Mezi možné použití patří: přímého mapování polí, provádění operací na data, která mají být uloženy v polích surrogated nebo uložení XML kódu původního typu surrogated pole.  
+ Metoda <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> je volána, když je objekt serializován. Tato metoda přenáší data z původního typu na pole v typu s náhradami. Pole mohou být přímo namapována na náhradní pole nebo manipulace s původními daty mohou být uloženy v náhradních. Mezi možná použití patří: přímo mapování polí, provádění operací s daty, která se mají Uložit do zástupných polí nebo ukládání XML původního typu do pole s příponou.  
   
- `targetType` Parametr odkazuje na deklarovaný typ člena. Tento parametr je surrogated typ vrácený <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> metody. Serializátor nevynucuje, že se objekt vrácený přiřadit k tomuto typu. `obj` Parametru je objekt určený k serializaci, se převedou na jeho náhrada v případě potřeby. Tato metoda musí vracet vstupního objektu, pokud surrogated nezpracovává objektu. V opačném případě vrátí nový objekt náhrady. Zástupný není volána, pokud objekt má hodnotu null. Mnoho náhradní mapování pro různé instance může být definovaná v rámci této metody.  
+ `targetType` Parametr odkazuje na deklarovaný typ člena. Tento parametr je nahrazený typ vrácený <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> metodou. Serializátor neuplatňuje, že vrácený objekt je možné přiřadit tomuto typu. `obj` Parametr je objekt, který se má serializovat, a v případě potřeby se převede na jeho náhradní hodnotu. Tato metoda musí vracet vstupní objekt, pokud ho zástupný objekt nezpracovává. V opačném případě bude vrácen nový objekt náhrady. Náhrada není volána, pokud je objekt null. V rámci této metody lze definovat řadu náhradních mapování pro různé instance.  
   
- Při vytváření <xref:System.Runtime.Serialization.DataContractSerializer>, které dostane pokyn, aby zachovat odkazy na objekty. (Další informace najdete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).) To se provádí tak, že nastavíte `preserveObjectReferences` parametr v konstruktoru pro `true`. V takovém případě zástupný je volána pouze jednou pro objekt vzhledem k tomu, že všechny následné serializations stačí napsat odkaz do datového proudu. Pokud `preserveObjectReferences` je nastavena na `false`, pak náhradní je volána pokaždé, když je zjištěna instance.  
+ Při vytváření <xref:System.Runtime.Serialization.DataContractSerializer>můžete dát pokyn, aby zachoval odkazy na objekty. (Další informace naleznete v tématu [serializace a deserializace](../feature-details/serialization-and-deserialization.md).) To se provádí nastavením `preserveObjectReferences` parametru v jeho konstruktoru na. `true` V takovém případě je náhrada pro objekt volána pouze jednou, protože všechny následné serializace pouze zapisují odkaz do datového proudu. Pokud `preserveObjectReferences` je nastaveno na `false`, pak je náhrada volána pokaždé, když dojde k výskytu instance.  
   
- Pokud typ instance serializovat se liší od deklarovaného typu, informace o typu například zapsána do datového proudu, `xsi:type` umožňující instance k deserializaci na druhém konci. Tento proces se provádí, zda je objekt surrogated nebo ne.  
+ Pokud se typ serializované instance liší od deklarovaného typu, informace o typu jsou zapsány do datového proudu, například, `xsi:type` aby bylo možné instanci deserializovat na druhém konci. K tomuto procesu dochází, pokud je objekt zástupný nebo nikoli.  
   
- Výše uvedený příklad převede data `Inventory` instance u `InventorySurrogated`. Kontroluje, typu objektu a provede nezbytné manipulace převést na typ surrogated. V tomto případě pole `Inventory` třídy se přímo překopírují `InventorySurrogated` třídy pole.  
+ Výše uvedený příklad převede data `Inventory` instance na. `InventorySurrogated` Kontroluje typ objektu a provádí nezbytné manipulace pro převod na typ s náhradami. V tomto případě jsou pole `Inventory` třídy přímo zkopírována `InventorySurrogated` do polí třídy.  
   
-### <a name="getdeserializedobject-method"></a>GetDeserializedObject – metoda  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> Metoda převede surrogated typu instance na původní instanci typu. Je vyžadován pro deserializaci.  
+### <a name="getdeserializedobject-method"></a>Metoda GetDeserializedObject  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> Metoda převede instanci náhradního typu na původní instanci typu. Vyžaduje se pro deserializaci.  
   
- Dalším krokem je definování stejným způsobem jako fyzickou data budou zmapována z instance náhradní do původního. Příklad:  
+ Dalším úkolem je definovat způsob, jakým budou fyzická data z náhradní instance namapována na původní. Příklad:  
   
  [!code-csharp[C_IDataContractSurrogate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#5)]  
   
- Tato metoda je volána pouze při deserializaci objektu. Poskytuje data reverzní mapování pro deserializace z typu náhradní zpět do původního stavu. Podobně jako `GetObjectToSerialize` metody, některé možné způsoby využití může být přímo výměnu dat pole, provést operace s daty a ukládání dat XML. Při deserializaci, nemusí vždy získat přesné datových hodnot z původní kvůli manipulace dat převodu.  
+ Tato metoda je volána pouze během deserializace objektu. Poskytuje mapování reverzních dat pro deserializaci z typu náhrady zpátky na původní typ. Podobně jako u metody můžou některé možné účely použít k přímé výměně dat polí, provádění operací s daty a ukládání dat XML. `GetObjectToSerialize` Při deserializaci nemusíte vždycky získávat přesné hodnoty dat z původní kvůli manipulaci v převodu dat.  
   
- `targetType` Parametr odkazuje na deklarovaný typ člena. Tento parametr je surrogated typ vrácený `GetDataContractType` metody. `obj` Parametr odkazuje na objekt, který má byla deserializovat. Objekt lze převést zpět na původní typ, pokud je surrogated. Tato metoda vrátí vstupní objekt, pokud zástupný objekt nezpracovává. Deserializovaný objekt, jinak bude vrácen, až se dokončí jeho převodu. Pokud existuje několik typů náhradní může poskytnout převod dat z náhradní na primární pro každou tak, že každý typ a jeho převodu.  
+ `targetType` Parametr odkazuje na deklarovaný typ člena. Tento parametr je nahrazený typ vrácený `GetDataContractType` metodou. `obj` Parametr odkazuje na objekt, který byl deserializován. Objekt lze převést zpět na původní typ, pokud je náhradní. Tato metoda vrátí vstupní objekt, pokud náhrada nezpracovává objekt. V opačném případě se deserializovaný objekt vrátí po dokončení jeho převodu. Pokud existuje několik náhradních typů, můžete pro každý typ a převod zadat převod dat z náhradní na primární typ.  
   
- Při vrácení objektu, interní objekt tabulky aktualizovány o objekt vrácený rutinou tato náhradní. Všechny následné odkazy na instanci získá surrogated instanci z tabulky objektů.  
+ Při vrácení objektu se tabulky interních objektů aktualizují pomocí objektu vráceného touto náhradou. Jakékoli následné odkazy na instanci získají náhradní instanci z tabulek objektů.  
   
- Předchozí příklad převede objekty typu `InventorySurrogated` zpět na původní typ `Inventory`. V takovém případě je přímo přenesená data zpět z `InventorySurrogated` na jeho odpovídající pole v `Inventory`. Vzhledem k tomu, že neexistují žádné manipulace dat, každý z pole člena, která bude obsahovat stejné hodnoty jako před serializace.  
+ Předchozí příklad převede objekty typu `InventorySurrogated` zpět na počáteční typ. `Inventory` V tomto případě se data přímo přenesou zpátky z `InventorySurrogated` do příslušných polí v. `Inventory` Vzhledem k tomu, že neexistují žádná manipulace s daty, budou každé pole členů obsahovat stejné hodnoty jako před serializací.  
   
-### <a name="getcustomdatatoexport-method"></a>GetCustomDataToExport – metoda  
- Při exportu schématu, <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A> metoda je volitelná. Používá se k vložení dalších dat nebo parametrů do exportovaného schématu. Další data lze vložit na úrovni člena nebo na úrovni typu. Příklad:  
+### <a name="getcustomdatatoexport-method"></a>Metoda GetCustomDataToExport  
+ Při exportu schématu <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A> je metoda volitelná. Slouží k vložení dalších dat nebo nápověd do exportovaného schématu. Další data lze vložit na úrovni člena nebo typu. Příklad:  
   
  [!code-csharp[C_IDataContractSurrogate#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#6)]  
   
- Tato metoda (s dvě přetížení) umožňuje zařazení dodatečné informace do metadat na úrovni členů a typů. Je možné zahrnout nápovědu, zda je členem veřejné nebo privátní a komentáře, které by být zachována v rámci exportu a importu schématu. Tyto informace by dojít ke ztrátě bez této metody. Tato metoda nezpůsobí vložení nebo odstranění členy a typy, ale místo toho přidá další data schémata na některý z těchto úrovní.  
+ Tato metoda (se dvěma přetíženími) umožňuje zahrnutí dalších informací do metadat buď na úrovni člena, nebo typu. Je možné zahrnout nápovědu týkající se toho, zda je člen veřejný nebo privátní, a komentáře, které by byly zachovány během exportu a importu schématu. Tyto informace by byly ztraceny bez této metody. Tato metoda nezpůsobí vložení ani odstranění členů nebo typů, ale místo toho přidá další data do schémat na obou těchto úrovních.  
   
- Metoda je přetížena a můžete provést buď `Type` (`clrtype` parametr) nebo <xref:System.Reflection.MemberInfo> (`memberInfo` parametr). Druhý parametr je vždy `Type` (`dataContractType` parametr). Tato metoda je volána pro každý člen a typ surrogated `dataContractType` typu.  
+ Metoda je přetížena a může mít `Type` buď (`clrtype` parametr), nebo <xref:System.Reflection.MemberInfo> (`memberInfo` parametr). Druhý parametr je vždy typu `Type` (`dataContractType` parametr). Tato metoda je volána pro každý člen a typ náhradního `dataContractType` typu.  
   
- Některé z těchto přetížení musí vrátit buď `null` nebo serializovatelný objekt. Nenulový objekt bude serializována jako poznámky do exportovaného schématu. Pro `Type` přetížení, každý typ, který je exportován do schématu se odešle v společně s surrogated typ jako první parametr této metody `dataContractType` parametru. Pro `MemberInfo` přetížení každého člena, který je exportován do schématu odešle jako `memberInfo` parametr s typem surrogated ve druhém parametru.  
+ Jedno z těchto přetížení musí vracet buď `null` nebo serializovatelný objekt. Objekt, který nemá hodnotu null, bude serializován jako anotace do exportovaného schématu. Pro přetížení jsou všechny typy, které jsou exportovány do schématu, odesílány do této metody v prvním parametru spolu s nahrazeným typem `dataContractType` jako parametr. `Type` Pro přetížení odesílá každý člen, který je exportován do schématu, své informace `memberInfo` jako parametr s nahrazeným typem ve druhém parametru. `MemberInfo`  
   
-#### <a name="getcustomdatatoexport-method-type-type"></a>Metoda GetCustomDataToExport (typ, typ)  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%28System.Type%2CSystem.Type%29?displayProperty=nameWithType> Metoda je volána při exportu schématu pro každou definici typu. Metoda přidá informace do typů v rámci schématu při exportu. Každý definovaný typ posílá do této metody Určuje, jestli je dalších dat, který musí být součástí schématu.  
+#### <a name="getcustomdatatoexport-method-type-type"></a>GetCustomDataToExport – metoda (Type, Type)  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%28System.Type%2CSystem.Type%29?displayProperty=nameWithType> Metoda je volána během exportu schématu pro každou definici typu. Metoda přidává informace k typům v rámci schématu při exportu. Každý definovaný typ je odeslán této metodě k určení, zda existují další data, která je třeba zahrnout do schématu.  
   
-#### <a name="getcustomdatatoexport-method-memberinfo-type"></a>Metoda GetCustomDataToExport (MemberInfo, typ)  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%28System.Reflection.MemberInfo%2CSystem.Type%29?displayProperty=nameWithType> Je volána při exportu pro každého člena v typech, které jsou exportovány. Tato funkce umožňuje přizpůsobit žádné komentáře pro členy, které budou zahrnuty ve schématu při exportu. Informace pro každého člena v rámci třídy odesílat do této metody zkontrolujte, jestli žádná další data je potřeba přidat ve schématu.  
+#### <a name="getcustomdatatoexport-method-memberinfo-type"></a>GetCustomDataToExport – metoda (MemberInfo, Type)  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%28System.Reflection.MemberInfo%2CSystem.Type%29?displayProperty=nameWithType> Je volána během exportu pro každého člena v typech, které jsou exportovány. Tato funkce umožňuje přizpůsobit všechny komentáře pro členy, kteří budou součástí schématu při exportu. Informace pro každého člena v rámci třídy se odesílají této metodě, aby zkontrolovala, jestli je potřeba přidat do schématu nějaká další data.  
   
- V příkladu výše hledá v rámci `dataContractType` pro každého člena náhradního. Pak vrátí odpovídající přístup Modifikátor pro každé pole. Bez úprav výchozí hodnota pro modifikátory přístupu je veřejná. Proto všechny členy je definován jako veřejné v kódu generovaném, pomocí exportovaného schématu bez ohledu na to, jaké jsou jejich omezení skutečné přístupu. Pokud nepoužíváte implementovaný člen `numpens` by být veřejné ve schématu exportované i v případě, že byl definován v náhradní jako soukromá. Pomocí této metody v exportované schématu mohou být generovány modifikátor přístupu jako soukromé.  
+ Výše uvedený příklad vyhledává `dataContractType` pro každého člena náhrady. Pak vrátí odpovídající modifikátor přístupu pro každé pole. Bez tohoto vlastního nastavení je výchozí hodnota pro modifikátory přístupu veřejná. Proto budou všichni členové definováni jako veřejné v kódu generovaném pomocí exportovaného schématu bez ohledu na to, jaká jsou jejich skutečná omezení přístupu. Pokud tato implementace nepoužíváte, člen `numpens` by byl v exportovaném schématu veřejný i v případě, že byl definován v náhradní podobě jako soukromý. Pomocí této metody se v exportovaném schématu dá modifikátor přístupu vygenerovat jako soukromý.  
   
-### <a name="getreferencedtypeonimport-method"></a>GetReferencedTypeOnImport – metoda  
- Tato metoda se mapuje <xref:System.Type> náhradního k původnímu typu. Tato metoda je nepovinné pro import schématu.  
+### <a name="getreferencedtypeonimport-method"></a>Metoda GetReferencedTypeOnImport  
+ Tato metoda mapuje <xref:System.Type> náhradu na původní typ. Tato metoda je volitelná pro import schématu.  
   
- Při vytváření náhradní, který importuje schéma a vygeneruje pro ni kód, dalším krokem je definování typu instance náhradní do původního stavu.  
+ Při vytváření náhrady, která importuje schéma a generuje pro něj kód, je dalším úkolem definování typu náhradní instance na původním typu.  
   
- Pokud generovaný kód potřebuje k odkazování typu existujícího uživatele, je to provádí implementace <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%2A> metody.  
+ Pokud generovaný kód musí odkazovat na existující typ uživatele, je to provedeno implementací <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%2A> metody.  
   
- Když importujete schéma, tato metoda je volána pro každý typ deklarace k mapování kontraktu surrogated dat na typ. Parametry řetězce `typeName` a `typeNamespace` zadat název a obor názvů surrogated typu. Návratová hodnota pro <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%2A> slouží k určení, jestli je potřeba vygenerovat nový typ. Tato metoda musí vrátit platný typ či null. Typ vrácený se použije pro platné typy jako odkazovaný typ v generovaném kódu. Pokud je vrácena hodnota null, bude odkazovat žádný typ a nový typ musí být vytvořen. Pokud existuje několik náhrady je možné provést mapování pro každý typ náhradní zpět na jeho původní typu.  
+ Při importu schématu je tato metoda volána pro každou deklaraci typu k mapování kontraktu náhradních dat na typ. Parametry `typeName` řetězce a `typeNamespace` definujte název a obor názvů pro typ s příponou. Návratová hodnota pro <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%2A> slouží k určení, zda je třeba vygenerovat nový typ. Tato metoda musí vracet buď platný typ, nebo hodnotu null. Pro platné typy bude vrácený typ použit jako odkazovaný typ ve vygenerovaném kódu. Pokud je vrácena hodnota null, nebude odkazován žádný typ a je třeba vytvořit nový typ. Pokud existuje více náhradních, je možné provést mapování pro každý typ náhrady zpátky na jeho počáteční typ.  
   
- `customData` Parametru je objekt původně vrácený <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A>. To `customData` se používá, když chcete vložit další data/pomocné parametry do metadat, která chcete použít ke generování kódu při importu náhradní autoři.  
+ Parametr je objekt původně vrácen z <xref:System.Runtime.Serialization.IDataContractSurrogate.GetCustomDataToExport%2A>. `customData` Tato `customData` funkce se používá v případě, že náhradní Autoři chtějí do metadat použít další data nebo nápovědu, aby je mohl použít při importu k vygenerování kódu.  
   
-### <a name="processimportedtype-method"></a>ProcessImportedType – metoda  
- <xref:System.Runtime.Serialization.IDataContractSurrogate.ProcessImportedType%2A> Metoda přizpůsobuje libovolný typ vytvořený z import schématu. Tato metoda je volitelné.  
+### <a name="processimportedtype-method"></a>Metoda ProcessImportedType  
+ <xref:System.Runtime.Serialization.IDataContractSurrogate.ProcessImportedType%2A> Metoda přizpůsobí libovolný typ vytvořený z části Import schématu. Tato metoda je volitelná.  
   
- Když importujete schéma, tato metoda umožňuje importovaný typ a kompilace informace k přizpůsobení. Příklad:  
+ Při importu schématu Tato metoda umožňuje přizpůsobení veškerého importovaného typu a informací o kompilaci. Příklad:  
   
  [!code-csharp[C_IDataContractSurrogate#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#7)]  
   
- Při importu tato metoda je volána pro každý typ vygeneruje. Změnit zadanou <xref:System.CodeDom.CodeTypeDeclaration> nebo změnit <xref:System.CodeDom.CodeCompileUnit>. Jedná se o změnu názvu, členy, atributy a mnoho dalších vlastností `CodeTypeDeclaration`. Zpracováním `CodeCompileUnit`, je možné změnit direktivy, obory názvů, odkazovaná sestavení a několik jiných aspektů.  
+ Během importu je tato metoda volána pro každý generovaný typ. Změňte zadané <xref:System.CodeDom.CodeTypeDeclaration> nebo <xref:System.CodeDom.CodeCompileUnit>změňte. To zahrnuje změnu názvu, členů, atributů a mnoha dalších vlastností `CodeTypeDeclaration`. Zpracováním `CodeCompileUnit`je možné upravit direktivy, obory názvů, odkazovaná sestavení a několik dalších aspektů.  
   
- `CodeTypeDeclaration` Parametr obsahuje deklaraci typu modelu DOM kódu. `CodeCompileUnit` Parametr povoluje pro úpravy pro zpracování kódu.  Vrací `null` výsledků v deklaraci typu bude zahozen. Naopak při návratu `CodeTypeDeclaration`, změny jsou zachovány.  
+ `CodeTypeDeclaration` Parametr obsahuje deklaraci typu DOM kódu. `CodeCompileUnit` Parametr umožňuje úpravy pro zpracování kódu.  Vrací `null` se výsledky v deklaraci typu, která se zahodí. Naopak při vrácení `CodeTypeDeclaration`změn se změny zachovají.  
   
- Pokud během exportu metadat vložení vlastních dat, musí to být uživateli poskytnutý při importu tak, že je možné. Tato vlastní data lze použít pro programovací model tipů nebo jiné poznámky. Každý `CodeTypeDeclaration` a <xref:System.CodeDom.CodeTypeMember> instance obsahuje vlastní data, jako <xref:System.CodeDom.CodeObject.UserData%2A> převedená na `IDataContractSurrogate` typu.  
+ Pokud jsou během exportu metadat vložena vlastní data, je nutné ji uživateli poskytnout během importu, aby ji bylo možné použít. Tato vlastní data lze použít k programování tipů modelu nebo k jiným komentářům. Každá `CodeTypeDeclaration` instance <xref:System.CodeDom.CodeTypeMember> a obsahujevlastní`IDataContractSurrogate` data jako vlastnostpřetypovánínatyp.<xref:System.CodeDom.CodeObject.UserData%2A>  
   
- Výše uvedený příklad provede několik změn schématu importovat. Kód zachová pomocí náhradní soukromé členy původního typu. Výchozí modifikátor přístupu při importu schématu `public`. Všichni členové schématu náhradní proto bude veřejné, pokud se změní, jako v následujícím příkladu. Během exportu vložení vlastních dat do metadata o tom, které jsou privátní členy. Tento příklad vyhledá vlastní data, zkontroluje, jestli je privátní modifikátor přístupu a pak změní příslušného člena na privátní nastavením jeho atributy. Bez úprav `numpens` člen je definován jako veřejné místo privátní.  
+ Výše uvedený příklad provede některé změny importovaného schématu. Kód zachovává soukromé členy původního typu pomocí náhrady. Výchozí modifikátor přístupu při importu schématu `public`. Proto budou všichni členové schématu nahrazení veřejné, pokud se nezmění, jako v tomto příkladu. Během exportu se vlastní data vloží do metadat, o kterých jsou členové privátní. V příkladu jsou vyhledána vlastní data, zkontroluje, zda je modifikátor přístupu soukromý, a pak upraví příslušný člen tak, aby byl privátní, nastavením jeho atributů. Bez tohoto přizpůsobení by byl `numpens` člen definován jako veřejný, nikoli jako soukromý.  
   
-### <a name="getknowncustomdatatypes-method"></a>GetKnownCustomDataTypes – metoda  
- Tato metoda získá vlastní datové typy, které jsou definované ve schématu. Metoda je nepovinné pro import schématu.  
+### <a name="getknowncustomdatatypes-method"></a>Metoda GetKnownCustomDataTypes  
+ Tato metoda získá vlastní datové typy, které jsou definovány ve schématu. Metoda je volitelná pro import schématu.  
   
- Metoda je volána na začátku schématu exportu a importu. Metoda vrací vlastní datové typy používané ve schématu exportovat nebo importovat. Metodě je předána <xref:System.Collections.ObjectModel.Collection%601> ( `customDataTypes` parametr), což je kolekce typů. Metoda by měla do této kolekce přidat další známé typy. Známý vlastní datové typy, které jsou potřebná k povolení serializace a deserializace pomocí vlastních dat <xref:System.Runtime.Serialization.DataContractSerializer>. Další informace najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Metoda je volána na začátku exportu schématu a importu. Metoda vrátí vlastní datové typy používané v exportovaném nebo importovaném schématu. Metoda je předána <xref:System.Collections.ObjectModel.Collection%601> `customDataTypes` (parametr), což je kolekce typů. Metoda by měla do této kolekce přidat další známé typy. Známé vlastní datové typy jsou potřebné k povolení serializace a deserializace vlastních dat pomocí <xref:System.Runtime.Serialization.DataContractSerializer>. Další informace najdete v tématu [známé typy kontraktů dat](../feature-details/data-contract-known-types.md).  
   
-## <a name="implementing-a-surrogate"></a>Implementace náhradní  
- Použití náhrada kontraktu dat v rámci WCF, je třeba dodržovat zvláštní jen pár postupů.  
+## <a name="implementing-a-surrogate"></a>Implementace náhrady  
+ Chcete-li v rámci služby WCF použít náhradu za kontrakt dat, je nutné dodržovat několik zvláštních postupů.  
   
-### <a name="to-use-a-surrogate-for-serialization-and-deserialization"></a>Použít náhradní k serializaci a deserializaci  
- Použití <xref:System.Runtime.Serialization.DataContractSerializer> provést serializace a deserializace dat pomocí zástupný. <xref:System.Runtime.Serialization.DataContractSerializer> Vytvoří <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Musíte také zadat zástupný.  
+### <a name="to-use-a-surrogate-for-serialization-and-deserialization"></a>Použití náhradních pro serializaci a deserializaci  
+ <xref:System.Runtime.Serialization.DataContractSerializer> Použijte k provedení serializace a deserializace dat s náhradou. <xref:System.Runtime.Serialization.DataContractSerializer> Je vytvořen <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>pomocí. Je také nutné zadat náhradní.  
   
-##### <a name="to-implement-serialization-and-deserialization"></a>K implementaci serializace a deserializace  
+##### <a name="to-implement-serialization-and-deserialization"></a>Implementace serializace a deserializace  
   
-1. Vytvoření instance <xref:System.ServiceModel.ServiceHost> pro vaši službu. Úplné pokyny najdete v tématu [základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md).  
+1. Vytvořte instanci <xref:System.ServiceModel.ServiceHost> služby pro vaši službu. Podrobné pokyny najdete v tématu [Základní programování WCF](../basic-wcf-programming.md).  
   
-2. Pro každý <xref:System.ServiceModel.Description.ServiceEndpoint> hostitele zadanou službu najít jeho <xref:System.ServiceModel.Description.OperationDescription>.  
+2. Pro každého <xref:System.ServiceModel.Description.ServiceEndpoint> zadaného hostitele služby Najděte jeho <xref:System.ServiceModel.Description.OperationDescription>.  
   
-3. Vyhledávání, po operaci chování k určení, zda instance <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nenajde.  
+3. Pokud chcete zjistit, jestli se našla instance, <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> vyhledejte v chování operace.  
   
-4. Pokud <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> nalezen, nastavte jeho <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> vlastnost do nové instance náhradního. Pokud ne <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> je najít, vytvořte novou instanci a nastavte <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> členem nové chování náhradního do nové instance.  
+4. Pokud je nalezen, nastavte jeho <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> vlastnost na novou instanci náhrady. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> Pokud se nenajde, vytvořte novou instanci a <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A> nastavte člena nového chování na novou instanci náhrady. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
   
-5. Nakonec přidejte toto nové chování pro aktuální operaci chování, jak je znázorněno v následujícím příkladu:  
+5. Nakonec přidejte toto nové chování do chování aktuální operace, jak je znázorněno v následujícím příkladu:  
   
      [!code-csharp[C_IDataContractSurrogate#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#8)]  
   
-### <a name="to-use-a-surrogate-for-metadata-import"></a>Použít náhradní pro Import metadat  
- Při importu metadat, jako je WSDL nebo XSD pro generování kódu na straně klienta, musí být přidán do součást zodpovědná za generování kódu ze schématu XSD zástupný <xref:System.Runtime.Serialization.XsdDataContractImporter>. Chcete-li to provést přímo upravit <xref:System.ServiceModel.Description.WsdlImporter> používá pro import metadat.  
+### <a name="to-use-a-surrogate-for-metadata-import"></a>Použití náhrady při importu metadat  
+ Při importu metadat, jako je WSDL a XSD, pro generování kódu na straně klienta, je nutné přidat náhradní komponentu do komponenty zodpovědné za generování kódu ze schématu <xref:System.Runtime.Serialization.XsdDataContractImporter>XSD. Provedete to tak, že <xref:System.ServiceModel.Description.WsdlImporter> přímo upravíte použití pro import metadat.  
   
-##### <a name="to-implement-a-surrogate-for-metadata-importation"></a>K implementaci náhradní pro import metadat  
+##### <a name="to-implement-a-surrogate-for-metadata-importation"></a>Implementace náhrady při dovozu metadat  
   
-1. Import metadat prostřednictvím <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
+1. Importujte metadata pomocí <xref:System.ServiceModel.Description.WsdlImporter> třídy.  
   
-2. Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metodu ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractImporter> byla definována.  
+2. Použijte metodu ke kontrole, zda <xref:System.Runtime.Serialization.XsdDataContractImporter> byl definován. <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>  
   
-3. Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí metoda `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractImporter> a nastavte jeho <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ImportOptions> třídy. Jinak použijte Importér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metoda.  
+3. `false` <xref:System.Runtime.Serialization.XsdDataContractImporter> Pokud metoda vrátí, vytvořte novou a nastavte <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> <xref:System.Runtime.Serialization.ImportOptions> její vlastnost na novou instanci třídy. <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> V opačném případě použijte import vrácený `out` parametrem <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody.  
   
-4. Pokud <xref:System.Runtime.Serialization.XsdDataContractImporter> nemá žádné <xref:System.Runtime.Serialization.ImportOptions> definována, a nastavte vlastnost, která má být novou instanci třídy <xref:System.Runtime.Serialization.ImportOptions> třídy.  
+4. Pokud není definován, nastavte vlastnost tak, aby byla novou instancí <xref:System.Runtime.Serialization.ImportOptions> třídy. <xref:System.Runtime.Serialization.ImportOptions> <xref:System.Runtime.Serialization.XsdDataContractImporter>  
   
-5. Nastavte <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ImportOptions> z <xref:System.Runtime.Serialization.XsdDataContractImporter> do nové instance náhradního.  
+5. <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Nastavte vlastnost <xref:System.Runtime.Serialization.ImportOptions> pro nanovouinstancináhrady.<xref:System.Runtime.Serialization.XsdDataContractImporter>  
   
-6. Přidat <xref:System.Runtime.Serialization.XsdDataContractImporter> na kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlImporter> (zděděno z <xref:System.ServiceModel.Description.MetadataExporter> třídy.)  
+6. Přidejte do kolekce vrácené <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastností <xref:System.ServiceModel.Description.WsdlImporter> (zděděné ze <xref:System.ServiceModel.Description.MetadataExporter> třídy). <xref:System.Runtime.Serialization.XsdDataContractImporter>  
   
-7. Použití <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> metodu <xref:System.ServiceModel.Description.WsdlImporter> pro import všech kontraktů dat v rámci schématu. Během poslední krok bude ze schémat načten voláním zástupný vygenerován kód.  
+7. <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A> Použijte metodu <xref:System.ServiceModel.Description.WsdlImporter> pro import všech kontraktů dat v rámci schématu. Během posledního kroku se kód generuje ze schémat načtených voláním do náhradní.  
   
      [!code-csharp[C_IDataContractSurrogate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#9)]  
   
-### <a name="to-use-a-surrogate-for-metadata-export"></a>Použít náhradní pro Export metadat  
- Ve výchozím nastavení při exportu metadat z WCF pro službu je potřeba vygenerovat schéma WSDL a XSD. Zástupný musí být přidán do součást zodpovědná za generování schématu XSD pro typy kontraktů dat, <xref:System.Runtime.Serialization.XsdDataContractExporter>. K tomuto účelu použijte chování, které implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> upravit <xref:System.ServiceModel.Description.WsdlExporter>, nebo přímo upravit <xref:System.ServiceModel.Description.WsdlExporter> použité pro export metadat.  
+### <a name="to-use-a-surrogate-for-metadata-export"></a>Použití náhrady při exportu metadat  
+ Ve výchozím nastavení je při exportu metadat z WCF pro službu nutné vygenerovat schéma WSDL i XSD. Náhradní je nutné přidat do komponenty zodpovědné za generování schématu XSD pro typy <xref:System.Runtime.Serialization.XsdDataContractExporter>kontraktů dat. K tomu použijte chování, které implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> k <xref:System.ServiceModel.Description.WsdlExporter>úpravě <xref:System.ServiceModel.Description.WsdlExporter> , nebo přímo upraví použití pro export metadat.  
   
-##### <a name="to-use-a-surrogate-for-metadata-export"></a>Použít náhradní pro export metadat  
+##### <a name="to-use-a-surrogate-for-metadata-export"></a>Použití náhrady při exportu metadat  
   
-1. Vytvořte nový <xref:System.ServiceModel.Description.WsdlExporter> nebo použijte `wsdlExporter` byl předán parametr <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
+1. Vytvořte nový <xref:System.ServiceModel.Description.WsdlExporter> nebo `wsdlExporter` použijte parametr předaný <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metodě.  
   
-2. Použití <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> funkce ke kontrole, jestli <xref:System.Runtime.Serialization.XsdDataContractExporter> byla definována.  
+2. Pomocí funkce zkontrolujete, zda <xref:System.Runtime.Serialization.XsdDataContractExporter> byl definován. <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A>  
   
-3. Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> vrátí `false`, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractExporter> generované schémata XML z <xref:System.ServiceModel.Description.WsdlExporter>a přidejte ho do kolekci vrácené poskytovatelem <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastnost <xref:System.ServiceModel.Description.WsdlExporter>. Jinak použijte Exportér vrácené `out` parametr <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody.  
+3. Pokud <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> se `false`vrátí, vytvořte nový <xref:System.Runtime.Serialization.XsdDataContractExporter> s generovanými schématy XML z <xref:System.ServiceModel.Description.WsdlExporter>a a <xref:System.ServiceModel.Description.WsdlExporter>přidejte je do kolekce vrácené <xref:System.ServiceModel.Description.MetadataExporter.State%2A> vlastností. V opačném případě použijte vývozce vrácený `out` parametrem <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metody.  
   
-4. Pokud <xref:System.Runtime.Serialization.XsdDataContractExporter> nemá žádné <xref:System.Runtime.Serialization.ExportOptions> definované, pak nastavte <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastností nové instance <xref:System.Runtime.Serialization.ExportOptions> třídy.  
+4. Pokud není definován,<xref:System.Runtime.Serialization.ExportOptions> nastavte vlastnost na novou instanci třídy. <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> <xref:System.Runtime.Serialization.ExportOptions> <xref:System.Runtime.Serialization.XsdDataContractExporter>  
   
-5. Nastavte <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A> vlastnost <xref:System.Runtime.Serialization.ExportOptions> z <xref:System.Runtime.Serialization.XsdDataContractExporter> do nové instance náhradního. Následné kroky pro export metadat nevyžadují žádné změny.  
+5. <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A> Nastavte vlastnost <xref:System.Runtime.Serialization.ExportOptions> pro nanovouinstancináhrady.<xref:System.Runtime.Serialization.XsdDataContractExporter> Následující kroky pro export metadat nevyžadují žádné změny.  
   
      [!code-csharp[C_IDataContractSurrogate#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#10)]  
   
@@ -198,4 +198,4 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>
 - <xref:System.Runtime.Serialization.ImportOptions>
 - <xref:System.Runtime.Serialization.ExportOptions>
-- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Použití kontraktů dat](../feature-details/using-data-contracts.md)

@@ -2,67 +2,67 @@
 title: Entity Data Model
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
-ms.openlocfilehash: 8e96890d97f652295a3fdb67c48ec37710280eec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1742b04d0e3d8387e990d40d832e355dd15c4311
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667142"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783956"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
-Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez ohledu na jeho uložených formuláře. Vypůjčí modelu EDM z relace Entity Model popsal Peter Svoboda v 1976, ale také založený na modelu relace Entity a rozšíří jeho tradiční použití.  
+Model EDM (Entity Data Model) (EDM) je sada konceptů popisujících strukturu dat bez ohledu na její uložený formulář. EDM se vypůjčuje z modelu vztahů mezi entitami, který popisuje Petr Chen ve 1976, ale také vytvoří model vztahů mezi entitami a rozšiřuje tradiční použití.  
   
- EDM řeší výzvy související s daty uloženými v mnoha formách jsou vyvolány. Představte si třeba firma, která ukládá data v relačních databází, textové soubory, soubory XML, tabulky a sestavy. To představuje důležité výzvy při modelování dat, návrh aplikace a přístup k datům. Při navrhování aplikace orientované na data, před obrovskou výzvou – je efektivní a udržovatelný kód napsat bez omezení účinný data access, úložiště a škálovatelnosti. Pokud data obsahují relační struktury, jsou velmi efektivní přístup k datům, úložiště a škálovatelnosti, ale vytváření efektivní a udržovatelného kódu bude obtížnější. Pokud data obsahují objektovou strukturu, jsou obrácený kompromisy konfigurace: Zápis efektivní a udržovatelný kód obsahuje za cenu efektivní datové úložiště a škálovatelnosti. I když můžete najít správnou rovnováhu mezi těmito kompromisy, nové výzvy vzniknout, když jsou data přesouvána mezi jeden formulář do jiného. Modelu Entity Data Model řeší tyto problémy popisuje strukturu dat z hlediska entit a vztahů, které nezávisí na žádné schéma úložiště. Díky tomu formuláři uložených dat relevantní pro vývoj a návrh aplikace. A protože entitami a relacemi popisují strukturu dat, jako používá se v aplikaci (ne jeho uložené formulář), můžete vyvíjet s vyvíjí aplikace.  
+ EDM řeší výzvy, které vzniknou z dat uložených v mnoha formulářích. Představte si třeba firmu, která ukládá data v relačních databázích, textových souborech, souborech XML, tabulkách a sestavách. To představuje významné problémy při modelování dat, návrhu aplikací a přístupu k datům. Při navrhování aplikace orientované na data je nutné, aby bylo možné zapisovat do efektivního a udržovatelného kódu, aniž byste se museli vzdát efektivního přístupu k datům, úložiště a škálovatelnosti. Když data mají relační strukturu, přístup k datům, úložiště a škálovatelnost jsou velmi efektivní, ale psaní efektivního a udržovatelného kódu se bude obtížnější. V případě, že data obsahují strukturu objektů, jsou změny v obchodování obráceny: Zápis efektivního a udržovatelného kódu se dodává za cenu efektivního přístupu k datům, úložiště a škálovatelnosti. I v případě, že je možné najít správné saldo mezi těmito kompromisy, vzniknou nové výzvy při přesunu dat z jednoho formuláře do druhého. Model EDM (Entity Data Model) řeší tyto výzvy tím, že popisuje strukturu dat z pohledu entit a vztahy, které jsou nezávislé na jakémkoli schématu úložiště. Díky tomu je uložená forma dat irelevantní pro návrh a vývoj aplikací. A vzhledem k tomu, že entity a vztahy popisují strukturu dat, která se používají v aplikaci (ne v její uložené podobě), můžou se vyvíjet jako vývoj aplikace.  
   
- A `conceptual model` je konkrétní reprezentace strukturu dat jako entit a vztahů a je obecně podle jazyka specifického pro doménu (DSL), který implementuje koncepty modelu EDM. [Konceptuální schéma definici jazyka (CSDL)](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md) je příkladem takových jazyka specifického pro doménu. Entity a relace je popsáno v konceptuálním modelu můžete představit jako abstrakce objektů a přidružení v aplikaci. To umožňuje vývojářům soustředit se na konceptuální model bez obav o schéma úložiště a umožňuje psát kód s efektivitu a udržovatelnosti v úvahu. Mezitím návrháři schéma úložiště soustředit se na efektivitu přístup k datům, úložiště a škálovatelnosti.  
+ A `conceptual model` je konkrétní reprezentace struktury dat jako entit a vztahů a je obecně definována v jazyce specifickém pro doménu (DSL), který implementuje koncepty modelu EDM. [Konceptuální schéma definiční jazyk (CSDL)](./ef/language-reference/csdl-specification.md) je příkladem konkrétního jazyka specifického pro doménu. Entity a vztahy, které jsou popsány v koncepčním modelu, lze představit jako abstrakce objektů a přidružení v aplikaci. To umožňuje vývojářům soustředit se na koncepční model bez obav o schéma úložiště a umožňuje jim psát kód s efektivitou a udržovatelnosti. Díky sestupným návrhářům schémat úložiště se můžete soustředit na efektivitu přístupu k datům, úložiště a škálovatelnosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- Témata v této části popisují koncepty modelu Entity Data Model. Koncepty popsané tady by měl obsahovat všechny DSL, která implementuje modelu EDM. Všimněte si, že [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) CSDL používá k definování konceptuálních modelů. Další informace najdete v tématu [specifikace CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md).  
+ Témata v této části popisují koncepty model EDM (Entity Data Model). Všechny DSL, které implementují EDM, by měly obsahovat koncepty popsané tady. Všimněte si, že [ADO.NET Entity Framework](./ef/index.md) používá CSDL k definování konceptuálních modelů. Další informace najdete v tématu [specifikace CSDL](./ef/language-reference/csdl-specification.md).  
   
- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
+ [Koncepty modelu EDM (Entity Data Model)](entity-data-model-key-concepts.md)  
   
- [Model Entity Data Model: Namespaces](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
+ [Model EDM (Entity Data Model): Obsažené](entity-data-model-namespaces.md)  
   
- [Model Entity Data Model: Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)  
+ [Model EDM (Entity Data Model): Primitivní datové typy](entity-data-model-primitive-data-types.md)  
   
- [Model Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
+ [Model EDM (Entity Data Model): Dědičnost](entity-data-model-inheritance.md)  
   
- [association end](../../../../docs/framework/data/adonet/association-end.md)  
+ [association end](association-end.md)  
   
- [association end multiplicity](../../../../docs/framework/data/adonet/association-end-multiplicity.md)  
+ [association end multiplicity](association-end-multiplicity.md)  
   
- [association set](../../../../docs/framework/data/adonet/association-set.md)  
+ [association set](association-set.md)  
   
- [association set end](../../../../docs/framework/data/adonet/association-set-end.md)  
+ [association set end](association-set-end.md)  
   
- [association type](../../../../docs/framework/data/adonet/association-type.md)  
+ [association type](association-type.md)  
   
- [complex type](../../../../docs/framework/data/adonet/complex-type.md)  
+ [complex type](complex-type.md)  
   
- [entity container](../../../../docs/framework/data/adonet/entity-container.md)  
+ [entity container](entity-container.md)  
   
- [entity key](../../../../docs/framework/data/adonet/entity-key.md)  
+ [entity key](entity-key.md)  
   
- [entity set](../../../../docs/framework/data/adonet/entity-set.md)  
+ [entity set](entity-set.md)  
   
- [entity type](../../../../docs/framework/data/adonet/entity-type.md)  
+ [entity type](entity-type.md)  
   
- [facet](../../../../docs/framework/data/adonet/facet.md)  
+ [facet](facet.md)  
   
- [foreign key property](../../../../docs/framework/data/adonet/foreign-key-property.md)  
+ [foreign key property](foreign-key-property.md)  
   
- [model-declared function](../../../../docs/framework/data/adonet/model-declared-function.md)  
+ [model-declared function](model-declared-function.md)  
   
- [model-defined function](../../../../docs/framework/data/adonet/model-defined-function.md)  
+ [model-defined function](model-defined-function.md)  
   
- [navigation property](../../../../docs/framework/data/adonet/navigation-property.md)  
+ [navigation property](navigation-property.md)  
   
- [property](../../../../docs/framework/data/adonet/property.md)  
+ [property](property.md)  
   
- [referential integrity constraint](../../../../docs/framework/data/adonet/referential-integrity-constraint.md)  
+ [referential integrity constraint](referential-integrity-constraint.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Přehled souboru EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
-- [Specifikace CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)
+- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Soubor. edmx – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Specifikace CSDL](./ef/language-reference/csdl-specification.md)

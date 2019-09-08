@@ -1,6 +1,6 @@
 ---
-title: Funkce GetPropertyQualifierSet (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetPropertyQualifierSet načte kvalifikátor pro vlastnost nastavit.
+title: GetPropertyQualifierSet – funkce (Reference nespravovaného rozhraní API)
+description: Funkce GetPropertyQualifierSet načte kvalifikátor sady pro vlastnost.
 ms.date: 11/06/2017
 api_name:
 - GetPropertyQualifierSet
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 588c56c80cc55df3689178875a9a0500cd0ca7b8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b7bce241d10051e4c6be94cdfa40de23773fb0bb
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636394"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798482"
 ---
 # <a name="getpropertyqualifierset-function"></a>GetPropertyQualifierSet – funkce
 
-Načte kvalifikátor nastavit určité vlastnosti.
+Načte kvalifikátor sady pro konkrétní vlastnost.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -43,48 +43,48 @@ HRESULT GetPropertyQualifierSet (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`\
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszMethod`\
-[in] Název vlastnosti. `wszProperty` musí odkazovat na platný `LPCWSTR`.
+pro Název vlastnosti `wszProperty`musí odkazovat na platný `LPCWSTR`.
 
 `ppQualSet`\
-[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory vlastnost. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel je nastaven tak, aby odkazoval na `null`.
+mimo Přijímá ukazatel rozhraní, který umožňuje přístup k kvalifikátorům vlastnosti. `ppQualSet`nemůže být `null`. Pokud dojde k chybě, nový objekt se nevrátí a ukazatel je nastaven na hodnotu Point `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
+|`WBEM_E_FAILED` | 0x80041001 | Došlo k obecné chybě. |
 | `WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | K dokončení této operace není k dispozici dostatek paměti. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je `null`. |
-| `WBEM_E_SYSTEM_PROPERTY` | 0x80041030 | Funkce se pokusí získat kvalifikátory vlastnost systému. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_SYSTEM_PROPERTY` | 0x80041030 | Funkce se pokusí získat kvalifikátory systémové vlastnosti. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: GetPropertyQualifierSet](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyqualifierset) .
 
-Voláním této funkce je podporována pouze v případě, že je aktuální objekt definice třídy CIM. Není k dispozici pro manipulaci s metoda [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance CIM.
+Volání této funkce je podporováno pouze v případě, že aktuální objekt je definice třídy modelu CIM. Manipulace s metodou není k dispozici pro ukazatele [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) , které odkazují na instance CIM.
 
-Protože každá metoda může mít svůj vlastní kvalifikátory [IWbemQualifierSet ukazatel](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit kvalifikátory.
+Vzhledem k tomu, že každá metoda může mít své vlastní kvalifikátory, [ukazatel IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) umožňuje volajícímu přidat, upravit nebo odstranit tyto kvalifikátory.
 
-Vzhledem k tomu, že vlastnosti systému bez kvalifikátorů, funkce vrátí `WBEM_E_SYSTEM_PROPERTY` při pokusu o získání [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) ukazatel pro vlastnost systému.
+Vzhledem k tomu, že systémové vlastnosti nemají žádné kvalifikátory `WBEM_E_SYSTEM_PROPERTY` , funkce se vrátí, pokud se pokusíte získat ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) pro vlastnost systému.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

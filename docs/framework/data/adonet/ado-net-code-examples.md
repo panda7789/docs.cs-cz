@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: 3bbb2e046054e35cf01fe223318a3bf560ef7253
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86d5fc63168330502f81dfa464fcd2c04f014760
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607784"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785061"
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu ADO.NET
-Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí následujících technologií ADO.NET:
+Výpisy kódu v tomto tématu demonstrují, jak načíst data z databáze pomocí následujících ADO.NET technologií:
 
-- Zprostředkovatelé dat ADO.NET:
+- Poskytovatelé dat ADO.NET:
 
   - [SqlClient](#sqlclient) (`System.Data.SqlClient`)
 
-  - [OleDb](#oledb) (`System.Data.OleDb`)
+  - [OLEDB](#oledb) (`System.Data.OleDb`)
 
   - [Odbc](#odbc) (`System.Data.Odbc`)
 
@@ -29,44 +29,44 @@ Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí ná
 
   - [LINQ to Entities](#linq-to-entities)
 
-  - [ObjectQuery typu](#typed-objectquery)
+  - [Typové ObjectQuery](#typed-objectquery)
 
   - [EntityClient](#entityclient) (`System.Data.EntityClient`)
 
 - [LINQ to SQL](#linq-to-sql)
 
-## <a name="adonet-data-provider-examples"></a>Příklady zprostředkovatele dat ADO.NET
-Následující příklady kódu ukazují, jak načíst data z databáze pomocí zprostředkovatele dat ADO.NET. Vrácená data v `DataReader`. Další informace najdete v tématu [načítání dat pomocí čtečky dat](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).
+## <a name="adonet-data-provider-examples"></a>Příklady poskytovatele dat ADO.NET
+Následující výpisy kódu ukazují, jak načíst data z databáze pomocí zprostředkovatelů dat ADO.NET. Data jsou vrácena v `DataReader`. Další informace najdete v tématu [načtení dat pomocí objektu DataReader](retrieving-data-using-a-datareader.md).
 
 ### <a name="sqlclient"></a>SqlClient
-Kód v tomto příkladu se předpokládá, že se můžete připojit k `Northwind` ukázkovou databázi na serveru Microsoft SQL Server. Kód vytvoří <xref:System.Data.SqlClient.SqlCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.SqlClient.SqlParameter> pro omezení výsledků na řádky UnitPrice větší než zadaná hodnota parametru, v tomto případě 5. <xref:System.Data.SqlClient.SqlConnection> Je otevřít v `using` blok, který zajistí, že prostředky jsou zavřen a odstraněn při ukončení kód. Kód spustí tento příkaz pomocí <xref:System.Data.SqlClient.SqlDataReader>a zobrazí výsledky v okně konzoly.
+Kód v tomto příkladu předpokládá, že se můžete připojit k `Northwind` ukázkové databázi na Microsoft SQL Server. Kód vytvoří <xref:System.Data.SqlClient.SqlCommand> pro výběr řádků z tabulky Products, přidáním a <xref:System.Data.SqlClient.SqlParameter> omezí výsledky na řádky s jednotkou JednotkováCena větší, než je zadaná hodnota parametru, v tomto případě 5. <xref:System.Data.SqlClient.SqlConnection> Je otevřen `using` v rámci bloku, který zajišťuje, že se prostředky zavřou a odstraní při ukončení kódu. Kód spustí příkaz pomocí <xref:System.Data.SqlClient.SqlDataReader>a zobrazí výsledky v okně konzoly.
 
  [!code-csharp[DataWorks SampleApp.SqlClient#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.SqlClient/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.SqlClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.SqlClient/VB/source.vb#1)]
 
-### <a name="oledb"></a>OleDb
-Kód v tomto příkladu se předpokládá, že se můžete připojit k ukázkové databázi Northwind přístup společnosti Microsoft. Kód vytvoří <xref:System.Data.OleDb.OleDbCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.OleDb.OleDbParameter> pro omezení výsledků na řádky UnitPrice větší než zadaná hodnota parametru, v tomto případě 5. <xref:System.Data.OleDb.OleDbConnection> Otevření uvnitř `using` blok, který zajistí, že prostředky jsou zavřen a odstraněn při ukončení kód. Kód spustí tento příkaz pomocí <xref:System.Data.OleDb.OleDbDataReader>a zobrazí výsledky v okně konzoly.
+### <a name="oledb"></a>Povolí
+Kód v tomto příkladu předpokládá, že se můžete připojit k ukázkové databázi Northwind aplikace Microsoft Access. Kód vytvoří <xref:System.Data.OleDb.OleDbCommand> pro výběr řádků z tabulky Products, přidáním a <xref:System.Data.OleDb.OleDbParameter> omezí výsledky na řádky s jednotkou JednotkováCena větší, než je zadaná hodnota parametru, v tomto případě 5. Je otevřen uvnitř `using` bloku, který zajišťuje, že se prostředky zavřou a odstraní při ukončení kódu. <xref:System.Data.OleDb.OleDbConnection> Kód spustí příkaz pomocí <xref:System.Data.OleDb.OleDbDataReader>a zobrazí výsledky v okně konzoly.
 
  [!code-csharp[DataWorks SampleApp.OleDb#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.OleDb/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.OleDb#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.OleDb/VB/source.vb#1)]
 
 ### <a name="odbc"></a>Odbc
-Kód v tomto příkladu se předpokládá, že se můžete připojit k ukázkové databázi Northwind přístup společnosti Microsoft. Kód vytvoří <xref:System.Data.Odbc.OdbcCommand> pro výběr řádků z tabulky produktů, přidávání <xref:System.Data.Odbc.OdbcParameter> pro omezení výsledků na řádky UnitPrice větší než zadaná hodnota parametru, v tomto případě 5. <xref:System.Data.Odbc.OdbcConnection> Je otevřít v `using` blok, který zajistí, že prostředky jsou zavřen a odstraněn při ukončení kód. Kód spustí tento příkaz pomocí <xref:System.Data.Odbc.OdbcDataReader>a zobrazí výsledky v okně konzoly.
+Kód v tomto příkladu předpokládá, že se můžete připojit k ukázkové databázi Northwind aplikace Microsoft Access. Kód vytvoří <xref:System.Data.Odbc.OdbcCommand> pro výběr řádků z tabulky Products, přidáním a <xref:System.Data.Odbc.OdbcParameter> omezí výsledky na řádky s jednotkou JednotkováCena větší, než je zadaná hodnota parametru, v tomto případě 5. <xref:System.Data.Odbc.OdbcConnection> Je otevřen `using` v rámci bloku, který zajišťuje, že se prostředky zavřou a odstraní při ukončení kódu. Kód spustí příkaz pomocí <xref:System.Data.Odbc.OdbcDataReader>a zobrazí výsledky v okně konzoly.
 
 [!code-csharp[DataWorks SampleApp.Odbc#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.Odbc/CS/source.cs#1)] 
 [!code-vb[DataWorks SampleApp.Odbc#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.Odbc/VB/source.vb#1)] 
 
 ### <a name="oracleclient"></a>OracleClient
-Kód v tomto příkladu se předpokládá připojení pro UKÁZKOVÉ. Zákazník serveru Oracle. Musíte také přidat odkaz na System.Data.OracleClient.dll. Kód vrátí data <xref:System.Data.OracleClient.OracleDataReader>.
+Kód v tomto příkladu předpokládá připojení k UKÁZCE. ZÁKAZNÍK na serveru Oracle. Musíte také přidat odkaz na System. data. OracleClient. dll. Kód vrátí data v <xref:System.Data.OracleClient.OracleDataReader>.
 
  [!code-csharp[DataWorks SampleApp.Oracle#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SampleApp.Oracle/CS/source.cs#1)]
  [!code-vb[DataWorks SampleApp.Oracle#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.Oracle/VB/source.vb#1)]
 
 ## <a name="entity-framework-examples"></a>Příklady Entity Framework
-Následující příklady kódu ukazují, jak načíst data ze zdroje dat pomocí dotazu na entity v Entity Data Model (EDM). Tyto příklady používají model založený na ukázkové databáze Northwind. Další informace o rozhraní Entity Framework naleznete v tématu [přehled Entity Framework](../../../../docs/framework/data/adonet/ef/overview.md).
+Následující výpisy kódu ukazují, jak načíst data ze zdroje dat pomocí dotazu na entity v model EDM (Entity Data Model) (EDM). V těchto příkladech se používá model založený na ukázkové databázi Northwind. Další informace o Entity Framework najdete v tématu [Entity Framework Overview](./ef/overview.md).
 
 ### <a name="linq-to-entities"></a>LINQ to Entities
-Kód v tomto příkladu používá dotaz LINQ jako objekty kategorií, které se vykreslují jako anonymní typ, který obsahuje pouze vlastnosti CategoryID a CategoryName vrátit data. Další informace najdete v tématu [LINQ to Entities přehled](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).
+Kód v tomto příkladu používá dotaz LINQ, který vrací data jako objekty kategorií, které jsou probíhají jako anonymní typ, který obsahuje pouze vlastnosti CategoryID a CategoryName. Další informace najdete v tématu [přehled LINQ to Entities](./ef/language-reference/linq-to-entities.md).
 
 ```csharp
 using System;
@@ -136,8 +136,8 @@ Class LinqSample
 End Class
 ```
 
-### <a name="typed-objectquery"></a>ObjectQuery typu
-Kód v tomto příkladu používá <xref:System.Data.Objects.ObjectQuery%601> vrátit data jako kategorie objektů. Další informace najdete v tématu [dotazy objektu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)).
+### <a name="typed-objectquery"></a>Typové ObjectQuery
+Kód v tomto příkladě používá <xref:System.Data.Objects.ObjectQuery%601> k vrácení dat jako objektů kategorií. Další informace najdete v tématu [dotazy na objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100)).
 
 ```csharp
 using System;
@@ -187,7 +187,7 @@ End Class
 ```
 
 ### <a name="entityclient"></a>EntityClient
-Kód v tomto příkladu používá <xref:System.Data.EntityClient.EntityCommand> ke spuštění dotazu Entity SQL. Tento dotaz vrátí seznam záznamů, které představují instance typu entity kategorií. <xref:System.Data.EntityClient.EntityDataReader> Slouží k přístupu k datové záznamy v sadě výsledků. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).
+Kód v tomto příkladu používá <xref:System.Data.EntityClient.EntityCommand> ke spuštění dotazu Entity SQL. Tento dotaz vrátí seznam záznamů, které reprezentují instance typu entity categories (kategorie). <xref:System.Data.EntityClient.EntityDataReader> Slouží k přístupu k datovým záznamům v sadě výsledků. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).
 
 ```csharp
 using System;
@@ -271,7 +271,7 @@ End Class
 ```
 
 ## <a name="linq-to-sql"></a>Technologie LINQ to SQL
-Kód v tomto příkladu používá dotaz LINQ jako objekty kategorií, které se vykreslují jako anonymní typ, který obsahuje pouze vlastnosti CategoryID a CategoryName vrátit data. Tento příklad vychází z kontextu dat Northwind. Další informace najdete v tématu [Začínáme](../../../../docs/framework/data/adonet/sql/linq/getting-started.md).
+Kód v tomto příkladu používá dotaz LINQ, který vrací data jako objekty kategorií, které jsou probíhají jako anonymní typ, který obsahuje pouze vlastnosti CategoryID a CategoryName. Tento příklad je založen na kontextu dat Northwind. Další informace najdete v tématu [Začínáme](./sql/linq/getting-started.md).
 
 ```csharp
 using System;
@@ -345,9 +345,8 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [Přehled ADO.NET](ado-net-overview.md)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
 - [Vytváření datových aplikací](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/h0y4a0f6(v=vs.120))
-- [Dotazování na Entity Data Model (Entity Framework úlohy)](https://docs.microsoft.com/previous-versions/bb738455(v=vs.90))
-- [Postupy: Provedení dotazu, který vrací objekty anonymního typu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Dotazování na model EDM (Entity Data Model) (úlohy Entity Framework)](https://docs.microsoft.com/previous-versions/bb738455(v=vs.90))
+- [Postupy: Spustit dotaz, který vrací objekty anonymního typu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))

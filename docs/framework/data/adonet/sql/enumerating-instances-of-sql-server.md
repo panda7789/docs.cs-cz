@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: 304387197c7c6ca31d76ce429cd1516be27ba7b9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c464762e82a24aab399a23ecb26420b5dce61f55
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938178"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782388"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí SQL Serveru (ADO.NET)
 SQL Server umožňuje aplikacím najít SQL Server instance v rámci aktuální sítě. Třída zpřístupňuje tyto informace vývojáři aplikace a <xref:System.Data.DataTable> poskytuje informace o všech viditelných serverech. <xref:System.Data.Sql.SqlDataSourceEnumerator> Tato vrácená tabulka obsahuje seznam instancí serveru dostupných v síti, které se shodují se seznamem zadaným při pokusu uživatele o vytvoření nového připojení, a rozbalí rozevírací seznam obsahující všechny dostupné servery ve **vlastnostech připojení.** dialogové okno. Zobrazené výsledky nejsou vždy dokončeny.  
@@ -126,5 +126,5 @@ class Program
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

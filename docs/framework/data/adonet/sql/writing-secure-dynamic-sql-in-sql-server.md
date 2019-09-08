@@ -2,76 +2,76 @@
 title: Zápis zabezpečené dynamické SQL na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: 9b0c903c04c82c9a0f61197642645c5ba93ba099
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c02455ba8798df1de1d52f6b4db3426d41b95daf
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645927"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791419"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL na SQL Serveru
-Útok prostřednictvím injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazů jazyka Transact-SQL místo platný vstup. Pokud vstup je předána přímo na server bez ověřování, a pokud aplikace provádí neúmyslně vloženého kódu, útoku hrozí riziko poškození nebo zničení data.  
+Injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazy jazyka Transact-SQL místo platného vstupu. Pokud je vstup předán přímo serveru bez ověření a pokud aplikace neúmyslně spouští vložený kód, může útok způsobit poškození nebo zničení dat.  
   
- Vkládání chyb zabezpečení byste měli zkontrolovat všechny procedury, které sestavují SQL příkazy, protože SQL Server spustí všechny syntakticky platné dotazy, které obdrží. Útočník zkušený a vzhledem k lze ovládat i parametrizované data. Pokud používáte dynamic SQL, nezapomeňte parametrizovat příkazům a nikdy Nezahrnovat hodnoty parametrů přímo do řetězce dotazu.  
+ Všechny postupy, které tvoří příkazy SQL, by měly být přezkoumány pro chyby zabezpečení injektáže, protože SQL Server spustí všechny syntakticky platné dotazy, které obdrží. Dokonce i Parametrizovaná data může manipulovat kvalifikovaným a určeným útočníkem. Použijete-li Dynamic SQL, nezapomeňte příkazy parametrizovat a nikdy Nezahrnovat hodnoty parametrů přímo do řetězce dotazu.  
   
-## <a name="anatomy-of-a-sql-injection-attack"></a>Anatomie útok prostřednictvím injektáže SQL  
- Proces vkládání funguje díky předčasné ukončení textový řetězec a připojení nového příkazu. Protože vložený příkaz může mít další řetězce připojí k němu předtím, než se spustí, ukončí malefactor vložený řetězec s označením komentář "--". Následující text je ignorován v době spuštění. Více příkazů může být vložen středník (;) pomocí oddělovače.  
+## <a name="anatomy-of-a-sql-injection-attack"></a>Anatomie útoku prostřednictvím injektáže SQL  
+ Proces vkládání funguje pomocí předčasného ukončení textového řetězce a připojení nového příkazu. Vzhledem k tomu, že vložený příkaz do něj může před provedením připojit další řetězce, malefactor ukončí vložený řetězec s označením komentáře "--". Následný text se v době spuštění ignoruje. Pomocí středníku lze vložit více příkazů (;) oddělovač.  
   
- Vložený kód SQL je syntakticky správný, úmyslné poškozování nelze zjistit prostřednictvím kódu programu. Proto musíte ověřit všechny vstup uživatele a pečlivě revize kódu, který spouští konstruovaný příkazy jazyka SQL na serveru, kterou používáte. Nikdy zřetězit uživatelský vstup, který není ověřený. Zřetězení řetězců je primární bod zadání injektáži skriptu.  
+ Pokud je vložený kód SQL syntakticky správný, nelze programově detekovat manipulace. Proto je nutné ověřit všechny vstupy uživatelů a pečlivě zkontrolovat kód, který spouští vytvořené příkazy SQL na serveru, který používáte. Nikdy nezřetězí vstup uživatele, který není ověřený. Zřetězení řetězců je primárním bodem záznamu pro vkládání skriptu.  
   
- Tady jsou některé užitečné pokyny:  
+ Tady je několik užitečných pokynů:  
   
-- Příkazy jazyka Transact-SQL přímo ze vstupu uživatele; nikdy sestavení uložené procedury slouží k ověření vstupu uživatele.  
+- Nikdy nevytvářejte příkazy jazyka Transact-SQL přímo ze vstupu uživatele; pomocí uložených procedur ověřte vstup uživatele.  
   
-- Ověření vstupu uživatele při testování typ, délku, formátu a rozsah. Použijte funkci QUOTENAME() příkazů jazyka Transact-SQL k uvození názvy systému nebo funkce REPLACE() k uvození libovolného znaku v řetězci.  
+- Ověřte vstup uživatele pomocí testování typu, délky, formátu a rozsahu. Použijte funkci Transact-SQL QUOTa () pro řídicí názvy systému nebo funkci Replace () pro řídicí znak v řetězci.  
   
-- Implementujte několik úrovní ověření v jednotlivých vrstvách vaší aplikace.  
+- Implementujte více vrstev ověřování v každé úrovni aplikace.  
   
-- Testování velikosti a datový typ vstupu a vynucovat odpovídající omezení. To může pomoci zabránit přetečení vyrovnávací paměti rozhodnout vědomě a záměrně.  
+- Otestujte velikost a datový typ vstupu a vynuťte příslušná omezení. To může přispět k tomu, aby se předešlo přetečení úmyslné vyrovnávací paměti.  
   
-- Testovací obsah proměnných řetězce a přijmout jenom očekávané hodnoty. Odmítnutí položky, které obsahují binárních dat, řídicích sekvencí a znaky komentáře.  
+- Otestujte obsah proměnných řetězce a přijměte pouze očekávané hodnoty. Zamítnout položky, které obsahují binární data, řídicí sekvence a znaky komentáře.  
   
-- Při práci s dokumenty XML ověřte jako se zadají všechna data pro jeho schéma.  
+- Při práci s dokumenty XML ověří všechna data proti schématu, jak je zadáno.  
   
-- V prostředích s více vrstvé by měl být ověřen všechna data před jejich příchodu do zóny důvěryhodných serverů.  
+- V prostředích s více vrstvami musí být všechna data ověřena před příchodem do důvěryhodné zóny.  
   
-- Nepřijmout následujících řetězců v polích, ze kterých lze zkonstruovat názvy souborů: AUX, CLOCK$, COM1 prostřednictvím COM8, CON, CONFIG$, LPT1, LPT8, NUL a PRN.  
+- V polích, ze kterých lze sestavit názvy souborů, nepřijímejte následující řetězce: AUX, CLOCK $, COM1 až COM8, CON, CONFIG $, LPT1 až LPT8, NUL a PRN.  
   
-- Použití <xref:System.Data.SqlClient.SqlParameter> objekty s uloženými procedurami a příkazy, které poskytují kontrolu a délka ověření typu.  
+- Pomocí <xref:System.Data.SqlClient.SqlParameter> objektů s uloženými procedurami a příkazy poskytněte kontrolu typu a délku ověřování.  
   
-- Použití <xref:System.Text.RegularExpressions.Regex> výrazy v klientském kódu k filtrování neplatné znaky.  
+- Použijte <xref:System.Text.RegularExpressions.Regex> výrazy v kódu klienta k filtrování neplatných znaků.  
   
-## <a name="dynamic-sql-strategies"></a>Strategie dynamické SQL  
- Provádění dynamicky vytvoří příkazy SQL v vašeho kódu procedury konce řetězce vlastnictví, způsobí systému SQL Server ke kontrole oprávnění volajícího u těchto objektů přistupuje dynamické SQL.  
+## <a name="dynamic-sql-strategies"></a>Dynamické strategie SQL  
+ Provádění dynamicky vytvořených příkazů SQL v procedurálním kódu ruší řetěz vlastnictví, což způsobilo, že SQL Server kontrolovat oprávnění volajícího proti objektům, ke kterým se přistupuje dynamickým SQL.  
   
- SQL Server má metody pro uživatelům udělíte přístup k datům pomocí uložených procedur a uživatelem definovaných funkcí, které jsou spouštěny dynamické SQL.  
+ SQL Server má metody pro udělení přístupu uživatelům k datům pomocí uložených procedur a uživatelsky definovaných funkcí, které spouštějí dynamické SQL.  
   
-- Použití zosobnění se příkazů jazyka Transact-SQL spustit jako klauzuli, jak je popsáno v [přizpůsobení oprávnění se zosobněním na SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Použití zosobnění s klauzulí spustit jako v jazyce Transact-SQL, jak je popsáno v tématu [přizpůsobení oprávnění k zosobnění v SQL Server](customizing-permissions-with-impersonation-in-sql-server.md).  
   
-- Podepisování uložených procedur s certifikáty, jak je popsáno v [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Podepisování uložených procedur pomocí certifikátů, jak je popsáno v tématu [Podepisování uložených procedur v SQL Server](signing-stored-procedures-in-sql-server.md).  
   
 ### <a name="execute-as"></a>SPUSTIT JAKO  
- Spustit jako se nahradí klauzule oprávnění volající s ním uživatel zadaný v EXECUTE AS klauzuli. Vnořené uložených procedur a aktivačních událostí spuštění v kontextu zabezpečení uživatele proxy serveru. Toto může rozbít aplikace, které využívají zabezpečení na úrovní řádků nebo vyžadován audit. Některé funkce, které vrátí identitu uživatele, vrátí uživatele zadaného v EXECUTE AS klauzule, nikoli původní volající. Kontext spuštění se vrátí zpět na původní volajícího až po provádění procedury nebo při vydání příkazu obnovit.  
+ Klauzule EXECUTE AS nahrazuje oprávnění volajícího pro uživatele zadaného v klauzuli EXECUTE AS. Vnořené uložené procedury nebo triggery se spouštějí v kontextu zabezpečení uživatele proxy serveru. To může poškodit aplikace, které spoléhají na zabezpečení na úrovni řádků, nebo vyžadují auditování. Některé funkce, které vracejí identitu uživatele, vrátí uživatele zadaného v klauzuli EXECUTE AS, nikoli původního volajícího. Kontext spuštění se vrátí původnímu volajícímu až po provedení procedury nebo při vydání příkazu REVERT.  
   
 ### <a name="certificate-signing"></a>Podepisování certifikátu  
- Když Spustí uloženou proceduru, která byla podepsána pomocí certifikátu, oprávnění udělená uživatelského certifikátu jsou sloučeny s ty volajícího. Kontext spuštění zůstává stejné. Uživatel certifikát není zosobňují volajícího. Podepisování uložených procedur, vyžaduje několik kroků k implementaci. Pokaždé, když se změní podle postupu, je třeba jej znovu podepsat.  
+ Když se spustí uložená procedura podepsaná certifikátem, sloučí se oprávnění udělená uživateli certifikátu s oprávněními volajícího. Kontext spuštění zůstává stejný; uživatel certifikátu nezosobňuje volajícího. Podepisování uložených procedur vyžaduje provedení několika kroků. Pokaždé, když je procedura upravena, musí být znovu podepsána.  
   
-### <a name="cross-database-access"></a>Různé přístup k databázi  
- Vlastnictví mezidatabázové řetězení nebude fungovat v případech, ve kterých se spouští dynamicky vytvořené příkazy SQL. Můžete obejít tím v systému SQL Server vytvořením uloženou proceduru, která přistupuje k datům v jiné databázi a podepisování postup certifikátem, který existuje v databázi i databázi. To poskytuje uživatelům přístup k databázi prostředky využívané třídou postupu bez nutnosti přidělit jim přístup k databázi nebo oprávnění.  
+### <a name="cross-database-access"></a>Přístup k více databázím  
+ Řetězení vlastnictví mezi databázemi nefunguje v případech, kdy jsou spouštěny dynamicky vytvořené příkazy SQL. Tuto možnost můžete v SQL Server obejít tak, že vytvoříte uloženou proceduru, která přistupuje k datům v jiné databázi a podepíše postup s certifikátem, který existuje v obou databázích. Uživatelé tak budou mít přístup k prostředkům databáze použitým postupem bez udělení přístupu k databázi nebo oprávnění.  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  
   
 |Resource|Popis|  
 |--------------|-----------------|  
-|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](/sql/relational-databases/security/sql-injection) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
+|[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [injektáže SQL](/sql/relational-databases/security/sql-injection) na SQL Server Knihy online|Témata popisují postup vytvoření uložených procedur a způsobu, jakým funguje injektáže SQL.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Zabezpečení aplikací ADO.NET](../securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](application-security-scenarios-in-sql-server.md)
+- [Správa oprávnění pomocí uložených procedur na SQL Serveru](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Podepisování uložených procedur na SQL Serveru](signing-stored-procedures-in-sql-server.md)
+- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](customizing-permissions-with-impersonation-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

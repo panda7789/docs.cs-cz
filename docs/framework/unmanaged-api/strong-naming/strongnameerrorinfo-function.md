@@ -20,15 +20,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6f495500b087b9e24936acd414f1aff463d7f64
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 021fa1668247bc59a4412d2b5f4bac3f5ee8cc6b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781078"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799110"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo – funkce
-Získá poslední kód chyby, která byla vygenerována pomocí jedné z funkcí silného názvu.  
+Získá poslední kód chyby, který byl vyvolán jednou ze všech funkcí se silným názvem.  
   
  Tato funkce je zastaralá.  
   
@@ -39,16 +39,16 @@ HRESULT StrongNameErrorInfo ();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Poslední modelu COM. kód chyby: nastavit podle jedné z funkcí silného názvu.  
+ Poslední kód chyby COM nastavený jednou z funkcí silného názvu.  
   
 ## <a name="remarks"></a>Poznámky  
- Většina metod silného názvu vrátit jednoduchý `true` nebo `false` údaj o úspěšném dokončení. Použití `StrongNameErrorInfo` funkce načtete HRESULT, který určuje poslední chyby generované silného názvu funkce.  
+ Většina metod silného názvu vrací jednoduché `true` nebo `false` náznaky úspěšného dokončení. `StrongNameErrorInfo` Pomocí funkce můžete načíst hodnotu HRESULT, která určuje poslední chybu vygenerovanou funkcemi silného názvu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  

@@ -4,40 +4,40 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
-ms.openlocfilehash: 95dacf3ef975be1ddd56db747936cca35db50625
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45216493a3afa23f24a085964a2c43e19b197d4b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857919"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797129"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
-Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF). Témata v této části ukazují, jak to lze provést.  
+Chcete-li přizpůsobit nové typy deklarací identity a vlastní tokeny, můžete roztáhnout infrastrukturu zabezpečení Windows Communication Foundation (WCF). Témata v této části vám ukážou, jak to uděláte.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
- [Vlastní přihlašovací údaje a jejich ověřování](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
- Vysvětluje, jak modelem Identity se používá při ověřování vlastní přihlašovací údaje.  
+ [Vlastní přihlašovací údaje a jejich ověřování](custom-credential-and-credential-validation.md)  
+ Vysvětluje, jak se používá model identity při ověřování vlastních přihlašovacích údajů.  
   
- [Vlastní tokeny](../../../../docs/framework/wcf/extending/custom-tokens.md)  
- Vystavené tokeny z tokenu služby zabezpečení (STS) jsou obvykle tokeny SAML. Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.  
+ [Vlastní tokeny](custom-tokens.md)  
+ Vydané tokeny ze služby tokenů zabezpečení (STS) jsou obvykle tokeny SAML. Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.  
   
- [Vlastní autorizace](../../../../docs/framework/wcf/extending/custom-authorization.md)  
- Vysvětluje, jak implementovat vlastní autorizace.  
+ [Vlastní autorizace](custom-authorization.md)  
+ Vysvětluje, jak implementovat vlastní autorizaci.  
   
- [Přepsání identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
- Popisuje přepsání identity služby kvůli ověřování.  
+ [Přepsání identity služby kvůli ověřování](overriding-the-identity-of-a-service-for-authentication.md)  
+ Popisuje, jak přepsat identitu služby pro ověřování.  
   
- [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- Ukazuje, jak se ověřit identitu vlastní koncový bod.  
+ [Postupy: Vytvoření vlastního ověřovatele identity klienta](how-to-create-a-custom-client-identity-verifier.md)  
+ Ukazuje, jak ověřit identitu vlastního koncového bodu.  
   
- [Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
- Zprávy jsou obvykle podepsaný a zašifrovaný s jedním certifikátem. Toto téma vysvětluje, jak dva certifikáty je možné, v případě potřeby.  
+ [Postupy: Použití samostatných certifikátů X. 509 pro podepisování a šifrování](how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
+ Zprávy jsou obvykle podepsané a šifrované pomocí jednoho certifikátu. V tomto tématu se dozvíte, jak můžou být v případě potřeby použity dva certifikáty.  
   
- [Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
- Vysvětluje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do rozhraní Windows Communication Foundation (WCF).  
+ [Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X. 509](change-cryptographic-provider-x509-certificate-private-key.md)  
+ Vysvětluje, jak změnit zprostředkovatele kryptografických služeb, který poskytuje privátní klíč certifikátu X. 509 a jak integrovat zprostředkovatele do architektury Windows Communication Foundation (WCF).  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
   
  <xref:System.ServiceModel.Security>  
@@ -51,10 +51,10 @@ Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete r
  <xref:System.IdentityModel.Selectors>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)  
+ [Zabezpečení](../feature-details/security.md)  
   
- [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Základní programování WCF](../basic-wcf-programming.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Přehled zabezpečení](../feature-details/security-overview.md)

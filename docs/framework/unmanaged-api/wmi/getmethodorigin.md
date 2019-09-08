@@ -1,6 +1,6 @@
 ---
-title: Funkce GetMethodOrigin (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetMethodOrigin určuje třídy, ve kterém je deklarována metodu.
+title: GetMethodOrigin – funkce (Reference nespravovaného rozhraní API)
+description: Funkce GetMethodOrigin určuje třídu, ve které je metoda deklarována.
 ms.date: 11/06/2017
 api_name:
 - GetMethodOrigin
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b21e08d3bf6845b9fc44d5a5edef0ea39b91da5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9cea7251353dae093f64448c8d84157917fa74c5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746536"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798555"
 ---
 # <a name="getmethodorigin-function"></a>Funkce GetMethodOrigin
-Určuje třídy, ve kterém je deklarována metodu.
+Určuje třídu, ve které je deklarována metoda.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -42,42 +42,42 @@ HRESULT GetMethodOrigin (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`  
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`  
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszMethodName`  
-[in] Název metody pro objekt, jehož vlastnící třídy jsou požadovány. 
+pro Název metody pro objekt, jehož vlastnící třída je požadována. 
 
 `pstrClassName`  
-[out] Získá název třídy, která vlastní metodu.
+mimo Přijímá název třídy, která vlastní metodu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda nebyla nalezena. |
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné. |
-|`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů je neplatných. |
+|`WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::GetMethodOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: GetMethodOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) .
 
-Protože třída může dědit z jednoho nebo více základních tříd metody, vývojáři často chtějí určit třídu, ve kterém je definována dané metody.
+Vzhledem k tomu, že třída může dědit metody z jedné nebo více základních tříd, vývojáři často chtějí určit třídu, ve které je daná metoda definována.
 
-`pstrClassName` Parametr nesmí odkazovat na platnou `BSTR` před voláním funkce, protože se jedná `out` parametr; tato ukazatel není uvolněný po vrácení funkce.
+Parametr nesmí ukazovat na platnou `BSTR` hodnotu před voláním funkce, protože se jedná o `out` parametr; po návratu funkce se tento ukazatel nevrátí. `pstrClassName`
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** WMINet_Utils.idl  
+ **Hlaviček** WMINet_Utils.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

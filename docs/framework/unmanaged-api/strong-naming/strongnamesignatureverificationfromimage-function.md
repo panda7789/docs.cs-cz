@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: df2eb9d454f2037ef5f2a09d1309d52a8365e715
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c22339b7d48e89f99d1500cfdda53f00f1234b80
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782687"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799078"
 ---
 # <a name="strongnamesignatureverificationfromimage-function"></a>StrongNameSignatureVerificationFromImage – funkce
-Ověřuje, že je platný pro přidružené veřejný klíč sestavení, které je již namapováno na paměť.  
+Ověřuje, že sestavení, které již bylo namapováno do paměti, je platné pro přidružený veřejný klíč.  
   
- Tato funkce je zastaralá. Použití [ICLRStrongName::StrongNameVerificationFromImage](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md) metoda místo.  
+ Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameVerificationFromImage](../hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,47 +41,47 @@ BOOLEAN StrongNameSignatureVerificationFromImage (
   
 ## <a name="parameters"></a>Parametry  
  `pbBase`  
- [in] Relativní virtuální adresu z namapované sestavení manifestu.  
+ pro Relativní virtuální adresa manifestu namapovaného sestavení.  
   
  `dwLength`  
- [in] Velikost v bajtech, z namapované bitové kopie.  
+ pro Velikost mapované image v bajtech  
   
  `dwInFlags`  
- [in] Příznaky, které ovlivňují chování ověřování. Podporovány jsou následující hodnoty:  
+ pro Příznaky, které ovlivňují chování ověřování. Podporovány jsou následující hodnoty:  
   
-- `SN_INFLAG_FORCE_VER` (0x00000001) – vynutí ověření i v případě, že je potřeba přepsat nastavení registru.  
+- `SN_INFLAG_FORCE_VER`(0x00000001) – vynutí ověření i v případě, že je nutné přepsat nastavení registru.  
   
-- `SN_INFLAG_INSTALL` (0x00000002) - určuje, že se jedná o první ověřování prováděné na tomto obrázku.  
+- `SN_INFLAG_INSTALL`(0x00000002) – určuje, že se jedná o první ověření provedené na tomto obrázku.  
   
-- `SN_INFLAG_ADMIN_ACCESS` (0x00000004) - určuje, že mezipaměť bude umožňovat přístup pouze uživatelům, kteří mají oprávnění správce.  
+- `SN_INFLAG_ADMIN_ACCESS`(0x00000004) – určuje, že mezipaměť povolí přístup pouze uživatelům, kteří mají oprávnění správce.  
   
-- `SN_INFLAG_USER_ACCESS` (0x00000008) - určuje, zda sestavení přístupné pouze pro aktuálního uživatele.  
+- `SN_INFLAG_USER_ACCESS`(0x00000008) – určuje, zda bude sestavení přístupné pouze pro aktuálního uživatele.  
   
-- `SN_INFLAG_ALL_ACCESS` (0x00000010) - určuje, že mezipaměť bude poskytovat žádné záruky omezení přístupu.  
+- `SN_INFLAG_ALL_ACCESS`(0x00000010) – určuje, že mezipaměť nebude poskytovat žádné záruky omezení přístupu.  
   
-- `SN_INFLAG_RUNTIME` (0x80000000) – vyhrazené pro interní ladění.  
+- `SN_INFLAG_RUNTIME`(0x80000000) – rezervované pro interní ladění.  
   
  `pdwOutFlags`  
- [out] Příznak pro další výstupní informace. Je podporován následující hodnotu:  
+ mimo Příznak pro další informace o výstupu. Je podporována následující hodnota:  
   
-- `SN_OUTFLAG_WAS_VERIFIED` (0x00000001) – Tato hodnota nastavená na `false` k určení, že ověření proběhlo úspěšně z důvodu nastavení registru.  
+- `SN_OUTFLAG_WAS_VERIFIED`(0x00000001) – Tato hodnota je nastavena `false` na hodnotu, chcete-li určit, že ověření proběhlo úspěšně z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
+ `true`Po úspěšném dokončení; v opačném případě. `false`  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameSignatureVerificationFromImage` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
+ Pokud se `StrongNameSignatureVerificationFromImage` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** StrongName.h  
+ **Hlaviček** StrongName. h  
   
- **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně Mscoree. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [StrongNameSignatureVerificationFromImage – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureVerificationFromImage – metoda](../hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

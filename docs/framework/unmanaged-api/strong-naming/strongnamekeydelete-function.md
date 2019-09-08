@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 717d2104db8addf40e5187cee4cc8c46e5dc355e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 17d35193f69966e02ac5e483924fcb3ee2e06758
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636738"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799029"
 ---
 # <a name="strongnamekeydelete-function"></a>StrongNameKeyDelete – funkce
 
-Odstraní zadaný kontejner klíče.
+Odstraní zadaný kontejner klíčů.
 
-Tato funkce je zastaralá. Použití [iclrstrongname::strongnamekeydelete –](../hosting/iclrstrongname-strongnamekeydelete-method.md) metoda místo.
+Tato funkce je zastaralá. Místo toho použijte metodu [ICLRStrongName:: StrongNameKeyDelete –](../hosting/iclrstrongname-strongnamekeydelete-method.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,27 +40,27 @@ BOOLEAN StrongNameKeyDelete (
 ## <a name="parameters"></a>Parametry
 
 `wszKeyContainer`\
-[in] Název kontejneru klíčů pro odstranění.
+pro Název kontejneru klíčů, který se má odstranit
 
 ## <a name="return-value"></a>Návratová hodnota
 
-`true` Při úspěšném dokončení; v opačném případě `false`.
+`true`Po úspěšném dokončení; v opačném případě. `false`
 
 ## <a name="remarks"></a>Poznámky
 
-Použití [strongnamekeyinstall –](strongnamekeyinstall-function.md) k importu pár veřejného a privátního klíče do kontejneru.
+Pomocí funkce [StrongNameKeyInstall –](strongnamekeyinstall-function.md) importujte pár veřejného a privátního klíče do kontejneru.
 
-Pokud `StrongNameKeyDelete` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.
+Pokud se `StrongNameKeyDelete` funkce nedokončila úspěšně, zavolejte funkci [StrongNameErrorInfo –](strongnameerrorinfo-function.md) , která načte poslední vygenerovanou chybu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** StrongName.h
+**Hlaviček** StrongName. h
 
-**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll
+**Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

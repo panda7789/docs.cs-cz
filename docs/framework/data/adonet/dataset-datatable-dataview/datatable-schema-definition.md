@@ -2,12 +2,12 @@
 title: Definice schématu datové tabulky
 ms.date: 03/30/2017
 ms.assetid: efbcdda4-f5a9-421d-8be2-4c194c74552f
-ms.openlocfilehash: 0d2609801da3bc336c54d32068246027cfd6d3aa
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d18af8001fd24f3b21c3e7fd13f9dabb2587b322
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204988"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786387"
 ---
 # <a name="datatable-schema-definition"></a>Definice schématu datové tabulky
 Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Definujete schéma <xref:System.Data.DataTable> s použitím <xref:System.Data.DataColumn> objektů <xref:System.Data.ForeignKeyConstraint> i objektů a <xref:System.Data.UniqueConstraint> . Sloupce v tabulce lze namapovat na sloupce ve zdroji dat, obsahovat počítané hodnoty z výrazů, automaticky zvyšovat jejich hodnoty nebo obsahovat hodnoty primárního klíče.  
@@ -21,7 +21,7 @@ Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Defi
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přidání sloupců do datové tabulky](adding-columns-to-a-datatable.md)  
- Popisuje, jak definovat sloupce tabulky pomocí objektů DataColumn .  
+ Popisuje, jak definovat sloupce tabulky pomocí objektů **DataColumn** .  
   
  [Vytváření sloupců výrazů](creating-expression-columns.md)  
  Vysvětluje, jak lze vlastnost **Expression** sloupce použít k výpočtu hodnot na základě hodnot z jiných sloupců na řádku.  
@@ -30,7 +30,7 @@ Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Defi
  Popisuje, jak lze nastavit sloupec tak, aby automaticky zvyšován číselné hodnoty, aby se zajistila jedinečná hodnota sloupce na řádek.  
   
  [Definování primárních klíčů](defining-primary-keys.md)  
- Popisuje, jak zadat primární klíč tabulky z jednoho nebo více objektů DataColumn .  
+ Popisuje, jak zadat primární klíč tabulky z jednoho nebo více objektů **DataColumn** .  
   
  [Omezení datových tabulek](datatable-constraints.md)  
  Popisuje, jak definovat cizí klíč a jedinečná omezení pro sloupce v tabulce.  
@@ -38,4 +38,4 @@ Schéma, neboli struktura tabulky, je reprezentována sloupci a omezeními. Defi
 ## <a name="see-also"></a>Viz také:
 
 - [Datové tabulky](datatables.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

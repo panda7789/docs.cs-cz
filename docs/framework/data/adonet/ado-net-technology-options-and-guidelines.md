@@ -2,45 +2,44 @@
 title: Možnosti a pokyny pro ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: 0d0e8f7bd779ce7a8290594887630dd192301fe1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0f363d5eb102edf965c9c6068873fce0721d288
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700849"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785782"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti a pokyny pro ADO.NET
-Datová Platforma ADO.NET je strategie více vydání ke snížení množství kódu a údržba vyžaduje pro vývojáře tak, že programovat proti koncepční entity data model. Tato platforma zahrnuje ADO.NET Entity Framework a souvisejících technologiích.  
+ADO.NET Data Platform je strategie pro více verzí, která umožňuje snížit množství kódu a údržby, které jsou potřebné pro vývojáře, a umožnit jim tak programování v modelech konceptuálních entit. Tato platforma zahrnuje ADO.NET Entity Framework a související technologie.  
   
 ## <a name="entity-framework"></a>Entity Framework  
- ADO.NET Entity Framework je určen k vývojářům umožňují vytvářet aplikace přistupující k datům programování v modelu koncepční aplikace namísto programování přímo proti schématu relační úložiště. Cílem je snížit množství kódu a údržba vyžaduje pro aplikace orientované na data. Další informace najdete v tématu [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).  
+ Entity Framework ADO.NET je navržená tak, aby vývojářům umožnila vytvářet aplikace pro přístup k datům pomocí programování na koncepčním modelu aplikace namísto programování přímo proti schématu relačního úložiště. Cílem je snížit množství kódu a potřebnou údržbu pro aplikace orientované na data. Další informace najdete v tématu [ADO.NET Entity Framework](./ef/index.md).  
   
 ### <a name="entity-data-model-edm"></a>Entity Data Model (EDM)  
- Entity Data Model (EDM) je specifikace návrhu, který definuje data aplikací podle sad entit a vztahů. Data v tomto modelu podporuje objektově relační mapování a data programovatelnosti přes hranice aplikace.  
+ Model EDM (Entity Data Model) (EDM) je specifikace návrhu, která definuje data aplikace jako sady entit a vztahů. Data v tomto modelu podporují pro objekty relační mapování a programovatelnost dat napříč hranicemi aplikací.  
   
-### <a name="object-services"></a>Objekt služby  
- Objekt služby umožňuje programátorům k interakci s Koncepční model pomocí sady common language runtime (CLR) třídy. Tyto třídy je možné vygenerovat automaticky z konceptuálního modelu nebo mohou být vytvořeny nezávisle tak, aby odrážely struktura konceptuálního modelu. Objekt služby také poskytuje podporu infrastruktury pro Entity Framework, včetně služeb, jako je správa stavů, řešení change tracking, rozlišení identity, načítání a navigace v relacích, šíření změn objektu tak změny databáze a vytváření podporu pro Entity SQL dotazu. Další informace najdete v tématu [Přehled služby objektů (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
+### <a name="object-services"></a>Objektové služby  
+ Objektové služby umožňují programátorům pracovat s koncepčním modelem prostřednictvím sady tříd modulu CLR (Common Language Runtime). Tyto třídy mohou být automaticky generovány z koncepčního modelu nebo mohou být vyvinuty nezávisle, aby odrážely strukturu koncepčního modelu. Objektové služby také poskytují podporu infrastruktury pro Entity Framework, včetně služeb, jako je Správa stavů, sledování změn, rozlišení identity, načítání a procházení vztahů, šíření změn objektů do úprav databáze. a dotaz na sestavení podpory pro Entity SQL. Další informace najdete v tématu [Přehled služby Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
 ### <a name="linq-to-entities"></a>LINQ to Entities  
- Technologie LINQ to Entities je implementace jazyka integrované dotazu (LINQ), který umožňuje vývojářům vytvářet dotazy silného typu na objektu kontextu Entity Framework pomocí LINQ – výrazy a operátory standardního dotazu LINQ. Technologie LINQ to Entities umožňuje vývojářům pracovat s konceptuálního modelu s velmi flexibilní objektově relační mapování mezi Microsoft SQL serveru a databází výrobců. Další informace najdete v tématu [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).  
+ LINQ to Entities je implementace LINQ (Language-Integrated Query), která vývojářům umožňuje vytvářet dotazy silného typu proti kontextu objektu Entity Framework pomocí výrazů LINQ a operátorů LINQ Standard Query. LINQ to Entities umožňuje vývojářům pracovat s koncepčním modelem s velmi flexibilními relačními mapováními objektů napříč Microsoft SQL Server a databázemi třetích stran. Další informace najdete v tématu [LINQ to Entities](./ef/language-reference/linq-to-entities.md).  
   
 ### <a name="entity-sql"></a>Entity SQL  
- Entita SQL je navržen pro interakci se Entity Data Model založený na textu dotazovací jazyk. Entita SQL je SQL dialekt obsahující konstrukce pro dotazování z hlediska vyšší úrovně modelování koncepty, jako je dědičnost, komplexní typy a explicitní vztahy. Vývojáři mohou pomocí Entity SQL také přímo pomocí objektů služby. Další informace najdete v tématu [jazyk Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).  
+ Entity SQL je textový dotazovací jazyk, který je navržený pro interakci s model EDM (Entity Data Model). Entity SQL je dialekt SQL, který obsahuje konstrukce pro dotazování z hlediska konceptů modelování vyšší úrovně, jako jsou dědičnost, komplexní typy a explicitní vztahy. Vývojáři mohou Entity SQL použít také přímo s objekty služby. Další informace najdete v tématu [Entity SQL Language](./ef/language-reference/entity-sql-language.md).  
   
 ### <a name="entityclient"></a>EntityClient  
- Zprostředkovatel EntityClient je nový zprostředkovatel dat .NET Framework používá pro komunikaci s datového modelu Entity. Zprostředkovatel EntityClient následuje vzor poskytovatel dat rozhraní .NET Framework vystavení <xref:System.Data.EntityClient.EntityConnection> a <xref:System.Data.EntityClient.EntityCommand> objektů, který vrací <xref:System.Data.EntityClient.EntityDataReader>. Zprostředkovatel EntityClient funguje s jazykem Entity SQL poskytuje flexibilní mapování na poskytovatele dat pro konkrétní úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
+ EntityClient je nový zprostředkovatel dat .NET Framework, který se používá pro interakci s model EDM (Entity Data Model). EntityClient následuje model <xref:System.Data.EntityClient.EntityConnection> <xref:System.Data.EntityClient.EntityCommand> poskytovatele .NET Framework dat vystavení objektů, které vracejí <xref:System.Data.EntityClient.EntityDataReader>. EntityClient spolupracuje s jazykem Entity SQL a poskytuje flexibilní mapování na zprostředkovatele dat specifických pro úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
   
 ### <a name="entity-data-model-tools"></a>Nástroje modelu Entity Data  
- Entity Framework poskytuje nástroje příkazového řádku, průvodci a návrháři usnadnit vytváření EDM aplikací. Ovládací prvek EntityDataSource podporuje scénáře datových vazeb založené na modelu EDM. Programovací plochu ovládacího prvku EntityDataSource je podobně jako jiné ovládací prvky zdroje dat v sadě Visual Studio. Další informace najdete v tématu [ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)).  
+ Entity Framework poskytuje nástroje příkazového řádku, průvodce a návrháře pro usnadnění sestavování aplikací modelu EDM. Ovládací prvek EntityDataSource podporuje scénáře datových vazeb založené na modelu EDM. Programovací plocha ovládacího prvku EntityDataSource je podobná ostatním ovládacím prvkům zdroje dat v aplikaci Visual Studio. Další informace najdete v tématu [ADO.NET model EDM (Entity Data Model) Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)).  
   
 ## <a name="linq-to-sql"></a>Technologie LINQ to SQL  
- Technologie LINQ to SQL je relační mapování objektů (nebo / M) implementace, která umožňuje modelovat do databáze SQL serveru s použitím tříd rozhraní .NET Framework. Technologie LINQ to SQL umožňuje dotazy na databázi pomocí jazyka LINQ, jakož i aktualizovat, vložení a odstranění dat z něj. Technologie LINQ to SQL podporuje transakce, zobrazení a uložených procedur, poskytuje snadný způsob, jak integrovat ověřování dat a obchodní logiky pravidla do datového modelu. Návrhář relací objektů (O/R Designer) slouží k modelování tříd entit a přidružení, které jsou založené na objektech v databázi. Další informace najdete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ LINQ to SQL je implementace relačního mapování objektů (nebo M), která umožňuje modelovat databázi SQL Server pomocí tříd .NET Framework. LINQ to SQL vám umožní dotazovat se na databázi pomocí LINQ a také aktualizovat, vkládat a odstraňovat data z ní. LINQ to SQL podporuje transakce, zobrazení a uložené procedury a poskytuje snadný způsob, jak do datového modelu integrovat ověřování dat a pravidla obchodní logiky. Pomocí Návrhář relací objektů (O/R Designer) můžete modelovat třídy entit a přidružení, které jsou založené na objektech v databázi. Další informace naleznete v tématu [LINQ to SQL Tools v aplikaci Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="wcf-data-services"></a>WCF Data Services  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nasadí datové služby na webu nebo intranetu. Strukturovaná data jako entitami a relacemi podle specifikace modelu Entity Data Model. Data nasazené na tento model je adresovat pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../../../../docs/framework/data/wcf/index.md).  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nasadí datové služby na webu nebo v intranetu. Data jsou strukturovaná jako entity a vztahy podle specifikací model EDM (Entity Data Model). Data nasazená v tomto modelu jsou adresovatelné pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../wcf/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
-- [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](ado-net-overview.md)
+- [Novinky v ADO.NET](whats-new.md)

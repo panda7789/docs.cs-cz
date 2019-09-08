@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení stránkovaných výsledků (WCF Data Services)'
+title: 'Postupy: Načíst stránkované výsledky (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: bb786ea4-f3ef-4ad3-9a41-3a0b7feb6a1f
-ms.openlocfilehash: 0be7dcbefb23d2f2b283ac498f3b0ea43278f2d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e718aad904a43d118a243afafc17834cba31f028
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875835"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790454"
 ---
-# <a name="how-to-load-paged-results-wcf-data-services"></a>Postupy: Načtení stránkovaných výsledků (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje datové služby a omezit počet entit, které jsou vráceny v odpověď o jedné informačního kanálu. Pokud k tomu dojde, poslední položku v informačním kanálu obsahuje odkaz na další stránku data. Identifikátor URI další stránky dat se získá voláním <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> metodu <xref:System.Data.Services.Client.QueryOperationResponse%601>, která je vrácena, pokud <xref:System.Data.Services.Client.DataServiceQuery%601> provádí. Identifikátor URI reprezentovaný tímto objektem se pak použije k načtení další stránky výsledků. Další informace najdete v tématu [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).  
+# <a name="how-to-load-paged-results-wcf-data-services"></a>Postupy: Načíst stránkované výsledky (WCF Data Services)
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]povoluje datové službě omezit počet entit, které jsou vráceny v jednom kanálu odpovědí. Pokud k tomu dojde, poslední položka v informačním kanálu obsahuje odkaz na další stránku dat. Identifikátor URI pro další stránku dat je získán voláním <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> metody <xref:System.Data.Services.Client.QueryOperationResponse%601>, <xref:System.Data.Services.Client.DataServiceQuery%601> která je vrácena při spuštění. Identifikátor URI reprezentovaný tímto objektem se pak použije k načtení další stránky výsledků. Další informace najdete v tématu [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).  
   
- V příkladu v tomto tématu se používá Northwind ukázková data service a automaticky vygenerovaných tříd klientské datové služby. Tuto službu a třídy dat klientů jsou vytvořeny po dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `do…while` smyčce načtení `Customers` entit na základě stránkové výsledky z datové služby.  
+ V tomto příkladu se `do…while` používá smyčka `Customers` k načtení entit ze stránkovaných výsledků z datové služby.  
   
  [!code-csharp[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getcustomerspaged)]
  [!code-vb[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getcustomerspaged)]  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu vrátí související `Orders` entity s každým `Customers` entity a použije `do…while` smyčce načtení `Customers` stránky entity a vnořený `while` smyčce načtení stránky související `Orders` entity z datové služby .  
+ Tento příklad vrátí související `Orders` entity s každou `Customers` entitou a pomocí `do…while` smyčky načte `Customers` stránky entit a vnořenou `while` smyčku pro načtení stránek souvisejících `Orders` entit z datové služby. .  
   
  [!code-csharp[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getcustomerspagednested)]
  [!code-vb[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getcustomerspagednested)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Načtení odloženého obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md)
-- [Postupy: Načtení souvisejících entit](../../../../docs/framework/data/wcf/how-to-load-related-entities-wcf-data-services.md)
+- [Načtení odloženého obsahu](loading-deferred-content-wcf-data-services.md)
+- [Postupy: Načíst související entity](how-to-load-related-entities-wcf-data-services.md)

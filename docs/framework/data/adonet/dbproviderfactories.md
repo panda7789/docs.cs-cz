@@ -2,32 +2,32 @@
 title: DbProviderFactories
 ms.date: 03/30/2017
 ms.assetid: 2a8e2640-3a49-42a1-a3a9-b43026907ae1
-ms.openlocfilehash: 2376cf39228cb5e8208112333ba06bb80070de84
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3ea9e3d083314f8df25f9edadbd1a18f1227293
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606993"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784099"
 ---
 # <a name="dbproviderfactories"></a>DbProviderFactories
-<xref:System.Data.Common> Obor názvů obsahuje třídy pro vytváření <xref:System.Data.Common.DbProviderFactory> instance pro práci s konkrétní zdroje. Když vytvoříte <xref:System.Data.Common.DbProviderFactory> instance a předávat informace o poskytovateli dat `DbProviderFactory` můžete určit objekt správný, silného typu připojení se vraťte na základě informací byl poskytnut.  
+Obor názvů poskytuje třídy pro vytváření <xref:System.Data.Common.DbProviderFactory> instancí pro práci s konkrétními zdroji dat. <xref:System.Data.Common> Když vytvoříte <xref:System.Data.Common.DbProviderFactory> instanci a předáte informace o poskytovateli dat `DbProviderFactory` , může určit správný objekt připojení silného typu, který se bude vracet na základě informací, které byly poskytnuty.  
   
- Počínaje .NET Framework verze 4, zprostředkovatele dat, jako <xref:System.Data.Odbc>, <xref:System.Data.OleDb>, <xref:System.Data.SqlClient>, a <xref:System.Data.OracleClient> jsou už není uvedený v souboru machine.config, ale vlastní zprostředkovatelé bude dál zobrazovat existuje.  
+ Od .NET Framework verze 4 nejsou <xref:System.Data.Odbc>poskytovatelé dat <xref:System.Data.SqlClient>, jako jsou, <xref:System.Data.OleDb>, a <xref:System.Data.OracleClient> , již v souboru Machine. config uvedeny, ale vlastní zprostředkovatelé budou dále uvedeni v seznamu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled modelu objektu pro vytváření](../../../../docs/framework/data/adonet/factory-model-overview.md)  
- Poskytuje přehled vzoru návrhu objekt pro vytváření a programovací rozhraní.  
+ [Přehled modelu objektu pro vytváření](factory-model-overview.md)  
+ Poskytuje přehled vzoru návrhu a programovacího rozhraní pro vytváření.  
   
- [Získání DbProviderFactory](../../../../docs/framework/data/adonet/obtaining-a-dbproviderfactory.md)  
- Ukazuje, jak se seznam nainstalovaných dat a vytvářet <xref:System.Data.Common.DbConnection> z `DbProviderFactory`.  
+ [Získání DbProviderFactory](obtaining-a-dbproviderfactory.md)  
+ Ukazuje, jak zobrazit seznam nainstalovaných zprostředkovatelů dat a <xref:System.Data.Common.DbConnection> vytvořit `DbProviderFactory`z.  
   
- [DbConnection, DbCommand a DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
- Ukazuje, jak vytvořit <xref:System.Data.Common.DbCommand> a <xref:System.Data.Common.DbDataReader>a způsob zpracování chyb dat pomocí <xref:System.Data.Common.DbException>.  
+ [DbConnection, DbCommand a DbException](dbconnection-dbcommand-and-dbexception.md)  
+ Ukazuje, jak vytvořit <xref:System.Data.Common.DbCommand> a a <xref:System.Data.Common.DbDataReader>jak zpracovávat chyby dat pomocí. <xref:System.Data.Common.DbException>  
   
- [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
- Ukazuje, jak používat <xref:System.Data.Common.DbCommandBuilder> s <xref:System.Data.Common.DbDataAdapter> načtení a upravovat data.  
+ [Úpravy dat přes DbDataAdapter](modifying-data-with-a-dbdataadapter.md)  
+ Ukazuje, jak použít <xref:System.Data.Common.DbCommandBuilder> <xref:System.Data.Common.DbDataAdapter> s a k načtení a úpravě dat.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
+- [Přehled ADO.NET](ado-net-overview.md)

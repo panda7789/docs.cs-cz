@@ -2,24 +2,24 @@
 title: MissingNecessaryEnhancedKeyUsage
 ms.date: 03/30/2017
 ms.assetid: 9dffd071-0b79-4e10-9027-06760b4cc3ca
-ms.openlocfilehash: 26565db593f566fe8712c7566b11056668c23291
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed379db12f9d155b983cc24844cf564d191c361e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944518"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797698"
 ---
 # <a name="missingnecessaryenhancedkeyusage"></a>MissingNecessaryEnhancedKeyUsage
-Id: 157  
+Účet 157  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: TransactionBridge  
+ Kategorií TransactionBridge  
   
 ## <a name="description"></a>Popis  
- Tato událost ukazuje na to, že certifikát identity s určitým předmětem jméno a kryptografický otisk neposkytuje konkrétní data mezi jeho EnhancedKeyUsages. Události jsou uvedeny, název procesu a ID procesu.  
+ Tato událost označuje, že certifikát identity s konkrétním názvem subjektu a kryptografickým otiskem neposkytuje konkrétní data mezi jeho EnhancedKeyUsages. Událost obsahuje název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

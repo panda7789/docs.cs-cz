@@ -5,37 +5,37 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c7cba174-9d40-491d-b32c-f2d73b7e9eab
-ms.openlocfilehash: 222ce575d9e977cc8b68862385b4a1b147c6394a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c279d4ed32aed4788ee5866a24572663a1e2f580
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902691"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793103"
 ---
 # <a name="how-to-submit-changes-to-the-database"></a>Postupy: Odeslání změn do databáze
-Bez ohledu na to, kolik změny, které provedete do objektů dojde ke změně pouze do replik v paměti. Žádné změny provedené na skutečná data v databázi. Změny nejsou přenášeny do serveru, dokud explicitně volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext>.  
+Bez ohledu na to, kolik změn provedete v objektech, jsou změny provedeny pouze v replikách v paměti. Neudělali jste žádné změny v skutečných datech v databázi. Vaše změny se neodesílají na server, dokud explicitně nebudete <xref:System.Data.Linq.DataContext.SubmitChanges%2A> volat <xref:System.Data.Linq.DataContext>.  
   
- Když provedete toto volání <xref:System.Data.Linq.DataContext> pokusí přeložit změny na ekvivalentní příkazy jazyka SQL. Přepsat tyto akce můžete použít vlastní logiku, ale pořadí odeslání je orchestrovaných službou z <xref:System.Data.Linq.DataContext> označované jako *změnit procesoru*. Posloupnost událostí je následující:  
+ Po provedení tohoto volání se <xref:System.Data.Linq.DataContext> pokusí přeložit změny do ekvivalentních příkazů SQL. Pomocí vlastní logiky můžete tyto akce přepsat, ale pořadí odeslání je Orchestrované pomocí služby <xref:System.Data.Linq.DataContext> známé jako *procesor změn*. Sekvence událostí je následující:  
   
-1. Při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prověřuje sadu známým objektům k určení, zda byly nové instance připojeny k nim. Pokud ano, tyto nové instance se přidají do sady sledovaných objektů.  
+1. Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A>zavoláte [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , prověřuje sadu známých objektů a určí, zda jsou k nim připojeny nové instance. Pokud mají, tyto nové instance se přidají do sady sledovaných objektů.  
   
-2. Všechny objekty, které mají čekající změny jsou uspořádány do sekvence objektů na základě závislostí mezi nimi. Objekty, jejichž změny závisí na jiné objekty jsou seřazeny po jejich závislosti.  
+2. Všechny objekty, které mají probíhající změny, jsou uspořádány do sekvence objektů na základě závislostí mezi nimi. Objekty, jejichž změny závisí na jiných objektech, se sekvencují po jejich závislosti.  
   
-3. Bezprostředně před vlastní změny jsou přenášeny, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí transakci zapouzdřit posloupnost jednotlivých příkazů.  
+3. Ihned před odesláním jakýchkoli aktuálních změn [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] spustí transakce k zapouzdření řady jednotlivých příkazů.  
   
-4. Změny objektů se přeložený jeden po druhém SQL příkazy a odeslat na server.  
+4. Změny objektů jsou přeloženy jedním z nich na příkazy SQL a odeslány na server.  
   
- V tuto chvíli způsobit, že proces odeslání přestane všech chyb zjištěných v databázi a je vyvolána výjimka. Všechny změny do databáze se vrátí zpět, jako by se nikdy došlo k žádné příspěvky. <xref:System.Data.Linq.DataContext> Má stále plnou záznam všech změn. Proto můžete zkusit opravit problém a volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> znovu, stejně jako v následujícím příkladu kódu.  
+ V tomto okamžiku všechny chyby zjištěné databází způsobují zastavení procesu odeslání a je vyvolána výjimka. Všechny změny v databázi se vrátí zpět, jako by nebyly k dispozici žádné odeslání. <xref:System.Data.Linq.DataContext> Pořád má úplný záznam o všech změnách. Proto se můžete pokusit problém vyřešit a zavolat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> znovu, jako v následujícím příkladu kódu.  
   
 ## <a name="example"></a>Příklad  
- Když transakce po odeslání se dokončí úspěšně, <xref:System.Data.Linq.DataContext> přijímá změny objektů ignorováním informace sledování změn.  
+ Pokud je transakce kolem odeslání úspěšně dokončena, <xref:System.Data.Linq.DataContext> akceptuje změny objektů ignorováním informací o sledování změn.  
   
  [!code-csharp[DLinqSubmittingChanges#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#1)]
  [!code-vb[DLinqSubmittingChanges#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Zjištění a vyřešení konfliktních odeslání](../../../../../../docs/framework/data/adonet/sql/linq/how-to-detect-and-resolve-conflicting-submissions.md)
-- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
-- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
-- [Vytvoření a odeslání změn dat](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
+- [Postupy: Zjištění a vyřešení konfliktních odeslání](how-to-detect-and-resolve-conflicting-submissions.md)
+- [Postupy: Správa konfliktů změn](how-to-manage-change-conflicts.md)
+- [Stažení ukázkových databází](downloading-sample-databases.md)
+- [Vytvoření a odeslání změn dat](making-and-submitting-data-changes.md)

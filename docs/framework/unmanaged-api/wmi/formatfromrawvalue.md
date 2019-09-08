@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 681d7ce42b2b8d16353e4f5b3523f1a953a49d95
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 65a6d9eab9708f762d14e5361697b85ffb73f54a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037887"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798627"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
 Převede jednu nezpracovaná hodnota dat výkonu na určený formát nebo dvě nezpracované hodnoty dat výkonu, pokud je převod formátu založený na čase. 
@@ -89,7 +89,7 @@ Tato funkce zalomí volání funkce [FormatFromRawValue](https://docs.microsoft.
 
 ## <a name="requirements"></a>Požadavky
 
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
  **Knihovna** PerfCounter.dll
 

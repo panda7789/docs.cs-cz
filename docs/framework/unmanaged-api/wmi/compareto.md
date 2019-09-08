@@ -1,6 +1,6 @@
 ---
-title: Funkce CompareTo (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce CompareTo porovná objekt na jiný objekt rozhraní WMI.
+title: CompareTo – funkce (Reference nespravovaného rozhraní API)
+description: Funkce CompareTo porovná objekt s jiným objektem WMI.
 ms.date: 11/06/2017
 api_name:
 - CompareTo
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3566b9b8a3b4183f936c82c39c38dc5daa3aeae1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2ec42dff333422e247a11b4a3a5b9aed9bd316fa
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636679"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798774"
 ---
 # <a name="compareto-function"></a>Funkce CompareTo
 
-Porovná objekt na jiný objekt správy Windows.
+Porovná objekt s jiným objektem správy systému Windows.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -43,59 +43,59 @@ HRESULT CompareTo (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`\
-[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+pro Ukazatel na instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `flags`\
-[in] Bitová kombinace příznaků, které určují vlastnosti objektu vzít v úvahu pro porovnání. Zobrazit [poznámky](#remarks) části Další informace.
+pro Bitová kombinace příznaků, které určují vlastnosti objektu, které je třeba vzít v úvahu pro porovnání. Další informace najdete v části [poznámky](#remarks) .
 
 `pCompareTo`\
-[in] Objekt k porovnání. `pCompareTo` musí být platný [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance; nemůže být `null`.
+pro Objekt pro porovnání. `pCompareTo`musí se jednat o platnou instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ; nemůže být `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |
+| `WBEM_E_FAILED` | 0x80041001 | Došlo k neurčené chybě. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |
-| `WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` proběhla bez opětovné volání [ `EndEnumeration` ](endenumeration.md). |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_UNEXPECTED` | 0x8004101d | Druhé volání `BeginEnumeration` bylo provedeno bez navýšení [`EndEnumeration`](endenumeration.md)volání. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | Objekty jsou odlišné. |
-| `WBEM_S_SAME` | 0 | Objekty jsou stejné založené na porovnání příznaky. |
+| `WBEM_S_SAME` | 0 | Objekty jsou stejné na základě příznaků porovnávání. |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemClassObject::CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) metody.
+Tato funkce zalomí volání metody [IWbemclassObject:: CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) .
 
-Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu. Vlastnosti jednotlivých součástí porovnání můžete zadat tak, že zadáte bitová kombinace hodnot následující příznaky:
-
-|Konstanta  |Value  |Popis  |
-|---------|---------|---------|
-| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorujte zdroje (serveru a oboru názvů, které pocházejí z). |
-| `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorovat všechny kvalifikátory (včetně **klíč** a **dynamické**) |
-| `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignorujte výchozí hodnoty vlastnosti. Tento příznak platí jenom pro porovnání třídy. |
-| `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignorujte flavor. Tento příznak stále kvalifikátory bere v úvahu, ale bude ignorovat rozdíly charakter, jako jsou pravidla pro šíření a přepsat omezení. |
-| `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignorujte velikost písmen v porovnání hodnot řetězců. Platí to i na řetězce a jednu hodnotu kvalifikátoru. Porovnání názvy vlastností a kvalifikátor je vždy bez ohledu na to, zda je tento příznak nastaven malá a velká písmena. |
-| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Předpokládá, že porovnávaných objektů jsou instance stejné třídy. V důsledku toho tento příznak porovnává instance informace týkající se pouze. Pomocí tohoto příznaku za účelem optimalizace výkonu. Pokud objekty nejsou stejné třídy, nejsou výsledky definovány. |
-
-Nebo můžete zadat jeden složený příznak následujícím způsobem:
+Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definovány v souboru hlaviček *WbemCli. h* , nebo je můžete v kódu definovat jako konstanty. Můžete určit jednotlivé charakteristiky, které se týkají porovnání, zadáním bitové kombinace následujících příznaků:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-|`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Vezměte v úvahu všechny funkce v porovnání. |
+| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorujte zdroj (Server a obor názvů, ze kterého pochází). |
+| `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorovat všechny kvalifikátory (včetně **klíčového** a **dynamického**) |
+| `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignoruje výchozí hodnoty vlastností. Tento příznak se vztahuje pouze na porovnání tříd. |
+| `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignorovat charakter kvalifikátoru. Tento příznak stále používá kvalifikátory, ale ignoruje rozdíly v charakteru, jako jsou pravidla šíření a omezení přepisování. |
+| `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignoruje velikost písmen v porovnání řetězcových hodnot. To platí pro řetězce a hodnoty kvalifikátoru. Porovnání názvů vlastností a kvalifikátorů je vždy rozlišovat velká a malá písmena bez ohledu na to, zda je tento příznak nastaven. |
+| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Předpokládá, že porovnávané objekty jsou instancemi stejné třídy. Proto tento příznak porovnává pouze informace týkající se instancí. Pomocí těchto příznaků Optimalizujte výkon. Pokud objekty nejsou stejné třídy, výsledky nejsou definovány. |
+
+Můžete také zadat jeden složený příznak následujícím způsobem:
+
+|Konstanta  |Value  |Popis  |
+|---------|---------|---------|
+|`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Zvažte všechny funkce v porovnání. |
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

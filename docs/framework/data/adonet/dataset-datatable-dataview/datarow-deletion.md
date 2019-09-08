@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c34f531d-4b9b-4071-b2d7-342c402aa586
-ms.openlocfilehash: 46109ee1781b8b509df87b4203c51a55b9f596ae
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3f48339539f08bbc1c2c15035741375bd9ade553
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205102"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784719"
 ---
 # <a name="datarow-deletion"></a>Odstranění datového řádku
 Existují dvě metody, které <xref:System.Data.DataRow> lze použít k odstranění objektu <xref:System.Data.DataTable> z objektu: <xref:System.Data.DataRow.Delete%2A> metodu <xref:System.Data.DataRowCollection> **Remove** objektu a metodu objektu **DataRow** . Zatímco metoda odstraní **objekt DataRow** z **kolekci DataRowCollection**, <xref:System.Data.DataRow.Delete%2A> metoda označí řádek pouze pro odstranění. <xref:System.Data.DataRowCollection.Remove%2A> Ke skutečnému odebrání dojde, když aplikace zavolá metodu **AcceptChanges** . Pomocí nástroje <xref:System.Data.DataRow.Delete%2A>můžete programově ověřit, které řádky jsou označené k odstranění, než je skutečně odeberete. Když je řádek označený k odstranění, jeho <xref:System.Data.DataRow.RowState%2A> vlastnost je nastavena na. <xref:System.Data.DataRow.Delete%2A>  
@@ -39,7 +39,7 @@ workRow.Delete
 workRow.Delete();  
 ```  
   
- Pokud je řádek označen pro odstranění a zavoláte metodu **AcceptChanges** objektu **DataTable** , řádek je odebrán z **objektu DataTable**. Naopak pokud voláte **RejectChanges**, **RowState** řádku se vrátí k tomu, co bylo předtím označeno jako odstraněné.  
+ Pokud je řádek označen pro odstranění a zavoláte metodu **AcceptChanges** objektu **DataTable** , řádek je odebrán z **objektu DataTable**. Naopak pokud voláte **RejectChanges**, **RowState** řádku se vrátí k tomu, co bylo předtím označeno jako **odstraněné**.  
   
 > [!NOTE]
 > Pokud se **přidá** **RowState** objektu **DataRow** , znamená to, že se právě přidal do tabulky a pak je označený jako **Odstraněný**, odebere se z tabulky.  
@@ -50,4 +50,4 @@ workRow.Delete();
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
 - [Manipulace s daty v datové tabulce](manipulating-data-in-a-datatable.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

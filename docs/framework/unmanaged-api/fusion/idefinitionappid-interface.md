@@ -16,34 +16,34 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5bd705ef549de3a8018efe731ef8735ef7b6b915
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 929909a7f2c4fa1799c8fed94787b8f853c7eac2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697235"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796518"
 ---
 # <a name="idefinitionappid-interface"></a>IDefinitionAppId – rozhraní
-Představuje jedinečný identifikátor pro kód, který definuje aplikaci v aktuálním oboru.  
+Představuje jedinečný identifikátor kódu, který definuje aplikaci v aktuálním oboru.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IDefinitionAppId::get_Codebase`|Získá formátovaný řetězec, který představuje kód v tomto `IDefinitionAppId` objektu.|  
-|`IDefinitionAppId::put_Codebase`|Nastaví kód tohoto `IDefinitionAppId` objekt do zadané řetězcové hodnoty ve formátu.|  
-|`IDefinitionAppId::EnumAppPath`|Získá ukazatel rozhraní k [ienumdefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/ienumdefinitionidentity-interface.md) objekt, který obsahuje sestavení v aktuální cestě aplikace.|  
-|`IDefinitionAppId::SetAppPath`|Nastaví cestu k aplikaci pro sestavení v aktuálním oboru na hodnotu odkazuje zadaný [idefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) objektu.|  
-|`IDefinitionAppId::get_SubscriptionId`|Získá ukazatel na řetězcovou reprezentaci identifikátoru token pro přihlášení k odběru této `IDefinitionAppId` objektu.|  
-|`IDefinitionAppId::put_SubscriptionId`|Nastaví identifikátor token pro přihlášení k odběru této `IDefinitionAppId` zadaná řetězcová hodnota objektu.|  
+|`IDefinitionAppId::get_Codebase`|Načte formátovaný řetězec, který představuje kód v tomto `IDefinitionAppId` objektu.|  
+|`IDefinitionAppId::put_Codebase`|Nastaví kód tohoto `IDefinitionAppId` objektu na zadanou naformátovanou řetězcovou hodnotu.|  
+|`IDefinitionAppId::EnumAppPath`|Získá ukazatel rozhraní na objekt [IEnumDefinitionIdentity –](ienumdefinitionidentity-interface.md) , který obsahuje sestavení v aktuální cestě aplikace.|  
+|`IDefinitionAppId::SetAppPath`|Nastaví cestu aplikace pro sestavení v aktuálním rozsahu na hodnotu, na kterou odkazuje zadaný objekt [IDefinitionIdentity –](idefinitionidentity-interface.md) .|  
+|`IDefinitionAppId::get_SubscriptionId`|Získá ukazatel na řetězcovou reprezentaci identifikátoru tokenu pro odběr tohoto `IDefinitionAppId` objektu.|  
+|`IDefinitionAppId::put_SubscriptionId`|Nastaví identifikátor tokenu pro odběr na tento `IDefinitionAppId` objekt na zadanou hodnotu řetězce.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Isolation.h  
+ **Hlaviček** Izolace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)

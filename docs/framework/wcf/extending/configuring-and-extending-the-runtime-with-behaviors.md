@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
-ms.openlocfilehash: 481e0983a40bb551d08894ea32f76f332b8fe5a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3a1e369fe52a2a529fb3511d9a65067b4a56ec1e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943140"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797250"
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
-Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která kontrolují a ověřují konfiguraci služby nebo mění chování modulu runtime v klientech a aplikacích služby Windows Communication Foundation (WCF). Toto téma popisuje rozhraní chování, způsob jejich implementace a postup jejich přidání do popisu služby (v aplikaci služby) nebo koncového bodu (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o použití chování poskytované systémem naleznete v tématu [Určení chování služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) za běhu a [Určení chování při spuštění klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
+Chování umožňují upravit výchozí chování a přidat vlastní rozšíření, která kontrolují a ověřují konfiguraci služby nebo mění chování modulu runtime v klientech a aplikacích služby Windows Communication Foundation (WCF). Toto téma popisuje rozhraní chování, způsob jejich implementace a postup jejich přidání do popisu služby (v aplikaci služby) nebo koncového bodu (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o použití chování poskytované systémem naleznete v tématu [Určení chování služby](../specifying-service-run-time-behavior.md) za běhu a [Určení chování při spuštění klienta](../specifying-client-run-time-behavior.md).  
   
 ## <a name="behaviors"></a>Chování  
  Typy chování jsou přidány do objektů služby nebo popisu koncového bodu služby (ve službě nebo klientovi) předtím, než tyto objekty používají Windows Communication Foundation (WCF) k vytvoření modulu runtime, který spouští službu WCF nebo klienta WCF. Když jsou tato chování volána během procesu výroby za běhu, pak mají přístup k vlastnostem a metodám modulu runtime, které upravují modul runtime vytvořený Smlouvou, vazbami a adresami.  
@@ -32,7 +32,7 @@ Chování umožňují upravit výchozí chování a přidat vlastní rozšířen
  Vlastnosti, které lze upravit, a rozhraní vlastního nastavení, které lze implementovat, jsou k dispozici prostřednictvím tříd modulu runtime služby a klienta. Typy služeb jsou <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy a <xref:System.ServiceModel.Dispatcher.DispatchOperation> . Typy klientů jsou <xref:System.ServiceModel.Dispatcher.ClientRuntime> třídy a <xref:System.ServiceModel.Dispatcher.ClientOperation> . Třídy <xref:System.ServiceModel.Dispatcher.ClientRuntime> a<xref:System.ServiceModel.Dispatcher.DispatchRuntime> jsou vstupními body rozšiřitelnosti pro přístup k běhovým vlastnostem a kolekcím rozšíření v rámci služby na úrovni klienta. Podobně třídy <xref:System.ServiceModel.Dispatcher.DispatchOperation> a zveřejňují operace klienta a vlastnosti a kolekce rozšíření běhu služby. <xref:System.ServiceModel.Dispatcher.ClientOperation> V případě potřeby však můžete získat přístup k širšímu objektu modulu runtime z běhového objektu operace a naopak.  
   
 > [!NOTE]
-> Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování klienta, najdete v tématu [rozšíření klientů](../../../../docs/framework/wcf/extending/extending-clients.md). Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování vykonávání dispečera služby, najdete v tématu [rozšíření expedičních](../../../../docs/framework/wcf/extending/extending-dispatchers.md)modulů.  
+> Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování klienta, najdete v tématu [rozšíření klientů](extending-clients.md). Diskuzi o vlastnostech běhového prostředí a typech rozšíření, které můžete použít k úpravě chování vykonávání dispečera služby, najdete v tématu [rozšíření expedičních](extending-dispatchers.md)modulů.  
   
  Většina uživatelů WCF nekomunikuje s modulem runtime přímo; místo toho používají konstrukce základního programovacího modelu, jako jsou koncové body, kontrakty, vazby, adresy a atributy chování pro třídy nebo chování v konfiguračních souborech. Tyto konstrukce tvoří *strom popisů*, což je kompletní specifikace pro sestavení modulu runtime pro podporu služby nebo klienta popsaných ve stromu popis.  
   
@@ -110,7 +110,7 @@ Chování umožňují upravit výchozí chování a přidat vlastní rozšířen
  Chování služeb a koncových bodů a kontraktů může být navrženo v kódu nebo pomocí atributů; pomocí konfiguračních souborů aplikace nebo webu lze nakonfigurovat pouze chování služby a koncového bodu. Vystavení chování pomocí atributů umožňuje vývojářům určit chování při kompilaci, které nelze přidat, odebrat nebo upravit za běhu. To je často vhodné pro chování, která jsou vždy vyžadována pro správnou operaci služby (například parametry vztahující se k <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> transakcím atributu). Vystavení chování pomocí konfigurace umožňuje vývojářům ponechat specifikaci a konfiguraci těchto chování pro ty, kteří nasazují službu. To je vhodné pro chování, které jsou volitelné součásti nebo jiná konfigurace specifická pro nasazení, jako je třeba to, jestli jsou metadata pro službu nebo konkrétní konfiguraci autorizace pro službu vystavená.  
   
 > [!NOTE]
-> Můžete také použít chování, které podporuje konfiguraci k vymáhání zásad firemních aplikací, a to tak, že je vložíte do konfiguračního souboru Machine. config a tyto položky zamknete. Popis a příklad naleznete v tématu [How to: Zamčení koncových bodů v](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)podniku.  
+> Můžete také použít chování, které podporuje konfiguraci k vymáhání zásad firemních aplikací, a to tak, že je vložíte do konfiguračního souboru Machine. config a tyto položky zamknete. Popis a příklad naleznete v tématu [How to: Zamčení koncových bodů v](how-to-lock-down-endpoints-in-the-enterprise.md)podniku.  
   
  Aby bylo možné vystavit chování pomocí konfigurace, musí vývojář vytvořit odvozenou <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> třídu a pak toto rozšíření registrovat s konfigurací.  
   
