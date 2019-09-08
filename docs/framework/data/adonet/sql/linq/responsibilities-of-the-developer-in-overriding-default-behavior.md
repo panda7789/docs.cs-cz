@@ -2,30 +2,30 @@
 title: Odpovědnosti vývojáře při přepisu výchozího chování
 ms.date: 03/30/2017
 ms.assetid: c6909ddd-e053-46a8-980c-0e12a9797be1
-ms.openlocfilehash: 4d895600eeaba9c410e9af359208361e83c42c4d
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 4bfb108e81f64ea368c6bcc846553eb1af5c23b1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910603"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792737"
 ---
 # <a name="responsibilities-of-the-developer-in-overriding-default-behavior"></a>Odpovědnosti vývojáře při přepisu výchozího chování
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nevynucuje následující požadavky, ale chování není definováno, pokud nejsou splněné tyto požadavky.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nevynutil následující požadavky, ale chování není definováno, pokud tyto požadavky nejsou splněny.  
   
-- Přepsání metody nesmějí provádět volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A> nebo <xref:System.Data.Linq.Table%601.Attach%2A>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyvolá výjimku, pokud tyto metody jsou volány v to metoda override.  
+- Přetěžující metoda nesmí volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> nebo <xref:System.Data.Linq.Table%601.Attach%2A>. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]vyvolá výjimku, pokud jsou tyto metody volány v metodě přepsání.  
   
-- Přepsání metody nelze použít ke spuštění, potvrďte nebo ukončit transakci. <xref:System.Data.Linq.DataContext.SubmitChanges%2A> Operace v rámci transakce. Vnitřní vnořenou transakci může narušovat vnější transakci. Přepsání metody zatížení můžete spustit transakci, až poté, co určují, že operace neprobíhá v <xref:System.Transactions.Transaction>.  
+- Metody přepsání nelze použít ke spuštění, potvrzení nebo zastavení transakce. <xref:System.Data.Linq.DataContext.SubmitChanges%2A> Operace se provádí v rámci transakce. Vnitřní vnořená transakce může kolidovat s vnější transakcí. Metody přepsání zatížení mohou spustit transakci až poté, co určí, že operace není prováděna v <xref:System.Transactions.Transaction>.  
   
-- Přepsání metody se očekává postupujte podle příslušných optimistického řízení souběžnosti mapování. Metoda přepsání je předpokládáno vyvolání <xref:System.Data.Linq.ChangeConflictException> nastane, pokud došlo ke konfliktu optimistického řízení souběžnosti. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] tak, že můžete správně zpracovat tuto výjimku zachytí <xref:System.Data.Linq.DataContext.SubmitChanges%2A> možnost k dispozici na <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
+- Pro metody přepsání se očekává, že budou následovat příslušné mapování optimistické souběžnosti. Metoda override se očekává, že vyvolá výjimku <xref:System.Data.Linq.ChangeConflictException> , když dojde ke konfliktu optimistické souběžnosti. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]zachycuje tuto výjimku, aby bylo možné správně zpracovat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> možnost, která <xref:System.Data.Linq.DataContext.SubmitChanges%2A>je k dispozici na.  
   
-- Vytvořit (`Insert`) a `Update` přepsání metody se očekávají zpět hodnoty pro sloupce databáze vygenerovala odpovídající členů objektu po úspěšném dokončení operace.  
+- V případě`Insert`úspěšného `Update` dokončení operace se očekává, že metoda Create () a override přetéká zpátky hodnoty pro sloupce generované databáze pro odpovídající členy objektu.  
   
-     Například pokud `Order.OrderID` je mapována na sloupec identity (*autoincrement* primární klíč), pak bude `InsertOrder()` přepsání metody musí načíst ID generovaných databází a nastavte `Order.OrderID` člen tohoto ID. Obdobně členy časové razítko se musí aktualizovat na databáze vygenerovala razítku abyste měli jistotu, že aktualizované objekty jsou konzistentní vzhledem k aplikacím. Chyba šíření hodnot generovaných databází může způsobit nekonzistence mezi databází a objekty sledován pomocí funkce <xref:System.Data.Linq.DataContext>.  
+     Pokud `Order.OrderID` je například namapována na sloupec identity (*AutoIncrement* Primary Key `InsertOrder()` ), metoda override musí načíst ID vygenerované `Order.OrderID` databází a nastavit člena na toto ID. Podobně je nutné aktualizovat členy časových razítek na základě hodnot časových razítek generovaných databází, aby se zajistilo konzistence aktualizovaných objektů. Selhání šíření hodnot generovaných databází může způsobit nekonzistenci mezi databází a objekty, které jsou <xref:System.Data.Linq.DataContext>sledovány.  
   
-- Zodpovídá za uživatele k vyvolání správné dynamického rozhraní API. Například v aktualizaci přepsat metodu, jenom <xref:System.Data.Linq.DataContext.ExecuteDynamicUpdate%2A> může být volána. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zjistit nebo ověřte, zda vyvolané dynamické metody odpovídá příslušné operace. Pokud je volána metodou nepoužitelných (například <xref:System.Data.Linq.DataContext.ExecuteDynamicDelete%2A> objektu aktualizovat), nejsou výsledky definovány.  
+- Je zodpovědností uživatele vyvolat správné dynamické rozhraní API. Například v metodě přepsání aktualizace <xref:System.Data.Linq.DataContext.ExecuteDynamicUpdate%2A> lze volat pouze. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nedetekuje ani neověřuje, zda vyvolaná dynamická metoda odpovídá příslušné operaci. Pokud je volána nepoužitelnou metoda (například <xref:System.Data.Linq.DataContext.ExecuteDynamicDelete%2A> pro objekt, který má být aktualizován), nejsou výsledky definovány.  
   
-- Nakonec přepsání metody by měl provádět uvedené operace. Sémantika [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] operace, jako jsou předběžné načítání, odložené načítání, a <xref:System.Data.Linq.DataContext.SubmitChanges%2A>) vyžadují se příslušná přepsání poskytovat uvedené služby. Například zatížení přepsání, která právě bez kontroly, že obsah v databázi pravděpodobně povede k nekonzistentní data vrací prázdnou kolekci.  
+- Nakonec se očekává, že tato operace provede uvedenou operaci. Sémantika [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] operací, jako je Eager načítání, odložené načítání a <xref:System.Data.Linq.DataContext.SubmitChanges%2A>), vyžaduje přepsání k poskytnutí uvedené služby. Například přepsání zatížení, které vrací jenom prázdnou kolekci bez kontroly obsahu v databázi, může vést k nekonzistentním datům.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)
+- [Přizpůsobení operací vložení, aktualizace a odstranění](customizing-insert-update-and-delete-operations.md)

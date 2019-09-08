@@ -16,34 +16,34 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9fc5f3a3d5bc5699a596bcc648a7153190c130f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6dab5fe941fce3c23ba718906b29c80c6d257c2f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697677"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796780"
 ---
 # <a name="iassemblycache-interface"></a>IAssemblyCache – rozhraní
-Reprezentuje globální mezipaměti sestavení pro použití technologií fusion.  
+Představuje globální mezipaměť sestavení pro použití technologií Fusion.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateAssemblyCacheItem – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblycacheitem-method.md)|Získá odkaz na novou [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md).|  
-|[CreateAssemblyScavenger – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblyscavenger-method.md)|Vyhrazené pro interní použití technologie fusion.|  
-|[InstallAssembly – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-installassembly-method.md)|Nainstaluje zadané sestavení v globální mezipaměti sestavení.|  
-|[QueryAssemblyInfo – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-queryassemblyinfo-method.md)|Získá požadovaná data o zadané sestavení.|  
-|[UninstallAssembly – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-uninstallassembly-method.md)|Odinstaluje zadané sestavení z globální mezipaměti sestavení.|  
+|[CreateAssemblyCacheItem – metoda](iassemblycache-createassemblycacheitem-method.md)|Získá odkaz na nový [IAssemblyCacheItem](iassemblycacheitem-interface.md).|  
+|[CreateAssemblyScavenger – metoda](iassemblycache-createassemblyscavenger-method.md)|Vyhrazeno pro interní použití technologií Fusion.|  
+|[InstallAssembly – metoda](iassemblycache-installassembly-method.md)|Nainstaluje zadané sestavení do globální mezipaměti sestavení (GAC).|  
+|[QueryAssemblyInfo – metoda](iassemblycache-queryassemblyinfo-method.md)|Načte požadovaná data o zadaném sestavení.|  
+|[UninstallAssembly – metoda](iassemblycache-uninstallassembly-method.md)|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
-- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)
+- [Globální mezipaměť sestavení](../../app-domains/gac.md)

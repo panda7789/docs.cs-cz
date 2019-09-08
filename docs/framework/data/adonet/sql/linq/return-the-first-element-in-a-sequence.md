@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ccdc3777-b2c2-44e3-a627-abef8d79a555
-ms.openlocfilehash: 39cf9270b08fce64590fef418bb428c5a781b0e9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9faeed754942d7b176872484ac776c1df592bbd8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963810"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792719"
 ---
 # <a name="return-the-first-element-in-a-sequence"></a>Vrácení prvního prvku v posloupnosti
 <xref:System.Linq.Enumerable.First%2A> Použijte operátor k vrácení prvního prvku v sekvenci. Dotazy, které <xref:System.Linq.Enumerable.First%2A> používají, se spustí okamžitě.  
@@ -38,5 +38,5 @@ ms.locfileid: "69963810"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Příklady dotazů](query-examples.md)
+- [Stažení ukázkových databází](downloading-sample-databases.md)

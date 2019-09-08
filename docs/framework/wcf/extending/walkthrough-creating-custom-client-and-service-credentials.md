@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-ms.openlocfilehash: e59d578407ece9f22925abff57737cca8bf78eac
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: d49df909521b3b5e5cf509c1367821856e91e30b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374463"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795480"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Návod: Vytvoření vlastního klienta a pověření služby
 
@@ -42,11 +42,11 @@ Toto téma popisuje, jak implementovat vlastní pověření klienta a služby a 
 
 Vytvoření vlastní třídy přihlašovacích údajů je jenom první krok, protože důvodem pro přizpůsobení přihlašovacích údajů je změna chování WCF týkající se zřizování přihlašovacích údajů, serializace tokenu zabezpečení nebo ověřování. Další témata v této části popisují, jak vytvořit vlastní serializace a ověřovatele. V tomto ohledu je vytvoření vlastní třídy přihlašovacích údajů prvním tématem v řadě. Následné akce (vytváření vlastních serializátorů a ověřovatelů) se dají provádět až po vytvoření vlastních přihlašovacích údajů. Mezi další témata, která se vytvářejí v tomto tématu, patří:
 
-- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
+- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](how-to-create-a-custom-security-token-provider.md)
 
-- [Postupy: Vytvořit vlastní ověřovací data tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
+- [Postupy: Vytvořit vlastní ověřovací data tokenu zabezpečení](how-to-create-a-custom-security-token-authenticator.md)
 
-- [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+- [Postupy: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)
 
 ## <a name="procedures"></a>Procedury
 
@@ -70,11 +70,11 @@ Vytvoření vlastní třídy přihlašovacích údajů je jenom první krok, pro
 
 1. Definujte novou třídu odvozenou z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.
 
-2. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenProvider> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Další informace o vlastních poskytovatelích tokenů zabezpečení naleznete [v tématu How to: Vytvořte vlastního poskytovatele](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)tokenů zabezpečení.
+2. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenProvider> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Další informace o vlastních poskytovatelích tokenů zabezpečení naleznete [v tématu How to: Vytvořte vlastního poskytovatele](how-to-create-a-custom-security-token-provider.md)tokenů zabezpečení.
 
-3. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> Další informace o vlastních ověřovacích tokenech tokenu zabezpečení [najdete v tématu How to: Vytvořte vlastní ověřovací data](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)tokenu zabezpečení.
+3. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> Další informace o vlastních ověřovacích tokenech tokenu zabezpečení [najdete v tématu How to: Vytvořte vlastní ověřovací data](how-to-create-a-custom-security-token-authenticator.md)tokenu zabezpečení.
 
-4. Volitelný parametr. Přepsat metodu, pokud je nutné <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> vytvořit vlastní. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> Další informace o vlastních tokenech zabezpečení a vlastních serializátorech tokenů zabezpečení naleznete [v tématu How to: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+4. Volitelný parametr. Přepsat metodu, pokud je nutné <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> vytvořit vlastní. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%2A> Další informace o vlastních tokenech zabezpečení a vlastních serializátorech tokenů zabezpečení naleznete [v tématu How to: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)
 
     [!code-csharp[c_CustomCredentials#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#2)]
     [!code-vb[c_CustomCredentials#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/client/client.vb#2)]
@@ -158,11 +158,11 @@ Jakmile máte třídu obslužné rutiny konfigurace, lze ji integrovat do konfig
 
 1. Definujte novou třídu odvozenou z <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> třídy.
 
-2. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenProvider> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> Další informace o vlastních poskytovatelích tokenů zabezpečení naleznete [v tématu How to: Vytvořte vlastního poskytovatele](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)tokenů zabezpečení.
+2. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenProvider> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> Další informace o vlastních poskytovatelích tokenů zabezpečení naleznete [v tématu How to: Vytvořte vlastního poskytovatele](how-to-create-a-custom-security-token-provider.md)tokenů zabezpečení.
 
-3. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> Další informace o vlastních ověřovacích tokenech tokenu zabezpečení [najdete v tématu How to: Vytvořte vlastní téma ověřovatele](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md) bezpečnostního tokenu.
+3. Volitelný parametr. Přepsat metodu, pokud je třeba <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> vytvořit vlastní implementaci. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> Další informace o vlastních ověřovacích tokenech tokenu zabezpečení [najdete v tématu How to: Vytvořte vlastní téma ověřovatele](how-to-create-a-custom-security-token-authenticator.md) bezpečnostního tokenu.
 
-4. Volitelný parametr. Přepsat metodu, pokud je nutné <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> vytvořit vlastní. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> Další informace o vlastních tokenech zabezpečení a vlastních serializátorech tokenů zabezpečení naleznete [v tématu How to: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+4. Volitelný parametr. Přepsat metodu, pokud je nutné <xref:System.IdentityModel.Selectors.SecurityTokenSerializer> vytvořit vlastní. <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer%28System.IdentityModel.Selectors.SecurityTokenVersion%29> Další informace o vlastních tokenech zabezpečení a vlastních serializátorech tokenů zabezpečení naleznete [v tématu How to: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)
 
     [!code-csharp[c_CustomCredentials#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customcredentials/cs/source.cs#5)]
     [!code-vb[c_CustomCredentials#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customcredentials/vb/service/service.vb#5)]
@@ -188,6 +188,6 @@ Přidání podpory pro konfiguraci pomocí kroků popsaných dříve v postupech
 - <xref:System.IdentityModel.Selectors.SecurityTokenManager>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement>
-- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
-- [Postupy: Vytvořit vlastní ověřovací data tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
-- [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](how-to-create-a-custom-security-token-provider.md)
+- [Postupy: Vytvořit vlastní ověřovací data tokenu zabezpečení](how-to-create-a-custom-security-token-authenticator.md)
+- [Postupy: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)

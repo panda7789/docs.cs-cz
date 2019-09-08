@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: f6677e894e09b41e1f406d6b6485abf4168b5d6e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5aaf33e5e2379ace4d32c59bd842889d0f9e32da
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946262"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794536"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
 Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřené ve specializovaném dotazovacím jazyce, jako je SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazuje. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] V dotazu vždy pracujete s programováním objektů.  
@@ -61,7 +61,7 @@ Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjád
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
-- [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)
+- [Průvodce programováním](programming-guide-linq-to-dataset.md)
+- [Dotazy na datové sady](querying-datasets-linq-to-dataset.md)
 - [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Začínáme pomocí LINQ v Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

@@ -10,15 +10,15 @@ api_type:
 ms.assetid: 2d92a746-d68c-4f53-a16e-727f071a2d80
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e2459b4f91e7e189990b65fa4d7ca860ff73c51
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b4d720480e4c8b21b3aa56ce81634a26ac9c75de
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741325"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776682"
 ---
-# <a name="axlpublickeyblobtopublickeytoken-function"></a>\_AxlPublicKeyBlobToPublicKeyToken – funkce
-Vypočítá silným názvem token veřejného klíče z CSP publickeyblob – formátu.  
+# <a name="_axlpublickeyblobtopublickeytoken-function"></a>\_AxlPublicKeyBlobToPublicKeyToken – funkce
+Vypočítá token veřejného klíče se silným názvem z formátu PublicKeyBlob – CSP.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,14 +31,14 @@ HRESULT _AxlPublicKeyBlobToPublicKeyToken (
   
 ## <a name="parameters"></a>Parametry  
  `pCspPublicKeyBlob`  
- [in] Zprostředkovatel kryptografických služeb blob veřejného klíče.  
+ pro Objekt blob veřejného klíče CSP  
   
  `ppwszPublicKeyHash`  
- [out] Ukazatel na WCHAR * pro příjem hexadecimální zakódovaná hodnota hash veřejného klíče.  
+ mimo Ukazatel na WCHAR * pro příjem šestnáctkově zakódované hodnoty hash veřejného klíče.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud je funkce úspěšná; v opačném případě `S_FALSE`.  
+ `S_OK`Pokud je funkce úspěšná; v `S_FALSE`opačném případě.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+- [Authenticode](index.md)

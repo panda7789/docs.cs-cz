@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
-ms.openlocfilehash: e0840adba62e10640ef16908db6b57519191f7f7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c21a187739ba19be2dc8e89b4dddc94ad799f036
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946780"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792119"
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Návod: Jednoduchý objektový model a dotaz (Visual Basic)
 
@@ -25,7 +25,7 @@ Tento návod byl napsán pomocí Visual Basic nastavení vývoje.
 
 - Tento návod používá pro uchovávání souborů vyhrazenou složku (c:\linqtest). Před zahájením tohoto návodu vytvořte tuto složku.
 
-- Tento návod vyžaduje ukázkovou databázi Northwind. Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze zkopírujte soubor do složky c:\linqtest.
+- Tento návod vyžaduje ukázkovou databázi Northwind. Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu služby Stažení softwaru společnosti Microsoft. Pokyny najdete v tématu [stažení ukázkových databází](downloading-sample-databases.md). Po stažení databáze zkopírujte soubor do složky c:\linqtest.
 
 ## <a name="overview"></a>Přehled
 
@@ -144,7 +144,7 @@ V tomto kroku ve skutečnosti spustíte dotaz. Výrazy dotazu, které jste vytvo
 2. Pro ladění aplikace stiskněte klávesu F5.
 
     > [!NOTE]
-    > Pokud vaše aplikace vygeneruje chybu za běhu, přečtěte si pokyny v části věnované řešení potíží v tématu [učení](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
+    > Pokud vaše aplikace vygeneruje chybu za běhu, přečtěte si pokyny v části věnované řešení potíží v tématu [učení](learning-by-walkthroughs.md).
 
      V okně se zprávou se zobrazí seznam šesti zákazníků. V okně konzoly se zobrazí vygenerovaný kód SQL.
 
@@ -158,10 +158,10 @@ V tomto kroku ve skutečnosti spustíte dotaz. Výrazy dotazu, které jste vytvo
 
 ## <a name="next-steps"></a>Další kroky
 
-[Návod: Dotazování napříč relacemi (Visual Basic](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md) ) pokračuje v tom, kde tento návod skončí. Návod pro dotazování napříč relacemi ukazuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , jak se může dotazovat napříč tabulkami, podobně jako *spojení* v relační databázi.
+[Návod: Dotazování napříč relacemi (Visual Basic](walkthrough-querying-across-relationships-visual-basic.md) ) pokračuje v tom, kde tento návod skončí. Návod pro dotazování napříč relacemi ukazuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , jak se může dotazovat napříč tabulkami, podobně jako *spojení* v relační databázi.
 
 Pokud chcete provést dotazování napříč relacemi, nezapomeňte uložit řešení pro návod, který jste právě dokončili, což je předpoklad.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Učení podle návodů](learning-by-walkthroughs.md)

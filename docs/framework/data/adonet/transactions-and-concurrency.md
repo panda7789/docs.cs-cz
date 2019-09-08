@@ -2,12 +2,12 @@
 title: Transakce a souběžnost
 ms.date: 03/30/2017
 ms.assetid: f46570de-9e50-4fe6-8710-a8c31fa8569b
-ms.openlocfilehash: c78031150d9b1209372dece49813dfcf0a03b9d5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 837fe6c42d64f7416dbd895e56a38d1a409e567a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965215"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791315"
 ---
 # <a name="transactions-and-concurrency"></a>Transakce a souběžnost
 Transakce se skládá z jednoho příkazu nebo skupiny příkazů, které se spouštějí jako balíček. Transakce umožňují zkombinovat více operací do jedné pracovní jednotky. Pokud dojde k selhání v jednom bodě transakce, všechny aktualizace mohou být vráceny zpět do jejich stavu před transakcí.  
@@ -22,23 +22,23 @@ Transakce se skládá z jednoho příkazu nebo skupiny příkazů, které se spo
  Transakce týkající se různých správců prostředků, jako je například transakce mezi SQL Server a Oracle, vyžadují distribuovanou transakci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Místní transakce](../../../../docs/framework/data/adonet/local-transactions.md)  
+ [Místní transakce](local-transactions.md)  
  Ukazuje, jak provádět transakce v databázi.  
   
- [Distribuované transakce](../../../../docs/framework/data/adonet/distributed-transactions.md)  
+ [Distribuované transakce](distributed-transactions.md)  
  Popisuje, jak provádět distribuované transakce v ADO.NET.  
   
- [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
+ [Integrace System.Transactions s SQL Serverem](system-transactions-integration-with-sql-server.md)  
  Popisuje <xref:System.Transactions> integraci s SQL Server pro práci s distribuovanými transakcemi.  
   
- [Optimistická metoda souběžného zpracování](../../../../docs/framework/data/adonet/optimistic-concurrency.md)  
+ [Optimistická metoda souběžného zpracování](optimistic-concurrency.md)  
  Popisuje optimistickou a pesimistickou souběžnost a způsob testování pro souběhy souběžnosti.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Principy transakcí](../../../../docs/framework/data/transactions/transaction-fundamentals.md)
-- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Principy transakcí](../transactions/transaction-fundamentals.md)
+- [Připojení ke zdroji dat](connecting-to-a-data-source.md)
+- [Příkazy a parametry](commands-and-parameters.md)
+- [Adaptéry a čtečky dat](dataadapters-and-datareaders.md)
+- [DbProviderFactories](dbproviderfactories.md)
+- [Přehled ADO.NET](ado-net-overview.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-ms.openlocfilehash: ebf630c08714a2e5162ba072f88b7fbdef7ca0f4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 48ff4af2c881104d5699910e20ef86eea0466d2a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964049"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793858"
 ---
 # <a name="how-to-connect-to-a-database"></a>Postupy: Připojení k databázi
 <xref:System.Data.Linq.DataContext> Je hlavní přenos, ke kterému se připojujete, načítají se z něj objekty a odesílají se do něj změny zpátky. Použijete <xref:System.Data.Linq.DataContext> stejně, jako byste použili ADO.NET <xref:System.Data.SqlClient.SqlConnection>. Ve skutečnosti <xref:System.Data.Linq.DataContext> se inicializuje s připojením nebo připojovacím řetězcem, který zadáte. Další informace najdete v tématu [metod DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer).  
@@ -18,7 +18,7 @@ ms.locfileid: "69964049"
  Účelem <xref:System.Data.Linq.DataContext> je přeložit požadavky na objekty do dotazů SQL, které mají být provedeny v databázi, a následně sestavit objekty z výsledků. Umožňuje implementaci stejného vzoru operátoru jako standardní operátory `Where` dotazu, například a `Select`. <xref:System.Data.Linq.DataContext> [!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)]  
   
 > [!IMPORTANT]
-> Udržování zabezpečeného připojení má nejvyšší důležitost. Další informace najdete v tématu [zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+> Udržování zabezpečeného připojení má nejvyšší důležitost. Další informace najdete v tématu [zabezpečení v LINQ to SQL](security-in-linq-to-sql.md).  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu <xref:System.Data.Linq.DataContext> se používá pro připojení k ukázkové databázi Northwind a k načtení řádků zákazníků, jejichž město je Londýn.  
@@ -41,4 +41,4 @@ ms.locfileid: "69964049"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Komunikace s databází](../../../../../../docs/framework/data/adonet/sql/linq/communicating-with-the-database.md)
+- [Komunikace s databází](communicating-with-the-database.md)

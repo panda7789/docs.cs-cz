@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 725718f5-da29-4841-9f53-aafef64ba977
-ms.openlocfilehash: 599ad6f722251003ab56547ce050cbd0e8da831d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ec188e0345140297062d0a10dfbbc4a294bbb7d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903978"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781605"
 ---
 # <a name="how-to-return-rowsets"></a>Postupy: Vrácení sad řádků
-V tomto příkladu vrátí sadu řádků z databáze a zahrnuje vstupní parametr a filtrovat výsledky.  
+Tento příklad vrátí sadu řádků z databáze a obsahuje vstupní parametr pro filtrování výsledku.  
   
- Při spouštění uložené procedury, která vrací sadu řádků, je použít *výsledek* třída, která obsahuje tato vrátí hodnotu z úložné procedury. Další informace najdete v tématu [analýza LINQ to SQL zdrojový kód](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).  
+ Když spustíte uloženou proceduru, která vrací sadu řádků, použijete *výslednou* třídu, která ukládá návraty z uložené procedury. Další informace najdete v tématu [analýza zdrojového kódu LINQ to SQL](analyzing-linq-to-sql-source-code.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků a vrátit pouze řádky tohoto seznamu "Londýn" jako název města zákazníka pomocí vstupního parametru. Příklad předpokládá Výčtový objekt `CustomersByCityResult` třídy.  
+ Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků, a používá vstupní parametr, který vrátí pouze řádky, které uvádějí "Londýn" jako město zákazníka. Příklad předpokládá vyčíslitelné `CustomersByCityResult` třídy.  
   
 ```  
 CREATE PROCEDURE [dbo].[Customers By City]  
@@ -38,5 +38,5 @@ END
   
 ## <a name="see-also"></a>Viz také:
 
-- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
-- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Uložené procedury](stored-procedures.md)
+- [Stažení ukázkových databází](downloading-sample-databases.md)

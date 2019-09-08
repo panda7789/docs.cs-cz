@@ -2,24 +2,24 @@
 title: FailFast
 ms.date: 03/30/2017
 ms.assetid: 4fc4e476-997b-4166-90af-8d164f775924
-ms.openlocfilehash: 701bdcb9bb1d4523d69f55c5bba28475d26f86e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5ddebedd7f3467c34c73beb801807ba1feb398f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969621"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797862"
 ---
 # <a name="failfast"></a>FailFast
-Id: 102  
+Účet 102  
   
- Závažnost: Chyba  
+ Závažnost Chyba  
   
- Kategorie: Trasování  
+ Kategorií Trasování  
   
 ## <a name="description"></a>Popis  
- FailFast byla vyvolána. Událost obsahuje zprávy, trasování zásobníku, název procesu a ID procesu.  
+ Bylo vyvoláno FailFast. Událost obsahuje seznam zpráv, trasování zásobníku, název procesu a ID procesu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Protokolování událostí](index.md)
+- [Události – obecné referenční informace](events-general-reference.md)

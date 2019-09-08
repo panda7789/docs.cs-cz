@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: 40cdf3efe1ad3ec2db433f68599b87bfeb7908cf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8e57bfe23a80bf3913cd7fb8b96527870259e77a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964726"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780871"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Zadání hodnot XML jako parametry
 Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec XML, mohou vývojáři zadat tuto hodnotu pomocí instance datového typu **SQLXML** . Opravdu neexistují žádné triky; Sloupce XML v SQL Server přijímají hodnoty parametrů přesně stejným způsobem jako jiné datové typy.  
@@ -162,5 +162,5 @@ class Class1
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Data.SqlTypes.SqlXml>
-- [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Data XML na SQL Serveru](xml-data-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

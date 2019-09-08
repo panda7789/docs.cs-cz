@@ -1,43 +1,43 @@
 ---
-title: Požadavky na systém pro zprostředkovatele dat .NET Framework pro Oracle
+title: Požadavky na systém pro Zprostředkovatel dat .NET Framework pro Oracle
 ms.date: 03/30/2017
 ms.assetid: 054f76b9-1737-43f0-8160-84a00a387217
-ms.openlocfilehash: 61f8509cce248f6cc0a56900227f9758eb27c4e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 330bad6f58b1ba6b0d2fdb2baa86a04374946e80
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698405"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780575"
 ---
-# <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Požadavky na systém pro zprostředkovatele dat .NET Framework pro Oracle
-Zprostředkovatel dat .NET Framework pro Oracle vyžaduje Microsoft Data Access Components (MDAC) verze 2.6 nebo novější. Doporučuje se MDAC 2.8 SP1.  
+# <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Požadavky na systém pro Zprostředkovatel dat .NET Framework pro Oracle
+Zprostředkovatel dat .NET Framework pro Oracle vyžaduje součásti MDAC (Microsoft Data Access Components) verze 2,6 nebo novější. Je doporučeno rozhraní MDAC 2,8 SP1.  
   
- Musíte také mít klienta Oracle 8i verze 3 (8.1.7) nebo novější.  
+ Je také nutné mít nainstalovaného klienta Oracle 8i Release 3 (8.1.7) nebo novější.  
   
- Klientský software Oracle před verzí Oracle 9i nemá přístup k UTF16 databáze, protože UTF16 je nová funkce v Oracle 9i. Chcete-li tuto funkci používat, je nutné upgradovat software klienta Oracle 9i nebo novější.  
+ Klientský software Oracle před verzí Oracle 9i nemá přístup k databázím UTF16, protože UTF16 je nová funkce v Oracle 9i. Chcete-li tuto funkci používat, je nutné upgradovat klientský software na Oracle 9i nebo novější.  
   
-## <a name="working-with-the-data-provider-for-oracle-and-unicode-data"></a>Práce s Data Provider pro Oracle a Data v kódování Unicode  
- Tady je seznam problémů souvisejících s kódováním Unicode, byste měli zvážit při práci s zprostředkovatele dat .NET Framework pro Oracle nebo Oracle klientské knihovny. Další informace najdete v dokumentaci Oracle.  
+## <a name="working-with-the-data-provider-for-oracle-and-unicode-data"></a>Práce s Zprostředkovatel dat pro data Oracle a Unicode  
+ Následující seznam uvádí problémy týkající se sady Unicode, které byste měli zvážit při práci s .NET Framework Zprostředkovatel dat pro klientské knihovny Oracle a Oracle. Další informace najdete v dokumentaci k Oracle.  
   
-### <a name="setting-the-unicode-value-in-a-connection-string-attribute"></a>Nastavením této hodnoty kódování Unicode v atribut připojovacího řetězce  
- Při práci s databázemi Oracle, můžete použít atribut připojovacího řetězce  
+### <a name="setting-the-unicode-value-in-a-connection-string-attribute"></a>Nastavení hodnoty Unicode v atributu připojovacího řetězce  
+ Při práci s Oracle můžete použít atribut připojovací řetězec.  
   
 ```  
 Unicode=True   
 ```  
   
- Inicializace knihoven klienta Oracle v režimu UTF-16. To způsobí, že klienta Oracle knihovny tak, aby přijímal UTF-16 (což je velmi podobný UCS-2) namísto vícebajtové řetězce. To umožňuje Data Provider pro Oracle vždy pracovat jakákoli Oracle znaková stránka bez překladu další práce. Tato konfigurace funguje jenom v případě Oracle 9i klienti používají ke komunikaci s databází Oracle 9i s alternativní znakovou sadu AL16UTF16. Pokud klienta Oracle 9i komunikuje se serverem 9i Oracle, další prostředky, je potřeba převést Unicode **CommandText** hodnoty pro příslušnou vícebajtovou znakovou sadu, která Oracle9i server používá. Toho se lze vyvarovat, když víte, že máte bezpečné konfiguraci tak, že přidáte `Unicode=True` připojovací řetězec.  
+ pro inicializaci klientských knihoven Oracle v režimu UTF-16. To způsobí, že klientské knihovny Oracle přijmou UTF-16 (což je velmi podobné UCS-2) místo vícebajtových řetězců. To umožňuje Zprostředkovatel dat pro Oracle vždycky pracovat s jakoukoli znakovou stránkou Oracle bez nutnosti dalšího překladu. Tato konfigurace funguje jenom v případě, že používáte klienty Oracle 9i ke komunikaci s databází Oracle 9i s použitím alternativní znakové sady AL16UTF16. Když klient Oracle 9i komunikuje se serverem Oracle 9i, pro převod hodnot **CommandText** v kódování Unicode na příslušnou vícebajtovou znakovou sadu, kterou používá server Oracle9i, se vyžaduje další prostředky. K tomu může dojít, když víte, že máte bezpečnou konfiguraci přidáním `Unicode=True` do připojovacího řetězce.  
   
-### <a name="mixing-versions-of-oracle-client-and-oracle-server"></a>Kombinace verzí klienta Oracle nebo Oracle Server  
- Oracle 8i klienti nemají přístup k **NCHAR**, **NVARCHAR2**, nebo **NCLOB** data v databázích Oracle 9i, když na server národní znaková sada je zadán jako AL16UTF16 () Výchozí nastavení pro Oracle 9i). Protože Podpora znakové sady UTF-16 se zavedl až do Oracle Oracle nepřečtete klienti 8i, 9i.  
+### <a name="mixing-versions-of-oracle-client-and-oracle-server"></a>Kombinování verzí klientů Oracle a Oracle serveru  
+ Klienti Oracle 8i nemají přístup k datům **nchar**, **NVARCHAR2**nebo **NCLOB** v databázích Oracle 9i, pokud je jako národní znaková sada serveru zadána jako AL16UTF16 (výchozí nastavení pro Oracle 9i). Vzhledem k tomu, že podpora znakové sady UTF-16 nebyla zavedena do Oracle 9i, klienti Oracle 8i je nemohou přečíst.  
   
 ### <a name="working-with-utf-8-data"></a>Práce s daty UTF-8  
- Pokud chcete nastavit alternativní znaková sada, nastavte HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\HOMEID\NLS_LANG klíč registru na UTF8. Na vaší platformě pro další informace najdete v poznámkách k instalaci Oracle. Ve výchozím nastavení je primární znakové sady jazyka, ze kterého instalujete software klienta Oracle. Nastavit jazyk tak, aby odpovídaly národních jazyků znakovou sadu databáze, ke kterému se připojujete způsobí, že parametr a ve sloupci vazby na odeslání nebo příjem dat v primární databázi znaková sada, není nastaveno národní znak.  
+ Chcete-li nastavit alternativní znakovou sadu, nastavte klíč registru HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\HOMEID\NLS_LANG na UTF8. Další informace najdete v poznámkách k instalaci Oracle na vaší platformě. Výchozím nastavením je primární znaková sada pro jazyk, ze kterého instalujete klientský software Oracle. Pokud nenastavíte jazyk tak, aby odpovídal národní jazykové znakové sadě databáze, ke které se připojujete, způsobí, že vazby parametrů a sloupců odesílají nebo přijímají data ve znakové sadě primární databáze, nikoli v národní znakové sadě.  
   
-### <a name="oraclelob-can-only-update-full-characters"></a>OracleLob může aktualizovat pouze úplné znaků.  
- Z důvodů použitelnosti <xref:System.Data.OracleClient.OracleLob> objekt dědí z třídy rozhraní .NET Framework Stream a poskytuje **ReadByte** a **Metoda WriteByte** metody. Také implementuje metody, jako například **CopyTo** a **vymazat**, který pracovat na oddíly Oracle **LOB** objekty. Naproti tomu klientský software Oracle poskytuje několik rozhraní API pro práci s znak **LOB**s (**datový typ CLOB** a **NCLOB**). Tato rozhraní API by ale fungovat pouze úplné znaků. Vzhledem k tomuto rozdílu Data Provider pro Oracle implementuje podporu pro **čtení** a **ReadByte** pro práci s daty UTF-16 byte-wise způsobem. Ale jiné metody **OracleLob** objektu povolit pouze znak celé operace.  
+### <a name="oraclelob-can-only-update-full-characters"></a>Vlastnost OracleLob může aktualizovat jenom celé znaky.  
+ Z důvodu <xref:System.Data.OracleClient.OracleLob> použitelnosti objekt dědí z třídy Stream .NET Framework a poskytuje metody **ReadByte** a **Metoda WriteByte** . Implementuje také metody, jako je například **CopyTo** a **Erase**, které fungují v sekcích objektů **společnosti** Oracle. Naproti tomu klientský software Oracle poskytuje řadu rozhraní API pro práci se znakem **LOB**s (**datový typ CLOB** a **NCLOB**). Tato rozhraní API však fungují pouze na všech znacích. Z důvodu tohoto rozdílu používá Zprostředkovatel dat pro Oracle podporu pro **čtení** a **ReadByte** pro práci s daty UTF-16 v bajtovém formátu. Jiné metody objektu **vlastnost OracleLob** však umožňují pouze operace s úplnými znaky.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oracle a ADO.NET](oracle-and-adonet.md)
+- [Přehled ADO.NET](ado-net-overview.md)

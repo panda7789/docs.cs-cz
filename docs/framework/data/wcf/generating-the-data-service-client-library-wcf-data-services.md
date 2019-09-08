@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: 14ea550715c1b224945137f123eed3b53e56cead
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d53f2d209d6fb0a6f3cadb96245338060ece87db
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918640"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780288"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generování klientské knihovny datové služby (WCF Data Services)
 Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] , může vracet dokument metadat služby, který popisuje datový model vystavený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem. Další informace najdete v tématu [OData: Dokument](https://go.microsoft.com/fwlink/?LinkId=186070)metadat služby Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]službu založenou na službě. Při použití tohoto nástroje k přidání odkazu na metadata vrácená [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem v klientském projektu provede následující akce:  
@@ -27,9 +27,9 @@ Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../.
   
 - Přidá do projektu odkaz na `System.Data.Services.Client` sestavení.  
   
- Další informace najdete v tématu [jak: Přidejte odkaz](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu.  
+ Další informace najdete v tématu [jak: Přidejte odkaz](how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu.  
   
- Třídy klientské datové služby je také možné vygenerovat pomocí nástroje [DataSvcUtil. exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) v příkazovém řádku. Další informace najdete v tématu [jak: Ručně vygenerujte třídy](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)datové služby klienta.  
+ Třídy klientské datové služby je také možné vygenerovat pomocí nástroje [DataSvcUtil. exe](wcf-data-service-client-utility-datasvcutil-exe.md) v příkazovém řádku. Další informace najdete v tématu [jak: Ručně vygenerujte třídy](how-to-manually-generate-client-data-service-classes-wcf-data-services.md)datové služby klienta.  
   
 ## <a name="client-data-type-mapping"></a>Mapování datových typů klienta  
  Při použití dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio nebo `DataSvcUtil.exe` v nástroji ke generování datových tříd klienta, které [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou založeny na informačním kanálu, jsou .NET Framework datové typy mapovány na primitivní typy z datového modelu následujícím způsobem:  
@@ -54,5 +54,5 @@ Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
-- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
+- [Rychlý start](quickstart-wcf-data-services.md)

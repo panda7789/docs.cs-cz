@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f3c3142ca12789b086bcd8b5a9c00c943264ae7b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b3a0e42e9ffb99896bdd09dbbab65eafb40cafff
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741853"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777205"
 ---
 # <a name="getscope-method"></a>GetScope – metoda
-Získá obor importu.  
+Načte obor importu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT GetScope(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Jedinečné ID sestavení, které chcete importovat.  
+ Jedinečné ID sestavení, do kterého se má importovat  
   
  `FileToken`  
- Jedinečné ID souboru pro import z.  
+ Jedinečné ID souboru, ze kterého se má importovat  
   
  `dwScope`  
- Založený na nule oboru k importu.  
+ Rozsah založený na nule pro import.  
   
  `ppImportScope`  
- Přijímá [imetadataimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní pro obor.  
+ Přijímá rozhraní [rozhraní IMetaDataImport](../metadata/imetadataimport-interface.md) pro daný obor.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

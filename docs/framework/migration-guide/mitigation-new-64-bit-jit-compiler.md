@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6df750872e90572b00cdf427461b4a9782c47d63
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 07f9ae01fae5e4badbc13670ee56a2f05e303c0c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968524"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779348"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Zmírnění Nový 64 kompilátor JIT
 Počínaje .NET Framework 4,6 obsahuje modul runtime nový 64 kompilátor JIT pro kompilaci za běhu. Tato změna nemá vliv na kompilaci s 32 kompilátorem JIT.  
@@ -52,7 +52,7 @@ Počínaje .NET Framework 4,6 obsahuje modul runtime nový 64 kompilátor JIT pr
 ## <a name="mitigation-of-other-issues"></a>Zmírnění jiných problémů  
  Pokud narazíte na jiné rozdíly v chování mezi kódem kompilovaným se starším 64 kompilátorem a novým 64 kompilátorem JIT, nebo mezi verzemi ladění a vydání vaší aplikace, které jsou zkompilovány pomocí nového 64-bitového kompilátoru JIT, můžete provést následující akce: pro zkompilování aplikace se starším 64 kompilátorem JIT:  
   
-- Na základě jednotlivých aplikací můžete přidat [ \<prvek useLegacyJit >](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) do konfiguračního souboru aplikace. Následující zakáže kompilaci s novým 64 kompilátorem JIT a místo toho používá starší 64 kompilátor JIT.  
+- Na základě jednotlivých aplikací můžete přidat [ \<prvek useLegacyJit >](../configure-apps/file-schema/runtime/uselegacyjit-element.md) do konfiguračního souboru aplikace. Následující zakáže kompilaci s novým 64 kompilátorem JIT a místo toho používá starší 64 kompilátor JIT.  
   
     ```xml  
     <?xml version ="1.0"?>  
@@ -71,5 +71,5 @@ Počínaje .NET Framework 4,6 obsahuje modul runtime nový 64 kompilátor JIT pr
   
 ## <a name="see-also"></a>Viz také:
 
-- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
-- [\<useLegacyJit> Element](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)
+- [Změny v modulu runtime](runtime-changes-in-the-net-framework-4-6.md)
+- [\<useLegacyJit> Element](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

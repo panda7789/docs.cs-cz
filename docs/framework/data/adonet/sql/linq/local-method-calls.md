@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c34b5012-aee9-4994-9364-1d99d12b7463
-ms.openlocfilehash: c8a4c29b1faa3c05f2cf32e9a60104b43a9b1c40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec288d5ac2f6466860362be82c619c89204e8f31
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033511"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781416"
 ---
 # <a name="local-method-calls"></a>Volání místních metod
-Volání místních metod je ten, který se spouští v objektovém modelu. Volání vzdálené metody je jeden, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se přeloží na SQL a odesílá do databázového stroje pro spuštění. Volání místních metod jsou potřeba při [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nemůže překládat volání do SQL. V opačném případě <xref:System.InvalidOperationException> je vyvolána výjimka.  
+Volání místní metody je jeden, který je spuštěn v rámci objektového modelu. Vzdálené volání metody je jeden, který [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se překládá na SQL a odesílá databázovému stroji ke spuštění. Volání místní metody jsou nutná, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Pokud nelze přeložit volání do jazyka SQL. V opačném případě je vyvolána výjimka. <xref:System.InvalidOperationException>  
   
 ## <a name="example-1"></a>Příklad 1  
- V následujícím příkladu `Order` třídy je namapována na tabulce objednávky v ukázkové databázi Northwind. Metoda místní instance byla přidána do třídy.  
+ V následujícím příkladu `Order` je třída namapována na tabulku Orders v ukázkové databázi Northwind. Do třídy byla přidána metoda místní instance.  
   
- V konstruktoru pro dotaz 1 `Order` třídy je spuštěn lokálně. V dotazu 2, pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pokusila přeložit `LocalInstanceMethod()`do databáze SQL, je tento pokus selže a <xref:System.InvalidOperationException> bude vyvolána výjimka. Ale protože [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje podporu pro volání místních metod, nebude dotaz2 vyvolat výjimku.  
+ V dotazu 1 je konstruktor `Order` třídy spouštěn místně. Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se při pokusu o překlad do `LocalInstanceMethod()`kódu SQL pokusil <xref:System.InvalidOperationException> o převod na SQL, pokus selže a vyvolá se výjimka. Ale vzhledem [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] k tomu, že poskytuje podporu pro volání místních metod, query2 nevyvolá výjimku.  
   
  [!code-csharp[DlinqLocalMethodCall#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqLocalMethodCall/cs/Program.cs#1)]
  [!code-vb[DlinqLocalMethodCall#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqLocalMethodCall/vb/Module1.vb#1)]  
@@ -28,4 +28,4 @@ Volání místních metod je ten, který se spouští v objektovém modelu. Vol�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Základní informace](background-information.md)

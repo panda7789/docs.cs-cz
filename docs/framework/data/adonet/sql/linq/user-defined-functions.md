@@ -2,32 +2,32 @@
 title: Uživatelem definované funkce
 ms.date: 03/30/2017
 ms.assetid: 3304c9b2-5c7a-4a95-9d45-4f260dcb606e
-ms.openlocfilehash: 54faca27e3f70283144f902e531e2a08e45bae3b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40697da4fe678668f8f7ecda86abebf40da7b973
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742709"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792301"
 ---
 # <a name="user-defined-functions"></a>Uživatelem definované funkce
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] metody v objektovém modelu používá k reprezentaci uživatelem definované funkce. Označení metod jako funkce použitím <xref:System.Data.Linq.Mapping.FunctionAttribute> atribut a v případě potřeby <xref:System.Data.Linq.Mapping.ParameterAttribute> atribut. Další informace najdete v tématu [The LINQ to SQL objektový Model](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md).  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]používá metody v objektovém modelu k reprezentaci uživatelsky definovaných funkcí. Metody můžete určit jako funkce <xref:System.Data.Linq.Mapping.FunctionAttribute> použitím atributu a v případě potřeby <xref:System.Data.Linq.Mapping.ParameterAttribute> atributem. Další informace najdete v tématu [model objektu LINQ to SQL](the-linq-to-sql-object-model.md).  
   
- Aby se zabránilo <xref:System.InvalidOperationException>, uživatelem definované funkce v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] musí být v jednom z následujících forem:  
+ Aby se zabránilo tomu <xref:System.InvalidOperationException>, uživatelsky definované funkce v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nástroji musí být v jednom z následujících forem:  
   
-- Zabalená funkce jako volání metody s atributy správné mapování. Další informace najdete v tématu [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+- Funkce zabalená jako volání metody se správnými atributy mapování. Další informace najdete v tématu [mapování na základě atributů](attribute-based-mapping.md).  
   
-- Specifické pro statickou metodu SQL [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+- Statická metoda SQL specifická pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
-- Funkce nepodporuje metodu rozhraní .NET Framework.  
+- Funkce podporovaná metodou .NET Framework.  
   
- Témata v této části ukazují, jak formulář a volat tyto metody ve své aplikaci psát kód sami. Vývojářům používajícím Visual Studio by obvykle pomocí Návrháře relací objektů mapovat uživatelem definované funkce.  
+ Témata v této části ukazují, jak vytvořit a volat tyto metody v aplikaci, pokud píšete kód sami. Vývojáři, kteří používají Visual Studio, by obvykle používali Návrhář relací objektů k mapování uživatelsky definovaných funkcí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Použití funkce vracející skalární uživatelem definované](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-scalar-valued-user-defined-functions.md)  
- Popisuje, jak implementovat funkci vracející skalární hodnoty.  
+ [Postupy: Použití uživatelem definovaných funkcí s skalární hodnotou](how-to-use-scalar-valued-user-defined-functions.md)  
+ Popisuje, jak implementovat funkci, která vrací skalární hodnoty.  
   
- [Postupy: Použití Table-Valued uživatelsky definovaných funkcí](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-table-valued-user-defined-functions.md)  
- Popisuje, jak implementovat funkci vracející tabulku hodnot.  
+ [Postupy: Použití uživatelsky definovaných funkcí s hodnotou tabulky](how-to-use-table-valued-user-defined-functions.md)  
+ Popisuje, jak implementovat funkci, která vrací hodnoty tabulky.  
   
- [Postupy: Volat uživatelsky definovaných funkcí](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)  
- Popisuje, jak volat vložené funkce a jaký je rozdíl v provádění po přišla vložené.
+ [Postupy: Volání uživatelsky definovaných funkcí – inline](how-to-call-user-defined-functions-inline.md)  
+ Popisuje, jak provést vložená volání funkcí a rozdíly v provádění, když je volání provedeno jako vložené.

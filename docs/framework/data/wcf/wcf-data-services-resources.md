@@ -1,64 +1,64 @@
 ---
-title: Zdroje služeb WCF Data Services
+title: Prostředky WCF Data Services
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: d3562122ab578f5f622d439c17d86cdb64a1e573
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9a354eab885de518105f9162652f2809818f63af
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875131"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790204"
 ---
-# <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] úvodní témata najdete v následujících umístěních. Mnohé z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  
+# <a name="wcf-data-services-resources"></a>Prostředky WCF Data Services
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]Úvodní témata najdete v následujících umístěních. Mnohé z těchto témat obsahují také odkazy na související témata, která obsahují podrobnější informace.  
   
- [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)  
- Poskytuje přehled funkcí a možností, které jsou k dispozici v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
+ [Přehled](wcf-data-services-overview.md)  
+ Poskytuje přehled funkcí a funkcí, které jsou k dispozici v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroji.  
   
- [Začínáme](../../../../docs/framework/data/adonet/ef/getting-started.md)  
- Popisuje, jak navrhovat a přístup ke službě data s využitím [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]vidíte [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ [Začínáme](../adonet/ef/getting-started.md)  
+ Popisuje návrh a přístup k datové službě pomocí nástroje [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], jak je znázorněno v [rychlém](quickstart-wcf-data-services.md)startu.  
   
- [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
- Poskytuje přístup založený na úlohách vytvoření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace přistupující k [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály.  
+ [Scénáře aplikací](application-scenarios-wcf-data-services.md)  
+ Poskytuje přístup založený na úlohách pro vytváření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace, které [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] přistupují k informačním kanálům.  
   
  [Slovníček k technologii .NET](../../../standard/glossary.md)  
- Zahrnuje termínů používaných v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentaci.  
+ Zahrnuje výrazy používané v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentaci.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Následující externí zdroje poskytují další informace a podpora pro vytváření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] aplikace, které vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
+ Následující externí zdroje poskytují další informace a podporu pro vytváření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] aplikací, které zveřejňují a využívají [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
   
- [Fórum služby WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=150512)  
- Podpora dat programování [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vývojáři.  
+ [Fórum WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=150512)  
+ Podpora programování dat pro [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vývojáře.  
   
- [Blog týmu služby WCF Data](https://go.microsoft.com/fwlink/?LinkId=150511)  
- Blog, která obsahuje aktualizace a diskuzi o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vlastností a funkcí.  
+ [Blog týmu WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=150511)  
+ Blog, který obsahuje aktualizace a diskuzi o [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] funkcích a funkcích.  
   
- [OData webové stránky](https://go.microsoft.com/fwlink/?LinkID=184554)  
+ [Web OData](https://go.microsoft.com/fwlink/?LinkID=184554)  
  Primární zdroj informací o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].  
   
  [OData SDK](https://go.microsoft.com/fwlink/?LinkID=185248)  
- Obsahuje ukázky služby, ukázky a programovací knihovny, které umožňují pracovat s [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
+ Obsahuje ukázkové služby, ukázky a programovací knihovny, které vám umožní pracovat s [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačními kanály.  
   
- [OData Blog](https://go.microsoft.com/fwlink/?LinkId=185868)  
- Blog, který obsahuje diskuse o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] programování.  
+ [Blog OData](https://go.microsoft.com/fwlink/?LinkId=185868)  
+ Blog, který obsahuje diskuze o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] programování.  
   
- [Středisko pro vývojáře úložiště a přístup k datům](https://go.microsoft.com/fwlink/?LinkId=91903)  
- Centrální umístění pro hledání informací a materiály pro práci s daty.  
+ [Přístup k datům a centrum pro vývojáře úložiště](https://go.microsoft.com/fwlink/?LinkId=91903)  
+ Centrální umístění pro hledání informací a prostředků pro práci s daty  
   
- [Datová platforma jak na to? Videa: Řada služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=124600)  
- Obsahuje sadu obrazovka přetypování, které ukazují, jak sestavit a přístup k datové služby.  
+ [Jak mám datovou platformu? Videa: WCF Data Services řady](https://go.microsoft.com/fwlink/?LinkId=124600)  
+ Obsahuje sadu přetypování obrazovky videa, která ukazují, jak vytvářet a přistupovat k datovým službám.  
   
- [Přehled: WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131074)  
- Dokument white paper, který obsahuje více souhrnné informace o výhodách [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
+ [Přehled WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131074)  
+ Dokument White Paper, který poskytuje další informace vysoké úrovně o výhodách [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)].  
   
- [Pomocí služby Microsoft WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131075)  
- Dokument white paper, který obsahuje další informace a příklady pro vytvoření datové služby a přístup ke službám data v klientských aplikacích.  
+ [Používání aplikace Microsoft WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131075)  
+ Dokument White Paper, který poskytuje další informace a příklady pro vytváření datových služeb a přístup k datovým službám v klientských aplikacích.  
   
- [Relace Entity Model: Směrem k jednotný pohled na Data](https://go.microsoft.com/fwlink/?LinkId=91909) tak Peter Pin Shan Svoboda, Massachusetts Institute of Technology  
- Popisuje základ pro entity relační model, který je implementováno [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Napsané v 1976, toto je jeden z nejčastěji zmiňovanou dokumentů do pole počítače.  
+ [Model vztahů mezi entitami: K jednotnému zobrazení dat](https://go.microsoft.com/fwlink/?LinkId=91909) připnutím kódu PIN – PII Chen, Massachusetts Institute of Technology  
+ Popisuje základ pro model relačního modelu, který je implementován pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Napsané v 1976, jedná se o jeden z nejčastěji citovaných dokumentů v poli počítač.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+- [Začínáme](getting-started-with-wcf-data-services.md)

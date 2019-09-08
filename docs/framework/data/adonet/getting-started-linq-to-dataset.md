@@ -2,30 +2,30 @@
 title: Začínáme (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 97522119-f6a3-434c-a1ec-17396b74a556
-ms.openlocfilehash: e52624ca4f81924222065cc3fb355f177eb17193
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 7ad81e6187351c5c1d5b98766ce69db4755e7a90
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504446"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795017"
 ---
 # <a name="getting-started-linq-to-dataset"></a>Začínáme (LINQ to DataSet)
-Tato část obsahuje úvodní informace o programování v jazyce LINQ k datové sadě.  
+V této části najdete úvodní informace o programování s LINQ to DataSet.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-overview.md)  
- Poskytuje koncepční přehled technologie LINQ k datové sadě.  
+ [Přehled LINQ to DataSet](linq-to-dataset-overview.md)  
+ Poskytuje koncepční přehled LINQ to DataSet.  
   
- [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
- Poskytuje příklad, naplnění <xref:System.Data.DataSet>. Tento příklad používá <xref:System.Data.Common.DataAdapter> k načtení dat z databáze.  
+ [Načtení dat do datové sady](loading-data-into-a-dataset.md)  
+ Poskytuje příklad naplnění <xref:System.Data.DataSet>. Tento příklad používá <xref:System.Data.Common.DataAdapter> k načtení dat z databáze.  
   
- [Stažení ukázkových databází](../../../../docs/framework/data/adonet/downloading-sample-databases-linq-to-dataset.md)  
- Poskytuje informace o stažení ukázkové databáze AdventureWorks, který je používán v rámci technologie LINQ to DataSet části Ukázky.  
+ [Stažení ukázkových databází](downloading-sample-databases-linq-to-dataset.md)  
+ Poskytuje informace o stažení ukázkové databáze AdventureWorks, která se používá v ukázkách v celém LINQ to DataSet části.  
   
- [Postupy: Vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md)  
- Poskytuje informace o vytvoření LINQ to DataSet projektu v sadě Visual Studio.  
+ [Postupy: Vytvoření projektu LINQ to DataSet v aplikaci Visual Studio](how-to-create-a-linq-to-dataset-project-in-vs.md)  
+ Poskytuje informace o vytvoření projektu LINQ to DataSet v aplikaci Visual Studio.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  
@@ -34,6 +34,6 @@ Tato část obsahuje úvodní informace o programování v jazyce LINQ k datové
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a ADO.NET](../../../../docs/framework/data/adonet/linq-and-ado-net.md)
-- [Language-Integrated Query (LINQ) –C#](../../../csharp/programming-guide/concepts/linq/index.md)  
-- [Language-Integrated Query (LINQ) – Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)  
+- [LINQ a ADO.NET](linq-and-ado-net.md)
+- [LINQ (Language-Integrated Query) –C#](../../../csharp/programming-guide/concepts/linq/index.md)  
+- [LINQ (Language-Integrated Query) – Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)  

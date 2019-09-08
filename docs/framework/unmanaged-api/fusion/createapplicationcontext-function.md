@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9853f974230ee755a33bc46ca6ba3e086051b236
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 25364330dafdf858c4b41e9a05731c37e97fbb57
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778478"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795429"
 ---
 # <a name="createapplicationcontext-function"></a>CreateApplicationContext – funkce
-Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
+Tato funkce podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT CreateApplicationContext (
   
 ## <a name="parameters"></a>Parametry  
  `pName`  
- [in] Ukazatel na popisný název.  
+ pro Ukazatel na popisný název.  
   
  `ppCtx`  
- [out] Ukazatel na objekt context aplikace.  
+ mimo Ukazatel na kontext aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v soubor Fusion.dll  
+ **Knihovna** Zahrnuto jako prostředek v Fusion. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
-- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+- [IAssemblyCache – rozhraní](iassemblycache-interface.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)
+- [Globální mezipaměť sestavení](../../app-domains/gac.md)

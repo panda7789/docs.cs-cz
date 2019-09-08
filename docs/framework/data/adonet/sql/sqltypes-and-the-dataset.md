@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9172c20a-9876-4b3b-9c97-1963c02b1993
-ms.openlocfilehash: a218a8e0fe3d2c17a0f09a40645c7b3ad26fb5ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dea5a2017479443cb747d31e253c1c83585ddd09
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780169"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791496"
 ---
 # <a name="sqltypes-and-the-dataset"></a>SqlTypes a datová sada
-ADO.NET 2.0 zavedené rozšířenou podporu typu `DataSet` prostřednictvím <xref:System.Data.SqlTypes> oboru názvů. Typy v <xref:System.Data.SqlTypes> poskytují datové typy jako typy dat v databázi serveru SQL Server pomocí stejné sémantiky a přesnosti. Každý datový typ ve <xref:System.Data.SqlTypes> má odpovídající datový typ v systému SQL Server se stejnou reprezentaci podkladová data.  
+ADO.NET 2,0 představilo rozšířenou podporu typu `DataSet` pro <xref:System.Data.SqlTypes> obor názvů. Typy v <xref:System.Data.SqlTypes> jsou navrženy tak, aby poskytovaly datové typy se stejnou sémantikou a přesností jako datové typy v databázi SQL Server. Každý datový typ v <xref:System.Data.SqlTypes> v má v SQL Server ekvivalentní datový typ se stejnou základní datovou reprezentací.  
   
- Pomocí <xref:System.Data.SqlTypes> přímo <xref:System.Data.DataSet> při práci s datovými typy SQL serveru poskytuje několik výhod. <xref:System.Data.SqlTypes> podporuje stejnou sémantiku jako nativní datové typy serveru SQL Server. Zadáním jednoho z <xref:System.Data.SqlTypes> v definici <xref:System.Data.DataColumn> eliminuje ztrátou přesnosti, která může dojít, pokud převod desítkový nebo číselný datový typy na jeden z common language runtime (CLR) datové typy.  
+ Použití <xref:System.Data.SqlTypes> přímo v rámci <xref:System.Data.DataSet> conf přináší několik výhod při práci s SQL Servermi datovými typy. <xref:System.Data.SqlTypes>podporuje stejnou sémantiku jako SQL Server nativní datové typy. Zadání jedné z <xref:System.Data.SqlTypes> z definice a <xref:System.Data.DataColumn> eliminuje ztrátu přesnosti, ke které může dojít při převodu desítkových nebo číselných datových typů na jeden z datových typů modulu CLR (Common Language Runtime).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Data.DataTable> objekt explicitně definovat <xref:System.Data.DataColumn> datové typy s použitím <xref:System.Data.SqlTypes> místo typů CLR. Vloží kód <xref:System.Data.DataTable> s daty z tabulky Sales.SalesOrderDetail databáze AdventureWorks v systému SQL Server. Výstup zobrazí v okně konzoly se zobrazí typ dat každého sloupce a hodnoty získány z SQL serveru.  
+ Následující příklad vytvoří <xref:System.Data.DataTable> objekt, explicitní <xref:System.Data.DataColumn> definování datových typů pomocí <xref:System.Data.SqlTypes> typu namísto CLR. Kód vyplní <xref:System.Data.DataTable> data z tabulky Sales. SalesOrderDetail v databázi AdventureWorks v SQL Server. Výstup zobrazený v okně konzoly zobrazuje datový typ každého sloupce a hodnoty načtené z SQL Server.  
   
  [!code-csharp[DataWorks SqlTypes.GetTypeAW#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTypes.GetTypeAW/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTypes.GetTypeAW#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTypes.GetTypeAW/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Mapování datových typů SQL Serveru](../sql-server-data-type-mappings.md)
+- [Konfigurace parametrů a datové typy parametrů](../configuring-parameters-and-parameter-data-types.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

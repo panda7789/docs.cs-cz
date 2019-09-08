@@ -5,16 +5,16 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-ms.openlocfilehash: d45d472a2996c0b501af70a0a2a6d2d669dedb4d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 89357b1d05526438c939a73663c5b7b6273df4ac
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043534"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790389"
 ---
 # <a name="object-materialization-wcf-data-services"></a>Materializace objektů (WCF Data Services)
 
-Když použijete dialogové okno **Přidat odkaz na službu** ke využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu v klientské aplikaci založené na .NET Framework, vygenerují se ekvivalentní datové třídy pro každý typ entity v datovém modelu, který je vystavený informačním kanálem. Další informace najdete v tématu [generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Data entity, která jsou vrácena dotazem, jsou vyhodnocena jako instance jedné z těchto generovaných tříd služby data a klienta. Informace o možnostech sloučení a rozlišení identity pro sledované objekty najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).
+Když použijete dialogové okno **Přidat odkaz na službu** ke využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu v klientské aplikaci založené na .NET Framework, vygenerují se ekvivalentní datové třídy pro každý typ entity v datovém modelu, který je vystavený informačním kanálem. Další informace najdete v tématu [generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md). Data entity, která jsou vrácena dotazem, jsou vyhodnocena jako instance jedné z těchto generovaných tříd služby data a klienta. Informace o možnostech sloučení a rozlišení identity pro sledované objekty najdete v tématu [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md).
 
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]také umožňuje definovat vlastní třídy služby data klienta namísto použití datových tříd generovaných nástrojem. To vám umožňuje používat vlastní datové třídy, označované také jako "obyčejné, staré" objekty CLR (POCO) datové třídy. Při použití těchto typů vlastních datových tříd byste měli atribut datové třídy použít buď <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> , a zajistěte, aby názvy typů u klienta odpovídaly názvům typů v datovém modelu datové služby.
 
@@ -38,10 +38,10 @@ Poté, co Knihovna obdrží zprávu odpovědi na dotaz, materializuje vrácená 
 
     - Komplexní vlastnosti jsou nastaveny na novou instanci komplexního typu, která je nastavena pomocí vlastností komplexního typu z odpovědi.
 
-    - Navigační vlastnosti, které vracejí kolekci souvisejících entit <xref:System.Collections.Generic.ICollection%601>, jsou nastaveny na novou nebo existující instanci, kde `T` je typ související entity. Tato kolekce je prázdná, pokud nebyly do objektu načteny <xref:System.Data.Services.Client.DataServiceContext>související objekty. Další informace najdete v tématu [načítání odloženého obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).
+    - Navigační vlastnosti, které vracejí kolekci souvisejících entit <xref:System.Collections.Generic.ICollection%601>, jsou nastaveny na novou nebo existující instanci, kde `T` je typ související entity. Tato kolekce je prázdná, pokud nebyly do objektu načteny <xref:System.Data.Services.Client.DataServiceContext>související objekty. Další informace najdete v tématu [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).
 
       > [!NOTE]
-      > Když generované klientské datové třídy podporují datovou vazbu, vlastnosti navigace vrátí instance <xref:System.Data.Services.Client.DataServiceCollection%601> třídy místo toho. Další informace najdete v tématu [vázání dat na ovládací prvky](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).
+      > Když generované klientské datové třídy podporují datovou vazbu, vlastnosti navigace vrátí instance <xref:System.Data.Services.Client.DataServiceCollection%601> třídy místo toho. Další informace najdete v tématu [vázání dat na ovládací prvky](binding-data-to-controls-wcf-data-services.md).
 
 4. <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> Událost je vyvolána.
 
@@ -49,5 +49,5 @@ Poté, co Knihovna obdrží zprávu odpovědi na dotaz, materializuje vrácená 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+- [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)
+- [Projekce dotazů](query-projections-wcf-data-services.md)

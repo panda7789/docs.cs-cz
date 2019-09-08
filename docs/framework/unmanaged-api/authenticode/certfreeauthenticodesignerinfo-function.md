@@ -10,15 +10,15 @@ api_type:
 ms.assetid: 8029633c-b6e4-4665-a7c2-89607c3247ef
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42f5685a9a976be7a3a73badf286f77216e43106
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 357a2ca0ffc733adb14a21624cbe28fb754c8240
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741242"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776725"
 ---
 # <a name="certfreeauthenticodesignerinfo-function"></a>Funkce CertFreeAuthenticodeSignerInfo
-Uvolní prostředky přidělené [AXL_AUTHENTICODE_SIGNER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-signer-info-structure.md) struktury.  
+Uvolní prostředky přidělené pro strukturu [AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,11 +29,11 @@ HRESULT CertFreeAuthenticodeSignerInfo (
   
 ## <a name="parameters"></a>Parametry  
  `pSignerInfo`  
- [out v] Podepisující osoba informace uvolní. Zobrazit [AXL_AUTHENTICODE_SIGNER_INFO](../../../../docs/framework/unmanaged-api/authenticode/axl-authenticode-signer-info-structure.md) struktury.  
+ [in, out] Informace o podepisujícím, které se mají uvolnit Podívejte se na strukturu [AXL_AUTHENTICODE_SIGNER_INFO](axl-authenticode-signer-info-structure.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
+ `S_OK`Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+- [Authenticode](index.md)

@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a23d3c4fd8eef2e361abf1602157cb4fbb820b48
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8aa2d174200db76f5c7a6db43e14bb6904604226
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773858"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796337"
 ---
 # <a name="prebindassemblyex-function"></a>PreBindAssemblyEx – funkce
-Získá po zpracování zásad zobrazovaný název sestavení.  
+Načte zobrazovaný název po zásadě pro sestavení.  
   
- Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
+ Tato funkce podporuje infrastrukturu .NET Framework a není určena pro použití přímo v kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,35 +43,35 @@ HRESULT PreBindAssemblyEx (
   
 ## <a name="parameters"></a>Parametry  
  `pAppCtx`  
- [in] Určuje kontext aplikace.  
+ pro Identifikuje kontext aplikace.  
   
  `pName`  
- [in] Určuje název sestavení.  
+ pro Určuje název sestavení.  
   
  `pAsmParent`  
- [in] Určuje nadřazený sestavení. Tento parametr je ignorován.  
+ pro Identifikuje nadřazené sestavení. Tento parametr je ignorován.  
   
  `pwzRuntimeVersion`  
- [in] Určuje verzi modulu runtime.  
+ pro Určuje verzi modulu runtime.  
   
  `ppNamePostPolicy`  
- [out] Obsahuje název zobrazení po zpracování zásad.  
+ mimo Obsahuje zobrazovaný název po zásadě.  
   
  `pvReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
   
 ## <a name="remarks"></a>Poznámky  
- `ppNamePostPolicy` Výstupní parametr se nastaví jenom v případě, že funkce vrátí HRESULT FUSION_E_REF_DEF_MISMATCH. Jinak má hodnotu null.  
+ `ppNamePostPolicy` Výstupní parametr je nastaven pouze v případě, že funkce vrátí hodnotu HRESULT FUSION_E_REF_DEF_MISMATCH. V opačném případě má hodnotu null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Globální statické funkce pro fúze](fusion-global-static-functions.md)

@@ -2,12 +2,12 @@
 title: Zajištění zabezpečení pro protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: b635591b7a3b07385ed48c6b1ea556139c6d77c5
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c5efd2990a00045e920c005f6658d5fdfb858481
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044257"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795941"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v protokolech zpráv a také v případě událostí generovaných protokolováním zpráv.  
@@ -107,9 +107,9 @@ Toto téma popisuje, jak můžete chránit citlivá data před zveřejněním v 
   
 - Známý PII není povolený: Tato událost je generována, pokud není povoleno protokolování známého PII. K tomu dojde v `logKnownPii` případě, že `source` atribut prvku v souboru App. config nebo Web. config je `enableLoggingKnownPii` nastaven na `true`hodnotu, ale atribut v `machineSettings` prvku souboru Machine. config je nastaven na hodnotu `false`. Není vyvolána žádná výjimka.  
   
- Tyto události lze zobrazit v nástroji Prohlížeč událostí, který je součástí systému Windows. Další informace najdete v tématu [protokolování událostí](../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
+ Tyto události lze zobrazit v nástroji Prohlížeč událostí, který je součástí systému Windows. Další informace najdete v tématu [protokolování událostí](./event-logging/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
-- [Otázky zabezpečení a užitečné tipy pro trasování](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)
+- [Protokolování zpráv](message-logging.md)
+- [Otázky zabezpečení a užitečné tipy pro trasování](./tracing/security-concerns-and-useful-tips-for-tracing.md)

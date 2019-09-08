@@ -1,38 +1,38 @@
 ---
-title: 'Omezení rizik: Rozložení WPF'
+title: Zmírnění Rozložení WPF
 ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c261a025548b2d22f6df3051dbcdb637723d4324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d266ad33110d2bda8f7911d89981c372624c3f36
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599474"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779067"
 ---
-# <a name="mitigation-wpf-layout"></a>Omezení rizik: Rozložení WPF
-Rozložení ovládacích prvků WPF může mírně změnit.  
+# <a name="mitigation-wpf-layout"></a>Zmírnění Rozložení WPF
+Rozložení ovládacích prvků WPF se může mírně měnit.  
   
 ## <a name="impact"></a>Dopad  
  V důsledku této změny:  
   
-- Šířka nebo výška prvků může zvětšovat a zmenšovat podle maximálně jeden pixel.  
+- Šířka nebo výška prvků může být zvětšena nebo zmenšena o jeden pixel.  
   
-- Umístění objektu lze přesunout maximálně jeden pixel.  
+- Umístění objektu lze přesunout o jeden pixel.  
   
-- Elementy na střed lze vertikálně nebo horizontálně vypnout Centrum maximálně jeden pixel.  
+- Centrované elementy můžou být svisle nebo vodorovně mimo střed o jeden pixel.  
   
- Ve výchozím nastavení je toto nové rozložení povoleny pouze pro aplikace, které cílí rozhraní .NET Framework 4.6.  
+ Ve výchozím nastavení je toto nové rozložení povolené jenom pro aplikace, které cílí na .NET Framework 4,6.  
   
 ## <a name="mitigation"></a>Zmírnění  
- Vzhledem k tomu, že tato změna se obvykle Chcete-li odstranit výstřižek pravé nebo dolní ovládacích prvků WPF na vysokou dpi, aplikace, které jsou cíleny na starší verze rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.6 můžete začít používat toto nové chování tak, že přidáte následující řádek, který `<runtime>` část souboru app.config:  
+ Vzhledem k tomu, že tato změna je v úmyslu eliminovat v horních Dpich ovládací prvky WPF, aplikace, které cílí na starší verze .NET Framework, ale jsou spuštěné v .NET Framework 4,6, se můžou k tomuto novému chování vyjádřit přidáním následujícího řádku do `<runtime>` oddílu souboru App. config:  
   
 ```xml  
 <AppContextSwitchOverrides value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=false" />  
 ```  
   
- Aplikace, které cílí rozhraní .NET Framework 4.6, ale chcete ovládacích prvků WPF k vykreslení pomocí algoritmu předchozí rozložení můžete udělat tak, že přidáte následující řádek, který `<runtime>` část souboru app.config:  
+ Aplikace cílené na .NET Framework 4,6, ale chcete, aby ovládací prvky WPF vykreslují pomocí předchozího algoritmu rozložení, mohou tak učinit přidáním následujícího řádku do `<runtime>` oddílu souboru App. config:  
   
 ```xml  
 <AppContextSwitchOverrides value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=true" />  
@@ -40,4 +40,4 @@ Rozložení ovládacích prvků WPF může mírně změnit.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+- [Odlišnosti ve změnách cílení](retargeting-changes-in-the-net-framework-4-6.md)

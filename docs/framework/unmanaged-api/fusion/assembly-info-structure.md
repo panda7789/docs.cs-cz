@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 219a92c0a105cc43e0c2af7d93868cac12f2e4e4
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 390ab4881396bbc01337d087f05b6066153bfed1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778520"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795484"
 ---
-# <a name="assemblyinfo-structure"></a>ASSEMBLY_INFO – struktura
-Obsahuje informace o sestavení, který je zaregistrován v globální mezipaměti sestavení.  
+# <a name="assembly_info-structure"></a>ASSEMBLY_INFO – struktura
+Obsahuje informace o sestavení, které je registrováno v globální mezipaměti sestavení (GAC).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,20 +42,20 @@ typedef struct _ASSEMBLY_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`cbAssemblyInfo`|Velikost v bajtech struktury. Toto pole je vyhrazený pro budoucí rozšíření.|  
-|`dwAssemblyFlags`|Příznaky, které označují podrobné informace o instalaci o sestavení. Podporovány jsou následující hodnoty:<br /><br /> -ASSEMBLYINFO_FLAG_INSTALLED hodnotu, která označuje, že je nainstalována sestavení. Aktuální verze rozhraní .NET Framework vždy nastavuje `dwAssemblyFlags` na tuto hodnotu.<br />-ASSEMBLYINFO_FLAG_PAYLOADRESIDENT hodnotu, která označuje, že je sestavení rezidenční datovou část. Aktuální verze rozhraní .NET Framework nikdy nastaví `dwAssemblyFlags` na tuto hodnotu.|  
-|`uliAssemblySizeInKB`|Celková velikost v kilobajtech, soubory, které obsahuje sestavení.|  
-|`pszCurrentAssemblyPathBuf`|Ukazatel do vyrovnávací paměti pro řetězec, který obsahuje aktuální cesta k souboru manifestu. Cesta musí být ukončen znakem null.|  
-|`cchBuf`|Počet širokých znaků, včetně ukončovacího znaku null, který `pszCurrentAssemblyPathBuf` obsahuje.|  
+|`cbAssemblyInfo`|Velikost struktury v bajtech. Toto pole je vyhrazeno pro budoucí rozšíření.|  
+|`dwAssemblyFlags`|Příznaky, které označují podrobnosti o instalaci sestavení. Podporovány jsou následující hodnoty:<br /><br /> – Hodnota ASSEMBLYINFO_FLAG_INSTALLED, která označuje, že sestavení je nainstalováno. Aktuální verze .NET Framework vždy nastavuje `dwAssemblyFlags` na tuto hodnotu.<br />– Hodnota ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, která označuje, že sestavení je rezidentní v datové části. Aktuální verze .NET Framework se nikdy nenastavuje `dwAssemblyFlags` na tuto hodnotu.|  
+|`uliAssemblySizeInKB`|Celková velikost souborů, které sestavení obsahuje, v kilobajtech.|  
+|`pszCurrentAssemblyPathBuf`|Ukazatel na vyrovnávací paměť řetězce, který obsahuje aktuální cestu k souboru manifestu. Cesta musí končit znakem null.|  
+|`cchBuf`|Počet velkých znaků, včetně ukončovacího znaku null, který `pszCurrentAssemblyPathBuf` obsahuje.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
-- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+- [Struktury pro fúze](fusion-structures.md)
+- [Globální mezipaměť sestavení](../../app-domains/gac.md)

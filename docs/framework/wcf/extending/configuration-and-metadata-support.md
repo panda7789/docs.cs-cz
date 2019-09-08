@@ -2,36 +2,36 @@
 title: Konfigurace a podpora metadat
 ms.date: 03/30/2017
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
-ms.openlocfilehash: 74dab4528ae11b60fc930a826962b71595073a7f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 16c386f8479778c7d2f17fbdfdb95dee558baf52
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587727"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795835"
 ---
 # <a name="configuration-and-metadata-support"></a>Konfigurace a podpora metadat
-Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazeb.  
+Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazby.  
   
 ## <a name="overview-of-configuration-and-metadata"></a>Přehled konfigurace a metadat  
- Toto téma popisuje následující úkoly, které jsou volitelné položky 1, 2 a 4 v [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md) seznamu úkolů.  
+ Toto téma popisuje následující úkoly, což jsou volitelné položky 1, 2 a 4 v seznamu úkolů [Vývoj kanálů](developing-channels.md) .  
   
-- Povolení podpory konfigurační soubor pro element vazby.  
+- Povolení podpory konfiguračního souboru pro element vazby.  
   
-- Povolení podpory konfigurační soubor pro vazbu.  
+- Povolení podpory konfiguračního souboru pro vazbu.  
   
-- Export kontrolních výrazů WSDL a zásady pro element vazby.  
+- Exportování kontrolních výrazů WSDL a zásad pro element vazby.  
   
-- Identifikace WSDL a zásady kontrolní výrazy pro vložení a nakonfigurujte vazby nebo element vazby.  
+- Identifikují se kontrolní výrazy WSDL a zásad pro vložení a konfiguraci vazby nebo elementu vazby.  
   
- Informace o vytváření uživatelem definovaných vazeb a prvky vazeb naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md) a [vytvoření BindingElement](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)v uvedeném pořadí.  
+ Informace o vytváření uživatelsky definovaných vazeb a elementů vazby naleznete v tématu [vytváření uživatelsky definovaných vazeb](creating-user-defined-bindings.md) a [Vytvoření BindingElement](creating-a-bindingelement.md)(v uvedeném pořadí).  
   
 ## <a name="adding-configuration-support"></a>Přidání podpory konfigurace  
- Povolení podpory konfigurační soubor pro kanál, je nutné implementovat dva oddíly konfigurace, <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType>, která podporuje konfiguraci elementů, vazby a <xref:System.ServiceModel.Configuration.StandardBindingElement?displayProperty=nameWithType> a <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602?displayProperty=nameWithType>, umožňující podporu konfigurace pro vazby.  
+ Chcete-li povolit podporu konfiguračního souboru pro kanál, je nutné implementovat dva konfigurační oddíly <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType>,, což umožňuje podporu konfigurace pro prvky vazby <xref:System.ServiceModel.Configuration.StandardBindingElement?displayProperty=nameWithType> a a <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602?displayProperty=nameWithType>, které povolují podporu konfigurace pro vazeb.  
   
- Snadný způsob, jak to provést, je použít [ConfigurationCodeGenerator](../../../../docs/framework/wcf/samples/configurationcodegenerator.md) ukázkový nástroj pro generování kódu konfigurace pro vazby a prvky vazeb.  
+ Jednodušší způsob, jak to provést, je použít vzorový nástroj [ConfigurationCodeGenerator](../samples/configurationcodegenerator.md) k vygenerování konfiguračního kódu pro vaše vazby a prvky vazby.  
   
 ### <a name="extending-bindingelementextensionelement"></a>Rozšíření BindingElementExtensionElement  
- Následující vzorový kód je převzat z [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku. `UdpTransportElement` Je <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> , která zveřejní `UdpTransportBindingElement` k systému konfigurace. Několik základních lokálně ukázka definuje název oddílu konfigurace, typ elementu vazby a tom, jak vytvořit element vazby. Uživatelé můžou potom registrovat oddílu rozšíření v konfiguračním souboru následujícím způsobem.  
+ Následující příklad kódu je pořízen z [přenosu: Ukázka](../samples/transport-udp.md) UDP Je a <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> zpřístupňuje`UdpTransportBindingElement`konfiguračnímusystému. `UdpTransportElement` U několika základních přepsání ukázka definuje název konfiguračního oddílu, typ prvku vazby a postup vytvoření prvku vazby. Uživatelé pak mohou zaregistrovat oddíl rozšíření v konfiguračním souboru následujícím způsobem.  
   
 ```xml  
 <configuration>  
@@ -45,7 +45,7 @@ Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky
 </configuration>  
 ```  
   
- Rozšíření můžete odkazovat z vlastní vazby pro použití jako přenos UDP.  
+ Na rozšíření se dá odkazovat z vlastních vazeb na použití UDP jako přenosu.  
   
 ```xml  
 <configuration>  
@@ -61,8 +61,8 @@ Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky
 </configuration>  
 ```  
   
-### <a name="adding-configuration-for-a-binding"></a>Přidává se konfigurace pro vazbu  
- V části `SampleProfileUdpBindingCollectionElement` je <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> , která zveřejní `SampleProfileUdpBinding` k systému konfigurace. Hromadné implementace se deleguje na `SampleProfileUdpBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. `SampleProfileUdpBindingConfigurationElement` Má vlastnosti, které odpovídají vlastnostem v `SampleProfileUdpBinding`a funkce mapování `ConfigurationElement` vazby. Nakonec `OnApplyConfiguration` v je přepsána metoda `SampleProfileUdpBinding`, jak je znázorněno v následujícím ukázkovém kódu.  
+### <a name="adding-configuration-for-a-binding"></a>Přidání konfigurace pro vazbu  
+ `SampleProfileUdpBinding` Oddíl `SampleProfileUdpBindingCollectionElement` ,kterýzveřejňujekonfiguračnímusystému<xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> . Hromadná implementace je delegována na `SampleProfileUdpBindingConfigurationElement`, který je odvozen z. <xref:System.ServiceModel.Configuration.StandardBindingElement> Obsahuje vlastnosti, které odpovídají vlastnostem na `SampleProfileUdpBinding`, a `ConfigurationElement` funkce, které mají být mapovány z vazby. `SampleProfileUdpBindingConfigurationElement` Nakonec je `SampleProfileUdpBinding`Metoda přepsána v, jak je znázorněno v následujícím ukázkovém kódu. `OnApplyConfiguration`  
   
 ```csharp 
 protected override void OnApplyConfiguration(string configurationName)  
@@ -87,7 +87,7 @@ protected override void OnApplyConfiguration(string configurationName)
 }  
 ```  
   
- K registraci této obslužné rutiny konfigurace systému, přidejte následující část do souboru položky konfigurace.  
+ K registraci této obslužné rutiny pomocí konfiguračního systému přidejte následující oddíl do příslušného konfiguračního souboru.  
   
 ```xml  
 <configuration>  
@@ -101,7 +101,7 @@ protected override void OnApplyConfiguration(string configurationName)
 </configuration>  
 ```  
   
- Poté jej lze odkazovat z [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) konfigurační oddíl.  
+ Pak na něj můžete odkazovat z [ \<konfiguračního oddílu System. ServiceModel >](../../configure-apps/file-schema/wcf/system-servicemodel.md) .  
   
 ```xml  
 <configuration>  
@@ -118,14 +118,14 @@ protected override void OnApplyConfiguration(string configurationName)
 </configuration>  
 ```  
   
-## <a name="adding-metadata-support-for-a-binding-element"></a>Přidání podpory metadat pro Element vazby  
- K integraci kanál do metadat systému, musí podporovat, import a export zásad. Díky tomu nástroje, jako [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klientů elementu vazby.  
+## <a name="adding-metadata-support-for-a-binding-element"></a>Přidání podpory metadat pro element vazby  
+ Pro integraci kanálu do systému metadat musí podporovat import i export zásad. To umožňuje nástrojům, jako je nástroj pro dodávání [metadat ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) , generovat klienty elementu vazby.  
   
 ### <a name="adding-wsdl-support"></a>Přidání podpory WSDL  
- Element vazby přenosu ve vazbě je zodpovědná za export a import informací o adresách v metadatech. Při použití vazby protokolu SOAP, element vazby přenosu by měl také exportovat správné přepravy identifikátoru URI v metadatech. Následující vzorový kód je převzat z [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
+ Element vazby přenosu ve vazbě zodpovídá za export a import informací o adresách v metadatech. Při použití vazby SOAP by měl element vazby přenosu také exportovat správný přenosový identifikátor URI v metadatech. Následující příklad kódu je pořízen z [přenosu: Ukázka](../samples/transport-udp.md) UDP  
   
-#### <a name="wsdl-export"></a>WSDL Export  
- Chcete-li exportovat informace o adresách, `UdpTransportBindingElement` implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> rozhraní. <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A?displayProperty=nameWithType> Metoda přidá správné informace o adresování na WSDL port.  
+#### <a name="wsdl-export"></a>Export WSDL  
+ Chcete-li exportovat informace o `UdpTransportBindingElement` adresách <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> , implementuje rozhraní. <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A?displayProperty=nameWithType> Metoda přidá správné informace o adresování do portu WSDL.  
   
 ```csharp  
 if (context.WsdlPort != null)  
@@ -134,7 +134,7 @@ if (context.WsdlPort != null)
 }  
 ```  
   
- `UdpTransportBindingElement` Provádění <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> metoda zároveň exportuje přepravy identifikátoru URI při koncový bod používá vazba SOAP:  
+ `UdpTransportBindingElement` Implementace<xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> metody také exportuje identifikátor URI přenosu, pokud koncový bod používá vazbu SOAP:  
   
 ```csharp  
 WsdlNS.SoapBinding soapBinding = GetSoapBinding(context, exporter);  
@@ -144,8 +144,8 @@ if (soapBinding != null)
 }  
 ```  
   
-#### <a name="wsdl-import"></a>WSDL Import  
- Rozšíření systému importu WSDL pro zpracování importu adres, přidejte do konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config následující konfiguraci:  
+#### <a name="wsdl-import"></a>Import WSDL  
+ Chcete-li roztáhnout systém importu WSDL pro zpracování importu adres, přidejte následující konfiguraci do konfiguračního souboru pro Svcutil. exe, jak je znázorněno v souboru Svcutil. exe. config:  
   
 ```xml  
 <configuration>  
@@ -161,13 +161,13 @@ if (soapBinding != null)
 </configuration>  
 ```  
   
- Při spuštění Svcutil.exe, existují dvě možnosti pro získání Svcutil.exe k načítání rozšíření importu WSDL:  
+ Při spuštění Svcutil. exe jsou k dispozici dvě možnosti, jak Svcutil. exe načíst rozšíření importu WSDL:  
   
-1. Bod Svcutil.exe do konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
+1. Najeďte Svcutil. exe na konfigurační soubor pomocí souboru/SvcutilConfig:\<>.  
   
-2. Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2. Přidejte konfigurační oddíl do souboru Svcutil. exe. config ve stejném adresáři jako soubor Svcutil. exe.  
   
- `UdpBindingElementImporter` Typ implementuje <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> rozhraní. `ImportEndpoint` Metoda importuje adresu z portu WSDL:  
+ `UdpBindingElementImporter` Typ<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> implementuje rozhraní. `ImportEndpoint` Metoda importuje adresu z portu WSDL:  
   
 ```csharp  
 BindingElementCollection bindingElements = context.Endpoint.Binding.CreateBindingElements();  
@@ -178,13 +178,13 @@ if (transportBindingElement is UdpTransportBindingElement)
 }  
 ```  
   
-### <a name="adding-policy-support"></a>Přidání podpory pro zásady  
- Vlastní prvek vazby můžete export kontrolních výrazů zásad Vazba WSDL pro koncový bod služby vyjádřit možnosti daného prvku vazby. Následující vzorový kód je převzat z [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
+### <a name="adding-policy-support"></a>Přidání podpory zásad  
+ Vlastní element vazby může exportovat kontrolní výrazy zásad ve vazbě WSDL pro koncový bod služby, aby bylo možné vyjádřit možnosti tohoto prvku vazby. Následující příklad kódu je pořízen z [přenosu: Ukázka](../samples/transport-udp.md) UDP  
   
 #### <a name="policy-export"></a>Export zásad  
- `UdpTransportBindingElement` Typ implementuje <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> přidává funkce pro export zásad. V důsledku toho <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> zahrnuje `UdpTransportBindingElement` při generování zásad pro všechny vazby, který ji obsahuje.  
+ `UdpTransportBindingElement` Typ implementuje<xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> k přidání podpory pro export zásad. Výsledkem je, <xref:System.ServiceModel.Description.MetadataExporter?displayProperty=nameWithType> že zahrnuje `UdpTransportBindingElement` generování zásad pro všechny vazby, které ji obsahují.  
   
- V <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=nameWithType>, přidat kontrolní výraz pro UDP a další kontrolní výraz, pokud kanál není v režimu vícesměrového vysílání. Jak komunikačního balíku je vytvořen a proto musí být koordinovaní mezi obě strany jde vzhledem k tomu, že má vliv na režimu vícesměrového vysílání.  
+ V <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A?displayProperty=nameWithType>přidejte kontrolní výraz pro UDP a jiný kontrolní výraz, pokud je kanál v režimu vícesměrového vysílání. Je to proto, že režim vícesměrového vysílání ovlivňuje způsob, jakým je vytvořen komunikační zásobník, a proto musí být koordinován mezi oběma stranami.  
   
 ```csharp  
 ICollection<XmlElement> bindingAssertions = context.GetBindingAssertions();  
@@ -198,14 +198,14 @@ UdpPolicyStrings.Prefix, UdpPolicyStrings.MulticastAssertion,     UdpPolicyStrin
 }  
 ```  
   
- Protože jsou zodpovědného za obsluhu adresování elementů přenosové vlastní vazby <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> implementace v prostředí `UdpTransportBindingElement` musí také zpracovat export odpovídající WS-Addressing kontrolní výrazy zásad označující verzi elementu WS-Addressing používá.  
+ Vzhledem k tomu, že vlastní prvky vazby přenosu jsou zodpovědné za <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> zpracování adresování `UdpTransportBindingElement` , implementace na musí také zpracovávat příslušné kontrolní výrazy WS-Addressing, aby označovaly verzi elementu WS-Addressing. používá se.  
   
 ```csharp  
 AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressing);  
 ```  
   
-#### <a name="policy-import"></a>Import zásady  
- Rozšíření systému importovat zásady, přidejte následující konfiguraci do konfiguračního souboru pro Svcutil.exe jak je znázorněno v souboru Svcutil.exe.config:  
+#### <a name="policy-import"></a>Import zásad  
+ Chcete-li přidat systém pro import zásad, přidejte následující konfiguraci do konfiguračního souboru pro Svcutil. exe, jak je znázorněno v souboru Svcutil. exe. config:  
   
 ```xml  
 <configuration>  
@@ -221,16 +221,16 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
 </configuration>  
 ```  
   
- Pak můžeme implementovat <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> z našich registrované třídy (`UdpBindingElementImporter`). V <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=nameWithType>, zkontrolujte kontrolní výrazy ve odpovídající obor názvů a zpracovat pro generování přenos a kontrola, zda je vícesměrového vysílání. Kontrolní výrazy, které zpracovává tabulkách navíc odeberte ze seznamu vazby kontrolní výrazy. Znovu když spustíte Svcutil.exe, existují dvě možnosti pro integraci:  
+ Pak implementujeme <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> z naší registrované třídy (`UdpBindingElementImporter`). V <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=nameWithType>, Prověřte kontrolní výrazy v příslušném oboru názvů a zpracujte je pro generování přenosu a kontrolu, jestli se jedná o vícesměrové vysílání. Kromě toho odeberte kontrolní výrazy, které dovozce zpracovává ze seznamu kontrolních výrazů vazby. Při spuštění Svcutil. exe existují dvě možnosti integrace:  
   
-1. Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
+1. Najeďte Svcutil. exe na náš konfigurační soubor pomocí souboru/svcutilConfig\<: >.  
   
-2. Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2. Přidejte konfigurační oddíl do souboru Svcutil. exe. config ve stejném adresáři jako soubor Svcutil. exe.  
   
-### <a name="adding-a-custom-standard-binding-importer"></a>Přidání vlastní standardní vazby programu pro import  
- Svcutil.exe a <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> typ, ve výchozím nastavení, rozpoznat a import vazeb poskytovaných systémem. V opačném případě získá importovat, protože vazba <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> instance. Povolit Svcutil.exe a <xref:System.ServiceModel.Description.WsdlImporter> import `SampleProfileUdpBinding` `UdpBindingElementImporter` taky pracuje jako import standardní vlastní vazby.  
+### <a name="adding-a-custom-standard-binding-importer"></a>Přidání vlastního programu pro import standardních vazeb  
+ Svcutil. exe a <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> typ, ve výchozím nastavení rozpoznávají a naimportují vazby poskytnuté systémem. V opačném případě se vazba naimportuje jako <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> instance. Chcete-li povolit Svcutil. exe <xref:System.ServiceModel.Description.WsdlImporter> a `SampleProfileUdpBinding` importovat `UdpBindingElementImporter` také jako vlastní import standardních vazeb.  
   
- Implementuje programu pro import standardní vlastní vazby `ImportEndpoint` metodu na <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> rozhraní k prozkoumání <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> instance naimportované z metadat zobrazíte, pokud to může být vygenerováno konkrétní standardní vazbu.  
+ Vlastní nástroj `ImportEndpoint` <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> pro import standardních vazeb implementuje metodu na rozhraníprokontroluinstanceimportovanézmetadat,abybylomožnézjistit,zdabymohlabýtvygenerovánakonkrétnístandardnívazbou.<xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType>  
   
 ```csharp  
 if (context.Endpoint.Binding is CustomBinding)  
@@ -250,4 +250,4 @@ if (context.Endpoint.Binding is CustomBinding)
 }  
 ```  
   
- Obecně platí implementace programu pro import vlastních vazeb standard zahrnuje ověření vlastností elementů importované vazby k ověření, že jste změnili pouze vlastnosti, které může nastavit standardní vazbou a všechny ostatní vlastnosti se jejich výchozích hodnotách. Základní strategií pro implementaci standardní vazbu Importér je vytvoření instance standardní vazbu, rozšíří vlastnosti z elementů vazby instanci standardní vazbu, která podporuje standardní vazbu, a porovnat vazby elementy ze standardní vazba s prvky importované vazby.
+ Obecně implementace vlastního programu pro importování standardní vazby zahrnuje kontrolu vlastností importovaných prvků vazby, aby bylo možné ověřit, zda byly změněny pouze vlastnosti, které by mohly být nastaveny standardní vazbou, a všechny ostatní vlastnosti jsou jejich výchozími hodnotami. Základní strategií pro implementaci programu pro import standardních vazeb je vytvoření instance standardní vazby, šíření vlastností z prvků vazby na standardní instanci vazby, kterou podporuje standardní vazba, a porovnáním vazby prvky ze standardní vazby s importovanými prvky vazby.

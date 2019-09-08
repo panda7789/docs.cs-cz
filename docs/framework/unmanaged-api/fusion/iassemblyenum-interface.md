@@ -16,32 +16,32 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4eb64fc0badf94c93182e7bd6875337c411bcdef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0338c1e3e8890f08f87c80ec922071053d591935
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697430"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796670"
 ---
 # <a name="iassemblyenum-interface"></a>IAssemblyEnum – rozhraní
-Představuje enumerátor pro celou řadu `IAssemblyName` objekty.  
+Představuje enumerátor pro pole `IAssemblyName` objektů.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|Vytvoří Mělkou kopii to `IAssemblyEnum` objektu.|  
-|[GetNextAssembly – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|Získá ukazatel na další `IAssemblyName` obsažené v tomto `IAssemblyEnum` objektu.|  
-|[Reset – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|To obnoví `IAssemblyEnum` objektu na jeho výchozí pozici.|  
+|[Clone – metoda](iassemblyenum-clone-method.md)|Vytvoří kopii tohoto `IAssemblyEnum` objektu bez podstruktury.|  
+|[GetNextAssembly – metoda](iassemblyenum-getnextassembly-method.md)|Získá ukazatel na další `IAssemblyName` obsažený v tomto `IAssemblyEnum` objektu.|  
+|[Reset – metoda](iassemblyenum-reset-method.md)|Obnoví tento `IAssemblyEnum` objekt na počáteční pozici.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
-- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [Rozhraní pro fúze](fusion-interfaces.md)
+- [IAssemblyName – rozhraní](iassemblyname-interface.md)

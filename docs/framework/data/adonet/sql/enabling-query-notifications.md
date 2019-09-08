@@ -5,55 +5,55 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5333e19-8e55-4aa9-82dc-ca8745e516ed
-ms.openlocfilehash: 0c377e02d5be7cb4de41d62b1e3734f790115086
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9919bad113eb11a38ce137a2cbbf6c67bd5b21ef
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651232"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794082"
 ---
 # <a name="enabling-query-notifications"></a>Povolení oznámení dotazů
-Aplikace, které využívají oznámení dotazů mají společnou sadu požadavků. Zdroj dat musí být správně nakonfigurované pro podporu oznámení dotazů SQL a uživatel musí mít správná oprávnění na straně klienta i stranu serveru.  
+Aplikace, které využívají oznámení dotazů, mají společnou sadu požadavků. Váš zdroj dat musí být správně nakonfigurovaný tak, aby podporoval oznamování dotazů SQL, a uživatel musí mít správná oprávnění na straně klienta a na straně serveru.  
   
- Použití oznámení dotazů, že je nutné:  
+ Pokud chcete používat oznámení dotazů, musíte:  
   
-- Povolení oznámení dotazů pro vaši databázi.  
+- Povolí oznámení dotazů pro vaši databázi.  
   
-- Ujistěte se, že ID uživatele pro připojení k databázi má potřebná oprávnění.  
+- Ujistěte se, že ID uživatele používané pro připojení k databázi má potřebná oprávnění.  
   
-- Použití <xref:System.Data.SqlClient.SqlCommand> pro spuštění platným příkazem SELECT s objektem přidružené oznámení – buď <xref:System.Data.SqlClient.SqlDependency> nebo <xref:System.Data.Sql.SqlNotificationRequest>.  
+- Použijte objekt ke spuštění platného příkazu SELECT s přidruženým objektem oznámení – buď <xref:System.Data.SqlClient.SqlDependency> nebo <xref:System.Data.Sql.SqlNotificationRequest>. <xref:System.Data.SqlClient.SqlCommand>  
   
-- Zadejte kód ke zpracování oznámení, pokud data monitoruje změny.  
+- Poskytněte kód pro zpracování oznámení v případě, že se data monitorují.  
   
 ## <a name="query-notifications-requirements"></a>Požadavky na oznámení dotazů  
- Oznámení dotazů jsou podporována pouze pro příkazy SELECT, které splňují specifické požadavky. Následující tabulka obsahuje odkazy na dokumentaci služby Service Broker a oznámení dotazů v SQL Server Books Online.  
+ Oznámení dotazů jsou podporována pouze pro příkazy SELECT, které splňují specifické požadavky. Následující tabulka obsahuje odkazy na Service Broker a dokumentaci k oznámením o dotazech v SQL Server Books Online.  
   
- **Dokumentaci k SQL serveru**  
+ **Dokumentace k SQL Server**  
   
 - [Vytvoření dotazu pro oznámení](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
-- [Důležité informace o zabezpečení pro službu Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166059(v=sql.90))  
+- [Požadavky na zabezpečení pro Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166059(v=sql.90))  
   
-- [Zabezpečení a ochranu (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522911(v=sql.105))  
+- [Zabezpečení a ochrana (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522911(v=sql.105))  
   
-- [Důležité informace o zabezpečení pro oznámení služby](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms172604(v=sql.90))  
+- [Bezpečnostní opatření pro služby oznamování](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms172604(v=sql.90))  
   
-- [Oprávnění pro dotaz oznámení](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188311(v=sql.105))  
+- [Oprávnění pro oznamování dotazů](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188311(v=sql.105))  
   
-- [Mezinárodní důležité informace týkající se služby Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166028(v=sql.90))  
+- [Mezinárodní požadavky na Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166028(v=sql.90))  
   
-- [Aspekty návrhu řešení (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522899(v=sql.105))  
+- [Požadavky na návrh řešení (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522899(v=sql.105))  
   
-- [Informační středisko pro vývojáře služby Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
+- [InfoCenter pro vývojáře Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
 - [Příručka pro vývojáře (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
-## <a name="enabling-query-notifications-to-run-sample-code"></a>Povolení oznámení dotazů pro spuštění vzorového kódu  
- Povolí službu Service Broker na **AdventureWorks** databáze pomocí SQL Server Management Studio, spusťte následující příkaz jazyka Transact-SQL:  
+## <a name="enabling-query-notifications-to-run-sample-code"></a>Povolení oznámení dotazů ke spuštění ukázkového kódu  
+ Chcete-li povolit Service Broker v databázi **AdventureWorks** pomocí SQL Server Management Studio, spusťte následující příkaz Transact-SQL:  
   
  `ALTER DATABASE AdventureWorks SET ENABLE_BROKER;`  
   
- Pro ukázky oznámení dotazů spuštěn správně musí provést následující příkazy jazyka Transact-SQL na serveru databáze.  
+ Aby ukázky oznámení dotazů běžely správně, musí se na databázovém serveru spustit následující příkazy jazyka Transact-SQL.  
   
 ```  
 CREATE QUEUE ContactChangeMessages;  
@@ -63,28 +63,28 @@ CREATE SERVICE ContactChangeNotifications
 ([http://schemas.microsoft.com/SQL/Notifications/PostQueryNotification]);  
 ```  
   
-## <a name="query-notifications-permissions"></a>Oprávnění pro dotaz oznámení  
- Uživatelé, kteří příkazy požadování oznámení musí mít odběru oznámení dotazů databáze oprávnění na serveru.  
+## <a name="query-notifications-permissions"></a>Oprávnění pro oznamování dotazů  
+ Uživatelé, kteří provádějí příkazy požadující oznámení, musí mít oprávnění k přihlášení k odběru databáze oznámení na serveru.  
   
- Kód na straně klienta, který běží v částečném vztahu důvěryhodnosti situace vyžaduje <xref:System.Data.SqlClient.SqlClientPermission>.  
+ Kód na <xref:System.Data.SqlClient.SqlClientPermission>straně klienta, který běží v případě částečné důvěryhodnosti, vyžaduje.  
   
- Následující kód vytvoří <xref:System.Data.SqlClient.SqlClientPermission> objekt nastavení <xref:System.Security.Permissions.PermissionState> k <xref:System.Security.Permissions.PermissionState.Unrestricted>. <xref:System.Security.CodeAccessPermission.Demand%2A> Vynutí <xref:System.Security.SecurityException> v době běhu, pokud všichni volající v zásobníku volání vyšší nebyla udělena oprávnění.  
+ Následující kód vytvoří <xref:System.Data.SqlClient.SqlClientPermission> objekt a <xref:System.Security.Permissions.PermissionState> nastaví <xref:System.Security.Permissions.PermissionState.Unrestricted>na. Vynutízaběhuvpřípadě,ženavšechvolajícíchvyššíchvzásobníkuvolánínebylaudělenapříslušnáoprávnění.<xref:System.Security.CodeAccessPermission.Demand%2A> <xref:System.Security.SecurityException>  
   
  [!code-csharp[DataWorks SqlNotification.Perms#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlNotification.Perms/CS/source.cs#1)]
  [!code-vb[DataWorks SqlNotification.Perms#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlNotification.Perms/VB/source.vb#1)]  
   
 ## <a name="choosing-a-notification-object"></a>Výběr objektu oznámení  
- Rozhraní API oznámení dotazů poskytuje dva objekty se zpracovat oznámení: <xref:System.Data.SqlClient.SqlDependency> a <xref:System.Data.Sql.SqlNotificationRequest>. Obecně platí, by měl používat většina aplikací – technologie ASP.NET <xref:System.Data.SqlClient.SqlDependency> objektu. Aplikace ASP.NET by měly používat vyšší úrovni <xref:System.Web.Caching.SqlCacheDependency>, která zabalí <xref:System.Data.SqlClient.SqlDependency> a poskytuje rozhraní pro správu oznámení a mezipaměti objektů.  
+ Rozhraní API pro oznamování dotazů poskytuje dva objekty pro zpracování <xref:System.Data.SqlClient.SqlDependency> oznámení <xref:System.Data.Sql.SqlNotificationRequest>: a. Obecně platí, že <xref:System.Data.SqlClient.SqlDependency> většina aplikací non-ASP.NET by měla použít objekt. ASP.NET aplikace by měly používat vyšší úroveň <xref:System.Web.Caching.SqlCacheDependency>, která <xref:System.Data.SqlClient.SqlDependency> zabalí a poskytuje rozhraní pro správu oznámení a objektů mezipaměti.  
   
-### <a name="using-sqldependency"></a>Používání třídy SqlDependency  
- Chcete-li použít <xref:System.Data.SqlClient.SqlDependency>, služba Service Broker musí být povolené pro databázi serveru SQL Server používá, a uživatelé musí mít oprávnění k přijímání oznámení. Objekty služby Service Broker, jako jsou fronty oznámení jsou předdefinovány.  
+### <a name="using-sqldependency"></a>Použití třídy SqlDependency  
+ Aby bylo <xref:System.Data.SqlClient.SqlDependency>možné použít Service Broker musí být povolená pro SQL Server používaná databáze a uživatelé musí mít oprávnění k přijímání oznámení. Service Broker objekty, jako je například fronta oznámení, jsou předdefinovány.  
   
- Kromě toho <xref:System.Data.SqlClient.SqlDependency> automaticky spustí pracovní vlákna ke zpracování oznámení, když jsou odeslány do fronty; také analyzuje zpráv služby Service Broker, odhalení příslušných informací jako argument data události. <xref:System.Data.SqlClient.SqlDependency> musí být inicializován pomocí volání `Start` metodu pro vytvoření závislostí do databáze. Toto je statická metoda, která musí být volána pouze jednou během inicializace aplikace pro každé připojení databáze vyžaduje. `Stop` Metoda by měla být volána při ukončení aplikace pro připojení závislost, která byla vytvořena.  
+ Kromě toho <xref:System.Data.SqlClient.SqlDependency> automaticky spouští pracovní vlákno ke zpracování oznámení, která jsou publikována do fronty. také analyzuje zprávu Service Broker a zpřístupňuje informace jako data argumentu události. <xref:System.Data.SqlClient.SqlDependency>je nutné inicializovat voláním `Start` metody pro vytvoření závislosti na databázi. Toto je statická metoda, kterou je třeba volat pouze jednou při inicializaci aplikace pro každé požadované připojení databáze. `Stop` Metoda by měla být volána při ukončení aplikace pro každé připojení závislosti, které bylo provedeno.  
   
-### <a name="using-sqlnotificationrequest"></a>Pomocí SqlNotificationRequest  
- Naproti tomu <xref:System.Data.Sql.SqlNotificationRequest> vyžaduje, abyste implementovat celou infrastrukturu naslouchání sami. Kromě toho musí být definovány všechny podpůrné objekty služby Service Broker například fronty, služby a typy podporovaných fronty zpráv. Tento manuální přístup je užitečný, pokud vaše aplikace vyžaduje speciální oznámení zpráv nebo oznámení chování, nebo pokud vaše aplikace je součástí větší aplikace, které služba Service Broker.  
+### <a name="using-sqlnotificationrequest"></a>Použití SqlNotificationRequest  
+ Naproti tomu <xref:System.Data.Sql.SqlNotificationRequest> vyžaduje implementaci celé naslouchající infrastruktury sami. Kromě toho musí být definované všechny podpůrné Service Broker objekty, jako jsou fronty, služby a typy zpráv podporované frontou. Tento ruční přístup je užitečný v případě, že vaše aplikace vyžaduje speciální oznamovací zprávy nebo oznamovací chování nebo pokud je vaše aplikace součástí větší Service Broker aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oznámení pro dotazy na SQL Serveru](query-notifications-in-sql-server.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

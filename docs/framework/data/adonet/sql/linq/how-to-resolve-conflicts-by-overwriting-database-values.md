@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fd6db0b8-c29c-48ff-b768-31d28e7a148c
-ms.openlocfilehash: f6721234d2d3920343bc72889c7683fb6ee662a0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1da2abcbbb3b87d44aa99016112d9ef2674912c6
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928761"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781715"
 ---
 # <a name="how-to-resolve-conflicts-by-overwriting-database-values"></a>Postupy: Řešení konfliktů přepsáním hodnot v databázi
-Chcete-li sjednotit rozdíly mezi očekávanými a skutečnými hodnotami databáze před tím, než se pokusíte znovu <xref:System.Data.Linq.RefreshMode.KeepCurrentValues> odeslat změny, můžete použít k přepsání hodnot databáze. Další informace najdete v tématu [Optimistická souběžnost: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+Chcete-li sjednotit rozdíly mezi očekávanými a skutečnými hodnotami databáze před tím, než se pokusíte znovu <xref:System.Data.Linq.RefreshMode.KeepCurrentValues> odeslat změny, můžete použít k přepsání hodnot databáze. Další informace najdete v tématu [Optimistická souběžnost: Přehled](optimistic-concurrency-overview.md).  
   
 > [!NOTE]
 > Ve všech případech se záznam v klientovi poprvé aktualizuje načtením aktualizovaných dat z databáze. Tato akce zajistí, že se další pokus o aktualizaci nebude při stejných kontrolách souběžnosti selhat.  
@@ -42,4 +42,4 @@ Chcete-li sjednotit rozdíly mezi očekávanými a skutečnými hodnotami datab�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Postupy: Správa konfliktů změn](how-to-manage-change-conflicts.md)

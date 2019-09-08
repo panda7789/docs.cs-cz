@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: 21501ec9d0af4c785dd86946fa34c1041bb34b9d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 35e7cc666307d589f21c128734df10430a1a8588
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043902"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779633"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binárními daty (WCF Data Services)
 
@@ -23,7 +23,7 @@ Klientská knihovna umožňuje načíst a aktualizovat binární data [!INCLUDE[
 
 - Jako samostatný binární datový proud prostředků. Toto je doporučená metoda pro přístup k datům binárních rozsáhlých objektů (BLOB), které mohou představovat fotografii, video nebo jakýkoli jiný typ binárních kódovaných dat, a jejich změny.
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]implementuje streamování binárních dat pomocí protokolu HTTP, jak je definováno [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]v. V tomto mechanismu se binární data považují za mediální prostředek, který je oddělený od, ale s entitou, která se nazývá záznam pro Media Link. Další informace najdete v tématu [poskytovatel streamování](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]implementuje streamování binárních dat pomocí protokolu HTTP, jak je definováno [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]v. V tomto mechanismu se binární data považují za mediální prostředek, který je oddělený od, ale s entitou, která se nazývá záznam pro Media Link. Další informace najdete v tématu [poskytovatel streamování](streaming-provider-wcf-data-services.md).
 
 > [!TIP]
 > Podrobný příklad vytvoření klientské aplikace Windows Presentation Foundation (WPF), která stahuje soubory binárních imagí ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby, která ukládá fotky, najdete v části post [Data Services zprostředkovatel streamování – část 2: Přístup k datovému proudu mediálních prostředků](https://go.microsoft.com/fwlink/?LinkId=201637)z klienta. Pokud si chcete stáhnout vzorový kód pro službu Stream Photo data Service podanou v blogovém příspěvku, podívejte se na [ukázku služby streamování fotek data](https://go.microsoft.com/fwlink/?LinkId=198988) v galerii kódu na webu MSDN.
@@ -34,7 +34,7 @@ Entita, která má související datový proud mediálních prostředků, je uve
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-Zbývající příklady v tomto tématu ukazují, jak používat a měnit datový proud mediálních prostředků. Úplný příklad toho, jak používat datový proud mediálních prostředků v .NET Framework klientské aplikace pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, najdete v příspěvku přístup k datovému [proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkID=201637).
+Zbývající příklady v tomto tématu ukazují, jak používat a měnit datový proud mediálních prostředků. Úplný příklad toho, jak používat datový proud mediálních prostředků v .NET Framework klientské aplikace pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, najdete v příspěvku přístup k [datovému proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkID=201637).
 
 ## <a name="accessing-the-binary-resource-stream"></a>Přístup k binárnímu datovému proudu prostředků
 
@@ -74,5 +74,5 @@ V tomto příkladu <xref:System.Data.Services.Client.DataServiceContext.SetSaveS
 
 ## <a name="see-also"></a>Viz také:
 
-- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
-- [Vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)
+- [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
+- [Vazba dat k ovládacím prvkům](binding-data-to-controls-wcf-data-services.md)
