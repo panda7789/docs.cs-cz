@@ -2,17 +2,17 @@
 title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: 0ac2c62388e554dad31beb54966fa2a4d5ffea2e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b209283f5d4e87d1faab06184bda3f79bf1adaed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945018"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792518"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V LINQ to SQL datový model relační databáze mapuje na objektový model, který je vyjádřen v programovacím jazyce podle vašeho výběru. Když se aplikace spustí, LINQ to SQL přeloží dotazy integrované v jazyce v objektovém modelu do SQL a pošle je do databáze ke spuštění. Když databáze vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, se kterými můžete pracovat ve vlastním programovacím jazyce.  
   
- Aby bylo možné přeložit data mezi objektovým modelem a databází, musí být definováno *mapování typů* . LINQ to SQL používá mapování typů ke spárování každého typu modulu CLR (Common Language Runtime) s konkrétním typem SQL Server. V objektovém modelu s mapováním založeném na atributech můžete definovat mapování typů a další informace o mapování, jako je struktura databáze a vztahy mezi tabulkami. Alternativně můžete zadat informace o mapování mimo objektový model s externím mapovacím souborem. Další informace najdete v tématu [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+ Aby bylo možné přeložit data mezi objektovým modelem a databází, musí být definováno *mapování typů* . LINQ to SQL používá mapování typů ke spárování každého typu modulu CLR (Common Language Runtime) s konkrétním typem SQL Server. V objektovém modelu s mapováním založeném na atributech můžete definovat mapování typů a další informace o mapování, jako je struktura databáze a vztahy mezi tabulkami. Alternativně můžete zadat informace o mapování mimo objektový model s externím mapovacím souborem. Další informace najdete v tématu [mapování na základě atributů](attribute-based-mapping.md) a [externí mapování](external-mapping.md).  
   
  Toto téma popisuje následující body:  
   
@@ -36,9 +36,9 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
   
 <a name="DefaultTypeMapping"></a>   
 ## <a name="default-type-mapping"></a>Výchozí mapování typů  
- Pomocí Návrhář relací objektů (O/R Designer) nebo nástroje příkazového řádku SQLMetal můžete automaticky vytvořit objektový model nebo externí mapování souboru. Výchozí mapování typů pro tyto nástroje definují, které typy CLR jsou zvoleny k mapování sloupců v rámci databáze SQL Server. Další informace o použití těchto nástrojů naleznete v tématu [Creating a Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md).  
+ Pomocí Návrhář relací objektů (O/R Designer) nebo nástroje příkazového řádku SQLMetal můžete automaticky vytvořit objektový model nebo externí mapování souboru. Výchozí mapování typů pro tyto nástroje definují, které typy CLR jsou zvoleny k mapování sloupců v rámci databáze SQL Server. Další informace o použití těchto nástrojů naleznete v tématu [Creating a Object Model](creating-the-object-model.md).  
   
- Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu k vytvoření databáze SQL Server na základě informací o mapování v objektovém modelu nebo v externím souboru mapování. Výchozí mapování typů pro <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu definují, který typ SQL Server sloupců je vytvořen pro mapování na typy CLR v objektovém modelu. Další informace najdete v tématu [jak: Dynamicky vytvořit databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
+ Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu k vytvoření databáze SQL Server na základě informací o mapování v objektovém modelu nebo v externím souboru mapování. Výchozí mapování typů pro <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodu definují, který typ SQL Server sloupců je vytvořen pro mapování na typy CLR v objektovém modelu. Další informace najdete v tématu [jak: Dynamicky vytvořit databázi](how-to-dynamically-create-a-database.md).  
   
 <a name="BehaviorMatrix"></a>   
 ## <a name="type-mapping-run-time-behavior-matrix"></a>Matice chování mapování typů za běhu  
@@ -50,7 +50,7 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
 > Některé mapování typů může způsobit přetečení nebo výjimky ztráty dat při převodu do nebo z databáze.  
   
 ### <a name="custom-type-mapping"></a>Mapování vlastního typu  
- U LINQ to SQL nebudete omezeni na výchozí mapování typu používaného návrhářem s/R, SQLMetal a <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodou. Můžete vytvořit mapování vlastního typu explicitním zadáním v souboru DBML. Pak můžete použít tento soubor DBML k vytvoření kódu a souboru mapování objektu modelu. Další informace najdete v tématu [mapování vlastních typů SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+ U LINQ to SQL nebudete omezeni na výchozí mapování typu používaného návrhářem s/R, SQLMetal a <xref:System.Data.Linq.DataContext.CreateDatabase%2A> metodou. Můžete vytvořit mapování vlastního typu explicitním zadáním v souboru DBML. Pak můžete použít tento soubor DBML k vytvoření kódu a souboru mapování objektu modelu. Další informace najdete v tématu [mapování vlastních typů SQL-CLR](sql-clr-custom-type-mappings.md).  
   
 <a name="BehaviorDiffs"></a>   
 ## <a name="behavior-differences-between-clr-and-sql-execution"></a>Rozdíly v chování při provádění CLR a SQL  
@@ -79,9 +79,9 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
 > [!NOTE]
 > Při mapování typů textu SQL na CLR <xref:System.Enum?displayProperty=nameWithType>zahrňte pouze názvy <xref:System.Enum> členů do namapovaného sloupce SQL. Další hodnoty nejsou podporovány ve sloupci mapovaném na <xref:System.Enum>server SQL.  
   
- Nástroj příkazového řádku pro/R Designer a SQLMetal nemůže automaticky mapovat typ SQL na třídu CLR <xref:System.Enum> . Toto mapování je nutné explicitně nakonfigurovat přizpůsobením souboru DBML pro použití v Návrháři O/R a v SQLMetal. Další informace o mapování vlastních typů naleznete v tématu [mapování vlastních typů SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+ Nástroj příkazového řádku pro/R Designer a SQLMetal nemůže automaticky mapovat typ SQL na třídu CLR <xref:System.Enum> . Toto mapování je nutné explicitně nakonfigurovat přizpůsobením souboru DBML pro použití v Návrháři O/R a v SQLMetal. Další informace o mapování vlastních typů naleznete v tématu [mapování vlastních typů SQL-CLR](sql-clr-custom-type-mappings.md).  
   
- Vzhledem k tomu, že sloupec SQL určený pro výčet bude stejného typu jako jiné číselné a textové sloupce; Tyto nástroje nerozpoznají váš záměr a výchozí mapování, jak je popsáno v následujícím [číselném mapování](#NumericMapping) a oddílech [mapování XML](#TextMapping) . Další informace o generování kódu se souborem DBML naleznete [v tématu generování kódu v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+ Vzhledem k tomu, že sloupec SQL určený pro výčet bude stejného typu jako jiné číselné a textové sloupce; Tyto nástroje nerozpoznají váš záměr a výchozí mapování, jak je popsáno v následujícím [číselném mapování](#NumericMapping) a oddílech [mapování XML](#TextMapping) . Další informace o generování kódu se souborem DBML naleznete [v tématu generování kódu v LINQ to SQL](code-generation-in-linq-to-sql.md).  
   
  Metoda vytvoří sloupec SQL číselného typu pro mapování typu CLR <xref:System.Enum?displayProperty=nameWithType>. <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>  
   
@@ -199,10 +199,10 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
 ### <a name="systemdatetime"></a>System.Datetime  
  Rozsah a přesnost typu CLR <xref:System.DateTime?displayProperty=nameWithType> je větší než rozsah a přesnost typu SQL Server `DATETIME` , což je <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> výchozí mapování typu pro metodu. Aby nedocházelo k výjimkám s výjimkami souvisejícími `DATETIME`s daty `DATETIME2`mimo rozsah, použijte, který je k dispozici od Microsoft SQL Server 2008. `DATETIME2`může odpovídat rozsahu a přesnosti CLR <xref:System.DateTime?displayProperty=nameWithType>.  
   
- SQL Server data nemají koncept <xref:System.TimeZone>, funkce, která je bohatě podporovaná v modulu CLR. <xref:System.TimeZone>hodnoty se ukládají do databáze bez převodu bez <xref:System.TimeZone> ohledu na původní <xref:System.DateTimeKind> informace. Při <xref:System.DateTime> načítání hodnot z databáze je jejich hodnota načtena jako je do a <xref:System.DateTime> <xref:System.DateTimeKind>. <xref:System.DateTimeKind.Unspecified> Další informace o podporovaných <xref:System.DateTime?displayProperty=nameWithType> metodách naleznete v tématu [System. DateTime Methods](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md).  
+ SQL Server data nemají koncept <xref:System.TimeZone>, funkce, která je bohatě podporovaná v modulu CLR. <xref:System.TimeZone>hodnoty se ukládají do databáze bez převodu bez <xref:System.TimeZone> ohledu na původní <xref:System.DateTimeKind> informace. Při <xref:System.DateTime> načítání hodnot z databáze je jejich hodnota načtena jako je do a <xref:System.DateTime> <xref:System.DateTimeKind>. <xref:System.DateTimeKind.Unspecified> Další informace o podporovaných <xref:System.DateTime?displayProperty=nameWithType> metodách naleznete v tématu [System. DateTime Methods](system-datetime-methods.md).  
   
 ### <a name="systemtimespan"></a>System. TimeSpan  
- Microsoft SQL Server 2008 a .NET Framework 3,5 SP1 vám umožní namapovat typ CLR <xref:System.TimeSpan?displayProperty=nameWithType> na typ SQL Server. `TIME` Existuje však velký rozdíl mezi rozsahem, který modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> podporuje, a jaký typ SQL Server `TIME` podporuje. Mapování hodnot menší než 0 nebo větší než 23:59:59.9999999 hodin do SQL `TIME` bude mít za následek výjimky přetečení. Další informace naleznete v tématu [metody System. TimeSpan](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md).  
+ Microsoft SQL Server 2008 a .NET Framework 3,5 SP1 vám umožní namapovat typ CLR <xref:System.TimeSpan?displayProperty=nameWithType> na typ SQL Server. `TIME` Existuje však velký rozdíl mezi rozsahem, který modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> podporuje, a jaký typ SQL Server `TIME` podporuje. Mapování hodnot menší než 0 nebo větší než 23:59:59.9999999 hodin do SQL `TIME` bude mít za následek výjimky přetečení. Další informace naleznete v tématu [metody System. TimeSpan](system-timespan-methods.md).  
   
  V Microsoft SQL Server 2000 a SQL Server 2005 nemůžete mapovat pole databáze na <xref:System.TimeSpan>. Operace na <xref:System.TimeSpan> jsou však podporovány, protože <xref:System.TimeSpan> hodnoty mohou být vráceny z <xref:System.DateTime> odčítání nebo zavedeny do výrazu jako literál nebo vázaná proměnná.  
   
@@ -258,7 +258,7 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
   
 ## <a name="see-also"></a>Viz také:
 
-- [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
-- [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
-- [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
+- [Mapování na základě atributů](attribute-based-mapping.md)
+- [Externí mapování](external-mapping.md)
+- [Datové typy a funkce](data-types-and-functions.md)
+- [Neshody typů SQL a CLR](sql-clr-type-mismatches.md)

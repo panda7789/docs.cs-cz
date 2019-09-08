@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a51e8c83d0949f68a41f6a4e10396adbc4f3c9c1
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5db205993bc1a0665dc0003948ce805813251f48
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741887"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787447"
 ---
 # <a name="getfiledef-method"></a>GetFileDef – metoda
-Získá skutečný FileDef tokenu používaného v metadatech (na rozdíl od token přiřadil ALink).  
+Načte skutečný token FileDef použitý v metadatech (na rozdíl od tokenu přiřazeného pomocí ALink).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetFileDef(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení.  
+ ID sestavení  
   
  `TargetFile`  
- Token přidaný soubor jako získaných AddFile – metoda nebo addimport – metoda.  
+ Token přidaného souboru, který byl načten z metody AddFile nebo metody addimport –  
   
  `pScope`  
- Přijme FileDef token.  
+ Přijímá token FileDef.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
+ Vrací S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [IALink – rozhraní](ialink-interface.md)
+- [Rozhraní API ALink](index.md)

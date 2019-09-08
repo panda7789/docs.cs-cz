@@ -5,39 +5,39 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
-ms.openlocfilehash: 05130e809356369ee2b43d9af86acf69fe527e9a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d5268cd2171bdccc3885cd599fdc8c277e61aa4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902327"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795712"
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>Postupy: Vytvoření vlastní zásady autorizace
-Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporuje model založený na deklaraci identity autorizace. Extrahuje z tokenů, volitelně zpracovává vlastní zásady autorizace a pak umístit do deklarace identity <xref:System.IdentityModel.Policy.AuthorizationContext> , pak se dají prozkoumat pro autorizační rozhodnutí. Vlastní zásady je možné získat deklarace identity z příchozí tokeny deklarací, aplikací. Tímto způsobem může být izolované aplikační vrstvu z podrobností na různé deklarace obsluhuje různé typy tokenů, které podporuje WCF. Toto téma ukazuje, jak implementovat vlastní zásady autorizace a tom, jak přidat tuto zásadu do kolekce zásady používané službou.  
+Infrastruktura modelu identity ve službě Windows Communication Foundation (WCF) podporuje autorizační model založený na deklaracích identity. Deklarace identity se extrahují z tokenů, volitelně se zpracovávají pomocí vlastních zásad autorizace, a <xref:System.IdentityModel.Policy.AuthorizationContext> pak se umístí do služby, která se pak dá prozkoumat, aby se mohla ověřit autorizační rozhodnutí. Vlastní zásady se dají použít k transformaci deklarací z příchozích tokenů na deklarace identity, které aplikace očekává. Tímto způsobem lze vrstvu aplikace izolované z podrobností o rozdílných deklaracích, které jsou obsluhovány různými typy tokenů, které WCF podporuje. V tomto tématu se dozvíte, jak implementovat vlastní zásady autorizace a jak tyto zásady přidat do kolekce zásad používané službou.  
   
-### <a name="to-implement-a-custom-authorization-policy"></a>Chcete-li implementovat vlastní zásady autorizace  
+### <a name="to-implement-a-custom-authorization-policy"></a>Implementace vlastních zásad autorizace  
   
-1. Definovat novou třídu, která je odvozena z <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.  
+1. Definujte novou třídu, která je odvozena <xref:System.IdentityModel.Policy.IAuthorizationPolicy>z.  
   
-2. Implementovat jen pro čtení <xref:System.IdentityModel.Policy.IAuthorizationComponent.Id%2A> vlastnost generování jedinečného řetězce v konstruktoru pro třídu a vrácení tohoto řetězce při každém přístupu k vlastnosti.  
+2. Implementujte vlastnost jen <xref:System.IdentityModel.Policy.IAuthorizationComponent.Id%2A> pro čtení vygenerováním jedinečného řetězce v konstruktoru pro třídu a vrácením tohoto řetězce vždy, když je přístup k vlastnosti.  
   
-3. Implementovat jen pro čtení <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Issuer%2A> vlastnost tak, že vrací <xref:System.IdentityModel.Claims.ClaimSet> , která představuje zásad vydavatele. Může se jednat `ClaimSet` integrovaná nebo aplikace, která představuje `ClaimSet` (například `ClaimSet` vrácené statickou <xref:System.IdentityModel.Claims.ClaimSet.System%2A> vlastnost.  
+3. Implementujte vlastnost <xref:System.IdentityModel.Claims.ClaimSet> , která <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Issuer%2A> je jen pro čtení, vrácením reprezentujícího vystavitele zásady. Může to být `ClaimSet` , který představuje aplikaci nebo `ClaimSet` integrovanou `ClaimSet` (například vrácená statickou <xref:System.IdentityModel.Claims.ClaimSet.System%2A> vlastností.  
   
-4. Implementace <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> způsob, jak je popsáno v následujícím postupu.  
+4. Implementujte <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metodu, jak je popsáno v následujícím postupu.  
   
-### <a name="to-implement-the-evaluate-method"></a>Chcete-li implementovat metodu vyhodnotit  
+### <a name="to-implement-the-evaluate-method"></a>Implementace metody Evaluate  
   
-1. Dva parametry jsou předány do této metody: instance <xref:System.IdentityModel.Policy.EvaluationContext> třídy a odkaz na objekt.  
+1. Do této metody jsou předány dva parametry: instance <xref:System.IdentityModel.Policy.EvaluationContext> třídy a odkaz na objekt.  
   
-2. Pokud přidá vlastní zásady autorizace <xref:System.IdentityModel.Claims.ClaimSet> instance bez ohledu na aktuální obsah <xref:System.IdentityModel.Policy.EvaluationContext>, pak přidejte `ClaimSet` voláním <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> metodu a vrátí `true` z <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metoda. Vrací `true` označuje infrastruktury autorizace, zásady autorizace se provádí svou práci a není potřeba ji vyvolat znovu.  
+2. Pokud vlastní zásady autorizace přidávají <xref:System.IdentityModel.Claims.ClaimSet> instance bez ohledu na aktuální obsah rozhraní <xref:System.IdentityModel.Policy.EvaluationContext>, pak je <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> přidejte `ClaimSet` voláním metody a návratem `true` z <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> metody. Při `true` návratu se znamená, že autorizační infrastruktura vykonala svoji práci a není nutné ji volat znovu.  
   
-3. Pokud zásady autorizace pro vlastní přidá sady deklarací jenom v případě, že jsou již přítomny v určité deklarace identity `EvaluationContext`, vyhledejte tyto deklarace identit tím, že kontroluje `ClaimSet` instancí vrácených <xref:System.IdentityModel.Policy.EvaluationContext.ClaimSets%2A> vlastnost. Pokud deklarace identity jsou k dispozici, přidejte novou deklaraci nastaví voláním <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> metoda a, pokud žádné další deklarace identity sady mají být přidána, návratový `true`, označující infrastrukturu ověření, že zásady autorizace dokončí svou práci. Pokud deklarace identity nejsou k dispozici, vrátí `false`, označující, že by měla být zásady autorizace volána znovu Pokud jiné zásady autorizace přidat další deklarace identity, které mají `EvaluationContext`.  
+3. Pokud vlastní zásady autorizace přidávají sady deklarací identity jenom v případě `EvaluationContext`, že některé deklarace identity už v portálu existují, pak tyto deklarace `ClaimSet` vyhledáte kontrolou instancí <xref:System.IdentityModel.Policy.EvaluationContext.ClaimSets%2A> vrácených vlastností. Pokud jsou deklarace identity k dispozici, přidejte nové sady deklarací voláním <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> metody a, pokud žádné další sady deklarací nechcete přidat, vraťte `true`se, což znamená, že autorizační infrastruktura dokončila svoji práci. Pokud nejsou deklarace identity k dispozici, `false`vraťte se, aby se zásady autorizace znovu vyvolaly, pokud jiné zásady autorizace přidají `EvaluationContext`do. další sady deklarací.  
   
-4. Ve složitějších scénářích zpracování, druhý parametr <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metoda se používá k uložení proměnné stavu, který infrastruktury autorizace předá zpět při každé následné volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metodu pro konkrétní hodnocení.  
+4. V složitějších scénářích zpracování se druhý parametr <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metody používá k uložení proměnné stavu, která se během každého následného volání <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> metody vrátí do metody pro určité vyhodnocení.  
   
-### <a name="to-specify-a-custom-authorization-policy-through-configuration"></a>Chcete-li určit vlastní zásady autorizace prostřednictvím konfigurace  
+### <a name="to-specify-a-custom-authorization-policy-through-configuration"></a>Určení vlastních zásad autorizace prostřednictvím konfigurace  
   
-1. Zadejte typ zásad autorizace v `policyType` atribut `add` element v `authorizationPolicies` prvek v `serviceAuthorization` elementu.  
+1. Zadejte typ vlastní zásady autorizace `policyType` v atributu `add` v `authorizationPolicies` `serviceAuthorization` elementu elementu v elementu.  
   
     ```xml  
     <configuration>  
@@ -54,23 +54,23 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporu
     </configuration>  
     ```  
   
-### <a name="to-specify-a-custom-authorization-policy-through-code"></a>Chcete-li určit vlastní zásady autorizace prostřednictvím kódu.  
+### <a name="to-specify-a-custom-authorization-policy-through-code"></a>Určení vlastních zásad autorizace prostřednictvím kódu  
   
-1. Vytvoření <xref:System.Collections.Generic.List%601> z <xref:System.IdentityModel.Policy.IAuthorizationPolicy>.  
+1. <xref:System.Collections.Generic.List%601> Vytvořte .<xref:System.IdentityModel.Policy.IAuthorizationPolicy>  
   
-2. Vytvoření instance zásad autorizace.  
+2. Vytvořte instanci vlastních zásad autorizace.  
   
-3. Přidejte do seznamu instance zásad autorizace.  
+3. Přidejte do seznamu instanci zásady autorizace.  
   
-4. Zopakujte kroky 2 a 3 pro každou zásadu autorizace.  
+4. Opakujte kroky 2 a 3 pro každou vlastní zásadu autorizace.  
   
-5. Přiřadit verze jen pro čtení seznamu <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A> vlastnost.  
+5. Přiřaďte k <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A> vlastnosti verzi seznamu určenou jen pro čtení.  
   
      [!code-csharp[c_CustomAuthPol#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthpol/cs/c_customauthpol.cs#8)]
      [!code-vb[c_CustomAuthPol#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthpol/vb/source.vb#8)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje kompletní <xref:System.IdentityModel.Policy.IAuthorizationPolicy> implementace.  
+ Následující příklad ukazuje kompletní <xref:System.IdentityModel.Policy.IAuthorizationPolicy> implementaci.  
   
  [!code-csharp[c_CustomAuthPol#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthpol/cs/c_customauthpol.cs#5)]
  [!code-vb[c_CustomAuthPol#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthpol/vb/source.vb#5)]  
@@ -78,6 +78,6 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) podporu
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [Postupy: Porovnání deklarací](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)
-- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
-- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Postupy: Porovnat deklarace identity](how-to-compare-claims.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Zásady autorizace](../samples/authorization-policy.md)

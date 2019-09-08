@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: efdc203e-3da9-4477-815e-54f10c3d7c6c
-ms.openlocfilehash: 342583cdbf6a1501f1bc70c6a9be5d7009c390eb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2112600dfcef65b1c85445b03806ce8e9cab6a27
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940256"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782063"
 ---
 # <a name="how-to-control-how-much-related-data-is-retrieved"></a>Postupy: Určení objemu načítaných souvisejících dat
 <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> Použijte metodu k určení, která data související s vaším hlavním cílem by měla být načtena ve stejnou dobu. Pokud například víte, že budete potřebovat informace o objednávkách zákazníků, můžete použít <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> k tomu, abyste se ujistili, že informace o objednávkách budou načteny ve stejnou dobu jako informace o zákaznících. Tento přístup má za následek pouze jednu cestu k databázi pro obě sady informací.  
@@ -26,4 +26,4 @@ ms.locfileid: "69940256"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Dotazování na databázi](querying-the-database.md)

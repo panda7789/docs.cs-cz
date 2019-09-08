@@ -1,31 +1,31 @@
 ---
-title: 'Omezení rizik: Vykreslování oken ve WPF'
+title: Zmírnění Vykreslování oken WPF
 ms.date: 03/30/2017
 ms.assetid: 28ed6bf8-141b-4b73-a4e3-44a99fae5084
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ecf951ecb955a6597757387de1119267ebc58fdc
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 13091c06561da24d2fc03f810fd8b8687b21d9a4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301453"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70789789"
 ---
-# <a name="mitigation-wpf-window-rendering"></a>Omezení rizik: Vykreslování oken ve WPF
+# <a name="mitigation-wpf-window-rendering"></a>Zmírnění Vykreslování oken WPF
 
-V rozhraní .NET Framework 4.6 spuštěné v systému Windows 8 a vyšším, je vykreslen celé okno bez oříznutí při rozšiřuje mimo jednotné zobrazení v případě více monitorů.
+V .NET Framework 4,6 spuštěném v systému Windows 8 a vyšším se celé okno vykreslí bez oříznutí, když se v případě více monitorů rozšíří mimo jeden displej.
 
 ## <a name="impact"></a>Dopad
 
-Obecně platí vykreslování celé okno bez oříznutí víc monitorů je očekávané chování. Ve Windows 7 a starších verzích se ale WPF windows oříznut, pokud rozšířit nad rámec jednoho zobrazení protože vykreslování část okna na druhém monitoru mají dopad výkonu.
+Obecně platí, že vykreslování celého okna napříč několika monitory bez oříznutí je očekávané chování. V systému Windows 7 a starších verzích se však okna WPF zobrazují, když přesahují rámec jednoho zobrazení, protože vykreslování části okna na druhém monitoru má významný dopad na výkon.
 
-Přesné dopadu vykreslování WPF windows na monitorech v systému Windows 8 a vyšším není přesně vyčíslitelný, protože závisí na velký počet faktorů. V některých případech ji stále může způsobit nežádoucí vliv na výkon, hlavně pro uživatele, kteří spouštět aplikace náročné na grafiku a mít tažných monitorování systému windows. V ostatních případech můžete jednoduše chtít konzistentní chování ve verzích rozhraní .NET Framework.
+Přesný dopad vykreslování oken WPF napříč monitory ve Windows 8 a novějším není přesně kvantifikovaný, protože závisí na velkém počtu faktorů. V některých případech může stále dodávat nežádoucí dopad na výkon, zejména pro uživatele, kteří spouštějí aplikace náročné na grafiku a mají monitory s podporou systému Windows. V jiných případech může být jednoduché chování v různých .NET Framework verzích.
 
 ## <a name="mitigation"></a>Zmírnění
 
-Můžete zakázat tuto změnu a vrátit k předchozí chování při přesahoval jednotné zobrazení oříznutí okno WPF. Toto lze provést dvěma způsoby:
+Tuto změnu můžete zakázat a vrátit se k předchozímu chování při vystřihování okna WPF, když se rozšíří nad rámec jednoho zobrazení. Toto lze provést dvěma způsoby:
 
-- Přidáním `<EnableMultiMonitorDisplayClipping>` elementu `<appSettings>` oddílu konfiguračního souboru aplikace, můžete zakázat nebo povolit toto chování na aplikace, které běží v systému Windows 8 nebo novější. Například následující konfigurační oddíl zakáže vykreslování bez omezení:
+- Přidáním `<EnableMultiMonitorDisplayClipping>` elementu`<appSettings>` do oddílu konfiguračního souboru aplikace můžete toto chování zakázat nebo povolit pro aplikace spuštěné v systému Windows 8 nebo novějším. Například následující konfigurační oddíl zakáže vykreslování bez omezení:
 
   ```xml
   <appSettings>
@@ -33,14 +33,14 @@ Můžete zakázat tuto změnu a vrátit k předchozí chování při přesahoval
     </appSettings>
   ```
 
-  `<EnableMultiMonitorDisplayClipping>` Nastavení konfigurace může mít jednu ze dvou hodnot:
+  Nastavení `<EnableMultiMonitorDisplayClipping>` konfigurace může mít jednu ze dvou hodnot:
 
-  - `true`, chcete povolit oříznutí systému windows ke sledování hranice během vykreslování.
+  - `true`, aby při vykreslování bylo umožněno oříznutí oken sledovat hranice.
 
-  - `false`, chcete-li zakázat systému windows ke sledování hranice během vykreslování.
+  - `false`, chcete-li zakázat oříznutí oken ke sledování hranic během vykreslování.
 
-- Tím, že nastavíte <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> vlastnost `true` při spuštění aplikace.
+- Nastavením vlastnosti na `true` při spuštění aplikace. <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A>
 
 ## <a name="see-also"></a>Viz také:
 
-- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+- [Změny v modulu runtime](runtime-changes-in-the-net-framework-4-6.md)

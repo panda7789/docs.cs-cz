@@ -17,16 +17,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a98273307003485202d8c12d5c27fda04ff5a0ae
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5af7dc4e1694b66fc4a5ce37e515c71e9fa3db49
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629878"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796741"
 ---
 # <a name="iassemblycacheitemcreatestream-method"></a>IAssemblyCacheItem::CreateStream – metoda
 
-Vytvoří datový proud se zadaným názvem a formát.
+Vytvoří datový proud se zadaným názvem a formátem.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,30 +44,30 @@ HRESULT CreateStream (
 ## <a name="parameters"></a>Parametry
 
 `dwFlags`\
-[in] Příznaky definované v Fusion.idl.
+pro Příznaky definované v Fusion. idl
 
 `pszStreamName`\
-[in] Název datového proudu, který se má vytvořit.
+pro Název streamu, který se má vytvořit
 
 `dwFormat`\
-[in] Formát souboru, který má být datovým proudem.
+pro Formát souboru, který se má streamovat
 
 `dwFormatFlags`\
-[in] Příznaky formátu konkrétní definované v Fusion.idl.
+pro Příznaky specifické pro formát definované v Fusion. idl.
 
 `ppIStream`\
-[out] Ukazatel na adresu vráceného [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.
+mimo Ukazatel na adresu vrácené instance [IStream](/windows/desktop/api/objidl/nn-objidl-istream) .
 
 `puliMaxSize`\
-[in, volitelné] Maximální velikost datového proudu odkazuje `ppIStream`.
+[in, volitelné] Maximální velikost datového proudu, na který odkazuje `ppIStream`.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** Fusion.h
+**Hlaviček** Fusion. h
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

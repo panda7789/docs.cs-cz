@@ -2,15 +2,15 @@
 title: Výběr vzorce výměny zpráv
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-ms.openlocfilehash: 518a21ef34d52ef4b70871ba8bad7876374dd319
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7dcbea30b53142ed68db9ac138f8c7a665ca1729
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951864"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797300"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
-Prvním krokem při psaní vlastního přenosu je rozhodování o tom, které *vzory výměny zpráv* (nebo MEPs) se vyžadují pro kanál, který vyvíjíte. Toto téma popisuje dostupné možnosti a popisuje různé požadavky. Toto je první úkol v seznamu úkolů vývoj kanálu, který je popsaný v tématu [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
+Prvním krokem při psaní vlastního přenosu je rozhodování o tom, které *vzory výměny zpráv* (nebo MEPs) se vyžadují pro kanál, který vyvíjíte. Toto téma popisuje dostupné možnosti a popisuje různé požadavky. Toto je první úkol v seznamu úkolů vývoj kanálu, který je popsaný v tématu [Vývoj kanálů](developing-channels.md).  
   
 ## <a name="six-message-exchange-patterns"></a>Šest vzorců výměny zpráv  
  Existují tři MEPsy, ze kterých si můžete vybrat:  
@@ -27,7 +27,7 @@ Prvním krokem při psaní vlastního přenosu je rozhodování o tom, které *v
   
      Duplexní MEP umožňuje klientovi poslat libovolný počet zpráv a přijatý v libovolném pořadí. Duplexní MEP je jako telefonická konverzace, kde každé mluvené slovo je zpráva. Vzhledem k tomu, že obě strany mohou v tomto MEP odesílat a přijímat, rozhraní implementované kanály klienta a služby <xref:System.ServiceModel.Channels.IDuplexChannel>je.  
   
- ![Výběr vzoru výměny zprávy](../../../../docs/framework/wcf/extending/media/wcfc-basicthreemepsc.gif "wcfc_BasicThreeMEPsc")  
+ ![Výběr vzoru výměny zprávy](./media/wcfc-basicthreemepsc.gif "wcfc_BasicThreeMEPsc")  
 Tři základní vzory výměny zpráv. Shora dolů: datagram, Request-response a duplexní režim.  
   
  Každý z těchto MEPs může také podporovat *relace*. Relace (a implementace <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> typu <xref:System.ServiceModel.Channels.ISession?displayProperty=nameWithType>) koreluje všechny zprávy odeslané a přijaté na kanálu. Vzor požadavků a odpovědí je samostatná relace dvou zpráv, protože se jedná o korelační požadavek a odpověď. Oproti tomu vzor požadavek-odpověď, který podporuje relace, implikuje vzájemnou korelaci mezi všemi páry požadavků a odpovědí na daném kanálu. Získáte tak celkem šest MEPs, ze kterých si můžete vybrat:  
@@ -52,7 +52,7 @@ Tři základní vzory výměny zpráv. Shora dolů: datagram, Request-response a
   
  V objektovém modelu kanálu jednotlivé logické relace se manifestují jako instance kanálu s relacemi. Proto každá nová relace vytvořená klientem a přijatá ve službě odpovídá novému kanálu na každé straně. Následující diagram znázorňuje v horní části strukturu kanálů bez relací a dolní část struktury kanálů, které jsou v relaci.  
   
- ![Výběr vzoru výměny zprávy](../../../../docs/framework/wcf/extending/media/wcfc-sessionandsessionlesschannelsc.gif "wcfc_SessionAndSessionlessChannelsc")  
+ ![Výběr vzoru výměny zprávy](./media/wcfc-sessionandsessionlesschannelsc.gif "wcfc_SessionAndSessionlessChannelsc")  
   
  Klient vytvoří nový kanál s relací a pošle zprávu. Naslouchací proces kanálu na straně služby obdrží tuto zprávu a zjistí, že patří do nové relace, takže vytvoří nový kanál s relací a předá ho aplikaci (v reakci na aplikaci volající AcceptChannel v naslouchací službě kanálu). Aplikace potom obdrží tuto zprávu a všechny následné zprávy odeslané ve stejné relaci prostřednictvím stejného kanálu relace.  
   
@@ -94,4 +94,4 @@ Tři základní vzory výměny zpráv. Shora dolů: datagram, Request-response a
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md)
+- [Přehled modelu kanálu](channel-model-overview.md)

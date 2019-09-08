@@ -4,29 +4,29 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - channel model [WCF]
 ms.assetid: 07a81e11-3911-4632-90d2-cca99825b5bd
-ms.openlocfilehash: c29b3e3d5eff426ac573ddf5224259f0a6c28e53
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 362a7392d9dbaedb1942280a6c3b6c8f2139afe5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664918"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795886"
 ---
 # <a name="channel-model-overview"></a>Přehled modelu kanálu
-Zásobník kanál Windows Communication Foundation (WCF) je vrstvený komunikačního balíku pomocí jednoho nebo několika kanálů, které zpracovávají zprávy. V dolní části zásobníku je přenosový kanál, který je zodpovědný za přizpůsobení zásobníku kanálu k přenosu. (například TCP, HTTP, SMTP a jiné typy přenosu.). Kanály nabízejí nižší úrovně programovací model pro odesílání a příjem zpráv. Tento model programování spoléhá na několik rozhraní a další typy souhrnně označované jako model kanálu WCF. Toto téma popisuje kanál tvary, konstrukce základní kanál naslouchání (služba) a objekt pro vytváření kanálů (na straně klienta).  
+Zásobník kanálů Windows Communication Foundation (WCF) je Vícevrstvá komunikační sada s jedním nebo více kanály, které zpracovávají zprávy. V dolní části zásobníku je transportní kanál zodpovědný za přizpůsobení zásobníku kanálu k základnímu přenosu (například TCP, HTTP, SMTP a dalších typů přenosů). Kanály poskytují model programování nízké úrovně pro odesílání a příjem zpráv. Tento programovací model spoléhá na několik rozhraní a dalších typů, které jsou souhrnně označovány jako model kanálu WCF. Toto téma popisuje obrazce kanálů, konstrukci základního naslouchacího procesu kanálu (u služby) a továrny kanálů (na klientovi).  
   
-## <a name="channel-stack"></a>Kanál zásobníku  
- Koncových bodů WCF komunikovat na světě pomocí komunikačního balíku volá zásobníku kanálu. Následující diagram porovnává zásobníku kanál pomocí jiných komunikační balíky, například protokol TCP/IP.  
+## <a name="channel-stack"></a>Zásobník kanálů  
+ Koncové body WCF komunikují s World pomocí komunikačního zásobníku označovaného jako zásobník kanálů. Následující diagram porovnává zásobník kanálů s jinými komunikačními zásobníky, například TCP/IP.  
   
- ![Channel Model](../../../../docs/framework/wcf/extending/media/wcfc-channelstackhighlevelc.gif "wcfc_ChannelStackHighLevelc")  
+ ![Channel Model](./media/wcfc-channelstackhighlevelc.gif "wcfc_ChannelStackHighLevelc")  
   
- První, podobnost: Každá vrstva zásobníku v obou případech poskytuje některé abstrakce světa níže, vrstvy a zveřejnění této abstrakční pouze do vrstvy nad ním. Každá vrstva využívá abstrakční vrstvu přímo pod něj. Také v obou případech platí, pokud dva balíčky komunikují, každá vrstva komunikuje s odpovídající vrstvy do zásobníku, například vrstvy IP komunikuje s vrstvou IP a vrstvě protokolu TCP vrstvě protokolu TCP a tak dále.  
+ Nejprve podobnosti: V obou případech jsou v každé vrstvě zásobníku k dispozici některé abstrakce světa pod touto vrstvou a zpřístupnění této abstrakce pouze vrstvě přímo nad ní. Každá vrstva používá abstrakci pouze vrstvy přímo pod ní. V obou případech také při komunikaci dvou zásobníků komunikuje každá vrstva s odpovídající vrstvou v druhém zásobníku, například vrstva IP komunikuje s vrstvou IP adresy a vrstvou TCP s vrstvou TCP atd.  
   
- Nyní rozdíly: Zatímco protokolů TCP je navržená k poskytování abstrakce fyzickou sítí, kanál zásobníku je navržené pro poskytování abstrakce nejen jak zpráva se doručí, to znamená, přenos, ale také další funkce, jako jsou Novinky ve zprávě, nebo co protokol se používá pro komunikaci, včetně přenosu ale mnohem větší než největší. Například element vazby stabilní relace je součástí zásobníku kanálu, ale není pod přenos nebo přenosu samotného. Tato abstrakce zajišťuje vyžadováním dolní kanálu v zásobníku přizpůsobit podkladový přenosový protokol k architektuře zásobníku kanálu a spoléhání se na další kanály nahoru v zásobníku a zajistit tak komunikaci funkce, jako je spolehlivost zabezpečení a záruky.  
+ Teď rozdíly: I když byl zásobník TCP navržený tak, aby poskytoval abstrakci fyzické sítě, zásobník kanálů je navržený tak, aby poskytoval abstrakci nejen toho, jak je zpráva doručena, to znamená přenos, ale i další funkce, jako je například zpráva, co je ve zprávě. protokol se používá ke komunikaci, včetně přenosu, ale mnohem víc. Například element s vazbou spolehlivé relace je součástí zásobníku kanálů, ale není pod přenosem nebo samotným přenosem. Tato abstrakce se dosahuje tím, že vyžaduje spodní kanál v zásobníku, aby se přizpůsobila architektura zásobníku kanálu a pak se spoléhá na další kanály v zásobníku, aby se poskytovaly komunikační funkce, jako je třeba spolehlivost. záruky a zabezpečení.  
   
- Messages – flow na stránkách komunikačního balíku jako <xref:System.ServiceModel.Channels.Message> objekty. Jak je znázorněno na obrázku výše, je volána v dolní části kanálu přenosový kanál. Je kanál, který je zodpovědný za odesílání a přijímání zpráv do a z jiných stran. Jedná se o odpovědnosti transformace <xref:System.ServiceModel.Channels.Message> objektů do a z formátu používaný ke komunikaci s ostatními stranami. Nad přenosový kanál může existovat libovolný počet kanály protokolů každý odpovídají za poskytování komunikace funkci, jako je například spolehlivé doručování záruky. Kanály protokolů provádět zpráv předávaných mezi nimi ve formě <xref:System.ServiceModel.Channels.Message> objektu. Jsou obvykle buď transformaci zprávy, například přidání hlavičky nebo šifrování těla, nebo odesílat a přijímat zprávy ovládacího prvku vlastní protokol, například na příjem potvrzení.  
+ Zprávy proudí prostřednictvím komunikačního zásobníku <xref:System.ServiceModel.Channels.Message> jako objekty. Jak je znázorněno na obrázku výše, Spodní kanál se nazývá transportní kanál. Je to kanál, který zodpovídá za odesílání a příjem zpráv z jiných stran. To zahrnuje zodpovědnost <xref:System.ServiceModel.Channels.Message> proti transformaci objektu do formátu používaného ke komunikaci s ostatními stranami a z něj. Nad transportním kanálem může být každý z nich zodpovědný libovolný počet kanálů protokolu, jako je například spolehlivý záruka na doručení. Kanály protokolu fungují na zprávy, které je procházejí v podobě <xref:System.ServiceModel.Channels.Message> objektu. Obvykle buď transformují zprávu, například přidáním záhlaví nebo šifrováním těla, nebo odesílají a přijímají vlastní zprávy řídicího protokolu, například potvrzení o doručení.  
   
-## <a name="channel-shapes"></a>Kanál obrazce  
- Každý kanál implementuje jedno nebo více rozhraní, které jsou známé jako rozhraní tvar kanál nebo kanál obrazce. Tyto obrazce kanál poskytují metody orientované na komunikaci, jako posílají a přijímají nebo požadavku a odpovědi, že implementuje kanál a kanálu volání. Základní tvary kanálu je <xref:System.ServiceModel.Channels.IChannel> rozhraní, což je rozhraní, které poskytuje `GetProperty` \<T > metoda určené jako vrstvené mechanismus pro přístup k libovolné funkce vystavené kanály v zásobníku. Pěti kanálu tvary, které rozšiřují <xref:System.ServiceModel.Channels.IChannel> jsou:  
+## <a name="channel-shapes"></a>Obrazce kanálu  
+ Každý kanál implementuje jedno nebo více rozhraní označovaných jako rozhraní obrazce kanálu nebo obrazce kanálů. Tyto obrazce kanálů poskytují metody zaměřené na komunikaci, jako je například odeslání a přijetí nebo vyžádání a odpověď na to, že kanál implementuje a uživatel volání kanálu. Na základu obrazců kanálu je <xref:System.ServiceModel.Channels.IChannel> rozhraní, což je rozhraní, které `GetProperty` \<poskytuje metodu T >, která je určená jako vrstvený mechanismus pro přístup k libovolným funkcím vystaveným kanály v zásobníku. Pět obrazců kanálu, které rozšiřuje <xref:System.ServiceModel.Channels.IChannel> :  
   
 - <xref:System.ServiceModel.Channels.IInputChannel>  
   
@@ -38,7 +38,7 @@ Zásobník kanál Windows Communication Foundation (WCF) je vrstvený komunikač
   
 - <xref:System.ServiceModel.Channels.IDuplexChannel>  
   
- Dále, každý z těchto tvarů má ekvivalentní, která rozšiřuje <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> pro podporu relace. Toto jsou:  
+ Každý z těchto tvarů má navíc ekvivalent, který rozšiřuje <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> na relace podpory. Toto jsou:  
   
 - <xref:System.ServiceModel.Channels.IInputSessionChannel>  
   
@@ -50,31 +50,31 @@ Zásobník kanál Windows Communication Foundation (WCF) je vrstvený komunikač
   
 - <xref:System.ServiceModel.Channels.IDuplexSessionChannel>  
   
- Kanál tvary jsou uspořádány po některé základní zprávy exchange vzory, podporuje stávající přenosové protokoly. Například jednosměrného zasílání zpráv odpovídá <xref:System.ServiceModel.Channels.IInputChannel> / <xref:System.ServiceModel.Channels.IOutputChannel> pár, odpovídá požadavku a odpovědi <xref:System.ServiceModel.Channels.IRequestChannel> / <xref:System.ServiceModel.Channels.IReplyChannel> páry a obousměrný duplexní komunikaci odpovídá <xref:System.ServiceModel.Channels.IDuplexChannel> (který rozšiřuje oba <xref:System.ServiceModel.Channels.IInputChannel> a <xref:System.ServiceModel.Channels.IOutputChannel>).  
+ Obrazce kanálu jsou vzorované po některých základních vzorech výměny zpráv podporovaných existujícími transportními protokoly. Například jednosměrné zasílání zpráv <xref:System.ServiceModel.Channels.IInputChannel> odpovídá <xref:System.ServiceModel.Channels.IOutputChannel> <xref:System.ServiceModel.Channels.IRequestChannel> / <xref:System.ServiceModel.Channels.IDuplexChannel> páru, požadavek-odpověď odpovídá dvojicímaobousměrněduplexníkomunikaciodpovídá<xref:System.ServiceModel.Channels.IReplyChannel> / (která rozšiřuje obě <xref:System.ServiceModel.Channels.IInputChannel> <xref:System.ServiceModel.Channels.IOutputChannel>i).  
   
-## <a name="programming-with-the-channel-stack"></a>Programování s zásobníku kanálu  
- Zásobníky kanálu se obvykle vytvářejí pomocí vzoru pro objekt pro vytváření, kde vytvoří vazbu kanálu zásobníku. Na straně odesílání vazbu sloužící k sestavení <xref:System.ServiceModel.ChannelFactory>, která zase sestavení kanálu zásobníku a vrátí odkaz na horní části kanálu v zásobníku. Aplikace pak můžete použít tento kanál pro odesílání zpráv. Další informace najdete v tématu [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md).  
+## <a name="programming-with-the-channel-stack"></a>Programování se zásobníkem kanálů  
+ Zásobníky kanálů se většinou vytvářejí pomocí modelu továrny, ve kterém vazba vytváří zásobník kanálů. Na straně odeslání je použita vazba k sestavení a <xref:System.ServiceModel.ChannelFactory>, který zase sestaví zásobník kanálu a vrátí odkaz na horní kanál v zásobníku. Aplikace pak může tento kanál použít k posílání zpráv. Další informace najdete v tématu [programování na úrovni kanálu klienta](client-channel-level-programming.md).  
   
- Na straně příjmu vazbu sloužící k sestavení <xref:System.ServiceModel.Channels.IChannelListener>, který poslouchá příchozí zprávy. <xref:System.ServiceModel.Channels.IChannelListener> Poskytuje vytvořením kanálu zásobníky a odkazu na aplikaci na hlavní kanál zpracování zpráv do přijímající aplikace. Aplikace pak pomocí tohoto kanálu pro příjem příchozí zprávy. Další informace najdete v tématu [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md).  
+ Na straně příjmu se používá vazba k sestavení <xref:System.ServiceModel.Channels.IChannelListener>a, která naslouchá příchozím zprávám. <xref:System.ServiceModel.Channels.IChannelListener> Poskytuje zprávy pro naslouchající aplikace vytvořením zásobníků kanálů a předáním odkazu na aplikaci do nejvyššího kanálu. Aplikace pak použije tento kanál pro příjem příchozích zpráv. Další informace najdete v tématu [programování na úrovni kanálu služby](service-channel-level-programming.md).  
   
-## <a name="the-channel-object-model"></a>Objektový Model kanálu  
- Objektový model kanálu je základní sadu rozhraní potřebnou k implementaci kanály, moduly pro naslouchání kanálů a objekty pro vytváření kanálů. Existují také některé základní třídy zadané pomáhat při vlastní implementaci.  
+## <a name="the-channel-object-model"></a>Objektový model kanálu  
+ Objektový model kanálu je základní sada rozhraní vyžadovaných k implementaci kanálů, naslouchací procesy kanálu a objekty pro vytváření kanálů. K dispozici jsou také některé základní třídy, které pomáhají při vlastních implementacích.  
   
- Moduly pro naslouchání kanálů zodpovídají za naslouchání pro příchozí zprávy a potom je doručit do vrstvy nad prostřednictvím kanálů vytvořen naslouchací proces kanálu.  
+ Naslouchací procesy kanálu jsou zodpovědné za naslouchání příchozích zpráv a jejich doručování do vrstvy výše přes kanály vytvořené naslouchacím kanálem kanálu.  
   
- Objekty pro vytváření kanálů zodpovídají za vytváření kanálů, které se používají pro zasílání zpráv a pro zavření všech kanálů vytvořili při zavření objekt pro vytváření kanálů.  
+ Továrny kanálů jsou zodpovědné za vytváření kanálů používaných pro posílání zpráv a pro zavření všech kanálů, které vytvořily, když je objekt factory kanálu uzavřený.  
   
- <xref:System.ServiceModel.ICommunicationObject> je rozhraní jádra definující základní stav stavového stroje, které implementují všechny objekty komunikace. <xref:System.ServiceModel.Channels.CommunicationObject> poskytuje implementaci tohoto rozhraní core, který další kanálu třídy lze odvodit z místo znovu implementovat rozhraní. Ale to není potřeba: můžete implementovat vlastní kanál <xref:System.ServiceModel.ICommunicationObject> přímo a není odvozena od <xref:System.ServiceModel.Channels.CommunicationObject>. Žádné třídy na obrázku 3 je považována za součást modelu kanálu jsou k dispozici pro implementátory vlastní kanál, kteří chtějí vytvářet kanály pomocné rutiny.  
+ <xref:System.ServiceModel.ICommunicationObject>je základní rozhraní, které definuje základní Stavový počítač, který implementují všechny objekty komunikace. <xref:System.ServiceModel.Channels.CommunicationObject>poskytuje implementaci tohoto základního rozhraní, které mohou jiné třídy kanálů odvodit z spíše než opakované implementace rozhraní. To ale není povinné: vlastní kanál může implementovat <xref:System.ServiceModel.ICommunicationObject> přímo a Nedědit z. <xref:System.ServiceModel.Channels.CommunicationObject> Žádná z tříd na obrázku 3 není považována za součást modelu kanálu; jsou pomocníky k dispozici pro vlastní implementátory kanálů, kteří chtějí vytvářet kanály.  
   
- ![Channel model](../../../../docs/framework/wcf/extending/media/wcfc-wcfcchannelsigure3omumtreec.gif "wcfc_WCFCChannelsigure3OMUMTreec")  
+ ![Model kanálu](./media/wcfc-wcfcchannelsigure3omumtreec.gif "wcfc_WCFCChannelsigure3OMUMTreec")  
   
- Toto téma popisuje objektový model kanálu, jakož i různé oblasti rozvoje, které vám pomůžou vytvářet vlastní kanály.  
+ Následující témata popisují model objektu kanálu a také různé vývojové oblasti, které vám pomůžou vytvářet vlastní kanály.  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Služba: Moduly pro naslouchání kanálů a kanály](../../../../docs/framework/wcf/extending/service-channel-listeners-and-channels.md)|Popisuje moduly pro naslouchání kanálů, které naslouchají příchozí kanály v aplikaci služby.|  
-|[Klient: Objekty pro vytváření kanálů a kanály](../../../../docs/framework/wcf/extending/client-channel-factories-and-channels.md)|Popisuje vytváření kanálů, které vytvářejí kanály pro připojení k aplikaci služby.|  
-|[Principy změn stavů](../../../../docs/framework/wcf/extending/understanding-state-changes.md)|Popisuje, jak <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> rozhraní modely změny stavu v kanálech.|  
-|[Výběr vzoru výměny zpráv](../../../../docs/framework/wcf/extending/choosing-a-message-exchange-pattern.md)|Popisuje šest vzory exchange základní zprávy, které může podporovat kanály.|  
-|[Zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)|Popisuje způsob zpracování chyb a výjimek do vlastních kanálů.|  
-|[Konfigurace a podpora metadat](../../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)|Popisuje, jak podporovat používání vlastních kanálů z modelu aplikace a export a import metadat pomocí vazby a prvky vazeb.|
+|[Službám Naslouchací procesy kanálu a kanály](service-channel-listeners-and-channels.md)|Popisuje naslouchací procesy kanálu, které naslouchají příchozím kanálům v aplikaci služby.|  
+|[Služba Továrny kanálů a kanály](client-channel-factories-and-channels.md)|Popisuje továrny kanálů, které vytvářejí kanály pro připojení k aplikaci služby.|  
+|[Principy změn stavů](understanding-state-changes.md)|Popisuje, jak <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> se stav modelů rozhraní mění v kanálech.|  
+|[Výběr vzoru výměny zpráv](choosing-a-message-exchange-pattern.md)|Popisuje šest základních vzorů výměny zpráv, které kanály můžou podporovat.|  
+|[Zpracování výjimek a chyb](handling-exceptions-and-faults.md)|Popisuje způsob zpracování chyb a výjimek ve vlastních kanálech.|  
+|[Konfigurace a podpora metadat](configuration-and-metadata-support.md)|Popisuje, jak podporovat použití vlastních kanálů z modelu aplikace a jak exportovat a importovat metadata pomocí vazeb a elementů vazby.|

@@ -8,59 +8,59 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-ms.openlocfilehash: 9d7216b3aed89dc88737cc346386d6b03929fe60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8101c0d1214eed2c6ea42a4faab774207aab3a79
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997020"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797275"
 ---
 # <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificates-private-key"></a>Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509
-Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do architektury zabezpečení Windows Communication Foundation (WCF). Další informace o používání certifikátů najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+V tomto tématu se dozvíte, jak změnit zprostředkovatele kryptografických služeb, který poskytuje privátní klíč certifikátu X. 509 a jak se dá poskytovatel integrovat do architektury zabezpečení služby Windows Communication Foundation (WCF). Další informace o používání certifikátů najdete v tématu [práce s certifikáty](../feature-details/working-with-certificates.md).  
   
- Zabezpečení rozhraní WCF poskytuje způsob, jak zavést nové typy tokenů zabezpečení, jak je popsáno v [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md). Je také možné použít vlastní token nahradit existující typy tokenů poskytované systémem.  
+ Rozhraní WCF Security Framework poskytuje způsob, jak zavést nové typy tokenů zabezpečení, jak [je popsáno v tématu Postupy: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md) Pomocí vlastního tokenu je také možné nahradit existující typy tokenů poskytnutých systémem.  
   
- V tomto tématu se nahrazuje token zabezpečení poskytované systémem X.509 vlastní token X.509, který poskytuje různé implementace pro privátní klíč certifikátu. To je užitečné v situacích, kdy skutečná privátní klíč poskytuje různé zprostředkovatele kryptografických služeb než výchozí Windows zprostředkovatele kryptografických služeb. Jedním z příkladů alternativní zprostředkovatele kryptografických služeb je modul hardwarového zabezpečení, která provádí všechny privátní klíče související kryptografických operací a neukládá privátní klíče v paměti, a zlepšit zabezpečení systému.  
+ V tomto tématu se systémem poskytnutý token zabezpečení X. 509 nahrazuje vlastním tokenem X. 509, který poskytuje odlišnou implementaci privátního klíče certifikátu. To je užitečné ve scénářích, kdy je skutečný privátní klíč poskytovaný jiným zprostředkovatelem kryptografických služeb než s výchozím zprostředkovatelem kryptografických služeb systému Windows. Jedním z příkladů alternativního zprostředkovatele kryptografických služeb je modul hardwarového zabezpečení, který provádí všechny kryptografické operace spojené s privátním klíčem a neukládá privátní klíče do paměti. tím se zvyšuje zabezpečení systému.  
   
- Následující příklad je pouze pro demonstrační účely. Nenahrazuje výchozí zprostředkovatel kryptografických služeb Windows, ale ukazuje, kde může takový zprostředkovatel integrované.  
+ Následující příklad slouží pouze k demonstračním účelům. Nenahrazuje výchozího zprostředkovatele kryptografických služeb systému Windows, ale zobrazuje, kde může být takový poskytovatel integrovaný.  
   
 ## <a name="procedures"></a>Procedury  
- Každý token zabezpečení, který má přiřazený bezpečnostní klíč nebo klíče, musí implementovat <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> vlastnost, která vrátí kolekci klíčů z instance tokenu zabezpečení. Pokud je token token zabezpečení X.509, kolekce obsahuje jednu instanci <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey> třídu, která představuje veřejného a privátního klíče přidruženého k certifikátu. Pokud chcete nahradit výchozí zprostředkovatele kryptografických služeb použitý k poskytnutí klíčů certifikátu, vytvořte novou implementaci této třídy.  
+ Každý token zabezpečení, který má přidružený klíč zabezpečení nebo klíče, musí implementovat <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A> vlastnost, která vrací kolekci klíčů z instance tokenu zabezpečení. Pokud je tokenem token zabezpečení X. 509, kolekce obsahuje jednu instanci <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey> třídy, která představuje veřejné i privátní klíče přidružené k certifikátu. Pokud chcete nahradit výchozího zprostředkovatele kryptografických služeb, který se používá k zadání klíčů certifikátu, vytvořte novou implementaci této třídy.  
   
-#### <a name="to-create-a-custom-x509-asymmetric-key"></a>Chcete-li vytvořit vlastní asymetrického klíče X.509  
+#### <a name="to-create-a-custom-x509-asymmetric-key"></a>Vytvoření vlastního asymetrického klíče X. 509  
   
-1. Definovat nové třídy odvozené od <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey> třídy.  
+1. Definujte novou třídu odvozenou z <xref:System.IdentityModel.Tokens.X509AsymmetricSecurityKey> třídy.  
   
-2. Přepsat <xref:System.IdentityModel.Tokens.SecurityKey.KeySize%2A> vlastnost jen pro čtení. Tato vlastnost vrátí skutečná velikost klíče dvojice veřejného/soukromého klíče certifikátu.  
+2. Přepsat vlastnost <xref:System.IdentityModel.Tokens.SecurityKey.KeySize%2A> , která je jen pro čtení. Tato vlastnost vrací skutečnou velikost páru veřejného a privátního klíče certifikátu.  
   
-3. Přepsat <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> metody. Tato metoda je volána rozhraním zabezpečení WCF k dešifrování symetrického klíče se privátní klíč certifikátu. (Klíč byla dříve zašifrována pomocí certifikátu veřejného klíče.)  
+3. Přepsat <xref:System.IdentityModel.Tokens.SecurityKey.DecryptKey%2A> metody. Tato metoda je volána rozhraním Security Framework pro WCF k dešifrování symetrického klíče pomocí privátního klíče certifikátu. (Klíč byl předtím zašifrovaný pomocí veřejného klíče certifikátu.)  
   
-4. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> metody. Tato metoda je volána rozhraním zabezpečení WCF k získání instance <xref:System.Security.Cryptography.AsymmetricAlgorithm> Třída zastupující zprostředkovatele kryptografických služeb pro buď privátního nebo veřejného klíče certifikátu, v závislosti na parametrech předaný metodě.  
+4. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm%2A> metody. Tato metoda je volána rozhraním zabezpečení WCF pro získání instance <xref:System.Security.Cryptography.AsymmetricAlgorithm> třídy, která představuje zprostředkovatele kryptografických služeb buď privátního nebo veřejného klíče certifikátu, v závislosti na parametrech předaných metodě.  
   
-5. Volitelné. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature%2A> metody. Potlačí tuto metodu, pokud se na různé implementace <xref:System.Security.Cryptography.HashAlgorithm> třída je povinné.  
+5. Volitelný parametr. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature%2A> metody. Tuto metodu přepište, pokud je vyžadována jiná <xref:System.Security.Cryptography.HashAlgorithm> implementace třídy.  
   
-6. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter%2A> metody. Tato metoda vrátí instanci <xref:System.Security.Cryptography.AsymmetricSignatureFormatter> třídy, který je přidružený privátní klíč certifikátu.  
+6. Přepsat <xref:System.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter%2A> metody. Tato metoda vrátí instanci <xref:System.Security.Cryptography.AsymmetricSignatureFormatter> třídy, která je přidružena k privátnímu klíči certifikátu.  
   
-7. Přepsat <xref:System.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm%2A> metody. Tato metoda se používá k označení, zda konkrétní kryptografický algoritmus je podporováno implementací zabezpečení klíčů.  
+7. Přepsat <xref:System.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm%2A> metody. Tato metoda slouží k označení, zda je konkrétní kryptografický algoritmus podporován implementací klíče zabezpečení.  
   
      [!code-csharp[c_CustomX509Token#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#1)]
      [!code-vb[c_CustomX509Token#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#1)]  
   
- Následující postup ukazuje, jak integrovat vlastní X.509 asymetrického klíče implementace zabezpečení vytvořili v předchozím postupu pomocí architektury zabezpečení WCF, aby bylo možné nahradit X.509 zabezpečení poskytované systémem tokenu.  
+ Následující postup ukazuje, jak integrovat vlastní implementaci klíče zabezpečení X. 509, kterou jste vytvořili v předchozím postupu s rozhraním Security Framework pro WCF, aby nahradilo systémem poskytnutý token zabezpečení X. 509.  
   
-#### <a name="to-replace-the-system-provided-x509-security-token-with-a-custom-x509-asymmetric-security-key-token"></a>Nahraďte vlastní X.509 asymetrického klíče token zabezpečení poskytované systémem token zabezpečení X.509  
+#### <a name="to-replace-the-system-provided-x509-security-token-with-a-custom-x509-asymmetric-security-key-token"></a>Nahrazení tokenu zabezpečení X. 509 poskytovaného systémem pomocí vlastního tokenu asymetrického bezpečnostního klíče X. 509  
   
-1. Vytvoření vlastního tokenu zabezpečení X.509, který vrací vlastní klíč asymetrické zabezpečení X.509, místo abyste klíč zabezpečení poskytnuté systémem, jak je znázorněno v následujícím příkladu. Další informace o zabezpečení vlastních tokenů, naleznete v tématu [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
+1. Vytvořte vlastní token zabezpečení X. 509, který vrátí vlastní klíč zabezpečení X. 509, a ne klíč zabezpečení poskytnutý systémem, jak je znázorněno v následujícím příkladu. Další informace o vlastních tokenech zabezpečení naleznete v [tématu How to: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)  
   
      [!code-csharp[c_CustomX509Token#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#2)]
      [!code-vb[c_CustomX509Token#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#2)]  
   
-2. Vytvoření vlastního zprostředkovatele tokenů zabezpečení, která vrací vlastní X.509 token zabezpečení, jak je znázorněno v příkladu. Další informace o poskytovatelích vlastní bezpečnostní token, naleznete v tématu [jak: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
+2. Vytvořte vlastního poskytovatele tokenu zabezpečení, který vrátí vlastní token zabezpečení X. 509, jak je znázorněno v příkladu. Další informace o vlastních poskytovatelích tokenů zabezpečení naleznete [v tématu How to: Vytvořte vlastního poskytovatele](how-to-create-a-custom-security-token-provider.md)tokenů zabezpečení.  
   
      [!code-csharp[c_CustomX509Token#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#3)]
      [!code-vb[c_CustomX509Token#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#3)]  
   
-3. Pokud vlastní bezpečnostní klíč se musí použít na straně iniciátor, vytvořte vlastní klienta Správce tokenů zabezpečení a vlastních klientských přihlašovacích údajů třídy, jak je znázorněno v následujícím příkladu. Další informace o vlastních klientských přihlašovacích údajů a Správce tokenu zabezpečení klienta najdete v tématu [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+3. Pokud je třeba vlastní klíč zabezpečení použít na straně iniciátoru, vytvořte vlastní třídy klientského tokenu zabezpečení klienta a vlastní třídy přihlašovacích údajů klienta, jak je znázorněno v následujícím příkladu. Další informace o vlastních pověřeních klienta a správcích tokenů zabezpečení klienta [najdete v článku Návod: Vytváření vlastních přihlašovacích údajů](walkthrough-creating-custom-client-and-service-credentials.md)klienta a služby.  
   
      [!code-csharp[c_CustomX509Token#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#4)]
      [!code-vb[c_CustomX509Token#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#4)]  
@@ -68,7 +68,7 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
      [!code-csharp[c_CustomX509Token#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#6)]
      [!code-vb[c_CustomX509Token#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#6)]  
   
-4. Pokud vlastní bezpečnostní klíč se musí použít na straně příjemce, vytvořte Správce tokenů zabezpečení vlastní služby a služby vlastní přihlašovací údaje, jak je znázorněno v následujícím příkladu. Další informace o pověření vlastní služby a Správce tokenu zabezpečení služby najdete v tématu [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+4. Pokud je třeba vlastní klíč zabezpečení použít na straně příjemce, vytvořte vlastního správce tokenů zabezpečení služby a vlastní přihlašovací údaje služby, jak je znázorněno v následujícím příkladu. Další informace o vlastních pověřeních služby a vedoucích tokenů zabezpečení služby [najdete v článku Návod: Vytváření vlastních přihlašovacích údajů](walkthrough-creating-custom-client-and-service-credentials.md)klienta a služby.  
   
      [!code-csharp[c_CustomX509Token#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customx509token/cs/source.cs#5)]
      [!code-vb[c_CustomX509Token#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customx509token/vb/source.vb#5)]  
@@ -84,7 +84,7 @@ Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb pou
 - <xref:System.Security.Cryptography.AsymmetricAlgorithm>
 - <xref:System.Security.Cryptography.HashAlgorithm>
 - <xref:System.Security.Cryptography.AsymmetricSignatureFormatter>
-- [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
-- [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
-- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
-- [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md)
+- [Návod: Vytváření vlastních přihlašovacích údajů klienta a služby](walkthrough-creating-custom-client-and-service-credentials.md)
+- [Postupy: Vytvořit vlastní ověřovací data tokenu zabezpečení](how-to-create-a-custom-security-token-authenticator.md)
+- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](how-to-create-a-custom-security-token-provider.md)
+- [Postupy: Vytvoření vlastního tokenu](how-to-create-a-custom-token.md)

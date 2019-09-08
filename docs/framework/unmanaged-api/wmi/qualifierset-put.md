@@ -1,6 +1,6 @@
 ---
-title: Funkce QualifierSet_Put (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce QualifierSet_Put zapisuje s názvem kvalifikátoru a její hodnotu.
+title: QualifierSet_Put – funkce (Reference nespravovaného rozhraní API)
+description: Funkce QualifierSet_Put zapisuje pojmenovaný kvalifikátor a jeho hodnotu.
 ms.date: 11/06/2017
 api_name:
 - QualifierSet_Put
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a11f19a9b5ebdf491b79c250da7fc5ac3d980b64
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 40688a0e4273233245d00fcd927f95945a43f712
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377870"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798269"
 ---
-# <a name="qualifiersetput-function"></a>QualifierSet_Put – funkce
+# <a name="qualifierset_put-function"></a>QualifierSet_Put – funkce
 
-Zapíše s názvem kvalifikátoru a hodnotu. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor buď neexistuje, vytvoří se.
+Zapíše pojmenovaný kvalifikátor a hodnotu. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor neexistuje, vytvoří se.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -44,52 +44,52 @@ HRESULT QualifierSet_Put (
 ## <a name="parameters"></a>Parametry
 
 `vFunc`\
-[in] Tento parametr se nepoužívá.
+pro Tento parametr se nepoužívá.
 
 `ptr`\
-[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
+pro Ukazatel na instanci [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) .
 
 `wszName`\
-[in] Název kvalifikátor pro zápis.
+pro Název kvalifikátoru, který se má zapsat
 
 `pVal`\
-[in] Ukazatel na platný `VARIANT` , který obsahuje kvalifikátor pro zápis. Tento parametr nemůže mít `null`.
+pro Ukazatel na platný `VARIANT` , který obsahuje kvalifikátor k zápisu. Tento parametr nemůže být `null`.
 
 `lFlavor`\
-[in] Jeden z následujících konstant, které definuje požadovaný flavor u tohoto kvalifikátoru. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
+pro Jedna z následujících konstant definující požadované charakter kvalifikátoru pro tento kvalifikátor. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAVOR_OVERRIDABLE` | 0 | Kvalifikátor se dá přepsat v odvozené třídě nebo instanci. **Toto je výchozí hodnota.** |
-| `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Kvalifikátor je postoupena do instance. |
-| `WBEM_FLAVOR_FLAG_PROPAGATE_TO_DERIVED_CLASS` | 2 | Kvalifikátor je postoupena do odvozené třídy. |
+| `WBEM_FLAVOR_OVERRIDABLE` | 0 | Kvalifikátor lze přepsat v odvozené třídě nebo instanci. **Toto je výchozí hodnota.** |
+| `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Kvalifikátor je šířen do instancí. |
+| `WBEM_FLAVOR_FLAG_PROPAGATE_TO_DERIVED_CLASS` | 2 | Kvalifikátor je šířen na odvozené třídy. |
 | `WBEM_FLAVOR_NOT_OVERRIDABLE` | 0x10 | Kvalifikátor nelze přepsat v odvozené třídě nebo instanci. |
 | `WBEM_FLAVOR_AMENDED` | 0x80 | Kvalifikátor je lokalizován. |
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
+Následující hodnoty vrácené touto funkcí jsou definovány v souboru hlaviček *WbemCli. h* nebo je můžete definovat jako konstanty v kódu:
 
 |Konstanta  |Value  |Popis  |
 |---------|---------|---------|
-| `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Došlo k neplatnému pokusu určit **klíč** kvalifikátor na vlastnost, která nemůže být klíč. Klíče jsou určené v definici třídy objektu a nelze je změnit na základě jednotlivé instance. |
+| `WBEM_E_CANNOT_BE_KEY` | 0x8004101f | Byl proveden Neplatný pokus o zadání kvalifikátoru **klíče** u vlastnosti, která nemůže být klíčem. Klíče jsou zadány v definici třídy pro objekt a nelze je měnit na základě jednotlivých instancí. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
-| `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | `pVal` Parametr není platný typ kvalifikátoru. |
-| `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Není možné volat `QualifierSet_Put` metoda na kvalifikátor, protože vlastnící objekt nepovoluje přepíše. |
-| `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
+| `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | `pVal` Parametr není platným typem kvalifikátoru. |
+| `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Není možné volat `QualifierSet_Put` metodu na kvalifikátoru, protože vlastnící objekt nepovoluje přepsání. |
+| `WBEM_S_NO_ERROR` | 0 | Volání funkce bylo úspěšné.  |
 
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [IWbemQualifierSet::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-put) metody.
+Tato funkce zalomí volání metody [IWbemQualifierSet::P UT](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-put) .
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).
 
-**Záhlaví:** WMINet_Utils.idl
+**Hlaviček** WMINet_Utils.idl
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+- [WMI a čítače výkonu (Reference nespravovaného rozhraní API)](index.md)

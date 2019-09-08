@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: 37641056f2f3110685c24266d2612845ffbf0b3d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a8cca707f8fa82e97e988fcbe015b55e35b93499
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929242"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794678"
 ---
 # <a name="optimistic-concurrency"></a>Optimistická metoda souběžného zpracování
 Ve víceuživatelském prostředí existují dva modely pro aktualizaci dat v databázi: Optimistická souběžnost a pesimistická souběžnost. <xref:System.Data.DataSet> Objekt je navržený tak, aby podporoval použití optimistické souběžnosti pro dlouhotrvající aktivity, jako jsou vzdálená data a interakce s daty.  
@@ -96,12 +96,12 @@ UPDATE Table1 Set Col1 = @NewVal1
  Při použití optimistického modelu souběžnosti můžete také zvolit, že se mají použít méně omezující kritéria. Například použití pouze sloupců primárního klíče v klauzuli WHERE způsobí, že data budou přepsána bez ohledu na to, zda byly od posledního dotazu aktualizovány ostatní sloupce. Klauzuli WHERE můžete také použít pouze na konkrétní sloupce a výsledná data budou přepsána, pokud nebyla aktualizována konkrétní pole od posledního dotazu.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Událost DataAdapter. RowUpdated metody Update  
- Událost<xref:System.Data.Common.DataAdapter> **RowUpdated metody Update** objektu lze použít ve spojení s výše popsanými postupy, aby bylo možné poskytnout oznámení vaší aplikaci s porušením optimistické souběžnosti. K **RowUpdated metody Update** dochází po každém pokusu o aktualizaci **upraveného** řádku z **datové sady**. To umožňuje přidat speciální kód pro zpracování, včetně zpracování, když dojde k výjimce, přidání vlastních informací o chybě, přidání logiky opakování atd. Objekt vrátí vlastnost RecordsAffected obsahující počet řádků ovlivněných určitým příkazem aktualizace pro upravený řádek v tabulce. <xref:System.Data.Common.RowUpdatedEventArgs> Nastavením příkazu Update na test pro optimistickou souběžnost bude vlastnost **RecordsAffected** v důsledku toho vracet hodnotu 0, pokud došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated metody Update** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs. status** , například **UpdateStatus. SkipCurrentRow**. Další informace o události **RowUpdated metody Update** naleznete v tématu [zpracování událostí DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ Událost<xref:System.Data.Common.DataAdapter> **RowUpdated metody Update** objektu lze použít ve spojení s výše popsanými postupy, aby bylo možné poskytnout oznámení vaší aplikaci s porušením optimistické souběžnosti. K **RowUpdated metody Update** dochází po každém pokusu o aktualizaci **upraveného** řádku z **datové sady**. To umožňuje přidat speciální kód pro zpracování, včetně zpracování, když dojde k výjimce, přidání vlastních informací o chybě, přidání logiky opakování atd. Objekt vrátí vlastnost RecordsAffected obsahující počet řádků ovlivněných určitým příkazem aktualizace pro upravený řádek v tabulce. <xref:System.Data.Common.RowUpdatedEventArgs> Nastavením příkazu Update na test pro optimistickou souběžnost bude vlastnost **RecordsAffected** v důsledku toho vracet hodnotu 0, pokud došlo k narušení optimistické souběžnosti, protože nebyly aktualizovány žádné záznamy. Pokud se jedná o tento případ, je vyvolána výjimka. Událost **RowUpdated metody Update** umožňuje zpracovat tento výskyt a vyhnout se výjimce nastavením příslušné hodnoty **RowUpdatedEventArgs. status** , například **UpdateStatus. SkipCurrentRow**. Další informace o události **RowUpdated metody Update** naleznete v tématu [zpracování událostí DataAdapter](handling-dataadapter-events.md).  
   
- Volitelně můžete nastavit vlastnost **DataAdapter. ContinueUpdateOnError** na **hodnotu true**, před voláním metody **Update**a reagovat na informace o chybě uložené ve vlastnosti **RowError** určitého řádku po dokončení **aktualizace** . Další informace najdete v tématu [informace o chybě řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md).  
+ Volitelně můžete nastavit vlastnost **DataAdapter. ContinueUpdateOnError** na **hodnotu true**, před voláním metody **Update**a reagovat na informace o chybě uložené ve vlastnosti **RowError** určitého řádku po dokončení **aktualizace** . Další informace najdete v tématu [informace o chybě řádku](./dataset-datatable-dataview/row-error-information.md).  
   
 ## <a name="optimistic-concurrency-example"></a>Příklad optimistického řízení souběžnosti  
- Následuje jednoduchý příklad, který nastaví **událost UpdateCommand** na test pro optimistickou souběžnost a poté používá událost **RowUpdated metody Update** k otestování optimistického chování souběžnosti. Když dojde k narušení optimistického řízení souběžnosti, aplikace nastaví **RowError** řádku, pro který byla aktualizace vystavena, aby odrážela optimistické porušení souběžnosti.  
+ Následuje jednoduchý příklad, který nastaví **událost UpdateCommand** **na test** pro optimistickou souběžnost a poté používá událost **RowUpdated metody Update** k otestování optimistického chování souběžnosti. Když dojde k narušení optimistického řízení souběžnosti, aplikace nastaví **RowError** řádku, pro který byla aktualizace vystavena, aby odrážela optimistické porušení souběžnosti.  
   
  Všimněte si, že hodnoty parametrů předané do klauzule WHERE příkazu UPDATE jsou namapovány na **původní** hodnoty příslušných sloupců.  
   
@@ -208,8 +208,8 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Informace o chybě na řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)
-- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Načítání a úpravy dat v ADO.NET](retrieving-and-modifying-data.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](updating-data-sources-with-dataadapters.md)
+- [Informace o chybě na řádku](./dataset-datatable-dataview/row-error-information.md)
+- [Transakce a souběžnost](transactions-and-concurrency.md)
+- [Přehled ADO.NET](ado-net-overview.md)

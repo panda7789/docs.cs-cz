@@ -8,18 +8,18 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: f65e3775c260eedc1d76f209d5cb76524d61b939
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5cf7a6e563069e35a4ac0fe729a616dc1c56bdb5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953217"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779740"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
 Použijete [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] -li knihovnu klienta ke [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] využívání informačního kanálu, knihovna přeloží položky v informačním kanálu do instancí tříd služby data Client. Tyto třídy datové služby jsou sledovány pomocí služby <xref:System.Data.Services.Client.DataServiceContext> , ke <xref:System.Data.Services.Client.DataServiceQuery%601> které patří. Klient sleduje změny entit, které hlásíte pomocí metod v <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožňují klientovi sledovat přidané a odstraněné entity a také změny, které provedete v hodnotách vlastností nebo vztahy mezi instancemi entit. Tyto sledované změny jsou odesílány zpět do datové služby jako operace založené na REST při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metody.  
   
 > [!NOTE]
-> Použijete-li instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro svázání dat s ovládacími prvky, změny provedené v datech v rámci vázaného ovládacího prvku jsou automaticky hlášeny <xref:System.Data.Services.Client.DataServiceContext>do. Další informace najdete v tématu [vázání dat na ovládací prvky](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  
+> Použijete-li instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro svázání dat s ovládacími prvky, změny provedené v datech v rámci vázaného ovládacího prvku jsou automaticky hlášeny <xref:System.Data.Services.Client.DataServiceContext>do. Další informace najdete v tématu [vázání dat na ovládací prvky](binding-data-to-controls-wcf-data-services.md).  
   
 ## <a name="adding-modifying-and-changing-entities"></a>Přidání, úprava a změna entit  
  Při použití dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio k přidání odkazu na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál mají výsledné třídy klientské datové služby všechny statické metody *Create* , které pro každou vlastnost entity bez hodnoty null přebírají jeden parametr. . Tuto metodu lze použít k vytvoření instancí tříd typu entity, jako v následujícím příkladu:  
@@ -44,7 +44,7 @@ Použijete [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] -li kniho
  [!code-csharp[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#deleteproductspecific)]
  [!code-vb[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#deleteproductspecific)]  
   
- Další informace najdete v tématu [jak: Přidávání, upravování a odstraňování entit](../../../../docs/framework/data/wcf/how-to-add-modify-and-delete-entities-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Přidávání, upravování a odstraňování entit](how-to-add-modify-and-delete-entities-wcf-data-services.md).  
   
 ## <a name="attaching-entities"></a>Připojování entit  
  Klientská knihovna umožňuje uložit aktualizace, které jste provedli v entitě, aniž byste nejprve vyprováděli dotaz pro načtení <xref:System.Data.Services.Client.DataServiceContext>entity do. Použijte metodu pro připojení existujícího objektu ke konkrétní sadě entit <xref:System.Data.Services.Client.DataServiceContext>v. <xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A> Pak můžete objekt upravit a uložit změny do datové služby. V následujícím příkladu je objekt zákazníka, který byl změněn, připojen k kontextu a poté <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> je volána k označení připojeného objektu jako <xref:System.Data.Services.Client.EntityStates.Modified> před <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> voláním metody:  
@@ -62,7 +62,7 @@ Použijete [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] -li kniho
   
 - Přetížení metody, které přijímá parametr, se používá při připojení objektu entity, který byl přijat společně s hodnotou eTag. `etag` <xref:System.Data.Services.Client.DataServiceContext.AttachTo%28System.String%2CSystem.Object%2CSystem.String%29> Tato hodnota eTag se pak používá ke kontrole souběžnosti při uložení změn připojeného objektu.  
   
- Další informace najdete v tématu [jak: Připojte existující entitu k DataServiceContext](../../../../docs/framework/data/wcf/attach-an-existing-entity-to-dc-wcf-data.md).  
+ Další informace najdete v tématu [jak: Připojte existující entitu k DataServiceContext](attach-an-existing-entity-to-dc-wcf-data.md).  
   
 ## <a name="creating-and-modifying-relationship-links"></a>Vytváření a úpravy propojení vztahů  
  Když přidáte novou entitu pomocí <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> metody nebo příslušné metody <xref:System.Data.Services.Client.DataServiceContext> AddTo třídy, kterou vygeneruje dialogové okno **Přidat odkaz na službu** , všechny relace mezi novou entitou a související entitou jsou není definováno automaticky.  
@@ -88,16 +88,16 @@ Použijete [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] -li kniho
  [!code-csharp[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#setnavprops)]
  [!code-vb[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#setnavprops)]  
   
- Další informace najdete v tématu [jak: Definujte vztahy mezi](../../../../docs/framework/data/wcf/how-to-define-entity-relationships-wcf-data-services.md)entitami.  
+ Další informace najdete v tématu [jak: Definujte vztahy mezi](how-to-define-entity-relationships-wcf-data-services.md)entitami.  
   
 ## <a name="saving-changes"></a>Uložení změn  
- Změny jsou sledovány v <xref:System.Data.Services.Client.DataServiceContext> instanci, ale nejsou odesílány přímo na server. Po dokončení požadovaných změn u zadané aktivity zavolejte <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> na Odeslat všechny změny do datové služby. Další informace najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md). Změny lze také asynchronně ukládat pomocí <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> metod a. <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A> Další informace najdete v tématu [asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).  
+ Změny jsou sledovány v <xref:System.Data.Services.Client.DataServiceContext> instanci, ale nejsou odesílány přímo na server. Po dokončení požadovaných změn u zadané aktivity zavolejte <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> na Odeslat všechny změny do datové služby. Další informace najdete v tématu [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md). Změny lze také asynchronně ukládat pomocí <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> metod a. <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A> Další informace najdete v tématu [asynchronní operace](asynchronous-operations-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
-- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)
-- [Operace dávkování](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)
-- [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)
-- [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)
+- [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
+- [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)
+- [Asynchronní operace](asynchronous-operations-wcf-data-services.md)
+- [Operace dávkování](batching-operations-wcf-data-services.md)
+- [Materializace objektů](object-materialization-wcf-data-services.md)
+- [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cb846617-2b1a-44ff-bd7f-5835f5ea37fa
-ms.openlocfilehash: f60ef817773b6234b19856bfc0727eedb67e113e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d8a7762c4ec5d650295ca0626180285723549051
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205173"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786511"
 ---
 # <a name="copying-dataset-contents"></a>Kopírování obsahu datové sady
 Můžete vytvořit kopii <xref:System.Data.DataSet> , abyste mohli pracovat s daty bez ovlivnění původních dat nebo pracovat s podmnožinou dat z **datové sady**. Když kopírujete **datovou sadu**, můžete:  
@@ -31,7 +31,7 @@ Dim copyDataSet As DataSet = customerDataSet.Copy()
 DataSet copyDataSet = customerDataSet.Copy();  
 ```  
   
- Chcete-li vytvořit kopii **datové sady** , která obsahuje schéma a pouze data představující **přidané**, **upravené**nebo odstraněné řádky, použijte <xref:System.Data.DataSet.GetChanges%2A> metodu **DataSet**. Pomocí GetChanges můžete také vracet pouze řádky se zadaným stavem řádku předáním hodnoty **nezměněnou DataRowState** při volání metody GetChanges. Následující příklad kódu ukazuje, jak předat **nezměněnou DataRowState** při volání metody GetChanges.  
+ Chcete-li vytvořit kopii **datové sady** , která obsahuje schéma a pouze data představující **přidané**, **upravené**nebo **odstraněné** řádky, použijte <xref:System.Data.DataSet.GetChanges%2A> metodu **DataSet**. Pomocí **GetChanges** můžete také vracet pouze řádky se zadaným stavem řádku předáním hodnoty **nezměněnou DataRowState** při volání metody **GetChanges**. Následující příklad kódu ukazuje, jak předat **nezměněnou DataRowState** při volání metody **GetChanges**.  
   
 ```vb  
 ' Copy all changes.  
@@ -50,7 +50,7 @@ DataSet addedDataSet= customerDataSet.GetChanges(DataRowState.Added);
   
  Chcete-li vytvořit kopii **datové sady** , která obsahuje pouze schéma, použijte <xref:System.Data.DataSet.Clone%2A> metodu **DataSet**. Můžete také přidat existující řádky do klonované **datové sady** pomocí metody **ImportRow** **objektu DataTable**. **ImportRow** přidá informace o datech, stavu řádků a verzi řádku do zadané tabulky. Hodnoty sloupců jsou přidány pouze tam, kde se shodují název sloupce a datový typ je kompatibilní.  
   
- Následující příklad kódu vytvoří klon **datové sady** a potom přidá řádky z původní **datové sady** do tabulky Customers ( **zákazníci** ) ve klonu **datové sady** pro zákazníky, kde sloupec **země** má hodnotu "Německo". ".  
+ Následující příklad kódu vytvoří klon **datové sady** a potom přidá řádky z původní **datové sady** do tabulky **Customers (zákazníci** ) ve klonu **datové sady** pro zákazníky, kde sloupec **země** má hodnotu "Německo". ".  
   
 ```vb  
 Dim customerDataSet As New DataSet  
@@ -99,4 +99,4 @@ foreach (DataRow copyRow in copyRows)
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataTable>
 - [Datové sady, datové tabulky a datová zobrazení](index.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Přehled ADO.NET](../ado-net-overview.md)

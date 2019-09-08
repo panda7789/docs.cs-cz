@@ -2,24 +2,24 @@
 title: Data XML na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 9849d319-f518-4e3d-a7cd-f8fdcaaa1d4d
-ms.openlocfilehash: 75e5f24b0532a1d0da2cfcd4bdc39658db3cee35
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f2a7035806e89fdb9df3039cd4d09ff842c1221
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758000"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780646"
 ---
 # <a name="xml-data-in-sql-server"></a>Data XML na SQL Serveru
-SQL serveru zpřístupňuje funkce SQLXML v rozhraní .NET Framework. Vývojáři můžou psát aplikace, které přístup k datům XML z instance systému SQL Server, načítání dat do prostředí .NET Framework, zpracování dat a odesílat že aktualizace zpět do systému SQL Server. XML data lze použít různými způsoby v systému SQL Server, včetně úložiště dat a jako hodnoty parametrů pro načítání dat. **SqlXml** třídy v rozhraní .NET Framework poskytuje podporu na straně klienta pro práci s daty uloženými v sloupec XML v rámci SQL serveru. Další informace najdete v tématu "SQLXML spravované třídy" SQL Server Books Online.  
+SQL Server zpřístupňuje funkce nástroje SQLXML v rámci .NET Framework. Vývojáři mohou psát aplikace, které přistupují k datům XML z instance SQL Server, přenášet data do prostředí .NET Framework, zpracovávat data a odesílat aktualizace zpět do SQL Server. Data XML lze použít několika způsoby v SQL Server, včetně úložiště dat, a jako hodnoty parametrů pro načítání dat. Třída **SQLXML** v .NET Framework poskytuje podporu na straně klienta pro práci s daty uloženými ve sloupci XML v rámci SQL Server. Další informace najdete v tématu "spravované třídy SQLXML" v tématu SQL Server Books Online.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Hodnoty pro sloupce SQL XML](../../../../../docs/framework/data/adonet/sql/sql-xml-column-values.md)  
- Ukazuje, jak načíst a pracovat s XML dat načtených z SQL serveru.  
+ [Hodnoty pro sloupce SQL XML](sql-xml-column-values.md)  
+ Ukazuje, jak načíst a pracovat s daty XML načtenými z SQL Server.  
   
- [Zadání hodnot XML jako parametry](../../../../../docs/framework/data/adonet/sql/specifying-xml-values-as-parameters.md)  
- Ukazuje, jak předat XML data jako parametr k příkazu.  
+ [Zadání hodnot XML jako parametry](specifying-xml-values-as-parameters.md)  
+ Ukazuje, jak předat XML data jako parametr do příkazu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server a ADO.NET](index.md)
+- [Přehled ADO.NET](../ado-net-overview.md)

@@ -2,12 +2,12 @@
 title: Zabezpečené klientské aplikace
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: 1312ddc079bdf8f08aebe8eb27e4bab9bf914fa8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 15d2b2199344644392be0e9a530c046a77db8523
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963157"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794381"
 ---
 # <a name="secure-client-applications"></a>Zabezpečené klientské aplikace
 Aplikace se obvykle skládají z mnoha částí, které musí být chráněné před chybami zabezpečení, které by mohly vést ke ztrátě dat nebo jinak ohrozit systém. Vytváření zabezpečených uživatelských rozhraní může zabránit mnoha problémům tím, že by útočník mohl získat přístup k datovým nebo systémovým prostředkům.  
@@ -24,7 +24,7 @@ Aplikace se obvykle skládají z mnoha částí, které musí být chráněné p
  [Ověřování vstupu uživatele na webových stránkách ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/7kh55542(v=vs.100))  
  Přehled ověřování vstupu uživatele pomocí ovládacích prvků ověřování ASP.NET  
   
- [Uživatelský vstup ve Windows Forms](../../../../docs/framework/winforms/user-input-in-windows-forms.md)  
+ [Uživatelský vstup ve Windows Forms](../../winforms/user-input-in-windows-forms.md)  
  Poskytuje odkazy a informace pro ověřování vstupu myši a klávesnice v aplikaci model Windows Forms.  
   
  [.NET Framework regulární výrazy](../../../standard/base-types/regular-expressions.md)  
@@ -33,10 +33,10 @@ Aplikace se obvykle skládají z mnoha částí, které musí být chráněné p
 ## <a name="windows-applications"></a>Aplikace systému Windows  
  V minulosti aplikace systému Windows obecně běžely s úplnými oprávněními. .NET Framework poskytuje infrastrukturu k omezení spouštění kódu v aplikaci systému Windows pomocí zabezpečení přístupu kódu (CAS). Pouze CAS ale nestačí k ochraně vaší aplikace.  
   
- [Windows Forms – zabezpečení](../../../../docs/framework/winforms/windows-forms-security.md)  
+ [Windows Forms – zabezpečení](../../winforms/windows-forms-security.md)  
  Popisuje, jak zabezpečit aplikace model Windows Forms a obsahuje odkazy na související témata.  
   
- [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ [Model Windows Forms a nespravované aplikace](../../winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Popisuje, jak pracovat s nespravovanými aplikacemi v aplikaci model Windows Forms.  
   
  [ClickOnce – nasazení pro Windows Forms](../../winforms/clickonce-deployment-for-windows-forms.md)  
@@ -63,12 +63,12 @@ Aplikace se obvykle skládají z mnoha částí, které musí být chráněné p
 |--------------|-----------------|  
 |[Konfigurace vzdálených aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b8tysty8(v=vs.100))|Tento článek popisuje, jak nakonfigurovat vzdálené aplikace, aby se předešlo běžným problémům.|  
 |[Zabezpečení při vzdálené komunikaci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9hwst9th(v=vs.100))|Popisuje ověřování a šifrování a další témata zabezpečení týkající se vzdálené komunikace.|  
-|[Problematika zabezpečení a vzdálené komunikace](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením chráněných objektů a křížení domény aplikace.|  
+|[Problematika zabezpečení a vzdálené komunikace](../../misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením chráněných objektů a křížení domény aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Zabezpečení aplikací ADO.NET](securing-ado-net-applications.md)
 - [Doporučení pro strategie přístupu k datům](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Zabezpečování aplikací](/visualstudio/ide/securing-applications)
-- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
-- [ADO.NET spravované zprostředkovatele a sady dat – středisko pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Ochrana informací o připojení](protecting-connection-information.md)
+- [Přehled ADO.NET](ado-net-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: Sběrače (WCF Data Services)
+title: Zachycení (WCF Data Services)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,46 +8,46 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
-ms.openlocfilehash: 17926e144fae206d702c2bcb4f88dd2093442ed5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7decfdd738e71a01afa8cb32604953142b46e588
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876223"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790436"
 ---
-# <a name="interceptors-wcf-data-services"></a>Sběrače (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje aplikaci tak, že můžete přidat vlastní logiku na operaci zachycení zpráv požadavků. Můžete použít tuto vlastní logiku pro ověření dat v příchozí zprávy. Také vám pomůže ho dál omezit obor dotazu požadavku, například vložit vlastní zásady autorizace na základě žádosti.  
+# <a name="interceptors-wcf-data-services"></a>Zachycení (WCF Data Services)
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje aplikaci zachytit zprávy požadavku, abyste mohli přidat vlastní logiku k operaci. Pomocí této vlastní logiky můžete ověřovat data v příchozích zprávách. Můžete ji také použít k dalšímu omezení rozsahu požadavku na dotaz, jako je například vložení vlastní zásady autorizace na jednotlivé požadavky.  
   
- Zachycení se provádí pomocí metody speciálně s atributy v datové služby. Tyto metody jsou volány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] v odpovídajícím bodě při zpracování zpráv. Sběrače jsou definovány na základě sady jednotlivých entitách a metody pro zachycování nepřijímá parametry z požadavku jako servisní operace můžete. Metody zachycování dotazů, které jsou volány při zpracování požadavku HTTP GET, musí vracet výraz lambda, který určuje, zda instanci entity zachycování nastavit by měl vrátit výsledky dotazu. Tento výraz používá datové služby pro další upřesnění požadovanou operaci. Tady je příklad definice z zachycování dotazů.  
+ Zachycení se provádí pomocí metod, které jsou v datové službě speciálně s atributy. Tyto metody jsou volány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] v příslušném bodě zpracování zprávy. Zachycení jsou definovaná na základě sady pro každou entitu a metody pro zachycování nemůžou přijímat parametry ze žádosti, jako je například operace služby. Metody pro zachycování dotazů, které jsou volány při zpracování požadavku HTTP GET, musí vracet výraz lambda, který určuje, zda by měla být instance sady entit zachytávací vrácena pomocí výsledků dotazu. Tento výraz používá datová služba k dalšímu upřesnění požadované operace. Následuje příklad definice zachycování dotazů.  
   
  [!code-csharp[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#queryinterceptordef)]
  [!code-vb[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#queryinterceptordef)]  
   
- Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachyťte zprávy](how-to-intercept-data-service-messages-wcf-data-services.md)datové služby.  
   
- Změna zachycovacích dotazů, které se volají, pokud operace bez dotazů zpracování, musí vracet `void` (`Nothing` v jazyce Visual Basic). Metody pro zachycování změnu nutné přijmout následující dva parametry:  
+ Zachycení změn, které jsou volány při zpracování operací bez dotazů, musí vracet `void` (`Nothing` v Visual Basic). Metody Change zachytávací musí přijmout následující dva parametry:  
   
-1. Parametr typu, který je kompatibilní s typem entity ze sady entit. Když službu dat vyvolá změnu zachycování, hodnota tohoto parametru bude odrážet informací o entitách, který odeslal požadavek.  
+1. Parametr typu, který je kompatibilní s typem entity sady entit. Když datová služba vyvolá zachytávací zachytávací, hodnota tohoto parametru bude odpovídat informacím v entitě, které odesílá požadavek.  
   
-2. Parametr typu <xref:System.Data.Services.UpdateOperations>. Když službu dat vyvolá změnu zachycování, hodnota tohoto parametru bude odrážet operace, která požadavek se pokouší provést.  
+2. Parametr typu <xref:System.Data.Services.UpdateOperations>. Když datová služba vyvolá zachytávací modul pro změnu, hodnota tohoto parametru se projeví v operaci, kterou se požadavek pokouší provést.  
   
- Následuje příklad definice z zachycování změnit.  
+ Následuje příklad definice zachytávací.  
   
  [!code-csharp[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#changeinterceptordef)]
  [!code-vb[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#changeinterceptordef)]  
   
- Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachyťte zprávy](how-to-intercept-data-service-messages-wcf-data-services.md)datové služby.  
   
  Následující atributy jsou podporovány pro zachycení.  
   
  **[QueryInterceptor(** *EntitySetName* **)]**  
- Metody s <xref:System.Data.Services.QueryInterceptorAttribute> atribut jsou volány při přijetí požadavku HTTP GET pro cílové entity sadu prostředků. Tyto metody musí vracet vždycky, výraz lambda ve formě `Expression<Func<T,bool>>`.  
+ Metody s <xref:System.Data.Services.QueryInterceptorAttribute> použitým atributem jsou volány, když je přijat požadavek HTTP GET pro prostředek cílové sady entit. Tyto metody musí vždycky vracet lambda výraz ve formě `Expression<Func<T,bool>>`.  
   
  **[ChangeInterceptor(** *EntitySetName* **)]**  
- Metody s <xref:System.Data.Services.ChangeInterceptorAttribute> atribut jsou volány při přijetí požadavku HTTP než požadavek HTTP GET pro cílové entity sadu prostředků. Tyto metody musí vracet vždycky `void` (`Nothing` v jazyce Visual Basic).  
+ Metody s <xref:System.Data.Services.ChangeInterceptorAttribute> použitým atributem jsou volány, když je přijat požadavek HTTP jiný než požadavek HTTP GET pro prostředek cílové sady entit. Tyto metody musí vždycky vracet `void` (`Nothing` v Visual Basic).  
   
- Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachyťte zprávy](how-to-intercept-data-service-messages-wcf-data-services.md)datové služby.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operace služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)
+- [Operace služby](service-operations-wcf-data-services.md)

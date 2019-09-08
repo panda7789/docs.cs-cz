@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
-ms.openlocfilehash: 6518e4edeccdd533487f717122ba6832f13436a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b73904e2347c501b21b2c5933d0b43c7abafeb7c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947068"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792309"
 ---
 # <a name="the-linq-to-sql-object-model"></a>Objektový model LINQ to SQL
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]portálu je objektový model vyjádřený v programovacím jazyce vývojáře mapován na datový model relační databáze. Operace s daty se pak provádí v závislosti na objektovém modelu.  
@@ -40,7 +40,7 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]portálu je
   
  Do databáze mohou být uloženy pouze instance tříd deklarované jako tabulky (tj. třídy entit).  
   
- Další informace naleznete v části atribut tabulky [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ Další informace naleznete v části atribut tabulky [mapování na základě atributů](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-class-members-and-database-columns"></a>LINQ to SQL členů třídy a databázových sloupců  
  Kromě přidružení tříd k tabulkám určíte pole nebo vlastnosti, které budou představovat sloupce databáze. Pro tento účel [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute> definuje atribut, jako v následujícím příkladu:  
@@ -51,7 +51,7 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]portálu je
   
  Z databáze jsou trvala nebo načtena pouze pole a vlastnosti mapované na sloupce. Ty, které nejsou deklarovány jako sloupce, se považují za přechodné části logiky aplikace.  
   
- <xref:System.Data.Linq.Mapping.ColumnAttribute> Atribut má celou řadu vlastností, které lze použít k přizpůsobení těchto členů, kteří představují sloupce (například určení člena představujícího sloupec primárního klíče). Další informace naleznete v části atribut sloupce [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ <xref:System.Data.Linq.Mapping.ColumnAttribute> Atribut má celou řadu vlastností, které lze použít k přizpůsobení těchto členů, kteří představují sloupce (například určení člena představujícího sloupec primárního klíče). Další informace naleznete v části atribut sloupce [mapování na základě atributů](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-associations-and-database-foreign-key-relationships"></a>LINQ to SQL přidružení a relace cizího klíče databáze  
  V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástroji představujete přidružení databáze (například relace cizího klíče k primárním klíčům) <xref:System.Data.Linq.Mapping.AssociationAttribute> použitím atributu. V následujícím segmentu kódu `Order` třída `Customer` obsahuje vlastnost, která má <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut. Tato vlastnost a její atribut poskytují `Order` třídu s relací `Customer` ke třídě.  
@@ -62,7 +62,7 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]portálu je
  [!code-csharp[DLinqObjectModel#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#3)]
  [!code-vb[DLinqObjectModel#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectModel/vb/northwind.vb#3)]  
   
- Další informace naleznete v části atributu přidružení v [mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ Další informace naleznete v části atributu přidružení v [mapování na základě atributů](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-methods-and-database-stored-procedures"></a>Metody LINQ to SQL a uložené procedury databáze  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]podporuje uložené procedury a uživatelsky definované funkce. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]nástroji namapujete tyto abstrakce definované databáze na objekty klienta, abyste k nim měli přístup pomocí silného typu z klientského kódu. Signatury metody se podobají co nejpřesněji těm podpisům procedur a funkcí, které jsou definovány v databázi. Pomocí technologie IntelliSense můžete tyto metody zjistit.  
@@ -78,9 +78,9 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]portálu je
  [!code-csharp[DLinqObjectModel#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#4)]
  [!code-vb[DLinqObjectModel#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectModel/vb/northwind.vb#4)]  
   
- Další informace naleznete v částech atribut funkce, atribut uložené procedury a atributů parametrů [mapování založeného na atributech](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) a [uložených procedur](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md).  
+ Další informace naleznete v částech atribut funkce, atribut uložené procedury a atributů parametrů [mapování založeného na atributech](attribute-based-mapping.md) a [uložených procedur](stored-procedures.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
-- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Mapování na základě atributů](attribute-based-mapping.md)
+- [Základní informace](background-information.md)

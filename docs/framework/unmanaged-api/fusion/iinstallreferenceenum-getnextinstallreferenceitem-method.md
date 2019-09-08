@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0dd96b10b5ee2880e0f9ee18048ec8ba2ee0b5ab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20e2bff4257df64f761fd8fff880643d4e786748
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779056"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796455"
 ---
 # <a name="iinstallreferenceenumgetnextinstallreferenceitem-method"></a>IInstallReferenceEnum::GetNextInstallReferenceItem – metoda
-Získá ukazatel na další [iinstallreferenceitem –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md) objektů obsažených v tomto [iinstallreferenceenum –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) objektu.  
+Získá ukazatel na další objekt [IInstallReferenceItem –](iinstallreferenceitem-interface.md) obsažený v tomto objektu [IInstallReferenceEnum –](iinstallreferenceenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetNextInstallReferenceItem (
   
 ## <a name="parameters"></a>Parametry  
  `ppRefItem`  
- [out] Vrácený `IInstallReferenceItem` ukazatele.  
+ mimo Vrácený `IInstallReferenceItem` ukazatel.  
   
  `dwFlags`  
- [in] Vyhrazeno pro budoucí rozšíření. `dwFlags` musí být 0 (nula).  
+ pro Vyhrazeno pro budoucí rozšíření. `dwFlags`musí mít hodnotu 0 (nula).  
   
  `pvReserved`  
- [in] Vyhrazeno pro budoucí rozšíření. `pvReserved` musí být referencí s hodnotou null.  
+ pro Vyhrazeno pro budoucí rozšíření. `pvReserved`musí se jednat o odkaz s hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** Fusion.h  
+ **Hlaviček** Fusion. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
-- [IInstallReferenceEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md)
+- [IInstallReferenceItem – rozhraní](iinstallreferenceitem-interface.md)
+- [IInstallReferenceEnum – rozhraní](iinstallreferenceenum-interface.md)
