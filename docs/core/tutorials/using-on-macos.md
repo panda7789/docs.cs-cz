@@ -1,88 +1,88 @@
 ---
-title: Začínáme s .NET Core v macOS
-description: Tento dokument obsahuje kroky a pracovní postup k vytvoření řešení .NET Core používat Visual Studio Code.
+title: Začínáme s .NET Core v systému macOS
+description: Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pomocí Visual Studio Code.
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: e79f5dd90124d2a1902194af2edbde0f5df107c7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f1cb9b45c0ed1b4315361846fc065209088b57f8
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633981"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373791"
 ---
-# <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v macOS
+# <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 
-Tento dokument obsahuje kroky a pracovní postup pro vytvoření řešení .NET Core pro macOS. Zjistěte, jak vytvářet projekty testování částí, použijte ladicí nástroje a začlenit knihovny třetích stran přes [NuGet](https://www.nuget.org/).
+Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pro macOS. Naučte se vytvářet projekty, testy jednotek, používat ladicí nástroje a začlenit knihovny třetích stran přes [NuGet](https://www.nuget.org/).
 
 > [!NOTE]
-> Tento článek používá [Visual Studio Code](https://code.visualstudio.com) v systému macOS.
+> Tento článek používá [Visual Studio Code](https://code.visualstudio.com) v MacOS.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core). .NET Core SDK obsahuje nejnovější verzi rozhraní .NET Core framework a modulu runtime.
+Nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core). .NET Core SDK zahrnuje nejnovější verzi rozhraní .NET Core Framework a modulu runtime.
 
-Nainstalujte [Visual Studio Code](https://code.visualstudio.com). V průběhu tohoto článku můžete také nainstalovat rozšíření, které zlepšují .NET Core. vývojové prostředí Visual Studio Code.
+Nainstalujte [Visual Studio Code](https://code.visualstudio.com). V průběhu tohoto článku nainstalujete také rozšíření Visual Studio Code, která zlepšují vývojové prostředí .NET Core.
 
-Instalace rozšíření Visual Studio kódu C# otevřete Visual Studio Code a stisknutím klávesy <kbd>F1</kbd> otevřete paletu Visual Studio Code. Typ **ext, přípona instalace** zobrazíte seznam přípon. Vyberte rozšíření jazyka C#. Restartujte Visual Studio Code k aktivaci rozšíření. Další informace najdete v tématu [dokumentaci kódu C# rozšíření sady Visual Studio](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+Visual Studio Code C# rozšíření můžete nainstalovat otevřením Visual Studio Code a stisknutím <kbd>klávesy F1</kbd> otevřete paletu Visual Studio Code. Zadáním **EXT Install** zobrazíte seznam rozšíření. Vyberte C# rozšíření. Pro aktivaci rozšíření restartujte Visual Studio Code. Další informace najdete v dokumentaci k [rozšíření C# Visual Studio Code](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ## <a name="get-started"></a>Začínáme
 
-V tomto kurzu vytvoříte tři projekty: projekt knihovny testů pro daný projekt knihovny a konzolové aplikace, která používá knihovnu. Je možné [zobrazení nebo stažení zdroj](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) pro toto téma v úložišti dotnet/samples na Githubu. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+V tomto kurzu vytvoříte tři projekty: projekt knihovny, testy pro daný projekt knihovny a konzolovou aplikaci, která využívá knihovnu. Zdroj pro toto téma můžete [Zobrazit nebo stáhnout](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) v úložišti dotnet/Samples na GitHubu. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Spusťte Visual Studio Code. Stisknutím klávesy <kbd>Ctrl</kbd> + <kbd> \` </kbd> (znak třemi nebo prvními) nebo vyberte **zobrazení > integrovaný terminál** v nabídce otevřít vložený Terminál ve Visual Studio Code. Externí prostředí stále můžete otevřít pomocí Průzkumníka **otevřete příkazový řádek** příkazu (**spusťte v terminálu** v systému Mac nebo Linux) Pokud chcete raději pracovat mimo Visual Studio Code.
+Spusťte Visual Studio Code. Stiskněte klávesu <kbd>CTRL</kbd> + <kbd>\`</kbd> (znaková uvozovka nebo znak zaškrtnutí) nebo vyberte **Zobrazit > integrovaného terminálu** z nabídky pro otevření vloženého terminálu v Visual Studio Code. Můžete otevřít externí prostředí pomocí Průzkumníka **otevřít v příkazu příkazového řádku** (**otevřít v terminálu** na Macu nebo Linux), pokud dáváte přednost práci mimo Visual Studio Code.
 
-Začněte vytvořením souboru řešení, která slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu vytvořte *zlaté* složky a otevřete složku. Tato složka je kořenový adresář řešení. Spustit [ `dotnet new` ](../tools/dotnet-new.md) příkaz pro vytvoření nového řešení *golden.sln*:
+Začněte vytvořením souboru řešení, který slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu vytvořte *zlatý* složku a otevřete ji. Tato složka je kořenem vašeho řešení. Spusťte příkaz pro vytvoření nového řešení, *zlatý. sln:* [`dotnet new`](../tools/dotnet-new.md)
 
 ```console
 dotnet new sln
 ```
 
-Z *zlaté* složky, spusťte následující příkaz pro vytvoření projektu knihovny, který vytvoří dva soubory,*library.csproj* a *Class1.cs*, v *knihovny* složky:
+Ze *zlaté* složky spusťte následující příkaz, který vytvoří projekt knihovny, který ve složce *knihovny* vytvoří dva soubory,*Library. csproj* a *Class1.cs*.
 
 ```console
 dotnet new classlib -o library
 ```
 
-Spustit [ `dotnet sln` ](../tools/dotnet-sln.md) příkaz pro přidání nově vytvořené *library.csproj* projektu do řešení:
+Spusťte příkaz pro přidání nově vytvořeného projektu *Library. csproj* do řešení: [`dotnet sln`](../tools/dotnet-sln.md)
 
 ```console
 dotnet sln add library/library.csproj
 ```
 
-*Library.csproj* soubor obsahuje následující informace:
+Soubor *Library. csproj* obsahuje následující informace:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
 </Project>
 ```
 
-Naše knihovna metody serializaci a deserializaci objektů ve formátu JSON. Pro podporu JSON serializace a deserializace, přidejte odkaz na `Newtonsoft.Json` balíček NuGet. `dotnet add` Příkaz přidá nové položky do projektu. Chcete-li přidat odkaz na balíček NuGet, použijte [ `dotnet add package` ](../tools/dotnet-add-package.md) příkaz a zadejte název balíčku:
+Naše metody knihovny serializovat a deserializovat objekty ve formátu JSON. Pro podporu serializace a deserializace JSON přidejte odkaz na `Newtonsoft.Json` balíček NuGet. `dotnet add` Příkaz přidá nové položky do projektu. Chcete-li přidat odkaz na balíček NuGet, použijte [`dotnet add package`](../tools/dotnet-add-package.md) příkaz a zadejte název balíčku:
 
 ```console
 dotnet add library package Newtonsoft.Json
 ```
 
-Tento postup přidá `Newtonsoft.Json` a jeho závislosti do projektu knihovny. Případně ručně upravit *library.csproj* a přidejte následující uzel:
+Tím se `Newtonsoft.Json` přidá a jeho závislosti do projektu knihovny. Případně ručně upravte soubor *Library. csproj* a přidejte následující uzel:
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+  <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
 </ItemGroup>
 ```
 
-Spustit [ `dotnet restore` ](../tools/dotnet-restore.md), ([viz Poznámka](#dotnet-restore-note)) která obnoví závislosti a vytvoří *obj* složky uvnitř *knihovny* s třemi soubory, včetně *project.assets.json* souboru:
+Execute [`dotnet restore`](../tools/dotnet-restore.md)([Viz poznámku](#dotnet-restore-note)), která obnoví závislosti a vytvoří složku *obj* v *knihovně* se třemi soubory, včetně souboru *Project. assets. JSON* :
 
 ```console
 dotnet restore
 ```
 
-V *knihovny* složka, soubor přejmenujte *Class1.cs* k *Thing.cs*. Nahraďte kód následujícím kódem:
+Ve složce *Library (knihovna* ), přejmenujte soubor *Class1.cs* na *Thing.cs*. Nahraďte kód následujícím kódem:
 
 ```csharp
 using static Newtonsoft.Json.JsonConvert;
@@ -97,9 +97,9 @@ namespace Library
 }
 ```
 
-`Thing` Třída obsahuje jednu veřejnou metodu `Get`, která vrací součet dvou čísel ale dosahuje tím, že součet převodu na řetězec a deserializovat ho do celé číslo. Toto využívá celou řadou moderní funkce C#, jako například [ `using static` direktivy](../../csharp/language-reference/keywords/using-static.md), [členové tvoření](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members), a [interpolace](../../csharp/language-reference/tokens/interpolated.md).
+Třída obsahuje jednu veřejnou `Get`metodu, která vrací součet dvou čísel, ale provede převod součtu na řetězec a jeho deserializaci na celé číslo. `Thing` To C# využívá řadu moderních funkcí, [ `using static` ](../../csharp/language-reference/keywords/using-static.md)jako jsou například direktivy, [členy Expression-těle](../../csharp/whats-new/csharp-7.md#more-expression-bodied-members)a [interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md).
 
-Vytvoření knihovny pomocí [ `dotnet build` ](../tools/dotnet-build.md) příkazu. Tímto se vytvoří *library.dll* soubor *golden/library/bin/Debug/netstandard1.4*:
+Sestavte knihovnu pomocí [`dotnet build`](../tools/dotnet-build.md) příkazu. Tím se vytvoří soubor *Library. dll* v rámci *zlaté/knihovny/přihrádky/ladění/netstandard 1.4*:
 
 ```console
 dotnet build
@@ -107,25 +107,25 @@ dotnet build
 
 ## <a name="create-the-test-project"></a>Vytvořte projekt testu
 
-Vytvoření testovacího projektu knihovny. Z *zlaté* složku, vytvořte nový projekt testu:
+Sestavte projekt testů pro knihovnu. Ze *zlaté* složky vytvořte nový testovací projekt:
 
 ```console
 dotnet new xunit -o test-library
 ```
 
-Přidejte projekt testu k řešení:
+Přidejte testovací projekt do řešení:
 
 ```console
 dotnet sln add test-library/test-library.csproj
 ```
 
-Přidáte odkaz na projekt knihovna, kterou jste vytvořili v předchozí části tak, aby kompilátor můžete najít a používat projekt knihovny. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+Přidejte projekt odkaz na knihovnu, kterou jste vytvořili v předchozí části, aby kompilátor mohl najít a použít projekt knihovny. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
 ```console
 dotnet add test-library/test-library.csproj reference library/library.csproj
 ```
 
-Případně ručně upravit *testovací library.csproj* a přidejte následující uzel:
+Případně ručně upravte soubor *test-Library. csproj* a přidejte následující uzel:
 
 ```xml
 <ItemGroup>
@@ -133,7 +133,7 @@ Případně ručně upravit *testovací library.csproj* a přidejte následujíc
 </ItemGroup>
 ```
 
-Teď, když závislosti byla správně nakonfigurovaná, vytvořte testy pro knihovnu. Otevřít *UnitTest1.cs* a nahraďte jeho obsah následujícím kódem:
+Teď, když jsou závislosti správně nakonfigurované, vytvořte testy pro vaši knihovnu. Otevřete *UnitTest1.cs* a nahraďte jeho obsah následujícím kódem:
 
 ```csharp
 using Library;
@@ -151,18 +151,18 @@ namespace TestApp
 }
 ```
 
-Mějte na paměti, vyhodnocení, hodnota 42 není roven 19 + 23 (nebo 42) při prvním vytvoření testu jednotek (`Assert.NotEqual`), který se nezdaří. Důležitým krokem při vytváření testů jednotek je pro vytvoření testu po prvním selhání potvrďte svou logikou.
+Všimněte si, že hodnota 42 se nerovná 19 + 23 (nebo 42) při prvním vytvoření testu jednotek (`Assert.NotEqual`), což selže. Důležitým krokem při sestavování testů jednotek je vytvoření testu pro jeho první selhání a potvrzení jeho logiky.
 
-Z *zlaté* složky, spusťte následující příkazy:
+Ze *zlaté* složky spusťte následující příkazy:
 
 ```console
 dotnet restore 
 dotnet test test-library/test-library.csproj
 ```
 
-Tyto příkazy se rekurzivně hledat všechny projekty k obnovení závislostí, je vytvořit a aktivovat xUnit test runner pro spuštění testů. Jeden test selže, tak, jak očekáváte.
+Tyto příkazy rekurzivně vyhledají všechny projekty pro obnovení závislostí, sestavují je a aktivují xUnit Test Runner pro spuštění testů. Jeden test se nezdařil, jak očekáváte.
 
-Upravit *UnitTest1.cs* soubor a změňte kontrolního výrazu z `Assert.NotEqual` k `Assert.Equal`. Spusťte následující příkaz z *zlaté* složku, kterou chcete znovu spustit test, které vyhovují této doby:
+Upravte soubor *UnitTest1.cs* a změňte kontrolní výraz z `Assert.NotEqual` na. `Assert.Equal` Spusťte následující příkaz ze *zlaté* složky a spusťte test znovu, který projde tímto časem:
 
 ```console
 dotnet test test-library/test-library.csproj
@@ -170,40 +170,40 @@ dotnet test test-library/test-library.csproj
 
 ## <a name="create-the-console-app"></a>Vytvoření konzolové aplikace
 
-Konzolovou aplikaci, které vytvoříte prostřednictvím následujících kroků je závislá na projekt knihovny vytvořené dříve a volá metodu jeho knihovna při spuštění. Použití tohoto modelu vývoje, můžete zjistit, jak vytvářet opakovaně použitelné knihovny pro více projektů.
+Aplikace konzoly, kterou vytvoříte pomocí následujících kroků, provede závislost na projektu knihovny, který jste vytvořili dříve, a volá jeho metodu Library při spuštění. Pomocí tohoto modelu vývoje vidíte, jak vytvořit opakovaně použitelné knihovny pro více projektů.
 
-Vytvořte novou konzolovou aplikaci z *zlaté* složky:
+Vytvořit novou konzolovou aplikaci ze *zlaté* složky:
 
 ```console
 dotnet new console -o app
 ```
 
-Přidáte do řešení projekt konzolové aplikace:
+Přidejte projekt konzolové aplikace do řešení:
 
 ```console
 dotnet sln add app/app.csproj
 ```
 
-Vytvořte závislosti na knihovně spuštěním `dotnet add reference` příkaz:
+Vytvořte závislost na knihovně spuštěním `dotnet add reference` příkazu:
 
 ```console
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
-Spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) Chcete-li obnovit závislosti tří projektů v řešení. Otevřít *Program.cs* a nahraďte obsah `Main` metoda tento řádek:
+Spusťte `dotnet restore` ([Viz poznámku](#dotnet-restore-note)) a obnovte závislosti tří projektů v řešení. Otevřete *program.cs* a nahraďte obsah `Main` metody následujícím řádkem:
 
 ```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");
 ```
 
-Přidejte dva `using` direktivy k hornímu okraji *Program.cs* souboru:
+Do horní `using` části souboru *program.cs* přidejte dvě direktivy:
 
 ```csharp
 using static System.Console;
 using Library;
 ```
 
-Spuštěním následujících `dotnet run` příkaz ke spuštění spustitelného souboru, kde `-p` umožňuje `dotnet run` určuje projekt, pro hlavní aplikaci. Aplikace vytvoří řetězec "odpověď je 42".
+Spuštěním následujícího `dotnet run` příkazu spusťte spustitelný soubor, `-p` kde možnost `dotnet run` určuje projekt pro hlavní aplikaci. Aplikace vytvoří řetězec "odpověď je 42".
 
 ```console
 dotnet run -p app/app.csproj
@@ -211,13 +211,13 @@ dotnet run -p app/app.csproj
 
 ## <a name="debug-the-application"></a>Ladění aplikace
 
-Nastavit zarážku na `WriteLine` příkaz v `Main` metody. To udělat buď stisknutím <kbd>F9</kbd> klávesy, když se ukazatel myši nachází `WriteLine` řádek nebo kliknutím myši na levý okraj řádku, ve které chcete nastavit zarážku. Na okraji vedle řádku kódu se zobrazí červený kruh. Při dosažení zarážky zastaví provádění kódu *před* provedením řádku zarážku.
+Nastavte zarážku na `WriteLine` příkaz `Main` v metodě. Provedete to tak, že stisknete klávesu <kbd>F9</kbd> , když se `WriteLine` ukazatel myši nachází na řádku, nebo kliknete myší na levém okraji na řádku, kde chcete nastavit zarážku. Na okraji vedle řádku kódu se zobrazí červené kolečko. Při dosažení zarážky se spuštění kódu zastaví *před* provedením řádku zarážky.
 
-Výběrem ikony ladění na panelu nástrojů Visual Studio Code otevřete kartu ladicí program výběrem **zobrazení > ladění** z řádku nabídek nebo pomocí klávesové zkratky <kbd>CTRL</kbd> + <kbd> SHIFT</kbd>+<kbd>D</kbd>:
+Otevřete kartu ladicí program výběrem ikony ladění na panelu nástrojů Visual Studio Code a výběrem možnosti **Zobrazit > ladění** na panelu nabídek nebo pomocí klávesové zkratky <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:
 
-![Ladicí program sady Visual Studio Code](./media/using-on-macos/visual-studio-code-debugger.png)
+![Ladicí program Visual Studio Code](./media/using-on-macos/visual-studio-code-debugger.png)
 
-Kliknutím na tlačítko Přehrát a spusťte tak aplikaci v ladicím programu. Aplikace zahájí vykonávání a běží na zarážku, kde se zastaví. Krokovat s vnořením `Get` metoda a ujistěte se, že jste předali v správné argumenty. Potvrďte, že odpověď je 42.
+Stisknutím tlačítka Přehrát spusťte aplikaci v ladicím programu. Aplikace se spustí a spustí se na zarážku, kde se zastaví. Zajistěte `Get` krok do metody a ujistěte se, že jste předali správné argumenty. Potvrďte, že odpověď je 42.
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

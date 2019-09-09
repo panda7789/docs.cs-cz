@@ -2,12 +2,12 @@
 title: Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 ms.date: 04/28/2018
-ms.openlocfilehash: 5aa9828f65f76138461c18711fe03bdbe6a70ffd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: aabce73efaae520a3b59c70d53519b847f2c6a94
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676964"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373935"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovatí stávajících aplikací .NET na cloudově optimalizované aplikace
 
@@ -41,9 +41,9 @@ Následující seznam popisuje hlavní principy nebo postupy pro cloudově optim
 
 Obrázek 4-2 ukazuje hlavní volitelné pilíře aplikace optimalizované pro Cloud. U více sloupků, které implementujete, bude mít připravenost vaší aplikace po splnění očekávání vašich zákazníků úspěch.
 
-> ![Hlavní pilíře aplikace optimalizované pro Cloud](./media/image2.png)
->
-> **Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro Cloud
+![Hlavní pilíře aplikace optimalizované pro Cloud](./media/image2.png)
+
+**Obrázek 4-2.** Hlavní pilíře aplikace optimalizované pro Cloud
 
 Cloudově optimalizovaná aplikace představuje přístup k vytváření a správě aplikací, které využívají model cloud computingu, a přitom využívají kombinaci kontejnerů, spravované cloudové infrastruktury, odolných aplikačních technik, monitorování, průběžné doručování a DevOps, a to vše bez nutnosti rearchitektovat a Recode vaše stávající aplikace.
 
