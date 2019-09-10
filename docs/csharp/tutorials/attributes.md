@@ -1,84 +1,84 @@
 ---
-title: Atributy – C#
-description: Zjistěte, jak fungují atributy v jazyce C#.
+title: AtributC#
+description: Přečtěte si, jak C#atributy fungují v.
 author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 3141c1bf7ddcf3fd3426290428f9eeeb54b3c872
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0037e8b2c5f50d1b8d0a950743f6eeb9145df414
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675764"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850997"
 ---
-# <a name="using-attributes-in-c"></a>Použití atributů v jazyce C\#
+# <a name="using-attributes-in-c"></a>Používání atributů v jazyce C\#
 
-Atributy poskytují způsob, jak informace o přidružení kódu deklarativní způsobem. Můžete také poskytují opakovaně použitelné element, který lze použít pro širokou škálu cíli.
+Atributy poskytují způsob, jak přidružit informace s kódem deklarativním způsobem. Mohou také poskytovat opakovaně použitelný prvek, který lze použít na celou řadu cílů.
 
-Vezměte v úvahu `[Obsolete]` atribut. Lze použít na třídy, struktury, metody, konstruktory a další. To _deklaruje_ element je zastaralý. Pak je kompilátor jazyka C# pro tento atribut, a provést některé akce v odpovědi.
+Vezměte v `[Obsolete]` úvahu atribut. Dá se použít na třídy, struktury, metody, konstruktory a další. _Deklaruje_ , že prvek je zastaralý. Následně až do C# kompilátoru vyhledáte tento atribut a v reakci Udělejte nějakou akci.
 
-V tomto kurzu se seznámíte k přidání atributů do kódu, jak vytvořit a použít vlastní atributy a jak používat některé atributy, které jsou integrované do .NET Core.
+V tomto kurzu se seznámíte s postupem přidávání atributů do kódu, vytváření a používání vlastních atributů a používání některých atributů, které jsou součástí .NET Core.
 
 ## <a name="prerequisites"></a>Požadavky
-Budete potřebovat k nastavení vašeho počítače ke spuštění .NET core. Můžete najít pokyny k instalaci na [.NET Core](https://www.microsoft.com/net/core) stránky.
-Tuto aplikaci můžete spustit na Windows, Ubuntu Linux, macOS nebo v kontejneru Dockeru. Bude potřeba nainstalovat váš oblíbený editor kódu. Popisy níže použití [Visual Studio Code](https://code.visualstudio.com/) což je open source pro různé platformy editoru. Ale můžete použít jakýkoli nástroje jste obeznámeni.
+Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) .
+Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, macOS nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Teď, když si nainstalujete všechny nástroje, vytvořte novou aplikaci .NET Core. Použití generátoru příkazového řádku, spusťte následující příkaz, v oblíbeném prostředí:
+Teď, když jste nainstalovali všechny nástroje, vytvořte novou aplikaci .NET Core. Pokud chcete použít generátor příkazového řádku, spusťte ve svém oblíbeném prostředí následující příkaz:
 
 `dotnet new console`
 
-Tento příkaz vytvoří nejzákladnější soubory projektu .NET core. Budete muset provést `dotnet restore` Obnovit závislosti potřebné ke kompilaci tohoto projektu.
+Tento příkaz vytvoří soubory projektu .NET Core Barebones. Bude nutné provést `dotnet restore` obnovení závislostí potřebných pro zkompilování tohoto projektu.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Chcete-li spustit program, použijte `dotnet run`. Měli byste vidět "Hello, World" výstup na konzolu.
+Chcete-li spustit program, `dotnet run`použijte. Měl by se zobrazit výstup "Hello, World" do konzoly.
 
 ## <a name="how-to-add-attributes-to-code"></a>Postup přidání atributů do kódu
 
-V jazyce C#, atributy se tříd, které dědí z `Attribute` základní třídy. Všechny třídy, která dědí z `Attribute` lze použít jako typ "značka" na jiných částí kódu.
-Například je atribut s názvem `ObsoleteAttribute`. Slouží k signalizaci, že kód je zastaralá a neměl by se už nebudete používat. Můžete umístit tento atribut na třídu, například pomocí hranatých závorek.
+V C#rozhraní jsou atributy třídy, které dědí ze `Attribute` základní třídy. Jakoukoli třídu, která dědí `Attribute` z, lze použít jako řazení "značky" v jiných částech kódu.
+Například atribut s názvem `ObsoleteAttribute`. Používá se k signalizaci, že kód je zastaralý a neměl by se už používat. Tento atribut lze umístit na třídu například pomocí hranatých závorek.
 
 [!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
 
-Všimněte si, že zatímco třídy se nazývá `ObsoleteAttribute`, pouze je nutné použít `[Obsolete]` v kódu. Toto je konvence, C# následujícím.
-Můžete použít celý název `[ObsoleteAttribute]` Pokud zvolíte.
+Všimněte si, že když je třída `ObsoleteAttribute`volána, je nutné ji použít `[Obsolete]` pouze v kódu. Toto je konvence, C# která následuje.
+Pokud zvolíte, můžete použít celé `[ObsoleteAttribute]` jméno.
 
-Při označení zastaralé třídy, je vhodné poskytnout určité informace jako *proč* je zastaralé, a/nebo *co* místo toho použít. To proveďte předáním parametru řetězce na atribut zastaralé.
+Když označíte třídu jako zastaralou, je vhodné poskytnout nějaké informace, *Proč* je zastaralá a/nebo *co* použít místo toho. Provedete to tak, že předáte řetězcový parametr do zastaralého atributu.
 
 [!code-csharp[Obsolete attribute example with parameters](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample2)]
 
-Řetězec je předávána jako argument `ObsoleteAttribute` konstruktoru, stejně jako kdybyste psali `var attr = new ObsoleteAttribute("some string")`.
+Řetězec je předáván jako argument `ObsoleteAttribute` konstruktoru, stejně jako při psaní. `var attr = new ObsoleteAttribute("some string")`
 
-Parametry pro konstruktor atributem jsou omezené na jednoduché typy/literálů: `bool, int, double, string, Type, enums, etc` a pole těchto typů.
-Nelze použít výraz nebo proměnné. Můžete libovolně udělovat použít poziční nebo pojmenované parametry.
+Parametry konstruktoru atributu jsou omezeny na jednoduché typy/literály: `bool, int, double, string, Type, enums, etc` a pole těchto typů.
+Nelze použít výraz ani proměnnou. Pro použití pozičních nebo pojmenovaných parametrů je zdarma.
 
-## <a name="how-to-create-your-own-attribute"></a>Jak vytvořit vlastní atribut
+## <a name="how-to-create-your-own-attribute"></a>Vytvoření vlastního atributu
 
-Vytvoření atributu je stejně jednoduché jako dědění z `Attribute` základní třídy.
+Vytvoření atributu je jednoduché jako dědění ze `Attribute` základní třídy.
 
 [!code-csharp[Create your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample1)]
 
-Pomocí výše uvedeného lze nyní použít `[MySpecial]` (nebo `[MySpecialAttribute]`) jako atribut jinde v základu kódu.
+Výše uvedeným způsobem teď můžu použít `[MySpecial]` (nebo `[MySpecialAttribute]`) jako atribut jinde v základu kódu.
 
 [!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CreateAttributeExample2)]
 
-Atributy v knihovně základních tříd .NET, například `ObsoleteAttribute` aktivovat určité chování v rámci kompilátor. Všechny atributy, které vytvoříte však funguje pouze jako metadata a nevede žádný kód v rámci třídy atributů, které se spouští. To je na vás tak, aby fungoval na těchto metadat jinde ve vašem kódu (více zabývat později v tomto kurzu).
+Atributy v knihovně základních tříd .NET jako `ObsoleteAttribute` aktivují určité chování v rámci kompilátoru. Jakýkoli atribut, který vytvoříte, ale funguje pouze jako metadata a nevede se o spuštění kódu v rámci třídy atributů. Je to až na to, abyste mohli pracovat s metadaty jinde v kódu (Další informace najdete v tomto kurzu dále).
 
-Zde je "gotcha zde dávejte pozor na. Jak je uvedeno výše, jsou povoleny pouze určité typy mají být předány jako argumenty při použití atributů. Ale při vytváření typ atributu, kompilátor jazyka C# nezpůsobí ukončení můžete vytvářet tyto parametry. V následujícím příkladu, jsem vytvořil atribut s konstruktorem, který zkompiluje zcela v pořádku.
+Tady je Gotcha, kde můžete sledovat. Jak je uvedeno výše, při použití atributů můžou být jako argumenty předány jenom určité typy. Při vytváření typu atributu ale C# kompilátor nebrání v vytváření těchto parametrů. V následujícím příkladu jsem vytvořil atribut s konstruktorem, který se zkompiluje přesně.
 
 [!code-csharp[Valid constructor used in an attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGothca1)]
 
-Nicméně nebude možné použít tento konstruktor s syntaxe atributu.
+Tento konstruktor však nebude možné použít se syntaxí atributu.
 
 [!code-csharp[Invalid attempt to use the attribute constructor](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeGotcha2)]
 
-Výše uvedené způsobí chybu kompilátoru jako `Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
+Výše uvedené způsobí chybu kompilátoru jako`Attribute constructor parameter 'myClass' has type 'Foo', which is not a valid attribute parameter type`
 
-## <a name="how-to-restrict-attribute-usage"></a>Jak omezit použití atributu
+## <a name="how-to-restrict-attribute-usage"></a>Jak omezit použití atributů
 
-Atributy lze použít na celé řadě "cíle". Ukazují výše uvedené příklady na třídy, ale je také možné používat podle:
+Atributy lze použít v řadě "cíle". Výše uvedené příklady je ukazují na třídy, ale lze je použít také na:
 
 * Assembly
 * Třída
@@ -93,58 +93,58 @@ Atributy lze použít na celé řadě "cíle". Ukazují výše uvedené příkla
 * Modul
 * Parametr
 * Vlastnost
-* returnValue
+* ReturnValue
 * Struktura
 
-Při vytváření třídy atributu, ve výchozím nastavení jazyka C# vám umožní použít tento atribut na žádném z cíle atributů je to možné. Pokud chcete omezit atribut na určité cíle, můžete to provést pomocí `AttributeUsageAttribute` na třídě atribut. Který má klikněte pravým tlačítkem myši, atribut u atributu!
+Když vytvoříte třídu atributu, ve výchozím nastavení C# vám umožní použít tento atribut u libovolné možné cíle atributu. Pokud chcete omezit atribut na určité cíle, můžete tak učinit pomocí `AttributeUsageAttribute` třídy na vaší třídě atributů. To je správné, atribut u atributu!
 
 [!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample1)]
 
-Pokud se pokusíte vložit výše uvedené atributu na libovolnou položku, která není třída nebo struktura, obdržíte chybu kompilátoru jako `Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
+Pokud se pokusíte vložit výše uvedený atribut na něco, co není třídou nebo strukturou, zobrazí se chyba kompilátoru jako`Attribute 'MyAttributeForClassAndStructOnly' is not valid on this declaration type. It is only valid on 'class, struct' declarations`
 
 [!code-csharp[Using your own attribute](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#AttributeUsageExample2)]
 
-## <a name="how-to-use-attributes-attached-to-a-code-element"></a>Jak používat atributy připojené k prvek kódu
+## <a name="how-to-use-attributes-attached-to-a-code-element"></a>Jak používat atributy připojené k elementu kódu
 
-Atributy fungují jako metadata. Bez některé pasivního platnost se nespustí skutečně žádnou akci.
+Atributy fungují jako metadata. Bez některých pasivních sil nebudou ve skutečnosti dělat cokoli.
 
-Chcete-li najít a zpracovat atributy, [reflexe](../programming-guide/concepts/reflection.md) je obvykle potřeba. Nebudeme se zabývat odraz podrobný v tomto kurzu, ale základní myšlenka je, že reflexe umožňuje psát kód v jazyce C#, který prověří jiného kódu.
+Chcete-li najít atributy a pracovat s nimi, je obvykle potřeba [reflexe](../programming-guide/concepts/reflection.md) . V tomto kurzu nevidím podrobně zamyšlení, ale základní nápad je, že reflexe umožňuje psát kód v C# , který prověřuje jiný kód.
 
-Například můžete použít reflexe a získat informace o třídě (Přidat `using System.Reflection;` v čele váš kód): 
+Například můžete použít reflexi k získání informací o třídě (přidejte `using System.Reflection;` v hlavičce kódu): 
 
 [!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
-Který vytiskne vypadat: `The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
+Tím se vytiskne něco jako:`The assembly qualified name of MyClass is ConsoleApplication.MyClass, attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`
 
-Jakmile budete mít `TypeInfo` objektu (nebo `MemberInfo`, `FieldInfo`atd), můžete použít `GetCustomAttributes` metoda. Vrátí kolekci `Attribute` objekty.
-Můžete také použít `GetCustomAttribute` a zadejte typ atributu.
+Jakmile máte `TypeInfo` objekt ( `MemberInfo`nebo, `FieldInfo`atd.), můžete použít `GetCustomAttributes` metodu. Tato akce vrátí kolekci `Attribute` objektů.
+Můžete také použít `GetCustomAttribute` a zadat typ atributu.
 
-Tady je příklad použití `GetCustomAttributes` na `MemberInfo` instanci `MyClass` (které jsme viděli výše má `[Obsolete]` atribut na něj).
+`GetCustomAttributes` Tady je příklad použití `MemberInfo` na instanci pro (u `MyClass` které se `[Obsolete]` dříve ukázal atribut).
 
 [!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample2)]
 
-Vytiskne, který se do konzoly: `Attribute on MyClass: ObsoleteAttribute`. Pokuste se přidat dalších atributů, které mají `MyClass`.
+Který bude tisknout do konzoly: `Attribute on MyClass: ObsoleteAttribute`. Zkuste přidat další atributy do `MyClass`.
 
-Je důležité si uvědomit, že tyto `Attribute` laxně instalace objektů. To znamená, že nebude spuštěna dokud nepoužijete `GetCustomAttribute` nebo `GetCustomAttributes`.
-Jsou také vytvořena instance pokaždé, když. Volání `GetCustomAttributes` dvakrát za sebou vrátí dva různé instance `ObsoleteAttribute`.
+Je důležité si uvědomit, že tyto `Attribute` objekty jsou vytvořeny instance laxně vytvářená. To znamená, že nebudou vytvořeny instance, dokud `GetCustomAttribute` nepoužijete `GetCustomAttributes`nebo.
+Jsou také vytvořeny instance. Volání `GetCustomAttributes` dvakrát v řádku vrátí dvě různé `ObsoleteAttribute`instance.
 
 ## <a name="common-attributes-in-the-base-class-library-bcl"></a>Běžné atributy v knihovně základních tříd (BCL)
 
-Atributy jsou používány mnoho nástrojů a platforem. NUnit používá atributů, jako je `[Test]` a `[TestFixture]` , které používá nástroj test runner NUnit. ASP.NET MVC pomocí atributů, jako je `[Authorize]` a poskytuje rozšiřovatelnou platformu pro filtr akce k provedení vyskytující aspekty na akce MVC. [PostSharp](https://www.postsharp.net) umožňující aspektově orientované programování v jazyce C# používá syntaxi atributů.
+Atributy používá mnoho nástrojů a platforem. NUnit používá atributy jako `[Test]` a `[TestFixture]` , které jsou používány nástrojem nunit Test Runner. ASP.NET MVC používá atributy jako `[Authorize]` a poskytuje rozhraní filtru akcí, které umožňuje provádět průřezy na akcích MVC. [PostSharp](https://www.postsharp.net) používá syntaxi atributu k umožnění programování orientovaného na jednotlivé C#aspekty v.
 
-Tady je pár významné atributy, které jsou součástí knihovny základních tříd .NET Core:
+Tady je několik významných atributů integrovaných do knihoven základních tříd .NET Core:
 
-* `[Obsolete]`. Tohle byl použit v předchozích příkladech a nachází `System` oboru názvů. To je užitečné poskytují deklarativní dokumentaci o změnu základu kódu. Zprávy lze zadat v podobě řetězce a další logický parametr je možné předat z upozornění kompilátoru chybu kompilátoru.
+* `[Obsolete]`. Tato verze se použila ve výše uvedených příkladech a je v `System` oboru názvů. Je užitečné poskytnout deklarativní dokumentaci ke změně základu kódu. Zpráva může být poskytnuta ve formě řetězce a další logický parametr lze použít k eskalaci z upozornění kompilátoru na chybu kompilátoru.
 
-* `[Conditional]`. Tento atribut je `System.Diagnostics` oboru názvů. Tento atribut lze použít u metody (nebo třídy atributů). Je nutné předat řetězec do konstruktoru.
-Pokud se tento řetězec se neshoduje `#define` direktiv, pak všechna volání do metody (ale ne metodu) budou odebrány podle C# kompilátoru. To je obvykle používá pro účely (Diagnostika) ladění.
+* `[Conditional]`. Tento atribut je v `System.Diagnostics` oboru názvů. Tento atribut lze použít na metody (nebo třídy atributů). Do konstruktoru musíte předat řetězec.
+Pokud se tento řetězec neshoduje s `#define` direktivou, pak je C# kompilátor odebere všechna volání této metody (ale ne samotné metody). Obvykle se používá pro účely ladění (diagnostiky).
 
-* `[CallerMemberName]`. Tento atribut lze použít parametry a odpovídající `System.Runtime.CompilerServices` oboru názvů. Toto je atribut, který slouží k vložení název metody, která volá jinou metodu. To se obvykle používá jako způsob, jak eliminovat "magic řetězce" při implementaci v různých architektury uživatelského rozhraní INotifyPropertyChanged. Jako příklad:
+* `[CallerMemberName]`. Tento atribut lze použít pro parametry a život v `System.Runtime.CompilerServices` oboru názvů. Toto je atribut, který se používá k vložení názvu metody, která volá jinou metodu. Obvykle se používá jako způsob, jak eliminovat řetězce Magic při implementaci INotifyPropertyChanged v různých architekturách uživatelského rozhraní. Jako příklad:
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 
-Ve výše uvedeném kódu, nemusíte mít literál `"Name"` řetězec. To pomáhá zabránit překlep související chyby a také udržuje pro hladší refaktoring/přejmenování.
+Ve výše uvedeném kódu není nutné mít literální `"Name"` řetězec. To může přispět k tomu, aby se předešlo chybám souvisejícím s překlepem a také docházelo k plynulejšímu refaktoringu/přejmenování
 
 ## <a name="summary"></a>Souhrn
 
-Atributy přenést deklarativní schopnost C#, ale jejich metadata formu kódu a doby něco neuděláte samy o sobě.
+Atributy přinášejí deklarativní sílu C#na, ale jsou meta datovým formulářem kódu a nejednají sami sebe.

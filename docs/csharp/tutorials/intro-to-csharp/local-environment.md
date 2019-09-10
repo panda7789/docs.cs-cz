@@ -1,50 +1,50 @@
 ---
-title: Úvod do C# – Seznamte se s nástroje pro vývoj
-description: Tento článek obsahuje základní informace o nástroji budete používat pro vývoj C# a aplikací .NET na svém počítači.
+title: Seznámení se seznámení s nástroji pro C# vývoj
+description: Tento článek poskytuje základní informace o nástrojích, které budete používat pro vývoj C# a aplikace .NET na vašem počítači.
 ms.date: 10/23/2018
-ms.openlocfilehash: db0b3228272a17feaa11ec754fa0aa4952a0d1ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe39bd5e89bb168316b19c62d6e022e36c58fc2f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706231"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850762"
 ---
-# <a name="become-familiar-with-the-net-development-tools"></a>Seznamte se s nástroje pro vývoj .NET
+# <a name="become-familiar-with-the-net-development-tools"></a>Seznámení s nástroji pro vývoj v .NET
 
-Prvním krokem při spuštění kurz na vašem počítači je nastavení vývojového prostředí.
-Téma .NET [zahájení práce během 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v Mac, PC nebo Linux.
+Prvním krokem při spouštění kurzu na vašem počítači je nastavení vývojového prostředí.
+Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux.
 
-Alternativně můžete nainstalovat [.NET Core SDK](https://www.microsoft.com/net/download) a [Visual Studio Code](https://code.visualstudio.com/).
+Alternativně můžete nainstalovat [.NET Core SDK](https://dotnet.microsoft.com/download) a [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="basic-application-development-flow"></a>Základní aplikace vývoj toku
+## <a name="basic-application-development-flow"></a>Vývojový tok pro základní aplikace
 
-Budete vytvářet aplikace pomocí [ `dotnet new` ](../../../core/tools/dotnet-new.md) příkazu. Tento příkaz vygeneruje soubory a prostředky potřebné pro vaši aplikaci. Úvod do C# použít všechny kurzy `console` typu aplikace. Jakmile máte základní informace, můžete rozšířit na jiné typy aplikace.
+Pomocí [`dotnet new`](../../../core/tools/dotnet-new.md) příkazu vytvoříte aplikace. Tento příkaz vygeneruje soubory a prostředky nezbytné pro vaši aplikaci. Úvod do C# kurzů, které používají `console` typ aplikace Jakmile budete mít základní informace, můžete je rozšířit na jiné typy aplikací.
 
-Další příkazy, které budete používat jsou [ `dotnet build` ](../../../core/tools/dotnet-build.md) k sestavení spustitelného souboru, a [ `dotnet run` ](../../../core/tools/dotnet-run.md) ke spuštění spustitelného souboru.
+Ostatní příkazy, které budete používat, [`dotnet build`](../../../core/tools/dotnet-build.md) jsou k sestavení spustitelného souboru [`dotnet run`](../../../core/tools/dotnet-run.md) a ke spuštění spustitelného souboru.
 
-## <a name="pick-your-tutorial"></a>Vyberte si tento kurz
+## <a name="pick-your-tutorial"></a>Výběr kurzu
 
-Můžete začít s některou z následujících kurzů:
+Můžete začít s některým z následujících kurzů:
 
 ## <a name="numbers-in-cnumbers-in-csharp-localmd"></a>[Čísla v jazyce C#](numbers-in-csharp-local.md)
 
-V [čísla ve C# ](numbers-in-csharp-local.md) kurzu se dozvíte, jak počítače ukládána čísla a jak provádět výpočty s rozdílné číselné typy. Naučíte se základy zaokrouhlení a provádění matematických výpočtů pomocí C#.
+V části [čísla v C# ](numbers-in-csharp-local.md) kurzu se dozvíte, jak počítače ukládají čísla a jak provádět výpočty s různými číselnými typy. Naučíte se základy zaokrouhlování a postup, jak provádět matematické výpočty pomocí C#.
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) lekce.
+V tomto kurzu se předpokládá, že jste dokončili lekci [Hello World](hello-world.yml) .
 
 ## <a name="branches-and-loopsbranches-and-loops-localmd"></a>[Větve a smyčky](branches-and-loops-local.md)
 
-[Větve a smyčky](branches-and-loops-local.md) kurzu se naučíte se základy výběru různé cesty spuštění kódu na základě hodnot, které jsou uložené v proměnné. Se dozvíte základní informace o toku řízení, která je základem jak programy rozhodování a zvolte různé akce.
+Kurz [větvení a cyklů](branches-and-loops-local.md) učí základy výběru různých cest ke spuštění kódu na základě hodnot uložených v proměnných. Naučíte se základy řízení toku, což je základem způsobu, jakým programy provádí rozhodnutí a výběr různých akcí.
 
-V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) a [čísla ve C# ](numbers-in-csharp-local.md) lekce.
+V tomto kurzu se předpokládá, že jste [v C# ](numbers-in-csharp-local.md) lekci dokončili text [Hello World](hello-world.yml) a čísla.
 
-## <a name="list-collectionarrays-and-collectionsmd"></a>[Kolekce seznamu](arrays-and-collections.md)
+## <a name="list-collectionarrays-and-collectionsmd"></a>[Kolekce seznamů](arrays-and-collections.md)
 
-[Seznamu kolekce](arrays-and-collections.md) lekce will vám typu kolekce, která ukládá data sekvencí. Budete se dozvíte, jak přidávat a odebírat položky, vyhledejte položky a řazení seznamu. Prozkoumáte různé druhy seznamů. 
+V lekci [kolekce seznamu](arrays-and-collections.md) získáte prohlídku typu kolekce, ve kterém jsou uloženy sekvence dat. Naučíte se, jak přidávat a odebírat položky, Hledat položky a třídit seznamy. Budete zkoumat různé druhy seznamů. 
 
-Tento kurz předpokládá, že dokončení lekce uvedené výše.
+V tomto kurzu se předpokládá, že jste dokončili výše uvedené lekce.
 
 ## <a name="introduction-to-classesintroduction-to-classesmd"></a>[Úvod do tříd](introduction-to-classes.md)
 
-Tento poslední Úvod do C# kurz je možné spustit na počítači, pomocí vlastní místní vývojové prostředí a .NET Core.
-Budete moct sestavit konzolovou aplikaci a zobrazit základní funkce objektově orientované, které jsou součástí C# jazyka.
+Tento závěrečný Úvod C# do kurzu je k dispozici pouze ke spuštění na vašem počítači pomocí vlastního místního vývojového prostředí a .NET Core.
+Vytvoříte konzolovou aplikaci a zobrazíte základní funkce orientované na objekty, které jsou součástí C# jazyka.

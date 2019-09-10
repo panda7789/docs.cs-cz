@@ -2,22 +2,23 @@
 title: <add> z <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 1bd7426f-5f4f-43fc-b8e9-de842219aa32
-ms.openlocfilehash: a94c5144d907c26e6f5eef09b1a17b17eb6c9e0f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d75142209ad8706d0cad5ce188d9d991a5e881bc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920221"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850593"
 ---
 # <a name="add-of-baseaddresses"></a>\<Přidat > \<> adres BaseAddresses
 Představuje prvek konfigurace, který určuje základní adresy používané hostitelem služby.  
   
- \<system.ServiceModel>  
-\<> klienta  
-\<endpoint>  
-\<host>  
-\<baseAddresses>  
-\<baseAddress – >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služeb**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služby**](service.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> hostitele**](host.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Adres BaseAddresses >** ](baseaddresses.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Přidat >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

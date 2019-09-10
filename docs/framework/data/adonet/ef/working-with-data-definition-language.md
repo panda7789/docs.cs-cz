@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: c2812e261278af7763bc6b2e1a493b97cb35e3ab
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 83d6fc1294f6aa37389db9e517b02866ef000b50
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911635"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854221"
 ---
 # <a name="working-with-data-definition-language"></a>Práce s jazykem DDL (Data Description Language)
-Počínaje verzí .NET Framework 4 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje jazyk DDL (Data Definition Language). To vám umožní vytvořit nebo odstranit instanci databáze založenou na připojovacím řetězci a metadatech modelu úložiště (SSDL).  
+Počínaje verzí .NET Framework 4 podporuje Entity Framework jazyk DDL (Data Definition Language). To vám umožní vytvořit nebo odstranit instanci databáze založenou na připojovacím řetězci a metadatech modelu úložiště (SSDL).  
   
  Následující metody pro <xref:System.Data.Objects.ObjectContext> použití připojovacího řetězce a obsahu SSDL k provedení následujících akcí: vytvořit nebo odstranit databázi, ověřit, zda databáze existuje, a zobrazit generovaný skript DDL:  
   

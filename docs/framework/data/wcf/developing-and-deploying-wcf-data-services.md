@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 578c480940d70fa84edf18d572992e755c8efed5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d7ddae58874c69468eb6ff1762db9083897b1acd
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780329"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854067"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení WCF Data Services
 
@@ -121,7 +121,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 Při nasazování datových služeb je vhodné zvážit následující faktory:
 
-- Když nasadíte datovou službu, která [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] používá poskytovatele pro přístup k databázi SQL Server, může být také nutné rozšířit datové struktury, data nebo obojí pomocí nasazení datové služby. Sada Visual Studio může automaticky vytvářet skripty (soubory. SQL) k tomu v cílové databázi a tyto skripty lze zahrnout do balíčku pro nasazení webu aplikace ASP.NET. Další informace najdete v tématu [jak: Nasaďte databázi pomocí projektu](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100))webové aplikace. Pro web ASP.NET to můžete provést pomocí **Průvodce publikováním databáze** v aplikaci Visual Studio. Další informace najdete v tématu [publikování SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
+- Když nasadíte datovou službu, která pro přístup k databázi SQL Server používá poskytovatele Entity Framework, může být také nutné rozšířit datové struktury, data nebo obojí do nasazení datové služby. Sada Visual Studio může automaticky vytvářet skripty (soubory. SQL) k tomu v cílové databázi a tyto skripty lze zahrnout do balíčku pro nasazení webu aplikace ASP.NET. Další informace najdete v tématu [jak: Nasaďte databázi pomocí projektu](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100))webové aplikace. Pro web ASP.NET to můžete provést pomocí **Průvodce publikováním databáze** v aplikaci Visual Studio. Další informace najdete v tématu [publikování SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 
 - Vzhledem k tomu, že WCF Data Services zahrnuje základní implementaci služby WCF, můžete použít Windows Server AppFabric k monitorování datové služby nasazené do služby IIS spuštěné v systému Windows Server. Další informace o použití Windows serveru AppFabric ke sledování datové služby najdete v [WCF Data Services příspěvku s Windows serverem AppFabric](https://go.microsoft.com/fwlink/?LinkID=202005).
 

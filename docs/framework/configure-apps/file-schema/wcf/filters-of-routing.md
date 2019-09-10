@@ -2,20 +2,20 @@
 title: <filters> z <routing>
 ms.date: 03/30/2017
 ms.assetid: 7993cf90-9afd-4c3c-9608-184d5da1105c
-ms.openlocfilehash: ba60958ad33b46b40285f3f70001273bb3af3a63
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c9bc3a2c379e14d8cf687676a3ec40702d150e1e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925615"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855246"
 ---
 # <a name="filters-of-routing"></a>\<filtruje > \<> směrování.
 
 Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> , který se použije při vyhodnocování příchozích zpráv.
 
-[ **\<system.serviceModel>** ](system-servicemodel.md)   
-&nbsp;&nbsp;[ **\<> směrování**](routing.md)   
-&nbsp;&nbsp;&nbsp;&nbsp; **\<> filtrů**
+[ **\<system.serviceModel>** ](system-servicemodel.md)\
+&nbsp;&nbsp;[ **\<> směrování**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> filtrů**  
   
 ## <a name="syntax"></a>Syntaxe  
   

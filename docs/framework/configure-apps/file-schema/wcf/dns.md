@@ -2,20 +2,24 @@
 title: <dns>
 ms.date: 03/30/2017
 ms.assetid: 81819dae-4825-43b7-bccd-f16d2d3d2f06
-ms.openlocfilehash: 35d33fd4d174c8e4ccdaaf1ac33884663340e16a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c68cabd03eca71b41a0d0acce26897fa2653f4d3
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919127"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855376"
 ---
 # <a name="dns"></a>\<dns>
 Určuje očekávanou identitu serveru. Tato identita je platná pro režim ověřování certifikátu x509, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Je také platný pro režim ověřování systému Windows, pokud má hlavní název služby stejnou hodnotu.  
   
- Další informace o nastavení hodnoty prvku naleznete v tématu [identity a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
+Další informace o nastavení hodnoty prvku naleznete v tématu [identity a ověřování služby](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
- \<> identity  
-\<dns>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> klienta**](client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> koncového bodu**](endpoint-of-client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> identity**](identity.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> DNS**  
   
 ## <a name="syntax"></a>Syntaxe  
   

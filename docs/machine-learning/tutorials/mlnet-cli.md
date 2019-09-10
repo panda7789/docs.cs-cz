@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 7b740f2c93096c971da009e8abf6865ac1b8e966
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6dbd69c8424227f85d8bf3cdcaf6cf9dbf7e1f4c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254163"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856019"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -26,7 +26,7 @@ V tomto kurzu provedete následující kroky:
 > - Prozkoumejte vygenerovaný C# kód, který se použil pro výuku modelu.
 
 > [!NOTE]
-> Toto téma odkazuje na nástroj CLI ML.NET, který je aktuálně ve verzi Preview, a materiál může být změněn. Další informace najdete [v úvodu k ml.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+> Toto téma odkazuje na nástroj CLI ML.NET, který je aktuálně ve verzi Preview, a materiál může být změněn. Další informace najdete na stránce [ml.NET](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet) .
 
 ML.NET CLI je součástí ML.NET a jeho hlavním cílem je "Demokratizujte" ML.NET pro vývojáře na platformě .NET při učení ML.NET, takže nemusíte vytvářet kód od začátku, abyste mohli začít.
 

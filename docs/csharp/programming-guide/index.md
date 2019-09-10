@@ -9,17 +9,17 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: f41129b33b717efad5f1b1f59e40f95169e31bf8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f9ac3a6c1e96a1ba4cd78be46a1fd3ad7ee5e4ed
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589477"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850970"
 ---
 # <a name="c-programming-guide"></a>C#Průvodce programováním
 V této části najdete podrobné informace o C# funkcích a funkcích jazyka Key, C# které jsou přístupné prostřednictvím .NET Framework.  
   
- Většina této části předpokládá, že už znáte informace o C# a obecných konceptech programování. Pokud jste zcela začátečník s programováním nebo s C#, můžete chtít navštívit [Úvod do C# kurzů](../tutorials/intro-to-csharp/index.md) nebo [Začínáme s C# ](https://www.microsoft.com/net/tutorials/csharp/getting-started) interaktivním kurzem, kdy není nutné žádné předchozí znalosti programování.  
+ Většina této části předpokládá, že už znáte informace o C# a obecných konceptech programování. Pokud jste zcela začátečníki s programováním nebo s C#, můžete chtít navštívit kurz [Úvod do C# kurzů](../tutorials/intro-to-csharp/index.md) nebo [.NET v prohlížeči](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1), kde není nutné žádné předchozí znalosti programování.  
   
  Informace o konkrétních klíčových slovech, operátorech a direktivách preprocesoru naleznete v tématu [ C# reference](../language-reference/index.md). Informace o specifikaci C# jazyka najdete v tématu [ C# specifikace jazyka](../language-reference/language-specification/index.md).  
   

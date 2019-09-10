@@ -4,12 +4,12 @@ description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core C# pomo
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 910545a99f9d014ae572fbe95c93cdb44a69db99
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 03a2edcbb3414cfd63006603424a3ca1eade528f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105109"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849450"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
@@ -18,7 +18,7 @@ ms.locfileid: "70105109"
 ## <a name="prerequisites"></a>Požadavky
 
 1. Nainstalujte [Visual Studio Code](https://code.visualstudio.com/).
-2. Nainstalujte [.NET Core SDK](https://www.microsoft.com/net/download/core).
+2. Nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download).
 3. Nainstalujte [ C# rozšíření](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) pro Visual Studio Code. Další informace o tom, jak nainstalovat rozšíření na Visual Studio Code, najdete v tématu [rozšíření vs Code Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery).
 
 ## <a name="hello-world"></a>Hello World

@@ -3,12 +3,12 @@ title: 'Postupy: Zobrazení stavu přihlášení pomocí WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: e44dc80260e46b81ac723ada32085390a18a153a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d2500c6ded485fca76715425b9a52258e07be08d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945702"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851568"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Postupy: Zobrazení stavu přihlášení pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
@@ -88,7 +88,7 @@ ms.locfileid: "69945702"
   
 1. V aplikaci Visual Studio klikněte pravým tlačítkem myši na projekt **TestApp** v části **Průzkumník řešení**a pak vyberte možnost **Identita a přístup**.  
   
-2. Zobrazí se okno **Identita a přístup** . Včásti poskytovatelé vyberte **test aplikace pomocí místní služby tokenů pro vývoj**a pak klikněte na **použít**.  
+2. Zobrazí se okno **Identita a přístup** . V části **poskytovatelé**vyberte **test aplikace pomocí místní služby tokenů pro vývoj**a pak klikněte na **použít**.  
   
 ## <a name="step-4--modify-your-aspnet-application-to-display-sign-in-status"></a>Krok 4 – Úprava aplikace v ASP.NET pro zobrazení stavu přihlášení  
  Tento krok popisuje, jak upravit aplikaci v ASP.NET tak, aby dynamicky zobrazovala informace o tom, jestli je aktuální uživatel přihlášený. Po nakonfigurování zprostředkovatele STS WIF zpracuje příchozí deklarace identity. Teď je potřeba nakonfigurovat kód vaší aplikace, aby zobrazoval výsledek ověřování.  
@@ -99,7 +99,7 @@ ms.locfileid: "69945702"
   
 2. Nahraďte existující kód ve **výchozím souboru. aspx** následujícím kódem:  
   
-    ```  
+    ```aspx-csharp  
     <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
   
     <!DOCTYPE html>  

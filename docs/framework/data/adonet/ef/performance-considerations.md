@@ -2,12 +2,12 @@
 title: Požadavky na výkon (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: 99969d7991f613bd8049aac81669583372e0f2c6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: eb46b183ec1e930dfe5c4a1eea237024033c357d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248522"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854598"
 ---
 # <a name="performance-considerations-entity-framework"></a>Požadavky na výkon (Entity Framework)
 Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje několik důležitých informací, které vám pomůžou zlepšit výkon Entity Framework aplikací.  
@@ -18,7 +18,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
 |Operace|Relativní náklady|Frekvence|Komentáře|  
 |---------------|-------------------|---------------|--------------|  
 |Načítají se metadata.|Mírná|Jednou v každé doméně aplikace.|Metadata modelu a mapování používaná Entity Framework jsou načtena do <xref:System.Data.Metadata.Edm.MetadataWorkspace>. Tato metadata jsou v mezipaměti globálně a jsou k dispozici pro <xref:System.Data.Objects.ObjectContext> jiné instance ve stejné aplikační doméně.|  
-|Otevírání připojení k databázi|Střední<sup>1</sup>|Podle potřeby.|Vzhledem k tomu, že otevřené připojení k databázi spotřebovává cenný prostředek, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] otevře a zavře připojení databáze pouze podle potřeby. Připojení můžete také explicitně otevřít. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).|  
+|Otevírání připojení k databázi|Střední<sup>1</sup>|Podle potřeby.|Vzhledem k tomu, že otevřené připojení k databázi spotřebovává cenný prostředek, Entity Framework otevře a zavře připojení databáze pouze podle potřeby. Připojení můžete také explicitně otevřít. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).|  
 |Generování zobrazení|Vysoká|Jednou v každé doméně aplikace. (Může být vygenerováno předem.)|Předtím, než Entity Framework může spustit dotaz na koncepční model nebo uložit změny do zdroje dat, je nutné pro přístup k databázi vygenerovat sadu zobrazení místních dotazů. Kvůli vysokým nákladům na generování těchto zobrazení můžete zobrazení předem vygenerovat a přidat je do projektu v době návrhu. Další informace najdete v tématu [jak: Předem vygenerujte zobrazení pro zlepšení výkonu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))dotazů.|  
 |Příprava dotazu|Střední<sup>2</sup>|Jednou pro každý jedinečný dotaz.|Zahrnuje náklady na vytvoření příkazu dotazu, vygenerování stromu příkazů na základě modelu a mapování metadat a definování tvaru vrácených dat. Vzhledem k tomu, že Entity SQL příkazy dotazů a dotazy LINQ jsou ukládány do mezipaměti, pozdější spuštění stejného dotazu trvá méně času. Můžete přesto použít zkompilované dotazy LINQ k omezení těchto nákladů v pozdějším spuštění a zkompilované dotazy mohou být efektivnější než dotazy LINQ, které jsou automaticky uloženy v mezipaměti. Další informace najdete v tématu [kompilované dotazy (LINQ to Entities)](./language-reference/compiled-queries-linq-to-entities.md). Obecné informace o provádění dotazů LINQ naleznete v tématu [LINQ to Entities](./language-reference/linq-to-entities.md). **Poznámka:**  LINQ to Entities dotazy, které aplikují `Enumerable.Contains` operátor na kolekce v paměti, nejsou automaticky ukládány do mezipaměti. V kompilovaných dotazech LINQ se taky Parametrizace kolekce v paměti, které se nepovolují.|  
 |Provádění dotazu|Nízká úroveň<sup>2</sup>|Jednou pro každý dotaz.|Náklady na provedení příkazu proti zdroji dat pomocí poskytovatele dat ADO.NET. Vzhledem k tomu, že většina zdrojů dat ukládá plány dotazů do mezipaměti, může pozdější spuštění stejného dotazu trvat i kratší dobu.|  
@@ -116,7 +116,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
   
 - Explicitní transakce s operací s databází SQL Server 2000 nebo jiným zdrojem dat, která vždy propaguje explicitní transakce do služby DTC.  
   
-- Explicitní transakce s operací s SQL Server 2005 při správě připojení pomocí [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. K tomu dochází, protože SQL Server 2005 se propaguje do služby DTC při každém zavření a opětovném otevření připojení v rámci jedné transakce, což je výchozí chování [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Tato propagace služby DTC se nevyskytuje při použití SQL Server 2008. Chcete-li se vyhnout této povýšení při použití SQL Server 2005, je nutné explicitně otevřít a zavřít připojení v rámci transakce. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
+- Explicitní transakce s operací s SQL Server 2005, pokud je připojení spravováno Entity Framework. K tomu dochází, protože SQL Server 2005 se propaguje k DTC při každém zavření a opětovném otevření připojení v rámci jedné transakce, což je výchozí chování Entity Framework. Tato propagace služby DTC se nevyskytuje při použití SQL Server 2008. Chcete-li se vyhnout této povýšení při použití SQL Server 2005, je nutné explicitně otevřít a zavřít připojení v rámci transakce. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
  Explicitní transakce se používá v případě, že se v <xref:System.Transactions> transakci spustí jedna nebo více operací. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
@@ -142,7 +142,7 @@ Toto téma popisuje charakteristiky výkonu ADO.NET Entity Framework a poskytuje
  Ve většině případů byste měli vytvořit <xref:System.Data.Objects.ObjectContext> instanci `using` v rámci příkazu (`Using…End Using` v Visual Basic). To může zvýšit výkon tím, že zajistí, že prostředky asociované s kontextem objektu jsou uvolněny automaticky, když kód ukončí blok příkazu. Nicméně pokud jsou ovládací prvky svázány s objekty, které jsou spravovány kontextem objektu, <xref:System.Data.Objects.ObjectContext> měla by být instance udržována tak dlouho, dokud je vazba zapotřebí a uvolněna ručně. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
 #### <a name="consider-opening-the-database-connection-manually"></a>Zvažte ruční otevření připojení k databázi.  
- Když vaše aplikace provede řadu dotazů na objekty nebo často volání <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> k uchování operací vytvoření, aktualizace a odstranění na zdroj dat, musí se [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] průběžně otevřít a uzavřít připojení ke zdroji dat. V těchto situacích zvažte ruční otevření připojení na začátku těchto operací a buď uzavření nebo zrušení připojení po dokončení operací. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
+ Když vaše aplikace provede řadu dotazů na objekty nebo často volání <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> k uchování operací vytvoření, aktualizace a odstranění na zdroj dat, Entity Framework musí nepřetržitě otevřít a zavřít připojení ke zdroji dat. V těchto situacích zvažte ruční otevření připojení na začátku těchto operací a buď uzavření nebo zrušení připojení po dokončení operací. Další informace najdete v tématu [Správa připojení a transakcí](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
 ## <a name="performance-data"></a>Údaje o výkonu  
  Některá data o výkonu pro Entity Framework jsou publikována v následujících příspěvcích na [blogu týmu ADO.NET](https://go.microsoft.com/fwlink/?LinkId=91905):  

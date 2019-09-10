@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f70682150905c411be5618ab368a87e71d0e8e13
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 91ba139a4fad34edf813d76b290ccfe77450dc4c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959058"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851454"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -39,7 +39,7 @@ Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console
 caspol [options]  
 ```  
   

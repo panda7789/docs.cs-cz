@@ -3,12 +3,12 @@ title: WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: e6806971bd2260785d66bfdb54a3e2938043c746
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09d5f3f745f170439a7fbf160b78439c103623b9
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967192"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851520"
 ---
 # <a name="wif-and-web-farms"></a>WIF a webové farmy
 Použijete-li technologii Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající strany (RP), která je nasazena ve webové farmě, je nutné provést konkrétní kroky, abyste zajistili, že WIF může zpracovávat tokeny z instancí aplikace RP spuštěné v různých počítače ve farmě. Toto zpracování zahrnuje ověřování signatury tokenů relace, šifrování a dešifrování tokenů relací, ukládání tokenů relací do mezipaměti a zjišťování přehraných tokenů zabezpečení.  
@@ -64,7 +64,7 @@ Použijete-li technologii Windows Identity Foundation (WIF) k zabezpečení pros
 ## <a name="the-wcf-caching-service"></a>Služba pro ukládání do mezipaměti WCF  
  Následující rozhraní definuje kontrakt mezi službou pro ukládání do mezipaměti WCF a klientem WCF používaným aplikací předávající strany ke komunikaci s ním. V podstatě zveřejňuje metody <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy jako operace služby.  
   
-```  
+```csharp
 [ServiceContract()]  
 public interface ISessionSecurityTokenCacheService  
 {  
@@ -90,7 +90,7 @@ public interface ISessionSecurityTokenCacheService
   
  Následující kód ukazuje implementaci služby pro ukládání do mezipaměti WCF. V tomto příkladu se používá výchozí mezipaměť tokenu relace v paměti, kterou implementuje WIF. Alternativně můžete implementovat trvalou mezipaměť zálohovanou databází. `ISessionSecurityTokenCacheService`Definuje rozhraní zobrazené výše. V tomto příkladu nejsou zobrazeny všechny metody vyžadované k implementaci rozhraní pro zkrácení.  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.IdentityModel.Configuration;  
@@ -150,7 +150,7 @@ namespace WcfSessionSecurityTokenCacheService
   
  Třída přepíše <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A> metodu pro získání koncového bodu služby z vlastního `<cacheServiceAddress>` podřízeného prvku `<sessionSecurityTokenCache>` elementu. Pomocí tohoto koncového bodu inicializuje `ISessionSecurityTokenCacheService` kanál, přes který může komunikovat se službou.  V tomto příkladu nejsou zobrazeny všechny metody vyžadované k implementaci <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy pro zkrácení.  
   
-```  
+```csharp
 using System;  
 using System.Configuration;  
 using System.IdentityModel.Configuration;  

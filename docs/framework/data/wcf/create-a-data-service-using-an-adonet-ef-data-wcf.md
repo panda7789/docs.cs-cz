@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: ae4176fd986f870523e44a11eee48850e2dddd7c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1d3c3628a32439d4847505e234b12b084b47ba3d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791086"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854119"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: Vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET (WCF Data Services)
 
-WCF Data Services zpřístupňuje data entit jako datovou službu. Tato data entity poskytuje ADO.NET[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] , pokud je zdrojem dat relační databáze. V tomto tématu se dozvíte, jak [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]vytvořit datový model založený na webové aplikaci Visual Studio, který je založen na stávající databázi a pomocí tohoto datového modelu vytvořit novou datovou službu.
+WCF Data Services zpřístupňuje data entit jako datovou službu. Tato data entity poskytuje rozhraní ADO. NETEntity, pokud je zdrojem dat relační databáze. V tomto tématu se dozvíte, jak vytvořit datový model založený Entity Framework ve webové aplikaci Visual Studio, která je založena na stávající databázi a pomocí tohoto datového modelu vytvořit novou datovou službu.
 
-Také poskytuje nástroj příkazového řádku, který může [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] vygenerovat model mimo projekt sady Visual Studio. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe.
+Entity Framework také poskytuje nástroj příkazového řádku, který může vygenerovat Entity Framework model mimo projekt sady Visual Studio. Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe.
 
 ## <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Přidání modelu Entity Framework, který je založen na existující databázi, do existující webové aplikace
 
@@ -45,7 +45,7 @@ Také poskytuje nástroj příkazového řádku, který může [!INCLUDE[adonet_
 
 9. Kliknutím na **Dokončit** dokončete průvodce.
 
-     Tím se vytvoří výchozí datový model založený na konkrétní databázi. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Umožňuje přizpůsobit datový model. Další informace najdete v tématu [úlohy nástroje model EDM (Entity Data Model) Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738480(v=vs.100)).
+     Tím se vytvoří výchozí datový model založený na konkrétní databázi. Entity Framework umožňuje přizpůsobit datový model. Další informace najdete v tématu [úlohy nástroje model EDM (Entity Data Model) Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738480(v=vs.100)).
 
 ## <a name="to-create-the-data-service-by-using-the-new-data-model"></a>Vytvoření datové služby pomocí nového datového modelu
 

@@ -2,19 +2,21 @@
 title: <endpoint> – element
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-ms.openlocfilehash: 71ddb3b860870ee8feeeb36c3f64fa7bfebb0f10
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fb9d3bf9b5f1a742abcc70d78af026c179ec4c4d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925816"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855390"
 ---
 # <a name="endpoint-element"></a>\<element > koncového bodu
 Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který slouží k vystavení služeb.  
   
- \<system.ServiceModel>  
-\<> služby  
-\<endpoint>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služeb**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služby**](service.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> koncového bodu**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +49,7 @@ Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který slou
 |bindingConfiguration|Řetězec, který určuje název vazby vazby, která se má použít při vytvoření instance koncového bodu. Název vazby musí být v oboru v místě, kde je koncový bod definován. Výchozí hodnota je prázdný řetězec.<br /><br /> Tento atribut se používá ve spojení s `binding` pro odkazování na konkrétní konfiguraci vazby v konfiguračním souboru. Nastavte tento atribut, pokud se pokoušíte použít vlastní vazbu. V opačném případě může být vyvolána výjimka.|  
 |bindingName|Řetězec, který určuje jedinečný kvalifikovaný název vazby pro export definice prostřednictvím WSDL. Výchozí hodnota je prázdný řetězec.|  
 |bindingNamespace|Řetězec, který určuje kvalifikovaný název oboru názvů vazby pro export definice prostřednictvím WSDL. Výchozí hodnota je prázdný řetězec.|  
-|dodavatele|Řetězec označující kontrakt, který tento koncový bod vystavuje. Sestavení musí implementovat typ kontraktu. Pokud implementace služby implementuje jeden typ kontraktu, může být tato vlastnost vynechána. Výchozí hodnota je prázdný řetězec.|  
+|Dodavatele|Řetězec označující kontrakt, který tento koncový bod vystavuje. Sestavení musí implementovat typ kontraktu. Pokud implementace služby implementuje jeden typ kontraktu, může být tato vlastnost vynechána. Výchozí hodnota je prázdný řetězec.|  
 |endpointConfiguration|Řetězec, který určuje název standardního koncového bodu, který je nastaven `kind` atributem, který odkazuje na Další informace o konfiguraci tohoto standardního koncového bodu. V `<standardEndpoints>` části se musí definovat stejný název.|  
 |isSystemEndpoint|Logická hodnota určující, zda je koncový bod koncovým bodem infrastruktury.|  
 |plnění|Řetězec, který určuje typ použitého standardního koncového bodu. Typ musí být zaregistrován v `<extensions>` oddílu nebo v souboru Machine. config. Pokud není nic zadáno, vytvoří se běžný koncový bod služby.|  

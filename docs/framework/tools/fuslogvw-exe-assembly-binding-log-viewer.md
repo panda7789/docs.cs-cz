@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 320d059e82bfb58e827432fe5f4ec3eb3857510e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dd27bebdc71c70226a61ad8d912135e0e1671dd8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041419"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851256"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 
@@ -29,7 +29,7 @@ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li sp
 
 V příkazovém řádku zadejte následující:
 
-```
+```console
 fuslogvw
 ```
 
@@ -66,7 +66,7 @@ Prohlížeč zobrazí záznam pro každou nezdařenou vazbu sestavení. Pro kaž
 
 Následující ukázka položky protokolu zobrazuje detailní informace o selhání vazby sestavení.
 
-```
+```output
 *** Assembly Binder Log Entry  (3/5/2007 @ 12:54:20 PM) ***
 
 The operation failed.
@@ -130,7 +130,7 @@ Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadav
 
 Následující protokol zobrazuje chybu způsobenou neexistující závislostí při vytvoření nativní bitové kopie pro aplikaci. Pokud se tyto závislosti v době běhu liší od závislostí při spuštění nástroje Ngen.exe, vazba na nativní bitovou kopii není povolena.
 
-```
+```output
 *** Assembly Binder Log Entry  (12/8/2006 @ 5:22:07 PM) ***
 
 The operation failed.
@@ -154,7 +154,7 @@ LOG: Bind to native image assembly did not succeed. Use IL image.
 
 Následující protokol zobrazuje selhání vazby nativní bitové kopie, ke kterému došlo, protože nastavení zabezpečení počítače při spuštění aplikace se liší od nastavení zabezpečení v době, kdy byla tato nativní bitová kopie vytvořena.
 
-```
+```output
 *** Assembly Binder Log Entry  (12/8/2006 @ 5:29:09 PM) ***
 
 The operation failed.

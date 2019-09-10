@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ad7ce5dd3739b1edcf8a8a03a2f57376ceba138
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d13c2d2cc391e61c8ed764c26e5e5b5e7ea2a3bb
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948586"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851381"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -38,7 +38,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
       certmgr [/add | /del | /put] [options]  
 [/s[/r registryLocation]] [sourceStorename]  
 [/s[/r registryLocation]] [destinationStorename]  
@@ -97,43 +97,43 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 ## <a name="examples"></a>Příklady  
  Následující příkaz zobrazí výchozí úložiště s názvem `my` s podrobným výstupem.  
   
-```  
+```console  
 certmgr /v /s my  
 ```  
   
  Následující příkaz přidá všechny certifikáty do souboru s názvem `myFile.ext` do nového souboru s názvem. `newFile.ext`  
   
-```  
+```console  
 certmgr /add /all /c myFile.ext newFile.ext  
 ```  
   
  Následující příkaz přidá certifikát do souboru s názvem `testcert.cer` `my` do úložiště systému.  
   
-```  
+```console  
 certmgr /add /c testcert.cer /s my  
 ```  
   
  Následující příkaz přidá certifikát do souboru s názvem `TrustedCert.cer` do kořenového úložiště certifikátů.  
   
-```  
+```console  
 certmgr /c /add TrustedCert.cer /s root  
 ```  
   
  Následující příkaz uloží certifikát s běžným názvem `myCert` `my` do systémového úložiště do souboru s názvem `newCert.cer`.  
   
-```  
+```console  
 certmgr /add /c /n myCert /s my newCert.cer  
 ```  
   
  Následující příkaz odstraní všechny seznamy CTL v `my` úložišti systému a uloží výsledné úložiště do souboru s názvem. `newStore.str`  
   
-```  
+```console  
 certmgr /del /all /ctl /s my newStore.str  
 ```  
   
  Následující příkaz uloží certifikát do `my` systémového úložiště v souboru. `newFile` Zobrazí se výzva k zadání čísla certifikátu z aplikace `my` do `newFile`umístění.  
   
-```  
+```console  
 certmgr /put /c /s my newFile  
 ```  
   

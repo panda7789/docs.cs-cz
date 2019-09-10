@@ -2,12 +2,12 @@
 title: Kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: bbcc9928-36ea-4dff-9e31-96549ffed958
-ms.openlocfilehash: 8949735ba4712b721460335b4579f0a268c91aea
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f8ca9e2027e82db89e91287fda02d2014d53f325
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251279"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854510"
 ---
 # <a name="canonical-functions"></a>Kanonické funkce
 Tato část popisuje kanonické funkce, které jsou podporovány všemi zprostředkovateli dat, a lze je použít všemi technologiemi pro dotazování. Kanonické funkce nelze od poskytovatele rozšířit.  
@@ -18,9 +18,9 @@ Tato část popisuje kanonické funkce, které jsou podporovány všemi zprostř
   
  Pokud jsou v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu použity kanonické funkce, příslušná funkce bude volána ve zdroji dat.  
   
- Všechny kanonické funkce mají jak chování vstupu null, tak i chybové stavy, které jsou explicitně určeny. Poskytovatelé úložiště by měli dodržovat toto chování, ale [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] toto chování neuplatní.  
+ Všechny kanonické funkce mají jak chování vstupu null, tak i chybové stavy, které jsou explicitně určeny. Poskytovatelé úložiště by měli dodržovat toto chování, ale Entity Framework toto chování neuplatní.  
   
- V případě scénářů LINQ dotazy [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] na službu zahrnují mapování metod CLR na metody v podkladovém zdroji dat. Metody CLR se mapují na kanonické funkce, takže konkrétní sada metod bude správně namapována, bez ohledu na zdroj dat.  
+ Pro scénáře LINQ dotazy na Entity Framework zahrnují mapování metod CLR na metody v podkladovém zdroji dat. Metody CLR se mapují na kanonické funkce, takže konkrétní sada metod bude správně namapována, bez ohledu na zdroj dat.  
   
 ## <a name="canonical-functions-namespace"></a>Obor názvů kanonických funkcí  
  Obor názvů pro kanonickou funkci <xref:System.Data.Metadata.Edm>je. <xref:System.Data.Metadata.Edm> Obor názvů je automaticky zahrnutý ve všech dotazech. Pokud je však importován jiný obor názvů, který obsahuje funkci se stejným názvem jako kanonická funkce (v <xref:System.Data.Metadata.Edm> oboru názvů), je nutné zadat obor názvů.  

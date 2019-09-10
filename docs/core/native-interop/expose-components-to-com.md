@@ -1,5 +1,5 @@
 ---
-title: Vystavení součástí .NET Core pro COM
+title: Vystavení komponent .NET Core pro COM
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 33574eeac5b1f7aa2067b1974f3f2e68fb22e8ff
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 686d1b31478121a8b2c907d99672a5fcc3438a71
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631128"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849029"
 ---
-# <a name="exposing-net-core-components-to-com"></a>Vystavení součástí .NET Core pro COM
+# <a name="exposing-net-core-components-to-com"></a>Vystavení komponent .NET Core pro COM
 
 V .NET Core se proces pro vystavování objektů .NET do modelu COM významně zjednodušil v porovnání s .NET Framework. Následující postup vás provede postupem, jak vystavit třídu modelu COM. V tomto kurzu se dozvíte, jak:
 
@@ -25,7 +25,7 @@ V .NET Core se proces pro vystavování objektů .NET do modelu COM významně z
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte [sadu .NET Core 3,0 Preview 7 SDK](https://www.microsoft.com/net/core) nebo novější verzi.
+- Nainstalujte [sadu .NET Core 3,0 Preview 7 SDK](https://dotnet.microsoft.com/download) nebo novější verzi.
 
 ## <a name="create-the-library"></a>Vytvoření knihovny
 

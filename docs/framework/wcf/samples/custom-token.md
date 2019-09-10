@@ -2,14 +2,15 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 7203b55b01f51851fa94fedc4950a05343b792bd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c3c6cfd9d1742f7e839d7b40220792ba455d7673
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953581"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855520"
 ---
 # <a name="custom-token"></a>Vlastní token
+
 Tento příklad ukazuje, jak přidat vlastní implementaci tokenu do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` k zabezpečenému předávání informací o kreditních kartách klienta ke službě. Token se předává v hlavičce zprávy WS-Security a je podepsaný a zašifrovaný pomocí elementu symetrického vazby zabezpečení spolu s textem zprávy a dalšími záhlavími zpráv. To je užitečné v případech, kdy vestavěné tokeny nejsou dostatečné. Tato ukázka předvádí, jak zadat vlastní token zabezpečení pro službu namísto použití jednoho z vestavěných tokenů. Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď.
 
 > [!NOTE]
@@ -26,6 +27,7 @@ Tento příklad ukazuje, jak přidat vlastní implementaci tokenu do aplikace Wi
 - Způsob, jakým se používá certifikát X. 509 serveru k ochraně symetrického klíče použitého pro šifrování a podpis zprávy.
 
 ## <a name="client-authentication-using-a-custom-security-token"></a>Ověřování klientů pomocí vlastního tokenu zabezpečení
+
  Služba zpřístupňuje jeden koncový bod, který je programově vytvořen `BindingHelper` pomocí `EchoServiceHost` tříd a. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována s vlastní vazbou pomocí `SymmetricSecurityBindingElement` a. `HttpTransportBindingElement` Tato ukázka nastaví, `SymmetricSecurityBindingElement` aby používala certifikát X. 509 služby k ochraně symetrického klíče během přenosu a aby předával vlastní `CreditCardToken` zprávu v hlavičce zprávy WS-Security jako podepsaný a zašifrovaný token zabezpečení. Chování Určuje pověření služby, které se má použít pro ověřování klientů a také informace o certifikátu služby X. 509.
 
 ```csharp
@@ -33,11 +35,11 @@ public static class BindingHelper
 {
     public static Binding CreateCreditCardBinding()
     {
-        HttpTransportBindingElement httpTransport = new HttpTransportBindingElement();
+        var httpTransport = new HttpTransportBindingElement();
 
         // The message security binding element will be configured to require a credit card.
         // The token that is encrypted with the service's certificate.
-        SymmetricSecurityBindingElement messageSecurity = new SymmetricSecurityBindingElement();
+        var messageSecurity = new SymmetricSecurityBindingElement();
         messageSecurity.EndpointSupportingTokenParameters.SignedEncrypted.Add(new CreditCardTokenParameters());
         X509SecurityTokenParameters x509ProtectionParameters = new X509SecurityTokenParameters();
         x509ProtectionParameters.InclusionMode = SecurityTokenInclusionMode.Never;
@@ -87,32 +89,33 @@ class EchoServiceHost : ServiceHost
 
 ```csharp
 Binding creditCardBinding = BindingHelper.CreateCreditCardBinding();
-EndpointAddress serviceAddress = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");
+var serviceAddress = new EndpointAddress("http://localhost/servicemodelsamples/service.svc");
 
-// Create a client with given client endpoint configuration
+// Create a client with given client endpoint configuration.
 channelFactory = new ChannelFactory<IEchoService>(creditCardBinding, serviceAddress);
 
-// configure the credit card credentials on the channel factory
-CreditCardClientCredentials credentials =
+// Configure the credit card credentials on the channel factory.
+var credentials =
       new CreditCardClientCredentials(
       new CreditCardInfo(creditCardNumber, issuer, expirationTime));
-// configure the service certificate on the credentials
+// Configure the service certificate on the credentials.
 credentials.ServiceCertificate.SetDefaultCertificate(
       "CN=localhost", StoreLocation.LocalMachine, StoreName.My);
 
-// replace ClientCredentials with CreditCardClientCredentials
+// Replace ClientCredentials with CreditCardClientCredentials.
 channelFactory.Endpoint.Behaviors.Remove(typeof(ClientCredentials));
 channelFactory.Endpoint.Behaviors.Add(credentials);
 
 client = channelFactory.CreateChannel();
 
-Console.WriteLine("Echo service returned: {0}", client.Echo());
+Console.WriteLine($"Echo service returned: {client.Echo()}");
 
 ((IChannel)client).Close();
 channelFactory.Close();
 ```
 
 ## <a name="custom-security-token-implementation"></a>Implementace vlastního tokenu zabezpečení
+
  Chcete-li ve službě WCF povolit vlastní token zabezpečení, vytvořte reprezentaci objektu vlastního tokenu zabezpečení. Vzorek má toto vyjádření ve `CreditCardToken` třídě. Reprezentace objektu zodpovídá za uchovávání všech relevantních informací o tokenech zabezpečení a poskytuje seznam klíčů zabezpečení obsažených v tokenu zabezpečení. V takovém případě token zabezpečení platební karty neobsahuje žádný bezpečnostní klíč.
 
  V další části se dozvíte, co je potřeba udělat, abyste mohli přenést vlastní token přes kabel a spotřebovat ho pomocí koncového bodu WCF.
@@ -130,10 +133,10 @@ class CreditCardToken : SecurityToken
     public CreditCardToken(CreditCardInfo cardInfo, string id)
     {
         if (cardInfo == null)
-            throw new ArgumentNullException("cardInfo");
+            throw new ArgumentNullException(nameof(cardInfo));
 
         if (id == null)
-            throw new ArgumentNullException("id");
+            throw new ArgumentNullException(nameof(id));
 
         this.cardInfo = cardInfo;
         this.id = id;
@@ -153,6 +156,7 @@ class CreditCardToken : SecurityToken
 ```
 
 ## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a>Získání vlastního tokenu platební karty do a ze zprávy
+
  Serializátory tokenů zabezpečení ve službě WCF zodpovídají za vytvoření objektu reprezentace tokenů zabezpečení z XML ve zprávě a vytvoření formuláře XML tokenů zabezpečení. Jsou také zodpovědné za jiné funkce, jako je čtení a zápis identifikátorů klíčů odkazujících na tokeny zabezpečení, ale v tomto příkladu se používá pouze funkce související s tokenem zabezpečení. Pokud chcete povolit vlastní token, musíte implementovat vlastní serializátor tokenů zabezpečení. Tato ukázka používá `CreditCardSecurityTokenSerializer` třídu pro tento účel.
 
  Ve službě vlastní serializátor přečte formulář XML vlastního tokenu a vytvoří z něj reprezentaci objektu vlastního tokenu.
@@ -168,7 +172,8 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
     {
         XmlDictionaryReader localReader = XmlDictionaryReader.CreateDictionaryReader(reader);
 
-        if (reader == null) throw new ArgumentNullException("reader");
+        if (reader == null)
+            throw new ArgumentNullException(nameof(reader));
 
         if (reader.IsStartElement(Constants.CreditCardTokenName, Constants.CreditCardTokenNamespace))
             return true;
@@ -178,7 +183,8 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
     protected override SecurityToken ReadTokenCore(XmlReader reader, SecurityTokenResolver tokenResolver)
     {
-        if (reader == null) throw new ArgumentNullException("reader");
+        if (reader == null)
+            throw new ArgumentNullException(nameof(reader));
 
         if (reader.IsStartElement(Constants.CreditCardTokenName, Constants.CreditCardTokenNamespace))
         {
@@ -197,7 +203,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
             string creditCardIssuer = reader.ReadElementString(Constants.CreditCardIssuerElementName, Constants.CreditCardTokenNamespace);
             reader.ReadEndElement();
 
-            CreditCardInfo cardInfo = new CreditCardInfo(creditCardNumber, creditCardIssuer, expirationTime);
+            var cardInfo = new CreditCardInfo(creditCardNumber, creditCardIssuer, expirationTime);
 
             return new CreditCardToken(cardInfo, id);
         }
@@ -211,15 +217,15 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
     {
         if (token is CreditCardToken)
             return true;
-
-        else
-            return base.CanWriteTokenCore(token);
+        return base.CanWriteTokenCore(token);
     }
 
     protected override void WriteTokenCore(XmlWriter writer, SecurityToken token)
     {
-        if (writer == null) { throw new ArgumentNullException("writer"); }
-        if (token == null) { throw new ArgumentNullException("token"); }
+        if (writer == null)
+            throw new ArgumentNullException(nameof(writer));
+        if (token == null)
+            throw new ArgumentNullException(nameof(token));
 
         CreditCardToken c = token as CreditCardToken;
         if (c != null)
@@ -241,6 +247,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 ```
 
 ## <a name="how-token-provider-and-token-authenticator-classes-are-created"></a>Jak se vytvářejí třídy zprostředkovatele a ověřovatele ověřovacích dat tokenů
+
  Pověření klienta a služby jsou zodpovědná za poskytování instance Správce tokenů zabezpečení. Instance Správce tokenů zabezpečení se používá k získání poskytovatelů tokenů, ověřovatelů tokenů a serializátorů tokenů.
 
  Poskytovatel tokenů vytvoří objektovou reprezentaci tokenu na základě informací obsažených v pověření klienta nebo služby. Reprezentace objektu tokenu je pak zapsána do zprávy pomocí serializátoru tokenů (popsaných v předchozí části).
@@ -264,7 +271,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
             : base()
         {
             if (creditCardInfo == null)
-                throw new ArgumentNullException("creditCardInfo");
+                throw new ArgumentNullException(nameof(creditCardInfo));
 
             this.creditCardInfo = creditCardInfo;
         }
@@ -297,10 +304,10 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
         public override SecurityTokenProvider CreateSecurityTokenProvider(SecurityTokenRequirement tokenRequirement)
         {
-            // handle this token for Custom
+            // Handle this token for Custom.
             if (tokenRequirement.TokenType == Constants.CreditCardTokenType)
                 return new CreditCardTokenProvider(this.creditCardClientCredentials.CreditCardInfo);
-            // return server cert
+            // Return server cert.
             else if (tokenRequirement is InitiatorServiceModelSecurityTokenRequirement)
             {
                 if (tokenRequirement.TokenType == SecurityTokenTypes.X509Certificate)
@@ -327,9 +334,8 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
         public CreditCardTokenProvider(CreditCardInfo creditCardInfo) : base()
         {
             if (creditCardInfo == null)
-            {
-                throw new ArgumentNullException("creditCardInfo");
-            }
+                throw new ArgumentNullException(nameof(creditCardInfo));
+
             this.creditCardInfo = creditCardInfo;
         }
 
@@ -348,7 +354,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
             : base()
         {
             if (creditCardFile == null)
-                throw new ArgumentNullException("creditCardFile");
+                throw new ArgumentNullException(nameof(creditCardFile));
 
             this.creditCardFile = creditCardFile;
         }
@@ -414,16 +420,16 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
             CreditCardToken creditCardToken = token as CreditCardToken;
 
             if (creditCardToken.CardInfo.ExpirationDate < DateTime.UtcNow)
-                throw new SecurityTokenValidationException("The credit card has expired");
+                throw new SecurityTokenValidationException("The credit card has expired.");
             if (!IsCardNumberAndExpirationValid(creditCardToken.CardInfo))
-                throw new SecurityTokenValidationException("Unknown or invalid credit card");
+                throw new SecurityTokenValidationException("Unknown or invalid credit card.");
 
             // the credit card token has only 1 claim - the card number. The issuer for the claim is the
             // credit card issuer
 
-            DefaultClaimSet cardIssuerClaimSet = new DefaultClaimSet(new Claim(ClaimTypes.Name, creditCardToken.CardInfo.CardIssuer, Rights.PossessProperty));
-            DefaultClaimSet cardClaimSet = new DefaultClaimSet(cardIssuerClaimSet, new Claim(Constants.CreditCardNumberClaim, creditCardToken.CardInfo.CardNumber, Rights.PossessProperty));
-            List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>(1);
+            var cardIssuerClaimSet = new DefaultClaimSet(new Claim(ClaimTypes.Name, creditCardToken.CardInfo.CardIssuer, Rights.PossessProperty));
+            var cardClaimSet = new DefaultClaimSet(cardIssuerClaimSet, new Claim(Constants.CreditCardNumberClaim, creditCardToken.CardInfo.CardNumber, Rights.PossessProperty));
+            var policies = new List<IAuthorizationPolicy>(1);
             policies.Add(new CreditCardTokenAuthorizationPolicy(cardClaimSet));
             return policies.AsReadOnly();
         }
@@ -435,7 +441,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
         {
             try
             {
-                using (StreamReader myStreamReader = new StreamReader(this.creditCardsFile))
+                using (var myStreamReader = new StreamReader(this.creditCardsFile))
                 {
                     string line = "";
                     while ((line = myStreamReader.ReadLine()) != null)
@@ -475,7 +481,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
         public CreditCardTokenAuthorizationPolicy(ClaimSet issuedClaims)
         {
             if (issuedClaims == null)
-                throw new ArgumentNullException("issuedClaims");
+                throw new ArgumentNullException(nameof(issuedClaims));
             this.issuer = issuedClaims.Issuer;
             this.issuedClaimSets = new ClaimSet[] { issuedClaims };
             this.id = Guid.NewGuid().ToString();
@@ -498,6 +504,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 ```
 
 ## <a name="displaying-the-callers-information"></a>Zobrazení informací o volajícím
+
  Chcete-li zobrazit informace o volajícím, `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` použijte, jak je znázorněno v následujícím ukázkovém kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje autorizační deklarace přidružené k aktuálnímu volajícímu. Deklarace identity jsou dodány `CreditCardToken` třídou ve své `AuthorizationPolicies` kolekci.
 
 ```csharp
@@ -539,6 +546,7 @@ string GetCallerCreditCardNumber()
  Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
 ## <a name="setup-batch-file"></a>Nastavení dávkového souboru
+
  Dávkový soubor Setup. bat, který je součástí této ukázky, vám umožní nakonfigurovat server s příslušnými certifikáty pro spuštění aplikace hostované službou IIS, která vyžaduje zabezpečení založené na certifikátech serveru. Tento dávkový soubor musí být upraven pro práci napříč počítači nebo pro práci v nehostovaném případě.
 
  Níže najdete stručný přehled různých částí dávkových souborů, aby je bylo možné upravit tak, aby se spouštěla v příslušné konfiguraci.
@@ -588,9 +596,9 @@ string GetCallerCreditCardNumber()
 
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky
 
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Spuštění ukázky na stejném počítači
 

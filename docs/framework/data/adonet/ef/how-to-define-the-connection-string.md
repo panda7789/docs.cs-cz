@@ -2,23 +2,23 @@
 title: 'Postupy: Definování připojovacího řetězce'
 ms.date: 03/30/2017
 ms.assetid: 6027335d-4e26-420d-9151-6523289b1989
-ms.openlocfilehash: 8386f93d0e80aa824b1e91a130812b9b3a2b3619
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: a78158c7553c0b479b935e3b94931313df912c2f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306388"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854655"
 ---
 # <a name="how-to-define-the-connection-string"></a>Postupy: Definování připojovacího řetězce
 
-Toto téma ukazuje, jak definovat připojovací řetězec, který je použit při připojování ke konceptuálního modelu. Toto téma vychází [AdventureWorks prodeje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb387147(v=vs.100)) koncepčního modelu. AdventureWorks Sales Model se používá v tématech souvisejících s úlohami v rámci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Toto téma předpokládá, že jste již nakonfigurovali [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a definovaný Model prodeje AdventureWorks. Další informace najdete v tématu [jak: Ručně definovat modelu a mapování souborů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399785(v=vs.100)). Postupy v tomto tématu jsou taky součástí [jak: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).
+Toto téma ukazuje, jak definovat připojovací řetězec, který se používá při připojování k koncepčnímu modelu. Toto téma je založené na modelu [AdventureWorks Sales](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb387147(v=vs.100)) koncepční model. Model prodeje společnosti AdventureWorks se používá v různých tématech souvisejících s úlohami v dokumentaci k Entity Framework. Toto téma předpokládá, že jste již nakonfigurovali Entity Framework a definovali prodejní model AdventureWorks. Další informace najdete v tématu [jak: Ručně definujte model a mapovací soubory](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399785(v=vs.100)). Postupy v tomto tématu jsou také zahrnuty v [tématu Postupy: Ručně nakonfigurujte Entity Framework projekt](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100)).
 
 > [!NOTE]
-> Pokud používáte Průvodce datovým modelem Entity v projektu sady Visual Studio, automaticky vygeneruje soubor .edmx a nakonfiguruje projekt na používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Použití Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))
+> Použijete-li průvodce model EDM (Entity Data Model) v projektu sady Visual Studio, automaticky vygeneruje soubor. edmx a nakonfiguruje projekt tak, aby používal Entity Framework. Další informace najdete v tématu [jak: Použití Průvodce model EDM (Entity Data Model)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))
 
-## <a name="to-define-the-entity-framework-connection-string"></a>K definování připojovacího řetězce Entity Framework
+## <a name="to-define-the-entity-framework-connection-string"></a>Definování připojovacího řetězce Entity Framework
 
-- Otevřete konfigurační soubor projektu aplikace (app.config) a přidejte následující připojovací řetězec:
+- Otevřete konfigurační soubor aplikace projektu (App. config) a přidejte následující připojovací řetězec:
 
 ```xml
 <connectionStrings>
@@ -30,10 +30,10 @@ Toto téma ukazuje, jak definovat připojovací řetězec, který je použit př
 </connectionStrings>
 ```
 
-Pokud váš projekt nemá konfiguračního souboru aplikace, můžete výběrem možnosti Přidat **přidat novou položku** z **projektu** nabídce vyberete **Obecné** kategorie, Výběr **konfiguračního souboru aplikace**a pak levým na **přidat**.
+Pokud projekt nemá konfigurační soubor aplikace, můžete jej přidat výběrem možnosti **Přidat novou položku** z nabídky **projekt** , výběrem kategorie **Obecné** , výběrem **konfiguračního souboru aplikace**a následným kliknutím na **Přidat**.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Rychlý start](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399182(v=vs.100))
-- [Postupy: Vytvoření nového souboru EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100))
-- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Postupy: Vytvořit nový soubor. edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100))
+- [ADO.NET model EDM (Entity Data Model) nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

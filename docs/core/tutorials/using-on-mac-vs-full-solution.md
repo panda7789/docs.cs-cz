@@ -4,12 +4,12 @@ description: Toto téma vás provede vytvořením řešení .NET Core, které ob
 author: mairaw
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 6a3f6c82a92042eeca1cb79f4634277d6870ebaf
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: a2459bfdc50e64b1d6710853b556c1bf226f07e7
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105257"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849556"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -19,13 +19,13 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá hledané sl
 
 > [!NOTE]
 > Vaše zpětná vazba je vysoce ohodnocená. Existují dva způsoby, jak můžete poskytnout týmu vývoje zpětnou vazbu v Visual Studio pro Mac:
-> - V Visual Studio pro Mac vyberte v nabídce **nápovědu** > **nahlásit problém** nebo nahlásit **problém** z úvodní obrazovky, která otevře okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/41/index.html).
-> - Chcete-li vytvořit návrh, > vyberte v nabídce možnost**poskytnout návrh** nebo **Poskytněte návrh** z úvodní obrazovky, který vás přesměruje na [webovou stránku komunity vývojářů Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> - V Visual Studio pro Mac vyberte v nabídce **nápovědu** > **nahlásit problém** nebo **nahlásit problém** z úvodní obrazovky, která otevře okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/41/index.html).
+> - Chcete-li vytvořit návrh, vyberte v **nabídce možnost** > **poskytnout návrh** nebo **Poskytněte návrh** z úvodní obrazovky, který vás přesměruje na [webovou stránku komunity vývojářů Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
 ## <a name="prerequisites"></a>Požadavky
 
 - OpenSSL (Pokud používáte .NET Core 1,1): Podívejte se na téma [požadavky pro .NET Core na Macu](../macos-prerequisites.md) .
-- [.NET Core SDK 1,1 nebo novější](https://www.microsoft.com/net/core#macos)
+- [.NET Core SDK 1,1 nebo novější](https://dotnet.microsoft.com/download)
 - [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
 Další informace o požadavcích najdete v tématu [požadavky pro .NET Core na Macu](../macos-prerequisites.md). Úplné požadavky na systém pro sadu Visual Studio 2017 pro Mac najdete v tématu [požadavky na systém pro produktovou řadu Visual studio 2017 for Mac](/visualstudio/productinfo/vs2017-system-requirements-mac).
@@ -44,7 +44,7 @@ Další informace o požadavcích najdete v tématu [požadavky pro .NET Core na
 
    [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/TextUtils/WordCount.cs)]
 
-1. Uložte soubor pomocí kterékoli ze tří různých metod: použijte klávesovou <kbd>&#8984;</kbd> +zkratku, v nabídce vyberte**Uložit** **soubor** > nebo klikněte pravým tlačítkem na kartu soubor a vyberte **Uložit** z kontextové <kbd></kbd> nabídce. Následující obrázek znázorňuje okno IDE:
+1. Uložte soubor pomocí kterékoli ze tří různých metod: <kbd>&#8984;</kbd> + <kbd>použijte klávesovou zkratku</kbd>, v nabídce vyberte**Uložit** **soubor** > nebo klikněte pravým tlačítkem na kartu soubor a vyberte **Uložit** z kontextové nabídce. Následující obrázek znázorňuje okno IDE:
 
    ![Visual Studio pro Mac okno IDE se souborem knihovny tříd a metodou](./media/using-on-mac-vs-full-solution/visual-studio-mac-editor.png)
 
@@ -122,7 +122,7 @@ Testy jednotek poskytují automatizované softwarové testování během vývoje
 
    ![Visual Studio pro Mac zobrazení selhání testu](./media/using-on-mac-vs-full-solution/visual-studio-for-mac-unit-test-failure.png)
 
-1. Upravte testovací metodu změnou `Assert.NotEqual` na `Assert.Equal`. `IgnoreCasing` Uložte <kbd>&#8984;</kbd> +soubor pomocí klávesových zkratek,**Uložit** **soubor** > z nabídky nebo klikněte pravým tlačítkem na kartu soubor a v místní nabídce vyberte možnost **Uložit** . <kbd></kbd>
+1. Upravte testovací metodu změnou `Assert.NotEqual` na `Assert.Equal`. `IgnoreCasing` <kbd>&#8984;</kbd> +Uložte soubor <kbd>pomocí klávesových zkratek</kbd>,**Uložit** **soubor** > z nabídky nebo klikněte pravým tlačítkem na kartu soubor a v místní nabídce vyberte možnost **Uložit** .
 
    Očekává se, že `searchWord` "konektor" vrátí dvě instance se `inputString` předanými `GetWordCount`"konektorovou zásuvkou". Spusťte test znovu kliknutím na tlačítko **Spustit testy** na panelu **testy jednotek** nebo na tlačítko **znovu spustit testy** na panelu **výsledky testů** v dolní části obrazovky. Test byl úspěšný. Existují dvě instance "zdířka" v řetězci "zdířková zdířka" (ignoruje velikost písmen) a kontrolní výraz testu je `true`.
 

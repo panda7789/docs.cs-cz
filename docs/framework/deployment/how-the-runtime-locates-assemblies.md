@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d22b4292483a94153864cad3439933837aed3b2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 7be86a71ae4b3f873395c48750cc22c74d7ff983
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043407"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853991"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 
@@ -122,7 +122,7 @@ Následuje příklad konfiguračního souboru zásad vydavatele:
 
 Chcete-li vytvořit sestavení, můžete použít nástroj [Al. exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md) pomocí příkazu, například následující:
 
-```
+```console
 Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v:3.0.0.0
 ```
 
@@ -173,11 +173,11 @@ Po určení správné verze sestavení pomocí informací v odkazu volajícího 
 2. Modul runtime pak sondy pro odkazované sestavení pomocí pravidel uvedených dále v této části.
 
 > [!NOTE]
-> Pokud máte v adresáři více verzí sestavení a chcete odkazovat na konkrétní verzi tohoto sestavení, je nutné použít `privatePath` [ \<> element codebase](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) namísto atributu [ \<zjišťování. element >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) . Použijete-li [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element probingu, modul runtime zastaví zkušební období při prvním nalezení sestavení, které odpovídá jednoduchému názvu sestavení, na který odkazuje, zda se jedná o správnou shodu. Pokud se jedná o správnou shodu, používá se toto sestavení. Pokud se nejedná o správnou shodu, zastaví se zjišťování a vazba se nezdařila.
+> Pokud máte v adresáři více verzí sestavení a chcete odkazovat na konkrétní verzi tohoto sestavení, je nutné použít `privatePath` [ \<> element codebase](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) namísto atributu [ \<zjišťování. element >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) . Použijete-li [ \<> element probingu](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) , modul runtime zastaví zkušební období při prvním nalezení sestavení, které odpovídá jednoduchému názvu sestavení, na který odkazuje, zda se jedná o správnou shodu. Pokud se jedná o správnou shodu, používá se toto sestavení. Pokud se nejedná o správnou shodu, zastaví se zjišťování a vazba se nezdařila.
 
 ### <a name="locating-the-assembly-through-codebases"></a>Vyhledání sestavení prostřednictvím základů kódu
 
-Informace základu kódu lze poskytnout pomocí [ \<>ho prvku základu kódu](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Tento základ kódu je vždy zkontrolován před tím, než se modul runtime pokusí test pro odkazované sestavení. [ Obsahuje\<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) -li soubor zásad vydavatele obsahující konečné přesměrování verze taky > element, [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) který je použit jako element codebase > je ten, který se používá. Například pokud konfigurační soubor aplikace určuje [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element, a soubor zásad vydavatele, který Přepisuje [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) informace o aplikaci, také určuje > element codebase, je použit element > základu kódu v souboru zásad vydavatele. [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md)
+Informace základu kódu lze poskytnout pomocí [ \<>ho prvku základu kódu](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Tento základ kódu je vždy zkontrolován před tím, než se modul runtime pokusí test pro odkazované sestavení. [ Obsahuje\<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) -li soubor zásad vydavatele obsahující konečné přesměrování verze taky > element, [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) který je použit jako element codebase > je ten, který se používá. Například pokud konfigurační soubor aplikace určuje [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element, a soubor zásad vydavatele, který Přepisuje [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) informace o aplikaci, také určuje > element codebase, je použit element [> základu kódu v souboru zásad vydavatele. \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md)
 
 Pokud se nenajde žádná shoda v umístění určeném [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) elementem codebase, požadavek vazby se nepovede a neproběhne žádné další kroky. Pokud modul runtime zjistí, že sestavení odpovídá kritériím volajícího sestavení, používá toto sestavení. Když je načten soubor určený pomocí daného [ \<elementu codebase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element, modul runtime zkontroluje, zda se název, verze, jazyková verze a veřejný klíč shodují s odkazem volajícího sestavení.
 

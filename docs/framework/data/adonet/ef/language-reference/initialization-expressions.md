@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 98daef1f-15d4-483e-985c-d78ea3abe8c8
-ms.openlocfilehash: 109be8ef2bf41326fcab5896ecdc359859683345
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5d6656ab77f7ad0f7366a230d98b95cff5b2677b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250674"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854432"
 ---
 # <a name="initialization-expressions"></a>Výrazy inicializace
 Inicializační výraz inicializuje nový objekt. Většina inicializačních výrazů je podporovaná, včetně C# většiny nových Visual Basicch inicializačních výrazů 3,0 a 9,0. Následující typy lze inicializovat a vracet LINQ to Entitiesm dotazem:  
   
 - Kolekce nula nebo více typových objektů entit nebo projekce komplexních typů, které jsou definovány v koncepčním modelu.  
   
-- Typy CLR podporované [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+- Typy CLR podporované Entity Framework.
   
 - Vložené kolekce.  
   

@@ -1,28 +1,28 @@
 ### YamlMime:Tutorial
-title: Interpolace řetězců umožňuje vytvářet formátované řetězce
+title: Použití interpolace řetězců k vytvoření formátovaných řetězců
 metadata:
-  title: Interpolace - C# Interaktivní kurz
-  description: V tomto kurzu pomocí prohlížeče interaktivně zkoumat funkce interpolace řetězců C#. Napíšete kód v C# a zobrazovat výsledky kompilace a spuštění prohlédnete přímo v prohlížeči.
+  title: Interpolace řetězců – C# Interaktivní kurz
+  description: V tomto kurzu použijete prohlížeč k interaktivnímu prozkoumání C# funkce interpolace řetězce. Napíšete C# kód a zobrazíte výsledky kompilace a spuštění kódu přímo v prohlížeči.
   audience: Developer
   ms.custom: mvc
   ms.date: 08/24/2018
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 70d63f460ad2e67fe60cd8d5130e8ff22889d8be
-  ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+  ms.openlocfilehash: eb4b1571b4d00d90034148f7b595f4499859ce4b
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/24/2019
-  ms.locfileid: "66195941"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850957"
 items:
 - durationInMinutes: 2
   content: >
-    V tomto kurzu se naučíte, jak používat [interpolace](../../language-reference/tokens/interpolated.md) k vložení hodnoty do jednoho řetězce. Také se dozvíte, jak řídit formátování výsledného řetězce. Pomocí prohlížeče pro zápis a spouštění C# kód a hned vidět výsledky.
-- title: Vytvoření interpolovaného řetězce
+    V tomto kurzu se naučíte, jak pomocí [interpolace řetězců](../../language-reference/tokens/interpolated.md) vkládat hodnoty do jednoho řetězce. Naučíte se také, jak ovládat formátování textu výsledného řetězce. Prohlížeč použijete k psaní a spouštění C# kódu a výsledky se můžou hned zobrazit.
+- title: Vytvořit interpolované řetězce
   durationInMinutes: 2
   content: >
-    Spusťte v interaktivním okně následující kód. Chcete-li to mohli udělat, zadejte kód v interaktivním okně (nahradit `<name>` s vaším jménem) a vyberte **spustit**:
+    Spusťte následující kód v interaktivním okně. Provedete to tak, že zadáte kód do interaktivního `<name>` okna (nahraďte svým jménem) a vyberete **Spustit**:
 
 
     ```csharp
@@ -34,31 +34,31 @@ items:
     ```
 
 
-    Při spuštění kódu, **výstup** zobrazí řetězec, který obsahuje vaše jméno pozdrav. Argument řetězce <xref:System.Console.WriteLine%2A> je volání metody *interpolovaných výrazů řetězec*. Je druh šablony, který umožňuje vytvořit jeden řetězec (volá se, *výsledný řetězec*) z řetězce obsahujícího vložený kód. Výrazy interpolovaném řetězci se hodí hlavně k vkládání hodnot do řetězce nebo řetězení (spojování) několik řetězců.
+    Při spuštění kódu zobrazí **výstup** řetězec, který obsahuje vaše jméno na přání. Řetězcový argument <xref:System.Console.WriteLine%2A> volání metody je *interpolovaná řetězcová výraz*. Je to druh šablony, která umožňuje vytvořit jeden řetězec (nazývaný *výsledný řetězec*) z řetězce, který obsahuje vložený kód. Interpolované řetězcové výrazy jsou zvláště užitečné pro vkládání hodnot do řetězce nebo zřetězení (spojování dohromady) několika řetězců.
 
 
-    Výše uvedený příklad obsahuje dva elementy, které musí mít každý interpolovaný řetězcový výraz:
+    Výše uvedený příklad obsahuje dva prvky, které musí každý interpolující řetězcový výraz obsahovat:
 
 
-    - Řetězcový literál, který začíná `$` znak, před jeho znakem uvozovek. Nesmí být žádné mezery mezi `$` symbolů a znakem uvozovek. (Pokud jste chtěli naleznete v tématu co se stane, když tak přece, vkládat mezeru po `$` znak v interaktivním okně, a spusťte aktualizovaný kód. Kompilátor jazyka C# si bude stěžovat na "Neočekávaný znak"$"".)
+    - Řetězcový literál, který začíná `$` znakem před počátečním znakem uvozovky. Mezi `$` symbolem a znakem uvozovky nesmí být žádné mezery. (Pokud se chcete podívat, co se stane, když ho zahrnete, vložte mezeru za `$` znak v interaktivním okně a spusťte aktualizovaný kód. Stížnost C# kompilátoru, "neočekávaný znak" $ "".)
 
 
-    - Jeden nebo více *interpolace výrazy*. Výraz interpolace je indikován otevírací a zavírací závorkou (`{` a `}`). Můžete vložit libovolný výraz C#, která vrací hodnotu (včetně `null`) uvnitř složených závorek.
+    - Jeden nebo více *výrazů interpolace*. Výraz interpolace je označen levou a pravou závorkou (`{` a `}`). Můžete vložit libovolný C# výraz, který vrátí hodnotu (včetně `null`) uvnitř složených závorek.
 
 
-    Teď si vyzkoušíme pár dalších příkladů interpolace řetězce, s jinými datovými typy.
+    Pojďme vyzkoušet několik příkladů interpolace řetězců s některými jinými datovými typy.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Zahrnutí různých datových typů
   durationInMinutes: 5
-  content: "V předchozím kroku jste použili interpolace řetězců vložili jeden řetězec do druhého. Každý interpolace výraz, který je součástí interpolovaný řetězcový výraz ale může být libovolného datového typu, ale. Pojďme zahrnují hodnoty různých výrazy typu dat v interpolovaném řetězci.\n\nV následujícím příkladu nejdřív nadefinujeme [řazené kolekce členů](../../tuples.md) , který má `Name`, `Price`, a `perPackage` členy. Spusťte v interaktivním okně následující kód:\n\n```csharp\nvar item = (Name: \"eggplant\", Price: 1.99m, perPackage: 3);\nvar date = DateTime.Now;\nConsole.WriteLine($\"On {date}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items.\");\n```\n\nVšimněte si, že výraz interpolace `item.Price` v interpolovaném řetězci se překládá na text \"1,99\" ve výsledném řetězci. Je to proto, že pokud typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:\n\n- Pokud je vyhodnocen jako výraz interpolace `null`, prázdný řetězec (\"\", nebo <xref:System.String.Empty?displayProperty=nameWithType>) se používá.\n\n- Pokud interpolace výraz není vyhodnocen na `null`, obvykle `ToString` je volána metoda výsledek výrazu. \n\nVe výstupu tohoto příkladu je datum zbytečně přesné (cena lilku nemění každou sekundu) a hodnota ceny neuvádí jednotku měny. V dalším kroku se dozvíte, jak tyto problémy napravit prostřednictvím nastavení formátu řetězcové reprezentace výsledku výrazu.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
-- title: Ovládací prvek formátování interpolace výrazy
+  content: "V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného. Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale. Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.\n\nV následujícím příkladu jsme nejdřív definovali [řazenou kolekci](../../tuples.md) členů, `Name`která `Price`obsahuje členy `perPackage` , a. V interaktivním okně spusťte následující kód:\n\n```csharp\nvar item = (Name: \"eggplant\", Price: 1.99m, perPackage: 3);\nvar date = DateTime.Now;\nConsole.WriteLine($\"On {date}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items.\");\n```\n\nVšimněte si, že výraz `item.Price` interpolace v interpolované řetězci se překládá na text \"1,99\" ve výsledném řetězci. To je způsobeno tím, že když typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:\n\n- Pokud je výraz interpolace vyhodnocen `null`, je použit prázdný řetězec (\"\" nebo <xref:System.String.Empty?displayProperty=nameWithType>).\n\n- Pokud výraz interpolace není vyhodnocen `null`, `ToString` obvykle je volána metoda výsledného výrazu. \n\nVe výstupu z tohoto příkladu je datum příliš přesné (cena za lilek se nemění každou sekundu) a hodnota Price neindikuje jednotku měny. V dalším kroku se dozvíte, jak tyto problémy vyřešit kontrolou formátu řetězcové reprezentace výsledků výrazu.\n\n> [!NOTE]\n> Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Řízení formátování výrazů interpolace
   durationInMinutes: 5
   content: >
-    V předchozím kroku vložily dva špatně naformátované řetězce do výsledného řetězce. Jedna se hodnoty data a času, pro který byl pouze data odpovídající. Druhým byla cena, která nebyla označení jednotku měny. Jsou oba problémy můžeme snadno vyřešit. Interpolace řetězců umožňuje určit *řetězce formátu* , které nastavují formátování konkrétních typů. Upravte volání `Console.WriteLine` z předchozího příkladu zahrnout formátovací řetězce pro výrazy data a ceny, jak je znázorněno na následujícím řádku:
+    V předchozím kroku byly do výsledného řetězce vloženy dva špatně formátované řetězce. Jedna byla hodnota data a času, pro kterou bylo pouze vhodné datum. Druhá se jednalo o cenu, která neuváděla jednotku měny. Oba problémy se snadno řeší. Interpolace řetězců umožňuje zadat *formátovací řetězce* , které řídí formátování konkrétních typů. Upravte volání `Console.WriteLine` z předchozího příkladu tak, aby zahrnovalo formátovací řetězce pro výrazy data a ceny, jak je znázorněno na následujícím řádku:
 
 
     ```csharp
@@ -68,25 +68,25 @@ items:
     ```
 
 
-    Zadejte řetězec formátu podle interpolace výraz s čárkou (":") a nakonec formátovací řetězec. "d" je [řetězec formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) , která představuje formátu krátkého data. "C2" je [řetězec standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) , který představuje číslo jako hodnotu měny se dvěma číslicemi za desetinnou čárkou.
+    Řetězec formátu určíte pomocí výrazu interpolace dvojtečkou (":") a formátovacím řetězcem. "d" je [standardní řetězec formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) , který představuje formát krátkého data. C2 je [standardní číselný formátovací řetězec](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) , který představuje číslo jako hodnotu měny se dvěma číslicemi za desetinnou čárkou.
 
 
-    Počet typů v knihovny .NET podporují předdefinovanou množinu řetězců formátu. Patří mezi ně číselné typy a typy data a času. Úplný seznam typů podporujících formátovací řetězce, naleznete v tématu [formátovací řetězce a typy v knihovně tříd rozhraní .NET](../../../standard/base-types/formatting-types.md#stringRef) v [formátovací typy v .NET](../../../standard/base-types/formatting-types.md) článku.
+    Řada typů v knihovnách .NET podporuje předdefinovanou sadu formátovacích řetězců. Patří sem všechny číselné typy a typy data a času. Úplný seznam typů, které podporují řetězce formátu, naleznete v tématu [formátovací řetězce a typy knihoven tříd .NET](../../../standard/base-types/formatting-types.md#stringRef) v článku [formátování typů v rozhraní .NET](../../../standard/base-types/formatting-types.md) .
 
 
-    Zkuste upravit formátovací řetězce v příkladu, pokud chcete zobrazit, jaký vliv mají formátování data a času a číselné hodnoty. Změňte "d" v `{date:d}` "t" (pro zobrazení formátu krátkého formátu času), "y" (zobrazí se rok a měsíc) a "yyyy" (zobrazí se rok jako čtyřmístné číslo). Změňte "C2" v `{price:C2}` "e" (pro exponenciální notaci) a "F3" (pro číselnou hodnotu, s třemi číslicemi za desetinnou čárkou).
+    Zkuste upravit řetězce formátu v příkladu, abyste viděli, jak ovlivňují formátování data a času a číselné hodnoty. Změňte "d" `{date:d}` na "t" (pro zobrazení krátkého formátu času), "y" (zobrazí se rok a měsíc) a "rrrr" (zobrazí se rok jako čtyřmístné číslo). Změňte "C2" `{price:C2}` na "e" (pro exponenciální zápis) a "F3" (pro číselnou hodnotu se třemi číslicemi za desetinnou čárkou).
 
 
-    Vedle nastavení formátování můžete také řídit šířku pole a zarovnání formátovaného řetězce, které jsou obsaženy ve výsledném řetězci. V dalším kroku se dozvíte, jak to udělat.
+    Kromě řízení formátování můžete také nastavit šířku pole a zarovnání formátovaných řetězců, které jsou zahrnuty ve výsledném řetězci. V dalším kroku se dozvíte, jak to provést.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Řídit šířku pole a zarovnání interpolace výrazů
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Řízení šířky pole a zarovnání výrazů interpolace
   durationInMinutes: 6
   content: >
-    Obvykle když výsledek interpolovaný řetězcový výraz ale je formátovaný řetězec, tento řetězec je součástí výsledného řetězce bez úvodní a koncové mezery. Zejména při práci se sadou dat, nebudou moct řídit šířku pole a zarovnání textu pomáhá lépe čitelný výstup. Příklad zobrazíte spuštěním následujícího kódu:
+    V případě, že je výsledek interpolující řetězcového výrazu naformátován na řetězec, je tento řetězec obsažen ve výsledném řetězci bez počátečních nebo koncových mezer. Zejména při práci se sadou dat, která je schopná řídit šířku pole a zarovnání textu, pomáhají vytvořit čitelnější výstup. Chcete-li se podívat, spusťte následující kód:
 
 
     ```csharp
@@ -105,13 +105,13 @@ items:
     ```
 
 
-    Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnaná vpravo. Zarovnání určíte přidáním čárky (",") po interpolaci výraz a uvedením *minimální* šířku pole. Pokud zadaná hodnota je kladné číslo, pole zarovnané vpravo. Pokud je záporné číslo, pole zarovnané vlevo.
+    Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnána vpravo. Zarovnání zadáte přidáním čárky (",") po výrazu interpolace a určením *minimální* šířky pole. Pokud je zadaná hodnota kladné číslo, bude pole zarovnáno vpravo. Pokud se jedná o záporné číslo, bude pole zarovnané vlevo.
 
 
-    Zkuste odstranit záporná znaménka z `{"Item",-25}` a `{item.Key,-25}` kód a znovu spusťte příklad kódu. Tentokrát, názvy položek jsou zarovnaná vpravo.
+    Zkuste odebrat záporné znaménka z `{"Item",-25}` kódu a `{item.Key,-25}` a spustit tento příklad znovu. V tuto chvíli jsou názvy položek zarovnané doprava.
 
 
-    Můžete kombinovat specifikátor zarovnání a řetězec formátu pro výraz jedné interpolace. K tomuto účelu Určuje zarovnání nejprve, za nímž následuje dvojtečka a nakonec formátovací řetězec. Vyzkoušejte následující kód, který zobrazí tři zformátované řetězce s určenými šířkami polí:
+    Můžete zkombinovat specifikátor zarovnání a formátovací řetězec pro jedinou interpolaci výrazu. Chcete-li to provést, zadejte nejprve zarovnání následovaný dvojtečkou a řetězcem formátu. Vyzkoušejte následující kód, který zobrazí tři formátované řetězce s definovanými šířkami polí:
 
 
     ```csharp
@@ -123,9 +123,9 @@ items:
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >-
-    Dokončili jste kurz interaktivní interpolace řetězce. Můžete kliknout **kolekce v C# ** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování . Krok "Zachovat učení" přináší zpět do těchto kurzů.
+    Dokončili jste Interaktivní kurz o interpolaci řetězce. Kliknutím na níže uvedený odkaz **kolekce C# ** můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
 
-    Další informace najdete v tématu [interpolace](../../language-reference/tokens/interpolated.md).
+    Další informace naleznete v tématu [interpolace řetězce](../../language-reference/tokens/interpolated.md).

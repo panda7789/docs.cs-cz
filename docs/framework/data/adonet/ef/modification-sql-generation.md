@@ -2,12 +2,12 @@
 title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: ab0c18473e73b2d6fe9eb45c43e9b47947a55d99
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 94b6c3c97e8255db2dc4d72bae6c6c12905d9710
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248577"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854288"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 
@@ -27,7 +27,7 @@ DbModificationCommandTree je reprezentace objektového modelu operace DML změny
 
 - DbDeleteCommandTree
 
-DbModificationCommandTree a jeho implementace, které jsou vytvářeny [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vždy, představují operaci s jedním řádkem. Tato část popisuje tyto typy s omezeními v .NET Framework verze 3,5.
+DbModificationCommandTree a jeho implementace, které jsou vytvářeny Entity Framework vždy představují operaci s jedním řádkem. Tato část popisuje tyto typy s omezeními v .NET Framework verze 3,5.
 
 ![Diagram](./media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
 
@@ -90,7 +90,7 @@ Predikát určuje predikát použitý k určení, které členy cílové kolekce
 
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>Úprava generování SQL ve zprostředkovateli vzorků
 
-[Poskytovatel ukázkového Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje komponenty zprostředkovatelů dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Cílí na databázi SQL Server 2005 a implementuje se jako obálka na úrovni System. data. SqlClient ADO.NET 2,0 Zprostředkovatel dat.
+[Poskytovatel ukázkového Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje komponenty zprostředkovatelů dat ADO.NET, které podporují Entity Framework. Cílí na databázi SQL Server 2005 a implementuje se jako obálka na úrovni System. data. SqlClient ADO.NET 2,0 Zprostředkovatel dat.
 
 Modul úprav SQL pro generování ukázkového poskytovatele (umístěný v souboru SQL Generation\DmlSqlGenerator.cs) přebírá vstupní DbModificationCommandTree a vytvoří jediný příkaz SQL, který je možná následován příkazem SELECT, který vrátí čtenář, pokud je určený parametrem DbModificationCommandTree. Všimněte si, že tvar generovaných příkazů je ovlivněn cílovou SQL Server databází.
 

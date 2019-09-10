@@ -2,12 +2,12 @@
 title: Instalace F#
 description: Přečtěte si, F# jak nainstalovat na základě vašeho prostředí.
 ms.date: 09/05/2019
-ms.openlocfilehash: 18b660ff640904119d63f57405752a14f7673e0c
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: dffa30eac0bdb59c85a66dca6cafd62b25daa572
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70400722"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855801"
 ---
 # <a name="install-f"></a>Nainstalovat F\#
 
@@ -39,7 +39,7 @@ Aby bylo možné používat šablony projektů, je nutné mít v cestě [nainsta
 brew install mono
 ```
 
-Nainstalujte také [.NET Core SDK](https://www.microsoft.com/net/download).
+Nainstalujte také [.NET Core SDK](https://dotnet.microsoft.com/download).
 
 ### <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
@@ -50,13 +50,13 @@ sudo apt-get update
 sudo apt-get install mono-complete fsharp
 ```
 
-Nainstalujte také [.NET Core SDK](https://www.microsoft.com/net/download).
+Nainstalujte také [.NET Core SDK](https://dotnet.microsoft.com/download).
 
 ### <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 Nainstalujte [Visual Studio s F# podporou](#install-f-with-visual-studio). Tím se nainstaluje všechny nezbytné komponenty pro zápis, kompilování a spouštění F# kódu.
 
-Nainstalujte také [.NET Core SDK](https://www.microsoft.com/net/download/).
+Nainstalujte také [.NET Core SDK](https://dotnet.microsoft.com/download).
 
 ---
 

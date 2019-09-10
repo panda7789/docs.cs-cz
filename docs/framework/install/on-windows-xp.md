@@ -1,44 +1,44 @@
 ---
-title: Instalace rozhraní .NET Framework na Windows XP
-description: Informace o instalaci rozhraní .NET Framework na Windows XP.
+title: Instalace .NET Framework v systému Windows XP
+description: Naučte se, jak nainstalovat .NET Framework v systému Windows XP.
 ms.custom: updateeachrelease
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: b246c75896d00ad2c91ded106682e8cdd817d9d1
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 17354c8aaf9131bbcf5e2274eff44d9af611582c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052675"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853866"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Instalace rozhraní .NET Framework v systému Windows XP a Windows Server 2003
 
 > [!NOTE]
-> Windows XP je již nejsou podporovány společností Microsoft. Doporučujeme že upgradovat na Windows 10, která je podporována a obsahuje nejnovější verzi rozhraní .NET Framework. Tento dokument se poskytuje pouze jako užitečné Průvodce odstraňováním potíží.
+> Systém Windows XP již není podporován společností Microsoft. Doporučujeme, abyste provedli upgrade na systém Windows 10, který je podporován a obsahuje nejnovější verzi .NET Framework. Tento dokument je poskytován výhradně jako užitečná příručka pro odstraňování potíží.
 
-Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows. Postupujte podle následujících pokynů můžete použít k jeho instalaci. Po pokusu o spuštění aplikace a zobrazuje následující dialogové okno na svém počítači, může po přechodu na této stránce.
+.NET Framework se vyžaduje ke spouštění mnoha aplikací v systému Windows. K její instalaci můžete použít následující pokyny. Po pokusu o spuštění aplikace a zobrazení následujícího dialogu na vašem počítači se vám pravděpodobně dorazí na tuto stránku.
 
-![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
+![Tuto aplikaci nebylo možné spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) má nejnovější verzi. Není podporováno ve Windows XP a Windows Server 2003. Je součástí [Windows 10. 2019 aktualizovat](https://support.microsoft.com/help/4028685/windows-10-get-the-update).
+Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebujete. Nejnovější verze [.NET Framework 4,8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) . Není podporován v systémech Windows XP a Windows Server 2003. Je součástí [Windows 10 května 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update).
 
 ## <a name="net-framework-403"></a>.NET Framework 4.0.3
 
-[Rozhraní .NET Framework 4.0.3](https://go.microsoft.com/fwlink/?LinkID=213834) je nejnovější podporovanou verzi rozhraní .NET Framework na Windows XP a Windows Server 2003. Rozhraní .NET Framework 4.0.3 vyžaduje, aby [rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=213834) je nainstalována jako první. Obě tyto verze rozhraní .NET Framework již nejsou podporovány společností Microsoft.
+[.NET Framework 4.0.3](https://go.microsoft.com/fwlink/?LinkID=213834) je nejnovější podporovaná verze .NET Framework v systémech Windows XP a windows Server 2003. .NET Framework 4.0.3 vyžaduje, aby se nejdřív nainstaloval [.NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=213834) . Společnost Microsoft již nepodporuje obě tyto verze .NET Framework.
 
 ## <a name="net-framework-4"></a>.NET Framework 4
 
-Můžete nainstalovat [rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=213834&dotnetdocs) na Windows XP. Je již nejsou podporovány společností Microsoft.
+Můžete nainstalovat [.NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=213834&dotnetdocs) v systému Windows XP. Společnost Microsoft je již nepodporuje.
 
 ## <a name="net-framework-35"></a>.NET Framework 3.5
 
-Můžete nainstalovat [rozhraní .NET Framework 3.5](https://go.microsoft.com/fwlink/?LinkID=213834&dotnetdocs) na Windows XP.
+Můžete nainstalovat [.NET Framework 3,5](https://go.microsoft.com/fwlink/?LinkID=213834&dotnetdocs) v systému Windows XP.
 
-Rozhraní .NET Framework 3.5 je možné ke spouštění aplikací vytvořených pro rozhraní .NET Framework 1.0 až 3.5.
+.NET Framework 3,5 lze použít ke spouštění aplikací vytvořených pro .NET Framework 1,0 až 3,5.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Stáhnout rozhraní .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)
+- [Stáhnout .NET Framework](https://dotnet.microsoft.com/download)
 - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
-- [Instalace rozhraní .NET Framework pro vývojáře](guide-for-developers.md)
+- [Instalace .NET Framework pro vývojáře](guide-for-developers.md)

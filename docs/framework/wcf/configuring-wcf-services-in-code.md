@@ -2,12 +2,12 @@
 title: Konfigurace služeb WCF v kódu
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
-ms.openlocfilehash: 699549305ce8ca17480285e33570c01d00c7cb97
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d2ef7b2095bf7f238a25f2db0e5d3cf47e885550
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948432"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855640"
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi <xref:System.ServiceModel.ServiceHost> snadná, třída umožňuje nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přímý přístup ke <xref:System.ServiceModel.ServiceHost> třídě. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory` , která vytvořila a provedla požadovanou <xref:System.ServiceModel.Activation.ServiceHostFactory> konfiguraci. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu.  
@@ -79,7 +79,7 @@ public class Service1 : IService1
   
  Nastavení v oddílu <`protocolMappings`> se použijí jenom v případě, že se <xref:System.ServiceModel.ServiceConfiguration> do kódu programu nepřidaly žádné koncové body aplikace. Volitelně můžete načíst konfiguraci služby z výchozího konfiguračního souboru aplikace tak, že zavoláte <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> a pak změníte nastavení. <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration> Třída také umožňuje načíst konfiguraci z centralizované konfigurace. Následující kód ilustruje, jak implementovat toto:  
   
-```  
+```csharp
 public class Service1 : IService1   
 {   
     public void DoWork();   

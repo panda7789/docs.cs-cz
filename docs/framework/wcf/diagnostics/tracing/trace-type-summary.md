@@ -2,57 +2,53 @@
 title: Souhrn typů trasování
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 44446b58510e58758934a5eb964efc8643854879
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8f54f71ef63338708a29fac5557c7c7e8f257f58
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647178"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856010"
 ---
 # <a name="trace-type-summary"></a>Souhrn typů trasování
-[Zdrojové úrovně](https://go.microsoft.com/fwlink/?LinkID=94943) definuje různé úrovně trasování: Kritická chyba, upozornění, informace a Verbose, stejně jako obsahuje popis `ActivityTracing` příznak, které přepíná výstup trasování událostí pro přenos hranice a aktivity.  
+[Zdrojové úrovně](https://go.microsoft.com/fwlink/?LinkID=94943) definují různé úrovně trasování: Kritická, chyba, upozornění, informace a podrobné a také poskytuje popis `ActivityTracing` příznaku, který přepíná výstup událostí pro trasování a přenos aktivity.  
   
- Můžete také zkontrolovat [parametrem TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pro typy trasování, které může být generována z <xref:System.Diagnostics>.  
+ Můžete také zkontrolovat [TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pro typy trasování, ze <xref:System.Diagnostics>kterých lze generovat.  
   
  V následující tabulce jsou uvedeny nejdůležitější ty.  
   
-|Typ sledování|Popis|  
+|Typ trasování|Popis|  
 |----------------|-----------------|  
-|Kritická|Závažná chyba nebo aplikaci k chybě.|  
-|Chyba|Došlo k opravitelné chybě.|  
+|Kritická|Závažná chyba nebo selhání aplikace|  
+|Chyba|Obnovitelná chyba.|  
 |Upozornění|Informační zpráva.|  
-|Informace o|Nekritická problém.|  
-|Podrobnosti|Ladění trasování.|  
-|Spustit|Spouští se zpracování logické jednotky.|  
+|Informace o|Nekritický problém.|  
+|Podrobnosti|Trasování ladění.|  
+|Spustit|Spuštění logické jednotky zpracování.|  
 |Pozastavit|Pozastavení logické jednotky zpracování.|  
 |Resume|Obnovení logické jednotky zpracování.|  
-|Zastavit|Zastavuje se logické jednotky zpracování.|  
+|Zastavit|Zastavuje se logická jednotka zpracování.|  
 |Přenos|Změna identity korelace.|  
   
- Aktivita je definován jako kombinace výše uvedených typů trasování.  
+ Aktivita je definována jako kombinace typů trasování výše.  
   
- Tady je regulární výraz, který definuje ideální aktivitu v oboru místní (Zdroj trasování)  
+ Následuje regulární výraz, který definuje ideální aktivitu v oboru místního (zdroje trasování),  
   
  `R = Start (Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop`  
   
  To znamená, že aktivita musí splňovat následující podmínky.  
   
-- Musí začínat a zastavte v uvedeném pořadí spouštění a zastavování trasování  
+- Musí začínat a zastavovat trasování spuštění a zastavení.  
   
-- Musí mít přenos trasování bezprostředně před pozastavení nebo obnovení činnosti trasování  
+- Musí mít trasování přenosu hned před přerušením nebo obnovením trasování.  
   
-- Nesmí mít žádné trasování mezi pozastavit a obnovit trasování, pokud existují tato trasování  
+- Nesmí obsahovat žádné trasování mezi trasováním pozastavení a obnovení, pokud taková trasování existují.  
   
-- Tak dlouho, dokud jsou dodržovány předchozích podmínek může mít libovolný a libovolný počet kritických/Chyba/upozornění / / Verbose/přenosu informací trasování  
+- Může mít libovolné a tolik kritických/chyb/upozornění/informací/podrobných trasování/přenosů, pokud jsou splněny předchozí podmínky.  
   
- Tady je regulární výraz, který definuje ideální aktivitu v globálním oboru  
+ Následuje regulární výraz, který definuje ideální aktivitu v globálním oboru.  
   
-```  
-R+   
-```  
+`R+`  
   
- s R se regulární výraz pro aktivitu v místním oboru. Výsledkem je,  
+ v jazyce R je regulární výraz aktivity v místním oboru. To se týká,  
   
-```  
-[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+  
-```
+`[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+`

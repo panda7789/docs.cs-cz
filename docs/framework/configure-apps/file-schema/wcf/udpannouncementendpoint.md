@@ -2,18 +2,20 @@
 title: <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 5b3fa9c5-f372-4df9-a9d6-1e426063b721
-ms.openlocfilehash: 04f5fb27a0da7e553ff3c0308f7fb2e2df2e0b20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8dabf8845126705d082d080b643688ed62883f39
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788255"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854915"
 ---
-# <a name="udpannouncementendpoint"></a>\<udpAnnouncementEndpoint>
-Tento prvek konfigurace definuje standardní koncový bod služby používá k odeslání zpráv oznámení UDP vazby. Má pevnou kontrakt a podporuje dvě verze zjišťování. Kromě toho má pevnou vazbou UDP a adresu výchozí hodnotu podle specifikace WS-Discovery (WS-Discovery dubna 2005 nebo verze 1.1 WS-Discovery). Můžete zadat adresu vícesměrového vysílání pro odesílání a příjem zpráv s oznámením.  
+# <a name="udpannouncementendpoint"></a>\<udpAnnouncementEndpoint >
+Tento prvek konfigurace definuje standardní koncový bod, který používají služby k posílání zpráv oznámení přes vazbu UDP. Má pevnou smlouvu a podporuje dvě verze zjišťování. Navíc má pevnou vazbu UDP a výchozí hodnotu adresy uvedené ve specifikacích WS-Discovery (WS-Discovery duben 2005 nebo WS-Discovery verze 1,1). Můžete zadat adresu vícesměrového vysílání, která se má použít pro odesílání a příjem zpráv s oznámením.  
   
-\<system.ServiceModel>  
-\<standardEndpoints>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<udpAnnouncementEndpoint >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +39,25 @@ Tento prvek konfigurace definuje standardní koncový bod služby používá k o
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|discoveryVersion|Řetězec, který určuje jeden ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion>.|  
-|maxAnnouncementDelay|Časový interval hodnotu, která určuje maximální hodnotu zpoždění protokolu zjišťování bude čekat před odesláním uvítací zprávu. Náhodný čas hodnotu mezi 0 a hodnota tohoto atributu bude čekat zprávy před odesláním. Tento atribut slouží k nastavení malé náhodné zpoždění zabránil výstrahami sítě v případě, že se odesílá do sítě a všechny služby jsou zase online ve stejnou dobu.|  
-|multicastAddress|Identifikátor URI určující adresu vícesměrového vysílání pro odesílání a přijímání zpráv zjišťování. Výchozí hodnota je jako vyhovující specifikace protokolu adresu vícesměrového vysílání.|  
-|name|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atribut koncového bodu služby propojit s jeho konfigurace je standardní koncový bod.|  
+|discoveryVersion|Řetězec, který určuje jednu ze dvou verzí protokolu WS-Discovery. Platné hodnoty jsou WSDiscovery11 a WSDiscoveryApril2005. Tato hodnota je typu <xref:System.ServiceModel.Discovery.Configuration.AnnouncementEndpointElement.DiscoveryVersion>.|  
+|maxAnnouncementDelay|Hodnota TimeSpan, která určuje maximální hodnotu pro prodlevu, po kterou bude protokol zjišťování čekat před odesláním zprávy Hello. Zprávy budou čekat na hodnotu náhodného času mezi 0 a hodnotou tohoto atributu před odesláním. Tento atribut slouží k nastavení malé náhodné prodlevy, aby se zabránilo výpadkům sítě v případě, že dojde k vygenerování sítě, a všechny služby se vrátí zpět do režimu online ve stejnou dobu.|  
+|multicastAddress|Identifikátor URI, který určuje adresu vícesměrového vysílání, která se má použít pro odesílání a příjem zpráv zjišťování. Výchozí hodnota je adresa vícesměrového vysílání, která odpovídá specifikaci protokolu.|  
+|name|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atributu koncového bodu služby k propojení standardního koncového bodu s jeho konfigurací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<udpTransportSettings>](udptransportsettings.md)|Kolekce nastavení, která vám umožní nakonfigurovat přenos UDP pro koncový bod protokolu UDP.|  
+|[\<udpTransportSettings>](udptransportsettings.md)|Kolekce nastavení, která umožňují nakonfigurovat přenos UDP pro koncový bod UDP.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
+|[\<standardEndpoints>](standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definovanými koncovými body s jednou nebo více vlastnostmi (adresa, vazba, smlouva) opraveny.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje přes UDP naslouchání pro oznámení klienta vícesměrového vysílání přenos s výchozí adresy vícesměrového vysílání, UDP a vícesměrového vysílání přenosu pomocí zadané adresy vícesměrového vysílání.  
+ Následující příklad ukazuje, že klient naslouchá oznámení prostřednictvím přenosu vícesměrového vysílání UDP s výchozí adresou vícesměrového vysílání a přenos vícesměrového vysílání UDP se zadanou adresou vícesměrového vysílání.  
   
 ```xml  
 <services>

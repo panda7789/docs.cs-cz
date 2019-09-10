@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: 9ade6b0d9e4aadb353ca148f868d548fbaacfbc3
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: eaf53a352238161ccec1b481649074d322954905
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69987697"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851515"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu WS-federovaného ověřování (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ho používat.  
@@ -67,7 +67,7 @@ Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v
   
 - Událost se vyvolá, když infrastruktura ASP.NET vyvolá <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> metodu poprvé na jednom z modulů aplikace, které jsou odvozeny z <xref:System.IdentityModel.Services.HttpModuleBase>. <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType> Tato metoda přistupuje ke statické <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnosti, která způsobuje, že konfigurace byla načtena ze souboru Web. config. Tato událost je aktivována pouze při prvním otevření této vlastnosti. Objekt, který je inicializován z konfigurace, je k dispozici <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> prostřednictvím vlastnosti v obslužné rutině události. <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> Tuto událost můžete použít ke změně konfigurace předtím, než se použije pro všechny moduly. Do metody Application_Start lze přidat obslužnou rutinu pro tuto událost:  
   
-    ```  
+    ```csharp
     void Application_Start(object sender, EventArgs e)  
     {  
         FederatedAuthentication.FederationConfigurationCreated += new EventHandler<FederationConfigurationCreatedEventArgs>(FederatedAuthentication_FederationConfigurationCreated);  

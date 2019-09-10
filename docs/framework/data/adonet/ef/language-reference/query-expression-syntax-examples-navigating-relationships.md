@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0d4a7f41-c758-4059-8f83-d2e9c2745593
-ms.openlocfilehash: 38a8ddfe4366fefccd0a874a2ad7a20424ef8fac
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: a99d7d31ce23629bf7a0f390244c1fe67b4554e3
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249473"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854405"
 ---
 # <a name="query-expression-syntax-examples-navigating-relationships"></a>Příklady syntaxe výrazů dotazů: Navigace v relacích
-Navigační vlastnosti v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] nástroji jsou vlastnosti zkratky používané k vyhledání entit na koncích přidružení. Navigační vlastnosti umožňují uživateli přejít z jedné entity na jinou nebo z jedné entity na související entity prostřednictvím sady přidružení. V tomto tématu najdete příklady v syntaxi výrazů dotazů, jak procházet vztahy prostřednictvím vlastností navigace v LINQ to Entitiesch dotazech.  
+Navigační vlastnosti v Entity Framework jsou zástupci vlastností, které slouží k vyhledání entit na koncích přidružení. Navigační vlastnosti umožňují uživateli přejít z jedné entity na jinou nebo z jedné entity na související entity prostřednictvím sady přidružení. V tomto tématu najdete příklady v syntaxi výrazů dotazů, jak procházet vztahy prostřednictvím vlastností navigace v LINQ to Entitiesch dotazech.  
   
  Model prodeje společnosti AdventureWorks použitý v těchto příkladech je sestaven z tabulek Contact, adresa, produkt, SalesOrderHeader a SalesOrderDetail v ukázkové databázi AdventureWorks.  
   

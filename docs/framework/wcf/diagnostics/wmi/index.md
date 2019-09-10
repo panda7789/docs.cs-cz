@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: 90aae0e22feec5d26fa7ee4c690904ed893489b4
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0b67f06b9a99d7e9001c8415d0e94adef8436a3d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795912"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855818"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za běhu prostřednictvím poskytovatele WCF rozhraní WMI (Windows Management Instrumentation) (WMI).  
@@ -143,7 +143,7 @@ Windows Communication Foundation (WCF) zveřejňuje kontrolní data služby za b
 ### <a name="granting-access-to-arbitrary-users-or-groups"></a>Udělení přístupu libovolným uživatelům nebo skupinám  
  Příklad v této části uděluje oprávnění k registraci zprostředkovatele rozhraní WMI všem místním uživatelům. Pokud chcete udělit přístup uživateli nebo skupině, která není integrovaná v, musíte získat identifikátor zabezpečení (SID) daného uživatele nebo skupiny. Neexistuje žádný jednoduchý způsob, jak získat SID pro libovolného uživatele. Jedna z metod se přihlaste jako požadovaný uživatel a pak vydejte následující příkaz prostředí.  
   
-```  
+```console
 Whoami /user  
 ```  
   

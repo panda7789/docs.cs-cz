@@ -9,39 +9,44 @@ helpviewer_keywords:
 - text change [WPF], detecting
 - detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-ms.openlocfilehash: 1adadb0f071815930d34f40ddf244ffc8c19131b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c7744e9e61b8ba796802e54435c0bf9fdbee50e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000971"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855619"
 ---
 # <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a>Postupy: Zjištění, kdy došlo ke změně textu v prvku TextBox
-Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> události a metody pokaždé, když se text v <xref:System.Windows.Controls.TextBox> ovládacího prvku se změnil.  
-  
- Ve třídě použití modelu code-behind pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která obsahuje <xref:System.Windows.Controls.TextBox> ovládací prvek, který chcete monitorovat změny vložit metodu volat pokaždé, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> dojde k aktivaci události.  Tato metoda musí mít podpis, který odpovídá očekávání podle <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
-  
- Obslužná rutina události je volána pokaždé, když obsah <xref:System.Windows.Controls.TextBox> změní ovládacího prvku, uživatelem nebo prostřednictvím kódu programu.  
-  
- **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> ovládacího prvku je vytvořen a zpočátku zobrazí s textem.  
-  
-## <a name="example"></a>Příklad  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] , který definuje vaši <xref:System.Windows.Controls.TextBox> řídit, zadejte <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> atributu s hodnotou, která odpovídá názvu metody obslužné rutiny události.  
-  
- [!code-xaml[TextBox_MiscCode#_TextChangedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
-  
-## <a name="example"></a>Příklad  
- Ve třídě použití modelu code-behind pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která obsahuje <xref:System.Windows.Controls.TextBox> ovládací prvek, který chcete monitorovat změny vložit metodu volat pokaždé, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> dojde k aktivaci události.  Tato metoda musí mít podpis, který odpovídá očekávání podle <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
-  
- [!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
- [!code-vb[TextBox_MiscCode#_TextChangedEventHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]  
-  
- Obslužná rutina události je volána pokaždé, když obsah <xref:System.Windows.Controls.TextBox> změní ovládacího prvku, uživatelem nebo prostřednictvím kódu programu.  
-  
- **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> ovládacího prvku je vytvořen a zpočátku zobrazí s textem.  
-  
- Komentáře  
-  
+
+Tento příklad ukazuje jeden ze <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> způsobů, jak použít událost ke spuštění metody pokaždé, když se změní text <xref:System.Windows.Controls.TextBox> v ovládacím prvku.
+
+V třídě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu na pozadí <xref:System.Windows.Controls.TextBox> ovládacího prvku, který obsahuje ovládací prvek, který chcete monitorovat, vložte metodu, která bude volána vždy, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se událost aktivuje.  Tato metoda musí mít signaturu, která odpovídá tomu, co očekává <xref:System.Windows.Controls.TextChangedEventHandler> delegát.
+
+Obslužná rutina události se volá vždycky, když se <xref:System.Windows.Controls.TextBox> změní obsah ovládacího prvku, a to buď uživatelem, nebo programově.
+
+> [!NOTE]
+> Tato událost je aktivována při <xref:System.Windows.Controls.TextBox> vytvoření ovládacího prvku a jeho prvotním vyplnění textem.
+
+## <a name="example"></a>Příklad
+
+V ovládacím <xref:System.Windows.Controls.TextBox> prvku definujícího ovládací prvek zadejte <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> atribut s hodnotou, která odpovídá názvu metody obslužné rutiny události. [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]
+
+[!code-xaml[TextBox_MiscCode#_TextChangedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]
+
+## <a name="example"></a>Příklad
+
+V třídě [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kódu na pozadí <xref:System.Windows.Controls.TextBox> ovládacího prvku, který obsahuje ovládací prvek, který chcete monitorovat, vložte metodu, která bude volána vždy, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> se událost aktivuje.  Tato metoda musí mít signaturu, která odpovídá tomu, co očekává <xref:System.Windows.Controls.TextChangedEventHandler> delegát.
+
+[!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
+[!code-vb[TextBox_MiscCode#_TextChangedEventHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]
+
+Obslužná rutina události se volá vždycky, když se <xref:System.Windows.Controls.TextBox> změní obsah ovládacího prvku, a to buď uživatelem, nebo programově.
+
+> [!NOTE]
+> Tato událost je aktivována při <xref:System.Windows.Controls.TextBox> vytvoření ovládacího prvku a jeho prvotním vyplnění textem.
+
+Komentáře
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Controls.TextChangedEventArgs>

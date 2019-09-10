@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 6e79346a448012255020cc28b6534e734980b1db
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 39b71d3b5cbcfdc8bde3449560587f033c437d50
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968847"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856164"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, kterou služby používají k omezení přístupu klientů k prostředkům domény služby. Prostředky domény služby můžou být prostředky počítače, například místní soubory (zosobnění), nebo prostředek na jiném počítači, například sdílená složka (delegování). Ukázkovou aplikaci najdete v tématu [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění naleznete v tématu [How to: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -158,7 +158,7 @@ ms.locfileid: "69968847"
   
  Následující kód ukazuje, jak nakonfigurovat službu.  
   
-```  
+```csharp
 // Create a binding that sets a certificate as the client credential type.  
 WSHttpBinding b = new WSHttpBinding();  
 b.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;  

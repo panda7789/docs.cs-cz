@@ -4,12 +4,12 @@ description: Klíčové koncepty pro pochopení účelu a chování AssemblyLoad
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 293c586163921f9226916b177b3a29cc99c3e695
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 61ad19a281d829814de8321913af7dabfc916f6d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70017341"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849229"
 ---
 # <a name="understanding-systemruntimeloaderassemblyloadcontext"></a>Principy System. Runtime. Loader. AssemblyLoadContext
 
@@ -48,13 +48,13 @@ Poskytuje také pohodlný mechanismus pro seskupení závislostí souvisejícíc
 
 <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> Instance podporuje pouze přepsání událostí.
 
-V článcích [spravovaný algoritmus pro načítání sestavení](loading-managed.md), [algoritmus načítání satelitních sestavení](loading-resources.md)a nespravovaný [(nativní) modul načítání knihovny](loading-unmanaged.md) odkazují na všechny dostupné události a virtuální funkce.  Články ukazují relativní pozici každé události a funkce v algoritmech načítání. V tomto článku nejsou tyto informace reprodukovány.
+V článcích [spravovaný algoritmus pro načítání sestavení](loading-managed.md), [algoritmus načítání satelitních sestavení](loading-resources.md)a [nespravovaný (nativní) modul načítání knihovny](loading-unmanaged.md) odkazují na všechny dostupné události a virtuální funkce.  Články ukazují relativní pozici každé události a funkce v algoritmech načítání. V tomto článku nejsou tyto informace reprodukovány.
 
 Tato část obsahuje obecné principy relevantních událostí a funkcí.
 
 - **Být možné opakovat**. Dotaz na konkrétní závislost musí vždy mít stejnou odpověď. Musí být vrácena stejná instance načtené závislosti. Tento požadavek je zásadní pro konzistenci mezipaměti. Konkrétně pro spravovaná sestavení vytváříme <xref:System.Reflection.Assembly> mezipaměť. Klíč mezipaměti je jednoduchý název <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType>sestavení.
 - **Obvykle nevyvolejte**.  Je očekáváno, že tyto funkce `null` vrací místo throw, pokud nelze najít požadovanou závislost. K vyvolání dojde v předčasném ukončení hledání a k šíření výjimky pro volajícího. Vystavení by mělo být omezeno na neočekávané chyby, jako je poškozené sestavení nebo nedostatek paměti.
-- **Vyhněte se**rekurzi. Počítejte s tím, že tyto funkce a obslužné rutiny implementují pravidla načítání pro hledání závislostí. Vaše implementace by neměla volat rozhraní API, která spouštějí rekurzi. Váš kód by měl obvykle volat funkce **AssemblyLoadContext** Load, které vyžadují specifickou cestu nebo argument odkazu na paměť.
+- **Vyhněte se rekurzi**. Počítejte s tím, že tyto funkce a obslužné rutiny implementují pravidla načítání pro hledání závislostí. Vaše implementace by neměla volat rozhraní API, která spouštějí rekurzi. Váš kód by měl obvykle volat funkce **AssemblyLoadContext** Load, které vyžadují specifickou cestu nebo argument odkazu na paměť.
 - **Načtěte do správného AssemblyLoadContext**. Volba místa načtení závislostí je specifická pro aplikaci.  Tato volba je implementována těmito událostmi a funkcemi. Když váš kód volá funkce **AssemblyLoadContext** Load-by-Path, zavolejte je na instanci, kde chcete kód načíst. Při návratu `null` a <xref:System.Runtime.Loader.AssemblyLoadContext.Default?displayProperty=nameWithType> zanechání popisovače může být zátěž Nejjednodušší volbou.
 - **Uvědomte si Races vlákna**. Načítání může být aktivováno více vlákny. AssemblyLoadContext zpracovává vlákna Races atomicky přidávání sestavení do mezipaměti. Instance rasy loser je zahozena. V logice implementace Nepřidávejte další logiku, která správně nezpracovává více vláken.
 
@@ -99,7 +99,7 @@ Vzhledem k dvojici neodpovídajících typů je důležité také znát:
 
 Vzhledem k dvěma `a` objektům a `b`vyhodnocení následujícího v ladicím programu bude užitečné:
 
-```C#
+```csharp
 // In debugger look at each assembly's instance, Location, and FullName
 a.GetType().Assembly
 b.GetType().Assembly

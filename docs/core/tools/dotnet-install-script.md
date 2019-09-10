@@ -2,12 +2,12 @@
 title: dotnet-install scripts
 description: Přečtěte si o dotnet – instalace skriptů pro instalaci nástrojů .NET Core CLI a sdíleného modulu runtime.
 ms.date: 01/16/2019
-ms.openlocfilehash: ed1a3341e678b405ae4aca35e3b49ada89eb069a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 867be93b5a4c66258df438ce718dabbd4ef2891c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253901"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849572"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet – Reference k instalaci skriptů
 
@@ -55,7 +55,7 @@ Konkrétní verzi můžete nainstalovat pomocí `--version` argumentu. Verze mus
   - Verze se dvěma částmi ve formátu X. Y představující specifickou verzi (například `2.0` nebo `1.0`).
   - Název větve Například `release/2.0.0` `master` ,, nebo (pro noční vydání). `release/2.0.0-preview2`
 
-  Výchozí hodnota je `LTS`. Další informace o kanálech podpory rozhraní .NET najdete na stránce [zásady podpory rozhraní .NET](https://www.microsoft.com/net/platform/support-policy#dotnet-core) .
+  Výchozí hodnota je `LTS`. Další informace o kanálech podpory rozhraní .NET najdete na stránce [zásady podpory rozhraní .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) .
 
 - **`-Version <VERSION>`**
 

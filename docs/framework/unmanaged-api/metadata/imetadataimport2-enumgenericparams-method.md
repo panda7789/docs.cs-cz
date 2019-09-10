@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7edd2eeafcce6a22c3256d0684a9c4f961b34002
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39e3e71185051435afcf03d51ec62742c080b02a
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049892"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855711"
 ---
 # <a name="imetadataimport2enumgenericparams-method"></a>IMetaDataImport2::EnumGenericParams – metoda
-Získá enumerátor pro celou řadu obecný parametr tokeny přidružené k zadaným TypeDef nebo MethodDef token.  
+Získá enumerátor pro pole tokenů obecných parametrů přidružených k zadanému tokenu TypeDef nebo MethodDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT EnumGenericParams (  
    [in, out] HCORENUM     *phEnum,   
    [in]  mdToken          tk,  
@@ -41,35 +41,35 @@ HRESULT EnumGenericParams (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [out v] Ukazatel na enumerátor.  
+ [in, out] Ukazatel na enumerátor.  
   
  `tk`  
- [in] Token TypeDef nebo MethodDef jehož generické parametry jsou pro provedení výčtu.  
+ pro Typ TypeDef nebo token MethodDef, jejichž obecné parametry mají být vyčísleny.  
   
  `rGenericParams`  
- [out] Pole obecných parametrů k vytvoření výčtu.  
+ mimo Pole obecných parametrů k vytvoření výčtu.  
   
  `cMax`  
- [in] Maximální požadovaný počet tokenů, které mají být umístěny `rGenericParams`.  
+ pro Požadovaný maximální počet tokenů pro umístění `rGenericParams`.  
   
  `pcGenericParams`  
- [out] Vrácený počet tokenů umístit v `rGenericParams`.  
+ mimo Vrácený počet tokenů, které jsou `rGenericParams`umístěny v.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParams` bylo úspěšně vráceno.|  
-|`S_FALSE`|`phEnum` nemá žádné elementy člena. V takovém případě `pcGenericParams` je nastavena na hodnotu 0 (nula).|  
+|`S_OK`|`EnumGenericParams`úspěšně vráceno.|  
+|`S_FALSE`|`phEnum`neobsahuje žádné prvky členů. V tomto případě `pcGenericParams` je nastaveno na hodnotu 0 (nula).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

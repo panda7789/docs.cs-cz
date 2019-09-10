@@ -1,71 +1,71 @@
 ---
-title: Ladění problémů aktivace CLR
+title: Jak ladit problémy s aktivací CLR
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e38e3e2b0f28b7f1eb36dd3c5b2888712b1c807c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ab80cfbd0ae2130f465216ca77812bda0002c24
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875303"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854000"
 ---
-# <a name="how-to-debug-clr-activation-issues"></a>Ladění problémů aktivace CLR
+# <a name="how-to-debug-clr-activation-issues"></a>Jak ladit problémy s aktivací CLR
 
-Pokud narazíte na problémy při získávání aplikace na spouštění se správnou verzí modulu common language runtime (CLR), můžete zobrazit a ladit protokoly aktivace modulu CLR. Tyto protokoly mohou být velmi užitečné při určování původní příčinu chyby aktivace, když aplikace načte jinou verzi CLR, než se očekávalo nebo nebude vůbec načíst modul CLR. [Rozhraní .NET Framework – chyby inicializace: Správa uživatelskou zkušenost](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) popisuje prostředí, když pro aplikaci nebyl nalezen žádný CLR.
+Pokud narazíte na problémy při provádění aplikace se správnou verzí modulu CLR (Common Language Runtime), můžete zobrazit a ladit aktivační protokoly CLR. Tyto protokoly můžou být velmi užitečné při určování hlavní příčiny problému s aktivací, když vaše aplikace buď načte jinou verzi CLR, než se očekávalo, nebo vůbec nenačte CLR. Chyby [inicializace .NET Framework: Správa uživatelského prostředí](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) se zabývá tím, že se pro aplikaci nenajde žádný modul CLR.
 
-Protokolování aktivace modulu CLR může být povoleno systémová pomocí klíčem HKEY_LOCAL_MACHINE registru nebo systémové proměnné prostředí. Vygeneruje se protokol až do položky registru nebo proměnné prostředí se odebere. Alternativně můžete uživatele nebo proměnné prostředí místní proces povolit protokolování pomocí různých rozsahu a doby trvání.
+Protokolování aktivace CLR lze povolit v rámci systému pomocí klíče registru HKEY_LOCAL_MACHINE nebo systémové proměnné prostředí. Protokol bude vygenerován, dokud nebude odebrána položka registru nebo proměnná prostředí. Alternativně můžete použít proměnnou uživatelského prostředí nebo uživatele nebo procesu k povolení protokolování s jiným rozsahem a dobou trvání.
 
-Protokoly aktivace CLR neměly by být zaměňovány s [protokoly vazeb sestavení](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou úplně jiného.
+Protokoly aktivace CLR by se neměly zaměňovat s [protokoly vazeb sestavení](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
 
 ## <a name="to-enable-clr-activation-logging"></a>Povolení protokolování aktivace CLR
 
-### <a name="using-the-registry"></a>Pomocí registru
+### <a name="using-the-registry"></a>Použití registru
 
-1. V editoru registru přejděte na HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework (na 32bitovém počítači) nebo HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework složka (na 64bitovém počítači).
+1. V editoru registru přejděte na HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework (na 32 počítači) nebo HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework složka (na 64 počítači).
 
-2. Přidejte hodnotu řetězce s názvem `CLRLoadLogDir`a nastavte ho na úplnou cestu existující adresář ve kterém chcete ukládat protokoly aktivace modulu CLR.
+2. Přidejte řetězcovou hodnotu s `CLRLoadLogDir`názvem a nastavte ji na úplnou cestu k existujícímu adresáři, kam chcete ukládat protokoly aktivace CLR.
 
-Aktivace protokolování zůstane povolena, dokud neodeberete řetězcovou hodnotu.
+Protokolování aktivace zůstane povolené, dokud neodeberete řetězcovou hodnotu.
 
-### <a name="using-an-environment-variable"></a>Pomocí proměnné prostředí
+### <a name="using-an-environment-variable"></a>Použití proměnné prostředí
 
-- Nastavte `COMPLUS_CLRLoadLogDir` proměnné prostředí na řetězec, který představuje úplnou cestu existující adresář, kam chcete ukládat protokoly aktivace CLR.
+- Nastavte proměnnou `COMPLUS_CLRLoadLogDir` prostředí na řetězec, který představuje úplnou cestu k existujícímu adresáři, do kterého chcete ukládat protokoly aktivace modulu CLR.
 
-    Určuje svého oboru, jak nastavit proměnnou prostředí:
+    Způsob nastavení proměnné prostředí určuje jeho rozsah:
 
-  - Pokud ji nastavíte na úrovni systému, aktivace je povoleno protokolování pro všechny aplikace rozhraní .NET Framework na tomto počítači až do odebrání proměnné prostředí.
+  - Pokud nastavíte tuto možnost na úrovni systému, povolí se protokolování aktivace pro všechny .NET Framework aplikace na daném počítači, dokud se neodebere proměnná prostředí.
 
-  - Pokud ji nastavíte na úrovni uživatele, aktivaci protokolování je povoleno pouze pro aktuální uživatelský účet. Protokolování pokračuje, dokud je proměnná prostředí se odebere.
+  - Pokud nastavíte tuto možnost na úrovni uživatele, protokolování aktivace je povoleno pouze pro aktuální uživatelský účet. Protokolování pokračuje, dokud nebude proměnná prostředí odebrána.
 
-  - Pokud ji nastavíte z v rámci procesu před načtením modulu CLR, je povoleno protokolování aktivace až do doby ukončení procesu.
+  - Pokud jej před načtením modulu CLR nastavíte v rámci procesu, protokolování aktivace bude povoleno až do ukončení procesu.
 
-  - Pokud ji nastavíte na příkazovém řádku před spuštěním aplikace, je povoleno protokolování aktivace pro každou aplikaci, která se spouští z tohoto příkazového řádku.
+  - Pokud ho před spuštěním aplikace nastavíte na příkazovém řádku, povolí se protokolování aktivace pro všechny aplikace, které se spouštějí z tohoto příkazového řádku.
 
-    Například pro ukládání protokolů aktivace v adresáři c:\clrloadlogs s rozsahem úrovni procesu, otevřete okno příkazového řádku a zadejte následující příkaz před spuštěním aplikace:
+    Chcete-li například uložit aktivační protokoly v adresáři c:\clrloadlogs s rozsahem na úrovni procesu, otevřete okno příkazového řádku a před spuštěním aplikace zadejte následující text:
 
-    ```
+    ```console
     set COMPLUS_CLRLoadLogDir=c:\clrloadlogs
     ```
 
 ## <a name="example"></a>Příklad
 
-Protokoly aktivace CLR poskytují velké množství dat o CLR – aktivace a použití modulu CLR rozhraní API pro hostování. Většina těchto dat se používá interně společností Microsoft, ale některá data může být také užitečný pro vývojáře, jak je popsáno v tomto článku.
+Protokoly aktivace CLR poskytují velké množství dat o aktivaci CLR a použití rozhraní API pro hostování rozhraní CLR. Většinu těchto dat používá společnost Microsoft interně, ale některá z nich mohou být užitečná také pro vývojáře, jak je popsáno v tomto článku.
 
-Protokol rozhraní API pro hostování CLR odpovídá pořadí, ve kterém byly volány. Zahrnuje také užitečné údaje o sadu instalovaných modulů runtime v počítači nalezen. Formát protokolu aktivace CLR není samotné popsané, ale je možné podpory vývojářům, kteří potřebují k vyřešení problémů aktivace CLR.
-
-> [!NOTE]
-> Aktivace protokolu nelze otevřít, dokud proces, který používá modul CLR byl ukončen.
+Protokol odráží pořadí, ve kterém byly volány rozhraní API hostování modulu CLR. Zahrnuje také užitečná data o sadě nainstalovaných modulů runtime zjištěných v počítači. Formát protokolu aktivace CLR není dokumentován, ale lze jej použít k podpoře vývojářů, kteří potřebují vyřešit problémy s aktivací CLR.
 
 > [!NOTE]
-> Protokoly aktivace CLR nejsou lokalizovány; generují se vždy v anglickém jazyce.
+> Aktivační protokol nelze otevřít, dokud nebude ukončen proces, který používá modul CLR.
 
-V následujícím příkladu protokolu aktivace je velmi užitečné informace zvýrazní a popsané po protokolu.
+> [!NOTE]
+> Protokoly aktivace CLR nejsou lokalizovány; jsou vždycky vygenerované v anglickém jazyce.
 
-```
+V následujícím příkladu aktivačního protokolu jsou nejužitečnější informace zvýrazněny a popsány po protokolu.
+
+```output
 532,205950.367,CLR Loading log for C:\Tests\myapp.exe
 532,205950.367,Log started at 4:26:12 PM on 10/6/2011
 532,205950.367,-----------------------------------
@@ -94,31 +94,31 @@ V následujícím příkladu protokolu aktivace je velmi užitečné informace z
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0
 ```
 
-- **Načítání protokolu modulu CLR** poskytuje cestu ke spustitelnému souboru, který spustil proces, který zavedl spravovaného kódu. Všimněte si, že to může být nativních hostitelů.
+- **Protokol načítání CLR** poskytuje cestu ke spustitelnému souboru, který spustil proces, který zavedl spravovaný kód. Všimněte si, že se může jednat o nativního hostitele.
 
-    ```
+    ```output
     532,205950.367,CLR Loading log for C:\Tests\myapp.exe
     ```
 
-- **Nainstalovat modul Runtime** je sada CLR verze nainstalované na počítači, které jsou kandidáty pro žádost o aktivaci.
+- **Instalovaný modul runtime** je sada verzí CLR nainstalovaná na počítači, které jsou kandidáty na žádost o aktivaci.
 
-    ```
+    ```output
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
     ```
 
-- **sestaveno s verzí** verzi CLR, který byl použit k vytvoření binární soubor, který byl poskytnut do metody, jako je [iclrmetahostpolicy::getrequestedruntime –](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
+- **sestaveno s verzí** je verze modulu CLR, která byla použita k sestavení binárního souboru, který byl poskytnut metodě jako [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
 
-    ```
+    ```output
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
-- **instalace funkcí na vyžádání** odkazuje na povolení rozhraní .NET Framework 3.5 v systému Windows 8. Zobrazit [rozhraní .NET Framework – chyby inicializace: Správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) Další informace o tomto scénáři.
+- **instalace funkcí na vyžádání** odkazuje na povolení .NET Framework 3,5 ve Windows 8. Viz [chyby při inicializaci .NET Framework: Správa uživatelského prostředí](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) pro další informace o tomto scénáři.
 
-    ```
+    ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3
     ```
 
 ## <a name="see-also"></a>Viz také:
 
 - [Nasazení](../../../docs/framework/deployment/index.md)
-- [Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novější verze](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

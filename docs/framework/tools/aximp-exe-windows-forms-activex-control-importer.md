@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd3d7ea4d9639c5c68ecf977b4e95e816d99a4f6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c8c3c293e28788143cd1bed07acc941d448700f2
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915423"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851477"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
 Importér ovládacích prvků ActiveX převede definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
@@ -30,7 +30,7 @@ Importér ovládacích prvků ActiveX převede definice typů v knihovně typů 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 aximp [options]{file.dll | file.ocx}  
 ```  
   
@@ -49,7 +49,7 @@ aximp [options]{file.dll | file.ocx}
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |`/out:`*název souboru*|Určuje název sestavení, které se má vytvořit.|  
 |`/publickey:`*název souboru*|Podepíše výsledný ovládací prvek se silným názvem pomocí veřejného klíče, který se nachází v souboru určeném parametrem *filename*.|  
-|`/rcw:`*název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu Obálka s vydanou [modulem runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
+|`/rcw:`*název souboru*|Používá určenou obálku volatelnou modulem runtime namísto generování nové. Můžete zadat více instancí. Aktuální adresář se používá pro relativní cesty. Další informace najdete v tématu [obálka s vydanou modulem runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Potlačí zobrazování zpráv o úspěšném dokončení.|  
 |`/source`|Generuje zdrojový kód jazyka C# pro obálku Windows Forms.|  
 |`/verbose`|Určuje režim podrobného vypisování; zobrazuje dodatečné informace o průběhu.|  
@@ -75,7 +75,7 @@ aximp [options]{file.dll | file.ocx}
 ## <a name="example"></a>Příklad  
  Následující příkaz generuje MediaPlayer. dll a AxMediaPlayer. dll pro ovládací prvek `msdxm.ocx`Media Player.  
   
-```  
+```console 
 aximp c:\systemroot\system32\msdxm.ocx  
 ```  
   

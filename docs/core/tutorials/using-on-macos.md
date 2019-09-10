@@ -4,12 +4,12 @@ description: Tento dokument popisuje kroky a pracovní postup pro vytvoření ř
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: f1cb9b45c0ed1b4315361846fc065209088b57f8
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 572174cb09dbde03095fa9444989356038bab9b7
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373791"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849358"
 ---
 # <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 
@@ -20,7 +20,7 @@ Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET 
 
 ## <a name="prerequisites"></a>Požadavky
 
-Nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core). .NET Core SDK zahrnuje nejnovější verzi rozhraní .NET Core Framework a modulu runtime.
+Nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/download). .NET Core SDK zahrnuje nejnovější verzi rozhraní .NET Core Framework a modulu runtime.
 
 Nainstalujte [Visual Studio Code](https://code.visualstudio.com). V průběhu tohoto článku nainstalujete také rozšíření Visual Studio Code, která zlepšují vývojové prostředí .NET Core.
 

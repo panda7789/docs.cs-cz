@@ -2,18 +2,18 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: 688989fea6037cc989267e14b103210c2a995afa
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 82166782e25cb7a7ea23fe7faf7a30cb0e68d631
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251629"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854718"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 
-EdmGen. exe je nástroj příkazového řádku, který se používá pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] práci s modelem a mapováním souborů. Pomocí nástroje EdmGen. exe můžete provést následující akce:
+EdmGen. exe je nástroj příkazového řádku, který se používá pro práci s modelem Entity Framework a mapováním souborů. Pomocí nástroje EdmGen. exe můžete provést následující akce:
 
-- Připojte se ke zdroji dat pomocí zdroje dat .NET Framework konkrétního poskytovatele dat a vygenerujte soubory koncepčního modelu (. CSDL), modelu úložiště (. ssdl) a mapování (. MSL), které jsou používány [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe.
+- Připojte se ke zdroji dat pomocí zdroje dat .NET Framework konkrétního poskytovatele dat a vygenerujte soubory koncepčního modelu (. CSDL), modelu úložiště (. ssdl) a mapování (. MSL), které jsou používány Entity Framework. Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe.
 
 - Ověří existující model. Další informace najdete v tématu [jak: K ověření modelu a souborů](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)mapování použijte EdmGen. exe.
 

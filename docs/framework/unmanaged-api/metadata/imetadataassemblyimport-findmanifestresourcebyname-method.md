@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bf61da362251577acadb83915404eba7508b3099
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aaaae5bda88d1fbc9949a080c5765127fd112bde
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905059"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855951"
 ---
 # <a name="imetadataassemblyimportfindmanifestresourcebyname-method"></a>IMetaDataAssemblyImport::FindManifestResourceByName – metoda
 Získá ukazatel na prostředek manifestu se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT FindManifestResourceByName (  
     [in]  LPCWSTR                szName,   
     [out] mdManifestResource     *ptkManifestResource  
@@ -38,22 +38,22 @@ HRESULT FindManifestResourceByName (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [in] Název prostředku.  
+ pro Název prostředku.  
   
  `ptkManifestResource`  
- [out] Pole používá k ukládání `mdManifestResource` tokeny metadat, z nichž každý představuje prostředku manifestu.  
+ mimo Pole použité k uložení `mdManifestResource` tokenů metadat, z nichž každý představuje prostředek manifestu.  
   
 ## <a name="remarks"></a>Poznámky  
- `FindManifestResourceByName` Metoda používá standardní pravidla náhradník modul common language runtime k vyřešení odkazů.  
+ `FindManifestResourceByName` Metoda používá ke zjišťování odkazů standardní pravidla zaměstnaná modulem CLR (Common Language Runtime).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

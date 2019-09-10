@@ -3,16 +3,16 @@ title: Vlastní šablony pro dotnet New
 description: Seznamte se s vlastními šablonami pro jakýkoli typ projektu nebo souborů .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: d513965a60416392fb8acd15c9f89c8af0ec7876
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: be49e28d3aa09c9b3a3cb169ca39ff817a062b8f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660589"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849846"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro dotnet New
 
-[.NET Core SDK](https://www.microsoft.com/net/download/core) obsahuje mnoho šablon, které jsou už nainstalované a připravené k použití. Příkaz není pouze způsobem použití šablony, ale také postup instalace a odinstalace šablon. [ `dotnet new` ](dotnet-new.md) Počínaje rozhraním .NET Core 2,0 můžete vytvořit vlastní šablony pro jakýkoli typ projektu, například aplikace, služby, nástroje nebo knihovny tříd. Můžete dokonce vytvořit šablonu, která bude vytvářet výstup jednoho nebo více nezávislých souborů, například konfiguračního souboru.
+[.NET Core SDK](https://dotnet.microsoft.com/download) obsahuje mnoho šablon, které jsou už nainstalované a připravené k použití. Příkaz není pouze způsobem použití šablony, ale také postup instalace a odinstalace šablon. [ `dotnet new` ](dotnet-new.md) Počínaje rozhraním .NET Core 2,0 můžete vytvořit vlastní šablony pro jakýkoli typ projektu, například aplikace, služby, nástroje nebo knihovny tříd. Můžete dokonce vytvořit šablonu, která bude vytvářet výstup jednoho nebo více nezávislých souborů, například konfiguračního souboru.
 
 Vlastní šablony můžete nainstalovat z balíčku NuGet v jakémkoli kanálu NuGet, odkazování na soubor NuGet *. nupkg* nebo zadáním adresáře systému souborů, který šablonu obsahuje. Modul šablon nabízí funkce, které umožňují nahradit hodnoty, zahrnout a vyloučit soubory a provádět vlastní operace zpracování při použití šablony.
 
@@ -22,7 +22,7 @@ Pokud chcete postupovat podle návodu a vytvořit šablonu, přečtěte si člá
 
 ### <a name="net-default-templates"></a>Výchozí šablony rozhraní .NET
 
-Při instalaci [.NET Core SDK](https://www.microsoft.com/net/download/core)obdržíte spoustu předdefinovaných šablon pro vytváření projektů a souborů, včetně konzolových aplikací, knihoven tříd, projektů testování částí, ASP.NET Corech aplikací (včetně [úhlů](https://angular.io/) a reagujících [](https://facebook.github.io/react/) projektů). a konfigurační soubory. Pokud chcete zobrazit seznam předdefinovaných šablon, spusťte `dotnet new` příkaz `-l|--list` s možností:
+Při instalaci [.NET Core SDK](https://dotnet.microsoft.com/download)obdržíte spoustu předdefinovaných šablon pro vytváření projektů a souborů, včetně konzolových aplikací, knihoven tříd, projektů testování částí, ASP.NET Corech aplikací (včetně [úhlů](https://angular.io/) a [reagujících](https://facebook.github.io/react/) projektů). a konfigurační soubory. Pokud chcete zobrazit seznam předdefinovaných šablon, spusťte `dotnet new` příkaz `-l|--list` s možností:
 
 ```console
 dotnet new --list
@@ -65,7 +65,7 @@ Soubor *template. JSON* je umístěný ve složce *. template. config* v kořeno
 
 #### <a name="example"></a>Příklad
 
-Tady je například složka šablony, která obsahuje dva soubory obsahu: *Console.cs* a Readme *. txt*. Všimněte si, že existuje požadovaná složka s názvem *. template. config* , která obsahuje soubor *template. JSON* .
+Tady je například složka šablony, která obsahuje dva soubory obsahu: *Console.cs* a *Readme. txt*. Všimněte si, že existuje požadovaná složka s názvem *. template. config* , která obsahuje soubor *template. JSON* .
 
 ```text
 └───mytemplate

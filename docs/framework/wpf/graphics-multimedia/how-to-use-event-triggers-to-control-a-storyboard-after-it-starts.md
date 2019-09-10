@@ -6,39 +6,42 @@ helpviewer_keywords:
 - event triggers [WPF], controlling Storyboards
 - Storyboards [WPF], controlling after start
 ms.assetid: 3b115594-6a93-4972-b24d-61aa16f1c15f
-ms.openlocfilehash: e0bc019ee361cba6a28ac573da3d2ee09e2168ed
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 32591edd065a8122b84ff14102f672ccf6001d67
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663302"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855858"
 ---
 # <a name="how-to-use-event-triggers-to-control-a-storyboard-after-it-starts"></a>Postupy: Použití aktivačních událostí pro řízení scénáře po spuštění
-Tento příklad ukazuje, jak řídit <xref:System.Windows.Media.Animation.Storyboard> po jeho spuštění. Spustit <xref:System.Windows.Media.Animation.Storyboard> pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte <xref:System.Windows.Media.Animation.BeginStoryboard>, který distribuuje animace objektů a vlastností animace a pak spustí scénáři. Pokud dáte <xref:System.Windows.Media.Animation.BeginStoryboard> název tak, že zadáte jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete to může ovládat scénáře. Pak můžete interaktivně ovládat scénáře po jeho spuštění.  
-  
- Použijte následující scénáře akce spolu s <xref:System.Windows.EventTrigger> objekty pro řízení scénáře.  
-  
-- <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénáři.  
-  
-- <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavenou scénáře.  
-  
-- <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní rychlost scénáře.  
-  
-- <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce doby výplň, má-li nějaký.  
-  
-- <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénáři.  
-  
-- <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odebere scénáři uvolnit prostředky.  
-  
-## <a name="example"></a>Příklad  
- Následující příklad používá akce může ovládat scénáře pro interaktivní řízení scénáře.  
-  
- **Poznámka:** Příklad scénáře řízení pomocí kódu najdete v tématu [řízení scénáře po jeho spuštění pomocí její interaktivní metody](how-to-control-a-storyboard-after-it-starts.md).  
-  
- [!code-xaml[timingbehaviors_snip#ControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/ControlStoryboardExample.xaml#controlstoryboardexampleusingwholepage)]  
-  
- Další příklady najdete v článku [animace příkladu Galerie](https://go.microsoft.com/fwlink/?LinkID=159969).  
-  
+
+Tento příklad ukazuje, jak ovládat <xref:System.Windows.Media.Animation.Storyboard> po jeho spuštění. Chcete-li <xref:System.Windows.Media.Animation.Storyboard> spustit [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]pomocí, použijte <xref:System.Windows.Media.Animation.BeginStoryboard>, který distribuuje animace do objektů a vlastností, které animuje, a poté spustí scénář. Pokud pojmenujete <xref:System.Windows.Media.Animation.BeginStoryboard> název zadáním jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnosti, provedete si ho jako ověřitelné scénář. Pak můžete interaktivní kontrolu scénáře po jeho spuštění.
+
+Použijte následující akce scénáře spolu s <xref:System.Windows.EventTrigger> objekty pro řízení scénáře.
+
+- <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénář.
+
+- <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavený scénář.
+
+- <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní rychlost scénáře.
+
+- <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Posune scénář na konec období jeho výplně, pokud má nějaký.
+
+- <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénář.
+
+- <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odstraní scénář, který uvolňuje prostředky.
+
+## <a name="example"></a>Příklad
+
+Následující příklad používá k interaktivnímu řízení scénáře možnosti ovladatelného scénáře.
+
+> [!NOTE]
+> Chcete-li zobrazit příklad řízení scénáře pomocí kódu, přečtěte si téma [řízení scénáře po spuštění pomocí interaktivních metod](how-to-control-a-storyboard-after-it-starts.md).
+
+[!code-xaml[timingbehaviors_snip#ControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/ControlStoryboardExample.xaml#controlstoryboardexampleusingwholepage)]
+
+Další příklady naleznete v [galerii příkladů animace](https://go.microsoft.com/fwlink/?LinkID=159969).
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Media.Animation.ResumeStoryboard>

@@ -2,23 +2,23 @@
 title: Požadavky na zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: d1fb104f336938cc83d53cae71a8132f9b648dc6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 1865afb384cfff41ede953c00f01cc96aea9a080
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248541"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854257"
 ---
 # <a name="security-considerations-entity-framework"></a>Požadavky na zabezpečení (Entity Framework)
-V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifické pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] vývoj, nasazování a spouštění aplikací. Měli byste také postupovat podle doporučení pro vytváření zabezpečených .NET Framework aplikací. Další informace najdete v tématu [Přehled zabezpečení](../security-overview.md).  
+Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění aplikací Entity Framework. Měli byste také postupovat podle doporučení pro vytváření zabezpečených .NET Framework aplikací. Další informace najdete v tématu [Přehled zabezpečení](../security-overview.md).  
   
 ## <a name="general-security-considerations"></a>Obecné požadavky na zabezpečení  
- Následující požadavky na zabezpečení platí pro všechny aplikace, které používají [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+ Následující požadavky na zabezpečení platí pro všechny aplikace, které používají Entity Framework.  
   
 #### <a name="use-only-trusted-data-source-providers"></a>Používejte pouze důvěryhodné zprostředkovatele zdrojů dat.  
  Aby mohl poskytovatel komunikovat se zdrojem dat, musí provést následující akce:  
   
-- Přijetí připojovacího řetězce z [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+- Příjem připojovacího řetězce z Entity Framework.  
   
 - Přeložte strom příkazů do nativního dotazovacího jazyka zdroje dat.  
   
@@ -27,7 +27,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
  Během operace přihlášení jsou informace, které jsou založeny na hesle uživatele, předány serveru přes síťové knihovny základního zdroje dat. Škodlivý zprostředkovatel může ukrást přihlašovací údaje uživatele, generovat škodlivé dotazy nebo manipulovat se sadou výsledků dotazu.  
   
 #### <a name="encrypt-your-connection-to-protect-sensitive-data"></a>Zašifrujte připojení pro ochranu citlivých dat.  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Nezpracovává přímo šifrování dat. Pokud uživatelé přistupují k datům přes veřejnou síť, měla by vaše aplikace vytvořit šifrované připojení ke zdroji dat, aby se zvýšilo zabezpečení. Další informace naleznete v dokumentaci týkající se zabezpečení pro váš zdroj dat. Zdroj dat SQL Server najdete v tématu [šifrování připojení k SQL Server](https://go.microsoft.com/fwlink/?LinkId=119544).  
+ Entity Framework nezpracovává přímo šifrování dat. Pokud uživatelé přistupují k datům přes veřejnou síť, měla by vaše aplikace vytvořit šifrované připojení ke zdroji dat, aby se zvýšilo zabezpečení. Další informace naleznete v dokumentaci týkající se zabezpečení pro váš zdroj dat. Zdroj dat SQL Server najdete v tématu [šifrování připojení k SQL Server](https://go.microsoft.com/fwlink/?LinkId=119544).  
   
 #### <a name="secure-the-connection-string"></a>Zabezpečte připojovací řetězec.  
  Ochrana přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečení aplikace. Připojovací řetězec představuje potenciální chybu zabezpečení, pokud není zabezpečena nebo pokud není správně vytvořena. Když ukládáte informace o připojení do prostého textu nebo je zachová v paměti, riskujete, že dojde k narušení celého systému. Níže jsou uvedené doporučené metody zabezpečení připojovacích řetězců:  
@@ -46,7 +46,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
   
 - Při dynamickém vytváření připojení použijte tvůrci připojovacích řetězců.  
   
-     Pokud je nutné sestavit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídu. Tato třída tvůrce řetězců pomáhá zabránit útokům prostřednictvím injektáže připojovacího řetězce pomocí ověření a uvozovacího neplatných vstupních informací. Další informace najdete v tématu [jak: Sestavte připojovací řetězec](how-to-build-an-entityconnection-connection-string.md)EntityConnection. Použijte také příslušnou třídu tvůrce řetězců k vytvoření připojovacího řetězce zdroje dat, který je součástí [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] připojovacího řetězce. Informace o sestavách připojovacích řetězců pro poskytovatele ADO.NET naleznete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
+     Pokud je nutné sestavit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídu. Tato třída tvůrce řetězců pomáhá zabránit útokům prostřednictvím injektáže připojovacího řetězce pomocí ověření a uvozovacího neplatných vstupních informací. Další informace najdete v tématu [jak: Sestavte připojovací řetězec](how-to-build-an-entityconnection-connection-string.md)EntityConnection. Použijte také příslušnou třídu tvůrce řetězců k vytvoření připojovacího řetězce zdroje dat, který je součástí připojovacího řetězce Entity Framework. Informace o sestavách připojovacích řetězců pro poskytovatele ADO.NET naleznete v tématu [tvůrci připojovacích řetězců](../connection-string-builders.md).  
   
  Další informace najdete v tématu [ochrana informací o připojení](../protecting-connection-information.md).  
   
@@ -63,7 +63,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
  Správce zdroje dat by měl uživatelům udělit jenom potřebná oprávnění. I když [!INCLUDE[esql](../../../../../includes/esql-md.md)] nepodporuje příkazy DML, které mění data, jako je například vložení, aktualizace nebo odstranění, uživatelé mají stále přístup k připojení ke zdroji dat. Uživatel se zlými úmysly může pomocí tohoto připojení spustit příkazy DML v nativním jazyce zdroje dat.  
   
 #### <a name="run-applications-with-the-minimum-permissions"></a>Spouštějte aplikace s minimálními oprávněními.  
- Pokud povolíte, aby se spravovaná aplikace spouštěla s oprávněním s úplným vztahem důvěryhodnosti, .NET Framework neomezuje přístup aplikace k vašemu počítači. To může v aplikaci umožnit ohrožení zabezpečení pro celý systém. Pro použití zabezpečení přístupu kódu a dalších mechanismů zabezpečení v .NET Framework byste měli spouštět aplikace pomocí oprávnění částečné důvěryhodnosti a s minimální sadou oprávnění, která jsou potřebná k tomu, aby aplikace mohla fungovat. Následující přístupová oprávnění kódu jsou minimální oprávnění, která vaše [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace potřebuje:  
+ Pokud povolíte, aby se spravovaná aplikace spouštěla s oprávněním s úplným vztahem důvěryhodnosti, .NET Framework neomezuje přístup aplikace k vašemu počítači. To může v aplikaci umožnit ohrožení zabezpečení pro celý systém. Pro použití zabezpečení přístupu kódu a dalších mechanismů zabezpečení v .NET Framework byste měli spouštět aplikace pomocí oprávnění částečné důvěryhodnosti a s minimální sadou oprávnění, která jsou potřebná k tomu, aby aplikace mohla fungovat. Následující přístupová oprávnění kódu jsou minimální oprávnění, která vaše Entity Framework aplikace potřebuje:  
   
 - <xref:System.Security.Permissions.FileIOPermission>: <xref:System.Security.Permissions.FileIOPermissionAccess.Write> pro otevření zadaných souborů metadat nebo <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery> pro hledání souborů metadat v adresáři.  
   
@@ -78,7 +78,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
  Další informace najdete v tématu [zabezpečení přístupu kódu a ADO.NET](../code-access-security.md).  
   
 #### <a name="do-not-install-untrusted-applications"></a>Neinstalujte nedůvěryhodné aplikace.  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Neuplatňuje žádná oprávnění zabezpečení a vyvolá libovolný uživatelem zadaný datový objekt v procesu bez ohledu na to, zda je důvěryhodný nebo nikoli. Ujistěte se, že úložiště dat a aplikace provádí ověřování a autorizaci klienta.  
+ Entity Framework nevynutila žádná oprávnění zabezpečení a vyvolá libovolný uživatelem zadaný datový objekt v procesu bez ohledu na to, zda je důvěryhodný nebo nikoli. Ujistěte se, že úložiště dat a aplikace provádí ověřování a autorizaci klienta.  
   
 #### <a name="restrict-access-to-all-configuration-files"></a>Omezte přístup ke všem konfiguračním souborům.  
  Správce musí omezit přístup pro zápis do všech souborů, které určují konfiguraci aplikace, včetně souborů enterprisesec. config, Security. config, Machine. conf a konfiguračního \< *souboru aplikace >* . exe. config.  
@@ -86,7 +86,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
  Neutrální název zprostředkovatele je v App. config upravitelný. Klientská aplikace musí převzít zodpovědnost za přístup k základnímu poskytovateli prostřednictvím modelu výroby standardního zprostředkovatele pomocí silného názvu.  
   
 #### <a name="restrict-permissions-to-the-model-and-mapping-files"></a>Omezte oprávnění k modelu a mapování souborů.  
- Správce musí omezit přístup pro zápis k modelu a mapování souborů (. edmx,. csdl,. ssdl a. MSL) pouze na uživatele, kteří mění model nebo mapování. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Pouze vyžaduje přístup pro čtení k těmto souborům v době běhu. Správce by měl také omezit přístup ke vrstvě objektů a předkompilovaným souborům zdrojového kódu zobrazení, které jsou generovány nástroji model EDM (Entity Data Model).  
+ Správce musí omezit přístup pro zápis k modelu a mapování souborů (. edmx,. csdl,. ssdl a. MSL) pouze na uživatele, kteří mění model nebo mapování. Entity Framework vyžaduje pouze přístup pro čtení těchto souborů v době běhu. Správce by měl také omezit přístup ke vrstvě objektů a předkompilovaným souborům zdrojového kódu zobrazení, které jsou generovány nástroji model EDM (Entity Data Model).  
   
 ## <a name="security-considerations-for-queries"></a>Otázky zabezpečení pro dotazy  
  Při dotazování konceptuálního modelu platí následující informace o zabezpečení. Tyto požadavky se vztahují [!INCLUDE[esql](../../../../../includes/esql-md.md)] na dotazy používající zprostředkovatele EntityClient a k vytváření dotazů na [!INCLUDE[esql](../../../../../includes/esql-md.md)]objekty pomocí metod Tvůrce dotazů LINQ, a.  
@@ -135,7 +135,7 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
  <xref:System.Data.Objects.ObjectContext> Sdílení s více než jednou aplikační doménou může vystavovat informace v připojovacím řetězci. Místo toho byste měli přenést Serializované objekty nebo grafy objektů do druhé domény aplikace a pak tyto objekty připojit k objektu <xref:System.Data.Objects.ObjectContext> v dané doméně aplikace. Další informace naleznete v tématu [serializace objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
 #### <a name="prevent-type-safety-violations"></a>Zabraňte narušení bezpečnosti typů.  
- Pokud je porušena bezpečnost typů, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] nemůže zaručit integritu dat v objektech. Pokud povolíte, aby nedůvěryhodné aplikace běžely s plně důvěryhodným zabezpečením přístupu ke kódu, mohlo by dojít k narušení bezpečnosti typů.  
+ V případě porušení zabezpečení typu Entity Framework nemůže zaručit integritu dat v objektech. Pokud povolíte, aby nedůvěryhodné aplikace běžely s plně důvěryhodným zabezpečením přístupu ke kódu, mohlo by dojít k narušení bezpečnosti typů.  
   
 #### <a name="handle-exceptions"></a>Zpracování výjimek.  
  Přístupové metody a vlastnosti <xref:System.Data.Objects.ObjectContext> v rámci bloku try-catch. Zachycování výjimek zabraňuje neošetřeným výjimkám při vystavení záznamů v <xref:System.Data.Objects.ObjectStateManager> modelu nebo informacích o modelu (například názvy tabulek) uživatelům vaší aplikace.  
@@ -145,13 +145,13 @@ V tomto tématu jsou popsány požadavky na zabezpečení, které jsou specifick
 Při práci s cestami v aplikacích ASP.NET byste měli vzít v úvahu následující:  
   
 #### <a name="verify-whether-your-host-performs-path-checks"></a>Ověřte, zda hostitel provádí kontroly cest.  
- Pokud je použit náhradní řetězec (uzavřenývsymbolechkanálu),ADO.NETověří,zdajepřeloženácestapodporována.`|DataDirectory|` Například znak ".." není povolen na pozadí `DataDirectory`. Tuto stejnou kontrolu pro vyřešení kořenového operátoru webové aplikace`~`() provádí proces hostující ASP.NET. Tato kontrolu provede služba IIS. hostitelé jiné než IIS ale nemusí ověřit, jestli je přeložená cesta podporovaná. Měli byste znát chování hostitele, na kterém nasazujete [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikaci.  
+ Pokud je použit náhradní řetězec (uzavřenývsymbolechkanálu),ADO.NETověří,zdajepřeloženácestapodporována.`|DataDirectory|` Například znak ".." není povolen na pozadí `DataDirectory`. Tuto stejnou kontrolu pro vyřešení kořenového operátoru webové aplikace`~`() provádí proces hostující ASP.NET. Tato kontrolu provede služba IIS. hostitelé jiné než IIS ale nemusí ověřit, jestli je přeložená cesta podporovaná. Měli byste znát chování hostitele, na kterém nasazujete Entity Framework aplikaci.  
   
 #### <a name="do-not-make-assumptions-about-resolved-path-names"></a>Nevytvářejte předpoklady o vyřešených názvech cest.  
- I když hodnoty, na které by kořenový operátor`~`() `DataDirectory` a náhradní řetězec by měly zůstat v době běhu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace konstantní, neomezuje hostitele v úpravách těchto hodnot.  
+ I když hodnoty, na které by kořenový operátor`~`() `DataDirectory` a náhradní řetězec by měly zůstat během modulu runtime aplikace konstantní, Entity Framework neomezuje hostitele na úpravu těchto hodnot.  
   
 #### <a name="verify-the-path-length-before-deployment"></a>Před nasazením ověřte délku cesty.  
- Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace byste měli zajistit, aby hodnoty kořenového operátoru (~) a `DataDirectory` náhradní řetězec nepřekročily omezení délky cesty v operačním systému. Poskytovatelé dat ADO.NET nezajistí, že délka cesty spadá do platných omezení.  
+ Před nasazením Entity Framework aplikace byste měli zajistit, aby hodnoty kořenového operátoru (~) a `DataDirectory` náhradní řetězec nepřekročily omezení délky cesty v operačním systému. Poskytovatelé dat ADO.NET nezajistí, že délka cesty spadá do platných omezení.  
   
 ## <a name="security-considerations-for-adonet-metadata"></a>Požadavky na zabezpečení pro metadata ADO.NET  
  Následující požadavky na zabezpečení platí při generování a práci s modelem a mapováním souborů.  

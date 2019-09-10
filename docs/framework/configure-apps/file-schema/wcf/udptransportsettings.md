@@ -2,19 +2,21 @@
 title: <udpTransportSettings>
 ms.date: 03/30/2017
 ms.assetid: 842d92e9-6199-4ec5-b2d1-58533054e1f0
-ms.openlocfilehash: ed87db92bcbfa0aa9016e36f391d707c5b17bf2b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb2ec84caa79f33e1e469592d0eca63d8f461dac
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934498"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854861"
 ---
 # <a name="udptransportsettings"></a>\<udpTransportSettings >
 Tento prvek konfigurace zveřejňuje nastavení přenosu UDP pro [ \<udpDiscoveryEndpoint >](udpdiscoveryendpoint.md).  
   
-\<system.ServiceModel>  
-\<Oddílu StandardEndpoints >  
-\<udpDiscoveryEndpoint>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<udpDiscoveryEndpoint >** ](udpdiscoveryendpoint.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<updTransportSettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

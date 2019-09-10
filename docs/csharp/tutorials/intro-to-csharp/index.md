@@ -3,12 +3,12 @@ title: Úvod k C# interaktivním kurzům
 description: Naučte C# se v prohlížeči a začněte s vlastním vývojovým prostředím.
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 65526dcf04525f3f2afb358a5b6289ff8bba7de8
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 1712e32175a95373ca85464bbdebed9ef99fb375
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015011"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850763"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
@@ -32,7 +32,7 @@ V tomto kurzu se předpokládá, že jste dokončili lekci [Hello World](hello-w
 
 Kurz [větvení a cyklů](branches-and-loops.yml) učí základy výběru různých cest ke spuštění kódu na základě hodnot uložených v proměnných. Naučíte se základy řízení toku, což je základem způsobu, jakým programy provádí rozhodnutí a výběr různých akcí. Tento kurz je také k dispozici [pro spuštění místně na vašem počítači](branches-and-loops-local.md).
 
-V tomto kurzu se předpokládá, že jste [ C# v](numbers-in-csharp.yml) lekci dokončili text [Hello World](hello-world.yml) a čísla.
+V tomto kurzu se předpokládá, že jste [v C# ](numbers-in-csharp.yml) lekci dokončili text [Hello World](hello-world.yml) a čísla.
 
 ## <a name="list-collectionlist-collectionyml"></a>[Kolekce seznamů](list-collection.yml)
 
@@ -45,4 +45,4 @@ V tomto kurzu se předpokládá, že jste dokončili výše uvedené lekce.
 Tento finální kurz je k dispozici pouze ke spuštění na vašem počítači pomocí vlastního místního vývojového prostředí a .NET Core.
 Vytvoříte konzolovou aplikaci a zobrazíte základní funkce orientované na objekty, které jsou součástí C# jazyka.
 
-V tomto kurzu se předpokládá, že jste dokončili online úvodní kurzy a nainstalovali jste [.NET Core SDK](https://www.microsoft.com/net/download) a [Visual Studio Code](https://code.visualstudio.com/).
+V tomto kurzu se předpokládá, že jste dokončili online úvodní kurzy a nainstalovali jste [.NET Core SDK](https://dotnet.microsoft.com/download) a [Visual Studio Code](https://code.visualstudio.com/).

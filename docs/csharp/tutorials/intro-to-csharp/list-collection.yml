@@ -1,28 +1,28 @@
 ### YamlMime:Tutorial
-title: Naučte se spravovat pomocí typ obecný seznam kolekcí dat
+title: Naučte se spravovat kolekce dat pomocí obecného typu seznamu.
 metadata:
-  title: Kolekce dat – Úvod do C# Interaktivní kurz
-  description: V tomto kurzu použijete prohlížeče interaktivně učit C#. Napíšete kód v C# a zobrazovat výsledky kompilace a spuštění prohlédnete přímo v prohlížeči.
+  title: Kolekce dat – Úvod k C# interaktivnímu kurzu
+  description: V tomto kurzu použijete prohlížeč pro interaktivní informace C# . Napíšete C# kód a zobrazíte výsledky kompilace a spuštění kódu přímo v prohlížeči.
   audience: Developer
   ms.custom: mvc
   ms.date: 10/23/2018
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 8ee13ec60f0504982c33ecc61940b731d320d2de
-  ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+  ms.openlocfilehash: 6dfbbbb6ef64b3dbb83d15ba66860acb7c5b3585
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/19/2019
-  ms.locfileid: "65880566"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850738"
 items:
 - durationInMinutes: 1
   content: >
-    V tomto kurzu se naučíte C# interaktivně, pomocí prohlížeče k zápisu C# kódu a zobrazovat výsledky kompilace a spuštění kódu. Obsahuje sérii lekcí, které vytvářet, upravovat a prozkoumejte kolekce a pole.
+    V tomto kurzu se interaktivně C# naučíte používat prohlížeč k psaní C# kódu a zobrazení výsledků kompilace a spuštění kódu. Obsahuje řadu lekcí, které vytvářejí, upravují a prozkoumávat kolekce a pole.
 - title: Vytváření seznamů
   durationInMinutes: 2
   content: >
-    Spusťte v interaktivním okně následující kód. K tomu, zadejte do interaktivního okna následující blok kódu (nahradit `<name>` s vaším jménem) a klikněte na tlačítko **spustit** tlačítka:
+    Spusťte následující kód v interaktivním okně. Uděláte to tak, že do interaktivního okna zadáte následující blok kódu ( `<name>` nahraďte ho názvem) a kliknete na tlačítko **Spustit** :
 
 
     ```csharp
@@ -38,25 +38,25 @@ items:
     ```
 
 
-    Jste vytvořili seznam řetězců, do tohoto seznamu přidal tři názvy a vytiskne názvy všechna písmena velká. Používáte koncepty, které jste se naučili v předchozích kurzech se ve smyčce prostřednictvím seznamu.
+    Vytvořili jste seznam řetězců, Přidali jste do tohoto seznamu tři názvy a vytiskli jste názvy všech velkých písmen. Pomocí konceptů, které jste se naučili v předchozích kurzech, Projděte seznam.
 
 
-    Kód k zobrazení názvů využívá [interpolace](../../language-reference/tokens/interpolated.md) funkce. Když předcházet `string` s `$` znak, můžete vložit kód jazyka C# v deklaraci řetězec. Aktuální řetězcovou nahradí hodnotu, kterou generuje tento kód jazyka C#. V tomto příkladu, nahradí `{name.ToUpper()}` s názvy jednotlivých převeden na velká písmena, protože jste volali <xref:System.String.ToUpper%2A?displayProperty=nameWithType> metody.
+    Kód pro zobrazení názvů využívá funkci [interpolace řetězce](../../language-reference/tokens/interpolated.md) . Pokud předcházíte `string` `$` znak, můžete vložit C# kód do deklarace řetězce. Skutečný řetězec nahradí tento C# kód hodnotou, kterou generuje. V tomto příkladu nahrazuje `{name.ToUpper()}` název s každým názvem převedenými na velká písmena, protože jste <xref:System.String.ToUpper%2A?displayProperty=nameWithType> volali metodu.
 
 
-    Umožňuje pokračovat v prozkoumávání služby.
+    Pojďme si to prozkoumat.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Změna seznamu obsahu
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Upravit obsah seznamu
   durationInMinutes: 3
   content: >
-    Kolekce, které jste vytvořili, používá <xref:System.Collections.Generic.List%601> typu. Tento typ ukládá sekvencí prvků. Můžete zadat typ prvků mezi ostrých závorek.
+    Kolekce, kterou jste vytvořili, <xref:System.Collections.Generic.List%601> používá typ. Tento typ ukládá sekvence prvků. Zadejte typ prvků mezi lomenými závorkami.
 
 
-    Jeden důležitý aspekt jazyka to <xref:System.Collections.Generic.List%601> typ je, že se může zvětšovat nebo zmenšovat, umožňuje přidat nebo odebrat prvky. Zobrazí se výsledky tak, že upravíte obsah po zobrazíte jeho obsah. Přidejte následující kód pod kód, který jste už zadali (pod smyčky, která vytiskne obsah):
+    Jedním z důležitých aspektů <xref:System.Collections.Generic.List%601> tohoto typu je, že může být zvětšen nebo zmenšen, což umožňuje přidat nebo odebrat prvky. Výsledky můžete zobrazit úpravou obsahu po zobrazení jeho obsahu. Pod kód, který jste už napsali, přidejte následující kód (pod smyčkou, která obsah vytiskne):
 
 
     ```csharp
@@ -78,10 +78,10 @@ items:
     ```
 
 
-    Přidání další dva názvy do konce seznamu. Můžete rovněž jsme odstranili jeden také. Výstup z tohoto bloku kódu zobrazí počáteční obsah, a potom zobrazí prázdný řádek a nový obsah.
+    Přidali jste dva další názvy na konec seznamu. Také jste odebrali i jednu z nich. Výstup z tohoto bloku kódu ukazuje počáteční obsah a pak vytiskne prázdný řádek a nový obsah.
 
 
-    <xref:System.Collections.Generic.List%601> Umožňuje odkazovat na jednotlivé položky podle **index** také. Přístup pomocí položky `[` a `]` tokeny. Přidejte následující kód pod již jste napsali a vyzkoušejte si to:
+    Umožňuje také odkazovat na jednotlivé položky podle **indexu.** <xref:System.Collections.Generic.List%601> Přistupujete k položkám `]` pomocí `[` tokenů a. Níže vložte následující kód, který jste už napsali, a zkuste to:
 
 
     ```csharp
@@ -93,7 +93,7 @@ items:
     ```
 
 
-    Nemáte oprávnění k přístupu za koncem seznamu. Můžete zkontrolovat, jak dlouho je pomocí seznamu <xref:System.Collections.Generic.List%601.Count%2A> vlastnost. Přidejte následující kód můžete vyzkoušet:
+    Nemáte oprávnění k přístupu za konec seznamu. Můžete zjistit, jak dlouho seznam používá <xref:System.Collections.Generic.List%601.Count%2A> vlastnost. Přidejte následující kód, který si ho můžete vyzkoušet:
 
 
     ```csharp
@@ -103,16 +103,16 @@ items:
     ```
 
 
-    Klikněte na tlačítko **spustit** znovu, abyste viděli výsledek. V jazyce C#, indexy začínají hodnotou 0, největší platný index je jeden menší než počet položek v seznamu.
+    Kliknutím na tlačítko **Spustit** znovu zobrazíte výsledky. V C#se indexy začínají na 0, takže největší platný index je jeden menší než počet položek v seznamu.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Vyhledávání a řazení seznamy
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Hledání a řazení seznamů
   durationInMinutes: 5
   content: >
-    Naše ukázky používat poměrně krátké seznamy, ale vaše aplikace může často vytvořit seznamy s mnoha další prvky, někdy číslování v tisících. Najít prvky v těchto kolekcích větší, budete muset pro různé položky v seznamu vyhledejte. <xref:System.Collections.Generic.List%601.IndexOf%2A> Metoda vyhledá položku a vrátí index položky. Vyzkoušejte ho, abyste viděli, jak to funguje.  Přidejte následující kód níže, co jste napsali zatím:
+    Naše ukázky používají relativně malé seznamy, ale vaše aplikace často můžou vytvářet seznamy s mnoha více prvky, někdy se číslování v tisících. Chcete-li najít prvky v těchto větších kolekcích, je nutné hledat v seznamu různé položky. <xref:System.Collections.Generic.List%601.IndexOf%2A> Metoda vyhledá položku a vrátí index položky. Zkuste zjistit, jak to funguje.  Pod to, co jste napsali, přidejte následující kód:
 
 
     ```csharp
@@ -127,10 +127,10 @@ items:
     ```
 
 
-    Nemusí vědět, pokud je určitá položka v seznamu, abyste měli vždy zkontrolujte index vrácený <xref:System.Collections.Generic.List%601.IndexOf%2A>. Pokud je hodnota -1, položka nebyla nalezena.
+    Nesmíte zjistit, jestli je položka v seznamu, takže byste měli vždycky kontrolovat index vrácený funkcí <xref:System.Collections.Generic.List%601.IndexOf%2A>. Pokud je-1, položka nebyla nalezena.
 
 
-    Také lze seřadit položky v seznamu. <xref:System.Collections.Generic.List%601.Sort%2A> Metoda seřadí všechny položky v seznamu v jejich normálním pořadí (podle abecedy. v případě řetězce). Přidejte tento kód a znovu spusťte:
+    Položky v seznamu lze seřadit také. <xref:System.Collections.Generic.List%601.Sort%2A> Metoda seřadí všechny položky v seznamu v normálním pořadí (abecedně v případě řetězců). Přidejte tento kód a spusťte ho znovu:
 
 
     ```csharp
@@ -148,11 +148,11 @@ items:
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Jiné typy seznamů
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Seznamy dalších typů
   durationInMinutes: 5
   content: >
-    Zatím jste používali `string` typ v seznamech doposud. Vytvoříme <xref:System.Collections.Generic.List%601> pomocí jiného typu. Vytvořme sady čísel. Odstranit kód, který jste zatím napsali a nahraďte ji následujícím kódem:
+    V seznamu zatím jste používali `string` typ v seznamech. <xref:System.Collections.Generic.List%601> Pojďme použít jiný typ. Pojďme sestavit sadu čísel. Odstraňte kód, který jste dosud napsali, a nahraďte ho následujícím kódem:
 
 
     ```csharp
@@ -162,7 +162,7 @@ items:
     ```
 
 
-    Který vytvoří seznam celých čísel a nastaví prvních dvou celých čísel na hodnotu 1. *Fibonacciho pořadí*, sekvenci čísel, začíná dvěma 1s. Každé další číslo Fibonacciho nenajde provedením součtu předchozích dvou čísel. Přidejte tento kód:
+    Vytvoří seznam celých čísel a nastaví první dvě celá čísla na hodnotu 1. *Sekvence Fibonacci sekvence*čísel začíná dvěma 1. Každé další Fibonacci číslo se zjistí tak, že se vybere součet předchozích dvou čísel. Přidejte tento kód:
 
 
     ```csharp
@@ -180,25 +180,25 @@ items:
     ```
 
 
-    Stisknutím klávesy **spustit** zobrazíte výsledky;
+    Výsledky zobrazíte stisknutím klávesy **Run** .
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Výzvy
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Výzev
   durationInMinutes: 10
   content: >
-    Zobrazit, pokud můžete umístit společně některé koncepty z tohoto a dříve lekce. Rozbalte na co začlenění zatím Fibonacciho čísly. Vyzkoušejte a napsat kód pro vytvoření prvních 20 čísel v sekvenci. (Jako pomocného parametru, je 20. prosincem Fibonacciho číslo 6765.)
+    Podívejte se, jestli můžete některé z konceptů spojit z tohoto a předchozích lekcí. Rozhlaste se podle toho, co jste zatím vytvořili s Fibonacci čísly. Zkuste a napište kód, který vygeneruje prvních 20 čísel v sekvenci. (Jako pomocný parametr se jedná o 20 Fibonacci číslo 6765.)
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Dokončení výzvy
   durationInMinutes: 3
   content: >
-    Napsali jste kód podobný tomuto?
+    Pracovali jste s podobným způsobem?
 
 
     ```csharp
@@ -220,20 +220,20 @@ items:
     ```
 
 
-    S každou iterací smyčky přenášíte posledních dvou celých čísel v seznamu je sčítání a přidáte tuto hodnotu do seznamu. Smyčka se opakuje dokud nepřidáte 20 položek do seznamu.
+    V každé iteraci smyčky přebíráte poslední dvě celá čísla v seznamu, sečtete je a přidáte tuto hodnotu do seznamu. Smyčka se opakuje, dokud do seznamu nepřidáte 20 položek.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >-
-    Dokončili jste kurz interaktivní seznamu. Který je posledním Úvod do C# interaktivního kurzu. Můžete přejít [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů k sestavení projektů na vašem počítači.
+    Dokončili jste kurz interaktivního seznamu. To je finální Úvod k C# interaktivnímu kurzu. Můžete navštívit [Web .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na svém počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
 
-    Další informace o [kolekcí .NET](../../../standard/collections/index.md) v následujících článcích:
+    Další informace o [kolekcích .NET](../../../standard/collections/index.md) najdete v následujících článcích:
 
     - [Výběr typu kolekce](../../../standard/collections/selecting-a-collection-class.md)
 
     - [Běžně používané typy kolekcí](../../../standard/collections/commonly-used-collection-types.md)
 
-    - [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)
+    - [Kdy použít obecné kolekce](../../../standard/collections/when-to-use-generic-collections.md)

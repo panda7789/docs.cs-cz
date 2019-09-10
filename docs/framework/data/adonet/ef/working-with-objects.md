@@ -2,14 +2,14 @@
 title: Práce s objekty
 ms.date: 03/30/2017
 ms.assetid: 338d8a55-05cc-46b0-bbb8-1379d77068e9
-ms.openlocfilehash: ad6288b3b6ceabb419d88da9ff81abec177f55d2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e6e50c5df4ea95447e50f0503809a768600ab278
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667273"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854217"
 ---
 # <a name="working-with-objects"></a>Práce s objekty
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje dotazu, vložení, aktualizace a odstranění dat, která je vyjádřena jako zadaný common language runtime (CLR) objekty, které jsou instancemi typů entit. Typ entity představují entity definované v konceptuálním modelu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Mapuje entit a vztahů, které jsou definované v konceptuálním modelu na zdroji dat. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Poskytuje funkce pro postupujte takto: sloučit data vrácená ze zdroje dat jako objektů; sledování změn, které byly provedeny na objekty; zpracování souběžnosti; objekt změny zpět do zdroje dat; a vytvoření vazby objektů k ovládacím prvkům.  
+Entity Framework umožňuje dotazovat, vkládat, aktualizovat a odstraňovat data, která se vyjadřují jako typové objekty modulu CLR (Common Language Runtime), které jsou instancemi typů entit. Typy entit reprezentují entity definované v koncepčním modelu. Entity Framework mapuje entity a vztahy, které jsou definovány v koncepčním modelu na zdroj dat. Entity Framework poskytuje vybavení pro následující akce: vyhodnotit data vrácená ze zdroje dat jako objekty; sledovat změny provedené v objektech; zpracování souběžnosti; rozšířit změny objektů zpět do zdroje dat; a vázání objektů k ovládacím prvkům.  
   
- Další informace o práci s objekty v nejnovější verzi rozhraní Entity Framework naleznete [práce s objekty](https://go.microsoft.com/fwlink/?LinkId=235289).
+ Další informace o práci s objekty v nejnovější verzi Entity Framework najdete v tématu [práce s objekty](https://go.microsoft.com/fwlink/?LinkId=235289).

@@ -2,12 +2,12 @@
 title: Tvar stromu příkazů
 ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-ms.openlocfilehash: a3568f3deeaeeb31b69b41ac7c767001b792a8eb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8368354049a77a56a5aa54ab500619576f41b0dc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248225"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854260"
 ---
 # <a name="the-shape-of-the-command-trees"></a>Tvar stromu příkazů
 
@@ -17,7 +17,7 @@ Modul SQL Generation je zodpovědný za generování dotazu SQL specifického pr
 
 Strom příkazů dotazu je reprezentace objektového modelu dotazu. Stromy příkazů dotazu slouží dvěma účelům:
 
-- Pro vyjádření vstupního dotazu, který je určen [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]pro.
+- Pro vyjádření vstupního dotazu, který je určen pro Entity Framework.
 
 - Aby bylo možné vyjádřit výstupní dotaz, který je dán poskytovateli, a popisuje dotaz na back-end.
 
@@ -25,7 +25,7 @@ Stromy příkazů dotazů podporují bohatší sémantiku než dotazy kompatibil
 
 Vlastnost DBQueryCommandTree. Query je kořenem stromu výrazu, který popisuje logiku dotazu. Vlastnost DBQueryCommandTree. Parameters obsahuje seznam parametrů, které se používají v dotazu. Strom výrazu se skládá z objektů DbExpression.
 
-Objekt DbExpression představuje některé výpočty. K dispozici je [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] několik druhů výrazů pro vytváření výrazů pro dotaz, včetně konstant, proměnných, funkcí, konstruktorů a standardních relačních operátorů, jako je filtr a spojení. Každý objekt DbExpression má vlastnost ResultType, která představuje typ výsledku vytvořeného tímto výrazem. Tento typ je vyjádřený jako TypeUsage.
+Objekt DbExpression představuje některé výpočty. K dispozici Entity Framework je několik druhů výrazů pro vytváření výrazů dotazů, včetně konstant, proměnných, funkcí, konstruktorů a standardních relačních operátorů, jako je filtr a spojení. Každý objekt DbExpression má vlastnost ResultType, která představuje typ výsledku vytvořeného tímto výrazem. Tento typ je vyjádřený jako TypeUsage.
 
 ## <a name="shapes-of-the-output-query-command-tree"></a>Tvary stromu příkazů pro výstupní dotaz
 
@@ -75,7 +75,7 @@ Lze předat následující typy funkcí:
 
 - Uživatelsky definované funkce.
 
-Kanonické funkce (viz [kanonické funkce](./language-reference/canonical-functions.md) pro další informace) jsou určeny jako součást [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]a poskytovatelé by měli poskytovat implementace pro kanonické funkce na základě těchto specifikací. Funkce úložiště jsou založeny na specifikacích v příslušném manifestu zprostředkovatele. Uživatelsky definované funkce jsou založeny na specifikacích ve SSDL.
+Kanonické funkce (viz [kanonické funkce](./language-reference/canonical-functions.md) pro další informace) jsou určeny jako součást Entity Framework a poskytovatelé by měli poskytovat implementace pro kanonické funkce na základě těchto specifikací. Funkce úložiště jsou založeny na specifikacích v příslušném manifestu zprostředkovatele. Uživatelsky definované funkce jsou založeny na specifikacích ve SSDL.
 
 Také funkce s atributem NiladicFunction nemají žádné argumenty a měly by být přeloženy bez závorek na konci.  To znamená pro  *\<funkci*  *\<> místo funkce > ()* .
 

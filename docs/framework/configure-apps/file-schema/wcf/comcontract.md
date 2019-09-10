@@ -2,18 +2,20 @@
 title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: ef980c86efad4fda86cf62148e50688fd22afe49
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b499294af71ba230dcf985d4af1d013b1ca260cf
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926092"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850025"
 ---
 # <a name="comcontract"></a>\<comContract>
 Určuje kontrakt služby integrace modelu COM+.  
   
- \<system.ServiceModel>  
-\<comContracts>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Konfigurační oddíl comContracts >** ](comcontracts.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<comContract >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +51,7 @@ Určuje kontrakt služby integrace modelu COM+.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|dodavatele|Řetězec, který obsahuje typ kontraktu.|  
+|Dodavatele|Řetězec, který obsahuje typ kontraktu.|  
 |name|Řetězec, který obsahuje název kontraktu.|  
 |– obor názvů|Řetězec, který obsahuje obor názvů kontraktu.|  
 |requiresSession|Logická hodnota určující, zda lze kontrakt použít pouze pro vazby s relacemi. Po inicializaci služby Integration runtime zajistí, že toto nastavení je konzistentní s typem vazby, která se má použít. Výjimka je vygenerována v případě, že jedna nebo více vazeb pro kontrakt jsou v konfliktu. Pokud je `false`Tato vlastnost a používá se jednosměrný kanál a existují parametry [out], vygeneruje se taky výjimka.|  

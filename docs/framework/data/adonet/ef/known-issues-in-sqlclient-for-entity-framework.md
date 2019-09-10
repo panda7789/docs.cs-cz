@@ -2,12 +2,12 @@
 title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 5c0b7c32e00a0cc90367a559a41f5a7ab59a33a4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 18e3ad59af4014086bd475815011b6008bcb5052
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251393"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854547"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy týkající se .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient).  
@@ -43,7 +43,7 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
 ```  
   
 ## <a name="targeting-the-correct-sql-server-version"></a>Cílení na správnou verzi SQL Server  
- Cílí na dotaz Transact-SQL na základě verze SQL Server, která je zadána `ProviderManifestToken` v atributu schématu elementu v souboru modelu úložiště (. ssdl). [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Tato verze se může lišit od verze samotného SQL Server, ke které jste se připojili. Například pokud používáte SQL Server 2005, ale `ProviderManifestToken` atribut je nastaven na 2008, vygenerovaný dotaz Transact-SQL se nemusí na serveru spustit. Například dotaz, který používá nové typy data a času, které byly představeny v SQL Server 2008, nebude proveden v dřívějších verzích SQL Server. Pokud používáte SQL Server 2005, ale váš `ProviderManifestToken` atribut je nastaven na 2000, vygenerovaný dotaz Transact-SQL může být méně optimalizovaný nebo se může zobrazit výjimka, která říká, že dotaz není podporován. Další informace najdete v části různé a vnější operátory použití výše v tomto tématu.  
+ Entity Framework cílí na dotaz Transact-SQL na základě SQL Server verze, která je zadána v `ProviderManifestToken` atributu schématu elementu v souboru modelu úložiště (. ssdl). Tato verze se může lišit od verze samotného SQL Server, ke které jste se připojili. Například pokud používáte SQL Server 2005, ale `ProviderManifestToken` atribut je nastaven na 2008, vygenerovaný dotaz Transact-SQL se nemusí na serveru spustit. Například dotaz, který používá nové typy data a času, které byly představeny v SQL Server 2008, nebude proveden v dřívějších verzích SQL Server. Pokud používáte SQL Server 2005, ale váš `ProviderManifestToken` atribut je nastaven na 2000, vygenerovaný dotaz Transact-SQL může být méně optimalizovaný nebo se může zobrazit výjimka, která říká, že dotaz není podporován. Další informace najdete v části různé a vnější operátory použití výše v tomto tématu.  
   
  Určité chování databáze závisí na úrovni kompatibility nastavené na databázi. Pokud je `ProviderManifestToken` atribut nastavený na 2005 a vaše verze SQL Server je 2005, ale úroveň kompatibility databáze je nastavená na "80" (SQL Server 2000), vygenerovaná procedura Transact-SQL bude cílena na SQL Server 2005, ale nemusí se spouštět podle očekávání z důvodu nastavení úrovně kompatibility. Například může dojít ke ztrátě informací o řazení, pokud název sloupce v seznamu ORDER BY odpovídá názvu sloupce v selektoru.  
   
@@ -57,7 +57,7 @@ SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2
 ```  
   
 ## <a name="server-generated-guid-identity-values"></a>Vygenerované hodnoty identity GUID serveru  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Podporuje hodnoty identity typu GUID generované serverem, ale poskytovatel musí po vložení řádku podporovat vrácení hodnoty identity vygenerované serverem. Počínaje SQL Server 2005 můžete vrátit typ GUID generovaný serverem v databázi SQL Server prostřednictvím [klauzule OUTPUT](https://go.microsoft.com/fwlink/?LinkId=169400) .  
+ Entity Framework podporuje hodnoty identity typu GUID vygenerované serverem, ale poskytovatel musí podporovat návrat hodnoty identity generované serverem po vložení řádku. Počínaje SQL Server 2005 můžete vrátit typ GUID generovaný serverem v databázi SQL Server prostřednictvím [klauzule OUTPUT](https://go.microsoft.com/fwlink/?LinkId=169400) .  
   
 ## <a name="see-also"></a>Viz také:
 

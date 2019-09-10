@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4092d8694bdb896db1332bd73afae3f62bba36cf
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 808f0f8ac6caf15be0bf1ba8735521871c9b94d7
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105915"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851597"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Balení a nasazení prostředků v aplikacích .NET
 
@@ -176,13 +176,13 @@ Volitelně můžete odebrat prostředky z hlavního sestavení a určit, že mod
 
 Následující příklad .NET Framework používá <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k uložení záložních prostředků aplikace do satelitního sestavení pro jazyk francouzštiny (`fr`). V příkladu jsou dva textové soubory prostředků, které definují jeden řetězec řetězce s názvem `Greeting`. První, Resources. fr. txt obsahuje prostředek francouzského jazyka.
 
-```
+```text
 Greeting=Bon jour!
 ```
 
 Druhý, Resources, ru. txt, obsahuje prostředek ruského jazyka.
 
-```
+```text
 Greeting=Добрый день
 ```
 
@@ -223,7 +223,7 @@ Vzhledem k tomu, že v hlavním sestavení nejsou vloženy žádné prostředky,
 
 Pokud spustíte příklad ze systému, jehož jazyk je jiný než ruština, zobrazí se následující výstup:
 
-```
+```output
 Bon jour!
 ```
 

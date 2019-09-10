@@ -2,21 +2,22 @@
 title: <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 78918102-2898-46e0-9ea8-6b8afe65603e
-ms.openlocfilehash: 059ea4e637ab906d1fde9807a73ac8341f81c574
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9b3ed6b39f1743249925d5b6d9a47845c87983bc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926414"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850204"
 ---
 # <a name="baseaddresses"></a>\<baseAddresses>
 Představuje kolekci `baseAddress` prvků, které jsou základními adresami hostitele služby v prostředí s místním hostováním. Pokud je k dispozici základní adresa, lze koncovým bodům nakonfigurovat adresy relativní vzhledem k základní adrese.  
   
- \<system.ServiceModel>  
-\<> klienta  
-\<endpoint>  
-\<host>  
-\<baseAddresses>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služeb**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služby**](service.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> hostitele**](host.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Adres BaseAddresses >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

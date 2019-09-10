@@ -3,12 +3,12 @@ title: 'Postupy: Povolení WIF pro aplikaci webové služby WCF'
 ms.date: 03/30/2017
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 author: BrucePerlerMS
-ms.openlocfilehash: b9fa1f815a962adc0b3c91177021788734b92bb6
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 809009642caf743f4f067591adfa63ccb154a577
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041447"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851530"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Postupy: Povolení WIF pro aplikaci webové služby WCF
 ## <a name="applies-to"></a>Platí pro
@@ -79,7 +79,7 @@ V tomto kroku vytvoříte novou službu WCF používající službu STS pro výv
 
 5. V části **Průzkumník řešení**klikněte pravým tlačítkem na projekt **TestService** a pak vyberte **Identita a přístup**.
 
-6. Zobrazí se okno **Identita a přístup** . Včásti poskytovatelé vyberte **test aplikace pomocí místní služby tokenů pro vývoj**a pak klikněte na **použít**. Nástroj identity and Access nakonfiguruje službu tak, aby používala WIF, a k místnímu ověřování STS (**LocalSTS**), a to přidáním elementů konfigurace do souboru *Web. config* .
+6. Zobrazí se okno **Identita a přístup** . V části **poskytovatelé**vyberte **test aplikace pomocí místní služby tokenů pro vývoj**a pak klikněte na **použít**. Nástroj identity and Access nakonfiguruje službu tak, aby používala WIF, a k místnímu ověřování STS (**LocalSTS**), a to přidáním elementů konfigurace do souboru *Web. config* .
 
 7. V souboru *Service1.svc.cs* přidejte `using` direktivu pro obor názvů **System. Security. Claims** a nahraďte stávající kód následujícím kódem a poté soubor uložte:
 
@@ -245,7 +245,7 @@ V tomto kroku otestujete aplikaci WCF s podporou technologie WIF a ověříte
 
 2. Stiskněte klávesu **ENTER**a v konzole nástroje by se měly zobrazit následující informace o deklaracích:
 
-    ```
+    ```output
     Computed by Service1
     Input received from client: Hello World
     Client Name: Terry

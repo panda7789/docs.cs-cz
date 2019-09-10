@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: b4ea05b0112af4c1dcb6308a08ab3b31c586fbe8
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 17d54210d7abc16fe91fa94f39a8f85eac866088
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790865"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854182"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)][!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] používá k vystavení dat jako informačního kanálu. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál Atom, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu pro serializaci dat, jako jsou například entity a relace, do formátu XML, který lze zahrnout do textu zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [OData: Formát](https://go.microsoft.com/fwlink/?LinkID=185794)Atom.  
@@ -31,7 +31,7 @@ ms.locfileid: "70790865"
 > Když definujete vlastní kanály, musíte zaručit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [projekce dotazů](query-projections-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Přizpůsobení informačních kanálů pomocí poskytovatele Entity Framework  
- Datový model, který se používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] u poskytovatele, je v souboru. edmx reprezentován jako XML. V tomto případě jsou atributy, které definují vlastní kanály, přidány do `EntityType` prvků a `Property` , které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definované [v \[MC-\]CSDL: Definiční formát](https://go.microsoft.com/fwlink/?LinkId=159072)definičního souboru schématu, což je formát [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] , který poskytovatel používá k definování datového modelu. Proto je nutné deklarovat atributy přizpůsobení kanálu v konkrétním oboru názvů schématu, který je definován jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment kódu XML ukazuje atributy přizpůsobení informačního kanálu `Property` aplikované na `Products` prvky typu `ProductName`entity, které definují `ReorderLevel`vlastnosti, `UnitsInStock` a.  
+ Datový model používaný u poskytovatele Entity Framework je v souboru. edmx reprezentován jako XML. V tomto případě jsou atributy, které definují vlastní kanály, přidány do `EntityType` prvků a `Property` , které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definované [v \[MC-\]CSDL: Definiční formát](https://go.microsoft.com/fwlink/?LinkId=159072)definičního souboru schématu, což je formát, který poskytovatel Entity Framework používá k definování datového modelu. Proto je nutné deklarovat atributy přizpůsobení kanálu v konkrétním oboru názvů schématu, který je definován jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment kódu XML ukazuje atributy přizpůsobení informačního kanálu `Property` aplikované na `Products` prvky typu `ProductName`entity, které definují `ReorderLevel`vlastnosti, `UnitsInStock` a.  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedattributes)]  
   

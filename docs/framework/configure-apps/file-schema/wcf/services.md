@@ -2,12 +2,12 @@
 title: <services>
 ms.date: 03/30/2017
 ms.assetid: 80d76ba9-2058-48ad-9b91-5e4be7e5c113
-ms.openlocfilehash: 1f9cb6c95fa14a5b8a55cc561699e2a07e1dc80c
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 02d1d530f37f5082153c9aa6b9993fc4009917f5
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399587"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854975"
 ---
 # <a name="services"></a>\<> služeb
 Služby jsou definovány v `services` části konfiguračního souboru. Každá služba má vlastní `service` konfigurační oddíl.  
@@ -15,6 +15,7 @@ Služby jsou definovány v `services` části konfiguračního souboru. Každá 
 [ **\<> Konfigurace**](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<> služeb**  
+  
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

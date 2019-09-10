@@ -9,299 +9,324 @@ helpviewer_keywords:
 - syntax [WPF], Storyboard
 - timelines [WPF]
 ms.assetid: 1a698c3c-30f1-4b30-ae56-57e8a39811bd
-ms.openlocfilehash: 41f8ec79eecf47e9caeb5bf1411e17211c32a410
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4d5a5ee3f1fcbd09fad9e25773d0e508209e1492
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663285"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855835"
 ---
 # <a name="storyboards-overview"></a>Přehled scénářů
-Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboard> objekty k uspořádání a použití animací. Popisuje, jak interaktivně pracovat s <xref:System.Windows.Media.Animation.Storyboard> objektů a popisuje nepřímé vlastnost cílení na syntaxi.  
-  
-<a name="prerequisites"></a>   
-## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, byste měli vědět, jak jiné typy a jejich základní funkce. Úvod do animace, najdete v článku [přehled animace](animation-overview.md). By měl také vědět, jak používat připojené vlastnosti. Další informace o přidružené vlastnosti, najdete v článku [přehled připojených vlastností](../advanced/attached-properties-overview.md).  
-  
-<a name="whatisatimeline"></a>   
-## <a name="what-is-a-storyboard"></a>Co je scénáře?  
- Animace nejsou užitečné typu časové osy. Pomoci vám organizovat nastaví časové osy a chcete použít časové osy pro vlastnosti jsou k dispozici další třídy časové osy. Časové osy kontejneru odvozovat <xref:System.Windows.Media.Animation.TimelineGroup> třídy a zahrnují <xref:System.Windows.Media.Animation.ParallelTimeline> a <xref:System.Windows.Media.Animation.Storyboard>.  
-  
- A <xref:System.Windows.Media.Animation.Storyboard> k typu časové osy kontejneru, který obsahuje cílení informace o časových os obsahuje. Scénář může obsahovat jakýkoli typ <xref:System.Windows.Media.Animation.Timeline>, včetně jiné časové osy kontejneru a animace. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují kombinovat časové osy, které ovlivňují celou řadu objektů a vlastností do stromu jediné časové osy, usnadňuje k uspořádání a řízení chování komplexní časování. Předpokládejme například, že chcete tlačítko, které nemá tyto tři věci.  
-  
-- Růst a měnit barvy, když uživatel vybere tlačítko.  
-  
-- Zmenšit okamžitě a pak zpátky na původní velikost při kliknutí na.  
-  
-- Zmenšit a má vyblednout krytí 50 procent, když bude zakázáno.  
-  
- V takovém případě máte víc kopií animace, které se vztahují ke stejnému objektu a chcete přehrát v různou dobu, závisí na stav tlačítka. <xref:System.Windows.Media.Animation.Storyboard> objekty umožňují organizovat animace a použít je ve skupinách na jeden nebo více objektů.  
-  
-<a name="wherecanyouuseastoryboard"></a>   
-## <a name="where-can-you-use-a-storyboard"></a>Kde můžete použít ve scénáři?  
- A <xref:System.Windows.Media.Animation.Storyboard> můžete použít pro animaci vlastnosti závislosti animovatelné tříd (Další informace o co dělá z třídy animovatelné, najdete v článku [přehled animace](animation-overview.md)). Však storyboarding je funkcí úrovni architektury, objekt musí být <xref:System.Windows.NameScope> z <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>.  
-  
- Například můžete použít <xref:System.Windows.Media.Animation.Storyboard> můžete provádět následující:  
-  
-- Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány na pozadí tlačítka (typ <xref:System.Windows.FrameworkElement>),  
-  
-- Animace <xref:System.Windows.Media.SolidColorBrush> (Non-framework prvek), která jsou vykreslovány výplně <xref:System.Windows.Media.GeometryDrawing> (Non-framework element) zobrazí pomocí <xref:System.Windows.Controls.Image> (<xref:System.Windows.FrameworkElement>).  
-  
-- V kódu, animace <xref:System.Windows.Media.SolidColorBrush> deklarovanou třídou, která obsahuje také <xref:System.Windows.FrameworkElement>, pokud <xref:System.Windows.Media.SolidColorBrush> zaregistrovaného na jeho název, který <xref:System.Windows.FrameworkElement>.  
-  
- Však nelze použít <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.Media.SolidColorBrush> nezaregistrovala stejný název jako <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, nebo se používá k nastavení vlastností <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>.  
-  
-<a name="applyanimationswithastoryboard"></a>   
-## <a name="how-to-apply-animations-with-a-storyboard"></a>Postup použití animací pomocí scénáře  
- Použití <xref:System.Windows.Media.Animation.Storyboard> k uspořádání a použití animací, přidáte jako podřízených časových os z animací <xref:System.Windows.Media.Animation.Storyboard>. <xref:System.Windows.Media.Animation.Storyboard> Třída poskytuje <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A?displayProperty=nameWithType> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty?displayProperty=nameWithType> připojené vlastnosti. Tyto vlastnosti nastavit na animace k určení jeho cílové objektů a vlastností.  
-  
- Použití animací na svých cílů, začít <xref:System.Windows.Media.Animation.Storyboard> pomocí akce aktivační události nebo metodu. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít <xref:System.Windows.Media.Animation.BeginStoryboard> objektu <xref:System.Windows.EventTrigger>, <xref:System.Windows.Trigger>, nebo <xref:System.Windows.DataTrigger>. V kódu, můžete použít také <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metody.  
-  
- V následující tabulce jsou uvedeny na různých místech kde každý <xref:System.Windows.Media.Animation.Storyboard> začít technikou je podporováno: jednotlivé instance, styl, šablony ovládacího prvku a šablony. "Za instanci" odkazuje na postup použití animaci nebo scénáře přímo do instance objektu, nikoli ve stylu, šablony ovládacího prvku nebo šablony.  
-  
-|Scénář je nezačali používat...|Jednotlivé instance|Styl|Šablony ovládacího prvku|Datové šablony|Příklad|  
-|--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Spuštění animace při změně dat](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
-  
- V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> elementu a <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> , kterým se má <xref:System.Windows.Shapes.Rectangle>.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#1](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#1)]  
-  
- [!code-csharp[storyboards_ovw_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#100)]  
-  
- V následujících částech <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojených vlastností podrobněji.  
-  
-<a name="targetingelementsandfreezables"></a>   
-## <a name="targeting-framework-elements-framework-content-elements-and-freezables"></a>Cílení rozhraní Framework prvky, Framework elementů obsahu a Zablokovatelné  
- V předchozí části uvedeno, že pro animaci najít svůj cíl, je třeba znát název cíle a vlastnosti pro animaci. Určení vlastností pro animaci je jednoduché: stačí nastavit <xref:System.Windows.Media.Animation.Storyboard.TargetProperty?displayProperty=nameWithType> s názvem vlastnosti pro animaci.  Zadejte název objektu, jehož vlastnosti chcete animovat nastavením <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A?displayProperty=nameWithType> vlastnosti animace.  
-  
- Pro <xref:System.Windows.Setter.TargetName%2A> vlastnost pro práci, cílový objekt musí mít název. Přiřazuje se název, který má <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se liší od přiřazení název, který má <xref:System.Windows.Freezable> objektu.  
-  
- Elementy rozhraní jsou tyto třídy, které dědí z <xref:System.Windows.FrameworkElement> třídy. Příklady prvků framework <xref:System.Windows.Window>, <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.Button>, a <xref:System.Windows.Shapes.Rectangle>. V podstatě všech windows, panely a ovládací prvky jsou elementy. Elementy obsahu Framework jsou tyto třídy, které dědí z <xref:System.Windows.FrameworkContentElement> třídy. Příklady elementů obsahu framework <xref:System.Windows.Documents.FlowDocument> a <xref:System.Windows.Documents.Paragraph>. Pokud si nejste jisti, zda je typ framework element nebo element content rozhraní framework, zkontrolujte, zda má vlastnost Name. Pokud ano, je to pravděpodobně framework element nebo framework content element. Opravdu zkontrolujte část jeho typ stránky hierarchii dědičnosti.  
-  
- Chcete-li povolit cílení na rozhraní framework element nebo element content framework v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nastavíte jeho <xref:System.Windows.FrameworkElement.Name%2A> vlastnost. V kódu, budete také muset použít <xref:System.Windows.NameScope.RegisterName%2A> metody pro registraci v názvu prvku s elementem, pro kterou jste vytvořili <xref:System.Windows.NameScope>.  
-  
- Následující příklad přijatá z předchozího příkladu, přiřadí název `MyRectangle` <xref:System.Windows.Shapes.Rectangle>, typ <xref:System.Windows.FrameworkElement>.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#2](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#2)]  
-  
- [!code-csharp[storyboards_ovw_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#102)]  
-  
- Jakmile má název, lze animovat vlastnost daného prvku.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#5](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#5)]  
-  
- [!code-csharp[storyboards_ovw_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#105)]  
-  
- <xref:System.Windows.Freezable> typy jsou tyto třídy, které dědí <xref:System.Windows.Freezable> třídy. Příklady <xref:System.Windows.Freezable> zahrnují <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.RotateTransform>, a <xref:System.Windows.Media.GradientStop>.  
-  
- Povolit cílení <xref:System.Windows.Freezable> podle animace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], je použít [x: Name – direktiva](../../xaml-services/x-name-directive.md) přiřadit název. V kódu, můžete použít <xref:System.Windows.NameScope.RegisterName%2A> metody pro registraci názvu s elementem, pro kterou jste vytvořili <xref:System.Windows.NameScope>.  
-  
- Následující příklad přiřadí název, který má <xref:System.Windows.Freezable> objektu.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#3](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#3)]  
-  
- [!code-csharp[storyboards_ovw_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#103)]  
-  
- Objekt, můžete potom zacílit podle animace.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#7](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#7)]  
-  
- [!code-csharp[storyboards_ovw_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#107)]  
-  
- <xref:System.Windows.Media.Animation.Storyboard> objekty vyřešit pomocí oborů názvů <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost. Další informace o oborů názvů WPF naleznete v tématu [obory názvů WPF XAML](../advanced/wpf-xaml-namescopes.md). Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost vynecháte, animace, zaměřuje elementu, na který je definován, nebo v případě styly, upravený elementu.  
-  
- V některých případech nelze přiřadit název k <xref:System.Windows.Freezable> objektu. Například pokud <xref:System.Windows.Freezable> je deklarován jako prostředek nebo použít k nastavení hodnoty vlastnosti ve stylu, nemůže být přiřazen název. Protože nemá název, nelze cílit přímo, ale může být cílem nepřímo. Následující části popisují způsob použití nepřímé cílení.  
-  
-<a name="pathsyntaxforchangeable"></a>   
-## <a name="indirect-targeting"></a>Nepřímé cílení  
- Existují situace <xref:System.Windows.Freezable> nemůže být cílem přímo animaci, jako např. kdy <xref:System.Windows.Freezable> je deklarován jako prostředek nebo použít k nastavení hodnoty vlastnosti ve stylu. V těchto případech i v případě, že ji nelze cílit přímo, můžete stále animovat <xref:System.Windows.Freezable> objektu. Místo nastavení <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost s názvem <xref:System.Windows.Freezable>, je jí název elementu ke kterému <xref:System.Windows.Freezable> "patří." Například <xref:System.Windows.Media.SolidColorBrush> lze nastavit <xref:System.Windows.Shapes.Shape.Fill%2A> obdélníku element patří do tohoto obdélníku. Animování štětec nastavíte animace <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> řetězem vlastnosti, která začíná na vlastnost framework element nebo framework content element <xref:System.Windows.Freezable> se použil k a končí <xref:System.Windows.Freezable> vlastností pro animaci.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#33](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#33)]  
-  
- [!code-csharp[storyboards_ovw_snip#134](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#134)]  
-  
- Všimněte si, že pokud <xref:System.Windows.Freezable> je zmrazeno, bude proveden klon a bude při animaci pohybovat této klonování. Pokud k tomu dojde, na původní objekt <xref:System.Windows.Media.Animation.Animatable.HasAnimatedProperties%2A> vlastnost nadále vrátit `false`, protože původní objekt není ve skutečnosti animovat. Další informace o klonování, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
-  
- Všimněte si také, že při použití cílení nepřímé vlastnost, je možné cílové objektů, které neexistují. Můžete například předpokládat, který <xref:System.Windows.Controls.Control.Background%2A> konkrétní tlačítko byl nastaven s <xref:System.Windows.Media.SolidColorBrush> a pokuste se animace barev, když ve skutečnosti <xref:System.Windows.Media.LinearGradientBrush> se použil k pozadí tlačítka. V takových případech není vyvolána žádná výjimka; animace se nepodaří mít viditelné efekt, protože <xref:System.Windows.Media.LinearGradientBrush> nereaguje na změny <xref:System.Windows.Media.SolidColorBrush.Color%2A> vlastnost.  
-  
- Nepřímé vlastnost cílení syntaxe podrobněji v následujících částech.  
-  
-<a name="xamlsyntaxchangeableproperty"></a>   
-### <a name="indirectly-targeting-a-property-of-a-freezable-in-xaml"></a>Nepřímo cílení na vlastnost zablokovatelného objektu v XAML  
- Cílit na vlastnost zablokovatelného objektu v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte následující syntaxi.  
-  
-| |  
-|-|  
-|*ElementPropertyName* `.` *FreezablePropertyName*|  
-  
- Where  
-  
-- *ElementPropertyName* zůstává ve vlastnictví <xref:System.Windows.FrameworkElement> která <xref:System.Windows.Freezable> slouží k nastavení, a  
-  
-- *FreezablePropertyName* zůstává ve vlastnictví <xref:System.Windows.Freezable> pro animaci.  
-  
- Následující kód ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> lze nastavit  
-  
- <xref:System.Windows.Shapes.Shape.Fill%2A> elementu obdélníku.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#32](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#32)]  
-  
- Někdy je potřeba cílit zablokovatelných součástí kolekce nebo pole.  
-  
- Cílit na zablokovatelných obsažen v kolekci, použijte následující syntaxe cesty.  
-  
-| |  
-|-|  
-|*ElementPropertyName* `.Children[` *CollectionIndex* `].` *FreezablePropertyName*|  
-  
- Kde *CollectionIndex* je index objektu na jeho pole nebo kolekce.  
-  
- Předpokládejme například, že má obdélníku <xref:System.Windows.Media.TransformGroup> použit prostředek jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost a chcete vytvořit animaci transformací obsahuje.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#34](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#34)]  
-  
- Následující kód ukazuje, jak animovat <xref:System.Windows.Media.RotateTransform.Angle%2A> vlastnost <xref:System.Windows.Media.RotateTransform> je znázorněno v předchozím příkladu.  
-  
- [!code-xaml[storyboards_ovw_snip_XAML#35](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#35)]  
-  
-<a name="targetingpropertyofchangeableincode"></a>   
-### <a name="indirectly-targeting-a-property-of-a-freezable-in-code"></a>Nepřímo cílení na vlastnost zablokovatelného objektu v kódu  
- V kódu, můžete vytvořit <xref:System.Windows.PropertyPath> objektu. Při vytváření <xref:System.Windows.PropertyPath>, zadáte <xref:System.Windows.PropertyPath.Path%2A> a <xref:System.Windows.PropertyPath.PathParameters%2A>.  
-  
- Chcete-li vytvořit <xref:System.Windows.PropertyPath.PathParameters%2A>, vytvořit pole typu <xref:System.Windows.DependencyProperty> , který obsahuje seznam pole identifikátoru vlastnosti závislosti. První identifikátor pole je pro vlastnost <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> , který <xref:System.Windows.Freezable> slouží k nastavení. Další pole identifikátor představuje vlastnost <xref:System.Windows.Freezable> do cíle. Ho představit jako řetězec vlastnosti, která se připojuje <xref:System.Windows.Freezable> k <xref:System.Windows.FrameworkElement> objektu.  
-  
- Následující je příkladem kdekoliv vlastnost, která se zaměřuje <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> lze nastavit <xref:System.Windows.Shapes.Shape.Fill%2A> elementu obdélníku.  
-  
- [!code-csharp[storyboards_ovw_snip#135](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#135)]  
-  
- Budete taky muset zadat <xref:System.Windows.PropertyPath.Path%2A>. A <xref:System.Windows.PropertyPath.Path%2A> je <xref:System.String> , které sděluje, <xref:System.Windows.PropertyPath.Path%2A> jak interpretovat jeho <xref:System.Windows.PropertyPath.PathParameters%2A>. Používá následující syntaxi.  
-  
-| |  
-|-|  
-|`(` *OwnerPropertyArrayIndex* `).(` *FreezablePropertyArrayIndex* `)`|  
-  
- Where  
-  
-- *OwnerPropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor <xref:System.Windows.FrameworkElement> vlastnosti objektu, který <xref:System.Windows.Freezable> slouží k nastavení, a  
-  
-- *FreezablePropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, která obsahuje identifikátor vlastnosti k cíli.  
-  
- Následující příklad ukazuje <xref:System.Windows.PropertyPath.Path%2A> , který doprovází <xref:System.Windows.PropertyPath.PathParameters%2A> definované v předchozím příkladu.
-  
- [!code-csharp[storyboards_ovw_snip#PropertyChainAndPath](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#propertychainandpath)]  
-  
- Kombinuje v následujícím příkladu kódu v předchozích příkladech pro animaci <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> lze nastavit <xref:System.Windows.Shapes.Shape.Fill%2A> elementu obdélníku.  
-  
- [!code-csharp[storyboards_ovw_snip#137](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#137)]  
-  
- Někdy je potřeba cílit zablokovatelných součástí kolekce nebo pole. Předpokládejme například, že má obdélníku <xref:System.Windows.Media.TransformGroup> použit prostředek jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost a chcete vytvořit animaci transformací obsahuje.  
-  
- [!code-xaml[storyboards_ovw_snip#142](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml#142)]  
-  
- K cíli <xref:System.Windows.Freezable> obsažen v kolekci, použijte následující syntaxi cestu.  
-  
-| |  
-|-|  
-|`(` *OwnerPropertyArrayIndex* `).(` *CollectionChildrenPropertyArrayIndex* `)` `[` *CollectionIndex* `].(` *FreezablePropertyArrayIndex* `)`|  
-  
- Kde *CollectionIndex* je index objektu na jeho pole nebo kolekce.  
-  
- K cíli <xref:System.Windows.Media.RotateTransform.Angle%2A> vlastnost <xref:System.Windows.Media.RotateTransform>, druhý transformace v <xref:System.Windows.Media.TransformGroup>, můžete využít následující <xref:System.Windows.PropertyPath.Path%2A> a <xref:System.Windows.PropertyPath.PathParameters%2A>.  
-  
- [!code-csharp[storyboards_ovw_snip#139](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#139)]  
-  
- Následující příklad ukazuje kompletní kód pro animaci <xref:System.Windows.Media.RotateTransform.Angle%2A> z <xref:System.Windows.Media.RotateTransform> obsažené <xref:System.Windows.Media.TransformGroup>.  
-  
- [!code-csharp[storyboards_ovw_snip#138](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#138)]  
-  
-### <a name="indirectly-targeting-with-a-freezable-as-the-starting-point"></a>Nepřímo cílení zablokovatelného objektu jako počáteční bod  
- Jak nepřímo cílit popsané v předchozích částech <xref:System.Windows.Freezable> začínající <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> a vytváří řetěz vlastnost k <xref:System.Windows.Freezable> dílčí vlastnosti. Můžete také použít <xref:System.Windows.Freezable> jako počáteční bod a nepřímo cílit na jeden z jeho <xref:System.Windows.Freezable> dílčí vlastnosti. Jeden další omezení platí při použití <xref:System.Windows.Freezable> jako výchozí bod pro cílení na nepřímé: počáteční <xref:System.Windows.Freezable> a každý <xref:System.Windows.Freezable> mezi ním a nepřímo cílové dílčí vlastnost nesmí být zmrazené.  
-  
-<a name="controllable_storyboards"></a>   
-## <a name="interactively-controlling-a-storyboard-in-xaml"></a>Interaktivní řízení scénáře v XAML  
- Pro spuštění scénáře v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], je použít <xref:System.Windows.Media.Animation.BeginStoryboard> aktivovat akci. <xref:System.Windows.Media.Animation.BeginStoryboard> Animace objektů a vlastností animace a spustí scénáři distribuuje. (Podrobnosti o tomto procesu najdete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).) Pokud dáte <xref:System.Windows.Media.Animation.BeginStoryboard> název tak, že zadáte jeho <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> vlastnost, provedete to může ovládat scénáře. Pak můžete interaktivně ovládat scénáře po jeho spuštění. Následuje seznam akcí může ovládat scénáře pomocí aktivačních procedur událostí pro řízení scénáře.  
-  
-- <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénáři.  
-  
-- <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavenou scénáře.  
-  
-- <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní scénáře rychlost.  
-  
-- <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce doby výplň, má-li nějaký.  
-  
-- <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénáři.  
-  
-- <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odebere scénáři.  
-  
- V následujícím příkladu může ovládat scénáře akce slouží k interaktivní řízení scénáře.  
-  
- [!code-xaml[animation_ovws_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snip/CS/ControllableStoryboardExample.xaml#controllablestoryboardexamplewholepage)]  
-  
-<a name="controllable_storyboards_procedural"></a>   
-## <a name="interactively-controlling-a-storyboard-by-using-code"></a>Interaktivní řízení scénáře pomocí kódu  
- V předchozích příkladech ukázaly, jak animovat pomocí aktivační události akcí. V kódu, můžete také řídit scénáře pomocí interaktivních metod <xref:System.Windows.Media.Animation.Storyboard> třídy. Pro <xref:System.Windows.Media.Animation.Storyboard> má být provedeno interaktivní v kódu, je nutné použít odpovídající přetížení do scénáře <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metodu a zadejte `true` k němu může ovládat. Zobrazit <xref:System.Windows.Media.Animation.Storyboard.Begin%28System.Windows.FrameworkElement%2CSystem.Boolean%29> stránky pro další informace.  
-  
- Následující seznam obsahuje metody, které lze použít k manipulaci <xref:System.Windows.Media.Animation.Storyboard> po spuštění:  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.Pause%2A>  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.Resume%2A>  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.Seek%2A>  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.SkipToFill%2A>  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.Stop%2A>  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.Remove%2A>  
-  
- Výhodou použití těchto metod je, že není nutné vytvořit <xref:System.Windows.Trigger> nebo <xref:System.Windows.TriggerAction> objektů; je třeba odkaz na dát řídit <xref:System.Windows.Media.Animation.Storyboard> chcete pracovat.  
-  
- **Poznámka:** Všechny interaktivní akcí provedených ve <xref:System.Windows.Media.Animation.Clock>a proto také na <xref:System.Windows.Media.Animation.Storyboard> dojde u další značky časování modul, který se stane, krátce před další metodou render. Například, pokud použijete <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metoda pro přechod na jiném místě animace, hodnota vlastnosti nezmění okamžitě, místo, hodnota se změní na další značky modul časování.  
-  
- Následující příklad ukazuje, jak použít a řízení animací použitím interaktivních metod <xref:System.Windows.Media.Animation.Storyboard> třídy.  
-  
- [!code-csharp[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/ControllableStoryboardExample.cs#controllablestoryboardexamplewholepage)]
- [!code-vb[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/controllablestoryboardexample.vb#controllablestoryboardexamplewholepage)]  
-  
-<a name="usingstoryboardsinstyles"></a>   
-## <a name="animate-in-a-style"></a>Animace ve stylu  
- Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů definovat animací <xref:System.Windows.Style>. Animace s <xref:System.Windows.Media.Animation.Storyboard> v <xref:System.Windows.Style> podobá se to používání <xref:System.Windows.Media.Animation.Storyboard> jinde, s následujícími třemi výjimkami:  
-  
-- Nezadáte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>; <xref:System.Windows.Media.Animation.Storyboard> vždy cílí na element, ke kterému <xref:System.Windows.Style> platí. K cíli <xref:System.Windows.Freezable> objekty, je nutné použít nepřímé cílení. Další informace o nepřímé zaměření, najdete v článku [nepřímé cílení](#pathsyntaxforchangeable) oddílu.  
-  
-- Nelze zadat <xref:System.Windows.EventTrigger.SourceName%2A> pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger>.  
-  
-- Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Style> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
-  
-- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
-  
- Příklad ukazuje, jak definovat ve stylu ve scénáři, najdete v článku [animace ve stylu](how-to-animate-in-a-style.md) příklad.  
-  
-<a name="defineAStoryboardInAControlTemplateSection"></a>   
-## <a name="animate-in-a-controltemplate"></a>Animace v objektu ControlTemplate  
- Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů definovat animací <xref:System.Windows.Controls.ControlTemplate>. Animace s <xref:System.Windows.Media.Animation.Storyboard> v <xref:System.Windows.Controls.ControlTemplate> podobá se to používání <xref:System.Windows.Media.Animation.Storyboard> jinde, s následujícími dvěma výjimkami:  
-  
-- <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> Mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>. Pokud <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> není zadán, animace, zaměřuje elementu, do kterého <xref:System.Windows.Controls.ControlTemplate> platí.  
-  
-- <xref:System.Windows.EventTrigger.SourceName%2A> Pro <xref:System.Windows.EventTrigger> nebo <xref:System.Windows.Trigger> mohou odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>.  
-  
-- Dynamický prostředek odkazy nebo data vazbové výrazy nelze použít k nastavení <xref:System.Windows.Media.Animation.Storyboard> nebo hodnot vlastností animace. Důvodem je, že všechno, co je uvnitř <xref:System.Windows.Controls.ControlTemplate> musí být bezpečná pro vlákno, a systému časování musíte <xref:System.Windows.Freezable.Freeze%2A> <xref:System.Windows.Media.Animation.Storyboard> objekty tak, aby byly bezpečné pro vlákna. A <xref:System.Windows.Media.Animation.Storyboard> nelze zmrazit, pokud ho nebo jeho podřízených časových os obsahují vazby výrazů dynamický prostředek odkazy nebo data. Další informace o mrazu a dalších <xref:System.Windows.Freezable> funkce, najdete v článku [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
-  
-- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nelze deklarovat obslužné rutiny událostí pro <xref:System.Windows.Media.Animation.Storyboard> nebo události animace.  
-  
- Příklad ukazuje, jak definovat scénáře v <xref:System.Windows.Controls.ControlTemplate>, najdete v článku [animace v objektu ControlTemplate](how-to-animate-in-a-controltemplate.md) příklad.  
-  
-<a name="animateWhenAPropertyValueChanges"></a>   
-## <a name="animate-when-a-property-value-changes"></a>Animace při změně hodnoty vlastnosti  
- Styly a šablony ovládacích prvků můžete použít aktivační událost objektů spustit scénář, když se změní vlastnost. Příklady najdete v tématu [aktivovat animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md) a [animace v objektu ControlTemplate](how-to-animate-in-a-controltemplate.md).  
-  
- Animace použít vlastností <xref:System.Windows.Trigger> objekty se chovají způsobem složitější než <xref:System.Windows.EventTrigger> animace nebo animace spuštěna pomocí <xref:System.Windows.Media.Animation.Storyboard> metody.  Jsou "předání" s použitím animací definované jinými <xref:System.Windows.Trigger> objekty, ale compose s <xref:System.Windows.EventTrigger> a aktivaci metody animace.  
-  
+
+V tomto tématu se dozvíte <xref:System.Windows.Media.Animation.Storyboard> , jak pomocí objektů organizovat a používat animace. Popisuje, jak interaktivně manipulovat s <xref:System.Windows.Media.Animation.Storyboard> objekty a popisuje syntaxi cílení na nepřímých vlastností.
+
+## <a name="prerequisites"></a>Požadavky
+
+Pro pochopení tohoto tématu byste měli být obeznámeni s různými typy animací a jejich základními funkcemi. Úvod do animace najdete v tématu [Přehled animace](animation-overview.md). Měli byste také zjistit, jak používat připojené vlastnosti. Další informace o připojených vlastnostech naleznete v tématu [Přehled připojených vlastností](../advanced/attached-properties-overview.md).
+
+<a name="whatisatimeline"></a>
+
+## <a name="what-is-a-storyboard"></a>Co je scénář?
+
+Animace nejsou jediným užitečným typem časové osy. K dispozici jsou další třídy časové osy, které vám pomůžou organizovat sady časových os a aplikovat časové osy na vlastnosti. Časové osy kontejneru jsou odvozeny <xref:System.Windows.Media.Animation.TimelineGroup> od třídy a zahrnují <xref:System.Windows.Media.Animation.ParallelTimeline> a <xref:System.Windows.Media.Animation.Storyboard>.
+
+<xref:System.Windows.Media.Animation.Storyboard> Je typ časové osy kontejneru, který poskytuje informace o cílení na časové osy, které obsahuje. Scénář může obsahovat jakýkoli typ <xref:System.Windows.Media.Animation.Timeline>, včetně dalších Timeline a animací kontejneru. <xref:System.Windows.Media.Animation.Storyboard>objekty umožňují kombinovat časové osy, které ovlivňují nejrůznější objekty a vlastnosti, do jednoho stromu časové osy, což usnadňuje uspořádání a kontrolu složitých chování časování. Předpokládejme například, že chcete tlačítko, které provádí tyto tři věci.
+
+- Zvětšení a změna barvy, když uživatel vybere tlačítko
+
+- Zmenšit a po kliknutí přejít zpátky na původní velikost
+
+- Zmenšení a rozzvolna od 50 procent neprůhlednosti, když se deaktivuje.
+
+V takovém případě máte více sad animací, které se vztahují na stejný objekt a chcete je přehrát v různých časech, závisí na stavu tlačítka. <xref:System.Windows.Media.Animation.Storyboard>objekty umožňují organizovat animace a aplikovat je ve skupinách na jeden nebo více objektů.
+
+<a name="wherecanyouuseastoryboard"></a>
+
+## <a name="where-can-you-use-a-storyboard"></a>Kde můžete použít scénář?
+
+Lze použít k animaci vlastností závislosti animovaných tříd (pro další informace o tom, co je třída animována, viz [Přehled animace](animation-overview.md)). <xref:System.Windows.Media.Animation.Storyboard> Vzhledem k tomu, že scénář je funkce na úrovni architektury, objekt musí patřit do <xref:System.Windows.NameScope> <xref:System.Windows.FrameworkElement> a nebo <xref:System.Windows.FrameworkContentElement>.
+
+Například můžete použít <xref:System.Windows.Media.Animation.Storyboard> k následujícím akcím:
+
+- Animace (nerámec elementu), který vykreslí pozadí tlačítka ( <xref:System.Windows.FrameworkElement>typu), <xref:System.Windows.Media.SolidColorBrush>
+
+- Animace (nerámec elementu), který vykreslí výplň <xref:System.Windows.Media.GeometryDrawing> (nerámec <xref:System.Windows.Controls.Image> elementu) zobrazeného pomocí (<xref:System.Windows.FrameworkElement>). <xref:System.Windows.Media.SolidColorBrush>
+
+- <xref:System.Windows.Media.SolidColorBrush> V kódu můžete animovat deklaraci deklarované třídou, která také <xref:System.Windows.FrameworkElement>obsahuje, pokud je <xref:System.Windows.Media.SolidColorBrush> název <xref:System.Windows.FrameworkElement>zaregistrovaný.
+
+Nemůžete <xref:System.Windows.Media.Animation.Storyboard> však použít k <xref:System.Windows.Media.SolidColorBrush> animaci, která <xref:System.Windows.FrameworkElement> neregistrovala svůj název pomocí nebo <xref:System.Windows.FrameworkContentElement> <xref:System.Windows.FrameworkElement> , nebo nebyla použita k nastavení vlastnosti nebo <xref:System.Windows.FrameworkContentElement>.
+
+<a name="applyanimationswithastoryboard"></a>
+
+## <a name="how-to-apply-animations-with-a-storyboard"></a>Postup použití animací ve scénáři
+
+Chcete-li <xref:System.Windows.Media.Animation.Storyboard> použít k uspořádání a uplatnění animací, přidejte animace jako podřízené časové osy. <xref:System.Windows.Media.Animation.Storyboard> Třída poskytuje vlastnosti<xref:System.Windows.Media.Animation.Storyboard.TargetProperty?displayProperty=nameWithType>apřipojené. <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A?displayProperty=nameWithType> <xref:System.Windows.Media.Animation.Storyboard> Tyto vlastnosti lze nastavit na animaci pro určení jejího cílového objektu a vlastnosti.
+
+Pokud chcete použít animace na jejich cíle, zahájíte <xref:System.Windows.Media.Animation.Storyboard> akci s triggerem nebo metodou. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použijte<xref:System.Windows.EventTrigger>objekt s ,<xref:System.Windows.Trigger>nebo .<xref:System.Windows.DataTrigger> <xref:System.Windows.Media.Animation.BeginStoryboard> V kódu lze také použít <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metodu.
+
+V následující tabulce jsou uvedena různá místa, kde <xref:System.Windows.Media.Animation.Storyboard> jsou jednotlivé postupy zahájení podporovány: pro jednotlivé instance, styl, šablonu ovládacího prvku a šablonu dat. "Per-instance" odkazuje na techniku použití animace nebo scénáře přímo na instance objektu, nikoli ve stylu, šabloně ovládacího prvku nebo šabloně dat.
+
+|Scénář se začal používat...|Podle instance|Styl|Šablona ovládacího prvku|Šablona dat|Příklad|
+|--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|
+|<xref:System.Windows.Media.Animation.BeginStoryboard>a<xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|
+|<xref:System.Windows.Media.Animation.BeginStoryboard>a vlastnost<xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md)|
+|<xref:System.Windows.Media.Animation.BeginStoryboard>a a<xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Aktivovat animaci při změně dat](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|
+
+V následujícím příkladu se používá <xref:System.Windows.Media.Animation.Storyboard> k <xref:System.Windows.FrameworkElement.Width%2A> animaci <xref:System.Windows.Shapes.Rectangle> prvku <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush> , který<xref:System.Windows.Shapes.Rectangle>je použit k malování.
+
+[!code-xaml[storyboards_ovw_snip_XAML#1](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#1)]
+
+[!code-csharp[storyboards_ovw_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#100)]
+
+V následujících částech jsou podrobněji <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> popsány a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti.
+
+<a name="targetingelementsandfreezables"></a>
+
+## <a name="targeting-framework-elements-framework-content-elements-and-freezables"></a>Cílení elementů architektury, prvků obsahu architektury a Zablokovatelné
+
+Výše zmíněná část uvádí, že pro animaci, která má najít cíl, musí znát název cíle a vlastnost, která se má animovat. Určení vlastnosti, která má být animována, je přímá <xref:System.Windows.Media.Animation.Storyboard.TargetProperty?displayProperty=nameWithType> předána: jednoduše nastavte s názvem vlastnosti, která se má animovat.  Zadejte název objektu, jehož vlastnost má být animována, nastavením <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A?displayProperty=nameWithType> vlastnosti animace.
+
+Aby tato <xref:System.Windows.Setter.TargetName%2A> vlastnost fungovala, musí mít cílový objekt název. Přiřazení <xref:System.Windows.FrameworkElement> názvu k <xref:System.Windows.FrameworkContentElement> nebo v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]seliší od přiřazení názvu k objektu.<xref:System.Windows.Freezable>
+
+Prvky architektury jsou třídy, které dědí z <xref:System.Windows.FrameworkElement> třídy. Příklady prvků rozhraní <xref:System.Windows.Window>zahrnují, <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.Button>a <xref:System.Windows.Shapes.Rectangle>. V podstatě jsou k disprvcích všechny okna, panely a ovládací prvky. Prvky obsahu architektury jsou třídy, které dědí z <xref:System.Windows.FrameworkContentElement> třídy. Příklady prvků obsahu architektury zahrnují <xref:System.Windows.Documents.FlowDocument> a. <xref:System.Windows.Documents.Paragraph> Pokud si nejste jistí, zda je typ prvkem architektury nebo element obsahu architektury, zkontrolujte, zda má vlastnost název. V takovém případě se pravděpodobně jedná o prvek rozhraní nebo prvek obsahu architektury. Chcete-li si být jisti, podívejte se do části Hierarchie dědičnosti v jeho typu stránky.
+
+Chcete-li povolit cílení prvku rozhraní nebo prvku obsahu architektury v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], nastavte jeho <xref:System.Windows.FrameworkElement.Name%2A> vlastnost. V kódu je také nutné použít <xref:System.Windows.NameScope.RegisterName%2A> metodu k registraci názvu elementu pomocí elementu, pro který jste <xref:System.Windows.NameScope>vytvořili.
+
+Následující příklad pořízený z předchozího příkladu přiřadí název `MyRectangle` a <xref:System.Windows.Shapes.Rectangle>, typ <xref:System.Windows.FrameworkElement>.
+
+[!code-xaml[storyboards_ovw_snip_XAML#2](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#2)]
+
+[!code-csharp[storyboards_ovw_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#102)]
+
+Po názvu můžete animovat vlastnost tohoto prvku.
+
+[!code-xaml[storyboards_ovw_snip_XAML#5](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#5)]
+
+[!code-csharp[storyboards_ovw_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#105)]
+
+<xref:System.Windows.Freezable>typy jsou třídy, které dědí z <xref:System.Windows.Freezable> třídy. Příklady příkazů <xref:System.Windows.Media.SolidColorBrush> include,<xref:System.Windows.Media.RotateTransform>a .<xref:System.Windows.Media.GradientStop> <xref:System.Windows.Freezable>
+
+Chcete-li povolit cílení <xref:System.Windows.Freezable> pomocí animace v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]nástroji, použijte [direktivu x:Name](../../xaml-services/x-name-directive.md) k přiřazení názvu. V kódu použijte <xref:System.Windows.NameScope.RegisterName%2A> metodu k registraci jejího názvu s prvkem, pro který jste <xref:System.Windows.NameScope>vytvořili.
+
+Následující příklad přiřadí název <xref:System.Windows.Freezable> objektu.
+
+[!code-xaml[storyboards_ovw_snip_XAML#3](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#3)]
+
+[!code-csharp[storyboards_ovw_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#103)]
+
+Objekt pak může být cílem animace.
+
+[!code-xaml[storyboards_ovw_snip_XAML#7](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/StoryboardsExample.xaml#7)]
+
+[!code-csharp[storyboards_ovw_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/StoryboardsExample.cs#107)]
+
+<xref:System.Windows.Media.Animation.Storyboard>objekty používají obory názvů k vyřešení <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnosti. Další informace o oborech názvů WPF naleznete v tématu [WPF XAML obory názvů WPF](../advanced/wpf-xaml-namescopes.md). Pokud je <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnost vynechána, animace cílí na prvek, ve kterém je definován, nebo v případě stylů, elementu style.
+
+Někdy není možné přiřadit název k <xref:System.Windows.Freezable> objektu. Například pokud <xref:System.Windows.Freezable> je deklarován jako prostředek nebo použit k nastavení hodnoty vlastnosti ve stylu, nemůže být název zadán. Vzhledem k tomu, že nemá název, nejde na něj cílit přímo, ale dá se cílit nepřímo. Následující části popisují způsob použití nepřímých cílů.
+
+<a name="pathsyntaxforchangeable"></a>
+
+## <a name="indirect-targeting"></a>Nepřímý cíl
+
+Existují situace <xref:System.Windows.Freezable> , kdy nelze cílit přímo pomocí animace, například <xref:System.Windows.Freezable> když je deklarován jako prostředek nebo použit k nastavení hodnoty vlastnosti ve stylu. V takových případech, i když nemůžete cílit přímo na něj, můžete <xref:System.Windows.Freezable> objekt stále animovat. Namísto nastavování <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> vlastnosti s názvem <xref:System.Windows.Freezable>zadejte název elementu, do kterého <xref:System.Windows.Freezable> "patří". Například <xref:System.Windows.Media.SolidColorBrush> použít k <xref:System.Windows.Shapes.Shape.Fill%2A> nastavení prvku Rectangle, který patří do tohoto obdélníku. Pro animaci štětce byste nastavili animaci <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> s řetězcem vlastností, které začínají na vlastností elementu architektury nebo <xref:System.Windows.Freezable> elementu obsahu architektury, který se použil k <xref:System.Windows.Freezable> nastavení a ukončení s vlastností, která se má animovat.
+
+[!code-xaml[storyboards_ovw_snip_XAML#33](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#33)]
+
+[!code-csharp[storyboards_ovw_snip#134](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#134)]
+
+Všimněte si, že pokud <xref:System.Windows.Freezable> je zmrazený, provede se klon, který bude animovaný. Pokud k tomu dojde, <xref:System.Windows.Media.Animation.Animatable.HasAnimatedProperties%2A> vlastnost původního objektu se nadále vrátí `false`, protože původní objekt není ve skutečnosti animovaný. Další informace o klonování naleznete v tématu [Freezable Objects Overview](../advanced/freezable-objects-overview.md).
+
+Všimněte si také, že při použití cíle nepřímých vlastností je možné cílit na objekty, které neexistují. Můžete například předpokládat, že <xref:System.Windows.Controls.Control.Background%2A> konkrétní tlačítko bylo nastaveno <xref:System.Windows.Media.SolidColorBrush> pomocí a a pokusí se animovat jeho barvu, pokud se ve skutečnosti a <xref:System.Windows.Media.LinearGradientBrush> použila k nastavení pozadí tlačítka. V těchto případech není vyvolána žádná výjimka; animace nemůže mít viditelný efekt, protože <xref:System.Windows.Media.LinearGradientBrush> nereaguje na změny <xref:System.Windows.Media.SolidColorBrush.Color%2A> vlastnosti.
+
+Následující oddíly popisují nepřímou syntaxi cílení vlastnosti podrobněji.
+
+<a name="xamlsyntaxchangeableproperty"></a>
+
+### <a name="indirectly-targeting-a-property-of-a-freezable-in-xaml"></a>Nepřímo zaměřené na vlastnost Freezable v jazyce XAML
+
+Chcete-li cílit na vlastnost Freezable v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte následující syntaxi.
+
+| |
+|-|
+|*ElementPropertyName* `.` *FreezablePropertyName*|
+
+Where
+
+- *ElementPropertyName* je vlastnost <xref:System.Windows.FrameworkElement> , která <xref:System.Windows.Freezable> se používá k nastavení a
+
+- *FreezablePropertyName* je vlastnost <xref:System.Windows.Freezable> , která se má animovat.
+
+Následující kód ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.SolidColorBrush> použít k nastavení <xref:System.Windows.Shapes.Shape.Fill%2A> prvku Rectangle.
+
+[!code-xaml[storyboards_ovw_snip_XAML#32](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#32)]
+
+Někdy je potřeba cílit na Freezable obsažený v kolekci nebo poli.
+
+Chcete-li cílit na Freezable obsažený v kolekci, použijte následující syntaxi cesty.
+
+| |
+|-|
+|*ElementPropertyName* `.Children[` *CollectionIndex* `].` *FreezablePropertyName*|
+
+Kde *CollectionIndex* je index objektu ve svém poli nebo kolekci.
+
+Předpokládejme například, že obdélník obsahuje <xref:System.Windows.Media.TransformGroup> prostředek aplikovaný na jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost a chcete animovat jednu z transformací, kterou obsahuje.
+
+[!code-xaml[storyboards_ovw_snip_XAML#34](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#34)]
+
+Následující kód ukazuje, jak animovat <xref:System.Windows.Media.RotateTransform.Angle%2A> vlastnost <xref:System.Windows.Media.RotateTransform> , která je znázorněna v předchozím příkladu.
+
+[!code-xaml[storyboards_ovw_snip_XAML#35](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip_XAML/CS/IndirectTargetingExample.xaml#35)]
+
+<a name="targetingpropertyofchangeableincode"></a>
+
+### <a name="indirectly-targeting-a-property-of-a-freezable-in-code"></a>Nepřímo zaměřené na vlastnost Freezable v kódu
+
+V kódu vytvoříte <xref:System.Windows.PropertyPath> objekt. Při vytváření <xref:System.Windows.PropertyPath> <xref:System.Windows.PropertyPath.Path%2A> zadejte a .<xref:System.Windows.PropertyPath.PathParameters%2A>
+
+Chcete- <xref:System.Windows.PropertyPath.PathParameters%2A>li vytvořit pole typu <xref:System.Windows.DependencyProperty> , které obsahuje seznam polí identifikátoru vlastnosti závislosti. Pole prvního identifikátoru je určena pro vlastnost <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> , která <xref:System.Windows.Freezable> je použita k nastavení. Pole <xref:System.Windows.Freezable> s následujícím identifikátorem představuje vlastnost cílové třídy. Můžete si ho představit jako řetězec vlastností, které se připojují kobjektu.<xref:System.Windows.FrameworkElement> <xref:System.Windows.Freezable>
+
+Následuje příklad řetězu vlastností závislosti, který cílí na <xref:System.Windows.Media.SolidColorBrush.Color%2A> hodnotu <xref:System.Windows.Media.SolidColorBrush> použitou pro nastavení <xref:System.Windows.Shapes.Shape.Fill%2A> prvku Rectangle.
+
+[!code-csharp[storyboards_ovw_snip#135](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#135)]
+
+Je také nutné zadat <xref:System.Windows.PropertyPath.Path%2A>. Je a <xref:System.String> , který dává pokyn <xref:System.Windows.PropertyPath.Path%2A> k interpretaci <xref:System.Windows.PropertyPath.PathParameters%2A>. <xref:System.Windows.PropertyPath.Path%2A> Používá následující syntaxi.
+
+| |
+|-|
+|`(` *OwnerPropertyArrayIndex* `).(` *FreezablePropertyArrayIndex* `)`|
+
+Where
+
+- *OwnerPropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, které obsahuje identifikátor <xref:System.Windows.FrameworkElement> vlastnosti objektu, který <xref:System.Windows.Freezable> je použit k nastavení a
+
+- *FreezablePropertyArrayIndex* je index <xref:System.Windows.DependencyProperty> pole, které obsahuje identifikátor vlastnosti k cíli.
+
+Následující příklad ukazuje <xref:System.Windows.PropertyPath.Path%2A> , který se <xref:System.Windows.PropertyPath.PathParameters%2A> doprovází, jak je uvedeno v předchozím příkladu.
+
+[!code-csharp[storyboards_ovw_snip#PropertyChainAndPath](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#propertychainandpath)]
+
+Následující příklad kombinuje kód v předchozích příkladech k animaci, <xref:System.Windows.Media.SolidColorBrush.Color%2A> <xref:System.Windows.Media.SolidColorBrush> která se používá k nastavení <xref:System.Windows.Shapes.Shape.Fill%2A> prvku Rectangle.
+
+[!code-csharp[storyboards_ovw_snip#137](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#137)]
+
+Někdy je potřeba cílit na Freezable obsažený v kolekci nebo poli. Předpokládejme například, že obdélník obsahuje <xref:System.Windows.Media.TransformGroup> prostředek aplikovaný na jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost a chcete animovat jednu z transformací, kterou obsahuje.
+
+[!code-xaml[storyboards_ovw_snip#142](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml#142)]
+
+Chcete-li <xref:System.Windows.Freezable> cílit na obsažený v kolekci, použijte následující syntaxi cesty.
+
+| |
+|-|
+|`(` *OwnerPropertyArrayIndex* `).(` *CollectionChildrenPropertyArrayIndex* `)` `[` *CollectionIndex* `].(` *FreezablePropertyArrayIndex* `)`|
+
+Kde *CollectionIndex* je index objektu ve svém poli nebo kolekci.
+
+Chcete-li <xref:System.Windows.Media.RotateTransform.Angle%2A> cílit na vlastnost <xref:System.Windows.Media.RotateTransform>druhé transformace v <xref:System.Windows.Media.TransformGroup>, použijte následující <xref:System.Windows.PropertyPath.Path%2A> a <xref:System.Windows.PropertyPath.PathParameters%2A>.
+
+[!code-csharp[storyboards_ovw_snip#139](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#139)]
+
+Následující příklad ukazuje úplný kód pro animování <xref:System.Windows.Media.RotateTransform.Angle%2A> <xref:System.Windows.Media.RotateTransform> z obsažený v <xref:System.Windows.Media.TransformGroup>.
+
+[!code-csharp[storyboards_ovw_snip#138](~/samples/snippets/csharp/VS_Snippets_Wpf/storyboards_ovw_snip/CSharp/IndirectTargetingExample.xaml.cs#138)]
+
+### <a name="indirectly-targeting-with-a-freezable-as-the-starting-point"></a>Nepřímo cílící na Freezable jako výchozí bod
+
+Předchozí části popisují <xref:System.Windows.Freezable> , jak nepřímo cílit na, spuštěním <xref:System.Windows.FrameworkElement> s nebo <xref:System.Windows.FrameworkContentElement> a vytvořením řetězu vlastností pro <xref:System.Windows.Freezable> dílčí vlastnost. Můžete také použít <xref:System.Windows.Freezable> jako výchozí bod a nepřímo cílit na jednu z jejích <xref:System.Windows.Freezable> dílčích vlastností. Jedno další omezení platí při použití <xref:System.Windows.Freezable> jako výchozí bod pro nepřímý cíl: začátek <xref:System.Windows.Freezable> a každý <xref:System.Windows.Freezable> mezi ním a nepřímo cílovou dílčí vlastnost nesmí být zmrazen.
+
+<a name="controllable_storyboards"></a>
+
+## <a name="interactively-controlling-a-storyboard-in-xaml"></a>Interaktivní řízení scénáře v jazyce XAML
+
+Pokud chcete začít scénář v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], <xref:System.Windows.Media.Animation.BeginStoryboard> použijte akci triggeru. <xref:System.Windows.Media.Animation.BeginStoryboard>distribuuje animace do objektů a vlastností, které animuje, a spustí scénář. (Podrobné informace o tomto procesu najdete v tématu [Přehled systému animace a časování](animation-and-timing-system-overview.md).) Pokud pojmenujete <xref:System.Windows.Media.Animation.BeginStoryboard> název tak, že určíte jeho vlastnost, provedete si ho pomocí vlastního <xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A> scénáře. Scénář pak můžete interaktivně kontrolovat po jeho spuštění. Níže je seznam přidaných akcí scénářů, které můžete použít s triggery událostí k řízení scénáře.
+
+- <xref:System.Windows.Media.Animation.PauseStoryboard>: Pozastaví scénář.
+
+- <xref:System.Windows.Media.Animation.ResumeStoryboard>: Obnoví pozastavený scénář.
+
+- <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní rychlost scénáře.
+
+- <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Posune scénář na konec období jeho výplně, pokud má nějaký.
+
+- <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénář.
+
+- <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odstraní scénář.
+
+V následujícím příkladu se pro interaktivní řízení scénáře používají ověřitelné akce scénářů.
+
+[!code-xaml[animation_ovws_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snip/CS/ControllableStoryboardExample.xaml#controllablestoryboardexamplewholepage)]
+
+<a name="controllable_storyboards_procedural"></a>
+
+## <a name="interactively-controlling-a-storyboard-by-using-code"></a>Interaktivní řízení scénáře pomocí kódu
+
+Předchozí příklady ukázaly, jak animovat pomocí akcí triggeru. V kódu můžete také řídit scénář pomocí interaktivních metod <xref:System.Windows.Media.Animation.Storyboard> třídy. Aby bylo možné provést interaktivní v kódu, je nutné použít příslušné přetížení <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metody scénáře a určit `true` , aby bylo možné je ovládat. <xref:System.Windows.Media.Animation.Storyboard> Další informace <xref:System.Windows.Media.Animation.Storyboard.Begin%28System.Windows.FrameworkElement%2CSystem.Boolean%29> najdete na stránce.
+
+V následujícím seznamu jsou uvedeny metody, které lze použít k manipulaci s a <xref:System.Windows.Media.Animation.Storyboard> po jejím spuštění:
+
+- <xref:System.Windows.Media.Animation.Storyboard.Pause%2A>
+
+- <xref:System.Windows.Media.Animation.Storyboard.Resume%2A>
+
+- <xref:System.Windows.Media.Animation.Storyboard.Seek%2A>
+
+- <xref:System.Windows.Media.Animation.Storyboard.SkipToFill%2A>
+
+- <xref:System.Windows.Media.Animation.Storyboard.Stop%2A>
+
+- <xref:System.Windows.Media.Animation.Storyboard.Remove%2A>
+
+Výhodou použití těchto metod je, že nemusíte vytvářet ani <xref:System.Windows.Trigger> <xref:System.Windows.TriggerAction> vytvářet objekty, stačí pouze <xref:System.Windows.Media.Animation.Storyboard> odkaz na ovladatelné, které chcete manipulovat.
+
+> [!NOTE]
+> Všechny interaktivní akce provedené na <xref:System.Windows.Media.Animation.Clock>, a proto <xref:System.Windows.Media.Animation.Storyboard> dojde k dalšímu taktování modulu časování, ke kterému dojde krátce před dalším vykreslováním. Například pokud použijete <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metodu k přechodu na jiný bod v animaci, hodnota vlastnosti se nemění okamžitě, místo toho se hodnota změní na další taktování modulu časování.
+
+Následující příklad ukazuje, jak použít a ovládat animace pomocí interaktivních metod <xref:System.Windows.Media.Animation.Storyboard> třídy.
+
+[!code-csharp[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/ControllableStoryboardExample.cs#controllablestoryboardexamplewholepage)]
+[!code-vb[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/controllablestoryboardexample.vb#controllablestoryboardexamplewholepage)]
+
+<a name="usingstoryboardsinstyles"></a>
+
+## <a name="animate-in-a-style"></a>Animace ve stylu
+
+Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objekty k definování animací <xref:System.Windows.Style>v. Animace s a <xref:System.Windows.Media.Animation.Storyboard> <xref:System.Windows.Style> v <xref:System.Windows.Media.Animation.Storyboard> je podobná použití jinde, s následujícími třemi výjimkami:
+
+- Neurčíte a <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> <xref:System.Windows.Media.Animation.Storyboard> ; vždy cílí na element, na který <xref:System.Windows.Style> je použit. Chcete- <xref:System.Windows.Freezable> li cílit na objekty, je nutné použít nepřímé cílení. Další informace o nepřímých cílících cíle najdete v části [nepřímé cílení](#pathsyntaxforchangeable) .
+
+- Nemůžete zadat <xref:System.Windows.EventTrigger.SourceName%2A> <xref:System.Windows.EventTrigger> ani <xref:System.Windows.Trigger>.
+
+- Nemůžete použít dynamické odkazy na prostředky nebo výrazy vazby dat <xref:System.Windows.Media.Animation.Storyboard> k nastavení hodnot vlastností nebo animací. To je proto, že všechno <xref:System.Windows.Style> , co uvnitř musí být bezpečné pro přístup z více vláken <xref:System.Windows.Freezable.Freeze%2A> , a systém časování musí <xref:System.Windows.Media.Animation.Storyboard> objekty, aby byly bezpečné pro přístup z více vláken. A <xref:System.Windows.Media.Animation.Storyboard> nemůže být zmrazen, pokud mu nebo jeho podřízené časové osy obsahují odkazy na dynamické prostředky nebo výrazy datových vazeb. Další informace o zamrznutí a dalších <xref:System.Windows.Freezable> funkcích najdete v tématu [Přehled objektů Freezable](../advanced/freezable-objects-overview.md).
+
+- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]nemůžete deklarovat obslužné rutiny <xref:System.Windows.Media.Animation.Storyboard> událostí pro události nebo animace.
+
+Příklad znázorňující, jak definovat scénář ve stylu, naleznete v [animaci v příkladu stylu](how-to-animate-in-a-style.md) .
+
+<a name="defineAStoryboardInAControlTemplateSection"></a>
+
+## <a name="animate-in-a-controltemplate"></a>Animace v objektu ControlTemplate
+
+Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objekty k definování animací <xref:System.Windows.Controls.ControlTemplate>v. Animování s a <xref:System.Windows.Media.Animation.Storyboard> <xref:System.Windows.Controls.ControlTemplate> je podobné použití jinde,snásledujícímidvěmavýjimkami:<xref:System.Windows.Media.Animation.Storyboard>
+
+- Může odkazovat pouze na podřízené objekty <xref:System.Windows.Controls.ControlTemplate>. <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> Není <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> -li parametr zadán, animace cílí na element, na <xref:System.Windows.Controls.ControlTemplate> který je použit.
+
+- <xref:System.Windows.EventTrigger.SourceName%2A> Pro<xref:System.Windows.EventTrigger> nebo může odkazovat pouze na podřízené objekty. <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Trigger>
+
+- Nemůžete použít dynamické odkazy na prostředky nebo výrazy vazby dat <xref:System.Windows.Media.Animation.Storyboard> k nastavení hodnot vlastností nebo animací. To je proto, že všechno <xref:System.Windows.Controls.ControlTemplate> , co uvnitř musí být bezpečné pro přístup z více vláken <xref:System.Windows.Freezable.Freeze%2A> , a systém časování musí <xref:System.Windows.Media.Animation.Storyboard> objekty, aby byly bezpečné pro přístup z více vláken. A <xref:System.Windows.Media.Animation.Storyboard> nemůže být zmrazen, pokud mu nebo jeho podřízené časové osy obsahují odkazy na dynamické prostředky nebo výrazy datových vazeb. Další informace o zamrznutí a dalších <xref:System.Windows.Freezable> funkcích najdete v tématu [Přehled objektů Freezable](../advanced/freezable-objects-overview.md).
+
+- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]nemůžete deklarovat obslužné rutiny <xref:System.Windows.Media.Animation.Storyboard> událostí pro události nebo animace.
+
+Příklad znázorňující <xref:System.Windows.Controls.ControlTemplate>, jak definovat scénář v naleznete v tématu [animace v ControlTemplate](how-to-animate-in-a-controltemplate.md) příkladu.
+
+<a name="animateWhenAPropertyValueChanges"></a>
+
+## <a name="animate-when-a-property-value-changes"></a>Animace při změně hodnoty vlastnosti
+
+V šablonách stylů a ovládacích prvků lze pomocí objektů triggeru spustit scénář při změně vlastnosti. Příklady naleznete v tématu [triggering animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md) a [animace v ControlTemplate](how-to-animate-in-a-controltemplate.md).
+
+Animace aplikované objekty <xref:System.Windows.Trigger> vlastností se chovají složitějším způsobem než <xref:System.Windows.EventTrigger> animace nebo animace spuštěné pomocí <xref:System.Windows.Media.Animation.Storyboard> metod.  Předávají s animacemi definovanými jinými <xref:System.Windows.Trigger> objekty, ale <xref:System.Windows.EventTrigger> vytvářejí animace a triggery spouštěné metodou.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled animace](animation-overview.md)

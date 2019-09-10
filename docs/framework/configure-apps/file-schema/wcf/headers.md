@@ -2,19 +2,21 @@
 title: <headers>
 ms.date: 03/30/2017
 ms.assetid: c79b897d-8ea3-40b5-a8b6-2471941f7ed3
-ms.openlocfilehash: a982fa87ab84725e36ee913f00200cd34f0b8f6f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 76b3cbf6b867a983c203141bcd901b2b7b4038d5
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925580"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855182"
 ---
 # <a name="headers"></a>\<> hlaviček
 Kromě základního identifikátoru URI může koncový bod adresovat jedna nebo více hlaviček SOAP. Jedna sada scénářů, kde je to užitečné, je sada zprostředkujících scénářů SOAP, kdy koncový bod vyžaduje, aby klienti tohoto koncového bodu zahrnuli hlavičky SOAP cílené na zprostředkovatele. Tento prvek konfigurace lze použít k definování vlastních hlaviček adres. Položky v kolekci hlaviček koncového bodu jsou uživatelsky definované prvky XML. Každý element musí být ve správném formátu XML.  
   
- \<system.ServiceModel>  
-\<> klienta  
-\<endpoint>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> klienta**](client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> koncového bodu**](endpoint-of-client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> hlaviček**  
   
 ## <a name="syntax"></a>Syntaxe  
   

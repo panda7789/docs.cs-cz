@@ -5,33 +5,33 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2209fdb-70ef-4dea-8bb8-097fe96f5563
-ms.openlocfilehash: a428f54c3834ccdf6a0c7a5bfce8307172724524
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b08b220e969ad1c400413978c85b2f107d64a688
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607203"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854639"
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>Postupy: Provedení dotazu, který vrátí komplexní typy
-Toto téma ukazuje, jak spustit [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotaz, který vrátí typ objektů, které obsahují vlastnost složitého typu entity.  
+Toto téma ukazuje, jak spustit [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotaz, který vrací objekty typu entity, které obsahují vlastnost komplexního typu.  
   
-### <a name="to-run-the-code-in-this-example"></a>Chcete-li spustit kód v tomto příkladu  
+### <a name="to-run-the-code-in-this-example"></a>Spuštění kódu v tomto příkladu  
   
-1. Přidat [AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) do vašeho projektu a konfigurace projektu pro použití [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100)).  
+1. Přidejte do svého projektu [model AdventureWorks Sales](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) a nakonfigurujte projekt tak, aby používal Entity Framework. Další informace najdete v tématu [jak: Použijte průvodce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))model EDM (Entity Data Model).  
   
-2. V kódové stránce pro vaši aplikaci, přidejte následující `using` příkazy (`Imports` v jazyce Visual Basic):  
+2. Na kódové stránce vaší aplikace přidejte následující `using` příkazy (`Imports` v Visual Basic):  
   
      [!code-csharp[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#namespaces)]
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
-3. Poklikejte na soubor .edmx pro model v zobrazení [okno Prohlížeč modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738483(v=vs.100)) návrháře entit. Na povrchu návrháře entit vyberte `Email` a `Phone` vlastnosti `Contact` typ entity, pak klikněte pravým tlačítkem a vyberte **Refaktorovat do nový komplexní typ**.  
+3. Dvojím kliknutím na soubor. edmx zobrazte model v [okně prohlížeče modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738483(v=vs.100)) Entity Designer. Na Entity Designer ploše vyberte `Email` vlastnosti `Contact` a `Phone` pro typ entity, potom klikněte pravým tlačítkem a vyberte **refaktoring do nového komplexního typu**.  
   
-4. Nový komplexní typ se zvoleným `Email` a `Phone` vlastnosti se přidá do **prohlížeč modelu**. Komplexní typ je přiřazen výchozí název: přejmenujte typ na `EmailPhone` v **vlastnosti** okna. Kromě toho nový `ComplexProperty` je přidána vlastnost `Contact` typu entity. Přejmenovat vlastnost `EmailPhoneComplexType.`  
+4. Do **prohlížeče modelu**se přidá nový komplexní `Email` typ `Phone` s vybranými vlastnostmi a. Komplexní typ má předaný výchozí název: Přejmenujte typ na `EmailPhone` v okně **vlastnosti** . Do typu `ComplexProperty`entityjetaképřidána Novávlastnost.`Contact` Přejmenujte vlastnost na`EmailPhoneComplexType.`  
   
-     Informace o vytváření a úpravách komplexní typy s použitím Průvodce entitního modelu dat najdete v tématu [jak: Refaktorujte již existující vlastnosti do komplexní vlastnosti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456814(v=vs.100)) a [jak: Vytvoření a úprava komplexní typy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100)).  
+     Informace o vytváření a úpravách komplexních typů pomocí Průvodce model EDM (Entity Data Model) naleznete v tématu [How to: Refaktorujte existující vlastnosti do vlastnosti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456814(v=vs.100)) komplexního typu a [postupujte takto: Vytvářejte a upravujte komplexní typy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100)).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad spustí dotaz, který vrátí kolekci `Contact` objekty a zobrazí dvě vlastnosti `Contact` objekty: `ContactID` a hodnoty `EmailPhoneComplexType` komplexního typu.  
+ Následující příklad spustí dotaz, `Contact` který vrátí kolekci objektů a zobrazí dvě vlastnosti `Contact` objektů: `ContactID` a hodnoty `EmailPhoneComplexType` komplexního typu.  
   
  [!code-csharp[DP EntityServices Concepts#ComplexTypeWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#complextypewithentitycommand)]
  [!code-vb[DP EntityServices Concepts#ComplexTypeWithEntityCommand](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#complextypewithentitycommand)]

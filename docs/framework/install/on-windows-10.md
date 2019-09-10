@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 33805230e0aa6c75443773d60e73f9463ee1fde5
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 0de48e14f11d3763ee239b28b40bdb809dbeb433
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106548"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853937"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace .NET Framework ve Windows 10 a Windows serveru 2016 a novějších verzích
 
@@ -72,7 +72,7 @@ Verze .NET Framework 4. x jsou místní aktualizace na starší verze. To znamen
 
 - 4. x verze .NET Framework lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 prostřednictvím této verze. Například .NET Framework 4,7 lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 až 4,7. Nejnovější verzi (.NET Framework 4,8) lze použít ke spouštění aplikací vytvořených ve všech verzích .NET Framework počínaje verzí 4,0.
 
-Seznam všech verzí .NET Framework dostupných ke stažení najdete na stránce [soubory ke stažení pro rozhraní .NET](https://www.microsoft.com/net/download?utm_source=ms-docs&utm_medium=referral) .
+Seznam všech verzí .NET Framework dostupných ke stažení najdete na stránce [soubory ke stažení pro rozhraní .NET](https://dotnet.microsoft.com/download) .
 
 ## <a name="help"></a>Help
 
@@ -80,6 +80,6 @@ Pokud se vám nedaří nainstalovat správnou verzi .NET Framework, můžete [po
 
 ## <a name="see-also"></a>Viz také:
 
-- [Soubory ke stažení pro .NET](https://www.microsoft.com/net/download?utm_source=ms-docs&utm_medium=referral)
+- [Soubory ke stažení pro .NET](https://dotnet.microsoft.com/download)
 - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
 - [Instalace .NET Framework pro vývojáře](guide-for-developers.md)

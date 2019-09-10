@@ -2,32 +2,32 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 6b924f484e6635760d08d0eba9fb9436bdd8bc88
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cc58bbc82f3930f087b5da0c64afb4f9f03e905b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248590"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854502"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat typy a funkce v úložišti dat.  
   
  Služby entit pracují nezávisle na konkrétním poskytovateli úložiště dat. Zprostředkovatel dat však stále umožňuje poskytovateli dat explicitně definovat, jak modely, mapování a dotazy budou fungovat s podkladovým úložištěm dat. Bez vrstvy abstrakce by mohly být služby entit cílené jenom na konkrétní úložiště dat nebo poskytovatele dat.  
   
- Typy, které podporuje zprostředkovatel, jsou přímo nebo nepřímo podporovány podkladovou databází. Tyto typy nejsou nutně v přesném typu úložiště, ale typy, které poskytovatel používá pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Typy poskytovatel/úložiště jsou popsány v tématu model EDM (Entity Data Model) (EDM).  
+ Typy, které podporuje zprostředkovatel, jsou přímo nebo nepřímo podporovány podkladovou databází. Tyto typy nejsou nutně v přesném typu úložiště, ale typy, které zprostředkovatel používá pro podporu Entity Framework. Typy poskytovatel/úložiště jsou popsány v tématu model EDM (Entity Data Model) (EDM).  
   
  Parametry a návratové typy pro funkce podporované úložištěm dat jsou určené v rámci podmínek EDM.  
   
 ## <a name="requirements"></a>Požadavky  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] A úložiště dat musí být schopné předat data zpátky a zpátky do známých typů bez ztráty dat nebo zkrácení.  
+ Entity Framework a úložiště dat musí být schopné předat data zpátky a zpátky do známých typů, aniž by došlo ke ztrátě nebo zkracování dat.  
   
  Manifest zprostředkovatele musí být spustitelný nástroji v době návrhu, aniž by bylo nutné otevřít připojení k úložišti dat.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Rozlišuje velká a malá písmena, ale příslušné úložiště dat nemusí být. Pokud jsou v manifestu definovány a použity artefakty EDM (například identifikátory a názvy typů), musí používat [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] rozlišování velkých a malých písmen. Pokud se v manifestu zprostředkovatele objeví prvky úložiště dat, které můžou rozlišovat velká a malá písmena, musí být toto pouzdro udržováno v manifestu zprostředkovatele.  
+ Entity Framework rozlišuje velká a malá písmena, ale příslušné úložiště dat nemusí být. Pokud jsou v manifestu definovány a použity artefakty EDM (například identifikátory a názvy typů), musí používat rozlišování velkých a malých písmen Entity Framework. Pokud se v manifestu zprostředkovatele objeví prvky úložiště dat, které můžou rozlišovat velká a malá písmena, musí být toto pouzdro udržováno v manifestu zprostředkovatele.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Vyžaduje manifest zprostředkovatele pro všechny poskytovatele dat. Pokud se pokusíte použít poskytovatele, který nemá manifest zprostředkovatele s rozhraním [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], zobrazí se chyba.  
+ Entity Framework vyžaduje manifest zprostředkovatele pro všechny poskytovatele dat. Pokud se pokusíte použít poskytovatele, který nemá manifest zprostředkovatele s Entity Framework, zobrazí se chyba.  
   
- Následující tabulka popisuje typy výjimek, které [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] by byly vyvolány při výskytu výjimek prostřednictvím interakce poskytovatele:  
+ Následující tabulka popisuje typy výjimek, které Entity Framework by vyvolaly při výjimkách prostřednictvím interakce poskytovatele:  
   
 |Problém|Výjimka|  
 |-----------|---------------|  
@@ -39,7 +39,7 @@ Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat t
  Poskytovatel by měl podporovat následující scénáře:  
   
 ### <a name="writing-a-provider-with-symmetric-type-mapping"></a>Zápis zprostředkovatele pomocí mapování symetrického typu  
- Můžete napsat poskytovatele pro, kde se [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] každý typ úložiště mapuje na jeden typ EDM bez ohledu na směr mapování. Pro typ poskytovatele, který má velmi jednoduché mapování, které odpovídá typu EDM, můžete použít symetrické řešení, protože systém typů je jednoduchý nebo se shoduje s typy EDM.  
+ Můžete napsat poskytovatele pro Entity Framework, kde se každý typ úložiště mapuje na jeden typ EDM bez ohledu na směr mapování. Pro typ poskytovatele, který má velmi jednoduché mapování, které odpovídá typu EDM, můžete použít symetrické řešení, protože systém typů je jednoduchý nebo se shoduje s typy EDM.  
   
  Můžete použít jednoduchost své domény a vytvořit statický manifest deklarativního zprostředkovatele.  
   
@@ -50,7 +50,7 @@ Tato část popisuje, jak může zprostředkovatel úložiště dat podporovat t
 - Seznam funkcí podporovaných poskytovatelem, kde jsou parametry a návratové typy vyjádřeny v terminologii EDM.  
   
 ### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Zápis zprostředkovatele s mapováním asymetrického typu  
- Při psaní zprostředkovatele úložiště dat pro je [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]možné mapování typu EDM-to-Provider pro některé typy lišit od mapování typu od poskytovatele k modelu EDM. Například nevázaný vlastnost PrimitiveTypeKind EDM. String se může namapovat na nvarchar (4000) na poskytovateli, zatímco nvarchar (4000) se mapuje na vlastnost PrimitiveTypeKind EDM. String (MaxLength = 4000).  
+ Při psaní zprostředkovatele úložiště dat pro Entity Framework se mapování typu EDM-to-Provider u některých typů může lišit od mapování typu od poskytovatele k modelu EDM. Například nevázaný vlastnost PrimitiveTypeKind EDM. String se může namapovat na nvarchar (4000) na poskytovateli, zatímco nvarchar (4000) se mapuje na vlastnost PrimitiveTypeKind EDM. String (MaxLength = 4000).  
   
  Napíšete soubor XML, který má dvě části:  
   
@@ -259,7 +259,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Name|String|Ano|není k dispozici|Identifikátor/název funkce|  
-|ReturnType|String|Ne|Šekem|Návratový typ EDM funkce|  
+|ReturnType|String|Ne|šekem|Návratový typ EDM funkce|  
 |Aggregate|Boolean|Ne|False|True, pokud je funkce agregační funkcí|  
 |Integrované|Boolean|Ne|Pravda|True, pokud je funkce integrovaná do úložiště dat|  
 |StoreFunctionName|String|Ne|\<Název >|Název funkce v úložišti dat.  Umožňuje úroveň přesměrování názvů funkcí.|  

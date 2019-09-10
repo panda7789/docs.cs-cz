@@ -1,30 +1,30 @@
 ### YamlMime:Tutorial
-title: Čísla s plovoucí desetinnou čárkou a integrální bod v manipulaci sC#
+title: Manipulace s integrálními čísly a čísly s plovoucí desetinnou čárkouC#
 metadata:
-  title: Čísla v C# – Úvod do C# Interaktivní kurz
-  description: V tomto kurzu o typech čísel se budete pomocí prohlížeče učit C# interaktivně. Budete psát kód v C# a zobrazovat výsledky kompilace a spuštění prohlédnete přímo v prohlížeči.
+  title: Čísla v C# seznámení C# s interaktivním kurzem
+  description: V tomto kurzu o číselných typech použijete prohlížeč k interaktivnímu Projděte C# . Budete psát C# kód a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči.
   audience: Developer
   ms.custom: mvc
   ms.date: 08/24/2018
   level: Beginner
   nextTutorialHref: branches-and-loops.yml
-  nextTutorialTitle: Větve a smyčky v C#
+  nextTutorialTitle: Větve a smyčky vC#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7122bda62465482340ebdd2b1dc37577de9a0e69
-  ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+  ms.openlocfilehash: af06d938f86841620784909b16e72d000452fc2a
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/09/2019
-  ms.locfileid: "67661022"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850682"
 items:
 - durationInMinutes: 1
   content: >
-    V tomto kurzu se dozvíte, jaké typy čísel v C# interaktivně, pomocí prohlížeče k zápisu C# a zobrazovat výsledky kompilace a spuštění kódu. Obsahuje sérii lekcí, které se zabývají čísly a matematickými operacemi v C#. Tato lekce vás naučí základy jazyka C#.
-- title: Prozkoumejte matematikou celých čísel
+    V tomto kurzu se seznámíte s číselnými typy C# v interaktivním prostředí pomocí prohlížeče pro zápis C# a zobrazení výsledků kompilace a spuštění kódu. Obsahuje řadu lekcí, které prozkoumají čísla a matematické operace v C#. V těchto lekcích se naučíte základy C# jazyka.
+- title: Prozkoumat celočíselné matematické
   durationInMinutes: 4
   content: >
-    Spusťte v interaktivním okně následující kód. K tomu, zadejte do interaktivního okna následující blok kódu a klikněte na tlačítko **spustit** tlačítka:
+    Spusťte následující kód v interaktivním okně. Uděláte to tak, že do interaktivního okna zadáte následující blok kódu a kliknete na tlačítko **Spustit** :
 
 
     ```csharp
@@ -40,25 +40,25 @@ items:
     ```
 
 
-    Právě jste viděli jednu ze základních matematických operací s celými čísly. `int` Zadejte představuje **celé číslo**, kladné nebo záporné celé číslo. Můžete použít `+` symbol pro přidání. Dalším běžným matematickým operacím pro celá čísla zahrnují:
+    Právě jste viděli jednu ze základních matematických operací s celými čísly. Typ představuje celé číslo, kladné nebo záporné celé číslo. **** `int` `+` Symbol se používá pro sčítání. Mezi další běžné matematické operace pro celá čísla patří:
 
 
-    - `-` pro odčítání
+    - `-`pro odčítání
 
-    - `*` pro násobení
+    - `*`pro násobení
 
-    - `/` pro dělení
+    - `/`pro dělení
 
 
     > [!TIP]
 
-    > V celém tomto interaktivním kurzu můžete prozkoumat na vlastní pěst a upravovat kód, který jste napsali v interaktivním okně. Tento kurz obsahuje příklady, které můžete v každém kroku vyzkoušet.
+    > V tomto interaktivním kurzu se můžete podívat na vlastní, protože upravíte kód, který jste napsali v interaktivním okně. V tomto kurzu najdete příklady, které můžete vyzkoušet v každém kroku.
 
 
-    Nejdřív si vyzkoušejte uvedené operace. Třetí řádek pro každou z těchto operací. Zkuste změnit. Po každé úpravě klikněte na tlačítko **spustit** tlačítko.
+    Začněte tím, že prozkoumáte tyto různé operace. Upravte třetí řádek a vyzkoušejte každou z těchto operací. Po každé úpravě klikněte na tlačítko **Spustit** .
 
 
-    Odčítání:
+    Odčítání
 
 
     ```csharp
@@ -68,7 +68,7 @@ items:
     ```
 
 
-    Násobení:
+    Násobení
 
 
     ```csharp
@@ -78,7 +78,7 @@ items:
     ```
 
 
-    Dělení:
+    Dělení
 
 
     ```csharp
@@ -88,27 +88,27 @@ items:
     ```
 
 
-    Můžete taky experimentovat a provést několik matematických operací na jednom řádku, pokud byste o ni.
+    Můžete také experimentovat při provádění více matematických operací na stejném řádku, pokud byste chtěli.
 
 
     > [!TIP]
 
-    > Když se budete učit, C# (nebo libovolným programovacím jazykem), budete se při psaní kódu dělat chyby. **Kompilátoru** se tyto chyby odhalí a dejte nám o nich na vás. Pokud výstup obsahuje chybové zprávy, prohlédněte si blíže ukázkový kód a kód v interaktivním okně, abyste zjistili, co je opravit.
+    > Při prozkoumávání C# (nebo jakémkoli programovacím jazyce) budete při psaní kódu dělat chyby. **Kompilátor** tyto chyby vyhledá a nahlásí je. V případě, že výstup obsahuje chybové zprávy, pečlivě si prohlédněte vzorový kód a kód v interaktivním okně, kde zjistíte, co je třeba opravit.
 
-    > Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#.
+    > Toto cvičení vám pomůže zjistit strukturu C# kódu.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Seznámení s pořadím operací
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Prozkoumat pořadí operací
   durationInMinutes: 7
   content: >
-    Jazyk C# definuje prioritu různých matematických operací pravidla souladu se stejnými pravidly, že jste se naučili v matematice.
+    C# Jazyk definuje prioritu různých matematických operací s pravidly, která jsou v souladu s pravidly, která jste se naučili v matematice.
 
-    Úlohy násobení a dělení přednost před sčítáním a odčítáním.
+    Násobení a dělení mají přednost před sčítáním a odčítáním.
 
-    Vyzkoušejte si to spuštěním následujícího kódu v interaktivním okně:
+    Prozkoumejte to spuštěním následujícího kódu v interaktivním okně:
 
 
     ```csharp
@@ -126,10 +126,10 @@ items:
     ```
 
 
-    Z výstupu vyplývá, operace násobení se provede dřív než operace sčítání.
+    Výstup ukazuje, že násobení je provedeno před sčítáním.
 
 
-    Jiné pořadí operací můžete vynutit závorek uzavřením operace nebo operací, které chcete provést jako první:
+    Můžete vynutit jiné pořadí operací přidáním závorek kolem operace nebo operací, které chcete provést jako první:
 
 
     ```csharp
@@ -147,7 +147,7 @@ items:
     ```
 
 
-    Teď prozkoumáme i další kombinací několika různých operací. Čtvrtý řádek výše nahraďte vypadat přibližně takto:
+    Kombinování různých operací vám umožní prozkoumat víc. Výše uvedený čtvrtý řádek nahraďte podobným způsobem:
 
 
     ```csharp
@@ -157,10 +157,10 @@ items:
     ```
 
 
-    Mohli jste si všimnout zvláštního chování pro celá čísla. Dělení celého čísla vždy vytváří celé číslo výsledku, i když byste očekávali bude výsledek obsahovat desetinné nebo zlomkové části.
+    Možná jste si všimli zajímavého chování pro celá čísla. Celočíselné dělení vždy vytváří celočíselný výsledek, i když byste očekávali, že by výsledek zahrnoval desítkovou nebo zlomkovou část.
 
 
-    Pokud toto chování nezaznamenali, zkuste následující:
+    Pokud jste toto chování neviděli, vyzkoušejte následující:
 
 
     ```csharp
@@ -178,18 +178,18 @@ items:
     ```
 
 
-    Klikněte na tlačítko **spustit** znovu, abyste viděli výsledek.
+    Kliknutím na tlačítko **Spustit** znovu zobrazíte výsledky.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Prozkoumat celé číslo přesnosti a omezení
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Prozkoumat celočíselnou přesnost a omezení
   durationInMinutes: 5
   content: >
-    Z poslední ukázky vám ukázal, že dělení celého čísla zkrátí výsledek.
+    Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.
 
-    Můžete získat **zbývající** pomocí **modulo** operátoru `%` znak:
+    **Zbytek** můžete získat pomocí `%` operátoru **modulo** , znaku:
 
 
     ```csharp
@@ -211,7 +211,7 @@ items:
     ```
 
 
-    Typ integer jazyka C# se liší od matematické celých čísel v jednom ohledu: `int` typ má minimální a maximální mezí. Tento kód spusťte v interaktivním okně, abyste tyto limity zjistíte:
+    C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: `int` typ má minimální a maximální limity. Spusťte tento kód v interaktivním okně, abyste viděli tato omezení:
 
 
     ```csharp
@@ -225,7 +225,7 @@ items:
     ```
 
 
-    Pokud výsledkem určitého výpočtu hodnota, která tyto limity překračuje, máte **podtečení** nebo **přetečení** podmínku. Zobrazí se odpověď cyklicky přechází od jednoho limitu k druhému. Přidejte následující dva řádky do interaktivního okna k prohlédnutí příkladu:
+    Pokud výpočet vytvoří hodnotu, která překračuje tato omezení, **dojde k podtečení nebo** **podtečení** . Odpověď se zobrazí jako zabalení od jednoho limitu k druhému. Přidejte tyto dva řádky do interaktivního okna a podívejte se na příklad:
 
 
     ```csharp
@@ -237,25 +237,25 @@ items:
     ```
 
 
-    Všimněte si, že odpověď těsně blíží minimální (zápornému) celému číslu. Je stejný jako `min + 2`.
+    Všimněte si, že odpověď se velmi blíží minimálnímu (zápornému) celému číslu. Je stejný jako `min + 2`.
 
-    Operace sčítání **došlo k přetečení** povolené hodnoty celých čísel.
+    Operace sčítání **přetéká** povolené hodnoty pro celá čísla.
 
-    Odpověď je velmi velké záporné číslo, protože přetečení "cyklickému přechodu" od nejvyšší možné celočíselné hodnoty k nejnižší.
+    Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.
 
 
-    Existují další číselné typy s různými limity a přesností, můžete použít, pokud `int` typu nevyhovuje vašim potřebám. Podíváme se na ně podívat.
+    Existují i jiné číselné typy s různými limity a přesností, které byste použili, `int` když typ nevyhovuje vašim potřebám. Pojďme se podívat na další.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Práce s typem double
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Práce s typem Double
   durationInMinutes: 5
   content: >
-    `double` Číselného typu představuje číslo s plovoucí desetinnou dvojitou přesností. Tyto výrazy možná pro vás nová. A **s plovoucí desetinnou čárkou** číslo slouží k reprezentaci jiných než celých čísel, která může být velmi velké nebo velmi vysoká. **Dvojité přesnosti** znamená, že tato čísla ukládají s větší přesností než **jednoduchou přesností**. V moderních počítačích se častěji používají s dvojitou přesností než čísla a jednoduchou přesností.
+    `double` Číselný typ představuje číslo s dvojitou přesností a plovoucí desetinnou čárkou. Tyto výrazy můžou být pro vás nové. Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá. **Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**. Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.
 
-    Zkusíme zjistit. Vyzkoušet v interaktivním okně následující kód a zobrazit výsledek:
+    Pojďme prozkoumat. V interaktivním okně vyzkoušejte následující kód a podívejte se na výsledek:
 
 
     ```csharp
@@ -273,7 +273,7 @@ items:
     ```
 
 
-    Všimněte si, že odpověď obsahuje desetinnou část podílu. Try – o něco složitější výraz s čísly typu Double:
+    Všimněte si, že odpověď obsahuje desetinnou část podílu. Vyzkoušejte trochu složitější výraz s dvojitou přesností:
 
 
     ```csharp
@@ -291,7 +291,7 @@ items:
     ```
 
 
-    Rozsah hodnoty double je mnohem větší než u hodnot typu integer. Vyzkoušejte v interaktivním okně následující kód:
+    Rozsah hodnoty Double je mnohem větší než celočíselné hodnoty. V interaktivním okně zkuste použít následující kód:
 
 
     ```csharp
@@ -305,10 +305,10 @@ items:
     ```
 
 
-    Tyto hodnoty jsou vytiskne zapsaný exponenciální notací. Číslo vlevo od `E` se říká mantisa. Exponent, je číslo vpravo jako mocninu 10.
+    Tyto hodnoty se tisknou v matematickém zápisu. Číslo nalevo od `E` je mantisa. Číslo vpravo je exponent, jako mocnina 10.
 
 
-    Stejně jako desetinná čísla v matematice můžou mít typu Double v C# chyby zaokrouhlení. Vyzkoušejte tento kód:
+    Stejně jako desítková čísla v matematických případech můžou C# být v uvozovkách chyby zaokrouhlení. Vyzkoušejte tento kód:
 
 
     ```csharp
@@ -320,22 +320,22 @@ items:
     ```
 
 
-    Víte, že `0.3` periodických přesně neodpovídá stejný jako `1/3`.
+    Víte, že `0.3` opakování není přesně stejné jako. `1/3`
 
 
-    ***Výzvy***
+    ***Výzev***
 
 
-    Vyzkoušejte si různé výpočty s velkým, malé čísly, násobením a dělením za použití `double` typu.  Zkuste složitější výpočty.
+    Zkuste další výpočty s velkými čísly, malými čísly, násobení a `double` dělení pomocí typu.  Vyzkoušejte složitější výpočty.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- title: Práce s typy s pevnou desetinnou čárkou
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Práce s pevnými typy bodů
   durationInMinutes: 8
   content: >
-    Seznámili jste se základními typy čísel v jazyce C#: celými čísly a čísly typu Double.  Existuje jeden další typ: `decimal` typu. `decimal` Má menší rozsah, ale zato větší přesnost než typ `double`. Termín **Pevná desetinná** znamená, že desetinné čárky (nebo řádová) čárka nepohybuje. Podívejme se na to:
+    Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.  Existuje jeden další typ, který se naučí: `decimal` typ. Typ má menší rozsah, ale větší přesnost než `double`. `decimal` **Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá. Podívejme se na to:
 
 
     ```csharp
@@ -349,7 +349,7 @@ items:
     ```
 
 
-    Všimněte si, že je rozsah menší, než `double` typu. Větší přesnost typu decimal můžete zobrazit pomocí následujícího kódu:
+    Všimněte si, že rozsah je menší než `double` typ. Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:
 
 
     ```csharp
@@ -370,28 +370,28 @@ items:
     ```
 
 
-    `M` Přípona u čísel je způsob, jak naznačit, že má konstanta používat `decimal` typu.
+    Přípona čísel představuje způsob, jakým by měl být `decimal` typ konstanty použit. `M`
 
 
-    Všimněte si, že výsledek s typem decimal má napravo od desetinné čárky víc číslic.
+    Všimněte si, že matematický použití typu Decimal má na pravé straně desetinné čárky více číslic.
 
 
-    ***Výzvy***
+    ***Výzev***
 
 
-    Teď, když jste se seznámili s různými typy čísel, psát kód, který vypočítá obsah kruhu s poloměrem 2,50 centimetru. Mějte na paměti, že obsah kruhu je jako poloměr na druhou krát číslo PÍ. Jeden pomocný parametr: .NET obsahuje pro číslo PÍ konstantu <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu.
+    Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů. Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí. Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType> kterou můžete použít pro tuto hodnotu.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 
 
-    By vám vyjít výsledek mezi 19 a 20.
+    Měli byste získat odpověď mezi 19 a 20.
 - title: Dokončení výzvy
   durationInMinutes: 1
   content: >
-    Napsali jste kód podobný tomuto?
+    Pracovali jste s podobným způsobem?
 
 
     ```csharp
@@ -405,17 +405,17 @@ items:
     ```
 
 
-    Pokud chcete, vyzkoušejte i další vzorce.
+    Pokud chcete, zkuste použít jiné vzorce.
 
 
     > [!NOTE]
 
-    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+    > Toto online prostředí kódování je v režimu náhledu. Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Dokončili jste "čísla v C#" interaktivního kurzu. Můžete kliknout **větve a smyčky** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů.
+    Dokončili jste "čísla" v C#interaktivním kurzu. Kliknutím na odkaz **větve a smyčky** níže můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování. Oddíl "další kroky" vás převede zpět na tyto kurzy.
 
 
-    Další informace o číslech v jazyce C# v následujících tématech:
+    Další informace o číslech v C# najdete v následujících tématech:
 
 
     - [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)

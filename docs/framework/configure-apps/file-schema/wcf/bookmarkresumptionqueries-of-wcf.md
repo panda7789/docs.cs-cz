@@ -2,12 +2,12 @@
 title: <bookmarkResumptionQueries>služby WCF
 ms.date: 03/30/2017
 ms.assetid: ed086712-1dc7-4932-a592-d1116a0155f3
-ms.openlocfilehash: 5ec9827e9862866096265da576c91b10573012d1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 94ff9f44f295b45c03e1bd8f52a85d6b7b0c6e3b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919739"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850136"
 ---
 # <a name="bookmarkresumptionqueries-of-wcf"></a>\<bookmarkResumptionQueries > WCF
   
@@ -15,14 +15,14 @@ Představuje kolekci dotazů, které se používají ke sledování obnovení z�
   
 Další informace o sledování dotazů profilů najdete v tématu [sledování profilů](../../../windows-workflow-foundation/tracking-profiles.md).
   
-\<system.serviceModel>  
-\<sledování >  
-\<profiles>  
-\<Profil TrackingProfile >  
-\<> pracovního postupu  
-\<bookmarkResumptionQueries>  
-\<bookmarkResumptionQuery>  
-  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sledování >** ](tracking-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> profilů**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Profil TrackingProfile >** ](trackingprofile-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> pracovního postupu**](workflow-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<bookmarkResumptionQueries >**  
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

@@ -2,15 +2,15 @@
 title: Modelování a mapování
 ms.date: 03/30/2017
 ms.assetid: ec8a9515-3708-4cde-a688-4d8e6975f150
-ms.openlocfilehash: 33064d35b7ac4c469df3ca6f0111cc84ef10eb08
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 133539ab1b6d6f2f0ab3f8deed5b22240c2bb07e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248489"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854402"
 ---
 # <a name="modeling-and-mapping"></a>Modelování a mapování
-[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]V nástroji můžete definovat koncepční model, model úložiště a mapování mezi dvěma způsoby, které nejlépe vyhovují vaší aplikaci. Nástroje model EDM (Entity Data Model) v aplikaci Visual Studio umožňují vytvořit. [soubor EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)) z databáze nebo grafického modelu a poté tento soubor aktualizovat, když se změní databáze nebo model.  
+V Entity Framework můžete definovat koncepční model, model úložiště a mapování mezi nimi způsobem, který nejlépe vyhovuje vaší aplikaci. Nástroje model EDM (Entity Data Model) v aplikaci Visual Studio umožňují vytvořit. [soubor EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)) z databáze nebo grafického modelu a poté tento soubor aktualizovat, když se změní databáze nebo model.  
   
  Počínaje Entity Framework 4,1 můžete také vytvořit model programově pomocí Code Firstho vývoje. Existují dva různé scénáře vývoje Code First. V obou případech vývojář definuje model pomocí kódování .NET Framework definice tříd a pak volitelně určuje dodatečné mapování nebo konfiguraci pomocí datových poznámek nebo rozhraní Fluent API.  
   

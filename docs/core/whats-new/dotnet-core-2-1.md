@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: 00edb1c8704aab19d7ff44fe26c514b5ccea64b6
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: d99d4bd646f0cfee31486a030f97801e9adfa8b8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331084"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849885"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -178,15 +178,17 @@ Bez těchto typů při předávání takových položek jako části pole nebo o
 
 V následujícím příkladu se používá <xref:System.Span%601> instance <xref:System.Memory%601> a k poskytnutí virtuálního zobrazení 10 prvků pole.
 
-[!CODE-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
+[!code-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
 
-[!CODE-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
+[!code-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
 
 ### <a name="brotli-compression"></a>Komprese Brotli
 
 .NET Core 2,1 přidává podporu pro kompresi a dekompresi Brotli. Brotli je univerzální bezeztrátová kompresní algoritmus, který je definovaný v [dokumentu RFC 7932](https://www.ietf.org/rfc/rfc7932.txt) a který podporuje většina webových prohlížečů a hlavních webových serverů. Můžete použít třídu založenou <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> na datovém proudu nebo vysoce výkonné rozsahy <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> a <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> třídy. Následující příklad znázorňuje kompresi s <xref:System.IO.Compression.BrotliStream> třídou:
 
-[!CODE-csharp[Brotli compression](~/samples/core/whats-new/whats-new-in-21/cs/brotli.cs#1)]
+[!code-csharp[Brotli compression](~/samples/core/whats-new/whats-new-in-21/cs/brotli.cs#1)]
+
+[!code-vb[Brotli compression](~/samples/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
 
 Chování je stejné jako <xref:System.IO.Compression.DeflateStream> a <xref:System.IO.Compression.GZipStream>, což usnadňuje převod kódu, který volá tato rozhraní API na <xref:System.IO.Compression.BrotliStream>. <xref:System.IO.Compression.BrotliStream>
 

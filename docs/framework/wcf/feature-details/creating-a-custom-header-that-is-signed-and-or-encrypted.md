@@ -2,20 +2,20 @@
 title: Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: 76bfb6040f6b78765ed42ce7fbf86cdbd62c1e48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d737647f8c0442a3d6fa0d077a1ffe2c251ea043
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857373"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856172"
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Vytvoření vlastní hlavičky, která je podepsaná a/nebo šifrovaná
-Při volání služby typu bez WCF pomocí klienta WCF je někdy potřeba použít vlastní hlavičky SOAP. Ve službě WCF, který brání vlastní hlavičky, které jsou podepsány a šifrovány práci se službou bez WCF je Chyba převodu do kanonického tvaru. Problém je způsoben nesprávnou interpretaci výchozí obory názvů XML. Toto je pouze problematické při volání služby bez WCF s vlastní hlavičky, které jsou podepsané a/nebo šifrovaná.  Když služba přijímá zprávy obsahující podepsaný a/nebo šifrovaná vlastní hlavičky nelze ověřit podpis. Toto řešení se vyhnete chyby převodu do kanonického tvaru, umožňuje spolupráci se službami jiných WCF, ale nezabrání interoperabilita se službami WCF.  
+Při volání služby jiného typu než WCF pomocí klienta WCF je někdy nutné použít vlastní hlavičky SOAP. V rámci WCF existuje chyba kanonikalizace, která zabraňuje vlastním hlavičkám, které jsou podepsané a šifrované pro práci se službou jiného typu než WCF. Problém je způsoben nesprávnou kanonikalizací výchozích oborů názvů XML. To je problematické jenom při volání služeb jiných než WCF s vlastními hlavičkami, které jsou podepsané nebo šifrované.  Když služba obdrží zprávu obsahující podepsané a/nebo zašifrované vlastní záhlaví, nemůže ověřit podpis. Toto alternativní řešení předchází chybě kanonikalizace, umožňuje vzájemnou spolupráci s jinými službami než WCF, ale nebrání interoperabilitě se službami WCF.  
   
 ## <a name="defining-the-custom-header"></a>Definování vlastní hlavičky  
- Vlastní hlavičky, které jsou definovány pomocí definování kontraktu zprávy a označení členů, které chcete odeslat jako záhlaví s <xref:System.ServiceModel.MessageHeaderAttribute> atribut. Chcete-li vyřešit chyby převodu do kanonického tvaru musíte zajistit, že serializátor XML deklaruje obor názvů pro vlastní záhlaví s předponou místo výchozí deklaraci oboru názvů. Následující kód ukazuje, jak definovat datový typ, který se použije jako záhlaví zprávy s deklarací správný obor názvů.  
+ Vlastní hlavičky jsou definovány definováním kontraktu zprávy a označením členů, které chcete odeslat jako záhlaví s <xref:System.ServiceModel.MessageHeaderAttribute> atributem. Chcete-li vyřešit chybu kanonikalizace, je nutné zajistit, aby serializátor XML deklaruje obor názvů pro vlastní hlavičku s předponou namísto výchozí deklarace oboru názvů. Následující kód ukazuje, jak definovat datový typ, který bude použit jako záhlaví zprávy se správnou deklarací oboru názvů.  
   
-```  
+```csharp
 [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "3.0.4506.648")]  
 [System.SerializableAttribute()]  
 [System.Diagnostics.DebuggerStepThroughAttribute()]  
@@ -43,9 +43,9 @@ public partial class msgHeaderElement
 }  
 ```  
   
- Tento kód deklaruje nový typ s názvem `msgHeaderElement` , který by se Dal serializovat s příznakem serializátor XML. Pokud je serializována instance tohoto typu, ji budou definovat obor názvů s předponou "h", tedy obejít chyby převodu do kanonického tvaru.  Kontrakt zprávy potom definujte instance `msgHeaderElement` a označte ji pomocí <xref:System.ServiceModel.MessageHeaderAttribute> atributu, jak je znázorněno v následujícím příkladu.  
+ Tento kód deklaruje nový typ s názvem `msgHeaderElement` , který bude serializován pomocí serializátoru XML. Když je serializována instance tohoto typu, definuje obor názvů s předponou "h", takže bude pracovat kolem chyby kanonikalizace.  Kontrakt zprávy by pak definoval instanci `msgHeaderElement` a označil ji <xref:System.ServiceModel.MessageHeaderAttribute> atributem, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 [MessageContract]  
 public  class MyMessageContract  
 {  

@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8d51149c01b4c8018609ca9313cc4eea2afbb5a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f32924c8c104f37fdb98a2a9ff104b6f6c19e478
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946573"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853831"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, která přistupují k definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -189,7 +189,7 @@ class PInvokeScenario
   
  Následující deklarace rozhraní COM interop rozhraní ignorují `Assert`modifikátory, `PermitOnly` `Deny`a podobně jako příklady vyvolání platformy v předchozí části.  
   
-```  
+```csharp
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
 interface IAssertStubsItf  
 {  
@@ -220,7 +220,7 @@ interface IAssertStubsItf
   
  Kromě toho `Demand` modifikátor není přijat ve scénářích deklarace rozhraní Interop modelu COM, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
 interface IDemandStubsItf  
 {  

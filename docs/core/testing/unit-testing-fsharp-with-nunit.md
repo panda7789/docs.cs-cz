@@ -6,12 +6,12 @@ ms.date: 10/04/2018
 dev_langs:
 - fsharp
 ms.custom: seodec18
-ms.openlocfilehash: d654f77eb71b050b636476d67c62da3ea764edf7
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: cf313f8197280bdbb943c12ef0c7a29284ec01a5
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374184"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849773"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a nunit
 
@@ -21,7 +21,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET Core 2,1 SDK](https://www.microsoft.com/net/download) nebo novější verze.
+- [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
 - Textový editor nebo Editor kódu dle vašeho výběru.
 
 ## <a name="creating-the-source-project"></a>Vytvoření zdrojového projektu

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e10b1a77586a09f8f5f7a59e811953fbede8773
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9495624f7eca57a79518036937a5fb63d01d9c4b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586899"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851205"
 ---
 # <a name="functiontailcall2-function"></a>FunctionTailcall2 – funkce
-Profiler upozorní, že aktuálně prováděné funkci je provést volání funkce tail do jiné funkce a poskytuje informace o zásobníku.  
+Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce a poskytuje informace o bloku zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 void __stdcall FunctionTailcall2 (  
     [in] FunctionID         funcId,   
     [in] UINT_PTR           clientData,   
@@ -38,41 +38,41 @@ void __stdcall FunctionTailcall2 (
   
 ## <a name="parameters"></a>Parametry  
  `funcId`  
- [in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.  
+ pro Identifikátor aktuálně vykonávané funkce, která má být volána pro volání funkce tail.  
   
  `clientData`  
- [in] Identifikátor změnu mapování funkce, který dříve zadaný profiler přes [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md), aktuálně prováděné funkce, která se chystá provést tail volání.  
+ pro Znovu namapovaný identifikátor funkce, který Profiler dříve zadal prostřednictvím [FunctionIDMapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md)aktuálně vykonávané funkce, která se chystá udělat volání funkce tail.  
   
  `func`  
- [in] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o zásobníku.  
+ pro `COR_PRF_FRAME_INFO` Hodnota, která odkazuje na informace o snímku zásobníku.  
   
- Profiler by měl považovat za to neprůhledného popisovače, který může být předán zpět prováděcí modul v [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) metody.  
+ Profiler by měl považovat za neprůhledný popisovač, který lze předat zpět spouštěcímu modulu v metodě [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) .  
   
 ## <a name="remarks"></a>Poznámky  
- Cílová funkce volání funkce tail použije aktuální rámec zásobníku a vrátí přímo do volajícího, který vytvořil tail volání funkce. To znamená, že [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) zpětného volání nebude vydán pro funkci, která je cílem volání funkce tail.  
+ Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
   
- Hodnota `func` parametr není platný po `FunctionTailcall2` funkce vrátí, protože se může změnit hodnotu nebo zničení.  
+ Hodnota `func` parametru není platná, `FunctionTailcall2` Pokud se funkce vrátí, protože se může změnit nebo zničit hodnota.  
   
- `FunctionTailcall2` Funkce je zpětné volání, je nutné implementovat. Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.  
+ `FunctionTailcall2` Funkce je zpětné volání. je nutné ji implementovat. Implementace musí používat `__declspec`atribut třídy úložiště`naked`().  
   
- Prováděcí modul nelze uložit žádné registry před voláním této funkce.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- Provádění `FunctionTailcall2` by neměla blokovat, protože způsobí zpoždění uvolnění paměti. Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti. Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionTailcall2` vrátí.  
+ Implementace `FunctionTailcall2` by neměla blokovat, protože by se zpozdilo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. Při pokusu o uvolnění paměti modul runtime zablokuje, dokud `FunctionTailcall2` se nevrátí.  
   
- Také `FunctionTailcall2` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.  
+ `FunctionTailcall2` Funkce také nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobit přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl  
+ **Hlaviček** CorProf.idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

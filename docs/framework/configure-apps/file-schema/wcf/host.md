@@ -2,20 +2,21 @@
 title: <host>
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
-ms.openlocfilehash: 21d53df12c2b2d703b771e2b9cb5ee87dafc410e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b764bc21e9c4555b39c3d096212b6e6bcabb62ff
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918710"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855210"
 ---
 # <a name="host"></a>\<host>
 Určuje nastavení pro hostitele služby.  
   
- \<system.ServiceModel>  
-\<> služeb  
-\<> služby  
-\<host>  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služeb**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> služby**](service.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> hostitele**  
   
 ## <a name="syntax"></a>Syntaxe  
   

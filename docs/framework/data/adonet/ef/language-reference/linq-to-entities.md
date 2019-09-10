@@ -2,12 +2,12 @@
 title: LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: bdc93b609dd88449308508bf88635cc706d91e64
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: bc568cb9dff170062651c908471a36cd17eac980
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250410"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854376"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities poskytuje podporu LINQ (Language-Integrated Query), která umožňuje vývojářům psát dotazy pro Entity Framework koncepční model pomocí Visual Basic nebo vizuálu C#. Dotazy na Entity Framework jsou reprezentovány pomocí příkazového stromu příkazů, které jsou spouštěny proti kontextu objektu. LINQ to Entities převede dotazy na dotazy integrované v jazyce (LINQ) na dotazy stromu příkazů, spustí dotazy proti Entity Framework a vrátí objekty, které mohou být použity Entity Framework i LINQ. Následující postup slouží k vytvoření a spuštění dotazu LINQ to Entities:  
@@ -59,7 +59,7 @@ LINQ to Entities poskytuje podporu LINQ (Language-Integrated Query), která umo�
   
 - Kolekce nula nebo více typových objektů entit nebo projekce komplexních typů definovaných v koncepčním modelu.  
   
-- Typy CLR, které jsou podporovány rozhraním [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+- Typy CLR, které jsou podporovány Entity Framework.  
   
 - Vložené kolekce.  
   

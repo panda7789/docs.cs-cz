@@ -4,12 +4,12 @@ description: .NET Core je modulární a vysoce výkonná implementace .NET pro v
 author: richlander
 ms.date: 08/01/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: db4daa8c78a181f0599c4c75ccd31f46ee278e63
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 0007c1c6a9939c46f123535f9053ac1d4ced7266
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202836"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848942"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -17,13 +17,13 @@ ms.locfileid: "70202836"
 
 Další informace o .NET Core, včetně jeho vlastností, podporovaných jazycích a architektur a klíčových rozhraní API, najdete v tématu [o .NET Core](about.md) .
 
-V kurzech pro [.NET Core](tutorials/index.md) se dozvíte, jak vytvořit jednoduchou aplikaci .NET Core. Vaše první aplikace je možné začít používat jenom pár minut. Pokud chcete v prohlížeči vyzkoušet .NET Core, podívejte se na [čísla v C# ](../csharp/tutorials/intro-to-csharp/numbers-in-csharp.yml) online kurzu.
+V [kurzech pro .NET Core](tutorials/index.md) se dozvíte, jak vytvořit jednoduchou aplikaci .NET Core. Vaše první aplikace je možné začít používat jenom pár minut. Pokud chcete v prohlížeči vyzkoušet .NET Core, podívejte se na [čísla v C# ](../csharp/tutorials/intro-to-csharp/numbers-in-csharp.yml) online kurzu.
 
 ## <a name="download-net-core-22"></a>Stáhnout .NET Core 2,2
 
-Stáhněte si [sadu .NET core 2,2 SDK](https://www.microsoft.com/net/download) a vyzkoušejte .NET Core na počítači s Windows, MacOS nebo Linux. Pokud upřednostňujete použití kontejnerů Docker, přejděte na [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) .
+Stáhněte si [sadu .NET core 2,2 SDK](https://dotnet.microsoft.com/download) a vyzkoušejte .NET Core na počítači s Windows, MacOS nebo Linux. Pokud upřednostňujete použití kontejnerů Docker, přejděte na [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) .
 
-Pokud hledáte jinou verzi rozhraní .NET Core, jsou všechny verze .NET Core k dispozici na webu [soubory ke stažení pro .NET](https://www.microsoft.com/net/download/archives) Core.
+Pokud hledáte jinou verzi rozhraní .NET Core, jsou všechny verze .NET Core k dispozici na webu [soubory ke stažení pro .NET](https://dotnet.microsoft.com/download/dotnet-core) Core.
 
 ## <a name="net-core-22"></a>.NET Core 2,2
 
@@ -46,7 +46,7 @@ Hello World!
 
 ## <a name="support"></a>Podpora
 
-.NET Core [podporuje Microsoft](https://www.microsoft.com/net/support/policy), v systémech Windows, MacOS a Linux. Je aktualizovaná z hlediska zabezpečení a kvality několikrát ročně, obvykle měsíčně.
+.NET Core [podporuje Microsoft](https://dotnet.microsoft.com/platform/support/policy), v systémech Windows, MacOS a Linux. Je aktualizovaná z hlediska zabezpečení a kvality několikrát ročně, obvykle měsíčně.
 
 Binární distribuce .NET Core se sestavují a testují na serverech spravovaných Microsoftem v Azure a podporují se stejně jako u jakéhokoli produktu společnosti Microsoft.
 

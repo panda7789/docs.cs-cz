@@ -2,19 +2,20 @@
 title: <endToEndTracing>
 ms.date: 03/30/2017
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-ms.openlocfilehash: 6b23728451a051f21ad3863b9a29e6290c3c837a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1a274f15800c6a132994a2437943c83982de9de0
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919001"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855293"
 ---
 # <a name="endtoendtracing"></a>\<endToEndTracing >
 Prvek konfigurace, který umožňuje povolit nebo zakázat různé aspekty komplexního trasování během běžící aplikace služby.  
   
- \<system.ServiceModel>  
-\<> diagnostiky  
-\<endToEndTracing >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> diagnostiky**](diagnostics.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<endToEndTracing >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

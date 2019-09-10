@@ -11,32 +11,32 @@ helpviewer_keywords:
 ms.assetid: 9ec1af27-604b-477e-9ee2-e833eb10d3ce
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eb0810a9e0ffce825abecc87eb2698920209d86f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a52460bbbf2b5f65f5c15d2cd06be7d3917f68bd
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753761"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854053"
 ---
 # <a name="noncomvisiblebaseclass-mda"></a>nonComVisibleBaseClass – pomocník spravovaného ladění (MDA)
-`nonComVisibleBaseClass` Pomocníka spravovaného ladění (MDA) se aktivuje při `QueryInterface` je provedeno volání pomocí nativní nebo nespravovaného kódu na obálka volatelná aplikacemi COM (CCW) COM – viditelné spravované třídy, která je odvozena ze základní třídy, které nejsou viditelné modelu COM.  `QueryInterface` Volání způsobí, že MDA aktivovat pouze v případech, kde požadavky na třídy rozhraní nebo výchozí volání `IDispatch` COM-viditelných spravované třídy.  MDA není aktivuje se, když `QueryInterface` je pro explicitní rozhraní, který má <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> použít atribut a je explicitně implementované COM – viditelné třídy.  
+Pomocník spravovaného ladění (MDA) je aktivován `QueryInterface` při volání z nativního nebo nespravovaného kódu na obálku s podporou modelu COM, která je odvozena ze základní třídy, která není viditelná v modelu COM. `nonComVisibleBaseClass`  Volání způsobí, že se třída MDA aktivuje pouze v případech, kdy volání vyžaduje rozhraní třídy `IDispatch` nebo výchozí spravovanou třídu viditelnou z modelu COM. `QueryInterface`  MDA se neaktivuje, pokud `QueryInterface` je pro explicitní rozhraní, které <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> má atribut použit a je explicitně implementováno třídou, která je viditelná v modelu COM.  
   
 ## <a name="symptoms"></a>Příznaky  
- A `QueryInterface` volání z nativního kódu, který je neúspěšné s chybou HRESULT COR_E_INVALIDOPERATION.  Hodnota HRESULT mohou být způsobeny runtime zákaz `QueryInterface` volání, které by mohly způsobit aktivace toto MDA.  
+ Bylo `QueryInterface` provedeno volání z nativního kódu, které se nedaří s COR_E_INVALIDOPERATION HRESULT.  Hodnota HRESULT může být způsobena nepovolenými `QueryInterface` voláními modulu runtime, která by způsobila aktivaci této aplikace MDA.  
   
-## <a name="cause"></a>Příčina  
- Modul runtime nemůže povolit `QueryInterface` volání pro rozhraní třídy nebo výchozí `IDispatch` rozhraní COM – viditelné třídy, která je odvozena z třídy, který není viditelný modulem COM z důvodu potenciální problémy se správou verzí.  Například, pokud žádné veřejné členy byly přidány na základní třídu, která není viditelný modulem COM, existující klienti modelu COM pomocí odvozené třídy může potenciálně narušit vzhledem k tomu tabulku vtable, který obsahuje členy základní třídy odvozené třídy by změněny, Změňte.  Explicitní rozhraní vystavit rozhraní COM nemají tento problém, protože v tabulce vtable neobsahují základních členů rozhraní.  
+## <a name="cause"></a>příčina  
+ Modul runtime nemůže umožňovat `QueryInterface` volání rozhraní třídy nebo výchozího `IDispatch` rozhraní třídy viditelné v modelu COM, která je odvozena od třídy, která není viditelná jako model COM, z důvodu potenciálních problémů se správou verzí.  Například pokud byly některé veřejné členy přidány do základní třídy, která není viditelná v modelu COM, existující klienti modelu COM používající odvozenou třídu mohou potenciálně poškodit, protože tabulka odvozené třídy, která obsahuje členy základní třídy, by mohla být změněna tímto mění.  Explicitní rozhraní vystavená modelu COM nemají tento problém, protože neobsahují základní členy rozhraní v tabulce vtable.  
   
 ## <a name="resolution"></a>Řešení  
- Nezveřejňujte třídy rozhraní. Definujte explicitní rozhraní a použít <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> atribut k němu.  
+ Nezveřejňujte rozhraní třídy. Definujte explicitní rozhraní a použijte <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> k němu atribut.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Tady je ukázková zpráva pro `QueryInterface` volání COM – viditelné třídy `Derived` , která je odvozena z třídy není viditelný pro COM `Base`.  
+ Následuje příklad zprávy pro `QueryInterface` volání ve třídě `Derived` viditelné pomocí modelu COM, která je odvozena od třídy `Base`, která není viditelná z modelu COM.  
   
-```  
+```output
 A QueryInterface call was made requesting the class interface of COM   
 visible managed class 'Derived'. However since this class derives from   
 non COM visible class 'Base', the QueryInterface call will fail. This   
@@ -44,7 +44,7 @@ is done to prevent the non COM visible base class from being
 constrained by the COM versioning rules.   
 ```  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  

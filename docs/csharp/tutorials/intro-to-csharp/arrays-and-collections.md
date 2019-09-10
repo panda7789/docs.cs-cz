@@ -3,18 +3,18 @@ title: Práce s kolekcemi – Úvod C# do kurzu
 description: Seznamte se s C# tím, že v tomto kurzu prozkoumáte kolekci seznamů.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 160e34ddb529a8515a08d6aab838ba107936c616
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 8db9f0acc69efdb89c276f9bee5e095c7920ffc6
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587252"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850877"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Naučte se spravovat kolekce dat pomocí obecného typu seznamu.
 
 Tento úvodní kurz poskytuje Úvod k C# jazyku a základům <xref:System.Collections.Generic.List%601> třídy.
 
-V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Téma rozhraní .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux. Rychlý přehled příkazů, které budete používat, se [seznámí s vývojářskými nástroji](local-environment.md)a odkazy na další podrobnosti.
+V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux. Rychlý přehled příkazů, které budete používat, se [seznámí s vývojářskými nástroji](local-environment.md)a odkazy na další podrobnosti.
 
 ## <a name="a-basic-list-example"></a>Příklad základního seznamu
 

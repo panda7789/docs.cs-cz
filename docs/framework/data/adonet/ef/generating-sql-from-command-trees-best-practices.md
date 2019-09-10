@@ -2,12 +2,12 @@
 title: Generování SQL ze stromů příkazů – osvědčené postupy
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 366e27f8c8a04c5d2507ab37459ad6d5abc255ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9859c7df941ae6681c991001e0d1e5a50c7ffc60
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251578"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855013"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Generování SQL ze stromů příkazů – osvědčené postupy
 
@@ -137,11 +137,11 @@ Také při sloučení spojení mohou mít zúčastněné tabulky (nebo poddotazy
 
 ## <a name="avoid-select-"></a>Vyhněte se výběru *
 
-Nepoužívejte `SELECT *` k výběru ze základních tabulek. Model úložiště v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikaci může obsahovat jenom podmnožinu sloupců, které se nacházejí v tabulce databáze. V takovém případě `SELECT *` může způsobit nesprávný výsledek. Místo toho byste měli zadat všechny účastnící se sloupce pomocí názvů sloupců z výsledného typu výrazů, které se účastní.
+Nepoužívejte `SELECT *` k výběru ze základních tabulek. Model úložiště v aplikaci Entity Framework může obsahovat jenom podmnožinu sloupců, které se nacházejí v tabulce databáze. V takovém případě `SELECT *` může způsobit nesprávný výsledek. Místo toho byste měli zadat všechny účastnící se sloupce pomocí názvů sloupců z výsledného typu výrazů, které se účastní.
 
 ## <a name="reuse-of-expressions"></a>Opakované použití výrazů
 
-Výrazy se můžou znovu použít ve stromu příkazů dotazu, který [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]předává. Nepředpokládáme, že se každý výraz ve stromu příkazů dotazu vyskytuje jenom jednou.
+Výrazy se můžou znovu použít ve stromu příkazů dotazu, který předává Entity Framework. Nepředpokládáme, že se každý výraz ve stromu příkazů dotazu vyskytuje jenom jednou.
 
 ## <a name="mapping-primitive-types"></a>Mapování primitivních typů
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: c3582ba3c434bb763889faebcc27407f67af7b1e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b4a4005a23c8c74edecb00475669e019b50a17af
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795650"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851220"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
 V tomto tématu se dozvíte, jak nakonfigurovat vlastní vazbu WS-Metadata Exchange. Windows Communication Foundation (WCF) zahrnuje čtyři uživatelsky definované vazby metadat, ale můžete publikovat metadata pomocí libovolné požadované vazby. V `wsHttpBinding`tomto tématu se dozvíte, jak publikovat metadata pomocí. Tato vazba vám dává možnost vystavovat metadata zabezpečeným způsobem. Kód v tomto článku je založen na [Začínáme](../samples/getting-started-sample.md).  
@@ -54,7 +54,7 @@ V tomto tématu se dozvíte, jak nakonfigurovat vlastní vazbu WS-Metadata Excha
   
 5. V metodě Main () klienta vytvořte <xref:System.ServiceModel.Description.MetadataExchangeClient> novou instanci, nastavte její <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> vlastnost na `true`, zavolejte <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom Iterujte pomocí kolekce vrácených metadat:  
   
-    ```  
+    ```csharp
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  
   
     MetadataExchangeClient mexClient = new MetadataExchangeClient("MyMexEndpoint");  
@@ -68,19 +68,19 @@ V tomto tématu se dozvíte, jak nakonfigurovat vlastní vazbu WS-Metadata Excha
   
 1. Vytvořte instanci <xref:System.ServiceModel.WSHttpBinding> vazby:  
   
-    ```  
+    ```csharp  
     WSHttpBinding binding = new WSHttpBinding();  
     ```  
   
 2. <xref:System.ServiceModel.ServiceHost> Vytvoření instance:  
   
-    ```  
+    ```csharp  
     ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress);  
     ```  
   
 3. Přidejte koncový bod služby a přidejte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instanci:  
   
-    ```  
+    ```csharp  
     serviceHost.AddServiceEndpoint(typeof(ICalculator), binding, baseAddress);  
     ServiceMetadataBehavior smb = new ServiceMetadataBehavior();  
     smb.HttpGetEnabled = true;  
@@ -89,7 +89,7 @@ V tomto tématu se dozvíte, jak nakonfigurovat vlastní vazbu WS-Metadata Excha
   
 4. Přidejte koncový bod výměny metadat a určete <xref:System.ServiceModel.WSHttpBinding> dříve vytvořený:  
   
-    ```  
+    ```csharp  
     serviceHost.AddServiceEndpoint(typeof(IMetadataExchange), binding, mexAddress);  
     ```  
   
@@ -103,7 +103,7 @@ V tomto tématu se dozvíte, jak nakonfigurovat vlastní vazbu WS-Metadata Excha
   
 6. V metodě Main () <xref:System.ServiceModel.Description.MetadataExchangeClient> klienta vytvořte novou instanci, <xref:System.ServiceModel.Description.MetadataExchangeClient.ResolveMetadataReferences%2A> nastavte vlastnost na `true`, zavolejte <xref:System.ServiceModel.Description.MetadataExchangeClient.GetMetadata%2A> a potom Iterujte pomocí kolekce vrácených metadat:  
   
-    ```  
+    ```csharp  
     string mexAddress = "http://localhost:8000/servicemodelsamples/service/mex";  
   
     MetadataExchangeClient mexClient = new MetadataExchangeClient("MyMexEndpoint");  

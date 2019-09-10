@@ -2,12 +2,12 @@
 title: 'Postupy: Načítání metadat přes vazbu jiného typu než MEX'
 ms.date: 03/30/2017
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-ms.openlocfilehash: 6cd6e0ce5dc287c826179c152b989b5f7842bb6e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 3721657eb72663450261b4bc8627b250b1a4a14e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795582"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856029"
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>Postupy: Načítání metadat přes vazbu jiného typu než MEX
 Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes vazbu, která není MEX. Kód v této ukázce je založen na vlastní ukázce [zabezpečeného koncového bodu metadat](../samples/custom-secure-metadata-endpoint.md) .  
@@ -85,7 +85,7 @@ Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes vazbu, kt
   
 3. Vytvořte volání `MetadataExchangeClient` `GetMetadata`a. Existují dva způsoby, jak to provést: můžete zadat vlastní vazbu v konfiguraci nebo můžete zadat vlastní vazbu v kódu, jak je znázorněno v následujícím příkladu.  
   
-    ```  
+    ```csharp
     // The custom binding is specified in configuration.  
     EndpointAddress mexAddress = new EndpointAddress("http://localhost:8000/ServiceModelSamples/Service/mex");  
   
@@ -116,7 +116,7 @@ Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes vazbu, kt
   
 4. Vytvořte volání `WsdlImporter` `ImportAllEndpoints`a, jak je znázorněno v následujícím kódu.  
   
-    ```  
+    ```csharp
     WsdlImporter importer = new WsdlImporter(mexSet);  
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  

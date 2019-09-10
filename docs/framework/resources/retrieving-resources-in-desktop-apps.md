@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 33bc0ecb4b7d20f0df96486c046e06fc4cf0e7ed
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f2bfb1078478aea5dffab66ba5f8c7d553262968
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941458"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851584"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
-Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace byste měli ideálním balíčkem zabalit prostředky pro výchozí nebo neutrální jazykovou verzi pomocí hlavního sestavení a vytvořit samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, kterou vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídu, jak je popsáno v další části, pro přístup k pojmenovaným prostředkům. Pokud se rozhodnete Nevkládat prostředky do hlavního sestavení a satelitních sestavení, můžete také přistupovat k binárním souborům. Resources přímo, jak je popsáno v části [načtení prostředků ze souborů.](#from_file) Resources dále v tomto článku.  Pokud chcete načíst prostředky [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] v aplikacích, přečtěte si téma [Vytvoření a načtení prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) na stránce Windows Dev Center.  
+Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace byste měli ideálním balíčkem zabalit prostředky pro výchozí nebo neutrální jazykovou verzi pomocí hlavního sestavení a vytvořit samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, kterou vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídu, jak je popsáno v další části, pro přístup k pojmenovaným prostředkům. Pokud se rozhodnete Nevkládat prostředky do hlavního sestavení a satelitních sestavení, můžete také přistupovat k binárním souborům. Resources přímo, jak je popsáno v části [načtení prostředků ze souborů. Resources](#from_file) dále v tomto článku.  Pokud chcete načíst prostředky [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] v aplikacích, přečtěte si téma [Vytvoření a načtení prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) na stránce Windows Dev Center.  
   
 <a name="from_assembly"></a>   
 ## <a name="retrieving-resources-from-assemblies"></a>Načítání prostředků ze sestavení  
@@ -43,19 +43,19 @@ Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace 
 ### <a name="retrieving-string-data-an-example"></a>Načítají se data řetězce: Příklad  
  Následující příklad volá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metodu pro načtení prostředků řetězce aktuální jazykové verze uživatelského rozhraní. Zahrnuje prostředek neutrálního řetězce pro anglickou (USA) jazykovou verzi a lokalizované prostředky pro jazykové verze francouzština (Francie) a ruština (Rusko). Následující prostředek v angličtině (USA) je v souboru s názvem Strings. txt:  
   
-```  
+```text
 TimeHeader=The current time is  
 ```  
   
  Zdroj francouzština (Francie) je v souboru s názvem Strings.fr-FR. txt:  
   
-```  
+```text
 TimeHeader=L'heure actuelle est  
 ```  
   
  Prostředek ruštiny (Rusko) je v souboru s názvem Strings.ru-RU-txt:  
   
-```  
+```text
 TimeHeader=Текущее время —  
 ```  
   
@@ -66,7 +66,7 @@ TimeHeader=Текущее время —
   
  Následující soubor dávky (. bat) zkompiluje příklad a generuje satelitní sestavení v příslušných adresářích. Příkazy jsou k dispozici pro C# jazyk a kompilátor. Pro Visual Basic, změňte `csc` `vbc`na a změňte `GetString.cs` na `GetString.vb`.  
   
-```  
+```console
 resgen strings.txt  
 csc GetString.cs -resource:strings.resources  
   
@@ -96,7 +96,7 @@ al -embed:strings.ru-RU.resources -culture:ru-RU -out:ru-RU\GetString.resources.
   
  Pomocí následujícího dávkového souboru můžete C# příklad sestavit. Pro Visual Basic, změňte `csc` na `vbc`a změňte rozšíření souboru zdrojového kódu z `.cs` na `.vb`.  
   
-```  
+```console
 csc CreateResources.cs  
 CreateResources  
   
@@ -122,7 +122,7 @@ csc GetStream.cs -resource:AppResources.resources
   
  Můžete sestavit potřebný soubor prostředků a sestavení a spustit aplikaci spuštěním následujícího dávkového souboru. Je nutné použít `/r` možnost k poskytnutí nástroje Resgen. exe s odkazem na prvek UIElement. dll, aby mohl přistupovat k informacím `PersonTable` o struktuře. C#Pokud používáte, nahraďte `vbc` název kompilátoru názvem `csc`a nahraďte `.vb` příponu příponou `.cs`.  
   
-```  
+```console
 vbc -t:library UIElements.vb  
 vbc CreateResources.vb -r:UIElements.dll  
 CreateResources  
@@ -166,21 +166,21 @@ GetObject.exe
 ### <a name="an-example"></a>Příklad  
  Následující příklad ukazuje, jak správce prostředků získává prostředky přímo ze souborů. Resources. Příklad obsahuje tři textové soubory prostředků pro anglickou (USA), francouzština (Francie) a ruštinu (Rusko) kultur. Angličtina (USA) je výchozí jazyková verze příkladu. Jeho prostředky jsou uloženy v následujícím souboru s názvem Strings. txt:  
   
-```  
+```text
 Greeting=Hello  
 Prompt=What is your name?  
 ```  
   
  Prostředky pro francouzskou (Francii) jazykovou verzi jsou uloženy v následujícím souboru s názvem Strings.fr-FR. txt:  
   
-```  
+```text 
 Greeting=Bon jour  
 Prompt=Comment vous appelez-vous?  
 ```  
   
  Prostředky pro jazykovou verzi ruštiny (Rusko) jsou uloženy v následujícím souboru s názvem Strings.ru-RU. txt:  
   
-```  
+```text
 Greeting=Здравствуйте  
 Prompt=Как вас зовут?  
 ```  
@@ -192,7 +192,7 @@ Prompt=Как вас зовут?
   
  C# Verzi příkladu můžete zkompilovat spuštěním následujícího dávkového souboru. Pokud používáte Visual Basic, nahraďte `csc` `vbc` `.cs` a nahraďte příponu parametrem. `.vb`  
   
-```  
+```console
 Md Resources  
 Resgen Strings.txt Resources\Strings.resources  
 Resgen Strings.fr-FR.txt Resources\Strings.fr-FR.resources  

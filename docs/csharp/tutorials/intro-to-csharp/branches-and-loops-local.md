@@ -3,18 +3,18 @@ title: Větve a smyčky – Úvod k C# kurzu
 description: V tomto kurzu o větvích a smyčkách napíšete C# kód pro zkoumání syntaxe jazyka, která podporuje podmíněné větve a smyčky k opakovanému spouštění příkazů.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 0da446a71f5d7a7183a8323c470087c8726bc02f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d329a871265ae42918fbf81c42be6667710e4c75
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69587222"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850804"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další informace o podmíněné logice s příkazy větví a smyček
 
 V tomto kurzu se naučíte, jak napsat kód, který kontroluje proměnné a mění cestu spuštění na základě těchto proměnných. Napíšete C# kód a zobrazíte výsledky jeho kompilace a spuštění. Kurz obsahuje řadu lekcí, které se seznámí s konstrukcemi větvení a smyček v C#. V těchto lekcích se naučíte základy C# jazyka.
 
-V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Téma rozhraní .NET [Začínáme za 10 minut](https://www.microsoft.com/net/core) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux. Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
+V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux. Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="make-decisions-using-the-if-statement"></a>Rozhodnutí pomocí `if` příkazu
 
@@ -198,10 +198,10 @@ while (counter < 10)
 
 Příkaz zkontroluje podmínku a spustí blok příkazu nebo příkazu `while`za. `while` Opakovaně kontroluje podmínku a spouští tyto příkazy, dokud podmínka nevrátí hodnotu false.
 
-V tomto příkladu je druhý operátor New. Po proměnné je operátor přírůstku. `++` `counter` Přidá 1 k hodnotě `counter` a uloží tuto hodnotu `counter` do proměnné.
+V tomto příkladu je druhý operátor New. Po proměnné je operátor **přírůstku.** `++` `counter` Přidá 1 k hodnotě `counter` a uloží tuto hodnotu `counter` do proměnné.
 
 > [!IMPORTANT]
-> Ujistěte se, že `while` se podmínka smyčky při spuštění kódu změní na false. V opačném případě vytvoříte nekonečnou smyčku, ve které program nikdy nekončí. To není v této ukázce znázorněno, protože je nutné vynutit ukončení programu pomocí **kombinace kláves CTRL-C** nebo jiným způsobem.
+> Ujistěte se, že `while` se podmínka smyčky při spuštění kódu změní na false. V opačném případě vytvoříte **nekonečnou smyčku** , ve které program nikdy nekončí. To není v této ukázce znázorněno, protože je nutné vynutit ukončení programu pomocí **kombinace kláves CTRL-C** nebo jiným způsobem.
 
 Smyčka testuje podmínku před spuštěním kódu `while`za. `while` `do` ... `while` smyčka nejprve spustí kód a poté zkontroluje podmínku. Cyklus do while je zobrazen v následujícím kódu:
 

@@ -3,12 +3,12 @@ title: 'Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující 
 ms.date: 03/30/2017
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
 author: BrucePerlerMS
-ms.openlocfilehash: 82b0649a7324987581cc3c97570a0fc42ffdf6d6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 45ad084013cbcafdf0d7c4ac3e0fd952305232c4
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941287"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851556"
 ---
 # <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
@@ -103,7 +103,7 @@ ms.locfileid: "69941287"
     </system.webServer>  
     ```  
   
-5. Přidejte následující položky konfigurace související s Windows Identity Foundation a ujistěte se, že se adresa URL a číslo portu vaší aplikace ASP.NET shodují s hodnotami v  **\<položce audienceUris >** Entry, atribut **Realm**  **\<wsFederation prvek >** a  **\<** atribut Reply elementu wsFederation >. Také se ujistěte, že hodnota vystavitele odpovídá vaší adrese URL služby tokenů zabezpečení (STS).  
+5. Přidejte následující položky konfigurace související s Windows Identity Foundation a ujistěte se, že se adresa URL a číslo portu vaší aplikace ASP.NET shodují s hodnotami v  **\<položce audienceUris >** Entry, atribut **Realm**  **\<wsFederation prvek >** a  **\<** atribut Reply elementu wsFederation >. Také se ujistěte, že hodnota **vystavitele** odpovídá vaší adrese URL služby tokenů zabezpečení (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -138,8 +138,8 @@ ms.locfileid: "69941287"
   
 1. V projektu **TestApp** otevřete soubor **Default. aspx** a nahraďte jeho stávající značky následujícím kódem:  
   
-    ```  
-    %@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
+    ```aspx-csharp
+    <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
   
     <!DOCTYPE html>  
   

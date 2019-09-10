@@ -2,30 +2,30 @@
 title: Vytváření služeb WCF AJAX bez ASP.NET
 ms.date: 03/30/2017
 ms.assetid: ba4a7d1b-e277-4978-9f62-37684e6dc934
-ms.openlocfilehash: de7e5dc075a821518928514be532ea1940c1ff17
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f850d8649f1d67fe916542bfb025afb7cb3f852b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627121"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856143"
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>Vytváření služeb WCF AJAX bez ASP.NET
-AJAX služba Windows Communication Foundation (WCF) je přístupný z jakékoli stránky webové povolen jazyk JavaScript bez nutnosti technologie ASP.NET AJAX. Toto téma popisuje postup vytvoření služby WCF.  
+Služba Windows Communication Foundation (WCF) AJAX Services je dostupná z libovolné webové stránky s podporou JavaScriptu, aniž by to vyžadovalo ASP.NET AJAX. Toto téma popisuje, jak vytvořit takovou službu WCF.  
   
- Pokyny týkající se použití WCF pomocí ASP.NET AJAX, naleznete v tématu [vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md).  
+ Pokyny k použití WCF s ASP.NET AJAX najdete v tématu [vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md).  
   
- Existují tři části vytváření služeb WCF AJAX:  
+ Existují tři části pro vytvoření služby WCF AJAX:  
   
 - Vytvoření koncového bodu AJAX, který je přístupný z prohlížeče.  
   
-- Vytváří se kontrakt služby kompatibilní s AJAX.  
+- Vytvoření kontraktu služby kompatibilního s AJAX.  
   
 - Přístup ke službám WCF AJAX.  
   
-## <a name="creating-an-ajax-endpoint"></a>Vytváří se koncový bod AJAX  
- Základní způsob, jak povolit podporu AJAX služba WCF je použít <xref:System.ServiceModel.Activation.WebServiceHostFactory> v souboru SVC přidružená ke službě, jako v následujícím příkladu.  
+## <a name="creating-an-ajax-endpoint"></a>Vytvoření koncového bodu AJAX  
+ Nejzákladnější způsob, jak povolit podporu AJAX ve službě WCF, je použít <xref:System.ServiceModel.Activation.WebServiceHostFactory> v souboru. svc přidruženého ke službě, jak je uvedeno v následujícím příkladu.  
   
-```  
+```svc
 <%ServiceHost   
     language=c#  
     Debug="true"  
@@ -34,7 +34,7 @@ AJAX služba Windows Communication Foundation (WCF) je přístupný z jakékoli 
 %>  
 ```  
   
- Alternativně můžete také použití konfigurace k přidání koncového bodu AJAX. Použití <xref:System.ServiceModel.WebHttpBinding> na koncový bod služby a konfiguraci tohoto koncového bodu s <xref:System.ServiceModel.Description.WebHttpBehavior> jak je znázorněno v následujícím fragmentu kódu.  
+ Alternativně můžete použít také konfiguraci pro přidání koncového bodu AJAX. Použijte na koncovém bodu služby a nakonfigurujte tento koncový bod <xref:System.ServiceModel.Description.WebHttpBehavior> pomocí, jak je znázorněno v následujícím fragmentu kódu. <xref:System.ServiceModel.WebHttpBinding>  
   
 ```xml  
 <configuration>  
@@ -59,53 +59,53 @@ AJAX služba Windows Communication Foundation (WCF) je přístupný z jakékoli 
 </configuration>  
 ```  
   
- Funkční příklad najdete v článku [služba AJAX s JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).  
+ Pracovní příklad naleznete v tématu [Služba AJAX s JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).  
   
-## <a name="creating-an-ajax-compatible-service-contract"></a>Vytváří se kontrakt služby kompatibilní s AJAX  
- Ve výchozím nastavení kontrakty služeb přístupná přes AJAX koncový bod vrácená data ve formátu XML. Ve výchozím nastavení je také přístupné prostřednictvím požadavků HTTP POST do adresy URL, které zahrnují adresu koncového bodu, za nímž následuje název operace, jak je znázorněno v následujícím příkladu operací služby.  
+## <a name="creating-an-ajax-compatible-service-contract"></a>Vytvoření kontraktu služby kompatibilního s AJAX  
+ Ve výchozím nastavení kontrakty služby vystavené přes koncový bod AJAX vrací data ve formátu XML. Ve výchozím nastavení jsou taky v rámci požadavků HTTP POST k adresám URL, které obsahují adresu koncového bodu následovaným názvem operace, dostupné tyto operace služby, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 [OperationContract]  
 string[] GetCities(string firstLetters);  
 ```  
   
- Tato operace je přístupný pomocí HTTP POST do `http://serviceaddress/endpointaddress/GetCities` a vrátí zprávu o XML.  
+ Tato operace je přístupná pomocí HTTP Post `http://serviceaddress/endpointaddress/GetCities` a vrátí zprávu XML.  
   
- Celý Model programování webových můžete přizpůsobit tyto základní aspekty. Například můžete použít <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atributy řídit příkaz HTTP, ke kterému odpovídá operaci nebo použít `UriTemplate` vlastnost těchto příslušných atributů k určení vlastní identifikátory URI. Další informace najdete v tématu [WCF Web HTTP programovací Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md) tématu.  
+ K přizpůsobení těchto základních aspektů můžete použít úplný model webového programování. Můžete například použít <xref:System.ServiceModel.Web.WebGetAttribute> atributy nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> pro řízení příkazu http, na který `UriTemplate` operace reaguje, nebo použít vlastnost těchto odpovídajících atributů k určení vlastních identifikátorů URI. Další informace naleznete v tématu [programovací model webového HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md) .  
   
- Formát dat JSON se často používá služby AJAX. Pokud chcete vytvořit odpověď, která vrací JSON místo XML, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> (nebo <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A>) vlastnost <xref:System.ServiceModel.Web.WebMessageFormat.Json>. [Serializace JSON samostatné](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md) téma ukazuje, jak integrované .NET typy a data smlouvy typy mapy do formátu JSON.  
+ Formát dat JSON se často používá ve službách AJAX. Chcete-li vytvořit operaci, která vrátí JSON namísto XML, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> vlastnost ( <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A>nebo) na <xref:System.ServiceModel.Web.WebMessageFormat.Json>. V tématu [samostatné serializace JSON](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md) se dozvíte, jak jsou integrované typy rozhraní .NET a typy kontraktů dat mapovány na JSON.  
   
- Za normálních okolností JSON požadavky a odpovědi obsahovat pouze jednu položku. Pro předchozí `GetCities` operace, požadavek se podobá následující příkaz.  
+ Žádosti a odpovědi JSON se obvykle skládají jenom z jedné položky. U předchozí `GetCities` operace se požadavek podobá následujícímu příkazu.  
   
-```  
+```json
 "na"  
 ```  
   
- Odpověď na tento požadavek se podobá následující příkaz.  
+ Odpověď na tento požadavek se podobá následujícímu příkazu.  
   
-```  
+```json
 ["Nairobi", "Naples", "Nashville"]  
 ```  
   
- Pokud operace trvá speciálním parametrem, musí být zabalené styl požadavek zabalit oba parametry v jednom objektu JSON. Příklad zprávy JSON tento styl je v následujícím příkladu.  
+ Pokud operace převezme další parametr, musí být styl žádosti zabalený, aby bylo možné zabalit oba parametry v jednom objektu JSON. Příkladem zprávy JSON tohoto stylu je následující příklad.  
   
 ```json  
 {"firstLetters": "na", "maxNumber": 2}  
 ```  
   
- Následující smlouvu přijme tuto zprávu.  
+ Tuto zprávu akceptuje následující smlouva.  
   
-```  
+```csharp
 [WebInvoke(BodyStyle=WebMessageBodyStyle.WrappedRequest, ResponseFormat=WebMessageFormat.Json)]  
 [OperationContract]  
 string[] GetCities(string firstLetters, int maxNumber);  
 ```  
   
-## <a name="accessing-ajax-services"></a>Accessing AJAX Services  
- Koncových bodů WCF AJAX vždy přijímat žádosti JSON a XML.  
+## <a name="accessing-ajax-services"></a>Přístup ke službám AJAX  
+ Koncové body WCF AJAX vždy přijímají obě požadavky JSON i XML.  
   
- Požadavky HTTP POST s obsahem typ "application/json" jsou považovány za JSON, a těmi, které mají typ obsahu, který označuje XML (například "text/xml") jsou považovány za XML.  
+ Požadavky HTTP POST s typem obsahu "Application/JSON" se považují za JSON a ty s typem obsahu, které označují XML (například "text/XML"), se považují za XML.  
   
- Požadavky HTTP GET obsahovat všechny parametry požadavku v adrese URL samotného.  
+ Požadavky HTTP GET obsahují všechny parametry žádosti v samotné adrese URL.  
   
- Záleží uživateli rozhodnout, jak vytvořit požadavek protokolu HTTP na koncový bod. Kromě toho uživatel má plnou kontrolu nad ve formátu JSON, která tvoří text žádosti o sestavení. Příklad vytvoření žádosti z jazyka JavaScript, najdete v článku [služba AJAX s JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).
+ Uživatel se rozhodne, jak vytvořit požadavek HTTP na koncový bod. Uživatel má také úplnou kontrolu nad vytvářením JSON, která tvoří tělo žádosti. Příklad vytvoření požadavku z JavaScriptu naleznete v tématu [Služba AJAX s JSON a XML](../../../../docs/framework/wcf/samples/ajax-service-with-json-and-xml-sample.md).

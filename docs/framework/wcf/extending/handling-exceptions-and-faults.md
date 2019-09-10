@@ -2,12 +2,12 @@
 title: Zpracování výjimek a chyb
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: 676ebe999c72ed678b7432ec154b1ec104b4d6cd
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4f95907d4f88315f2815b84e2ceb4e069783438d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795696"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851276"
 ---
 # <a name="handling-exceptions-and-faults"></a>Zpracování výjimek a chyb
 Výjimky slouží ke sdělování chyb místně v rámci služby nebo implementace klienta. Na druhé straně chyby slouží k sdělování chyb napříč hranicemi služby, například ze serveru do klienta nebo naopak. Kromě chyb využívají přenosové kanály často mechanismy přenosu pro komunikaci s chybami na úrovni přenosu. Například přenos HTTP používá ke komunikaci neexistující adresy URL koncového bodu stavové kódy jako 404 (není k dispozici žádný koncový bod pro odeslání zpětné chyby). Tento dokument se skládá ze tří částí, které poskytují pokyny pro vlastní autory kanálů. První část poskytuje pokyny, kdy a jak definovat a vyvolat výjimky. Druhá část obsahuje pokyny k vytváření a využívání chyb. Třetí část vysvětluje, jak poskytnout trasovací informace pro pomoc uživateli vlastního kanálu při odstraňování potíží se spuštěnými aplikacemi.  
@@ -48,7 +48,7 @@ Chyba protokolu SOAP 1,2 (Left) a chyby SOAP 1,1 (vpravo). Všimněte si, že v 
   
  SOAP definuje zprávu o chybě jako zprávu, která obsahuje pouze element Fault (element, jehož název je `<env:Fault>`) jako `<env:Body>`podřízený objekt. Obsah chybného prvku se mírně liší mezi SOAP 1,1 a SOAP 1,2, jak je znázorněno na obrázku 1. <xref:System.ServiceModel.Channels.MessageFault?displayProperty=nameWithType> Nicméně třída normalizuje tyto rozdíly do jednoho objektového modelu:  
   
-```  
+```csharp
 public abstract class MessageFault  
 {  
     protected MessageFault();  
@@ -74,7 +74,7 @@ public abstract class MessageFault
   
  Měli byste vytvořit nové podkódy chyb (nebo nové kódy chyb, pokud používáte protokol SOAP 1,1), pokud je to zajímavé pro programové odlišení chyby. To je podobné jako vytvoření nového typu výjimky. Nepoužívejte zápis tečky s kódy chyb SOAP 1,1. ( [Základní profil WS-I](https://go.microsoft.com/fwlink/?LinkId=95177) také nedoporučuje použití zápisu teček v kódu chyby.)  
   
-```  
+```csharp  
 public class FaultCode  
 {  
     public FaultCode(string name);  
@@ -96,7 +96,7 @@ public class FaultCode
   
  Vlastnost odpovídá `env:Reason` ( nebo`faultString` v SOAP 1,1) Popis chybového stavu, který se podobá zprávě výjimky, uživatelsky čitelný. `Reason` Třída (a SOAP `env:Reason/faultString`) obsahuje integrovanou podporu pro více překladů v zájmu globalizace. `FaultReason`  
   
-```  
+```csharp  
 public class FaultReason  
 {  
     public FaultReason(FaultReasonText translation);  
@@ -118,7 +118,7 @@ public class FaultReason
   
  Při generování chyby by vlastní kanál neměl přímo odeslat chybu, místo toho by měla vyvolat výjimku a nechat vrstvu výše rozhodnout, zda má být tato výjimka převedena na chybu a jak ji odeslat. Pro pomoc v tomto převodu by měl kanál poskytnout `FaultConverter` implementaci, která může převést výjimku vyvolanou vlastním kanálem na příslušnou chybu. `FaultConverter`je definován jako:  
   
-```  
+```csharp  
 public class FaultConverter  
 {  
     public static FaultConverter GetDefaultFaultConverter(  
@@ -134,7 +134,7 @@ public class FaultConverter
   
  Každý kanál, který generuje vlastní chyby, musí `FaultConverter` implementovat a vrátit ho z `GetProperty<FaultConverter>`volání. Vlastní `OnTryCreateFaultMessage` implementace musí buď převést výjimku na chybu, nebo delegovat na vnitřní `FaultConverter`kanál. Pokud je kanálem přenos, musí buď převést výjimku nebo delegáta na kodér `FaultConverter` nebo na výchozí hodnotu `FaultConverter` poskytnutou v rámci WCF. Výchozí hodnota `FaultConverter` převádí chyby odpovídající chybovým zprávám určeným protokolem WS-Addressing a SOAP. Tady je příklad `OnTryCreateFaultMessage` implementace.  
   
-```  
+```csharp  
 public override bool OnTryCreateFaultMessage(Exception exception,   
                                              out Message message)  
 {  
@@ -204,7 +204,7 @@ public override bool OnTryCreateFaultMessage(Exception exception,
   
  Následující objektový model podporuje převod zpráv na výjimky:  
   
-```  
+```csharp  
 public class FaultConverter  
 {  
     public static FaultConverter GetDefaultFaultConverter(  
@@ -224,7 +224,7 @@ public class FaultConverter
   
  Typická implementace vypadá takto:  
   
-```  
+```csharp  
 public override bool OnTryCreateException(  
                             Message message,   
                             MessageFault fault,   
@@ -290,7 +290,7 @@ public override bool OnTryCreateException(
   
  Pokud kanál protokolu odešle vlastní hlavičku s MustUnderstand = true a dostane `mustUnderstand` chybu, musí zjistit, jestli je tato chyba způsobená hlavičkou, kterou odeslala. Existují dva členy `MessageFault` třídy, které jsou užitečné pro tuto třídu:  
   
-```  
+```csharp  
 public class MessageFault  
 {  
     ...  
@@ -322,7 +322,7 @@ public class MessageFault
   
  Jakmile budete mít zdroj trasování, zavoláte jeho <xref:System.Diagnostics.TraceSource.TraceData%2A>metody <xref:System.Diagnostics.TraceSource.TraceEvent%2A>, nebo <xref:System.Diagnostics.TraceSource.TraceInformation%2A> pro zápis trasovacích položek do posluchačů trasování. Pro každý záznam trasování, který zapíšete, je třeba klasifikovat typ události jako jeden z typů události definovaných v <xref:System.Diagnostics.TraceEventType>. Tato klasifikace a nastavení úrovně trasování v konfiguraci určují, zda je záznam trasování výstupem naslouchacího procesu. Například nastavení úrovně trasování v konfiguraci tak, `Warning` aby umožňovalo `Warning`zápis položek, které mají být zapsány, `Error` `Critical` ale zablokují informace a podrobné položky. Tady je příklad vytvoření instance zdroje trasování a zápis položky na úrovni informací:  
   
-```  
+```csharp
 using System.Diagnostics;  
 //...  
 TraceSource udpSource=new TraceSource("Microsoft.Samples.Udp");  

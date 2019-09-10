@@ -1,118 +1,118 @@
 ---
 title: O platformě .NET Core
-description: Další informace o .NET Core.
+description: Přečtěte si o .NET Core.
 author: richlander
 ms.date: 08/01/2018
-ms.openlocfilehash: d81c6ad15c12d7bb1e866aef3bd1e799d5b62cde
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: ea9253bacf2bcee63430cd45f2a9ed412ce629e7
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67421875"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849143"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
-.NET core má následující vlastnosti:
+.NET Core má následující vlastnosti:
 
-- **Různé platformy:** Běží na Windows, macOS a Linux [operačních systémů](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md).
-- **Konzistentní v architekturách:** Spustí váš kód s stejné chování na několik architektur, včetně x64 x86 a ARM.
-- **Nástroje příkazového řádku:**  Obsahuje nástroje příkazového řádku snadným ovládáním, které lze použít pro místní vývoj a ve scénářích průběžnou integraci.
-- **Flexibilní nasazení:** Mohou být součástí vaší aplikace nebo nainstalovat vedle sebe (celou uživatele nebo systémová zařízení). Je možné s [kontejnery Dockeru](docker/index.md).
-- **Kompatibilní:** .NET Core je kompatibilní s rozhraní .NET Framework, Xamarin a Mono, prostřednictvím [.NET Standard](../standard/net-standard.md).
-- **Otevřít zdroj:** Platformy .NET Core je open source, použitím licencí MIT a Apache 2. .NET core je [.NET Foundation](https://dotnetfoundation.org/) projektu.
-- **Společnost Microsoft podporuje:** na společnost Microsoft, podporuje .NET Core [podpora platformy .NET Core](https://www.microsoft.com/net/core/support/).
+- **Pro různé platformy:** Běží na [operačních systémech](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md)Windows, MacOS a Linux.
+- **Konzistentní napříč architekturami:** Spustí váš kód se stejným chováním na více architekturách, včetně x64, x86 a ARM.
+- **Nástroje příkazového řádku:**  Zahrnuje snadno použitelné nástroje příkazového řádku, které se dají použít pro místní vývoj a scénáře nepřetržité integrace.
+- **Flexibilní nasazení:** Může být součástí vaší aplikace nebo nainstalovaná souběžně (instalace na úrovni uživatele nebo systému). Dá se použít s [kontejnery Docker](docker/index.md).
+- **Kompatibilní:** .NET Core je kompatibilní s .NET Framework, Xamarin a Mono prostřednictvím [.NET Standard](../standard/net-standard.md).
+- **Open Source:** Platforma .NET Core je open source pomocí licencí MIT a Apache 2. .NET Core je projekt [.NET Foundation](https://dotnetfoundation.org/) .
+- **Podporováno Microsoftem:** podpora .NET Core je podporovaná Microsoftem na [podporu .NET Core](https://dotnet.microsoft.com/platform/support/policy).
 
 ## <a name="languages"></a>Jazyky
 
-C#, Visual Basic a F# jazyky je možné psát aplikace a knihovny pro .NET Core. Tyto jazyky jsou, nebo je možné integrovat do oblíbených textových editorů a prostředí IDE, včetně [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link), [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text a Vim. Tato integrace poskytuje, částečně dobrý lidé z [OmniSharp](https://www.omnisharp.net/) a [Ionide](http://ionide.io) projekty.
+C#, Visual Basic a F# jazyky lze použít k psaní aplikací a knihoven pro .NET Core. Tyto jazyky jsou nebo mohou být integrovány do oblíbených textových editorů a IDEs, včetně sady [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link), [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), podvápna textu a programu Vim. Tato integrace je součástí vhodné lidé z projektů [OmniSharp](https://www.omnisharp.net/) a [Ionide](http://ionide.io) .
 
 ## <a name="apis"></a>API
 
-.NET core zveřejňuje rozhraní API pro většinu scénářů, postupujte podle několik z nich:
+Rozhraní .NET Core zpřístupňuje rozhraní API pro mnoho scénářů, z nichž několik sleduje:
 
 - Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/builtin-types/integral-numeric-types.md).
-- Kolekce, jako například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
-- Nástroj pro typy, jako například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a <xref:System.IO.FileStream?displayProperty=nameWithType>.
-- Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
-- Vysoký výkon typy, jako například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
+- Kolekce, například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
+- Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a. <xref:System.IO.FileStream?displayProperty=nameWithType>
+- Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
+- Vysoce výkonné typy, například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
 
-.NET core zajišťuje kompatibilitu se rozhraní .NET Framework a rozhraní API Mono implementací [.NET Standard](../standard/net-standard.md) specifikace.
+.NET Core poskytuje kompatibilitu s rozhraními API .NET Framework a mono implementací specifikace [.NET Standard](../standard/net-standard.md) .
 
 ## <a name="frameworks"></a>Architektury
 
-Nad rámec .NET Core jsou sestavené několik architektur:
+Na rozhraní .NET Core bylo postaveno více platforem:
 
 - [ASP.NET Core](/aspnet/core/)
-- [Windows 10 Universal Windows Platform (UWP)](https://developer.microsoft.com/windows)
+- [Windows 10 Univerzální platforma Windows (UWP)](https://developer.microsoft.com/windows)
 - [Tizen](https://developer.tizen.org/development/training/.net-application)
 
 ## <a name="composition"></a>Složení
 
-.NET core se skládá z následujících částí:
+.NET Core se skládá z následujících částí:
 
-- [.NET Core runtime](https://github.com/dotnet/coreclr), která poskytuje systém typů, načítání sestavení, systému uvolňování paměti, nativní zprostředkovatel komunikace s objekty a dalších základních služeb. [Knihovny .NET core framework](https://github.com/dotnet/corefx) poskytují základní nástroje, typy složení aplikace a primitivní datové typy.
-- [Modul runtime ASP.NET](https://github.com/aspnet/home), který poskytuje architekturu pro vytváření moderních cloudových založené na Internetu připojené aplikace, například webové aplikace, aplikace IoT a mobilních back-endů.
-- [Nástroje rozhraní příkazového řádku .NET Core](https://github.com/dotnet/cli) a kompilátory jazyka ([Roslyn](https://github.com/dotnet/roslyn) a [ F# ](https://github.com/microsoft/visualfsharp)) umožňující prostředí pro vývojáře .NET Core.
-- [Nástrojů dotnet](https://github.com/dotnet/core-setup), který se používá ke spuštění aplikace .NET Core a nástroje příkazového řádku. Vybere modul runtime a hostitelem modulu runtime, poskytuje načítání zásady sestavení a spuštění aplikace a nástroje.
+- [Modul runtime .NET Core](https://github.com/dotnet/coreclr), který poskytuje systém typů, načítání sestavení, systém uvolňování paměti, nativní spolupráci a další základní služby. [Knihovny .NET Core Framework](https://github.com/dotnet/corefx) poskytují primitivní datové typy, typy kompozic aplikací a základní nástroje.
+- [Modul runtime ASP.NET](https://github.com/aspnet/home), který poskytuje rozhraní pro vytváření moderních cloudových aplikací připojených k Internetu, jako jsou webové aplikace, aplikace IoT a mobilní back-endy.
+- [Nástroje .NET Core CLI](https://github.com/dotnet/cli) a jazykové kompilátory ([Roslyn](https://github.com/dotnet/roslyn) a [F#](https://github.com/microsoft/visualfsharp)), které umožňují prostředí pro vývojáře .NET Core.
+- [Nástroj dotnet](https://github.com/dotnet/core-setup), který se používá ke spouštění aplikací .NET Core a nástrojů rozhraní příkazového řádku. Vybírá modul runtime a hostuje modul runtime, poskytuje zásady načítání sestavení a spouští aplikace a nástroje.
 
 Tyto součásti jsou distribuovány následujícími způsoby:
 
-- [.NET core Runtime](https://www.microsoft.com/net/download/dotnet-core/2.1) – zahrnuje knihovny modulu runtime a rozhraní .NET Core.
-- [ASP.NET Core Runtime](https://www.microsoft.com/net/download/dotnet-core/2.1) – obsahuje knihovny modulu runtime a rozhraní framework ASP.NET Core a .NET Core.
-- [Sada .NET core SDK](https://www.microsoft.com/net/download/dotnet-core/2.1) – zahrnuje nástroje rozhraní příkazového řádku .NET, ASP.NET Core runtime a modulu runtime .NET Core a rozhraní framework.
+- [.NET Core Runtime](https://dotnet.microsoft.com/download) – zahrnuje knihovny runtime .NET Core a architektury rozhraní.
+- [ASP.NET Core Runtime](https://dotnet.microsoft.com/download) --zahrnuje ASP.NET Core a modul runtime .NET Core a knihovny rozhraní.
+- [.NET Core SDK](https://dotnet.microsoft.com/download) – zahrnuje nástroje rozhraní .NET CLI, ASP.NET Core Runtime a .NET Core Runtime a rozhraní.
 
 ### <a name="open-source"></a>Open source
 
-[.NET core](https://github.com/dotnet/core) je open source ([licencí MIT](https://github.com/dotnet/core/blob/master/LICENSE.TXT)) a bylo přispět k [.NET Foundation](https://dotnetfoundation.org) od Microsoftu v roce 2014. Nyní je jeden z projektů .NET Foundation Nejaktivnější. Ho můžete volně přijímá jednotlivce a společností, včetně osobních, akademický nebo obchodní účely. Více společností používá jako součást aplikace, nástroje, nové platformy a hostování služeb .NET Core. Některé z těchto společnostech výrazně přispějeme k .NET Core na Githubu a poskytnout Rady ohledně směr produktu jako součást [.NET Foundation technické řízení skupiny](https://dotnetfoundation.org/blog/tsg-welcome).
+[.NET Core](https://github.com/dotnet/core) je open source ([licence MIT](https://github.com/dotnet/core/blob/master/LICENSE.TXT)) a přispělo se k [.net Foundation](https://dotnetfoundation.org) od Microsoftu v 2014. Teď je jedním z nejaktivnějších projektů .NET Foundation. Může být volně přijatá jednotlivci a společnostmi, včetně pro osobní, školní nebo komerční účely. Několik společností používá .NET Core jako součást aplikací, nástrojů, nových platforem a hostitelských služeb. Některé z těchto společností mají významné příspěvky na rozhraní .NET Core na GitHubu a poskytují pokyny pro směr produktu v rámci [skupiny technického řízení .NET Foundation](https://dotnetfoundation.org/blog/tsg-welcome).
 
-### <a name="designed-for-adaptability"></a>Navržené pro přizpůsobivost
+### <a name="designed-for-adaptability"></a>Navrženo pro zajištění přizpůsobivosti
 
-.NET core je sestavený Build jako produkt velmi podobné, ale jedinečné vzhledem k produkty .NET. Byla navržena tak, aby povolit široké přizpůsobivost na nové platformy a úlohy. Má několik operačního systému a procesor portů jsou k dispozici a může přenést do mnoha dalších.
+.NET Core se sestavilo jako velmi podobný, ale jedinečný produkt relativně k ostatním produktům .NET. Byla navržena tak, aby umožňovala širokou škálu nových platforem a úloh. K dispozici je několik operačních systémů a portů procesoru a je možné ho přenést na mnoho dalších.
 
-Produkt je rozdělená do několika částí, povolení různých částí se přizpůsobí nové platformy v různých časech. Modul runtime a základní knihovny pro konkrétní platformu musíte přenést jako celek. Nezávislý na platformě knihovny by měly fungovat jako-je na všech platformách pomocí vytváření. Je posun projektu ke snížení implementace specifické pro platformu na zvýšení efektivity pro vývojáře, preferují platformy neutrální kód jazyka C# pokaždé, když se algoritmus nebo rozhraní API je možné implementovat v celé nebo části tímto způsobem.
+Produkt je rozdělen do několika částí a umožňuje v různých časech přizpůsobení různých částí novým platformám. Základní knihovny pro modul runtime a specifické pro platformu musí být přeportované jako jednotka. Nezávislá knihovny platforem by měly fungovat tak, jak jsou na všech platformách, podle konstrukce. Existuje posun projektu pro snížení implementace specifických pro konkrétní platformu, aby se zvýšila efektivita vývojářů, přičemž je C# nutné předkládat kód neutrální platformy vždy, když lze algoritmus nebo rozhraní API implementovat zcela nebo částečně.
 
-Uživatelé často ptají, jak .NET Core je implementovaná za účelem podpory více operačních systémů. Obvykle žádá Pokud existují samostatné implementace nebo [podmíněné kompilace](https://en.wikipedia.org/wiki/Conditional_compilation) se používá. Je i s silné Posun směrem k podmíněné kompilace.
+Lidé často žádají, jak je .NET Core implementováno, aby podporovalo více operačních systémů. Obvykle se dotazují, jestli existují samostatné implementace nebo když se používá [Podmíněná kompilace](https://en.wikipedia.org/wiki/Conditional_compilation) . Je to obojí se silným posunem směrem k podmíněné kompilaci.
 
-Zobrazí se v následujícím grafu, že drtivou většinu [CoreFX](https://github.com/dotnet/corefx) je platforma doménově neutrální kód, který se sdílí mezi všemi platformami. Platforma doménově neutrální kód je možné implementovat jako jediné přenosných sestavení, který se používá na všech platformách.
+V následujícím grafu vidíte, že velká většina [CoreFX](https://github.com/dotnet/corefx) je neutrální kód platformy, který je sdílen napříč všemi platformami. Kód neutrální pro platformu je možné implementovat jako jedno přenosné sestavení, které se používá na všech platformách.
 
-![CoreFX: Řádky kódu pro každou platformu](../images/corefx-platforms-loc.png)
+![CoreFX: Řádky kódu na platformu](../images/corefx-platforms-loc.png)
 
-Implementace Windows a Unix se podobají velikost. Windows má větší implementaci, protože CoreFX implementuje některé funkce jen pro Windows, jako například [Microsoft.Win32.Registry](https://github.com/dotnet/corefx/tree/master/src/Microsoft.Win32.Registry) ale ještě neimplementuje mnohé koncepty jen pro systém Unix. Uvidíte také, že většina operačních systémů Linux a macOS implementace jsou sdíleny napříč implementace systému Unix, Linux a macOS konkrétní implementace jsou zhruba podobní velikosti.
+Implementace Windows a UNIX mají stejnou velikost. Systém Windows má větší implementaci, protože CoreFX implementuje některé funkce pouze pro systém Windows, například [Microsoft. Win32. Registry](https://github.com/dotnet/corefx/tree/master/src/Microsoft.Win32.Registry) , ale ještě neimplementuje mnoho konceptů pouze pro systém UNIX. Uvidíte také, že většina implementací v systémech Linux a macOS je sdílena v rámci implementace systému UNIX, zatímco implementace specifické pro Linux a macOS jsou přibližně podobné velikosti.
 
-Existují kombinaci specifických pro platformu a platformy neutrální knihoven v .NET Core. Zobrazí se model v pár příkladů:
+Rozhraní .NET Core obsahuje kombinaci knihoven specifických pro platformu a platforem neutrálních na platformě. Vzor si můžete prohlédnout v několika příkladech:
 
-- [CoreCLR](https://github.com/dotnet/coreclr) se liší podle platformy. Postavená subsystémy operačního systému, stejně jako správce paměti a podproces plánovač.
-- [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) a [System.Security.Cryptography.Algorithms](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) jsou specifické pro platformu, že úložiště a šifrování rozhraní API se liší na každý operační systém.
-- [System.Collections –](https://github.com/dotnet/corefx/tree/master/src/System.Collections) a [System.Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) jsou nezávislá na platformě, že uživatelé vytvářet a provozovat prostřednictvím datové struktury.
+- [CoreCLR](https://github.com/dotnet/coreclr) je specifický pro platformu. Sestavuje se nad subsystémy operačního systému, jako je správce paměti a Plánovač vláken.
+- [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) a [System. Security. Cryptography.](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) Algorithms jsou specifické pro platformu, protože rozhraní API pro úložiště a kryptografii se v každém operačním systému liší.
+- [System. Collections](https://github.com/dotnet/corefx/tree/master/src/System.Collections) a [System. Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) jsou neutrální vzhledem k tomu, že vytvářejí a pracují nad datovými strukturami.
 
-## <a name="comparisons-to-other-net-implementations"></a>Porovnávání v jiných implementacích rozhraní .NET
+## <a name="comparisons-to-other-net-implementations"></a>Porovnání s jinými implementacemi .NET
 
-Je pravděpodobně nejjednodušším pochopit velikosti a tvaru .NET Core srovnáním stávající implementace .NET.
+Je možná nejjednodušší pochopit velikost a tvar rozhraní .NET Core porovnáním s existujícími implementacemi .NET.
 
-### <a name="comparison-with-net-framework"></a>Porovnání s rozhraním .NET Framework
+### <a name="comparison-with-net-framework"></a>Porovnání s .NET Framework
 
-.NET bylo poprvé oznámena společností Microsoft v 2000 a pak se z něj. Rozhraní .NET Framework byl primární vyrobená společností Microsoft, které v daném období téměř dva desetiletí implementace .NET.
+Rozhraní .NET bylo poprvé oznámeno společností Microsoft v 2000 a pak se z něj vyvinulo. .NET Framework byla primární implementace .NET, kterou vytvořila společnost Microsoft, během této doby skoro dvě desetiletí.
 
 Hlavní rozdíly mezi .NET Core a .NET Framework:
 
-- **Modely aplikace** – .NET Core nepodporuje všechny rozhraní .NET Framework aplikace – modely. Konkrétně se nepodporuje webové formuláře ASP.NET a ASP.NET MVC, ale podporuje ASP.NET Core MVC. Jsme představili, který [bude podporovat .NET Core 3, WPF a Windows Forms](https://devblogs.microsoft.com/dotnet/net-core-3-and-support-for-windows-desktop-applications/).
-- **Rozhraní API** – .NET Core obsahuje velká podmnožina knihovna tříd rozhraní .NET Framework základ, s jinou řešení (se liší názvy sestavení; členy zveřejněné na typy se liší v klíčových případů). Tyto rozdíly vyžadovat změny do zdroje port až po .NET Core v některých případech (viz [microsoft/dotnet-apiport](https://github.com/microsoft/dotnet-apiport)). Implementuje .NET core [.NET Standard](../standard/net-standard.md) specifikace rozhraní API.
-- **Subsystémy** – .NET Core v rozhraní .NET Framework, s cílem programovací model a jednodušší implementace implementuje podmnožinu subsystémů. Například není podporována zabezpečení přístupu kódu (CAS), i když se podporuje reflexe.
-- **Platformy** – rozhraní .NET Framework podporuje Windows a Windows Server a .NET Core podporuje také macOS a Linux.
-- **Open Source** – .NET Core je open source, zatímco [jen pro čtení podmnožinou rozhraní .NET Framework](https://github.com/microsoft/referencesource) je open source.
+- **Modely aplikací** --. .NET Core nepodporují všechny modely .NET Framework aplikací. Konkrétně nepodporuje webové formuláře ASP.NET a ASP.NET MVC, ale podporuje ASP.NET Core MVC. Bylo oznámeno, že [.NET Core 3 bude podporovat WPF a model Windows Forms](https://devblogs.microsoft.com/dotnet/net-core-3-and-support-for-windows-desktop-applications/).
+- **Rozhraní api** --. NET Core obsahuje velkou podmnožinu .NET Framework základní knihovny tříd s jiným přífaktoringem (názvy sestavení se liší. Členové vystaveni u typů se liší v klíčových případech). Tyto rozdíly vyžadují v některých případech změny zdroje portů do .NET Core (viz [Microsoft/dotNET-apiport](https://github.com/microsoft/dotnet-apiport)). .NET Core implementuje specifikaci rozhraní [.NET Standard](../standard/net-standard.md) API.
+- **Subsystémy** --. NET Core implementují podmnožinu subsystémů v .NET Framework s cílem jednoduššího implementačního a programovacího modelu. Například zabezpečení přístupu kódu (CAS) není podporováno, zatímco je reflexe podporována.
+- **Platformy** – .NET Framework podporuje Windows a Windows Server, zatímco .NET Core podporuje taky MacOS a Linux.
+- **Open source** --. NET Core je open source, zatímco [podmnožina .NET Framework jen pro čtení](https://github.com/microsoft/referencesource) je open source.
 
-.NET Core je jedinečný a má významné rozdíly pro rozhraní .NET Framework a jiné implementace .NET, je jednoduché sdílení kódu mezi tyto implementace pomocí zdroje nebo binární sdílení techniky.
+I když je .NET Core jedinečné a má významné rozdíly v .NET Framework a dalších implementacích .NET, je jednoduché sdílet kód mezi těmito implementacemi, a to pomocí zdrojové nebo binární metody sdílení.
 
-Protože .NET Core podporuje instalaci vedle sebe a jeho modul runtime je zcela nezávislý rozhraní .NET Framework, nainstalujete ho na počítačích s nainstalovaným bez problémů rozhraní .NET Framework.
+Vzhledem k tomu, že .NET Core podporuje souběžnou instalaci a její modul runtime je zcela nezávislý na .NET Framework, lze ji nainstalovat na počítače s .NET Framework nainstalovány bez problémů.
 
-### <a name="comparison-with-mono"></a>Porovnání s Mono
+### <a name="comparison-with-mono"></a>Porovnání s mono
 
-[Mono](https://www.mono-project.com/) je původní napříč platformami a [opensourcových](https://github.com/mono/mono) implementace .NET, nejprve dodání 2004. To můžete představit jako klon komunity rozhraní .NET Framework. Týmový projekt Mono spoléhal na otevřený [.NET standardy](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména 335 Standard ECMA) vydávaný microsoftem, aby bylo možné poskytovat kompatibilní implementace.
+[Mono](https://www.mono-project.com/) je původní implementace .NET pro různé platformy a [Open Source](https://github.com/mono/mono) , první expedice v 2004. Dá se představit za klonování komunity .NET Framework. Projektový tým mono se spoléhal na otevřené [standardy .NET](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména ECMA 335) publikované Microsoftem za účelem zajištění kompatibilní implementace.
 
-Hlavní rozdíly mezi Mono a .NET Core:
+Hlavní rozdíly mezi .NET Core a mono:
 
-- **Modely aplikace** --Mono podporuje podmnožinu aplikace rozhraní .NET Framework – modely (třeba Windows Forms) a některé další značky (například [Xamarin.iOS](https://www.xamarin.com/platform)) prostřednictvím produktu Xamarin. .NET core nepodporuje tyto.
-- **Rozhraní API** --Mono podporuje [velká podmnožina](http://docs.go-mono.com/?link=root%3a%2fclasslib) rozhraní API .NET Framework, použijte stejné názvy sestavení a které budou zohledňovat.
-- **Platformy** – Mono podporuje mnoho platforem a procesorů.
-- **Open Source** – Mono a .NET Core jak používat licencí MIT a jsou projekty .NET Foundation.
-- **Fokus** – hlavním cílem Mono v posledních letech je mobilní platformy .NET Core se zaměřuje na cloud a aplikaci desktop úlohy.
+- **Modely aplikací** – mono podporuje podmnožinu .NET Frameworkch modelů aplikací (například model Windows Forms) a některé další (například [Xamarin. iOS](https://www.xamarin.com/platform)) prostřednictvím produktu Xamarin. Rozhraní .NET Core je nepodporuje.
+- **Rozhraní API** – mono podporuje [velkou podmnožinu](http://docs.go-mono.com/?link=root%3a%2fclasslib) rozhraní .NET Framework API, s použitím stejných názvů sestavení a faktoringu.
+- **Platformy** – mono podporuje spoustu platforem a procesorů.
+- **Open Source** – mono a .NET Core používají jak licenci technologie MIT, tak projekty .NET Foundation.
+- **Zaměření** – hlavním cílem mono v posledních letech jsou mobilní platformy, zatímco .NET Core se zaměřuje na úlohy cloudu a stolních počítačů.

@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: e6206babdb728b6ce38c94441f775e1fdffe7d79
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ceda43cc41ceb3381b4700d6ea8b1871e368dccc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040416"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856202"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 
@@ -97,7 +97,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         ![Přidání inicializátoru korelace](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Přidejte inicializátor korelace.")
 
-7. Přetáhněte další aktivitu **ReceiveAndSendReply** na konec pracovního postupu (mimo sekvenci obsahující první aktivity **Receive** a **SendReply** ). Tím přijde druhá zpráva odeslaná klientem a reaguje na ni.
+7. Přetáhněte další aktivitu **ReceiveAndSendReply** na konec pracovního postupu (mimo **sekvenci** obsahující první aktivity **Receive** a **SendReply** ). Tím přijde druhá zpráva odeslaná klientem a reaguje na ni.
 
     1. Vyberte **sekvenci** , která obsahuje nově přidané aktivity **Receive** a **SendReply** a klikněte na tlačítko **proměnné** . Přidejte proměnnou zvýrazněnou na následujícím obrázku:
 
@@ -116,7 +116,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
         ![Určení parametrů pro druhý příjem](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Nakonfigurujte aktivitu Receive pro příjem dvou parametrů.")
 
-    4. Klikněte na tlačítko se třemi tečkami `orderIdHandle`CorrelateOn a zadejte. V části **dotazy XPath**klikněte na šipku rozevíracího seznamu a `p_orderId`vyberte. Tím se nakonfiguruje korelace pro druhou aktivitu Receive. Další informace o korelaci najdete [](../../../../docs/framework/wcf/feature-details/correlation.md)v tématu korelace.
+    4. Klikněte na tlačítko se třemi tečkami `orderIdHandle`CorrelateOn a zadejte. V části **dotazy XPath**klikněte na šipku rozevíracího seznamu a `p_orderId`vyberte. Tím se nakonfiguruje korelace pro druhou aktivitu Receive. Další informace o korelaci najdete v tématu [korelace](../../../../docs/framework/wcf/feature-details/correlation.md).
 
         ![Nastavení vlastnosti vlastnosti CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Nastavte vlastnost vlastnosti CorrelatesOn.")
 
@@ -191,7 +191,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 5. Sestavte řešení a spusťte `OrderClient` aplikaci. Klient zobrazí následující text:
 
-    ```Output
+    ```output
     Sending start messageWorkflow service is idle...Press [ENTER] to send an add item message to reactivate the workflow service...
     ```
 
@@ -201,7 +201,7 @@ Pro použití tohoto Názorného postupu musíte mít nainstalovaný následují
 
 7. Stisknutím klávesy ENTER odešlete zprávu přidat položku do služby pracovního postupu. Klient zobrazí následující text:
 
-    ```Output
+    ```output
     Sending add item messageService returned: Item added to orderPress any key to continue . . .
     ```
 

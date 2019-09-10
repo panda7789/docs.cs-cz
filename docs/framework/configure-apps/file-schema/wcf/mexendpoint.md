@@ -2,18 +2,20 @@
 title: <mexEndpoint>
 ms.date: 03/30/2017
 ms.assetid: c9823060-0a5d-4f9d-99d4-4d113b758247
-ms.openlocfilehash: 78788f9dfbf6cdf3439fd6e33eddfe721e49840d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7760ee4d3b118e339944317e8ec8d8217b5d909d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931259"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855107"
 ---
 # <a name="mexendpoint"></a>\<mexEndpoint>
 Tento prvek konfigurace definuje standardní koncový bod s pevnou smlouvou IMetadataExchange. Vzhledem k tomu, že všechny koncové body výměny metadat určují jako kontrakt IMetadataExchange, můžete použít tento standardní bod, místo abyste ho nadefinovali sami.  
   
- \<system.ServiceModel>  
-\<Oddílu StandardEndpoints >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Oddílu StandardEndpoints >** ](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<mexEndpoint >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

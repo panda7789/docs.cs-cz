@@ -4,12 +4,12 @@ description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro 
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8eebc04390514bca288b67952ec7748366a45d6e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 1f04ccfa56c399a4dba003ec0de8a87f888ef848
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660526"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849326"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
 
@@ -23,10 +23,10 @@ Tento článek obsahuje přehled kroků nezbytných ke spuštění modulu runtim
 
 Vzhledem k tomu, že hostitelé jsou nativní aplikace, tento kurz C++ se zabývá vytvářením aplikací pro hostování .NET Core. Budete potřebovat C++ vývojové prostředí (například to, které poskytuje [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)).
 
-Budete také chtít, aby hostitel v rámci aplikace .NET Core otestoval hostitele. proto byste měli nainstalovat [.NET Core SDK](https://www.microsoft.com/net/core) a [vytvořit malou testovací aplikaci .NET Core](with-visual-studio.md) (například aplikaci Hello World). Je dostačující aplikace Hello World vytvořená novou šablonou projektu konzoly .NET Core.
+Budete také chtít, aby hostitel v rámci aplikace .NET Core otestoval hostitele. proto byste měli nainstalovat [.NET Core SDK](https://dotnet.microsoft.com/download) a [vytvořit malou testovací aplikaci .NET Core](with-visual-studio.md) (například aplikaci Hello World). Je dostačující aplikace Hello World vytvořená novou šablonou projektu konzoly .NET Core.
 
 ## <a name="hosting-apis"></a>Hostování rozhraní API
-Existují tři různá rozhraní API, která lze použít k hostování .NET Core. V tomto dokumentu (a jeho [](https://github.com/dotnet/samples/tree/master/core/hosting)přidružených ukázkách) se týkají všechny možnosti.
+Existují tři různá rozhraní API, která lze použít k hostování .NET Core. V tomto dokumentu (a jeho přidružených [ukázkách](https://github.com/dotnet/samples/tree/master/core/hosting)) se týkají všechny možnosti.
 
 * Upřednostňovanou metodou hostování modulu runtime .NET Core v rozhraní .NET Core 3,0 a vyšším je `nethost` rozhraní API knihoven a. `hostfxr` Tyto vstupní body zpracovávají složitost hledání a nastavení modulu runtime pro inicializaci a umožňují spouštění spravované aplikace a volání do statické spravované metody.
 * Upřednostňovanou metodou hostování modulu runtime .NET Core před rozhraním .NET Core 3,0 je rozhraní API [CoreClrHost. h](https://github.com/dotnet/coreclr/blob/master/src/coreclr/hosts/inc/coreclrhost.h) . Toto rozhraní API zpřístupňuje funkce pro snadné spouštění a zastavování modulu runtime a vyvolání spravovaného kódu (buď spuštěním spravovaného souboru exe, nebo voláním statických spravovaných metod).
@@ -43,7 +43,7 @@ Následující kroky podrobně popisují, jak pomocí `nethost` knihoven a `host
 
 ### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Krok 1 – načtení HostFxr a získání exportovaných funkcí hostování
 
-Knihovna poskytuje funkci pro vyhledání `hostfxr`knihovny. `get_hostfxr_path` `nethost` `hostfxr` Knihovna zpřístupňuje funkce pro hostování modulu runtime .NET Core. Úplný seznam funkcí najdete v [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) části a v nativním [dokumentu návrhu hostování](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Ukázka a tento kurz používá následující:
+Knihovna poskytuje funkci pro vyhledání `hostfxr`knihovny. `get_hostfxr_path` `nethost` `hostfxr` Knihovna zpřístupňuje funkce pro hostování modulu runtime .NET Core. Úplný seznam funkcí najdete v [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) části a v [nativním dokumentu návrhu hostování](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Ukázka a tento kurz používá následující:
 * `hostfxr_initialize_for_runtime_config`: Inicializuje hostitelský kontext a připraví inicializaci modulu runtime .NET Core pomocí zadané konfigurace modulu runtime.
 * `hostfxr_get_runtime_delegate`: Získá delegáta běhové funkce.
 * `hostfxr_close`: Zavře hostitelský kontext.

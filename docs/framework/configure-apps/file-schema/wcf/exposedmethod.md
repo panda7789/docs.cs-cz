@@ -2,20 +2,22 @@
 title: <exposedMethod>
 ms.date: 03/30/2017
 ms.assetid: 61c938cd-4ee9-4b06-ab28-922ef491ab11
-ms.openlocfilehash: 032139b714aa11079c7ee8610c332e404b3981ac
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 46f2872fb289c2793c356ea179deb3ce52e6d65e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918997"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855307"
 ---
 # <a name="exposedmethod"></a>\<Prvků exposedMethod >
 Představuje metodu COM+, která je vystavena v případě, že je rozhraní součásti modelu COM vystaveno jako webová služba.  
   
- \<system.ServiceModel>  
-\<comContracts>  
-\<comContract>  
-\<metody >  
+[ **\<> Konfigurace**](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Konfigurační oddíl comContracts >** ](comcontracts.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comContract >** ](comcontract.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<exposedMethods >** ](exposedmethods.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<Prvků exposedMethod >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,7 +68,7 @@ Představuje metodu COM+, která je vystavena v případě, že je rozhraní sou
 </comContract>
 ```  
   
- V okamžiku inicializace služby se modul runtime pokusí vygenerovat kontrakt služby tím, že se odrážejí a přidá jenom metody, které jsou uvedené v [ \<](exposedmethod.md) seznamu prvků exposedmethodch prvků >. Trasování se vytvoří pro každou metodu rozhraní, která není zahrnutá v kontraktu služby.  
+ V okamžiku inicializace služby se modul runtime pokusí vygenerovat kontrakt služby tím, že se odrážejí a přidá jenom metody, které jsou uvedené v seznamu [ \<prvků exposedmethodch prvků >](exposedmethod.md) . Trasování se vytvoří pro každou metodu rozhraní, která není zahrnutá v kontraktu služby.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ description: Tento článek vás seznámí s tím, jak jsou .NET Core SDK a modu
 author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: dcf74f6fa892446555541f13a33130a93787cf70
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 4674cd8750f5a5e628945c1712ac579d88385b94
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104960"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849281"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Přehled toho, jak je verze .NET Core
 
@@ -108,6 +108,6 @@ Každá verze rozhraní .NET Core implementuje verzi .NET Standard. Implementace
 
 - [Cílové architektury](../../standard/frameworks.md)
 - [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)
-- [Tabulka faktů pro životní cyklus podpory .NET Core](https://www.microsoft.com/net/core/support)
+- [Tabulka faktů pro životní cyklus podpory .NET Core](https://dotnet.microsoft.com/platform/support/policy)
 - [Vazba .NET Core 2 + verze](https://github.com/dotnet/designs/issues/3)
 - [Image Docker pro .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)

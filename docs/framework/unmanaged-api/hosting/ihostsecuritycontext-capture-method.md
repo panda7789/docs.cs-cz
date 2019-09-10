@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0f6ae812b64080a2c4d236a2be02ad81c4a11b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8b4d4c7edec47ab4acaae2a5cd93ad474612063
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993015"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855537"
 ---
 # <a name="ihostsecuritycontextcapture-method"></a>IHostSecurityContext::Capture – metoda
-Získá klonu [ihostsecuritycontext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) instance vrácená z volání [ihostsecuritymanager::getsecuritycontext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md).  
+Získá klon instance [IHostSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) vrácené voláním [IHostSecurityManager:: GetSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-getsecuritycontext-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT Capture (  
     [out] IHostSecurityContext** ppClonedContext  
 );  
@@ -37,30 +37,30 @@ HRESULT Capture (
   
 ## <a name="parameters"></a>Parametry  
  `ppClonedContext`  
- [out] Ukazatel na adresu klonu `IHostSecurityContext` objektu se dají zachytit.  
+ mimo Ukazatel na adresu klonu `IHostSecurityContext` objektu, který se má zachytit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Capture` bylo úspěšně vráceno.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
+|S_OK|`Capture`úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
-|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
-|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající nevlastní zámek.|  
+|HOST_E_ABANDONED|Událost byla zrušena při čekání na blokované vlákno nebo vlákna.|  
+|E_FAIL|Došlo k neznámé chybě závažnosti. Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný. Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vrácený ukazatel rozhraní `Capture` je klonem zachyceném kontextu. Pokud tyto informace je přesouvat mezi jako bod asynchronní kód, dobu života je oddělená od, proti kterému bylo provedeno volání ukazatele. Můžete proto vydávaly původní ukazatel.  
+ Ukazatel rozhraní vrácený z `Capture` je klonu zachyceného kontextu. Pokud jsou tyto informace přesunuty v rámci asynchronního bodu kódu, jeho životnost je oddělena od objektu ukazatele, proti kterému bylo volání provedeno. Původní ukazatel lze proto uvolnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** MSCorEE.h  
+ **Hlaviček** MSCorEE. h  
   
- **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
+ **Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

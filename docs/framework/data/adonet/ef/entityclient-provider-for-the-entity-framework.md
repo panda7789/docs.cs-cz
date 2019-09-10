@@ -2,25 +2,25 @@
 title: Zprostředkovatel EntityClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
-ms.openlocfilehash: 70cc5a9aaa22cc563c910f9d250ad4565e34a135
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e3a87d4a936e5bdf633e1f997f66dd98add2a9cb
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251605"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854709"
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient pro Entity Framework
 Zprostředkovatel EntityClient je poskytovatel dat, který používá aplikace Entity Framework pro přístup k datům, která jsou popsaná v koncepčním modelu. Informace o koncepčních modelech najdete v tématu [modelování a mapování](modeling-and-mapping.md). Zprostředkovatel EntityClient pro přístup ke zdroji dat používá jiné poskytovatele dat .NET Framework. Pro přístup k databázi SQL Server například EntityClient používá .NET Framework Zprostředkovatel dat pro SQL Server (SqlClient). Informace o poskytovateli SqlClient najdete v tématu [SqlClient pro Entity Framework](sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementován v <xref:System.Data.EntityClient> oboru názvů.  
   
 ## <a name="managing-connections"></a>Správa připojení  
- Sestavuje na poskytovatele dat ADO.NET specifických <xref:System.Data.EntityClient.EntityConnection> pro úložiště tím, že poskytuje základnímu poskytovateli dat a relační databázi. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Chcete-li <xref:System.Data.EntityClient.EntityConnection> vytvořit objekt, musíte odkazovat na sadu metadat, která obsahuje nezbytné modely a mapování, a také na název zprostředkovatele dat a připojovací řetězec specifický pro úložiště. Po umístění <xref:System.Data.EntityClient.EntityConnection> je možné k entitám přicházet prostřednictvím tříd vygenerovaných z koncepčního modelu.  
+ Entity Framework sestaví <xref:System.Data.EntityClient.EntityConnection> k poskytovatelům dat ADO.NET specifických pro úložiště tím, že poskytuje základnímu poskytovateli dat a relační databázi. Chcete-li <xref:System.Data.EntityClient.EntityConnection> vytvořit objekt, musíte odkazovat na sadu metadat, která obsahuje nezbytné modely a mapování, a také na název zprostředkovatele dat a připojovací řetězec specifický pro úložiště. Po umístění <xref:System.Data.EntityClient.EntityConnection> je možné k entitám přicházet prostřednictvím tříd vygenerovaných z koncepčního modelu.  
   
  Můžete zadat připojovací řetězec v souboru App. config.  
   
  <xref:System.Data.EntityClient> Zahrnuje<xref:System.Data.EntityClient.EntityConnectionStringBuilder> také třídu. Tato třída umožňuje vývojářům programově vytvářet syntakticky správné připojovací řetězce a analyzovat a znovu sestavovat existující připojovací řetězce pomocí vlastností a metod třídy. Další informace najdete v tématu [jak: Sestavte připojovací řetězec](how-to-build-an-entityconnection-connection-string.md)EntityConnection.  
   
 ## <a name="creating-queries"></a>Vytváření dotazů  
- [!INCLUDE[esql](../../../../../includes/esql-md.md)] Jazyk je dialekt SQL nezávislý na úložišti, který pracuje přímo s koncepčními schématy entit a podporuje model EDM (Entity Data Model) konceptů, jako jsou dědičnost a vztahy. Třída se používá ke [!INCLUDE[esql](../../../../../includes/esql-md.md)] spuštění příkazu proti modelu entity. <xref:System.Data.EntityClient.EntityCommand> Při vytváření <xref:System.Data.EntityClient.EntityCommand> objektů můžete zadat název uložené procedury nebo text dotazu. Spolupracuje s poskytovateli dat specifických pro úložiště k překladu [!INCLUDE[esql](../../../../../includes/esql-md.md)] obecných na dotazy specifických pro úložiště. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Další informace o zápisu [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazů naleznete v tématu [Entity SQL Language](./language-reference/entity-sql-language.md).  
+ [!INCLUDE[esql](../../../../../includes/esql-md.md)] Jazyk je dialekt SQL nezávislý na úložišti, který pracuje přímo s koncepčními schématy entit a podporuje model EDM (Entity Data Model) konceptů, jako jsou dědičnost a vztahy. Třída se používá ke [!INCLUDE[esql](../../../../../includes/esql-md.md)] spuštění příkazu proti modelu entity. <xref:System.Data.EntityClient.EntityCommand> Při vytváření <xref:System.Data.EntityClient.EntityCommand> objektů můžete zadat název uložené procedury nebo text dotazu. Entity Framework spolupracuje s poskytovateli dat specifických pro úložiště k překladu [!INCLUDE[esql](../../../../../includes/esql-md.md)] obecných do dotazů specifických pro úložiště. Další informace o zápisu [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazů naleznete v tématu [Entity SQL Language](./language-reference/entity-sql-language.md).  
   
  Následující příklad vytvoří <xref:System.Data.EntityClient.EntityCommand> objekt a [!INCLUDE[esql](../../../../../includes/esql-md.md)] přiřadí text dotazu k jeho <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> vlastnosti. Tento [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotaz vyžádá produkty seřazené podle ceny za seznam koncepčního modelu. Následující kód nemá žádné znalosti modelu úložiště vůbec.  
   

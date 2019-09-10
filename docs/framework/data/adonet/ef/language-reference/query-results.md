@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: bcd7b699-4e50-4523-8c33-2f54a103d94e
-ms.openlocfilehash: d43ec0cdf5b5bb03854dffc7132dddb4c9ae76fd
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3ac80cfe06f8531dcd2343f676a6f78f8eb0e8f6
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249264"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854300"
 ---
 # <a name="query-results"></a>Výsledky dotazu
 Až se LINQ to Entities dotaz převede na stromy příkazů a spustí se, výsledky dotazu se obvykle vrátí jako jedna z následujících:  
@@ -23,9 +23,9 @@ Až se LINQ to Entities dotaz převede na stromy příkazů a spustí se, výsle
   
 - Anonymní typy.  
   
- Při spuštění dotazu proti zdroji dat jsou výsledky vyhodnoceny do typů CLR a vráceny klientovi. Všechny materializování objektů provádí [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Všechny chyby, které jsou výsledkem neschopnosti mapování mezi [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] a CLR, způsobí, že budou výjimky vyvolány během materializace objektu.  
+ Při spuštění dotazu proti zdroji dat jsou výsledky vyhodnoceny do typů CLR a vráceny klientovi. Všechny materializování objektů provádí Entity Framework. Všechny chyby, které jsou výsledkem neschopnosti mapování mezi Entity Framework a CLR, způsobí, že budou výjimky vyvolány během materializace objektu.
   
- Pokud spuštění dotazu vrátí primitivní typy konceptuálního modelu, výsledky se skládají z typů CLR, které jsou samostatné a odpojené od [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Nicméně pokud dotaz vrátí kolekci typových objektů entit reprezentovaných <xref:System.Data.Objects.ObjectQuery%601>, tyto typy jsou sledovány kontextem objektu. Chování všech objektů (například podřízené/nadřazené kolekce, sledování změn, polymorfismus atd [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].) je definováno v. Tato funkce se dá použít v její kapacitě, jak je definováno [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]v. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).  
+ Pokud spuštění dotazu vrátí primitivní typy konceptuálního modelu, výsledky se skládají z typů CLR, které jsou samostatné a odpojené od Entity Framework. Nicméně pokud dotaz vrátí kolekci typových objektů entit reprezentovaných <xref:System.Data.Objects.ObjectQuery%601>, tyto typy jsou sledovány kontextem objektu. Chování všech objektů (například podřízené/nadřazené kolekce, sledování změn, polymorfismus atd.) je definováno v Entity Framework. Tato funkce se dá použít v její kapacitě, jak je definováno v Entity Framework. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).
   
  Typy struktury vrácené dotazy (například anonymní typy a komplexní typy s možnou hodnotou null) můžou `null` mít hodnotu. Vlastnost vrácené entity může `null` mít také hodnotu. <xref:System.Data.Objects.DataClasses.EntityCollection%601> To může být způsobeno tím, že prochází vlastnost kolekce entity, která `null` má hodnotu, například volání <xref:System.Linq.Queryable.FirstOrDefault%2A> na objekt <xref:System.Data.Objects.ObjectQuery%601> , který nemá žádné prvky.  
   

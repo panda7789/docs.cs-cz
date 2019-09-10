@@ -1,62 +1,62 @@
 ---
 title: Konzolová aplikace
-description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
+description: V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce.
 ms.date: 03/06/2017
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 3ac4312ba5d6088826fdf151609f6693a265e5a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4324b25daa253b3d2446955ad9ca57c2f0294f0c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706465"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851018"
 ---
 # <a name="console-application"></a>Konzolová aplikace
 
-V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core. Získáte informace:
+V tomto kurzu se naučíte řadou funkcí v .NET Core a v C# jazyce. Naučíte se:
 
-- Základní informace o .NET Core rozhraní příkazového řádku (CLI)
-- Struktura konzolovou aplikaci C#
-- Konzola vstupně-výstupních operací
-- Základní informace o souboru vstupně-výstupní operace rozhraní API v .NET
-- Základní informace o úkolově orientovanou asynchronní programování v rozhraní .NET
+- Základní informace o rozhraní příkazového řádku .NET Core (CLI)
+- Struktura C# konzolové aplikace
+- I/O konzoly
+- Základy vstupně-výstupních rozhraní API souborů v .NET
+- Základy asynchronního programování založeného na úlohách v .NET
 
-Vytvoříte aplikaci, která čte textový soubor a vrátí obsah tohoto souboru text do konzoly. Výstup na konzole je tempem tak, aby odpovídala jeho nahlas. Můžete urychlit nebo zpomalit rychlost stisknutím klávesy ' <' (méně než) nebo ">" (větší) klíče.
+Vytvoříte aplikaci, která přečte textový soubor, a vrátí obsah tohoto textového souboru do konzoly. Výstup do konzoly je TEMP, aby odpovídal čtení, které nahlasuje. Tempo můžete zrychlit nebo zpomalit stisknutím klávesy < (menší než) nebo > (větší než).
 
-Existuje mnoho funkcí v tomto kurzu. Vytvořme je jeden po druhém.
+V tomto kurzu máte spoustu funkcí. Pojďme je sestavit jednou po jednom.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete potřebovat k nastavení vašeho počítače ke spuštění .NET Core. Můžete najít pokyny k instalaci na [.NET Core](https://www.microsoft.com/net/core) stránky. Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Dockeru.
-Bude potřeba nainstalovat váš oblíbený editor kódu.
+Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce [soubory ke stažení pro .NET Core](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit na Windows, Linux, macOS nebo v kontejneru Docker.
+Budete muset nainstalovat svůj oblíbený editor kódu.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
-Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Ujistěte se, že do aktuálního adresáře. Zadejte příkaz `dotnet new console` příkazového řádku. Tím se vytvoří počáteční soubory pro základní aplikace "Hello World".
+Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a vytvořte nový adresář pro vaši aplikaci. Zajistěte, aby byl aktuální adresář. Zadejte příkaz `dotnet new console` na příkazovém řádku. Tím se vytvoří počáteční soubory pro základní aplikaci "Hello World".
 
-Než začnete, úpravy, Podívejme se kroky ke spuštění jednoduché aplikace Hello World. Po vytvoření aplikace, zadejte `dotnet restore` příkazového řádku. Tento příkaz spustí proces obnovení balíčku NuGet. Správce balíčků NuGet je Správce balíčků .NET. Tento příkaz načte všechny chybějící závislosti pro váš projekt. Toto je nový projekt, závislosti nejsou v místě, tak při prvním spuštění se stáhnout .NET Core framework. Po provedení tohoto kroku počáteční je pouze potřeba spustit `dotnet restore` při přidání nové závislé balíčky nebo aktualizace verze závislosti.
+Než začnete s úpravami, Projděte si postup spuštění jednoduché aplikace Hello World. Po vytvoření aplikace zadejte `dotnet restore` do příkazového řádku. Tento příkaz spustí proces obnovení balíčku NuGet. NuGet je správce balíčků .NET. Tento příkaz stáhne všechny chybějící závislosti pro váš projekt. Vzhledem k tomu, že se jedná o nový projekt, není zavedena žádná závislost, takže první spuštění stáhne rozhraní .NET Core Framework. Po provedení tohoto počátečního kroku budete muset spustit `dotnet restore` jenom při přidávání nových závislých balíčků nebo při aktualizaci verzí jakékoli závislosti.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Po obnovení balíčků, spustíte `dotnet build`. To spustí modul sestavení a vytvoří spustitelný soubor aplikace. Nakonec spuštěním `dotnet run` ke spuštění aplikace.
+Po obnovení balíčků spustíte `dotnet build`. Tím se spustí sestavovací modul a vytvoří se spustitelný soubor aplikace. Nakonec můžete `dotnet run` spustit aplikaci.
 
-Kód jednoduché aplikace Hello World je všechny v souboru Program.cs. Otevřete tento soubor v oblíbeném textovém editoru. Jsme naši první změny.
-V horní části souboru, najdete v článku using – příkaz:
+Jednoduchý Hello World kód aplikace je v Program.cs. Otevřete tento soubor ve svém oblíbeném textovém editoru. Chystáme se udělat první změny.
+V horní části souboru se podívejte na příkaz using:
 
 ```csharp
 using System;
 ```
 
-Tento příkaz sděluje kompilátoru, že všechny typy `System` obor názvů jsou v oboru. Jako objektově orientované jazyků, které jste mohli použít C# používá obory názvů pro uspořádání typů. Tento program Hello World se nijak neliší. Uvidíte, že je program uzavřeny v oboru názvů s názvem na základě názvu aktuálního adresáře. Pro účely tohoto kurzu Změníme název oboru názvů `TeleprompterConsole`:
+Tento příkaz instruuje kompilátor, že všechny typy z `System` oboru názvů jsou v oboru. Podobně jako u jiných objektů orientovaných na objekty, C# které jste pravděpodobně použili, používá obory názvů k uspořádání typů. Tento program Hello World není jiný. Můžete vidět, že program je uzavřen v oboru názvů s názvem na základě názvu aktuálního adresáře. Pro účely tohoto kurzu změňte název oboru názvů na `TeleprompterConsole`:
 
 ```csharp
 namespace TeleprompterConsole
 ```
 
-## <a name="reading-and-echoing-the-file"></a>Čtení a zobrazování souboru
+## <a name="reading-and-echoing-the-file"></a>Čtení a vracení souboru se souborem
 
-První funkce přidání je schopnost čtení z textového souboru a zobrazí tento text do konzoly. Nejprve přidáme do textového souboru. Kopírovat [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) soubor z úložiště GitHub pro tuto [ukázka](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do adresáře vašeho projektu. To bude sloužit jako skript pro vaši aplikaci. Pokud chcete informace o tom, jak stáhnout ukázkovou aplikaci pro toto téma, postupujte podle pokynů v [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) tématu.
+První funkcí, kterou je třeba přidat, je možnost číst textový soubor a zobrazit celý tento text v konzole. Nejprve přidáme textový soubor. Zkopírujte soubor [sampleQuotes. txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) z úložiště GitHub pro tuto [ukázku](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter) do adresáře projektu. Tato akce bude sloužit jako skript pro vaši aplikaci. Pokud chcete získat informace o tom, jak stáhnout ukázkovou aplikaci pro toto téma, přečtěte si pokyny v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples) .
 
-V dalším kroku přidejte následující metodu do vaší `Program` třídy (přímo pod `Main` metoda):
+Dále do `Program` třídy přidejte následující metodu (hned `Main` pod metodu):
 
 ```csharp
 static IEnumerable<string> ReadFrom(string file)
@@ -72,22 +72,22 @@ static IEnumerable<string> ReadFrom(string file)
 }
 ```
 
-Tato metoda používá typy z dva nové obory názvů. Pro tuto kompilaci je potřeba na začátek souboru přidejte následující dva řádky:
+Tato metoda používá typy ze dvou nových oborů názvů. Pro zkompilování je třeba do horní části souboru přidat následující dva řádky:
 
 ```csharp
 using System.Collections.Generic;
 using System.IO;
 ```
 
-<xref:System.Collections.Generic.IEnumerable%601> Rozhraní je definováno v <xref:System.Collections.Generic> oboru názvů. <xref:System.IO.File> Třída je definována v <xref:System.IO> oboru názvů.
+Rozhraní je definováno <xref:System.Collections.Generic> v oboru názvů. <xref:System.Collections.Generic.IEnumerable%601> Třída je definována <xref:System.IO> v oboru názvů. <xref:System.IO.File>
 
-Tato metoda je speciální typ jazyka C# metodu s názvem *metody iterátoru*. Enumerátor metody vrací sekvence, které jsou vyhodnocovány laxně. To znamená, že každá položka v sekvenci se vygeneruje, jak to požadoval kód využívání sekvence. Enumerátor metody jsou metody, které obsahují jeden nebo více [ `yield return` ](../language-reference/keywords/yield.md) příkazy. Objekt vrácený rutinou `ReadFrom` metoda obsahuje kód pro vygenerování každé položky v sekvenci. V tomto příkladu, který zahrnuje čtení Zalamovat text ze zdrojového souboru a vrátí tento řetězec. Pokaždé, když volající kód požadavků na další položku z řady, kód načte Zalamovat text ze souboru a vrátí jej. Pokud soubor je zcela čtení, sekvence označuje, že neexistují žádné další položky.
+Tato metoda je speciální typ C# metody označované jako *Metoda iterátoru*. Metody enumerátoru vracejí sekvence, které jsou vyhodnocovány laxně vytvářená. To znamená, že každá položka v sekvenci je vygenerována tak, jak je požadována kódem, který spotřebovává sekvenci. Metody enumerátoru jsou metody, které obsahují jeden [`yield return`](../language-reference/keywords/yield.md) nebo více příkazů. Objekt vrácený `ReadFrom` metodou obsahuje kód pro vygenerování každé položky v sekvenci. V tomto příkladu zahrnuje čtení dalšího řádku textu ze zdrojového souboru a vrácení tohoto řetězce. Pokaždé, když volající kód požádá o další položku z sekvence, kód přečte další řádek textu ze souboru a vrátí jej. Když je soubor kompletně načtený, sekvence indikuje, že nejsou k dispozici žádné další položky.
 
-Existují dva další C# prvky syntaxe, které mohou být pro vás nová. [ `using` ](../language-reference/keywords/using-statement.md) Příkaz v této metodě spravuje vyčištění prostředků. Proměnné, která je inicializována v `using` – příkaz (`reader`, v tomto příkladu), musí implementovat <xref:System.IDisposable> rozhraní. Toto rozhraní definuje jedinou metodu `Dispose`, která by měla být volána při prostředku by měly být vydány. Kompilátor generuje toto volání, když spuštění dosáhne složené závorce `using` příkazu. Kód generovaný kompilátorem zajistí, že prostředek je uvolněn i v případě, že dojde k výjimce z kódu v bloku určené na pomocí příkazu.
+Existují dva další C# prvky syntaxe, které mohou být pro vás nové. [`using`](../language-reference/keywords/using-statement.md) Příkaz v této metodě spravuje čištění prostředků. Proměnná, která je inicializována v `using` příkazu (`reader`v tomto <xref:System.IDisposable> příkladu), musí implementovat rozhraní. Toto rozhraní definuje jedinou metodu `Dispose`, která by měla být volána, když má být prostředek uvolněn. Kompilátor vygeneruje toto volání, když provádění dosáhne uzavírací závorce `using` příkazu. Kód generovaný kompilátorem zajišťuje uvolnění prostředku i v případě, že je vyvolána výjimka z kódu v bloku definovaném příkazem using.
 
-`reader` Proměnné definované `var` – klíčové slovo. [`var`](../language-reference/keywords/var.md) definuje *implicitně typované lokální proměnné*. To znamená, že typ proměnné je určen podle typu za kompilace objektu přiřazena k proměnné. Tady, který je návratová hodnota z <xref:System.IO.File.OpenText(System.String)> metodu, která je <xref:System.IO.StreamReader> objektu.
+Proměnná je definována `var` pomocí klíčového slova. `reader` [`var`](../language-reference/keywords/var.md)definuje *implicitní typovou lokální proměnnou*. To znamená, že typ proměnné je určen typem pro čas kompilace objektu přiřazeného k proměnné. Zde je návratová hodnota z <xref:System.IO.File.OpenText(System.String)> metody, což <xref:System.IO.StreamReader> je objekt.
 
-Teď Pojďme vyplnit kód ke čtení souboru v `Main` metody:
+Teď naplníme kód, abychom si mohli přečíst soubor v `Main` metodě:
 
 ```csharp
 var lines = ReadFrom("sampleQuotes.txt");
@@ -97,13 +97,13 @@ foreach (var line in lines)
 }
 ```
 
-Spusťte program (pomocí `dotnet run`) a zobrazí se každý jednotlivý řádek tisknout do konzoly.
+Spusťte program (pomocí `dotnet run`) a můžete zobrazit všechny vytištěné řádky do konzoly.
 
-## <a name="adding-delays-and-formatting-output"></a>Přidávání zpoždění a formátování výstupu
+## <a name="adding-delays-and-formatting-output"></a>Přidání zpoždění a formátování výstupu
 
-Je nutné se zobrazí příliš rychle k nahlas. Teď budete muset přidat zpoždění ve výstupu. Když začnete, budete mít sestavování, některé základní kód, který umožňuje asynchronní zpracování. První postup se postupujte podle několika antimodely. Antimodely jsou uvedli v komentářích jako přidat kód a kód bude aktualizován v dalších krocích.
+To, co je ještě daleko příliš rychlé pro čtení nahlasu. Nyní je třeba přidat prodlevy ve výstupu. Při spuštění budete tvořit část základního kódu, který umožňuje asynchronní zpracování. Tyto první kroky se ale budou řídit několika anti vzory. Anti-patterny jsou v komentářích při přidávání kódu ukázány a kód se aktualizuje v pozdějších krocích.
 
-Existují dva kroky k této sekci. Nejprve budete aktualizovat metodu iterátoru k vrácení jednoho slova místo celé řádky. Který se provádí s těmito úpravami. Nahradit `yield return line;` příkaz následujícím kódem:
+Tato část obsahuje dva kroky. Nejprve aktualizujte metodu iterátoru tak, aby vracela jednoduchá slova namísto celých řádků. To se provádí s těmito úpravami. Nahraďte `yield return line;` příkaz následujícím kódem:
 
 ```csharp
 var words = line.Split(' ');
@@ -114,7 +114,7 @@ foreach (var word in words)
 yield return Environment.NewLine;
 ```
 
-Dále je třeba upravit, jak využívat řádky souboru a přidání zpoždění po zápisu všech slov. Nahradit `Console.WriteLine(line)` výroky `Main` metodu s následující blok:
+Dále je nutné upravit způsob, jakým se vybírají řádky souboru, a po zápisu každého slova přidat prodlevu. Nahraďte `Main` příkaz v metodě následujícím blokem: `Console.WriteLine(line)`
 
 ```csharp
 Console.Write(line);
@@ -128,19 +128,19 @@ if (!string.IsNullOrWhiteSpace(line))
 }
 ```
 
-<xref:System.Threading.Tasks.Task> Hodina může začít <xref:System.Threading.Tasks> obor názvů, takže je třeba ho přidat `using` příkazu v horní části souboru:
+Třída je v oboru názvů, takže je nutné přidat tento `using` příkaz na začátek souboru: <xref:System.Threading.Tasks> <xref:System.Threading.Tasks.Task>
 
 ```csharp
 using System.Threading.Tasks;
 ```
 
-Spusťte ukázku a podívejte se ve výstupu. Teď je vytištěna každý jednoho slova, za nímž následuje zpožděním 200 ms. Ale zobrazené výstup ukazuje některé problémy, protože text souboru zdroje má několik řádků, které mají více než 80 znaků bez konce řádku. Může být obtížné číst, zatímco je posouvání. To je snadno to vyřešíme. Stejně budete udržovat přehled o délce každý řádek a generovat nový řádek pokaždé, když se dosáhne určité prahové hodnoty délky řádku. Deklarujte místní proměnné po deklaraci `words` v `ReadFrom` metodu, která obsahuje délky řádku:
+Spusťte ukázku a podívejte se na výstup. Nyní se vytisknou všechna jednotlivá slova následovaná zpožděním 200 ms. Zobrazený výstup však ukazuje některé problémy, protože zdrojový textový soubor obsahuje několik řádků, které mají více než 80 znaků bez zalomení řádku. To může být obtížné číst, zatímco se posunuje. To se dá snadno opravit. Pouze budete sledovat délku každého řádku a vygenerujete nový řádek vždy, když délka řádku dosáhne určité prahové hodnoty. Deklarovat místní proměnnou za deklarací `words` `ReadFrom` v metodě, která obsahuje délku řádku:
 
 ```csharp
 var lineLength = 0;
 ```
 
-Potom přidejte následující kód za `yield return word + " ";` – příkaz (před pravou složenou závorku):
+Poté přidejte následující kód za `yield return word + " ";` příkaz (před pravou závorku):
 
 ```csharp
 lineLength += word.Length + 1;
@@ -151,14 +151,14 @@ if (lineLength > 70)
 }
 ```
 
-Spusťte ukázku a budete moct rychlost čtení na její předem nakonfigurovaná tempu.
+Spusťte ukázku a budete moct číst nahlas v jeho předem nakonfigurovaném tempu.
 
-## <a name="async-tasks"></a>Úloh s modifikátorem Async
+## <a name="async-tasks"></a>Asynchronní úlohy
 
-V tomto posledním kroku budete přidejte kód pro zápis výstupu asynchronně v jednom úkolu, při vstupu od uživatele, pokud je to vyžadováno pro urychlení nebo zpomalit zobrazení textu také běží jiné úlohy ke čtení nebo úplně zastavit zobrazení textu. Tato akce nemá několika krocích a do konce, budete mít všechny aktualizace, které potřebujete.
-Prvním krokem je vytvoření asynchronní <xref:System.Threading.Tasks.Task> vrací metoda, která představuje kód zatím jste vytvořili pro čtení a zobrazení souboru.
+V tomto posledním kroku přidáte kód pro asynchronní zápis výstupu do jedné úlohy a zároveň spustíte jiný úkol pro čtení vstupu od uživatele, pokud chtějí zrychlit nebo zpomalit zobrazení textu, nebo ukončit zobrazování textu. V tomto případě je to několik kroků a na konci budete mít k dispozici všechny potřebné aktualizace.
+Prvním krokem je vytvořit asynchronní <xref:System.Threading.Tasks.Task> návratovou metodu, která představuje kód, který jste dosud vytvořili pro čtení a zobrazení souboru.
 
-Přidejte tuto metodu za účelem vaše `Program` třídy (je převzata z těla vaše `Main` metoda):
+Přidejte tuto metodu do `Program` třídy (ta je pořízena z těla vaší `Main` metody):
 
 ```csharp
 private static async Task ShowTeleprompter()
@@ -175,22 +175,22 @@ private static async Task ShowTeleprompter()
 }
 ```
 
-Můžete si všimnout dvou změn. První v těle metody, namísto volání metody <xref:System.Threading.Tasks.Task.Wait> synchronně čekat na dokončení úlohy, používá tato verze `await` – klíčové slovo. Abyste to mohli udělat, budete muset přidat `async` modifikátor do podpisu metody. Tato metoda vrátí hodnotu `Task`. Všimněte si, že neexistují žádné návratové příkazy, které vracejí `Task` objektu. Místo toho, který `Task` kódem, vygeneruje kompilátor při použití je vytvořen objekt `await` operátor. Představte si, že tato metoda vrátí při dosažení `await`. Vrácený `Task` označuje, že práce nebyla dokončena.
-Metoda obnoví při dokončení očekávané úlohy. Když po provedení do konce, vrácený `Task` označuje, že je dokončeno.
-Volání kódu můžete sledovat, která vrátila `Task` k určení, kdy bude uvolňování dokončeno.
+Všimnete si dvou změn. Nejprve v těle metody namísto volání <xref:System.Threading.Tasks.Task.Wait> synchronního čekání na dokončení úlohy `await` používá tato verze klíčové slovo. K tomu je nutné přidat `async` modifikátor do podpisu metody. Tato metoda vrátí `Task`. Všimněte si, že neexistují žádné návratové příkazy `Task` , které vracejí objekt. Místo toho `await` je objektvytvořenpomocíkódu,kterýkompilátorgenerujepři`Task` použití operátoru. Můžete si představit, že tato metoda vrátí, když dosáhne `await`. Vrácená `Task` zpráva znamená, že práce nebyla dokončena.
+Metoda pokračuje, až se dokončí očekávaný úkol. Když se provede dokončení, vrátí `Task` se na to, že se dokončilo.
+Volání kódu může sledovat, že `Task` bylo vráceno, aby bylo možné určit, kdy bylo dokončeno.
 
-Tato nová metoda může volat v vaše `Main` metody:
+Tuto novou metodu můžete zavolat v `Main` metodě:
 
 ```csharp
 ShowTeleprompter().Wait();
 ```
 
-Tady v `Main`, kód synchronně čekání. Měli byste použít `await` operátor místo synchronním čekání, kdykoli je to možné. Ale v konzolové aplikaci `Main` metodu, nelze použít `await` operátor. Bude výsledkem ukončení aplikace předtím, než se dokončí všechny úlohy.
+Zde v `Main`nástroji kód asynchronně čeká. Místo synchronního čekání `await` , pokud je to možné, byste měli použít operátor. Ale v `Main` metodě konzolové aplikace nemůžete `await` použít operátor. To by vedlo k ukončení aplikace před dokončením všech úloh.
 
 > [!NOTE]
-> Pokud používáte C# 7.1 nebo novější, můžete vytvořit konzolové aplikace s [ `async` `Main` metoda](../whats-new/csharp-7-1.md#async-main).
+> Pokud používáte C# 7,1 nebo novější, můžete vytvořit konzolové aplikace s [ `async` `Main` metodou](../whats-new/csharp-7-1.md#async-main).
 
-Dále je třeba zadat druhý asynchronní metodu ke čtení z konzoly a podívejte se ' <' (méně než), ">" (větší) a "X" nebo "x" klíče. Tady je pro tuto úlohu, které přidáte metodu:
+Dále je potřeba napsat druhou asynchronní metodu pro čtení z konzoly a sledovat "<" (menší než), ">" (větší než) a "X" nebo "klíče" x ". Zde je metoda, kterou přidáte pro tuto úlohu:
 
 ```csharp
 private static async Task GetInput()
@@ -218,12 +218,12 @@ private static async Task GetInput()
 }
 ```
 
-Tím se vytvoří pro reprezentaci výrazu lambda <xref:System.Action> delegáta, který čte klíč z konzoly a upravuje místní proměnnou představující zpoždění, když uživatel stiskne ' <' (méně než) nebo ">" (větší) klíče. Metody delegáta dokončí, když uživatel stiskne "X" nebo "x" klíče, které uživateli umožní zastavit zobrazení textu v každém okamžiku.
-Tato metoda používá <xref:System.Console.ReadKey> blokovat a čekat, uživatel ke stisknutí klávesy.
+Tím se vytvoří výraz lambda, který reprezentuje <xref:System.Action> delegáta, který přečte klíč z konzoly, a upraví místní proměnnou představující zpoždění, když uživatel stiskne klávesu ' < ' (menší než) nebo ' > ' (větší než). Metoda Delegate se dokončí, když uživatel stiskne klávesy X nebo x, které uživateli umožňují zastavit zobrazování textu kdykoli.
+Tato metoda používá <xref:System.Console.ReadKey> k blokování a čekání, až uživatel stiskne klávesu.
 
-Dokončete tuto funkci je potřeba vytvořit nový `async Task` vrací metoda, která spustí oba z těchto úloh (`GetInput` a `ShowTeleprompter`) a také spravuje sdílených dat mezi těmito dvěma úkoly.
+K dokončení této funkce je nutné vytvořit novou `async Task` návratovou metodu, která spustí obě tyto úlohy (`GetInput` a `ShowTeleprompter`), a také spravovat sdílená data mezi těmito dvěma úkoly.
 
-Je čas vytvořit třídu, která dokáže zpracovat sdílených dat mezi těmito dvěma úkoly. Tato třída obsahuje dvě veřejné vlastnosti: zpoždění a příznak `Done` k označení zcela čtení souboru:
+Je čas vytvořit třídu, která může zpracovávat sdílená data mezi těmito dvěma úkoly. Tato třída obsahuje dvě veřejné vlastnosti: zpoždění a příznak `Done` označující, že soubor byl zcela načten:
 
 ```csharp
 namespace TeleprompterConsole
@@ -249,13 +249,13 @@ namespace TeleprompterConsole
 }
 ```
 
-Vložit tuto třídu do nového souboru a použijte tuto třídu v `TeleprompterConsole` obor názvů, jak je znázorněno výše. Také budete muset přidat `using static` příkaz tak, aby můžete odkazovat `Min` a `Max` metody bez nadřazené třídy nebo oboru názvů. A [ `using static` ](../language-reference/keywords/using-static.md) příkaz importuje metody z jedné třídy. To je rozdíl od s `using` do této chvíle používat příkazy, které jste importovali všechny třídy z oboru názvů.
+Tuto třídu vložte do nového souboru a vložte tuto třídu do `TeleprompterConsole` oboru názvů, jak je uvedeno výše. Budete také muset přidat `using static` příkaz, abyste mohli odkazovat na `Min` metody a `Max` bez názvů ohraničující třídy nebo oboru názvů. [`using static`](../language-reference/keywords/using-static.md) Příkaz naimportuje metody z jedné třídy. To je v kontrastu s `using` příkazy použitými do tohoto bodu, které importovaly všechny třídy z oboru názvů.
 
 ```csharp
 using static System.Math;
 ```
 
-V dalším kroku je potřeba aktualizovat `ShowTeleprompter` a `GetInput` metod používaných nové `config` objektu. Zápis jeden konečný `Task` vrácení `async` metoda obě úlohy spuštění a ukončení po dokončení první úlohy:
+Dále je nutné aktualizovat `ShowTeleprompter` metody a `GetInput` pro použití nového `config` objektu. Napsat jednu finální `Task` metodu `async` vrácení, která spustí úlohy a ukončí po dokončení první úlohy:
 
 ```csharp
 private static async Task RunTeleprompter()
@@ -268,9 +268,9 @@ private static async Task RunTeleprompter()
 }
 ```
 
-Je zde jeden novou metodu <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])> volání. Který vytváří `Task` , který dokončí, jakmile se dokončí všechny úlohy ve svém seznamu argumentů.
+Jednou z metod je <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])> toto volání. Tím se vytvoří `Task` , který se dokončí, jakmile se dokončí libovolný úkol v seznamu argumentů.
 
-Dále je třeba oba aktualizovat `ShowTeleprompter` a `GetInput` metod používaných `config` objekt pro zpoždění:
+Dále je nutné aktualizovat `ShowTeleprompter` metody a `GetInput` pro použití `config` objektu pro zpoždění:
 
 ```csharp
 private static async Task ShowTeleprompter(TelePrompterConfig config)
@@ -305,7 +305,7 @@ private static async Task GetInput(TelePrompterConfig config)
 }
 ```
 
-Tato nová verze `ShowTeleprompter` volá novou metodu `TeleprompterConfig` třídy. Teď, budete muset aktualizovat `Main` volat `RunTeleprompter` místo `ShowTeleprompter`:
+Tato nová verze `ShowTeleprompter` volá novou metodu `TeleprompterConfig` ve třídě. Nyní je třeba aktualizovat `Main` volání `RunTeleprompter` na místo `ShowTeleprompter`:
 
 ```csharp
 RunTeleprompter().Wait();
@@ -313,7 +313,7 @@ RunTeleprompter().Wait();
 
 ## <a name="conclusion"></a>Závěr
 
-Tento kurz vám ukázal, že jste celou řadu funkcí jazyka C# a knihovny .NET Core týkající se práce v konzolových aplikacích.
-Můžete sestavit s bližším prozkoumáváním jazyka a tříd sem zavedl tyto znalosti. Jste se seznámili se základy souborové služby a konzoly vstupně-výstupních operací, blokujících a neblokujících použití asynchronní programování založené na úlohách, prohlídka jazyka C# a jak jsou uspořádány programy jazyka C# a rozhraní příkazového řádku .NET Core a nástroje.
+V tomto kurzu jste si ukázali, kolik funkcí kolem C# jazyka a knihoven .NET Core souvisí s prací v konzolových aplikacích.
+Na základě těchto znalostí můžete prozkoumat další informace o jazyce a třídách, které jsou zde zavedeny. Seznámili jste se se základy pro vstupně-výstupní operace se soubory a konzolou, blokování a neblokování použití asynchronního programování založeného na úlohách C# , prohlídku C# jazyka a způsobu uspořádání programů a rozhraní příkazového řádku .NET Core a nástroje.
 
-Další informace o vstupně-výstupní operace souboru, najdete v článku [Souborová služba a vstupně-výstupní operace Stream](../../standard/io/index.md) tématu. Další informace o asynchronní programovací model použitý v tomto kurzu, najdete v článku [Task-based Asynchronous Programming](../..//standard/parallel-programming/task-based-asynchronous-programming.md) tématu a [asynchronní programování](../async.md) tématu.
+Další informace o vstupně-výstupních operacích souborů najdete v tématu [vstupně-výstupní operace se soubory a datovým proudem](../../standard/io/index.md) . Další informace o modelu asynchronního programování používaném v tomto kurzu naleznete v tématu [asynchronní programování založené na úlohách](../..//standard/parallel-programming/task-based-asynchronous-programming.md) a v tématu věnovaném [asynchronnímu programování](../async.md) .

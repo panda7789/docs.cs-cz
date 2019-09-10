@@ -12,50 +12,50 @@ helpviewer_keywords:
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ad580ecace07d3d6fdf206ff660dc4bac4bceb09
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3ea64668272b6625a9e43c9610496a7e7392129
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614294"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854029"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed – pomocník spravovaného ladění (MDA)
-`releaseHandleFailed` Spravovaného ladění (MDA) pomocníka s nastavením je aktivován je upozornit vývojáře při <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodě třídy odvozené z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> vrátí `false`.  
+<xref:System.Runtime.InteropServices.CriticalHandle> <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> <xref:System.Runtime.InteropServices.SafeHandle> Je aktivován pomocník `false`spravovaného ladění (MDA), který vývojářům oznamuje, když metoda třídy odvozená nebo vrátí. `releaseHandleFailed`  
   
 ## <a name="symptoms"></a>Příznaky  
- Nevracení prostředku nebo paměti.  Pokud <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metoda třídy odvozené od <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> nezdaří, pak prostředků zapouzdřena objektem třídy nemusí mít vydání nebo vyčistit.  
+ Nevracení prostředků nebo paměti.  Pokud metoda třídy odvozená z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> dojde k chybě, pak prostředek zapouzdřený třídou nemusí být vydaný nebo vyčištěný. <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>  
   
-## <a name="cause"></a>Příčina  
- Uživatelé musí zadat provádění <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodu, pokud uživatel vytvořit třídy, které jsou odvozeny z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle>; proto okolnosti, které jsou specifické pro jednotlivé prostředky. Požadavky jsou však následujícím způsobem:  
+## <a name="cause"></a>příčina  
+ Pokud uživatelé vytvoří třídy, které jsou <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> odvozeny z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle>;, musí poskytnout implementaci metody. tyto podmínky jsou proto specifické pro jednotlivé prostředky. Požadavky jsou však následující:  
   
-- <xref:System.Runtime.InteropServices.SafeHandle> a <xref:System.Runtime.InteropServices.CriticalHandle> typy představují obálky prostředky důležité procesu. Nevracení paměti by mohlo způsobit nepoužitelnost procesu mraku v čase.  
+- <xref:System.Runtime.InteropServices.SafeHandle>a <xref:System.Runtime.InteropServices.CriticalHandle> typy reprezentují obálky pro důležité prostředky procesu. Nevracení paměti by vedlo k tomu, že proces nebude v průběhu času použitelný.  
   
-- <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> Metoda nesmí selhat a provést jeho funkci. Po procesu získá prostředek, <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> je jediný způsob, jak ji. Proto znamená selhání nedostatku prostředků.  
+- <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> Metoda nesmí selhat při provádění funkce. Jakmile proces získá takový prostředek, je jediným způsobem <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> , jak ho uvolnit. Proto selhání implikuje nevracení prostředků.  
   
-- Jakékoli neúspěchy, ke kterým došlo během provádění <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>Včerejší verze prostředku, je chyba v implementaci <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metoda sama. Je odpovědností programátorovi, aby zajistěte, aby byl kontrakt, i v případě, že kód volá kód vytvořené někým jiným, aby fungoval.  
+- Jakákoli chyba, ke které dojde během provádění <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>, je překážkou vydání prostředku, je chyba v implementaci <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> samotné metody. Je odpovědností programátora zajistit, aby smlouva byla splněna, a to i v případě, že tento kód volá kód vytvořený někým jiným, aby mohl provést jeho funkci.  
   
 ## <a name="resolution"></a>Řešení  
- Kód, který používá konkrétní <xref:System.Runtime.InteropServices.SafeHandle> (nebo <xref:System.Runtime.InteropServices.CriticalHandle>) typ, který vyvolá oznámení MDA byste měli zkontrolovat, hledá místa, kde je hodnota nezpracovanou popisovače extrahují z <xref:System.Runtime.InteropServices.SafeHandle> a zkopírovat jinde. Toto je obvyklou příčinou selhání v rámci <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> implementace, protože využití hodnota nezpracovanou popisovače je potom už sledován pomocí funkce modulu runtime. Kopírování nezpracovaná popisovač je následně zavřená, může způsobit pozdější <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> volání se nezdařila, protože dojde k pokusu o uzavření na stejné popisovač, který je nyní neplatný.  
+ Kód, který používá konkrétní <xref:System.Runtime.InteropServices.SafeHandle> typ (nebo <xref:System.Runtime.InteropServices.CriticalHandle>), který vyvolal oznámení MDA, by měl být zkontrolován a hledat místa, kde je <xref:System.Runtime.InteropServices.SafeHandle> hodnota nezpracovaného popisovače extrahována z a zkopírována jinde. Toto je Obvyklá příčina selhání v rámci <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> implementace, protože použití nezpracovaného popisovače je již nesledováno modulem runtime. Pokud je kopie nezpracovaného popisovače následně zavřena, může způsobit selhání <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> pozdějšího volání, protože došlo k pokusu o ukončení u stejného popisovače, který je nyní neplatný.  
   
- Existuje mnoho způsobů, ve kterém může dojít, duplikace nesprávné popisovač:  
+ Existuje několik způsobů, jak se může vyskytnout nesprávné duplikace popisovače:  
   
-- Podívejte se na volání <xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A> metody. Volání této metody by měla být mimořádně vzácné a všechny, které můžete najít by měl být uzavřen v volání <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A> a <xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A> metody. Tyto metody druhá možnost zadat tuto oblast kódu, ve kterém může hodnota nezpracovanou popisovače bezpečně používat. Mimo oblast nebo pokud na prvním místě je nikdy zvýšen počet odkazů, hodnota popisovače lze zrušit platnost v okamžiku volání <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> nebo <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> v jiném vlákně. Jakmile všechna použití <xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A> sleduje snižování kapacity, měli byste postupovat podle cesty nezpracovaná popisovač potřebný k zajištění není předávána některé komponenty, který bude nakonec zavolat `CloseHandle` nebo jiné nízké úrovně nativní metodu, která bude uvolnit popisovač.  
+- Vyhledejte volání <xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A> metody. Volání této metody by mělo být více než zřídka vzácné a všechny nalezené by měly být uzavřeny voláním <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A> metody a. <xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A> Tyto metody určují oblast kódu, ve které je možné bezpečně použít hodnotu nezpracovaného popisovače. Mimo tuto oblast, nebo pokud se počet odkazů nikdy nezvyšuje na prvním místě, může být hodnota popisovače na základě volání <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A> nebo <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> do jiného vlákna zrušena kdykoli. Jakmile budou všechna použití <xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A> sledována, měli byste postupovat podle cesty, kterou nezpracovaný popisovač trvá, aby nedošlo k předání do některé součásti, která bude nakonec volat `CloseHandle` nebo jiné nativní metody nízké úrovně, která uvolní popisovač.  
   
-- Ujistěte se, že kód, který slouží k inicializaci <xref:System.Runtime.InteropServices.SafeHandle> s platný popisovač nezpracovanou hodnotu vlastní popisovač. Pokud při vytváření <xref:System.Runtime.InteropServices.SafeHandle> kolem popisovač kódu není vlastníkem bez nastavení `ownsHandle` parametr `false` v konstruktor základní třídy a pak i <xref:System.Runtime.InteropServices.SafeHandle> a vlastník skutečné popisovač Zkuste zavřít popisovač, což vede k chybě v <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> Pokud <xref:System.Runtime.InteropServices.SafeHandle> ztratí závodu.  
+- Zajistěte, aby popisovač používal kód, který <xref:System.Runtime.InteropServices.SafeHandle> se používá k inicializaci s platnou hodnotou nezpracovaného popisovače. Vytvoříte- <xref:System.Runtime.InteropServices.SafeHandle> li kolem popisovače, váš kód nevlastní bez `ownsHandle` nastavení parametru `false` v základním konstruktoru, pak se <xref:System.Runtime.InteropServices.SafeHandle> může pokusit o uzavření popisovače i vlastník reálného popisovače, což by vedlo k chybě v <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> v případě <xref:System.Runtime.InteropServices.SafeHandle> , že přijde o rasy.  
   
-- Když <xref:System.Runtime.InteropServices.SafeHandle> je zařadit mezi doménami aplikace, zkontrolujte <xref:System.Runtime.InteropServices.SafeHandle> odvození používá byl označen jako serializovatelný. Ve výjimečných případech, kde třída odvozená z <xref:System.Runtime.InteropServices.SafeHandle> byl proveden serializovatelný, by měly implementovat <xref:System.Runtime.Serialization.ISerializable> rozhraní nebo použijte některý z jiné techniky pro řízení serializace a deserializace procesu ručně. To je nutná, protože výchozí akci serializace je schopna vytvářet klony bitové hodnoty uzavřené nezpracovaná popisovač, výsledkem jsou dvě <xref:System.Runtime.InteropServices.SafeHandle> uvažujete vlastní stejné popisovač instance. Obojí se pokusí zavolat <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> na stejné popisovač v určitém okamžiku. Druhá <xref:System.Runtime.InteropServices.SafeHandle> k tomu se nezdaří. Správný kurz akce serializace <xref:System.Runtime.InteropServices.SafeHandle> je zavolat `DuplicateHandle` funkce nebo podobnou funkci pro vaše nativní zpracovat typ vytvořit kopii odlišné platný popisovač. Pokud to vaše – typ obslužné rutiny nepodporuje pak bude <xref:System.Runtime.InteropServices.SafeHandle> typ závěrečné nelze nastavit jako serializovatelný.  
+- Pokud je zařazování mezi doménami aplikace, potvrďte <xref:System.Runtime.InteropServices.SafeHandle> , že odvozená odvozená byla označena jako serializovatelný. <xref:System.Runtime.InteropServices.SafeHandle> Ve výjimečných případech, kdy byla Třída odvozena z <xref:System.Runtime.InteropServices.SafeHandle> byla provedena serializovatelný, by měla <xref:System.Runtime.Serialization.ISerializable> implementovat rozhraní nebo použít jednu z dalších technik pro řízení serializace a deserializace procesu ručně. To je nutné, protože výchozí akce serializace je vytvoření bitové kopie hodnoty uzavřeného nezpracovaného popisovače, což vede k <xref:System.Runtime.InteropServices.SafeHandle> tomu, že dvě instance mají za následek stejný popisovač. Oba se v určitém <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> bodě pokusí zavolat na stejný popisovač. Druhý <xref:System.Runtime.InteropServices.SafeHandle> postup se nezdaří. Správný postup při serializaci <xref:System.Runtime.InteropServices.SafeHandle> je `DuplicateHandle` zavolat funkci nebo podobnou funkci pro váš typ nativního popisovače, aby bylo možné vytvořit odlišnou kopii zákonného popisovače. Pokud typ popisovače tuto <xref:System.Runtime.InteropServices.SafeHandle> podporu nepodporuje, nelze zabalení typu provést serializovatelný.  
   
-- Je možné sledovat, kde popisovač se zavírá již v rané fázi, což vede k selhání při <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metoda nakonec je volána, umístěním zarážky ladicího programu na nativní rutiny použijí k uvolnění popisovače, například `CloseHandle` funkce. To nemusí být možné v situacích zátěže nebo dokonce střední funkční testy kvůli velkému provozu těchto rutin často řešit. To může pomoct s instrumentací kódu, který volá metodu nativní verzi, aby bylo možné zaznamenat identitu volajícího a případně úplné trasování zásobníku a hodnota popisovač se vydávají.  Hodnota popisovače můžete porovnat s hodnotou hlášených toto MDA.  
+- Je možné sledovat, kde je popisovač uzavřený včas, což vede k selhání při <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> konečném volání metody, vložením zarážky ladicího programu na nativní rutinu, která se používá k uvolnění popisovače, `CloseHandle` například funkce. To nemusí být možné v případě zátěžových scénářů nebo dokonce středně velkých funkčních testů z důvodu těžkého provozu, na který tyto rutiny často řeší. Může vám pomáhat při instrumentaci kódu, který volá nativní metodu vydání, za účelem zachycení identity volajícího nebo pravděpodobně úplného trasování zásobníku a hodnoty vydávaného popisovače.  Hodnota popisovače může být porovnána s hodnotou hlášenou v rámci této aplikace MDA.  
   
-- Všimněte si, že některé typy nativní popisovač, jako je například rozhraní Win32 zpracovává, které mohou být vydány prostřednictvím `CloseHandle` funkce, které sdílejí stejný obor názvů popisovač. Chybná verze jednoho popisovače typu může způsobit problémy s jiným. Například neúmyslně zavření popisovač události Win32 dvakrát může vést k popisovač souboru zdánlivě nezávislých předčasně zavřená. To se stane, když se uvolní popisovač a hodnota popisovače je k dispozici pro použití ke sledování jiný prostředek, potenciálně jiného typu. Pokud to se stane a je následována chybné druhé vydání, popisovač nesouvisejících vlákno může zneplatněny.  
+- Všimněte si, že některé typy nativních popisovačů, jako jsou všechny popisovače Win32, které mohou `CloseHandle` být vydány prostřednictvím funkce, sdílejí stejný obor názvů obslužné rutiny. Chybné vydání jednoho typu popisovače může způsobit problémy s jiným. Například náhodné ukončení zpracování událostí Win32 dvakrát může vést k předčasnému zavření nesouvisejícího popisovače souboru. K tomu dojde, když je ovladač uvolněn a hodnota popisovače bude k dispozici pro sledování jiného prostředku, potenciálně jiného typu. Pokud k tomu dojde a následuje chybnou druhou verzí, může být neověřen popisovač nesouvisejícího vlákna.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Zpráva, že <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> nezdařilo správně uvolnit popisovač. Příklad:  
+ Zpráva oznamující, že <xref:System.Runtime.InteropServices.SafeHandle> popisovač <xref:System.Runtime.InteropServices.CriticalHandle> nebo se nepodařilo správně uvolnit. Příklad:  
   
-```  
+```output
 "A SafeHandle or CriticalHandle of type 'MyBrokenSafeHandle'   
 failed to properly release the handle with value 0x0000BEEF. This   
 usually indicates that the handle was released incorrectly via   
@@ -63,7 +63,7 @@ another means (such as extracting the handle using DangerousGetHandle
 and closing it directly or building another SafeHandle around it."  
 ```  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -74,7 +74,7 @@ and closing it directly or building another SafeHandle around it."
 ```  
   
 ## <a name="example"></a>Příklad  
- Tady je příklad kódu, který můžete aktivovat `releaseHandleFailed` MDA.  
+ Následuje příklad kódu, který může aktivovat `releaseHandleFailed` MDA.  
   
 ```csharp
 bool ReleaseHandle()  

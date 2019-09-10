@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data types [Visual Basic], ranges
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
-ms.openlocfilehash: b0ebdb723df6bdb4f74e1558537c307ddb917f64
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: bc7f29ae0e29a4c2fbfdf2e40d2226e174a06d3a
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "69923276"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856044"
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>Datové typy výsledků operátoru (Visual Basic)
 Visual Basic Určuje datový typ výsledku operace na základě datových typů operandů. V některých případech to může být datový typ s větším rozsahem než u obou operandů.  
@@ -98,7 +98,7 @@ Visual Basic Určuje datový typ výsledku operace na základě datových typů 
   
  Pokud `Decimal`je `Long`levý operand, `Single`, `Double`nebo `String`, Visual Basic se pokusí ho převést na `Long` před operací a výsledný datový typ je. Pravý operand (počet bitových pozic k posunu) musí být `Integer` nebo typ, který se rozšíří na. `Integer`  
   
-### <a name="binary----and-mod-operators"></a>Operátory Binary +,-, * a mod  
+### <a name="binary----and-mod-operators"></a>Operátory Binary +, – \*, a mod  
  V následující tabulce jsou uvedeny typy dat výsledků pro `+` binární a `–` operátory a `*` operátory a `Mod` . Všimněte si, že je tato tabulka symetrická; pro danou kombinaci datových typů operand je výsledný datový typ stejný bez ohledu na pořadí operandů.  
   
 |||||||||||  
@@ -114,7 +114,7 @@ Visual Basic Určuje datový typ výsledku operace na základě datových typů 
 |`Long`|Dlouhé|Dlouhé|Dlouhé|Dlouhé|Dlouhé|Dlouhé|Dlouhé|Dlouhé|Desetinné číslo|  
 |`ULong`|Desetinné číslo|Desetinné číslo|ULong|Desetinné číslo|ULong|Desetinné číslo|ULong|Desetinné číslo|ULong|  
   
-### <a name="-operator"></a>\ – operátor  
+### <a name="-operator"></a>\\ – operátor  
  V následující tabulce jsou uvedeny typy dat výsledků pro `\` operátor. Všimněte si, že je tato tabulka symetrická; pro danou kombinaci datových typů operand je výsledný datový typ stejný bez ohledu na pořadí operandů.  
   
 |||||||||||  

@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 38ec0986ef3e673ad2d624d33dc33d882f7e412c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0e5792fa4f31c4f40047016252100b1de23fd075
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780429"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854197"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace datové služby (WCF Data Services)
-Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroje můžete vytvářet datové služby, které zpřístupňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Data v těchto kanálech můžou pocházet z nejrůznějších zdrojů dat. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá zprostředkovatele dat k vystavování těchto dat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako informačního kanálu. Tito poskytovatelé zahrnují [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, poskytovatele reflexe a sadu vlastních rozhraní poskytovatele datových služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [poskytovatelé Data Services](data-services-providers-wcf-data-services.md).  
+Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroje můžete vytvářet datové služby, které zpřístupňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Data v těchto kanálech můžou pocházet z nejrůznějších zdrojů dat. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá zprostředkovatele dat k vystavování těchto dat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako informačního kanálu. Tito poskytovatelé zahrnují poskytovatele Entity Framework, poskytovatele reflexe a sadu vlastních rozhraní poskytovatele datových služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [poskytovatelé Data Services](data-services-providers-wcf-data-services.md).  
   
  V [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroji je datová služba třída, která dědí <xref:System.Data.Services.DataService%601> z třídy, kde typ datové služby je kontejner entity datového modelu. Tento kontejner entity obsahuje jednu nebo více vlastností, které vracejí <xref:System.Linq.IQueryable%601>, které slouží k přístupu k sadám entit v datovém modelu.  
   
@@ -69,7 +69,7 @@ Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroje mů
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> \- a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Není podporováno|Není podporováno|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|Není podporováno|  
 |`/Customers('ALFKI')?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> \- a -<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|Není podporováno|Není podporováno|Není podporováno|Není podporováno|  
   
- <sup>1</sup> v tomto příkladu `Address` představuje vlastnost komplexního `Customers` typu entity, která má vlastnost s názvem `StreetAddress`. Model používaný datovými službami Northwind nedefinuje Tento komplexní typ explicitně. Pokud je datový model definován pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, můžete použít nástroje model EDM (Entity Data Model) k definování takového komplexního typu. Další informace najdete v tématu [jak: Vytvářejte a upravujte komplexní typy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100)).  
+ <sup>1</sup> v tomto příkladu `Address` představuje vlastnost komplexního `Customers` typu entity, která má vlastnost s názvem `StreetAddress`. Model používaný datovými službami Northwind nedefinuje Tento komplexní typ explicitně. Pokud je datový model definován pomocí poskytovatele Entity Framework, můžete použít nástroje model EDM (Entity Data Model) k definování takového komplexního typu. Další informace najdete v tématu [jak: Vytvářejte a upravujte komplexní typy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100)).  
   
  <sup>2</sup> tento identifikátor URI je podporován, když vlastnost, která vrací binární rozsáhlý objekt (BLOB), je definována jako mediální prostředek, který patří do entity, která je položkou odkazu na média, která v tomto `Customers`případě je. Další informace najdete v tématu [poskytovatel streamování](streaming-provider-wcf-data-services.md).  
   

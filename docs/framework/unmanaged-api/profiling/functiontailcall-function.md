@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: afc0929b8f1b12f4e0b4551d826b8a1d59990154
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 12ec27277fe57bd1a291c2cfe491ea2c6f40c30e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952891"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851158"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall – funkce
 Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce.  
@@ -31,7 +31,7 @@ Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést vol�
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 void __stdcall FunctionTailcall (  
     [in] FunctionID funcID  
 );  

@@ -2,19 +2,19 @@
 title: Přehled Entity SQL
 ms.date: 03/30/2017
 ms.assetid: f0bb8120-e709-40a3-ac1e-5520dc47477d
-ms.openlocfilehash: 4d7db9c6a7aaeef900132663a5b0aa7420afe668
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8f40a34f361669d2b8d89b63b3187cae6bf705d2
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251061"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854486"
 ---
 # <a name="entity-sql-overview"></a>Přehled Entity SQL
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]je jazyk podobný SQL, který umožňuje dotazování konceptuálních modelů v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Koncepční modely reprezentují data jako entity a vztahy [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a umožňují dotazování těchto entit a vztahů ve formátu, který je známý pro uživatele, kteří použili SQL.  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]je jazyk podobný SQL, který umožňuje dotazování konceptuálních modelů v Entity Framework. Koncepční modely reprezentují data jako entity a vztahy [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a umožňují dotazování těchto entit a vztahů ve formátu, který je známý pro uživatele, kteří použili SQL.  
+      
+ Entity Framework spolupracuje s poskytovateli dat specifických pro úložiště k překladu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] obecných do dotazů specifických pro úložiště. Zprostředkovatel EntityClient poskytuje způsob, jak spustit [!INCLUDE[esql](../../../../../../includes/esql-md.md)] příkaz pro model entity a vracet bohatě formátované typy dat, včetně skalárních výsledků, sad výsledků a grafů objektů. Při vytváření <xref:System.Data.EntityClient.EntityCommand> objektů můžete zadat název uložené procedury nebo text dotazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] přiřazením řetězce dotazu k jeho <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> vlastnosti. Zpřístupňuje výsledky provádění s <xref:System.Data.EntityClient.EntityCommand> modelem EDM. <xref:System.Data.EntityClient.EntityDataReader> Chcete-li spustit příkaz, který <xref:System.Data.EntityClient.EntityDataReader>vrátí, <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>zavolejte.  
   
- Spolupracuje s poskytovateli dat specifických pro úložiště k překladu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] obecných na dotazy specifických pro úložiště. [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] Zprostředkovatel EntityClient poskytuje způsob, jak spustit [!INCLUDE[esql](../../../../../../includes/esql-md.md)] příkaz pro model entity a vracet bohatě formátované typy dat, včetně skalárních výsledků, sad výsledků a grafů objektů. Při vytváření <xref:System.Data.EntityClient.EntityCommand> objektů můžete zadat název uložené procedury nebo text dotazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] přiřazením řetězce dotazu k jeho <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> vlastnosti. Zpřístupňuje výsledky provádění s <xref:System.Data.EntityClient.EntityCommand> modelem EDM. <xref:System.Data.EntityClient.EntityDataReader> Chcete-li spustit příkaz, který <xref:System.Data.EntityClient.EntityDataReader>vrátí, <xref:System.Data.EntityClient.EntityCommand.ExecuteReader%2A>zavolejte.  
-  
- Kromě poskytovatele [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] EntityClient vám umožňuje používat [!INCLUDE[esql](../../../../../../includes/esql-md.md)] k provádění dotazů na koncepční model a vracet data jako objekty CLR se silným typem, které jsou instancemi typů entit. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).  
+ Kromě poskytovatele EntityClient vám Entity Framework umožňuje [!INCLUDE[esql](../../../../../../includes/esql-md.md)] spouštět dotazy na koncepční model a vracet data jako objekty CLR se silným typem, které jsou instancemi typů entit. Další informace naleznete v tématu [práce s objekty](../working-with-objects.md).  
   
  Tato část obsahuje koncepční informace o [!INCLUDE[esql](../../../../../../includes/esql-md.md)]nástroji.  
   

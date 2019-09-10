@@ -4,20 +4,20 @@ description: Naučte se vytvářet knihovny .NET Core pomocí nástrojů .NET Co
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: d22f73b33c36357b7f8018d1620b240e18d91676
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 90d960c996acd5a34ffb2215344e123dabad1014
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202649"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849476"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
-Tento článek popisuje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, přečtěte si [Průvodce sadou Visual Studio](libraries-with-vs.md).
+Tento článek popisuje, jak psát knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku pro různé platformy. Rozhraní příkazového řádku poskytuje efektivní a nízké prostředí, které funguje v jakémkoli podporovaném operačním systému. Knihovny můžete vytvářet i v aplikaci Visual Studio a pokud je vaše preferované prostředí, [Přečtěte si průvodce sadou Visual Studio](libraries-with-vs.md).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Potřebujete na svém počítači nainstalované [.NET Core SDK a CLI](https://www.microsoft.com/net/core) .
+Potřebujete na svém počítači nainstalované [.NET Core SDK a CLI](https://dotnet.microsoft.com/download) .
 
 V části tohoto dokumentu, které se týkají .NET Framework verzí, potřebujete [.NET Framework](https://dotnet.microsoft.com) nainstalovány na počítači s Windows.
 

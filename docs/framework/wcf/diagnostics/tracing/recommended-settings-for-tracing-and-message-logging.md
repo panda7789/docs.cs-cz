@@ -2,18 +2,18 @@
 title: Doporučené nastavení pro trasování a protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-ms.openlocfilehash: fa6dc74a26f6a76591a15c549a892f31a65c521e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6e671762edb2d1ca71ce14cb6ef66c64e02bc297
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779727"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856092"
 ---
 # <a name="recommended-settings-for-tracing-and-message-logging"></a>Doporučené nastavení pro trasování a protokolování zpráv
-Toto téma popisuje doporučené trasování a protokolování nastavení zpráv pro různé provozní prostředí.  
+Toto téma popisuje doporučené trasování a nastavení protokolování zpráv pro různá operační prostředí.  
   
-## <a name="recommended-settings-for-a-production-environment"></a>Doporučená nastavení pro produkční prostředí  
- Pro produkční prostředí, pokud používáte zdrojů trasování WCF, nastavte `switchValue` na upozornění. Pokud používáte WCF `System.ServiceModel` trasování, nastavte `switchValue` atribut `Warning` a `propagateActivity` atribut `true`. Pokud používáte zdroj trasování definovaný uživatelem, nastaví `switchValue` atribut `Warning, ActivityTracing`. To lze provést ručně pomocí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Pokud očekáváte není dosaženo výkon, můžete nastavit `switchValue` atribut `Information` v všechny výše uvedené případy, které generují poměrně velké množství dat trasování. Následující příklad ukazuje doporučené nastavení.  
+## <a name="recommended-settings-for-a-production-environment"></a>Doporučené nastavení pro produkční prostředí  
+ V případě produkčního prostředí, pokud používáte zdroje trasování WCF, nastavte `switchValue` na upozornění. Pokud používáte zdroj trasování WCF `System.ServiceModel` , `switchValue` nastavte atribut na `Warning` a `propagateActivity` atribut na `true`. Pokud používáte zdroj trasování definovaný uživatelem, nastavte `switchValue` atribut na. `Warning, ActivityTracing` To lze provést ručně pomocí [nástroje Configuration Editor (SvcConfigEditor. exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). Pokud nepředpokládáte, že dojde ke zvýšení výkonu, můžete nastavit `switchValue` atribut na `Information` ve všech dříve uvedených případech, které generují poměrně velký objem dat trasování. Následující příklad znázorňuje Tato doporučená nastavení.  
   
 ```xml  
 <configuration>  
@@ -47,10 +47,10 @@ Toto téma popisuje doporučené trasování a protokolování nastavení zpráv
 </configuration>  
 ```  
   
-## <a name="recommended-settings-for-deployment-or-debugging"></a>Doporučená nastavení pro nasazení a ladění  
- Nasazení a prostředí ladění, zvolte `Information` nebo `Verbose`, spolu s `ActivityTracing` pro buď definovanou uživatelem nebo `System.ServiceModel` zdroje trasování. Aby vylepšila, ladění, měli byste také přidat zdroj další trasování (`System.ServiceModel.MessageLogging`) ke konfiguraci povolit protokolování zpráv. Všimněte si, že `switchValue` atribut nemá žádný vliv na tento zdroj trasování.  
+## <a name="recommended-settings-for-deployment-or-debugging"></a>Doporučené nastavení pro nasazení nebo ladění  
+ Pro prostředí nasazení `Information` nebo ladění vyberte možnost nebo `Verbose`, společně s `ActivityTracing` pro uživatelem definovaný nebo `System.ServiceModel` zdroj trasování. Chcete-li zlepšit ladění, měli byste také přidat další zdroj trasování`System.ServiceModel.MessageLogging`() do konfigurace, aby bylo možné protokolování zpráv povolit. Všimněte si, `switchValue` že atribut nemá žádný vliv na tento zdroj trasování.  
   
- Následující příklad ukazuje doporučené nastavení, pomocí sdílené naslouchací proces, který využívá `XmlWriterTraceListener`.  
+ Následující příklad ukazuje Doporučené nastavení pomocí sdíleného naslouchacího procesu, který využívá rozhraní `XmlWriterTraceListener`.  
   
 ```xml  
 <configuration>  
@@ -96,19 +96,19 @@ Toto téma popisuje doporučené trasování a protokolování nastavení zpráv
 </configuration>  
 ```  
   
-## <a name="using-wmi-to-modify-settings"></a>Chcete-li změnit nastavení pomocí rozhraní WMI  
- Chcete-li změnit nastavení konfigurace za běhu můžete použít rozhraní WMI (tím, že `wmiProviderEnabled` atribut v konfiguraci, jak je ukázáno v dříve konfigurace – příklad). Například můžete použít v rámci nástroje CIM Studio WMI změnit úrovně zdroj trasování z varování na informace v době běhu. Byste měli vědět, že může být velmi vysoké náklady na živé ladění tímto způsobem. Další informace o používání služby WMI najdete v tématu [pomocí Windows Management Instrumentation k diagnostice](../../../../../docs/framework/wcf/diagnostics/wmi/index.md) tématu.  
+## <a name="using-wmi-to-modify-settings"></a>Úprava nastavení pomocí rozhraní WMI  
+ Rozhraní WMI můžete použít ke změně nastavení konfigurace za běhu (povolením `wmiProviderEnabled` atributu v konfiguraci, jak je znázorněno v předchozím příkladu konfigurace). Pomocí rozhraní WMI v rámci CIM Studio můžete například změnit úrovně zdroje trasování z upozornění na informace za běhu. Měli byste si uvědomit, že náklady na výkon živého ladění tímto způsobem můžou být velmi vysoké. Další informace o používání rozhraní WMI naleznete v tématu [použití rozhraní WMI (Windows Management Instrumentation) pro diagnostiku](../../../../../docs/framework/wcf/diagnostics/wmi/index.md) .  
   
-## <a name="enable-correlated-events-in-aspnet-tracing"></a>Povolit Korelačních událostí v trasování rozhraní ASP.NET  
- ASP.NET – události nenastavujte ID korelace (ActivityID), pokud je zapnutá trasování událostí pro technologii ASP.NET. Zobrazit korelační události správně, budete muset zapnout ASP.NET – události trasování, pomocí následujícího příkazu v příkazové konzole, který lze vyvolat tak, že přejdete do **Start**, **spustit** a typ **cmd** ,  
+## <a name="enable-correlated-events-in-aspnet-tracing"></a>Povolit korelační události v trasování ASP.NET  
+ ASP.NET události nenastaví korelační ID (ActivityID), pokud není zapnuté trasování událostí ASP.NET. Chcete-li zobrazit korelační události správně, je nutné zapnout trasování událostí ASP.NET pomocí následujícího příkazu v konzole příkazů, který lze vyvolat spuštěním příkazu **Start**, **Run** a Type **cmd**.  
   
-```  
+```console  
 logman start mytrace -pf logman.providers -o test.etl –ets  
 ```  
   
- Chcete-li vypnout trasování událostí pro technologii ASP.NET, použijte následující příkaz,  
+ Pokud chcete vypnout trasování událostí ASP.NET, použijte následující příkaz:  
   
-```  
+```console
 logman stop mytrace -ets  
 ```  
   
