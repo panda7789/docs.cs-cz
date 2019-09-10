@@ -1,30 +1,30 @@
 ### YamlMime:Tutorial
-title: <span data-ttu-id="de472-101">Čísla s plovoucí desetinnou čárkou a integrální bod v manipulaci sC#</span><span class="sxs-lookup"><span data-stu-id="de472-101">Manipulate integral and floating point numbers in C#</span></span>
+title: <span data-ttu-id="62e1e-101">Manipulace s integrálními čísly a čísly s plovoucí desetinnou čárkouC#</span><span class="sxs-lookup"><span data-stu-id="62e1e-101">Manipulate integral and floating point numbers in C#</span></span>
 metadata:
-  title: Čísla v C# – Úvod do C# Interaktivní kurz
-  description: V tomto kurzu o typech čísel se budete pomocí prohlížeče učit C# interaktivně. Budete psát kód v C# a zobrazovat výsledky kompilace a spuštění prohlédnete přímo v prohlížeči.
+  title: Čísla v C# seznámení C# s interaktivním kurzem
+  description: V tomto kurzu o číselných typech použijete prohlížeč k interaktivnímu Projděte C# . Budete psát C# kód a zobrazit výsledky kompilace a spuštění kódu přímo v prohlížeči.
   audience: Developer
   ms.custom: mvc
   ms.date: 08/24/2018
   level: Beginner
   nextTutorialHref: branches-and-loops.yml
-  nextTutorialTitle: <span data-ttu-id="de472-105">Větve a smyčky v C#</span><span class="sxs-lookup"><span data-stu-id="de472-105">Branches and loops in C#</span></span>
+  nextTutorialTitle: <span data-ttu-id="62e1e-105">Větve a smyčky vC#</span><span class="sxs-lookup"><span data-stu-id="62e1e-105">Branches and loops in C#</span></span>
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7122bda62465482340ebdd2b1dc37577de9a0e69
-  ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+  ms.openlocfilehash: af06d938f86841620784909b16e72d000452fc2a
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/09/2019
-  ms.locfileid: "67661022"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850682"
 items:
 - durationInMinutes: 1
   content: >
-    <span data-ttu-id="de472-106">V tomto kurzu se dozvíte, jaké typy čísel v C# interaktivně, pomocí prohlížeče k zápisu C# a zobrazovat výsledky kompilace a spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="de472-106">This tutorial teaches you about the numeric types in C# interactively, using your browser to write C# and see the results of compiling and running your code.</span></span> <span data-ttu-id="de472-107">Obsahuje sérii lekcí, které se zabývají čísly a matematickými operacemi v C#.</span><span class="sxs-lookup"><span data-stu-id="de472-107">It contains a series of lessons that explore numbers and math operations in C#.</span></span> <span data-ttu-id="de472-108">Tato lekce vás naučí základy jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="de472-108">These lessons teach you the fundamentals of the C# language.</span></span>
-- title: <span data-ttu-id="de472-109">Prozkoumejte matematikou celých čísel</span><span class="sxs-lookup"><span data-stu-id="de472-109">Explore integer math</span></span>
+    <span data-ttu-id="62e1e-106">V tomto kurzu se seznámíte s číselnými typy C# v interaktivním prostředí pomocí prohlížeče pro zápis C# a zobrazení výsledků kompilace a spuštění kódu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-106">This tutorial teaches you about the numeric types in C# interactively, using your browser to write C# and see the results of compiling and running your code.</span></span> <span data-ttu-id="62e1e-107">Obsahuje řadu lekcí, které prozkoumají čísla a matematické operace v C#.</span><span class="sxs-lookup"><span data-stu-id="62e1e-107">It contains a series of lessons that explore numbers and math operations in C#.</span></span> <span data-ttu-id="62e1e-108">V těchto lekcích se naučíte základy C# jazyka.</span><span class="sxs-lookup"><span data-stu-id="62e1e-108">These lessons teach you the fundamentals of the C# language.</span></span>
+- title: <span data-ttu-id="62e1e-109">Prozkoumat celočíselné matematické</span><span class="sxs-lookup"><span data-stu-id="62e1e-109">Explore integer math</span></span>
   durationInMinutes: 4
   content: >
-    <span data-ttu-id="de472-110">Spusťte v interaktivním okně následující kód.</span><span class="sxs-lookup"><span data-stu-id="de472-110">Run the following code in the interactive window.</span></span> <span data-ttu-id="de472-111">K tomu, zadejte do interaktivního okna následující blok kódu a klikněte na tlačítko **spustit** tlačítka:</span><span class="sxs-lookup"><span data-stu-id="de472-111">To do that, type the following code block in the interactive window and click the **Run** button:</span></span>
+    <span data-ttu-id="62e1e-110">Spusťte následující kód v interaktivním okně.</span><span class="sxs-lookup"><span data-stu-id="62e1e-110">Run the following code in the interactive window.</span></span> <span data-ttu-id="62e1e-111">Uděláte to tak, že do interaktivního okna zadáte následující blok kódu a kliknete na tlačítko **Spustit** :</span><span class="sxs-lookup"><span data-stu-id="62e1e-111">To do that, type the following code block in the interactive window and click the **Run** button:</span></span>
 
 
     ```csharp
@@ -40,25 +40,25 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-112">Právě jste viděli jednu ze základních matematických operací s celými čísly.</span><span class="sxs-lookup"><span data-stu-id="de472-112">You've just seen one of the fundamental math operations with integers.</span></span> <span data-ttu-id="de472-113">`int` Zadejte představuje **celé číslo**, kladné nebo záporné celé číslo.</span><span class="sxs-lookup"><span data-stu-id="de472-113">The `int` type represents an **integer**, a positive or negative whole number.</span></span> <span data-ttu-id="de472-114">Můžete použít `+` symbol pro přidání.</span><span class="sxs-lookup"><span data-stu-id="de472-114">You use the `+` symbol for addition.</span></span> <span data-ttu-id="de472-115">Dalším běžným matematickým operacím pro celá čísla zahrnují:</span><span class="sxs-lookup"><span data-stu-id="de472-115">Other common mathematical operations for integers include:</span></span>
+    <span data-ttu-id="62e1e-112">Právě jste viděli jednu ze základních matematických operací s celými čísly.</span><span class="sxs-lookup"><span data-stu-id="62e1e-112">You've just seen one of the fundamental math operations with integers.</span></span> <span data-ttu-id="62e1e-113">Typ představuje celé číslo, kladné nebo záporné celé číslo. \*\*\*\* `int`</span><span class="sxs-lookup"><span data-stu-id="62e1e-113">The `int` type represents an **integer**, a positive or negative whole number.</span></span> <span data-ttu-id="62e1e-114">`+` Symbol se používá pro sčítání.</span><span class="sxs-lookup"><span data-stu-id="62e1e-114">You use the `+` symbol for addition.</span></span> <span data-ttu-id="62e1e-115">Mezi další běžné matematické operace pro celá čísla patří:</span><span class="sxs-lookup"><span data-stu-id="62e1e-115">Other common mathematical operations for integers include:</span></span>
 
 
-    - <span data-ttu-id="de472-116">`-` pro odčítání</span><span class="sxs-lookup"><span data-stu-id="de472-116">`-` for subtraction</span></span>
+    - <span data-ttu-id="62e1e-116">`-`pro odčítání</span><span class="sxs-lookup"><span data-stu-id="62e1e-116">`-` for subtraction</span></span>
 
-    - <span data-ttu-id="de472-117">`*` pro násobení</span><span class="sxs-lookup"><span data-stu-id="de472-117">`*` for multiplication</span></span>
+    - <span data-ttu-id="62e1e-117">`*`pro násobení</span><span class="sxs-lookup"><span data-stu-id="62e1e-117">`*` for multiplication</span></span>
 
-    - <span data-ttu-id="de472-118">`/` pro dělení</span><span class="sxs-lookup"><span data-stu-id="de472-118">`/` for division</span></span>
+    - <span data-ttu-id="62e1e-118">`/`pro dělení</span><span class="sxs-lookup"><span data-stu-id="62e1e-118">`/` for division</span></span>
 
 
     > [!TIP]
 
-    > <span data-ttu-id="de472-119">V celém tomto interaktivním kurzu můžete prozkoumat na vlastní pěst a upravovat kód, který jste napsali v interaktivním okně.</span><span class="sxs-lookup"><span data-stu-id="de472-119">Throughout this interactive tutorial, you can explore on your own by modifying the code you've written in the interactive window.</span></span> <span data-ttu-id="de472-120">Tento kurz obsahuje příklady, které můžete v každém kroku vyzkoušet.</span><span class="sxs-lookup"><span data-stu-id="de472-120">This tutorial provides examples that you can try at each step.</span></span>
+    > <span data-ttu-id="62e1e-119">V tomto interaktivním kurzu se můžete podívat na vlastní, protože upravíte kód, který jste napsali v interaktivním okně.</span><span class="sxs-lookup"><span data-stu-id="62e1e-119">Throughout this interactive tutorial, you can explore on your own by modifying the code you've written in the interactive window.</span></span> <span data-ttu-id="62e1e-120">V tomto kurzu najdete příklady, které můžete vyzkoušet v každém kroku.</span><span class="sxs-lookup"><span data-stu-id="62e1e-120">This tutorial provides examples that you can try at each step.</span></span>
 
 
-    <span data-ttu-id="de472-121">Nejdřív si vyzkoušejte uvedené operace.</span><span class="sxs-lookup"><span data-stu-id="de472-121">Start by exploring those different operations.</span></span> <span data-ttu-id="de472-122">Třetí řádek pro každou z těchto operací. Zkuste změnit.</span><span class="sxs-lookup"><span data-stu-id="de472-122">Modify the third line to try each of these operations.</span></span> <span data-ttu-id="de472-123">Po každé úpravě klikněte na tlačítko **spustit** tlačítko.</span><span class="sxs-lookup"><span data-stu-id="de472-123">After each edit, click the **Run** button.</span></span>
+    <span data-ttu-id="62e1e-121">Začněte tím, že prozkoumáte tyto různé operace.</span><span class="sxs-lookup"><span data-stu-id="62e1e-121">Start by exploring those different operations.</span></span> <span data-ttu-id="62e1e-122">Upravte třetí řádek a vyzkoušejte každou z těchto operací.</span><span class="sxs-lookup"><span data-stu-id="62e1e-122">Modify the third line to try each of these operations.</span></span> <span data-ttu-id="62e1e-123">Po každé úpravě klikněte na tlačítko **Spustit** .</span><span class="sxs-lookup"><span data-stu-id="62e1e-123">After each edit, click the **Run** button.</span></span>
 
 
-    <span data-ttu-id="de472-124">Odčítání:</span><span class="sxs-lookup"><span data-stu-id="de472-124">Subtraction:</span></span>
+    <span data-ttu-id="62e1e-124">Odčítání</span><span class="sxs-lookup"><span data-stu-id="62e1e-124">Subtraction:</span></span>
 
 
     ```csharp
@@ -68,7 +68,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-125">Násobení:</span><span class="sxs-lookup"><span data-stu-id="de472-125">Multiplication:</span></span>
+    <span data-ttu-id="62e1e-125">Násobení</span><span class="sxs-lookup"><span data-stu-id="62e1e-125">Multiplication:</span></span>
 
 
     ```csharp
@@ -78,7 +78,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-126">Dělení:</span><span class="sxs-lookup"><span data-stu-id="de472-126">Division:</span></span>
+    <span data-ttu-id="62e1e-126">Dělení</span><span class="sxs-lookup"><span data-stu-id="62e1e-126">Division:</span></span>
 
 
     ```csharp
@@ -88,27 +88,27 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-127">Můžete taky experimentovat a provést několik matematických operací na jednom řádku, pokud byste o ni.</span><span class="sxs-lookup"><span data-stu-id="de472-127">You can also experiment by performing multiple mathematics operations in the same line, if you'd like.</span></span>
+    <span data-ttu-id="62e1e-127">Můžete také experimentovat při provádění více matematických operací na stejném řádku, pokud byste chtěli.</span><span class="sxs-lookup"><span data-stu-id="62e1e-127">You can also experiment by performing multiple mathematics operations in the same line, if you'd like.</span></span>
 
 
     > [!TIP]
 
-    > <span data-ttu-id="de472-128">Když se budete učit, C# (nebo libovolným programovacím jazykem), budete se při psaní kódu dělat chyby.</span><span class="sxs-lookup"><span data-stu-id="de472-128">As you explore C# (or any programming language), you'll make mistakes when you write code.</span></span> <span data-ttu-id="de472-129">**Kompilátoru** se tyto chyby odhalí a dejte nám o nich na vás.</span><span class="sxs-lookup"><span data-stu-id="de472-129">The **compiler** will find those errors and report them to you.</span></span> <span data-ttu-id="de472-130">Pokud výstup obsahuje chybové zprávy, prohlédněte si blíže ukázkový kód a kód v interaktivním okně, abyste zjistili, co je opravit.</span><span class="sxs-lookup"><span data-stu-id="de472-130">When the output contains error messages, look closely at the example code, and the code in the interactive window to see what to fix.</span></span>
+    > <span data-ttu-id="62e1e-128">Při prozkoumávání C# (nebo jakémkoli programovacím jazyce) budete při psaní kódu dělat chyby.</span><span class="sxs-lookup"><span data-stu-id="62e1e-128">As you explore C# (or any programming language), you'll make mistakes when you write code.</span></span> <span data-ttu-id="62e1e-129">**Kompilátor** tyto chyby vyhledá a nahlásí je.</span><span class="sxs-lookup"><span data-stu-id="62e1e-129">The **compiler** will find those errors and report them to you.</span></span> <span data-ttu-id="62e1e-130">V případě, že výstup obsahuje chybové zprávy, pečlivě si prohlédněte vzorový kód a kód v interaktivním okně, kde zjistíte, co je třeba opravit.</span><span class="sxs-lookup"><span data-stu-id="62e1e-130">When the output contains error messages, look closely at the example code, and the code in the interactive window to see what to fix.</span></span>
 
-    > <span data-ttu-id="de472-131">Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="de472-131">That exercise will help you learn the structure of C# code.</span></span>
+    > <span data-ttu-id="62e1e-131">Toto cvičení vám pomůže zjistit strukturu C# kódu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-131">That exercise will help you learn the structure of C# code.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-132">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-132">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-133">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-133">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="de472-134">Seznámení s pořadím operací</span><span class="sxs-lookup"><span data-stu-id="de472-134">Explore order of operations</span></span>
+    > <span data-ttu-id="62e1e-132">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-132">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-133">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-133">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+- title: <span data-ttu-id="62e1e-134">Prozkoumat pořadí operací</span><span class="sxs-lookup"><span data-stu-id="62e1e-134">Explore order of operations</span></span>
   durationInMinutes: 7
   content: >
-    <span data-ttu-id="de472-135">Jazyk C# definuje prioritu různých matematických operací pravidla souladu se stejnými pravidly, že jste se naučili v matematice.</span><span class="sxs-lookup"><span data-stu-id="de472-135">The C# language defines the precedence of different mathematics operations with rules consistent with the rules you learned in mathematics.</span></span>
+    <span data-ttu-id="62e1e-135">C# Jazyk definuje prioritu různých matematických operací s pravidly, která jsou v souladu s pravidly, která jste se naučili v matematice.</span><span class="sxs-lookup"><span data-stu-id="62e1e-135">The C# language defines the precedence of different mathematics operations with rules consistent with the rules you learned in mathematics.</span></span>
 
-    <span data-ttu-id="de472-136">Úlohy násobení a dělení přednost před sčítáním a odčítáním.</span><span class="sxs-lookup"><span data-stu-id="de472-136">Multiplication and division take precedence over addition and subtraction.</span></span>
+    <span data-ttu-id="62e1e-136">Násobení a dělení mají přednost před sčítáním a odčítáním.</span><span class="sxs-lookup"><span data-stu-id="62e1e-136">Multiplication and division take precedence over addition and subtraction.</span></span>
 
-    <span data-ttu-id="de472-137">Vyzkoušejte si to spuštěním následujícího kódu v interaktivním okně:</span><span class="sxs-lookup"><span data-stu-id="de472-137">Explore that by running the following code in the interactive window:</span></span>
+    <span data-ttu-id="62e1e-137">Prozkoumejte to spuštěním následujícího kódu v interaktivním okně:</span><span class="sxs-lookup"><span data-stu-id="62e1e-137">Explore that by running the following code in the interactive window:</span></span>
 
 
     ```csharp
@@ -126,10 +126,10 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-138">Z výstupu vyplývá, operace násobení se provede dřív než operace sčítání.</span><span class="sxs-lookup"><span data-stu-id="de472-138">The output demonstrates that the multiplication is performed before the addition.</span></span>
+    <span data-ttu-id="62e1e-138">Výstup ukazuje, že násobení je provedeno před sčítáním.</span><span class="sxs-lookup"><span data-stu-id="62e1e-138">The output demonstrates that the multiplication is performed before the addition.</span></span>
 
 
-    <span data-ttu-id="de472-139">Jiné pořadí operací můžete vynutit závorek uzavřením operace nebo operací, které chcete provést jako první:</span><span class="sxs-lookup"><span data-stu-id="de472-139">You can force a different order of operation by adding parentheses around the operation or operations you want performed first:</span></span>
+    <span data-ttu-id="62e1e-139">Můžete vynutit jiné pořadí operací přidáním závorek kolem operace nebo operací, které chcete provést jako první:</span><span class="sxs-lookup"><span data-stu-id="62e1e-139">You can force a different order of operation by adding parentheses around the operation or operations you want performed first:</span></span>
 
 
     ```csharp
@@ -147,7 +147,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-140">Teď prozkoumáme i další kombinací několika různých operací.</span><span class="sxs-lookup"><span data-stu-id="de472-140">Explore more by combining many different operations.</span></span> <span data-ttu-id="de472-141">Čtvrtý řádek výše nahraďte vypadat přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="de472-141">Replace the fourth line above with something like this:</span></span>
+    <span data-ttu-id="62e1e-140">Kombinování různých operací vám umožní prozkoumat víc.</span><span class="sxs-lookup"><span data-stu-id="62e1e-140">Explore more by combining many different operations.</span></span> <span data-ttu-id="62e1e-141">Výše uvedený čtvrtý řádek nahraďte podobným způsobem:</span><span class="sxs-lookup"><span data-stu-id="62e1e-141">Replace the fourth line above with something like this:</span></span>
 
 
     ```csharp
@@ -157,10 +157,10 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-142">Mohli jste si všimnout zvláštního chování pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="de472-142">You may have noticed an interesting behavior for integers.</span></span> <span data-ttu-id="de472-143">Dělení celého čísla vždy vytváří celé číslo výsledku, i když byste očekávali bude výsledek obsahovat desetinné nebo zlomkové části.</span><span class="sxs-lookup"><span data-stu-id="de472-143">Integer division always produces an integer result, even when you'd expect the result to include a decimal or fractional portion.</span></span>
+    <span data-ttu-id="62e1e-142">Možná jste si všimli zajímavého chování pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="62e1e-142">You may have noticed an interesting behavior for integers.</span></span> <span data-ttu-id="62e1e-143">Celočíselné dělení vždy vytváří celočíselný výsledek, i když byste očekávali, že by výsledek zahrnoval desítkovou nebo zlomkovou část.</span><span class="sxs-lookup"><span data-stu-id="62e1e-143">Integer division always produces an integer result, even when you'd expect the result to include a decimal or fractional portion.</span></span>
 
 
-    <span data-ttu-id="de472-144">Pokud toto chování nezaznamenali, zkuste následující:</span><span class="sxs-lookup"><span data-stu-id="de472-144">If you haven't seen this behavior, try the following:</span></span>
+    <span data-ttu-id="62e1e-144">Pokud jste toto chování neviděli, vyzkoušejte následující:</span><span class="sxs-lookup"><span data-stu-id="62e1e-144">If you haven't seen this behavior, try the following:</span></span>
 
 
     ```csharp
@@ -178,18 +178,18 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-145">Klikněte na tlačítko **spustit** znovu, abyste viděli výsledek.</span><span class="sxs-lookup"><span data-stu-id="de472-145">Click **Run** again to see the results.</span></span>
+    <span data-ttu-id="62e1e-145">Kliknutím na tlačítko **Spustit** znovu zobrazíte výsledky.</span><span class="sxs-lookup"><span data-stu-id="62e1e-145">Click **Run** again to see the results.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-146">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-146">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-147">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-147">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="de472-148">Prozkoumat celé číslo přesnosti a omezení</span><span class="sxs-lookup"><span data-stu-id="de472-148">Explore integer precision and limits</span></span>
+    > <span data-ttu-id="62e1e-146">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-146">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-147">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-147">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+- title: <span data-ttu-id="62e1e-148">Prozkoumat celočíselnou přesnost a omezení</span><span class="sxs-lookup"><span data-stu-id="62e1e-148">Explore integer precision and limits</span></span>
   durationInMinutes: 5
   content: >
-    <span data-ttu-id="de472-149">Z poslední ukázky vám ukázal, že dělení celého čísla zkrátí výsledek.</span><span class="sxs-lookup"><span data-stu-id="de472-149">That last sample showed you that integer division truncates the result.</span></span>
+    <span data-ttu-id="62e1e-149">Poslední ukázka ukázala, že dělení celého čísla zkráte výsledek.</span><span class="sxs-lookup"><span data-stu-id="62e1e-149">That last sample showed you that integer division truncates the result.</span></span>
 
-    <span data-ttu-id="de472-150">Můžete získat **zbývající** pomocí **modulo** operátoru `%` znak:</span><span class="sxs-lookup"><span data-stu-id="de472-150">You can get the **remainder** by using the **modulo** operator, the `%` character:</span></span>
+    <span data-ttu-id="62e1e-150">**Zbytek** můžete získat pomocí `%` operátoru **modulo** , znaku:</span><span class="sxs-lookup"><span data-stu-id="62e1e-150">You can get the **remainder** by using the **modulo** operator, the `%` character:</span></span>
 
 
     ```csharp
@@ -211,7 +211,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-151">Typ integer jazyka C# se liší od matematické celých čísel v jednom ohledu: `int` typ má minimální a maximální mezí.</span><span class="sxs-lookup"><span data-stu-id="de472-151">The C# integer type differs from mathematical integers in one other way: the `int` type has minimum and maximum limits.</span></span> <span data-ttu-id="de472-152">Tento kód spusťte v interaktivním okně, abyste tyto limity zjistíte:</span><span class="sxs-lookup"><span data-stu-id="de472-152">Run this code in the interactive window to see those limits:</span></span>
+    <span data-ttu-id="62e1e-151">C# Celočíselný typ se liší od matematických celých čísel jiným způsobem: `int` typ má minimální a maximální limity.</span><span class="sxs-lookup"><span data-stu-id="62e1e-151">The C# integer type differs from mathematical integers in one other way: the `int` type has minimum and maximum limits.</span></span> <span data-ttu-id="62e1e-152">Spusťte tento kód v interaktivním okně, abyste viděli tato omezení:</span><span class="sxs-lookup"><span data-stu-id="62e1e-152">Run this code in the interactive window to see those limits:</span></span>
 
 
     ```csharp
@@ -225,7 +225,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-153">Pokud výsledkem určitého výpočtu hodnota, která tyto limity překračuje, máte **podtečení** nebo **přetečení** podmínku.</span><span class="sxs-lookup"><span data-stu-id="de472-153">If a calculation produces a value that exceeds those limits, you have an **underflow** or **overflow** condition.</span></span> <span data-ttu-id="de472-154">Zobrazí se odpověď cyklicky přechází od jednoho limitu k druhému.</span><span class="sxs-lookup"><span data-stu-id="de472-154">The answer appears to wrap from one limit to the other.</span></span> <span data-ttu-id="de472-155">Přidejte následující dva řádky do interaktivního okna k prohlédnutí příkladu:</span><span class="sxs-lookup"><span data-stu-id="de472-155">Add these two lines to the interactive window to see an example:</span></span>
+    <span data-ttu-id="62e1e-153">Pokud výpočet vytvoří hodnotu, která překračuje tato omezení, **dojde k podtečení nebo** **podtečení** .</span><span class="sxs-lookup"><span data-stu-id="62e1e-153">If a calculation produces a value that exceeds those limits, you have an **underflow** or **overflow** condition.</span></span> <span data-ttu-id="62e1e-154">Odpověď se zobrazí jako zabalení od jednoho limitu k druhému.</span><span class="sxs-lookup"><span data-stu-id="62e1e-154">The answer appears to wrap from one limit to the other.</span></span> <span data-ttu-id="62e1e-155">Přidejte tyto dva řádky do interaktivního okna a podívejte se na příklad:</span><span class="sxs-lookup"><span data-stu-id="62e1e-155">Add these two lines to the interactive window to see an example:</span></span>
 
 
     ```csharp
@@ -237,25 +237,25 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-156">Všimněte si, že odpověď těsně blíží minimální (zápornému) celému číslu.</span><span class="sxs-lookup"><span data-stu-id="de472-156">Notice that the answer is very close to the minimum (negative) integer.</span></span> <span data-ttu-id="de472-157">Je stejný jako `min + 2`.</span><span class="sxs-lookup"><span data-stu-id="de472-157">It's the same as `min + 2`.</span></span>
+    <span data-ttu-id="62e1e-156">Všimněte si, že odpověď se velmi blíží minimálnímu (zápornému) celému číslu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-156">Notice that the answer is very close to the minimum (negative) integer.</span></span> <span data-ttu-id="62e1e-157">Je stejný jako `min + 2`.</span><span class="sxs-lookup"><span data-stu-id="62e1e-157">It's the same as `min + 2`.</span></span>
 
-    <span data-ttu-id="de472-158">Operace sčítání **došlo k přetečení** povolené hodnoty celých čísel.</span><span class="sxs-lookup"><span data-stu-id="de472-158">The addition operation **overflowed** the allowed values for integers.</span></span>
+    <span data-ttu-id="62e1e-158">Operace sčítání **přetéká** povolené hodnoty pro celá čísla.</span><span class="sxs-lookup"><span data-stu-id="62e1e-158">The addition operation **overflowed** the allowed values for integers.</span></span>
 
-    <span data-ttu-id="de472-159">Odpověď je velmi velké záporné číslo, protože přetečení "cyklickému přechodu" od nejvyšší možné celočíselné hodnoty k nejnižší.</span><span class="sxs-lookup"><span data-stu-id="de472-159">The answer is a very large negative number because an overflow "wraps around" from the largest possible integer value to the smallest.</span></span>
+    <span data-ttu-id="62e1e-159">Odpověď je velmi velké záporné číslo, protože přetečení se zalomí od největší možné celočíselné hodnoty k nejmenší.</span><span class="sxs-lookup"><span data-stu-id="62e1e-159">The answer is a very large negative number because an overflow "wraps around" from the largest possible integer value to the smallest.</span></span>
 
 
-    <span data-ttu-id="de472-160">Existují další číselné typy s různými limity a přesností, můžete použít, pokud `int` typu nevyhovuje vašim potřebám.</span><span class="sxs-lookup"><span data-stu-id="de472-160">There are other numeric types with different limits and precision that you would use when the `int` type doesn't meet your needs.</span></span> <span data-ttu-id="de472-161">Podíváme se na ně podívat.</span><span class="sxs-lookup"><span data-stu-id="de472-161">Let's explore those next.</span></span>
+    <span data-ttu-id="62e1e-160">Existují i jiné číselné typy s různými limity a přesností, které byste použili, `int` když typ nevyhovuje vašim potřebám.</span><span class="sxs-lookup"><span data-stu-id="62e1e-160">There are other numeric types with different limits and precision that you would use when the `int` type doesn't meet your needs.</span></span> <span data-ttu-id="62e1e-161">Pojďme se podívat na další.</span><span class="sxs-lookup"><span data-stu-id="62e1e-161">Let's explore those next.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-162">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-162">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-163">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-163">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="de472-164">Práce s typem double</span><span class="sxs-lookup"><span data-stu-id="de472-164">Work with the double type</span></span>
+    > <span data-ttu-id="62e1e-162">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-162">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-163">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-163">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+- title: <span data-ttu-id="62e1e-164">Práce s typem Double</span><span class="sxs-lookup"><span data-stu-id="62e1e-164">Work with the double type</span></span>
   durationInMinutes: 5
   content: >
-    <span data-ttu-id="de472-165">`double` Číselného typu představuje číslo s plovoucí desetinnou dvojitou přesností.</span><span class="sxs-lookup"><span data-stu-id="de472-165">The `double` numeric type represents a double-precision floating point number.</span></span> <span data-ttu-id="de472-166">Tyto výrazy možná pro vás nová.</span><span class="sxs-lookup"><span data-stu-id="de472-166">Those terms may be new to you.</span></span> <span data-ttu-id="de472-167">A **s plovoucí desetinnou čárkou** číslo slouží k reprezentaci jiných než celých čísel, která může být velmi velké nebo velmi vysoká.</span><span class="sxs-lookup"><span data-stu-id="de472-167">A **floating point** number is useful to represent non-integral numbers that may be very large or small in magnitude.</span></span> <span data-ttu-id="de472-168">**Dvojité přesnosti** znamená, že tato čísla ukládají s větší přesností než **jednoduchou přesností**.</span><span class="sxs-lookup"><span data-stu-id="de472-168">**Double-precision** means that these numbers are stored using greater precision than **single-precision**.</span></span> <span data-ttu-id="de472-169">V moderních počítačích se častěji používají s dvojitou přesností než čísla a jednoduchou přesností.</span><span class="sxs-lookup"><span data-stu-id="de472-169">On modern computers, it is more common to use double precision than single precision numbers.</span></span>
+    <span data-ttu-id="62e1e-165">`double` Číselný typ představuje číslo s dvojitou přesností a plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="62e1e-165">The `double` numeric type represents a double-precision floating point number.</span></span> <span data-ttu-id="62e1e-166">Tyto výrazy můžou být pro vás nové.</span><span class="sxs-lookup"><span data-stu-id="62e1e-166">Those terms may be new to you.</span></span> <span data-ttu-id="62e1e-167">Číslo s **plovoucí desetinnou** čárkou je užitečné k vyjádření neintegrálních čísel, která mohou být velmi velká nebo malá.</span><span class="sxs-lookup"><span data-stu-id="62e1e-167">A **floating point** number is useful to represent non-integral numbers that may be very large or small in magnitude.</span></span> <span data-ttu-id="62e1e-168">**Dvojitá přesnost** znamená, že se tato čísla ukládají s větší přesností než s **jednoduchou přesností**.</span><span class="sxs-lookup"><span data-stu-id="62e1e-168">**Double-precision** means that these numbers are stored using greater precision than **single-precision**.</span></span> <span data-ttu-id="62e1e-169">Na moderních počítačích je častější používat dvojitou přesnost než čísla s jednoduchou přesností.</span><span class="sxs-lookup"><span data-stu-id="62e1e-169">On modern computers, it is more common to use double precision than single precision numbers.</span></span>
 
-    <span data-ttu-id="de472-170">Zkusíme zjistit.</span><span class="sxs-lookup"><span data-stu-id="de472-170">Let's explore.</span></span> <span data-ttu-id="de472-171">Vyzkoušet v interaktivním okně následující kód a zobrazit výsledek:</span><span class="sxs-lookup"><span data-stu-id="de472-171">Try the following code in the interactive window and see the result:</span></span>
+    <span data-ttu-id="62e1e-170">Pojďme prozkoumat.</span><span class="sxs-lookup"><span data-stu-id="62e1e-170">Let's explore.</span></span> <span data-ttu-id="62e1e-171">V interaktivním okně vyzkoušejte následující kód a podívejte se na výsledek:</span><span class="sxs-lookup"><span data-stu-id="62e1e-171">Try the following code in the interactive window and see the result:</span></span>
 
 
     ```csharp
@@ -273,7 +273,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-172">Všimněte si, že odpověď obsahuje desetinnou část podílu.</span><span class="sxs-lookup"><span data-stu-id="de472-172">Notice that the answer includes the decimal portion of the quotient.</span></span> <span data-ttu-id="de472-173">Try – o něco složitější výraz s čísly typu Double:</span><span class="sxs-lookup"><span data-stu-id="de472-173">Try a slightly more complicated expression with doubles:</span></span>
+    <span data-ttu-id="62e1e-172">Všimněte si, že odpověď obsahuje desetinnou část podílu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-172">Notice that the answer includes the decimal portion of the quotient.</span></span> <span data-ttu-id="62e1e-173">Vyzkoušejte trochu složitější výraz s dvojitou přesností:</span><span class="sxs-lookup"><span data-stu-id="62e1e-173">Try a slightly more complicated expression with doubles:</span></span>
 
 
     ```csharp
@@ -291,7 +291,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-174">Rozsah hodnoty double je mnohem větší než u hodnot typu integer.</span><span class="sxs-lookup"><span data-stu-id="de472-174">The range of a double value is much greater than integer values.</span></span> <span data-ttu-id="de472-175">Vyzkoušejte v interaktivním okně následující kód:</span><span class="sxs-lookup"><span data-stu-id="de472-175">Try the following code in the interactive window:</span></span>
+    <span data-ttu-id="62e1e-174">Rozsah hodnoty Double je mnohem větší než celočíselné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="62e1e-174">The range of a double value is much greater than integer values.</span></span> <span data-ttu-id="62e1e-175">V interaktivním okně zkuste použít následující kód:</span><span class="sxs-lookup"><span data-stu-id="62e1e-175">Try the following code in the interactive window:</span></span>
 
 
     ```csharp
@@ -305,10 +305,10 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-176">Tyto hodnoty jsou vytiskne zapsaný exponenciální notací.</span><span class="sxs-lookup"><span data-stu-id="de472-176">These values are printed out in scientific notation.</span></span> <span data-ttu-id="de472-177">Číslo vlevo od `E` se říká mantisa.</span><span class="sxs-lookup"><span data-stu-id="de472-177">The number to the left of the `E` is the significand.</span></span> <span data-ttu-id="de472-178">Exponent, je číslo vpravo jako mocninu 10.</span><span class="sxs-lookup"><span data-stu-id="de472-178">The number to the right is the exponent, as a power of 10.</span></span>
+    <span data-ttu-id="62e1e-176">Tyto hodnoty se tisknou v matematickém zápisu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-176">These values are printed out in scientific notation.</span></span> <span data-ttu-id="62e1e-177">Číslo nalevo od `E` je mantisa.</span><span class="sxs-lookup"><span data-stu-id="62e1e-177">The number to the left of the `E` is the significand.</span></span> <span data-ttu-id="62e1e-178">Číslo vpravo je exponent, jako mocnina 10.</span><span class="sxs-lookup"><span data-stu-id="62e1e-178">The number to the right is the exponent, as a power of 10.</span></span>
 
 
-    <span data-ttu-id="de472-179">Stejně jako desetinná čísla v matematice můžou mít typu Double v C# chyby zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="de472-179">Just like decimal numbers in math, doubles in C# can have rounding errors.</span></span> <span data-ttu-id="de472-180">Vyzkoušejte tento kód:</span><span class="sxs-lookup"><span data-stu-id="de472-180">Try this code:</span></span>
+    <span data-ttu-id="62e1e-179">Stejně jako desítková čísla v matematických případech můžou C# být v uvozovkách chyby zaokrouhlení.</span><span class="sxs-lookup"><span data-stu-id="62e1e-179">Just like decimal numbers in math, doubles in C# can have rounding errors.</span></span> <span data-ttu-id="62e1e-180">Vyzkoušejte tento kód:</span><span class="sxs-lookup"><span data-stu-id="62e1e-180">Try this code:</span></span>
 
 
     ```csharp
@@ -320,22 +320,22 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-181">Víte, že `0.3` periodických přesně neodpovídá stejný jako `1/3`.</span><span class="sxs-lookup"><span data-stu-id="de472-181">You know that `0.3` repeating is not exactly the same as `1/3`.</span></span>
+    <span data-ttu-id="62e1e-181">Víte, že `0.3` opakování není přesně stejné jako. `1/3`</span><span class="sxs-lookup"><span data-stu-id="62e1e-181">You know that `0.3` repeating is not exactly the same as `1/3`.</span></span>
 
 
-    <span data-ttu-id="de472-182">***Výzvy***</span><span class="sxs-lookup"><span data-stu-id="de472-182">***Challenge***</span></span>
+    <span data-ttu-id="62e1e-182">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="62e1e-182">***Challenge***</span></span>
 
 
-    <span data-ttu-id="de472-183">Vyzkoušejte si různé výpočty s velkým, malé čísly, násobením a dělením za použití `double` typu.</span><span class="sxs-lookup"><span data-stu-id="de472-183">Try other calculations with large numbers, small numbers, multiplication and division using the `double` type.</span></span>  <span data-ttu-id="de472-184">Zkuste složitější výpočty.</span><span class="sxs-lookup"><span data-stu-id="de472-184">Try more complicated calculations.</span></span>
+    <span data-ttu-id="62e1e-183">Zkuste další výpočty s velkými čísly, malými čísly, násobení a `double` dělení pomocí typu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-183">Try other calculations with large numbers, small numbers, multiplication and division using the `double` type.</span></span>  <span data-ttu-id="62e1e-184">Vyzkoušejte složitější výpočty.</span><span class="sxs-lookup"><span data-stu-id="62e1e-184">Try more complicated calculations.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-185">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-185">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-186">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-186">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
-- title: <span data-ttu-id="de472-187">Práce s typy s pevnou desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="de472-187">Work with fixed point types</span></span>
+    > <span data-ttu-id="62e1e-185">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-185">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-186">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-186">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+- title: <span data-ttu-id="62e1e-187">Práce s pevnými typy bodů</span><span class="sxs-lookup"><span data-stu-id="62e1e-187">Work with fixed point types</span></span>
   durationInMinutes: 8
   content: >
-    <span data-ttu-id="de472-188">Seznámili jste se základními typy čísel v jazyce C#: celými čísly a čísly typu Double.</span><span class="sxs-lookup"><span data-stu-id="de472-188">You've seen the basic numeric types in C#: integers and doubles.</span></span>  <span data-ttu-id="de472-189">Existuje jeden další typ: `decimal` typu.</span><span class="sxs-lookup"><span data-stu-id="de472-189">There is one other type to learn: the `decimal` type.</span></span> <span data-ttu-id="de472-190">`decimal` Má menší rozsah, ale zato větší přesnost než typ `double`.</span><span class="sxs-lookup"><span data-stu-id="de472-190">The `decimal` type has a smaller range but greater precision than `double`.</span></span> <span data-ttu-id="de472-191">Termín **Pevná desetinná** znamená, že desetinné čárky (nebo řádová) čárka nepohybuje.</span><span class="sxs-lookup"><span data-stu-id="de472-191">The term **fixed point** means that the decimal point (or binary point) doesn't move.</span></span> <span data-ttu-id="de472-192">Podívejme se na to:</span><span class="sxs-lookup"><span data-stu-id="de472-192">Let's take a look:</span></span>
+    <span data-ttu-id="62e1e-188">Viděli jste základní číselné typy v C#: celá čísla a Dvojitá přesnost.</span><span class="sxs-lookup"><span data-stu-id="62e1e-188">You've seen the basic numeric types in C#: integers and doubles.</span></span>  <span data-ttu-id="62e1e-189">Existuje jeden další typ, který se naučí: `decimal` typ.</span><span class="sxs-lookup"><span data-stu-id="62e1e-189">There is one other type to learn: the `decimal` type.</span></span> <span data-ttu-id="62e1e-190">Typ má menší rozsah, ale větší přesnost než `double`. `decimal`</span><span class="sxs-lookup"><span data-stu-id="62e1e-190">The `decimal` type has a smaller range but greater precision than `double`.</span></span> <span data-ttu-id="62e1e-191">**Pevný** bod znamená, že desetinná čárka (nebo binární bod) nepřesouvá.</span><span class="sxs-lookup"><span data-stu-id="62e1e-191">The term **fixed point** means that the decimal point (or binary point) doesn't move.</span></span> <span data-ttu-id="62e1e-192">Podívejme se na to:</span><span class="sxs-lookup"><span data-stu-id="62e1e-192">Let's take a look:</span></span>
 
 
     ```csharp
@@ -349,7 +349,7 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-193">Všimněte si, že je rozsah menší, než `double` typu.</span><span class="sxs-lookup"><span data-stu-id="de472-193">Notice that the range is smaller than the `double` type.</span></span> <span data-ttu-id="de472-194">Větší přesnost typu decimal můžete zobrazit pomocí následujícího kódu:</span><span class="sxs-lookup"><span data-stu-id="de472-194">You can see the greater precision with the decimal type by trying the following code:</span></span>
+    <span data-ttu-id="62e1e-193">Všimněte si, že rozsah je menší než `double` typ.</span><span class="sxs-lookup"><span data-stu-id="62e1e-193">Notice that the range is smaller than the `double` type.</span></span> <span data-ttu-id="62e1e-194">Větší přesnost s typem Decimal můžete zobrazit tak, že zkusíte následující kód:</span><span class="sxs-lookup"><span data-stu-id="62e1e-194">You can see the greater precision with the decimal type by trying the following code:</span></span>
 
 
     ```csharp
@@ -370,28 +370,28 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-195">`M` Přípona u čísel je způsob, jak naznačit, že má konstanta používat `decimal` typu.</span><span class="sxs-lookup"><span data-stu-id="de472-195">The `M` suffix on the numbers is how you indicate that a constant should use the `decimal` type.</span></span>
+    <span data-ttu-id="62e1e-195">Přípona čísel představuje způsob, jakým by měl být `decimal` typ konstanty použit. `M`</span><span class="sxs-lookup"><span data-stu-id="62e1e-195">The `M` suffix on the numbers is how you indicate that a constant should use the `decimal` type.</span></span>
 
 
-    <span data-ttu-id="de472-196">Všimněte si, že výsledek s typem decimal má napravo od desetinné čárky víc číslic.</span><span class="sxs-lookup"><span data-stu-id="de472-196">Notice that the math using the decimal type has more digits to the right of the decimal point.</span></span>
+    <span data-ttu-id="62e1e-196">Všimněte si, že matematický použití typu Decimal má na pravé straně desetinné čárky více číslic.</span><span class="sxs-lookup"><span data-stu-id="62e1e-196">Notice that the math using the decimal type has more digits to the right of the decimal point.</span></span>
 
 
-    <span data-ttu-id="de472-197">***Výzvy***</span><span class="sxs-lookup"><span data-stu-id="de472-197">***Challenge***</span></span>
+    <span data-ttu-id="62e1e-197">***Výzev***</span><span class="sxs-lookup"><span data-stu-id="62e1e-197">***Challenge***</span></span>
 
 
-    <span data-ttu-id="de472-198">Teď, když jste se seznámili s různými typy čísel, psát kód, který vypočítá obsah kruhu s poloměrem 2,50 centimetru.</span><span class="sxs-lookup"><span data-stu-id="de472-198">Now that you've seen the different numeric types, write code that calculates the area of a circle whose radius is 2.50 centimeters.</span></span> <span data-ttu-id="de472-199">Mějte na paměti, že obsah kruhu je jako poloměr na druhou krát číslo PÍ.</span><span class="sxs-lookup"><span data-stu-id="de472-199">Remember that the area of a circle is the radius squared multiplied by PI.</span></span> <span data-ttu-id="de472-200">Jeden pomocný parametr: .NET obsahuje pro číslo PÍ konstantu <xref:System.Math.PI?displayProperty=nameWithType> , můžete použít pro tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="de472-200">One hint: .NET contains a constant for PI, <xref:System.Math.PI?displayProperty=nameWithType> that you can use for that value.</span></span>
+    <span data-ttu-id="62e1e-198">Teď, když jste viděli různé číselné typy, napište kód, který vypočítá oblast kruhu, jehož poloměr je 2,50 centimetrů.</span><span class="sxs-lookup"><span data-stu-id="62e1e-198">Now that you've seen the different numeric types, write code that calculates the area of a circle whose radius is 2.50 centimeters.</span></span> <span data-ttu-id="62e1e-199">Pamatujte, že oblast kruhu je poloměr čtvercového vynásobený hodnotou pí.</span><span class="sxs-lookup"><span data-stu-id="62e1e-199">Remember that the area of a circle is the radius squared multiplied by PI.</span></span> <span data-ttu-id="62e1e-200">Jedna Nápověda: .NET obsahuje konstantu pro PI, <xref:System.Math.PI?displayProperty=nameWithType> kterou můžete použít pro tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-200">One hint: .NET contains a constant for PI, <xref:System.Math.PI?displayProperty=nameWithType> that you can use for that value.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-201">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-201">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-202">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-202">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+    > <span data-ttu-id="62e1e-201">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-201">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-202">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-202">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
 
 
-    <span data-ttu-id="de472-203">By vám vyjít výsledek mezi 19 a 20.</span><span class="sxs-lookup"><span data-stu-id="de472-203">You should get an answer between 19 and 20.</span></span>
-- title: <span data-ttu-id="de472-204">Dokončení výzvy</span><span class="sxs-lookup"><span data-stu-id="de472-204">Complete challenge</span></span>
+    <span data-ttu-id="62e1e-203">Měli byste získat odpověď mezi 19 a 20.</span><span class="sxs-lookup"><span data-stu-id="62e1e-203">You should get an answer between 19 and 20.</span></span>
+- title: <span data-ttu-id="62e1e-204">Dokončení výzvy</span><span class="sxs-lookup"><span data-stu-id="62e1e-204">Complete challenge</span></span>
   durationInMinutes: 1
   content: >
-    <span data-ttu-id="de472-205">Napsali jste kód podobný tomuto?</span><span class="sxs-lookup"><span data-stu-id="de472-205">Did you come up with something like this?</span></span>
+    <span data-ttu-id="62e1e-205">Pracovali jste s podobným způsobem?</span><span class="sxs-lookup"><span data-stu-id="62e1e-205">Did you come up with something like this?</span></span>
 
 
     ```csharp
@@ -405,25 +405,25 @@ items:
     ```
 
 
-    <span data-ttu-id="de472-206">Pokud chcete, vyzkoušejte i další vzorce.</span><span class="sxs-lookup"><span data-stu-id="de472-206">Try some other formulas if you'd like.</span></span>
+    <span data-ttu-id="62e1e-206">Pokud chcete, zkuste použít jiné vzorce.</span><span class="sxs-lookup"><span data-stu-id="62e1e-206">Try some other formulas if you'd like.</span></span>
 
 
     > [!NOTE]
 
-    > <span data-ttu-id="de472-207">Toto online kódovací prostředí je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="de472-207">This online coding experience is in preview mode.</span></span> <span data-ttu-id="de472-208">Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="de472-208">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
+    > <span data-ttu-id="62e1e-207">Toto online prostředí kódování je v režimu náhledu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-207">This online coding experience is in preview mode.</span></span> <span data-ttu-id="62e1e-208">Pokud narazíte na problémy, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).</span><span class="sxs-lookup"><span data-stu-id="62e1e-208">If you encounter problems, please report them [on the dotnet/try repo](https://github.com/dotnet/try/issues).</span></span>
 - content: >
-    <span data-ttu-id="de472-209">Dokončili jste "čísla v C#" interaktivního kurzu.</span><span class="sxs-lookup"><span data-stu-id="de472-209">You've completed the "Numbers in C#" interactive tutorial.</span></span> <span data-ttu-id="de472-210">Můžete kliknout **větve a smyčky** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování.</span><span class="sxs-lookup"><span data-stu-id="de472-210">You can click the **Branches and Loops** link below to start the next interactive tutorial, or you can visit the [.NET site](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) to download the .NET Core SDK, create a project on your machine, and keep coding.</span></span> <span data-ttu-id="de472-211">Krok "Zachovat učení" přináší zpět do těchto kurzů.</span><span class="sxs-lookup"><span data-stu-id="de472-211">The "Keep Learning" step brings you back to these tutorials.</span></span>
+    <span data-ttu-id="62e1e-209">Dokončili jste "čísla" v C#interaktivním kurzu.</span><span class="sxs-lookup"><span data-stu-id="62e1e-209">You've completed the "Numbers in C#" interactive tutorial.</span></span> <span data-ttu-id="62e1e-210">Kliknutím na odkaz **větve a smyčky** níže můžete spustit další interaktivní kurz, nebo můžete navštívit [Web .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) a stáhnout .NET Core SDK, vytvořit projekt na počítači a zachovat kódování.</span><span class="sxs-lookup"><span data-stu-id="62e1e-210">You can click the **Branches and Loops** link below to start the next interactive tutorial, or you can visit the [.NET site](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) to download the .NET Core SDK, create a project on your machine, and keep coding.</span></span> <span data-ttu-id="62e1e-211">Oddíl "další kroky" vás převede zpět na tyto kurzy.</span><span class="sxs-lookup"><span data-stu-id="62e1e-211">The "Next steps" section brings you back to these tutorials.</span></span>
 
 
-    <span data-ttu-id="de472-212">Další informace o číslech v jazyce C# v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="de472-212">You can learn more about numbers in C# in the following topics:</span></span>
+    <span data-ttu-id="62e1e-212">Další informace o číslech v C# najdete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="62e1e-212">You can learn more about numbers in C# in the following topics:</span></span>
 
 
-    - [<span data-ttu-id="de472-213">Celočíselné typy</span><span class="sxs-lookup"><span data-stu-id="de472-213">Integral types</span></span>](../../language-reference/builtin-types/integral-numeric-types.md)
+    - [<span data-ttu-id="62e1e-213">Celočíselné typy</span><span class="sxs-lookup"><span data-stu-id="62e1e-213">Integral types</span></span>](../../language-reference/builtin-types/integral-numeric-types.md)
 
-    - [<span data-ttu-id="de472-214">Tabulka typů s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="de472-214">Floating-Point Types Table</span></span>](../../language-reference/builtin-types/floating-point-numeric-types.md)
+    - [<span data-ttu-id="62e1e-214">Tabulka typů s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="62e1e-214">Floating-Point Types Table</span></span>](../../language-reference/builtin-types/floating-point-numeric-types.md)
 
-    - [<span data-ttu-id="de472-215">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="de472-215">Built-In Types Table</span></span>](../../language-reference/keywords/built-in-types-table.md)
+    - [<span data-ttu-id="62e1e-215">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="62e1e-215">Built-In Types Table</span></span>](../../language-reference/keywords/built-in-types-table.md)
 
-    - [<span data-ttu-id="de472-216">Tabulka implicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="de472-216">Implicit Numeric Conversions Table</span></span>](../../language-reference/keywords/implicit-numeric-conversions-table.md)
+    - [<span data-ttu-id="62e1e-216">Tabulka implicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="62e1e-216">Implicit Numeric Conversions Table</span></span>](../../language-reference/keywords/implicit-numeric-conversions-table.md)
 
-    - [<span data-ttu-id="de472-217">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="de472-217">Explicit Numeric Conversions Table</span></span>](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+    - [<span data-ttu-id="62e1e-217">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="62e1e-217">Explicit Numeric Conversions Table</span></span>](../../language-reference/keywords/explicit-numeric-conversions-table.md)

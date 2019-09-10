@@ -17,57 +17,57 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1f4f923e868b72e9de33884e4814ebfa329a16e2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b379bb2a9512cd1bd3344ed7f5130f96c0ccfa87
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992937"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855575"
 ---
-# <a name="ihostsecuritymanagergetsecuritycontext-method"></a><span data-ttu-id="24cb4-102">IHostSecurityManager::GetSecurityContext – metoda</span><span class="sxs-lookup"><span data-stu-id="24cb4-102">IHostSecurityManager::GetSecurityContext Method</span></span>
-<span data-ttu-id="24cb4-103">Získá požadovanou [ihostsecuritycontext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) z hostitele.</span><span class="sxs-lookup"><span data-stu-id="24cb4-103">Gets the requested [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) from the host.</span></span>  
+# <a name="ihostsecuritymanagergetsecuritycontext-method"></a><span data-ttu-id="c6fbd-102">IHostSecurityManager::GetSecurityContext – metoda</span><span class="sxs-lookup"><span data-stu-id="c6fbd-102">IHostSecurityManager::GetSecurityContext Method</span></span>
+<span data-ttu-id="c6fbd-103">Získá požadovaná [IHostSecurityContext –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) z hostitele.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-103">Gets the requested [IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md) from the host.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="24cb4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="24cb4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c6fbd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c6fbd-104">Syntax</span></span>  
   
-```  
+```cpp
 HRESULT GetSecurityContext (  
     [in]  EContextType eContextType,   
     [out] IHostSecurityContext** ppSecurityContext  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="24cb4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="24cb4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c6fbd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c6fbd-105">Parameters</span></span>  
  `eContextType`  
- <span data-ttu-id="24cb4-106">[in] Jeden z [econtexttype –](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) hodnoty určující, jaký typ kontextu zabezpečení k vrácení.</span><span class="sxs-lookup"><span data-stu-id="24cb4-106">[in] One of the [EContextType](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) values, indicating what type of security context to return.</span></span>  
+ <span data-ttu-id="c6fbd-106">pro Jedna z hodnot [EContextType –](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) , která označuje typ kontextu zabezpečení, který se má vrátit.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-106">[in] One of the [EContextType](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md) values, indicating what type of security context to return.</span></span>  
   
  `ppSecurityContext`  
- <span data-ttu-id="24cb4-107">[out] Adresa ukazatele rozhraní na `IHostSecurityContext` z `eContextType`.</span><span class="sxs-lookup"><span data-stu-id="24cb4-107">[out] The address of an interface pointer to the `IHostSecurityContext` of `eContextType`.</span></span>  
+ <span data-ttu-id="c6fbd-107">mimo Adresa ukazatele rozhraní na `IHostSecurityContext`. `eContextType`</span><span class="sxs-lookup"><span data-stu-id="c6fbd-107">[out] The address of an interface pointer to the `IHostSecurityContext` of `eContextType`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="24cb4-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="24cb4-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c6fbd-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c6fbd-108">Return Value</span></span>  
   
-|<span data-ttu-id="24cb4-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="24cb4-109">HRESULT</span></span>|<span data-ttu-id="24cb4-110">Popis</span><span class="sxs-lookup"><span data-stu-id="24cb4-110">Description</span></span>|  
+|<span data-ttu-id="c6fbd-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c6fbd-109">HRESULT</span></span>|<span data-ttu-id="c6fbd-110">Popis</span><span class="sxs-lookup"><span data-stu-id="c6fbd-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="24cb4-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="24cb4-111">S_OK</span></span>|<span data-ttu-id="24cb4-112">`GetSecurityContext` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="24cb4-112">`GetSecurityContext` returned successfully.</span></span>|  
-|<span data-ttu-id="24cb4-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="24cb4-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="24cb4-114">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="24cb4-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="24cb4-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="24cb4-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="24cb4-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="24cb4-116">The call timed out.</span></span>|  
-|<span data-ttu-id="24cb4-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="24cb4-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="24cb4-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="24cb4-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="24cb4-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="24cb4-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="24cb4-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="24cb4-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="24cb4-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="24cb4-121">E_FAIL</span></span>|<span data-ttu-id="24cb4-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="24cb4-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="24cb4-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="24cb4-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="24cb4-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="24cb4-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="c6fbd-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="c6fbd-111">S_OK</span></span>|<span data-ttu-id="c6fbd-112">`GetSecurityContext`úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-112">`GetSecurityContext` returned successfully.</span></span>|  
+|<span data-ttu-id="c6fbd-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="c6fbd-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="c6fbd-114">Modul CLR (Common Language Runtime) nebyl načten do procesu, nebo je modul CLR ve stavu, ve kterém nemůže spustit spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="c6fbd-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="c6fbd-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="c6fbd-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-116">The call timed out.</span></span>|  
+|<span data-ttu-id="c6fbd-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="c6fbd-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="c6fbd-118">Volající nevlastní zámek.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="c6fbd-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="c6fbd-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="c6fbd-120">Událost byla zrušena při čekání na blokované vlákno nebo vlákna.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="c6fbd-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="c6fbd-121">E_FAIL</span></span>|<span data-ttu-id="c6fbd-122">Došlo k neznámé chybě závažnosti.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="c6fbd-123">Když metoda vrátí E_FAIL, CLR již není v rámci procesu použitelný.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="c6fbd-124">Následná volání metod hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="24cb4-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="24cb4-125">Remarks</span></span>  
- <span data-ttu-id="24cb4-126">Hostitele přístup můžete řídit všechny kódu tokeny vlákna CLR a uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="24cb4-126">A host can control all code access to thread tokens by both the CLR and user code.</span></span> <span data-ttu-id="24cb4-127">Můžete také zajistit zabezpečení úplné informace o kontextu je předán přes asynchronní operace nebo body kódu s přístup ke kódu s omezeným přístupem.</span><span class="sxs-lookup"><span data-stu-id="24cb4-127">It can also ensure that complete security context information is passed across asynchronous operations or code points with restricted code access.</span></span> <span data-ttu-id="24cb4-128">`IHostSecurityContext` zapouzdřuje tyto informace kontextu zabezpečení, což je neprůhledný modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="24cb4-128">`IHostSecurityContext` encapsulates this security context information, which is opaque to the CLR.</span></span> <span data-ttu-id="24cb4-129">Modul CLR shromažďuje tyto informace a přesouvá ji napříč vlákna fondu pracovních procesů položky odeslání, spuštění finalizační metody a modulu a třída konstrukce.</span><span class="sxs-lookup"><span data-stu-id="24cb4-129">The CLR captures this information and moves it across thread pool worker item dispatch, finalizer execution, and module and class construction.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c6fbd-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c6fbd-125">Remarks</span></span>  
+ <span data-ttu-id="c6fbd-126">Hostitel může řídit veškerý přístup kódu k tokenům vláken jak CLR, tak i uživatelský kód.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-126">A host can control all code access to thread tokens by both the CLR and user code.</span></span> <span data-ttu-id="c6fbd-127">Může také zajistit, aby byly kompletní informace o kontextu zabezpečení předány přes asynchronní operace nebo body kódu s omezeným přístupem ke kódu.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-127">It can also ensure that complete security context information is passed across asynchronous operations or code points with restricted code access.</span></span> <span data-ttu-id="c6fbd-128">`IHostSecurityContext`Zapouzdřuje tyto informace kontextu zabezpečení, které jsou neprůhledné pro CLR.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-128">`IHostSecurityContext` encapsulates this security context information, which is opaque to the CLR.</span></span> <span data-ttu-id="c6fbd-129">Modul CLR tyto informace zachytí a přesune je napříč fondem vláken pracovní položky, provádění finalizační metody a konstrukce modulu a třídy.</span><span class="sxs-lookup"><span data-stu-id="c6fbd-129">The CLR captures this information and moves it across thread pool worker item dispatch, finalizer execution, and module and class construction.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="24cb4-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="24cb4-130">Requirements</span></span>  
- <span data-ttu-id="24cb4-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="24cb4-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c6fbd-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c6fbd-130">Requirements</span></span>  
+ <span data-ttu-id="c6fbd-131">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c6fbd-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="24cb4-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="24cb4-132">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="c6fbd-132">**Hlaviček** MSCorEE. h</span><span class="sxs-lookup"><span data-stu-id="c6fbd-132">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="24cb4-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="24cb4-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="c6fbd-133">**Knihovna** Zahrnuto jako prostředek v knihovně MSCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="c6fbd-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="24cb4-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="24cb4-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="c6fbd-134">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c6fbd-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="24cb4-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="24cb4-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c6fbd-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6fbd-135">See also</span></span>
 
-- [<span data-ttu-id="24cb4-136">EContextType – výčet</span><span class="sxs-lookup"><span data-stu-id="24cb4-136">EContextType Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md)
-- [<span data-ttu-id="24cb4-137">IHostSecurityContext – rozhraní</span><span class="sxs-lookup"><span data-stu-id="24cb4-137">IHostSecurityContext Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
-- [<span data-ttu-id="24cb4-138">IHostSecurityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="24cb4-138">IHostSecurityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
+- [<span data-ttu-id="c6fbd-136">EContextType – výčet</span><span class="sxs-lookup"><span data-stu-id="c6fbd-136">EContextType Enumeration</span></span>](../../../../docs/framework/unmanaged-api/hosting/econtexttype-enumeration.md)
+- [<span data-ttu-id="c6fbd-137">IHostSecurityContext – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c6fbd-137">IHostSecurityContext Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
+- [<span data-ttu-id="c6fbd-138">IHostSecurityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c6fbd-138">IHostSecurityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)

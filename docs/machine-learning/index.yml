@@ -23,7 +23,7 @@ sections:
         items:
           - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis">Analyzovat mínění pomocí binární klasifikace</a>
           - html: <a href="/dotnet/machine-learning/tutorials/github-issue-classification">Kategorizace problémů GitHubu pomocí klasifikace s více třídami</a></li>
-          - html: <a href="/dotnet/machine-learning/tutorials/taxi-fare">Předpověď NYCch taxislužby tarifů pomocí regrese</a>
+          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices">Předpověď cen pomocí regrese</a>
           - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">Kategorizace květin podle charakteristik pomocí clusteringu</a>
           - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">Vytvoření doporučení pro film pro vyfaktoringování pomocí Matrixu</a>
           - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Sestavení vlastního klasifikátoru imagí pomocí TensorFlow</a>
