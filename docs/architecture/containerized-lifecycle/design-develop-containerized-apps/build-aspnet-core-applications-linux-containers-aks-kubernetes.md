@@ -2,12 +2,12 @@
 title: Sestavování aplikací ASP.NET Core 2,2 nasazených jako kontejnery Linux do clusterů AKS/Kubernetes
 description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 ms.date: 02/25/2019
-ms.openlocfilehash: 89843e0041c12f001f974360da2e5903499155d1
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: ab64a0423ceceb8285c159af276d6d97e12379d8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295353"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848751"
 ---
 # <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Sestavování aplikací ASP.NET Core 2,2 nasazených jako kontejnery Linux do AKS/Kubernetes Orchestrator
 
@@ -43,7 +43,7 @@ Ověřte, že jste vybrali ASP.NET Core 2,2 jako rozhraní. .NET Core 2,2 je sou
 
 **Obrázek 4-37**. Výběr typu projektu ASP.NET CORE 2,2 a webového rozhraní API
 
-Pokud máte předchozí verzi rozhraní .NET Core, můžete si stáhnout a nainstalovat verzi 2,2 z <https://www.microsoft.com/net/download/core#/sdk>.
+Pokud máte předchozí verzi rozhraní .NET Core, můžete si stáhnout a nainstalovat verzi 2,2 z <https://dotnet.microsoft.com/download>.
 
 Můžete přidat podporu Docker při vytváření projektu nebo následně, abyste mohli projekt kdykoli "ukotvovat". Chcete-li přidat podporu Docker po vytvoření projektu, klikněte pravým tlačítkem myši na uzel projektu v Průzkumník řešení a v místní nabídce vyberte **Přidat** > **podporu Docker** .
 

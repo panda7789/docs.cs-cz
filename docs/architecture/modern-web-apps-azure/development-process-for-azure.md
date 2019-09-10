@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: dcd2616cd5638aa712c11e370d35111b248e88ec
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 830271d76e5a87ed782d81fa9491328c580f0f87
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374053"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849585"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
@@ -36,7 +36,7 @@ Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému
 
 Rozhraní příkazového **řádku Visual Studio Code a dotnet** (Nástroje pro různé platformy pro Mac, Linux a Windows). Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Microsoft Visual Studio kód a dotnet CLI. Tyto produkty poskytují jednoduché a přesto robustní prostředí, které zjednodušuje pracovní postup vývojářů. Kromě toho Visual Studio Code podporuje rozšíření pro jazyk\# C a vývoj pro web a poskytuje IntelliSense a zástupce úloh v editoru.
 
-[Stáhnout .NET Core SDK](https://www.microsoft.com/net/download/core)
+[Stáhnout .NET Core SDK](https://dotnet.microsoft.com/download)
 
 [Stáhnout Visual Studio Code](https://code.visualstudio.com/download)
 
