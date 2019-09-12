@@ -76,7 +76,7 @@ Když se připojíte k Azure SQL Database nebo Azure SQL Data Warehouse a zadát
 > Ověřování systému Windows má před SQL Server přihlášení přednost. Pokud zadáte obě integrované zabezpečení = true i uživatelské jméno a heslo, bude se ignorovat uživatelské jméno a heslo a použije se ověřování systému Windows.  
 
 ### <a name="connect-to-a-named-instance-of-sql-server"></a>Připojení k pojmenované instanci SQL Server
-Pro připojení k pojmenované instanci SQL Server použijte syntaxi *název serveru \* .  
+Pro připojení k pojmenované instanci SQL Server použijte syntaxi *název serveru* .  
   
 ```  
 Data Source=MySqlServer\MSSQL1;"  
