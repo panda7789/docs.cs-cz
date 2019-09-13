@@ -24,7 +24,7 @@
               href: keywords/char.md
             - name: enum
               href: keywords/enum.md
-            - name: 'struct '
+            - name: struct
               href: keywords/struct.md
         - name: Typy odkazů
           items:
@@ -315,9 +315,9 @@
     - name: '?: – operátor'
       href: operators/conditional-operator.md
       displayName: 'conditional, ternary, ref'
-    - name: '?? – operátor'
+    - name: '?? a ??= – operátory'
       href: operators/null-coalescing-operator.md
-      displayName: null-coalescing
+      displayName: 'null-coalescing, assignment'
     - name: => – operátor
       href: operators/lambda-operator.md
       displayName: lambda
@@ -555,7 +555,7 @@
       href: ../../../_csharplang/spec/unsafe-code.md
     - name: Komentáře dokumentace
       href: ../../../_csharplang/spec/documentation-comments.md
-- name: 'Návrhy jazyka C#7.0'
+- name: 'Návrhy specifikace C# 7.0'
   items:
     - name: Porovnávání vzorů
       href: ../../../_csharplang/proposals/csharp-7.0/pattern-matching.md
@@ -569,7 +569,7 @@
       href: ../../../_csharplang/proposals/csharp-7.0/binary-literals.md
     - name: Oddělovače číslic
       href: ../../../_csharplang/proposals/csharp-7.0/digit-separators.md
-- name: 'Návrhy jazyka C#7.1'
+- name: 'Návrhy specifikace C# 7.1'
   items:
     - name: Asynchronní metoda main
       href: ../../../_csharplang/proposals/csharp-7.1/async-main.md
@@ -579,7 +579,7 @@
       href: ../../../_csharplang/proposals/csharp-7.1/infer-tuple-names.md
     - name: Porovnávání vzorů s obecnými typy
       href: ../../../_csharplang/proposals/csharp-7.1/generics-pattern-match.md
-- name: 'Návrhy jazyka C#7.2'
+- name: 'Návrhy specifikace C# 7.2'
   items:
     - name: Odkazy jen pro čtení
       href: ../../../_csharplang/proposals/csharp-7.2/readonly-ref.md
@@ -593,7 +593,7 @@
       href: ../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
     - name: Úvodní oddělovač číslic
       href: ../../../_csharplang/proposals/csharp-7.2/leading-separator.md
-- name: 'Návrhy jazyka C#7.3'
+- name: 'Návrhy specifikace C# 7.3'
   items:
     - name: Omezení obecného typu unmanaged
       href: ../../../_csharplang/proposals/csharp-7.3/blittable.md
@@ -613,7 +613,7 @@
       href: ../../../_csharplang/proposals/csharp-7.3/tuple-equality.md
     - name: Vylepšení kandidátů přetížení
       href: ../../../_csharplang/proposals/csharp-7.3/improved-overload-candidates.md
-- name: 'Návrhy jazyka C#8.0'
+- name: 'Návrhy specifikace C# 8.0'
   items:
     - name: Odkazové typy s možnou hodnotou null – návrh
       href: ../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
@@ -621,6 +621,8 @@
       href: ../../../_csharplang/proposals/csharp-8.0/nullable-reference-types-specification.md
     - name: Rekurzivní porovnávání vzorů
       href: ../../../_csharplang/proposals/csharp-8.0/patterns.md
+    - name: Výchozí členové rozhraní
+      href: ../../../_csharplang/proposals/csharp-8.0/default-interface-methods.md
     - name: Asynchronní streamy
       href: ../../../_csharplang/proposals/csharp-8.0/async-streams.md
     - name: Rozsahy
@@ -629,3 +631,5 @@
       href: ../../../_csharplang/proposals/csharp-8.0/using.md
     - name: Přiřazení sloučení s hodnotou null
       href: ../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
+    - name: Členy instance Readonly
+      href: ../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
