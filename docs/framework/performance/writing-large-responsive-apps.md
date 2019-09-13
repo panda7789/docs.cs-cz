@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 234c8a1f57af4030186afd48f727621713531b17
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 916523acf1d270830a2cb1fb5ae50e26d055404c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915543"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927017"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zlepšení výkonu rozsáhlých aplikací .NET Framework, nebo aplikací, které zpracovávají velké objemy dat, jako jsou soubory nebo databáze. Tyto tipy přicházejí z přepisování kompilátorů C# a Visual Basic ve spravovaném kódu a tento článek obsahuje několik reálných příkladů z C# kompilátoru. 
@@ -280,7 +280,7 @@ Jazykově integrovaný dotaz (LINQ), ve spojení s lambda výrazy, je příklade
   
  **Příklad 5: Výrazy lambda, seznam\<T > a IEnumerable\<T >**  
   
- V tomto příkladu se používá [kód jazyka LINQ a funkčního stylu](https://blogs.msdn.com/b/charlie/archive/2007/01/26/anders-hejlsberg-on-linq-and-functional-programming.aspx) k nalezení symbolu v modelu kompilátoru s daným názvem řetězec:  
+ V tomto příkladu se používá [kód jazyka LINQ a funkčního stylu](https://blogs.msdn.microsoft.com/charlie/2007/01/27/anders-hejlsberg-on-linq-and-functional-programming/) k nalezení symbolu v modelu kompilátoru s daným názvem řetězec:  
   
 ```csharp  
 class Symbol {  
@@ -304,7 +304,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- V prvním řádku se [výraz](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` lambda [zavře nad](https://blogs.msdn.com/b/ericlippert/archive/2003/09/17/53028.aspx) místní proměnnou `name`. To znamená, že kromě přidělení objektu delegáta, který [](../../csharp/language-reference/keywords/delegate.md) `predicate` obsahuje, kód přiděluje statickou třídu pro uchování prostředí, které zachycuje hodnotu `name`. Kompilátor generuje kód podobný následujícímu:  
+ V prvním řádku se [výraz](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` lambda [zavře nad](https://blogs.msdn.microsoft.com/ericlippert/2003/09/17/what-are-closures/) místní proměnnou `name`. To znamená, že kromě přidělení objektu [delegáta](../../csharp/language-reference/keywords/delegate.md) , který `predicate` obsahuje, kód přiděluje statickou třídu pro uchování prostředí, které zachycuje hodnotu `name`. Kompilátor generuje kód podobný následujícímu:  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  

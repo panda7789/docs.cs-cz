@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce16365f8aa9975a6ccb26415a6d091f65e1eef2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ea61b3abf920a5261933f56c71011b50bcd52bb2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943847"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927102"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s skvělým výkonem, měli byste navrhovat a plánovat výkon stejně, jako byste navrhli jakoukoli jinou funkci aplikace. Pomocí nástrojů poskytovaných společností Microsoft můžete měřit výkon vaší aplikace a v případě potřeby provádět vylepšení využití paměti, propustnosti kódu a odezvy. Toto téma obsahuje seznam nástrojů pro analýzu výkonu, které poskytuje společnost Microsoft, a obsahuje odkazy na další témata, která se týkají výkonu pro konkrétní oblasti vývoje aplikací.  
@@ -34,7 +34,7 @@ Pokud chcete vytvářet aplikace s skvělým výkonem, měli byste navrhovat a p
 |----------|-----------------|  
 |Analýza výkonu sady Visual Studio|Slouží k analýze využití CPU vašich .NET Framework aplikací, které budou nasazeny na počítačích s operačním systémem Windows.<br /><br /> Tento nástroj je k dispozici v nabídce **ladění** v aplikaci Visual Studio po otevření projektu. Další informace najdete v tématu [prohlížeč výkonu](/visualstudio/profiling/performance-explorer). **Poznámka:**  Při Windows Phone cílení na Windows Phone použít analýzu aplikací (viz další řádek).|  
 |Windows Phone analýza aplikace|Pomocí nástroje můžete analyzovat kapacitu procesoru a paměti, rychlost přenosu dat v síti, rychlost odezvy aplikace a spotřebu energie ve vašich aplikacích Windows Phone.<br /><br /> Tento nástroj je k dispozici v nabídce **ladění** pro projekt Windows Phone v sadě Visual Studio po instalaci [sady Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773). Další informace najdete v tématu [profilace aplikace pro Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj215908(v=vs.105)).|  
-|[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Slouží k identifikaci potíží s výkonem souvisejících s PROCESORem a pamětí. Tento nástroj používá trasování událostí pro Windows (ETW) a rozhraní API pro profilaci CLR k zajištění pokročilé paměti a vyšetřování procesoru a také informace o uvolňování paměti a kompilaci JIT. Další informace o tom, jak používat PerfView, najdete v kurzu a souborech s nápovědu, které jsou součástí aplikace, [výukových kurzů 9 pro video](https://channel9.msdn.com/Series/PerfView-Tutorial)a [blogových příspěvků](https://blogs.msdn.com/b/vancem/archive/tags/perfview/).<br /><br /> Problémy týkající se paměti najdete v tématu [použití PerfView pro vyšetřování paměti](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
+|[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Slouží k identifikaci potíží s výkonem souvisejících s PROCESORem a pamětí. Tento nástroj používá trasování událostí pro Windows (ETW) a rozhraní API pro profilaci CLR k zajištění pokročilé paměti a vyšetřování procesoru a také informace o uvolňování paměti a kompilaci JIT. Další informace o tom, jak používat PerfView, najdete v kurzu a souborech s nápovědu, které jsou součástí aplikace, [výukových kurzů 9 pro video](https://channel9.msdn.com/Series/PerfView-Tutorial)a [blogových příspěvků](https://blogs.msdn.microsoft.com/vancem/tag/perfview/).<br /><br /> Problémy týkající se paměti najdete v tématu [použití PerfView pro vyšetřování paměti](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
 |[Analyzátor výkonu systému Windows](https://www.microsoft.com/download/details.aspx?id=30652)|Slouží k určení celkového výkonu systému, jako je například paměť a úložiště vaší aplikace, když je na jednom počítači spuštěno více aplikací. Tento nástroj je k dispozici na webu Download Center jako součást sady Windows Assessment and Deployment Kit (ADK) [!INCLUDE[win8](../../../includes/win8-md.md)]pro. Další informace najdete v tématu [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|  
   
 ### <a name="event-tracing-for-windows-etw"></a>Trasování událostí pro Windows (ETW)  

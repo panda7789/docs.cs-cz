@@ -2,12 +2,12 @@
 title: Aktivace založená na konfiguraci v IIS a WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-ms.openlocfilehash: f4de4aff2fbe6b8e82dc3d6523f492d06494c79e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5b06f474d26b80f955b1508f01da83448a8708a3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69909773"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928770"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
 
@@ -31,6 +31,7 @@ Aktivace na základě konfigurace přebírá metadata, která se používají k 
  S tímto souborem v souboru Web. config můžete umístit zdrojový kód služby do adresáře App_Code aplikace nebo sestavení se stavem v adresáři bin aplikace.
 
 > [!NOTE]
+>
 > - Při použití aktivace na základě konfigurace není podporován vložený kód v souborech. svc.
 > - Atribut musí být nastaven na relativní adresu, například "\<podadresář >/Service.svc" nebo "~/\<sub-Directory/Service. svc". `relativeAddress`
 > - Výjimka konfigurace je vyvolána, pokud zaregistrujete relativní adresu, která nemá známou příponu přidruženou ke službě WCF.

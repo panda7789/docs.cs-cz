@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d704702e74b5f7d4a315bd14a467296245f90257
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32255c988397853c4b38e4ab723c7261a8999899
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046490"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929219"
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
 
@@ -53,8 +53,7 @@ Tento návod obsahuje následující oddíly:
 
 ## <a name="creating-the-console-application"></a>Vytvoření konzolové aplikace
 
-<a name="consoleApp"></a>
-1. V aplikaci Visual Studio vytvořte projekt konzolové C# **aplikace** pro Visual nebo Visual Basic. V tomto dokumentu se projekt jmenuje `DataflowBatchDatabase`.
+1. V aplikaci Visual Studio vytvořte projekt C# **konzolové aplikace** pro Visual nebo Visual Basic. V tomto dokumentu se projekt jmenuje `DataflowBatchDatabase`.
 
 2. V projektu přidejte odkaz na System. data. SqlServerCe. dll a odkaz na System. Threading. Tasks. Dataflow. dll.
 

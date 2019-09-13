@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 1bdbe31e16408da2d7dfe17941c90a022f3d8c32
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: bc1dacdad436cc5384bca4bbce224acc18d69201
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107146"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929435"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -21,6 +21,7 @@ Naučte se používat Tvůrce modelů ML.NET k vytvoření regresního modelu ()
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > - Příprava a pochopení dat
 > - Zvolit scénář
 > - Načtení dat
@@ -190,6 +191,7 @@ Pokud potřebujete odkazovat na vygenerované projekty později v jiném řešen
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > - Příprava a pochopení dat
 > - Zvolit scénář
 > - Načtení dat

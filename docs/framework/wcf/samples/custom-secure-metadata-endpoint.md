@@ -2,12 +2,12 @@
 title: Vlastní zabezpečený koncový bod metadat
 ms.date: 03/30/2017
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
-ms.openlocfilehash: 072d2551acaae87904bb12c5e8edafa788674322
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32e6e0238637f9c2ef6814ace35ccb0b78110b60
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045127"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928685"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Vlastní zabezpečený koncový bod metadat
 Tato ukázka předvádí, jak implementovat službu pomocí zabezpečeného koncového bodu metadat, který používá jednu z vazeb mimo Metadata Exchange a jak nakonfigurovat nástroj pro nástroj pro dokládání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klienty, aby načetl metadata z takového koncový bod metadat K dispozici jsou dvě systémové vazby pro vystavování koncových bodů metadat: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá k vystavení koncového bodu metadat přes protokol HTTP nezabezpečeným způsobem. mexHttpsBinding se používá k vystavení koncového bodu metadat přes HTTPS zabezpečeným způsobem. Tento příklad ukazuje, jak vystavit zabezpečený koncový bod <xref:System.ServiceModel.WSHttpBinding>metadat pomocí. Tuto možnost byste měli udělat, když chcete změnit nastavení zabezpečení vazby, ale nechcete používat protokol HTTPS. Pokud použijete mexHttpsBinding, váš koncový bod metadat bude zabezpečený, ale neexistuje žádný způsob, jak upravit nastavení vazby.  
@@ -59,7 +59,7 @@ Tato ukázka předvádí, jak implementovat službu pomocí zabezpečeného konc
 ## <a name="svcutil-client"></a>Klient Svcutil  
  Při použití výchozí vazby k hostování `IMetadataExchange` koncového bodu můžete spustit Svcutil. exe s adresou tohoto koncového bodu:  
   
-```  
+```console  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -77,7 +77,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  Název koncového bodu musí být název schématu adresy, na které se hostují metadata, a kontrakt koncového bodu musí být `IMetadataExchange`. Proto při spuštění Svcutil. exe s příkazovým řádkem, jako je například následující:  
   
-```  
+```console  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -85,7 +85,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  Aby Svcutil. exe mohl vybrat konfiguraci v Svcutil. exe. config, Svcutil. exe musí být ve stejném adresáři jako konfigurační soubor. V důsledku toho je nutné zkopírovat Svcutil. exe z jeho umístění instalace do adresáře, který obsahuje soubor Svcutil. exe. config. Pak z tohoto adresáře spusťte následující příkaz:  
   
-```  
+```console  
 .\svcutil.exe http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -96,7 +96,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  Stejné informace o vazbách a certifikátech, které se objevily v souboru Svcutil. exe. config, `MetadataExchangeClient`lze zadat imperativně na těchto počítačích:  
   
-```  
+```csharp  
 // Specify the Metadata Exchange binding and its security mode  
 WSHttpBinding mexBinding = new WSHttpBinding(SecurityMode.Message);  
 mexBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;  
@@ -105,27 +105,27 @@ mexBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certifi
 MetadataExchangeClient mexClient = new MetadataExchangeClient(mexBinding);  
 mexClient.SoapCredentials.ClientCertificate.SetCertificate(    StoreLocation.CurrentUser, StoreName.My,  
     X509FindType.FindBySubjectName, "client.com");  
-mexClient.SoapCredentials.ServiceCertificate.Authentication.    CertificateValidationMode =    X509CertificateValidationMode.PeerOrChainTrust;  
+mexClient.SoapCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.PeerOrChainTrust;  
 mexClient.SoapCredentials.ServiceCertificate.SetDefaultCertificate(    StoreLocation.CurrentUser, StoreName.TrustedPeople,  
     X509FindType.FindBySubjectName, "localhost");  
 ```  
   
  Po `mexClient` nakonfigurování můžeme vypsat kontrakty, které vás zajímají, a použít `MetadataResolver` k načtení seznamu koncových bodů s těmito kontrakty:  
   
-```  
+```csharp  
 // The contract we want to fetch metadata for  
-Collection<ContractDescription> contracts =    new Collection<ContractDescription>();  
-ContractDescription contract =    ContractDescription.GetContract(typeof(ICalculator));  
+Collection<ContractDescription> contracts = new Collection<ContractDescription>();  
+ContractDescription contract = ContractDescription.GetContract(typeof(ICalculator));  
 contracts.Add(contract);  
 // Find endpoints for that contract  
-EndpointAddress mexAddress = new    EndpointAddress(ConfigurationManager.AppSettings["mexAddress"]);  
-ServiceEndpointCollection endpoints =    MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
+EndpointAddress mexAddress = new EndpointAddress(ConfigurationManager.AppSettings["mexAddress"]);  
+ServiceEndpointCollection endpoints = MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
 ```  
   
  Nakonec můžeme použít informace z těchto koncových bodů k inicializaci vazby a adresy `ChannelFactory` použité k vytvoření kanálů pro komunikaci s koncovými body aplikace.  
   
-```  
-ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
+```csharp  
+ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
 ```  
   
  Klíčovým bodem tohoto ukázkového klienta je Ukázat, že pokud používáte `MetadataResolver`, a musíte zadat vlastní vazby nebo chování pro komunikaci výměny metadat, můžete `MetadataExchangeClient` použít k zadání těchto vlastních nastavení.  
@@ -134,7 +134,7 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 #### <a name="to-run-the-sample-on-the-same-machine"></a>Spuštění ukázky na stejném počítači  
   

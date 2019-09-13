@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9546ddd12decb7457f4ff890658e2725a8b9dabe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 74011a4c70cc8f7da3973698a43b1e97cffb9f9b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941741"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927071"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
 .NET Native významně vylepšuje dobu spouštění aplikací. Toto vylepšení je zvláště patrné na přenosném zařízení s nízkou spotřebou a složitých aplikacích. Toto téma vám pomůže začít se základní instrumentací potřebnou k měření tohoto vylepšení při spouštění.  
@@ -54,14 +54,14 @@ ms.locfileid: "69941741"
  Když je aplikace instrumentovaná, jste připraveni shromáždit události.  
   
 ## <a name="gathering-events-with-perfview"></a>Shromažďování událostí pomocí PerfView  
- PerfView využívá události trasování událostí pro Windows, které vám pomůžou dělat nejrůznější zkoumání výkonu v aplikaci. Obsahuje taky konfiguraci grafického uživatelského rozhraní, která umožňuje zapnout nebo vypnout protokolování pro různé typy událostí. PerfView je bezplatný nástroj, který je možné stáhnout z webu [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=28567). Další informace najdete v výukových [videech k PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial).  
+ PerfView využívá události trasování událostí pro Windows, které vám pomůžou dělat nejrůznější zkoumání výkonu v aplikaci. Obsahuje taky konfiguraci grafického uživatelského rozhraní, která umožňuje zapnout nebo vypnout protokolování pro různé typy událostí. PerfView je bezplatný nástroj, který je možné stáhnout z webu [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=28567). Další informace najdete v [výukových videech k PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial).  
   
 > [!NOTE]
-> PerfView se nedá použít ke shromažďování událostí v systémech ARM. K shromažďování událostí na systémy ARM použijte Windows Performance Record (WPR). Další informace najdete v [příspěvku na blogu Vance Morrison](https://blogs.msdn.com/b/vancem/archive/2012/12/19/collecting-etw-perfview-data-on-an-windows-rt-winrt-arm-surface-device.aspx).  
+> PerfView se nedá použít ke shromažďování událostí v systémech ARM. K shromažďování událostí na systémy ARM použijte Windows Performance Record (WPR). Další informace najdete v [příspěvku na blogu Vance Morrison](https://blogs.msdn.microsoft.com/vancem/2012/12/19/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device/).  
   
  Můžete také vyvolat PerfView z příkazového řádku. Pokud chcete protokolovat pouze události od poskytovatele, otevřete okno příkazového řádku a zadejte příkaz:  
   
-```  
+```console
 perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFile   
 ```  
   
@@ -95,7 +95,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Vyberte všechny události uvedené v levém podokně (CTRL-A) a stiskněte klávesu **ENTER** . Nyní byste měli být schopni zobrazit časová razítka z každé události. Tato časová razítka jsou relativní ke spuštění trasování, takže je nutné odečíst čas každé události od počátečního času procesu k identifikaci uplynulého času od spuštění. Použijete-li k výběru dvou časových razítek kombinaci kláves Ctrl + kliknutí, uvidíte rozdíl mezi nimi ve stavovém řádku v dolní části stránky. To usnadňuje zobrazení uplynulého času mezi všemi dvěma událostmi v zobrazení (včetně spuštění procesu). Můžete otevřít místní nabídku pro zobrazení a vybrat z řady užitečných možností, jako je například export do souborů CSV nebo otevření aplikace Microsoft Excel pro uložení nebo zpracování dat.  
   
- Zopakováním postupu jak pro původní aplikaci, tak pro verzi, kterou jste vytvořili pomocí řetězce nástroje .NET Native, můžete porovnat rozdíl ve výkonu.   Aplikace .NET Native obecně začíná rychleji než non-.NET nativní aplikace. Pokud vás zajímá prozkoumá hlouběji, PerfView může také identifikovat části vašeho kódu, které se přebírají nejvíce času. Další informace najdete v výukových [kurzech k PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) nebo v [záznamu blogu pro Vance Morrison](https://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
+ Zopakováním postupu jak pro původní aplikaci, tak pro verzi, kterou jste vytvořili pomocí řetězce nástroje .NET Native, můžete porovnat rozdíl ve výkonu.   Aplikace .NET Native obecně začíná rychleji než non-.NET nativní aplikace. Pokud vás zajímá prozkoumá hlouběji, PerfView může také identifikovat části vašeho kódu, které se přebírají nejvíce času. Další informace najdete v [výukových kurzech k PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) nebo v [záznamu blogu pro Vance Morrison](https://blogs.msdn.microsoft.com/vancem/2011/12/28/publication-of-the-perfview-performance-analysis-tool/).  
   
 ## <a name="see-also"></a>Viz také:
 

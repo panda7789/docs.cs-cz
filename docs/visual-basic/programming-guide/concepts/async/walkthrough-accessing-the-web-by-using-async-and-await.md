@@ -2,12 +2,12 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 225046992badba7013193163a191dbf068f0da6a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 72132c4884f3d9bc94de447a122354b3e0dc2ee5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106966"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928453"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 
@@ -22,6 +22,7 @@ Pokud nechcete sestavovat aplikace sami, můžete si stáhnout "asynchronní vzo
 V tomto návodu provedete následující úlohy:
 
 > [!div class="checklist"]
+>
 > - [Vytvoření aplikace WPF](#create-a-wpf-application)
 > - [Návrh jednoduchého MainWindow WPF](#design-a-simple-wpf-mainwindow)
 > - [Přidat odkaz](#add-a-reference)

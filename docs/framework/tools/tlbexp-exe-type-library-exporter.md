@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23bb88127875e0e608c8e8de54ba669f84aa1da5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f990c5194c2e5dc1422aab96c7608c019ae9855b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937988"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894760"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportér knihovny typů)
 Exportér knihovny typů generuje knihovny typů, které popisují typy definované v sestavení Common Language Runtime.  
@@ -26,7 +26,7 @@ Exportér knihovny typů generuje knihovny typů, které popisují typy definova
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 tlbexp assemblyName [options]  
 ```  
   
@@ -74,14 +74,14 @@ tlbexp assemblyName [options]
   
  Použijete <xref:System.Runtime.InteropServices.MarshalAsAttribute> -li atribut k <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType> určení hodnoty `VT_UNKOWN` nebo `VT_DISPATCH`, Tlbexp. exe ignoruje jakékoli následné použití <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType> pole. Například při následujících podpisech:  
   
-```  
+```csharp
 [return:MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VarEnum.VT_UNKNOWN, SafeArrayUserDefinedSubType=typeof(ConsoleKeyInfo))] public Array StructUnkSafe(){return null;}  
 [return:MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VarEnum.VT_DISPATCH, SafeArrayUserDefinedSubType=typeof(ConsoleKeyInfo))] public Array StructDispSafe(){return null;}  
 ```  
   
  je vygenerována následující knihovna typů:  
   
-```  
+```cpp 
 [id(0x60020004)]  
 HRESULT StructUnkSafe([out, retval] SAFEARRAY(IUnknown*)* pRetVal);  
 [id(0x60020005)]  
@@ -99,13 +99,13 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
 ## <a name="examples"></a>Příklady  
  Následující příkaz vygeneruje knihovnu typů se stejným názvem, jako má sestavení nalezené v `myTest.dll`.  
   
-```  
+```console  
 tlbexp myTest.dll  
 ```  
   
  Následující příkaz vygeneruje knihovnu typů s názvem `clipper.tlb`.  
   
-```  
+```console  
 tlbexp myTest.dll /out:clipper.tlb  
 ```  
   
@@ -113,19 +113,19 @@ tlbexp myTest.dll /out:clipper.tlb
   
  Nejprve pomocí nástroje Tlbimp. exe importujte knihovnu `myLib.tlb` typů a uložte ji jako. `myLib.dll`  
   
-```  
+```console  
 tlbimp myLib.tlb /out:myLib.dll  
 ```  
   
  Následující příkaz použije C# kompilátor k zkompilování `Sample.dll,` odkazů `myLib.dll` , které byly vytvořeny v předchozím příkladu.  
   
-```  
+```console  
 CSC Sample.cs /reference:myLib.dll /out:Sample.dll  
 ```  
   
  Následující příkaz vygeneruje knihovnu typů pro `Sample.dll` tyto odkazy. `myLib.dll`  
   
-```  
+```console  
 tlbexp Sample.dll  
 ```  
   

@@ -4,20 +4,20 @@ description: Glosář důležitých termínů strojového učení, které jsou u
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: 1c979d2c4567285146ab87f359116efb506815a1
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 4d4bb80c6582facbcb11664309fde230bcfa4e7b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710539"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929271"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glosář strojového učení s důležitými podmínkami
 
 Následující seznam je kompilace důležitých podmínek strojového učení, které jsou užitečné při sestavování vlastních modelů v ML.NET.
 
-## <a name="accuracy"></a>Údajů
+## <a name="accuracy"></a>údajů
 
-V [klasifikaci](#classification)je přesnost počet správně klasifikovaných položek dělený celkovým počtem položek v sadě testů. Rozsahy od 0 (nejméně přesný) po 1 (nejpřesnější). Přesnost je jednou ze zkušebních metrik výkonu modelu. Zvažte, jestli je ve [](#precision)spojení s přesností, odvoláním a [F-skore](#f-score). [](#recall)
+V [klasifikaci](#classification)je přesnost počet správně klasifikovaných položek dělený celkovým počtem položek v sadě testů. Rozsahy od 0 (nejméně přesný) po 1 (nejpřesnější). Přesnost je jednou ze zkušebních metrik výkonu modelu. Zvažte, jestli je ve spojení s [přesností](#precision), [odvoláním](#recall)a [F-skore](#f-score).
 
 ## <a name="area-under-the-curve-auc"></a>Oblast pod křivkou (AUC)
 
@@ -39,7 +39,7 @@ Každý úkol strojového učení (binární klasifikace, regrese, řazení atd.
 
 ## <a name="classification"></a>Klasifikace
 
-Když se data použijí pro předpověď kategorie, je [pod dohledem úlohy strojového učení](#supervised-machine-learning) označována jako klasifikace. [Binární klasifikace](#binary-classification) odkazuje na předpověď pouze dvou kategorií (například klasifikaci obrázku jako obrázku "Cat" nebo "pes"). [Klasifikace](#multiclass-classification) s více třídami odkazuje na předpověď více kategorií (například při klasifikaci obrázku jako obrázku konkrétního druhu pes).
+Když se data použijí pro předpověď kategorie, je [pod dohledem úlohy strojového učení](#supervised-machine-learning) označována jako klasifikace. [Binární klasifikace](#binary-classification) odkazuje na předpověď pouze dvou kategorií (například klasifikaci obrázku jako obrázku "Cat" nebo "pes"). [Klasifikace s více třídami](#multiclass-classification) odkazuje na předpověď více kategorií (například při klasifikaci obrázku jako obrázku konkrétního druhu pes).
 
 ## <a name="coefficient-of-determination"></a>Koeficient určení
 
@@ -48,6 +48,7 @@ V [regresi](#regression)je vyhodnocena metrika, která indikuje, jak dobře data
 ## <a name="data"></a>Data
 
 Data jsou centrálně k libovolné aplikaci strojového učení. V ml.NET data jsou reprezentována <xref:Microsoft.ML.IDataView> objekty. Objekty zobrazení dat:
+
 - jsou tvořeny sloupci a řádky
 - jsou vyhodnoceny jako laxně vytvářená, které načítají data pouze při volání operace.
 - obsahuje schéma definující typ, formát a délku každého sloupce.
@@ -173,4 +174,4 @@ Transformátor transformuje jeden <xref:Microsoft.ML.IDataView> do jiného. Tran
 
 ## <a name="unsupervised-machine-learning"></a>Strojové učení bez dohledu
 
-Podtřídou strojového učení, ve kterém požadovaný model najde skrytou (nebo latentní) strukturu v datech. Mezi příklady patří clustering, modelování témat a snížení rozměru. Další informace najdete v článku o [výukovém kurzu](https://en.wikipedia.org/wiki/Unsupervised_learning) , který není pod dohledem na Wikipedii.
+Podtřídou strojového učení, ve kterém požadovaný model najde skrytou (nebo latentní) strukturu v datech. Mezi příklady patří clustering, modelování témat a snížení rozměru. Další informace najdete v článku o [výukovém kurzu, který není pod dohledem](https://en.wikipedia.org/wiki/Unsupervised_learning) na Wikipedii.

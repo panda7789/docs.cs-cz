@@ -2,12 +2,12 @@
 title: Základní služba AJAX
 ms.date: 03/30/2017
 ms.assetid: d66d0c91-0109-45a0-a901-f3e4667c2465
-ms.openlocfilehash: 8029549ea348ebc8337bcb649b8b0d3b1f8426b9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4705070c7f7f72db835073b30c5bda115a45f179
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045772"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892699"
 ---
 # <a name="basic-ajax-service"></a>Základní služba AJAX
 
@@ -32,9 +32,7 @@ public interface ICalculator
 
 Ukázkový soubor. svc používá <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, který ke službě <xref:System.ServiceModel.Description.WebScriptEndpoint> přidá standardní koncový bod. Koncový bod je nakonfigurovaný na prázdné adrese relativní vzhledem k souboru. svc. To znamená, že adresa služby je `http://localhost/ServiceModelSamples/service.svc`bez dalších přípon, než je název operace.
 
-```svc
-<%@ServiceHost language="C#" Debug="true" Service="Microsoft.Samples.SimpleAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>
-```
+`<%@ServiceHost language="C#" Debug="true" Service="Microsoft.Samples.SimpleAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>`
 
 <xref:System.ServiceModel.Description.WebScriptEndpoint> Je předem nakonfigurovaný tak, aby služba byla přístupná z klientské stránky ASP.NET AJAX. Následující oddíl v souboru Web. config lze použít k provedení dalších změn konfigurace koncového bodu. Tuto možnost lze odebrat, pokud nejsou vyžadovány žádné další změny.
 

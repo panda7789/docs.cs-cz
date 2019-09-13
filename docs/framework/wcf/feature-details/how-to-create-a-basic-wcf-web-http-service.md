@@ -5,69 +5,69 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-ms.openlocfilehash: d2d05e0c3bb24c44bf78dc41074b8759270cf49b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e9646235f9423f2a4df9cfe09a5e83a91dcdcace
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636517"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895187"
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>Postupy: Vytvoření základní webové služby HTTP WCF
 
-Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje webový koncový bod. Koncové body webové odesílat data XML nebo JSON, neexistuje žádný obálku protokolu SOAP. Toto téma ukazuje, jak vystavit takové koncový bod.
+Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje webový koncový bod. Webové koncové body odesílají data pomocí kódu XML nebo JSON, ale není k dispozici žádná obálka SOAP. Toto téma ukazuje, jak vystavit takový koncový bod.
 
 > [!NOTE]
-> Jediný způsob, jak zabezpečit webový koncový bod je zveřejnit přes HTTPS pomocí zabezpečení přenosu. Při použití zabezpečení na základě zpráv, informace o zabezpečení obvykle umístěny v záhlaví SOAP a protože zprávy odeslané do koncových bodů protokolu SOAP obsahovat žádné obálku protokolu SOAP, není nikde umístit informace o zabezpečení a musíte spoléhat na zabezpečení přenosu.
+> Jediným způsobem, jak zajistit zabezpečení webového koncového bodu, je jeho zpřístupnění prostřednictvím protokolu HTTPS pomocí zabezpečení přenosu. Při použití zabezpečení založeného na zprávách jsou informace o zabezpečení obvykle umístěny v hlavičkách SOAP a protože zprávy odeslané koncovým bodům bez protokolu SOAP neobsahují žádnou obálku SOAP, je nikde umístit informace o zabezpečení a musíte spoléhat na zabezpečení přenosu.
 
-## <a name="to-create-a-web-endpoint"></a>Chcete-li vytvořit webový koncový bod
+## <a name="to-create-a-web-endpoint"></a>Vytvoření webového koncového bodu
 
-1. Definování kontraktu služby pomocí rozhraní označené <xref:System.ServiceModel.ServiceContractAttribute>, <xref:System.ServiceModel.Web.WebInvokeAttribute> a <xref:System.ServiceModel.Web.WebGetAttribute> atributy.
+1. Definujte kontrakt služby pomocí rozhraní označeného <xref:System.ServiceModel.ServiceContractAttribute> <xref:System.ServiceModel.Web.WebInvokeAttribute> <xref:System.ServiceModel.Web.WebGetAttribute> atributem a.
 
      [!code-csharp[htBasicService#0](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#0)]
      [!code-vb[htBasicService#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#0)]
 
     > [!NOTE]
-    > Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje příspěvek volání operace. Můžete však určit metodu HTTP (například HEAD, PUT nebo DELETE) pro mapování na operaci zadáním "metoda =" parametr. <xref:System.ServiceModel.Web.WebGetAttribute> nemá "metoda =" parametr a jen mapy GET volání operace služby.
+    > Ve výchozím nastavení <xref:System.ServiceModel.Web.WebInvokeAttribute> mapuje post volání operace. Můžete však zadat metodu HTTP (například HEAD, PUT nebo DELETE) k mapování na operaci zadáním parametru "Method =". <xref:System.ServiceModel.Web.WebGetAttribute>nemá parametr "Method =" a pouze mapuje volání GET na operaci služby.
 
-2. Implementace kontraktu služby.
+2. Implementujte kontrakt služby.
 
      [!code-csharp[htBasicService#1](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#1)]
      [!code-vb[htBasicService#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#1)]
 
-## <a name="to-host-the-service"></a>K hostování služby
+## <a name="to-host-the-service"></a>Hostování služby
 
-1. Vytvoření <xref:System.ServiceModel.Web.WebServiceHost> objektu.
+1. <xref:System.ServiceModel.Web.WebServiceHost> Vytvořte objekt.
 
      [!code-csharp[htBasicService#2](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#2)]
      [!code-vb[htBasicService#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#2)]
 
-2. Přidat <xref:System.ServiceModel.Description.ServiceEndpoint> s <xref:System.ServiceModel.Description.WebHttpBehavior>.
+2. <xref:System.ServiceModel.Description.ServiceEndpoint> Přidejte<xref:System.ServiceModel.Description.WebHttpBehavior>s.
 
      [!code-csharp[htBasicService#3](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#3)]
      [!code-vb[htBasicService#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#3)]
 
     > [!NOTE]
-    > Pokud nemůžete přidat koncový bod, <xref:System.ServiceModel.Web.WebServiceHost> automaticky vytvoří výchozí koncový bod. <xref:System.ServiceModel.Web.WebServiceHost> také přidá <xref:System.ServiceModel.Description.WebHttpBehavior> a zakáže stránky s nápovědou HTTP a funkci GET webové služby WSDL (Description Language), takže koncový bod metadat nebude v konfliktu s výchozí koncový bod HTTP.
+    > Pokud koncový bod nepřidáte, <xref:System.ServiceModel.Web.WebServiceHost> automaticky vytvoří výchozí koncový bod. <xref:System.ServiceModel.Web.WebServiceHost>také přidá <xref:System.ServiceModel.Description.WebHttpBehavior> a zakáže stránku Nápověda http a funkci get jazyka WSDL (Web Services Description Language), takže koncový bod metadat nekoliduje s výchozím koncovým bodem http.
     >
-    >  Přidat koncový bod-protokolu SOAP s adresou URL "" způsobí neočekávané chování při pokusu o volání operace v koncovém bodě. Důvodem je listen URI koncového bodu je stejný jako identifikátor URI na stránce nápovědy (stránka, která se zobrazí, když přejdete na základní adresa služby WCF).
+    >  Přidání koncového bodu bez protokolu SOAP s adresou URL "" způsobí neočekávané chování při pokusu o volání operace na koncovém bodu. Důvodem je, že identifikátor URI příposlechu koncového bodu je stejný jako identifikátor URI stránky s nápovědu (stránka, která se zobrazí při procházení k základní adrese služby WCF).
 
-     Můžete provést jednu z následujících akcí k tomu nedocházelo:
+     K tomu, abyste zabránili tomu, můžete provést jednu z následujících akcí:
 
-    - Vždycky zadejte neprázdný identifikátor URI pro koncový bod-protokolu SOAP.
+    - Vždy zadejte neprázdný identifikátor URI pro koncový bod, který není typu SOAP.
 
-    - Vypněte stránky s nápovědou. To lze provést následujícím kódem:
+    - Vypněte stránku s usnadněním. To lze provést pomocí následujícího kódu:
 
      [!code-csharp[htBasicService#4](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/snippets.cs#4)]
      [!code-vb[htBasicService#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/snippets.vb#4)]
 
-3. Otevření hostitele služby a počkejte, až uživatel stiskne klávesu ENTER.
+3. Otevřete hostitele služby a počkejte, dokud uživatel nestiskne klávesu ENTER.
 
      [!code-csharp[htBasicService#5](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/snippets.cs#5)]
      [!code-vb[htBasicService#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/snippets.vb#5)]
 
-     Tento příklad ukazuje, jak hostování stylu webové služby pomocí konzolové aplikace. Také můžete hostovat služby, v rámci služby IIS. Chcete-li to provést, zadejte <xref:System.ServiceModel.Activation.WebServiceHostFactory> třídy v souboru SVC, jak ukazuje následující kód.
+     Tato ukázka předvádí, jak hostovat službu webového stylu pomocí konzolové aplikace. Takovou službu můžete hostovat i v rámci služby IIS. Provedete to tak, <xref:System.ServiceModel.Activation.WebServiceHostFactory> že zadáte třídu v souboru. svc, jak ukazuje následující kód.
 
-    ```
+    ```text
     <%ServiceHost
         language=c#
         Debug="true"
@@ -75,42 +75,42 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
         Factory=System.ServiceModel.Activation.WebServiceHostFactory%>
     ```
 
-## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>K volání operací služby namapované k získání přístupu v aplikaci Internet Explorer
+## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Volání operací služby mapovaných na získání v aplikaci Internet Explorer
 
-1. Otevřete aplikaci Internet Explorer a zadejte "`http://localhost:8000/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresa služby (`http://localhost:8000/`), relativní adresu koncového bodu (""), operace služby k volání ("EchoWithGet") a otazník následovaný seznamem pojmenovaných parametrů oddělených ampersandem (&).
+1. Spusťte Internet Explorer a zadejte "`http://localhost:8000/EchoWithGet?s=Hello, world!`" a stiskněte klávesu ENTER. Adresa URL obsahuje základní adresu služby (`http://localhost:8000/`), relativní adresu koncového bodu (""), volanou operaci služby ("EchoWithGet") a otazník následovaný seznamem pojmenovaných parametrů oddělených ampersandem (&).
 
-## <a name="to-call-service-operations-in-code"></a>K volání operací služby v kódu
+## <a name="to-call-service-operations-in-code"></a>Volání operací služby v kódu
 
-1. Vytvoření instance <xref:System.ServiceModel.ChannelFactory%601> v rámci `using` bloku.
+1. Vytvoří instanci <xref:System.ServiceModel.ChannelFactory%601> `using` v rámci bloku.
 
      [!code-csharp[htBasicService#6](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#6)]
      [!code-vb[htBasicService#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#6)]
 
-2. Přidat <xref:System.ServiceModel.Description.WebHttpBehavior> ke koncovému bodu <xref:System.ServiceModel.ChannelFactory%601> volání.
+2. Přidejte <xref:System.ServiceModel.Description.WebHttpBehavior> do<xref:System.ServiceModel.ChannelFactory%601> koncového bodu volání.
 
      [!code-csharp[htBasicService#7](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#7)]
      [!code-vb[htBasicService#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#7)]
 
-3. Vytvoření kanálu a volání služby.
+3. Vytvořte kanál a zavolejte službu.
 
      [!code-csharp[htBasicService#8](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#8)]
      [!code-vb[htBasicService#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#8)]
 
-4. Zavřít <xref:System.ServiceModel.Web.WebServiceHost>.
+4. <xref:System.ServiceModel.Web.WebServiceHost>Zavřete.
 
      [!code-csharp[htBasicService#9](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#9)]
      [!code-vb[htBasicService#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#9)]
 
 ## <a name="example"></a>Příklad
 
-Následuje úplný výpis v tomto příkladu kódu.
+Následuje úplný výpis kódu pro tento příklad.
 
 [!code-csharp[htBasicService#10](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/service.cs#10)]
 [!code-vb[htBasicService#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/service.vb#10)]
 
 ## <a name="compiling-the-code"></a>Kompilování kódu
 
-Při kompilaci Service.cs reference System.ServiceModel.dll a System.ServiceModel.Web.dll.
+Při kompilaci Service.cs reference System. ServiceModel. dll a System. ServiceModel. Web. dll.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,68 +1,68 @@
 ---
-title: C# Správa verzí – Průvodce v C#
-description: Pochopení principu správy verzí v C# a .NET
+title: C#C# Průvodce správou verzí
+description: Informace o tom, jak funguje C# Správa verzí v prostředí a .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 9ba18f82ad83749d5333628bf4431a0282b0964f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bfad7abe6b2b5c6a19324656963a79212a317110
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706153"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926584"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C\#
 
-V tomto kurzu se dozvíte, jaké správy verzí znamená, že v rozhraní .NET. Dozvíte se víc i faktory vzít v úvahu při vytváření verzí knihovny, jakož i upgrade na novou verzi knihovny.
+V tomto kurzu se dozvíte, co znamená Správa verzí v .NET. Dozvíte se také o faktorech, které je potřeba vzít v úvahu při použití verze knihovny a upgradu na novou verzi knihovny.
 
-## <a name="authoring-libraries"></a>Vytváření knihovny
+## <a name="authoring-libraries"></a>Vytváření knihoven
 
-Jako vývojář, který byl vytvořen knihovny .NET pro veřejně přístupný, když jste většinu pravděpodobně byl v situacích, kdy máte zavádět nové aktualizace. Jak přejít o tomto procesu hrají podle musíte zajistit, že je jednoduchý přechod z existujícího kódu na novou verzi knihovny. Tady je několik věcí, které je třeba zvážit při vytváření nové vydané verze:
+Jako vývojář, který vytvořil knihovny .NET pro veřejné použití, jste pravděpodobně v situacích, kdy je nutné zavést nové aktualizace. Způsob, jakým se dozvíte o tomto procesu, záleží na tom, co potřebujete, abyste zajistili bezproblémové přechody stávajícího kódu na novou verzi vaší knihovny. Při vytváření nové verze je potřeba vzít v úvahu několik věcí:
 
-### <a name="semantic-versioning"></a>Semantic Versioning
+### <a name="semantic-versioning"></a>Sémantická verze
 
-[Sémantické správy verzí](https://semver.org/) (SemVer zkráceně) je zásady vytváření názvů u verze knihovny místo konkrétní verze události.
-V ideálním případě informací o verzi, poskytnete své knihovny by měly pomoci vývojářům zjistit informace o kompatibilitě s jejich projekty, které využívají starší verze, která stejné knihovny.
+[Sémantická verze](https://semver.org/) (SemVer pro krátké) je konvence pojmenování, která se používá ve verzích vaší knihovny k označení konkrétních událostí milníku.
+V ideálním případě informace o verzi vaší knihovny by vám měly pomáhat vývojářům určit kompatibilitu s jejich projekty, které využívají starší verze stejné knihovny.
 
-Nejzákladnější přístup k SemVer je formát 3 komponenty `MAJOR.MINOR.PATCH`, kde:
+Nejzákladnější přístup k SemVer je 3 formát `MAJOR.MINOR.PATCH`komponenty, kde:
 
-* `MAJOR` se zvýší, když provedete změny nekompatibilní rozhraní API
-* `MINOR` se zvýší, když přidáte funkci způsobem zpětně kompatibilní
-* `PATCH` se zvýší, když provedete zpětně kompatibilní opravy chyb
+* `MAJOR`se zvýší, když provedete nekompatibilní změny rozhraní API
+* `MINOR`se zvýší, když přidáváte funkce zpětně kompatibilním způsobem.
+* `PATCH`se zvýší, když provedete zpětně kompatibilní opravy chyb.
 
-Existují také způsoby, jak určit jiné scénáře, jako jsou předběžné verze atd. při použití informací o verzi na knihovny .NET.
+Existují také způsoby určení dalších scénářů, jako jsou předběžné verze verzí atd. při použití informací o verzi do knihovny .NET.
 
-### <a name="backwards-compatibility"></a>Zpětné kompatibility
+### <a name="backwards-compatibility"></a>Zpětná kompatibilita
 
-Jak vydáním nové verze knihovny zpětné kompatibility s předchozími verzemi bude pravděpodobně mezi hlavní priority.
-Zdroj kompatibilní s předchozí verzí, pokud kód, který závisí na předchozí verzi, při nové kompilaci neúspěchu v nové verzi je nová verze knihovny. Pokud aplikace, která závisí na předchozí verzi aplikace můžou bez rekompilace, pracovat s novou verzi, je nová verze knihovny binární kompatibilní.
+Při vydávání nových verzí knihovny bude zpětná kompatibilita s předchozími verzemi pravděpodobně jedním z vašich hlavních otázek.
+Nová verze knihovny je kompatibilní se zdrojem předchozí verze, pokud kód, který závisí na předchozí verzi, může při rekompilaci fungovat s novou verzí. Nová verze knihovny je binární, kompatibilní, pokud aplikace, která závisí na staré verzi, může bez rekompilace fungovat s novou verzí.
 
-Tady je pár věcí k uvážení při pokusu o zachování zpětné kompatibility se staršími verzemi knihovny:
+Tady je několik věcí, které je potřeba vzít v úvahu při pokusu o udržení zpětné kompatibility se staršími verzemi vaší knihovny:
 
-* Virtuální metody: Když vytvoříte virtuální metody v nové verzi nevirtuální, znamená to, že projekty, které potlačí tuto metodu bude mít aktualizovat. To je obrovská rozbíjející změny a se důrazně nedoporučuje.
-* Podpisy metod: Při aktualizaci chování metoda vyžaduje, abyste změňte její signaturu tak dobře, měli byste místo toho přetížení vytvořit tak, aby kód volání do metody budou i nadále fungovat.
-Vždy můžete pracovat s starý podpis metody, chcete-li volat nový podpis metody tak, aby zůstala konzistentní implementaci.
-* [Zastaralé atribut](programming-guide/concepts/attributes/common-attributes.md#Obsolete): Tento atribut v kódu můžete použít k určení, že třídy nebo členy třídy, které jsou zastaralé a pravděpodobně odebrán v budoucích verzích.
-Tím se zajistí, že vývojáři využívající knihovnu lépe připraveni rozbíjející změny.
-* Metoda volitelné argumenty: Když provedete metoda dříve volitelné argumenty povinné nebo změnit výchozí hodnoty a veškerý kód, který neposkytuje tyto argumenty budou potřeba aktualizovat.
+* Virtuální metody: Když vytvoříte virtuální metodu v nové verzi jako nevirtuální, znamená to, že by se měly aktualizovat projekty, které tuto metodu přepisují. Jedná se o velmi zásadní změnu a důrazně se nedoporučuje.
+* Signatury metody: V případě, že se při aktualizaci chování metody vyžaduje, abyste změnili jeho signaturu, měli byste místo toho vytvořit přetížení, aby kód, který volá tuto metodu, bude stále fungovat.
+Můžete vždycky manipulovat s podpisem staré metody, aby se volal do nového podpisu metody, takže implementace zůstane konzistentní.
+* [Zastaralý atribut](programming-guide/concepts/attributes/common-attributes.md#Obsolete): Pomocí tohoto atributu v kódu můžete určit třídy nebo členy třídy, které jsou zastaralé a pravděpodobně budou odebrány v budoucích verzích. Tím je zajištěno, že vývojáři, kteří využívají vaši knihovnu, budou lépe připraveni na zásadní změny.
+* Volitelné argumenty metody: Pokud ponecháte dříve volitelné argumenty metody jako povinné nebo změníte jejich výchozí hodnotu, bude nutné aktualizovat veškerý kód, který tyto argumenty nedodá.
+
 > [!NOTE]
-> Provádění povinné argumenty volitelné by měl mít velmi malý vliv, zejména v případě, že ho nedojde ke změně chování metody.
+> Volitelná povinná argumenty by měly mít velmi malý účinek, zejména pokud nemění chování metody.
 
-Tím snadněji provedete to pro vaše uživatele pro upgrade na novou verzi knihovny, tím pravděpodobnější, že se bude upgradovat dřív.
+To je snazší, když uživatelům umožníte upgradovat na novou verzi knihovny, což je pravděpodobnější, že budou upgradovat dřív.
 
 ### <a name="application-configuration-file"></a>Konfigurační soubor aplikace
 
-Jako vývojář .NET existuje velmi vysoká pravděpodobnost, kterým jste se setkali [ `app.config` soubor](../framework/configure-apps/file-schema/index.md) součástí většinu typů projektu.
-Tento jednoduchý konfigurační soubor můžete urazily dlouhou cestu do zlepšení zavedení nové aktualizace. Obecně byste navrhnout svoje knihovny takovým způsobem, že je uložené informace, které jsou pravděpodobně pravidelně měnit v `app.config` souboru tímto způsobem, když dojde k aktualizaci těchto informací právě potřebuje vyměnit s novým konfiguračního souboru starší verze bez nutnosti rekompilace knihovny.
+Jako vývojář rozhraní .NET existuje velmi vysoká pravděpodobnost, že [se `app.config` soubor](../framework/configure-apps/file-schema/index.md) nachází ve většině typů projektů.
+Tento jednoduchý konfigurační soubor může být delší způsob, jak zlepšit zavedení nových aktualizací. Obecně byste měli navrhovat knihovny tak, aby se informace, které se pravděpodobně mění pravidelně, ukládaly do `app.config` souboru, a to tak, že se tyto informace aktualizují. konfigurační soubor starších verzí stačí nahradit novým bez nutnosti rekompilace knihovny.
 
-## <a name="consuming-libraries"></a>Použití knihovny
+## <a name="consuming-libraries"></a>Využívání knihoven
 
-Jako vývojář, který využívá knihovny .NET vytvořených jinými vývojáři vědět pravděpodobně, že nová verze knihovny nemusí být plně kompatibilní s vaším projektem, takže vám často sami s a aktualizujte svůj kód pro práci s těmito změnami.
+Jako vývojář, který využívá knihovny .NET vytvořené jinými vývojáři, s největší pravděpodobně víte, že nová verze knihovny nemusí být plně kompatibilní s vaším projektem, a je možné, že často budete muset aktualizovat kód pro práci s těmito změnami.
 
-Šťastná za vás C# a ekosystému .NET obsahuje funkce a techniky, které umožňuje snadno aktualizovat naší aplikace pro práci s novými verzemi nástroje knihovny, které můžou zavést rozbíjející změny.
+Štěstí pro vás C# a ekosystém .NET přináší funkce a techniky, které nám umožňují snadno aktualizovat naši aplikaci, aby fungovala s novými verzemi knihoven, které můžou zavádět zásadní změny.
 
 ### <a name="assembly-binding-redirection"></a>Přesměrování vazby sestavení
 
-Můžete použít `app.config` souboru k aktualizaci verze knihovny aplikace používá. Přidáním, co se volá [ *přesměrování vazby* ](../framework/configure-apps/redirect-assembly-versions.md) používáte novou verzi knihovny bez nutnosti znovu kompilovat aplikace. Následující příklad ukazuje, jak by aktualizovat vaše aplikace `app.config` soubor má být použit `1.0.1` oprav verze `ReferencedLibrary` místo `1.0.0` původně byl kompilován s verzí.
+`app.config` Soubor můžete použít k aktualizaci verze knihovny, kterou vaše aplikace používá. Přidáním toho, co se nazývá [*přesměrování vazby*](../framework/configure-apps/redirect-assembly-versions.md) , můžete použít novou verzi knihovny, aniž byste museli aplikaci znovu kompilovat. Následující příklad ukazuje `app.config` , jak byste aktualizovali soubor aplikace tak, aby `1.0.1` používal opravu `1.0.0` verze `ReferencedLibrary` místo verze, ve které byla původně zkompilována.
 
 ```xml
 <dependentAssembly>
@@ -72,14 +72,14 @@ Můžete použít `app.config` souboru k aktualizaci verze knihovny aplikace pou
 ```
 
 > [!NOTE]
-> Tento postup bude fungovat jenom v případě novou verzi `ReferencedLibrary` binární kompatibilní s vaší aplikací.
-> Zobrazit [Backwards Compatibility](#backwards-compatibility) výše uvedené části hledejte při určování kompatibility se změny.
+> Tento přístup bude fungovat jenom v případě, že `ReferencedLibrary` je nová verze binárního souboru kompatibilního s vaší aplikací.
+> V části [Zpětná kompatibilita](#backwards-compatibility) výše najdete změny, které je potřeba zobrazit při určování kompatibility.
 
 ### <a name="new"></a>new
 
-Můžete použít `new` modifikátor ke skrytí zděděné členy základní třídy. Toto je jeden způsob odvozené třídy může reagovat na aktualizací v základních tříd.
+Použijete `new` modifikátor ke skrytí zděděných členů základní třídy. Toto je jeden ze způsobů, které odvozené třídy mohou reagovat na aktualizace v základních třídách.
 
-Proveďte v následujícím příkladu:
+Vezměte v úvahu následující příklad:
 
 [!code-csharp[Sample usage of the 'new' modifier](../../samples/csharp/versioning/new/Program.cs#sample)]
 
@@ -90,14 +90,14 @@ A base method
 A derived method
 ```
 
-V předchozím příkladu můžete zobrazit jak `DerivedClass` skryje `MyMethod` metody, které jsou k dispozici v `BaseClass`.
-To znamená, že když základní třídy v nové verzi knihovny přidá člen, který již existuje v odvozené třídě, můžete jednoduše použít `new` modifikátor vaší odvozené třídě člen skrýt člena základní třídy.
+Z výše uvedeného příkladu vidíte, jak `DerivedClass` skrývá metodu, která je `MyMethod` k `BaseClass`dispozici v.
+To znamená, že když základní třída v nové verzi knihovny přidá člena, který již existuje v odvozené třídě, můžete jednoduše použít `new` modifikátor na odvozeném členu třídy pro skrytí člena základní třídy.
 
-Pokud ne `new` modifikátor určena, odvozené třídy ve výchozím nastavení skryje konfliktní členy v základní třídě, i když se vygeneruje upozornění kompilátoru kód se stále zkompiluje. To znamená, že jednoduše přidání nových členů do existující třídy díky tuto novou verzi knihovny zdroje a binární soubor kompatibilní s kódem, který na něm závisí.
+Pokud není `new` zadán žádný modifikátor, bude ve výchozím nastavení v odvozené třídě standardně skryty konfliktní členy základní třídy, i když bude vygenerováno upozornění kompilátoru, kód bude stále zkompilován. To znamená, že pouhým přidáním nových členů do existující třídy dojde k tomu, že nová verze knihovny je kompatibilní se zdrojovým i binárním kódem, který na něm závisí.
 
 ### <a name="override"></a>override
 
-`override` Modifikátor znamená, že odvozené implementace rozšiřuje implementaci člena základní třídy místo skrývá ho. Členu základní třídy musí mít `virtual` použit modifikátor.
+`override` Modifikátor znamená, že odvozená implementace rozšiřuje implementaci člena základní třídy místo jeho skrytí. Člen základní třídy musí mít `virtual` použit modifikátor.
 
 [!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
 
@@ -108,6 +108,7 @@ Base Method One: Method One
 Derived Method One: Derived Method One
 ```
 
-`override` Modifikátor je vyhodnocen v době kompilace a kompilátor vyvolá chybu, pokud se nenajde virtuální člen přepsat.
+`override` Modifikátor je vyhodnocen v době kompilace a kompilátor vyvolá chybu, pokud nenajde virtuální člen, který se má přepsat.
 
-Svoje znalosti v oblasti popsané technik, jakož i pochopíte jaké situacích k jejich použití bude urazily dlouhou cestu a zvýšit tak snadné přechod mezi verzemi knihovny.
+Vaše znalosti o popisovaných technikách a také porozumění situacím, které se mají použít, budou mít dlouhý způsob, jak zvýšit přehlednost mezi verzemi knihovny.
+ 

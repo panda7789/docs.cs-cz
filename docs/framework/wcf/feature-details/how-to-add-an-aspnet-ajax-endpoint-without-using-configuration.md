@@ -2,25 +2,25 @@
 title: 'Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfiguračního souboru'
 ms.date: 03/30/2017
 ms.assetid: b05c1742-8d0a-4673-9d71-725b18a3008e
-ms.openlocfilehash: 078580b96ab911f65790e58338951532cd7ad704
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4a7ff48e529ab58c8744edea22d52ad12a4d7b96
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047903"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895078"
 ---
 # <a name="how-to-add-an-aspnet-ajax-endpoint-without-using-configuration"></a>Postupy: Přidání koncového bodu ASP.NET AJAX bez použití konfiguračního souboru
-Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpřístupňuje koncový bod s podporou technologie ASP.NET AJAX, který může být volána z jazyka JavaScript na webové stránce klienta. Vytvořit takové koncový bod, můžete použít konfigurační soubor, stejně jako u všech ostatních koncových bodů WCF nebo používat metodu, která nevyžaduje žádné konfigurační prvky. Toto téma popisuje druhý přístup.  
+Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje koncový bod s povoleným ASP.NET AJAX, který se dá volat z JavaScriptu na klientském webu. Chcete-li vytvořit takový koncový bod, můžete buď použít konfigurační soubor, stejně jako všechny ostatní koncové body WCF, nebo použít metodu, která nevyžaduje žádné konfigurační prvky. Toto téma ukazuje druhý přístup.  
   
- Vytvoření služby pomocí koncových bodů ASP.NET AJAX bez konfigurace, musí být služby hostovaný Internetové informační služby (IIS). Chcete-li aktivovat technologie ASP.NET AJAX koncový bod pomocí tohoto přístupu, zadejte <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> jako parametr objekt pro vytváření v [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktivy v souboru SVC. Tento objekt pro vytváření vlastních je komponenta, která se automaticky nakonfiguruje koncového bodu ASP.NET AJAX tak, aby může být volána z jazyka JavaScript na webové stránce klienta.  
+ Chcete-li vytvořit služby s koncovými body ASP.NET AJAX bez konfigurace, musí být služby hostovány Internetová informační služba (IIS). Chcete-li aktivovat koncový bod ASP.NET AJAX pomocí tohoto přístupu, <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> zadejte jako parametr Factory [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) v direktivě ServiceHost v souboru. svc. Tato vlastní továrna je komponenta, která automaticky konfiguruje koncový bod ASP.NET AJAX tak, aby jej bylo možné volat z JavaScriptu na klientském webu.  
   
- Funkční příklad najdete v článku [služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md).  
+ Pracovní příklad naleznete v tématu [Služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md).  
   
- Přehled konfigurace koncového bodu ASP.NET AJAX pomocí konfigurační prvky, naleznete v tématu [jak: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md).  
+ Osnova, jak nakonfigurovat koncový bod ASP.NET AJAX pomocí elementů konfigurace, naleznete v [tématu How to: Pomocí konfigurace přidejte koncový bod](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)ASP.NET AJAX.  
   
-### <a name="to-create-a-basic-wcf-service"></a>Chcete-li vytvořit základní služby WCF  
+### <a name="to-create-a-basic-wcf-service"></a>Vytvoření základní služby WCF  
   
-1. Definování základní kontraktu služby WCF s rozhraním označené <xref:System.ServiceModel.ServiceContractAttribute> atribut. Označit každou operaci s <xref:System.ServiceModel.OperationContractAttribute>. Nezapomeňte nastavit <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnost.  
+1. Definujte základní kontrakt služby WCF s rozhraním označeným <xref:System.ServiceModel.ServiceContractAttribute> atributem. Označte každou operaci pomocí <xref:System.ServiceModel.OperationContractAttribute>. Nezapomeňte nastavit <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnost.  
   
     ```csharp  
     [ServiceContract(Namespace = "MyService")]]  
@@ -35,7 +35,7 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     }  
     ```  
   
-2. Implementace `ICalculator` kontrakt služby s `CalculatorService`.  
+2. Implementujte kontrakt `CalculatorService`služby s. `ICalculator`  
   
     ```csharp  
     public class CalculatorService : ICalculator  
@@ -48,7 +48,7 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     //Other operations omitted…  
     ```  
   
-3. Definování oboru názvů pro `ICalculator` a `CalculatorService` implementace obalením v oboru bloku.  
+3. Definujte obor názvů pro `ICalculator` implementace a `CalculatorService` jejich zabalením do bloku oboru názvů.  
   
     ```csharp  
     Namespace Microsoft.Ajax.Samples  
@@ -57,11 +57,11 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     }  
     ```  
   
-### <a name="to-host-the-service-in-internet-information-services-without-configuration"></a>K hostování služby v Internetové informační službě bez konfigurace  
+### <a name="to-host-the-service-in-internet-information-services-without-configuration"></a>Hostování služby v Internetová informační služba bez konfigurace  
   
-1. Vytvořte nový soubor s názvem služby s příponou .svc v aplikaci. Tento soubor upravit tak, že přidáte odpovídající [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktiv informace pro službu. Určit, že <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se použije [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice pro automatickou konfiguraci koncového bodu ASP.NET AJAX.  
+1. V aplikaci vytvořte nový soubor s názvem služba s příponou. svc. Upravte tento soubor přidáním příslušné [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) informace o direktivě ServiceHost pro službu. Určete, že <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se má použít [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) v direktivě ServiceHost k automatické konfiguraci koncového bodu ASP.NET AJAX.  
   
-    ```  
+    ```text
     <%@ServiceHost   
         language=c#   
         Debug="true"   
@@ -70,33 +70,33 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     %>  
     ```  
   
-2. Sestavte službu a jeho volání z klienta. Internetové informační služby (IIS) se aktivuje při volání služby. Další informace o hostování ve službě IIS najdete v tématu [jak: Hostování služby WCF v IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
+2. Sestavte službu a zavolejte ji z klienta. Internetová informační služba (IIS) aktivuje službu při volání. Další informace o hostování ve službě IIS najdete v [tématu How to: Hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
   
 ### <a name="to-call-the-service"></a>Volání služby  
   
-1. Koncový bod je nakonfigurována na prázdnou adresu relativní k souboru .svc tak, aby služba je nyní k dispozici a lze vyvolat pomocí zasílání požadavků na service.svc/\<operace > – například service.svc/Add pro `Add` operace. Můžete ho tak, že zadáte adresu URL služby do kolekce skriptů ovládací prvek správce skriptů ASP.NET AJAX. Příklad najdete v tématu [služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md).  
+1. Koncový bod je nakonfigurován na prázdné adrese relativní vzhledem k souboru. svc, takže služba je nyní k dispozici a je možné ji vyvolat odesláním žádostí do služby. svc\</Operation > – například Service. svc/Add `Add` pro operaci. Můžete ji použít tak, že zadáte adresu URL služby do kolekce Scripts ovládacího prvku Správce skriptů ASP.NET AJAX. Příklad naleznete v tématu [Služba AJAX bez konfigurace](../../../../docs/framework/wcf/samples/ajax-service-without-configuration.md).  
   
 ## <a name="example"></a>Příklad  
   
- Automaticky nakonfigurovat koncový bod se vytvoří prázdný adrese relativní k základní adrese URL. Konfigurační soubor lze také přidat a používat s tímto přístupem. Pokud konfigurační soubor obsahuje definic koncových bodů, tyto koncové body se přidají do koncového bodu automaticky nakonfigurované.  
+ Automaticky konfigurovaný koncový bod se vytvoří na prázdné adrese relativní vzhledem k základní adrese URL. S tímto přístupem je možné taky přidat konfigurační soubor a použít ho. Pokud konfigurační soubor obsahuje definice koncových bodů, tyto koncové body se přidají do automaticky konfigurovaného koncového bodu.  
   
- Například používá service.svc <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> a služba adresář obsahuje soubor Web.config, který definuje koncový bod pro stejnou službu pomocí <xref:System.ServiceModel.BasicHttpBinding> na relativní adrese "soap". V tomto případě služba obsahuje dva koncové body: jeden service.svc (která reaguje na požadavky technologie ASP.NET AJAX) a jiné na service.svc/soap (která reaguje na požadavky protokolu SOAP).  
+ Například služba. svc používá <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> a adresář služby obsahuje soubor Web. config, který definuje koncový bod pro stejnou službu pomocí na <xref:System.ServiceModel.BasicHttpBinding> relativní adrese "SOAP". V tomto případě služba obsahuje dva koncové body: jeden na Service. svc (který reaguje na požadavky ASP.NET AJAX) a druhý v Service. svc/SOAP (který reaguje na žádosti SOAP).  
   
- Pokud konfigurační soubor definuje koncový bod na prázdný relativní adrese a <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se používá, je vyvolána výjimka a službu nepodaří spustit.  
+ Pokud konfigurační soubor definuje koncový bod na prázdné relativní adrese a <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> použije se, vyvolá se výjimka a služba se nespustí.  
   
- Konfiguraci nelze použít ke změně nastavení pro koncový bod automaticky nakonfigurované. Pokud žádné nastavení (např. čtečka kvóty) musí být změněn, nesmí používat bez konfigurace přístup tak, že odeberete <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> ze souboru .svc a vytvoření položky konfigurace pro koncový bod.  
+ Konfiguraci nelze použít pro úpravu nastavení automaticky konfigurovaného koncového bodu. Pokud je nutné změnit jakékoli nastavení (například kvótu čtenářů), nepoužívejte přístup k nebezplatné konfiguraci odebráním <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> ze souboru. svc a vytvořením položky konfigurace pro koncový bod.  
   
- Pokud vaše služba vyžaduje režim kompatibility ASP.NET – například pokud se používá <xref:System.Web.HttpContext> třídy nebo mechanismy ověřování ASP.NET – konfigurační soubor je stále vyžadují k zapnutí nastavení v tomto režimu. Prvek konfigurace, vyžaduje se [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) element, který musí být přidán následujícím způsobem.  
+ Pokud vaše služba vyžaduje režim kompatibility ASP.NET, například pokud používá <xref:System.Web.HttpContext> autorizační mechanismy třídy nebo ASP.NET, je pro zapnutí tohoto režimu stále nutný konfigurační soubor. Požadovaný prvek konfigurace je [ \<element serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md) , který musí být přidán následujícím způsobem.  
   
  `<system.serviceModel>`  
   
  `<serviceHostingEnvironment aspNetCompatibilityEnabled="true" /> </system.serviceModel>`  
   
- Další informace najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md) tématu.  
+ Další informace najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md) .  
   
- <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> Třída je odvozená třída <xref:System.ServiceModel.Activation.ServiceHostFactory>. Podrobné vysvětlení mechanizmus objekt pro vytváření hostitele služby, najdete v článku [rozšíření hostování pomocí ServiceHostFactory](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md) tématu.  
+ Třída je odvozenou <xref:System.ServiceModel.Activation.ServiceHostFactory>třídou třídy. <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> Podrobné vysvětlení mechanismu výrobního hostitele služby najdete v tématu [rozšíření hostování pomocí ServiceHostFactory](../../../../docs/framework/wcf/extending/extending-hosting-using-servicehostfactory.md) .  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)
-- [Postupy: Migrace s povoleným AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)
+- [Postupy: Migrace webových služeb ASP.NET s podporou jazyka AJAX do WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)

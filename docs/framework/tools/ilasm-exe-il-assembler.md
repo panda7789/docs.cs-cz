@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13b0ab04eba75a322d584bcc20cc6e90a54fb6fc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fcc9ba5e379897247f50175603b1002d5688d215
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933657"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894684"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -110,7 +110,7 @@ Další informace o gramatice IL najdete v souboru asmparse. gramatiky v Windows
 
 Počínaje .NET Framework 4,5 můžete k implementaci rozhraní připojit vlastní atribut pomocí kódu podobného následujícímu:
 
-```
+```il
 .class interface public abstract auto ansi IMyInterface
 {
   .method public hidebysig newslot abstract virtual
@@ -130,7 +130,7 @@ Počínaje .NET Framework 4,5 můžete k implementaci rozhraní připojit vlastn
 
 Počínaje .NET Framework 4,5 můžete určit libovolný objekt BLOB pro zařazování (binární rozsáhlý objekt) pomocí jeho nezpracované binární reprezentace, jak je znázorněno v následujícím kódu:
 
-```
+```il
 .method public hidebysig abstract virtual
         instance void
         marshal({ 38 01 02 FF })
@@ -175,7 +175,7 @@ public class Hello
 
 Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento kód můžete zkompilovat do sestavení pomocí nástroje IL Assembler. V obou příkladech IL i kód se C# zobrazuje "Hello World!" do konzoly.
 
-```
+```il
 // Metadata version: v2.0.50215
 .assembly extern mscorlib
 {

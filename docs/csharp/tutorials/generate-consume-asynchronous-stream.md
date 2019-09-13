@@ -3,12 +3,12 @@ title: Generování a využívání asynchronních datových proudů
 description: Tento rozšířený kurz znázorňuje scénáře, kdy generování a využívání asynchronních streamů poskytuje přirozenější způsob práce s posloupnosti dat, která se dají vygenerovat asynchronně.
 ms.date: 02/10/2019
 ms.custom: mvc
-ms.openlocfilehash: cd1159c139f2c885eacf55b8577bea9e79bf0d7a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 3fdf5299deca365c62a00a8320ea335e96d9078c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105855"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926693"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: Generování a využívání asynchronních datových C# proudů pomocí 8,0 a .net Core 3,0
 
@@ -17,6 +17,7 @@ C#8,0 zavádí **asynchronní streamy**, které modelují zdroj dat streamován�
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > - Vytvořte zdroj dat, který generuje posloupnost datových prvků asynchronně.
 > - Spotřebujte tento zdroj dat asynchronně.
 > - Rozpoznat, kdy je nové rozhraní a zdroj dat upřednostňováno na dřívější synchronní sekvence dat.

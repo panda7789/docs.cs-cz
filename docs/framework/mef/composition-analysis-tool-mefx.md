@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b47abc2adb7b515e4d1d76da58c150703a8693d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3777627caec7fc0d383804f71d9b7d3f09756fd
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957442"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894130"
 ---
 # <a name="composition-analysis-tool-mefx"></a>Nástroj pro analýzu sestavení (Mefx)
 Nástroj pro analýzu kompozice (Mefx) je aplikace příkazového řádku, která analyzuje soubory knihovny (. dll) a aplikace (. exe) obsahující součásti Managed Extensibility Framework (MEF). Hlavním účelem Mefx je poskytnout vývojářům způsob, jak diagnostikovat chyby ve svých aplikacích MEF bez nutnosti přidat nenáročný kód trasování do samotné aplikace. Může být také užitečné k pochopení částí z knihovny poskytované třetí stranou. Toto téma popisuje, jak používat Mefx a poskytuje odkaz na jeho syntaxi.  
@@ -26,13 +26,13 @@ Nástroj pro analýzu kompozice (Mefx) je aplikace příkazového řádku, kter�
 ## <a name="basic-syntax"></a>Základní syntaxe  
  Mefx je vyvolána z příkazového řádku v následujícím formátu:  
   
-```  
+```console
 mefx [files and directories] [action] [options]  
 ```  
   
  První sada argumentů Určuje soubory a adresáře, ze kterých se mají načíst části pro analýzu. Zadejte soubor s `/file:` přepínačem a adresář `/directory:` s přepínačem. Můžete zadat více souborů nebo adresářů, jak je znázorněno v následujícím příkladu:  
   
-```  
+```console  
 mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]  
 ```  
   
@@ -45,7 +45,7 @@ mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]
 ## <a name="listing-available-parts"></a>Výpis dostupných částí  
  `/parts` Použijte akci k vypsání všech částí deklarovaných v načtených souborech. Výsledkem je jednoduchý seznam názvů částí.  
   
-```  
+```console
 mefx /file:MyAddIn.dll /parts  
 MyAddIn.AddIn  
 MyAddIn.MemberPart  
@@ -53,7 +53,7 @@ MyAddIn.MemberPart
   
  Další informace o součástech získáte pomocí `/verbose` možnosti. Tím se zobrazí další informace pro všechny dostupné části. Chcete-li získat další informace o jedné části, použijte `/type` akci `/parts`místo.  
   
-```  
+```console  
 mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose  
 [Part] MyAddIn.MemberPart from: AssemblyCatalog (Assembly=" MyAddIn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")  
   [Export] MyAddIn.MemberPart (ContractName=" MyAddIn.MemberPart")  
@@ -63,7 +63,7 @@ mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose
 ## <a name="listing-imports-and-exports"></a>Výpis importu a exportů  
  Akce `/imports` a`/exports` zobrazí seznam všech importovaných částí a všech exportovaných částí v uvedeném pořadí. Můžete také uvést části, které importují nebo exportují konkrétní typ pomocí `/importers` akcí nebo. `/exporters`  
   
-```  
+```console  
 mefx /file:MyAddIn.dll /importers:MyAddin.MemberPart  
 MyAddin.AddIn  
 ```  
@@ -72,17 +72,17 @@ MyAddin.AddIn
   
 <a name="finding_rejected_parts"></a>   
 ## <a name="finding-rejected-parts"></a>Hledání odmítnutých částí  
- Po načtení dostupných částí Mefx použije modul kompozice MEF k jejich sestavení. Části, které se nedají úspěšně sestavit, seoznačují jako zamítnuté. Chcete-li zobrazit seznam všech odmítnutých částí `/rejected` , použijte akci.  
+ Po načtení dostupných částí Mefx použije modul kompozice MEF k jejich sestavení. Části, které se nedají úspěšně sestavit, se označují jako *zamítnuté*. Chcete-li zobrazit seznam všech odmítnutých částí `/rejected` , použijte akci.  
   
  K tisku podrobných `/verbose` informací o zamítnutých částech můžete použít možnost `/rejected` s akcí. V následujícím příkladu `ClassLibrary1` knihovna DLL `AddIn` obsahuje `MemberPart` část, která importuje části a `ChainOne` . `ChainOne`Importuje `ChainTwo`, ale `ChainTwo` neexistuje. To znamená, `ChainOne` že se zamítlo, `AddIn` což způsobí odmítnutí.  
   
-```  
+```console  
 mefx /file:ClassLibrary1.dll /rejected /verbose  
 ```  
   
  Následující příklad ukazuje úplný výstup předchozího příkazu:  
   
-```  
+```output
 [Part] ClassLibrary1.AddIn from: AssemblyCatalog (Assembly="ClassLibrary1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null")  
   [Export] ClassLibrary1.AddIn (ContractName="ClassLibrary1.AddIn")  
   [Import] ClassLibrary1.AddIn.memberPart (ContractName="ClassLibrary1.MemberPart")  
@@ -122,7 +122,7 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
   
  Zvažte soubor s názvem test. txt, který obsahuje text "ClassLibrary1. ChainOne". Pokud spustíte `/rejected` akci `/whitelist` s možností v předchozím příkladu, vytvoří se následující výstup:  
   
-```  
+```console
 mefx /file:ClassLibrary1.dll /rejected /whitelist:test.txt  
 [Unexpected] ClassLibrary1.AddIn  
 ClassLibrary1.ChainOne  

@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e257410c51d70af31b565d99a8d28ef82ce681d7
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: a521be147c462146775caa81b6a31fb37b4103af
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373801"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926686"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -292,16 +292,17 @@ Všimněte si, že spuštěné kontejnery Docker mohou být vázány na porty, k
 Pokud chcete přidat podporu Docker do aplikace pomocí sady Visual Studio, ujistěte se, že je na něm spuštěný Docker Desktop. Průvodce nebude správně fungovat, pokud při spuštění Průvodce neběží dokovací plocha. Kromě toho průvodce prověřuje aktuální možnost kontejneru a přidá správnou podporu Docker. Pokud chcete přidat podporu pro kontejnery Windows, musíte spustit průvodce, když máte na počítači Docker běžící s nakonfigurovanými kontejnery Windows. Pokud chcete přidat podporu pro kontejnery pro Linux, spusťte průvodce, když máte k dispozici Docker s nakonfigurovanými kontejnery systému Linux.
 
 ### <a name="references--common-web-architectures"></a>Odkazy – společné webové architektury
-> - **Čistá architektura**  
->   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
-> - **Průsvitky**  
->   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
-> - **Vzor úložiště**  
->   <https://deviq.com/repository-pattern/>
-> - **Ukázka řešení čištění architektury**  
->   <https://github.com/ardalis/cleanarchitecture>
-> - **Elektronická kniha – architekti mikroslužeb**  
->   <https://aka.ms/MicroservicesEbook>
+
+- **Čistá architektura**  
+  <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
+- **Průsvitky**  
+  <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
+- **Vzor úložiště**  
+  <https://deviq.com/repository-pattern/>
+- **Ukázka řešení čištění architektury**  
+  <https://github.com/ardalis/cleanarchitecture>
+- **Elektronická kniha – architekti mikroslužeb**  
+  <https://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
 >[Předchozí](architectural-principles.md)Další

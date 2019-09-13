@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 03a35d26fd1917d926f9a26d25ae8a8e32c476f4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3433819761c19b616a7c9c19fe52e250b0f028dc
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917632"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929181"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF ve Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte významnou investici do [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce do aplikace namísto přepisu původního kódu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v okně.  
@@ -64,7 +64,6 @@ ms.locfileid: "69917632"
 ## <a name="implementing-the-host-application"></a>Implementace hostitelské aplikace
  Tato část popisuje, jak hostovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah v základní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikaci. Samotný obsah je implementován v C++/CLI jako spravovaná třída. Ve většině případů je to jednoduché [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování. Klíčové aspekty implementace obsahu jsou popsány v tématu [implementace obsahu WPF](#implementing_the_wpf_page).
 
-<a name="autoNestedSectionsOUTLINE1"></a>
 - [Základní aplikace](#the_basic_application)
 
 - [Hostování obsahu WPF](#hosting_the_wpf_page)
@@ -169,7 +168,6 @@ ms.locfileid: "69917632"
 ## <a name="implementing-the-wpf-page"></a>Implementace stránky WPF
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah můžete hostovat a používat bez znalosti skutečné implementace. Pokud byl [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah zabalen v samostatné knihovně DLL, mohl by být sestaven v jakémkoli jazyce modulu CLR (Common Language Runtime). Následuje stručný návod k implementaci C++/CLI, která se používá v ukázce. Tato část obsahuje následující pododdíly.
 
-<a name="autoNestedSectionsOUTLINE2"></a>
 - [Rozložení](#page_layout)
 
 - [Vrácení dat do hostitelského okna](#returning_data_to_window)

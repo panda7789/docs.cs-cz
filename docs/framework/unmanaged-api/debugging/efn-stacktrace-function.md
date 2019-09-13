@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 687fdd0735e6cb0f3a727c8a2da3cf33bffb6a39
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9035d9a53c4b0c8822b79e641aef092b4a48c418
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67738979"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895043"
 ---
-# <a name="efnstacktrace-function"></a>\_EFN\_StackTrace – funkce
-Poskytuje textové vyjádření spravovaného zásobníku a pole `CONTEXT` záznamy, jeden pro každý přechod mezi nespravované a spravovaného kódu.  
+# <a name="_efn_stacktrace-function"></a>\_EFN\_– funkce trasování zásobníku
+Poskytuje textovou reprezentaci spravovaného trasování zásobníku a pole `CONTEXT` záznamů, jednu pro každý přechod mezi nespravovaným a spravovaným kódem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,64 +42,64 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 ## <a name="parameters"></a>Parametry  
  `Client`  
- [in] Klient, který se právě ladí.  
+ pro Probíhá ladění klienta.  
   
  `wszTextOut`  
- [out] Textové vyjádření trasování zásobníku.  
+ mimo Textová reprezentace trasování zásobníku.  
   
  `puiTextLength`  
- [out] Ukazatel na počet znaků v `wszTextOut`.  
+ mimo Ukazatel na počet znaků v `wszTextOut`.  
   
  `pTransitionContexts`  
- [out] Pole přechod kontexty.  
+ mimo Pole kontextů přechodu.  
   
  `puiTransitionContextCount`  
- [out] Ukazatel na počet kontextů přechodu v poli.  
+ mimo Ukazatel na počet kontextů přechodu v poli.  
   
  `uiSizeOfContext`  
- [in] Velikost struktury kontextu.  
+ pro Velikost struktury kontextu.  
   
  `Flags`  
- [in] Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01) zobrazíte registru EBP a ukazatel zásobníku enter (ESP) před každou `module!functionname` řádku.  
+ pro Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01), aby se zobrazil registr EBP a jako ukazatel na zadání zásobníku (ESP) před každým `module!functionname` řádkem.  
   
 ## <a name="remarks"></a>Poznámky  
- `_EFN_StackTrace` Struktura může být volána z WinDbg programové rozhraní. Se používají následující parametry:  
+ `_EFN_StackTrace` Struktura může být volána z programového rozhraní WinDbg. Parametry se používají takto:  
   
-- Pokud `wszTextOut` má hodnotu null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
+- Pokud `wszTextOut` má hodnotu null `puiTextLength` a není null, funkce vrátí délku řetězce v `puiTextLength`.  
   
-- Pokud `wszTextOut` je nenulová, uloží funkce text v `wszTextOut` až umístění indikován `puiTextLength`. Vrátí úspěšně Pokud byl dostatek volného místa ve vyrovnávací paměti nebo vrátí E_OUTOFMEMORY Pokud vyrovnávací paměť nebylo dostatečně dlouhé.  
+- Pokud `wszTextOut` není null, funkce ukládá `wszTextOut` text až `puiTextLength`do umístění, které je uvedeno v. Pokud byla ve vyrovnávací paměti dostatek místa, vrátí se úspěšně, nebo pokud vyrovnávací paměť není dost velká, vrátí E_OUTOFMEMORY.  
   
-- Přechod část funkce se ignoruje, pokud `pTransitionContexts` a `puiTransitionContextCount` mají obě hodnotu null. V tomto případě poskytuje funkci volajícím s textový výstup pouze názvy funkcí.  
+- Část přechodu funkce je ignorována, pokud `pTransitionContexts` a `puiTransitionContextCount` jsou obě hodnoty null. V tomto případě funkce poskytuje volajícím textový výstup pouze názvů funkcí.  
   
-- Pokud `pTransitionContexts` má hodnotu null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet položek kontextu v `puiTransitionContextCount`.  
+- Pokud `pTransitionContexts` má hodnotu null `puiTransitionContextCount` a není null, funkce vrátí potřebný počet kontextových položek v `puiTransitionContextCount`.  
   
-- Pokud `pTransitionContexts` není null, funkce zpracovává jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dán `uiSizeOfContext`, a musí mít velikost [simplecontext –](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
+- Pokud `pTransitionContexts` hodnota není null, funkce ji zpracuje jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dána `uiSizeOfContext`, a musí se jednat o velikost [SimpleContext](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
   
-- `wszTextOut` je zapsán v následujícím formátu:  
+- `wszTextOut`je zapsán v následujícím formátu:  
   
-    ```  
+    ```output  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
     ...  
     (TRANSITION)  
     ..."  
     ```  
   
-- Pokud posun šestnáctkově 0x0, je zapsán bez posunutí.  
+- Pokud je posun v šestnáctkové soustavě 0x0, není zapsán žádný posun.  
   
-- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí SOS_E_NOMANAGEDCODE.  
+- Pokud není ve vlákně aktuálně v kontextu žádný spravovaný kód, funkce vrátí SOS_E_NOMANAGEDCODE.  
   
-- `Flags` Parametru je 0 nebo SOS_STACKTRACE_SHOWADDRESSES zobrazíte EBP a ESP před každou `module!functionname` řádku. Ve výchozím nastavení je 0.  
+- Parametr je buď 0, nebo SOS_STACKTRACE_SHOWADDRESSES, aby se zobrazily EBP a ESP před `module!functionname` každým řádkem. `Flags` Ve výchozím nastavení má hodnotu 0.  
   
-    ```  
+    ```cpp  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
     ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** SOS_Stacktrace.h  
+ **Hlaviček** SOS_Stacktrace. h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

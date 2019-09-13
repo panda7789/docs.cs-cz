@@ -9,17 +9,18 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], properties
 - properties [WPF]
 ms.assetid: d6e0197f-f2c4-48ed-b45b-b9cdb64aab1c
-ms.openlocfilehash: c685a5227f4339a094ae74af4e1314d4c47f7585
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: d3d11950f919c13590a0212b8d03d394d59d3550
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400869"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928437"
 ---
 # <a name="properties-wpf"></a>Vlastnosti (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje sadu služeb, které lze použít k rozšiřování funkcí vlastnosti modulu CLR (Common Language Runtime). Souhrnně se tyto služby obvykle označují jako systém vlastností WPF. Vlastnost, která je zajištěna [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] systémem vlastností, je označována jako vlastnost závislosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
+
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Přehled přidružených vlastností](attached-properties-overview.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

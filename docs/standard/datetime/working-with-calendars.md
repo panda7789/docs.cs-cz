@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e92d5564308d31609b9fb024f3d3368a19b76b1d
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: dafa7cdaa38180e458a34fd34316f134aa443040
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106704"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929132"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -139,6 +139,7 @@ Data v kalendářích jsou obvykle rozdělena do období. Třídy v rozhraní .
 
 > [!IMPORTANT]
 > Reiwa období, nové období v <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>, začíná 1. května 2019. Tato změna má vliv na všechny aplikace, které používají tyto kalendáře. Další informace najdete v následujících článcích:
+>
 > - [Zpracování nového období v japonském kalendáři v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), který obsahuje funkce přidané do .NET pro podporu kalendářů s více nástroji pro mazání a popisuje osvědčené postupy pro použití při zpracování kalendářů s více obdobími.
 > - [Připravte svoji aplikaci na změnu v japonském období](/windows/uwp/design/globalizing/japanese-era-change), která poskytuje informace o testování vašich aplikací ve Windows, aby se zajistila jejich připravenost na změnu období.
 > - [Shrnutí nových aktualizací pro .NET Framework v rámci japonského období](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), které obsahují .NET Framework aktualizace pro jednotlivé verze systému Windows, které se vztahují k novému japonskému období v japonštině, poznamenejte si nové .NET Framework funkce pro podporu více období a zahrnuje věci Vyhledejte v testování vašich aplikací.

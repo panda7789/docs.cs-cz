@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: c0c74aeaf02bc6380d7627ce39f65603e94952c0
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 835e7c0cffbcd5857c33694586b4d63511ecadb8
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373859"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926288"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování částí v .NET Core a .NET Standard
 
@@ -38,11 +38,13 @@ Při zápisu testů jednotek se nepovedlo zavést závislosti na infrastruktuře
 Další informace o testování částí v projektech .NET Core:
 
 Projekty testů jednotek .NET Core jsou podporované pro:
+
 * [C#](../../csharp/index.md)
 * [F#](../../fsharp/index.md)
 * [Visual Basic](../../visual-basic/index.md) 
 
 Můžete si také vybrat:
+
 * [xUnit](https://xunit.github.io) 
 * [NUnit](https://nunit.org)
 * [MSTest](https://github.com/Microsoft/testfx-docs)

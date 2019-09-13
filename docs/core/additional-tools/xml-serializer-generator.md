@@ -5,18 +5,19 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 252d5f6655336669ba516393e17eb3d070611ea6
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e10f09d3f7146817770e74aa173f742322aafafc
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849232"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926602"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Používání generátoru Microsoft XML serializátoru v .NET Core
 
 V tomto kurzu se naučíte používat generátor serializátoru Microsoft XML v aplikaci C# .NET Core. V průběhu tohoto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > * Jak vytvořit aplikaci .NET Core
 > * Postup přidání odkazu na balíček Microsoft. XmlSerializer. Generator
 > * Postup úpravy MyApp. csproj pro přidání závislostí
@@ -120,6 +121,7 @@ Pokud je vše úspěšné, sestavení s názvem *MyApp. XmlSerializers. dll* je 
 
 Blahopřejeme! Právě jste:
 > [!div class="checklist"]
+>
 > * Vytvořili jste aplikaci .NET Core.
 > * Byl přidán odkaz na balíček Microsoft. XmlSerializer. Generator.
 > * Úpravou MyApp. csproj přidejte závislosti.

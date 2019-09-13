@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: 7cd02a0a315ffdb155af09ac4e4fabbea1724a4d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: fabd9b94b8c0a3f0e0db220e84d6c2eca3537c50
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780835"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894416"
 ---
 # <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
 Edice Microsoft SQL Server Express (SQL Server Express) podporuje funkci uživatelské instance, která je k dispozici pouze při použití .NET Framework Zprostředkovatel dat pro SQL Server (`SqlClient`). Uživatelská instance je samostatná instance SQL Server Express databázového stroje, který je generován nadřazenou instancí. Uživatelské instance umožňují uživatelům, kteří nejsou správci na místních počítačích, připojovat se k SQL Server Express databází a připojovat se k nim. Každá instance se spouští v rámci kontextu zabezpečení jednotlivého uživatele, a to na základě jednoho jednotlivého uživatele.  
@@ -26,9 +26,9 @@ Edice Microsoft SQL Server Express (SQL Server Express) podporuje funkci uživat
 ## <a name="enabling-user-instances"></a>Povolení uživatelských instancí  
  Aby bylo možné generovat uživatelské instance, musí být spuštěná Nadřazená instance SQL Server Express. Uživatelské instance jsou ve výchozím nastavení povolené, když je nainstalovaná SQL Server Express a může je explicitně povolit nebo zakázat Správce systému, který spouští systémovou uloženou proceduru **sp_configure** u nadřazené instance.  
   
-```  
+```sql  
 -- Enable user instances.  
-sp_configure 'user instances enabled','1'   
+sp_configure 'user instances enabled','1'
   
 -- Disable user instances.  
 sp_configure 'user instances enabled','0'  
@@ -51,7 +51,7 @@ sp_configure 'user instances enabled','0'
   
 - `|DataDirectory|` Náhradní řetězec uzavřený v symbolech kanálu označuje datový adresář aplikace, který otevírá připojení, a poskytuje relativní cestu, která označuje umístění databáze. mdf a. ldf a souborů protokolu. Pokud chcete tyto soubory najít jinde, musíte zadat úplnou cestu k souborům.  
   
-```  
+```text
 Data Source=.\\SQLExpress;Integrated Security=true;  
 User Instance=true;AttachDBFilename=|DataDirectory|\InstanceDB.mdf;  
 Initial Catalog=InstanceDB;  
@@ -65,7 +65,7 @@ Initial Catalog=InstanceDB;
   
  Fyzické umístění, na `DataDirectory` které odkazuje, závisí na typu aplikace. V tomto příkladu je soubor Northwind. mdf, který se má připojit, umístěný ve složce \App_Data aplikace.  
   
-```  
+```text
 Data Source=.\\SQLExpress;Integrated Security=true;  
 User Instance=true;  
 AttachDBFilename=|DataDirectory|\app_data\Northwind.mdf;  

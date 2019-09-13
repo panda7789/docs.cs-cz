@@ -4,12 +4,12 @@ description: Zjistěte, jak používat ML.NET ve scénáři klasifikace s více 
 ms.date: 07/31/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 3bb556cc591ee35fc14c548e7f53bad58a786e99
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 1eb56465bb56906df25c3a094126f2496bef684e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710309"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929225"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Kurz: Kategorizace problémů podpory pomocí klasifikace s více třídami s ML .NET
 
@@ -17,6 +17,7 @@ Tento ukázkový kurz znázorňuje použití ML.NET k vytvoření klasifikátoru
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > * Příprava dat
 > * Transformace dat
 > * Trénování modelu
@@ -43,7 +44,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
     V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Přidat** > **novou složku**. Zadejte "data" a stiskněte ENTER.
 
-3. Vytvořte v projektu adresář s názvem Models a uložte svůj model:
+3. Vytvořte v projektu adresář s názvem *Models* a uložte svůj model:
 
     V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Přidat** > **novou složku**. Zadejte "modely" a stiskněte ENTER.
 
@@ -372,6 +373,7 @@ Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro kl
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > * Příprava dat
 > * Transformace dat
 > * Trénování modelu

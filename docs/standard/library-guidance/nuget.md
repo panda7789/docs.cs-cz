@@ -1,27 +1,27 @@
 ---
-title: Knihovny a rozhraní .NET NuGet
-description: Doporučené osvědčené postupy pro vytváření balíčků nuget pro knihovny .NET.
+title: Knihovny NuGet a .NET
+description: Doporučení osvědčených postupů pro balení s NuGet pro knihovny .NET
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: e08629adb8074fdfb73865d2dc156cbf6e46ab9c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9cf30fa41af2d31e416bae1d75d8880ece7dde3e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61910746"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895208"
 ---
 # <a name="nuget"></a>NuGet
 
-NuGet je Správce balíčků pro .NET ekosystému a vývojáři hlavní způsob, jak vyhledat a získat open source knihoven .NET. [NuGet.org](https://www.nuget.org/), je bezplatná služba poskytovaného společností Microsoft pro balíčky NuGet hostují primární hostitele pro veřejné balíčky NuGet, ale můžete publikovat vlastní služeb NuGet, třeba [MyGet](https://www.myget.org/) a [artefakty Azure ](https://azure.microsoft.com/services/devops/artifacts/).
+NuGet je správce balíčků pro ekosystém .NET a je primárním způsobem, jak vývojáři zjišťují a získávají knihovny .NET open source. [NuGet.org](https://www.nuget.org/)je bezplatná služba poskytovaná Microsoftem pro hostování balíčků NuGet, je primárním hostitelem pro veřejné balíčky NuGet, ale můžete publikovat ve vlastních službách NuGet, jako je [MyGet](https://www.myget.org/) a [Azure Artifacts](https://azure.microsoft.com/services/devops/artifacts/).
 
 ![NuGet](./media/nuget/nuget-logo.png "NuGet")
 
-## <a name="create-a-nuget-package"></a>Vytvoří balíček NuGet
+## <a name="create-a-nuget-package"></a>Vytvoření balíčku NuGet
 
 Balíček NuGet (`*.nupkg`) je soubor zip, který obsahuje sestavení .NET a přidružená metadata.
 
-Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a doporučený způsob je pro vytvoření balíčku sady SDK – vizuální styl projektu (soubor projektu, jehož obsah začíná `<Project Sdk="Microsoft.NET.Sdk">`). Sestavení a cíle jsou automaticky přidány do balíčku a zbývající metadat se přidá do souboru MSBuild, jako je číslo název a verzi balíčku. Kompilace s [ `dotnet pack` ](../../core/tools/dotnet-pack.md) příkaz výstupy `*.nupkg` souboru místo sestavení.
+Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a doporučený způsob je vytvořit balíček z projektu ve stylu sady SDK (soubor projektu, `<Project Sdk="Microsoft.NET.Sdk">`jehož obsah začíná). Sestavení a cíle jsou automaticky přidány do balíčku a zbývající metadata jsou přidána do souboru MSBuild, jako je název balíčku a číslo verze. Kompilace pomocí [`dotnet pack`](../../core/tools/dotnet-pack.md) příkazu provede `*.nupkg` výstup souboru místo sestavení.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -34,74 +34,74 @@ Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a dopo
 </Project>
 ```
 
-Starší způsob vytváření balíčku NuGet se `*.nuspec` souboru a `nuget.exe` nástroj příkazového řádku. Soubor nuspec získáte skvělou kontrolu, ale musí pečlivě určit, jaké sestavení a cíle, které mají být zahrnuty do koncového balíčku NuGet. Je snadné vytvořit chybu nebo pro uživatele nezapomeňte aktualizovat soubor nuspec při provádění změn. Výhodou rámci souboru nuspec je můžete vytvořit balíčky NuGet pro rozhraní, které se zatím nepodporují souboru SDK – vizuální styl projektu.
+Starší způsob vytváření balíčku NuGet je `*.nuspec` soubor `nuget.exe` a nástroj příkazového řádku. Soubor nuspec vám dává Skvělé řízení, ale musíte pečlivě určit, jaká sestavení a cíle se mají zahrnout do finálního balíčku NuGet. Je snadné vytvořit chybu nebo někoho, aby se při provádění změn aktualizoval nuspec. Výhodou nuspec je, že můžete použít vytvoření balíčků NuGet pro architektury, které ještě nepodporují soubor projektu ve stylu sady SDK.
 
-**✔️ ZVAŽTE** pomocí souboru SDK – vizuální styl projektu k vytvoření balíčku NuGet.
+**✔️ zvažte** použití souboru projektu ve stylu sady SDK k vytvoření balíčku NuGet.
 
 ## <a name="package-dependencies"></a>Závislosti balíčků
 
-Závislosti balíčků NuGet je podrobně popsána v [závislosti](./dependencies.md) článku.
+Závislosti balíčků NuGet jsou podrobně popsané v článku [závislosti](./dependencies.md) .
 
 ## <a name="important-nuget-package-metadata"></a>Důležitá metadata balíčku NuGet
 
-Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). Následující tabulka obsahuje základní metadata, která by měla poskytnout všech balíčků na NuGet.org:
+Balíček NuGet podporuje mnoho [vlastností metadat](/nuget/reference/nuspec). Následující tabulka obsahuje základní metadata, která by měl každý balíček v NuGet.org poskytnout:
 
-| Název vlastnosti nástroje MSBuild              | Název souboru Nuspec              | Popis  |
+| Název vlastnosti MSBuild              | Název nuspec              | Popis  |
 | ---------------------------------- | ------------------------ | ------------ |
-| `PackageId`                        | `id`                       | Identifikátor balíčku. Je možné vyhradit předpony z identifikátoru, pokud splňuje [kritéria](/nuget/reference/id-prefix-reservation). |
-| `PackageVersion`                   | `version`                  | Verze balíčku NuGet. Další informace najdete v tématu [verze balíčku NuGet](./versioning.md#nuget-package-version).             |
-| `Title`                            | `title`                    | Lidské popisný název balíčku. Výchozí hodnota `PackageId`.             |
+| `PackageId`                        | `id`                       | Identifikátor balíčku. Předpona z identifikátoru může být vyhrazena, pokud splňuje [kritéria](/nuget/reference/id-prefix-reservation). |
+| `PackageVersion`                   | `version`                  | Verze balíčku NuGet Další informace najdete v tématu [verze balíčku NuGet](./versioning.md#nuget-package-version).             |
+| `Title`                            | `title`                    | Popisný název balíčku. Výchozí hodnota `PackageId`je.             |
 | `Description`                      | `description`              | Dlouhý popis balíčku zobrazeného v uživatelském rozhraní.             |
-| `Authors`                          | `authors`                  | Čárkou oddělený seznam autorů balíčků, odpovídající názvy profilů na nuget.org.             |
-| `PackageTags`                      | `tags`                     | Mezerami oddělený seznam značek a klíčových slov, které popisují balíček. Značky se používají při vyhledávání balíčků.             |
-| `PackageIconUrl`                   | `iconUrl`                  | Adresa URL obrázku má použít jako ikona pro balíček. Adresa URL by měla být HTTPS a bitové kopie by měl být 64 x 64 a průhledné pozadí.             |
-| `PackageProjectUrl`                | `projectUrl`               | Adresa URL pro projekt domovskou stránku a zdrojového úložiště.             |
-| `PackageLicenseExpression`         | `license`                  | Licence projektu [SPDX identifikátor](https://spdx.org/licenses/). Pouze OSI a FSF schválené licencí můžete použít identifikátor. Licence na ostatní používejte `PackageLicenseFile`. Další informace o [ `license` metadat](/nuget/reference/nuspec#license). |
+| `Authors`                          | `authors`                  | Čárkami oddělený seznam autorů balíčků, které odpovídají názvům profilů v nuget.org.             |
+| `PackageTags`                      | `tags`                     | Mezerou oddělený seznam značek a klíčových slov, které popisují balíček. Značky se používají při hledání balíčků.             |
+| `PackageIconUrl`                   | `iconUrl`                  | Adresa URL obrázku, který má být použit jako ikona balíčku. Adresa URL by měla být HTTPS a Image by měla být 64 × 64 a měla by mít transparentní pozadí.             |
+| `PackageProjectUrl`                | `projectUrl`               | Adresa URL domovské stránky projektu nebo zdrojového úložiště.             |
+| `PackageLicenseExpression`         | `license`                  | [Identifikátor SPDX](https://spdx.org/licenses/)licence projektu. Identifikátor můžou používat jenom licence OSI a FSF schválené. Ostatní licence by se `PackageLicenseFile`měly používat. Přečtěte si další informace o [ `license` metadatech](/nuget/reference/nuspec#license). |
 
 > [!IMPORTANT]
-> Projekt bez licence výchozí hodnota je [exkluzivní copyright](https://choosealicense.com/no-permission/), může znemožnit právně pro používání jiným lidem.
+> Projekt bez licence se standardně [vylučuje na výhradní Copyright](https://choosealicense.com/no-permission/), což umožňuje, aby ho jiní uživatelé mohli používat.
 
-**✔️ ZVAŽTE** zvolíte název balíčku NuGet s předponou, který splňuje rezervace předpony Nugetu [kritéria](/nuget/reference/id-prefix-reservation).
+**✔️ zvažte** možnost zvolit název balíčku NuGet s předponou, která splňuje [kritéria](/nuget/reference/id-prefix-reservation)rezervace předpon NuGet.
 
-**PROVEĎTE ✔️** použít href HTTPS na ikonu vašeho balíčku.
+**✔️** použijte odkaz HTTPS href na ikonu balíčku.
 
-> NuGet.org, jako jsou spuštění pomocí protokolu HTTPS povolené a zobrazování obrázků bez HTTPS vytvoří smíšený obsah upozornění.
+> Weby, jako je NuGet.org spuštěná s povoleným protokolem HTTPS a zobrazením image bez HTTPS, vytvoří upozornění na smíšený obsah.
 
-**PROVEĎTE ✔️** použít bitovou kopii balíčku ikonu, která je 64 x 64 a má průhledné pozadí nejlepšího zobrazení výsledků.
+**✔️** použít obrázek ikony balíčku, který je 64 × 64 a má transparentní pozadí pro nejlepší výsledky zobrazení.
 
-**✔️ ZVAŽTE** nastavení [odkazu na zdroj](./sourcelink.md) přidat metadata ovládací prvek zdroje k sestavení a balíček NuGet.
+**✔️ zvažte** nastavení [zdrojového odkazu](./sourcelink.md) pro přidání metadat správy zdrojů do sestavení a balíčku NuGet.
 
-> Zdrojový odkaz automaticky přidá `RepositoryUrl` a `RepositoryType` metadata balíčku NuGet. Odkaz na zdroj přidá také informace o kódu konkrétním použitém zdroji balíčku byla vytvořena z. Hodnota hash zápisu přidán jako metadata bude mít například balíček vytvořen z úložiště Git.
+> Odkaz na zdroj automaticky `RepositoryUrl` přidá `RepositoryType` a metadata do balíčku NuGet. Odkaz na zdroj také přidá informace o přesném zdrojovém kódu, ze kterého byl balíček sestaven. Například balíček vytvořený z úložiště Git bude obsahovat hodnotu hash potvrzení přidané jako metadata.
 
-## <a name="pre-release-packages"></a>Balíčky v předběžné verzi
+## <a name="pre-release-packages"></a>Předběžné verze balíčků
 
-Balíčky NuGet s příponou verze jsou považovány za [předběžné verze](/nuget/create-packages/prerelease-packages). Ve výchozím nastavení uživatelského rozhraní Správce balíčků NuGet zobrazuje stabilní verze, pokud uživatel požádá o výslovný souhlas a předběžné verze balíčků, díky tomu balíčky v předběžné verzi ideální pro testování uživatel s omezenými oprávněními.
+Balíčky NuGet s příponou verze se považují za [předběžné verze](/nuget/create-packages/prerelease-packages). Ve výchozím nastavení uživatelské rozhraní Správce balíčků NuGet zobrazuje stabilní verze, pokud se uživatel výslovný k předběžným balíčkům, takže předběžné verze balíčků jsou ideální pro omezené testování uživatelů.
 
 ```xml
 <PackageVersion>1.0.1-beta1</PackageVersion>
 ```
 
 > [!NOTE]
-> Stabilní balíček nemohou záviset na předběžnou verzi balíčku. Musíte vytvořit vlastní balíček předběžné verze nebo závisí na starší stabilní verzi.
+> Stabilní balíček nemůže záviset na předběžné verzi balíčku. Musíte buď udělat předběžnou verzi balíčku, nebo závisí na starší verzi stabilní verze.
 
-![Závislost předběžné verze balíčku NuGet](./media/nuget/nuget-prerelease-package.png "závislost předběžné verze balíčku NuGet")
+![Závislost předběžné verze balíčku NuGet](./media/nuget/nuget-prerelease-package.png "Závislost předběžné verze balíčku NuGet")
 
-**PROVEĎTE ✔️** publikovat předběžné verze balíčků při testování, náhled nebo experimentování.
+**✔️** publikovat předběžnou verzi balíčku při testování, náhledu nebo experimentování.
 
-**PROVEĎTE ✔️** publikovat stabilní balíček, když je připraven tak další stabilní balíčky na něj mohli odkazovat.
+**✔️** po jeho přípravě publikovat stabilní balíček, aby na něj mohli odkazovat další stabilní balíčky.
 
 ## <a name="symbol-packages"></a>Balíčky symbolů
 
-Soubory symbolů (`*.pdb`) jsou produkované kompilátorem .NET spolu s sestavení. Umístění se symboly mapy provádění soubory do původního zdrojového kódu, můžete procházet zdrojový kód, protože je spuštěn pomocí ladicího programu. Podporuje NuGet [generování balíčku samostatný symbol (`*.snupkg`)](/nuget/create-packages/symbol-packages-snupkg) obsahující soubory symbolů souběžně s hlavní balíček, který obsahuje sestavení .NET. Představu o balíčky symbolů je už hostovaný na serveru symbolů a stáhnou jenom nástroje, jako je Visual Studio na vyžádání.
+Soubory symbolů (`*.pdb`) jsou vytvářeny kompilátorem rozhraní .NET spolu se sestaveními. Soubory symbolů mapují umístění spuštění na původní zdrojový kód, takže můžete procházet zdrojový kód tak, jak je spuštěn pomocí ladicího programu. NuGet podporuje [vygenerování samostatného balíčku symbolů`*.snupkg`()](/nuget/create-packages/symbol-packages-snupkg) , který obsahuje soubory symbolů společně s hlavním balíčkem obsahujícím sestavení .NET. Nápad balíčků symbolů je hostovaný na serveru symbolů a stahuje se jenom nástrojem, jako je Visual Studio na vyžádání.
 
-NuGet.org hostuje vlastní [úložiště serveru symbolů](/nuget/create-packages/symbol-packages-snupkg#nugetorg-symbol-server). Vývojáři mohou použít symboly publikované na NuGet.org symbol server tak, že přidáte `https://symbols.nuget.org/download/symbols` k jejich [symbol zdroje v sadě Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).
+NuGet.org hostuje své vlastní [úložiště symbolů serveru](/nuget/create-packages/symbol-packages-snupkg#nugetorg-symbol-server). Vývojáři mohou používat symboly publikované na serveru symbolů NuGet.org přidáním `https://symbols.nuget.org/download/symbols` do jejich [zdrojů symbolů v aplikaci Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger).
 
 > [!IMPORTANT]
-> Server symbolů NuGet.org podporuje pouze nové [soubory portable symbolů](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) (`*.pdb`) vytvořené projekty založenými na sadě SDK.
+> Server symbolů NuGet.org podporuje pouze nové [přenositelné soubory symbolů](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) (`*.pdb`) vytvořené projekty stylu sady SDK.
 >
-> Použít NuGet.org serveru symbolů při ladění knihovny .NET, vývojáři musíte mít Visual Studio 2017 15.9 nebo vyšší.
+> Chcete-li použít server symbolů NuGet.org při ladění knihovny .NET, musí mít vývojáři Visual Studio 2017 15,9 nebo novější.
 
-Alternativa k vytvoření balíčku symbolů je vložení soubory symbolů do hlavního balíčku NuGet. Hlavní balíček NuGet bude větší, ale symbol vložené soubory znamená, že vývojáři nevyžaduje konfiguraci serveru symbolů NuGet.org. Pokud vytváříte balíček NuGet pomocí sady SDK styl projektu a pak můžete vložit soubory symbolů tak, že nastavíte `AllowedOutputExtensionsInPackageBuildOutputFolder` vlastnost:
+Alternativou k vytvoření balíčku symbolů je vkládání souborů symbolů do hlavního balíčku NuGet. Hlavní balíček NuGet bude větší, ale vložené soubory symbolů znamená, že vývojáři nepotřebují konfigurovat server symbolů NuGet.org. Pokud vytváříte balíček NuGet pomocí projektu ve stylu sady SDK, můžete vložit soubory symbolů nastavením `AllowedOutputExtensionsInPackageBuildOutputFolder` vlastnosti:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -112,14 +112,14 @@ Alternativa k vytvoření balíčku symbolů je vložení soubory symbolů do hl
 </Project>
 ```
 
-Nevýhodou vnoření soubory symbolů se zvyšují velikost balíčku o 30 % knihovnám .NET kompilováno s použitím projekty založenými na sadě SDK. Pokud velikost balíčku je problém, jste měli publikovat symboly místo toho v balíčku symbolů.
+Nevýhodou soubory symbolů vkládání je to, že zvyšují velikost balíčku o přibližně 30% pro knihovny .NET zkompilované pomocí projektů ve stylu sady SDK. Pokud je velikost balíčku obavou, místo toho byste měli publikovat symboly v balíčku symbolů.
 
-**✔️ ZVAŽTE** publikování symbolů jako balíček symbolů (`*.snupkg`) na NuGet.org
+**✔️ zvažte** publikování symbolů jako balíčku symbolů (`*.snupkg`) do NuGet.org
 
-> Balíčky symbolů (`*.snupkg`) vývojářům poskytuje dobré ladicího prostředí na vyžádání bez nadměrnému nárůstu velikosti velikost hlavního balíčku a dopadu na zvyšuje výkon pro ty, kteří nechcete ladit balíček NuGet.
+> Balíčky symbolů (`*.snupkg`) poskytují vývojářům kvalitní možnosti ladění na vyžádání, aniž by bloating hlavní velikost balíčku a ovlivnily výkon obnovení pro uživatele, kteří nemají v úmyslu ladit balíček NuGet.
 >
-> Výstrahou je, že by potřebují najít a nakonfigurujte server symbolů NuGet v jejich prostředí IDE (jako jednorázová nastavení) Chcete-li získat soubory symbolů. Visual Studio 2019 plánuje zadejte server symbolů NuGet.org jako jednu z možností úprav. 
+> Upozornění je, že uživatelé mohou potřebovat vyhledat a nakonfigurovat server symbolů NuGet v integrovaném vývojovém prostředí (jako jednorázovou instalaci) a získat tak soubory symbolů. Visual Studio 2019 verze 16,1 přidala server symbolů NuGet. org do seznamu výchozích symbolových serverů.
 
 >[!div class="step-by-step"]
->[Předchozí](strong-naming.md)
->[další](dependencies.md)
+>[Předchozí](strong-naming.md)Další
+>[](dependencies.md)

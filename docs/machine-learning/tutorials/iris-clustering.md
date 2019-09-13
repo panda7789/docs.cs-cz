@@ -5,12 +5,12 @@ author: pkulikov
 ms.date: 05/16/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: 772558be14d207475d20083f5a6b729f03766471
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e2aaeb8abc6981b420329f194aa7b82c90cae00a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666650"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929104"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Kurz: Kategorizace Iris květin pomocí k-znamená Clustering pomocí ML.NET
 
@@ -18,6 +18,7 @@ Tento kurz ukazuje, jak pomocí ML.NET vytvořit [model clusteringu](../resource
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > - Pochopení problému
 > - Vyberte příslušný úkol strojového učení.
 > - Příprava dat
@@ -36,7 +37,7 @@ Tento problém se týká dělení sady Iris květin v různých skupinách na z�
 
 ## <a name="select-the-appropriate-machine-learning-task"></a>Vyberte příslušný úkol strojového učení.
 
-Vzhledem k tomu, do které skupiny patří jednotlivé květy, si zvolíte úlohu [Machine Learning](../resources/glossary.md#unsupervised-machine-learning) , která není pod dohledem. Chcete-li rozdělit datovou sadu ve skupinách takovým způsobem, že prvky ve stejné skupině jsou lépe podobné těm, než je to u jiných skupin, použijte úlohu strojového učení [clusteringu](../resources/tasks.md#clustering) .
+Vzhledem k tomu, do které skupiny patří jednotlivé květy, si zvolíte úlohu [Machine Learning, která není pod dohledem](../resources/glossary.md#unsupervised-machine-learning) . Chcete-li rozdělit datovou sadu ve skupinách takovým způsobem, že prvky ve stejné skupině jsou lépe podobné těm, než je to u jiných skupin, použijte úlohu strojového učení [clusteringu](../resources/tasks.md#clustering) .
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -181,10 +182,11 @@ Distances: 11.69127 0.02159119 25.59896
 
 Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro clustering Iris a použili ho k vytvoření předpovědi. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/IrisFlowerClustering) GitHub.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > - Pochopení problému
 > - Vyberte příslušný úkol strojového učení.
 > - Příprava dat

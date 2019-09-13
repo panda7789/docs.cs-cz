@@ -6,12 +6,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
-ms.openlocfilehash: 779785e9793939cf121fedf99b23a07288173637
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b1d9b12a46d674bf591457cdc90c66fc16818734
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967609"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927049"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup. Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje. To může zvýšit výkon a škálovatelnost. Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.  
@@ -69,11 +69,11 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
   
 - Vytvořte vlastní třídu, která je odvozena z <xref:System.Runtime.Caching.ObjectCache> třídy a pak Poskytněte vlastní implementaci mezipaměti v odvozené třídě.  
   
-- Vytvořte třídu, která je odvozena <xref:System.Runtime.Caching.MemoryCache> z třídy a přizpůsobte nebo rozšiřuje odvozenou třídu. Příklad toho, jak to provést, najdete v tématu [ukládání aplikačních dat do mezipaměti pomocí více objektů mezipaměti v aplikaci ASP.NET](https://blogs.msdn.com/aspnetue/archive/2010/03/22/caching-application-data-by-using-multiple-cache-objects-in-an-asp-net-application.aspx).  
+- Vytvořte třídu, která je odvozena <xref:System.Runtime.Caching.MemoryCache> z třídy a přizpůsobte nebo rozšiřuje odvozenou třídu. Příklad toho, jak to provést, najdete v tématu [ukládání aplikačních dat do mezipaměti pomocí více objektů mezipaměti v aplikaci ASP.NET](https://blogs.msdn.microsoft.com/aspnetue/2010/03/22/caching-application-data-by-using-multiple-cache-objects-in-an-asp-net-application/).  
   
 - Vytvořte třídu, která je odvozena z <xref:System.Web.Caching.OutputCacheProvider> třídy a nakonfigurujte aplikaci tak, aby používala vlastního zprostředkovatele výstupní mezipaměti.  
   
- Další informace najdete v tématu rozšiřitelné [ukládání výstupu do mezipaměti s ASP.NET 4 (VS 2010 a .net 4,0 Series)](https://go.microsoft.com/fwlink/?LinkId=185772) na blogu Scott Guthrie.  
+ Další informace najdete v tématu [rozšiřitelné ukládání výstupu do mezipaměti s ASP.NET 4 (VS 2010 a .net 4,0 Series)](https://go.microsoft.com/fwlink/?LinkId=185772) na blogu Scott Guthrie.  
   
 ## <a name="see-also"></a>Viz také:
 

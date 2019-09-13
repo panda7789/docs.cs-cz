@@ -2,12 +2,12 @@
 title: Vlastní filtr zpráv
 ms.date: 03/30/2017
 ms.assetid: 98dd0af8-fce6-4255-ac32-42eb547eea67
-ms.openlocfilehash: 0b8336fe4d83f45369af31fe34b58696145d08c0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 30405800cd219f56fcc08b8e8d22f4fe0b907e32
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039912"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928693"
 ---
 # <a name="custom-message-filter"></a>Vlastní filtr zpráv
 Tato ukázka demonstruje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odesílání zpráv do koncových bodů.  
@@ -23,13 +23,16 @@ Tato ukázka demonstruje, jak nahradit filtry zpráv, které Windows Communicati
   
  Tyto filtry je možné změnit pomocí chování. V <xref:System.ServiceModel.Description.IEndpointBehavior> ukázce služba vytvoří, která <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> nahrazuje a <xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> v <xref:System.ServiceModel.Dispatcher.EndpointDispatcher>:  
   
-```  
-class FilteringEndpointBehavior : IEndpointBehavior …  
+```csharp
+class FilteringEndpointBehavior : IEndpointBehavior
+{
+    //...
+}
 ```  
   
  Jsou definovány dva filtry adres:  
   
-```  
+```csharp  
 // Matches any message whose To address contains the letter 'e'  
 class MatchEAddressFilter : MessageFilter …  
 // Matches any message whose To address does not contain the letter 'e'  
@@ -38,13 +41,13 @@ class MatchNoEAddressFilter : MessageFilter
   
  `FilteringEndpointBehavior` Je možné provést konfiguraci a povolit dvě různé varianty.  
   
-```  
+```csharp  
 public class FilteringEndpointBehaviorExtension : BehaviorExtensionElement  
 ```  
   
  Variace 1 odpovídá jenom adresám, které obsahují "e" (ale mají jakoukoliv akci), zatímco variace 2 odpovídá jenom adresám, které nemají:  
   
-```  
+```csharp  
 if (Variation == 1)  
     return new FilteringEndpointBehavior(  
         new MatchEAddressFilter(), new MatchAllMessageFilter());  
@@ -89,7 +92,7 @@ else
   
  Implementace klientské aplikace je jednoduchá; vytvoří dva kanály pro identifikátor URI služby (předáním této hodnoty jako druhý (`via`) do <xref:System.ServiceModel.Channels.IChannelFactory%601.CreateChannel%28System.ServiceModel.EndpointAddress%29> a odešle jednu zprávu na každém kanálu, ale pro každou z nich používá jiné adresy koncových bodů. Výsledkem je, že odchozí zprávy z klienta se liší od označení a server reaguje odpovídajícím způsobem, jak ukazuje výstup klienta:  
   
-```  
+```console  
 Sending message to urn:e...  
 Exception: The message with To 'urn:e' cannot be processed at the receiver, due to an AddressFilter mismatch at the EndpointDispatcher.  Check that the sender and receiver's EndpointAddresses agree.  
   
@@ -119,18 +122,18 @@ Hello
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 2. Pokud chcete ukázku spustit v konfiguraci s jedním počítačem, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 3. Pokud chcete ukázku spustit v konfiguraci mezi počítači, postupujte podle pokynů v článku [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md) a v Client.cs změňte následující řádek.  
   
-    ```  
+    ```csharp  
     Uri serviceVia = new Uri("http://localhost/ServiceModelSamples/service.svc");  
     ```  
   
      Položku localhost nahraďte názvem serveru.  
   
-    ```  
+    ```csharp  
     Uri serviceVia = new Uri("http://servermachinename/ServiceModelSamples/service.svc");  
     ```  

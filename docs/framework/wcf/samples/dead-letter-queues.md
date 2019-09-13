@@ -2,12 +2,12 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 489de5d8147edd58d90be01975ddbc9927e29902
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c8fea29fc420ea6bb922c93ea08e0e23d5bb941d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045629"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928669"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhaly při doručování. Vychází ze vzorových [vazeb v transakční službě MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Tato ukázka používá `netMsmqBinding` vazbu. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
@@ -272,7 +272,7 @@ public class PurchaseOrderDLQService : IOrderProcessor
 
  Při spuštění klienta se zobrazí zpráva klienta:
 
-```
+```console
 Press <ENTER> to terminate client.
 ```
 
@@ -280,7 +280,7 @@ Press <ENTER> to terminate client.
 
  Poté spustíte službu nedoručených zpráv, která přečte zprávu, zobrazí kód chyby a znovu odešle zprávu zpět do služby.
 
-```
+```console
 The dead letter service is ready.
 Press <ENTER> to terminate service.
 
@@ -295,7 +295,7 @@ Purchase order resent
 
  Služba se spustí a pak přečte zprávu o opakovaném odeslání a zpracuje ji.
 
-```
+```console
 The service is ready.
 Press <ENTER> to terminate service.
 

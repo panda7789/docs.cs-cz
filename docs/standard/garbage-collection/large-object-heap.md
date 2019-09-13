@@ -1,5 +1,5 @@
 ---
-title: Haldy velkých objektů v systémech Windows
+title: Halda velkých objektů v systémech Windows
 ms.date: 05/02/2018
 helpviewer_keywords:
 - large object heap (LOH)"
@@ -8,95 +8,95 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ebe856b3ed904b13201c6d59752a8a00f4060d5d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 70ea0110f22e741908ad857fa501553d93c4b98d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753952"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929141"
 ---
-# <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
+# <a name="the-large-object-heap-on-windows-systems"></a>Halda velkých objektů v systémech Windows
 
-.NET systému uvolňování paměti (GC) vyfiltruje objekty do malé a velké objekty. Je-li objekt velké, některé z jeho atributy výrazný nárůst více než pokud objekt je malý. Kompresi –, který se kopírování v paměti jinde v haldě – například může být nákladné. Z tohoto důvodu systému uvolňování paměti .NET umístí velkých objektů haldy pro velké objekty (loh modulem GC). V tomto tématu se podíváme na velkých objektových haldách do hloubky. Probereme, co splňuje podmínky objektu jako velkého objektu, jak se shromažďují tyto velké objekty a jaký druh důsledky velké objekty výkonu uložit.
+Uvolňování paměti .NET (GC) rozděluje objekty až do malých a velkých objektů. Když je objekt rozsáhlý, některé z jeho atributů se stanou důležitější, než když je objekt malý. Například jeho komprimací – to znamená, že je třeba ho zkopírovat do paměti jinde na haldě – může být nákladné. Z tohoto důvodu systém uvolňování paměti .NET umístí velké objekty na haldu velkých objektů (LOH). V tomto tématu se podrobněji podíváme na haldu velkých objektů. Probereme, co tento objekt jako velký má, jak se shromažďují tyto velké objekty a jaký druh vlivu na výkon mají velké objekty.
 
 > [!IMPORTANT]
-> Toto téma popisuje haldy velkých objektů v rozhraní .NET Framework a .NET Core využívající pouze systémy Windows. Nezahrnuje LOH systémem implementace .NET na jiných platformách.
+> Toto téma popisuje haldu velkých objektů v .NET Framework a .NET Core, které běží pouze na systémech Windows. Nepokrývá LOH běžící na implementacích .NET na jiných platformách.
 
-## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Jak objekt končí na velkých objektových haldách a jak je popisovačů GC
+## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Jak objekt skončí na haldě velkých objektů a jak je v GC zpracovává
 
-Pokud objekt je větší než nebo rovna hodnotě o velikosti 85 000 bajtů, se považuje za velké objekty. Toto číslo bylo určeno optimalizace výkonu. Požadavek na přidělení objektu je o velikosti 85 000 nebo více bajtů, modul runtime se přiděluje na velkých objektových haldách.
+Pokud je objekt větší nebo roven 85 000 bajtů, je považován za velký objekt. Toto číslo bylo určeno vyladěním výkonu. Pokud je požadavek na přidělení objektu na 85 000 nebo více bajtů, modul runtime ho přidělí na haldu velkých objektů.
 
-Vysvětlení, co to znamená, je užitečné si prohlédnout některé základní informace o uvolňování paměti .NET.
+Pro pochopení toho, co to znamená, je vhodné si prostudovat některé zásadní informace o modulu .NET GC.
 
-Uvolňování paměti .NET je generační kolekcí. Má tři generace: 0. generace 1. generace a 2. generace. Důvodem pro 3 generací je, že v dobře vyladit aplikaci, většina kostka objekty v gen0. V serveru aplikaci, byste například přidělení související s každou žádostí kostka, po dokončení požadavku. Žádosti o přidělení vydávaných za pochodu vytvořit do gen1 a kostka existuje. V podstatě gen1 funguje jako vyrovnávací paměť mezi mladé objekt oblasti a oblasti s dlouhým poločasem rozpadu objektu.
+Uvolňování paměti .NET je kolekce. Má tři generace: generace 0, generace 1 a generace 2. Důvodem pro 3 generace je to, že v dobře vyladěné aplikaci většina objektů v gen0. Například v serverové aplikaci musí být přidělení přidružená ke každé žádosti po dokončení žádosti kostka. Požadavky na přidělení v letadle provedou Gen1 a Die. Gen1 v podstatě funguje jako vyrovnávací paměť mezi mladými oblastmi objektů a dlouhodobými oblastmi objektů.
 
-Malé objekty jsou vždy přiděleny v generaci 0 a v závislosti na jejich životního cyklu, může být povýšen na 1. generace nebo generation2. Velké objekty jsou vždy přiděleny v 2. generace.
+Malé objekty jsou vždy přiděleny v generaci 0 a v závislosti na jejich životnosti mohou být povýšeny na generaci 1 nebo generation2. Velké objekty jsou vždy přiděleny v generaci 2.
 
-Velké objekty patří do 2. generace, protože jsou shromažďovány pouze během shromažďování generace 2. Pokud generace jsou shromažďovány, shromažďují se také všech mladších generation(s). Například při uvolnění GC 1. generace dojde, se shromažďují i generace 1 a 0. A při uvolnění GC 2. generace dojde, celý haldy jsou shromažďovány. Z tohoto důvodu se také nazývá uvolnění GC 2. generace *úplné uvolňování paměti*. Tento článek odkazuje na 2. generace uvolňování paměti namísto úplný úklid GC, ale podmínky jsou zaměnitelné.
+Velké objekty patří do generace 2, protože jsou shromažďovány pouze během kolekce generace 2. Po shromáždění generace se shromažďují také všechny jeho mladší generace. Například když dojde k 1. generaci GC, shromažďují se obě generace 1 a 0. A když dojde k GC generace 2, bude shromážděna celá halda. Z tohoto důvodu se také označuje jako *úplný GC*. generace 2 GC. Tento článek odkazuje na generaci 2 GC místo úplného uvolňování paměti, ale tyto výrazy jsou zaměnitelné.
 
-Generace poskytují logické zobrazení haldy uvolňování paměti. Fyzicky živé objekty ve spravované haldě segmenty. A *spravované haldě segmentu* se považuje blok paměti, která rezervuje GC z operačního systému pomocí volání [VirtualAlloc funkce](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) jménem spravovaného kódu. Při načtení modulu CLR uvolňování paměti přiděluje dva segmenty počáteční haldy: jeden pro malé objekty (haldy malých objektů, nebo SOH) a jeden pro velké objekty (haldy pro velké objekty).
+Generace poskytují logické zobrazení haldy GC. Fyzicky objekty ve spravovaných segmentech haldy jsou živé. *Segment spravované haldy* je blok paměti, který GC vyhradí z operačního systému voláním [funkce VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) jménem spravovaného kódu. Když je modul CLR načten, uvolňování paměti přidělí dva počáteční segmenty haldy: jeden pro malé objekty (halda malých objektů nebo SOH) a jeden pro velké objekty (Large Object halda).
 
-Přidělení požadavky splněny pak vložením spravované objekty v těchto segmentech spravované haldě. Pokud je objekt menší než o velikosti 85 000 bajtů, přejde na segment pro SOH; v opačném případě přejde LOH segmentu. Segmenty usilujeme o to (do menších bloků) jako další a další objekty přidělovány na ně.
-Pro prohlášení o stavu objekty, které byly zachovány při uvolnění GC jsou povýšeny do příští generace. Objekty, které byly zachovány při shromažďování generace 0 jsou nyní považovány za objekty generace 1 a tak dále. Ale objekty, které byly zachovány při generování nejstarší jsou stále považovány za nejstarší generování. Jinými slovy jsou zachované objekty z 2. generace 2. generace objekty; a jsou zachované objekty z LOH LOH objekty, (které jsou shromážděné pomocí gen2).
+Žádosti o přidělení se pak splní vložením spravovaných objektů na tyto spravované segmenty haldy. Pokud je objekt menší než 85 000 bajtů, je umístěn do segmentu pro SOH; v opačném případě je umístěn na segment LOH. Segmenty jsou potvrzeny (v menších blocích), protože jsou jim přiděleny další a více objektů.
+Pro SOH jsou objekty, které jsou v GC, povýšeny na novou generaci. Objekty, které jsou zachovány kolekcí 0. generace, se nyní považují za objekty generace 1 a tak dále. Nicméně objekty, které zůstávají nejstarší generace, jsou stále považovány za nejstarší generace. Jinými slovy, pozůstaly od generace 2 objekty generace 2; a zbývající objekty z LOH jsou objekty LOH (které jsou shromažďovány pomocí Gen2).
 
-Uživatelský kód můžete pouze přidělit v generaci 0 (malých objektů) nebo LOH (velkých objektů). Pouze pro uvolňování paměti může "přidělení paměti pro" objekty v 1. generace (podporou zachované objekty z 0. generace) a 2. generace (podporou zachované objekty z generací 1 a 2).
+Uživatelský kód může přidělit pouze v generaci 0 (malé objekty) nebo LOH (velké objekty). Pouze GC může "přidělit" objekty v generaci 1 (zvýšením úrovně pozůstalcích od generace 0) a generace 2 (zvýšením úrovně podržených z generací 1 a 2).
 
-Při uvolňování paměti se aktivuje, GC trasování prostřednictvím živé objekty a komprimuje je. Ale protože je nákladná záležitost komprimace GC *přesune* LOH; usnadňuje volný seznam mimo neživými objekty, které lze znovu použít později ke splnění požadavků na přidělení velkého objektu. Sousední neživými objekty jsou provedeny do jednoho objektu zdarma.
+Když je aktivováno uvolňování paměti, GC provede trasování v rámci živých objektů a zkomprimuje je. Ale vzhledem k tomu, že komprimace je nákladné *, uvolňování* paměti LOH; Vytvoří volný seznam z neaktivních objektů, které lze později znovu použít k uspokojení požadavků na přidělení velkých objektů. Sousední nedoručené objekty jsou vytvořeny do jednoho volného objektu.
 
-.NET core a .NET Framework (od verze rozhraní .NET Framework 4.5.1) patří <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode?displayProperty=nameWithType> vlastnost, která umožňuje uživatelům určit, že LOH má probíhat během další úplné blokující uvolňování paměti. A v budoucnu se mohou rozhodnout automaticky komprimovat LOH .NET. To znamená, že pokud přidělení paměti pro velké objekty a ujistěte se, že nelze přesunout, by měl stále připnete je.
+.NET Core a .NET Framework (počínaje .NET Framework 4.5.1) obsahují <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode?displayProperty=nameWithType> vlastnost, která umožňuje uživatelům určit, že by měl být LOH při příštím úplném blokování GC. A v budoucnu se může .NET rozhodnout LOH automaticky zkomprimovat. To znamená, že pokud přidělíte velké objekty a chcete zajistit, aby se nepřesunuly, měli byste je stále připnout.
 
-Obrázek 1 ukazuje scénář, kde tvoří GC 1. generace za GC 0. generace první kde `Obj1` a `Obj3` generace 2 po první 1. generace uvolňování paměti forms jsou neaktivní a kde `Obj2` a `Obj5` jsou neaktivní. Všimněte si, že to a na následujících obrázcích jsou jen jako ukázka; obsahují velmi málo objekty kterého pochopíte, co se stane, že na haldě. Ve skutečnosti jsou celou řadu dalších objektů obvykle součástí serverem globálního katalogu.
+Obrázek 1 znázorňuje situaci, kdy se generace GC vydává 1 po první generaci 0 °c, `Obj1` kde `Obj3` a jsou neaktivní, a generace formulářů 2 po prvním 1. generaci GC, `Obj2` kde `Obj5` a jsou neaktivní. Všimněte si, že tato a následující čísla jsou pouze pro ilustrační účely; obsahují velmi málo objektů, aby lépe ukázaly, co se děje na haldě. Ve skutečnosti je mnoho dalších objektů obvykle součástí GC.
 
-![Obrázek 1: Uvolňování paměti generace 0 a 1. generace GC](media/loh/loh-figure-1.jpg)\
+![Obrázek 1: GC s globálním 0 a GC 1. generace](media/loh/loh-figure-1.jpg)\
 Obrázek 1: Generace 0 a 1. generace GC.
 
-Obrázek 2 ukazuje, že po 2. generace GC které si všimli, že `Obj1` a `Obj2` jsou neaktivní, GC forms souvislých volného místa, nedostatek paměti, která používá pravděpodobně obsazena `Obj1` a `Obj2`, která byla použita k vyřízení požadavku na přidělení pro `Obj4`. Mezera za poslední objekt `Obj3`na konci segmentu slouží také ke splnění požadavků na přidělení.
+Na obrázku 2 se dozvíte, že po 2. generaci `Obj1` GC `Obj2` , který se zjistil, že a jsou neaktivní, tvoří GC volné místo z paměti, která se `Obj1` používá `Obj2`k tomu, aby využívala a, která se pak použila k uspokojení žádosti o přidělení. pro `Obj4`. Místo za posledním objektem,, `Obj3`do konce segmentu, lze také použít k uspokojení požadavků na přidělení.
 
-![Obrázek 2: Po uvolnění GC gen 2](media/loh/loh-figure-2.jpg)\
-Obrázek 2: Po uvolnění GC 2. generace
+![Obrázek 2: Po 1. generace GC](media/loh/loh-figure-2.jpg)\
+Obrázek 2: Po 2. generaci GC
 
-Pokud není k dispozici dostatek volného místa pro plnění požadavků na přidělení velké objekty, uvolňování paměti se nejprve pokusí získat další segmenty z operačního systému. Pokud selže, spustí 2. generace uvolňování paměti v naději, uvolněte nějaké místo.
+Pokud není dostatek volného místa pro uspokojení požadavků na přidělení velkých objektů, GC se nejprve pokusí získat další segmenty z operačního systému. Pokud se to nepodaří, aktivuje se GC generace 2 v průběhu uvolnění místa.
 
-Během 1. generace nebo 2. generace uvolňování paměti, uvolňování paměti uvolní segmenty, které mají na ně žádné živé objekty zpět do operačního systému pomocí volání [funkce VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree). Mezera za poslední živé objekt na konec segmentu je zrušeny (s výjimkou na dočasný segment, ve kterém gen0/gen1 za provozu, ve kterém systému uvolňování paměti zachovat některé potvrzené, protože se být přidělování vaší aplikace v něm hned). A bezplatný prostory stále potvrdit, když dojde k jejich vynulování, což znamená, že není nutné zapisovat data v nich zpět na disk operačního systému.
+Během generace 1 nebo generace 2 GC uvolňuje segmenty uvolňování paměti, které nemají žádné živé objekty, zpět do operačního systému voláním [funkce VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree). Místo za posledním živým objektem na konci segmentu je depotvrzeno (s výjimkou dočasného segmentu, kde gen0/Gen1 Live, kde systém uvolňování paměti uchovává nějaké potvrzené, protože vaše aplikace se hned přiděluje). A volná místa zůstávají i po resetování, což znamená, že operační systém nemusí zapisovat data do disku zpět na disk.
 
-Vzhledem k tomu, LOH se shromažďují, pouze během GC 2. generace, můžete segmentu LOH uvolněna pouze během těchto uvolňování paměti. Obrázek 3 ukazuje scénář, ve kterém systému uvolňování paměti uvolní jeden segment (segment 2) zpět do operačního systému a rozváže více místa na zbývající segmenty. Pokud je třeba použít zrušeny místa na konci segmentu pro splnění požadavků na přidělení velkého objektu, potvrzení paměti znovu. (Vysvětlení rozvázání/potvrzení, naleznete v dokumentaci k [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc).
+Vzhledem k tomu, že je LOH shromážděna pouze během generace 2 GC, segment LOH může být uvolněn pouze během takového GC. Obrázek 3 znázorňuje scénář, ve kterém uvolňování paměti uvolní jeden segment (segment 2) zpátky na operační systém a ve zbývajících segmentech zruší více místa. Pokud musí použít odstraněné místo na konci segmentu, aby se splnily požadavky na velké nároky na přidělení objektů, pak se znovu potvrdí. (Vysvětlení potvrzení/zrušení potvrzení naleznete v dokumentaci k [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc).
 
-![Obrázek 3: LOH po uvolňování paměti generace 2](media/loh/loh-figure-3.jpg)\
-Obrázek 3: LOH po 2. generace GC
+![Obrázek 3: LOH po 1. generace GC](media/loh/loh-figure-3.jpg)\
+Obrázek 3: LOH po generaci 2 GC
 
-## <a name="when-is-a-large-object-collected"></a>Když se shromažďují velké objekty
+## <a name="when-is-a-large-object-collected"></a>Kdy je shromážděn velký objekt?
 
-Obecně platí globální Katalog dojde, pokud jeden z následujících podmínek 3 se stane:
+Obecně platí, že k GC dojde, když dojde k jedné z následujících 3 podmínek:
 
-- Přidělování překračuje generace 0 nebo velkého objektu prahovou hodnotu.
+- Přidělení překračuje prahovou hodnotu pro generaci 0 nebo velký objekt.
 
-  Prahová hodnota je vlastnost generace. Prahová hodnota pro generace je nastavena, když uvolňování paměti přiděluje objekty do něj. Pokud je překročena prahová hodnota, globální Katalog se aktivuje v této generací. Při přidělování malých nebo velkých objektů můžete využívat 0. generace a LOH prahové hodnoty, v uvedeném pořadí. Při uvolňování paměti přiděluje do generace 1 a 2, využívá jejich prahové hodnoty. Tyto prahové hodnoty je dynamicky vyladěná po spuštění programu.
+  Prahová hodnota je vlastnost generace. Prahová hodnota pro generování je nastavena, když systém uvolňování paměti přiděluje objekty do objektu. Při překročení prahové hodnoty se v této generaci aktivuje GC. Při přidělování malých nebo velkých objektů spotřebováváte generace 0 a prahové hodnoty LOH v uvedeném pořadí. Když systém uvolňování paměti přidělí do generace 1 a 2, spotřebuje jejich prahové hodnoty. Tyto prahové hodnoty jsou dynamicky vyladěny při spuštění programu.
 
-  To je obvyklý případ; Většina GC dojít kvůli přidělení na spravované haldě.
+  Toto je obvyklý případ. k většině GC dochází z důvodu přidělení na spravované haldě.
 
 - <xref:System.GC.Collect%2A?displayProperty=nameWithType> Metoda je volána.
 
-  Pokud konstruktor bez parametrů <xref:System.GC.Collect?displayProperty=nameWithType> metoda je volána nebo jiné přetížení se předá <xref:System.GC.MaxGeneration?displayProperty=nameWithType> jako argument, jsou shromažďovány LOH spolu se zbývajícími spravované haldě.
+  Pokud je volána <xref:System.GC.Collect?displayProperty=nameWithType> metoda bez parametrů nebo je jako argument předána <xref:System.GC.MaxGeneration?displayProperty=nameWithType> jiná přetížená metoda, je LOH shromážděn spolu se zbytkem spravované haldy.
 
-- Systém je v případě nedostatku paměti.
+- Systém je ve stavu nedostatku paměti.
 
-  K tomu dojde, když systému uvolňování paměti obdrží oznámení vysoký poměr paměti z operačního systému. Pokud uvolňování domnívá, že to 2. generace GC bude produktivní, spustí jednu.
+  K tomu dochází, když systém uvolňování paměti obdrží oznámení o vysoké paměti z operačního systému. Pokud systém uvolňování paměti předpokládá, že se v GC generace 2 zvýší produktivita, spustí se jedna.
 
-## <a name="loh-performance-implications"></a>Rozbor LOH výkonu
+## <a name="loh-performance-implications"></a>Důsledky výkonu LOH
 
-Přidělení na haldu velkých objektů dopad na výkon následujícími způsoby.
+Alokace u haldy velkých objektů má vliv na výkon následujícími způsoby.
 
-- Přidělování nákladů.
+- Náklady na přidělení.
 
-  Modul CLR provede záruku, že se vymaže paměti pro každý nový objekt, že poskytuje navýšení kapacity. To znamená, že přidělování nákladů ve velkém objektu je zcela léta dominovaly paměti vymazání (Pokud aktivuje GC). Pokud trvá 2 cykly zrušte jeden bajt, trvá 170,000 cykly zrušte nejmenší velkého objektu. Paměť objektu 16MB na počítači s 2GHz vymazáním trvá přibližně 16ms. To je docela rozsáhlá náklady.
+  CLR zajišťuje záruku toho, že paměť pro každý nový objekt, který je vykazuje, je vymazána. To znamená, že náklady na přidělení velkého objektu jsou zcela ovládány vymazáním paměti (Pokud se nespustí GC). Pokud potrvá dva cykly k vymazání jednoho bajtu, bude trvat 170 000 cyklů, aby se vymazal nejmenší velký objekt. Vymazání paměti objektu 16MB na 2GHz počítači trvá přibližně 16MS. To je spíše velké náklady.
 
-- Kolekce nákladů.
+- Náklady na shromažďování.
 
-  Protože LOH a 2. generace jsou shromažďovány společně, pokud je překročena mezní hodnota buď jeden z kolekce generace 2 se aktivuje. Pokud generace, které se z důvodu LOH aktivuje 2 kolekce, 2. generace nebudou nutně mnohem menší po uvolňování paměti. Pokud v 2. generace není množství dat, to má minimální dopad. Ale pokud generace 2 je velká, může to způsobit problémy s výkonem Pokud mnoho GC 2. generace se aktivuje. Mnoho velkých objektů jsou přiděleny velmi dočasný a máte velký SOH, může spotřebovat příliš mnoho času provádění GC. Kromě toho přidělování nákladů můžete ve skutečnosti přidání registrace Pokud uchováváte přidělování a volnost velmi velkých objektů.
+  Vzhledem k tomu, že jsou LOH a generace 2 shromažďovány společně, pokud je překročena prahová hodnota jedné z nich, je aktivována kolekce 2. generace. Pokud je kolekce generace 2 aktivována z důvodu LOH, generace 2 nebude nutně po GC mnohem menší. Pokud pro generaci 2 není k dispozici žádné množství dat, má minimální dopad. Pokud je ale generace 2 Velká, může to způsobit problémy s výkonem, pokud se spustí spousta generace 2 GC. Pokud je mnoho velkých objektů přiděleno velmi dočasnému základu a máte velký počet SOH, může být útrata příliš mnoho času GC. Kromě toho mohou být náklady na přidělení skutečně přidány, pokud budete přiřazovat a vracet ve skutečnosti velké objekty.
 
-- Prvky pole s typy odkazů.
+- Prvky pole s odkazovým typem.
 
-  Pole (velmi zřídka dochází k instanci objekt, který je ve skutečnosti velký) jsou obvykle velmi velké objekty na LOH. Pokud jsou prvky pole bohatého na odkaz, budou vám účtovány náklady, které není k dispozici, pokud nejsou prvky bohatého na odkaz. Pokud element neobsahuje žádné odkazy, systému uvolňování paměti nemusí vůbec projít pole. Například pokud použijete pole k uložení uzly v binární strom, jeden ze způsobů implementace je k odkazování na uzlu vpravo a vlevo uzel skutečné uzly:
+  Velmi velké objekty v LOH jsou obvykle pole (velmi zřídka mají objekt instance, který je ve skutečnosti velký). Pokud jsou prvky pole na úrovni reference, dojde k nepřítomnosti nákladů, které nejsou k dispozici, pokud prvky nejsou na přehledně formátované. Pokud element neobsahuje žádné odkazy, systém uvolňování paměti nemusí projít všemi poli. Například pokud použijete pole k ukládání uzlů v binárním stromu, jedním ze způsobů, jak ho implementovat, je odkazování na pravý a levý uzel uzlu skutečnými uzly:
 
   ```csharp
   class Node
@@ -109,7 +109,7 @@ Přidělení na haldu velkých objektů dopad na výkon následujícími způsob
   Node[] binary_tr = new Node [num_nodes];
   ```
 
-  Pokud `num_nodes` je velké systému uvolňování paměti musí projít aspoň dva odkazy na jeden element. Alternativním přístupem je index pravém a levém uzlů úložiště:
+  Pokud `num_nodes` je velká, musí systém uvolňování paměti projít alespoň dvěma odkazy na jeden prvek. Alternativním přístupem je uložit index pravého a levého uzlu:
 
   ```csharp
   class Node
@@ -120,96 +120,96 @@ Přidělení na haldu velkých objektů dopad na výkon následujícími způsob
   } ;
   ```
 
-  Namísto odkazování data vlevo uzel jako `left.d`, můžete si ji jako `binary_tr[left_index].d`. A systému uvolňování paměti nemusí podívat se na všechny odkazy pro uzel doleva a doprava.
+  Místo odkazování na data `left.d`levého uzlu se na něj odkazuje jako `binary_tr[left_index].d`na. A systém uvolňování paměti nemusí pohlížet na žádné odkazy pro levý a pravý uzel.
 
-Mimo tři faktory jsou obvykle mnohem závažnější než třetí první dva. Z tohoto důvodu doporučujeme vám, že přidělíte fond velkých objektů, které můžete použít namísto přidělení dočasné ty.
+Z těchto tří faktorů jsou první dva většinou mnohem významné než třetí. Z tohoto důvodu doporučujeme, abyste přidělili fond velkých objektů, které znovu použijete místo přidělení dočasných.
 
-## <a name="collecting-performance-data-for-the-loh"></a>Shromažďování dat výkonu pro LOH
+## <a name="collecting-performance-data-for-the-loh"></a>Shromažďování údajů o výkonu pro LOH
 
-Předtím, než můžete shromáždit údaje o výkonu pro konkrétní oblasti, můžete byste už mít provedli následující:
+Předtím, než shromáždíte údaje o výkonu konkrétní oblasti, byste už měli provést následující:
 
-1. Najít důkaz, že by měl být díváte v této oblasti.
+1. Bylo nalezeno legitimace, které byste měli v této oblasti prohledat.
 
-2. Vyčerpání další oblasti, které znáte nástroje, aniž byste hledání nic, které může vysvětlovat problému s výkonem, které jste viděli.
+2. Byly vyčerpány jiné oblasti, o kterých víte, že nenajdete cokoli, co by mohlo vysvětlit problém s výkonem, který jste viděli.
 
-Najdete v blogovém [porozumět danému problému, než se pokusíte na vyhledání řešení](https://blogs.msdn.microsoft.com/maoni/2006/09/01/understand-the-problem-before-you-try-to-find-a-solution/) Další informace o základní informace o paměti a procesoru.
+[Než se pokusíte najít řešení](https://devblogs.microsoft.com/dotnet/understand-the-problem-before-you-try-to-find-a-solution/) , kde najdete další informace o základech paměti a procesoru, podívejte se na blog.
 
-Můžete použít následující nástroje ke shromažďování dat o výkonu LOH:
+K shromažďování dat o výkonu LOH můžete použít následující nástroje:
 
 - [Čítače výkonu paměti .NET CLR](#net-clr-memory-performance-counters)
 
-- [Události trasování událostí pro Windows](#etw-events)
+- [Události ETW](#etw-events)
 
 - [Ladicí program](#a-debugger)
 
 ### <a name="net-clr-memory-performance-counters"></a>Čítače výkonu paměti .NET CLR
 
-Tyto čítače výkonu jsou obvykle dobrý první krok při zkoumání problémů s výkonem (i když vám doporučujeme použít [události trasování událostí pro Windows](#etw-events)). Konfigurace sledování výkonu tak, že přidáte čítače, které potřebujete, jak je vidět na obrázku 4. Ty, které jsou relevantní pro LOH jsou:
+Tyto čítače výkonu jsou obvykle dobrým prvním krokem při zkoumání problémů s výkonem (i když doporučujeme použít [události ETW](#etw-events)). Nástroj Sledování výkonu konfigurujete tak, že přidáte čítače, které chcete, jak ukazuje obrázek 4. Ty, které jsou relevantní pro LOH, jsou:
 
-- **Úklidy 2.**
+- **Kolekce 2. generace**
 
-   Zobrazí počet, kolikrát od spuštění procesu došlo k 2. generace GC. Hodnota čítače je zvýšena na konci kolekce generace 2 (také nazývané úplného uvolňování paměti kolekce). Tento čítač zobrazí naposledy zjištěnou hodnotu.
+   Zobrazuje počet, kolikrát od spuštění procesu došlo k GC 2. generace. Čítač se zvyšuje na konci kolekce 2. generace (označuje se také jako úplné uvolňování paměti). Tento čítač zobrazuje poslední zjištěnou hodnotu.
 
-- **Velikost velkých objektových haldách**
+- **Velikost haldy Large Object**
 
-   Zobrazí aktuální velikost v bajtech, včetně volné místo LOH. Tento čítač je aktualizován na konci uvolnění, ne při každém přidělení.
+   Zobrazí aktuální velikost LOH v bajtech, včetně volného místa. Tento čítač se aktualizuje na konci uvolňování paměti, ne při každém přidělení.
 
-Běžný způsob, jak zobrazit čítače výkonu je pomocí sledování výkonu (perfmon.exe). Pomocí "Přidat čítače" přidat čítač zajímavé pro procesy, které vás zajímají. Data čítačů výkonu můžete uložit do souboru protokolu, jak ukazuje obrázek 4:
+Běžný způsob, jak si prohlédnout čítače výkonu, je nástroj Performance Monitor (Perfmon. exe). Pomocí možnosti Přidat čítače přidejte zajímavé čítače pro procesy, které vás zajímají. Data čítače výkonu můžete uložit do souboru protokolu, jak ukazuje obrázek 4:
 
-![Screenshow, který ukazuje přidání čítačů výkonu.](media/large-object-heap/add-performance-counter.png)
-Obrázek 4: LOH po 2. generace GC
+![Screenshow, která ukazuje přidání čítačů výkonu.](media/large-object-heap/add-performance-counter.png)
+Obrázek 4: LOH po generaci 2 GC
 
-Čítače výkonu může být dotazována také prostřednictvím kódu programu. Řada lidí je shromažďovat tímto způsobem jako součást svých rutinní proces testování. Při jejich zjištění čítače nahraďte hodnotami, které jsou neobvyklého, používají jiným způsobem získat podrobnější údaje, které pomáhají při šetření.
+Čítače výkonu se také dají dotazovat programově. Spousta lidí je shromažďuje tímto způsobem v rámci procesu pravidelného testování. Když vydávají čítače s hodnotami, které jsou z obyčejného, používají jiné prostředky k získání podrobnějších dat, která vám pomohou s šetřením.
 
 > [!NOTE]
-> Doporučujeme, abyste místo výkonu použít trasování událostí pro Windows čítače, protože trasování událostí pro Windows poskytuje mnohem bohatší informace.
+> Doporučujeme místo čítačů výkonu použít události trasování událostí pro Windows, protože trasování událostí pro Windows poskytuje mnohem rozsáhlejší informace.
 
 ### <a name="etw-events"></a>Trasování událostí pro Windows – události
 
-Poskytuje širokou škálu události trasování událostí, které vám pomohou pochopit, co dělá haldy systému uvolňování paměti a proč. V následujících příspěvcích na blogu ukazují, jak shromažďovat a pochopit uvolňování paměti události trasování událostí pro Windows:
+Systém uvolňování paměti poskytuje bohatou sadu událostí ETW, které vám pomůžou pochopit, co dělá halda a proč. Následující blogové příspěvky ukazují, jak shromažďovat a pochopit události GC pomocí ETW:
 
-- [Události trasování událostí pro Windows uvolňování paměti – 1](https://blogs.msdn.microsoft.com/maoni/2014/12/22/gc-etw-events-1/)
+- [GC – události ETW – 1](https://devblogs.microsoft.com/dotnet/gc-etw-events-1/)
 
-- [Události trasování událostí pro Windows uvolňování paměti – 2](https://blogs.msdn.microsoft.com/maoni/2014/12/25/gc-etw-events-2/)
+- [GC – události ETW – 2](https://devblogs.microsoft.com/dotnet/gc-etw-events-2/)
 
-- [Události trasování událostí pro Windows uvolňování paměti – 3](https://blogs.msdn.microsoft.com/maoni/2014/12/25/gc-etw-events-3/)
+- [GC – události ETW – 3](https://devblogs.microsoft.com/dotnet/gc-etw-events-3/)
 
-- [Události trasování událostí pro Windows uvolňování paměti – 4](https://blogs.msdn.microsoft.com/maoni/2014/12/30/gc-etw-events-4/)
+- [GC – události ETW – 4](https://devblogs.microsoft.com/dotnet/gc-etw-events-4/)
 
-K identifikaci nadměrné generace GC 2 způsobena dočasné LOH přidělení, podívejte se na sloupce důvod aktivace pro GC. Pro jednoduchý test, který přiděluje jenom dočasné velké objekty, lze shromažďovat informace o události trasování událostí pro Windows s tímto [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) příkazového řádku:
+Chcete-li identifikovat nadměrné GC 2. generace způsobené dočasným přidělením LOH, podívejte se do sloupce důvod triggeru pro GC. Pro jednoduchý test, který přiděluje pouze dočasné velké objekty, můžete shromažďovat informace o událostech ETW pomocí následujícího příkazového řádku [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) :
 
 ```console
 perfview /GCCollectOnly /AcceptEULA /nogui collect
 ```
 
-Výsledkem je přibližně takto:
+Výsledek je podobný tomuto:
 
-![Snímek obrazovky zobrazující události trasování událostí pro Windows v PerfView.](media/large-object-heap/event-tracing-windows-perfview.png)
-Obrázek 5: Události trasování událostí pro Windows zobrazí, pomocí nástroje PerfView
+![Snímek obrazovky, který zobrazuje události ETW v PerfView.](media/large-object-heap/event-tracing-windows-perfview.png)
+Obrázek 5: Události ETW zobrazené pomocí PerfView
 
-Jak vidíte, jsou všechny GC 2. generace GC a všechny jsou aktivované pomocí AllocLarge, což znamená, že přidělování ve velkém objektu aktivuje toto uvolňování paměti. Víme, že jsou tyto přidělení dočasné vzhledem k tomu, **míra přežití LOH %** říká sloupce 1 %.
+Jak vidíte, všechny GC jsou generace 2 GC a všechny jsou spouštěny v AllocLarge, což znamená, že přidělením velkého objektu aktivovaného tímto GC. Víme, že tato přidělení jsou dočasná, protože **sazba LOH pro přežití%** kolony uvádí 1%.
 
-Můžete shromažďovat další události trasování událostí pro Windows, které informují vás, kteří přidělené tyto velké objekty. Na příkazovém řádku následující:
+Můžete shromažďovat další události ETW, které vám sdělí, kdo tyto velké objekty přidělil. Následující příkazový řádek:
 
 ```console
 perfview /GCOnly /AcceptEULA /nogui collect
 ```
 
-shromažďuje události AllocationTick, která se aktivuje přibližně každých 100 kB za přidělení. Jinými slovy událost se aktivuje pokaždé, když je přiděleno ve velkém objektu. Pak můžete se podívat na jedno zobrazení alokační haldy uvolňování paměti, které zobrazují zásobníky volání, která přidělena velké objekty:
+shromažďuje událost AllocationTick, která se aktivuje přibližně pro každé 100 tisíc množství přidělení. Jinými slovy, událost je vyvolána při každém přidělení velkého objektu. Pak se můžete podívat na jedno z zobrazení přidělení haldy GC, které vám ukáže zásobníky voláníi, že se přidělily velké objekty:
 
-![Snímek obrazovky, který se teď zobrazují systému uvolňování paměti haldy.](media/large-object-heap/garbage-collector-heap.png)
-Obrázek 6: Zobrazení alokační haldy uvolňování paměti
+![Snímek obrazovky zobrazující zobrazení haldy systému uvolňování paměti.](media/large-object-heap/garbage-collector-heap.png)
+Obrázek 6: Zobrazení přidělení haldy GC
 
-Jak je vidět, to je velmi jednoduchý test, který právě přiděluje rozsáhlé objekty z jeho `Main` metoda.
+Jak vidíte, jedná se o velmi jednoduchý test, který pouze přiděluje velké objekty od své `Main` metody.
 
 ### <a name="a-debugger"></a>Ladicí program
 
-Pokud vše, co musíte je výpis paměti a je třeba podívat, jaké objekty jsou skutečně na LOH, můžete použít [rozšíření ladění SoS](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md) poskytované rozhraní .NET.
+Pokud je to výpis paměti a potřebujete zjistit, jaké objekty jsou ve skutečnosti na LOH, můžete použít [rozšíření ladicího programu SOS](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md) , které poskytuje .NET.
 
 > [!NOTE]
-> Příkazy ladění, které jsou uvedené v této části se vztahují na [ladicích programů Windows](https://www.microsoft.com/whdc/devtools/debugging/default.mspx).
+> Příkazy ladění uvedené v této části platí pro [ladicí programy systému Windows](https://www.microsoft.com/whdc/devtools/debugging/default.mspx).
 
-Následuje ukázkový výstup z analýzy LOH:
+Následující ukázka ukazuje výstup z analýzy LOH:
 
 ```
 0:003> .loadby sos mscorwks
@@ -240,17 +240,17 @@ MT   Count   TotalSize Class Name
 Total 133 objects
 ```
 
-Velikost haldy LOH je (16,754,224 + 16,699,288 + 16,284,504) = 49,738,016 bajtů. Mezi 023e1000 adresy a 033db630 8,008,736 bajtů obsazena pole <xref:System.Object?displayProperty=nameWithType> objekty, budou obsazeny 6,663,696 bajtů podle pole <xref:System.Byte?displayProperty=nameWithType> objekty a 2,081,792 bajtů obsazena volného místa.
+Velikost haldy LOH je (16 754 224 + 16 699 288 + 16 284 504) = 49 738 016 bajtů. Mezi adresami 023e1000 a 033db630, 8 008 736 bajtů, které jsou obsazeny polem <xref:System.Object?displayProperty=nameWithType> objektů, 6 663 696 bajty jsou obsazeny <xref:System.Byte?displayProperty=nameWithType> polem objektů a 2 081 792 bajtů je obsazeno volným místem.
 
-V některých případech ladicí program ukazuje, že celková velikost LOH menší než o velikosti 85 000 bajtů. K tomu dochází, protože samotný modul runtime používá LOH přidělit některé objekty, které jsou menší než ve velkém objektu.
+V některých případech ladicí program zobrazí, že celková velikost LOH je menší než 85 000 bajtů. K tomu dochází, protože modul runtime sám používá LOH k přidělení některých objektů, které jsou menší než velký objekt.
 
-Vzhledem k tomu, LOH není setřepána, někdy LOH představit zdroj fragmentace. Fragmentace znamená, že:
+Vzhledem k tomu, že se LOH nekomprimuje, někdy se LOH považuje za zdroj fragmentace. Fragmentace znamená:
 
-- Fragmentace spravované haldě, které jsou označeny množství volného místa mezi spravované objekty. V prodejní objednávky `!dumpheap –type Free` příkaz zobrazí množství volného místa mezi spravované objekty.
+- Fragmentace spravované haldy, která je určena množstvím volného místa mezi spravovanými objekty. V SOS `!dumpheap –type Free` příkaz zobrazí množství volného místa mezi spravovanými objekty.
 
-- Fragmentace adresního prostoru virtuální paměti (VM), což je paměť, označen jako `MEM_FREE`. Můžete ho získat s použitím různých příkazů ladicího programu v rámci windbg.
+- Fragmentace adresního prostoru virtuální paměti (VM), což je paměť označená jako `MEM_FREE`. Můžete ji získat pomocí různých příkazů ladicího programu v programu WinDbg.
 
-   Následující příklad ukazuje fragmentaci v prostoru virtuálních počítačů:
+   Následující příklad ukazuje fragmentaci v prostoru virtuálního počítače:
 
    ```
    0:000> !address
@@ -300,18 +300,18 @@ Vzhledem k tomu, LOH není setřepána, někdy LOH představit zdroj fragmentace
    Largest free region: Base 01432000 - Size 707ee000 (1843128 KB)
    ```
 
-Je běžné zobrazíte fragmentace virtuálního počítače, způsobené dočasné velké objekty, které vyžadují systému uvolňování paměti se často získat nové spravované haldy segmenty z operačního systému a verze prázdných zpět do operačního systému.
+Je častěji vidět, že fragmentace virtuálního počítače je způsobená dočasnými velkými objekty, které vyžadují, aby systém uvolňování paměti často získal nové spravované segmenty haldy z operačního systému a uvolnil prázdné hodnoty zpátky do operačního systému.
 
-Pokud chcete ověřit, zda LOH způsobuje fragmentaci na virtuální počítač, můžete nastavit zarážku na [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) zobrazíte jejich volání. Například pokud chcete zjistit, kdo se pokusil přidělení virtuální paměti bloky dat větší než 8MBB z operačního systému, můžete nastavit zarážku takto:
+Chcete-li ověřit, zda LOH způsobuje fragmentaci virtuálního počítače, můžete nastavit zarážku na [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) , aby bylo možné zjistit, kdo je volá. Například chcete-li zjistit, kdo se pokusil přidělit bloky virtuální paměti větší než 8MBB z operačního systému, můžete nastavit zarážku takto:
 
 ```console
 bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
 ```
 
-Tento příkaz do ladicího programu a zásobník volání pouze tehdy, pokud se zobrazí [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) se nazývá velikost alokační větší než 8 MB (0x800000).
+Tento příkaz se přeruší do ladicího programu a zobrazí zásobník volání pouze v případě, že je metoda [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) volána s velikostí alokace větší než 8MB (0x800000).
 
-Funkci přidali CLR 2.0 *Hoarding virtuálního počítače* , může být užitečné pro scénáře, kde segmenty (včetně velkých i malých objektů haldy) jsou často získaných a vydání. K určení Hoarding virtuálního počítače, zadejte po spuštění příznak, který volá `STARTUP_HOARD_GC_VM` prostřednictvím hostujícího rozhraní API. Místo vydání prázdné segmenty zpět do operačního systému, CLR rozváže paměti v těchto segmentech a umístí na seznam pohotovostním režimu. (Všimněte si, že modul CLR nebude provést pro segmenty, které jsou moc velká.) Modul CLR později použije tyto segmenty splňovat nové požadavky segmentu. Příště, že vaše aplikace potřebuje nový segment CLR používá jednu z tohoto seznamu pohotovostní Pokud nemůže najít takový, který je dostatečně velký.
+CLR 2,0 přidal funkci s názvem *VM hoarding* , která může být užitečná pro scénáře, kdy se často získávají a uvolňují segmenty (včetně v haldách velkých a malých objektů). Pokud chcete zadat hoarding virtuálního počítače, zadejte spouštěcí příznak nazvaný `STARTUP_HOARD_GC_VM` prostřednictvím hostujícího rozhraní API. Místo uvolnění prázdných segmentů zpět do operačního systému modul CLR zruší v těchto segmentech paměť a umístí je do úsporného seznamu. (Všimněte si, že modul CLR to neudělá pro segmenty, které jsou příliš velké.) Modul CLR později použije tyto segmenty k uspokojení požadavků na nové segmenty. Až aplikace příště potřebuje nový segment, použije modul CLR jeden z těchto seznamů v pohotovostním režimu, pokud může najít dostatečně velký.
 
-Hoarding virtuálního počítače je také užitečné pro aplikace, které chcete opřete se o segmenty, které už získali, jako je například některé serverové aplikace, které jsou dominantní aplikace běžící na systému, aby se zabránilo nedostatek paměti výjimky.
+Hoarding virtuálního počítače je také užitečné pro aplikace, které chcete umístit na segmenty, které již získali, například některé serverové aplikace, které jsou dominantní aplikace spuštěné v systému, aby nedocházelo k výjimkám výjimek paměti.
 
-Důrazně doporučujeme při použití této funkce zajistit, že vaše aplikace má využití poměrně stálé paměti pečlivě otestovat aplikaci.
+Důrazně doporučujeme, abyste aplikaci pečlivě otestovali při použití této funkce, abyste zajistili, že má vaše aplikace poměrně stabilní využití paměti.

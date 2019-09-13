@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET C
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 4daa7734f12c57a177fab3c62fdd96bda22838af
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: f89174204c13b907db5a41ed374e1a31c61dcf11
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107169"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929029"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Kurz: Analýza mínění komentářů k webu pomocí binární klasifikace v ML.NET
 
@@ -17,6 +17,7 @@ V tomto kurzu se dozvíte, jak vytvořit konzolovou aplikaci .NET Core, která k
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > - Vytvoření konzolové aplikace
 > - Příprava dat
 > - Načtení dat
@@ -31,7 +32,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 - [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) s nainstalovanou úlohou vývoj .NET Core pro různé platformy
 
-- [Datová sada vět mínění](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) s popiskem (Soubor ZIP)
+- [Datová sada vět mínění s popiskem](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (Soubor ZIP)
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -48,7 +49,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 > [!NOTE]
 > Datové sady pro tento kurz jsou ze skupiny "z" na jednotlivé štítky pomocí hlubokých funkcí, Kotzias et. Al,. KONFERENCE KDD 2015 a hostuje se v úložišti UCI Machine Learning – Dua, D. a Karra Taniskidou, E. (2017). UCI Machine Learning úložiště [http://archive.ics.uci.edu/ml ]. Irvine, certifikační autorita: University of California, školní informace a počítačové vědy.
 
-1. Stáhněte [soubor zip datové sady mínění](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)s popiskem a rozbalte ho.
+1. Stáhněte [soubor zip datové sady mínění s popiskem](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)a rozbalte ho.
 
 2. Zkopírujte soubor do adresáře dat, který jste vytvořili. `yelp_labelled.txt`
 
@@ -256,7 +257,7 @@ K zobrazení metrik použijte následující kód:
 
 - `AreaUnderRocCurve` Metrika označuje, jak jistotu model správně klasifikuje pozitivní a negativní třídy. Chcete, aby `AreaUnderRocCurve` byl co nejblíže k jednomu.
 
-- Metrika získá skóre modelu F1, což je míra rovnováhy mezi přesností a [](../resources/glossary.md#precision) odvoláním. [](../resources/glossary.md#recall) `F1Score`  Chcete, aby `F1Score` byl co nejblíže k jednomu.
+- Metrika získá skóre modelu F1, což je míra rovnováhy mezi [přesností](../resources/glossary.md#precision) a [odvoláním.](../resources/glossary.md#recall) `F1Score`  Chcete, aby `F1Score` byl co nejblíže k jednomu.
 
 ### <a name="predict-the-test-data-outcome"></a>Předpověď výsledku testovacích dat
 
@@ -379,10 +380,11 @@ Sestavování úspěšných modelů je iterativní proces. Tento model má poč�
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) .
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > - Vytvoření konzolové aplikace
 > - Příprava dat
 > - Načtení dat

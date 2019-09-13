@@ -1,86 +1,87 @@
 ---
-title: Přidat odkaz webové služby WCF
-description: Přehled Microsoft WCF Web Service Reference Provider nástroj, který přidá funkce pro projekty .NET Core a ASP.NET Core, podobně jako přidat odkaz na službu pro projekty .NET Framework.
+title: Přidat odkaz na webovou službu WCF
+description: Přehled nástroje Microsoft WCF Web Service Reference Provider, který přidává funkce pro projekty .NET Core a ASP.NET Core, podobně jako Přidat odkaz na službu pro .NET Framework projekty.
 author: mlacouture
 ms.date: 04/19/2018
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 806f6e90aedc669c3a56ce1cde64311bdd4af32c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11a18161db0fde522442e2412c4522811c5dd40a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750490"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926463"
 ---
-# <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použijte nástroj WCF Web Service odkaz na poskytovatele
+# <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použití nástroje poskytovatele referencí webové služby WCF
 
-V průběhu let, celá řada vývojářů sady Visual Studio pracovalo produktivity, která [ **přidat odkaz na službu** ](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference) nástroje, které jsou k dispozici v případě potřeby svých projektů rozhraní .NET Framework pro přístup k webovým službám.  **WCF Web Service Reference** nástroj je rozšíření sady Visual Studio připojené služby, která poskytuje stejně jako funkce Přidat odkaz na službu pro .NET Core a ASP.NET Core projekty. Tento nástroj načte metadata z webové služby v aktuálním řešení, na umístění v síti, nebo ze souboru WSDL a vytvoří soubor kompatibilní zdroj .NET Core obsahující kód na proxy serveru klienta Windows Communication Foundation (WCF), který používáte pro přístup k webu Služba.
+V průběhu let mnoho vývojářů sady Visual Studio využilo produktivitu, kterou poskytuje nástroj [**Přidat odkaz na službu**](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference) , když jejich .NET Framework projekty potřebují pro přístup k webovým službám.  **Referenční nástroj webové služby WCF** je rozšíření propojené služby sady Visual Studio, které poskytuje prostředí, jako je funkce Přidat odkaz na službu pro projekty .NET Core a ASP.NET Core. Tento nástroj načte metadata z webové služby v aktuálním řešení, v síťovém umístění nebo ze souboru WSDL a vygeneruje Windows Communication Foundation zdrojový proxy kód kompatibilní s .NET Core, který můžete použít pro přístup k webu. službám.
 
 > [!IMPORTANT]
-> Služby by měly odkazovat pouze z důvěryhodného zdroje. Přidávání odkazů z nedůvěryhodných zdrojů může ohrozit zabezpečení.
+> Měli byste odkazovat jenom na služby z důvěryhodného zdroje. Přidání odkazů z nedůvěryhodného zdroje může ohrozit zabezpečení.
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15.5](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) nebo novější verze
+* [Visual Studio 2017 15,5](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) nebo novější verze
 
 ## <a name="how-to-use-the-extension"></a>Jak používat rozšíření
 
 > [!NOTE]
-> **WCF Web Service Reference** možnost se vztahuje na projekty vytvořené pomocí následující šablony projektů:
-> * **Visual C#** > **.NET Core**
-> * **Visual C#** > **.NET Standard**
-> * **Visual C#** > **Web** > **ASP.NET Core Web Application**
+> Možnost **odkazu webové služby WCF** je platná pro projekty vytvořené pomocí následujících šablon projektu:
+>
+> * **Visual C#**  >  **.NET Core**
+> * **Vizuální C#**  .NET standard  > 
+> * **C#** **Webová aplikace** Visual  >  **Web**ASP.NET Core > 
 
-Použití **webové aplikace ASP.NET Core** šablony projektu jako příklad, tento článek vás provede přidáním odkazu na službu WCF do projektu:
+Pomocí šablony projektu **ASP.NET Core webové aplikace** jako příklad vás tento článek provede přidáním odkazu na službu WCF do projektu:
 
-1. V Průzkumníku řešení poklikejte **připojené služby** uzlu projektu (pro projekt .NET Core nebo .NET Standard tato možnost je k dispozici, když kliknete pravým tlačítkem na **závislosti** uzlu projekt v Průzkumníku řešení).
+1. V Průzkumník řešení dvakrát klikněte na uzel **připojené služby** projektu (pro projekt .NET Core nebo .NET Standard je tato možnost k dispozici, když kliknete pravým tlačítkem myši na uzel **závislosti** projektu v Průzkumník řešení).
 
-    **Připojené služby** stránka se zobrazí, jak je znázorněno na následujícím obrázku:
+    Stránka **připojené služby** se zobrazí, jak je znázorněno na následujícím obrázku:
 
-    ![Visual Studio Connected Services kartu pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-ConnectedServicesPage.png)
+    ![Karta připojené služby sady Visual Studio pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-ConnectedServicesPage.png)
 
-2. Na **připojené služby** klikněte na **Microsoft WCF Web Service Reference Provider**. Tím se zobrazí **konfigurace WCF Web Service Reference** průvodce:
+2. Na stránce **připojené služby** klikněte na **Microsoft WCF Web Service reference Provider**. Tím se zobrazí průvodce **konfigurací odkazu na webovou službu WCF** :
 
-    ![Visual Studio koncový bod služby kartu pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-ServiceEndpointPage.png)
+    ![Karta koncového bodu služby sady Visual Studio pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-ServiceEndpointPage.png)
 
 3. Vyberte službu.
 
-    3a. Nejsou k dispozici v rámci několika možností hledání služeb **konfigurace WCF Web Service Reference** průvodce:
+    3a. V průvodci **konfigurací odkazu webové služby WCF** je dostupných několik možností hledání služeb:
 
-     * K vyhledání služby definované v aktuálním řešení, klikněte na tlačítko **Discover** tlačítko.
-     * K vyhledání služeb hostovaných na zadané adrese, zadejte adresu URL služby v **adresu** pole a klikněte na tlačítko **Přejít** tlačítko.
-     * Pokud chcete vybrat soubor WSDL, který obsahuje informace o webových službách metadat, klikněte na tlačítko **Procházet** tlačítko.
+     * Pokud chcete vyhledat služby definované v aktuálním řešení, klikněte na tlačítko **Vyhledat** .
+     * Pokud chcete vyhledat služby hostované na zadané adrese, zadejte adresu URL služby do pole **adresa** a klikněte na tlačítko **Přejít** .
+     * Chcete-li vybrat soubor WSDL, který obsahuje informace metadat webové služby, klikněte na tlačítko **Procházet** .
 
-    3b. Tuto službu vybrat ze seznamu výsledků hledání v **služby** pole. V případě potřeby zadejte obor názvů pro generovaný kód z odpovídajících **Namespace** textového pole.
+    3b. Vyberte službu ze seznamu výsledků hledání v poli **služby** . V případě potřeby zadejte obor názvů pro vygenerovaný kód do textového pole odpovídající **obor názvů** .
 
-    3c. Klikněte na tlačítko **Další** tlačítko Otevřít **možnosti datového typu** a **možnosti klienta** stránky. Alternativně klepněte na tlačítko **Dokončit** tlačítko a použijte výchozí možnosti.
+    3c. Kliknutím na tlačítko **Další** otevřete **Možnosti datový typ** a stránky **Možnosti klienta** . Případně můžete kliknutím na tlačítko **Dokončit** použít výchozí možnosti.
 
-4. **Možnosti datového typu** formuláře můžete upřesnit nastavení konfigurace odkazu generované služby:
+4. Formulář **Možnosti datového typu** umožňuje upřesnit vygenerovaná nastavení konfigurace odkazu na službu:
 
-    ![Visual Studio datový typ možnosti pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-DataTypesPage.png)
+    ![Karta možnosti datového typu sady Visual Studio pro .NET Core](./media/wcf-web-service-reference-guide/wcfcs-DataTypesPage.png)
 
     > [!NOTE]
-    > **Znovu použít typy v odkazovaných sestaveních** zaškrtávací políčko možnost je užitečná, když datové typy, které jsou potřeba pro generování kódu pro odkaz na službu jsou definovány v jednom z odkazovaných sestavení vašeho projektu.  Je důležité pro opětovné použití těchto existující datové typy, abyste předešli problémům s konflikt nebo modul runtime typu v době kompilace.
+    > Možnost **znovu použít typy v odkazovaných sestaveních** zaškrtávací políčko je užitečná, pokud jsou datové typy potřebné pro generování kódu odkazu na službu definovány v jednom z odkazovaných sestavení projektu.  Je důležité znovu použít tyto existující datové typy, aby nedocházelo ke konfliktům typu v době kompilace nebo běhovým problémům.
 
-    Může docházet k prodlevám při načítání informací o typu, v závislosti na počtu závislostí projektu a dalších faktorů výkon systému. **Dokončit** během načítání, pokud je tlačítko neaktivní **znovu použít typy v odkazovaných sestaveních** zaškrtávací políčko je zaškrtnuté políčko.
+    Může dojít ke zpoždění, pokud jsou načteny informace o typu, v závislosti na počtu závislostí projektu a dalších systémových faktorech výkonu. Tlačítko **Dokončit** je během načítání zakázáno, pokud není zaškrtnuté políčko **znovu použít typy v odkazovaných sestaveních** .
 
-5. Klikněte na tlačítko **Dokončit** až budete hotovi.
+5. Po dokončení klikněte na **Dokončit** .
 
-Při zobrazování průběhu, nástroj:
+Během zobrazování průběhu nástroje:
 
-* Soubory ke stažení metadat ze služby WCF.
-* Generuje kód odkazu na službu do souboru s názvem *reference.cs*a přidá jej do projektu v rámci **připojené služby** uzlu.
-* Aktualizuje soubor projektu (.csproj) s odkazy na balíčky NuGet, které vyžaduje kompilace a spuštění na cílové platformě.
+* Stáhne metadata ze služby WCF.
+* Generuje kód odkazu na službu v souboru s názvem *reference.cs*a přidá ho do projektu pod uzlem **připojené služby** .
+* Aktualizuje soubor projektu (. csproj) pomocí odkazů na balíček NuGet potřebných pro zkompilování a spuštění na cílové platformě.
 
-![Visual Studio průběh](./media/wcf-web-service-reference-guide/wcfcs-ProgressWindow.png)
+![Okno průběhu sady Visual Studio](./media/wcf-web-service-reference-guide/wcfcs-ProgressWindow.png)
 
-Po dokončení těchto procesů, můžete vytvořit instanci typu generovaného klienta WCF a volání operací služby.
+Po dokončení těchto procesů můžete vytvořit instanci vygenerovaného typu klienta WCF a vyvolat operace služby.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
-### <a name="feedback--questions"></a>Zpětná vazba a otázky
+### <a name="feedback--questions"></a>Názory & dotazů
 
-Pokud máte jakékoli dotazy nebo připomínky, [otevřete problém na Githubu](https://github.com/dotnet/wcf/issues/new). Můžete také zkontrolovat všechny stávající dotazy nebo potíže [v WCF úložišti na Githubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).
+Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](https://github.com/dotnet/wcf/issues/new). V [ÚLOŽIŠTI WCF na GitHubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling)můžete také zkontrolovat všechny existující otázky nebo problémy.
 
 ### <a name="release-notes"></a>Zpráva k vydání verze
 
-* Odkazovat [poznámky k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) aktualizovanou verzi informace, včetně známých problémů.
+* Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md) .

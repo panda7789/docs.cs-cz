@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d172503cee4e3880f493c68d5789e17c64a82a12
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: de2456a1365a1fb48b3e9f126e090b8da77728cc
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789999"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894116"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Zmírnění Deserializace objektů napříč doménami aplikací
 V některých případech, kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, vyvolá pokus o deserializaci objektů v rámci logického kontextu volání mezi doménami aplikace výjimku.  
@@ -44,9 +44,9 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
   
 2. Určete místo v aplikaci, ve kterém nejsou do logického kontextu volání přidány žádné objekty, a přidejte následující kód:  
   
-    ```  
+    ```csharp
     System.Configuration.ConfigurationManager.GetSection("system.xml/xmlReader");  
-    ```  
+    ```
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte generovat sekvence pomocí LINQ, metody zápisu pro použití v dotazech LINQ a rozlišovat mezi Eager a opožděným hodnocením.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: f80567510509ba0c7f205ccbd5e587f9ad31f531
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 72bb7475fc6b18650e0870bf99c4b8ddbac3ec9f
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785865"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926617"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -339,6 +339,7 @@ V praxi některé algoritmy dobře fungují s využitím vyhodnocení Eager a ji
 ## <a name="conclusion"></a>Závěr
 
 V tomto projektu jste pokryli:
+
 - použití dotazů LINQ k agregaci dat do smysluplné sekvence
 - zápis metod rozšíření pro přidání naší vlastní funkcionality do dotazů LINQ
 - Vyhledání oblastí v našem kódu, kde se můžou dotazy LINQ povést k problémům s výkonem, jako je snížená rychlost
@@ -347,6 +348,7 @@ V tomto projektu jste pokryli:
 Kromě technologie LINQ jste se dozvěděli o magicians techniky použití pro štychy karet. Magicians použít Faro náhodně, protože může určovat, kde se každá karta v balíčku pohybuje. Teď už víte, že si ho nevyřadíte pro všechny ostatní.
 
 Další informace o LINQ najdete v těchto tématech:
+
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
   - [Úvod do jazyka LINQ](../programming-guide/concepts/linq/index.md)
   - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)

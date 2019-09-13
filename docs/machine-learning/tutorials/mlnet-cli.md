@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 6dbd69c8424227f85d8bf3cdcaf6cf9dbf7e1f4c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f3688b4492d3eb629f86a9d463b9127429260033
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856019"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929111"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -19,6 +19,7 @@ Naučte se používat rozhraní příkazového řádku ML.NET k automatickému g
 
 V tomto kurzu provedete následující kroky:
 > [!div class="checklist"]
+>
 > - Příprava dat pro vybraný úkol strojového učení
 > - Spuštění příkazu ' mlnet auto-vlak ' z rozhraní příkazového řádku
 > - Kontrola výsledků metrik kvality
@@ -259,6 +260,7 @@ Je zajímavá možnost porovnat zvolený algoritmus a konfiguraci kanálu v kurz
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > - Příprava dat pro vybraný úkol ML (problém, který se má vyřešit)
 > - Spuštění příkazu ' mlnet auto-vlak ' v nástroji CLI
 > - Kontrola výsledků metrik kvality

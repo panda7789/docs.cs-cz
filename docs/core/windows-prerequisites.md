@@ -3,12 +3,12 @@ title: Předpoklady pro .NET Core ve Windows
 description: Zjistěte, jaké závislosti potřebujete na počítači s Windows pro vývoj a spouštění aplikací .NET Core.
 ms.custom: updateeachvsrelease
 ms.date: 04/08/2019
-ms.openlocfilehash: 1921ef565c2d04624009f7684e439ddba1cdf57e
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 82d336bc4efb34d336d5078952683c1673c3fa8a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331070"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926041"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -97,8 +97,9 @@ Pro vývoj aplikací .NET Core 1. x v sadě Visual Studio [Stáhněte a nainstal
 
 > [!IMPORTANT]
 > Je možné použít Visual Studio 2015 pro vývoj pro .NET Core 1. x, ale nedoporučuje se z následujících důvodů:
-  > * Nástroje .NET Core jsou verze Preview, což není podporováno.
-  > * Projekty jsou založené na projektu Project. JSON, který je zastaralý.
+>
+> * Nástroje .NET Core jsou verze Preview, což není podporováno.
+> * Projekty jsou založené na projektu Project. JSON, který je zastaralý.
 >
 > Další informace o změnách formátu projektu naleznete v části [Přehled změn na nejvyšší úrovni](./tools/cli-msbuild-architecture.md).
 

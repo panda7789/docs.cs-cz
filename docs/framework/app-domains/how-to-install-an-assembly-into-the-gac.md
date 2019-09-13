@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Instalace sestavení do globální mezipaměti sestavení'
+title: 'Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)'
 ms.date: 02/05/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -11,55 +11,56 @@ helpviewer_keywords:
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 233a7803cb59f9bfeac15d293dc3fb5a0db449c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e2d051cda9861da1af2caa65160b6e753b24bd1
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674984"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926516"
 ---
-# <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení
+# <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)
 
-Globální mezipaměti sestavení (GAC) ukládá sestavení, které sdílí několik aplikací. Instalace sestavení do [globální mezipaměti sestavení](gac.md) s jedním z následujících součástí: 
+Globální mezipaměť sestavení (GAC) ukládá sestavení, která sdílí několik aplikací. Nainstalujte sestavení do [globální mezipaměti sestavení](gac.md) (GAC) pomocí jedné z následujících součástí: 
+
 - [Windows Installer](#windows-installer)
 - [Nástroj globální mezipaměti sestavení](#global-assembly-cache-tool)
 
 > [!IMPORTANT]
-> Nainstalujte pouze sestavení se silným názvem do mezipaměti GAC. Informace o tom, jak vytvořit sestavení se silným názvem naleznete v tématu [jak: Podepsání sestavení silným názvem](how-to-sign-an-assembly-with-a-strong-name.md).
+> Do globální mezipaměti sestavení (GAC) lze nainstalovat pouze sestavení se silným názvem. Informace o tom, jak vytvořit sestavení se silným názvem, naleznete [v tématu How to: Podepište sestavení silným názvem](how-to-sign-an-assembly-with-a-strong-name.md).
 
 ## <a name="windows-installer"></a>Instalační služba systému Windows
 
-[Instalační program Windows](/windows/desktop/Msi/installation-of-assemblies-to-the-global-assembly-cache), instalace modulu Windows je doporučený způsob přidávání sestavení do globální mezipaměti sestavení. Instalační služby systému Windows poskytuje možnost počítání odkazů sestavení v globální mezipaměti sestavení a další výhody. Vytvoření instalačního balíčku pro Instalační služby systému Windows, použijte [WiX toolset rozšíření pro Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension).
+[Instalační služba systému Windows](/windows/desktop/Msi/installation-of-assemblies-to-the-global-assembly-cache)je instalační stroj Windows doporučeným způsobem, jak přidat sestavení do globální mezipaměti sestavení (GAC). Instalační služba systému Windows poskytuje počítání odkazů sestavení v globální mezipaměti sestavení (GAC) a další výhody. Chcete-li vytvořit instalační balíček pro Instalační služba systému Windows, použijte [rozšíření sady nástrojů WIX pro sadu Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension).
 
 ## <a name="global-assembly-cache-tool"></a>Nástroj globální mezipaměti sestavení
 
-Můžete použít [nástroj globální mezipaměti sestavení (gacutil.exe)](../tools/gacutil-exe-gac-tool.md) přidávání sestavení do globální mezipaměti sestavení a k zobrazení obsahu globální mezipaměti sestavení.
+K přidání sestavení do globální mezipaměti sestavení (GAC) a k zobrazení obsahu globální mezipaměti sestavení (GAC) můžete použít [Nástroj Global Assembly Cache Tool (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) .
 
    > [!NOTE]
-   > *Gacutil.exe* je jenom pro účely vývoje. Nepoužívejte ho k instalaci produkčních sestavení do globální mezipaměti sestavení.
+   > *Gacutil. exe* je určen pouze pro účely vývoje. Nepoužívejte jej k instalaci produkčních sestavení do globální mezipaměti sestavení (GAC).
 
-Syntaxe pro používání *gacutil.exe* instalace sestavení do GAC vypadá takto:
+Syntaxe pro použití nástroje *Gacutil. exe* pro instalaci sestavení v globální mezipaměti sestavení (GAC) je následující:
 
 ```console
 gacutil -i <assembly name>
 ```
 
-V tomto příkazu  *\<název sestavení >* je název sestavení, můžete nainstalovat v globální mezipaměti sestavení.
+V tomto příkazu  *\<je název sestavení >* název sestavení pro instalaci do globální mezipaměti sestavení (GAC).
 
-Pokud *gacutil.exe* není v systémové cestě, použijte [Developer Command Prompt for VS  *\<verze >*](../tools/developer-command-prompt-for-vs.md).
+Pokud nástroj *Gacutil. exe* není v systémové cestě, použijte [Developer Command Prompt pro vs  *\<Version >* ](../tools/developer-command-prompt-for-vs.md).
 
-Následující příklad nainstaluje sestavení s názvem souboru *hello.dll* do globální mezipaměti sestavení.
+Následující příklad nainstaluje sestavení s názvem souboru *Hello. dll* do globální mezipaměti sestavení (GAC).
 
 ```console
 gacutil -i hello.dll
 ```
 
 > [!NOTE]
-> V dřívějších verzích rozhraní .NET Framework *Shfusion.dll* rozšíření prostředí Windows umožňují instalaci sestavení přetažením do Průzkumníka souborů. Od verze rozhraní .NET Framework 4, *Shfusion.dll* je zastaralý.
+> V dřívějších verzích .NET Framework rozšíření prostředí systému Windows *Shfusion. dll* umožňuje instalovat sestavení jejich přetažením do Průzkumníka souborů. Počínaje .NET Framework 4 *Shfusion. dll* je zastaralá.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Práce se sestaveními a globální mezipaměti sestavení](working-with-assemblies-and-the-gac.md)
-- [Postupy: Odebrání sestavení z globální mezipaměti sestavení](how-to-remove-an-assembly-from-the-gac.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)
-- [Postupy: Podepsání sestavení silným názvem](how-to-sign-an-assembly-with-a-strong-name.md)
+- [Práce se sestaveními a globální mezipamětí sestavení](working-with-assemblies-and-the-gac.md)
+- [Postupy: Odebrání sestavení z globální mezipaměti sestavení (GAC)](how-to-remove-an-assembly-from-the-gac.md)
+- [Gacutil. exe (nástroj globální mezipaměť sestavení)](../tools/gacutil-exe-gac-tool.md)
+- [Postupy: Podepsat sestavení silným názvem](how-to-sign-an-assembly-with-a-strong-name.md)

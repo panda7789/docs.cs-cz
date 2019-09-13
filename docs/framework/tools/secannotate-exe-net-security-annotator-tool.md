@@ -7,25 +7,25 @@ helpviewer_keywords:
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: caedc586a9d33ecbdc4a8c7202abcfdaafabd98c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07ac564b5a2b227a62b7073bb837ab8bd1f434fb
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61919643"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894767"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
-Nástroj .NET Security Annotator (SecAnnotate.exe) je aplikace příkazového řádku, který identifikuje `SecurityCritical` a `SecuritySafeCritical` části jedno nebo více sestavení.  
+Nástroj pro anotaci zabezpečení .NET (SecAnnotate. exe) je aplikace příkazového řádku, která identifikuje části `SecurityCritical` a `SecuritySafeCritical` v jednom nebo více sestaveních.  
   
- Rozšíření sady Visual Studio [Security Annotator](https://go.microsoft.com/fwlink/?LinkId=198007), poskytuje grafické uživatelské rozhraní pro SecAnnotate.exe a umožňuje spouštět nástroj ze sady Visual Studio.  
+ Rozšíření sady Visual Studio, [bezpečnostní anotace](https://go.microsoft.com/fwlink/?LinkId=198007), poskytuje grafické uživatelské rozhraní pro SecAnnotate. exe a umožňuje spustit nástroj ze sady Visual Studio.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
- Na příkazovém řádku zadejte následující příkaz, kde *parametry* jsou popsány v následující části, a *sestavení* skládat z jednoho nebo více názvů sestavení oddělených mezerami:  
+ Na příkazovém řádku zadejte následující příkaz, kde jsou *parametry* popsány v následující části a *sestavení* se skládají z jednoho nebo více názvů sestavení oddělených prázdnými znaky:  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 SecAnnotate.exe [parameters] [assemblies]  
 ```  
   
@@ -34,24 +34,24 @@ SecAnnotate.exe [parameters] [assemblies]
 |Možnost|Popis|  
 |------------|-----------------|  
 |`/a`<br /><br /> or<br /><br /> `/showstatistics`|Zobrazí statistické údaje o použití průhlednosti v analyzovaných sestaveních.|  
-|`/d:` *Adresář*<br /><br /> or<br /><br /> `/referencedir:` *Adresář*|Určuje adresář, ve kterém se mají hledat závislá sestavení během vytváření poznámek.|  
+|`/d:`*adresář*<br /><br /> or<br /><br /> `/referencedir:`*adresář*|Určuje adresář, ve kterém se mají hledat závislá sestavení během vytváření poznámek.|  
 |`/i`<br /><br /> or<br /><br /> `/includesignatures`|Obsahuje rozšířené informace o podpisu v souboru zpráv poznámek.|  
 |`/n`<br /><br /> or<br /><br /> `/nogac`|Potlačí vyhledávání odkazovaných sestavení v globální mezipaměti sestavení (GAC).|  
-|`/o:` *output.XML*<br /><br /> or<br /><br /> `/out:` *output.XML*|Určuje název výstupního souboru poznámek.|  
-|`/p:` *maxpasses*<br /><br /> or<br /><br /> `/maximumpasses:` *maxpasses*|Určuje maximální počet průchodů poznámek, které lze učinit na sestaveních před zastavením generování nových poznámek.|  
+|`/o:`*Output. XML*<br /><br /> or<br /><br /> `/out:`*Output. XML*|Určuje název výstupního souboru poznámek.|  
+|`/p:`*maxpasses*<br /><br /> or<br /><br /> `/maximumpasses:`*maxpasses*|Určuje maximální počet průchodů poznámek, které lze učinit na sestaveních před zastavením generování nových poznámek.|  
 |`/q`<br /><br /> or<br /><br /> `/quiet`|Nastaví tichý režim, ve kterém nástroj pro tvorbu poznámek nevypisuje zprávy o stavu; vypisuje pouze chybové informace.|  
-|`/r:` *Sestavení*<br /><br /> or<br /><br /> `/referenceassembly:` *Sestavení*|Při určování závislých sestavení během tvorby poznámek obsahuje zadané sestavení. Odkazovaná sestavení mají přednost před sestaveními, která jsou nalezena v zadané cestě odkazu.|  
-|`/s:` *rulename*<br /><br /> or<br /><br /> `/suppressrule:` *rulename*|Potlačí spuštění zadaného pravidla průhlednosti na vstupních sestaveních.|  
+|`/r:`*sestavení*<br /><br /> or<br /><br /> `/referenceassembly:`*sestavení*|Při určování závislých sestavení během tvorby poznámek obsahuje zadané sestavení. Odkazovaná sestavení mají přednost před sestaveními, která jsou nalezena v zadané cestě odkazu.|  
+|`/s:`*Rule*<br /><br /> or<br /><br /> `/suppressrule:`*Rule*|Potlačí spuštění zadaného pravidla průhlednosti na vstupních sestaveních.|  
 |`/t`<br /><br /> or<br /><br /> `/forcetransparent`|Přinutí nástroj Annotator, aby považoval všechna sestavení, která nemají poznámky o průhlednosti, za zcela průhledná.|  
 |`/t`:*sestavení*<br /><br /> or<br /><br /> `/forcetransparent`:*sestavení*|Vynutí průhlednost daného sestavení bez ohledu na aktuální poznámky na úrovni daného sestavení.|  
 |||  
 |`/v`<br /><br /> or<br /><br /> `/verify`|Pouze ověří, zda jsou poznámky sestavení správné; nepokusí se provést několik průchodů za účelem nalezení všech potřebných poznámek, není-li sestavení ověřeno.|  
 |`/x`<br /><br /> or<br /><br /> `/verbose`|Určuje podrobný výstup při vytváření poznámek.|  
-|`/y:` *Adresář*<br /><br /> or<br /><br /> `/symbolpath:` *Adresář*|Při vyhledávání souborů symbolů zahrne zadaný adresář během vytváření poznámek.|  
+|`/y:`*adresář*<br /><br /> or<br /><br /> `/symbolpath:`*adresář*|Při vyhledávání souborů symbolů zahrne zadaný adresář během vytváření poznámek.|  
   
 ## <a name="remarks"></a>Poznámky  
  Parametry a sestavení mohou být rovněž poskytnuty v souboru odpovědí, který je zadán v příkazovém řádku a s předponou zavináč (@). Každý řádek v souboru odpovědí by měl obsahovat jediný parametr nebo název sestavení.  
   
- Další informace o .NET Security Annotator naleznete v příspěvku [použití SecAnnotate k analýze sestavení narušení průhlednosti](https://go.microsoft.com/fwlink/?LinkId=187648) v blogu .NET Security.  
+ Další informace o nástroji .NET Security anotace najdete v záznamu [pomocí SecAnnotate k analýze vašich sestavení pro porušení transparentnosti](https://go.microsoft.com/fwlink/?LinkId=187648) na blogu zabezpečení .NET.  
   
 ## <a name="examples"></a>Příklady

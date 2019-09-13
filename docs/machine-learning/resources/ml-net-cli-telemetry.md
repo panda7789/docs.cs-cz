@@ -4,12 +4,12 @@ description: Přečtěte si o funkcích telemetrie ML.NET CLI, které shromažď
 ms.topic: conceptual
 ms.date: 09/03/2019
 ms.custom: ''
-ms.openlocfilehash: e7b3b3d7789f2368ebc4448e73add817986a5906
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 77a24416a8008d36006c293cb174b5a8c2f516b7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254000"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929284"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Kolekce telemetrie pomocí rozhraní příkazového řádku ML.NET
 
@@ -58,6 +58,7 @@ Data se na servery Microsoftu odesílají zabezpečeně pomocí technologie [Azu
 
 ### <a name="data-points-not-collected"></a>Datové body nejsou shromažďovány.
 *Funkce telemetrie* neshromažďuje:
+
 - osobní údaje, jako jsou uživatelská jména
 - názvy souborů DataSet
 - data ze souborů datové sady
@@ -73,6 +74,7 @@ Distribuce rozhraní ml.NET CLI společnosti Microsoft je licencovaná s [licen�
 Při prvním spuštění `mlnet auto-train` [příkazu CLI ml.NET](../reference/ml-net-cli-reference.md) , jako je nástroj rozhraní příkazového řádku ml.NET, se zobrazí text s oznámením o odhlášení z telemetrie. Text se může mírně lišit v závislosti na verzi rozhraní příkazového řádku, kterou používáte.
 
 ## <a name="see-also"></a>Viz také:
+
 - [Reference k rozhraní příkazového řádku ML.NET](../reference/ml-net-cli-reference.md)
 - [Licenční smlouvy pro software společnosti Microsoft: Knihovna Microsoft .NET](https://aka.ms/dotnet-core-eula)
 - [Ochrana osobních údajů v Microsoftu](https://www.microsoft.com/trustcenter/privacy/)

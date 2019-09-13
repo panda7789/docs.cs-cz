@@ -8,18 +8,18 @@ helpviewer_keywords:
 - service operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-ms.openlocfilehash: f905eb90b47cb5ab20fd912b1cbcc62947361992
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4f36081ef1a3eec84f3cc2ced3c629109acd6a38
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779769"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894267"
 ---
 # <a name="service-operations-wcf-data-services"></a>Operace služby (WCF Data Services)
 
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje definovat operace služeb pro datovou službu k vystavení metod na serveru. Podobně jako u jiných prostředků datové služby jsou operace služby adresovány pomocí identifikátorů URI. Operace služeb umožňují zveřejnit obchodní logiku v datové službě, jako je implementace logiky ověřování, pro použití zabezpečení na základě rolí nebo k vystavování specializovaných možností dotazování. Operace služby jsou metody přidané do třídy datové služby, která je odvozena <xref:System.Data.Services.DataService%601>z. Stejně jako všechny ostatní prostředky datové služby můžete do metody operace služby zadávat parametry. Například následující identifikátor URI operace služby (založený na datové službě [rychlý Start](quickstart-wcf-data-services.md) ) předává hodnotu `London` `city` parametru:
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
 ```
 
@@ -70,7 +70,7 @@ Při definování operací služby v datové službě platí následující pož
 
 Operace služby můžete řešit umístěním názvu metody do prvního segmentu cesty identifikátoru URI. Příklad: následující identifikátor URI přistupuje `GetOrdersByState` k operaci, která <xref:System.Linq.IQueryable%601> vrací kolekci `Orders` objektů.
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByState?state='CA'&includeItems=true
 ```
 
@@ -86,7 +86,7 @@ Níže jsou uvedené platné návratové typy pro operaci služby:
 
 Další segmenty cesty nebo možnosti dotazu lze přidat k identifikátoru URI v závislosti na návratový typ operace služby. Například následující identifikátor URI přistupuje `GetOrdersByCity` k operaci, která <xref:System.Linq.IQueryable%601> vrací kolekci `Orders` objektů seřazené podle `RequiredDate` sestupně v sestupném pořadí, spolu se souvisejícími `Order_Details` objekty:
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc
 ```
 

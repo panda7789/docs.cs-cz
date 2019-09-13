@@ -2,12 +2,12 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: 5da6497eadc6f02210c7f9d35d2889c98dc34ce4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 80b2642fa202500aa22dc7d045476cb36677d47c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039958"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928866"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tato ukázka předvádí, jak použít vlastní derivát <xref:System.ServiceModel.ServiceHost> třídy pro změnu chování služby za běhu. Tento přístup poskytuje opakovaně použitelnou alternativu ke konfiguraci velkého počtu služeb běžným způsobem. Ukázka také ukazuje, jak použít <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu pro použití vlastní třídy ServiceHost ve službě Internetová informační služba (IIS) nebo v hostitelském prostředí služby WAS (Windows Process Activation Service).  
@@ -34,7 +34,7 @@ Tato ukázka předvádí, jak použít vlastní derivát <xref:System.ServiceMod
   
  V této ukázce chceme vytvořit vlastní třídu ServiceHost, která přidá rozhraní ServiceMetadataBehavior (což umožňuje publikování metadat) i v případě, že toto chování není explicitně přidáno do konfiguračního souboru služby. K tomu vytvoříme novou třídu, která dědí z <xref:System.ServiceModel.ServiceHost> a Overrides `ApplyConfiguration`().  
   
-```  
+```csharp  
 class SelfDescribingServiceHost : ServiceHost  
 {  
     public SelfDescribingServiceHost(Type serviceType, params Uri[] baseAddresses)  
@@ -59,7 +59,7 @@ class SelfDescribingServiceHost : ServiceHost
   
  Vzhledem k tomu, že nechcete ignorovat žádnou konfiguraci, která byla k dispozici v konfiguračním souboru aplikace, první věc `ApplyConfiguration`() je volání základní implementace. Po dokončení této metody můžeme imperativně přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> k popisu pomocí následujícího imperativního kódu.  
   
-```  
+```csharp  
 ServiceMetadataBehavior mexBehavior = this.Description.Behaviors.Find<ServiceMetadataBehavior>();  
 if (mexBehavior == null)  
 {  
@@ -76,7 +76,7 @@ else
   
  Poslední věc `ApplyConfiguration`, kterou je třeba přepsat, je nutné přidat výchozí koncový bod metadat. Podle konvence je pro každý identifikátor URI v kolekci adres BaseAddresses hostitele služby vytvořen jeden koncový bod metadat.  
   
-```  
+```csharp  
 //Add a metadata endpoint at each base address  
 //using the "/mex" addressing convention  
 foreach (Uri baseAddress in this.BaseAddresses)  
@@ -113,7 +113,7 @@ foreach (Uri baseAddress in this.BaseAddresses)
 ## <a name="using-a-custom-servicehost-in-self-host"></a>Použití vlastní ServiceHost v samoobslužném hostování  
  Teď, když jsme dokončili naši vlastní implementaci ServiceHost, ji můžeme použít k přidání chování publikování metadat do jakékoli služby hostováním této služby uvnitř instance našeho `SelfDescribingServiceHost`. Následující kód ukazuje, jak ho použít ve scénáři samostatného hostitele.  
   
-```  
+```csharp  
 SelfDescribingServiceHost host =   
          new SelfDescribingServiceHost( typeof( Calculator ) );  
 host.Open();  
@@ -124,7 +124,7 @@ host.Open();
 ## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Použití vlastního hostitele ServiceHost ve službě IIS nebo WAS  
  Použití vlastního hostitele služby ve scénářích pro vlastní hostitele je jednoduché, protože se jedná o kód vaší aplikace, který je nakonec zodpovědný za vytvoření a otevření instance hostitele služby. Ve službě IIS nebo se hostující prostředí ale infrastruktura WCF dynamicky vytvoří instanci hostitele vaší služby v reakci na příchozí zprávy. Vlastní hostitelé služby můžete také použít v tomto hostitelském prostředí, ale vyžadují nějaký další kód ve formě ServiceHostFactory. Následující kód ukazuje derivaci <xref:System.ServiceModel.Activation.ServiceHostFactory> , který vrací instance našeho vlastního. `SelfDescribingServiceHost`  
   
-```  
+```csharp  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
 {  
     protected override ServiceHost CreateServiceHost(Type serviceType,   
@@ -166,7 +166,7 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Po sestavení řešení spusťte soubor Setup. bat a nastavte aplikaci ServiceModelSamples ve službě IIS 7,0. Adresář ServiceModelSamples by se teď měl zobrazit jako aplikace IIS 7,0.  
   

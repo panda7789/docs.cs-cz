@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: b02c69e00aacafd928c59f06e0e7c050a2ca6509
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 95c56f767bbe8dce44ea742de00c65c357bd1378
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856119"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895108"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -49,9 +49,7 @@ Upozorňujeme, že služba IIS 6,0 a novější verze pravidelně restartuje izo
 
 Služby WCF hostované ve službě IIS jsou v rámci aplikace IIS reprezentovány jako speciální soubory obsahu (soubory. svc). Tento model je podobný způsobu, jakým jsou stránky ASMX zastoupeny v aplikaci služby IIS jako soubory. asmx. Soubor. svc obsahuje direktivu zpracování specifickou pro WCF ([\@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)), která umožňuje hostující infrastruktuře WCF aktivovat hostované služby v reakci na příchozí zprávy. Nejběžnější syntaxí souboru. svc je následující příkaz.
 
-```svc
-<% @ServiceHost Service="MyNamespace.MyServiceImplementationTypeName" %>
-```
+`<% @ServiceHost Service="MyNamespace.MyServiceImplementationTypeName" %>`
 
 Skládá se z [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktivy ServiceHost a jediného atributu `Service`. Hodnota `Service` atributu je název typu modulu CLR (Common Language Runtime) pro implementaci služby. Použití této směrnice je v podstatě ekvivalentem vytvoření hostitele služby pomocí následujícího kódu.
 

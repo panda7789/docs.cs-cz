@@ -2,12 +2,12 @@
 title: Dotaz integrovaný na jazyku (LINQ)C#()
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-ms.openlocfilehash: 185e2cfc84a4134eec8eea1433f0cef43845aa2a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: b91d52912c1625c036b3e08e47fbc985b193ebc2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592160"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926738"
 ---
 # <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
@@ -46,6 +46,7 @@ Následující příklad ukazuje operaci dokončení dotazu. Operace Complete za
 ## <a name="next-steps"></a>Další postup
 
 Pokud chcete získat další informace o LINQ, začněte tím, že se seznámíte s některými základními koncepty v [základech dotazů na dotazy](../../../linq/query-expression-basics.md)a pak si přečtěte dokumentaci pro technologii LINQ, ve které máte zájem:   
+
 - Dokumenty XML: [LINQ to XML](linq-to-xml.md)  
   
 - ADO.NET Entity Framework: [Technologie LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)  
@@ -59,3 +60,4 @@ Chcete-li začít pracovat s C#LINQ v, přečtěte si kurz [práce s LINQ](../..
 ## <a name="see-also"></a>Viz také:
 
 - [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)
+ 

@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6472f02cf2633d936252bfd2a8daa3ff711a4db8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 68fe50d24ce547e1cad092e3d871c2d0990fd5af
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967878"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894978"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Výjimky za běhu v nativních aplikací .NET
 Je důležité otestovat buildy vydání vaší Univerzální platforma Windows aplikace na svých cílových platformách, protože konfigurace ladění a vydání jsou zcela odlišné. Ve výchozím nastavení používá konfigurace ladění modul runtime .NET Core ke kompilaci vaší aplikace, ale konfigurace vydané verze používá .NET Native ke kompilaci vaší aplikace do nativního kódu.  
   
 > [!IMPORTANT]
-> Informace o tom, jak řešit výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) , se kterými se můžete setkat při testování verzí verze vaší aplikace, najdete v části Krok 4: Ruční řešení chybějících metadat: v tématu [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md) a také v odkazech na konfigurační soubor direktivy reflexe [a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md) a [runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+> Informace o tom, jak řešit výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) , se kterými se můžete setkat při testování verzí verze vaší aplikace, najdete v části Krok 4: Ruční řešení chybějících metadat: v tématu [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md) a také v odkazech na konfigurační soubor direktivy [reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md) a [runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="debug-and-release-builds"></a>Sestavení ladění a vydaných verzí  
  Když se sestavení ladění provede proti modulu runtime .NET Core, není zkompilováno do nativního kódu. Díky tomu jsou všechny služby běžně poskytované modulem runtime dostupným pro vaši aplikaci.  
@@ -37,7 +37,7 @@ Je důležité otestovat buildy vydání vaší Univerzální platforma Windows 
 ## <a name="runtime-exception-messages"></a>Zprávy o výjimkách modulu runtime  
  Pro minimalizaci velikosti spustitelného souboru aplikace .NET Native neobsahují úplný text zpráv o výjimkách. V důsledku toho nemusí běhové výjimky vyvolané v sestavení vydaných verzí zobrazovat úplný text zpráv o výjimkách. Místo toho se může text skládat z podřetězce spolu s odkazem na Další informace. Například informace o výjimce mohou vypadat takto:  
   
-```  
+```output
 Exception thrown: '$16_System.AggregateException' in Unknown Module.  
   
 Additional information: AggregateException_ctor_DefaultMessage  
@@ -47,7 +47,7 @@ If there is a handler for this exception, the program may be safely continued.
   
  Pokud potřebujete zprávu o úplné výjimce, spusťte místo toho sestavení ladění. Například předchozí informace o výjimce z buildu pro vydání se mohou zobrazit v sestavení ladění následujícím způsobem:  
   
-```  
+```output
 Exception thrown: 'System.AggregateException' in NativeApp.exe.  
   
 Additional information: Value does not fall within the expected range.  

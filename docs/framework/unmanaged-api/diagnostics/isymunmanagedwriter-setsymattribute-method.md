@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8ffcc3a079e7e9a9d69622dc6666bb0e7641d4e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4450c262b75a73114cb7de7de98567f053bbf564
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650768"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894463"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute – metoda
-Definuje vlastní atribut na základě jeho názvu. Tyto atributy jsou uložené v úložišti symbolů, na rozdíl od vlastních atributů metadat.  
+Definuje vlastní atribut založený na jeho názvu. Tyto atributy jsou uloženy v úložišti symbolů na rozdíl od vlastních atributů metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetSymAttribute(  
     [in] mdToken parent,  
     [in] const WCHAR *name,  
@@ -39,22 +39,22 @@ HRESULT SetSymAttribute(
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] Token metadat, pro který je definován atribut.  
+ pro Token metadat, pro který je definován atribut.  
   
  `name`  
- [in] Ukazatel `WCHAR` , který obsahuje název atributu.  
+ pro Ukazatel na `WCHAR` , který obsahuje název atributu.  
   
  `cData`  
- [in] A `ULONG32` , který označuje velikost `data` pole.  
+ pro Který označuje velikost `data`pole. `ULONG32`  
   
  `data`  
- [in] Hodnota atributu.  
+ pro Hodnota atributu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlaviček** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

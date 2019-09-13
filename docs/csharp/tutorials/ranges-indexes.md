@@ -3,12 +3,12 @@ title: Prozkoumat rozsahy dat pomocí indexů a rozsahů
 description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí indexů a rozsahů, abyste prozkoumali řezy sekvenční sady dat.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: d53f32bcb310d4859cea67a742ac0e2c4be5d942
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 27f4b90f130345dd10517a5de78c759066afdf07
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105791"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926642"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
@@ -17,6 +17,7 @@ Rozsahy a indexy poskytují stručnou syntaxi pro přístup k jednotlivým prvk�
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > - Použijte syntaxi pro rozsahy v sekvenci.
 > - Pochopení rozhodnutí o návrhu pro začátek a konec každé sekvence.
 > - Naučte se <xref:System.Index> scénáře pro <xref:System.Range> typy a.
@@ -24,6 +25,7 @@ V tomto kurzu se naučíte:
 ## <a name="language-support-for-indices-and-ranges"></a>Podpora jazyků pro indexy a rozsahy
 
 Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory.
+
 - <xref:System.Index?displayProperty=nameWithType>představuje index do sekvence.
 - `^` Operátor, který určuje, že index je relativní ke konci sekvence.
 - <xref:System.Range?displayProperty=nameWithType>představuje dílčí rozsah sekvence.

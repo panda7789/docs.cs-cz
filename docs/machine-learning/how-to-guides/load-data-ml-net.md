@@ -1,14 +1,16 @@
 ---
 title: Načtení dat ze souborů a jiných zdrojů
 description: V tomto postupu se dozvíte, jak načíst data pro zpracování a školení do ML.NET. Data se původně ukládají do souborů nebo jiných zdrojů dat, jako jsou databáze, JSON, XML nebo kolekce v paměti.
-ms.date: 08/01/2019
+ms.date: 09/11/2019
+author: luisquintanilla
+ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: d5f3aab14a60a8c9860dc67f1cc98f3b1b3188ed
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 419b32f2a460ca153d28206524a38c7c9fa86173
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733373"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929384"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a jiných zdrojů
 
@@ -52,6 +54,7 @@ Atributy poskytují ML.NET více informací o datovém modelu a zdroji dat.
 > [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute)je vyžadován pouze při načítání dat ze souboru.
 
 Načíst sloupce jako: 
+
 - Jednotlivé sloupce jako `Size` a `CurrentPrices` ve `HousingData` třídě.
 - Více sloupců v čase ve formě vektoru, jako `HistoricalPrices` `HousingData` ve třídě.
 
@@ -102,13 +105,65 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
+## <a name="load-data-from-a-relational-database"></a>Načtení dat z relační databáze
+
+> [!NOTE]
+> DatabaseLoader je aktuálně ve verzi Preview. Dá se použít na základě odkazů na balíčky NuGet [Microsoft. ml. experimentální](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) a [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) . 
+
+ML.NET podporuje načítání dat z nejrůznějších relačních databází [`System.Data`](xref:System.Data) , které podporuje, mezi které patří SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, pokrok, IBM DB2 a spousta dalších.
+
+Pro databázi s tabulkou s názvem `House` a následujícím schématem:
+
+```SQL
+CREATE TABLE [House] (
+    [HouseId] int NOT NULL IDENTITY,
+    [Size] real NOT NULL,
+    [Price] real NOT NULL
+    CONSTRAINT [PK_House] PRIMARY KEY ([HouseId])
+);
+```
+
+Data je možné modelovat podle třídy, jako `HouseData`je.
+
+```csharp
+public class HouseData
+{
+    public float Size { get; set; }
+
+    public float Price { get; set; }
+}
+```
+
+Potom v rámci aplikace vytvořte `DatabaseLoader`.
+
+```csharp
+MLContext mlContext = new MLContext();
+
+DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
+```
+
+Definujte připojovací řetězec a příkaz SQL, který se má spustit v databázi, a vytvořte `DatabaseSource` instanci. V této ukázce se používá databáze LocalDB SQL Server s cestou k souboru. DatabaseLoader však podporuje jakýkoli jiný platný připojovací řetězec pro databáze v místním prostředí i v cloudu.  
+
+```csharp
+string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
+
+string sqlCommand = "SELECT Size,Price FROM House";
+
+DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance,connectionString,sqlCommand);
+```
+
+Nakonec pomocí `Load` metody načtěte data [`IDataView`](xref:Microsoft.ML.IDataView)do.
+
+```csharp
+IDataView data = loader.Load(dbSource);
+```
+
 ## <a name="load-data-from-other-sources"></a>Načtení dat z jiných zdrojů
 
 Kromě načítání dat uložených v souborech podporuje ML.NET načítání dat ze zdrojů, které zahrnují, ale nejsou omezeny na:
 
 - Kolekce v paměti
 - JSON/XML
-- Databáze
 
 Všimněte si, že při práci se zdroji streamování očekává ML.NET, že vstup bude ve formě kolekce v paměti. Proto při práci se zdroji, jako je JSON nebo XML, nezapomeňte data formátovat do kolekce v paměti.
 

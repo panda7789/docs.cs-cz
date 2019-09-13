@@ -2,12 +2,12 @@
 title: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 3dbdab152e05487f9dcc9fa00ed0c653d68ab65e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3c05e66affad8e517b0b1b5001f726abeae7b100
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045567"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928843"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Vzor publikování–odběr založený na seznamu
 Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu, který je implementovaný jako program Windows Communication Foundation (WCF).  
@@ -23,7 +23,7 @@ Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu,
   
  Služba používá duplexní komunikaci. Kontrakt služby se spáruje `ISampleClientCallback` se smlouvou zpětného volání. `ISampleContract` Služba implementuje operace odběru a zrušení odběru služby, které klienti používají pro připojení k seznamu předplatitelů nebo jejich opuštění. Služba také implementuje `PublishPriceChange` operaci služby, kterou program zdroje dat volá k poskytování služby novým informacím. Klientský program implementuje `PriceChange` operaci služby, kterou služba volá, aby upozornila všechny předplatitele změny ceny.  
   
-```  
+```csharp  
 // Create a service contract and define the service operations.  
 // NOTE: The service operations must be declared explicitly.  
 [ServiceContract(SessionMode=SessionMode.Required,  
@@ -48,7 +48,7 @@ public interface ISampleClientContract
   
  Služba používá událost .NET Framework jako mechanismus pro informování všech předplatitelů o nových informacích. Když klient připojí službu voláním odběru, poskytne obslužnou rutinu události. Když klient opustí, zruší odběr své obslužné rutiny události od události. Když zdroj dat volá službu, aby nahlásila změnu ceny, služba událost vyvolá. Tato akce volá každou instanci služby, jednu pro každého klienta, který má předplatné, a způsobí, že se obslužné rutiny událostí spustí. Každá obslužná rutina události do svého klienta předává informace prostřednictvím funkce zpětného volání.  
   
-```  
+```csharp  
 public class PriceChangeEventArgs : EventArgs  
     {  
         public string Item;  

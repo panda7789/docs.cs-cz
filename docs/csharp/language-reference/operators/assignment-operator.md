@@ -1,22 +1,22 @@
 ---
 title: = – odkaz C# – operátor
 ms.custom: seodec18
-ms.date: 06/21/2019
+ms.date: 09/10/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: f30b48fc6bd1e896658a7234a58409ea9a0f5e6f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a450a55524f33f4f06ed077aba864e8f641a458d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69601952"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70924662"
 ---
 # <a name="-operator-c-reference"></a>= – operátorC# (Referenční dokumentace)
 
-Operátor `=` přiřazení přiřadí hodnotu jeho pravého operandu proměnné, [vlastnosti](../../programming-guide/classes-and-structs/properties.md)nebo prvku indexeru, který je dán [](../../programming-guide/indexers/index.md) jeho levým operandem. Výsledkem výrazu přiřazení je hodnota přiřazená k levému operandu. Typ operandu na pravé straně musí být stejný jako typ operandu na levé straně nebo implicitně převést na něj.
+Operátor `=` přiřazení přiřadí hodnotu jeho pravého operandu proměnné, [vlastnosti](../../programming-guide/classes-and-structs/properties.md)nebo prvku [indexeru](../../programming-guide/indexers/index.md) , který je dán jeho levým operandem. Výsledkem výrazu přiřazení je hodnota přiřazená k levému operandu. Typ operandu na pravé straně musí být stejný jako typ operandu na levé straně nebo implicitně převést na něj.
 
 Operátor přiřazení je asociativní zprava, tj. výraz formuláře.
 
@@ -42,7 +42,7 @@ Počínaje C# 7,3 můžete použít operátor `= ref` přiřazení ref k opětov
 
 V případě operátoru přiřazení ref musí být typ obou operandů stejný.
 
-Další informace najdete v poznámkách k [návrhu funkcí](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
+Další informace najdete v [poznámkách k návrhu funkcí](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
@@ -60,7 +60,11 @@ x = x op y
 
 s výjimkou, že `x` je vyhodnocena pouze jednou.
 
-Složené přiřazení je podporováno [aritmetickými](arithmetic-operators.md#compound-assignment)a [](boolean-logical-operators.md#compound-assignment)logickými logickými a operátory [SHIFT a Shift](bitwise-and-shift-operators.md#compound-assignment) .
+Složené přiřazení je podporováno [aritmetickými](arithmetic-operators.md#compound-assignment)a [logickými logickými](boolean-logical-operators.md#compound-assignment)a operátory [SHIFT a Shift](bitwise-and-shift-operators.md#compound-assignment) .
+
+## <a name="null-coalescing-assignment"></a>Přiřazení slučování s hodnotou null
+
+Počínaje C# 8,0 můžete použít operátor `??=` přiřazení s použitím hodnoty null k přiřazení hodnoty jeho pravého operandu k levému operandu pouze v případě, že je `null`operand na levé straně vyhodnocen. Další informace najdete v tématu [?? a?? =](null-coalescing-operator.md) – článek o operátorech
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 

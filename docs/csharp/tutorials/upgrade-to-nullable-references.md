@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 357ebd13ca4c610f1c65009621ee628a90c70b15
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 0c95065e6c380fab6ba33432a32b3297e78027a3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105765"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926632"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrovat existující kód s odkazy s možnou hodnotou null
 
@@ -17,6 +17,7 @@ C#8 zavádí **typy odkazů s možnou hodnotou null**, které připlňují odkaz
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > - Při práci s kódem povolit kontroly pro prázdné odkazy
 > - Diagnostikujte a opravte různá upozornění související s hodnotami null.
 > - Spravujte rozhraní mezi povolenými povolenými a zakázanými kontexty s povolenou hodnotou null.
@@ -84,7 +85,7 @@ Příčinou `CS8618`těchto dvou vlastností je neinicializovaná vlastnost "nep
 
 [!code-csharp[StarterCreateNewsItem](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
-V předchozím bloku kódu se už trochu přechází. Tato aplikace používá balíček [](https://automapper.org/) NuGet automapper k vytvoření položky zpráv z `ISyndicationItem`. Zjistili jste, že položky novinového článku jsou vytvořeny a vlastnosti jsou nastaveny v daném příkazu. To znamená, že v návrhu `NewsStoryViewModel` pro je tato vlastnost nikdy `null` mít hodnotu. Tyto vlastnosti by neměly být **typy odkazů**, které nejsou null. Který nejlépe vyjadřuje původní záměr návrhu. Ve skutečnosti *jsou* všechny `NewsStoryViewModel` správně vytvořeny instance s hodnotami, které nejsou null. Díky tomu následující inicializační kód provede platnou opravu:
+V předchozím bloku kódu se už trochu přechází. Tato aplikace používá balíček NuGet [automapper](https://automapper.org/) k vytvoření položky zpráv z `ISyndicationItem`. Zjistili jste, že položky novinového článku jsou vytvořeny a vlastnosti jsou nastaveny v daném příkazu. To znamená, že v návrhu `NewsStoryViewModel` pro je tato vlastnost nikdy `null` mít hodnotu. Tyto vlastnosti by neměly být **typy odkazů**, které nejsou null. Který nejlépe vyjadřuje původní záměr návrhu. Ve skutečnosti *jsou* všechny `NewsStoryViewModel` správně vytvořeny instance s hodnotami, které nejsou null. Díky tomu následující inicializační kód provede platnou opravu:
 
 ```csharp
 public class NewsStoryViewModel

@@ -3,12 +3,12 @@ title: Překládání stromů výrazů
 description: Naučte se navštívit jednotlivé uzly ve stromové struktuře výrazů a přitom sestavovat upravenou kopii tohoto stromu výrazů.
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: b3c575876b6d53e9db366f59ad45aac714923c45
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: a12c4d7fe9f65d6e9598259de1504b6f9987f38e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202947"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925844"
 ---
 # <a name="translating-expression-trees"></a>Překládání stromů výrazů
 
@@ -191,7 +191,7 @@ I když je konečná odpověď stejná, je procházení stromové struktury zcel
 
 ## <a name="learning-more"></a>Učení více
 
-Tato ukázka ukazuje malou podmnožinu kódu, který byste vytvořili pro procházení a interpretaci algoritmů, které jsou zastoupeny stromem výrazů. Kompletní diskuzi o všech potřebách potřebných k sestavení knihovny pro obecné účely, která překládá stromy výrazů do jiného jazyka, si prosím přečtěte v [této řadě](https://blogs.msdn.com/b/mattwar/archive/2008/11/18/linq-links.aspx) podkladem Warren. To je velmi podrobné informace o tom, jak přeložit libovolný kód, který můžete najít ve stromu výrazu.
+Tato ukázka ukazuje malou podmnožinu kódu, který byste vytvořili pro procházení a interpretaci algoritmů, které jsou zastoupeny stromem výrazů. Kompletní diskuzi o všech potřebách potřebných k sestavení knihovny pro obecné účely, která překládá stromy výrazů do jiného jazyka, si prosím přečtěte v [této řadě](https://blogs.msdn.microsoft.com/mattwar/2008/11/18/linq-building-an-iqueryable-provider-series/) podkladem Warren. To je velmi podrobné informace o tom, jak přeložit libovolný kód, který můžete najít ve stromu výrazu.
 
 Doufám, že teď jste viděli skutečnou sílu stromů výrazů.
 Můžete zkontrolovat sadu kódu, provést všechny změny, které byste chtěli v kódu, a provést změněnou verzi. Vzhledem k tomu, že stromy výrazů jsou neměnné, můžete vytvořit nové stromy pomocí komponent existujících stromů. Tím se minimalizuje množství paměti potřebné k vytvoření upravených stromů výrazů.

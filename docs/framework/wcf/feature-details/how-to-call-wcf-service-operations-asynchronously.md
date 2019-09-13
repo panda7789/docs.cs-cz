@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 2d075bfebf7b5cbd2b2ce031a1c3855a925405a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c0a6f1477ceec5471c22fa3e46d85f5856b298e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964031"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895062"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
-Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronně. Služba v tomto tématu implementuje `ICalculator` rozhraní. Klient může volat operace v tomto rozhraní asynchronně pomocí asynchronního modelu volání založeného na událostech. (Další informace o asynchronním volání modelu založeném na událostech naleznete v tématu [vícevláknové programování s asynchronním vzorem založeným](https://go.microsoft.com/fwlink/?LinkId=248184)na událostech). Příklad, který ukazuje, jak provést asynchronní implementaci operace ve službě, naleznete v tématu [How to: Implementujte asynchronní operaci](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)služby. Další informace o synchronních a asynchronních operacích naleznete v tématu [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronně. Služba v tomto tématu implementuje `ICalculator` rozhraní. Klient může volat operace v tomto rozhraní asynchronně pomocí asynchronního modelu volání založeného na událostech. (Další informace o asynchronním volání modelu založeném na událostech naleznete v tématu [vícevláknové programování s asynchronním vzorem založeným na událostech](https://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak provést asynchronní implementaci operace ve službě, naleznete v tématu [How to: Implementujte asynchronní operaci](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)služby. Další informace o synchronních a asynchronních operacích naleznete v tématu [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 > [!NOTE]
 > Asynchronní volající model řízený událostmi není podporován při použití <xref:System.ServiceModel.ChannelFactory%601>. Informace o tom <xref:System.ServiceModel.ChannelFactory%601>, jak provádět asynchronní volání pomocí, [naleznete v tématu How to: Asynchronní volání operací pomocí objektu pro vytváření](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)kanálů.  
@@ -24,7 +24,7 @@ Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronn
   
 1. Spusťte nástroj Nástroj pro dodané [metadata (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí `/async` možností a `/tcv:Version35` příkazu společně, jak je znázorněno v následujícím příkazu.  
   
-    ```  
+    ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   

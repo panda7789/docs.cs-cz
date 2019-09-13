@@ -5,12 +5,12 @@ author: oliag
 ms.author: mairaw
 ms.date: 04/26/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2d97921a3e98d85ac1e58c7686eadef3e979211f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 584f9f952148ebf72c5d5aaed64a2a078be00ce5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107371"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929350"
 ---
 # <a name="net-api-analyzer"></a>Analyzátor rozhraní .NET API
 
@@ -30,6 +30,7 @@ Analyzátor API se dodává jako balíček NuGet [Microsoft. dotnet. analyzers. 
 ### <a name="what-are-deprecated-apis"></a>Co jsou zastaralá rozhraní API?
 
 Rodina .NET je sada velkých produktů, které se neustále upgradují tak, aby lépe vyhovovaly potřebám zákazníků. Je přirozené zastaralá některá rozhraní API a nahrazovat je novými. Rozhraní API se považuje za zastaralé, pokud existuje lepší alternativa. Jedním ze <xref:System.ObsoleteAttribute> způsobů, jak informovat o tom, že rozhraní API je zastaralé a nemělo by se používat, je označit s atributem. Nevýhodou tohoto přístupu je, že existuje jenom jedno ID diagnostiky pro všechna zastaralá C#rozhraní API (pro, [CS0612](../../csharp/misc/cs0612.md)). To znamená, že:
+
 - U každého případu není možné mít vyhrazené dokumenty.
 - Není možné potlačit určitou kategorii upozornění. Můžete potlačit buď všechny, nebo žádné z nich.
 - Chcete-li informovat uživatele o nové zastaralosti, je nutné aktualizovat odkazované sestavení nebo balíček cílení.
@@ -55,11 +56,11 @@ Všechna upozornění lze potlačit kliknutím pravým tlačítkem na zvýrazně
 
 ### <a name="suppressing-warnings-locally"></a>Místní potlačení upozornění
 
-Chcete-li potlačit upozornění místně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a** > refaktoringy >  **potlačit ID diagnostiky *ID*\<diagnostiky >**  **ve zdroji**. Do vašeho zdrojového kódu je v definovaném oboru přidána direktiva preprocesoru upozornění [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) : !["Snímek obrazovky s kódem s rámcem #pragma vypnutí upozornění"](media/api-analyzer/suppress-in-source.jpg)
+Chcete-li potlačit upozornění místně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a refaktoringy** > **potlačit ID diagnostiky\< *ID diagnostiky*>**  >   **ve zdroji**. Do vašeho zdrojového kódu je v definovaném oboru přidána direktiva preprocesoru upozornění [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) : !["Snímek obrazovky s kódem s rámcem #pragma vypnutí upozornění"](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppressing-warnings-globally"></a>Globální potlačení upozornění
 
-Chcete-li potlačit upozornění globálně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a** > refaktoringy >  **potlačit ID diagnostiky *ID*\<diagnostiky >** **v souboru potlačení**.
+Chcete-li potlačit upozornění globálně, klikněte pravým tlačítkem na člen, pro který chcete potlačit upozornění, a pak vyberte **rychlé akce a refaktoringy** > **potlačit ID diagnostiky\< *ID diagnostiky*>**  >  **v souboru potlačení**.
 
 ![Snímek obrazovky rozhraní API pro WebClient se zelenou vlnovkou a žárovkou na levé straně](media/api-analyzer/suppress-in-sup-file.jpg)
 
@@ -71,7 +72,7 @@ Globální potlačení je doporučený způsob, jak zajistit konzistenci využit
 
 ## <a name="discovering-cross-platform-issues"></a>Zjišťování problémů s více platformami
 
-Podobně jako zastaralá rozhraní API nástroj Analyzer identifikuje všechna rozhraní API, která nejsou pro různé platformy. Například funguje ve <xref:System.Console.WindowWidth?displayProperty=nameWithType> Windows, ale ne v systémech Linux a MacOS. ID diagnostiky se zobrazí v okně **Seznam chyb** . Toto upozornění můžete potlačit tak, že kliknete pravým tlačítkem a vyberete **rychlé akce a**refaktoringy. Na rozdíl od zastaralých případů, kde máte dvě možnosti (můžete buď dál používat zastaralé členy a potlačit upozornění, nebo je nepoužívat vůbec), pokud vyvíjíte kód jenom pro určité platformy, můžete potlačit všechna upozornění pro všechny ostatní platformy, které nepoužíváte. Naplánujte spuštění kódu v. K tomu stačí upravit soubor projektu a přidat `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platforem, které mají být ignorovány. Přípustné hodnoty jsou: `Linux`, `macOS`a `Windows`.
+Podobně jako zastaralá rozhraní API nástroj Analyzer identifikuje všechna rozhraní API, která nejsou pro různé platformy. Například funguje ve <xref:System.Console.WindowWidth?displayProperty=nameWithType> Windows, ale ne v systémech Linux a MacOS. ID diagnostiky se zobrazí v okně **Seznam chyb** . Toto upozornění můžete potlačit tak, že kliknete pravým tlačítkem a vyberete **rychlé akce a refaktoringy**. Na rozdíl od zastaralých případů, kde máte dvě možnosti (můžete buď dál používat zastaralé členy a potlačit upozornění, nebo je nepoužívat vůbec), pokud vyvíjíte kód jenom pro určité platformy, můžete potlačit všechna upozornění pro všechny ostatní platformy, které nepoužíváte. Naplánujte spuštění kódu v. K tomu stačí upravit soubor projektu a přidat `PlatformCompatIgnore` vlastnost, která obsahuje seznam všech platforem, které mají být ignorovány. Přípustné hodnoty jsou: `Linux`, `macOS`a `Windows`.
 
 ```xml
 <PropertyGroup>
@@ -113,5 +114,5 @@ Uživatel rozhodne, jak by měla být Diagnostika zpracována: jako upozornění
 
 ## <a name="see-also"></a>Viz také:
 
-- [Představujeme](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) Blogový příspěvek k analyzátoru API.
+- Představujeme Blogový příspěvek k [analyzátoru API](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/) .
 - Ukázkové video [analyzátoru API](https://youtu.be/eeBEahYXGd0) na YouTube

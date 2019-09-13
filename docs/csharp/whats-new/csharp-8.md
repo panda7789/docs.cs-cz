@@ -1,13 +1,13 @@
 ---
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
-ms.date: 09/04/2019
-ms.openlocfilehash: b281c55a5911d81503a6af80e393469be1124280
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.date: 09/10/2019
+ms.openlocfilehash: 141f7a2fa0bc5f6a2a253e196a218938dd4c170e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374012"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926528"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -26,6 +26,7 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
+- [Přiřazení slučování s hodnotou null](#null-coalescing-assignment)
 - [Nespravované konstruované typy](#unmanaged-constructed-types)
 - [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
 
@@ -447,6 +448,24 @@ var text = words[phrase];
 ```
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
+
+## <a name="null-coalescing-assignment"></a>Přiřazení slučování s hodnotou null
+
+C#8,0 zavádí operátor `??=`přiřazení s hodnotou null. `??=` Operátor můžete použít k přiřazení hodnoty jeho pravého operandu jeho levému operandu pouze v případě, že je operand na levé straně vyhodnocen `null`.
+
+```csharp
+List<int> numbers = null;
+int? i = null;
+
+numbers ??= new List<int>();
+numbers.Add(i ??= 17);
+numbers.Add(i ??= 20);
+
+Console.WriteLine(string.Join(' ', numbers));  // output: 17 17
+Console.WriteLine(i);  // output: 17
+```
+
+Další informace najdete v tématu [?? a?? =](../language-reference/operators/null-coalescing-operator.md) – článek o operátorech
 
 ## <a name="unmanaged-constructed-types"></a>Nespravované konstruované typy
 

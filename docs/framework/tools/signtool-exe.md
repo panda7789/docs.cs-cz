@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e210f14c74efe214be06a1cb901a144dd92af5e0
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 46475cbc8517fc73d8b7fd868c7632e5c85a7726
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168879"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894791"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (nástroj pro podpis)
 Sign Tool je nástroj příkazového řádku, který digitálně podepíše soubory, ověří podpisy v souborech a časová razítka souborů.  
@@ -23,7 +23,7 @@ Sign Tool je nástroj příkazového řádku, který digitálně podepíše soub
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 signtool [command] [options] [file_name | ...]  
 ```  
   
@@ -151,61 +151,61 @@ signtool [command] [options] [file_name | ...]
 ## <a name="examples"></a>Příklady  
  Následující příkaz přidá soubor katalogu MyCatalogFileName.cat do systémové komponenty a databáze ovladačů. Možnost vygeneruje jedinečný název, pokud je to nutné, aby se zabránilo nahrazení existujícího souboru katalogu s názvem `MyCatalogFileName.cat`. `/u`  
   
-```  
+```console  
 signtool catdb /v /u MyCatalogFileName.cat  
 ```  
   
  Následující příkaz podepíše soubor automaticky pomocí nejvhodnějšího certifikátu.  
   
-```  
+```console  
 signtool sign /a MyFile.exe  
 ```  
   
  Následující příkaz digitálně podepisuje soubor pomocí certifikátu uloženého v souboru PFX chráněném heslem.  
   
-```  
+```console  
 signtool sign /f MyCert.pfx /p MyPassword MyFile.exe  
 ```  
   
  Následující příkaz digitálně podepíše soubor a opatří ho časovým razítkem. Certifikát použitý k podepsání souboru je uložen v souboru PFX.  
   
-```  
+```console  
 signtool sign /f MyCert.pfx /t http://timestamp.digicert.com MyFile.exe  
 ```  
   
  Následující příkaz podepíše soubor pomocí certifikátu uloženého v `My` úložišti, který má `My Company Certificate`název subjektu.  
   
-```  
+```console  
 signtool sign /n "My Company Certificate" MyFile.exe  
 ```  
   
  Následující příkaz podepíše ovládací prvek ActiveX a poskytuje informace, které aplikace Internet Explorer zobrazí, když je uživatel vyzván k instalaci ovládacího prvku.  
   
-```  
+```console  
 Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html MyControl.exe  
 ```  
   
  Následující příkaz opatří digitálně podepsaný soubor časovým razítkem.  
   
-```  
+```console  
 signtool timestamp /t http://timestamp.digicert.com MyFile.exe  
 ```  
   
  Následující příkaz ověří, že soubor byl podepsán.  
   
-```  
+```console  
 signtool verify MyFile.exe  
 ```  
   
  Následující příkaz ověří systémový soubor, který může být podepsán v katalogu.  
   
-```  
+```console  
 signtool verify /a SystemFile.dll  
 ```  
   
  Následující příkaz ověří systémový soubor, který je podepsán v katalogu s názvem `MyCatalog.cat`.  
   
-```  
+```console  
 signtool verify /c MyCatalog.cat SystemFile.dll  
 ```  
   

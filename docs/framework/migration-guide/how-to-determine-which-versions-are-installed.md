@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ead6db2c3df3662c4d689bd6ac2466c99b02a15
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8d719debd39309415f996d655c68abd8c80ec5e3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968267"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928425"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Určit, které verze .NET Framework jsou nainstalovány
 
@@ -32,6 +32,7 @@ Uživatelé mohou na svých počítačích [instalovat](https://docs.microsoft.c
 > Každá nová verze rozhraní .NET Framework zachovává funkce předchozích verzí a přidává nové funkce. V jednom počítači můžete načíst několik verzí .NET Framework současně, což znamená, že můžete nainstalovat .NET Framework bez nutnosti odinstalování předchozích verzí. Obecně platí, že byste neměli odinstalovat předchozí verze .NET Framework, protože na konkrétní verzi může záviset aplikace, kterou používáte, a v případě, že je tato verze odebrána, může dojít k přerušení.
 >
 > Existuje rozdíl mezi verzí .NET Framework a verzí CLR:
+>
 > - Verze .NET Framework je založena na sadě sestavení, které tvoří knihovnu tříd .NET Framework. Například verze .NET Framework zahrnují 4,5, 4.6.1 a 4.7.2.
 >- Verze CLR je založená na modulu runtime, ve kterém se .NET Framework aplikace spouštějí. Jedna verze modulu CLR obvykle podporuje více .NET Framework verzí. Například CLR verze 4.0.30319. *xxxxx* podporuje .NET Framework verze 4 až 4.5.2, kde *xxxxx* je méně než 42000 a CLR verze 4.0.30319.42000 podporuje .NET Framework verze počínaje .NET Framework 4,6.
 >
@@ -67,7 +68,7 @@ Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET 
 2. V editoru registru otevřete následující podklíč: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full**. Pokud není přítomen **úplný** podklíč, nemáte nainstalovanou .NET Framework 4,5 nebo novější.
 
     > [!NOTE]
-    > Složka pro **instalaci rozhraní .NET Framework** v registru nezačíná tečkou.
+    > Složka pro **instalaci rozhraní .NET Framework** v registru *nezačíná tečkou* .
 
 3. Vyhledejte položku DWORD s názvem **release**. Pokud existuje, budete mít nainstalované .NET Framework 4,5 nebo novější verze. Jeho hodnota je klíč verze, který odpovídá konkrétní verzi .NET Framework. Na následujícím obrázku je například hodnota položky **release** *378389*, což je klíč verze .NET Framework 4,5.
 
@@ -96,9 +97,9 @@ Tyto hodnoty můžete použít následujícím způsobem:
 
 - Chcete-li zjistit, zda je v konkrétní verzi operačního systému Windows nainstalována konkrétní verze .NET Framework, proveďte test, zda je hodnota DWORD **verze** *shodná s* hodnotou uvedenou v tabulce. Chcete-li například zjistit, zda je v systému Windows 10 .NET Framework 4,6, proveďte test na hodnotu **verze** , která se *rovná* 393295.
 
-- Chcete-li zjistit, zda je k dispozici minimální verze .NET Framework, použijte pro tuto verzi hodnotu DWORD s nižší verzí. Například pokud vaše aplikace běží pod .NET Framework 4,6 nebo novější verzí, otestujte hodnotu DWORD **verze** , která je *větší nebo rovna* 393295. Tabulku, která obsahuje pouze minimální hodnotu DWORD verze pro každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
+- Chcete-li zjistit, zda je k dispozici minimální verze .NET Framework, použijte pro tuto verzi **hodnotu DWORD s nižší verzí.** Například pokud vaše aplikace běží pod .NET Framework 4,6 nebo novější verzí, otestujte hodnotu DWORD **verze** , která je *větší nebo rovna* 393295. Tabulku, která obsahuje **pouze minimální hodnotu DWORD verze pro** každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
 
-- Chcete-li otestovat více verzí, začněte testováním na hodnotu, která je *větší nebo rovna* menší hodnotě DWORD pro nejnovější verzi .NET Framework, a pak porovnejte hodnotu s menší hodnotou DWORD pro každou následnou dřívější verzi. Například pokud vaše aplikace vyžaduje .NET Framework 4,7 nebo novější a chcete určit konkrétní verzi .NET Framework přítomná, začněte testováním hodnoty DWORD **verze** , která je *větší nebo rovna* 461808 (menší hodnota DWORD hodnota pro .NET Framework 4.7.2). Pak porovnejte hodnotu DWORD **verze** s menší hodnotou pro každou pozdější .NET Framework verzi. Tabulku, která obsahuje pouze minimální hodnotu DWORD verze pro každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
+- Chcete-li otestovat více verzí, začněte testováním na hodnotu, která je *větší nebo rovna* menší hodnotě DWORD pro nejnovější verzi .NET Framework, a pak porovnejte hodnotu s menší hodnotou DWORD pro každou následnou dřívější verzi. Například pokud vaše aplikace vyžaduje .NET Framework 4,7 nebo novější a chcete určit konkrétní verzi .NET Framework přítomná, začněte testováním hodnoty DWORD **verze** , která je *větší nebo rovna* 461808 (menší hodnota DWORD hodnota pro .NET Framework 4.7.2). Pak porovnejte hodnotu DWORD **verze** s menší hodnotou pro každou pozdější .NET Framework verzi. Tabulku, která obsahuje **pouze minimální hodnotu DWORD verze pro** každou .NET Framework verzi, naleznete v části [minimální hodnoty dword verze pro .NET Framework 4,5 a novější verze](minimum-release-dword.md).
 
 <a name="net_d"></a>
 

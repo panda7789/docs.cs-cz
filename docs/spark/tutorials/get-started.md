@@ -4,12 +4,12 @@ description: Zjistěte, jak spustit rozhraní .NET pro Apache Spark aplikaci pom
 ms.date: 06/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7ce7d7aec6c15385d3d797d5a548519eea33b764
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 004256a2fe369b026b15151dfc72ae379da0be8e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "69577071"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928488"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Kurz: Začínáme s .NET pro Apache Spark
 
@@ -18,6 +18,7 @@ V tomto kurzu se naučíte, jak spustit rozhraní .NET pro Apache Spark aplikaci
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > * Příprava prostředí Windows pro rozhraní .NET pro Apache Spark
 > * Stáhnout **Microsoft. spark. Worker**
 > * Sestavení a spuštění jednoduchého rozhraní .NET pro Apache Spark aplikaci
@@ -124,6 +125,7 @@ Blahopřejeme! Úspěšně jste vytvořili a spustili rozhraní .NET pro Apache 
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > * Příprava prostředí Windows pro rozhraní .NET pro Apache Spark
 > * Stáhnout **Microsoft. spark. Worker**
 > * Sestavení a spuštění jednoduchého rozhraní .NET pro Apache Spark aplikaci

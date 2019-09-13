@@ -12,29 +12,29 @@ helpviewer_keywords:
 ms.assetid: 1d8e3398-00d8-47d5-a084-214f9859d3d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 764b0d535413fc1e5e23a2e47221789aa807ff38
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6955c24c12936ef37bedea2a1dd290bac45a5a2e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937087"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894910"
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
-Po atributy byly spojeny s prvky programu, reflexe je možné zadávat dotazy na jejich existence a hodnoty. V rozhraní .NET Framework verze 1.0 a 1.1 uživatelských atributů, které jsou zkoumány podle kontextu spuštění. Rozhraní .NET Framework verze 2.0 obsahuje nový kontext načtení kontextu pouze pro reflexi, který slouží ke kontrole kódu, který nelze načíst pro spuštění.  
+Po přiřazení atributů k prvkům programu lze reflexi použít k dotazování jejich existence a hodnot. V .NET Framework verze 1,0 a 1,1 jsou vlastní atributy zkontrolovány v kontextu spuštění. .NET Framework verze 2,0 poskytuje nový kontext zatížení, kontext pouze pro reflexi, který lze použít k prohlédnutí kódu, který nelze načíst ke spuštění.  
   
-## <a name="the-reflection-only-context"></a>Kontextu pouze pro reflexi  
- Nelze spustit kód načtený do kontextu pouze pro reflexi. To znamená, že nelze vytvořit instance vlastních atributů, protože, které by vyžadovaly provádění jejich konstruktory. Chcete-li načíst a zkontrolovat vlastních atributů v kontextu pouze pro reflexi, použijte <xref:System.Reflection.CustomAttributeData> třídy. Instance této třídy lze získat pomocí odpovídající přetížení statické <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody. Zobrazit [jak: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+## <a name="the-reflection-only-context"></a>Kontext pouze pro reflexi  
+ Kód načtený do kontextu pouze pro reflexi nelze provést. To znamená, že instance vlastních atributů nelze vytvořit, protože by vyžadovaly provádění jejich konstruktorů. Chcete-li načíst a prošetřit vlastní atributy v kontextu pouze pro reflexi, použijte <xref:System.Reflection.CustomAttributeData> třídu. Instance této třídy lze získat pomocí vhodného přetížení statické <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody. Viz [jak: Načíst sestavení do kontextu](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)pouze pro reflexi.  
   
 ## <a name="the-execution-context"></a>Kontext spuštění  
- Metody reflexe hlavní atributy dotazu v kontextu spuštění jsou <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType> a <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>.  
+ Hlavní metody reflexe pro dotazování atributů v kontextu spuštění <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType> jsou <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>a.  
   
- Usnadnění vlastního atributu je zaškrtnuté políčko s ohledem na sestavení, ve které je připojené. Jde o ekvivalent kontroluje, zda můžete volat metody pro typ v sestavení, ve kterém je vlastní atribut připojen konstruktoru vlastního atributu.  
+ Přístupnost vlastního atributu je zkontrolována s ohledem na sestavení, ve kterém je připojen. To je ekvivalentní k kontrole, zda metoda na typu v sestavení, ve kterém je vlastní atribut připojen, může volat konstruktor vlastního atributu.  
   
- Metody jako <xref:System.Reflection.Assembly.GetCustomAttributes%28System.Boolean%29?displayProperty=nameWithType> zkontrolujte viditelnost a přístupnost typu argumentu. Pouze pro kód v sestavení, který obsahuje uživatelem definovaný typ může načíst vlastní atribut pomocí tohoto typu **GetCustomAttributes**.  
+ Metody, jako <xref:System.Reflection.Assembly.GetCustomAttributes%28System.Boolean%29?displayProperty=nameWithType> je například zkontrolování viditelnosti a přístupnost argumentu typu. Pouze kód v sestavení, které obsahuje uživatelsky definovaný typ, může načíst vlastní atribut tohoto typu pomocí **GetCustomAttributes**.  
   
- Následující C# příklad je vzor návrh typický vlastní atribut. Ilustruje modelu reflexe runtime vlastního atributu.  
+ Následující C# příklad je typický vzor návrhu vlastního atributu. Znázorňuje model reflexe vlastního atributu modulu runtime.  
   
-```  
+```csharp
 System.DLL  
 public class DescriptionAttribute : Attribute  
 {  
@@ -54,19 +54,19 @@ public class LocalizationExtenderProvider
 }  
 ```  
   
- Pokud při pokusu o načtení vlastních atributů pro veřejné vlastní typ atributu je v modulu runtime <xref:System.ComponentModel.DescriptionAttribute> připojené k **getlanguage –** metoda, provede následující akce:  
+ Pokud se modul runtime pokouší načíst vlastní atributy pro veřejný typ <xref:System.ComponentModel.DescriptionAttribute> vlastního atributu připojený k metodě **GetLanguage** , provede následující akce:  
   
-1. Modul runtime kontroluje, že argument typu **DescriptionAttribute** k **Type.GetCustomAttributes**(typ *typ*) je veřejná a proto je viditelný a přístupný.  
+1. Modul runtime kontroluje, zda je argument typu DescriptionAttribute **typu. GetCustomAttributes** *(typ typu) veřejný*, a proto je viditelný a přístupný.  
   
-2. Modul runtime kontroluje, zda uživatelský typ **MyDescriptionAttribute** , která je odvozena od **DescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL**sestavení, ve kterém je připojen k metodě **getlanguage –**().  
+2. Modul runtime kontroluje, zda je uživatelem definovaný typ **MyDescriptionAttribute** , který je odvozen z **DescriptionAttribute** , viditelný a přístupný v rámci sestavení **System. Web. dll** , kde je připojen k metodě **GetLanguage** ().  
   
-3. Modul runtime kontroluje, že konstruktor třídy **MyDescriptionAttribute** je viditelný a přístupný v rámci **System.Web.DLL** sestavení.  
+3. Modul runtime kontroluje, zda je konstruktor třídy **MyDescriptionAttribute** viditelný a přístupný v rámci sestavení **System. Web. dll** .  
   
-4. Modul runtime volá konstruktor třídy **MyDescriptionAttribute** s parametry, které vlastní atribut a vrátí nový objekt volajícímu.  
+4. Modul runtime volá konstruktor třídy **MyDescriptionAttribute** s parametry vlastního atributu a vrátí nový objekt volajícímu.  
   
- Model reflexe vlastních atributů může způsobit únik těchto instance uživatelsky definované typy mimo sestavení, ve kterém je typ definován. To se nijak neliší od členů v knihovně modulu runtime systému, které vracejí výskyty uživatelem definované typy, jako například <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> vrací pole **RuntimeMethodInfo** objekty. Aby klient zjišťování informací o typu uživatelem definované vlastní atribut definujte členy tohoto typu bude neveřejné.  
+ Model reflexe vlastního atributu by mohl navrácení instancí uživatelsky definovaných typů mimo sestavení, ve kterém je definován typ. Neliší se od členů v běhové systémové knihovně, které vracejí instance uživatelsky definovaných typů, jako je <xref:System.Type.GetMethods%2A?displayProperty=nameWithType> například vrácení pole objektů **RuntimeMethodInfo** . Chcete-li klientovi zabránit v zjišťování informací o typu vlastního atributu definovaného uživatelem, definujte členy typu, které mají být NonPublic.  
   
- Následující příklad ukazuje základní způsob, jak získat přístup k vlastní atributy pomocí operace reflection.  
+ Následující příklad ukazuje základní způsob použití reflexe k získání přístupu k vlastním atributům.  
   
  [!code-cpp[CustomAttributeData#2](../../../samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source2.cpp#2)]
  [!code-csharp[CustomAttributeData#2](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source2.cs#2)]

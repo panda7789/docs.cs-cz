@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 570d071172c4048adfddfd55a5e38556e7fd7c69
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: e046ca88eecfe97cfc8553a2c661be930cc73465
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105844"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926672"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Jasně vyjádřete záměr návrhu s hodnotou null a odkazy, které neumožňují hodnotu null.
 
@@ -17,6 +17,7 @@ C#8 zavádí **typy odkazů s možnou hodnotou null**, které připlňují odkaz
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > - Zahrnutí typů s možnou hodnotou null a odkazů, které neumožňují hodnotu null, do návrhů
 > - Povolí kontrolu typu odkazu s možnou hodnotou null v celém kódu.
 > - Napsat kód, kde kompilátor vynutil tato rozhodnutí o návrhu.

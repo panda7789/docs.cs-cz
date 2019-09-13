@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: af91819c66a2376f446d0f18537d2f6e718b446e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: d49a4bdfec133fe805bc9d534e04edf2f9ca5726
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104886"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929402"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
@@ -82,6 +82,7 @@ Kód v následujícím fragmentu kódu demonstruje nejjednodušší aplikaci ML.
 ## <a name="code-workflow"></a>Pracovní postup kódu
 
 Následující diagram představuje strukturu kódu aplikace a také iterativní proces vývoje modelu:
+
 - Shromažďování a načítání školicích dat do objektu **IDataView**
 - Zadejte kanál operací pro extrakci funkcí a použití algoritmu strojového učení.
 - Výuka modelu voláním **přizpůsobení ()** na kanálu
@@ -275,6 +276,6 @@ V aplikacích pracujících v reálném čase bude váš kód pro školení a vy
 
 Informace o tom, jak vytvářet aplikace s využitím různých úloh strojového učení s více realistickými [](./tutorials/index.md)datovými sadami, najdete v těchto kurzech.
 
-Případně si můžete přečíst konkrétní témata podrobněji v tématu návody. [](./how-to-guides/index.md)
+Případně si můžete přečíst konkrétní témata podrobněji v tématu [návody.](./how-to-guides/index.md)
 
 A pokud máte Super nás, můžete podrobně přímo do [Referenční dokumentace k rozhraní API](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet).

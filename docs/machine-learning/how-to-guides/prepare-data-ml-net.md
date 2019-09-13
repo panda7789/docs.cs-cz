@@ -1,28 +1,28 @@
 ---
 title: Příprava dat pro vytvoření modelu
-description: Další informace o použití transformace v ML.NET k manipulaci a připravit data pro další zpracování nebo model vytváření.
+description: Naučte se používat transformace v ML.NET k manipulaci a přípravě dat pro další zpracování nebo vytváření modelů.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/25/2019
+ms.date: 09/11/2019
 ms.custom: mvc, how-to, title-hack-0625
-ms.openlocfilehash: 4b7d5a09044e49f1b57b8276b893e0fc962a3be2
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 4452aef351f33df532f3c673307dedbbf71631b8
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397723"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929375"
 ---
 # <a name="prepare-data-for-building-a-model"></a>Příprava dat pro vytvoření modelu
 
-Další informace o použití ML.NET připravit data pro další zpracování nebo vytváření modelu.
+Naučte se používat ML.NET k přípravě dat pro další zpracování nebo vytvoření modelu.
 
-Data jsou často musí provést a zhuštěné. Kromě toho algoritmů strojového učení ML.NET očekávat, že vstup nebo funkce, které chcete být v jedné číselné vektoru. Proto je jedním z cílů přípravu dat jak dostat data do formátu očekávaném ML.NET algoritmy. 
+Data často nejsou čistá a zhuštěná. Algoritmy strojového učení ML.NET očekávají zadání nebo funkce v jednom numerickém vektoru. Podobně hodnota pro předpověď (Label), zejména v případě, že je kategorií data, musí být kódována. Proto je jedním z cílů přípravy dat získat data do formátu očekávaného ML.NET algoritmy. 
 
-## <a name="filter-data"></a>Filtrování dat
+## <a name="filter-data"></a>Filtrovat data
 
-V některých případech je relevantní pro analýzu nejsou všechna data v datové sadě. Přístup k odebrání nahromadění irelevantních dat je filtrování. [ `DataOperationsCatalog` ](xref:Microsoft.ML.DataOperationsCatalog) Obsahuje sadu filtr operací, které trvat, než se [ `IDataView` ](xref:Microsoft.ML.IDataView) obsahující všechny data a vraťte se [IDataView](xref:Microsoft.ML.IDataView) obsahující pouze datové body, které vás zajímají. Je důležité si uvědomit, že vzhledem k tomu, že operace filtru nejsou [ `IEstimator` ](xref:Microsoft.ML.IEstimator%601) nebo [ `ITransformer` ](xref:Microsoft.ML.ITransformer) jako ty v [ `TransformsCatalog` ](xref:Microsoft.ML.TransformsCatalog), nemůže být zahrnutý jako součást [ `EstimatorChain` ](xref:Microsoft.ML.Data.EstimatorChain%601) nebo [ `TransformerChain` ](xref:Microsoft.ML.Data.TransformerChain%601) datovým kanálem přípravy. 
+V některých případech nejsou všechna data v datové sadě relevantní pro účely analýzy. Přístup k odebrání nerelevantních dat je filtrování. Obsahuje sadu operací filtru, které [`IDataView`](xref:Microsoft.ML.IDataView) obsahují všechna data a vracejí [IDataView](xref:Microsoft.ML.IDataView) obsahující pouze datové body, které mají zájem. [`DataOperationsCatalog`](xref:Microsoft.ML.DataOperationsCatalog) Je důležité si uvědomit, že vzhledem k tomu [`IEstimator`](xref:Microsoft.ML.IEstimator%601) [`TransformsCatalog`](xref:Microsoft.ML.TransformsCatalog), že operace filtru [`ITransformer`](xref:Microsoft.ML.ITransformer) nejsou ani jako ty v, nelze je zahrnout jako součást [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) kanálu nebo [`TransformerChain`](xref:Microsoft.ML.Data.TransformerChain%601) přípravku pro přípravu dat. 
 
-Pomocí následující vstupní data, která je načtena do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí následujících vstupních dat, která jsou načtena do [`IDataView`](xref:Microsoft.ML.IDataView):
 
 ```csharp
 HomeData[] homeDataList = new HomeData[]
@@ -45,20 +45,20 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-Chcete-li filtrovat data na základě hodnoty sloupce, použijte [ `FilterRowsByColumn` ](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) metody.
+Chcete-li filtrovat data na základě hodnoty sloupce, použijte [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) metodu.
 
 ```csharp
 // Apply filter
 IDataView filteredData = mlContext.Data.FilterRowsByColumn(data, "Price", lowerBound: 200000, upperBound: 1000000);
 ```
 
-Příkladu výše má řádky v datové sadě s cenou mezi 200000 až 1 000 000. Výsledek použití tohoto filtru by vrátit pouze poslední dva řádky v datech a vyloučit první řádek vzhledem k tomu, že cena je 100000 a není mezi zadaného rozsahu.
+Výše uvedená ukázka v datové sadě bere řádky s cenou mezi 200000 a 1000000. Výsledek použití tohoto filtru vrátí jenom poslední dva řádky v datech a vyloučí první řádek, protože jeho cena je 100000 a ne mezi zadaným rozsahem.
 
-## <a name="replace-missing-values"></a>Nahraďte chybějící hodnoty
+## <a name="replace-missing-values"></a>Nahradit chybějící hodnoty
 
-Chybějící hodnoty jsou společného výskytu v datových sadách. Je jedním z přístupů k práci s chybějící hodnoty nahradit výchozí hodnotu pro daný typ, pokud všechny nebo jiné smysluplnou hodnotu, jako je střední hodnota v datech. 
+Chybějící hodnoty jsou běžné výskyty v datových sadách. Jediným způsobem, jak řešit chybějící hodnoty, je nahradit je výchozí hodnotou pro daný typ, pokud kteroukoli nebo jinou smysluplnou hodnotu, například střední hodnotu v datech. 
 
-Pomocí následující vstupní data, která je načtena do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí následujících vstupních dat, která jsou načtena do [`IDataView`](xref:Microsoft.ML.IDataView):
 
 ```csharp
 HomeData[] homeDataList = new HomeData[]
@@ -81,10 +81,10 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-Všimněte si, že po posledním prvku v seznamu má chybí hodnota pro `Price`. Nahradit chybějící hodnoty v `Price` sloupců, použijte [ `ReplaceMissingValues` ](xref:Microsoft.ML.ExtensionsCatalog.ReplaceMissingValues*) metoda vyplnit tento chybí hodnota.
+Všimněte si, že poslední prvek v našem seznamu má chybějící hodnotu pro `Price`. Chcete-li nahradit chybějící hodnoty ve `Price` sloupci, [`ReplaceMissingValues`](xref:Microsoft.ML.ExtensionsCatalog.ReplaceMissingValues*) použijte metodu k vyplnění chybějící hodnoty.
 
 > [!IMPORTANT]
-> [`ReplaceMissingValue`](xref:Microsoft.ML.ExtensionsCatalog.ReplaceMissingValues*) fungují jenom s číselnými daty.
+> [`ReplaceMissingValue`](xref:Microsoft.ML.ExtensionsCatalog.ReplaceMissingValues*)funguje pouze s numerickými daty.
 
 ```csharp
 // Define replacement estimator
@@ -98,15 +98,15 @@ ITransformer replacementTransformer = replacementEstimator.Fit(data);
 IDataView transformedData = replacementTransformer.Transform(data);
 ```
 
-ML.NET podporuje různé [nahrazení režimy](xref:Microsoft.ML.Transforms.MissingValueReplacingEstimator.ReplacementMode). Ukázka výše používá `Mean` nahrazení režimu, který vyplní chybějící hodnoty s průměrnou hodnotu tohoto sloupce. Vyplní výsledek nahrazení `Price` vlastnost po posledním prvku v našich dat s 200 000, protože je průměrem 100 000 a 300 000. 
+ML.NET podporuje různé [režimy nahrazení](xref:Microsoft.ML.Transforms.MissingValueReplacingEstimator.ReplacementMode). Výše uvedená ukázka používá `Mean` režim nahrazení, ve kterém se vyplní chybějící hodnota průměrnou hodnotou tohoto sloupce. Výsledek nahrazení vyplní `Price` vlastnost pro poslední prvek v datech s 200 000, protože se jedná o průměr 100 000 a 300 000. 
 
-## <a name="use-normalizers"></a>Použití normalizers
+## <a name="use-normalizers"></a>Použít normalizy
 
-[Normalizace](https://en.wikipedia.org/wiki/Feature_scaling) jsou data předběžného zpracování techniku použít ke standardizaci funkce, které nejsou ve stejném měřítku, která pomáhá algoritmy sloučit rychleji. Například rozsahy pro hodnoty jako věku a příjmů výrazně liší stářím obecně se v rozsahu od 0 do 100 a příjmu, obecně je v rozsahu 0 až po tisíce. Přejděte [transformace stránky](../resources/transforms.md) podrobnější seznam a popis normalizace transformací. 
+[Normalizace](https://en.wikipedia.org/wiki/Feature_scaling) je metoda předběžného zpracování dat, která slouží ke standardizaci funkcí, které nejsou ve stejném měřítku, což pomáhá zvýšit sblížení algoritmů. Například rozsahy pro hodnoty, jako je věk a příjem, se výrazně liší v rozmezí 0-100 a příjem je obecně v rozsahu od 0 do tisíců. Podrobnější seznam a popis transformací normalizace najdete na [stránce transformace](../resources/transforms.md) . 
 
-### <a name="min-max-normalization"></a>Normalizace maximálních
+### <a name="min-max-normalization"></a>Normalizace min-max
 
-Pomocí následující vstupní data, která je načtena do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí následujících vstupních dat, která jsou načtena do [`IDataView`](xref:Microsoft.ML.IDataView):
 
 ```csharp
 HomeData[] homeDataList = new HomeData[]
@@ -124,7 +124,7 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-Normalizaci lze použít pro sloupce s jednu číselnou hodnotu, jakož i vektorů. Normalizovat data v `Price` sloupce pomocí maximálních normalizace s [ `NormalizeMinMax` ](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) metody.
+Normalizace se dá použít na sloupce s jednou číselnou hodnotou i vektory. Normalizuje data ve `Price` sloupci pomocí normalizace min-max [`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) s metodou.
 
 ```csharp
 // Define min-max estimator
@@ -138,13 +138,13 @@ ITransformer minMaxTransformer = minMaxEstimator.Fit(data);
 IDataView transformedData = minMaxTransformer.Transform(data);
 ```
 
-Původní hodnoty cena `[200000,100000]` jsou převedeny na `[ 1, 0.5 ]` pomocí `MinMax` normalizace vzorec, který generuje výstupní hodnoty v rozmezí 0 – 1.
+Původní cenové hodnoty `[200000,100000]` se převedou na `[ 1, 0.5 ]` použití `MinMax` vzorce normalizace, který generuje výstupní hodnoty v rozsahu 0-1.
 
-### <a name="binning"></a>Binning
+### <a name="binning"></a>Binningu
 
-[Binning](https://en.wikipedia.org/wiki/Data_binning) převede průběžné hodnoty na samostatných reprezentace vstupu. Předpokládejme například, že jednou z vašich funkcí je věk. Místo hodnoty skutečné stáří binning vytvoří rozsahy pro tuto hodnotu. 0 – 18 může být jeden bin, jiné mohou být 19 35 a tak dále. 
+[Binningu](https://en.wikipedia.org/wiki/Data_binning) převádí souvislé hodnoty do diskrétní reprezentace vstupu. Předpokládejme například, že jedna z vašich funkcí je věková. Místo použití skutečné věkové hodnoty binningu vytvoří rozsahy pro tuto hodnotu. 0-18 může být jedna přihrádka, další by mohla být 19-35 a tak dále. 
 
-Pomocí následující vstupní data, která je načtena do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí následujících vstupních dat, která jsou načtena do [`IDataView`](xref:Microsoft.ML.IDataView):
 
 ```csharp
 HomeData[] homeDataList = new HomeData[]
@@ -167,7 +167,7 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-Normalizovat data do přihrádek pomocí [ `NormalizeBinning` ](xref:Microsoft.ML.NormalizationCatalog.NormalizeBinning*) metody. `maximumBinCount` Parametr umožňuje určit počet intervalů, které jsou potřeba ke klasifikaci dat. V tomto příkladu data zařadí do dva přihrádky.  
+Normalizuje data do přihrádek pomocí [`NormalizeBinning`](xref:Microsoft.ML.NormalizationCatalog.NormalizeBinning*) metody. `maximumBinCount` Parametr umožňuje zadat počet přihrádek potřebných ke klasifikaci vašich dat. V tomto příkladu budou data vložena do dvou přihrádek.  
 
 ```csharp
 // Define binning estimator
@@ -181,13 +181,13 @@ var binningTransformer = binningEstimator.Fit(data);
 IDataView transformedData = binningTransformer.Transform(data);
 ```
 
-Vytvoří výsledek binning bin hranice `[0,200000,Infinity]`. Proto je výsledný přihrádky `[0,1,1]` protože první zjišťování je mezi 0-200000 a ostatní jsou větší než 200 000, ale menší než nekonečno.
+Výsledek binningu vytvoří meze přihrádky pro `[0,200000,Infinity]`. Proto výsledné přihrádky jsou `[0,1,1]` , protože první pozorování je mezi 0-200000 a ostatní jsou větší než 200000, ale menší než nekonečno.
 
-## <a name="work-with-categorical-data"></a>Práce s data zařazená do kategorií
+## <a name="work-with-categorical-data"></a>Práce s kategorií daty
 
-Data zařazená do kategorií nečíselné musí být převeden na číslo před použitím sestavit model strojového učení. 
+Než se číselné kategorií data musí převést na číslo, než se použije k sestavení modelu Machine Learning. 
 
-Pomocí následující vstupní data, která je načtena do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí následujících vstupních dat, která jsou načtena do [`IDataView`](xref:Microsoft.ML.IDataView):
 
 ```csharp
 CarData[] cars = new CarData[] 
@@ -210,7 +210,7 @@ CarData[] cars = new CarData[]
 };
 ```
 
-Kategorií `VehicleType` vlastnosti mohou být převedeny na čísla pomocí [ `OneHotEncoding` ](xref:Microsoft.ML.CategoricalCatalog.OneHotEncoding*) metody. 
+Vlastnost kategorií `VehicleType` lze převést na číslo [`OneHotEncoding`](xref:Microsoft.ML.CategoricalCatalog.OneHotEncoding*) pomocí metody. 
 
 ```csharp
 // Define categorical transform estimator
@@ -224,7 +224,7 @@ ITransformer categoricalTransformer = categoricalEstimator.Fit(data);
 IDataView transformedData = categoricalTransformer.Transform(data);
 ```
 
-Výsledný transformace převede textovou hodnotu `VehicleType` na číslo. Položky `VehicleType` sloupce se následující, když je použita transformace: 
+Výsledná transformace převede textovou hodnotu `VehicleType` na číslo. Při použití transformace se `VehicleType` položky ve sloupci stanou následujícím: 
 
 ```text
 [
@@ -234,11 +234,11 @@ Výsledný transformace převede textovou hodnotu `VehicleType` na číslo. Polo
 ]
 ```
 
-## <a name="work-with-text-data"></a>Práce s daty text
+## <a name="work-with-text-data"></a>Práce s textovými daty
 
-Textová data nutné transformovat na čísla před sestavením model strojového učení. Přejděte [transformace stránky](../resources/transforms.md) podrobnější seznam a popis transformace textu.
+Textová data je potřeba transformovat na čísla, než je použijete k sestavení modelu Machine Learning. Podrobnější seznam a popis transformací textu najdete na [stránce transformace](../resources/transforms.md) .
 
-Pomocí dat, jako je následující, která data se načetl do [ `IDataView` ](xref:Microsoft.ML.IDataView):
+Pomocí dat, jako jsou následující data, která byla načtena [`IDataView`](xref:Microsoft.ML.IDataView)do:
 
 ```csharp
 ReviewData[] reviews = new ReviewData[]
@@ -256,7 +256,7 @@ ReviewData[] reviews = new ReviewData[]
 };
 ```
 
-Minimální krokem pro převod textu na reprezentace číselné vektoru je použití [ `FeaturizeText` ](xref:Microsoft.ML.TextCatalog.FeaturizeText*) metody. S použitím [ `FeaturizeText` ](xref:Microsoft.ML.TextCatalog.FeaturizeText*) vstupního textového sloupce, výsledkem je číselná vektor představující lp normalized slovo, znak ngrams je použita transformace, řadu transformací. 
+Minimální krok pro převod textu na číselnou vektorovou reprezentaci je použití [`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) metody. Použijete-li [`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) transformaci, použije se pro vstupní textový sloupec řada transformací, což má za následek numerické vektory, které představují lineární-normalizované slovo a znak ngrams. 
 
 ```csharp
 // Define text transform estimator
@@ -270,13 +270,13 @@ ITransformer textTransformer = textEstimator.Fit(data);
 IDataView transformedData = textTransformer.Transform(data);
 ```
 
-Výsledný transformace textové hodnoty v převede `Description` sloupců na číselný vektoru, který vypadá podobně jako následující výstup:
+Výsledná transformace by převedla textové hodnoty ve `Description` sloupci na číselný vektor, který vypadá podobně jako výstup níže:
 
 ```text
 [ 0.2041241, 0.2041241, 0.2041241, 0.4082483, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0.2041241, 0, 0, 0, 0, 0.4472136, 0.4472136, 0.4472136, 0.4472136, 0.4472136, 0 ]
 ```
 
-Kroky zpracování složitých text se sloučí do [ `EstimatorChain` ](xref:Microsoft.ML.Data.EstimatorChain%601) odebrat šumu a potenciálně snížili množství množství požadovaný výpočetní prostředky podle potřeby.
+Kombinací složitých kroků zpracování textu do [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) můžete odebrat šum a případně snížit množství potřebných prostředků pro zpracování podle potřeby.
 
 ```csharp
 // Define text transform estimator
@@ -288,17 +288,17 @@ var textEstimator = mlContext.Transforms.Text.NormalizeText("Description")
     .Append(mlContext.Transforms.NormalizeLpNorm("Description"));
 ```
 
-`textEstimator` obsahuje podmnožinu operace provedené [ `FeaturizeText` ](xref:Microsoft.ML.TextCatalog.FeaturizeText*) metody. Výhodou složitější kanálu je řízení a viditelnost přes transformaci na data. 
+`textEstimator`obsahuje podmnožinu operací provedených [`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) metodou. Výhodou složitějšího kanálu je řízení a viditelnost při transformaci aplikovaných na data. 
 
-Jako příklad použijeme první položka, tady je podrobný popis výsledky vytvořené metodou kroky transformace určené `textEstimator`:
+Jako příklad používáme první položku, což je podrobný popis výsledků, které byly vytvořeny pomocí kroků transformace definovaných v `textEstimator`následujících krocích:
 
-**Původní Text: To je dobrý produktu**
+**Původní text: Toto je dobrý produkt**
 
 |Transformace | Popis | Výsledek
 |--|--|--|
-|1. NormalizeText | Převede všechna písmena na malá písmena ve výchozím nastavení | To je dobrý produktu
-|2. TokenizeWords | Rozdělí řetězec do jednotlivých slov | ["Tento", "je", "";"Dobrá","produkt"]
-|3. RemoveDefaultStopWords | Odebere stopword jako *je* *a*. | ["good","product"]
-|4. MapValueToKey | Mapuje hodnoty klíče (kategorie) na základě vstupních dat |  [1,2]
-|5. ProduceNGrams | Transformuje text do sekvence po sobě jdoucích slov | [1,1,1,0,0]
-|6. NormalizeLpNorm | Vstupy škálování podle jejich lp norm | [ 0.577350529, 0.577350529, 0.577350529, 0, 0 ]
+|1. NormalizeText | Ve výchozím nastavení převede všechna písmena na malá. | Toto je dobrý produkt
+|2. TokenizeWords | Rozdělí řetězec na jednotlivá slova. | ["This", "is", "a", "Dobrá", "Product"]
+|3. RemoveDefaultStopWords | Odebere stopslova jako *je* a *.* | ["dobré", "produkt"]
+|4. MapValueToKey | Mapuje hodnoty na klíče (kategorie) na základě vstupních dat. |  [1,2]
+|5. ProduceNGrams | Transformuje text na posloupnost po sobě jdoucích slov. | [1,1,1,0,0]
+|6. NormalizeLpNorm | Škálování vstupů podle jejich LP-normy | [0,577350529, 0,577350529, 0,577350529, 0, 0]

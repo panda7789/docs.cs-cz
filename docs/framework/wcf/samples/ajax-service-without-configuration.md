@@ -2,12 +2,12 @@
 title: Služba AJAX bez konfigurace
 ms.date: 03/30/2017
 ms.assetid: e6db7acd-5679-45d4-b98a-8449c6873838
-ms.openlocfilehash: b3c12801d14c7f6850a985c521c0e3fff92ba8e4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 06af14ad551de0e56700b044aea25b59dbf890ce
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045809"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895129"
 ---
 # <a name="ajax-service-without-configuration"></a>Služba AJAX bez konfigurace
 
@@ -20,7 +20,7 @@ Podpora AJAX ve WCF je optimalizovaná pro použití s ASP.NET AJAX prostřednic
 
  Tato ukázka sestaví na základě služby AJAX pomocí HTTP POST. Jak je popsáno v ukázce [základní služby AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) , <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> slouží k hostování služby.
 
-```svc
+```text
 <%ServiceHost
     language=c#
     Debug="true"
@@ -44,7 +44,7 @@ Podpora AJAX ve WCF je optimalizovaná pro použití s ASP.NET AJAX prostřednic
 
 1. Postupujte podle pokynů pro instalaci v [části Postup instalace pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Sestavte řešení ConfigFreeAjaxService. sln, jak je popsáno v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Sestavte řešení ConfigFreeAjaxService. sln, jak je popsáno v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 3. Přejděte na `http://localhost/ServiceModelSamples/ConfigFreeClientPage.aspx` (neotevírejte ConfigFreeClientPage. aspx v prohlížeči z adresáře projektu).
 

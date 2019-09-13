@@ -3,12 +3,12 @@ title: Interpretace výrazů
 description: Naučte se psát kód pro kontrolu struktury stromu výrazů.
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: fcc16e7a0cef7b3ac24d99ccbddd93bed100a5bb
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: c9d80ca234e298df2f2e7ce48fbf92cb817fc8a7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202968"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925677"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů
 
@@ -50,7 +50,7 @@ Pojďme začít s ukázkou sčítání z úvodu do této části.
 Expression<Func<int>> sum = () => 1 + 2;
 ```
 
-> Nepoužívám `var` deklaraci tohoto stromu výrazů, protože není možné, protože pravá strana přiřazení je implicitně typu. Pro pochopení tohoto příkladu si přečtěte [](implicitly-typed-lambda-expressions.md)toto téma.
+> Nepoužívám `var` deklaraci tohoto stromu výrazů, protože není možné, protože pravá strana přiřazení je implicitně typu. Pro pochopení tohoto příkladu si [Přečtěte toto](implicitly-typed-lambda-expressions.md)téma.
 
 Kořenový uzel je `LambdaExpression`. Aby bylo možné získat zajímavý kód na pravé straně `=>` operátoru, je nutné najít jeden z podřízených objektů. `LambdaExpression` Provedeme to se všemi výrazy v této části. Nadřazený uzel nám pomohly najít návratový typ `LambdaExpression`.
 
@@ -354,9 +354,10 @@ Expression<Func<int, int>> factorial = (n) =>
 ```
 
 Tento kód představuje jednu možnou implementaci funkce matematického *faktoriál* . Způsob, jakým jsem tento kód napsal, zvýrazní dvě omezení pro vytváření stromů výrazů přiřazením výrazů lambda výrazům. První příkazy výrazy lambda nejsou povolené. To znamená, že nemůžu použít smyčky, bloky, příkazy if/else a další řídicí struktury, které jsou C#společné v. Je omezeno na použití výrazů. Za druhé nelze rekurzivně volat stejný výraz.
-Můžu se už delegovat, ale nemůžu ho zavolat ve formuláři jeho stromu výrazu. V části o sestavování [stromů výrazů](expression-trees-building.md) se naučíte techniky, jak překonat tato omezení.
+Můžu se už delegovat, ale nemůžu ho zavolat ve formuláři jeho stromu výrazu. V části o [sestavování stromů výrazů](expression-trees-building.md) se naučíte techniky, jak překonat tato omezení.
 
 V tomto výrazu se setkáte s uzly všech těchto typů:
+
 1. EQUAL (binární výraz)
 2. Násobení (binární výraz)
 3. Podmíněný (? vyjádření

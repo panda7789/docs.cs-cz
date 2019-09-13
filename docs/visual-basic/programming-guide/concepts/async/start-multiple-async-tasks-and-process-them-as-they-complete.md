@@ -2,12 +2,12 @@
 title: Spuštění několika asynchronních úloh a jejich zpracování po dokončení (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
-ms.openlocfilehash: 24dbf4904c4e4b479df54d1c663bb4d1256e2ede
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b103f385c804061c4df99dc9d1fdd54c7876151a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046448"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928457"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>Spuštění několika asynchronních úloh a jejich zpracování po dokončení (Visual Basic)
 Pomocí nástroje <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>můžete spustit více úloh současně a zpracovat je jeden po jednom, protože jsou dokončeny, a nikoli jejich zpracování v pořadí, ve kterém jsou spuštěny.  
@@ -80,7 +80,7 @@ Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =
  Projekt byste měli několikrát spustit, abyste ověřili, že stažené délky se vždy nezobrazí ve stejném pořadí.  
   
 > [!CAUTION]
-> Můžete použít `WhenAny` ve smyčce, jak je popsáno v příkladu, pro řešení problémů, které zahrnují malý počet úkolů. Další přístupy jsou ale efektivnější, pokud máte velký počet úkolů, které je potřeba zpracovat. Další informace a příklady najdete v tématu [zpracování úloh po dokončení](https://blogs.msdn.microsoft.com/pfxteam/2012/08/02/processing-tasks-as-they-complete).  
+> Můžete použít `WhenAny` ve smyčce, jak je popsáno v příkladu, pro řešení problémů, které zahrnují malý počet úkolů. Další přístupy jsou ale efektivnější, pokud máte velký počet úkolů, které je potřeba zpracovat. Další informace a příklady najdete v tématu [zpracování úloh po dokončení](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).  
   
 ## <a name="complete-example"></a>Kompletní příklad  
  Následující kód je úplný text souboru MainWindow. XAML. vb pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad.  

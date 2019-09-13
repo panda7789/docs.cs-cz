@@ -1,51 +1,52 @@
 ---
-title: Pokyny v knihovně .NET Open source
-description: Doporučení osvědčených postupů pro vývojáře k vytvoření vysoce kvalitní knihovny .NET.
+title: Pokyny k open source knihovně .NET
+description: Doporučení pro osvědčené postupy pro vývojáře k vytváření vysoce kvalitních knihoven .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/17/2018
-ms.openlocfilehash: 85d76c8b2bd0f030e3fbc1987e6ff51d6da44e76
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: eff6c822757af6fb85622e88714accd40c32bcf5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644389"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928962"
 ---
 # <a name="open-source-library-guidance"></a>Pokyny pro open-source knihovnu
 
-Tento návod obsahuje doporučení pro vývojáře umožňující vytváření vysoce kvalitních knihovny .NET. Tato dokumentace se zaměřuje na *co* a *proč* při sestavování knihovny .NET, ne *jak*.
+Tento průvodce poskytuje doporučení pro vývojáře k vytváření vysoce kvalitních knihoven .NET. Tato dokumentace se zaměřuje na to, *co* a *Proč* při sestavování knihovny .NET, nikoli na *jak*.
 
-Vysoce kvalitní knihoven .NET open-source aspekty:
+Aspekty vysoce kvalitních Open Source knihoven .NET:
 
 > [!div class="checklist"]
-> * **Inkluzivní** – knihovny .NET vhodné snažit se podporují mnoho platforem, programovacích jazyků a aplikací.
-> * **Stabilní** – knihovny .NET dobré existovat vedle sebe v ekosystému .NET, používané aplikace sestavené s mnoha knihoven.
-> * **Navržené tak, aby vyvíjí** – knihovny pro .NET by měl vylepšit a postupně při současné podpoře stávající uživatele.
-> * **Laditelný** – knihovny pro .NET používali nejnovější nástroje potřebné k vytváření skvělé možnosti ladění pro uživatele.
-> * **Důvěryhodné** – knihovny pro .NET mají vztah důvěryhodnosti vývojářů verzi publikováním NuGet pomocí osvědčené postupy zabezpečení.
+>
+> * **Včetně** kvalitních knihoven .NET usiluje o podporu řady platforem, programovacích jazyků a aplikací.
+> * **Stabilní** knihovny .NET v ekosystému .NET společně fungují v aplikacích, které jsou sestavené s mnoha knihovnami.
+> * **Navrženo pro vývoj** – knihovny .NET by se měly zlepšovat a vyvíjet v průběhu času a podporovat stávající uživatele.
+> * **Laditelné** – knihovny .NET by měly používat nejnovější nástroje k vytvoření skvělého prostředí ladění pro uživatele.
+> * **Důvěryhodné** knihovny .NET mají důvěru vývojářů publikováním do NuGet pomocí osvědčených postupů zabezpečení.
 
 > [!div class="nextstepaction"]
 > [Začínáme](./get-started.md)
 
-## <a name="types-of-recommendations"></a>Typů doporučení
+## <a name="types-of-recommendations"></a>Typy doporučení
 
-Každý článek představuje čtyři typy doporučení: **Proveďte**, **vezměte v úvahu**, **vyhnout**, a **nepodporují**. Typ doporučení se jedná Určuje, jak důrazně má následovat.
+Každý článek nabízí čtyři typy doporučení: **Udělejte**, **zvažte**, **Vyhněte**sea nepoužívejte. Typ doporučení indikuje, jak by měl následovat.
 
-Téměř vždy měli byste postupovat podle **proveďte** doporučení. Příklad:
+Měli byste téměř **vždy postupovat podle doporučení do** . Příklad:
 
-**PROVEĎTE ✔️** distribuovat knihovny pomocí balíčku NuGet.
+**✔️** k distribuci knihovny pomocí balíčku NuGet.
 
-Na druhé straně **zvažte** byste obecně měli dodržet, doporučení, ale existují legitimní výjimky z pravidla a by neměl mít pocit chybný o není následující pokyny:
+Na druhé **straně doporučujeme,** aby se obecně následovala doporučení, ale v tomto pravidle existují legitimní výjimky a neměli byste mít na starosti žádné informace o tom, co se s těmito pokyny nedaří:
 
-**✔️ ZVAŽTE** pomocí [SemVer 2.0.0](https://semver.org/) verzi balíčku NuGet.
+**✔️ zvažte** použití [2.0.0 SemVer](https://semver.org/) k verzi balíčku NuGet.
 
-**Vyhněte se** doporučení zmiňovat věcí, které nejsou obecně vhodné, ale někdy zásadní pravidlo smysl:
+**Vyhněte** se doporučením označení věcí, které obecně nejsou dobrý nápad, ale porušení pravidla je někdy vhodné:
 
-**❌ Nepoužívejte** odkazy na balíčky NuGet, které vyžadují přesnou verzi.
+**❌ Se vyhnout** Balíček NuGet odkazuje na přesnou verzi.
 
-A nakonec **nejsou** doporučení znamenat něco téměř nikdy byste měli dělat:
+A nakonec nenaznačují doporučení, co byste měli skoro **nikdy dělat:**
 
-**❌ NEPODPORUJÍ** publikování silným názvem a jiných silným názvem verzí knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
+**❌** Nepublikujte v knihovně silně pojmenované a nedostatečně pojmenované verze vaší knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
 >[!div class="step-by-step"]
 >[Next](get-started.md)

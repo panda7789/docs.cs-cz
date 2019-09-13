@@ -2,21 +2,21 @@
 title: Serializace ve formátu Json s programováním na úrovni zpráv
 ms.date: 03/30/2017
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
-ms.openlocfilehash: 6e8bb43b7a7755c20699aa377c9d60b0f285493b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f50f6a699dff54e3d0950f5ce0e1049217b9dc45
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949197"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928734"
 ---
 # <a name="serializing-in-json-with-message-level-programming"></a>Serializace ve formátu Json s programováním na úrovni zpráv
 WCF podporuje serializaci dat ve formátu JSON. Toto téma popisuje, jak dát službě WCF pokyn k serializaci vašich <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>typů pomocí.  
   
 ## <a name="typed-message-programming"></a>Programování typované zprávy  
- Používá se, <xref:System.ServiceModel.Web.WebGetAttribute> když se použije nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> na operaci služby. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Oba tyto atributy umožňují zadat `RequestFormat` a. `ResponseFormat` Pro použití formátu JSON pro žádosti a odpovědi. nastavte obě z obou na `WebMessageFormat.Json`.  Chcete-li použít JSON, je nutné použít <xref:System.ServiceModel.WebHttpBinding>, který automaticky <xref:System.ServiceModel.Description.WebHttpBehavior>nakonfiguruje. Další informace o serializaci WCF naleznete v tématu [serializace a](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)deserializace. Další informace o JSON a WCF najdete v tématu [Service Station – Úvod k RESTful službám pomocí WCF](https://msdn.microsoft.com/magazine/dd315413.aspx).  
+ Používá se, <xref:System.ServiceModel.Web.WebGetAttribute> když se použije nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> na operaci služby. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Oba tyto atributy umožňují zadat `RequestFormat` a. `ResponseFormat` Pro použití formátu JSON pro žádosti a odpovědi. nastavte obě z obou na `WebMessageFormat.Json`.  Chcete-li použít JSON, je nutné použít <xref:System.ServiceModel.WebHttpBinding>, který automaticky <xref:System.ServiceModel.Description.WebHttpBehavior>nakonfiguruje. Další informace o serializaci WCF naleznete v tématu [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md). Další informace o JSON a WCF najdete v tématu [Service Station – Úvod k RESTful službám pomocí WCF](https://msdn.microsoft.com/magazine/dd315413.aspx).  
   
 > [!IMPORTANT]
-> Použití formátu JSON vyžaduje použití <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> , které nepodporují komunikaci SOAP. Služby, které komunikují <xref:System.ServiceModel.WebHttpBinding> s nástrojem, nepodporují vystavování metadat služby, takže nebudete moct k vygenerování proxy na straně klienta používat funkce Přidat odkaz na službu sady Visual Studio ani nástroj příkazového řádku Svcutil. Další informace o tom, jak programově volat služby, které <xref:System.ServiceModel.WebHttpBinding>používají, najdete v tématu [jak spotřebovávat služby REST pomocí WCF](https://blogs.msdn.com/b/pedram/archive/2008/04/21/how-to-consume-rest-services-with-wcf.aspx).  
+> Použití formátu JSON vyžaduje použití <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> , které nepodporují komunikaci SOAP. Služby, které komunikují <xref:System.ServiceModel.WebHttpBinding> s nástrojem, nepodporují vystavování metadat služby, takže nebudete moct k vygenerování proxy na straně klienta používat funkce Přidat odkaz na službu sady Visual Studio ani nástroj příkazového řádku Svcutil. Další informace o tom, jak programově volat služby, které <xref:System.ServiceModel.WebHttpBinding>používají, najdete v tématu [jak spotřebovávat služby REST pomocí WCF](https://blogs.msdn.microsoft.com/pedram/2008/04/21/how-to-consume-rest-services-with-wcf/).  
   
 ## <a name="untyped-message-programming"></a>Programování netypové zprávy  
  Při práci přímo s netypovými objekty zpráv je nutné explicitně nastavit vlastnosti v netypové zprávě pro její serializaci jako JSON. Následující fragment kódu ukazuje, jak to provést.  

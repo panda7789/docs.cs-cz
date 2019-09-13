@@ -2,12 +2,12 @@
 title: 'Vlastní kodér zpráv: Kompresní kodér'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 84afb060e98a5936b24c5446ff543fd627864102
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 4fc6cd4b28d35971e5e2da2559d258055adf9252
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971990"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928751"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
 
@@ -312,7 +312,7 @@ Chcete-li použít tuto obslužnou rutinu konfigurace, musí být registrována 
 
 Při spuštění serveru se v okně konzoly zobrazí požadavky na operace a odpovědi. V okně stiskněte klávesu ENTER, aby se server vypnul.
 
-```
+```console
 Press Enter key to Exit.
 
         Server Echo(string input) called:
@@ -324,7 +324,7 @@ Press Enter key to Exit.
 
 Když spustíte klienta nástroje, v okně konzoly se zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
-```
+```console
 Calling Echo(string):
 Server responds: Simple hello Simple hello
 
@@ -338,13 +338,13 @@ Press <ENTER> to terminate client.
 
 1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0:
 
-    ```
+    ```console
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
 2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-3. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 

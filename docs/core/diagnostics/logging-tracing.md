@@ -4,12 +4,12 @@ description: Úvod do protokolování a trasování .NET Core.
 author: sdmaclea
 ms.author: stmaclea
 ms.date: 08/05/2019
-ms.openlocfilehash: 06781c6a5c1d771b1fa772539705cd1e2b3ad2d4
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 46e64a7f60b88c26ceef9ac817be885bfa180c8e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68974129"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926353"
 ---
 # <a name="net-core-logging-and-tracing"></a>Protokolování a trasování .NET Core
 
@@ -32,6 +32,7 @@ Tato jednoduchá technika je překvapivě výkonná. Dá se použít v situacíc
 Třídy <xref:System.Console?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a<xref:System.Diagnostics.Debug?displayProperty=nameWithType> obsahují podobné rozhraní API stylu tisku, které je vhodné pro protokolování.
 
 Volba stylu tiskového rozhraní API, které se má použít. Hlavní rozdíly:
+
 - <xref:System.Console?displayProperty=nameWithType>
   - Vždy zapnuto a vždy zapisuje do konzoly.
   - Užitečné pro informace, které může zákazník potřebovat k zobrazení ve vydané verzi.
@@ -80,6 +81,7 @@ Rozhraní API na nízké úrovni nemusí být správná volba pro vaše potřeby
 <xref:Microsoft.Extensions.Logging.ILogger> Rozhraní bylo použito k vytvoření společného protokolovacího rozhraní, ve kterém lze vkládat protokolovací nástroje pomocí injektáže závislosti.
 
 Chcete-li například umožnit, aby vaše aplikace `ASP.NET` nejlépe vystavila podporu pro výběr integrovaných a platforem třetích stran:
+
 - [ASP.NET integrovaná zprostředkovatelé protokolování](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
 - [ASP.NET zprostředkovatelé protokolování třetích stran](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
 
@@ -102,6 +104,7 @@ Chcete-li například umožnit, aby vaše aplikace `ASP.NET` nejlépe vystavila 
 Formátování řetězce může trvat znatelné doby zpracování procesoru.
 
 V důležitých aplikacích pro výkon doporučujeme:
+
 - Vyhněte se velkým množstvím protokolování, když nikdo nenaslouchá. Vyhněte se vytváření drahých zpráv protokolování, a to tak, že zkontrolujete, jestli je povolené protokolování.
 - Protokolujte, co je užitečné.
 - Odložit ozdobný formátování do fáze analýzy.

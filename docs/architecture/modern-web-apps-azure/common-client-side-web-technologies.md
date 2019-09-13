@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 3a44b017c6160639ed1be7374b893e103ee5f5d8
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 4dd747293fba4c18c2d10738d36f4d98cfd3f5b9
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373910"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926504"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
@@ -141,6 +141,7 @@ Při zvažování, které rozhraní JavaScript Framework bude fungovat nejlépe 
 Rozhraní JavaScript Framework se nadále vyvíjí s Breakneck rychlostí. Pomocí výše uvedených doporučení můžete zmírnit riziko výběru rozhraní, na které budete později spoléhat. Pokud máte obzvláště rizikové – Averse, vezměte v úvahu rozhraní, které nabízí komerční podporu a/nebo je vyvíjeno velkým podnikem.
 
 > ### <a name="references--client-web-technologies"></a>Odkazy – klientské webové technologie
+>
 > - **HTML a CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
 > - **Sass vs. TOLIK**  

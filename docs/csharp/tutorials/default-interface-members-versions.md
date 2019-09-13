@@ -3,12 +3,12 @@ title: Bezpečně aktualizovat rozhraní pomocí výchozích členů rozhraní v
 description: V tomto rozšířeném kurzu se seznámíte s tím, jak můžete bezpečně přidat nové funkce do stávajících definic rozhraní bez přerušení všech tříd a struktur, které implementují toto rozhraní.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 9e0e4324b2474292064a760db9727d7dec6561d4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6a723a116d420dd43d2adeef98b824445dd4f0d7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252908"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926706"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizace rozhraní s výchozími členy rozhraní C# v 8,0
 
@@ -17,6 +17,7 @@ Počínaje C# 8,0 na .net Core 3,0 můžete definovat implementaci při deklarac
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > * Bezpečnější rozšíření rozhraní přidáním metod s implementacemi.
 > * Vytváření parametrizovaných implementací k zajištění větší flexibility.
 > * Povolit implementátorům poskytnutí konkrétnější implementace ve formě přepsání.

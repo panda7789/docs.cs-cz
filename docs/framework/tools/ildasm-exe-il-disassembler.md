@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38a6b27ea0ba8b9d9e2af883db1fc3350d60494a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d9e6d9e57528f3eae9b30706013a0529313877c7
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912492"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894866"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -28,7 +28,7 @@ V příkazovém řádku zadejte následující:
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 ildasm [options] [PEfilename] [options]
 ```
 
@@ -117,14 +117,14 @@ Od .NET Framework 4,5 nástroj *Ildasm. exe* zpracovává NEROZPOZNANÝ objekt B
 public void Test([MarshalAs((short)70)] int test) { }
 ```
 
-```
+```il
 // IL from Ildasm.exe output
 .method public hidebysig instance void Test(int32  marshal({ 46 }) test) cil managed
 ```
 
 Od .NET Framework 4,5 nástroj *Ildasm. exe* zobrazí atributy, které jsou aplikovány na implementace rozhraní, jak je znázorněno v následujícím výňatku z výstupu *Ildasm. exe* :
 
-```
+```il
 .class public auto ansi beforefieldinit MyClass
   extends [mscorlib]System.Object
   implements IMyInterface
@@ -155,7 +155,7 @@ Následující příkaz zpětně přeloží soubor `MyFile.exe` a zobrazí výsl
 ildasm MyFile.exe /text
 ```
 
-Pokud soubor `MyApp.exe` obsahuje vložené spravované a nespravované prostředky, vytvoří následující příkaz čtyři soubory: *MyApp.Il*, *MyApp. res*, *ikony.* Resources a *Message.* Resources:
+Pokud soubor `MyApp.exe` obsahuje vložené spravované a nespravované prostředky, vytvoří následující příkaz čtyři soubory: *MyApp.Il*, *MyApp. res*, *ikony. Resources*a *Message. Resources*:
 
 ```console
 ildasm MyApp.exe /output:MyApp.il

@@ -2,12 +2,12 @@
 title: Nasazení existujících aplikací .NET jako kontejnery Windows
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Nasazení stávajících aplikací .NET jako kontejnerů Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 4d58be828418abe4964e26a983f194fd5d30b93d
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: d48acbb2e1c4858bf3146318f70dd7b8a7b62918
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374020"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926485"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -143,6 +143,7 @@ Při zvažování prostředí produkčního nasazení nebo dokonce řešení pro
 **Obrázek 4 – 7.5** Ekosystém kontejnerů v Azure
 
 Z ekosystému kontejnerů v Azure tyto produkty podporují kontejnery považované za infrastrukturu:
+
 - **Azure Container Instances (ACI)**
 - **Virtual Machines Azure** (S podporou kontejneru)
 - **Virtual Machine Scale Sets Azure** (S podporou kontejneru)

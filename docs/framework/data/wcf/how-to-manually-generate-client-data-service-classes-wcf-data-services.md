@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, client library
 ms.assetid: b98cb1d6-956a-4e50-add6-67e4f2587346
-ms.openlocfilehash: 106f1cedb33c0c1b333df0b9f2b8c2a70d458a0d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f8d99213a1ef98c48855ba9f561f87a800768c89
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790424"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894294"
 ---
 # <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>Postupy: Ruční generování tříd klientských datových služeb (WCF Data Services)
 WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automatické generování tříd klientské datové služby při použití dialogového okna **Přidat odkaz na službu** k přidání odkazu na datovou službu v projektu sady Visual Studio. Další informace najdete v tématu [jak: Přidejte odkaz](how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu. Můžete také ručně vygenerovat stejné třídy datové služby klienta pomocí nástroje `DataSvcUtil.exe`pro generování kódu. Tento nástroj, který je součástí WCF Data Services, generuje .NET Framework třídy z definice datové služby. Lze ji také použít ke generování tříd datové služby ze souboru koncepčního modelu (. CSDL) a ze souboru. edmx, který představuje model Entity Framework v projektu sady Visual Studio.
@@ -43,7 +43,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /language:CSharp /out:northwind.cs /uri:http://localhost:12345/Northwind.svc
     ```
 
@@ -54,7 +54,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc
     ```
 
@@ -65,7 +65,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.csdl /out:Northwind.cs
     ```
 
@@ -73,7 +73,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.csdl /out:Northwind.vb
     ```
 
@@ -81,7 +81,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.edmx /out:c:\northwind.cs
     ```
 
@@ -89,7 +89,7 @@ WCF Data Services se integruje se sadou Visual Studio, aby vám umožnila automa
 
 - Na příkazovém řádku spusťte následující příkaz bez konců řádků:
 
-    ```
+    ```console
     "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.edmx /out:c:\northwind.vb
     ```
 

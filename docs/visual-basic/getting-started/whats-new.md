@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 20d403e4a6410257068cc3414fcb8dc1e45709e9
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3638deeafc052a2da3b438de2c504a9955a15ad3
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666867"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895256"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -21,9 +21,12 @@ V tomto tématu je uveden seznam klíčových funkcí pro jednotlivé verze Visu
 
 ## <a name="current-version"></a>Aktuální verze
 
-Visual Basic 15,8/Visual Studio 2017 verze 15,8 pro nové funkce najdete v článku [Visual Basic 15,8](#visual-basic-158) .
+Visual Basic 16,0/Visual Studio 2019 verze 16,0  
+Nové funkce najdete v tématu [Visual Basic 16,0](#visual-basic-160) .
 
 ## <a name="previous-versions"></a>Předchozí verze
+
+Visual Basic 15,8/Visual Studio 2017 verze 15,8 pro nové funkce najdete v článku [Visual Basic 15,8](#visual-basic-158) .
 
 Visual Basic 15,5/Visual Studio 2017 verze 15,5 pro nové funkce najdete v článku [Visual Basic 15,5](#visual-basic-155) .
 
@@ -47,11 +50,26 @@ Visual Basic/operátory bitových posunutí sady Visual Studio .NET 2003, deklar
 
 Visual Basic/Visual Studio .NET 2002 první verze Visual Basic .NET
 
+## <a name="visual-basic-160"></a>Visual Basic 16,0
+Visual Basic 16,0 se zaměřuje na poskytnutí více funkcí modulu runtime Visual Basic (Microsoft. VisualBasic. dll) do .NET Core a je první verzí Visual Basic zaměřená na rozhraní .NET Core. Mnoho částí modulu runtime Visual Basic závisí na WinForms a ty budou přidány v novější verzi Visual Basic. 
+
+**Komentáře povolené na více místech v rámci příkazů** V Visual Basic 15,8 a dřívějších verzích jsou komentáře povoleny pouze na prázdných řádcích, na konci příkazu nebo na specifických místech v rámci příkazu, kde je povoleno implicitní pokračování řádku. Počínaje Visual Basic 16,0 jsou komentáře povoleny také po explicitním pokračování řádku a v rámci příkazu na řádku, který začíná mezerou následovanou podtržítkem.
+
+```vb
+Public Sub Main()
+    cmd.CommandText = ' Comment is allowed here without _
+        "SELECT * FROM Titles JOIN Publishers " _ ' This is a comment
+        & "ON Publishers.PubId = Titles.PubID " _
+ _ ' This is a comment on a line without code
+        & "WHERE Publishers.State = 'CA'"
+End Sub
+```
+
 ## <a name="visual-basic-158"></a>Visual Basic 15,8
 
 **Konverze optimalizované na celočíselnou desetinnou čárku**
 
-V předchozích verzích Visual Basic se konverze dvojitých [](../language-reference/data-types/double-data-type.md) a [jednoduchých](../language-reference/data-types/single-data-type.md) hodnot na celá čísla, která nabízí relativně špatný výkon. Visual Basic 15,8 významně vylepšuje výkon převodů s plovoucí desetinnou čárkou na celá čísla, Pokud předáte hodnotu vrácenou některou z následujících metod pro jednu z hodnot [vnitřních Visual Basicch funkcí pro převod celého čísla](../language-reference/functions/type-conversion-functions.md) (CByte, CShort, CInt, CLng, CSByte, CUShort, CUInt, CULng) nebo pokud je hodnota vrácená některou z následujících metod implicitně převedena na celočíselný typ, pokud je [možnost Strict](../language-reference/statements/option-strict-statement.md) nastavena na `Off`:
+V předchozích verzích Visual Basic se konverze [dvojitých](../language-reference/data-types/double-data-type.md) a [jednoduchých](../language-reference/data-types/single-data-type.md) hodnot na celá čísla, která nabízí relativně špatný výkon. Visual Basic 15,8 významně vylepšuje výkon převodů s plovoucí desetinnou čárkou na celá čísla, Pokud předáte hodnotu vrácenou některou z následujících metod pro jednu z hodnot [vnitřních Visual Basicch funkcí pro převod celého čísla](../language-reference/functions/type-conversion-functions.md) (CByte, CShort, CInt, CLng, CSByte, CUShort, CUInt, CULng) nebo pokud je hodnota vrácená některou z následujících metod implicitně převedena na celočíselný typ, pokud je [možnost Strict](../language-reference/statements/option-strict-statement.md) nastavena na `Off`:
 
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Double)?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Object)?displayProperty=nameWithType>

@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: 9316a46f809eec21f73e8eeadb49baf1748c6ca0
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 7a50454c5189c48704adfaaed2c90d2638dd677f
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988247"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928975"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Store. Tyto aplikace jsou navržené kolem rozhraní dotykové obrazovky. .NET Framework 4,5 umožňuje aplikacím pro Windows Store volat služby WCF.  
@@ -124,9 +124,9 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
   
 2. Základní  
   
-3. Otisk  
+3. otisk  
   
-4. Mluví  
+4. mluví  
   
 5. NTLM  
   
@@ -176,9 +176,9 @@ void async SomeMethod()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Blog WCF v aplikacích pro Windows Store](https://blogs.msdn.com/b/piyushjo/archive/2011/09/22/wcf-in-win8-metro-styled-apps-absolutely-supported.aspx)
-- [Klienti a zabezpečení WCF Windows Store](https://blogs.msdn.com/b/piyushjo/archive/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security.aspx)
-- [Aplikace pro Windows Store a volání mezi počítači](https://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)
+- [Blog WCF v aplikacích pro Windows Store](https://blogs.msdn.microsoft.com/piyushjo/2011/09/21/wcf-in-windows-8-metro-styled-apps-absolutely-supported/)
+- [Klienti a zabezpečení WCF Windows Store](https://blogs.msdn.microsoft.com/piyushjo/2011/10/11/calling-a-wcf-service-from-a-metro-application-adding-security/)
+- [Aplikace pro Windows Store a volání mezi počítači](https://blogs.msdn.microsoft.com/piyushjo/2011/10/21/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario/)
 - [Volání služby WCF nasazené v Azure z aplikace pro Windows Store](https://blogs.msdn.com/b/piyushjo/archive/2011/10/22/calling-a-wcf-service-from-a-metro-application-cross-machine-scenario.aspx)
 - [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
 - [Vazby](../../../../docs/framework/wcf/bindings.md)

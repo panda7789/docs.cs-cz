@@ -17,32 +17,32 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d14d542a8c1d8adeaf56dc1564e8e10121cd4064
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11dc050e2fe16a64db4ac95bb1386e2d90535e81
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650723"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895022"
 ---
 # <a name="isymunmanagedwritersetuserentrypoint-method"></a>ISymUnmanagedWriter::SetUserEntryPoint – metoda
-Určuje metodu definovaný uživatelem, která je vstupním bodem pro tento modul. Tento vstupní bod může být například hlavní metoda uživatele místo vygenerovaný kompilátorem zástupné procedury před hlavní.  
+Určuje uživatelsky definovanou metodu, která je vstupním bodem pro tento modul. Tento vstupní bod může být například hlavní metodou uživatele namísto zástupných procedur generovaných kompilátorem před Main.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetUserEntryPoint(  
     [in] mdMethodDef entryMethod);  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `entryMethod`  
- [in] Bodu tokenu metadat pro metodu, která je vstup uživatele.  
+ pro Token metadat pro metodu, která je vstupním bodem uživatele.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlaviček** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 21a0a02516a1fbe24378235b910df0a602900a21
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cc0e8a5e7d254fc4b34566d2252869a2da4af3db
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790375"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894292"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování na datovou službu (WCF Data Services)
 
@@ -56,7 +56,7 @@ Vzhledem k <xref:System.Data.Services.Client.DataServiceQuery%601> tomu, že <xr
 
 Tento dotaz LINQ se převede na následující identifikátor URI dotazu, který se spustí pro službu [rychlého](quickstart-wcf-data-services.md) startu dat založenou na Northwind:
 
-```
+```http
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30
 ```
 

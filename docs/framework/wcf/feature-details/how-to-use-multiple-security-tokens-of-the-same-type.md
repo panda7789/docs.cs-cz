@@ -2,49 +2,50 @@
 title: 'Postupy: Použití víc tokenů zabezpečení stejného typu'
 ms.date: 03/30/2017
 ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
-ms.openlocfilehash: 1b383c6ccd96d1b3d7b091b2d7c67bb166da51df
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 84009eacca113fcd83a0e4908c7d6eb0c82db7d5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589416"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928764"
 ---
 # <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Postupy: Použití víc tokenů zabezpečení stejného typu
-- V rozhraní .NET Framework 3.0 zprávu klienta obsahovala jenom jeden token daného typu. Zprávy klienta teď může obsahovat více tokenů typu. Toto téma ukazuje, jak zahrnout více tokenů stejného typu zprávy klienta.  
+
+- V .NET Framework 3,0 zpráva klienta obsahovala pouze jeden token daného typu. Nyní mohou klientské zprávy obsahovat více tokenů typu. V tomto tématu se dozvíte, jak do zprávy klienta zahrnout více tokenů stejného typu.  
   
-- Poznámka: službu nelze nakonfigurovat tímto způsobem: Služba může obsahovat pouze jeden podpůrný token.  
+- Upozorňujeme, že nemůžete nakonfigurovat službu tímto způsobem: služba může obsahovat jenom jeden podpůrný token.  
   
-### <a name="to-use-multiple-security-tokens-of-the-same-type"></a>Použití víc tokenů zabezpečení stejného typu  
+### <a name="to-use-multiple-security-tokens-of-the-same-type"></a>Použití více tokenů zabezpečení stejného typu  
   
-1. Vytvořte kolekci elementů prázdný vazby který se má naplnit.  
+1. Vytvořte prázdnou kolekci elementů vazby, která se má naplnit.  
   
      [!code-csharp[C_CustomBinding#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#9)]  
   
-2. Vytvoření <xref:System.ServiceModel.Channels.SecurityBindingElement> voláním <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>.  
+2. <xref:System.ServiceModel.Channels.SecurityBindingElement> Vytvořte voláním. <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>  
   
      [!code-csharp[C_CustomBinding#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#10)]  
   
-3. Vytvoření <xref:System.ServiceModel.Security.Tokens.SupportingTokenParameters> kolekce.  
+3. <xref:System.ServiceModel.Security.Tokens.SupportingTokenParameters> Vytvořte kolekci.  
   
      [!code-csharp[C_CustomBinding#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#11)]  
   
-4. Tokeny SAML přidáte do kolekce.  
+4. Přidejte do kolekce tokeny SAML.  
   
      [!code-csharp[C_CustomBinding#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#12)]  
   
-5. Kolekce, kterou chcete přidat <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+5. Přidejte kolekci do <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
      [!code-csharp[C_CustomBinding#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#13)]  
   
-6. Přidání elementů vazby do kolekce elementů vazby.  
+6. Přidejte prvky vazby do kolekce elementů vazby.  
   
      [!code-csharp[C_CustomBinding#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#14)]  
   
-7. Vrátí novou vlastní vazbu vytvořené z kolekce elementů vazby.  
+7. Vrátí novou vlastní vazbu vytvořenou z kolekce elementů vazby.  
   
      [!code-csharp[C_CustomBinding#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#15)]  
   
 ## <a name="example"></a>Příklad  
- Níže je celý metody popsané v předchozím postupu.  
+ Následuje celá metoda, kterou popisuje předchozí postup.  
   
  [!code-csharp[C_CustomBinding#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#7)]  

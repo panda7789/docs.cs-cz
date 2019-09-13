@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 34f0a61329667a42aa42693e93169a5b6fb0aa5e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0f029c81dd6ba5cd5202e6e59f33edd7cf8c0b90
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792037"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894438"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Datové typy large object (LOB) překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, a `nvarchar` `varbinary` datové typy, které umožňují úložiště hodnot až do velikosti 2 ^ 32 bajtů. Sloupce tabulky a proměnné Transact-SQL mohou určovat `varchar(max)`, `nvarchar(max)`nebo `varbinary(max)` datové typy. V ADO.NET `max` lze datové typy načíst `DataReader`pomocí a a lze je také zadat jako vstupní i výstupní hodnoty parametrů bez speciálního zpracování. U velkých `varchar` datových typů lze data načíst a aktualizovat přírůstkově.  
@@ -41,7 +41,7 @@ Datové typy large object (LOB) překračují maximální velikost řádku 8 kil
   
  Následující příklad vloží fotografii do tabulky ProductPhoto v ukázkové databázi AdventureWorks. Při použití `BULK OPENROWSET` zprostředkovatele je nutné dodat pojmenovaný seznam sloupců i v případě, že do každého sloupce nevložíte hodnoty. Primární klíč v tomto případě je definován jako sloupec identity a může být vynechán ze seznamu sloupců. Všimněte si, že je nutné na konci `OPENROWSET` příkazu také uvést název korelace, který je v tomto případě thumbnailPhoto. Tím se koreluje se sloupcem v `ProductPhoto` tabulce, do které se soubor načítá.  
   
-```  
+```sql  
 INSERT Production.ProductPhoto (  
     ThumbnailPhoto,   
     ThumbnailPhotoFilePath,   
@@ -78,7 +78,7 @@ FROM OPENROWSET
 ## <a name="example"></a>Příklad  
  Tento příklad Transact-SQL aktualizuje částečnou hodnotu v DocumentSummary, `nvarchar(max)` sloupec v tabulce dokumentů v databázi AdventureWorks. Slovo ' součásti ' je nahrazeno slovem ' Features ' zadáním nahrazujícího slova, počátečního umístění (posunu) slova, které má být nahrazeno existujícími daty, a počtem znaků, které mají být nahrazeny (délka). Příklad obsahuje příkazy SELECT před a za příkazem UPDATE pro porovnání výsledků.  
   
-```  
+```sql
 USE AdventureWorks;  
 GO  
 --View the existing value.  
@@ -230,7 +230,7 @@ while (reader.Read())
 ## <a name="using-large-value-type-parameters"></a>Použití parametrů velkých hodnotových typů  
  Typy velkých hodnot lze v <xref:System.Data.SqlClient.SqlParameter> objektech použít stejným způsobem, jakým používáte menší typy hodnot v <xref:System.Data.SqlClient.SqlParameter> objektech. Můžete načíst typy velkých hodnot jako <xref:System.Data.SqlClient.SqlParameter> hodnoty, jak je znázorněno v následujícím příkladu. Kód předpokládá, že následující uložená procedura GetDocumentSummary existuje v ukázkové databázi AdventureWorks. Uložená procedura převezme vstupní parametr s názvem @DocumentID a vrátí obsah sloupce DocumentSummary @DocumentSummary ve výstupním parametru.  
   
-```  
+```sql
 CREATE PROCEDURE GetDocumentSummary   
 (  
     @DocumentID int,  

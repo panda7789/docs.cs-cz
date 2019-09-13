@@ -5,12 +5,12 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: 69cca28606c64479d500e731ba95fe404bea38df
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 0388bd1fa29ce1caad93c917503dac9eed8974e1
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70017332"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926397"
 ---
 # <a name="dependency-loading-in-net-core"></a>Načítání závislostí v .NET Core
 
@@ -20,13 +20,14 @@ Porozumění logice načítání výchozích sestavení .NET Core vám může po
 
 V některých aplikacích se závislosti dynamicky určují za běhu. V těchto situacích je důležité pochopit, jak jsou načtena spravovaná sestavení a nespravované závislosti.
 
-## <a name="understanding-assemblyloadcontext"></a>Principy AssemblyLoadContext
+## <a name="understanding-assemblyloadcontext"></a>Vysvětlení používání třídy AssemblyLoadContext
 
 <xref:System.Runtime.Loader.AssemblyLoadContext> Rozhraní API je centrální pro návrh načítání .NET Core. Článek [Princip porozumění AssemblyLoadContext](understanding-assemblyloadcontext.md) poskytuje koncepční přehled návrhu.
 
-## <a name="loading-details"></a>Načítají se podrobnosti.
+## <a name="loading-details"></a>Podrobné informace o načítání
 
 Podrobnosti o zkušebním algoritmu jsou stručně uvedeny v několika článcích:
+
 - [Algoritmus načítání spravovaného sestavení](loading-managed.md)
 - [Algoritmus načítání satelitních sestavení](loading-resources.md)
 - [Algoritmus načítání nespravované (nativní) knihovny](loading-unmanaged.md)

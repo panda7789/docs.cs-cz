@@ -2,12 +2,12 @@
 title: Ukázka služby AJAX s protokoly JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: 62c573a844ce5382308814342330f778fa041a69
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: eadb884667a0b29ef36056f0c3bec4675b7f1b05
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045196"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895150"
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>Ukázka služby AJAX s protokoly JSON a XML
 
@@ -22,9 +22,7 @@ Tato ukázka ukazuje, jak přepnout typ odezvy operace mezi JSON a XML. Tato fun
 
 Pokud chcete povolit použití klientů non-ASP.NET AJAX, použijte <xref:System.ServiceModel.Activation.WebServiceHostFactory> (ne <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) v souboru. svc. <xref:System.ServiceModel.Activation.WebServiceHostFactory>Přidá ke službě standardní koncový bod. <xref:System.ServiceModel.Description.WebHttpEndpoint> Koncový bod je nakonfigurovaný na prázdné adrese relativní vzhledem k souboru. svc; To znamená, že adresa služby je `http://localhost/ServiceModelSamples/service.svc`bez dalších přípon, než je název operace.
 
-```svc
-<%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>
-```
+`<%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>`
 
 Následující oddíl v souboru Web. config lze použít k provedení dalších změn konfigurace koncového bodu. Je možné ji odebrat, pokud nejsou potřeba žádné další změny.
 
@@ -108,7 +106,7 @@ xmlHttp.onreadystatechange=function(){
 
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Sestavte řešení XmlAjaxService. sln, jak je popsáno v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Sestavte řešení XmlAjaxService. sln, jak je popsáno v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 3. Přejděte na `http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm` (neotevírejte XmlAjaxClientPage. htm v prohlížeči z adresáře projektu).
 

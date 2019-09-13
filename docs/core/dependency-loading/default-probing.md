@@ -4,12 +4,12 @@ description: Přehled logiky zjišťování pro <xref:System.Runtime.Loader.Asse
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 020b1d0342ae822021905d2e749037f45031eb22
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 2fa8a13bcb08a767fa965621f95bec8619aea5cc
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70017344"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926400"
 ---
 # <a name="default-probing"></a>Výchozí zjišťování
 
@@ -57,6 +57,7 @@ Hostitel modulu runtime .NET Core bude výstupem užitečných zpráv trasován�
 ## <a name="managed-assembly-default-probing"></a>Výchozí zjišťování spravovaného sestavení
 
 Když zjistíte, že <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> zjišťování má spravované sestavení, vypadá v pořadí:
+
 - Soubory, které <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> `TRUSTED_PLATFORM_ASSEMBLIES` odpovídají (po odebrání přípon souborů).
 - Soubory sestavení nativní bitové kopie `APP_NI_PATHS` v nástroji s běžnými příponami souborů.
 - Soubory sestavení v `APP_PATHS` nástroji s běžnými příponami souborů.

@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 169881cdc0736fcc94818f6281c35b4e54e06dfe
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 038f4d7e3d713cfe4134ea98f7858ef71f29bab4
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039303"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895250"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 
@@ -92,15 +92,11 @@ Soubor. svc s názvem třídy slouží k hostování kódu služby v nástroji.
 
 Samotný soubor Service. svc obsahuje direktivu pro vytvoření `OrderProcessorService`.
 
-```svc
-<%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>
-```
+`<%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>`
 
 Soubor Service. svc obsahuje také direktivu sestavení, aby bylo zajištěno, že je načten System. Transactions. dll.
 
-```svc
-<%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>
-```
+`<%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>`
 
 Klient vytvoří obor transakce. Komunikace se službou probíhá v rámci rozsahu transakce, což způsobuje, že by byla považována za atomickou jednotku, ve které všechny zprávy jsou úspěšné nebo neúspěšné. Transakce je potvrzena voláním `Complete` v oboru transakce.
 

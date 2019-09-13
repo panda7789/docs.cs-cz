@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60f48422d23fc5db743eeb05e3eddeb732bff102
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: ce281398fe7ea3a280355a7b79cc7144aba256be
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364019"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894644"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
 Nástroj Management Strongly Typed Class Generator umožňuje rychle generovat spravovanou třídu s časnou vazbou pro zadanou třídu Windows Management Instrumentation (WMI). Vygenerovaná třída usnadňuje psaní kódu pro přístup k instanci třídy WMI.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 mgmtclassgen   
 WMIClass [options]   
 ```  
@@ -36,7 +36,7 @@ WMIClass [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/l** *jazyka*|Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Jako argument jazyka  můžete zadatC#cs (; default), **VB** (Visual Basic),C++ **MC** () nebo **js** (JScript).|  
+|**/l** *jazyka*|Určuje jazyk, ve kterém chcete vygenerovat spravovanou třídu s časnou vazbou. Jako argument jazyka můžete zadatC#cs (; default), **VB** (Visual Basic),C++ **MC** () nebo **js** (JScript).|  
 |**/m** *počítač*|Určuje počítač, na kterém je uložena třída WMI a ke kterému je třeba se připojit. Výchozí hodnotou je místní počítač.|  
 |**/n** *cesta*|Určuje cestu k oboru názvů služby WMI, který obsahuje třídu WMI. Pokud tuto možnost nezadáte, nástroj vygeneruje kód pro *WMIClass* ve výchozím oboru názvů **root\cimv2** .|  
 |**/o** *classnamespace*|Určuje obor názvů .NET, ve kterém chcete vygenerovat spravovanou třídu kódů. Pokud tuto možnost nezadáte, nástroj vygeneruje obor názvů pomocí oboru názvů WMI a předpony schématu. Předpona schématu je část názvu třídy před podtržítkem. Například pro třídu **Win32_OperatingSystem** v oboru názvů **root\cimv2** nástroj vygeneruje třídu v **kořenovém adresáři. Cimv2. Win32**.|  
@@ -96,7 +96,7 @@ WMIClass [options]
 ## <a name="examples"></a>Příklady  
  Následující příkaz vygeneruje spravovanou třídu v C# kódu pro třídu **Win32_LogicalDisk** WMI v oboru názvů **root\cimv2** . Nástroj zapíše spravovanou třídu do zdrojového souboru na c:\disk.cs v **kořenovém adresáři. Cimv2.** Obor názvů Win32.  
   
-```  
+```console  
 mgmtclassgen Win32_LogicalDisk /n root\cimv2 /l CS /p c:\disk.cs  
 ```  
   

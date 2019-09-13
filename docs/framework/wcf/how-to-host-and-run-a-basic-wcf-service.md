@@ -1,5 +1,5 @@
 ---
-title: 'Kurz: Hostování a spuštění základní služby Windows Communication Foundation'
+title: 'Kurz: Hostování a spuštění služby Windows Communication Foundation Basic'
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -8,75 +8,78 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: ad9536b1f27ba3945bf76d0474de4825033a1e8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 984c5e73a8efc4e9c2d487485267868ffa2f60f3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929100"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928715"
 ---
-# <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Kurz: Hostování a spuštění základní služby Windows Communication Foundation
+# <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>Kurz: Hostování a spuštění služby Windows Communication Foundation Basic
 
-Tento kurz popisuje třetí pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).
+Tento kurz popisuje třetí z pěti úloh potřebných k vytvoření aplikace Basic Windows Communication Foundation (WCF). Přehled kurzů najdete v tématu [kurz: Začněte s Windows Communication Foundation aplikacemi](getting-started-tutorial.md).
 
-Dalším úkolem pro vytvoření aplikace WCF je hostování služby WCF v konzolové aplikaci. Služby WCF zpřístupňuje jeden nebo více *koncové body*, každý z nich vystavuje jednu nebo víc operací služeb. Koncový bod služby určuje následující informace: 
-- Adresa, kde najdete službu.
-- Vazbu, která obsahuje informace, které popisuje, jak klient musí komunikovat se službou. 
-- Kontrakt, který definuje funkci, která poskytuje služby svým klientům.
+Další úlohou pro vytvoření aplikace WCF je hostování služby WCF v konzolové aplikaci. Služba WCF zveřejňuje jeden nebo více *koncových bodů*, z nichž každý zveřejňuje jednu nebo více operací služby. Koncový bod služby určuje následující informace:
+
+- Adresa, kde můžete najít službu.
+- Vazba obsahující informace, které popisují, jak klient musí komunikovat se službou. 
+- Kontrakt definující funkce, které služba poskytuje svým klientům.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > - Vytvořte a nakonfigurujte projekt konzolové aplikace pro hostování služby WCF.
 > - Přidejte kód pro hostování služby WCF.
 > - Aktualizujte konfigurační soubor.
-> - Spusťte službu WCF a ověří, že je spuštěná.
+> - Spusťte službu WCF a ověřte, zda je spuštěná.
 
-## <a name="create-and-configure-a-console-app-project-for-hosting-the-service"></a>Vytvořte a nakonfigurujte projekt konzolové aplikace pro hostování služby
+## <a name="create-and-configure-a-console-app-project-for-hosting-the-service"></a>Vytvoření a konfigurace projektu konzolové aplikace pro hostování služby
 
-1. Vytvořte projekt konzolové aplikace v sadě Visual Studio: 
+1. Vytvoření projektu konzolové aplikace v aplikaci Visual Studio: 
  
-    1. Z **souboru** nabídce vyberte možnost **otevřít** > **projekt či řešení** a přejděte do **GettingStarted** řešení můžete vytvořené (*GettingStarted.sln*). Vyberte **Open** (Otevřít).
+    1. V nabídce **soubor** vyberte **otevřít** > **projekt/řešení** a přejděte k **soubor GettingStarted** řešení, které jste dříve vytvořili (*soubor GettingStarted. sln*). Vyberte **Open** (Otevřít).
 
-    2. Z **zobrazení** nabídce vyberte možnost **Průzkumníka řešení**.
+    2. V nabídce **zobrazení** vyberte **Průzkumník řešení**.
     
-    3. V **Průzkumníka řešení** okna, vyberte **GettingStarted** řešení (nejvyšší uzel) a pak vyberte **přidat** > **nový projekt** z místní nabídky. 
+    3. V okně **Průzkumník řešení** vyberte řešení **soubor GettingStarted** (nejvyšší uzel) a pak v místní nabídce vyberte **Přidat** > **Nový projekt** . 
 
-    4. V **přidat nový projekt** na levé straně vyberte okno **Windows Desktop** kategorie v části **Visual C#**  nebo **jazyka Visual Basic**. 
+    4. V okně **Přidat nový projekt** na levé straně vyberte kategorii **Desktop systému Windows** pod položkou  **C# Visual** nebo **Visual Basic**. 
 
-    5. Vyberte **Konzolová aplikace (.NET Framework)** šablony a zadejte *GettingStartedHost* pro **název**. Vyberte **OK**.
+    5. Vyberte šablonu **Konzolová aplikace (.NET Framework)** a jako **název**zadejte *GettingStartedHost* . Vyberte **OK**.
 
-2. Přidat odkaz **GettingStartedHost** projektu **GettingStartedLib** projektu: 
+2. Přidejte odkaz do projektu **GettingStartedHost** do projektu **GettingStartedLib** : 
 
-    1. V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedHost** projektu a pak vyberte **přidat odkaz** z místní nabídky. 
+    1. V okně **Průzkumník řešení** vyberte složku **odkazy** v projektu **GettingStartedHost** a pak vyberte **Přidat odkaz** z místní nabídky. 
 
-    2. V **přidat odkaz** dialogového okna, v části **projekty** v levé části okna vyberte **řešení**. 
+    2. V dialogovém okně **Přidat odkaz** vyberte v části **projekty** na levé straně okna možnost **řešení**. 
  
-    3. Vyberte **GettingStartedLib** v System center části okna a pak vyberte **OK**. 
+    3. V okně střední části okna vyberte **GettingStartedLib** a pak vyberte **OK**. 
 
-       Tato akce vytvoří typy definované v **GettingStartedLib** projektu, které jsou k dispozici na **GettingStartedHost** projektu.
+       Tato akce zpřístupňuje typy definované v projektu **GettingStartedLib** k projektu **GettingStartedHost** .
 
-3. Přidat odkaz **GettingStartedHost** projektu <xref:System.ServiceModel> sestavení: 
+3. Přidejte odkaz do projektu **GettingStartedHost** do <xref:System.ServiceModel> sestavení: 
 
-    1. V **Průzkumníka řešení** okna, vyberte **odkazy** ve složce **GettingStartedHost** projektu a pak vyberte **přidat odkaz** z místní nabídky.
+    1. V okně **Průzkumník řešení** vyberte složku **odkazy** v projektu **GettingStartedHost** a pak vyberte **Přidat odkaz** z místní nabídky.
     
-    2. V **přidat odkaz** okně v části **sestavení** v levé části okna vyberte **Framework**. 
+    2. V okně **Přidat odkaz** v části **sestavení** na levé straně okna vyberte možnost **Architektura**. 
 
-    3. Vyberte **System.ServiceModel**a pak vyberte **OK**. 
+    3. Vyberte **System. ServiceModel**a pak vyberte **OK**. 
     
-    4. Uložte řešení tak, že vyberete **souboru** > **Uložit vše**.
+    4. Uložte řešení tak, že vyberete **soubor** > **Uložit vše**.
 
-## <a name="add-code-to-host-the-service"></a>Přidejte kód pro hostování služby
+## <a name="add-code-to-host-the-service"></a>Přidat kód pro hostování služby
 
-K hostování služby, přidejte kód proveďte následující kroky: 
-   1. Vytvořte identifikátor URI pro základní adresu.
-   2. Vytvoření instance třídy, pro který je hostitelem služby.
-   3. Vytvoření koncového bodu služby.
-   4. Povolte výměny metadat.
-   5. Otevření hostitele služby k naslouchání pro příchozí zprávy.
+Chcete-li hostovat službu, přidejte kód, který provede následující kroky: 
+
+1. Vytvořte identifikátor URI pro základní adresu.
+2. Vytvořte instanci třídy pro hostování služby.
+3. Vytvořte koncový bod služby.
+4. Povolte výměnu metadat.
+5. Otevřete hostitele služby pro příjem příchozích zpráv.
   
 Proveďte následující změny kódu:
 
-1. Otevřít **Program.cs** nebo **Module1.vb** soubor **GettingStartedHost** projektu a nahraďte jeho kód následujícím kódem:
+1. Otevřete soubor **program.cs** nebo **Module1. vb** v projektu **GettingStartedHost** a nahraďte jeho kód následujícím kódem:
 
     ```csharp
     using System;
@@ -173,63 +176,65 @@ Proveďte následující změny kódu:
     End Module
     ```
     
-    Informace o tom, jak tento kód funguje, najdete v tématu [služby hostování program kroky](#service-hosting-program-steps).
+    Informace o tom, jak tento kód funguje, najdete v tématu věnovaném [postupům hostujícím programům](#service-hosting-program-steps).
 
-2. Aktualizace vlastností projektu:
+2. Aktualizujte vlastnosti projektu:
 
-   1. V **Průzkumníka řešení** okna, vyberte **GettingStartedHost** složku a pak vyberte **vlastnosti** z místní nabídky.
+   1. V okně **Průzkumník řešení** vyberte složku **GettingStartedHost** a potom v místní nabídce vyberte možnost **vlastnosti** .
 
-   2. Na **GettingStartedHost** stránku vlastností, vyberte **aplikace** kartu:
+   2. Na stránce vlastnosti **GettingStartedHost** vyberte kartu **aplikace** :
 
-      - Pro C# projektů, vyberte **GettingStartedHost.Program** z **spouštěcí objekt** seznamu.
+      - V C# části projekty vyberte **GettingStartedHost. program** ze seznamu **spouštěcích objektů** .
 
-      - Pro projekty jazyka Visual Basic, vyberte **Service.Program** z **spouštěcí objekt** seznamu.
+      - U Visual Basic projektů vyberte ze seznamu **spouštěcí objekt** položku **Service. program** .
 
-   3. Z **souboru** nabídce vyberte možnost **Uložit vše**.
+   3. V nabídce **soubor** vyberte **Uložit vše**.
 
-## <a name="verify-the-service-is-working"></a>Ověřte, že služba funguje
+## <a name="verify-the-service-is-working"></a>Ověření funkčnosti služby
 
-1. Sestavte řešení a pak spusťte **GettingStartedHost** konzoly z aplikace v sadě Visual Studio. 
+1. Sestavte řešení a potom spusťte konzolovou aplikaci **GettingStartedHost** ze sady Visual Studio. 
 
-    Služba musí běžet s oprávněními správce. Protože jste spustili sady Visual Studio s oprávněními správce, když spustíte **GettingStartedHost** v sadě Visual Studio, při spuštění aplikace se také oprávnění správce. Alternativně můžete otevřít nový příkazový řádek jako správce (vyberte **Další** > **spustit jako správce** z místní nabídky) a spusťte **GettingStartedHost.exe**  v něm.
+    Služba musí být spuštěná s oprávněními správce. Vzhledem k tomu, že jste otevřeli aplikaci Visual Studio s oprávněními správce, při spuštění **GettingStartedHost** v aplikaci Visual Studio se aplikace spouští také s oprávněními správce. Jako alternativu můžete otevřít nový příkazový řádek jako správce (v místní nabídce vyberte **Další** > **Spustit jako správce** ) a v něm spustit **GettingStartedHost. exe** .
 
-2. Otevřete webový prohlížeč a přejděte na stránku služby na `http://localhost:8000/GettingStarted/CalculatorService`.
+2. Otevřete webový prohlížeč a přejděte na stránku služby na adrese `http://localhost:8000/GettingStarted/CalculatorService`.
    
    > [!NOTE]
-   > Služby, jako je ten vyžadují správné oprávnění k registraci adresami protokolu HTTP na počítači pro naslouchání. Účty správců mají toto oprávnění, ale účty bez oprávnění správce musí být uděleno oprávnění pro obory názvů HTTP. Další informace o tom, jak konfigurace rezervace oboru názvů najdete v tématu [konfigurace HTTP a HTTPS](feature-details/configuring-http-and-https.md). 
+   > Služby, jako je tato jedna, vyžadují správné oprávnění k registraci adres HTTP na počítači pro naslouchání. Účty správců mají toto oprávnění, ale účty bez oprávnění správce musí mít udělené oprávnění pro obory názvů HTTP. Další informace o tom, jak nakonfigurovat rezervace oboru názvů, najdete v tématu [Konfigurace HTTP a HTTPS](feature-details/configuring-http-and-https.md). 
 
-## <a name="service-hosting-program-steps"></a>Služby hostování program kroky
+## <a name="service-hosting-program-steps"></a>Kroky hostujícího programu služby
 
-Kroky v kódu, který jste přidali do hostitele služby jsou popsány v následujícím způsobem:
+Kroky v kódu, který jste přidali k hostování služby, jsou popsány takto:
 
-- **Krok 1**: Vytvoření instance `Uri` třídy pro uložení základní adresu služby. Adresa URL, která obsahuje základní adresa má volitelný identifikátor URI, který identifikuje službu. Základní adresa naformátován takto: `<transport>://<machine-name or domain><:optional port #>/<optional URI segment>`. Základní adresa pro službu kalkulačky používá přenos pomocí protokolu HTTP, místního hostitele, port 8000 a segment identifikátoru URI GettingStarted.
+- **Krok 1**: Vytvořte instanci `Uri` třídy, která bude uchovávat základní adresu služby. Adresa URL, která obsahuje základní adresu, má volitelný identifikátor URI, který identifikuje službu. Základní adresa je formátována takto: `<transport>://<machine-name or domain><:optional port #>/<optional URI segment>`. Základní adresa služby kalkulačky používá přenos HTTP, localhost, port 8000 a segment identifikátoru URI soubor GettingStarted.
 
-- **Krok 2**: Vytvoření instance <xref:System.ServiceModel.ServiceHost> třídy, který použijete k hostování služby. Konstruktor používá dva parametry: typ třídy, která implementuje kontrakt služby a základní adresu služby.
+- **Krok 2**: Vytvořte instanci <xref:System.ServiceModel.ServiceHost> třídy, kterou použijete k hostování služby. Konstruktor přijímá dva parametry: typ třídy, která implementuje kontrakt služby a základní adresu služby.
 
-- **Krok 3**: Vytvoření <xref:System.ServiceModel.Description.ServiceEndpoint> instance. Koncový bod služby se skládá z adresy, vazby a smlouvy o poskytování služeb. <xref:System.ServiceModel.Description.ServiceEndpoint> Konstruktoru se skládá z typu rozhraní kontraktu služby, vazbu a adresu. Kontrakt služby je `ICalculator`, která definované a implementaci v typu služby. Vazba pro tuto ukázku je <xref:System.ServiceModel.WSHttpBinding>, které jsou integrované vazby a připojení ke koncovým bodům, které odpovídají WS-* specifikace. Další informace o vazbách WCF najdete v tématu [vazby WCF – přehled](bindings-overview.md). Adresa se připojí k základní adresu, abyste identifikovali koncový bod. Kód určuje adresu jako CalculatorService a plně kvalifikovanou adresu pro koncový bod jako `http://localhost:8000/GettingStarted/CalculatorService`.
+- **Krok 3**: <xref:System.ServiceModel.Description.ServiceEndpoint> Vytvořte instanci. Koncový bod služby se skládá z adresy, vazby a kontraktu služby. <xref:System.ServiceModel.Description.ServiceEndpoint> Konstruktor se skládá z typu rozhraní kontraktu služby, vazby a adresy. Kontrakt služby je `ICalculator`, který jste definovali a implementovali v typu služby. Vazba pro tuto ukázku je <xref:System.ServiceModel.WSHttpBinding>, což je integrovaná vazba a připojuje se k koncovým bodům, které odpovídají specifikacím WS-*. Další informace o vazbách WCF najdete v tématu [Přehled vazeb WCF](bindings-overview.md). K identifikaci koncového bodu připojíte adresu k základní adrese. Kód určuje adresu jako CalculatorService a plně kvalifikovanou adresu koncového bodu jako `http://localhost:8000/GettingStarted/CalculatorService`.
 
     > [!IMPORTANT]
-    > Pro rozhraní .NET Framework verze 4 a novější přidává se koncový bod služby je volitelný. Pro tyto verze pokud nepřidáte kódu nebo konfigurace WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresu a kontraktů implementovaných službou. Další informace o výchozí koncové body, naleznete v tématu [zadání adresy koncového bodu](specifying-an-endpoint-address.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušené konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](samples/simplified-configuration-for-wcf-services.md).
+    > Pro .NET Framework verze 4 a novější je přidání koncového bodu služby volitelné. Pro tyto verze, pokud nepřidáte kód nebo konfiguraci, WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresy a smlouvy implementované službou. Další informace o výchozích koncových bodech najdete v tématu [určení adresy koncového bodu](specifying-an-endpoint-address.md). Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](samples/simplified-configuration-for-wcf-services.md).
 
-- **Krok 4**: Povolte výměny metadat. Klienti používají ke generování proxy serverů k volání operací služby výměny metadat. Povolit výměny metadat, vytvořte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance, nastavte jeho <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled> vlastnost `true`a přidejte `ServiceMetadataBehavior` objektu <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce <xref:System.ServiceModel.ServiceHost> instance.
+- **Krok 4**: Povolte výměnu metadat. Klienti používají výměnu metadat k vygenerování proxy serverů pro volání operací služby. Chcete-li povolit výměnu metadat, <xref:System.ServiceModel.Description.ServiceMetadataBehavior> vytvořte instanci, nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled> její vlastnost `true` `ServiceMetadataBehavior` na a <xref:System.ServiceModel.ServiceHost> přidejte objekt do <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce instance.
 
-- **Krok 5**: Otevřít <xref:System.ServiceModel.ServiceHost> k naslouchání pro příchozí zprávy. Aplikace čeká, až stisknete **Enter**. Jakmile aplikace vytvoří instanci <xref:System.ServiceModel.ServiceHost>, provede blok try/catch. Další informace o bezpečně zachycování výjimek vyvolaných <xref:System.ServiceModel.ServiceHost>, naleznete v tématu [použití zavřít a Abort k uvolnění prostředků klienta WCF](samples/use-close-abort-release-wcf-client-resources.md).
+- **Krok 5**: Otevřete <xref:System.ServiceModel.ServiceHost> pro příjem příchozích zpráv. Aplikace čeká na stisknutí klávesy **ENTER**. Po vytvoření instance <xref:System.ServiceModel.ServiceHost>aplikace se spustí blok try/catch. Další informace o bezpečném zachycení výjimek vyvolaných <xref:System.ServiceModel.ServiceHost>naleznete v tématu [použití funkcí zavřít a přerušit k vydání prostředků klienta WCF](samples/use-close-abort-release-wcf-client-resources.md).
 
 > [!IMPORTANT]
-> Když přidáte knihovny služby WCF, Visual Studio hostuje za vás při ladění pomocí spuštění hostitele služby. Aby nedocházelo ke konfliktům, můžete zabránit sady Visual Studio hostování knihovny služby WCF. 
-> 1. Vyberte **GettingStartedLib** projekt **Průzkumníka řešení** a zvolte **vlastnosti** z místní nabídky.
-> 2. Vyberte **možnosti WCF** a zrušte zaškrtnutí políčka **spuštění hostitele služby WCF při ladění jiného projektu ve stejném řešení**.
+> Když přidáte knihovnu služby WCF, Visual Studio ji hostuje za vás, pokud ji ladíte spuštěním hostitele služby. Aby nedocházelo ke konfliktům, můžete aplikaci Visual Studio zabránit v hostování knihovny služby WCF. 
+>
+> 1. V **Průzkumník řešení** vyberte projekt **GettingStartedLib** a v místní nabídce vyberte **vlastnosti** .
+> 2. Vyberte **možnost WCF možnosti** a zrušte zaškrtnutí políčka **spustit hostitele služby WCF při ladění jiného projektu ve stejném řešení**.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > - Vytvořte a nakonfigurujte projekt konzolové aplikace pro hostování služby WCF.
 > - Přidejte kód pro hostování služby WCF.
 > - Aktualizujte konfigurační soubor.
-> - Spusťte službu WCF a ověří, že je spuštěná.
+> - Spusťte službu WCF a ověřte, zda je spuštěná.
 
-Přejděte k dalšímu kurzu se naučíte, jak vytvořit klienta WCF.
+Přejděte k dalšímu kurzu, kde se dozvíte, jak vytvořit klienta WCF.
 
 > [!div class="nextstepaction"]
-> [Kurz: Vytvořte klienta WCF](how-to-create-a-wcf-client.md)
+> [Kurz: Vytvoření klienta WCF](how-to-create-a-wcf-client.md)

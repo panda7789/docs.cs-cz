@@ -3,12 +3,12 @@ title: Začínáme se službou Azure Table Storage s využitím F#
 description: Ukládání strukturovaných dat v cloudu pomocí služby Azure Table Storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: c8ab2d61048523ac52f305c7bd035c73ca0d3f60
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f5fe2fe667b6d529bba4d29729a975c7890b5aba
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630465"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928995"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s úložištěm Azure Table a Azure Cosmos DB rozhraní API pro tabulky pomocí jazyka F\#
 
@@ -60,7 +60,7 @@ V tomto kurzu do skriptu zadejte připojovací řetězec, podobně jako v násle
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L11-L11)]
 
-To však nedoporučujeme pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
+To však **nedoporučujeme** pro skutečné projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Klíč můžete znovu vygenerovat pomocí webu Azure Portal, pokud se domníváte, že je možné, že došlo k ohrožení zabezpečení.
 
 Pro reálné aplikace je nejlepší způsob, jak udržovat připojovací řetězec úložiště, v konfiguračním souboru. Chcete-li načíst připojovací řetězec z konfiguračního souboru, můžete to provést:
 
@@ -194,6 +194,6 @@ Teď, když jste se seznámili se základy úložiště tabulek, postupujte podl
 - [Úvod do rozhraní Table API služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
 - [Klientská knihovna Storage pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
 - [Poskytovatel typu Azure Storage](https://fsprojects.github.io/AzureStorageTypeProvider/)
-- [Blog týmu Azure Storage](https://blogs.msdn.com/b/windowsazurestorage/)
+- [Blog týmu Azure Storage](https://blogs.msdn.microsoft.com/windowsazurestorage/)
 - [Konfigurace připojovacích řetězců](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string)
 - [Začínáme s využitím Azure Table Storage v .NET](https://azure.microsoft.com/resources/samples/storage-table-dotnet-getting-started/)

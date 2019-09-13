@@ -3,12 +3,12 @@ title: Historie C# – C# Průvodce
 description: Co jazyk vypadal jako v jeho dřívějších verzích a jak se vyvinulo od verze?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 9962dcb0192fb27ff21b24e985a6a897703720c7
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 304c433e7f15301b77e8b2440e27795dcdea345c
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105673"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70893174"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 
@@ -28,7 +28,7 @@ Nástroje C# pro sestavení považují nejnovější jazykovou verzi za výchoz�
 
 ## <a name="c-version-10"></a>C#verze 1,0
 
-Když se vrátíte zpátky a budete C# Hledat, verze 1,0 vyhledala spoustu jako Java. Jako [součást uvedených cílů návrhu pro ECMA](https://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html)se snaží být jednoduchý a moderní objektově orientovaný jazyk pro obecné účely.  V takovém případě, jako by jazyk Java chtěl, dosáhly těchto cílů prvotního návrhu.
+Až se vrátíte zpátky a provedete C# verzi 1,0, která byla vydaná s Visual Studio.NET 2002, vyhledali jsme spoustu jako Java. Jako [součást uvedených cílů návrhu pro ECMA](https://feeldotneteasy.blogspot.com/2011/01/c-design-goals.html)se snaží být jednoduchý a moderní objektově orientovaný jazyk pro obecné účely.  V takovém případě, jako by jazyk Java chtěl, dosáhly těchto cílů prvotního návrhu.
 
 Pokud se ale teď o C# 1,0 znovu pokusíte, najdete trochu Dizzy. Neobsahovaly integrované asynchronní funkce a některé funkce uhlazený kolem generických typů, které udělíte pro udělení. Vzhledem k tomu, že ve skutečnosti zcela chyběly obecné typy.  A [LINQ](../linq/index.md)? Ještě není k dispozici. Tyto dodatky budou trvat několik let.
 
@@ -100,7 +100,7 @@ Konkrétně byste teď mohli zapisovat do stylů SQL, deklarativní dotazy a pro
 
 ## <a name="c-version-40"></a>C#verze 4,0
 
-C#ve verzi 4,0 by došlo k obtížnému životního stavu přelomové verze 3,0. S verzí 3,0 C# přesunula jazyk pevně od stínu Java a do význačnost. Jazyk se rychle stal elegantním.
+C#verze 4,0, vydaná se sadou Visual Studio 2010, by měla obtížný čas na přelomové stav verze 3,0. S verzí 3,0 C# přesunula jazyk pevně od stínu Java a do význačnost. Jazyk se rychle stal elegantním.
 
 Další verze zavedla zajímavé nové funkce:
 
@@ -117,7 +117,7 @@ Dynamická vazba poskytuje potenciál pro chyby, ale také skvělou sílu v rám
 
 ## <a name="c-version-50"></a>C#verze 5,0
 
-C#verze 5,0 byla zaměřená na verzi tohoto jazyka. Skoro veškerá snaha o tuto verzi přešla do jiného přelomové jazyka: `async` model a `await` pro asynchronní programování.  Tady je seznam hlavních funkcí:
+C#verze 5,0, vydaná v rámci sady Visual Studio 2012, byla zaměřená na verzi tohoto jazyka. Skoro veškerá snaha o tuto verzi přešla do jiného přelomové jazyka: `async` model a `await` pro asynchronní programování.  Tady je seznam hlavních funkcí:
 
 - [Asynchronní členové](../async.md)
 - [Atributy informací o volajícím](../programming-guide/concepts/caller-information.md)
@@ -132,7 +132,7 @@ Ale `async`jsoutoreálné hvězdičkytétoverze.`await` Po vyřazení těchto fu
 
 ## <a name="c-version-60"></a>C#verze 6,0
 
-S verzemi 3,0 a 5,0 C# byly přidány hlavní nové funkce do objektově orientovaného jazyka. S verzí 6,0 by nedošlo k tomu, že by se vám Killer dominantní funkce a místo toho se uvolnilo C# mnoho menších funkcí, které přidávají lepší produktivitu. Tady jsou některé z nich:
+S verzemi 3,0 a 5,0 C# byly přidány hlavní nové funkce do objektově orientovaného jazyka. S verzí 6,0, která byla vydaná s Visual Studio 2013, by nedošlo k tomu, že by se prováděla dominantní funkce Killer a C# místo toho se uvolnilo mnoho menších funkcí, které přidávají větší produktivitu Tady jsou některé z nich:
 
 - [Statické importy](./csharp-6.md#using-static)
 - [Filtry výjimek](./csharp-6.md#exception-filters)
@@ -154,7 +154,7 @@ Spolu s touto verzí existovaly ještě jiné, ale nejedná se o tradiční jazy
 
 ## <a name="c-version-70"></a>C#verze 7,0
 
-Nejnovější hlavní verze je C# verze 7,0. Tato verze obsahuje několik vývojových a studených věcí v příplatku C# 6,0, ale bez kompilátoru jako služby. Tady jsou některé nové funkce:
+Nejnovější hlavní verze je verze 7,0 C# , která byla vydaná se sadou Visual Studio 2017. Tato verze obsahuje několik vývojových a studených věcí v příplatku C# 6,0, ale bez kompilátoru jako služby. Tady jsou některé nové funkce:
 
 - [Proměnné out](./csharp-7.md#out-variables)
 - [Řazené kolekce členů a dekonstrukce](./csharp-7.md#tuples)

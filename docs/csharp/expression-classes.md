@@ -1,33 +1,33 @@
 ---
 title: Typy architektur podporující stromy výrazů
-description: Další informace o rozhraní framework typy podporující stromy výrazů, vytváření stromů výrazů a techniky pro práci s strom výrazu rozhraní API.
+description: Seznamte se s typy architektury, které podporují stromy výrazů, vytváření stromů výrazů a techniky pro práci s rozhraními API stromu výrazů.
 ms.date: 06/20/2016
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: c18bbfb1273156a4b070d1f195d9e823256fde9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d11a13000019faf2ab5c35d41d48fa199e901d1c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646576"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925973"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Typy architektur podporující stromy výrazů
 
-[Předchozí – Vysvětlení stromů výrazů](expression-trees-explained.md)
+[Vysvětlení stromů předchozí--výraz](expression-trees-explained.md)
 
-Existuje dlouhý seznam tříd v rozhraní .NET Core, které pracují s stromy výrazů.
-Podívejte se na seznam v <xref:System.Linq.Expressions>.
-Nespouštějte ho pomocí úplného seznamu, nyní se pokusíme pochopit, jak byly navrženy tříd rozhraní framework.
+V rozhraní .NET Core Framework je rozsáhlý seznam tříd, které pracují se stromy výrazů.
+Úplný seznam najdete na adrese <xref:System.Linq.Expressions>.
+Místo toho, aby procházely prostřednictvím úplného seznamu, porozuměli tomu, jak byly navrženy třídy rozhraní.
 
-V návrhu jazyka je výraz tělo kód, který se vyhodnotí a vrátí hodnotu. Výrazy mohou být velmi jednoduchý: konstantní výraz `1` vrací konstantní hodnotu 1. Mohou být složitější: Výraz `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` vrátí jeden kořenový adresář pro kvadratické rovnice (v případě, kdy má rovnice řešení).  
+V návrhu jazyka je výraz tělo kódu, který vyhodnocuje a vrací hodnotu. Výrazy můžou být velmi jednoduché: konstantní výraz `1` vrací konstantní hodnotu 1. Můžou být složitější: Výraz `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` vrátí jeden kořen pro kvadratickou rovnici (v případě, kdy má rovnice řešení).  
 
-## <a name="it-all-starts-with-systemlinqexpression"></a>Všechno začíná System.Linq.Expression
+## <a name="it-all-starts-with-systemlinqexpression"></a>Vše začíná řetězcem System. Linq. Expression.
 
-Jedním ze složitých úkolů při práci s stromů výrazů je, že jsou různé druhy výrazů platný na mnoha místech v aplikacích. Vezměte v úvahu výraz přiřazení. Pravá strana přiřazení může být konstantní hodnotu, proměnné, výraz volání metody nebo jiné. Flexibilita z jazyka znamená, že mnoho typů jiný výraz kdekoli v uzly stromu mohou nastat, když procházejí strom výrazu. Proto můžete pracovat s typem základní výraz, který při nejjednodušší způsob, jak pracovat. Ale někdy potřebujete další informace.
-Obsahuje základní třídy výraz `NodeType` vlastnost pro tento účel.
-Vrátí `ExpressionType` což je výčet typy výrazů je to možné.
-Jakmile budete znát typ uzlu, můžete přetypovat na daný typ a provádět konkrétní akce znalost typ uzlu výrazu. Můžete vyhledat určité typy uzlů a poté pracovat s určitými vlastnostmi tohoto typu výrazu.
+Jednou ze složitých prací se stromy výrazů je, že mnoho různých druhů výrazů je platných na mnoha místech v programech. Vezměte v úvahu výraz přiřazení. Pravá strana přiřazení může být konstantní hodnota, proměnná, výraz volání metody nebo jiné. Tato flexibilita jazyka znamená, že se můžete setkat s mnoha různými typy výrazů kdekoli v uzlech stromu při procházení stromu výrazu. Proto když můžete pracovat s typem základního výrazu, je to nejjednodušší způsob, jak pracovat. Někdy ale potřebujete znát ještě více.
+Třída základního výrazu obsahuje `NodeType` vlastnost pro tento účel.
+Vrátí hodnotu `ExpressionType` , která je výčtem možných typů výrazů.
+Jakmile znáte typ uzlu, můžete ho přetypovat na tento typ a provádět konkrétní akce, které budou znát typ uzlu výrazu. Můžete hledat určité typy uzlů a pak pracovat s konkrétními vlastnostmi tohoto typu výrazu.
 
-Tento kód například vytiskne název proměnné pro přístup k proměnným výraz. Jste postupovali podle postupů kontrola typu uzlu, pak přetypování výrazu přístup k proměnným a následnou kontrolou vlastnosti typu určité výraz:
+Například tento kód vytiskne název proměnné pro výraz přístupu proměnné. Použil jsem postup kontroly typu uzlu, následné přetypování do výrazu přístupu k proměnné a následné kontrole vlastností konkrétního typu výrazu:
 
 ```csharp
 Expression<Func<int, int>> addFive = (num) => num + 5;
@@ -45,7 +45,7 @@ if (addFive.NodeType == ExpressionType.Lambda)
 
 ## <a name="creating-expression-trees"></a>Vytváření stromů výrazů
 
-`System.Linq.Expression` Třída také obsahuje mnoho statické metody pro vytváření výrazů. Tyto metody vytvoří uzlu výraz pomocí zadané pro podřízené argumenty. Tímto způsobem můžete vytvořit výraz z jeho uzly typu list. Například tento kód vytvoří přidat výraz:
+`System.Linq.Expression` Třída také obsahuje mnoho statických metod pro vytváření výrazů. Tyto metody vytvoří uzel výrazu pomocí argumentů dodaných pro své podřízené položky. Tímto způsobem sestavíte výraz z jeho listových uzlů. Například tento kód vytvoří výraz Add:
 
 ```csharp
 // Addition is an add expression for "1 + 2"
@@ -54,14 +54,15 @@ var two = Expression.Constant(2, typeof(int));
 var addition = Expression.Add(one, two);
 ```
 
-Zobrazí se v tomto jednoduchém příkladu mnoho typů jsou součástí vytváření a práci s stromy výrazů. Složitost je potřeba zadat možnosti bohaté slovníku k dispozici v jazyce C#.
+Můžete si prohlédnout z tohoto jednoduchého příkladu, který je součástí vytváření a práce se stromy výrazů. Tato složitá složitost je nutná k zajištění schopností bohatých slovníků poskytovaných C# jazykem.
 
-## <a name="navigating-the-apis"></a>Procházení rozhraní API
-Existují výraz typy uzlů, které mapují na téměř všechny prvky syntaxe jazyka C#. Každý typ má specifické metody pro daný typ prvku jazyka. Je mnoho dalších zachovat v hlavě najednou. Namísto pokusu o všechno, co učit nazpaměť, tady jsou techniky využité pro práci s stromů výrazů:
-1. Podívejte se na členy `ExpressionType` výčtu k určení možných uzly by měl zkoumání. To opravdu pomáhá při procházení a porozumění strom výrazu.
-2. Podívejte se na statické členy třídy `Expression` třída výraz. Tyto metody můžete vytvořit jakýkoli typ výrazu ze sady jeho podřízené uzly.
-3. Podívejte se na `ExpressionVisitor` třídy k sestavení stromu upravené výrazem.
+## <a name="navigating-the-apis"></a>Navigace v rozhraních API
+Existují typy uzlů výrazů, které jsou namapovány na skoro všechny prvky syntaxe C# jazyka. Každý typ má konkrétní metody pro tento typ elementu jazyka. Je to hodně, co je potřeba v hlavě uchovávat najednou. Místo toho, abyste se pokusili nepamatují vše, jsou zde postupy, které mám použít pro práci s stromy výrazů:
 
-Najdete tu informace, jako je podívejte se na každý z těchto tří oblastí. Vždy zjistíte, co potřebujete, když začínáte s jeden z těchto tří kroků.
+1. Podívejte se na členy `ExpressionType` výčtu a určete možné uzly, které byste měli prošetřit. To skutečně pomáhá při procházení a pochopení stromu výrazů.
+2. Pokud chcete vytvořit výraz, podívejte se `Expression` na statické členy třídy. Tyto metody mohou sestavit libovolný typ výrazu ze sady svých podřízených uzlů.
+3. Podívejte se `ExpressionVisitor` na třídu a sestavte upravený strom výrazů.
+
+Další informace najdete v každé z těchto tří oblastí. Invariably zjistíte, co potřebujete, když začnete s jedním z těchto tří kroků.
  
- [Další – Provádění stromů výrazů](expression-trees-execution.md)
+ [Další – spouštění stromů výrazů](expression-trees-execution.md)

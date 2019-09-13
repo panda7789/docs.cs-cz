@@ -2,12 +2,12 @@
 title: Vlastní publikování WSDL
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: 0d5ceecebc5f45d62bac7fd0aaa0f8515a469515
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8674d852be45119b247ec10bbc639922850d5a90
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045122"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928853"
 ---
 # <a name="custom-wsdl-publication"></a>Vlastní publikování WSDL
 Tato ukázka předvádí, jak:  
@@ -26,7 +26,7 @@ Tato ukázka předvádí, jak:
 ## <a name="service"></a>Služba  
  Služba v této ukázce je označena dvěma vlastními atributy. První, `WsdlDocumentationAttribute`, přijímá řetězec v konstruktoru a lze jej použít pro poskytnutí rozhraní kontraktu nebo operace s řetězcem, který popisuje jeho použití. Druhý, `WsdlParamOrReturnDocumentationAttribute`,, lze použít pro návrat hodnoty nebo parametry k popisu těchto hodnot v operaci. Následující příklad ukazuje kontrakt služby, `ICalculator`popsaný pomocí těchto atributů.  
   
-```  
+```csharp  
 // Define a service contract.      
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 // Document it.  
@@ -71,7 +71,7 @@ public interface ICalculator
   
  V této ukázce, v závislosti na tom, zda má <xref:System.ServiceModel.Description.ContractDescription> objekt kontextu exportu <xref:System.ServiceModel.Description.OperationDescription>nebo, je komentář extrahován z atributu pomocí vlastnosti text a je přidán do prvku poznámky WSDL, jak je znázorněno v následujícím kódu.  
   
-```  
+```csharp  
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
 {  
     if (contractDescription != null)  
@@ -107,7 +107,7 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
   
  Je-li exportována operace, používá ukázka reflexe k získání `WsdlParamOrReturnDocumentationAttribute` všech hodnot parametrů a vrácených hodnot a přidává je do prvků poznámky WSDL pro tuto operaci následujícím způsobem.  
   
-```  
+```csharp  
 // Get returns information  
 ParameterInfo returnValue = operationDescription.SyncMethod.ReturnParameter;  
 object[] returnAttrs = returnValue.GetCustomAttributes(typeof(WsdlParamOrReturnDocumentationAttribute), false);  
@@ -174,7 +174,7 @@ for (int i = 0; i < args.Length; i++)
   
  Nejprve ukázka v <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metodě určí, zda je Poznámka WSDL na úrovni smlouvy nebo operace, a přidá samu sebe jako chování v příslušném oboru a předá importovaná text poznámky do konstruktoru.  
   
-```  
+```csharp  
 public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
 {  
     // Contract Documentation  
@@ -201,7 +201,7 @@ public void ImportContract(WsdlImporter importer, WsdlContractConversionContext 
   
  Po vygenerování kódu pak systém vyvolá <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> metody a a <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> předává příslušné kontextové informace. Ukázka formátuje vlastní anotace WSDL a vkládá je jako komentáře do CodeDom.  
   
-```  
+```csharp  
 public void GenerateContract(ServiceContractGenerationContext context)  
 {  
     Debug.WriteLine("In generate contract.");  
@@ -233,7 +233,7 @@ public void GenerateOperation(OperationContractGenerationContext context)
   
  Po určení vlastního dovozce načte systém metadat WCF vlastní dovozce do libovolného <xref:System.ServiceModel.Description.WsdlImporter> vytvořeného pro tento účel. V této ukázce se <xref:System.ServiceModel.Description.MetadataExchangeClient> používá ke stažení metadat <xref:System.ServiceModel.Description.WsdlImporter> , ke správné konfiguraci pro import metadat pomocí vlastního dovozce, který <xref:System.ServiceModel.Description.ServiceContractGenerator> ukázka vytvoří, a k zkompilování upravených informací o kontraktu do obou Visual Basic a C# klientský kód, který lze použít v sadě Visual Studio pro podporu technologie IntelliSense nebo kompilování do dokumentace XML.  
   
-```  
+```csharp  
 /// From WSDL Documentation:  
 ///   
 /// <summary>The ICalculator contract performs basic calculation   

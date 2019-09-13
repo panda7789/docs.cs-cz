@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cc17dd47-b9ad-451c-a362-e36e0aac7ba0
-ms.openlocfilehash: 3080514d06119a2f1b621cff16056ac7577c30b3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: adc4d519e8d29fef5595ab7ddc3168462525c4e2
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966806"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895231"
 ---
 # <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Postupy: Asynchronní volání operací pomocí ChannelFactory
 Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronně při použití <xref:System.ServiceModel.ChannelFactory%601>klientské aplikace založené na systému. (Při použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> objektu k vyvolání služby můžete použít asynchronní model volání řízený událostmi. Další informace najdete v tématu [jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o asynchronním volání modelu založeném na událostech naleznete v tématu [asynchronní vzor založený na událostech (EAP)](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  
@@ -23,7 +23,7 @@ Toto téma popisuje, jak může klient přistupovat k operaci služby asynchronn
   
 1. Spusťte nástroj [obslužné rutiny metadat ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) s `/async` možností, jak je znázorněno v následujícím příkazu.  
   
-    ```  
+    ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a  
     ```  
   

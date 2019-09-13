@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5be728cbeb0c3378bb35765787b299167069f57
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0a54945ece2cbb06df5f778aba242f05d9b80373
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910613"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894513"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
 > [!NOTE]
@@ -17,14 +17,14 @@ ms.locfileid: "69910613"
   
  Následující příklad ukazuje, jak vyřešit výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) , která je vyvolána, když se aplikace zkompiluje s řetězem nástrojů .NET Native pokusí vytvořit vazby dat. Zde jsou informace o výjimce:  
   
-```  
+```output
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:   
 App.ViewModels.MainPageVM  
 ```  
   
  Tady je přidružený zásobník volání:  
   
-```  
+```output
 Reflection::Execution::ReflectionDomainSetupImplementation.CreateNonInvokabilityException+0x238  
 Reflection::Core::ReflectionDomain.CreateNonInvokabilityException+0x2e  
 Reflection::Core::Execution::ExecutionEnvironment.+0x316  

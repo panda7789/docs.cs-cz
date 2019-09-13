@@ -1,42 +1,44 @@
 ---
-title: Přehled nástroje svcutil WCF
-description: Přehled nástroje dotnet svcutil Microsoft WCF, který přidá funkce pro projekty .NET Core a ASP.NET Core, podobný nástroj svcutil WCF pro projekty .NET Framework.
+title: Přehled nástroje WCF Svcutil
+description: Přehled nástroje Microsoft WCF dotnet-Svcutil, který přidává funkce pro projekty .NET Core a ASP.NET Core podobně jako nástroj WCF Svcutil pro projekty .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5e361ce85bec696fe5d76c4f43a444c543a9012d
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 723855401f3a81edbd34c77481e4ff12db7dcdaf
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063296"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926450"
 ---
-# <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Nástroj dotnet svcutil WCF pro .NET Core
+# <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet – nástroj Svcutil pro .NET Core
 
-Windows Communication Foundation (WCF) **dotnet svcutil** nástroj je nástroj příkazového řádku .NET Core, načte metadata z webové služby v umístění v síti nebo ze souboru WSDL, který generuje WCF třídu obsahující metody proxy serveru klienta, který přístup k operací webové služby.
+Nástroj Windows Communication Foundation (WCF) **dotnet-Svcutil** je .NET Core CLI nástroj, který načítá metadata z webové služby v umístění v síti nebo ze souboru WSDL a GENERUJE třídu WCF obsahující metody proxy klienta, které přistupují k webové službě. Operations.
 
-Podobně jako [ **metadat modelu služby - svcutil** ](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroje pro projekty .NET Framework **dotnet svcutil** je nástroj příkazového řádku pro generování odkaz webové služby kompatibilní s projekty .NET Core a .NET Standard.
+Podobně jako nástroj [**Service Model Metadata-Svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool for .NET Framework Projects ( **dotnet-Svcutil** ) je nástroj příkazového řádku pro generování odkazu webové služby kompatibilního s projekty .NET Core a .NET Standard.
 
-**Dotnet svcutil** alternativní možnost je nástroj [ **WCF Web Service Reference** ](wcf-web-service-reference-guide.md) sady Visual Studio zprostředkovatel připojené služby, která se poprvé dodáváno pomocí sady Visual Studio 2017 v15.5. **Dotnet svcutil** nástroj jako nástroj příkazového řádku .NET Core, je k dispozici na různých platformách Windows, Linux a macOS.
+Nástroj **dotnet-Svcutil** je alternativou k [**webové službě WCF reference**](wcf-web-service-reference-guide.md) k poskytovateli propojené služby sady Visual Studio, který se poprvé dodává se sadou Visual Studio 2017 v 15.5. Nástroj **dotnet-Svcutil** jako nástroj .NET Core CLI je k dispozici pro různé platformy v systémech Linux, MacOS a Windows.
 
 > [!IMPORTANT]
-> Služby by měly odkazovat pouze z důvěryhodného zdroje. Přidávání odkazů z nedůvěryhodných zdrojů může ohrozit zabezpečení.
+> Měli byste odkazovat jenom na služby z důvěryhodného zdroje. Přidání odkazů z nedůvěryhodného zdroje může ohrozit zabezpečení.
 
 ## <a name="prerequisites"></a>Požadavky
 
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
-* [Sady SDK .NET core 2.1](https://dotnet.microsoft.com/download) nebo novější verze
+# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
+
+* [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze
 * Váš oblíbený editor kódu
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
-* [.NET core 1.0.4 SDK](https://dotnet.microsoft.com/download) nebo novější verze
+# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
+
+* [.NET Core 1.0.4 SDK](https://dotnet.microsoft.com/download) nebo novější verze
 * Váš oblíbený editor kódu
 
 ---
 
 ## <a name="getting-started"></a>Začínáme
 
-Následující příklad vás provede kroky potřebné k přidání odkaz webové služby do webového projektu .NET Core a vyvolat službu. Vytvoříte webovou aplikaci .NET Core s názvem _HelloSvcutil_ a přidejte odkaz na webovou službu, která implementuje kontrakt následující:
+Následující příklad vás provede kroky potřebnými k přidání odkazu webové služby do webového projektu .NET Core a vyvolání služby. Vytvoříte webovou aplikaci .NET Core s názvem _HelloSvcutil_ a přidáte odkaz na webovou službu, která implementuje následující kontrakt:
 
 ```csharp
 [ServiceContract]
@@ -47,32 +49,32 @@ public interface ISayHello
 }
 ```
 
-V tomto příkladu předpokládejme, že webová služba bude možné hostovat na následující adrese: `http://contoso.com/SayHello.svc`
+V tomto příkladu Předpokládejme, že webová služba bude hostována na následující adrese:`http://contoso.com/SayHello.svc`
 
-Z příkazového okna Windows, macOS nebo Linux postupujte následovně:
+V okně příkazového řádku Windows, macOS nebo Linux proveďte následující kroky:
 
-1. Vytvořte adresář _HelloSvcutil_ pro váš projekt a nastavte ji váš aktuální adresář, jako v následujícím příkladu:
+1. Vytvořte pro svůj projekt adresář s názvem _HelloSvcutil_ a nastavte ho jako aktuální adresář, jako v následujícím příkladu:
 
     ```console
     mkdir HelloSvcutil
     cd HelloSvcutil
     ```
 
-2. Vytvořte nový C# webový projekt v tomto adresáři pomocí [ `dotnet new` ](../tools/dotnet-new.md) takto:
+2. V tomto adresáři C# vytvořte nový webový projekt pomocí [`dotnet new`](../tools/dotnet-new.md) příkazu následujícím způsobem:
 
     ```console
     dotnet new web
     ```
 
-3. Nainstalujte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako nástroj příkazového řádku:  <!-- markdownlint-disable MD023 -->
-    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
+3. Nainstalujte balíček NuGet jako nástroj rozhraní příkazového řádku: [ `dotnet-svcutil` ](https://nuget.org/packages/dotnet-svcutil) <!-- markdownlint-disable MD023 -->
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
     ```console
     dotnet tool install --global dotnet-svcutil
     ```
 
-    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
-    Otevřít `HelloSvcutil.csproj` souboru v editoru projektu, upravit `Project` prvek a přidejte [ `dotnet-svcutil` balíček NuGet](https://nuget.org/packages/dotnet-svcutil) jako odkaz na rozhraní příkazového řádku nástroje, pomocí následujícího kódu:
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
+    Otevřete soubor [ `dotnet-svcutil` ](https://nuget.org/packages/dotnet-svcutil) projektu v editoru, `Project` upravte element a přidejte balíček NuGet jako odkaz na nástroj rozhraní příkazového řádku, a to pomocí následujícího kódu: `HelloSvcutil.csproj`
 
     ```xml
     <ItemGroup>
@@ -80,7 +82,7 @@ Z příkazového okna Windows, macOS nebo Linux postupujte následovně:
     </ItemGroup>
     ```
 
-    Obnovte _dotnet svcutil_ balíček pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:
+    Pak obnovte balíček _dotnet-Svcutil_ pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu následujícím způsobem:
 
     ```console
     dotnet restore
@@ -88,15 +90,15 @@ Z příkazového okna Windows, macOS nebo Linux postupujte následovně:
 
     ---
 
-4. Spustit _dotnet svcutil_ příkazu vygenerujte soubor odkaz webové služby následujícím způsobem:
+4. Spusťte příkaz _dotnet-Svcutil_ pro vytvoření referenčního souboru webové služby následujícím způsobem:
 
-    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
     ```console
     dotnet-svcutil http://contoso.com/SayHello.svc
     ```
 
-    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
 
     ```console
     dotnet svcutil http://contoso.com/SayHello.svc
@@ -104,25 +106,25 @@ Z příkazového okna Windows, macOS nebo Linux postupujte následovně:
 
     ---
 
-Vygenerovaný soubor je uložen jako _HelloSvcutil/ServiceReference/Reference.cs_. _Dotnet svcutil_ nástroj také přidá do projektu odpovídající balíčky WCF vyžaduje proxy kód jako odkazy na balíček.
+Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference. cs_. Nástroj _dotnet-Svcutil_ také přidá do projektu příslušné balíčky WCF vyžadované proxy kódem jako odkazy na balíčky.
 
-## <a name="using-the-service-reference"></a>Pomocí odkazu na službu
+## <a name="using-the-service-reference"></a>Použití odkazu na službu
 
-1. Obnovení balíčků WCF pomocí [ `dotnet restore` ](../tools/dotnet-restore.md) takto:
+1. Pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu obnovte balíčky služby WCF následujícím způsobem:
 
     ```console
     dotnet restore
     ```
 
-2. Vyhledejte název klienta, třídy a operace, kterou chcete použít. `Reference.cs` bude obsahovat třídu, která dědí z `System.ServiceModel.ClientBase`, metodami, které slouží k volání operací služby. V tomto příkladu chcete volat _SayHello_ služby _Hello_ operace. `ServiceReference.SayHelloClient` je název třídy klienta a je volána metoda `HelloAsync` , který je možné volat operaci.
+2. Vyhledejte název klientské třídy a operace, kterou chcete použít. `Reference.cs`bude obsahovat třídu, která dědí z `System.ServiceModel.ClientBase`, s metodami, které lze použít k volání operací ve službě. V tomto příkladu chcete zavolat operaci _Hello_ služby _sayHello_ . `ServiceReference.SayHelloClient`je název třídy klienta a má metodu nazvanou `HelloAsync` , která může být použita k volání operace.
 
-3. Otevřít `Startup.cs` souboru ve svém editoru a přidejte sadu pomocí příkazu pro obor názvů odkazu služby v horní části:
+3. `Startup.cs` Otevřete soubor v editoru a přidejte příkaz using pro obor názvů odkazu na službu v horní části:
 
     ```csharp
     using ServiceReference;
     ```
 
-4. Upravit `Configure` metoda k vyvolání webové služby. To provedete tak, že vytvoříte instanci, která dědí z třídy `ClientBase` a volání metody u objektu klienta:
+4. `Configure` Upravte metodu pro vyvolání webové služby. To provedete vytvořením instance třídy, která dědí z `ClientBase` a voláním metody v objektu klienta:
 
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -142,24 +144,24 @@ Vygenerovaný soubor je uložen jako _HelloSvcutil/ServiceReference/Reference.cs
 
     ```
 
-5. Spuštění aplikace pomocí [ `dotnet run` ](../tools/dotnet-run.md) takto:
+5. Spusťte aplikaci pomocí [`dotnet run`](../tools/dotnet-run.md) příkazu následujícím způsobem:
 
     ```console
     dotnet run
     ```
 
-6. Přejděte na adresu URL uvedená v konzole (například `http://localhost:5000`) ve webovém prohlížeči.
+6. Přejděte na adresu URL uvedenou v konzole (například `http://localhost:5000`) ve webovém prohlížeči.
 
-Byste měli vidět následující výstup: "Hello dotnet-svcutil!"
+Měl by se zobrazit následující výstup: "Hello dotnet-Svcutil!"
 
-Podrobný popis `dotnet-svcutil` nástroj parametry, vyvolají nástroj předávání parametru nápovědy následujícím způsobem:
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
+Podrobný popis `dotnet-svcutil` parametrů nástroje získáte tak, že vyvoláte nástroj, který předává parametr help následujícím způsobem:
+# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
 ```console
 dotnet-svcutil --help
 ```
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[DotNet – svcutil 1.x](#tab/dotnetsvcutil1x)
+# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
 
 ```console
 dotnet svcutil --help
@@ -167,14 +169,14 @@ dotnet svcutil --help
 
 ---
 
-## <a name="feedback--questions"></a>Zpětná vazba a otázky
+## <a name="feedback--questions"></a>Názory & dotazů
 
-Pokud máte jakékoli dotazy nebo připomínky, [otevřete problém na Githubu](https://github.com/dotnet/wcf/issues/new). Můžete také zkontrolovat všechny stávající dotazy nebo potíže [v WCF úložišti na Githubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).
+Pokud máte nějaké dotazy nebo připomínky, [otevřete problém na GitHubu](https://github.com/dotnet/wcf/issues/new). V [ÚLOŽIŠTI WCF na GitHubu](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling)můžete také zkontrolovat všechny existující otázky nebo problémy.
 
 ## <a name="release-notes"></a>Zpráva k vydání verze
 
-* Odkazovat [poznámky k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) aktualizovanou verzi informace, včetně známých problémů.
+* Aktualizované informace o verzi, včetně známých problémů, najdete v [poznámkách k verzi](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) .
 
 ## <a name="information"></a>Informace o
 
-* [Balíček NuGet DotNet svcutil](https://nuget.org/packages/dotnet-svcutil)
+* [dotnet – balíček NuGet pro Svcutil](https://nuget.org/packages/dotnet-svcutil)

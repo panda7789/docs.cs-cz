@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9c34b237655eb49b6a44c366586b3cabb5a684f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e8d9f7acfcd8dfc4d0653916138ecb05665eb420
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937981"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894585"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (importér knihovny typů)
 Nástroj Type Library Importer převádí definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime. Výstupem nástroje Tlbimp.exe je binární soubor (sestavení) obsahující metadata modulu runtime pro typy definované v rámci původní knihovny typů. Tento soubor můžete prozkoumávat pomocí nástrojů, jako je [Ildasm. exe](ildasm-exe-il-disassembler.md).  
@@ -28,7 +28,7 @@ Nástroj Type Library Importer převádí definice typu nalezené v knihovně ty
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 tlbimp tlbFile [options]  
 ```  
   
@@ -64,7 +64,7 @@ tlbimp tlbFile [options]
 |**/sysarray**|Určuje, že nástroj má importovat styl SafeArray typu objektu COM jako spravovaný <xref:System.Array> typ.|  
 |**/tlbreference:** *název souboru*|Určuje soubor knihovny typů, který se má použít k vyřešení odkazů knihovny typů bez konzultace s registrem.<br /><br /> Tato možnost nenačte některé starší formáty knihovny typů.  Stále však můžete načíst starší formáty knihovny typů implicitně pomocí registru nebo aktuálního adresáře.|  
 |**/Trademark:** `trademarkinformation`|Přidá informace o obchodní známce do výstupního sestavení. Tyto informace lze zobrazit v dialogovém okně **vlastnosti souboru** pro sestavení.|  
-|**/Transform:** *transformovat*|Transformuje metadata, jak jsou určena parametrem *Transform* .<br /><br /> Zadejte **dispret** pro parametr Transformed pro transformaci [out, retval] parametrů metod na rozhraních jenom pro odesílání (IDispatch) na návratové hodnoty.<br /><br /> Další informace o této možnosti naleznete v příkladech dále v tomto tématu.|  
+|**/Transform:** *transformovat*|Transformuje metadata, jak jsou určena parametrem *Transform* .<br /><br /> Zadejte **dispret** pro parametr Transformed pro transformaci [out, retval *] parametrů metod* na rozhraních jenom pro odesílání (IDispatch) na návratové hodnoty.<br /><br /> Další informace o této možnosti naleznete v příkladech dále v tomto tématu.|  
 |**/unsafe**|Vytvoří rozhraní bez kontroly zabezpečení rozhraní .NET Framework. Volání metody, která je vystavena tímto způsobem, může představovat bezpečnostní riziko. Tuto možnost nepoužívejte, pokud si nejste vědomi rizika vystavení takového kódu.|  
 |**/verbose**|Určuje režim podrobného vypisování; zobrazí další informace o importované knihovně typů.|  
 |**/VariantBoolFieldToBool**|Převede `VARIANT_BOOL` pole ve strukturách <xref:System.Boolean>na.|  
@@ -87,31 +87,31 @@ tlbimp tlbFile [options]
 ## <a name="examples"></a>Příklady  
  Následující příkaz vygeneruje sestavení se stejným názvem, jako má knihovna typů nalezen v `myTest.tlb` a s příponou. dll.  
   
-```  
+```console  
 tlbimp myTest.tlb   
 ```  
   
  Následující příkaz vygeneruje sestavení s názvem `myTest.dll`.  
   
-```  
+```console  
 tlbimp  myTest.tlb  /out:myTest.dll  
 ```  
   
  Následující příkaz vygeneruje sestavení se stejným názvem, jako má knihovna typů zadaná pomocí `MyModule.dll\1` a s příponou. dll. `MyModule.dll\1`musí se nacházet v aktuálním adresáři.  
   
-```  
+```console  
 tlbimp MyModule.dll\1  
 ```  
   
  Následující příkaz vygeneruje sestavení s názvem `myTestLib.dll` pro knihovnu `TestLib.dll`typů. Možnost **/Transform: dispret** transformuje jakékoli parametry [out, retval] metod na IDispatch v knihovně typů na vrácené hodnoty ve spravované knihovně.  
   
-```  
+```console  
 tlbimp TestLib.dll /transform:dispret /out:myTestLib.dll  
 ```  
   
  Knihovna `TestLib.dll`typů v předchozím příkladu obsahuje metodu odesílajícího s názvem `SomeMethod` , která vrací void a má parametr [out, retval]. Následující kód je podpis metody vstupní knihovny typů pro `SomeMethod` v. `TestLib.dll`  
   
-```  
+```cpp  
 void SomeMethod([out, retval] VARIANT_BOOL*);  
 ```  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-ms.openlocfilehash: ea60ac132fdd94d4e3a3676891964070b7150857
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 15122984dbaf3245436ff21836065c05131f71d1
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780268"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894328"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
 Pomocí WCF Data Services můžete vytvořit službu, která zpřístupňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál. Tato datová služba je definována jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkce potřebné ke zpracování zpráv požadavků, provádění aktualizací proti zdroji dat a generování zpráv odpovědí podle požadavků OData. Datová služba ale nemůže navazovat a naslouchat síťovému soketu pro příchozí požadavky HTTP. Pro tuto požadovanou funkci datová služba spoléhá na komponentu hostování.
@@ -40,7 +40,7 @@ Pomocí WCF Data Services můžete vytvořit službu, která zpřístupňuje dat
 
 Při použití dialogového okna **Přidat novou položku** v aplikaci Visual Studio 2015 k definování datové služby v aplikaci ASP.NET generuje nástroj v projektu dva nové soubory. První soubor má `.svc` rozšíření a instruuje modul runtime WCF, jak vytvořit instanci datové služby. Následuje příklad tohoto souboru pro ukázkovou datovou službu Northwind vytvořenou po dokončení [rychlého](quickstart-wcf-data-services.md)startu:
 
-```
+```aspx-csharp
 <%@ ServiceHost Language="C#"
     Factory="System.Data.Services.DataServiceHostFactory,
             System.Data.Services, Version=4.0.0.0,

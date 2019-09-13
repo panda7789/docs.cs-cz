@@ -3,12 +3,12 @@ title: Slovníček k technologii .NET
 description: Zjistěte význam vybraných termínů používaných v dokumentaci .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: caff1ee4c8e3ad133016b774fdb235bd1ef59637
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: e1894d57a613531fecba6786529a735431d01423
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106927"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929082"
 ---
 # <a name="net-glossary"></a>Slovníček k technologii .NET
 
@@ -72,7 +72,7 @@ Viz [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master
 
 Možnost vyvíjet a spouštět aplikaci, která se dá použít na více různých operačních systémech, jako jsou Linux, Windows a iOS, aniž by bylo nutné je znovu zapisovat. To umožňuje opětovné použití kódu a konzistenci mezi aplikacemi na různých platformách.
 
-## <a name="ecosystem"></a>ekosystému
+## <a name="ecosystem"></a>Ekosystému
 
 Veškerý běhový software, vývojové nástroje a komunitní prostředky, které se používají k sestavování a spouštění aplikací pro danou technologii.
 
@@ -85,6 +85,7 @@ Pojem "ekosystém .NET" se od podobných termínů, jako je například .NET Sta
 Obecně platí komplexní kolekce rozhraní API, která usnadňují vývoj a nasazování aplikací, které jsou založeny na konkrétní technologii. V tomto obecném smyslu jsou příklady aplikačních rozhraní ASP.NET Core a model Windows Forms. Viz také [Knihovna](#library).
 
 Slovo "Framework" má konkrétnější technický význam v následujících termínech:
+
 - [.NET Framework](#net-framework)
 - [Cílová architektura](#target-framework)
 - [TFM (moniker cílového rozhraní .NET Framework)](#tfm)
@@ -204,7 +205,7 @@ Generování nativních (imagí)
 
 Tuto technologii si můžete představit jako trvalý kompilátor JIT. Obvykle kompiluje kód na počítači, kde je spuštěn kód, ale kompilace obvykle probíhá v době instalace.
 
-## <a name="package"></a>balíček
+## <a name="package"></a>Balíček
 
 Balíček &mdash; NuGet nebo pouze balíček &mdash; je soubor *. zip* s jedním nebo více sestaveními se stejným názvem společně s dalšími metadaty, jako je jméno autora.
 

@@ -2,12 +2,12 @@
 title: Trvale vydaný poskytovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 70c7237329d1ae5f6ecde2231a66bca53e220634
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: aa1180458b118132a632ea5d798db81283fffdab
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045008"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928824"
 ---
 # <a name="durable-issued-token-provider"></a>Trvale vydaný poskytovatel tokenu
 Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vydaných klientů.  
@@ -112,7 +112,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
 ## <a name="custom-client-credentials-and-token-provider"></a>Vlastní přihlašovací údaje klienta a Poskytovatel tokenů  
  Následující kroky ukazují, jak vyvíjet vlastního poskytovatele tokenů, který ukládá do mezipaměti vydané tokeny a integruje ho s WCF: Security.  
   
-#### <a name="to-develop-a-custom-token-provider"></a>Vývoj vlastního poskytovatele tokenů  
+### <a name="to-develop-a-custom-token-provider"></a>Vývoj vlastního poskytovatele tokenů  
   
 1. Napište vlastního poskytovatele tokenů.  
   
@@ -120,7 +120,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
   
      Chcete-li provést tuto úlohu, zprostředkovatel vlastního tokenu odvodí <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídu a <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> přepíše metodu. Tato metoda se pokusí získat token z mezipaměti, nebo pokud token nejde v mezipaměti najít, načte token od základního poskytovatele a pak tento token uloží do mezipaměti. V obou případech metoda vrátí `SecurityToken`hodnotu.  
   
-    ```  
+    ```csharp
     protected override SecurityToken GetTokenCore(TimeSpan timeout)  
     {  
       GenericXmlSecurityToken token;  
@@ -137,7 +137,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
   
      Slouží k <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> vytvoření pro konkrétního, které je předáno do něj v `CreateSecurityTokenProvider` metodě. <xref:System.IdentityModel.Selectors.SecurityTokenProvider> <xref:System.IdentityModel.Selectors.SecurityTokenManager> Správce tokenů zabezpečení se používá také k vytváření ověřovatelů tokenů a serializátorů tokenů, ale u těch se tato ukázka nezabývá. V této ukázce správce vlastního tokenu zabezpečení dědí z <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třídy a `CreateSecurityTokenProvider` přepisuje metodu, která vrátí vlastního zprostředkovatele tokenu, když požadavky na předané tokeny naznačují, že vydaný token je požadován.  
   
-    ```  
+    ```csharp
     class DurableIssuedTokenClientCredentialsTokenManager :  
      ClientCredentialsSecurityTokenManager  
     {  
@@ -154,7 +154,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
         {  
           return new DurableIssuedSecurityTokenProvider ((IssuedSecurityTokenProvider)base.CreateSecurityTokenProvider( tokenRequirement), this.cache);  
         }  
-        Else  
+        else  
         {  
           return base.CreateSecurityTokenProvider(tokenRequirement);  
         }  
@@ -166,7 +166,7 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
   
      Třída pověření klienta slouží k reprezentaci přihlašovacích údajů, které jsou nakonfigurovány pro klienta proxy a vytvoří Správce tokenů zabezpečení, který se používá k získání ověřovatelů tokenů, poskytovatelů tokenů a serializátorů tokenů.  
   
-    ```  
+    ```csharp
     public class DurableIssuedTokenClientCredentials : ClientCredentials  
     {  
       IssuedTokenCache cache;  
@@ -182,11 +182,11 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
   
       public IssuedTokenCache IssuedTokenCache  
       {  
-        Get  
+        get  
         {  
           return this.cache;  
         }  
-        Set  
+        set  
         {  
           this.cache = value;  
         }  
@@ -206,18 +206,18 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
   
 4. Implementujte mezipaměť tokenů. Ukázková implementace používá abstraktní základní třídu, přes kterou uživatelé dané mezipaměti tokenů komunikují s mezipamětí.  
   
-    ```  
+    ```csharp
     public abstract class IssuedTokenCache  
     {  
       public abstract void AddToken ( GenericXmlSecurityToken token, EndpointAddress target, EndpointAddress issuer);  
       public abstract bool TryGetToken(EndpointAddress target, EndpointAddress issuer, out GenericXmlSecurityToken cachedToken);  
     }  
-    Configure the client to use the custom client credential.  
+    // Configure the client to use the custom client credential.  
     ```  
   
      Aby mohl klient používat vlastní přihlašovací údaje klienta, odstraní výchozí třídu přihlašovacích údajů klienta a dodá novou třídu přihlašovacích údajů klienta.  
   
-    ```  
+    ```csharp
     clientFactory.Endpoint.Behaviors.Remove<ClientCredentials>();  
     DurableIssuedTokenClientCredentials durableCreds = new DurableIssuedTokenClientCredentials();  
     durableCreds.IssuedTokenCache = cache;  
@@ -231,17 +231,17 @@ Tato ukázka předvádí, jak implementovat vlastního poskytovatele tokenu vyda
 ## <a name="the-setupcmd-batch-file"></a>Dávkový soubor Setup. cmd  
  Dávkový soubor Setup. cmd, který je součástí této ukázky, vám umožní nakonfigurovat službu token serveru a zabezpečení pomocí relevantních certifikátů pro spuštění samoobslužné aplikace. Dávkový soubor vytvoří dva certifikáty v úložišti certifikátů CurrentUser/TrustedPeople. První certifikát má název subjektu CN = STS a služba tokenů zabezpečení ji používá k podepsání tokenů zabezpečení, které vystaví klientovi. Druhý certifikát má název subjektu CN = localhost a používá ho služba tokenů zabezpečení k šifrování tajného klíče, aby ho služba mohla dešifrovat.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Chcete-li vytvořit požadované certifikáty, spusťte soubor Setup. cmd.  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že jsou všechny projekty v řešení sestaveny (Shared, RSTRSTR, Service, SecurityTokenService a Client).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Ujistěte se, že jsou všechny projekty v řešení sestaveny (Shared, RSTRSTR, Service, SecurityTokenService a Client).  
   
 3. Zajistěte, aby byly služby Service. exe a SecurityTokenService. exe spuštěné s oprávněními správce.  
   
 4. Spusťte soubor Client. exe.  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
+### <a name="to-clean-up-after-the-sample"></a>Vyčištění po ukázce  
   
 1. Až skončíte s ukázkou, spusťte na složce Samples Cleanup. cmd.  
   

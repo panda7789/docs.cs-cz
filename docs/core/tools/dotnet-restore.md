@@ -2,12 +2,12 @@
 title: dotnet restore – příkaz
 description: Naučte se obnovit závislosti a nástroje specifické pro projekt pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: c510aec8411fb0650b8caa4c3926181aa8071a66
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 567316e98e161a7645db6bf55a03c3c006999fa9
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849606"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70893281"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -177,7 +177,7 @@ Určuje modul runtime pro obnovení balíčku. Slouží k obnovení balíčků p
 
 `-s|--source <SOURCE>`
 
-Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Tím dojde k přepsání všech zdrojů zadaných v souborech *NuGet. config* a efektivně si přečtete soubor *NuGet. config* , <packageSource> jako kdyby tam element nebyl. Více zdrojů lze zadat zadáním této možnosti několikrát.
+Určuje zdroj balíčku NuGet, který se použije během operace obnovení. Tím dojde k přepsání všech zdrojů zadaných v souborech *NuGet. config* a efektivně si přečtete soubor *NuGet. config* , `<packageSource>` jako kdyby tam element nebyl. Více zdrojů lze zadat zadáním této možnosti několikrát.
 
 `--verbosity <LEVEL>`
 

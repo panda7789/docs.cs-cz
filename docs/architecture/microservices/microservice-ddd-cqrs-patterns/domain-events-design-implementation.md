@@ -1,13 +1,13 @@
 ---
-title: Události domény. návrh a implementace
+title: Události domény. Návrh a implementace
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte podrobné zobrazení událostí domény, klíčový koncept k navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: 5f7084ef638a1d04e0050eab447cb8903c973f45
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 46341bbc3ee3e5713707cc6a18b678d51102b64d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295965"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926550"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -375,7 +375,7 @@ Jak je uvedeno, pomocí událostí domény explicitně implementujte vedlejší 
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>
 
 - **Cesar de la Torre. Události v doméně vs. Události integrace v architekturách DDD a mikroslužeb** \
-  <https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
+  <https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
 
 >[!div class="step-by-step"]
 >[Předchozí](client-side-validation.md)Další

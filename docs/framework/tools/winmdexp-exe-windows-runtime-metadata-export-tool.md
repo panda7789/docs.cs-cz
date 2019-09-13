@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e6f9f553af4899d502584cbde5341f7061f169d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0664a68d258380fd9e4824b80f0d7a244cb61e85
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937955"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894775"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 Nástroj pro export metadat prostředí Windows Runtime (Winmdexp. exe) transformuje modul .NET Framework na soubor, který obsahuje prostředí Windows Runtime metadata. I když .NET Framework sestavení a prostředí Windows Runtime soubory metadat používají stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že .NET Framework sestavení nejsou automaticky použitelná jako prostředí Windows Runtime komponenty . Proces zapnutí modulu .NET Framework do prostředí Windows Runtime komponenty se označuje jako *Export*. V .NET Framework 4,5 a .NET Framework 4.5.1 výsledný soubor metadat Windows (. winmd) obsahuje metadata i implementaci.  
@@ -25,7 +25,7 @@ Nástroj pro export metadat prostředí Windows Runtime (Winmdexp. exe) transfor
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 winmdexp [options] winmdmodule  
 ```  
   

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b39467c067e50f2d553b35a41b0f783e0fc82156
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a7f62385031967c164915fd31735a6d962f557fa
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988015"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894984"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName – metoda
 Získá název souboru modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT GetName(  
     [in] ULONG32 cchName,  
     [out] ULONG32 *pcchName,  
@@ -39,24 +39,24 @@ HRESULT GetName(
   
 ## <a name="parameters"></a>Parametry  
  `cchname`  
- [in] Velikost `szName` pole.  
+ pro Velikost `szName` pole.  
   
  `pcchName`  
- [in] Ukazatel na vrácený název.  
+ pro Ukazatel na délku vráceného názvu.  
   
  `szName`  
- [out] Pole, která ukládá vrácený název.  
+ mimo Pole, ve kterém je uložený vrácený název.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetName` Metoda vrátí hodnotu S_OK HRESULT, pokud název souboru modulu odpovídá názvu na disku. `GetName` Vrátí S_FALSE HRESULT, pokud je název kovodělných, například pro modul dynamické nebo v paměti.  
+ `GetName` Metoda vrátí hodnotu S_OK HRESULT, pokud se název souboru modulu shoduje s názvem na disku. `GetName`Vrátí S_FALSE HRESULT, pokud je název založen, například pro dynamický nebo modul v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

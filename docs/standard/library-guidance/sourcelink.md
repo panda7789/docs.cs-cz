@@ -1,44 +1,45 @@
 ---
-title: Knihovny odkazu na zdroj a .NET
-description: Doporučené osvědčené postupy pro vylepšení ladění pro knihovny .NET pomocí odkazu na zdroj.
+title: Zdrojový odkaz a knihovny .NET
+description: Doporučení osvědčených postupů pro použití odkazu na zdroj ke zlepšení ladění pro knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 9d3e2b0b3aedbab150072bf6eebff4acb5f8a0b7
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 7530c984ce4bbe9e40362bd550bec57ac585a550
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211676"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928989"
 ---
 # <a name="source-link"></a>Odkaz na zdroj
 
-Odkaz na zdroj je technologie, která umožňuje ladění zdrojového kódu sestavení .NET z Nugetu vývojáři. Odkaz na zdroj provede při vytváření balíčku NuGet a vloží zdrojová metadata ovládací prvek uvnitř sestavení a balíček. Vývojáři, kteří Stáhnout balíček a odkaz na zdroj povolené v sadě Visual Studio můžete krokovat s vnořením jeho zdrojový kód. Zdrojový odkaz poskytuje metadata ovládací prvek zdroje k vytvoření skvělé možnosti ladění.
+Zdrojový odkaz je technologie, která umožňuje ladění zdrojového kódu ze sestavení .NET z NuGet vývojářů. Zdrojový odkaz se spustí při vytváření balíčku NuGet a vloží metadata správy zdrojového kódu do sestavení a balíčku. Vývojáři, kteří si balíček stáhli a mají povolený odkaz na zdroj v rámci sady Visual Studio, mohou krokovat se svým zdrojovým kódem. Odkaz na zdroj poskytuje metadata správy zdrojového kódu pro vytvoření skvělého prostředí ladění.
 
-## <a name="source-link-demo"></a>Ukázka odkaz zdroje
+## <a name="source-link-demo"></a>Ukázka zdrojového odkazu
 
 > [!VIDEO https://www.youtube.com/embed/gyRGhCQPkB4?start=61]
 
-## <a name="using-source-link"></a>Pomocí zdrojového odkazu
+## <a name="using-source-link"></a>Použití odkazu na zdroj
 
-Pokyny, jak pomocí zdrojového odkazu můžete najít na [dotnet/sourcelink](https://github.com/dotnet/sourcelink/blob/master/README.md) úložiště GitHub.
+Pokyny pro použití zdrojového odkazu najdete v úložišti GitHub [/sourcelink](https://github.com/dotnet/sourcelink/blob/master/README.md) GitHubu.
 
-Můžete použít [NuGet – Průzkumník balíčků](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) potvrďte, že odkaz na zdroj metadat úspěšně vloženy do balíčku. Zkontrolujte `Repository` metadata jsou k dispozici s identifikátorem komentář a soubory PDB se nachází na každém cíli .dll.
+Pomocí [Průzkumníka balíčků NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) můžete zkontrolovat, jestli se metadata zdrojového odkazu úspěšně vložila do balíčku. Ověřte, že metadata jsou k dispozici s identifikátorem komentáře a že jsou umístěny soubory. pdb s každou cílovou knihovnou DLL. `Repository`
 
-![Zdrojový odkaz v Průzkumníku balíčků NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "zdrojový odkaz v Průzkumníku balíčků NuGet")
+![Odkaz na zdroj v Průzkumníkovi balíčků NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Odkaz na zdroj v Průzkumníkovi balíčků NuGet")
 
-**✔️ ZVAŽTE** pomocí zdrojového odkazu pro přidání metadata ovládací prvek zdroje k sestavení a balíčky NuGet.
+**✔️ zvažte** použití odkazu na zdroj k přidání metadat správy zdrojového kódu do sestavení a balíčků NuGet.
 
 > [!TIP]
-> Přidáním atributů ladicího programu na daný typ můžete dále vylepšit možnosti ladění pro vývojáře.
-> * <xref:System.Diagnostics.DebuggerDisplayAttribute> můžete přizpůsobit, jak třídy nebo pole se zobrazí v oknech proměnných ladicího programu.
-> * <xref:System.Diagnostics.DebuggerStepThroughAttribute> Dává pokyn ladicímu programu vstup do kódu místo krokování s vnořením do kódu.
-> * <xref:System.Diagnostics.DebuggerBrowsableAttribute> Určuje, zda člen je zobrazeno v oknech proměnných ladicího programu.
+> Můžete dál vylepšit možnosti ladění vývojářů přidáním atributů ladicího programu do vašich typů.
+>
+> * <xref:System.Diagnostics.DebuggerDisplayAttribute>může přizpůsobit způsob zobrazení třídy nebo pole v oknech proměnných ladicího programu.
+> * <xref:System.Diagnostics.DebuggerStepThroughAttribute>instruuje ladicí program, aby procházel kód místo krokování s kódem.
+> * <xref:System.Diagnostics.DebuggerBrowsableAttribute>Určuje, zda je člen zobrazen v oknech proměnných ladicího programu.
 
-**✔️ ZVAŽTE** publikování souborů symbolů (`*.pdb`).
+**✔️ zvažte** publikování souborů symbolů (`*.pdb`).
 
-> Pro nejlepší možnosti ladění knihovny by měl publikovat soubory symbolů také pomocí odkazu na zdroj. Další informace o soubory symbolů a balíčky symbolů, naleznete v tématu [Symbol balíčky](./nuget.md#symbol-packages).
+> Pro nejlepší prostředí ladění by knihovna měla publikovat soubory symbolů a také odkaz použít zdroj. Další informace o souborech symbolů a balíčcích symbolů najdete v tématu [balíčky symbolů](./nuget.md#symbol-packages).
 
 >[!div class="step-by-step"]
->[Předchozí](dependencies.md)
->[další](publish-nuget-package.md)
+>[Předchozí](dependencies.md)Další
+>[](publish-nuget-package.md)

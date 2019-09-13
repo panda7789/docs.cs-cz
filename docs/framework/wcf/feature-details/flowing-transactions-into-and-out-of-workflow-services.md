@@ -2,12 +2,12 @@
 title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-ms.openlocfilehash: ae99c53bbb859f3ade075d4d60ad2ae7e5e7272b
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: db1a1ef6bcf3f048584b39450c90fac3ff35646b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988810"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70893381"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby se operace služby stala součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu <xref:System.ServiceModel.Activities.TransactedReceiveScope> do aktivity. Všechna volání prováděná <xref:System.ServiceModel.Activities.Send> <xref:System.ServiceModel.Activities.SendReply> aktivitou nebo v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> budou také vytvořena v rámci okolí transakce. Klientská aplikace pracovního postupu může vytvořit okolí transakce <xref:System.Activities.Statements.TransactionScope> pomocí aktivity služby a volat operace služeb pomocí ambientní transakce. Toto téma vás provede vytvořením služby pracovního postupu a klienta pracovního postupu, který se účastní transakcí.  
@@ -37,7 +37,7 @@ Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby s
   
 3. `PrintTransactionInfo` Přidejte`Common` do projektu novou třídu s názvem. Tato třída je odvozena <xref:System.Activities.NativeActivity> z a přetížení <xref:System.Activities.NativeActivity.Execute%2A> metody.  
   
-    ```  
+    ```csharp
     using System;  
     using System;  
     using System.Activities;  
@@ -86,7 +86,7 @@ Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby s
   
      ! [Přidání aktivity WriteLine do aktivity sekvenční služby (./Media/Flowing-Transactions-into-and-out-of-Workflow-Services/Add-WriteLine-Sequential-Service.jpg)  
   
-4. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Přetáhněte<xref:System.Activities.Statements.WriteLine> za aktivitu. Aktivitu najdete v části pro zasílání **zpráv** v **sadě nástrojů.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivita se skládá ze dvou částí **žádosti** a **textu.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Část **žádosti** obsahuje <xref:System.ServiceModel.Activities.Receive> aktivitu. Oddíl **text** obsahuje aktivity, které se mají provést v rámci transakce po přijetí zprávy.  
+4. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Přetáhněte<xref:System.Activities.Statements.WriteLine> za aktivitu. Aktivitu najdete v části pro **zasílání zpráv** v **sadě nástrojů.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Aktivita se skládá ze dvou částí **žádosti** a **textu.** <xref:System.ServiceModel.Activities.TransactedReceiveScope> Část **žádosti** obsahuje <xref:System.ServiceModel.Activities.Receive> aktivitu. Oddíl **text** obsahuje aktivity, které se mají provést v rámci transakce po přijetí zprávy.  
   
      ![Přidání aktivity TransactedReceiveScope](./media/flowing-transactions-into-and-out-of-workflow-services/transactedreceivescope-activity.jpg)  
   
@@ -223,8 +223,8 @@ Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby s
   
 2. Otevřete vygenerovaný soubor Program.cs a následující kód:  
   
-    ```  
-    static void Main()  
+    ```csharp
+          static void Main()  
           {  
               Console.WriteLine("Building the server.");  
               using (WorkflowServiceHost host = new WorkflowServiceHost(new DeclarativeServiceWorkflow(), new Uri("net.tcp://localhost:8000/TransactedReceiveService/Declarative")))  
@@ -263,8 +263,8 @@ Služby pracovních postupů a klienti se můžou zúčastnit transakcí.  Aby s
   
 2. Otevřete soubor program.cs a přidejte následující kód.  
   
-    ```  
-    class Program  
+    ```csharp
+        class Program  
         {  
   
             private static AutoResetEvent syncEvent = new AutoResetEvent(false);  

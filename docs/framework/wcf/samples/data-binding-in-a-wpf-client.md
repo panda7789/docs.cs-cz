@@ -2,12 +2,12 @@
 title: Datové vazby v klientovi Windows Presentation Foundation
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-ms.openlocfilehash: 791afee9772a6f06e57fdd09ad8a47db2bd8ca63
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b0f1eb8ca154ab8e37a15b35097f746662511f7c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045099"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928624"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Datové vazby v klientovi Windows Presentation Foundation
 Tato ukázka demonstruje použití datových vazeb v klientu Windows Presentation Foundation (WPF). Ukázka používá službu Windows Communication Foundation (WCF), která náhodně generuje pole alb pro návrat do klienta. Každé album má název, cenu a seznam skladeb alba. Stopy alba mají název a dobu trvání. Informace, které služba vrací, jsou automaticky svázány s uživatelským rozhraním (UI) poskytovaným klientem Windows Presentation Foundation (WPF).  
@@ -17,7 +17,7 @@ Tato ukázka demonstruje použití datových vazeb v klientu Windows Presentatio
   
  Datová vazba umožňuje, aby byl zdroj dat automaticky svázán s uživatelským rozhraním. Tím se zjednoduší programovací model, protože nevyžaduje, abyste programově aktualizovali jednotlivé prvky uživatelského rozhraní daty z datového objektu nebo pole datových objektů. Můžete vytvořit vazby objektu k jednomu prvku uživatelského rozhraní nebo poli k ovládacímu prvku, který přijímá více vstupů, jako je `ListBox`například. Následující kód ukazuje, jak vytvořit vazby dat k `DataContext` prvku uživatelského rozhraní.  
   
-```  
+```csharp  
 // Event handler executed when call is complete  
 void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs e)  
 {  

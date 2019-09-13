@@ -3,12 +3,12 @@ title: Použití funkcí pro porovnávání vzorů k rozšiřování datových t
 description: Tento rozšířený kurz ukazuje, jak používat techniky porovnávání vzorů k vytváření funkcionality pomocí dat a algoritmů, které se vytvářejí samostatně.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: b142bad9a4058a884d9e511424bc50856152b67e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 366791b113d3b1f9ccef303553a3656f7e803a32
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105557"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926658"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití funkcí pro porovnávání vzorů k rozšiřování datových typů
 
@@ -17,6 +17,7 @@ C#7 představil základní funkce pro porovnávání vzorů. Tyto funkce se v C#
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
+>
 > - Rozpoznává situace, kde by se měla použít porovnávání vzorů.
 > - Použijte výrazy porovnávání vzorů k implementaci chování založeného na typech a hodnotách vlastností.
 > - Kombinací porovnávání vzorů s jinými technikami vytvoříte kompletní algoritmy.
@@ -48,7 +49,7 @@ Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https:/
 Scénář použitý v tomto kurzu zvýrazňuje druhy problémů, které porovnávání vzorů je vhodné pro řešení:
 
 - Objekty, se kterými potřebujete pracovat, nejsou v hierarchii objektů, které odpovídají vašim cílům. Možná budete pracovat s třídami, které jsou součástí nesouvisejících systémů.
-- Funkce, kterou přidáváte, není součástí základní abstrakce pro tyto třídy. Telefonní linka placená změnou vozidla pro různé typy vozidel, ale placená linka není základní funkcí vozidla.
+- Funkce, kterou přidáváte, není součástí základní abstrakce pro tyto třídy. Telefonní linka *placená změnou vozidla pro různé* typy vozidel, ale placená linka není základní funkcí vozidla.
 
 Pokud *tvar* dat a *operace* na těchto datech nejsou popsány společně, funkce pro porovnávání vzorů v C# nástroji usnadňuje práci s.
 
@@ -295,22 +296,22 @@ V následující tabulce jsou uvedeny kombinace vstupních hodnot a násobitele 
 
 | Den        | Time         | Směr | Premium |
 | ---------- | ------------ | --------- |--------:|
-| Názvy    | ráno nespěcháte | příjem   | × 2,00  |
-| Názvy    | ráno nespěcháte | komunikace  | × 1,00  |
-| Názvy    | Daytime      | příjem   | × 1,50  |
-| Názvy    | Daytime      | komunikace  | × 1,50  |
-| Názvy    | večerní nespěcháte | příjem   | × 1,00  |
-| Názvy    | večerní nespěcháte | komunikace  | × 2,00  |
-| Názvy    | přes noc    | příjem   | × 0,75  |
-| Názvy    | přes noc    | komunikace  | × 0,75  |
-| Volné    | ráno nespěcháte | příjem   | × 1,00  |
-| Volné    | ráno nespěcháte | komunikace  | × 1,00  |
-| Volné    | Daytime      | příjem   | × 1,00  |
-| Volné    | Daytime      | komunikace  | × 1,00  |
-| Volné    | večerní nespěcháte | příjem   | × 1,00  |
-| Volné    | večerní nespěcháte | komunikace  | × 1,00  |
-| Volné    | přes noc    | příjem   | × 1,00  |
-| Volné    | přes noc    | komunikace  | × 1,00  |
+| Názvy    | ráno nespěcháte | Příjem   | × 2,00  |
+| Názvy    | ráno nespěcháte | Komunikace  | × 1,00  |
+| Názvy    | Daytime      | Příjem   | × 1,50  |
+| Názvy    | Daytime      | Komunikace  | × 1,50  |
+| Názvy    | večerní nespěcháte | Příjem   | × 1,00  |
+| Názvy    | večerní nespěcháte | Komunikace  | × 2,00  |
+| Názvy    | přes noc    | Příjem   | × 0,75  |
+| Názvy    | přes noc    | Komunikace  | × 0,75  |
+| Volné    | ráno nespěcháte | Příjem   | × 1,00  |
+| Volné    | ráno nespěcháte | Komunikace  | × 1,00  |
+| Volné    | Daytime      | Příjem   | × 1,00  |
+| Volné    | Daytime      | Komunikace  | × 1,00  |
+| Volné    | večerní nespěcháte | Příjem   | × 1,00  |
+| Volné    | večerní nespěcháte | Komunikace  | × 1,00  |
+| Volné    | přes noc    | Příjem   | × 1,00  |
+| Volné    | přes noc    | Komunikace  | × 1,00  |
 
 Existují 16 různých kombinací tří proměnných. Kombinací některých podmínek zjednodušete výraz finálního přepínače.
 

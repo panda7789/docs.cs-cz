@@ -4,12 +4,12 @@ description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: adc4e1f3249cd72c423430ad4cb5dbb8eea8baf9
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cb761524976125c816aae925f0c369eb8c76e7de
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676700"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926473"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
 
@@ -77,7 +77,7 @@ Pak můžete vytvořit řídicí panel Power BI, abyste získali přehled o shro
 
 ![Příklad Power BI](./media/power-bi-example.png)
 
-Úplné úložiště propojení – úložiště s pokyny jsou k dispozici zde: [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener). O zjednodušené verzi si můžete přečíst tady: [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/).
+Úplné úložiště propojení – úložiště s pokyny jsou k dispozici zde: [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener). O zjednodušené verzi si můžete přečíst tady: [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/).
 
 ## <a name="verify-device-connectivity-using-a-ping"></a>Ověření připojení zařízení pomocí příkazů pro odeslání
 
@@ -89,7 +89,7 @@ Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příka
 
 * [Generátor Azure Functions Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
 * [Azure IoT Hub – příkazy pro odesílání](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
-* [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/)
+* [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
 * [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17)
 * [Import testovacího prostředí CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
 * [Připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue)

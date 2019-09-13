@@ -4,16 +4,17 @@ description: Prozkoumejte komponenty pro inženýry funkcí podporované v ML.NE
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: cbcdef5b8f5f6334d5545f100976347ade9ee6fd
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 25da3cceb3c9090661b34254ed240207aaf3b9d7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68671874"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929246"
 ---
 # <a name="data-transformations"></a>Transformace dat
 
 Transformace dat slouží k těmto akcím:
+
 - Příprava dat pro školení modelů
 - použití importovaného modelu ve formátu TensorFlow nebo ONNX
 - data po zpracování poté, co byla předána pomocí modelu

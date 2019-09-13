@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fef5894f7452bd32cc4e43433aa60166db241a12
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 85d64a5577acdaa15a40ae308eb728d75d6a4c69
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910604"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894498"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamickým programováním
 > [!NOTE]
@@ -17,7 +17,7 @@ ms.locfileid: "69910604"
   
  Ne všechna selhání při vyhledávání metadat v aplikacích vyvinutých pomocí řetězu nástrojů .NET Native způsobily výjimku.  Některé mohou v aplikaci v nepředvídatelných způsobech manifestovat.  Následující příklad ukazuje narušení přístupu způsobené odkazem na objekt s hodnotou null:  
   
-```  
+```output
 Access violation - code c0000005 (first chance)  
 App!$3_App::Core::Util::NavigationArgs.Setup  
 App!$3_App::Core::Util::NavigationArgs..ctor  
@@ -38,9 +38,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 ## <a name="what-was-the-app-doing"></a>Jakou aplikaci dělá?  
  První věcí, kterou je třeba poznamenat, je klíčové slovo, `async` které je základem zásobníku.  Určení toho, co aplikace skutečně prováděla v `async` metodě může být problematické, protože zásobník ztratil kontext původního volání a `async` spustil kód v jiném vlákně. Můžeme ale odvodit, že se aplikace pokouší načíst první stránku.  V implementaci pro `NavigationArgs.Setup`, následující kód způsobil porušení přístupu:  
   
-```  
-AppViewModel.Current.LayoutVM.PageMap  
-```  
+`AppViewModel.Current.LayoutVM.PageMap`  
   
  V této instanci `LayoutVM` `AppViewModel.Current` vlastnost měla **hodnotu null**.  Některé z absencí metadat způsobily malý rozdíl v chování a způsobily neinicializované vlastnosti namísto set, jak očekává aplikace.  Nastavení zarážky v kódu, kde `LayoutVM` by mělo být inicializováno, může vyvolat světlo v situaci.  Upozorňujeme však, že `LayoutVM`typ je. `App.Core.ViewModels.Layout.LayoutApplicationVM`  V souboru Rd. XML je zatím přítomna jediná direktiva metadat:  
   

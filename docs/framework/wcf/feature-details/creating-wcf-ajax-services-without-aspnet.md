@@ -2,12 +2,12 @@
 title: Vytváření služeb WCF AJAX bez ASP.NET
 ms.date: 03/30/2017
 ms.assetid: ba4a7d1b-e277-4978-9f62-37684e6dc934
-ms.openlocfilehash: f850d8649f1d67fe916542bfb025afb7cb3f852b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 04d2831407f4aa32c72aabbbff0e6fdde769bd23
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856143"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895086"
 ---
 # <a name="creating-wcf-ajax-services-without-aspnet"></a>Vytváření služeb WCF AJAX bez ASP.NET
 Služba Windows Communication Foundation (WCF) AJAX Services je dostupná z libovolné webové stránky s podporou JavaScriptu, aniž by to vyžadovalo ASP.NET AJAX. Toto téma popisuje, jak vytvořit takovou službu WCF.  
@@ -25,7 +25,7 @@ Služba Windows Communication Foundation (WCF) AJAX Services je dostupná z libo
 ## <a name="creating-an-ajax-endpoint"></a>Vytvoření koncového bodu AJAX  
  Nejzákladnější způsob, jak povolit podporu AJAX ve službě WCF, je použít <xref:System.ServiceModel.Activation.WebServiceHostFactory> v souboru. svc přidruženého ke službě, jak je uvedeno v následujícím příkladu.  
   
-```svc
+```text
 <%ServiceHost   
     language=c#  
     Debug="true"  

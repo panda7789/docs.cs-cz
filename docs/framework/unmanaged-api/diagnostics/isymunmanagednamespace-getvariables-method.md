@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c5b65cdeb36b8abf17c74d41a7fc7dfb34fa5731
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 813f57377c1885b09190ada3c73f4391a3f2d931
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939487"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895059"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables – metoda
 Vrátí všechny proměnné definované v globálním oboru v rámci tohoto oboru názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT GetVariables(  
     [in]  ULONG32  cVars,  
     [out] ULONG32  *pcVars,  
@@ -39,19 +39,19 @@ HRESULT GetVariables(
   
 ## <a name="parameters"></a>Parametry  
  `cVars`  
- [in] A `ULONG32` , který označuje velikost `pVars` pole.  
+ pro Který označuje velikost `pVars`pole. `ULONG32`  
   
  `pcVars`  
- [out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat obory názvů.  
+ mimo Ukazatel na `ULONG32` , který přijímá velikost vyrovnávací paměti vyžadované k omezení oboru názvů.  
   
  `pVars`  
- [out] Ukazatel do vyrovnávací paměti, která obsahuje obory názvů.  
+ mimo Ukazatel na vyrovnávací paměť, která obsahuje obory názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Hlaviček** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

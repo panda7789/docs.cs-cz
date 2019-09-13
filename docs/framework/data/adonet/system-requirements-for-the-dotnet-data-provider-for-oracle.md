@@ -2,12 +2,12 @@
 title: Požadavky na systém pro Zprostředkovatel dat .NET Framework pro Oracle
 ms.date: 03/30/2017
 ms.assetid: 054f76b9-1737-43f0-8160-84a00a387217
-ms.openlocfilehash: 330bad6f58b1ba6b0d2fdb2baa86a04374946e80
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b64a84b8d8246bae9028a6ca710f0a62cc85bf79
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780575"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894376"
 ---
 # <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Požadavky na systém pro Zprostředkovatel dat .NET Framework pro Oracle
 Zprostředkovatel dat .NET Framework pro Oracle vyžaduje součásti MDAC (Microsoft Data Access Components) verze 2,6 nebo novější. Je doporučeno rozhraní MDAC 2,8 SP1.  
@@ -22,9 +22,7 @@ Zprostředkovatel dat .NET Framework pro Oracle vyžaduje součásti MDAC (Micro
 ### <a name="setting-the-unicode-value-in-a-connection-string-attribute"></a>Nastavení hodnoty Unicode v atributu připojovacího řetězce  
  Při práci s Oracle můžete použít atribut připojovací řetězec.  
   
-```  
-Unicode=True   
-```  
+`Unicode=True`
   
  pro inicializaci klientských knihoven Oracle v režimu UTF-16. To způsobí, že klientské knihovny Oracle přijmou UTF-16 (což je velmi podobné UCS-2) místo vícebajtových řetězců. To umožňuje Zprostředkovatel dat pro Oracle vždycky pracovat s jakoukoli znakovou stránkou Oracle bez nutnosti dalšího překladu. Tato konfigurace funguje jenom v případě, že používáte klienty Oracle 9i ke komunikaci s databází Oracle 9i s použitím alternativní znakové sady AL16UTF16. Když klient Oracle 9i komunikuje se serverem Oracle 9i, pro převod hodnot **CommandText** v kódování Unicode na příslušnou vícebajtovou znakovou sadu, kterou používá server Oracle9i, se vyžaduje další prostředky. K tomu může dojít, když víte, že máte bezpečnou konfiguraci přidáním `Unicode=True` do připojovacího řetězce.  
   

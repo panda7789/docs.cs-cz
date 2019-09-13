@@ -2,41 +2,41 @@
 title: CustomChannelsTester
 ms.date: 03/30/2017
 ms.assetid: ee1fa307-98b1-4647-8860-2e9217ba6082
-ms.openlocfilehash: 1517a2eb73da778c9b84ff857f4b8ad2b4334498
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 0d77af319e18868ce7d600269cd9afaa0c4ce2c6
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425009"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928646"
 ---
 # <a name="customchannelstester"></a>CustomChannelsTester
-`CustomChannelsTester` Je nástroj, který můžete použít k otestování implementace vaší vlastní kanál s pomocí sady předdefinovaných servisní smlouvy. Můžete vybrat sadu kontrakty služeb a předat nástroji pomocí souboru XML. Nástroj poté vygeneruje službu a klienta, která zpracovává vaše implementace vlastního kanálu při výměně zpráv.  
+`CustomChannelsTester` Je nástroj, který můžete použít k otestování vlastních implementací kanálu na základě sady předdefinovaných kontraktů služeb. Můžete vybrat sadu kontraktů služby a předat ji nástroji pomocí souboru XML. Nástroj pak vygeneruje službu a klienta, které během výměny zpráv vykonává implementace vlastních kanálů.  
   
-### <a name="to-build-the-tool"></a>K sestavení nástroj  
+### <a name="to-build-the-tool"></a>Sestavení nástroje  
   
-1. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. Sestavování řešení se vytvoří tři soubory: CustomChannelsTester.exe TestSpec.xml a SampleRun.cmd. Ukázka příkazového řádku, který ukazuje, jak tento nástroj použijte k testování má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
+2. Sestavení řešení generuje tři soubory: CustomChannelsTester. exe, TestSpec. XML a SampleRun. cmd. Soubor SampleRun. cmd obsahuje vzorový příkazový řádek, který ukazuje, jak tento nástroj použít k otestování [přenosu: Ukázka](../../../../docs/framework/wcf/samples/transport-udp.md) UDP  
   
-### <a name="to-run-the-tool"></a>Chcete-li spustit nástroj  
+### <a name="to-run-the-tool"></a>Spuštění nástroje  
   
 - Na příkazovém řádku zadejte následující příkaz:  
   
-    ```  
+    ```console  
     CustomChannelsTester.exe /binding:YourCustomBindngName /dll:TheAssemblyWhereThisTypeisDefined /testspec:XmlFileNameWhichContainsTestOptions  
     ```  
   
-     Použití `/binding` možnost je vyžadována.  
+     `/binding` Použití možnosti je povinné.  
   
-     `/dll` Pokud "vazba" není k dispozici ve Windows Communication Foundation (WCF) vazeb poskytovaných systémem je povinný.  
+     `/dll`je vyžadováno, pokud "Binding" není vazba poskytnutá systémem, kterou poskytuje Windows Communication Foundation (WCF).  
   
-     `/testspec` je volitelný.  
+     `/testspec`je volitelné.  
   
-     Tím se vytvoří serverem a klienty na základě specifikací testu a vazby.  
+     Tím se vytvoří server a klienti na základě specifikací testu a vazby.  
   
-     Spustí klienta a serveru a vrátí výsledky.  
+     Spustí klienta a Server a vrátí výsledky.  
   
-     Následuje ukázkový soubor XML pro popis testu specifikace (testspec.xml):  
+     Následuje ukázkový soubor XML pro popis specifikací testu (TestSpec. XML):  
   
     ```xml  
     <TestSpec xmlns="http://WCF/TestSpec" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"   

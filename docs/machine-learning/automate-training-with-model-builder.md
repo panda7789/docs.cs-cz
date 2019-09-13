@@ -4,12 +4,12 @@ description: Postup pro automatické učení modelu Machine Learning pomocí Tv�
 author: natke
 ms.date: 08/07/2019
 ms.custom: overview
-ms.openlocfilehash: 715c9f5854d9691fd9fc2cd771d38456405836ec
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 77b5e75fede1a4aa93eadcf7e21591d82f565cab
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104857"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929472"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je tvůrce modelů a jak to funguje?
 
@@ -29,6 +29,7 @@ K používání tvůrce modelů nepotřebujete odborné znalosti strojového uč
 Můžete přenášet mnoho různých scénářů do Tvůrce modelů a vygenerovat pro svou aplikaci model strojového učení.
 
 Scénář je popis typu předpovědi, kterou chcete použít pro vaše data. Příklad:
+
 - Předpověď budoucího objemu prodejů produktů na základě historických dat o prodeji
 - klasifikace zabarvení jako kladné nebo záporné na základě revizí zákazníků
 - zjištění, zda je bankovní transakce podvodný
@@ -41,6 +42,7 @@ V Tvůrci modelů musíte vybrat typ modelu Machine Learning. Typ modelu závis�
 Pro scénáře, které předpovídá číslo, se zavolá `regression`typ modelu Machine Learning.
 
 Pro scénáře, které předpovídá kategorii, je `classification`typ modelu. Existují dva typy klasifikace:
+
 - kde jsou pouze 2 kategorie: `binary classification`.
 - kde jsou tři nebo více kategorií: `multiclass classification`.
 
@@ -89,10 +91,12 @@ Po zvolení typu modelu bude tvůrce modelů požádán o poskytnutí datové sa
 ### <a name="choose-the-output-to-predict-label"></a>Vyberte výstup, který chcete předpovědět (popisek)
 
 Datová sada je tabulka řádků příkladů cvičení a sloupce atributů. Každý řádek má:
+
 - **popisek** (atribut, který chcete předpovědět)
 - **funkce** (atributy, které se používají jako vstupy pro předpověď popisku).
 
 Pro scénář předpovědi pro domácí ceny můžou tyto funkce:
+
 - čtvercové záběry domu
 - počet ložnicemi a bathrooms
 - PSČ
@@ -107,11 +111,11 @@ Pokud ještě nemáte vlastní data, vyzkoušejte jednu z těchto datových sad:
 
 |Scénář|Typ modelu|Data|Popisek|Funkce|
 |-|-|-|-|-|
-|Předpověď ceny|nevýhody|[data taxislužby tarifů](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Vozov|Doba odezvy, vzdálenost|
-|Detekce anomálií|binární klasifikace|[prodejní data produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktu|Měsíčně|
-|Analýza mínění|binární klasifikace|[data komentáře webu](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0, pokud je negativní mínění, 1 Při kladném)|Komentář, rok|
-|Zjišťování podvodů|binární klasifikace|[data platebních karet](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1, pokud je podvodný, 0 jinak)|Množství, V1-v28 (funkce Anonyme)|
-|Klasifikace textu|klasifikace s více třídami|[Data o problému na GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
+|Předpověď ceny|Nevýhody|[data taxislužby tarifů](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Vozov|Doba odezvy, vzdálenost|
+|Detekce anomálií|Binární klasifikace|[prodejní data produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktu|Měsíčně|
+|Analýza mínění|Binární klasifikace|[data komentáře webu](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0, pokud je negativní mínění, 1 Při kladném)|Komentář, rok|
+|Zjišťování podvodů|Binární klasifikace|[data platebních karet](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1, pokud je podvodný, 0 jinak)|Množství, V1-v28 (funkce Anonyme)|
+|Klasifikace textu|Klasifikace s více třídami|[Data o problému na GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
 
 ## <a name="train"></a>Trénování
 
@@ -123,7 +127,7 @@ Když vyberete svůj scénář, data a popisek, tvůrce modelů navlakuje model.
 
 Vzhledem k tomu, že tvůrce modelů používá automatizované Machine Learning (AutoML), nevyžaduje během školení žádné vstupy nebo ladění.
 
-## <a name="evaluate"></a>Vyhodnotit
+## <a name="evaluate"></a>vyhodnotit
 
 Vyhodnocení je proces použití výukového modelu k vytvoření předpovědi s novými testovacími daty a k měření toho, jak dobrý je předpovědi.
 

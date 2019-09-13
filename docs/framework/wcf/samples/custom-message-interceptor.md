@@ -2,12 +2,12 @@
 title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 4a91078ddb8eb66f1ee0f957005e9a0d290370c8
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: daa041bf63442dace0d33e1e3207d0857b6b7312
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045603"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928909"
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
 Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně ukazuje, jak implementovat vlastní prvek vazby, který vytváří objekty pro vytváření kanálů a naslouchací procesy kanálu pro zachycení všech příchozích a odchozích zpráv v určitém bodě v zásobníku běhu. Ukázka zahrnuje také klienta a server, který předvádí použití těchto vlastních továrn.  
@@ -44,25 +44,35 @@ Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně
   
  Tyto třídy přebírají interní továrnu a naslouchací proces a přesměrují `OnCreateChannel` vše `OnAcceptChannel` , ale volání a do interního továrny a naslouchacího procesu.  
   
-```  
+```csharp  
 class InterceptingChannelFactory<TChannel> : ChannelFactoryBase<TChannel>  
-{ ... }  
+{ 
+    //... 
+}
+
 class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>  
-{ ... }  
+{ 
+    //...
+}  
 ```  
   
 ## <a name="adding-a-binding-element"></a>Přidání elementu vazby  
  Ukázka definuje vlastní prvek vazby: `InterceptingBindingElement`. `InterceptingBindingElement`provede jako vstup a použije to `ChannelMessageInterceptor` k manipulaci se zprávami, které ji procházejí. `ChannelMessageInterceptor` Toto je jediná třída, která musí být veřejná. Továrny, naslouchací proces a kanály můžou být interními implementacemi pro veřejná rozhraní za běhu.  
   
-```  
-public class InterceptingBindingElement : BindingElement  
+```csharp
+public class InterceptingBindingElement : BindingElement 
+{
+}
 ```  
   
 ## <a name="adding-configuration-support"></a>Přidání podpory konfigurace  
  Pro integraci s konfigurací vazby knihovna definuje obslužnou rutinu konfiguračního oddílu jako rozšíření elementu vazby. Konfigurační soubory klienta a serveru musí registrovat rozšíření elementu vazby s konfiguračním systémem. Implementátori, kteří chtějí zveřejnit svůj element vazby do konfiguračního systému, lze odvodit z této třídy.  
   
-```  
-public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
+```csharp
+public abstract class InterceptingElement : BindingElementExtensionElement 
+{ 
+    //... 
+}
 ```  
   
 ## <a name="adding-policy"></a>Přidávání zásad  
@@ -71,7 +81,7 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
 ## <a name="example-droppable-message-inspector"></a>Příklad: Droppable Message Inspector  
  Zahrnuté v ukázce je příklad implementace `ChannelMessageInspector` , která vyřazuje zprávy.  
   
-```  
+```csharp  
 class DroppingServerElement : InterceptingElement  
 {  
     protected override ChannelMessageInterceptor CreateMessageInterceptor()  
@@ -114,7 +124,7 @@ class DroppingServerElement : InterceptingElement
   
  Po spuštění služby a poté klientovi by se měl zobrazit následující výstup klienta.  
   
-```  
+```console  
 Reporting the next 10 wind speed  
 100 kph  
 Server dropped a message.  
@@ -138,24 +148,24 @@ Press ENTER to shut down client
   
  Ve službě by se měl zobrazit následující výstup:  
   
-```  
+```console  
 Press ENTER to exit.  
 Dangerous wind detected! Reported speed (90) is greater than 64 kph.  
 Dangerous wind detected! Reported speed (70) is greater than 64 kph.  
 5 wind speed reports have been received.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.  
   
-    ```  
+    ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
 2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

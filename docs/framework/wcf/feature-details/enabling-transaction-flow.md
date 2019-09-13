@@ -4,77 +4,77 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-ms.openlocfilehash: 560b03b8e2788c88e6c92c64834bf36c750575ea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2443e82dd9c6d8b5447c2fa16b537a9feed8ddaf
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626947"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895154"
 ---
 # <a name="enabling-transaction-flow"></a>Povolení toku transakcí
-Windows Communication Foundation (WCF) poskytuje vysoce flexibilní možnosti pro řízení toku transakce. Nastavení toku transakce služby lze vyjádřit pomocí kombinace atributů a konfigurace.  
+Windows Communication Foundation (WCF) poskytuje vysoce flexibilní možnosti pro řízení toku transakce. Nastavení toku transakce služby lze vyjádřit pomocí kombinace atributů a konfigurací.  
   
-## <a name="transaction-flow-settings"></a>Nastavení toku transakcí  
- Nastavení toku transakce jsou generovány pro koncový bod služby v důsledku je určena průsečíkem následujících tří hodnot:  
+## <a name="transaction-flow-settings"></a>Nastavení toku transakce  
+ Nastavení toku transakce jsou generována pro koncový bod služby v důsledku průniku následujících tří hodnot:  
   
-- <xref:System.ServiceModel.TransactionFlowAttribute> Atribut zadaný pro každé metodě v kontraktu služby.  
+- <xref:System.ServiceModel.TransactionFlowAttribute> Atribut zadaný pro každou metodu v kontraktu služby.  
   
-- `TransactionFlow` Vazby vlastností v konkrétní vazby.  
+- Vlastnost `TransactionFlow` Binding v konkrétní vazbě.  
   
-- `TransactionFlowProtocol` Vazby vlastností v konkrétní vazby. `TransactionFlowProtocol` Vazby vlastností můžete zvolit mezi dva různé transakční protokoly, že vám pomůže transakce. Následující části stručně popisují každou z nich.  
+- Vlastnost `TransactionFlowProtocol` Binding v konkrétní vazbě. Vlastnost `TransactionFlowProtocol` Binding umožňuje zvolit ze dvou různých transakčních protokolů, které lze použít k flowování transakce. Následující části stručně popisují každou z nich.  
   
 ### <a name="ws-atomictransaction-protocol"></a>Protokol WS-AtomicTransaction  
- Protokol WS-AtomicTransaction (WS-AT) je užitečná v případech, pokud je nutné použít vzájemná funkční spolupráce s sad protokolů třetích stran.  
+ Protokol WS-AtomicTransaction (WS-AT) je užitečný pro scénáře, kdy je potřeba vzájemná funkční spolupráce se zásobníky protokolů třetích stran.  
   
-### <a name="oletransactions-protocol"></a>Protokolu OleTransactions  
- Protokolu OleTransactions je užitečné pro scénáře, když vzájemná funkční spolupráce s sad protokolů třetí strany se nevyžaduje a deployer služby ví předem, že služba protokol WS-AT zakázána místně nebo neodpovídá existující topologie sítě upřednostnit není využití WS-AT.  
+### <a name="oletransactions-protocol"></a>Protokol OleTransactions  
+ Protokol OleTransactions je vhodný pro scénáře, kdy se nepodporuje interoperabilita se zásobníky protokolů jiných výrobců, a nasazování služby ví předem, že je služba protokolu WS-AT zakázaná místně, nebo že existující topologie sítě. Nepoužívejte upřednostnění použití WS-AT.  
   
- V následující tabulce jsou uvedeny různé typy toků transakce, které můžete vygenerovat pomocí těchto různých kombinací.  
+ V následující tabulce jsou uvedeny různé typy toků transakcí, které lze vygenerovat pomocí těchto různých kombinací.  
   
-|TransactionFlow<br /><br /> vazba|Vlastnost binding TransactionFlow|Protokol vazby TransactionFlowProtocol|Typ toku transakcí|  
+|TransactionFlow<br /><br /> vazba|Vlastnost vazby TransactionFlow|Protokol vazby TransactionFlowProtocol|Typ toku transakce|  
 |---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
-|Povinné|true|WS-AT|Transakce musí být předávány v interoperabilním formátu WS-AT.|  
-|Povinné|true|OleTransactions|Transakce musí být předávány ve formátu WCF OleTransactions.|  
-|Povinné|false|Nelze použít|Nedá se použít kvůli tato konfigurace je neplatná.|  
-|Povoleno|true|WS-AT|Transakce mohou být předávány v interoperabilním formátu WS-AT.|  
-|Povoleno|true|OleTransactions|Transakce mohou být předávány ve formátu WCF OleTransactions.|  
-|Povoleno|false|Libovolná hodnota|Transakce není naplněn.|  
-|Hodnotu NotAllowed|Libovolná hodnota|Libovolná hodnota|Transakce není naplněn.|  
+|Povinné|true|WS-AT|Transakce musí být převedena do interoperabilního formátu WS-AT.|  
+|Povinné|true|OleTransactions|Transakce musí být předávána ve formátu OleTransactions WCF.|  
+|Povinné|false|Nelze použít|Nelze použít, protože se jedná o neplatnou konfiguraci.|  
+|Povoleno|true|WS-AT|Transakce může být převedena do interoperabilního formátu WS-AT.|  
+|Povoleno|true|OleTransactions|Transakce se může přesměrovat ve formátu WCF OleTransactions.|  
+|Povoleno|false|Libovolná hodnota|Transakce není přesměrovaná.|  
+|NotAllowed|Libovolná hodnota|Libovolná hodnota|Transakce není přesměrovaná.|  
   
  Následující tabulka shrnuje výsledek zpracování zprávy.  
   
-|Příchozí zpráva|Nastavení TransactionFlow|Záhlaví transakce|Výsledek zpracování zprávy|  
+|Příchozí zpráva|Nastavení TransactionFlow|Hlavička transakce|Výsledek zpracování zprávy|  
 |----------------------|-----------------------------|------------------------|-------------------------------|  
-|Transakce odpovídá očekávanému protokol formátu|Povolené nebo povinné|`MustUnderstand` se rovná `true`.|Proces|  
-|Transakce neodpovídá očekávanému protokol formátu|Povinné|`MustUnderstand` se rovná `false`.|Odmítnout, protože je požadována transakce|  
-|Transakce neodpovídá očekávanému protokol formátu|Povoleno|`MustUnderstand` se rovná `false`.|Odmítnout, protože nebylo porozuměno záhlaví|  
-|Transakci pomocí libovolný formát protokolu|Hodnotu NotAllowed|`MustUnderstand` se rovná `false`.|Odmítnout, protože nebylo porozuměno záhlaví|  
-|Žádná transakce|Povinné|Není k dispozici|Odmítnout, protože je požadována transakce|  
+|Formát očekávaného protokolu shody transakcí|Povoleno nebo povinný|`MustUnderstand`je rovno `true`.|Proces|  
+|Transakce neodpovídá očekávanému formátu protokolu.|Povinné|`MustUnderstand`je rovno `false`.|Odmítnuto, protože transakce je povinná|  
+|Transakce neodpovídá očekávanému formátu protokolu.|Povoleno|`MustUnderstand`je rovno `false`.|Odmítnuto, protože hlavička není srozumitelná|  
+|Transakce pomocí libovolného formátu protokolu|NotAllowed|`MustUnderstand`je rovno `false`.|Odmítnuto, protože hlavička není srozumitelná|  
+|Žádná transakce|Povinné|Není k dispozici|Odmítnuto, protože transakce je povinná|  
 |Žádná transakce|Povoleno|Není k dispozici|Proces|  
-|Žádná transakce|Hodnotu NotAllowed|Není k dispozici|Proces|  
+|Žádná transakce|NotAllowed|Není k dispozici|Proces|  
   
- Zatímco jednotlivé metody na smlouvy může mít jinou transakcí toku požadavky, nastavení protokolu toku transakce je vymezen na úrovni vazby. To znamená, že všechny metody, které sdílejí stejný koncový bod (a tedy stejnou vazbu) také sdílet stejné zásady, povolení nebo vyžadování tok transakcí, stejně jako stejný protokol transakce, pokud je k dispozici.  
+ Zatímco každá metoda ve kontraktu může mít různé požadavky na tok transakce, nastavení protokolu toku transakce je vymezeno na úrovni vazby. To znamená, že všechny metody, které sdílejí stejný koncový bod (a tudíž stejnou vazbu), sdílejí také stejné zásady, které umožňují nebo vyžadují tok transakce a také stejný transakční protokol, pokud je to možné.  
   
-## <a name="enabling-transaction-flow-at-the-method-level"></a>Povolení toku transakcí na úrovni – metoda  
- Požadavky na tok transakce nejsou vždy stejný pro všechny metody v kontraktu služby. Proto WCF také poskytuje mechanismus založených na atributech umožňující předvolby toku transakce každá metoda vyjádřit. To se provádí <xref:System.ServiceModel.TransactionFlowAttribute> , který určuje úroveň, ve kterém přijímá operace služby záhlaví transakce. Pokud chcete povolit tok transakcí, byste měli označit vaše metody kontraktu služby se tento atribut. Tento atribut má jednu z hodnot <xref:System.ServiceModel.TransactionFlowOption> výčtu, ve kterém se výchozí hodnota je <xref:System.ServiceModel.TransactionFlowOption.NotAllowed>. Pokud je některá hodnota s výjimkou <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> není zadána, je potřeba metodu nesmí být jednosměrná. Vývojář můžete použít tento atribut k určení požadavků na úrovni metod transakce toku nebo omezení v době návrhu.  
+## <a name="enabling-transaction-flow-at-the-method-level"></a>Povolení toku transakce na úrovni metody  
+ Požadavky na tok transakce nejsou vždy stejné pro všechny metody v kontraktu služby. Proto WCF také poskytuje mechanismus založený na atributech, aby bylo možné vyjádřit předvolby toku transakce jednotlivých metod. To se dosahuje tím <xref:System.ServiceModel.TransactionFlowAttribute> , že určuje úroveň, ve které operace služby akceptuje hlavičku transakce. Metody kontraktu služby byste měli označit pomocí tohoto atributu, pokud chcete povolit tok transakce. Tento atribut přebírá jednu z hodnot <xref:System.ServiceModel.TransactionFlowOption> výčtu, ve které je <xref:System.ServiceModel.TransactionFlowOption.NotAllowed>výchozí hodnota. Pokud je zadána libovolná hodnota s výjimkou <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> , musí být metoda jednosměrná. Vývojář může pomocí tohoto atributu zadat požadavky nebo omezení toku transakce na úrovni metody v době návrhu.  
   
-## <a name="enabling-transaction-flow-at-the-endpoint-level"></a>Povolení toku transakcí na úrovni koncového bodu  
- Kromě nastavení toku transakcí na úrovni metod <xref:System.ServiceModel.TransactionFlowAttribute> obsahuje atribut WCF obsahuje nastavení úrovni koncového bodu pro tok transakcí a umožňuje správcům řídit tok transakcí na vyšší úrovni.  
+## <a name="enabling-transaction-flow-at-the-endpoint-level"></a>Povolení toku transakce na úrovni koncového bodu  
+ Kromě nastavení <xref:System.ServiceModel.TransactionFlowAttribute> toku transakce na úrovni metody poskytuje služba WCF nastavení pro tok transakce v rámci koncového bodu a umožňuje správcům řídit tok transakcí na vyšší úrovni.  
   
- To se provádí <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, což vám umožní povolit nebo zakázat příchozí tok transakcí v koncovém bodu vazby nastavení také k určení formátu protokolu požadované transakce pro příchozí transakce.  
+ K tomu je <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>potřeba, což umožňuje povolit nebo zakázat tok příchozích transakcí v nastaveních vazby koncového bodu a také určit požadovaný formát protokolu transakcí pro příchozí transakce.  
   
- Pokud vazba zakázal tok transakcí, ale jedna operace v kontraktu služby vyžaduje příchozí transakce, je vyvolána výjimka ověření při spuštění služby.  
+ Pokud vazba zakázala tok transakce, ale jedna z operací v kontraktu služby vyžaduje příchozí transakci, pak je vyvolána výjimka ověření při spuštění služby.  
   
- Většina stálého vazeb WCF poskytuje, obsahují `transactionFlow` a `transactionProtocol` atributy, které vám umožní nakonfigurovat konkrétní vazbu tak, aby přijímal příchozí transakce. Další informace o nastavení konfigurační prvky, naleznete v tématu [ \<vazby >](../../../../docs/framework/misc/binding.md).  
+ Většina ze stálých vazeb WCF poskytuje `transactionFlow` atributy a `transactionProtocol` , které umožňují nakonfigurovat konkrétní vazbu pro příjem příchozích transakcí. Další informace o nastavení elementů konfigurace naleznete v tématu [ \<Binding >](../../../../docs/framework/misc/binding.md).  
   
- Správce nebo nástroje pro nasazení můžete použít tok transakcí úrovni koncového bodu konfigurace požadavků na tok transakce nebo omezení v době nasazení je používán konfigurační soubor.  
+ Správce nebo nástroj pro nasazení může použít tok transakce na úrovni koncového bodu ke konfiguraci požadavků a omezení toku transakce v době nasazení pomocí konfiguračního souboru.  
   
 ## <a name="security"></a>Zabezpečení  
- Aby bylo zajištěno zabezpečení systému a integrita standardu, musíte zabezpečit výměny zpráv proudění transakcí mezi aplikacemi. Neměli tok nebo poskytovat podrobnosti o transakci pro každou aplikaci, která nemá nárok na účast v rámci jedné transakce.  
+ Chcete-li zajistit zabezpečení a integritu systému, je nutné zabezpečit výměnu zpráv při toku transakcí mezi aplikacemi. Do žádné aplikace, která nemá nárok na účast ve stejné transakci, byste neměli přesměrovat ani zveřejňovat podrobnosti transakce.  
   
- Při generování klientů WCF na neznámý nebo nedůvěryhodný webové služby prostřednictvím výměny metadat, volání operací na těchto webových službách Pokud je to možné potlačit aktuální transakce. Následující příklad demonstruje, jak to udělat.  
+ Při generování klientů WCF pro neznámé nebo nedůvěryhodné webové služby prostřednictvím použití výměny metadat musí volání operací na těchto webových službách potlačit aktuální transakci, pokud je to možné. Následující příklad demonstruje, jak to udělat.  
   
-```  
+```csharp
 //client code which has an ambient transaction  
 using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Suppress))  
 {  
@@ -85,11 +85,11 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Supp
 //remainder of client code  
 ```  
   
- Kromě toho služby musí být nakonfigurovaný tak, aby přijímal příchozí transakce pouze od klientů, kteří mají ověřený a autorizovaný. Příchozí transakce by měl přijmout, pouze pokud pocházejí z vysoce důvěryhodné klienty.  
+ Služby je navíc potřeba nakonfigurovat tak, aby přijímaly příchozí transakce jenom od klientů, které ověřil a schválili. Příchozí transakce by měly být přijaty pouze v případě, že pocházejí z vysoce důvěryhodných klientů.  
   
 ## <a name="policy-assertions"></a>Kontrolní výrazy zásad  
- Kontrolní výrazy zásad WCF používá k řízení toku transakcí. Kontrolní výrazy zásad najdete v dokumentu zásad služby, který je generován agregovat kontrakty, konfigurace a atributy. Klienta můžete získat dokument zásad služby pomocí HTTP GET nebo WS-MetadataExchange požadavek odpověď. Klienti mohou následně zpracovat dokument zásad k určení, které operace v kontraktu služby může podporovalo nebo vyžadovalo tok transakcí.  
+ WCF používá kontrolní výrazy zásad pro řízení toku transakce. Kontrolní výrazy zásad lze nalézt v dokumentu zásad služby, který je generován agregací smluv, konfigurací a atributů. Klient může získat dokument zásad služby pomocí požadavku HTTP GET nebo WS-MetadataExchange Request-Reply. Klienti pak mohou zpracovat dokument zásad a určit, které operace v kontraktu služby mohou podporovat nebo vyžadovat tok transakce.  
   
- Kontrolní výrazy zásad toku transakce ovlivnit tok transakcí zadáním hlavičky SOAP, že klient má odeslat do služby představují transakce. Všechna záhlaví transakce musí být označeny pomocí `MustUnderstand` rovna `true`. Všechny zprávy s hlavičkou označen jinak se odmítne kvůli nastala chyba protokolu SOAP.  
+ Kontrolní výrazy zásad toku transakce ovlivňují tok transakce určením hlaviček SOAP, které by měl klient odeslat službě, aby představovala transakci. Všechna záhlaví transakcí musí být označena `MustUnderstand` atributem `true`EQUAL. Jakákoli zpráva s záhlavím označeným jinak je odmítnuta s chybou protokolu SOAP.  
   
- Pouze jeden výraz související transakce zásad může být k dispozici v rámci jedné operace. Zásady dokumenty s více než jeden výraz transakce u určité operace jsou považovány za neplatné a odmítne WCF. Kromě toho může být pouze jedné transakční protokol k dispozici uvnitř každý typ portu. Dokumenty zásad s operacemi odkazuje více než jeden protokol transakce uvnitř jednoho portu typu jsou považovány za neplatné a odmítne [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Dokumenty zásad pomocí kontrolních výrazů transakce prezentují na výstupní zprávy nebo jednosměrné zprávy o zadávání jsou také považovány za neplatné.
+ V rámci jedné operace může být k dispozici pouze jeden kontrolní výraz zásad souvisejících s transakcí. Dokumenty zásad s více než jedním kontrolním výrazem transakce u operace jsou považovány za neplatné a WCF je odmítne. Kromě toho může být v každém typu portu přítomen pouze jeden transakční protokol. Dokumenty zásad s operacemi odkazujícími na více než jeden transakční protokol v rámci jednoho typu portu jsou považovány za neplatné a jsou odmítnuty nástrojem pro nástroj pro dodávání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Dokumenty zásad s kontrolními výrazy transakce, které jsou k dispozici pro výstupní zprávy nebo jednosměrné vstupní zprávy, jsou také považovány za neplatné.

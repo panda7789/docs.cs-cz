@@ -3,16 +3,17 @@ title: Co je nového v C# 7,0 – C# příručka
 description: Získejte přehled o nových funkcích v C# jazyce verze 7,0.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 148ecdf7a3a99ac73132593272ecff3a5bb4195e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 0f26a9647503ebb667d961fefaa05a25a71ec6f5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105718"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926578"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v C# 7,0
 
 C#7,0 přidání řady nových funkcí do C# jazyka:
+
 - [`out`proměnné](#out-variables)
   - Můžete deklarovat `out` hodnoty vložené jako argumenty pro metodu, kde se používají.
 - [Řazené kolekce členů](#tuples)
@@ -58,7 +59,7 @@ Možná budete chtít zadat typ `out` proměnné pro přehlednost, jak je uveden
 
 ## <a name="tuples"></a>N-tice
 
-C#poskytuje bohatou syntaxi pro třídy a struktury, které slouží k vysvětlení záměru návrhu. V některých případech však bohatá syntaxe vyžaduje dodatečnou práci s minimální výhodou. Můžete často napsat metody, které vyžadují jednoduchou strukturu obsahující více než jeden datový prvek. Pro podporu těchto scénářů byly přidány řazené C# *kolekce členů* do. Řazené kolekce členů jsou jednoduché datové struktury, které obsahují více polí představujících datové členy.
+C#poskytuje bohatou syntaxi pro třídy a struktury, které slouží k vysvětlení záměru návrhu. V některých případech však bohatá syntaxe vyžaduje dodatečnou práci s minimální výhodou. Můžete často napsat metody, které vyžadují jednoduchou strukturu obsahující více než jeden datový prvek. Pro podporu těchto scénářů byly přidány *řazené kolekce členů* do C#. Řazené kolekce členů jsou jednoduché datové struktury, které obsahují více polí představujících datové členy.
 Pole se neověřují a nemůžete definovat vlastní metody.
 
 > [!NOTE]
@@ -75,7 +76,7 @@ V přiřazení řazené kolekce členů můžete také zadat názvy polí na pra
 
 [!code-csharp[ImplicitNamedTuple](~/samples/snippets/csharp/new-in-7/program.cs#ImplicitNamedTuple "Implicitly named tuple")]
 
-Mohou nastat situace, kdy budete chtít odbalit členy řazené kolekce členů, které byly vráceny metodou.  To můžete provést deklarováním samostatných proměnných pro každou z hodnot v řazené kolekci členů. Toto rozbalení se označuje jako dekonstrukce řazené kolekce členů:
+Mohou nastat situace, kdy budete chtít odbalit členy řazené kolekce členů, které byly vráceny metodou.  To můžete provést deklarováním samostatných proměnných pro každou z hodnot v řazené kolekci členů. Toto rozbalení se označuje jako *dekonstrukce* řazené kolekce členů:
 
 [!code-csharp[CallingWithDeconstructor](~/samples/snippets/csharp/new-in-7/program.cs#CallingWithDeconstructor "Deconstructing a tuple")]
 
@@ -91,7 +92,7 @@ Podrobnější informace o řazených kolekcích členů najdete v [článku o �
 
 ## <a name="discards"></a>Zahození
 
-Často při dekonstrukci řazené kolekce členů nebo volání metody s `out` parametry jste nuceni definovat proměnnou, jejíž hodnotu nezáleží na a nehodláte ji používat. C#Přidá podporu pro zahození pro zpracování tohoto scénáře. Zrušení je proměnná pouze pro zápis, jejíž název je `_` (podtržítko). můžete přiřadit všechny hodnoty, které chcete zahodit do jedné proměnné. Zahození je jako Nepřiřazená proměnná; Kromě příkazu přiřazení nelze zrušit použití v kódu.
+Často při dekonstrukci řazené kolekce členů nebo volání metody s `out` parametry jste nuceni definovat proměnnou, jejíž hodnotu nezáleží na a nehodláte ji používat. C#Přidá podporu pro *zahození* pro zpracování tohoto scénáře. Zrušení je proměnná pouze pro zápis, jejíž název je `_` (podtržítko). můžete přiřadit všechny hodnoty, které chcete zahodit do jedné proměnné. Zahození je jako Nepřiřazená proměnná; Kromě příkazu přiřazení nelze zrušit použití v kódu.
 
 Zahození jsou podporovaná v následujících scénářích:
 
@@ -104,7 +105,7 @@ Následující příklad definuje `QueryCityDataForYears` metodu, která vrátí
 
 [!code-csharp[Tuple-discard](~/samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-Další informace najdete v tématu [](../discards.md)zahození.
+Další informace najdete v tématu [zahození](../discards.md).
 
 ## <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -210,11 +211,11 @@ Stejný postup lze použít s `async` metodami, aby bylo zajištěno, že výjim
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Některé z návrhů, které jsou podporovány místními funkcemi, by mohly být také provedeny pomocí *výrazů lambda*. O rozdílech, které mají zájem [, si můžete přečíst další informace](../local-functions-vs-lambdas.md) .
+> Některé z návrhů, které jsou podporovány místními funkcemi, by mohly být také provedeny pomocí *výrazů lambda*. [O rozdílech, které mají zájem, si můžete přečíst další informace](../local-functions-vs-lambdas.md) .
 
 ## <a name="more-expression-bodied-members"></a>Další členové Expression-těle
 
-C#6 zavedlo [členy Expression-těle](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C#7,0 rozšíří povolené členy, které mohou být implementovány jako výrazy. V C# 7,0 můžete implementovat konstruktory, *finalizační metody*a `get` `set` přístupové objekty do *vlastností* a *indexerů*. Následující kód ukazuje příklady jednotlivých:
+C#6 zavedlo [členy Expression-těle](csharp-6.md#expression-bodied-function-members) pro členské funkce a vlastnosti jen pro čtení. C#7,0 rozšíří povolené členy, které mohou být implementovány jako výrazy. V C# 7,0 můžete implementovat *konstruktory*, *finalizační metody*a `get` `set` přístupové objekty do *vlastností* a *indexerů*. Následující kód ukazuje příklady jednotlivých:
 
 [!code-csharp[ExpressionBodiedMembers](~/samples/snippets/csharp/new-in-7/expressionmembers.cs#ExpressionBodiedEverything "new expression-bodied members")]
 
@@ -246,7 +247,7 @@ Toto vylepšení je nejužitečnější pro autory knihovny, aby `Task` nedošlo
 
 ## <a name="numeric-literal-syntax-improvements"></a>Vylepšení syntaxe numerického literálu
 
-Nepřečtené číselné konstanty mohou ztížit pochopení kódu při prvním čtení. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k nepochopení. C#7,0 obsahuje dvě nové funkce pro zápis čísel v nejčitelnějším způsobu pro zamýšlené použití: *binární literály*a oddělovače *číslic*.
+Nepřečtené číselné konstanty mohou ztížit pochopení kódu při prvním čtení. Bitové masky nebo jiné symbolické hodnoty jsou náchylné k nepochopení. C#7,0 obsahuje dvě nové funkce pro zápis čísel v nejčitelnějším způsobu pro zamýšlené použití: *binární literály*a *oddělovače číslic*.
 
 V případech, kdy vytváříte bitové masky, nebo pokaždé, když binární reprezentace čísla provede Nejčitelnější kód, zapište toto číslo v binárním formátu:
 

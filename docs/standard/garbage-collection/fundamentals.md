@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 64ffd57d8c0bce1d9f409adebd169b4fd3e17e06
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 9ba6c46116d809e2881eee37b080e1952e2eb6a0
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796855"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895269"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
 
@@ -97,7 +97,7 @@ Když je aktivováno uvolňování paměti, uvolňování paměti uvolní pamě�
 
 Rušivost (četnost a doba trvání) uvolňování paměti je výsledkem objemu přidělení a množství zachované paměti na spravované haldě.
 
-Halda může být považována za akumulaci dvou hald: halda [velkých objektů](large-object-heap.md) a haldy malých objektů.
+Halda může být považována za akumulaci dvou hald: [halda velkých objektů](large-object-heap.md) a haldy malých objektů.
 
 [Halda velkých objektů](large-object-heap.md) obsahuje velmi velké objekty, které jsou 85 000 bajtů a větší. Objekty v haldě velkých objektů jsou obvykle pole. Je vzácná, že objekt instance bude velmi velký.
 
@@ -270,7 +270,7 @@ Následující ilustrace znázorňuje souběžné uvolňování paměti provád�
 
 ## <a name="background-workstation-garbage-collection"></a>Uvolňování paměti pracovní stanice na pozadí
 
-V uvolňování paměti na pozadí jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování 2. generace. Není k dispozici žádné nastavení pro uvolňování paměti na pozadí; pro souběžné uvolňování paměti je automaticky povoleno. Uvolňování paměti na pozadí je náhradou pro souběžné uvolňování paměti. Stejně jako u souběžného uvolňování paměti je uvolňování paměti na pozadí provedeno ve vyhrazeném vlákně a vztahuje se pouze na kolekce 2. generace.
+Uvolňování paměti na pozadí nahrazuje souběžnou uvolňování paměti pracovní stanice počínaje .NET Framework 4 a nahrazuje souběžné uvolňování paměti serveru počínaje .NET Framework 4,5.  V uvolňování paměti na pozadí jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování 2. generace. Provádí se ve vyhrazeném vlákně a vztahuje se pouze na kolekce 2. generace. Uvolňování paměti na pozadí je automaticky povolené ve výchozím nastavení a dá se zapnout nebo vypnout [ \<](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) pomocí nastavení konfigurace > gcConcurrent v .NET Frameworkch aplikacích. 
 
 > [!NOTE]
 > Uvolňování paměti na pozadí je k dispozici pouze v .NET Framework 4 a novějších verzích. V .NET Framework 4 se podporuje jenom pro uvolňování paměti pracovní stanice. Počínaje .NET Framework 4,5 je uvolňování paměti na pozadí k dispozici pro pracovní stanice i pro uvolňování paměti serveru.

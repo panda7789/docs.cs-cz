@@ -1,16 +1,16 @@
 ---
-title: Rozhraní ICorProfilerInfo10
+title: ICorProfilerInfo10 – rozhraní
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 496959ecac5b16f1faa138aec90c5194d15cb105
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 06cce79fbb2b2eb143e77e3c6fda194e47d4f4f3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68973750"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928792"
 ---
-# <a name="icorprofilerinfo10-interface"></a>Rozhraní ICorProfilerInfo10
+# <a name="icorprofilerinfo10-interface"></a>ICorProfilerInfo10 – rozhraní
 
 Podtřída [ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md) , která poskytuje metody pro úpravu Il funkce, dotazování na informace z modulu runtime a pozastavení a obnovení modulu runtime.
 
@@ -29,5 +29,7 @@ Podtřída [ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profilin
 **Platformu** Viz [podporované operační systémy .NET Core](../../../core/windows-prerequisites.md#net-core-supported-operating-systems).  
 **Hlaviček** CorProf.idl, CorProf.h  
 **Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)] 
+
 ## <a name="see-also"></a>Viz také:
+
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

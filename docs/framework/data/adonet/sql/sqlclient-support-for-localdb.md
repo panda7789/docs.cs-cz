@@ -2,12 +2,12 @@
 title: Podpora klienta SqlClient pro LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 200db3b1014278e711062bcbdff81be8d27c3351
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d02524cd5901adeca7bc36d6fd13c7abdc46c69b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780789"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894400"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Podpora klienta SqlClient pro LocalDB
 Počínaje SQL Server název kódu Denali bude k dispozici zjednodušená verze SQL Server s názvem LocalDB. Toto téma popisuje, jak se připojit k databázi LocalDB.  
@@ -25,9 +25,7 @@ Počínaje SQL Server název kódu Denali bude k dispozici zjednodušená verze 
   
 - V připojovacím řetězci zadejte instanci LocalDB. Například název instance je `myInstance`, připojovací řetězec by měl obsahovat:  
   
-    ```  
-    server=(localdb)\\myInstance  
-    ```  
+    `server=(localdb)\\myInstance`  
   
  `User Instance=True`není povolený při připojování k databázi LocalDB.  
   

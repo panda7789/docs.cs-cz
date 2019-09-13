@@ -1,113 +1,114 @@
 ---
-title: Nativní interoperabilita osvědčené postupy – .NET
-description: Podívejte se na osvědčené postupy pro propojení s nativními komponentami v rozhraní .NET.
+title: Nativní osvědčené postupy interoperability – .NET
+description: Seznamte se s osvědčenými postupy pro propojení s nativními komponentami v .NET.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 09b25ed10958142f8eead6761f18bccbe2645448
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 0405fd5aef9d89fc1f47123ed358e6358656d95b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063054"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923768"
 ---
-# <a name="native-interoperability-best-practices"></a>Osvědčené postupy nativní interoperabilita
+# <a name="native-interoperability-best-practices"></a>Nativní osvědčené postupy interoperability
 
-.NET nabízí celou řadu způsobů, jak přizpůsobit interoperabilitu nativní kód. Tento článek obsahuje pokyny, které následují .NET týmy Microsoftu pro interoperabilitu nativní.
+.NET nabízí různé způsoby přizpůsobení nativního kódu interoperability. Tento článek obsahuje pokyny, které tým .NET Microsoftu sleduje pro zajištění nativní interoperability.
 
 ## <a name="general-guidance"></a>Obecné pokyny
 
-Pokyny v této části platí pro všechny scénáře spolupráce.
+Pokyny v této části se vztahují na všechny scénáře spolupráce.
 
-- **PROVEĎTE ✔️** používat stejné pojmenování a malá a velká písmena jako nativní metody, kterou chcete volat pro metody a parametrů.
-- **✔️ ZVAŽTE** pomocí stejného pojmenování a velkých písmen pro konstantní hodnoty.
-- **PROVEĎTE ✔️** typy .NET, které se nachází nejblíže mapují na nativní typ použít. Například v C#, použijte `uint` Pokud je nativní typ `unsigned int`.
-- **PROVEĎTE ✔️** používat pouze `[In]` a `[Out]` atributy, pokud chcete, aby chování se liší od výchozí chování.
-- **✔️ ZVAŽTE** pomocí <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pro fond vyrovnávací paměti vaší nativní pole.
-- **✔️ ZVAŽTE** ve třídě se stejným názvem a velká písmena jako nativní knihovnu pro zabalení vaší deklarace P/Invoke.
-  - To umožňuje vaší `[DllImport]` atributů, které mají používat C# `nameof` funkci jazyka předat název nativní knihovnu a ujistěte se, že název nativní knihovny nebyla mít překlep.
+- **✔️** použít stejné názvy a velká písmena pro vaše metody a parametry jako nativní metodu, kterou chcete volat.
+- **✔️ zvažte** použití stejných názvů a velkých a malých písmen pro konstantní hodnoty.
+- **✔️** použít typy .NET, které jsou mapovány nejblíže k nativnímu typu. Například v C#, použijte `uint` , pokud je `unsigned int`nativní typ.
+- **✔️** použít `[In]` pouze atributy a `[Out]` , pokud se chování, které požadujete, se liší od výchozího chování.
+- **✔️ zvažte** použití <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pro fond vašich nativních vyrovnávacích pamětí pole.
+- **✔️ zvažte** zabalení deklarací volání nespravovaného kódu ve třídě se stejným názvem a velkými písmeny jako vaše nativní knihovna.
+  - Tím umožníte `[DllImport]` , aby atributy C# `nameof` používaly funkci jazyka k předání názvu nativní knihovny a aby se zajistilo, že jste nezadali název nativní knihovny.
 
 ## <a name="dllimport-attribute-settings"></a>Nastavení atributu DllImport
 
 | Nastavení | Výchozí | Doporučení | Podrobnosti |
 |---------|---------|----------------|---------|
-| <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Ponechat výchozí  | Pokud to explicitně nastavená na false, neúspěšných vrácené hodnoty HRESULT bude převeden na výjimky (a vrácená hodnota v definici změní na hodnotu null v důsledku).|
-| <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | závisí na rozhraní API  | Nastavte tuto hodnotu na hodnotu true, pokud používá funkce GetLastError rozhraní API a použít Marshal.GetLastWin32Error má být získána hodnota. Pokud rozhraní API nastavte podmínku, která říká, že došlo k chybě, zobrazí chybová zpráva před provedením další volání vyhnout neúmyslně jej přepsat.|
-| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None`, který spadne zpět na `CharSet.Ansi` chování  | Explicitně `CharSet.Unicode` nebo `CharSet.Ansi` když řetězce nebo znaků, jsou k dispozici v definici | Určuje chování zařazování řetězců a co `ExactSpelling` když `false`. Všimněte si, že `CharSet.Ansi` je ve skutečnosti UTF8 v systému Unix. _Většina_ času Windows používá kódování Unicode, zatímco Unix používá UTF8. Další informace o naleznete [dokumentaci o znakových sad](./charset.md). |
-| <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> | `false` | `true`             | Nastavte tuto hodnotu na true a získat výhody mírné výkonu jako modul runtime nebude hledat názvy alternativní funkcí s příponou buď "A" nebo "W" v závislosti na hodnotu `CharSet` nastavení ("A" pro `CharSet.Ansi` a "W" pro `CharSet.Unicode`). |
+| <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  zachovat výchozí  | Pokud je toto nastavení explicitně nastaveno na hodnotu false, neúspěšné návratové hodnoty HRESULT budou převedeny na výjimky (a návratová hodnota v definici bude jako výsledek null).|
+| <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | závisí na rozhraní API  | Tuto hodnotu nastavte na true, pokud rozhraní API používá GetLastError, a k získání hodnoty použijte Marshal. GetLastWin32Error. Pokud rozhraní API nastaví podmínku, která říká, že obsahuje chybu, před dalším voláním zajistěte chybu, aby se zabránilo nechtěnému přepsání.|
+| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None`, který se vrátí k `CharSet.Ansi` chování  | Explicitně použít `CharSet.Unicode` nebo `CharSet.Ansi` v případě, že jsou v definici přítomné řetězce nebo znaky | To určuje chování zařazování řetězců a to, `ExactSpelling` co `false`dělá. Všimněte si `CharSet.Ansi` , že ve skutečnosti je UTF8 v systému UNIX. _Většina_ času v systému Windows používá kódování Unicode, zatímco systém UNIX používá UTF8. Další informace najdete v [dokumentaci k charset](./charset.md). |
+| <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> | `false` | `true`             | Nastavte tuto hodnotu na true a získejte mírné zvýhodnění výkonu, protože modul runtime nebude hledat alternativní názvy funkcí s příponou "a" nebo "w" v závislosti na hodnotě `CharSet` nastavení ("a `CharSet.Ansi` " pro a "w" pro `CharSet.Unicode`). |
 
-## <a name="string-parameters"></a>Parametry řetězce
+## <a name="string-parameters"></a>Řetězcové parametry
 
-Když je znakové sady Unicode nebo argument je explicitně označena jako `[MarshalAs(UnmanagedType.LPWSTR)]` _a_ řetězec je předán podle hodnoty (ne `ref` nebo `out`), řetězec připnuté, který se používá nativní kód (spíše než zkopíruje).
+Pokud je znaková sada Unicode nebo je argument explicitně označen jako `[MarshalAs(UnmanagedType.LPWSTR)]` _a_ řetězec je předán pomocí hodnoty (ne `ref` nebo `out`), řetězec bude připnuté a použit přímo pomocí nativního kódu (místo kopírování).
 
-Mějte na paměti k označení `[DllImport]` jako `Charset.Unicode` Pokud chcete explicitně ANSI zacházení s řetězci.
+Nezapomeňte označit jako `Charset.Unicode` , `[DllImport]` Pokud explicitně nechcete, aby byly řetězce v kódu ANSI.
 
-**❌ NEPODPORUJÍ** použít `[Out] string` parametry. Řetězec, předán podle hodnoty s parametry `[Out]` atribut můžou destabilizovat modul runtime, pokud řetězec je interned řetězec. Další informace o interning řetězce v dokumentaci k <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+**❌** Nepoužívejte `[Out] string` parametry. Řetězcové parametry předávané hodnotou s `[Out]` atributem mohou destabilizovat modul runtime, pokud je řetězec interně řetězec. Další informace o přehlašování řetězců najdete v dokumentaci pro <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-**❌ Nepoužívejte** `StringBuilder` parametry. `StringBuilder` zařazování *vždy* vytvoří kopii nativní vyrovnávací paměti. V důsledku toho může být velmi neefektivní. Využijte Typický scénář volání Windows API, která přebírá řetězec:
+**❌ Se vyhnout** `StringBuilder` parametry. `StringBuilder`zařazování *vždy* vytvoří nativní kopii vyrovnávací paměti. V takovém případě může být mimořádně neefektivní. Vyjistěte si Typický scénář volání rozhraní API systému Windows, které přijímá řetězec:
 
-1. Vytvoření SB požadovanou kapacitu (přidělí kapacita managed) **{1}**
+1. Vytvořte SB požadované kapacity (přiděluje spravovanou kapacitu). **{1}**
 2. Vyvolat
-   1. Přidělí nativní vyrovnávací paměť **{2}**  
-   2. Zkopíruje obsah, když `[In]` _(výchozí nastavení pro `StringBuilder` parametr)_  
-   3. Zkopíruje nativní vyrovnávací paměť do nově přiděleného spravovaného pole, když `[Out]` **{3}** _(také výchozí `StringBuilder`)_  
-3. `ToString()` přiděluje další spravovaného pole **{4}**
+   1. Přiděluje nativní vyrovnávací paměť. **{2}**  
+   2. Zkopíruje obsah, pokud `[In]` _( `StringBuilder` výchozí hodnota parametru)_ .  
+   3. Zkopíruje nativní vyrovnávací paměť do nově přiděleného spravovaného pole `[Out]` **{3}** _(také `StringBuilder`výchozí pro)_ .  
+3. `ToString()`přidělí ještě jiné spravované pole. **{4}**
 
-To znamená *{4}* přidělení získat řetězec z nativního kódu. Nejlepší způsobů, jak toto omezení je znovu použít `StringBuilder` v jiného volání, ale tím se ušetří stále pouze *1* přidělení. Je mnohem lepší použít a ukládat do vyrovnávací paměti pro znaky z mezipaměti `ArrayPool`-pak můžete získat k přidělení pro `ToString()` při dalších volání.
+To je *{4}* přidělení pro získání řetězce z nativního kódu. To nejlepší můžete udělat tak, že je znovu použijete v `StringBuilder` jiném volání, ale bude se dál ukládat jenom *1* přidělení. Je mnohem lepší použít a ukládat do mezipaměti znaková vyrovnávací paměť `ArrayPool`– můžete se pak dostat až do přidělení `ToString()` pro při následném volání.
 
-Problém s `StringBuilder` je, že vždy kopíruje návratové vyrovnávací paměti zálohování do první hodnotu null. Pokud back předaný řetězec není ukončený nebo je dvojitou hodnotu null ukončující řetězec, je deklarace P/Invoke nesprávný nejlépe.
+Dalším problémem `StringBuilder` je, že se vždy zkopíruje návratovou vyrovnávací paměť zpět na první hodnotu null. Pokud předaný řetězec není ukončen nebo se jedná o řetězec zakončený hodnotou null, vaše volání nespravovaného volání není správné.
 
-Pokud jste *proveďte* použít `StringBuilder`, jeden poslední gotcha je, že se kapacita **není** zahrnout skryté null, který je vždy zahrnuté v zprostředkovatele komunikace s objekty. Je běžné, že lidé se to získat nesprávná, protože většina rozhraní API má velikost vyrovnávací paměti *včetně* hodnotu null. Výsledkem může být ztraceny, a zbytečné přidělení. Kromě toho tato gotcha zabraňuje modulu runtime optimalizace `StringBuilder` zařazování minimalizovat kopie.
+Pokud *použijete* `StringBuilder`, bude jedna poslední gotcha taková, že **kapacita neobsahuje skrytý** znak null, který je vždy zaúčtován v rámci spolupráce. Je běžné, že lidé mají špatný přístup, protože většina rozhraní API má velikost vyrovnávací paměti, *včetně* hodnoty null. To může vést k plýtvání/zbytečným přidělením. Kromě toho tento gotcha brání modulu runtime v optimalizaci `StringBuilder` zařazování pro minimalizaci kopií.
 
-**✔️ ZVAŽTE** pomocí `char[]`s ze `ArrayPool`.
+**✔️ zvažte** použití `char[]`s z `ArrayPool`.
 
-Další informace o zařazování řetězce, naleznete v tématu [výchozí zařazování pro řetězce](../../framework/interop/default-marshaling-for-strings.md) a [přizpůsobení zařazování řetězce](customize-parameter-marshaling.md#customizing-string-parameters).
+Další informace o zařazování řetězců naleznete v tématu [Výchozí zařazování pro řetězce](../../framework/interop/default-marshaling-for-strings.md) a [přizpůsobení zařazování řetězců](customize-parameter-marshaling.md#customizing-string-parameters).
 
-> __Specifické pro Windows__  
-> Pro `[Out]` řetězce CLR použije `CoTaskMemFree` ve výchozím nastavení uvolnit řetězce nebo `SysStringFree` pro řetězce, které jsou označeny jako `UnmanagedType.BSTR`.  
-**Většina rozhraní API s řetězci výstupní vyrovnávací paměť:**  
-> Předaný v znaku musí obsahovat počet hodnotu null. Pokud vrácená hodnota je menší než předaný počet znaků v úspěšném volání a hodnota je počet znaků *bez* koncovou hodnotu null. Jinak je požadovaná velikost vyrovnávací paměti počet *včetně* znak null.  
-> - Předejte 5, 4 získat: Řetězec je 4 znaky dlouhý s koncovou hodnotou null.
-> - Předejte 5, 6 získat: Řetězec je 5 znaků, třeba 6 znaků vyrovnávací paměť pro uchování hodnotu null.  
+> __Specifické pro systém Windows__  
+> Pro `[Out]` řetězce, které bude CLR `CoTaskMemFree` používat ve výchozím nastavení, pro `SysStringFree` uvolnění řetězců nebo pro řetězce, `UnmanagedType.BSTR`které jsou označeny jako.  
+**Pro většinu rozhraní API výstupní vyrovnávací paměť řetězců:**  
+> Počet předaných znaků musí obsahovat hodnotu null. Pokud je vrácená hodnota menší než předaný počet znaků, volání bylo úspěšné a hodnota je počet znaků *bez* koncové hodnoty null. V opačném případě je požadovaná velikost vyrovnávací paměti, *včetně* znaku null.  
+>
+> - Průchod 5, Get 4: Řetězec má délku 4 znaky s koncovým znakem null.
+> - Pass in 5, Get 6: Řetězec má délku 5 znaků, pro uložení hodnoty null je zapotřebí vyrovnávací paměť 6 znaků.  
 > [Datové typy Windows pro řetězce](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>Logické parametry a pole
 
-Logické hodnoty jsou snadno schválně pokazí. Ve výchozím nastavení, .NET `bool` je zařazeno do Windows `BOOL`, kde je to hodnota 4 bajty. Ale `_Bool`, a `bool` jsou typy v jazyce C a C++ *jeden* bajtů. To může vést k náročné sledovat chyby jako poloviční návratová hodnota se zahodí, který bude pouze *potenciálně* změnit výsledek. Další informace o zařazování .NET `bool` hodnoty jazyka c nebo C++ `bool` typy, naleznete v dokumentaci [přizpůsobení zařazování pole boolean](customize-struct-marshaling.md#customizing-boolean-field-marshaling).
+Logické hodnoty se dají snadno vytvořit. Ve výchozím nastavení je rozhraní `bool` .NET zařazeno do systému Windows `BOOL`, kde je hodnota 4 bajty. Nicméně, a `bool` typy v jazyce C C++ a jsou jedním bajtem. `_Bool` To může vést k tomu, že je možné sledovat chyby jako polovinu, návratová hodnota bude zahozena, což *může pouze změnit* výsledek. Další informace `bool` o zařazování hodnot .NET do jazyka C nebo C++ `bool` typů naleznete v dokumentaci k [přizpůsobení zařazování logických polí](customize-struct-marshaling.md#customizing-boolean-field-marshaling).
 
 ## <a name="guids"></a>Identifikátory GUID
 
-Lze použít přímo v signaturách identifikátory GUID. Mnoho rozhraní Windows API využít `GUID&` zadejte aliasy jako `REFIID`. Když předány podle odkazu, je můžete předat buď `ref` nebo se `[MarshalAs(UnmanagedType.LPStruct)]` atribut.
+Identifikátory GUID lze použít přímo v signaturách. Mnoho rozhraní API systému `GUID&` Windows přijímá aliasy typů, jako `REFIID`je. Při předání odkazem, mohou být buď předány pomocí `ref` nebo `[MarshalAs(UnmanagedType.LPStruct)]` s atributem.
 
 | GUID | Identifikátor GUID podle odkazu |
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-**❌ NEPODPORUJÍ** použití `[MarshalAs(UnmanagedType.LPStruct)]` pro nic jiného než `ref` parametry identifikátor GUID.
+**❌** Použijte `[MarshalAs(UnmanagedType.LPStruct)]` pro jiné než `ref` parametry GUID.
 
-## <a name="blittable-types"></a>Přenositelné typy
+## <a name="blittable-types"></a>Typy přenosit
 
-Přenositelné typy jsou typy, které mají stejnou reprezentaci úrovni bitů v spravovaného a nativního kódu. Jako takové, nemusí být převedeny do jiného formátu zařazována do a z nativního kódu a jak to zvyšuje výkon se bude upřednostňovat.
+Přenositelné typy jsou typy, které mají stejné reprezentace na úrovni bitů ve spravovaném a nativním kódu. Vzhledem k tomu, že není nutné je převádět do jiného formátu, aby bylo možné je zařadit do a z nativního kódu a jak to zlepšuje výkon, by měly být upřednostňovány.
 
-**Přenositelné typy:**
+**Typy přenositeli:**
 
 - `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `single`, `double`
-- -nested jednorozměrné pole přenositelné typy (například `int[]`)
-- struktury a třídy s pevným rozložením, které mít pouze hodnotu přenositelné typy pro instanci pole
-  - pevné rozložení vyžaduje `[StructLayout(LayoutKind.Sequential)]` nebo `[StructLayout(LayoutKind.Explicit)]`
-  - struktury jsou `LayoutKind.Sequential` jsou standardně třídy `LayoutKind.Auto`
+- nevnořená jednorozměrná pole typů s více typy (například `int[]`)
+- struktury a třídy s pevným rozložením, které pro pole instancí mají jenom typy přenositelné hodnoty.
+  - pevné rozložení vyžaduje `[StructLayout(LayoutKind.Sequential)]` nebo`[StructLayout(LayoutKind.Explicit)]`
+  - struktury jsou `LayoutKind.Sequential` ve výchozím nastavení třídy`LayoutKind.Auto`
 
-**NENÍ typu blittable:**
+**Nenositelný odkaz:**
 
 - `bool`
 
-**NĚKDY blittable:**
+**NĚKDY přenositelná:**
 
 - `char`, `string`
 
-Když přenositelné typy jsou předány podle odkazu, se jednoduše připnout podle marshaller namísto kopírování do zprostředkující vyrovnávací paměti. (Třídy jsou ze své podstaty předány podle odkazu, struktur jsou předány podle odkazu při použití s `ref` nebo `out`.)
+Když jsou přenositelné typy předány odkazem, jsou místo kopírování do mezilehlé vyrovnávací paměti jednoduše připnuté serializátorem. (Třídy jsou ze své podstaty předány odkazem, struktury jsou předány odkazem `out`při použití s `ref` nebo.)
 
-`char` přenositelné v jednorozměrné pole je **nebo** Pokud se jedná o typ, který ji obsahuje je explicitně označena `[StructLayout]` s `CharSet = CharSet.Unicode`.
+`char`je přímo v jednorozměrném poli **nebo** , pokud je součástí typu, který obsahuje explicitně označený `[StructLayout]` pomocí. `CharSet = CharSet.Unicode`
 
 ```csharp
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
@@ -117,24 +118,24 @@ public struct UnicodeCharStruct
 }
 ```
 
-`string` je typu blittable, pokud není obsažen v jiném typu a je předávána jako argument, který je označen `[MarshalAs(UnmanagedType.LPWStr)]` nebo `[DllImport]` má `CharSet = CharSet.Unicode` nastavit.
+`string`je chráněná, pokud není obsažena v jiném typu a je předávána jako argument, který je `[MarshalAs(UnmanagedType.LPWStr)]` označen jako `[DllImport]` nebo `CharSet = CharSet.Unicode` má nastaven.
 
-Můžete zobrazit, pokud je typu blittable pokusem o vytvoření připnutého `GCHandle`. Pokud typ není řetězec nebo považovat za blittable, `GCHandle.Alloc` vyvolá výjimku `ArgumentException`.
+Když se pokusíte vytvořit připnutý `GCHandle`, můžete zjistit, jestli je typ přenositelný. Pokud typ není řetězec nebo se považuje za Nepřenositelný `GCHandle.Alloc` , `ArgumentException`vyvolá výjimku.
 
-**PROVEĎTE ✔️** Ujistěte se, vaši blittable struktury, pokud je to možné.
+**✔️ proveďte** přenositeli struktury, pokud je to možné.
 
 Další informace naleznete v tématu:
 
 - [Přenositelné a nepřenositelné typy](../../framework/interop/blittable-and-non-blittable-types.md)  
 - [Zařazování typů](type-marshaling.md)
 
-## <a name="keeping-managed-objects-alive"></a>Ponechání spravovaných objektů, které jsou aktivní
+## <a name="keeping-managed-objects-alive"></a>Udržování spravovaných objektů
 
-`GC.KeepAlive()` zajistí, že objekt zůstane v oboru až do dosažení metodu KeepAlive.
+`GC.KeepAlive()`zajistí, že objekt zůstane v oboru, dokud nebude dosaženo metody kontroly naživu.
 
-[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef) Umožňuje marshaller k zachování objektu po dobu trvání P/Invoke. Je možné místo `IntPtr` v podpisy metod. `SafeHandle` efektivně nahrazuje této třídy a místo toho by měla sloužit.
+[`HandleRef`](xref:System.Runtime.InteropServices.HandleRef)umožňuje zařazování zachovat objekt aktivní po dobu trvání volání nespravovaného objektu. Dá se použít místo `IntPtr` signatury metody. `SafeHandle`efektivně nahrazuje tuto třídu a měla by se používat místo toho.
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) Umožňuje Připnutí spravovaný objekt a získávání nativní ukazatel na ni. Základní model je:  
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle)umožňuje připnutí spravovaného objektu a získání nativního ukazatele na něj. Základní vzor je:  
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -142,7 +143,7 @@ IntPtr ptr = handle.AddrOfPinnedObject();
 handle.Free();
 ```
 
-Připnutí není výchozí nastavení pro `GCHandle`. Další hlavní vzor je odkaz na spravovaný objekt prostřednictvím nativního kódu a zpět do spravovaného kódu, obvykle pomocí zpětného volání při předávání. Toto je vzor:
+Připnutí není výchozím nastavením `GCHandle`pro. Druhým hlavním vzorem je předání odkazu spravovanému objektu prostřednictvím nativního kódu a zpět ke spravovanému kódu, obvykle pomocí zpětného volání. Tady je vzor:
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj);
@@ -156,15 +157,15 @@ object managedObject = handle.Target;
 handle.Free();
 ```
 
-Nezapomeňte, že `GCHandle` musí být explicitně uvolněna, aby nevracení paměti.
+Nezapomeňte, že `GCHandle` je nutné explicitně uvolnit, aby nedošlo k nevracení paměti.
 
-## <a name="common-windows-data-types"></a>Běžné typy dat Windows
+## <a name="common-windows-data-types"></a>Běžné datové typy Windows
 
-Tady je seznam datových typů používaných v rozhraní Windows API a které C# typů pro použití při volání do kódu Windows.
+Tady je seznam datových typů, které se běžně používají v rozhraních API C# systému Windows, a typy, které se mají použít při volání do kódu Windows.
 
-Následující typy mají stejnou velikost na 32bitová verze a 64bitová verze Windows, bez ohledu na jejich názvy.
+Následující typy mají stejnou velikost v 32 a 64 bitovém systému Windows, bez ohledu na jejich názvy.
 
-| Šířka | Windows          | C (Windows)          | C#       | Alternativní                          |
+| Šířka | Windows          | C (Windows)          | C#       | Jiné                          |
 |:------|:-----------------|:---------------------|:---------|:-------------------------------------|
 | 32    | `BOOL`           | `int`                | `int`    | `bool`                               |
 | 8     | `BOOLEAN`        | `unsigned char`      | `byte`   | `[MarshalAs(UnmanagedType.U1)] bool` |
@@ -188,9 +189,9 @@ Následující typy mají stejnou velikost na 32bitová verze a 64bitová verze 
 | 32    | `HRESULT`        | `long`               | `int`    |                                      |
 | 32    | `NTSTATUS`       | `long`               | `int`    |                                      |
 
-Následující typy ukazatelů, se podle šířku platformy. Použití `IntPtr` / `UIntPtr` pro tyto.
+Následující typy jsou ukazatele, které následují po šířce platformy. Použijte `IntPtr` / pro ně`UIntPtr` .
 
-| Podepsané typy ukazatelů (použijte `IntPtr`) | Typy ukazatelů, bez znaménka (použijte `UIntPtr`) |
+| Typy podepsaných ukazatelů ( `IntPtr`použít) | Typy nepodepsaných ukazatelů `UIntPtr`(použít) |
 |:------------------------------------|:---------------------------------------|
 | `HANDLE`                            | `WPARAM`                               |
 | `HWND`                              | `UINT_PTR`                             |
@@ -200,7 +201,7 @@ Následující typy ukazatelů, se podle šířku platformy. Použití `IntPtr` 
 | `LONG_PTR`                          |                                        |
 | `INT_PTR`                           |                                        |
 
-Windows `PVOID` tedy C `void*` můžete zařadit jako buď `IntPtr` nebo `UIntPtr`, ale dáváte přednost `void*` Pokud je to možné.
+Systém Windows `PVOID` , který je v `void*` jazyce C, lze zařadit `IntPtr` jako `UIntPtr`buď nebo, `void*` ale preferovat, pokud je to možné.
 
 [Datové typy Windows](/windows/desktop/WinProg/windows-data-types)
 
@@ -208,19 +209,19 @@ Windows `PVOID` tedy C `void*` můžete zařadit jako buď `IntPtr` nebo `UIntPt
 
 ## <a name="structs"></a>Struktury
 
-Spravované struktury jsou vytvořeny v zásobníku a se neodeberou, dokud se metoda vrátí. Podle definice a pak, že nejsou "připnuté" (nebudete získáte přesunout uvolňování paměti). Můžete také jednoduše provést adresu v nezabezpečený kód bloky Pokud nativního kódu nebude používat ukazatel ukazující za aktuální metody.
+Spravované struktury se vytvoří v zásobníku a neodstraňují se, dokud se metoda nevrátí. Podle definice pak jsou "připnuté" (nebudou přesunuty do GC). Můžete také jednoduše převzít adresu z nebezpečných bloků kódu, pokud nativní kód nebude používat ukazatel za koncem aktuální metody.
 
-Přenositelné struktury jsou výrazně výkonnější jako může být jednoduše použít přímo ve vrstvě zařazování. Pokuste se uskutečnit blittable struktury (například vyhnout `bool`). Další informace najdete v tématu [přenositelné typy](#blittable-types) oddílu.
+Přenositelné struktury jsou mnohem větší, protože je lze jednoduše použít přímo zařazovací vrstvou. Snažte se vytvořit struktury (například Nepoužívejte `bool`). Další informace najdete v části [typy přenosit](#blittable-types) .
 
-*Pokud* struktury je typu blittable, použijte `sizeof()` místo `Marshal.SizeOf<MyStruct>()` pro zajištění lepšího výkonu. Jak je uvedeno výše, můžete ověřit, že je typu blittable pokusem o vytvoření připnutého `GCHandle`. Pokud typ není řetězec nebo považovat za blittable, `GCHandle.Alloc` vyvolá výjimku `ArgumentException`.
+*Pokud* je struktura přenositelná, `sizeof()` použijte místo `Marshal.SizeOf<MyStruct>()` pro lepší výkon. Jak je uvedeno výše, můžete ověřit, zda je typ přenositelný, pokus o vytvoření připnutého `GCHandle`. Pokud typ není řetězec nebo se považuje za Nepřenositelný, `GCHandle.Alloc` `ArgumentException`vyvolá výjimku.
 
-Odkazy na struktury v definicích se musí buď předávat `ref` nebo použijte `unsafe` a `*`.
+Ukazatele na struktury v definicích musí být buď předány `ref` , nebo pomocí `unsafe` a. `*`
 
-**PROVEĎTE ✔️** odpovídat spravovaná struktura co nejpřesněji tvar a názvy, které se používají v dokumentaci oficiální platforma nebo hlavičce.
+**✔️** podle tvaru a názvů, které se používají v dokumentaci k oficiální platformě nebo v hlavičce, co nejvíce porovnává se spravovanou strukturou.
 
-**PROVEĎTE ✔️** použít C# `sizeof()` místo `Marshal.SizeOf<MyStruct>()` pro struktury blittable ke zlepšení výkonu.
+**✔️** C# použít`sizeof()` místo`Marshal.SizeOf<MyStruct>()` pro přenositelné struktury ke zvýšení výkonu.
 
-Pole, jako jsou `INT_PTR Reserved1[2]` musí být zařazen do dvou `IntPtr` pole, `Reserved1a` a `Reserved1b`. Pokud je nativní pole primitivní typ, můžeme použít `fixed` – klíčové slovo pro zápis o něco více čistě. Například `SYSTEM_PROCESS_INFORMATION` vypadá přibližně takto v hlavičce nativní:
+Pole jako `INT_PTR Reserved1[2]` musí být zařazeno do dvou `IntPtr` polí `Reserved1a` a `Reserved1b`. Pokud je nativním polem primitivní typ, můžeme pomocí `fixed` klíčového slova ho zapsat trochu efektivněji. Například `SYSTEM_PROCESS_INFORMATION` vypadá jako v nativní hlavičce:
 
 ```c
 typedef struct _SYSTEM_PROCESS_INFORMATION {
@@ -232,7 +233,7 @@ typedef struct _SYSTEM_PROCESS_INFORMATION {
 } SYSTEM_PROCESS_INFORMATION
 ```
 
-V C#, nám můžete napsat takto:
+V C#nástroji můžeme zapisovat takto:
 
 ```csharp
 internal unsafe struct SYSTEM_PROCESS_INFORMATION
@@ -245,4 +246,4 @@ internal unsafe struct SYSTEM_PROCESS_INFORMATION
 }
 ```
 
-Existují však některé možná úskalí s pevných vyrovnávacích pamětí. Pevných vyrovnávacích pamětí nepřenositelné typy nebude zařadit správně, aby pole na místě vyžaduje rozbalen navýšení kapacity na několik jednotlivá pole. Kromě toho v rozhraní .NET Framework a .NET Core před 3.0, pokud je vnořená struktura obsahující vyrovnávací paměť pevné pole v rámci nepřenositelné struktury pole vyrovnávací paměť pevné nebude zařadit správně do nativního kódu.
+Existuje však několik možná úskalí s pevnými vyrovnávacími pamětmi. Pevné vyrovnávací paměti nepřenositelného typu nebudou správně zařazeny, takže musí být místní pole rozšířeno na více jednotlivých polí. V .NET Framework a .NET Core před 3,0 platí, že pokud je struktura obsahující pevné pole vyrovnávací paměti vnořena do nepřenositelné struktury, pole pevné vyrovnávací paměti se správně nezazařazuje do nativního kódu.

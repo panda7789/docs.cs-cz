@@ -5,12 +5,12 @@ author: briacht
 ms.date: 08/26/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 97bdef3daa296dcb88cbb158a14668205df6fee3
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 4f80ebad0a280040e9f3329dc7b647bd53a48fa0
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107260"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929483"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Kurz: Vytvoření doporučení pro film pomocí Matrix factorizaton s ML.NET
 
@@ -18,6 +18,7 @@ V tomto kurzu se dozvíte, jak v konzolové aplikaci .NET Core sestavit doporuč
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > * Vyberte algoritmus strojového učení.
 > * Příprava a načtení dat
 > * Sestavování a výuka modelu
@@ -467,6 +468,7 @@ Data použitá v tomto kurzu jsou odvozena z [datové sady MovieLens](http://fil
 V tomto kurzu jste se naučili:
 
 > [!div class="checklist"]
+>
 > * Vyberte algoritmus strojového učení.
 > * Příprava a načtení dat
 > * Sestavování a výuka modelu

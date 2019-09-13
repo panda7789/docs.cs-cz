@@ -10,35 +10,35 @@ helpviewer_keywords:
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0a033e6881f9c0c8741fda26211b0f565762de4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 42daa241d0ebbfeb184b57e682fbb50bdaeead65
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643085"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894194"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
-Následující příklad a postupu ukazují, jak používat platformu vyvolání spravované aplikace, můžete vytisknout hodnotu popisovač pro každé okno v místním počítači. Konkrétně postup a ukázkovým použitím **EnumWindows** funkce krokovat seznamu windows a spravovaný zpětné volání – funkce (pojmenované zpětného volání) k tisku hodnoty popisovač okna.  
+Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vyvolání platformy, může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad používají funkci **EnumWindows** pro krokování seznamu oken a spravované funkce zpětného volání (pojmenované zpětné volání) k vytištění hodnoty popisovače okna.  
   
-### <a name="to-implement-a-callback-function"></a>K implementaci funkce zpětného volání  
+### <a name="to-implement-a-callback-function"></a>Implementace funkce zpětného volání  
   
-1. Podívejte se na podpis pro **EnumWindows** funkce než budete pokračovat s implementací. **EnumWindows** má následující podpis:  
+1. Než budete pokračovat v implementaci, podívejte se na signaturu funkce **EnumWindows** . **EnumWindows** má následující signaturu:  
   
-    ```  
-    BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)  
-    ```  
+    ```cpp
+    BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)
+    ```
   
-     Jeden to naznačuje, že tato funkce vyžaduje zpětné volání spočívá v přítomnost **lpEnumFunc** argument. Je běžné zobrazíte **lp** předpony (dlouhým ukazatelem) v kombinaci s **Func** příponu názvu argumentů přijímajícími ukazatel na funkci zpětného volání. Dokumentaci k funkcím Win32 najdete v článku Microsoft Platform SDK.  
+     Jedno potvrzení, že tato funkce vyžaduje zpětné volání, je přítomnost argumentu **lpEnumFunc** . Je běžné, že je v názvu argumentů, které přebírají ukazatel na funkci zpětného volání, v kombinaci s příponou **Func** zobrazená předpona **LP** (dlouhý ukazatel). Dokumentaci k funkcím Win32 naleznete v sadě Microsoft Platform SDK.  
   
-2. Vytvoření spravované zpětného volání funkce. Příklad deklaruje typ delegáta, volá `CallBack`, který přebírá dva argumenty (**hwnd** a **lparam**). První argument je popisovač okna. druhý argument je definované aplikací. V této verzi oba argumenty musí být celá čísla.  
+2. Vytvořte spravovanou funkci zpětného volání. Příklad deklaruje typ delegáta, který se nazývá `CallBack`, který přijímá dva argumenty (**HWND** a **lParam**). První argument je popisovač okna. druhý argument je definován aplikací. V této verzi musí být oba argumenty celá čísla.  
   
-     Funkce zpětného volání vrátí obecně nenulové hodnoty do značí úspěch a nula k označení selhání. V tomto příkladu explicitně nastaví návratovou hodnotu **true** pokračujte výčtu.  
+     Funkce zpětného volání obecně vracejí nenulové hodnoty pro indikaci úspěšného a nulového označení selhání. Tento příklad explicitně nastaví návratovou hodnotu na **true** pro pokračování výčtu.  
   
-3. Vytvoření delegáta a předat jako argument **EnumWindows** funkce. Vyvolání platformy automaticky převede formátu známé zpětné volání delegáta.  
+3. Vytvořte delegáta a předejte ho jako argument funkci **EnumWindows** . Vyvolání platformy převede delegáta na známý formát zpětného volání automaticky.  
   
-4. Ujistěte se, že uvolňování nezíská delegáta předtím, než funkce zpětného volání dokončí svou práci. Při předání delegáta jako parametr nebo předání delegáta obsažená jako pole ve struktuře, zůstávají nesebraný po dobu trvání volání. Ano stejně jako v případě v následujícím příkladu výčet, funkce zpětného volání dokončí svou práci před volání vrátí a nevyžaduje žádné další akce spravované volající.  
+4. Zajistěte, aby systém uvolňování paměti nedeklaroval delegáta před tím, než funkce zpětného volání dokončí svou práci. Pokud předáte delegáta jako parametr nebo předáte delegáta, který je obsažen jako pole ve struktuře, zůstane po dobu trvání volání neshromažďováno. Podobně jako v následujícím příkladu výčtu funkce zpětného volání dokončí svou práci před vrácením volání a nevyžaduje od spravovaného volajícího žádné další akce.  
   
-     Pokud ale funkce zpětného volání lze vyvolat po volání se vrátí, spravované volající musí provést kroky k zajištění, že delegát zůstává nesebraný až do dokončení funkce zpětného volání. Podrobné informace o předcházení uvolňování paměti naleznete v tématu [zařazování Interop](../../../docs/framework/interop/interop-marshaling.md) pomocí vyvolání platformy.  
+     Pokud se však funkce zpětného volání dá vyvolat po vrácení volání, spravované volající musí provést kroky, aby se zajistilo, že delegát zůstane neshromážděný, dokud funkce zpětného volání nedokončí. Podrobné informace o tom, jak zabránit uvolňování paměti, najdete v tématu věnovaném [vzájemnému zařazování](../../../docs/framework/interop/interop-marshaling.md) pomocí volání platforem.  
   
 ## <a name="example"></a>Příklad  
   

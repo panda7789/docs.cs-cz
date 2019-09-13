@@ -2,25 +2,34 @@
 title: Element <issuerChannelBehaviors>
 ms.date: 03/30/2017
 ms.assetid: f7378673-8e9b-45b2-98d1-cf5dccdd8c40
-ms.openlocfilehash: 2c0e0d8d041565edd25c4b2c2802bfd2a589b4f7
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+no-loc:
+- <system.serviceModel>
+- <behaviors>
+- <endpointBehaviors>
+- <behavior>
+- <clientCredentials>
+- <issuedToken>
+- <issuerChannelBehaviors>
+- <dataContractSerializer>
+ms.openlocfilehash: cbbfb9d3b5af47a360aa82cf837cd6749f61b641
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70397904"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70893154"
 ---
 # <a name="issuerchannelbehaviors-element"></a>\<issuerChannelBehaviors – element >
 
 Obsahuje kolekci chování koncového bodu klienta služby Windows Communication Foundation (WCF) (definované v konfiguraci), která se má použít při komunikaci se zadanými službami tokenů služeb. Definované chování nesmí obsahovat žádné [ \<prvky > ClientCredentials](clientcredentials.md) .
 
-[ **\<> Konfigurace**](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> chování**](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> clientCredentials**](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Třídy IssuedToken >** ](issuedtoken.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<issuerChannelBehaviors >**  
+[\<> Konfigurace](../configuration-element.md)\
+&nbsp;&nbsp;[\<System. serviceModel >](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[\<> chování](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<endpointBehaviors >](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<> chování](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<> clientCredentials](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[\<Třídy IssuedToken >](issuedtoken.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<issuerChannelBehaviors >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,13 +48,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 Žádné
 
-### <a name="child-elements"></a>Podřízené elementy
+### <a name="child-elements"></a>Podřízené prvky
 
 |Prvek|Popis|
 |-------------|-----------------|
 |[\<add>](add-of-issuerchannelbehaviors.md)|Přidá chování do kolekce.|
 
-### <a name="parent-elements"></a>Nadřazené elementy
+### <a name="parent-elements"></a>Nadřazené prvky
 
 |Prvek|Popis|
 |-------------|-----------------|

@@ -4,12 +4,12 @@ description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro 
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1f04ccfa56c399a4dba003ec0de8a87f888ef848
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 528d46f64c424dd0f58e57891c605ac5ab474240
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849326"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925923"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
 
@@ -44,6 +44,7 @@ Následující kroky podrobně popisují, jak pomocí `nethost` knihoven a `host
 ### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Krok 1 – načtení HostFxr a získání exportovaných funkcí hostování
 
 Knihovna poskytuje funkci pro vyhledání `hostfxr`knihovny. `get_hostfxr_path` `nethost` `hostfxr` Knihovna zpřístupňuje funkce pro hostování modulu runtime .NET Core. Úplný seznam funkcí najdete v [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) části a v [nativním dokumentu návrhu hostování](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). Ukázka a tento kurz používá následující:
+
 * `hostfxr_initialize_for_runtime_config`: Inicializuje hostitelský kontext a připraví inicializaci modulu runtime .NET Core pomocí zadané konfigurace modulu runtime.
 * `hostfxr_get_runtime_delegate`: Získá delegáta běhové funkce.
 * `hostfxr_close`: Zavře hostitelský kontext.

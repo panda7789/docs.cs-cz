@@ -9,12 +9,12 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: c0d2d1dac43dd178680adbc123d5ce4f88fc0cc0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 659e3ba02367feee4539a984b679173ee4544d17
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779882"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894313"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Otázky LINQ (WCF Data Services)
 Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní. [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Další informace o sestavování a spouštění dotazů [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]na základě datové služby založené na službě najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
@@ -32,7 +32,7 @@ Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a pr
   
  Tento dotaz LINQ se převede na následující identifikátor URI dotazu, který se spustí pro službu [rychlého](quickstart-wcf-data-services.md) startu dat založenou na Northwind:  
   
-```  
+```http
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30  
 ```  
   

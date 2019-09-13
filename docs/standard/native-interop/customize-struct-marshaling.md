@@ -7,12 +7,12 @@ ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: 6e3dcaeb71ae32812d3b022fff2bdc4e3e0691bf
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: b174a817e82f9a9f123c79581656cc8e7179b435
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040157"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929042"
 ---
 # <a name="customizing-structure-marshaling"></a>Přizpůsobení zařazování struktur
 
@@ -339,6 +339,7 @@ struct Currency
 ## <a name="marshaling-systemobjects"></a>Zařazování `System.Object`s
 
 Ve Windows můžete zařadit `object`pole typu do nativního kódu. Tato pole můžete zařadit do jednoho ze tří typů:
+
 - [`VARIANT`](/windows/win32/api/oaidl/ns-oaidl-variant)
 - [`IUnknown*`](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 - [`IDispatch*`](/windows/desktop/api/oaidl/nn-oaidl-idispatch)
