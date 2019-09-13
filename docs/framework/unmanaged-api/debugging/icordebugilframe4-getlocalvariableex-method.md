@@ -14,19 +14,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6594bb72ce9cd2fbfa9cdafebc152a90618b810
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb4eaaa23a810a23852dc5ef88d61c6a5d0f0ccd
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995485"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926808"
 ---
-# <a name="icordebugilframe4getlocalvariableex-method"></a><span data-ttu-id="e73af-102">ICorDebugILFrame4::GetLocalVariableEx – metoda</span><span class="sxs-lookup"><span data-stu-id="e73af-102">ICorDebugILFrame4::GetLocalVariableEx Method</span></span>
-<span data-ttu-id="e73af-103">[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]</span><span class="sxs-lookup"><span data-stu-id="e73af-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  
+# <a name="icordebugilframe4getlocalvariableex-method"></a><span data-ttu-id="f316a-102">ICorDebugILFrame4::GetLocalVariableEx – metoda</span><span class="sxs-lookup"><span data-stu-id="f316a-102">ICorDebugILFrame4::GetLocalVariableEx Method</span></span>
+<span data-ttu-id="f316a-103">[Podporované v .NET Framework 4.5.2 a novějších verzích]</span><span class="sxs-lookup"><span data-stu-id="f316a-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  
   
- <span data-ttu-id="e73af-104">Získá hodnotu místní proměnné zadané v tomto bloku zásobníku (IL intermediate language) a volitelně přistupuje k proměnné přidány v profileru ReJIT instrumentace.</span><span class="sxs-lookup"><span data-stu-id="e73af-104">Gets the value of the specified local variable in this intermediate language (IL) stack frame, and optionally accesses a variable added in profiler ReJIT instrumentation.</span></span>  
+ <span data-ttu-id="f316a-104">Získá hodnotu zadané místní proměnné v rámci tohoto bloku zásobníku pro mezilehlé jazyky (IL) a volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace.</span><span class="sxs-lookup"><span data-stu-id="f316a-104">Gets the value of the specified local variable in this intermediate language (IL) stack frame, and optionally accesses a variable added in profiler ReJIT instrumentation.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e73af-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e73af-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f316a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f316a-105">Syntax</span></span>  
   
 ```cpp
 HRESULT GetLocalVariableEx(  
@@ -36,30 +36,30 @@ HRESULT GetLocalVariableEx(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e73af-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e73af-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f316a-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f316a-106">Parameters</span></span>  
  `flags`  
- <span data-ttu-id="e73af-107">[in] [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) člen výčtu, který určuje, zda je proměnná přidán v profileru instrumentace ReJIT zahrnuta v rámci.</span><span class="sxs-lookup"><span data-stu-id="e73af-107">[in] An [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) enumeration member that specifies whether a variable added in profiler ReJIT instrumentation is included in the frame.</span></span>  
+ <span data-ttu-id="f316a-107">pro Člen výčtu [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) , který určuje, jestli je do tohoto rámce zahrnutá proměnná přidaná v profileru ReJIT instrumentace.</span><span class="sxs-lookup"><span data-stu-id="f316a-107">[in] An [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) enumeration member that specifies whether a variable added in profiler ReJIT instrumentation is included in the frame.</span></span>  
   
  `dwIndex`  
- <span data-ttu-id="e73af-108">[in] Index lokální proměnné v bloku zásobníku IL.</span><span class="sxs-lookup"><span data-stu-id="e73af-108">[in] The index of the local variable in the IL stack frame.</span></span>  
+ <span data-ttu-id="f316a-108">pro Index místní proměnné v rámci bloku IL.</span><span class="sxs-lookup"><span data-stu-id="f316a-108">[in] The index of the local variable in the IL stack frame.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="e73af-109">[out] Ukazatel na adresu objektu "ICorDebugValue", který představuje načtené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e73af-109">[out] A pointer to the address of an "ICorDebugValue" object that represents the retrieved value.</span></span>  
+ <span data-ttu-id="f316a-109">mimo Ukazatel na adresu objektu "ICorDebugValue", který představuje načtenou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="f316a-109">[out] A pointer to the address of an "ICorDebugValue" object that represents the retrieved value.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e73af-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e73af-110">Remarks</span></span>  
- <span data-ttu-id="e73af-111">Tato metoda je podobný [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) metody, s tím rozdílem, že se volitelně přistupuje k proměnné přidány v profileru instrumentace ReJIT.</span><span class="sxs-lookup"><span data-stu-id="e73af-111">This method is similar to the [GetLocalVariable](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) method, except that it optionally accesses a variable added in profiler ReJIT instrumentation.</span></span> <span data-ttu-id="e73af-112">Volání této metody `flags` hodnotu `ILCODE_ORIGINAL_IL` je ekvivalentní volání [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); Pokud je metoda neinstrumentují službou další místní proměnné, tyto proměnné není přístupný.</span><span class="sxs-lookup"><span data-stu-id="e73af-112">Calling this method with a `flags` value of `ILCODE_ORIGINAL_IL` is equivalent to calling [GetLocalVariable](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); if the method is instrumented with additional local variables, those variables cannot be accessed.</span></span> <span data-ttu-id="e73af-113">`ILCODE_REJIT_IL` umožňuje přistupovat k místním proměnným přidán v profileru instrumentace ReJIT ladicí program.</span><span class="sxs-lookup"><span data-stu-id="e73af-113">`ILCODE_REJIT_IL` allows the debugger to access the local variables added in profiler ReJIT instrumentation.</span></span> <span data-ttu-id="e73af-114">Pokud není instrumentovaný IL, metoda vrátí `E_INVALIDARG`.</span><span class="sxs-lookup"><span data-stu-id="e73af-114">If the IL is not instrumented, the method returns `E_INVALIDARG`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f316a-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f316a-110">Remarks</span></span>  
+ <span data-ttu-id="f316a-111">Tato metoda je podobná metodě [GetLocalVariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) , s tím rozdílem, že volitelně přistupuje k proměnné přidané v profileru ReJIT instrumentace.</span><span class="sxs-lookup"><span data-stu-id="f316a-111">This method is similar to the [GetLocalVariable](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) method, except that it optionally accesses a variable added in profiler ReJIT instrumentation.</span></span> <span data-ttu-id="f316a-112">Volání této metody s `flags` `ILCODE_ORIGINAL_IL` hodnotou je ekvivalentní volání [GetLocalVariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); Pokud je metoda instrumentovaná pomocí dalších místních proměnných, tyto proměnné nejsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="f316a-112">Calling this method with a `flags` value of `ILCODE_ORIGINAL_IL` is equivalent to calling [GetLocalVariable](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); if the method is instrumented with additional local variables, those variables cannot be accessed.</span></span> <span data-ttu-id="f316a-113">`ILCODE_REJIT_IL`umožňuje ladicímu programu přístup k místním proměnným přidaným v profileru ReJIT instrumentace.</span><span class="sxs-lookup"><span data-stu-id="f316a-113">`ILCODE_REJIT_IL` allows the debugger to access the local variables added in profiler ReJIT instrumentation.</span></span> <span data-ttu-id="f316a-114">Pokud úroveň IL není instrumentovaná, metoda se vrátí `E_INVALIDARG`.</span><span class="sxs-lookup"><span data-stu-id="f316a-114">If the IL is not instrumented, the method returns `E_INVALIDARG`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e73af-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e73af-115">Requirements</span></span>  
- <span data-ttu-id="e73af-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e73af-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f316a-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f316a-115">Requirements</span></span>  
+ <span data-ttu-id="f316a-116">**Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f316a-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e73af-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e73af-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f316a-117">**Hlaviček** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="f316a-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e73af-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e73af-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f316a-118">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f316a-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e73af-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e73af-119">**.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span></span>  
+ <span data-ttu-id="f316a-119">**Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f316a-119">**.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e73af-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e73af-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f316a-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f316a-120">See also</span></span>
 
-- [<span data-ttu-id="e73af-121">ICorDebugILFrame4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e73af-121">ICorDebugILFrame4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)
-- [<span data-ttu-id="e73af-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="e73af-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="e73af-123">ReJIT: Nepředstavuje Průvodce</span><span class="sxs-lookup"><span data-stu-id="e73af-123">ReJIT: A How-To Guide</span></span>](https://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)
+- [<span data-ttu-id="f316a-121">ICorDebugILFrame4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f316a-121">ICorDebugILFrame4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)
+- [<span data-ttu-id="f316a-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="f316a-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="f316a-123">ReJIT: Průvodce postupy</span><span class="sxs-lookup"><span data-stu-id="f316a-123">ReJIT: A How-To Guide</span></span>](https://blogs.msdn.microsoft.com/davbr/2011/10/12/rejit-a-how-to-guide/)
