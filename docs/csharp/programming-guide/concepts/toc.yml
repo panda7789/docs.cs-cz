@@ -1,24 +1,6 @@
 - name: Koncepty programování
   href: index.md
   items:
-    - name: Sestavení
-      items:
-        - name: Přátelská sestavení
-          items:
-            - name: 'Postupy: Vytváření nepodepsaných přátelských sestavení'
-              href: assemblies-gac/how-to-create-unsigned-friend-assemblies.md
-            - name: 'Postupy: Vytváření podepsaných přátelských sestavení'
-              href: assemblies-gac/how-to-create-signed-friend-assemblies.md
-        - name: 'Postupy: Vytváření a použití sestavení s pomocí příkazového řádku'
-          href: assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md
-        - name: 'Postupy: Určení, zda je soubor sestavení'
-          href: assemblies-gac/how-to-determine-if-a-file-is-an-assembly.md
-        - name: 'Postupy: Zavedení a uvolnění sestavení'
-          href: assemblies-gac/how-to-load-and-unload-assemblies.md
-        - name: "Postupy: Sdílení sestavení s\_jinými aplikacemi"
-          href: assemblies-gac/how-to-share-an-assembly-with-other-applications.md
-        - name: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio'
-          href: assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md
     - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
       href: async/
     - name: Atributy
