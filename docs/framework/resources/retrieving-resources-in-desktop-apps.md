@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2bfb1078478aea5dffab66ba5f8c7d553262968
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e3b396210cf77cacf3d03439af24de40d2dadeee
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851584"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971173"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace byste měli ideálním balíčkem zabalit prostředky pro výchozí nebo neutrální jazykovou verzi pomocí hlavního sestavení a vytvořit samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, kterou vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídu, jak je popsáno v další části, pro přístup k pojmenovaným prostředkům. Pokud se rozhodnete Nevkládat prostředky do hlavního sestavení a satelitních sestavení, můžete také přistupovat k binárním souborům. Resources přímo, jak je popsáno v části [načtení prostředků ze souborů. Resources](#from_file) dále v tomto článku.  Pokud chcete načíst prostředky [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] v aplikacích, přečtěte si téma [Vytvoření a načtení prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) na stránce Windows Dev Center.  
@@ -142,7 +142,7 @@ GetObject.exe
   
  Chcete-li povolit podporu plné verze sestavení, doporučujeme nasadit sestavení se silným názvem do [globální mezipaměti sestavení (GAC](../../../docs/framework/app-domains/gac.md) ) a nasadit sestavení, která nemají silné názvy v adresáři aplikace. Pokud chcete nasadit sestavení se silným názvem v adresáři aplikace, nebudete moci zvýšit číslo verze satelitního sestavení při aktualizaci sestavení. Místo toho je nutné provést místní aktualizaci, kde nahradíte stávající kód aktualizovaným kódem a zachováte stejné číslo verze. Například pokud chcete aktualizovat verzi 1.0.0.0 satelitního sestavení s plně určeným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a", přepište ji pomocí aktualizovaného myApp. Resources. dll, který byl kompilováno se stejným plně zadaným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a". Všimněte si, že použití místních aktualizací u satelitních souborů sestavení ztěžuje aplikaci přesné určení verze satelitního sestavení.  
   
- Další informace o tom, jak sestavovat verze sestavení, najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md) a [způsob, jakým modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Další informace o tom, jak sestavovat verze sestavení, najdete v tématu [Správa verzí sestavení](../../standard/assembly/versioning.md) a [způsob, jakým modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
 <a name="from_file"></a>   
 ## <a name="retrieving-resources-from-resources-files"></a>Načítání prostředků ze souborů. Resources  

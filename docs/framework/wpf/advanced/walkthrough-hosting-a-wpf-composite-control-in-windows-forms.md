@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: bff89f1d81b16c8c66d73901ef951626f6d2cb9e
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a062095885e6c1fc8816a78847968b1c250eabf8
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400624"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991451"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje bohatý prostředí pro vytváření aplikací. Nicméně pokud máte v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu značnou investici, může být výhodnější prodloužit svou stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] , a nikoli přepsat jejich přepis od nuly. Běžným scénářem je situace, kdy chcete vložit jeden nebo více ovládacích prvků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementovaných v rámci aplikace model Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF naleznete v tématu [Control Customizing](../controls/control-customization.md).  
@@ -116,7 +116,7 @@ K dokončení tohoto Názorného postupu potřebujete Visual Studio.
 #### <a name="the-basic-structure-of-the-code-behind-file"></a>Základní struktura souboru s kódem na pozadí  
  Soubor kódu na pozadí se skládá z jednoho oboru názvů `MyControls`, který bude obsahovat dvě `MyControl1` třídy a `MyControlEventArgs`.  
   
-```  
+```csharp  
 namespace MyControls  
 {  
   public partial class MyControl1 : Grid  

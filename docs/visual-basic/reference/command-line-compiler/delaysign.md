@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -delaysign compiler option [Visual Basic]
 - -delaysign compiler option [Visual Basic]
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
-ms.openlocfilehash: 770dcad385c522a548a0c6fd3b6ef02dfbac82f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d3c89d598714446e04ba40155951f771d474866
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649709"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971995"
 ---
 # <a name="-delaysign"></a>-delaysign
 Určuje, zda bude sestavení zcela nebo částečně podepsáno.  
@@ -24,28 +24,28 @@ Určuje, zda bude sestavení zcela nebo částečně podepsáno.
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Volitelné. Použití `-delaysign-` potřebujete-li plně podepsané sestavení. Použití `-delaysign+` Pokud chcete umístit veřejný klíč v sestavení a rezervy místa pro podepsané hash. Výchozí hodnota je `-delaysign-`.  
+ Volitelný parametr. Použijte `-delaysign-` , pokud chcete sestavení plně podepsaného. Použijte `-delaysign+` , pokud chcete umístit veřejný klíč do sestavení a rezervovat místo pro podepsaný algoritmus hash. Výchozí hodnota je `-delaysign-`.  
   
 ## <a name="remarks"></a>Poznámky  
- `-delaysign` Možnost nemá žádný vliv, pokud nejsou použity s [- keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) nebo [- keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md).  
+ Možnost nemá žádný vliv, pokud se nepoužívá s parametrem [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) nebo-. [](../../../visual-basic/reference/command-line-compiler/keycontainer.md) `-delaysign`  
   
- Pokud budete požadovat plně podepsané sestavení, kompilátor vytvoří hodnotu hash souboru, který obsahuje manifest (metadata sestavení) a podepíše tuto hodnotu hash pomocí soukromého klíče. Výsledný digitální podpis je uložen do souboru obsahujícího manifest. Pokud je sestavení podepisováno, kompilátor a neukládá podpis, ale rezervy místa v souboru tak, že podpis se dají přidat později.  
+ Když vyžádáte plně podepsané sestavení, kompilátor vyhodnotí hodnotu hash souboru obsahujícího manifest (metadata sestavení) a podepíše tuto hodnotu hash privátním klíčem. Výsledný digitální podpis je uložen do souboru obsahujícího manifest. Když je sestavení podepsáno opožděně, kompilátor nevypočítá a uloží podpis, ale rezervuje místo v souboru, aby bylo možné podpis přidat později.  
   
- Například s použitím `-delaysign+`, vývojář v organizaci můžete distribuovat bez znaménka testovací verze sestavení, které testerů můžete zaregistrovat do globální mezipaměti sestavení a použít. Po dokončení práce na sestavení je osoba zodpovědná za soukromého klíče organizace plně podepsat sestavení. Tento takové chrání privátní klíče organizace před vyzrazením, zároveň umožní všem vývojářům umožňuje pracovat na sestavení.  
+ Například pomocí nástroje `-delaysign+`může vývojář v organizaci distribuovat nepodepsané testovací verze sestavení, které mohou testeri zaregistrovat s globální mezipamětí sestavení a použít. Po dokončení práce na sestavení může osoba odpovědná za soukromý klíč organizace plně podepsat sestavení. Tato compartmentalization chrání privátní klíč organizace před zveřejněním a umožňuje všem vývojářům pracovat na sestaveních.  
   
- Zobrazit [vytvoření a použití sestavení](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) Další informace o podepisování sestavení.  
+ Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) .  
   
-### <a name="to-set--delaysign-in-the-visual-studio-integrated-development-environment"></a>Chcete-li nastavit - delaysign v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--delaysign-in-the-visual-studio-integrated-development-environment"></a>Nastavení-delaysign v integrovaném vývojovém prostředí sady Visual Studio  
   
-1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.   
   
-2. Klikněte na tlačítko **podepisování** kartu.  
+2. Klikněte na kartu **podepisování** .  
   
-3. Nastavte hodnotu **zpoždění podepsání** pole.  
+3. Nastavte hodnotu v poli **pouze Zpožděné podepsání** .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
 - [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

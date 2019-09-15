@@ -2,12 +2,12 @@
 title: Ukázka rozšíření volného typu
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
-ms.openlocfilehash: 21690aebca250880a8eb51aee0821220a00bc0c0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6cfdef1d083a25999f62c23667c9c6ea00326dca
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039471"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989795"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Ukázka rozšíření volného typu
 Model Syndikačních objektů poskytuje bohatou podporu pro práci s daty rozšíření – informace, které jsou přítomny v reprezentaci XML informačního kanálu syndikace, ale nejsou <xref:System.ServiceModel.Syndication.SyndicationFeed> explicitně <xref:System.ServiceModel.Syndication.SyndicationItem>vystaveny třídami, jako jsou a. Tato ukázka znázorňuje základní techniky pro práci s daty rozšíření.  
@@ -67,7 +67,7 @@ w.w3.org/2001/XMLSchema" xmlns="">
 ## <a name="writing-extension-data"></a>Zápis dat rozšíření  
  Rozšíření atributů jsou vytvořena přidáním záznamů do <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekce, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 //Attribute extensions are stored in a dictionary indexed by   
 // XmlQualifiedName  
 feed.AttributeExtensions.Add(new XmlQualifiedName("myAttribute", ""), "someValue");  
@@ -77,7 +77,7 @@ feed.AttributeExtensions.Add(new XmlQualifiedName("myAttribute", ""), "someValue
   
  Následující vzorový kód vytvoří element rozšíření s názvem `simpleString`.  
   
-```  
+```csharp  
 feed.ElementExtensions.Add("simpleString", "", "hello, world!");  
 ```  
   
@@ -85,7 +85,7 @@ feed.ElementExtensions.Add("simpleString", "", "hello, world!");
   
  Jedním ze způsobů, jak vytvořit složitá rozšíření prvků, která se skládají z mnoha vnořených elementů, je použití rozhraní <xref:System.Runtime.Serialization.DataContractSerializer> API .NET Framework <xref:System.Xml.Serialization.XmlSerializer> pro serializaci (a i podporuje), jak je znázorněno v následujících příkladech.  
   
-```  
+```csharp  
 feed.ElementExtensions.Add( new DataContractExtension() { Key = "X", Value = 4 } );  
 feed.ElementExtensions.Add( new XmlSerializerExtension { Key = "Y", Value = 8 }, new XmlSerializer( typeof( XmlSerializerExtension ) ) );  
 ```  
@@ -94,7 +94,7 @@ feed.ElementExtensions.Add( new XmlSerializerExtension { Key = "Y", Value = 8 },
   
  Třídu lze také použít k vytvoření rozšíření prvků <xref:System.Xml.XmlReader> z instance. <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection> To umožňuje snadnou integraci s rozhraními API <xref:System.Xml.Linq.XElement> pro zpracování XML, například jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 feed.ElementExtensions.Add(new XElement("xElementExtension",  
         new XElement("Key", new XAttribute("attr1", "someValue"), "Z"),  
         new XElement("Value", new XAttribute("attr1", "someValue"),   
@@ -104,13 +104,13 @@ feed.ElementExtensions.Add(new XElement("xElementExtension",
 ## <a name="reading-extension-data"></a>Čtení dat rozšíření  
  Hodnoty pro přípony atributů lze získat vyhledáním atributu v <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> kolekci <xref:System.Xml.XmlQualifiedName> , jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 Console.WriteLine( feed.AttributeExtensions[ new XmlQualifiedName( "myAttribute", "" )]);  
 ```  
   
  Rozšíření prvků jsou k dispozici `ReadElementExtensions<T>` pomocí metody.  
   
-```  
+```csharp  
 foreach( string s in feed2.ElementExtensions.ReadElementExtensions<string>("simpleString", ""))  
 {  
     Console.WriteLine(s);  
@@ -130,7 +130,7 @@ foreach (XmlSerializerExtension xse in feed2.ElementExtensions.ReadElementExtens
   
  Je také možné získat `XmlReader` v jednotlivých prvcích rozšíření <xref:System.ServiceModel.Syndication.SyndicationElementExtension.GetReader> pomocí metody.  
   
-```  
+```csharp  
 foreach (SyndicationElementExtension extension in feed2.ElementExtensions.Where<SyndicationElementExtension>(x => x.OuterName == "xElementExtension"))  
 {  
     XNode xelement = XElement.ReadFrom(extension.GetReader());  

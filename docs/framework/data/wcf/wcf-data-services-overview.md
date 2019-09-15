@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: 66dd61210e36210f5444eb05355612eeb75c155a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bca07bf776f20443c4ccd2af69fc8c0b4eec5a88
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790236"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991102"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje vytvořit a spotřebovat datové služby pro web nebo intranet pomocí [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]umožňuje vystavit data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. To vám umožní přístup k datům a jejich změny pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP pro GET, PUT, POST a DELETE. V tomto tématu najdete Přehled vzorů a postupů definovaných nástrojem [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a také o zařízeních poskytovaných nástrojem, pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] kterých můžete využívat aplikace založené na .NET Framework. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]  
@@ -18,9 +18,9 @@ ms.locfileid: "70790236"
 ## <a name="address-data-as-resources"></a>Adresovat data jako prostředky  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]zpřístupňuje data jako prostředky, které jsou adresovatelné pomocí identifikátorů URI. Cesty k prostředkům se vytvářejí na základě konvencí vztahů mezi entitami model EDM (Entity Data Model). V tomto modelu entity reprezentují provozní jednotky dat v doméně aplikace, jako jsou například zákazníci, objednávky, položky a produkty. Další informace najdete v tématu [model EDM (Entity Data Model)](../adonet/entity-data-model.md).  
   
- V [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]nástroji je třeba adresovat prostředky entit jako sadu entit, která obsahuje instance typů entit. Identifikátor URI `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders` například vrátí všechny objednávky `Northwind` z datové služby, které se vztahují `CustomerID` k zákazníkovi s hodnotou.`ALFKI.`  
+ V [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]nástroji je třeba adresovat prostředky entit jako sadu entit, která obsahuje instance typů entit. Identifikátor URI <https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders> například vrátí všechny objednávky `Northwind` z datové služby, které se vztahují `CustomerID` k zákazníkovi s hodnotou.`ALFKI.`  
   
- Výrazy dotazů umožňují provádět tradiční operace dotazů na prostředky, jako je filtrování, řazení a stránkování. Identifikátor URI `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=Freight gt 50` například filtruje prostředky tak, aby vracely pouze objednávky s náklady na přepravné na více než $50. Další informace najdete v tématu [přístup k prostředkům datové služby](accessing-data-service-resources-wcf-data-services.md).  
+ Výrazy dotazů umožňují provádět tradiční operace dotazů na prostředky, jako je filtrování, řazení a stránkování. Například identifikátor URI <https://services.odata.org/Northwind/Northwind.svc/Customers( ' ALFKI ')/Orders? $Filter = dopravení gt 50 > filtruje prostředky, aby vracely pouze objednávky s náklady na dopravné na více než $50. Další informace najdete v tématu [přístup k prostředkům datové služby](accessing-data-service-resources-wcf-data-services.md).  
   
 ## <a name="interoperable-data-access"></a>Přístup k datům vzájemně ovladatelného  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]Vytvoří na standardních internetových protokolech, aby byly datové služby vzájemně ovladatelné s aplikacemi, které .NET Framework nepoužívají. Vzhledem k tomu, že je možné použít standardní identifikátory URI k adresování dat, může vaše aplikace přistupovat k datům a měnit je pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP GET, PUT, POST a DELETE. To vám umožní přístup k těmto službám z libovolného klienta, který může analyzovat a přistupovat k datům přenášeným přes standardní protokoly HTTP.  

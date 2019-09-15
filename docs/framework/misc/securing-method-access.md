@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1157d93585a564f83bf3809ba2fc3a26949fb711
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 74327e10e57c2f63519a3336ab2a600ad2b0a6b8
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206123"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971059"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -28,9 +28,9 @@ ms.locfileid: "70206123"
   
  Spravovaný kód nabízí několik způsobů, jak omezit přístup k metodě:  
   
-- Omezte rozsah dostupnosti pro třídu, sestavení nebo odvozené třídy, pokud mohou být důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třída odvozená z, i když v některých případech sdílí identitu nadřazené třídy. Konkrétně neodvozujte důvěryhodnost z chráněného klíčovéhoslova, které se nutně nepoužívá v kontextu zabezpečení.  
+- Omezte rozsah dostupnosti pro třídu, sestavení nebo odvozené třídy, pokud mohou být důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třída odvozená z, i když v některých případech sdílí identitu nadřazené třídy. Konkrétně neodvozujte důvěryhodnost z **chráněného**klíčového slova, které se nutně nepoužívá v kontextu zabezpečení.  
   
-- Omezte přístup k metodě u volajících zadané identity – v podstatě všechny konkrétní legitimace (silný [](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) název, vydavatel, zóna atd.) si můžete vybrat.  
+- Omezte přístup k metodě u volajících zadané identity – v podstatě všechny konkrétní [legitimace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (silný název, vydavatel, zóna atd.) si můžete vybrat.  
   
 - Omezte přístup k metodě volajících, která mají jakákoli oprávnění, která jste vybrali.  
   
@@ -40,7 +40,7 @@ ms.locfileid: "70206123"
   
 - Vyžadovat odvozené třídy, které přepíší konkrétní metody, aby měly zadanou identitu nebo oprávnění.  
   
- Následující příklad ukazuje, jak přispět k ochraně veřejné třídy pro omezený přístup tím, že vyžaduje, aby volající byli podepsáni pomocí konkrétního silného názvu. Tento příklad používá <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s poptávkou pro silný název. Informace o tom, jak podepsat sestavení se silným názvem, naleznete v tématu [vytváření a používání sestavení se silným názvem](../app-domains/create-and-use-strong-named-assemblies.md).  
+ Následující příklad ukazuje, jak přispět k ochraně veřejné třídy pro omezený přístup tím, že vyžaduje, aby volající byli podepsáni pomocí konkrétního silného názvu. Tento příklad používá <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s **poptávkou** pro silný název. Informace o tom, jak podepsat sestavení se silným názvem, naleznete v tématu [vytváření a používání sestavení se silným názvem](../../standard/assembly/create-use-strong-named.md).  
   
 ```vb  
 <StrongNameIdentityPermissionAttribute(SecurityAction.Demand, PublicKey := "…hex…", Name := "App1", Version := "0.0.0.0")>  _  

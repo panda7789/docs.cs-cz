@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 230853abf73a368bfcd8b88375c216fdadfc7d46
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: a5059f629a341bb4689428855807fb3c66b0949b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567271"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969071"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Vystavení komponent COM pro rozhraní .NET Framework
-Tato část shrnuje proces potřebný k vystavení existující součásti modelu COM pro spravovaný kód. Podrobnosti o vytváření serverů COM, které úzce integrují s .NET Framework, najdete v tématu věnovaném [hlediskům návrhu pro](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))spoluprovozování.
+Tato část shrnuje proces potřebný k vystavení existující součásti modelu COM pro spravovaný kód. Podrobnosti o vytváření serverů COM, které úzce integrují s .NET Framework, najdete v tématu věnovaném [hlediskům návrhu pro spoluprovozování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100)).
   
  Existující komponenty modelu COM jsou cenné prostředky ve spravovaném kódu jako obchodní aplikace střední vrstvy nebo jako izolované funkce. Ideální komponenta má primární spolupracující sestavení a je v souladu s požadavky na programování, které jsou uloženy v modelu COM.  
   
@@ -36,7 +36,7 @@ Tato část shrnuje proces potřebný k vystavení existující součásti model
   
 4. [Nasazení aplikace spolupráce](deploying-an-interop-application.md)  
   
-     Aplikace Interop jsou nejlépe nasazeny jako podepsaná sestavení v globální mezipaměti sestavení ( [silně](../app-domains/strong-named-assemblies.md)pojmenovaná).  
+     Aplikace Interop jsou nejlépe nasazeny jako podepsaná sestavení v globální mezipaměti sestavení ( [silně pojmenovaná](../../standard/assembly/strong-named.md)).  
   
 ## <a name="see-also"></a>Viz také:
 

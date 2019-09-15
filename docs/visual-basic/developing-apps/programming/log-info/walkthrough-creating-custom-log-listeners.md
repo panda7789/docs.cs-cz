@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 90135074a4d34ea73743faffb2531305fcb326fb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a4bd64d4c8232f9b6448baf98ee73ee497ccd5ca
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965264"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972112"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Návod: Vytváření vlastních protokolových posluchačů (Visual Basic)
 Tento návod ukazuje, jak vytvořit vlastní naslouchací proces protokolu a nakonfigurovat ho tak, aby naslouchal výstupu `My.Application.Log` objektu.  
@@ -33,7 +33,7 @@ Tento návod ukazuje, jak vytvořit vlastní naslouchací proces protokolu a nak
   
  Chcete-li `My.Application.Log` zajistit, aby používala naslouchací proces protokolu, měli byste silně pojmenovat sestavení, které obsahuje váš naslouchací proces protokolu.  
   
- Další postup poskytuje několik jednoduchých kroků pro vytvoření silně pojmenovaného sestavení naslouchacího procesu protokolu. Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md).  
+ Další postup poskytuje několik jednoduchých kroků pro vytvoření silně pojmenovaného sestavení naslouchacího procesu protokolu. Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../../standard/assembly/create-use-strong-named.md).  
   
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>Pro silně pojmenování sestavení naslouchacího procesu protokolu  
   

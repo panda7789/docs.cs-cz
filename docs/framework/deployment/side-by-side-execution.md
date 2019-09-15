@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47f211256b4820e3fb25339de2fe4db962171056
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 01fa0cf9811e72333b091858e2f78a80dda1d9ef
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911012"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969106"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Souběžné spouštění v .NET Framework
 Souběžné spouštění je možnost spuštění několika verzí aplikace nebo komponenty v jednom počítači. V jednom počítači lze nainstalovat více verzí modulu CLR (Common Language Runtime) a několik verzí aplikací a komponent, které využívají verzi modulu runtime ve stejnou dobu.  
@@ -35,7 +35,7 @@ Souběžné spouštění je možnost spuštění několika verzí aplikace nebo 
   
 - Sestavení se silným názvem.  
   
-     Souběžné spouštění používá sestavení se silným názvem k vytvoření vazby informací o typu ke konkrétní verzi sestavení. Díky tomu aplikace nebo součást nevytvoří vazbu k neplatné verzi sestavení. Sestavení se silným názvem také umožňují, aby na stejném počítači existovalo více verzí souboru a aby je mohly využívat aplikace. Další informace naleznete v tématu [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).  
+     Souběžné spouštění používá sestavení se silným názvem k vytvoření vazby informací o typu ke konkrétní verzi sestavení. Díky tomu aplikace nebo součást nevytvoří vazbu k neplatné verzi sestavení. Sestavení se silným názvem také umožňují, aby na stejném počítači existovalo více verzí souboru a aby je mohly využívat aplikace. Další informace naleznete v tématu [sestavení se silným názvem](../../standard/assembly/strong-named.md).  
   
 - Úložiště kódu podporující verze.  
   
@@ -116,7 +116,7 @@ publicKeyToken=...,
 |[Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Popisuje způsob propojení aplikace s konkrétní verzí sestavení.|  
 |[Konfigurace přesměrování vazby sestavení](../../../docs/framework/deployment/configuring-assembly-binding-redirection.md)|Objasňuje způsob, jakým lze odkazy vazby přesměrovat na určitou verzi sestavení rozhraní .NET Framework.|  
 |[Vnitroprocesové souběžné provádění](../../../docs/framework/deployment/in-process-side-by-side-execution.md)|Popisuje způsob používání souběžného spouštění aktivace hostitele v jednom procesu, který je určen pro spouštění více verzí modulu CLR (Common Language Runtime) v rámci jednoho procesu.|  
-|[Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)|Poskytuje koncepční přehled sestavení.|  
+|[Sestavení v .NET](../../standard/assembly/index.md)|Poskytuje koncepční přehled sestavení.|  
 |[Aplikační domény](../../../docs/framework/app-domains/application-domains.md)|Poskytuje koncepční přehled domén aplikací.|  
   
 ## <a name="reference"></a>Reference  

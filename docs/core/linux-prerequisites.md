@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislosti rozhraní .NET Core
 author: thraka
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: ad1ab42bcf66e32a45351ae2b6156251c9d0dc1f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 5fcf931572f3c7e9b9857d2e91e9d620c7aad0bd
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849054"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969871"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -22,6 +22,8 @@ Tento článek ukazuje závislosti potřebné pro vývoj aplikací .NET Core v s
 > Pro produkční servery a prostředí se .NET Core SDK balíček nevyžaduje. Pro aplikace nasazené do produkčního prostředí je potřeba jenom balíček runtime .NET Core. Modul runtime .NET Core je nasazen s aplikacemi jako součást samostatného nasazení, ale musí být nasazen pro samostatně nasazené aplikace závislé na rozhraní. Další informace o typech nasazení závislých na rozhraní a samostatně obsažených typů naleznete v tématu [nasazení aplikace .NET Core](./deploying/index.md). Konkrétní pokyny najdete také v části [samostatné aplikace pro Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md) .
 
 ## <a name="supported-linux-versions"></a>Podporované verze systému Linux
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 

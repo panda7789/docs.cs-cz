@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [C#]
 - .moduleassemblyname compiler option [C#]
 ms.assetid: d464d9b9-f18d-423b-95e9-66c7878fd53a
-ms.openlocfilehash: d57279128c0909ba3e62d55d596705cfde6be75c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7562c0609d61b2388f5063bc480a4dfc715155db
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606661"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970078"
 ---
 # <a name="-moduleassemblyname-c-compiler-option"></a>-moduleassemblyname – (C# možnost kompilátoru)
 Určuje sestavení, jehož neveřejné typy a. netmodule mají přístup.  
@@ -39,7 +39,7 @@ Určuje sestavení, jehož neveřejné typy a. netmodule mají přístup.
   
  Další informace o vytváření. netmodule naleznete v tématu [-target: Module (C# možnosti kompilátoru)](./target-module-compiler-option.md).  
   
- Další informace o Friend sestaveních naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
+ Další informace o Friend sestaveních naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).  
   
  Tato možnost není k dispozici v rámci vývojového prostředí; je k dispozici pouze při kompilaci z příkazového řádku.  
   

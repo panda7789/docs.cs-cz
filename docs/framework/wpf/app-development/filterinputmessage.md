@@ -5,43 +5,43 @@ helpviewer_keywords:
 - raw input [WPF]
 - FilterInputMessage method [WPF]
 ms.assetid: 4d74c6cf-7d1d-49ff-96c1-231340ce54f5
-ms.openlocfilehash: bd696752a287a78533d55c0fd3ad9986a32bd180
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1453946766e33843ae9e56f7a7f4dbf1678b81b5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052206"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991389"
 ---
 # <a name="filterinputmessage"></a>FilterInputMessage
-Voláno rozhraním PresentationHost.exe pokaždé, když je přijata zpráva, pokud je vrácena E_NOTIMPL.  
+Volá se PresentationHost. exe, když se přijme zpráva, pokud se nevrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FilterInputMessage( [in] MSG* pMsg ) ;  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `pMsg`  
   
- [in] WM_INPUT zpráva odeslaná do okna, které dostává Nezpracovaný vstup.  
+ pro Zpráva WM_INPUT odeslána do okna, které získává nezpracovaný vstup.  
   
 ## <a name="property-valuereturn-value"></a>Hodnota vlastnosti / návratová hodnota  
- HODNOTA HRESULT:  
+ HRESULT  
   
- S_OK - filtr nemohl zpracovat zprávu a může dojít k dalšímu zpracování.  
+ S_OK – filtr nezpracovává zprávu a může dojít k dalšímu zpracování.  
   
- S_FALSE - filtr zpracovat tuto zprávu a by mělo dojít k žádné další zpracování.  
+ S_FALSE – filtr zpracoval tuto zprávu a žádné další zpracování by neměl nastat.  
   
- E_NOTIMPL – Pokud je tato hodnota se vrátí, [filterinputmessage –](filterinputmessage.md) není volána znovu. To může být vrácena z hostitele aplikace, která interested pouze při poskytování vlastní pokrok a chyba uživatelských rozhraní k PresentationHost.exe není zajímá se předalo PresentationHost.exe nezpracované zprávy o zadávání.  
+ E_NOTIMPL – Pokud se vrátí tato hodnota, [FilterInputMessage](filterinputmessage.md) se nevolá znovu. To může být vráceno z hostitelské aplikace, která se zajímá pouze o vlastní průběh a chybná uživatelská rozhraní PresentationHost. exe nemá zájem přecházet nezpracovanými vstupními zprávami z PresentationHost. exe.  
   
 ## <a name="remarks"></a>Poznámky  
- PresentationHost.exe je cílem různých nezpracovaná vstupní zařízení, včetně klávesnice, myš a dálková ovládání. V některých případech je závislá na vstupu, který by jinak využívat PresentationHost.exe chování v hostitelské aplikaci. Například hostitelská aplikace může záviset na příjem některé vstupní zprávy k určení, jestli se mají zobrazit prvky konkrétní uživatelského rozhraní.  
+ PresentationHost. exe je cílem různých nezpracovaných vstupních zařízení, včetně klávesnice, myši a dálkových ovládání. V některých případech je chování v hostitelské aplikaci závislé na vstupu, které by jinak bylo spotřebováno pomocí PresentationHost. exe. Například hostitelská aplikace může záviset na přijímání určitých vstupních zpráv, aby bylo možné určit, zda se mají zobrazovat konkrétní prvky uživatelského rozhraní.  
   
- Aby hostitelskou aplikaci pro příjem nezbytné vstupní zprávy k poskytování těchto projevů PresentationHost.exe předává odpovídající nezpracované zprávy o zadávání hostované aplikace voláním [filterinputmessage –](filterinputmessage.md).  
+ Aby mohla hostitelská aplikace přijímat nezbytné vstupní zprávy pro poskytnutí tohoto chování, předává PresentationHost. exe příslušné nezpracované vstupní zprávy do hostované aplikace voláním [FilterInputMessage](filterinputmessage.md).  
   
- Hostované aplikace přijme nezpracované zprávy o zadávání tak, že zaregistrujete sadu nezpracovaná vstupní zařízení (lidské rozhraní) vrácený [getrawinputdevices –](getrawinputdevices.md).  
+ Hostovaná aplikace obdrží nezpracované vstupní zprávy registrací se sadou nezpracovaných vstupních zařízení (zařízení s lidskými rozhraními) vrácenými funkcí [GetRawInputDevices](getrawinputdevices.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [WM_INPUT zprávy](/windows/desktop/inputdev/wm-input)
+- [Zpráva WM_INPUT](/windows/desktop/inputdev/wm-input)

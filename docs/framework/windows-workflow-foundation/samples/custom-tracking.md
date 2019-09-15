@@ -2,12 +2,12 @@
 title: Vlastní sledování
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: b53b22b485a7ac340821073d2f2914b13a7b7011
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32abf1dc4c9607b4a86f836fa2c759af1dbf1b69
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044305"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989403"
 ---
 # <a name="custom-tracking"></a>Vlastní sledování
 Tento příklad ukazuje, jak vytvořit vlastního účastníka sledování a zapsat obsah sledování dat do konzoly. Kromě toho Ukázka ukazuje, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty naplněné uživatelsky definovanými daty. Účastník sledování na základě konzoly filtruje <xref:System.Activities.Tracking.TrackingRecord> objekty emitované pracovním postupem pomocí objektu sledování profilu vytvořeného v kódu.

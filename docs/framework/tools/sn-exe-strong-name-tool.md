@@ -12,20 +12,20 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 643f0644bdeb2d3bdf6a08b482d0494affd92209
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: ef977206bf0d5b818cfd9779f063fbc2bd50632e
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894636"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971849"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
-Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými názvy](../../../docs/framework/app-domains/strong-named-assemblies.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
+Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými názvy](../../standard/assembly/strong-named.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
   
 > [!WARNING]
 > Nespoléhá se na silné názvy zabezpečení. Poskytují pouze jedinečnou identitu.
 
- Další informace o silných názvech a sestaveních se silným názvem naleznete v tématu sestavení [se [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md) a postupy: Podepište sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md).  
+ Další informace o silných názvech a sestaveních se silným názvem naleznete v tématu sestavení [se [silným názvem](../../standard/assembly/strong-named.md) a postupy: Podepište sestavení silným názvem](../../standard/assembly/sign-strong-name.md).  
   
  Nástroj Strong Name je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
 
@@ -128,5 +128,5 @@ sn -d MyContainer
 
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
-- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
+- [Sestavení se silným názvem](../../standard/assembly/strong-named.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

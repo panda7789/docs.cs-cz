@@ -2,12 +2,12 @@
 title: Neobecná aktivita ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: e467534ba2b233f1f3c279e89badf12846c6b7f7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: cb040d8bd5fbb34cc00b246f2e51789866fd8e78
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038066"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989041"
 ---
 # <a name="non-generic-foreach"></a>Neobecná aktivita ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]dodá v sadě nástrojů sadu aktivit toku řízení, včetně <xref:System.Activities.Statements.ForEach%601>, což umožňuje iterace prostřednictvím <xref:System.Collections.Generic.IEnumerable%601> kolekcí.  
@@ -24,7 +24,7 @@ ms.locfileid: "70038066"
 ## <a name="class-definition"></a>Definice třídy  
  Následující příklad kódu ukazuje definici neobecné `ForEach` aktivity.  
   
-```  
+```csharp  
 [ContentProperty("Body")]  
 public class ForEach : NativeActivity  
 {  
@@ -47,7 +47,7 @@ public class ForEach : NativeActivity
 ## <a name="example-of-using-foreach"></a>Příklad použití příkazu ForEach  
  Následující kód ukazuje, jak použít aktivitu ForEach v aplikaci.  
   
-```  
+```csharp  
 string[] names = { "bill", "steve", "ray" };  
   
 DelegateInArgument<object> iterationVariable = new DelegateInArgument<object>() { Name = "iterationVariable" };  
@@ -74,7 +74,7 @@ Activity sampleUsage =
 ## <a name="foreach-designer"></a>Návrhář ForEach  
  Návrhář aktivity pro ukázku je podobný vzhledu pro návrháře poskytovaného pro integrovanou <xref:System.Activities.Statements.ForEach%601> aktivitu. Návrhář se zobrazí v sadě nástrojů v kategorii **ukázky**, **neobecné aktivity** . Návrhář má název **ForEachWithBodyFactory** v sadě nástrojů, protože aktivita zpřístupňuje ovládací prvek <xref:System.Activities.Presentation.IActivityTemplateFactory> v sadě nástrojů, který vytvoří aktivitu se správně nakonfigurovanou <xref:System.Activities.ActivityAction>.  
   
-```  
+```csharp  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
 {  
     public Activity Create(DependencyObject target)  

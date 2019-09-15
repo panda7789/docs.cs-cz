@@ -2,19 +2,19 @@
 title: Interoperabilita s webovými službami ASP.NET
 ms.date: 03/30/2017
 ms.assetid: 622422f8-6651-442f-b8be-e654a4aabcac
-ms.openlocfilehash: f2f1a8fd2bf34ff61784f2dcb88c0669585da573
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 59ee6412cde152588e8007fe530cc8e5708410e5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026016"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991535"
 ---
 # <a name="interoperability-with-aspnet-web-services"></a>Interoperabilita s webovými službami ASP.NET
-Vzájemná funkční spolupráce mezi webovými službami ASP.NET a webových služeb Windows Communication Foundation (WCF) služeb můžete dosáhnout tím, že zajišťuje, že služby implementované pomocí obou technologií odpovídají WS-I Basic Profile 1.1 specifikace. Webových služeb ASP.NET, které odpovídají WS-I Basic Profile 1.1 se vzájemná spolupráce s klienty WCF pomocí WCF vazeb poskytovaných systémem, <xref:System.ServiceModel.BasicHttpBinding>.  
+Vzájemná spolupráce mezi webovými službami ASP.NET Web Services a Windows Communication Foundation (WCF) je možné dosáhnout tím, že zajistíte, aby služby implementované pomocí obou technologií splňovaly specifikaci 1,1 profilu WS-I Basic. Webové služby ASP.NET, které odpovídají profilu WS-I Basic Profile 1,1, se vzájemně spolupracují s klienty WCF pomocí vazby <xref:System.ServiceModel.BasicHttpBinding>poskytované systémem služby WCF.  
   
- Pomocí technologie ASP.NET 2.0 možnost Přidat <xref:System.Web.Services.WebService> a <xref:System.Web.Services.WebMethodAttribute> atributy rozhraní, nikoli třída a zápis třídu pro implementaci rozhraní, jak je znázorněno v následujícím ukázkovém kódu.  
+ Použijte možnost ASP.NET 2,0 pro přidání <xref:System.Web.Services.WebService> atributů a <xref:System.Web.Services.WebMethodAttribute> k rozhraní, nikoli ke třídě, a zápis třídy pro implementaci rozhraní, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [WebService]  
 public interface IEcho  
 {  
@@ -32,22 +32,22 @@ public class Service : IEcho
 }  
 ```  
   
- Pomocí této možnosti je upřednostňované, protože rozhraní s <xref:System.Web.Services.WebService> atributu tvoří kontrakt operace prováděné na službu, kterou lze opětovně použít s různými třídami, které mohou implementovat tento stejný kontrakt různými způsoby.  
+ Použití této možnosti je preferované, protože rozhraní s <xref:System.Web.Services.WebService> atributem představuje kontrakt pro operace prováděné službou, které lze znovu použít s různými třídami, které mohou implementovat stejný kontrakt různými způsoby.  
   
- Vyhněte se použití <xref:System.Web.Services.Protocols.SoapDocumentServiceAttribute> atribut zprávy směruje do metody podle plně kvalifikovaný název elementu těla zprávy protokolu SOAP místo `SOAPAction` hlavičky protokolu HTTP. Používá WCF `SOAPAction` hlavičku protokolu HTTP pro směrování zpráv.  
+ Nepoužívejte `SOAPAction` atribut ke směrování zpráv na metody založené na plně kvalifikovaném názvu prvku těla zprávy SOAP, nikoli v hlavičce protokolu HTTP. <xref:System.Web.Services.Protocols.SoapDocumentServiceAttribute> WCF používá `SOAPAction` hlavičku protokolu HTTP pro zprávy směrování.  
   
- XML, do kterého <xref:System.Xml.Serialization.XmlSerializer> serializuje typu ve výchozím nastavení je sémanticky shodná s XML, do kterého <xref:System.Runtime.Serialization.DataContractSerializer> serializuje typu podle oboru názvů XML není výslovně uveden. Po definování typu dat pro použití se službami ASP.NETWeb čekat na případná přijetí WCF, postupujte takto:  
+ Kód XML, do <xref:System.Xml.Serialization.XmlSerializer> kterého je ve výchozím nastavení serializován typ, je sémanticky totožný s XML, do <xref:System.Runtime.Serialization.DataContractSerializer> kterého je serializován typ, za předpokladu, že obor názvů XML je explicitně definován. Při definování datového typu pro použití s ASP. NETWeb Services při předvídání přijímání služby WCF postupujte takto:  
   
-- Definování typů pomocí tříd rozhraní .NET Framework než schématu XML.  
+- Definujte typ pomocí .NET Framework třídy místo schématu XML.  
   
-- Přidat pouze <xref:System.SerializableAttribute> a <xref:System.Xml.Serialization.XmlRootAttribute> na třídu pomocí odkazující k explicitnímu definování oboru názvů typu. Nepřidávejte další atributy z <xref:System.Xml.Serialization> obor názvů řídit, jak je třída rozhraní .NET Framework mají být převedeny do jazyka XML.  
+- Přidejte pouze <xref:System.SerializableAttribute> třídu <xref:System.Xml.Serialization.XmlRootAttribute> a ke třídě pomocí druhé k explicitnímu definování oboru názvů pro daný typ. Nepřidávejte další atributy z <xref:System.Xml.Serialization> oboru názvů, abyste mohli určit, jak se má třída .NET Framework přeložit do XML.  
   
-- Přijetím tohoto přístupu by měl být schopen později provést třídy rozhraní .NET v kontraktech dat a uveďte <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> beze změny výrazně XML, do které třídy serializují pro přenos. Typy použité ve zprávách webových služeb ASP.NET s mohou být zpracovány jako kontraktů dat aplikací služby WCF, což má za následek, kromě dalších výhod, lepší výkon v aplikacích WCF.  
+- Přijetím tohoto přístupu byste měli být schopni později převést třídy .NET na kontrakty dat s přidáním <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> bez významně měnit kód XML, do kterého jsou třídy serializovány pro přenos. Typy, které se používají ve zprávách pomocí webových služeb ASP.NET, je možné zpracovat jako kontrakty dat aplikacemi WCF, a to mimo jiné výhody a lepší výkon v aplikacích WCF.  
   
- Vyhněte se použití možnosti ověřování, které jsou k dispozici Internetové informační služby (IIS). Klienti WCF je nepodporují. Pokud služba musí být zabezpečená, použijte možnosti poskytované WCF, protože tyto možnosti jsou odolnější a jsou založeny na standardních protokolů.  
+ Nepoužívejte možnosti ověřování poskytované Internetová informační služba (IIS). Klienti WCF je nepodporují. Pokud musí být služba zabezpečená, použijte možnosti poskytované službou WCF, protože tyto možnosti jsou robustní a jsou založené na standardních protokolech.  
   
-## <a name="performance-impact-caused-by-loading-the-servicemodel-httpmodule"></a>Dopad na výkon způsobené načítání ServiceModel HttpModule  
- V rozhraní .NET Framework 3.0 WCF `HttpModule` byla nainstalovaná v kořenovém souboru Web.config tak, aby každá aplikace technologie ASP.NET byla povolena WCF. To může ovlivnit výkon, takže můžete odebrat `ServiceModel` pro soubor Web.config, jak je znázorněno v následujícím příkladu.  
+## <a name="performance-impact-caused-by-loading-the-servicemodel-httpmodule"></a>Dopad na výkon způsobený načtením modulu pro odeslání ServiceModel  
+ V .NET Framework 3,0 byla služba WCF `HttpModule` nainstalována do kořenového souboru Web. config tak, aby každá aplikace ASP.NET byla povolená služba WCF. To může mít vliv na výkon, takže můžete `ServiceModel` soubor Web. config odebrat, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <httpModules>  

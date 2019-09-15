@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 451f9581ae997ad86fee968fa978713db2049455
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e93f84f0bacf7ac205294c12c55afcab8d7319b7
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044391"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989812"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Postupy: Vytvoření pracovního postupu stavového stroje
 Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.StateMachine> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.  
@@ -86,7 +86,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
   
 4. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.  
   
-5. Přetáhněte aktivitu **stavu** z části **Stavový počítač** v **sadě nástrojů** do návrháře pracovních postupů a najeďte myší na **cílový stav inicializace** . Všimněte si, že kolem **cílového stavu inicializace** se zobrazí čtyři trojúhelníky, když je tento nový stav nad ním. Nový stav umístěte na trojúhelník, který je hned pod cílovým stavem **inicializace** . Tím se nový stav umístí do pracovního postupu a vytvoří se přechod z **cílového stavu Initialize** do nového stavu.  
+5. Přetáhněte aktivitu **stavu** z části **Stavový počítač** v **sadě nástrojů** do návrháře pracovních postupů a najeďte myší na **cílový stav inicializace** . Všimněte si, že kolem **cílového stavu inicializace** se zobrazí čtyři trojúhelníky, když je tento nový stav nad ním. Nový stav umístěte na trojúhelník, který je hned pod **cílovým** stavem inicializace. Tím se nový stav umístí do pracovního postupu a vytvoří se přechod z **cílového stavu Initialize** do nového stavu.  
   
 6. Kliknutím na **State1** ho vyberte, změňte **Zobrazovaný** název na `Enter Guess`a pak dvakrát klikněte na stav v Návrháři pracovních postupů a rozbalte ho.  
   
@@ -114,7 +114,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
   
 14. Dvojitým kliknutím na nově přejmenovaný **odhad správného** přechodu v Návrháři pracovního postupu ho rozbalte.  
   
-15. Přetáhněte aktivitu **ReadInt** z oddílu **NumberGuessWorkflowActivities** **panelu nástrojů** a přetáhněte ji do oddílu triggeru přechodu .  
+15. Přetáhněte aktivitu **ReadInt** z oddílu **NumberGuessWorkflowActivities** **panelu nástrojů** a přetáhněte ji do oddílu **triggeru** přechodu.  
   
 16. V **okně Vlastnosti** aktivity **ReadInt** zadejte `"EnterGuess"` včetně uvozovek do pole hodnota vlastnosti **Bookmark** a do pole hodnota vlastnosti `Guess` **výsledku** zadejte.  
   
@@ -133,15 +133,15 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     > [!NOTE]
     > K přechodu dojde v případě, že událost triggeru je <xref:System.Activities.Statements.Transition.Condition%2A>přijata a je-li k `True`dispozici, je vyhodnocena jako. V případě tohoto přechodu se v případě, `Guess` že uživatel odpovídá náhodně `Target`generovanému objektu, řídí průchod **FinalState** a pracovní postup se dokončí.  
   
-19. V závislosti na tom, zda je odhad správný, by měl pracovní postup přejít buď na **FinalState** , nebo zpět do stavu **zadejte odhad** pro jiný pokus. Oba přechody sdílejí stejnou aktivační událost, která čeká na přijetí odhadu uživatele prostřednictvím aktivity **ReadInt** . Označuje se jako sdílený přechod. Chcete-li vytvořit sdílený přechod, klikněte na kroužek, který indikuje začátek **odhadu správného** přechodu a přetáhněte ho do požadovaného stavu. V tomto případě je přechodem Automatický přechod, takže přetáhněte počáteční bod pro **správný** přechod a přetáhněte ho zpátky do dolní části stavu **zadejte odhad** . Po vytvoření přechodu ho vyberte v Návrháři pracovních postupů a nastavte jeho vlastnost **DisplayName** na hodnotu nesprávného **odhadu**.  
+19. V závislosti na tom, zda je odhad správný, by měl pracovní postup přejít buď na **FinalState** , nebo zpět do stavu **zadejte odhad** pro jiný pokus. Oba přechody sdílejí stejnou aktivační událost, která čeká na přijetí odhadu uživatele prostřednictvím aktivity **ReadInt** . Označuje se jako sdílený přechod. Chcete-li vytvořit sdílený přechod, klikněte na kroužek, který indikuje začátek **odhadu správného** přechodu a přetáhněte ho do požadovaného stavu. V tomto případě je přechodem Automatický přechod, takže přetáhněte počáteční bod pro **správný** přechod a přetáhněte ho zpátky do dolní části stavu **zadejte odhad** . Po vytvoření přechodu ho vyberte v Návrháři pracovních postupů a nastavte jeho vlastnost **DisplayName** na hodnotu **nesprávného odhadu**.  
   
     > [!NOTE]
-    > Sdílené přechody je také možné vytvořit v Návrháři přechodu kliknutím na **přidat přechod sdílené triggery** v dolní části návrháře přechodu a následným výběrem požadovaného cílového stavu ze stavů k **připojení** . rozevírací seznam.  
+    > Sdílené přechody je také možné vytvořit v Návrháři přechodu kliknutím na **přidat přechod sdílené triggery** v dolní části návrháře přechodu a následným výběrem požadovaného cílového stavu ze **stavů k připojení** . rozevírací seznam.  
   
     > [!NOTE]
     > Všimněte si, že <xref:System.Activities.Statements.Transition.Condition%2A> Pokud je z přechodu vyhodnocen `false` (nebo všechny podmínky přechodu na sdílený Trigger vyhodnoceny na `false`hodnotu), přechod nebude proveden a všechny aktivační události pro všechny přechody ze stavu budou změněn. V tomto kurzu nemůžete k této situaci dojít kvůli způsobu konfigurace podmínek (máme konkrétní akce, ať už je odhad správný nebo nesprávný).  
   
-20. Poklikejte na **odhad** nesprávného přechodu v Návrháři pracovních postupů a rozbalte ho. Všimněte si, že **Trigger** je již nastaven na stejnou aktivitu **ReadInt** , jakou používal správný přechod **odhad** .  
+20. Poklikejte na **odhad nesprávného** přechodu v Návrháři pracovních postupů a rozbalte ho. Všimněte si, že **Trigger** je již nastaven na stejnou aktivitu **ReadInt** , jakou používal správný přechod **odhad** .  
   
 21. Do pole hodnota vlastnosti **podmínky** zadejte následující výraz.  
   
@@ -157,21 +157,21 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
   
 23. Do pole hodnota vlastnosti **Podmínka** pro aktivitu **if** aktivity zadejte následující výraz.  
   
-    ```
-    Guess < Target  
+    ```text
+    Guess < Target
     ```  
   
 24. Přetáhněte dvě aktivity **WriteLine** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte je tak, aby jedna byla v oddílu **then** aktivity **if** a jedna je v části **Else** .  
   
 25. Kliknutím na aktivitu **WriteLine** v části **pak** ji vyberete a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
-    ```
+    ```text
     "Your guess is too low."  
     ```  
   
 26. Kliknutím na aktivitu **WriteLine** v části **Else** ji vyberte a do pole hodnota vlastnosti **text** zadejte následující výraz.  
   
-    ```
+    ```text
     "Your guess is too high."  
     ```  
   

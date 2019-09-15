@@ -7,15 +7,15 @@ helpviewer_keywords:
 - Office programming [C#], indexed properties
 - properties [C#], indexed
 ms.assetid: 756bfc1e-7c28-4d4d-b114-ac9288c73882
-ms.openlocfilehash: c39b9a313d265187605d51a2c78c7d3d3dcdb056
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f1be14ad7ddb6973cc89f10c1735ba2ebce13f97
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923922"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971652"
 ---
 # <a name="how-to-use-indexed-properties-in-com-interop-programming-c-programming-guide"></a>Postupy: Použití indexovaných vlastností v programování zprostředkovatele komunikaceC# s objekty COM (Průvodce programováním)
-*Indexované vlastnosti* zlepšují způsob, jakým jsou vlastnosti modelu COM, které mají C# parametry spotřebované při programování. Indexované vlastnosti pracují společně s dalšími funkcemi v vizuálu C#, jako jsou [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md), nový typ ([dynamický](../../language-reference/keywords/dynamic.md)) a [vložené informace o typu](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md), aby bylo možné vylepšit systém Microsoft Office programování.  
+*Indexované vlastnosti* zlepšují způsob, jakým jsou vlastnosti modelu COM, které mají C# parametry spotřebované při programování. Indexované vlastnosti pracují společně s dalšími funkcemi v vizuálu C#, jako jsou [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md), nový typ ([dynamický](../../language-reference/keywords/dynamic.md)) a [vložené informace o typu](../../../standard/assembly/embed-types-visual-studio.md), aby bylo možné vylepšit systém Microsoft Office programování.  
   
  V dřívějších verzích nástroje C#jsou metody přístupné jako vlastnosti pouze v případě `get` , že metoda nemá `set` žádné parametry a metoda má jeden a pouze jeden parametr value. Ale ne všechny vlastnosti modelu COM tyto omezení nesplňují. Vlastnost aplikace Excel <xref:Microsoft.Office.Interop.Excel.Range.Range%2A> `get` má například přistupující objekt, který vyžaduje parametr pro název rozsahu. Vzhledem k tomu, že nemůžete získat přístup `Range` k vlastnosti přímo, měli byste místo toho `get_Range` použít metodu, jak je znázorněno v následujícím příkladu.  
   

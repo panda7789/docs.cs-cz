@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44ab00322419b99aeac51da0d836c60264da5194
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 5e80e044fe01172c587ef029186035a64cdf0b42
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894661"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971224"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
@@ -38,7 +38,7 @@ regasm assemblyFile [options]
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/codebase**|Vytvoří položku základu kódu v registru. Položka základu kódu určuje cestu k souboru sestavení, které není nainstalováno v globální mezipaměti sestavení (GAC). Tuto možnost byste neměli zadávat, pokud následně instalujete sestavení, které budete registrovat do globální mezipaměti sestavení (GAC). Argument *assemblyFile* , který zadáte pomocí možnosti **/codebase** , musí být [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|
+|**/codebase**|Vytvoří položku základu kódu v registru. Položka základu kódu určuje cestu k souboru sestavení, které není nainstalováno v globální mezipaměti sestavení (GAC). Tuto možnost byste neměli zadávat, pokud následně instalujete sestavení, které budete registrovat do globální mezipaměti sestavení (GAC). Argument *assemblyFile* , který zadáte pomocí možnosti **/codebase** , musí být [sestavení se silným názvem](../../standard/assembly/strong-named.md).|
 |**/registered odkazuje**|Určuje, že tento nástroj bude odkazovat pouze na knihovny typů, které již byly zaregistrovány.|
 |**/asmPath: adresář**|Určuje adresář obsahující odkazy na sestavení. Musí být použit s možností **/regfile** .|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|

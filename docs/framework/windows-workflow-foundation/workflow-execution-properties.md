@@ -2,12 +2,12 @@
 title: Vlastnosti spuštění pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 61bf53d9cab3ddefae3709958bd1e445fb4e69dd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 87775ba6efb9ec26ed2445e1f9d0944c379ba04f
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913612"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988587"
 ---
 # <a name="workflow-execution-properties"></a>Vlastnosti spuštění pracovního postupu
 Pomocí protokolu thread local Storage (TLS) udržuje modul CLR kontext spuštění pro každé vlákno. Tento kontext spuštění řídí dobře známé vlastnosti vlákna, jako je například identita vlákna, ambientní transakce a současná sada oprávnění kromě uživatelsky definovaných vlastností vlákna, jako jsou pojmenované sloty.  
@@ -147,7 +147,7 @@ WorkflowInvoker.Invoke(wf);
   
  Po vyvolání pracovního postupu se do okna konzoly zapíše následující výstup.  
   
-```  
+```console  
 Start blue text.  
 Start red text.  
 Start default text.  

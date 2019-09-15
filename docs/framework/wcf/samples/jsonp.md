@@ -2,12 +2,12 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 9f24ccb5ba14e0b43f0e3f911a1672db5821d228
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1fc85838d7491f94b8da1e0ab458d6d021cd2b32
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039557"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989781"
 ---
 # <a name="jsonp"></a>JSONP
 Tato ukázka demonstruje, jak podporovat JSON s odsazením (JSONP) ve službách WCF REST. JSONP je konvence, která se používá k vyvolání skriptů mezi doménami generováním značek skriptu v aktuálním dokumentu. Výsledek je vrácen v zadané funkci zpětného volání. JSONP je založen na nápadu, který značky `<script src="http://..." >` , jako je například, může vyhodnotit skripty z jakékoli domény a skript načtený těmito značkami je vyhodnocen v rámci oboru, ve kterém již mohou být definovány jiné funkce.
@@ -39,13 +39,13 @@ proxy.GetCustomer(onSuccess, onFail, null);
 
  ScriptManager spravuje interakci se službou a skrývá složitost ruční implementace přístupu JSONP. Když `crossDomainScriptAccessEnabled` je nastavené `true` na a formát odpovědi pro operaci je JSON, infrastruktura WCF zkontroluje identifikátor URI žádosti pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou řetězce dotazu zpětného volání. ukazatele. V ukázce webová stránka volá službu WCF REST s následujícím identifikátorem URI.
 
-```
+```http
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0
 ```
 
  Vzhledem k tomu `JsonPCallback`, že parametr řetězce dotazu zpětného volání má hodnotu, služba WCF vrátí odpověď JSONP zobrazenou v následujícím příkladu.
 
-```
+```json
 Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Way","Name":"Bob"});
 ```
 

@@ -7,19 +7,19 @@ helpviewer_keywords:
 - WCF [WCF], request-reply services
 - request-reply contracts [WCF]
 ms.assetid: 2fa710f1-47f4-4598-b063-3ab3bd22ebba
-ms.openlocfilehash: 1ff11b1cae4ec8f6fe886a55cb0add27831048d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f58da6f1cdaad1b976659ee2e9febe12cc07726f
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991117"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991145"
 ---
 # <a name="request-reply-services"></a>Služby požadavku a odpovědi
-Služby požadavku a odpovědi jsou výchozí typ operace kontraktu Windows Communication Foundation (WCF). Klienti volání operací služby a čekat na odpověď ze služby. Můžete provádět volání operace služby buď synchronně, kde blokuje, dokud klient obdrží odpověď ze služby nebo časy volání, nebo asynchronně, pokračuje v práci tam, kde klient provede volání operace služby a přijímá odpověď od služby v jiném vlákně.  
+Služby požadavku a odpovědi jsou výchozím typem kontraktu operace v Windows Communication Foundation (WCF). Klienti volají operace se službami a čekají na odpověď od služby. Můžete provést volání do operace služby buď synchronně, kde klient blokuje odpověď, dokud neobdrží odpověď ze služby nebo času volání, nebo asynchronně, kde klient provádí volání operace služby, pokračuje v práci a přijímá odpověď ze služby v jiném vlákně.  
   
- Vytvoření kontraktu požadavku a odpovědi služby, definujte servisní smlouvě a použít <xref:System.ServiceModel.OperationContractAttribute> třídy pro každou operaci, jak je znázorněno v následujícím ukázkovém kódu.  
+ Chcete-li vytvořit kontrakt služby požadavek-odpověď, definujte kontrakt služby a použijte <xref:System.ServiceModel.OperationContractAttribute> pro každou operaci třídu, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IRequestReplyCalculator  
 {  
@@ -28,7 +28,7 @@ public interface IRequestReplyCalculator
 }  
 ```  
   
- Není nutné nastavit <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost `false` vzhledem k tomu, že toto je výchozí chování.  
+ <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> Vlastnost není nutné nastavovat, `false` protože se jedná o výchozí chování.  
   
 ## <a name="see-also"></a>Viz také:
 

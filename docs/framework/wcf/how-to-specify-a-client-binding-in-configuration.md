@@ -2,53 +2,53 @@
 title: 'Postupy: Určení klientské vazby v konfiguraci'
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 633bb0feeb0f9354bd6ff8ee6637f123d3e3cbf4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0757dac4cdcffc7c3550432a71fe45b587327660
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928931"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990216"
 ---
 # <a name="how-to-specify-a-client-binding-in-configuration"></a>Postupy: Určení klientské vazby v konfiguraci
-V tomto příkladu se vytvoří konzolovou aplikaci klienta pro použití kalkulačky služby a vazby pro tohoto klienta je deklarativně zadaný v konfiguraci. Klient přistupuje k `CalculatorService`, která implementuje `ICalculator` rozhraní a službě i klientovi použít <xref:System.ServiceModel.BasicHttpBinding> třídy.  
+V tomto příkladu je aplikace konzoly klienta vytvořena pro použití služby kalkulačky a vazba pro tohoto klienta je v konfiguraci určena deklarativně. Klient přistupuje `CalculatorService`k `ICalculator` rozhraní, které implementuje rozhraní a jak službu, tak i klient používající <xref:System.ServiceModel.BasicHttpBinding> třídu.  
   
- Podle uvedeného postupu se předpokládá, že je spuštěna služba kalkulačku. Informace o tom, jak sestavit službu, naleznete v tématu [jak: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md). Využívá také [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) , Windows Communication Foundation (WCF) poskytuje klientské součásti budou automaticky generovány. Nástroj vygeneruje kód klienta a konfigurace přístupu ke službě.  
+ Tento postup předpokládá, že je spuštěná služba kalkulačky. Informace o tom, jak vytvořit službu, naleznete v [tématu How to: Zadejte vazbu služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md). Používá taky Nástroj pro dodávání [metadat (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) , který Windows Communication Foundation (WCF) poskytuje k automatickému generování komponent klienta. Nástroj vygeneruje kód klienta a konfiguraci pro přístup ke službě.  
   
- Klient je vytvořená ve dvou částech. Generuje svcutil.exe `ClientCalculator` , který implementuje `ICalculator` rozhraní. Tato klientská aplikace pak konstruován tak, že vytváří instanci `ClientCalculator`.  
+ Klient je sestaven ve dvou částech. Svcutil. exe vygeneruje `ClientCalculator` `ICalculator` rozhraní, které implementuje rozhraní. Tato klientská aplikace je pak vytvořena konstrukcí instance `ClientCalculator`.  
   
- Obvykle je osvědčeným postupem určete vazbu a informace o adrese deklarativně v konfiguraci, nikoli imperativně v kódu. Definování koncových bodů v kódu není obvykle praktické protože vazeb a adresy pro službu nasazenou se obvykle liší od nastavení použít, je vyvíjena služby. Obecně platí udržování vazby a adresování informace mimo kód jim umožňuje změnit bez nutnosti znovu kompilovat nebo znovu nasadit aplikaci.  
+ Obvykle je osvědčeným postupem zadat vazby a informace o adrese deklarativně v konfiguraci, nikoli imperativně v kódu. Definování koncových bodů v kódu obvykle není praktické, protože vazby a adresy nasazené služby se obvykle liší od těch, které se použily při vývoji služby. Obecně platí, že zachování vazby a adresování informací z kódu umožňuje jejich změnu bez nutnosti opětovné kompilace nebo opětovného nasazení aplikace.  
   
- Všechny následující kroky konfigurace můžete provádět pomocí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
+ Pomocí [nástroje Editor konfigurací (SvcConfigEditor. exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)můžete provádět všechny následující konfigurační kroky.  
   
- Pro zdrojovou kopii tohoto příkladu, najdete v článku [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md) vzorku.  
+ Zdrojovou kopii tohoto příkladu najdete v ukázce [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md) .  
   
-### <a name="specifying-a-client-binding-in-configuration"></a>Zadání klientské vazby v konfiguraci  
+### <a name="specifying-a-client-binding-in-configuration"></a>Určení vazby klienta v konfiguraci  
   
-1. Pomocí Svcutil.exe lze generovat kód z metadat služby z příkazového řádku.  
+1. K vygenerování kódu z metadat služby použijte Svcutil. exe z příkazového řádku.  
   
-    ```  
+    ```console  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
     ```  
   
-2. Klient, který je generován obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí splňovat implementace klienta.  
+2. Vygenerovaný klient obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí implementace klienta splňovat.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/generatedclient.cs#1)]
      [!code-csharp[C_HowTo_ConfigureClientBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/source.cs#1)]  
   
-3. Také obsahuje implementaci generovaného klienta `ClientCalculator`.  
+3. Vygenerovaný klient také obsahuje implementaci `ClientCalculator`.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/generatedclient.cs#2)]
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/source.cs#2)]  
   
-4. Svcutil.exe také generuje konfiguraci pro klienta, který se používá <xref:System.ServiceModel.BasicHttpBinding> třídy. Když pomocí sady Visual Studio, název tohoto souboru App.config. Všimněte si, že adresa a informace o vazbě nejsou zadané kdekoli uvnitř implementace služby. Kód také, není nutné zapsat, aby načítal příslušné informace z konfiguračního souboru.  
+4. Svcutil. exe také generuje konfiguraci pro klienta, který používá <xref:System.ServiceModel.BasicHttpBinding> třídu. Při použití sady Visual Studio pojmenujte tento soubor App. config. Všimněte si, že informace o adrese a vazbě nejsou zadány kamkoli v rámci implementace služby. Také není nutné zapisovat kód pro načtení těchto informací z konfiguračního souboru.  
   
      [!code-xml[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]   
             
-5. Vytvoření instance `ClientCalculator` v aplikaci a potom volání operací služby.  
+5. Vytvořte instanci `ClientCalculator` v aplikaci a potom zavolejte operace služby.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/client.cs#3)]  
   
-6. Kompilace a spuštění klienta.  
+6. Zkompilujte a spusťte klienta.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37dda10a3dcbcb0968674e04292c5dc1a79be66f
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+ms.openlocfilehash: 85841491ace5b8959c3517f407c14069b34733a7
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69013003"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969090"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 
@@ -30,7 +30,7 @@ Projekty Interop modelu COM, které odkazují na jedno nebo více sestavení obs
 
  Rozdíly mezi těmito dvěma technikami jsou podrobněji popsány v tématu [použití typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).
 
- Vkládání typů spolupráce pomocí sady Visual Studio je znázorněno [v tomto návodu: Vložení typů ze spravovaných sestavení v aplikaci Visual StudioC#(](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)) a [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio (Visual Basic](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)).
+ Vkládání typů spolupráce pomocí sady Visual Studio je znázorněno [v tomto návodu: Vložení typů ze spravovaných sestavení v aplikaci Visual](../../standard/assembly/embed-types-visual-studio.md)Studio.
 
  Chcete-li odkazovat na definiční sestavení pomocí kompilátoru příkazového řádku a vložit informace o typu ve vašich spustitelných souborech, použijte přepínač [/Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo rozhraní [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) a zadejte název sestavení pro spolupráci.
 
@@ -44,6 +44,5 @@ Projekty Interop modelu COM, které odkazují na jedno nebo více sestavení obs
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)
 - [Použití typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
-- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual StudioC#()](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
-- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
+- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio](../../standard/assembly/embed-types-visual-studio.md)
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)

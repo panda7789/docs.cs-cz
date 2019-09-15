@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 2f651b68d845e062ad950bb626e30c755d6d9df6
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: f1147bf090af23c2f27bac14ab895657ccee60e3
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169166"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991561"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] znát při psaní aplikací pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v <xref:System.Globalization> oboru názvů.
@@ -39,7 +39,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 ### <a name="encoding"></a>Kódování
  Kódování podporované nástrojem [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je ASCII, [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] UTF-16 a UTF-8. Příkaz Encoding je na začátku [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dokumentu. Pokud neexistuje žádný atribut kódování a neexistuje žádné pořadí bajtů, analyzátor se nastaví jako výchozí kódování UTF-8. Pro kódování jsou upřednostňovány znakové sady UTF-8 a UTF-16. Kódování UTF-7 není podporováno. Následující příklad ukazuje, jak zadat kódování UTF-8 v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru.
 
-```
+```xaml
 ?xml encoding="UTF-8"?
 ```
 
@@ -51,7 +51,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
  Následující [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] příklad`fr-CA` používá atribut Language pro určení kanadské francouzštiny.
 
-```xml
+```xaml
 <TextBlock xml:lang="fr-CA">Découvrir la France</TextBlock>
 ```
 
@@ -173,7 +173,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
  Řešením tohoto problému je nastavení atributu pro záložní použití neutrálního jazyka. Vývojář aplikace může volitelně odebrat prostředky z hlavního sestavení a určit, že prostředky lze nalézt v satelitním sestavení odpovídajícím konkrétní jazykové verzi. Chcete-li řídit tento proces <xref:System.Resources.NeutralResourcesLanguageAttribute>, použijte. Konstruktor <xref:System.Resources.NeutralResourcesLanguageAttribute> třídy má dva signatury, jeden, který <xref:System.Resources.UltimateResourceFallbackLocation> přebírá parametr pro <xref:System.Resources.ResourceManager> určení umístění, kde by měl extrahovat záložní prostředky: hlavní sestavení nebo satelitní sestavení. Následující příklad ukazuje, jak použít atribut. V případě konečného záložního umístění kód způsobí <xref:System.Resources.ResourceManager> hledání prostředků v podadresáři "de" adresáře aktuálně spuštěného sestavení.
 
-```
+```csharp
 [assembly: NeutralResourcesLanguageAttribute(
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```

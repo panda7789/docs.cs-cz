@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7be86a71ae4b3f873395c48750cc22c74d7ff983
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7f8046852f847cd5493a2ed17b491a39e494ce2b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853991"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969112"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 
@@ -25,7 +25,7 @@ K úspěšnému nasazení .NET Framework aplikace musíte pochopit, jak modul CL
 Modul CLR (Common Language Runtime) provádí několik kroků při pokusu o nalezení sestavení a vyřešení odkazu na sestavení. Jednotlivé kroky jsou vysvětleny v následujících oddílech. Termín zjišťování se často používá při popisu způsobu, jakým modul runtime vyhledává sestavení. odkazuje na sadu heuristik používaných k vyhledání sestavení na základě jeho názvu a jazykové verze.
 
 > [!NOTE]
-> Informace o vazbě můžete zobrazit v souboru protokolu pomocí [nástroje Assembly Binding Log Viewer (Fuslogvw. exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), který je součástí Windows SDK.
+> Informace o vazbě můžete zobrazit v souboru protokolu pomocí [nástroje Assembly Binding Log Viewer (Fuslogvw. exe)](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), který je součástí Windows SDK.
 
 ## <a name="initiating-the-bind"></a>Inicializuje se vazba.
 
@@ -35,7 +35,7 @@ Upřednostňovaným způsobem, jak odkazovat na sestavení, je použít úplný 
 
 Můžete také vytvořit dynamický odkaz na sestavení poskytnutím metody volání s pouze částečnými informacemi o sestavení, jako je například určení pouze názvu sestavení. V takovém případě bude pro sestavení prohledán pouze adresář aplikace a žádná další kontrola nebude provedena. Pomocí kterékoli z různých metod načítání sestavení, jako je například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>, provedete částečný odkaz.
 
-Nakonec můžete vytvořit dynamický odkaz pomocí metody <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> , jako je a poskytnout pouze částečné informace; vy pak můžete kvalifikovat odkaz [ \<pomocí elementu qualifyAssembly >](../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md) v konfiguračním souboru aplikace. Tento prvek umožňuje poskytnout úplné referenční informace (název, verzi, jazykovou verzi a případně token veřejného klíče) do konfiguračního souboru aplikace namísto v kódu. Tuto techniku byste měli použít, pokud jste chtěli plně kvalifikovat odkaz na sestavení mimo adresář aplikace, nebo pokud jste chtěli odkazovat na sestavení v globální mezipaměti sestavení (GAC), ale vy jste chtěli mít možnost zadat úplný odkaz v konfigurační soubor místo ve vašem kódu.
+Nakonec můžete vytvořit dynamický odkaz pomocí metody <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> , jako je a poskytnout pouze částečné informace; vy pak můžete kvalifikovat odkaz [ \<pomocí elementu qualifyAssembly >](../configure-apps/file-schema/runtime/qualifyassembly-element.md) v konfiguračním souboru aplikace. Tento prvek umožňuje poskytnout úplné referenční informace (název, verzi, jazykovou verzi a případně token veřejného klíče) do konfiguračního souboru aplikace namísto v kódu. Tuto techniku byste měli použít, pokud jste chtěli plně kvalifikovat odkaz na sestavení mimo adresář aplikace, nebo pokud jste chtěli odkazovat na sestavení v globální mezipaměti sestavení (GAC), ale vy jste chtěli mít možnost zadat úplný odkaz v konfigurační soubor místo ve vašem kódu.
 
 > [!NOTE]
 > Tento typ částečného odkazu by neměl být použit se sestaveními, která jsou sdílena mezi několika aplikacemi. Vzhledem k tomu, že nastavení konfigurace se aplikují na aplikaci a ne na sestavení, sdílené sestavení používající tento typ částečného odkazu by vyžadovalo, aby každá aplikace, která používá sdílené sestavení, měla opravňující informace ve svém konfiguračním souboru.
@@ -74,10 +74,10 @@ Chování vazby sestavení lze nakonfigurovat na různých úrovních na základ
 
 - Konfigurační soubor počítače.
 
-Tyto soubory se řídí stejnou syntaxí a poskytují informace, jako jsou přesměrování vazby, umístění kódu a režimy vazby pro konkrétní sestavení. Každý konfigurační soubor může obsahovat [ \<prvek assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) , který přesměruje proces vazby. K podřízeným [ \<](../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md) [ \<elementům elementu assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) patří prvek dependentAssembly >. Podřízené položky [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md) [ \<](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md) [ elementu\<dependentAssembly zahrnují prvek assemblyIdentity >](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment), prvek bindingRedirect > a [ \<> základu kódu. ](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md).
+Tyto soubory se řídí stejnou syntaxí a poskytují informace, jako jsou přesměrování vazby, umístění kódu a režimy vazby pro konkrétní sestavení. Každý konfigurační soubor může obsahovat [ \<prvek assemblyBinding >](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) , který přesměruje proces vazby. K podřízeným [ \<](../configure-apps/file-schema/runtime/dependentassembly-element.md) [ \<elementům elementu assemblyBinding >](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) patří prvek dependentAssembly >. Podřízené položky [ \<>](../configure-apps/file-schema/runtime/dependentassembly-element.md) [ \<](../configure-apps/file-schema/runtime/bindingredirect-element.md) [ elementu\<dependentAssembly zahrnují prvek assemblyIdentity >](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment), prvek bindingRedirect > a [ \<> základu kódu. ](../configure-apps/file-schema/runtime/codebase-element.md).
 
 > [!NOTE]
-> Informace o konfiguraci najdete ve třech konfiguračních souborech. Ne všechny prvky jsou platné ve všech konfiguračních souborech. Například režim vazby a informace o soukromé cestě můžou být v konfiguračním souboru aplikace. Úplný seznam informací, které jsou obsaženy v jednotlivých souborech, najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../../../docs/framework/configure-apps/index.md).
+> Informace o konfiguraci najdete ve třech konfiguračních souborech. Ne všechny prvky jsou platné ve všech konfiguračních souborech. Například režim vazby a informace o soukromé cestě můžou být v konfiguračním souboru aplikace. Úplný seznam informací, které jsou obsaženy v jednotlivých souborech, najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../configure-apps/index.md).
 
 ### <a name="application-configuration-file"></a>Konfigurační soubor aplikace
 
@@ -120,7 +120,7 @@ Následuje příklad konfiguračního souboru zásad vydavatele:
 </configuration>
 ```
 
-Chcete-li vytvořit sestavení, můžete použít nástroj [Al. exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md) pomocí příkazu, například následující:
+Chcete-li vytvořit sestavení, můžete použít nástroj [Al. exe (Assembly Linker)](../tools/al-exe-assembly-linker.md) pomocí příkazu, například následující:
 
 ```console
 Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v:3.0.0.0
@@ -136,25 +136,21 @@ Konfigurační soubor zásad vydavatele Přepisuje informace o verzi, které poc
 Soubor zásad vydavatele se používá v případě, že se aktualizuje sdílená komponenta a všechny aplikace, které tuto součást používají, by měly tuto novou verzi sdílené součásti vyskladnit. Nastavení v souboru zásad vydavatele přepíše nastavení v konfiguračním souboru aplikace, pokud konfigurační soubor aplikace neuplatňuje nouzový režim.
 
 #### <a name="safe-mode"></a>Nouzový režim
-
 Soubory zásad vydavatele se obvykle explicitně nainstalují jako součást aktualizace Service Pack nebo programu. Pokud dojde k potížím s upgradovanou sdílenou komponentou, můžete přepsat přepsání v souboru zásad vydavatele pomocí bezpečného režimu. Nouzový režim je určen podle  **\<publisherPolicy použít = "Ano**&#124;**ne"/>** , který je umístěn pouze v konfiguračním souboru aplikace. Určuje, jestli se mají z procesu vytváření vazeb odebrat informace o konfiguraci zásad vydavatele.
 
-Nouzový režim lze nastavit pro celou aplikaci nebo pro vybraná sestavení. To znamená, že můžete vypnout zásady pro všechna sestavení, která tvoří aplikaci, nebo je zapnout pro některá sestavení, ale ne pro jiné. Chcete-li selektivně použít zásady vydavatele na sestavení, která tvoří aplikaci, nastavte  **\<publisherPolicy použít\=ne/>** a určete, která sestavení mají být ovlivněna pomocí \< **dependentAssembly.** element >. Chcete-li použít zásady vydavatele na všechna sestavení, která tvoří aplikaci, nastavte  **\<publisherPolicy\=použití No/>** bez závislých prvků sestavení. Další informace o konfiguraci najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../../../docs/framework/configure-apps/index.md).
+Nouzový režim lze nastavit pro celou aplikaci nebo pro vybraná sestavení. To znamená, že můžete vypnout zásady pro všechna sestavení, která tvoří aplikaci, nebo je zapnout pro některá sestavení, ale ne pro jiné. Chcete-li selektivně použít zásady vydavatele na sestavení, která tvoří aplikaci, nastavte  **\<publisherPolicy použít\=ne/>** a určete, která sestavení mají být ovlivněna pomocí \< **dependentAssembly.** element >. Chcete-li použít zásady vydavatele na všechna sestavení, která tvoří aplikaci, nastavte  **\<publisherPolicy\=použití No/>** bez závislých prvků sestavení. Další informace o konfiguraci najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../configure-apps/index.md).
 
 ### <a name="machine-configuration-file"></a>Konfigurační soubor počítače
+Třetí, modul runtime prověřuje konfigurační soubor počítače. Tento soubor nazvaný Machine. config se nachází v místním počítači v podadresáři konfigurace kořenového adresáře, kde je modul runtime nainstalován. Tento soubor můžou správci použít k určení omezení vazeb sestavení, která jsou místní pro daný počítač. Nastavení v konfiguračním souboru počítače mají přednost před všemi ostatními konfiguračními nastaveními. to však neznamená, že by do tohoto souboru měla být vložena všechna nastavení konfigurace. Verze určená souborem zásad správce je finální a nemůže být přepsána. Přepsání zadaná v souboru Machine. config ovlivňují všechny aplikace. Další informace o konfiguračních souborech najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../configure-apps/index.md).
 
-Třetí, modul runtime prověřuje konfigurační soubor počítače. Tento soubor nazvaný Machine. config se nachází v místním počítači v podadresáři konfigurace kořenového adresáře, kde je modul runtime nainstalován. Tento soubor můžou správci použít k určení omezení vazeb sestavení, která jsou místní pro daný počítač. Nastavení v konfiguračním souboru počítače mají přednost před všemi ostatními konfiguračními nastaveními. to však neznamená, že by do tohoto souboru měla být vložena všechna nastavení konfigurace. Verze určená souborem zásad správce je finální a nemůže být přepsána. Přepsání zadaná v souboru Machine. config ovlivňují všechny aplikace. Další informace o konfiguračních souborech najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../../../docs/framework/configure-apps/index.md).
-
-<a name="step2"></a>
-
+<a name="step2"></a> 
 ## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Krok 2: Kontrola dříve odkazovaných sestavení
-
-Pokud požadované sestavení bylo také vyžádáno v předchozích voláních, modul CLR (Common Language Runtime) používá již načtené sestavení. To může mít důsledky při pojmenování sestavení, která tvoří aplikaci. Další informace o pojmenování sestavení naleznete v tématu [názvy sestavení](../../../docs/framework/app-domains/assembly-names.md).
+Pokud požadované sestavení bylo také vyžádáno v předchozích voláních, modul CLR (Common Language Runtime) používá již načtené sestavení. To může mít důsledky při pojmenování sestavení, která tvoří aplikaci. Další informace o pojmenování sestavení naleznete v tématu [názvy sestavení](../../standard/assembly/names.md).
 
 Pokud předchozí požadavek na sestavení selhal, následné požadavky na sestavení se okamžitě nezdařily bez pokusu o načtení sestavení. .NET Framework počínaje verzí 2,0 se chyby vazeb sestavení ukládají do mezipaměti a k určení, jestli se má pokus načíst sestavení, se použijí informace uložené v mezipaměti.
 
 > [!NOTE]
-> Chcete-li se vrátit k chování .NET Framework verzí 1,0 a 1,1, které neobsahovaly neúspěšné vazby do mezipaměti [ \<](../../../docs/framework/configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md) , zahrňte do konfiguračního souboru prvek disableCachingBindingFailures >.
+> Chcete-li se vrátit k chování .NET Framework verzí 1,0 a 1,1, které neobsahovaly neúspěšné vazby do mezipaměti [ \<](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md) , zahrňte do konfiguračního souboru prvek disableCachingBindingFailures >.
 
 <a name="step3"></a>
 
@@ -168,25 +164,25 @@ V případě sestavení se silným názvem pokračuje proces vazby tím, že hle
 
 Po určení správné verze sestavení pomocí informací v odkazu volajícího sestavení a v konfiguračních souborech a poté, co se vrátí do globální mezipaměti sestavení (pouze pro sestavení se silným názvem), společný jazyk modul runtime se pokusí najít sestavení. Proces vyhledání sestavení zahrnuje následující kroky:
 
-1. Pokud je v konfiguračním souboru aplikace nalezen element [ codebase>,modulruntimezkontrolujezadanéumístění.\<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) Pokud je nalezena shoda, používá se toto sestavení a k žádnému zjišťování nedochází. Pokud sestavení není nalezeno, požadavek vazby se nezdařil.
+1. Pokud je v konfiguračním souboru aplikace nalezen element [ codebase>,modulruntimezkontrolujezadanéumístění.\<](../configure-apps/file-schema/runtime/codebase-element.md) Pokud je nalezena shoda, používá se toto sestavení a k žádnému zjišťování nedochází. Pokud sestavení není nalezeno, požadavek vazby se nezdařil.
 
 2. Modul runtime pak sondy pro odkazované sestavení pomocí pravidel uvedených dále v této části.
 
 > [!NOTE]
-> Pokud máte v adresáři více verzí sestavení a chcete odkazovat na konkrétní verzi tohoto sestavení, je nutné použít `privatePath` [ \<> element codebase](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) namísto atributu [ \<zjišťování. element >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) . Použijete-li [ \<> element probingu](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) , modul runtime zastaví zkušební období při prvním nalezení sestavení, které odpovídá jednoduchému názvu sestavení, na který odkazuje, zda se jedná o správnou shodu. Pokud se jedná o správnou shodu, používá se toto sestavení. Pokud se nejedná o správnou shodu, zastaví se zjišťování a vazba se nezdařila.
+> Pokud máte v adresáři více verzí sestavení a chcete odkazovat na konkrétní verzi tohoto sestavení, je nutné použít `privatePath` [ \<> element codebase](../configure-apps/file-schema/runtime/codebase-element.md) namísto atributu [ \<zjišťování. element >](../configure-apps/file-schema/runtime/probing-element.md) . Použijete-li [ \<> element probingu](../configure-apps/file-schema/runtime/probing-element.md) , modul runtime zastaví zkušební období při prvním nalezení sestavení, které odpovídá jednoduchému názvu sestavení, na který odkazuje, zda se jedná o správnou shodu. Pokud se jedná o správnou shodu, používá se toto sestavení. Pokud se nejedná o správnou shodu, zastaví se zjišťování a vazba se nezdařila.
 
 ### <a name="locating-the-assembly-through-codebases"></a>Vyhledání sestavení prostřednictvím základů kódu
 
-Informace základu kódu lze poskytnout pomocí [ \<>ho prvku základu kódu](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Tento základ kódu je vždy zkontrolován před tím, než se modul runtime pokusí test pro odkazované sestavení. [ Obsahuje\<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) -li soubor zásad vydavatele obsahující konečné přesměrování verze taky > element, [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) který je použit jako element codebase > je ten, který se používá. Například pokud konfigurační soubor aplikace určuje [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element, a soubor zásad vydavatele, který Přepisuje [ \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) informace o aplikaci, také určuje > element codebase, je použit element [> základu kódu v souboru zásad vydavatele. \<](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md)
+Informace základu kódu lze poskytnout pomocí [ \<>ho prvku základu kódu](../configure-apps/file-schema/runtime/codebase-element.md) v konfiguračním souboru. Tento základ kódu je vždy zkontrolován před tím, než se modul runtime pokusí test pro odkazované sestavení. [ Obsahuje\<](../configure-apps/file-schema/runtime/codebase-element.md) -li soubor zásad vydavatele obsahující konečné přesměrování verze taky > element, [ \<](../configure-apps/file-schema/runtime/codebase-element.md) který je použit jako element codebase > je ten, který se používá. Například pokud konfigurační soubor aplikace určuje [ \<>](../configure-apps/file-schema/runtime/codebase-element.md) element, a soubor zásad vydavatele, který Přepisuje [ \<](../configure-apps/file-schema/runtime/codebase-element.md) informace o aplikaci, také určuje > element codebase, je použit element [> základu kódu v souboru zásad vydavatele. \<](../configure-apps/file-schema/runtime/codebase-element.md)
 
-Pokud se nenajde žádná shoda v umístění určeném [ \<>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) elementem codebase, požadavek vazby se nepovede a neproběhne žádné další kroky. Pokud modul runtime zjistí, že sestavení odpovídá kritériím volajícího sestavení, používá toto sestavení. Když je načten soubor určený pomocí daného [ \<elementu codebase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element, modul runtime zkontroluje, zda se název, verze, jazyková verze a veřejný klíč shodují s odkazem volajícího sestavení.
+Pokud se nenajde žádná shoda v umístění určeném [ \<>](../configure-apps/file-schema/runtime/codebase-element.md) elementem codebase, požadavek vazby se nepovede a neproběhne žádné další kroky. Pokud modul runtime zjistí, že sestavení odpovídá kritériím volajícího sestavení, používá toto sestavení. Když je načten soubor určený pomocí daného [ \<elementu codebase >](../configure-apps/file-schema/runtime/codebase-element.md) element, modul runtime zkontroluje, zda se název, verze, jazyková verze a veřejný klíč shodují s odkazem volajícího sestavení.
 
 > [!NOTE]
-> Odkazovaná sestavení mimo kořenový adresář aplikace musí mít silné názvy a musí být buď nainstalovány v globální mezipaměti sestavení (GAC), nebo musí být zadána pomocí [ \<elementu > codebase](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) .
+> Odkazovaná sestavení mimo kořenový adresář aplikace musí mít silné názvy a musí být buď nainstalovány v globální mezipaměti sestavení (GAC), nebo musí být zadána pomocí [ \<elementu > codebase](../configure-apps/file-schema/runtime/codebase-element.md) .
 
 ### <a name="locating-the-assembly-through-probing"></a>Vyhledání sestavení prostřednictvím zjišťování
 
-Není-li v konfiguračním souboru aplikace žádný [ \<element > základů kódu](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) , běhové testy pro sestavení používají čtyři kritéria:
+Není-li v konfiguračním souboru aplikace žádný [ \<element > základů kódu](../configure-apps/file-schema/runtime/codebase-element.md) , běhové testy pro sestavení používají čtyři kritéria:
 
 - Základ aplikace, což je kořenové umístění, kde je aplikace spouštěna.
 
@@ -194,7 +190,7 @@ Není-li v konfiguračním souboru aplikace žádný [ \<element > základů kó
 
 - Název, který je názvem odkazovaného sestavení.
 
-- Atribut > elementu zjišťování, který je uživatelem definovaný seznam podadresářů v kořenovém umístění. [ \<](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) `privatePath` Toto umístění lze zadat v konfiguračním souboru aplikace a ve spravovaném kódu pomocí <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> vlastnosti pro doménu aplikace. Při zadání ve spravovaném kódu se nejprve vyhledá spravovaný kód `privatePath` a za ním bude následovat Cesta zadaná v konfiguračním souboru aplikace.
+- Atribut > elementu zjišťování, který je uživatelem definovaný seznam podadresářů v kořenovém umístění. [ \<](../configure-apps/file-schema/runtime/probing-element.md) `privatePath` Toto umístění lze zadat v konfiguračním souboru aplikace a ve spravovaném kódu pomocí <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> vlastnosti pro doménu aplikace. Při zadání ve spravovaném kódu se nejprve vyhledá spravovaný kód `privatePath` a za ním bude následovat Cesta zadaná v konfiguračním souboru aplikace.
 
 #### <a name="probing-the-application-base-and-culture-directories"></a>Zjišťování adresářů základní a jazykové verze aplikace
 
@@ -212,7 +208,7 @@ Pokud jsou pro odkazované sestavení určeny informace o jazykové verzi, jsou 
 
 #### <a name="probing-with-the-privatepath-attribute"></a>Zjišťování pomocí atributu nastavení privatePath
 
-Kromě podadresářů kultury a podadresářů pojmenovaných pro odkazované sestavení modul runtime také zjišťuje adresáře zadané pomocí `privatePath` atributu [ \<> elementu zjišťování](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) . Adresáře zadané pomocí `privatePath` atributu musí být podadresáři kořenového adresáře aplikace. Zjištěné adresáře se liší v závislosti na tom, zda je v odkazované žádosti sestavení obsažena informace o jazykové verzi.
+Kromě podadresářů kultury a podadresářů pojmenovaných pro odkazované sestavení modul runtime také zjišťuje adresáře zadané pomocí `privatePath` atributu [ \<> elementu zjišťování](../configure-apps/file-schema/runtime/probing-element.md) . Adresáře zadané pomocí `privatePath` atributu musí být podadresáři kořenového adresáře aplikace. Zjištěné adresáře se liší v závislosti na tom, zda je v odkazované žádosti sestavení obsažena informace o jazykové verzi.
 
 Modul runtime zastaví zkušební období při prvním nalezení sestavení, které odpovídá jednoduchému názvu sestavení, na který odkazuje, zda se jedná o správnou shodu. Pokud se jedná o správnou shodu, používá se toto sestavení. Pokud se nejedná o správnou shodu, zastaví se zjišťování a vazba se nezdařila.
 
@@ -236,7 +232,7 @@ Tyto informace jsou uvedeny níže:
 
 - Kořenový adresář aplikace:`http://www.code.microsoft.com`
 
-- > element zjišťování v konfiguračním souboru určuje: bin. [ \<](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)
+- > element zjišťování v konfiguračním souboru určuje: bin. [ \<](../configure-apps/file-schema/runtime/probing-element.md)
 
 - Jazyková verze: de
 
@@ -270,5 +266,5 @@ Například pokud Assembly1 odkazuje na Assembly2 a assembly1 se stáhl z `http:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)
-- [Nasazení](../../../docs/framework/deployment/index.md)
+- [Doporučené postupy pro načtení sestavení](best-practices-for-assembly-loading.md)
+- [Nasazení](index.md)

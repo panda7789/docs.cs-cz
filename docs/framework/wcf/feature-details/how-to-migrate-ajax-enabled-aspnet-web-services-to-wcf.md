@@ -2,75 +2,75 @@
 title: 'Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF'
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-ms.openlocfilehash: 1650ba6a12a9e81ff398e66a96ee2c70592f2428
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f492efe9e364195dce6b73a14e9ca5fa34a6df25
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643691"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972307"
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF
-Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX do ekvivalentní služby s povoleným AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně ekvivalentní verzi WCF služby technologie ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe nebo službu WCF je možné nahradit služby technologie ASP.NET AJAX.
+V tomto tématu jsou popsány postupy pro migraci základní služby ASP.NET AJAX do ekvivalentní služby Windows Communication Foundation WCF (AJAX Enabled). Ukazuje, jak vytvořit funkčně ekvivalentní verzi WCF služby ASP.NET AJAX. Tyto dvě služby se pak dají použít souběžně nebo službu WCF můžete použít k nahrazení služby ASP.NET AJAX.
 
- Migrace stávající technologie ASP.NET AJAX komunikace mezi službami WCF AJAX poskytuje následující výhody:
+ Migrace stávající služby ASP.NET AJAX do služby WCF AJAX přináší následující výhody:
 
-- Vaše služba AJAX mohou vystavit jako službu SOAP s minimálními další konfiguraci.
+- Službu AJAX můžete vystavit jako službu SOAP s minimální dodatečnou konfigurací.
 
-- Můžete využívat funkce WCF, jako je sledování a tak dále.
+- Můžete využít výhod funkcí WCF, jako je trasování a tak dále.
 
- V následujících postupech se předpokládá, že používáte sadu Visual Studio 2012.
+ V následujících postupech se předpokládá, že používáte Visual Studio 2012.
 
- Kód, které vyplývají z postupů uvedených v tomto tématu najdete v příkladu následující postupy.
+ Kód, který je výsledkem postupů popsaných v tomto tématu, je uveden v příkladu, který následuje po postupech.
 
- Další informace o vystavení služby WCF přes koncový bod s povoleným AJAX, najdete v článku [jak: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.
+ Další informace o vystavení služby WCF prostřednictvím koncového bodu s povoleným AJAX naleznete v [tématu How to: Pomocí Configuration přidejte téma ASP.NET pro koncový bod](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) AJAX.
 
-### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvořit a otestovat aplikaci technologie ASP.NET webové služby
+### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvoření a otestování aplikace webové služby ASP.NET
 
-1. Open Visual Studio 2012.
+1. Otevřete Visual Studio 2012.
 
-2. Z **souboru** nabídce vyberte možnost **nový**, pak **projektu**, pak **webové**a pak vyberte **aplikaci webové služby ASP.NET** .
+2. V nabídce **soubor** vyberte možnost **Nový**, **projekt**, pak **Web**a pak vyberte možnost **aplikace webové služby ASP.NET**.
 
-3. Pojmenujte projekt `ASPHello` a klikněte na tlačítko **OK**.
+3. Pojmenujte `ASPHello` projekt a klikněte na tlačítko **OK**.
 
-4. Zrušením komentáře u řádku v souboru Service1.asmx.cs, který obsahuje `System.Web.Script.Services.ScriptService]` umožňující AJAX pro tuto službu.
+4. Odkomentujte řádek v souboru Service1.asmx.cs, který obsahuje `System.Web.Script.Services.ScriptService]` pro povolení AJAX pro tuto službu.
 
-5. Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
+5. V nabídce **sestavení** vyberte **Sestavit řešení**.
 
-6. Z **ladění** nabídce vyberte možnost **spustit bez ladění**.
+6. V nabídce **ladění** vyberte **Spustit bez ladění**.
 
-7. Na webové stránce vygenerovat, vyberte `HelloWorld` operace.
+7. Na vygenerované webové stránce vyberte `HelloWorld` operaci.
 
-8. Klikněte na tlačítko **Invoke** tlačítko `HelloWorld` zkušební stránku. Měli byste obdržet odpověď na následující XML.
+8. Klikněte na tlačítko **vyvolat** na `HelloWorld` stránce test. Měla by se zobrazit následující odpověď XML.
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <string xmlns="http://tempuri.org/">Hello World</string>
     ```
 
-9. Tato odpověď potvrzuje, že teď máte funkční služba ASP.NET AJAX, konkrétně se, že služba má nyní zpřístupněn koncový bod na Service1.asmx/HelloWorld, který reaguje na HTTP POST požadavků a vrátí XML.
+9. Tato odpověď potvrzuje, že teď máte funkční službu ASP.NET AJAX, a zejména to, že služba nyní nastavila koncový bod na Service1. asmx/HelloWorld, který reaguje na požadavky HTTP POST a vrací XML.
 
-     Nyní jste připraveni k převedení této služby k používání služby WCF AJAX.
+     Nyní jste připraveni tuto službu převést na používání služby WCF AJAX.
 
-### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>Chcete-li vytvořit rovnocenné aplikace služby WCF AJAX
+### <a name="to-create-an-equivalent-wcf-ajax-service-application"></a>Vytvoření ekvivalentní aplikace služby WCF AJAX
 
-1. Klikněte pravým tlačítkem myši **ASPHello** projektu a vyberte **přidat**, pak **nová položka**a potom **s povoleným AJAX služba WCF**.
+1. Klikněte pravým tlačítkem na projekt **ASPHello** a vyberte **Přidat**, **Nová položka**a potom **službu WCF s podporou jazyka AJAX**.
 
-2. Pojmenujte službu `WCFHello` a klikněte na tlačítko **přidat**.
+2. Pojmenujte `WCFHello` službu a klikněte na **Přidat**.
 
 3. Otevřete soubor WCFHello.svc.cs.
 
-4. Z Service1.asmx.cs, zkopírujte následující provádění `HelloWorld` operace.
+4. Z Service1.asmx.cs zkopírujte následující implementaci `HelloWorld` operace.
 
-    ```
+    ```csharp
     public string HelloWorld()
     {
          return "Hello World";
     }
     ```
 
-5. Vložte zkopírovaný provádění `HelloWorld` operace do souboru WCFHello.svc.cs místo následující kód.
+5. Vložte do souboru WCFHello.svc.cs na místo `HelloWorld` následujícího kódu a vložte do něj zkopírovanou implementaci operace.
 
-    ```
+    ```csharp
     public void DoWork()
     {
           // Add your operation implementation here
@@ -78,18 +78,18 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     }
     ```
 
-6. Zadejte `Namespace` atributu <xref:System.ServiceModel.ServiceContractAttribute> jako `WCFHello`.
+6. `Namespace` Zadejte atribut<xref:System.ServiceModel.ServiceContractAttribute> jako .`WCFHello`
 
-    ```
+    ```csharp
     [ServiceContract(Namespace="WCFHello")]
     [AspNetCompatibilityRequirements(RequirementsMode=AspNetCompatibilityRequirementsMode.Required)]
     public class WCFHello
     { … }
     ```
 
-7. Přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> k `HelloWorld` operace a sady <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost vrátit <xref:System.ServiceModel.Web.WebMessageFormat.Xml>. Všimněte si, že, pokud není nastavena, výchozí hodnota je návratový typ <xref:System.ServiceModel.Web.WebMessageFormat.Json>.
+7. Přidejte <xref:System.ServiceModel.Web.WebInvokeAttribute> <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> k operaci a nastavte vlastnost, která se má vrátit <xref:System.ServiceModel.Web.WebMessageFormat.Xml>. `HelloWorld` Všimněte si, že pokud není nastavena, výchozí návratový typ je <xref:System.ServiceModel.Web.WebMessageFormat.Json>.
 
-    ```
+    ```csharp
     [OperationContract]
     [WebInvoke(ResponseFormat=WebMessageFormat.Xml)]
     public string HelloWorld()
@@ -98,20 +98,20 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
     }
     ```
 
-8. Z **sestavení** nabídce vyberte možnost **sestavit řešení**.
+8. V nabídce **sestavení** vyberte **Sestavit řešení**.
 
-9. Otevřete soubor WCFHello.svc z a **ladění** nabídce vyberte možnost **spustit bez ladění**.
+9. Otevřete soubor WCFHello. svc a v nabídce **ladění** vyberte **Spustit bez ladění**.
 
-10. Služba teď zpřístupňuje koncový bod na `WCFHello.svc/HelloWorld`, který reaguje na požadavky HTTP POST. Požadavky HTTP POST nelze provést test z prohlížeče, ale koncový bod vrátí následující XML XML.
+10. Služba nyní zpřístupňuje koncový bod na `WCFHello.svc/HelloWorld`, který reaguje na požadavky HTTP POST. Požadavky HTTP POST nelze testovat z prohlížeče, ale koncový bod vrátí XML následující kód XML.
 
     ```xml
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello World</string>
     ```
 
-11. `WCFHello.svc/HelloWorld` a `Service1.aspx/HelloWorld` koncové body jsou funkčně ekvivalentní.
+11. `WCFHello.svc/HelloWorld` Akoncovébody`Service1.aspx/HelloWorld` jsou nyní funkčně ekvivalentní.
 
 ## <a name="example"></a>Příklad
- Kód, který je výsledkem postupů uvedených v tomto tématu najdete v následujícím příkladu.
+ Kód, který je výsledkem postupů popsaných v tomto tématu, je uveden v následujícím příkladu.
 
 ```csharp
 //This is the ASP.NET code in the Service1.asmx.cs file.
@@ -175,17 +175,17 @@ namespace ASPHello
 }
 ```
 
- <xref:System.Xml.XmlDocument> Typ není podporován <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> protože to není serializovatelný podle <xref:System.Xml.Serialization.XmlSerializer>. Můžete použít buď <xref:System.Xml.Linq.XDocument> zadejte nebo serializovat <xref:System.Xml.XmlDocument.DocumentElement%2A> místo.
+ Typ není podporován, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> protože není serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer>. <xref:System.Xml.XmlDocument> Můžete použít buď <xref:System.Xml.Linq.XDocument> typ, nebo <xref:System.Xml.XmlDocument.DocumentElement%2A> místo toho serializovat.
 
- Pokud ASMX webovými službami jsou upgraduje a migrovat vedle sebe ke službám WCF, vyhněte se dva typy mapování na stejné jméno v klientovi. To způsobí, že výjimka v serializátory Pokud je používán stejného typu <xref:System.Web.Services.WebMethodAttribute> a <xref:System.ServiceModel.ServiceContractAttribute>:
+ Pokud jsou webové služby ASMX upgradovány a migrovány souběžně se službami WCF, vyhněte se mapování dvou typů na stejný název na klientovi. To způsobuje výjimku v serializátorech, pokud je stejný typ použit v <xref:System.Web.Services.WebMethodAttribute> <xref:System.ServiceModel.ServiceContractAttribute>a a:
 
-- Pokud nejprve přidáte službu WCF, volání metody na webovou službu ASMX způsobí, že výjimka v <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> vzhledem k tomu, že má přednost před definice stylu WCF objednávky v proxy serveru.
+- Pokud je nejprve přidána služba WCF, vyvolá metoda na webové službě ASMX výjimku <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> , protože má přednost definice stylu WCF pořadí v serveru proxy.
 
-- Pokud nejprve přidá ASMX webovou službu, volání metody na službu WCF způsobí, že výjimka v <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> vzhledem k tomu, že má přednost před definice stylu webové služby objednávky v proxy serveru.
+- Pokud je nejprve přidána webová služba ASMX, volání metody ve službě WCF způsobí výjimku <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> , protože definice stylu webové služby objednávky v serveru proxy má přednost.
 
- Existují významné rozdíly v chování mezi <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>. Například <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> představuje slovník jako pole párů klíč/hodnota, že technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> představuje slovník jako skutečné objekty JSON. Takže tady je slovník reprezentovány v rozhraní ASP.NET AJAX.
+ Mezi <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>jsou významné rozdíly v chování. Například <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> představuje slovník jako pole párů klíč/hodnota, zatímco ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> představuje slovník jako skutečné objekty JSON. Následuje slovník představovaný v ASP.NET AJAX.
 
-```
+```csharp
 Dictionary<string, int> d = new Dictionary<string, int>();
 d.Add("one", 1);
 d.Add("two", 2);
@@ -193,24 +193,24 @@ d.Add("two", 2);
 
  Tento slovník je reprezentován v objektech JSON, jak je znázorněno v následujícím seznamu:
 
-- [{"Klíče": "Jedna", "Value": 1}, {"Klíče": "Dvě", "Value": 2}] ve <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
+- [{"Key": "One"; "value": 1}; {"Key": "Two"; "value": 2}].<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
 
-- {"jedna": 1, "dvě": 2} pomocí technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>
+- {"One": 1, "Two": 2} ASP.NET AJAX<xref:System.Web.Script.Serialization.JavaScriptSerializer>
 
- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Účinnější v tom smyslu, že dokáže zpracovat slovníky kde typ klíče není řetězec, zatímco <xref:System.Web.Script.Serialization.JavaScriptSerializer> nelze. Ale je více vhodných JSON.
+ Je výkonnější v tom smyslu, že může zpracovávat slovníky, kde typ klíče není řetězec, <xref:System.Web.Script.Serialization.JavaScriptSerializer> zatímco nemůže. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Ale druhá je srozumitelná pro JSON.
 
  Významné rozdíly mezi těmito serializátory jsou shrnuty v následující tabulce.
 
-|Kategorie rozdíly|DataContractJsonSerializer|ASP.NET AJAX JavaScriptSerializer|
+|Kategorie rozdílů|DataContractJsonSerializer|ASP.NET AJAX JavaScriptSerializer|
 |-----------------------------|--------------------------------|---------------------------------------|
-|Deserializace prázdné vyrovnávací paměti (nové byte[0]) do <xref:System.Object> (nebo <xref:System.Uri>, nebo některé jiné třídy).|SerializationException|null|
-|Serializace <xref:System.DBNull.Value>|{} (nebo {"__type": "#System"})|Null|
-|Serializace soukromé členy typů [Serializable].|serializovat|nelze serializovat.|
-|Serializace veřejné vlastnosti <xref:System.Runtime.Serialization.ISerializable> typy.|nelze serializovat.|serializovat|
-|"Rozšíření" formátu JSON|Dodržuje specifikaci formátu JSON, která vyžaduje uvozovky na názvy členů objektu ({"a": "hello"}).|Podporuje názvy členů objektu bez uvozovek ({a: "hello"}).|
-|<xref:System.DateTime> Koordinovaný světový čas (UTC)|Nepodporuje formát "\\/Date(123456789U)\\/" nebo "\\/Date\\(\d+ (U&#124;(\\+\\-[\d{4}]))?\\) \\\\/)".|Podporuje formát "\\/Date(123456789U)\\/" a "\\/Date\\(\d+ (U&#124;(\\+\\-[\d{4}]))?\\) \\ \\/) "jako hodnoty data a času.|
-|Reprezentace slovníky|Celou řadu komponent\<K, V >, zpracovává typy klíčů, které nejsou řetězce.|Jako skutečné objekty JSON -, ale pouze typy klíčů obslužné rutiny, které jsou řetězce.|
-|Řídicí znaky|Vždy s řídicí sekvence dopředné lomítko (/); nikdy umožňuje uvozeny řídicími znaky neplatné znaky JSON, jako je například "\n".|S řídicí sekvence dopředné lomítko (/) pro hodnoty data a času.|
+|Deserializace prázdné vyrovnávací paměti (New Byte [0]) do <xref:System.Object> (nebo <xref:System.Uri>nebo jiných tříd).|SerializationException|null|
+|Serializace<xref:System.DBNull.Value>|{}(nebo {"__type": "#System"})|Null|
+|Serializace privátních členů typů [serializovatelných].|serializovat|Neserializované|
+|Serializace veřejných vlastností <xref:System.Runtime.Serialization.ISerializable> typů.|Neserializované|serializovat|
+|Rozšíření JSON|Dodržuje specifikaci JSON, která vyžaduje uvozovky na názvy členů objektu ({"a": "Hello"}).|Podporuje názvy členů objektů bez uvozovek ({a: "Hello"}).|
+|<xref:System.DateTime>Koordinovaný světový čas (UTC)|Nepodporuje formát\\"/Date (123456789U)\\/" nebo "/Date\\"\\(\d + (U&#124;(\\+\\-[\d{4}]))?\\) \\\\/)".|Podporuje formát "\\/Date (123456789U)\\/" a "\\/Date\\" (\d + (&#124;U\\(\\+-[{4}\d]))\\?) \\ /)\\"jako hodnoty DateTime.|
+|Reprezentace slovníků|Pole nenašla\<K, V > zpracovává typy klíčů, které nejsou řetězci.|Jako skutečné objekty JSON – ale zpracovává jenom typy klíčů, které jsou řetězce.|
+|Řídicí znaky|Vždy s řídicím lomítkem (/); nikdy nepovoluje řídicí znaky neplatných znaků JSON, například "\n".|S řídicím lomítkem (/) pro hodnoty data a času.|
 
 ## <a name="see-also"></a>Viz také:
 

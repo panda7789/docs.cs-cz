@@ -5,44 +5,44 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: e9ff82d58f08d8c040984b37422a7048b9d4361d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: ad1fb7d289dea3396b4edb4d3b3e9fb7fb1891e3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878640"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972412"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>Postupy: Hostování služby WCF v IIS
-Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), které je hostované v Internetové informační služby (IIS). Toto téma předpokládá se seznámíte se službou IIS a pochopit, jak vytvářet a spravovat aplikace služby IIS pomocí nástroje pro správu služby IIS. Další informace o službě IIS najdete v části [Internetová informační služba](https://go.microsoft.com/fwlink/?LinkId=132449). Služba WCF, která se spustí v prostředí služby IIS plně využívá funkce služby IIS, jako je například recyklace procesů, nečinnosti vypnutí, monitorování stavu procesu a aktivaci založenou na zprávách. Tato možnost hostování vyžaduje, aby byly správně konfigurovány služby IIS, ale nevyžaduje, že libovolný kód hostování se zapisují jako součást aplikace. Můžete použít hostování IIS pouze s přenos pomocí protokolu HTTP.  
+Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), která je hostovaná v Internetová informační služba (IIS). V tomto tématu se předpokládá, že jste obeznámeni se službou IIS a rozumíte tomu, jak pomocí nástroje pro správu služby IIS vytvářet a spravovat aplikace IIS. Další informace o službě IIS najdete v tématu [Internetová informační služba](https://go.microsoft.com/fwlink/?LinkId=132449). Služba WCF, která běží v prostředí služby IIS, má plně výhodu funkcí služby IIS, jako je recyklace procesů, nečinné vypnutí, monitorování stavu procesu a aktivace na základě zpráv. Tato možnost hostování vyžaduje, aby služba IIS byla správně nakonfigurovaná, ale nevyžaduje, aby se veškerý hostitelský kód napsal jako součást aplikace. Službu IIS můžete použít jenom s přenosem HTTP.  
   
- Další informace o interakci WCF a ASP.NET najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md). Další informace o konfiguraci zabezpečení najdete v tématu [zabezpečení](../../../../docs/framework/wcf/feature-details/security.md).  
+ Další informace o tom, jak WCF a ASP.NET spolupracují, najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md). Další informace o konfiguraci zabezpečení najdete v tématu [zabezpečení](../../../../docs/framework/wcf/feature-details/security.md).  
   
- Pro zdrojovou kopii tohoto příkladu, naleznete v tématu [IIS hostování pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md).  
+ Zdrojovou kopii tohoto příkladu naleznete v tématu [hostování služby IIS pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md).  
   
-### <a name="to-create-a-service-hosted-by-iis"></a>Vytvoření služby hostované službou IIS.  
+### <a name="to-create-a-service-hosted-by-iis"></a>Vytvoření služby hostované službou IIS  
   
-1. Zkontrolujte, zda je služba IIS na počítači nainstalovaná a spuštěná. Další informace o instalaci a konfiguraci služby IIS najdete v části [instalace a konfigurace služby IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=132128)  
+1. Ověřte, že je služba IIS v počítači nainstalovaná a spuštěná. Další informace o instalaci a konfiguraci služby IIS najdete v tématu [instalace a konfigurace služby iis 7,0](https://go.microsoft.com/fwlink/?LinkID=132128) .  
   
-2. Vytvořte novou složku s názvem "IISHostedCalcService" souborů aplikace, ujistěte se, že technologie ASP.NET má přístup k obsahu složky a použít nástroj pro správu služby IIS k vytvoření nové aplikace služby IIS, který je fyzicky umístěný v adresáři této aplikace. Při vytváření aliasu pro použití aplikací adresáře "IISHostedCalc".  
+2. Vytvořte novou složku pro soubory aplikace nazvané "IISHostedCalcService", ujistěte se, že ASP.NET má přístup k obsahu složky, a pomocí nástroje pro správu služby IIS vytvořte novou aplikaci IIS, která je fyzicky umístěná v tomto adresáři aplikace. Při vytváření aliasu pro adresář aplikace použijte "IISHostedCalc".  
   
-3. Vytvořte nový soubor s názvem "service.svc" v adresáři aplikace. Tento soubor upravit přidáním následujícího kódu @ServiceHost elementu.  
+3. V adresáři aplikace vytvořte nový soubor s názvem Service. svc. Upravte tento soubor přidáním následujícího @ServiceHost elementu.  
   
-    ```  
-    <%@ServiceHost language=c# Debug="true" Service="Microsoft.ServiceModel.Samples.CalculatorService"%>  
-    ```  
+   ```
+   <%@ServiceHost language=c# Debug="true" Service="Microsoft.ServiceModel.Samples.CalculatorService"%>
+   ```  
   
-4. Vytvoření App_Code podadresáře v adresáři aplikace.  
+4. Vytvořte podadresář App_Code v adresáři aplikace.  
   
-5. Vytvořte soubor kódu Service.cs v podadresáři App_Code.  
+5. V podadresáři App_Code vytvořte soubor kódu s názvem Service.cs.  
   
-6. Přidejte následující příkazy using do horní části souboru Service.cs.  
+6. Do horní části souboru Service.cs přidejte následující příkazy using.  
   
     ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
-7. Přidejte následující deklarace oboru názvů po na pomocí příkazů.  
+7. Po příkazech using přidejte následující deklaraci oboru názvů.  
   
     ```csharp  
     namespace Microsoft.ServiceModel.Samples  
@@ -50,26 +50,26 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
     }  
     ```  
   
-8. Definování kontraktu služby uvnitř deklarace oboru názvů, jak je znázorněno v následujícím kódu.  
+8. Definujte kontrakt služby uvnitř deklarace oboru názvů, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[c_HowTo_HostInIIS#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#11)]
      [!code-vb[c_HowTo_HostInIIS#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#11)]  
   
-9. Implementace kontraktu služby, po servisní smlouvy definice, jak je znázorněno v následujícím kódu.  
+9. Po definici kontraktu služby, jak je znázorněno v následujícím kódu, implementujte kontrakt služby.  
   
      [!code-csharp[c_HowTo_HostInIIS#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#12)]
      [!code-vb[c_HowTo_HostInIIS#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#12)]  
   
-10. Vytvořte soubor s názvem "Web.config" v adresáři aplikace a přidejte následující kód, konfigurace do souboru. Za běhu infrastruktura WCF používá informace k vytvoření koncového bodu, který můžou klienti komunikovat klientské aplikace.  
+10. Vytvořte soubor s názvem Web. config v adresáři aplikace a přidejte do souboru následující konfigurační kód. Infrastruktura WCF za běhu používá informace k vytvoření koncového bodu, se kterým můžou klientské aplikace komunikovat.  
   
      [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]      
   
-     Tento příklad explicitně určuje koncové body v konfiguračním souboru. Pokud nemůžete přidat žádné koncové body pro službu, modulu runtime přidá výchozí koncové body za vás. Další informace o výchozí koncové body, vazby a chování viz [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+     Tento příklad explicitně určuje koncové body v konfiguračním souboru. Pokud do služby nepřidáte žádné koncové body, modul runtime přidá pro vás výchozí koncové body. Další informace o výchozích koncových bodech, vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-11. Pokud chcete mít jistotu, že služba je hostována správně, spusťte instanci aplikace Internet Explorer a přejděte na adresu URL služby: `http://localhost/IISHostedCalc/Service.svc`  
+11. Abyste se ujistili, že je služba hostovaná správně, otevřete instanci aplikace Internet Explorer a přejděte na adresu URL služby:`http://localhost/IISHostedCalc/Service.svc`  
   
 ## <a name="example"></a>Příklad  
- Zde je, že úplný výpis kódu pro IIS hostovanou službu kalkulačky.  
+ Následuje úplný seznam kódu pro službu IIS Hosted Kalkulačka.  
   
  [!code-csharp[C_HowTo_HostInIIS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#1)] 
  [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)] 
@@ -81,4 +81,4 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
 - [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
 - [Služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)
 - [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)
-- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [Funkce hostování technologie Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 2b5bacfc453f16f9c484eebfddf92c6464f8cb78
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e37fc792f79044345d52b2bc463813c0bde22f5b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597089"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970908"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro kód klienta napsané C#v F# a Visual Basic neexistuje žádný zřejmý rozdíl mezi voláním metody rozšíření a metodami, které jsou ve skutečnosti definovány v typu.  
@@ -77,7 +77,7 @@ using System.Linq;
   
 - Dále jsou metody rozšíření přeneseny do rozsahu na úrovni oboru názvů. Například pokud máte více statických tříd, které obsahují metody rozšíření v jednom oboru názvů s názvem `Extensions`, budou všechny převedeny do rozsahu `using Extensions;` podle direktivy.  
   
- Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro implementovanou knihovnu metody rozšíření používat. Pokud chcete přidat významné funkce do knihovny, jejíž zdrojový kód vlastníte, měli byste postupovat podle standardních pokynů pro rozhraní .NET Framework pro správu verzí sestavení. Další informace naleznete v tématu [Správa verzí sestavení](../../../framework/app-domains/assembly-versioning.md).
+ Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro implementovanou knihovnu metody rozšíření používat. Pokud chcete přidat významné funkce do knihovny, jejíž zdrojový kód vlastníte, měli byste postupovat podle standardních pokynů pro rozhraní .NET Framework pro správu verzí sestavení. Další informace naleznete v tématu [Správa verzí sestavení](../../../standard/assembly/versioning.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,13 +1,13 @@
 ---
 title: dotnet – příkaz sestavení
 description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
-ms.date: 04/24/2019
-ms.openlocfilehash: 6e577defb9f5c7795ee40efa18da30daee1b52c0
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.date: 08/08/2019
+ms.openlocfilehash: e92555dad2bc76d8c72eca9a30be1d3a8b5924f7
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168072"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988527"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -25,7 +25,7 @@ ms.locfileid: "70168072"
 
 ```console
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
-    [--no-incremental] [--nologo] [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+    [--no-incremental] [--no-restore] [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
 dotnet build [-h|--help]
 ```
@@ -94,13 +94,13 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
   Označí sestavení jako nebezpečná pro přírůstkové sestavení. Tento příznak vypne přírůstkovou kompilaci a vynutí čisté opětovné sestavení grafu závislostí projektu.
 
-* **`--no-logo`**
-
-  Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
-
 * **`--no-restore`**
 
   Během sestavování neprovede implicitní obnovení. K dispozici od verze .NET Core 2,0 SDK.
+
+* **`--nologo`**
+
+  Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 

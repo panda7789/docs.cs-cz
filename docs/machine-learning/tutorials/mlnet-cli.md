@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: f3688b4492d3eb629f86a9d463b9127429260033
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 592f9dc599a22427a2a79047cd9e96f36d2ae429
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929111"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971996"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analýza mínění pomocí rozhraní příkazového řádku ML.NET
 
@@ -95,7 +95,8 @@ Použijeme existující datovou sadu, která se používá pro scénář Analýz
 
     Zobrazí se výstup z rozhraní příkazového řádku, podobně jako:
 
-    <!-- markdownlint-disable MD023 -->
+    <!-- markdownlint-disable MD023 MD025 -->
+
     # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     ![ML.NET CLI auto-vlak v PowerShellu](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
@@ -256,7 +257,7 @@ Je zajímavá možnost porovnat zvolený algoritmus a konfiguraci kanálu v kurz
 - [Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)](../how-to-guides/install-ml-net-cli.md)
 - [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]

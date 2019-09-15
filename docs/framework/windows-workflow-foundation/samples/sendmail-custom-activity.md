@@ -2,12 +2,12 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 9325817a24fee3ba04c2c305ebfdfbc6ff6da1bd
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5797620c4938d7dcffb1f506b682141336b21eab
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038116"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988985"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která <xref:System.Activities.AsyncCodeActivity> se odvozuje z k odeslání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita využívá možnosti <xref:System.Net.Mail.SmtpClient> k asynchronnímu posílání e-mailů a k odesílání e-mailů s ověřováním. Poskytuje také některé funkce koncového uživatele, jako je režim testu, nahrazení tokenu, šablony souborů a cesta pro vyřazení testu.  
@@ -18,7 +18,7 @@ V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která <xref:Syste
 |-|-|-|  
 |Hostitel|String|Adresa hostitele serveru SMTP.|  
 |Port|String|Port služby SMTP v hostiteli.|  
-|EnableSsl|bool|Určuje, jestli <xref:System.Net.Mail.SmtpClient> k šifrování připojení používá SSL (Secure Sockets Layer) (SSL).|  
+|enableSsl|bool|Určuje, jestli <xref:System.Net.Mail.SmtpClient> k šifrování připojení používá SSL (Secure Sockets Layer) (SSL).|  
 |UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření vlastnosti <xref:System.Net.Mail.SmtpClient.Credentials%2A> Sender.|  
 |Heslo|String|Heslo pro nastavení přihlašovacích údajů pro ověření vlastnosti Sender <xref:System.Net.Mail.SmtpClient.Credentials%2A> .|  
 |Subject|<xref:System.Activities.InArgument%601>\<> řetězců|Předmět zprávy|  
@@ -47,7 +47,7 @@ V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která <xref:Syste
 ### <a name="sending-an-email-using-tokens-specified-in-the-body"></a>Odeslání e-mailu pomocí tokenů zadaných v těle  
  Tento fragment kódu ukazuje, jak můžete odeslat e-mail s tokeny v těle. Všimněte si, jak jsou tokeny k dispozici ve vlastnosti body. Hodnoty pro tyto tokeny jsou k dispozici pro vlastnost tokeny.  
   
-```html  
+```csharp  
 IDictionary<string, string> tokens = new Dictionary<string, string>();  
 tokens.Add("@name", "John Doe");  
 tokens.Add("@date", DateTime.Now.ToString());  
@@ -69,7 +69,7 @@ new SendMail
 ### <a name="sending-an-email-using-a-template"></a>Odeslání e-mailu pomocí šablony  
  Tento fragment kódu ukazuje, jak odeslat e-mail pomocí tokenů šablony v těle. Všimněte si, že při `BodyTemplateFilePath` nastavování vlastnosti není nutné zadávat hodnotu vlastnosti tělo (obsah souboru šablony bude zkopírován do těla).  
   
-```  
+```csharp  
 new SendMail  
 {    
     From = new LambdaValue<MailAddress>(ctx => new MailAddress("john.doe@contoso.com")),  
@@ -86,7 +86,7 @@ new SendMail
 ### <a name="sending-mails-in-testing-mode"></a>Odesílání e-mailů v testovacím režimu  
  Tento fragment kódu ukazuje, jak nastavit vlastnosti dvou testů: `TestMailTo` nastavením na všechny zprávy se `john.doe@contoso.con` pošle (bez ohledu na hodnoty do, kopie, Skrytá kopie). Nastavením TestDropPath všech odchozích e-mailů se také zaznamená v zadané cestě. Tyto vlastnosti lze nastavit nezávisle (nejsou v relaci).  
   
-```  
+```csharp  
 new SendMail  
 {    
    From = new LambdaValue<MailAddress>(ctx => new MailAddress("john.doe@contoso.com")),  

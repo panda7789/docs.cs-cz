@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: b35fa4a6ca694fc9611869c7fcb03debf911542d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 70e43eaf4dc77e07af8ec65faf9cf0fa9a7a0fe4
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911870"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991522"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) je komunikační infrastruktura založená na jazyce XML. Vzhledem k tomu, že data XML jsou běžně kódována ve standardním textovém formátu definovaném ve [specifikaci XML 1,0](https://go.microsoft.com/fwlink/?LinkId=94838), jsou obvykle zapojeni vývojáři a architekti propojených systémů v souvislosti s nároky (nebo velikostí) zpráv odesílaných napříč sítí a textové kódování XML představuje zvláštní výzvy pro efektivní přenos binárních dat.  
@@ -99,7 +99,7 @@ Windows Communication Foundation (WCF) je komunikační infrastruktura založen�
 ### <a name="programming-model"></a>Programovací model  
  Bez ohledu na to, který ze tří vestavěných kodérů používáte ve vaší aplikaci, je programovací prostředí identické s ohledem na přenos binárních dat. Rozdíl je v tom, jak WCF zpracovává data na základě jejich datových typů.  
   
-```  
+```csharp
 [DataContract]  
 class MyData  
 {  
@@ -190,7 +190,7 @@ class MyData
 ### <a name="programming-model-for-streamed-transfers"></a>Programovací model pro streamované přenosy  
  Programovací model pro streamování je jednoduchý. Pro příjem dat odeslaných datovým proudem zadejte kontrakt operace, který <xref:System.IO.Stream> má jeden typový vstupní parametr. Pokud chcete vracet data z <xref:System.IO.Stream> datového proudu, vraťte odkaz.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IStreamedService  
 {  
@@ -209,7 +209,7 @@ public interface IStreamedService
   
  Toto pravidlo platí podobně jako u kontraktů zpráv. Jak je znázorněno v následujícím kontraktu zprávy, můžete mít v kontraktu zprávy pouze jednoho člena těla, který je datový proud. Pokud chcete spolu s datovým proudem sdělit další informace, musí být tyto informace přenesené do záhlaví zpráv. Tělo zprávy je exkluzivně vyhrazené pro obsah datového proudu.  
   
-```  
+```csharp
 [MessageContract]  
 public class UploadStreamMessage  
 {  

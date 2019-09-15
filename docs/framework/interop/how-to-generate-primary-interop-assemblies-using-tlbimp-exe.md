@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d88da9a043aa2ed75b25f1c59fa991b97576d52
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 4fff2d3309e5f8872a9333bf3d2f86e52bd67ea5
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894212"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971781"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe
 
@@ -33,7 +33,7 @@ Existují dva způsoby, jak vytvořit primární definiční sestavení:
 
 - Ruční vytváření sestavení primární spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní se specifikací CLS (Common Language Specification), jako je C#například. Tento přístup je užitečný v případě, že knihovna typů není k dispozici.
 
-Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Podrobnosti najdete v tématu [Vytvoření páru klíčů](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md).
+Pro podepsání sestavení silným názvem musíte mít pár kryptografických klíčů. Podrobnosti najdete v tématu [Vytvoření páru klíčů](../../standard/assembly/create-public-private-key-pair.md).
 
 ### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Generování primárního definičního sestavení pomocí nástroje Tlbimp. exe
 

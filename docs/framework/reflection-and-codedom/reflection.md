@@ -23,19 +23,19 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56c3b536954118b80db2ae7f2f0d0ffdc74bac68
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: 374a97eea7f6432833ebbcf40736ea6c7a6d4039
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133748"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970953"
 ---
 # <a name="reflection-in-net"></a>Odraz v .NET
-<xref:System.Reflection> Třídy v oboru názvů spolu s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../app-domains/assemblies-in-the-common-language-runtime.md) a typech, které jsou v nich definovány, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a [typy hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
+Třídy <xref:System.Reflection> v oboru názvů spolu s <xref:System.Type?displayProperty=nameWithType>umožňují získat informace o načtených [sestaveních](../../standard/assembly/index.md) a typech, které jsou v nich definovány, jako jsou [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces)a [typy hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instancí typu za běhu a k jejich vyvolání a přístup k nim. Témata týkající se konkrétních aspektů reflexe najdete v části [Příbuzná témata](#related_topics) na konci tohoto přehledu.
   
  Modul [CLR (Common Language Runtime)](../../standard/clr.md) spravuje [aplikační domény](../../../docs/framework/app-domains/application-domains.md), které tvoří hranice kolem objektů, které mají stejný obor aplikace. Tato Správa zahrnuje načtení každého sestavení do příslušné aplikační domény a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
   
- [Sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) obsahují moduly, moduly obsahují typy a typy obsahují členy. Reflexe poskytuje objekty, které zapouzdřují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získání typu z existujícího objektu. Pak můžete vyvolat metody typu nebo získat přístup k jeho polím a vlastnostem. Mezi Typická použití reflexe patří následující:  
+ [Sestavení](../../../docs/framework/app-domains/index.md) obsahují moduly, moduly obsahují typy a typy obsahují členy. Reflexe poskytuje objekty, které zapouzdřují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získání typu z existujícího objektu. Pak můžete vyvolat metody typu nebo získat přístup k jeho polím a vlastnostem. Mezi Typická použití reflexe patří následující:  
   
 - Použijte <xref:System.Reflection.Assembly> k definování a načtení sestavení, načtení modulů, které jsou uvedeny v manifestu sestavení a vyhledejte typ z tohoto sestavení a vytvořte jeho instanci.  
   

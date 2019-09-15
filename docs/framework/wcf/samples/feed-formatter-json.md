@@ -2,12 +2,12 @@
 title: Formátování informačního kanálu (JSON)
 ms.date: 03/30/2017
 ms.assetid: f9c0b295-55e7-48ea-b308-ba51c7d31143
-ms.openlocfilehash: 028d2f9abd7e23f18eb90e5ecae8c57da3a871d1
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 516a114ee577597611c14ce10ad838d85d6a0fb1
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039644"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989894"
 ---
 # <a name="feed-formatter-json"></a>Formátování informačního kanálu (JSON)
 Tento příklad ukazuje, jak serializovat instanci <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy ve formátu JavaScript Object Notation (JSON) pomocí vlastní <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> a <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
@@ -18,7 +18,7 @@ Tento příklad ukazuje, jak serializovat instanci <xref:System.ServiceModel.Syn
 ## <a name="writing-json-feeds"></a>Zápis kanálů JSON  
  Zápis datového kanálu JSON se dá provést pomocí `JsonFeedFormatter` (implementované v této ukázce) s, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 //Basic feed with sample data  
 SyndicationFeed feed = new SyndicationFeed("Custom JSON feed", "A Syndication extensibility sample", null);  
 feed.LastUpdatedTime = DateTime.Now;  

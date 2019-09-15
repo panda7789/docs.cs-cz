@@ -1,6 +1,6 @@
 ---
-title: Vícesouborová sestavení
-ms.date: 03/30/2017
+title: Vícesouborové sestavení
+ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
 - entry point for assembly
@@ -12,36 +12,36 @@ helpviewer_keywords:
 ms.assetid: 13509e73-db77-4645-8165-aad8dfaedff6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 862fc7012c2c5c84a163d6716dfeb4b97f00cbcd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b4c288a54194e89eb90b6ac512cf45184376e952
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634180"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971866"
 ---
-# <a name="multifile-assemblies"></a>Vícesouborová sestavení
+# <a name="multifile-assemblies"></a>Vícesouborové sestavení
 
-Můžete vytvořit vícesouborové sestavení pomocí kompilátoru příkazového řádku nebo Visual Studio s jazykem Visual C++. Jeden soubor v sestavení musí obsahovat manifest sestavení. Vstupní bod, například pro metodu Main nebo WinMain musí obsahovat také sestavení, které spustí aplikaci.
+Můžete vytvořit vícesouborové sestavení, která cílí na .NET Framework pomocí kompilátorů příkazového řádku nebo sady Visual Studio s C++Visual. Jeden soubor v sestavení musí obsahovat manifest sestavení. Sestavení, které spustí aplikaci, musí také obsahovat vstupní bod, například `Main` metodu nebo. `WinMain`
 
-Předpokládejme například, že máte aplikaci, která obsahuje dva moduly kódu, Client.cs a Stringer.cs. Vytvoří Stringer.cs `myStringer` obor názvů, který se odkazuje pomocí kódu v Client.cs. Obsahuje Client.cs `Main` metodu, která je vstupní bod aplikace. V tomto příkladu kompilaci dva moduly kódu a pak vytvořte třetí soubor, který obsahuje manifest sestavení, který spouští aplikaci. Manifest sestavení odkazuje na i `Client` a `Stringer` moduly.
+Předpokládejme například, že máte aplikaci, která obsahuje dva kódové moduly, *Client.cs* a *Stringer.cs*. *Stringer.cs* vytvoří `myStringer` obor názvů, na který se odkazuje v kódu v *Client.cs*. *Client.cs* obsahuje `Main` metodu, která je vstupním bodem aplikace. V tomto příkladu kompilujete dva kódové moduly a pak vytvoříte třetí soubor, který obsahuje manifest sestavení, který spouští aplikaci. Manifest sestavení odkazuje jak na moduly *klienta* , tak pro *Stringer* .
 
 > [!NOTE]
-> Vícesouborová sestavení může mít pouze jeden vstupní bod, i v případě, že sestavení má více modulů kódu.
+> Vícesouborové sestavení může mít pouze jeden vstupní bod, a to i v případě, že sestavení má více kódových modulů.
 
-Existuje několik důvodů, proč že můžete chtít vytvořit vícesouborové sestavení:
+Existuje několik důvodů, proč je vhodné vytvořit vícesouborové sestavení:
 
-- Kombinování modulů napsaných v různých jazycích. Toto je nejběžnějším důvodem pro vytvoření vícesouborového sestavení.
+- Pro kombinování modulů napsaných v různých jazycích. Toto je nejběžnější důvod pro vytvoření vícesouborového sestavení.
 
-- K optimalizaci stahování aplikace tak, že vložíte zřídka používané typy modulu, který se stáhne jenom v případě potřeby.
+- Chcete-li optimalizovat stahování aplikace v modulu, který je stažen pouze v případě potřeby, a to pomocí zřídka používaných typů.
 
     > [!NOTE]
-    > Pokud vytváříte aplikace, které budou staženy pomocí `<object>` značku Microsoft Internet Explorer, je důležité vytvořit vícesouborové sestavení. V tomto scénáři vytvoříte soubor odděleně od moduly kódu, které obsahuje manifest sestavení. Aplikace Internet Explorer nejprve stáhne manifest sestavení a pak vytvoří pracovních vláken pro stahování jakékoli další moduly nebo požadovaná sestavení. Při stažení souboru, který obsahuje manifest sestavení aplikace Internet Explorer bude reagovat na vstup uživatele. Čím menší soubor obsahující manifest sestavení, tím méně času aplikace Internet Explorer nebude reagovat.
+    > Pokud vytváříte aplikace, které budou staženy pomocí `<object>` značky v aplikaci Microsoft Internet Explorer, je důležité vytvořit vícesouborové sestavení. V tomto scénáři vytvoříte soubor oddělený od modulů kódu, který obsahuje pouze manifest sestavení. Internet Explorer nejprve stáhne manifest sestavení a poté vytvoří pracovní vlákna ke stažení jakýchkoli dalších modulů nebo sestavení potřebných pro. Při stahování souboru obsahujícího manifest sestavení přestane Internet Explorer reagovat na vstup uživatele. Menší soubor, který obsahuje manifest sestavení, méně času přestane Internet Explorer reagovat.
 
-- Kombinovat kód modulů napsaných několik vývojáři. I když každý vývojář může každý modul kódu zkompilovat do sestavení, tato vynutí některé typy veřejně zpřístupní, které nejsou vystaveny, pokud všechny moduly jsou vloženy do vícesouborové sestavení.
+- Pro kombinování kódových modulů napsaných několika vývojáři. I když každý z vývojářů může kompilovat modul kódu do sestavení, může to vynutit, aby některé typy byly veřejně vystaveny, které nejsou vystaveny, pokud jsou všechny moduly vloženy do vícesouborového sestavení.
 
-Po vytvoření sestavení lze podepsat soubor obsahující manifest sestavení (a tedy sestavení), nebo můžete poskytnout silného názvu souboru (a sestavení) a vložit ho do globální mezipaměti sestavení.
+Po vytvoření sestavení můžete podepsat soubor, který obsahuje manifest sestavení, a sestavení, nebo můžete soubor a sestavení přidělit silný název a vložit je do globální mezipaměti sestavení (GAC).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)
-- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Postupy: Sestavení vícesouborového sestavení](build-multifile-assembly.md)
+- [Program se sestaveními](../../standard/assembly/program.md)

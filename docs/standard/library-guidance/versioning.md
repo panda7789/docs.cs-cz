@@ -1,105 +1,105 @@
 ---
-title: Knihovny správy verzí a .NET
-description: Doporučené osvědčené postupy pro správu verzí knihovny .NET.
+title: Správa verzí a knihovny .NET
+description: Doporučení osvědčených postupů pro správu verzí knihoven .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 12/10/2018
-ms.openlocfilehash: e6f811039f74649564cbfb42ef67e0a406e4cd70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9250e48707c0ea72cdf8bef9663f5a3516309b86
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909767"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969008"
 ---
 # <a name="versioning"></a>Správa verzí
 
-Softwarová knihovna je jen zřídka dokončena ve verzi 1.0. Dobré knihovny postupně měnit, přidává funkce, opravy chyb a zvýšení výkonu. Je důležité, že vydání nové verze knihovny .NET, zadání další hodnoty s jednotlivými verzemi, aniž by vás to stávající uživatele.
+Knihovna softwaru je ve verzi 1,0 jenom zřídka. Dobrá knihovna se vyvíjí v průběhu času, přidávání funkcí, opravy chyb a zlepšení výkonu. Je důležité, abyste si vyuvolnili nové verze knihovny .NET, která poskytuje další hodnotu s každou verzí bez přerušení stávajících uživatelů.
 
 ## <a name="breaking-changes"></a>Změny způsobující chyby
 
-Informace o zpracování zásadní změny mezi verzí najdete v tématu [Rozbíjející změny v](./breaking-changes.md).
+Informace o zpracování nejnovějších změn mezi verzemi najdete v tématu [přerušující změny](./breaking-changes.md).
 
 ## <a name="version-numbers"></a>Čísla verzí
 
-Knihovna .NET má mnoho způsobů, jak určit verzi. Tyto verze jsou nejdůležitější:
+Knihovna .NET má mnoho způsobů, jak určit verzi. Nejdůležitější jsou tyto verze:
 
 ### <a name="nuget-package-version"></a>Verze balíčku NuGet
 
-[Verze balíčku NuGet](/nuget/reference/package-versioning) se zobrazí na NuGet.org, Správce balíčků NuGet aplikace Visual Studio a že je přidaný do zdrojového kódu při použití balíčku. Verze balíčku NuGet je běžně uvidí uživatelé. číslo verze a budete si ji po hovoří o verzi knihovny, které jste používali. Verze balíčku NuGet používá NuGet a nemá žádný vliv na chování modulu runtime.
+[Verze balíčku NuGet](/nuget/reference/package-versioning) se zobrazuje v NuGet.org, správce balíčků NuGet sady Visual Studio a při použití balíčku se přidá do zdrojového kódu. Verze balíčku NuGet je číslo verze, které se uživatelům obvykle uvidí a na něj budou odkazovat, když budou komunikovat s verzí knihovny, kterou používají. Verzi balíčku NuGet používá NuGet a nemá žádný vliv na chování za běhu.
 
 ```xml
 <PackageVersion>1.0.0-alpha1</PackageVersion>
 ```
 
-Identifikátor balíčku NuGet, v kombinaci s verzí balíčku NuGet se používá k identifikaci balíčku nuget. Například `Newtonsoft.Json`  +  `11.0.2`. Balíček s příponu předběžné verze balíčků a má zvláštní chování, které je ideální pro testování. Další informace najdete v tématu [balíčky v předběžné verzi](./nuget.md#pre-release-packages).
+Identifikátor balíčku NuGet v kombinaci s verzí balíčku NuGet se používá k identifikaci balíčku v NuGet. Například `Newtonsoft.Json` . +  `11.0.2` Balíček s příponou je předběžná verze balíčku a má speciální chování, které je ideální pro testování. Další informace najdete v tématu [předběžné verze balíčků](./nuget.md#pre-release-packages).
 
-Protože verze balíčku NuGet je nejviditelnější verze pro vývojáře, je vhodné jej aktualizovat pomocí [Semantic Versioning (SemVer)](https://semver.org/). SemVer určuje význam změny mezi vydání a pomáhá vývojářům provést informované rozhodnutí při výběru jaké verze se má použít. Například, že přejdete z `1.0` k `2.0` označuje, že můžou být dostupné nejnovější změny.
+Vzhledem k tomu, že verze balíčku NuGet je nejvíce viditelná pro vývojáře, je vhodné ji aktualizovat pomocí [sémantického správy verzí (SemVer)](https://semver.org/). SemVer označuje význam změn mezi vydanými verzemi a pomáhá vývojářům v rozhodování o tom, jaká verze se má použít. Například v `1.0` `2.0` případě, že znamená, že existují potenciálně zásadní změny.
 
-**✔️ ZVAŽTE** pomocí [SemVer 2.0.0](https://semver.org/) verzi balíčku NuGet.
+**✔️ zvažte** použití [2.0.0 SemVer](https://semver.org/) k verzi balíčku NuGet.
 
-**PROVEĎTE ✔️** použití verze balíčku NuGet ve veřejné dokumentaci, jako je číslo verze, který uživatelé uvidí běžně.
+**✔️** použít verzi balíčku NuGet ve veřejné dokumentaci, protože se jedná o číslo verze, které se uživatelům běžně zobrazuje.
 
-**PROVEĎTE ✔️** obsahovat příponu předběžné verze při uvolnění-stabilní verze balíčku.
+při uvolňování nestabilního balíčku **✔️** zahrnout příponu předběžné verze.
 
-> Uživatelé musí přihlásit se k získání balíčky v předběžné verzi, abyste pochopili, že balíček není úplný.
+> Uživatelé musí souhlasit s načtením předběžných balíčků, aby porozuměli tomu, že balíček není kompletní.
 
 ### <a name="assembly-version"></a>Verze sestavení
 
-Verze sestavení je co používá modul CLR za běhu k výběru, kterou verzi sestavení, které chcete načíst. Výběr sestavení pomocí správy verzí pouze se vztahuje na sestavení se silným názvem.
+Verze sestavení je to, co modul CLR používá za běhu k výběru verze sestavení, které se má načíst. Výběr sestavení pomocí správy verzí se vztahuje pouze na sestavení se silným názvem.
 
 ```xml
 <AssemblyVersion>1.0.0.0</AssemblyVersion>
 ```
 
-Windows .NET Framework CLR vyžaduje načtení silné přesnou shodou s názvem sestavení. Například `Libary1, Version=1.0.0.0` byl kompilován s odkazem na `Newtonsoft.Json, Version=11.0.0.0`. Rozhraní .NET Framework pouze načte tento přesnou verzi `11.0.0.0`. Načíst jinou verzi za běhu, musí přidat přesměrování vazby do konfiguračního souboru aplikace .NET.
+Windows .NET Framework CLR požaduje přesnou shodu pro načtení silného pojmenovaného sestavení. Například `Libary1, Version=1.0.0.0` byl zkompilován s odkazem na `Newtonsoft.Json, Version=11.0.0.0`. .NET Framework načte pouze tuto přesnou verzi `11.0.0.0`. Pro načtení jiné verze za běhu musí být přesměrování vazby přidáno do konfiguračního souboru aplikace .NET.
 
-Silné názvy v kombinaci s verzí sestavení umožňuje [načtení verze striktní sestavení](../../framework/app-domains/assembly-versioning.md). Silné názvy knihovny obsahuje řadu výhod, často výsledkem výjimky modulu CLR, které nelze nalézt sestavení a [vyžaduje přesměrování vazeb](../../framework/configure-apps/redirect-assembly-versions.md) v `app.config` / `web.config` vyřešit. Bylo volný načítání sestavení .NET core a .NET Core CLR bude automaticky načíst sestavení za běhu s vyšší verzí.
+Silné pojmenování v kombinaci s verzí sestavení umožňuje [striktní načítání verzí sestavení](../assembly/versioning.md). I když silné pojmenování knihovny má několik výhod, často to vede k výjimkám za běhu, že se sestavení nedá najít a vyžaduje, `web.config` aby se `app.config` opravily / [přesměrování vazby](../../framework/configure-apps/redirect-assembly-versions.md) . Načítání sestavení .NET Core bylo uvolněno a modul CLR .NET Core bude automaticky načítat sestavení za běhu s vyšší verzí.
 
-**✔️ ZVAŽTE** pouze AssemblyVersion včetně hlavní verze.
+**✔️ zvažte** pouze hlavní verzi v AssemblyVersion.
 
-> například knihovna 1.0 a knihovny 1.0.1 obě mají AssemblyVersion z `1.0.0.0`, zatímco AssemblyVersion z knihovny 2.0 `2.0.0.0`. Při změně verze sestavení méně často, snižuje přesměrování vazby.
+> například knihovna 1,0 a 1.0.1 knihovny mají AssemblyVersion `1.0.0.0`, zatímco knihovna 2,0 obsahuje `2.0.0.0`AssemblyVersion. Pokud se verze sestavení nemění méně často, snižuje se přesměrování vazby.
 
-**✔️ ZVAŽTE** udržování synchronizace číslo hlavní verze AssemblyVersion a verze balíčku NuGet.
+**✔️ zvažte** zachování hlavního čísla verze AssemblyVersion a verze balíčku NuGet v synchronizaci.
 
-> AssemblyVersion je součástí některých informační zprávy zobrazí uživateli, například název sestavení a sestavení kvalifikované názvy typů v zprávy o výjimkách. Udržování vztahu mezi verzemi poskytuje další informace pro vývojáře o verzi, které využívají.
+> AssemblyVersion je součástí některých informačních zpráv zobrazených uživateli, například název sestavení a kvalifikované typy názvů sestavení ve zprávách o výjimkách. Udržování vztahu mezi verzemi poskytuje další informace pro vývojáře, kteří používají verzi.
 
-**❌ NEPODPORUJÍ** mají pevnou AssemblyVersion.
+**❌** Nemají pevně AssemblyVersion.
 
-> Zatímco neměnné AssemblyVersion se vyhnete nutnosti přesměrování vazby, znamená to, pouze jednu verzi sestavení lze nainstalovat v globální mezipaměti sestavení (GAC). Aplikace, které odkazují na toto sestavení v GAC také, přeruší, pokud jiná aplikace aktualizuje s rozbíjející změny v globální mezipaměti sestavení.
+> I když nezměněný AssemblyVersion vybrání nutnosti přesměrování vazby, znamená to, že v globální mezipaměti sestavení (GAC) může být nainstalována pouze jedna verze sestavení. Aplikace, které odkazují na sestavení v globální mezipaměti sestavení (GAC), budou také přerušit, pokud jiná aplikace aktualizuje sestavení GAC s nezměněnými změnami.
 
 ### <a name="assembly-file-version"></a>Verze souboru sestavení
 
-Verze souboru sestavení se používá k zobrazení verze souboru ve Windows a nemá žádný vliv na chování modulu runtime. Nastavení této verze je volitelný. Je zobrazen v dialogovém okně vlastností souboru v Průzkumníku Windows:
+Verze souboru sestavení se používá k zobrazení verze souboru ve Windows a nemá žádný vliv na chování za běhu. Nastavení této verze je volitelné. Zobrazuje se v dialogovém okně Vlastnosti souboru v Průzkumníkovi Windows:
 
 ```xml
 <FileVersion>11.0.2.21924</FileVersion>
 ```
 
-![Windows Explorer](./media/versioning/win-properties.png "Windows Explorer")
+![Průzkumník Windows](./media/versioning/win-properties.png "Průzkumník Windows")
 
-**✔️ ZVAŽTE** číslo jako revize AssemblyFileVersion včetně kontinuální integrace sestavení.
+**✔️ zvažte** zahrnutí čísla sestavení průběžné integrace jako revize AssemblyFileVersion.
 
-> Například vytváříte verze 1.0.0 vašeho projektu a číslo sestavení kontinuální integrace je 99, takže vaše AssemblyFileVersion je 1.0.0.99.
+> Například sestavíte 1.0.0 verze projektu a číslo sestavení průběžné integrace je 99, takže vaše AssemblyFileVersion je 1.0.0.99.
 
-**PROVEĎTE ✔️** použijte formát `Major.Minor.Build.Revision` verze souboru.
+**✔️** použít formát `Major.Minor.Build.Revision` pro verzi souboru.
 
-> Zatímco pomocí .NET, nikdy použita verze souboru [Windows očekává, že verze souboru](/windows/desktop/menurc/versioninfo-resource) v `Major.Minor.Build.Revision` formátu. Upozornění je vyvolána, pokud verze nebude mít tento formát.
+> I když verze souboru není rozhraním .NET nikdy používána, [systém Windows očekává, že verze souboru](/windows/desktop/menurc/versioninfo-resource) je `Major.Minor.Build.Revision` ve formátu. Pokud verze nedodržuje tento formát, bude vyvolána výstraha.
 
 ### <a name="assembly-informational-version"></a>Informační verze sestavení
 
-Informační verze sestavení se používá k zaznamenání Další informace o verzi a nemá žádný vliv na chování modulu runtime. Nastavení této verze je volitelný. Pokud používáte odkazu na zdroj, tato verze se nastaví na sestavení se verze balíčku NuGet a verze ovládacího prvku zdroje. Například `1.0.0-beta1+204ff0a` obsahuje hodnotu hash potvrzení sestavení byla vytvořena z zdrojového kódu. Další informace najdete v tématu [odkazu na zdroj](./sourcelink.md).
+Informační verze sestavení se používá k záznamu dalších informací o verzi a nemá žádný vliv na chování za běhu. Nastavení této verze je volitelné. Pokud používáte zdrojový odkaz, bude tato verze nastavena pro sestavení s verzí balíčku NuGet a verzí správy zdrojového kódu. Například `1.0.0-beta1+204ff0a` obsahuje hodnotu hash potvrzení zdrojového kódu, ze kterého bylo sestavení sestaveno. Další informace najdete v tématu [zdrojový odkaz](./sourcelink.md).
 
 ```xml
 <AssemblyInformationalVersion>The quick brown fox jumped over the lazy dog.</AssemblyInformationalVersion>
 ```
 
 > [!NOTE]
-> Starší verze sady Visual Studio vyvolat upozornění sestavení, pokud tato verze není postupujte z formátu `Major.Minor.Build.Revision`. Upozornění můžete ignorovat.
+> Starší verze sady Visual Studio vyvolají upozornění sestavení, pokud tato verze nedodržuje `Major.Minor.Build.Revision`formát. Upozornění lze bezpečně ignorovat.
 
-**❌ Nepoužívejte** nastavení informační verze sestavení sami.
+**❌ Se vyhnout** nastavení informační verze sestavení sami.
 
-> Povolte SourceLink automaticky generovat verze obsahuje NuGet a zdrojový ovládací prvek metadat.
+> Povolí, aby SourceLink automaticky vygenerovala verzi, která obsahuje metadata nástroje NuGet a správy zdrojového kódu.
 
 >[!div class="step-by-step"]
->[Předchozí](publish-nuget-package.md)
->[další](breaking-changes.md)
+>[Předchozí](publish-nuget-package.md)Další
+>[](breaking-changes.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: 5892baaa2732d95cfe698147e06b914af968adc5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ab81642cd756bfdf525f34ac675173600de5b104
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929429"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972338"
 ---
 # <a name="-keycontainer"></a>-keycontainer
 Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestavení silného názvu.  
@@ -37,7 +37,7 @@ Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestaven
   
  Můžete také předat informace o šifrování kompilátoru s parametrem [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md). Použijte [-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) , pokud chcete použít částečně podepsané sestavení.  
   
- Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) .  
+ Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) .  
   
 > [!NOTE]
 > Tato `-keycontainer` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  

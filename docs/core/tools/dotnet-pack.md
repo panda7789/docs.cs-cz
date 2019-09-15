@@ -1,17 +1,21 @@
 ---
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
-ms.date: 12/04/2018
-ms.openlocfilehash: c5c00f3bb06e5bc5579c0d3d6bdd39fbdf3db656
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.date: 08/08/2019
+ms.openlocfilehash: ba5a438d58963222c3fa55d2c585ef503dcd49db
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202841"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990412"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
+**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -19,27 +23,21 @@ ms.locfileid: "70202841"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```console
-dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
-    [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
+    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
+    [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```console
-dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
-    [-s|--serviceable] [-v|--verbosity] [--version-suffix]
-dotnet pack [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Popis
 
-`dotnet pack` Příkaz sestaví projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet. Pokud je `--include-symbols` Tato možnost k dispozici, je vytvořen jiný balíček obsahující symboly ladění.
+`dotnet pack` Příkaz sestaví projekt a vytvoří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet (to znamená soubor *. nupkg* ). 
+
+Pokud chcete vygenerovat balíček, který obsahuje symboly ladění, máte k dispozici dvě možnosti:
+
+- `--include-symbols`– vytvoří balíček symbolů.
+- `--include-source`– vytvoří balíček symbolů se `src` složkou uvnitř obsahující zdrojové soubory.
 
 Do souboru *. nuspec* jsou přidány závislosti NuGet zkomprimovaného projektu, aby byly po instalaci balíčku správně vyřešeny. Odkazy z projektu na projekt nejsou zabaleny do projektu. V současné době je nutné mít balíček na projekt, pokud máte závislosti typu projekt-projekt.
 
@@ -59,13 +57,11 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 ## <a name="arguments"></a>Arguments
 
-* **`PROJECT`**
+`PROJECT | SOLUTION`
 
-  Projekt, který se má zabalit Jedná se buď o cestu k [souboru csproj](csproj.md) , nebo k adresáři. Pokud není zadaný, použije se ve výchozím nastavení aktuální adresář.
+  Projekt nebo řešení, které se má zabalit Jedná se buď o cestu k [souboru csproj](csproj.md), k souboru řešení nebo k adresáři. Pokud není zadán, příkaz vyhledá v aktuálním adresáři soubor projektu nebo řešení.
 
 ## <a name="options"></a>Možnosti
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-c|--configuration {Debug|Release}`**
 
@@ -73,7 +69,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 * **`--force`**
 
-  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* .
+  Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* . Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
 * **`-h|--help`**
 
@@ -81,11 +77,15 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 * **`--include-source`**
 
-  Obsahuje zdrojové soubory v balíčku NuGet. Zdrojové soubory jsou zahrnuty ve `src` složce v `nupkg`rámci.
+  Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly. Zdrojové soubory jsou zahrnuty ve `src` složce v rámci balíčku symbolů.
 
 * **`--include-symbols`**
 
-  Vygeneruje symboly `nupkg`.
+  Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly.
+
+* **`--interactive`**
+
+  Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). K dispozici od verze .NET Core 3,0 SDK.
 
 * **`--no-build`**
 
@@ -93,11 +93,15 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 * **`--no-dependencies`**
 
-  Ignoruje odkazy z projektu na projekt a obnoví pouze kořenový projekt.
+  Ignoruje odkazy z projektu na projekt a obnoví pouze kořenový projekt. Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
 * **`--no-restore`**
 
-  Při spuštění příkazu neprovede implicitní obnovení.
+  Při spuštění příkazu neprovede implicitní obnovení. Možnost je k dispozici od verze .NET Core 2,0 SDK.
+
+* **`--nologo`**
+
+  Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -105,7 +109,7 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 * **`--runtime <RUNTIME_IDENTIFIER>`**
 
-  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md).
+  Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
 * **`-s|--serviceable`**
 
@@ -118,46 +122,6 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 * **`-v|--verbosity <LEVEL>`**
 
   Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`-c|--configuration {Debug|Release}`**
-
-  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
-
-* **`-h|--help`**
-
-  Vypíše krátkou nápovědu k příkazu.
-
-* **`--include-source`**
-
-  Obsahuje zdrojové soubory v balíčku NuGet. Zdrojové soubory jsou zahrnuty ve `src` složce v `nupkg`rámci.
-
-* **`--include-symbols`**
-
-  Vygeneruje symboly `nupkg`.
-
-* **`--no-build`**
-
-  Nevytvoří projekt před balením.
-
-* **`-o|--output <OUTPUT_DIRECTORY>`**
-
-  Umístí sestavené balíčky do zadaného adresáře.
-
-* **`-s|--serviceable`**
-
-  Nastaví v balíčku příznak služby. Další informace najdete na [blogu .NET: rozhraní .NET 4.5.1 podporuje aktualizace zabezpečení Microsoftu pro knihovny NuGet pro .NET](https://aka.ms/nupkgservicing).
-
-* **`--version-suffix <VERSION_SUFFIX>`**
-
-  Definuje hodnotu `$(VersionSuffix)` vlastnosti MSBuild v projektu.
-
-* **`-v|--verbosity <LEVEL>`**
-
-  Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
-
----
 
 ## <a name="examples"></a>Příklady
 
@@ -212,5 +176,5 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 * Sbalení projektu pomocí [souboru. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
 
   ```console
-  dotnet pack ~/projects/app1/project.csproj /p:NuspecFile=~/projects/app1/project.nuspec /p:NuspecBasePath=~/projects/app1/nuget
+  dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget
   ```

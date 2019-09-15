@@ -4,12 +4,12 @@ description: Přehled nástroje Microsoft WCF dotnet-Svcutil, který přidává 
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 723855401f3a81edbd34c77481e4ff12db7dcdaf
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7c3e2f7bcfb337a09a9cc13068c22d496762a90f
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926450"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969937"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet – nástroj Svcutil pro .NET Core
 
@@ -23,6 +23,8 @@ Nástroj **dotnet-Svcutil** je alternativou k [**webové službě WCF reference*
 > Měli byste odkazovat jenom na služby z důvěryhodného zdroje. Přidání odkazů z nedůvěryhodného zdroje může ohrozit zabezpečení.
 
 ## <a name="prerequisites"></a>Požadavky
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 

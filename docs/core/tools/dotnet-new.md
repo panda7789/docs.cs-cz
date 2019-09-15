@@ -2,12 +2,12 @@
 title: dotnet – nový příkaz
 description: Příkaz dotnet New vytvoří nové projekty .NET Core založené na zadané šabloně.
 ms.date: 05/06/2019
-ms.openlocfilehash: c9e960bab0e28e88b0cc8d431dad3b9f3f00c9c0
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 57b198d13984fb4585e1df6303afe481e7e0552d
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660544"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969741"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -18,6 +18,8 @@ ms.locfileid: "69660544"
 `dotnet new`– Vytvoří nový projekt, konfigurační soubor nebo řešení na základě zadané šablony.
 
 ## <a name="synopsis"></a>Stručný obsah
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
 
@@ -66,7 +68,7 @@ Příkaz volá [modul šablony](https://github.com/dotnet/templating) a vytvoř�
 
 Šablona, která se má vytvořit při vyvolání příkazu Každá šablona může mít konkrétní možnosti, které můžete předat. Další informace najdete v tématu [Možnosti šablony](#template-options).
 
-Pokud hodnota není přesná shoda na textu v šablonách nebo ve sloupci **short name** , je v těchto dvou sloupcích provedena shoda podřetězce. `TEMPLATE`
+Pokud hodnota není přesná shoda na textu v **šablonách** nebo ve sloupci **short name** , je v těchto dvou sloupcích provedena shoda podřetězce. `TEMPLATE`
 
 # <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
 

@@ -3,12 +3,12 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: b57e434fbb29a9c85ddf5086888a5291c7767ac9
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: b6de87f375a584da25e160d79f51f1bc48f3c302
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105080"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969852"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
@@ -26,6 +26,8 @@ Příkazy můžete spustit jako kořen, pokud nebudete mezi kořenem a omezeným
 ## <a name="global-tool-installation"></a>Instalace globálních nástrojů
 
 Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a odinstalovat nástroje .NET Core, které vyžadují vyšší oprávnění ke spuštění.
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 

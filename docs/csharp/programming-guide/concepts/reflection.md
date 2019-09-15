@@ -2,12 +2,12 @@
 title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: 9b4322d83ad43cd3e49647df49c15bb5c917e1be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7906ca6f02a369e6f4d51f11f96616b6a89f48c5
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924094"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971662"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
 Reflexe poskytuje objekty ( <xref:System.Type>typu), které popisují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získat typ z existujícího objektu a vyvolat jeho metody nebo získat přístup k jeho polím a vlastnostem. Pokud používáte atributy v kódu, reflexe vám umožní přístup k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
@@ -67,4 +67,4 @@ System.Console.WriteLine(info);
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
-- [Sestavení v modulu CLR (Common Language Runtime)](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Sestavení v .NET](../../../standard/assembly/index.md)

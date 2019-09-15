@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: b2084a1c0ee30478cdc9193cdfcb19476499ee93
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30b890cf3d523d1e33b433a1ff6109759bd9a5e3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924873"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972333"
 ---
 # <a name="-keyfile"></a>-keyfile
 Určuje soubor obsahující klíč nebo dvojici klíčů, které sestavení poskytují silný název.  
@@ -39,7 +39,7 @@ Určuje soubor obsahující klíč nebo dvojici klíčů, které sestavení posk
   
  Všimněte si, že soubor klíče může obsahovat pouze veřejný klíč.  
   
- Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) .  
+ Další informace o podepsání sestavení naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) .  
   
 > [!NOTE]
 > Tato `-keyfile` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  

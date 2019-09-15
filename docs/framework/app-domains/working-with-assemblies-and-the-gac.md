@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 62760cb9fe5832ee018ebdebf6275ea61691c738
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9f45f40cd66c63e660b9091c726533dcfe8db086
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927804"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971590"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Práce se sestaveními a s globální pamětí sestavení
 Pokud máte v úmyslu sdílet sestavení mezi několika aplikacemi, můžete jej nainstalovat do globální mezipaměti sestavení (GAC). Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runtime), má tuto mezipaměť kódu pro všechny počítače. Globální mezipaměť sestavení ukládá sestavení speciálně určená pro sdílení několika aplikacemi v počítači. Sestavení musí mít silný název, který se má nainstalovat do globální mezipaměti sestavení (GAC).  
@@ -46,7 +46,7 @@ Pokud máte v úmyslu sdílet sestavení mezi několika aplikacemi, můžete jej
  Všimněte si, že existují scénáře, kde explicitně nechcete instalovat sestavení do globální mezipaměti sestavení (GAC). Pokud umístíte jedno ze sestavení, která tvoří aplikaci do globální mezipaměti sestavení (GAC), nelze již aplikaci replikovat nebo nainstalovat pomocí příkazu XCOPY ke zkopírování adresáře aplikace. V takovém případě musíte také přesunout sestavení do globální mezipaměti sestavení (GAC).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
+ [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](install-assembly-into-gac.md)  
  Popisuje způsoby instalace sestavení do globální mezipaměti sestavení.  
   
  [Postupy: Zobrazit obsah globální mezipaměti sestavení (GAC)](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
@@ -59,17 +59,17 @@ Pokud máte v úmyslu sdílet sestavení mezi několika aplikacemi, můžete jej
  Vysvětluje, proč se obsluhované komponenty (spravované komponenty modelu COM+) měly umístit do globální mezipaměti sestavení (GAC).  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
+ [Vytváření sestavení](../../standard/assembly/create.md)  
  Poskytuje přehled o vytváření sestavení.  
   
  [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
  Popisuje globální mezipaměť sestavení (GAC).  
   
- [Postupy: Zobrazit obsah sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
+ [Postupy: Zobrazit obsah sestavení](../../standard/assembly/view-contents.md)  
  Vysvětluje, jak používat nástroj [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) k zobrazení informací o jazyce MSIL (Microsoft Intermediate Language) v sestavení.  
   
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  Popisuje, jak modul CLR (Common Language Runtime) vyhledá a načte sestavení, která tvoří vaši aplikaci.  
   
- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ [Programování se sestaveními](../../standard/assembly/program.md)  
  Popisuje sestavení, stavební bloky spravovaných aplikací.

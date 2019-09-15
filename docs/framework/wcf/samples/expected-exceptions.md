@@ -2,12 +2,12 @@
 title: Očekávané výjimky
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: 963606f4cfd34acb1c4400324cdbb318e3186103
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a874b291202cb8c3c8752c13b357679c7fd5a556
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039701"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989967"
 ---
 # <a name="expected-exceptions"></a>Očekávané výjimky
 Tato ukázka předvádí, jak zachytit očekávané výjimky při použití typového klienta. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
@@ -54,7 +54,7 @@ catch (CommunicationException exception)
   
  Proces klienta spouští dva scénáře, z nichž každý se pokusí zavolat `Add` `Divide`za ním. První scénář simuluje problém se sítí přerušením klienta před uskutečněním volání `Divide`. Druhý scénář způsobí vypršení časového limitu tím, že nastaví časový limit příliš krátký pro dokončení metody. Očekávaný výstup z klientského procesu je:  
   
-```  
+```output
 Add(100,15.99) = 115.99  
 Simulated network problem occurs...  
 Got System.ServiceModel.CommunicationObjectAbortedException  

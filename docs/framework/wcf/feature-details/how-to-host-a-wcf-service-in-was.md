@@ -2,12 +2,12 @@
 title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: cdab0876b65c190cd5d46f82218eb9fbb8234298
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: b6d3ace054260de1ca649fbf4bd54156bbea24ce
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988197"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972211"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace procesů systému Windows (označované také jako) hostované služby Windows Communication Foundation (WCF). BYLA Nová aktivační služba procesů, která je generalizací funkcí služby Internetová informační služba (IIS), které fungují s protokoly přenosů bez protokolu HTTP. Služba WCF používá rozhraní naslouchacího adaptéru ke komunikaci s požadavky na aktivaci, které jsou přijímány prostřednictvím protokolů jiných než HTTP podporovaných službou WCF, jako je například TCP, pojmenované kanály a služba Řízení front zpráv.  
@@ -66,9 +66,9 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
 4. Vytvořte soubor Service. svc, který obsahuje následující kód.  
   
-    ```  
-    <%@ServiceHost language=c# Service="CalculatorService" %>   
-    ```  
+   ```
+   <%@ServiceHost language=c# Service="CalculatorService" %>
+   ```
   
 5. Umístěte soubor Service. svc do virtuálního adresáře služby IIS.  
   
@@ -76,8 +76,8 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Aktivace p
   
 1. K vygenerování kódu z metadat služby použijte [Nástroj Svcutil. exe (s metadaty ServiceModel)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z příkazového řádku.  
   
-    ```  
-    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
+    ```console
+    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
     ```  
   
 2. Vygenerovaný klient obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí implementace klienta splňovat.  

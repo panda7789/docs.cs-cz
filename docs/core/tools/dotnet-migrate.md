@@ -1,28 +1,21 @@
 ---
 title: dotnet – příkaz migrace
 description: Příkaz dotnet migruje migruje projekt a všechny jeho závislosti.
-ms.date: 06/26/2019
-ms.openlocfilehash: 86f11592e774da12b010886aaa1e30cee063fea6
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.date: 08/08/2019
+ms.openlocfilehash: 790c607070ff348ca7cfe30137268de18dcb0293
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202532"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990432"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
-**Toto téma se týká: ✓** .NET Core 1. x SDK a novějších verzí
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Tento článek se týká: ✓** .NET Core 1. x SDK **✓** .NET Core 2. x SDK
 
 ## <a name="name"></a>Name
 
 `dotnet migrate`– Migruje projekt .NET Core ve verzi Preview 2 na projekt ve stylu .NET Core SDK.
-
-> [!NOTE]
-> `dotnet migrate`v příští verzi Preview se odebere ze sady .NET Core 3,0 SDK.
 
 ## <a name="synopsis"></a>Stručný obsah
 
@@ -49,6 +42,8 @@ Příkaz udržuje migrovaný soubor *Project. JSON* v `backup` adresáři, kter�
 Ve výchozím nastavení operace migrace vypíše stav procesu migrace do standardního výstupu (STDOUT). Použijete-li `--report-file <REPORT_FILE>` možnost, bude výstup uložen do souboru.
 
 Příkaz podporuje pouze platná verze Preview 2 projekty založené na *projektu. JSON.* `dotnet migrate` To znamená, že ho nemůžete použít k migraci DNX nebo Preview 1 projektů založených na *Project. JSON*přímo do projektů MSBuild/csproj. Nejprve je třeba ručně migrovat projekt do projektu verze Preview 2 *Project. JSON*a potom použít `dotnet migrate` příkaz k migraci projektu.
+
+`dotnet migrate` Příkaz již není od sady .NET Core 3,0 SDK k dispozici.
 
 ## <a name="arguments"></a>Arguments
 

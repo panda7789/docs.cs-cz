@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Seznamte se s možnostmi pro orchestraci mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev Spaces během vývoje životního cyklu aplikace Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: 76fa68cee41f8d1f34ec399c346f457efae57151
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9540ea3941e90b0f9ebfb79dff6f84bb368d0fb0
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296245"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991151"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -15,7 +15,7 @@ Použití orchestrací pro aplikace připravené pro produkční prostředí je 
 
 Obrázek 4-23 znázorňuje nasazení do clusteru aplikace tvořené několika mikroslužbami (kontejnery).
 
-![Složené aplikace Docker v clusteru: Pro každou instanci služby použijete jeden kontejner. Kontejnery Docker jsou "jednotky nasazení" a kontejner je instance Docker. hostitel zpracovává spoustu kontejnerů.](./media/image23.png)
+![Složené aplikace Docker v clusteru: Pro každou instanci služby použijete jeden kontejner. Kontejnery Docker jsou "jednotky nasazení" a kontejner je instance Docker. Hostitel zpracovává mnoho kontejnerů.](./media/image23.png)
 
 **Obrázek 4-23**. Cluster kontejnerů
 

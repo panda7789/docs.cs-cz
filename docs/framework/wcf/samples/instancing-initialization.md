@@ -2,12 +2,12 @@
 title: Inicializace vytváření instancí
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 4d6fdfedad9d522230a35014c0ee164e8b24fcfb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ca135aca8f84ddf79ec7447e7fa7814f61984419
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039600"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989847"
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
 Tato ukázka rozšiřuje ukázku [sdružování](../../../../docs/framework/wcf/samples/pooling.md) definováním rozhraní, `IObjectControl`, které přizpůsobuje inicializaci objektu aktivací a dezaktivováním. Klient vyvolá metody, které vrátí objekt do fondu a nevrátí objekt do fondu.  
@@ -30,7 +30,7 @@ Tato ukázka rozšiřuje ukázku [sdružování](../../../../docs/framework/wcf/
 ## <a name="the-object-pool"></a>Fond objektů  
  `ObjectPoolInstanceProvider` Třída obsahuje implementaci fondu objektů. Tato třída implementuje <xref:System.ServiceModel.Dispatcher.IInstanceProvider> rozhraní pro interakci s vrstvou modelu služby. Pokud třída EndpointDispatcher volá <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> metodu namísto vytvoření nové instance, vlastní implementace vyhledá existující objekt ve fondu v paměti. Pokud je k dispozici, je vrácena. V opačném případě ověří `ActiveObjectsCount` , `ObjectPoolInstanceProvider` zda vlastnost (počet objektů vrácených z fondu) dosáhla maximální velikosti fondu. V takovém případě se vytvoří nová instance, která se vrátí volajícímu `ActiveObjectsCount` a následně se zvýší. V opačném případě je požadavek na vytvoření objektu zařazen do fronty po nastavenou dobu. Implementace pro `GetObjectFromThePool` je uvedena v následujícím ukázkovém kódu.  
   
-```  
+```csharp  
 private object GetObjectFromThePool()  
 {  
     bool didNotTimeout =   
@@ -74,7 +74,7 @@ ResourceHelper.GetString("ExObjectCreationTimeout"));
   
  Vlastní `ReleaseInstance` implementace přidá uvolněnou instanci zpátky do fondu a sníží `ActiveObjectsCount` hodnotu. Třída EndpointDispatcher může volat tyto metody z různých vláken, a proto je vyžadován synchronizovaný přístup ke členům úrovně třídy ve `ObjectPoolInstanceProvider` třídě.  
   
-```  
+```csharp  
 public void ReleaseInstance(InstanceContext instanceContext, object instance)  
 {  
     lock (poolLock)  
@@ -127,7 +127,7 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
   
  Metoda poskytuje inicializační funkci pro *Vyčištění.* `ReleaseInstance` Fond běžně udržuje minimální počet objektů za dobu života fondu. Nicméně můžou existovat období nadměrného využití, které vyžaduje vytvoření dalších objektů ve fondu, aby dosáhly maximálního limitu určeného v konfiguraci. Pokud se ale fond stane méně aktivním, může se stát, že nadbytečné objekty budou dodatečně režijní. Proto když dojde `activeObjectsCount` k nulovému nečinnému časovači, spustí se Trigger a provede se čisticí cyklus.  
   
-```  
+```csharp  
 if (activeObjectsCount == 0)  
 {  
     idleTimer.Start();   
@@ -162,7 +162,7 @@ if (activeObjectsCount == 0)
   
  <xref:System.ServiceModel.Description.IServiceBehavior> V vlastní <xref:System.ServiceModel.ServiceHostBase>implementaci `ObjectPoolInstanceProvider` je vytvořena instance nové instance a přiřazena <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnosti v každé z nich <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> , která je připojena k.  
   
-```  
+```csharp  
 public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)  
 {  
     if (enabled)  
@@ -192,7 +192,7 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
   
  Chování sdružování objektů se teď dá přidat ke službě WCF tím, že se pokládá na implementaci služby s nově vytvořeným vlastním `ObjectPooling` atributem.  
   
-```  
+```csharp  
 [ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      
 public class PoolService : IPoolService  
 {  
@@ -207,7 +207,7 @@ public class PoolService : IPoolService
   
  Pro napodobení této funkci ukázka deklaruje veřejné rozhraní (`IObjectControl`), které má výše uvedené členy. Toto rozhraní je pak implementováno pomocí tříd služeb určených k poskytnutí inicializace specifického kontextu. <xref:System.ServiceModel.Dispatcher.IInstanceProvider> Implementaci je třeba upravit tak, aby splňovala tyto požadavky. Nyní, při každém získání objektu voláním `GetInstance` metody, je nutné zkontrolovat, zda objekt implementuje `IObjectControl.` `Activate` , pokud je, nutné zavolat metodu odpovídajícím způsobem.  
   
-```  
+```csharp  
 if (obj is IObjectControl)  
 {  
     ((IObjectControl)obj).Activate();  
@@ -216,7 +216,7 @@ if (obj is IObjectControl)
   
  Při vrácení objektu do fondu je před přidáním objektu zpět do fondu vyžadováno `CanBePooled` ověření vlastnosti.  
   
-```  
+```csharp  
 if (instance is IObjectControl)  
 {  
     IObjectControl objectControl = (IObjectControl)instance;  
@@ -230,7 +230,7 @@ if (instance is IObjectControl)
   
  Vzhledem k tomu, že se vývojář služby může rozhodnout, zda lze objekt vytvořit do fondu, může počet objektů ve fondu v daném čase přecházet pod minimální velikostí. Proto je nutné ověřit, zda počet objektů předržíte pod minimální úrovní a provést nezbytnou inicializaci v postupu vyčištění.  
   
-```  
+```csharp  
 // Remove the surplus objects.  
 if (pool.Count > minPoolSize)  
 {  
@@ -252,7 +252,7 @@ else if (pool.Count < minPoolSize)
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

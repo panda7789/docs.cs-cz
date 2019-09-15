@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 80b0d034b92123862d0500106f81d4a566cac467
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7bc628952d4a7198f0b5545014ae931bbf73dab3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968785"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969005"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Existují situace, kdy možná budete chtít mít zcela samostatný klient zprostředkovatele komunikace s objekty COM. Služba, kterou chcete volat, nesmí vystavit koncový bod MEX a Klientská knihovna WCF nemusí být registrována pro zprostředkovatele komunikace s objekty COM. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předává ji do monikeru služby WCF. Toto téma popisuje, jak volat ukázku Začínáme WCF pomocí monikeru WCF WSDL.  
@@ -28,7 +28,7 @@ Existují situace, kdy možná budete chtít mít zcela samostatný klient zpros
   
 6. Otevřete Visual Basic 6,0 a vytvořte nový standardní soubor. exe. Přidejte do formuláře tlačítko a dvakrát klikněte na tlačítko a přidejte následující kód do obslužné rutiny Click:  
   
-    ```  
+    ```vb
     ' Open the WSDL contract file and read it all into the wsdlContract string.  
     Const ForReading = 1  
     Set objFSO = CreateObject("Scripting.FileSystemObject")  

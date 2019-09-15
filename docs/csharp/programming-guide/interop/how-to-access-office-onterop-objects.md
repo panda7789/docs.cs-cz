@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 19fff39969933baa2510458400cabf9646e0c48d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 8e99402752b3fafb486735d56d66737f03ceec30
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589136"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972088"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 
@@ -137,7 +137,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 ## <a name="to-set-the-embed-interop-types-property"></a>Nastavení vlastnosti Embed Interop Types
 
-1. Další vylepšení jsou možná při volání typu modelu COM, který nevyžaduje primární definiční sestavení (PIA) v době běhu. Výsledkem odebrání závislosti na PIA je nezávislost verzí a snazší nasazení. Další informace o výhodách programování bez PIA najdete v tématu [Názorný postup: Vložení typů ze spravovaných sestavení](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).
+1. Další vylepšení jsou možná při volání typu modelu COM, který nevyžaduje primární definiční sestavení (PIA) v době běhu. Výsledkem odebrání závislosti na PIA je nezávislost verzí a snazší nasazení. Další informace o výhodách programování bez PIA najdete v tématu [Názorný postup: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).
 
      Kromě toho programování je snazší, protože typy, které jsou požadovány a vraceny metodou com, lze reprezentovat pomocí typu `dynamic` `Object`namísto. Proměnné, které mají `dynamic` typ, nejsou vyhodnocovány až do doby běhu, což eliminuje nutnost explicitního přetypování. Další informace naleznete v tématu [použití typu Dynamic](../types/using-type-dynamic.md).
 

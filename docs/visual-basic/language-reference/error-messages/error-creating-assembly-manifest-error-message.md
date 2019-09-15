@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30140
 ms.assetid: 1beb5aa0-7b79-4c85-946b-5c2d0a41d1d2
-ms.openlocfilehash: 0f67b772bab3104c00510954d01b200aadfa9e8a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 560635718a931cc9cdb687154a1d23970136de97
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61803347"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972289"
 ---
-# <a name="error-creating-assembly-manifest-error-message"></a>Chyba při vytváření manifestu sestavení: \<chybová zpráva >
-Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované také jako Alink) ke generování sestavení s manifestem. Linker ohlásilo chybu ve fázi předběžného emisí vytváření sestavení.  
+# <a name="error-creating-assembly-manifest-error-message"></a>Chyba při vytváření manifestu sestavení \<: chybová zpráva >
+Kompilátor Visual Basic volá linker sestavení (Al. exe, označovaný také jako ALink), aby vygeneroval sestavení s manifestem. Linker oznámil chybu v předprodukční fázi vytváření sestavení.  
   
- Tato situace může nastat, pokud dochází k problémům s souboru klíče nebo kontejneru klíčů určeném. Chcete-li plně podepsat sestavení, je nutné zadat platný soubor s klíčem, který obsahuje informace o veřejných a privátních klíčů. Zpoždění podepsání sestavení, musíte vybrat **zpoždění podepsání** zaškrtněte políčko a zadejte platný soubor s klíčem, který obsahuje informace o informace o veřejném klíči. Privátní klíč není nezbytné, pokud sestavení se zpožděným podpisem. Další informace najdete v tématu [jak: Podepsání sestavení silným názvem](../../../framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md).  
+ K tomu může dojít, pokud dojde k potížím se souborem klíče nebo s určeným kontejnerem klíčů. Pro úplné podepsání sestavení je nutné zadat platný soubor klíče, který obsahuje informace o veřejných a privátních klíčích. Chcete-li zpozdit podepsání sestavení, je nutné zaškrtnout políčko **pouze zpožděné znaménko** a zadat platný soubor klíče, který obsahuje informace o informacích o veřejném klíči. Privátní klíč není nezbytný, pokud je sestavení podepsáno opožděně. Další informace najdete v tématu [jak: Podepište sestavení silným názvem](../../../standard/assembly/sign-strong-name.md).  
   
  **ID chyby:** BC30140  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Zkontrolujte v uvozovkách chybovou zprávu a najdete v tématu [Al.exe](../../../framework/tools/al-exe-assembly-linker.md). pro další vysvětlení chyby AL1019 a poradenství  
+1. Prohlédněte si chybovou zprávu v uvozovkách a Projděte si téma [Al. exe](../../../framework/tools/al-exe-assembly-linker.md). Další vysvětlení a Rady k chybě AL1019  
   
-2. Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
+2. Pokud chyba přetrvává, shromážděte informace o okolnostech a upozorněte služby podpory společnosti Microsoft.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Podepsání sestavení silným názvem](../../../framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
+- [Postupy: Podepsat sestavení silným názvem](../../../standard/assembly/sign-strong-name.md)
 - [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
 - [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)
 - [Kontaktujte nás](/visualstudio/ide/talk-to-us)

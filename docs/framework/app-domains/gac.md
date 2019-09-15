@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5b99597a857f4c7926f783a6531f44fdb1fb7bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0e94bb9d006febb4d8760ac481570dbed3a98341
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921588"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972024"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runtime), má mezipaměť kódu v celém počítači nazývanou globální mezipaměť sestavení (GAC). Globální mezipaměť sestavení ukládá sestavení speciálně určená pro sdílení několika aplikacemi v počítači.  
@@ -44,6 +44,6 @@ Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runti
   
 ## <a name="see-also"></a>Viz také:
 
-- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Sestavení v .NET](../../standard/assembly/index.md)
 - [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)
-- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
+- [Sestavení se silným názvem](../../standard/assembly/strong-named.md)

@@ -9,67 +9,67 @@ helpviewer_keywords:
 - assemblies [.NET Framework], emitting dynamic assemblies
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 559d6962873540836a49da04bc271857edfa1157
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 767382f27a96e8aacce4cc625de610949b3f02a3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663477"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971044"
 ---
 # <a name="emitting-dynamic-methods-and-assemblies"></a>Generování dynamických metod a sestavení
-Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> obor názvů, které umožní, aby kompilátor nebo nástroj generoval metadata a jazyk Microsoft intermediate language (MSIL) v době běhu a volitelně vygenerovat soubor (PE portable executable) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části poskytuje funkce <xref:System.Reflection.Emit> obor názvů se označuje jako reflexe vygenerovat.  
+Tato část popisuje sadu spravovaných typů v <xref:System.Reflection.Emit> oboru názvů, které umožňují kompilátorům nebo nástrojům generovat metadata a jazyk MSIL (Microsoft Intermediate Language) za běhu a volitelně vygenerovat soubor přenositelného spustitelného souboru (PE) na disku. Skriptovací stroje a kompilátory jsou primárními uživateli tohoto oboru názvů. V této části je funkce poskytovaná <xref:System.Reflection.Emit> oborem názvů označována jako vygenerování reflexe.  
   
- Emitování reflexe poskytuje následující možnosti:  
+ Vygenerování reflexe poskytuje následující možnosti:  
   
-- Definovat jednoduchý globální metody za běhu použití <xref:System.Reflection.Emit.DynamicMethod> třídy a spouštějte je pomocí delegátů.  
+- Definujte zjednodušené globální metody za běhu, pomocí <xref:System.Reflection.Emit.DynamicMethod> třídy a spusťte je pomocí delegátů.  
   
-- Definice sestavení v době běhu a jejich spuštění nebo uložení na disk.  
+- Definujte sestavení v době běhu a pak je spusťte nebo uložte na disk.  
   
-- Definice sestavení v době běhu, spustit, je uvolnit a povolit uvolňování uvolnit jejich prostředky.  
+- Definujte sestavení za běhu, spusťte je a pak je uvolněte a umožněte uvolnění paměti, aby bylo možné znovu získat své prostředky.  
   
-- Definování modulů v nová sestavení v době běhu a spouštět nebo uložit na disk.  
+- Definujte moduly v nových sestaveních za běhu a pak je spusťte nebo uložte na disk.  
   
-- Definování typů v modulech v době běhu, vytváření instancí těchto typů a vyvolání jejich metod.  
+- Definujte typy v modulech v době běhu, vytvořte instance těchto typů a volejte jejich metody.  
   
-- Definujte informace o symbolech pro definovaný moduly, které můžete používat nástroje, jako je například ladicí programy a profilery kódu.  
+- Definujte symbolické informace pro definované moduly, které mohou být používány nástroji, jako jsou ladicí programy a profilery kódu.  
   
- Kromě spravovaných typů v <xref:System.Reflection.Emit> obor názvů, nejsou nespravované metadat rozhraní, které jsou popsány v [rozhraní metadat](../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md) referenční dokumentaci. Emitování reflexe spravované nabízí silnější kontrolu sémantických chyb a vyšší úroveň abstrakce metadata než rozhraní nespravované metadat.  
+ Kromě spravovaných typů v <xref:System.Reflection.Emit> oboru názvů existují nespravovaná rozhraní metadat, která jsou popsána v referenční dokumentaci [rozhraní metadat](../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md) . Spravované reflexe Emit poskytuje silnější sémantickou kontrolu chyb a vyšší úroveň abstrakce metadat než nespravované rozhraní metadat.  
   
- Další užitečné zdroje pro práci s metadata a jazyk MSIL je dokumentace společné jazykové infrastruktury (CLI), zejména "oddíl II: Definice metadat a sémantika"a" oddílu III: Sada instrukcí soubor CIL se NAČTE". Dokumentace je k dispozici online na [MSDN](https://go.microsoft.com/fwlink/?LinkID=65555) a [webu Ecma](https://go.microsoft.com/fwlink/?LinkId=116487).  
+ Dalším užitečným prostředkem pro práci s metadaty a jazykem MSIL je dokumentace k Common Language Infrastructure (CLI), obzvláště "partition II: Definice metadat a sémantika "a" partition III: Sada instrukcí CIL Dokumentace je k dispozici online na webu [MSDN](https://go.microsoft.com/fwlink/?LinkID=65555) a na webu [ECMA](https://go.microsoft.com/fwlink/?LinkId=116487).  
   
 ## <a name="in-this-section"></a>V tomto oddílu
   
-[Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
-Popisuje problémy související s vytvářením dynamických sestavení pomocí operace reflection emit zabezpečení.  
+[Problémy se zabezpečením v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)  
+Popisuje problémy se zabezpečením související s vytvářením dynamických sestavení pomocí generování reflexe.  
 
 [Postupy: Definování a provádění dynamických metod](how-to-define-and-execute-dynamic-methods.md)   
-Ukazuje, jak provést jednoduchou dynamickou metodu a dynamická metoda svázána s instancí třídy.
+Ukazuje, jak spustit jednoduchou dynamickou metodu a dynamickou metodu svázanou s instancí třídy.
 
-[Postupy: Definování obecného typu pomocí reflexe generování](how-to-define-a-generic-type-with-reflection-emit.md)   
-Ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typu, jak použít třídy, rozhraní a zvláštní omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.
+[Postupy: Definování obecného typu pomocí generování reflexe](how-to-define-a-generic-type-with-reflection-emit.md)   
+Ukazuje, jak vytvořit jednoduchý obecný typ se dvěma parametry typu, jak použít třídu, rozhraní a speciální omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.
 
-[Postupy: Definování obecné metody pomocí reflexe generování](how-to-define-a-generic-method-with-reflection-emit.md)   
-Ukazuje, jak vytvořit, generovat a vyvolání jednoduchou obecnou metodu.
+[Postupy: Definování obecné metody pomocí generování reflexe](how-to-define-a-generic-method-with-reflection-emit.md)   
+Ukazuje, jak vytvořit, vygenerovat a vyvolat jednoduchou obecnou metodu.
 
-[Kolekční sestavení pro generování dynamických typů](collectible-assemblies.md)   
-Zavádí kolekční sestavení, které jsou dynamické sestavení, které může být uvolněno bez uvolnění domény aplikace, ve kterém byly vytvořeny.
+[Kolekční sestavení pro generování dynamického typu](collectible-assemblies.md)   
+Zavádí kolekční sestavení, která jsou dynamická sestavení, která lze uvolnit bez uvolnění domény aplikace, ve které byly vytvořeny.
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.Reflection.Emit.OpCodes>  
- Katalogy kódy instrukce jazyka MSIL, které můžete použít k sestavení těl metod.  
+ Zařadí do katalogu kódy instrukcí jazyka MSIL, které můžete použít k sestavení těla metody.  
   
  <xref:System.Reflection.Emit>  
- Obsahuje spravované třídy použít ke generování dynamických metod a sestavení, typy.  
+ Obsahuje spravované třídy používané k vygenerování dynamických metod, sestavení a typů.  
   
  <xref:System.Type>  
- Popisuje <xref:System.Type> reflexe spravované třídy, která představuje typy v generování reflexe a který je klíčem k používání těchto technologií.  
+ <xref:System.Type> Popisuje třídu, která představuje typy v spravovaných reflexích a reflexi Emit a který je klíčem k používání těchto technologií.  
   
  <xref:System.Reflection>  
- Obsahuje spravované třídy používané k prozkoumání metadata a spravovaný kód.  
+ Obsahuje spravované třídy používané k prozkoumávání metadat a spravovaného kódu.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
  Vysvětluje, jak prozkoumat metadata a spravovaný kód.  
   
- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- Poskytuje přehled sestavení v implementace .NET.
+ [Sestavení v .NET](../../standard/assembly/index.md)  
+ Poskytuje přehled o sestaveních v implementacích rozhraní .NET.

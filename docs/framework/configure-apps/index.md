@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 28a06139275f63571d9528d075946d97a19c9f3c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b2da9600e6947a1efcb13fc8b1127665cea63071
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912884"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972191"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 .NET Framework, prostřednictvím konfiguračních souborů, poskytují vývojářům a správcům kontrolu a flexibilitu nad tím, jak aplikace běží. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může řídit, ke kterým chráněným prostředkům má aplikace přístup, které verze sestavení aplikace budou používat a kde se nacházejí vzdálené aplikace a objekty. Vývojáři mohou umístit nastavení do konfiguračních souborů a eliminují tak nutnost nové kompilace aplikace při každém změně nastavení. Tato část popisuje, co je možné nakonfigurovat a proč může být konfigurace aplikace užitečná.  
@@ -127,4 +127,4 @@ ms.locfileid: "69912884"
 - [Správa webu ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
 - [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../tools/caspol-exe-code-access-security-policy-tool.md)
-- [Sestavení v modulu CLR (Common Language Runtime)](../app-domains/assemblies-in-the-common-language-runtime.md)
+- [Sestavení v .NET](../../standard/assembly/index.md)

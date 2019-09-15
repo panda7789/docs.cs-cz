@@ -2,17 +2,17 @@
 title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 5190cdad08087b73eb247dfc236ae7b6f470af69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 706c2886bda9497835d98eeeb594e68c2191d8d8
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626913"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969994"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
-Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes WebSockets.  Protokoly Websocket se nepoužívá, pokud <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> komunikovat přes WebSockets.  
+Služby a Klienti WCF mohou pomocí <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes objekty WebSockets.  WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.  
   
-### <a name="define-the-service"></a>Zadejte službu  
+### <a name="define-the-service"></a>Definování služby  
   
 1. Definování kontraktu zpětného volání  
   
@@ -25,9 +25,9 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-     Tato smlouva se provádí klientská aplikace, aby byla povolena pro odesílání zpráv zpět klientovi.  
+     Tato smlouva bude implementována klientskou aplikací, aby mohla služba odesílat zprávy zpět klientovi.  
   
-2. Definování kontraktu služby a zadejte `IStockQuoteCallback` rozhraní jako smlouvy zpětného volání.  
+2. Definujte kontrakt služby a určete `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,9 +38,9 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-3. Implementace kontraktu služby.  
+3. Implementujte kontrakt služby.  
   
-    ```  
+    ```csharp
     public class StockQuoteService : IStockQuoteService  
         {  
             public async Task StartSendingQuotes()  
@@ -59,7 +59,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-     Operace služby `StartSendingQuotes` je implementovaný jako asynchronní volání. Nemůžeme načíst pomocí zpětného volání kanálu `OperationContext` a pokud kanál není otevřený, provedeme asynchronní volání kanálu zpětného volání.  
+     Operace `StartSendingQuotes` služby je implementována jako asynchronní volání. Kanál zpětného volání načteme pomocí `OperationContext` operátoru a, pokud je kanál otevřený, provádíme asynchronní volání na kanálu zpětného volání.  
   
 4. Konfigurace služby  
   
@@ -90,11 +90,11 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
     </configuration>  
     ```  
   
-     Konfigurační soubor služby spoléhá na koncových bodů WCF na výchozí. `<protocolMapping>` Oddíl se používá k určení, která `NetHttpBinding` byste měli použít pro výchozí koncové body vytvořené.  
+     Konfigurační soubor služby spoléhá na výchozí koncové body WCF. Oddíl slouží k určení `NetHttpBinding` , zda má být použit pro výchozí koncové body. `<protocolMapping>`  
   
 ### <a name="define-the-client"></a>Definování klienta  
   
-1. Implementace kontraktu zpětného volání.  
+1. Implementujte kontrakt zpětného volání.  
   
     ```csharp  
     private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
@@ -106,7 +106,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
             }  
     ```  
   
-     Operace kontraktu zpětného volání je implementovaný jako asynchronní metody.  
+     Operace kontraktu zpětného volání je implementována jako asynchronní metoda.  
   
     1. Implementujte kód klienta.  
   
@@ -131,7 +131,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
         ```  
   
-         Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří nová třída InstanceContext a určuje implementaci rozhraní zpětného volání. Dále vytvoří instanci třídy proxy odesílání odkazem na nově vytvořený InstanceContext. Když klient zavolá službu, bude volat službu klienta pomocí zpětného volání kontraktu.  
+         Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří novou funkci InstanceContext a určí implementaci rozhraní zpětného volání. V dalším kroku se vytvoří instance třídy proxy, která posílá odkaz na nově vytvořenou třídu InstanceContext. Když klient zavolá službu, služba zavolá klienta pomocí zadaného kontraktu zpětného volání.  
   
     2. Konfigurace klienta  
   
@@ -158,10 +158,10 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         </configuration>  
         ```  
   
-         Není nic zvláštního, je potřeba udělat v konfiguraci klienta, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.  
+         V konfiguraci klienta nemusíte nic dělat, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.  
   
 ## <a name="example"></a>Příklad  
- Následuje kompletní kód použitý v tomto tématu.  
+ Následuje kompletní kód, který se používá v tomto tématu.  
   
 ```csharp  
 // IStockQuoteService.cs  
@@ -191,7 +191,7 @@ namespace Server
 }  
 ```  
   
-```  
+```csharp
 // StockQuoteService.svc.cs  
 using System;  
 using System.Collections.Generic;  
@@ -257,7 +257,7 @@ namespace Server
 </configuration>  
 ```  
   
-```  
+```
 <!-- StockQuoteService.svc -->  
 <%@ ServiceHost Language="C#" Debug="true" Service="Server.StockQuoteService" CodeBehind="StockQuoteService.svc.cs" %>  
 ```  

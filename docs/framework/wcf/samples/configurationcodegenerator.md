@@ -2,50 +2,50 @@
 title: ConfigurationCodeGenerator
 ms.date: 03/30/2017
 ms.assetid: 3913aae8-165f-4014-9262-7fe426f90cb2
-ms.openlocfilehash: a01300024f89a0a189045d80622121f7db739a39
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: f12fae48f1cee198aac22e6f09e616b407b4e9b5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912414"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990056"
 ---
 # <a name="configurationcodegenerator"></a>ConfigurationCodeGenerator
-ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejnění vašeho vlastního kanálu implementace konfigurační systém. To umožňuje uživatelům vlastní kanál konfigurovat kanál pomocí souboru .config, stejně jako poskytnutými systémem vazby, jako by konfigurace `NetTcpBinding` nebo vlastní vazby pomocí `TcpTransportBindingElement`.  
+ConfigurationCodeGenerator je nástroj, který můžete použít k vystavení vlastních implementací kanálu do konfiguračního systému. To umožňuje uživatelům vašeho vlastního kanálu nakonfigurovat svůj kanál pomocí souboru. config stejným způsobem, jako by nakonfigurovali systémově poskytované vazby, jako je například `NetTcpBinding` nebo vlastní vazba `TcpTransportBindingElement`pomocí.  
   
- Při zápisu vlastního kanálu a zpřístupnit ji programovací model s použitím nového `BindingElement` nebo `Binding`, musíte vytvořit sadu tříd, aby `BindingElement` nebo `Binding` umožňovat konfiguraci pomocí souboru .config. Nástroj ConfigurationCodeGenerator můžete použít ke generování těchto tříd a vylepšení prostředí pro vaše zákazníky.  
+ Při psaní vlastního kanálu a jeho zpřístupnění pro programovací model `BindingElement` pomocí nového nebo `Binding`, je nutné vytvořit sadu tříd pro `BindingElement` vytvoření nebo `Binding` konfiguraci pomocí souboru. config. Pomocí nástroje ConfigurationCodeGenerator můžete tyto třídy vygenerovat a rozšířit možnosti svého zákazníka.  
   
-### <a name="to-build-the-tool"></a>K sestavení nástroj  
+### <a name="to-build-the-tool"></a>Sestavení nástroje  
   
-1. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. Sestavování řešení se generuje jeden soubor: ConfigurationCodeGenerator.exe. Ukázka příkazového řádku, který ukazuje, jak tento nástroj používat ke generování třídy pro má soubor SampleRun.cmd [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
+2. Sestavení řešení generuje jeden soubor: ConfigurationCodeGenerator.exe. Soubor SampleRun. cmd obsahuje vzorový příkazový řádek, který ukazuje, jak tento nástroj použít k vygenerování tříd pro [přenos: Ukázka](../../../../docs/framework/wcf/samples/transport-udp.md) UDP  
   
-### <a name="to-run-the-tool"></a>Chcete-li spustit nástroj  
+### <a name="to-run-the-tool"></a>Spuštění nástroje  
   
-1. Na příkazovém řádku zadejte následující, pokud máte i vlastní `BindingElement` typu a vlastní `Binding` typu:  
+1. Pokud máte vlastní `BindingElement` typ i vlastní `Binding` typ, zadejte na příkazovém řádku následující příkaz:  
   
-    ```  
+    ```console  
     ConfigurationCodeGenerator.exe /be:YourCustomBindingElementTypeName /sb:YourCustomStdBindingTypeName /dll:TheAssemblyWhereTheseTypesAreDefined  
     ```  
   
-     Nebo zadejte následující příkaz, pokud máte jenom vlastní `BindingElement` typu:  
+     Pokud máte pouze vlastní `BindingElement` typ, zadejte následující:  
   
-    ```  
+    ```console  
     ConfigurationCodeGenerator.exe /be:YourCustomBindingElementTypeName /dll: TheAssemblyWhereThisTypeIsDefined  
     ```  
   
-     Nebo zadejte následující příkaz, pokud máte jenom vlastní `Binding` typu:  
+     Pokud máte pouze vlastní `Binding` typ, zadejte následující:  
   
-    ```  
+    ```console  
     ConfigurationCodeGenerator.exe /sb:YourCustomStdBindingTypeName /dll:TheAssemblyWhereThisTypeIsDefined  
     ```  
   
-     Příkaz generuje pro tři soubory .cs `BindingElement` (Pokud jste zadali / být: možnost), pět souborů .cs standardu `Binding` (Pokud jste zadali /sb: možnost) a souboru .xml.  
+     Příkaz vygeneruje tři soubory. cs pro `BindingElement` (Pokud jste zadali možnost/BE:), pět souborů cs pro standardní `Binding` (Pokud jste zadali možnost/Sb:) a souboru. XML.  
   
-    1. Pokud jste použili možnost /be, jeden z cs soubory implementuje `BindingElementExtensionSection` pro vaše element vazby. Tento kód poskytuje vaše `BindingElement` konfigurace systému, aby další vlastní vazby můžete použít vaše element vazby. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
+    1. Pokud jste použili možnost/BE, jeden ze souborů. cs implementuje rozhraní `BindingElementExtensionSection` pro váš element vazby. Tento kód zpřístupňuje `BindingElement` systém konfigurace, aby ostatní vlastní vazby mohly použít váš element vazby. Ostatní soubory mají třídy, které reprezentují výchozí hodnoty a konstanty. Soubory obsahují `//TODO` komentáře, které vám umožní připomenout, abyste aktualizovali výchozí hodnoty.  
   
-    2. Pokud jste určili možnost /sb, dva soubory .cs implementovat `StandardBindingElement` a `StandardBindingCollectionElement` , která zveřejní vaše standardní vazby na konfigurační systém. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
+    2. Pokud jste zadali možnost/Sb, dva ze souborů. cs implementují `StandardBindingElement` `StandardBindingCollectionElement` a v uvedeném pořadí zpřístupňují standardní vazbu na konfigurační systém. Ostatní soubory mají třídy, které reprezentují výchozí hodnoty a konstanty. Soubory obsahují `//TODO` komentáře, které vám umožní připomenout, abyste aktualizovali výchozí hodnoty.  
   
-         Pokud jste zadali /sb: možnost CodeToAddTo\<*YourStdBinding*> .cs obsahuje kód, který je třeba ručně přidat do třídy, která implementuje standardní vazbu.  
+         Pokud jste zadali parametr/Sb: CodeToAddTo\<*YourStdBinding*>. cs má kód, který musíte ručně přidat do třídy, která implementuje standardní vazbu.  
   
-     SampleConfig.xml soubor obsahuje kód konfigurace, který je nutné přidat do konfiguračního souboru, který registruje obslužné rutiny definované v předchozím kroku 1 nebo 2.  
+     Soubor SampleConfig. XML obsahuje konfigurační kód, který je nutné přidat do konfiguračního souboru, který registruje obslužné rutiny definované v předchozích krocích 1 nebo 2.  

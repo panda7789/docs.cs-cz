@@ -2,12 +2,12 @@
 title: Spolupráce s webovými službami ASMX
 ms.date: 03/30/2017
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-ms.openlocfilehash: d4b59347a7ae8561637be436fa0c56096ecac3f0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2ef4e34de76c046ba21dd7a3c50ea6ba782d459e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039565"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989803"
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Spolupráce s webovými službami ASMX
 Tato ukázka předvádí, jak integrovat klientskou aplikaci Windows Communication Foundation (WCF) s existující webovou službou ASMX.  
@@ -50,7 +50,7 @@ public class CalculatorService : System.Web.Services.WebService
   
  Komunikace se provádí prostřednictvím klienta generovaného nástrojem pro dodávání [metadat ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Klient nástroje je obsažen v souboru generatedClient.cs. Služba ASMX musí být k dispozici, aby vygenerovala kód proxy, protože se používá k načtení aktualizovaných metadat. Spusťte následující příkaz z příkazového řádku v adresáři klienta pro vygenerování typovaného proxy serveru.  
   
-```  
+```console  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedClient.cs  
 ```  
   
@@ -105,7 +105,7 @@ Console.ReadLine();
   
  Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.  
   
-```  
+```console
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  

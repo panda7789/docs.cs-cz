@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -addmodule compiler option [C#]
 - addmodule compiler option [C#]
 ms.assetid: ed604546-0dc2-4bd4-9a3e-610a8d973e58
-ms.openlocfilehash: f2fae0be3ba958dc9776ed253c178933e4f76024
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 148a63c37cfbc4c60448adccde10947e91e22bb9
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69607043"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970176"
 ---
 # <a name="-addmodule-c-compiler-options"></a>-addmodule – (C# možnosti kompilátoru)
 Tato možnost přidá modul, který byl vytvořen s možností cíl: modul přepnutí na aktuální kompilaci.  
@@ -33,7 +33,7 @@ Tato možnost přidá modul, který byl vytvořen s možností cíl: modul přep
   
  `file`nemůže obsahovat sestavení. Například pokud byl výstupní soubor vytvořen pomocí [-target: Module](./target-module-compiler-option.md), jeho metadata lze importovat pomocí **-addmodule –** .  
   
- Pokud byl výstupní soubor vytvořen s možností **-target** jinou než **-target: Module**, jeho metadata nelze importovat pomocí **-addmodule –** , ale lze je importovat s odkazem [](./reference-compiler-option.md).  
+ Pokud byl výstupní soubor vytvořen s možností **-target** jinou než **-target: Module**, jeho metadata nelze importovat pomocí **-addmodule –** , ale lze je importovat s [odkazem](./reference-compiler-option.md).  
   
  Tato možnost kompilátoru není v aplikaci Visual Studio k dispozici; projekt nemůže odkazovat na modul. Tuto možnost kompilátoru nelze navíc změnit programově.  
   
@@ -49,4 +49,4 @@ csc -addmodule:metad1.netmodule;metad2.netmodule -out:out.exe input.cs
 - [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 - [Vícesouborová sestavení](../../../framework/app-domains/multifile-assemblies.md)
-- [Postupy: Sestavení vícesouborového sestavení](../../../framework/app-domains/how-to-build-a-multifile-assembly.md)
+- [Postupy: Sestavení vícesouborového sestavení](../../../framework/app-domains/build-multifile-assembly.md)

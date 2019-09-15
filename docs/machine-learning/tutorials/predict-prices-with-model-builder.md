@@ -3,15 +3,15 @@ title: Předpověď cen pomocí regrese pomocí Tvůrce modelů
 description: V tomto kurzu se naučíte, jak vytvořit regresní model pomocí Tvůrce modelů ML.NET pro předpověď cen, konkrétně v New Yorku City taxislužby tarifs.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/15/2019
+ms.date: 09/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: bc1dacdad436cc5384bca4bbce224acc18d69201
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 675ca58ab071293fe5c04b1b85337fb1e48dfbea
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929435"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991352"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -89,17 +89,9 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 
 Úkol strojového učení, který se používá k výuce modelu předpovědi cen v tomto kurzu, je regrese. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých regresních algoritmů a nastavení, které pro datovou sadu vyhledají nejlepší model provádění.
 
-Čas potřebný ke školení modelu je úměrný množství dat. Tento graf použijte jako vodítko pro výběr vhodné hodnoty pro `Time to train (seconds)` pole:
+Čas potřebný ke školení modelu je úměrný množství dat. Tvůrce modelů automaticky vybere výchozí hodnotu pro **čas do výuky (sekundy)** na základě velikosti zdroje dat.
 
-\* Velikost datové sady  | Typ datové sady       | Střední Čas do výuky *
-------------- | ------------------ | --------------
-0-10 MB     | Číslice a text   | 10 sekund
-10-100 MB   | Číslice a text   | 10 min
-100 – 500 MB  | Číslice a text   | 30 min
-500 - 1 Gb    | Číslice a text   | 60 min.
-1 Gb+         | Číslice a text   | 3 hodiny +
-
-1. Vzhledem k tomu, že soubor školicích dat je větší než 10 MB, jako hodnota *Time to vlak (sekundy)* použijte 600 sekund (10 minut).
+1. Ponechte výchozí hodnotu tak, aby byla pro *čas do výuky (sekundy)* , pokud nechcete, aby se vlak vydával po delší dobu.
 2. Vyberte *Spustit školení*.
 
 V průběhu procesu školení se data o průběhu zobrazují v `Progress` části kroku výuka.

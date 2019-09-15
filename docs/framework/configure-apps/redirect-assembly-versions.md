@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: c9670b00ea4a6b552469b7f33e924b8ab128d9d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c43ba119b92d4dc1a50b03d6359555ad25f37d08
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948028"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971560"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 
@@ -69,7 +69,7 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Obejití zásad vydavatele
- V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Pokud chcete obejít zásadu vydavatele, přidejte [ \<element publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) do [ \<prvku dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) v konfiguračním souboru aplikace a nastavte atribut Apply na **No**, který přepíše všechna předchozí nastavení **Ano** .
+ V případě potřeby můžete zásady vydavatele v konfiguračním souboru aplikace přepsat. Například nové verze sestavení, které mají nárok na zpětnou kompatibilitu, můžou pořád poškodit aplikaci. Pokud chcete obejít zásadu vydavatele, přidejte [ \<element publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) do [ \<prvku dependentAssembly >](./file-schema/runtime/dependentassembly-element.md) v konfiguračním souboru aplikace a nastavte atribut **Apply** na **No**, který přepíše všechna předchozí nastavení **Ano** .
 
  `<publisherPolicy apply="no" />`
 
@@ -157,8 +157,8 @@ Pokud vaše aplikace cílí na starší verze .NET Framework, můžete povolit a
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](how-to-enable-and-disable-automatic-binding-redirection.md)
 - [\<bindingRedirect> Element](./file-schema/runtime/bindingredirect-element.md)
 - [Bezpečnostní oprávnění k přesměrování vazby sestavení](assembly-binding-redirection-security-permission.md)
-- [Sestavení v modulu CLR (Common Language Runtime)](../app-domains/assemblies-in-the-common-language-runtime.md)
-- [Programování se sestaveními](../app-domains/programming-with-assemblies.md)
+- [Sestavení v .NET](../../standard/assembly/index.md)
+- [Programování se sestaveními](../../standard/assembly/program.md)
 - [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
 - [Konfigurace aplikací](index.md)
 - [Schéma nastavení běhového prostředí](./file-schema/runtime/index.md)

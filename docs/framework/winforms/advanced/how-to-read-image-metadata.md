@@ -8,43 +8,43 @@ helpviewer_keywords:
 - metadata [Windows Forms], property item
 - metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
-ms.openlocfilehash: 6c02f7e5744828fd8eddc88be8d7da28f3bc2a2a
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 8294bc6596c408160a50d9d7d5e6154f66025c73
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505774"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988561"
 ---
 # <a name="how-to-read-image-metadata"></a>Postupy: Čtení metadat obrázku
-Některé soubory obrázku obsahují metadata, která si můžete přečíst určit funkce bitové kopie. Digitální fotografie může například obsahovat metadata, která si můžete přečíst k určení značku a model fotoaparátu/kamery, používá k zachycení bitové kopie. Pomocí GDI + existující metadata mohou číst a můžete je zapsat také nová metadata do souborů obrázků.  
+Některé soubory obrázků obsahují metadata, která lze číst k určení funkcí obrázku. Digitální fotografie například může obsahovat metadata, která lze číst a určit tak model a model kamery použité k zachycení bitové kopie. Pomocí rozhraní GDI+ si můžete přečíst existující metadata a můžete také zapisovat nová metadata do souborů obrázků.  
   
- Rozhraní GDI + ukládá jednotlivé část metadata <xref:System.Drawing.Imaging.PropertyItem> objektu. Si můžete přečíst <xref:System.Drawing.Image.PropertyItems%2A> vlastnost <xref:System.Drawing.Image> objektu k načtení všechna metadata ze souboru. <xref:System.Drawing.Image.PropertyItems%2A> Vlastnost vrací pole <xref:System.Drawing.Imaging.PropertyItem> objekty.  
+ GDI+ ukládá jednotlivé části metadat do <xref:System.Drawing.Imaging.PropertyItem> objektu. Můžete číst <xref:System.Drawing.Image.PropertyItems%2A> vlastnost <xref:System.Drawing.Image> objektu pro načtení všech metadat ze souboru. <xref:System.Drawing.Image.PropertyItems%2A> Vlastnost vrací<xref:System.Drawing.Imaging.PropertyItem> pole objektů.  
   
- A <xref:System.Drawing.Imaging.PropertyItem> objekt má následující čtyři vlastnosti: `Id`, `Value`, `Len`, a `Type`.  
+ `Id` `Value` `Len`Objekt má následující čtyři vlastnosti:, ,`Type`a. <xref:System.Drawing.Imaging.PropertyItem>  
   
 ## <a name="id"></a>Id  
- Značka, která identifikuje položku metadat. Některé hodnoty, které je možné přiřadit <xref:System.Drawing.Imaging.PropertyItem.Id%2A> jsou uvedeny v následující tabulce.  
+ Značka, která identifikuje položku metadat. V následující tabulce jsou uvedeny některé hodnoty <xref:System.Drawing.Imaging.PropertyItem.Id%2A> , které lze přiřadit k.  
   
-|Šestnáctková hodnota|Popis|  
+|Hexadecimální hodnota|Popis|  
 |-----------------------|-----------------|  
-|0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Název bitové kopie<br /><br /> Výrobce OEM<br /><br /> Model zařízení<br /><br /> ExifDTOriginal<br /><br /> Chcete zkrátit dobu expozice EXIF<br /><br /> Tabulka světlosti<br /><br /> Chrominance tabulky|  
+|0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Název obrázku<br /><br /> Výrobce zařízení<br /><br /> Model vybavení<br /><br /> ExifDTOriginal<br /><br /> Doba expozice EXIF<br /><br /> Světlá tabulka<br /><br /> Tabulka chrominance|  
   
 ## <a name="value"></a>Value  
- Pole hodnot. Formát hodnoty je určeno <xref:System.Drawing.Imaging.PropertyItem.Type%2A> vlastnost.  
+ Pole hodnot. Formát hodnot je určen <xref:System.Drawing.Imaging.PropertyItem.Type%2A> vlastností.  
   
-## <a name="len"></a>Délka  
- Délka (v bajtech) pole hodnot, na které odkazují <xref:System.Drawing.Imaging.PropertyItem.Value%2A> vlastnost.  
+## <a name="len"></a>Funkce  
+ Délka (v bajtech) pole hodnot, na <xref:System.Drawing.Imaging.PropertyItem.Value%2A> které se odkazuje vlastnost.  
   
 ## <a name="type"></a>type  
- Datový typ hodnoty v poli na které odkazují `Value` vlastnost. Formáty indikován `Type` v následující tabulce jsou uvedeny hodnoty vlastností  
+ Datový typ hodnot v poli, na který `Value` odkazuje vlastnost. Formáty uvedené `Type` v hodnotách vlastností jsou uvedeny v následující tabulce.  
   
 |Číselná hodnota|Popis|  
 |-------------------|-----------------|  
 |1|A `Byte`|  
-|2|Pole `Byte` objekty kódováním ASCII|  
+|2|Pole `Byte` objektů kódovaných jako ASCII|  
 |3|16bitové celé číslo|  
-|4|32bitové celé číslo|  
-|5|Pole dvou `Byte` objekty, které představují racionální číslo|  
+|4|32 celé číslo|  
+|5|Pole dvou `Byte` objektů, které reprezentují racionální číslo|  
 |6|Nepoužívá se|  
 |7|Nedefinováno|  
 |8|Nepoužívá se|  
@@ -54,11 +54,11 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad kódu načte a zobrazí sedmi částí metadat v souboru `FakePhoto.jpg`. Druhá položka vlastnosti (index 1) v seznamu má <xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F (výrobce) a <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 (pole bajtů s kódováním ASCII). Příklad kódu zobrazí hodnotu této vlastnosti položky.  
+ Následující příklad kódu načte a zobrazí sedm částí metadat v souboru `FakePhoto.jpg`. Druhá položka vlastnosti (index 1) v seznamu má <xref:System.Drawing.Imaging.PropertyItem.Id%2A> 0x010F (výrobce vybavení) a <xref:System.Drawing.Imaging.PropertyItem.Type%2A> 2 (bajtové pole s kódováním ASCII). V příkladu kódu se zobrazí hodnota této položky vlastnosti.  
   
- Kód vytvoří výstup podobný následujícímu:  
+ Kód vytváří výstup podobný následujícímu:  
  
-```
+```output
  Property Item 0
   
  id: 0x320
@@ -123,7 +123,7 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
  [!code-vb[System.Drawing.WorkingWithImages#51](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#51)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Zpracování formuláře <xref:System.Windows.Forms.Control.Paint> událostí a vložte tento kód do obslužné rutiny události Malování. Je třeba nahradit `FakePhoto.jpg` název image a cesta platné na systém a import `System.Drawing.Imaging` oboru názvů.  
+ Předchozí příklad je navržen pro použití s model Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což <xref:System.Windows.Forms.Control.Paint> je parametr obslužné rutiny události. Zpracujte <xref:System.Windows.Forms.Control.Paint> událost formuláře a vložte tento kód do obslužné rutiny události Paint. Je nutné nahradit `FakePhoto.jpg` názvem Image a cestou platnými v systému a `System.Drawing.Imaging` importovat obor názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

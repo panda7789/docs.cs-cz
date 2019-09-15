@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: 052d6937846df39bd94d532e1b63ebe522dbf6c7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dc4c0336c8a67a1b4e70f71ba5f5406da1fbb2ff
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964679"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972380"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
 Určuje název sestavení, jehož součástí bude tento modul.  
@@ -37,14 +37,14 @@ Určuje název sestavení, jehož součástí bude tento modul.
   
 - Odkazované sestavení udělilo přístup přítel k sestavení, do kterého bude modul sestaven.  
   
- Další informace o vytváření modulu naleznete v tématu [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o Friend sestaveních naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
+ Další informace o vytváření modulu naleznete v tématu [/target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o Friend sestaveních naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).  
   
 > [!NOTE]
 > Tato `-moduleassemblyname` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Sestavení vícesouborového sestavení](../../../framework/app-domains/how-to-build-a-multifile-assembly.md)
+- [Postupy: Sestavení vícesouborového sestavení](../../../framework/app-domains/build-multifile-assembly.md)
 - [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
@@ -52,4 +52,4 @@ Určuje název sestavení, jehož součástí bude tento modul.
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
+- [Přátelská sestavení](../../../standard/assembly/friend.md)

@@ -2,12 +2,12 @@
 title: Povinné argumenty a skupiny přetížení
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-ms.openlocfilehash: 5249cbb127064ffa5023074481a47decad279128
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84384e90be0036036477d9b4249832f544e17d08
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964915"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989314"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Povinné argumenty a skupiny přetížení
 Aktivity lze nakonfigurovat tak, aby byly určité argumenty vázány na to, aby byla aktivita platná pro provedení. Atribut slouží k označení, že jsou požadovány určité argumenty aktivity `OverloadGroup` , a atribut je použit k seskupení kategorií požadovaných argumentů společně. `RequiredArgument` Pomocí atributů můžou autoři aktivity poskytovat jednoduché nebo složité konfigurace ověřování aktivit.  
@@ -108,8 +108,8 @@ class CreateLocation: Activity
   
  V následujícím příkladu pořízených z ukázky [aktivity přístupu k databázi](./samples/database-access-activities.md) existují dvě přetížené skupiny: `ConnectionString` a. `ConfigFileSectionName` Aby byla tato aktivita platná, musí `ProviderName` `ConfigName` být argumenty a `ConnectionString` buď vázané, nebo argument, ale ne obojí.  
   
-```  
-Public class DbUpdate: AsyncCodeActivity  
+```csharp  
+public class DbUpdate: AsyncCodeActivity  
 {  
     [RequiredArgument]  
     [OverloadGroup("ConnectionString")]  

@@ -2,12 +2,12 @@
 title: Přístup k OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: 8d1c8543180a282a1b196393e5823dc3686aa16e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dea990e275125dc1cd2255b88e506d363c3ac78e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038410"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989380"
 ---
 # <a name="accessing-operationcontext"></a>Přístup k OperationContext
 Tato ukázka předvádí, jak se aktivity<xref:System.ServiceModel.Activities.Receive> zasílání zpráv (a <xref:System.ServiceModel.Activities.Send>) dají použít s aktivitou vlastního <xref:System.ServiceModel.OperationContext.Current%2A> oboru pro přístup a připojení nebo načtení vlastní hlavičky zprávy v odchozí nebo příchozí zprávě.  
@@ -22,7 +22,7 @@ Tato ukázka předvádí, jak se aktivity<xref:System.ServiceModel.Activities.Re
   
 1. Tato ukázka zveřejňuje službu pracovního postupu pomocí koncových bodů HTTP. Pokud chcete tuto ukázku spustit, musí se přidat správné seznamy ACL adresy URL (podrobnosti najdete v tématu [Konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) ), a to buď spuštěním sady Visual Studio jako správce, nebo spuštěním následujícího příkazu na příkazovém řádku se zvýšenými oprávněními, abyste přidali příslušné seznamy ACL. Ujistěte se, že je nahrazena vaše doména a uživatelské jméno.  
   
-    ```  
+    ```console  
     netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%  
     ```  
   

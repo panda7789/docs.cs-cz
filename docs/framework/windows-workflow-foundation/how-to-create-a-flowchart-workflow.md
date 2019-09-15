@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 3afac76fc977f992e780d2ebe302c1ed94568835
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0faf4d77b1ea2881ba8e029d544f2e42cf552349
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044404"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989690"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Postupy: Vytvoření pracovního postupu vývojového diagramu
 Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních aktivit. V tomto tématu se seznámíte s vytvořením pracovního postupu, který používá předdefinované aktivity, <xref:System.Activities.Statements.Flowchart> jako je aktivita, a vlastní aktivity z předchozího [postupu: Vytvoření tématu aktivity](how-to-create-an-activity.md) . Pracovní postup modeluje číslo odhadující hru.  
@@ -64,7 +64,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
   
 ### <a name="to-add-the-workflow-activities"></a>Přidání aktivit pracovního postupu  
   
-1. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a umístěte ji na **spouštěcí** uzel, který je v horní části vývojového diagramu. Pokud je aktivita **přiřazení** nad počátečním uzlem, zobrazí se kolem počátečního uzlu tři trojúhelníky. Přetáhněte aktivitu **přiřazení** na trojúhelník, který je přímo pod počátečním uzlem. Tato akce spojí dvě položky dohromady a určí aktivitu **přiřazení** jako první aktivitu ve vývojovém diagramu.  
+1. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a umístěte ji na **spouštěcí** uzel, který je v horní části vývojového diagramu. Pokud je aktivita **přiřazení** nad **počátečním** uzlem, zobrazí se kolem **počátečního** uzlu tři trojúhelníky. Přetáhněte aktivitu **přiřazení** na trojúhelník, který je přímo pod **počátečním** uzlem. Tato akce spojí dvě položky dohromady a určí aktivitu **přiřazení** jako první aktivitu ve vývojovém diagramu.  
   
     > [!NOTE]
     > Aktivity můžete v pracovním postupu uvést také jako počáteční aktivitu, a to tak, že je ručně propojíte aktivitu s počátečním uzlem. Provedete to tak, že najedete myší na **spouštěcí** uzel, kliknete na jeden z obdélníků, který se zobrazí, když je ukazatel myši nad **spouštěcím** uzlem, a přetáhnete spojovací čáru dolů na požadovanou aktivitu a umístíte ji na jeden z obdélníků, které se zobrazí. Aktivitu můžete také označit jako počáteční aktivitu tak, že na ni kliknete pravým tlačítkem myši a zvolíte **nastavit jako spouštěcí uzel**.  
@@ -97,7 +97,7 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
     > [!TIP]
     > Pokud se **okno Vlastnosti** nezobrazí, v nabídce **zobrazení** vyberte **okno Vlastnosti** .  
   
-5. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a připojte ji pomocí jedné z metod popsaných v předchozím kroku, aby se zobrazila pod aktivitou **výzvy** .  
+5. Přetáhněte aktivitu **přiřazení** z oddílu **Primitivs** v **sadě nástrojů** a připojte ji pomocí jedné z metod popsaných v předchozím kroku, aby se **zobrazila** pod aktivitou výzvy.  
   
 6. `Turns + 1` **C#** Do pole do zadejte a do pole zadejte výraz nebo zadejte výraz VB. `Turns`  
   
@@ -118,23 +118,23 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
   
 9. Klikněte na druhou aktivitu **použitím objektu FlowDecision** a vyberte ji. V **okně Vlastnosti**zadejte následující výraz do pole hodnota vlastnosti **podmínky** .  
   
-    ```
-    Guess < Target  
+    ```text
+    Guess < Target
     ```  
   
 10. Přetáhněte dvě aktivity **WriteLine** z části **primitiva** v **sadě nástrojů** a přetáhněte je tak, aby byly vedle sebe pod dvěma **použitím objektu FlowDecision** aktivitami. Připojte **skutečnou** akci nejnižší aktivity **použitím objektu FlowDecision** k aktivitě **WriteLine** a nejvíce vlevo a akci **false** u aktivity napravo napravo.  
   
 11. Klikněte na aktivitu **vywriteline** úplně vlevo a vyberte ji a do pole hodnota vlastnosti **text** v **okně Vlastnosti**zadejte následující výraz.  
   
-    ```
+    ```text
     "Your guess is too low."  
     ```  
   
 12. Připojte řádek **WriteLine** k levé straně aktivity **výzvy** , která je nad ním.  
   
-13. Klikněte na aktivitu napravo od jejího výběru a vyberte ji a do pole hodnota vlastnosti **text** v **okně Vlastnosti**zadejte následující výraz.  
+13. Klikněte **na aktivitu** napravo od jejího výběru a vyberte ji a do pole hodnota vlastnosti **text** v **okně Vlastnosti**zadejte následující výraz.  
   
-    ```
+    ```text
     "Your guess is too high."  
     ```  
   

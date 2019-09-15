@@ -2,12 +2,12 @@
 title: Zabezpečení vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: a597e1fb7c239b49c03e964b513b4248a9c020c3
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b0b293c58e13f7add6f2cb49ea3c108a86292691
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045617"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990012"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 
@@ -62,7 +62,7 @@ Navíc vlastní vazba používá zabezpečení zpráv s typem přihlašovacích 
 
 Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
-```
+```console
 Press <ENTER> to terminate client.
 Result(100)
 Result(50)
@@ -97,7 +97,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
   Následující řádky v souboru Setup. bat kopírují certifikát serveru do úložiště Důvěryhodné osoby z klienta. Tento krok je povinný, protože certifikáty vygenerované pomocí nástroje MakeCert. exe nejsou implicitně důvěryhodné klientským systémem. Pokud už máte certifikát, který je rootem v důvěryhodném kořenovém certifikátu klienta – například certifikát vydaný společností Microsoft – tento krok naplnění úložiště certifikátů klienta s certifikátem serveru není vyžadován.
 
-  ```
+  ```console
   certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
   ```
 
@@ -152,7 +152,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
     3. Exportujte certifikát služby otevřením Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači služby (nahraďte `%SERVER_NAME%` plně kvalifikovaným názvem počítače, kde Služba je spuštěná):
 
-        ```
+        ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
         ```
 
@@ -160,7 +160,7 @@ Níže najdete stručný přehled různých částí dávkových souborů, kter�
 
     5. Importujte certifikát služby otevřením Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte% název_serveru% plně kvalifikovaným názvem počítače, kde Služba je spuštěná):
 
-        ```
+        ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
         ```
 

@@ -2,59 +2,59 @@
 title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací'
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: f9cfda1d4ca14dd380dd01f944d4c900f9832096
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 981c4890b11130b937e176da78f378340c0d3894
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039543"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991665"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
-Rezervace adresy URL můžete tak omezit, kdo přijímá zprávy z adresy URL nebo sadu adresy URL. Rezervace se skládá z adresy URL šablony, seznam řízení přístupu (ACL) a sada příznaků. Adresa URL Šablona definuje adresy URL, které má vliv na rezervaci. Další informace o způsobu zpracování adresy URL šablony najdete v tématu [směrování příchozích požadavků](https://go.microsoft.com/fwlink/?LinkId=136764). Seznam ACL ovládací prvky, které uživatel nebo skupina uživatelů je povolené pro příjem zpráv ze zadané adresy URL. Příznaky označí, zda je rezervace poskytnout oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění tak, aby naslouchala na nějaký jiný proces.  
+Rezervace adresy URL umožňuje omezit, kdo může přijímat zprávy z adresy URL nebo ze sady adres URL. Rezervace se skládá ze šablony adresy URL, seznamu řízení přístupu (ACL) a sady příznaků. Šablona adresy URL definuje adresy URL, které rezervace ovlivňuje. Další informace o tom, jak se zpracovávají šablony adres URL, najdete v tématu [směrování příchozích požadavků](https://go.microsoft.com/fwlink/?LinkId=136764). Seznam řízení přístupu (ACL) určuje, kteří uživatelé nebo skupiny uživatelů mají povolený příjem zpráv ze zadaných adres URL. Příznaky označují, zda má rezervace poskytnout uživateli nebo skupině oprávnění k naslouchání na adrese URL přímo nebo k delegování oprávnění k naslouchání jinému procesu.  
   
- Jako součást výchozí konfigurace operačního systému Windows Communication Foundation (WCF) vytvoří globálně dostupné rezervace pro port 80 povolit všem uživatelům spouštět aplikace, které používají duální vazbu HTTP pro duplexní komunikaci. Vzhledem k tomu seznamu řízení přístupu na tuto rezervaci pro každého, správce nemůže explicitně povolte nebo zakažte oprávnění naslouchat na adresu URL nebo sadu adresy URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a znovu vytvořit rezervaci s omezeným seznamu ACL.  
+ V rámci výchozí konfigurace operačního systému vytvoří Windows Communication Foundation (WCF) globálně dostupnou rezervaci pro port 80, aby všichni uživatelé mohli spouštět aplikace, které pro duplexní komunikaci používají duální vazby HTTP. Vzhledem k tomu, že seznam ACL u této rezervace je pro všechny, správci nemůžou explicitně povolit nebo zakázat oprávnění k naslouchání na adrese URL nebo sadě adres URL. Toto téma vysvětluje, jak odstranit tuto rezervaci a jak znovu vytvořit rezervaci s omezeným seznamem ACL.  
   
- Na [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)] můžete zobrazit všechny rezervace adresy URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zadejte `netsh http show urlacl`.  Následující příklad ukazuje, co by se mělo podobat rezervaci adresy URL WCF.  
-  
-```  
+ Můžete [!INCLUDE[wv](../../../../includes/wv-md.md)] `netsh http show urlacl`také [!INCLUDE[lserver](../../../../includes/lserver-md.md)] Zobrazit všechny rezervace adres URL protokolu HTTP z příkazového řádku se zvýšenými oprávněními zadáním.  Následující příklad ukazuje, co se má podobat rezervaci adresy URL WCF.  
+
+```
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
         User: \Everyone  
             Listen: Yes  
             Delegate: No  
             SDDL: D:(A;;GX;;;WD)  
-```  
+```
+
+ Rezervace se skládá z šablony URL, která se používá, když aplikace WCF používá pro duplexní komunikaci Dual-Binding HTTP. Adresy URL tohoto formuláře se používají pro službu WCF k posílání zpráv zpátky klientovi WCF při komunikaci přes Dual-Binding HTTP. Každému uživateli je uděleno oprávnění k naslouchání na adrese URL, ale ne k delegování naslouchání dalšímu procesu. Seznam řízení přístupu (ACL) je popsán v tématu Security Descriptor Definition Language (SSDL). Další informace o SSDL najdete v tématu [SSDL](https://go.microsoft.com/fwlink/?LinkId=136789)  
   
- Rezervace se skládá z adresy URL šablony aplikace WCF je používání duální vazbu HTTP pro duplexní komunikaci. Adresy URL tento formát se používají pro služby WCF k odesílání zpráv zpět do klienta WCF při komunikaci přes duální vazbu protokolu HTTP. Všichni uděleno oprávnění k naslouchání na adrese URL, ale nechcete delegovat na jiný proces. Nakonec seznamu ACL je popsán v zabezpečení popisovač Definition Language (SSDL). Další informace o SSDL, naleznete v tématu [SSDL](https://go.microsoft.com/fwlink/?LinkId=136789)  
+## <a name="to-delete-the-wcf-url-reservation"></a>Odstranění rezervace adresy URL WCF  
   
-### <a name="to-delete-the-wcf-url-reservation"></a>Chcete-li odstranit rezervaci adresy URL WCF  
+1. Klikněte **na Start**, přejděte na **všechny programy**, klikněte na **příslušenství**, klikněte pravým tlačítkem myši na **příkazový řádek** a v kontextové nabídce klikněte na **Spustit jako správce** . V okně Řízení uživatelských účtů (UAC) klikněte na **pokračovat** , které může vyžadovat oprávnění k pokračování.  
   
-1. Klikněte na tlačítko **Start**, přejděte na **všechny programy**, klikněte na tlačítko **Příslušenství**, klikněte pravým tlačítkem na **příkazového řádku** a klikněte na tlačítko **spustit jako Správce** v místní nabídce, která se zobrazí. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které může požádat o oprávnění, abyste mohli pokračovat.  
+2. V okně příkazového řádku zadejte příkaz **Netsh http://+:80/Temporary_Listen_Addresses/ http Delete urlacl URL =** .  
   
-2. Zadejte **netsh http delete urlacl url =http://+:80/Temporary_Listen_Addresses/**  v okně příkazového řádku.  
+3. Pokud se rezervace úspěšně odstraní, zobrazí se následující zpráva. **Rezervace adresy URL se úspěšně odstranila.**  
   
-3. Pokud rezervaci byl úspěšně odstraněn, zobrazí se následující zpráva. **Rezervace adresy URL se úspěšně odstranil**  
+## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>Vytvoření nové skupiny zabezpečení a nové rezervace omezené adresy URL  
+ Pokud chcete rezervaci adresy URL WCF nahradit omezenou rezervací, musíte nejdřív vytvořit novou skupinu zabezpečení. To lze provést jedním ze dvou způsobů: z příkazového řádku nebo z konzoly pro správu počítače. Stačí provést pouze jeden.  
   
-## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>Vytvoření nové skupiny zabezpečení a novou rezervaci adresy URL s omezeným přístupem  
- K nahrazení rezervace adresy URL WCF omezenou rezervací musíte nejprve vytvořit novou skupinu zabezpečení. Provedete to jedním ze dvou způsobů: z příkazového řádku nebo z konzoly Správa počítače. Stačí jedno.  
+### <a name="to-create-a-new-security-group-from-a-command-prompt"></a>Vytvoření nové skupiny zabezpečení z příkazového řádku  
   
-#### <a name="to-create-a-new-security-group-from-a-command-prompt"></a>Chcete-li vytvořit novou skupinu zabezpečení z příkazového řádku  
+1. Klikněte **na Start**, přejděte na **všechny programy**, klikněte na **příslušenství**, klikněte pravým tlačítkem myši na **příkazový řádek** a v kontextové nabídce klikněte na **Spustit jako správce** . V okně Řízení uživatelských účtů (UAC) klikněte na **pokračovat** , které může vyžadovat oprávnění k pokračování.  
   
-1. Klikněte na tlačítko **Start**, přejděte na **všechny programy**, klikněte na tlačítko **Příslušenství**, klikněte pravým tlačítkem na **příkazového řádku** a klikněte na tlačítko **spustit jako Správce** v místní nabídce, která se zobrazí. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které může požádat o oprávnění, abyste mohli pokračovat.  
+2. Do příkazového řádku zadejte do pole **net Local\<Group název skupiny zabezpečení >\<"/comment:" Popis skupiny zabezpečení > "/Add** . Nahrazením  **\<názvu skupiny zabezpečení >** názvem skupiny zabezpečení, kterou chcete vytvořit, a  **\<popis skupiny zabezpečení >** s vhodným popisem pro skupinu zabezpečení.  
   
-2. Zadejte **net localgroup "\<zabezpečení skupiny název >" / komentáře: "\<popis skupiny zabezpečení >" / add** příkazového řádku. Nahrazení  **\<název skupiny zabezpečení >** s názvem skupiny zabezpečení, kterou chcete vytvořit a  **\<popis skupiny zabezpečení >** s vhodnou popis Skupina zabezpečení.  
+3. Pokud se skupina zabezpečení úspěšně vytvoří, zobrazí se následující zpráva. **Příkaz byl úspěšně dokončen.**  
   
-3. Pokud skupinu zabezpečení proběhne úspěšně, zobrazí se následující zpráva. **Příkaz byl úspěšně dokončen.**  
+### <a name="to-create-a-new-security-group-from-the-computer-management-console"></a>Vytvoření nové skupiny zabezpečení z konzoly pro správu počítače  
   
-#### <a name="to-create-a-new-security-group-from-the-computer-management-console"></a>Chcete-li vytvořit novou skupinu zabezpečení z konzoly Správa počítače  
+1. Klikněte na tlačítko **Start**, klikněte na položku **Ovládací panely**, klikněte na položku **Nástroje pro správu**a otevřete konzolu Správa počítače kliknutím na položku **Správa počítače** . V okně Řízení uživatelských účtů (UAC) klikněte na **pokračovat** , které může vyžadovat oprávnění k pokračování.  
   
-1. Klikněte na tlačítko **Start**, klikněte na tlačítko **ovládací panely**, klikněte na tlačítko **nástroje pro správu**a klikněte na tlačítko **Správa počítače** otevřete počítači Konzola pro správu. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které může požádat o oprávnění, abyste mohli pokračovat.  
+2. Klikněte na položku **Systémové nástroje**, klikněte na položku **místní uživatelé a skupiny**, klikněte pravým tlačítkem myši na položku **skupiny** a v místní nabídce klikněte na možnost **Nová skupina** . Zadejte požadovaný **název skupiny**, **Popis** a další podrobnosti této nové skupiny zabezpečení a kliknutím na tlačítko **vytvořit** vytvořte skupinu zabezpečení.  
   
-2. Klikněte na tlačítko **systémové nástroje**, klikněte na tlačítko **místní uživatelé a skupiny**, klikněte pravým tlačítkem na **skupiny** složky a klikněte na tlačítko **nová skupina** v místní nabídce, která se zobrazí. Zadejte požadovaný **název skupiny**, **popis** a další podrobnosti o této nové skupiny zabezpečení a klikněte na tlačítko **vytvořit** pro vytvoření skupiny zabezpečení.  
+### <a name="to-create-the-restricted-url-reservation"></a>Postup vytvoření rezervace adresy URL s omezeným přístupem  
   
-#### <a name="to-create-the-restricted-url-reservation"></a>Chcete-li vytvořit s omezeným přístupem rezervaci adresy URL  
+1. Klikněte **na Start**, přejděte na **všechny programy**, klikněte na **příslušenství**, klikněte pravým tlačítkem myši na **příkazový řádek** a v kontextové nabídce klikněte na **Spustit jako správce** . V okně Řízení uživatelských účtů (UAC) klikněte na **pokračovat** , které může vyžadovat oprávnění k pokračování.  
   
-1. Klikněte na tlačítko **Start**, přejděte na **všechny programy**, klikněte na tlačítko **Příslušenství**, klikněte pravým tlačítkem na **příkazového řádku** a klikněte na tlačítko **spustit jako Správce** v místní nabídce, která se zobrazí. Klikněte na tlačítko **pokračovat** v okně Řízení uživatelských účtů (UAC), které může požádat o oprávnění, abyste mohli pokračovat.  
+2. Do příkazového řádku zadejte příkaz **netsh http http://+:80/Temporary_Listen_Addresses/ Add urlacl URL\< = User =\\"název počítače >\> < název skupiny zabezpečení** . Nahraďte  **\<název počítače >** názvem počítače, na kterém se skupina musí vytvořit, a  **\<názvem skupiny zabezpečení >** názvem skupiny zabezpečení, kterou jste předtím vytvořili.  
   
-2. Zadejte **netsh http přidat adresu url urlacl =http://+:80/Temporary_Listen_Addresses/ uživatel = "\<název počítače >\\< název skupiny zabezpečení\>**  příkazového řádku. Nahrazení  **\<název počítače >** s názvem počítače, na kterém skupina musí být vytvořená a  **\<název skupiny zabezpečení >** s názvem skupinu zabezpečení, kterou jste vytvořili dříve.  
-  
-3. Pokud rezervaci proběhne úspěšně, zobrazí se následující zpráva. **Rezervace adresy URL se úspěšně přidal**.
+3. Je-li rezervace vytvořena úspěšně, zobrazí se následující zpráva. **Rezervace adresy URL se úspěšně přidala**.

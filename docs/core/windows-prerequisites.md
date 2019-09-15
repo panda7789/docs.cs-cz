@@ -3,12 +3,12 @@ title: Předpoklady pro .NET Core ve Windows
 description: Zjistěte, jaké závislosti potřebujete na počítači s Windows pro vývoj a spouštění aplikací .NET Core.
 ms.custom: updateeachvsrelease
 ms.date: 04/08/2019
-ms.openlocfilehash: 82d336bc4efb34d336d5078952683c1673c3fa8a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7b2bf2b8353c4f02fa11e9e7531e0d936007be0b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926041"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970286"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -60,6 +60,8 @@ Odkazy ke stažení a další informace najdete v tématu stažení z [rozhraní
 K vývoji aplikací .NET Core pomocí .NET Core SDK můžete použít libovolný editor. Visual Studio 2017 poskytuje integrované vývojové prostředí pro aplikace .NET Core ve Windows.
 
 V poznámkách k [verzi](/visualstudio/releasenotes/vs2017-relnotes)si můžete přečíst další informace o změnách v aplikaci Visual Studio 2017.
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 

@@ -2,12 +2,12 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: b59f5c42f5a0f81f666bc5d22924f14c678a60e1
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6bd7f1f31426c2d355b42f04ad770aac60183838
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045702"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990117"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 
@@ -328,13 +328,13 @@ Tato `BindingParameterCollection` třída je předána `BindingContext` do každ
 
 1. Pomocí následujícího příkazu nainstalujte ASP.NET 4,0.
 
-    ```
+    ```console
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
 2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-3. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+3. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
@@ -344,7 +344,7 @@ Při spuštění ukázky se očekává následující výstup.
 
 Klient:
 
-```
+```console
 Press enter when service is available
 
  > Sent chunk 1 of message 867c1fd1-d39e-4be1-bc7b-32066d7ced10
@@ -371,7 +371,7 @@ Press enter when service is available
 
 WebServer
 
-```
+```console
 Service started, press enter to exit
  < Received chunk 1 of message 867c1fd1-d39e-4be1-bc7b-32066d7ced10
  < Received chunk 2 of message 867c1fd1-d39e-4be1-bc7b-32066d7ced10

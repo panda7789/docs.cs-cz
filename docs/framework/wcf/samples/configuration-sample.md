@@ -2,12 +2,12 @@
 title: Ukázka konfigurace
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 52f8b5eae56db4b3a506d71c44ff2c49a8085067
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 87afeb0c562254e0f4cf6a85946a765a740c79ec
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040094"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990069"
 ---
 # <a name="configuration-sample"></a>Ukázka konfigurace
 Tato ukázka demonstruje použití konfiguračního souboru k tomu, aby služba byla zjistitelná.  
@@ -67,9 +67,7 @@ Tato ukázka demonstruje použití konfiguračního souboru k tomu, aby služba 
   
  Tento konfigurační soubor překračuje jenom tyto jednoduché kroky úpravou dalšího chování. Informace související se zjišťováním je možné řídit pomocí konkrétních koncových bodů. To znamená, že uživatel může řídit, jestli se může koncový bod zjistit, a uživatel může tento koncový bod označit <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Scopes%2A> pomocí a vlastní metadata XML. K tomu musí uživatel přidat `behaviorConfiguration` vlastnost do koncového bodu aplikace. V tomto případě je do koncového bodu aplikace přidána následující vlastnost.  
   
-```  
-behaviorConfiguration="endpointBehaviorConfiguration"  
-```  
+`behaviorConfiguration="endpointBehaviorConfiguration"`  
   
  Nyní lze prostřednictvím elementu konfigurace chování řídit atributy související se zjišťováním. V tomto případě se do koncového bodu aplikace přidají dva obory.  
   

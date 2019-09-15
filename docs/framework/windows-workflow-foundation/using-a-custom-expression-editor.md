@@ -2,32 +2,32 @@
 title: Použití editoru vlastních výrazů
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
-ms.openlocfilehash: 7bbd855595bc67f0e2837afd4876ac3690cac776
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 9e179914a56874ddc9f3f170d35ae04c97dd859e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169971"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988793"
 ---
 # <a name="using-a-custom-expression-editor"></a>Použití editoru vlastních výrazů
-Chcete-li zadat výraz bohatší nebo jednodušší prostředí pro úpravy je možné implementovat editoru vlastních výrazů. Existuje několik scénářů, ve kterých můžete chtít pomocí Editoru vlastních výrazů:  
+Vlastní editor výrazů je možné implementovat tak, aby poskytoval bohatší nebo jednodušší prostředí pro úpravu výrazů. Existuje několik scénářů, ve kterých byste mohli chtít použít vlastní editor výrazů:  
   
-- Zajištění podpory technologie IntelliSense a další bohaté funkce v Návrháři postupu provádění se změněným hostováním úprav. Tato funkce musí být zadaná, protože výchozí editor sady Visual Studio výrazu nelze použít v provádění se změněným hostováním aplikací.  
+- Pro zajištění podpory technologie IntelliSense a dalších funkcí s bohatou úpravou v Návrháři pracovního postupu pro přehostování. Tato funkce musí být k dispozici, protože výchozí editor výrazů sady Visual Studio nelze použít v znovu hostovaných aplikacích.  
   
-- Zjednodušit výraz editační rozhraní pro obchodní uživatele analytik, takže, například musí Naučte se Visual Basic nebo řešit výrazy jazyka Visual Basic.  
+- Pro zjednodušení editačního prostředí pro uživatele obchodního analytika tak, aby se nemusely například učit Visual Basic nebo řešit Visual Basic výrazy.  
   
- Jsou tři základní kroky nezbytné k implementaci editoru vlastních výrazů:  
+ K implementaci vlastního editoru výrazů je potřeba tři základní kroky:  
   
-1. Implementujte rozhraní <xref:System.Activities.Presentation.View.IExpressionEditorService>. Toto rozhraní spravuje vytváření a ničení editorů výrazu.  
+1. Implementujte rozhraní <xref:System.Activities.Presentation.View.IExpressionEditorService>. Toto rozhraní spravuje vytváření a zničení editorů výrazů.  
   
-2. Implementujte rozhraní <xref:System.Activities.Presentation.View.IExpressionEditorInstance>. Toto rozhraní implementuje v uživatelském rozhraní výraz uživatelského rozhraní pro úpravy.  
+2. Implementujte rozhraní <xref:System.Activities.Presentation.View.IExpressionEditorInstance>. Toto rozhraní implementuje uživatelské rozhraní pro uživatelské rozhraní pro úpravu výrazů.  
   
-3. Publikovat <xref:System.Activities.Presentation.View.IExpressionEditorService> ve vaší aplikaci provádění se změněným hostováním pracovního postupu.  
+3. Publikování v <xref:System.Activities.Presentation.View.IExpressionEditorService> aplikaci pracovního postupu, který je hostitelem.  
   
-## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a>Implementace editoru vlastních výrazů v knihovně tříd  
- Tady je ukázka kódu pro (testování konceptu) `MyEditorService` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní je obsažen v projektu knihovny MyExpressionEditorService.  
+## <a name="implementing-a-custom-expression-editor-in-a-class-library"></a>Implementace vlastního editoru výrazů v knihovně tříd  
+ Zde je ukázka kódu třídy (zkušebního konceptu) `MyEditorService` , která <xref:System.Activities.Presentation.View.IExpressionEditorService> implementuje rozhraní, je obsažena v projektu knihovny MyExpressionEditorService.  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Activities.Presentation.View;  
@@ -71,9 +71,9 @@ namespace MyExpressionEditorService
 }  
 ```  
   
- Tady je kód `MyExpressionEditorInstance` třídu, která implementuje <xref:System.Activities.Presentation.View.IExpressionEditorInstance> rozhraní v projektu knihovny MyExpressionEditorService.  
+ Zde je kód pro `MyExpressionEditorInstance` třídu, která <xref:System.Activities.Presentation.View.IExpressionEditorInstance> implementuje rozhraní v projektu knihovny MyExpressionEditorService.  
   
-```  
+```csharp  
 using System;  
 using System.Activities.Presentation.View;  
 using System.Windows;  
@@ -221,10 +221,10 @@ namespace MyExpressionEditorService
 }  
 ```  
   
-### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>Publikování editoru vlastních výrazů v rámci projektu WPF  
- Tady je kód, který ukazuje, jak opětovným hostováním návrháře v aplikaci WPF a jak vytvářet a publikovat `MyEditorService` služby. Před použitím tohoto kódu, přidejte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje avalon2 aplikace.  
+### <a name="publishing-a-custom-expression-editor-in-a-wpf-project"></a>Publikování vlastního editoru výrazů v projektu WPF  
+ Zde je kód, který ukazuje, jak znovu hostovat návrháře v aplikaci WPF a jak vytvořit a publikovat `MyEditorService` službu. Před použitím tohoto kódu přidejte odkaz na projekt knihovny MyExpressionEditorService z projektu, který obsahuje aplikaci avalon2.  
   
-```  
+```csharp  
 using System.Windows;  
 using System.Windows.Controls;  
 using System.Activities.Presentation;  
@@ -276,7 +276,7 @@ namespace WpfApplication1
 ```  
   
 ### <a name="notes"></a>Poznámky  
- Pokud používáte **ExpressionTextBox** ovládací prvek v Návrháři vlastní aktivity, není nutné vytvořit a zničit pomocí editorů výraz <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> a <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> metody <xref:System.Activities.Presentation.View.IExpressionEditorService> rozhraní. <xref:System.Activities.Presentation.View.ExpressionTextBox> Třída spravuje za vás.  
+ Používáte-li ovládací prvek **ExpressionTextBox** v Návrháři vlastní aktivity, není nutné vytvářet a zničit editory výrazů pomocí <xref:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor%2A> metod <xref:System.Activities.Presentation.View.IExpressionEditorService> a <xref:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors%2A> rozhraní. <xref:System.Activities.Presentation.View.ExpressionTextBox> Třída to spravuje za vás.  
   
 ## <a name="see-also"></a>Viz také:
 

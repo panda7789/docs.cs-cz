@@ -3,12 +3,12 @@ title: Prozkoumejte kód pomocí nástroje Roslyn syntax Vizualizér v aplikaci 
 description: Vizualizér syntaxe poskytuje vizuální nástroj k prozkoumávání modelů, které sada SDK .NET Compiler Platform generuje pro kód.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: 55a1aa555a82d286a0e8e4359e814dfe2cc301c8
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: fa3b4fdbb8d573805119e13e8aa93f156c4111f9
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926787"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972018"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Prozkoumejte kód pomocí nástroje Roslyn syntax Vizualizér v aplikaci Visual Studio
 
@@ -29,6 +29,8 @@ Tento příkaz otevře Syntax Visualizer jako plovoucí okno nástrojů. Pokud n
 Ukotvěte toto okno nástroje na vhodné místo v rámci sady Visual Studio, například na levou stranu. Vizualizér zobrazuje informace o aktuálním souboru kódu.
 
 Vytvořte nový projekt pomocí příkazu **soubor** > **Nový projekt** . Můžete vytvořit buď VB, nebo C# projekt. Když aplikace Visual Studio otevře soubor hlavního kódu pro tento projekt, Vizualizér zobrazí pro něj strom syntaxe. Můžete otevřít libovolný existující C# soubor/VB v této instanci sady Visual Studio a Vizualizér zobrazí strom syntaxe tohoto souboru. Pokud máte v aplikaci Visual Studio otevřeno více souborů kódu, Vizualizér zobrazí strom syntaxe pro aktuálně aktivní soubor kódu (soubor kódu, který má fokus klávesnice).
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 ![Vizualizace stromu C# syntaxe](media/syntax-visualizer/visualize-csharp.png)

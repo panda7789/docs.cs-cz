@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e4e3b1768086a1c57979a4c74643036294299a3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c9f7a0bc3a7a41a77db3c90c2f88fb5ddfd7bfa0
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787748"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971077"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
@@ -68,11 +68,11 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
   
 ## <a name="targeting-and-running-apps-for-older-versions"></a>Zacílení a spuštění aplikací pro starší verze  
 
-.NET Framework verze 2,0, 3,0 a 3,5 jsou sestavené se stejnou verzí modulu CLR (CLR 2,0). Tyto verze představují sousední vrstvy jedné instalace. Každá verze je postupně sestavena nad předchozí verzí. Na jednom počítači není možné spouštět verze 2.0, 3.0 a 3.5 současně. Při instalaci verze 3.5 automaticky získáte vrstvy 2.0 a 3.0 a aplikace, které byly vytvořeny pro verze 2.0, 3.0 a 3.5, lze spustit na verzi 3.5. .NET Framework 4 ale tento přístup k vrstvení a novější verze (.NET Framework 4,5, 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8) také reprezentují po sobě jdoucí vrstvy jedné instalace.  Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spuštění více verzí modulu CLR v jednom procesu. Další informace naleznete v tématu [sestavení a souběžné spouštění](../app-domains/assemblies-and-side-by-side-execution.md).  
+.NET Framework verze 2,0, 3,0 a 3,5 jsou sestavené se stejnou verzí modulu CLR (CLR 2,0). Tyto verze představují sousední vrstvy jedné instalace. Každá verze je postupně sestavena nad předchozí verzí. Na jednom počítači není možné spouštět verze 2.0, 3.0 a 3.5 současně. Při instalaci verze 3.5 automaticky získáte vrstvy 2.0 a 3.0 a aplikace, které byly vytvořeny pro verze 2.0, 3.0 a 3.5, lze spustit na verzi 3.5. .NET Framework 4 ale tento přístup k vrstvení a novější verze (.NET Framework 4,5, 4.5.1, 4.5.2, 4,6, 4.6.1, 4.6.2, 4,7, 4.7.1, 4.7.2 a 4,8) také reprezentují po sobě jdoucí vrstvy jedné instalace.  Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spuštění více verzí modulu CLR v jednom procesu. Další informace naleznete v tématu [sestavení a souběžné spouštění](../../standard/assembly/side-by-side-execution.md).  
   
  Kromě toho, pokud je vaše aplikace cílena na verzi 2,0, 3,0 nebo 3,5, mohou být uživatelé požádáni o povolení .NET Framework 3,5 na počítači se systémem Windows 8, Windows 8.1 nebo Windows 10 před tím, než budou moci aplikaci spustit. Další informace najdete v tématu [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).  
   
-## <a name="next-steps"></a>Další kroky  
+## <a name="next-steps"></a>Další postup  
   
 - Pokud s .NET Framework začínáte, přečtěte si [Přehled](../get-started/overview.md) úvodních konceptů a funkcí.  
   

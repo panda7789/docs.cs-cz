@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 09f0a1b34e88be995fb9a386161a930457e4bb56
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: d48398f31c1452821292a6feb2867dbd2971e739
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168994"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991420"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](xaml-overview-wpf.md).  
@@ -112,7 +112,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  Pro výčty flagwise je chování založené na <xref:System.Enum.Parse%2A?displayProperty=nameWithType> metodě. Pro výčet flagwise můžete zadat více hodnot tak, že každou hodnotu oddělíte čárkou. Nemůžete ale kombinovat hodnoty výčtu, které nejsou flagwise. Nemůžete například použít syntaxi čárky k pokusu o vytvoření <xref:System.Windows.Trigger> , který funguje na více podmínkách výčtu bez příznaku:  
   
-```  
+```xaml  
 <!--This will not compile, because Visibility is not a flagwise enumeration.-->  
 ...  
 <Trigger Property="Visibility" Value="Collapsed,Hidden">  
@@ -197,7 +197,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
 ### <a name="xaml-content-property-values-must-be-contiguous"></a>Hodnoty vlastností obsahu XAML musí být souvislé.  
  Hodnota vlastnosti obsahu XAML musí být předána zcela před nebo zcela po všech ostatních prvcích vlastností na daném objektovém prvku. To platí bez ohledu na to, zda je hodnota vlastnosti obsahu XAML zadána jako řetězec, nebo jako jeden nebo více objektů. Například následující kód neanalyzuje:  
   
-```  
+```xaml  
 <Button>I am a   
   <Button.Background>Blue</Button.Background>  
   blue button</Button>  
@@ -205,7 +205,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  To je v podstatě neplatné, protože pokud byla tato syntaxe vytvořena explicitně pomocí syntaxe elementu vlastnosti pro vlastnost Content, pak bude vlastnost content nastavena dvakrát:  
   
-```xml  
+```xaml  
 <Button>  
   <Button.Content>I am a </Button.Content>  
   <Button.Background>Blue</Button.Background>  
@@ -215,7 +215,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  Podobně neplatný příklad je, pokud je vlastnost content kolekce a podřízené prvky jsou procházejí s prvky vlastností:  
   
-```xml  
+```xaml  
 <StackPanel>  
   <Button>This example</Button>  
   <StackPanel.Resources>  

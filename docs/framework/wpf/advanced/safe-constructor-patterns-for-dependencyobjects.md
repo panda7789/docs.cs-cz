@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dependency objects [WPF], constructor patterns
 - FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-ms.openlocfilehash: 9dffe06d340c7256ba8af687e30d90d51746ebe1
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: fce17979fbd43df0496f972cac525fd79dcbfe32
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364243"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991818"
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
 Obecně konstruktory třídy by neměly volat zpětná volání, jako jsou virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializaci konstruktorů pro odvozenou třídu. Vstup do virtuální sítě může být proveden v neúplném stavu inicializace libovolného daného objektu. Systém vlastností však volá a zpřístupňuje zpětná volání interně jako součást systému vlastností závislosti. Jednoduchá operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> voláním potenciálně zahrnuje zpětné volání někde v rámci určení. Z tohoto důvodu byste měli být opatrní při nastavování hodnot vlastností závislosti v těle konstruktoru, což může být problematické, pokud je typ použit jako základní třída. Existuje konkrétní vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktorů, které zabraňují konkrétním problémům se stavy vlastností závislosti a podpostupům zpětného volání, která jsou popsána zde.  
@@ -35,7 +35,7 @@ Obecně konstruktory třídy by neměly volat zpětná volání, jako jsou virtu
   
  Následující příklad kódu (a další příklady) je pseudoC# příklad, který porušuje toto pravidlo a vysvětluje problém:  
   
-```  
+```csharp  
 public class MyClass : DependencyObject  
 {  
     public MyClass() {}  
@@ -71,7 +71,7 @@ public class MyClass : DependencyObject
 #### <a name="parameterless-constructors-calling-base-initialization"></a>Konstruktory bez parametrů volají základní inicializaci  
  Implementujte tyto konstruktory, které volají základní výchozí hodnoty:  
   
-```  
+```csharp  
 public MyClass : SomeBaseClass {  
     public MyClass() : base() {  
         // ALL class initialization, including initial defaults for   
@@ -83,7 +83,7 @@ public MyClass : SomeBaseClass {
 #### <a name="non-default-convenience-constructors-not-matching-any-base-signatures"></a>Nevýchozí (pohodlí) konstruktory, které neodpovídají žádným základním podpisům  
  Pokud tyto konstruktory používají parametry pro nastavení vlastností závislosti při inicializaci, nejprve zavolejte vlastní konstruktor bez parametrů třídy pro inicializaci a poté pomocí parametrů nastavte vlastnosti závislosti. Můžou to být buď vlastnosti závislosti definované vaší třídou, nebo vlastnosti závislosti zděděné ze základních tříd, ale v obou případech použijte následující vzor:  
   
-```  
+```csharp  
 public MyClass : SomeBaseClass {  
     public MyClass(object toSetProperty1) : this() {  
         // Class initialization NOT done by default.  

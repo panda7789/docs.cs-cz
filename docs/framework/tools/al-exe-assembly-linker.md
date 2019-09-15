@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9674e4d3f465cd3bad55a32d0a13136e6cff974d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7f83c67354e96e1da3a30ab2e30fffe026c4646b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946379"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971352"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
@@ -178,5 +178,5 @@ al t2.netmodule /target:exe /out:t2a.exe /main:MyClass.Main
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [*Sn. exe* (Nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
 - [*Gacutil. exe* (nástroj Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
-- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Programování se sestaveními](../../standard/assembly/program.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

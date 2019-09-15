@@ -9,12 +9,12 @@ helpviewer_keywords:
 - assemblies [C#], compiling
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
-ms.openlocfilehash: 0630639433aed4c8dfddbf0144e9802ed3f4ee73
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 073660fa732c04cdc987af5617b894a277ebcc0f
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606446"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970115"
 ---
 # <a name="-target-c-compiler-options"></a>-Target (C# možnosti kompilátoru)
 Možnost kompilátoru **-target** lze zadat v jednom ze čtyř forem:  
@@ -37,7 +37,7 @@ Možnost kompilátoru **-target** lze zadat v jednom ze čtyř forem:
  [-target:winmdobj](./target-winmdobj-compiler-option.md)  
  Pro vytvoření zprostředkujícího souboru. winmdobj.  
   
- Pokud nezadáte **cíl: modul**, **-target** způsobí umístění manifestu .NET Framework sestavení do výstupního souboru. Další informace naleznete v tématu [sestavení v modulu CLR (Common Language Runtime)](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md) a [běžné atributy](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Pokud nezadáte **cíl: modul**, **-target** způsobí umístění manifestu .NET Framework sestavení do výstupního souboru. Další informace naleznete v tématu [sestavení v rozhraní .NET](../../../standard/assembly/index.md) a [běžné atributy](../../programming-guide/concepts/attributes/common-attributes.md).  
   
  Manifest sestavení je umístěn v prvním výstupním souboru. exe v kompilaci nebo v první knihovně DLL, pokud není k dispozici výstupní soubor. exe. Například v následujícím příkazovém řádku bude manifest umístěn v `1.exe`:  
   

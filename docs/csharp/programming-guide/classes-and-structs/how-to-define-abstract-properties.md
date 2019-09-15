@@ -6,12 +6,12 @@ helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: fae526f5dcd452fbc381ee86c892b72e61956f0b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 57fd2ed3a26bf5986f9c8a1a6cae6b041811e84c
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596865"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970901"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastnostíC# (Průvodce programováním)
 Následující příklad ukazuje, jak definovat [abstraktní](../../language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnosti neposkytuje implementaci přistupujících objektů vlastnosti – deklaruje, že třída podporuje vlastnosti, ale ponechá implementaci přistupující objekty odvozeným třídám. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
@@ -59,4 +59,3 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../language-ref
 - [Třídy a struktury](./index.md)
 - [Abstraktní a uzavřené třídy a jejich členové](./abstract-and-sealed-classes-and-class-members.md)
 - [Vlastnosti](./properties.md)
-- [Postupy: Vytváření a používání sestavení pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)

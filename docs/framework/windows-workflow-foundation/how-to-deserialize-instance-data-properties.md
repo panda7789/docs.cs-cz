@@ -2,15 +2,15 @@
 title: 'Postupy: Deserializace vlastností data instance'
 ms.date: 03/30/2017
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-ms.openlocfilehash: a53c8ceea2a2bf9840b92dc7119e681902da893e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e037d5f8d0b221aa0eb8fdc6eceabf6efb2dc387
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619683"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989637"
 ---
 # <a name="how-to-deserialize-instance-data-properties"></a>Postupy: Deserializace vlastností data instance
-Může nastat situace, když uživatel nebo správce pracovního postupu může být vhodné ručně zkontrolovat stav trvalé instance práce. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> poskytuje pohled na tabulku instance, která poskytuje následující čtyři sloupce:  
+Můžou nastat situace, kdy uživatel nebo správce pracovního postupu může chtít ručně zkontrolovat stav trvalé instance pracovního postupu. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>poskytuje zobrazení tabulky instance, která zveřejňuje následující čtyři sloupce:  
   
 - ReadWritePrimitiveDataProperties  
   
@@ -20,15 +20,15 @@ Může nastat situace, když uživatel nebo správce pracovního postupu může 
   
 - WriteOnlyComplexDataProperties  
   
- Primitivní datové vlastnosti odkazují na vlastnosti, jejichž typy rozhraní .NET Framework jsou považovány za "common" (například Int32 a řetězec), zatímco rozšířené datové vlastnosti odkazovat na všechny ostatní typy. Později v tomto příkladu kódu je najít přesný výčet primitivní typy.  
+ Vlastnosti primitivních dat odkazují na vlastnosti, jejichž typy .NET Framework jsou považovány za "Common" (například Int32 a String), zatímco vlastnosti komplexních dat odkazují na všechny ostatní typy. Přesný výčet primitivních typů najdete později v tomto příkladu kódu.  
   
- Vlastnosti čtení/zápis odkazují na vlastnosti, které jsou vráceny zpět do modulu Runtime pracovního postupu při načtení instance. Vlastnosti WriteOnly jsou zapsána do databáze a pak nikdy znovu přečíst.  
+ Vlastnosti pro čtení a zápis odkazují na vlastnosti, které se vrátí zpět do modulu runtime pracovního postupu při načtení instance. Vlastnosti WriteOnly se zapisují do databáze a pak se nikdy nečtou.  
   
- V tomto příkladu obsahuje kód, který umožňuje uživateli se deserializovat data primitivní vlastnosti. Zadaný čtení ze sloupce ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties bajtové pole, tento kód se převést na binární rozsáhlý objekt (BLOB) <xref:System.Collections.Generic.Dictionary%602> typu \<XName, objekt > kde každá hodnota klíče pár představuje název vlastnosti a její odpovídající hodnotu.  
+ Tento příklad poskytuje kód, který umožňuje uživateli deserializovat primitivní vlastnosti dat. Při přečtení bajtového pole ze sloupce ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties převede tento kód binární rozsáhlý objekt (BLOB) na <xref:System.Collections.Generic.Dictionary%602> typ \<XName, objekt >, kde každá hodnota klíče dvojice představuje název vlastnosti a odpovídající hodnotu.  
   
- V tomto příkladu není ukazují, jak zrušit serializaci komplexní datové vlastnosti, protože to není aktuálně podporovaná operace.  
+ Tento příklad neukazuje, jak zrušit serializaci vlastností komplexních dat, protože to není momentálně podporovaná operace.  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  

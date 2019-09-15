@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: 080432670c68623433a6b4e61adba77cf6fa5ec7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6340bc3fb2291601ba2a9812e0a438839f0718bc
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786867"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971824"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET
 .NET Framework nabízí zabezpečení na základě rolí a také zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí běžné infrastruktury dodávané modulem CLR (Common Language Runtime). V celém světě nespravovaného kódu je většina aplikací spouštěna s oprávněními uživatele nebo objektu zabezpečení. V důsledku toho může dojít k poškození počítačových systémů a ohrožení bezpečnosti osobních dat, když uživatel se zvýšenými oprávněními spustí škodlivý software nebo chybně vyplněný software.  
@@ -50,12 +50,12 @@ ms.locfileid: "70786867"
  V závislosti na typu aplikace, kterou sestavíte, byste měli také zvážit implementaci oprávnění na základě rolí v databázi. Další informace o zabezpečení na základě rolí v SQL Server najdete v tématu [SQL Server Security](./sql/sql-server-security.md).  
   
 ## <a name="assemblies"></a>Sestavení  
- Sestavení tvoří základní jednotku nasazení, řízení verze, opětovné použití, rozsah aktivace a oprávnění zabezpečení pro .NET Framework aplikaci. Sestavení poskytuje kolekci typů a prostředků, které jsou sestaveny tak, aby spolupracovaly a tvořily logickou jednotku funkcí. Pro CLR, neexistuje typ mimo kontext sestavení. Další informace o vytváření a nasazování sestavení naleznete v tématu [programování se sestaveními](../../app-domains/programming-with-assemblies.md).  
+ Sestavení tvoří základní jednotku nasazení, řízení verze, opětovné použití, rozsah aktivace a oprávnění zabezpečení pro .NET Framework aplikaci. Sestavení poskytuje kolekci typů a prostředků, které jsou sestaveny tak, aby spolupracovaly a tvořily logickou jednotku funkcí. Pro CLR, neexistuje typ mimo kontext sestavení. Další informace o vytváření a nasazování sestavení naleznete v tématu [programování se sestaveními](../../../standard/assembly/program.md).  
   
 ### <a name="strong-naming-assemblies"></a>Sestavení se silným pojmenováním  
  Silný název nebo digitální podpis se skládá z identity sestavení, která zahrnuje jeho jednoduchý textový název, číslo verze a informace o jazykové verzi (Pokud je k dispozici) a také veřejný klíč a digitální podpis. Digitální podpis je vygenerován ze souboru sestavení pomocí odpovídajícího privátního klíče. Soubor sestavení obsahuje manifest sestavení, který obsahuje názvy a hodnoty hash všech souborů, které tvoří sestavení.  
   
- Silné pojmenování sestavení dává aplikaci nebo komponentě jedinečnou identitu, kterou může jiný software použít k tomu, aby se k ní explicitně odkazoval. Silné názvy sestavení chrání proti falšování sestavením, které obsahuje nepřátelský kód. Silné pojmenovávání také zajišťuje konzistenci verzí mezi různými verzemi součásti. Je nutné, aby sestavení se silným názvem, která budou nasazena do globální mezipaměti sestavení (GAC). Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../app-domains/create-and-use-strong-named-assemblies.md).  
+ Silné pojmenování sestavení dává aplikaci nebo komponentě jedinečnou identitu, kterou může jiný software použít k tomu, aby se k ní explicitně odkazoval. Silné názvy sestavení chrání proti falšování sestavením, které obsahuje nepřátelský kód. Silné pojmenovávání také zajišťuje konzistenci verzí mezi různými verzemi součásti. Je nutné, aby sestavení se silným názvem, která budou nasazena do globální mezipaměti sestavení (GAC). Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md).  
   
 ## <a name="partial-trust-in-adonet-20"></a>Částečná důvěryhodnost v ADO.NET 2,0  
  V ADO.NET 2,0 Zprostředkovatel dat .NET Framework pro SQL Server, .NET Framework Zprostředkovatel dat pro OLE DB, .NET Framework Zprostředkovatel dat pro rozhraní ODBC a .NET Framework Zprostředkovatel dat pro Oracle se teď dají spouštět v částečně důvěryhodných prostředích. V předchozích verzích .NET Framework byl podporován pouze <xref:System.Data.SqlClient> v aplikacích s úplným vztahem důvěryhodnosti.  

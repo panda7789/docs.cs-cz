@@ -11,12 +11,12 @@ ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 96ec50e5d3aca2aa24d68d565a35ec7687df2a2e
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 3e2366513183337c3c5dd05ff45f8a6f724deaae
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70893232"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988434"
 ---
 # <a name="windows-forms-designer-error-page"></a>Chybová stránka Návrhář formulářů
 
@@ -33,6 +33,7 @@ Po rozbalení žluté chybové úsečky se zobrazí všechny výskyty chyby. Mno
 ![Rozšířená chyba Návrhář formulářů](media/windows-forms-designer-error-page-expanded.png)
 
 > [!NOTE]
+>
 > - U Visual Basic aplikací se na stránce s chybou návrhu nezobrazuje více než jedna chyba, ale může zobrazit několik instancí stejné chyby.
 > - Pro C++ aplikace neobsahují chyby odkazy na umístění kódu.
 

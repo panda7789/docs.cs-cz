@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Reálné provozní aplikace musí být nasazeny a spravovány pomocí orchestrace, které zpracovávají stav, zatížení a životní cyklus všech kontejnerů.
 ms.date: 02/15/2019
-ms.openlocfilehash: 8c1161127eb6b239384444c369de7f11abd3d424
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 8f2cef774acde47e9a1bb4680342b5e2c66ac154
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373696"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990487"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -15,7 +15,7 @@ Použití orchestrací pro aplikace připravené pro produkční prostředí je 
 
 Obrázek 4-6 znázorňuje nasazení do clusteru aplikace tvořené několika mikroslužbami (kontejnery).
 
-![Složené aplikace Docker v clusteru: Pro každou instanci služby použijete jeden kontejner. Kontejnery Docker jsou "jednotky nasazení" a kontejner je instance Docker. hostitel zpracovává spoustu kontejnerů.](./media/image6.png)
+![Složené aplikace Docker v clusteru: Pro každou instanci služby použijete jeden kontejner. Kontejnery Docker jsou "jednotky nasazení" a kontejner je instance Docker. Hostitel zpracovává mnoho kontejnerů.](./media/image6.png)
 
 **Obrázek 4-6**. Cluster kontejnerů
 

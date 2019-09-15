@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4f0f254b7794ce1cd4c765bee70c78e3c60a14aa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a666c0e079fb30ecdd32aad64f44434d8253acf4
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946498"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971893"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Postupy: Přidávání odkazů do knihoven typů
 Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vzájemné spolupráce obsahující metadata. Pokud je k dispozici primární sestavení vzájemné spolupráce, Visual Studio použije existující sestavení před generováním nového definičního sestavení.  
@@ -48,7 +48,6 @@ Když přidáte odkaz na knihovnu typů, Visual Studio vygeneruje sestavení vz�
 
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
-- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual StudioC#()](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md) 
-- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
+- [Návod: Vložení typů ze spravovaných sestavení v aplikaci Visual Studio](../../standard/assembly/embed-types-visual-studio.md) 
 - [/Link (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/link-compiler-option.md)
 - [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md)

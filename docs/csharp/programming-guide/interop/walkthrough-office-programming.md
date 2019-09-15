@@ -9,18 +9,18 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 8ed6e759f682f0db76938661fdcf668bec1eef1c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0f14cc6486e53cad8c3cbadc404d22d7e5458e84
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588980"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991275"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 
 Visual Studio nabízí funkce v C# a Visual Basic, které zlepšují systém Microsoft Office programování. K C# užitečným funkcím patří pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. V programování modelu COM můžete vynechat `ref` klíčové slovo a získat přístup k indexovaným vlastnostem. Funkce v Visual Basic zahrnují automaticky implementované vlastnosti, příkazy ve výrazech lambda a Inicializátory kolekcí.
 
-Oba jazyky umožňují vkládání informací o typu, což umožňuje nasazení sestavení, která komunikují s komponentami modelu COM bez nutnosti nasadit primární definiční sestavení (PIA) do počítače uživatele. Další informace najdete v tématu [Návod: Vložení typů ze spravovaných sestavení](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).
+Oba jazyky umožňují vkládání informací o typu, což umožňuje nasazení sestavení, která komunikují s komponentami modelu COM bez nutnosti nasadit primární definiční sestavení (PIA) do počítače uživatele. Další informace najdete v tématu [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).
 
 Tento názorný postup ukazuje tyto funkce v kontextu programování v systému Office, ale mnoho z těchto funkcí je užitečné také při obecném programování. V tomto návodu použijete k vytvoření excelového sešitu aplikaci doplňku Excel. V dalším kroku vytvoříte dokument aplikace Word, který obsahuje odkaz na sešit. Nakonec uvidíte, jak povolit a zakázat závislost PIA.
 
@@ -96,7 +96,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
          Další informace naleznete v tématu [pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md).
 
-    - Vlastnosti `Range` a `Offset` objektu [Range](<xref:Microsoft.Office.Interop.Excel.Range>) využívají funkci *indexovaných vlastností* . Tato funkce umožňuje využívání těchto vlastností z typů modelu COM pomocí následující typické C# syntaxe. Indexované vlastnosti také umožňují použít `Value` vlastnost `Range` objektu, což eliminuje nutnost použít `Value2` vlastnost. `Value` Vlastnost je indexována, ale index je nepovinný. Nepovinné argumenty a indexované vlastnosti fungují společně v následujícím příkladu.
+    - Vlastnosti `Range` a`Offset` objektu [Range](<xref:Microsoft.Office.Interop.Excel.Range>) využívají funkci *indexovaných vlastností* . Tato funkce umožňuje využívání těchto vlastností z typů modelu COM pomocí následující typické C# syntaxe. Indexované vlastnosti také umožňují použít `Value` vlastnost `Range` objektu, což eliminuje nutnost použít `Value2` vlastnost. `Value` Vlastnost je indexována, ale index je nepovinný. Nepovinné argumenty a indexované vlastnosti fungují společně v následujícím příkladu.
 
          [!code-csharp[csOfficeWalkthrough#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#5)]
 
@@ -160,7 +160,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 4. V nabídce **soubor** v okně IL DASM vyberte **soubor** > **otevřeno**. Dvakrát klikněte na **Visual Studio \<Version >** a potom poklikejte na **projekty**. Otevřete složku pro váš projekt a vyhledejte složku bin/Debug pro *váš projekt název*. dll. Dvakrát klikněte na *název projektu*. dll. Nové okno zobrazuje atributy vašeho projektu, Kromě odkazů na jiné moduly a sestavení. Všimněte si, `Microsoft.Office.Interop.Excel` že `Microsoft.Office.Interop.Word` obory názvů a jsou zahrnuty v sestavení. Ve výchozím nastavení v aplikaci Visual Studio importuje kompilátor typy, které potřebujete, z odkazovaného PIA do sestavení.
 
-     Další informace najdete v tématu [jak: Zobrazit obsah](../../../framework/app-domains/how-to-view-assembly-contents.md)sestavení.
+     Další informace najdete v tématu [jak: Zobrazit obsah](../../../standard/assembly/view-contents.md)sestavení.
 
 5. Dvakrát klikněte na ikonu **manifestu** . Zobrazí se okno obsahující seznam sestavení, která obsahují položky, na které se odkazuje v projektu. `Microsoft.Office.Interop.Excel`a `Microsoft.Office.Interop.Word` nejsou součástí seznamu. Vzhledem k tomu, že typy, které váš projekt potřebuje, byly importovány do sestavení, odkazy na PIA nejsou požadovány. Díky tomu je nasazení snazší. Nasazení PIA nemusí být k dispozici v počítači uživatele a protože aplikace nevyžaduje nasazení konkrétní verze služby PIA, aplikace může být navržena pro práci s více verzemi Office za předpokladu, že potřebná rozhraní API existují ve všech verzích. .
 
@@ -205,7 +205,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 - [Výrazy lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
 - [Postupy: Použití indexovaných vlastností v programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
 - [Návod: Vložení informací o typu z systém Microsoft Office sestavení v aplikaci Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
-- [Návod: Vložení typů ze spravovaných sestavení](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
+- [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md)
 - [Návod: Vytvoření prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Interoperabilita](./index.md)

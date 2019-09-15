@@ -2,12 +2,12 @@
 title: 'Postupy: Určení zabezpečovacích pověření kanálu'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 3d6131a7488d9932118a988095791dd06fd46c49
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e5b2b56da1989b9a7110a1ad3eee814560942c89
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933450"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972447"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Určení zabezpečovacích pověření kanálu
 Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM volat služby WCF. Většina služeb WCF vyžaduje, aby klient určil přihlašovací údaje pro ověřování a autorizaci. Při volání služby WCF z klienta WCF můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo v konfiguračním souboru aplikace. Při volání služby WCF z aplikace COM můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní k zadání přihlašovacích údajů. Toto téma popisuje různé způsoby, jak zadat pověření pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
@@ -31,7 +31,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
   
 6. Otevřete Visual Basic 6,0 a vytvořte nový standardní soubor. exe. Přidejte do formuláře tlačítko a dvakrát klikněte na tlačítko a přidejte následující kód do obslužné rutiny Click:  
   
-    ```  
+    ```vb  
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
         monString = monString + ", address=http://localhost:8000/ServiceModelSamples/Service"  
         monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
@@ -52,7 +52,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
   
      V aplikaci Visual Basic se zobrazí okno se zprávou s výsledkem volání metody Add (3, 4). <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromFile%28System.String%2CSystem.String%2CSystem.String%29>Můžete také použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStore%28System.String%2CSystem.String%2CSystem.String%2CSystem.Object%29> místo pro nastavení klientského certifikátu: <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetClientCertificateFromStoreByName%28System.String%2CSystem.String%2CSystem.String%29>  
   
-    ```  
+    ```vb  
     monikerProxy.ChannelCredentials.SetClientCertificateFromFile "C:\MyClientCert.pfx", "password", "DefaultKeySet"  
     ```  
   
@@ -70,7 +70,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
 
 3. Otevřete Visual Basic 6,0 a vytvořte nový standardní soubor. exe. Přidejte do formuláře tlačítko a dvakrát klikněte na tlačítko a přidejte následující kód do obslužné rutiny Click:  
   
-    ```  
+    ```vb
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
     monString = monString + ", address=http://localhost:8000/ServiceModelSamples/Service"  
     monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
@@ -95,7 +95,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
 
 2. Otevřete Visual Basic 6,0 a vytvořte nový standardní soubor. exe. Přidejte do formuláře tlačítko a dvakrát klikněte na tlačítko a přidejte následující kód do obslužné rutiny Click:  
   
-    ```  
+    ```vb
     monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
     monString = monString + ", address=http://localhost:8000/ServiceModelSamples/Service"  
     monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
@@ -119,7 +119,7 @@ Moniker služby Windows Communication Foundation (WCF) umožňuje aplikacím COM
   
      Následující příklad kódu Visual Basic ukazuje, jak zavolat <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> metodu:  
   
-    ```  
+    ```vb
         monString = "service:mexAddress=http://localhost:8000/ServiceModelSamples/Service?wsdl"  
         monString = monString + ", address=http://localhost:8000/SomeService/Service"  
         monString = monString + ", contract=ICalculator, contractNamespace=http://SomeService.Samples"  

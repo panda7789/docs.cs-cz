@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC31535
 ms.assetid: 6540c1d0-bb19-4051-a579-2e4f9094585e
-ms.openlocfilehash: 0c1526e32ddc64cb4124c6f8205d58deef911dd6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6eb46c6479adc69eaf65b34c69aa69977b4d62ef
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802470"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972393"
 ---
-# <a name="friend-assembly-reference-reference-is-invalid"></a>Odkaz na sestavení typu Friend \<odkaz > je neplatný
-Odkaz na sestavení typu Friend \<odkaz > je neplatný. Podepsaná sestavení silným názvem je nutné zadat veřejný klíč v jejich deklaracích InternalsVisibleTo.  
+# <a name="friend-assembly-reference-reference-is-invalid"></a>\<Referenční > odkazu na sestavení typu Friend je neplatný.
+> Odkazu na \<odkaz na sestavení typu Friend je neplatný. Sestavení podepsaná silným názvem musí v deklaracích InternalsVisibleTo určovat veřejný klíč.  
   
- Předaný název sestavení <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> konstruktor atributu identifikuje sestavení se silným názvem, ale nezahrnuje `PublicKey` atribut.  
+ Název sestavení předaný <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> konstruktoru atributu identifikuje sestavení se silným názvem, ale `PublicKey` nezahrnuje atribut.  
   
  **ID chyby:** BC31535  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Určení veřejný klíč pro sestavení typu friend se silným názvem. Zahrnovat veřejný klíč jako součást názvu sestavení předaný <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> konstruktor atributu pomocí `PublicKey` atribut.  
+1. Určete veřejný klíč pro sestavení typu Friend se silným názvem. Zahrňte veřejný klíč jako součást názvu sestavení předaného <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> konstruktoru atributu `PublicKey` pomocí atributu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.AssemblyName>
-- [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
+- [Přátelská sestavení](../../../standard/assembly/friend.md)

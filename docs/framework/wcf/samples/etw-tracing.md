@@ -2,12 +2,12 @@
 title: Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: c484e3438ad3512bd6186297f3edf8068a60795e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: fb1a1dc77ee6a7be25aade18f76f89464bef0387
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045006"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989958"
 ---
 # <a name="etw-tracing"></a>Trasování událostí pro Windows
 Tato ukázka předvádí `ETWTraceListener` , jak implementovat e2e (end to-end) trasování pomocí trasování událostí pro Windows (ETW) a který je součástí této ukázky. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a zahrnuje trasování ETW.  
@@ -56,7 +56,7 @@ Tato ukázka předvádí `ETWTraceListener` , jak implementovat e2e (end to-end)
   
  Naslouchací proces trasování ETW podporuje cyklické protokolování. Tuto funkci povolíte tak, že přejdete na **Start**, `cmd` **spustíte** a zadáte příkaz a spustíte konzolu příkazů. V následujícím příkazu nahraďte `<logfilename>` parametr názvem souboru protokolu.  
   
-```  
+```console  
 logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b41091702e}" -f bincirc -max 1000  
 ```  
   
@@ -64,14 +64,14 @@ logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b4109170
   
  Chcete-li spustit relaci, zadejte následující příkaz.  
   
-```  
-Logman start Wcf  
+```console  
+logman start Wcf  
 ```  
   
  Po dokončení protokolování můžete zastavit relaci pomocí následujícího příkazu.  
   
-```  
-Logman stop Wcf  
+```console  
+logman stop Wcf  
 ```  
   
  Tento proces generuje binární cyklické protokoly, které můžete zpracovat s vámi zvoleným nástrojem, včetně [nástroje Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) nebo Tracerpt.  
@@ -82,7 +82,7 @@ Logman stop Wcf
   
 1. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení Windows Communication Foundation ukázek](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
     > [!NOTE]
     > Chcete-li použít příkazy RegisterProvider. bat, SetupETW. bat a CleanupETW. bat, je nutné spustit pod účtem místního správce. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo novější, musíte spustit také příkazový řádek se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na ikonu příkazového řádku a potom kliknete na **Spustit jako správce**.  

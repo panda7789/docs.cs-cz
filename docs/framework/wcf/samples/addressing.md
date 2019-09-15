@@ -2,12 +2,12 @@
 title: Adresování
 ms.date: 03/30/2017
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-ms.openlocfilehash: 249060896b97de1694dec121cb25219baccdd88b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a94e6dd50fb4a7326666c7843e20964b35f957c6
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045839"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990209"
 ---
 # <a name="addressing"></a>Adresování
 Ukázka adresování znázorňuje různé aspekty a funkce adres koncových bodů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba hostovaná v místním prostředí. Služba i klient jsou konzolové aplikace. Služba definuje více koncových bodů pomocí kombinace relativních a absolutních adres koncových bodů.  
@@ -83,7 +83,7 @@ Ukázka adresování znázorňuje různé aspekty a funkce adres koncových bod�
   
  Při spuštění ukázky služba vytvoří výčet adresy, názvu vazby a názvu kontraktu pro každý z jeho koncových bodů. Koncový bod výměny metadat (MEX) je pouze jiný koncový bod od perspektivy hostitele, takže se zobrazí v seznamu.  
   
-```  
+```console  
 Service endpoints:  
 Endpoint - address:  http://localhost:8000/ServiceModelSamples/service  
            binding:  WSHttpBinding  
@@ -107,7 +107,7 @@ Press <ENTER> to terminate service.
   
  Když spustíte klienta nástroje, požadavky na operace a odpovědi se zobrazí v oknech služba i klientská konzola. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta.  
   
-```  
+```console  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  

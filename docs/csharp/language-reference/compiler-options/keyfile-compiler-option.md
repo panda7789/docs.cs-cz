@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: eef843c87b8f1993c3419b261894a6df31096294
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: bf271cc6b6887e930911071d4603b51daed55e61
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606885"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970264"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (C# možnosti kompilátoru)
 Určuje název souboru, který obsahuje kryptografický klíč.  
@@ -41,7 +41,7 @@ Určuje název souboru, který obsahuje kryptografický klíč.
   
  Všimněte si, že soubor klíče může obsahovat pouze veřejný klíč.  
   
- Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) a [Zpožděné podepisování sestavení](../../../framework/app-domains/delay-sign-assembly.md).  
+ Další informace naleznete v tématu [vytváření a používání sestavení se silným názvem](../../../standard/assembly/create-use-strong-named.md) a [Zpožděné podepisování sestavení](../../../standard/assembly/delay-sign.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   

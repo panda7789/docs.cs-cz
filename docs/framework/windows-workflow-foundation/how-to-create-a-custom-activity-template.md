@@ -2,50 +2,50 @@
 title: 'Postupy: Vytvoření vlastní šablony aktivity'
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
-ms.openlocfilehash: f54a625fbe5497406645ea29f824d361c0392eb3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4ec84658dbe3039a4d7d714f8da183e6a5eb6ca4
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637731"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989715"
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: Vytvoření vlastní šablony aktivity
 
-Vlastní aktivita šablony slouží k přizpůsobení konfigurace aktivit, včetně vlastních složených aktivit, tak, aby uživatelé nebudou mít k vytvoření každé aktivity jednotlivě a nakonfigurovat jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony může být k dispozici v **nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo v návrháři se změněným hostováním, ze kterého uživatelé můžete přetáhnout na předem návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dodává se sadou dobrým příkladem takové šablony: [návrhář šablony SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [návrhář šablony ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v [návrháři aktivit zasílání zpráv](/visualstudio/workflow-designer/messaging-activity-designers) kategorie.
+Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetně vlastních složených aktivit, aby uživatelé nemuseli vytvářet jednotlivé aktivity jednotlivě a nakonfigurovali jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony mohou být k dispozici v sadě **nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo v přehostujícím návrháři, ze kterých je uživatelé mohou přetahovat na předkonfigurovaný návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]dodává se dobrými příklady takových šablon: [Návrhář šablon SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [Návrhář šablon ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v kategorii [Návrháři aktivity zasílání zpráv](/visualstudio/workflow-designer/messaging-activity-designers) .
 
- První postup v tomto tématu popisuje, jak vytvořit vlastní šablony aktivity pro **zpoždění** aktivity a druhý postup popisuje stručně ho zpřístupní v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] k ověření, zda funguje vlastní šablonu.
+ První postup v tomto tématu popisuje, jak vytvořit šablonu vlastní aktivity pro aktivitu **zpoždění** a druhá procedura stručně popisuje, jak ji zpřístupnit v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] nástroji, abyste ověřili, že vlastní šablona funguje.
 
- Vlastní aktivita šablony musí implementovat <xref:System.Activities.Presentation.IActivityTemplateFactory>. Rozhraní má jediný <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> metodu, pomocí kterého můžete vytvořit a nakonfigurovat instance aktivit použít v šabloně.
+ Vlastní šablony aktivit musí implementovat <xref:System.Activities.Presentation.IActivityTemplateFactory>. Rozhraní má jedinou <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> metodu, se kterou můžete vytvořit a nakonfigurovat instance aktivit použité v šabloně.
 
-## <a name="to-create-a-template-for-the-delay-activity"></a>Vytvoření šablony aktivity Delay
+## <a name="to-create-a-template-for-the-delay-activity"></a>Vytvoření šablony pro aktivitu zpoždění
 
-1. Start Visual Studio 2010.
+1. Spusťte Visual Studio 2010.
 
-2. Na **souboru** nabídky, přejděte k **nový**a pak vyberte **projektu**.
+2. V nabídce **soubor** přejděte na příkaz **Nový**a vyberte možnost **projekt**.
 
      **Nový projekt** zobrazí se dialogové okno.
 
-3. V **typy projektů** vyberte **pracovního postupu** buď z **Visual C#** projekty nebo **jazyka Visual Basic** seskupení v závislosti na vaší preferovaný jazyk.
+3. V podokně **typy projektů** vyberte **pracovní postup** z **vizuálních C#**  projektů nebo skupin **Visual Basic** v závislosti na jazykové předvolbách.
 
-4. V **šablony** vyberte **knihovny aktivit**.
+4. V podokně **šablony** vyberte **Knihovna aktivit**.
 
-5. V **název** zadejte `DelayActivityTemplate`.
+5. Do pole **název** zadejte `DelayActivityTemplate`.
 
-6. Přijměte výchozí hodnoty v **umístění** a **název řešení** textová pole a pak klikněte na tlačítko **OK**.
+6. Přijměte výchozí hodnoty v textových polích **umístění** a **název řešení** a potom klikněte na tlačítko **OK**.
 
-7. Klikněte pravým tlačítkem na adresář odkazy projektu DelayActivityTemplate v **Průzkumníka řešení** a zvolte **přidat odkaz** otevřít **přidat odkaz** dialogové okno.
+7. V **Průzkumník řešení** klikněte pravým tlačítkem na adresář odkazy projektu DelayActivityTemplate a výběrem možnosti **Přidat odkaz** otevřete dialogové okno **Přidat odkaz** .
 
-8. Přejděte na **.NET** kartě a vyberte **PresentationFramework** z **název komponenty** sloupce na levé straně a klikněte na **OK** přidat odkaz do souboru knihovně PresentationFramework.dll.
+8. Přejděte na kartu **.NET** a vyberte **PresentationFramework** ze sloupce **název součásti** na levé straně a kliknutím na **OK** přidejte odkaz na soubor PresentationFramework. dll.
 
-9. Opakujte tento postup pro přidání odkazů System.Activities.Presentation.dll a knihovně WindowsBase.dll soubory.
+9. Opakujte tento postup, chcete-li přidat odkazy na soubory System. Activities. Presentation. dll a WindowsBase. dll.
 
-10. Klikněte pravým tlačítkem na projekt DelayActivityTemplate v **Průzkumníka řešení** a zvolte **přidat** a potom **nová položka** otevřít **přidat novou položku**dialogové okno.
+10. Klikněte pravým tlačítkem myši na projekt DelayActivityTemplate v **Průzkumník řešení** a zvolte možnost **Přidat** a poté **Nová položka** . tím otevřete dialogové okno **Přidat novou položku** .
 
-11. Vyberte **třídy** šablony, pojmenujte ho MyDelayTemplate a potom klikněte na **OK**.
+11. Vyberte šablonu **třídy** , pojmenujte ji MyDelayTemplate a pak klikněte na **OK**.
 
 12. Otevřete soubor MyDelayTemplate.cs a přidejte následující příkazy.
 
-    ```
+    ```csharp
     //Namespaces added
     using System.Activities;
     using System.Activities.Statements;
@@ -53,9 +53,9 @@ Vlastní aktivita šablony slouží k přizpůsobení konfigurace aktivit, včet
     using System.Windows;
     ```
 
-13. Implementace <xref:System.Activities.Presentation.IActivityTemplateFactory> s `MyDelayActivity` třídy následujícím kódem. Tím se nakonfiguruje zpoždění Doba trvání 10 sekund.
+13. Implementujte `MyDelayActivity` třídu spoužitímnásledujícíhokódu.<xref:System.Activities.Presentation.IActivityTemplateFactory> Tím se nakonfiguruje zpoždění na dobu 10 sekund.
 
-    ```
+    ```csharp
     public sealed class MyDelayActivity : IActivityTemplateFactory
     {
         public Activity Create(System.Windows.DependencyObject target)
@@ -70,32 +70,32 @@ Vlastní aktivita šablony slouží k přizpůsobení konfigurace aktivit, včet
     }
     ```
 
-14. Vyberte **sestavit řešení** z **sestavení** nabídky ke generování souboru DelayActivityTemplate.dll.
+14. Vyberte **Sestavit řešení** z nabídky **sestavení** pro vygenerování souboru DelayActivityTemplate. dll.
 
-### <a name="to-make-the-template-available-in-a-workflow-designer"></a>Chcete-li šablonu zpřístupnit v Návrháři pracovních postupů
+### <a name="to-make-the-template-available-in-a-workflow-designer"></a>Zpřístupnění šablony ve Návrhář postupu provádění
 
-1. Klikněte pravým tlačítkem na řešení DelayActivityTemplate v **Průzkumníka řešení** a zvolte **přidat** a potom **nový projekt** otevřít **přidat nový projekt** dialogové okno.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení DelayActivityTemplate a zvolte **Přidat** a pak **Nový projekt** . otevře se dialogové okno **Přidat nový projekt** .
 
-2. Vyberte **Konzolová aplikace pracovního postupu** šablony, pojmenujte ho `CustomActivityTemplateApp`a potom klikněte na tlačítko **OK**.
+2. Vyberte šablonu **Konzolová aplikace pracovního postupu** , pojmenujte ji `CustomActivityTemplateApp`a klikněte na tlačítko **OK**.
 
-3. Klikněte pravým tlačítkem na adresář odkazy projektu CustomActivityTemplateApp v **Průzkumníka řešení** a zvolte **přidat odkaz** otevřít **přidat odkaz** dialogového okna pole.
+3. V **Průzkumník řešení** klikněte pravým tlačítkem na adresář odkazy projektu CustomActivityTemplateApp a výběrem možnosti **Přidat odkaz** otevřete dialogové okno **Přidat odkaz** .
 
-4. Přejděte na **projekty** kartě a vyberte **DelayActivityTemplate** z **název projektu** sloupce na levé straně a klikněte na **OK** přidáte odkaz na soubor DelayActivityTemplate.dll, který jste vytvořili v prvním postupu.
+4. Přejděte na kartu **projekty** a vyberte **DelayActivityTemplate** ze sloupce **název projektu** na levé straně a kliknutím na **OK** přidejte odkaz na soubor DelayActivityTemplate. dll, který jste vytvořili v prvním postupu.
 
-5. Klikněte pravým tlačítkem na projekt CustomActivityTemplateApp v **Průzkumníka řešení** a zvolte **sestavení** pro kompilaci aplikace.
+5. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt CustomActivityTemplateApp a vyberte **sestavit** pro zkompilování aplikace.
 
-6. Klikněte pravým tlačítkem na projekt CustomActivityTemplateApp v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.
+6. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt CustomActivityTemplateApp a vyberte **nastavit jako spouštěný projekt**.
 
-7. Vyberte **spustit bez ladění** z **ladění** nabídky a stisknutím libovolné klávesy pokračovat po zobrazení výzvy v okně cmd.exe.
+7. Vyberte možnost **Spustit bez ladění** z nabídky **ladění** a stisknutím libovolné klávesy pokračujte po zobrazení výzvy z okna cmd. exe.
 
-8. Otevřete soubor Workflow1.xaml a otevřít **nástrojů**.
+8. Otevřete soubor Workflow1. XAML a otevřete **sadu nástrojů**.
 
-9. Vyhledejte **MyDelayActivity** šablony **DelayActivityTemplate** kategorie. Přetáhněte jej na návrhovou plochu. Potvrďte v **vlastnosti** okna, která `Duration` vlastnost byla nastavena na 10 sekund.
+9. Vyhledejte šablonu **MyDelayActivity** v kategorii **DelayActivityTemplate** . Přetáhněte ji na návrhovou plochu. V okně **vlastnosti** potvrďte, že `Duration` vlastnost byla nastavena na 10 sekund.
 
 ## <a name="example"></a>Příklad
  Soubor MyDelayActivity.cs by měl obsahovat následující kód.
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;

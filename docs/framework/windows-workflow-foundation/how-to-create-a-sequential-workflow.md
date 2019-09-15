@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
-ms.openlocfilehash: d94843e696848010791b1e22d06e4852d35bc68e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 61e3f01b1259536ff15d71526e91aef42069722e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044410"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989693"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Postupy: Vytvoření sekvenčního pracovního postupu
 
@@ -128,9 +128,9 @@ Pracovní postupy mohou být vytvořeny z vestavěných aktivit i z vlastních a
 
 10. Přetáhněte jinou položku **if** Activity z části **Flow řízení** v **sadě nástrojů** a přetáhněte ji do části **then** první aktivity **if** .
 
-11. Do pole nově přidaná hodnota vlastnosti **Condition podmínky** aktivity zadejte následující výraz.
+11. Do pole nově **přidaná hodnota** vlastnosti **Condition podmínky** aktivity zadejte následující výraz.
 
-    ```
+    ```text
     Guess < Target
     ```
 

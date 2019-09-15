@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: 2264054e-712e-47e4-8657-1aa1cfec3e3d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f819f60d6c5d5cf78f223e5cdf98ffa51f22692
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e8104d7cd6aa5a26fa69df7be838ea9b7cb2cc44
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593667"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971774"
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a>Témata s návody k doménám a sestavením aplikací
-Následující části obsahují odkazy na všechny postupy v rámcové dokumentaci k programování s doménami aplikací a sestaveními.  
+Následující části obsahují odkazy na všechna témata s postupy, která najdete v Koncepční dokumentaci pro programování s doménami aplikací a sestaveními.  
   
  **Aplikační domény**  
   
@@ -27,31 +27,31 @@ Následující části obsahují odkazy na všechny postupy v rámcové dokument
   
 - [Postupy: Načtení sestavení do domény aplikace](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
   
-- [Postupy: Získávání informací o člen typu a ze sestavení](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+- [Postupy: Získání informací o typu a členu ze sestavení](../reflection-and-codedom/get-type-member-information.md)  
   
  **Sestavení**  
   
-- [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+- [Postupy: Určení plně kvalifikovaného názvu sestavení](../../standard/assembly/find-fully-qualified-name.md)  
   
-- [Postupy: Sestavení s jediným souborem](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)  
+- [Postupy: Sestavení jednoho souboru sestavení](build-single-file-assembly.md)  
   
-- [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
+- [Postupy: Sestavení vícesouborového sestavení](build-multifile-assembly.md)  
   
-- [Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
+- [Postupy: Vytvoření páru klíčů veřejného a soukromého](../../standard/assembly/create-public-private-key-pair.md)  
   
-- [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
+- [Postupy: Podepsat sestavení silným názvem](../../standard/assembly/sign-strong-name.md)  
   
-- [Postupy: Odkazování na sestavení se silným názvem](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)  
+- [Postupy: Odkazování na sestavení se silným názvem](../../standard/assembly/reference-strong-named.md)  
   
-- [Postupy: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)  
+- [Postupy: Zakázat funkci obcházení silného názvu](../../standard/assembly/disable-strong-name-bypass-feature.md)  
   
-- [Postupy: Instalace sestavení do globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
+- [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](install-assembly-into-gac.md)  
   
-- [Postupy: Zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
+- [Postupy: Zobrazit obsah globální mezipaměti sestavení (GAC)](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
   
-- [Postupy: Odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
+- [Postupy: Odebrání sestavení z globální mezipaměti sestavení (GAC)](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
   
-- [Postupy: Zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
+- [Postupy: Zobrazit obsah sestavení](../../standard/assembly/view-contents.md)  
   
 ## <a name="see-also"></a>Viz také:
 

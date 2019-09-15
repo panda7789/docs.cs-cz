@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: c42255a14a23cb50f3fe8be434efab4af7361daa
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 926ccee49c7a445c724cecd72015ec5a5307cf58
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045859"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990185"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikaci, která používá vzdálenou komunikaci rozhraní .NET pro použití Windows Communication Foundation (WCF). Porovnává podobné koncepce mezi těmito produkty a potom popisuje, jak provést několik běžných scénářů vzdálené komunikace ve službě WCF.  
@@ -25,7 +25,7 @@ Tento článek popisuje, jak migrovat aplikaci, která používá vzdálenou kom
 |Předané objekty|Podle hodnoty nebo podle odkazu|Pouze podle hodnoty|  
 |Chyby a výjimky|Jakákoli serializovatelný výjimka|FaultContract\<TDetail >|  
 |Klientské proxy objekty|Silné typy transparentní proxy servery se vytvářejí automaticky z MarshalByRefObjects.|Proxy silného typu se generují na vyžádání pomocí třídy ChannelFactory\<TChannel >|  
-|Požadovaná platforma|Klient i server musí používat Microsoft OS a .NET.|Pro různé platformy|  
+|Požadovaná platforma|Klient i server musí používat Microsoft OS a .NET.|pro různé platformy|  
 |Formát zprávy|Soukromé|Oborové standardy (SOAP, WS-* atd.)|  
   
 ### <a name="server-implementation-comparison"></a>Porovnání implementace serveru  
@@ -160,7 +160,7 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
 - *Podle hodnoty* – hodnoty objektu jsou serializovány napříč hranicemi vrstev a nová instance tohoto objektu je vytvořena na druhé úrovni. Všechna volání metod nebo vlastností této nové instance se spouštějí pouze místně a neovlivňují původní objekt nebo vrstvu.  
   
-- Odkazem – speciální "odkaz na objekt" je serializován napříč hranicemi vrstev. Když jedna vrstva komunikuje s metodami nebo vlastnostmi tohoto objektu, komunikuje zpátky původnímu objektu na původní úrovni. Objekty podle odkazu můžou v obou směrech směrovat – server na klienta nebo klienta na server.  
+- *Odkazem – speciální* "odkaz na objekt" je serializován napříč hranicemi vrstev. Když jedna vrstva komunikuje s metodami nebo vlastnostmi tohoto objektu, komunikuje zpátky původnímu objektu na původní úrovni. Objekty podle odkazu můžou v obou směrech směrovat – server na klienta nebo klienta na server.  
   
  Typy podle hodnot ve vzdálené komunikaci jsou označeny atributem [serializovatelný] nebo implementací ISerializable, jako v následujícím příkladu:  
   
@@ -207,7 +207,7 @@ public class WCFCustomer
   
  Atribut [DataContract] identifikuje tento typ jako ten, který lze serializovat a deserializovat mezi klientem a serverem. Atribut [DataMember] identifikuje jednotlivé vlastnosti nebo pole k serializaci.  
   
- Když WCF odesílá objekt napříč vrstvami, serializovat pouze hodnoty a vytvoří novou instanci objektu na druhé úrovni. Jakékoli interakce s hodnotami objektu se projeví pouze lokálně – nekomunikují s druhou vrstvou, jak fungují objekty vzdálené komunikace .NET podle referencí. Další informace naleznete v tématu [serializace a](./feature-details/serialization-and-deserialization.md)deserializace.  
+ Když WCF odesílá objekt napříč vrstvami, serializovat pouze hodnoty a vytvoří novou instanci objektu na druhé úrovni. Jakékoli interakce s hodnotami objektu se projeví pouze lokálně – nekomunikují s druhou vrstvou, jak fungují objekty vzdálené komunikace .NET podle referencí. Další informace naleznete v tématu [serializace a deserializace](./feature-details/serialization-and-deserialization.md).  
   
 ### <a name="exception-handling-capabilities"></a>Možnosti zpracování výjimek  
   
@@ -656,7 +656,7 @@ public class RemotingServer : MarshalByRefObject
     > [!NOTE]
     > Tento kód také znázorňuje odeslání odvozeného typu (PremiumCustomer). Rozhraní služby očekává objekt zákazníka, ale atribut [třída KnownType] u třídy Customer, který je označen PremiumCustomer, byl také povolen. Služba WCF selže při pokusu o serializaci nebo deserializaci jakéhokoli jiného typu prostřednictvím tohoto rozhraní služby.  
   
- Normální výměny dat WCF jsou podle hodnoty. To zaručuje, že vyvolání metod v jednom z těchto datových objektů se spustí pouze lokálně – nevyvolává kód na druhé úrovni. I když je možné dosáhnout nějakého typu, například objektů odkazujících na server, není možné, aby klient předal objektu odkazem *na* Server. Scénář, který vyžaduje, aby se konverzace mezi klientem a serverem mohla docílit přes službu WCF pomocí duplexní služby. Další informace najdete v tématu [duplexní služby](./feature-details/duplex-services.md).  
+ Normální výměny dat WCF jsou podle hodnoty. To zaručuje, že vyvolání metod v jednom z těchto datových objektů se spustí pouze lokálně – nevyvolává kód na druhé úrovni. I když je možné dosáhnout nějakého typu, například objektů odkazujících *na server* , není možné, aby klient předal objektu odkazem *na* Server. Scénář, který vyžaduje, aby se konverzace mezi klientem a serverem mohla docílit přes službu WCF pomocí duplexní služby. Další informace najdete v tématu [duplexní služby](./feature-details/duplex-services.md).  
   
 ## <a name="summary"></a>Souhrn  
  Vzdálená komunikace .NET je komunikační rozhraní určené k použití pouze v rámci plně důvěryhodných prostředí. Je to starší verze produktu a je podporovaná jenom pro zpětnou kompatibilitu. Neměl by se používat k vytváření nových aplikací. Naopak služba WCF byla navržena s ohledem na zabezpečení a doporučuje se pro nové a stávající aplikace. Microsoft doporučuje, aby se stávající aplikace vzdálené komunikace migrovali na místo toho použití WCF nebo ASP.NET webového rozhraní API.

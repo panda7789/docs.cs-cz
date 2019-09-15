@@ -2,12 +2,12 @@
 title: Výrazy – WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 93d437ae6d20f5d31d80ef3a40f409c589ae084e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1c79d4294ce1e7d6f6fc13e8220f88919c8f6021
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962420"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989754"
 ---
 # <a name="expressions"></a>Výrazy
 Výraz programovací model Windows Workflow Foundation (WF) je jakákoli aktivita, která vrací výsledek. Všechny aktivity výrazů odvozují nepřímo <xref:System.Activities.Activity%601>z, který <xref:System.Activities.OutArgument> obsahuje vlastnost s <xref:System.Activities.Activity%601.Result%2A> názvem jako návratovou hodnotou aktivity. [!INCLUDE[wf1](../../../includes/wf1-md.md)]dodává <xref:System.Activities.Expressions.VariableValue%601> se široké škále aktivit výrazů od jednoduchých, jako je a <xref:System.Activities.Expressions.VariableReference%601>, která poskytuje přístup k proměnné s jedním pracovním postupem prostřednictvím aktivit operátora, složitým aktivitám, jako je například <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> a <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> Tato nabídka přístup k celé šířce Visual Basic jazyka, aby vznikl výsledek. Další aktivity výrazu lze vytvořit odvozením z <xref:System.Activities.CodeActivity%601> nebo. <xref:System.Activities.NativeActivity%601>  
@@ -41,7 +41,7 @@ Výraz programovací model Windows Workflow Foundation (WF) je jakákoli aktivit
   
  Při definování pracovního postupu v kódu lze použít jakékoli aktivity výrazu. Následující příklad ukazuje použití složení aktivit operátoru pro přidání tří čísel.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -70,7 +70,7 @@ Sequence w = new Sequence
   
  Stejný pracovní postup lze vyjádřit kompaktnější pomocí C# výrazů lambda, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -91,7 +91,7 @@ Sequence w = new Sequence
   
  Pracovní postup lze také vyjádřit pomocí aktivit Visual Basic výrazů, jak je znázorněno v následujícím příkladu.  
   
-```  
+```vb  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -113,7 +113,7 @@ Sequence w = new Sequence
 ## <a name="extending-available-expressions-with-custom-expression-activities"></a>Rozšiřování dostupných výrazů pomocí aktivit vlastních výrazů  
  Výrazy v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] jsou rozšiřitelné, což umožňuje vytvořit další aktivity výrazů. Následující příklad ukazuje aktivitu, která vrací součet tří celočíselných hodnot.  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -140,7 +140,7 @@ namespace ExpressionsDemo
   
  Pomocí této nové aktivity můžete přepsat předchozí pracovní postup, který přidal tři hodnoty, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  

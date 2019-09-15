@@ -7,19 +7,19 @@ helpviewer_keywords:
 - Binding markup extensions [WPF]
 - XAML [WPF], Binding markup extension
 ms.assetid: 83d6e2a4-1b0c-4fc8-bd96-b5e98800ab63
-ms.openlocfilehash: 616e405e191cb264a002e903bed60cf04559a675
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6776c89db474668b3aed0e38a3e18359bf93399d
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964904"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991484"
 ---
 # <a name="binding-markup-extension"></a>Rozšíření značek připojení
 Odloží hodnotu vlastnosti na hodnotu vázanou na data, vytvoří objekt mezilehlého výrazu a interpretuje datový kontext, který se vztahuje na element a jeho vazbu v době běhu.  
   
 ## <a name="binding-expression-usage"></a>Použití výrazů vazby  
   
-```  
+```xaml  
 <object property="{Binding}" .../>  
 -or-  
 <object property="{Binding  bindProp1=value1[, bindPropN=valueN]*}" ...  

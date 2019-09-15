@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05634cb319ac69bd76e16e592ba59490b30c9c9d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: ae789e99a1306102c67f2252760e215989132406
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252387"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971629"
 ---
 # <a name="probing-element"></a>\<> element zjišťování
 Určuje základní podadresáře aplikace pro modul CLR (Common Language Runtime), který se má při načítání sestavení vyhledat.  
@@ -68,7 +68,7 @@ Určuje základní podadresáře aplikace pro modul CLR (Common Language Runtime
   
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma nastavení běhového prostředí](index.md)
+- [Schéma nastavení modulu runtime](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Určení umístění sestavení](../../specify-assembly-location.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)
+- [Určení umístění sestavení](../../../../standard/assembly/location.md)
+- [Způsob, jakým modul runtime vyhledává sestavení](../../../deployment/how-the-runtime-locates-assemblies.md)

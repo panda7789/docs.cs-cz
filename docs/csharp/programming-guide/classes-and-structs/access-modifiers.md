@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: 266ece1e63bf6d32bf59406dbc72a9e6bd92eb45
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b415bf143e7da46b3ecd2c0828a3f8151878435a
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924542"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971683"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda lze použít z jiného kódu v sestavení nebo v jiných sestaveních. Následující modifikátory přístupu můžete použít k určení přístupnosti typu nebo člena při jeho deklaraci:  
@@ -44,7 +44,7 @@ Všechny typy a členy typu mají úroveň přístupnosti, která určuje, zda l
   
  Odvozené třídy nemohou mít větší přístupnost než jejich základní typy. Jinými slovy, nemůžete mít veřejnou třídu `B` , která je odvozena z interní třídy. `A` Pokud to bylo povoleno, mělo by to mít vliv `A` na veřejné, protože všichni chránění nebo interní `A` členové jsou k dispozici z odvozené třídy.  
   
- Můžete povolit konkrétním jiným sestavením přístup k interním typům pomocí InternalsVisibleToAttribute. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
+ Můžete povolit konkrétním jiným sestavením přístup k interním typům pomocí InternalsVisibleToAttribute. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).  
   
 ## <a name="class-and-struct-member-accessibility"></a>Přístupnost třídy a člena struktury  
  Členy třídy (včetně vnořených tříd a struktur) lze deklarovat s libovolným šesti typy přístupu. Členy struktury nejde deklarovat jako chráněné, protože struktury nepodporují dědění.  

@@ -2,12 +2,12 @@
 title: Korelace dotazů zprávy LINQ
 ms.date: 03/30/2017
 ms.assetid: b746872e-57b1-4514-b337-53398a0e0deb
-ms.openlocfilehash: b758296970340890403557770f91237c953f5d91
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 202d65914d32245952f308d3115ec93231f95f15
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038134"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989328"
 ---
 # <a name="linq-message-query-correlation"></a>Korelace dotazů zprávy LINQ
 Tato ukázka předvádí, jak provést korelaci založenou na obsahu <xref:System.ServiceModel.Dispatcher.MessageQuery> pomocí vlastní implementace na rozdíl od systému poskytnutého <xref:System.ServiceModel.XPathMessageQuery>systémem.  
@@ -22,7 +22,7 @@ Tato ukázka předvádí, jak provést korelaci založenou na obsahu <xref:Syste
   
 1. Tato ukázka zveřejňuje službu pracovního postupu pomocí koncových bodů HTTP. Pokud chcete tuto ukázku spustit, musí se přidat správné seznamy ACL adresy URL (podrobnosti najdete v tématu [Konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) ), a to buď spuštěním sady Visual Studio jako správce, nebo spuštěním následujícího příkazu na příkazovém řádku se zvýšenými oprávněními, abyste přidali příslušné seznamy ACL. Ujistěte se, že je nahrazena vaše doména a uživatelské jméno.  
   
-    ```  
+    ```console  
     netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%  
     ```  
   

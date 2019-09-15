@@ -5,12 +5,12 @@ ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 419b32f2a460ca153d28206524a38c7c9fa86173
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 4008f38bf4a20113a3f5c865e38222e5b82f2acc
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929384"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991367"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Načtení dat ze souborů a jiných zdrojů
 
@@ -33,7 +33,7 @@ public class HousingData
 {
     [LoadColumn(0)]
     public float Size { get; set; }
- 
+
     [LoadColumn(1, 3)]
     [VectorType(3)]
     public float[] HistoricalPrices { get; set; }
@@ -53,7 +53,7 @@ Atributy poskytují ML.NET více informací o datovém modelu a zdroji dat.
 > [!IMPORTANT]
 > [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute)je vyžadován pouze při načítání dat ze souboru.
 
-Načíst sloupce jako: 
+Načíst sloupce jako:
 
 - Jednotlivé sloupce jako `Size` a `CurrentPrices` ve `HousingData` třídě.
 - Více sloupců v čase ve formě vektoru, jako `HistoricalPrices` `HousingData` ve třídě.
@@ -108,7 +108,7 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 ## <a name="load-data-from-a-relational-database"></a>Načtení dat z relační databáze
 
 > [!NOTE]
-> DatabaseLoader je aktuálně ve verzi Preview. Dá se použít na základě odkazů na balíčky NuGet [Microsoft. ml. experimentální](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) a [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) . 
+> DatabaseLoader je aktuálně ve verzi Preview. Dá se použít na základě odkazů na balíčky NuGet [Microsoft. ml. experimentální](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) a [System. data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) .
 
 ML.NET podporuje načítání dat z nejrůznějších relačních databází [`System.Data`](xref:System.Data) , které podporuje, mezi které patří SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, pokrok, IBM DB2 a spousta dalších.
 
@@ -142,7 +142,7 @@ MLContext mlContext = new MLContext();
 DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```
 
-Definujte připojovací řetězec a příkaz SQL, který se má spustit v databázi, a vytvořte `DatabaseSource` instanci. V této ukázce se používá databáze LocalDB SQL Server s cestou k souboru. DatabaseLoader však podporuje jakýkoli jiný platný připojovací řetězec pro databáze v místním prostředí i v cloudu.  
+Definujte připojovací řetězec a příkaz SQL, který se má spustit v databázi, a vytvořte `DatabaseSource` instanci. V této ukázce se používá databáze LocalDB SQL Server s cestou k souboru. DatabaseLoader však podporuje jakýkoli jiný platný připojovací řetězec pro databáze v místním prostředí i v cloudu.
 
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
@@ -196,7 +196,7 @@ HousingData[] inMemoryCollection = new HousingData[]
 Načtěte kolekci v paměti do [`IDataView`](xref:Microsoft.ML.IDataView) [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) s metodou:
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*)předpokládá, že [`IEnumerable`](xref:System.Collections.IEnumerable) se načte z aplikace je bezpečná pro přístup z více vláken. 
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*)předpokládá, že [`IEnumerable`](xref:System.Collections.IEnumerable) se načte z aplikace je bezpečná pro přístup z více vláken.
 
 ```csharp
 // Create MLContext

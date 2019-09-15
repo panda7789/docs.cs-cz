@@ -1,103 +1,103 @@
 ---
-title: Ukázkový FindPrivateKey – WCF
+title: Ukázka FindPrivateKey – WCF
 ms.date: 12/04/2017
 helpviewer_keywords:
 - FindPrivateKey
 ms.assetid: 16b54116-0ceb-4413-af0c-753bb2a785a6
-ms.openlocfilehash: b89d135d7412f10cb9de1e4bda1aaab14b29cbf0
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4ba4316489c1494da9421bea5c513e44c6eb50a7
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490767"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989874"
 ---
 # <a name="findprivatekey-sample"></a>Ukázka FindPrivateKey
 
-Může být obtížné najít umístění a název souboru privátního klíče přidružené k určité certifikát X.509 v úložišti certifikátů. Nástroj FindPrivateKey.exe usnadňuje tento proces.
+Může být obtížné najít umístění a název souboru privátního klíče přidruženého k určitému certifikátu X. 509 v úložišti certifikátů. Nástroj FindPrivateKey. exe Tento proces usnadňuje.
 
 > [!IMPORTANT]
-> FindPrivateKey je příklad, který má být zkompilovaný před použitím. Najdete v článku [sestavit projekt FindPrivateKey](#to-build-the-findprivatekey-project) pokyny o tom, jak nástroj FindPrivateKey sestavení.
+> FindPrivateKey je ukázka, kterou je třeba před použitím zkompilovat. Pokyny k vytvoření nástroje FindPrivateKey najdete v části [Vytvoření projektu FindPrivateKey](#to-build-the-findprivatekey-project) .
 
-Správce nebo všechny uživatele v počítači jsou nainstalovány certifikáty X.509. Certifikát, ale můžou být dostupné služby spuštěné pod jiným účtem. Například účet NETWORK SERVICE.
+Certifikáty X. 509 jsou nainstalovány správcem nebo jakýmkoli uživatelem v počítači. K certifikátu ale může mít přístup služba spuštěná v jiném účtu. Například účet síťové služby.
 
-Tento účet nesmí mít přístup k souboru privátního klíče, protože certifikát nebyl nainstalován jím původně. Nástroj FindPrivateKey poskytuje umístění souboru s privátním klíčem daný certifikát X.509. Můžete přidat oprávnění nebo odebrat oprávnění k tomuto souboru znáte umístění souboru s privátním klíčem konkrétní certifikátů X.509.
+Tento účet nemusí mít přístup k souboru privátního klíče, protože certifikát nebyl původně nainstalován. Nástroj FindPrivateKey poskytuje umístění daného souboru privátního klíče certifikátu X. 509. Jakmile budete znát umístění konkrétního souboru privátního klíče certifikátů X. 509, můžete oprávnění k tomuto souboru přidat nebo je z něj odebrat.
 
-Ukázky, které používají certifikáty pro zabezpečení, použijte nástroj FindPrivateKey v *Setup.bat* souboru. Jakmile byla nalezena souboru s privátním klíčem, můžete použít jiné nástroje, jako *Cacls.exe* nastavit příslušná přístupová práva do souboru.
+V ukázkách, které používají certifikáty k zabezpečení, se používá nástroj FindPrivateKey v souboru *Setup. bat* . Po nalezení souboru privátního klíče můžete použít jiné nástroje, jako je například *cacls. exe* , a nastavit tak příslušná přístupová práva na daný soubor.
 
-Při spuštění služby Windows Communication Foundation (WCF) uživatelského účtu, jako je například v místním prostředí spustitelný soubor, ujistěte se, že uživatelský účet má k souboru přístup jen pro čtení. Při spuštění služby WCF v rámci Internetové informační služby (IIS) jsou výchozí účty, které je služba spuštěna pod síťové služby na službě IIS 7 a starší nebo identitu fondu aplikací služby IIS 7.5 a novější verze. Další informace najdete v tématu [identity fondu aplikací součásti](/iis/manage/configuring-security/application-pool-identities).
+Při spuštění služby Windows Communication Foundation (WCF) pod uživatelským účtem, jako je například spustitelný soubor v místním prostředí, zajistěte, aby měl uživatelský účet k souboru přístup jen pro čtení. Při spuštění služby WCF pod Internetová informační služba (IIS) výchozí účty, ve kterých je služba spuštěná, jsou síťové služby ve službě IIS 7 a starší verze nebo identita fondu aplikací ve službě IIS 7,5 a novějších verzích. Další informace najdete v tématu [identity fondu aplikací](/iis/manage/configuring-security/application-pool-identities).
 
 ## <a name="examples"></a>Příklady
 
-Při přístupu k certifikátu, pro kterou proces nemá oprávnění pro čtení, zobrazí zprávu o výjimce, podobně jako v následujícím příkladu:
+Při přístupu k certifikátu, pro který proces nemá oprávnění ke čtení, se zobrazí zpráva o výjimce, která je podobná následujícímu příkladu:
 
-```
+```output
 System.ArgumentException was unhandled
 Message="The certificate 'CN=localhost' must have a private key that is capable of key exchange.  The process must have access rights for the private key."
 Source="System.ServiceModel"
 ```
 
-Když k tomu dojde, použijte nástroj FindPrivateKey najít soubor privátního klíče a nastavte přístup pro proces, který je služba spuštěná pod. Například to můžete udělat pomocí nástroje Cacls.exe jak je znázorněno v následujícím příkladu:
+V takovém případě použijte nástroj FindPrivateKey k vyhledání souboru privátního klíče a pak nastavte přístupová práva pro proces, pod kterým je služba spuštěná. To lze provést například pomocí nástroje Cacls. exe, jak je znázorněno v následujícím příkladu:
 
-```
+```console
 cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto\RSA\MachineKeys\8aeda5eb81555f14f8f9960745b5a40d_38f7de48-5ee9-452d-8a5a-92789d7110b1" /E /G "NETWORK SERVICE":R
 ```
 
-#### <a name="to-build-the-findprivatekey-project"></a>Sestavit projekt FindPrivateKey
+#### <a name="to-build-the-findprivatekey-project"></a>Sestavení projektu FindPrivateKey
 
-Stáhněte si projekt, najdete v tématu [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459).
+Pokud si chcete stáhnout projekt, přejděte na [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459).
 
-1. Otevřete Průzkumníka souborů a přejděte *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* složku v umístění adresáře, kam jste nainstalovali vzorku.
+1. Otevřete Průzkumníka souborů a přejděte do složky *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* v umístění adresáře, kam jste si nainstalovali ukázku.
 
-2. Dvakrát klikněte na ikonu souboru .sln k otevření souboru v sadě Visual Studio.
+2. Dvojím kliknutím na ikonu souboru. sln otevřete soubor v aplikaci Visual Studio.
 
-3. V **sestavení** nabídce vyberte možnost **znovu sestavit řešení**.
+3. V nabídce **sestavení** vyberte znovu **Sestavit řešení**.
 
-4. Sestavování řešení se vygeneruje soubor: FindPrivateKey.exe.
+4. Sestavení řešení vygeneruje soubor: FindPrivateKey.exe.
 
 ## <a name="conventionscommand-line-entries"></a>Konvence – položky příkazového řádku
 
- "[*možnost*]" představuje volitelný sadu parametrů.
+ "[*možnost*]" představuje volitelnou sadu parametrů.
 
- "{*možnost*}" představuje povinný sadu parametrů.
+ {*Option*} představuje povinnou sadu parametrů.
 
- "*možnost1* &#124; *možnost2*" představuje možností volby mezi sadu možností.
+ "*možnost1* &#124; *možnost2*" představuje volbu mezi sadami možností.
 
- "\<*hodnotu*>" představuje hodnotu parametru k zapsání.
+ Hodnota > představuje hodnotu parametru, která se má zadat.\<
 
 ## <a name="usage"></a>Použití
 
-```
+```console
 FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]
 ```
 
-kde:
+,
 
-```
-       <subjectName> The subject name of the certificate
-       <thumbprint>  The thumbprint of the certificate (You can use the Certmgr.exe tool to find this)
-       -f            output file name only
-       -d            output directory only
-       -a            output absolute file name
-```
+| Parametr         | Popis                                                                       |
+|-----------------|-----------------------------------------------------------------------------------|
+| `<subjectName>` | Název subjektu certifikátu                                               |
+| `<thumbprint>`  | Kryptografický otisk certifikátu (k jeho zjištění můžete použít nástroj certmgr. exe) |
+| `-f`            | pouze název výstupního souboru                                                             |
+| `-d`            | pouze výstupní adresář                                                             |
+| `-a`            | název absolutního souboru výstupu                                                         |
 
-Pokud nejsou zadány žádné parametry příkazového řádku, se zobrazí tento text nápovědy.
+Pokud nejsou zadány žádné parametry na příkazovém řádku, zobrazí se text nápovědy s těmito informacemi.
 
 ## <a name="examples"></a>Příklady
 
-Tento příklad vyhledá název souboru certifikátu se název předmětu "CN = localhost", v osobním úložišti aktuálního uživatele.
+Tento příklad vyhledá název souboru certifikátu s názvem subjektu "CN = localhost" v osobním úložišti aktuálního uživatele.
 
-```
+```console
 FindPrivateKey My CurrentUser -n "CN=localhost"
 ```
 
-Tento příklad vyhledá název souboru certifikátu se název předmětu "CN = localhost", v osobní uložení aktuálního uživatele a výstupní cesta k adresáři úplné.
+Tento příklad najde název souboru certifikátu s názvem subjektu "CN = localhost", v osobním úložišti aktuálního uživatele a výstupem úplné cesty k adresáři.
 
-```
+```console
 FindPrivateKey My CurrentUser -n "CN=localhost" -a
 ```
 
-Tento příklad vyhledá název souboru certifikátu s kryptografickým otiskem z "03 33 98 63 d0 47 e7 48 71 33 62 64 76 5c 4c 9d 42 1 d 6b 52", v osobním úložišti místního počítače.
+Tento příklad najde název souboru certifikátu s kryptografickým otiskem "03 33 98 63 D0 47 E7 48 71 33 62 64 76 5c 4C 9d 42 1d 6b 52", v osobním úložišti místního počítače.
 
-```
+```console
 FindPrivateKey My LocalMachine -t "03 33 98 63 d0 47 e7 48 71 33 62 64 76 5c 4c 9d 42 1d 6b 52"
 ```

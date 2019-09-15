@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 51c66d6bc2064d8051415de2ac083da478355a99
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 6c8408c0c613e361dae0c1db19f854e9421ca467
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602592"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970383"
 ---
 # <a name="-out-c-compiler-options"></a>-out (C# možnosti kompilátoru)
 Možnost **-out** Určuje název výstupního souboru.  
@@ -29,7 +29,7 @@ Možnost **-out** Určuje název výstupního souboru.
  Název výstupního souboru vytvořeného kompilátorem.  
   
 ## <a name="remarks"></a>Poznámky  
- Na příkazovém řádku je možné zadat více výstupních souborů pro kompilaci. Kompilátor očekává najít jeden nebo více souborů zdrojového kódu za možností **-out** . Pak všechny soubory se zdrojovým kódem budou zkompilovány do výstupního souboru určeného parametrem.  
+ Na příkazovém řádku je možné zadat více výstupních souborů pro kompilaci. Kompilátor očekává najít jeden nebo více souborů zdrojového kódu za možností **-out** . Pak všechny soubory se zdrojovým kódem budou zkompilovány do výstupního souboru **určeného parametrem** .  
   
  Zadejte úplný název a příponu souboru, který chcete vytvořit.  
   
@@ -45,7 +45,7 @@ Možnost **-out** Určuje název výstupního souboru.
   
  Všechny moduly, které jsou vytvořeny jako součást kompilace, se stanou soubory přidruženými k libovolnému sestavení, které je také vytvořeno v kompilaci. K zobrazení přidružených souborů použijte [Ildasm. exe](../../../framework/tools/ildasm-exe-il-disassembler.md) k zobrazení manifestu sestavení.  
   
- Možnost kompilátoru-out je povinná, aby byl spustitelný soubor cílem sestavení typu Friend. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).  
+ Možnost kompilátoru-out je povinná, aby byl spustitelný soubor cílem sestavení typu Friend. Další informace naleznete v tématu [Friend Assemblies](../../../standard/assembly/friend.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -67,5 +67,5 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
 ## <a name="see-also"></a>Viz také:
 
 - [Možnosti kompilátoru jazyka C#](./index.md)
-- [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
+- [Přátelská sestavení](../../../standard/assembly/friend.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

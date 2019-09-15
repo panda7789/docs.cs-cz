@@ -2,34 +2,35 @@
 title: Vytváření vlastních aktivit řízení toku
 ms.date: 03/30/2017
 ms.assetid: 27f409f6-2d1d-4cfb-9765-93eb2ad667d5
-ms.openlocfilehash: f457e6f8cefd7183ca20cb449adf1ac15d7bde79
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8e7d4caad197631509fe80a5b5a08eff4d228c1c
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647147"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989720"
 ---
 # <a name="creating-custom-flow-control-activities"></a>Vytváření vlastních aktivit řízení toku
-Rozhraní .NET Framework obsahuje širokou škálu aktivit řízení toku, které fungují podobně jako abstraktní programovací struktury (například <xref:System.Activities.Statements.Flowchart>) nebo standardní programovacích příkazů (například <xref:System.Activities.Statements.If>). Toto téma se věnuje architektuře jednoho z ukázkových projektů [neobecné ForEach](./samples/non-generic-foreach.md).  
+.NET Framework obsahuje různé aktivity řízení toku, které fungují podobně jako abstraktní programové struktury (například <xref:System.Activities.Statements.Flowchart>) nebo standardní programovací příkazy ( <xref:System.Activities.Statements.If>například). Toto téma popisuje architekturu jednoho z ukázkových projektů, [které nepatří do obecného příkazu foreach](./samples/non-generic-foreach.md).  
   
 ## <a name="creating-the-custom-class"></a>Vytvoření vlastní třídy  
- Protože třída neobecné ForEach muset naplánovat podřízené aktivity, ji budou muset být odvozen od <xref:System.Activities.NativeActivity>, od aktivit, které jsou odvozeny z <xref:System.Workflow.Activities.CodeActivity> tuto funkci nemají.  
+ Vzhledem k tomu, že neobecná třída foreach bude potřebovat naplánovat podřízené aktivity, bude nutné odvozovat z <xref:System.Activities.NativeActivity>, protože aktivity odvozené z <xref:System.Workflow.Activities.CodeActivity> nemají tuto funkci.  
   
-```  
+```csharp  
 public sealed class ForEach : NativeActivity  
-    {  
+{
+}
 ```  
   
- Vlastní třída vyžaduje několik členů pro uložení data používaná aktivitou a poskytuje funkce pro spuštění aktivity podřízené aktivity. Tyto členy, patří:  
+ Vlastní třída vyžaduje několik členů, aby ukládala data používaná aktivitou a poskytovala funkcionalitu pro provádění podřízených aktivit aktivity. Mezi tyto členy patří:  
   
-- `valueEnumerator`: Neveřejné <xref:System.Activities.Variable%601> typu <xref:System.Collections.IEnumerator> použité k iteraci přes kolekci položek. Tento člen je typu <xref:System.Activities.Variable%601> vzhledem k tomu, že se používá interně v činnosti, spíše než argument nebo veřejná vlastnost, která se použije, pokud mají původ mimo aktivitu tento objekt.  
+- `valueEnumerator`: <xref:System.Activities.Variable%601> Typ<xref:System.Collections.IEnumerator> , který se používá k iteraci v kolekci položek, není veřejný. Tento člen je typu <xref:System.Activities.Variable%601> , protože se používá interně v aktivitě, nikoli argument nebo veřejnou vlastnost, která by se použila v případě, že by tento objekt měl mít původ mimo aktivitu.  
   
-- `OnChildComplete`: Veřejná <xref:System.Activities.CompletionCallback> vlastnost, která se spustí po dokončení provádění jednotlivých podřízených. Tento člen je definován jako vlastnosti CLR, protože jeho hodnota se nezmění pro různé instance aktivity.  
+- `OnChildComplete`: Veřejná <xref:System.Activities.CompletionCallback> vlastnost, která se spustí, když každý podřízený uzel dokončí provádění. Tento člen je definován jako vlastnost CLR, protože jeho hodnota se nemění pro různé instance aktivity.  
   
-- `Values`: Kolekce vstupů pro iterace podřízené aktivity. Tento člen je typu <xref:System.Activities.InArgument%601>, protože je zdrojem dat mimo aktivitu, ale obsah kolekce se neočekává změna během provádění aktivity. V případě potřeby funkci chcete-li změnit obsah této kolekce při provádění aktivity (k přidávání nebo odebírání aktivit, například) aktivity tento člen by byl definovaný jako <xref:System.Activities.ActivityAction>, které by byly vyhodnocovány pokaždé, když To se použila, takže změny budou k dispozici pro aktivity.  
+- `Values`: Kolekce vstupů použitých pro iterace podřízené aktivity. Tento člen je typu <xref:System.Activities.InArgument%601>, protože počátek dat je mimo aktivitu, ale během provádění aktivity se neočekává, že se v obsahu kolekce mění. Pokud aktivita potřebuje funkci ke změně obsahu této kolekce v době, kdy byla aktivita spuštěná (pro přidání nebo odebrání aktivit), bude tento člen definovaný jako <xref:System.Activities.ActivityAction>, který by se pak vyhodnotil pokaždé, když bylo k němu přístup, aby byla pro aktivitu k dispozici změny.  
   
-- `Body`: Tento člen definuje aktivitu spustit pro každou položku v `Values` kolekce. Tento člen je definován jako <xref:System.Activities.ActivityAction> tak, aby je vyhodnocen vždy, když je přístupný.  
+- `Body`: Tento člen definuje aktivitu, která má být provedena pro každou položku v `Values` kolekci. Tento člen je definován jako <xref:System.Activities.ActivityAction> , aby byl vyhodnocen při každém jeho použití.  
   
-- `Execute`: Tato metoda používá `InternalExecute`, `OnForEachComplete`, a `GetStateAndExecute` neveřejné členy naplánovat spuštění a přiřaďte obslužné rutiny dokončení podřízené aktivity definované v těle členu.  
+- `Execute`: Tato metoda používá `InternalExecute` `OnForEachComplete`neveřejné členy k naplánování spuštění a přiřazení obslužné rutiny dokončení podřízené aktivity definované v těle člena. `GetStateAndExecute`  
   
-- `CacheMetadata`: Tento člen modul runtime poskytuje informace potřebné ke spuštění aktivity. Ve výchozím nastavení, aktivity vaší `CacheMetadata` metoda informuje runtime všechny veřejné členy aktivity, ale vzhledem k tomu, že tato aktivita používá soukromé členy pro některé funkce, je potřeba informovat runtime jejich existenci tak, aby modul runtime může mít na paměti je. V takovém případě `CacheMetadata` přepsat funkci tak, aby privátní `valueEnumerator` člen je přístupný. Tento člen také vytvoří argument hodnoty pro aktivitu tak, aby se může být předán v aktivity za běhu.
+- `CacheMetadata`: Tento člen poskytuje modul runtime s informacemi, které potřebuje k provedení aktivity. Ve výchozím nastavení bude `CacheMetadata` metoda aktivity informovat modul runtime všech veřejných členů aktivity, ale vzhledem k tomu, že tato aktivita používá pro některé funkce soukromé členy, musí informovat modul runtime své existence, aby mohl modul runtime vědět ihned. V tomto případě `CacheMetadata` je funkce přepsána tak, aby byl `valueEnumerator` k soukromému členu umožněn pøístup. Tento člen také vytvoří argument pro hodnoty aktivity tak, aby je bylo možné předat do aktivity během provádění.

@@ -1,19 +1,18 @@
 ---
-ms.openlocfilehash: eb3cfdfd39444536f423b65166a3413db67a0e01
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 3a82822aae281ea7e873ba649f05b1d68686ec69
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67802943"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70997587"
 ---
-### <a name="item-scrolling-a-flat-list-with-items-of-different-pixel-height"></a>Seznam bez stromové struktury s položek různé výšky pixel posouvání položek
+### <a name="item-scrolling-a-flat-list-with-items-of-different-pixel-height"></a>Item – posouvání nestrukturovaného seznamu s položkami různých pixelů na výšku
 
 |   |   |
 |---|---|
-|Podrobnosti|Když <xref:System.Windows.Controls.ItemsControl?displayProperty=name> zobrazuje kolekci pomocí virtualizace (<code>IsVirtualizing=true</code>) a položky posouvání (<code>ScrollUnit=Item</code>), a posune ovládací prvek k zobrazení položek se liší od jeho okolím, jejichž výšku v pixelech <xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=name> Iteruje přes všechny položky v kolekci. Uživatelské rozhraní přestane reagovat při této iterace; Pokud kolekce je velká, to může být vnímané jako zablokování. Iterace dojde za jiných okolností, dokonce i v předchozích verzích rozhraní .NET Framework. Například dochází při posouvání pixel (<code>ScrollUnit=Pixel</code>) při zjištění položku s jinou výšku a při posouvání položek hierarchická data (, jako <xref:System.Windows.Controls.TreeView?displayProperty=name> nebo <xref:System.Windows.Controls.ItemsControl?displayProperty=name> s seskupení povoleno) při zjištění položka se odlišný počet podřízených položek než jeho okolím. Pro případ výšku položky posouvání a jiné pixel iterace byla zavedena v rozhraní .NET Framework 4.6.1 opravit chyby v rozložení hierarchická data.  Pokud jsou data s plochou (žádnou hierarchii) a rozhraní .NET Framework 4.6.2 není nutné ho v tomto případě není potřeba.|
-|Doporučení|Dojde k iteraci v rozhraní .NET Framework 4.6.1, ale ne v dřívějších verzích – to znamená, pokud <xref:System.Windows.Controls.ItemsControl?displayProperty=name> je položka-posouvání plochý seznam s položkami jinou vyska - existují dvě náhrad:<ol><li>Nainstalujte rozhraní .NET Framework 4.6.2.</li><li>Nainstalujte opravu hotfix HR 1605 pro rozhraní .NET Framework 4.6.1.</li></ol>|
+|Podrobnosti|Když zobrazí kolekci pomocí virtualizace (<code>IsVirtualizing=true</code>) a posouvání položek (<code>ScrollUnit=Item</code>), a když se ovládací prvek posune k zobrazení položky, jejíž výška v <xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=name> pixelech se liší od sousedů, iterace všech <xref:System.Windows.Controls.ItemsControl?displayProperty=name> položky v kolekci. Uživatelské rozhraní nereaguje během této iterace; Pokud je kolekce velká, lze ji vnímat jako zablokování. K iteraci dochází v jiných případech, dokonce i v předchozích verzích .NET Framework. K tomu dochází například v případě, že se při<code>ScrollUnit=Pixel</code>zjištění položky s jinou výškou v pixelech posune pixely () a když se při <xref:System.Windows.Controls.TreeView?displayProperty=name> <xref:System.Windows.Controls.ItemsControl?displayProperty=name> zjištění položky s různý počet podřízených položek, než jsou sousední. V případě posunu položek a jiné výšky v pixelech byl iterace představena v .NET Framework 4.6.1, aby opravila chyby v rozložení hierarchických dat.  Není potřeba, pokud jsou data plochá (bez hierarchie) a .NET Framework 4.6.2 v tomto případě to neudělá.|
+|Doporučení|Pokud se iterace vyskytne v .NET Framework 4.6.1, ale ne v dřívějších verzích – to znamená <xref:System.Windows.Controls.ItemsControl?displayProperty=name> , že pokud se jedná o položku, která je v nestrukturovaném seznamu s položkami jiné výšky v pixelech, existují dvě nápravná opatření:<ol><li>Nainstalujte .NET Framework 4.6.2.</li><li>Nainstalujte opravu hotfix HR 1605 pro .NET Framework 4.6.1.</li></ol>|
 |Scope|Vedlejší|
 |Version|4.6.1|
 |type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.VirtualizingStackPanel?displayProperty=nameWithType></li></ul>|
-

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8c3c293e28788143cd1bed07acc941d448700f2
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: a5f76f60c8474b1503dc4cebeeafe241cd40be96
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851477"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970598"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
 Importér ovládacích prvků ActiveX převede definice typů v knihovně typů modelu COM pro ovládací prvek ActiveX na ovládací prvek Windows Forms.  
@@ -42,7 +42,7 @@ aximp [options]{file.dll | file.ocx}
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|`/delaysign`|Určuje, že Aximp.exe podepíše výsledný ovládací prvek pomocí zpožděného podepisování. Tuto možnost je nutné zadat buď `/keycontainer:`pomocí možnosti, `/keyfile:`nebo. `/publickey:` Další informace o procesu opožděného podepisování naleznete v tématu [Zpožděné podepisování sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md).|  
+|`/delaysign`|Určuje, že Aximp.exe podepíše výsledný ovládací prvek pomocí zpožděného podepisování. Tuto možnost je nutné zadat buď `/keycontainer:`pomocí možnosti, `/keyfile:`nebo. `/publickey:` Další informace o procesu opožděného podepisování naleznete v tématu [Zpožděné podepisování sestavení](../../standard/assembly/delay-sign.md).|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/keycontainer:` *containerName*|Podepíše výsledný ovládací prvek se silným názvem pomocí dvojice veřejného a privátního klíče nalezené v kontejneru klíčů určeném parametrem *ContainerName*.|  
 |`/keyfile:`*název souboru*|Podepíše výsledný ovládací prvek se silným názvem pomocí páru oficiálního veřejného/soukromého klíče vydavatele, který se nachází v *souboru filename*.|  

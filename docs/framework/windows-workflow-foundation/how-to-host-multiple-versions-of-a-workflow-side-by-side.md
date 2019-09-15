@@ -5,118 +5,78 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09c575df-e0a3-4f3b-9e01-a7ac59d65287
-ms.openlocfilehash: 85792aea8a72ffc0c9b579473332756c6ca3bb47
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 820ed324c8095e2f9f2823513a37965099f42c48
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663841"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989647"
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>Postupy: Hostování několika verzí pracovního postupu současně
 
-`WorkflowIdentity` umožňuje vývojářům aplikací pracovní postup přidružit název a verze definice pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Tento krok úvodního kurzu ukazuje, jak používat `WorkflowIdentity` k hostování několika verzí pracovního postupu ve stejnou dobu.
+`WorkflowIdentity`umožňuje vývojářům aplikací pracovních postupů přidružit název a verzi k definici pracovního postupu a tyto informace budou přidruženy k trvalé instanci pracovního postupu. Tyto informace o identitě mohou vývojáři aplikací pracovních postupů použít k povolení scénářů, jako je souběžné spouštění více verzí definice pracovního postupu, a poskytuje základní kámen pro jiné funkce, jako je například dynamická aktualizace. Tento krok v tomto kurzu ukazuje, jak použít `WorkflowIdentity` k hostování více verzí pracovního postupu současně.
 
 > [!NOTE]
-> Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).
+> Pokud si chcete stáhnout dokončenou verzi nebo zobrazit návod k videu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45)-začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).
 
 ## <a name="in-this-topic"></a>V tomto tématu
 
-V tomto kroku kurzu `WriteLine` aktivitám v pracovním postupu jsou upraveny pro poskytnutí dalších informací a nový `WriteLine` je aktivita přidána. Je uložená kopie původního sestavení pracovního postupu a hostitelské aplikace se aktualizuje tak, aby ji můžete spustit původní a aktualizovaný pracovní postupy ve stejnou dobu.
+V tomto kroku kurzu `WriteLine` jsou aktivity v pracovním postupu upraveny tak, aby poskytovaly Další informace a přidala se nová `WriteLine` aktivita. Kopie původního sestavení pracovního postupu je uložena a hostitelská aplikace je aktualizována tak, aby mohla spustit jak původní, tak i aktualizované pracovní postupy.
 
-- [Chcete-li kopii projektu NumberGuessWorkflowActivities](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_BackupCopy)
+- [Vytvoření kopie projektu NumberGuessWorkflowActivities](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_BackupCopy)
 
-- [Chcete-li aktualizovat pracovní postupy](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflows)
+- [Postup aktualizace pracovních postupů](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflows)
 
-  - [Na aktualizaci pracovního postupu stavový stroj StateMachine](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateStateMachine)
+  - [Aktualizace pracovního postupu StateMachine](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateStateMachine)
 
-  - [Na aktualizaci pracovního postupu vývojového diagramu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateFlowchart)
+  - [Aktualizace pracovního postupu vývojového diagramu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateFlowchart)
 
-  - [Chcete-li aktualizovat sekvenčního pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateSequential)
+  - [Postup aktualizace sekvenčního pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateSequential)
 
-- [Chcete-li aktualizovat WorkflowVersionMap zahrnovat předchozí verze pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflowVersionMap)
+- [Aktualizace WorkflowVersionMap tak, aby zahrnovalo předchozí verze pracovního postupu](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_UpdateWorkflowVersionMap)
 
 - [Sestavení a spuštění aplikace](how-to-host-multiple-versions-of-a-workflow-side-by-side.md#BKMK_BuildAndRun)
 
 > [!NOTE]
-> Před provedením kroků v tomto tématu, spusťte aplikaci, spustit několik pracovních postupů u každého typu a provedení jedné nebo dvou pokusů u každé z nich. Tyto trvalý pracovní postupy se používají v tomto kroku a následující krok [jak: Aktualizace definice běžící Instance pracovního postupu](how-to-update-the-definition-of-a-running-workflow-instance.md).
+> Než budete postupovat podle kroků v tomto tématu, spusťte aplikaci, spusťte několik pracovních postupů každého typu a proveďte jednu nebo dvě odhady pro každé z nich. V tomto kroku se používají tyto trvalé pracovní postupy a následující krok, [jak: Aktualizuje definici spuštěné instance](how-to-update-the-definition-of-a-running-workflow-instance.md)pracovního postupu.
 
 > [!NOTE]
-> Každý krok úvodního kurzu Začínáme závisí na předchozí kroky. Pokud jste neprovedli v předchozích krocích můžete stáhnout úplnou verzi kurzem z [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).
+> Každý krok v kurzu Začínáme závisí na předchozích krocích. Pokud jste nedokončili předchozí kroky, můžete si stáhnout dokončenou verzi kurzu z [programovací model Windows Workflow Foundation (WF45) – začínáme kurzu](https://go.microsoft.com/fwlink/?LinkID=248976).
 
-### <a name="BKMK_BackupCopy"></a> Chcete-li kopii projektu NumberGuessWorkflowActivities
+### <a name="BKMK_BackupCopy"></a>Vytvoření kopie projektu NumberGuessWorkflowActivities
 
-1. Otevřete **WF45GettingStartedTutorial** řešení ve Visual Studio 2012, pokud není otevřen.
+1. Otevřete řešení **WF45GettingStartedTutorial** v aplikaci Visual Studio 2012, pokud není otevřené.
 
-2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.
+2. Stisknutím kombinace kláves CTRL + SHIFT + B Sestavte řešení.
 
-3. Zavřít **WF45GettingStartedTutorial** řešení.
+3. Zavřete řešení **WF45GettingStartedTutorial** .
 
-4. Otevřete Průzkumníka Windows a přejděte do složky, kde se nachází soubor kurz řešení a složky projektu.
+4. Otevřete Průzkumníka Windows a přejděte do složky, kde se nachází soubor řešení kurzu a složky projektu.
 
-5. Vytvořte novou složku s názvem **PreviousVersions** ve stejné složce jako **NumberGuessWorkflowHost** a **NumberGuessWorkflowActivities**. Tato složka se používá pro jiné sestavení, které obsahují různé verze pracovních postupech, používat v dalších kroků kurzu.
+5. Vytvořte novou složku s názvem **PreviousVersions** ve stejné složce jako **NumberGuessWorkflowHost** a **NumberGuessWorkflowActivities**. Tato složka slouží k zahrnutí sestavení, která obsahují různé verze pracovních postupů použitých v následujících krocích kurzu.
 
-6. Přejděte **NumberGuessWorkflowActivities\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu). Kopírování **NumberGuessWorkflowActivities.dll** a vložte ho do **PreviousVersions** složky.
+6. Přejděte do složky **NumberGuessWorkflowActivities\bin\debug** (nebo **bin\Release** v závislosti na nastavení projektu). Zkopírujte **NumberGuessWorkflowActivities. dll** a vložte ho do složky **PreviousVersions** .
 
-7. Přejmenovat **NumberGuessWorkflowActivities.dll** v **PreviousVersions** složku **NumberGuessWorkflowActivities_v1.dll**.
+7. Přejmenujte **NumberGuessWorkflowActivities. dll** ve složce **PreviousVersions** na **NumberGuessWorkflowActivities_v1. dll**.
 
     > [!NOTE]
-    > Kroky v tomto tématu ukazují jeden způsob, jak spravovat sestavení použít tak, aby obsahovala více verzí pracovních postupů. Také lze použít jiné metody, jako je například silné názvy sestavení a jejich registrace v globální mezipaměti sestavení.
+    > Kroky v tomto tématu ukazují jeden ze způsobů, jak spravovat sestavení používaná k tomu, aby obsahovalo více verzí pracovních postupů. Jiné metody, jako je například silné pojmenování sestavení a jejich registrování v globální mezipaměti sestavení (GAC), lze také použít.
 
-8. Vytvořte novou složku s názvem **NumberGuessWorkflowActivities_du** ve stejné složce jako **NumberGuessWorkflowHost**, **NumberGuessWorkflowActivities**a nově Přidání **PreviousVersions** složky a zkopírujte všechny soubory a podsložky ze **NumberGuessWorkflowActivities** do nové složky  **NumberGuessWorkflowActivities_du** složky. Tuto záložní kopii projektu pro počáteční verze aktivit se používá v [jak: Aktualizace definice běžící Instance pracovního postupu](how-to-update-the-definition-of-a-running-workflow-instance.md).
+8. Vytvořte novou složku s názvem **NumberGuessWorkflowActivities_du** ve stejné složce jako **NumberGuessWorkflowHost**, **NumberGuessWorkflowActivities**a nově přidanou složku **PreviousVersions** a zkopírujte všechny soubory a podsložky ze složky **NumberGuessWorkflowActivities** do nové složky **NumberGuessWorkflowActivities_du** . Tato záložní kopie projektu pro počáteční verzi aktivit se používá v [tématu Postupy: Aktualizuje definici spuštěné instance](how-to-update-the-definition-of-a-running-workflow-instance.md)pracovního postupu.
 
-9. Znovu otevřete **WF45GettingStartedTutorial** řešení v sadě Visual Studio 2012.
+9. Znovu otevřete řešení **WF45GettingStartedTutorial** v aplikaci Visual Studio 2012.
 
-### <a name="BKMK_UpdateWorkflows"></a> Chcete-li aktualizovat pracovní postupy
+### <a name="BKMK_UpdateWorkflows"></a>Postup aktualizace pracovních postupů
 
-V této části se aktualizují definice pracovního postupu. Dva `WriteLine` aktivity, které váš názor na odhad uživatele jsou aktualizované a nový `WriteLine` je aktivita přidána, která poskytuje další informace o hry po uhodnout číslo.
+V této části se aktualizují definice pracovních postupů. Dvě `WriteLine` aktivity, které poskytují zpětnou vazbu na odhad uživatele, se aktualizují a přidají se nové `WriteLine` aktivity, které po odhadu tohoto počtu poskytují další informace o hře.
 
-#### <a name="BKMK_UpdateStateMachine"></a> Na aktualizaci pracovního postupu stavový stroj StateMachine
+#### <a name="BKMK_UpdateStateMachine"></a>Aktualizace pracovního postupu StateMachine
 
-1. V **Průzkumníka řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **StateMachineNumberGuessWorkflow.xaml**.
+1. V **Průzkumník řešení**v projektu **NumberGuessWorkflowActivities** poklikejte na **StateMachineNumberGuessWorkflow. XAML**.
 
-2. Dvakrát klikněte **uhodnout nesprávné** přechodu na stavový počítač.
+2. Dvakrát klikněte na **odhad nesprávného** přechodu na stavovém počítači.
 
-3. Aktualizace `Text` z nejvíce vlevo `WriteLine` v `If` aktivity.
-
-    ```vb
-    Guess & " is too low."
-    ```
-
-    ```csharp
-    Guess + " is too low."
-    ```
-
-4. Aktualizace `Text` z úplně vpravo `WriteLine` v `If` aktivity.
-
-    ```vb
-    Guess & " is too high."
-    ```
-
-    ```csharp
-    Guess + " is too high."
-    ```
-
-5. Vraťte se do celkového stavu počítače zobrazení v Návrháři postupu provádění kliknutím **stavový stroj StateMachine** z jeho zobrazení v horní části návrháře postupu provádění.
-
-6. Dvakrát klikněte **odhad správný** přechodu na stavový počítač.
-
-7. Přetáhněte **WriteLine** aktivita z **primitiv** část **nástrojů** a umístěte ho na **Sem přetáhněte akci aktivitu** popisek Přechod.
-
-8. Zadejte následující výraz do `Text` vlastnosti.
-
-    ```vb
-    Guess & " is correct. You guessed it in " & Turns & " turns."
-    ```
-
-    ```csharp
-    Guess + " is correct. You guessed it in " + Turns + " turns."
-    ```
-
-#### <a name="BKMK_UpdateFlowchart"></a> Na aktualizaci pracovního postupu vývojového diagramu
-
-1. V **Průzkumníka řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **FlowchartNumberGuessWorkflow.xaml**.
-
-2. Aktualizace `Text` z nejvíce vlevo `WriteLine` aktivity.
+3. Aktualizuje v `If` aktivitě levou stranu `WriteLine`. `Text`
 
     ```vb
     Guess & " is too low."
@@ -126,7 +86,7 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is too low."
     ```
 
-3. Aktualizace `Text` z úplně vpravo `WriteLine` aktivity.
+4. Aktualizujte `WriteLine` v`If`aktivitěnejvícevpravo. `Text`
 
     ```vb
     Guess & " is too high."
@@ -136,9 +96,13 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is too high."
     ```
 
-4. Přetáhněte **WriteLine** aktivita z **primitiv** část **nástrojů** a umístěte ho na místa přetažení `True` akce horní `FlowDecision` . `WriteLine` Je aktivita přidána do vývojového diagramu a propojit s `True` akce `FlowDecision`.
+5. Kliknutím na položku **StateMachine** v horní části návrháře pracovních postupů se vrátíte do zobrazení celkového stavového počítače v Návrháři pracovního postupu.
 
-5. Zadejte následující výraz do `Text` vlastnosti.
+6. Dvakrát klikněte na **odhad správného** přechodu na Stavový počítač.
+
+7. Přetáhněte aktivitu **WriteLine** z oddílu **Primitivs** v **sadě nástrojů** a přetáhněte ji na **aktivitu akce přetažení** na tento přechod.
+
+8. Do `Text` pole vlastností zadejte následující výraz.
 
     ```vb
     Guess & " is correct. You guessed it in " & Turns & " turns."
@@ -148,11 +112,11 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is correct. You guessed it in " + Turns + " turns."
     ```
 
-#### <a name="BKMK_UpdateSequential"></a> Chcete-li aktualizovat sekvenčního pracovního postupu
+#### <a name="BKMK_UpdateFlowchart"></a>Aktualizace pracovního postupu vývojového diagramu
 
-1. V **Průzkumníka řešení**v části **NumberGuessWorkflowActivities** projektu, klikněte dvakrát na **SequentialNumberGuessWorkflow.xaml**.
+1. V **Průzkumník řešení**v projektu **NumberGuessWorkflowActivities** poklikejte na **FlowchartNumberGuessWorkflow. XAML**.
 
-2. Aktualizace `Text` z nejvíce vlevo `WriteLine` v `If` aktivity.
+2. Aktualizuje aktivitu nejvíce `WriteLine`vlevo. `Text`
 
     ```vb
     Guess & " is too low."
@@ -162,7 +126,7 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is too low."
     ```
 
-3. Aktualizace `Text` z úplně vpravo `WriteLine` aktivity v `If` aktivity.
+3. Aktualizujte aktivitu, která je nejvíce `WriteLine` vpravo. `Text`
 
     ```vb
     Guess & " is too high."
@@ -172,9 +136,9 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is too high."
     ```
 
-4. Přetáhněte **WriteLine** aktivita z **primitiv** část **nástrojů** a umístěte ho po **DoWhile** aktivitu tak, aby  **WriteLine** je poslední aktivita v kořenovém adresáři `Sequence` aktivity.
+4. Přetáhněte aktivitu **WriteLine** z oddílu **primitivs** v **sadě nástrojů** a umístěte ji na místo odkládacího bodu `True` pro akci na nejvyšší `FlowDecision`úrovni. Aktivita se přidá do vývojového diagramu a propojí `True` se s akcí `FlowDecision`. `WriteLine`
 
-5. Zadejte následující výraz do `Text` vlastnosti.
+5. Do `Text` pole vlastností zadejte následující výraz.
 
     ```vb
     Guess & " is correct. You guessed it in " & Turns & " turns."
@@ -184,11 +148,47 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     Guess + " is correct. You guessed it in " + Turns + " turns."
     ```
 
-### <a name="BKMK_UpdateWorkflowVersionMap"></a> Chcete-li aktualizovat WorkflowVersionMap zahrnovat předchozí verze pracovního postupu
+#### <a name="BKMK_UpdateSequential"></a>Postup aktualizace sekvenčního pracovního postupu
 
-1. Dvakrát klikněte na panel **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projekt tak, aby ho otevřete.
+1. V **Průzkumník řešení**v projektu **NumberGuessWorkflowActivities** poklikejte na **SequentialNumberGuessWorkflow. XAML**.
 
-2. Přidejte následující `using` (nebo `Imports`) příkazy do horní části souboru k ostatním `using` (nebo `Imports`) příkazy.
+2. Aktualizuje v `If` aktivitě levou stranu `WriteLine`. `Text`
+
+    ```vb
+    Guess & " is too low."
+    ```
+
+    ```csharp
+    Guess + " is too low."
+    ```
+
+3. Aktualizujte `WriteLine` aktivitu`If` na nejvyšší úrovni aktivity. `Text`
+
+    ```vb
+    Guess & " is too high."
+    ```
+
+    ```csharp
+    Guess + " is too high."
+    ```
+
+4. Přetáhněte aktivitu **WriteLine** z oddílu **primitivs** v **sadě nástrojů** a umístěte ji za aktivitu **DoWhile** , aby byla **WriteLine** koncová aktivita v kořenové `Sequence` aktivitě.
+
+5. Do `Text` pole vlastností zadejte následující výraz.
+
+    ```vb
+    Guess & " is correct. You guessed it in " & Turns & " turns."
+    ```
+
+    ```csharp
+    Guess + " is correct. You guessed it in " + Turns + " turns."
+    ```
+
+### <a name="BKMK_UpdateWorkflowVersionMap"></a>Aktualizace WorkflowVersionMap tak, aby zahrnovalo předchozí verze pracovního postupu
+
+1. Poklikejte na **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap. vb**) v rámci projektu **NumberGuessWorkflowHost** a otevřete ho.
+
+2. Do horní části `using` souboru `Imports` `using` přidejtenásledujícípříkazy`Imports`(nebo).
 
     ```vb
     Imports System.Reflection
@@ -200,7 +200,7 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     using System.IO;
     ```
 
-3. Přidejte tři nové identity pracovního postupu pod tři existující deklarace identity pracovního postupu. Tyto nové `v1` pracovního postupu se použije identity poskytnout definici správné pracovního postupu pro pracovní postupy spuštěné před byly provedeny aktualizace.
+3. Přidejte tři nové identity pracovního postupu hned pod tři existující deklarace identity pracovního postupu. Tyto nové `v1` identity pracovního postupu budou použity k zajištění správné definice pracovního postupu pro pracovní postupy zahájené před provedením aktualizací.
 
     ```vb
     'Current version identities.
@@ -226,7 +226,7 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     static public WorkflowIdentity SequentialNumberGuessIdentity_v1;
     ```
 
-4. V `WorkflowVersionMap` konstruktoru, aktualizace `Version` vlastnost tři aktuální identity pracovního postupu k `2.0.0.0`.
+4. V konstruktoru aktualizujte vlastnost tří aktuálních identit pracovního postupu na `2.0.0.0`. `Version` `WorkflowVersionMap`
 
     ```vb
     'Add the current workflow version identities.
@@ -281,9 +281,9 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     map.Add(SequentialNumberGuessIdentity, new SequentialNumberGuessWorkflow());
     ```
 
-    Kód, který přidá aktuálních verzích pracovních postupů do slovníku používá aktuální verze, které je odkazováno v projektu, takže není potřeba aktualizovat kód, který inicializuje definice pracovního postupu.
+    Kód v, který přidá aktuální verze pracovních postupů do slovníku, používá aktuální verze, které jsou odkazovány v projektu, takže kód, který inicializuje definice pracovního postupu, není nutné aktualizovat.
 
-5. Přidejte následující kód do konstruktoru hned za kód, který se přidá do slovníku aktuální verze.
+5. Přidejte následující kód do konstruktoru hned za kód, který přidá aktuální verze do slovníku.
 
     ```vb
     'Initialize the previous workflow version identities.
@@ -327,9 +327,9 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     };
     ```
 
-    Tyto identity pracovního postupu jsou spojeny s počáteční verze odpovídající definice pracovního postupu.
+    Tyto identity pracovního postupu jsou přidruženy k počáteční verzi odpovídajících definicí pracovních postupů.
 
-6. V dalším kroku načíst sestavení, které obsahuje počáteční verze definice pracovního postupu a vytvořte a přidejte odpovídající definice pracovního postupu do slovníku.
+6. Dále načtěte sestavení, které obsahuje počáteční verzi definice pracovního postupu, a vytvořte a přidejte odpovídající definice pracovního postupu do slovníku.
 
     ```vb
     'Add the previous version workflow identities to the dictionary along with
@@ -369,7 +369,7 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
         v1Assembly.CreateInstance("NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow") as Activity);
     ```
 
-    V následujícím příkladu je úplný seznam pro aktualizaci `WorkflowVersionMap` třídy.
+    Následující příklad je úplným seznamem pro aktualizovanou `WorkflowVersionMap` třídu.
 
     ```vb
     Public Module WorkflowVersionMap
@@ -552,13 +552,13 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     }
     ```
 
-### <a name="BKMK_BuildAndRun"></a> Sestavení a spuštění aplikace
+### <a name="BKMK_BuildAndRun"></a>Sestavení a spuštění aplikace
 
-1. Stiskněte kombinaci kláves CTRL + SHIFT + B pro vytvoření aplikace a potom CTRL + F5 ke spuštění.
+1. Stisknutím kombinace kláves CTRL + SHIFT + B sestavte aplikaci a spusťte klávesovou zkratku CTRL + F5.
 
-2. Začněte kliknutím na nový pracovní postup **novou hru**. Verze pracovního postupu se zobrazí v okně Stav a zahrnuje aktualizovanou verzi z přidruženého `WorkflowIdentity`. Poznamenejte si `InstanceId` tak můžete zobrazit soubor sledování pracovního postupu po dokončení a až do dokončení hra, zadejte pokusů. Všimněte si, jak odhad uživatele se zobrazí v informace zobrazené v okně Stav na základě aktualizací na `WriteLine` aktivity.
+2. Kliknutím na **Nová hra**spusťte nový pracovní postup. Verze pracovního postupu se zobrazí v okně stav a v případě, že se aktualizuje aktualizovaná verze z `WorkflowIdentity`přidruženého. Poznamenejte si, `InstanceId` abyste mohli zobrazit soubor sledování pracovního postupu po jeho dokončení a pak zadat odhad, dokud se hra nedokončí. Všimněte si, jak se zobrazí odhad uživatele v informacích zobrazených v okně stav na základě aktualizací `WriteLine` aktivit.
 
-    ```
+    ```console
     Please enter a number between 1 and 10
     5 is too high.
     Please enter a number between 1 and 10
@@ -570,11 +570,11 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     ```
 
     > [!NOTE]
-    > Aktualizovaný text z `WriteLine` aktivity se zobrazí, ale výstup finální `WriteLine` je aktivitou, která byla přidána v tomto tématu. Důvodem je, že se aktualizoval stav okna `PersistableIdle` obslužné rutiny. Protože pracovní postup dokončí a nepřekračuje nečinnosti za poslední aktivitu `PersistableIdle` obslužná rutina není volána. Ale podobná zpráva se zobrazí v okně Stav podle `Completed` obslužné rutiny. V případě potřeby kód může být přidán do `Completed` obslužnou rutinu k extrakci textu z `StringWriter` a zobrazí se stavové okno.
+    > Zobrazí se aktualizovaný text z `WriteLine` aktivit, ale výstup konečné `WriteLine` aktivity, která byla přidána v tomto tématu, není. Důvodem je, že okno stavu je aktualizováno `PersistableIdle` obslužnou rutinou. Protože pracovní postup skončí a nepracuje po konečné aktivitě, `PersistableIdle` obslužná rutina není volána. Nicméně podobná zpráva se zobrazí v okně `Completed` stav obslužné rutiny. V případě potřeby lze kód přidat k `Completed` obslužné rutině pro extrakci textu z okna `StringWriter` a jeho zobrazení do stavového okna.
 
-3. Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowHost\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu) a otevřete soubor sledování pomocí poznámkového bloku, který odpovídá k dokončení pracovního postupu. Pokud jste neprovedli si `InstanceId`, správné sledování souboru lze identifikovat pomocí **datum změny** informace v Průzkumníku Windows.
+3. Otevřete Průzkumníka Windows a přejděte do složky **NumberGuessWorkflowHost\bin\debug** (nebo **bin\Release** v závislosti na nastavení projektu) a otevřete sledovací soubor pomocí poznámkového bloku, který odpovídá dokončenému pracovnímu postupu. Pokud jste si poznamenali `InstanceId`, že se vám nepovedlo poznamenat, můžete pomocí informací o **změně data** v Průzkumníkovi Windows určit správný sledovací soubor.
 
-    ```
+    ```console
     Please enter a number between 1 and 10
     5 is too high.
     Please enter a number between 1 and 10
@@ -585,8 +585,8 @@ V této části se aktualizují definice pracovního postupu. Dva `WriteLine` ak
     2 is correct. You guessed it in 4 turns.
     ```
 
-    Aktualizovaný `WriteLine` výstup je obsažený v souboru sledování, včetně výstup `WriteLine` , který byl přidán v tomto tématu.
+    Aktualizovaný `WriteLine` výstup je obsažen v souboru sledování, včetně výstupu `WriteLine` , který byl přidán v tomto tématu.
 
-4. Přepněte zpátky na číslo využití aplikace a vyberte jednu z pracovních postupů, které byla spuštěna dříve, než byly provedeny aktualizace. Zobrazením pod stavové okno se zobrazí informace o verzi můžete identifikovat verzi aktuálně vybraného pracovního postupu. Zadejte několik pokusů a Všimněte si, že stav aktualizuje shodu `WriteLine` aktivity výstup z předchozí verze a nezahrnují odhad uživatele. Důvodem je, že tyto pracovní postupy používají předchozí definice pracovního postupu, který nemá `WriteLine` aktualizace.
+4. Přepněte zpět na číslo odhadované aplikace a vyberte jeden z pracovních postupů, které byly spuštěny před provedením aktualizací. Verzi aktuálně vybraného pracovního postupu můžete zjistit tak, že prohlížíte informace o verzi zobrazené pod oknem stav. Zadejte několik odhadů a Všimněte si, že se aktualizace stavu `WriteLine` shodují s výstupem aktivity z předchozí verze a nezahrnují odhad uživatele. Důvodem je, že tyto pracovní postupy používají definici předchozí pracovní postup, která `WriteLine` nemá aktualizace.
 
-    V dalším kroku [jak: Aktualizovat definici spuštění instance pracovního postupu](how-to-update-the-definition-of-a-running-workflow-instance.md), spouštění `v1` instancí pracovních postupů jsou aktualizovány tak, že obsahují nové funkce, jako `v2` instancí.
+    V dalším kroku [: Aktualizujte definici spuštěné instance](how-to-update-the-definition-of-a-running-workflow-instance.md)pracovního postupu, spuštěné `v1` instance pracovního postupu se aktualizují, aby obsahovaly nové funkce jako `v2` instance.

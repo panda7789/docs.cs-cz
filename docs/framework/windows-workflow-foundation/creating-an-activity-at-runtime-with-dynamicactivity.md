@@ -1,39 +1,39 @@
 ---
-title: Vytvoření aktivity za běhu pomocí dynamické aktivity
+title: Vytvoření aktivity za běhu pomocí DynamicActivity
 ms.date: 03/30/2017
 ms.assetid: 1af85cc6-912d-449e-90c5-c5db3eca5ace
-ms.openlocfilehash: ed133e972caa9a3a62ab2ac1310cb1bd666947ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de67fdd71f28bc0f4b16017d253682ca2615f854
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774072"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989742"
 ---
-# <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>Vytvoření aktivity za běhu pomocí dynamické aktivity
-<xref:System.Activities.DynamicActivity> je konkrétní zapečetěná třída s veřejným konstruktorem. <xref:System.Activities.DynamicActivity> je možné sestavit funkce aktivity za běhu pomocí aktivity modelu DOM.  
+# <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>Vytvoření aktivity za běhu pomocí DynamicActivity
+<xref:System.Activities.DynamicActivity>je konkrétní zapečetěná třída s veřejným konstruktorem. <xref:System.Activities.DynamicActivity>dá se použít k sestavování funkčnosti aktivity za běhu pomocí modelu DOM aktivity.  
   
-## <a name="dynamicactivity-features"></a>Funkce dynamické aktivity  
- <xref:System.Activities.DynamicActivity> má přístup k vlastnostem provádění, argumentů a proměnné, ale žádný přístup ke službám za běhu, jako je plánování podřízené aktivity nebo sledování.  
+## <a name="dynamicactivity-features"></a>Funkce DynamicActivity  
+ <xref:System.Activities.DynamicActivity>má přístup k vlastnostem spuštění, argumentům a proměnným, ale nemá přístup ke službám runtime, jako je plánování podřízených aktivit nebo sledování.  
   
- Vlastnosti nejvyšší úrovně můžete nastavit pomocí pracovního postupu <xref:System.Activities.Argument> objekty. Tyto argumenty v imperativního kódu jsou vytvořeny pomocí vlastnosti CLR na nový typ. V XAML, jsou deklarovány pomocí `x:Class` a `x:Member` značky.  
+ Vlastnosti nejvyšší úrovně lze nastavit pomocí objektů pracovního postupu <xref:System.Activities.Argument> . V imperativním kódu jsou tyto argumenty vytvořeny pomocí vlastností CLR pro nový typ. V jazyce XAML jsou deklarovány pomocí `x:Class` značek `x:Member` a.  
   
- Aktivity, které jsou vytvářeny pomocí <xref:System.Activities.DynamicActivity> rozhraní s použitím návrháře <xref:System.ComponentModel.ICustomTypeDescriptor>. Aktivity vytvořené v Návrháři můžete načíst dynamicky pomocí <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A>, jak je ukázáno v následujícím postupu.  
+ Aktivity vytvořené pomocí <xref:System.Activities.DynamicActivity> rozhraní s návrhářem pomocí <xref:System.ComponentModel.ICustomTypeDescriptor>. Aktivity vytvořené v Návrháři lze dynamicky načíst pomocí <xref:System.Activities.XamlIntegration.ActivityXamlServices.Load%2A>, jak je znázorněno v následujícím postupu.  
   
 #### <a name="to-create-an-activity-at-runtime-using-imperative-code"></a>Vytvoření aktivity za běhu pomocí imperativního kódu  
   
 1. OpenVisual Studio 2010.  
   
-2. Vyberte **souboru**, **nové**, **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **Konzolová aplikace sekvenčního pracovního postupu** v **šablony** okna. Název nového projektu DynamicActivitySample.  
+2. Vyberte **soubor**, **Nový**, **projekt**. V okně **typy projektů** vyberte **pracovní postup 4,0** v nabídce  **C# vizuál** a vyberte uzel **v2010** . V okně **šablony** vyberte **Konzolová aplikace sekvenčního pracovního postupu** . Pojmenujte nový projekt DynamicActivitySample.  
   
-3. Klikněte pravým tlačítkem na Workflow1.xaml HelloActivity projektu a vyberte **odstranit**.  
+3. Klikněte pravým tlačítkem na Workflow1. XAML v projektu HelloActivity a vyberte **Odstranit**.  
   
-4. Otevřete soubor Program.cs. Na začátek souboru přidejte následující direktivy.  
+4. Otevřete Program.cs. Do horní části souboru přidejte následující direktivu.  
   
-    ```  
+    ```csharp  
     using System.Collections.Generic;  
     ```  
   
-5. Nahraďte obsah `Main` metodu s následujícím kódem, který vytvoří <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje jediný <xref:System.Activities.Statements.WriteLine> aktivity a přiřadí ji k <xref:System.Activities.DynamicActivity.Implementation%2A> vlastnost nové dynamické aktivity.  
+5. Nahraďte obsah `Main` metody následujícím kódem, který <xref:System.Activities.Statements.Sequence> vytvoří aktivitu, která obsahuje jednu <xref:System.Activities.Statements.WriteLine> aktivitu a přiřadí ji k <xref:System.Activities.DynamicActivity.Implementation%2A> vlastnosti nové dynamické aktivity.  
   
     ```csharp  
     //Define the input argument for the activity  
@@ -66,35 +66,35 @@ ms.locfileid: "61774072"
                 Console.ReadLine();  
     ```  
   
-6. Spuštění aplikace. Okno konzoly s textem "Hello World!" zobrazí.  
+6. Spusťte aplikaci. Okno konzoly s textem "Hello World!" uvádí.  
   
 #### <a name="to-create-an-activity-at-runtime-using-xaml"></a>Vytvoření aktivity za běhu pomocí XAML  
   
-1. Open Visual Studio 2010.  
+1. Otevřete Visual Studio 2010.  
   
-2. Vyberte **souboru**, **nové**, **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **Konzolová aplikace pracovního postupu** v **šablony** okna. Název nového projektu DynamicActivitySample.  
+2. Vyberte **soubor**, **Nový**, **projekt**. V okně **typy projektů** vyberte **pracovní postup 4,0** v nabídce  **C# vizuál** a vyberte uzel **v2010** . V okně **šablony** vyberte **Konzolová aplikace pracovního postupu** . Pojmenujte nový projekt DynamicActivitySample.  
   
-3. Otevřete v projektu HelloActivity Workflow1.xaml. Klikněte na tlačítko **argumenty** možnost v dolní části návrháře. Vytvořte nový `In` argument volá `TextToWrite` typu `String`.  
+3. Otevřete Workflow1. XAML v projektu HelloActivity. Klikněte na možnost **argumenty** v dolní části návrháře. Vytvořte nový `In` argument nazvaný `TextToWrite` typu `String`.  
   
-4. Přetáhněte **WriteLine** aktivita z **primitiv** části panelu nástrojů na plochu návrháře. Přiřaďte hodnotu `TextToWrite` k **Text** vlastnost aktivity.  
+4. Přetáhněte aktivitu **WriteLine** z oddílu **primitivních** prvků sady nástrojů na plochu návrháře. Přiřaďte hodnotu `TextToWrite` k vlastnosti **text** aktivity.  
   
-5. Otevřete soubor Program.cs. Na začátek souboru přidejte následující direktivy.  
+5. Otevřete Program.cs. Do horní části souboru přidejte následující direktivu.  
   
-    ```  
+    ```csharp  
     using System.Activities.XamlIntegration;  
     ```  
   
-6. Nahraďte obsah `Main` metodu s následujícím kódem.  
+6. Obsah `Main` metody nahraďte následujícím kódem.  
   
-    ```  
+    ```csharp  
     Activity act2 = ActivityXamlServices.Load(@"Workflow1.xaml");  
                     results = WorkflowInvoker.Invoke(act2, new Dictionary<string, object> { { "TextToWrite", "HelloWorld!" } });  
     Console.ReadLine();  
     ```  
   
-7. Spuštění aplikace. Okno konzoly s textem "Hello World!" Zobrazí se.  
+7. Spusťte aplikaci. Okno konzoly s textem "Hello World!" uvedeny.  
   
-8. Klikněte pravým tlačítkem na soubor Workflow1.xaml v **Průzkumníka řešení** a vyberte **zobrazit kód**. Všimněte si, že třídy activity se vytvoří s `x:Class` a vlastnost se vytvoří s `x:Property`.  
+8. Klikněte pravým tlačítkem na soubor Workflow1. XAML v **Průzkumník řešení** a vyberte **Zobrazit kód**. Všimněte si, že třída Activity je vytvořena `x:Class` s a vlastnost je vytvořena pomocí `x:Property`.  
   
 ## <a name="see-also"></a>Viz také:
 

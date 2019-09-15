@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: df8f82605118f1af0f085aef6e76c1e4bedb2904
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09c54e58ef25afa28d2681719284c358d90bddc2
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69988159"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969063"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>Balení .NET Framework sestavení pro model COM
 
@@ -33,7 +33,7 @@ Vývojáři modelu COM můžou těžit z následujících informací o spravovan
 
   Některé spravované typy jsou pro COM neviditelné; Některé jsou viditelné, ale nelze je vytvořit. a některé jsou viditelné i vytvořitelné. Sestavení může obsahovat libovolnou kombinaci neviditelných, viditelných, nevytvořitelné a vytvořitelné typy. Pro úplnost Identifikujte typy v sestavení, které chcete zpřístupnit modelu COM, zejména v případě, že jsou tyto typy podmnožinou typů vystavených .NET Framework.
 
-  Další informace naleznete v tématu [kvalifikační typy rozhraní .NET pro](../../standard/native-interop/qualify-net-types-for-interoperation.md)spoluprovozování.
+  Další informace naleznete v tématu [kvalifikační typy rozhraní .NET pro spoluprovozování](../../standard/native-interop/qualify-net-types-for-interoperation.md).
 
 - Pokyny pro správu verzí
 
@@ -45,7 +45,7 @@ Vývojáři modelu COM můžou těžit z následujících informací o spravovan
 
   Sestavení se silným názvem, která jsou podepsaná vydavatelem, mohou být nainstalována do globální mezipaměti sestavení (GAC). Nepodepsaná sestavení musí být nainstalována v počítači uživatele jako soukromá sestavení.
 
-  Další informace najdete v tématu [požadavky na zabezpečení sestavení](../app-domains/assembly-security-considerations.md).
+  Další informace najdete v tématu [požadavky na zabezpečení sestavení](../../standard/assembly/security-considerations.md).
 
 - Zahrnutí knihovny typů
 
@@ -96,7 +96,7 @@ Třída, která je umístěna v oboru názvů **System. Runtime. Interop** , př
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
 - [Kvalifikace typů .NET pro spolupráci](../../standard/native-interop/qualify-net-types-for-interoperation.md)
 - [Představení rozhraní třídy](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)
-- [Důležité informace o zabezpečení sestavení](../app-domains/assembly-security-considerations.md)
+- [Důležité informace o zabezpečení sestavení](../../standard/assembly/security-considerations.md)
 - [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Registrování sestav pomocí modelu COM](registering-assemblies-with-com.md)
 - [Postupy: Vložení knihoven typů jako prostředků Win32 do aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

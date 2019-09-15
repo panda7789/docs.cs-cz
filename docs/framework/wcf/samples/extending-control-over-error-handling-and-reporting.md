@@ -2,12 +2,12 @@
 title: Rozšíření kontroly nad zpracováním a vykazováním chyb
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: 09216d8b0ff58ac90a0fd6183f43fd2ccf82ad52
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d7efc87d7d8a913642c4ac0e3d6d19cd0a9259c5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039683"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989935"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
 Tato ukázka demonstruje, jak lze v rámci služby Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní nastavovat kontrolu nad zpracováním chyb a zasílání zpráv o chybách. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s nějakým dalším kódem přidaným do služby za účelem zpracování chyb. Klient vynutí několik chybových podmínek. Služba zachycuje chyby a zapisuje je do souboru.  
@@ -21,7 +21,7 @@ Tato ukázka demonstruje, jak lze v rámci služby Windows Communication Foundat
   
  <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>`CalculatorErrorHandler` Metoda zapisuje protokol chyby do textového souboru Error. txt v c:\Logs. Všimněte si, že ukázka zaznamená chybu a potlačí ji, což umožňuje, aby se vrátila klientovi.  
   
-```  
+```csharp  
 public class CalculatorErrorHandler : IErrorHandler  
 {  
         // Provide a fault. The Message fault parameter can be replaced, or set to  
@@ -51,7 +51,7 @@ public class CalculatorErrorHandler : IErrorHandler
   
  `ErrorBehaviorAttribute` Existuje jako mechanismus pro registraci obslužné rutiny chyb u služby. Tento atribut přijímá jeden parametr typu. Tento typ by měl implementovat <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní a měl by mít veřejný prázdný konstruktor. Atribut poté vytvoří instanci instance této obslužné rutiny chyb a nainstaluje ji do služby. Provede to implementací <xref:System.ServiceModel.Description.IServiceBehavior> rozhraní a následným <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> použitím metody pro přidání instancí obslužné rutiny chyby do služby.  
   
-```  
+```csharp  
 // This attribute can be used to install a custom error handler for a service.  
 public class ErrorBehaviorAttribute : Attribute, IServiceBehavior  
 {  
@@ -98,7 +98,7 @@ public class ErrorBehaviorAttribute : Attribute, IServiceBehavior
   
  Ukázka implementuje službu kalkulačky. V důsledku toho může klient v rámci služby provést dvě chyby zadáním parametrů s neplatnými hodnotami. Rozhraní<xref:System.ServiceModel.Dispatcher.IErrorHandler>používározhraní k zaprotokolování chyb do místního souboru a pak jim umožní, aby je vrátili zpět klientovi. `CalculatorErrorHandler` Klient vynutí dělení nulou a argument-mimo rozsah.  
   
-```  
+```csharp  
 try  
 {  
     Console.WriteLine("Forcing an error in Divide");  
@@ -132,9 +132,9 @@ FaultException: FaultException - Invalid Argument: The argument must be greater 
 Press <ENTER> to terminate client.  
 ```  
   
- Soubor c:\logs\errors.txt obsahuje informace zaznamenané o chybách služby. Všimněte si, že aby služba mohla zapisovat do adresáře, musíte se ujistit, že proces, pod kterým je služba spuštěná (obvykle ASP.NET nebo Network Service), má oprávnění k zápisu do adresáře.  
+ Soubor c:\logs\errors.txt obsahuje informace zaznamenané o chybách služby. Upozorňujeme, že aby služba mohla zapisovat do adresáře, musíte se ujistit, že proces, pod kterým je služba spuštěná (obvykle ASP.NET nebo Network Service), má oprávnění k zápisu do adresáře.  
   
-```  
+```txt
 Fault: Reason = Invalid Argument: The second argument must not be zero.  
 Fault: Reason = Invalid Argument: The argument must be greater than zero.  
 ```  
@@ -143,7 +143,7 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Při sestavování řešení postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Ujistěte se, že jste vytvořili adresář c:\Logs. pro soubor Error. txt. Nebo upravte název souboru, který se `CalculatorErrorHandler.HandleError`používá v nástroji.  
   

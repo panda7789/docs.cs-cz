@@ -2,17 +2,17 @@
 title: Reflexe (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
-ms.openlocfilehash: 8a784f3b8647a74e21299e84e04eb7bda60b9cb6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d1206d84dec4202a7dad8f03c3d88c8a97ff5ba
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627461"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972122"
 ---
 # <a name="reflection-visual-basic"></a>Reflexe (Visual Basic)
-Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
+Reflexe poskytuje objekty ( <xref:System.Type>typu), které popisují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získat typ z existujícího objektu a vyvolat jeho metody nebo získat přístup k jeho polím a vlastnostem. Pokud používáte atributy v kódu, reflexe vám umožní přístup k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
   
- Tady je jednoduchý příklad použití statické metody reflexe `GetType` – zděděný všechny typy z `Object` základní třídy – získat typ proměnné:  
+ Tady je jednoduchý příklad reflexe pomocí statické metody `GetType` – zděděné všemi typy `Object` ze základní třídy – pro získání typu proměnné:  
   
 ```vb  
 ' Using GetType to obtain type information:  
@@ -21,11 +21,11 @@ Dim type As System.Type = i.GetType()
 System.Console.WriteLine(type)  
 ```  
   
- Výstup bude:  
+ Výstup je:  
   
  `System.Int32`  
   
- Následující příklad používá reflexi získat úplný název načteného sestavení.  
+ Následující příklad používá reflexi k získání úplného názvu načteného sestavení.  
   
 ```vb  
 ' Using Reflection to get information from an Assembly:  
@@ -33,20 +33,20 @@ Dim info As System.Reflection.Assembly = GetType(System.Int32).Assembly
 System.Console.WriteLine(info)  
 ```  
   
- Výstup bude:  
+ Výstup je:  
   
  `mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`  
   
 ## <a name="reflection-overview"></a>Přehled reflexe  
  Reflexe je užitečná v následujících situacích:  
   
-- Pokud máte přístup k atributům v metadatech váš program. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
+- Pokud budete mít přístup k atributům v metadatech vašeho programu. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
   
-- Pro prozkoumání a vytvoření instance typů v sestavení.  
+- Pro zkoumání a vytváření instancí typů v sestavení.  
   
-- Pro vytváření nových typů v době běhu. Použití tříd v <xref:System.Reflection.Emit>.  
+- Pro vytváření nových typů za běhu. Použijte třídy v <xref:System.Reflection.Emit>.  
   
-- Pro provádění pozdní vazby, přístup k metodám na typy vytvořené v době běhu. Naleznete v tématu [dynamické načtení a použití typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+- Pro provádění pozdní vazby získáte přístup k metodám typů vytvořeným v době běhu. Viz téma [Dynamické načítání a používání typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
@@ -63,5 +63,5 @@ System.Console.WriteLine(info)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)
-- [Sestavení v modulu CLR (Common Language Runtime)](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)
+- [Sestavení v .NET](../../../standard/assembly/index.md)

@@ -6,19 +6,19 @@ helpviewer_keywords:
 - Freezable elements [WPF]
 - PresentationOptions prefix [WPF]
 ms.assetid: 391032dd-2fba-4804-bb8a-3b071797a9f4
-ms.openlocfilehash: e60c4a505db42936f188354f52edd7832fb9632b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3e0cee293a9585b972b0145da953976ed94b74c
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772837"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991431"
 ---
 # <a name="presentationoptionsfreeze-attribute"></a>PresentationOptions:Freeze – atribut
-Nastaví <xref:System.Windows.Freezable.IsFrozen%2A> do stavu `true` obsahující <xref:System.Windows.Freezable> elementu. Výchozí chování <xref:System.Windows.Freezable> bez `PresentationOptions:Freeze` , který je zadán atribut <xref:System.Windows.Freezable.IsFrozen%2A> je `false` v době zatížení a závisí na Obecné <xref:System.Windows.Freezable> chování za běhu.  
+<xref:System.Windows.Freezable.IsFrozen%2A> Nastaví stav`true` na obsahující<xref:System.Windows.Freezable> element. Výchozí <xref:System.Windows.Freezable> chování pro atributbezzadaného<xref:System.Windows.Freezable.IsFrozen%2A> atributu je <xref:System.Windows.Freezable> v době načítání a závisí na obecném chování za běhu. `false` `PresentationOptions:Freeze`  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
-```  
+```xaml  
 <object  
   xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"  
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
@@ -31,15 +31,15 @@ Nastaví <xref:System.Windows.Freezable.IsFrozen%2A> do stavu `true` obsahujíc�
   
 |||  
 |-|-|  
-|`PresentationOptions`|XML obor názvů předponu, která může být libovolný řetězec platnou předponu, podle specifikace XML 1.0. Předpona, která `PresentationOptions` se používá pro potřeby identifikace v této dokumentaci.|  
-|`freezableElement`|Element, který vytvoří instanci libovolné odvozenou třídu <xref:System.Windows.Freezable>.|  
+|`PresentationOptions`|Předpona oboru názvů XML, což může být libovolný platný řetězec předpony podle specifikace XML 1,0. Předpona `PresentationOptions` se používá pro účely identifikace v této dokumentaci.|  
+|`freezableElement`|Prvek, který vytváří instanci jakékoli odvozené třídy <xref:System.Windows.Freezable>.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Freeze` Atribut není jediným atributem nebo jiné programovací element definovaný v `http://schemas.microsoft.com/winfx/2006/xaml/presentation/options` oboru názvů XML. `Freeze` Atribut existuje v tomto oboru názvů zvláštní konkrétně tak, aby ji lze označit jako ignorable pomocí [mc: ignorable – atribut](mc-ignorable-attribute.md) jako součást deklarace kořenový element. Z důvodu, který `Freeze` musí být schopen být ignorable není protože všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace budou moct ukotvit <xref:System.Windows.Freezable> v okamžiku načtení; tato funkce není součástí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] specifikace.  
+ Atribut je jediný atribut nebo jiný programovací element definovaný `http://schemas.microsoft.com/winfx/2006/xaml/presentation/options` v oboru názvů XML. `Freeze` Atribut existuje v tomto speciálním oboru názvů konkrétně tak, aby jej bylo možné označit [jako ignorovatelné jako součást](mc-ignorable-attribute.md) deklarací kořenových elementů. `Freeze` Důvod, který `Freeze` musí být možné ignorovat, je, protože ne všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru <xref:System.Windows.Freezable> jsou schopné ukotvit během načítání [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ; Tato funkce není součástí specifikace.  
   
- Možnost zpracování `Freeze` atribut je konkrétně součástí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, který zpracovává [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro zkompilované aplikace. Atribut nepodporuje všechny třídy a syntaxe atributu není rozšiřitelný nebo i pro úpravy. Pokud implementujete vlastní [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru, můžete se rozhodnout paralelní zmrazení chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru při zpracování `Freeze` atribut na <xref:System.Windows.Freezable> prvky v okamžiku načtení.  
+ Schopnost zpracovat `Freeze` atribut je speciálně integrovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro procesor, který zpracovává [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zkompilované aplikace. Atribut není podporován žádnou třídou a syntaxe atributu není rozšiřitelná nebo upravitelná. Pokud implementujete [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastní procesor, můžete zvolit paralelní chování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] procesoru při zpracování `Freeze` atributu v <xref:System.Windows.Freezable> prvcích v době načítání.  
   
- Libovolná hodnota `Freeze` jiné než atribut `true` (nerozlišuje velikost písmen) generuje chybu v době zatížení. (Zadání `Freeze` atribut jako `false` není chybu, ale to je již ve výchozím nastavení na hodnotu tak `false` nemá žádný účinek,).  
+ Libovolná hodnota atributu `Freeze` s `true` výjimkou (bez rozlišování malých a velkých písmen) generuje chybu při načítání. (Určení `Freeze` atributu jako `false` není chyba, ale to je již `false` výchozí, takže nastavení nedělá nic).  
   
 ## <a name="see-also"></a>Viz také:
 

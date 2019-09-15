@@ -2,29 +2,29 @@
 title: Používání rozšíření aktivit
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-ms.openlocfilehash: e524f7e7127eb215be85b0c317474eee70830c2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 551ce24db8c0adc8225ac94a1d05f998a26873a9
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669508"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988636"
 ---
 # <a name="using-activity-extensions"></a>Používání rozšíření aktivit
-Aktivity můžete pracovat s příponami aplikace pracovního postupu, které povolí hostitelské funkce, která není explicitně modelován v pracovním postupu.  Toto téma popisuje postup vytvoření a použití rozšíření ke zjištění počtu pokusů, které tato aktivity spustí.
+Aktivity můžou pracovat s rozšířeními aplikačních pracovních postupů, která hostiteli umožňují poskytovat další funkce, které nejsou explicitně modelované v pracovním postupu.  V tomto tématu se dozvíte, jak vytvořit a použít rozšíření k výpočtu počtu vykonání aktivity.
 
-### <a name="to-use-an-activity-extension-to-count-executions"></a>Použití rozšíření aktivity mají spočítat počet spuštění
+### <a name="to-use-an-activity-extension-to-count-executions"></a>Použití rozšíření aktivity k výpočtu počtu provedení
 
-1. Open Visual Studio 2010. Vyberte **nové**, **projektu**. V části **Visual C#** uzlu, vyberte **pracovního postupu**.  Vyberte **Konzolová aplikace pracovního postupu** ze seznamu šablon. Pojmenujte projekt `Extensions`. Klikněte na tlačítko **OK** pro vytvoření projektu.
+1. Otevřete Visual Studio 2010. Vyberte **Nový**, **projekt**. V uzlu **vizuál C#**  vyberte **pracovní postup**.  V seznamu šablon vyberte **Konzolová aplikace pracovního postupu** . Pojmenujte `Extensions`projekt. Kliknutím na tlačítko **OK** vytvořte projekt.
 
-2. Přidat `using` prohlášení v souboru Program.cs **System.Collections.Generic** oboru názvů.
+2. Do souboru program.cs přidejte příkazproobornázvůSystem.Collections.`using` Generic.
 
-    ```
+    ```csharp
     using System.Collections.Generic;
     ```
 
-3. V souboru Program.cs vytvořte novou třídu s názvem **ExecutionCountExtension**. Následující kód vytvoří, který sleduje ID instancí rozšíření pracovního postupu při jeho **zaregistrovat** metoda je volána.
+3. V souboru Program.cs vytvořte novou třídu s názvem **ExecutionCountExtension**. Následující kód vytvoří rozšíření pracovního postupu, které sleduje identifikátory instancí při volání metody **registru** .
 
-    ```
+    ```csharp
     // This extension collects a list of workflow Ids
     public class ExecutionCountExtension
     {
@@ -56,9 +56,9 @@ Aktivity můžete pracovat s příponami aplikace pracovního postupu, které po
     }
     ```
 
-4. Vytvořit aktivitu, která využívá **ExecutionCountExtension**. Následující kód definuje aktivitu, která načte **ExecutionCountExtension** objekt z modulu runtime a volání jeho **zaregistrovat** metoda při tato aktivity spustí.
+4. Vytvoření aktivity, která spotřebovává **ExecutionCountExtension**. Následující kód definuje aktivitu, která načte objekt **ExecutionCountExtension** z modulu runtime a volá jeho metodu **Register** , když se aktivita spustí.
 
-    ```
+    ```csharp
     // Activity that consumes an extension provided by the host. If the extension is available
     // in the context, it will invoke (in this case, registers the Id of the executing workflow)
     public class MyActivity: CodeActivity
@@ -75,9 +75,9 @@ Aktivity můžete pracovat s příponami aplikace pracovního postupu, které po
     }
     ```
 
-5. Implementujte aktivitu v **hlavní** metoda souboru program.cs. Následující kód obsahuje metody pro generování dvě různé pracovní postupy, spouštění každý pracovní postup několikrát a zobrazit Výsledná data, která je obsažena v rozšíření.
+5. Implementujte aktivitu v metodě **Main** souboru program.cs. Následující kód obsahuje metody pro vygenerování dvou různých pracovních postupů, spuštění každého pracovního postupu několikrát a zobrazení výsledných dat, která jsou obsažena v rozšíření.
 
-    ```
+    ```csharp
     class Program
     {
         // Creates a workflow that uses the activity that consumes the extension

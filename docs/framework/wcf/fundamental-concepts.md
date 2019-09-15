@@ -7,156 +7,156 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 8aceb94de4ed879834fd9ba833083c54ba1b4174
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: eb03a164ce0ff0140c32b3b56bcb502674e5fecd
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348356"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990292"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 
-Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).
+Tento dokument poskytuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Je určena k vyjasnění klíčových konceptů a způsobu jejich vzájemného přizpůsobení. Kurz týkající se vytvoření nejjednodušší verze služby WCF a klienta najdete v tématu [Začínáme kurzu](../../../docs/framework/wcf/getting-started-tutorial.md). Další informace o programování WCF najdete v tématu [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).
 
 ## <a name="wcf-fundamentals"></a>Základy WCF
 
-WCF je modul runtime a sadu rozhraní API pro vytváření systémy, které odesílání zpráv mezi službami a klienty. Stejné infrastruktury a rozhraní API slouží k vytvoření aplikace, které komunikují s jinými aplikacemi ve stejném počítači systému nebo v systému, který se nachází v jiné firmě a přístupné přes Internet.
+WCF je modul runtime a sada rozhraní API pro vytváření systémů, které odesílají zprávy mezi službami a klienty. Stejná infrastruktura a rozhraní API se používají k vytváření aplikací, které komunikují s jinými aplikacemi ve stejném počítačovém systému nebo v systému, který se nachází v jiné společnosti a je k němu přistup přes Internet.
 
 ### <a name="messaging-and-endpoints"></a>Zasílání zpráv a koncových bodů
 
-WCF je založená na pojmu komunikace založená na zprávách a cokoli, která můžete modelovat jako jednotným způsobem v programovacím modelu lze reprezentovat zprávu (například požadavek HTTP nebo zprávy služby Řízení front zpráv (MSMQ)). To umožňuje rozhraní unified API napříč různými mechanismy přenosu.
+Služba WCF je založena na pojmu komunikace založené na zprávách a cokoli, co je možné modelovat jako zprávu (například požadavek HTTP nebo zpráva služby Řízení front zpráv (označované také jako MSMQ)), mohou být reprezentovány jednotným způsobem v programovacím modelu. To umožňuje sjednocení rozhraní API napříč různými mechanismy přenosu.
 
-Model rozlišuje mezi _klienti_, což jsou aplikace, které iniciují komunikaci, a _služby_, což jsou aplikace, které klientům komunikovat s nimi a reagovat na, počkejte komunikace. Jednu aplikaci může fungovat jako klient a služba. Příklady najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md) a [sítě Peer-to-Peer](../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).
+Model rozlišuje mezi _klienty_, což jsou aplikace, které iniciují komunikaci, a _služby_, které jsou aplikace, které čekají na komunikaci klientů a reagují na tuto komunikaci. Jedna aplikace může fungovat jako klient i služba. Příklady najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md) a [sítě peer-to-peer](../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).
 
-Zprávy se posílají mezi koncovými body. _Koncové body_ jsou místa, kde jsou zprávy odesílané nebo přijímané (nebo obojí), které definují všech informací potřebných k výměně zpráv. Služba zpřístupňuje jeden nebo více koncových bodů aplikace (stejně jako nula nebo více koncových bodů infrastruktury) a klient vytvoří koncový bod, který je kompatibilní s jeden z koncových bodů služby.
+Mezi koncovými body se odesílají zprávy. _Koncové body_ jsou místa, kde jsou odesílány nebo přijímány zprávy (nebo obojí), a definují všechny informace požadované pro výměnu zpráv. Služba zveřejňuje jeden nebo více koncových bodů aplikace (stejně jako nula nebo více koncových bodů infrastruktury) a klient vygeneruje koncový bod, který je kompatibilní s jedním z koncových bodů služby.
 
-_Koncový bod_ popisuje způsobem založené na standardu odešle zprávy, jak by měla být odeslána a jak by měla vypadat zprávy. Službu můžete zpřístupnit tyto informace jako metadata, která dokáže zpracovávat klientů ke generování odpovídající klientů WCF a komunikace _zásobníky_.
+_Koncový bod_ popisuje standardní způsob, jakým se mají odesílat zprávy, jak by se měly Odeslat a jaké by měly zprávy vypadat jako. Služba může tyto informace vystavit jako metadata, která klienti můžou zpracovat, aby vygenerovala příslušné klienty WCF a komunikační _zásobníky_.
 
 ### <a name="communication-protocols"></a>Komunikační protokoly
 
-Jeden povinný element komunikační balík je _přenosový protokol_. Zprávy odesílat prostřednictvím intranetu a Internetu pomocí běžných přenosy, jako jsou HTTP a TCP. Jiné přenosy jsou součástí, které podporují komunikaci s aplikacemi služby Řízení front zpráv a uzlů v síťové sdílené sítě. Můžete přidat další mechanismy přenosu pomocí předdefinovaných Rozšiřovací body služby WCF.
+Jedním z vyžadovaných prvků komunikačního zásobníku je _Transportní protokol_. Zprávy můžete odesílat přes intranety a Internet pomocí běžných přenosů, jako je HTTP a TCP. K dispozici jsou další přenosy, které podporují komunikaci s aplikacemi služby Řízení front zpráv a uzly na síti peer-to-peer. Pomocí integrovaných rozšiřovacích bodů služby WCF je možné přidat další transportní mechanismy.
 
-Další požadovaný element v zásobníku komunikace je kódování, které určuje formátování jakékoli dané zprávy. WCF poskytuje následujícím kódování:
+Dalším vyžadovaným prvkem v komunikačním zásobníku je kódování, které určuje, jak se daná zpráva naformátuje. WCF poskytuje následující kódování:
 
-- Kódování, interoperabilní kódování textu.
+- Kódování textu, interoperabilní kódování.
 
-- Zpráva přenosu optimalizace mechanismus (MTOM) kódování, což je interoperabilní způsob pro efektivní zasílání nestrukturovaná binární data do a ze služby.
+- Kódování nástroje pro optimalizaci přenosu zpráv (MTOM), což je interoperabilní způsob efektivního posílání nestrukturovaných binárních dat do a ze služby.
 
-- Binární kódování pro efektivní přenos.
+- Binární kódování pro efektivní přenos
 
-Můžete přidat více kódování mechanismy (například v komprese kódování) pomocí předdefinovaných Rozšiřovací body služby WCF.
+Další mechanismy kódování (například kódování komprese) lze přidat pomocí integrovaných rozšiřovacích bodů služby WCF.
 
-### <a name="message-patterns"></a>Vzory zprávy
+### <a name="message-patterns"></a>Vzory zpráv
 
-WCF podporuje několik schémata zasílání zpráv, včetně požadavek odpověď, jednosměrné a duplexní komunikaci. Jiné přenosy podporují různé vzorce zasílání zpráv a tím ovlivňovat typů interakcí, které podporují. Rozhraní API pro WCF a modul runtime také umožňují odesílat zprávy, bezpečně a spolehlivě.
+Služba WCF podporuje několik vzorů zasílání zpráv, včetně požadavků a odpovědí, jednosměrné a duplexní komunikace. Různá přenosová podpora podporuje různé vzory zasílání zpráv, takže mají vliv na typy interakcí, které podporují. Rozhraní API WCF a modul runtime vám také pomůžou bezpečně a spolehlivě odesílat zprávy.
 
-## <a name="wcf-terms"></a>Podmínky pro WCF
+## <a name="wcf-terms"></a>Výrazy WCF
 
-Další konceptů a termínů používaných v dokumentaci WCF patří:
+K dalším konceptům a pojmům, které se používají v dokumentaci WCF, patří následující:
 
 **Zpráva**  
- Samostatná jednotka dat, která se může skládat z více částí, včetně záhlaví a text.
+ Samostatně obsažená jednotka dat, která se může skládat z několika částí, včetně těla a záhlaví.
 
 **Service**  
- Konstruktor, který zpřístupňuje jeden nebo více koncových bodů se každý koncový bod vystavuje jednu nebo víc operací služeb.
+ Konstrukce, která zveřejňuje jeden nebo více koncových bodů s každým koncovým bodem, který zveřejňuje jednu nebo více operací služby.
 
 **Endpoint**  
- Konstrukce, na které zprávy jsou odeslány nebo přijaty (nebo obojí). V, který obsahuje umístění (adresa), který definuje, kde lze odesílat zprávy, specifikace mechanizmus pro komunikaci (vazba), který popisuje, jak by měly být odeslány zprávy, a definici pro sadu zpráv, které můžete odeslat ani přijmout (nebo obojí) umístění (kontraktu služby), který popisuje, jaké zprávy odesílat.
+ Konstrukce, na které jsou odesílány nebo přijímány zprávy (nebo obojí). Skládá se z umístění (adresy), které definuje, kde se dají odesílat zprávy, specifikaci komunikačního mechanismu (vazby), který popisuje, jak se zprávy mají odeslat, a definici pro sadu zpráv, která se dá odeslat nebo přijmout (nebo obojí) na této adrese. umístění (kontrakt služby) popisující zprávu, kterou je možné odeslat.
 
-Služby WCF je přístupný na světě jako kolekce koncových bodů.
+Služba WCF se zveřejňuje na světě jako kolekce koncových bodů.
 
-**koncový bod aplikace**  
- Koncového bodu určeného aplikace a, který odpovídá kontraktu služby implementované aplikace.
+**Koncový bod aplikace**  
+ Koncový bod vystavený aplikací a, který odpovídá kontraktu služby implementovanému aplikací.
 
-**koncový bod infrastruktury**  
- Koncový bod, který je zveřejněný prostřednictvím infrastruktury pro usnadnění funkce, které je potřeba nebo poskytovaných službou, která se nevztahuje na kontraktu služby. Služba může mít například infrastruktury koncový bod, který poskytuje informace o metadatech.
+**Koncový bod infrastruktury**  
+ Koncový bod, který je zpřístupněný infrastrukturou, aby usnadnil funkčnost, kterou vyžaduje nebo poskytuje služba, která se nevztahují k kontraktu služby. Například služba může mít koncový bod infrastruktury, který poskytuje informace o metadatech.
 
 **Adresa**  
- Určuje umístění, ve kterém jsou zprávy přijímány. Je zadaný jako identifikátor URI (Uniform Resource). Součást schématu identifikátoru URI názvy přenos mechanismus použít pro přístup k adrese, jako jsou HTTP a TCP. Hierarchické součást identifikátoru URI obsahuje jedinečné umístění, jejichž formát je závislá na přenos mechanismus.
+ Určuje umístění, kde jsou přijímány zprávy. Je zadaný jako identifikátor URI (Uniform Resource Identifier). Část schématu identifikátoru URI pojmenovává transportní mechanismus, který se má použít pro přístup k adrese, například HTTP a TCP. Hierarchická část identifikátoru URI obsahuje jedinečné umístění, ve kterém je formát závislý na transportním mechanismu.
 
-Adresa koncového bodu vám umožňuje vytvářet adresy koncových bodů jedinečný pro každý koncový bod ve službě, nebo za určitých podmínek, sdílet adresu mezi koncovými body. Následující příklad ukazuje adresu pomocí protokolu HTTPS s jiný než výchozí port:
+Adresa koncového bodu umožňuje vytvořit jedinečné adresy koncových bodů pro každý koncový bod ve službě nebo za určitých podmínek pro sdílení adresy mezi koncovými body. Následující příklad ukazuje adresu pomocí protokolu HTTPS s jiným než výchozím portem:
 
-```
+```http
 HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
 ```
 
 **Vazby**  
- Definuje, jak koncový bod komunikuje na celém světě. Je vytvořen z sada komponent volá prvky vazby, které "zásobníku" jednoho nad druhým vytvořit komunikační infrastrukturu. Přinejmenším vazba definuje přenos (například HTTP nebo TCP) a kódování používá (jako jsou textová nebo binární). Vazbu může obsahovat elementy vazby, které určují podrobnosti, jako jsou bezpečnostní mechanismy sloužící k zabezpečení zprávy nebo zprávy vzor použitý funkcí koncový bod. Další informace najdete v tématu [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).
+ Definuje, jak koncový bod komunikuje po celém světě. Je tvořen sadou komponent nazvaných vazby, které jsou v zásobníku v jednom nad druhou k vytvoření komunikační infrastruktury. Vazba také definuje přenos (například HTTP nebo TCP) a používané kódování (například text nebo binární). Vazba může obsahovat prvky vazby, které určují podrobnosti, jako jsou mechanismy zabezpečení používané k zabezpečení zpráv, nebo vzor zprávy, který je používán koncovým bodem. Další informace najdete v tématu [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md).
 
-**element vazby**  
- Představuje konkrétní vazby, jako je například přenosu, kódování, implementace protokolu úrovni infrastruktury (třeba WS-ReliableMessaging) nebo jakoukoli jinou součástí komunikačního balíku.
+**Element Binding**  
+ Představuje konkrétní část vazby, jako je například Transport, kódování, implementaci protokolu na úrovni infrastruktury (například WS-ReliableMessaging) nebo jakékoli jiné součásti komunikačního zásobníku.
 
 **Chování**  
- Součást, který řídí různé aspekty za běhu služby, koncový bod, určitou operaci nebo klienta. Chování jsou seskupené podle oboru: běžné chování ovlivňuje všechny koncové body globálně, služba chování ovlivňuje pouze související se službou aspekty, chování koncového bodu ovlivňuje pouze vlastnosti související se koncový bod a úrovni operace chování ovlivňuje konkrétní operace. Například je omezování chování služby za jednu, která určuje, jak služba reaguje při přebytek zpráv, které ohrožují zahlcovat možnosti zpracování. Chování koncového bodu, na druhé straně řídí pouze prvky, které jsou relevantní pro koncové body, jako je například jak a kde najít přihlašovací údaje zabezpečení.
+ Komponenta, která řídí různé aspekty běhu služby, koncového bodu, konkrétní operace nebo klienta. Chování jsou seskupena podle rozsahu: běžné chování ovlivňuje všechny koncové body globálně, chování služby ovlivňuje pouze aspekty související se službami, chování koncového bodu ovlivňuje pouze vlastnosti související s koncovým bodem a chování na úrovni provozu ovlivní konkrétní Operations. Například jedno chování služby je omezování, které určuje, jak služba reaguje, když nadměrné zprávy hrozí zahlcením možností manipulace. Chování koncového bodu na druhé straně řídí pouze aspekty, které jsou relevantní pro koncové body, například jak a kde najít bezpečnostní pověření.
 
-**vazby poskytované systémem**  
- WCF obsahuje několik vazeb poskytovaných systémem. Toto jsou kolekce elementů, které jsou optimalizované pro určité scénáře vazby. Například <xref:System.ServiceModel.WSHttpBinding> je navržena pro spolupráci se službami, které implementují různé WS -\* specifikace. Tyto předdefinované vazby ušetřit čas tím, že předloží pouze možnosti, které mohou být použity správně pro konkrétní scénář. Pokud předdefinované vazby nesplňuje vaše požadavky, můžete vytvořit vlastní vlastní vazby.
+**Vazby poskytované systémem**  
+ WCF zahrnuje řadu vazeb poskytovaných systémem. Jedná se o kolekce prvků vazby, které jsou optimalizované pro konkrétní scénáře. Například <xref:System.ServiceModel.WSHttpBinding> je navržený pro interoperabilitu se službami, které implementují různé specifikace\* WS-Specification. Tyto předdefinované vazby šetří čas tím, že prezentují jenom možnosti, které se dají správně použít pro konkrétní scénář. Pokud předdefinovaná vazba nesplňuje vaše požadavky, můžete vytvořit vlastní vazbu.
 
-**Konfigurace a psaní kódu**  
- Ovládací prvek aplikace můžete udělat buď přes psaní kódu, prostřednictvím konfigurace nebo kombinaci obojího. Konfigurace má výhodu v podobě umožňuje někdo než pro vývojáře (například správce sítě) můžete nastavit parametry pro klienta a služby, po zapsání kódu a bez nutnosti znovu kompilovat. Konfigurace nejen umožňuje nastavit hodnoty, jako jsou adresy koncových bodů, ale také umožňuje další ovládací prvek tím, že můžete přidat koncové body, vazby a chování. Psaní kódu umožňuje vývojářům zachovat přísnou kontrolu všech součástí služby ani klienta, a můžete ho zkontrolovat všechna nastavení se provádí prostřednictvím konfigurace a v případě potřeby přepsat pomocí kódu.
+**Konfigurace versus kódování**  
+ Kontrolu aplikace lze provádět buď prostřednictvím kódu, prostřednictvím konfigurace, nebo kombinací obou. Konfigurace má výhodu povolit jiným uživatelům než vývojář (například správce sítě) nastavit parametry klienta a služby po zápisu kódu a bez nutnosti překompilovat. Konfigurace neumožňuje nastavit jenom hodnoty, jako jsou adresy koncových bodů, ale také umožňuje další kontrolu tím, že vám umožní přidat koncové body, vazby a chování. Kódování umožňuje vývojářům zachovat přísnou kontrolu nad všemi komponentami služby nebo klienta. všechna nastavení prováděná prostřednictvím konfigurace lze zkontrolovat a v případě potřeby přepsat kódem.
 
-**operace služby**  
- Postup uvedený v kódu služby, který implementuje funkce pro operace. Tato operace je zveřejněné klientům jako metody na klienta WCF. Metodu můžete vracet hodnotu, můžete využít libovolný počet argumentů, nebo nepřebírají žádné argumenty a vrátit žádná odpověď. Operace, která funguje jako jednoduchý "Hello" může například sloužit jako oznámení o stavu klienta a zahajte posloupnost operací.
+**Operace služby**  
+ Procedura definovaná v kódu služby, která implementuje funkce pro operaci. Tato operace je vystavena klientům jako metody v klientovi WCF. Metoda může vracet hodnotu a může mít nepovinný počet argumentů, nemůžou mít žádné argumenty a vracet žádnou odpověď. Například operace, která funguje jako jednoduché "Hello", se dá použít jako oznámení o přítomnosti klienta a k zahájení řady operací.
 
-**kontrakt služby**  
- Spojuje více souvisejících operací do jedné jednotky funkční. Smlouvy můžete definovat nastavení na úrovni služby, jako je například obor názvů služby, odpovídající kontrakt zpětného volání a dalších taková nastavení. Ve většině případů je definována kontrakt vytváření rozhraní v programovacím jazyce podle vašeho výběru a použití <xref:System.ServiceModel.ServiceContractAttribute> atribut rozhraní. Výsledky kódu aktuální služby prostřednictvím implementace rozhraní.
+**Kontrakt služby**  
+ Spojuje více souvisejících operací s jednou funkční jednotkou. Kontrakt může definovat nastavení na úrovni služby, jako je například obor názvů služby, odpovídající kontrakt zpětného volání a další taková nastavení. Ve většině případů je smlouva definována vytvořením rozhraní v programovacím jazyce podle vašeho výběru a použitím <xref:System.ServiceModel.ServiceContractAttribute> atributu pro rozhraní. Skutečný výsledek kódu služby implementuje rozhraní.
 
-**operace kontraktu**  
- Kontrakt operace definuje parametry a návratový typ operace. Při vytváření rozhraní, které definuje kontrakt služby s použitím místo kontrakt operace <xref:System.ServiceModel.OperationContractAttribute> atribut pro každou definici metody, která je součástí smlouvy. Operace můžete modelovat jako trvá do jedné zprávy nebo vrátit do jedné zprávy nebo jako s ohledem sadu typů a vracející typ. V takovém případě systém určí formát zpráv, které je třeba vyměnit pro danou operaci.
+**Kontrakt operace**  
+ Kontrakt operace definuje parametry a návratový typ operace. Při vytváření rozhraní, které definuje kontrakt služby, označujete kontrakt <xref:System.ServiceModel.OperationContractAttribute> operace použitím atributu na každou definici metody, která je součástí smlouvy. Operace lze modelovat jako přebírání jedné zprávy a vrácení jedné zprávy nebo při přijetí sady typů a vrácení typu. V druhém případě systém určí formát pro zprávy, které je potřeba vyměňovat pro danou operaci.
 
-**kontrakt zprávy**  
- Popisuje formát zprávy. Například deklaruje, jestli zpráva prvky by měl přejít v záhlaví a text, jakou úroveň zabezpečení bude použito pro prvky zprávu, a tak dále.
+**Kontrakt zprávy**  
+ Popisuje formát zprávy. Například deklaruje, zda by měly prvky zprávy jít v záhlavích versus text, jakou úroveň zabezpečení má být použita na prvky zprávy atd.
 
-**Chyba – kontrakt**  
- Můžou být spojené s operace služby k označení chyby, které mohou být vráceny volajícímu. Operace může mít nula nebo více chyb, které s ním spojená. Tyto chyby jsou chyb SOAP, které jsou modelovány jako výjimky v programovacím modelu.
+**Smlouva o selhání**  
+ Dá se přidružit k operaci služby k označení chyb, které se můžou vrátit volajícímu. K operaci může být přidružena nula nebo více chyb. Tyto chyby jsou chyby protokolu SOAP, které jsou modelovány jako výjimky v programovacím modelu.
 
-**kontrakt dat**  
- Popisy v metadatech datových typů, které služba používá. To umožňuje ostatním uživatelům zajistit vzájemnou funkční spolupráci se službou. Datové typy, které lze použít v jakékoli části zprávy, například jako parametry nebo návratové typy. Pokud služba používá pouze jednoduché typy, není nutné explicitně kontraktů dat používat.
+**Kontrakt dat**  
+ Popis v metadatech datových typů, které služba používá. To umožňuje ostatním uživatelům spolupracovat s touto službou. Datové typy lze použít v jakékoli části zprávy, například jako parametry nebo návratové typy. Pokud služba používá pouze jednoduché typy, není nutné explicitně používat kontrakty dat.
 
 **Hostování**  
- Služba musí být hostovaný ve nějaký proces. A _hostitele_ je aplikace, které řídí životnost služby. Služby můžete v místním prostředí nebo spravovat existující hostitelský proces.
+ Služba musí být hostována v některém procesu. _Hostitel_ je aplikace, která řídí dobu života služby. Služby je možné hostovat nebo spravovat pomocí stávajícího hostitelského procesu.
 
-**Služba v místním prostředí**  
- Služba, která běží v rámci procesu aplikace, kterou vytvořili vývojáři. Vývojář určuje jeho životnost, nastaví vlastnosti služby, se otevře služby (které ho nastaví do režimu naslouchání) a služba se zavře.
+**Samoobslužná služba**  
+ Služba, která je spuštěna v aplikaci procesu, kterou vytvořil vývojář. Vývojář řídí svou dobu života, nastavuje vlastnosti služby, otevírá službu (nastaví režim naslouchání) a zavírá službu.
 
-**proces hostování**  
- Aplikace, která je navržená pro hostování služeb. Patří mezi ně Internetové informační služby (IIS), aktivační služby Windows (WAS) a služby Windows. V těchto scénářích hostovaných hostitel řídí životnost služby. Například pomocí služby IIS nastavením virtuální adresář, který obsahuje sestavení a konfigurační soubor služby. Při doručení zprávy do spustí službu IIS a určuje jeho životnost.
+**Hostitelský proces**  
+ Aplikace, která je navržena pro hostování služeb. Patří mezi ně Internetová informační služba (IIS), aktivační služba Windows (WAS) a služby systému Windows. V těchto hostovaných scénářích hostitel řídí dobu života služby. Například pomocí služby IIS můžete nastavit virtuální adresář, který obsahuje sestavení a konfigurační soubor služby. Po přijetí zprávy služba IIS spustí službu a nařídí její dobu života.
 
 **Vytváření instancí**  
- Služba je vytvoření instance modelu. Existují tři vytvoření instance modelů: "jednou," ve kterém jeden objekt CLR služby všichni klienti; " za volání,"ve kterém se vytvoří nový objekt CLR pro zpracování jednotlivých volání klienta; a "na relaci," v které sadu CLR objekty, je vytvořen, jeden pro každou samostatnou relaci. Možnost vytvoření instance modelu závisí na očekávané využití model služby a požadavky aplikace.
+ Služba má model vytváření instancí. Existují tři modely vytváření instancí: "Single", ve kterém jeden objekt CLR Services všichni klienti; " za volání ", kde je vytvořen nový objekt CLR pro zpracování každého volání klienta; a "na relaci", ve které je vytvořena sada objektů CLR, jedna pro každou samostatnou relaci. Výběr modelu vytváření instancí závisí na požadavcích aplikace a na očekávaném způsobu použití služby.
 
 **Klientská aplikace**  
- Program, který vyměňuje zpráv pomocí jednoho nebo více koncových bodů. Klientská aplikace začne vytvořením instance klienta WCF a volání metod klienta WCF. Je důležité si uvědomit, že klient a služba může být jedné aplikace.
+ Program, který vyměňuje zprávy s jedním nebo více koncovými body. Klientská aplikace začíná vytvořením instance klienta WCF a voláním metod klienta WCF. Je důležité si uvědomit, že jedna aplikace může být klient i služba.
 
 **Kanál**  
- Konkrétní implementaci elementu vazby. Představuje konfiguraci vazby a kanál je implementace spojené s touto konfigurací. Proto je přidružený k každý prvek vazby kanálu. Kanály zásobníku na druhé a vytvořit konkrétní implementaci vazby: zásobník kanálu.
+ Konkrétní implementace elementu vazby. Vazba představuje konfiguraci a kanál je implementace přidružená k této konfiguraci. Proto je k jednotlivým prvkům vazby přidružen kanál. Zásobník kanálů na sebe navzájem, aby vytvořil konkrétní implementaci vazby: zásobník kanálu.
 
-**Klienta WCF**  
- Konstrukce klientskou aplikaci, která zveřejňuje operací služby jako metody (v rozhraní .NET Framework programovacím jazyce podle vašeho výběru, jako je například Visual Basic nebo Visual C#). Všechny aplikace, můžete hostovat klienta WCF, včetně aplikace, který je hostitelem služby. Proto je možné vytvořit službu, která obsahuje klienty WCF dalších služeb.
+**Klient WCF**  
+ Konstrukce klient-aplikace, která zveřejňuje operace služby jako metody (v programovacím jazyce .NET Framework podle vašeho výběru, jako je například Visual Basic nebo C#vizuál). Každá aplikace může hostovat klienta WCF, včetně aplikace, která hostuje službu. Proto je možné vytvořit službu, která obsahuje klienty WCF jiných služeb.
 
-Klienta WCF je možné vygenerovat automaticky pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a přejdete na spuštěnou službu, která publikuje metadat.
+Klient WCF se dá automaticky vygenerovat pomocí nástroje pro dodávání [metadat (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) a nasměrováním na běžící službu, která publikuje metadata.
 
 **Metadata**  
- Ve službě popisuje vlastnosti služby, kterou je potřeba pochopit, ke komunikaci se službou externí entity. Metadata mohou být spotřebovány [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta WCF a související konfigurace, klientská aplikace můžete použít k interakci se službou.
+ V rámci služby popisuje charakteristiky služby, které musí externí entita pochopit ke komunikaci se službou. Metadata mohou být spotřebována [nástrojem Svcutil. exe](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vygenerování klienta WCF a doprovodné konfigurace, kterou může klientská aplikace použít k interakci se službou.
 
-Metadata určeného službou obsahují dokumentů schématu XML, které definují kontrakt dat služby a dokumenty WSDL, které popisují metody služby.
+Metadata, která služba zveřejňuje, obsahují dokumenty schématu XML, které definují kontrakt dat služby a dokumenty WSDL, které popisují metody služby.
 
-Při povolení metadat pro službu automaticky generuje služba WCF zkontrolováním jeho koncových bodů a služba. Být zveřejněna metadata ze služby, musíte výslovně povolit chování metadat.
+Pokud je povoleno, metadata pro službu jsou automaticky generována službou WCF kontrolou služby a jejích koncových bodů. Chcete-li publikovat metadata ze služby, je nutné explicitně povolit chování metadat.
 
 **Zabezpečení**  
- Ve službě WCF zahrnuje (šifrování zpráv, aby se zabránilo odposlouchávání) důvěrnost, integritu (prostředky pro zjištění manipulaci s touto zprávou), (prostředky pro ověření serverů a klientů) ověřování a autorizace (řízení přístupu k prostředky). Tyto funkce jsou k dispozici buď využití stávající mechanismy zabezpečení, jako je protokol TLS přes protokol HTTP (označované také jako HTTPS), nebo implementací nejméně jeden z různých WS -\* specifikace zabezpečení.
+ V rámci služby WCF zahrnuje důvěrnost (šifrování zpráv pro předcházení odposlouchávání), integritu (prostředky pro detekci manipulace se zprávou), ověřování (prostředky pro ověření serverů a klientů) a autorizaci (řízení přístupu k prostředky). Tyto funkce jsou poskytovány buď pomocí stávajících mechanismů zabezpečení, jako je TLS přes HTTP (označované také jako https), nebo implementací jednoho nebo více různých specifikací WS-\* Security.
 
-**režim zabezpečení Transport**  
- Určuje, že důvěrnost, integritu a ověřování jsou k dispozici mechanismy přenosové vrstvy (například HTTPS). Při použití přenosu, jako je protokol HTTPS, v tomto režimu nabízí výhodu v podobě je efektivnější v jeho výkon a zaměřený z důvodu jeho rozšíření na Internetu. Nevýhodou je, že tento druh zabezpečení, použije se samostatně pro každý segment směrování v komunikační trasa, aby komunikace náchylné k útoku "man in the middle".
+**Režim zabezpečení přenosu**  
+ Určuje, že mechanismy přenosové vrstvy (například HTTPS) poskytují důvěrnost, integritu a ověřování. Při použití přenosu, jako je HTTPS, má tento režim výhodu efektivního výkonu a pochopení z důvodu jeho prevalence v Internetu. Nevýhodou je, že tento druh zabezpečení se používá samostatně na každém segmentu směrování v komunikační cestě, což znamená, že komunikace je náchylná k útoku "muž v prostředním".
 
-**režim zabezpečení zpráv**  
- Určuje, že zabezpečení poskytuje implementaci jeden nebo více specifikací zabezpečení, jako je specifikace s názvem [zabezpečení webové služby: Zabezpečení zpráv SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Každá zpráva obsahuje nezbytné mechanismů pro zabezpečení během jeho kopírování a umožňuje příjemci umožňuje zjistit případnou manipulaci a k dešifrování zprávy. V tomto smyslu zabezpečení zapouzdřen v rámci každé zprávy poskytující-koncové zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stane součástí zprávy, je také možné zahrnout více druhů přihlašovací údaje se zprávou (tyto jsou označovány jako _deklarace identity_). Tento přístup také nabízí výhodu v podobě povolení zpráva, kterou chcete procházet bezpečně přes všechny dopravu, včetně více přenosy mezi její zdroj a cíl. Nevýhody tohoto přístupu je složitost kryptografických mechanismů zapojeni, což vede k vliv na výkon.
+**Režim zabezpečení zpráv**  
+ Určuje, že zabezpečení je zajištěno implementací jedné nebo více specifikací zabezpečení, jako je například specifikace s [názvem specifikace Web Services Security: Zabezpečení](https://go.microsoft.com/fwlink/?LinkId=94684)zprávy SOAP. Každá zpráva obsahuje nezbytné mechanismy pro zajištění zabezpečení během přenosu a umožňuje přijímačům detekovat manipulaci a dešifrovat zprávy. V tomto smyslu je zabezpečení zapouzdřeno v rámci každé zprávy a zajišťuje komplexní zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stávají součástí zprávy, je také možné zahrnout do zprávy více druhů přihlašovacích údajů (tyto údaje jsou označovány jako _deklarace_). Tento přístup má taky možnost Povolit zabezpečenou cestu prostřednictvím jakéhokoli přenosu, včetně několika přenosů mezi zdrojem a cílem. Nevýhodou tohoto přístupu je složitá složitost používaných kryptografických mechanismů, což vede k důsledkům v souvislosti s výkonem.
 
-**přenosu se režim zabezpečených zpráv přihlašovacích údajů**  
- Určuje použití přenosové vrstvy k zajištění důvěrnosti, ověřování a integrity zprávy, při každé zprávy může obsahovat více přihlašovacích údajů (deklarace) vyžaduje spuštěné přijímače zpracovaly zprávy.
+**Přenos pomocí režimu zabezpečení přihlašovacích údajů zprávy**  
+ Určuje použití přenosové vrstvy k zajištění důvěrnosti, ověřování a integrity zpráv, zatímco každá ze zpráv může obsahovat více přihlašovacích údajů, které jsou vyžadovány příjemcem zprávy.
 
 **WS-\***  
- Sdružená hodnota stále početnější sadu Web Service (WS) specifikace, jako je WS-Security, WS-ReliableMessaging a tak dále, které jsou implementovány ve službě WCF.
+ Zkratka pro rostoucí sadu specifikací webové služby (WS), jako jsou WS-Security, WS-ReliableMessaging a tak dále, které jsou implementované ve službě WCF.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -2,36 +2,36 @@
 title: 'Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe'
 ms.date: 03/30/2017
 ms.assetid: d0d820fb-41c2-45b8-8f22-0fa5aeebbbaa
-ms.openlocfilehash: 599f5624b7eb0c32cbcc0a78e6c7f989ce470b58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: be8755ab4281b40d23ea4c8674c8c4f33631e7b6
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038750"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991596"
 ---
 # <a name="how-to-use-svcutilexe-to-validate-compiled-service-code"></a>Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe
-Můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) kvůli zjištění chyb v implementacemi služeb a konfigurace bez, který je hostitelem služby.  
+K detekci chyb v implementacích a konfiguracích služby, aniž by bylo nutné hostovat službu, můžete použít [Nástroj (Svcutil. exe) nástroje ServiceModel Metadata](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) .  
   
-### <a name="to-validate-a-service"></a>K ověření služby  
+### <a name="to-validate-a-service"></a>Ověření služby  
   
-1. Zkompilujte služby do spustitelného souboru a jeden nebo více závislých sestavení.  
+1. Zkompilujte službu do spustitelného souboru a jednoho nebo více závislých sestavení.  
   
-2. Otevřete příkazový řádek sady SDK  
+2. Otevření příkazového řádku sady SDK  
   
-3. Na příkazovém řádku spusťte nástroje Svcutil.exe v následujícím formátu. Další informace o různých parametrů, najdete v článku Služba Validationsection z [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tématu.  
+3. Na příkazovém řádku spusťte nástroj Svcutil. exe v následujícím formátu. Další informace o různých parametrech najdete v tématu Service Validationsection [(Svcutil. exe) pro nástroj](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) .  
   
-    ```  
+    ```console
     svcutil.exe /validate /serviceName:<serviceConfigName>  <assemblyPath>*  
     ```  
   
-     Je nutné použít `/serviceName` možnost určíte název konfigurace služby, kterou chcete ověřit.  
+     K určení názvu konfigurace `/serviceName` služby, kterou chcete ověřit, je nutné použít možnost.  
   
-     `assemblyPath` Argument určuje cestu ke spustitelnému souboru pro službu a jedno nebo více sestavení, které obsahují typy, které služba má být ověřen. Spustitelný soubor sestavení musí mít přidružený konfiguračního souboru a zadejte konfiguraci služby. Můžete použít standardní zástupné znaky příkazového řádku k poskytování více sestavení.  
+     `assemblyPath` Argument určuje cestu ke spustitelnému souboru pro službu a jedno nebo více sestavení, která obsahují typy služby, které mají být ověřeny. Spustitelné sestavení musí mít přidružený konfigurační soubor k poskytnutí konfigurace služby. K poskytnutí více sestavení můžete použít standardní zástupné znaky příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz myServiceName služby implementované ve spustitelném souboru myServiceHost.exe.  Konfigurační soubor služby (myServiceHost.exe.config) je automaticky načíst.  
+ Následující příkaz služba myServiceName implementovala ve spustitelném souboru myServiceHost. exe.  Konfigurační soubor služby (myServiceHost. exe. config) je automaticky načten.  
   
-```  
+```console  
 svcutil /validate /serviceName:myServiceName myServiceHost.exe  
 ```  
   

@@ -4,12 +4,12 @@ description: Naučte se hostovat modul runtime .NET Core z nativního kódu pro 
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 528d46f64c424dd0f58e57891c605ac5ab474240
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: ec63e1b87c4161dcd0dd3ab37aadbef53d4b3219
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925923"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970862"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Zápis vlastního hostitele .NET Core pro řízení modulu .NET runtime z vašeho nativního kódu
 
@@ -135,7 +135,7 @@ Na rozdíl od rozhraní API pro hostování aplikace Mscoree. h (popsané níže
 
 ### <a name="step-5---run-managed-code"></a>Krok 5 – spuštění spravovaného kódu
 
-Při spuštění modulu runtime může hostitel volat spravovaný kód. To lze provést několika různými způsoby. Vzorový kód spojený s tímto kurzem používá `coreclr_create_delegate` funkci k vytvoření delegáta staticky spravované metody. Toto rozhraní API přebírá [název sestavení](../../framework/app-domains/assembly-names.md), kvalifikovaný název oboru názvů a název metody jako vstupy a vrací delegáta, který může být použit k vyvolání metody.
+Při spuštění modulu runtime může hostitel volat spravovaný kód. To lze provést několika různými způsoby. Vzorový kód spojený s tímto kurzem používá `coreclr_create_delegate` funkci k vytvoření delegáta staticky spravované metody. Toto rozhraní API přebírá [název sestavení](../../standard/assembly/names.md), kvalifikovaný název oboru názvů a název metody jako vstupy a vrací delegáta, který může být použit k vyvolání metody.
 
 [!code-cpp[CoreClrHost#5](~/samples/core/hosting/HostWithCoreClrHost/src/SampleHost.cpp#5)]
 
@@ -231,7 +231,7 @@ V případě, že je doména AppDomain spuštěná a spuštěná, může nyní h
 
 [!code-cpp[NetCoreHost#8](~/samples/core/hosting/HostWithMscoree/host.cpp#8)]
 
-Další možností, pokud `ExecuteAssembly` nesplňuje požadavky hostitele, je použít `CreateDelegate` k vytvoření ukazatele funkce na statickou spravovanou metodu. To vyžaduje, aby hostitel znal podpis metody, do které volá (aby mohl vytvořit typ ukazatele na funkci), ale umožňuje hostitelům flexibility vyvolat kód jiný než vstupní bod sestavení. Název sestavení zadaný ve druhém parametru je [úplný název spravovaného sestavení](../../framework/app-domains/assembly-names.md) knihovny, která se má načíst.
+Další možností, pokud `ExecuteAssembly` nesplňuje požadavky hostitele, je použít `CreateDelegate` k vytvoření ukazatele funkce na statickou spravovanou metodu. To vyžaduje, aby hostitel znal podpis metody, do které volá (aby mohl vytvořit typ ukazatele na funkci), ale umožňuje hostitelům flexibility vyvolat kód jiný než vstupní bod sestavení. Název sestavení zadaný ve druhém parametru je [úplný název spravovaného sestavení](../../standard/assembly/names.md) knihovny, která se má načíst.
 
 ```C++
 void *pfnDelegate = NULL;

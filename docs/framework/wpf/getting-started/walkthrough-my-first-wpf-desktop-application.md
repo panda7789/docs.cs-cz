@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8b7f6f3bdbf3adc7c355e88cfe1f569cc0cb76f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b2c8e36c1b8185f28a7ec20402e385f3a1ddf5ce
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799339"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991759"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Kurz: Vytvoření první aplikace WPF v aplikaci Visual Studio 2019
 
@@ -25,6 +25,7 @@ V tomto článku se dozvíte, jak vyvíjet desktopovou aplikaci Windows Presenta
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > - Vytvořte projekt WPF.
 > - Použijte XAML pro návrh vzhledu uživatelského rozhraní (UI) aplikace.
 > - Napíšete kód pro sestavení chování aplikace.

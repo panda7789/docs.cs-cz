@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e7da023c5ab9247cde0ccd1126d4d639c6f355e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8d9448edab101ef11447b54e12c53abcb578646a
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910975"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971604"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 
@@ -118,7 +118,7 @@ Pro konkrétní informace o nasazení a údržbě .NET Framework použijte násl
 
 ## <a name="packaging-and-distributing-net-framework-applications"></a>Balení a distribuce .NET Frameworkch aplikací
 
-Některé informace o balení a nasazení pro .NET Framework jsou popsány v dalších částech dokumentace. Tyto části poskytují informace o jednotkách, které jsou označovány jako [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md), které nevyžadují žádné položky registru, [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md), která zajišťují jedinečnost názvů a brání falšování názvů a [správu verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md) , který řeší mnohé problémy spojené se konflikty knihoven DLL. Následující části obsahují informace o balení a distribuci .NET Frameworkch aplikací.
+Některé informace o balení a nasazení pro .NET Framework jsou popsány v dalších částech dokumentace. Tyto části poskytují informace o jednotkách, které jsou označovány jako [sestavení](../../standard/assembly/index.md), které nevyžadují žádné položky registru, [sestavení se silným názvem](../../standard/assembly/strong-named.md), která zajišťují jedinečnost názvů a brání falšování názvů a [správu verzí sestavení](../../standard/assembly/versioning.md) , který řeší mnohé problémy spojené se konflikty knihoven DLL. Následující části obsahují informace o balení a distribuci .NET Frameworkch aplikací.
 
 ### <a name="packaging"></a>Balení
 

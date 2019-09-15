@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů Metadata Exchange'
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: 00aa1bbde95c0636391f213f830fc67b2dedf459
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e114bc2c046ba7145a91121ce23c82912680a048
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968795"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968964"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: Použití monikeru služby u kontraktů Metadata Exchange
 Po vývoji některých nových služeb WCF se můžete rozhodnout, že chcete být schopni tyto služby volat ze skriptu nebo aplikace Visual Basic 6,0. Jednou z metod by bylo generovat sestavení klienta WCF, zaregistrovat sestavení v modelu COM, nainstalovat sestavení v globální mezipaměti sestavení (GAC) a pak odkazovat na typy modelu COM z kódu Visual Basic. Při distribuci aplikace budete muset distribuovat i sestavení klienta WCF. Uživatel pak bude muset zaregistrovat sestavení klienta WCF pomocí modelu COM a umístit ho do mezipaměti GAC. Zprostředkovatel komunikace s objekty WCF COM také umožňuje provádět stejná volání služby, aniž by se museli spoléhat na sestavení klienta WCF. Moniker WCF umožňuje volat libovolnou službu WCF z jakéhokoli jazyka kompatibilního s COM (Visual Basic, VBScript, jazyk Visual Basic for Application (VBA) atd.) zadáním identifikátoru URI koncového bodu (MEX) metadat, který používá moniker služby k extrakci typu. informace o službě. Toto téma popisuje, jak volat ukázku Začínáme WCF pomocí monikeru WCF, který určuje koncový bod mex.  
@@ -21,7 +21,7 @@ Po vývoji některých nových služeb WCF se můžete rozhodnout, že chcete b�
   
 2. Vytvořte skript Visual Basic nebo Visual Basic aplikaci, která obsahuje následující kód:  
   
-    ```  
+    ```vb
     monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
     monString = monString + ", address=http://localhost/ServiceModelSamples/Service.svc"  
     monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
