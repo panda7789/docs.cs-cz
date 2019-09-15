@@ -2,33 +2,33 @@
 title: 'Postupy: Deserializace vlastností data instance'
 ms.date: 03/30/2017
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-ms.openlocfilehash: a53c8ceea2a2bf9840b92dc7119e681902da893e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e037d5f8d0b221aa0eb8fdc6eceabf6efb2dc387
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619683"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989637"
 ---
-# <a name="how-to-deserialize-instance-data-properties"></a><span data-ttu-id="25b27-102">Postupy: Deserializace vlastností data instance</span><span class="sxs-lookup"><span data-stu-id="25b27-102">How to: Deserialize Instance Data Properties</span></span>
-<span data-ttu-id="25b27-103">Může nastat situace, když uživatel nebo správce pracovního postupu může být vhodné ručně zkontrolovat stav trvalé instance práce.</span><span class="sxs-lookup"><span data-stu-id="25b27-103">There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance.</span></span> <span data-ttu-id="25b27-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> poskytuje pohled na tabulku instance, která poskytuje následující čtyři sloupce:</span><span class="sxs-lookup"><span data-stu-id="25b27-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:</span></span>  
+# <a name="how-to-deserialize-instance-data-properties"></a><span data-ttu-id="748d9-102">Postupy: Deserializace vlastností data instance</span><span class="sxs-lookup"><span data-stu-id="748d9-102">How to: Deserialize Instance Data Properties</span></span>
+<span data-ttu-id="748d9-103">Můžou nastat situace, kdy uživatel nebo správce pracovního postupu může chtít ručně zkontrolovat stav trvalé instance pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="748d9-103">There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance.</span></span> <span data-ttu-id="748d9-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>poskytuje zobrazení tabulky instance, která zveřejňuje následující čtyři sloupce:</span><span class="sxs-lookup"><span data-stu-id="748d9-104"><xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:</span></span>  
   
-- <span data-ttu-id="25b27-105">ReadWritePrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="25b27-105">ReadWritePrimitiveDataProperties</span></span>  
+- <span data-ttu-id="748d9-105">ReadWritePrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="748d9-105">ReadWritePrimitiveDataProperties</span></span>  
   
-- <span data-ttu-id="25b27-106">WriteOnlyPrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="25b27-106">WriteOnlyPrimitiveDataProperties</span></span>  
+- <span data-ttu-id="748d9-106">WriteOnlyPrimitiveDataProperties</span><span class="sxs-lookup"><span data-stu-id="748d9-106">WriteOnlyPrimitiveDataProperties</span></span>  
   
-- <span data-ttu-id="25b27-107">ReadWriteComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="25b27-107">ReadWriteComplexDataProperties</span></span>  
+- <span data-ttu-id="748d9-107">ReadWriteComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="748d9-107">ReadWriteComplexDataProperties</span></span>  
   
-- <span data-ttu-id="25b27-108">WriteOnlyComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="25b27-108">WriteOnlyComplexDataProperties</span></span>  
+- <span data-ttu-id="748d9-108">WriteOnlyComplexDataProperties</span><span class="sxs-lookup"><span data-stu-id="748d9-108">WriteOnlyComplexDataProperties</span></span>  
   
- <span data-ttu-id="25b27-109">Primitivní datové vlastnosti odkazují na vlastnosti, jejichž typy rozhraní .NET Framework jsou považovány za "common" (například Int32 a řetězec), zatímco rozšířené datové vlastnosti odkazovat na všechny ostatní typy.</span><span class="sxs-lookup"><span data-stu-id="25b27-109">Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types.</span></span> <span data-ttu-id="25b27-110">Později v tomto příkladu kódu je najít přesný výčet primitivní typy.</span><span class="sxs-lookup"><span data-stu-id="25b27-110">An exact enumeration of primitive types is found later in this code example.</span></span>  
+ <span data-ttu-id="748d9-109">Vlastnosti primitivních dat odkazují na vlastnosti, jejichž typy .NET Framework jsou považovány za "Common" (například Int32 a String), zatímco vlastnosti komplexních dat odkazují na všechny ostatní typy.</span><span class="sxs-lookup"><span data-stu-id="748d9-109">Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types.</span></span> <span data-ttu-id="748d9-110">Přesný výčet primitivních typů najdete později v tomto příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="748d9-110">An exact enumeration of primitive types is found later in this code example.</span></span>  
   
- <span data-ttu-id="25b27-111">Vlastnosti čtení/zápis odkazují na vlastnosti, které jsou vráceny zpět do modulu Runtime pracovního postupu při načtení instance.</span><span class="sxs-lookup"><span data-stu-id="25b27-111">Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded.</span></span> <span data-ttu-id="25b27-112">Vlastnosti WriteOnly jsou zapsána do databáze a pak nikdy znovu přečíst.</span><span class="sxs-lookup"><span data-stu-id="25b27-112">WriteOnly properties are written to the database and then never read again.</span></span>  
+ <span data-ttu-id="748d9-111">Vlastnosti pro čtení a zápis odkazují na vlastnosti, které se vrátí zpět do modulu runtime pracovního postupu při načtení instance.</span><span class="sxs-lookup"><span data-stu-id="748d9-111">Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded.</span></span> <span data-ttu-id="748d9-112">Vlastnosti WriteOnly se zapisují do databáze a pak se nikdy nečtou.</span><span class="sxs-lookup"><span data-stu-id="748d9-112">WriteOnly properties are written to the database and then never read again.</span></span>  
   
- <span data-ttu-id="25b27-113">V tomto příkladu obsahuje kód, který umožňuje uživateli se deserializovat data primitivní vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="25b27-113">This example provides code that enables a user to deserialize primitive data properties.</span></span> <span data-ttu-id="25b27-114">Zadaný čtení ze sloupce ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties bajtové pole, tento kód se převést na binární rozsáhlý objekt (BLOB) <xref:System.Collections.Generic.Dictionary%602> typu \<XName, objekt > kde každá hodnota klíče pár představuje název vlastnosti a její odpovídající hodnotu.</span><span class="sxs-lookup"><span data-stu-id="25b27-114">Given a byte array read from either the ReadWritePrimitiveDataProperties or WriteOnlyPrimitiveDataProperties column, this code will convert the binary large object (BLOB) into a <xref:System.Collections.Generic.Dictionary%602> of type \<XName, object> where each key value pair represents a property name and its corresponding value.</span></span>  
+ <span data-ttu-id="748d9-113">Tento příklad poskytuje kód, který umožňuje uživateli deserializovat primitivní vlastnosti dat.</span><span class="sxs-lookup"><span data-stu-id="748d9-113">This example provides code that enables a user to deserialize primitive data properties.</span></span> <span data-ttu-id="748d9-114">Při přečtení bajtového pole ze sloupce ReadWritePrimitiveDataProperties nebo WriteOnlyPrimitiveDataProperties převede tento kód binární rozsáhlý objekt (BLOB) na <xref:System.Collections.Generic.Dictionary%602> typ \<XName, objekt >, kde každá hodnota klíče dvojice představuje název vlastnosti a odpovídající hodnotu.</span><span class="sxs-lookup"><span data-stu-id="748d9-114">Given a byte array read from either the ReadWritePrimitiveDataProperties or WriteOnlyPrimitiveDataProperties column, this code will convert the binary large object (BLOB) into a <xref:System.Collections.Generic.Dictionary%602> of type \<XName, object> where each key value pair represents a property name and its corresponding value.</span></span>  
   
- <span data-ttu-id="25b27-115">V tomto příkladu není ukazují, jak zrušit serializaci komplexní datové vlastnosti, protože to není aktuálně podporovaná operace.</span><span class="sxs-lookup"><span data-stu-id="25b27-115">This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.</span></span>  
+ <span data-ttu-id="748d9-115">Tento příklad neukazuje, jak zrušit serializaci vlastností komplexních dat, protože to není momentálně podporovaná operace.</span><span class="sxs-lookup"><span data-stu-id="748d9-115">This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.</span></span>  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  

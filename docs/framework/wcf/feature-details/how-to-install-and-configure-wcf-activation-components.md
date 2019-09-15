@@ -4,106 +4,106 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: aed6cb71ac3ccd7af5423cdb8ccc43133bbe5337
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 70eab39e4bb24dfd1cdd6abc5216e50126ef1f4c
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972034"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972184"
 ---
-# <a name="how-to-install-and-configure-wcf-activation-components"></a><span data-ttu-id="680d9-102">Postupy: Instalace a konfigurace aktivačních komponent WCF</span><span class="sxs-lookup"><span data-stu-id="680d9-102">How to: Install and Configure WCF Activation Components</span></span>
+# <a name="how-to-install-and-configure-wcf-activation-components"></a><span data-ttu-id="b6336-102">Postupy: Instalace a konfigurace aktivačních komponent WCF</span><span class="sxs-lookup"><span data-stu-id="b6336-102">How to: Install and Configure WCF Activation Components</span></span>
 
-<span data-ttu-id="680d9-103">Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů systému Windows (označované také jako) na [!INCLUDE[wv](../../../../includes/wv-md.md)] služby hostitelských Windows Communication Foundation (WCF), které nekomunikují přes síťové protokoly HTTP.</span><span class="sxs-lookup"><span data-stu-id="680d9-103">This topic describes the steps required to set up Windows Process Activation Service (also known as WAS) on [!INCLUDE[wv](../../../../includes/wv-md.md)] to host Windows Communication Foundation (WCF) services that do not communicate over HTTP network protocols.</span></span> <span data-ttu-id="680d9-104">Následující části popisují kroky pro tuto konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="680d9-104">The following sections outline the steps for this configuration:</span></span>
+<span data-ttu-id="b6336-103">Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů systému Windows (označované také jako) na [!INCLUDE[wv](../../../../includes/wv-md.md)] služby hostitelských Windows Communication Foundation (WCF), které nekomunikují přes síťové protokoly HTTP.</span><span class="sxs-lookup"><span data-stu-id="b6336-103">This topic describes the steps required to set up Windows Process Activation Service (also known as WAS) on [!INCLUDE[wv](../../../../includes/wv-md.md)] to host Windows Communication Foundation (WCF) services that do not communicate over HTTP network protocols.</span></span> <span data-ttu-id="b6336-104">Následující části popisují kroky pro tuto konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="b6336-104">The following sections outline the steps for this configuration:</span></span>
 
-- <span data-ttu-id="680d9-105">Nainstalujte (nebo potvrďte instalaci produktu) aktivační komponenty WCF.</span><span class="sxs-lookup"><span data-stu-id="680d9-105">Install (or confirm the installation of) the WCF activation components.</span></span>
+- <span data-ttu-id="b6336-105">Nainstalujte (nebo potvrďte instalaci produktu) aktivační komponenty WCF.</span><span class="sxs-lookup"><span data-stu-id="b6336-105">Install (or confirm the installation of) the WCF activation components.</span></span>
 
-- <span data-ttu-id="680d9-106">Konfigurace měla podporovat protokol jiného typu než HTTP.</span><span class="sxs-lookup"><span data-stu-id="680d9-106">Configure WAS to support a non-HTTP protocol.</span></span> <span data-ttu-id="680d9-107">Následující postup slouží ke [!INCLUDE[wv](../../../../includes/wv-md.md)] konfiguraci aktivace protokolem TCP.</span><span class="sxs-lookup"><span data-stu-id="680d9-107">The following procedure configures [!INCLUDE[wv](../../../../includes/wv-md.md)] for TCP activation.</span></span>
+- <span data-ttu-id="b6336-106">Konfigurace měla podporovat protokol jiného typu než HTTP.</span><span class="sxs-lookup"><span data-stu-id="b6336-106">Configure WAS to support a non-HTTP protocol.</span></span> <span data-ttu-id="b6336-107">Následující postup slouží ke [!INCLUDE[wv](../../../../includes/wv-md.md)] konfiguraci aktivace protokolem TCP.</span><span class="sxs-lookup"><span data-stu-id="b6336-107">The following procedure configures [!INCLUDE[wv](../../../../includes/wv-md.md)] for TCP activation.</span></span>
 
-<span data-ttu-id="680d9-108">Po instalaci a konfiguraci nástroje si přečtěte téma [How to: Hostování služby WCF ve was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.</span><span class="sxs-lookup"><span data-stu-id="680d9-108">After installing and configuring WAS, see [How to: Host a WCF Service in WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) for the procedures to create a WCF service that exposes an non-HTTP endpoint that employs WAS.</span></span>
+<span data-ttu-id="b6336-108">Po instalaci a konfiguraci nástroje si přečtěte téma [How to: Hostování služby WCF ve was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.</span><span class="sxs-lookup"><span data-stu-id="b6336-108">After installing and configuring WAS, see [How to: Host a WCF Service in WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) for the procedures to create a WCF service that exposes an non-HTTP endpoint that employs WAS.</span></span>
 
-## <a name="to-install-the-wcf-non-http-activation-components"></a><span data-ttu-id="680d9-109">Instalace součástí technologie WCF pro aktivaci bez protokolu HTTP</span><span class="sxs-lookup"><span data-stu-id="680d9-109">To install the WCF non-HTTP activation components</span></span>
+## <a name="to-install-the-wcf-non-http-activation-components"></a><span data-ttu-id="b6336-109">Instalace součástí technologie WCF pro aktivaci bez protokolu HTTP</span><span class="sxs-lookup"><span data-stu-id="b6336-109">To install the WCF non-HTTP activation components</span></span>
 
-1. <span data-ttu-id="680d9-110">Klikněte na tlačítko **Start** a potom klikněte na **Ovládací panely**.</span><span class="sxs-lookup"><span data-stu-id="680d9-110">Click the **Start** button, and then click **Control Panel**.</span></span>
+1. <span data-ttu-id="b6336-110">Klikněte na tlačítko **Start** a potom klikněte na **Ovládací panely**.</span><span class="sxs-lookup"><span data-stu-id="b6336-110">Click the **Start** button, and then click **Control Panel**.</span></span>
 
-2. <span data-ttu-id="680d9-111">Klikněte na **programy**a potom klikněte na **programy a funkce**.</span><span class="sxs-lookup"><span data-stu-id="680d9-111">Click **Programs**, and then click **Programs and Features**.</span></span>
+2. <span data-ttu-id="b6336-111">Klikněte na **programy**a potom klikněte na **programy a funkce**.</span><span class="sxs-lookup"><span data-stu-id="b6336-111">Click **Programs**, and then click **Programs and Features**.</span></span>
 
-3. <span data-ttu-id="680d9-112">V nabídce **úlohy** klikněte na **zapnout nebo vypnout funkce systému Windows**.</span><span class="sxs-lookup"><span data-stu-id="680d9-112">On the **Tasks** menu, click **Turn Windows features on or off**.</span></span>
+3. <span data-ttu-id="b6336-112">V nabídce **úlohy** klikněte na **zapnout nebo vypnout funkce systému Windows**.</span><span class="sxs-lookup"><span data-stu-id="b6336-112">On the **Tasks** menu, click **Turn Windows features on or off**.</span></span>
 
-4. <span data-ttu-id="680d9-113">Vyhledejte uzel WinFX, vyberte a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="680d9-113">Find the WinFX node, select and then expand it.</span></span>
+4. <span data-ttu-id="b6336-113">Vyhledejte uzel WinFX, vyberte a rozbalte ho.</span><span class="sxs-lookup"><span data-stu-id="b6336-113">Find the WinFX node, select and then expand it.</span></span>
 
-5. <span data-ttu-id="680d9-114">Vyberte pole **součásti technologie WCF bez protokolu HTTP** a uložte nastavení.</span><span class="sxs-lookup"><span data-stu-id="680d9-114">Select the **WCF Non-Http Activation Components** box and save the setting.</span></span>
+5. <span data-ttu-id="b6336-114">Vyberte pole **součásti technologie WCF bez protokolu HTTP** a uložte nastavení.</span><span class="sxs-lookup"><span data-stu-id="b6336-114">Select the **WCF Non-Http Activation Components** box and save the setting.</span></span>
 
-## <a name="to-configure-the-was-to-support-tcp-activation"></a><span data-ttu-id="680d9-115">Konfigurace nástroje WAS na podporu aktivace protokolem TCP</span><span class="sxs-lookup"><span data-stu-id="680d9-115">To configure the WAS to support TCP activation</span></span>
+## <a name="to-configure-the-was-to-support-tcp-activation"></a><span data-ttu-id="b6336-115">Konfigurace nástroje WAS na podporu aktivace protokolem TCP</span><span class="sxs-lookup"><span data-stu-id="b6336-115">To configure the WAS to support TCP activation</span></span>
 
-1. <span data-ttu-id="680d9-116">Aby bylo možné podporovat NET. TCP Activation, musí být výchozí webová stránka nejprve svázána s portem NET. TCP.</span><span class="sxs-lookup"><span data-stu-id="680d9-116">To support net.tcp activation, the default Web site must first be bound to a net.tcp port.</span></span> <span data-ttu-id="680d9-117">To můžete provést pomocí nástroje Appcmd. exe, který se instaluje se sadou nástrojů pro správu služby IIS 7,0.</span><span class="sxs-lookup"><span data-stu-id="680d9-117">You can do this by using Appcmd.exe, which is installed with the IIS 7.0 management toolset.</span></span> <span data-ttu-id="680d9-118">V okně příkazového řádku na úrovni správce spusťte následující příkaz.</span><span class="sxs-lookup"><span data-stu-id="680d9-118">In an administrator-level Command Prompt window, run the following command.</span></span>
+1. <span data-ttu-id="b6336-116">Aby bylo možné podporovat NET. TCP Activation, musí být výchozí webová stránka nejprve svázána s portem NET. TCP.</span><span class="sxs-lookup"><span data-stu-id="b6336-116">To support net.tcp activation, the default Web site must first be bound to a net.tcp port.</span></span> <span data-ttu-id="b6336-117">To můžete provést pomocí nástroje Appcmd. exe, který se instaluje se sadou nástrojů pro správu služby IIS 7,0.</span><span class="sxs-lookup"><span data-stu-id="b6336-117">You can do this by using Appcmd.exe, which is installed with the IIS 7.0 management toolset.</span></span> <span data-ttu-id="b6336-118">V okně příkazového řádku na úrovni správce spusťte následující příkaz.</span><span class="sxs-lookup"><span data-stu-id="b6336-118">In an administrator-level Command Prompt window, run the following command.</span></span>
 
-    ```
+    ```console
     %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="680d9-119">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-119">This command is a single line of text.</span></span> <span data-ttu-id="680d9-120">Tento příkaz přidá vazbu sítě NET. TCP na výchozí webovou stránku, která naslouchá na portu TCP 808 s libovolným názvem hostitele.</span><span class="sxs-lookup"><span data-stu-id="680d9-120">This command adds a net.tcp site binding to the default Web site listening on TCP port 808 with any host name.</span></span>
+    > <span data-ttu-id="b6336-119">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-119">This command is a single line of text.</span></span> <span data-ttu-id="b6336-120">Tento příkaz přidá vazbu sítě NET. TCP na výchozí webovou stránku, která naslouchá na portu TCP 808 s libovolným názvem hostitele.</span><span class="sxs-lookup"><span data-stu-id="b6336-120">This command adds a net.tcp site binding to the default Web site listening on TCP port 808 with any host name.</span></span>
 
-2. <span data-ttu-id="680d9-121">I když všechny aplikace v rámci lokality sdílí společnou vazbu NET. TCP, každá aplikace může povolit podporu NET. TCP samostatně.</span><span class="sxs-lookup"><span data-stu-id="680d9-121">Although all applications within a site share a common net.tcp binding, each application can enable net.tcp support individually.</span></span> <span data-ttu-id="680d9-122">Pokud chcete pro aplikaci povolit NET. TCP, spusťte následující příkaz z příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="680d9-122">To enable net.tcp for the application, run the following command from an administrator-level command prompt.</span></span>
+2. <span data-ttu-id="b6336-121">I když všechny aplikace v rámci lokality sdílí společnou vazbu NET. TCP, každá aplikace může povolit podporu NET. TCP samostatně.</span><span class="sxs-lookup"><span data-stu-id="b6336-121">Although all applications within a site share a common net.tcp binding, each application can enable net.tcp support individually.</span></span> <span data-ttu-id="b6336-122">Pokud chcete pro aplikaci povolit NET. TCP, spusťte následující příkaz z příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="b6336-122">To enable net.tcp for the application, run the following command from an administrator-level command prompt.</span></span>
 
-    ```
+    ```console
     %windir%\system32\inetsrv\appcmd.exe set app
     "Default Web Site/<WCF Application>" /enabledProtocols:http,net.tcp
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="680d9-123">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-123">This command is a single line of text.</span></span> <span data-ttu-id="680d9-124">Tento příkaz umožňuje, aby\<aplikace/*WCF aplikace*> k dispozici pomocí `http://localhost/<WCF Application>` a `net.tcp://localhost/<WCF Application>`.</span><span class="sxs-lookup"><span data-stu-id="680d9-124">This command enables the /\<*WCF Application*> application to be accessed using both `http://localhost/<WCF Application>` and `net.tcp://localhost/<WCF Application>`.</span></span>
+    > <span data-ttu-id="b6336-123">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-123">This command is a single line of text.</span></span> <span data-ttu-id="b6336-124">Tento příkaz umožňuje, aby\<aplikace/*WCF aplikace*> k dispozici pomocí `http://localhost/<WCF Application>` a `net.tcp://localhost/<WCF Application>`.</span><span class="sxs-lookup"><span data-stu-id="b6336-124">This command enables the /\<*WCF Application*> application to be accessed using both `http://localhost/<WCF Application>` and `net.tcp://localhost/<WCF Application>`.</span></span>
 
-     <span data-ttu-id="680d9-125">Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.</span><span class="sxs-lookup"><span data-stu-id="680d9-125">Remove the net.tcp site binding you added for this sample.</span></span>
+     <span data-ttu-id="b6336-125">Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.</span><span class="sxs-lookup"><span data-stu-id="b6336-125">Remove the net.tcp site binding you added for this sample.</span></span>
 
-     <span data-ttu-id="680d9-126">Následující dva kroky jsou implementovány v dávkovém souboru s názvem RemoveNetTcpSiteBinding. cmd, který je umístěn v ukázkovém adresáři.</span><span class="sxs-lookup"><span data-stu-id="680d9-126">As a convenience, the following two steps are implemented in a batch file called RemoveNetTcpSiteBinding.cmd located in the sample directory.</span></span>
+     <span data-ttu-id="b6336-126">Následující dva kroky jsou implementovány v dávkovém souboru s názvem RemoveNetTcpSiteBinding. cmd, který je umístěn v ukázkovém adresáři.</span><span class="sxs-lookup"><span data-stu-id="b6336-126">As a convenience, the following two steps are implemented in a batch file called RemoveNetTcpSiteBinding.cmd located in the sample directory.</span></span>
 
-    1. <span data-ttu-id="680d9-127">Ze seznamu povolených protokolů odeberte NET. TCP spuštěním následujícího příkazu v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="680d9-127">Remove net.tcp from the list of enabled protocols by running the following command in an administrator-level Command Prompt window.</span></span>
+    1. <span data-ttu-id="b6336-127">Ze seznamu povolených protokolů odeberte NET. TCP spuštěním následujícího příkazu v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="b6336-127">Remove net.tcp from the list of enabled protocols by running the following command in an administrator-level Command Prompt window.</span></span>
 
-        ```
+        ```console
         %windir%\system32\inetsrv\appcmd.exe set app
         "Default Web Site/servicemodelsamples<WCF Application>" " /enabledProtocols:http
         ```
 
         > [!NOTE]
-        > <span data-ttu-id="680d9-128">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-128">This command is a single line of text.</span></span>
+        > <span data-ttu-id="b6336-128">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-128">This command is a single line of text.</span></span>
 
-    2. <span data-ttu-id="680d9-129">Odeberte vazbu sítě NET. TCP spuštěním následujícího příkazu v okně příkazového řádku se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="680d9-129">Remove the net.tcp site binding by running the following command in an elevated Command Prompt window:</span></span>
+    2. <span data-ttu-id="b6336-129">Odeberte vazbu sítě NET. TCP spuštěním následujícího příkazu v okně příkazového řádku se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="b6336-129">Remove the net.tcp site binding by running the following command in an elevated Command Prompt window:</span></span>
 
-        ```
+        ```console
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"
         --bindings.[protocol='net.tcp',bindingInformation='808:*']
         ```
 
         > [!NOTE]
-        > <span data-ttu-id="680d9-130">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-130">This command is a single line of text.</span></span>
+        > <span data-ttu-id="b6336-130">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-130">This command is a single line of text.</span></span>
 
-## <a name="to-remove-nettcp-from-the-list-of-enabled-protocols"></a><span data-ttu-id="680d9-131">Odebrání NET. TCP ze seznamu povolených protokolů</span><span class="sxs-lookup"><span data-stu-id="680d9-131">To remove net.tcp from the list of enabled protocols</span></span>
+## <a name="to-remove-nettcp-from-the-list-of-enabled-protocols"></a><span data-ttu-id="b6336-131">Odebrání NET. TCP ze seznamu povolených protokolů</span><span class="sxs-lookup"><span data-stu-id="b6336-131">To remove net.tcp from the list of enabled protocols</span></span>
 
-1. <span data-ttu-id="680d9-132">Chcete-li odebrat NET. TCP ze seznamu povolených protokolů, spusťte následující příkaz v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="680d9-132">To remove net.tcp from the list of enabled protocols, run the following command in an administrator-level Command Prompt window.</span></span>
+1. <span data-ttu-id="b6336-132">Chcete-li odebrat NET. TCP ze seznamu povolených protokolů, spusťte následující příkaz v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="b6336-132">To remove net.tcp from the list of enabled protocols, run the following command in an administrator-level Command Prompt window.</span></span>
 
-    ```
+    ```console
     %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples<WCF Application>" " /enabledProtocols:http
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="680d9-133">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-133">This command is a single line of text.</span></span>
+    > <span data-ttu-id="b6336-133">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-133">This command is a single line of text.</span></span>
 
-## <a name="to-remove-the-nettcp-site-binding"></a><span data-ttu-id="680d9-134">Postup odebrání vazby webu NET. TCP</span><span class="sxs-lookup"><span data-stu-id="680d9-134">To remove the net.tcp site binding</span></span>
+## <a name="to-remove-the-nettcp-site-binding"></a><span data-ttu-id="b6336-134">Postup odebrání vazby webu NET. TCP</span><span class="sxs-lookup"><span data-stu-id="b6336-134">To remove the net.tcp site binding</span></span>
 
-1. <span data-ttu-id="680d9-135">Chcete-li odebrat vazbu sítě NET. TCP, spusťte následující příkaz v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="680d9-135">To remove the net.tcp site binding run the following command in an administrator-level Command Prompt window.</span></span>
+1. <span data-ttu-id="b6336-135">Chcete-li odebrat vazbu sítě NET. TCP, spusťte následující příkaz v okně příkazového řádku na úrovni správce.</span><span class="sxs-lookup"><span data-stu-id="b6336-135">To remove the net.tcp site binding run the following command in an administrator-level Command Prompt window.</span></span>
 
-    ```
+    ```console
     %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"
     -bindings.[protocol='net.tcp',bindingInformation='808:*']
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="680d9-136">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="680d9-136">This command is a single line of text.</span></span>
+    > <span data-ttu-id="b6336-136">Tento příkaz je jedním řádkem textu.</span><span class="sxs-lookup"><span data-stu-id="b6336-136">This command is a single line of text.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="680d9-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="680d9-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6336-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6336-137">See also</span></span>
 
-- [<span data-ttu-id="680d9-138">Aktivace protokolu TCP</span><span class="sxs-lookup"><span data-stu-id="680d9-138">TCP Activation</span></span>](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [<span data-ttu-id="680d9-139">Aktivace služby MSMQ</span><span class="sxs-lookup"><span data-stu-id="680d9-139">MSMQ Activation</span></span>](../../../../docs/framework/wcf/samples/msmq-activation.md)
-- [<span data-ttu-id="680d9-140">Aktivace pojmenovaného kanálu</span><span class="sxs-lookup"><span data-stu-id="680d9-140">NamedPipe Activation</span></span>](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
-- [<span data-ttu-id="680d9-141">Funkce hostování technologie Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="680d9-141">Windows Server App Fabric Hosting Features</span></span>](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [<span data-ttu-id="b6336-138">Aktivace protokolu TCP</span><span class="sxs-lookup"><span data-stu-id="b6336-138">TCP Activation</span></span>](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [<span data-ttu-id="b6336-139">Aktivace služby MSMQ</span><span class="sxs-lookup"><span data-stu-id="b6336-139">MSMQ Activation</span></span>](../../../../docs/framework/wcf/samples/msmq-activation.md)
+- [<span data-ttu-id="b6336-140">Aktivace pojmenovaného kanálu</span><span class="sxs-lookup"><span data-stu-id="b6336-140">NamedPipe Activation</span></span>](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
+- [<span data-ttu-id="b6336-141">Funkce hostování technologie Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="b6336-141">Windows Server App Fabric Hosting Features</span></span>](https://go.microsoft.com/fwlink/?LinkId=201276)
