@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ceee0c228000982be83c79fed2f7af43712b3ae
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f4d7cbd00dbf94900185643490b952ced7887965
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963395"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895223"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Podrobnosti k chování regulárních výrazů
 .NET Framework modul regulárních výrazů je zpětné navýšení shody regulárních výrazů, která zahrnuje tradiční Nedeterministický NFA modul pro nedeterministické konečné Automation (), jako je například jazyk Perl, Python, (Emacs) a TCL. Tím se odlišuje od rychlejšího, ale více omezených, čistě regulárního výrazu deterministického Automation (DFA) modulů, jako jsou ty, které se našly v AWK mají, egrep nebo Lex. Tím se také odlišuje od standardizovaného, ale pomalejšího NFAsu POSIX. V následující části jsou popsány tři typy modulů regulárních výrazů a vysvětlení, proč jsou regulární výrazy v .NET Framework implementovány pomocí tradičního modulu NFA.  
@@ -52,7 +52,7 @@ ms.locfileid: "69963395"
     |`(\d+)`|Porovnává alespoň jeden číselný znak a přiřadí ho první zachytávající skupině.|  
     |`\.`|Odpovídá tečkě.|  
   
-     Další informace o opožděných kvantifikátorech naleznete v [](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)tématu Kvantifikátory.  
+     Další informace o opožděných kvantifikátorech naleznete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
 - Pozitivní dopředného `(?=`vyhledávání: dílčí *výraz*`)`. Tato funkce umožňuje, aby se modul zpětného navracení vrátil na stejné místo v textu po porovnání dílčího výrazu. Je užitečné Hledat v celém textu tím, že ověřuje více vzorů, které začínají na stejné pozici. Umožňuje modulu také ověřit, zda podřetězec existuje na konci porovnávání bez zahrnutí podřetězce do odpovídajícího textu. Následující příklad používá pozitivní dopředného vyhledávání k extrakci slov ve větě, která nejsou následována symboly interpunkce.  
   
@@ -68,7 +68,7 @@ ms.locfileid: "69963395"
     |`\b`|Ukončí porovnání na hranici slova.|  
     |`(?=\P{P})`|Před zjištěním, zda je další znak symbol interpunkce, se podívejte dopředu. Pokud tomu tak není, bude shoda úspěšná.|  
   
-     Další informace o kladném kontrolním výrazu dopředného [](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)vyhledávání naleznete v tématu Grouping konstrukcís.  
+     Další informace o kladném kontrolním výrazu dopředného vyhledávání naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
 - Negativní dopředného `(?!`vyhledávání: dílčí *výraz*`)`. Tato funkce přidá schopnost vyhledat výraz pouze v případě, že se dílčí výraz neshoduje. To je obzvláště výkonné pro vyřazení hledání, protože je často jednodušší poskytnout výraz pro případ, který by se měl vyloučit než výraz pro případy, které musí být zahrnuté. Například je obtížné napsat výraz pro slova, která nezačínají na "non". Následující příklad používá negativní dopředné vyhledávání k vyloučení.  
   
@@ -84,7 +84,7 @@ ms.locfileid: "69963395"
     |`(\w+)`|Porovná jeden nebo více znaků slova.|  
     |`\b`|Ukončí porovnání na hranici slova.|  
   
-     Další informace o záporné kontrolní výrazy dopředného vyhledávání naleznete [](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)v tématu Grouping konstrukcís.  
+     Další informace o záporné kontrolní výrazy dopředného vyhledávání naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
 - Podmíněné vyhodnocení: `(?(` *výraz*`)`*Ano*ne a názevAno`)``)` `|` `(?(``|``)`, kde *výraz* je dílčí výraz, který se má shodovat, *název* je název zachytávající skupiny, *Ano* je řetězec, který se má shodovat, pokud je *výraz* shodný nebo je *název* platnou neprázdnou zachycenou skupinou a *ne* je dílčí výraz, který se má shodovat, pokud se *výraz* neshoduje nebo *název* není platná zachycená skupina, která není prázdná. Tato funkce umožňuje modulu vyhledávat pomocí více než jednoho alternativního vzoru, v závislosti na výsledku předchozího dílčího výrazu nebo výsledku kontrolního výrazu s nulovou šířkou. To umožňuje výkonnější formu zpětného odkazování, které umožňuje například porovnání dílčího výrazu na základě toho, zda byl předchozí dílčí výraz spárován. Regulární výraz v následujícím příkladu odpovídá odstavcům, které jsou určeny pro veřejné i interní použití. Odstavce určené pouze pro interní použití začínají `<PRIVATE>` značkou. Vzor `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` regulárního výrazu používá podmíněné vyhodnocení k přiřazení obsahu odstavců, které jsou určené pro veřejné a pro interní použití k oddělení zachycujících skupin. Tyto odstavce pak můžete zpracovat odlišně.  
   
@@ -98,7 +98,7 @@ ms.locfileid: "69963395"
     |`^`|Zahájí porovnávání na začátku řádku.|  
     |`(?<Pvt>\<PRIVATE\>\s)?`|Porovná žádný nebo jeden výskyt řetězce `<PRIVATE>` následovaný prázdným znakem. Přiřaďte shodu k zachycené skupině `Pvt`s názvem.|  
     |`(?(Pvt)((\w+\p{P}?\s)+)`|`Pvt` Pokud zachytávající skupina existuje, porovná jeden nebo více výskytů jednoho nebo více znaků slova následovaných žádným nebo jedním oddělovačem interpunkce následovaným prázdným znakem. Přiřaďte dílčí řetězec k první zachytávající skupině.|  
-    |<code>&#124;((\w+\p{P}?\s)+))<code>|`Pvt` Pokud zachytávající skupina neexistuje, porovná jeden nebo více výskytů jednoho nebo více znaků slova následovaných žádným nebo jedním oddělovačem interpunkce následovaným prázdným znakem. Přiřaďte podřetězec třetí zachytávající skupině.|  
+    |<code>&#124;((\w+\p{P}?\s)+))</code>|`Pvt` Pokud zachytávající skupina neexistuje, porovná jeden nebo více výskytů jednoho nebo více znaků slova následovaných žádným nebo jedním oddělovačem interpunkce následovaným prázdným znakem. Přiřaďte podřetězec třetí zachytávající skupině.|  
     |`\r?$`|Odpovídá konci řádku nebo konci řetězce.|  
   
      Další informace o podmíněném vyhodnocení naleznete v tématu [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md).  
