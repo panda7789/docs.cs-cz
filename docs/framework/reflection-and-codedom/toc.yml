@@ -16,6 +16,8 @@
           href: dynamically-loading-and-using-types.md
         - name: 'Postupy: Načtení sestavení do kontextu pouze pro reflexi'
           href: how-to-load-assemblies-into-the-reflection-only-context.md
+        - name: 'Postupy: Získání informací o typech a členech pomocí reflexe'
+          href: get-type-member-information.md
         - name: Přístup k vlastním atributům
           href: accessing-custom-attributes.md
         - name: Určení úplných názvů typů
