@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Value control pattern
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
-ms.openlocfilehash: 4af35b3ad1277723d4102b3aeac48748588ef8bf
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 54991ce16aa905f4138013944fb8b5a317675d9b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70244008"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043164"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "70244008"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IValueProvider>implementaci, včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.ValuePattern> ovládacího prvku se používá pro podporu ovládacích prvků, které mají vnitřní hodnotu, která není pokrývá rozsah a která může být reprezentována jako řetězec. Tento řetězec může být upravitelný v závislosti na ovládacím prvku a jeho nastavení. Příklady ovládacích prvků, které implementují tento model, najdete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.ValuePattern> ovládacího prvku se používá pro podporu ovládacích prvků, které mají vnitřní hodnotu, která není pokrývá rozsah a která může být reprezentována jako řetězec. Tento řetězec může být upravitelný v závislosti na ovládacím prvku a jeho nastavení. Příklady ovládacích prvků, které implementují tento model, najdete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -27,7 +27,7 @@ ms.locfileid: "70244008"
   
 - Ovládací prvky jako <xref:System.Windows.Automation.ControlType.TreeItem> <xref:System.Windows.Automation.ValuePattern> a musí podporovat, pokud je hodnota kterékoli z položek upravitelná bez ohledu na aktuální režim úprav ovládacího prvku. <xref:System.Windows.Automation.ControlType.ListItem> Nadřazený ovládací prvek musí podporovat <xref:System.Windows.Automation.ValuePattern> i v případě, že jsou podřízené položky editovatelné.  
   
- ![Upravitelná položka seznamu](../../../docs/framework/ui-automation/media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
+ ![Upravitelná položka seznamu](./media/uia-valuepattern-editable-listitem.PNG "UIA_ValuePattern_Editable_ListItem")  
 Příklad položky upravitelného seznamu  
   
 - Jednořádkové textové ovládací prvky podporují programový přístup ke svému obsahu implementací <xref:System.Windows.Automation.Provider.IValueProvider>. Nicméně víceřádkové textové ovládací prvky neimplementují <xref:System.Windows.Automation.Provider.IValueProvider>; namísto toho poskytují přístup ke svému obsahu implementací. <xref:System.Windows.Automation.Provider.ITextProvider>  
@@ -38,7 +38,7 @@ Příklad položky upravitelného seznamu
   
 - <xref:System.Windows.Automation.Provider.IValueProvider>musí být implementována ovládacími prvky, jako je ovládací prvek výběru [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] výběru barvy z (zobrazeno níže), který podporuje mapování řetězců mezi hodnotou barvy (například "žlutá") a ekvivalentní vnitřní strukturou RGB.  
   
- ![Výběr barvy se žlutým zvýrazněním](../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
+ ![Výběr barvy se žlutým zvýrazněním](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Příklad mapování řetězců vzorníku barev  
   
 - Aby bylo možné povolit volání <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> `true` `false` <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> ,musímítovládacíprveknastavennaa<xref:System.Windows.Automation.Provider.IValueProvider.SetValue%2A>jeho sadu na.  
@@ -65,9 +65,9 @@ Příklad mapování řetězců vzorníku barev
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
 - [Ukázka vložení textu ValuePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

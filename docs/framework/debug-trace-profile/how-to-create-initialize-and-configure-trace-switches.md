@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b1575d484c58afa3558d9f5b446473b4c89bc51
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 13f89af41520fa023d8841d6dc6d7766e2abe6da
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948001"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052717"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Postupy: Vytváření, inicializace a konfigurace přepínačů trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování.  
@@ -62,7 +62,7 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
  Když vytvoříte instanci přepínače, inicializujete ji také zadáním dvou argumentů: argumentu *DisplayName* a argumentem *Description* . Argument *DisplayName* konstruktoru nastavuje <xref:System.Diagnostics.Switch.DisplayName%2A?displayProperty=nameWithType> vlastnost <xref:System.Diagnostics.Switch> instance třídy. *DisplayName* je název, který se používá ke konfiguraci přepínače v souboru. config a argument *Description* by měl vracet stručný popis přepínače a o tom, které zprávy ovládací prvky IT.  
   
- Kromě určení názvu přepínače, který se má nakonfigurovat, musíte zadat také hodnotu pro přepínač. Tato hodnota je celé číslo. V případě hodnota 0 odpovídá **off**a jakákoli nenulová hodnota odpovídá **na.** <xref:System.Diagnostics.BooleanSwitch> U <xref:System.Diagnostics.TraceSwitch>, 0, 1, 2, 3 a 4 se shodují, **Chyba**, **Upozornění**, **informace**a **podrobné**, v uvedeném pořadí. Jakékoli číslo, které je větší než 4, je považováno za **podrobné**a jakékoli číslo menší než nula je považováno za **vypnuto**.  
+ Kromě určení názvu přepínače, který se má nakonfigurovat, musíte zadat také hodnotu pro přepínač. Tato hodnota je celé číslo. V případě hodnota 0 odpovídá **off**a jakákoli nenulová hodnota odpovídá **na.** <xref:System.Diagnostics.BooleanSwitch> U <xref:System.Diagnostics.TraceSwitch>, 0, 1, 2, 3 a 4 **se shodují,** **Chyba**, **Upozornění**, **informace**a **podrobné**, v uvedeném pořadí. Jakékoli číslo, které je větší než 4, je považováno za **podrobné**a jakékoli číslo menší než nula je považováno za **vypnuto**.  
   
 > [!NOTE]
 > V .NET Framework verze 2,0 můžete použít text a zadat hodnotu pro přepínač. Například `true` `Error` pro nebo text představující<xref:System.Diagnostics.TraceSwitch>hodnotu výčtu, například pro. <xref:System.Diagnostics.BooleanSwitch> Čára `<add name="myTraceSwitch" value="Error" />` je`<add name="myTraceSwitch" value="1" />`ekvivalentem.  
@@ -127,7 +127,7 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 ## <a name="see-also"></a>Viz také:
 
-- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-- [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Trasování a ladění schématu nastavení](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)
+- [Postupy: Přidání příkazů trasování do kódu aplikace](how-to-add-trace-statements-to-application-code.md)
+- [Přepínače trasování](trace-switches.md)
+- [Trasování a ladění schématu nastavení](../configure-apps/file-schema/trace-debug/index.md)

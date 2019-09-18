@@ -10,22 +10,22 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1aa3bbfafb760a3002a218ef52d87957af47c4de
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e8c9093faa80249a2c5898c1f250e97208764be6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894840"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044410"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
-Nástroj pro optimalizaci spravovaného profilu (nástroj Mpgo. exe) je nástroj příkazového řádku, který využívá běžné scénáře koncových uživatelů k optimalizaci sestavení nativní bitové kopie, která jsou vytvořena pomocí [generátoru nativních bitových kopií (Ngen. exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). Tento nástroj umožňuje spustit trénovací scénáře, které generují data profilu. [Generátor nativních bitových kopií (Ngen. exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) používá tato data k optimalizaci vygenerovaných sestavení nativní bitové kopie aplikace. Trénovací scénář je zkušební spuštění očekávaného použití aplikace. Nástroj Mpgo.exe je k dispozici v sadě Visual Studio Ultimate 2012 a vyšší. Počínaje Visual Studio 2013 můžete k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací použít taky nástroj Mpgo. exe.  
+Nástroj pro optimalizaci spravovaného profilu (nástroj Mpgo. exe) je nástroj příkazového řádku, který využívá běžné scénáře koncových uživatelů k optimalizaci sestavení nativní bitové kopie, která jsou vytvořena pomocí [generátoru nativních bitových kopií (Ngen. exe)](ngen-exe-native-image-generator.md). Tento nástroj umožňuje spustit trénovací scénáře, které generují data profilu. [Generátor nativních bitových kopií (Ngen. exe)](ngen-exe-native-image-generator.md) používá tato data k optimalizaci vygenerovaných sestavení nativní bitové kopie aplikace. Trénovací scénář je zkušební spuštění očekávaného použití aplikace. Nástroj Mpgo.exe je k dispozici v sadě Visual Studio Ultimate 2012 a vyšší. Počínaje Visual Studio 2013 můžete k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací použít taky nástroj Mpgo. exe.  
   
 Profilováním řízená optimalizace zlepšuje dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost pomocí shromažďování dat z trénovacích scénářů a jejich použitím pro optimalizaci rozložení nativních bitových kopií.  
   
 Při výkonových potížích s časem spuštění a velikostí pracovní sady pro sestavení jazyka IL doporučujeme nejdříve použít nástroj Ngen.exe k eliminaci nároků spojených s kompilací JIT a k usnadnění sdílení kódu. V případě potřeby dalšího zlepšení je k optimalizaci aplikace možné použít nástroj Mpgo.exe. Data o výkonu z neoptimalizované nativní bitové kopie sestavení je možné použít jako základ k vyhodnocení zlepšení výkonu. Použití nástroje Mpgo.exe může mít za následek rychlejší úplné spuštění a menší velikost pracovní sady. Nástroj Mpgo.exe přidá informace do sestavení jazyka IL, které nástroj Ngen.exe používá k vytvoření optimalizované nativní bitové kopie sestavení. Další informace najdete v tématu [vylepšení výkonu spouštění pro desktopové aplikace](https://go.microsoft.com/fwlink/p/?LinkId=248943) na blogu .NET.  
   
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7) s přihlašovacími údaji správce a zadejte do příkazového řádku následující příkaz. Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7) s přihlašovacími údaji správce a zadejte do příkazového řádku následující příkaz. Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
 Pro aplikace klasické pracovní plochy:  
   
@@ -128,7 +128,7 @@ mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyT
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ngen.exe (generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Ngen.exe (generátor nativních obrázků)](ngen-exe-native-image-generator.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)
 - [Zlepšení výkonu spouštění pro aplikace klasické pracovní plochy](https://go.microsoft.com/fwlink/p/?LinkId=248943)
 - [Přehled vylepšení výkonu v .NET 4,5](https://go.microsoft.com/fwlink/p/?LinkId=249131)

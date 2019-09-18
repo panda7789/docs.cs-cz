@@ -2,12 +2,12 @@
 title: Implementace úloh na pozadí v mikroslužbách pomocí IHostedService a třídy BackgroundService
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s novými možnostmi použití IHostedService a BackgroundService k implementaci úloh na pozadí v mikroslužbách .NET Core.
 ms.date: 01/07/2019
-ms.openlocfilehash: b3dca8db6568e6e8429645d6b433886d1d289b95
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ff263212536233bef85e9517442b4d7ed9eff115
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "70296798"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039876"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách pomocí IHostedService a třídy BackgroundService
 
@@ -236,16 +236,16 @@ Ale i pro `WebHost` nasazení do fondu aplikací existují scénáře, jako je p
 
 Rozhraní poskytuje pohodlný způsob, jak spustit úlohy na pozadí ve webové aplikaci ASP.NET Core (v .NET Core 2,0) nebo v jakémkoli procesu nebo hostiteli (počínaje rozhraním .NET Core 2,1 s `IHost`). `IHostedService` Hlavní výhodou je příležitost, kterou obdržíte s řádným zrušením pro vyčištění kódu úloh na pozadí při vypnutí samotného hostitele.
 
-#### <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje
 
-- **Sestavení naplánované úlohy v ASP.NET Core/Standard 2,0** <br/>
-    <https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html>
+- **Sestavení naplánované úlohy v ASP.NET Core/Standard 2,0**  
+  <https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html>
 
-- **Implementace IHostedService v ASP.NET Core 2,0** <br/>
-    <https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice>
+- **Implementace IHostedService v ASP.NET Core 2,0**  
+  <https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice>
 
-- **Ukázka GenericHost s využitím ASP.NET Core 2,1** <br/>
-    <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
+- **Ukázka GenericHost s využitím ASP.NET Core 2,1**  
+  <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
 
 >[!div class="step-by-step"]
 >[Předchozí](test-aspnet-core-services-web-apps.md)Další

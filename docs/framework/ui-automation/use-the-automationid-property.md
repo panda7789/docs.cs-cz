@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: 3d1e514b1ff5f71982a3c0d35cfc190ff9327b4e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1699d39f5f456fe08b043e5b6a687d4c59d28e89
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044097"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040343"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "70044097"
   
  Toto téma obsahuje scénáře a vzorový kód, který ukazuje, jak a <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> kdy lze použít k vyhledání elementu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v rámci stromu.  
   
- <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>jednoznačně identifikuje prvek automatizace uživatelského rozhraní z jeho položek na stejné úrovni. Další informace o identifikátorech vlastností souvisejících s identifikací ovládacích prvků najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>jednoznačně identifikuje prvek automatizace uživatelského rozhraní z jeho položek na stejné úrovni. Další informace o identifikátorech vlastností souvisejících s identifikací ovládacích prvků najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md).  
   
 > [!NOTE]
 > <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>nezaručuje jedinečnou identitu v celém stromu. obvykle potřebují informace o kontejneru a oboru, aby byly užitečné. Například aplikace může obsahovat ovládací prvek nabídky s více položkami nabídky nejvyšší úrovně, které zase mají více podřízených položek nabídky. Tyto sekundární položky nabídky mohou být identifikovány pomocí obecného schématu, jako je "Item1 –", "položka 2" atd., což povoluje duplicitní identifikátory pro podřízené položky v rámci položek nabídky nejvyšší úrovně.  
@@ -59,5 +59,5 @@ ms.locfileid: "70044097"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](find-a-ui-automation-element-based-on-a-property-condition.md)

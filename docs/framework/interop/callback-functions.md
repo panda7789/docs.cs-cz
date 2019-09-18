@@ -7,27 +7,27 @@ helpviewer_keywords:
 ms.assetid: c0aa8533-3b3b-42e8-9f60-84919793098c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 65f5e11a8fb40527387c14cdd8dec7f0bfc5c697
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb30e7daed938b14bd0d936352c7455db6975e73
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643697"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051910"
 ---
 # <a name="callback-functions"></a>Funkce zpětného volání
-Funkce zpětného volání je kód v rámci spravované aplikace, která pomáhá nespravovanou funkci knihovny DLL dokončení úkolu. Volání funkce zpětného volání při předání nepřímo z aplikace spravované prostřednictvím funkce knihovny DLL a zpět na spravovanou implementaci. Některé z mnoha funkcí knihovny DLL volána s platformou vyvolat vyžadují funkce zpětného volání ve spravovaném kódu správně spustit.  
+Funkce zpětného volání je kód v rámci spravované aplikace, který pomáhá nespravované funkci DLL dokončit úlohu. Volání funkce zpětného volání přecházejí nepřímo ze spravované aplikace prostřednictvím funkce knihovny DLL a zpět do spravované implementace. Některé z mnoha funkcí knihoven DLL volaných s voláním platformy vyžadují funkci zpětného volání ve spravovaném kódu pro správné fungování.  
   
- Pro volání většinu funkcí knihovny DLL ze spravovaného kódu, vytvoří definici spravované funkce a následně ji zavolat. Proces je jednoduchý.  
+ Chcete-li volat většinu funkcí knihovny DLL ze spravovaného kódu, vytvořte spravovanou definici funkce a pak ji zavolejte. Proces je jednoduchý.  
   
- Pomocí funkce knihovny DLL, která vyžaduje funkci zpětného volání obsahuje několik dalších kroků. Nejprve musíte určit, jestli funkce vyžaduje zobrazením v dokumentaci pro funkci zpětného volání. V dalším kroku je nutné vytvořit funkci zpětného volání ve spravované aplikaci. Nakonec můžete volat funkce knihovny DLL předání ukazatele na funkci zpětného volání jako argument. 
+ Použití funkce knihovny DLL, která vyžaduje funkci zpětného volání, má několik dalších kroků. Nejprve je třeba určit, zda funkce vyžaduje zpětné volání, a to tak, že si prohlédněte dokumentaci k funkci. Dále musíte vytvořit funkci zpětného volání ve spravované aplikaci. Nakonec zavolejte funkci DLL a předejte ukazatel na funkci zpětného volání jako argument. 
  
- Následující obrázek obsahuje souhrn zpětného volání funkce a provedení kroků:  
+ Následující obrázek shrnuje funkci zpětného volání a postup implementace:  
   
- ![Diagram zobrazující platformu vyvolání zpětného volání procesu.](./media/callback-functions/platform-invoke-callback-process.gif)  
+ ![Diagram znázorňující proces zpětného volání vyvolání platformy](./media/callback-functions/platform-invoke-callback-process.gif)  
   
- Funkce zpětného volání jsou ideální pro použití v situacích, ve kterých se úloha provádí opakovaně. Jiné běžné použití je výčet funkcí, jako například **EnumFontFamilies**, **EnumPrinters**, a **EnumWindows** v rozhraní Windows API. **EnumWindows** funkce vytvoří výčet prostřednictvím všechny existující windows v počítači, zavoláním funkce zpětného volání k provedení úkolu na každé okno. Pokyny a příklad najdete v tématu [jak: Implementace funkcí zpětného volání](../../../docs/framework/interop/how-to-implement-callback-functions.md).  
+ Funkce zpětného volání jsou ideální pro použití v situacích, kdy se úloha provádí opakovaně. Další běžné použití je s funkcemi výčtu, jako jsou **EnumFontFamilies**, **EnumPrinters**a **EnumWindows** v rozhraní API systému Windows. Funkce **EnumWindows** se zobrazí ve všech stávajících oknech v počítači a voláním funkce zpětného volání provede úkol v každém okně. Pokyny a příklad naleznete v tématu [How to: Implementujte funkce](how-to-implement-callback-functions.md)zpětného volání.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Implementace funkcí zpětného volání](../../../docs/framework/interop/how-to-implement-callback-functions.md)
-- [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Postupy: Implementace funkcí zpětného volání](how-to-implement-callback-functions.md)
+- [Volání funkce DLL](calling-a-dll-function.md)

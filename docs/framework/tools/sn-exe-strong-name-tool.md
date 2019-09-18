@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ef977206bf0d5b818cfd9779f063fbc2bd50632e
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 262ee168dabafcdc0b284f1ae5528843975a7e9d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971849"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044153"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
 Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými názvy](../../standard/assembly/strong-named.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
@@ -27,7 +27,7 @@ Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými náz
 
  Další informace o silných názvech a sestaveních se silným názvem naleznete v tématu sestavení [se [silným názvem](../../standard/assembly/strong-named.md) a postupy: Podepište sestavení silným názvem](../../standard/assembly/sign-strong-name.md).  
   
- Nástroj Strong Name je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Nástroj Strong Name je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
 
 > [!NOTE]
 > Na 64 počítačů 32 spusťte 64bitovou verzi programu sn. exe pomocí Developer Command Prompt pro sadu Visual Studio a verzi 64-bit pomocí příkazového řádku sady Visual Studio x64 win64. 
@@ -55,7 +55,7 @@ sn [-quiet][option [parameter(s)]]
 |**– k** [*Velikost písma*] *soubor* .|Vygeneruje nový <xref:System.Security.Cryptography.RSACryptoServiceProvider> klíč o zadané velikosti a zapíše ho do zadaného souboru.  Do souboru je zapsán veřejný i soukromý klíč.<br /><br /> Nezadáte-li velikost klíče, je dle výchozího nastavení vygenerován 1024bitový klíč, pokud máte nainstalovaný vylepšený zprostředkovatel kryptografických služeb Microsoft. V opačném případě je vygenerován 512bitový klíč.<br /><br /> Parametr *Size* klíče podporuje délky klíčů od 384 do 16 384 bitů v přírůstcích po 8 bitech, pokud máte nainstalovaného rozšířeného zprostředkovatele kryptografických služeb společnosti Microsoft.  Je-li nainstalován základní zprostředkovatel kryptografických služeb Microsoft, podporuje délky klíčů od 384 do 512 bitů v krocích po 8 bitech.|  
 |**-m** [**y** *&#124;* **n**]|Určí, zda jsou kontejnery klíčů specifické pro počítač nebo pro uživatele. Pokud zadáte *y*, kontejnery klíčů jsou specifické pro počítač. Pokud zadáte *n*, kontejnery klíčů jsou specifické pro uživatele.<br /><br /> Není-li zadána žádná z hodnot y nebo n, zobrazí tato možnost aktuální nastavení.|  
 |**-o**  *infile* [*outfile*]|Extrahuje veřejný klíč ze *souboru InFile* a uloží jej do souboru. csv. Každý bajt veřejného klíče je oddělen čárkou. Tento formát je užitečný pro pevné zakódování odkazů na klíče jako inicializovaných polí ve zdrojovém kódu. Pokud nezadáte žádný *soubor*, tato možnost umístí výstup do schránky. **Poznámka:**  Tato možnost neověřuje, zda je vstupem pouze veřejný klíč. `infile` Pokud obsahuje dvojici klíčů s privátním klíčem, je také extrahován soukromý klíč.|  
-|**-p** *soubor.* [*hashAlg*]|Extrahuje veřejný klíč z páru klíčů v *souboru InFile* a uloží jej do *souboru*s možností volitelně pomocí algoritmu RSA určeného parametrem *hashAlg*. Tento veřejný klíč lze použít k zpožděnému podepsání sestavení pomocí možností **/delaysign +** a **/keyfile** [linkeru sestavení (Al. exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Pokud je sestavení podepsáno opožděně, je v době kompilace nastaven pouze veřejný klíč a v souboru je vyhrazen prostor pro pozdější přidání podpisu, až bude znám soukromý klíč.|  
+|**-p** *soubor.* [*hashAlg*]|Extrahuje veřejný klíč z páru klíčů v *souboru InFile* a uloží jej do *souboru*s možností volitelně pomocí algoritmu RSA určeného parametrem *hashAlg*. Tento veřejný klíč lze použít k zpožděnému podepsání sestavení pomocí možností **/delaysign +** a **/keyfile** [linkeru sestavení (Al. exe)](al-exe-assembly-linker.md). Pokud je sestavení podepsáno opožděně, je v době kompilace nastaven pouze veřejný klíč a v souboru je vyhrazen prostor pro pozdější přidání podpisu, až bude znám soukromý klíč.|  
 |**-pc**  *kontejneru* *outfile* [*hashalg*]|Extrahuje veřejný klíč z páru klíčů v *kontejneru* a uloží jej do *souboru*. Použijete-li možnost *hashAlg* , použije se k extrakci veřejného klíče algoritmus RSA.|  
 |**– PB** [**y** *&#124;* **n**]|Určí, zda bude vynucena zásada potlačení silných názvů. Zadáte-li hodnotu *y*, silné názvy pro sestavení s úplným vztahem důvěryhodnosti nejsou ověřovány, pokud <xref:System.AppDomain>jsou načteny do plně důvěryhodného vztahu důvěryhodnosti. Zadáte-li hodnotu *n*, silné názvy jsou ověřovány pro správnost, ale ne pro konkrétní silný název. <xref:System.Security.Permissions.StrongNameIdentityPermission> Nemá žádný vliv na sestavení s úplným vztahem důvěryhodnosti. Je zapotřebí provést vlastní kontrolu shody silných názvů.<br /><br /> `y` Pokudaninenízadán,zobrazí`n` Tato možnost aktuální nastavení. Výchozí hodnota je `y`. **Poznámka:**  Na 64bitových počítačích je zapotřebí tento parametr nastavit pro 32bitovou i 64bitovou instanci nástroje Sn.exe.|  
 |**-q**[**uiet**]|Určuje použití tichého režimu; potlačí zobrazování zpráv o úspěchu.|  
@@ -126,7 +126,7 @@ sn -d MyContainer
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Nástroje](index.md)
+- [Al.exe (linker sestavení)](al-exe-assembly-linker.md)
 - [Sestavení se silným názvem](../../standard/assembly/strong-named.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

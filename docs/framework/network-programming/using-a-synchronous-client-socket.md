@@ -17,17 +17,17 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
-ms.openlocfilehash: 339f9c9d8b25f6deef4cc77f60c26b7b5d017ce0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fdecd18dc5975cd469e49de0eb0b55081e738cd8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796939"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047077"
 ---
 # <a name="using-a-synchronous-client-socket"></a>Použití synchronního klientského soketu
-Synchronního klientského soketu pozastaví program aplikace, zatímco se dokončují síťové operace. Synchronní sockets nejsou vhodné pro aplikace, které se hojně používají síť pro jejich operaci, ale umožňují snadný přístup k síťovým službám pro jiné aplikace.  
+Synchronní soket klienta pozastaví program aplikace a operace sítě se dokončí. Synchronní sokety nejsou vhodné pro aplikace, které pro svou práci využívají těžké sítě, ale můžou povolit jednoduchý přístup k síťovým službám pro jiné aplikace.  
   
- K odesílání dat, předat do jedné z bajtového pole <xref:System.Net.Sockets.Socket> metody třídy odesílání dat (<xref:System.Net.Sockets.Socket.Send%2A> a <xref:System.Net.Sockets.Socket.SendTo%2A>). V následujícím příkladu kóduje řetězec na bajtové pole vyrovnávací paměti pomocí <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType> vlastnost a potom odesílá vyrovnávací paměti k síti pomocí zařízení **odeslat** metody. **Odeslat** metoda vrátí počet bajtů odeslaných k síťovému zařízení.  
+ Chcete-li odeslat data, předejte pole bajtů do jedné <xref:System.Net.Sockets.Socket> z metod odeslání dat třídy (<xref:System.Net.Sockets.Socket.Send%2A> a <xref:System.Net.Sockets.Socket.SendTo%2A>). Následující příklad kóduje řetězec do vyrovnávací paměti pole bajtů pomocí <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType> vlastnosti a poté přenáší vyrovnávací paměť na síťové zařízení pomocí metody **Send** . Metoda **Send** vrátí počet bajtů odeslaných síťovému zařízení.  
   
 ```vb  
 Dim msg As Byte() = _  
@@ -40,9 +40,9 @@ byte[] msg = System.Text.Encoding.ASCII.GetBytes("This is a test");
 int bytesSent = s.Send(msg);  
 ```  
   
- **Odeslat** metoda odebere počet bajtů z vyrovnávací paměti a je zařadí do fronty se síťovým rozhraním odesílání k síťovému zařízení. Síťové rozhraní nemusí posílat data okamžitě, ale tak dlouho, dokud se připojení uzavře obvykle se to se odešle nakonec <xref:System.Net.Sockets.Socket.Shutdown%2A> metody.  
+ Metoda **Send** odstraní bajty z vyrovnávací paměti a zařadí je do fronty pomocí síťového rozhraní, které se odešle síťovému zařízení. Síťové rozhraní pravděpodobně data neodesílá okamžitě, ale pošle je, pokud je připojení normálně <xref:System.Net.Sockets.Socket.Shutdown%2A> ukončené metodou.  
   
- Pro příjem dat ze síťového zařízení, předejte do jednoho z vyrovnávací paměti **soketu** metody třídy přijímat data (<xref:System.Net.Sockets.Socket.Receive%2A> a <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>). Synchronní sockets bude aplikace pozastavit, dokud přijímání bajtů ze sítě nebo dokud není zavřena soketu. Následující příklad přijímá data ze sítě a pak jej zobrazí v konzole. Tento příklad předpokládá, že dat pocházejících ze sítě je text v kódování ASCII. **Receive** metoda vrátí počet bajtů přijatých ze sítě.  
+ Pokud chcete přijímat data ze síťového zařízení, předejte vyrovnávací paměť jedné z metod Receive- **data třídy** DataClass (<xref:System.Net.Sockets.Socket.Receive%2A> a <xref:System.Net.Sockets.Socket.ReceiveFrom%2A>). Synchronní sokety aplikaci pozastaví, dokud nejsou bajty přijímány ze sítě nebo dokud není soket uzavřen. Následující příklad přijímá data ze sítě a poté je zobrazuje v konzole nástroje. V příkladu se předpokládá, že data přicházející ze sítě jsou text s kódováním ASCII. Metoda **Receive** vrátí počet bajtů přijatých ze sítě.  
   
 ```vb  
 Dim bytes(1024) As Byte  
@@ -58,7 +58,7 @@ Console.WriteLine("Echoed text = {0}",
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec));  
 ```  
   
- Když soket je už nepotřebujete, budete muset uvolnit voláním <xref:System.Net.Sockets.Socket.Shutdown%2A> metoda a následným voláním **Zavřít** metody. V následujícím příkladu se uvolní **soketu**. <xref:System.Net.Sockets.SocketShutdown> Výčet definuje konstanty, které označuje, zda by měly být uzavřeny soket pro odesílání, pro příjem nebo oba systémy.  
+ V případě, že soket již není potřeba, je nutné jej uvolnit voláním <xref:System.Net.Sockets.Socket.Shutdown%2A> metody a následným voláním metody **Close** . Následující příklad uvolní **soket**. <xref:System.Net.Sockets.SocketShutdown> Výčet definuje konstanty, které určují, zda má být soket uzavřen pro odesílání, pro příjem nebo pro obojí.  
   
 ```vb  
 s.Shutdown(SocketShutdown.Both)  
@@ -72,6 +72,6 @@ s.Close();
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití asynchronního klientského soketu](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)
-- [Naslouchání pomocí soketů](../../../docs/framework/network-programming/listening-with-sockets.md)
-- [Příklad synchronního klientského soketu](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
+- [Použití asynchronního klientského soketu](using-an-asynchronous-client-socket.md)
+- [Naslouchání pomocí soketů](listening-with-sockets.md)
+- [Příklad synchronního klientského soketu](synchronous-client-socket-example.md)

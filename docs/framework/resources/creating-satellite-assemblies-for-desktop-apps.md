@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29739625d29db6dc7c3876007f1e733b15f5c026
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 17465b07172788f18a432784653afadda18467fe
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970982"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045691"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
 
@@ -54,7 +54,7 @@ Model hvězdicové lokality vyžaduje umístění prostředků do konkrétních 
 
 - Informace o jazykové verzi satelitního sestavení musí být zahrnuty v metadatech sestavení. Chcete-li uložit název jazykové verze v metadatech satelitního sestavení, zadáte `/culture` možnost při použití [linkeru sestavení](../tools/al-exe-assembly-linker.md) pro vložení prostředků do satelitního sestavení.
 
-Následující ilustrace znázorňuje ukázkovou adresářovou strukturu a požadavky na umístění pro aplikace, které neinstalujete do [globální mezipaměti sestavení (GAC](../../framework/app-domains/gac.md)). Položky s příponami. txt a. Resources nebudou dodávány s konečnou aplikací. Jedná se o mezilehlé soubory prostředků, které slouží k vytváření finálních sestavení satelitních prostředků. V tomto příkladu můžete nahradit soubory. resx pro soubory. txt. Další informace najdete v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md).
+Následující ilustrace znázorňuje ukázkovou adresářovou strukturu a požadavky na umístění pro aplikace, které neinstalujete do [globální mezipaměti sestavení (GAC](../app-domains/gac.md)). Položky s příponami. txt a. Resources nebudou dodávány s konečnou aplikací. Jedná se o mezilehlé soubory prostředků, které slouží k vytváření finálních sestavení satelitních prostředků. V tomto příkladu můžete nahradit soubory. resx pro soubory. txt. Další informace najdete v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md).
 
 Následující obrázek ukazuje adresář satelitního sestavení:
 
@@ -95,8 +95,8 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
   
 2. Chcete-li označit, že angličtina (EN) je výchozí jazyková verze aplikace, přidejte <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> následující atribut do souboru AssemblyInfo aplikace nebo do hlavního souboru zdrojového kódu, který bude zkompilován do hlavního sestavení aplikace.
   
-     [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
-     [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+    [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
+    [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
 3. Přidejte podporu pro další jazykové verze (EN-US, fr-FR a ru-RU) do aplikace následujícím způsobem:  
   
@@ -150,17 +150,19 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
  Pak můžete spustit příklad. Bude náhodně vydávat jednu z podporovaných kultur aktuální jazykové verzi a zobrazí lokalizovaný pozdrav.
   
 <a name="SN"></a>   
+
 ## <a name="installing-satellite-assemblies-in-the-global-assembly-cache"></a>Instalace satelitních sestavení do globální mezipaměti sestavení (GAC)  
- Namísto instalace sestavení v podadresáři místní aplikace je můžete nainstalovat do globální mezipaměti sestavení (GAC). To je zvlášť užitečné, pokud máte knihovny tříd a sestavení prostředků knihovny tříd, které jsou používány více aplikacemi.
+Namísto instalace sestavení v podadresáři místní aplikace je můžete nainstalovat do globální mezipaměti sestavení (GAC). To je zvlášť užitečné, pokud máte knihovny tříd a sestavení prostředků knihovny tříd, které jsou používány více aplikacemi.
   
- Instalace sestavení do globální mezipaměti sestavení vyžaduje, aby měly silné názvy. Sestavení se silným názvem jsou podepsaná s platnou dvojicí veřejného a privátního klíče. Obsahují informace o verzi, kterou modul runtime používá k určení sestavení, které se má použít pro splnění požadavku vazby. Další informace o silných názvech a verzích najdete v tématu [Správa verzí sestavení](../../standard/assembly/versioning.md). Další informace o silných názvech naleznete v tématu [sestavení se silným názvem](../../standard/assembly/strong-named.md).
+Instalace sestavení do globální mezipaměti sestavení vyžaduje, aby měly silné názvy. Sestavení se silným názvem jsou podepsaná s platnou dvojicí veřejného a privátního klíče. Obsahují informace o verzi, kterou modul runtime používá k určení sestavení, které se má použít pro splnění požadavku vazby. Další informace o silných názvech a verzích najdete v tématu [Správa verzí sestavení](../../standard/assembly/versioning.md). Další informace o silných názvech naleznete v tématu [sestavení se silným názvem](../../standard/assembly/strong-named.md).
   
- Při vývoji aplikace je nepravděpodobné, že budete mít přístup k finálnímu páru veřejného a privátního klíče. Chcete-li nainstalovat satelitní sestavení v globální mezipaměti sestavení (GAC) a zajistit, že funguje podle očekávání, můžete použít techniku nazvanou zpožděné podepisování. Při zpoždění podepsání sestavení v okamžiku sestavení rezervujete místo v souboru pro podpis silného názvu. Vlastní podepisování je zpožděné až později, až bude dostupný poslední pár veřejného a privátního klíče. Další informace o zpožděném podepisování naleznete v tématu [Delay Signing Assembly](../../standard/assembly/delay-sign.md).
+Při vývoji aplikace je nepravděpodobné, že budete mít přístup k finálnímu páru veřejného a privátního klíče. Chcete-li nainstalovat satelitní sestavení v globální mezipaměti sestavení (GAC) a zajistit, že funguje podle očekávání, můžete použít techniku nazvanou zpožděné podepisování. Při zpoždění podepsání sestavení v okamžiku sestavení rezervujete místo v souboru pro podpis silného názvu. Vlastní podepisování je zpožděné až později, až bude dostupný poslední pár veřejného a privátního klíče. Další informace o zpožděném podepisování naleznete v tématu [Delay Signing Assembly](../../standard/assembly/delay-sign.md).
   
 ### <a name="obtaining-the-public-key"></a>Získání veřejného klíče  
- Chcete-li zpozdit podepsání sestavení, je nutné mít přístup k veřejnému klíči. Můžete buď získat skutečný veřejný klíč z organizace ve vaší společnosti, který provede případné podepisování, nebo vytvořit veřejný klíč pomocí [nástroje Strong Name (Sn. exe)](../tools/sn-exe-strong-name-tool.md).
+
+Chcete-li zpozdit podepsání sestavení, je nutné mít přístup k veřejnému klíči. Můžete buď získat skutečný veřejný klíč z organizace ve vaší společnosti, který provede případné podepisování, nebo vytvořit veřejný klíč pomocí [nástroje Strong Name (Sn. exe)](../tools/sn-exe-strong-name-tool.md).
   
- Následující příkaz sn. exe vytvoří dvojici veřejného a privátního klíče testu. Možnost **– k** určuje, že SN. exe by měl vytvořit nový pár klíčů a uložit ho do souboru s názvem TestKeyPair. snk.
+Následující příkaz sn. exe vytvoří dvojici veřejného a privátního klíče testu. Možnost **– k** určuje, že SN. exe by měl vytvořit nový pár klíčů a uložit ho do souboru s názvem TestKeyPair. snk.
   
 ```console
 sn –k TestKeyPair.snk
@@ -196,7 +198,7 @@ sn –R StringLibrary.resources.dll RealKeyPair.snk
 
 ### <a name="installing-a-satellite-assembly-in-the-global-assembly-cache"></a>Instalace satelitního sestavení do globální mezipaměti sestavení (GAC)
 
-Pokud modul runtime vyhledává prostředky v záložním procesu prostředků, hledá nejprve [globální mezipaměť sestavení (GAC](../../framework/app-domains/gac.md) ). (Další informace najdete v části "proces záložního prostředku" v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md) .) Jakmile je satelitní sestavení podepsáno silným názvem, lze jej nainstalovat do globální mezipaměti sestavení [(GAC) pomocí nástroj Global Assembly Cache Tool (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md).
+Pokud modul runtime vyhledává prostředky v záložním procesu prostředků, hledá nejprve [globální mezipaměť sestavení (GAC](../app-domains/gac.md) ). (Další informace najdete v části "proces záložního prostředku" v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md) .) Jakmile je satelitní sestavení podepsáno silným názvem, lze jej nainstalovat do globální mezipaměti sestavení [(GAC) pomocí nástroj Global Assembly Cache Tool (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md).
 
 Následující příkaz Gacutil. exe nainstaluje StringLibrary. Resources. dll do globální mezipaměti sestavení (GAC):
 

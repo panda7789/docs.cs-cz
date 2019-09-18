@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje aplikací Dockeru
 description: Pochopte podrobnosti pracovního postupu pro vývoj aplikací založených na Docker. Zahajte krok za krokem a získejte do některých podrobností, abyste mohli optimalizovat fázemi a skončit s zjednodušeným pracovním postupem, který je dostupný při používání sady Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: 34d2a90cb5208736b1b414e25ac3e627929f45a0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 36caff247d031b8808ab953ec884b7ce292858eb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296175"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040215"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -204,28 +204,37 @@ Počáteční souboru Dockerfile by měl vypadat nějak takto:
 
 A jsou to podrobnosti, řádek po řádku:
 
-<!-- markdownlint-disable MD029-->
-1. Zahajte fázi s "malým" pouze modulem runtime základní image, zavolejte **základ** pro referenci.
-2. Vytvořte v imagi adresář **/App** .
-3. Vystavte port **80**.
-<!-- skip -->
-5. Zahajte novou fázi s "velkou" imagí pro sestavení nebo publikování a zavolejte **sestavení** pro referenci.
-6. Vytvořte v imagi adresář **/Src** .
-7. Až na řádek 16, zkopírujte odkazované soubory Project **. csproj** , abyste mohli balíčky později obnovit.
-<!-- skip -->
-17. Obnovte balíčky pro projekt **Catalog. API** a odkazované projekty.
-18. Zkopírujte **všechny adresářové stromové struktury pro řešení** (kromě souborů/adresářů obsažených v souboru **. dockerignore** ) z do adresáře **/Src** v imagi.
-19. Změňte aktuální složku na projekt **Catalog. API** .
-20. Sestavte projekt (a další závislosti projektu) a výstup do adresáře **/App** v imagi.
-<!-- skip -->
-22. Zahajte novou fázi, která pokračuje ze sestavení, zavolejte **publikování** pro referenci.
-23. Publikujte projekt (a závislosti) a výstup do adresáře **/App** v imagi.
-<!-- skip -->
-25. Začít novou fázi od **základu** a zavolejte ji **finální**
-26. Změnit aktuální adresář na **/App**
-27. Zkopírujte adresář **/App** z fáze **publikovat** do aktuálního adresáře.
-28. Zadejte příkaz, který se má spustit při spuštění kontejneru.
-<!-- markdownlint-enable MD029-->
+- **#1 řádku:** Zahajte fázi s "malým" pouze modulem runtime základní image, zavolejte **základ** pro referenci.
+
+- **#2 řádku:** Vytvořte v imagi adresář **/App** .
+
+- **#3 řádku:** Vystavte port **80**.
+
+- **#5 řádku:** Zahajte novou fázi s imagí "Velká" pro vytváření a publikování. Pro referenci zavolejte **sestavení** IT.
+
+- **#6 řádku:** Vytvořte v imagi adresář **/Src** .
+
+- **#7 řádku:** Až na řádek 16, zkopírujte odkazované soubory projektu **. csproj** , abyste mohli balíčky později obnovit.
+
+- **#17 řádku:** Obnovte balíčky pro projekt **Catalog. API** a odkazované projekty.
+
+- **#18 řádku:** Zkopírujte **všechny adresářové stromové struktury pro řešení** (kromě souborů/adresářů obsažených v souboru **. dockerignore** ) do adresáře **/Src** v imagi.
+
+- **#19 řádku:** Změňte aktuální složku na projekt **Catalog. API** .
+
+- **#20 řádku:** Sestavte projekt (a další závislosti projektu) a výstup do adresáře **/App** v imagi.
+
+- **#22 řádku:** Zahajte pokračování nové fáze ze sestavení. Pro referenci zavolejte **publikování** .
+
+- **#23 řádku:** Publikujte projekt (a závislosti) a výstup do adresáře **/App** v imagi.
+
+- **#25 řádku:** Začněte novou fázi od **základu** a zavolejte ji **finální**.
+
+- **#26 řádku:** Změňte aktuální adresář na **/App**.
+
+- **#27 řádku:** Zkopírujte adresář **/App** z fáze **publikovat** do aktuálního adresáře.
+
+- **#28 řádku:** Zadejte příkaz, který se má spustit při spuštění kontejneru.
 
 Nyní se podívejme na několik optimalizací, které vám pomůžou zlepšit výkon celého procesu, který v případě eShopOnContainers znamená přibližně 22 minut nebo více pro sestavení kompletního řešení v kontejnerech Linux.
 
@@ -239,9 +248,9 @@ COPY . .
 
 Pak by byl stejný jako u každé služby, mohl by zkopírovat celé řešení a vytvořit větší vrstvu, ale:
 
-1) Proces kopírování se spustí jenom poprvé (a když se znovu sestaví při změně souboru) a použije mezipaměť pro všechny ostatní služby.
+1. Proces kopírování se spustí jenom poprvé (a když se znovu sestaví při změně souboru) a použije mezipaměť pro všechny ostatní služby.
 
-2) Vzhledem k tomu, že větší obrázek probíhá v mezilehlé fázi, nemá vliv na konečnou velikost obrázku.
+2. Vzhledem k tomu, že větší obrázek probíhá v mezilehlé fázi, nemá vliv na konečnou velikost obrázku.
 
 Další významná optimalizace zahrnuje `restore` příkaz provedený na řádku 17, který je také odlišný pro každou službu eShopOnContainers. Pokud tento řádek změníte jenom na:
 

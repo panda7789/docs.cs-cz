@@ -7,82 +7,82 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 245c843d13e70a807807f4e462dd1a5357c25665
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 230825c5259807cf693179878a45aeb3fdcbf0ac
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398525"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047998"
 ---
 # <a name="network-programming-in-the-net-framework"></a>Síťové programování v rozhraní .NET Framework
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou rozšiřitelnou a spravovatelnou implementaci internetových služeb, kterou můžete rychle a snadno integrovat do své aplikace. Síťové aplikace mohou stavět na připojitelných protokolech a díky tomu automaticky využívat nové internetové protokoly nebo mohou používat spravovanou implementaci rozhraní soketů systému Windows pro práci se sítí na úrovni soketu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Úvod k připojitelným protokolům](../../../docs/framework/network-programming/introducing-pluggable-protocols.md)  
+ [Úvod k připojitelným protokolům](introducing-pluggable-protocols.md)  
  Popisuje, jak získat přístup ke zdroji v Internetu bez ohledu na přístupový protokol, který vyžaduje.  
   
- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)  
+ [Žádosti o data](requesting-data.md)  
  Vysvětluje, jak pomocí připojitelných protokolů odesílat a stahovat data ze zdrojů v Internetu.  
   
- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
+ [Programování připojitelných protokolů](programming-pluggable-protocols.md)  
  Vysvětluje, jak odvodit třídy pro konkrétní protokoly za účelem implementace připojitelných protokolů.  
   
- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)  
+ [Použití aplikačních protokolů](using-application-protocols.md)  
  Popisuje programování aplikací, které využívají síťové protokoly, například TCP, UDP nebo HTTP.  
   
- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
+ [Protokol IP (Internet Protocol) verze 6](internet-protocol-version-6.md)  
  Popisuje výhody verze 6 protokolu Internet Protocol (IPv6) oproti aktuální verzi sady protokolů Internet Protocol (IPv4). Dále popisuje adresování, směrování a automatickou konfiguraci protokolu IPv6 a postup, jak povolit nebo zakázat protokol IPv6.  
   
- [Konfigurace internetových aplikací](../../../docs/framework/network-programming/configuring-internet-applications.md)  
+ [Konfigurace internetových aplikací](configuring-internet-applications.md)  
  Vysvětluje, jak nakonfigurovat internetové aplikace pomocí konfiguračních souborů rozhraní .NET Framework.  
   
- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
+ [Trasování sítě v rozhraní .NET Framework](network-tracing.md)  
  Vysvětluje, jak pomocí trasování sítě získat informace o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací.  
   
- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)  
  Popisuje <xref:System.Net.WebClient?displayProperty=nameWithType>, jak používat ukládání do mezipaměti pro aplikace, které <xref:System.Net.WebRequest?displayProperty=nameWithType>používají třídy <xref:System.Net.HttpWebRequest?displayProperty=nameWithType> , a.  
   
- [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)  
+ [Zabezpečení v síťovém programování](security-in-network-programming.md)  
  Popisuje, jak používat standardní techniky ověřování a zabezpečení v Internetu.  
   
- [Osvědčené postupy pro třídy System.Net](../../../docs/framework/network-programming/best-practices-for-system-net-classes.md)  
+ [Osvědčené postupy pro třídy System.Net](best-practices-for-system-net-classes.md)  
  Nabízí tipy a triky pro maximální využití internetových aplikací.  
   
- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Přístup k internetu přes proxy server](accessing-the-internet-through-a-proxy.md)  
  Popisuje postup konfigurace proxy serverů.  
   
- [Informace o síti](../../../docs/framework/network-programming/networkinformation.md)  
+ [Informace o síti](networkinformation.md)  
  Popisuje, jak získat informace o událostech sítě, změnách, statistikách a vlastnostech a také vysvětluje, jak určit, zda je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.  
   
- [Změny v oboru názvů System.Uri ve verzi 2.0](../../../docs/framework/network-programming/changes-to-the-system-uri-namespace-in-version-2-0.md)  
+ [Změny v oboru názvů System.Uri ve verzi 2.0](changes-to-the-system-uri-namespace-in-version-2-0.md)  
  Popisuje několik změn provedených <xref:System.Uri?displayProperty=nameWithType> ve třídě ve verzi 2,0 pro opravení nesprávného chování, vylepšení použitelnosti a vylepšení zabezpečení.  
   
- [Podpora mezinárodních identifikátorů prostředků v System.Uri](../../../docs/framework/network-programming/international-resource-identifier-support-in-system-uri.md)  
+ [Podpora mezinárodních identifikátorů prostředků v System.Uri](international-resource-identifier-support-in-system-uri.md)  
  Popisuje vylepšení <xref:System.Uri?displayProperty=nameWithType> třídy ve verzi 3,5, 3,0 SP1 a 2,0 SP1 pro mezinárodní identifikátor prostředku (IRI) a podporu pro mezinárodní názvy domén (IDN).  
   
- [Vylepšení výkonu soketů ve verzi 3.5](../../../docs/framework/network-programming/socket-performance-enhancements-in-version-3-5.md)  
+ [Vylepšení výkonu soketů ve verzi 3.5](socket-performance-enhancements-in-version-3-5.md)  
  Popisuje sadu vylepšení <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy ve verzi 3,5, 3,0 SP1 a 2,0 SP1, která poskytuje alternativní asynchronní vzor, který mohou být používány specializovanými vysoce výkonnými aplikacemi soketu.  
   
- [Protokol PNRP](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)  
+ [Protokol PNRP](peer-name-resolution-protocol.md)  
  Popisuje funkce přidané ve verzi 3.5 pro podporu protokolu PNRP (Peer Name Resolution Protocol), registrace názvů bez použití serverů, dynamické registrace názvů a protokolu překladu IP adres. Tyto nové funkce jsou podporovány <xref:System.Net.PeerToPeer?displayProperty=nameWithType> oborem názvů.  
   
- [Spolupráce partnerských uzlů](../../../docs/framework/network-programming/peer-to-peer-collaboration.md)  
+ [Spolupráce partnerských uzlů](peer-to-peer-collaboration.md)  
  Popisuje funkce přidané ve verzi 3.5 pro podporu spolupráce Peer-to-Peer založené na protokolu PNRP. Tyto nové funkce jsou podporovány <xref:System.Net.PeerToPeer.Collaboration?displayProperty=nameWithType> oborem názvů.  
   
- [Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1](../../../docs/framework/network-programming/changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
+ [Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1](changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md)  
  Popisuje změny zabezpečení provedené ve verzi 3,5 SP1, které mají vliv na <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>integrované ověřování systému Windows pomocí tříd, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType> <xref:System.Net.HttpListener?displayProperty=nameWithType>, a souvisejících třídy v oboru názvů System.NET.  
   
- [Integrované ověřování systému Windows s rozšířenou ochranou](../../../docs/framework/network-programming/integrated-windows-authentication-with-extended-protection.md)  
+ [Integrované ověřování systému Windows s rozšířenou ochranou](integrated-windows-authentication-with-extended-protection.md)  
  Popisuje vylepšení rozšířené ochrany, která mají vliv na <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>to, jak je integrované ověřování systému Windows zpracováváno pomocí tříd <xref:System.Net?displayProperty=nameWithType> , <xref:System.Net.HttpListener?displayProperty=nameWithType>, <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType> <xref:System.Net.Security.SslStream?displayProperty=nameWithType>,, <xref:System.Net.Security.NegotiateStream?displayProperty=nameWithType>a souvisejících obsažené.  
   
- [Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo](../../../docs/framework/network-programming/nat-traversal-using-ipv6-and-teredo.md)  
+ [Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo](nat-traversal-using-ipv6-and-teredo.md)  
  Popisuje vylepšení přidaná do <xref:System.Net?displayProperty=nameWithType>oborů <xref:System.Net.NetworkInformation?displayProperty=nameWithType>názvů, <xref:System.Net.Sockets?displayProperty=nameWithType> a pro podporu procházení NAT pomocí protokolu IPv6 a Teredo.  
   
- [Izolace sítě pro aplikace z obchodu Microsoft Store](../../../docs/framework/network-programming/network-isolation-for-windows-store-apps.md)  
+ [Izolace sítě pro aplikace z obchodu Microsoft Store](network-isolation-for-windows-store-apps.md)  
  <xref:System.Net>Popisuje dopad izolace sítě, když se třídy v, <xref:System.Net.Http>a <xref:System.Net.Http.Headers> obory názvů používají v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikacích.  
   
- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [Ukázky programování sítě](network-programming-samples.md)  
  Odkazy na ukázky síťového programování ke stažení, které používají třídy <xref:System.Net>v <xref:System.Net.Cache>oborech názvů <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer> <xref:System.Net.Configuration> <xref:System.Net.Mail>, <xref:System.Net.Security>, <xref:System.Net.Sockets> ,,, a.  
   
 ## <a name="reference"></a>Reference  
@@ -136,7 +136,7 @@ Rozhraní Microsoft .NET Framework poskytuje vícevrstvou rozšiřitelnou a spra
   
 ## <a name="see-also"></a>Viz také:
 
-- [Osvědčené postupy TLS (Transport Layer Security) s .NET Framework](../../../docs/framework/network-programming/tls.md)
-- [Postupy: Témata programování vizuální vrstvy](../../../docs/framework/network-programming/network-programming-how-to-topics.md)
-- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Osvědčené postupy TLS (Transport Layer Security) s .NET Framework](tls.md)
+- [Postupy: Témata programování vizuální vrstvy](network-programming-how-to-topics.md)
+- [Ukázky programování sítě](network-programming-samples.md)
 - [Ukázka HttpClient](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)

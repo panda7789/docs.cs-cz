@@ -12,44 +12,44 @@ helpviewer_keywords:
 ms.assetid: d077a3e8-bd81-4bdf-b6a3-323857ea30fb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8feb94f3d57c25d634bd51b8f41eca42d5e5757a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5fb95ab7ff4fcac7169238d90637d7b83078d6dd
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793325"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046103"
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Dynamické vytváření a kompilování zdrojového kódu
-Rozhraní .NET Framework obsahuje mechanismus volá se, kód modelu objektu dokumentu (CodeDOM), který umožňuje vývojářům aplikací, které generují zdrojový kód ke generování zdrojového kódu ve více programovacích jazyků v době běhu na základě jednoho modelu, který představuje kód k vykreslení.  
+.NET Framework obsahuje mechanismus nazvaný Code Document Object Model (CodeDOM), který umožňuje vývojářům programu generovat zdrojový kód pro generování zdrojového kódu v několika programovacích jazycích za běhu na základě jednoho modelu, který představuje kód. pro vykreslení.  
   
- K reprezentaci zdrojový kód, prvky CodeDOM jsou vzájemně propojit a k vytvoření datová struktura, označované jako graf CodeDOM, který modeluje struktura určitý zdrojový kód.  
+ Aby představoval zdrojový kód, prvky CodeDOM jsou vzájemně propojeny, aby tvořily datovou strukturu známou jako graf CodeDOM, který modeluje strukturu nějakého zdrojového kódu.  
   
- `System.CodeDom` Obor názvů definuje typy, které mohou představovat logické struktury zdrojového kódu, nezávisle na konkrétní programovací jazyk. `System.CodeDom.Compiler` Obor názvů definuje typy pro generování zdrojového kódu z grafu modelu CodeDOM a správu kompilace zdrojového kódu v podporovaných jazycích. Kompilátor dodavatelů nebo vývojáři rozšířit sadu podporované jazyky.  
+ `System.CodeDom` Obor názvů definuje typy, které mohou představovat logickou strukturu zdrojového kódu, nezávisle na konkrétním programovacím jazyce. `System.CodeDom.Compiler` Obor názvů definuje typy pro generování zdrojového kódu z grafů CodeDOM a správu kompilace zdrojového kódu v podporovaných jazycích. Dodavatelé a vývojáři kompilátoru můžou sadu podporovaných jazyků zvětšit.  
   
- Modelování nezávislým na jazyku zdrojového kódu může být důležité, když program potřebuje ke generování zdrojového kódu pro model program v několika jazycích nebo neurčité cílový jazyk. Například některé návrháře pomocí CodeDOM jako jazyk abstrakce rozhraní pro vytvoření zdrojového kódu ve správném programovacím jazyce, pokud je k dispozici podpora CodeDOM pro jazyk.  
+ Modelování zdrojového kódu nezávislého na jazyce může být užitečné, když program potřebuje vygenerovat zdrojový kód pro model programu v několika jazycích nebo v neurčitém cílovém jazyce. Například někteří návrháři používají rozhraní CodeDOM jako rozhraní pro abstrakci jazyka k vytvoření zdrojového kódu ve správném programovacím jazyce, pokud je k dispozici podpora CodeDOM pro daný jazyk.  
   
- Rozhraní .NET Framework obsahuje generátory kódu a kódu kompilátory pro <xref:Microsoft.CSharp.CSharpCodeProvider>, <xref:Microsoft.JScript.JScriptCodeProvider>, a <xref:Microsoft.VisualBasic.VBCodeProvider>.  
+ .NET Framework obsahuje generátory kódu a kompilátory kódu pro <xref:Microsoft.CSharp.CSharpCodeProvider>, <xref:Microsoft.JScript.JScriptCodeProvider>a <xref:Microsoft.VisualBasic.VBCodeProvider>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Použití modelu CodeDOM](../../../docs/framework/reflection-and-codedom/using-the-codedom.md)  
- Popisuje běžné použití a ukazuje vytvoření jednoduchého objektu grafu pomocí CodeDOM.  
+ [Použití modelu CodeDOM](using-the-codedom.md)  
+ Popisuje běžné použití a ukazuje vytvoření jednoduchého grafu objektů pomocí CodeDOM.  
   
- [Generování zdrojového kódu a kompilace programu grafu CodeDOM](../../../docs/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph.md)  
- Popisuje, jak generovat zdrojového kódu a kompilace generovaného kódu s externí kompilátoru pomocí tříd definovaných v `System.CodeDom.Compiler` oboru názvů.  
+ [Generování zdrojového kódu a kompilování programu z grafu CodeDOM](generating-and-compiling-source-code-from-a-codedom-graph.md)  
+ Popisuje, jak generovat zdrojový kód a zkompilovat generovaný kód s externím kompilátorem pomocí tříd definovaných v `System.CodeDom.Compiler` oboru názvů.  
   
- [Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-an-xml-documentation-file-using-codedom.md)  
- Popisuje, jak generovat kód, který se dokumentační komentáře XML a kompilace generovaného kódu tak, aby vytvořil výstupní dokumentace XML pomocí modelu CodeDOM.  
+ [Postupy: Vytvoření souboru dokumentace XML pomocí CodeDOM](how-to-create-an-xml-documentation-file-using-codedom.md)  
+ Popisuje, jak použít CodeDOM k vygenerování kódu s dokumentačními komentáři XML a zkompilovat generovaný kód tak, aby vytvořil výstup dokumentace XML.  
   
- [Postupy: Vytváření třídy pomocí modelu CodeDOM](../../../docs/framework/reflection-and-codedom/how-to-create-a-class-using-codedom.md)  
- Popisuje, jak vygenerovat třídu obsahující pole, vlastnosti, metody, konstruktor a vstupního bodu pomocí CodeDOM.  
+ [Postupy: Vytvoření třídy pomocí CodeDOM](how-to-create-a-class-using-codedom.md)  
+ Popisuje, jak použít CodeDOM k vygenerování třídy obsahující pole, vlastnosti, metodu, konstruktor a vstupní bod.  
   
-## <a name="reference"></a>Odkaz  
+## <a name="reference"></a>Reference  
  <xref:System.CodeDom>  
- Definuje prvky, které představují prvky kódu v programovacích jazycích, které se zaměřují modul common language runtime.  
+ Definuje prvky, které reprezentují prvky kódu v programovacích jazycích, které cílí na modul common language runtime.  
   
  <xref:System.CodeDom.Compiler>  
- Definuje rozhraní pro generování a kompilace kódu za běhu.  
+ Definuje rozhraní pro generování a kompilaci kódu v době běhu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [CodeDOM – Stručná referenční příručka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))  
- Poskytuje rychlý způsob, jak vývojářům usnadnit hledání prvky CodeDOM, které představují prvků zdrojového kódu.
+ [Rychlá referenční příručka CodeDOM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))  
+ Poskytuje vývojářům rychlý způsob, jak najít prvky CodeDOM, které představují prvky zdrojového kódu.

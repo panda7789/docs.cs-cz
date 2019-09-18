@@ -10,83 +10,83 @@ helpviewer_keywords:
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18a8748c3175ec7e251116f478069d313ab28d7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e5a57664c5d86ebf394ce026608be9a55872eb8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792779"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045538"
 ---
-# <a name="working-with-resx-files-programmatically"></a>Práce se soubory .resx programově
-Vzhledem k tomu, že soubory XML prostředky (RESX) se musí skládat z dobře definovaných XML, včetně záhlaví, které musí dodržovat konkrétní schéma a data v dvojice název/hodnota, můžete zjistit, že je náchylný ruční vytvoření těchto souborů. Jako alternativu můžete vytvořit soubory .resx programově pomocí typy a členy v knihovně tříd rozhraní .NET. Knihovna tříd rozhraní .NET můžete použít také pro načtení prostředků, které jsou uloženy v souborech .resx. Toto téma vysvětluje, jak můžete použít typy a členy v <xref:System.Resources> obor názvů pro práci se soubory .resx.
+# <a name="working-with-resx-files-programmatically"></a>Práce se soubory. resx prostřednictvím kódu programu
+Vzhledem k tomu, že soubory prostředků XML (. resx) se musí skládat z dobře definovaného kódu XML, včetně záhlaví, které musí následovat po určitém schématu následovaným daty v dvojice název/hodnota, můžete zjistit, že ruční vytváření těchto souborů je náchylné k chybám. Alternativně můžete vytvořit soubory. resx programově pomocí typů a členů v knihovně tříd .NET. Můžete také použít knihovnu tříd .NET k načtení prostředků, které jsou uloženy v souborech. resx. Toto téma vysvětluje, jak lze použít typy a členy v <xref:System.Resources> oboru názvů pro práci se soubory. resx.
 
- Všimněte si, že tento článek popisuje práci s XML (.resx) soubory, které obsahují prostředky. Informace o práci se soubory binárních prostředků, které byly vloženy do sestavení, najdete v článku <xref:System.Resources.ResourceManager> tématu.
-
-> [!WARNING]
-> Existují také způsoby, jak pracovat se soubory .resx jiné než prostřednictvím kódu programu. Když přidáte soubor prostředků s [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) projektu, Visual Studio poskytuje rozhraní pro vytvoření a údržbu soubor .resx a automaticky převádí soubory .resx na soubor .resources v době kompilace. Textového editoru můžete použít také k manipulaci s soubor .resx přímo. Nicméně aby nedošlo k poškození souboru, dejte pozor, abyste upravte libovolné binární informace, která je uložena v souboru.
-
-## <a name="create-a-resx-file"></a>Vytvořte soubor RESX
-
-Můžete použít <xref:System.Resources.ResXResourceWriter?displayProperty=nameWithType> třídy za účelem vytvoření souboru .resx programově, pomocí následujících kroků:
-
-1. Vytvořit instanci <xref:System.Resources.ResXResourceWriter> objektu voláním <xref:System.Resources.ResXResourceWriter.%23ctor%28System.String%29?displayProperty=nameWithType> metoda a zadáním názvu souboru .resx. Název souboru musí obsahovat příponou .resx. Pokud vytvoříte instanci <xref:System.Resources.ResXResourceWriter> objekt `using` bloku, není nutné explicitně volat <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=nameWithType> metoda v kroku 3.
-
-2. Volání <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType> metodu pro jednotlivé prostředky, které chcete přidat do souboru. Použijte přetížení této metody přidat řetězec, objekt a data binárního souboru (pole bajtů). Pokud prostředek je objekt, musí být serializovatelný.
-
-3. Volání <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=nameWithType> metoda ke generování souboru prostředků a uvolnit všechny prostředky. Pokud <xref:System.Resources.ResXResourceWriter> objekt byl vytvořen v rámci `using` bloku, prostředky se zapisují do souboru .resx a prostředky využívané třídou <xref:System.Resources.ResXResourceWriter> jsou na konci uvolnění objektu `using` bloku.
-
-Výsledný soubor .resx obsahuje odpovídající hlavičku a `data` značky pro každý prostředek přidal <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType> metody.
+ Všimněte si, že tento článek popisuje práci se soubory XML (. resx), které obsahují prostředky. Informace o práci s binárními soubory prostředků, které byly vloženy do sestavení, naleznete <xref:System.Resources.ResourceManager> v tématu.
 
 > [!WARNING]
-> Nepoužívejte soubory prostředků pro uložení hesel, zabezpečené informace nebo soukromá data.
+> Existují také způsoby, jak pracovat se soubory. resx jinými než programově. Když přidáte soubor prostředků do projektu sady [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) , Visual Studio poskytuje rozhraní pro vytvoření a údržbu souboru. resx a automaticky převede soubor. resx na soubor. Resources v době kompilace. Textový editor lze také použít k manipulaci s souborem. resx přímo. Chcete-li však zabránit poškození souboru, buďte opatrní, abyste nemuseli upravovat žádné binární informace, které jsou uloženy v souboru.
 
-Následující příklad vytvoří soubor .resx CarResources.resx, který ukládá šesti řetězce, ikona a dva objekty definované aplikací (dvě `Automobile` objekty). Všimněte si, že `Automobile` třídu, která je definována a instance v příkladu, je označené <xref:System.SerializableAttribute> atribut.
+## <a name="create-a-resx-file"></a>Vytvoření souboru. resx
+
+<xref:System.Resources.ResXResourceWriter?displayProperty=nameWithType> Třídu můžete použít k programovému vytvoření souboru. resx pomocí následujících kroků:
+
+1. Vytvořte instanci <xref:System.Resources.ResXResourceWriter.%23ctor%28System.String%29?displayProperty=nameWithType> objektu voláním metody a zadáním názvu souboru. resx. <xref:System.Resources.ResXResourceWriter> Název souboru musí obsahovat příponu. resx. Pokud vytváříte instanci <xref:System.Resources.ResXResourceWriter> objektu `using` v bloku, nemusíte <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=nameWithType> explicitně volat metodu v kroku 3.
+
+2. <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType> Zavolejte metodu pro každý prostředek, který chcete přidat do souboru. Pomocí přetížení této metody můžete přidat data typu String, Object a Binary (bajtové pole). Pokud je prostředek objekt, musí být serializovatelný.
+
+3. <xref:System.Resources.ResXResourceWriter.Close%2A?displayProperty=nameWithType> Zavolejte metodu pro vytvoření souboru prostředků a uvolnění všech prostředků. Pokud byl `using` <xref:System.Resources.ResXResourceWriter> objekt vytvořen v rámci bloku, prostředky jsou zapsány do souboru. resx a prostředky používané `using` objektem jsou uvolněny na konci bloku. <xref:System.Resources.ResXResourceWriter>
+
+Výsledný soubor. resx má odpovídající hlavičku a `data` značku pro každý prostředek přidaný <xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType> metodou.
+
+> [!WARNING]
+> Nepoužívejte soubory prostředků k ukládání hesel, informací citlivých na zabezpečení nebo soukromých dat.
+
+Následující příklad vytvoří soubor. resx s názvem CarResources. resx, který ukládá šest řetězců, ikonu a dva objekty definované aplikací (dva `Automobile` objekty). Všimněte si, `Automobile` že třída, která je definována a vytvořena v příkladu, je označena <xref:System.SerializableAttribute> atributem.
 
 [!code-csharp[Conceptual.Resources.ResX#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resx/cs/create1.cs#1)]
 [!code-vb[Conceptual.Resources.ResX#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/create1.vb#1)]
 
 > [!TIP]
-> Můžete také použít [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) vytvořit soubory .resx. V době kompilace, použije sada Visual Studio [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) převést soubor .resx na binární prostředek (.resources) souboru a také vloží sestavení aplikace nebo satelitního sestavení.
+> Můžete také použít [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) k vytvoření souborů. resx. V době kompilace používá Visual Studio [generátor souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) k převodu souboru. resx na binární soubor prostředků (. Resources) a také jej vloží do sestavení aplikace nebo satelitního sestavení.
 
-Nelze vložit do spustitelného souboru .resx nebo kompiloval do satelitního sestavení. Je nutné převést soubor RESX do souboru binárního prostředku (.resources) s použitím [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md). Výsledný soubor .resources by pak může být vložen do sestavení aplikace nebo satelitního sestavení. Další informace najdete v tématu [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).
+Soubor. resx nelze vložit do spustitelného souboru modulu runtime nebo jej zkompilujte do satelitního sestavení. Soubor. resx je nutné převést na binární soubor prostředků (. Resources) pomocí [generátoru souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md). Výsledný soubor. Resources může být vložen do sestavení aplikace nebo satelitního sestavení. Další informace najdete v tématu [vytváření souborů prostředků](creating-resource-files-for-desktop-apps.md).
 
-## <a name="enumerate-resources"></a>Vytvořit výčet prostředků
- V některých případech můžete chtít načíst všechny prostředky, místo konkrétního prostředku, ze souboru RESX. K tomuto účelu můžete použít <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> třídu, která poskytuje enumerátor pro všechny prostředky v souboru .resx. <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> Implementuje třída <xref:System.Collections.IDictionaryEnumerator>, který vrátí hodnotu <xref:System.Collections.DictionaryEntry> objekt, který představuje určitý prostředek pro každou iteraci smyčky. Jeho <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType> vrátí vlastnost prostředku klíč a jeho <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType> vlastnost vrací hodnotu zdroje.
+## <a name="enumerate-resources"></a>Zobrazení výčtu prostředků
+ V některých případech můžete chtít načíst všechny prostředky namísto konkrétního prostředku ze souboru. resx. K tomu můžete použít <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> třídu, která poskytuje enumerátor pro všechny prostředky v souboru. resx. Třída implementuje <xref:System.Collections.IDictionaryEnumerator>, která vrací <xref:System.Collections.DictionaryEntry> objekt, který představuje konkrétní prostředek pro každou iteraci smyčky. <xref:System.Resources.ResXResourceReader?displayProperty=nameWithType> Jeho <xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType> vlastnost vrátí klíč prostředku a jeho <xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType> vlastnost vrátí hodnotu prostředku.
 
- Následující příklad vytvoří <xref:System.Resources.ResXResourceReader> objekt pro CarResources.resx soubor vytvořený v předchozím příkladu a iteruje souboru prostředků. Sečte dva `Automobile` objekty, které jsou definovány v souboru prostředků na <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objektu a přidá pět šest řetězců <xref:System.Collections.SortedList> objektu. Hodnoty <xref:System.Collections.SortedList> objekt je převést na pole parametrů, které slouží k zobrazení záhlaví sloupců do konzoly. `Automobile` Hodnoty vlastností se také zobrazí v konzole.
+ Následující příklad vytvoří <xref:System.Resources.ResXResourceReader> objekt pro soubor CarResources. resx vytvořený v předchozím příkladu a provede iteraci v souboru prostředků. Přidá dva `Automobile` objekty, které jsou definovány v souboru <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> prostředků objektu, a přidá pět z šesti řetězců do <xref:System.Collections.SortedList> objektu. Hodnoty v <xref:System.Collections.SortedList> objektu jsou převedeny na pole parametrů, které se používá k zobrazení záhlaví sloupců v konzole. Hodnoty `Automobile` vlastností se zobrazí také v konzole nástroje.
 
  [!code-csharp[Conceptual.Resources.ResX#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resx/cs/enumerate1.cs#2)]
  [!code-vb[Conceptual.Resources.ResX#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/enumerate1.vb#2)]
 
-## <a name="retrieve-a-specific-resource"></a>Načíst konkrétní prostředek
- Kromě spočítání položek v souboru .resx, můžete konkrétní prostředek načíst podle názvu pomocí <xref:System.Resources.ResXResourceSet?displayProperty=nameWithType> třídy. <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=nameWithType> Metoda načte hodnotu řetězce s názvem prostředku. <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=nameWithType> Metoda načte hodnotu pojmenovaný objekt nebo binární data. Metoda vrátí objekt, který pak musí být přetypovat (v C#) nebo (v jazyce Visual Basic) převést na objekt příslušného typu.
+## <a name="retrieve-a-specific-resource"></a>Načtení konkrétního prostředku
+ Kromě vytváření výčtu položek v souboru. resx můžete načíst konkrétní prostředek podle názvu pomocí <xref:System.Resources.ResXResourceSet?displayProperty=nameWithType> třídy. <xref:System.Resources.ResourceSet.GetString%28System.String%29?displayProperty=nameWithType> Metoda načte hodnotu prostředku pojmenovaného řetězce. <xref:System.Resources.ResourceSet.GetObject%28System.String%29?displayProperty=nameWithType> Metoda načte hodnotu pojmenovaného objektu nebo binárních dat. Metoda vrátí objekt, který musí být poté převeden (in C#) nebo převeden (v Visual Basic) na objekt příslušného typu.
 
- Následující příklad načte formuláře titulek řetězec a ikonu podle svých názvů prostředků. Také načte definovaného aplikací `Automobile` objekty použité v předchozím příkladu a zobrazí je v <xref:System.Windows.Forms.DataGridView> ovládacího prvku.
+ V následujícím příkladu je načten řetězec a ikona v podobě titulků formuláře podle jejich názvů prostředků. Také načte objekty definované `Automobile` aplikací, které jsou použity v předchozím příkladu, a zobrazí je <xref:System.Windows.Forms.DataGridView> v ovládacím prvku.
 
  [!code-csharp[Conceptual.Resources.ResX#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.resx/cs/retrieve1.cs#3)]
  [!code-vb[Conceptual.Resources.ResX#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.resx/vb/retrieve1.vb#3)]
 
-## <a name="convert-resx-files-to-binary-resources-files"></a>Převést soubory .resx na binárních souborů .resources
- Převod souborů .resx na soubory vložené binární prostředek (.resources) má významné výhody. Přestože jsou soubory .resx snadno číst a spravovat během vývoje aplikace, jsou zřídka součástí hotové aplikace. Pokud jsou distribuovány do aplikace, existují jako samostatné soubory kromě spustitelný soubor aplikace a její související knihovny. Soubory .resources naproti tomu jsou vloženy do spustitelného souboru aplikace nebo jeho související sestavení. Kromě toho v případě lokalizovaných aplikací spoléhá na soubory .resx na místa v době běhu zodpovědnost za zpracování prostředků záložní na vývojáře. Naopak pokud vytvořil sadu satelitní sestavení, které obsahují soubory .resources vložený modul common language runtime zpracovává proces získávání náhradních prostředků.
+## <a name="convert-resx-files-to-binary-resources-files"></a>Převod souborů. resx do binárních souborů. Resources
+ Převod souborů. resx na vložené soubory binárních prostředků (. Resources) má významné výhody. I když se soubory. resx snadno čtou a udržují během vývoje aplikací, jsou v rámci dokončených aplikací zřídka zahrnuty. Pokud jsou distribuovány s aplikací, existují jako samostatné soubory kromě spustitelného souboru aplikace a jeho doprovodných knihoven. Naproti tomu soubory. Resources jsou vloženy do spustitelného souboru aplikace nebo do jeho doprovodných sestavení. Kromě toho pro lokalizované aplikace, které se spoléhají na soubory. resx za běhu, umístí zodpovědnost za zpracování záložního prostředku na vývojáře. Naproti tomu, pokud byla vytvořena sada satelitních sestavení, která obsahují vložené soubory. Resources, modul CLR zpracuje proces záložního prostředku.
 
- Chcete-li převést soubory .resx na soubor .resources, je použít [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md), který má následující základní syntaxe:
+ Chcete-li převést soubor. resx na soubor. Resources, použijte nástroj [Resource File Generator (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md), který má následující základní syntaxi:
 
  **Resgen.exe** *.resxFilename*
 
- Výsledkem je na binární soubor prostředků, který má stejný název souboru kořenový soubor RESX a příponu souboru .resources. Tento soubor může být poté zkompilován do spustitelného souboru nebo knihovny v době kompilace. Pokud používáte kompilátor jazyka Visual Basic, vložíte soubor .resources na spustitelný soubor aplikace použijte následující syntaxi:
+ Výsledkem je binární soubor prostředků, který má stejný název kořenového souboru jako soubor. resx a příponu souboru. Resources. Tento soubor lze následně zkompilovat do spustitelného souboru nebo knihovny v době kompilace. Pokud používáte kompilátor Visual Basic, použijte následující syntaxi pro vložení souboru. Resources do spustitelného souboru aplikace:
 
- **Vbc –** *filename* **.vb-resource:** *.resourcesFilename*
+ **Vbc** *název souboru* **. vb – prostředek:** *. resourcesFilename*
 
- Pokud používáte C#, syntaxe vypadá takto:
+ Pokud používáte C#, syntaxe je následující:
 
- **CSC** *filename* **.cs-resource:** *.resourcesFilename*
+ **CSC** *název souboru* **. cs – prostředek:** *. resourcesFilename*
 
- Soubor .resources můžete také vložit do satelitního sestavení s použitím [Assembly Linker (AL.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md), který má následující základní syntaxe:
+ Soubor. Resources může být také vložen do satelitního sestavení pomocí [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md), který má následující základní syntaxi:
 
  **Al** *resourcesFilename* **-out:** *assemblyFilename*
 
 ## <a name="see-also"></a>Viz také:
 
-- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
-- [Resgen.exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
-- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Vytváření zdrojových souborů](creating-resource-files-for-desktop-apps.md)
+- [Resgen.exe (generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md)
+- [Al.exe (linker sestavení)](../tools/al-exe-assembly-linker.md)

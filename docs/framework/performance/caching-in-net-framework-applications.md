@@ -6,12 +6,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
-ms.openlocfilehash: b1d9b12a46d674bf591457cdc90c66fc16818734
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 704efed96c18f23d34d8a583d3121fc08b9e22e1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70927049"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046787"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup. Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje. To může zvýšit výkon a škálovatelnost. Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.  
@@ -41,7 +41,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 > [!NOTE]
 > Třída je modelována v objektu ASP.NET Cache, který je definován <xref:System.Web.Caching> v oboru názvů. <xref:System.Runtime.Caching.MemoryCache> Proto interní logika ukládání do mezipaměti bude podobná logice, která byla poskytnuta v dřívějších verzích ASP.NET.  
   
- Příklad použití pro ukládání do mezipaměti v aplikaci WPF naleznete v tématu [Návod: Ukládání aplikačních dat do mezipaměti v](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)aplikaci WPF.  
+ Příklad použití pro ukládání do mezipaměti v aplikaci WPF naleznete v tématu [Návod: Ukládání aplikačních dat do mezipaměti v](../wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)aplikaci WPF.  
   
 ## <a name="caching-in-aspnet-applications"></a>Ukládání do mezipaměti v aplikacích ASP.NET  
  Třídy ukládání do mezipaměti v <xref:System.Runtime.Caching> oboru názvů poskytují funkce pro ukládání dat do mezipaměti v ASP.NET.  
@@ -79,5 +79,5 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
 - <xref:System.Runtime.Caching.ObjectCache>
 - <xref:System.Runtime.Caching.MemoryCache>
-- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
 - [Návod: Ukládání aplikačních dat do mezipaměti v ASP.NET](https://docs.microsoft.com/previous-versions/ff477235(v=vs.100))

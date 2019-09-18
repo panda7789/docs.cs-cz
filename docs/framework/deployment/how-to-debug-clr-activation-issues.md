@@ -6,20 +6,20 @@ helpviewer_keywords:
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ab80cfbd0ae2130f465216ca77812bda0002c24
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2bed01a74c5b3338df958a3e178c06602bd69866
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854000"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052120"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Jak ladit problémy s aktivací CLR
 
-Pokud narazíte na problémy při provádění aplikace se správnou verzí modulu CLR (Common Language Runtime), můžete zobrazit a ladit aktivační protokoly CLR. Tyto protokoly můžou být velmi užitečné při určování hlavní příčiny problému s aktivací, když vaše aplikace buď načte jinou verzi CLR, než se očekávalo, nebo vůbec nenačte CLR. Chyby [inicializace .NET Framework: Správa uživatelského prostředí](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) se zabývá tím, že se pro aplikaci nenajde žádný modul CLR.
+Pokud narazíte na problémy při provádění aplikace se správnou verzí modulu CLR (Common Language Runtime), můžete zobrazit a ladit aktivační protokoly CLR. Tyto protokoly můžou být velmi užitečné při určování hlavní příčiny problému s aktivací, když vaše aplikace buď načte jinou verzi CLR, než se očekávalo, nebo vůbec nenačte CLR. Chyby [inicializace .NET Framework: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) se zabývá tím, že se pro aplikaci nenajde žádný modul CLR.
 
 Protokolování aktivace CLR lze povolit v rámci systému pomocí klíče registru HKEY_LOCAL_MACHINE nebo systémové proměnné prostředí. Protokol bude vygenerován, dokud nebude odebrána položka registru nebo proměnná prostředí. Alternativně můžete použít proměnnou uživatelského prostředí nebo uživatele nebo procesu k povolení protokolování s jiným rozsahem a dobou trvání.
 
-Protokoly aktivace CLR by se neměly zaměňovat s [protokoly vazeb sestavení](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
+Protokoly aktivace CLR by se neměly zaměňovat s [protokoly vazeb sestavení](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
 
 ## <a name="to-enable-clr-activation-logging"></a>Povolení protokolování aktivace CLR
 
@@ -106,13 +106,13 @@ V následujícím příkladu aktivačního protokolu jsou nejužitečnější in
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
     ```
 
-- **sestaveno s verzí** je verze modulu CLR, která byla použita k sestavení binárního souboru, který byl poskytnut metodě jako [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
+- **sestaveno s verzí** je verze modulu CLR, která byla použita k sestavení binárního souboru, který byl poskytnut metodě jako [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
 
     ```output
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
-- **instalace funkcí na vyžádání** odkazuje na povolení .NET Framework 3,5 ve Windows 8. Viz [chyby při inicializaci .NET Framework: Správa uživatelského prostředí](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) pro další informace o tomto scénáři.
+- **instalace funkcí na vyžádání** odkazuje na povolení .NET Framework 3,5 ve Windows 8. Viz [chyby při inicializaci .NET Framework: Správa uživatelského prostředí](initialization-errors-managing-the-user-experience.md) pro další informace o tomto scénáři.
 
     ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3
@@ -120,5 +120,5 @@ V následujícím příkladu aktivačního protokolu jsou nejužitečnější in
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nasazení](../../../docs/framework/deployment/index.md)
-- [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [Nasazení](index.md)
+- [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

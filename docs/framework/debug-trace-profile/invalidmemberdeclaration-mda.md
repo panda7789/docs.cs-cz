@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: a84dd9a3-d6cf-4824-989a-ecbbf443eeb4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e5b4cb4a04a79a748f4ea2292bac67a88a6e9f8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe15d718a9c5f91bfae4f37c04e726990e2fbd45
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754359"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052588"
 ---
 # <a name="invalidmemberdeclaration-mda"></a>invalidMemberDeclaration – pomocník spravovaného ladění (MDA)
-`invalidMemberDeclaration` Pomocníka spravovaného ladění (MDA) se aktivuje oznámit chybu, ke které dojde při určování způsobu zařazení parametrů člena se bude volat z modelu COM.  
+Je aktivován pomocník spravovaného ladění (MDA), který nahlásí chybu, ke které dojde při určení způsobu zařazení parametrů člena, který se má volat z modelu COM. `invalidMemberDeclaration`  
   
 ## <a name="symptoms"></a>Příznaky  
- Selhání HRESULT se vrátí do modelu COM bez spravované metody s byla volána.  
+ Neúspěšná hodnota HRESULT se vrátí do modelu COM bez volání spravované metody.  
   
-## <a name="cause"></a>Příčina  
- Příčinou je pravděpodobně z důvodu nekompatibilní <xref:System.Runtime.InteropServices.MarshalAsAttribute> atributu na jeden z parametrů.  
+## <a name="cause"></a>příčina  
+ Nejpravděpodobnější příčinou je nekompatibilní <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut u jednoho z parametrů.  
   
 ## <a name="resolution"></a>Řešení  
- Zadejte platný <xref:System.Runtime.InteropServices.MarshalAsAttribute> atributy na parametry.  
+ Zadejte platné <xref:System.Runtime.InteropServices.MarshalAsAttribute> atributy pro parametry.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Informační zpráva obsahující členské jméno, název typu a chybová zpráva.  
+ Informační zpráva obsahující název člena, název typu a chybovou zprávu.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -48,5 +48,5 @@ ms.locfileid: "61754359"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

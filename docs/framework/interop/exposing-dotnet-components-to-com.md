@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 981f5f23bf2aafc41426c858e150ec3664a494f9
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: db4380e97cf4d556248f42981b350160710f1dd8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205812"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051822"
 ---
 # <a name="exposing-net-components-to-com"></a>Vystavení součástí .NET pro COM
 
@@ -27,7 +27,7 @@ Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou 
 
      Vlastní atributy v rámci spravovaného kódu mohou zlepšit interoperabilitu komponenty.
 
-- [Balení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md).
+- [Balení sestavení pro model COM](packaging-an-assembly-for-com.md).
 
      Vývojáři modelu COM mohou vyžadovat, aby byly shrnuty kroky při odkazování a nasazení vašich sestavení.
 
@@ -35,11 +35,11 @@ Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou 
 
 ## <a name="to-consume-a-managed-type-from-com"></a>Využití spravovaného typu z modelu COM
 
-1. [Registrovat sestavení pomocí modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md).
+1. [Registrovat sestavení pomocí modelu COM](registering-assemblies-with-com.md).
 
      Typy v sestavení (a knihovnách typů) musí být registrovány v době návrhu. Pokud instalační program neregistruje sestavení, dejte vývojářům modelu COM pokyn, aby používal nástroj Regasm. exe.
 
-2. [Odkazování na typy .NET z modelu COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md).
+2. [Odkazování na typy .NET z modelu COM](how-to-reference-net-types-from-com.md).
 
      Vývojáři modelu COM mohou odkazovat na typy v sestavení pomocí stejných nástrojů a technik, které dnes používají.
 
@@ -53,5 +53,5 @@ Zápis typu rozhraní .NET a využití tohoto typu z nespravovaného kódu jsou 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)
-- [Ukázka zprostředkovatele komunikace s objekty COM: Klient COM a Server .NET](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)
+- [Spolupráce s nespravovaným kódem](index.md)
+- [Ukázka zprostředkovatele komunikace s objekty COM: Klient COM a Server .NET](com-interop-sample-com-client-and-net-server.md)

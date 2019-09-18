@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: acdcc588-b458-436d-876c-726de68244c1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13c9aa7275ad792f8ace33519438f0a1dcc6b251
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5aa88cbc73415695a1545704a2ad8cab535f011e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971608"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053145"
 ---
 # <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a>Postupy: Odebrání sestavení z globální mezipaměti sestavení
 
 Existují dva způsoby, jak odebrat sestavení z globální mezipaměti sestavení (GAC):
 
-- Pomocí [nástroje Global Assembly Cache (Gacutil. exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). Tuto možnost můžete použít k odinstalování sestavení, která jste umístili do GAC během vývoje a testování.
+- Pomocí [nástroje Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md). Tuto možnost můžete použít k odinstalování sestavení, která jste umístili do GAC během vývoje a testování.
 
 - Pomocí [Instalační služba systému Windows](/windows/desktop/Msi/windows-installer-portal). Tuto možnost byste měli použít k odinstalování sestavení při testování instalačních balíčků a pro produkční systémy.
 
@@ -54,6 +54,6 @@ gacutil -u hello
 
 ## <a name="see-also"></a>Viz také:
 
-- [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)
+- [Práce se sestaveními a s globální pamětí sestavení](working-with-assemblies-and-the-gac.md)
 - [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](install-assembly-into-gac.md)
-- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
+- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../tools/gacutil-exe-gac-tool.md)

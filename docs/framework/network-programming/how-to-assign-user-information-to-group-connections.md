@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
-ms.openlocfilehash: 2fa84052bcf9ca97b903111fc02e319b25deb384
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e104de891d72e709ae20055737540516109da68
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642708"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048429"
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: Přiřazení uživatelských informací pro seskupení připojení
 
- Následující příklad ukazuje, jak se přiřazení uživatelských informací pro seskupení připojení, za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* před voláním této části kódu a který *uživatelské jméno* je jedinečný.  
+ Následující příklad ukazuje, jak přiřadit informace o uživateli pro seskupení připojení, za předpokladu, že aplikace nastaví proměnné *username*, *securelyStoredPassword*a *Domain* před voláním této části kódu a *Uživatelské jméno* je jedinečné.  
   
-### <a name="to-assign-user-information-to-a-group-connection"></a>Informace o uživateli přiřadit skupiny připojení  
+### <a name="to-assign-user-information-to-a-group-connection"></a>Přiřazení informací o uživateli k připojení skupiny  
   
-1. Vytvoření názvu skupiny připojení.  
+1. Vytvořte název skupiny připojení.  
   
     ```csharp  
     SHA1Managed Sha1 = new SHA1Managed();  
@@ -32,7 +32,7 @@ ms.locfileid: "61642708"
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2. Vytvořte požadavek na konkrétní adresu URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
+2. Vytvoří požadavek na konkrétní adresu URL. Například následující kód vytvoří požadavek na adresu URL.`http://www.contoso.com.`  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
@@ -42,7 +42,7 @@ ms.locfileid: "61642708"
     Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ```  
   
-3. Nastavit přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** k načtení **WebResponse** objektu.  
+3. Nastavte přihlašovací údaje a název_skupiny připojení pro webový požadavek a zavolejte **GetResponse** k načtení objektu **WebResponse** .  
   
     ```csharp  
     myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
@@ -58,7 +58,7 @@ ms.locfileid: "61642708"
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
     ```  
   
-4. Zavřete datový proud odpovědí po použití WebRespose objektu.  
+4. Po použití objektu WebRespose zavřete datový proud odpovědi.  
   
     ```csharp  
     MyWebResponse.Close();  
@@ -109,5 +109,5 @@ MyWebResponse.Close()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Správa připojení](../../../docs/framework/network-programming/managing-connections.md)
-- [Seskupení připojení](../../../docs/framework/network-programming/connection-grouping.md)
+- [Správa připojení](managing-connections.md)
+- [Seskupení připojení](connection-grouping.md)

@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07ac564b5a2b227a62b7073bb837ab8bd1f434fb
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 146aef8c1e085ee3146585c3b5b1cda8004b9f7e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894767"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044215"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
 Nástroj pro anotaci zabezpečení .NET (SecAnnotate. exe) je aplikace příkazového řádku, která identifikuje části `SecurityCritical` a `SecuritySafeCritical` v jednom nebo více sestaveních.  
   
  Rozšíření sady Visual Studio, [bezpečnostní anotace](https://go.microsoft.com/fwlink/?LinkId=198007), poskytuje grafické uživatelské rozhraní pro SecAnnotate. exe a umožňuje spustit nástroj ze sady Visual Studio.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  Na příkazovém řádku zadejte následující příkaz, kde jsou *parametry* popsány v následující části a *sestavení* se skládají z jednoho nebo více názvů sestavení oddělených prázdnými znaky:  
   

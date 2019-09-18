@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 80473e01581a372c193c4b816a37166b73d57824
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: fa6d3832dcd842631d290e046b5e32908ce4bb7e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854144"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052529"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart – pomocník spravovaného ladění (MDA)
 Je aktivován pomocník spravovaného ladění (MDA), který bude hlásit, že kompilátor JIT (just-in-time) začne kompilovat funkci. `jitCompilationStart`  
@@ -160,5 +160,5 @@ namespace ns2
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

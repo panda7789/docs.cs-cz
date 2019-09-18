@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8d719debd39309415f996d655c68abd8c80ec5e3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 0df5a5be2997958faa43ee67ae64fc37e1998414
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928425"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051595"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Určit, které verze .NET Framework jsou nainstalovány
 
@@ -72,7 +72,7 @@ Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET 
 
 3. Vyhledejte položku DWORD s názvem **release**. Pokud existuje, budete mít nainstalované .NET Framework 4,5 nebo novější verze. Jeho hodnota je klíč verze, který odpovídá konkrétní verzi .NET Framework. Na následujícím obrázku je například hodnota položky **release** *378389*, což je klíč verze .NET Framework 4,5.
 
-     ![Položka registru pro .NET Framework 4,5](media/clr-installdir.png "Položka registru pro .NET Framework 4,5")
+     ![Položka registru pro .NET Framework 4,5](./media/clr-installdir.png "Položka registru pro .NET Framework 4,5")
 
 V následující tabulce je uvedena hodnota DWORD **verze** v jednotlivých operačních systémech .NET Framework 4,5 a novějších verzích.
 
@@ -163,7 +163,7 @@ Chcete-li vyhledat jinou minimální požadovanou verzi .NET Framework, nahraďt
 
     Následující obrázek ukazuje podklíč a jeho položku **verze** pro .NET Framework 3,5.
 
-    ![Položka registru pro .NET Framework 3,5.](media/net-4-and-earlier.png ".NET Framework 3,5 a starší verze")
+    ![Položka registru pro .NET Framework 3,5.](./media/net-4-and-earlier.png ".NET Framework 3,5 a starší verze")
 
 <a name="net_c"></a>
 

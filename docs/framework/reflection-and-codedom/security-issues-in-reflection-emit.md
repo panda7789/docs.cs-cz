@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7b1f6798f1aaa778eaf95de996584848c672351
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f2bdaef52bbc4cac0abfcbf8724f3c5c602bc8f0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956683"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045802"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Bezpečnostní problémy v generování reflexe
 .NET Framework poskytuje tři způsoby, jak vygenerovat jazyk MSIL (Microsoft Intermediate Language), z nichž každá má vlastní problémy se zabezpečením:  
@@ -36,7 +36,7 @@ ms.locfileid: "69956683"
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Dynamická sestavení  
- Dynamická sestavení jsou vytvořena pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody je zastaralá v .NET Framework 4 z důvodu eliminace zásad zabezpečení na úrovni počítače. (Viz [změny zabezpečení](../../../docs/framework/security/security-changes.md).) Zbývající přetížení lze spustit libovolným kódem bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: těch, které určují seznam atributů, které mají být použity pro dynamické sestavení při jeho vytvoření, a těch, které ne. Pokud nezadáte model transparentnosti pro sestavení, při použití <xref:System.Security.SecurityRulesAttribute> atributu při jeho vytváření, je model transparentnosti zděděn z vygenerování sestavení.  
+ Dynamická sestavení jsou vytvořena pomocí přetížení <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> metody. Většina přetížení této metody je zastaralá v .NET Framework 4 z důvodu eliminace zásad zabezpečení na úrovni počítače. (Viz [změny zabezpečení](../security/security-changes.md).) Zbývající přetížení lze spustit libovolným kódem bez ohledu na úroveň důvěryhodnosti. Tato přetížení spadají do dvou skupin: těch, které určují seznam atributů, které mají být použity pro dynamické sestavení při jeho vytvoření, a těch, které ne. Pokud nezadáte model transparentnosti pro sestavení, při použití <xref:System.Security.SecurityRulesAttribute> atributu při jeho vytváření, je model transparentnosti zděděn z vygenerování sestavení.  
   
 > [!NOTE]
 > Atributy, které lze použít na dynamické sestavení po vytvoření pomocí <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> metody, se neprojeví, dokud nebylo sestavení uloženo na disk a znovu načteno do paměti.  
@@ -139,7 +139,7 @@ ms.locfileid: "69956683"
   
 <a name="Version_Information"></a>   
 ## <a name="version-information"></a>Informace o verzi  
- Počínaje .NET Framework 4 jsou zásady zabezpečení na úrovni počítače eliminovány a transparentnost zabezpečení se bude nacházet jako s výchozím mechanismem vynucování. Viz téma [změny zabezpečení](../../../docs/framework/security/security-changes.md).  
+ Počínaje .NET Framework 4 jsou zásady zabezpečení na úrovni počítače eliminovány a transparentnost zabezpečení se bude nacházet jako s výchozím mechanismem vynucování. Viz téma [změny zabezpečení](../security/security-changes.md).  
   
  Počínaje verzí .NET Framework 2,0 Service Pack 1 <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> se příznak již nepožaduje při generování dynamických sestavení a dynamických metod. Tento příznak je vyžadován ve všech starších verzích .NET Framework.  
   
@@ -151,9 +151,9 @@ ms.locfileid: "69956683"
  Nakonec .NET Framework 2,0 SP1 zavádí anonymně hostované metody.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Získání informací o typech a členech  
- Počínaje .NET Framework 2,0 nejsou k získání informací o typech a členech NonPublic potřeba žádná oprávnění. Reflexe se používá k získání informací potřebných k vygenerování dynamických metod. Například <xref:System.Reflection.MethodInfo> objekty slouží k vygenerování volání metody. Starší verze .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> s příznakem. Další informace najdete v tématu [požadavky na zabezpečení pro](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)reflexi.  
+ Počínaje .NET Framework 2,0 nejsou k získání informací o typech a členech NonPublic potřeba žádná oprávnění. Reflexe se používá k získání informací potřebných k vygenerování dynamických metod. Například <xref:System.Reflection.MethodInfo> objekty slouží k vygenerování volání metody. Starší verze .NET Framework vyžadují <xref:System.Security.Permissions.ReflectionPermission> <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> s příznakem. Další informace najdete v tématu [požadavky na zabezpečení pro reflexi](security-considerations-for-reflection.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Důležité informace o zabezpečení pro reflexi](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)
-- [Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)
+- [Důležité informace o zabezpečení pro reflexi](security-considerations-for-reflection.md)
+- [Generování dynamických metod a sestavení](emitting-dynamic-methods-and-assemblies.md)

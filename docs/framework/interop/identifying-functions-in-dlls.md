@@ -13,42 +13,42 @@ helpviewer_keywords:
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4c56712460d772426a2d8d6d328cba9bb03373d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: deae99f5bdc7c187997d4bad4957b2fcdccdc166
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648662"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051731"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identifikace funkcí ve knihovnách DLL
-Identita funkce knihovny DLL se skládá z následujících elementů:  
+Identita funkce knihovny DLL se skládá z následujících prvků:  
   
-- Funkce názvu nebo řádu  
+- Název funkce nebo ordinální číslo  
   
-- Název souboru knihovny DLL, ve kterém můžete najít implementaci  
+- Název souboru DLL, ve kterém se dá najít implementace  
   
- Například zadání **MessageBox** funkce User32.dll určuje funkci (**MessageBox**) a jeho umístění (User32.dll, User32 nebo user32). Rozhraní (Windows API) Windows Microsoft může obsahovat dvě verze jednotlivých funkcí, která zpracovává znaků a řetězce: verze ANSI 1 dvoubajtového znaku zjistí a 2bajtové znaky Unicode verze. Pokud tento parametr nezadáte, znakové sady reprezentována <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> pole, výchozí hodnota je ANSI. Některé funkce mohou mít více než dvě verze.  
+ Například zadání funkce **MessageBox** v User32. dll identifikuje funkci (**MessageBox**) a její umístění (User32. dll, User32 nebo user32). Programovací rozhraní aplikace systému Microsoft Windows (rozhraní Windows API) může obsahovat dvě verze každé funkce, která zpracovává znaky a řetězce: 1 bajtovou verzi znakové sady ANSI a 2 bajtovou verzi znakové sady Unicode. Je-li tento parametr zadán, je znaková sada <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> reprezentovaná polem standardně ANSI. Některé funkce můžou mít víc než dvě verze.  
   
- **MessageBoxA** ANSI vstupní bod pro **MessageBox** funkce; **Funkce** je verze Unicode. Názvy funkcí pro konkrétní knihovny DLL, jako je například user32.dll, můžete vytvořit seznam spuštěním širokou škálu nástrojů příkazového řádku. Například můžete použít `dumpbin /exports user32.dll` nebo `link /dump /exports user32.dll` získat názvy funkcí.  
+ **MessageBox** je vstupní bod ANSI pro funkci **MessageBox** ; **MessageBoxW** je verze Unicode. Pomocí různých nástrojů příkazového řádku můžete zobrazit seznam názvů funkcí pro konkrétní knihovnu DLL, například User32. dll. Můžete například použít `dumpbin /exports user32.dll` nebo `link /dump /exports user32.dll` k získání názvů funkcí.  
   
- Nespravovaná funkce můžete přejmenovat na cokoli, co chcete v rámci vašeho kódu tak dlouho, dokud mapování nový název na původní vstupní bod v knihovně DLL. Pokyny k přejmenování nespravovanou funkci knihovny DLL ve spravovaném zdrojovém kódu, najdete v článku [určení vstupního bodu](../../../docs/framework/interop/specifying-an-entry-point.md).  
+ Nespravovanou funkci můžete přejmenovat bez ohledu na to, co byste chtěli v kódu, Pokud namapujete nový název na původní vstupní bod v knihovně DLL. Pokyny k přejmenování nespravované funkce DLL ve spravovaném zdrojovém kódu naleznete v tématu [určení vstupního bodu](specifying-an-entry-point.md).  
   
- Povolí vyvolání platformy je možné řídit podstatnou část operačního systému pomocí volání funkce v rozhraní Windows API a další knihovny DLL. Kromě rozhraní API pro Windows existuje mnoho jiných rozhraní API a volání knihovny DLL, které jsou k dispozici prostřednictvím platformy.  
+ Vyvolání platformy umožňuje řídit významnou část operačního systému voláním funkcí v rozhraní API systému Windows a dalších knihovnách DLL. Kromě rozhraní API systému Windows existuje mnoho dalších rozhraní API a knihoven DLL, které jsou k dispozici prostřednictvím vyvolání platformy.  
   
- Následující tabulka popisuje několik běžně používané knihovny DLL v rozhraní Windows API.  
+ Následující tabulka popisuje několik běžně používaných knihoven DLL v rozhraní Windows API.  
   
 |DLL|Popis obsahu|  
 |---------|-----------------------------|  
-|GDI32.dll|Grafické funkce rozhraní zařízení (GDI) pro zařízení výstup, třeba kroky týkající se správy pro vykreslování a písma.|  
-|Kernel32.dll|Funkce nízké úrovně operačního systému pro správu paměti a zpracování prostředků.|  
-|User32.dll|Funkce správy Windows pro zpracování zpráv, časovače, nabídky a komunikace.|  
+|GDI32.dll|Funkce GDI (GDI) pro výstup zařízení, například pro vykreslování a správu písem.|  
+|Kernel32.dll|Funkce operačního systému nižší úrovně pro správu paměti a zpracování prostředků.|  
+|User32.dll|Funkce správy systému Windows pro zpracování zpráv, časovače, nabídky a komunikaci.|  
   
- Úplnou dokumentaci k rozhraní API pro Windows naleznete v tématu Platform SDK. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Úplnou dokumentaci k rozhraní API systému Windows najdete v sadě SDK platformy. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
-- [Určení vstupního bodu](../../../docs/framework/interop/specifying-an-entry-point.md)
-- [Vytvoření třídy k umístění funkcí DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md)
-- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
+- [Určení vstupního bodu](specifying-an-entry-point.md)
+- [Vytvoření třídy k umístění funkcí DLL](creating-a-class-to-hold-dll-functions.md)
+- [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)
+- [Volání funkce DLL](calling-a-dll-function.md)

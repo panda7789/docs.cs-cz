@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5dbbf0f71eaefd0ef7fc7f2b5e69e47ce7b8db26
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 21d0425de072c91cf7111162e405f826e00e849d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894878"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046097"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamické načtení a použití typů
 Reflexe poskytuje infrastrukturu využívanou kompilátory jazyka k implementaci implicitní pozdní vazby. Vazba je proces vyhledávání deklarace (to znamená implementace), která odpovídá jedinečnému zadanému typu. V případě, že tento proces probíhá v době běhu, nikoli v době kompilace, se nazývá pozdní vazba. Visual Basic umožňuje použít implicitní pozdní vazby v kódu; Kompilátor Visual Basic volá pomocnou metodu, která používá reflexi k získání typu objektu. Argumenty předané do pomocné metody způsobí, že příslušná metoda bude vyvolána v době běhu. Tyto argumenty jsou instance (objekt), na které se má vyvolat metoda, název vyvolané metody (řetězec) a argumenty předané vyvolané metodě (pole objektů).  
@@ -102,5 +102,5 @@ End Module
 
 - <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
-- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Zobrazení informací o typu](viewing-type-information.md)
 - [Převod typu v .NET Framework](../../standard/base-types/type-conversion.md)

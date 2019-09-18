@@ -3,72 +3,72 @@ title: WSTrustChannelFactory a WSTrustChannel
 ms.date: 03/30/2017
 ms.assetid: 96cec467-e963-4132-b18b-7d0b3a2e979f
 author: BrucePerlerMS
-ms.openlocfilehash: d129775137759cf7f006ce6501279978f4ab2595
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e00f3ae25a50c2fb3f34f4c04d02cde574b3da17
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633175"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044919"
 ---
 # <a name="wstrustchannelfactory-and-wstrustchannel"></a>WSTrustChannelFactory a WSTrustChannel
-Pokud jste už obeznámení s Windows Communication Foundation (WCF), víte, že klient WCF je již federace vědět. Pomocí konfigurace klienta WCF s <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby, můžete povolit federované ověřování do služby.
+Pokud už jste obeznámeni se službou Windows Communication Foundation (WCF), víte, že klient WCF už ve federaci ví. Konfigurací klienta WCF pomocí <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby můžete povolit federované ověřování pro službu.
 
- WCF získá token, který je vydaný služby tokenů zabezpečení (STS) na pozadí a použije tento token k ověření ve službě. Hlavní omezení tohoto přístupu je, že neexistuje žádná přehled o komunikaci klienta se serverem. WCF automaticky generuje token zabezpečení požadavku (RVNÍ) na službu STS, na základě vydaný token parametrů ve vazbě. To znamená, že klient nemůže se liší parametry RVNÍ každý požadavek, zkontrolovat odpovědi tokenu zabezpečení požadavku (RSTR) Chcete-li získat informace, jako je zobrazení deklarací identity, mezipaměti token pro budoucí použití.
+ Služba WCF získá token vydaný službou tokenu zabezpečení (STS) na pozadí a pomocí tohoto tokenu ověří službu. Hlavním omezením tohoto přístupu je, že neexistuje žádná viditelnost komunikace klienta se serverem. Služba WCF automaticky vygeneruje token zabezpečení Request (RST) na službu STS na základě parametrů vydaných tokenů ve vazbě. To znamená, že klient nemůže měnit parametry RST na žádost, zkontrolovat odpověď tokenu zabezpečení (RSTR) žádosti o získání informací, jako jsou například deklarace identity zobrazení, nebo uložit token do mezipaměti pro budoucí použití.
 
- V současné době je vhodný pro základní federacích klienta WCF. Jedním z hlavních scénářů, které podporuje technologie Windows Identity Foundation (WIF) ale vyžaduje kontrolu nad RVNÍ na úrovni, která není povolena snadno WCF. Technologie WIF proto přidá funkce, které poskytují větší kontrolu nad komunikace se službou tokenů zabezpečení.
+ V současné době je klient služby WCF vhodný pro scénáře základní federace. Jeden z hlavních scénářů, které podporuje technologie Windows Identity Foundation (WIF), ale vyžaduje kontrolu nad RST na úrovni, kterou WCF snadno nepovoluje. Proto WIF přidá funkce, které vám poskytnou větší kontrolu nad komunikací s STS.
 
- Technologie WIF podporuje následující scénáře federace:
+ WIF podporuje následující scénáře federace:
 
-- Pomocí klienta WCF nezávisle technologie WIF za účelem ověření k federované službě
+- Použití klienta WCF bez závislostí WIF k ověření pro federované služby
 
-- Povolení technologie WIF na klienta WCF na vkládání elementů ActAs nebo OnBehalfOf do RVNÍ na službu STS
+- Povolení WIF v klientovi WCF pro vložení elementu ActAs nebo OnBehalfOf do pole RST do služby STS
 
-- Pomocí technologie WIF samostatně, aby získat token od služby STS a pak povolte klienta WCF na ověření pomocí tohoto tokenu. Další informace najdete v tématu [ClaimsAwareWebService](https://go.microsoft.com/fwlink/?LinkID=248406) vzorku.
+- Použití samotného WIF k získání tokenu ze služby STS a následnému povolení ověřování klienta WCF s tímto tokenem. Další informace najdete v tématu [ClaimsAwareWebService](https://go.microsoft.com/fwlink/?LinkID=248406) Sample.
 
- První scénář je zřejmých: Existující klienti WCF budou nadále fungovat s přijímajících stran, které technologie WIF a služby tokenů zabezpečení. Toto téma popisuje zbývající dva scénáře.
+ První scénář je samozřejmý: Stávající klienti WCF budou dál spolupracovat s předávajícími stranami WIF a STS. Toto téma pojednává o zbývajících dvou scénářích.
 
-## <a name="enhancing-an-existing-wcf-client-with-actas--onbehalfof"></a>Vylepšení stávajícího klienta WCF s ActAs nebo OnBehalfOf
-V případě delegování identity typické klient volá střední vrstvy služby, která potom volá back-end služby. Služba střední vrstvy funguje jako, nebo funguje jménem klienta.
+## <a name="enhancing-an-existing-wcf-client-with-actas--onbehalfof"></a>Vylepšení stávajícího klienta WCF pomocí ActAs/OnBehalfOf
+V typickém scénáři delegování identity klient volá službu střední vrstvy, která pak zavolá back-end službu. Služba střední vrstvy funguje jako klient nástroje nebo funguje jako jeho jménem.
 
 > [!TIP]
-> Jaký je rozdíl mezi ActAs a prostřednictvím profilu OnBehalfOf?
+> Jaký je rozdíl mezi ActAs a OnBehalfOf?
 >
 > Z hlediska protokolu WS-Trust:
 >
-> 1. Element ActAs RVNÍ označuje, žadatel vyžaduje token, který obsahuje deklarace identity o dvou různých entit: žadatel a externí entitu reprezentovanou objektem token v elementu ActAs.
-> 2. Element prostřednictvím profilu OnBehalfOf RVNÍ označuje, že žadatel vyžaduje token, který obsahuje pouze jednu entitu deklarace identity: externí entitu reprezentovanou objektem token v elementu prostřednictvím profilu OnBehalfOf.
+> 1. Element ActAs RST indikuje, že žadatel chce token, který obsahuje deklarace identity o dvou různých entitách: žadateli a externí entitu reprezentovanou tokenem v elementu ActAs.
+> 2. Element OnBehalfOf RST indikuje, že žadatel chce token, který obsahuje deklarace identity jenom o jedné entitě: Externí entita reprezentovaná tokenem v elementu OnBehalfOf.
 >
-> Funkce ActAs se obvykle používá ve scénářích, které vyžadují složené delegování, kde kontrolovat celou delegování řetězce a vidět nejen klienta, ale všichni zprostředkovatelé konečného příjemce vydaný token. To umožňuje provádět řízení přístupu, auditování a další související aktivity založené na řetězci delegování celý identity. ActAs funkce se běžně používá v systémech vícevrstevných k ověření a předání informací o identitách mezi vrstvami, aniž byste museli předejte tyto informace ve vrstvě aplikace a obchodní logiku.
+> Funkce ActAs se obvykle používá ve scénářích, které vyžadují složené delegování, přičemž konečný příjemce vydaného tokenu může zkontrolovat celý řetěz delegování a zobrazit nejenom klienta, ale všechny zprostředkovatele. To umožňuje provádět řízení přístupu, auditování a další související aktivity na základě celého řetězce delegování identity. Funkce ActAs se běžně používá v vícevrstvých systémech k ověřování a předávání informací o identitách mezi vrstvami bez nutnosti předat tyto informace na vrstvě Application/Business Logic.
 >
-> Prostřednictvím profilu OnBehalfOf funkce se používá v situacích, kdy pouze identitu původního klienta je důležité a je v podstatě totéž jako identita zosobnění funkci k dispozici ve Windows. Při použití prostřednictvím profilu OnBehalfOf konečného příjemce vydaný token uvidí jenom deklarace identity o původní klienta a informace o zprostředkovateli nezachová. Ten, který je běžný vzor, kde se používá funkci prostřednictvím profilu OnBehalfOf vzor proxy serveru, kde klient nemůže získat Služba tokenů zabezpečení přímo, ale místo toho komunikuje přes proxy server brány. Proxy server brány ověří volajícího a vloží informace o volajícím do elementu prostřednictvím profilu OnBehalfOf RVNÍ zpráva, která pak odešle do skutečných STS pro zpracování. Výsledný token obsahuje pouze nároky týkající se klienta proxy, aby zcela transparentní proxy server příjemci vydaný token. Všimněte si, že technologie WIF nepodporuje \<wsse: SecurityTokenReference > nebo \<wsa:EndpointReferences > jako podřízený objekt \<wst:OnBehalfOf >. Specifikace WS-Trust umožňuje tři způsoby, jak identifikovat ho původnímu žadateli (jménem kterého se chová proxy serveru). Toto jsou:
+> Funkce OnBehalfOf se používá ve scénářích, kdy je důležitá pouze identita původního klienta a je v podstatě stejná jako funkce zosobnění identity, která je v systému Windows k dispozici. Při použití OnBehalfOf může konečný příjemce vydaného tokenu zobrazit jenom deklarace identity o původním klientovi a informace o prostředníkech se nezachovají. Jedním z běžných vzorů, ve kterých se používá funkce OnBehalfOf, je vzor proxy serveru, kde klient nemůže získat přístup k STS přímo, ale komunikuje prostřednictvím brány proxy serveru. Brána proxy ověří volajícího a vloží informace o volajícím do prvku OnBehalfOf zprávy RST, kterou pak pošle skutečné službě STS ke zpracování. Výsledný token obsahuje jenom deklarace, které souvisejí s klientem proxy serveru, takže proxy serveru je zcela transparentní na přijímači vydaného tokenu. Všimněte si, že WIF nepodporuje \<wsse: SecurityTokenReference > ani \<wsa: EndpointReferences \<> jako podřízenou položku wst: OnBehalfOf >. Specifikace WS-Trust umožňuje třem způsobům identifikace původního žadatele (jménem uživatele, který funguje). Toto jsou:
 >
-> - Odkaz na token zabezpečení. Odkaz na token, buď ve zprávě, nebo může být načtena z obsluhy vzdálené správy).
-> - Reference koncového bodu. Chcete-li vyhledat data opět vzdáleně použít jako klíč.
-> - Token zabezpečení. Identifikuje původní žadatel přímo.
+> - Odkaz na token zabezpečení Odkaz na token, buď ve zprávě, nebo může být načten mimo pásmo).
+> - Odkaz na koncový bod Používá se jako klíč pro vyhledávání dat, opět mimo pásmo.
+> - Token zabezpečení Přímo identifikuje původního žadatele.
 >
-> Technologie WIF podporuje pouze zabezpečení tokeny, šifrované a nešifrované jako přímý podřízený prvek \<wst:OnBehalfOf >.
+> WIF podporuje pouze tokeny zabezpečení, které jsou šifrované nebo nešifrované, jako přímý podřízený prvek \<wst: OnBehalfOf >.
 
- Tyto informace předávají do vystavitele WS-Trust ActAs a prostřednictvím profilu OnBehalfOf token prvky v RVNÍ.
+ Tyto informace jsou předány vydavateli WS-Trust pomocí prvků tokenu ActAs a OnBehalfOf v RST.
 
- WCF zpřístupní bod rozšiřitelnosti pro vazbu, která umožňuje libovolnými prvky XML mají být přidány do RVNÍ. Ale protože bodu rozšiřitelnosti se váže na vazby, scénáře, které vyžadují obsah RVNÍ se liší podle volání musí znovu vytvořit klienta pro všechna volání, což snižuje výkon. Technologie WIF používají rozšiřující metody na `ChannelFactory` třídu, která umožňuje vývojářům připojit žádný token, která se získá mimo pásmo RVNÍ. Následující příklad kódu ukazuje, jak provést token, který představuje klienta (například X.509, uživatelské jméno nebo token zabezpečení kontrolního výrazu SAML (Markup Language)) a připojit ho k RVNÍ, které je odesláno vystavitele.
+ WCF zpřístupňuje bod rozšiřitelnosti pro vazbu, která umožňuje přidat libovolné elementy XML do RST. Vzhledem k tomu, že bod rozšiřitelnosti je svázán s vazbou, musí být scénáře, které vyžadují obsah RST v závislosti na volání, znovu vytvořit klienta pro každé volání, což snižuje výkon. WIF používá metody `ChannelFactory` rozšíření třídy, aby umožnila vývojářům připojit jakýkoliv token, který se získá mimo pásmo, do RST. Následující příklad kódu ukazuje, jak převzít token, který představuje klienta (například token X. 509, username nebo Security Assertion Markup Language (SAML) a připojí ho k RST, která je odeslána vystaviteli.
 
 ```csharp
 IHelloService serviceChannel = channelFactory.CreateChannelActingAs<IHelloService>(clientSamlToken);
 serviceChannel.Hello("Hi!");
 ```
 
- Technologie WIF nabízí následující výhody:
+ WIF poskytuje následující výhody:
 
-- Je možné upravit RVNÍ jeden kanál; střední vrstvy služby, proto není potřeba znovu vytvořit objekt pro vytváření kanálů pro každého klienta, což zvyšuje výkon.
+- Možnost RST se dá upravit na kanál; Proto služby střední vrstvy nemusí znovu vytvářet továrny kanálů pro každého klienta, což zvyšuje výkon.
 
-- Tento postup funguje s existující klienti WCF, která umožňuje snadný způsob upgradu pro existující střední vrstvy služby WCF, které chcete povolit sémantiku delegování identity.
+- Tato funkce funguje se stávajícími klienty WCF, což usnadňuje cestu k snadnému upgradu pro existující služby střední vrstvy WCF, které chtějí povolit sémantiku delegování identity.
 
- Existuje ale stále žádné přehled o komunikaci klienta pomocí služby STS. Prozkoumáme to v třetí scénář.
+ Stále ale neexistuje žádná viditelnost komunikace klienta se službou STS. Podíváme se do třetího scénáře.
 
-## <a name="communicating-directly-with-an-issuer-and-using-the-issued-token-to-authenticate"></a>Komunikuje přímo s vystavitele a pomocí vydaný Token pro ověření
-Pro některé pokročilé scénáře vylepšení klienta WCF nestačí. Vývojáři, kteří používají obvykle pouze WCF používat zprávy v / zprávy smlouvy a zpracování na straně klienta ruční parsování odpovědi vystavitele.
+## <a name="communicating-directly-with-an-issuer-and-using-the-issued-token-to-authenticate"></a>Komunikace přímo s vystavitelem a používání vydaného tokenu k ověření
+V některých pokročilých scénářích není rozšíření klienta služby WCF dostatečné. Vývojáři, kteří používají pouze WCF, obvykle používají zprávy ve smlouvách/zprávách odchozích zpráv a zpracovávají odpovědi vystavitelů na straně klienta ručně.
 
-Zavádí technologie WIF <xref:System.ServiceModel.Security.WSTrustChannelFactory> a <xref:System.ServiceModel.Security.WSTrustChannel> třídy, které umožní klient komunikovat přímo s vystavitele WS-Trust. <xref:System.ServiceModel.Security.WSTrustChannelFactory> a <xref:System.ServiceModel.Security.WSTrustChannel> třídy povolit RVNÍ a RSTR objektů se silným typem tok mezi klientem a vystavitele, jak je znázorněno v následujícím příkladu kódu.
+WIF zavádí <xref:System.ServiceModel.Security.WSTrustChannelFactory> třídy a <xref:System.ServiceModel.Security.WSTrustChannel> , aby klient mohl komunikovat přímo s vystavitelem WS-Trust. Třídy <xref:System.ServiceModel.Security.WSTrustChannelFactory> a<xref:System.ServiceModel.Security.WSTrustChannel> umožňují tok silně typovaného typu RST a RSTR objektů do toku mezi klientem a vystavitelem, jak je znázorněno v následujícím příkladu kódu.
 
 ```csharp
 WSTrustChannelFactory trustChannelFactory = new WSTrustChannelFactory(stsBinding, stsAddress);
@@ -79,27 +79,27 @@ RequestSecurityTokenResponse rstr = null;
 SecurityToken token = channel.Issue(rst, out rstr);
 ```
 
-Všimněte si, že `out` parametru u <xref:System.ServiceModel.Security.WSTrustChannel.Issue%2A> metoda umožňuje přístup k RSTR pro kontroly na straně klienta.
+Všimněte si, `out` že parametr <xref:System.ServiceModel.Security.WSTrustChannel.Issue%2A> v metodě umožňuje přístup k RSTR pro kontrolu na straně klienta.
 
-Zatím jste pouze seznámili s postupem k získání tokenu. Token, který je vrácen z <xref:System.ServiceModel.Security.WSTrustChannel> je objekt `GenericXmlSecurityToken` , která obsahuje všechny informace, které jsou nezbytné pro ověřování a předávající stranou. Následující příklad kódu ukazuje, jak používat tento token.
+Zatím jste viděli jenom, jak získat token. Token, který je vrácen z <xref:System.ServiceModel.Security.WSTrustChannel> objektu, `GenericXmlSecurityToken` je, který obsahuje všechny informace, které jsou nezbytné pro ověřování předávající strany. Následující příklad kódu ukazuje, jak použít tento token.
 
 ```csharp
 IHelloService serviceChannel = channelFactory.CreateChannelWithIssuedToken<IHelloService>( token );
 serviceChannel.Hello("Hi!");
 ```
 
-<xref:System.ServiceModel.ChannelFactory%601.CreateChannelWithIssuedToken%2A> Rozšiřující metody na `ChannelFactory` objekt znamená technologie WIF, který jste získali token mimo IP síť a měl by zastavit normální volání WCF vystavitele a místo toho použijte token, který jste získali k ověření předávající straně. To má tyto výhody:
+Metoda <xref:System.ServiceModel.ChannelFactory%601.CreateChannelWithIssuedToken%2A> rozšíření `ChannelFactory` na objektu indikuje WIF, že jste token získali mimo pásmo, a že by měl zastavit normální volání WCF do vystavitele a místo toho použít token, který jste získali k ověřování předávající strany. To má následující výhody:
 
-- Poskytuje plnou kontrolu nad procesu vystavování tokenů.
+- Poskytuje plnou kontrolu nad procesem vystavení tokenu.
 
-- Podporuje ActAs nebo OnBehalfOf scénáře podle přímo na odchozí RVNÍ nastavení těchto vlastností.
+- Podporuje scénáře ActAs/OnBehalfOf, a to přímo nastavením těchto vlastností v odchozím parametru RST.
 
-- Umožňuje dynamického vztahu důvěryhodnosti na straně klienta na základě rozhodnutí o obsahu RSTR.
+- Umožňuje dynamické rozhodování o důvěryhodnosti na straně klienta na základě obsahu RSTR.
 
-- To umožňuje ukládat do mezipaměti a opakovaně používat token, který je vrácen z <xref:System.ServiceModel.Security.WSTrustChannel.Issue%2A> metody.
+- Umožňuje ukládat do mezipaměti a znovu použít token, který je vrácen z <xref:System.ServiceModel.Security.WSTrustChannel.Issue%2A> metody.
 
-- <xref:System.ServiceModel.Security.WSTrustChannelFactory> a <xref:System.ServiceModel.Security.WSTrustChannel> povolit pro ovládací prvek kanál sémantiky ukládání do mezipaměti, selhání a obnovení podle osvědčených postupů WCF.
+- <xref:System.ServiceModel.Security.WSTrustChannelFactory>a <xref:System.ServiceModel.Security.WSTrustChannel> umožňují kontrolu mezipamětí kanálu, selhání a sémantiky obnovení v souladu s osvědčenými postupy WCF.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)
+- [Funkce technologie WIF](wif-features.md)

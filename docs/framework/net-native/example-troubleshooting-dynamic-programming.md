@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85d64a5577acdaa15a40ae308eb728d75d6a4c69
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 866ec425fd66ee8b3b62263180ac7e6d776108f0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894498"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049804"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Příklad: Řešení potíží s dynamickým programováním
 > [!NOTE]
@@ -33,7 +33,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 [snip]  
 ```  
   
- Pojďme se pokusit tuto výjimku vyřešit pomocí třech kroků popsaných v části "Ruční řešení chybějících metadat" v [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md).  
+ Pojďme se pokusit tuto výjimku vyřešit pomocí třech kroků popsaných v části "Ruční řešení chybějících metadat" v [Začínáme](getting-started-with-net-native.md).  
   
 ## <a name="what-was-the-app-doing"></a>Jakou aplikaci dělá?  
  První věcí, kterou je třeba poznamenat, je klíčové slovo, `async` které je základem zásobníku.  Určení toho, co aplikace skutečně prováděla v `async` metodě může být problematické, protože zásobník ztratil kontext původního volání a `async` spustil kód v jiném vlákně. Můžeme ale odvodit, že se aplikace pokouší načíst první stránku.  V implementaci pro `NavigationArgs.Setup`, následující kód způsobil porušení přístupu:  
@@ -56,9 +56,9 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
  K dalším potížím může dojít také `App.Core.ViewModels`při použití.  Je nutné rozhodnout, zda má být identifikována a opravena chybějící výjimka metadat, nebo ušetřit čas a přidat direktivy pro větší třídu typů.  Tady je přidání `dynamic` metadat pro `App.Core.ViewModels` může být nejlepší přístup, pokud výsledná velikost výstupního binárního souboru není problémem.  
   
 ## <a name="could-the-code-be-rewritten"></a>Byl kód přepsán?  
- Pokud se `typeof(LayoutApplicationVM)` `browse` místo toho použila aplikace ,řetězecnástrojebymohluchovávatmetadata.`Type.GetType("LayoutApplicationVM")`  Přesto však nevytvořila `invoke` metadata, což by vedlo k výjimce [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) při vytváření instance typu. Chcete-li zabránit výjimce, je stále nutné přidat direktivu modulu runtime pro obor názvů nebo typ, který určuje `dynamic` zásadu. Informace o direktivách modulu runtime naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Pokud se `typeof(LayoutApplicationVM)` `browse` místo toho použila aplikace ,řetězecnástrojebymohluchovávatmetadata.`Type.GetType("LayoutApplicationVM")`  Přesto však nevytvořila `invoke` metadata, což by vedlo k výjimce [MissingMetadataException](missingmetadataexception-class-net-native.md) při vytváření instance typu. Chcete-li zabránit výjimce, je stále nutné přidat direktivu modulu runtime pro obor názvů nebo typ, který určuje `dynamic` zásadu. Informace o direktivách modulu runtime naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
-- [Příklad: Zpracování výjimek při vázání dat](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
+- [Začínáme](getting-started-with-net-native.md)
+- [Příklad: Zpracování výjimek při vázání dat](example-handling-exceptions-when-binding-data.md)

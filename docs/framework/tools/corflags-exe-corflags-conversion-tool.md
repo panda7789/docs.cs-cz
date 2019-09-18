@@ -8,17 +8,17 @@ helpviewer_keywords:
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4228da6efe22091c86de95d846c14f504d51457f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b420fb451bf1bb2078a4419a648a1407c39ad178
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851287"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044744"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (CorFlags – převodní nástroj)
 Nástroj CorFlags Conversion umožňuje konfigurovat CorFlags oddíl hlavičky bitové kopie přenosného spustitelného souboru.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -54,6 +54,6 @@ CorFlags.exe assembly [options]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [64bitové aplikace](../../../docs/framework/64-bit-apps.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [64bitové aplikace](../64-bit-apps.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

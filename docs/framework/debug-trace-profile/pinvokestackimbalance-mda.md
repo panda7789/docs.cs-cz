@@ -12,45 +12,45 @@ helpviewer_keywords:
 ms.assetid: 34ddc6bd-1675-4f35-86aa-de1645d5c631
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9ecdfd708217f260b0c02383159fab88948029c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dc4a48c79fc39b12f8231bd913b4ca8970c0f46f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874208"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052356"
 ---
 # <a name="pinvokestackimbalance-mda"></a>PInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 
-`PInvokeStackImbalance` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR zjistí, že hloubka zásobníku po vyvolání platformy volání neodpovídá očekávané zásobníku hloubky, zadané konvence volání zadaná v <xref:System.Runtime.InteropServices.DllImportAttribute> atribut a deklarace parametrů v spravovaný podpis.
+Pomocník spravovaného ladění (MDA) se aktivuje, když CLR detekuje, že Hloubka zásobníku po volání metody Invoke se neshoduje s očekávanou hloubkou zásobníku, a to s ohledem na <xref:System.Runtime.InteropServices.DllImportAttribute> konvenci volání určenou v atributu a `PInvokeStackImbalance` Deklarace parametrů ve spravovaném podpisu
 
-`PInvokeStackImbalance` MDA je implementované jenom pro x86 32bitové platformy.
+`PInvokeStackImbalance` MDA se implementuje jenom pro 32 platformy x86.
 
 > [!NOTE]
-> `PInvokeStackImbalance` MDA je ve výchozím nastavení zakázané. V sadě Visual Studio 2017 `PInvokeStackImbalance` MDA se zobrazí v **asistentů spravovaného ladění** v seznamu **nastavení výjimek** dialogové okno (který se zobrazí po výběru **ladění**  >  **Windows** > **nastavení výjimek**). Ale zaškrtnutím nebo zrušením zaškrtnutí **přerušení při vyvolání** zaškrtněte políčko Povolit nebo zakázat MDA; pouze určuje, zda sady Visual Studio vyvolá výjimku, když MDA aktivováno.
+> Služba `PInvokeStackImbalance` MDA je ve výchozím nastavení zakázána. V aplikaci Visual Studio 2017 `PInvokeStackImbalance` se v seznamu **pomocníka spravovaného ladění** v dialogovém okně **nastavení výjimky** zobrazí položka MDA (ta se zobrazí po výběru možnosti **ladit** > **okna**  >   **). Nastavení výjimek**). Zaškrtnutím nebo zrušením zaškrtnutí políčka **přerušit, pokud je vyvolána** , nepovolíte nebo zakážete MDA; Určuje, zda aplikace Visual Studio vyvolá výjimku při aktivaci MDA.
 
 ## <a name="symptoms"></a>Příznaky
 
-Aplikace zjistí narušením přístupu nebo paměti, volání funkce invoke poškození při vytváření nebo následující platformy.
+V aplikaci dojde k narušení přístupu nebo poškození paměti při volání vyvolání nebo po volání platformy.
 
-## <a name="cause"></a>Příčina
+## <a name="cause"></a>příčina
 
-Volání funkce invoke spravovaný podpis platformy se nemusí shodovat nespravovanému podpisu volané metody.  K této neshodě může být způsobeno spravovaný podpis nedeklarováním správný počet parametrů nebo bez zadání odpovídající velikost pro parametry.  MDA lze také aktivovat, protože konvence volání, může být určeno <xref:System.Runtime.InteropServices.DllImportAttribute> atribut, se neshoduje s konvence nespravovaného volání.
+Spravovaný podpis volání vyvolání platformy nemusí odpovídat nespravovanému podpisu volané metody.  Tato neshoda může být způsobena spravovaným podpisem, který nedeklaruje správný počet parametrů, nebo nespecifikuje odpovídající velikost pro parametry.  Služba MDA může být také aktivována, protože konvence volání, která je <xref:System.Runtime.InteropServices.DllImportAttribute> pravděpodobně určena atributem, neodpovídá nespravované konvenci volání.
 
 ## <a name="resolution"></a>Řešení
 
-Kontrola spravovanou platformu vyvolání podpis a konvence volání pro potvrzení, že odpovídá podpisu a konvence volání nativní cíle.  Zkuste explicitně zadat konvence volání na spravovaných a nespravovaných stranách. Je také možné, i když ne jako pravděpodobné, že nespravovanou funkci nevyvážená zásobníku nějakého jiného důvodu, jako jsou chyby v nespravované kompilátoru.
+Zkontrolujte spravovanou platformu vyvolání signatury a konvence volání, abyste ověřili shodu s signaturou a konvencí volání nativního cíle.  Zkuste explicitně specifikovat konvenci volání na spravovaných i nespravovaných stranách. Je také možné, i když to není pravděpodobné, že nespravované funkce z nějakého důvodu vyrovnaly zásobník z nějakého jiného důvodu, jako je například Chyba v nespravovaném kompilátoru.
 
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime
 
-Vynutí všechny nespravovaného volání nonoptimized cestou v CLR.
+Vynutí, aby volání všech platforem převzala neoptimalizovanou cestu v modulu CLR.
 
 ## <a name="output"></a>Výstup
 
-Zpráva MDA poskytuje název platformy vyvolat volání metody, která je příčinou nevyváženosti zásobníku. Ukázková zpráva platformy vyvolání volání metody `SampleMethod` je:
+Zpráva MDA poskytuje název volání metody vyvolání platformy, která způsobuje nerovnováhu zásobníku. Ukázková zpráva volání metody Invoke v metodě `SampleMethod` je:
 
-**Zásobník má nevyvážená volání funkce PInvoke "SampleMethod". To je pravděpodobné, protože spravovaný podpis PInvoke neodpovídá nespravovanému cílovému podpisu. Zkontrolujte, jestli se konvence volání a parametry podpisu PInvoke odpovídají cílovému nespravovanému podpisu.**
+**Volání funkce PInvoke ' SampleMethod ' vyrovnalo vyvážení zásobníku. To je pravděpodobně způsobeno tím, že spravovaný podpis PInvoke neodpovídá nespravovanému cílovému podpisu. Ověřte, že konvence volání a parametry signatury PInvoke odpovídají cílovému nespravovanému podpisu.**
 
-## <a name="configuration"></a>Konfigurace
+## <a name="configuration"></a>Konfiguraci
 
 ```xml
 <mdaConfig>
@@ -63,5 +63,5 @@ Zpráva MDA poskytuje název platformy vyvolat volání metody, která je pří�
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

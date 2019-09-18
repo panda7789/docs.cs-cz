@@ -2,12 +2,12 @@
 title: Operační systém, na který mají cílit kontejnery .NET
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Jaký operační systém pro cílení na kontejnery .NET
 ms.date: 01/07/2019
-ms.openlocfilehash: 6f160aeba5257722490788271e6f89359342cc0d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7380889374e69ca4d3c981a401af703c19263de5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296509"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039693"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Operační systém, na který mají cílit kontejnery .NET
 
@@ -27,33 +27,12 @@ Můžete také vytvořit vlastní image Docker v případech, kdy chcete použí
 
 Když přidáte název Image do souboru souboru Dockerfile, můžete vybrat operační systém a verzi v závislosti na používané značce, jako v následujících příkladech:
 
-<table>
-<thead>
-<tr class="header">
-<th>Image</th>
-<th>Komentáře</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mcr.microsoft.com/dotnet/core/runtime:2.2</td>
-<td>.NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker.</td>
-</tr>
-<tr class="odd">
-<td>mcr.microsoft.com/dotnet/core/aspnet:2.2</td>
-<td><p>ASP.NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker.</p>
-<p>Obrázek aspnetcore má několik optimalizací pro ASP.NET Core.</p></td>
-</tr>
-<tr class="even">
-<td>mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine</td>
-<td>.NET Core 2,2 runtime – jenom pro Linux Alpine distribuce</td>
-</tr>
-<tr class="odd">
-<td>mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803</td>
-<td>.NET Core 2,2 runtime – jenom na Windows nano serveru (Windows Server verze 1803)</td>
-</tr>
-</tbody>
-</table>
+| Image | Komentáře |
+|-------|----------|
+| mcr.microsoft.com/dotnet/core/runtime:2.2 | .NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. |
+| mcr.microsoft.com/dotnet/core/aspnet:2.2 | ASP.NET Core 2,2 s více architekturami: Podporuje systémy Linux a Windows nano Server v závislosti na hostiteli Docker. <br/> Obrázek aspnetcore má několik optimalizací pro ASP.NET Core. |
+| mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine | .NET Core 2,2 runtime – jenom pro Linux Alpine distribuce |
+| mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803 | .NET Core 2,2 runtime – jenom na Windows nano serveru (Windows Server verze 1803) |
 
 > [!div class="step-by-step"]
 > [Předchozí](container-framework-choice-factors.md)Další

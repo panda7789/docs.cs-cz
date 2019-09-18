@@ -21,21 +21,21 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-ms.openlocfilehash: ddc4717c873e65311a8502e66f3edaf39dd89ff9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ee4dc87383153ae4e8df0a3bed7cce5220e65405
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642799"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048636"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurace internetových aplikací
-[ \<System.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) prvek konfigurace obsahuje informace o konfiguraci sítě pro aplikace. Použití [ \<system.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element, můžete nastavit proxy servery, nastavit správu parametry připojení a vlastní moduly ověřování a žádosti do aplikace zahrnout.  
+Prvek konfigurace System .NET [> (nastavení sítě) obsahuje informace o konfiguraci sítě pro aplikace. \<](../configure-apps/file-schema/network/system-net-element-network-settings.md) Pomocí elementu System .NET [> element (nastavení sítě) můžete nastavit proxy servery, nastavit parametry správy připojení a zahrnout do aplikace vlastní ověřování a moduly požadavků. \<](../configure-apps/file-schema/network/system-net-element-network-settings.md)  
   
- [ \<DefaultProxy > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) element definuje proxy serveru vrácenému službou `GlobalProxySelection` třídy. Žádné <xref:System.Net.HttpWebRequest> , který nemá vlastní <xref:System.Net.HttpWebRequest.Proxy%2A> nastavenou na určitou hodnotu používá výchozí proxy server. Kromě nastavení adresu proxy serveru, můžete vytvořit seznam adres serveru, které nebudou využívat proxy server, a můžete určit, že by neměla použít proxy server pro místní adresy.  
+ `GlobalProxySelection` [ PrvekdefaultProxy>element(nastavenísítě)definujeproxyserver\<](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) vrácenou třídou. Všechny <xref:System.Net.HttpWebRequest> , které nemají svou vlastní <xref:System.Net.HttpWebRequest.Proxy%2A> vlastnost nastavenou na určitou hodnotu, používají výchozí proxy server. Kromě nastavení adresy proxy můžete vytvořit seznam adres serverů, které nepoužívají proxy server, a můžete určit, že proxy server by neměl být používán pro místní adresy.  
   
- Je důležité si uvědomit, že nastavení aplikace Microsoft Internet Explorer spolu s nastavením konfigurace se přednost před pozdější a současně.  
+ Je důležité si uvědomit, že nastavení aplikace Microsoft Internet Explorer jsou kombinována s nastaveními konfigurace, přičemž druhá má přednost.  
   
- Následující příklad nastaví výchozí proxy server adresu serveru na `http://proxyserver`, označuje, že by neměla používat pro místní adresy proxy serveru a určuje, že všechny požadavky na servery umístěné v doméně contoso.com by měl používat proxy server.  
+ Následující příklad nastaví výchozí adresu proxy server na `http://proxyserver`, označuje, že proxy server by neměl být používán pro místní adresy a určuje, že všechny požadavky na servery nacházející se v doméně contoso.com by měly obejít proxy server.  
   
 ```xml  
 <configuration>  
@@ -54,7 +54,7 @@ ms.locfileid: "61642799"
 </configuration>  
 ```  
   
- Použití [ \<connectionManagement – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) prvek, který chcete nakonfigurovat počet trvalých připojení, které mohou být provedeny na konkrétní server nebo do všech ostatních serverech. Následující příklad nastaví aplikace pro použití dvou trvalé připojení k serveru `www.contoso.com`, čtyři trvalé připojení k serveru s IP adresou 192.168.1.2 a jeden trvalé připojení pro všechny ostatní servery.  
+ Pomocí prvku connectionManagement > [element (nastavení sítě) nakonfigurujte počet trvalých připojení, která lze provést na konkrétní server nebo na všechny ostatní servery. \<](../configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) Následující příklad nakonfiguruje aplikaci tak, aby používala dvě trvalá připojení `www.contoso.com`k serveru, čtyři trvalá připojení k serveru s IP adresou 192.168.1.2 a jedno trvalé připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  
@@ -68,9 +68,9 @@ ms.locfileid: "61642799"
 </configuration>  
 ```  
   
- Vlastní ověřovací moduly jsou nakonfigurovány s [ \<authenticationModules – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) elementu. Musíte implementovat vlastní ověřování moduly <xref:System.Net.IAuthenticationModule> rozhraní.  
+ Vlastní moduly ověřování jsou nakonfigurovány pomocí [ \<elementu authenticationModules > element (nastavení sítě)](../configure-apps/file-schema/network/authenticationmodules-element-network-settings.md) . Vlastní moduly ověřování musí implementovat <xref:System.Net.IAuthenticationModule> rozhraní.  
   
- Následující příklad nastaví vlastní ověřovací modul.  
+ Následující příklad konfiguruje vlastní ověřovací modul.  
   
 ```xml  
 <configuration>  
@@ -82,7 +82,7 @@ ms.locfileid: "61642799"
 </configuration>  
 ```  
   
- Můžete použít [ \<webRequestModules – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) element konfigurace aplikace pomocí vlastních modulů specifické informace o žádostech ze zdrojů v Internetu. Zadané moduly musí implementovat <xref:System.Net.IWebRequestCreate> rozhraní. Výchozí HTTP, HTTPS a soubor žádosti o moduly můžete přepsat zadáním vlastního modulu v konfiguračním souboru, jako v následujícím příkladu.  
+ Pomocí prvku [webRequestModules > element (nastavení sítě) můžete nakonfigurovat aplikaci tak, aby používala vlastní moduly specifické pro protokol k vyžádání informací z internetových prostředků. \<](../configure-apps/file-schema/network/webrequestmodules-element-network-settings.md) Zadané moduly musí implementovat <xref:System.Net.IWebRequestCreate> rozhraní. Výchozí moduly HTTP, HTTPS a požadavky na soubor můžete přepsat tak, že do konfiguračního souboru zadáte vlastní modul, jak je uvedeno v následujícím příkladu.  
   
 ```xml  
 <configuration>  
@@ -99,6 +99,6 @@ ms.locfileid: "61642799"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Schéma nastavení sítě](../../../docs/framework/configure-apps/file-schema/network/index.md)
-- [\<system.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [Síťové programování v rozhraní .NET Framework](index.md)
+- [Schéma nastavení sítě](../configure-apps/file-schema/network/index.md)
+- [\<System .NET > – element (nastavení sítě)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

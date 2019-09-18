@@ -6,12 +6,12 @@ helpviewer_keywords:
 - grid control pattern
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
-ms.openlocfilehash: 5eceafee4d02478c9e011a473ee1d036df91075d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 222f79934b183b836f74575cdcc611588b41ce2a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932182"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043450"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69932182"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IGridProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- Vzor <xref:System.Windows.Automation.GridPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené objekty tohoto elementu musí být implementovány <xref:System.Windows.Automation.Provider.IGridItemProvider> a uspořádány do dvojrozměrného logického systému souřadnic, který lze procházet podle řádků a sloupců. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.GridPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené objekty tohoto elementu musí být implementovány <xref:System.Windows.Automation.Provider.IGridItemProvider> a uspořádány do dvojrozměrného logického systému souřadnic, který lze procházet podle řádků a sloupců. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -29,7 +29,7 @@ ms.locfileid: "69932182"
   
 - Je-li buňka prázdná, musí být objekt automatizace uživatelského rozhraní nadále vrácen, aby podporoval <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> vlastnost pro tuto buňku. To je možné v případě, že rozložení podřízených prvků v mřížce je podobné nezarovnanému poli (viz příklad níže).  
   
- ![Zobrazení Průzkumníka Windows zobrazující nerovnoměrné rozložení](../../../docs/framework/ui-automation/media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
+ ![Zobrazení Průzkumníka Windows zobrazující nerovnoměrné rozložení](./media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
 Příklad ovládacího prvku mřížky s prázdnými souřadnicemi  
   
 - K implementaci mřížky s jednou položkou je stále potřeba implementovat <xref:System.Windows.Automation.Provider.IGridProvider> ji, pokud je logicky považována za mřížku. Počet podřízených položek v mřížce je nemateriálný.  
@@ -65,9 +65,9 @@ Příklad ovládacího prvku mřížky s prázdnými souřadnicemi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-griditem-control-pattern.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

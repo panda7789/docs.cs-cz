@@ -11,32 +11,32 @@ helpviewer_keywords:
 ms.assetid: 55d6ab12-f251-4aab-aa64-aacbe9d9f974
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4f076cbc556c7d9feff8a226f050743cd7728622
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a49bdce78c1445cd25de8755ded0f27a4902937
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874442"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052816"
 ---
 # <a name="exceptionswallowedoncallfromcom-mda"></a>exceptionSwallowedOnCallFromCom – pomocník spravovaného ladění (MDA)
-`exceptionSwallowedOnCallFromCOM` Pomocníka spravovaného ladění (MDA) se aktivuje, když je vyvolána výjimka z common language runtime (CLR) kódu volat z modelu COM pomocí metody, která nemá nespravovaný návratový typ HRESULT.  
+Pokud je vyvolána výjimka z kódu modulu CLR (Common Language Runtime), který je volán z modelu COM prostřednictvím metody, která nemá nespravovaný návratový typ HRESULT, je aktivována pomocník spravovanéholadění(MDA).`exceptionSwallowedOnCallFromCOM`  
   
 ## <a name="symptoms"></a>Příznaky  
- Volání spravované součásti z modelu COM, vrátí hodnotu FALSE nebo 0. Případně pokud metoda nemá návratový typ void, můžou existovat žádné označení, která během provádění metody došlo k výjimce. V tomto případě výjimku tiše zachytí se a vrátí provádění volajícímu modulu COM.  
+ Volání spravované komponenty z modelu COM vrátí hodnotu FALSE nebo 0. Případně, pokud má metoda návratový typ void, nesmí být žádné náznaky, že při provádění metody došlo k výjimce. V tomto případě bude výjimka tiše zachycena a provádění se vrátí volajícímu modelu COM.  
   
-## <a name="cause"></a>Příčina  
+## <a name="cause"></a>příčina  
  Došlo k výjimce, ale neexistuje žádný platný způsob, jak ji ohlásit.  
   
 ## <a name="resolution"></a>Řešení  
- Informativní pouze, není nutně indikátorem chyby.  
+ Pouze informativní, nemusí nutně vyindikativní chybu.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o tiše zachycené výjimky.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o tichém zachycení výjimek.  
   
 ## <a name="output"></a>Výstup  
- Informační zpráva obsahující název metody, název typu a zpráva o výjimce.  
+ Informační zpráva obsahující název metody, název typu a zprávu o výjimce.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -49,5 +49,5 @@ ms.locfileid: "61874442"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

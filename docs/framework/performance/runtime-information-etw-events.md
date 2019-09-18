@@ -7,43 +7,43 @@ helpviewer_keywords:
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af27ddaa69d34976929f40055bc2cc668f877e87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ab3844b293d09cec02236fb9befd836aa4113ea
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949211"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046232"
 ---
 # <a name="runtime-information-etw-events"></a>Události Trasování událostí pro Windows běhových informací
-Informace o modulu runtime, včetně SKU, číslo verze, způsobem, ve kterém se aktivovala modul runtime, parametry příkazového řádku, který byl spuštěn s GUID (Pokud je k dispozici) a další relevantní informace protokolu tyto události trasování událostí pro Windows. Pokud různými moduly runtime jsou spuštěny v rámci procesu, tyto události (ClrInstanceID) na základě informací poskytnutých pomáhá rozlišit modulů runtime.  
+Tyto události ETW protokolují informace o modulu runtime, včetně SKU, čísla verze, způsobu, jakým byl aktivován modul runtime, parametry příkazového řádku, s nimiž byl spuštěn, identifikátor GUID (Pokud je k dispozici) a další relevantní informace. Pokud je v rámci procesu spuštěno více modulů runtime, pomáhají informace poskytované těmito událostmi (ClrInstanceID) k odstranění nejednoznačnosti modulu runtime.  
   
- V následující tabulce jsou uvedeny dvě události běhových informací. Události může být vyvolána v rámci žádné klíčové slovo nebo masky. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Následující tabulka uvádí dvě běhové informační události. Události lze vyvolat v jakémkoli klíčovém slově nebo masce. (Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).)  
   
 |Událost|ID události|Poskytovatel|Popis|  
 |-----------|--------------|--------------|-----------------|  
 |`RuntimeInformationEvent`|187|CLRRuntime|Vyvolá se při načtení modulu runtime.|  
-|`RuntimeInformationDCStart`|187|CLRRundown|Vytvoří výčet modulů runtime, které jsou načteny.|  
+|`RuntimeInformationDCStart`|187|CLRRundown|Vytvoří výčet načtených modulů runtime.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
-|Sku|win:UInt16|1 – desktop CLR.<br /><br /> 2 – CoreCLR.|  
-|BclVersion – hlavní verze|win:UInt16|Major version of mscorlib.dll.|  
-|BclVersion – vedlejší verze aktualizace|win:UInt16|Číslo podverze souboru mscorlib.dll.|  
-|BclVersion – číslo sestavení|win:UInt16|Číslo knihovny mscorlib.dll sestavení.|  
-|BclVersion – oprava QFE|win:UInt16|Oprava hotfix číslo verze souboru mscorlib.dll.|  
-|VMVersion – hlavní verze|win:UInt16|Verze clr.dll nebo coreclr.dll, v závislosti na SKU.|  
-|VMVersion – vedlejší verze aktualizace|win:UInt16|Podverze clr.dll nebo coreclr.dll, v závislosti na SKU.|  
-|VMVersion – číslo sestavení|win:UInt16|Číslo clr.dll nebo coreclr.dll sestavení.|  
-|VMVersion – oprava QFE|win:UInt16|Oprava hotfix číslo verze clr.dll nebo coreclr.dll.|  
-|StartupFlags|win:UInt32|Po spuštění příznaky definované v mscoree.h.|  
-|StartupMode|win:UInt8|0x01 - spravované spustitelný soubor.<br /><br /> 0x02 - Hosted CLR.<br /><br /> 0x04 - C++ spravovaného zprostředkovatele komunikace s objekty.<br /><br /> 0x08 - COM aktivována.<br /><br /> 0x10 – ostatní.|  
-|příkazový řádek|win:UnicodeString|Pouze v případě nenulovou StartupMode = 0x01.|  
-|ComObjectGUID|win:GUID|Pouze v případě nenulovou StartupMode = 0x08.|  
-|RuntimeDLLPath|win:UnicodeString|Cesta k souboru DLL modulu CLR, který byl načten do procesu.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|skladové|Win: UInt16|1 – CLR pro stolní počítače.<br /><br /> 2 – CoreCLR.|  
+|BclVersion – hlavní verze|Win: UInt16|Hlavní verze knihovny mscorlib. dll.|  
+|BclVersion – dílčí verze|Win: UInt16|Číslo dílčí verze knihovny mscorlib. dll.|  
+|BclVersion – číslo buildu|Win: UInt16|Sestavuje se číslo knihovny mscorlib. dll.|  
+|BclVersion – QFE|Win: UInt16|Číslo verze opravy hotfix knihovny mscorlib. dll.|  
+|VMVersion – hlavní verze|Win: UInt16|Verze modulu CLR. dll nebo CoreCLR. dll v závislosti na SKU|  
+|VMVersion – dílčí verze|Win: UInt16|Podverze CLR. dll nebo CoreCLR. dll v závislosti na SKU|  
+|VMVersion – číslo buildu|Win: UInt16|Sestavuje číslo CLR. dll nebo CoreCLR. dll.|  
+|VMVersion – QFE|Win: UInt16|Číslo verze opravy hotfix CLR. dll nebo CoreCLR. dll.|  
+|StartupFlags|Win: UInt32|Příznaky spouštění definované v knihovně Mscoree. h.|  
+|StartupMode|Win: UInt8|spustitelný soubor spravovaný za 0x01<br /><br /> 0x02 – hostovaný modul CLR.<br /><br /> spolupráce C++ spravovaná 0x04<br /><br /> 0x08-COM-aktivované.<br /><br /> 0x10 – jiné.|  
+|Řádek|win:UnicodeString|Hodnota jinou než null, pouze pokud StartupMode = 0x01.|  
+|ComObjectGUID|Win: GUID|Hodnota jinou než null, pouze pokud StartupMode = 0x08.|  
+|RuntimeDLLPath|win:UnicodeString|Cesta k souboru CLR. dll, který byl načten do procesu.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)

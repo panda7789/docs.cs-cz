@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UI Automation, custom user interface (UI) elements
 - providers, UI Automation
 ms.assetid: 5f82f731-f1b5-4c8b-b47c-d11279a02574
-ms.openlocfilehash: c8829afda1b2b8c2b82ed9f7d569d1c2357a7b0e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: dd07b07d2ccf649952cddfcca47d30a12570b048
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914372"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042031"
 ---
 # <a name="ui-automation-providers-for-managed-code"></a>Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "69914372"
  Tato část obsahuje přehledy a postupy, které popisují, jak psát [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] poskytovatele pro vlastní [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)  
- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)  
- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/client-side-ui-automation-provider-implementation.md)  
- [Témata s postupy](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code-how-to-topics.md)
+ [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)  
+ [Přehled zprostředkovatelů automatizace uživatelského rozhraní](ui-automation-providers-overview.md)  
+ [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta](client-side-ui-automation-provider-implementation.md)  
+ [Témata s postupy](ui-automation-providers-for-managed-code-how-to-topics.md)

@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e80e044fe01172c587ef029186035a64cdf0b42
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 4038f8e4a3c012fab9df6019b5f9f19375f61f2a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971224"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044292"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
 Nástroj Assembly Registration načte metadata v rámci sestavení a přidá nezbytné položky registru, které umožní klientům modelu COM transparentní vytvoření tříd rozhraní .NET Framework. Jakmile je třída zaregistrována, může ji libovolný klient COM použít jako třídu COM. Třída je registrována pouze jednou, při instalaci sestavení. Instance tříd z modelu COM v rámci sestavení nelze vytvořit, dokud nedojde k jejich registraci.
 
-Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio. Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio. Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -56,13 +56,13 @@ regasm assemblyFile [options]
 
 K vygenerování souboru. reg, který obsahuje položky registru, místo provedení změn přímo v registru můžete použít možnost **/regfile** . Registr lze na počítači aktualizovat importováním souboru .reg pomocí nástroje Editor registru (Regedit.exe). Soubor .reg neobsahuje žádné aktualizace registru, které lze provést pomocí funkcí registru definovaných uživatelem.  Všimněte si, že možnost **/regfile** generuje pouze položky registru pro spravované třídy.  Tato možnost negeneruje položky pro `TypeLibID`s nebo `InterfaceID`s.
 
-Pokud zadáte možnost **/TLB** , nástroj Regasm. exe vygeneruje a zaregistruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytnutí informací o typech vývojářským nástrojům, jako je Visual Studio. Možnost **/TLB** byste neměli používat, pokud sestavení, které zaregistrujete, vytvořil Nástroj pro import knihovny typů ([Tlbimp. exe](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití možnosti **/TLB** má stejný účinek jako použití exportéru knihovny typů ([Tlbexp. exe](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)) a Regasm. exe s výjimkou, že Tlbexp. exe neregistruje knihovnu typů, kterou vytváří.  Použijete-li možnost **/TLB** k zaregistrování knihovny typů, můžete použít možnost **/TLB** s možností **/Unregister** pro zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
+Pokud zadáte možnost **/TLB** , nástroj Regasm. exe vygeneruje a zaregistruje knihovnu typů popisující typy nalezené v sestavení. Nástroj Regasm.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Vytváření knihovny typů pro sestavení, které odkazuje na jiné sestavení, může způsobit vytvoření několika knihoven typů najednou. Knihovnu typů můžete použít k poskytnutí informací o typech vývojářským nástrojům, jako je Visual Studio. Možnost **/TLB** byste neměli používat, pokud sestavení, které zaregistrujete, vytvořil Nástroj pro import knihovny typů ([Tlbimp. exe](tlbimp-exe-type-library-importer.md)). Knihovnu typů nelze exportovat ze sestavení, které bylo importováno z knihovny typů. Použití možnosti **/TLB** má stejný účinek jako použití exportéru knihovny typů ([Tlbexp. exe](tlbexp-exe-type-library-exporter.md)) a Regasm. exe s výjimkou, že Tlbexp. exe neregistruje knihovnu typů, kterou vytváří.  Použijete-li možnost **/TLB** k zaregistrování knihovny typů, můžete použít možnost **/TLB** s možností **/Unregister** pro zrušení registrace knihovny typů. Použitím obou možností společně dojde ke zrušení registrace knihovny typů a položek rozhraní, čímž lze značně pročistit registr.
 
 Při registraci sestavení pro použití modelem COM nástroj Regasm.exe přidá položky do registru místního počítače. Přesněji řečeno vytvoří klíče registru závislé na verzi, které dovolují v počítači paralelně spustit více verzí stejného sestavení. Při první registraci sestavení je pro sestavení vytvořen jeden klíč na nejvyšší úrovni a je vytvořen jedinečný podklíč pro konkrétní verzi. Při každé registraci nové verze sestavení nástroj Regasm.exe vytvoří podklíč pro novou verzi.
 
 Jako příklad lze uvést registraci spravované komponenty, myComp.dll, verze 1.0.0.0 pro použití modelem COM. Později zaregistrujete myComp.dll verze 2.0.0.0. Je možné určit, že všechny klientské aplikace modelu COM v počítači používají myComp.dll verze 2.0.0.0 a rozhodnout o zrušení registrace myComponent.dll verze 1.0.0.0. Toto schéma registru umožňuje zrušit registraci myComp.dll verze 1.0.0.0, protože je odebrán pouze podklíč verze 1.0.0.0.
 
-Po registraci sestavení pomocí nástroje Regasm. exe jej můžete nainstalovat do [globální mezipaměti sestavení (GAC](../../../docs/framework/app-domains/gac.md) ), aby jej bylo možné aktivovat z libovolného klienta modelu COM. Pokud bude sestavení aktivováno jednou aplikací, je možné je umístit do adresáře dané aplikace.
+Po registraci sestavení pomocí nástroje Regasm. exe jej můžete nainstalovat do [globální mezipaměti sestavení (GAC](../app-domains/gac.md) ), aby jej bylo možné aktivovat z libovolného klienta modelu COM. Pokud bude sestavení aktivováno jednou aplikací, je možné je umístit do adresáře dané aplikace.
 
 ## <a name="examples"></a>Příklady
 
@@ -86,8 +86,8 @@ regasm myTest.dll /tlb:myTest.tlb
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Tlbexp.exe (exportér knihovny typů)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
-- [Registrování sestav pomocí modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Tlbexp.exe (exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)
+- [Tlbimp.exe (importér knihovny typů)](tlbimp-exe-type-library-importer.md)
+- [Registrování sestav pomocí modelu COM](../interop/registering-assemblies-with-com.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

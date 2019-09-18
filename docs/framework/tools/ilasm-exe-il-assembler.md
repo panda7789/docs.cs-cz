@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fcc9ba5e379897247f50175603b1002d5688d215
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: b8d1ad081c8d783cd18054078a6eeb82428faa4d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894684"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044639"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
 Nástroj IL Assembler generuje přenositelný spustitelný (PE) soubor z převodního jazyka (IL; Intermediate Language). (Další informace o IL najdete v tématu [spravovaný proces spuštění](../../standard/managed-execution-process.md).) Výsledný spustitelný soubor obsahující jazyk IL a potřebná metadata lze spustit, a určit tak, zda IL funguje dle očekávání.
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -92,7 +92,7 @@ Nástroj IL Assembler dokáže vyjádřit všechna existující metadata a funkc
 > [!NOTE]
 > Kompilace může skončit neúspěchem, neobsahuje-li poslední řádek kódu ve zdrojovém souboru .il prázdný znak nebo znak ukončení řádku.
 
-*Ilasm. exe* lze použít ve spojení s jeho doprovodným nástrojem [*Ildasm. exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). *Ildasm. exe* používá soubor PE, který obsahuje kód Il a vytvoří textový soubor vhodný jako vstup do *Ilasm. exe*. Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a spuštění výstupu prostřednictvím programu *Ildasm. exe*lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Pak můžete tento textový soubor spustit pomocí nástroje *Ilasm. exe* a vytvořit konečný spustitelný soubor.
+*Ilasm. exe* lze použít ve spojení s jeho doprovodným nástrojem [*Ildasm. exe*](ildasm-exe-il-disassembler.md). *Ildasm. exe* používá soubor PE, který obsahuje kód Il a vytvoří textový soubor vhodný jako vstup do *Ilasm. exe*. Toho lze využít například při kompilování kódu v programovacím jazyce, který nepodporuje všechny atributy modulu runtime. Po zkompilování kódu a spuštění výstupu prostřednictvím programu *Ildasm. exe*lze výsledný textový soubor IL ručně upravit a přidat chybějící atributy. Pak můžete tento textový soubor spustit pomocí nástroje *Ilasm. exe* a vytvořit konečný spustitelný soubor.
 
 Tuto techniku lze také použít pro sloučení několika souborů PE původně vygenerovaných různými kompilátory do jediného souboru PE.
 
@@ -159,7 +159,7 @@ Následující příkaz sestaví soubor IL *myTestFile.Il* a vytvoří soubor *D
 ilasm myTestFile /dll /output:myNewTestFile.dll
 ```
 
-Následující příklad kódu ukazuje extrémně jednoduchou aplikaci, která zobrazuje "Hello World!" do konzoly. Tento kód můžete zkompilovat a pak pomocí nástroje [*Ildasm. exe*](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) vygenerovat soubor Il.
+Následující příklad kódu ukazuje extrémně jednoduchou aplikaci, která zobrazuje "Hello World!" do konzoly. Tento kód můžete zkompilovat a pak pomocí nástroje [*Ildasm. exe*](ildasm-exe-il-disassembler.md) vygenerovat soubor Il.
 
 ```csharp
 using System;
@@ -229,7 +229,7 @@ Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [*Ildasm. exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
+- [Nástroje](index.md)
+- [*Ildasm. exe* (IL Disassembler)](ildasm-exe-il-disassembler.md)
 - [Proces spravovaného spuštění](../../standard/managed-execution-process.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

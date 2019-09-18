@@ -9,37 +9,37 @@ helpviewer_keywords:
 - staleness of cached resources
 - age of cached resources
 ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
-ms.openlocfilehash: 3819882fe4a93016b25c10daa198a24fe7b0e951
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e21cfc28407ba67afdce8d72e5e52c12ab359059
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624675"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048843"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interakce zásad mezipaměti – maximální stáří a maximální neaktuálnost
-K zajištění, že nejčerstvější obsah se vrátí do klientské aplikace, interakce vždy klienta mezipaměti zásad serveru opětovné ověření požadavků a výsledkem nejrestriktivnější zásady ukládání do mezipaměti. Všechny příklady v tomto tématu ilustrují zásady ukládání do mezipaměti pro prostředek, který se uloží do mezipaměti na 1. ledna a končí 4. ledna.  
+Aby bylo zajištěno, že se obsah vrátí do klientské aplikace, interakce zásad mezipaměti klienta a požadavky na revalidy serveru vždy vede k nejzávažnějším zásadám mezipaměti. Všechny příklady v tomto tématu ilustrují zásady mezipaměti pro prostředek, který je uložen v mezipaměti od 1. ledna do 4. ledna.  
   
- V následujících příkladech hodnota maximální neaktuálnost (`maxStale`) se používá ve spojení s maximální stáří (`maxAge`):  
+ V následujících příkladech je maximální hodnota neaktuálnosti (`maxStale`) použita ve spojení s maximálním stářím (`maxAge`):  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a nemá `maxStale` hodnoty, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Nicméně podle požadavků na opětovné ověření serveru, platnost obsahu vyprší dne od 4. Protože datum vypršení platnosti obsahu je konzervativnější (dřív), má přednost před `maxAge` zásad. Proto obsahu vyprší dne 4 a musí ověřit, i když nedosáhla své maximální stáří.  
+- Pokud zásada cache nastaví `maxAge` = 5 dní a `maxStale` neurčuje `maxAge` hodnotu podle hodnoty, bude obsah použitelný až do 6. ledna. V souladu s požadavky na revalidy serveru ale platnost obsahu vyprší 4. ledna. Vzhledem k tomu, že datum vypršení platnosti obsahu je více konzervativní (dřív), `maxAge` má přednost před zásadou. Platnost obsahu proto vyprší 4. ledna a musí se znovu ověřit, i když jeho maximální stáří nebylo dosaženo.  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 3 dny, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 7. Proto získá obsah ověřit v lednu 6.  
+- Pokud zásady mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 3 `maxAge` dny, podle hodnoty, bude obsah použitelný až do 6. ledna. `maxStale` Podle hodnoty je možné obsah použít až do 7. ledna. Proto se obsah znovu ověří 6. ledna.  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 1 den, podle `maxAge` hodnotu, je obsah použitelné až do ledna 6. Podle `maxStale` hodnotu, je obsah použitelné až do ledna 5. Proto získá ověřit obsah na 5. ledna.  
+- Pokud zásady mezipaměti nastaví `maxAge` = 5 dní a `maxStale` = 1 `maxAge` den, podle hodnoty, bude obsah použitelný až do 6. ledna. `maxStale` Podle hodnoty je možné obsah použít do 5. ledna. Proto se obsah znovu ověří 5. ledna.  
   
- Při maximální stáří je menší než datum vypršení platnosti obsahu, vždycky existuje konzervativnější chování ukládání do mezipaměti a maximální neaktuálnost hodnota nemá žádný vliv. Následující příklady znázorňují účinek nastavení maximální neaktuálnost (`maxStale`) hodnotu v případě maximální stáří (`maxAge`) je dosažen předtím, než vyprší platnost obsahu:  
+ Pokud je maximální stáří menší než datum vypršení platnosti obsahu, podrobnější chování při ukládání do mezipaměti je vždycky stejné a maximální hodnota zastaralosti nemá žádný vliv. Následující příklady ilustrují efekt nastavení maximální hodnoty neaktuálnosti (`maxStale`), pokud je dosaženo maximálního stáří (`maxAge`), než vyprší platnost obsahu:  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a nemá hodnotu `maxStale` hodnotu, obsah je ověřit na 2. ledna i v případě, že nevypršela jeho platnost.  
+- Pokud zásady mezipaměti nastaví `maxAge` 1 den a neurčuje hodnotu pro `maxStale` hodnotu, bude se obsah znovu ověřit 2. ledna, i když nevypršela jeho platnost.  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 3 dny, obsah je ověřit na 2. ledna konzervativnější nastavení zásad vynucovat.  
+- Pokud zásady mezipaměti nastaví `maxAge` hodnotu 1 den a `maxStale` = 3 dny, dojde k jejímu ověření znovu v lednu 2, aby se vynutilo více konzervativních zásad.  
   
-- Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 1 den a `maxStale` = 1 den, obsah je ověřit na 2. ledna.  
+- Pokud jsou zásady mezipaměti nastaveny `maxAge` na 1 den a `maxStale` = 1 den, obsah se znovu ověří 2. ledna.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
-- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
-- [Interakce zásad mezipaměti – minimální stáří a minimální novost](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-minimum-freshness.md)
+- [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)
+- [Zásady mezipaměti](cache-policy.md)
+- [Zásady mezipaměti na základě místa](location-based-cache-policies.md)
+- [Zásady mezipaměti na základě času](time-based-cache-policies.md)
+- [Konfigurace mezipaměti v síťových aplikacích](configuring-caching-in-network-applications.md)
+- [Interakce zásad mezipaměti – minimální stáří a minimální novost](cache-policy-interaction-maximum-age-and-minimum-freshness.md)

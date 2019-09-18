@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Umístit více než jednu hodnotu proměnné (Visual Basic)'
+title: 'Postupy: Umístit více než jednu hodnotu v proměnné (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,36 +11,37 @@ helpviewer_keywords:
 - arrays [Visual Basic], compilation errors
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
-ms.openlocfilehash: 2c3df9873d184ead2de3f82b89a081955ade93b3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8d07a34a98303f9d220dba0a3c955120b421340e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601125"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054201"
 ---
-# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Umístit více než jednu hodnotu proměnné (Visual Basic)
-Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jej bude *složené datový typ*.  
-  
- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují třídy, struktury a pole. Proměnné typu složených dat může obsahovat kombinaci základní datové typy a dalších složené typy. Struktury a třídy může obsahovat kód, jakož i data.  
-  
-### <a name="to-hold-more-than-one-value-in-a-variable"></a>Chcete-li do proměnné umístit více než jednu hodnotu  
-  
-1. Určete, jaký složené datový typ, který chcete použít pro proměnné.  
-  
-2. Pokud již není definován typ. složených dat, definujte ho tak, aby ho může použít vaše proměnná.  
-  
-    - Definovat strukturu s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md).  
-  
-    - Definování pole [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
-  
-    - Definovat třídu pomocí [Class – příkaz](../../../../visual-basic/language-reference/statements/class-statement.md).  
-  
-3. Deklarujte proměnné s `Dim` příkazu.  
-  
-4. Použijte název proměnné pomocí `As` klauzuli.  
-  
-5. Postupujte podle `As` – klíčové slovo s názvem odpovídající složené datového typu.  
-  
+# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Umístit více než jednu hodnotu v proměnné (Visual Basic)
+
+Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jako *složený datový typ*.
+
+[Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují struktury, pole a třídy. Proměnná složeného datového typu může obsahovat kombinaci základních datových typů a dalších složených typů. Struktury a třídy mohou uchovávat kód i data.
+
+## <a name="to-hold-more-than-one-value-in-a-variable"></a>Uložení více než jedné hodnoty v proměnné
+
+1. Určete, jaký typ složeného dat chcete pro proměnnou použít.
+
+2. Pokud se složený datový typ ještě nedefinuje, definujte ho, aby ho vaše proměnná mohla použít.
+
+    - Definujte strukturu pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md).
+
+    - Definujte pole pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
+
+    - Definujte třídu pomocí [příkazu třídy](../../../../visual-basic/language-reference/statements/class-statement.md).
+
+3. Deklarujte proměnnou pomocí `Dim` příkazu.
+
+4. Použijte název proměnné s `As` klauzulí.
+
+5. `As` Použijte klíčové slovo s názvem vhodného složeného datového typu.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)

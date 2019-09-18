@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc8395492992c22da3c635f0de010516127f9be4
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 656b82daffc62824ed663ea7080bd6d20cd0dadc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "61793000"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045820"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Určení plně kvalifikovaných názvů typů
 
@@ -149,7 +149,7 @@ Minimální informace požadované ve specifikaci názvu sestavení jsou textov�
 |**PublicKey**|Úplný veřejný klíč|Řetězcová hodnota úplného veřejného klíče v šestnáctkovém formátu Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
 |**PublicKeyToken**|Token veřejného klíče (8bitové bajtové hodnoty hash úplného veřejného klíče)|Řetězcová hodnota tokenu veřejného klíče v šestnáctkovém formátu. Zadejte nulový odkaz (**Nothing** v Visual Basic) k explicitnímu označení soukromého sestavení.|
 |**Jazykových**|Jazyková verze sestavení|Jazyková verze sestavení ve formátu RFC-1766 nebo neutrální pro sestavení nezávislá na jazyce (nesatelitní).|
-|**Vlastní**|Vlastní binární rozsáhlý objekt (BLOB). Tato operace je aktuálně používána pouze v sestaveních generovaných [generátorem nativních bitových kopií (NGen)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|Vlastní řetězec používaný nástrojem generátor nativních bitových kopií pro oznamování mezipaměti sestavení, že sestavení, které se instaluje, je nativní bitová kopie, a proto je nutné ji nainstalovat do mezipaměti nativní bitové kopie. Označuje se také jako řetězec zap.|
+|**Vlastní**|Vlastní binární rozsáhlý objekt (BLOB). Tato operace je aktuálně používána pouze v sestaveních generovaných [generátorem nativních bitových kopií (NGen)](../tools/ngen-exe-native-image-generator.md).|Vlastní řetězec používaný nástrojem generátor nativních bitových kopií pro oznamování mezipaměti sestavení, že sestavení, které se instaluje, je nativní bitová kopie, a proto je nutné ji nainstalovat do mezipaměti nativní bitové kopie. Označuje se také jako řetězec zap.|
 
 Následující příklad ukazuje rozhraní **AssemblyName** pro jednoduše pojmenované sestavení s výchozí jazykovou verzí.
 
@@ -224,4 +224,4 @@ Pro **modul ModuleBuilder. GetType** `MyArray[0..5]` označuje pole s jednou dim
 - <xref:System.Type.FullName%2A?displayProperty=nameWithType>
 - <xref:System.Type.GetType%2A?displayProperty=nameWithType>
 - <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>
-- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Zobrazení informací o typu](viewing-type-information.md)

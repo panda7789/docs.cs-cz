@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ba60b6d97d1441cefc9392067c797504f454ac59
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 9d120dcf49f1c9097eee04434062a0363a7e144a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894516"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049966"
 ---
 # <a name="apis-that-rely-on-reflection"></a>Rozhraní API, která závisí na reflexi
-V některých případech není použití reflexe v kódu zřejmé, a proto řetěz nástrojů .NET Native nezachovává metadata potřebná v době běhu. Toto téma se zabývá některými běžnými rozhraními API nebo společnými programovacími vzory, které nejsou považovány za součást rozhraní API pro reflexi, ale které se spoléhají na úspěšné provedení Pokud je používáte ve zdrojovém kódu, můžete do souboru direktiv modulu runtime (. Rd. XML) přidat informace, aby volání těchto rozhraní API nevyvolávají výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo jinou výjimku v době běhu.  
+V některých případech není použití reflexe v kódu zřejmé, a proto řetěz nástrojů .NET Native nezachovává metadata potřebná v době běhu. Toto téma se zabývá některými běžnými rozhraními API nebo společnými programovacími vzory, které nejsou považovány za součást rozhraní API pro reflexi, ale které se spoléhají na úspěšné provedení Pokud je používáte ve zdrojovém kódu, můžete do souboru direktiv modulu runtime (. Rd. XML) přidat informace, aby volání těchto rozhraní API nevyvolávají výjimku [MissingMetadataException](missingmetadataexception-class-net-native.md) nebo jinou výjimku v době běhu.  
   
 ## <a name="typemakegenerictype-method"></a>Type. MakeGenericType – metoda  
  Můžete dynamicky vytvořit instanci obecného typu `AppClass<T>` <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> voláním metody pomocí kódu podobného tomuto:  
@@ -27,7 +27,7 @@ V některých případech není použití reflexe v kódu zřejmé, a proto řet
   
  To umožňuje, <xref:System.Type.GetType%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> aby bylo volání metody úspěšné a vrátilo <xref:System.Type> platný objekt.  
   
- Ale i když přidáváte metadata pro obecný typ bez instance, volání <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> metody vyvolá výjimku [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) :  
+ Ale i když přidáváte metadata pro obecný typ bez instance, volání <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> metody vyvolá výjimku [MissingMetadataException](missingmetadataexception-class-net-native.md) :  
   
 Tuto operaci nelze provést, protože z důvodů výkonu byla odebrána metadata pro následující typ:  
   
@@ -92,5 +92,5 @@ Unfortunately, no further information is available.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Začínáme](getting-started-with-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

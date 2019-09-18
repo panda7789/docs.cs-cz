@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: f561f67aed1d024a73d78da26e86110e4cddab2f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbcb7b274144281d88d8fb36b9cb55043658a6a9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932011"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043100"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69932011"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.ITransformProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.TransformPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které lze přesunout, změnit jeho velikost nebo otočit v dvojrozměrném prostoru. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.TransformPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které lze přesunout, změnit jeho velikost nebo otočit v dvojrozměrném prostoru. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -60,8 +60,8 @@ ms.locfileid: "69932011"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

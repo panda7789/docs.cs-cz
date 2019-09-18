@@ -2,12 +2,12 @@
 title: Stav a data v aplikacích Dockeru
 description: Správa stavu a dat v Docker aplikacích. Instance mikroslužeb jsou vynaloženy, ale DATA nejsou, jak je zpracovat pomocí mikroslužeb.
 ms.date: 09/20/2018
-ms.openlocfilehash: 9d7b0ff0e73267c6b80be2f1c956c3b4eae140e2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: bd0ac007479dcd51f2c639881273b81d1fd8b6d7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295521"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039583"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
@@ -47,7 +47,7 @@ Svazky mohou být pojmenované nebo anonymní (výchozí). Pojmenované svazky p
 
 Jak je znázorněno na obrázku 4-5, běžné svazky Docker lze ukládat mimo samotné kontejnery, ale v rámci fyzických hranic hostitelského serveru nebo virtuálního počítače. Kontejnery Docker ale nemají přístup ke svazku z jednoho hostitelského serveru nebo virtuálního počítače do jiného. Jinými slovy, u těchto svazků není možné spravovat data sdílená mezi kontejnery, které běží na různých hostitelích Docker, i když se dá dosáhnout pomocí ovladače svazku, který podporuje vzdálené hostitele.
 
-![Svazky lze sdílet mezi kontejnery, ale pouze ve stejném hostiteli, pokud nepoužíváte vzdálený ovladač, který podporuje vzdálené hostitele. ](./media/image5.png)
+![Svazky lze sdílet mezi kontejnery, ale pouze ve stejném hostiteli, pokud nepoužíváte vzdálený ovladač, který podporuje vzdálené hostitele.](./media/image5.png)
 
 **Obrázek 4-5**. Svazky a externí zdroje dat pro aplikace založené na kontejnerech
 

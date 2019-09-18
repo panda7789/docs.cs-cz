@@ -6,12 +6,12 @@ helpviewer_keywords:
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 5be803e2f4face60318a4c9ed12f1b58edaeace6
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044429"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053575"
 ---
 # <a name="how-to-start-services"></a>Postupy: Spuštění služby
 
@@ -28,7 +28,7 @@ Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost
 
 ### <a name="to-specify-how-a-service-should-start"></a>Určení způsobu spuštění služby
 
-1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)služby.
+1. Po vytvoření služby přidejte pro ni potřebné instalační programy. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](how-to-add-installers-to-your-service-application.md)služby.
 
 2. V návrháři klikněte na instalační program služby pro službu, se kterou pracujete.
 
@@ -80,6 +80,6 @@ Nastavením <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> vlastnost
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvořit služby systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
-- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)

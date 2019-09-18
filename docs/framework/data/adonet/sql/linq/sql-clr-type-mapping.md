@@ -2,12 +2,12 @@
 title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: b209283f5d4e87d1faab06184bda3f79bf1adaed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6710c58a430c35dae41a1a381335019fd3e75192
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792518"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053042"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V LINQ to SQL datový model relační databáze mapuje na objektový model, který je vyjádřen v programovacím jazyce podle vašeho výběru. Když se aplikace spustí, LINQ to SQL přeloží dotazy integrované v jazyce v objektovém modelu do SQL a pošle je do databáze ke spuštění. Když databáze vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, se kterými můžete pracovat ve vlastním programovacím jazyce.  
@@ -44,7 +44,7 @@ V LINQ to SQL datový model relační databáze mapuje na objektový model, kter
 ## <a name="type-mapping-run-time-behavior-matrix"></a>Matice chování mapování typů za běhu  
  Následující diagram znázorňuje očekávané chování konkrétního mapování typů v době, kdy jsou data načtena nebo ukládána do databáze. S výjimkou serializace nepodporuje LINQ to SQL mapování mezi žádnými datovými typy CLR nebo SQL Server, které nejsou uvedeny v této matici. Další informace o podpoře serializace naleznete v tématu [binární serializace](#BinarySerialization).  
  
-![SQL Server k tabulce mapování datových typů SQL CLR](media/sql-clr-type-mapping.png)
+![SQL Server k tabulce mapování datových typů SQL CLR](./media/sql-clr-type-mapping.png)
 
 > [!NOTE]
 > Některé mapování typů může způsobit přetečení nebo výjimky ztráty dat při převodu do nebo z databáze.  

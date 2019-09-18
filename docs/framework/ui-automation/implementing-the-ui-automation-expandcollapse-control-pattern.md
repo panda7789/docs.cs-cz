@@ -6,75 +6,75 @@ helpviewer_keywords:
 - ExpandCollapse control pattern
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-ms.openlocfilehash: 9477dfa4ab487d1d5d7aec0220f0655b742ec551
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 232bceba8286c2566a7df03b9001a5c43b348b20
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660862"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043461"
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
 
 > [!NOTE]
-> Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.
 
-Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>, včetně informací o vlastnosti, metody a události. Odkazy na další odkazy jsou uvedeny na konci přehledu.
+Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.
 
-<xref:System.Windows.Automation.ExpandCollapsePattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které vizuálně rozbalte zobrazíte další obsah a sbalení pro skrytí obsahu. Příklady ovládacích prvků, které tento ovládací prvek model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).
+Vzor <xref:System.Windows.Automation.ExpandCollapsePattern> ovládacího prvku slouží k podpoře ovládacích prvků, které se vizuálně rozbalí pro zobrazení více obsahu a sbalení pro skrytí obsahu. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).
 
 <a name="Implementation_Guidelines_and_Conventions"></a>
 
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace
 
-Pokud implementace vzoru ovládacích prvků ExpandCollapse, mějte na paměti následující pokyny a konvence:
+Při implementaci vzoru ovládacího prvku ovládacích prvků ExpandCollapse si všimněte následujících pokynů a konvencí:
 
-- Agregovat ovládací prvky – vytvořených pomocí podřízených objektů, které poskytují rozhraní s funkcí Rozbalit/sbalit – musí podporovat <xref:System.Windows.Automation.ExpandCollapsePattern> řídit vzor, že jejich podřízené prvky tomu tak není. Například ovládací prvek pole se seznamem se vytvořil s kombinací pole se seznamem, tlačítka a textová pole, ale je pouze nadřazené pole se seznamem, který musí podporovat <xref:System.Windows.Automation.ExpandCollapsePattern>.
+- Agregační ovládací prvky – sestavené s podřízenými objekty, které poskytují uživatelské rozhraní s funkcí rozbalit/sbalit <xref:System.Windows.Automation.ExpandCollapsePattern> – musí podporovat model ovládacího prvku, zatímco jejich podřízené prvky ne. Například ovládací prvek pole se seznamem je sestaven s kombinací ovládacích prvků seznam, tlačítko a úpravy, ale je to pouze nadřazené pole se seznamem, které musí podporovat <xref:System.Windows.Automation.ExpandCollapsePattern>.
 
   > [!NOTE]
-  > Výjimkou je ovládací prvek nabídky, který je agregací jednotlivé objekty MenuItem. Podporuje objekty MenuItem <xref:System.Windows.Automation.ExpandCollapsePattern> – vzor ovládacích prvků, ale nadřazený nabídky ovládací prvek nelze. Podobné výjimky platí pro ovládací prvky stromu a položka stromu.
+  > Výjimkou je ovládací prvek nabídky, který je agregací jednotlivých objektů MenuItem. Objekty MenuItem mohou podporovat <xref:System.Windows.Automation.ExpandCollapsePattern> vzorek ovládacího prvku, ale nadřazený ovládací prvek nabídky nemůže. Podobná výjimka se vztahuje na ovládací prvky strom a strom položky stromu.
 
-- Když <xref:System.Windows.Automation.ExpandCollapseState> ovládacího prvku nastavená na <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, všechny <xref:System.Windows.Automation.ExpandCollapsePattern> funkce je aktuálně neaktivní ovládacího prvku a je jen informace, které lze získat pomocí tohoto – vzor ovládacích prvků <xref:System.Windows.Automation.ExpandCollapseState>. Pokud později přidané všechny podřízené objekty, <xref:System.Windows.Automation.ExpandCollapseState> změny a <xref:System.Windows.Automation.ExpandCollapsePattern> je aktivovaná funkce.
+- Když je ovládací prvek nastaven na <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, všechny <xref:System.Windows.Automation.ExpandCollapsePattern> funkce jsou aktuálně neaktivní pro ovládací prvek a jediné informace, které lze získat pomocí tohoto vzoru ovládacího prvku, je <xref:System.Windows.Automation.ExpandCollapseState>. <xref:System.Windows.Automation.ExpandCollapseState> Pokud jsou následně přidány podřízené objekty, <xref:System.Windows.Automation.ExpandCollapseState> jsou aktivovány změny a <xref:System.Windows.Automation.ExpandCollapsePattern> funkce.
 
-- <xref:System.Windows.Automation.ExpandCollapseState> Označuje, zda se bezprostředně podřízených objektů neodkazuje na viditelnost všechny odvozené objekty.
+- <xref:System.Windows.Automation.ExpandCollapseState>odkazuje na viditelnost pouze bezprostředních podřízených objektů; neodkazuje na viditelnost všech potomků objektů.
 
-- Rozbalit a sbalit funkce jsou specifické pro ovládací prvek. Následují příklady tohoto chování.
+- Funkce rozbalení a sbalení je specifická pro konkrétní ovládací prvek. Níže jsou uvedeny příklady tohoto chování.
 
-  - Osobní nabídky Office může být MenuItem tri stav (<xref:System.Windows.Automation.ExpandCollapseState.Expanded>, <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> a <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>) určuje, kde ovládacího prvku stavu na přijetí, kdy <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> je volána.
+  - Osobní nabídka Office může být třída MenuItem pro tři<xref:System.Windows.Automation.ExpandCollapseState.Expanded>země ( <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> a <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>), kde <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> ovládací prvek určuje stav, který se má přijmout při volání <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> nebo.
 
-  - Volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> na TreeItem může zobrazit všechny následníky nebo pouze přímé podřízené objekty.
+  - Volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> na TreeItem může zobrazit všechny následníky nebo pouze bezprostřední podřízené objekty.
 
-  - Pokud volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> na ovládací prvek udržuje svůj stav z jejich potomků pak událost změny viditelnost mají být odeslány, nikoli události změny stavu pokud nadřazený ovládací prvek nespravuje stavu z jejich potomků pak při sbalení, mohou ovládací prvek Zničte všechny následníky, které již nejsou viditelné a vyvolat událost zničení; nebo může změnit <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> pro každou následník a zvýší viditelnost události změny.
+  - Pokud volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> na ovládacím prvku udržuje stav jeho následníků, měla by být odeslána událost změny viditelnosti, nikoli událost změny stavu, pokud nadřazený ovládací prvek neudržuje stav potomků, pokud je sbalený, ovládací prvek může zničit všechny následníky, kteří již nejsou viditelní a vyvolávají událost zničení; nebo může změnit <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> pro každého následníka a vyvolat událost změny viditelnosti.
 
-- Pokud chcete zajistit navigace, je žádoucí, aby objekt v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu (s odpovídající viditelnost) bez ohledu na jeho rodičů <xref:System.Windows.Automation.ExpandCollapseState>. Pokud následníky jsou generovány na vyžádání, se může vyskytovat jenom [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu po zobrazení první čas nebo pouze, pokud nejsou viditelná.
+- Pro zajištění navigace je žádoucí, aby byl objekt ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu (s odpovídajícím stavem viditelnosti) bez ohledu na jeho rodiče. <xref:System.Windows.Automation.ExpandCollapseState> Pokud jsou následníky generovány na vyžádání, mohou se zobrazit pouze ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktuře po prvním zobrazení nebo pouze v případě, že jsou viditelné.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 
-## <a name="required-members-for-iexpandcollapseprovider"></a>Požadované členy pro IExpandCollapseProvider
+## <a name="required-members-for-iexpandcollapseprovider"></a>Vyžadovaná členové pro IExpandCollapseProvider
 
-Následující vlastnosti a metody, které jsou požadovány pro implementaci <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.
+Pro implementaci <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>jsou vyžadovány následující vlastnosti a metody.
 
-|Požadované členy|Typ člena|Poznámky|
+|Vyžadovaná členové|Typ člena|Poznámky|
 |----------------------|-----------------|-----------|
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|Vlastnost|Žádný|
-|<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|Metoda|Žádný|
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|Vlastnost|Žádné|
+|<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|Metoda|Žádné|
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|Metoda|Žádné|
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Událost|Tento ovládací prvek nemá žádné přidružené události; Použijte tento obecný delegát.|
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Událost|Tento ovládací prvek nemá žádné přidružené události; Použijte tohoto obecného delegáta.|
 
 <a name="Exceptions"></a>
 
 ## <a name="exceptions"></a>Výjimky
 
-Poskytovatelé musí vyvolání následující výjimky.
+Zprostředkovatelé musí vyvolat následující výjimky.
 
 |Typ výjimky|Podmínka|
 |--------------------|---------------|
-|<xref:System.InvalidOperationException>|Buď <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> je volána, když <xref:System.Windows.Automation.ExpandCollapseState>  =  <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>.|
+|<xref:System.InvalidOperationException>|Buď <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> <xref:System.Windows.Automation.ExpandCollapseState>nebo jevolána = , když .<xref:System.Windows.Automation.ExpandCollapseState.LeafNode> <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](navigate-among-ui-automation-elements-with-treewalker.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

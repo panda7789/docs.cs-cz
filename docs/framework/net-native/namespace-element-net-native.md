@@ -1,18 +1,18 @@
 ---
-title: <Namespace> – Element (.NET Native)
+title: <Namespace>– Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c304606a27552e604bf40953f49a30a794026281
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7be004776d2a2fd3b4c41fb21b3ac244946f2166
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866909"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049419"
 ---
-# <a name="namespace-element-net-native"></a>\<Namespace > – Element (.NET Native)
-Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru názvů.  
+# <a name="namespace-element-net-native"></a>\<Namespace – element > elementu (.NET Native)
+Aplikuje zásady reflexe za běhu na všechny typy v zadaném oboru názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,53 +38,53 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru n�
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
 |`Name`|Obecné|Požadovaný atribut. Určuje název oboru názvů.|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování struktur do nativního kódu.|  
+|`Activate`|Reflexe|Nepovinný atribut. Řídí přístup k konstruktorům za běhu, aby bylo možné povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Řídí dotazování pro informace o prvcích programu, ale nepovoluje přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> používají třídu.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.|  
+|`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů odkazů do prostředí Windows Runtime a COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování struktur do nativního kódu.|  
   
-## <a name="name-attribute"></a>Název atributu  
+## <a name="name-attribute"></a>Atribut Name  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|*namespace_name*|Název oboru názvů. Pokud \<Namespace > element je podřízeným prvkem [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md), [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md), nebo [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementu *namespace_name* musí být plně kvalifikovaný obor názvů. Pokud \<Namespace > element je podřízeným prvkem jiného \<Namespace > elementu *namespace_name* musí být název oboru názvů relativní.|  
+|*namespace_name*|Název oboru názvů. [ \<](library-element-net-native.md) [ \<](assembly-element-net-native.md) [ \<](application-element-net-native.md)Pokud je obornázvů>elementpodřízený>aplikace,knihovně>neboelementusestavení>,musíbýtnamespace_nameplněkvalifikované.\< název oboru názvů. Pokud je \<obor názvů > element podřízenosti jiného oboru názvů > elementu, namespace_name musí být relativní název oboru názvů. \<|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Toto nastavení platí pro tento typ zásad pro všechny typy v oboru názvů. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít pro tento typ zásad pro všechny typy v oboru názvů Možné hodnoty jsou `All`, `Auto`, `Excluded` ,`PublicAndInternal`,, ,`Required PublicAndInternal`a. `Required Public` `Public` `Required All` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`<Namespace>`|Platí pro všechny typy v oboru nadřazené zásady reflexe modulu runtime.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ.|  
+|`<Namespace>`|Aplikuje zásady reflexe za běhu na všechny typy v nadřazeném oboru názvů.|  
+|[\<Zadejte >](type-element-net-native.md)|Aplikuje zásadu odrazu na typ.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu. [ \<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md) prvek může mít nula, jeden nebo více [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementy.|  
-|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení.|  
-|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu. [ \<Knihovny >](../../../docs/framework/net-native/library-element-net-native.md) prvek může mít nula nebo jedna [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementu.|  
-|`<Namespace>`|Použije zásady reflexe pro všechny typy v oboru nadřazené.|  
+|[\<> Aplikace](application-element-net-native.md)|Slouží jako kontejner pro typy v rámci aplikace a členy typu, jejichž metadata jsou k dispozici pro reflexi v době běhu. > Element [ \<](assembly-element-net-native.md) aplikace může mít nula, jednu nebo více > prvků sestavení. [ \<](application-element-net-native.md)|  
+|[\<> Sestavení](assembly-element-net-native.md)|Aplikuje zásady reflexe za běhu na všechny typy v zadaném sestavení.|  
+|[\<Library>](library-element-net-native.md)|Definuje sestavení, které obsahuje typy a členy typů, jejichž metadata jsou k dispozici pro reflexi v době běhu. Element > [ \<](assembly-element-net-native.md) knihovny může mít 0 nebo jedno sestavení > elementu. [ \<](library-element-net-native.md)|  
+|`<Namespace>`|Aplikuje zásady odrazu na všechny typy v nadřazeném oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Activate`, `Browse`, `Dynamic`, A `Serialize` atributy jsou nepovinné. Pokud nejsou k dispozici, `<Namespace>` prvek slouží pouze jako kontejner pro podřízené prvky. Pokud jsou k dispozici, `<Namespace>` element platí zásady reflexe modulu runtime pro všechny typy v určeném oboru názvů.  
+ Atributy `Activate`, `Browse`, `Dynamic`a jsouvšechnyvolitelné.`Serialize` Pokud není žádné, `<Namespace>` prvek slouží jako kontejner pro podřízené elementy. Pokud jsou k dispozici, `<Namespace>` element aplikuje zásady reflexe modulu runtime na všechny typy v zadaném oboru názvů.  
   
- Když je podřízeným prvkem [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementu, `<Namespace>` prvek přepisuje zásady reflexe modulu runtime definované [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementu.  
+ V`<Namespace>` případě, že se jedná o podřízený [ \<prvek sestavení >](assembly-element-net-native.md) , přepíše prvek zásady reflexe modulu runtime definované [ \<prvkem sestavení >](assembly-element-net-native.md) .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)

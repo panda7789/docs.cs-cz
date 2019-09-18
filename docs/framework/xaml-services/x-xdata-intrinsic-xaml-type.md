@@ -10,19 +10,19 @@ helpviewer_keywords:
 - XData in XAML [XAML Services]
 - x:XData XAML directive element [XAML Services]
 ms.assetid: 7ce209c2-621b-4977-b643-565f7e663534
-ms.openlocfilehash: c8044bc341ded6ef7b03bbdf701e724654460d54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5f729837b9bb52ca7d232ca66b58e283a2bcefc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938824"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053701"
 ---
 # <a name="xxdata-intrinsic-xaml-type"></a>x:XData – vnitřní typ jazyka XAML
-Umožňuje umístění datové ostrůvky XML v rámci výrobní XAML. Elementy XML v rámci `x:XData` by neměla být zpracována XAML procesorů, jako by šlo část funguje výchozí obor názvů XAML nebo libovolný jiný obor názvů XAML. `x:XData` může obsahovat libovolný XML ve správném formátu.  
+Umožňuje umístění datových ostrovů XML v rámci výroby XAML. Prvky XML v `x:XData` rámci by neměly být zpracovány pomocí procesorů XAML, jako by se jednalo o součást působícího výchozího oboru názvů XAML nebo jakýkoli jiný obor názvů XAML. `x:XData`může obsahovat libovolný kód ve správném formátu.  
   
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML  
   
-```  
+```xaml  
 <x:XData>  
   <elementDataRoot>  
     [elementData]  
@@ -34,20 +34,20 @@ Umožňuje umístění datové ostrůvky XML v rámci výrobní XAML. Elementy X
   
 |||  
 |-|-|  
-|`elementDataRoot`|Jeden kořenový element uzavřený dat ostrov. Pro většinu konečné spotřebitele se považuje za neplatný kód XML, který nemá jeden kořenový. Jeden kořenový je konkrétně vyžadováno, pokud `x:XData` je určený jako XML použitého jako zdroj dat pro WPF nebo mnoho technologií, které používají zdroje XML pro datovou vazbu.|  
-|`[elementData]`|Volitelné. Soubor XML, který představuje XML data. Libovolný počet prvků, které mohou být obsaženy jako prvek dat a vnořené elementy mohou být obsaženy v dalších prvků; však platí obecná pravidla XML.|  
+|`elementDataRoot`|Jeden kořenový prvek vloženého datového ostrova. Pro většinu případných uživatelů se XML, který nemá jeden kořenový adresář, považuje za neplatnou. Konkrétně je vyžadován jeden kořenový adresář, pokud `x:XData` je určen jako zdroj dat XML pro WPF nebo mnoho dalších technologií, které používají zdroje XML pro datovou vazbu.|  
+|`[elementData]`|Volitelný parametr. XML, který představuje data XML. Libovolný počet prvků může být obsažen jako data elementu a vnořené prvky mohou být obsaženy v jiných prvcích; platí ale obecná pravidla XML.|  
   
 ## <a name="remarks"></a>Poznámky  
- Elementy XML v rámci `x:XData` objekt lze znovu deklarovat všechny možné obory názvů a předpony obsahující XMLDOM v datech.  
+ Prvky XML v rámci `x:XData` objektu mohou znovu deklarovat všechny možné obory názvů a předpony obsahujícího XMLDOM v rámci dat.  
   
- Programový přístup k datům XML a `x:XData` vnitřního typu XAML je možné v rozhraní .NET Framework XAML Services prostřednictvím <xref:System.Windows.Markup.XData> třídy.  
+ Programový přístup k datům XML a `x:XData` vnitřní typ XAML je možný v .NET Framework služby XAML <xref:System.Windows.Markup.XData> prostřednictvím třídy.  
   
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
- `x:XData` Objektu se používá především jako podřízený objekt <xref:System.Windows.Data.XmlDataProvider>, nebo jako podřízený objekt <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> vlastnost (v XAML, to je obvykle vyjádřeny syntax prvku vlastnosti).  
+ Objekt je primárně použit jako podřízený objekt <xref:System.Windows.Data.XmlDataProvider>pro nebo nebo jako podřízený objekt <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> vlastnosti (v jazyce XAML, je obvykle vyjádřen v syntaxi elementu vlastnosti). `x:XData`  
   
- Data by měly předefinovat obvykle základního oboru názvů XML v rámci dat ostrov jako nové výchozí XML obor názvů (nastavenou na prázdný řetězec). Toto je nejjednodušší pro jednoduchou datovou ostrovy, protože <xref:System.Windows.Data.Binding.XPath%2A> výrazy, které se používají k odkazu a vytvořit vazbu na data se můžete vyhnout zahrnutí předpony. Komplexnější datové ostrůvky může definovat více předpony pro data a použít konkrétní předponu pro obor názvů XML v kořenovém adresáři. V takovém případě všechny <xref:System.Windows.Data.Binding.XPath%2A> výraz odkazuje by měla zahrnovat příslušné mapované na obor názvů předponu. Další informace najdete v tématu [přehled datových vazeb](../wpf/data/data-binding-overview.md).  
+ Data by obvykle předefinovala základní obor názvů XML v datovém ostrůvku tak, aby byl nový výchozí obor názvů XML (nastavený na prázdný řetězec). To je nejjednodušší pro jednoduché datové ostrůvky, <xref:System.Windows.Data.Binding.XPath%2A> protože výrazy, které se používají k odkazování na data a vázání na ně, se můžou vyhnout zahrnutí předpon. Složitější datové ostrůvky mohou definovat více předpon pro data a použít konkrétní předponu pro obor názvů XML v kořenu. V tomto případě by měly <xref:System.Windows.Data.Binding.XPath%2A> všechny odkazy na výrazy zahrnovat příslušnou předponu mapované oboru názvů. Další informace najdete v tématu [Přehled datových vazeb](../wpf/data/data-binding-overview.md).  
   
- Technicky vzato `x:XData` může sloužit jako obsah libovolnou vlastnost typu <xref:System.Xml.Serialization.IXmlSerializable>. Ale <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> pouze viditelného implementaci.  
+ Technicky, `x:XData` lze použít jako obsah libovolné vlastnosti typu <xref:System.Xml.Serialization.IXmlSerializable>. <xref:System.Windows.Data.XmlDataProvider.XmlSerializer%2A?displayProperty=nameWithType> Je však jedinou významnou implementací.  
   
 ## <a name="see-also"></a>Viz také:
 

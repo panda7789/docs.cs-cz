@@ -11,25 +11,25 @@ helpviewer_keywords:
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: 5b4936a54627e6016cabc41954d1a18ae82cdf90
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 150198c2bda220e4b37981e461e19b8e4e30e483
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422465"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048125"
 ---
 # <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci
-Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu definování chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma popisuje nastavení zásad mezipaměti prostřednictvím kódu programu. Informace o nastavení zásad pro aplikace pomocí konfiguračních souborů naleznete v tématu [ \<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+Zásady mezipaměti na základě umístění umožňují aplikaci explicitně definovat chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma ukazuje, jak nastavit zásady mezipaměti programově. Informace o nastavení zásad pro aplikaci pomocí konfiguračních souborů naleznete v tématu [ \<RequestCaching > element (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Nastavení zásad mezipaměti na základě umístění pro aplikaci  
   
-1. Vytvoření <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> objektu.  
+1. Vytvořte objekt <xref:System.Net.Cache.HttpRequestCachePolicy>nebo. <xref:System.Net.Cache.RequestCachePolicy>  
   
-2. Nastavte jako výchozí pro doménu aplikace objektu zásad.  
+2. Nastavte objekt zásad jako výchozí pro doménu aplikace.  
   
-### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Chcete-li nastavit zásadu, která má požadované prostředky z mezipaměti  
+### <a name="to-set-a-policy-that-takes-requested-resources-from-a-cache"></a>Nastavení zásad, které přebírají požadované prostředky z mezipaměti  
   
-- Vytvořit zásadu, která přebírá požadované prostředky z mezipaměti, pokud je k dispozici a v opačném případě zasílá požadavky na server, pomocí nastavení mezipaměti na úrovni <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable>. Žádost lze splnit všechny mezipaměti mezi klientem a serverem, včetně vzdáleného mezipamětí.  
+- Vytvořte zásadu, která provede požadované prostředky z mezipaměti, pokud je k dispozici, a v opačném případě odešle požadavky na server nastavením úrovně mezipaměti <xref:System.Net.Cache.HttpRequestCacheLevel.CacheIfAvailable>na. Požadavek může splnit jakákoli mezipaměť mezi klientem a serverem, včetně vzdálených mezipamětí.  
   
     ```csharp  
     public static void UseCacheIfAvailable()  
@@ -48,9 +48,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>Chcete-li nastavit zásadu, která brání všechny mezipaměti poskytující prostředky  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-resources"></a>Nastavení zásad, které zabrání v poskytnutí prostředků do mezipaměti  
   
-- Vytvořit zásadu, která brání poskytnutí požadovaných prostředků tak, že nastavíte mezipaměti úrovně pro všechny mezipaměti <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore>. Tato úroveň zásad odebere prostředek z místní mezipaměti, pokud je k dispozici a tak vzdálené mezipaměti informaci, že se mělo odstranit také na prostředek.  
+- Vytvořte zásadu, která zabrání libovolné mezipaměti v poskytnutí požadovaných prostředků nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.NoCacheNoStore>. Tato úroveň zásad odstraní prostředek z místní mezipaměti, pokud je přítomen, a označuje vzdálené mezipaměti, které by měly také odebrat prostředek.  
   
     ```csharp  
     public static void DoNotUseCache()  
@@ -69,9 +69,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>Chcete-li nastavit zásadu, která vrátí požadované prostředky pouze v případě, že jsou v místní mezipaměti  
+### <a name="to-set-a-policy-that-returns-requested-resources-only-if-they-are-in-the-local-cache"></a>Nastavení zásad, které vrátí požadované prostředky pouze v případě, že jsou v místní mezipaměti  
   
-- Vytvořit zásadu, která vrátí požadované prostředky pouze v případě, že jsou v místní mezipaměti pomocí nastavení mezipaměti na úrovni <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly>. Pokud požadovaný prostředek není v mezipaměti, <xref:System.Net.WebException> je vyvolána výjimka.  
+- Vytvořte zásadu, která bude vracet požadované prostředky pouze v případě, že jsou v místní mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.CacheOnly>. Pokud požadovaný prostředek není v mezipaměti, <xref:System.Net.WebException> je vyvolána výjimka.  
   
     ```csharp  
     public static void OnlyUseCache()  
@@ -90,9 +90,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>Chcete-li nastavit zásadu, která brání poskytující prostředky místní mezipaměti  
+### <a name="to-set-a-policy-that-prevents-the-local-cache-from-supplying-resources"></a>Nastavení zásad, které brání místní mezipaměti v zásobování prostředků  
   
-- Vytvořit zásadu, která brání poskytnutí požadovaných prostředků podle nastavení úrovně do mezipaměti v místní mezipaměti <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh>. Pokud požadovaný prostředek je v zprostředkující mezipaměti a úspěšně ověřit, zprostředkující mezipaměti můžete zadat požadovaný prostředek.  
+- Vytvořte zásadu, která zabrání v ukládání požadovaných prostředků do místní mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Refresh>. Pokud se požadovaný prostředek nachází v přechodné mezipaměti a úspěšně se znovu ověří, mezilehlá mezipaměť může dodat požadovaný prostředek.  
   
     ```csharp  
     public static void DoNotUseLocalCache()  
@@ -111,9 +111,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>Chcete-li nastavit zásadu, která brání všechny mezipaměti zadáním požadované prostředky  
+### <a name="to-set-a-policy-that-prevents-any-cache-from-supplying-requested-resources"></a>Nastavení zásad, které zabrání v ukládání požadovaných prostředků do mezipaměti  
   
-- Vytvořit zásadu, která brání poskytnutí požadovaných prostředků tak, že nastavíte mezipaměti úrovně pro všechny mezipaměti <xref:System.Net.Cache.HttpRequestCacheLevel.Reload>. Prostředek vrácená serverem mohou být uloženy v mezipaměti.  
+- Vytvořte zásadu, která zabrání libovolné mezipaměti v poskytnutí požadovaných prostředků nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Reload>. Prostředek vrácený serverem může být uložený v mezipaměti.  
   
     ```csharp  
     public static void SendToServer()  
@@ -132,9 +132,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>Chcete-li nastavit zásadu, která umožňuje všechny mezipaměti slouží k poskytování požadované prostředky, pokud prostředek na serveru není novější než kopie v mezipaměti  
+### <a name="to-set-a-policy-that-allows-any-cache-to-supply-requested-resources-if-the-resource-on-the-server-is-not-newer-than-the-cached-copy"></a>Nastavení zásady, která umožní, aby jakákoli mezipaměť poskytovala požadované prostředky, pokud prostředek na serveru není novější než kopie v mezipaměti  
   
-- Vytvořit zásadu, která umožňuje všechny mezipaměti slouží k poskytování požadované prostředky, pokud prostředek na serveru není novější než kopie v mezipaměti pomocí nastavení mezipaměti na úrovni <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate>.  
+- Vytvořte zásadu, která umožňuje, aby jakákoli mezipaměť poskytovala požadované prostředky, pokud prostředek na serveru není novější než kopie uložená v mezipaměti nastavením úrovně mezipaměti na <xref:System.Net.Cache.HttpRequestCacheLevel.Revalidate>.  
   
     ```csharp  
     public static void CheckServer()  
@@ -155,8 +155,8 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
   
 ## <a name="see-also"></a>Viz také:
 
-- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
-- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+- [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)
+- [Zásady mezipaměti](cache-policy.md)
+- [Zásady mezipaměti na základě místa](location-based-cache-policies.md)
+- [Zásady mezipaměti na základě času](time-based-cache-policies.md)
+- [\<requestCaching – element > (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md)

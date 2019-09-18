@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 34cb8b0cebc64bf7244c522066700c94d33986a9
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 2db85781b48fd75c3d2ef70834fd8451647f6917
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894802"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044225"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
-Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  
+Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření souborů prostředků](../resources/creating-resource-files-for-desktop-apps.md).)  
   
  Resgen.exe je univerzální nástroj pro převod prostředků, který plní následující úlohy:  
   
@@ -53,9 +53,9 @@ resgen
 resgen /?  
 ```  
   
- Použijete-li Resgen, exe ke generování binárních souborů. Resources, můžete použít kompilátor jazyka pro vložení binárních souborů do spustitelných sestavení, nebo můžete použít [linker sestavení (Al. exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) a zkompilovat je do satelitních sestavení.  
+ Použijete-li Resgen, exe ke generování binárních souborů. Resources, můžete použít kompilátor jazyka pro vložení binárních souborů do spustitelných sestavení, nebo můžete použít [linker sestavení (Al. exe)](al-exe-assembly-linker.md) a zkompilovat je do satelitních sestavení.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -77,7 +77,7 @@ resgen filename.extension [outputDirectory]
 |`useSourcePath`|Určuje, že k vyhodnocení relativních cest k souborům má být použit aktuální adresář vstupního souboru.|  
 |`/compile`|Umožňuje zadat několik textových souborů nebo souborů .resx pro převod na několik souborů .resources jednou hromadnou operací. Pokud tuto možnost nezadáte, lze zadat pouze jeden argument vstupního souboru. Výstupní soubory jsou pojmenovány *filename*. Resources.<br /><br /> Tuto možnost nelze použít s `/str:` možností.<br /><br /> Další informace o této možnosti naleznete v tématu [kompilace nebo převod více souborů](#Multiple) dále v tomto tématu.|  
 |`/r:``assembly`|Odkazuje na metadata z určeného sestavení. Používá se při převodu souborů .resx a umožňuje nástroji Resgen.exe serializovat a deserializovat prostředky objektů. Je podobný `/reference:` možnosti nebo `/r:` pro kompilátory Visual Basic C# a.|  
-|`filename.extension`|Určuje název vstupního souboru, který má být převeden. Pokud používáte první lengthier syntaxi příkazového řádku prezentovanou před touto tabulkou, `extension` musí být jedna z následujících:<br /><br /> .txt nebo .restext<br /> Textový soubor, který má být převeden na soubor .resources nebo .resx. Textové soubory mohou obsahovat pouze řetězcové prostředky. Informace o formátu souboru naleznete v části "prostředky v textových souborech" v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Soubor prostředků založený na jazyce XML, který má být převeden na soubor .resources nebo textový soubor (.txt nebo .restext).<br /><br /> .resources<br /> Binární soubor prostředků, který má být převeden na soubor .resx nebo textový soubor (.txt nebo .restext).<br /><br /> Pokud používáte druhou, kratší syntaxe příkazového řádku prezentovaná před touto tabulkou, `extension` musí být následující:<br /><br /> .exe nebo .dll<br /> .NET Framework sestavení (spustitelný soubor nebo knihovna), jehož řetězcové prostředky mají být extrahovány do souboru. resw pro použití při [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vývoji aplikací.|  
+|`filename.extension`|Určuje název vstupního souboru, který má být převeden. Pokud používáte první lengthier syntaxi příkazového řádku prezentovanou před touto tabulkou, `extension` musí být jedna z následujících:<br /><br /> .txt nebo .restext<br /> Textový soubor, který má být převeden na soubor .resources nebo .resx. Textové soubory mohou obsahovat pouze řetězcové prostředky. Informace o formátu souboru naleznete v části "prostředky v textových souborech" v tématu [vytváření souborů prostředků](../resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Soubor prostředků založený na jazyce XML, který má být převeden na soubor .resources nebo textový soubor (.txt nebo .restext).<br /><br /> .resources<br /> Binární soubor prostředků, který má být převeden na soubor .resx nebo textový soubor (.txt nebo .restext).<br /><br /> Pokud používáte druhou, kratší syntaxe příkazového řádku prezentovaná před touto tabulkou, `extension` musí být následující:<br /><br /> .exe nebo .dll<br /> .NET Framework sestavení (spustitelný soubor nebo knihovna), jehož řetězcové prostředky mají být extrahovány do souboru. resw pro použití při [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vývoji aplikací.|  
 |`outputFilename.extension`|Určuje název a typ souboru prostředků, který má být vytvořen.<br /><br /> Při převodu ze souboru .txt, .restext nebo .resx na soubor .resources je tento argument nepovinný. Pokud nezadáte `outputFilename`, nástroj Resgen. exe připojí k vstupu `filename` rozšíření. Resources a zapíše soubor do adresáře, který obsahuje `filename,extension`.<br /><br /> Při převodu ze souboru. Resources je argumentpovinný.`outputFilename.extension` Při převodu souboru .resources na soubor prostředků založený na jazyce XML zadejte název souboru s příponou .resx. Při převodu souboru .resources na textový soubor zadejte název souboru s příponou .txt nebo restext. Soubor .resources by měl být na soubor .txt převeden pouze v případě, že soubor .resources obsahuje výhradně řetězcové hodnoty.|  
 |`outputDirectory`|Pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace určí adresář, ve kterém se bude zapisovat soubor. resw, který obsahuje prostředky řetězce `filename.extension` v. `outputDirectory`již musí existovat.|  
 |`/str:``language[,namespace[,classname[,filename]]]`|Vytvoří soubor třídy prostředků se silnými typy v programovacím jazyce zadaném v `language` možnosti. `language`může se skládat z jednoho z následujících literálů:<br /><br /> – Pro C#: `c#`, `cs`nebo. `csharp`<br />– Pro Visual Basic: `vb` nebo `visualbasic`.<br />– Pro VBScript: `vbs` nebo `vbscript`.<br />– Pro C++: `c++`, `mc`nebo. `cpp`<br />– Pro JavaScript: `js`, `jscript`, nebo `javascript`.<br /><br /> Možnost určuje výchozí obor názvů projektu `classname` , možnost určuje název `filename` generované třídy a možnost určuje název souboru třídy. `namespace`<br /><br /> Možnost umožňuje pouze jeden vstupní soubor, takže jej nelze použít `/compile` s možností. `/str:`<br /><br /> Je `namespace` -li parametr `classname` zadán, ale není, název třídy je odvozen z názvu výstupního souboru (například podtržítka jsou nahrazena tečkami). Prostředky se silnými typy možná důsledkem toho nebudou fungovat správně. Chcete-li se tomuto problému vyhnout, zadejte název třídy i název výstupního souboru.<br /><br /> Další informace o této možnosti naleznete v části [generování třídy prostředků se silnými typy](#Strong) dále v tomto tématu.|  
@@ -90,14 +90,14 @@ resgen filename.extension [outputDirectory]
  Textové soubory (.txt nebo .restext) mohou obsahovat výhradně řetězcové prostředky. Řetězcové prostředky jsou užitečné při psaní aplikace, která musí mít řetězce přeloženy do několika jazyků. Lze například snadno lokalizovat řetězce nabídky použitím příslušného řetězcového prostředku. Nástroj Resgen.exe čte textové soubory obsahující dvojice název/hodnota, kde název je řetězec popisující prostředek a hodnota je samotný řetězec prostředku.  
   
 > [!NOTE]
-> Informace o formátu souborů. txt a. restext naleznete v části "prostředky v textových souborech" v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
+> Informace o formátu souborů. txt a. restext naleznete v části "prostředky v textových souborech" v tématu [vytváření souborů prostředků](../resources/creating-resource-files-for-desktop-apps.md).  
   
  Neobsahuje-li textový soubor s prostředky pouze znaky z rozsahu základní latinky (do U+007F), musí být uložen s kódováním UTF-8 nebo Unicode (UTF-16). Při zpracovávání textového souboru uloženého s kódováním ANSI nástroj Resgen.exe odstraňuje rozšířené znaky ANSI.  
   
  Nástroj Resgen.exe kontroluje, zda textový soubor obsahuje duplicitní názvy prostředků. Obsahuje-li textový soubor duplicitní názvy prostředků, nástroj Resgen.exe vygeneruje upozornění a bude ignorovat druhou hodnotu.  
   
 ### <a name="resx-files"></a>Soubory .resx  
- Formát souboru prostředků .resx sestává ze záznamů jazyka XML. Uvnitř těchto záznamů jazyka XML lze zadávat řetězcové prostředky jako v textových souborech. Hlavní výhodou souborů .resx oproti textovým souborům je možnost zadávat nebo vkládat objekty. Při zobrazení souboru .resx lze vidět binární podobu vloženého objektu (například obrázku), pokud je tato binární informace součástí manifestu prostředku. Stejně jako textové soubory lze i soubory .resx otevřít v textovém editoru (například Poznámkový blok nebo Microsoft Word) a zapisovat, analyzovat či upravovat jejich obsah. To vyžaduje dobrou znalost značek XML a struktury souboru .resx. Další informace o formátu souboru. resx naleznete v části "prostředky v souborech. resx" v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
+ Formát souboru prostředků .resx sestává ze záznamů jazyka XML. Uvnitř těchto záznamů jazyka XML lze zadávat řetězcové prostředky jako v textových souborech. Hlavní výhodou souborů .resx oproti textovým souborům je možnost zadávat nebo vkládat objekty. Při zobrazení souboru .resx lze vidět binární podobu vloženého objektu (například obrázku), pokud je tato binární informace součástí manifestu prostředku. Stejně jako textové soubory lze i soubory .resx otevřít v textovém editoru (například Poznámkový blok nebo Microsoft Word) a zapisovat, analyzovat či upravovat jejich obsah. To vyžaduje dobrou znalost značek XML a struktury souboru .resx. Další informace o formátu souboru. resx naleznete v části "prostředky v souborech. resx" v tématu [vytváření souborů prostředků](../resources/creating-resource-files-for-desktop-apps.md).  
   
  Aby bylo možné vytvořit soubor. Resources, který obsahuje vložené neřetězcové objekty, je nutné buď pomocí nástroje Resgen. exe převést soubor. resx obsahující objekty nebo přidat prostředky objektu do souboru přímo z kódu voláním metod poskytovaných <xref:System.Resources.ResourceWriter> Deník.  
   
@@ -116,21 +116,21 @@ resgen filename.extension [outputDirectory]
 ## <a name="performing-specific-resgenexe-tasks"></a>Provádění konkrétních úloh nástroje Resgen.exe  
  Nástroj Resgen. exe lze použít různými způsoby: Chcete-li zkompilovat textový soubor nebo soubor prostředků založený na jazyce XML do binárního souboru, provést převod mezi formáty souborů prostředků a vygenerovat třídu, která zabalí <xref:System.Resources.ResourceManager> funkce a poskytuje přístup k prostředkům. Tato část poskytuje podrobné informace o každém úkolu:  
   
-- [Kompilace prostředků do binárního souboru](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling)  
+- [Kompilace prostředků do binárního souboru](resgen-exe-resource-file-generator.md#Compiling)  
   
-- [Převod mezi typy souborů prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Convert)  
+- [Převod mezi typy souborů prostředků](resgen-exe-resource-file-generator.md#Convert)  
   
-- [Kompilace nebo převod více souborů](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Multiple)  
+- [Kompilace nebo převod více souborů](resgen-exe-resource-file-generator.md#Multiple)  
   
-- [Export prostředků do souboru. resw](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Exporting)  
+- [Export prostředků do souboru. resw](resgen-exe-resource-file-generator.md#Exporting)  
   
-- [Podmíněně kompilování prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Conditional)  
+- [Podmíněně kompilování prostředků](resgen-exe-resource-file-generator.md#Conditional)  
   
-- [Generování třídy prostředků se silnými typy](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Strong)  
+- [Generování třídy prostředků se silnými typy](resgen-exe-resource-file-generator.md#Strong)  
   
 <a name="Compiling"></a>   
 ### <a name="compiling-resources-into-a-binary-file"></a>Kompilace prostředků do binárního souboru  
- Nejběžnější použití nástroje Resgen.exe je kompilování textového souboru prostředků (soubor .txt nebo .restext) nebo souboru prostředků založeného na jazyce XML (soubor .resx) do binárního souboru .resources. Výstupní soubor pak může být vložen do hlavního sestavení kompilátorem jazyka nebo v satelitním sestavení pomocí [linkeru sestavení (Al. exe)](../../../docs/framework/tools/al-exe-assembly-linker.md).  
+ Nejběžnější použití nástroje Resgen.exe je kompilování textového souboru prostředků (soubor .txt nebo .restext) nebo souboru prostředků založeného na jazyce XML (soubor .resx) do binárního souboru .resources. Výstupní soubor pak může být vložen do hlavního sestavení kompilátorem jazyka nebo v satelitním sestavení pomocí [linkeru sestavení (Al. exe)](al-exe-assembly-linker.md).  
   
  Syntaxe pro kompilaci souboru prostředků je následující:  
   
@@ -297,7 +297,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  Jazyk, v němž má být vygenerován zdrojový kód pro třídu prostředků se silnými typy. Možné hodnoty jsou `cs`, `C#`, `csharp` `vb` `mc`a pro C# kód, VisualBasickód`vbscript` a pro kód`c++`jazyka VBScript a,, `visualbasic` `vbs` a `cpp` pro C++ kód.  
   
  *namespace*  
- Obor názvů obsahující třídu prostředku se silnými typy. Soubor .resources a třída prostředků by měly mít stejný obor názvů. Informace o určení oboru názvů v `outputFilename`naleznete v tématu [kompilace prostředků do binárního souboru](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling). Pokud je *obor názvů* vynechán, Třída prostředků není obsažena v oboru názvů.  
+ Obor názvů obsahující třídu prostředku se silnými typy. Soubor .resources a třída prostředků by měly mít stejný obor názvů. Informace o určení oboru názvů v `outputFilename`naleznete v tématu [kompilace prostředků do binárního souboru](resgen-exe-resource-file-generator.md#Compiling). Pokud je *obor názvů* vynechán, Třída prostředků není obsažena v oboru názvů.  
   
  *NázevTřídy*  
  Název třídy prostředku se silnými typy. Tento parametr by měl odpovídat názvu kořenového souboru .resources. Pokud například nástroj Resgen.exe vygeneruje soubor .resources pojmenovaný MyCompany.Libraries.Strings.resources, název třídy prostředků silného typu je Strings. Pokud je název *ClassName* vynechán, vygenerovaná třída je odvozena z kořenového názvu `outputFilename`. Pokud `outputFilename` je vynecháno, vygenerovaná třída je odvozena z kořenového `inputFilename`názvu.  
@@ -331,8 +331,8 @@ resgen StringResources.txt /str:vb,,StringResources
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
-- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
-- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Prostředky v desktopových aplikacích](../resources/index.md)
+- [Vytváření zdrojových souborů](../resources/creating-resource-files-for-desktop-apps.md)
+- [Al.exe (linker sestavení)](al-exe-assembly-linker.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

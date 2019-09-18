@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Selection control pattern
 - control patterns, Selection
 ms.assetid: 449c3068-a5d6-4f66-84c6-1bcc7dd4d209
-ms.openlocfilehash: f12ab6cc776daa4d6cca65d682cd299a0733a3a5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ce37b71846f227c753e8d217e96482f623d3bd1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935773"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043228"
 ---
 # <a name="implementing-the-ui-automation-selection-control-pattern"></a>Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69935773"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.ISelectionProvider>implementaci, včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.SelectionPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci volitelných podřízených položek. Podřízené objekty tohoto elementu musí implementovat <xref:System.Windows.Automation.Provider.ISelectionItemProvider>. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.SelectionPattern> ovládacího prvku slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci volitelných podřízených položek. Podřízené objekty tohoto elementu musí implementovat <xref:System.Windows.Automation.Provider.ISelectionItemProvider>. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -31,7 +31,7 @@ ms.locfileid: "69935773"
   
 - Ovládací prvky pro jedno výběr, které spravují podřízené ovládací <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>prvky, které implementují, jako je posuvník **rozlišení obrazovky** v dialogovém okně **zobrazení vlastností** nebo výběr **barvy** v [!INCLUDE[TLA#tla_word](../../../includes/tlasharptla-word-md.md)] ovládacím prvku ( znázorněno níže), by <xref:System.Windows.Automation.Provider.ISelectionProvider>měly implementovat; jejich podřízené objekty <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> by <xref:System.Windows.Automation.Provider.ISelectionItemProvider>měly implementovat a.  
   
- ![Výběr barvy se žlutým zvýrazněním](../../../docs/framework/ui-automation/media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
+ ![Výběr barvy se žlutým zvýrazněním](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 Příklad mapování řetězců vzorníku barev  
   
 - Nabídky nepodporují <xref:System.Windows.Automation.SelectionPattern>. Pokud pracujete s položkami nabídky, které zahrnují grafiku a text (například položky v **podokně náhledu** v nabídce **zobrazení** v aplikaci Microsoft Outlook) a je třeba předat stav, měli byste implementovat <xref:System.Windows.Automation.Provider.IToggleProvider>.  
@@ -60,9 +60,9 @@ Příklad mapování řetězců vzorníku barev
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-selectionitem-control-pattern.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-selectionitem-control-pattern.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

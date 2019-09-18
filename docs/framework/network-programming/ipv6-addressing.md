@@ -26,56 +26,56 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: 6243046e7e33a73f2479337cb64c2a236efcfafc
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 1bad43b96fc6f66724e5e40cdf0ae6d76b46d867
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662256"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047856"
 ---
 # <a name="ipv6-addressing"></a>Adresování IPv6
 
-V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je rozdělit do hierarchie směrování domén, které odpovídají Internetu topologie dostupných adres. Dalším důvodem je mapovat adresy síťových adaptérů (nebo rozhraní), které se zařízení připojují k síti. IPv6 obsahuje schopnost přeložit adresy na nejnižší úrovni, na úrovni síťových rozhraní, a také funkce automatické konfigurace.
+Ve verzi Internet Protocol 6 (IPv6) jsou adresy 128 bitů dlouhé. Jedním z důvodů takového dlouhého adresního prostoru je rozdělení dostupných adres do hierarchie domén směrování, které odrážejí topologii Internetu. Dalším důvodem je mapování adres síťových adaptérů (nebo rozhraní), které připojují zařízení k síti. Protokol IPv6 obsahuje schopnost překládat adresy na nejnižší úrovni, která je na úrovni síťového rozhraní, a má taky možnosti automatické konfigurace.
 
-## <a name="text-representation"></a>Textové vyjádření
+## <a name="text-representation"></a>Reprezentace textu
 
-Tady jsou tři běžné formuláře používá k reprezentování adresy IPv6 jako textové řetězce:
+Níže jsou uvedené tři konvenční formuláře používané k reprezentování adres IPv6 jako textové řetězce:
 
-- **Formulář dvojtečkami**. To je forma upřednostňovaná n:n:n:n:n:n:n:n. Každá n představuje jeden z elementů osm 16 bitů adresy šestnáctkovou hodnotu. Například: `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.
+- **Dvojtečka – šestnáctkový tvar**. Toto je preferovaný tvar n:n: n:n: n:n: n:n. Každá hodnota n představuje hexadecimální hodnotu jednoho z 8 16 prvků adresy. Například: `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.
 
-- **Komprimované formě**. Z důvodu délky adresy je běžné mít adres, které obsahují dlouhý řetězec nulové hodnoty. Pokud chcete zjednodušit psaní tyto adresy, použijte komprimované formě, ve kterém jeden souvislý sekvence 0 bloků jsou reprezentovány symbol dvěma dvojtečkami (::). Tento symbol se může objevit pouze jednou v adrese. Například adresu vícesměrového vysílání `FFED:0:0:0:0:BA98:3210:4562` je v komprimované formě `FFED::BA98:3210:4562`. Adresy jednosměrového vysílání `3FFE:FFFF:0:0:8:800:20C4:0` je v komprimované formě `3FFE:FFFF::8:800:20C4:0`. Na adresu zpětné smyčky `0:0:0:0:0:0:0:1` je v komprimované formě `::`1. Nespecifikovaná adresa `0:0:0:0:0:0:0:0` je v komprimované formě `::`.
+- **Komprimovaný formulář**. Z důvodu délky adresy je běžné mít adresy obsahující dlouhé řetězce nul. Pro zjednodušení psaní těchto adres používejte komprimovaný formulář, ve kterém je jedna souvislá sekvence 0 bloků reprezentovaná symbolem dvojité dvojtečky (::). Tento symbol se může v adrese objevit jenom jednou. Například adresa `FFED:0:0:0:0:BA98:3210:4562` vícesměrového vysílání v komprimované podobě je `FFED::BA98:3210:4562`. Adresa `3FFE:FFFF:0:0:8:800:20C4:0` jednosměrového vysílání v komprimovaném `3FFE:FFFF::8:800:20C4:0`formátu je. Adresa `0:0:0:0:0:0:0:1` zpětné smyčky v komprimované formě je `::`1. Nespecifikovaná adresa `0:0:0:0:0:0:0:0` v komprimované formě je `::`.
 
-- **Smíšené formuláře**. Tento formulář kombinuje adresy IPv4 a IPv6. Formát adresy v tomto případě je n:n:n:n:n:n:d.d.d.d každé n představuje šestnáctkových hodnot šest prvky nejvyšším 16 bitů adresy IPv6, kde každé d představuje desetinnou hodnotou adresu IPv4.
+- **Smíšený formulář**. Tento formulář kombinuje adresy IPv4 a IPv6. V tomto případě formát adresy je n:n: m:n: n:n: d. d. d. d, kde každá hodnota n představuje hexadecimální hodnoty šesti 32bitových prvků adresy IPv6, přičemž každý d představuje desítkovou hodnotu adresy IPv4.
 
 ## <a name="address-types"></a>Typy adres
 
-Přední bitů v adrese definovat konkrétní typ adresy IPv6. Pole proměnné délky obsahující těchto úvodních bitů je volána formát Předpona.
+Počáteční bity v adrese definují konkrétní typ adresy IPv6. Pole s proměnnou délkou obsahující tyto úvodní bity se nazývá předpona formátu (FP).
 
-Adresy jednosměrového vysílání IPv6 je rozdělena na dva oddíly. První část obsahuje předponu adresy a druhá část obsahuje identifikátoru rozhraní. Stručné způsob, jak vyjádřit kombinaci/předpona adresy IPv6 je následujícím způsobem:-adresa/délka předpony protokolu ipv6 –.
+Adresa jednosměrového vysílání IPv6 je rozdělena do dvou částí. První část obsahuje předponu adresy a druhá část obsahuje identifikátor rozhraní. Stručný způsob, jak vyjádřit kombinaci adresy a předpony IPv6, je následující: IPv6-Address/prefix-length.
 
-Následuje příklad adresy s předponou 64-bit.
+Následuje příklad adresy s 64 předponou.
 
 `3FFE:FFFF:0:CD30:0:0:0:0/64`.
 
-Předpona v tomto příkladu je `3FFE:FFFF:0:CD30`. Adresu lze také zapsat v komprimované formě jako `3FFE:FFFF:0:CD30::/64`.
+Předpona v tomto příkladu je `3FFE:FFFF:0:CD30`. Adresa může být také zapsána do komprimovaného tvaru, `3FFE:FFFF:0:CD30::/64`jako.
 
-IPv6 definuje následující typy adres:
+Protokol IPv6 definuje následující typy adres:
 
-- **Adresy jednosměrového vysílání**. Identifikátor pro jedno rozhraní. Pakety odeslané na tuto adresu se doručí do identifikovaného rozhraní. Adresy jednosměrového vysílání rozlišují z adresy vícesměrového vysílání hodnotou nejvyšším octet. Oktet nejvyšším adresy vícesměrového vysílání má hodnotu šestnáctkové FF. Jakákoli jiná hodnota pro tento octet identifikuje adresy jednosměrového vysílání. Následující jsou různé druhy adresy jednosměrového vysílání:
+- **Adresa jednosměrového vysílání**. Identifikátor pro jedno rozhraní. Do identifikovaného rozhraní se doručí paket odeslaný do této adresy. Adresy jednosměrového vysílání se odlišují od adres vícesměrového vysílání hodnotou oktetu vysokého řádu. Oktet adres vícesměrového vysílání vysokého řádu má hexadecimální hodnotu FF. Jakákoli jiná hodnota pro tento oktet identifikuje adresu jednosměrového vysílání. Následují různé typy adres jednosměrového vysílání:
 
-  - **Specifická pro připojení adresy**. Tyto adresy se používají na jedno propojení a mít následující formát: FE80::*InterfaceID*. Specifická pro připojení adresy se používají mezi uzly na odkaz pro konfiguraci automatického adres, ND, nebo když žádné směrovače používají. Adresa specifická pro připojení se používá hlavně při spuštění a systém nebyl dosud získat adresy větší rozsah.
+  - **Místní adresy odkazů**. Tyto adresy se používají na jednom propojení a mají následující formát: FE80::*InterfaceID*. Místní adresy odkazů se používají mezi uzly na propojení pro konfiguraci s automatickou adresou, sousedním zjišťováním nebo v případě, že nejsou k dispozici žádné směrovače. Místní adresa pro propojení se používá primárně při spuštění a v případě, že systém ještě nezískal adresy většího rozsahu.
 
-  - **Místní adresy**. Tyto adresy jsou používány v jedné lokalitě a mít následující formát: FEC0::*SubnetID*:*InterfaceID*. Adresy specifická pro server se používají pro adresování uvnitř lokality bez potřeby globální předpony.
+  - **Místní adresy pro lokalitu**. Tyto adresy se používají na jedné lokalitě a mají následující formát: FEC0::*SubnetID*:*InterfaceID*. Místní adresy lokality se používají k adresování v lokalitě bez nutnosti globální předpony.
 
-  - **Globální adresy jednosměrového vysílání IPv6**. Tyto adresy je možné v síti Internet a mít následující formát: 010 (FP 3 bits) TLA ID (13 bits) vyhrazené (8 bitů) ID smlouvy SLA NLA ID (24 bitů) (16 bitů) *InterfaceID* (64 bitů).
+  - **Globální adresy jednosměrového vysílání IPv6**. Tyto adresy lze použít v Internetu a mají následující formát: 010 (FP, 3 bity) TLA ID (13 bitů) rezervované (8 bitů) NLA ID (24 bitů) ID SLA (16 bitů) *InterfaceID* (64 bitů).
 
-- **Adresa vícesměrového vysílání**. Identifikátor pro sadu rozhraní (obvykle patří do různých uzlech). Pakety odeslané na tuto adresu se doručí do všech rozhraní adresou. Typy adres vícesměrového vysílání mají přednost před všesměrového vysílání adres protokolu IPv4.
+- **Adresa vícesměrového vysílání**. Identifikátor pro sadu rozhraní (obvykle patřící do různých uzlů). Paket odeslaný této adrese se doručuje na všechna rozhraní identifikovaná adresou. Typy adres vícesměrového vysílání nahrazují adresy všesměrového vysílání IPv4.
 
-- **Adresa všesměrového vysílání**. Identifikátor pro sadu rozhraní (obvykle patří do různých uzlech). Pakety odeslané na tuto adresu se doručí do pouze jedno rozhraní adresou. Toto je nejbližší rozhraní pomocí směrování metriky. Anycast adresy pocházejí z adresního prostoru jednosměrového vysílání a nejsou syntakticky odlišit. Rozhraní adresovaný provádí rozdíl mezi jednosměrovým vysíláním a všesměrovým anycast adres jako funkce její konfiguraci.
+- **Adresa libovolného vysílání** Identifikátor pro sadu rozhraní (obvykle patřící do různých uzlů). Paket odeslaný této adrese je dodán pouze do jednoho rozhraní identifikovaného adresou. Toto je nejbližší rozhraní identifikované pomocí metrik směrování. Adresy libovolného vysílání se přebírají z adresního prostoru jednosměrového vysílání a nejsou syntakticky rozlišovat. Adresované rozhraní provádí rozdíl mezi jednosměrovým vysíláním a adresou libovolného vysílání jako funkcí své konfigurace.
 
-Obecně platí uzel má vždy Adresa specifická pro připojení. Adresa specifická pro server a jednu nebo více globálních adres může mít.
+Obecně platí, že uzel má vždy místní adresu propojení. Může mít místní adresu lokality a jednu nebo více globálních adres.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
-- [Sokety](../../../docs/framework/network-programming/sockets.md)
+- [Protokol IP (Internet Protocol) verze 6](internet-protocol-version-6.md)
+- [Sokety](sockets.md)

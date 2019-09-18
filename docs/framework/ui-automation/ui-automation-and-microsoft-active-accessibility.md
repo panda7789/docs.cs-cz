@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 8aadcc213e92fd53490f639f37dc8d8f62762c2c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 63b00f8eb35fa58ea0257d5e996fc2c51a248040
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946485"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042587"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -110,7 +110,7 @@ ms.locfileid: "69946485"
 |ROLE_SYSTEM_OUTLINEITEM|Položka stromu|  
 |ROLE_SYSTEM_WINDOW|Okno|  
   
- Další informace o různých typech ovládacích prvků naleznete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md).  
+ Další informace o různých typech ovládacích prvků naleznete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-types.md).  
   
 <a name="States_and_Properties"></a>   
 ## <a name="states-and-properties"></a>Stavy a vlastnosti  
@@ -176,7 +176,7 @@ ms.locfileid: "69946485"
 |STATE_SYSTEM_HOTTRACKED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
 |STATE_SYSTEM_PRESSED|Není k dispozici v[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|  
   
- Úplný seznam [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] identifikátorů vlastností najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md).  
+ Úplný seznam [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] identifikátorů vlastností najdete v tématu [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md).  
   
 <a name="uiautomation_events_compare"></a>   
 ## <a name="events"></a>Události  
@@ -251,4 +251,4 @@ ms.locfileid: "69946485"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)
+- [Principy automatizace uživatelského rozhraní](index.md)

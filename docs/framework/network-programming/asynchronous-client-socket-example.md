@@ -9,15 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, asynchronous client sockets
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
-ms.openlocfilehash: 736deb1a0c360163521b866a788f1ac077f74508
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b284698904b3795c2369a5bca47742175e012553
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033108"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048976"
 ---
 # <a name="asynchronous-client-socket-example"></a>Příklad asynchronního klientského soketu
-Následující ukázkový program vytvoří klienta, která se připojuje k serveru. Klient je sestavena s asynchronní soketu, takže spuštění klientské aplikace není pozastaveno, zatímco server vrátí odpověď. Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.  
+Následující vzorový program vytvoří klienta, který se připojí k serveru. Klient je vytvořen pomocí asynchronního soketu, takže spuštění klientské aplikace není pozastaveno, dokud server nevrátí odpověď. Aplikace pošle řetězec na server a pak zobrazí řetězec vrácený serverem v konzole nástroje.  
   
 ```vb  
 Imports System  
@@ -323,6 +323,6 @@ public class AsynchronousClient {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklad asynchronního serverového soketu](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)
-- [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
-- [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)
+- [Příklad asynchronního serverového soketu](asynchronous-server-socket-example.md)
+- [Použití synchronního serverového soketu](using-a-synchronous-server-socket.md)
+- [Příklady kódu soketu](socket-code-examples.md)

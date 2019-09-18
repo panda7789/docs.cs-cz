@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20e5f166aad8bc2504ed27b93ec6730bcd26387d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5079f0243faefaab6ada23cc98f5214a616c1d22
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911587"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044367"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
 
@@ -59,7 +59,7 @@ Další informace o použití nástroje Ngen. exe a služby nativních bitových
 > [!NOTE]
 > Syntaxe Ngen. exe pro verze 1,0 a 1,1 .NET Framework se dá najít v [syntaxi starší verze generátoru nativních imagí (Ngen. exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms165073(v=vs.100)).
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -392,7 +392,7 @@ Nástroj Ngen.exe zaznamenává tyto informace při generování nativní bitov�
 
      Změna zásad zabezpečení počítače směřující k omezení dříve udělených oprávnění sestavení může způsobit, že se dříve zkompilované nativní bitové kopie sestavení stanou neplatnými.
 
-     Podrobné informace o tom, jak modul CLR (Common Language Runtime) spravuje zabezpečení přístupu kódu a používání oprávnění, najdete v tématu [zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md).
+     Podrobné informace o tom, jak modul CLR (Common Language Runtime) spravuje zabezpečení přístupu kódu a používání oprávnění, najdete v tématu [zabezpečení přístupu kódu](../misc/code-access-security.md).
 
 <a name="Troubleshooting"></a>
 
@@ -404,13 +404,13 @@ Následující témata Poradce při potížích umožňují zjistit, které nati
 
 ### <a name="assembly-binding-log-viewer"></a>vazba sestavení – prohlížeč protokolu
 
-Chcete-li potvrdit, že aplikace používá nativní bitové kopie, můžete použít [Fuslogvw. exe (Prohlížeč protokolu vazby sestavení)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md). V okně prohlížeče protokolu vazby v poli **Kategorie protokolů** vyberte **nativní bitové kopie** . Fuslogvw.exe poskytuje informace o důvodu, proč byla nativní bitová kopie odmítnuta.
+Chcete-li potvrdit, že aplikace používá nativní bitové kopie, můžete použít [Fuslogvw. exe (Prohlížeč protokolu vazby sestavení)](fuslogvw-exe-assembly-binding-log-viewer.md). V okně prohlížeče protokolu vazby v poli **Kategorie protokolů** vyberte **nativní bitové kopie** . Fuslogvw.exe poskytuje informace o důvodu, proč byla nativní bitová kopie odmítnuta.
 
 <a name="MDA"></a>
 
 ### <a name="the-jitcompilationstart-managed-debugging-assistant"></a>Pomocníka spravovaného ladění jitCompilationStart –
 
-K určení, kdy kompilátor JIT začne kompilovat funkci, můžete použít pomocníka spravovaného ladění (MDA) [jitCompilationStart –](../../../docs/framework/debug-trace-profile/jitcompilationstart-mda.md) .
+K určení, kdy kompilátor JIT začne kompilovat funkci, můžete použít pomocníka spravovaného ladění (MDA) [jitCompilationStart –](../debug-trace-profile/jitcompilationstart-mda.md) .
 
 <a name="OptOut"></a>
 
@@ -562,7 +562,7 @@ Příklady týkající se služby nativních bitových kopií naleznete v témat
 
 ## <a name="native-image-task"></a>Úloha pro nativní bitové kopie
 
-Úloha nativní bitové kopie je úloha systému Windows, která generuje a udržuje nativní bitové kopie. Úloha nativní bitové kopie generuje a obnoví nativní bitové kopie automaticky pro podporované scénáře. Umožňuje také instalačním nástrojům použít [Ngen. exe (generátor nativních bitových kopií)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) k vytváření a aktualizaci nativních imagí v odloženém čase.
+Úloha nativní bitové kopie je úloha systému Windows, která generuje a udržuje nativní bitové kopie. Úloha nativní bitové kopie generuje a obnoví nativní bitové kopie automaticky pro podporované scénáře. Umožňuje také instalačním nástrojům použít [Ngen. exe (generátor nativních bitových kopií)](ngen-exe-native-image-generator.md) k vytváření a aktualizaci nativních imagí v odloženém čase.
 
 Úloha nativní bitové kopie je zaregistrovaná jednou pro každou architekturu procesoru podporovanou v počítači, aby se povolila kompilace pro aplikace cílené na jednotlivé architektury:
 
@@ -639,7 +639,7 @@ V .NET Framework verze 2,0 je jediná interakce s nativní imagí pomocí nástr
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
+- [Nástroje](index.md)
 - [Proces spravovaného spuštění](../../standard/managed-execution-process.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

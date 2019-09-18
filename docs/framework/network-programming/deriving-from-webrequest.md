@@ -10,88 +10,88 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
-ms.openlocfilehash: e8e7c1d2943dcbfa8d9faa0b2e53bae57c767101
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6bee864f8d24076d16f226c29d61801e856739d9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642968"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048603"
 ---
 # <a name="deriving-from-webrequest"></a>Odvození ze žádosti WebRequest
-<xref:System.Net.WebRequest> Třída je abstraktní základní třídu, která poskytuje základní metody a vlastnosti pro vytvoření konkrétní žádost o obslužnou rutinu, která vyhovuje připojitelných protokolů model rozhraní .NET Framework. Aplikace, které používají **WebRequest** třídy můžete žádost o data pomocí libovolného protokolu pro podporované bez nutnosti určit protokol použitý.  
+<xref:System.Net.WebRequest> Třída je abstraktní základní třída, která poskytuje základní metody a vlastnosti pro vytvoření obslužné rutiny žádosti specifické pro protokol, která odpovídá modelu .NET Framework připojitelné k protokolu. Aplikace, které používají třídu **WebRequest** , mohou vyžádat data pomocí libovolného podporovaného protokolu, aniž by museli zadat použitý protokol.  
   
- V pořadí pro konkrétní třída má být použit jako připojitelná protokol musí být splněna dvě kritéria: Třída musí implementovat <xref:System.Net.IWebRequestCreate> rozhraní a zaregistrujte se <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> metody. Třída musí přepsat všechny abstraktní metody a vlastnosti **WebRequest** poskytnout modulární rozhraní.  
+ Aby bylo možné třídu specifickou pro protokol použít jako připojitelný protokol, musí být splněné dvě kritéria: Třída musí implementovat <xref:System.Net.IWebRequestCreate> rozhraní a musí <xref:System.Net.WebRequest.RegisterPrefix%2A?displayProperty=nameWithType> se zaregistrovat spolu s metodou. Třída musí přepsat všechny abstraktní metody a vlastnosti **WebRequest** za účelem poskytnutí připojitelné rozhraní.  
   
- **WebRequest** instancí jsou určeny k použití jednorázového; Pokud chcete provést další požadavek, vytvořte nový **WebRequest**. **WebRequest** podporuje <xref:System.Runtime.Serialization.ISerializable> rozhraní a umožňuje vývojářům k serializaci šablonu **WebRequest** a pak proveďte rekonstrukci šablony pro další požadavky.  
+ Instance **WebRequest** jsou určené pro jednorázové použití; Pokud chcete vytvořit další žádost, vytvořte novou **WebRequest**. **WebRequest** podporuje <xref:System.Runtime.Serialization.ISerializable> rozhraní, které vývojářům umožní serializovat šablonu **WebRequest** a pak šablonu znovu sestavit pro další požadavky.  
   
-## <a name="iwebrequest-create-method"></a>Vytvoření IWebRequest – metoda  
- <xref:System.Net.IWebRequestCreate.Create%2A> Metoda zodpovídá za inicializaci nové instance třídy specifické pro protokol. Při nové **WebRequest** se vytvoří <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metoda odpovídá požadovanému identifikátoru URI pomocí předpony identifikátoru URI, který je zaregistrován s **RegisterPrefix** metoda. **Vytvořit** metoda správné následník protokolu specifické musí vracet inicializované instance následníka schopný provádět transakce standardní žádost/odpověď protokolu bez nutnosti žádné Upravit pole specifické pro protokol.  
+## <a name="iwebrequest-create-method"></a>IWebRequest – metoda Create  
+ <xref:System.Net.IWebRequestCreate.Create%2A> Metoda je zodpovědná za inicializaci nové instance třídy specifické pro protokol. Když je vytvořena nová **WebRequest** , <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metoda odpovídá požadovanému identifikátoru URI s předponami URI registrovanými metodou **RegisterPrefix** . Metoda **Create** správného následníka konkrétního protokolu musí vracet inicializované instance následníka schopné provést standardní transakci žádosti nebo odpovědi pro protokol bez nutnosti měnit pole specifická pro protokol. .  
   
 ## <a name="connectiongroupname-property"></a>ConnectionGroupName Property  
- <xref:System.Net.WebRequest.ConnectionGroupName%2A> Vlastnost se používá k pojmenování skupiny připojení k prostředku, tak, aby žádosti více můžete provést přes samostatné připojení. K implementaci sdílení připojení, musíte použít konkrétní metodu sdružování a přiřazování připojení. Například zadaná <xref:System.Net.ServicePointManager> třída implementuje sdílení pro připojení <xref:System.Net.HttpWebRequest> třídy. **Třída ServicePointManager** vytvoří třídu <xref:System.Net.ServicePoint> , který poskytuje připojení pro konkrétní server pro každou skupinu připojení.  
+ Tato <xref:System.Net.WebRequest.ConnectionGroupName%2A> vlastnost slouží k pojmenování skupin připojení k prostředku, aby bylo možné vytvořit více požadavků v rámci jednoho připojení. Chcete-li implementovat sdílení připojení, je nutné použít metodu sdružování a přiřazování připojení, která je specifická pro protokol. Například poskytnutá <xref:System.Net.ServicePointManager> třída implementuje sdílení připojení <xref:System.Net.HttpWebRequest> pro třídu. Třída **Třída ServicePointManager** vytvoří <xref:System.Net.ServicePoint> , která poskytuje připojení ke konkrétnímu serveru pro každou skupinu připojení.  
   
 ## <a name="contentlength-property"></a>Vlastnost ContentLength  
- <xref:System.Net.WebRequest.ContentLength%2A> Vlastnost určuje počet bajtů dat, které se odešlou na server při nahrávání data.  
+ <xref:System.Net.WebRequest.ContentLength%2A> Vlastnost určuje počet bajtů dat, která budou odeslána na server při nahrávání dat.  
   
- Obvykle <xref:System.Net.WebRequest.Method%2A> musí být nastavena vlastnost k označení, že nahrání trvá případech **ContentLength** je nastavena na hodnotu větší než nula.  
+ Vlastnost musí být obvykle nastavena tak, aby označovala, že nahrávání probíhá, když je vlastnost ContentLength nastavena na hodnotu větší než nula. <xref:System.Net.WebRequest.Method%2A>  
   
-## <a name="contenttype-property"></a>ContentType Property  
- <xref:System.Net.WebRequest.ContentType%2A> Vlastnost poskytuje všechny speciální informace, že váš protokol vyžaduje, abyste odesílání na server, který identifikuje typ obsahu, který odesíláte. Obvykle je to typ obsahu MIME všech dat odeslaných.  
+## <a name="contenttype-property"></a>ContentType – vlastnost  
+ <xref:System.Net.WebRequest.ContentType%2A> Vlastnost poskytuje všechny zvláštní informace, které protokol vyžaduje k odeslání na server, aby bylo možné identifikovat typ obsahu, který odesíláte. Obvykle se jedná o typ obsahu MIME všech nahraných dat.  
   
-## <a name="credentials-property"></a>Vlastnosti přihlašovacích údajů  
- <xref:System.Net.WebRequest.Credentials%2A> Vlastnost obsahuje informace potřebné k ověření požadavku se serverem. Podrobnosti o procesu ověřování je nutné implementovat pro váš protokol. <xref:System.Net.AuthenticationManager> Třídy je odpovědná za ověřování požadavků a poskytování ověřovací token. Musí implementovat třídu, která poskytuje přihlašovací údaje, které používá váš protokol <xref:System.Net.ICredentials> rozhraní.  
+## <a name="credentials-property"></a>Vlastnost přihlašovací údaje  
+ <xref:System.Net.WebRequest.Credentials%2A> Vlastnost obsahuje informace potřebné k ověření žádosti se serverem. Je nutné implementovat podrobnosti procesu ověřování pro váš protokol. <xref:System.Net.AuthenticationManager> Třída zodpovídá za ověřování požadavků a poskytování ověřovacího tokenu. Třída, která poskytuje pověření používaná protokolem, musí implementovat <xref:System.Net.ICredentials> rozhraní.  
   
-## <a name="headers-property"></a>Vlastnost záhlaví  
- <xref:System.Net.WebRequest.Headers%2A> Vlastnost obsahuje libovolnou kolekci dvojic název/hodnota metadat přidružený k požadavku. Veškerá metadata, vyžaduje protokol, který může být vyjádřena jako dvojice název/hodnota může být součástí **záhlaví** vlastnost. Obvykle tyto informace musí být nastavena před voláním <xref:System.Net.WebRequest.GetRequestStream%2A> nebo <xref:System.Net.WebRequest.GetResponse%2A> metody; po zadání požadavku metadata se považuje za jen pro čtení.  
+## <a name="headers-property"></a>Vlastnost Headers  
+ <xref:System.Net.WebRequest.Headers%2A> Vlastnost obsahuje libovolnou kolekci párů název/hodnota metadat přidružených k žádosti. Všechna metadata potřebná v protokolu, která lze vyjádřit jako dvojici název/hodnota, lze zahrnout do vlastnosti **Headers** . Tyto informace jsou obvykle nutné nastavit před voláním <xref:System.Net.WebRequest.GetRequestStream%2A> metody <xref:System.Net.WebRequest.GetResponse%2A> nebo; po provedení žádosti jsou metadata považována za jen pro čtení.  
   
- Není nutné použít **záhlaví** vlastnost použít hlavičku metadat. Metadata specifická pro protokol může být vystavena jako vlastnosti; například <xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=nameWithType> zpřístupňuje vlastnost **User-Agent** hlavičky protokolu HTTP. Pokud zveřejňujete hlavičku metadat jako vlastnost, by nemělo umožňovat stejnou vlastnost používat **záhlaví** vlastnost.  
+ Pro použití metadat hlaviček není nutné použít vlastnost **Headers** . Metadata specifická pro protokol se dají zveřejnit jako vlastnosti. <xref:System.Net.HttpWebRequest.UserAgent%2A?displayProperty=nameWithType> vlastnost například zveřejňuje hlavičku HTTP **uživatelského agenta** . Když zveřejňujete metadata hlaviček jako vlastnost, neměli byste mít možnost nastavit tuto vlastnost pomocí vlastnosti **Headers** .  
   
-## <a name="method-property"></a>Vlastnost – metoda  
- <xref:System.Net.WebRequest.Method%2A> Vlastnost obsahuje operaci nebo akci, která požadavku žádá serveru provádět. Výchozí nastavení pro **metoda** vlastnost musí povolit standardní žádost/odpověď akce bez nutnosti jakékoli vlastnosti specifické nastavení. Například <xref:System.Net.HttpWebResponse.Method%2A> výchozí hodnoty metody GET, která požádá o prostředek z webového serveru a vrátí odpověď.  
+## <a name="method-property"></a>Vlastnost metody  
+ <xref:System.Net.WebRequest.Method%2A> Vlastnost obsahuje operaci nebo akci, kterou požadavek vyžaduje k provedení serveru. Výchozí hodnota pro vlastnost **Method** musí umožňovat standardní akci žádosti nebo odpovědi, aniž by bylo nutné nastavit vlastnosti specifické pro protokol. <xref:System.Net.HttpWebResponse.Method%2A> Metoda například nastaví jako výchozí hodnotu získat, která vyžaduje prostředek z webového serveru a vrátí odpověď.  
   
- Obvykle **ContentLength** vlastnost musí být nastavena na hodnotu větší než nula v případě **metoda** je nastavena na operaci nebo akci, která označuje, že nahrání probíhat.  
+ Vlastnost **ContentLength** musí být obvykle nastavena na hodnotu větší než nula, pokud je vlastnost **Method** nastavena na operaci nebo akci, která označuje, že probíhá nahrávání.  
   
-## <a name="preauthenticate-property"></a>PreAuthenticate vlastnost  
- Sada aplikací <xref:System.Net.WebRequest.PreAuthenticate%2A> vlastnost umožňující označit, že informace o ověřování mají být odeslány v prvotní žádosti Nečekejte na výzvu ověřování. **PreAuthenticate** vlastnost má smysl pouze v případě protokol podporuje ověřování pověření odeslána s počáteční požadavek.  
+## <a name="preauthenticate-property"></a>Vlastnost předběžně ověřit  
+ Aplikace nastaví <xref:System.Net.WebRequest.PreAuthenticate%2A> vlastnost tak, aby označovala, že ověřovací údaje by měly být odesílány s počátečním požadavkem a nikoli čekáním na ověřovací výzvu. Vlastnost předběžného **ověření** má smysl pouze v případě, že protokol podporuje ověřovací přihlašovací údaje odeslané s počátečním požadavkem.  
   
 ## <a name="proxy-property"></a>Vlastnost proxy  
- <xref:System.Net.WebRequest.Proxy%2A> Obsahuje vlastnost <xref:System.Net.IWebProxy> rozhraní, které se používá pro přístup k požadovanému prostředku. **Proxy** vlastnost má smysl pouze v případě, že váš protokol podporuje požadavky směrovány přes proxy server. Pokud váš protokol je vyžadováno jedno je potřeba nastavit výchozí proxy server.  
+ <xref:System.Net.WebRequest.Proxy%2A> Vlastnost<xref:System.Net.IWebProxy> obsahuje rozhraní, které se používá pro přístup k požadovanému prostředku. Vlastnost **proxy** má smysl jenom v případě, že váš protokol podporuje proxy požadavky. Výchozí proxy server musíte nastavit, pokud ho váš protokol vyžaduje.  
   
- V některých prostředích, jako za firemní branou firewall, váš protokol může být potřeba používat proxy server. V takovém případě je nutné implementovat **IWebProxy** rozhraní pro vytvoření třídy proxy, který bude fungovat pro váš protokol.  
+ V některých prostředích, jako je třeba za podnikovou bránou firewall, může být protokol nutný k použití proxy serveru. V takovém případě je nutné implementovat rozhraní **IWebProxy** a vytvořit třídu proxy, která bude pro váš protokol fungovat.  
   
 ## <a name="requesturi-property"></a>Vlastnost RequestUri  
- <xref:System.Net.WebRequest.RequestUri%2A> Vlastnost obsahuje identifikátor URI, který byl předán **WebRequest.Create** metody. To je jen pro čtení a nedá se změnit jednou **WebRequest** se vytvořil. Pokud váš protokol podporuje přesměrování, odpověď mohou pocházet ze zdroje identifikovaného identifikátorem jiný identifikátor URI. Pokud je potřeba poskytnout přístup k identifikátoru URI, který odpověděl, je nutné zadat je další vlastnost obsahující tento identifikátor URI.  
+ Vlastnost obsahuje identifikátor URI, který byl předán metodě **WebRequest. Create.** <xref:System.Net.WebRequest.RequestUri%2A> Je jen pro čtení a po vytvoření **WebRequest** nelze změnit. Pokud protokol podporuje přesměrování, může odpověď pocházet z prostředku identifikovaného jiným identifikátorem URI. Pokud potřebujete poskytnout přístup k identifikátoru URI, který odpověděl, musíte zadat další vlastnost obsahující tento identifikátor URI.  
   
-## <a name="timeout-property"></a>Vlastnost časového limitu  
- <xref:System.Net.WebRequest.Timeout%2A> Vlastnost obsahuje dobu v milisekundách, čekat, než vyprší časový limit žádosti a vyvolá výjimku. **Časový limit** se vztahuje pouze na synchronní požadavky provedené přes <xref:System.Net.WebRequest.GetResponse%2A> metoda; asynchronní požadavky musí používat <xref:System.Net.WebRequest.Abort%2A> metodě pro zrušení čekající žádosti o.  
+## <a name="timeout-property"></a>Timeout – vlastnost  
+ <xref:System.Net.WebRequest.Timeout%2A> Vlastnost obsahuje dobu v milisekundách, po kterou se má čekat před vypršením časového limitu požadavku a vyvolá výjimku. **Timeout** se vztahuje pouze na synchronní požadavky vytvořené <xref:System.Net.WebRequest.GetResponse%2A> metodou. asynchronní <xref:System.Net.WebRequest.Abort%2A> požadavky musí použít metodu pro zrušení žádosti, která čeká na vyřízení.  
   
- Nastavení **vypršení časového limitu** vlastnost má smysl pouze v případě, že konkrétní třída implementuje proces vypršení časového limitu.  
+ Nastavení vlastnosti **timeout** má smysl pouze v případě, že třída specifická pro protokol implementuje proces časového limitu.  
   
 ## <a name="abort-method"></a>Abort – metoda  
- <xref:System.Net.WebRequest.Abort%2A> Metoda zruší čekající asynchronní požadavek na server. Poté, co žádost byla zrušena, volání **GetResponse**, **BeginGetResponse**, **EndGetResponse**, **GetRequestStream**,  **BeginGetRequestStream**, nebo **EndGetRequestStream** vyvolá výjimku <xref:System.Net.WebException> s <xref:System.Net.WebException.Status%2A> nastavenou na <xref:System.Net.WebExceptionStatus>.  
+ <xref:System.Net.WebRequest.Abort%2A> Metoda zruší probíhající asynchronní požadavek na server. Po zrušení žádosti volání **GetResponse**, **BeginGetResponse nelze**, **EndGetResponse**, **GetRequestStream**, **funkci BeginGetRequestStream**nebo **EndGetRequestStream** vyvolá výjimku <xref:System.Net.WebException> s vlastnost <xref:System.Net.WebException.Status%2A> je nastavena na <xref:System.Net.WebExceptionStatus>hodnotu.  
   
-## <a name="begingetrequeststream-and-endgetrequeststream-methods"></a>BeginGetRequestStream a EndGetRequestStream metody  
- <xref:System.Net.WebRequest.BeginGetRequestStream%2A> Metoda začíná asynchronního požadavku pro datový proud, který se používá k odesílání dat do serveru. <xref:System.Net.WebRequest.EndGetRequestStream%2A> Metoda dokončení asynchronního požadavku a vrací požadovaný datový proud. Tyto metody implementovat **GetRequestStream** standardním způsobem rozhraní .NET Framework asynchronní metoda.  
+## <a name="begingetrequeststream-and-endgetrequeststream-methods"></a>Metody funkci BeginGetRequestStream a EndGetRequestStream  
+ <xref:System.Net.WebRequest.BeginGetRequestStream%2A> Metoda spustí asynchronní požadavek pro datový proud, který slouží k nahrání dat na server. <xref:System.Net.WebRequest.EndGetRequestStream%2A> Metoda dokončí asynchronní požadavek a vrátí požadovaný datový proud. Tyto metody implementují metodu **GetRequestStream** pomocí asynchronního vzoru Standard .NET Framework.  
   
-## <a name="begingetresponse-and-endgetresponse-methods"></a>BeginGetResponse a EndGetResponse metody  
- <xref:System.Net.WebRequest.BeginGetResponse%2A> Metoda začíná Asynchronní požadavek na server. <xref:System.Net.WebRequest.EndGetResponse%2A> Metoda dokončí Asynchronní požadavek a vrátí požadovaná odpověď. Tyto metody implementovat **GetResponse** standardním způsobem rozhraní .NET Framework asynchronní metoda.  
+## <a name="begingetresponse-and-endgetresponse-methods"></a>Metody BeginGetResponse nelze a EndGetResponse  
+ <xref:System.Net.WebRequest.BeginGetResponse%2A> Metoda spustí asynchronní požadavek na server. <xref:System.Net.WebRequest.EndGetResponse%2A> Metoda dokončí asynchronní požadavek a vrátí požadovanou odpověď. Tyto metody implementují metodu **GetResponse** pomocí asynchronního vzoru Standard .NET Framework.  
   
-## <a name="getrequeststream-method"></a>GetRequestStream – metoda  
- <xref:System.Net.WebRequest.GetRequestStream%2A> Metoda vrací datový proud, který se používá k zápisu dat na požadovaný server. Stream vrácený by měla být jen pro zápis datového proudu, který neupravuje; je určena jako jednosměrná datový proud dat, která jsou zapsána do serveru. Vrátí hodnotu false pro datový proud <xref:System.IO.Stream.CanRead%2A> a <xref:System.IO.Stream.CanSeek%2A> vlastnosti a hodnotu true <xref:System.IO.Stream.CanWrite%2A> vlastnost.  
+## <a name="getrequeststream-method"></a>Metoda GetRequestStream  
+ <xref:System.Net.WebRequest.GetRequestStream%2A> Metoda vrátí datový proud, který se používá k zápisu dat na požadovaný server. Vrácený datový proud by měl být datový proud jen pro zápis, který nehledá; je určený jako jednosměrný datový proud dat, který se zapisuje na server. Datový proud vrátí hodnotu false pro <xref:System.IO.Stream.CanRead%2A> <xref:System.IO.Stream.CanWrite%2A> vlastnosti <xref:System.IO.Stream.CanSeek%2A> a a hodnotu true pro vlastnost.  
   
- **GetRequestStream** metoda obvykle otevře připojení k serveru a před vrácením datového proudu, odešle informace v hlavičce určující těchto dat je odesíláno do serveru. Protože **GetRequestStream** zahájí požadavek žádné nastavení **záhlaví** vlastnosti nebo **ContentLength** vlastnost se obvykle nepovoluje po volání **GetRequestStream**.  
+ Metoda **GetRequestStream** obvykle otevírá připojení k serveru a před vrácením datového proudu pošle informaci hlavičky, která indikuje, že se data odesílají na server. Vzhledem k tomu, že **GetRequestStream** zahájí požadavek, nastavení vlastností **záhlaví** nebo vlastnosti **ContentLength** obvykle není po volání **GetRequestStream**povoleno.  
   
-## <a name="getresponse-method"></a>GetResponse – metoda  
- <xref:System.Net.WebRequest.GetResponse%2A> Metoda vrátí konkrétní potomkem <xref:System.Net.WebResponse> třídu, která představuje odpověď ze serveru. Pokud již byl zahájen požadavek podle **GetRequestStream** metody **GetResponse** metoda vytvoří připojení k prostředku označeném identifikátorem **RequestUri**, odešle informace v hlavičce určující typ požadavku odeslaná a pak obdrží odpověď od zdroje.  
+## <a name="getresponse-method"></a>Metoda GetResponse  
+ Metoda vrátí následníka <xref:System.Net.WebResponse> třídy, která představuje odpověď ze serveru. <xref:System.Net.WebRequest.GetResponse%2A> Pokud žádost již nebyla iniciována metodou **GetRequestStream** , metoda **GetResponse** vytvoří připojení k prostředku identifikovanému **RequestUri**, pošle informace hlavičky určující typ žádosti, která je určena. a poté obdrží odpověď z prostředku.  
   
- Jakmile **GetResponse** metoda je volána, všechny vlastnosti by měl být jen pro čtení. **WebRequest** instancí jsou určeny k použití jednorázového; Pokud budete chtít provést další požadavek, měli byste vytvořit nový **WebRequest**.  
+ Po volání metody **GetResponse** by měly být všechny vlastnosti považovány za jen pro čtení. Instance **WebRequest** jsou určené pro jednorázové použití; Pokud chcete vytvořit další žádost, měli byste vytvořit novou **WebRequest**.  
   
- **GetResponse** metoda zodpovídá za vytvoření odpovídající **WebResponse** potomků tak, aby obsahovala příchozí odpovědi.  
+ Metoda **GetResponse** zodpovídá za vytvoření vhodného následníka **WebResponse** , který bude obsahovat příchozí odpověď.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.HttpWebRequest>
 - <xref:System.Net.FileWebRequest>
-- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
-- [Odvození z odpovědi WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)
+- [Programování připojitelných protokolů](programming-pluggable-protocols.md)
+- [Odvození z odpovědi WebResponse](deriving-from-webresponse.md)

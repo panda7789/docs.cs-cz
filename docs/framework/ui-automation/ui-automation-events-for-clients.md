@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-ms.openlocfilehash: b56fc09b33a846fe94a52e19dc4b9c806d79c121
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: f4ce2d996d5a1a6ecd149118b7499650882a732f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044109"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042282"
 ---
 # <a name="ui-automation-events-for-clients"></a>Události automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "70044109"
 > [!NOTE]
 > Nepředpokládá se, že [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] zprostředkovatel vyvolal všechny možné události. Například ne všechny změny vlastností způsobují, že události budou vyvolány standardními poskytovateli proxy [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvky a.  
   
- Širší zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událostí najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+ Širší zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událostí najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md).  
   
 <a name="Subscribing_to_Events"></a>   
 ## <a name="subscribing-to-events"></a>Přihlášení k odběru událostí  
@@ -44,7 +44,7 @@ ms.locfileid: "70044109"
 > Chcete-li zpracovat události uzavřené v okně, přetypujte typ argumentu, který je předán obslužné rutině události jako <xref:System.Windows.Automation.WindowClosedEventArgs>. Vzhledem k tomu, že `sender` <xref:System.Windows.Automation.WindowClosedEventArgs.GetRuntimeId%2A> elementprooknojižneníplatný,nemůžetepoužítparametrpronačteníinformací;[!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] použijte místo toho.  
   
 > [!CAUTION]
-> Pokud vaše aplikace může přijímat události sami [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], nepoužívejte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] vlákno vaší aplikace k přihlášení k odběru událostí nebo k odhlášení odběru. To může vést k nepředvídatelnému chování. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
+> Pokud vaše aplikace může přijímat události sami [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], nepoužívejte [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] vlákno vaší aplikace k přihlášení k odběru událostí nebo k odhlášení odběru. To může vést k nepředvídatelnému chování. Další informace najdete v tématu [problémy s vlákny pro automatizaci uživatelského rozhraní](ui-automation-threading-issues.md).  
   
  Při vypnutí nebo pokud [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události již nejsou důležité pro aplikaci, klienti automatizace uživatelského rozhraní by měli volat jednu z následujících metod.  
   
@@ -55,11 +55,11 @@ ms.locfileid: "70044109"
 |<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|Zruší registraci obslužné rutiny události, která byla zaregistrována pomocí <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A>.|  
 |<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|Zruší registraci všech zaregistrovaných obslužných rutin událostí.|  
   
- Příklad kódu naleznete v tématu [přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md).  
+ Příklad kódu naleznete v tématu [přihlášení k odběru událostí automatizace uživatelského rozhraní](subscribe-to-ui-automation-events.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
-- [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md)
-- [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)
+- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](subscribe-to-ui-automation-events.md)
+- [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md)
+- [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md)
 - [Ukázka TrackFocus](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)

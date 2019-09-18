@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 937577f86ec854f5a458fe6067836a85a540695a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ec8180da9637ec2b2c4e1b432773b4f9f1ac908b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913806"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049173"
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 
@@ -22,7 +22,7 @@ Pokud vaše aplikace serializace a deserializace objekty, může být nutné př
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>Serializátory třetích stran
 
- Serializace jiných částí, včetně Newtonsoft. JSON, jsou obvykle založené na reflexi. Vzhledem k binárnímu velkému objektu (BLOB) serializovaných dat jsou pole v datech přiřazena konkrétnímu typu vyhledáním polí cílového typu podle názvu. Minimálně pomocí těchto knihoven způsobí [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky pro každý <xref:System.Type> objekt, který se pokoušíte serializovat nebo deserializovat v `List<Type>` kolekci.  
+ Serializace jiných částí, včetně Newtonsoft. JSON, jsou obvykle založené na reflexi. Vzhledem k binárnímu velkému objektu (BLOB) serializovaných dat jsou pole v datech přiřazena konkrétnímu typu vyhledáním polí cílového typu podle názvu. Minimálně pomocí těchto knihoven způsobí [MissingMetadataException](missingmetadataexception-class-net-native.md) výjimky pro každý <xref:System.Type> objekt, který se pokoušíte serializovat nebo deserializovat v `List<Type>` kolekci.  
   
  Nejjednodušší způsob, jak řešit problémy způsobené chybějícími metadaty pro tyto serializátory, je shromáždit typy, které budou použity v serializaci v rámci jednoho oboru názvů `App.Models`(například) a `Serialize` použít pro něj direktivu metadata:  
   
@@ -30,7 +30,7 @@ Pokud vaše aplikace serializace a deserializace objekty, může být nutné př
 <Namespace Name="App.Models" Serialize="Required PublicAndInternal" />  
 ```  
   
- Informace o syntaxi použité v příkladu naleznete v tématu [ \<Namespace > element](../../../docs/framework/net-native/namespace-element-net-native.md).  
+ Informace o syntaxi použité v příkladu naleznete v tématu [ \<Namespace > element](namespace-element-net-native.md).  
   
 <a name="Microsoft"></a>
 ## <a name="microsoft-serializers"></a>Serializátory Microsoftu
@@ -67,11 +67,11 @@ Pokud vaše aplikace serializace a deserializace objekty, může být nutné př
 <Type Name="t" Browse="Required Public" />  
 ```  
   
- Informace o syntaxi použité v příkladu naleznete v tématu [ \<Type > element](../../../docs/framework/net-native/type-element-net-native.md).  
+ Informace o syntaxi použité v příkladu naleznete v tématu [ \<Type > element](type-element-net-native.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [\<Typ > element](../../../docs/framework/net-native/type-element-net-native.md)
-- [\<> – Element oboru názvů](../../../docs/framework/net-native/namespace-element-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)
+- [\<Typ > element](type-element-net-native.md)
+- [\<> – Element oboru názvů](namespace-element-net-native.md)

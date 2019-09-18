@@ -4,44 +4,44 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Deriving from WebResponse
 ms.assetid: f11d4866-a199-4087-9306-a5a4c18b13db
-ms.openlocfilehash: 6bdb21b8aaf8deb39e3abd68a69a9a5a10247e6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd06928b08eb085ef13371687fb1e5b92c6c1d86
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642942"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048581"
 ---
 # <a name="deriving-from-webresponse"></a>Odvození z odpovědi WebResponse
-<xref:System.Net.WebResponse> Třída je abstraktní základní třídu, která poskytuje základní metody a vlastnosti pro vytvoření odpovědi specifické pro protokol, který odpovídá modelu připojitelných protokolů rozhraní .NET Framework. Aplikace, které používají <xref:System.Net.WebRequest> třídy požadovat data ze zdroje dostávat odpovědi v **WebResponse**. Konkrétní **WebResponse** následníků musí implementovat abstraktní členové **WebResponse** třídy.  
+<xref:System.Net.WebResponse> Třída je abstraktní základní třída, která poskytuje základní metody a vlastnosti pro vytvoření odpovědi specifické pro protokol, která odpovídá modelu .NET Framework připojit k protokolu. Aplikace, které používají <xref:System.Net.WebRequest> třídu k vyžádání dat z prostředků, obdrží odpovědi v rámci **WebResponse**. Následníky **WebResponse** konkrétního protokolu musí implementovat abstraktní členy třídy **WebResponse** .  
   
- Přidružené **WebRequest** musíte vytvořit třídu **WebResponse** následníky. Například <xref:System.Net.HttpWebResponse> pouze jako výsledek volání se vytvářejí instance <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A?displayProperty=nameWithType>. Každý **WebResponse** obsahuje výsledek požadavku na prostředek a není určena pro znovu použít.  
+ Přidružená třída **WebRequest** musí vytvořit následníky **WebResponse** . Například <xref:System.Net.HttpWebResponse> instance jsou vytvořeny pouze jako výsledek volání <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A?displayProperty=nameWithType>. Každá **WebResponse** obsahuje výsledek požadavku na prostředek a není určen k jeho použití.  
   
 ## <a name="contentlength-property"></a>Vlastnost ContentLength  
- <xref:System.Net.WebResponse.ContentLength%2A> Vlastnost určuje počet bajtů dat, které jsou k dispozici z datový proud vrácený <xref:System.Net.WebResponse.GetResponseStream%2A> metody. **ContentLength** vlastnost nenaznačuje, že počet bajtů informace záhlaví nebo metadata vrácená serverem; značí pouze počet bajtů dat v požadované vlastní prostředek.  
+ Vlastnost označuje počet bajtů dat, která jsou k dispozici z datového proudu vráceného <xref:System.Net.WebResponse.GetResponseStream%2A> metodou. <xref:System.Net.WebResponse.ContentLength%2A> Vlastnost **ContentLength** neindikuje počet bajtů záhlaví nebo informací o metadatech vrácených serverem. indikuje jenom počet bajtů dat v požadovaném prostředku.  
   
-## <a name="contenttype-property"></a>ContentType Property  
- <xref:System.Net.WebResponse.ContentType%2A> Vlastnost poskytuje všechny speciální informace, že váš protokol vyžaduje, abyste odeslat klientovi, který identifikuje typ obsahu je odesláno serverem. Obvykle je to typ obsahu MIME vrácená data.  
+## <a name="contenttype-property"></a>ContentType – vlastnost  
+ <xref:System.Net.WebResponse.ContentType%2A> Vlastnost poskytuje všechny zvláštní informace, které protokol vyžaduje k odeslání do klienta za účelem identifikace typu obsahu odesílaného serverem. Obvykle se jedná o typ obsahu MIME libovolných vrácených dat.  
   
-## <a name="headers-property"></a>Vlastnost záhlaví  
- <xref:System.Net.WebResponse.Headers%2A> Vlastnost obsahuje libovolnou kolekci dvojic název/hodnota metadat přidružený k odpovědi. Veškerá metadata, vyžaduje protokol, který může být vyjádřena jako dvojice název/hodnota může být součástí **záhlaví** vlastnost.  
+## <a name="headers-property"></a>Vlastnost Headers  
+ <xref:System.Net.WebResponse.Headers%2A> Vlastnost obsahuje libovolnou kolekci párů název/hodnota metadat přidružených k odpovědi. Všechna metadata potřebná v protokolu, která lze vyjádřit jako dvojici název/hodnota, lze zahrnout do vlastnosti **Headers** .  
   
- Není nutné použít **záhlaví** vlastnost použít hlavičku metadat. Metadata specifická pro protokol může být vystavena jako vlastnosti; například <xref:System.Net.HttpWebResponse.LastModified%2A?displayProperty=nameWithType> zpřístupňuje vlastnost **Last-Modified** hlavičky protokolu HTTP. Pokud zveřejňujete hlavičku metadat jako vlastnost, by nemělo umožňovat stejnou vlastnost používat **záhlaví** vlastnost.  
+ Pro použití metadat hlaviček není nutné použít vlastnost **Headers** . Metadata specifická pro protokol se dají zveřejnit jako vlastnosti. například <xref:System.Net.HttpWebResponse.LastModified%2A?displayProperty=nameWithType> vlastnost zveřejňuje hlavičku HTTP **naposledy upraveného** . Když zveřejňujete metadata hlaviček jako vlastnost, neměli byste mít možnost nastavit tuto vlastnost pomocí vlastnosti **Headers** .  
   
-## <a name="responseuri-property"></a>ResponseUri Property  
- <xref:System.Net.WebResponse.ResponseUri%2A> Vlastnost obsahuje identifikátor URI prostředku, která ve skutečnosti k dispozici odpověď. Pro protokoly, které nepodporují přesměrování **ResponseUri** budou stejné jako <xref:System.Net.WebRequest.RequestUri%2A> vlastnost **WebRequest** , který je vytvořen odpověď. Pokud protokol podporuje přesměrování požadavku, **ResponseUri** bude obsahovat identifikátor URI odpovědi.  
+## <a name="responseuri-property"></a>Vlastnost ResponseUri  
+ <xref:System.Net.WebResponse.ResponseUri%2A> Vlastnost obsahuje identifikátor URI prostředku, který odpověď skutečně poskytl. Pro protokoly, které nepodporují přesměrování, bude **ResponseUri** stejné jako <xref:System.Net.WebRequest.RequestUri%2A> vlastnost **WebRequest** , která odpověď vytvořila. Pokud protokol podporuje přesměrování požadavku, **ResponseUri** bude obsahovat identifikátor URI odpovědi.  
   
 ## <a name="close-method"></a>Close – metoda  
- <xref:System.Net.WebResponse.Close%2A> Metoda zavře připojení podle požadavků a odpovědí a vyčistí prostředky využívané třídou odpovědi. **Zavřít** metoda zavře všechny instance služby stream používá odpověď, ale nevyvolá výjimku, pokud datový proud odpovědí dříve zavřel volání <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody.  
+ <xref:System.Net.WebResponse.Close%2A> Metoda ukončí všechna připojení, která provedla požadavek a odpověď, a vyčistí prostředky používané odpovědí. Metoda **Close** zavře všechny instance streamu používané odpovědí, ale nevyvolá výjimku, pokud byl datový proud odpovědí dříve uzavřen voláním <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metody.  
   
-## <a name="getresponsestream-method"></a>Metodu GetResponseStream  
- <xref:System.Net.WebResponse.GetResponseStream%2A> Metoda vrátí datového proudu s odpovědí z požadovaný prostředek. Datový proud odpovědí obsahuje pouze data vrácená prostředku. žádné záhlaví nebo metadata, které jsou zahrnuty v odpovědi by mělo být odebrána z odpovědi a vystavit aplikace prostřednictvím vlastnosti specifické pro protokol nebo **záhlaví** vlastnost.  
+## <a name="getresponsestream-method"></a>Metoda GetResponseStream  
+ <xref:System.Net.WebResponse.GetResponseStream%2A> Metoda vrátí datový proud obsahující odpověď z požadovaného prostředku. Datový proud odpovědi obsahuje pouze data vrácená prostředkem; všechna záhlaví nebo metadata zahrnutá v odpovědi by měla být z odpovědi odstraněna a zpřístupněna aplikaci prostřednictvím vlastností specifických pro protokol nebo vlastností **hlaviček** .  
   
- Instance datového proudu, který je vrácený **GetResponseStream** metoda vlastní aplikace a je možné uzavřít bez zavření **WebResponse**. Podle konvence volání **WebResponse.Close** metoda také zavře datový proud vrácený **GetResponse**.  
+ Instance datového proudu vrácená metodou **GetResponseStream** je vlastněna aplikací a může být zavřena bez zavření **WebResponse**. Podle konvence volání metody **WebResponse. Close** také uzavře datový proud vrácený funkcí **GetResponse**.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.WebResponse>
 - <xref:System.Net.HttpWebResponse>
 - <xref:System.Net.FileWebResponse>
-- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
-- [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)
+- [Programování připojitelných protokolů](programming-pluggable-protocols.md)
+- [Odvození ze žádosti WebRequest](deriving-from-webrequest.md)

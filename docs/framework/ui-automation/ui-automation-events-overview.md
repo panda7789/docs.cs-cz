@@ -9,12 +9,12 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-ms.openlocfilehash: 3f373c3947b45443ca4031ecdc3d5e40608ec84c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d342e4382cfe227e477ab87c2ca428834010768e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911557"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042165"
 ---
 # <a name="ui-automation-events-overview"></a>Přehled událostí automatizace uživatelského rozhraní
 > [!NOTE]
@@ -79,10 +79,10 @@ ms.locfileid: "69911557"
   
  Objekty, které slouží k identifikaci událostí, jsou získávány poskytovateli <xref:System.Windows.Automation.AutomationElementIdentifiers> z polí v a třídy identifikátoru vzoru ovládacího prvku, jako je například. <xref:System.Windows.Automation.DockPatternIdentifiers> <xref:System.Windows.Automation.AutomationEvent> Ekvivalentní pole jsou získána klientskými aplikacemi z polí v <xref:System.Windows.Automation.AutomationElement> a třídy vzoru ovládacích prvků, <xref:System.Windows.Automation.DockPattern>jako je například.  
   
- Seznam identifikátorů událostí najdete v tématu [události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md).  
+ Seznam identifikátorů událostí najdete v tématu [události automatizace uživatelského rozhraní pro klienty](ui-automation-events-for-clients.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)
-- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
-- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
+- [Události automatizace uživatelského rozhraní pro klienty](ui-automation-events-for-clients.md)
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)
+- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](subscribe-to-ui-automation-events.md)

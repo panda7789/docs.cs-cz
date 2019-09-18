@@ -7,82 +7,82 @@ helpviewer_keywords:
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c52c9bf37e67e4d26867d2b3754945e86e2bf609
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 787c6221b651a53dbb932a5a9d0edea123e1d97d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422415"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046438"
 ---
 # <a name="interop-etw-events"></a>Události Trasování událostí pro Windows interoperability
-<a name="top"></a> Události interoperability zaznamenat informace o Microsoft intermediate language (MSIL) zástupné procedury generování a ukládání do mezipaměti.  
+<a name="top"></a>Události vzájemné spolupráce zachytí informace o generování a ukládání procedury do mezipaměti v jazyce MSIL (Microsoft Intermediate Language).  
   
  Tato kategorie se skládá z následujících událostí:  
   
-- [ILStubGenerated události](#ilstubgenerated_event)  
+- [Událost ILStubGenerated](#ilstubgenerated_event)  
   
 - [ILStubCacheHit Event](#ilstubcachehit_event)  
   
 <a name="ilstubgenerated_event"></a>   
-## <a name="ilstubgenerated-event"></a>ILStubGenerated události  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+## <a name="ilstubgenerated-event"></a>Událost ILStubGenerated  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce. (Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).)  
   
 |Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`InteropKeyword` (0x2000)|Informational(4)|  
+|`InteropKeyword` (0x2000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`ILStubGenerated`|88|Byl vytvořen testovací kód jazyka MSIL.|  
+|`ILStubGenerated`|88|Byl vygenerován zástupný kód jazyka MSIL.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ID modulu|win:UInt16|Identifikátor modulu.|  
-|StubMethodID|win:UInt64|Metoda identifikátor zástupné procedury.|  
-|StubFlags|win:UInt64|Příznaky pro zástupná procedura:<br /><br /> 0x1 – reverzní zprostředkovatele komunikace s objekty.<br /><br /> 0x2 - komunikace s objekty COM.<br /><br /> 0x4 - zástupné proceduře vygenerované pomocí NGen.exe.<br /><br /> 0x8 - delegáta.<br /><br /> 0x10 - argumentů s proměnnou délkou.<br /><br /> 0x20 – nespravované volaný.|  
-|ManagedInteropMethodToken|win:UInt32|Token pro spravované vzájemné spolupráce metody.|  
-|ManagedInteropMethodNameSpace|win:UnicodeString|Obor názvů spravovaná metoda spolupráce.|  
-|ManagedInteropMethodName|win:UnicodeString|Název spravované vzájemné spolupráce metody.|  
-|ManagedInteropMethodSignature|win:UnicodeString|Podpis spravované vzájemné spolupráce metody.|  
-|NativeMethodSignature|win:UnicodeString|Nativní metoda podpis.|  
-|StubMethodSignature|win:UnicodeString|Podpis metody zástupných procedur.|  
-|StubMethodILCode|win:UnicodeString|Kód jazyka MSIL pro metody zástupných procedur.|  
-|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|ModuleID|Win: UInt16|Identifikátor modulu.|  
+|StubMethodID|win:UInt64|Identifikátor metody zástupné procedury.|  
+|StubFlags|win:UInt64|Příznaky pro zástupnou proceduru:<br /><br /> 0x1 – reverzní interoperabilita<br /><br /> pře0x2-COM Interop.<br /><br /> 0x4 – zástupné procedury generované NGen. exe.<br /><br /> 0x8 – Delegate<br /><br /> Argument 0x10-Variable<br /><br /> 0x20 – nespravovaný volaný|  
+|ManagedInteropMethodToken|Win: UInt32|Token pro spravovanou metodu spolupráce|  
+|ManagedInteropMethodNameSpace|win:UnicodeString|Obor názvů spravované metody spolupráce.|  
+|ManagedInteropMethodName|win:UnicodeString|Název spravované metody spolupráce.|  
+|ManagedInteropMethodSignature|win:UnicodeString|Podpis spravované metody spolupráce.|  
+|NativeMethodSignature|win:UnicodeString|Signatura nativní metody.|  
+|StubMethodSignature|win:UnicodeString|Podpis metody zástupné procedury|  
+|StubMethodILCode|win:UnicodeString|Kód jazyka MSIL pro metodu zástupné procedury.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="ilstubcachehit_event"></a>   
-## <a name="ilstubcachehit-event"></a>ILStubCacheHit Event  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+## <a name="ilstubcachehit-event"></a>Událost ILStubCacheHit  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
 |Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`InteropKeyword` (0x2000)|Informational(4)|  
+|`InteropKeyword` (0x2000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`ILStubCacheHit`|89|Jazyk MSIL mezipaměti byl otevřen.|  
+|`ILStubCacheHit`|89|K mezipaměti MSIL bylo přistup.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ID modulu|win:UInt16|Identifikátor modulu.|  
-|StubMethodID|win:UInt64|Metoda identifikátor zástupné procedury.|  
-|ManagedInteropMethodToken|win:UInt32|Token pro spravované vzájemné spolupráce metody.|  
-|ManagedInteropMethodNameSpace|win:UnicodeString|Obor názvů spravovaná metoda spolupráce.|  
-|ManagedInteropMethodName|win:UnicodeString|Název spravované vzájemné spolupráce metody.|  
-|ManagedInteropMethodSignature|win:UnicodeString|Podpis spravované vzájemné spolupráce metody.|  
-|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|ModuleID|Win: UInt16|Identifikátor modulu.|  
+|StubMethodID|win:UInt64|Identifikátor metody zástupné procedury.|  
+|ManagedInteropMethodToken|Win: UInt32|Token pro spravovanou metodu spolupráce|  
+|ManagedInteropMethodNameSpace|win:UnicodeString|Obor názvů spravované metody spolupráce.|  
+|ManagedInteropMethodName|win:UnicodeString|Název spravované metody spolupráce.|  
+|ManagedInteropMethodSignature|win:UnicodeString|Podpis spravované metody spolupráce.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)

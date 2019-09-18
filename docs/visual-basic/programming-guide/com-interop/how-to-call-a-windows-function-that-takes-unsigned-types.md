@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání funkce Windows, která přebírá nepřiřazené typy (Visual Basic)'
+title: 'Postupy: Volání funkce systému Windows, která přebírá typy bez znaménka (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Windows functions [Visual Basic], calling
@@ -14,28 +14,28 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: d1a679242f89c17e58a837ac2d356e1594972fb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97075fb6149ed8c0ce06318d0e5bb6f01b841f30
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022360"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053330"
 ---
-# <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce Windows, která přebírá nepřiřazené typy (Visual Basic)
+# <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce systému Windows, která přebírá typy bez znaménka (Visual Basic)
 
-Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy typů celé číslo bez znaménka, získáte přístup k těmto členům s jazykem Visual Basic.
+Pokud pracujete se třídou, modulem nebo strukturou, která má členy unsigned integerch typů, můžete k těmto členům přistupovat pomocí Visual Basic.
 
-### <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Pro volání funkce Windows, která přebírá typ bez znaménka
+## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Volání funkce systému Windows, která přebírá typ bez znaménka
 
-1. Použití [deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) říct jazyka Visual Basic, která knihovna obsahuje funkce, jeho název je v této knihovně, co je jeho volací sekvence a převod řetězce při svém volání.
+1. Použijte [příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md) k oznámení Visual Basic, která knihovna obsahuje funkci, co je jeho název v této knihovně, co je jeho volající sekvence a jak převést řetězce při volání.
 
-2. V `Declare` příkazu, použijte `UInteger`, `ULong`, `UShort`, nebo `Byte` podle potřeby pro každý parametr s typem bez znaménka.
+2. `UInteger`V příkazu použijte ,`ULong` ,nebo`Byte` jako vhodný pro každý parametr s typem bez znaménka. `UShort` `Declare`
 
-3. V dokumentaci pro funkci Windows, ke kterému se připojujete k vyhledání názvy a hodnoty konstant, které používá. Mnohé z nich jsou definovány v souboru WINUSER.
+3. V dokumentaci pro funkci Windows, kterou voláte, vyhledejte názvy a hodnoty konstant, které používá. Mnohé z těchto jsou definovány v souboru WinUser. h.
 
-4. Deklarujte nezbytné konstanty ve vašem kódu. Řada Windows konstanty jsou 32bitové hodnoty bez znaménka a by měla deklarovat tyto `As UInteger`.
+4. Deklaruje nezbytné konstanty ve vašem kódu. Mnoho konstant systému Windows je 32 hodnot bez znaménka a je nutné je deklarovat `As UInteger`.
 
-5. Volání funkce běžným způsobem. Následující příklad volá funkci Windows `MessageBox`, která přebírá argument, celé číslo bez znaménka.
+5. Volejte funkci normálním způsobem. Následující příklad volá funkci `MessageBox`systému Windows, která přebírá unsigned integer argument.
 
     ```vb
     Public Class windowsMessage
@@ -60,7 +60,7 @@ Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy t
     End Class
     ```
 
-     Můžete otestovat funkci `messageThroughWindows` následujícím kódem.
+     Funkci `messageThroughWindows` lze otestovat pomocí následujícího kódu.
 
     ```vb
     Public Sub consumeWindowsMessage()
@@ -70,13 +70,13 @@ Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy t
     ```
 
     > [!CAUTION]
-    > `UInteger`, `ULong`, `UShort`, A `SByte` datových typů nejsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která je využívá.
+    > `ULong`Datové typy `UInteger`, ,`UShort` a`SByte` nejsou součástí nezávislého [jazyka a jazykově nezávislých komponent](../../../standard/language-independence-and-language-independent-components.md) (CLS), takže kód kompatibilní se specifikací CLS nemůže spotřebovat komponentu, která je používá.
 
     > [!IMPORTANT]
-    > Volání nespravovaného kódu, jako je například rozhraní (API), Windows poskytuje kódu na potenciální rizika zabezpečení.
+    > Volání nespravovaného kódu, jako je rozhraní API (Application Programming Interface) systému Windows, zpřístupňuje váš kód potenciálním bezpečnostním rizikům.
 
     > [!IMPORTANT]
-    > Volání rozhraní API pro Windows vyžaduje oprávnění nespravovaného kódu, který může mít vliv na jeho spuštění v situacích částečné důvěryhodnosti. Další informace najdete v tématu <xref:System.Security.Permissions.SecurityPermission> a [oprávnění přístupu ke kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
+    > Volání rozhraní API systému Windows vyžaduje oprávnění nespravovaného kódu, které může ovlivnit jeho spuštění v situacích s částečnou důvěryhodností. Další informace naleznete v tématu <xref:System.Security.Permissions.SecurityPermission> a [oprávnění k přístupu kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
 
 ## <a name="see-also"></a>Viz také:
 

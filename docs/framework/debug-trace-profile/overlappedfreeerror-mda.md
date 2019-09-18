@@ -11,36 +11,36 @@ helpviewer_keywords:
 ms.assetid: b6ab2d48-6eee-4bab-97a3-046b3b0a5470
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: defd7f90fcac8d1e98104796682058638c9bd799
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70d31bc187cabe49351e86a20023e2ec65e87b94
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753683"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052403"
 ---
 # <a name="overlappedfreeerror-mda"></a>overlappedFreeError – pomocník spravovaného ladění (MDA)
-`overlappedFreeError` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> metoda je volána před dokončením překrytá operace.  
+Pokud je `overlappedFreeError` metodavolánapředdokončenímpřekrytéoperace,jeaktivovánafunkcepomocníkspravovanéholadění<xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29?displayProperty=nameWithType> (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
- Narušení přístupu nebo poškození haldy uvolňování.  
+ Narušení přístupu nebo poškození haldy uvolňování paměti.  
   
-## <a name="cause"></a>Příčina  
- Překryté struktury byl uvolněn před operace se dokončila. Funkce, která používá překrytý ukazatel může zapisovat do struktury později, jakmile byl uvolněn. To může způsobit poškození haldy, protože jiný objekt může zabírat teď tuto oblast.  
+## <a name="cause"></a>příčina  
+ Překrytá struktura byla uvolněna před dokončením operace. Funkce, která používá překrytý ukazatel, může zapisovat do struktury později poté, co byla uvolněna. To může způsobit poškození haldy, protože teď jiný objekt může tuto oblast zabírat.  
   
- Toto MDA nemusí reprezentovat chybu, pokud překrytá operace nebyla úspěšně spuštěna.  
+ V případě, že se překrytá operace nezačala úspěšně, tato aplikace MDA nemusí představovat chybu.  
   
 ## <a name="resolution"></a>Řešení  
- Ujistěte se, že dokončení vstupně-výstupní operace pomocí překryté struktury před voláním <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29> metody.  
+ Před voláním <xref:System.Threading.Overlapped.Free%28System.Threading.NativeOverlapped%2A%29> metody zajistěte, aby byla vstupně-výstupní operace s použitím překryté struktury dokončená.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Zde je ukázkový výstup pro toto MDA.  
+ Níže je ukázkový výstup pro tento MDA.  
   
  `An overlapped pointer (0x00ea3430) that was not allocated on the GC heap was passed via Pinvoke to the win32 function 'WriteFile' in module 'KERNEL32.DLL'. If the AppDomain is shut down, this can cause heap corruption when the async I/O completes. The best solution is to pass a NativeOverlappedStructure retrieved from a call to System.Threading.Overlapped.Pack(). If the AppDomain exits, the CLR will keep this structure alive and pinned until the I/O completes.`  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -53,5 +53,5 @@ ms.locfileid: "61753683"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

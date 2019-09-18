@@ -8,12 +8,12 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: b51206f2-1281-4ad0-9820-ea39d88ae577
-ms.openlocfilehash: 27d5bcee34bcbfa101f381a569428a64a45da0b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b7985e6cf3eaa810a893b0b5183a1c141a041768
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69954097"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040504"
 ---
 # <a name="ui-automation-text-pattern"></a>Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -22,14 +22,14 @@ ms.locfileid: "69954097"
  Toto téma obsahuje přehledy a postupy, které vám pomůžou začít pracovat v programování pro textové prvky v [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled prvku TextPattern automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-textpattern-overview.md)  
- [TextPattern a vložené objekty – přehled](../../../docs/framework/ui-automation/textpattern-and-embedded-objects-overview.md)  
- [Témata s postupy](../../../docs/framework/ui-automation/ui-automation-text-pattern-how-to-topics.md)  
+ [Přehled prvku TextPattern automatizace uživatelského rozhraní](ui-automation-textpattern-overview.md)  
+ [TextPattern a vložené objekty – přehled](textpattern-and-embedded-objects-overview.md)  
+ [Témata s postupy](ui-automation-text-pattern-how-to-topics.md)  
   
 ## <a name="reference"></a>Reference  
  <xref:System.Windows.Automation.Text>  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
+- [Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)

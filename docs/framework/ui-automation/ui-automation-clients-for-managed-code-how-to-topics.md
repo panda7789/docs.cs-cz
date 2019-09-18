@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: 665b01b5-25f5-47a1-ab11-cffe8ebbf2a7
-ms.openlocfilehash: 8c3107ce2ee20b3369a2ba462775ec7c8a1d3f6c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9a419f8ac8b94d4f33c7e771c68f230c80a24cbf
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935118"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042538"
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>Postupy: Témata klientů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
@@ -21,11 +21,11 @@ ms.locfileid: "69935118"
  [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] V této části najdete podrobné informace o implementaci funkcí nástroje v klientské aplikaci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
- [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)  
- [Hledání prvku automatizace uživatelského rozhraní pro položku seznamu](../../../docs/framework/ui-automation/find-a-ui-automation-element-for-a-list-item.md)  
- [Získání vlastností elementů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/get-ui-automation-element-properties.md)  
- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)  
- [Registrace sestavení zprostředkovatele na straně klienta](../../../docs/framework/ui-automation/register-a-client-side-provider-assembly.md)  
- [Používání vlastnosti AutomationID](../../../docs/framework/ui-automation/use-the-automationid-property.md)
+ [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](find-a-ui-automation-element-based-on-a-property-condition.md)  
+ [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](navigate-among-ui-automation-elements-with-treewalker.md)  
+ [Hledání prvku automatizace uživatelského rozhraní pro položku seznamu](find-a-ui-automation-element-for-a-list-item.md)  
+ [Získání vlastností elementů automatizace uživatelského rozhraní](get-ui-automation-element-properties.md)  
+ [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)  
+ [Přihlášení k odběru událostí automatizace uživatelského rozhraní](subscribe-to-ui-automation-events.md)  
+ [Registrace sestavení zprostředkovatele na straně klienta](register-a-client-side-provider-assembly.md)  
+ [Používání vlastnosti AutomationID](use-the-automationid-property.md)

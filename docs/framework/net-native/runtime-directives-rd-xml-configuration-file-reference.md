@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7545e1d7079664fd8706bdddac2ff3c8ebc27c7f
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: adfc0ae6d9bdae333daacee525c7775acd5a8029
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988293"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049142"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
 
@@ -37,35 +37,35 @@ Soubor direktiv modulu runtime (. Rd. XML) je konfigurační soubor XML, který 
 
 Soubor direktiv modulu runtime používá `http://schemas.microsoft.com/netfx/2013/01/metadata` obor názvů.
 
-Kořenový element je element [direktivy](../../../docs/framework/net-native/directives-element-net-native.md) . Může obsahovat nula nebo více prvků [knihovny](../../../docs/framework/net-native/library-element-net-native.md) a nula nebo jeden prvek [aplikace](../../../docs/framework/net-native/application-element-net-native.md) , jak je znázorněno v následující struktuře. Atributy prvku [aplikace](../../../docs/framework/net-native/application-element-net-native.md) mohou definovat zásady reflexe modulu runtime v rámci aplikace nebo mohou sloužit jako kontejner pro podřízené prvky. Element [Library (knihovna](../../../docs/framework/net-native/library-element-net-native.md) ) je na druhé straně jednoduchý kontejner. Podřízené položky prvků [aplikace](../../../docs/framework/net-native/application-element-net-native.md) a [knihovny](../../../docs/framework/net-native/library-element-net-native.md) definují typy, metody, pole, vlastnosti a události, které jsou k dispozici pro reflexi.
+Kořenový element je element [direktivy](directives-element-net-native.md) . Může obsahovat nula nebo více prvků [knihovny](library-element-net-native.md) a nula nebo jeden prvek [aplikace](application-element-net-native.md) , jak je znázorněno v následující struktuře. Atributy prvku [aplikace](application-element-net-native.md) mohou definovat zásady reflexe modulu runtime v rámci aplikace nebo mohou sloužit jako kontejner pro podřízené prvky. Element [Library (knihovna](library-element-net-native.md) ) je na druhé straně jednoduchý kontejner. Podřízené položky prvků [aplikace](application-element-net-native.md) a [knihovny](library-element-net-native.md) definují typy, metody, pole, vlastnosti a události, které jsou k dispozici pro reflexi.
 
-Pro referenční informace vyberte prvky z následující struktury nebo si prohlédněte [elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md). V následující hierarchii se tři tečky označí rekurzivní strukturu. Informace v závorkách označují, zda je tento prvek volitelný nebo vyžadovaný, a pokud je použit, kolik instancí (jedna nebo mnoho) je povoleno.
+Pro referenční informace vyberte prvky z následující struktury nebo si prohlédněte [elementy direktivy modulu runtime](runtime-directive-elements.md). V následující hierarchii se tři tečky označí rekurzivní strukturu. Informace v závorkách označují, zda je tento prvek volitelný nebo vyžadovaný, a pokud je použit, kolik instancí (jedna nebo mnoho) je povoleno.
 
-[Direktivy](../../../docs/framework/net-native/directives-element-net-native.md) [1:1] [aplikace](../../../docs/framework/net-native/application-element-net-native.md) [0:1] [sestavení](../../../docs/framework/net-native/assembly-element-net-native.md) [0: M] [obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: m]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Podtypy](../../../docs/framework/net-native/subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Metoda](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Parametr](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Pole](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Událost](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Parametr](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Pole](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Událost](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [Knihovna](../../../docs/framework/net-native/library-element-net-native.md) [0: M] [Sestavení](../../../docs/framework/net-native/assembly-element-net-native.md) [0: M] [Obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Podtypy](../../../docs/framework/net-native/subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Metoda](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Pole](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Událost](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
-[Metoda](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Pole](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Událost](../../../docs/framework/net-native/event-element-net-native.md) [0: M]
+[Direktivy](directives-element-net-native.md) [1:1] [aplikace](application-element-net-native.md) [0:1] [sestavení](assembly-element-net-native.md) [0: M] [obor názvů](namespace-element-net-native.md) [0: m]. . .
+[Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Obor názvů](namespace-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+[Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Typ](type-element-net-native.md) [0: M] [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: M] [Metoda](method-element-net-native.md) [0: M] [Parametr](parameter-element-net-native.md) [0: M] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Metoda](method-element-net-native.md) [0: M] [Parametr](parameter-element-net-native.md) [0: M] [TypeParameter](typeparameter-element-net-native.md) [0: M] [GenericParameter](genericparameter-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [Knihovna](library-element-net-native.md) [0: M] [Sestavení](assembly-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+[Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Obor názvů](namespace-element-net-native.md) [0: M] [Obor názvů](namespace-element-net-native.md) [0: M]. . .
+[Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Typ](type-element-net-native.md) [0: M] [Podtypy](subtypes-element-net-native.md) (podtřídy obsahujícího typu) [O:1] [Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[AttributeImplies](attributeimplies-element-net-native.md) (obsahující typ je atribut) [O:1] [GenericParameter](genericparameter-element-net-native.md) [0: M] [Metoda](method-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M] [TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M] [Typ](type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](typeinstantiation-element-net-native.md) (konstruovaný obecný typ) [0: M]. . .
+[Metoda](method-element-net-native.md) [0: M] [MethodInstantiation](methodinstantiation-element-net-native.md) (konstruované obecné metody) [0: M] [Vlastnost](property-element-net-native.md) [0: M] [Pole](field-element-net-native.md) [0: M] [Událost](event-element-net-native.md) [0: M]
 
-Element [aplikace](../../../docs/framework/net-native/application-element-net-native.md) nemůže mít žádné atributy, nebo může mít atributy zásad popsané v [části direktiva a zásady modulu runtime](#Directives).
+Element [aplikace](application-element-net-native.md) nemůže mít žádné atributy, nebo může mít atributy zásad popsané v [části direktiva a zásady modulu runtime](#Directives).
 
-Element [knihovny](../../../docs/framework/net-native/library-element-net-native.md) má jediný atribut `Name`,, který určuje název knihovny nebo sestavení bez přípony souboru. Například následující prvek [knihovny](../../../docs/framework/net-native/library-element-net-native.md) se vztahuje na sestavení s názvem Extensions. dll.
+Element [knihovny](library-element-net-native.md) má jediný atribut `Name`,, který určuje název knihovny nebo sestavení bez přípony souboru. Například následující prvek [knihovny](library-element-net-native.md) se vztahuje na sestavení s názvem Extensions. dll.
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -82,15 +82,15 @@ Element [knihovny](../../../docs/framework/net-native/library-element-net-native
 
 ## <a name="runtime-directives-and-policy"></a>Direktivy a zásady modulu runtime
 
-Samotný prvek [aplikace](../../../docs/framework/net-native/application-element-net-native.md) a podřízené prvky [knihovny](../../../docs/framework/net-native/library-element-net-native.md) a prvků [aplikace](../../../docs/framework/net-native/application-element-net-native.md) expresní zásady; To znamená, že definují způsob, jakým může aplikace použít reflexi u prvku programu. Typ zásady je definován atributem elementu (například `Serialize`). Hodnota zásady je definována hodnotou atributu (například `Serialize="Required"`).
+Samotný prvek [aplikace](application-element-net-native.md) a podřízené prvky [knihovny](library-element-net-native.md) a prvků [aplikace](application-element-net-native.md) expresní zásady; To znamená, že definují způsob, jakým může aplikace použít reflexi u prvku programu. Typ zásady je definován atributem elementu (například `Serialize`). Hodnota zásady je definována hodnotou atributu (například `Serialize="Required"`).
 
-Všechny zásady určené atributem elementu se vztahují na všechny podřízené prvky, které neurčují hodnotu pro tuto zásadu. Například pokud je zásada určena prvkem [typu](../../../docs/framework/net-native/type-element-net-native.md) , tato zásada platí pro všechny obsažené typy a členy, pro které není explicitně určena zásada.
+Všechny zásady určené atributem elementu se vztahují na všechny podřízené prvky, které neurčují hodnotu pro tuto zásadu. Například pokud je zásada určena prvkem [typu](type-element-net-native.md) , tato zásada platí pro všechny obsažené typy a členy, pro které není explicitně určena zásada.
 
-Zásady, které může vyjádřit [aplikace](../../../docs/framework/net-native/application-element-net-native.md), [sestavení](../../../docs/framework/net-native/assembly-element-net-native.md), [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md), [obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md), podtypy [](../../../docs/framework/net-native/subtypes-element-net-native.md)a elementy [typu](../../../docs/framework/net-native/type-element-net-native.md) , se liší od zásad, které je možné vyjádřit pro jednotlivé členy ( [Metody](../../../docs/framework/net-native/method-element-net-native.md), [vlastnosti](../../../docs/framework/net-native/property-element-net-native.md), [pole](../../../docs/framework/net-native/field-element-net-native.md)a prvky [události](../../../docs/framework/net-native/event-element-net-native.md) ).
+Zásady, které může vyjádřit [aplikace](application-element-net-native.md), [sestavení](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [obor názvů](namespace-element-net-native.md), [podtypy](subtypes-element-net-native.md)a elementy [typu](type-element-net-native.md) , se liší od zásad, které je možné vyjádřit pro jednotlivé členy ( [Metody](method-element-net-native.md), [vlastnosti](property-element-net-native.md), [pole](field-element-net-native.md)a prvky [události](event-element-net-native.md) ).
 
 ### <a name="specifying-policy-for-assemblies-namespaces-and-types"></a>Určení zásad pro sestavení, obory názvů a typy
 
-[Aplikace](../../../docs/framework/net-native/application-element-net-native.md), [sestavení](../../../docs/framework/net-native/assembly-element-net-native.md), [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md), [obor názvů](../../../docs/framework/net-native/namespace-element-net-native.md), podtypy a elementy [typu](../../../docs/framework/net-native/type-element-net-native.md) podporují následující typy zásad: [](../../../docs/framework/net-native/subtypes-element-net-native.md)
+[Aplikace](application-element-net-native.md), [sestavení](assembly-element-net-native.md), [AttributeImplies](attributeimplies-element-net-native.md), [obor názvů](namespace-element-net-native.md), [podtypy](subtypes-element-net-native.md)a elementy [typu](type-element-net-native.md) podporují následující typy zásad:
 
 - `Activate`. Řídí přístup k konstruktorům za běhu, aby bylo možné povolit aktivaci instancí.
 
@@ -147,7 +147,7 @@ Například následující direktivy modulu runtime definují zásadu pro všech
 
 ### <a name="specifying-policy-for-members"></a>Určení zásad pro členy
 
-Prvky [Property](../../../docs/framework/net-native/property-element-net-native.md) a [Field](../../../docs/framework/net-native/field-element-net-native.md) podporují následující typy zásad:
+Prvky [Property](property-element-net-native.md) a [Field](field-element-net-native.md) podporují následující typy zásad:
 
 - `Browse`– Řídí dotazování pro informace o tomto členu, ale neumožňuje přístup k modulu runtime.
 
@@ -155,7 +155,7 @@ Prvky [Property](../../../docs/framework/net-native/property-element-net-native.
 
 - `Serialize`– Řídí přístup k členu za běhu, aby se mohly instance typů serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor. Tuto zásadu lze použít na konstruktory, pole a vlastnosti.
 
-[Metoda](../../../docs/framework/net-native/method-element-net-native.md) a prvky [události](../../../docs/framework/net-native/event-element-net-native.md) podporují následující typy zásad:
+[Metoda](method-element-net-native.md) a prvky [události](event-element-net-native.md) podporují následující typy zásad:
 
 - `Browse`– Řídí dotazování pro informace o tomto členu, ale nepovoluje přístup za běhu.
 
@@ -173,9 +173,9 @@ Prvky [Property](../../../docs/framework/net-native/property-element-net-native.
 
 ## <a name="runtime-directives-file-semantics"></a>Sémantika souboru direktiv modulu runtime
 
-Zásady lze definovat současně pro elementy vyšší úrovně i na nižší úrovni. Například zásada může být definována pro sestavení a pro některé typy obsažené v tomto sestavení. Pokud není určitý element na nižší úrovni reprezentován, zdědí zásady jeho nadřazeného objektu. Například pokud `Assembly` je prvek přítomen, ale `Type` prvky nejsou, zásady zadané v `Assembly` elementu se vztahují na každý typ v sestavení. U stejného prvku programu lze také použít více prvků. Například samostatné prvky [sestavení](../../../docs/framework/net-native/assembly-element-net-native.md) mohou definovat stejný prvek zásad pro stejné sestavení odlišně. V následujících částech se dozvíte, jak se v těchto případech vyřeší zásada pro konkrétní typ.
+Zásady lze definovat současně pro elementy vyšší úrovně i na nižší úrovni. Například zásada může být definována pro sestavení a pro některé typy obsažené v tomto sestavení. Pokud není určitý element na nižší úrovni reprezentován, zdědí zásady jeho nadřazeného objektu. Například pokud `Assembly` je prvek přítomen, ale `Type` prvky nejsou, zásady zadané v `Assembly` elementu se vztahují na každý typ v sestavení. U stejného prvku programu lze také použít více prvků. Například samostatné prvky [sestavení](assembly-element-net-native.md) mohou definovat stejný prvek zásad pro stejné sestavení odlišně. V následujících částech se dozvíte, jak se v těchto případech vyřeší zásada pro konkrétní typ.
 
-[Typ](../../../docs/framework/net-native/type-element-net-native.md) nebo prvek [metody](../../../docs/framework/net-native/method-element-net-native.md) obecného typu nebo metody aplikuje zásady na všechny instance, které nemají vlastní zásady. Například `Type` element, který určuje zásadu pro <xref:System.Collections.Generic.List%601> , platí pro všechny vytvořené instance tohoto obecného typu, pokud není přepsán pro konkrétní konstruovaný typ (například a `List<Int32>`) pomocí `TypeInstantiation` prvku. V opačném případě elementy definují zásady pro prvek program s názvem.
+[Typ](type-element-net-native.md) nebo prvek [metody](method-element-net-native.md) obecného typu nebo metody aplikuje zásady na všechny instance, které nemají vlastní zásady. Například `Type` element, který určuje zásadu pro <xref:System.Collections.Generic.List%601> , platí pro všechny vytvořené instance tohoto obecného typu, pokud není přepsán pro konkrétní konstruovaný typ (například a `List<Int32>`) pomocí `TypeInstantiation` prvku. V opačném případě elementy definují zásady pro prvek program s názvem.
 
 Pokud je prvek dvojznačný, modul hledá shody a pokud najde přesnou shodu, bude ho používat. Pokud najde více shod, dojde k upozornění nebo chybě.
 
@@ -411,9 +411,9 @@ Použití jedné z těchto zásad na typ umožňuje serializovat typ pomocí odp
 
 Tyto zásady nemají žádný vliv na metody nebo pole.
 
-Další informace najdete v části "rozdíly v Serializacích" v tématu [migrace aplikace pro Windows Store na .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
+Další informace najdete v části "rozdíly v Serializacích" v tématu [migrace aplikace pro Windows Store na .NET Native](migrating-your-windows-store-app-to-net-native.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)
+- [Reflexe a .NET Native](reflection-and-net-native.md)

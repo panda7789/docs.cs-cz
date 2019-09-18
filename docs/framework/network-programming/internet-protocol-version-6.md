@@ -8,57 +8,57 @@ helpviewer_keywords:
 - Internet Protocol version 6, improvements
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
-ms.openlocfilehash: 0851ad42cd5ce2dd6b49ad7656479d5237fd5874
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 367db4fa4e585d6066009dbd1afacb154829319a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647348"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047881"
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IP (Internet Protocol) verze 6
-Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťové vrstvy z Internetu. Protokol IPv6 je navržená k řešení mnoha problémů je aktuální verze sady Internet Protocol (označují se termínem IPv4) s ohledem na plnění vyčerpávání, zabezpečení, automatickou konfiguraci, rozšíření a tak dále. Protokol IPv6 se rozšiřují možnosti Internetu povolit nové typy aplikací, jako jsou třeba aplikace peer-to-peer a mobilní. Toto jsou hlavní problémy aktuální protokolu IPv4:  
+Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťovou vrstvu Internetu. Protokol IPv6 je navržený tak, aby vyřešil mnohé z problémů aktuální verze Internet Protocol sady (označované jako IPv4) s ohledem na vyčerpání adres, zabezpečení, automatickou konfiguraci, rozšiřitelnost atd. Protokol IPv6 rozšiřuje možnosti Internetu, aby umožňoval nové typy aplikací, včetně peer-to-peer a mobilní aplikace. V následujícím seznamu jsou uvedené hlavní problémy s aktuálním protokolem IPv4:  
   
-- Rychlé vyčerpání adresního prostoru.  
+- Rychlá vyčerpání adresního prostoru.  
   
-     To vedlo k využívání síťových adres (NAT), které mapují více privátních adres na jednu veřejnou IP adresu. Hlavní problémy, které vytvořil tento mechanismus zpracování režijní náklady a nedostupnosti začátku do konce.  
+     To vedlo k použití překladatelů síťových adres (NAT), které mapují několik privátních adres na jednu veřejnou IP adresu. Hlavními problémy vytvořenými tímto mechanismem jsou režie zpracování a neexistují kompletní připojení.  
   
-- Chybějící podpora hierarchie.  
+- Nedostatečná podpora hierarchie.  
   
-     Z důvodu jeho vlastní třídy předdefinovaného organizace nemá IPv4 true hierarchické podpory. Není možné strukturovat IP adres tak, aby skutečně mapy topologie sítě. Tato chyba zásadní návrh vytvoří potřebné pro velké tabulky směrování k poskytování IPv4 paketů do jakéhokoli umístění na Internetu.  
+     Vzhledem k předdefinované organizaci vaší organizace nemá protokol IPv4 true hierarchickou podporu. Není možné strukturovat IP adresy způsobem, který skutečně mapuje topologii sítě. Tato zásadní návrhová chyba vytvoří potřebu rozsáhlých směrovacích tabulek pro doručování paketů IPv4 do libovolného umístění v Internetu.  
   
-- Konfigurace složité sítě.  
+- Složitá konfigurace sítě.  
   
-     S podporou protokolu IPv4, musí být adresy staticky přiřadit nebo pomocí protokolu konfigurace, jako je DHCP. V ideálním případě by hostitelé nemusíte spoléhat na správu infrastruktury DHCP. Místo toho by moct konfigurovat sami podle segmentu sítě, ve které se nacházejí.  
+     S protokolem IPv4 musí být adresy přiřazeny staticky nebo pomocí konfiguračního protokolu, jako je například DHCP. V ideálním případě by se hostitelé neměli spoléhat na správu infrastruktury DHCP. Místo toho by se daly nakonfigurovat na základě segmentu sítě, ve kterém se nacházejí.  
   
-- Chybějící integrované ověřování a zachováním důvěrnosti.  
+- Chybí integrované ověřování a důvěrnost.  
   
-     IPv4 nevyžaduje podporu pro každý použitý mechanizmus, který poskytuje ověřování nebo výměnu dat šifrování. Tím se změní s protokolem IPv6. Internet Protocol security (IPSec) je požadavek na podporu IPv6.  
+     Protokol IPv4 nevyžaduje podporu žádného mechanismu, který poskytuje ověřování nebo šifrování vyměňovaných dat. Tato změna se projeví v protokolu IPv6. Protokol IPSec (Internet Protocol Security) je požadavek na podporu IPv6.  
   
- Nová sada protokolů musí splňovat základní požadavky na následující:  
+ Nová sada protokolů musí splňovat následující základní požadavky:  
   
-- Ve velkém měřítku směrování a adresování s nízkou režií.  
+- Velký rozsah směrování a adresování s nízkou režií.  
   
-- Automatická konfigurace pro připojení různých situacích.  
+- Automatická konfigurace v různých situacích připojení.  
   
-- Integrované ověřování a zachováním důvěrnosti.  
+- Integrované ověřování a důvěrnost.  
   
- Další informace najdete v tématu [adresování IPv6](../../../docs/framework/network-programming/ipv6-addressing.md), [směrování IPv6](../../../docs/framework/network-programming/ipv6-routing.md), [automatickou konfiguraci protokolu IPv6](../../../docs/framework/network-programming/ipv6-auto-configuration.md), [povolení a zákaz IPv6](../../../docs/framework/network-programming/enabling-and-disabling-ipv6.md), a [Jak: Upravte konfigurační soubor počítače na povolení podpory IPv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md).  
+ Další informace najdete v tématech [adresování IPv6](ipv6-addressing.md), [směrování IPv6](ipv6-routing.md), [Automatická konfigurace protokolu IPv6](ipv6-auto-configuration.md), [povolení a zakázání protokolu IPv6](enabling-and-disabling-ipv6.md)a [postupy: Úpravou konfiguračního souboru počítače povolte podporu](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)protokolu IPv6.  
   
 ## <a name="references"></a>Odkazy  
- Toto jsou vybrané dokumenty RFC, na které narazíte na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu:  
+ V následující části jsou vybrané dokumenty RFC, které najdete na webu [IETF (Internet Engineering Task Force)](https://www.ietf.org/) :  
   
-- RFC. 1287, směrem k architektuře budoucí Internet.  
+- RFC 1287, směrem k budoucí internetové architektuře.  
   
-- RFC 1454 porovnání návrhy na další verzi protokolu IP.  
+- RFC 1454, porovnání návrhů pro další verzi protokolu IP.  
   
 - RFC 2373, Architektura adresování IP verze 6.  
   
-- RFC 2374 formátu agregovatelné globální adresy jednosměrového vysílání IPv6.  
+- RFC 2374: globální formát adresy jednosměrového vysílání IPv6, který je agregován.  
   
- Můžete také najít informace související s IPv6 na [IP verze 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29).  
+ Informace související s protokolem IPv6 najdete také v protokolu [IP verze 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázka sokety IPv6](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)
-- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
-- [Sokety](../../../docs/framework/network-programming/sockets.md)
+- [Ukázka soketů IPv6](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)
+- [Ukázky programování sítě](network-programming-samples.md)
+- [Sokety](sockets.md)

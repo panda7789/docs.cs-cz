@@ -7,28 +7,28 @@ helpviewer_keywords:
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec83bfd08277c79f15904d50a85e43cc61ecd527
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 93a0271c521de6e390e323d92e93a5e7bf94444f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894708"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046727"
 ---
 # <a name="clr-etw-providers"></a>Poskytovatelé CLR ETW
 Modul CLR (Common Language Runtime) má dva zprostředkovatele: poskytovatele modulu runtime a poskytovatele doběhu.  
   
  Zprostředkovatel modulu runtime vyvolává události v závislosti na tom, která klíčová slova (kategorie událostí) jsou povolena. Například můžete shromáždit události zavaděče povolením `LoaderKeyword` klíčového slova.  
   
- Události trasování událostí pro Windows (ETW) jsou protokolovány do souboru s příponou. ETL, která může být později zpracována v souborech hodnot oddělených čárkou (. csv) podle potřeby. Informace o tom, jak převést soubor. ETL na soubor. csv, najdete v tématu [řízení .NET Framework protokolování](../../../docs/framework/performance/controlling-logging.md).  
+ Události trasování událostí pro Windows (ETW) jsou protokolovány do souboru s příponou. ETL, která může být později zpracována v souborech hodnot oddělených čárkou (. csv) podle potřeby. Informace o tom, jak převést soubor. ETL na soubor. csv, najdete v tématu [řízení .NET Framework protokolování](controlling-logging.md).  
   
 ## <a name="the-runtime-provider"></a>Zprostředkovatel modulu runtime  
  Poskytovatel modulu runtime je hlavním zprostředkovatelem modulu CLR ETW.  
   
  Identifikátor GUID zprostředkovatele modulu runtime CLR je e13c0d23-CCBC-4e12-931B-d9cc2eee27e4.  
   
- Příklady, jak pomocí běžně dostupných nástrojů protokolovat a zobrazovat události CLR ETW, najdete v tématu [řízení .NET Framework protokolování](../../../docs/framework/performance/controlling-logging.md).  
+ Příklady, jak pomocí běžně dostupných nástrojů protokolovat a zobrazovat události CLR ETW, najdete v tématu [řízení .NET Framework protokolování](controlling-logging.md).  
   
- Kromě používání klíčových slov `LoaderKeyword`, jako je například, možná budete muset povolit klíčová slova pro protokolování událostí, které mohou být vyvolány příliš často. Klíčová`EndEnumerationKeyword` slova aumožňujítytoudálostiajsoushrnutyvklíčovýchslovechaklíčíchrozhraníCLRprotrasováníaúrovně.`StartEnumerationKeyword` [](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
+ Kromě používání klíčových slov `LoaderKeyword`, jako je například, možná budete muset povolit klíčová slova pro protokolování událostí, které mohou být vyvolány příliš často. Klíčová`EndEnumerationKeyword` slova aumožňujítytoudálostiajsoushrnutyvklíčovýchslovechaklíčíchrozhraníCLRprotrasováníaúrovně.`StartEnumerationKeyword` [](clr-etw-keywords-and-levels.md)  
   
 ## <a name="the-rundown-provider"></a>Poskytovatel doběhu  
  Pro určité účely zvláštního použití musí být poskytovatel doběhu zapnutý. Nicméně pro většinu uživatelů by měl stačit poskytovatel modulu runtime.  
@@ -93,4 +93,4 @@ Modul CLR (Common Language Runtime) má dva zprostředkovatele: poskytovatele mo
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](etw-events-in-the-common-language-runtime.md)

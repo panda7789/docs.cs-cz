@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec97861a9d748767199da3e1fb7f53361c3a48ee
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 867157b329218b79c8cc1255b2158bbe83666531
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966126"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045366"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
 Některé kódy knihoven musí volat do nespravovaného kódu (například rozhraní API nativního kódu, jako je Win32). Vzhledem k tomu, že to znamená mimo hranice zabezpečení pro spravovaný kód, je vyžadována nezbytná opatrnost. Pokud je váš kód neutrální z hlediska zabezpečení, musí mít váš kód i jakýkoli kód, který ho volá, oprávnění nespravovaného <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> kódu (<xref:System.Security.Permissions.SecurityPermission> se zadaným příznakem).  
   
- Je však často nevhodné, aby váš volající měl taková výkonná oprávnění. V takových případech může být důvěryhodný kód, podobně jako spravovaný obálka nebo kód knihovny popsané v tématu [zabezpečení kódu obálky](../../../docs/framework/misc/securing-wrapper-code.md). Pokud je základní funkce nespravovaného kódu zcela bezpečná, dá se přímo zveřejnit; v opačném případě se jako první vyžaduje vhodná kontrolní oprávnění (poptávka).  
+ Je však často nevhodné, aby váš volající měl taková výkonná oprávnění. V takových případech může být důvěryhodný kód, podobně jako spravovaný obálka nebo kód knihovny popsané v tématu [zabezpečení kódu obálky](../misc/securing-wrapper-code.md). Pokud je základní funkce nespravovaného kódu zcela bezpečná, dá se přímo zveřejnit; v opačném případě se jako první vyžaduje vhodná kontrolní oprávnění (poptávka).  
   
  Když váš kód volá do nespravovaného kódu, ale nechcete, aby volající měli oprávnění pro přístup k nespravovanému kódu, musíte toto právo uplatnit. Kontrolní výraz blokuje procházení zásobníku na vašem snímku. Musíte mít pozor, abyste v tomto procesu nevytvořili bezpečnostní otvor. Obvykle to znamená, že musíte vyžadovat vhodné oprávnění volajících a potom použít nespravovaný kód k provedení pouze toho, co toto oprávnění povoluje a ještě více. V některých případech (například funkce získat denní čas) může být nespravovaný kód přímo vystaven volajícím bez jakýchkoli kontrol zabezpečení. V každém případě musí jakýkoliv kód, který výrazy vyhodnotit, být zodpovědný za zabezpečení.  
   

@@ -11,24 +11,24 @@ helpviewer_keywords:
 ms.assetid: b830444a-5003-49fe-b89b-b8bee22f7b1a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a7fe0b33bbd77143da6d2f4a26b170e4d7afe1fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0883849eee12922601e50c2337bb0048d77cab68
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874104"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052379"
 ---
 # <a name="pinvokelog-mda"></a>pInvokeLog – pomocník spravovaného ladění (MDA)
-`pInvokeLog` Pomocníka spravovaného ladění (MDA) se aktivuje pro každou jedinečnou platformu vyvolání podpis použít během provádění.  
+Pomocník `pInvokeLog` spravovaného ladění (MDA) je aktivován pro každou jedinečnou signaturu vyvolání, která se používá při provádění.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Zprávu s upozorněním na platformu vyvolání podpis použít během provádění.  
+ Zpráva oznamující, že signatura vyvolání platformy použitá při spuštění  
   
-## <a name="configuration"></a>Konfigurace  
- Každý filtry element shoda soubory .dll, na kterou platformu vyvolání volání jsou provedeny.  
+## <a name="configuration"></a>Konfiguraci  
+ Každý element Match filtruje soubory. dll, na které se volají volání volání platformy.  
   
 ```xml  
 <mdaConfig>  
@@ -45,5 +45,5 @@ ms.locfileid: "61874104"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Používání nespravovaných funkcí DLL](../interop/consuming-unmanaged-dll-functions.md)

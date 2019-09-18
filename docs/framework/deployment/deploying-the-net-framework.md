@@ -7,35 +7,35 @@ helpviewer_keywords:
 ms.assetid: 19df26c5-4008-461d-a7d7-18f4506312d2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 096c818c1103835110478953d0a0d9082b33569e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6906ccf5b639d6b90b921b5d471aa723aeb4da78
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61873714"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052172"
 ---
 # <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework
-Tato část dokumentace k rozhraní .NET Framework obsahuje informace pro vývojáře, kteří chtějí nainstalovat rozhraní .NET Framework pomocí svých aplikací a správce, kteří chtějí nasadit rozhraní .NET Framework přes síť. Také popisuje aktivace a restartujte problémy spojené s nasazením a jak monitorovat průběh instalace rozhraní .NET Framework.  
+V této části dokumentace .NET Framework najdete informace pro vývojáře, kteří chtějí instalovat .NET Framework s aplikacemi a správci, kteří chtějí nasadit .NET Framework napříč sítí. Popisuje také problémy s aktivací a restartováním související s nasazením a postup sledování průběhu instalace .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
- Vysvětluje, jak vývojáři můžete nainstalovat rozhraní .NET Framework na jejich uživatele, počítače s jejich aplikacemi.  
+ [Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)  
+ Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.  
   
- [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
- Vysvětluje, jak může správce systému můžete nasadit rozhraní .NET Framework a jeho systémové závislosti napříč sítí pomocí System Center Configuration Manageru (SCCM).  
+ [Příručka nasazení pro administrátory](guide-for-administrators.md)  
+ Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).  
   
- [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
- Popisuje správce restartování se zabránilo restartuje kdykoli je to možné a vysvětluje, jak aplikace, které instalace rozhraní .NET Framework můžete využívat jejich výhod.  
+ [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](reducing-system-restarts.md)  
+ Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.  
   
- [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)  
- Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.  
+ [Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](how-to-get-progress-from-the-dotnet-installer.md)  
+ V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.  
   
- [Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)  
- Vysvětluje, co se stane, když aplikace rozhraní .NET Framework požaduje verzi CLR, která je neplatná nebo není nainstalovaná na počítači uživatele, jak tyto chyby vyřešit a jak řídit zobrazí uživateli chybovou zprávu.  
+ [Chyby inicializace .NET Framework: Správa prostředí pro uživatele](initialization-errors-managing-the-user-experience.md)  
+ Vysvětluje, co se stane, když aplikace .NET Framework vyžaduje verzi CLR, která je neplatná nebo není nainstalovaná v počítači uživatele, jak tyto chyby vyřešit a jak ovládat chybovou zprávu zobrazenou uživateli.  
   
- [Postupy: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
- Vysvětluje, jak lze zobrazit a ladění CLR aktivace protokoly k řešení potíží, které můžete narazit při získávání aplikace na spouštění se správnou verzí modulu CLR.  
+ [Postupy: Ladění problémů s aktivací CLR](how-to-debug-clr-activation-issues.md)  
+ Vysvětluje, jak můžete zobrazit a ladit protokoly aktivace CLR pro řešení problémů, ke kterým může dojít při nastavování aplikace pro spuštění se správnou verzí modulu CLR.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce vývojem](../../../docs/framework/development-guide.md)
+- [Průvodce vývojem](../development-guide.md)

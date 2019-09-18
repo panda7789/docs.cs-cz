@@ -10,33 +10,33 @@ helpviewer_keywords:
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3cb310dc6d786c3c7711f4c194c6623324c777dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3167abd0c263a0a27573778d6f243bc824306a9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642864"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051691"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 
-Volání funkcí exportovaných z nespravovaná knihovna, vyžaduje aplikaci rozhraní .NET Framework prototypu funkce ve spravovaném kódu, který představuje nespravované funkci. K vytvoření prototypu, který umožňuje platformu vyvolání zařazování dat správně, musíte provést následující:
+Chcete-li volat funkce exportované z nespravované knihovny, aplikace .NET Framework vyžaduje prototyp funkce ve spravovaném kódu, který představuje nespravovanou funkci. Chcete-li vytvořit prototyp, který umožňuje vyvolání platformy pro správné zařazování dat, je nutné provést následující:
 
-- Použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut statické funkce nebo metody ve spravovaném kódu.
+- <xref:System.Runtime.InteropServices.DllImportAttribute> Použijte atribut pro statickou funkci nebo metodu ve spravovaném kódu.
 
 - Nahraďte spravované datové typy pro nespravované datové typy.
 
-Podle dokumentace dodané s nespravovanou funkci můžete použít k vytvoření odpovídající spravovaný prototyp použitím atribut s jeho volitelná pole a nahrazování spravované datové typy pro nespravované typy. Pokyny o tom, jak aplikovat <xref:System.Runtime.InteropServices.DllImportAttribute>, naleznete v tématu [používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md).
+Dokumentaci dodanou s nespravovanou funkcí můžete použít k vytvoření ekvivalentního spravovaného prototypu použitím atributu s jeho nepovinnými poli a nahrazením spravovaných datových typů pro nespravované typy. Pokyny k použití <xref:System.Runtime.InteropServices.DllImportAttribute>naleznete v tématu [spotřebovávání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md).
 
-Tato část obsahuje ukázky, které ukazují, jak vytvářet prototypy spravované funkce pro předávání argumentů do a z funkcí exportovaných knihovnou nespravovaných knihoven příjem návratové hodnoty. Ukázky také ukazují, kdy se má použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut a <xref:System.Runtime.InteropServices.Marshal> třídy explicitně zařazování dat.
+V této části jsou uvedeny ukázky, které ukazují, jak vytvořit prototypy spravované funkce pro předávání argumentů a přijímání návratových hodnot z funkcí exportovaných nespravovanými knihovnami. Ukázky také ukazují, kdy použít <xref:System.Runtime.InteropServices.MarshalAsAttribute> atribut <xref:System.Runtime.InteropServices.Marshal> a třídu k explicitnímu zařazování dat.
 
 ## <a name="platform-invoke-data-types"></a>Datové typy vyvolání platformy
 
-V následující tabulce jsou uvedeny datové typy používané v rozhraní Windows API a funkce C-style. Mnoho nespravovaných knihoven obsahují funkce, které jako parametry předat těchto datových typů a návratových hodnot. Třetí sloupec uvádí odpovídající rozhraní .NET Framework předdefinovaného hodnotového typu nebo třídy, která používáte ve spravovaném kódu. V některých případech můžete nahradit typ stejné velikosti typu uvedené v tabulce.
+V následující tabulce jsou uvedeny datové typy používané ve funkcích rozhraní API systému Windows a ve stylu jazyka C. Mnoho nespravovaných knihoven obsahuje funkce, které tyto datové typy předají jako parametry a návratové hodnoty. Třetí sloupec uvádí odpovídající .NET Framework typ hodnoty nebo třídu, která se používá ve spravovaném kódu. V některých případech můžete nahradit typ stejné velikosti pro typ uvedený v tabulce.
 
-|Nespravovaný typ v rozhraní Windows API|Nespravovaný typ jazyka C|Spravovaného typu|Popis|
+|Nespravovaný typ v rozhraních API systému Windows|Nespravovaný typ jazyka C|Spravovaný typ|Popis|
 |--------------------------------|-------------------------------|------------------------|-----------------|
-|`VOID`|`void`|<xref:System.Void?displayProperty=nameWithType>|Použít pro funkci, která nevrací hodnotu.|
-|`HANDLE`|`void *`|<xref:System.IntPtr?displayProperty=nameWithType> Nebo <xref:System.UIntPtr?displayProperty=nameWithType>|32 bitů na 32bitové operační systémy Windows, 64 bitů v operačních systémech Windows 64-bit.|
+|`VOID`|`void`|<xref:System.Void?displayProperty=nameWithType>|Používá se pro funkci, která nevrací hodnotu.|
+|`HANDLE`|`void *`|<xref:System.IntPtr?displayProperty=nameWithType> Nebo <xref:System.UIntPtr?displayProperty=nameWithType>|32 bitů v systémech Windows 32, 64 bitů v systémech Windows 64 v 16bitovém operačním systému Windows.|
 |`BYTE`|`unsigned char`|<xref:System.Byte?displayProperty=nameWithType>|8 bitů|
 |`SHORT`|`short`|<xref:System.Int16?displayProperty=nameWithType>|16 bitů|
 |`WORD`|`unsigned short`|<xref:System.UInt16?displayProperty=nameWithType>|16 bitů|
@@ -46,20 +46,20 @@ V následující tabulce jsou uvedeny datové typy používané v rozhraní Wind
 |`BOOL`|`long`|<xref:System.Boolean?displayProperty=nameWithType> Nebo <xref:System.Int32?displayProperty=nameWithType>|32 bitů|
 |`DWORD`|`unsigned long`|<xref:System.UInt32?displayProperty=nameWithType>|32 bitů|
 |`ULONG`|`unsigned long`|<xref:System.UInt32?displayProperty=nameWithType>|32 bitů|
-|`CHAR`|`char`|<xref:System.Char?displayProperty=nameWithType>|Uspořádání s ANSI.|
-|`WCHAR`|`wchar_t`|<xref:System.Char?displayProperty=nameWithType>|Vyplnění pomocí kódování Unicode.|
-|`LPSTR`|`char *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|
-|`LPCSTR`|`const char *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Uspořádání s ANSI.|
-|`LPWSTR`|`wchar_t *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Vyplnění pomocí kódování Unicode.|
-|`LPCWSTR`|`const wchar_t *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Vyplnění pomocí kódování Unicode.|
+|`CHAR`|`char`|<xref:System.Char?displayProperty=nameWithType>|Upravte pomocí ANSI.|
+|`WCHAR`|`wchar_t`|<xref:System.Char?displayProperty=nameWithType>|Upravte pomocí kódování Unicode.|
+|`LPSTR`|`char *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Upravte pomocí ANSI.|
+|`LPCSTR`|`const char *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Upravte pomocí ANSI.|
+|`LPWSTR`|`wchar_t *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Upravte pomocí kódování Unicode.|
+|`LPCWSTR`|`const wchar_t *`|<xref:System.String?displayProperty=nameWithType> Nebo <xref:System.Text.StringBuilder?displayProperty=nameWithType>|Upravte pomocí kódování Unicode.|
 |`FLOAT`|`float`|<xref:System.Single?displayProperty=nameWithType>|32 bitů|
 |`DOUBLE`|`double`|<xref:System.Double?displayProperty=nameWithType>|64 bitů|
 
-Pro odpovídající typy v jazyce Visual Basic C#a C++, naleznete v tématu [Úvod do knihovny tříd rozhraní .NET Framework](../../standard/class-library-overview.md#system-namespace).
+Odpovídající typy v Visual Basic, C#a C++naleznete v tématu [Úvod do knihovny tříd .NET Framework](../../standard/class-library-overview.md#system-namespace).
 
 ## <a name="pinvokelibdll"></a>PinvokeLib.dll
 
-Následující kód definuje funkce knihovny poskytované Pinvoke.dll. Mnoho vzorků popsané v této části volání této knihovny.
+Následující kód definuje funkce knihovny, které poskytuje PInvoke. dll. Mnoho ukázek popsaných v této části volá tuto knihovnu.
 
 ### <a name="example"></a>Příklad
 

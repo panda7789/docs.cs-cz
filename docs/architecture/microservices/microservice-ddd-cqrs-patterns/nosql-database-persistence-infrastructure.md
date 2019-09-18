@@ -2,12 +2,12 @@
 title: Použití databází NoSQL jako infrastruktury trvalosti
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení použití databází NoSql obecně a Azure Cosmos DB zejména jako možnosti implementace trvalého využití.
 ms.date: 10/08/2018
-ms.openlocfilehash: 7a8573f8f668a5b75f50acde57a2f4c42ce4d189
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: d96d72fe675dfa830029e4311f2cf165a305c328
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374029"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039944"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
@@ -280,7 +280,7 @@ services:
 
 ```
 
-Proměnná `ConnectionString` prostředí je vyřešena tímto způsobem: `.env` Pokud je `ESHOP_AZURE_COSMOSDB` globální proměnná definovaná v souboru s připojovacím řetězcem Azure Cosmos DB, použije se pro přístup k databázi Azure Cosmos DB v cloudu. Pokud není definován, bude přebírat hodnotu mongodb://nosql.data a používat kontejner vývojového MongoDB.
+Proměnná `ConnectionString` prostředí je vyřešena tímto způsobem: `.env` Pokud je `ESHOP_AZURE_COSMOSDB` globální proměnná definovaná v souboru s připojovacím řetězcem Azure Cosmos DB, použije se pro přístup k databázi Azure Cosmos DB v cloudu. Pokud není definován, bude přebírat `mongodb://nosql.data` hodnotu a používat MongoDB kontejner pro vývoj.
 
 Následující kód ukazuje `.env` soubor s globální proměnnou prostředí Azure Cosmos DB připojovací řetězec, jak je implementováno v eShopOnContainers:
 
@@ -324,7 +324,7 @@ services:
   <https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction>
 
 - **Azure Cosmos DB: Sestavení webové aplikace API v MongoDB s využitím .NET a Azure Portal**  \
-  [https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet )
+  <https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet>
 
 - **Použití emulátoru Azure Cosmos DB pro místní vývoj a testování**  \
   <https://docs.microsoft.com/azure/cosmos-db/local-emulator>

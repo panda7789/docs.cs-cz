@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: df2a99b6fe288cfa8b8a5d60bb127849323ed3a9
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: e5ff40d8413acf64e7a8a129a7b268f58780d591
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545318"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053474"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Kurz: Vytvoření aplikace služby systému Windows
 
@@ -28,7 +28,7 @@ Začněte tím, že vytvoříte projekt a nastavíte hodnoty požadované pro sp
 
 2. Přejděte na a vyberte šablonu projektu **služba systému Windows (.NET Framework)** . Pokud ho chcete najít, rozbalte položku **nainstalované** a **vizuál C#**  nebo **Visual Basic**a pak vyberte **Desktop Windows**. Případně zadejte do vyhledávacího pole v pravém horním rohu *službu Windows* a stiskněte klávesu **ENTER**.
 
-   ![Šablona služby systému Windows v dialogovém okně Nový projekt v aplikaci Visual Studio](media/new-project-dialog.png)
+   ![Šablona služby systému Windows v dialogovém okně Nový projekt v aplikaci Visual Studio](./media/new-project-dialog.png)
 
    > [!NOTE]
    > Pokud nevidíte šablonu **služby systému Windows** , bude pravděpodobně nutné nainstalovat úlohu **vývoj desktopových** aplikací pro .NET:
@@ -51,11 +51,11 @@ Přejmenujte službu z **Service1** na **MyNewService**.
 
 2. V místním okně vyberte **Ano**.
 
-    ![Přejmenovat výzvu](media/windows-service-rename.png "Výzva k přejmenování služby systému Windows")
+    ![Přejmenovat výzvu](./media/windows-service-rename.png "Výzva k přejmenování služby systému Windows")
 
 3. Na kartě **Návrh** v místní nabídce vyberte možnost **vlastnosti** . V okně **vlastnosti** změňte hodnotu **ServiceName** na *MyNewService*.
 
-    ![Vlastnosti služby](media/windows-service-properties.png "Vlastnosti služby systému Windows")
+    ![Vlastnosti služby](./media/windows-service-properties.png "Vlastnosti služby systému Windows")
 
 4. V nabídce **soubor** vyberte **Uložit vše** .
 
@@ -340,9 +340,9 @@ Před spuštěním služby systému Windows je nutné ji nainstalovat, která ji
 
      Tento text se zobrazí ve sloupci **Popis** v okně **služby** a popisuje službu pro uživatele.
 
-    ![Popis služby v okně služby.](media/windows-service-description.png "Popis služby")
+    ![Popis služby v okně služby.](./media/windows-service-description.png "Popis služby")
 
-6. Přidejte text do <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnosti. Například zobrazované *jméno MyNewService*.
+6. Přidejte text do <xref:System.ServiceProcess.ServiceInstaller.DisplayName%2A> vlastnosti. Například *zobrazované jméno MyNewService*.
 
      Tento text se zobrazí ve sloupci **Zobrazovaný název** v okně **služby** . Tento název se může lišit od <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnosti, což je název, který systém používá (například název, který `net start` pro příkaz použijete ke spuštění služby).
 
@@ -350,7 +350,7 @@ Před spuštěním služby systému Windows je nutné ji nainstalovat, která ji
 
 8. Až budete hotovi, okna **vlastností** by měla vypadat jako na následujícím obrázku:
 
-     ![Vlastnosti instalačního programu pro službu systému Windows](media/windows-service-installer-properties.png "Vlastnosti instalačního programu služby systému Windows")
+     ![Vlastnosti instalačního programu pro službu systému Windows](./media/windows-service-installer-properties.png "Vlastnosti instalačního programu služby systému Windows")
 
 9. V zobrazení **Návrh** pro **ProjectInstaller**zvolte **položku ServiceProcessInstaller1** pro vizuální C# projekt, nebo **položku ServiceProcessInstaller1** pro projekt Visual Basic a pak v místní nabídce zvolte **vlastnosti** . . Nastavte vlastnost na <xref:System.ServiceProcess.ServiceAccount.LocalSystem> z rozevíracího seznamu. <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>
 
@@ -497,7 +497,7 @@ Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-in
 
      Vaše služba by se měla zobrazit v seznamu **služby**zobrazená abecedně podle zobrazovaného názvu, který jste pro něj nastavili.
 
-     ![MyNewService v okně služby.](media/windowsservices-serviceswindow.PNG)
+     ![MyNewService v okně služby.](./media/windowsservices-serviceswindow.PNG)
 
 2. Službu spustíte tak, že v místní nabídce služby zvolíte možnost **Spustit** .
 
@@ -516,7 +516,7 @@ Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-in
 
 3. Vyhledejte výpis pro **myNewLog** (nebo **MyLogFile1** , pokud jste postupovali podle postupu pro přidání argumentů příkazového řádku) a rozbalte ho. Měli byste vidět položky dvou akcí (spustit a zastavit), které služba provedla.
 
-     ![Použití Prohlížeč událostí k zobrazení položek protokolu událostí](media/windows-service-event-viewer.png)
+     ![Použití Prohlížeč událostí k zobrazení položek protokolu událostí](./media/windows-service-event-viewer.png)
 
 ## <a name="clean-up-resources"></a>Vyčištění prostředků
 
@@ -534,7 +534,7 @@ Pokud už aplikaci služby systému Windows nepotřebujete, můžete ji odebrat.
 
    Pokud se služba úspěšně odinstaluje, příkaz oznámí, že vaše služba byla úspěšně odebrána. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-install-and-uninstall-services.md)služby.
 
-## <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další postup
 
 Teď, když jste vytvořili službu, můžete:
 

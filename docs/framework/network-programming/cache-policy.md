@@ -10,37 +10,37 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-ms.openlocfilehash: 33043652e11beb374843d43c9683ff4b7928eb3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d3d85ebd80f417ebd0fa0e619097e15f2a6a39b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642825"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048774"
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
-Zásady mezipaměti definuje pravidla, která se používají k určení, zda požadavek, je možné splnit pomocí kopie v mezipaměti požadovaný prostředek. Aplikace určit požadavky klienta mezipaměti na aktuálnosti, ale efektivní mezipaměti zásad se určuje podle požadavků mezipaměti klienta, požadavky na vypršení platnosti obsahu serveru a požadavky na opětovné ověření serveru. Interakce požadavky na zásady a server mezipaměti klienta vždy výsledkem nejrestriktivnější zásady ukládání do mezipaměti, abyste zajistili, že nejčerstvější obsah se vrátí do klientské aplikace.  
+Zásady mezipaměti definují pravidla, která se používají k určení, jestli je možné požadavek vyhovět pomocí kopie požadovaného prostředku v mezipaměti. Aplikace určují požadavky na mezipaměť klienta na aktuálnost, ale zásady efektivních zásad mezipaměti jsou určeny požadavky na mezipaměť klienta, požadavky na vypršení platnosti obsahu serveru a požadavky na revalidy serveru. Interakce zásad mezipaměti klienta a požadavků na server vždy vede k nejzávažnějším zásadám mezipaměti, které vám pomůžou zajistit, že se k nejnovějšímu obsahu vrátí klientská aplikace.  
   
- Zásady mezipaměti jsou založená na poloze nebo založená na čase. Zásady mezipaměti na základě umístění definuje aktuálnosti založené na požadovaný prostředek mohou být odkud položek v mezipaměti. Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí času, který prostředek se načetla, záhlaví vrátila zdroj a aktuální čas. Většina aplikací můžete použít výchozí zásady mezipaměti na základě času, který implementuje zásady ukládání do mezipaměti, zadané v dokumentu RFC 2616, k dispozici na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu.  
+ Zásady mezipaměti jsou buď založené na umístění, nebo na základě času. Zásady mezipaměti na základě umístění definují aktuálnost záznamů uložených v mezipaměti podle toho, kde se dá požadovaný prostředek považovat. Zásady mezipaměti založené na čase definují aktuálnost záznamů uložených v mezipaměti pomocí času načtení prostředku, záhlaví vrácených s prostředkem a aktuální čas. Většina aplikací může používat výchozí zásady mezipaměti založené na čase, které implementují zásady ukládání do mezipaměti uvedené v dokumentu RFC 2616, které jsou k dispozici na webu [IETF (Internet Engineering Task Force)](https://www.ietf.org/) .  
   
- Třídy jsou popsané v následující tabulce se používají k určení mezipaměti zásad.  
+ Třídy popsané v následující tabulce se používají k určení zásad mezipaměti.  
   
 |Název třídy|Popis|  
 |----------------|-----------------|  
-|<xref:System.Net.Cache.HttpRequestCachePolicy>|Představuje zásad mezipaměti podle umístění a podle času pro prostředky požadované pomocí <xref:System.Net.HttpWebRequest> objekty.|  
-|<xref:System.Net.Cache.RequestCachePolicy>|Představuje zásad mezipaměti na základě umístění nebo <xref:System.Net.Cache.RequestCacheLevel.Default> zásad mezipaměti na základě času pro prostředky požadované pomocí <xref:System.Net.WebRequest> objekty.|  
-|<xref:System.Net.Cache.HttpCacheAgeControl>|Určuje hodnoty použité k vytvoření podle času <xref:System.Net.Cache.HttpRequestCachePolicy> objekty.|  
-|<xref:System.Net.Cache.HttpRequestCacheLevel>|Určuje hodnoty použité k vytvoření podle umístění a podle času <xref:System.Net.Cache.HttpRequestCachePolicy> objekty.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Určuje hodnoty použité k vytvoření založená na poloze nebo <xref:System.Net.Cache.RequestCacheLevel.Default> podle času <xref:System.Net.Cache.RequestCachePolicy> objekty.|  
+|<xref:System.Net.Cache.HttpRequestCachePolicy>|Představuje zásady mezipaměti založené na umístění a časovou mezipaměť pro prostředky vyžádané <xref:System.Net.HttpWebRequest> pomocí objektů.|  
+|<xref:System.Net.Cache.RequestCachePolicy>|Představuje zásady mezipaměti založené na umístěních nebo <xref:System.Net.Cache.RequestCacheLevel.Default> zásady mezipaměti založené na čase pro prostředky vyžádané <xref:System.Net.WebRequest> pomocí objektů.|  
+|<xref:System.Net.Cache.HttpCacheAgeControl>|Určuje hodnoty, které slouží k vytváření objektů <xref:System.Net.Cache.HttpRequestCachePolicy> založených na čase.|  
+|<xref:System.Net.Cache.HttpRequestCacheLevel>|Určuje hodnoty používané k vytvoření <xref:System.Net.Cache.HttpRequestCachePolicy> objektů založených na poloze a času.|  
+|<xref:System.Net.Cache.RequestCacheLevel>|Určuje hodnoty používané k vytvoření <xref:System.Net.Cache.RequestCacheLevel.Default> <xref:System.Net.Cache.RequestCachePolicy> objektů založených na poloze nebo časových objektů.|  
   
- Můžete definovat zásady mezipaměti pro všechny požadavky vytvořené v aplikaci nebo pro jednotlivé požadavky. Když zadáte zásady mezipaměti na úrovni aplikace a zásad mezipaměti na úrovni požadavků, se používá žádosti o zásady. Zásady mezipaměti na úrovni aplikace můžete programově nebo prostřednictvím aplikace nebo konfigurační soubory. Další informace najdete v tématu [ \<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
+ Můžete definovat zásady mezipaměti pro všechny požadavky vytvořené aplikací nebo pro jednotlivé požadavky. Když zadáte obě zásady mezipaměti na úrovni aplikace i zásady mezipaměti na úrovni požadavků, použijí se zásady na úrovni požadavků. Zásady mezipaměti na úrovni aplikace můžete zadat programově nebo pomocí konfiguračních souborů aplikace nebo počítače. Další informace naleznete v tématu [ \<RequestCaching > element (nastavení sítě)](../configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
- Vytvoření mezipaměti zásad, musíte vytvořit objekt zásad tak, že vytvoříte instanci <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> třídy. Chcete-li zadat zásady na vyžádání, nastavte žádosti <xref:System.Net.WebRequest.CachePolicy%2A> vlastnost na objekt zásady. Při nastavování zásad úrovni aplikace prostřednictvím kódu programu, nastavte <xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A> vlastnost na objekt zásady.  
+ Chcete-li vytvořit zásadu mezipaměti, je nutné vytvořit objekt zásad vytvořením instance <xref:System.Net.Cache.RequestCachePolicy> třídy nebo. <xref:System.Net.Cache.HttpRequestCachePolicy> Chcete-li zadat zásadu na žádost, nastavte <xref:System.Net.WebRequest.CachePolicy%2A> vlastnost požadavku na objekt zásad. Při nastavování zásad na úrovni aplikace pomocí kódu programu <xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A> nastavte vlastnost na objekt zásad.  
   
- Příklady kódu, které ukazují, vytváření a používání mezipaměti zásad, najdete v části [konfiguraci ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
+ Příklady kódu, které ukazují vytváření a používání zásad mezipaměti, najdete v tématu [Konfigurace ukládání do mezipaměti v síťových aplikacích](configuring-caching-in-network-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
-- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
-- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Správa mezipaměti pro síťové aplikace](cache-management-for-network-applications.md)
+- [Zásady mezipaměti na základě místa](location-based-cache-policies.md)
+- [Zásady mezipaměti na základě času](time-based-cache-policies.md)
+- [Konfigurace mezipaměti v síťových aplikacích](configuring-caching-in-network-applications.md)

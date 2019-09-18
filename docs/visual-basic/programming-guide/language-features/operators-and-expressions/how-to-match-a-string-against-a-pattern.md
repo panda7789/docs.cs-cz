@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Porovnání řetězce se vzorem (Visual Basic)'
+title: 'Postupy: Odpovídá řetězci na vzor (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - comparison operators [Visual Basic], comparing strings
@@ -13,71 +13,73 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-ms.openlocfilehash: e5eb6bd5b5e7b2f0c3692c0fa2431a0b8f295299
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0bac0869d9e319071abb31dd0576edf0450aa198
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649714"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054157"
 ---
-# <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
-Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) vyhovuje vzoru, můžete použít [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
-  
- `Like` má dva operandy. Levý operand je výraz řetězce a pravý operand je řetězec obsahující vzor se použije k porovnání. `Like` Vrátí `Boolean` hodnotu, která udává, zda splňuje řetězcového výrazu vzoru.  
-  
- Odpovídá každému znaku v řetězci výraz proti konkrétní znak, zástupných znaků, seznam znak nebo rozsah znaků. Pozice specifikace v řetězci vzoru odpovídají pozic znaků, které mají být obsažena ve řetězcového výrazu.  
-  
-### <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>Odpovídá znaku v řetězcový výraz proti konkrétní znak  
-  
-- Umístěte na konkrétní znak přímo řetězec vzoru. Některé speciální znaky musí být uzavřen v závorkách (`[ ]`). Další informace najdete v tématu [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
-  
-     Následující příklad testuje, jestli `myString` obsahuje přesně jeden znak `H`.  
-  
-     [!code-vb[VbVbalrOperators#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#70)]  
-  
-### <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>Odpovídá znaku v řetězci výraz proti zástupný znak  
-  
-- Vložit otazník (`?`) v řetězci vzor. Jakýkoli platný znak na této pozici díky úspěšná shoda.  
-  
-     Následující příklad testuje, jestli `myString` se skládá z jednoho znaku `W` následovaný přesně dva znaky žádné hodnoty.  
-  
-     [!code-vb[VbVbalrOperators#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#71)]  
-  
-### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>Odpovídá znaku v řetězcového výrazu seznam znaků  
-  
-- Umístit závorky (`[ ]`) v řetězci vzor a v závorkách vložit seznam znaků. Pomocí čárky nebo jakéhokoliv jiného oddělovače neoddělujte znaky. Libovolný znak v seznamu je úspěšná shoda.  
-  
-     Následující příklad testuje, jestli `myString` jakýkoli platný znak následovaný přesně jedním ze znaků se skládá ze `A`, `C`, nebo `E`.  
-  
-     [!code-vb[VbVbalrOperators#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#72)]  
-  
-     Všimněte si, že tuto shodu je velká a malá písmena.  
-  
-### <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>Odpovídá znaku v řetězci výraz proti rozsahu znaků  
-  
-- Umístit závorky (`[ ]`) v řetězci vzor a v závorkách do rozsahu znaků nejnižší a nejvyšší oddělené pomlčkou (`–`). Jakémukoli jednomu znaku v rozsahu díky úspěšná shoda.  
-  
-     Následující příklad testuje, jestli `myString` se skládá ze znaků `num` za nímž následuje přesně jedním ze znaků `i`, `j`, `k`, `l`, `m`, nebo `n`.  
-  
-     [!code-vb[VbVbalrOperators#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#73)]  
-  
-     Všimněte si, že tuto shodu je velká a malá písmena.  
-  
-## <a name="matching-empty-strings"></a>Odpovídající prázdné řetězce  
- `Like` zpracovává sekvence `[]` jako řetězec nulové délky (`""`). Můžete použít `[]` k ověření, zda výraz celý řetězec je prázdný, ale nemůžete je použít k testování, pokud na konkrétní umístění v řetězcového výrazu je prázdný. Je-li prázdná pozice jednu z možností je potřeba testovat pro, můžete použít `Like` více než jednou.  
-  
-#### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>Odpovídá znaku v řetězci výrazu seznam se znaky ani žádný znak  
-  
-1. Volání `Like` operátor dvakrát na stejném řetězcový výraz a dvě volání s buď [nebo operátor](../../../../visual-basic/language-reference/operators/or-operator.md) nebo [OrElse – operátor](../../../../visual-basic/language-reference/operators/orelse-operator.md).  
-  
-2. V řetězci vzor pro první `Like` klauzule, zahrnují seznamu znak uzavřen v závorkách (`[ ]`).  
-  
-3. V řetězci vzor pro druhý `Like` klauzule neumisťujte libovolný znak na pozici nejistá.  
-  
-     Následující příklad testuje sedmičíselné telefonní číslo `phoneNum` přesně tři číslice, za nímž následuje mezeru, pomlčku (`–`), tečku (`.`), nebo žádný znak, následovaný přesně čtyři číslice.  
-  
-     [!code-vb[VbVbalrOperators#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#74)]  
-  
+# <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Odpovídá řetězci na vzor (Visual Basic)
+
+Pokud chcete zjistit, zda výraz [řetězcového datového typu](../../../../visual-basic/language-reference/data-types/string-data-type.md) splňuje vzor, lze použít [operátor LIKE](../../../../visual-basic/language-reference/operators/like-operator.md).
+
+`Like`přebírá dva operandy. Levý operand je řetězcový výraz a pravý operand je řetězec obsahující vzor, který se má použít pro porovnávání. `Like``Boolean` vrátí hodnotu, která označuje, zda řetězcový výraz vyhovuje vzoru.
+
+Každý znak v řetězcovém výrazu můžete porovnat s konkrétním znakem, zástupným znakem, seznamem znaků nebo rozsahem znaků. Pozice specifikací v řetězci vzoru odpovídají polohám znaků, které mají být ve výrazu řetězce spárovány.
+
+## <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>Chcete-li porovnat znak v řetězcovém výrazu proti určitému znaku
+
+Konkrétní znak umístěte přímo do řetězce vzoru. Některé speciální znaky musí být uzavřeny do závorek (`[ ]`). Další informace naleznete v tématu [operátor LIKE](../../../../visual-basic/language-reference/operators/like-operator.md).
+
+Následující příklad testuje, zda `myString` je tvořen přesně jedním znakem `H`.
+
+[!code-vb[VbVbalrOperators#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#70)]
+
+## <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>Chcete-li porovnat znak ve výrazu řetězce se zástupným znakem
+
+Vložte otazník (`?`) do řetězce vzoru. Libovolný platný znak v této pozici provede úspěšnou shodu.
+
+Následující příklad testuje, zda `myString` se skládá z jednoho znaku `W` následovanýho přesně dvěma znaky libovolné hodnoty.
+
+[!code-vb[VbVbalrOperators#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#71)]
+
+## <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>Chcete-li porovnat znak ve výrazu řetězce se seznamem znaků
+
+Vložte hranaté`[ ]`závorky () do řetězce vzorů a uvnitř závorek vložte seznam znaků. Znaky nedělte čárkami ani žádné jiné oddělovače. Libovolný jeden znak v seznamu provede úspěšnou shodu.
+
+Následující příklad testuje, zda `myString` obsahuje libovolný platný znak následovaný přesně jedním ze znaků `A`, `C`nebo `E`.
+
+[!code-vb[VbVbalrOperators#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#72)]
+
+Všimněte si, že tato shoda rozlišuje velká a malá písmena.
+
+## <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>Chcete-li porovnat znak ve výrazu řetězce s rozsahem znaků
+
+Vložte hranaté`[ ]`závorky () do řetězce vzorů a uvnitř závorek vložte nejnižší a nejvyšší znaky v rozsahu oddělené spojovníkem (`–`). Libovolný jednotlivý znak v rozsahu provede úspěšnou shodu.
+
+Následující příklad testuje, zda `myString` se skládá ze znaků `num` následovaných právě jedním ze `m`znaků `i`, `j`, `k` `l`,, nebo `n`.
+
+[!code-vb[VbVbalrOperators#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#73)]
+
+Všimněte si, že tato shoda rozlišuje velká a malá písmena.
+
+## <a name="matching-empty-strings"></a>Porovnání prázdných řetězců
+
+`Like`zpracuje sekvenci `[]` jako řetězec s nulovou délkou (`""`). Můžete použít `[]` k otestování, zda je celý řetězcový výraz prázdný, ale nelze jej použít k otestování, pokud je určitá pozice ve výrazu řetězce prázdná. Pokud je prázdná pozice jednou z možností, které je třeba otestovat, můžete použít `Like` více než jednou.
+
+### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>Chcete-li porovnat znak ve výrazu řetězce se seznamem znaků nebo žádným znakem
+
+1. Zavolejte operátor dvakrát u stejného řetězcového výrazu a připojte dvě volání pomocí [operátoru OR](../../../../visual-basic/language-reference/operators/or-operator.md) nebo [operátoru OrElse.](../../../../visual-basic/language-reference/operators/orelse-operator.md) `Like`
+
+2. V řetězci vzoru pro první `Like` klauzuli uveďte seznam znaků uzavřený do závorek (`[ ]`).
+
+3. V řetězci vzoru pro druhou `Like` klauzuli neumísťujte žádný znak na pozici v daném umístění.
+
+    Následující příklad testuje sedm číslic telefonního čísla `phoneNum` pro přesně tři číselné číslice, za kterými následuje mezera, spojovník (`–`), tečka (`.`) nebo žádný znak, následovaný přesně čtyřmi číselnými číslicemi.
+
+    [!code-vb[VbVbalrOperators#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#74)]
+
 ## <a name="see-also"></a>Viz také:
 
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)

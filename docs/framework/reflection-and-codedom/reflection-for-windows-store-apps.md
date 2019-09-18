@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b5503d8a474d7f19348b9342bc02e216bd987223
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c9edab859900bf2001956045a5285801bb61d310
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378613"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045944"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
-Od verze rozhraní .NET Framework 4.5, .NET Framework obsahuje sadu typy a členy pro použití v reflexe [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Tyto typy a členy jsou k dispozici v úplné rozhraní .NET Framework stejně jako v [.NET pro Windows Store apps](https://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
+Počínaje .NET Framework 4,5 .NET Framework obsahuje sadu typů reflexe a členů pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikacích. Tyto typy a členy jsou k dispozici v plném .NET Framework a také v [rozhraní .NET pro aplikace pro Windows Store](https://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
   
  Pokud vytváříte aplikaci pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], je nutné použít typy a členy reflexe v rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Tyto typy a členy jsou také k dispozici, ačkoli nejsou vyžadovány, pro použití v aplikacích pracovní plochy, takže lze použít stejný kód pro oba typy aplikací.  
   
@@ -36,12 +36,12 @@ Od verze rozhraní .NET Framework 4.5, .NET Framework obsahuje sadu typy a člen
  V aplikaci pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] je přístup k některým typům a členům rozhraní .NET Framework omezen. Například pomocí objektu [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] nelze volat metody rozhraní .NET Framework, které nejsou zahrnuty v rozhraní <xref:System.Reflection.MethodInfo>. Také některé typy a členy, které nejsou v rámci aplikace pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] považovány za bezpečné, jsou blokovány, jako například typy <xref:System.Runtime.InteropServices.Marshal> a <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal>. Toto omezení se týká pouze typů a členů rozhraní .NET Framework. Váš kód nebo kód třetích stran lze volat jako obvykle.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá typy a členy reflexe rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] k načtení metod a vlastností typu <xref:System.Globalization.Calendar>, včetně odvozených metod a vlastností. Chcete-li spustit tento kód, vložte ho do souboru s kódem pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] stránky, která obsahuje <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> ovládací prvek s názvem `textblock1` v projektu s názvem reflexe. Pokud je vložit tento kód v projektu s jiným názvem, právě Ujistěte se, že změníte název oboru názvů tak, aby odpovídaly váš projekt.  
+ Tento příklad používá typy a členy reflexe rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] k načtení metod a vlastností typu <xref:System.Globalization.Calendar>, včetně odvozených metod a vlastností. Chcete-li spustit tento kód, vložte jej do souboru kódu pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] stránku, která <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> obsahuje ovládací prvek `textblock1` pojmenovaný v projektu s názvem reflexe. Pokud vložíte tento kód do projektu s jiným názvem, je třeba změnit název oboru názvů tak, aby odpovídal vašemu projektu.  
   
  [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
  [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)
-- [Aplikace .NET pro Windows Store – podporována rozhraní API](https://go.microsoft.com/fwlink/?LinkID=225700)
+- [Reflexe](reflection.md)
+- [.NET pro aplikace pro Windows Store – podporovaná rozhraní API](https://go.microsoft.com/fwlink/?LinkID=225700)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7f8046852f847cd5493a2ed17b491a39e494ce2b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 01cef9646ca9c4f49ab8376364648f66b9651e4a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969112"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052130"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 
@@ -144,7 +144,9 @@ Nouzový režim lze nastavit pro celou aplikaci nebo pro vybraná sestavení. To
 Třetí, modul runtime prověřuje konfigurační soubor počítače. Tento soubor nazvaný Machine. config se nachází v místním počítači v podadresáři konfigurace kořenového adresáře, kde je modul runtime nainstalován. Tento soubor můžou správci použít k určení omezení vazeb sestavení, která jsou místní pro daný počítač. Nastavení v konfiguračním souboru počítače mají přednost před všemi ostatními konfiguračními nastaveními. to však neznamená, že by do tohoto souboru měla být vložena všechna nastavení konfigurace. Verze určená souborem zásad správce je finální a nemůže být přepsána. Přepsání zadaná v souboru Machine. config ovlivňují všechny aplikace. Další informace o konfiguračních souborech najdete v tématu [Konfigurace aplikací pomocí konfiguračních souborů](../configure-apps/index.md).
 
 <a name="step2"></a> 
+
 ## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Krok 2: Kontrola dříve odkazovaných sestavení
+
 Pokud požadované sestavení bylo také vyžádáno v předchozích voláních, modul CLR (Common Language Runtime) používá již načtené sestavení. To může mít důsledky při pojmenování sestavení, která tvoří aplikaci. Další informace o pojmenování sestavení naleznete v tématu [názvy sestavení](../../standard/assembly/names.md).
 
 Pokud předchozí požadavek na sestavení selhal, následné požadavky na sestavení se okamžitě nezdařily bez pokusu o načtení sestavení. .NET Framework počínaje verzí 2,0 se chyby vazeb sestavení ukládají do mezipaměti a k určení, jestli se má pokus načíst sestavení, se použijí informace uložené v mezipaměti.

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dock control pattern
 - UI Automation, dock control pattern
 ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
-ms.openlocfilehash: 9bc4f80569dc2bab68e3f65c9e99df72df372171
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b72d7f9a68c2309f2bd1a73741ac621cde1f3115
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968906"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043471"
 ---
 # <a name="implementing-the-ui-automation-dock-control-pattern"></a>Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,9 +19,9 @@ ms.locfileid: "69968906"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IDockProvider>implementaci, včetně informací o vlastnostech. Odkazy na další odkazy jsou uvedeny na konci tématu.  
   
- Vzor <xref:System.Windows.Automation.DockPattern> ovládacího prvku slouží k vystavení vlastností Dock ovládacího prvku v rámci Dock kontejneru. Kontejner Docker je ovládací prvek, který umožňuje uspořádat podřízené prvky vodorovně a svisle vzhledem k sobě. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor <xref:System.Windows.Automation.DockPattern> ovládacího prvku slouží k vystavení vlastností Dock ovládacího prvku v rámci Dock kontejneru. Kontejner Docker je ovládací prvek, který umožňuje uspořádat podřízené prvky vodorovně a svisle vzhledem k sobě. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
- ![Dokování kontejneru se dvěma ukotvenými dětmi.](../../../docs/framework/ui-automation/media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
+ ![Dokování kontejneru se dvěma ukotvenými dětmi.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
 Příklad Docker ze sady Visual Studio, kde je okno "Zobrazení tříd" DockPosition. Right a Seznam chyb Window je DockPosition. Bottom  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
@@ -57,8 +57,8 @@ Příklad Docker ze sady Visual Studio, kde je okno "Zobrazení tříd" DockPosi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

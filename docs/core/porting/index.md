@@ -1,52 +1,54 @@
 ---
-title: Port kód z rozhraní .NET Framework do .NET Core
-description: Vysvětlení procesu přenosem a zjišťování nástroje, které vám můžou pomoct při přenášení do rozhraní .NET Framework projektu .NET Core.
+title: Kód portu z .NET Framework do .NET Core
+description: Pochopení procesu přenosu a zjišťování nástrojů, které můžete najít užitečné při přenosu .NET Framework projektu do .NET Core.
 author: cartermp
-ms.date: 07/03/2019
+ms.date: 09/13/2019
 ms.custom: seodec18
-ms.openlocfilehash: c408beb97290c41d2ab6944b9d1f68bbc5e946fb
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: b6c02932b5d9c7ccc2743dd38dddf2904f9c24e4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609238"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039667"
 ---
-# <a name="port-your-code-from-net-framework-to-net-core"></a>Přeneste kód z rozhraní .NET Framework do .NET Core
+# <a name="port-your-code-from-net-framework-to-net-core"></a>Portování kódu z .NET Framework do .NET Core
 
-Pokud máte kód, který běží na rozhraní .NET Framework, může zajímat příliš spouštění kódu v rozhraní .NET Core. Tady je přehled procesu přenosem a seznam nástroje vám můžou pomoct při přenesení kódu až po .NET Core.
+Pokud máte kód, který běží na .NET Framework, může to být tím, že zajímáte i svůj kód v .NET Core. Tady je přehled procesu přenosu a seznam nástrojů, které můžete najít užitečné při přenosu kódu do .NET Core.
 
-## <a name="overview-of-the-porting-process"></a>Přehled procesu přenos
+## <a name="overview-of-the-porting-process"></a>Přehled procesu přenosu
 
-To je proces, doporučujeme že je provést při přenášení projektu .NET Core. Každý krok procesu se budeme věnovat jednotlivě podrobněji v dalších článcích.
+To je proces, který doporučujeme provést při přenosu projektu do .NET Core. Jednotlivé kroky tohoto procesu jsou podrobněji popsány v dalších článcích.
 
-1. Identifikujte a účtu pro vašeho závislostí třetích stran.
+1. Identifikujte a zaregistrujte závislosti třetích stran.
 
-   Tento krok zahrnuje pochopení, co závislostí třetích stran se, jak jsou závislé na nich, jak a zkontrolujte, zda také spustit na .NET Core a kroky můžete provést v případě, že ne. Také popisuje, jak můžete migrovat vaše závislosti přes [PackageReference](/nuget/consume-packages/package-references-in-project-files) formátu, který se používá v .NET Core.
+   Tento krok zahrnuje vysvětlení toho, co jsou závislosti jiných výrobců závislé na tom, jak zjistit, jestli se také spouští na .NET Core, a kroky, které můžete provést, pokud ne. Také se zabývá tím, jak můžete migrovat závislosti do formátu [PackageReference](/nuget/consume-packages/package-references-in-project-files) , který se používá v .NET Core.
 
-2. Přesměrovat všechny projekty, které chcete port pro cílové rozhraní .NET Framework 4.7.2 nebo vyšší.
+2. Přecílíte na všechny projekty, které chcete přenést, aby bylo možné cílit na .NET Framework 4.7.2 nebo vyšší.
 
-   Tento krok zajistí, že když .NET Core nepodporuje dané rozhraní API, můžete použít rozhraní API alternativy cílů specifické pro rozhraní .NET Framework.
+   Tento krok zajistí, že můžete použít alternativy rozhraní API pro cíle specifické pro .NET Framework, když .NET Core nepodporuje konkrétní rozhraní API.
 
-3. Použití [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md) analyzovat vaše sestavení a vývoj plánu na port na základě jejích výsledků.
+3. Pomocí [analyzátoru přenositelnosti .NET](../../standard/analyzers/portability-analyzer.md) můžete analyzovat vaše sestavení a vyvíjet plán na základě jeho výsledků.
 
-   Nástroj Analyzátor přenositelnosti rozhraní API analyzuje zkompilovaným sestavením a generuje sestavu, která zobrazuje souhrn vyšší úrovně přenositelnost a přehled každé rozhraní API používáte, není k dispozici v rozhraní .NET Core. Můžete použít tuto sestavu spolu s analýzu vašeho základu kódu pro jak budete přeneste kód přes při vytváření plánu.
+   Nástroj Analyzátor přenositelnosti rozhraní API analyzuje vaše kompilovaná sestavení a vygeneruje sestavu, která zobrazuje souhrn přenositelnosti na vysoké úrovni a rozpis každého rozhraní API, které používáte, není k dispozici na cílené veřejné platformě .NET Core. Tuto sestavu můžete použít spolu s analýzou základu kódu k vytvoření plánu pro způsob, jakým budete svůj kód portovat.
 
-4. Přeneste kód testy.
+4. Jakmile budete mít soubor projektu převedený na cílovou verzi .NET Core, můžete použít [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md) založený na Roslyn a identifikovat rozhraní <xref:System.PlatformNotSupportedException> API na některých platformách a jiné potenciální problémy s kompatibilitou.
 
-   Přenos aplikací .NET Core je takto významná změna do vašeho základu kódu, se důrazně doporučujeme zobrazíte testy přenést, tak, aby jako přeneste kód prostřednictvím je možné spustit testy. MSTest, xUnit a NUnit podporovat .NET Core.
+5. Port kódu testů.
 
-5. Spuštění vašeho plánu pro přenos!
+   Vzhledem k tomu, že přenos do .NET Core je podstatnou změnou základu kódu, důrazně doporučujeme, abyste si nadostali své testy, abyste mohli spouštět testy během přenosu kódu. MSTest, xUnit a NUnit podporují .NET Core.
 
-Následující seznam obsahuje nástroje že mohou být užitečné používat během procesu přenosem:
+6. Proveďte svůj plán pro přenos.
 
-* .NET portability Analyzeru - [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), nástroj, který může vygenerovat sestavu je váš kód jak přenosné mezi rozhraní .NET Framework a cílovou platformu .NET Core. Tato sestava obsahuje rozpis sestavení podle typu a rozhraní API chybí na cílové platformě .NET Core. Další informace najdete v tématu [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md). Se doporučuje spustit nástroj .NET Portability Analyzeru, než začnete, přenos, jak vám pomůže identifikovat všechny mezery v chybějící rozhraní API.
-* Analyzátor rozhraní API .NET – Roslyn analyzátor, který zjistí standardní rozhraní API .NET, který vyvolá <xref:System.PlatformNotSupportedException> na některých platformách zjistí volání rozhraní API nepoužívané a zjistí, několik dalších potenciální rizika kompatibility pro C# rozhraní API na různých platformách. Další informace najdete v tématu [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md). Tento analyzátor je užitečné, poté, co jste už vytvořili projektu .NET Core k identifikaci rozdíly v chování modulu runtime na různých platformách.
-* Reverzního vyhledávání balíčků – A [užitečné webová služba](https://packagesearch.azurewebsites.net) , který umožňuje hledat typ a vyhledat balíčky obsahující tohoto typu.
+Následující seznam obsahuje nástroje, které může být užitečné použít během procesu přenosu:
 
-Kromě toho se můžete pokusit port menší řešení nebo na formát souboru projektu .NET Core s jednotlivými projekty [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) nástroj.
+* Analyzátor přenositelnosti .NET – [Nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), nástroj, který může generovat sestavu způsobu, jakým je přenos kódu mezi .NET Framework a vaší cílovou platformou .NET Core. Sestava obsahuje rozpis sestavení podle sestavení typu a chybějící rozhraní API na cílové platformě .NET Core. Další informace najdete v tématu [analyzátor přenositelnosti .NET](../../standard/analyzers/portability-analyzer.md). Před zahájením přenosu doporučujeme spustit nástroj Analyzátor přenositelnosti .NET, protože vám pomůže identifikovat mezery v chybějících rozhraních API na konkrétní cílené veřejné ploše platformy .NET.
+* Rozhraní .NET API Analyzer – analyzátor Roslyn, který zjišťuje .NET Standard rozhraní API, které <xref:System.PlatformNotSupportedException> se na některých platformách vyvolá, detekuje volání zastaralých rozhraní API a zjišťují některá další potenciální rizika kompatibility pro C# rozhraní API na různých platformách. Další informace najdete v tématu [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md). Tento analyzátor je užitečný poté, co jste již vytvořili projekt .NET Core pro identifikaci rozdílů v chování za běhu na různých platformách.
+* Zpětné vyhledávání balíčků – [užitečnou webovou službu](https://packagesearch.azurewebsites.net) , která umožňuje vyhledat typ a vyhledat balíčky obsahující tento typ.
+
+Kromě toho se můžete pokusit přenést menší řešení nebo jednotlivé projekty do formátu souboru projektu .NET Core pomocí nástroje [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017) Tool.
 
 > [!WARNING]
-> CsprojToVs2017 je nástroj třetí strany. Neexistuje žádná záruka, že bude fungovat pro všemi svými projekty a může to způsobit drobné změny v chování, které nejvíc potřebujete. CsprojToVs2017 by měla sloužit jako _počáteční bod_ , který automatizuje základní akce, které je možné automatizovat. Není zaručené řešení migrace formáty souborů projektu.
+> CsprojToVs2017 je nástroj třetí strany. Není zaručeno, že bude fungovat pro všechny vaše projekty a může způsobit drobné změny v chování, které jsou závislé na. CsprojToVs2017 by měla být použita jako _výchozí bod_ , který automatizuje základní věci, které lze automatizovat. Není zaručené řešení pro migraci formátů souborů projektu.
 
 >[!div class="step-by-step"]
 >[Next](net-framework-tech-unavailable.md)

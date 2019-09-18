@@ -12,61 +12,61 @@ helpviewer_keywords:
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0f732eb7b6ee77cb6b16130fc41655922127c3b
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: 9ee68d0da3b7f23d4de0192da076ef6f71d6d222
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469686"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051637"
 ---
 # <a name="specifying-a-character-set"></a>Určení sady znaků
-<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězce a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL. Toto téma popisuje, jak chování.  
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězců a určuje, jakým způsobem vyvolání platformy nalezne názvy funkcí v knihovně DLL. V tomto tématu jsou popsána obě chování.  
   
- Některá rozhraní API exportovat dvě verze funkcí, které přijímají řetězcové argumenty: úzký (ANSI) a celý (Unicode). Rozhraní Windows API, například zahrnuje následující názvy vstupní bod **MessageBox** funkce:  
+ Některá rozhraní API exportují dvě verze funkcí, které přijímají argumenty pro řetězce: úzká (ANSI) a roztažitelné (Unicode). Rozhraní Windows API obsahuje například následující názvy vstupních bodů pro funkci **MessageBox** :  
   
 - **MessageBoxA**  
   
-     Poskytuje 1bajtový ANSI formátování, odlišené "A" připojenou k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazovat řetězce ve formátu ANSI.  
+     Poskytuje 1 bajtové formátování znakové sady ANSI rozlišené znakem "A", který je připojený k názvu vstupního bodu. Volání **MessageBox** . vždycky zařazování řetězců ve formátu ANSI.  
   
 - **MessageBoxW**  
   
-     Obsahuje formátování 2bajtových znaků Unicode, odlišené "W" připojenou k názvu vstupního bodu. Volání **funkce** vždy zařazovat řetězce ve formátu Unicode.  
+     Poskytuje 2 bajtové formátování znaků znakové sady Unicode, které se odlišuje "W" připojením k názvu vstupního bodu. Volání **MessageBoxW** vždy zařazování řetězců ve formátu Unicode.  
   
-## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a shoda názvu  
+## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a shoda názvů  
  `CharSet` Pole přijímá následující hodnoty:  
   
- <xref:System.Runtime.InteropServices.CharSet.Ansi> (výchozí hodnota)  
+ <xref:System.Runtime.InteropServices.CharSet.Ansi>(výchozí hodnota)  
   
 - Zařazování řetězců  
   
-     Vyvolání platformy marshals řetězců z jejich spravovaných formátu (Unicode) na ANSI formát.  
+     Volání platformy zařazování řetězců z jejich spravovaného formátu (Unicode) do formátu ANSI.  
   
-- Shoda názvu  
+- Shoda názvů  
   
-     Když <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> pole je `true`, protože je ve výchozím nastavení v jazyce Visual Basic, vyvolání platformy vyhledá pouze zadaný název. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
+     Když je <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> `true`pole ve výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, když nemůže najít přesný pravopis.  
   
-     Když `ExactSpelling` pole je `false`, protože je ve výchozím nastavení v jazyce C++ a C#, nejprve hledá unmangled alias vyvolání platformy (**MessageBox**), pak pozměněný název (**MessageBoxA**) Pokud se nenajde unmangled alias. Všimněte si, že ANSI shoda názvu chování se liší od chování porovnávání název kódování Unicode.  
+     C++ C#Když je `ExactSpelling` `false`pole ve výchozím nastavení v a, vyvolá volání metody jako první (MessageBox) nezměněný alias (MessageBox) a pak pozměněný název (MessageBox), pokud nebyl nalezen nezměněný alias. Všimněte si, že chování při shodě názvů ANSI se liší od chování při shodě názvů Unicode.  
   
  <xref:System.Runtime.InteropServices.CharSet.Unicode>  
   
 - Zařazování řetězců  
   
-     Kopie řetězce z jejich spravovaných formátu (Unicode) do Unicode formátu vyvolání platformy.  
+     Vyvolání platformy kopíruje řetězce z spravovaného formátu (Unicode) do formátu Unicode.  
   
-- Shoda názvu  
+- Shoda názvů  
   
-     Když `ExactSpelling` pole je `true`, protože je ve výchozím nastavení v jazyce Visual Basic, vyvolání platformy vyhledá pouze zadaný název. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
+     Když je `ExactSpelling` `true`pole ve výchozím nastavení v Visual Basic, vyvolá vyhledá platforma pouze zadaný název. Například pokud zadáte **MessageBox**, vyvolá volání metody **MessageBox** a dojde k chybě, pokud nemůže najít přesný pravopis.  
   
-     Když `ExactSpelling` pole je `false`, protože je ve výchozím nastavení v jazyce C++ a C#, nejprve vyhledá pozměněný název vyvolání platformy (**funkce**), pak unmangled alias (**MessageBox**) Pokud se nenajde pozměnění názvu. Všimněte si, že Unicode shoda názvu chování se liší od chování porovnávání název ANSI.  
+     C++ C#Když je `ExactSpelling` `false`pole ve výchozím nastavení v a, vyvolá volání metody jako první (MessageBoxW) a pak nezměněný alias (MessageBox), pokud nebyl nalezen pozměněný název. Všimněte si, že chování při shodě názvů Unicode se liší od chování při shodě názvů ANSI.  
   
  <xref:System.Runtime.InteropServices.CharSet.Auto>  
   
-- Vyvolání platformy zvolí mezi formáty ANSI a Unicode v době běhu, založené na cílové platformě.  
+- Volání platformy se v době běhu volí mezi formáty ANSI a Unicode, a to na základě cílové platformy.  
   
-## <a name="specifying-a-character-set-in-visual-basic"></a>Určení znakové sady v jazyce Visual Basic  
- Následující příklad deklaruje **MessageBox** funkce tři vícekrát, pokaždé, když s jinou znakovou sadu chování. Znakové sady chování v jazyce Visual Basic můžete zadat tak, že přidáte **Ansi**, **Unicode**, nebo **automaticky** – klíčové slovo do příkazu deklarace.  
+## <a name="specifying-a-character-set-in-visual-basic"></a>Určení znakové sady v Visual Basic  
+ Následující příklad deklaruje funkci **MessageBox** třikrát, a to pokaždé, když se liší chování znakových sad. Můžete určit chování znakových sad v Visual Basic přidáním klíčového slova **ANSI**, **Unicode**nebo **auto** do příkazu deklarace.  
   
- Pokud vynecháte – klíčové slovo znakové sady, jak je tomu v prvním příkazu deklarace, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole výchozí znakovou sadu ANSI. Druhý a třetí příkazy v příkladu explicitně zadat znakovou sadu s klíčovým slovem.  
+ Vynecháte-li klíčové slovo sady znaků, jak je provedeno v prvním příkazu deklarace, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> je pole standardně znakovou sadou ANSI. Druhý a třetí příkaz v příkladu explicitně specifikují znakovou sadu s klíčovým slovem.  
   
 ```vb
 Friend Class NativeMethods
@@ -90,8 +90,8 @@ Friend Class NativeMethods
 End Class
 ```
   
-## <a name="specifying-a-character-set-in-c-and-c"></a>Určení znakové sady v C# a C++  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole identifikuje základní znakovou sadu ANSI nebo Unicode. Znakové sady, které řídí, jak by měly být zařazeny řetězcové argumenty metody. Použijte jednu z následujících forem udávajících znakové sady:  
+## <a name="specifying-a-character-set-in-c-and-c"></a>Určení znakové sady v C# aC++  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole určuje základní znakovou sadu jako ANSI nebo Unicode. Znaková sada určuje, jak by měly být zařazeny řetězcové argumenty metody. K označení znakové sady použijte jednu z následujících forem:  
   
 ```csharp
 [DllImport("DllName", CharSet = CharSet.Ansi)]
@@ -105,7 +105,7 @@ End Class
 [DllImport("DllName", CharSet = CharSet::Auto)]
 ```
   
- Následující příklad ukazuje tři spravované definice **MessageBox** funkce s atributy k určení sady znaků. V první definici podle jeho vynechání `CharSet` pole výchozí znakovou sadu ANSI.  
+ Následující příklad ukazuje tři spravované definice funkce **MessageBox** s atributem pro určení znakové sady. V první definici po vynechání `CharSet` pole je ve výchozím nastavení znaková sada ANSI.  
   
 ```csharp  
 using System;
@@ -149,6 +149,6 @@ extern "C" int MessageBox(
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute>
-- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)
-- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+- [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)
+- [Příklady vyvolání platformy](platform-invoke-examples.md)
+- [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)

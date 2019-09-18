@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c71816b1bd2e9c95e8c7efb44e3e689dce4ab93
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: bdd2832f112706cef6050774ce3f6db5a940424a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853973"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052090"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 
@@ -50,7 +50,7 @@ ms.locfileid: "70853973"
 
 ## <a name="chainer-sample"></a>Ukázka řetězu
 
-Ukázka zřetězení Tichy spustí a sleduje nastavení .NET Framework 4,5 během zobrazování průběhu. Tato ukázka je podobná ukázce řetězení, který je k dispozici pro .NET Framework 4. Kromě toho se může vyhnout restartování systému tím, že zpracovává okno se zprávou pro uzavírání aplikací .NET Framework 4. Informace o tomto okně se zprávou najdete v tématu [zmenšení systému restartování během instalace .NET Framework 4,5](../../../docs/framework/deployment/reducing-system-restarts.md). Tuto ukázku můžete použít s instalačním programem .NET Framework 4; v takovém případě se zpráva jednoduše neposílá.
+Ukázka zřetězení Tichy spustí a sleduje nastavení .NET Framework 4,5 během zobrazování průběhu. Tato ukázka je podobná ukázce řetězení, který je k dispozici pro .NET Framework 4. Kromě toho se může vyhnout restartování systému tím, že zpracovává okno se zprávou pro uzavírání aplikací .NET Framework 4. Informace o tomto okně se zprávou najdete v tématu [zmenšení systému restartování během instalace .NET Framework 4,5](reducing-system-restarts.md). Tuto ukázku můžete použít s instalačním programem .NET Framework 4; v takovém případě se zpráva jednoduše neposílá.
 
 > [!WARNING]
 > Příklad musíte spustit jako správce.
@@ -311,5 +311,5 @@ Typický Server vytvoří náhodný název souboru MMIO, vytvoří soubor (jak j
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)
-- [Nasazení](../../../docs/framework/deployment/index.md)
+- [Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)
+- [Nasazení](index.md)

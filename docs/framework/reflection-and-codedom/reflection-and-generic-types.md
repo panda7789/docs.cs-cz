@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: f7180fc5-dd41-42d4-8a8e-1b34288e06de
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb16097ab5a452a554cc7dfe039db1858e46de00
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ce40a54e82e95f41247db525110c510e3d83031e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967206"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045920"
 ---
 # <a name="reflection-and-generic-types"></a>Reflexe a obecné typy
 <a name="top"></a>Z hlediska reflexe rozdíl mezi obecným typem a běžným typem je, že obecný typ je přidružen k sadě parametrů typu (Pokud se jedná o definici obecného typu) nebo k argumentům typu (Pokud se jedná o konstruovaný typ). Obecná metoda se od běžné metody liší stejným způsobem.  
@@ -38,7 +38,7 @@ ms.locfileid: "69967206"
   
  Reflexe poskytuje <xref:System.Type> metody <xref:System.Reflection.MethodInfo> a, které umožňují přístup k poli parametrů typu a k <xref:System.Type> určení, zda instance představuje parametr typu nebo skutečný typ.  
   
- Příklad kódu, který demonstruje popsané metody, naleznete [v tématu How to: Prověřte a vytvořte instanci obecných typů pomocí](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
+ Příklad kódu, který demonstruje popsané metody, naleznete [v tématu How to: Prověřte a vytvořte instanci obecných typů pomocí](how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
   
  Následující diskuze předpokládá znalost s terminologií generických typů, například rozdíl mezi parametry typu a argumenty a otevřenými nebo uzavřenými konstruovanými typy. Další informace najdete v tématu [Obecné typy](../../standard/generics/index.md).  
   
@@ -149,7 +149,7 @@ generic<typename V, typename W> ref class D : B<int, V> {};
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: Kontrola a vytváření instancí obecných typů pomocí reflexe](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)|Ukazuje, jak používat vlastnosti a metody <xref:System.Type> a <xref:System.Reflection.MethodInfo> k prozkoumávání obecných typů.|  
+|[Postupy: Kontrola a vytváření instancí obecných typů pomocí reflexe](how-to-examine-and-instantiate-generic-types-with-reflection.md)|Ukazuje, jak používat vlastnosti a metody <xref:System.Type> a <xref:System.Reflection.MethodInfo> k prozkoumávání obecných typů.|  
 |[Obecné typy](../../standard/generics/index.md)|Popisuje funkci Generics a způsob jejího podporování v .NET Framework.|  
-|[Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Ukazuje, jak pomocí generování reflexe generovat obecné typy v dynamických sestaveních.|  
-|[Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)|Popisuje třídu a poskytuje příklady kódu, které ilustrují, jak použít <xref:System.Type> s různými třídami reflexe k získání informací o konstruktorech, metodách, polích, vlastnostech a událostech. <xref:System.Type>|
+|[Postupy: Definování obecného typu pomocí generování reflexe](how-to-define-a-generic-type-with-reflection-emit.md)|Ukazuje, jak pomocí generování reflexe generovat obecné typy v dynamických sestaveních.|  
+|[Zobrazení informací o typu](viewing-type-information.md)|Popisuje třídu a poskytuje příklady kódu, které ilustrují, jak použít <xref:System.Type> s různými třídami reflexe k získání informací o konstruktorech, metodách, polích, vlastnostech a událostech. <xref:System.Type>|

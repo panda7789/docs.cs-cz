@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: 0d12196acab5a50f7dd6fc78e6dccc098cf3e2de
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: d5b4c2b59b585b3d3a3584ef9055e70c9d998e85
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894605"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044080"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
 Nástroj příkazového řádku SQLMetal generuje kód a mapování pro [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu .NET Framework. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
@@ -30,7 +30,7 @@ Nástroj příkazového řádku SQLMetal generuje kód a mapování pro [!INCLUD
 > [!NOTE]
 > Vývojáři, kteří používají Visual Studio, mohou také použít Návrhář relací objektů k vygenerování tříd entit. Metoda využívající příkazový řádek je vhodná u velkých databází. Protože SqlMetal je nástroj příkazového řádku, můžete ho použít v procesu sestavení.  
   
- Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md). Na příkazovém řádku zadejte následující:  
+ Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md). Na příkazovém řádku zadejte následující:  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -77,7 +77,7 @@ sqlmetal [options] [<input file>]
 |**/Context:**  *Zadejte\<>*|Určuje název třídy datového kontextu. Výchozí hodnota: Odvozeno z názvu databáze.|  
 |**/entitybase:**  *Zadejte\<>*|Určuje základní třídu z tříd entit v generovaném kódu. Výchozí hodnota: Entity nemají žádnou základní třídu.|  
 |**/pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglická verze|  
-|**/Serialization:**  *možnost\<>*|Generuje serializovatelné třídy.<br /><br /> *Platná\<možnost >* : None, jednosměrný. Výchozí hodnota: Žádné<br /><br /> Další informace naleznete v tématu [serializace](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
+|**/Serialization:**  *možnost\<>*|Generuje serializovatelné třídy.<br /><br /> *Platná\<možnost >* : None, jednosměrný. Výchozí hodnota: Žádné<br /><br /> Další informace naleznete v tématu [serializace](../data/adonet/sql/linq/serialization.md).|  
   
  **Vstupní soubor**  
   
@@ -134,6 +134,6 @@ sqlmetal [options] [<input file>]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Generování objektového modelu v Visual Basic neboC#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
-- [Generování kódu v LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
-- [Externí mapování](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
+- [Postupy: Generování objektového modelu v Visual Basic neboC#](../data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Generování kódu v LINQ to SQL](../data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
+- [Externí mapování](../data/adonet/sql/linq/external-mapping.md)

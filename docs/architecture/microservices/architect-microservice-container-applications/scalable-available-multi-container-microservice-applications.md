@@ -2,12 +2,12 @@
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 description: Seznamte se s možnostmi pro orchestraci mikroslužeb a aplikací s více kontejnery pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev Spaces během vývoje životního cyklu aplikace Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: 9540ea3941e90b0f9ebfb79dff6f84bb368d0fb0
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: aef9dc2206c24d685610616a2a4d7850837b832d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991151"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71040099"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -35,21 +35,10 @@ Koncepty clusteru a plánovače úzce souvisejí, takže produkty poskytované r
 
 ## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Softwarové platformy pro clusteringu kontejnerů, Orchestrace a plánování
 
-### <a name="kubernetes"></a>Kubernetes
-
-![Logo Kubernetes](./media/image24.png)
-
-> [*Kubernetes*](https://kubernetes.io/) je open source produkt, který poskytuje funkce, které jsou v rozsahu od infrastruktury clusteru a plánování kontejneru až po orchestraci možností. Umožňuje automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů.
->
-> *Kubernetes* poskytuje infrastrukturu zaměřenou na kontejner, která seskupuje kontejnery aplikací do logických jednotek pro jednoduchou správu a zjišťování.
->
-> *Kubernetes* je vyspělá v systému Linux a méně vyspělá ve Windows.
-
-### <a name="azure-kubernetes-service-aks"></a>Služba Azure Kubernetes (AKS)
-
-![Logo služby Azure Kubernetes](./media/image41.png)
-
-> [Služba Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes.
+|     |   |
+|-----|---|
+| **Kubernetes** <br> ![Logo Kubernetes](./media/image24.png) | [*Kubernetes*](https://kubernetes.io/) je open source produkt, který poskytuje funkce, které jsou v rozsahu od infrastruktury clusteru a plánování kontejneru až po orchestraci možností. Umožňuje automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br><br> *Kubernetes* poskytuje infrastrukturu zaměřenou na kontejner, která seskupuje kontejnery aplikací do logických jednotek pro jednoduchou správu a zjišťování. <br><br> *Kubernetes* je vyspělá v systému Linux a méně vyspělá ve Windows. |
+| **Azure Kubernetes Service (AKS)** <br> ![Logo služby Azure Kubernetes](./media/image41.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu, nasazení a provoz clusteru Kubernetes. |
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Použití orchestrací založených na kontejnerech v Microsoft Azure
 

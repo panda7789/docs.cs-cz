@@ -2,18 +2,18 @@
 title: Oficiální image .NET Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Oficiální image Docker pro .NET
 ms.date: 01/07/2019
-ms.openlocfilehash: b184e8f3606da8448a06a1cad90688958ecbce3a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 749485bfe07e0245493da67af915805f644a1897
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296487"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039638"
 ---
 # <a name="official-net-docker-images"></a>Oficiální image .NET Dockeru
 
 Oficiální image rozhraní .NET Docker jsou image Docker vytvořené a optimalizované Microsoftem. Jsou veřejně dostupné v úložištích Microsoftu v [Docker Hub](https://hub.docker.com/u/microsoft/). Každé úložiště může obsahovat několik imagí v závislosti na verzích .NET a v závislosti na operačním systému a verzích (Linux Debian, Linux Alpine, Windows nano Server, Windows Server Core atd.).
 
-Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí .NET Core: https://hub.docker.com/_/microsoft-dotnet-core/
+Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí <https://hub.docker.com/\_/microsoft-dotnet-core/>.NET Core:.
 
 Většina úložišť imagí poskytuje rozsáhlé označování, které vám pomůžou vybrat nejen konkrétní verzi architektury, ale také zvolit operační systém (Linux distribuce nebo Windows verze).
 
@@ -43,10 +43,10 @@ I když existuje více verzí rozhraní .NET Core a ASP.NET Core imagí, všechn
 
 Když prozkoumáte úložiště imagí .NET v Docker Hub, zjistíte více verzí imagí klasifikovaných nebo označených pomocí značek. Tyto značky vám pomůžou určit, která z nich se má použít, v závislosti na verzi, kterou potřebujete, třeba v následující tabulce:
 
-| Image                                       | Komentáře                                                                                          |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Image | Komentáře |
+|-------|----------|
 | mcr.microsoft.com/dotnet/core/aspnet:**2,2** | ASP.NET Core, pouze s modulem runtime a optimalizace ASP.NET Core v systémech Linux a Windows (více archů) |
-| mcr.microsoft.com/dotnet/core/sdk:**2,2**    | Rozhraní .NET Core se zahrnutými sadami SDK v systému Linux a Windows (vícenásobný arch)                                  |
+| mcr.microsoft.com/dotnet/core/sdk:**2,2** | Rozhraní .NET Core se zahrnutými sadami SDK v systému Linux a Windows (vícenásobný arch) |
 
 > [!div class="step-by-step"]
 > [Předchozí](net-container-os-targets.md)Další

@@ -2,12 +2,12 @@
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
 description: Jak určit složení mikroslužeb pro aplikaci s více kontejnery pomocí Docker-Compose. yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: 1b88d2267b12a33e125a7a1d2273654a50fd2d0f
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8c0f1a654d27b32e613b84d3862198ad96f32e1c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296868"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039748"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml
 
@@ -463,11 +463,11 @@ Pro rychlejší spuštění jsou bitové kopie za běhu také automaticky\_nasta
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **Vytváření optimalizovaných imagí Docker pomocí ASP.NET Core** \
-    <https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/>
+- **Vytváření optimalizovaných imagí Docker pomocí ASP.NET Core**  
+  <https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/>
 
-- **Vytváření imagí Docker pro aplikace .NET Core** \
-    [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](../../../core/docker/building-net-docker-images.md)
+- **Vytváření imagí Dockeru pro aplikace .NET Core**  
+  [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](../../../core/docker/building-net-docker-images.md)
 
 > [!div class="step-by-step"]
 > [Předchozí](data-driven-crud-microservice.md)Další

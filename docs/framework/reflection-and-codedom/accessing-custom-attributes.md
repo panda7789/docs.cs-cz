@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 1d8e3398-00d8-47d5-a084-214f9859d3d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6955c24c12936ef37bedea2a1dd290bac45a5a2e
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 5b8eafa4f3f8a3fd81772c4521f26323019d012c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894910"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046143"
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
 Po přiřazení atributů k prvkům programu lze reflexi použít k dotazování jejich existence a hodnot. V .NET Framework verze 1,0 a 1,1 jsou vlastní atributy zkontrolovány v kontextu spuštění. .NET Framework verze 2,0 poskytuje nový kontext zatížení, kontext pouze pro reflexi, který lze použít k prohlédnutí kódu, který nelze načíst ke spuštění.  
   
 ## <a name="the-reflection-only-context"></a>Kontext pouze pro reflexi  
- Kód načtený do kontextu pouze pro reflexi nelze provést. To znamená, že instance vlastních atributů nelze vytvořit, protože by vyžadovaly provádění jejich konstruktorů. Chcete-li načíst a prošetřit vlastní atributy v kontextu pouze pro reflexi, použijte <xref:System.Reflection.CustomAttributeData> třídu. Instance této třídy lze získat pomocí vhodného přetížení statické <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody. Viz [jak: Načíst sestavení do kontextu](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)pouze pro reflexi.  
+ Kód načtený do kontextu pouze pro reflexi nelze provést. To znamená, že instance vlastních atributů nelze vytvořit, protože by vyžadovaly provádění jejich konstruktorů. Chcete-li načíst a prošetřit vlastní atributy v kontextu pouze pro reflexi, použijte <xref:System.Reflection.CustomAttributeData> třídu. Instance této třídy lze získat pomocí vhodného přetížení statické <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metody. Viz [jak: Načíst sestavení do kontextu](how-to-load-assemblies-into-the-reflection-only-context.md)pouze pro reflexi.  
   
 ## <a name="the-execution-context"></a>Kontext spuštění  
  Hlavní metody reflexe pro dotazování atributů v kontextu spuštění <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType> jsou <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>a.  
@@ -76,5 +76,5 @@ public class LocalizationExtenderProvider
 
 - <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType>
 - <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>
-- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
-- [Důležité informace o zabezpečení pro reflexi](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)
+- [Zobrazení informací o typu](viewing-type-information.md)
+- [Důležité informace o zabezpečení pro reflexi](security-considerations-for-reflection.md)

@@ -7,12 +7,12 @@ dev_langs:
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b8d84f8ea9cf8f94cb7a2b155c5d40c6de2979a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8d916aa5e19b8ce583984d9a8e9708d34cf0adfb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941701"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049542"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>Třída MissingInteropDataException (.NET Native)
 **.NET pro aplikace pro Windows pro Windows 10, .NET Native jenom**  
@@ -22,7 +22,7 @@ ms.locfileid: "69941701"
  **Hosting** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
-> `MissingInteropDataException` Třída je určena výhradně pro vnitřní použití řetězcem nástroje .NET Native. Není určena pro použití v kódu třetí strany, ani byste neměli zpracovávat výjimku v kódu aplikace. Místo toho výjimku Eliminujte přidáním položek do [souboru direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
+> `MissingInteropDataException` Třída je určena výhradně pro vnitřní použití řetězcem nástroje .NET Native. Není určena pro použití v kódu třetí strany, ani byste neměli zpracovávat výjimku v kódu aplikace. Místo toho výjimku Eliminujte přidáním položek do [souboru direktiv modulu runtime](runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
@@ -72,7 +72,7 @@ ms.locfileid: "69941701"
 ## <a name="usage-details"></a>Podrobnosti o využití  
  Výjimka `MissingInteropDataException` je vyvolána, pokud volání metody modelu COM nebo prostředí Windows Runtime nelze úspěšně provést, protože informace o typu nejsou k dispozici.  
   
- Metadata, která jsou k dispozici pro aplikaci za běhu, jsou definována v souboru direktiv modulu runtime (konfigurace XML) \*,. Rd. XML. Chcete-li zabránit vaší aplikaci v vyvolání této výjimky, je nutné upravit tento soubor, aby definoval metadata, která musí být přítomna v době běhu. Nejčastěji tuto chybu řešíte tak, že přidáte `MarshalObject`atribut, `MarshalDelegate`nebo `MarshalStructure` do vhodného prvku programu v souboru direktiv modulu runtime. Informace o formátu tohoto souboru naleznete v tématu reference ke [konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Metadata, která jsou k dispozici pro aplikaci za běhu, jsou definována v souboru direktiv modulu runtime (konfigurace XML) \*,. Rd. XML. Chcete-li zabránit vaší aplikaci v vyvolání této výjimky, je nutné upravit tento soubor, aby definoval metadata, která musí být přítomna v době běhu. Nejčastěji tuto chybu řešíte tak, že přidáte `MarshalObject`atribut, `MarshalDelegate`nebo `MarshalStructure` do vhodného prvku programu v souboru direktiv modulu runtime. Informace o formátu tohoto souboru naleznete v tématu reference ke [konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
 > Vzhledem k tomu, že tato výjimka označuje, že metadata potřebná vaší aplikací nejsou v době běhu k dispozici, neměli `try` byste tuto výjimku zpracovat v / `catch` bloku. Místo toho byste měli diagnostikovat příčinu výjimky a odstranit ji přidáním příslušné položky do souboru direktiv modulu runtime.  
@@ -82,5 +82,5 @@ ms.locfileid: "69941701"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Exception?displayProperty=nameWithType>
-- [Třída MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Třída MissingMetadataException](missingmetadataexception-class-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)

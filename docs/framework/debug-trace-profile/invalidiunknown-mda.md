@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: c7924771-a16b-40fe-b337-ce51dcdf6a12
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 35560b966d5fba60ac35b2eb1e559e196fc868f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea7f48ab61c16cb0430717074f1b1feab4827763
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754532"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052597"
 ---
 # <a name="invalidiunknown-mda"></a>invalidIUnknown – pomocník spravovaného ladění (MDA)
-`invalidIUnknown` Pomocníka spravovaného ladění (MDA) se aktivuje, když neplatný `IUnknown` předán ukazatel do spravovaného kódu z nativního kódu. `IUnknown` Nevrátí úspěch, když se dotázali `IUnknown` rozhraní.  
+Pokud je do spravovaného kódu z nativního kódu předán neplatný `IUnknown` ukazatel, je aktivován pomocník spravovanéholadění(MDA).`invalidIUnknown` Při `IUnknown` dotazování `IUnknown` na rozhraní se nezdařila operace vrácení.  
   
 ## <a name="symptoms"></a>Příznaky  
- Při zařazování při zařazování argument ukazatele rozhraní modelu COM, dojde k neočekávané chybě.  
+ Při zařazování ukazatele rozhraní modelu COM během zařazování argumentů dojde k neočekávané chybě.  
   
-## <a name="cause"></a>Příčina  
- Nesprávné `QueryInterface` implementace na rozhraní COM předán modulu CLR.  
+## <a name="cause"></a>příčina  
+ Nesprávná `QueryInterface` implementace rozhraní COM předaných modulu CLR.  
   
 ## <a name="resolution"></a>Řešení  
- Opravte `QueryInterface` implementace.  
+ Opravte `QueryInterface` implementaci.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Popis chyby.  
+ Popis chyby  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -48,5 +48,5 @@ ms.locfileid: "61754532"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

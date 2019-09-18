@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Selection Item control pattern
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
-ms.openlocfilehash: aef1d31499f65834fa1268147e45f82294fe560a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8b1492bbc9f761c08b178bf42bdf5287bc5ebfb1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935691"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043211"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69935691"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.ISelectionItemProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- Vzor ovládacího prvku se používá pro podporu ovládacích prvků, které fungují jako jednotliví, volitelných podřízených položek kontejnerových ovládacích prvků, které implementují <xref:System.Windows.Automation.Provider.ISelectionProvider>. <xref:System.Windows.Automation.SelectionItemPattern> Příklady ovládacích prvků, které implementují vzor ovládacího prvku ovládacích SelectionItem, najdete v tématu [mapování vzoru řízení pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md) .  
+ Vzor ovládacího prvku se používá pro podporu ovládacích prvků, které fungují jako jednotliví, volitelných podřízených položek kontejnerových ovládacích prvků, které implementují <xref:System.Windows.Automation.Provider.ISelectionProvider>. <xref:System.Windows.Automation.SelectionItemPattern> Příklady ovládacích prvků, které implementují vzor ovládacího prvku ovládacích SelectionItem, najdete v tématu [mapování vzoru řízení pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md) .  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
@@ -50,10 +50,10 @@ ms.locfileid: "69935691"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-selection-control-pattern.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)
 - [Ukázka zprostředkovatele fragmentů](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771502(v=vs.90))

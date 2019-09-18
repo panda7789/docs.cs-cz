@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6517edcc2784b7d70c08c4d15d837fc1f209c49
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6e15ef69c4777cdafe2e5861050a1ccc1f6a1a70
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928239"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046021"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe
 Informace o obecných typech jsou získány stejným způsobem jako informace o jiných typech: prozkoumáním <xref:System.Type> objektu, který představuje obecný typ. Hlavní rozdíl je v tom, že obecný typ obsahuje seznam <xref:System.Type> objektů, které představují jeho parametry obecného typu. První postup v této části prověřuje obecné typy.  
@@ -119,6 +119,6 @@ Informace o obecných typech jsou získány stejným způsobem jako informace o 
 
 - <xref:System.Type>
 - <xref:System.Reflection.MethodInfo>
-- [Reflexe a obecné typy](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)
-- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Reflexe a obecné typy](reflection-and-generic-types.md)
+- [Zobrazení informací o typu](viewing-type-information.md)
 - [Obecné typy](../../standard/generics/index.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 791c6c8b0396ec958ff0c8378038051b23d486d1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 852490c57a2954e9d56799ef8deebbef31d5f665
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956700"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045889"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 
@@ -61,7 +61,7 @@ Tato pravidla jsou stejná, bez ohledu na to, zda je ke kritickému členovi zab
 
 Kód aplikace spouštěný z příkazového řádku se spouští s úplným vztahem důvěryhodnosti. Pokud není označený jako transparentní, může k přístupu ke členům kritickým pro zabezpečení použít reflexi. Při spuštění stejného kódu s částečným vztahem důvěryhodnosti (například v doméně aplikace v izolovaném prostoru) určuje úroveň vztahu důvěryhodnosti sestavení, zda může přistupovat ke kódu kritickému pro zabezpečení: Pokud sestavení má silný název a je nainstalováno v globální mezipaměti sestavení (GAC), jedná se o důvěryhodné sestavení a může volat členy kritické pro zabezpečení. Pokud není důvěryhodná, je tato volba transparentní, i když nebyla označena jako průhledná a nemůže přistupovat ke členům kritickým pro zabezpečení.
 
-Další informace o modelu zabezpečení v .NET Framework 4 najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).
+Další informace o modelu zabezpečení v .NET Framework 4 najdete v tématu [změny zabezpečení](../security/security-changes.md).
 
 ## <a name="reflection-and-transparency"></a>Odraz a průhlednost
 
@@ -117,9 +117,9 @@ Vyhněte se psaní veřejných členů <xref:System.Reflection.MethodInfo> , kte
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>
-- [Změny zabezpečení](../../../docs/framework/security/security-changes.md)
-- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
-- [Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
-- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Změny zabezpečení](../security/security-changes.md)
+- [Zabezpečení přístupu kódu](../misc/code-access-security.md)
+- [Bezpečnostní problémy v generování reflexe](security-issues-in-reflection-emit.md)
+- [Zobrazení informací o typu](viewing-type-information.md)
 - [Použití atributů](../../standard/attributes/applying-attributes.md)
-- [Přístup k vlastním atributům](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)
+- [Přístup k vlastním atributům](accessing-custom-attributes.md)

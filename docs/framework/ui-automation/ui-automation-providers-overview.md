@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: 45e1cd9bdfcbcf592ce6708496282e2e66a4a2e3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c8db2e6cbd1f0c0dd61ecb8e147133b8c608ea8f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914382"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042045"
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "69914382"
 ### <a name="navigation"></a>Navigace  
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]prvky jsou zpřístupněny klientům jako [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]sestaví strom tak, že přejde z jednoho prvku na jiný. Navigace je povolena poskytovateli pro každý prvek, z nichž každá může ukazovat na nadřazenou položku, na stejné úrovni a na podřízené objekty.  
   
- Další informace o zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klienta stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+ Další informace o zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klienta stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
 ### <a name="views"></a>Zobrazení  
  Klient může zobrazit [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom ve třech hlavních zobrazeních, jak je znázorněno v následující tabulce.  
@@ -57,7 +57,7 @@ ms.locfileid: "69914382"
 |Zobrazení ovládacích prvků|Obsahuje prvky, které jsou ovládacími prvky.|  
 |Zobrazení obsahu|Obsahuje prvky, které mají obsah.|  
   
- Další informace o klientských zobrazeních [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+ Další informace o klientských zobrazeních [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
  Je zodpovědný za implementaci poskytovatele k definování elementu jako obsahu elementu nebo ovládacího prvku. Prvky ovládacího prvku mohou nebo nemusí být zároveň prvky obsahu, ale všechny prvky obsahu jsou ovládací prvky.  
   
@@ -78,4 +78,4 @@ ms.locfileid: "69914382"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)

@@ -16,19 +16,19 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-ms.openlocfilehash: b99720b9653b8454419acd35085bfe9a7ac4b5af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe2ad55c3f60347369c0e92bc834d81d98f3870e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796783"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046960"
 ---
 # <a name="using-client-sockets"></a>Použití klientských soketů
-Předtím, než můžete zahájit konverzaci prostřednictvím <xref:System.Net.Sockets.Socket>, je nutné vytvořit datový kanál mezi vaší aplikací a vzdáleným zařízením. I když existují jiné rodiny adres sítě a protokoly, tento příklad ukazuje, jak vytvořit připojení TCP/IP k vzdálené služby.  
+Předtím <xref:System.Net.Sockets.Socket>, než můžete zahájit konverzaci pomocí, je nutné vytvořit datový kanál mezi vaší aplikací a vzdáleným zařízením. I když existují jiné řady síťových adres a protokoly, tento příklad ukazuje, jak vytvořit připojení TCP/IP ke vzdálené službě.  
   
- TCP/IP používá síťová adresa a číslo portu služby k jednoznačné identifikaci služby. Síťová adresa identifikuje určité zařízení v síti; číslo portu identifikuje konkrétní služby na tomto zařízení pro připojení k. Kombinace portu síťového adres a služeb se nazývá koncový bod, který je reprezentován v rozhraní .NET Framework podle <xref:System.Net.EndPoint> třídy. Potomkem **koncový bod** je definována pro každý nepodporuje rodina adres; pro rodina IP adres, je třída <xref:System.Net.IPEndPoint>.  
+ Protokol TCP/IP používá k jednoznačné identifikaci služby síťovou adresu a číslo portu služby. Síťová adresa identifikuje konkrétní zařízení v síti. číslo portu identifikuje konkrétní službu, ke které se má toto zařízení připojit. Kombinace síťové adresy a portu služby se nazývá koncový bod, který je reprezentován v .NET Framework <xref:System.Net.EndPoint> třídy. Pro každou podporovanou rodinu adres je definován následník **koncového bodu** . pro rodinu IP adres je <xref:System.Net.IPEndPoint>třída.  
   
- <xref:System.Net.Dns> Třídy nabízí název domény pro aplikace, které používají protokol TCP/IP internetové služby. <xref:System.Net.Dns.Resolve%2A> Metoda dotazování DNS serveru pro namapování názvu uživatelsky přívětivé domény (například "host.contoso.com"), aby se číselné internetovou adresu (např. 192.168.1.1). **Vyřešit** vrátí <xref:System.Net.IPHostEntry> , který obsahuje seznam adres a aliasy pro požadovaný název. Ve většině případů můžete použít první adresu vrácenou v <xref:System.Net.IPHostEntry.AddressList%2A> pole. Následující kód získá <xref:System.Net.IPAddress> obsahující IP adresu pro host.contoso.com serveru.  
+ <xref:System.Net.Dns> Třída poskytuje služby názvu domény aplikacím, které používají internetové služby TCP/IP. Metoda <xref:System.Net.Dns.Resolve%2A> se dotazuje serveru DNS na mapování uživatelsky přívětivého názvu domény (například "host.contoso.com") na číselnou internetovou adresu (například 192.168.1.1). Funkce **Resolve** vrátí <xref:System.Net.IPHostEntry> , která obsahuje seznam adres a aliasů pro požadovaný název. Ve většině případů můžete použít první adresu vrácenou v <xref:System.Net.IPHostEntry.AddressList%2A> poli. Následující kód získá <xref:System.Net.IPAddress> adresu obsahující IP adresu pro Server Host.contoso.com.  
   
 ```vb  
 Dim ipHostInfo As IPHostEntry = Dns.Resolve("host.contoso.com")  
@@ -40,7 +40,7 @@ IPHostEntry ipHostInfo = Dns.Resolve("host.contoso.com");
 IPAddress ipAddress = ipHostInfo.AddressList[0];  
 ```  
   
- Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (Další informace najdete v tématu [název služby a registru číslo portu protokolu přenosu](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Další služby můžou jste se zaregistrovali čísla portu v rozsahu 1 024 do 65 535. Následující kód je kombinací IP adresu pro host.contoso.com s číslem portu, chcete-li vytvořit vzdálený koncový bod pro připojení.  
+ Internet Assigned Numbers Authority (IANA) definuje čísla portů pro běžné služby (Další informace najdete v části [Service Name and Transport Protocol Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Jiné služby můžou mít registrovaná čísla portů v rozsahu 1 024 až 65 535. Následující kód kombinuje IP adresu pro host.contoso.com s číslem portu pro vytvoření vzdáleného koncového bodu pro připojení.  
   
 ```vb  
 Dim ipe As New IPEndPoint(ipAddress, 11000)  
@@ -50,7 +50,7 @@ Dim ipe As New IPEndPoint(ipAddress, 11000)
 IPEndPoint ipe = new IPEndPoint(ipAddress,11000);  
 ```  
   
- Po určení adresa vzdáleného zařízení a vyberete port má použít pro připojení, aplikace může pokus o navázání připojení se vzdáleným zařízením. Následující příklad používá existující **IPEndPoint** pro připojení ke vzdálenému zařízení a zachytí všechny výjimky, které jsou vyvolány.  
+ Po určení adresy vzdáleného zařízení a výběru portu, který se má použít pro připojení, se aplikace může pokusit připojit ke vzdálenému zařízení. Následující příklad používá existující **IPEndPoint** pro připojení ke vzdálenému zařízení a zachycuje všechny výjimky, které jsou vyvolány.  
   
 ```vb  
 Try  
@@ -79,7 +79,7 @@ try {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití synchronního klientského soketu](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)
-- [Použití asynchronního klientského soketu](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)
-- [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)
-- [Sokety](../../../docs/framework/network-programming/sockets.md)
+- [Použití synchronního klientského soketu](using-a-synchronous-client-socket.md)
+- [Použití asynchronního klientského soketu](using-an-asynchronous-client-socket.md)
+- [Postupy: Vytvoření soketu](how-to-create-a-socket.md)
+- [Sokety](sockets.md)

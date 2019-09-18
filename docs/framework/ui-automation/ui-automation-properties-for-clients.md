@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-ms.openlocfilehash: 6f02a4825206da0dd4949083cc54f555a8ae40b5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9c92ea154a078ff5a059edd82f06b8f3d5bab239
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914446"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042136"
 ---
 # <a name="ui-automation-properties-for-clients"></a>Vlastnosti automatizace uživatelského rozhraní pro klienty
 > [!NOTE]
@@ -27,7 +27,7 @@ ms.locfileid: "69914446"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]vlastnosti jsou jen pro čtení. Chcete-li nastavit vlastnosti ovládacího prvku, je nutné použít metody příslušného vzoru ovládacího prvku. Například můžete použít <xref:System.Windows.Automation.ScrollPattern.Scroll%2A> ke změně hodnot pozice posuvných oken.  
   
- Aby bylo možné zvýšit výkon, hodnoty vlastností ovládacích prvků a vzorů ovládacích prvků <xref:System.Windows.Automation.AutomationElement> mohou být po načtení objektů uloženy do mezipaměti. Další informace najdete v tématu [ukládání do mezipaměti v klientech automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md).  
+ Aby bylo možné zvýšit výkon, hodnoty vlastností ovládacích prvků a vzorů ovládacích prvků <xref:System.Windows.Automation.AutomationElement> mohou být po načtení objektů uloženy do mezipaměti. Další informace najdete v tématu [ukládání do mezipaměti v klientech automatizace uživatelského rozhraní](caching-in-ui-automation-clients.md).  
   
 ## <a name="property-ids"></a>ID vlastností  
  Identifikátory vlastností (IDS) jsou jedinečné a konstantní hodnoty, které jsou zapouzdřeny <xref:System.Windows.Automation.AutomationProperty> v objektech. Klientské aplikace automatizace uživatelského rozhraní získávají tato ID z <xref:System.Windows.Automation.AutomationElement> třídy nebo z příslušné třídy vzoru ovládacího prvku, <xref:System.Windows.Automation.ScrollPattern>jako je například. Zprostředkovatelé automatizace uživatelského rozhraní je <xref:System.Windows.Automation.AutomationElementIdentifiers> získají z jedné z tříd identifikátorů vzoru ovládacích prvků, <xref:System.Windows.Automation.ScrollPatternIdentifiers>jako je například.  
@@ -99,6 +99,6 @@ ms.locfileid: "69914446"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)
-- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
-- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md)
+- [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](caching-in-ui-automation-clients.md)
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)
+- [Přihlášení k odběru událostí automatizace uživatelského rozhraní](subscribe-to-ui-automation-events.md)

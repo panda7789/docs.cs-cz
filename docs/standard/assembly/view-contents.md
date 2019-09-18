@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazit obsah sestavení'
+title: 'Postupy: Zobrazení obsahu sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -16,14 +16,15 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 8f27afafde0b83dfe886d218f3148d8ff07b30cb
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 40ed31bb2231775bb2b6eb24586e07c8b07a85bb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973024"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053947"
 ---
-# <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazit obsah sestavení
+# <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
+
 K zobrazení informací o jazyce MSIL (Microsoft Intermediate Language) v souboru můžete použít nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Pokud je testovaný soubor sestavení, mohou tyto informace obsahovat atributy sestavení a také odkazy na jiné moduly a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavením nebo součástí sestavení a zda má soubor odkazy na jiné moduly nebo sestavení.  
   
 Chcete-li zobrazit **obsah sestavení pomocí** \<programu *Ildasm. exe*, zadejte text *název sestavení*> na příkazovém řádku. Například následující příkaz zpětně přeloží sestavení *Hello. exe* .  
@@ -35,6 +36,7 @@ ildasm Hello.exe
 Chcete-li zobrazit informace o manifestu sestavení, dvakrát klikněte na ikonu **manifestu** v okně MSIL Disassembler.  
   
 ## <a name="example"></a>Příklad  
+
 Následující příklad začíná základním programem "Hello World". Po zkompilování programu použijte program *Ildasm. exe* pro zpětný překlad sestavení *Hello. exe* a zobrazení manifestu sestavení.  
 
 ```cpp

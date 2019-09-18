@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42daa241d0ebbfeb184b57e682fbb50bdaeead65
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 6eba8202f0284b7b1054585039f12da9364ca1e9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894194"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051769"
 ---
 # <a name="how-to-implement-callback-functions"></a>Postupy: Implementace funkcí zpětného volání
 Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vyvolání platformy, může vytisknout hodnotu popisovače pro každé okno v místním počítači. Konkrétně postup a příklad používají funkci **EnumWindows** pro krokování seznamu oken a spravované funkce zpětného volání (pojmenované zpětné volání) k vytištění hodnoty popisovače okna.  
@@ -38,7 +38,7 @@ Následující postup a příklad ukazují, jak spravovaná aplikace, pomocí vy
   
 4. Zajistěte, aby systém uvolňování paměti nedeklaroval delegáta před tím, než funkce zpětného volání dokončí svou práci. Pokud předáte delegáta jako parametr nebo předáte delegáta, který je obsažen jako pole ve struktuře, zůstane po dobu trvání volání neshromažďováno. Podobně jako v následujícím příkladu výčtu funkce zpětného volání dokončí svou práci před vrácením volání a nevyžaduje od spravovaného volajícího žádné další akce.  
   
-     Pokud se však funkce zpětného volání dá vyvolat po vrácení volání, spravované volající musí provést kroky, aby se zajistilo, že delegát zůstane neshromážděný, dokud funkce zpětného volání nedokončí. Podrobné informace o tom, jak zabránit uvolňování paměti, najdete v tématu věnovaném [vzájemnému zařazování](../../../docs/framework/interop/interop-marshaling.md) pomocí volání platforem.  
+     Pokud se však funkce zpětného volání dá vyvolat po vrácení volání, spravované volající musí provést kroky, aby se zajistilo, že delegát zůstane neshromážděný, dokud funkce zpětného volání nedokončí. Podrobné informace o tom, jak zabránit uvolňování paměti, najdete v tématu věnovaném [vzájemnému zařazování](interop-marshaling.md) pomocí volání platforem.  
   
 ## <a name="example"></a>Příklad  
   
@@ -131,5 +131,5 @@ int main()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce zpětného volání](../../../docs/framework/interop/callback-functions.md)
-- [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Funkce zpětného volání](callback-functions.md)
+- [Volání funkce DLL](calling-a-dll-function.md)

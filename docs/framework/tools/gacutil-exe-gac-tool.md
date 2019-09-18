@@ -19,18 +19,18 @@ helpviewer_keywords:
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99ffbccca8cd8a719e5571638308e28d494d687a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 437d2d1bb026795dfa01a4c01ca12acf2b8f5792
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926879"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044668"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (nástroj globální mezipaměti sestavení)
 
 Nástroj Global Assembly Cache umožňuje zobrazit a měnit obsah globální mezipaměti sestavení (GAC) a mezipaměti pro stahování.
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -66,7 +66,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/u** *assemblyName*|Odinstaluje sestavení z globální mezipaměti sestavení (GAC).|
 |**/UF** *assemblyName*|Vynutí odinstalování zadaného sestavení odstraněním všech odkazů na něj.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním možností **/u** a **/f** společně. **Poznámka:**  Tuto možnost nelze použít k odstranění sestavení nainstalovaného pomocí Instalační služby systému Windows společnosti Microsoft. Pokud se o tuto operaci pokusíte, nástroj zobrazí chybovou zprávu.|
 |**/ul** *souboru assemblyListFile*|Odinstaluje jedno nebo více sestavení určených v *souboru assemblyListFile* z globální mezipaměti sestavení (GAC).|
-|**/u**[**ngen**] *assemblyName*|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC). Existují-li pro zadané sestavení počty odkazů, nástroj tyto počty zobrazí a neodstraní sestavení z globální mezipaměti sestavení (GAC). **Poznámka:**  V .NET Framework verze 2,0 `/ungen` se nepodporuje. Místo toho použijte `uninstall` příkaz [Ngen. exe (generátor nativních imagí)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). <br /><br /> V .NET Framework verzích 1,0 a 1,1 způsobí zadání **/ungen** , že nástroj Gacutil. exe odebere sestavení z mezipaměti nativních imagí. Tato mezipaměť ukládá nativní bitové kopie pro sestavení, která byla vytvořena pomocí nástroje [Ngen. exe (generátor nativních imagí)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|
+|**/u**[**ngen**] *assemblyName*|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC). Existují-li pro zadané sestavení počty odkazů, nástroj tyto počty zobrazí a neodstraní sestavení z globální mezipaměti sestavení (GAC). **Poznámka:**  V .NET Framework verze 2,0 `/ungen` se nepodporuje. Místo toho použijte `uninstall` příkaz [Ngen. exe (generátor nativních imagí)](ngen-exe-native-image-generator.md). <br /><br /> V .NET Framework verzích 1,0 a 1,1 způsobí zadání **/ungen** , že nástroj Gacutil. exe odebere sestavení z mezipaměti nativních imagí. Tato mezipaměť ukládá nativní bitové kopie pro sestavení, která byla vytvořena pomocí nástroje [Ngen. exe (generátor nativních imagí)](ngen-exe-native-image-generator.md).|
 |**/UR** *assemblyName*<br /><br /> *programu*<br /><br /> *id*<br /><br /> *název*|Odinstaluje odkaz na zadané sestavení z globální mezipaměti sestavení (GAC). Chcete-li odebrat odkaz na sestavení, je nutné zadat stejné parametry *schématu*, *ID*a *popisu* , jaké byly zadány s možnostmi **/i** a **/r** (nebo **/IR)** při instalaci sestavení. Popis platných hodnot, které lze pro tyto parametry zadat, naleznete v možnosti **/r** .<br /><br /> Zadání této možnosti je ekvivalentní se zadáním možností **/u** a **/r** společně.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
 
@@ -180,7 +180,7 @@ gacutil /l
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
-- [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Globální mezipaměť sestavení](../app-domains/gac.md)
+- [Regasm.exe (nástroj registrace sestavení)](regasm-exe-assembly-registration-tool.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

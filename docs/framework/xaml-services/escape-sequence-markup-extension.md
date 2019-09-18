@@ -1,5 +1,5 @@
 ---
-title: '{} Řídicí sekvence – rozšíření značek'
+title: '{}Řídicí sekvence – rozšíření značek'
 ms.date: 03/30/2017
 f1_keywords:
 - '{}'
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - escape sequence [XAML Services]
 ms.assetid: 3ce3e2ad-a868-43f9-9c98-b29561cb146e
-ms.openlocfilehash: 9f6743dd8a82891ac2233978550e5679130de0be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b0646c62a1342eb160d1967e86ac286429013f3c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855604"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053865"
 ---
 # <a name="-escape-sequence--markup-extension"></a>{} – řídicí sekvence / rozšíření značek
-Poskytuje řídicí sekvence XAML pro hodnoty atributů. Řídicí sekvence povoluje následující hodnoty v atributu je interpretován jako literální.  
+Poskytuje řídicí sekvenci jazyka XAML pro hodnoty atributu. Řídicí sekvence umožňuje interpretovat následné hodnoty v atributu jako literál.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
-```xml  
+```xaml  
 <object property="{} literalValue" .../>  
 ```  
   
 ## <a name="xaml-property-element-usage"></a>Použití elementu vlastnosti XAML  
   
-```  
+```xaml  
 <object>  
   <object.property>  
     {} literalValue  
@@ -41,20 +41,20 @@ Poskytuje řídicí sekvence XAML pro hodnoty atributů. Řídicí sekvence povo
   
 |||  
 |-|-|  
-|*literalValue*|Řetězcový literál, který následuje řídicí sekvence. Obvykle tento řetězec obsahuje otevřít nebo zavřít závorka ({nebo}).|  
+|*literalValue*|Literální řetězec, který následuje za řídicí sekvencí. Tento řetězec obvykle obsahuje levou nebo uzavírací složenou závorku ({nebo}).|  
   
 ## <a name="remarks"></a>Poznámky  
- Řídicí sekvence ({}) se používá tak, aby levou složenou závorku ({}) je možné jako literální znak v XAML.  
+ Řídicí sekvence ({}) se používá, aby bylo možné použít levou složenou závorku ({) jako literální znak v jazyce XAML.  
   
- Čtenáři XAML obvykle používají levou složenou závorku ({}) k označení vstupní bod rozšíření značek, ale nejprve zkontrolujte další znak k určení, zda je pravá složená závorka (}). Pouze když dvě složené závorky ({}) jsou sousedící, se považují za řídicí sekvence.  
+ Čtečky XAML obvykle používají levou složenou závorku ({) k označení vstupního bodu rozšíření značek, ale nejprve si vyžádají další znak a určí, zda se jedná o pravou složenou závorku (}). Pouze v případě, že dvě složené{}závorky () jsou sousední, jsou považovány za řídicí sekvenci.  
   
- Pokud je řídicí sekvence, čtečky XAML by měl zpracovat zbývající část řetězce jako řetězec. Však pokud řídicí sekvence je u člena, který má konvertor typu, řetězec může projít převod typu při je interpretován tvůrci XAML.  
+ Pokud řídicí sekvence je zjištěna, čtečka XAML by měla zpracovat zbytek řetězce jako řetězec. Pokud je však řídicí sekvence použita pro člena, který má konvertor typu, může řetězec přecházet při převodu typu, když je interpretován zapisovačem XAML.  
   
- Řídicí sekvence není rozšíření značek a nepochází ze třídy. Je však konvence, který by měly dodržovat čtenáři XAML (včetně vlastních čtenáři XAML).  
+ Řídicí sekvence není rozšířením značek a není zálohována třídou. Nicméně se jedná o konvenci, kterou by měli respektovat čtenáři XAML (včetně vlastních čtenářů XAML).  
   
- Znak uvozovek (") nelze použít jako řídicí sekvence tímto způsobem. Pokud je potřeba nastavit jako hodnotu vlastnosti noncontent vlastnosti uvozovku, používat syntax prvku vlastnosti a umístěte znak uvozovek jako řetězec uvnitř elementu vlastnosti nebo použít znakové entity XML. Pro vlastnost obsahu může být znak uvozovek celého obsahu.  
+ Uvozovky (") nelze použít jako řídicí sekvenci tímto způsobem. Pokud potřebujete nastavit uvozovky jako hodnotu vlastnosti pro vlastnost neobsahující vlastnosti, použijte syntaxi elementu vlastností a umístěte uvozovky jako řetězec uvnitř elementu vlastnosti nebo použijte entitu znaků XML. V případě vlastnosti obsahu může být uvozovka celým obsahem.  
   
- Řídicí sekvence ({}) je vyžadován často, při určování typu XML, který musí obsahovat obor názvů kvalifikátoru v umístění, kde se může zobrazit rozšíření značek XAML. To zahrnuje počáteční hodnotu atributu XAML a rozšíření značek, ihned po rovnítko (=). Následující příklad ukazuje řídicí sekvence pro obor názvů XML, který se zobrazí na začátku hodnotu atributu XAML.  
+ Řídicí sekvence ({}) se často vyžaduje při určení typu XML, který musí obsahovat kvalifikátor oboru názvů v umístění, kde se může zobrazit rozšíření značek XAML. To zahrnuje začátek hodnoty atributu XAML a v rozšíření značek hned po znaménku rovná se (=). Následující příklad ukazuje řídicí sekvence pro obor názvů XML, který se zobrazí na začátku hodnoty atributu XAML.  
   
  [!code-xaml[XLINQExample#StackPanelResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml#stackpanelresources)]  
   

@@ -7,72 +7,72 @@ helpviewer_keywords:
 ms.assetid: 0ed69f73-5c01-4514-bd63-979c6e38d41d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f2ea19c88ff8b854b09ed372b35bf8c45d994585
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8d09b5b76c39f33848d44beb43d9b09c5e6ed13b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583657"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046180"
 ---
 # <a name="security-etw-events"></a>Události Trasování událostí pro Windows zabezpečení
-<a name="top"></a> Události zabezpečení jsou aktivovány v průběhu ověřování silných názvů a ověření pomocí technologie Authenticode.  
+<a name="top"></a>Události zabezpečení jsou vyvolány během ověřování silných názvů a při ověřování prostřednictvím technologie Authenticode.  
   
  Tato kategorie se skládá z následujících událostí:  
   
-- [StrongNameVerificationStart_V1 a StrongNameVerificationStop_V1 události](#strongnameverificationstart_v1_and_strongnameverificationstop_v1_events)  
+- [Události StrongNameVerificationStart_V1 a StrongNameVerificationStop_V1](#strongnameverificationstart_v1_and_strongnameverificationstop_v1_events)  
   
-- [AuthenticodeVerificationStart_V1 a AuthenticodeVerificationStop_V1 události](#authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events)  
+- [Události AuthenticodeVerificationStart_V1 a AuthenticodeVerificationStop_V1](#authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events)  
   
 <a name="strongnameverificationstart_v1_and_strongnameverificationstop_v1_events"></a>   
-## <a name="strongnameverificationstartv1-and-strongnameverificationstopv1-events"></a>StrongNameVerificationStart_V1 a StrongNameVerificationStop_V1 události  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+## <a name="strongnameverificationstart_v1-and-strongnameverificationstop_v1-events"></a>Události StrongNameVerificationStart_V1 a StrongNameVerificationStop_V1  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce. (Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).)  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword` (0x400)|Informational(4)|  
+|`SecurityKeyword` (0x400)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`StrongNameVerificationStart_V1`|181|Začátek ověřování silných názvů.|  
-|`StrongNameVerificationStop_V1`|182|Konec ověřování silných názvů.|  
+|`StrongNameVerificationStart_V1`|181|Začátek ověřování se silným názvem.|  
+|`StrongNameVerificationStop_V1`|182|Konec ověřování se silným názvem.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|VerificationFlags|win:UInt32|Příznaky ověření.|  
-|Kód chyby|win:UInt32|Kód chyby HResult.|  
-|FullyQualifiedAssemblyName|win:UnicodeString|Plně kvalifikovaný název.|  
-|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|VerificationFlags|Win: UInt32|Příznaky ověřování.|  
+|Kód chyby|Win: UInt32|Kód chyby HResult.|  
+|FullyQualifiedAssemblyName|win:UnicodeString|Plně kvalifikovaný název sestavení.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="authenticodeverificationstart_v1_and_authenticodeverificationstop_v1_events"></a>   
-## <a name="authenticodeverificationstartv1-and-authenticodeverificationstopv1-events"></a>AuthenticodeVerificationStart_V1 a AuthenticodeVerificationStop_V1 události  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+## <a name="authenticodeverificationstart_v1-and-authenticodeverificationstop_v1-events"></a>Události AuthenticodeVerificationStart_V1 a AuthenticodeVerificationStop_V1  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`SecurityKeyword` (0x400)|Informational(4)|  
+|`SecurityKeyword` (0x400)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`AuthenticodeVerificationStart_V1`|183|Bylo zahájeno ověřování Authenticode.|  
-|`AuthenticodeVerificationStop_V1`|184|Konec ověření pomocí technologie Authenticode.|  
+|`AuthenticodeVerificationStart_V1`|183|Začátek ověřování Authenticode|  
+|`AuthenticodeVerificationStop_V1`|184|Konec ověřování Authenticode|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|VerificationFlags|win:UInt32|Příznaky ověření.|  
-|Kód chyby|win:UInt32|Kód chyby HResult.|  
-|ModulePath|win:UnicodeString|Cesta modulu.|  
-|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|VerificationFlags|Win: UInt32|Příznaky ověřování.|  
+|Kód chyby|Win: UInt32|Kód chyby HResult.|  
+|ModulePath nastavte|win:UnicodeString|Cesta k modulu|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)

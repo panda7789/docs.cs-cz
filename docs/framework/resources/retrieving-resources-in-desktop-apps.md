@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e3b396210cf77cacf3d03439af24de40d2dadeee
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: f4c44bdb4be4c90c20cd6bdb56db6cd3380535c7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971173"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045614"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace byste měli ideálním balíčkem zabalit prostředky pro výchozí nebo neutrální jazykovou verzi pomocí hlavního sestavení a vytvořit samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, kterou vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídu, jak je popsáno v další části, pro přístup k pojmenovaným prostředkům. Pokud se rozhodnete Nevkládat prostředky do hlavního sestavení a satelitních sestavení, můžete také přistupovat k binárním souborům. Resources přímo, jak je popsáno v části [načtení prostředků ze souborů. Resources](#from_file) dále v tomto článku.  Pokud chcete načíst prostředky [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] v aplikacích, přečtěte si téma [Vytvoření a načtení prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) na stránce Windows Dev Center.  
@@ -38,7 +38,7 @@ Při práci s lokalizovanými prostředky v .NET Framework desktopové aplikace 
   
 - Přetížení, které má dva parametry: řetězec obsahující název prostředku a <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, jejíž prostředek má být načten. Pokud se sada prostředků pro tuto jazykovou verzi nenajde, správce prostředků použije náhradní pravidla k načtení příslušného prostředku. Další informace naleznete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>metody, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>a. <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29>  
   
- Správce prostředků používá proces pro použití náhradních prostředků k řízení toho, jak aplikace načítá prostředky specifické pro jazykovou verzi. Další informace najdete v části "proces záložního prostředku" v tématu [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytváření instancí <xref:System.Resources.ResourceManager> objektu naleznete v části "vytvoření objektu Správce prostředků" <xref:System.Resources.ResourceManager> v tématu třídy.  
+ Správce prostředků používá proces pro použití náhradních prostředků k řízení toho, jak aplikace načítá prostředky specifické pro jazykovou verzi. Další informace najdete v části "proces záložního prostředku" v tématu [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytváření instancí <xref:System.Resources.ResourceManager> objektu naleznete v části "vytvoření objektu Správce prostředků" <xref:System.Resources.ResourceManager> v tématu třídy.  
   
 ### <a name="retrieving-string-data-an-example"></a>Načítají se data řetězce: Příklad  
  Následující příklad volá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metodu pro načtení prostředků řetězce aktuální jazykové verze uživatelského rozhraní. Zahrnuje prostředek neutrálního řetězce pro anglickou (USA) jazykovou verzi a lokalizované prostředky pro jazykové verze francouzština (Francie) a ruština (Rusko). Následující prostředek v angličtině (USA) je v souboru s názvem Strings. txt:  
@@ -138,11 +138,11 @@ GetObject.exe
   
  <xref:System.Resources.SatelliteContractVersionAttribute> Atribut poskytuje podporu správy verzí pro hlavní sestavení. Zadání tohoto atributu pro hlavní sestavení aplikace umožňuje aktualizovat a znovu nasadit hlavní sestavení bez aktualizace jeho satelitních sestavení. Po aktualizaci hlavního sestavení Zvyšte číslo verze hlavního sestavení, ale ponechte číslo verze satelitního kontraktu beze změny. Když správce prostředků načte požadované prostředky, načte verzi satelitního sestavení určenou tímto atributem.  
   
- Sestavení zásad vydavatele poskytují podporu pro satelitní sestavení se správou verzí. Satelitní sestavení můžete aktualizovat a znovu nasadit bez aktualizace hlavního sestavení. Po aktualizaci satelitního sestavení zvyšte jeho číslo verze a odešlete ho do sestavení zásad vydavatele. V sestavení zásad vydavatele určete, že nové satelitní sestavení je zpětně kompatibilní s předchozí verzí. Správce prostředků použije <xref:System.Resources.SatelliteContractVersionAttribute> atribut k určení verze satelitního sestavení, ale zavaděč sestavení vytvoří vazby na verzi satelitního sestavení určenou v zásadě vydavatele. Další informace o sestaveních zásad vydavatele najdete v tématu [Vytvoření souboru zásad vydavatele](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md).  
+ Sestavení zásad vydavatele poskytují podporu pro satelitní sestavení se správou verzí. Satelitní sestavení můžete aktualizovat a znovu nasadit bez aktualizace hlavního sestavení. Po aktualizaci satelitního sestavení zvyšte jeho číslo verze a odešlete ho do sestavení zásad vydavatele. V sestavení zásad vydavatele určete, že nové satelitní sestavení je zpětně kompatibilní s předchozí verzí. Správce prostředků použije <xref:System.Resources.SatelliteContractVersionAttribute> atribut k určení verze satelitního sestavení, ale zavaděč sestavení vytvoří vazby na verzi satelitního sestavení určenou v zásadě vydavatele. Další informace o sestaveních zásad vydavatele najdete v tématu [Vytvoření souboru zásad vydavatele](../configure-apps/how-to-create-a-publisher-policy.md).  
   
- Chcete-li povolit podporu plné verze sestavení, doporučujeme nasadit sestavení se silným názvem do [globální mezipaměti sestavení (GAC](../../../docs/framework/app-domains/gac.md) ) a nasadit sestavení, která nemají silné názvy v adresáři aplikace. Pokud chcete nasadit sestavení se silným názvem v adresáři aplikace, nebudete moci zvýšit číslo verze satelitního sestavení při aktualizaci sestavení. Místo toho je nutné provést místní aktualizaci, kde nahradíte stávající kód aktualizovaným kódem a zachováte stejné číslo verze. Například pokud chcete aktualizovat verzi 1.0.0.0 satelitního sestavení s plně určeným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a", přepište ji pomocí aktualizovaného myApp. Resources. dll, který byl kompilováno se stejným plně zadaným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a". Všimněte si, že použití místních aktualizací u satelitních souborů sestavení ztěžuje aplikaci přesné určení verze satelitního sestavení.  
+ Chcete-li povolit podporu plné verze sestavení, doporučujeme nasadit sestavení se silným názvem do [globální mezipaměti sestavení (GAC](../app-domains/gac.md) ) a nasadit sestavení, která nemají silné názvy v adresáři aplikace. Pokud chcete nasadit sestavení se silným názvem v adresáři aplikace, nebudete moci zvýšit číslo verze satelitního sestavení při aktualizaci sestavení. Místo toho je nutné provést místní aktualizaci, kde nahradíte stávající kód aktualizovaným kódem a zachováte stejné číslo verze. Například pokud chcete aktualizovat verzi 1.0.0.0 satelitního sestavení s plně určeným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a", přepište ji pomocí aktualizovaného myApp. Resources. dll, který byl kompilováno se stejným plně zadaným názvem sestavení "myApp. Resources, Version = 1.0.0.0, Culture = de, PublicKeyToken = b03f5f11d50a3a". Všimněte si, že použití místních aktualizací u satelitních souborů sestavení ztěžuje aplikaci přesné určení verze satelitního sestavení.  
   
- Další informace o tom, jak sestavovat verze sestavení, najdete v tématu [Správa verzí sestavení](../../standard/assembly/versioning.md) a [způsob, jakým modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Další informace o tom, jak sestavovat verze sestavení, najdete v tématu [Správa verzí sestavení](../../standard/assembly/versioning.md) a [způsob, jakým modul runtime vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md).  
   
 <a name="from_file"></a>   
 ## <a name="retrieving-resources-from-resources-files"></a>Načítání prostředků ze souborů. Resources  
@@ -204,7 +204,7 @@ csc Example.cs
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Resources.ResourceManager>
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
-- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Prostředky v desktopových aplikacích](index.md)
+- [Zabalení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
 - [Vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674)

@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2e24cd05bb1c1ed9425c9be8bc02cb92dc488005
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c8c47091d943aa0d710cec1af83e039bca9ee2d2
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935728"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046246"
 ---
 # <a name="reliability-best-practices"></a>Spolehlivost – doporučené postupy
 
@@ -91,7 +91,7 @@ Většina tříd, které v současné době mají finalizační metodu pro jedno
 
 Všimněte si <xref:System.Runtime.InteropServices.SafeHandle> , že není náhradou <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>za.  Stále existují potenciální problémy s kolizem prostředků a výkonem, aby bylo možné explicitně uvolnit prostředky operačního systému.  Stačí si uvědomit `finally` , že bloky, které explicitně odstraňují prostředky, se nemusí provádět k dokončení.
 
-<xref:System.Runtime.InteropServices.SafeHandle>umožňuje implementovat vlastní <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodu, která provede práci k uvolnění popisovače, jako je například předání stavu do rutiny pro uvolnění operačního systému nebo uvolnění sady popisovačů ve smyčce.  Modul CLR garantuje, že je tato metoda spuštěna.  Je zodpovědností autora <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementace, aby bylo zajištěno, že se popisovač uvolní za všech okolností. V takovém případě dojde k nevrácení popisovače, což často vede k úniku nativních prostředků přidružených k popisovači. Proto je důležité strukturovat <xref:System.Runtime.InteropServices.SafeHandle> odvozené třídy tak <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> , aby implementace nevyžadovala přidělení všech prostředků, které nemusí být k dispozici v době vyvolání. Všimněte si, že je dovoleno volat metody, které mohou selhat v rámci <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementace za předpokladu, že váš kód může zpracovat taková selhání a dokončit kontrakt k uvolnění nativního popisovače. Pro účely ladění <xref:System.Boolean> má <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> návratovou hodnotu, která může být nastavena na `false` hodnotu, pokud dojde k závažné chybě, která brání vydání prostředku. Tím se aktivuje [releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md) MDA, pokud je tato možnost povolená, aby bylo možné tento problém identifikovat. Neovlivňuje modul runtime žádným jiným způsobem; <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> nebude volána znovu pro stejný prostředek, a v důsledku toho nebude popisovač vrácen.
+<xref:System.Runtime.InteropServices.SafeHandle>umožňuje implementovat vlastní <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodu, která provede práci k uvolnění popisovače, jako je například předání stavu do rutiny pro uvolnění operačního systému nebo uvolnění sady popisovačů ve smyčce.  Modul CLR garantuje, že je tato metoda spuštěna.  Je zodpovědností autora <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementace, aby bylo zajištěno, že se popisovač uvolní za všech okolností. V takovém případě dojde k nevrácení popisovače, což často vede k úniku nativních prostředků přidružených k popisovači. Proto je důležité strukturovat <xref:System.Runtime.InteropServices.SafeHandle> odvozené třídy tak <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> , aby implementace nevyžadovala přidělení všech prostředků, které nemusí být k dispozici v době vyvolání. Všimněte si, že je dovoleno volat metody, které mohou selhat v rámci <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementace za předpokladu, že váš kód může zpracovat taková selhání a dokončit kontrakt k uvolnění nativního popisovače. Pro účely ladění <xref:System.Boolean> má <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> návratovou hodnotu, která může být nastavena na `false` hodnotu, pokud dojde k závažné chybě, která brání vydání prostředku. Tím se aktivuje [releaseHandleFailed](../debug-trace-profile/releasehandlefailed-mda.md) MDA, pokud je tato možnost povolená, aby bylo možné tento problém identifikovat. Neovlivňuje modul runtime žádným jiným způsobem; <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> nebude volána znovu pro stejný prostředek, a v důsledku toho nebude popisovač vrácen.
 
 <xref:System.Runtime.InteropServices.SafeHandle>není v některých kontextech vhodný.  Vzhledem k tomu, že <xref:System.GC> <xref:System.Runtime.InteropServices.SafeHandle>metodu lze spustit v finalizační vlákně, nesmí být všechny popisovače, které jsou požadovány pro uvolnění určitého vlákna, zabaleny do. <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>
 
@@ -316,4 +316,4 @@ Tím se dá instruovat kompilátor za běhu pro přípravu veškerého kódu v b
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.ConstrainedExecution>
-- [Programování serveru SQL Server a atributy ochrany hostitele](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)
+- [Programování serveru SQL Server a atributy ochrany hostitele](sql-server-programming-and-host-protection-attributes.md)

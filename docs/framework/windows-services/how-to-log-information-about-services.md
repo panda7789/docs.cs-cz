@@ -13,12 +13,12 @@ helpviewer_keywords:
 - logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
-ms.openlocfilehash: 1ffc698910fe722fe761c62b87b059068d5f243f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3c974d5a98f8056e45899b109878e5a28ab2938e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935523"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053610"
 ---
 # <a name="how-to-log-information-about-services"></a>Postupy: Zaznamenávání informací o službách
 Ve výchozím nastavení mají všechny projekty služby systému Windows schopnost pracovat s protokolem událostí aplikace a zapisovat do něj informace a výjimky. <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> Vlastnost můžete použít k určení, zda chcete tuto funkci ve vaší aplikaci. Ve výchozím nastavení je protokolování zapnuté pro každou službu, kterou vytvoříte pomocí šablony projektu služby systému Windows. Můžete použít statickou formu <xref:System.Diagnostics.EventLog> třídy k zápisu informací o službě do protokolu bez nutnosti vytvořit instanci <xref:System.Diagnostics.EventLog> komponenty nebo ručně zaregistrovat zdroj.  
@@ -71,4 +71,4 @@ Ve výchozím nastavení mají všechny projekty služby systému Windows schopn
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)

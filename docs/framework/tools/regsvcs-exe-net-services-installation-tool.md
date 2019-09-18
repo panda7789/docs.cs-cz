@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dccf1b841d048ae460b89fd97da833aadb988422
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 032f43aa16dbca0f4ab0477d586e7568230b7381
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971805"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044263"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
@@ -27,7 +27,7 @@ Instalační nástroj .NET Services vykonává tyto akce:
   
 - Konfiguruje služby, které jste přidali pomocí programu do vaší třídy.  
   
- Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -67,7 +67,7 @@ Instalační nástroj .NET Services vykonává tyto akce:
 ## <a name="remarks"></a>Poznámky  
  Regsvcs. exe vyžaduje zdrojový soubor sestavení určený pomocí *assemblyFile. dll*. Toto sestavení musí být podepsáno silným názvem. Další informace o podepisování silným názvem naleznete v tématu [podepisování sestavení silným názvem](../../standard/assembly/sign-strong-name.md). Názvy cílové aplikace a souboru knihovny typů jsou volitelné. Argument *ApplicationName* lze vygenerovat ze zdrojového souboru sestavení a vytvoří jej pomocí Regsvcs. exe, pokud ještě neexistuje. Argument *souborKnihovnyTypů* může určovat název knihovny typů. Pokud název knihovny typů nezadáte, nástroj Regsvcs.exe použije jako výchozí název sestavení.  
   
- Pokud Regsvcs. exe zaregistruje metody komponenty, vztahuje se na ně [požadavky](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) a [požadavky propojení](../../../docs/framework/misc/link-demands.md) na tyto metody. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Regsvcs. exe však nemůže registrovat součásti s metodami chráněnými požadavkem nebo odkazem <xref:System.Security.Permissions.StrongNameIdentityPermission> na aplikaci <xref:System.Security.Permissions.PublisherIdentityPermission>nebo.  
+ Pokud Regsvcs. exe zaregistruje metody komponenty, vztahuje se na ně [požadavky](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100)) a [požadavky propojení](../misc/link-demands.md) na tyto metody. Vzhledem k tomu, že se nástroj spouští v plně důvěryhodném prostředí, většina požadavků na oprávnění je splněna. Regsvcs. exe však nemůže registrovat součásti s metodami chráněnými požadavkem nebo odkazem <xref:System.Security.Permissions.StrongNameIdentityPermission> na aplikaci <xref:System.Security.Permissions.PublisherIdentityPermission>nebo.  
   
  Pro použití Regsvcs.exe musíte mít administrátorská oprávnění na místním počítači.  
   
@@ -88,6 +88,6 @@ regsvcs /appname:myTargetApp /tlb:newTest.tlb myTest.dll
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
+- [Nástroje](index.md)
 - [Postupy: Podepsat sestavení silným názvem](../../standard/assembly/sign-strong-name.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

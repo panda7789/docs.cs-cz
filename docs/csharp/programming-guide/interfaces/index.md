@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 30c44b9f98bcc61d54b8103b6b40d14fd35715f4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a2cc7cb1b6da860a2c27bc8d2fe74e0ffde5f5e1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589178"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053266"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -27,7 +27,7 @@ Název struktury musí být platný C# [název identifikátoru](../inside-a-prog
 
 Libovolná třída nebo struktura, která <xref:System.IEquatable%601> implementuje rozhraní, musí obsahovat definici <xref:System.IEquatable%601.Equals%2A> pro metodu, která odpovídá signatuře, kterou určuje rozhraní. V důsledku toho můžete spočítat třídu, která implementuje `IEquatable<T>` , aby `Equals` obsahovala metodu, se kterou může instance třídy určit, zda je rovna jiné instanci stejné třídy.  
   
-Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Rozhraní definuje pouze signaturu. V takovém případě je rozhraní v C# podobné abstraktní třídě, ve které jsou všechny metody abstraktní. Třída nebo struktura však může implementovat více rozhraní, ale třída může dědit pouze jednu třídu, abstraktní nebo ne.
+Definice `IEquatable<T>` neposkytuje implementaci pro `Equals`. Třída nebo struktura může implementovat více rozhraní, ale třída může dědit pouze z jedné třídy.
   
 Další informace o abstraktních třídách naleznete v tématu [abstraktní a zapečetěné třídy a členy třídy](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
@@ -45,7 +45,7 @@ Vlastnosti a indexery třídy mohou definovat nadbytečné přistupující objek
 
 Rozhraní můžou dědit z jiných rozhraní. Třída může obsahovat rozhraní několikrát prostřednictvím základních tříd, které dědí nebo prostřednictvím rozhraní, která dědí jiná rozhraní. Nicméně třída může poskytnout implementaci rozhraní pouze jednou a pouze v případě, že třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud je rozhraní zděděné, protože jste zdědili základní třídu, která implementuje rozhraní, základní třída poskytuje implementaci členů rozhraní. Odvozená třída však může znovu implementovat jakékoli členy virtuálních rozhraní namísto použití zděděné implementace.  
   
-Základní třída může také implementovat členy rozhraní pomocí virtuálních členů. V takovém případě může odvozená třída změnit chování rozhraní přepsáním virtuálních členů. Další informace o virtuálních členech naleznete v [](../classes-and-structs/polymorphism.md)tématu polymorfismus.  
+Základní třída může také implementovat členy rozhraní pomocí virtuálních členů. V takovém případě může odvozená třída změnit chování rozhraní přepsáním virtuálních členů. Další informace o virtuálních členech naleznete v tématu [polymorfismus](../classes-and-structs/polymorphism.md).  
   
 ## <a name="interfaces-summary"></a>Souhrn rozhraní
 

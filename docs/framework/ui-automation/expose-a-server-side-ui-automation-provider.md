@@ -9,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider, exposing
 - server-side UI Automation provider, exposing
 ms.assetid: 55d419c0-2201-4101-90c9-2888df4dbb47
-ms.openlocfilehash: 8583c82efe341e8ae08ca5ee60bcf1dc8bd40865
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9896e09db7509930c6866a51af5133a9abb31506
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965177"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043776"
 ---
 # <a name="expose-a-server-side-ui-automation-provider"></a>Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]
@@ -30,5 +30,5 @@ ms.locfileid: "69965177"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
-- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](ui-automation-providers-overview.md)
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](server-side-ui-automation-provider-implementation.md)

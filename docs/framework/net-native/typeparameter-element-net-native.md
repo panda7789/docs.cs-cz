@@ -1,18 +1,18 @@
 ---
-title: <TypeParameter> – Element (.NET Native)
+title: <TypeParameter>– Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: d37bb1b7-1ddc-4c6d-8ecf-583f804a2479
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b03c87c70fa1bfcd331f468d369632f4164300bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0de00b9313b60b3a527dd0380ae90d82731a8c02
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982459"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049064"
 ---
-# <a name="typeparameter-element-net-native"></a>\<TypeParameter > – Element (.NET Native)
-Použije zásady na typ zastoupený argument typu předaný metodě.  
+# <a name="typeparameter-element-net-native"></a>\<Element > TypeParameter (.NET Native)
+Použije zásady na typ reprezentovaný argumentem typu předaným metodě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +37,29 @@ Použije zásady na typ zastoupený argument typu předaný metodě.
   
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
-|`Name`|Obecné|Požadovaný atribut. Název parametru typu <xref:System.Type>. Například pro podpis metody `Type.GetInterfaceMap(Type interfaceType)`, hodnota `Name` atribut je "interfaceType".|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
+|`Name`|Obecné|Požadovaný atribut. Název parametru typu <xref:System.Type>. Například pro signaturu `Type.GetInterfaceMap(Type interfaceType)`metody hodnota `Name` atributu je "InterfaceType".|  
+|`Activate`|Reflexe|Nepovinný atribut. Řídí přístup k konstruktorům za běhu, aby bylo možné povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Řídí dotazování pro informace o prvcích programu, ale nepovoluje přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> používají třídu.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.|  
+|`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů odkazů do prostředí Windows Runtime a COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů hodnot do nativního kódu.|  
   
-## <a name="name-attribute"></a>Název atributu  
+## <a name="name-attribute"></a>Atribut Name  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*parameter_name*|Název parametru typu <xref:System.Type>. Například pro podpis metody `Type.GetInterfaceMap(Type interfaceType)`, hodnota `Name` atribut je "interfaceType".|  
+|*parameter_name*|Název parametru typu <xref:System.Type>. Například pro signaturu `Type.GetInterfaceMap(Type interfaceType)`metody hodnota `Name` atributu je "InterfaceType".|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít u tohoto typu zásad Možné hodnoty jsou `All`, `Public` `PublicAndInternal`,,, a`Required PublicAndInternal` .`Required All` `Required Public` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,12 +68,12 @@ Použije zásady na typ zastoupený argument typu předaný metodě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe runtime konstruktoru nebo metody.|  
+|[\<Method>](method-element-net-native.md)|Aplikuje zásady reflexe za běhu na konstruktor nebo metodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<TypeParameter>` Element je podobný [ \<parametr >](../../../docs/framework/net-native/parameter-element-net-native.md) elementu, s tím rozdílem, že lze použít pouze u parametrů typu <xref:System.Type>. Platí zásady pro jakýkoli typ v době běhu reprezentována argument typu určeného `Name` atribut.  
+ Element je <xref:System.Type> [ podobný\<parametru >](parameter-element-net-native.md) element, s tím rozdílem, že lze použít pouze pro parametry typu. `<TypeParameter>` Použije zásady na jakýkoli typ, který je reprezentován v době běhu podle argumentu typu určeného `Name` atributem.  
   
- Serializátor NewtonSoft JSON patří třeba statickou `JsonConvert.DeserializeObject(String value, Type type)` metody. Následující direktivy reflection:  
+ Například serializátor Newtonsoft JSON obsahuje statickou `JsonConvert.DeserializeObject(String value, Type type)` metodu. Následující direktivy reflexe:  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -85,18 +85,18 @@ Použije zásady na typ zastoupený argument typu předaný metodě.
 </Directives>  
 ```  
   
- Zadejte těchto metadat pro typ runtime reprezentována `type` argument by měl být k dispozici pro serializaci. Pokud tyto direktivy modulu runtime platí pro projekt, který obsahuje následující zdrojový kód:  
+ Určete, že metadata pro typ modulu runtime reprezentovaného `type` argumentem by měla být k dispozici pro serializaci. Pokud se tyto direktivy modulu runtime vztahují na projekt, který obsahuje následující zdrojový kód:  
   
 ```csharp  
 Type t = typeof(StockQuote);  
 Object obj = JsonConvert.DeserializeObject(data, t);  
 ```  
   
- direktivy reflection usnadňují metadat `StockQuote` typu, které jsou k dispozici pro serializátor NewtonSoft JSON v době běhu.  
+ direktivy reflexe zpřístupňují `StockQuote` metadata pro typ pro serializátor Newtonsoft JSON v době běhu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<Metoda > – Element](../../../docs/framework/net-native/method-element-net-native.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [\<Metoda > element](method-element-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)

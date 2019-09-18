@@ -9,12 +9,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 74f834261d464430547ba3e1113db0ea780f593e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 860f2ae22eb6510dc1f1a454ae3e51ccb366078b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044446"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053626"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikací spouštěných jako služby systému Windows
 Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak jednoduché jako ladění jiných typů aplikací sady Visual Studio. Chcete-li ladit službu, je nutné spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěna. Pak můžete ladit aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
@@ -29,7 +29,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
  Tento článek popisuje ladění služby spuštěné v místním počítači, ale můžete také ladit služby systému Windows, které jsou spuštěny na vzdáleném počítači. Viz téma [vzdálené ladění](/visualstudio/debugger/debug-installed-app-package).  
   
 > [!NOTE]
-> <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Ladění metody může být obtížné, protože správce řízení služeb má za následek limit 30 sekund pro všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md)systému Windows.  
+> <xref:System.ServiceProcess.ServiceBase.OnStart%2A> Ladění metody může být obtížné, protože správce řízení služeb má za následek limit 30 sekund pro všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb](troubleshooting-debugging-windows-services.md)systému Windows.  
   
 > [!WARNING]
 > Chcete-li získat smysluplné informace pro ladění, ladicí program sady Visual Studio potřebuje najít soubory symbolů pro binární soubory, které jsou laděny. Pokud ladíte službu, kterou jste vytvořili v aplikaci Visual Studio, soubory symbolů (soubory. pdb) jsou ve stejné složce jako spustitelný soubor nebo knihovna a ladicí program je načte automaticky. Pokud ladíte službu, kterou jste nesestavili, měli byste nejprve vyhledat symboly pro službu a ověřit, zda je lze najít pomocí ladicího programu. Viz [určení symbolu (. pdb) a zdrojových souborů v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Viz [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
@@ -38,9 +38,9 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
   
 1. Sestavte službu v konfiguraci ladění.  
   
-2. Nainstalujte svoji službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)služby.  
+2. Nainstalujte svoji službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-install-and-uninstall-services.md)služby.  
   
-3. Spusťte službu, buď ze **správce řízení služeb**, **Průzkumník serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spusťte služby](../../../docs/framework/windows-services/how-to-start-services.md).  
+3. Spusťte službu, buď ze **správce řízení služeb**, **Průzkumník serveru**, nebo z kódu. Další informace najdete v tématu [jak: Spusťte služby](how-to-start-services.md).  
   
 4. Spusťte Visual Studio s přihlašovacími údaji správce, abyste se mohli připojit k systémovým procesům.  
   
@@ -66,7 +66,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
   
 10. Nastavte všechny zarážky, které chcete použít ve svém kódu.  
   
-11. Přístup ke Správci řízení služeb a manipulaci se službou, odesílání příkazů zastavit, pozastavit a pokračovat, aby byly zasaženy vaše zarážky. Další informace o spuštění Správce řízení služeb naleznete v tématu [How to: Spusťte služby](../../../docs/framework/windows-services/how-to-start-services.md). Přečtěte si [také téma řešení potíží: Ladění služeb](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md)systému Windows.  
+11. Přístup ke Správci řízení služeb a manipulaci se službou, odesílání příkazů zastavit, pozastavit a pokračovat, aby byly zasaženy vaše zarážky. Další informace o spuštění Správce řízení služeb naleznete v tématu [How to: Spusťte služby](how-to-start-services.md). Přečtěte si [také téma řešení potíží: Ladění služeb](troubleshooting-debugging-windows-services.md)systému Windows.  
   
 ## <a name="debugging-tips-for-windows-services"></a>Tipy pro ladění pro služby systému Windows  
  Připojení k procesu služby vám umožní ladit většinu, ale ne vše, kód pro tuto službu. Například vzhledem k tomu, že služba již byla spuštěna, nelze ladit kód v <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodě služby nebo kód `Main` v metodě, která slouží k načtení služby tímto způsobem. Jedním ze způsobů, jak toto omezení obejít, je vytvořit dočasnou druhou službu ve vaší aplikaci služby, která existuje jenom k podpoře ladění. Můžete nainstalovat obě služby a potom spustit tuto fiktivní službu pro načtení procesu služby. Jakmile dočasná služba spustí proces, můžete použít nabídku **ladit** v aplikaci Visual Studio k připojení k procesu služby.  
@@ -115,7 +115,7 @@ Služba musí být spuštěna v kontextu správce řízení služeb, nikoli v r�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
-- [Postupy: Spustit služby](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Postupy: Instalace a odinstalace služeb](how-to-install-and-uninstall-services.md)
+- [Postupy: Spustit služby](how-to-start-services.md)
 - [Ladění služby](/windows/desktop/Services/debugging-a-service)

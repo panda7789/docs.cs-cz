@@ -4,29 +4,29 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Clone method [WPF]
 ms.assetid: 2a6a1900-aa55-45fa-9382-241d569a2dc4
-ms.openlocfilehash: abc8a6e4780c8fe50afcf1b04f7e14aeb6452704
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cd634b4d4a88d83d425b787ed8493f9aa2504988
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949588"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053410"
 ---
 # <a name="ienumrawinputdevicclone"></a>IEnumRAWINPUTDEVIC:Clone
-Vytvoří další enumerátor nezpracované vstupní zařízení pomocí stejného stavu jako aktuální enumerátor k iteraci přes stejného seznamu.  
+Vytvoří další výčet nezpracovaných vstupních zařízení se stejným stavem, jako je aktuální enumerátor pro iteraci přes stejný seznam.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Clone( [out] IEnumRAWINPUTDEVICE **ppenum);  
 ```  
   
 ## <a name="parameters"></a>Parametry  
  `ppenum`  
   
- [out] Adresy výstupní proměnné, která přijímá [ienumrawinputdevice –](ienumrawinputdevice.md) ukazatel rozhraní. Pokud je metoda neúspěšná, hodnota této výstupní proměnné není definována.  
+ mimo Adresa výstupní proměnné, která přijímá ukazatel rozhraní [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) . Pokud je metoda neúspěšná, hodnota této výstupní proměnné není definována.  
   
 ## <a name="property-valuereturn-value"></a>Hodnota vlastnosti / návratová hodnota  
- HODNOTA HRESULT: Tato metoda podporuje standardní návratové hodnoty E_INVALIDARG E_OUTOFMEMORY a e_unexpected, je.  
+ HRESULT Tato metoda podporuje standardní návratové hodnoty E_INVALIDARG, E_OUTOFMEMORY a E_UNEXPECTED.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda umožňuje zaznamenávat do bodu v pořadí výčtu vraťte do tohoto bodu později. Volající musí uvolnit tento nový čítač odděleně od první enumerátor.
+ Tato metoda umožňuje zaznamenat bod v sekvenci výčtu, aby bylo možné později vrátit k danému okamžiku. Volající musí vydávat nový enumerátor odděleně od prvního enumerátoru.

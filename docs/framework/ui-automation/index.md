@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - UI Automation
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
-ms.openlocfilehash: 3c7dc456b9378f1eab09a2300e379d9156722485
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 667f0ded506305f3d7eb1ac5c43d3f65aab2cca9
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926979"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043040"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]
@@ -22,14 +22,14 @@ ms.locfileid: "70926979"
  Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] rozhraní API pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v C++nástroji najdete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Usnadnění – doporučené postupy](../../../docs/framework/ui-automation/accessibility-best-practices.md)  
- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)  
- [Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)  
- [Klienti automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code.md)  
- [Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)  
- [Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)  
- [Typy ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)  
- [Specifikace automatizace uživatelského rozhraní a příslib komunitě](../../../docs/framework/ui-automation/ui-automation-specification-and-community-promise.md)  
+ [Usnadnění – doporučené postupy](accessibility-best-practices.md)  
+ [Principy automatizace uživatelského rozhraní](index.md)  
+ [Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](ui-automation-providers-for-managed-code.md)  
+ [Klienti automatizace uživatelského rozhraní pro spravovaný kód](ui-automation-clients-for-managed-code.md)  
+ [Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns.md)  
+ [Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní](ui-automation-text-pattern.md)  
+ [Typy ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-types.md)  
+ [Specifikace automatizace uživatelského rozhraní a příslib komunitě](ui-automation-specification-and-community-promise.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
 

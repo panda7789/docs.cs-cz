@@ -2,12 +2,12 @@
 title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Kdy zvolit .NET Framework pro kontejnery Docker
 ms.date: 01/07/2019
-ms.openlocfilehash: 0b948017c3bbbcc8c43d5d2d9698d9a1a6f9deed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 575af1bc1966a25a01acdcfe106870ad1b7c477d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784080"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039646"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -45,22 +45,22 @@ I když rozhraní .NET Core 3 (v době psaní tohoto zápisu je v sadě Works), 
 
 ## <a name="using-a-platform-or-api-that-does-not-support-net-core"></a>Použití platformy nebo rozhraní API, které nepodporuje .NET Core
 
-Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NET Core. Některé služby Azure například poskytují sadu SDK, která ještě není dostupná pro využití v .NET Core. To je dočasné, protože všechny služby Azure nakonec budou používat .NET Core. Například [sada Azure DocumentDB SDK pro .NET Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.1) byla vydaná jako verze Preview 16. listopadu 2016, ale teď je všeobecně dostupná (GA) jako stabilní verze.
+Některé platformy společnosti Microsoft nebo třetích stran nepodporují .NET Core. Některé služby Azure například poskytují sadu SDK, která ještě není dostupná pro využití v .NET Core. To je dočasné, protože všechny služby Azure nakonec budou používat .NET Core. Například [sada Azure DocumentDB SDK pro .NET Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) byla vydaná jako verze Preview 16. listopadu 2016, ale teď je všeobecně dostupná (GA) jako stabilní verze.
 
 Pokud však libovolná platforma nebo služba v Azure stále nepodporuje .NET Core s klientským rozhraním API, můžete použít ekvivalentní REST API ze služby Azure nebo klientské sady SDK v .NET Framework.
 
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Průvodce platformou .NET Core**  
-    [https://docs.microsoft.com/dotnet/core/index](../../../core/index.md)
+  [https://docs.microsoft.com/dotnet/core/index](../../../core/index.md)
 
 - **Přenos z .NET Framework do .NET Core**  
-    [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
+  [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
 - **Příručka .NET Core v Docker**[https://docs.microsoft.com/dotnet/core/docker/introduction](../../../core/docker/introduction.md)
 
 - **Přehled komponent .NET**  
-    [https://docs.microsoft.com/dotnet/standard/components](../../../standard/components.md)
+  [https://docs.microsoft.com/dotnet/standard/components](../../../standard/components.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](net-core-container-scenarios.md)Další

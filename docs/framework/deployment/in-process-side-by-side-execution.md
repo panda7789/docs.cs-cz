@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d9d77ef20090e007e22a0d2f90b29f32ff94b46
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2a33d3c4216ed8c5d79aef4017c6b9256fc1ad7c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911114"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052106"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci procesu ke spouštění více verzí modulu CLR (Common Language Runtime) v jednom procesu. Ve výchozím nastavení se spravované komponenty modelu COM spouštějí s verzí .NET Framework, se kterou byly vytvořeny, bez ohledu na .NET Framework verzi, která je pro tento proces načtena.  
@@ -60,7 +60,7 @@ Počínaje .NET Framework 4 můžete použít Souběžné hostování v rámci p
   
      Nainstalované verze .NET Framework: Starší verze .NET Framework a .NET Framework 4.  
   
-     Co dělat: V [konfiguračním souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace použijte [ \<element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) [ \<](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) startup > a sadu > elementu supportedRuntime následujícím způsobem:  
+     Co dělat: V [konfiguračním souboru aplikace](../configure-apps/index.md) v adresáři aplikace použijte [ \<element](../configure-apps/file-schema/startup/startup-element.md) [ \<](../configure-apps/file-schema/startup/supportedruntime-element.md) startup > a sadu > elementu supportedRuntime následujícím způsobem:  
   
     ```xml  
     <configuration>  
@@ -175,5 +175,5 @@ int _tmain(int argc, _TCHAR* argv[])
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<spouštěcí > – element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)
-- [\<supportedRuntime – element >](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+- [\<spouštěcí > – element](../configure-apps/file-schema/startup/startup-element.md)
+- [\<supportedRuntime – element >](../configure-apps/file-schema/startup/supportedruntime-element.md)

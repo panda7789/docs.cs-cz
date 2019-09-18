@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bed0084fd576ba9b9f9eeb51e9e2466938e43490
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 6f867b53f168a394515a1b1eaa6575a72dfb8d91
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106513"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052014"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework požadavky na systém
 
@@ -34,7 +34,7 @@ Vývojová prostředí, která umožňují vyvíjet aplikace pro .NET Framework 
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Informace o stažení a odkazy najdete v tématu [instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).
+Informace o stažení a odkazy najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md).
 
 Informace o životním cyklu podpory verze .NET Framework najdete v tématu [životní cyklus podpora Microsoftu](https://support.microsoft.com/lifecycle/search?sort=PN&alpha=Microsoft%20.NET%20Framework&Filter=FilterNO).
 
@@ -112,6 +112,6 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce instalací](../../../docs/framework/install/index.md)
-- [Začínáme](../../../docs/framework/get-started/index.md)
-- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Průvodce instalací](../install/index.md)
+- [Začínáme](index.md)
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)

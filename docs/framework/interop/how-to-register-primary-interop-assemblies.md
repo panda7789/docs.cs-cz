@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e61ae55673cbf745ea4c637c5206efe41d8ab276
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e0eeaee969eda5e4d0ea1a119991456668c7d44f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946679"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051739"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 
@@ -24,7 +24,7 @@ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a
 
  I v případě, že neplánujete vystavovat typy modelu COM třetích stran, může použití primárního definičního sestavení zjednodušit úlohu vzájemného fungování komponent modelu COM. Tato strategie ale neposkytuje žádnou izolaci ze změn, které může dodavatel dělat pro typy definované v primárním definičním sestavení. Pokud vaše aplikace vyžaduje takovou izolaci, vygenerujte vlastní definiční sestavení namísto použití primárního definičního sestavení.
 
- Předtím, než je možné na ně odkazovat pomocí sady Visual Studio, je nutné zaregistrovat všechna získaná primární sestavení vzájemné spolupráce na vašem vývojovém počítači. Visual Studio hledá a použije primární definiční sestavení při prvním odkazování typu z knihovny typů modelu COM. Pokud Visual Studio nemůže najít primární definiční sestavení přidružené k knihovně typů, zobrazí se výzva k jeho získání nebo nabídce pro vytvoření sestavení vzájemné spolupráce. Nástroj pro [Import knihovny typů (Tlbimp. exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) také používá registr k nalezení primárních sestavení vzájemné spolupráce.
+ Předtím, než je možné na ně odkazovat pomocí sady Visual Studio, je nutné zaregistrovat všechna získaná primární sestavení vzájemné spolupráce na vašem vývojovém počítači. Visual Studio hledá a použije primární definiční sestavení při prvním odkazování typu z knihovny typů modelu COM. Pokud Visual Studio nemůže najít primární definiční sestavení přidružené k knihovně typů, zobrazí se výzva k jeho získání nebo nabídce pro vytvoření sestavení vzájemné spolupráce. Nástroj pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md) také používá registr k nalezení primárních sestavení vzájemné spolupráce.
 
  I když není nutné registrovat primární spolupracující sestavení, pokud plánujete použít Visual Studio, registrace poskytuje dvě výhody:
 
@@ -32,7 +32,7 @@ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a
 
 - Můžete se vyhnout nechtěnému generování a použití nového definičního sestavení, pokud v některých případech v budoucnu použijete aplikaci Visual Studio k odkazování na typ, pro který máte neregistrované primární spolupracující sestavení.
 
-K registraci primárního definičního sestavení použijte [Nástroj pro registraci sestavení (Regasm. exe)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) .
+K registraci primárního definičního sestavení použijte [Nástroj pro registraci sestavení (Regasm. exe)](../tools/regasm-exe-assembly-registration-tool.md) .
 
 ## <a name="to-register-a-primary-interop-assembly"></a>Registrace primárního definičního sestavení
 

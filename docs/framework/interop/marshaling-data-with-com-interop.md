@@ -6,21 +6,21 @@ helpviewer_keywords:
 - marshaling data, COM interop
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 279310fe7aa17a73d129edf98f3477a00fd50767
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 3dd667f681e9b6749f33d6ccfd91035477c56030
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567240"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051703"
 ---
 # <a name="marshaling-data-with-com-interop"></a>Zařazování dat se spoluprací COM
 Zprostředkovatel komunikace s objekty COM poskytuje podporu jak pro použití objektů COM ze spravovaného kódu, tak pro vystavování spravovaných objektů do modelu COM. Podpora pro zařazování dat do a z modelu COM je rozsáhlá a téměř vždy poskytuje správné chování při zařazování.  
   
  Windows SDK obsahuje následující nástroje COM interop:  
   
-- [Importér knihovny typů (Tlbimp. exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md), který převede knihovnu typů modelu COM na definiční sestavení. Z tohoto sestavení vygeneruje služba interop marshaling obálky, které provádějí zařazování dat mezi spravovanou a nespravovanou pamětí.  
+- [Importér knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md), který převede knihovnu typů modelu COM na definiční sestavení. Z tohoto sestavení vygeneruje služba interop marshaling obálky, které provádějí zařazování dat mezi spravovanou a nespravovanou pamětí.  
   
-- [Exportér knihovny typů (Tlbexp. exe)](../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), který vytváří knihovnu typů modelu COM ze sestavení a generuje obálku, která provádí zařazování během volání metody.  
+- [Exportér knihovny typů (Tlbexp. exe)](../tools/tlbexp-exe-type-library-exporter.md), který vytváří knihovnu typů modelu COM ze sestavení a generuje obálku, která provádí zařazování během volání metody.  
   
  Následující části odkazují na témata, která popisují procesy pro přizpůsobení obálky spolupráce, když můžete (nebo musíte) zařazovacímu programu dodat Další informace o typu.  
   
@@ -28,7 +28,7 @@ Zprostředkovatel komunikace s objekty COM poskytuje podporu jak pro použití o
 [Postupy: Ruční vytváření obálek](how-to-create-wrappers-manually.md)   
 Popisuje, jak vytvořit obálku COM ručně ve spravovaném zdrojovém kódu. 
  
- [Postupy: Migrace spravovaného kódu DCOM do WCF](../../../docs/framework/interop/how-to-migrate-managed-code-dcom-to-wcf.md)  
+ [Postupy: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)  
  V této části najdete popis postupu migrace spravovaného kódu DCOM do WCF pro nejbezpečnější řešení.  
   
 ## <a name="related-sections"></a>Související oddíly  

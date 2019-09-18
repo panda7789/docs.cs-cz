@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: eaf53a352238161ccec1b481649074d322954905
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 26cd022ded8dddcfcf695c89b3cf4b90d3ceb2ef
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851515"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044938"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu WS-federovaného ověřování (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ho používat.  
@@ -35,7 +35,7 @@ Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v
   
  Nakonfigurujte WS-FAM a určete službu STS, na kterou by se měly přesměrovat neověřené požadavky. WIF umožňuje ověřit uživatele dvěma způsoby:  
   
-1. Pasivní přesměrování: Když se neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete ho jednoduše přesměrovat na službu STS bez vyžadování přihlašovací stránky, jedná se o správný přístup. Služba STS ověří identitu uživatele a vydá token zabezpečení, který obsahuje příslušné deklarace identity pro daného uživatele. Tato možnost vyžaduje, aby se WS-FAM přidal do kanálu modulů HTTP. Nástroj identity and Access Tool for Visual Studio 2012 můžete použít k úpravě konfiguračního souboru aplikace tak, aby používal WS-FAM a federovat se službou STS. Další informace naleznete v tématu [identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
+1. Pasivní přesměrování: Když se neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete ho jednoduše přesměrovat na službu STS bez vyžadování přihlašovací stránky, jedná se o správný přístup. Služba STS ověří identitu uživatele a vydá token zabezpečení, který obsahuje příslušné deklarace identity pro daného uživatele. Tato možnost vyžaduje, aby se WS-FAM přidal do kanálu modulů HTTP. Nástroj identity and Access Tool for Visual Studio 2012 můžete použít k úpravě konfiguračního souboru aplikace tak, aby používal WS-FAM a federovat se službou STS. Další informace naleznete v tématu [identity and Access Tool for Visual Studio 2012](identity-and-access-tool-for-vs.md).  
   
 2. Můžete zavolat <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A?displayProperty=nameWithType> metodu <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A> nebo metodu z kódu na pozadí pro přihlašovací stránku v aplikaci RP.  
   
@@ -54,11 +54,11 @@ Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v
   
  Následující diagram zobrazuje více podrobností o tom, co se stane, když uživatel ověřil službu STS a jejich tokeny zabezpečení jsou zpracovávány <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>pomocí:  
   
- ![Načasování zpracování tokenu pomocí pasivního přesměrování](../../../docs/framework/security/media/signinusingpassiveredirect-tokenprocessing.gif "SignInUsingPassiveRedirect_TokenProcessing")  
+ ![Načasování zpracování tokenu pomocí pasivního přesměrování](./media/signinusingpassiveredirect-tokenprocessing.gif "SignInUsingPassiveRedirect_TokenProcessing")  
   
  Následující diagram zobrazuje více podrobností o tom, co se stane, když jsou tokeny zabezpečení uživatele serializovány do souborů cookie a jsou zachyceny pomocí <xref:System.IdentityModel.Services.SessionAuthenticationModule>:  
   
- ![Časový diagram Sam ukazující přihlášení&#45;pomocí ovládacích prvků](../../../docs/framework/security/media/signinusingconrols-sam.gif "SignInUsingConrols_SAM")  
+ ![Časový diagram Sam ukazující přihlášení&#45;pomocí ovládacích prvků](./media/signinusingconrols-sam.gif "SignInUsingConrols_SAM")  
   
 ### <a name="events"></a>Události  
  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>, <xref:System.IdentityModel.Services.SessionAuthenticationModule>a jejich nadřazená <xref:System.IdentityModel.Services.HttpModuleBase>třída, vyvolávají události v různých fázích zpracování požadavku HTTP. Tyto události můžete zpracovat v `global.asax` souboru aplikace ASP.NET.  
@@ -94,7 +94,7 @@ Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v
 > <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> Vlastnost byste neměli používat při žádné události <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> vyvolané nebo <xref:System.IdentityModel.Services.SessionAuthenticationModule>. Důvodem je to <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> , že je nastaven po procesu ověřování, zatímco události jsou vyvolány během procesu ověřování.  
   
 ### <a name="configuration-of-federated-authentication"></a>Konfigurace federovaného ověřování  
- WS-FAM a Sam jsou konfigurovány prostřednictvím [ \<elementu federationConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) . Podřízený element <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A> <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm%2A> wsFederation > konfiguruje výchozí hodnoty vlastností WS-FAM, jako je například vlastnost a vlastnost. [ \<](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md) (Tyto hodnoty lze změnit na základě jednotlivých požadavků poskytnutím obslužných rutin pro některé události WS-FAM; například <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>.) Obslužná rutina souborů cookie, kterou používá Sam, je konfigurována [ \<](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md) prostřednictvím podřízeného prvku cookieHandler >. WIF poskytuje výchozí obslužnou rutinu souborů cookie implementovanou <xref:System.IdentityModel.Services.ChunkedCookieHandler> ve třídě, která může mít svou velikost bloku dat nastavenou [ \<prostřednictvím elementu chunkedCookieHandler >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md) . Element odkazuje na <xref:System.Security.Claims.ClaimsAuthenticationManager> ,který<xref:System.Security.Claims.ClaimsAuthorizationManager>poskytuje konfiguraci pro jiné komponenty WIF používané v aplikaci, jako jsou a. <xref:System.IdentityModel.Configuration.IdentityConfiguration> `<federationConfiguration>` Na konfiguraci identity se může explicitně odkazovat zadáním pojmenovaného [ \<> elementu IdentityConfiguration](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) v `identityConfigurationName` atributu `<federationConfiguration>` elementu. Pokud se na konfiguraci identity explicitně neodkazuje, použije se výchozí konfigurace identity.  
+ WS-FAM a Sam jsou konfigurovány prostřednictvím [ \<elementu federationConfiguration >](../configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) . Podřízený element <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A> <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm%2A> wsFederation > konfiguruje výchozí hodnoty vlastností WS-FAM, jako je například vlastnost a vlastnost. [ \<](../configure-apps/file-schema/windows-identity-foundation/wsfederation.md) (Tyto hodnoty lze změnit na základě jednotlivých požadavků poskytnutím obslužných rutin pro některé události WS-FAM; například <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>.) Obslužná rutina souborů cookie, kterou používá Sam, je konfigurována [ \<](../configure-apps/file-schema/windows-identity-foundation/cookiehandler.md) prostřednictvím podřízeného prvku cookieHandler >. WIF poskytuje výchozí obslužnou rutinu souborů cookie implementovanou <xref:System.IdentityModel.Services.ChunkedCookieHandler> ve třídě, která může mít svou velikost bloku dat nastavenou [ \<prostřednictvím elementu chunkedCookieHandler >](../configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md) . Element odkazuje na <xref:System.Security.Claims.ClaimsAuthenticationManager> ,který<xref:System.Security.Claims.ClaimsAuthorizationManager>poskytuje konfiguraci pro jiné komponenty WIF používané v aplikaci, jako jsou a. <xref:System.IdentityModel.Configuration.IdentityConfiguration> `<federationConfiguration>` Na konfiguraci identity se může explicitně odkazovat zadáním pojmenovaného [ \<> elementu IdentityConfiguration](../configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) v `identityConfigurationName` atributu `<federationConfiguration>` elementu. Pokud se na konfiguraci identity explicitně neodkazuje, použije se výchozí konfigurace identity.  
   
  Následující kód XML ukazuje konfiguraci aplikace předávající strany ASP.NET (RP). Konfigurační oddíly <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection> a jsou přidány pod element.`<configSections>` <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> Sam a WS-FAM jsou přidány do modulů http pod `<system.webServer>` / `<modules>` prvkem. Nakonec komponenty WIF jsou nakonfigurovány v rámci `<system.identityModel>` / `<identityConfiguration>` prvků `<system.identityModel.services>` a / `<federationConfiguration>` . Tato konfigurace Určuje popisovač souboru cookie v bloku dat, protože je to výchozí obslužná rutina souborů cookie a v `<cookieHandler>` elementu není zadaný typ obslužné rutiny souborů cookie.  
   
@@ -143,4 +143,4 @@ Windows Identity Foundation (WIF) zahrnuje podporu federovaného ověřování v
 
 - <xref:System.IdentityModel.Services.SessionAuthenticationModule>
 - <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>
-- [\<federationConfiguration>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)
+- [\<federationConfiguration>](../configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)

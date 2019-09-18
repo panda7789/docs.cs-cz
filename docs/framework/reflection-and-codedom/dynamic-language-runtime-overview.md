@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b550f504ecbc05e6790652ee1432da3a26ceacb6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e6b6de8f0a178914c46ba5a65dfb56795cf23c71
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915578"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046128"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
@@ -51,7 +51,7 @@ Podobně jako CLR, je DLR součástí .NET Framework a je k dispozici s instala�
 
 Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
 
-- IronPython. K dispozici jako open source software z [](https://github.com/IronLanguages/ironpython2) webu GitHubu.
+- IronPython. K dispozici jako open source software z webu [GitHubu](https://github.com/IronLanguages/ironpython2) .
 
 - IronRuby. K dispozici jako open source software z webu [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) .
 
@@ -76,13 +76,13 @@ Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
 ## <a name="dlr-architecture"></a>Architektura DLR
  Následující ilustrace znázorňuje architekturu dynamického jazykového modulu runtime.
 
- ![Přehled architektury dynamického jazykového modulu runtime](../../../docs/framework/reflection-and-codedom/media/dlr-archoverview.png "DLR_ArchOverview") Architektura DLR
+ ![Přehled architektury dynamického jazykového modulu runtime](./media/dlr-archoverview.png "DLR_ArchOverview") Architektura DLR
 
  DLR přidá sadu služeb pro modul CLR pro lepší podporu dynamických jazyků. Mezi tyto služby patří následující:
 
 - Stromy výrazů. DLR používá stromy výrazů, které reprezentují sémantiku jazyka. Pro účely tohoto účelu má DLR rozšířené stromy výrazů LINQ, aby zahrnovaly tok řízení, přiřazení a další uzly modelování jazyka. Další informace najdete v tématu [stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 
-- Volání do mezipaměti webu. *Web* s dynamickým voláním je místo v kódu, kde provádíte operaci jako `a + b` nebo `a.b()` na dynamických objektech. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy těchto objektů) a informace o operaci. Pokud taková operace byla provedena dříve, DLR načte všechny potřebné informace z mezipaměti pro rychlé odeslání.
+- Volání do mezipaměti webu. *Web s dynamickým voláním* je místo v kódu, kde provádíte operaci jako `a + b` nebo `a.b()` na dynamických objektech. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy těchto objektů) a informace o operaci. Pokud taková operace byla provedena dříve, DLR načte všechny potřebné informace z mezipaměti pro rychlé odeslání.
 
 - Interoperabilita dynamických objektů. DLR poskytuje sadu tříd a rozhraní, které představují dynamické objekty a operace a mohou být použity v modulech pro implementaci jazyka a autorech dynamických knihoven. Mezi tyto třídy a rozhraní <xref:System.Dynamic.IDynamicMetaObjectProvider>patří <xref:System.Dynamic.DynamicMetaObject> <xref:System.Dynamic.DynamicObject>,, a <xref:System.Dynamic.ExpandoObject>.
 

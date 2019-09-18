@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: b85f878d8a391581fcc7419b3ca4d656eb5595af
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b42a71993cb120c88b90e867b7af23873b99d280
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660447"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039601"
 ---
 # <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení aplikace C# Hello World pomocí .NET Core SDK v aplikaci Visual Studio 2017
 
@@ -18,7 +18,7 @@ Toto téma poskytuje podrobný Úvod k sestavování, ladění a publikování j
 
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s nainstalovanou úlohou vývoj ".NET Core pro různé platformy". Svou aplikaci můžete vyvíjet buď pomocí .NET Core 1,1 nebo .NET Core 2,0.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s nainstalovanou úlohou vývoj ".NET Core pro různé platformy". Svou aplikaci můžete vyvíjet pomocí .NET Core 2,1 nebo novějších verzí.
 
 Další informace najdete v tématu [požadavky pro .NET Core v systému Windows](../windows-prerequisites.md) .
 
@@ -69,7 +69,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k zadání názvu a zobr
 
 1. Zkompilujte program tím, že kliknete na **sestavit** > sestavení**řešení**.
 
-1. Spusťte program v režimu ladění v sadě Visual Studio tak, že vyberete zelenou šipku na panelu nástrojů, stisknete klávesu F5 > nebo kliknete na položku nabídky**Spustit ladění** ladění. Zadáním názvu a stisknutím klávesy ENTER odpovězte na výzvu.
+1. Spusťte program v režimu ladění v sadě Visual Studio tak, že vyberete zelenou šipku na panelu nástrojů, stisknete klávesu F5 nebo > kliknete na položku nabídky**Spustit ladění** ladění. Zadáním názvu a stisknutím klávesy ENTER odpovězte na výzvu.
 
    ![Okno konzoly s upraveným výstupem programu](./media/with-visual-studio/hello-world-update.png)
 
@@ -83,6 +83,6 @@ Aplikaci jste vytvořili a spustili. Pro vývoj profesionální aplikace proveď
 
 ## <a name="related-topics"></a>Související témata
 
-Namísto konzolové aplikace můžete také vytvořit knihovnu tříd pomocí .NET Core a sady Visual Studio 2017. Podrobný Úvod naleznete v tématu sestavování [knihovny tříd pomocí C# a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md).
+Namísto konzolové aplikace můžete také vytvořit knihovnu tříd pomocí .NET Core a sady Visual Studio 2017. Podrobný Úvod naleznete [v tématu sestavování knihovny tříd pomocí C# a .NET Core v aplikaci Visual Studio 2017](library-with-visual-studio.md).
 
 Konzolovou aplikaci .NET Core můžete také vyvíjet v systému Mac, Linux a Windows pomocí [Visual Studio Code](https://code.visualstudio.com/), editoru kódu ke stažení. Podrobný kurz najdete v tématu [Začínáme s Visual Studio Code](with-visual-studio-code.md).

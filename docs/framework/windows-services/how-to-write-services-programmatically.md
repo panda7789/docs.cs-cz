@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Service applications, creating
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
-ms.openlocfilehash: 29e0b95ad91c93f3a23246daf2be128b10d7e2ce
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5637d569ad5261bff6865af4ab2ed8b7631d2d38
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952411"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053562"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
 Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, můžete napsat vlastní služby nastavením dědičnosti a dalších prvků infrastruktury sami. Když vytvoříte službu programově, je nutné provést několik kroků, které vám jinak, než to šablona zpracuje:  
@@ -59,21 +59,21 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby systému Windows, mů
   
 6. Přepište jakékoli jiné metody, pro které chcete definovat vlastní zpracování, a napište kód, který určí akce, které by měla služba provádět v každém případě.  
   
-7. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)služby.  
+7. Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [jak: Přidejte instalační programy do aplikace](how-to-add-installers-to-your-service-application.md)služby.  
   
 8. Sestavte projekt výběrem možnosti **Sestavit řešení** v nabídce **sestavení** .  
   
     > [!NOTE]
     > Netiskněte klávesu F5 pro spuštění projektu – projekt služby nemůžete tímto způsobem spustit.  
   
-9. Vytvořte projekt instalace a vlastní akce pro instalaci služby. Příklad najdete v tématu [Návod: Vytvoření aplikace služby systému Windows v Návrháři](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)komponent.  
+9. Vytvořte projekt instalace a vlastní akce pro instalaci služby. Příklad najdete v tématu [Návod: Vytvoření aplikace služby systému Windows v Návrháři](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)komponent.  
   
-10. Nainstalujte službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)služby.  
+10. Nainstalujte službu. Další informace najdete v tématu [jak: Nainstalujte a odinstalujte](how-to-install-and-uninstall-services.md)služby.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvořit služby systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
-- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Postupy: Protokolovat informace o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
-- [Návod: Vytvoření aplikace služby systému Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](how-to-add-installers-to-your-service-application.md)
+- [Postupy: Protokolovat informace o službách](how-to-log-information-about-services.md)
+- [Návod: Vytvoření aplikace služby systému Windows v Návrháři součástí](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

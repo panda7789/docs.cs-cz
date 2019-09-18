@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a928dde8615589cbc8e502a9b5dd033beded4c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 48bd536cedd6a9689cdb18cca457ff06473396b5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643488"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051869"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele s objekty COM: klient COM a server .NET
-V této ukázce vzájemnou spolupráci [klient modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty na dům. V tomto příkladu vytvoří klienta a volá instance managed `Loan` třídy, předá čtyři argumenty (jedna z těchto čtyř se rovná nule) instance a zobrazí výpočtů. Příklady kódů z této ukázce se mají v této části.  
+Tato ukázka předvádí provedenou operaci [klienta modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [serveru .NET](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty hypotéky. V tomto příkladu klient vytvoří a zavolá instanci spravované `Loan` třídy, předá do instance čtyři argumenty (jedna z těchto čtyř se rovná nule) a zobrazí výpočty. V rámci této části se zobrazí příklady kódu z této ukázky.  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
 ## <a name="com-client"></a>Klient modelu COM  
@@ -391,4 +391,4 @@ namespace LoanLib {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+- [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)

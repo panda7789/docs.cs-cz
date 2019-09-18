@@ -22,12 +22,12 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-ms.openlocfilehash: 41a55df53f8b0dfd4eefc9bc4ecf6b2eef122c8d
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 72b47b8159f9f6f0dc3a19c5cbf94335507d9e7d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70394280"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047864"
 ---
 # <a name="introducing-pluggable-protocols"></a>Úvod k připojitelným protokolům
 Microsoft .NET Framework poskytuje vrstvenou, rozšiřitelnou a spravovanou implementaci internetových služeb, které se dají snadno a rychle integrovat do vašich aplikací. Třídy přístupu k Internetu v <xref:System.Net> oborech názvů a <xref:System.Net.Sockets> je možné použít k implementaci webových i internetových aplikací.  
@@ -68,6 +68,6 @@ Microsoft .NET Framework poskytuje vrstvenou, rozšiřitelnou a spravovanou impl
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
-- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Programování připojitelných protokolů](programming-pluggable-protocols.md)
+- [Síťové programování v rozhraní .NET Framework](index.md)
+- [Ukázky programování sítě](network-programming-samples.md)

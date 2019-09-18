@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UI Automation, custom user interface (UI) elements
 - providers, UI Automation
 ms.assetid: 88bc4212-3f4e-4bac-bae0-faef31944b71
-ms.openlocfilehash: ac9b20d1fd3356941b75df686b2556b3c3c4f179
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d5f2651c6a74a7f9ac275a55a4e37baebf653305
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914429"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042075"
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Postupy: Témata zprostředkovatelů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
@@ -22,10 +22,10 @@ ms.locfileid: "69914429"
  Tato část obsahuje příklady kódu, které ukazují úlohy při [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] psaní zprostředkovatelů pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
- [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)  
- [Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+ [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](expose-a-server-side-ui-automation-provider.md)  
+ [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](return-properties-from-a-ui-automation-provider.md)  
+ [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](raise-events-from-a-ui-automation-provider.md)  
+ [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)  
+ [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](create-a-client-side-ui-automation-provider.md)  
+ [Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích](implement-ui-automation-providers-in-a-client-application.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: d7d0dae2ffbec5e334057715cd1d8d44e52cec9d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6a52a38473e339b892673e7c1a2f9e1f58dad359
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910468"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048947"
 ---
 # <a name="automatic-proxy-detection"></a>Automatické rozpoznávání proxy serveru
 Automatická detekce proxy je proces, kterým systém identifikuje webový proxy server a který slouží k odesílání žádostí jménem klienta. Tato funkce se označuje taky jako automatické zjišťování webových proxy serverů (WPAD). Pokud je povolená Automatická detekce proxy serveru, systém se pokusí vyhledat konfigurační skript proxy serveru, který je zodpovědný za vrácení sady proxy serverů, které se dají pro požadavek použít. Pokud se skript konfigurace proxy serveru najde, skript se stáhne, zkompiluje a spustí v místním počítači, když se pro požadavek, který používá <xref:System.Net.WebProxy> instanci, získá informace o proxy serveru, datový proud požadavku nebo odpověď.  
@@ -44,7 +44,7 @@ Automatická detekce proxy je proces, kterým systém identifikuje webový proxy
   
  Proxy servery jsou nakonfigurovány podle connectoid. Connectoid je položka v dialogovém okně připojení k síti a může to být fyzické síťové zařízení (modem nebo ethernetová karta) nebo virtuální rozhraní (například připojení VPN spuštěné přes síťové zařízení). Pokud se connectoid změní (například bezdrátové připojení změní přístupový bod nebo je povolena síť VPN), algoritmus detekce proxy se spustí znovu.  
   
- Ve výchozím nastavení se k detekci proxy serveru používá nastavení proxy serveru aplikace Internet Explorer. Pokud vaše aplikace běží pod neinteraktivním účtem (bez pohodlnýho způsobu konfigurace nastavení proxy serveru IE), nebo pokud chcete použít nastavení proxy serveru, které se liší od nastavení IE, můžete nakonfigurovat proxy tak, že vytvoříte konfigurační soubor s [ defaultProxy\<prvek > (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md) a [ \<elementy proxy > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md) definovány.  
+ Ve výchozím nastavení se k detekci proxy serveru používá nastavení proxy serveru aplikace Internet Explorer. Pokud vaše aplikace běží pod neinteraktivním účtem (bez pohodlnýho způsobu konfigurace nastavení proxy serveru IE), nebo pokud chcete použít nastavení proxy serveru, které se liší od nastavení IE, můžete nakonfigurovat proxy tak, že vytvoříte konfigurační soubor s [ defaultProxy\<prvek > (nastavení sítě)](../configure-apps/file-schema/network/defaultproxy-element-network-settings.md) a [ \<elementy proxy > elementu (nastavení sítě)](../configure-apps/file-schema/network/proxy-element-network-settings.md) definovány.  
   
  U požadavků, které vytvoříte, můžete vypnout automatickou detekci proxy na úrovni žádosti pomocí hodnoty null <xref:System.Net.WebRequest.Proxy%2A> s vaším požadavkem, jak je znázorněno v následujícím příkladu kódu.  
   
@@ -71,4 +71,4 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>
-- [\<System .NET > – element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)
+- [\<System .NET > – element (nastavení sítě)](../configure-apps/file-schema/network/system-net-element-network-settings.md)

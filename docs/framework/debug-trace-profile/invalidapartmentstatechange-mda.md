@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ff68ce5f612255f41ce3a7c6f2526c3a340cfcd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ed4933ae59223c0674d2e36428894cbc3a07933f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967317"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052667"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange – pomocník spravovaného ladění (MDA)
 Pomocník `invalidApartmentStateChange` spravovaného ladění (MDS) se aktivuje jedním z těchto dvou problémů:  
@@ -31,7 +31,7 @@ Pomocník `invalidApartmentStateChange` spravovaného ladění (MDS) se aktivuje
   
 - Stav objektu COM v vlákně vlákna není to, co bylo vyžádáno. To může způsobit, že se proxy budou používat pro komponenty modelu COM, které mají model podprocesů odlišný od aktuálního typu. To může způsobit <xref:System.InvalidCastException> , že bude vyvolána výjimka při volání objektu COM prostřednictvím rozhraní, která nejsou nastavena pro zařazování mezi platformami.  
   
-- Stav objektu COM apartment vlákna je jiný, než se očekávalo. To může způsobit neočekávanou hodnotu <xref:System.Runtime.InteropServices.COMException> RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při volání na obálku, která je volána za [běhu](../../standard/native-interop/runtime-callable-wrapper.md) (RCW). To může také způsobit, že některé komponenty modelu COM s jedním vláknem mají přístup více vlákny ve stejnou dobu, což může vést k poškození nebo ztrátě dat.  
+- Stav objektu COM apartment vlákna je jiný, než se očekávalo. To může způsobit neočekávanou hodnotu <xref:System.Runtime.InteropServices.COMException> RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při volání na [obálku](../../standard/native-interop/runtime-callable-wrapper.md) , která je volána za běhu (RCW). To může také způsobit, že některé komponenty modelu COM s jedním vláknem mají přístup více vlákny ve stejnou dobu, což může vést k poškození nebo ztrátě dat.  
   
 ## <a name="cause"></a>příčina  
   
@@ -80,5 +80,5 @@ namespace ApartmentStateMDA
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

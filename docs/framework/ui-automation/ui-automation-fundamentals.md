@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - UI automation fundamentals
 ms.assetid: d270ab45-542b-45c0-a240-e80aa4a61b95
-ms.openlocfilehash: da333fcd5f76359400e44511820ad9aa34e83bd7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 371d52a09445f735efb41b02780c65579207724f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911477"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042117"
 ---
 # <a name="ui-automation-fundamentals"></a>Principy automatizace uživatelského rozhraní
 > [!NOTE]
@@ -20,14 +20,14 @@ ms.locfileid: "69911477"
  Tato část obsahuje přehledy [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vysoké úrovně rozhraní API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)  
- [Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
- [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
- [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
- [Použití automatizace uživatelského rozhraní pro automatizované testování](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
+ [Přehled automatizace uživatelského rozhraní](ui-automation-overview.md)  
+ [Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility](ui-automation-and-microsoft-active-accessibility.md)  
+ [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)  
+ [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)  
+ [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md)  
+ [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md)  
+ [Přehled zabezpečení automatizace uživatelského rozhraní](ui-automation-security-overview.md)  
+ [Použití automatizace uživatelského rozhraní pro automatizované testování](using-ui-automation-for-automated-testing.md)  
   
 ## <a name="reference"></a>Reference  
  <xref:System.Windows.Automation>  

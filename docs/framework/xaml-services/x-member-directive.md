@@ -2,19 +2,19 @@
 title: x:Member – direktiva
 ms.date: 03/30/2017
 ms.assetid: 4d8394ef-644c-4331-b6c5-be855d392980
-ms.openlocfilehash: 66d34ad6bc5b6bb98eba6219130035dc413b486f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3d023873aab2039913a78108440a2e2d4ea77fb
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61951213"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053741"
 ---
 # <a name="xmember-directive"></a>x:Member – direktiva
-Deklaruje člen XAML ve značkách.  
+Deklaruje člena XAML ve značce.  
   
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML  
   
-```  
+```xaml  
 <object x:Class="className">  
   <x:Members>  
     <x:Member Name="propertyName"/>  
@@ -27,15 +27,15 @@ Deklaruje člen XAML ve značkách.
   
 |||  
 |-|-|  
-|`className`|Název základní třídy nebo částečné třídy pro produkční prostředí XAML.|  
-|`memberName`|Název člena definovaného vlastnosti.|  
+|`className`|Název záložní třídy nebo částečné třídy pro produkci XAML.|  
+|`memberName`|Název člena vlastnosti, kterou definujete.|  
   
 ## <a name="remarks"></a>Poznámky  
- V implementaci rozhraní .NET Framework XAML Services. `x:Member` nemá přímou typ zálohování, ale podporuje <xref:System.Windows.Markup.MemberDefinition> třídy. V datovém proudu uzlu XAML `x:Member` element je vyjádřena jako člen s názvem `Member`, z oboru názvů jazyka XAML XAML. Člen `Member` obsahuje atributy, jak je deklarován značek.  
+ V .NET Framework implementaci služby XAML. `x:Member`nemá přímý typ zálohování, ale je podporován <xref:System.Windows.Markup.MemberDefinition> třídou. V datovém proudu `x:Member` uzlu XAML je element reprezentován jako člen s názvem `Member`, z oboru názvů XAML jazyka XAML. Člen `Member` uchovává atributy deklarované pomocí značek.  
   
- Význam `Name` a `Type` nejsou přiřazené na úrovni rozhraní .NET Framework XAML Services. V počáteční datový proud uzlu XAML jsou uloženy jako hodnoty řetězce, je interpretován později v části pravidla, která může být potřeba zavést podle konkrétní rozhraní. Význam může přizpůsobit název XAML a XAML typu, což znamená, nebo může být pouze platné v systému typů zálohování, v závislosti na implementaci.  
+ Význam `Name` a`Type` nejsou přiřazeny na úrovni .NET Framework služby XAML. Jsou uloženy v počátečním proudu uzlu XAML jako řetězcové hodnoty, aby je bylo možné interpretovat později v rámci pravidel, která mohou být uložena konkrétními rozhraními. Význam může být v souladu s názvem XAML a významem typu XAML nebo může být platný pouze v systému back-Type v závislosti na implementaci.  
   
- Pro podporu praktické využití `x:Members` jako prostředek k určení definice členů v kódu, musí být členy přidružené třídy, která je možné upravit. Zamýšlený modelu je, že `x:Members` existuje jako člen typu, který určuje `x:Class`. Mechanismus pro přidružení typů a členů nebo pro vytváření dynamických členů definice však není podporován na úrovni rozhraní .NET Framework XAML Services. To je ponecháno pro jednotlivé platformy, které mají aplikačních modelů, které podporují definice členů z XAML. Obvykle akce sestavení nástroje MSBUILD, které značky kompilace XAML a buď ji integrovat s kódem na pozadí nebo vytvořit čistě z XAML sestavení jsou potřeba pro podporu této funkce.  
+ Aby bylo možné podporovat praktické použití `x:Members` jako způsob určení definic členů v kódu, musí být členové přidruženi ke třídě, kterou lze upravovat. Zamýšlený model `x:Members` existuje jako člen typu, který `x:Class`určuje. Mechanismus pro přidružení typů a členů nebo pro vytváření definic dynamických členů však není podporován na úrovni .NET Framework služby XAML. To je ponecháno na individuálních rozhraních, která mají modely aplikace podporující definice členů z jazyka XAML. Obvykle se akce sestavení MSBUILD, které zadávají kód, zkompiluje kód XAML a buď je integruje s kódem na pozadí, nebo vytvoří čistě ze sestavení v jazyce XAML, které jsou potřeba k podpoře této funkce.  
   
-## <a name="xproperty-for-windows-workflow-foundation"></a>x: Property pro Windows Workflow Foundation  
- Pro Windows Workflow Foundation `x:Property` definuje členy vlastní aktivity skládá zcela v XAML a XAML – definované dynamičtí členové pro Návrhář aktivity s kódem na pozadí. `x:Class` musíte také uvést v kořenovém elementu XAML výroby. Není vyžadována na úrovni rozhraní .NET Framework XAML Services, ale požadavek se změní, pokud produkční XAML je načten akcemi MSBUILD sestavení, které podporují vlastní aktivity a Windows Workflow Foundation XAML obecně. Windows Workflow Foundation nepoužívá jako jeho odpovídající hodnota pro čistě název typu XAML `x:Property` `Type` atribut a místo toho používá konvenci, který nebyl zdokumentován tady. Další informace najdete v tématu [vytvoření dynamické aktivity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd807392(v=vs.100)).
+## <a name="xproperty-for-windows-workflow-foundation"></a>x:Property pro programovací model Windows Workflow Foundation  
+ Pro programovací model Windows Workflow Foundation `x:Property` definuje členy vlastní aktivity složené výhradně v jazyce XAML nebo dynamických členů definovaných v jazyce XAML pro návrháře aktivit s kódem na pozadí. `x:Class`musí být také zadáno v kořenovém elementu výroby XAML. Nejedná se o požadavek na úrovni služby .NET Framework XAML Services, ale v případě, že je výroba XAML načtena pomocí akcí sestavení MSBUILD, které podporují vlastní aktivity a programovací model Windows Workflow Foundation XAML, se ale stala požadavkem. Programovací model Windows Workflow Foundation nepoužívá jako zamýšlenou hodnotu pro `x:Property` `Type` atribut název čistě typu XAML a místo toho používá konvenci, která zde není popsána. Další informace najdete v tématu [Vytvoření DynamicActivity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd807392(v=vs.100)).

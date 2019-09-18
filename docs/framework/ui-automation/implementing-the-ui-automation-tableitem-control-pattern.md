@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Table Item control pattern
 - TableItem control pattern
 ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
-ms.openlocfilehash: 8f368fee6df6ebe5455f2029670e90f036d3d89a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cdbfc8d24dce3b63801682528a49c13d89660935
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043166"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -19,12 +19,12 @@ ms.locfileid: "69932096"
   
  Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.ITableItemProvider>implementaci, včetně informací o událostech a vlastnostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- Vzor ovládacího prvku slouží k podpoře podřízených ovládacích prvků kontejnerů, které implementují <xref:System.Windows.Automation.Provider.ITableProvider>. <xref:System.Windows.Automation.TableItemPattern> Přístup k funkcím jednotlivých buněk je poskytován požadovanou souběžnou implementací <xref:System.Windows.Automation.Provider.IGridItemProvider>. Tento vzor ovládacího prvku je podobný <xref:System.Windows.Automation.Provider.IGridItemProvider> rozlišení, že implementující <xref:System.Windows.Automation.Provider.ITableItemProvider> ovládací prvky musí programově zveřejnit vztah mezi jednotlivou buňkou a informace o řádku a sloupci. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor ovládacího prvku slouží k podpoře podřízených ovládacích prvků kontejnerů, které implementují <xref:System.Windows.Automation.Provider.ITableProvider>. <xref:System.Windows.Automation.TableItemPattern> Přístup k funkcím jednotlivých buněk je poskytován požadovanou souběžnou implementací <xref:System.Windows.Automation.Provider.IGridItemProvider>. Tento vzor ovládacího prvku je podobný <xref:System.Windows.Automation.Provider.IGridItemProvider> rozlišení, že implementující <xref:System.Windows.Automation.Provider.ITableItemProvider> ovládací prvky musí programově zveřejnit vztah mezi jednotlivou buňkou a informace o řádku a sloupci. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
   
-- Pro související funkce položky mřížky si přečtěte téma [implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md).  
+- Pro související funkce položky mřížky si přečtěte téma [implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-griditem-control-pattern.md).  
   
 <a name="Required_Members_for_ITableItemProvider"></a>   
 ## <a name="required-members-for-itableitemprovider"></a>Vyžadovaná členové pro ITableItemProvider  
@@ -42,10 +42,10 @@ ms.locfileid: "69932096"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
-- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)
-- [Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-table-control-pattern.md)
-- [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md)
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)
+- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)
+- [Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-table-control-pattern.md)
+- [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-griditem-control-pattern.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)

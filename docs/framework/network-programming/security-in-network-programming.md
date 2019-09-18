@@ -1,5 +1,5 @@
 ---
-title: Zabezpečení v síťovém programování – rozhraní .NET Framework
+title: Zabezpečení při programování sítě – .NET Framework
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -12,32 +12,32 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
-ms.openlocfilehash: b57465d4cf89bb38dd5cda70f090f444e52ea819
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae8451089dc645c925848489a61c5fb55c468032
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641928"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047309"
 ---
-# <a name="security-in-network-programming"></a>Zabezpečení v síťovém programování
+# <a name="security-in-network-programming"></a>Zabezpečení při programování sítě
 
-Rozhraní .NET Framework <xref:System.Net> tříd v oboru názvů poskytují integrovanou podporu pro oblíbené Internetové aplikace ověřovacích mechanismů a pro oprávnění přístupu ke kódu rozhraní .NET Framework.  
+Třídy oboru <xref:System.Net> názvů .NET Framework poskytují integrovanou podporu pro oblíbené mechanismy ověřování internetových aplikací a pro .NET Framework oprávnění k přístupu kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework](tls.md)  
-Popisuje TLS osvědčených postupů pomocí rozhraní .NET Framework.
+[Osvědčené postupy TLS (Transport Layer Security) s .NET Framework](tls.md)  
+Popisuje osvědčené postupy TLS s .NET Framework.
  
-[Použití protokolu SSL (Secure Sockets Layer)](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
-Popisuje, jak používat připojení vrstvy SSL (Secure Sockets).  
+[Použití protokolu SSL (Secure Sockets Layer)](using-secure-sockets-layer.md)  
+Popisuje, jak používat připojení SSL (Secure Sockets Layer) (SSL).  
   
-[Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)  
-Popisuje způsob použití metod ověřování protokolu HTTP k navázání ověřeného připojení k serverům HTTP.  
+[Ověřování v internetu](internet-authentication.md)  
+Popisuje způsob použití metod ověřování protokolu HTTP k navázání ověřených připojení k serverům HTTP.  
   
-[Oprávnění pro web a sokety](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
-Popisuje, jak nastavit zabezpečení přístupu ke kódu pro aplikace, které používají připojení k Internetu.  
+[Oprávnění pro web a sokety](web-and-socket-permissions.md)  
+Popisuje, jak nastavit zabezpečení přístupu kódu pro aplikace, které používají připojení k Internetu.  
   
 ## <a name="related-sections"></a>Související oddíly
 
-[Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
-Představuje třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů.
+[Síťové programování v rozhraní .NET Framework](index.md)  
+Zavádí třídy v <xref:System.Net> oborech názvů <xref:System.Net.Sockets> a.

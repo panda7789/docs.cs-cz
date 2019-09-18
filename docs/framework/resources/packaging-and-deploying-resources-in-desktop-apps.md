@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 808f0f8ac6caf15be0bf1ba8735521871c9b94d7
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 417550397582641c5a8fa97c061377beadfb0e6f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851597"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045570"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Balení a nasazení prostředků v aplikacích .NET
 
@@ -58,7 +58,7 @@ Tento model má několik výhod:
 Když zabalíte prostředky vaší aplikace, je nutné je pojmenovat pomocí konvencí pojmenování prostředků, které modul CLR (Common Language Runtime) očekává. Modul runtime identifikuje prostředek podle názvu jeho jazykové verze. Každé jazykové verzi má jedinečný název, což je obvykle kombinace názvu jazykové verze s malým písmenem, která je přidružená k jazyku, a v případě potřeby se jedná o název subjazykové verze se dvěma písmeny, které jsou přidružené k zemi nebo oblasti. Název subjazykové verze následuje název jazykové verze oddělený spojovníkem (-). Mezi příklady patří ja-JP pro japonštinu, jak je popsáno v Japonsku, en-US pro angličtinu jako mluvené slovo v USA, de-DE pro němčinu, jak je popsáno v Německu, nebo de-AT pro němčinu jako mluvené slovo v Rakousku. Podívejte se na sloupec **značky jazyka** v [seznamu názvů jazyků nebo oblastí podporovaných systémem Windows](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Názvy jazykové verze se řídí standardem definovaným v [BCP 47](https://tools.ietf.org/html/bcp47).
 
 > [!NOTE]
-> Informace o vytváření souborů prostředků naleznete v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md) a [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).
+> Informace o vytváření souborů prostředků naleznete v tématu [vytváření souborů prostředků](creating-resource-files-for-desktop-apps.md) a [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md).
 
 <a name="cpconpackagingdeployingresourcesanchor1"></a>
 
@@ -73,9 +73,9 @@ Chcete-li zlepšit výkon vyhledávání, <xref:System.Resources.NeutralResource
 Záložní proces .NET Framework prostředků zahrnuje následující kroky:
 
 > [!TIP]
-> Můžete použít [ \<relativeBindForResources >](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) konfiguračního prvku pro optimalizaci procesu záložního prostředku a procesu, pomocí kterého sondy modulu runtime pro sestavení prostředků. Další informace najdete v části [Optimalizace procesu pro použití náhradních prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md#Optimizing) .
+> Můžete použít [ \<relativeBindForResources >](../configure-apps/file-schema/runtime/relativebindforresources-element.md) konfiguračního prvku pro optimalizaci procesu záložního prostředku a procesu, pomocí kterého sondy modulu runtime pro sestavení prostředků. Další informace najdete v části [Optimalizace procesu pro použití náhradních prostředků](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing) .
 
-1. Modul runtime nejprve zkontroluje [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md) (GAC) pro sestavení, které odpovídá požadované jazykové verzi vaší aplikace.
+1. Modul runtime nejprve zkontroluje [globální mezipaměť sestavení](../app-domains/gac.md) (GAC) pro sestavení, které odpovídá požadované jazykové verzi vaší aplikace.
 
      Globální mezipaměť sestavení (GAC) může ukládat sestavení prostředků, která jsou sdílena mnoha aplikacemi. Tím se zadarmo nebudete muset zahrnout konkrétní sady prostředků do adresářové struktury každé aplikace, kterou vytvoříte. Pokud modul runtime najde odkaz na sestavení, vyhledá v sestavení požadovaný prostředek. Pokud nalezne položku v sestavení, použije požadovaný prostředek. Pokud záznam nenajde, pokračuje v hledání.
 
@@ -112,13 +112,13 @@ Předpokládejme například, že aplikace požaduje prostředek lokalizovaný p
 
 V následujících podmínkách můžete optimalizovat proces, podle kterého modul runtime vyhledává prostředky v satelitních sestaveních.
 
-- Satelitní sestavení jsou nasazena ve stejném umístění jako sestavení kódu. Pokud je sestavení kódu nainstalováno v [globální mezipaměti sestavení (GAC](../../../docs/framework/app-domains/gac.md)), jsou satelitní sestavení nainstalována také v globální mezipaměti sestavení (GAC). Pokud je sestavení kódu nainstalováno v adresáři, jsou satelitní sestavení nainstalována ve složkách specifických pro jazykovou verzi tohoto adresáře.
+- Satelitní sestavení jsou nasazena ve stejném umístění jako sestavení kódu. Pokud je sestavení kódu nainstalováno v [globální mezipaměti sestavení (GAC](../app-domains/gac.md)), jsou satelitní sestavení nainstalována také v globální mezipaměti sestavení (GAC). Pokud je sestavení kódu nainstalováno v adresáři, jsou satelitní sestavení nainstalována ve složkách specifických pro jazykovou verzi tohoto adresáře.
 
 - Satelitní sestavení nejsou na vyžádání nainstalována.
 
 - Kód aplikace nezpracovává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
 
-Optimalizujete sondu pro satelitní sestavení zahrnutím `enabled` `true` [ \<prvku relativeBindForResources >](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) a nastavením jeho atributu do konfiguračního souboru aplikace, jak je znázorněno v následujícím příkladu. případě.
+Optimalizujete sondu pro satelitní sestavení zahrnutím `enabled` `true` [ \<prvku relativeBindForResources >](../configure-apps/file-schema/runtime/relativebindforresources-element.md) a nastavením jeho atributu do konfiguračního souboru aplikace, jak je znázorněno v následujícím příkladu. případě.
 
 ```xml
 <configuration>
@@ -128,7 +128,7 @@ Optimalizujete sondu pro satelitní sestavení zahrnutím `enabled` `true` [ \<p
 </configuration>
 ```
 
-Optimalizovaná sonda pro satelitní sestavení je funkce výslovného souhlasu. To znamená, že modul runtime postupuje podle kroků popsaných v [procesu záložního prostředku](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) , pokud `enabled` [ \<](../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md) se v konfiguračním souboru aplikace nenachází prvek relativeBindForResources > a jeho atribut je nastaven. na `true`. Pokud se jedná o tento případ, proces zjišťování pro satelitní sestavení se upraví takto:
+Optimalizovaná sonda pro satelitní sestavení je funkce výslovného souhlasu. To znamená, že modul runtime postupuje podle kroků popsaných v [procesu záložního prostředku](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1) , pokud `enabled` [ \<](../configure-apps/file-schema/runtime/relativebindforresources-element.md) se v konfiguračním souboru aplikace nenachází prvek relativeBindForResources > a jeho atribut je nastaven. na `true`. Pokud se jedná o tento případ, proces zjišťování pro satelitní sestavení se upraví takto:
 
 - Modul runtime používá umístění nadřazeného sestavení kódu pro test satelitního sestavení. Pokud je nadřazené sestavení nainstalováno v globální mezipaměti sestavení (GAC), běhové testy v mezipaměti, ale ne v adresáři aplikace. Pokud je nadřazené sestavení nainstalováno v adresáři aplikace, sondy modulu runtime v adresáři aplikace, ale ne v globální mezipaměti sestavení (GAC).
 
@@ -186,7 +186,7 @@ Druhý, Resources, ru. txt, obsahuje prostředek ruského jazyka.
 Greeting=Добрый день
 ```
 
-Tyto dva soubory jsou zkompilovány do souborů. Resources spuštěním [generátoru souboru prostředků (Resgen. exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) z příkazového řádku. Pro zdroj francouzského jazyka je tento příkaz:
+Tyto dva soubory jsou zkompilovány do souborů. Resources spuštěním [generátoru souboru prostředků (Resgen. exe)](../tools/resgen-exe-resource-file-generator.md) z příkazového řádku. Pro zdroj francouzského jazyka je tento příkaz:
 
 **resgen.exe resources.fr.txt**
 
@@ -194,7 +194,7 @@ Pro prostředek ruského jazyka je tento příkaz:
 
 **Resgen. exe Resources. ru. txt**
 
-Soubory. Resources jsou vloženy do knihoven DLL spuštěním [linkeru sestavení (Al. exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) z příkazového řádku pro zdroj francouzského jazyka následujícím způsobem:
+Soubory. Resources jsou vloženy do knihoven DLL spuštěním [linkeru sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) z příkazového řádku pro zdroj francouzského jazyka následujícím způsobem:
 
 **al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll**
 
@@ -233,7 +233,7 @@ Omezení času nebo rozpočtu vám mohou zabránit v vytváření sady prostřed
 
 ## <a name="see-also"></a>Viz také:
 
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
-- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
-- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
-- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
+- [Prostředky v desktopových aplikacích](index.md)
+- [Globální mezipaměť sestavení](../app-domains/gac.md)
+- [Vytváření zdrojových souborů](creating-resource-files-for-desktop-apps.md)
+- [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md)

@@ -4,25 +4,25 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [XAML Services], type converter services how-to
 ms.assetid: b4dad00f-03da-4579-a4e9-d8d72d2ccbce
-ms.openlocfilehash: 850e266aed6fc2d69722ba6dac3baa3e115678a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d4e274ad7b64820e74347908c08c7726e96bbe8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61953969"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053847"
 ---
 # <a name="service-contexts-available-to-type-converters-and-markup-extensions"></a>Kontexty služby dostupné pro převaděče typů a rozšíření značek
-Autoři typy, které podporují použití rozšíření typ převaděče a značky musí mít často kontextové informace o tom, kde je umístěn v kódu nebo v kolem objektu struktura využití. Informace může být nutné tak, že je správně vytvořena instance zadaného objektu, nebo tak, aby odkazy na objekty existujících objektů v grafu objektů lze provést. Při použití rozhraní .NET Framework XAML Services, kontext, který může být vyžadováno vystavena jako řadu rozhraní služeb. Kód podpory rozšíření typ pro převaděč nebo značky můžete dotazovat služby pomocí kontextu poskytovatele služby, který je k dispozici a předaných z <xref:System.Xaml.XamlObjectWriter> nebo souvisejících typů. Kontext schématu XAML je k dispozici přímo prostřednictvím jedné konkrétní služby. Toto téma popisuje, jak získat přístup k kontexty služby z implementace převodníku hodnotu a uvádí obvykle dostupných služeb a jejich rolí.  
+Autoři typů, které podporují konvertor typu a použití rozšíření značek, musí často obsahovat kontextové informace o tom, kde je použití umístěno v kódu, nebo ve okolní struktuře objektu grafu. Mohou být potřeba informace, aby byl poskytnutý objekt správně vytvořen nebo aby bylo možné vytvořit odkazy na existující objekty v grafu objektů. Při použití .NET Framework služby XAML je kontext, který může být vyžadován, vystaven jako řada rozhraní služeb. Kód podpory konvertoru typu nebo rozšíření značek se může dotazovat na službu pomocí kontextu poskytovatele služby, který je k dispozici a <xref:System.Xaml.XamlObjectWriter> předán prostřednictvím nebo souvisejících typů. Kontext schématu XAML je přímo k dispozici prostřednictvím jedné takové služby. Toto téma popisuje, jak přistupovat k kontextům služby z Implementace konvertoru hodnot a seznam typicky dostupných služeb a jejich rolí.  
   
 <a name="obtaining_services"></a>   
-## <a name="obtaining-services"></a>Získání služby  
- Jako implementátora převaděče hodnoty často potřebují přístup pro nějaký typ kontext, ve kterém je použito převaděč hodnoty. Tento kontext může obsahovat informace, jako je aktivní kontext schématu XAML, přístup k mapování systém typů, které poskytují kontext schématu XAML a XAML objektu zapisovače a tak dále. Dostupnost služeb pro implementaci kódu rozšíření nebo typ převaděče se předávají prostřednictvím kontextové parametry, které jsou součástí podpis každé virtuální metody. V každém případě je nutné <xref:System.IServiceProvider> implementované v kontextu a může volat <xref:System.IServiceProvider.GetService%2A?displayProperty=nameWithType> k požádání o službu.  
+## <a name="obtaining-services"></a>Získání služeb  
+ Jako implementátor převaděče hodnot často potřebujete přístup k některému typu kontextu, ve kterém je použit převaděč hodnot. Tento kontext může zahrnovat informace, jako je například aktivní kontext schématu XAML, přístup k systému mapování typů, který kontext schématu XAML a zapisovač objektů XAML poskytují atd. Služby, které jsou k dispozici pro rozšíření značek nebo implementaci konvertoru typů, jsou přenášeny prostřednictvím parametrů kontextu, které jsou součástí signatury každé virtuální metody. V každém případě <xref:System.IServiceProvider> jste implementovali v kontextu a mohou volat <xref:System.IServiceProvider.GetService%2A?displayProperty=nameWithType> pro vyžádání služby.  
   
 <a name="services_for_a_markup_extension"></a>   
-## <a name="services-for-a-markup-extension"></a>Služby rozšíření značek  
- <xref:System.Windows.Markup.MarkupExtension> má pouze jednu virtuální metoda <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>. Vstup `serviceProvider` parametr je, jak služby se předávají do implementace při volání rozšíření značek XAML procesoru. Následujícím pseudokódu ukazuje, jak může dotazovat implementaci rozšíření značek pro služby v jeho <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>:  
+## <a name="services-for-a-markup-extension"></a>Služby pro rozšíření značek  
+ <xref:System.Windows.Markup.MarkupExtension>má pouze jednu virtuální metodu, <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>. Vstupní `serviceProvider` parametr je způsob, jakým jsou služby předávány implementací, pokud je rozšíření značek voláno procesorem XAML. Následující pseudokódu ukazuje, jak se implementace rozšíření značek může dotazovat na služby v <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A>jeho:  
   
-```  
+```csharp  
 public override object ProvideValue(IServiceProvider serviceProvider)  
 {  
 ...  
@@ -42,11 +42,11 @@ public override object ProvideValue(IServiceProvider serviceProvider)
   
 <a name="services_for_a_type_converter"></a>   
 ## <a name="services-for-a-type-converter"></a>Služby pro konvertor typu  
- <xref:System.ComponentModel.TypeConverter> má čtyři virtuální metody, které používají místní služby, které podporují použití XAML. Každá z těchto metod předá vstupní `context` parametru. Tento parametr je typu <xref:System.ComponentModel.ITypeDescriptorContext>, ale tato rozhraní dědí <xref:System.IServiceProvider>a proto neexistuje <xref:System.IServiceProvider.GetService%2A> metody dostupné pro převaděče implementace typu.  
+ <xref:System.ComponentModel.TypeConverter>má čtyři virtuální metody, které používají kontext služby a které podporují použití XAML. Každá z těchto metod předává vstupní `context` parametr. Tento parametr je typu <xref:System.ComponentModel.ITypeDescriptorContext>, ale rozhraní dědí <xref:System.IServiceProvider>, a <xref:System.IServiceProvider.GetService%2A> proto je k dispozici metoda pro implementace konvertoru typu.  
   
- Následujícím pseudokódu ukazuje, jak na typ převaděče implementace pro použití XAML může dotázat na služby v jednom z jeho přepsání, v tomto případě <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>:  
+ Následující pseudokódu ukazuje, jak může Implementace konvertoru typu pro použití XAML dotazovat se na služby v jednom z jeho přepsání, v tomto <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>případě:  
   
-```  
+```csharp  
 public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,  
   CultureInfo cultureInfo,  
   object source)  
@@ -61,126 +61,126 @@ public override object ConvertFrom(ITypeDescriptorContext typeDescriptorContext,
 ```  
   
 <a name="services_for_a_value_serializer"></a>   
-## <a name="services-for-a-value-serializer"></a>Služby pro serializátor hodnoty  
- Pro hodnotu kontext serializátoru, použijte typ zprostředkovatele služby, který je přizpůsobený <xref:System.Windows.Markup.ValueSerializer> třídy, <xref:System.Windows.Markup.IValueSerializerContext>. Tento kontext je předán přepsání těchto čtyř <xref:System.Windows.Markup.ValueSerializer> virtuální metody. Volání <xref:System.IServiceProvider.GetService%2A> z kontextu získat services.  
+## <a name="services-for-a-value-serializer"></a>Služby pro serializátor hodnot  
+ Pro kontext serializátoru hodnot použijte typ poskytovatele služby, který je specifický pro <xref:System.Windows.Markup.ValueSerializer> třídu,. <xref:System.Windows.Markup.IValueSerializerContext> Tento kontext je předán přepsání těchto čtyř <xref:System.Windows.Markup.ValueSerializer> virtuálních metod. Pro <xref:System.IServiceProvider.GetService%2A> získání služeb zavolejte z kontextu.  
   
 <a name="using_the_xaml_service_provider_contexts"></a>   
-## <a name="using-the-xaml-service-provider-contexts"></a>Pomocí kontexty poskytovatele služby XAML  
- Poskytovatel služeb pro <xref:System.IServiceProvider.GetService%2A> přístup ke službám XAML do kódu rozšíření nebo typ převaděče k dispozici je implementovaný jako vnitřní třída, s vystavení jenom prostřednictvím rozhraní a jak je předána do relevantní kontext. Pokaždé, když operaci zpracování XAML v výchozí implementace rozhraní .NET Framework XAML Services načíst cesta nebo cesta pro uložení vyvolá relevantní značek rozšíření nebo typ převaděče metody, které vyžadují kontext služby, Tento vnitřní objekt je předán. V závislosti na situaci, poskytuje kontext služby systému buď `MarkupExtensionContext` nebo `TextSyntaxContext`, ale nespecifikuje, obě tyto třídy jsou vnitřní. Interakce s těchto tříd je omezeno na žádost o služby, prostřednictvím <xref:System.IServiceProvider.GetService%2A>.  
+## <a name="using-the-xaml-service-provider-contexts"></a>Použití kontextů zprostředkovatele služby XAML  
+ Poskytovatel služeb pro <xref:System.IServiceProvider.GetService%2A> přístup ke službám XAML dostupným pro rozšíření značek nebo konvertory typů je implementován jako interní třída s expozicí pouze prostřednictvím rozhraní a způsobu předání do příslušného kontextu. Pokaždé, když operace zpracování XAML ve výchozích .NET Framework implementaci cesty načtení nebo uložení cesty vyvolá příslušné metody rozšíření označení nebo konvertoru typu, které vyžadují kontext služby, je tento interní objekt předán. V závislosti na okolnostech poskytuje kontext systémové služby buď `MarkupExtensionContext` nebo `TextSyntaxContext`, ale konkrétní obě tyto třídy jsou interní. Vaše interakce s těmito třídami je omezená na požadavky služeb od nich přes <xref:System.IServiceProvider.GetService%2A>.  
   
 <a name="available_systemxaml_services"></a>   
-## <a name="available-services-from-the-net-framework-xaml-service-context"></a>Dostupné služby z kontextu služby rozhraní .NET Framework XAML  
- Rozhraní .NET framework XAML Services definuje služby rozšíření značek, převaděče typů, hodnota serializátory a potenciálně další použití. Následující části popisují každou z těchto služeb a poskytuje pokyny, jak může služba použít v implementaci.  
+## <a name="available-services-from-the-net-framework-xaml-service-context"></a>Dostupné služby z kontextu služby .NET Framework XAML  
+ .NET Framework služby XAML definují služby pro rozšíření značek, převaděče typů, serializace hodnot a potenciálně další použití. Následující části popisují každou z těchto služeb a poskytují pokyny k tomu, jak je možné službu použít v implementaci.  
   
 ### <a name="iserviceprovider"></a>IServiceProvider  
- **Referenční dokumentace**: <xref:System.IServiceProvider>  
+ **Referenční dokumentace**:<xref:System.IServiceProvider>  
   
- **Relevantní pro:** Základní operace založené na službách infrastruktury v rozhraní .NET Framework, takže můžete volat <xref:System.IServiceProvider.GetService%2A?displayProperty=nameWithType>.  
+ **Důležité pro:** Základní operace infrastruktury na základě služby v .NET Framework, takže můžete volat <xref:System.IServiceProvider.GetService%2A?displayProperty=nameWithType>.  
   
 ### <a name="itypedescriptorcontext"></a>ITypeDescriptorContext  
- **Referenční dokumentace**: <xref:System.ComponentModel.ITypeDescriptorContext>  
+ **Referenční dokumentace**:<xref:System.ComponentModel.ITypeDescriptorContext>  
   
- Je odvozen od <xref:System.IServiceProvider>. Tato třída reprezentuje kontext ve standardu <xref:System.ComponentModel.TypeConverter> podpisů. <xref:System.ComponentModel.TypeConverter> je třída, která již od rozhraní .NET Framework 1.0. To je starší než XAML a XAML <xref:System.ComponentModel.TypeConverter> scénář pro převod typu řetězec hodnota. V rámci rozhraní .NET Framework XAML Services metody <xref:System.ComponentModel.TypeConverter> jsou explicitně implementované. Určuje chování explicitní implementaci volajícím, který <xref:System.ComponentModel.ITypeDescriptorContext> rozhraní API se nevztahuje typu systému XAML nebo pro čtení nebo zápis objektů z XAML. <xref:System.ComponentModel.ITypeDescriptorContext.Container%2A>, <xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>, a <xref:System.ComponentModel.ITypeDescriptorContext.PropertyDescriptor%2A> obvykle vracet `null` z rozhraní .NET Framework XAML Services kontexty.  
+ Je odvozen z <xref:System.IServiceProvider>. Tato třída představuje kontext v rámci standardních <xref:System.ComponentModel.TypeConverter> podpisů. <xref:System.ComponentModel.TypeConverter> je třída, která existuje od .NET Framework 1,0. Pro převod typu řetězcových hodnot se data XAML a scénář XAML <xref:System.ComponentModel.TypeConverter> . V kontextu .NET Framework služby XAML <xref:System.ComponentModel.TypeConverter> jsou metody implementovány explicitně. Chování explicitní implementace indikuje volajícím, že <xref:System.ComponentModel.ITypeDescriptorContext> rozhraní API není relevantní pro systémy typů XAML, nebo pro čtení nebo zápis objektů z XAML. <xref:System.ComponentModel.ITypeDescriptorContext.Container%2A>, <xref:System.ComponentModel.ITypeDescriptorContext.Instance%2A>a <xref:System.ComponentModel.ITypeDescriptorContext.PropertyDescriptor%2A> obecně vracejí`null` z .NET Framework kontextů služby XAML.  
   
 ### <a name="ivalueserializercontext"></a>IValueSerializerContext  
- **Referenční dokumentace**: <xref:System.Windows.Markup.IValueSerializerContext>  
+ **Referenční dokumentace**:<xref:System.Windows.Markup.IValueSerializerContext>  
   
- Je odvozen od <xref:System.ComponentModel.ITypeDescriptorContext> a také závisí na explicitní implementace rozhraní potlačit false důsledky o typu systému XAML. Podporuje vyhledávání statické pomocné metody na <xref:System.Windows.Markup.ValueSerializer>.  
+ Je odvozen z <xref:System.ComponentModel.ITypeDescriptorContext> a také spoléhá na explicitní implementace pro potlačení falešně negativních dopadů na systém typů XAML. Podporuje metody pomocníka statického vyhledávání <xref:System.Windows.Markup.ValueSerializer>na.  
   
 ### <a name="ixamltyperesolver"></a>IXamlTypeResolver  
- **Referenční dokumentace**: <xref:System.Windows.Markup.IXamlTypeResolver>  
+ **Referenční dokumentace**:<xref:System.Windows.Markup.IXamlTypeResolver>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Windows.Markup> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu scénáře a interakci se kontext schématu XAML  
+ **Důležité pro:** Scénáře načtení cest a interakce s kontextem schématu XAML  
   
  **Rozhraní API služby:**  <xref:System.Windows.Markup.IXamlTypeResolver.Resolve%2A>  
   
- Mohou mít vliv na mapování typu XAML CLR, který je potřeba, pokud zapisovač XAML vytvoří objekt CLR v grafu objektů. <xref:System.Windows.Markup.IXamlTypeResolver.Resolve%2A> zpracuje potenciálně kvalifikací předponu řetězec, který odpovídá název typu XAML (<xref:System.Xaml.XamlType.Name%2A?displayProperty=nameWithType>) a vrátí modul CLR <xref:System.Type>. Řešení typů je obvykle silně závisí na kontext schématu XAML. Pouze kontext schématu XAML je důležité informace o seznámen, jako jsou načtené sestavení, a které z těchto sestavení můžete nebo by měl mít přístup pro rozlišení typu.  
+ Může ovlivnit mapování typu XAML-to-CLR, který je nezbytný v případě, že zapisovač XAML vytvoří objekt CLR v grafu objektů. <xref:System.Windows.Markup.IXamlTypeResolver.Resolve%2A>zpracuje potenciálně kvalifikovaný řetězec s předponou, který odpovídá názvu typu XAML (<xref:System.Xaml.XamlType.Name%2A?displayProperty=nameWithType>), a vrátí CLR. <xref:System.Type> Řešení typů je obvykle silně závislé na kontextu schématu XAML. Pouze kontext schématu XAML má na paměti informace, jako například která sestavení jsou načtena a která z těchto sestavení mohou nebo by měly být k dispozici pro rozlišení typu.  
   
 ### <a name="iuricontext"></a>IUriContext  
- **Referenční dokumentace**: <xref:System.Windows.Markup.IUriContext>  
+ **Referenční dokumentace**:<xref:System.Windows.Markup.IUriContext>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Windows.Markup> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu a uložit cestu zpracování hodnoty členů, které jsou identifikátory URI nebo `x:Uri` hodnoty.  
+ **Důležité pro:** Načíst cestu a Uložit cestu k hodnotám členů, které jsou identifikátory `x:Uri` URI nebo hodnoty.  
   
  **Rozhraní API služby:**  <xref:System.Windows.Markup.IUriContext.BaseUri%2A>  
   
- Tato služba sestavy globálně dostupné kořenový identifikátor URI, pokud existuje. Kořenový identifikátor URI lze použít k vyřešení relativní identifikátory URI na absolutní URI nebo naopak. Tento scénář je důležité hlavně pro aplikační služby, které jsou vystaveny konkrétní architekturu nebo funkce třídy často používaných kořenový element v rámci. Základní identifikátor URI je možné navázat XAML pro čtenáře nastavení, která je pak předán pomocí objektu zapisovače XAML a reportovanou touto službou.  
+ Tato služba hlásí globálně dostupný kořenový identifikátor URI, pokud existuje. Kořen identifikátoru URI lze použít k překladu relativních identifikátorů URI na absolutní identifikátory URI nebo naopak. Tento scénář je zvláště relevantní pro aplikační služby, které jsou zpřístupněny konkrétním rozhraním, nebo schopnosti často používané třídy kořenového elementu v rámci rozhraní. Základní identifikátor URI lze vytvořit jako nastavení čtečky XAML, které je pak předáno do zapisovače objektu XAML a hlášeno touto službou.  
   
 ### <a name="iambientprovider"></a>IAmbientProvider  
- **Referenční dokumentace**: <xref:System.Xaml.IAmbientProvider>  
+ **Referenční dokumentace**:<xref:System.Xaml.IAmbientProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst vyhledávání odložení zpracování a zadejte cestu nebo optimalizace.  
+ **Důležité pro:** Načítání cest pro zpracování a neodklady nebo optimalizace vyhledávání typů.  
   
- **Rozhraní API služeb:**<xref:System.Xaml.IAmbientProvider.GetAllAmbientValues%2A>, 3 ostatní.  
+ **Rozhraní API služby:** <xref:System.Xaml.IAmbientProvider.GetAllAmbientValues%2A>, 3 ostatní.  
   
- Koncept podmínek v XAML je technika k označení určitého člena typu jako okolí. Typ, případně může být okolí tak, aby všechny hodnoty vlastností, které obsahují instanci typu by měl být vedlejším vlastnostem. Rozšíření značek nebo převaděče typů, které jsou dále na datový proud uzlu XAML a následníky v grafu objektů, které jsou přístupné vedlejší vlastnost nebo typ instance v okamžiku načtení; nebo může použít znalostní báze v okolí struktury ušetřit čas. To může ovlivnit stupeň podmínku, které je potřeba vyřešit typy pro jiné služby, například pro <xref:System.Windows.Markup.IXamlTypeResolver> nebo pro `x:Type`. Viz také <xref:System.Xaml.AmbientPropertyValue>.  
+ Koncept Ambience v jazyce XAML je technika pro označení konkrétního člena typu jako okolí. Alternativně může být typ ambientní, aby všechny hodnoty vlastností, které obsahují instanci typu, měly být považovány za ambientní vlastnosti. Rozšíření značek nebo konvertory typů, které jsou dále v datovém proudu uzlu XAML a které jsou následníky v objektu Graph, mají přístup k vnější vlastnosti nebo instanci typu v době načítání. nebo můžou v době úspory použít znalosti struktury okolí. To může mít vliv na stupeň kvalifikace, který je potřeba k překladu typů pro jiné služby, například pro <xref:System.Windows.Markup.IXamlTypeResolver> nebo pro `x:Type`. Viz také <xref:System.Xaml.AmbientPropertyValue>.  
   
 ### <a name="ixamlschemacontextprovider"></a>IXamlSchemaContextProvider  
- **Referenční dokumentace**: <xref:System.Xaml.IXamlSchemaContextProvider>  
+ **Referenční dokumentace**:<xref:System.Xaml.IXamlSchemaContextProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu a jakékoli operaci, která se musí přeložit typ XAML základního typu.  
+ **Důležité pro:** Cesta načtení a všechny operace, které musí přeložit typ XAML na typ zálohování.  
   
  **Rozhraní API služby:**  <xref:System.Xaml.IXamlSchemaContextProvider.SchemaContext%2A>  
   
- Kontext schématu XAML je nezbytné pro všechny operace zatížení odložit, protože stejný kontext schématu musí fungovat odložené oblasti, aby bylo možné integrovat odloženého obsahu. Další informace o roli kontext schématu XAML najdete v tématu [XAML Services](index.md).  
+ Kontext schématu XAML je nezbytný pro jakékoli operace odloženého načítání, protože stejný kontext schématu musí fungovat na odložené oblasti, aby se mohla integrovat odložený obsah. Další informace o roli kontextu schématu XAML naleznete v tématu [XAML Services](index.md).  
   
 ### <a name="irootobjectprovider"></a>IRootObjectProvider  
- **Referenční dokumentace**: <xref:System.Xaml.IRootObjectProvider>  
+ **Referenční dokumentace**:<xref:System.Xaml.IRootObjectProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu.  
+ **Důležité pro:** Načíst cestu  
   
  **Rozhraní API služby:**  <xref:System.Xaml.IRootObjectProvider.RootObject%2A>  
   
- Tato služba je relevantní pro aplikační služby, které jsou vystaveny konkrétní rozhraním nebo funkce třídy často používaných kořenový element v rámci. Použití modelu code-behind a její události připojení jeden scénář pro získání kořenového objektu. Například WPF provádění `x:Class` se používá pro značky kompilace a její jakéhokoliv atributu obslužná rutina události, která se nachází na další pozici ve značkách XAML. Spojovací bod značky a modelu code-behind definované částečné třídy pro kompilaci kódu je kořenový element.  
+ Služba je relevantní pro aplikační služby, které jsou zpřístupněny konkrétním rozhraním, nebo funkcemi často používané třídy kořenového prvku v rozhraní. Jedním z scénářů, jak získat kořenový objekt, je propojení s kódem na pozadí a s událostmi. Například implementace `x:Class` WPF pro se používá pro kompilaci kódu a kabely libovolného atributu obslužné rutiny události, který se nachází na libovolné jiné pozici v kódu XAML. Bod připojení značek a definovaných částečných tříd kódu na pozadí pro kompilaci kódu je umístěn v kořenovém elementu.  
   
 ### <a name="ixamlnamespaceresolver"></a>IXamlNamespaceResolver  
- **Referenční dokumentace**: <xref:System.Xaml.IXamlNamespaceResolver>  
+ **Referenční dokumentace**:<xref:System.Xaml.IXamlNamespaceResolver>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu, cesta pro uložení.  
+ **Důležité pro:** Cesta načtení, Uložit cestu.  
   
- **Rozhraní API služby:** <xref:System.Xaml.IXamlNamespaceResolver.GetNamespace%2A> pro cestu zatížení <xref:System.Xaml.IXamlNamespaceResolver.GetNamespacePrefixes%2A> pro cesta pro uložení.  
+ **Rozhraní API služby:** procestunačteníprocestuprouložení.<xref:System.Xaml.IXamlNamespaceResolver.GetNamespace%2A> <xref:System.Xaml.IXamlNamespaceResolver.GetNamespacePrefixes%2A>  
   
- <xref:System.Xaml.IXamlNamespaceResolver> je služba, která vrací identifikátor oboru názvů XAML / identifikátor URI na základě jeho předpony jako mapované v původní kód XAML.  
+ <xref:System.Xaml.IXamlNamespaceResolver>je služba, která může vracet identifikátor oboru názvů XAML nebo identifikátor URI na základě jeho předpony, jak je mapováno v označení původ XAML.  
   
 ### <a name="iprovidevaluetarget"></a>IProvideValueTarget  
- **Referenční dokumentace**: <xref:System.Windows.Markup.IProvideValueTarget>  
+ **Referenční dokumentace**:<xref:System.Windows.Markup.IProvideValueTarget>  
   
- **Určené:** <xref:System.Windows.Markup> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Windows.Markup> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu a uložit cestu.  
+ **Důležité pro:** Načte cestu a cestu pro uložení.  
   
- **Rozhraní API služeb:**<xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>, <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>.  
+ **Rozhraní API služby:** <xref:System.Windows.Markup.IProvideValueTarget.TargetObject%2A>, <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A>.  
   
- <xref:System.Windows.Markup.IProvideValueTarget> umožňuje získat kontext, o kterém funguje v okamžiku načtení typ převaděče nebo značky rozšíření. Implementace může používat kontext tohoto zrušit platnost využití. Například WPF, jako je logika uvnitř některé z jeho rozšíření značek <xref:System.Windows.DynamicResourceExtension>. Logické kontroly <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A> abyste měli jistotu, že rozšíření slouží pouze k nastavení vlastnosti závislosti (nebo krátký seznam dalších vlastností bez závislostí).  
+ <xref:System.Windows.Markup.IProvideValueTarget>umožňuje konvertoru typu nebo rozšíření značek získat kontext, kde funguje v době načítání. Implementace mohou používat tento kontext k zrušení platnosti použití. Například WPF má logiku uvnitř některých rozšíření značek, jako je <xref:System.Windows.DynamicResourceExtension>například. Logika zkontroluje <xref:System.Windows.Markup.IProvideValueTarget.TargetProperty%2A> , zda se rozšíření používá pouze k nastavení vlastností závislosti (nebo krátkého seznamu jiných vlastností bez závislosti).  
   
 ### <a name="ixamlnameresolver"></a>IXamlNameResolver  
- **Referenční dokumentace**: <xref:System.Xaml.IXamlNameResolver>  
+ **Referenční dokumentace**:<xref:System.Xaml.IXamlNameResolver>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst definice grafu objekt cesty, řešení objekty identifikovaný `x:Name`, `x:Reference`, nebo techniky pro konkrétní rozhraní.  
+ **Důležité pro:** Načtení definice grafu objektu cesty, řešení objektů identifikovaných `x:Name`technikami, `x:Reference`nebo pro konkrétní rozhraní.  
   
- **Rozhraní API služeb:**<xref:System.Xaml.IXamlNameResolver.Resolve%2A>; jiná rozhraní API pro pokročilejší scénáře, jako je řešení dopředné odkazy.  
+ **Rozhraní API služby:** <xref:System.Xaml.IXamlNameResolver.Resolve%2A>; další rozhraní API pro pokročilejší scénáře, jako je například řešení problémů s dopředné odkazy.  
   
- Implementace rozhraní .NET Framework XAML Services `x:Reference` zpracování závisí na tuto službu. Konkrétní rozhraní nebo nástroje, které podporují rozhraní framework pomocí této služby pro `x:Name` zpracování nebo ekvivalentní (<xref:System.Windows.Markup.RuntimeNamePropertyAttribute> s atributy) vlastnosti zpracování.  
+ Tato služba využívá implementaci `x:Reference` zpracování .NET Framework XAML Services. Konkrétní architektury nebo nástroje, které podporují rozhraní, používají tuto službu ke `x:Name` zpracování nebo ekvivalentnímu<xref:System.Windows.Markup.RuntimeNamePropertyAttribute> zpracování vlastností (s atributy).  
   
 ### <a name="idestinationtypeprovider"></a>IDestinationTypeProvider  
- **Referenční dokumentace**: <xref:System.Xaml.IDestinationTypeProvider>  
+ **Referenční dokumentace**:<xref:System.Xaml.IDestinationTypeProvider>  
   
- **Určené:** <xref:System.Xaml> oboru názvů System.Xaml sestavení  
+ **Definováno:** <xref:System.Xaml> obor názvů, sestavení System. XAML  
   
- **Relevantní pro:** Načíst cestu řešení nepřímé informace o typu modulu CLR.  
+ **Důležité pro:** Načíst rozlišení cesty k nepřímým informacím o typu CLR.  
   
  **Rozhraní API služby:** <xref:System.Xaml.IDestinationTypeProvider.GetDestinationType%2A>  
   

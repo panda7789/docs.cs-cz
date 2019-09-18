@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5f003795bf2b8987786043a62d48b2623eb64015
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 64f3f2bb54bd454ef037da2f7e10dd9067bf2217
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949369"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045602"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Skoro každá aplikace v produkční kvalitě musí používat prostředky. Prostředek je jakákoli nespustitelná data, která jsou logicky nasazena s aplikací. Prostředek se může v aplikaci zobrazit jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v několika formách, včetně řetězců, obrázků a trvalých objektů. (Pro zápis trvalých objektů do souboru prostředků musí být objekty serializovatelné.) Uložení dat do souboru prostředků umožňuje změnit data, aniž by bylo nutné znovu kompilovat celou aplikaci. Umožňuje také ukládat data do jednoho umístění a eliminovat nutnost spoléhat na pevně zakódované údaje, které jsou uloženy na více místech.  
@@ -29,16 +29,16 @@ Skoro každá aplikace v produkční kvalitě musí používat prostředky. Pros
   
 ## <a name="creating-and-localizing-resources"></a>Vytváření a lokalizace prostředků  
 
-V nelokalizované aplikaci můžete použít soubory prostředků jako úložiště pro data aplikací, zejména pro řetězce, které by jinak byly pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji vytváříte prostředky jako textový soubor (. txt) nebo soubory XML (. resx) a pomocí nástroje [Resgen. exe (generátor souborů prostředků)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) je zkompilujete do binárních souborů. Resources. Tyto soubory pak mohou být vloženy do spustitelného souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
+V nelokalizované aplikaci můžete použít soubory prostředků jako úložiště pro data aplikací, zejména pro řetězce, které by jinak byly pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji vytváříte prostředky jako textový soubor (. txt) nebo soubory XML (. resx) a pomocí nástroje [Resgen. exe (generátor souborů prostředků)](../tools/resgen-exe-resource-file-generator.md) je zkompilujete do binárních souborů. Resources. Tyto soubory pak mohou být vloženy do spustitelného souboru aplikace kompilátorem jazyka. Další informace o vytváření prostředků najdete v tématu [vytváření souborů prostředků](creating-resource-files-for-desktop-apps.md).  
 
-Prostředky vaší aplikace můžete také lokalizovat pro konkrétní jazykové verze. To umožňuje vytvářet lokalizované (přeložené) verze vašich aplikací. Když vyvíjíte aplikaci, která používá lokalizované prostředky, určíte jazykovou verzi, která slouží jako neutrální nebo záložní jazyková verze, jejíž prostředky jsou používány, pokud nejsou k dispozici žádné vhodné prostředky. Prostředky neutrální jazykové verze se obvykle ukládají ve spustitelném souboru aplikace. Zbývající prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v samostatných satelitních sestaveních. Další informace naleznete v tématu [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md).  
+Prostředky vaší aplikace můžete také lokalizovat pro konkrétní jazykové verze. To umožňuje vytvářet lokalizované (přeložené) verze vašich aplikací. Když vyvíjíte aplikaci, která používá lokalizované prostředky, určíte jazykovou verzi, která slouží jako neutrální nebo záložní jazyková verze, jejíž prostředky jsou používány, pokud nejsou k dispozici žádné vhodné prostředky. Prostředky neutrální jazykové verze se obvykle ukládají ve spustitelném souboru aplikace. Zbývající prostředky pro jednotlivé lokalizované jazykové verze jsou uloženy v samostatných satelitních sestaveních. Další informace naleznete v tématu [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md).  
   
 ## <a name="packaging-and-deploying-resources"></a>Zabalení a nasazení prostředků  
- Lokalizované prostředky aplikace nasadíte do [satelitních sestavení](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Satelitní sestavení obsahuje prostředky jediné jazykové verze; neobsahuje žádný kód aplikace. V modelu nasazení satelitního sestavení vytvoříte aplikaci s jedním výchozím sestavením (což je obvykle hlavní sestavení) a jedním satelitním sestavením pro každou jazykovou verzi, kterou aplikace podporuje. Vzhledem k tomu, že satelitní sestavení nejsou součástí hlavního sestavení, můžete snadno nahradit nebo aktualizovat prostředky odpovídající konkrétní jazykové verzi, aniž byste museli nahradit hlavní sestavení aplikace.  
+ Lokalizované prostředky aplikace nasadíte do [satelitních sestavení](packaging-and-deploying-resources-in-desktop-apps.md). Satelitní sestavení obsahuje prostředky jediné jazykové verze; neobsahuje žádný kód aplikace. V modelu nasazení satelitního sestavení vytvoříte aplikaci s jedním výchozím sestavením (což je obvykle hlavní sestavení) a jedním satelitním sestavením pro každou jazykovou verzi, kterou aplikace podporuje. Vzhledem k tomu, že satelitní sestavení nejsou součástí hlavního sestavení, můžete snadno nahradit nebo aktualizovat prostředky odpovídající konkrétní jazykové verzi, aniž byste museli nahradit hlavní sestavení aplikace.  
   
- Pečlivě určete, které prostředky budou vytvářet výchozí sestavení prostředků vaší aplikace. Vzhledem k tomu, že je součástí hlavního sestavení, všechny změny v ní budou vyžadovat, abyste nahradili hlavní sestavení. Pokud nezadáte výchozí prostředek, vyvolá se výjimka, když se [záložní proces prostředku](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) pokusí ho najít. V dobře navržené aplikaci nesmí použití prostředků nikdy vyvolat výjimku.  
+ Pečlivě určete, které prostředky budou vytvářet výchozí sestavení prostředků vaší aplikace. Vzhledem k tomu, že je součástí hlavního sestavení, všechny změny v ní budou vyžadovat, abyste nahradili hlavní sestavení. Pokud nezadáte výchozí prostředek, vyvolá se výjimka, když se [záložní proces prostředku](packaging-and-deploying-resources-in-desktop-apps.md) pokusí ho najít. V dobře navržené aplikaci nesmí použití prostředků nikdy vyvolat výjimku.  
   
- Další informace najdete v článku o [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) .  
+ Další informace najdete v článku o [balení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md) .  
   
 ## <a name="retrieving-resources"></a>Načítání prostředků  
  V době běhu aplikace načte příslušné lokalizované prostředky na základě vlákna na základě jazykové verze určené <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastností. Hodnota této vlastnosti je odvozena takto:  
@@ -66,7 +66,7 @@ Prostředky vaší aplikace můžete také lokalizovat pro konkrétní jazykové
 - <xref:System.Globalization.CultureInfo>
 - <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
 - [Základy vytváření aplikací](../../standard/application-essentials.md)
-- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
-- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
-- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
-- [Načítání prostředků](../../../docs/framework/resources/retrieving-resources-in-desktop-apps.md)
+- [Vytváření zdrojových souborů](creating-resource-files-for-desktop-apps.md)
+- [Zabalení a nasazení prostředků](packaging-and-deploying-resources-in-desktop-apps.md)
+- [Vytváření satelitních sestavení](creating-satellite-assemblies-for-desktop-apps.md)
+- [Načítání prostředků](retrieving-resources-in-desktop-apps.md)

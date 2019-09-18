@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0e94bb9d006febb4d8760ac481570dbed3a98341
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 1a2ac0c7fb5f89c7d6b9daba8da7b37d1135acb6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972024"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053187"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runtime), má mezipaměť kódu v celém počítači nazývanou globální mezipaměť sestavení (GAC). Globální mezipaměť sestavení ukládá sestavení speciálně určená pro sdílení několika aplikacemi v počítači.  
@@ -31,7 +31,7 @@ Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runti
   
 - Použijte instalační program navržený pro práci s globální mezipamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení (GAC).  
   
-- Použijte vývojářský nástroj nazvaný [Global Assembly Cache (Gacutil. exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), který poskytuje Windows SDK.  
+- Použijte vývojářský nástroj nazvaný [Global Assembly Cache (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md), který poskytuje Windows SDK.  
   
     > [!NOTE]
     > V rámci scénářů nasazení použijte Instalační služba systému Windows k instalaci sestavení do globální mezipaměti sestavení (GAC). Použijte nástroj globální mezipaměť sestavení (GAC) pouze ve scénářích vývoje, protože neposkytuje počítání odkazů na sestavení a další funkce, které jsou k dispozici při použití Instalační služba systému Windows.  
@@ -45,5 +45,5 @@ Každý počítač, ve kterém je nainstalován modul CLR (Common Language Runti
 ## <a name="see-also"></a>Viz také:
 
 - [Sestavení v .NET](../../standard/assembly/index.md)
-- [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)
+- [Práce se sestaveními a s globální pamětí sestavení](working-with-assemblies-and-the-gac.md)
 - [Sestavení se silným názvem](../../standard/assembly/strong-named.md)

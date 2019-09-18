@@ -15,24 +15,24 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d13c2d2cc391e61c8ed764c26e5e5b5e7ea2a3bb
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 716513bdcf3ac1b8a2b2b29b23a8dc25a86a0d1c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851381"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044813"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
   
- Správce certifikátů je automaticky nainstalován při instalaci sady Visual Studio. Chcete-li spustit nástroj, použijte [příkaz s výzvou](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Správce certifikátů je automaticky nainstalován při instalaci sady Visual Studio. Chcete-li spustit nástroj, použijte [příkaz s výzvou](developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
 > Správce certifikátů (Certmgr.exe) je nástroj příkazového řádku, zatímco Certifikáty (Certmgr.msc) jsou modulem snap-in konzoly MMC (Microsoft Management Console). Vzhledem k tomu, že certmgr. msc se obvykle nachází v systémovém `certmgr` adresáři Windows, může se při zadávání do příkazového řádku načíst modul snap-in Certifikáty konzoly MMC i v případě, že jste otevřeli Developer Command Prompt pro Visual Studio. K tomuto případu může dojít, protože cesta k modulu snap-in předchází cestě nástroje Správce certifikátů v proměnné prostředí PATH. Setkáte-li se s tímto problémem, můžete zadáním cesty ke spustitelnému souboru spustit příkazy Certmgr.exe.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
- Přehled certifikátů X. 509 najdete v tématu [práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Přehled certifikátů X. 509 najdete v tématu [práce s certifikáty](../wcf/feature-details/working-with-certificates.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -92,7 +92,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
  [!code-csharp[Tools.CertMgr#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tools.certmgr/cs/storenames1.cs#1)]
  [!code-vb[Tools.CertMgr#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tools.certmgr/vb/storenames1.vb#1)]  
   
- Další informace o certifikátech najdete v tématu [práce s certifikáty](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Další informace o certifikátech najdete v tématu [práce s certifikáty](../wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="examples"></a>Příklady  
  Následující příkaz zobrazí výchozí úložiště s názvem `my` s podrobným výstupem.  
@@ -139,6 +139,6 @@ certmgr /put /c /s my newFile
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
+- [Nástroje](index.md)
 - [Makecert. exe (Nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

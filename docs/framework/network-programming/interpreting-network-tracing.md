@@ -9,12 +9,12 @@ helpviewer_keywords:
 - text, network tracing output
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
-ms.openlocfilehash: 09f77a60255accc3e4b1c4fa5ea3d7526444e4cb
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: fd617e152b1e86cc71dd8e3cc8a01f1d2f52c30a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894711"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047894"
 ---
 # <a name="interpreting-network-tracing"></a>Interpretace trasování sítě
 Pokud je povoleno trasování sítě, můžete použít trasování k zaznamenání volání, která vaše aplikace <xref:System.Net> předává různým členům třídy. Výstup z těchto volání může být podobný jako v následujících příkladech.  
@@ -26,7 +26,7 @@ Pokud je povoleno trasování sítě, můžete použít trasování k zaznamená
   
  V předchozím příkladu je [588] jedinečný identifikátor aktuálního vlákna. (4357) a (4387) jsou časová razítka označující počet milisekund, které uplynuly od spuštění aplikace. Data následující za časovým razítkem zobrazí aplikaci, která zadává a ukončuje metodu **Socket. Send**. Objekt, který spouští metodu **Send** , má jako jedinečný identifikátor 33574638. Metoda Exit Trace zahrnuje návratovou hodnotu (61 v předchozím příkladu).  
   
- Trasování sítě mohou zachytit síťový provoz, který je odesílán nebo přijat vaší aplikací pomocí protokolů na úrovni aplikace, jako je protokol HTTP (Hypertext Transfer Protocol). Tato data se můžou zachytit jako text a volitelně také hexadecimální data. Šestnáctková data jsou k dispozici při zadání **includehex** jako hodnoty atributu **TraceMode** . (Podrobné informace o tomto atributu naleznete v tématu [How to: Konfigurace trasování](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)sítě.) Následující příklad trasování byl vygenerován pomocí **includehex**.  
+ Trasování sítě mohou zachytit síťový provoz, který je odesílán nebo přijat vaší aplikací pomocí protokolů na úrovni aplikace, jako je protokol HTTP (Hypertext Transfer Protocol). Tato data se můžou zachytit jako text a volitelně také hexadecimální data. Šestnáctková data jsou k dispozici při zadání **includehex** jako hodnoty atributu **TraceMode** . (Podrobné informace o tomto atributu naleznete v tématu [How to: Konfigurace trasování](how-to-configure-network-tracing.md)sítě.) Následující příklad trasování byl vygenerován pomocí **includehex**.  
   
  `[1692]   (1142)   00000000 : 47 45 54 20 2F 77 70 61-64 2E 64 61 74 20 48 54 : GET /wpad.dat HT`  
   
@@ -46,6 +46,6 @@ Pokud je povoleno trasování sítě, můžete použít trasování k zaznamená
   
 ## <a name="see-also"></a>Viz také:
 
-- [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)
-- [Postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)
-- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
+- [Povolení trasování sítě](enabling-network-tracing.md)
+- [Postupy: Konfigurace trasování sítě](how-to-configure-network-tracing.md)
+- [Trasování sítě v rozhraní .NET Framework](network-tracing.md)

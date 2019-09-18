@@ -3,132 +3,132 @@ title: Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5
 ms.date: 03/30/2017
 ms.assetid: 7a32fe6e-5f68-4693-9371-19411fa8063c
 author: BrucePerlerMS
-ms.openlocfilehash: ad8ff2b6daaaf48975b86c637435b31fa1869e1d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ba99a061d060ebe7740fe61846c3684b5c3085d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940566"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045489"
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5
 
 ## <a name="applies-to"></a>Platí pro
 
-- Microsoft Windows® Identity Foundation (WIF) 3.5 a 4.5.
+- Microsoft® Windows® Identity Foundation (WIF) 3,5 a 4,5.
 
 ## <a name="overview"></a>Přehled
 
-Technologie Windows Identity Foundation (WIF) byl vydaný už v rozhraní .NET 3.5 SP1 časový rámec. Tuto verzi technologie WIF jsou označovány jako technologie WIF 3.5. Byl vydán jako samostatný modul runtime a sadu SDK, znamená, že každý počítač, na kterém byl spuštěn podporou technologie WIF aplikace musel si modul runtime WIF nainstalovaný a vývojáři měli ke stažení a instalace sady SDK technologie WIF k získání šablony sady Visual Studio a nabízí nástroje, které povoleno vývoj aplikací s podporou technologie WIF. Od verze rozhraní .NET 4.5, WIF plně integrovaná do rozhraní .NET Framework. Už nepotřebujete samostatný modul runtime a nástroje pro technologii WIF lze nainstalovat v sadě Visual Studio 2012 pomocí Správce rozšíření sady Visual Studio. Tuto verzi technologie WIF jsou označovány jako technologie WIF 4.5.
+Windows Identity Foundation (WIF) byl původně vydaný v časovém rámci .NET 3,5 SP1. Tato verze WIF se označuje jako WIF 3,5. Byl vydán jako samostatný modul runtime a sada SDK, což znamenalo, že každý počítač, ve kterém byla spuštěná aplikace s podporou WIF, musel mít nainstalovaný modul WIF runtime a vývojáři museli stáhnout a nainstalovat sadu SDK WIF pro získání šablon a nástrojů sady Visual Studio, které jsou povolené. vývoj aplikací s podporou WIF Od verze .NET 4,5 se WIF plně integruje do .NET Framework. Samostatný modul runtime již není potřeba a nástroje WIF lze nainstalovat do sady Visual Studio 2012 pomocí Správce rozšíření sady Visual Studio. Tato verze WIF se označuje jako WIF 4,5.
 
-Integrace technologie WIF do technologie .NET nezbytné několik změn v plochy rozhraní API technologie WIF. Technologie WIF 4.5 obsahuje nové obory názvů, některé změny elementů konfigurace a nové nástroje pro Visual Studio. Toto téma obsahuje pokyny, které můžete použít při migraci aplikace sestavené pomocí WIF 3.5 to WIF 4.5. Můžou existovat scénáře, ve kterých je potřeba spouštět starší verze aplikace sestavené pomocí WIF 3.5 na počítačích se systémem Windows 8 nebo Windows Server 2012. Toto téma obsahuje také pokyny k povolení technologie WIF 3.5 pro tyto operační systémy.
+Integrace WIF do .NET vyžadovala několik změn na povrchu rozhraní API WIF. WIF 4,5 obsahuje nové obory názvů, některé změny konfiguračních prvků a nové nástroje pro Visual Studio. V tomto tématu najdete pokyny, které vám pomůžou migrovat aplikace sestavené pomocí WIF 3,5 na WIF 4,5. Můžou nastat situace, kdy potřebujete spouštět starší verze aplikací sestavené pomocí WIF 3,5 na počítačích se systémem Windows 8 nebo Windows Server 2012. V tomto tématu najdete taky pokyny, jak povolit WIF 3,5 pro tyto operační systémy.
 
-## <a name="changes-required-for-wif-45"></a>Změny pro technologie WIF 4.5
+## <a name="changes-required-for-wif-45"></a>Změny požadované pro WIF 4,5
 
-Tato část popisuje změny, které jsou potřeba k migraci aplikace technologie WIF 3.5 to WIF 4.5.
+Tato část popisuje změny, které jsou potřeba k migraci aplikace v WIF 3,5 na WIF 4,5.
 
-### <a name="assembly-and-namespace-changes"></a>Sestavení a změny Namespace
+### <a name="assembly-and-namespace-changes"></a>Změny sestavení a oboru názvů
 
-Technologie WIF 3.5, všechny třídy technologie WIF byly obsaženy v `Microsoft.IdentityModel` sestavení (microsoft.identitymicrosoft.identitymodel.dll). Do verze WIF 4.5 byla rozdělení třídy technologie WIF na následující sestavení: `mscorlib` (mscorlib.dll) `System.IdentityModel` (System.IdentityModel.dll) `System.IdentityModel.Services` (System.IdentityModel.Services.dll), a `System.ServiceModel` (System.ServiceModel.dll ).
+V WIF 3,5 všechny třídy WIF byly obsaženy v `Microsoft.IdentityModel` sestavení (Microsoft. identitymicrosoft. IdentityModel. dll). V WIF 4,5 třídy WIF byly rozděleny mezi následující sestavení: `mscorlib` (mscorlib. dll), `System.IdentityModel` (System. IdentityModel. dll), `System.IdentityModel.Services` (System. IdentityModel. Services. dll) a `System.ServiceModel` (System. ServiceModel. dll. ).
 
-Třídy technologie WIF 3.5 byly obsaženy v jednom z `Microsoft.IdentityModel` obory názvů, třeba `Microsoft.IdentityModel`, `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Web`, a tak dále. V technologii WIF 4.5 třídy technologie WIF jsou nyní rozloženy mezi [System.IdentityModel](https://go.microsoft.com/fwlink/?LinkId=272004) obory názvů, <xref:System.Security.Claims?displayProperty=nameWithType> obor názvů a <xref:System.ServiceModel.Security?displayProperty=nameWithType> oboru názvů. Kromě tohoto reorganizaci byly vynechány některé třídy technologie WIF 3.5 v technologie WIF 4.5.
+Třídy WIF 3,5 byly `Microsoft.IdentityModel` obsaženy v jednom z oborů názvů, `Microsoft.IdentityModel`například `Microsoft.IdentityModel.Tokens` `Microsoft.IdentityModel.Web`,, a tak dále. V WIF 4,5 jsou nyní třídy WIF rozloženy mezi obory názvů [System. IdentityModel](https://go.microsoft.com/fwlink/?LinkId=272004) , <xref:System.Security.Claims?displayProperty=nameWithType> <xref:System.ServiceModel.Security?displayProperty=nameWithType> oborem názvů a oborem názvů. Kromě této reorganizace byly některé třídy WIF 3,5 v WIF 4,5 vynechány.
 
-V následující tabulce jsou uvedeny některé důležité technologie WIF 4.5 oborů názvů a typ třídy, které obsahují. Podrobnější informace o mapování oborů názvů mezi WIF 3.5 a WIF 4.5 a o obory názvů a třídy, které se odstranily technologie WIF 4.5 naleznete v tématu [Namespace mapování mezi verzemi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md).
+Následující tabulka uvádí některé z důležitějších oborů názvů WIF 4,5 a druh tříd, které obsahují. Podrobnější informace o tom, jak se obory názvů mapují mezi WIF 3,5 a WIF 4,5 a o oborech názvů a třídách, které byly vyřazeny v WIF 4,5, najdete v tématu [mapování oboru názvů mezi WIF 3,5 a WIF 4,5](namespace-mapping-between-wif-3-5-and-wif-4-5.md).
 
-|Technologie WIF 4.5 Namespace|Popis|
+|Obor názvů WIF 4,5|Popis|
 |-----------------------|-----------------|
-|<xref:System.IdentityModel?displayProperty=nameWithType>|Obsahuje třídy, které představují transformace souborů cookie, služby tokenu zabezpečení a specializované čtenáře slovníku XML. Obsahuje třídy z následujících oborů názvů WIF 3.5: `Microsoft.IdentityModel`, `Microsoft.IdentityModel.SecurityTokenService`, a `Microsoft.IdentityModel.Threading`.|
-|<xref:System.Security.Claims?displayProperty=nameWithType>|Obsahuje třídy, které představují deklarace identity, založené na deklaracích identity, objekty zabezpečení na základě deklarací identity a jiné artefakty model deklarovaných identit. Obsahuje třídy z `Microsoft.IdentityModel.Claims` oboru názvů.|
-|<xref:System.IdentityModel.Tokens?displayProperty=nameWithType>|Obsahuje třídy, které představují tokeny zabezpečení, obslužné rutiny tokenů zabezpečení a další artefakty tokenu zabezpečení. Obsahuje třídy z následujících oborů názvů WIF 3.5: `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Tokens.Saml11`, a `Microsoft.IdentityModel.Tokens.Saml2`.|
-|<xref:System.IdentityModel.Services?displayProperty=nameWithType>|Obsahuje třídy, které se používají ve scénářích pasivní (WS-Federation). Obsahuje třídy z `Microsoft.IdentityModel.Web` oboru názvů.|
-|<xref:System.ServiceModel.Security?displayProperty=nameWithType>|Třídy, které představují WCF kontrakty, kanály, obsluha hostitelů a další artefakty, které se používají ve scénářích aktivní (WS-Trust) jsou teď v tomto oboru názvů. Technologie WIF 3.5, tyto třídy byly v `Microsoft.IdentityModel.Protocols.WSTrust` oboru názvů.|
+|<xref:System.IdentityModel?displayProperty=nameWithType>|Obsahuje třídy, které reprezentují transformační soubory souborů cookie, služby tokenů zabezpečení a specializované čtečky slovníku XML. Obsahuje třídy z následujících oborů názvů WIF 3,5: `Microsoft.IdentityModel`, `Microsoft.IdentityModel.SecurityTokenService`a `Microsoft.IdentityModel.Threading`.|
+|<xref:System.Security.Claims?displayProperty=nameWithType>|Obsahuje třídy, které reprezentují deklarace identity, identity založené na deklaracích, objekty zabezpečení založené na deklaracích identity a další artefakty modelu identity založené na deklaracích identity. Obsahuje třídy z `Microsoft.IdentityModel.Claims` oboru názvů.|
+|<xref:System.IdentityModel.Tokens?displayProperty=nameWithType>|Obsahuje třídy, které reprezentují tokeny zabezpečení, obslužné rutiny tokenů zabezpečení a další artefakty tokenů zabezpečení. Obsahuje třídy z následujících oborů názvů WIF 3,5: `Microsoft.IdentityModel.Tokens`, `Microsoft.IdentityModel.Tokens.Saml11`a `Microsoft.IdentityModel.Tokens.Saml2`.|
+|<xref:System.IdentityModel.Services?displayProperty=nameWithType>|Obsahuje třídy, které se používají v pasivních scénářích (WS-Federation). Obsahuje třídy z `Microsoft.IdentityModel.Web` oboru názvů.|
+|<xref:System.ServiceModel.Security?displayProperty=nameWithType>|Třídy, které představují kontrakty WCF, kanály, hostitele služeb a jiné artefakty, které se používají ve scénářích aktivní (WS-Trust), jsou teď v tomto oboru názvů. V WIF 3,5 byly tyto třídy v `Microsoft.IdentityModel.Protocols.WSTrust` oboru názvů.|
 
 > [!IMPORTANT]
-> Následující `System.IdentityModel` obory názvů obsahují třídy, které implementují model deklarovaných identit WCF: <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType>, a <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>. Model deklarovaných identit technologie WCF je nahrazen technologií WIF. Při vytváření řešení založených na technologii WIF byste neměli používat třídy v těchto třech oborech názvů.
+> Následující `System.IdentityModel` obory názvů obsahují třídy, které implementují model identity založené na deklaracích <xref:System.IdentityModel.Policy?displayProperty=nameWithType>identity WCF <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>: <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, a. Model deklarovaných identit technologie WCF je nahrazen technologií WIF. Při sestavování řešení založených na WIF byste neměli v těchto třech oborech názvů používat třídy.
 
-### <a name="changes-due-to-net-integration"></a>Změny z důvodu .NET – integrace
+### <a name="changes-due-to-net-integration"></a>Změny v důsledku integrace rozhraní .NET
 
-Technologie WIF je nyní integrován do rozhraní .NET Framework. Většina tříd identity a zabezpečení rozhraní .NET jsou nyní odvozeny z <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> a <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>. Výsledky v následující změny v technologie WIF 4.5:
+WIF je teď integrovaný do .NET Framework. Většina identit a hlavních tříd .NET je teď odvozená <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>od <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> a. Výsledkem jsou následující změny v WIF 4,5:
 
-- Třídy technologie WIF, které představují deklarací identity a objekty zabezpečení nyní existuje v <xref:System.Security.Claims?displayProperty=nameWithType> oboru názvů.
+- V <xref:System.Security.Claims?displayProperty=nameWithType> oboru názvů nyní existují třídy WIF, které reprezentují deklarace identity, identity a objekty zabezpečení.
 
     > [!IMPORTANT]
-    > <xref:System.IdentityModel.Claims?displayProperty=nameWithType> Obor názvů obsahuje třídy, které reprezentují artefakty v modelu deklarovaných identit WCF. Mnohé z těchto tříd mají názvy, které jsou stejné jako třídy technologie WIF; například `Claims`. Nepoužívejte tyto třídy při sestavování řešení založená na technologii WIF.
+    > <xref:System.IdentityModel.Claims?displayProperty=nameWithType> Obor názvů obsahuje třídy, které reprezentují artefakty v modelu identity založeném na deklaracích identity WCF. Mnohé z těchto tříd mají názvy, které jsou stejné jako třídy WIF; například `Claims`. Nepoužívejte tyto třídy při vytváření řešení založených na WIF.
 
-- Identity a instanční objekt třídy rozhraní .NET jsou nyní odvozeny přímo z <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> a <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>, které představují založené na deklaracích identity a objekty zabezpečení. Z tohoto důvodu rozhraní technologie WIF 3.5 `IClaimsIdentity` a `IClaimsPrincipal` už nejsou potřeba a nejsou k dispozici v technologie WIF 4.5.
+- Technologie .NET identity a hlavní třídy jsou nyní odvozeny <xref:System.Security.Claims.ClaimsPrincipal?displayProperty=nameWithType>přímo z <xref:System.Security.Claims.ClaimsIdentity?displayProperty=nameWithType> a, které reprezentují identity a objekty zabezpečení založené na deklaracích. Z tohoto důvodu již nejsou rozhraní `IClaimsIdentity` WIF 3,5 a `IClaimsPrincipal` v WIF 4,5 k dispozici.
 
-- Because.NET identity a instanční objekt třídy jako <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> a <xref:System.Security.Principal.WindowsPrincipal?displayProperty=nameWithType> jsou nyní odvozeny z <xref:System.Security.Claims.ClaimsIdentity> a <xref:System.Security.Claims.ClaimsPrincipal>, mají integrované funkce deklarací identity. Pro tento důvod, specifické pro deklarace identity a instanční objekt třídy, jako `WindowsClaimsIdentity` a `WindowsClaimsPrincipal` , které byly součástí technologie WIF 3.5 už nejsou potřeba a neexistují v technologie WIF 4.5.
+- Because.NET identitu a hlavní třídy, jako <xref:System.Security.Principal.WindowsIdentity?displayProperty=nameWithType> jsou <xref:System.Security.Principal.WindowsPrincipal?displayProperty=nameWithType> a teď odvoditelné z <xref:System.Security.Claims.ClaimsIdentity> a <xref:System.Security.Claims.ClaimsPrincipal>, mají integrované funkce deklarací identity. Z tohoto důvodu již nejsou vyžadovány identity a základní třídy, jako `WindowsClaimsIdentity` jsou `WindowsClaimsPrincipal` například a, které byly přítomny v WIF 3,5, a neexistují v WIF 4,5.
 
-### <a name="other-changes-to-wif-functionality"></a>Další změny funkcí technologie WIF
+### <a name="other-changes-to-wif-functionality"></a>Další změny WIF funkcí
 
-Kromě změn názvů a změny z důvodu integraci s .NET k následujícím změnám obecné funkcí technologie WIF do technologie WIF 4.5.
+Kromě změn oboru názvů a změn v důsledku integrace s .NET se v WIF 4,5 následující obecné změny WIF funkce.
 
-- `Microsoft.IdentityModel.ExceptionMapper` Třída, která poskytuje funkce, které umožňuje mapování výjimky na konkrétní chyby SOAP, Odebereme.
+- `Microsoft.IdentityModel.ExceptionMapper` Třída, která poskytuje funkce, které vám umožnily mapovat výjimky na konkrétní chyby protokolu SOAP, se odeberou.
 
-- Výjimka povrchu se výrazně snižují.
+- Došlo k výraznému snížení povrchu výjimky.
 
-- Mnoho tříd, které definuje protokol nebo WS-* konkrétní konstanty se odebraly; například `Microsoft.IdentityModel.WSAddressing10Constants` třídy, které definuje konstanty související s WS-Addressing 1.0.
+- Bylo odebráno mnoho tříd definovaných konstantami protokolu nebo WS-*. například `Microsoft.IdentityModel.WSAddressing10Constants` třída, která definuje konstanty související s WS-Addressing 1,0.
 
-- Deklarace identity do tokenů služby Windows (c2wts) a jeho přidružených tříd v `Microsoft.IdentityModel.WindowsTokenService` obor názvů se odeberou.
+- Odeberou se deklarace identity na službu tokenů systému Windows (C2WTS) `Microsoft.IdentityModel.WindowsTokenService` a přidružené třídy v oboru názvů.
 
 ### <a name="wif-configuration-changes"></a>Změny konfigurace WIF
 
-Mnoho změn v konfiguračním souboru byly způsobeny aktualizace oboru názvů v technologie WIF 4.5. Představte si třeba následující technologie WIF 3.5 položku v `<httpModules>` přidejte Správce ověřování WS-Federation pro aplikace:
+Mnohé změny v konfiguračním souboru byly způsobeny aktualizacemi oboru názvů v WIF 4,5. Zvažte například následující položku WIF 3,5 v `<httpModules>` části a přidejte do aplikace Správce ověřování WS-Federation.
 
 ```xml
 <add name="WSFederationAuthenticationModule" type="Microsoft.IdentityModel.Web.WSFederationAuthenticationModule, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=abcd … 5678" />
 ```
 
-Tato položka byla aktualizována v nové obory názvů a sestavení verze WIF 4.5:
+Tato položka se v WIF 4,5 aktualizovala tak, aby zahrnovala nové obory názvů a verzi sestavení:
 
 ```xml
 <add name="WSFederationAuthenticationModule" type="System.IdentityModel.Services.WSFederationAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=abcd … 5678"/>
 ```
 
-Následující seznam obsahuje hlavní změny do konfiguračního souboru pro technologie WIF 4.5.
+Následující seznam uvádí hlavní změny konfiguračního souboru pro WIF 4,5.
 
-- `<microsoft.identityModel>` Části je teď [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) oddílu.
+- Oddíl je teď oddílem [System. IdentityModel >. \<](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) `<microsoft.identityModel>`
 
-- `<service>` Prvek je nyní [ \<identityConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) elementu.
+- Element je nyní element IdentityConfiguration >. [ \<](../configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) `<service>`
 
-- Nová část, [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md), byla přidána k určení nastavení, která řídí chování v pasivním scénáře (WS-Federation).
+- Přidala se nová sekce, [ \<System. IdentityModel. Services >](../configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md), která určuje nastavení, které řídí chování v pasivních scénářích (WS-Federation).
 
-- [ \<FederationConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) elementu a jeho podřízené prvky byly přesunuté z `<service>` element v technologie WIF 3.5 na nový `<system.identityModel.services>` elementu.
+- Element federationConfiguration > a jeho podřízené prvky byly přesunuty z `<service>` elementu v WIF 3,5 na nový `<system.identityModel.services>` prvek. [ \<](../configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)
 
-- Několik prvků, které by mohl být specifikován v úrovni služby přímo pod `<service>` element v technologie WIF 3.5 byly omezené na zadané v části [ \<securityTokenHandlerConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) element. (Je pořád lze zadat v rámci [ \<identityConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) prvek v technologie WIF 4.5 z důvodu zpětné kompatibility.)
+- Několik prvků, které mohou být zadány na úrovni služby přímo pod `<service>` prvkem v WIF 3,5, bylo omezeno na zadání [ \<pod prvkem securityTokenHandlerConfiguration >](../configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) . (Mohou být stále specifikovány pod [ \<prvkem IdentityConfiguration >](../configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) v WIF 4,5 z důvodu zpětné kompatibility.)
 
-Úplný seznam konfigurační prvky technologie WIF 4.5 naleznete v tématu [schématu konfigurace WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md).
+Úplný seznam elementů konfigurace WIF 4,5 najdete v tématu [schéma konfigurace WIF](../configure-apps/file-schema/windows-identity-foundation/index.md).
 
 ### <a name="visual-studio-tooling-changes"></a>Změny nástrojů sady Visual Studio
 
-Technologie WIF 3.5 SDK nabízí samostatný federační nástroj FedUtil.exe (řádku FedUtil), který můžete použít k externí správy identit do aplikací do služby tokenů zabezpečení (STS) s podporou technologie WIF. Tento nástroj přidáno nastavení technologie WIF do konfiguračního souboru aplikace umožňuje aplikaci získat tokeny zabezpečení z jednoho nebo více tokenů zabezpečení a se zobrazí v sadě Visual Studio prostřednictvím **přidat odkaz na službu STS** tlačítko. Řádku FedUtil se nedodává s WIF 4.5. Místo toho technologie WIF 4.5 podporuje nové rozšíření sady Visual Studio s názvem nástroj Identity and Access Tool for Visual Studio 2012, můžete upravit konfigurační soubor vaší aplikace pomocí technologie WIF nastavením požadovaným pro externí správu identit do služby STS. Nástroj Identity and Access Tool implementuje také služby tokenů zabezpečení volá místní službu tokenů zabezpečení, který vám pomůže otestovat aplikaci s podporou technologie WIF. V mnoha případech se vyloučí tuto funkci nutné k vytváření vlastních služeb STS, které byly často nezbytné ve technologie WIF 3.5 pro testování řešení ve vývoji. Z tohoto důvodu šablony služby STS již nejsou podporovány v aplikaci Visual Studio 2012; třídy, které podporují vývoj služby tokenů zabezpečení jsou však stále k dispozici v technologie WIF 4.5.
+Sada WIF 3,5 SDK nabídla samostatný federační nástroj soubor FedUtil. exe (soubor FedUtil), který můžete použít k externí správě identit v aplikacích s podporou WIF na službu tokenů zabezpečení (STS). Tento nástroj přidal do konfiguračního souboru aplikace nastavení WIF, aby aplikace mohla získávat tokeny zabezpečení z jedné nebo více STS, a byla v aplikaci Visual Studio prostřednictvím **odkazu na službu tokenů služby STS** . Soubor FedUtil se nedodává s WIF 4,5. Místo toho WIF 4,5 podporuje nové rozšíření sady Visual Studio s názvem identity and Access Tool for Visual Studio 2012, které můžete použít k úpravě konfiguračního souboru vaší aplikace pomocí nastavení WIF, které je potřeba pro externí správu identit na službu STS. Nástroj identity and Access také implementuje službu STS nazvanou Local STS, kterou můžete použít k otestování aplikací s podporou WIF. V mnoha případech tato funkce obviates nutnost vytvářet vlastní STS, které byly často nezbytné v WIF 3,5 pro testování řešení ve vývoji. Z tohoto důvodu šablony STS již nejsou podporovány v aplikaci Visual Studio 2012; třídy, které podporují vývoj STS, jsou však stále k dispozici v WIF 4,5.
 
-Můžete nainstalovat nástroj Identity and Access Tool z rozšíření a aktualizace správce v sadě Visual Studio nebo si můžete stáhnout z následující stránky na galerii kódu: [Identity and Access Tool for Visual Studio 2012 ve Galerii kódu](https://go.microsoft.com/fwlink/?LinkID=245849). Změny nástrojů sady Visual Studio jsou shrnuty v následujícím seznamu:
+Nástroj identity and Access můžete nainstalovat z Správce rozšíření a aktualizace v aplikaci Visual Studio nebo si ho můžete stáhnout z následující stránky v galerii kódu: [Nástroj identity and Access Tool for Visual Studio 2012 v galerii kódu](https://go.microsoft.com/fwlink/?LinkID=245849). Změny nástrojů sady Visual Studio jsou shrnuty v následujícím seznamu:
 
-- Přidat odkaz na službu STS funkce se odebere. Pokud chcete nahrazení je nástroj Identity and Access Tool.
+- Funkce Přidat odkaz na službu STS se odebere. Nahrazení je nástroj Identity and Access.
 
-- Šablony služby STS Visual Studio se odeberou. Můžete použít místní služba tokenů zabezpečení, která je dostupná prostřednictvím Identity and Access Tool pro testování řešení identit, které vyvíjíte pomocí technologie WIF. Konfigurace místní služby tokenů zabezpečení můžete upravit tak, aby přizpůsobení deklarací identity, které najde.
+- Šablony služby TOKENů sady Visual Studio se odeberou. Pomocí místní služby STS, která je k dispozici prostřednictvím nástroje Identity and Access Tool, můžete testovat řešení identity, která vyvíjíte pomocí WIF. Místní konfiguraci služby STS je možné upravit tak, aby se přizpůsobily deklarace identity, které obsluhuje.
 
-- Samostatné nástrojem Federation Utility (řádku FedUtil) není k dispozici v technologie WIF 4.5. Nástroj Identity and Access Tool můžete upravit konfigurační soubory pro externí správu identit do služby STS.
+- Nástroj pro samostatné federace (soubor FedUtil) není v WIF 4,5 k dispozici. Pomocí nástroje Identity and Access můžete změnit konfigurační soubory na externí správu identit na službu STS.
 
-Další informace o nástroj Identity and Access Tool najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)
+Další informace o nástroji Identity and Access naleznete v tématu [identity and Access Tool for Visual Studio 2012](identity-and-access-tool-for-vs.md)
 
 <a name="BKMK_ToolingChanges"></a>
 
-### <a name="passive-ws-federation-scenarios"></a>Scénáře pasivní (WS-Federation):
+### <a name="passive-ws-federation-scenarios"></a>Scénáře pasivního (WS-Federation):
 
-- Třídy, které podporují scénáře pasivní se přesunuly do <xref:System.IdentityModel.Services?displayProperty=nameWithType> oboru názvů. Technologie WIF 3.5 tyto třídy byly v `Microsoft.IdentityModel.Web` oboru názvů.
+- Třídy, které podporují pasivní scénáře, byly přesunuty <xref:System.IdentityModel.Services?displayProperty=nameWithType> do oboru názvů. V WIF 3,5 byly tyto třídy v `Microsoft.IdentityModel.Web` oboru názvů.
 
-- Třídy v `Microsoft.IdentityModel.Web.Configuration` obor názvů se přesunuly do <xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>. Tyto třídy představují konkrétní objekty do konfigurace v pasivním scénáře.
+- Třídy v `Microsoft.IdentityModel.Web.Configuration` oboru názvů byly přesunuty do <xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>. Tyto třídy reprezentují objekty specifické pro konfiguraci v pasivních scénářích.
 
-- `FederatedPassiveSignInControl` Už není podporovaná; všechny třídy v `Microsoft.IdentityModel.Web.Controls` obor názvů se odstranily z technologie WIF 4.5.
+- Už není podporovaný. všechny třídy `Microsoft.IdentityModel.Web.Controls` v oboru názvů se odebraly z WIF 4,5. `FederatedPassiveSignInControl`
 
-- Ověřovací modul WS-Federation (<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>) odhlašování funkce se liší od technologie WIF 3.5. Další podrobnosti o tom, jak odhlašování funguje v technologie WIF 4.5 naleznete v tématu <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídě.
+- Funkce odhlášení modulu WS-Federation<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>Authentication () se liší od WIF 3,5. Další podrobnosti o tom, jak funguje odhlašování v WIF 4,5, najdete <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> v tématu třídy.
 
-### <a name="active-wcfws-trust-scenarios"></a>Aktivní (WCF/WS-Trust) scénáře:
+### <a name="active-wcfws-trust-scenarios"></a>Scénáře aktivních (WCF/WS-Trust):
 
-- `Microsoft.IdentityModel.Protocols.WSTrust` Obor názvů byla rozdělena, hlavně na dva obory názvů v technologie WIF 4.5. Třídy, které reprezentují artefakty, které jsou specifické pro protokol WS-Trust jsou teď v <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=nameWithType>. To zahrnuje třídy typu <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>. Třídy, které představují kontrakty služeb, kanály, obsluha hostitelů a další artefakty, které jsou součástí aplikací WCF pomocí WS-Trust se přesunuly do <xref:System.ServiceModel.Security?displayProperty=nameWithType>, například <xref:System.ServiceModel.Security.IWSTrust13AsyncContract> rozhraní.
+- `Microsoft.IdentityModel.Protocols.WSTrust` Obor názvů byl v WIF 4,5 rozdělen hlavně na dva obory názvů. Třídy, které představují artefakty, které jsou specifické pro protokol WS-Trust, jsou <xref:System.IdentityModel.Protocols.WSTrust?displayProperty=nameWithType>nyní v. To zahrnuje třídy jako <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>. Třídy, které představují kontrakty služby, kanály, hostitele služeb a další artefakty, které jsou součástí používání protokolu WS-Trust v aplikacích WCF, <xref:System.ServiceModel.Security?displayProperty=nameWithType>byly přesunuty do, <xref:System.ServiceModel.Security.IWSTrust13AsyncContract> například rozhraní.
 
-- Konfigurace aplikace WCF pro použití technologie WIF je výrazně zjednodušené. Dříve `Microsoft.IdentityModel.Configuration.ConfigureServiceHostBehaviorExtensionElement` má být přidán jako rozšíření chování a tato funkce se použijí k Klínový technologie WIF do chování služby tak, že zadáte `<federatedServiceHostConfiguration>` elementu. Technologie WIF 4.5 obsahuje těsněji integrované s použitím technologie WCF. Nyní povolení technologie WIF ve službě WCF zadáním `useIdentityConfiguration` atribut na `<system.serviceModel>` / `<behaviors>` / `<serviceBehaviors>` / `<serviceCredentials>` element jako následující kód XML:
+- Konfigurace aplikace WCF pro použití WIF byla výrazně zjednodušená. Dřív se `Microsoft.IdentityModel.Configuration.ConfigureServiceHostBehaviorExtensionElement` muselo přidat jako rozšíření chování a tato funkce se pak použila k klínu WIF do chování služby `<federatedServiceHostConfiguration>` zadáním elementu. WIF 4,5 byl s WCF úzce integrován. Nyní povolte `useIdentityConfiguration` WIF ve službě WCF zadáním atributu `<behaviors>` / / `<system.serviceModel>`vprvkujako vnásledujícímkóduXML:`<serviceBehaviors>` / `<serviceCredentials>`
 
     ```xml
     <serviceCredentials useIdentityConfiguration="true">
@@ -137,52 +137,52 @@ Další informace o nástroj Identity and Access Tool najdete v tématu [Identit
     </serviceCredentials>
     ```
 
-- V technologii WIF 4.5 služby je nutné zadat certifikát používaný serverem služby aktivní (WCF) na hostitele služby. V konfiguraci, můžete udělat prostřednictvím `<system.serviceModel>` / `<behaviors>` / `<serviceBehaviors>` / `<serviceCredentials>` / `<serviceCertificate>` elementu, jak je znázorněno v předchozím příkladu. Technologie WIF 3.5 by mohl být specifikován certifikát služby prostřednictvím `<serviceCertificate>` podřízený element technologie WIF `<service>` elementu. Tato funkce v technologie WIF 4.5; neexistuje. Zadejte `<serviceCertificate>` element v rámci `<serviceCredentials>` element místo.
+- V WIF 4,5 musí být na hostiteli služby zadaný certifikát služby používaný aktivní službou (WCF). V konfiguraci `<system.serviceModel>` to můžete provést prostřednictvím `<serviceBehaviors>` / `<behaviors>` / prvku,/ jak jeznázorněnovpředchozímpříkladu.`<serviceCredentials>` / `<serviceCertificate>` V WIF 3,5 je možné zadat certifikát služby prostřednictvím `<serviceCertificate>` podřízeného elementu elementu WIF. `<service>` Tato funkce neexistuje v WIF 4,5; místo toho zadejte `<serviceCredentials>`elementpodelementem `<serviceCertificate>` .
 
-- Třídy používané k Klínový technologie WIF 3.5 do WCF již existuje. To zahrnuje následující třídy v `Microsoft.IdentityModel.Tokens` obor názvů: `FederatedSecurityTokenManager`, `FederatedServiceCredentials`, a `IdentityModelServiceAuthorizationManager`, jakož i `Microsoft.IdentityModel.Configuration.ConfigureServiceHostBehaviorExtensionElement` třídy.
+- Třídy používané pro klín WIF 3,5 do WCF již neexistují. To zahrnuje následující `Microsoft.IdentityModel.Tokens` třídy v oboru názvů: `FederatedSecurityTokenManager`, `FederatedServiceCredentials`, a `IdentityModelServiceAuthorizationManager`i `Microsoft.IdentityModel.Configuration.ConfigureServiceHostBehaviorExtensionElement` třídu.
 
-## <a name="enabling-wif-35-in-windows-8"></a>Povolení technologie WIF 3.5 v systému Windows 8
+## <a name="enabling-wif-35-in-windows-8"></a>Povolení WIF 3,5 ve Windows 8
 
-Technologie WIF 4.5 je součástí rozhraní .NET 4.5, je automaticky povolen v počítačích se systémem Windows 8 a Windows Server 2012 a v systému Windows 8 nebo Windows Server 2012 bude ve výchozím nastavení spouští aplikace, které jsou vytvořené pomocí technologie WIF 4.5. Potřebujete ale spouštění aplikací, které byly vytvořeny s použitím technologie WIF 3.5 na počítači se systémem Windows 8 nebo Windows Server 2012. V takovém případě je potřeba povolit technologii WIF 3.5 na cílovém počítači. Na počítači se systémem Windows 8 můžete to provést pomocí nástroje Deployment Image Servicing and Management (DISM). Na počítači se systémem Windows Server 2012, můžete pomocí nástroje DISM nebo můžete použít rutinu prostředí Windows PowerShell `Add-WindowsFeature` rutiny. V obou případech může být vyvolána příslušnými příkazy v příkazovém řádku nebo z uvnitř prostředí Windows PowerShell.
+Vzhledem k tomu, že WIF 4,5 je součástí .NET 4,5, je automaticky povolen na počítačích se systémy Windows 8 a Windows Server 2012 a aplikace vytvořené pomocí WIF 4,5 budou ve výchozím nastavení spouštěny ve Windows 8 nebo Windows Serveru 2012. Je ale možné, že budete muset spustit aplikace vytvořené pomocí WIF 3,5 na počítači se systémem Windows 8 nebo Windows Server 2012. V takovém případě musíte povolit WIF 3,5 na cílovém počítači. V počítači se systémem Windows 8 to můžete provést pomocí nástroje pro obsluhu a správu bitových kopií (DISM) pro nasazení. V počítači se systémem Windows Server 2012 můžete použít nástroj DISM nebo můžete použít rutinu prostředí Windows PowerShell `Add-WindowsFeature` . V obou případech lze příslušné příkazy vyvolat buď na příkazovém řádku, nebo v prostředí Windows PowerShell.
 
-Následující příkazy ukazují, jak pomocí nástroje DISM z příkazového řádku nebo v prostředí Windows PowerShell. Ve výchozím nastavení modul DISM PowerShell je součástí systému Windows 8 a Windows Server 2012 a nemusí být importován. Další informace o použití DISM pomocí Windows Powershellu najdete v tématu [tom, jak pomocí nástroje DISM prostředí Windows PowerShell](https://go.microsoft.com/fwlink/?LinkId=254419).
+Následující příkazy ukazují, jak používat nástroj DISM z příkazového řádku nebo zevnitř prostředí Windows PowerShell. Ve výchozím nastavení je modul PowerShellu DISM součástí systémů Windows 8 a Windows Server 2012 a není nutné ho importovat. Další informace o používání nástroje DISM v prostředí Windows PowerShell najdete v tématu [použití nástroje DISM v prostředí Windows PowerShell](https://go.microsoft.com/fwlink/?LinkId=254419).
 
-Pokud chcete povolit technologii WIF 3.5 a to pomocí nástroje DISM:
+Povolení WIF 3,5 pomocí nástroje DISM:
 
 ```console
 dism /online /enable-feature:windows-identity-foundation
 ```
 
-Postup při zakázání technologie WIF 3.5 a to pomocí nástroje DISM:
+Zakázání WIF 3,5 pomocí nástroje DISM:
 
 ```console
 dism /online /disable-feature:windows-identity-foundation
 ```
 
-Chcete-li zkontrolovat funkcí, které jsou povolené nebo zakázané, pomocí nástroje DISM:
+Chcete-li zjistit, které funkce jsou povoleny nebo zakázány, pomocí nástroje DISM:
 
 ```console
 dism /online /get-features
 ```
 
-V počítačích se systémem Windows Server 2012, můžete případně povolit technologii WIF 3.5, pomocí prostředí Windows PowerShell `Add-WindowsFeature` rutiny. Provedete to tak že z příkazového řádku můžete zadat následující příkaz:
+Případně můžete v počítačích se systémem Windows Server 2012 povolit WIF 3,5 pomocí rutiny prostředí Windows PowerShell `Add-WindowsFeature` . Pokud to chcete provést z příkazového řádku, můžete zadat následující příkaz:
 
 ```console
 powershell "add-windowsfeature windows-identity-foundation"
 ```
 
- Z uvnitř prostředí Windows PowerShell, můžete zadat příkaz přímo:
+ V prostředí Windows PowerShell můžete zadat příkaz přímo:
 
 ```powershell
 Add-WindowsFeature windows-identity-foundation
 ```
 
 > [!NOTE]
-> Protože mnoho třídy technologie WIF 3.5 a WIF 4.5 sdílí stejné názvy, při použití technologie WIF 3.5 a WIF 4.5 společně, nezapomeňte použít plně kvalifikované třídě názvy nebo aliasy oboru názvů použijte k rozlišení mezi třídy technologie WIF 3.5 a WIF 4.5.
+> Vzhledem k tomu, že mnoho tříd v WIF 3,5 a WIF 4,5 sdílí stejné názvy, při použití WIF 3,5 a WIF 4,5 společně, nezapomeňte buď použít plně kvalifikované názvy tříd, nebo použít aliasy oboru názvů k rozlišení mezi třídami v WIF 3,5 a WIF 4,5.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Schéma konfigurace WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)
-- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)
-- [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)
-- [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)
+- [Schéma konfigurace WIF](../configure-apps/file-schema/windows-identity-foundation/index.md)
+- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](namespace-mapping-between-wif-3-5-and-wif-4-5.md)
+- [Novinky ve Windows Workflow Foundation 4.5](whats-new-in-wif.md)
+- [Nástroj Identita a přístup pro Visual Studio 2012](identity-and-access-tool-for-vs.md)

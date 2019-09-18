@@ -8,22 +8,22 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 642ca16142bdfe78a40ddf4e6a3a79ce6a8a4985
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 837a18ca18d0c634dfa5cc133aa013919cfb9d96
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938746"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053890"
 ---
 # <a name="xamlname-grammar"></a>XamlName – gramatika
-Xamlname – gramatika je konkrétní gramatiky, který je definován ve specifikaci jazyka XAML [MS-XAML], což je reprodukován zde ke zvýšení pohodlí.  
+Gramatika v jazyce XAML je specifická gramatika, která je definována ve specifikaci jazyka XAML [MS-XAML], která je zde reprodukována pro usnadnění.  
   
-## <a name="from-the-xaml-specification"></a>Z specifikaci XAML  
- Specifikace [MS-XAML] definuje gramatiky XamlName ke zjišťování sady právní symbolické identifikátory použitými pro typy a vlastnosti.  
+## <a name="from-the-xaml-specification"></a>Ze specifikace jazyka XAML  
+ Specifikace [MS-XAML] definuje gramatiku v jazyce XAML k identifikaci sady platných symbolových identifikátorů použitých pro typy a vlastnosti.  
   
- Hodnoty, které jsou typu, který musí odpovídat xamlname – gramatika následující řetězce:  
+ Řetězcové hodnoty typu XAML musí splňovat následující gramatiky:  
   
-```  
+```xaml  
 XamlName ::= NameStartChar ( NameChar )*   
 NameStartChar ::= LetterCharacter | '_'   
 NameChar ::= NameStartChar | DecimalDigit | CombiningCharacter   
@@ -32,36 +32,27 @@ DecimalDigit ::= UnicodeNd
 CombiningCharacter ::= UnicodeMn | UnicodeMc  
 ```  
   
- Kde se předpokládá následující hodnoty obecné kategorie definované v databáze znaků Unicode  
+ Který předpokládá následující obecné hodnoty kategorií, jak je definováno v databázi znaků Unicode.  
+
+| Kategorie sady Unicode   | Popis                   |
+|--------------------|-------------------------------|
+| Lu                 | písmeno, velké písmeno             |
+| Ll                 | písmeno, malé písmeno             |
+| Lt                 | písmeno, velké počáteční písmeno             |
+| Lm                 | písmeno, modifikátor              |
+| Lo                 | písmeno, jiné                 |
+| Mn                 | Značka, bez mezer             |
+| MC                 | značka, kombinování mezer       |
+| Nd                 | Číslo, desetinné číslo               |
+| NL                 | číslo, písmeno                |
+ 
+ XAML definuje druhou gramatiku, DottedXamlName, která se používá pro kvalifikované odkazy na vlastnost a událost a také pro připojené členy. Další informace naleznete v tématu <xref:System.Windows.DependencyProperty> a [XAML Overview (WPF)](../wpf/advanced/xaml-overview-wpf.md).  
   
-```  
-Lu  
-Letter, Uppercase  
-Ll  
-Letter, Lowercase  
-Lt  
-Letter, Titlecase  
-Lm  
-Letter, Modifier  
-Lo  
-Letter, Other  
-Mn  
-Mark, Non-Spacing  
-Mc  
-Mark, Spacing Combining  
-Nd  
-Number, Decimal  
-Nl  
-Number, Letter  
-```  
+ Hodnoty řetězce, které jsou typu DottedXamlName, musí splňovat následující gramatiky:  
   
- XAML definuje druhý gramatika dottedxamlname –, který se používá pro vlastnost a události kvalifikované odkazy a také pro připojené členy. Další informace najdete v tématu <xref:System.Windows.DependencyProperty> a [přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md).  
-  
- Hodnoty, které jsou typu, který musí odpovídat dottedxamlname – gramatika následující řetězce:  
-  
-```  
+```xaml  
 DottedXamlName ::= XamlName '.' XamlName  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Kompletní specifikaci, naleznete v tématu [ \[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).
+ Kompletní specifikaci naleznete v tématu [ \[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).

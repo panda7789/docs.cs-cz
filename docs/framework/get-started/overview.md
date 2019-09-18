@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46dd9c0c1f9f5759bc9160aadeb0538b5403fb52
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c7a3548cb0d7e841f32824eda52565e64279536e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917975"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052002"
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 
@@ -33,7 +33,7 @@ ms.locfileid: "69917975"
 - Chcete-li vytvořit veškerou komunikaci v oborových standardech a zajistit tak, že kód na základě .NET Framework bude integrován s jakýmkoli jiným kódem.
 
 > [!NOTE]
-> Obecný úvod k .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](../../../docs/framework/get-started/index.md).
+> Obecný úvod k .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](index.md).
 
 .NET Framework se skládá z modulu CLR (Common Language Runtime) a knihovny tříd .NET Framework. Modul CLR (Common Language Runtime) je základem .NET Framework. Představte si modul runtime jako agenta, který spravuje kód v době spuštění a poskytuje základní služby, jako je například Správa paměti, Správa vláken a Vzdálená komunikace, a zároveň vynucování striktního zabezpečení typu a dalších forem přesnosti kódu, které podporují zabezpečení a odolnost. Ve skutečnosti koncept správy kódu je základní princip modulu runtime. Kód, který cílí na modul runtime, je označován jako spravovaný kód, zatímco kód, který necílí na modul runtime, je označován jako nespravovaný kód. Knihovna tříd je komplexní, objektově orientované kolekce opakovaně použitelných typů, které slouží k vývoji aplikací od tradičních aplikací z příkazového řádku nebo grafického uživatelského rozhraní (GUI) do aplikací na základě nejnovějších inovací poskytovaných službou ASP.NET, jako je například web. Formuláře a webové služby XML.
 
@@ -77,15 +77,15 @@ Vzhledem k tomu, že byste očekávali od objektově orientované knihovny tří
 
 - Konzolové aplikace. Viz [Sestavování konzolových aplikací](../../standard/building-console-apps.md).
 
-- Aplikace Windows GUI (model Windows Forms). Viz [model Windows Forms](../../../docs/framework/winforms/index.md).
+- Aplikace Windows GUI (model Windows Forms). Viz [model Windows Forms](../winforms/index.md).
 
-- Aplikace Windows Presentation Foundation (WPF). Viz [Windows Presentation Foundation](../../../docs/framework/wpf/index.md).
+- Aplikace Windows Presentation Foundation (WPF). Viz [Windows Presentation Foundation](../wpf/index.md).
 
-- ASP.NET aplikace. Viz [webové aplikace s ASP.NET](../../../docs/framework/develop-web-apps-with-aspnet.md).
+- ASP.NET aplikace. Viz [webové aplikace s ASP.NET](../develop-web-apps-with-aspnet.md).
 
-- Služby systému Windows. Viz [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md).
+- Služby systému Windows. Viz [Úvod do aplikací služby systému Windows](../windows-services/introduction-to-windows-service-applications.md).
 
-- Aplikace orientované na služby využívající Windows Communication Foundation (WCF). Přečtěte si téma [aplikace orientované na služby se službou WCF](../../../docs/framework/wcf/index.md).
+- Aplikace orientované na služby využívající Windows Communication Foundation (WCF). Přečtěte si téma [aplikace orientované na služby se službou WCF](../wcf/index.md).
 
 - Aplikace podporující pracovní postupy používající programovací model Windows Workflow Foundation (WF). Viz [programovací model Windows Workflow Foundation](../windows-workflow-foundation/index.md).
 
@@ -93,9 +93,9 @@ Třídy model Windows Forms jsou komplexní sada opakovaně použitelných typů
 
 ## <a name="see-also"></a>Viz také:
 
-- [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)
-- [Průvodce instalací](../../../docs/framework/install/index.md)
-- [Průvodce vývojem](../../../docs/framework/development-guide.md)
-- [Nástroje](../../../docs/framework/tools/index.md)
+- [Požadavky na systém](system-requirements.md)
+- [Průvodce instalací](../install/index.md)
+- [Průvodce vývojem](../development-guide.md)
+- [Nástroje](../tools/index.md)
 - [Ukázky a kurzy .NET](../../samples-and-tutorials/index.md)
 - [Knihovna tříd .NET Framework](https://go.microsoft.com/fwlink/?LinkID=227195)

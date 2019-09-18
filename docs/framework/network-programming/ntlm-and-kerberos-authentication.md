@@ -19,12 +19,12 @@ helpviewer_keywords:
 - classes [.NET Framework], authentication
 - client authentication, NTLM
 ms.assetid: 9ef65560-f596-4469-bcce-f4d5407b55cd
-ms.openlocfilehash: b05cd88fcb492ab27e1d311045b72208167508f1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca9e1b9bf6235fdaeea25b8975155af429848ae3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963926"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047531"
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>Ověřování NTLM a Kerberos
 Výchozí ověřování pomocí protokolu NTLM a ověřování protokolem Kerberos používají přihlašovací údaje uživatele systému Microsoft Windows NT přidružené k volající aplikaci k pokusu o ověření u serveru. Pokud používáte jiné než výchozí ověřování NTLM, aplikace nastaví typ ověřování na NTLM a pomocí <xref:System.Net.NetworkCredential> objektu předáte uživatelské jméno, heslo a doménu do hostitele, jak je znázorněno v následujícím příkladu.  
@@ -64,5 +64,5 @@ WReq.Credentials = CredentialCache.DefaultCredentials;
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
-- [Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)
+- [Základní ověřování a ověřování algoritmem Digest](basic-and-digest-authentication.md)
+- [Ověřování v internetu](internet-authentication.md)

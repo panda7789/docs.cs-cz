@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
-ms.openlocfilehash: b8df3d07a18efcfbb6c30b46668ab8fec8736af5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 578a6da0f1545012d5a77edc3db04d52f56180bc
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953196"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042502"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
@@ -21,16 +21,16 @@ ms.locfileid: "69953196"
  Tato část obsahuje přehledy a postupy, které vám pomohou při vývoji klientů automatizace uživatelského rozhraní.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Automatizace uživatelského rozhraní a změna velikosti obrazovky](../../../docs/framework/ui-automation/ui-automation-and-screen-scaling.md)  
- [Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md)  
- [Události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
- [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/caching-in-ui-automation-clients.md)  
- [Vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md)  
- [Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md)  
- [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-control-patterns-for-clients.md)  
- [Získání elementů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)  
- [Potíže s vlákny při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md)  
- [Témata s postupy](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code-how-to-topics.md)  
+ [Automatizace uživatelského rozhraní a změna velikosti obrazovky](ui-automation-and-screen-scaling.md)  
+ [Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky](ui-automation-support-for-standard-controls.md)  
+ [Události automatizace uživatelského rozhraní pro klienty](ui-automation-events-for-clients.md)  
+ [Práce s mezipamětí u klientů automatizace uživatelského rozhraní](caching-in-ui-automation-clients.md)  
+ [Vlastnosti automatizace uživatelského rozhraní pro klienty](ui-automation-properties-for-clients.md)  
+ [Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md)  
+ [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)  
+ [Získání elementů automatizace uživatelského rozhraní](obtaining-ui-automation-elements.md)  
+ [Potíže s vlákny při automatizaci uživatelského rozhraní](ui-automation-threading-issues.md)  
+ [Témata s postupy](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
 ## <a name="reference"></a>Reference  
  <xref:System.Windows.Automation>

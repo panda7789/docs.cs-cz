@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 5fd17f9ca9d83ab3b226ce9fc0a4aebca4f9352a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: eb7156e0e2794fb7cb18e7bfce0e8488d0b145c3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044159"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042768"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 
@@ -34,7 +34,7 @@ Konkrétně nepoužívejte pole z tříd v UIAutomationClient. dll, jako jsou na
 
 ## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>Implementace poskytovatele pomocí Windows Presentation Foundationch prvků
 
-Další informace o tomto tématu naleznete v tématu [automatizace uživatelského rozhraní vlastního ovládacího prvku WPF](../../../docs/framework/wpf/controls/ui-automation-of-a-wpf-custom-control.md).
+Další informace o tomto tématu naleznete v tématu [automatizace uživatelského rozhraní vlastního ovládacího prvku WPF](../wpf/controls/ui-automation-of-a-wpf-custom-control.md).
 
 <a name="Provider_Implementation_by_non_WPF_Elements"></a>
 
@@ -121,7 +121,7 @@ Zprostředkovatelé pro ovládací prvky na bázi HWND nemusejí obvykle zadáva
 >
 > <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> Je obvykle dodán poskytovatelem hostitele. Například pokud je vlastní ovládací prvek odvozen z <xref:System.Windows.Forms.Control>, název je odvozen `Text` z vlastnosti ovládacího prvku.
 
-Příklad kódu naleznete v tématu [návratové vlastnosti ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md).
+Příklad kódu naleznete v tématu [návratové vlastnosti ze zprostředkovatele automatizace uživatelského rozhraní](return-properties-from-a-ui-automation-provider.md).
 
 <a name="Events_in_Non_WPF_Providers"></a>
 
@@ -191,9 +191,9 @@ K tomu je potřeba, aby poskytovatel kořene fragmentu pro matrice vystavil sadu
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
-- [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)
-- [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)
-- [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)
-- [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)
-- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
+- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](ui-automation-providers-overview.md)
+- [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](expose-a-server-side-ui-automation-provider.md)
+- [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](return-properties-from-a-ui-automation-provider.md)
+- [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](raise-events-from-a-ui-automation-provider.md)
+- [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](enable-navigation-in-a-ui-automation-fragment-provider.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](support-control-patterns-in-a-ui-automation-provider.md)

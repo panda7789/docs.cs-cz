@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3fa2238976df9f570fad9eb6947790565a4b0c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 937dca59be8b83526ebf6cd4c369532b1a8b9afe
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935715"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045984"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
 Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použít C# `+=` funkce jazyka jako operátor nebo [příkaz Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) k připojení událostí. Následující postupy ukazují, jak připojit existující metodu k události tím, že získá všechny nezbytné typy prostřednictvím reflexe a jak vytvořit dynamickou metodu pomocí generování reflexe a připojit ji k události.  
@@ -80,7 +80,7 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
      [!code-csharp[HookUpDelegate#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#9)]
      [!code-vb[HookUpDelegate#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#9)]  
   
-2. Vygeneruje tělo metody. Tato metoda načte řetězec, zavolá přetížení <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> metody, která přijímá řetězec, vyvolá vrácenou hodnotu mimo zásobník (protože obslužná rutina nemá žádný návratový typ) a vrátí hodnotu. Další informace o generování dynamických metod naleznete v tématu [How to: Definujte a spusťte dynamické metody](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md).  
+2. Vygeneruje tělo metody. Tato metoda načte řetězec, zavolá přetížení <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> metody, která přijímá řetězec, vyvolá vrácenou hodnotu mimo zásobník (protože obslužná rutina nemá žádný návratový typ) a vrátí hodnotu. Další informace o generování dynamických metod naleznete v tématu [How to: Definujte a spusťte dynamické metody](how-to-define-and-execute-dynamic-methods.md).  
   
      [!code-cpp[HookUpDelegate#10](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#10)]
      [!code-csharp[HookUpDelegate#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#10)]
@@ -111,5 +111,5 @@ Použijete-li reflexi pro načtení a spuštění sestavení, nemůžete použí
 - <xref:System.Reflection.Emit.DynamicMethod>
 - <xref:System.Activator.CreateInstance%2A>
 - <xref:System.Delegate.CreateDelegate%2A>
-- [Postupy: Definování a provádění dynamických metod](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md)
-- [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)
+- [Postupy: Definování a provádění dynamických metod](how-to-define-and-execute-dynamic-methods.md)
+- [Reflexe](reflection.md)

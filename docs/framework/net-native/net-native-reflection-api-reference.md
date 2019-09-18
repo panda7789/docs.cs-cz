@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69a4addbd00c119af4336faae2cd0f8fc31f8852
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9c1fbef46231fed3af0d335e9396b301fe503254
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941616"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049383"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
-.NET Native obsahuje tři nové typy výjimek: [System. Runtime. CompilerServices. MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)a [System. Reflection. MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Všimněte si následujících informací o všech třech typech výjimek:  
+.NET Native obsahuje tři nové typy výjimek: [System. Runtime. CompilerServices. MissingInteropDataException](missinginteropdataexception-class-net-native.md), [System. Reflection. MissingMetadataException](missingmetadataexception-class-net-native.md)a [System. Reflection. MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md). Všimněte si následujících informací o všech třech typech výjimek:  
   
  Tyto typy jsou pouze pro interní použití.  
  Tyto tři typy výjimek jsou pouze pro použití řetězu nástroje .NET Native. Výjimky jsou vyvolány, když řetěz nástrojů .NET Native detekuje chybějící data, která neumožňují spuštění programu pokračovat.  
   
  Tyto výjimky v kódu nezpracujte.  
- Tyto výjimky signalizují, že metadata potřebná vaší aplikací nejsou k dispozici (výjimky [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) ) nebo že chybí implementační kód vyžadovaný vaší aplikací ( [ Výjimka MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) ). Tyto podmínky výjimky opravíte úpravou souboru direktiv modulu runtime (. Rd. XML), aby byla požadovaná metadata nebo implementační kód k dispozici za běhu. Další informace najdete v tématu [Referenční dokumentace ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). K dispozici jsou dva poradci při potížích, které poskytují vhodné položky pro soubor direktiv runtime, který eliminuje výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) :  
+ Tyto výjimky signalizují, že metadata potřebná vaší aplikací nejsou k dispozici (výjimky [MissingInteropDataException](missinginteropdataexception-class-net-native.md) a [MissingMetadataException](missingmetadataexception-class-net-native.md) ) nebo že chybí implementační kód vyžadovaný vaší aplikací ( [ Výjimka MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) ). Tyto podmínky výjimky opravíte úpravou souboru direktiv modulu runtime (. Rd. XML), aby byla požadovaná metadata nebo implementační kód k dispozici za běhu. Další informace najdete v tématu [Referenční dokumentace ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md). K dispozici jsou dva poradci při potížích, které poskytují vhodné položky pro soubor direktiv runtime, který eliminuje výjimky [MissingMetadataException](missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) :  
   
 - [Poradce při potížích s MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
   
@@ -32,8 +32,8 @@ ms.locfileid: "69941616"
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|[MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)|Výjimka, která je vyvolána, když je použita reflexe k načtení metadat, která nejsou k dispozici.|  
-|[MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)|Výjimka, která je vyvolána, když jsou k dispozici metadata pro typ nebo člen typu, ale jeho implementace byla odebrána.|  
+|[MissingMetadataException](missingmetadataexception-class-net-native.md)|Výjimka, která je vyvolána, když je použita reflexe k načtení metadat, která nejsou k dispozici.|  
+|[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)|Výjimka, která je vyvolána, když jsou k dispozici metadata pro typ nebo člen typu, ale jeho implementace byla odebrána.|  
   
  Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Reflection> referenční stránky v sadě .NET Framework dokumentace.  
   
@@ -42,13 +42,13 @@ ms.locfileid: "69941616"
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|[MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)|Výjimka, která je vyvolána při volání metody ručního zařazování, ale metadata pro typ nejsou nalezena statickou analýzou nebo v souboru direktiv modulu runtime.|  
+|[MissingInteropDataException](missinginteropdataexception-class-net-native.md)|Výjimka, která je vyvolána při volání metody ručního zařazování, ale metadata pro typ nejsou nalezena statickou analýzou nebo v souboru direktiv modulu runtime.|  
   
  Dokumentaci k ostatním typům v tomto oboru názvů najdete v tématu <xref:System.Runtime.CompilerServices> referenční stránky v sadě .NET Framework dokumentace.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Třída MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)
-- [Třída MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md)
-- [Třída MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md)
-- [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
+- [Třída MissingInteropDataException](missinginteropdataexception-class-net-native.md)
+- [Třída MissingMetadataException](missingmetadataexception-class-net-native.md)
+- [Třída MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)
+- [Začínáme](getting-started-with-net-native.md)

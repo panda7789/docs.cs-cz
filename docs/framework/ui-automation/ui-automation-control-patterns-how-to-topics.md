@@ -7,12 +7,12 @@ helpviewer_keywords:
 - control patterns, UI Automation
 - UI Automation, control patterns
 ms.assetid: 72c80262-8ca9-4624-9bd6-96984c5b7c5c
-ms.openlocfilehash: fea9bf959a0537ead01f27bbeb43874d0e5408df
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a5d75eddd5314067a364bc8e76108ee7794bcfda
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953100"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042368"
 ---
 # <a name="ui-automation-control-patterns-how-to-topics"></a>Postupy: Témata vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -21,8 +21,8 @@ ms.locfileid: "69953100"
  Tato část obsahuje podrobné informace o implementaci vzorů ovládacích prvků.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)  
- [Získání podporovaných vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/get-supported-ui-automation-control-patterns.md)  
- [Zjištění stavu přepnutí zaškrtávacího políčka pomocí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
- [Vyvolání ovládacího prvku s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/invoke-a-control-using-ui-automation.md)  
- [Přesunutí elementu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/move-a-ui-automation-element.md)
+ [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](expose-the-content-of-a-table-using-ui-automation.md)  
+ [Získání podporovaných vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](get-supported-ui-automation-control-patterns.md)  
+ [Zjištění stavu přepnutí zaškrtávacího políčka pomocí automatizace uživatelského rozhraní](get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
+ [Vyvolání ovládacího prvku s použitím automatizace uživatelského rozhraní](invoke-a-control-using-ui-automation.md)  
+ [Přesunutí elementu automatizace uživatelského rozhraní](move-a-ui-automation-element.md)

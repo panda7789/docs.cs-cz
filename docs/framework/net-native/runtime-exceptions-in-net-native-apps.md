@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68fe50d24ce547e1cad092e3d871c2d0990fd5af
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 27a2e0906343d115c47230c726efb74cd51d4c93
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894978"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049165"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Výjimky za běhu v nativních aplikací .NET
 Je důležité otestovat buildy vydání vaší Univerzální platforma Windows aplikace na svých cílových platformách, protože konfigurace ladění a vydání jsou zcela odlišné. Ve výchozím nastavení používá konfigurace ladění modul runtime .NET Core ke kompilaci vaší aplikace, ale konfigurace vydané verze používá .NET Native ke kompilaci vaší aplikace do nativního kódu.  
   
 > [!IMPORTANT]
-> Informace o tom, jak řešit výjimky [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) , se kterými se můžete setkat při testování verzí verze vaší aplikace, najdete v části Krok 4: Ruční řešení chybějících metadat: v tématu [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md) a také v odkazech na konfigurační soubor direktivy [reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md) a [runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+> Informace o tom, jak řešit výjimky [MissingMetadataException](missingmetadataexception-class-net-native.md), [MissingInteropDataException](missinginteropdataexception-class-net-native.md)a [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) , se kterými se můžete setkat při testování verzí verze vaší aplikace, najdete v části Krok 4: Ruční řešení chybějících metadat: v tématu [Začínáme](getting-started-with-net-native.md) a také v odkazech na konfigurační soubor direktivy [reflexe a .NET Native](reflection-and-net-native.md) a [runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="debug-and-release-builds"></a>Sestavení ladění a vydaných verzí  
  Když se sestavení ladění provede proti modulu runtime .NET Core, není zkompilováno do nativního kódu. Díky tomu jsou všechny služby běžně poskytované modulem runtime dostupným pro vaši aplikaci.  
@@ -62,4 +62,4 @@ Additional information: Value does not fall within the expected range.
 ## <a name="see-also"></a>Viz také:
 
 - [Ladění .NET Native univerzálních aplikací pro Windows](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
-- [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)
+- [Začínáme](getting-started-with-net-native.md)

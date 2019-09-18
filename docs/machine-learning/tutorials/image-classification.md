@@ -4,12 +4,12 @@ description: Naučte se, jak předávat model TensorFlow pro klasifikaci imagí 
 ms.date: 07/09/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: eb6e3d3f3a33aa7360802ce1bc6c16532539c828
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: e069abe44b77b1dc31b78ecec1971ccc73f2e012
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929241"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054083"
 ---
 # <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Kurz: Přeškolování klasifikátoru imagí TensorFlow pomocí učení přenosu a ML.NET
 
@@ -355,7 +355,7 @@ Převeďte obrazová data a `DataViews` předpovědi na dvojici `IEnumerables` s
 
 [!code-csharp[EnumerateDataViews](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#EnumerateDataViews)]
 
-Zavolejte metodu pro zobrazení dat a předpovědi jako další řádek `ReuseAndTuneInceptionModel()` v metodě: `DisplayResults()`
+Přidejte následující kód pro zobrazení dat a předpovědi jako další řádky v `ReuseAndTuneInceptionModel()` metodě:
 
 [!code-csharp[CallDisplayResults1](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CallDisplayResults1)]
 

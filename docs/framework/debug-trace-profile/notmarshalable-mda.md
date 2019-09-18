@@ -13,32 +13,32 @@ helpviewer_keywords:
 ms.assetid: 96e7b2c1-843f-4d64-b519-740c3a18b50a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 30db07ddf935b5ce13b1fe4212f7f6a40270ae93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ddb6b0b5c2248d215245e0f881c8e7c91b13e480
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753696"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052432"
 ---
 # <a name="notmarshalable-mda"></a>notMarshalable – pomocník spravovaného ladění (MDA)
-`notMarshalable` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR (CLR) setká ukazatele rozhraní modelu COM bez platné registrované proxy/zástupné procedury nebo nesprávné `IMarshal` při pokusu o implementace rozhraní zařazování rozhraní napříč kontexty.  
+Pomocník spravovaného ladění (MDA) je aktivován, pokud modul CLR (Common Language Runtime) nalezne ukazatel rozhraní modelu COM bez platného registrovaného proxy/zástupné `IMarshal` procedury nebo nesprávná implementace rozhraní při pokusu o `notMarshalable` zařazování rozhraní napříč kontexty.  
   
 ## <a name="symptoms"></a>Příznaky  
- Volání nejsou obsluhovány nebo v chybném kontextu pro ukazatele rozhraní modelu COM dojde k volání.  
+ Volání nejsou obsluhovaná nebo se volání vyskytují v nesprávném kontextu ukazatelů rozhraní modelu COM.  
   
-## <a name="cause"></a>Příčina  
- Žádný platný registrované proxy nebo zástupné procedury nebo nesprávné `IMarshal` při pokusu o zařazení rozhraní napříč kontexty.  
+## <a name="cause"></a>příčina  
+ Při pokusu o zařazování rozhraní napříč kontexty není k dispozici žádný platný registrovaný proxy/zástupný kód nebo nesprávný `IMarshal` .  
   
 ## <a name="resolution"></a>Řešení  
- Ujistěte se, že máte proxy zástupné procedury zaregistrované a že `IMarshal` implementace je platný.  
+ Ujistěte se, že máte registrovanou zástupnou proceduru `IMarshal` proxy a že je implementace platná.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na modul runtime.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na modul runtime.  
   
 ## <a name="output"></a>Výstup  
- Zprávu s popisem problému.  
+ Zpráva s popisem problému.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -51,5 +51,5 @@ ms.locfileid: "61753696"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

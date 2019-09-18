@@ -7,12 +7,12 @@ helpviewer_keywords:
 - control patterns, UI Automation
 - UI Automation, control patterns
 ms.assetid: 1f8b5ab3-c193-4d0f-9e67-a0076225a1a5
-ms.openlocfilehash: d4b4817c9b5cd59486c0ce5288d7860933405664
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 75ce2d997efbc465c8a98bce1d42296b37f84f64
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941281"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042331"
 ---
 # <a name="ui-automation-control-patterns"></a>Vzory ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -21,21 +21,21 @@ ms.locfileid: "69941281"
  V této části najdete podrobné informace o používání [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] vzorů ovládacích prvků.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-dock-control-pattern.md)  
- [Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)  
- [Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md)  
- [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-griditem-control-pattern.md)  
- [Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-invoke-control-pattern.md)  
- [Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-multipleview-control-pattern.md)  
- [Implementace vzoru ovládacích prvků RangeValue pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-rangevalue-control-pattern.md)  
- [Implementace vzoru ovládacích prvků posuv pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-scroll-control-pattern.md)  
- [Implementace vzoru ovládacích prvků ScrollItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-scrollitem-control-pattern.md)  
- [Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-selection-control-pattern.md)  
- [Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-selectionitem-control-pattern.md)  
- [Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-table-control-pattern.md)  
- [Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-tableitem-control-pattern.md)  
- [Implementace vzoru ovládacích prvků přepínání pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-toggle-control-pattern.md)  
- [Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-transform-control-pattern.md)  
- [Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-value-control-pattern.md)  
- [Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-window-control-pattern.md)  
- [Témata s postupy](../../../docs/framework/ui-automation/ui-automation-control-patterns-how-to-topics.md)
+ [Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-dock-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-expandcollapse-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-grid-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-griditem-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-invoke-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-multipleview-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků RangeValue pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-rangevalue-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků posuv pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-scroll-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků ScrollItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-scrollitem-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-selection-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-selectionitem-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-table-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-tableitem-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků přepínání pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-toggle-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-transform-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-value-control-pattern.md)  
+ [Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-window-control-pattern.md)  
+ [Témata s postupy](ui-automation-control-patterns-how-to-topics.md)

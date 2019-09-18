@@ -1,6 +1,6 @@
 ---
 title: IMetaDataTables::GetColumn – metoda
-ms.date: 03/30/2017
+ms.date: 02/25/2019
 api_name:
 - IMetaDataTables.GetColumn
 api_location:
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 22f9ceab2f01ac12762710f313c56f3f0ee4e6be
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 853f137d91e1b3eb4f3f65a06522618f8441dcb3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781535"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053680"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn – metoda
-Získá ukazatel na hodnotě obsažené v buňce zadaný sloupců a řádků v dané tabulce.  
+Získá ukazatel na hodnotu obsaženou v buňce zadaného sloupce a řádku v dané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,49 @@ HRESULT GetColumn (
 );  
 ```  
   
-## <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry
+
  `ixTbl`  
- [in] Index v tabulce.  
+ pro Index tabulky  
   
  `ixCol`  
- [in] Index sloupce v tabulce.  
+ pro Index sloupce v tabulce  
   
  `rid`  
- [in] Index řádku v tabulce.  
+ pro Index řádku v tabulce  
   
  `pVal`  
- [out] Ukazatel na hodnotu v buňce.  
+ mimo Ukazatel na hodnotu v buňce.  
+ 
+## <a name="remarks"></a>Poznámky
+
+Interpretace hodnoty vrácené prostřednictvím `pVal` závisí na typu sloupce. Typ sloupce lze určit voláním [IMetaDataTables. GetColumnInfo](imetadatatables-getcolumninfo-method.md).
+
+- Metoda **GetColumn** automaticky převede sloupce typu **RID** nebo **CodedToken** `mdToken` na úplné 32 hodnoty.
+- Také automaticky převádí 8bitové nebo 16bitové hodnoty na hodnoty Full 32-bit. 
+- Pro sloupce typu *haldy* bude vrácená *Pval* index do odpovídající haldy.
+
+| Typ sloupce              | pVal obsahuje | Komentář                          |
+|--------------------------|---------------|-----------------------------------|
+| `0`..`iRidMax`<br>(0.. 63)  | mdToken     | *Pval* bude obsahovat úplný token. Funkce automaticky převede identifikátor RID na úplný token. |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | mdToken | Po návratu bude *Pval* obsahovat úplný token. Funkce automaticky dekomprimuje CodedToken na úplný token. |
+| `iSHORT`(96)            | Int16         | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iUSHORT`(97)           | UInt16        | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iLONG`(98)             | Int32         |                                        | 
+| `iULONG`(99)            | UInt32        |                                        |
+| `iBYTE`(100)            | Byte          | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iSTRING`(101)          | Index haldy řetězců | *Pval* je index haldy řetězců. K získání skutečné hodnoty řetězce sloupce použijte [IMetadataTables:: GetString](imetadatatables-getstring-method.md) . |
+| `iGUID`(102)            | Index haldy GUID | *Pval* je index haldy identifikátoru GUID. K získání skutečné hodnoty GUID sloupce použijte [IMetadataTables:: GetGUID](imetadatatables-getguid-method.md) . |
+| `iBLOB`(103)            | Index haldy objektů BLOB | *Pval* je index haldy objektů BLOB. K získání skutečné hodnoty objektu BLOB sloupce použijte [IMetadataTables:: getblob](imetadatatables-getblob-method.md) . |
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Hlaviček** Cor. h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Knihovna** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **Verze rozhraní .NET framework** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

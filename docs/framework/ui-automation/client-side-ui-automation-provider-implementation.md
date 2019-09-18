@@ -6,12 +6,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 9079dfa03ab81bfa6875e43bfa8a6e5351e0a35d
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 28179ecd27c98f1de5662908ced3ea0e49cb87ad
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015105"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043951"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "70015105"
   
  [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)]poskytovatelé poskytování pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] standardní ovládací prvky a model Windows Forms. Záložní zprostředkovatel navíc poskytuje částečnou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro jakýkoli ovládací prvek, který není obsluhován jiným poskytovatelem na straně serveru nebo proxy serverem, ale má implementaci Microsoft Active Accessibility. Všichni tito poskytovatelé jsou automaticky načítáni a k dispozici pro klientské aplikace.  
   
- Další informace o podpoře [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a model Windows Forms ovládacích prvcích najdete v tématu [Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
+ Další informace o podpoře [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] a model Windows Forms ovládacích prvcích najdete v tématu [Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky](ui-automation-support-for-standard-controls.md).  
   
  Aplikace také mohou registrovat jiné poskytovatele na straně klienta.  
   
@@ -51,5 +51,5 @@ ms.locfileid: "70015105"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)
-- [Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích](../../../docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)
+- [Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta](create-a-client-side-ui-automation-provider.md)
+- [Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích](implement-ui-automation-providers-in-a-client-application.md)

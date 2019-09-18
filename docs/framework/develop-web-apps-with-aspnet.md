@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, ASP.NET
 - dynamic Web applications [ASP.NET]
 ms.assetid: b7861df0-690a-4a58-bd12-f9d0123e40df
-ms.openlocfilehash: b058e9df6b8ba5a9dd0066f9df1f4b233a00e162
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+ms.openlocfilehash: 2c659d433830a279a88fea766ceaa8efd7429b1f
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69039390"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051976"
 ---
 # <a name="developing-web-apps-with-aspnet"></a>Vývoj webových aplikací pomocí ASP.NET
 
@@ -41,4 +41,4 @@ Další informace o ASP.NET Core] (/ASPNET/Core) naleznete v tématu:
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce vývojem](../../docs/framework/development-guide.md)
+- [Průvodce vývojem](development-guide.md)

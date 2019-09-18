@@ -2,33 +2,33 @@
 title: Názvy partnerských uzlů a ID PNRP
 ms.date: 03/30/2017
 ms.assetid: afa538e8-948f-4a98-aa9f-305134004115
-ms.openlocfilehash: 8cdd5151d029436d11c78806cf7673861cc0d8a4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 15b74317507f69d2339a2e5e49b54ae72cda1a7b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623125"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047494"
 ---
 # <a name="peer-names-and-pnrp-ids"></a>Názvy partnerských uzlů a ID PNRP
-Název partnerského zařízení představuje koncový bod pro komunikaci, která může být počítač, uživatele, skupinu, služby nebo něco přidružené partnera, který lze převést na IPv6 adresu. Řešení protokolu PNRP (Peer Name) trvá statisticky jedinečný. název partnerského zařízení pro zřízení ID PNRP, který slouží k určení členů cloudu.  
+Partnerský název představuje koncový bod pro komunikaci. může to být počítač, uživatel, skupina, služba nebo cokoli spojené s partnerským vztahem, který je možné přeložit na adresu IPv6. Protokol PNRP (Peer Name Resolution Protocol) používá statisticky jedinečný název partnerského zařízení pro vytvoření ID PNRP, které se používá k identifikaci členů cloudu.  
   
-## <a name="peer-names"></a>Názvy partnerských uzlů  
- Názvy partnerských uzlů může být registrován jako nezabezpečená nebo zabezpečené. Zabezpečená názvy jsou pouze textové řetězce, které jsou v souladu s falšování identity, všem uživatelům registrovat duplicitní název zabezpečená. Zabezpečená názvy uplatňují nejlépe v privátní nebo jinak chráněných sítích. Zabezpečené názvy jsou chráněné pomocí certifikátu a digitální podpis. Pouze původní vydavatel bude možné prokázat, že vlastnictví názvu zabezpečené.  
+## <a name="peer-names"></a>Názvy partnerů  
+ Názvy partnerů můžou být registrované jako nezabezpečené nebo zabezpečené. Nezabezpečené názvy jsou pouze textové řetězce, které podléhají falšování identity, protože kdokoli může zaregistrovat duplicitní nezabezpečený název. Nezabezpečené názvy se nejlépe využívají v privátních nebo v chráněných sítích. Zabezpečené názvy jsou chráněny certifikátem a digitálním podpisem. Vlastnictví zabezpečeného názvu bude moci prokázat pouze původní Vydavatel.  
   
- Kombinace cloudu a oboru poskytuje rozumně zabezpečené prostředí pro partnerské uzly, které jsou součástí PNRP aktivity. Pomocí názvu zabezpečené sdílené ale nezajistí celkové zabezpečení síťové aplikace. Zabezpečení aplikace je závislý na implementaci.  
+ Kombinace cloudu a oboru poskytuje dostatečně zabezpečené prostředí pro partnery, kteří se účastní aktivity PNRP. Použití zabezpečeného partnerského názvu ale nezajišťuje celkové zabezpečení síťové aplikace. Zabezpečení aplikace je závislé na implementaci.  
   
- Názvy partnerských uzlů zabezpečené jsou registrovány pouze jeho vlastník a jsou chráněné službou kryptografii využívající veřejného klíče. Název zabezpečené partnera se považuje za vlastněné sdílené entity s odpovídající privátní klíč. Vlastnictví můžete prokázat prostřednictvím certifikovaného partnera adresy (CPA), která je podepsána pomocí soukromého klíče. Uživatel se zlými úmysly nemůže zfalšovat vlastnictví název partnerského zařízení bez odpovídajícího privátního klíče.  
+ Názvy zabezpečených partnerských uzlů jsou registrované jenom jejich vlastníkem a jsou chráněné pomocí kryptografie s veřejným klíčem. Název zabezpečeného partnerského vztahu je považován za vlastněný entitou peer s odpovídajícím privátním klíčem. Vlastnictví se dá prokázat prostřednictvím certifikovaného partnerského adresy (CPA), která je podepsaná pomocí privátního klíče. Uživatel se zlými úmysly nemůže zfalšovat vlastnictví partnerského názvu bez odpovídajícího privátního klíče.  
   
-## <a name="pnrp-ids"></a>ID PNRP  
- ![PNRP ID](../../../docs/framework/network-programming/media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
+## <a name="pnrp-ids"></a>Identifikátory PNRP  
+ ![PNRP ID](./media/fdc9e8a0-4a1c-488d-a019-bc3a1973220c.gif "fdc9e8a0-4a1c-488d-a019-bc3a1973220c")  
   
- ID PNRP se skládá z následujících akcí:  
+ Identifikátory PNRP se skládají z těchto možností:  
   
-- 128 bitů nejvyšším označovaný jako ID (P2P) peer-to-peer, jsou hodnoty hash název partnerského zařízení přiřazené ke koncovému bodu. Název partnerského zařízení má následující formát: *Authority.Classifier*. Pro zabezpečené názvy *autority* je zabezpečit hashovací algoritmus (SHA1 1) hodnota hash veřejného klíče v šestnáctkové znaky názvu partnera. Pro nezabezpečený názvy *autority* je jednoho znaku "0". *Třídění* je řetězec, který identifikuje aplikaci. Žádné sdílené název třídění může být větší než 149 znaků, včetně `null` ukončovací znak.  
+- Vysoké pořadí 128 bitů, označované jako ID partnerského vztahu (P2P), jsou hodnota hash rovnocenného názvu, který je přiřazen ke koncovému bodu. Název partnerského zařízení má následující formát: *Autorita. klasifikátor* U zabezpečených názvů *autorita* je hodnota hash algoritmus SHA-1 (Secure Hash ALGORITHM) (SHA1) veřejného klíče názvu partnera v šestnáctkových znacích. U nezabezpečených názvů je *autorita* jedním znakem "0". *Klasifikátor* je řetězec, který identifikuje aplikaci. Žádné třídění rovnocenných názvů nesmí být delší než 149 znaků, včetně `null` ukončovacího znaku.  
   
-- Nižšího řádu 128 bitů se používá pro umístění služby, což je generované číslo, který identifikuje různé instance stejné ID P2P ve stejném cloudu.  
+- Pro umístění služby se používají bity s nízkou úrovní 128, což je vygenerované číslo, které identifikuje různé instance stejného ID P2P ve stejném cloudu.  
   
- Tato kombinace P2P ID a umístění služby umožňuje víc ID PNRP k registraci z jednoho počítače.  
+ Tato kombinace ID a umístění služby P2P umožňuje registraci více identifikátorů PNRP z jednoho počítače.  
   
 ## <a name="see-also"></a>Viz také:
 

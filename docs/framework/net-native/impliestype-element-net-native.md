@@ -1,18 +1,18 @@
 ---
-title: <ImpliesType> – Element (.NET Native)
+title: <ImpliesType>– Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1cd2177707edfd29dc393e2bcfd6bbacb749b30
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 10fa3a0ac04038bb686311a4d86c99442c0fcf26
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616691"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049666"
 ---
-# <a name="impliestype-element-net-native"></a>\<ImpliesType > – Element (.NET Native)
-Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ nebo metoda.  
+# <a name="impliestype-element-net-native"></a>\<Element > ImpliesType (.NET Native)
+Použije zásady na typ, pokud byly tyto zásady použity na obsahující typ nebo metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
 |`Name`|Obecné|Požadovaný atribut. Určuje název typu.|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
+|`Activate`|Reflexe|Nepovinný atribut. Řídí přístup k konstruktorům za běhu, aby bylo možné povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Řídí dotazování pro informace o prvcích programu, ale nepovoluje přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> používají třídu.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.|  
+|`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů odkazů do prostředí Windows Runtime a COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů hodnot do nativního kódu.|  
   
-## <a name="name-attribute"></a>Název atributu  
+## <a name="name-attribute"></a>Atribut Name  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*type_name*|Název typu. Pokud typ reprezentovaný tímto objektem `<ImpliesType>` prvek nachází v oboru názvů stejný jako jeho obsahující `<Type>` elementu *type_name* může obsahovat název typu bez svůj obor názvů. V opačném případě *type_name* musí obsahovat plně kvalifikovaného názvu.|  
+|*type_name*|Název typu. Pokud je typ reprezentovaný tímto `<ImpliesType>` prvkem umístěný ve stejném oboru názvů jako element, který `<Type>` obsahuje, *TYPE_NAME* může obsahovat název typu bez jeho oboru názvů. Jinak musí *TYPE_NAME* obsahovat plně kvalifikovaný název typu.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít u tohoto typu zásad Možné hodnoty jsou `All`, `Auto`, `Excluded` ,`PublicAndInternal`,, ,`Required PublicAndInternal`a. `Required Public` `Public` `Required All` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,20 +68,20 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe pro metodu.|  
+|[\<Zadejte >](type-element-net-native.md)|Aplikuje zásadu odrazu na typ a všechny jeho členy.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Aplikuje zásadu odrazu na konstruovaný obecný typ a všechny její členy.|  
+|[\<Method>](method-element-net-native.md)|Aplikuje zásadu reflexe na metodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<ImpliesType>` Element je primárně určena pro použití knihovny. To řeší následující scénář:  
+ `<ImpliesType>` Element je primárně určen pro použití v knihovnách. Řeší následující scénář:  
   
-- Pokud rutiny potřebuje tak, aby odrážely na jeden typ, nutně musí tak, aby odrážely u druhého typu.  
+- Pokud rutina potřebuje reflektovat na jeden typ, musí být nutně odpovídat druhému typu.  
   
-- Metadata pro implicitní vytvoření instance typu druhý není k dispozici, jinak, protože statické analýzy neukazuje, že je nutné.  
+- Metadata pro implicitní instanci druhého typu jsou jinak nedostupná, protože statická analýza neindikuje, že je to nezbytné.  
   
- Nejčastěji jsou tyto dva typy obecných instancí s argumenty sdíleného typu.  
+ Nejčastěji jsou tyto dva typy obecné instance s argumenty sdíleného typu.  
   
- `<ImpliesType>` Byl definován prvek za předpokladu, že potřebujete reflexe na typu určeného jeho nadřazený element znamená potřebu reflexe na typ určený `<ImpliesType>` elementu. Například následující direktivy reflection platí i pro dva typy `Explicit<T>` a `Implicit<T>`.  
+ Element byl definován s předpokladem, že nutnost reflexe u typu určeného jeho nadřazeným elementem implikuje nutnost reflexe u typu určeného `<ImpliesType>` elementem. `<ImpliesType>` Například následující direktivy reflexe platí pro dva typy, `Explicit<T>` a `Implicit<T>`.  
   
 ```xml  
 <Type Name="Explicit{ET}">  
@@ -89,9 +89,9 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
 </Type>  
 ```  
   
- Tato direktiva nemá žádný vliv, pokud instance `Explicit` má definované `Dynamic` nastavení zásad. Například, pokud je to tento případ pro `Explicit<Int32>`, `Implicit<Int32>` je vytvořena instance s jeho veřejné členy root, a jejich metadat je přístupné pro dynamické programování.  
+ Tato direktiva nemá žádný vliv, pokud vytvoření instance `Explicit` má definované `Dynamic` nastavení zásad. Například pokud se jedná o případ `Explicit<Int32>`, `Implicit<Int32>` je vytvořena instance s jeho veřejnými členy rootd a jejich metadata jsou k dispozici pro dynamické programování.  
   
- Následuje příklad reálného světa, který platí pro jeden serializátor. Direktivy zaznamenání požadavku, že něco reflexi typu `IList<` *něco* `>` zahrnuje také reflexi u odpovídajícího `List<` *něco* `>` typ nevyžaduje žádnou poznámku jednotlivých aplikací.  
+ Následuje příklad reálného světa, který se vztahuje alespoň na jeden serializátor. Direktivy zachytí požadavek, který reflektuje na něco napsaného `IList<`jako *něco* `>` zahrnuje také reflektování `List<`na odpovídající typ *něčeho* `>` , aniž by to vyžadovalo. Anotace jednotlivých aplikací.  
   
 ```xml  
 <Type Name="System.Collections.Generic.IList{T}">  
@@ -99,7 +99,7 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
 </Type>  
 ```  
   
- `<ImpliesType>` Element se může zobrazit i v rámci `<Method>` element, protože v některých případech vytváření instancí obecné metody zahrnuje vytvoření instance typu reflexi. Představte si například obecné metody `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` , který danou knihovnu bude mít přístup k dynamicky spolu s přidruženou <xref:System.Collections.Generic.List%601> a <xref:System.Array> typy. Tento rozdíl lze vyjádřit jako:  
+ Element se může také objevit `<Method>` v rámci elementu, protože v některých případech instance obecné metody implikuje odrážející typ instance. `<ImpliesType>` Představte si například obecnou `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` metodu, kterou bude mít daná knihovna k dynamickému přístupu <xref:System.Collections.Generic.List%601> společně <xref:System.Array> s přidruženými typy a. Tato možnost může být vyjádřena takto:  
   
 ```xml  
 <Type Name="MyType">  
@@ -112,6 +112,6 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c13445b8b7c72d1c66efe5a9db3aaa027001ecf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 549030b7e5f7544f593e5aa481a6dc85d5a85329
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943808"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046402"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že jeho vytvoření je odloženo až do prvního použití. (Pro toto téma jsou výrazy *opožděné inicializace* a *opožděné vytváření instancí* synonymní.) Opožděná inicializace se primárně používá ke zvýšení výkonu, vyhněte se výpočtu wasteful a snížení požadavků na paměť programu. Jedná se o nejběžnější scénáře:  
@@ -62,7 +62,7 @@ ms.locfileid: "69943808"
  Ve výchozím nastavení <xref:System.Lazy%601> jsou objekty bezpečné pro přístup z více vláken. To znamená, že pokud konstruktor neurčí druh zabezpečení vlákna, objekty, které vytváří <xref:System.Lazy%601> , jsou bezpečné pro přístup z více vláken. Ve scénářích s více vlákny inicializuje první vlákno přístup <xref:System.Lazy%601.Value%2A> k vlastnosti objektu bezpečného <xref:System.Lazy%601> pro přístup z více vláken pro všechny následné přístupy na všechna vlákna a všechna vlákna sdílejí stejná data. Proto nezáleží na tom, které vlákno inicializuje objekt a konflikty časování jsou neškodné.  
   
 > [!NOTE]
-> Tuto konzistenci můžete roztáhnout na chybové podmínky pomocí ukládání výjimek do mezipaměti. Další informace naleznete v další části [výjimky v opožděných objektech](../../../docs/framework/performance/lazy-initialization.md#ExceptionsInLazyObjects).  
+> Tuto konzistenci můžete roztáhnout na chybové podmínky pomocí ukládání výjimek do mezipaměti. Další informace naleznete v další části [výjimky v opožděných objektech](lazy-initialization.md#ExceptionsInLazyObjects).  
   
  Následující příklad ukazuje, že stejná `Lazy<int>` instance má stejnou hodnotu pro tři samostatná vlákna.  
   
@@ -157,4 +157,4 @@ ms.locfileid: "69943808"
 - [Základy dělení na spravovaná vlákna](../../standard/threading/managed-threading-basics.md)
 - [Vlákna a dělení na vlákna](../../standard/threading/threads-and-threading.md)
 - [Task Parallel Library (TPL)](../../standard/parallel-programming/task-parallel-library-tpl.md)
-- [Postupy: Provést opožděnou inicializaci objektů](../../../docs/framework/performance/how-to-perform-lazy-initialization-of-objects.md)
+- [Postupy: Provést opožděnou inicializaci objektů](how-to-perform-lazy-initialization-of-objects.md)

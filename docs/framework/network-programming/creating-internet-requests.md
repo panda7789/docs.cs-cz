@@ -10,24 +10,24 @@ helpviewer_keywords:
 - Internet, requesting data
 - data requests, creating requests
 ms.assetid: faab683e-3f1e-4eee-b5e9-59f7245033d5
-ms.openlocfilehash: 2a4915796310e4f6899d833f20bc5260e0ee032b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80e3a6bd199691df9391e88d5a64fab5df2a08a1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643124"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048624"
 ---
 # <a name="creating-internet-requests"></a>Vytváření internetových žádostí
-Vytvoření aplikace <xref:System.Net.WebRequest> instance prostřednictvím <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody. Toto je statická metoda, která vytvoří třídu odvozenou z **WebRequest** podle do něho předaný schéma identifikátoru URI.  
+Aplikace vytváří <xref:System.Net.WebRequest> instance <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> pomocí metody. Toto je statická metoda, která vytvoří třídu odvozenou od **WebRequest** na základě předaného schématu identifikátoru URI.  
   
-## <a name="web-file-and-ftp-requests"></a>Webový server, souboru a požadavky protokolu FTP  
- Rozhraní .NET Framework poskytuje <xref:System.Net.HttpWebRequest> třídu, která je odvozena od **WebRequest**, pro zpracování požadavků HTTP a HTTPS. Ve většině případů **WebRequest** třída poskytuje všechny vlastnosti, je třeba provést požadavek, ale v případě potřeby můžete přetypovat **WebRequest** objekty vytvořené **WebRequest.Create**  metodu **HttpWebRequest** typ, který má přístup k vlastnostem specifickým pro HTTP žádosti. Podobně **HttpWebResponse** objekt zpracovává odpovědi z požadavků HTTP a HTTPS. Pro přístup k vlastnostem specifickým pro HTTP **HttpWebResponse** objektu, je třeba přetypovat **WebResponse** objektů **HttpWebResponse** typu.  
+## <a name="web-file-and-ftp-requests"></a>Webové, souborové a FTP požadavky  
+ .NET Framework poskytuje <xref:System.Net.HttpWebRequest> třídu, která je odvozena z **WebRequest**, pro zpracování požadavků HTTP a HTTPS. Ve většině případů třída **WebRequest** poskytuje všechny vlastnosti, které potřebujete k vytvoření žádosti; v případě potřeby však můžete přetypovat objekty **WebRequest** vytvořené metodou **WebRequest. Create** pro typ **HttpWebRequest** pro přístup k vlastnostem specifickým pro protokol HTTP. Podobně objekt **HttpWebResponse** zpracovává odpovědi z požadavků HTTP a HTTPS. Chcete-li získat přístup k vlastnostem objektu **HttpWebResponse** specifickým pro protokol HTTP, je třeba přetypovat objekty **WebResponse** na typ **HttpWebResponse** .  
   
- Také poskytuje rozhraní .NET Framework <xref:System.Net.FileWebRequest> a <xref:System.Net.FileWebResponse> třídy, které zpracovávají požadavky na prostředky, které používají "file:" Schéma identifikátoru URI. Podobně <xref:System.Net.FtpWebRequest> a <xref:System.Net.FtpWebResponse> třídy jsou k dispozici pro zpracování požadavků pro prostředky, které používají "ftp:" schéma. Pokud je váš požadavek pro prostředek, který používá některou z těchto režimů, můžete použít **WebRequest.Create** metodu k získání objektu, pomocí kterého se má podat žádost.  
+ .NET Framework také poskytuje <xref:System.Net.FileWebRequest> třídy a <xref:System.Net.FileWebResponse> pro zpracování požadavků na prostředky, které používají "soubor:" Schéma identifikátoru URI. Podobně třídy <xref:System.Net.FtpWebResponse> a jsou k dispozici pro zpracování požadavků na prostředky, které používají schéma "FTP:". <xref:System.Net.FtpWebRequest> Pokud je váš požadavek na prostředek, který používá některé z těchto schémat, můžete použít metodu **WebRequest. Create** k získání objektu, se kterým se má váš požadavek vytvořit.  
   
- Pro zpracování požadavků, které používají jiné protokoly na úrovni aplikace, budete muset implementovat konkrétní třídy odvozené od **WebRequest** a **WebResponse**. Další informace najdete v tématu [programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md).  
+ Pro zpracování požadavků, které používají jiné protokoly na úrovni aplikace, je nutné implementovat třídy specifické pro protokol odvozené od **WebRequest** a **WebResponse**. Další informace najdete v tématu [programování protokolů pro připojení](programming-pluggable-protocols.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
-- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Postupy: Vyžádání dat pomocí třídy WebRequest](how-to-request-data-using-the-webrequest-class.md)
+- [Žádosti o data](requesting-data.md)

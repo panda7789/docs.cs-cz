@@ -12,33 +12,33 @@ helpviewer_keywords:
 ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b204eacd43db2c562fbe6d519b5fa91df3466cc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 275aa5bb664e9f5a50f44a72f2506d7984234b31
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626404"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051828"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Vytvoření třídy k umístění funkcí DLL
-Obtékání často používané funkce knihovny DLL ve spravované třídě je efektivního přístupu k zapouzdření funkce platformy. Ačkoli to není nutné provést ve všech případech, za předpokladu, že třída obálky je pohodlné, protože definice funkcí knihovny DLL může být náročné a náchylné k chybě. Pokud programujete v jazyce Visual Basic nebo C#, je třeba deklarovat funkce knihovny DLL v rámci třídy nebo modulu jazyka Visual Basic.  
+Zabalení často používané funkce knihovny DLL ve spravované třídě představuje účinný přístup k zapouzdření funkčnosti platformy. I když není nutné tak učinit v každém případě, poskytnutí obálky třídy je pohodlné, protože definování funkcí knihovny DLL může být náročné a náchylné k chybám. Pokud programujete v Visual Basic nebo C#, musíte deklarovat funkce knihovny DLL v rámci třídy nebo modulu Visual Basic.  
   
- V rámci třídy můžete definovat statické metody pro každou funkci knihovny DLL, kterou chcete volat. Definice může obsahovat další informace, jako je znaková sada nebo použití předání argumentů metody; konvence volání vynecháním tyto informace, vyberte výchozí nastavení. Úplný seznam možností deklarace a výchozí nastavení, najdete v části [vytváření prototypů ve spravovaného kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md).  
+ V rámci třídy definujete statickou metodu pro každou funkci knihovny DLL, kterou chcete volat. Definice může obsahovat další informace, jako je například znaková sada nebo konvence volání používané při předávání argumentů metody; Vynecháte-li tyto informace, vyberte výchozí nastavení. Úplný seznam možností deklarace a jejich výchozí nastavení naleznete v tématu [vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md).  
   
- Jakmile zabalená, můžete volat metody ve třídě jako volání statické metody na jinou třídu. Vyvolání platformy zpracovává základní exportované funkce automaticky.  
+ Po zabalení můžete volat metody pro třídu při volání statických metod na jakékoli jiné třídě. Volání platformy zpracovává základní exportovanou funkci automaticky.  
   
- Při navrhování spravovanou třídu pro platformu vyvolání, vezměte v úvahu vztahy mezi třídami a funkcí knihovny DLL. Například můžete:  
+ Při navrhování spravované třídy pro vyvolání platformy zvažte vztahy mezi třídami a funkcemi knihovny DLL. Můžete například:  
   
-- Deklarování funkcí knihovny DLL v rámci existující třídy.  
+- Deklarujete funkce knihovny DLL v rámci existující třídy.  
   
-- Vytvoření jednotlivých tříd pro každou funkci knihovny DLL, udržování funkce izolované a snadno najít.  
+- Vytvořte pro každou funkci knihovny DLL jednotlivou třídu, zachováte funkce izolované a snadno najít.  
   
-- Vytvořte jednu třídu sady souvisejících funkcí knihovny DLL tvoří logické seskupení a snížit režii.  
+- Vytvořte jednu třídu pro sadu souvisejících funkcí knihoven DLL pro vytváření logických seskupení a snížení režie.  
   
- Název třídy a můžete její metody, jako je prosím. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Můžete pojmenovat třídu a její metody, které jste si zařadíte. Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)
-- [Identifikace funkcí ve knihovnách DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md)
-- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
-- [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
+- [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
+- [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)
+- [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)
+- [Volání funkce DLL](calling-a-dll-function.md)

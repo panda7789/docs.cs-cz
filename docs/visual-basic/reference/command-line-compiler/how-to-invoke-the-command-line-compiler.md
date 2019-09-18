@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání kompilátoru příkazového řádku (Visual Basic)'
+title: 'Postupy: Vyvolání kompilátoru příkazového řádku (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments
@@ -7,57 +7,58 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-ms.openlocfilehash: 67cad0df3f10ff1fa1f6a58546fe150232fe1283
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a81d5b4f4eae76b0306e2d27475cb8527bda0ff2
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032068"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054221"
 ---
-# <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
-Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, označované také jako příkazový. Pokud kompilujete z výchozího příkazového řádku Windows, je nutné zadat úplnou cestu ke spustitelnému souboru. Chcete-li přepsat toto výchozí chování, můžete použít příkazový řádek pro vývojáře pro sadu Visual Studio nebo upravit proměnné prostředí PATH. Umožňují z libovolného adresáře kompilovat pouze zadáním názvu kompilátoru.  
-  
-[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
-  
-### <a name="to-invoke-the-compiler-using-the-developer-command-prompt-for-visual-studio"></a>K vyvolání kompilátoru pomocí příkazového řádku pro vývojáře pro sadu Visual Studio  
-  
-1. Otevřete složku program Visual Studio Tools v rámci skupiny pro program Microsoft Visual Studio.  
-  
-2. Developer Command Prompt pro sadu Visual Studio můžete použít pro přístup k kompilátor z libovolného adresáře v počítači, pokud je nainstalována aplikace Visual Studio.  
-  
-3. Vyvolání Developer Command Prompt pro sadu Visual Studio.  
-  
-4. Na příkazovém řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.  
-  
-     Například, pokud váš zdrojový kód jste uložili v adresáři s názvem `SourceFiles`, by otevřete příkazový řádek a zadejte `cd SourceFiles` pro přechod do této složky. Pokud adresář obsahuje zdrojový soubor s názvem `Source.vb`, může zkompilovat jej tak, že zadáte `vbc.exe Source.vb`.  
-  
-### <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Chcete-li nastavit proměnné prostředí PATH v kompilátoru pro příkazový řádek Windows  
-  
-1. Pomocí funkce Windows Search hledání Vbc.exe na místním disku.  
-  
-     Přesný název adresáře, kde je umístěn kompilátor závisí na umístění adresáře Windows a verzí "nainstalováno rozhraní .NET Framework". Pokud máte více než jednu verzi "Instalace rozhraní .NET Framework", musíte určit, která verze se má použít (obvykle na nejnovější verzi).  
-  
-2. Z vaší **Start** nabídky, klikněte pravým tlačítkem na **tento počítač**a potom klikněte na tlačítko **vlastnosti** z místní nabídky.  
-  
-3. Klikněte na tlačítko **Upřesnit** kartu a potom klikněte na tlačítko **proměnné prostředí**.  
-  
-4. V **systému** podokno proměnných, vyberte **cesta** ze seznamu a klikněte na tlačítko **upravit**.  
-  
-5. V **upravit systému** proměnné dialogové okno, přesuňte kurzor na konec řetězce **hodnotu proměnné** pole a zadejte středníkem (;) za nímž následuje název úplné adresáře v kroku 1.  
-  
-6. Klikněte na tlačítko **OK** potvrzení úprav a zavřete dialogová okna.  
-  
-     Po změně proměnné prostředí PATH, můžete spustit kompilátor jazyka Visual Basic v příkazovém řádku Windows z libovolného adresáře v počítači.  
-  
-### <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>K volání kompilátoru příkazového řádku Windows  
-  
-1. Z **Start** nabídky, klikněte na **Příslušenství** složku a pak otevřete **příkazový řádek Windows**.  
-  
-2. Na příkazovém řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.  
-  
-     Například, pokud váš zdrojový kód jste uložili v adresáři s názvem `SourceFiles`, by otevřete příkazový řádek a zadejte `cd SourceFiles` pro přechod do této složky. Pokud adresář obsahuje zdrojový soubor s názvem `Source.vb`, může zkompilovat jej tak, že zadáte `vbc.exe Source.vb`.  
-  
+# <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Vyvolání kompilátoru příkazového řádku (Visual Basic)
+
+Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustitelného souboru do příkazového řádku, který se označuje také jako příkazový řádek MS-DOS. Pokud kompilujete z výchozího příkazového řádku systému Windows, je nutné zadat plně kvalifikovanou cestu ke spustitelnému souboru. Chcete-li přepsat toto výchozí chování, můžete buď použít Developer Command Prompt pro Visual Studio, nebo upravit proměnnou prostředí PATH. Obě umožňují kompilovat z libovolného adresáře pouhým zadáním názvu kompilátoru.
+
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
+
+## <a name="to-invoke-the-compiler-using-the-developer-command-prompt-for-visual-studio"></a>Volání kompilátoru pomocí Developer Command Prompt pro Visual Studio
+
+1. Otevřete složku Visual Studio Tools program ve skupině Microsoft Visual Studio programu.
+
+2. Pokud je nainstalována aplikace Visual Studio, můžete použít Developer Command Prompt pro Visual Studio k přístupu k kompilátoru z libovolného adresáře na vašem počítači.
+
+3. Vyvolejte Developer Command Prompt pro Visual Studio.
+
+4. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
+
+    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+
+## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Nastavení proměnné prostředí PATH na kompilátor příkazového řádku systému Windows
+
+1. K vyhledání Vbc. exe na místním disku použijte funkci Windows Search.
+
+    Přesný název adresáře, ve kterém je kompilátor umístěný, závisí na umístění adresáře systému Windows a ve verzi nainstalovaného ".NET Framework". Pokud máte nainstalovanou více než jednu verzi .NET Framework, musíte určit, která verze se má použít (obvykle nejnovější verze).
+
+2. V nabídce **Start** klikněte pravým tlačítkem myši na položku **Tento počítač**a potom v místní nabídce klikněte na příkaz **vlastnosti** .
+
+3. Klikněte na kartu **Upřesnit** a pak klikněte na **proměnné prostředí**.
+
+4. V podokně **systémové** proměnné vyberte v seznamu možnost **cesta** a klikněte na **Upravit**.
+
+5. V dialogovém okně **upravit systémovou** proměnnou přesuňte kurzor na konec řetězce v poli **hodnota proměnné** a zadejte středník (;) Následuje úplný název adresáře, který byl nalezen v kroku 1.
+
+6. Kliknutím na tlačítko **OK** potvrďte provedené úpravy a zavřete dialogová okna.
+
+     Po změně proměnné prostředí PATH můžete spustit kompilátor Visual Basic v příkazovém řádku systému Windows z libovolného adresáře v počítači.
+
+## <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>Vyvolání kompilátoru pomocí příkazového řádku systému Windows
+
+1. V nabídce **Start** klikněte na složku **příslušenství** a pak otevřete **příkazový řádek systému Windows**.
+
+2. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
+
+     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

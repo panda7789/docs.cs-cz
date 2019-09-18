@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: 613ad742-3c11-401d-a6b3-893ceb8de4f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 876f0fe3c40cb6754b4ba714833dd160dc4de3a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7452ae28d63c89845b45bf500c02e771f0b8f4df
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754398"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052615"
 ---
 # <a name="invalidgchandlecookie-mda"></a>invalidGCHandleCookie – pomocník spravovaného ladění (MDA)
-`invalidGCHandleCookie` Pomocníka spravovaného ladění (MDA) se aktivuje při převodu z neplatný <xref:System.IntPtr> soubor cookie <xref:System.Runtime.InteropServices.GCHandle> dojde k pokusu o.  
+V `invalidGCHandleCookie` případě, že došlo k pokusu o převod z neplatného <xref:System.IntPtr> souboru cookie na a <xref:System.Runtime.InteropServices.GCHandle> , je aktivován pomocník spravovaného ladění (MDA).  
   
 ## <a name="symptoms"></a>Příznaky  
- Nedefinované chování, například porušení přístupu a poškození paměti při pokusu o použití nebo načíst <xref:System.Runtime.InteropServices.GCHandle> ze <xref:System.IntPtr>.  
+ Nedefinované chování, například porušení přístupu a poškození paměti při pokusu o použití nebo načtení <xref:System.Runtime.InteropServices.GCHandle> <xref:System.IntPtr>z.  
   
-## <a name="cause"></a>Příčina  
- Soubor cookie je pravděpodobně neplatný, protože nebyl původně vytvořen z <xref:System.Runtime.InteropServices.GCHandle>, představuje <xref:System.Runtime.InteropServices.GCHandle> , který již byl uvolněn, soubor cookie k <xref:System.Runtime.InteropServices.GCHandle> v různých aplikační domény, nebo byl zařazen do nativního kódu jako <xref:System.Runtime.InteropServices.GCHandle>ale předaný zpět do modulu CLR jako <xref:System.IntPtr>, kde došlo k pokusu přetypování.  
+## <a name="cause"></a>příčina  
+ Soubor cookie je pravděpodobně neplatný, protože nebyl původně vytvořen z <xref:System.Runtime.InteropServices.GCHandle>, <xref:System.Runtime.InteropServices.GCHandle> představuje, který již byl uvolněn, <xref:System.Runtime.InteropServices.GCHandle> je soubor cookie do jiné aplikační domény nebo byl zařazen do nativního kódu jako <xref:System.Runtime.InteropServices.GCHandle>ale předává se zpátky do CLR jako <xref:System.IntPtr>, kde došlo k pokusu o přetypování.  
   
 ## <a name="resolution"></a>Řešení  
- Zadejte platný <xref:System.IntPtr> soubor cookie pro <xref:System.Runtime.InteropServices.GCHandle>.  
+ Zadejte platný <xref:System.IntPtr> soubor cookie <xref:System.Runtime.InteropServices.GCHandle>pro.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Pokud je toto MDA povolena, ladicí program již není možnost vysledovat kořeny zpět na objekty, protože se liší od těch, které vrátí, když není povolená MDA hodnoty souboru cookie, který je předán zpět.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Když je tento soubor MDA povolený, ladicí program už nebude schopný trasovat kořeny zpátky na své objekty, protože hodnoty cookie předané zpět se liší od těch vrácených, když není povolený MDA.  
   
 ## <a name="output"></a>Výstup  
- Neplatný <xref:System.IntPtr> hlášená hodnota souboru cookie.  
+ Je hlášena neplatná <xref:System.IntPtr> hodnota souboru cookie.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -49,4 +49,4 @@ ms.locfileid: "61754398"
 
 - <xref:System.Runtime.InteropServices.GCHandle.FromIntPtr%2A>
 - <xref:System.Runtime.InteropServices.GCHandle>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

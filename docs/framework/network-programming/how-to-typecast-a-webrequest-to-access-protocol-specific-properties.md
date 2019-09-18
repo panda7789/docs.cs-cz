@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d9a8eae2-7454-46f9-b43b-c98477c5bcde
-ms.openlocfilehash: a9488e484aad7ba3df23c33b2cb5b79f234b758e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a224d9dbab0157d77c05a5937fe35c027296a674
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642422"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048029"
 ---
 # <a name="how-to-typecast-a-webrequest-to-access-protocol-specific-properties"></a>Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol
-Tento příklad ukazuje, jak zadání žádosti WebRequest, aby měli přístup ke konkrétním vlastnostem protokolu.  
+Tento příklad ukazuje, jak přetypovatovat WebRequest, abyste mohli získat přístup k vlastnostem specifickým pro protokol.  
   
 ## <a name="example"></a>Příklad  
   
@@ -29,4 +29,4 @@ Dim httpreq As HttpWebRequest = _
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
+- [Programování připojitelných protokolů](programming-pluggable-protocols.md)

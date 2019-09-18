@@ -10,28 +10,28 @@ helpviewer_keywords:
 - best practices, data requests
 - receiving data, best practices
 ms.assetid: 716decc6-5952-47b7-9c5a-ba6fc5698684
-ms.openlocfilehash: 57d0c3640c65d425ded63f53e32416053c3eb926
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c7324dcbc27c95c7d799592700d46c195e7d952b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624667"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048897"
 ---
 # <a name="best-practices-for-systemnet-classes"></a>Osvědčené postupy pro třídy System.Net
-Následující doporučení vám pomůže s použitím třídy obsažené v <xref:System.Net> k jejich přinášelo maximální výhody:  
+Následující doporučení vám pomůžou používat třídy obsažené v aplikaci <xref:System.Net> k jejich nejlepší výhodě:  
   
-- Osvědčené postupy zabezpečení TLS (Transport Layer), najdete v části [zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework](tls.md).
+- Doporučené postupy pro TLS (Transport Layer Security) najdete v tématu [osvědčené postupy TLS (Transport Layer Security) s .NET Framework](tls.md).
 
-- Použití <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> kdykoli je to možné, ne přetypování typu na odvozené třídy. Aplikace, které používají **WebRequest** a **WebResponse** můžete využívat nové internetové protokoly bez nutnosti rozsáhlého kódu změny.  
+- Používejte <xref:System.Net.WebRequest> a<xref:System.Net.WebResponse> kdykoli je to možné, namísto přetypování na odvozené třídy. Aplikace, které používají **WebRequest** a **WebResponse** , můžou využívat nové internetové protokoly, aniž by museli provádět rozsáhlé změny kódu.  
   
-- Při psaní aplikací ASP.NET, které běží na serveru pomocí **System.Net** třídy, je často vhodnější, z hlediska výkonu použít asynchronní metody pro <xref:System.Net.WebRequest.GetResponse%2A> a <xref:System.Net.WebResponse.GetResponseStream%2A>.  
+- Při psaní ASP.NET aplikací, které běží na serveru pomocí tříd **System.NET** , je často lepší, z hlediska výkonu, pro použití asynchronních metod pro <xref:System.Net.WebRequest.GetResponse%2A> a. <xref:System.Net.WebResponse.GetResponseStream%2A>  
   
-- Počet otevřených připojení k internetového zdroji může mít významný dopad na výkon sítě a propustnost. **System.Net** ve výchozím nastavení používá dvě spojení na aplikaci na hostitele. Nastavení <xref:System.Net.ServicePoint.ConnectionLimit%2A> vlastnost <xref:System.Net.ServicePoint> pro vaše aplikace toto číslo můžete navýšit pro konkrétního hostitele. Nastavení <xref:System.Net.ServicePointManager.DefaultPersistentConnectionLimit?displayProperty=nameWithType> vlastnost zvýšit toto výchozí nastavení pro všechny hostitele.  
+- Počet připojení otevřených k internetovému prostředku může mít významný dopad na výkon a propustnost sítě. **System.NET** používá ve výchozím nastavení dvě připojení na každou aplikaci na hostitele. <xref:System.Net.ServicePoint.ConnectionLimit%2A> Nastavení vlastnosti<xref:System.Net.ServicePoint> v pro aplikaci může zvýšit toto číslo pro konkrétního hostitele. <xref:System.Net.ServicePointManager.DefaultPersistentConnectionLimit?displayProperty=nameWithType> Nastavení vlastnosti může zvýšit tuto výchozí hodnotu pro všechny hostitele.  
   
-- Při zápisu protokoly na úrovni soketu, zkuste použít <xref:System.Net.Sockets.TcpClient> nebo <xref:System.Net.Sockets.UdpClient> kdykoli je to možné místo psaní přímo <xref:System.Net.Sockets.Socket>. Tyto dva klientské zapouzdřují vytváření TCP a UDP sockets aniž by bylo potřeba zpracovat podrobné údaje o připojení.  
+- Při psaní protokolů na úrovni soketu se pokuste použít <xref:System.Net.Sockets.TcpClient> nebo <xref:System.Net.Sockets.UdpClient> kdykoli je <xref:System.Net.Sockets.Socket>to možné, místo psaní přímo do. Tyto dvě klientské třídy zapouzdřují vytváření soketů TCP a UDP bez nutnosti zpracovávat podrobnosti o připojení.  
   
-- Pokud přístup k serverům, které vyžadují přihlašovací údaje, použijte <xref:System.Net.CredentialCache> třídy za účelem vytvoření mezipaměti přihlašovacích údajů namísto zadávání při každé žádosti. **CredentialCache** třídy vyhledá mezipaměti k vyhledání příslušné přihlašovací údaje prezentovat s žádostí, můžete homogenního odpovědnosti, vytváření a prezentování přihlašovací údaje podle zadané adresy URL.  
+- Při přístupu k lokalitám, které vyžadují přihlašovací <xref:System.Net.CredentialCache> údaje, použijte třídu k vytvoření mezipaměti přihlašovacích údajů místo jejich zadání se všemi požadavky. Třída **CredentialCache** vyhledá v mezipaměti příslušné přihlašovací údaje, které mají být k dispozici s požadavkem, a tím vám zbavuje vytváření a prezentování přihlašovacích údajů na základě adresy URL.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+- [Síťové programování v rozhraní .NET Framework](index.md)

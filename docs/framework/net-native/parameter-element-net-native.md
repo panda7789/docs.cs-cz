@@ -1,18 +1,18 @@
 ---
-title: <Parameter> – Element (.NET Native)
+title: <Parameter>– Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 22aaa1f3-596f-4733-93db-f4bcabcb5240
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d2dbff544f991712ad26f2cb12d638801b5a3fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c9a462e75df535504d0e98c22c34c11ff7af7d8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867053"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049349"
 ---
-# <a name="parameter-element-net-native"></a>\<Parametr > – Element (.NET Native)
-Použije zásady reflexe pro daný typ argument předaný metodě.  
+# <a name="parameter-element-net-native"></a>\<Parametr > element (.NET Native)
+Aplikuje zásadu odrazu na typ argumentu předaného metodě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +37,29 @@ Použije zásady reflexe pro daný typ argument předaný metodě.
   
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
-|`Name`|Obecné|Požadovaný atribut. Název parametru. Například pro podpis metody `String.CompareTo(Object value)`, hodnota `Name` atribut je "value".|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy odkazů ve WinRT a COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
+|`Name`|Obecné|Požadovaný atribut. Název parametru. Například pro signaturu `String.CompareTo(Object value)`metody hodnota `Name` atributu je "value".|  
+|`Activate`|Reflexe|Nepovinný atribut. Řídí přístup k konstruktorům za běhu, aby bylo možné povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Řídí dotazování pro informace o prvcích programu, ale nepovoluje přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup za běhu ke všem členům typu, včetně konstruktorů, metod, polí, vlastností a událostí, pro povolení dynamického programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup za běhu k konstruktorům, polím a vlastnostem, aby bylo možné instance typu serializovat a deserializovat pomocí knihoven, jako je Newtonsoft JSON serializátor.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci, která <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používá třídu.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci JSON, které <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> používají třídu.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Řídí zásady pro serializaci XML, které <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> používají třídu.|  
+|`MarshalObject`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů odkazů do WinRT a COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů delegátů jako ukazatelů funkcí do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace|Nepovinný atribut. Řídí zásady pro zařazování typů hodnot do nativního kódu.|  
   
-## <a name="name-attribute"></a>Název atributu  
+## <a name="name-attribute"></a>Atribut Name  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*parameter_name*|Název parametru metody, pro které zásada platí. Například pro podpis metody `String.CompareTo(Object value)`, hodnota `Name` atribut je "value".|  
+|*parameter_name*|Název parametru metody, na který se zásada aplikuje. Například pro signaturu `String.CompareTo(Object value)`metody hodnota `Name` atributu je "value".|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Nastavení, které se má použít u tohoto typu zásad Možné hodnoty jsou `All`, `Public` `PublicAndInternal`,,, a`Required PublicAndInternal` .`Required All` `Required Public` Další informace najdete v tématu [nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,14 +68,14 @@ Použije zásady reflexe pro daný typ argument předaný metodě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe runtime konstruktoru nebo metody.|  
+|[\<Method>](method-element-net-native.md)|Aplikuje zásady reflexe za běhu na konstruktor nebo metodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<Parameter>` Element je podřízeným prvkem [ \<metoda >](../../../docs/framework/net-native/method-element-net-native.md) elementu a se používá k aplikování zásad na konkrétní metody parametr. Je zadán parametr konkrétní metody podle názvu, nikoli podle typu. Nejméně jeden atribut, který představuje typ zásad, jako například `Activate` nebo `Dynamic`, musí být k dispozici.  
+ Prvek je podřízeným [ \<prvkem metody >](method-element-net-native.md) a slouží k aplikování zásad na konkrétní parametr metody. `<Parameter>` Konkrétní parametr metody je určen podle názvu, nikoli podle typu. Musí být přítomen alespoň jeden atribut, který představuje typ zásady, `Activate` například `Dynamic`nebo.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<Metoda > – Element](../../../docs/framework/net-native/method-element-net-native.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [\<Metoda > element](method-element-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)

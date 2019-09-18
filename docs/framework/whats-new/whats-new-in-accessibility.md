@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 410f95b373e079fe959068a6540642a6ad043e95
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 22e1ae495276b0c474ad47f695d8410288289f83
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952825"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053726"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v přístupnosti v .NET Framework
 
@@ -169,7 +169,7 @@ V aplikacích, které cílí na .NET Framework 4.7.2 a starších verzí, lze [P
 
 Následující obrázek znázorňuje popis tlačítka, když uživatel vybere tlačítko s klávesnicí.
 
-![Popis tlačítka, když uživatel přejde na tlačítko s klávesnicí](media/tooltip.png)
+![Popis tlačítka, když uživatel přejde na tlačítko s klávesnicí](./media/tooltip.png)
 
 <a name="wpf48" />
 
@@ -189,7 +189,7 @@ V .NET Framework 4.7.2 WPF přidala možnost kreslit <xref:System.Windows.Contro
 
 Chcete-li použít tuto vlastnost, jednoduše ji přidejte do kódu XAML a použijte příslušný štětec nebo vazbu. Výsledný výběr textu vypadá takto:
 
-![Popis tlačítka, když uživatel přejde na tlačítko s klávesnicí](media/selectiontextbrush-property.png)
+![Popis tlačítka, když uživatel přejde na tlačítko s klávesnicí](./media/selectiontextbrush-property.png)
 
 Můžete zkombinovat použití `SelectionBrush` vlastností a `SelectionTextBrush` k vygenerování libovolné kombinace barev pozadí a popředí, kterou považujete za vhodnou.
 
@@ -482,11 +482,11 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   Před: 
 
-  ![Rozšíření ovládacího prvku s fokusem před vylepšeními přístupnosti](media/expander-before.png)
+  ![Rozšíření ovládacího prvku s fokusem před vylepšeními přístupnosti](./media/expander-before.png)
 
   Konci 
 
-  ![Rozšíření ovládacího prvku s fokusem po vylepšeních přístupnosti](media/expander-after.png)
+  ![Rozšíření ovládacího prvku s fokusem po vylepšeních přístupnosti](./media/expander-after.png)
 
 - <xref:System.Windows.Controls.CheckBox>a <xref:System.Windows.Controls.RadioButton> ovládací prvky
 
@@ -494,11 +494,11 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   Před: 
 
-  ![Přepínač vysokého kontrastu s fokusem před vylepšeními přístupnosti](media/radio-button-before.png)
+  ![Přepínač vysokého kontrastu s fokusem před vylepšeními přístupnosti](./media/radio-button-before.png)
 
   Konci 
 
-  ![Přepínač vysoký kontrast s fokusem po vylepšeních přístupnosti](media/radio-button-after.png)
+  ![Přepínač vysoký kontrast s fokusem po vylepšeních přístupnosti](./media/radio-button-after.png)
 
 - <xref:System.Windows.Controls.ComboBox>nad
 
@@ -506,31 +506,31 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   Před: 
 
-  ![Pole se zakázaným ohraničením a textem před vylepšeními přístupnosti](media/combo-disabled-before.png)
+  ![Pole se zakázaným ohraničením a textem před vylepšeními přístupnosti](./media/combo-disabled-before.png)
 
   Konci   
 
-  ![Pole se zakázaným ohraničením a textem po vylepšeních přístupnosti](media/combo-disabled-after.png)
+  ![Pole se zakázaným ohraničením a textem po vylepšeních přístupnosti](./media/combo-disabled-after.png)
 
   Kromě toho zakázaná a zaměřená tlačítka používají správnou barvu motivu.
 
   Před:
 
-  ![Barvy motivů tlačítek před vylepšeními přístupnosti](media/button-themes-before.png) 
+  ![Barvy motivů tlačítek před vylepšeními přístupnosti](./media/button-themes-before.png) 
 
   Konci 
 
-  ![Barvy motivů tlačítek po vylepšeních přístupnosti](media/button-themes-after.png) 
+  ![Barvy motivů tlačítek po vylepšeních přístupnosti](./media/button-themes-after.png) 
 
   Nakonec v .NET Framework 4,7 a starších verzích nastaví styl ovládacího prvku <xref:System.Windows.Controls.ComboBox> na `Toolbar.ComboBoxStyleKey` hodnotu neviditelná šipka rozevíracího seznamu. Tento problém je vyřešený od .NET Framework 4.7.1. Příklad:
 
   Před: 
 
-  ![Panel nástrojů. ComboBoxStyleKey před vylepšeními přístupnosti](media/comboboxstylekey-before.png) 
+  ![Panel nástrojů. ComboBoxStyleKey před vylepšeními přístupnosti](./media/comboboxstylekey-before.png) 
 
   Konci 
 
-  ![Panel nástrojů. ComboBoxStyleKey po vylepšeních přístupnosti](media/comboboxstylekey-after.png) 
+  ![Panel nástrojů. ComboBoxStyleKey po vylepšeních přístupnosti](./media/comboboxstylekey-after.png) 
 
 - <xref:System.Windows.Controls.DataGrid>nad
 
@@ -538,21 +538,21 @@ Počínaje .NET Framework 4.7.1 se v různých ovládacích prvcích WPF provedl
 
   Před: 
 
-  ![Seřadit šipku indikátoru před vylepšeními přístupnosti](media/sort-indicator-before.png) 
+  ![Seřadit šipku indikátoru před vylepšeními přístupnosti](./media/sort-indicator-before.png) 
 
   Konci   
 
-  ![Seřadit šipku indikátoru po vylepšeních přístupnosti](media/sort-indicator-after.png) 
+  ![Seřadit šipku indikátoru po vylepšeních přístupnosti](./media/sort-indicator-after.png) 
 
   Kromě toho se v .NET Framework 4,7 a dřívějších verzích změnil výchozí styl propojení na nesprávnou barvu při stisknutí myši v režimech s vysokým kontrastem. Tento problém se vyřeší od .NET Framework 4.7.1. Podobně, <xref:System.Windows.Controls.DataGrid> sloupce Zaškrtávací políčko používá očekávané barvy zpětné vazby pro fokus klávesnice počínaje .NET Framework 4.7.1.
 
   Před: 
 
-  ![Výchozí styl propojení DataGrid před vylepšeními přístupnosti](media/default-link-style-before.png) 
+  ![Výchozí styl propojení DataGrid před vylepšeními přístupnosti](./media/default-link-style-before.png) 
 
   Konci    
 
-  ![Výchozí styl vazby ovládacího prvku DataGrid po vylepšeních přístupnosti](media/default-link-style-after.png) 
+  ![Výchozí styl vazby ovládacího prvku DataGrid po vylepšeních přístupnosti](./media/default-link-style-after.png) 
 
 Další informace o vylepšení usnadnění přístupu WPF v .NET Framework 4.7.1 najdete v tématu [vylepšení usnadnění v WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf).
 
@@ -583,11 +583,11 @@ Mezi tyto změny vysokého kontrastu patří:
 
   Před:
 
-  ![Zakázaný text před vylepšeními přístupnosti](media/wf-disabled-before.png) 
+  ![Zakázaný text před vylepšeními přístupnosti](./media/wf-disabled-before.png) 
 
   Konci
 
-  ![Zakázaný text po vylepšeních přístupnosti](media/wf-disabled-after.png) 
+  ![Zakázaný text po vylepšeních přístupnosti](./media/wf-disabled-after.png) 
 
 - Vylepšení vysokého kontrastu v dialogovém okně výjimky vlákna.
 
@@ -607,9 +607,9 @@ Model Windows Forms v .NET Framework 4.7.1 obsahuje následující vylepšení p
 
 Od .NET Framework 4.7.1 můžou vývojáři nástrojů pro usnadnění přístupu využít běžné vzory a vlastnosti přístupnosti rozhraní API pro několik ovládacích prvků WinForms. Mezi tato vylepšení přístupnosti patří:
 
-- A teď <xref:System.Windows.Forms.ToolStripSplitButton> podporuje model rozbalení a [sbalení.](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md) <xref:System.Windows.Forms.ComboBox>
+- A teď <xref:System.Windows.Forms.ToolStripSplitButton> podporuje [model rozbalení a sbalení.](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md) <xref:System.Windows.Forms.ComboBox>
 
-- Teď podporuje vzor přepínacího tlačítka. [](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md) <xref:System.Windows.Forms.DataGridViewCheckBoxCell>
+- Teď podporuje [vzor přepínacího tlačítka.](../ui-automation/implementing-the-ui-automation-toggle-control-pattern.md) <xref:System.Windows.Forms.DataGridViewCheckBoxCell>
 
 - Ovládací prvek podporuje vlastnost a vzorek pro [rozbalení a sbalení.](../ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md) <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name> <xref:System.Windows.Forms.ToolStripItem>
 

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bf244271010a7eb47a6c7b283a84c405108d803
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 002434cf51b221a456c8752b5b1388912f875a28
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041469"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045757"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 
@@ -35,13 +35,13 @@ Tento návod znázorňuje následující úlohy:
 - [Nastavení jednoduchého izolovaného prostoru pro testování částečně důvěryhodného kódu](#Setting_up).
 
   > [!IMPORTANT]
-  > Toto je jednoduchý způsob, jak experimentovat s kódem v částečném vztahu důvěryhodnosti. Chcete-li spustit kód, který skutečně pochází z nedůvěryhodných umístění [, přečtěte si téma How to: Spustit částečně důvěryhodný kód v izolovaném](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).
+  > Toto je jednoduchý způsob, jak experimentovat s kódem v částečném vztahu důvěryhodnosti. Chcete-li spustit kód, který skutečně pochází z nedůvěryhodných umístění [, přečtěte si téma How to: Spustit částečně důvěryhodný kód v izolovaném](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).
 
 - [Spouštění kódu v částečně důvěryhodných doménách aplikace](#Running_code).
 
 - [Použití anonymně hostovaných dynamických metod k vygenerování a spuštění kódu v částečném vztahu důvěryhodnosti](#Using_methods).
 
-Další informace o vygenerování kódu ve scénářích s částečnou důvěryhodností najdete v tématu [problémy se zabezpečením v generování](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)reflexe.
+Další informace o vygenerování kódu ve scénářích s částečnou důvěryhodností najdete v tématu [problémy se zabezpečením v generování reflexe](security-issues-in-reflection-emit.md).
 
 Úplný seznam kódu zobrazeného v těchto postupech najdete v [části příklad](#Example) na konci tohoto návodu.
 
@@ -71,7 +71,7 @@ Následující postup vytvoří doménu aplikace v izolovaném prostoru, ve kter
 2. <xref:System.AppDomainSetup> Vytvořte objekt pro inicializaci aplikační domény pomocí cesty aplikace.
 
     > [!IMPORTANT]
-    > Pro zjednodušení tento příklad kódu používá aktuální složku. Chcete-li spustit kód, který skutečně pochází z Internetu, použijte samostatnou složku pro nedůvěryhodný kód, jak je popsáno [v tématu How to: Spustit částečně důvěryhodný kód v izolovaném](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).
+    > Pro zjednodušení tento příklad kódu používá aktuální složku. Chcete-li spustit kód, který skutečně pochází z Internetu, použijte samostatnou složku pro nedůvěryhodný kód, jak je popsáno [v tématu How to: Spustit částečně důvěryhodný kód v izolovaném](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)prostoru (sandboxu).
 
     [!code-csharp[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#3)]
     [!code-vb[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#3)]
@@ -225,5 +225,5 @@ Toto porovnání ukazuje, <xref:System.Security.Permissions.ReflectionPermission
 
 ## <a name="see-also"></a>Viz také:
 
-- [Bezpečnostní problémy v generování reflexe](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
-- [Postupy: Spustit částečně důvěryhodný kód v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Bezpečnostní problémy v generování reflexe](security-issues-in-reflection-emit.md)
+- [Postupy: Spustit částečně důvěryhodný kód v izolovaném prostoru](../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)

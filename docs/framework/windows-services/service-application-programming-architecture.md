@@ -15,12 +15,12 @@ helpviewer_keywords:
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
 author: ghogen
-ms.openlocfilehash: d5dc690cfe460be79251d60850319e5232379f3c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1c197b487f1cb7596f507f663fe3f1fb83857cbd
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935443"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053487"
 ---
 # <a name="service-application-programming-architecture"></a>Architektura programování aplikace služby
 Aplikace služby systému Windows jsou založeny na třídě, která dědí z <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> třídy. Přepíšete metody z této třídy a definujte jejich funkčnost, abyste zjistili, jak se vaše služba chová.  
@@ -57,7 +57,7 @@ Aplikace služby systému Windows jsou založeny na třídě, která dědí z <x
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    > V těchto příkladech se používá pole <xref:System.ServiceProcess.ServiceBase>typu, do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Napište služby](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)programově.  
+    > V těchto příkladech se používá pole <xref:System.ServiceProcess.ServiceBase>typu, do kterého lze přidat každou službu, kterou vaše aplikace obsahuje, a poté lze všechny služby spustit společně. Pokud ale vytváříte jenom jednu službu, můžete se rozhodnout nepoužívat pole a jednoduše deklarovat nový objekt, který dědí <xref:System.ServiceProcess.ServiceBase> a pak ho spustí. Příklad naleznete v tématu [How to: Napište služby](how-to-write-services-programmatically.md)programově.  
   
 - Řada vlastností <xref:System.ServiceProcess.ServiceBase> třídy. Určují, jaké metody lze ve vaší službě volat. Například pokud <xref:System.ServiceProcess.ServiceBase.CanStop%2A> je vlastnost nastavena na `true`, <xref:System.ServiceProcess.ServiceBase.OnStop%2A> lze volat metodu ve vaší službě. Pokud je `true` <xref:System.ServiceProcess.ServiceBase.OnPause%2A> vlastnost nastavena na, lze volat metody <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>a. <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> Když nastavíte jednu z těchto vlastností na `true`, měli byste přepsat a definovat zpracování pro související metody.  
   
@@ -68,5 +68,5 @@ Aplikace služby systému Windows jsou založeny na třídě, která dědí z <x
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvořit služby systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
+- [Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)

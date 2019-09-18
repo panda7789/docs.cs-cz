@@ -2,12 +2,12 @@
 title: Záznamy
 description: Přečtěte F# si, jak záznamy reprezentují jednoduché agregované hodnoty pojmenovaných hodnot, volitelně s členy.
 ms.date: 06/09/2019
-ms.openlocfilehash: d92a1a7517e5b05ee687926df29f33fab123b4dd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1ba002407b1ccbcbceed32df8636fb860e89e3b6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627282"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053930"
 ---
 # <a name="records"></a>Záznamy
 
@@ -108,7 +108,8 @@ type Person =
 and Address =
   { Line1: string
     Line2: string
-    PostCode: string }
+    PostCode: string
+    Occupant: Person }
 ```
 
 Pokud jste definovali předchozí příklad bez `and` klíčového slova, pak nebylo zkompilováno. `and` Klíčové slovo je vyžadováno pro vzájemně rekurzivní definice.

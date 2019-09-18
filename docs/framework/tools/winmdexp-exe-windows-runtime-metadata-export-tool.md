@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0664a68d258380fd9e4824b80f0d7a244cb61e85
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 0b3cf60d670e7fdfa624599bc0eeddc99219c202
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894775"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044022"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 Nástroj pro export metadat prostředí Windows Runtime (Winmdexp. exe) transformuje modul .NET Framework na soubor, který obsahuje prostředí Windows Runtime metadata. I když .NET Framework sestavení a prostředí Windows Runtime soubory metadat používají stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že .NET Framework sestavení nejsou automaticky použitelná jako prostředí Windows Runtime komponenty . Proces zapnutí modulu .NET Framework do prostředí Windows Runtime komponenty se označuje jako *Export*. V .NET Framework 4,5 a .NET Framework 4.5.1 výsledný soubor metadat Windows (. winmd) obsahuje metadata i implementaci.  
   
  Použijete-li šablonu **prostředí Windows Runtime komponenty** , která je umístěna v části **Windows Store** pro C# a Visual Basic v Visual Studio 2013 nebo Visual Studio 2012, je cílem kompilátoru soubor. winmdobj a následné volání kroků sestavení Winmdexp. exe pro export souboru. winmdobj do souboru. winmd. Toto je doporučený způsob, jak vytvořit součást prostředí Windows Runtime. Jestliže chcete mít lepší kontrolu nad procesem sestavení, než jakou poskytuje sada Visual Studio, použijte přímo nástroj Winmdexp.exe.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -54,5 +54,5 @@ winmdexp [options] winmdmodule
 
 - [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 - [Vytváření komponent prostředí Windows Runtime v C# nástroji a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313)
-- [Chybové zprávy nástroje Winmdexp.exe](../../../docs/framework/tools/winmdexp-exe-error-messages.md)
+- [Chybové zprávy nástroje Winmdexp.exe](winmdexp-exe-error-messages.md)
 - [Sestavování, nasazování a Konfigurační nástroje (.NET Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233108(v=vs.100))

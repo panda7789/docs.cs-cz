@@ -11,44 +11,44 @@ helpviewer_keywords:
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
-ms.openlocfilehash: 32aa2c1c4cd31e4591c9fa30c05ebe61058f94c5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61f969c22ac06bd6ed20ccfa9124db3bb35d0692
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008704"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053545"
 ---
-# <a name="develop-windows-service-apps"></a>Vývoj aplikací pro službu Windows
+# <a name="develop-windows-service-apps"></a>Vývoj aplikací služby systému Windows
 
-Pomocí sady Visual Studio nebo sady SDK rozhraní .NET Framework, můžete snadno vytvářet služby tak, že vytvoříte aplikaci, která je nainstalována jako služba. Tento typ aplikace se nazývá služby Windows. S funkcemi rozhraní framework můžete vytvářet služby, je, nainstalovat a spuštění, zastavení a jinak řídit jejich chování.
+Pomocí sady Visual Studio nebo sady .NET Framework SDK můžete snadno vytvářet služby vytvořením aplikace, která je nainstalovaná jako služba. Tento typ aplikace se nazývá služba systému Windows. S funkcemi architektury můžete vytvářet služby, instalovat je a spouštět, zastavovat a jinak řídit jejich chování.
 
 > [!NOTE]
-> V sadě Visual Studio můžete vytvořit službu ve spravovaném kódu v jazyce Visual C# nebo Visual Basic, která můžou spolupracovat s existujícího kódu C++, pokud je to nutné. Nebo můžete vytvořit službu Windows v nativním kódu C++ pomocí [Průvodce projektem ATL](/cpp/atl/reference/atl-project-wizard).
+> V aplikaci Visual Studio můžete vytvořit službu ve spravovaném kódu v jazyce C# Visual nebo Visual Basic, která může v případě potřeby C++ spolupracovat s existujícím kódem. Nebo můžete vytvořit službu systému Windows v nativním režimu C++ pomocí [Průvodce projektem ATL](/cpp/atl/reference/atl-project-wizard).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+[Úvod do aplikací služby systému Windows](introduction-to-windows-service-applications.md)
 
-Poskytuje přehled aplikace služby Windows, dobu života služby a jak se liší od jiné běžné typy projektů aplikace služby.
+Poskytuje přehled aplikací služby systému Windows, životnosti služby a způsobu, jakým se aplikace služby liší od jiných běžných typů projektů.
 
-[Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+[Návod: Vytvoření aplikace služby systému Windows v Návrháři součástí](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
 
-Poskytuje příklad vytvoření služby v jazyce Visual Basic a Visual C#.
+V této části najdete příklad vytvoření služby v Visual Basic a vizuálu C#.
 
-[Architektura programování aplikace služby](../../../docs/framework/windows-services/service-application-programming-architecture.md)
+[Architektura programování aplikace služby](service-application-programming-architecture.md)
 
-Vysvětluje prvky jazyka, použít v service programování.
+Vysvětluje prvky jazyka používané při programování služeb.
 
-[Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+[Postupy: Vytvořit služby systému Windows](how-to-create-windows-services.md)
 
-Popisuje postup vytvoření a konfigurace služeb Windows pomocí šablony projektu služby Windows.
+Popisuje proces vytváření a konfigurace služeb systému Windows pomocí šablony projektu služby systému Windows.
 
 ## <a name="related-sections"></a>Související oddíly
 
-<xref:System.ServiceProcess.ServiceBase> – Popisuje hlavní funkce <xref:System.ServiceProcess.ServiceBase> třídu, která se používá k vytvoření služby.
+<xref:System.ServiceProcess.ServiceBase>– Popisuje hlavní funkce <xref:System.ServiceProcess.ServiceBase> třídy, které slouží k vytváření služeb.
 
-<xref:System.ServiceProcess.ServiceProcessInstaller> – Popisuje funkce <xref:System.ServiceProcess.ServiceProcessInstaller> třídu, která se používá spolu s <xref:System.ServiceProcess.ServiceInstaller> třídy k instalaci a odinstalaci služby.
+<xref:System.ServiceProcess.ServiceProcessInstaller>– Popisuje funkce <xref:System.ServiceProcess.ServiceProcessInstaller> třídy, které se používají spolu <xref:System.ServiceProcess.ServiceInstaller> s třídou pro instalaci a odinstalaci služeb.
 
-<xref:System.ServiceProcess.ServiceInstaller> – Popisuje funkce <xref:System.ServiceProcess.ServiceInstaller> třídu, která se používá spolu s <xref:System.ServiceProcess.ServiceProcessInstaller> třídy k instalaci a odinstalaci služby.
+<xref:System.ServiceProcess.ServiceInstaller>– Popisuje funkce <xref:System.ServiceProcess.ServiceInstaller> třídy, která se používá společně <xref:System.ServiceProcess.ServiceProcessInstaller> s třídou pro instalaci a odinstalaci vaší služby.
 
-[Vytvářet projekty ze šablon](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0fyc0azh(v=vs.120)) -popisuje projekty typů použitých v této kapitole a jak si vybrat mezi nimi.
+[Vytváření projektů z šablon](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0fyc0azh(v=vs.120)) – popisuje typy projektů používané v této kapitole a jejich výběr.

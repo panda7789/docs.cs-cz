@@ -7,12 +7,12 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-ms.openlocfilehash: f632df919417c04701727be3e99eb2bf3f6ff1f7
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7cbf71d7a2bbd1e94864e785894fdea41d522486
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627045"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053336"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)
 
@@ -22,7 +22,7 @@ Následující postup ukazuje, jak použít Visual Basic 6,0 k vytvoření objek
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-### <a name="to-build-the-com-object-that-is-used-in-this-walkthrough"></a>Vytvoření objektu COM, který je použit v tomto návodu
+## <a name="to-build-the-com-object-that-is-used-in-this-walkthrough"></a>Vytvoření objektu COM, který je použit v tomto návodu
 
 1. V Visual Basic 6,0 otevřete nový projekt knihovny DLL ActiveX. Vytvoří se projekt `Project1` s názvem. Obsahuje třídu s názvem `Class1`.
 
@@ -76,7 +76,7 @@ Následující postup ukazuje, jak použít Visual Basic 6,0 k vytvoření objek
 
 V následujícím postupu vytvoříte definiční sestavení, které funguje jako most mezi nespravovaným kódem (například objektem COM) a spravovaným kódem, který používá Visual Studio. Definiční sestavení, které Visual Basic vytvoří, zpracovává mnoho podrobností o práci s objekty COM, jako je například *Interop Marshaling*, proces balení parametrů a návratové hodnoty do ekvivalentních datových typů při přesunu do a z objektů com. Odkaz v aplikaci Visual Basic odkazuje na definiční sestavení, nikoli na samotný objekt modelu COM.
 
-#### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Použití objektu COM s Visual Basic 2005 a novějšími verzemi
+### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Použití objektu COM s Visual Basic 2005 a novějšími verzemi
 
 1. Otevřete nový Visual Basic projekt aplikace systému Windows.
 
@@ -108,7 +108,7 @@ V následujícím postupu vytvoříte definiční sestavení, které funguje jak
 
 Nová třída zdědí vlastnosti základní třídy v objektu COM, přetěžuje metodu a definuje novou metodu pro rozšiřování třídy.
 
-#### <a name="to-test-the-inherited-class"></a>Testování zděděné třídy
+### <a name="to-test-the-inherited-class"></a>Testování zděděné třídy
 
 1. Přidejte tlačítko do formuláře po spuštění a pak dvakrát klikněte na něj, aby se zobrazil jeho kód.
 

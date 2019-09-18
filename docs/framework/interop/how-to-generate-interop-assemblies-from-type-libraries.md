@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: 4afd40c3-68f2-41c5-8ec1-4951bc148b9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a3ee82a9091f0caeee010ec79632ce703efb589
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcdff732afce90f725f4730f0054296e389ada1b
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643254"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051790"
 ---
 # <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Postupy: Generování sestavení vzájemné spolupráce z knihoven typů
-[Importér knihovny typů (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) je nástroj příkazového řádku, který převádí třídy typu coclass a rozhraní, které jsou obsaženy v knihovně typů modelu COM na metadata. Tento nástroj automaticky vytvoří definiční sestavení a oboru názvů pro informace o typu. Po metadata třídy jsou k dispozici, spravovaných klientů můžete vytvořit instance daného typu modelu COM a volat jeho metody, stejně jako by šlo instanci .NET. Tlbimp.exe najednou převede celé knihovny typů na metadata a nemůže generovat informace o typu pro podmnožinu typů definovaných v knihovně typů.  
+Modul pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md) je nástroj příkazového řádku, který převede třídy coclass a rozhraní, které jsou obsaženy v knihovně typů modelu COM, na metadata. Tento nástroj vytvoří definiční sestavení a obor názvů pro informace o typu automaticky. Po zpřístupnění metadat třídy mohou spravované klienty vytvářet instance typu modelu COM a volat jeho metody, stejně jako by šlo o instanci rozhraní .NET. Nástroj Tlbimp. exe převede celou knihovnu typů na metadata najednou a nemůže generovat informace o typu pro podmnožinu typů definovaných v knihovně typů.  
   
-### <a name="to-generate-an-interop-assembly-from-a-type-library"></a>Ke generování sestavení vzájemné spolupráce z knihovny typů  
+### <a name="to-generate-an-interop-assembly-from-a-type-library"></a>Generování sestavení vzájemné spolupráce z knihovny typů  
   
 1. Použijte následující příkaz:  
   
-     **Tlbimp** \< *soubor knihovny typů*>  
+     **Tlbimp** *Type-Library-File* \<>  
   
-     Přidávání **/out:** definiční sestavení s upravený název, jako je například LOANLib.dll vytváří přepínač. Změna názvu sestavení vzájemné spolupráce pomáhá odlišil od původní knihovnu DLL modelu COM a zabránit problémům, které mohou nastat z s duplicitními názvy.  
+     Přidání přepínače **/out:** vytvoří definiční sestavení se změněným názvem, například LOANLib. dll. Změna názvu definičního sestavení může zjednodušit jeho odlišení od původní knihovny DLL modelu COM a zabránit problémům, ke kterým může dojít, pokud mají duplicitní názvy.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz vytvoří sestavení Loanlib.dll v `Loanlib` oboru názvů.  
+ Následující příkaz vytvoří sestavení LOANLib. dll v `Loanlib` oboru názvů.  
   
 ```  
 tlbimp Loanlib.tlb  
 ```  
   
- Následující příkaz vygeneruje sestavení vzájemné spolupráce s upravený název (LOANLib.dll).  
+ Následující příkaz vytvoří definiční sestavení se změněným názvem (LOANLib. dll).  
   
 ```  
 tlbimp LoanLib.tlb /out: LOANLib.dll  
@@ -43,5 +43,5 @@ tlbimp LoanLib.tlb /out: LOANLib.dll
   
 ## <a name="see-also"></a>Viz také:
 
-- [Import knihovny typů ve formě sestavení](../../../docs/framework/interop/importing-a-type-library-as-an-assembly.md)
-- [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)
+- [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
+- [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)

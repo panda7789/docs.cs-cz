@@ -12,45 +12,45 @@ helpviewer_keywords:
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b1223839be3747b04810d6b5bd131733c41631f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1679e283a801044ad5a0baed89f17e6acc74259c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614379"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052447"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode – pomocník spravovaného ladění (MDA)
-`moduloObjectHashcode` Pomocníka spravovaného ladění (MDA) změní chování <xref:System.Object> pro provádění modulo operace na vrátil kód hash <xref:System.Object.GetHashCode%2A> metoda. Výchozí modul pro toto MDA je 1, což způsobí, že <xref:System.Object.GetHashCode%2A> vrátit 0 pro všechny objekty.  
+Pomocník spravovaného ladění (MDA) změní chování <xref:System.Object> třídy a provede operaci modulo u kódu <xref:System.Object.GetHashCode%2A> hash vráceného metodou. `moduloObjectHashcode` Výchozí modul pro tento MDA je 1, což způsobí <xref:System.Object.GetHashCode%2A> , že vrátí 0 pro všechny objekty.  
   
 ## <a name="symptoms"></a>Příznaky  
- Po přesunutí na novou verzi modulu common language runtime (CLR), program už správně provede:  
+ Po přesunu na novou verzi modulu CLR (Common Language Runtime) se program již neprovádí správně:  
   
-- Program je stále nesprávný objekt z <xref:System.Collections.Hashtable>.  
+- Program získává špatný objekt z <xref:System.Collections.Hashtable>.  
   
-- Pořadí výčtu ze <xref:System.Collections.Hashtable> má změnu, která program přestane fungovat.  
+- Pořadí výčtu z a <xref:System.Collections.Hashtable> má změnu, která program přerušuje.  
   
-- Dva objekty, které používají musí rovnat už nejsou stejné.  
+- Dva objekty, které mají být rovny, se již neshodují.  
   
-- Nyní jsou objekty, které používají nebude stejný jako rovnocenné.  
+- Jsou nyní stejné dva objekty, které se neshodují.  
   
-## <a name="cause"></a>Příčina  
- Váš program může zobrazovat v objektu nesprávného z <xref:System.Collections.Hashtable> protože provádění <xref:System.Object.Equals%2A> metody ve třídě pro klíč do <xref:System.Collections.Hashtable> testy pro rovnost objektů porovnáním výsledky volání <xref:System.Object.GetHashCode%2A> – metoda . Kódů hash by neměl použije k testování rovnosti objektu, protože dva objekty mohou mít stejnou hodnotu hash, i když jejich příslušných polí mají různé hodnoty. Tyto kolize hodnot hash kód, i když je vzácné v praxi, dojde k. To má vliv <xref:System.Collections.Hashtable> vyhledávání je, že dva klíče, které nejsou shodné se zdají být stejné, a špatný objekt je vrácen z <xref:System.Collections.Hashtable>. Z důvodů výkonu provádění <xref:System.Object.GetHashCode%2A> verze modulu runtime, takže kolize, které nemusí být na jednu verzi můžou probíhat v budoucích verzích se může změnit. Povolte toto MDA k otestování, jestli váš kód obsahuje chyby, když dojde ke kolizi těchto kódů hash. Když je povoleno, toto MDA způsobí, že <xref:System.Object.GetHashCode%2A> metoda vrátí 0, výsledkem všech kódů hash kolize. Pouze účinku povolení, které toto MDA by měl mít v programu je, že váš program spouští pomaleji.  
+## <a name="cause"></a>příčina  
+ Váš program může získat špatný <xref:System.Collections.Hashtable> objekt z, protože implementace <xref:System.Object.Equals%2A> metody ve třídě <xref:System.Collections.Hashtable> pro klíč do testů pro rovnost objektů <xref:System.Object.GetHashCode%2A> porovnáním výsledků volání metody . Kódy hash by se neměly používat k testování rovnosti objektů, protože dva objekty mohou mít stejný kód hash, a to i v případě, že jejich příslušná pole mají jiné hodnoty. Tyto kolizí kódů hash, i když jsou v praxi zřídka, proběhnou. Efekt, který je výsledkem <xref:System.Collections.Hashtable> vyhledávání, je, že dva klíče, které nejsou stejné, se zdají být stejné a chybný objekt je vrácen <xref:System.Collections.Hashtable>z. Z důvodů výkonu <xref:System.Object.GetHashCode%2A> může implementace nástroje změnit mezi verzemi modulu runtime, takže kolize, ke kterým může dojít v jedné verzi, se mohou vyskytnout v následujících verzích. Povolte Tento MDA k otestování, jestli váš kód obsahuje chyby, když dojde ke kolizi kódů hash. Je-li tato možnost povolena, <xref:System.Object.GetHashCode%2A> způsobí to, že metoda vrátí hodnotu 0, což vede ke konfliktu všech kódů hash. Jediným účinkem, který umožňuje této službě MDA, by měl mít program v programu, že váš program běží pomaleji.  
   
- Pořadí výčtu ze <xref:System.Collections.Hashtable> může změnit z jedné verze modulu runtime, pokud jiný algoritmus používaný k výpočtu hodnoty hash kódy pro změnu klíče. K otestování, jestli váš program přijal závislost na pořadí výčtu klíče nebo hodnoty z tabulky hash, můžete povolit toto MDA.  
+ Pořadí výčtu ze <xref:System.Collections.Hashtable> se může změnit z jedné verze modulu runtime na jiný, pokud algoritmus používaný k výpočtu kódů hash pro změnu klíče. Chcete-li otestovat, zda program provedl závislost na pořadí výčtu klíčů nebo hodnot z zatřiďovací tabulky, můžete povolit Tento MDA.  
   
 ## <a name="resolution"></a>Řešení  
- Nikdy nepoužívejte kódů hash jako náhradu identity objektu. Implementace přepsané <xref:System.Object.Equals%2A?displayProperty=nameWithType> metoda není výsledkem porovnání kódů hash.  
+ Nikdy nepoužívejte kódy hash jako náhradu identity objektu. Implementujte přepsání <xref:System.Object.Equals%2A?displayProperty=nameWithType> metody pro neporovnání kódů hash.  
   
- Nevytvářejte závislosti v řádu výčty klíče nebo hodnoty ve zatřiďovacích tabulek.  
+ Nevytvářejte závislosti na pořadí výčtů klíčů nebo hodnot v zatřiďovacích tabulkách.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Aplikace poběží pomaleji, pokud je povolené toto MDA. Toto MDA jednoduše převezme, která by byla vrácena hodnota hash a místo toho vrátí zbytek po vydělení zbytku.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Pokud je tento MDA povolený, aplikace běží pomaleji. Tento MDA jednoduše převezme kód hash, který by byl vrácen, a místo toho vrátí zbytek, pokud je dělen modulem.  
   
 ## <a name="output"></a>Výstup  
- Neexistuje žádný výstup pro toto MDA.  
+ Pro tento MDA není k dispozici žádný výstup.  
   
-## <a name="configuration"></a>Konfigurace  
- `modulus` Atribut určuje modul používá na hodnotu hash. Výchozí hodnota je 1.  
+## <a name="configuration"></a>Konfiguraci  
+ `modulus` Atribut určuje zbytky používané v kódu hash. Výchozí hodnota je 1.  
   
 ```xml  
 <mdaConfig>  
@@ -64,4 +64,4 @@ ms.locfileid: "64614379"
 
 - <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

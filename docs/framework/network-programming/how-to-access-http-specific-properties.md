@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8848c7e-f5c5-4d42-b86d-9951ff8f4146
-ms.openlocfilehash: 044a48aaffbd2d4ef490405a65236b17ecca1fbf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f902fb3ee97e94c85192836be047dfe632249735
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645812"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048482"
 ---
 # <a name="how-to-access-http-specific-properties"></a>Postupy: Přístup k vlastnostem specifickým pro HTTP
-Tento příklad ukazuje, jak chcete-li vypnout HTTP **Keep-alive** chování a získejte verzi protokolu číslo z webového serveru.  
+V této ukázce se dozvíte, jak vypnout chování **udržování** připojení HTTP a získat číslo verze protokolu z webového serveru.  
   
 ## <a name="example"></a>Příklad  
   
@@ -47,10 +47,10 @@ HttpWResp.Close();
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy **System.Net** oboru názvů.  
+- Odkazuje na obor názvů **System.NET** .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
-- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)
-- [HTTP](../../../docs/framework/network-programming/http.md)
+- [Přístup k internetu přes proxy server](accessing-the-internet-through-a-proxy.md)
+- [Použití aplikačních protokolů](using-application-protocols.md)
+- [HTTP](http.md)

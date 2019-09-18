@@ -10,43 +10,43 @@ helpviewer_keywords:
 - x:Code XAML directive element [XAML Services]
 - XAML [XAML Services], x:Code directive element
 ms.assetid: 87986b13-1a2e-4830-ae36-15f9dc5629e8
-ms.openlocfilehash: f6898008fa3e3e7e385a2bc77c5b2eac7eeda2ec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2b7713548b6269f079ef32b5bf1fe4fa630edcc8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617156"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053794"
 ---
 # <a name="xcode-intrinsic-xaml-type"></a>x:Code – vnitřní typ jazyka XAML
-Umožňuje umístění kódu v rámci výrobní XAML. Takový kód můžete buď zkompilován s žádnou implementaci procesoru XAML, který zkompiluje XAML nebo doleva v produkčním prostředí XAML pro pozdější použití například interpretace modulem runtime, který.  
+Umožňuje umístění kódu v rámci výroby XAML. Takový kód může být zkompilován v jakékoli implementaci procesoru XAML, která kompiluje XAML nebo ponechána v produkci XAML pro pozdější použití, jako je například interpretace modulem runtime.  
   
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML  
   
-```  
+```xaml  
 <x:Code>  
    // code instructions, usually enclosed by CDATA...  
 </x:Code>  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Kód v rámci `x:Code` – element direktivy XAML je stále interpretovány v rámci obecné oboru názvů XML a obory názvů XAML k dispozici. Proto je obvykle nutné uvést kód používá pro `x:Code` uvnitř `CDATA` segmentu.  
+ Kód v rámci `x:Code` elementu direktivy XAML je stále interpretován v rámci obecného oboru názvů XML a poskytnuté obory názvů XAML. Proto je obvykle nutné uzavřít kód používaný `x:Code` v `CDATA` rámci segmentu.  
   
- `x:Code` pro všechny možné nasazení mechanismy produkce XAML není povolena. V konkrétních platforem (například WPF) musí být kód zkompilován. V další architektury `x:Code` využití může být obecně zakázáno.  
+ `x:Code`není povoleno pro všechny možné mechanismy nasazení v produkci XAML. V konkrétních rozhraních (například WPF) musí být kód zkompilován. V jiných rozhraních `x:Code` můžou být použití obecně zakázané.  
   
- Pro rozhraní, které umožňují spravované `x:Code` obsahu, kompilátor správný jazyk určený pro `x:Code` obsahu je vzhledem k nastavení a cíle obsahující projekt, který se používá ke kompilaci aplikace.  
+ Pro architektury, které povolují spravovaný `x:Code` obsah, je správný kompilátor jazyka, který se `x:Code` má použít pro obsah, určený nastavením a cíli obsahujícího projektu, který se používá ke kompilaci aplikace.  
   
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
- Kód deklarované v rámci `x:Code` pro WPF obsahuje několik významná omezení:  
+ Kód deklarovaný v `x:Code` rámci pro WPF má několik důležitých omezení:  
   
-- `x:Code` – Element direktivy musí být bezprostřední podřízený element kořenového elementu XAML výroby.  
+- Element `x:Code` direktiva musí být bezprostřední podřízený element kořenového elementu v produkci XAML.  
   
-- [x: Class – direktiva](x-class-directive.md) musí být zadaná na nadřazený kořenový element.  
+- v nadřazeném kořenovém elementu musí být zadána [direktiva x:Class](x-class-directive.md) .  
   
-- Kód umístit `x:Code` kompilace musí být v rozsahu částečné třídy, která už se vytváří pro příslušnou stránku XAML se zpracuje. Proto veškerý kód, který definujete musí být členy nebo proměnné částečné třídy.  
+- Kód umístěný v rámci `x:Code` bude zpracován kompilací, aby byl v rámci oboru částečné třídy, která je již vytvořena pro tuto stránku XAML. Proto všechen kód, který definujete, musí být členy nebo proměnné této dílčí třídy.  
   
-- Nejde definovat další třídy, jiné než pomocí vnoření třídy uvnitř částečné třídy (vnoření je povoleno, ale není obvyklé, protože vnořené třídy se nedá odkazovat v XAML). Obory názvů CLR než obor názvů, který se používá pro existující částečné třídy nelze definované nebo přidat do.  
+- Nelze definovat další třídy, jiné než vnořování třídy uvnitř dílčí třídy (vnořování je povoleno, ale není to obvyklé, protože vnořené třídy nemohou být v jazyce XAML odkazovány). Obory názvů CLR jiné než obor názvů, který se používá pro existující částečnou třídu, nelze definovat ani přidat do.  
   
-- Odkazy na entity kód mimo obor názvů CLR částečné třídy musí být plně kvalifikovaný. Pokud jsou členy deklarované přepsání na částečné třídy overridable členy, to musí být zadaný pomocí klíčové slovo override specifické pro jazyk. Pokud členy deklarované v `x:Code` oboru v konfliktu s členy částečné třídy vytvořený mimo XAML, tak, že kompilátor oznámí konfliktu, soubor XAML nelze kompilovat nebo načíst.  
+- Odkazy na entity kódu mimo obor názvů částečného CLR třídy musí být plně kvalifikované. Pokud jsou členové deklarováni, je nutné zadat klíčové slovo override pro částečnou třídu. Pokud členové, kteří `x:Code` jsou deklarováni v oboru, jsou v konfliktu se členy částečné třídy vytvořenými z jazyka XAML, takovým způsobem, který kompilátor ohlásí konflikt, nelze zkompilovat ani načíst soubor XAML.  
   
 ## <a name="see-also"></a>Viz také:
 

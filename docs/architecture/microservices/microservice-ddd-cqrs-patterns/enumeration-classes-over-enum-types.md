@@ -2,12 +2,12 @@
 title: Použití tříd Enumeration místo typů výčtů
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mazat, jak lze použít třídy výčtu namísto výčtů jako způsob, jak vyřešit některá omezení.
 ms.date: 10/08/2018
-ms.openlocfilehash: ba687b700d7a6105baf71aa08a0d888afc9a8ec3
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 575757b6022a9e7468c0ffc5d576dd16de3018f5
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70296860"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039933"
 ---
 # <a name="use-enumeration-classes-instead-of-enum-types"></a>Použijte třídy výčtu místo typů Enum.
 
@@ -99,7 +99,7 @@ public class CardType : Enumeration
 
 - **CardType.cs**. Ukázková třída výčtu v eShopOnContainers. \
   <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/BuyerAggregate/CardType.cs>
-    
+
 - **SmartEnum**. Ardalis – třídy, které vám pomůžou vydávat silné typy inteligentnějších výčtů v .NET. \
   <https://www.nuget.org/packages/Ardalis.SmartEnum/>
 

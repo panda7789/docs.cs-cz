@@ -1,19 +1,21 @@
 ---
 title: Analyzátor přenositelnosti .NET – .NET
 description: Naučte se používat nástroj Analyzátor přenositelnosti .NET k vyhodnocení způsobu, jakým je přenos kódu mezi různými implementacemi .NET, včetně .NET Core, .NET Standard, UWP a Xamarin.
-ms.date: 07/18/2019
+ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: fdd2e9f288649b35b778b5da505408822e0ea8fe
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 246c1d25a99e61d7e2f69f1b65ae3534d22571ba
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107507"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054004"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyzátor přenositelnosti .NET
 
-Chcete, aby vaše knihovny podporovaly více platforem? Chcete zjistit, kolik práce je potřeba k zajištění kompatibility vaší aplikace s jinými implementacemi a profily .NET, včetně .NET Core, .NET Standard, UWP a Xamarin pro iOS, Android a Mac? [Analyzátor přenositelnosti .NET](https://github.com/microsoft/dotnet-apiport) je nástroj, který vám poskytne podrobnou zprávu o tom, jak flexibilní je program napříč implementacemi .NET analýzou sestavení. Analyzátor přenositelnosti se nabízí jako [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), které analyzuje sestavení na projekt a jako konzolovou [aplikaci ApiPort](https://aka.ms/apiportdownload), která analyzuje sestavení podle zadaných souborů nebo adresáře.
+Chcete, aby vaše knihovny podporovaly více platforem? Chcete zjistit, kolik práce je potřeba, aby vaše aplikace .NET Framework běžela v .NET Core?  [Analyzátor přenositelnosti .NET](https://github.com/microsoft/dotnet-apiport) je nástroj, který vám poskytne podrobnou zprávu o chybějících rozhraních API .NET pro vaše aplikace nebo knihovny pro přenos na zadané cílené platformy .NET analýzou sestavení. Analyzátor přenositelnosti se nabízí jako [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), které analyzuje sestavení na projekt a jako konzolovou [aplikaci ApiPort](https://aka.ms/apiportdownload), která analyzuje sestavení podle zadaných souborů nebo adresáře.
+
+Jakmile váš projekt převedete na cílení na cílovou platformu, jako je například .NET Core, můžete použít nástroj Roslyn založený na technologii[https://docs.microsoft.com/en-us/dotnet/standard/analyzers/api-analyzer](api-analyzer.md) [API Analyzer Tool] (k identifikaci vyvolané PlatformNotSupportedException rozhraní API a některé jiné problémy s kompatibilitou).
 
 ## <a name="common-targets"></a>Společné cíle
 
@@ -58,7 +60,7 @@ V části Souhrn přenositelnosti sestavy se zobrazuje procento přenositelnosti
 
 ![Podrobnosti přenositelnosti](./media/portability-analyzer/portabilitydetails.png)
 
-Část podrobnosti sestavy obsahuje seznam rozhraní API chybějících z jedné z cílových platforem. 
+V části **Podrobnosti** sestavy jsou uvedena chybějící rozhraní API ze všech vybraných **cílových platforem**. 
 
 - Cílový typ: typ má chybějící rozhraní API z cílové platformy. 
 - Cílový člen: v cílové platformě chybí metoda. 

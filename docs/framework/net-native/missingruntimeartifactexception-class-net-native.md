@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: caa929225701a62c0abb3b335bfd7fb6a129e9e3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: aa882762479995448a99d9cb63fbdea941a253d4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941624"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049494"
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>Třída MissingRuntimeArtifactException (.NET Native)
 **.NET pro aplikace pro Windows pro Windows 10, .NET Native jenom**  
@@ -19,7 +19,7 @@ ms.locfileid: "69941624"
  **Hosting** System. Reflection  
   
 > [!IMPORTANT]
-> `MissingRuntimeArtifactException` Třída je určena výhradně pro vnitřní použití řetězcem nástroje .NET Native. Není určena pro použití v kódu třetí strany, ani byste neměli zpracovávat výjimku v kódu aplikace. Místo toho výjimku Eliminujte přidáním položek do [souboru direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
+> `MissingRuntimeArtifactException` Třída je určena výhradně pro vnitřní použití řetězcem nástroje .NET Native. Není určena pro použití v kódu třetí strany, ani byste neměli zpracovávat výjimku v kódu aplikace. Místo toho výjimku Eliminujte přidáním položek do [souboru direktiv modulu runtime](runtime-directives-rd-xml-configuration-file-reference.md). Další informace najdete v části poznámky.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#22](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingruntimeartifactexception_syntax1.cs#22)]  
@@ -70,7 +70,7 @@ ms.locfileid: "69941624"
 ## <a name="usage-details"></a>Podrobnosti o využití  
  Výjimka `MissingRuntimeArtifactException` je vyvolána, když dojde k pokusu o vytvoření instance typu nebo vyvolat člen typu a, i když je přítomna metadata typu nebo člena, jeho implementace byla odebrána.  
   
- Zda jsou metadata a implementační kód dynamicky spouštěny metodou k dispozici pro aplikaci v době běhu, je definována v souboru direktiv modulu runtime (konfigurace XML), \*. Rd. XML. Chcete-li zabránit vaší aplikaci v vyvolání této výjimky, je \*nutné upravit soubor. Rd. XML, aby bylo zajištěno, že metadata potřebná pro typ nebo člen typu jsou přítomna v době běhu. Informace o formátu \*souboru. Rd. XML naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Zda jsou metadata a implementační kód dynamicky spouštěny metodou k dispozici pro aplikaci v době běhu, je definována v souboru direktiv modulu runtime (konfigurace XML), \*. Rd. XML. Chcete-li zabránit vaší aplikaci v vyvolání této výjimky, je \*nutné upravit soubor. Rd. XML, aby bylo zajištěno, že metadata potřebná pro typ nebo člen typu jsou přítomna v době běhu. Informace o formátu \*souboru. Rd. XML naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
 > Vzhledem k tomu, že tato výjimka označuje, že implementační kód požadovaný vaší aplikací není v době běhu k dispozici, neměli byste `try` tuto výjimku zpracovat v / `catch` bloku. Místo toho byste měli diagnostikovat příčinu výjimky a odstranit ji pomocí souboru direktiv modulu runtime. Obvykle Eliminujte tuto výjimku zadáním vhodného `Activate` nebo `Dynamic` zásad pro element programu v souboru direktiv modulu runtime (\*soubor. Rd. XML). Chcete-li získat položku, kterou můžete přidat do souboru direktiv modulu runtime, který eliminuje výjimku, můžete použít jeden ze dvou poradců při potížích:  
@@ -82,5 +82,5 @@ ms.locfileid: "69941624"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Nastavení zásad direktivy modulu runtime](runtime-directive-policy-settings.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: de7df6ae2d6463d05d1680c288dd202edc639b09
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8902f9a6f37ab45929e147af5f899ef49c4a42b0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949121"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051945"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace .NET Framework pro vývojáře
 
@@ -28,7 +28,7 @@ Tento článek obsahuje odkazy na instalaci všech verzí .NET Framework z .NET 
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Další informace o verzích .NET Framework a o tom, jak určit, které verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](../migration-guide/versions-and-dependencies.md) a [postupy: Určete, které verze .NET Framework jsou](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)nainstalovány.
+Další informace o verzích .NET Framework a o tom, jak určit, které verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](../migration-guide/versions-and-dependencies.md) a [postupy: Určete, které verze .NET Framework jsou](../migration-guide/how-to-determine-which-versions-are-installed.md)nainstalovány.
 
 > [!NOTE]
 > Informace o .NET Framework 3,5 najdete v tématu [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](dotnet-35-windows-10.md).
@@ -227,15 +227,15 @@ V následující tabulce jsou uvedeny podporované jazyky.
 
 - Pokud s .NET Frameworkem začínáte, přečtěte si [Přehled](../get-started/overview.md) úvodu k klíčovým koncepcím a komponentám.
 
-- Nové funkce a vylepšení .NET Framework 4,5 a všech novějších verzích najdete v tématu [co je nového](../../../docs/framework/whats-new/index.md).
+- Nové funkce a vylepšení .NET Framework 4,5 a všech novějších verzích najdete v tématu [co je nového](../whats-new/index.md).
 
 - Podrobné informace o nasazení .NET Framework s vaší aplikací najdete v tématu [Průvodce nasazením pro vývojáře](../deployment/deployment-guide-for-developers.md).
 
-- Změny, které mají vliv na nasazení .NET Framework s vaší aplikací, najdete v tématu zmenšování restartu [systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
+- Změny, které mají vliv na nasazení .NET Framework s vaší aplikací, najdete v tématu [zmenšování restartu systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
 
 - Informace o migraci vaší aplikace z .NET Framework 4 na .NET Framework 4,5 nebo některé z jejích vydání najdete v [Průvodci migrací](../migration-guide/index.md).
 
-- V tématu [.NET Framework reference source](https://referencesource.microsoft.com/) můžete procházet .NET Framework zdrojového kódu v režimu online. Zdroj odkazů je také k dispozici [](https://github.com/Microsoft/referencesource)na GitHubu. Můžete [Stáhnout referenční zdroj](https://referencesource.microsoft.com/download.html) pro zobrazení v režimu offline a procházet zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v blogu o [novém hledání zdroje odkazů .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
+- V tématu [.NET Framework reference source](https://referencesource.microsoft.com/) můžete procházet .NET Framework zdrojového kódu v režimu online. Zdroj odkazů je také k dispozici na [GitHubu](https://github.com/Microsoft/referencesource). Můžete [Stáhnout referenční zdroj](https://referencesource.microsoft.com/download.html) pro zobrazení v režimu offline a procházet zdroje (včetně oprav a aktualizací) během ladění. Další informace najdete v blogu o [novém hledání zdroje odkazů .NET](https://devblogs.microsoft.com/dotnet/a-new-look-for-net-reference-source/).
 
 ## <a name="see-also"></a>Viz také:
 

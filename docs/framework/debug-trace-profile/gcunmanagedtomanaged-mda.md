@@ -14,32 +14,32 @@ helpviewer_keywords:
 ms.assetid: 103eb3a3-1cf0-4406-8a9a-a7798fdc22d1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 66f662114868832f909d734a482e1dc9aefb841a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1679f87276262a08f5717ea81d263f4600542971
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754476"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052765"
 ---
 # <a name="gcunmanagedtomanaged-mda"></a>gcUnmanagedToManaged – pomocník spravovaného ladění
-`gcUnmanagedToManaged` Pomocníka spravovaného ladění (MDA) způsobí, že uvolňování paměti pokaždé, když vlákno přejde z nespravovaného do spravovaného kódu.  
+Pomocník `gcUnmanagedToManaged` spravovaného ladění (MDA) způsobuje uvolnění paměti při každém přechodu vlákna z nespravovaného do spravovaného kódu.  
   
 ## <a name="symptoms"></a>Příznaky  
- Vyvolat pomocí modelu COM a platformy spuštěné nespravovaný uživatelský komponenty aplikace způsobuje narušení přístupu nedeterministická v CLR.  
+ Aplikace, která spouští nespravované uživatelské komponenty pomocí modelu COM a vyvolání platformy, způsobuje nedeterministické porušení přístupu v modulu CLR.  
   
-## <a name="cause"></a>Příčina  
- Pokud aplikace běží nespravované součásti, pak tyto součásti pravděpodobně došlo k poškození haldy uvolňování. To způsobí, že porušení přístupu v CLR systému uvolňování paměti se pokusí vás grafu objektů.  
+## <a name="cause"></a>příčina  
+ Pokud aplikace spouští nespravované uživatelské komponenty, mohou tyto součásti poškodit haldu uvolňování paměti. Tím dojde k porušení přístupu v modulu CLR, když se systém uvolňování paměti pokusí projít graf objektu.  
   
 ## <a name="resolution"></a>Řešení  
- Povolení tohoto Pomocníka s nastavením zkracuje dobu mezi při nespravované součásti poškození haldy uvolňování a po porušení přístupu se stane, můžete vynutit uvolnění paměti dojde k před každý spravovaný přechod.  
+ Povolení tohoto pomocníka zkracuje dobu mezi tím, kdy nespravovaná komponenta poškozuje uvolňování paměti, a když dojde k narušení přístupu vynuceným uvolňováním paměti před každým spravovaným přechodem.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Pokaždé, když přechody vláken z nespravovaného do spravovaného kódu způsobí, že uvolňování paměti.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Způsobí uvolnění paměti při každém přechodu vlákna z nespravovaného do spravovaného kódu.  
   
 ## <a name="output"></a>Výstup  
- Toto MDA negeneruje žádný výstup.  
+ Tento MDA nevytváří žádný výstup.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -52,6 +52,6 @@ ms.locfileid: "61754476"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [gcManagedToUnmanaged](../../../docs/framework/debug-trace-profile/gcmanagedtounmanaged-mda.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [gcManagedToUnmanaged](gcmanagedtounmanaged-mda.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

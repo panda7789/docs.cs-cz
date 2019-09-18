@@ -7,214 +7,214 @@ helpviewer_keywords:
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 50ecb2aad84bd5b6c32f655b1dbbd34cf03a5b29
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9a96fd4c45113afd2ab918b714bd6e12a429917c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624297"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046190"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
-<a name="top"></a> Tyto události shromažďovat informace o pracovních procesů a vláken vstupně-výstupních operací.  
+<a name="top"></a>Tyto události shromažďují informace o vláknech Worker a I/O.  
   
- Existují dvě skupiny události fondu vláken:  
+ Existují dvě skupiny událostí fondu vláken:  
   
-- [Události fondu vláken pracovního procesu](#worker), které poskytují informace o tom, jak aplikace používá fondu vláken a dopad úloh na řízení souběžnosti.  
+- [Události fondu pracovních vláken](#worker), které poskytují informace o tom, jak aplikace používá fond vláken, a vliv úloh na řízení souběžnosti.  
   
-- [Události fondu vláken vstupně-výstupních operací](#io), které poskytují informace o vstupně-výstupních operací podprocesů, které jsou vytvořeny, vyřazení, unretired nebo ukončen ve fondu vláken.  
+- [Události fondu vláken v/v](#io), které poskytují informace o vláknech v/v, které jsou vytvářeny, vyřazeny, vyřazeny nebo ukončeny ve fondu vláken.  
   
 <a name="worker"></a>   
-## <a name="worker-thread-pool-events"></a>Události fondu vláken pracovního procesu  
- Tyto události se vztahují k fondu vláken pro pracovníka modul runtime a poskytují oznámení pro vlákno události (například když vlákno je vytvořen nebo zastavená). Vlákno fond pracovních procesů používá adaptivní algoritmus pro kontrolu souběžnosti, ve kterém se počítá počet vláken podle naměřená propustnost. Události fondu vláken pracovního procesu slouží k pochopení, jak aplikace používá fond vláken a některé úlohy mohou mít na řízení souběžnosti vliv.  
+## <a name="worker-thread-pool-events"></a>Události fondu pracovních vláken  
+ Tyto události se týkají fondu pracovních vláken modulu runtime a poskytují oznámení pro události vlákna (například při vytvoření nebo zastavení vlákna). Fond pracovních vláken používá adaptivní algoritmus pro řízení souběžnosti, kde se počet vláken počítá na základě měřené propustnosti. Události fondu pracovních vláken lze použít k pochopení, jak aplikace používá fond vláken, a vliv na to, kdy některé úlohy mohou mít kontrolu souběžnosti.  
   
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart a ThreadPoolWorkerThreadStop  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň pro tyto události. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ Následující tabulka ukazuje klíčové slovo a úroveň pro tyto události. (Další informace najdete v tématu [klíčová slova a úrovně CLR ETW](clr-etw-keywords-and-levels.md).)  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-|-|-|  
-|`ThreadPoolWorkerThreadStart`|50|Vytvoření pracovního vlákna.|  
+|`ThreadPoolWorkerThreadStart`|50|Pracovní vlákno je vytvořeno.|  
 |`ThreadPoolWorkerThreadStop`|51|Pracovní vlákno je zastavené.|  
-|`ThreadPoolWorkerThreadRetirementStart`|52|Pracovní podproces co vyřadí.|  
-|`ThreadPoolWorkerThreadRetirementStop`|53|Vyřazené pracovní podproces opět aktivní.|  
+|`ThreadPoolWorkerThreadRetirementStart`|52|Recyklování pracovního vlákna.|  
+|`ThreadPoolWorkerThreadRetirementStop`|53|Vyřazené pracovní vlákno se znovu aktivuje.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ActiveWorkerThreadCount|win:UInt32|Počet pracovních vláken, které jsou k dispozici pro zpracování práci, včetně těch, které jsou již práce potřebné ke zpracování.|  
-|RetiredWorkerThreadCount|win:UInt32|Počet pracovních vláken, které nejsou k dispozici pro zpracování prací, ale, která se ukládají do rezervy v případě, že je budete později potřebovat více vláken.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|ActiveWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která jsou k dispozici pro zpracování práce, včetně těch, které již zpracovávají práci.|  
+|RetiredWorkerThreadCount|Win: UInt32|Počet pracovních vláken, která nejsou k dispozici pro zpracování práce, ale jsou držena v rezervě v případě, že jsou později potřeba další vlákna.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ### <a name="threadpoolworkerthreadadjustment"></a>ThreadPoolWorkerThreadAdjustment  
- Tyto události fondu vláken poskytují informace pro pochopení a ladění chování algoritmu vlákno vkládání (řízení souběžnosti). Informace se používá interně ve fondu pracovních vláken.  
+ Tyto události fondu vláken poskytují informace pro porozumění a ladění chování algoritmu vložení vlákna (řízení souběžnosti). Tyto informace se používají interně fondem pracovních vláken.  
   
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`ThreadPoolWorkerThreadAdjustmentSample`|54|Odkazuje na shromažďování informací pro jeden vzorek; To znamená měření propustnosti se určité souběžností úrovni, v okamžik v čase.|  
+|`ThreadPoolWorkerThreadAdjustmentSample`|54|Odkazuje na shromažďování informací pro jednu ukázku; To znamená, že v čase je měření propustnosti s určitou úrovní souběžnosti.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Propustnost|win:Double|Počet dokončování na jednotku času.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|Propustnost|Win: Double|Počet dokončení na jednotku času.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`ThreadPoolWorkerThreadAdjustmentAdjustment`|55|Zaznamenává změny v ovládacím prvku, pokud algoritmus vlákno vkládání (hill průběžné) určuje, že změna úroveň souběžnosti je na místě.|  
+|`ThreadPoolWorkerThreadAdjustmentAdjustment`|55|Zaznamenává změnu v ovládacím prvku, když algoritmus pro vložení vlákna (stoupání) určuje, že změna v úrovni souběžnosti je na místě.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|AverageThroughput|win:Double|Průměrná propustnost ukázkové měření.|  
-|NewWorkerThreadCount|win:UInt32|Nový počet aktivních pracovních vláken.|  
-|Důvod|win:UInt32|Důvod pro úpravu.<br /><br /> 0x00 – zahřívání.<br /><br /> 0x01 - inicializace.<br /><br /> 0x02 – náhodné přesunout.<br /><br /> 0x03 - vzájemnému najetí přesunout.<br /><br /> 0x04 - Změna bodu.<br /><br /> 0x05 - stabilizace.<br /><br /> 0x06 - vyčerpání.<br /><br /> 0x07 - vlákno vypršel časový limit.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|AverageThroughput|Win: Double|Průměrná propustnost vzorku měření.|  
+|NewWorkerThreadCount|Win: UInt32|Nový počet aktivních pracovních vláken.|  
+|Důvod|Win: UInt32|Důvod pro úpravu<br /><br /> 0x00-zahřívání.<br /><br /> 0x01 – inicializuje se.<br /><br /> 0x02 – náhodný přesun.<br /><br /> 0x03-stoupání Move.<br /><br /> 0x04 – bod změny.<br /><br /> 0x05 – stabilizace.<br /><br /> 0x06-vyčerpání.<br /><br /> 0x07 – vypršel časový limit vlákna.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
 |`ThreadPoolWorkerThreadAdjustmentStats`|56|Shromažďuje data ve fondu vláken.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Doba trvání|win:Double|Množství času v sekundách, během kterých byly tyto statistické údaje shromážděny.|  
-|Propustnost|win:Double|Průměrný počet dokončování za sekundu během tohoto intervalu.|  
-|ThreadWave|win:Double|Vyhrazeno pro interní použití.|  
-|ThroughputWave|win:Double|Vyhrazeno pro interní použití.|  
-|ThroughputErrorEstimate|win:Double|Vyhrazeno pro interní použití.|  
-|AverageThroughputErrorEstimate|win:Double|Vyhrazeno pro interní použití.|  
-|ThroughputRatio|win:Double|Relativní zvýšení propustnosti způsobené kolísání počet aktivních pracovních vláken během tohoto intervalu.|  
-|Spolehlivost|win:Double|Rozměr pole ThroughputRatio platnost.|  
-|NewcontrolSetting|win:Double|Počet aktivních pracovních vláken, které bude sloužit jako základ pro budoucí kolísání počet aktivních vláken.|  
-|NewThreadWaveMagnitude|Windows: UInt16|Velikost budoucí kolísání počet aktivních vláken.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|úkolu|Win: Double|Množství času v sekundách, během kterého byly tyto statistiky shromažďovány.|  
+|Propustnost|Win: Double|Průměrný počet dokončení za sekundu v průběhu tohoto intervalu.|  
+|ThreadWave|Win: Double|Vyhrazeno pro interní použití.|  
+|ThroughputWave|Win: Double|Vyhrazeno pro interní použití.|  
+|ThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
+|AverageThroughputErrorEstimate|Win: Double|Vyhrazeno pro interní použití.|  
+|ThroughputRatio|Win: Double|Relativní zvýšení propustnosti způsobené kolísáním počtu aktivních pracovních vláken v průběhu tohoto intervalu.|  
+|Confidence|Win: Double|Míra platnosti pole ThroughputRatio.|  
+|NewcontrolSetting|Win: Double|Počet aktivních pracovních vláken, která budou sloužit jako základ pro budoucí variace počtu aktivních vláken.|  
+|NewThreadWaveMagnitude|Win: UInt16|Velikost budoucích variant počtu aktivních vláken.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="io"></a>   
-## <a name="io-thread-events"></a>Události vláken vstupně-výstupních operací  
- Tyto události fondu vláken vztahuje vláken ve fondu vláken vstupně-výstupních operací (dokončení portů), což je asynchronní.  
+## <a name="io-thread-events"></a>Události v/v vlákna  
+ Tyto události fondu vláken se vyskytují pro vlákna ve fondu vláken v/v (porty dokončení), což je asynchronní.  
   
-### <a name="iothreadcreatev1"></a>IOThreadCreate_V1  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-|-|-|  
-|`IOThreadCreate_V1`|44|Zřetězení vstupně-výstupní operace se vytvoří ve fondu vláken.|  
+|`IOThreadCreate_V1`|44|Ve fondu vláken se vytvoří vstupně-výstupní vlákno.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|Počet vláken vstupně-výstupních operací, včetně nově vytvořeného vlákna.|  
+|Count|win:UInt64|Počet vstupně-výstupních vláken, včetně nově vytvořeného vlákna.|  
 |NumRetired|win:UInt64|Počet vyřazených pracovních vláken.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
-### <a name="iothreadretirev1"></a>IOThreadRetire_V1  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`IOThreadRetire_V1`|46|Zřetězení vstupně-výstupní operace se stane kandidát vyřazení z provozu.|  
+|`IOThreadRetire_V1`|46|Vstupně-výstupní vlákno se staly kandidátem na vyřazení.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
-|NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|Count|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
-### <a name="iothreadunretirev1"></a>IOThreadUnretire_V1  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`IOThreadUnretire_V1`|47|Zřetězení vstupně-výstupních operací je unretired kvůli vstupně-výstupní operace, která dorazí do čekací doba, po vlákno stane kandidát vyřazení z provozu.|  
+|`IOThreadUnretire_V1`|47|Vstupně-výstupní vlákno není vyřazeno z důvodu vstupu/výstupu, který dorazí do čekací doby poté, co se vlákno dostane kandidátem na vyřazení.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|Počet vstupně-výstupní operace vláken ve fondu vláken, včetně ten.|  
-|NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|Count|win:UInt64|Počet vstupně-výstupních vláken ve fondu vláken, včetně tohoto typu.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
- V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
+ Klíčové slovo a úroveň jsou uvedeny v následující tabulce.  
   
-|Klíčové slovo pro vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|Level|  
 |-----------------------------------|-----------|  
-|`ThreadingKeyword` (0x10000)|Informativní (4)|  
+|`ThreadingKeyword` (0x10000)|Informační (4)|  
   
- V následující tabulce jsou uvedeny informace o události.  
+ V následující tabulce jsou uvedeny informace o událostech.  
   
 |Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`IOThreadTerminate`|45|Zřetězení vstupně-výstupní operace se vytvoří ve fondu vláken.|  
+|`IOThreadTerminate`|45|Ve fondu vláken se vytvoří vstupně-výstupní vlákno.|  
   
- Následující tabulka zobrazuje data událostí.  
+ V následující tabulce jsou uvedena data události.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
-|NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|Count|win:UInt64|Počet zbývajících vstupně-výstupních vláken ve fondu vláken.|  
+|NumRetired|win:UInt64|Počet vyřazených vstupně-výstupních vláken.|  
+|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)

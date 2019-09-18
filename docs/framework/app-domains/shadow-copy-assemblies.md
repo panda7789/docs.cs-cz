@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45e38f70ded85e8db36068c19fdd1708511817db
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: df1c86f2d75b0046af851585e943e13d668d8c55
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040722"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053072"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 
@@ -76,7 +76,7 @@ Když se spustí doména aplikace, která používá stínové kopírování, do
 
 Počínaje .NET Framework 4 je výchozí chování při spuštění přímo porovnat datum a čas každého sestavení v adresáři aplikace s datem a časem kopírování v adresáři stínové kopie. Pokud bylo sestavení aktualizováno, je zkopírováno pomocí stejného postupu jako v předchozích verzích .NET Framework; v opačném případě je kopie v adresáři stínové kopie načtena.
 
-Výsledné zlepšení výkonu je největší pro aplikace, ve kterých se sestavení často nemění a změny se většinou vyskytují v malých podmnožině sestavení. Pokud se většina sestavení v aplikaci často mění, může nové výchozí chování způsobit regresi výkonu. Můžete obnovit chování při spuštění předchozích verzí .NET Framework přidáním [ \<prvku > shadowCopyVerifyByTimestamp](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru pomocí `enabled="false"`.
+Výsledné zlepšení výkonu je největší pro aplikace, ve kterých se sestavení často nemění a změny se většinou vyskytují v malých podmnožině sestavení. Pokud se většina sestavení v aplikaci často mění, může nové výchozí chování způsobit regresi výkonu. Můžete obnovit chování při spuštění předchozích verzí .NET Framework přidáním [ \<prvku > shadowCopyVerifyByTimestamp](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru pomocí `enabled="false"`.
 
 <a name="ObsoleteMethods"></a>
 
@@ -90,4 +90,4 @@ Třída má několik metod, <xref:System.AppDomain.SetShadowCopyFiles%2A> např�
 - <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>
-- [\<shadowCopyVerifyByTimestamp – element >](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+- [\<shadowCopyVerifyByTimestamp – element >](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)

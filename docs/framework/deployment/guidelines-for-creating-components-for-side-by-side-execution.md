@@ -7,62 +7,62 @@ helpviewer_keywords:
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8924ed14c597a691698180c7c362b80c41532c2c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7d0cbe66870fc75da02ad56da73de86d4837c0c8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614098"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052140"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>Pokyny pro vytváření komponent pro souběžné spouštění
-Postupujte podle následujících obecných pokynů pro vytvoření spravované aplikace nebo komponenty, které jsou určeny pro spuštění vedle sebe:  
+Pokud chcete vytvořit spravované aplikace nebo komponenty navržené pro souběžné spouštění, postupujte podle těchto obecných pokynů:  
   
-- Typ identity svázat konkrétní verze souboru.  
+- Vázání typu identity na určitou verzi souboru.  
   
-     Modul common language runtime typ identity váže na konkrétní verzi pomocí sestavení se silným názvem. Pokud chcete vytvořit aplikaci nebo komponentu pro spuštění vedle sebe, musíte poskytnout všechna sestavení silným názvem. Tím se vytvoří přesný typ identity a zajistí, že všechny rozlišení typu se směřuje do správného souboru. Sestavení se silným názvem obsahuje verzi, jazykovou verzi a informace o vydavateli, který modul runtime používá k vyhledání správného souboru ke splnění požadavků vazby.  
+     Modul CLR (Common Language Runtime) váže identitu typu na konkrétní verzi souboru pomocí sestavení se silným názvem. Chcete-li vytvořit aplikaci nebo komponentu pro souběžné spouštění, musíte všem sestavením poskytnout silný název. Tím se vytvoří přesná identita typu a zajistí se, že jakékoliv rozlišení typu bude směrováno na správný soubor. Sestavení se silným názvem obsahuje informace o verzi, jazykové verzi a vydavateli, které modul runtime používá k vyhledání správného souboru pro splnění požadavku vazby.  
   
-- Používání úložiště podporující verze.  
+- Použijte úložiště podporující verzi.  
   
-     Modul runtime používá k poskytování úložiště podporující verze globální mezipaměti sestavení. Globální mezipaměť sestavení je nainstalovaný na každém počítači, který používá rozhraní .NET Framework verze aware adresářová struktura. Při instalaci nové verze sestavení, se nepřepíší sestavení nainstalovaná v globální mezipaměti sestavení.  
+     Modul runtime používá globální mezipaměť sestavení (GAC) k poskytování úložiště zohledňující verzi. Globální mezipaměť sestavení (GAC) je adresářová struktura s podporou verzí nainstalovaná na každém počítači, který používá .NET Framework. Sestavení nainstalovaná v globální mezipaměti sestavení nejsou při instalaci nové verze tohoto sestavení přepsána.  
   
-- Vytvoření aplikace nebo komponenty, na kterém běží izolovaně.  
+- Vytvořte aplikaci nebo komponentu, která se spouští izolovaně.  
   
-     Aplikace nebo komponenty, na kterém běží izolovaně musí spravovat prostředky, aby nedocházelo ke konfliktům, pokud současně spuštěné dvě instance aplikace nebo komponenty. Struktura souborů specifické pro verzi musíte použít také aplikace nebo komponenty.  
+     Aplikace nebo komponenta, která je spuštěna v izolaci, musí spravovat prostředky, aby nedocházelo ke konfliktům při současném spuštění dvou instancí aplikace nebo komponenty. Aplikace nebo komponenta musí také používat strukturu souborů specifickou pro danou verzi.  
   
-## <a name="application-and-component-isolation"></a>Aplikace a komponenty izolace  
- Izolace je jeden klíč k úspěšně návrhu aplikace nebo komponenty pro spuštění vedle sebe. Aplikace nebo komponenta musí spravovat všechny prostředky, zejména souboru vstupně-výstupních operací, izolovaně. Postupujte podle následujících pokynů, abyste měli jistotu, že vaše aplikace nebo komponenty běží izolovaně:  
+## <a name="application-and-component-isolation"></a>Izolace aplikací a komponent  
+ Jeden klíč k úspěšnému navrhování aplikace nebo komponenty pro souběžné spouštění je izolace. Aplikace nebo komponenta musí spravovat všechny prostředky, zejména v/v souborů, a to izolovaným způsobem. Postupujte podle těchto pokynů, abyste se ujistili, že se aplikace nebo komponenta spouští izolovaně:  
   
-- Zápis do registru tak konkrétní verzi. Store hodnoty v podregistry nebo klíče, které označuje verzi a sdílet informace nebo stavu mezi verzemi součásti. Díky tomu dvou aplikací nebo součástí, které běží ve stejnou dobu přepsání informace.  
+- Zapište do registru způsobem, který je specifický pro verzi. Ukládejte hodnoty v podregistrech nebo klíčích, které označují verzi, a nesdílejte informace nebo stav mezi verzemi součásti. Tím se zabrání současnému spuštění dvou aplikací nebo komponent od přepsání informací.  
   
-- Ujistěte se, s názvem jádra objekty specifické pro verzi tak, aby se neděje časování. Například časování nastane, pokud dva semafory z dvě verze stejné aplikace čekat na sebe navzájem.  
+- Nastavte pojmenované objekty jádra jako specifické pro verzi, aby nedocházelo ke konfliktu časování. Například konflikt časování nastane, když dva semafory ze dvou různých verzí stejné aplikace navzájem čekají.  
   
-- Ujistěte se, názvy souborů a adresářů podporující verze. To znamená, že soubor struktury by se neměla spoléhat na informace o verzi.  
+- Vytváření názvů souborů a adresářů, které podporují verzi To znamená, že struktury souborů by měly spoléhat na informace o verzi.  
   
-- Vytvořte uživatelské účty a skupiny v podobě specifické pro verzi. Uživatelské účty a skupiny vytvořený aplikací by měly být identifikovány verze. Nesdílejte účty uživatelů a skupin mezi službami verze aplikace.  
+- Vytvořte uživatelské účty a skupiny způsobem, který je specifický pro verzi. Uživatelské účty a skupiny vytvořené aplikací by měly být označeny verzí. Nesdílejte uživatelské účty a skupiny mezi verzemi aplikace.  
   
-## <a name="installing-and-uninstalling-versions"></a>Instalace a odinstalace verze  
- Když navrhujete aplikaci pro spuštění vedle sebe, dodržujte následující pokyny týkající se instalace a odinstalace verze:  
+## <a name="installing-and-uninstalling-versions"></a>Instalace a odinstalace verzí  
+ Při navrhování aplikace pro souběžné spouštění postupujte podle těchto pokynů týkajících se instalace a odinstalace verzí:  
   
-- Neodstraňujte informace z registru, který může být potřeba jiné aplikace běžící pod jinou verzi rozhraní .NET Framework.  
+- Neodstraňujte informace z registru, které mohou být vyžadovány jinými aplikacemi spuštěnými v jiné verzi .NET Framework.  
   
-- Nenahrazují informace v registru, který může být potřeba jiné aplikace běžící pod jinou verzi rozhraní .NET Framework.  
+- Neměňte informace v registru, které mohou být vyžadovány jinými aplikacemi spuštěnými v jiné verzi .NET Framework.  
   
-- Nelze zrušit registraci komponenty modelu COM, které může být potřeba jiné aplikace běžící pod jinou verzi rozhraní .NET Framework.  
+- Zrušte registraci komponent modelu COM, které mohou být vyžadovány jinými aplikacemi spuštěnými v jiné verzi .NET Framework.  
   
-- Neměňte **InprocServer32** nebo jiné položky registru pro server COM, který již byl registrován.  
+- Neměňte **InprocServer32** nebo jiné položky registru pro server com, který je už zaregistrovaný.  
   
-- Neodstraňujte uživatelské účty nebo skupiny, které může být potřeba jiné aplikace běžící pod jinou verzi rozhraní .NET Framework.  
+- Neodstraňujte uživatelské účty nebo skupiny, které mohou být vyžadovány jinými aplikacemi spuštěnými v jiné verzi .NET Framework.  
   
-- Nepřidávejte nic do registru, který obsahuje cestu k bez označení verze.  
+- Nepřidávejte do registru cokoli, co obsahuje cestu s neverzí.  
   
 ## <a name="file-version-number-and-assembly-version-number"></a>Číslo verze souboru a číslo verze sestavení  
- Verze souboru je prostředek systému Win32 verze, která se nepoužívá modul runtime. Obecně platí aktualizujte verzi souboru i pro místní aktualizace. Dva shodné soubory může mít jiný soubor informací o verzi a dvě různé soubory mohou mít stejné informace o verzi souboru.  
+ Verze souboru je prostředek verze Win32, který není používán modulem runtime. Obecně platí, že aktualizujete verzi souboru i pro místní aktualizaci. Dva identické soubory mohou mít různé informace o verzi souboru a dva různé soubory mohou mít stejné informace o verzi souboru.  
   
- Verze sestavení používají modul runtime pro vazby sestavení. Dva identické sestavení pomocí různá čísla verze jsou považovány za dvě různá sestavení modulem runtime.  
+ Verze sestavení je používána modulem runtime pro vazby sestavení. Dvě identická sestavení s různými čísly verze jsou zpracována jako dvě různá sestavení modulem runtime.  
   
- [Nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) umožňuje nahradit sestavení, když pouze čísla verze souboru je novější. Instalační program obecně není možné nainstalovat přes sestavení Pokud číslo verze sestavení je větší.  
+ [Nástroj Global Assembly Cache Tool (Gacutil. exe)](../tools/gacutil-exe-gac-tool.md) umožňuje nahradit sestavení pouze v případě, že je novější pouze číslo verze souboru. Instalační program se obecně nenainstaluje přes sestavení, pokud číslo verze sestavení není větší.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Souběžné spouštění](../../../docs/framework/deployment/side-by-side-execution.md)
-- [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+- [Souběžné spouštění](side-by-side-execution.md)
+- [Postupy: Povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

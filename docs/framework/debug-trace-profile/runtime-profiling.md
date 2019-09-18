@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2486316cf582da09eaa8998d06efb8a4e4ea3a88
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 163022256dfbeb303a500d9c1d574054c5b550d7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967215"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052301"
 ---
 # <a name="runtime-profiling"></a>Běhová profilace
 Profilace je metoda shromažďování údajů o výkonu ve scénáři vývoje nebo nasazení. Tato část je určená pro vývojáře a správce systému, kteří chtějí shromažďovat informace o výkonu aplikace.  
@@ -34,7 +34,7 @@ Profilace je metoda shromažďování údajů o výkonu ve scénáři vývoje ne
   
 3. Na panelu nástrojů sledování výkonu klikněte na ikonu **Přidat** (znaménko plus), pokud je k dispozici. Pokud není k dispozici, klikněte pravým tlačítkem myši v okně monitorování a vyberte možnost **Přidat čítače** .  
   
-     Tím se otevře dialogové okno **Přidat čítače** . Seznam **Dostupné čítače** zobrazuje dostupné objekty výkonu. K dispozici je řada předdefinovaných objektů pro .NET Framework aplikace, včetně funkcí pro správu paměti (**paměť .NET CLR**), interoperability (**zprostředkovatel komunikace .NET CLR**), zpracování výjimek (**výjimky .NET CLR**) a Multithreading ( **.NET CLR LocksAndThreads**). Každý objekt výkonu obsahuje počet jednotlivých čítačů výkonu. Seznam čítačů výkonu dostupných v nástroji Sledování výkonu najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
+     Tím se otevře dialogové okno **Přidat čítače** . Seznam **Dostupné čítače** zobrazuje dostupné objekty výkonu. K dispozici je řada předdefinovaných objektů pro .NET Framework aplikace, včetně funkcí pro správu paměti (**paměť .NET CLR**), interoperability (**zprostředkovatel komunikace .NET CLR**), zpracování výjimek (**výjimky .NET CLR**) a Multithreading ( **.NET CLR LocksAndThreads**). Každý objekt výkonu obsahuje počet jednotlivých čítačů výkonu. Seznam čítačů výkonu dostupných v nástroji Sledování výkonu najdete v tématu [čítače výkonu](performance-counters.md).  
   
 4. Zaškrtněte políčko vedle názvu objektu výkonu, chcete-li zobrazit seznam jednotlivých čítačů výkonu, které podporuje.  
   
@@ -46,15 +46,15 @@ Profilace je metoda shromažďování údajů o výkonu ve scénáři vývoje ne
   
      V poli se seznamem **instancí vybraného objektu** klikněte na název aplikace a sledujte čítač výkonu této aplikace.  
   
-     Chcete-li odlišit více verzí modulu runtime nebo rozlišit více aplikací se stejným názvem, je nutné také upravit klíč registru. Další informace najdete v tématu [čítače výkonu a vnitroprocesové souběžné aplikace](../../../docs/framework/debug-trace-profile/performance-counters-and-in-process-side-by-side-applications.md).  
+     Chcete-li odlišit více verzí modulu runtime nebo rozlišit více aplikací se stejným názvem, je nutné také upravit klíč registru. Další informace najdete v tématu [čítače výkonu a vnitroprocesové souběžné aplikace](performance-counters-and-in-process-side-by-side-applications.md).  
   
 > [!NOTE]
 > Když se při spuštění konzoly výkonu nainstalují nové čítače výkonu, zastavte a restartujte konzolu výkonu, aby se nové čítače zobrazily.  
   
- Chcete-li profilovat sestavení, které existuje v zóně nebo na vzdálené sdílené složce, ujistěte se, že má vzdálené sestavení v počítači, který spouští čítače výkonu, úplný vztah důvěryhodnosti. Pokud sestavení nemá dostatečný vztah důvěryhodnosti, čítače výkonu nebudou fungovat. Informace o udělení důvěryhodnosti do různých zón naleznete v tématu [Caspol. exe (Nástroj pro zásady zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
+ Chcete-li profilovat sestavení, které existuje v zóně nebo na vzdálené sdílené složce, ujistěte se, že má vzdálené sestavení v počítači, který spouští čítače výkonu, úplný vztah důvěryhodnosti. Pokud sestavení nemá dostatečný vztah důvěryhodnosti, čítače výkonu nebudou fungovat. Informace o udělení důvěryhodnosti do různých zón naleznete v tématu [Caspol. exe (Nástroj pro zásady zabezpečení přístupu kódu)](../tools/caspol-exe-code-access-security-policy-tool.md).  
   
 > [!NOTE]
-> V systémech, na kterých je nainstalován .NET Framework 4, nemusí monitor výkonu zobrazovat data pro čítače výkonu v některých kategoriích, jako jsou **data .NET CLR** a **sítě .NET CLR**, pro aplikace, které byly vyvinuty pomocí rozhraní .NET. Rozhraní 1,1. Pokud se jedná o tento případ, můžete nakonfigurovat nástroj sledování výkonu pro zobrazení těchto dat přidáním [ \<prvku forcePerformanceCounterUniqueSharedMemoryReads >](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) do konfiguračního souboru aplikace.  
+> V systémech, na kterých je nainstalován .NET Framework 4, nemusí monitor výkonu zobrazovat data pro čítače výkonu v některých kategoriích, jako jsou **data .NET CLR** a **sítě .NET CLR**, pro aplikace, které byly vyvinuty pomocí rozhraní .NET. Rozhraní 1,1. Pokud se jedná o tento případ, můžete nakonfigurovat nástroj sledování výkonu pro zobrazení těchto dat přidáním [ \<prvku forcePerformanceCounterUniqueSharedMemoryReads >](../configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) do konfiguračního souboru aplikace.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Načítání a vytváření čítačů výkonu prostřednictvím kódu programu  
  .NET Framework poskytuje třídy, které lze použít k programovému přístupu ke stejným informacím o výkonu, které jsou k dispozici v konzole výkon. Tyto třídy můžete použít také k vytvoření vlastních čítačů výkonu. Následující tabulka popisuje některé třídy monitorování výkonu, které jsou k dispozici v .NET Framework.  
@@ -68,4 +68,4 @@ Profilace je metoda shromažďování údajů o výkonu ve scénáři vývoje ne
   
 ## <a name="see-also"></a>Viz také:
 
-- [Čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md)
+- [Čítače výkonu](performance-counters.md)

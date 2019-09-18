@@ -12,32 +12,32 @@ helpviewer_keywords:
 ms.assetid: 2f5d9e7c-ae51-4155-a435-54347aa1f091
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2399f72b6efcdf69d8ff4bb3bce541073063c750
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab3690cac28ef572b19cadb632662590d1ea04c7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753930"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052484"
 ---
 # <a name="marshalcleanuperror-mda"></a>marshalCleanupError – pomocník spravovaného ladění (MDA)
-`marshalCleanupError` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR (CLR) dojde k chybě při pokusu o Vyčištění dočasné struktury a paměť používanou pro zařazování typů dat mezi hranice nativního a spravovaného kódu.  
+Pokud modul CLR (Common Language Runtime) zaznamená chybu při pokusu o vyčištění dočasných struktur a paměti, která se používá pro zařazování datových typů mezi nativním a spravovaným kódem, je aktivována pomocník spravovanéholadění(MDA).`marshalCleanupError`  
   
 ## <a name="symptoms"></a>Příznaky  
- Nevracení paměti dochází při provádění přechody nativního a spravovaného kódu, modulu runtime stavu, například jazyková verze vlákna se neobnoví, nebo dojde k chybám v <xref:System.Runtime.InteropServices.SafeHandle> vyčištění.  
+ Při provádění přechodů nativního a spravovaného kódu dojde k nevracení paměti, běhový stav, jako je například jazyková verze vlákna <xref:System.Runtime.InteropServices.SafeHandle> , není obnoven nebo dojde k chybám při čištění.  
   
-## <a name="cause"></a>Příčina  
- Při čištění dočasné struktury došlo k neočekávané chybě.  
+## <a name="cause"></a>příčina  
+ Při čištění dočasných struktur došlo k neočekávané chybě.  
   
 ## <a name="resolution"></a>Řešení  
- Zkontrolujte všechny <xref:System.Runtime.InteropServices.SafeHandle> destruktor, finalizační metody a vlastní zařazovací modul implementace chyby.  
+ Zkontrolujte všechny <xref:System.Runtime.InteropServices.SafeHandle> implementace destruktoru, finalizační metody a vlastního zařazovacího modulu pro chyby.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Zpráva reporting operace, které selhaly během čištění.  
+ Zpráva oznamující operaci, která během čištění neproběhla úspěšně.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -50,5 +50,5 @@ ms.locfileid: "61753930"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

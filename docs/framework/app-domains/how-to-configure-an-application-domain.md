@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 07ea8438-7a34-49f0-a7e8-3d6ff7e4a482
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb7223d2356ebec54ddd64dee514f1c8785e2d17
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 06883646982aa6bd642dc4fce7881a289dad5901
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921572"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053195"
 ---
 # <a name="how-to-configure-an-application-domain"></a>Postupy: Konfigurace domény aplikace
 Modul CLR (Common Language Runtime) můžete zadat s informacemi o konfiguraci pro novou doménu aplikace <xref:System.AppDomainSetup> pomocí třídy. Při vytváření vlastních aplikačních domén je <xref:System.AppDomainSetup.ApplicationBase%2A>nejdůležitější vlastností. Další vlastnosti **AppDomainSetup** jsou používány převážně hostiteli modulu runtime ke konfiguraci konkrétní domény aplikace.  
@@ -36,4 +36,4 @@ Modul CLR (Common Language Runtime) můžete zadat s informacemi o konfiguraci p
 ## <a name="see-also"></a>Viz také:
 
 - [Programování s aplikačními doménami](application-domains.md#programming-with-application-domains)
-- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)
+- [Používání domén aplikací](use.md)

@@ -2,36 +2,36 @@
 title: Vylepšení výkonu soketů ve verzi 3.5
 ms.date: 03/30/2017
 ms.assetid: 225aa5f9-c54b-4620-ab64-5cd100cfd54c
-ms.openlocfilehash: 28f2543d1f8c81efd32ffbb644265fb5709a9bb3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 577c033fc5639f9d9f50e413fd2cb55a75d48f2c
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641915"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047245"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketů ve verzi 3.5
-<xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třídy vylepšili jsme ve verzi 3.5 pro použití aplikacemi, které můžete dosáhnout nejvyšší výkon sítě asynchronní vstupně-výstupních operací. Řadu nových tříd se přidaly jako součást sadu rozšíření <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní zpracování, které mohou využívat specializované vysoce výkonné soketu aplikací. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové horké oblastí aplikace (při přijetí velkého objemu dat, třeba).  
+<xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třída byla vylepšena ve verzi 3,5 pro použití aplikacemi, které používají asynchronní vstupně-výstupní operace sítě, aby dosáhly nejvyššího výkonu. Do sady vylepšení <xref:System.Net.Sockets.Socket> třídy byly přidány řady nových tříd, které poskytují alternativní asynchronní vzor, který mohou být použity specializovanými aplikacemi s vysokým výkonem. Tato vylepšení byla navržena speciálně pro aplikace síťového serveru, které vyžadují vysoký výkon. Aplikace může používat rozšířený asynchronní vzorek výhradně nebo pouze v cílových aktivních oblastech své aplikace (například při přijímání velkých objemů dat).  
   
-## <a name="class-enhancements"></a>Třída rozšíření  
- Hlavní funkce tato vylepšení se předcházení opakované přidělení a synchronizace objektů během asynchronního soketu vysoký počet vstupně-výstupních operací. Návrh vzoru Begin/End, v tuto chvíli naimplementované <xref:System.Net.Sockets.Socket> třídy vyžaduje soketu asynchronní vstupně-výstupních operací <xref:System.IAsyncResult?displayProperty=nameWithType> přidělit objekt pro každou asynchronní operace soketu.  
+## <a name="class-enhancements"></a>Vylepšení tříd  
+ Hlavní funkcí těchto vylepšení je vyhnout se opakovanému přidělení a synchronizaci objektů během vstupně-výstupních asynchronních soketů. Vzor návrhu begin/end, který je <xref:System.Net.Sockets.Socket> aktuálně implementován třídou pro vstupně-výstupní operace asynchronního soketu, <xref:System.IAsyncResult?displayProperty=nameWithType> vyžaduje objekt přidělený pro každou asynchronní operaci soketu.  
   
- Na novém <xref:System.Net.Sockets.Socket> třídy rozšíření, asynchronní operace jsou popsány pomocí opakovaně použitelného soketu <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> třídy objektů přidělených a spravuje aplikace. Soket vysoce výkonné aplikace nejlíp vědět množství překrývající soketu operace, které musí být zařízením. Aplikace můžete vytvořit tolik z <xref:System.Net.Sockets.SocketAsyncEventArgs> objekty, které potřebuje. Například pokud serverové aplikace musí mít 15 soketu přijmout nevyřízené operace neustále pro podporu příchozí rychlost připojení klienta, jej můžete přidělit 15 opakovaně použitelné <xref:System.Net.Sockets.SocketAsyncEventArgs> objekty předem pro tento účel.  
+ V vylepšeních <xref:System.Net.Sockets.Socket> nové třídy jsou operace asynchronního soketu popsány <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> pomocí opakovaně použitelných objektů třídy, které jsou přiděleny a udržovány aplikací. Vysoce výkonné soketové aplikace, které znají nejlepší množství operací překrytých soketů, které musí být trvalé. Aplikace může vytvořit libovolný <xref:System.Net.Sockets.SocketAsyncEventArgs> počet objektů, které potřebuje. Pokud třeba serverová aplikace potřebuje mít po celou dobu nedokončené operace přijetí soketu, aby podporovaly sazby příchozího připojení klientů, může k tomuto účelu <xref:System.Net.Sockets.SocketAsyncEventArgs> přidělit 15 znovu použitelné objekty.  
   
- Vzor pro provádění asynchronní operace soketu se tato třída se skládá z následujících kroků:  
+ Vzor pro provedení asynchronní operace soketu s touto třídou se skládá z následujících kroků:  
   
-1. Přidělit nový <xref:System.Net.Sockets.SocketAsyncEventArgs> kontextu objektu nebo získejte bezplatné předplatné z fondu aplikací.  
+1. Přidělte nový <xref:System.Net.Sockets.SocketAsyncEventArgs> objekt kontextu nebo si z fondu aplikací získejte nějaký bezplatný.  
   
-2. Nastavení vlastností pro daný kontext objekt na operaci o bude provedena (zpětné volání delegáta metoda a dat vyrovnávací paměti, například).  
+2. Nastavte vlastnosti objektu Context na operaci, která má být provedena (například metoda delegáta zpětného volání a vyrovnávací paměť dat).  
   
-3. Volání metody odpovídající soketu (xxxAsync) k zahájení asynchronní operace.  
+3. Pro zahájení asynchronní operace zavolejte příslušnou metodu Socket (xxxAsync).  
   
-4. Pokud metoda asynchronní soketu (xxxAsync) vrací hodnotu true při zpětném volání, dotaz kontextové vlastnosti stav dokončení.  
+4. Pokud metoda asynchronního soketu (xxxAsync) vrátí hodnotu true ve zpětném volání, proveďte dotaz na vlastnosti kontextu pro stav dokončení.  
   
-5. Pokud metoda asynchronní soketu (xxxAsync) vrátí false. zpětné volání, operace se dokončila synchronně. Vlastnosti kontextu může být dotázán na výsledek operace.  
+5. Pokud metoda asynchronního soketu (xxxAsync) vrátí hodnotu false ve zpětném volání, operace byla dokončena synchronně. Pro výsledek operace lze zadat dotaz na vlastnosti kontextu.  
   
-6. Znovu použít kontext pro jiná operace, vložit ho zpátky do fondu nebo zahodit.  
+6. Znovu použijte kontext pro jinou operaci, uložte ho do fondu nebo ho zahoďte.  
   
- Životnost nový objekt kontextu operace asynchronního soketu se určuje podle odkazů v kódu aplikace a odkazy na asynchronní vstupně-výstupních operací. Není nutné pro aplikaci pro zachování odkaz na objekt kontextu soketu asynchronní operaci po odeslání jako parametr do jedné z metod soketu asynchronní operace. Bude se dál odkazované až do dokončení zpětného volání vrátí. Je ale výhodné pro aplikaci, aby si ponechají odkaz na objekt kontextu, takže můžete znovu použít pro budoucí soketu asynchronní operaci.  
+ Životnost nového objektu kontextu asynchronní operace soketu je určena odkazy v kódu aplikace a asynchronních vstupně-výstupních odkazech. Není nutné, aby aplikace zachovala odkaz na objekt kontextu asynchronní operace soketu poté, co byla odeslána jako parametr jedné z metod asynchronní operace soketu. Zůstane odkazováno, dokud zpětné volání dokončení nevrátí. Nicméně je výhodné, aby aplikace zachovala odkaz na objekt kontextu, aby jej bylo možné znovu použít pro budoucí asynchronní operace soketu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -39,5 +39,5 @@ ms.locfileid: "61641915"
 - <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>
 - <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>
 - <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=nameWithType>
-- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Ukázky programování sítě](network-programming-samples.md)
 - [Příklady kódu soketu](socket-code-examples.md)

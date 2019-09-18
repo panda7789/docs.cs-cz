@@ -15,40 +15,40 @@ helpviewer_keywords:
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 855a1329c9804e4b40d796c639bbe8768156dcc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 43927be83b8b2a9163656f8d6d54c2cf83a23e28
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754463"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052643"
 ---
 # <a name="debugging-tracing-and-profiling"></a>Ladění, trasování a profilace
-Pro ladění aplikace rozhraní .NET Framework, musí být nakonfigurováno kompilátoru a modulu runtime prostředí umožňující ladicího programu pro připojení k aplikaci a k vytvoření symboly a řádku mapy, pokud je to možné, aplikace a její odpovídající Microsoft intermediate Language (MSIL). Poté, co byl ladit spravované aplikace, můžete profilaci pro zvýšení výkonu. Profilace vyhodnocuje a popisuje, řádky zdrojového kódu, které generují kód nejčastěji prováděnou a kolik času je trvá je spouštět.  
+Chcete-li ladit aplikaci .NET Framework, musí být kompilátor a prostředí modulu runtime nakonfigurovány tak, aby umožňovaly ladicímu programu připojit se k aplikaci a aby bylo možné vytvořit symboly a mapy řádků, pokud je to možné, pro aplikaci a její odpovídající Microsoft Intermediate jazyk (MSIL). Po ladění spravované aplikace se dá profilovat, aby se zvýšil výkon. Profilování vyhodnocuje a popisuje řádky zdrojového kódu, které generují nejčastěji spouštěný kód, a dobu, po kterou je potřeba je spustit.  
   
- Aplikace rozhraní .NET framework jsou jednoduše ladit pomocí sady Visual Studio, která zpracovává řadu podrobnosti o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete prozkoumat a zlepšit výkon aplikací využívajících rozhraní .NET Framework pomocí tříd ladění v rozhraní .NET Framework <xref:System.Diagnostics> oboru názvů. Tento obor názvů obsahuje <xref:System.Diagnostics.Trace>, <xref:System.Diagnostics.Debug>, a <xref:System.Diagnostics.TraceSource> třídy pro sledování spuštění toku a <xref:System.Diagnostics.Process>, <xref:System.Diagnostics.EventLog>, a <xref:System.Diagnostics.PerformanceCounter> třídy pro profilování kódu.  
+ Aplikace .NET Framework lze snadno ladit pomocí sady Visual Studio, která zpracovává mnoho podrobností o konfiguraci. Pokud není nainstalována aplikace Visual Studio, můžete kontrolovat a zlepšovat výkon aplikací .NET Framework pomocí tříd ladění v oboru názvů .NET Framework <xref:System.Diagnostics> . Tento obor názvů obsahuje <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.Debug> <xref:System.Diagnostics.TraceSource> třídy,<xref:System.Diagnostics.EventLog>a pro sledování toku spouštění a třídy <xref:System.Diagnostics.PerformanceCounter> ,aprokódprofilace.<xref:System.Diagnostics.Process>  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Povolení JIT – ladění Attach](../../../docs/framework/debug-trace-profile/enabling-jit-attach-debugging.md)  
- Ukazuje, jak nakonfigurovat registr JIT připojit ladicí modul k aplikaci .NET Framework.  
+ [Povolení JIT – ladění Attach](enabling-jit-attach-debugging.md)  
+ Ukazuje, jak nakonfigurovat registr pro JIT – připojit ladicí stroj k aplikaci .NET Framework.  
   
- [Usnadnění ladění obrázku](../../../docs/framework/debug-trace-profile/making-an-image-easier-to-debug.md)  
- Ukazuje, jak vypnout sledování JIT na a optimalizace pro usnadnění sestavení pro ladění.  
+ [Usnadnění ladění obrázku](making-an-image-easier-to-debug.md)  
+ Ukazuje, jak zapnout a optimalizovat sledování JIT, aby bylo sestavení snazší ladit.  
   
- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- Popisuje, jak monitorovat aplikace během jejího běhu a jak k instrumentaci a jak dobře zobrazit provádí, nebo jestli se něco nepovedlo.  
+ [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)  
+ Popisuje, jak monitorovat provádění aplikace, když je spuštěná, a jak ji instrumentovat, aby zobrazila, jak dobře funguje, nebo jestli se něco pokazilo.  
   
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- Popisuje asistentů spravovaného ladění (mda), které ladíte pomůcek, které fungují ve spojení s modul CLR (CLR), která poskytují informace o stavu modulu runtime.  
+ [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)  
+ Popisuje pomocníky spravovaného ladění (MDA), které jsou v kombinaci s modulem CLR (Common Language Runtime) k dispozici informace o stavu modulu runtime.  
   
- [Rozšíření ladění pomocí atributů zobrazení ladicího programu](../../../docs/framework/debug-trace-profile/enhancing-debugging-with-the-debugger-display-attributes.md)  
- Popisuje, jak může vývojář typu určit co, že typ bude vypadat podobně jako když se objeví v ladicí program.  
+ [Rozšíření ladění pomocí atributů zobrazení ladicího programu](enhancing-debugging-with-the-debugger-display-attributes.md)  
+ Popisuje, jak může vývojář typu určit, jaký typ bude vypadat, jako by byl zobrazen v ladicím programu.  
   
- [Čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md)  
- Popisuje čítače, které můžete použít ke sledování výkonu aplikace.  
+ [Čítače výkonu](performance-counters.md)  
+ Popisuje čítače, které lze použít ke sledování výkonu aplikace.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ladění aplikací ASP.NET nebo ASP.NET Core v sadě Visual Studio](/visualstudio/debugger/debugging-aspnet-and-ajax-applications)  
- Obsahuje požadavky a pokyny, jak ladit aplikaci technologie ASP.NET při vývoji nebo po nasazení.  
+ [Ladění aplikací ASP.NET nebo ASP.NET Core v aplikaci Visual Studio](/visualstudio/debugger/debugging-aspnet-and-ajax-applications)  
+ Poskytuje předpoklady a pokyny pro ladění aplikace ASP.NET během vývoje nebo po nasazení.  
   
- [Průvodce vývojem](../../../docs/framework/development-guide.md)  
+ [Průvodce vývojem](../development-guide.md)  
  Poskytuje postupy pro všechny klíčové oblasti technologie a úkoly pro vývoj aplikací včetně vytváření, konfigurace, ladění, zabezpečení a nasazení aplikace a informací o dynamickém programování, interoperabilitě, rozšiřitelnosti, správě paměti a podprocesech.

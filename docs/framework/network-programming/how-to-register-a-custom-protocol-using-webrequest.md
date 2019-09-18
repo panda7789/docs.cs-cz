@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 98ddbdb9-66b1-4080-92ad-51f5c447fcf8
-ms.openlocfilehash: 5c9a81fc61a2272056ba34fa387fdafee6203824
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 05b6f6c3f0f1fc1b36b60e8b0dae50de2826aba4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61642552"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048255"
 ---
 # <a name="how-to-register-a-custom-protocol-using-webrequest"></a>Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest
-Tento příklad ukazuje, jak registrovat protokol určité třídy, která je definována jinde. V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrací `CustomWebRequest` objektu. Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.  
+Tento příklad ukazuje, jak registrovat třídu specifickou pro protokol, která je definována jinde. V tomto příkladu `CustomWebRequestCreator` je uživatelem implementovaný objekt, který implementuje `CustomWebRequest` metodu **Create** , která vrací objekt. Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.  
   
 ## <a name="example"></a>Příklad  
   
@@ -30,8 +30,8 @@ Dim req As WebRequest = WebRequest.Create("custom://customHost.contoso.com/")
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
- Odkazy <xref:System.Net> oboru názvů.  
+ Odkazy na <xref:System.Net> obor názvů.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
+- [Programování připojitelných protokolů](programming-pluggable-protocols.md)
