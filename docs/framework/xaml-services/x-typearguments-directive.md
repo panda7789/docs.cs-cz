@@ -10,15 +10,15 @@ helpviewer_keywords:
 - TypeArguments attribute in XAML [XAML Services]
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
-ms.openlocfilehash: 41f29673622fa7918238dd014b97ee3cf0766257
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a2a960870d368e57272b3368e69eb38ebbe2ba5d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486203"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053720"
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
-Předá omezení argumentů obecného konstruktoru obecného typu.  
+Předává omezující argumenty typu Obecné k konstruktoru obecného typu.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -30,56 +30,56 @@ Předá omezení argumentů obecného konstruktoru obecného typu.
   
 |||  
 |-|-|  
-|`object`|Deklarace elementu objektu XAML typu, který se zálohuje pomocí obecného typu CLR. Pokud `object` odkazuje na typ XAML, který nepochází od výchozí obor názvů XAML, `object` vyžaduje předpona k označení oboru názvů XAML kde `object` existuje.|  
-|`typeString`|Řetězec, který deklaruje nejmíň jeden XAML zadejte názvy jako řetězce, který poskytuje argumentů typu pro obecný typ CLR. Viz poznámky pro další syntaxe poznámky.|  
+|`object`|Deklarace elementu objektu typu XAML, který je zálohovaný obecným typem CLR. Pokud `object` odkazuje na typ XAML, který není z výchozího oboru názvů XAML, `object` vyžaduje předponu k označení oboru názvů XAML, kde `object` existuje.|  
+|`typeString`|Řetězec, který deklaruje jeden nebo více názvů typů XAML jako řetězců, které poskytuje argumenty typu pro obecný typ CLR. Další poznámky k syntaxi najdete v části poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve většině případů XAML typy, které se používají jako položka informace `typeString` mají předponu řetězec. Obvyklé typy CLR obecná omezení (například <xref:System.Int32> a <xref:System.String>) pocházejí z knihovny základních tříd CLR. Tyto knihovny nejsou namapované na typické výchozí specifické pro architekturu obory názvů XAML a proto vyžadovat mapování předpony pro využití XAML.  
+ Ve většině případů jsou typy XAML, které jsou používány jako informační položka v `typeString` řetězci, předem opraveny. Typické typy obecných omezení CLR (například <xref:System.Int32> a <xref:System.String>) pocházejí z knihoven základních tříd CLR. Tyto knihovny nejsou namapovány na typické standardní obory názvů jazyka XAML specifické pro rozhraní, a proto vyžadují mapování předpony pro použití XAML.  
   
- S použitím oddělovače čárky můžete zadat více než jeden název typu XAML.  
+ Pomocí oddělovače čárky lze zadat více než jeden název typu XAML.  
   
- Obecná omezení sami použití obecných typů, typů argumentů vnořené omezení může být obsažený ve závorky ().  
+ Pokud obecná omezení samy používají obecné typy, vnořené argumenty typu omezení mohou být obsaženy v závorkách ().  
   
- Všimněte si, že tato definice `x:TypeArguments` je specifická pro rozhraní .NET Framework XAML Services a pomocí CLR zálohování. Definice úrovni jazyka najdete v [ \[MS-XAML\] části 5.3.11](https://go.microsoft.com/fwlink/?LinkId=114525).  
+ Všimněte si, že tato `x:TypeArguments` definice je specifická pro .NET Framework služby XAML a pomocí zálohování CLR. Definici na úrovni jazyka najdete v [ \[části MS-\] XAML 5.3.11](https://go.microsoft.com/fwlink/?LinkId=114525).  
   
 ## <a name="usage-examples"></a>Příklady použití  
- Tyto příklady předpokládají, že jsou deklarovány následující definice oboru názvů XAML:  
+ Pro tyto příklady Předpokládejme, že jsou deklarovány následující definice oboru názvů XAML:  
   
-```  
+```xaml  
 xmlns:sys="clr-namespace:System;assembly=mscorlib"  
 xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
 ```  
   
-### <a name="liststring"></a>Seznam\<řetězec >  
- `<scg:List x:TypeArguments="sys:String" ...>` Vytvoří novou instanci <xref:System.Collections.Generic.List%601> s <xref:System.String> argument typu.  
+### <a name="liststring"></a>Výpis\<> řetězců  
+ `<scg:List x:TypeArguments="sys:String" ...>`Vytvoří instanci New <xref:System.Collections.Generic.List%601> <xref:System.String> s argumentem typu.  
   
-### <a name="dictionarystringstring"></a>Slovník\<String, String >  
- `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>` Vytvoří novou instanci <xref:System.Collections.Generic.Dictionary%602> se dvěma <xref:System.String> argumenty typu.  
+### <a name="dictionarystringstring"></a>Řetězec\<slovníku, > řetězců  
+ `<scg:Dictionary x:TypeArguments="sys:String,sys:String" ...>`Vytvoří instanci nového <xref:System.Collections.Generic.Dictionary%602> se dvěma <xref:System.String> argumenty typu.  
   
-### <a name="queuekeyvaluepairstringstring"></a>Fronty < nenašla\<String, String >>  
- `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>` Vytvoří novou instanci <xref:System.Collections.Generic.Queue%601> , který má omezení <xref:System.Collections.Generic.KeyValuePair%602> s argumenty typu vnitřní omezení, které <xref:System.String> a <xref:System.String>.  
+### <a name="queuekeyvaluepairstringstring"></a>< Řetězec nenašla\<, řetězec > >  
+ `<scg:Queue x:TypeArguments="scg:KeyValuePair(sys:String,sys:String)" ...>`Vytvoří instanci nového <xref:System.Collections.Generic.Queue%601> , která má <xref:System.Collections.Generic.KeyValuePair%602> omezení s argumenty <xref:System.String> typu vnitřního omezení a <xref:System.String>.  
   
-## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>XAML 2006 a WPF XAML obecné použití  
- Pro použití XAML 2006 a XAML, který se používá pro aplikace WPF, existují následující omezení pro `x:TypeArguments` a použití obecného typu z XAML v obecné:  
+## <a name="xaml-2006-and-wpf-generic-xaml-usages"></a>Obecná použití XAML XAML 2006 a WPF  
+ V případě použití XAML 2006 a XAML, který se používá pro aplikace WPF, existují následující omezení pro `x:TypeArguments` a obecné typy použití z XAML obecně:  
   
-- Kořenový element souboru XAML může podporovat obecný využití XAML, který odkazuje na obecném typu.  
+- Pouze kořenový prvek souboru XAML může podporovat obecné použití XAML, které odkazuje na obecný typ.  
   
-- Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénáře pro podporu obecných využití XAML v subsystému WPF.  
+- Kořenový element musí být namapován na obecný typ s alespoň jedním argumentem typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénář pro podporu obecného použití XAML v jazyce WPF.  
   
-- Kořenový prvek XAML objekt elementu obecné musí také deklarovat částečné třídy pomocí `x:Class`. To platí i v případě, že definice WPF akci sestavení.  
+- Kořenový element objektu XAML elementu Generic musí také deklarovat částečnou třídu pomocí `x:Class`. To platí i v případě, že definujete akci sestavení WPF.  
   
-- `x:TypeArguments` nemůže odkazovat na vnořených obecná omezení.  
+- `x:TypeArguments`nejde odkazovat na vnořená obecná omezení.  
   
-## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 nebo XAML 2006 bez WPF 3.0 nebo WPF 3.5 závislostí  
- V rozhraní .NET Framework XAML Services pro XAML 2006 nebo XAML 2009 jsou mírnější omezení související s WPF v použití obecného XAML. Generický objekt elementu v jakékoliv pozici v kódu XAML, které podporují základní typ systému a objekt modelu lze vytvořit instanci.  
+## <a name="xaml-2009-or-xaml-2006-with-no-wpf-30-or-wpf-35-dependency"></a>XAML 2009 nebo XAML 2006 bez závislosti WPF 3,0 nebo WPF 3,5  
+ V jazyce .NET Framework XAML pro XAML 2006 nebo XAML 2009 jsou omezení související s WPF pro obecné použití XAML uvolněna. Můžete vytvořit instanci obecného prvku objektu na libovolné pozici v kódu XAML, který může podporovat systém back-Type a objektový model.  
   
- Pokud používáte XAML 2009 místo mapování CLR základní typy získat primitiv jazyka XAML typy, můžete použít [předdefinované typy obecných primitiv jazyka XAML](built-in-types-for-common-xaml-language-primitives.md) jako informačních položek v `typeString`. Například můžete deklarovat následující (mapování předpon, které nejsou uvedené, ale x je obor názvů jazyka XAML XAML pro XAML 2009):  
+ Použijete-li XAML 2009 namísto mapování základních typů CLR pro získání typů XAML pro společné jazykové primitivy, můžete použít [vestavěné typy pro běžné primitivní prvky jazyka XAML](built-in-types-for-common-xaml-language-primitives.md) jako informační položky v `typeString`. Například můžete deklarovat následující (mapování předpon není zobrazeno, ale x je obor názvů XAML jazyka XAML pro XAML 2009):  
   
 ```xaml  
 <my:BusinessObject x:TypeArguments="x:String,x:Int32"/>  
 ```  
   
- V grafickém subsystému WPF a při cílení na rozhraní .NET Framework 4, je možné použít funkce XAML 2009 spolu s `x:TypeArguments` , ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce. Pokud třeba do kódu kompilaci XAML, musí pracovat v rámci omezení, které jste si poznamenali v části "XAML 2006 a WPF obecný XAML použití".  
+ V jazyce WPF a při cílení na .NET Framework 4 můžete použít funkce XAML 2009 společně `x:TypeArguments` s, ale pouze pro volný kód XAML (XAML, který není zkompilován se značkami). XAML kompilovaný kód XAML pro WPF a formát BAML jazyka XAML aktuálně nepodporují klíčová slova a funkce XAML 2009. Pokud potřebujete kód zkompilovat do kódu XAML, je nutné pracovat s omezeními v části "XAML 2006 and WPF Generic XAML".  
   
 ## <a name="see-also"></a>Viz také:
 

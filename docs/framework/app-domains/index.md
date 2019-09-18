@@ -9,37 +9,40 @@ helpviewer_keywords:
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4f0c2ad1290a7f9cf8d0c43c504a3e0a9628b86
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 84d674f7ae8e80d7a5e6a40539e3330fcfa9b563
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971928"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053118"
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>Programování s doménami aplikací a sestaveními
-Hostitelé, jako je Microsoft Internet Explorer, ASP.NET a prostředí Windows, načítají modul CLR (Common Language Runtime) do procesu, vytvoří [doménu aplikace](../../../docs/framework/app-domains/application-domains.md) v tomto procesu a pak načtou a spustí uživatelský kód v této doméně aplikace při spuštění rozhraní .NET. Aplikace architektury. Ve většině případů se nemusíte starat o vytváření domén aplikací a načítání sestavení do nich, protože hostitel modulu runtime provádí tyto úlohy.  
+
+Hostitelé, jako je Microsoft Internet Explorer, ASP.NET a prostředí Windows, načítají modul CLR (Common Language Runtime) do procesu, vytvoří [doménu aplikace](application-domains.md) v tomto procesu a pak načtou a spustí uživatelský kód v této doméně aplikace při spuštění rozhraní .NET. Aplikace architektury. Ve většině případů se nemusíte starat o vytváření domén aplikací a načítání sestavení do nich, protože hostitel modulu runtime provádí tyto úlohy.  
   
- Pokud však vytváříte aplikaci, která bude hostovat modul CLR (Common Language Runtime), vytváříte nástroje nebo kód, který chcete uvolnit programově, nebo vytváříte připojené součásti, které se dají uvolnit a znovu načíst, budete vytvářet vlastní. aplikační domény. I v případě, že nevytváříte hostitele modulu runtime, Tato část poskytuje důležité informace o tom, jak pracovat s doménami aplikací a sestaveními načtenými v těchto doménách aplikace.  
+Pokud však vytváříte aplikaci, která bude hostovat modul CLR (Common Language Runtime), vytváříte nástroje nebo kód, který chcete uvolnit programově, nebo vytváříte připojené součásti, které se dají uvolnit a znovu načíst, budete vytvářet vlastní. aplikační domény. I v případě, že nevytváříte hostitele modulu runtime, Tato část poskytuje důležité informace o tom, jak pracovat s doménami aplikací a sestaveními načtenými v těchto doménách aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Témata s návody k doménám a sestavením aplikací](../../../docs/framework/app-domains/application-domains-and-assemblies-how-to-topics.md)  
- Obsahuje odkazy na všechna témata s postupy, která najdete v Koncepční dokumentaci pro programování s doménami aplikací a sestaveními.  
+
+[Témata s návody k doménám a sestavením aplikací](application-domains-and-assemblies-how-to-topics.md)  
+Obsahuje odkazy na všechna témata s postupy, která najdete v Koncepční dokumentaci pro programování s doménami aplikací a sestaveními.  
   
- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)  
- V této části najdete příklady vytváření, konfigurace a používání domén aplikací.  
+[Používání domén aplikací](use.md)  
+V této části najdete příklady vytváření, konfigurace a používání domén aplikací.  
   
- [Programování se sestaveními](../../standard/assembly/program.md)  
- Popisuje způsob vytváření, podepisování a nastavení atributů v rámci sestavení.  
+[Programování se sestaveními](../../standard/assembly/program.md)  
+Popisuje způsob vytváření, podepisování a nastavení atributů v rámci sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Generování dynamických metod a sestavení](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
- Popisuje způsob vytváření dynamických sestavení.  
+
+[Generování dynamických metod a sestavení](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
+Popisuje způsob vytváření dynamických sestavení.  
   
- [Sestavení v .NET](../../standard/assembly/index.md)  
- Poskytuje koncepční přehled sestavení.  
+[Sestavení v .NET](../../standard/assembly/index.md)  
+Poskytuje koncepční přehled sestavení.  
   
- [Aplikační domény](../../../docs/framework/app-domains/application-domains.md)  
- Poskytuje koncepční přehled domén aplikací.  
+[Aplikační domény](application-domains.md)  
+Poskytuje koncepční přehled domén aplikací.  
   
- [Přehled reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)  
- Popisuje způsob použití třídy **reflexe** k získání informací o sestavení.
+[Přehled reflexe](../reflection-and-codedom/reflection.md)  
+Popisuje způsob použití třídy **reflexe** k získání informací o sestavení.

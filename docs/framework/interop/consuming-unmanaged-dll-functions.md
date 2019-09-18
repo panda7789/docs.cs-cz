@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e9308d6bf0eefaa60af17a721cd1c26827469eb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9ef6a31ba9589ded9527d15e90724d0d04749579
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946847"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051847"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
 Vyvolání platformy je služba, která umožňuje spravovanému kódu volat nespravované funkce implementované v knihovně DLL (Dynamic Link Library), jako jsou ty v rozhraní API systému Windows. Vyhledá a vyvolá exportovanou funkci a zařadí argumenty (celá čísla, řetězce, pole, struktury atd.) v rámci hranice mezioperace podle potřeby.  
@@ -29,27 +29,27 @@ Vyvolání platformy je služba, která umožňuje spravovanému kódu volat nes
   
 #### <a name="to-consume-exported-dll-functions"></a>Využití exportovaných funkcí DLL  
   
-1. [Identifikujte funkce v knihovnách DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md).  
+1. [Identifikujte funkce v knihovnách DLL](identifying-functions-in-dlls.md).  
   
      Minimální je nutné zadat název funkce a název knihovny DLL, která ji obsahuje.  
   
-2. [Vytvořte třídu pro uchovávání funkcí knihovny DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md).  
+2. [Vytvořte třídu pro uchovávání funkcí knihovny DLL](creating-a-class-to-hold-dll-functions.md).  
   
      Můžete použít existující třídu, vytvořit jednotlivou třídu pro každou nespravovanou funkci nebo vytvořit jednu třídu, která obsahuje sadu souvisejících nespravovaných funkcí.  
   
-3. [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md).  
+3. [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md).  
   
      [Visual Basic] Použijte příkaz **Declare** s klíčovými slovy **Function** a **lib** . V některých vzácných případech můžete použít **DllImportAttribute** pomocí klíčových slov **sdílených funkcí** . Tyto případy jsou vysvětleny dále v této části.  
   
-     [C#] Použijte **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označte metodu statickými a externými modifikátory.  
+     [C#] Použijte **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označte metodu **statickými** a **externými** modifikátory.  
   
      [C++] Použijte **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označte obálkovou metodu nebo funkci s **extern "C"** .  
   
-4. [Volání funkce knihovny DLL](../../../docs/framework/interop/calling-a-dll-function.md).  
+4. [Volání funkce knihovny DLL](calling-a-dll-function.md).  
   
-     Volejte metodu na spravované třídě stejně jako jakoukoli jinou spravovanou metodu. [Předání struktur](../../../docs/framework/interop/passing-structures.md) a [implementace funkcí zpětného volání](../../../docs/framework/interop/callback-functions.md) jsou zvláštní případy.  
+     Volejte metodu na spravované třídě stejně jako jakoukoli jinou spravovanou metodu. [Předání struktur](passing-structures.md) a [implementace funkcí zpětného volání](callback-functions.md) jsou zvláštní případy.  
   
- Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Příklady, které ukazují, jak vytvořit. Deklarace založené na síti, které se mají použít s voláním platformy, najdete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
 ## <a name="a-closer-look-at-platform-invoke"></a>Bližší pohled na vyvolání platformy  
  Vyvolání platformy spoléhá na metadata pro vyhledání exportovaných funkcí a zařazování jejich argumentů za běhu. Tento proces je znázorněn na následujícím obrázku.  
@@ -73,6 +73,6 @@ Vyvolání platformy je služba, která umožňuje spravovanému kódu volat nes
 
 ## <a name="see-also"></a>Viz také:
 
-- [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)
-- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Spolupráce s nespravovaným kódem](index.md)
+- [Příklady vyvolání platformy](platform-invoke-examples.md)
+- [Zařazování spolupráce](interop-marshaling.md)

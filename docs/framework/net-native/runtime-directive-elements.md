@@ -4,70 +4,70 @@ ms.date: 03/30/2017
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fb3ad0d39d47297b7d26a5c28cfbbc269ce99e44
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 062f13ad92f37bb7ae29ed34dcf88f99f98e7612
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052402"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049273"
 ---
 # <a name="runtime-directive-elements"></a>Elementy direktivy modulu runtime
-Formát souboru modulu runtime (rd.xml) direktivy podporuje následující elementy direktivy modulu runtime. Zobrazit [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) pro Hierarchická reprezentace.  
+Formát souboru direktiv modulu runtime (RD. XML) podporuje následující elementy direktivy modulu runtime. Hierarchickou reprezentaci naleznete v tématu [reference ke konfiguračnímu souboru direktiv modulu runtime (RD. XML)](runtime-directives-rd-xml-configuration-file-reference.md) .  
   
- [\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)  
- Platí pro všechny typy, které aplikace používá zásady reflexe modulu runtime a slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu. To je podřízeným prvkem [ \<direktivy >](../../../docs/framework/net-native/directives-element-net-native.md) elementu.  
+ [\<> Aplikace](application-element-net-native.md)  
+ Aplikuje zásady odrazu modulu runtime na všechny typy používané aplikací a slouží jako kontejner pro typy celé aplikace a členy typu, jejichž metadata jsou k dispozici pro reflexi v době běhu. Toto je podřízený [ \<prvek direktiv >](directives-element-net-native.md) elementu.  
   
- [\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)  
- Zásady modulu runtime se vztahuje na všechny typy v sestavení. To je podřízeným prvkem [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementy.  
+ [\<> Sestavení](assembly-element-net-native.md)  
+ Použije zásady modulu runtime pro všechny typy v sestavení. Toto je podřízený objekt [ \<aplikace >](application-element-net-native.md) a [ \<> prvků knihovny](library-element-net-native.md) .  
   
- [\<AttributeImplies >](../../../docs/framework/net-native/attributeimplies-element-net-native.md)  
- Pokud specifikací [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) – direktiva je atributu, platí zásady modulu runtime pro prvky kódu, u kterých je tento atribut použitá.  
+ [\<AttributeImplies >](attributeimplies-element-net-native.md)  
+ Pokud je jeho nadřazeným [ \<typem](type-element-net-native.md) direktiva > atribut, aplikuje zásady modulu runtime na prvky kódu, na které se tento atribut aplikuje.  
   
- [\<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md)  
- Kořenový element v každém souboru direktiv modulu runtime pro .NET Native. Jeho podřízené prvky jsou [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
+ [\<> Direktiv](directives-element-net-native.md)  
+ Kořenový element v každém souboru direktiv modulu runtime pro .NET Native. Jeho podřízené prvky jsou [ \<aplikace >](application-element-net-native.md) a [ \<> knihovny](library-element-net-native.md).  
   
- [\<Event>](../../../docs/framework/net-native/event-element-net-native.md)  
- Zásady modulu runtime se vztahuje na událost. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
+ [\<> Události](event-element-net-native.md)  
+ Aplikuje zásady modulu runtime na událost. Toto je podřízený objekt [ \<typu >](type-element-net-native.md) a [ \<TypeInstantiation >](typeinstantiation-element-net-native.md) prvky.  
   
- [\<pole >](../../../docs/framework/net-native/field-element-net-native.md)  
- Zásady modulu runtime se vztahuje na pole. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
+ [\<> Pole](field-element-net-native.md)  
+ Aplikuje na pole zásady modulu runtime. Toto je podřízený objekt [ \<typu >](type-element-net-native.md) a [ \<TypeInstantiation >](typeinstantiation-element-net-native.md) prvky.  
   
- [\<GenericParameter >](../../../docs/framework/net-native/genericparameter-element-net-native.md)  
- Použije zásady na modul runtime na typ parametru obecného typu nebo metody.  
+ [\<GenericParameter >](genericparameter-element-net-native.md)  
+ Aplikuje zásady modulu runtime na typ parametru obecného typu nebo metody.  
   
- [\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)  
- Použije zásady modulu runtime na typ, pokud tyto zásady se nastavily pro nadřazený typ nebo metoda.  
+ [\<ImpliesType>](impliestype-element-net-native.md)  
+ Aplikuje zásadu modulu runtime na typ, pokud byla tato zásada použita na obsahující typ nebo metodu.  
   
- [\<Library>](../../../docs/framework/net-native/library-element-net-native.md)  
- Zásady modulu runtime se vztahuje na všechny typy v sestavení. To je podřízeným prvkem [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementy.  
+ [\<Library>](library-element-net-native.md)  
+ Použije zásady modulu runtime pro všechny typy v sestavení. Toto je podřízený objekt [ \<aplikace >](application-element-net-native.md) a [ \<> prvků knihovny](library-element-net-native.md) .  
   
- [\<Method>](../../../docs/framework/net-native/method-element-net-native.md)  
- Zásady modulu runtime se vztahuje na metodu. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
+ [\<Method>](method-element-net-native.md)  
+ Aplikuje zásady modulu runtime na metodu. Toto je podřízený objekt [ \<typu >](type-element-net-native.md) a [ \<TypeInstantiation >](typeinstantiation-element-net-native.md) prvky.  
   
- [\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)  
- Použije zásady modulu runtime konstruovanou obecnou metodu. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
+ [\<MethodInstantiation>](methodinstantiation-element-net-native.md)  
+ Aplikuje zásady modulu runtime na vytvořenou obecnou metodu. Toto je podřízený objekt [ \<typu >](type-element-net-native.md) a [ \<TypeInstantiation >](typeinstantiation-element-net-native.md) prvky.  
   
- [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)  
- Zásady modulu runtime se vztahuje na všechny typy v oboru názvů.  
+ [\<Namespace>](namespace-element-net-native.md)  
+ Použije zásady modulu runtime pro všechny typy v oboru názvů.  
   
- [\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)  
- Použije zásady modulu runtime typu argument předaný metodě.  
+ [\<> Parametru](parameter-element-net-native.md)  
+ Aplikuje zásady modulu runtime na typ argumentu předaného metodě.  
   
- [\<Property>](../../../docs/framework/net-native/property-element-net-native.md)  
- Vlastnost se týká zásady modulu runtime. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
+ [\<> Vlastnosti](property-element-net-native.md)  
+ Aplikuje zásady modulu runtime na vlastnost. Toto je podřízený objekt [ \<typu >](type-element-net-native.md) a [ \<TypeInstantiation >](typeinstantiation-element-net-native.md) prvky.  
   
- [\<Subtypes >](../../../docs/framework/net-native/subtypes-element-net-native.md)  
- Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
+ [\<> Podtypů](subtypes-element-net-native.md)  
+ Aplikuje zásady modulu runtime na všechny třídy zděděné z nadřazeného typu.  
   
- [\<Type>](../../../docs/framework/net-native/type-element-net-native.md)  
- Použije zásady modulu runtime typu.  
+ [\<Zadejte >](type-element-net-native.md)  
+ Použije zásady modulu runtime na typ.  
   
- [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)  
- Platí pro Konstruovaný obecný typ zásady modulu runtime.  
+ [\<TypeInstantiation>](typeinstantiation-element-net-native.md)  
+ Použije zásady modulu runtime na konstruovaný obecný typ.  
   
- [\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)  
- Zásady modulu runtime se vztahuje na typ zastoupený <xref:System.Type> argument předaný metodě.  
+ [\<TypeParameter >](typeparameter-element-net-native.md)  
+ Aplikuje zásady modulu runtime na typ reprezentovaný <xref:System.Type> argumentem předaným metodě.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odkaz na soubor RD.XML, které konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Referenční dokumentace ke konfiguračnímu souboru Rd. XML](runtime-directives-rd-xml-configuration-file-reference.md)

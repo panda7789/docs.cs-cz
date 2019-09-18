@@ -10,42 +10,42 @@ helpviewer_keywords:
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 08f67ad363d0bd3efcc7a1eeedd1f48d3bae9407
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9bde6f6e625476712c5af516491ab9dd29b7dea3
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875703"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052963"
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort – pomocník spravovaného ladění (MDA)
-`asynchronousThreadAbort` Pomocníka spravovaného ladění (MDA) se aktivuje, když vlákno pokusí zavést asynchronnímu přerušení do jiného vlákna. Synchronní vlákno přeruší neaktivovat `asynchronousThreadAbort` MDA.
+Pokud se vlákno pokusí zavést asynchronní přerušení do jiného vlákna, aktivuje se pomocník spravovanéholadění(MDA).`asynchronousThreadAbort` Synchronní přerušení vlákna neaktivují modul `asynchronousThreadAbort` MDA.
 
 ## <a name="symptoms"></a>Příznaky
- Dojde k chybě aplikace s neošetřenou <xref:System.Threading.ThreadAbortException> při hlavního vlákna aplikace je přerušeno. Pokud aplikace i nadále provádí, může být horší, než aplikace k chybám, což může způsobit poškození dat další důsledky.
+ Dojde k selhání aplikace s neošetřenou <xref:System.Threading.ThreadAbortException> při přerušení hlavního vlákna aplikace. Pokud by aplikace pokračovala v provádění, může to být horší než selhání aplikace, což může vést k dalšímu poškození dat.
 
- Má být atomické operace mají byla přerušena pravděpodobně po dokončení částečně, ponechání dat aplikace v nepředvídatelném stavu. A <xref:System.Threading.ThreadAbortException> se dá vygenerovat na zdánlivě náhodných intervalech v provádění kódu, často v místech, ze kterých se neočekává vzniknout výjimky. Kód nemusí být schopna zpracovávat takové výjimky, což v poškozeném stavu.
+ Operace, které mají být atomické, byly pravděpodobně přerušeny po částečném dokončení a data aplikace budou ponechána v nepředvídatelném stavu. <xref:System.Threading.ThreadAbortException> Může být vygenerován z zdánlivě náhodných bodů při provádění kódu, často v místech, ze kterých není očekávána výjimka. Kód nemusí být schopen zpracovat takovou výjimku, což vede k poškozenému stavu.
 
- Příznaky můžou výrazně lišit kvůli náhodnost přináší problém.
+ Příznaky se můžou výrazně lišit v důsledku náhodnosti podstaty problému.
 
-## <a name="cause"></a>Příčina
- Kód v jednom vlákně volána <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metodu na zavést přerušení asynchronní vlákno s cílovým vláknem. Přerušení vlákna je asynchronní, protože kód, který provádí volání do <xref:System.Threading.Thread.Abort%2A> běží na jiném vlákně než cílová operaci zrušení udělat. Synchronní vlákno přeruší by neměly způsobit potíže, protože vlákno provádění <xref:System.Threading.Thread.Abort%2A> by mělo mít provedeno pouze na bezpečné kontrolní bod, ve kterém je konzistentní stav aplikace.
+## <a name="cause"></a>příčina
+ Kód v jednom vlákně, <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> který se nazývá metoda v cílovém vláknu k zavedení asynchronního přerušení vlákna. Přerušení vlákna je asynchronní, protože kód, který provádí volání <xref:System.Threading.Thread.Abort%2A> , je spuštěn v jiném vlákně, než je cílem operace Abort. Synchronní přerušení vlákna by neměla způsobovat problém, protože vlákno, které provádí, <xref:System.Threading.Thread.Abort%2A> by mělo být provedeno pouze v bezpečném kontrolním bodu, kde je stav aplikace konzistentní.
 
- Asynchronní vlákno přeruší představovat problém, protože jsou zpracovávány v nepředvídatelné body v cílové vlákno provádění. Abyste tomu předešli, by kód napsaný pro spuštění na vlákno, které může být přerušeno tímto způsobem potřeba zpracovat <xref:System.Threading.ThreadAbortException> v téměř každý jednotlivý řádek kódu, nezapomeňte vrátit data aplikací do konzistentního stavu. Není reálné očekávat kódu má být zapsán s tímto problémem v paměti nebo napsat kód, který chrání před všechny možné okolnosti.
+ Asynchronní vlákno přerušuje problém, protože jsou zpracovávány v nepředvídatelných bodech v provádění cílového vlákna. Aby k tomu nedocházelo, kód napsaný pro spuštění ve vlákně, který může být přerušen tímto způsobem, by musel <xref:System.Threading.ThreadAbortException> zpracovat téměř každý řádek kódu a přitom zajistit, aby se data aplikace vrátila do konzistentního stavu. Nejedná se o realistickou situaci, kdy očekáváte, že se kód bude zapisovat s tímto problémem, nebo jestli chcete napsat kód, který chrání před všemi možnými okolnostmi.
 
- Volání nespravovaného kódu a `finally` bloky nebude přerušena asynchronně, ale hned po ukončení z jedné z těchto kategorií.
+ Volání do nespravovaného `finally` kódu a bloky nebudou asynchronně přerušeny, ale okamžitě po ukončení jedné z těchto kategorií.
 
- Důvodem může být obtížné určit z důvodu náhodnost přináší problém.
+ Příčina může být obtížné určit z důvodu náhodnosti podstaty problému.
 
 ## <a name="resolution"></a>Řešení
- Vyhněte se návrh kódu, který vyžaduje použití asynchronního podprocesu přeruší. Existuje několik přístupů vhodnější pro přerušení s cílovým vláknem, které nevyžadují volání <xref:System.Threading.Thread.Abort%2A>. Nejbezpečnější je zavést mechanismus, jako je například běžné vlastnosti, která signalizuje cílové vlákno požádat o přerušení. Cílové vlákno kontroluje signál v určitých bezpečné kontrolní body. Zjistí-li to požádal přerušení, ho můžete vypnout bez výpadku.
+ Vyhněte se návrhu kódu, který vyžaduje použití asynchronního přerušení vlákna. Existuje několik přístupů, které jsou vhodnější pro přerušení cílového vlákna, které nevyžadují volání <xref:System.Threading.Thread.Abort%2A>. Nejbezpečnější je zavedení mechanismu, jako je například společná vlastnost, která signalizuje cílovému vláknu, aby požadoval přerušení. Cílové vlákno kontroluje signál u určitých bezpečných kontrolních bodů. Pokud si vyžádá, že bylo vyžadováno přerušení, může se řádně vypnout.
 
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime
- Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o přerušení asynchronní vlákna.
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime
+ Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o přerušení asynchronního vlákna.
 
 ## <a name="output"></a>Výstup
- MDA sestavy ID vlákna provádění přerušení a ID vlákna, která je cílem přerušení. Nikdy budou stejné vzhledem k tomu, že tento požadavek omezuje na asynchronní přerušení.
+ MDA hlásí ID vlákna, které provádí přerušení, a ID vlákna, které je cílem přerušení. Nebudou nikdy stejné, protože to je omezeno na asynchronní přerušení.
 
-## <a name="configuration"></a>Konfigurace
+## <a name="configuration"></a>Konfiguraci
 
 ```xml
 <mdaConfig>
@@ -56,7 +56,7 @@ ms.locfileid: "61875703"
 ```
 
 ## <a name="example"></a>Příklad
- Aktivace `asynchronousThreadAbort` MDA vyžaduje pouze volání <xref:System.Threading.Thread.Abort%2A> na samostatném vlákně spuštěné. Pokud obsah vlákno spustit funkci, byly sady složitějších operací, které může dojít k přerušení libovolného kdykoli podle abort vezměte v úvahu důsledky.
+ Aktivace služby <xref:System.Threading.Thread.Abort%2A> MDA vyžaduje pouze volání do samostatného běžícího vlákna. `asynchronousThreadAbort` Zvažte důsledky, pokud je obsah funkce spuštění vlákna množinou složitějších operací, které mohou být přerušeny v libovolném okamžiku přerušení.
 
 ```csharp
 using System.Threading;
@@ -73,4 +73,4 @@ void FireMda()
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.Thread>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - browser hosting support [WPF]
 - WPF browser hosting support APIs [WPF]
 ms.assetid: 82c133a8-d760-45fb-a2b9-3a997537f1d4
-ms.openlocfilehash: 8b52ec2b1701d03bbcc11048610034a849a315e7
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 29ff388685c67d06d7c5866a46954d5ade72acb1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817940"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053363"
 ---
 # <a name="native-wpf-browser-hosting-support-apis"></a>Nativní Prohlížeč WPF – rozhraní API pro podporu hostování
 [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] Hostování aplikací ve webových prohlížečích usnadňuje aktivní dokumentový server (označovaný také jako DocObject) zaregistrovaný mimo hostitele WPF. Internet Explorer je možné přímo aktivovat a integrovat s aktivním dokumentem. Pro hostování aplikací XBAP a volných dokumentů XAML v prohlížečích [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] aplikace Mozilla poskytuje modul plug-in NPAPI, který poskytuje podobné hostitelské prostředí serveru [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] pro aktivní dokument jako aplikace Internet Explorer. Nejjednodušší způsob, jak hostovat aplikace XBAP a dokumenty XAML v jiných prohlížečích a samostatných aplikacích, je však prostřednictvím ovládacího prvku webového prohlížeče Internet Explorer. Ovládací prvek webového prohlížeče poskytuje komplexní hostitelské prostředí serveru pro aktivní dokument, ale umožňuje jeho vlastnímu hostiteli přizpůsobení a rozšiřování tohoto prostředí a přímé komunikace s aktuálním objektem aktivního dokumentu.  
@@ -22,7 +22,7 @@ ms.locfileid: "68817940"
 ## <a name="iolecommandtarget"></a>IOleCommandTarget –  
  Implementace [IOleCommandTarget –](https://go.microsoft.com/fwlink/?LinkId=162047) serveru WPF pro aktivní dokument podporuje mnoho příkazů standardní příkazy OLE souvisejících s navigací a prohlížečem (s identifikátorem GUID skupiny příkazů s hodnotou null). Kromě toho rozpoznává skupinu vlastních příkazů s názvem CGID_PresentationHost. V současné době je v rámci této skupiny definován pouze jeden příkaz.  
   
-```  
+```cpp  
 DEFINE_GUID(CGID_PresentationHost, 0xd0288c55, 0xd6, 0x4f5e, 0xa8, 0x51, 0x79, 0xde, 0xc5, 0x1b, 0x10, 0xec);  
 enum PresentationHostCommands {   
    PHCMDID_TABINTO = 1   

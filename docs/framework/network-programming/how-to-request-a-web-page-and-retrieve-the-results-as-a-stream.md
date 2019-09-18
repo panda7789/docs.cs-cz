@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d32b7f35-29d8-4fb7-ad71-d219edc5e359
-ms.openlocfilehash: 74cb739d381c0b1422d9277be8c3c338a46f8fba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b3d24a958ec93084d03d2ad2e0eb6d9d2507e155
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647421"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048179"
 ---
 # <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Postupy: Vyžádání webové stránky a načtení výsledků jako streamu
-Tento příklad ukazuje, jak k vyžádání webové stránky a načtení výsledků v datovém proudu.  
+Tento příklad ukazuje, jak vyžádat webovou stránku a načíst výsledky v datovém proudu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -34,8 +34,8 @@ response.Close()
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- Odkazy <xref:System.IO> a <xref:System.Net> obory názvů.  
+- Odkazy na <xref:System.IO> obory <xref:System.Net> názvů a.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Žádosti o data](requesting-data.md)

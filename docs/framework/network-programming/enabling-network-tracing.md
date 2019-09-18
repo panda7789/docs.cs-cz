@@ -11,29 +11,29 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 5145b013db1a86ef1b3128ab1c4495dddaaaf987
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 62a24e45339b93af2c62db440f0611f16705116d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624645"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048521"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
-Trasování sítě poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Je nutné dokončit následující úlohy, jak povolit trasování sítě ve vaší aplikaci:  
+Trasování sítě poskytuje přístup k informacím o vyvoláních metod a síťovém provozu vygenerovaném spravovanou aplikací. Chcete-li povolit trasování sítě v aplikaci, je nutné provést následující úlohy:  
   
-- Kompilace kódu s povoleným trasováním. Zobrazit [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaného k povolení trasování.  
+- Zkompilujte kód s povoleným trasováním. Viz [jak: Zkompilujte podmíněně s trasováním a laděním](../debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaných pro povolení trasování.  
   
-- Zadejte cíl výstupu trasování.  
+- Zadejte cíl pro trasování výstupu.  
   
-- Konfigurace chování trasování sítě. Zobrazit [jak: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) podrobné informace.  
+- Nakonfigurujte chování trasování sítě. Viz [jak: Podrobné informace najdete](how-to-configure-network-tracing.md) v konfiguraci trasování sítě.  
   
- Nejčastěji používané cíle trasování také označuje jako naslouchacími procesy trasování, jsou výchozí naslouchací proces a soubor protokolu.  
+ Nejběžnějšími cíli trasování, označovaných také jako naslouchací procesy trasování, jsou výchozí naslouchací proces a soubor protokolu.  
   
- Trasování používá výchozí naslouchací proces, pokud nezadáte naslouchací proces trasování. Zobrazí se zprávy odeslané k naslouchacímu procesu výchozí spuštěním kódu v spravovaného ladicího programu s podporou kód například ladicí program CLR, kterou jste dostali se SDK rozhraní .NET Framework, nebo DBwin32.exe součástí sady Windows SDK. Pomocí ladicího programu CLR, trasování zprávy zobrazí ve **výstup** okna.  
+ Trasování používá výchozí naslouchací proces, pokud nezadáte naslouchací proces trasování. Zprávy odeslané do výchozího naslouchacího procesu můžete zobrazit spuštěním kódu v ladicím programu s povoleným kódem, jako je například ladicí program CLR dodávaný s .NET Framework SDK nebo DBwin32. exe dodaný s Windows SDK. Pomocí ladicího programu CLR se zprávy trasování zobrazí v okně **výstup** .  
   
- Pokud chcete použít soubor pro příjem trasování, můžete zadat soubor protokolu s použitím nastavení konfigurace, jak je znázorněno v následujícím příkladu. (Obecnou diskuzi týkající se konfiguračních souborů, najdete v části [konfigurační soubory](../../../docs/framework/configure-apps/index.md).)  
+ Pokud dáváte přednost použití souboru pro příjem trasování, můžete určit soubor protokolu pomocí nastavení konfigurace, jak je znázorněno v následujícím příkladu. (Obecné informace o konfiguračních souborech najdete v tématu [konfigurační soubory](../configure-apps/index.md).)  
   
- K odesílání trasování do souboru protokolu, přidejte následující uzel `<system.diagnostics>` uzel příslušného konfiguračního souboru (aplikace nebo počítače). Můžete změnit název souboru (trasování.log) tak, aby odpovídala vašim potřebám.  
+ Chcete-li odeslat trasování do souboru protokolu, přidejte následující uzel do `<system.diagnostics>` uzlu příslušného konfiguračního souboru (aplikace nebo počítač). Název souboru (Trace. log) můžete změnit tak, aby vyhovoval vašim potřebám.  
   
 ```xml  
 <system.diagnostics>  
@@ -47,6 +47,6 @@ Trasování sítě poskytuje přístup k informacím o vyvoláních metody a př
   
 ## <a name="see-also"></a>Viz také:
 
-- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
-- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
-- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Interpretace trasování sítě](interpreting-network-tracing.md)
+- [Trasování sítě v rozhraní .NET Framework](network-tracing.md)
+- [Trasování a instrumentace aplikací](../debug-trace-profile/tracing-and-instrumenting-applications.md)

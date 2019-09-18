@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce93ea321c0441208e223efc22cf1f50e98b827c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1a15d30ea4d6e0f4456460248e96428419117d85
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044124"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049443"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
 
@@ -82,7 +82,7 @@ Vzhledem k tomu, že řetězec nástroje .NET Native propojuje implementační k
 
 - Zprostředkovatel komunikace s objekty COM.
 
-Pokud v době běhu chybí potřebná metadata nebo implementační kód, modul runtime .NET Native vyvolá výjimku. Můžete zabránit těmto výjimkám a zajistit, aby řetěz nástrojů .NET Native zahrnoval požadovaná metadata a implementační kód, pomocí [souboru XML direktiv](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md), soubor XML, který určí prvky programu, jejichž metadata nebo implementace kód musí být k dispozici za běhu a přiřadí jim běhové zásady. Následuje výchozí soubor direktiv modulu runtime, který je přidán do projektu Windows Store, který je zkompilován pomocí .NET Nativeho řetězu nástrojů:
+Pokud v době běhu chybí potřebná metadata nebo implementační kód, modul runtime .NET Native vyvolá výjimku. Můžete zabránit těmto výjimkám a zajistit, aby řetěz nástrojů .NET Native zahrnoval požadovaná metadata a implementační kód, pomocí [souboru XML direktiv](runtime-directives-rd-xml-configuration-file-reference.md), soubor XML, který určí prvky programu, jejichž metadata nebo implementace kód musí být k dispozici za běhu a přiřadí jim běhové zásady. Následuje výchozí soubor direktiv modulu runtime, který je přidán do projektu Windows Store, který je zkompilován pomocí .NET Nativeho řetězu nástrojů:
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -96,7 +96,7 @@ To umožňuje všem typům a všem jejich členům ve všech sestaveních v bal�
 
 ## <a name="net-native-and-ngen"></a>.NET Native a NGEN
 
-[(Generátor nativních bitových kopií](../../../docs/framework/tools/ngen-exe-native-image-generator.md) (NGen) zkompiluje sestavení do nativního kódu a nainstaluje je do mezipaměti nativních imagí v místním počítači. Nicméně i když NGEN, jako je například .NET Native, vytváří nativní kód, liší se od .NET Native nějakými značnými způsoby:
+[(Generátor nativních bitových kopií](../tools/ngen-exe-native-image-generator.md) (NGen) zkompiluje sestavení do nativního kódu a nainstaluje je do mezipaměti nativních imagí v místním počítači. Nicméně i když NGEN, jako je například .NET Native, vytváří nativní kód, liší se od .NET Native nějakými značnými způsoby:
 
 - Pokud není pro konkrétní metodu k dispozici žádná nativní image, NGEN se vrátí k JITing kódu. To znamená, že nativní bitové kopie musí nadále zahrnovat metadata a IL v případě, že NGEN musí přejít zpět na kompilaci JIT. Naproti tomu .NET Native vytvoří pouze nativní bitové kopie a nevrátí se do kompilace JIT. V důsledku toho musí být zachována pouze metadata požadovaná pro scénáře pro odraz, serializaci a spolupráci.
 
@@ -108,5 +108,5 @@ To umožňuje všem typům a všem jejich členům ve všech sestaveních v bal�
 
 - [Metadata a komponenty popisující samy sebe](../../standard/metadata-and-self-describing-components.md)
 - [Uvnitř .NET Native (video kanálu 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
-- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
-- [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)
+- [Reflexe a .NET Native](reflection-and-net-native.md)
+- [Obecné řešení potíží s .NET Native](net-native-general-troubleshooting.md)

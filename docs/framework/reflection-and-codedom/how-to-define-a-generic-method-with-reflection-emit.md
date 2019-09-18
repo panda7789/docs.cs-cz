@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a224093b47241d951b463a7f3e0be389bba2806
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 857bad224d1a88c7011a42d0595b17b1810381aa
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043729"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046063"
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí generování reflexe
 
@@ -27,7 +27,7 @@ Druhý postup ukazuje, jak vygenerovat tělo metody, jak používat parametry ty
 Třetí postup ukazuje, jak zavolat obecnou metodu.
 
 > [!IMPORTANT]
-> Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Obecná metoda se může objevit v neobecném typu, jako je tomu v následujícím příkladu. Příklad neobecné metody na obecném typu naleznete v tématu [How to: Definujte obecný typ pomocí generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)reflexe.
+> Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Obecná metoda se může objevit v neobecném typu, jako je tomu v následujícím příkladu. Příklad neobecné metody na obecném typu naleznete v tématu [How to: Definujte obecný typ pomocí generování](how-to-define-a-generic-type-with-reflection-emit.md)reflexe.
 
 ### <a name="to-define-a-generic-method"></a>Definice obecné metody
 
@@ -36,7 +36,7 @@ Třetí postup ukazuje, jak zavolat obecnou metodu.
     [!code-csharp[GenericMethodHowTo#20](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#20)]
     [!code-vb[GenericMethodHowTo#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#20)]
 
-2. Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Nástroj [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) můžete použít k prohlédnutí souboru DemoMethodBuilder1. dll a k jeho porovnání do jazyka MSIL (Microsoft Intermediate Language) pro metodu, která je znázorněna v kroku 1.
+2. Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Nástroj [Ildasm. exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md) můžete použít k prohlédnutí souboru DemoMethodBuilder1. dll a k jeho porovnání do jazyka MSIL (Microsoft Intermediate Language) pro metodu, která je znázorněna v kroku 1.
 
     [!code-csharp[GenericMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#2)]
     [!code-vb[GenericMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#2)]
@@ -156,7 +156,7 @@ Následující příklad kódu vytvoří neobecný typ `DemoType` s obecnou meto
 
 Tato metoda má jeden formální parametr, což je pole `TInput`. Metoda vrací instanci typu `TOutput`, která obsahuje všechny prvky vstupního pole. Parametr `TOutput` může být libovolný typ obecné kolekce, která implementuje obecné rozhraní <xref:System.Collections.Generic.ICollection%601>.
 
-Při spuštění kódu je dynamické sestavení uloženo jako DemoGenericMethod1. dll a lze jej prozkoumat pomocí programu [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).
+Při spuštění kódu je dynamické sestavení uloženo jako DemoGenericMethod1. dll a lze jej prozkoumat pomocí programu [Ildasm. exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md).
 
 > [!NOTE]
 > Vhodný způsob, jak se naučit generovat kód, je napsat program v jazyce Visual Basic, C# nebo Visual C++ provádějící úlohy, které chcete vygenerovat, a použít disassembler ke kontrole kódu produkovaného kompilátorem jazyka MSIL.
@@ -169,4 +169,4 @@ Příklad kódu obsahuje zdrojový kód, který je ekvivalentní s vygenerovanou
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.Emit.MethodBuilder>
-- [Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)
+- [Postupy: Definování obecného typu pomocí generování reflexe](how-to-define-a-generic-type-with-reflection-emit.md)

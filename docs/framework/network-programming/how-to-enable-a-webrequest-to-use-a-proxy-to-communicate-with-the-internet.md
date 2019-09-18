@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 63c0ef2c-44b5-4c54-9804-ba0b9b001ac7
-ms.openlocfilehash: 99bbff5a3350f55f04fdbd6ce7147b6597773322
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d569603fe22e5d8c8f59d21c2777c7c1bfcd531d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624590"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048299"
 ---
 # <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Postupy: Povolení žádosti WebRequest, aby se používal proxy server pro komunikaci s internetem
-Tento příklad vytvoří instanci globální proxy, které umožní libovolné <xref:System.Net.WebRequest> ke komunikaci s Internetem použití proxy serveru. Příklad předpokládá, že je název proxy serveru `webproxy` a že komunikaci na portu 80, standardní port HTTP.  
+Tento příklad vytvoří globální instanci proxy serveru, která <xref:System.Net.WebRequest> umožní použít proxy server ke komunikaci s internetem. V příkladu se předpokládá, že proxy server má `webproxy` název a že komunikuje na portu 80 standardního portu HTTP.  
   
 ## <a name="example"></a>Příklad  
   
@@ -30,9 +30,9 @@ GlobalProxySelection.Select = proxyObject
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
-- A [ `using` směrnice](../../csharp/language-reference/keywords/using-directive.md) pro **System.Net** oboru názvů.  
+- Direktiva pro obor názvů **System.NET** . [ `using` ](../../csharp/language-reference/keywords/using-directive.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)
-- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
+- [Použití aplikačních protokolů](using-application-protocols.md)
+- [Přístup k internetu přes proxy server](accessing-the-internet-through-a-proxy.md)

@@ -9,32 +9,32 @@ helpviewer_keywords:
 ms.assetid: e2abdd04-f571-4b97-8c16-2221b8588429
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fd987cea78d082eee26032d5f98a54dc0cd3e1d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: adc05ae9bd357c142ff09de069aff446b5ea60e8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754684"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052860"
 ---
 # <a name="dllmainreturnsfalse-mda"></a>dllMainReturnsFalse – pomocník spravovaného ladění (MDA)
-`dllMainReturnsFalse` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud spravovanou `DllMain` funkce uživatelské sestavení, volaná s důvodem DLL_PROCESS_ATTACH, vrátí hodnotu FALSE.  
+Pokud spravovaná`DllMain` funkce uživatelského sestavení, která je volána s důvodem DLL_PROCESS_ATTACH, vrátí hodnotu false, je aktivován pomocník spravovanéholadění(MDA).`dllMainReturnsFalse`  
   
 ## <a name="symptoms"></a>Příznaky  
- `DllMain` Funkce vrátila hodnotu FALSE, která udává, že ho nevykonala příkaz správně. To může způsobit problémy s neurčeném, protože `DllMain` funkce obvykle obsahují důležité inicializační kód.  
+ `DllMain` Funkce vrátila hodnotu false, což značí, že nebyla správně provedena. To může způsobit neurčité problémy, `DllMain` protože funkce obvykle obsahují důležitý inicializační kód.  
   
-## <a name="cause"></a>Příčina  
- `DllMain` Volána s důvodem DLL_PROCESS_ATTACH inicializace knihovny DLL při zatížení. Pokud vrátí hodnotu FALSE, znamená to, že inicializace knihovny DLL se nezdařilo.  
+## <a name="cause"></a>příčina  
+ `DllMain` Funkce je volána s důvodem DLL_PROCESS_ATTACH pro inicializaci knihovny DLL při načtení. Pokud vrátí hodnotu FALSE, znamená to, že inicializace knihovny DLL se nezdařila.  
   
 ## <a name="resolution"></a>Řešení  
- Analýza kódu `DllMain` funkce knihovny DLL se nezdařilo a určit příčinu selhání inicializace.  
+ Analyzujte kód `DllMain` funkce neúspěšné knihovny DLL a Identifikujte příčinu selhání inicializace.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Toto MDA nemá žádný vliv na CLR. Pouze sestavy dat o vrácené hodnotě pro `DllMain`.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o vrácené hodnotě `DllMain`.  
   
 ## <a name="output"></a>Výstup  
- Zpráva, že `DllMain` funkci důvodem DLL_PROCESS_ATTACH, vrátila hodnotu FALSE. Všimněte si, že toto MDA aktivováno, pouze pokud `DllMain` je implementovaná ve spravovaném kódu.  
+ Zpráva oznamující, že `DllMain` funkce volaná z důvodu DLL_PROCESS_ATTACH vrátila hodnotu false. Všimněte si, že tato aplikace MDA je `DllMain` aktivována pouze v případě, že je implementována ve spravovaném kódu.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -46,4 +46,4 @@ ms.locfileid: "61754684"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

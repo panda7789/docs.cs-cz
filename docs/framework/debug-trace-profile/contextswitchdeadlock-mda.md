@@ -14,55 +14,55 @@ helpviewer_keywords:
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c1a0e2a6c7851b261baa3e02f6431e7a4ff697e4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7bcdb235ff2a73514c5bb3ad7abc3f4c3fc8e441
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660326"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052915"
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
 
-`contextSwitchDeadlock` Pomocníka spravovaného ladění (MDA) je aktivován, když bude během na pokus o přechod kontextu COM zjištěno zablokování.
+Pomocník `contextSwitchDeadlock` spravovaného ladění (MDA) je aktivován při zjištění vzájemného zablokování při pokusu o přechod kontextu modelu COM.
 
 ## <a name="symptoms"></a>Příznaky
 
-Nejběžnější symptomem je, že volání nespravovaného komponenty modelu COM ze spravovaného kódu nevrací.  Dalším symptomem je využití paměti v průběhu času zvětšuje.
+Nejběžnějším příznakem je, že volání na nespravované součásti modelu COM ze spravovaného kódu nevrátí.  Dalším příznakem je využití paměti při nárůstu času.
 
-## <a name="cause"></a>Příčina
+## <a name="cause"></a>příčina
 
-Nejvíce nejpravděpodobnější příčinou je, že vlákno jednovláknový apartment (STA) není – čerpání zpráv. Vlákna STA je buď čekání bez čerpání zpráv nebo provádění operací zdlouhavé a nepovoluje žádná fronta zpráv čerpadla.
+Nejpravděpodobnější příčinou je, že vlákno s jedním vláknem (STA) neprovádí pumpu zpráv. Vlákno STA buď čeká bez pumpování zpráv, nebo provádí zdlouhavé operace a neumožňuje frontě zpráv pumpovat.
 
-Využití paměti v průběhu času nezvyšuje je způsobeno pokusu o volání vlákna finalizační metody `Release` na nespravovaného COM komponenty a komponenty nevrací.  To zabrání finalizační metoda uvolní jiných objektů.
+Zvýšení využití paměti v průběhu času je způsobeno tím, že se podproces finalizačního `Release` procesu pokusí zavolat na nespravovanou komponentu modelu COM a tato součást se nevrátí.  To brání finalizačnímu objektu v uvolnění jiných objektů.
 
-Ve výchozím nastavení modelu vláken pro hlavní vlákno konzolové aplikace jazyka Visual Basic je STA. Toto MDA aktivováno, pokud vláknem STA. používá interoperabilita modelů COM přímo nebo nepřímo prostřednictvím common language runtime nebo jiného ovládacího prvku.  Vyhněte se aktivuje toto MDA v konzolové aplikace jazyka Visual Basic, použije <xref:System.MTAThreadAttribute> atribut do metody main nebo upravit aplikaci pro pumpování zpráv.
+Ve výchozím nastavení je model vláken pro hlavní vlákno Visual Basic konzolových aplikací STA. Tato aplikace MDA je aktivována, pokud vlákno STA používá interoperabilitu modelu COM přímo nebo nepřímo prostřednictvím modulu CLR (Common Language Runtime) nebo ovládacího prvku třetí strany.  Chcete-li se vyhnout aktivaci tohoto MDA ve Visual Basic konzolové aplikaci <xref:System.MTAThreadAttribute> , použijte atribut na metodu Main nebo upravte aplikaci na zprávy pumpy.
 
-Je možné toto MDA falešně aktivaci, pokud jsou splněny všechny následující podmínky:
+Je možné, že se tento MDA při splnění všech následujících podmínek aktivuje jako nepravdivá:
 
-- Aplikace vytvoří komponenty modelu COM z vláken STA přímo nebo nepřímo prostřednictvím knihoven.
+- Aplikace vytváří komponenty modelu COM z vláken STA buď přímo, nebo nepřímo prostřednictvím knihoven.
 
-- Aplikace byla zastavena v ladicím programu a uživatel pokračuje aplikace nebo provést operaci kroku.
+- Aplikace byla zastavena v ladicím programu a uživatel buď pokračoval v aplikaci, nebo provedení operace kroku.
 
-- Ladění nespravovaného kódu není povolená.
+- Nespravované ladění není povoleno.
 
-Pokud chcete zjistit, pokud MDA falešně aktivovaná, zakázat všechny zarážky, restartujte aplikaci a povolíte jeho spuštění bez přerušení. Pokud MDA aktivováno, je pravděpodobné, že počáteční aktivace byla hodnotu false. V takovém případě zakážete MDA, aby se zabránilo narušení relace ladění.
+Chcete-li zjistit, zda je MDA nepravdivě aktivován, zakažte všechny zarážky, restartujte aplikaci a umožněte její spuštění bez zastavení. Pokud není modul MDA aktivován, je pravděpodobnější, že počáteční aktivace byla nepravdivá. V takovém případě zakažte režim MDA, aby se zabránilo interferenci s relací ladění.
 
 > [!NOTE]
-> Toto MDA je ve výchozím nastavení pro sadu Visual Studio. Informace o tom, jak zakázat mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
+> Tento MDA je ve výchozí sadě pro Visual Studio. Informace o tom, jak zakázat MDA, najdete v tématu [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
 
 ## <a name="resolution"></a>Řešení
 
-Postupujte podle pravidla COM – čerpání zpráv STA.
+Sledujte pravidla modelu COM týkající se čerpacích zpráv STA.
 
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime
 
-Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o COM kontextech.
+Tento MDA nemá žádný vliv na CLR. Pouze hlásí data o kontextech COM.
 
 ## <a name="output"></a>Výstup
 
 Zpráva popisující aktuální kontext a cílový kontext.
 
-## <a name="configuration"></a>Konfigurace
+## <a name="configuration"></a>Konfiguraci
 
 ```xml
 <mdaConfig>
@@ -75,5 +75,5 @@ Zpráva popisující aktuální kontext a cílový kontext.
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../interop/interop-marshaling.md)

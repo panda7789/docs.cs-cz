@@ -11,31 +11,31 @@ helpviewer_keywords:
 ms.assetid: 113646de-7ea0-4f0e-8df0-c46dab3e8733
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 98d363b6c0838ff1211d969391f04ce8ccddd003
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b842f44711d38a996b9d710dbe8bd369d30c5443
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61643566"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71051875"
 ---
 # <a name="calling-a-dll-function"></a>Volání funkce DLL
-I když volání nespravovaných funkcí DLL je téměř shodná volání jiného spravovaného kódu, existují rozdíly, kterým funkcí knihovny DLL připadat složité zpočátku. Tato část představuje témata, která popisují některé z neobvyklé problémy související s voláním.  
+I když volání nespravovaných knihoven DLL je téměř totožné s voláním jiného spravovaného kódu, existují rozdíly v tom, že funkce knihovny DLL se jeví jako nematoucí jako první. V této části najdete témata, která popisují některé neobvyklé problémy související s voláním.  
   
- Struktury, které jsou vráceny z platformy vyvolat volání musí být datové typy, které zabírají stejné množství spravovaného a nespravovaného kódu. Tyto typy jsou označovány jako *přenositelné typy* protože nevyžadují převod (viz [přenositelné a Non-přenositelné typy](../../../docs/framework/interop/blittable-and-non-blittable-types.md)). Volat funkci, která má nepřenositelné struktury jako její typ vrácené hodnoty, můžete definovat typu blittable pomocné rutiny stejné velikosti jako typ nepřenositelné a převést data po vrácení funkce.  
+ Struktury, které jsou vraceny voláními vyvolání platformy, musí být datové typy, které mají stejnou reprezentaci ve spravovaném a nespravovaném kódu. Tyto typy se nazývají přenositelné *typy* , protože nevyžadují konverzi (viz [přenositelné a nepřímo přenositelné typy](blittable-and-non-blittable-types.md)). Chcete-li volat funkci, která má jako návratový typ nepřímou strukturu, můžete definovat typ přenositelného pomocníka stejné velikosti jako nepřenosný typ a převést data poté, co funkce vrátí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Předávání struktur](../../../docs/framework/interop/passing-structures.md)  
- Identifikuje problémy s předáním datových struktur s předdefinovanou rozložení.  
+ [Předávání struktur](passing-structures.md)  
+ Určuje problémy předávání datových struktur s předdefinovaným rozložením.  
   
- [Funkce zpětného volání](../../../docs/framework/interop/callback-functions.md)  
+ [Funkce zpětného volání](callback-functions.md)  
  Poskytuje základní informace o funkcích zpětného volání.  
   
- [Postupy: Implementace funkcí zpětného volání](../../../docs/framework/interop/how-to-implement-callback-functions.md)  
- Popisuje způsob implementace funkcí zpětného volání ve spravovaném kódu.  
+ [Postupy: Implementace funkcí zpětného volání](how-to-implement-callback-functions.md)  
+ Popisuje, jak implementovat funkce zpětného volání ve spravovaném kódu.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Používání nespravovaných funkcí DLL](../../../docs/framework/interop/consuming-unmanaged-dll-functions.md)  
- Popisuje, jak volat nespravovaný volání funkcí knihovny DLL pomocí platformy.  
+ [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)  
+ Popisuje, jak volat nespravované funkce knihovny DLL pomocí vyvolání platformy.  
   
- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)  
- Popisuje, jak deklarovat parametry metody a předání argumentů funkcí exportovaných knihovnou nespravovaných knihoven.
+ [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)  
+ Popisuje, jak deklarovat parametry metody a předávat argumenty funkcím exportovaným nespravovanými knihovnami.

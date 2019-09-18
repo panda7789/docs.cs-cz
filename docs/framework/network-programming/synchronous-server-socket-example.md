@@ -9,15 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: 637301385562247ef9c3dee4d01da319c0cd4d37
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eee533e87c868fadc04e26b374b36a0256dcf38e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641863"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047130"
 ---
 # <a name="synchronous-server-socket-example"></a>Příklad synchronního serverového soketu
-Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavován soket synchronního spuštění serverové aplikace je pozastaven, když se čeká na připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  
+Následující ukázkový program vytvoří server, který přijímá žádosti o připojení od klientů. Server je sestaven se synchronním soketem, takže spuštění serverové aplikace je při čekání na připojení z klienta pozastaveno. Aplikace přijme řetězec z klienta, zobrazí řetězec v konzole nástroje a potom vrátí řetězec zpátky klientovi. Řetězec z klienta musí obsahovat řetězec "\<EOF >" k signalizaci konce zprávy.  
   
 ```vb  
 Imports System  
@@ -157,6 +157,6 @@ public class SynchronousSocketListener {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklad synchronního klientského soketu](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
-- [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
-- [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)
+- [Příklad synchronního klientského soketu](synchronous-client-socket-example.md)
+- [Použití synchronního serverového soketu](using-a-synchronous-server-socket.md)
+- [Příklady kódu soketu](socket-code-examples.md)
