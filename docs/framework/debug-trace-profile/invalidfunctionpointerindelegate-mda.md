@@ -13,32 +13,32 @@ helpviewer_keywords:
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cbb33d2cddab22ad2072354ba543d2cd6a60a668
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6e3e64a720d12426fb066619b46c73402d1113e0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754567"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052618"
 ---
-# <a name="invalidfunctionpointerindelegate-mda"></a><span data-ttu-id="63c5f-102">invalidFunctionPointerInDelegate – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="63c5f-102">invalidFunctionPointerInDelegate MDA</span></span>
-<span data-ttu-id="63c5f-103">`invalidFunctionPointerInDelegate` Pomocníka spravovaného ladění (MDA) je aktivován, když je neplatný ukazatel na funkci předaný k vytvoření delegáta přes ukazatel na funkci nativní.</span><span class="sxs-lookup"><span data-stu-id="63c5f-103">The `invalidFunctionPointerInDelegate` managed debugging assistant (MDA) is activated when an invalid function pointer is passed in to construct a delegate over a native function pointer.</span></span>  
+# <a name="invalidfunctionpointerindelegate-mda"></a><span data-ttu-id="82e15-102">invalidFunctionPointerInDelegate – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="82e15-102">invalidFunctionPointerInDelegate MDA</span></span>
+<span data-ttu-id="82e15-103">Pomocník `invalidFunctionPointerInDelegate` spravovaného ladění (MDA) je aktivován, pokud je předán neplatný ukazatel na funkci, aby bylo možné vytvořit delegáta nad ukazatelem nativní funkce.</span><span class="sxs-lookup"><span data-stu-id="82e15-103">The `invalidFunctionPointerInDelegate` managed debugging assistant (MDA) is activated when an invalid function pointer is passed in to construct a delegate over a native function pointer.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="63c5f-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="63c5f-104">Symptoms</span></span>  
- <span data-ttu-id="63c5f-105">Narušení přístupu nebo neočekávaným paměťovým poškození při používání delegáta přes ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="63c5f-105">Access violations or unexpected memory corruption when using a delegate over a function pointer.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="82e15-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="82e15-104">Symptoms</span></span>  
+ <span data-ttu-id="82e15-105">Při použití delegáta přes ukazatel na funkci došlo k narušení přístupu nebo neočekávanému poškození paměti.</span><span class="sxs-lookup"><span data-stu-id="82e15-105">Access violations or unexpected memory corruption when using a delegate over a function pointer.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="63c5f-106">Příčina</span><span class="sxs-lookup"><span data-stu-id="63c5f-106">Cause</span></span>  
- <span data-ttu-id="63c5f-107">Byl zadán neplatný ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="63c5f-107">An invalid function pointer was specified.</span></span>  
+## <a name="cause"></a><span data-ttu-id="82e15-106">příčina</span><span class="sxs-lookup"><span data-stu-id="82e15-106">Cause</span></span>  
+ <span data-ttu-id="82e15-107">Byl zadán neplatný ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="82e15-107">An invalid function pointer was specified.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="63c5f-108">Řešení</span><span class="sxs-lookup"><span data-stu-id="63c5f-108">Resolution</span></span>  
- <span data-ttu-id="63c5f-109">Zadejte platný ukazatel</span><span class="sxs-lookup"><span data-stu-id="63c5f-109">Specify a valid function pointer</span></span>  
+## <a name="resolution"></a><span data-ttu-id="82e15-108">Řešení</span><span class="sxs-lookup"><span data-stu-id="82e15-108">Resolution</span></span>  
+ <span data-ttu-id="82e15-109">Zadejte platný ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="82e15-109">Specify a valid function pointer</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="63c5f-110">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="63c5f-110">Effect on the Runtime</span></span>  
- <span data-ttu-id="63c5f-111">Toto MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="63c5f-111">This MDA has no effect on the CLR.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="82e15-110">Vliv na modul runtime</span><span class="sxs-lookup"><span data-stu-id="82e15-110">Effect on the Runtime</span></span>  
+ <span data-ttu-id="82e15-111">Tento MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="82e15-111">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="63c5f-112">Výstup</span><span class="sxs-lookup"><span data-stu-id="63c5f-112">Output</span></span>  
- <span data-ttu-id="63c5f-113">Ukazatel funkce je neplatný.</span><span class="sxs-lookup"><span data-stu-id="63c5f-113">The invalid function pointer.</span></span>  
+## <a name="output"></a><span data-ttu-id="82e15-112">Výstup</span><span class="sxs-lookup"><span data-stu-id="82e15-112">Output</span></span>  
+ <span data-ttu-id="82e15-113">Neplatný ukazatel na funkci.</span><span class="sxs-lookup"><span data-stu-id="82e15-113">The invalid function pointer.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="63c5f-114">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="63c5f-114">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="82e15-114">Konfiguraci</span><span class="sxs-lookup"><span data-stu-id="82e15-114">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -48,8 +48,8 @@ ms.locfileid: "61754567"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="63c5f-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63c5f-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="82e15-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="82e15-115">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [<span data-ttu-id="63c5f-116">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="63c5f-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="63c5f-117">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="63c5f-117">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+- [<span data-ttu-id="82e15-116">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="82e15-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="82e15-117">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="82e15-117">Interop Marshaling</span></span>](../interop/interop-marshaling.md)
