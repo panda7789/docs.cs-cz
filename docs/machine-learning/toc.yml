@@ -35,12 +35,16 @@
           href: tutorials/sales-anomaly-detection.md
         - name: Detekce objektů v obrázcích (detekce objektů)
           href: tutorials/object-detection-onnx.md
+        - name: Klasifikace mínění pomocí TensorFlow (klasifikace textu)
+          href: tutorials/text-classification-tf.md
     - name: Nástroje
       items:
         - name: Předpovídání cen pomocí nástroje Model Builder
           href: tutorials/predict-prices-with-model-builder.md
         - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
           href: tutorials/mlnet-cli.md
+        - name: Analýza mínění pomocí Model Builderu a Razor Pages
+          href: tutorials/sentiment-analysis-model-builder.md
 - name: Koncepty
   items:
     - name: Úlohy ML.NET (typy modelů)
