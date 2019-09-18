@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 23a36d1709f03583ce39af0e7c80bb1ecd7cf809
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 623aff91eb801b4b32fc180bd97ed3822ad7f163
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754385"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052674"
 ---
-# <a name="illegalprepareconstrainedregion-mda"></a><span data-ttu-id="27cf4-102">illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="27cf4-102">illegalPrepareConstrainedRegion MDA</span></span>
-<span data-ttu-id="27cf4-103">`illegalPrepareConstrainedRegion` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> volání metody bezprostředně nepředchází `try` příkaz obslužné rutiny výjimky.</span><span class="sxs-lookup"><span data-stu-id="27cf4-103">The `illegalPrepareConstrainedRegion` managed debugging assistant (MDA) is activated when a <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> method call does not immediately precede the `try` statement of the exception handler.</span></span> <span data-ttu-id="27cf4-104">Toto omezení je na jazyk MSIL úrovně, takže je přípustné, aby bez kódu generování zdroje mezi volání a `try`, například pro komentáře.</span><span class="sxs-lookup"><span data-stu-id="27cf4-104">This restriction is at the MSIL level, so it is permissible to have non-code-generating source between the call and the `try`, such as comments.</span></span>  
+# <a name="illegalprepareconstrainedregion-mda"></a><span data-ttu-id="6a01e-102">illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="6a01e-102">illegalPrepareConstrainedRegion MDA</span></span>
+<span data-ttu-id="6a01e-103">Pomocník `illegalPrepareConstrainedRegion` spravovaného ladění (MDA) je aktivován, <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> Pokud volání metody přímo nepředchází `try` příkaz obslužné rutiny výjimky.</span><span class="sxs-lookup"><span data-stu-id="6a01e-103">The `illegalPrepareConstrainedRegion` managed debugging assistant (MDA) is activated when a <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> method call does not immediately precede the `try` statement of the exception handler.</span></span> <span data-ttu-id="6a01e-104">Toto omezení je na úrovni MSIL, takže je povoleno mít zdroj negenerující kód mezi voláním a `try`, jako jsou komentáře.</span><span class="sxs-lookup"><span data-stu-id="6a01e-104">This restriction is at the MSIL level, so it is permissible to have non-code-generating source between the call and the `try`, such as comments.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="27cf4-105">Příznaky</span><span class="sxs-lookup"><span data-stu-id="27cf4-105">Symptoms</span></span>  
- <span data-ttu-id="27cf4-106">Oblasti omezeného provádění (CER), který se nikdy zpracováván jako takové, ale jako jednoduchý výjimka bloku zpracování (`finally` nebo `catch`).</span><span class="sxs-lookup"><span data-stu-id="27cf4-106">A constrained execution region (CER) that is never treated as such, but as a simple exception handling block (`finally` or `catch`).</span></span> <span data-ttu-id="27cf4-107">V důsledku toho oblast nejde spustit v případě podmínku paměti nebo přerušení vlákna.</span><span class="sxs-lookup"><span data-stu-id="27cf4-107">As a consequence, the region does not run in the event of an out-of-memory condition or a thread abort.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="6a01e-105">Příznaky</span><span class="sxs-lookup"><span data-stu-id="6a01e-105">Symptoms</span></span>  
+ <span data-ttu-id="6a01e-106">Omezená oblast provádění (CER), která se nikdy nepovažuje za takovou, ale jako jednoduchý blok zpracování výjimek (`finally` nebo `catch`).</span><span class="sxs-lookup"><span data-stu-id="6a01e-106">A constrained execution region (CER) that is never treated as such, but as a simple exception handling block (`finally` or `catch`).</span></span> <span data-ttu-id="6a01e-107">V důsledku toho se oblast nespustí v případě stavu mimo paměti nebo přerušení vlákna.</span><span class="sxs-lookup"><span data-stu-id="6a01e-107">As a consequence, the region does not run in the event of an out-of-memory condition or a thread abort.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="27cf4-108">Příčina</span><span class="sxs-lookup"><span data-stu-id="27cf4-108">Cause</span></span>  
- <span data-ttu-id="27cf4-109">Vzor přípravy CER nedodrží správně.</span><span class="sxs-lookup"><span data-stu-id="27cf4-109">The preparation pattern for a CER is not followed correctly.</span></span>  <span data-ttu-id="27cf4-110">Toto je událost chyby.</span><span class="sxs-lookup"><span data-stu-id="27cf4-110">This is an error event.</span></span> <span data-ttu-id="27cf4-111"><xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Volání metody používá k označení obslužné rutiny výjimek jako Představujeme CER v jejich `catch` / `finally` / `fault` / `filter` bloky musí být použita bezprostředně před `try` příkazu.</span><span class="sxs-lookup"><span data-stu-id="27cf4-111">The <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method call used to mark exception handlers as introducing a CER in their `catch`/`finally`/`fault`/`filter` blocks must be used immediately before the `try` statement.</span></span>  
+## <a name="cause"></a><span data-ttu-id="6a01e-108">příčina</span><span class="sxs-lookup"><span data-stu-id="6a01e-108">Cause</span></span>  
+ <span data-ttu-id="6a01e-109">Vzor přípravy pro CER se nedodržuje správně.</span><span class="sxs-lookup"><span data-stu-id="6a01e-109">The preparation pattern for a CER is not followed correctly.</span></span>  <span data-ttu-id="6a01e-110">Toto je chybná událost.</span><span class="sxs-lookup"><span data-stu-id="6a01e-110">This is an error event.</span></span> <span data-ttu-id="6a01e-111">/ / `catch` `fault` Volánímetodypoužité`filter` k označení obslužných rutin výjimek, `finally` protože/ zavedete-li CER do bloků, je nutné použít bezprostředně před <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> `try` příkaz.</span><span class="sxs-lookup"><span data-stu-id="6a01e-111">The <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method call used to mark exception handlers as introducing a CER in their `catch`/`finally`/`fault`/`filter` blocks must be used immediately before the `try` statement.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="27cf4-112">Řešení</span><span class="sxs-lookup"><span data-stu-id="27cf4-112">Resolution</span></span>  
- <span data-ttu-id="27cf4-113">Ujistěte se, že volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> se stane, bezprostředně před `try` příkazu.</span><span class="sxs-lookup"><span data-stu-id="27cf4-113">Ensure that the call to <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> happens immediately before the `try` statement.</span></span>  
+## <a name="resolution"></a><span data-ttu-id="6a01e-112">Řešení</span><span class="sxs-lookup"><span data-stu-id="6a01e-112">Resolution</span></span>  
+ <span data-ttu-id="6a01e-113">Zajistěte, aby <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> volání následovalo těsně `try` před příkazem.</span><span class="sxs-lookup"><span data-stu-id="6a01e-113">Ensure that the call to <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> happens immediately before the `try` statement.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="27cf4-114">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="27cf4-114">Effect on the Runtime</span></span>  
- <span data-ttu-id="27cf4-115">Toto MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="27cf4-115">This MDA has no effect on the CLR.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="6a01e-114">Vliv na modul runtime</span><span class="sxs-lookup"><span data-stu-id="6a01e-114">Effect on the Runtime</span></span>  
+ <span data-ttu-id="6a01e-115">Tento MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="6a01e-115">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="27cf4-116">Výstup</span><span class="sxs-lookup"><span data-stu-id="27cf4-116">Output</span></span>  
- <span data-ttu-id="27cf4-117">MDA zobrazí název metoda – volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> metodu, posun jazyk MSIL a zprávu s oznámením, volání okamžitě nepředchází začátek bloku try.</span><span class="sxs-lookup"><span data-stu-id="27cf4-117">The MDA displays the name of the method calling the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method, the MSIL offset, and a message indicating the call does not immediately precede the beginning of the try block.</span></span>  
+## <a name="output"></a><span data-ttu-id="6a01e-116">Výstup</span><span class="sxs-lookup"><span data-stu-id="6a01e-116">Output</span></span>  
+ <span data-ttu-id="6a01e-117">MDA zobrazuje název metody, která volá <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> metodu, posun MSIL a zprávu indikující volání bezprostředně před začátkem bloku try.</span><span class="sxs-lookup"><span data-stu-id="6a01e-117">The MDA displays the name of the method calling the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> method, the MSIL offset, and a message indicating the call does not immediately precede the beginning of the try block.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="27cf4-118">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="27cf4-118">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="6a01e-118">Konfiguraci</span><span class="sxs-lookup"><span data-stu-id="6a01e-118">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -45,8 +45,8 @@ ms.locfileid: "61754385"
 </mdaConfig>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="27cf4-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="27cf4-119">Example</span></span>  
- <span data-ttu-id="27cf4-120">Následující příklad kódu ukazuje vzor, který způsobí, že toto MDA aktivaci.</span><span class="sxs-lookup"><span data-stu-id="27cf4-120">The following code example demonstrates the pattern that causes this MDA to be activated.</span></span>  
+## <a name="example"></a><span data-ttu-id="6a01e-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="6a01e-119">Example</span></span>  
+ <span data-ttu-id="6a01e-120">Následující příklad kódu ukazuje vzor, který způsobuje, že je tento MDA aktivován.</span><span class="sxs-lookup"><span data-stu-id="6a01e-120">The following code example demonstrates the pattern that causes this MDA to be activated.</span></span>  
   
 ```csharp
 void MethodWithInvalidPCR()  
@@ -64,9 +64,9 @@ void MethodWithInvalidPCR()
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="27cf4-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="27cf4-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6a01e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6a01e-121">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>
-- [<span data-ttu-id="27cf4-122">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="27cf4-122">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="27cf4-123">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="27cf4-123">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+- [<span data-ttu-id="6a01e-122">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="6a01e-122">Diagnosing Errors with Managed Debugging Assistants</span></span>](diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="6a01e-123">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="6a01e-123">Interop Marshaling</span></span>](../interop/interop-marshaling.md)

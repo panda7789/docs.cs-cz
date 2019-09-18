@@ -8,22 +8,22 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 642ca16142bdfe78a40ddf4e6a3a79ce6a8a4985
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 837a18ca18d0c634dfa5cc133aa013919cfb9d96
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938746"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053890"
 ---
-# <a name="xamlname-grammar"></a><span data-ttu-id="ae5e5-102">XamlName – gramatika</span><span class="sxs-lookup"><span data-stu-id="ae5e5-102">XamlName Grammar</span></span>
-<span data-ttu-id="ae5e5-103">Xamlname – gramatika je konkrétní gramatiky, který je definován ve specifikaci jazyka XAML [MS-XAML], což je reprodukován zde ke zvýšení pohodlí.</span><span class="sxs-lookup"><span data-stu-id="ae5e5-103">XamlName Grammar is a specific grammar that is defined in the XAML language specification [MS-XAML], which is reproduced here for convenience.</span></span>  
+# <a name="xamlname-grammar"></a><span data-ttu-id="10c01-102">XamlName – gramatika</span><span class="sxs-lookup"><span data-stu-id="10c01-102">XamlName Grammar</span></span>
+<span data-ttu-id="10c01-103">Gramatika v jazyce XAML je specifická gramatika, která je definována ve specifikaci jazyka XAML [MS-XAML], která je zde reprodukována pro usnadnění.</span><span class="sxs-lookup"><span data-stu-id="10c01-103">XamlName Grammar is a specific grammar that is defined in the XAML language specification [MS-XAML], which is reproduced here for convenience.</span></span>  
   
-## <a name="from-the-xaml-specification"></a><span data-ttu-id="ae5e5-104">Z specifikaci XAML</span><span class="sxs-lookup"><span data-stu-id="ae5e5-104">From the XAML Specification</span></span>  
- <span data-ttu-id="ae5e5-105">Specifikace [MS-XAML] definuje gramatiky XamlName ke zjišťování sady právní symbolické identifikátory použitými pro typy a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="ae5e5-105">The [MS-XAML] specification defines the grammar XamlName to identify the set of legal symbolic identifiers used for types and properties.</span></span>  
+## <a name="from-the-xaml-specification"></a><span data-ttu-id="10c01-104">Ze specifikace jazyka XAML</span><span class="sxs-lookup"><span data-stu-id="10c01-104">From the XAML Specification</span></span>  
+ <span data-ttu-id="10c01-105">Specifikace [MS-XAML] definuje gramatiku v jazyce XAML k identifikaci sady platných symbolových identifikátorů použitých pro typy a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="10c01-105">The [MS-XAML] specification defines the grammar XamlName to identify the set of legal symbolic identifiers used for types and properties.</span></span>  
   
- <span data-ttu-id="ae5e5-106">Hodnoty, které jsou typu, který musí odpovídat xamlname – gramatika následující řetězce:</span><span class="sxs-lookup"><span data-stu-id="ae5e5-106">String values that are of type XamlName must conform to the following grammar:</span></span>  
+ <span data-ttu-id="10c01-106">Řetězcové hodnoty typu XAML musí splňovat následující gramatiky:</span><span class="sxs-lookup"><span data-stu-id="10c01-106">String values that are of type XamlName must conform to the following grammar:</span></span>  
   
-```  
+```xaml  
 XamlName ::= NameStartChar ( NameChar )*   
 NameStartChar ::= LetterCharacter | '_'   
 NameChar ::= NameStartChar | DecimalDigit | CombiningCharacter   
@@ -32,36 +32,27 @@ DecimalDigit ::= UnicodeNd
 CombiningCharacter ::= UnicodeMn | UnicodeMc  
 ```  
   
- <span data-ttu-id="ae5e5-107">Kde se předpokládá následující hodnoty obecné kategorie definované v databáze znaků Unicode</span><span class="sxs-lookup"><span data-stu-id="ae5e5-107">Which assumes the following general category values as defined in the Unicode Character Database</span></span>  
+ <span data-ttu-id="10c01-107">Který předpokládá následující obecné hodnoty kategorií, jak je definováno v databázi znaků Unicode.</span><span class="sxs-lookup"><span data-stu-id="10c01-107">Which assumes the following general category values as defined in the Unicode Character Database</span></span>  
+
+| <span data-ttu-id="10c01-108">Kategorie sady Unicode</span><span class="sxs-lookup"><span data-stu-id="10c01-108">Unicode category</span></span>   | <span data-ttu-id="10c01-109">Popis</span><span class="sxs-lookup"><span data-stu-id="10c01-109">Description</span></span>                   |
+|--------------------|-------------------------------|
+| <span data-ttu-id="10c01-110">Lu</span><span class="sxs-lookup"><span data-stu-id="10c01-110">Lu</span></span>                 | <span data-ttu-id="10c01-111">písmeno, velké písmeno</span><span class="sxs-lookup"><span data-stu-id="10c01-111">Letter, Uppercase</span></span>             |
+| <span data-ttu-id="10c01-112">Ll</span><span class="sxs-lookup"><span data-stu-id="10c01-112">Ll</span></span>                 | <span data-ttu-id="10c01-113">písmeno, malé písmeno</span><span class="sxs-lookup"><span data-stu-id="10c01-113">Letter, Lowercase</span></span>             |
+| <span data-ttu-id="10c01-114">Lt</span><span class="sxs-lookup"><span data-stu-id="10c01-114">Lt</span></span>                 | <span data-ttu-id="10c01-115">písmeno, velké počáteční písmeno</span><span class="sxs-lookup"><span data-stu-id="10c01-115">Letter, Titlecase</span></span>             |
+| <span data-ttu-id="10c01-116">Lm</span><span class="sxs-lookup"><span data-stu-id="10c01-116">Lm</span></span>                 | <span data-ttu-id="10c01-117">písmeno, modifikátor</span><span class="sxs-lookup"><span data-stu-id="10c01-117">Letter, Modifier</span></span>              |
+| <span data-ttu-id="10c01-118">Lo</span><span class="sxs-lookup"><span data-stu-id="10c01-118">Lo</span></span>                 | <span data-ttu-id="10c01-119">písmeno, jiné</span><span class="sxs-lookup"><span data-stu-id="10c01-119">Letter, Other</span></span>                 |
+| <span data-ttu-id="10c01-120">Mn</span><span class="sxs-lookup"><span data-stu-id="10c01-120">Mn</span></span>                 | <span data-ttu-id="10c01-121">Značka, bez mezer</span><span class="sxs-lookup"><span data-stu-id="10c01-121">Mark, Non-Spacing</span></span>             |
+| <span data-ttu-id="10c01-122">MC</span><span class="sxs-lookup"><span data-stu-id="10c01-122">Mc</span></span>                 | <span data-ttu-id="10c01-123">značka, kombinování mezer</span><span class="sxs-lookup"><span data-stu-id="10c01-123">Mark, Spacing Combining</span></span>       |
+| <span data-ttu-id="10c01-124">Nd</span><span class="sxs-lookup"><span data-stu-id="10c01-124">Nd</span></span>                 | <span data-ttu-id="10c01-125">Číslo, desetinné číslo</span><span class="sxs-lookup"><span data-stu-id="10c01-125">Number, Decimal</span></span>               |
+| <span data-ttu-id="10c01-126">NL</span><span class="sxs-lookup"><span data-stu-id="10c01-126">Nl</span></span>                 | <span data-ttu-id="10c01-127">číslo, písmeno</span><span class="sxs-lookup"><span data-stu-id="10c01-127">Number, Letter</span></span>                |
+ 
+ <span data-ttu-id="10c01-128">XAML definuje druhou gramatiku, DottedXamlName, která se používá pro kvalifikované odkazy na vlastnost a událost a také pro připojené členy.</span><span class="sxs-lookup"><span data-stu-id="10c01-128">XAML defines a second grammar, DottedXamlName, that is used for property and event qualified references, and also for attached members.</span></span> <span data-ttu-id="10c01-129">Další informace naleznete v tématu <xref:System.Windows.DependencyProperty> a [XAML Overview (WPF)](../wpf/advanced/xaml-overview-wpf.md).</span><span class="sxs-lookup"><span data-stu-id="10c01-129">For more information, see <xref:System.Windows.DependencyProperty> and [XAML Overview (WPF)](../wpf/advanced/xaml-overview-wpf.md).</span></span>  
   
-```  
-Lu  
-Letter, Uppercase  
-Ll  
-Letter, Lowercase  
-Lt  
-Letter, Titlecase  
-Lm  
-Letter, Modifier  
-Lo  
-Letter, Other  
-Mn  
-Mark, Non-Spacing  
-Mc  
-Mark, Spacing Combining  
-Nd  
-Number, Decimal  
-Nl  
-Number, Letter  
-```  
+ <span data-ttu-id="10c01-130">Hodnoty řetězce, které jsou typu DottedXamlName, musí splňovat následující gramatiky:</span><span class="sxs-lookup"><span data-stu-id="10c01-130">String values that are of type DottedXamlName must conform to the following grammar:</span></span>  
   
- <span data-ttu-id="ae5e5-108">XAML definuje druhý gramatika dottedxamlname –, který se používá pro vlastnost a události kvalifikované odkazy a také pro připojené členy.</span><span class="sxs-lookup"><span data-stu-id="ae5e5-108">XAML defines a second grammar, DottedXamlName, that is used for property and event qualified references, and also for attached members.</span></span> <span data-ttu-id="ae5e5-109">Další informace najdete v tématu <xref:System.Windows.DependencyProperty> a [přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md).</span><span class="sxs-lookup"><span data-stu-id="ae5e5-109">For more information, see <xref:System.Windows.DependencyProperty> and [XAML Overview (WPF)](../wpf/advanced/xaml-overview-wpf.md).</span></span>  
-  
- <span data-ttu-id="ae5e5-110">Hodnoty, které jsou typu, který musí odpovídat dottedxamlname – gramatika následující řetězce:</span><span class="sxs-lookup"><span data-stu-id="ae5e5-110">String values that are of type DottedXamlName must conform to the following grammar:</span></span>  
-  
-```  
+```xaml  
 DottedXamlName ::= XamlName '.' XamlName  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="ae5e5-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ae5e5-111">Remarks</span></span>  
- <span data-ttu-id="ae5e5-112">Kompletní specifikaci, naleznete v tématu [ \[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).</span><span class="sxs-lookup"><span data-stu-id="ae5e5-112">For the complete specification, see [\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).</span></span>
+## <a name="remarks"></a><span data-ttu-id="10c01-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="10c01-131">Remarks</span></span>  
+ <span data-ttu-id="10c01-132">Kompletní specifikaci naleznete v tématu [ \[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).</span><span class="sxs-lookup"><span data-stu-id="10c01-132">For the complete specification, see [\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).</span></span>

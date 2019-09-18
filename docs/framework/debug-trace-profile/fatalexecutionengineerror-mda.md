@@ -14,56 +14,56 @@ helpviewer_keywords:
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5f5d529451f30a6785547410f5121dbb6f91fe01
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3fd58ae8f73fd932df641ea96a44ff618dd139e2
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660391"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052810"
 ---
-# <a name="fatalexecutionengineerror-mda"></a><span data-ttu-id="11e10-102">fatalExecutionEngineError – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="11e10-102">fatalExecutionEngineError MDA</span></span>
-<span data-ttu-id="11e10-103">`fatalExecutionEngineError` Pomocníka spravovaného ladění (MDA) se aktivuje, když byla zjištěna závažná chyba v modulu common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="11e10-103">The `fatalExecutionEngineError` managed debugging assistant (MDA) is activated when a fatal error in the common language runtime (CLR) has been detected.</span></span> <span data-ttu-id="11e10-104">Proces bude ukončen.</span><span class="sxs-lookup"><span data-stu-id="11e10-104">The process will be terminated.</span></span>  
+# <a name="fatalexecutionengineerror-mda"></a><span data-ttu-id="26ae3-102">fatalExecutionEngineError – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="26ae3-102">fatalExecutionEngineError MDA</span></span>
+<span data-ttu-id="26ae3-103">Pokud byla zjištěna závažná chyba v modulu CLR (Common Language Runtime), je aktivována pomocník spravovanéholadění(MDA).`fatalExecutionEngineError`</span><span class="sxs-lookup"><span data-stu-id="26ae3-103">The `fatalExecutionEngineError` managed debugging assistant (MDA) is activated when a fatal error in the common language runtime (CLR) has been detected.</span></span> <span data-ttu-id="26ae3-104">Proces se ukončí.</span><span class="sxs-lookup"><span data-stu-id="26ae3-104">The process will be terminated.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="11e10-105">Příznaky</span><span class="sxs-lookup"><span data-stu-id="11e10-105">Symptoms</span></span>  
- <span data-ttu-id="11e10-106">Ukončení procesu pro neočekávané.</span><span class="sxs-lookup"><span data-stu-id="11e10-106">Unexpected process termination.</span></span> <span data-ttu-id="11e10-107">Další příznaky nelze určit, protože může dojít k selhání modulu CLR pro celou řadu důvodů.</span><span class="sxs-lookup"><span data-stu-id="11e10-107">Other symptoms cannot be determined because a CLR failure can occur for a variety of reasons.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="26ae3-105">Příznaky</span><span class="sxs-lookup"><span data-stu-id="26ae3-105">Symptoms</span></span>  
+ <span data-ttu-id="26ae3-106">Neočekávané ukončení procesu.</span><span class="sxs-lookup"><span data-stu-id="26ae3-106">Unexpected process termination.</span></span> <span data-ttu-id="26ae3-107">Jiné příznaky nelze určit, protože k selhání CLR může dojít z nejrůznějších důvodů.</span><span class="sxs-lookup"><span data-stu-id="26ae3-107">Other symptoms cannot be determined because a CLR failure can occur for a variety of reasons.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="11e10-108">Příčina</span><span class="sxs-lookup"><span data-stu-id="11e10-108">Cause</span></span>  
- <span data-ttu-id="11e10-109">Modul CLR byl fatálně poškozen.</span><span class="sxs-lookup"><span data-stu-id="11e10-109">The CLR has been fatally corrupted.</span></span> <span data-ttu-id="11e10-110">To je často způsobeno poškození dat, která může být způsobeno různé problémy, jako například volání na poškozené platformu vyvolání funkce a předáním neplatná data modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="11e10-110">This is most often caused by data corruption, which can be caused by a number of problems, such as calls to malformed platform invoke functions and passing invalid data to the CLR.</span></span>  
+## <a name="cause"></a><span data-ttu-id="26ae3-108">příčina</span><span class="sxs-lookup"><span data-stu-id="26ae3-108">Cause</span></span>  
+ <span data-ttu-id="26ae3-109">Modul CLR byl závažně poškozen.</span><span class="sxs-lookup"><span data-stu-id="26ae3-109">The CLR has been fatally corrupted.</span></span> <span data-ttu-id="26ae3-110">To je nejčastěji způsobeno poškozením dat, což může být způsobeno několika problémy, jako jsou volání funkcí vyvolání poškozené platformy a předání neplatných dat modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="26ae3-110">This is most often caused by data corruption, which can be caused by a number of problems, such as calls to malformed platform invoke functions and passing invalid data to the CLR.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="11e10-111">Řešení</span><span class="sxs-lookup"><span data-stu-id="11e10-111">Resolution</span></span>  
- <span data-ttu-id="11e10-112">Povolení dalších mda mohou pomoci při identifikaci problému.</span><span class="sxs-lookup"><span data-stu-id="11e10-112">Enabling additional MDAs might help identify the problem.</span></span> <span data-ttu-id="11e10-113">Následující mda může být zvláště užitečné při diagnostice problému:</span><span class="sxs-lookup"><span data-stu-id="11e10-113">The following MDAs can be particularly helpful in diagnosing the issue:</span></span>  
+## <a name="resolution"></a><span data-ttu-id="26ae3-111">Řešení</span><span class="sxs-lookup"><span data-stu-id="26ae3-111">Resolution</span></span>  
+ <span data-ttu-id="26ae3-112">Povolení dalších MDA může přispět k identifikaci problému.</span><span class="sxs-lookup"><span data-stu-id="26ae3-112">Enabling additional MDAs might help identify the problem.</span></span> <span data-ttu-id="26ae3-113">Následující MDA může být obzvláště užitečná při diagnostice tohoto problému:</span><span class="sxs-lookup"><span data-stu-id="26ae3-113">The following MDAs can be particularly helpful in diagnosing the issue:</span></span>  
   
-- [<span data-ttu-id="11e10-114">invalidOverlappedToPinvoke</span><span class="sxs-lookup"><span data-stu-id="11e10-114">invalidOverlappedToPinvoke</span></span>](../../../docs/framework/debug-trace-profile/invalidoverlappedtopinvoke-mda.md)  
+- [<span data-ttu-id="26ae3-114">invalidOverlappedToPinvoke</span><span class="sxs-lookup"><span data-stu-id="26ae3-114">invalidOverlappedToPinvoke</span></span>](invalidoverlappedtopinvoke-mda.md)  
   
-- [<span data-ttu-id="11e10-115">overlappedFreeError</span><span class="sxs-lookup"><span data-stu-id="11e10-115">overlappedFreeError</span></span>](../../../docs/framework/debug-trace-profile/overlappedfreeerror-mda.md)  
+- [<span data-ttu-id="26ae3-115">overlappedFreeError</span><span class="sxs-lookup"><span data-stu-id="26ae3-115">overlappedFreeError</span></span>](overlappedfreeerror-mda.md)  
   
-- [<span data-ttu-id="11e10-116">pInvokeStackImbalance</span><span class="sxs-lookup"><span data-stu-id="11e10-116">pInvokeStackImbalance</span></span>](../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)  
+- [<span data-ttu-id="26ae3-116">pInvokeStackImbalance</span><span class="sxs-lookup"><span data-stu-id="26ae3-116">pInvokeStackImbalance</span></span>](pinvokestackimbalance-mda.md)  
   
-- [<span data-ttu-id="11e10-117">gcUnmanagedToManaged</span><span class="sxs-lookup"><span data-stu-id="11e10-117">gcUnmanagedToManaged</span></span>](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)  
+- [<span data-ttu-id="26ae3-117">gcUnmanagedToManaged</span><span class="sxs-lookup"><span data-stu-id="26ae3-117">gcUnmanagedToManaged</span></span>](gcunmanagedtomanaged-mda.md)  
   
-- [<span data-ttu-id="11e10-118">gcManagedToUnmanaged</span><span class="sxs-lookup"><span data-stu-id="11e10-118">gcManagedToUnmanaged</span></span>](../../../docs/framework/debug-trace-profile/gcmanagedtounmanaged-mda.md)  
+- [<span data-ttu-id="26ae3-118">gcManagedToUnmanaged</span><span class="sxs-lookup"><span data-stu-id="26ae3-118">gcManagedToUnmanaged</span></span>](gcmanagedtounmanaged-mda.md)  
   
-- [<span data-ttu-id="11e10-119">callbackOnCollectedDelegate</span><span class="sxs-lookup"><span data-stu-id="11e10-119">callbackOnCollectedDelegate</span></span>](../../../docs/framework/debug-trace-profile/callbackoncollecteddelegate-mda.md)  
+- [<span data-ttu-id="26ae3-119">callbackOnCollectedDelegate</span><span class="sxs-lookup"><span data-stu-id="26ae3-119">callbackOnCollectedDelegate</span></span>](callbackoncollecteddelegate-mda.md)  
   
-- [<span data-ttu-id="11e10-120">reportAvOnComRelease</span><span class="sxs-lookup"><span data-stu-id="11e10-120">reportAvOnComRelease</span></span>](../../../docs/framework/debug-trace-profile/reportavoncomrelease-mda.md)  
+- [<span data-ttu-id="26ae3-120">reportAvOnComRelease</span><span class="sxs-lookup"><span data-stu-id="26ae3-120">reportAvOnComRelease</span></span>](reportavoncomrelease-mda.md)  
   
-- [<span data-ttu-id="11e10-121">invalidVariant</span><span class="sxs-lookup"><span data-stu-id="11e10-121">invalidVariant</span></span>](../../../docs/framework/debug-trace-profile/invalidvariant-mda.md)  
+- [<span data-ttu-id="26ae3-121">invalidVariant</span><span class="sxs-lookup"><span data-stu-id="26ae3-121">invalidVariant</span></span>](invalidvariant-mda.md)  
   
-- [<span data-ttu-id="11e10-122">invalidIUnknown</span><span class="sxs-lookup"><span data-stu-id="11e10-122">invalidIUnknown</span></span>](../../../docs/framework/debug-trace-profile/invalidiunknown-mda.md)  
+- [<span data-ttu-id="26ae3-122">invalidIUnknown</span><span class="sxs-lookup"><span data-stu-id="26ae3-122">invalidIUnknown</span></span>](invalidiunknown-mda.md)  
   
-- [<span data-ttu-id="11e10-123">raceOnRCWCleanup</span><span class="sxs-lookup"><span data-stu-id="11e10-123">raceOnRCWCleanup</span></span>](../../../docs/framework/debug-trace-profile/raceonrcwcleanup-mda.md)  
+- [<span data-ttu-id="26ae3-123">raceOnRCWCleanup</span><span class="sxs-lookup"><span data-stu-id="26ae3-123">raceOnRCWCleanup</span></span>](raceonrcwcleanup-mda.md)  
   
-- [<span data-ttu-id="11e10-124">invalidFunctionPointerInDelegate</span><span class="sxs-lookup"><span data-stu-id="11e10-124">invalidFunctionPointerInDelegate</span></span>](../../../docs/framework/debug-trace-profile/invalidfunctionpointerindelegate-mda.md)  
+- [<span data-ttu-id="26ae3-124">invalidFunctionPointerInDelegate</span><span class="sxs-lookup"><span data-stu-id="26ae3-124">invalidFunctionPointerInDelegate</span></span>](invalidfunctionpointerindelegate-mda.md)  
   
-- [<span data-ttu-id="11e10-125">invalidGCHandleCookie</span><span class="sxs-lookup"><span data-stu-id="11e10-125">invalidGCHandleCookie</span></span>](../../../docs/framework/debug-trace-profile/invalidgchandlecookie-mda.md)  
+- [<span data-ttu-id="26ae3-125">invalidGCHandleCookie</span><span class="sxs-lookup"><span data-stu-id="26ae3-125">invalidGCHandleCookie</span></span>](invalidgchandlecookie-mda.md)  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="11e10-126">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="11e10-126">Effect on the Runtime</span></span>  
- <span data-ttu-id="11e10-127">Toto MDA nemá žádný vliv na chování modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="11e10-127">This MDA has no effect on the runtime's behavior.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="26ae3-126">Vliv na modul runtime</span><span class="sxs-lookup"><span data-stu-id="26ae3-126">Effect on the Runtime</span></span>  
+ <span data-ttu-id="26ae3-127">Tento MDA nemá žádný vliv na chování modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="26ae3-127">This MDA has no effect on the runtime's behavior.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="11e10-128">Výstup</span><span class="sxs-lookup"><span data-stu-id="11e10-128">Output</span></span>  
- <span data-ttu-id="11e10-129">Adresa funkce modulu CLR, která způsobila závažná chyba a ID vlákna, kde došlo k chybě, kód chyby.</span><span class="sxs-lookup"><span data-stu-id="11e10-129">The address of the CLR function that caused the fatal error, the ID of the thread where the error occurred, and the error code.</span></span>  
+## <a name="output"></a><span data-ttu-id="26ae3-128">Výstup</span><span class="sxs-lookup"><span data-stu-id="26ae3-128">Output</span></span>  
+ <span data-ttu-id="26ae3-129">Adresa funkce CLR, která způsobila závažnou chybu, ID vlákna, ve kterém došlo k chybě, a kód chyby.</span><span class="sxs-lookup"><span data-stu-id="26ae3-129">The address of the CLR function that caused the fatal error, the ID of the thread where the error occurred, and the error code.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="11e10-130">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="11e10-130">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="26ae3-130">Konfiguraci</span><span class="sxs-lookup"><span data-stu-id="26ae3-130">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -73,8 +73,8 @@ ms.locfileid: "64660391"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="11e10-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="11e10-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26ae3-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26ae3-131">See also</span></span>
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution.Cer>
-- [<span data-ttu-id="11e10-132">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="11e10-132">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="26ae3-132">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="26ae3-132">Diagnosing Errors with Managed Debugging Assistants</span></span>](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -13,32 +13,32 @@ helpviewer_keywords:
 ms.assetid: 96e7b2c1-843f-4d64-b519-740c3a18b50a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 30db07ddf935b5ce13b1fe4212f7f6a40270ae93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ddb6b0b5c2248d215245e0f881c8e7c91b13e480
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753696"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052432"
 ---
-# <a name="notmarshalable-mda"></a><span data-ttu-id="1e22a-102">notMarshalable – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="1e22a-102">notMarshalable MDA</span></span>
-<span data-ttu-id="1e22a-103">`notMarshalable` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR (CLR) setká ukazatele rozhraní modelu COM bez platné registrované proxy/zástupné procedury nebo nesprávné `IMarshal` při pokusu o implementace rozhraní zařazování rozhraní napříč kontexty.</span><span class="sxs-lookup"><span data-stu-id="1e22a-103">The `notMarshalable` managed debugging assistant (MDA) is activated when the common language runtime (CLR) encounters a COM interface pointer without a valid registered proxy/stub or an incorrect `IMarshal` interface implementation while attempting to marshal the interface across contexts.</span></span>  
+# <a name="notmarshalable-mda"></a><span data-ttu-id="e9514-102">notMarshalable – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="e9514-102">notMarshalable MDA</span></span>
+<span data-ttu-id="e9514-103">Pomocník spravovaného ladění (MDA) je aktivován, pokud modul CLR (Common Language Runtime) nalezne ukazatel rozhraní modelu COM bez platného registrovaného proxy/zástupné `IMarshal` procedury nebo nesprávná implementace rozhraní při pokusu o `notMarshalable` zařazování rozhraní napříč kontexty.</span><span class="sxs-lookup"><span data-stu-id="e9514-103">The `notMarshalable` managed debugging assistant (MDA) is activated when the common language runtime (CLR) encounters a COM interface pointer without a valid registered proxy/stub or an incorrect `IMarshal` interface implementation while attempting to marshal the interface across contexts.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="1e22a-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="1e22a-104">Symptoms</span></span>  
- <span data-ttu-id="1e22a-105">Volání nejsou obsluhovány nebo v chybném kontextu pro ukazatele rozhraní modelu COM dojde k volání.</span><span class="sxs-lookup"><span data-stu-id="1e22a-105">Calls are not serviced, or calls occur in the wrong context for COM interface pointers.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="e9514-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="e9514-104">Symptoms</span></span>  
+ <span data-ttu-id="e9514-105">Volání nejsou obsluhovaná nebo se volání vyskytují v nesprávném kontextu ukazatelů rozhraní modelu COM.</span><span class="sxs-lookup"><span data-stu-id="e9514-105">Calls are not serviced, or calls occur in the wrong context for COM interface pointers.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="1e22a-106">Příčina</span><span class="sxs-lookup"><span data-stu-id="1e22a-106">Cause</span></span>  
- <span data-ttu-id="1e22a-107">Žádný platný registrované proxy nebo zástupné procedury nebo nesprávné `IMarshal` při pokusu o zařazení rozhraní napříč kontexty.</span><span class="sxs-lookup"><span data-stu-id="1e22a-107">No valid registered proxy/stub or an incorrect `IMarshal` while attempting to marshal the interface across contexts.</span></span>  
+## <a name="cause"></a><span data-ttu-id="e9514-106">příčina</span><span class="sxs-lookup"><span data-stu-id="e9514-106">Cause</span></span>  
+ <span data-ttu-id="e9514-107">Při pokusu o zařazování rozhraní napříč kontexty není k dispozici žádný platný registrovaný proxy/zástupný kód nebo nesprávný `IMarshal` .</span><span class="sxs-lookup"><span data-stu-id="e9514-107">No valid registered proxy/stub or an incorrect `IMarshal` while attempting to marshal the interface across contexts.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="1e22a-108">Řešení</span><span class="sxs-lookup"><span data-stu-id="1e22a-108">Resolution</span></span>  
- <span data-ttu-id="1e22a-109">Ujistěte se, že máte proxy zástupné procedury zaregistrované a že `IMarshal` implementace je platný.</span><span class="sxs-lookup"><span data-stu-id="1e22a-109">Make sure you have a proxy stub registered and that the `IMarshal` implementation is valid.</span></span>  
+## <a name="resolution"></a><span data-ttu-id="e9514-108">Řešení</span><span class="sxs-lookup"><span data-stu-id="e9514-108">Resolution</span></span>  
+ <span data-ttu-id="e9514-109">Ujistěte se, že máte registrovanou zástupnou proceduru `IMarshal` proxy a že je implementace platná.</span><span class="sxs-lookup"><span data-stu-id="e9514-109">Make sure you have a proxy stub registered and that the `IMarshal` implementation is valid.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="1e22a-110">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="1e22a-110">Effect on the Runtime</span></span>  
- <span data-ttu-id="1e22a-111">Toto MDA nemá žádný vliv na modul runtime.</span><span class="sxs-lookup"><span data-stu-id="1e22a-111">This MDA has no effect on the runtime.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="e9514-110">Vliv na modul runtime</span><span class="sxs-lookup"><span data-stu-id="e9514-110">Effect on the Runtime</span></span>  
+ <span data-ttu-id="e9514-111">Tento MDA nemá žádný vliv na modul runtime.</span><span class="sxs-lookup"><span data-stu-id="e9514-111">This MDA has no effect on the runtime.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="1e22a-112">Výstup</span><span class="sxs-lookup"><span data-stu-id="1e22a-112">Output</span></span>  
- <span data-ttu-id="1e22a-113">Zprávu s popisem problému.</span><span class="sxs-lookup"><span data-stu-id="1e22a-113">A message describing the problem.</span></span>  
+## <a name="output"></a><span data-ttu-id="e9514-112">Výstup</span><span class="sxs-lookup"><span data-stu-id="e9514-112">Output</span></span>  
+ <span data-ttu-id="e9514-113">Zpráva s popisem problému.</span><span class="sxs-lookup"><span data-stu-id="e9514-113">A message describing the problem.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="1e22a-114">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="1e22a-114">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="e9514-114">Konfiguraci</span><span class="sxs-lookup"><span data-stu-id="e9514-114">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -48,8 +48,8 @@ ms.locfileid: "61753696"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1e22a-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1e22a-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e9514-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9514-115">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [<span data-ttu-id="1e22a-116">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="1e22a-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="1e22a-117">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="1e22a-117">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+- [<span data-ttu-id="e9514-116">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="e9514-116">Diagnosing Errors with Managed Debugging Assistants</span></span>](diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="e9514-117">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="e9514-117">Interop Marshaling</span></span>](../interop/interop-marshaling.md)
