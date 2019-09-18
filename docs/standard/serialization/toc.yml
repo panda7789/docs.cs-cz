@@ -1,8 +1,12 @@
 - name: Serializace
   href: index.md
   items:
-    - name: 'Postupy: Serializace'
-      href: serialization-how-to-topics.md
+    - name: Serializace JSON
+      items:
+        - name: Přehled
+          href: system-text-json-overview.md
+        - name: Postup serializace a deserializace JSON
+          href: system-text-json-how-to.md
     - name: Binární serializace
       href: binary-serialization.md
       items:
@@ -27,6 +31,8 @@
     - name: Serializace XML a SOAP
       href: xml-and-soap-serialization.md
       items:
+        - name: 'Postupy: Serializace'
+          href: serialization-how-to-topics.md
         - name: 'Postupy: Řízení serializace odvozených tříd'
           href: how-to-control-serialization-of-derived-classes.md
         - name: Představení serializace XML
@@ -67,23 +73,23 @@
           href: add-element-for-schemaimporterextensions.md
         - name: Element <xmlSerializer>
           href: xmlserializer-element.md
-    - name: Nástroje pro serializaci
-      href: serialization-tools.md
-      items:
-        - name: Nástroj XML Serializer Generator Tool (Sgen.exe)
-          href: xml-serializer-generator-tool-sgen-exe.md
-        - name: Nástroje definice schématu XML (Xsd.exe)
-          href: xml-schema-definition-tool-xsd-exe.md
-    - name: Ukázky serializace
-      href: serialization-samples.md
-      items:
-        - name: Ukázka technologie základní serializace
-          href: basic-serialization-technology-sample.md
-        - name: Vlastní pořadí serializace pomocí třídy XmlSerializer
-          href: custom-serialization-order-with-xmlserializer.md
-        - name: Ukázka technologie SchemaImporterExtension
-          href: schemaimporterextension-technology-sample.md
-        - name: Ukázka technologie serializace tolerantní vůči verzím
-          href: version-tolerant-serialization-technology-sample.md
-        - name: Ukázka technologie serializace obecných typů ve webových službách
-          href: web-services-generics-serialization-technology-sample.md
+        - name: Nástroje pro serializaci
+          href: serialization-tools.md
+          items:
+            - name: Nástroj XML Serializer Generator Tool (Sgen.exe)
+              href: xml-serializer-generator-tool-sgen-exe.md
+            - name: Nástroje definice schématu XML (Xsd.exe)
+              href: xml-schema-definition-tool-xsd-exe.md
+        - name: Ukázky serializace
+          href: serialization-samples.md
+          items:
+            - name: Ukázka technologie základní serializace
+              href: basic-serialization-technology-sample.md
+            - name: Vlastní pořadí serializace pomocí třídy XmlSerializer
+              href: custom-serialization-order-with-xmlserializer.md
+            - name: Ukázka technologie SchemaImporterExtension
+              href: schemaimporterextension-technology-sample.md
+            - name: Ukázka technologie serializace tolerantní vůči verzím
+              href: version-tolerant-serialization-technology-sample.md
+            - name: Ukázka technologie serializace obecných typů ve webových službách
+              href: web-services-generics-serialization-technology-sample.md
