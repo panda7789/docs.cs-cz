@@ -2,7 +2,7 @@
   items:
     - name: Vyhodnocení změn způsobujících chyby
       href: index.md
-    - name: Změny způsobující chyby
-      href: breaking-changes.md
     - name: Kategorie změn způsobujících chyby
       href: categories.md
+    - name: Změny způsobující chyby
+      href: breaking-changes.md
