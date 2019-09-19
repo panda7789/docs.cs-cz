@@ -2,12 +2,12 @@
 title: 'Výjimky: Výraz try...finally'
 description: Podívejte se, F# jak se "Try... finally ' Expression umožňuje spustit čistý kód, i když blok kódu vyvolá výjimku.
 ms.date: 05/16/2016
-ms.openlocfilehash: 03fbda1ef5d55560232f0217f603fc04c0af0eb4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0ddb64ac13b307404864ec5b54f26fd8a7a3d7d8
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630271"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082996"
 ---
 # <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Výraz try...finally
 
@@ -34,7 +34,7 @@ Následující kód demonstruje použití `try...finally` výrazu.
 
 Výstup do konzoly je následující.
 
-```
+```console
 Closing stream
 Exception handled.
 ```

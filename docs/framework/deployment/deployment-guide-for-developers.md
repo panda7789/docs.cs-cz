@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8dd7bac8c0cb14421016efad60a7ec0d672e5622
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2229dca07a3a723babe5bf202ce5ddc0c77a7374
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854019"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052192"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -53,15 +53,15 @@ Odkazy ke stažení najdete v části [redistribuovatelné balíčky](#redistrib
 
 - Pro instalaci .NET Framework 4,5 a jeho verzí musíte mít oprávnění správce.
 
-- .NET Framework 4,5 je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže je nemusíte nasazovat do vaší aplikace v těchto operačních systémech. Podobně platí, že .NET Framework 4.5.1 je [!INCLUDE[win81](../../../includes/win81-md.md)] součástí systému a Windows Server 2012 R2. .NET Framework 4.5.2 není součástí žádného operačního systému. .NET Framework 4,6 je součástí Windows 10, aktualizace .NET Framework 4.6.1 je součástí Windows 10 listopad Update a .NET Framework 4.6.2 je součástí aktualizace Windows 10 pro výročí.  .NET Framework 4,7 je součástí Windows 10 Creators Update, .NET Framework 4.7.1 je součástí Windows 10 Creators Updates a .NET Framework 4.7.2 je součástí Windows 10 říjen 2018 Update a Windows 10. dubna 2018 Update. .NET Framework 4,8 je součástí aktualizace Windows 10. května 2019. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
+- .NET Framework 4,5 je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže je nemusíte nasazovat do vaší aplikace v těchto operačních systémech. Podobně platí, že .NET Framework 4.5.1 je [!INCLUDE[win81](../../../includes/win81-md.md)] součástí systému a Windows Server 2012 R2. .NET Framework 4.5.2 není součástí žádného operačního systému. .NET Framework 4,6 je součástí Windows 10, aktualizace .NET Framework 4.6.1 je součástí Windows 10 listopad Update a .NET Framework 4.6.2 je součástí aktualizace Windows 10 pro výročí.  .NET Framework 4,7 je součástí Windows 10 Creators Update, .NET Framework 4.7.1 je součástí Windows 10 Creators Updates a .NET Framework 4.7.2 je součástí Windows 10 říjen 2018 Update a Windows 10. dubna 2018 Update. .NET Framework 4,8 je součástí aktualizace Windows 10. května 2019. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../get-started/system-requirements.md).
 
-- Počínaje .NET Framework 4,5 mohou uživatelé zobrazit seznam spuštěných .NET Framework aplikací během instalace a snadno je zavřít. To může zabránit restartování systému způsobenému instalací .NET Framework. Viz [snížení počtu restartování systému](../../../docs/framework/deployment/reducing-system-restarts.md).
+- Počínaje .NET Framework 4,5 mohou uživatelé zobrazit seznam spuštěných .NET Framework aplikací během instalace a snadno je zavřít. To může zabránit restartování systému způsobenému instalací .NET Framework. Viz [snížení počtu restartování systému](reducing-system-restarts.md).
 
 - Odinstalování .NET Framework 4,5 nebo některé z jeho vydaných verzí také odebere již existující soubory .NET Framework 4. Pokud se chcete vrátit na .NET Framework 4, je nutné ji znovu nainstalovat a všechny její aktualizace. (Viz [instalace .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5a4x27ek(v=vs.100)).)
 
 - Distribuovatelný balíček .NET Framework 4,5 byl od 9. října 2012 aktualizován, aby opravil problém týkající se nesprávného časového razítka v digitálním certifikátu, což způsobilo, že digitální podpis u souborů vytvořených a podepsaných společností Microsoft vyprší předčasně. Pokud jste dříve nainstalovali balíček .NET Framework 4,5 Redistributable, který je vydaný 16. srpna 2012, doporučujeme, abyste aktualizovali kopii pomocí nejnovější distribuovatelné verze z webu [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v článku [Microsoft Security advisor 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655).
 
-Informace o tom, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti, najdete v tématu [Průvodce nasazením pro správce](../../../docs/framework/deployment/guide-for-administrators.md).
+Informace o tom, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti, najdete v tématu [Průvodce nasazením pro správce](guide-for-administrators.md).
 
 ## <a name="deployment-options-for-your-app"></a>Možnosti nasazení pro vaši aplikaci
 
@@ -233,7 +233,7 @@ Společné návratové kódy naleznete v části [návratové kódy](#return-cod
 
 Pokud máte vlastní instalační balíček, můžete chtít spustit tichou instalaci a sledovat nastavení .NET Framework a zároveň zobrazit průběh instalace. Pokud se jedná o tento případ, ujistěte se, že váš kód pokrývá následující:
 
-- Vyhledejte [.NET Framework požadavky na hardware a software](../../../docs/framework/get-started/system-requirements.md).
+- Vyhledejte [.NET Framework požadavky na hardware a software](../get-started/system-requirements.md).
 
 - [Zjišťuje](#detect_net) , zda je v počítači uživatele již nainstalována správná verze .NET Framework.
 
@@ -242,7 +242,7 @@ Pokud máte vlastní instalační balíček, můžete chtít spustit tichou inst
 
 - [Zjišťuje](#detecting-the-language-packs) , zda jsou v počítači uživatele již nainstalovány jazykové sady.
 
-- Chcete-li řídit nasazení, tiche spuštění a sledování procesu instalace .NET Framework (viz [postup: Získejte průběh z instalačního programu](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).NET Framework 4,5).
+- Chcete-li řídit nasazení, tiche spuštění a sledování procesu instalace .NET Framework (viz [postup: Získejte průběh z instalačního programu](how-to-get-progress-from-the-dotnet-installer.md).NET Framework 4,5).
 
 - Pokud nasazujete offline instalační program, [řetězte si jazykové sady samostatně](#chain_langpack).
 
@@ -431,9 +431,9 @@ V následující tabulce jsou uvedeny .NET Framework jazykové sady, které jsou
 
 ## <a name="see-also"></a>Viz také:
 
-- [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)
-- [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)
-- [Instalace .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)
-- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
-- [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)
-- [Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+- [Příručka nasazení pro administrátory](guide-for-administrators.md)
+- [Požadavky na systém](../get-started/system-requirements.md)
+- [Instalace .NET Framework pro vývojáře](../install/guide-for-developers.md)
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](reducing-system-restarts.md)
+- [Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](how-to-get-progress-from-the-dotnet-installer.md)

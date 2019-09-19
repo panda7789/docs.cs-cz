@@ -10,17 +10,17 @@ helpviewer_keywords:
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f990c5194c2e5dc1422aab96c7608c019ae9855b
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 84ae47b984d6a1a207e6678e30991073ba02a438
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894760"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043998"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportér knihovny typů)
 Exportér knihovny typů generuje knihovny typů, které popisují typy definované v sestavení Common Language Runtime.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -64,11 +64,11 @@ tlbexp assemblyName [options]
   
  Celé sestavení se převede najednou. Pomocí nástroje Tlbexp.exe nelze generovat informace o typu pro podtypy definované v sestavení.  
   
- Tlbexp. exe nelze použít k vytvoření knihovny typů ze sestavení, které bylo importováno pomocí nástroje pro [Import knihovny typů (Tlbimp. exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Místo toho byste měli použít původní knihovnu typů, která byla importována pomocí nástroje Tlbimp.exe. Knihovny typů můžete exportovat ze sestavení, která odkazují na sestavení, jež byla importována pomocí nástroje Tlbimp.exe. Příklady najdete v části níže.  
+ Tlbexp. exe nelze použít k vytvoření knihovny typů ze sestavení, které bylo importováno pomocí nástroje pro [Import knihovny typů (Tlbimp. exe)](tlbimp-exe-type-library-importer.md). Místo toho byste měli použít původní knihovnu typů, která byla importována pomocí nástroje Tlbimp.exe. Knihovny typů můžete exportovat ze sestavení, která odkazují na sestavení, jež byla importována pomocí nástroje Tlbimp.exe. Příklady najdete v části níže.  
   
  Nástroj Tlbexp.exe umístí vytvořenou knihovnu typů do aktuálního pracovního adresáře nebo do adresáře určeného pro výstupní soubor. Jediné sestavení může způsobit vygenerování několika knihoven typů.  
   
- Nástroj Tlbexp.exe vygeneruje knihovnu typů, ale nezaregistruje ji. To je na rozdíl od [Nástroje pro registraci sestavení (Regasm. exe)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md), který vygeneruje a zaregistruje knihovnu typů. Chcete-li vygenerovat a zaregistrovat knihovnu typů s modelem COM, použijte nástroj Regasm.exe.  
+ Nástroj Tlbexp.exe vygeneruje knihovnu typů, ale nezaregistruje ji. To je na rozdíl od [Nástroje pro registraci sestavení (Regasm. exe)](regasm-exe-assembly-registration-tool.md), který vygeneruje a zaregistruje knihovnu typů. Chcete-li vygenerovat a zaregistrovat knihovnu typů s modelem COM, použijte nástroj Regasm.exe.  
   
  Pokud nezadáte žádnou z `/win32` možností nebo `/win64` , Tlbexp. exe vygeneruje knihovnu typů 32 nebo 64, která odpovídá typu počítače, na kterém provádíte kompilaci (32-bit 64 nebo 16bitový počítač). Pro účely křížové kompilace můžete použít `/win64` možnost na 32 počítače ke generování knihovny typů 64 a můžete `/win32` použít možnost na počítači 64 pro vy32 generování 16bitové knihovny typů. 32 v 64bitových knihovnách <xref:System.Runtime.InteropServices.ComTypes.SYSKIND> typů je hodnota nastavena na. <xref:System.Runtime.InteropServices.ComTypes.SYSKIND.SYS_WIN32> 64 v 64bitových knihovnách <xref:System.Runtime.InteropServices.ComTypes.SYSKIND> typů je hodnota nastavena na. <xref:System.Runtime.InteropServices.ComTypes.SYSKIND.SYS_WIN64> Všechny transformace datových typů (například datové typy `IntPtr` velikosti ukazatelů, jako jsou a `UIntPtr`), jsou vhodně převedeny.  
   
@@ -132,8 +132,8 @@ tlbexp Sample.dll
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)
+- [Nástroje](index.md)
+- [Regasm.exe (nástroj registrace sestavení)](regasm-exe-assembly-registration-tool.md)
 - [Souhrn převodu sestavení na knihovnu typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
-- [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Tlbimp.exe (importér knihovny typů)](tlbimp-exe-type-library-importer.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

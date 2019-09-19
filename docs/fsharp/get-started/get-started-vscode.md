@@ -2,16 +2,16 @@
 title: Začínáme s nástrojem F# v Visual Studio Code
 description: Naučte se používat F# s Visual Studio Code a sadou modulů plug-in Ionide.
 ms.date: 12/23/2018
-ms.openlocfilehash: baaa87207122cfe314972aee5dfaf8a41de2c394
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2fa0518488d37b2130aaba96028ac92dac77eb97
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629979"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082988"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s nástrojem F# v Visual Studio Code
 
-Můžete psát F# v [Visual Studio Code](https://code.visualstudio.com) s modulem [Plug-in Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) a získat tak skvělé prostředí integrovaného vývojového prostředí (IDE) pro více platforem pomocí technologie IntelliSense a refaktoringu kódu Basic. Další informace o modulu plug-in najdete na [Ionide.IO](http://ionide.io) .
+Můžete psát F# v [Visual Studio Code](https://code.visualstudio.com) s [modulem plug-in Ionide](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) a získat tak skvělé prostředí integrovaného vývojového prostředí (IDE) pro více platforem pomocí technologie IntelliSense a refaktoringu kódu Basic. Další informace o modulu plug-in najdete na [Ionide.IO](http://ionide.io) .
 
 Chcete-li začít, ujistěte se, že máte [ F# a modul plug-in Ionide správně nainstalován](install-fsharp.md#install-f-with-visual-studio-code).
 
@@ -24,7 +24,7 @@ Chcete-li vytvořit F# nový projekt, otevřete Visual Studio Code v nové slož
 
 V dalším kroku otevřete paletu příkazů (**zobrazit > paleta příkazů**) a zadejte následující:
 
-```
+```console
 > F# new project
 ```
 
@@ -158,7 +158,7 @@ Vyberte oba řádky textu a stisknutím kombinace kláves ALT + ENTER tyto řád
 
 Dále v okně FSI zavolejte funkci s `PigLatin` modulem, který jste definovali dříve:
 
-```
+```console
 > PigLatin.toPigLatin "banana";;
 val it : string = "ananabay"
 > PigLatin.toPigLatin "apple";;

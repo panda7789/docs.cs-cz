@@ -2,12 +2,12 @@
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 08/08/2019
-ms.openlocfilehash: ba5a438d58963222c3fa55d2c585ef503dcd49db
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: c230fa201fce02ab537afc4e14468788d32b8c8a
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990412"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039483"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -63,117 +63,117 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 ## <a name="options"></a>Možnosti
 
-* **`-c|--configuration {Debug|Release}`**
+- **`-c|--configuration {Debug|Release}`**
 
   Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
 
-* **`--force`**
+- **`--force`**
 
   Vynutí vyřešení všech závislostí i v případě, že bylo poslední obnovení úspěšné. Zadání tohoto příznaku je stejné jako odstranění souboru *Project. assets. JSON* . Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Vypíše krátkou nápovědu k příkazu.
 
-* **`--include-source`**
+- **`--include-source`**
 
   Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly. Zdrojové soubory jsou zahrnuty ve `src` složce v rámci balíčku symbolů.
 
-* **`--include-symbols`**
+- **`--include-symbols`**
 
   Obsahuje kromě běžných balíčků NuGet ve výstupním adresáři také balíčky NuGet pro ladicí symboly.
 
-* **`--interactive`**
+- **`--interactive`**
 
   Umožňuje příkazu zastavit a počkat na vstup nebo akci uživatele (například k dokončení ověřování). K dispozici od verze .NET Core 3,0 SDK.
 
-* **`--no-build`**
+- **`--no-build`**
 
   Nevytvoří projekt před balením. Také implicitně nastaví `--no-restore` příznak.
 
-* **`--no-dependencies`**
+- **`--no-dependencies`**
 
   Ignoruje odkazy z projektu na projekt a obnoví pouze kořenový projekt. Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
-* **`--no-restore`**
+- **`--no-restore`**
 
   Při spuštění příkazu neprovede implicitní obnovení. Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
-* **`--nologo`**
+- **`--nologo`**
 
   Nezobrazuje úvodní nápis nebo zprávu o autorských právech. K dispozici od verze .NET Core 3,0 SDK.
 
-* **`-o|--output <OUTPUT_DIRECTORY>`**
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
   Umístí sestavené balíčky do zadaného adresáře.
 
-* **`--runtime <RUNTIME_IDENTIFIER>`**
+- **`--runtime <RUNTIME_IDENTIFIER>`**
 
   Určuje cílový modul runtime pro obnovení balíčků pro. Seznam identifikátorů modulu runtime (identifikátorů RID) najdete v [katalogu RID](../rid-catalog.md). Možnost je k dispozici od verze .NET Core 2,0 SDK.
 
-* **`-s|--serviceable`**
+- **`-s|--serviceable`**
 
   Nastaví v balíčku příznak služby. Další informace najdete na [blogu .NET: rozhraní .NET 4.5.1 podporuje aktualizace zabezpečení Microsoftu pro knihovny NuGet pro .NET](https://aka.ms/nupkgservicing).
 
-* **`--version-suffix <VERSION_SUFFIX>`**
+- **`--version-suffix <VERSION_SUFFIX>`**
 
   Definuje hodnotu `$(VersionSuffix)` vlastnosti MSBuild v projektu.
 
-* **`-v|--verbosity <LEVEL>`**
+- **`-v|--verbosity <LEVEL>`**
 
   Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]` `d[etailed]`, a .`diag[nostic]`
 
 ## <a name="examples"></a>Příklady
 
-* Sbalit projekt v aktuálním adresáři:
+- Sbalit projekt v aktuálním adresáři:
 
   ```console
   dotnet pack
   ```
 
-* `app1` Sbalit projekt:
+- `app1` Sbalit projekt:
 
   ```console
   dotnet pack ~/projects/app1/project.csproj
   ```
 
-* Sbalení projektu v aktuálním adresáři a umístění výsledných balíčků do `nupkgs` složky:
+- Sbalení projektu v aktuálním adresáři a umístění výsledných balíčků do `nupkgs` složky:
 
   ```console
   dotnet pack --output nupkgs
   ```
 
-* Sbalení projektu v aktuálním adresáři do `nupkgs` složky a přeskočení kroku sestavení:
+- Sbalení projektu v aktuálním adresáři do `nupkgs` složky a přeskočení kroku sestavení:
 
   ```console
   dotnet pack --no-build --output nupkgs
   ```
 
-* S příponou verze projektu nakonfigurovanou jako `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` v souboru *. csproj* rozbalte aktuální projekt a aktualizujte výslednou verzi balíčku s danou příponou:
+- S příponou verze projektu nakonfigurovanou jako `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` v souboru *. csproj* rozbalte aktuální projekt a aktualizujte výslednou verzi balíčku s danou příponou:
 
   ```console
   dotnet pack --version-suffix "ci-1234"
   ```
 
-* Nastavte na verzi `2.1.0` `PackageVersion` balíčku vlastnost MSBuild:
+- Nastavte na verzi `2.1.0` `PackageVersion` balíčku vlastnost MSBuild:
 
   ```console
   dotnet pack -p:PackageVersion=2.1.0
   ```
 
-* Sbalení projektu pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
+- Sbalení projektu pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
 
   ```console
   dotnet pack -p:TargetFrameworks=net45
   ```
 
-* Sbalení projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2,0 a novější verze):
+- Sbalení projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2,0 a novější verze):
 
   ```console
   dotnet pack --runtime win10-x64
   ```
 
-* Sbalení projektu pomocí [souboru. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
+- Sbalení projektu pomocí [souboru. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
 
   ```console
   dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget

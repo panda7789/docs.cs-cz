@@ -11,40 +11,40 @@ helpviewer_keywords:
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a68aac2a92a0569e288da858e4a4e4695fd5eaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d508beb697e07f7d3b960b6627b9a07ffe25adf4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754424"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052639"
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall – pomocník spravovaného ladění (MDA)
-`invalidCERCall` Pomocníka spravovaného ladění (MDA) se aktivuje při volání v grafu (CER) oblasti omezeného provádění metody, která nemá žádný kontrakt spolehlivosti nebo kontrakt příliš slabé. Slabé smlouvy je kontrakt, který deklaruje, že nejhorší případ stavu poškození mají větší rozsah než instance předává do volání, to znamená, <xref:System.AppDomain> stav procesu může dojít k poškození nebo, který není výsledek vždy nedeterministicky nelze vypočítat Při volání v rámci CER.  
+Pomocník `invalidCERCall` spravovaného ladění (MDA) je aktivován, pokud je volání v grafu s omezeným prováděním (CER) k metodě, která nemá žádnou smlouvu o spolehlivosti nebo nadměrnému slabému kontraktu. Slabý kontrakt je kontrakt, který deklaruje, že poškození nejhoršího případu má větší rozsah než instance předaná volání, to znamená, <xref:System.AppDomain> že stav procesu nebo může být poškozený nebo že jeho výsledek není vždycky deterministický Compute. volá se v rámci CER.  
   
 ## <a name="symptoms"></a>Příznaky  
- Neočekávané výsledky při spuštění kódu v CER. Příznaky se netýkají. By mohly být neočekávané <xref:System.OutOfMemoryException>, <xref:System.Threading.ThreadAbortException>, nebo další výjimky při volání do metody nespolehlivé vzhledem k tomu, že modul runtime nepřešly připravit předem nebo chránit z <xref:System.Threading.ThreadAbortException> výjimky za běhu. Větší hrozbu je, že všechny výjimky vyplývající z metody v době běhu může ponechte <xref:System.AppDomain> nebo zpracovat v nestabilním stavu, které bylo v rozporu s cílem CER. Z důvodů, proč se vytvoří CER je vyhnout poškození stavu takovou situaci. Příznaky poškozený stav jsou specifické pro aplikaci, protože definice konzistentně se liší mezi aplikacemi.  
+ Neočekávané výsledky při provádění kódu v CER Příznaky nejsou specifické. Mohou to být neočekávané <xref:System.OutOfMemoryException> <xref:System.Threading.ThreadAbortException>, nebo jiné výjimky při volání do nespolehlivé metody, protože modul runtime nepřipravil předem <xref:System.Threading.ThreadAbortException> čas nebo ho předá za běhu před výjimkami. Větší hrozba je, že jakákoli výjimka vyplývající z metody v době běhu může opustit <xref:System.AppDomain> proces nebo v nestabilním stavu, což je v rozporu s cílem CER. Důvodem, proč je vytvořený CER, je zabránit poškození stavu, jako je to. Příznaky poškozeného stavu jsou specifické pro aplikace, protože definice konzistentního stavu se mezi aplikacemi liší.  
   
-## <a name="cause"></a>Příčina  
- Kód v rámci CER volá funkci bez <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> nebo s slabé <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> , který není kompatibilní s používané CER.  
+## <a name="cause"></a>příčina  
+ Kód v rámci CER volá funkci bez <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> nebo se slabým <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> , která není kompatibilní se spuštěným v CER.  
   
- Z hlediska syntaxe kontrakt spolehlivosti, je slabé kontrakt kontrakt, který nemá <xref:System.Runtime.ConstrainedExecution.Consistency> hodnota výčtu nebo určuje <xref:System.Runtime.ConstrainedExecution.Consistency> hodnotu <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>, <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>, nebo <xref:System.Runtime.ConstrainedExecution.Cer.None>. Kterákoli z těchto podmínek označuje, že kód volá může bránit ve snaze jiný kód v CER udržovat konzistentní stav.  CERs povolit kód přistupovat ke všem chybám velmi deterministické způsobem, údržbu interní výstupních podmínek, které jsou důležité k aplikaci a umožňuje pracovat v obličej systému přechodné chyby, jako jsou například výjimky na více instancí z důvodu nedostatku paměti.  
+ V případě syntaxe kontraktu spolehlivosti je malý kontrakt kontraktem, který <xref:System.Runtime.ConstrainedExecution.Consistency> neurčuje hodnotu výčtu nebo <xref:System.Runtime.ConstrainedExecution.Consistency> Určuje hodnotu <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>, <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>nebo <xref:System.Runtime.ConstrainedExecution.Cer.None>. Kterákoli z těchto podmínek indikuje, že volaný kód může bránit v tom, aby bylo možné zabránit v konzistentním stavu úsilím druhého kódu ve službě CER.  CERs umožňuje kódu považovat chyby za velmi deterministické, zachovat interní invarianty, které jsou pro aplikaci důležité, a umožnit tak pokračování v běhu, jako je třeba výjimka z hlediska nedostatku paměti.  
   
- Aktivace toto MDA určuje možnost tak, aby volající nebyl očekáván nebo opustí, který může selhat v CER volané metody <xref:System.AppDomain> nebo zpracovat stav poškozený, nebo neopravitelným. Samozřejmě je volána kód se může správně spustit a problému je jednoduše chybějící kontrakt. Ale problematiku zápis spolehlivého kódu jsou drobné a absence kontraktu je vhodný indikátor, který nemusí být správně spuštěn kód. Kontrakty jsou indikátory, které spolehlivě kódovaný programátora a také slibuje, že tyto záruky nedojde ke změně v budoucnu revize kódu.  To znamená že smlouvách jsou deklarace záměr a nikoli pouze podrobnosti implementace.  
+ Aktivace této služby MDA indikuje možnost, že metoda, která je volána v CER, může selhat způsobem, který volající neočekával, nebo který opustí <xref:System.AppDomain> stav procesu nebo poškozený. Volaný kód samozřejmě může být spuštěn správně a problém je jednoduše chybějící kontrakt. Problémy spojené s psaním spolehlivého kódu jsou ale malé a absence kontraktu je dobrým indikátorem, že kód se nemusí správně spustit. Kontrakty jsou indikátory, které programátor má spolehlivé kódování a také příslibů, že se tyto záruky v budoucích revizích kódu nezmění.  To znamená, že kontrakty jsou deklarace záměru a ne pouze podrobnosti implementace.  
   
- Protože jakoukoli metodou s kontraktem slabé nebo neexistující mohou selhat nepředvídatelnými způsoby, modul runtime nebude pokoušet odstraňte přitom všechny své vlastní nepředvídatelných chyb z metody, která vznikají zavlečením opožděné kompilace JIT, slovník obecných typů naplnění nebo vlákna přeruší, např. To znamená když je toto MDA aktivováno, znamená to, že modul runtime nenabízela volané metody CER definovanému; v tomto uzlu byl ukončen grafu volání, vzhledem k tomu, že budete pokračovat k přípravě tento podstrom by pomohl maskování potenciální chyby.  
+ Vzhledem k tomu, že jakákoli metoda se slabou nebo neexistující smlouvou může potenciálně selhat v mnoha nepředvídatelných způsobech, modul runtime se nepokusí odebrat žádné vlastní nepředvídatelné selhání z metody, která je zavedena opožděným kompilováním JIT, obecný slovník naplnění nebo přerušení vlákna, například. To znamená, že když je tento MDA aktivován, znamená to, že modul runtime nezahrnuje volanou metodu ve definovaném CER. graf volání byl ukončen v tomto uzlu, protože pokračováním v přípravě tohoto podstromu bude snazší maskovat potenciální chybu.  
   
 ## <a name="resolution"></a>Řešení  
- Přidat smlouvu platný spolehlivost funkci nebo Vyhněte se použití volání dané funkce.  
+ Přidejte k funkci platný kontrakt spolehlivosti nebo nepoužívejte volání této funkce.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Efekt volání slabé smlouvy z CER může být selhání CER pro dokončení jeho operace. To může vést k poškození <xref:System.AppDomain> zpracování stavu.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Výsledkem volání slabé smlouvy ze CER může být chyba CER při provádění operací. To může vést k poškození <xref:System.AppDomain> stavu procesu.  
   
 ## <a name="output"></a>Výstup  
- Tady je ukázkový výstup z tohoto MDA.  
+ Následuje ukázkový výstup z tohoto MDA.  
   
  `Method 'MethodWithCer', while executing within a constrained execution region, makes a call at IL offset 0x000C to 'MethodWithWeakContract', which does not have a sufficiently strong reliability contract and might cause non-deterministic results.`  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -58,4 +58,4 @@ ms.locfileid: "61754424"
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

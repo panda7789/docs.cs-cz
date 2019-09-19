@@ -2,12 +2,12 @@
 title: Aktivní vzorky
 description: Naučte se používat aktivní vzory k definování pojmenovaných oddílů, které rozdělují vstupní F# data v programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 12f423abe05e649e0b527ed04124b991feb5d592
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0c1315f2386b3cea2def698f4725e4c1cf030609
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629949"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083081"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
@@ -42,7 +42,7 @@ Můžete použít aktivní vzor ve výrazu pro porovnávání vzorů, jak je uve
 
 Výstup tohoto programu je následující:
 
-```
+```console
 7 is odd
 11 is odd
 32 is even
@@ -54,7 +54,7 @@ Další možností použití aktivních vzorů je rozložit datové typy různý
 
 Výstup výše uvedeného programu je následující:
 
-```
+```console
 Red
  Red: 255 Green: 0 Blue: 0
  Hue: 360.000000 Saturation: 1.000000 Brightness: 0.500000
@@ -84,7 +84,7 @@ V některých případech je potřeba rozdělit jenom část vstupního prostoru
 
 Výstup předchozího příkladu je následující:
 
-```
+```console
 1.100000 : Floating point
 0 : Integer
 0.000000 : Floating point
@@ -98,7 +98,7 @@ Při použití částečných aktivních vzorů mohou být jednotlivé volby odd
 
 Výstup je následující:
 
-```
+```console
 1 is a cube and a square
 8 is a cube
 27 is a cube
@@ -113,13 +113,13 @@ Výstup je následující:
 
 ## <a name="parameterized-active-patterns"></a>Parametrizované aktivní vzory
 
-Aktivní vzory vždycky přebírají aspoň jeden argument pro odpovídající položku, ale můžou také použít další argumenty. v takovém případě se použije název parametrizovaný *aktivní vzor* . Další argumenty umožňují specializované obecné vzory. Například aktivní vzory, které používají regulární výrazy k analýze řetězců často obsahují regulární výraz jako další parametr, jak je uvedeno v následujícím kódu, který používá také částečný aktivní vzor `Integer` definovaný v předchozím příkladu kódu. V tomto příkladu jsou přidány řetězce, které používají regulární výrazy pro různé formáty data pro přizpůsobení obecného ParseRegex aktivního vzoru. Celočíselný aktivní vzor slouží k převodu odpovídajících řetězců na celá čísla, která lze předat konstruktoru DateTime.
+Aktivní vzory vždycky přebírají aspoň jeden argument pro odpovídající položku, ale můžou také použít další argumenty. v takovém případě se použije název *parametrizovaný aktivní vzor* . Další argumenty umožňují specializované obecné vzory. Například aktivní vzory, které používají regulární výrazy k analýze řetězců často obsahují regulární výraz jako další parametr, jak je uvedeno v následujícím kódu, který používá také částečný aktivní vzor `Integer` definovaný v předchozím příkladu kódu. V tomto příkladu jsou přidány řetězce, které používají regulární výrazy pro různé formáty data pro přizpůsobení obecného ParseRegex aktivního vzoru. Celočíselný aktivní vzor slouží k převodu odpovídajících řetězců na celá čísla, která lze předat konstruktoru DateTime.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
 
 Výstup předchozího kódu je následující:
 
-```
+```console
 12/22/2008 12:00:00 AM 1/1/2009 12:00:00 AM 1/15/2008 12:00:00 AM 12/28/1995 12:00:00 AM
 ```
 
@@ -129,7 +129,7 @@ Aktivní vzory nejsou omezené jenom na výrazy porovnávání vzorů, můžete 
 
 Výstup předchozího kódu je následující:
 
-```
+```console
 Hello, random citizen!
 Hello, George!
 ```

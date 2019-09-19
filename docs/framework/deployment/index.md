@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d9448edab101ef11447b54e12c53abcb578646a
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: f1d13c4c3e27b5af5b3c3e84995cae3df94a307d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971604"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052082"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 
@@ -38,39 +38,39 @@ Pro konkrétní informace o nasazení a údržbě .NET Framework použijte násl
 
   - Režimy instalace:
 
-    - [Tichá instalace](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_custom)
+    - [Tichá instalace](deployment-guide-for-developers.md#chaining_custom)
 
-    - [Zobrazení uživatelského rozhraní](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining_default)
+    - [Zobrazení uživatelského rozhraní](deployment-guide-for-developers.md#chaining_default)
 
-  - [Snížení restartu systému během instalací .NET Framework 4,5](../../../docs/framework/deployment/reducing-system-restarts.md)
+  - [Snížení restartu systému během instalací .NET Framework 4,5](reducing-system-restarts.md)
 
   - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
 
 - Nasazení .NET Framework pomocí klientské aplikace (pro vývojáře):
 
-  - [Používání programu InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) v projektu instalace a nasazení
+  - [Používání programu InstallShield](deployment-guide-for-developers.md#installshield-deployment) v projektu instalace a nasazení
 
-  - [Použití aplikace Visual Studio ClickOnce](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)
+  - [Použití aplikace Visual Studio ClickOnce](deployment-guide-for-developers.md#clickonce-deployment)
 
-  - [Vytvoření instalačního balíčku WiX](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)
+  - [Vytvoření instalačního balíčku WiX](deployment-guide-for-developers.md#wix)
 
-  - [Použití vlastního instalačního programu](../../../docs/framework/deployment/deployment-guide-for-developers.md#chaining)
+  - [Použití vlastního instalačního programu](deployment-guide-for-developers.md#chaining)
 
-  - [Další informace](../../../docs/framework/deployment/deployment-guide-for-developers.md) pro vývojáře
+  - [Další informace](deployment-guide-for-developers.md) pro vývojáře
 
 - Nasazení .NET Framework (pro výrobce OEM a správce):
 
   - [Sada Windows Assessment and Deployment Kit (ADK)](https://go.microsoft.com/fwlink/p/?LinkId=254976)
 
-  - [Příručka pro správce](../../../docs/framework/deployment/guide-for-administrators.md)
+  - [Příručka pro správce](guide-for-administrators.md)
 
 **Údržba**
 
 - Obecné informace najdete na [blogu .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977) .
 
-- [Zjišťují se verze](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)
+- [Zjišťují se verze](../migration-guide/how-to-determine-which-versions-are-installed.md)
 
-- [Zjišťování aktualizací Service Pack a aktualizací](../../../docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
+- [Zjišťování aktualizací Service Pack a aktualizací](../migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)
 
 ## <a name="features-that-simplify-deployment"></a>Funkce, které zjednodušují nasazení
 
@@ -154,25 +154,25 @@ Některé informace o balení a nasazení pro .NET Framework jsou popsány v dal
 
 ### <a name="installation-location"></a>Umístění instalace
 
-Chcete-li určit, kam se mají nasadit sestavení vaší aplikace, aby je bylo možné najít modulem runtime, přečtěte si téma [jak modul runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).
+Chcete-li určit, kam se mají nasadit sestavení vaší aplikace, aby je bylo možné najít modulem runtime, přečtěte si téma [jak modul runtime vyhledává sestavení](how-the-runtime-locates-assemblies.md).
 
-Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Oprávnění zabezpečení se udělují spravovanému kódu podle toho, kde se nachází kód. Nasazení aplikace nebo komponenty do umístění, kde obdrží malý vztah důvěryhodnosti, jako je například Internet, omezuje, co může aplikace nebo komponenta dělat. Další informace o možnostech nasazení a zabezpečení najdete v tématu [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md).
+Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Oprávnění zabezpečení se udělují spravovanému kódu podle toho, kde se nachází kód. Nasazení aplikace nebo komponenty do umístění, kde obdrží malý vztah důvěryhodnosti, jako je například Internet, omezuje, co může aplikace nebo komponenta dělat. Další informace o možnostech nasazení a zabezpečení najdete v tématu [Základy zabezpečení přístupu kódu](../misc/code-access-security-basics.md).
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Popisuje, jak modul CLR (Common Language Runtime) určuje, které sestavení se má použít ke splnění požadavku vazby.|
-|[Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může <xref:System.InvalidCastException>vést <xref:System.MissingMethodException>k chybám, a.|
-|[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)|Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.|
-|[Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).|
-|[Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.|
+|[Jak běhové prostředí vyhledává sestavení](how-the-runtime-locates-assemblies.md)|Popisuje, jak modul CLR (Common Language Runtime) určuje, které sestavení se má použít ke splnění požadavku vazby.|
+|[Doporučené postupy pro načtení sestavení](best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může <xref:System.InvalidCastException>vést <xref:System.MissingMethodException>k chybám, a.|
+|[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](reducing-system-restarts.md)|Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.|
+|[Příručka nasazení pro administrátory](guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).|
+|[Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)|Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.|
 |[Nasazení aplikací, služeb a komponent](/visualstudio/deployment/deploying-applications-services-and-components)|Popisuje možnosti nasazení v aplikaci Visual Studio, včetně pokynů pro publikování aplikace pomocí technologie ClickOnce a Instalační služba systému Windows.|
 |[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak zabalit aplikaci model Windows Forms a nasadit ji pomocí technologie ClickOnce na klientské počítače v síti.|
-|[Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje model hvězdicové a paprsky, které .NET Framework používá k zabalení a nasazení prostředků. Popisuje zásady vytváření názvů prostředků, záložní proces a alternativy balení.|
-|[Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)|Vysvětluje, jak dodávat a instalovat aplikace spolupráce, které obvykle zahrnují .NET Framework sestavení klienta, jedno nebo více definičních sestavení představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM.|
-|[Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.|
+|[Zabalení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje model hvězdicové a paprsky, které .NET Framework používá k zabalení a nasazení prostředků. Popisuje zásady vytváření názvů prostředků, záložní proces a alternativy balení.|
+|[Nasazení aplikace spolupráce](../interop/deploying-an-interop-application.md)|Vysvětluje, jak dodávat a instalovat aplikace spolupráce, které obvykle zahrnují .NET Framework sestavení klienta, jedno nebo více definičních sestavení představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM.|
+|[Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](how-to-get-progress-from-the-dotnet-installer.md)|V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.|
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce vývojem](../../../docs/framework/development-guide.md)
+- [Průvodce vývojem](../development-guide.md)

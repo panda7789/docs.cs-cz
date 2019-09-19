@@ -1,17 +1,16 @@
 ---
-title: Začínáme s .NET Core v systému macOS
+title: 'Kurz: Vytvoření řešení .NET Core v macOS pomocí Visual Studio Code'
 description: Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pomocí Visual Studio Code.
-author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: 572174cb09dbde03095fa9444989356038bab9b7
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 022afd99c6d36d7a60ac40f3f27ba073c5470bd2
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849358"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082814"
 ---
-# <a name="get-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
+# <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Kurz: Vytvoření řešení .NET Core v macOS pomocí Visual Studio Code
 
 Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pro macOS. Naučte se vytvářet projekty, testy jednotek, používat ladicí nástroje a začlenit knihovny třetích stran přes [NuGet](https://www.nuget.org/).
 
@@ -32,13 +31,13 @@ V tomto kurzu vytvoříte tři projekty: projekt knihovny, testy pro daný proje
 
 Spusťte Visual Studio Code. Stiskněte klávesu <kbd>CTRL</kbd> + <kbd>\`</kbd> (znaková uvozovka nebo znak zaškrtnutí) nebo vyberte **Zobrazit > integrovaného terminálu** z nabídky pro otevření vloženého terminálu v Visual Studio Code. Můžete otevřít externí prostředí pomocí Průzkumníka **otevřít v příkazu příkazového řádku** (**otevřít v terminálu** na Macu nebo Linux), pokud dáváte přednost práci mimo Visual Studio Code.
 
-Začněte vytvořením souboru řešení, který slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu vytvořte *zlatý* složku a otevřete ji. Tato složka je kořenem vašeho řešení. Spusťte příkaz pro vytvoření nového řešení, *zlatý. sln:* [`dotnet new`](../tools/dotnet-new.md)
+Začněte vytvořením souboru řešení, který slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu spusťte [`dotnet new`](../tools/dotnet-new.md) příkaz pro vytvoření nového řešení *zlatý. sln* uvnitř nové složky s názvem *zlatá*:
 
 ```console
-dotnet new sln
+dotnet new sln -o golden
 ```
 
-Ze *zlaté* složky spusťte následující příkaz, který vytvoří projekt knihovny, který ve složce *knihovny* vytvoří dva soubory,*Library. csproj* a *Class1.cs*.
+Přejděte do nové *zlaté* složky a spusťte následující příkaz pro vytvoření projektu knihovny, který ve složce *knihovny* vytvoří dva soubory,*Library. csproj* a *Class1.cs*:
 
 ```console
 dotnet new classlib -o library

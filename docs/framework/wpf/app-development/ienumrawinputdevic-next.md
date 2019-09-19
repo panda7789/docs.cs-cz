@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Next method [WPF]
 ms.assetid: 3698b44d-510e-4d18-b32b-85f17188ee26
-ms.openlocfilehash: 05867af48b64cd1898b13fa055859c8cc0367c8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7450a9ababa9cf3cb02d572f5ed84f0791d74e4
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949575"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053402"
 ---
 # <a name="ienumrawinputdevicnext"></a>IEnumRAWINPUTDEVIC:Next
-Vytvoří výčet Další `celt` [RAWINPUTDEVICE](/windows/desktop/api/winuser/ns-winuser-rawinputdevice) struktury v seznamu čítače výčtu je vrácení `rgelt` spolu s skutečný počet prvků ve výčtu v `pceltFetched`.  
+Vytvoří `celt` výčet dalších [RAWINPUTDEVICE](/windows/desktop/api/winuser/ns-winuser-rawinputdevice) struktur v seznamu enumerátoru `rgelt` a vrátí je spolu se skutečným počtem výčtových prvků v. `pceltFetched`  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next(  
       [in] ULONG celt,  
       [out, size_is(celt), length_is(*pceltFetched)] RAWINPUTDEVICE *rgelt,  
@@ -26,15 +26,15 @@ HRESULT Next(
 ## <a name="parameters"></a>Parametry  
  `celt`  
   
- [in] Počet [RAWINPUTDEVICE](/windows/desktop/api/winuser/ns-winuser-rawinputdevice) struktury vrácené v `rgelt`.  
+ pro Počet [RAWINPUTDEVICEch](/windows/desktop/api/winuser/ns-winuser-rawinputdevice) struktur vrácených `rgelt`v.  
   
  `rgelt`  
   
- [out] Pole celt velikost (a vyšší) pro příjem Výčtový RAWINPUTDEVICE struktury.  
+ mimo Pole velikosti celt (nebo větší) pro příjem výčtu RAWINPUTDEVICE struktur.  
   
  `pceltFetched`  
   
- [out] Ukazatel na počet prvků ve skutečnosti zadaný v `rgelt`. Můžete předat volající `NULL` Pokud `rgelt` je jedna.  
+ mimo Ukazatel na počet prvků, které jsou ve skutečnosti `rgelt`dodány v. Volající může předat, `NULL` Pokud `rgelt` je jeden.  
   
 ## <a name="property-valuereturn-value"></a>Hodnota vlastnosti / návratová hodnota  
- HODNOTA HRESULT: S_OK, pokud je počet elementů zadaný `celt`; S_FALSE jinak.
+ HRESULT S_OK, pokud je `celt`zadaný počet prvků; S_FALSE jinak.

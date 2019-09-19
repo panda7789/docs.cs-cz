@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9ab95124264b2b59be77695755ab1d1f1c3b1aa
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4a0a6a00fc76a646b4295db726bd8ae67733e321
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040736"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053224"
 ---
 # <a name="application-domains"></a>Aplikační domény
 
@@ -64,7 +64,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
 - Pokud sestavení není načteno jako doménově neutrální, musí být kompilována JIT v každé doméně aplikace, ve které je načtena. Sestavení lze však uvolnit z procesu uvolněním všech domén aplikace, ve kterých je načtena.  
   
- Hostitel modulu runtime určuje, zda mají být sestavení načtena jako doménově neutrální při načtení modulu runtime do procesu. U spravovaných aplikací použijte <xref:System.LoaderOptimizationAttribute> atribut pro metodu vstupního bodu pro proces a zadejte hodnotu z asociovaného <xref:System.LoaderOptimization> výčtu. U nespravovaných aplikací, které jsou hostiteli modulu CLR (Common Language Runtime), zadejte vhodný příznak při volání metody [CorBindToRuntimeEx – Function](../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) .  
+ Hostitel modulu runtime určuje, zda mají být sestavení načtena jako doménově neutrální při načtení modulu runtime do procesu. U spravovaných aplikací použijte <xref:System.LoaderOptimizationAttribute> atribut pro metodu vstupního bodu pro proces a zadejte hodnotu z asociovaného <xref:System.LoaderOptimization> výčtu. U nespravovaných aplikací, které jsou hostiteli modulu CLR (Common Language Runtime), zadejte vhodný příznak při volání metody [CorBindToRuntimeEx – Function](../unmanaged-api/hosting/corbindtoruntimeex-function.md) .  
   
  Existují tři možnosti, jak načíst doménově neutrální sestavení:  
   
@@ -76,7 +76,7 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
  Kód zkompilovaný JIT nelze sdílet pro sestavení, která jsou načtena do kontextu load-from, pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metody <xref:System.Reflection.Assembly> třídy nebo načtena z imagí pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metody, která určuje Bajtová pole.  
   
- Sestavení, která byla zkompilována do nativního kódu pomocí nástroje [Ngen. exe (generátor nativních bitových kopií)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) , lze sdílet mezi doménami aplikace, pokud jsou při prvním načtení do procesu načtena doménově neutrální.  
+ Sestavení, která byla zkompilována do nativního kódu pomocí nástroje [Ngen. exe (generátor nativních bitových kopií)](../tools/ngen-exe-native-image-generator.md) , lze sdílet mezi doménami aplikace, pokud jsou při prvním načtení do procesu načtena doménově neutrální.  
   
  Kód zkompilovaný JIT pro sestavení, které obsahuje vstupní bod aplikace, je sdílen pouze v případě, že lze sdílet všechny jeho závislosti.  
   

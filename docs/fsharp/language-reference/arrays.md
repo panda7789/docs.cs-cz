@@ -2,12 +2,12 @@
 title: Pole
 description: Naučte se vytvářet a používat pole v F# programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 142d2c8d9aa7247e1490867a7bb905e2e7fec41e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: ae8f3cfc84fbba4cac496d4221d140dadec25e10
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630040"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082957"
 ---
 # <a name="arrays"></a>Pole
 
@@ -69,7 +69,7 @@ Modul [`Microsoft.FSharp.Collections.Array`](https://msdn.microsoft.com/library/
 
 Výstup je následující.
 
-```
+```console
 0 1 2 3 4 5 6 7 8 9
 ```
 
@@ -81,7 +81,7 @@ Několik funkcí vytváří pole bez nutnosti existujícího pole. [`Array.empty
 
 Výstup je následující.
 
-```
+```console
 Length of empty array: 0
 Area of floats set to 5.0: [|5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0; 5.0|]
 Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
@@ -93,7 +93,7 @@ Array of squares: [|0; 1; 4; 9; 16; 25; 36; 49; 64; 81|]
 
 Výstup předcházejícího kódu je následující:
 
-```
+```console
 [|Test1; Test2; |]
 [|; Test2; |]
 ```
@@ -106,7 +106,7 @@ Výstup předcházejícího kódu je následující:
 
 Výstup ukazuje, že podpole začíná na elementu 5 a obsahuje 10 prvků.
 
-```
+```console
 [|5; 6; 7; 8; 9; 10; 11; 12; 13; 14|]
 ```
 
@@ -118,7 +118,7 @@ Následující kód demonstruje **pole Array. Append**.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 [|1; 2; 3; 4; 5; 6|]
 ```
 
@@ -128,7 +128,7 @@ Výstup předcházejícího kódu je následující.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 [|3.0; 15.0; 35.0; 63.0; 99.0|]
 ```
 
@@ -138,7 +138,7 @@ Výstup předcházejícího kódu je následující.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 [|0; 1; 0; 1; 2; 3; 4; 5; 0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10|]
 ```
 
@@ -148,7 +148,7 @@ Výstup předcházejícího kódu je následující.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 [|(1, 1, 1); (1, 2, 2); (1, 3, 3); (2, 1, 2); (2, 2, 4); (2, 3, 6); (3, 1, 3);
 (3, 2, 6); (3, 3, 9)|]
 ```
@@ -159,7 +159,7 @@ Výstup předcházejícího kódu je následující.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 [|2; 4; 6; 8; 10|]
 ```
 
@@ -169,7 +169,7 @@ Výstup předcházejícího kódu je následující.
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 "Hello world!"
 ```
 
@@ -179,7 +179,7 @@ Můžete snadno kombinovat funkce v modulu Array, které transformují pole pomo
 
 Výstup je
 
-```
+```console
 [|100; 36; 16; 4|]
 ```
 
@@ -308,7 +308,7 @@ Následující kód demonstruje použití `Array.exists` a. `Array.exists2` V t�
 
 Výstup předcházejícího kódu je následující.
 
-```
+```console
 true
 false
 false
@@ -321,7 +321,7 @@ Podobně funkce [`Array.forall`](https://msdn.microsoft.com/library/d88f2cd0-fa7
 
 Výstup pro tyto příklady je následující.
 
-```
+```console
 false
 true
 true
@@ -338,7 +338,7 @@ Následující kód používá `Array.find` a `Array.findIndex` k vyhledání č
 
 Výstup je následující.
 
-```
+```console
 The first element that is both a square and a cube is 64 and its index is 62.
 ```
 
@@ -350,7 +350,7 @@ Následující kód demonstruje použití `Array.tryFind`. Tento kód závisí n
 
 Výstup je následující.
 
-```
+```console
 Found an element: 1
 Found an element: 729
 ```
@@ -363,7 +363,7 @@ Následující kód ukazuje použití `Array.tryPick`. V tomto případě namís
 
 Výstup je následující.
 
-```
+```console
 Found an element 1 with square root 1 and cube root 1.
 Found an element 64 with square root 8 and cube root 4.
 Found an element 729 with square root 27 and cube root 9.
@@ -394,7 +394,7 @@ Tyto funkce pro provádění výpočtů odpovídají funkcím stejného názvu v
 
 Výstup je následující.
 
-```
+```console
 [|1; 2; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 23; 24; 25|]
 ```
 

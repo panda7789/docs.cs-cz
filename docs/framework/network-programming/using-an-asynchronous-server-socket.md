@@ -17,19 +17,19 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: 58c9e0846e09774d8c97089016086ecddd2d17ee
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 11ed53a4e51ba6993fd4e240116b0e1de910a01e
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938403"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71047051"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Použití asynchronního serverového soketu
 Asynchronní serverové sokety používají .NET Framework asynchronní programovací model ke zpracování požadavků síťových služeb. Třída následuje za standardním .NET Framework vzor asynchronního pojmenovávání; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> Metoda odpovídá asynchronním <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metodám. <xref:System.Net.Sockets.Socket>  
   
  Asynchronní serverový soket vyžaduje metodu pro zahájení přijímání požadavků na připojení ze sítě, metody zpětného volání pro zpracování žádostí o připojení a zahájení přijímání dat ze sítě a metody zpětného volání pro ukončení přijímání dat. Všechny tyto metody jsou popsány dále v této části.  
   
- V následujícím příkladu, aby bylo možné začít přijímat žádosti o připojení ze sítě, inicializuje `StartListening` metoda **soket** a poté pomocí metody **BeginAccept** spustí přijímání nových připojení. Metoda přijetí zpětného volání se volá, když se na soketu přijme nový požadavek na připojení. Zodpovídá za získání instance soketu , která bude zpracovávat připojení a vydává tento **soket** do vlákna, které požadavek zpracuje. Metoda Accept zpětného volání implementuje <xref:System.AsyncCallback> delegáta, vrátí void a přijímá jeden parametr typu <xref:System.IAsyncResult>. V následujícím příkladu je prostředí metody přijetí zpětného volání.  
+ V následujícím příkladu, aby bylo možné začít přijímat žádosti o připojení ze sítě, inicializuje `StartListening` metoda **soket** a poté pomocí metody **BeginAccept** spustí přijímání nových připojení. Metoda přijetí zpětného volání se volá, když se na soketu přijme nový požadavek na připojení. Zodpovídá za získání instance **soketu** , která bude zpracovávat připojení a vydává tento **soket** do vlákna, které požadavek zpracuje. Metoda Accept zpětného volání implementuje <xref:System.AsyncCallback> delegáta, vrátí void a přijímá jeden parametr typu <xref:System.IAsyncResult>. V následujícím příkladu je prostředí metody přijetí zpětného volání.  
   
 ```vb  
 Sub AcceptCallback(ar As IAsyncResult)  
@@ -270,7 +270,7 @@ public static void ReadCallback(IAsyncResult ar)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
-- [Příklad asynchronního serverového soketu](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)
+- [Použití synchronního serverového soketu](using-a-synchronous-server-socket.md)
+- [Příklad asynchronního serverového soketu](asynchronous-server-socket-example.md)
 - [Dělení na vlákna](../../standard/threading/index.md)
-- [Naslouchání pomocí soketů](../../../docs/framework/network-programming/listening-with-sockets.md)
+- [Naslouchání pomocí soketů](listening-with-sockets.md)

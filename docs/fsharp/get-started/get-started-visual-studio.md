@@ -2,12 +2,12 @@
 title: Začínáme s nástrojem F# v aplikaci Visual Studio
 description: Naučte se používat F# se sadou Visual Studio.
 ms.date: 07/03/2018
-ms.openlocfilehash: 24c9a81cfa61dc904db9b2213224677696d7eb9b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e573af67a1fc00b0a340f8c73ab1ee0ed2b97810
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629765"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082702"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s nástrojem F# v aplikaci Visual Studio
 
@@ -33,7 +33,7 @@ Pojďme začít vytvořením kódu jako prvního.  Ujistěte se, že `Program.fs
 
 [!code-fsharp[HelloSquare](~/samples/snippets/fsharp/getting-started/hello-square.fs)]
 
-V předchozím příkladu kódu byla definována funkce `square` , která přebírá vstup s názvem `x` a násobí ho sám sebou.  Vzhledem F# [k tomu](../language-reference/type-inference.md), že používá odvození typu, nenítřebazadávattyp.`x`  F# Kompilátor rozumí typům, kde je násobení platné, a přiřadí typ `x` podle toho, jak `square` je volána.  Pokud najedete `square`myší na, měli byste vidět následující:
+V předchozím příkladu kódu byla definována funkce `square` , která přebírá vstup s názvem `x` a násobí ho sám sebou.  F# Vzhledem`x` k tomu, že používá [odvození typu](../language-reference/type-inference.md), není třeba zadávat typ.  F# Kompilátor rozumí typům, kde je násobení platné, a přiřadí typ `x` podle toho, jak `square` je volána.  Pokud najedete `square`myší na, měli byste vidět následující:
 
 ```fsharp
 val square: x:int -> int
@@ -51,7 +51,7 @@ Můžete spustit kód a zobrazit výsledky stisknutím klávesy **CTRL**+**F5**.
 
 Nyní byste měli vidět následující vytištěné okno konzoly, ve kterém se zobrazila aplikace Visual Studio:
 
-```
+```console
 12 squared is 144!
 ```
 
@@ -59,7 +59,7 @@ Blahopřejeme!  Vytvořili jste svůj první F# projekt v aplikaci Visual Studio
 
 ## <a name="next-steps"></a>Další postup
 
-Pokud jste to ještě neudělali, podívejte se na prohlídku [ F# ](../tour.md), která se zabývá některými základními F# funkcemi daného jazyka.  Poskytne vám přehled o některých možnostech aplikace F#a poskytuje podrobné ukázky kódu, které můžete zkopírovat do sady Visual Studio a spustit.  K dispozici jsou také některé skvělé externí prostředky, které můžete použít v [ F# průvodci](../index.md).
+Pokud jste to ještě neudělali, podívejte se na [prohlídku F# ](../tour.md), která se zabývá některými základními F# funkcemi daného jazyka.  Poskytne vám přehled o některých možnostech aplikace F#a poskytuje podrobné ukázky kódu, které můžete zkopírovat do sady Visual Studio a spustit.  K dispozici jsou také některé skvělé externí prostředky, které můžete použít v [ F# průvodci](../index.md).
 
 ## <a name="see-also"></a>Viz také:
 

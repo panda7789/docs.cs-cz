@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 544d04236a8f1b824a15c6ee7912020346841076
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b9781e7ef8edde182a13779a01e042cb44c92881
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912534"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045987"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduchý obecný typ se dvěma parametry typu, jak použít omezení třídy, omezení rozhraní a speciální omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů. a návratové typy.  
   
 > [!IMPORTANT]
-> Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Většina metod u obecných typů není obecná, jako v tomto příkladu. Příklad generování obecné metody naleznete v tématu [How to: Definování obecné metody pomocí generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md)reflexe.  
+> Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Většina metod u obecných typů není obecná, jako v tomto příkladu. Příklad generování obecné metody naleznete v tématu [How to: Definování obecné metody pomocí generování](how-to-define-a-generic-method-with-reflection-emit.md)reflexe.  
   
 ### <a name="to-define-a-generic-type"></a>Definování obecného typu  
   
@@ -121,7 +121,7 @@ Toto téma ukazuje, jak vytvořit jednoduchý obecný typ se dvěma parametry ty
   
  Program zahrnuje metodu, která obsahuje informace o obecném typu, a metodu, která obsahuje seznam speciálních omezení pro parametr typu. Tyto metody slouží k zobrazení informací o dokončené `Sample` třídě.  
   
- Program uloží dokončený modul na disk `GenericEmitExample1.dll`, takže ho můžete otevřít pomocí programu [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) a prostudovat jazyk MSIL pro `Sample` třídu.  
+ Program uloží dokončený modul na disk `GenericEmitExample1.dll`, takže ho můžete otevřít pomocí programu [Ildasm. exe (IL Disassembler)](../tools/ildasm-exe-il-disassembler.md) a prostudovat jazyk MSIL pro `Sample` třídu.  
   
  [!code-cpp[EmitGenericType#1](../../../samples/snippets/cpp/VS_Snippets_CLR/EmitGenericType/CPP/source.cpp#1)]
  [!code-csharp[EmitGenericType#1](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#1)]

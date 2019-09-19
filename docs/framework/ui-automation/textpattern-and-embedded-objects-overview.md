@@ -7,12 +7,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: b7b94b01f737d10b035d85ee938829e14f3af43b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e577b9d221760544e95b1d6098d0becbf5d776b0
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69987630"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042683"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -26,10 +26,10 @@ ms.locfileid: "69987630"
 ## <a name="embedded-objects-and-the-ui-automation-tree"></a>Vložené objekty a strom automatizace uživatelského rozhraní  
  Vložené objekty jsou považovány za jednotlivé prvky v zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ovládacího prvku stromu. Jsou přístupné jako podřízené objekty kontejneru textu tak, aby mohly být přístupné prostřednictvím stejného modelu jako jiné ovládací prvky v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]nástroji.  
   
- ![Vložená tabulka s obrázkem v kontejneru textu](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-example1.png "UIA_TextPattern_Embedded_Objects_Overview_Example1")  
+ ![Vložená tabulka s obrázkem v kontejneru textu](./media/uia-textpattern-embedded-objects-overview-example1.png "UIA_TextPattern_Embedded_Objects_Overview_Example1")  
 Příklad kontejneru textu s vloženými objekty tabulka, obrázek a hypertextový odkaz  
   
- ![Zobrazení obsahu pro předchozí příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-example2.PNG "UIA_TextPattern_Embedded_Objects_Overview_Example2")  
+ ![Zobrazení obsahu pro předchozí příklad](./media/uia-textpattern-embedded-objects-overview-example2.PNG "UIA_TextPattern_Embedded_Objects_Overview_Example2")  
 Příklad zobrazení obsahu pro část předchozího textového kontejneru  
   
 <a name="Expose_Embedded_Objects_Using_TextPattern_and"></a>   
@@ -38,7 +38,7 @@ Příklad zobrazení obsahu pro část předchozího textového kontejneru
   
  Textový obsah (nebo vnitřní text) textového kontejneru a vložený objekt, jako je například hypertextový odkaz nebo buňka tabulky, je zveřejněn jako jediný souvislý textový Stream v zobrazení ovládacího prvku i v zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] obsahu stromu. hranice objektů jsou ignorovány. Pokud klient služby automatizace uživatelského rozhraní načítá text pro účely reciting, interpretuje nebo analyzuje nějaký způsob, je nutné zkontrolovat rozsah textu pro zvláštní případy, jako je například tabulka s textovým obsahem nebo jinými vloženými objekty. To lze provést voláním metody <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> pro <xref:System.Windows.Automation.AutomationElement> získání každého vloženého objektu a následným voláním <xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> k získání textového rozsahu pro každý prvek. To se provádí rekurzivně, dokud se všechen textový obsah nenačte.  
   
- ![Rozsahy textu rozložené vloženými objekty.](../../../docs/framework/ui-automation/media/uia-textpattern-embeddedobjecttextranges.png "UIA_TextPattern_EmbeddedObjectTextRanges")  
+ ![Rozsahy textu rozložené vloženými objekty.](./media/uia-textpattern-embeddedobjecttextranges.png "UIA_TextPattern_EmbeddedObjectTextRanges")  
 Příklad textového streamu se vložené objekty a jejich rozsahy  
   
  Je-li nutné procházet obsah určitého rozsahu textu, je na pozadí zahrnuta řada kroků, aby <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> bylo možné metodu úspěšně spustit.  
@@ -51,7 +51,7 @@ Příklad textového streamu se vložené objekty a jejich rozsahy
   
 4. Rozsah se pak rozšíří z negenerovaného stavu rozsahu přesunutím <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> koncového bodu o jednu požadovanou <xref:System.Windows.Automation.Text.TextUnit> hranici.  
   
- ![Úpravy rozsahu přesunutím & ExpandToEnclosingUnit](../../../docs/framework/ui-automation/media/uia-textpattern-moveandexpand-examples.png "UIA_TextPattern_MoveAndExpand_Examples")  
+ ![Úpravy rozsahu přesunutím & ExpandToEnclosingUnit](./media/uia-textpattern-moveandexpand-examples.png "UIA_TextPattern_MoveAndExpand_Examples")  
 Příklady přizpůsobení rozsahu textu pro Move () a ExpandToEnclosingUnit ()  
   
 <a name="Common_Scenarios"></a>   
@@ -101,18 +101,18 @@ Příklady přizpůsobení rozsahu textu pro Move () a ExpandToEnclosingUnit ()
 ### <a name="image"></a>Image  
  **Příklad 1 – textový rozsah obsahující vložený obrázek**  
   
- {Ukázka obrázku ![vložený obrázek](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") je vložená do textu}.  
+ {Ukázka obrázku ![vložený obrázek](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") je vložená do textu}.  
   
 |Metoda je volána|Výsledek|  
 |-------------------|------------|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec ", který je vložen do textu". U libovolného textu ALT přidruženého k imagi se nedá zahrnout do textového streamu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> text, který obklopuje rozsah textu; v tomto případě <xref:System.Windows.Automation.AutomationElement> představuje samotný poskytovatel textu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|<xref:System.Windows.Automation.AutomationElement> Vrátí reprezentující ovládací prvek obrázku.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozí <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metodou.|Vrátí negenerovaný rozsah, který představuje "![vložený obrázek příklad](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozí <xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A> metodou.|Vrátí negenerovaný rozsah, který představuje "![vložený obrázek příklad](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")".|  
   
  **Příklad 2 – rozsah textu, který je částečně rozložen na obsah kontejneru textu. Kontejner textu obsahuje vložený obrázek, který není součástí rozsahu textu.**  
   
- {Image} ![Příklad vloženého obrázku](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") je vložen do textu.  
+ {Image} ![Příklad vloženého obrázku](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample") je vložen do textu.  
   
 |Metoda je volána|Výsledek|  
 |-------------------|------------|  
@@ -127,16 +127,16 @@ Příklady přizpůsobení rozsahu textu pro Move () a ExpandToEnclosingUnit ()
   
 |Buňka s obrázkem|Buňka s textem|  
 |---------------------|--------------------|  
-|![Příklad vloženého obrázku](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
-|![Příklad vložené obrázku 2](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Ano|  
-|![Příklad vložené Image 3](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Obrázek pro Z|Z|  
+|![Příklad vloženého obrázku](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
+|![Příklad vložené obrázku 2](./media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Ano|  
+|![Příklad vložené Image 3](./media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Obrázek pro Z|Z|  
   
  **Příklad 1 – získání kontejneru textu z obsahu buňky**  
   
 |Metoda je volána|Výsledek|  
 |-------------------|------------|  
 |<xref:System.Windows.Automation.GridPattern.GetItem%2A>s parametry (0, 0)|<xref:System.Windows.Automation.AutomationElement> Vrátí reprezentující obsah buňky tabulky. v tomto případě je element ovládacím prvkem text.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozí `GetItem` metodou.|Vrátí rozsah, který pokrývá příklad obrázku ![vložený obrázek](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample").|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený předchozí `GetItem` metodou.|Vrátí rozsah, který pokrývá příklad obrázku ![vložený obrázek](./media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample").|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozí `RangeFromChild` metodou.|<xref:System.Windows.Automation.AutomationElement> Vrátí reprezentující buňku tabulky. v tomto případě je prvek textovým ovládacím prvkem, který podporuje TableItemPattern.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozí `GetEnclosingElement` metodou.|<xref:System.Windows.Automation.AutomationElement> Vrátí reprezentaci tabulky.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>pro objekt vrácený předchozí `GetEnclosingElement` metodou.|<xref:System.Windows.Automation.AutomationElement> Vrátí, který představuje samotného poskytovatele textu.|  
@@ -154,7 +154,7 @@ Příklady přizpůsobení rozsahu textu pro Move () a ExpandToEnclosingUnit ()
 - <xref:System.Windows.Automation.Text.TextPatternRange>
 - <xref:System.Windows.Automation.Provider.ITextProvider>
 - <xref:System.Windows.Automation.Provider.ITextRangeProvider>
-- [Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)
-- [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)
-- [Procházení textu s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)
+- [Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní](access-embedded-objects-using-ui-automation.md)
+- [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](expose-the-content-of-a-table-using-ui-automation.md)
+- [Procházení textu s použitím automatizace uživatelského rozhraní](traverse-text-using-ui-automation.md)
 - [Ukázka hledání a výběru TextPattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)

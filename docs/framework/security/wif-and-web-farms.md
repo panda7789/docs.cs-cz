@@ -3,17 +3,17 @@ title: WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: 09d5f3f745f170439a7fbf160b78439c103623b9
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 32d2875ebe0a46b9f9b1856ed70a30114793e492
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851520"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045253"
 ---
 # <a name="wif-and-web-farms"></a>WIF a webové farmy
 Použijete-li technologii Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající strany (RP), která je nasazena ve webové farmě, je nutné provést konkrétní kroky, abyste zajistili, že WIF může zpracovávat tokeny z instancí aplikace RP spuštěné v různých počítače ve farmě. Toto zpracování zahrnuje ověřování signatury tokenů relace, šifrování a dešifrování tokenů relací, ukládání tokenů relací do mezipaměti a zjišťování přehraných tokenů zabezpečení.  
   
- V typickém případě, když se WIF používá k zabezpečení prostředků aplikace RP – to, jestli je RP spuštěný v jednom počítači nebo ve webové farmě – relace se naváže s klientem na základě tokenu zabezpečení, který se získal ze služby tokenu zabezpečení (STS). K tomu je potřeba zabránit vynucení ověřování klienta na STS pro každý prostředek aplikace, který je zabezpečený pomocí WIF. Další informace o tom, jak WIF zpracovává relace, najdete v tématu [Správa relací WIF](../../../docs/framework/security/wif-session-management.md).  
+ V typickém případě, když se WIF používá k zabezpečení prostředků aplikace RP – to, jestli je RP spuštěný v jednom počítači nebo ve webové farmě – relace se naváže s klientem na základě tokenu zabezpečení, který se získal ze služby tokenu zabezpečení (STS). K tomu je potřeba zabránit vynucení ověřování klienta na STS pro každý prostředek aplikace, který je zabezpečený pomocí WIF. Další informace o tom, jak WIF zpracovává relace, najdete v tématu [Správa relací WIF](wif-session-management.md).  
   
  Při použití výchozího nastavení provede WIF následující:  
   
@@ -40,7 +40,7 @@ Použijete-li technologii Windows Identity Foundation (WIF) k zabezpečení pros
     </securityTokenHandlers>  
     ```  
   
-- Je nutné <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> odvozovat z a implementovat distribuované ukládání do mezipaměti, tj. mezipaměť, která je přístupná ze všech počítačů ve farmě, na které se může spustit RP. Nakonfigurujte RP tak, aby používal distribuovanou mezipaměť, zadáním [ \<prvku sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) v konfiguračním souboru. Můžete přepsat <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> metodu v odvozené třídě pro implementaci podřízených elementů `<sessionSecurityTokenCache>` elementu, pokud jsou požadovány.  
+- Je nutné <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> odvozovat z a implementovat distribuované ukládání do mezipaměti, tj. mezipaměť, která je přístupná ze všech počítačů ve farmě, na které se může spustit RP. Nakonfigurujte RP tak, aby používal distribuovanou mezipaměť, zadáním [ \<prvku sessionSecurityTokenCache >](../configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) v konfiguračním souboru. Můžete přepsat <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> metodu v odvozené třídě pro implementaci podřízených elementů `<sessionSecurityTokenCache>` elementu, pokud jsou požadovány.  
   
     ```xml  
     <caches>  
@@ -52,7 +52,7 @@ Použijete-li technologii Windows Identity Foundation (WIF) k zabezpečení pros
   
      Jedním ze způsobů, jak implementovat distribuované ukládání do mezipaměti, je poskytnout front-endu WCF pro vlastní mezipaměť. Další informace o implementaci služby ukládání do mezipaměti WCF najdete v tématu [Služba pro ukládání do mezipaměti WCF](#BKMK_TheWCFCachingService). Další informace o implementaci klienta WCF, který může aplikace RP použít k volání služby ukládání do mezipaměti, najdete v tématu [klient mezipaměti WCF](#BKMK_TheWCFClient).  
   
-- Pokud vaše aplikace zjistí přesměrované tokeny, musíte dodržovat podobnou strategii distribuovaného ukládání do mezipaměti pro mezipaměť tokenu, která <xref:System.IdentityModel.Tokens.TokenReplayCache> se odvozuje z a odkazuje na službu ukládání do mezipaměti tokenů [ \<v tokenReplayCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) element konfigurace.  
+- Pokud vaše aplikace zjistí přesměrované tokeny, musíte dodržovat podobnou strategii distribuovaného ukládání do mezipaměti pro mezipaměť tokenu, která <xref:System.IdentityModel.Tokens.TokenReplayCache> se odvozuje z a odkazuje na službu ukládání do mezipaměti tokenů [ \<v tokenReplayCache >](../configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) element konfigurace.  
   
 > [!IMPORTANT]
 > Všechny příklady XML a kód v tomto tématu jsou pořízeny z ukázky [ClaimsAwareWebFarm](https://go.microsoft.com/fwlink/?LinkID=248408) .  
@@ -137,7 +137,7 @@ namespace WcfSessionSecurityTokenCacheService
   
 <a name="BKMK_TheWCFClient"></a>   
 ## <a name="the-wcf-caching-client"></a>Klient mezipaměti WCF  
- Tato část ukazuje implementaci třídy, která je odvozena z <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a která deleguje volání do služby ukládání do mezipaměti. Aplikaci RP nakonfigurujete tak, aby tuto třídu používala prostřednictvím [ \<elementu sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) , jako v následujícím kódu XML.  
+ Tato část ukazuje implementaci třídy, která je odvozena z <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a která deleguje volání do služby ukládání do mezipaměti. Aplikaci RP nakonfigurujete tak, aby tuto třídu používala prostřednictvím [ \<elementu sessionSecurityTokenCache >](../configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) , jako v následujícím kódu XML.  
   
 ```xml  
 <caches>  
@@ -255,4 +255,4 @@ namespace CacheLibrary
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>
 - <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>
-- [Správa relací WIF](../../../docs/framework/security/wif-session-management.md)
+- [Správa relací WIF](wif-session-management.md)

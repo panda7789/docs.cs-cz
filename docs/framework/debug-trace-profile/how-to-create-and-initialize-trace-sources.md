@@ -11,26 +11,26 @@ helpviewer_keywords:
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 805e1cc7d1def74a2a3e7b28afd052be1c4836c3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cab9cc33bd5a4697cac5de85de8aa72e7eb4d6c6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596838"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052705"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
-<xref:System.Diagnostics.TraceSource> Třídu aplikace používá k vytvoření trasování, které lze asociovat s aplikací. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které vám umožní snadno trasovat události, trasovat data a vydávat informační trasování. Trasování výstupu z <xref:System.Diagnostics.TraceSource> může být vytvořeno a inicializováno s nebo bez použití konfiguračních souborů. Toto téma obsahuje pokyny pro obě možnosti. Doporučujeme však použít konfigurační soubory pro usnadnění opětovné konfigurace trasování vyprodukované zdroji trasování za běhu.  
+<xref:System.Diagnostics.TraceSource> Třída je používána aplikacemi k vytvoření trasování, která lze přidružit k aplikaci. <xref:System.Diagnostics.TraceSource>poskytuje metody trasování, které umožňují snadno sledovat události, trasovat data a vydávat informativní trasování. Výstup trasování z <xref:System.Diagnostics.TraceSource> lze vytvořit a inicializovat s nebo bez použití konfiguračních souborů. Toto téma poskytuje pokyny pro obě možnosti. Nicméně doporučujeme, abyste používali konfigurační soubory pro usnadnění rekonfigurace trasování, která jsou vytvářena pomocí zdrojů trasování v době běhu.  
   
-### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Vytvoření a Inicializace zdroje trasování pomocí konfiguračního souboru  
+### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Vytvoření a inicializace zdroje trasování pomocí konfiguračního souboru  
   
-1. Vytvořte projekt konzolové aplikace Visual Studio a nahraďte zadaný kód následujícím kódem. Tento kód protokoluje chyby a upozornění a vypíše některé z nich do konzoly a některé z nich do souboru myListener, který je vytvořen pomocí položek v konfiguračním souboru.  
+1. Vytvořte projekt konzolové aplikace sady Visual Studio a nahraďte poskytnutý kód následujícím kódem. Tento kód protokoluje chyby a varování a výstupy některých z nich do konzoly a některé z nich jsou k souboru myListener, který je vytvořen položkami v konfiguračním souboru.  
   
      [!code-csharp[TraceSourceExample1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample1/cs/program.cs#1)]
      [!code-vb[TraceSourceExample1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample1/vb/program.vb#1)]  
   
-2. Přidání konfiguračního souboru aplikace, pokud jeden není uveden do projektu pro inicializaci zdroje trasování s názvem `TraceSourceApp` v příkladu kódu v kroku 1.  
+2. Přidejte konfigurační soubor aplikace (Pokud není k dispozici) do projektu pro inicializaci zdroje trasování s názvem `TraceSourceApp` v příkladu kódu v kroku 1.  
   
-3. Nahraďte výchozí obsah souboru konfigurace následujícím nastavením pro inicializaci naslouchacího procesu trasování konzoly a naslouchacího procesu text zapisovač trasování pro zdroj trasování, který byl vytvořen v kroku 1.  
+3. Nahraďte výchozí obsah konfiguračního souboru následujícím nastavením pro inicializaci naslouchacího procesu trasování konzoly a naslouchacího procesu trasování zapisovače textu pro zdroj trasování, který byl vytvořen v kroku 1.  
   
     ```xml  
     <configuration>  
@@ -65,15 +65,15 @@ ms.locfileid: "64596838"
     </configuration>  
     ```  
   
-     Kromě konfigurace posluchačů trasování, konfigurační soubor vytvoří filtry pro oba posluchače a vytvoří zdroj přepínače pro zdroj trasování. Pro přidávání posluchačů trasování jsou uvedeny dvě metody: Přidání posluchače přímo ke zdroji trasování a přidání posluchače do sdílené kolekce posluchačů a následné přidání podle názvu do zdroje trasování. Filtry identifikované pro dva naslouchací procesy jsou inicializovány s jinými zdrojovými úrovněmi. Výsledkem je některé zprávy jsou zapisovány pouze jedním ze dvou posluchačů.  
+     Kromě konfigurace posluchačů trasování vytvoří konfigurační soubor filtry pro oba posluchače a vytvoří zdrojový přepínač pro zdroj trasování. Pro přidávání posluchačů trasování jsou zobrazeny dvě metody: Přidání naslouchacího procesu přímo do zdroje trasování a přidání naslouchacího procesu do sdílené kolekce posluchačů a jejich přidání podle názvu do zdroje trasování. Filtry identifikované pro dva naslouchací procesy jsou inicializovány s různými zdrojovými úrovněmi. Výsledkem je, že některé zprávy zapisují pouze jeden ze dvou posluchačů.  
   
-     Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy je aplikace inicializována. Aplikace můžete dynamicky měnit vlastnosti nastavením konfiguračního souboru pro přepsání jakéhokoli nastavení zadaného uživatelem. Můžete například chtít zajistit, aby kritické zprávy byly odesílány vždy do textového souboru, bez ohledu na aktuální nastavení konfigurace. Příklad kódu ukazuje, jak přepsat nastavení konfiguračního souboru k zajištění, aby kritické zprávy se zobrazují pro posluchače trasování.  
+     Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy byla aplikace inicializována. Aplikace může dynamicky měnit vlastnosti nastavené konfiguračním souborem pro přepsání všech nastavení zadaných uživatelem. Například můžete chtít zajistit, aby se kritické zprávy vždy odesílaly do textového souboru, bez ohledu na aktuální nastavení konfigurace. Vzorový kód ukazuje, jak přepsat nastavení konfiguračního souboru, aby bylo zajištěno, že kritické zprávy jsou výstupem posluchačů trasování.  
   
-     Změna nastavení konfiguračních souborů při provádění aplikace nezmění výchozí nastavení. Chcete-li změnit nastavení, musíte restartovat aplikaci nebo programově aktualizovat aplikace pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metody.  
+     Změna nastavení konfiguračního souboru během provádění aplikace nemění počáteční nastavení. Chcete-li změnit nastavení, musíte buď aplikaci restartovat, nebo programově aktualizovat aplikaci pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metody.  
   
 ### <a name="to-initialize-trace-sources-listeners-and-filters-without-a-configuration-file"></a>Inicializace zdrojů trasování, posluchačů a filtrů bez konfiguračního souboru  
   
-- Použijte následující příklad kódu povolíte trasování prostřednictvím zdroje trasování bez použití konfiguračního souboru. Toto není doporučený postup, ale mohou nastat okolnosti, ve kterých nechcete záviset na konfiguračních souborech k zajištění sledování.  
+- Použijte následující vzorový kód pro povolení trasování prostřednictvím zdroje trasování bez použití konfiguračního souboru. Nejedná se o doporučený postup, ale může dojít ke situacím, kdy nechcete, aby se zajistilo trasování v konfiguračních souborech.  
   
      [!code-csharp[TraceSourceExample2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample2/cs/program.cs#1)]
      [!code-vb[TraceSourceExample2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample2/vb/program.vb#1)]  
@@ -84,4 +84,4 @@ ms.locfileid: "64596838"
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventTypeFilter>
-- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)

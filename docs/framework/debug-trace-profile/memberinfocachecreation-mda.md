@@ -12,34 +12,34 @@ helpviewer_keywords:
 ms.assetid: 5abdad23-1335-4744-8acb-934002c0b6fe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 90f59f4d593a8aa077a6710cc0f5c1747ac1a3ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3b65ecc226c1caf7b53d746f0583e1f57c7d8c1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753996"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052467"
 ---
 # <a name="memberinfocachecreation-mda"></a>memberInfoCacheCreation – pomocník spravovaného ladění (MDA)
-`memberInfoCacheCreation` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Reflection.MemberInfo> mezipaměť je vytvořená. Toto je silné údaj o program, který provádí používání funkcí prostředků reflexe.  
+Při vytvoření `memberInfoCacheCreation` mezipamětiseaktivujepomocníkspravovanéholadění<xref:System.Reflection.MemberInfo> (MDA). Toto je silné označení programu, který využívá funkce reflexe náročné na prostředky.  
   
 ## <a name="symptoms"></a>Příznaky  
- Program pracovní sadu zvýšení vzhledem k tomu, že program používá prostředků reflexe.  
+ Pracovní sada programu se zvyšuje, protože program používá reflexi náročné na prostředky.  
   
-## <a name="cause"></a>Příčina  
- Reflexe operací, které se týkají <xref:System.Reflection.MemberInfo> objekty jsou považovány za prostředek nákladné, protože je musí číst metadata, která je uložena v studenou stránky a obecně označují program používá nějaký typ scénář s pozdní vazbou.  
+## <a name="cause"></a>příčina  
+ Operace reflexe <xref:System.Reflection.MemberInfo> , které zahrnují objekty, se považují za prostředky nákladné, protože musí číst metadata, která jsou uložená na studených stránkách a obecně naznačují, že program používá určitý typ scénáře s pozdní vazbou.  
   
 ## <a name="resolution"></a>Řešení  
- Můžete určit, kde reflexe se používá ve svém programu povolením toto MDA a potom spuštěním kódu v ladicí program nebo připojení se ladicí program, když MDA aktivováno. V ladicím programu se zobrazí trasování zásobníku znázorňující, kde <xref:System.Reflection.MemberInfo> mezipaměti byla vytvořena a odtud můžete určit, kde je program pomocí reflexe.  
+ Můžete určit, kde se v programu používá reflexe, povolením tohoto MDA a následným spuštěním kódu v ladicím programu nebo připojením k ladicímu programu při aktivaci MDA. V rámci ladicího programu obdržíte trasování zásobníku, kde <xref:System.Reflection.MemberInfo> se mezipaměť vytvořila, a odtud můžete určit, kde program používá reflexi.  
   
- Rozlišení je závislá na cíli kód. Toto MDA vás upozorní, že váš program obsahuje scénář s pozdní vazbou. Můžete chtít určit, jestli můžete nahradit scénáři časné vazby nebo zvažte výkonu pozdní vazbou scénář.  
+ Řešení je závislé na cílech kódu. Tento MDA vás upozorní, že váš program má scénář s pozdní vazbou. Možná budete chtít určit, jestli můžete dosadit scénář s nejstarším rozsahem, nebo zvážit výkon scénáře s pozdní vazbou.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Je toto MDA aktivováno pro každý <xref:System.Reflection.MemberInfo> mezipaměti, který je vytvořen. Je zanedbatelný dopad na výkon.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Tento MDA je aktivován pro každou <xref:System.Reflection.MemberInfo> vytvořenou mezipaměť. Dopad na výkon je zanedbatelný.  
   
 ## <a name="output"></a>Výstup  
- MDA výstupy zpráva, <xref:System.Reflection.MemberInfo> mezipaměti byl vytvořen. Pomocí ladicího programu můžete získat trasování zásobníku znázorňující, kde je program pomocí reflexe.  
+ Výstup aplikace MDA vytvoří zprávu oznamující, <xref:System.Reflection.MemberInfo> že byla vytvořena mezipaměť. Použijte ladicí program k získání trasování zásobníku, kde program používá reflexi.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -50,7 +50,7 @@ ms.locfileid: "61753996"
 ```  
   
 ## <a name="example"></a>Příklad  
- Tento ukázkový kód se budou aktivovat `memberInfoCacheCreation` MDA.  
+ Tento vzorový kód aktivuje `memberInfoCacheCreation` MDA.  
   
 ```csharp
 using System;  
@@ -67,4 +67,4 @@ public class Exe
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection.MemberInfo>
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)

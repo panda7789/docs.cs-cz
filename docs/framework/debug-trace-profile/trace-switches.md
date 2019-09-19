@@ -14,24 +14,24 @@ helpviewer_keywords:
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 16ef27b7d1a36121976cbb026f81984a8b84d1fe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b796d79fc6acf7d54aac7c69d376e587144d14d1
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614327"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052264"
 ---
 # <a name="trace-switches"></a>Přepínače trasování
-Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování. Jsou objekty, které existují ve vašem kódu a je možné nakonfigurovat externě pomocí souboru .config. Existují tři typy přepínačů trasování, které jsou k dispozici v rozhraní .NET Framework: <xref:System.Diagnostics.BooleanSwitch> třídy, <xref:System.Diagnostics.TraceSwitch> třídy a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída slouží jako přepínač, povolení nebo zakázání různých příkazů trasování. <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> tříd bylo možné povolit přepínač trasování pro trasování konkrétní úroveň tak, aby <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.TraceSource> zobrazí zprávy zadané pro tuto úroveň a všechny úrovně pod ním. Pokud zakážete přepínač, zprávy trasování se nezobrazí. Všechny tyto třídy jsou odvozeny od abstraktní (**MustInherit**) třídy **přepínač**, jako by všechny přepínače vyvinutou v Unity uživatele.  
+Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování. Jsou to objekty, které existují ve vašem kódu a lze je nakonfigurovat externě prostřednictvím souboru. config. Existují tři typy přepínačů trasování, které jsou k dispozici v <xref:System.Diagnostics.BooleanSwitch> .NET Framework: třídy <xref:System.Diagnostics.TraceSwitch> , třídy a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída funguje jako přepínač Switch, buď povolení nebo zákaz řady příkazů trasování. <xref:System.Diagnostics.Trace> <xref:System.Diagnostics.TraceSource> Třídy <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> umožňují povolit přepínač trasování pro konkrétní úroveň trasování, aby se zobrazily zprávy nebo zprávy zadané pro tuto úroveň a všechny úrovně pod ní. Pokud přepínač zakážete, zprávy trasování se nezobrazí. Všechny tyto třídy jsou odvozeny z **přepínače**třídy abstract (**MustInherit**), stejně jako všechny uživatelsky vyvíjené přepínače.  
   
- Přepínače trasování může být užitečné pro filtrování informací. Například můžete chtít zobrazit všechny zprávy trasování v modulu přístupu k datům, ale pouze chybové zprávy ve zbývající části aplikace. V takovém případě můžete využít jeden trasování přepínače pro modulu přístupu k datům a jeden pro ostatní aplikace. Pomocí souboru .config konfigurace přepínače, které příslušná nastavení může řídit, jaké typy trasování zpráv, jste obdrželi. Další informace najdete v tématu [jak: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+ Přepínače trasování mohou být užitečné pro filtrování informací. Můžete například chtít zobrazit každou zprávu trasování v modulu Data Access, ale pouze chybové zprávy ve zbývající části aplikace. V takovém případě byste použili jeden přepínač trasování pro modul Data Access a jeden přepínač pro zbytek aplikace. Když použijete soubor. config ke konfiguraci přepínačů na příslušná nastavení, můžete určit, jaké typy trasovacích zpráv jste dostali. Další informace najdete v tématu [jak: Vytváření, inicializace a konfigurace přepínačů](how-to-create-initialize-and-configure-trace-switches.md)trasování.  
   
- Obvykle s jeho přepínači zakázána, je proveden nasazenou aplikaci tak, aby uživatelé nemusí dodržovat spoustu irelevantní trasování zprávy uvedené na obrazovce nebo nezaplňuje soubor protokolu za běhu aplikace. Pokud k problému dochází při spuštění aplikace, zastavte aplikaci a povolit přepínače restartování aplikace. Pak se zobrazí trasovací zprávy.  
+ Obvykle je nasazená aplikace spouštěna s vypnutými přepínači, aby uživatelé nemuseli sledovat spoustu nepodstatných trasovacích zpráv, které se zobrazují na obrazovce, nebo naplňovat soubor protokolu při spuštění aplikace. Pokud při provádění aplikace dojde k problému, můžete aplikaci zastavit, povolit přepínače a restartovat aplikaci. Pak se zobrazí trasovací zprávy.  
   
- Chcete-li použít přepínač musíte nejdřív vytvořit objekt přepínače z **BooleanSwitch** třídy, **TraceSwitch** třídu nebo třídu přepínač definovaný pro vývojáře. Další informace o vytváření definované pro vývojáře přepínače najdete v článku <xref:System.Diagnostics.Switch> třídy v referenční dokumentaci rozhraní .NET Framework. Nastavit hodnotu konfigurace, která určuje, kdy objekt přepínače má být použit. Potom otestovat nastavení přepínače objektu v různých **trasování** (nebo **ladění**) metody trasování.  
+ Chcete-li použít přepínač, musíte nejprve vytvořit objekt Switch z třídy **BooleanSwitch** , třídy **TraceSwitch** nebo třídy přepínače definované vývojářem. Další informace o vytváření přepínačů definovaných pro vývojáře naleznete v tématu <xref:System.Diagnostics.Switch> třída v referenci .NET Framework. Pak nastavíte hodnotu konfigurace, která určuje, kdy má být objekt Switch použit. Pak otestujete nastavení objektu Switch v různých metodách trasování (nebo **ladění** **) trasování.**  
   
 ## <a name="trace-levels"></a>Úrovně trasování  
- Při použití **TraceSwitch**, existují ještě další důležité okolnosti. A **TraceSwitch** objekt má čtyři vlastnosti, které vracejí **logická** hodnoty určující, jestli přepínač nastavený na alespoň určitou úroveň:  
+ Při použití **TraceSwitch**existují další okolnosti. Objekt **TraceSwitch** má čtyři vlastnosti, které vracejí **logické** hodnoty, což znamená, zda je přepínač nastaven alespoň na konkrétní úroveň:  
   
 - <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
   
@@ -41,23 +41,23 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 - <xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A?displayProperty=nameWithType>  
   
- Úrovně umožňují omezit množství informací o trasování, který jste dostali k pouze těmto informacím, které jsou potřebné k vyřešení problému. Můžete zadat úroveň podrobností, které chcete výstup trasování tak, že nastavení a konfigurace přepínačů trasování pro příslušnou úroveň. Chybové zprávy, upozornění, informační zprávy, podrobného trasování zprávy nebo žádná zpráva může vůbec přijímat.  
+ Úrovně vám umožňují omezit množství trasovacích informací, které obdržíte, jenom k informacím potřebným k vyřešení problému. Úroveň podrobností, kterou požadujete ve výstupu trasování, určíte nastavením a konfigurací přepínačů trasování na příslušnou úroveň trasování. Můžete dostávat chybové zprávy, varovné zprávy, informativní zprávy, podrobné trasovací zprávy nebo žádná zpráva vůbec.  
   
- Je zcela v kompetenci můžete určit, jaký druh zpráva pro přidružení k každé úrovni. Obvykle obsah trasování zpráv, které závisí na přidružit každou úroveň, ale zjistit rozdíly mezi úrovněmi. Můžete chtít poskytnout podrobný popis problému na úrovni 3 (**informace**), například ale poskytnout jenom referenční číslo chyby na úrovni 1 (**chyba**). Je zcela v kompetenci můžete určit, jaké schéma funguje nejlépe ve vaší aplikaci.  
+ Je zcela na vás, abyste se rozhodli, jaký druh zprávy přidružit k jednotlivým úrovním. Obsah trasovacích zpráv obvykle závisí na tom, co přiřadíte k jednotlivým úrovním, ale určíte rozdíly mezi úrovněmi. Je možné, že budete chtít poskytnout podrobné popisy problému na úrovni 3 (**informace**), například poskytnout pouze referenční číslo chyby na úrovni 1 (**Chyba**). Je zcela na vás, abyste se rozhodli, jaké schéma funguje nejlépe ve vaší aplikaci.  
   
- Tyto vlastnosti odpovídají hodnoty 1 až 4 **TraceLevel** výčtu. Následující tabulka uvádí, které **TraceLevel** výčet a jejich hodnoty.  
+ Tyto vlastnosti odpovídají hodnotám 1 až 4 výčtu **TraceLevel** . Následující tabulka uvádí úrovně výčtu **TraceLevel** a jejich hodnoty.  
   
-|Výčtová hodnota|Celočíselná hodnota|Typ zprávy zobrazí (nebo zapsat do zadaného výstupního cíle)|  
+|Výčtová hodnota|Celočíselná hodnota|Typ zobrazené zprávy (nebo zápis do zadaného cíle výstupu)|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
 |Off|0|Žádné|  
 |Chyba|1|Pouze chybové zprávy|  
-|Upozornění|2|Zprávy upozornění a chybové zprávy|  
-|Informace o|3|Informační zprávy, upozornění a chybové zprávy|  
-|Podrobnosti|4|Podrobné zprávy, informační zprávy, upozornění a chybové zprávy|  
+|Upozornění|2|Varovné zprávy a chybové zprávy|  
+|Informace o|3|Informační zprávy, varovné zprávy a chybové zprávy|  
+|Podrobnosti|4|Podrobné zprávy, informativní zprávy, varovné zprávy a chybové zprávy|  
   
- **TraceSwitch** vlastnosti určují maximální úroveň pro přepínač. To znamená se zapíšou informace trasování zadaný stejně jako u všech úrovní nižší úrovně. Například pokud **TraceInfo** je **true**, pak **TraceError** a **trasování** jsou také **true** ale **TraceVerbose** nejde **false**.  
+ Vlastnosti **TraceSwitch** označují maximální úroveň trasování pro přepínač. To znamená, že trasovací informace jsou zapsány pro zadanou úroveň i pro všechny nižší úrovně. Například pokud má **TraceInfo** **hodnotu true**, pak **zaznamenáno: TraceError** a **zaznamenáno: TraceWarning** jsou také **true** , ale **TraceVerbose** může být **nepravdivá**.  
   
- Tyto vlastnosti jsou jen pro čtení. **TraceSwitch** objekt je automaticky nastaví při **TraceLevel** je nastavena. Příklad:  
+ Tyto vlastnosti jsou jen pro čtení. Objekt **TraceSwitch** je automaticky nastaví, když je nastavena vlastnost **TraceLevel** . Příklad:  
   
 ```vb  
 Dim myTraceSwitch As New TraceSwitch("SwitchOne", "The first switch")  
@@ -80,11 +80,11 @@ MessageBox.Show(myTraceSwitch.TraceWarning.ToString());
 MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());  
 ```  
   
-## <a name="developer-defined-switches"></a>Přepínače definované pro vývojáře  
- Kromě toho, že **BooleanSwitch** a **TraceSwitch**, můžete definovat vlastní přepínače děděním z **přepínač** třídy a přepsáním metody třídy base pomocí vlastní metody. Další informace o vytváření definované pro vývojáře přepínače najdete v článku <xref:System.Diagnostics.Switch> třídy v referenční dokumentaci rozhraní .NET Framework.  
+## <a name="developer-defined-switches"></a>Přepínače definované vývojářem  
+ Kromě poskytování **BooleanSwitch** a **TraceSwitch**můžete definovat vlastní přepínače děděním z třídy **Switch** a přepsáním metod základní třídy pomocí přizpůsobených metod. Další informace o vytváření přepínačů definovaných pro vývojáře naleznete v tématu <xref:System.Diagnostics.Switch> třída v referenci .NET Framework.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
-- [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Moduly naslouchání trasování](trace-listeners.md)
+- [Postupy: Přidání příkazů trasování do kódu aplikace](how-to-add-trace-statements-to-application-code.md)
+- [Trasování a instrumentace aplikací](tracing-and-instrumenting-applications.md)

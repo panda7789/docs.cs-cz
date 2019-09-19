@@ -2,12 +2,12 @@
 title: Abstraktní třídy
 description: Přečtěte F# si o abstraktních třídách, které ponechávají některé nebo všechny členy neimplementované a nepředstavují společné funkce pro různé typy objektů.
 ms.date: 05/16/2016
-ms.openlocfilehash: a6bbfc23b858d5f3833f3f52b6dca46753080f03
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d7fc87178cff7c5c824992c97198b49f87025f00
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629680"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082951"
 ---
 # <a name="abstract-classes"></a>Abstraktní třídy
 
@@ -34,7 +34,7 @@ Abstraktní třídy musí mít `AbstractClass` atribut. Můžou mít implementov
 
 Třída je považována za abstraktní pouze v případě, že existují abstraktní metody, které jsou deklarovány, ale nejsou definovány. Proto třídy, které mají abstraktní metody, nejsou nutně abstraktní třídy. Pokud třída neobsahuje nedefinované abstraktní metody, nepoužívejte atribut **AbstractClass** .
 
-V předchozí syntaxi může `public`být *Modifikátor* přístupnosti, `private` nebo `internal`. Další informace najdete v tématu [Access Control](access-control.md).
+V předchozí syntaxi může `public`být *Modifikátor přístupnosti* , `private` nebo `internal`. Další informace najdete v tématu [Access Control](access-control.md).
 
 Stejně jako u jiných typů abstraktní třídy mohou mít základní třídu a jedno nebo více základních rozhraní. Každá základní třída nebo rozhraní se zobrazí na samostatném řádku spolu s `inherit` klíčovým slovem.
 
@@ -48,7 +48,7 @@ Metoda rotace může být přepsána jako ve třídě Circle, což je invariantn
 
 **Výstup:**
 
-```
+```console
 Perimeter of square with side length 10.000000 is 40.000000
 Circumference of circle with radius 5.000000 is 31.415927
 Area of Square: 100.000000

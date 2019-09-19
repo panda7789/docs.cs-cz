@@ -31,12 +31,12 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: 255a4ab3d6d6e3fc133e809ce360b25d6f82c8d7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb478f0742e85cadd9509de823abb0d486170d37
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940071"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048499"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
 <xref:System.Net.WebRequest.GetResponse%2A> <xref:System.Net.WebException> <xref:System.ArgumentException>Třídy a <xref:System.Net.WebResponse>vyvolají výjimky systému (například) a výjimky specifické pro web (které jsou vyvolány <xref:System.Net.WebRequest> metodou).  
@@ -66,7 +66,7 @@ ms.locfileid: "69940071"
 |ProxyNameResolutionFailure|Služba překladač názvů nemohla přeložit název hostitele proxy.|  
 |Neznámé chyby|Došlo k výjimce neznámého typu.|  
   
- Je- li vlastnost status **WebExceptionStatus rovným. ProtocolError**, je k dispozici odpověď na WebResponse obsahující odpověď ze serveru. Tuto odpověď můžete prostudovat a určit skutečný zdroj chyby protokolu.  
+ Je- li vlastnost status **WebExceptionStatus rovným. ProtocolError**, je k dispozici odpověď na **WebResponse** obsahující odpověď ze serveru. Tuto odpověď můžete prostudovat a určit skutečný zdroj chyby protokolu.  
   
  Následující příklad ukazuje, jak zachytit **WebException**.  
   
@@ -163,11 +163,11 @@ Catch e As Exception
 End Try  
 ```  
   
- Aplikace, které používají <xref:System.Net.Sockets.Socket> třídu, <xref:System.Net.Sockets.SocketException> jsou vyhozeny, pokud dojde k chybám na soketu Windows. <xref:System.Net.Sockets.TcpClient>Třídy, <xref:System.Net.Sockets.TcpListener> a jsou<xref:System.Net.Sockets.UdpClient> postaveny na vrcholu třídy soketu a také vyvolávají výjimku **SocketExceptions** .  
+ Aplikace, které používají <xref:System.Net.Sockets.Socket> třídu, <xref:System.Net.Sockets.SocketException> jsou vyhozeny, pokud dojde k chybám na soketu Windows. <xref:System.Net.Sockets.TcpClient>Třídy, <xref:System.Net.Sockets.TcpListener> a<xref:System.Net.Sockets.UdpClient> jsou postaveny na vrcholu třídy **soketu** a také vyvolávají výjimku **SocketExceptions** .  
   
  Když je vyvolána výjimka **SocketException** , <xref:System.Net.Sockets.SocketException.ErrorCode%2A> třída **SocketException** nastaví vlastnost na poslední chybu soketu operačního systému, ke které došlo. Další informace o kódech chyb soketu najdete v dokumentaci k kódu chyby rozhraní API Winsock 2,0 na webu MSDN.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Základy zpracování výjimek](../../standard/exceptions/exception-handling-fundamentals.md)
-- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Žádosti o data](requesting-data.md)

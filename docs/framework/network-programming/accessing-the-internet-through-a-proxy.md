@@ -12,27 +12,27 @@ helpviewer_keywords:
 - Internet, proxy instances
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
-ms.openlocfilehash: d9bd2ee7dab36172cba68532e50cfcd14fd884db
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 76566d06cac81d8ba4138369c6ee3ef807a99634
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649536"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049051"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k internetu přes proxy server
-Pokud váš web používá k zajištění přístupu k Internetu proxy server, musíte nakonfigurovat instanci proxy umožňují aplikaci komunikovat se serverem proxy webových.  
+Pokud vaše lokalita používá proxy server k poskytnutí přístupu k Internetu, je nutné nakonfigurovat instanci proxy, aby aplikace mohla komunikovat s webovým proxy serverem.  
   
  Tento oddíl obsahuje následující témata:  
   
-- [Konfigurace proxy serveru](../../../docs/framework/network-programming/proxy-configuration.md)  
+- [Konfigurace proxy serveru](proxy-configuration.md)  
   
-- [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
+- [Automatické rozpoznávání proxy serveru](automatic-proxy-detection.md)  
   
-- [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+- [Postupy: Povolit WebRequest použití proxy serveru ke komunikaci s internetem](how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
-- [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+- [Postupy: Přepsat výběr globálního proxy serveru](how-to-override-a-global-proxy-selection.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)
-- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+- [Použití aplikačních protokolů](using-application-protocols.md)
+- [Síťové programování v rozhraní .NET Framework](index.md)

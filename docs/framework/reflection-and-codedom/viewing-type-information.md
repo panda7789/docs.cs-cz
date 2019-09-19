@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 7e7303a9-4064-4738-b4e7-b75974ed70d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e658b2c86eecdbc45a9adde8d28cfb890dd591b9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a5417f330040c2b6ce08a53920f9a92117624a80
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956664"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71045763"
 ---
 # <a name="viewing-type-information"></a>Zobrazení informací o typu
 Třída <xref:System.Type?displayProperty=nameWithType> je od střední k reflexi. Modul CLR (Common Language Runtime) vytvoří **typ** načteného typu, když ho požádá o reflexi. Můžete použít metody, pole, vlastnosti a vnořené třídy **typu** objektu, abyste zjistili vše o tomto typu.  
@@ -26,7 +26,7 @@ Třída <xref:System.Type?displayProperty=nameWithType> je od střední k reflex
  Použijte <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> nebo<xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=nameWithType> k získání objektů **typu** ze sestavení, která nebyla načtena, předejte název typu nebo typy, které chcete. Slouží <xref:System.Type.GetType%2A?displayProperty=nameWithType> k získání **typu** objektů ze sestavení, které je již načteno. Použijte <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType> a<xref:System.Reflection.Module.GetTypes%2A?displayProperty=nameWithType> k získání objektů **typu** modulu.  
   
 > [!NOTE]
-> Pokud chcete prošetřit a manipulovat s obecnými typy a metodami, přečtěte si další informace, které jsou k dispozici [v reflexi [a obecných typech](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md) a postupy: Prověřte a vytvořte instanci obecných typů pomocí](../../../docs/framework/reflection-and-codedom/how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
+> Pokud chcete prošetřit a manipulovat s obecnými typy a metodami, přečtěte si další informace, které jsou k dispozici [v [reflexi a obecných typech](reflection-and-generic-types.md) a postupy: Prověřte a vytvořte instanci obecných typů pomocí](how-to-examine-and-instantiate-generic-types-with-reflection.md)reflexe.  
   
  Následující příklad ukazuje syntaxi nutnou k získání <xref:System.Reflection.Assembly> objektu a modulu pro sestavení.  
   
@@ -90,4 +90,4 @@ Třída <xref:System.Type?displayProperty=nameWithType> je od střední k reflex
 - <xref:System.Reflection.FieldInfo>
 - <xref:System.Reflection.EventInfo>
 - <xref:System.Reflection.ParameterInfo>
-- [Reflexe a obecné typy](../../../docs/framework/reflection-and-codedom/reflection-and-generic-types.md)
+- [Reflexe a obecné typy](reflection-and-generic-types.md)

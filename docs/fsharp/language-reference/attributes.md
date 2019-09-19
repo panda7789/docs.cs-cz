@@ -2,12 +2,12 @@
 title: Atributy
 description: Zjistěte, F# jak atributy umožňují použít metadata pro programovací konstrukci.
 ms.date: 05/16/2016
-ms.openlocfilehash: c9691a13ff1e9e892e93a967136a99849da25f1f
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 08d50f7f57b6c0a81221e8f635f77f67750d0ff9
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567502"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082942"
 ---
 # <a name="attributes"></a>Atributy
 
@@ -27,8 +27,8 @@ V předchozí syntaxi je *cíl* nepovinný a, pokud je k dispozici, určuje druh
 
 *Argumenty* jsou argumenty konstruktoru pro typ atributu. Pokud má atribut výchozí konstruktor, seznam argumentů a kulaté závorky lze vynechat. Atributy podporují Poziční argumenty i pojmenované argumenty. *Poziční argumenty* jsou argumenty, které jsou používány v pořadí, ve kterém jsou uvedeny. Pojmenované argumenty lze použít, pokud má atribut veřejné vlastnosti. Můžete je nastavit pomocí následující syntaxe v seznamu argumentů.
 
-```
-*property-name* = *property-value*
+```fsharp
+property-name = property-value
 ```
 
 Tyto inicializace vlastností mohou být v libovolném pořadí, ale musí následovat za libovolnými pozičními argumenty. Následuje příklad atributu, který používá poziční argumenty a inicializace vlastností.
@@ -85,7 +85,7 @@ Přestože nemusíte obvykle explicitně určovat cíl atributu, platné hodnoty
     <td><pre lang="fsharp"><code>[&lt;property: Obsolete&gt;] this.MyProperty = x</code></pre></td> 
   </tr>
   <tr>
-    <td>bajty</td>
+    <td>Bajty</td>
     <td><pre lang="fsharp"><code>member this.MyMethod([&lt;param: Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td> 
   </tr>
   <tr>

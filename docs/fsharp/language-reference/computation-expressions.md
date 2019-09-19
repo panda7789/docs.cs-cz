@@ -2,12 +2,12 @@
 title: Výpočetní výrazy
 description: Naučte se vytvářet praktické syntaxe pro psaní výpočtů v F# , která může být sekvencovaná a kombinovaná pomocí konstrukcí a vazeb toku řízení.
 ms.date: 03/15/2019
-ms.openlocfilehash: bca328a09ff61fb76d30960221ee3350fcc25fc1
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 9222be5a585914761d3001d6649b196030eec05e
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106574"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083060"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -32,7 +32,7 @@ Každý výraz výpočtu je zálohovaný typem *Tvůrce* . Typ Tvůrce definuje 
 
 Všechny výpočetní výrazy mají následující formát:
 
-```
+```fsharp
 builder-expr { cexper }
 ```
 
@@ -77,7 +77,7 @@ let doThingsAsync url =
     }
 ```
 
-Pokud svážete volání výrazu výpočtu s `let`, nebudete mít výsledek výrazu výpočtu. Místo toho budete mít vazbu na hodnotu nerealizovaného volání tohoto výrazu výpočtu. Slouží `let!` k vytvoření vazby na výsledek.
+Pokud svážete volání výrazu výpočtu s `let`, nebudete mít výsledek výrazu výpočtu. Místo toho budete mít vazbu na hodnotu *nerealizovaného* volání tohoto výrazu výpočtu. Slouží `let!` k vytvoření vazby na výsledek.
 
 `let!`je definována `Bind(x, f)` členem na typu tvůrce.
 
@@ -190,7 +190,7 @@ let doThingsAsync url =
     }
 ```
 
-Při volání výpočetního výrazu s `match!`, bude zapomenout výsledek volání jako. `let!` To se často používá při volání výrazu výpočtu, kde výsledek je nepovinný. [](options.md)
+Při volání výpočetního výrazu s `match!`, bude zapomenout výsledek volání jako. `let!` To se často používá při volání výrazu výpočtu, kde výsledek je [nepovinný](options.md).
 
 ## <a name="built-in-computation-expressions"></a>Předdefinované výrazy výpočtů
 

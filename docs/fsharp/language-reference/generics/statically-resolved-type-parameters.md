@@ -2,12 +2,12 @@
 title: Statisticky vyřešené parametry typu
 description: Naučte se používat F# staticky vyřešený parametr typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 43ed79b6e5f43a499a27b05e26472b021c455e44
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: bc3310192cdaa5ae4862b8aee46b6152f61da38a
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630591"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082928"
 ---
 # <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
 
@@ -15,7 +15,7 @@ ms.locfileid: "68630591"
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```fsharp
 ˆtype-parameter
 ```
 
@@ -52,7 +52,7 @@ when (^a or ^b) : (static member ( + ) : ^a * ^b -> ^d) and
 
 Výstup je následující.
 
-```
+```console
 2
 1.500000
 ```

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 968660f2fa043ee4028cb144f368d9380729ffef
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: 4a88cf077c061746f9bc9f4aa0122d2f09b6fbd7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133803"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71042266"
 ---
 # <a name="ui-automation-overview"></a>Přehled automatizace uživatelského rozhraní
 > [!NOTE]
@@ -45,12 +45,12 @@ Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaný
   
 |Section|Předmět|Cílová skupina|  
 |-------------|--------------------|--------------|  
-|[Základy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md) (Tato část)|Široké přehledy konceptů.|Všechny.|  
-|[Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)|Přehledy a postupy, které vám pomůžou s používáním rozhraní API pro poskytovatele.|Řízení vývojářů.|  
-|[Klienti automatizace uživatelského rozhraní pro spravovaný kód](../../../docs/framework/ui-automation/ui-automation-clients-for-managed-code.md)|Přehledy a postupy, které vám pomůžou s používáním rozhraní API klienta.|Vývojáři klientských aplikací.|  
-|[Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns.md)|Informace o tom, jak by měly být implementovány vzory řízení poskytovateli a jaké funkce jsou k dispozici pro klienty.|Všechny.|  
-|[Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-text-pattern.md)|Informace o tom, jak by měl být vzor ovládacího prvku textu implementován poskytovateli a jaké funkce jsou k dispozici pro klienty.|Všechny.|  
-|[Typy ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)|Informace o vlastnostech a vzorech ovládacích prvků podporovaných různými typy ovládacích prvků.|Všechny.|  
+|[Základy automatizace uživatelského rozhraní](index.md) (Tato část)|Široké přehledy konceptů.|Všechny.|  
+|[Zprostředkovatelé automatizace uživatelského rozhraní pro spravovaný kód](ui-automation-providers-for-managed-code.md)|Přehledy a postupy, které vám pomůžou s používáním rozhraní API pro poskytovatele.|Řízení vývojářů.|  
+|[Klienti automatizace uživatelského rozhraní pro spravovaný kód](ui-automation-clients-for-managed-code.md)|Přehledy a postupy, které vám pomůžou s používáním rozhraní API klienta.|Vývojáři klientských aplikací.|  
+|[Vzory ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns.md)|Informace o tom, jak by měly být implementovány vzory řízení poskytovateli a jaké funkce jsou k dispozici pro klienty.|Všechny.|  
+|[Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní](ui-automation-text-pattern.md)|Informace o tom, jak by měl být vzor ovládacího prvku textu implementován poskytovateli a jaké funkce jsou k dispozici pro klienty.|Všechny.|  
+|[Typy ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-types.md)|Informace o vlastnostech a vzorech ovládacích prvků podporovaných různými typy ovládacích prvků.|Všechny.|  
   
  V následující tabulce jsou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] uvedeny obory názvů, knihovny DLL, které je obsahují, a cílová skupina, která je používá.  
   
@@ -70,14 +70,14 @@ Automatizace uživatelského rozhraní poskytuje plnou funkčnost v podporovaný
  Kromě toho prvky zpřístupňují vzory ovládacích prvků, které poskytují vlastnosti specifické pro jejich typy ovládacích prvků. Vzory ovládacích prvků také zpřístupňují metody, které klientům umožňují získat další informace o elementu a k poskytnutí vstupu.  
   
 > [!NOTE]
-> Mezi typy ovládacích prvků a vzory ovládacích prvků neexistuje žádná korespondence 1:1. Vzor ovládacího prvku může být podporován více typy ovládacích prvků a ovládací prvek může podporovat více vzorů ovládacích prvků, z nichž každý zveřejňuje různé aspekty jeho chování. Například pole se seznamem má alespoň dva vzory ovládacích prvků: jeden, který představuje jeho schopnost rozbalit a sbalit a druhý, který představuje mechanismus výběru. Konkrétní informace najdete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md).  
+> Mezi typy ovládacích prvků a vzory ovládacích prvků neexistuje žádná korespondence 1:1. Vzor ovládacího prvku může být podporován více typy ovládacích prvků a ovládací prvek může podporovat více vzorů ovládacích prvků, z nichž každý zveřejňuje různé aspekty jeho chování. Například pole se seznamem má alespoň dva vzory ovládacích prvků: jeden, který představuje jeho schopnost rozbalit a sbalit a druhý, který představuje mechanismus výběru. Konkrétní informace najdete v tématu [typy ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-types.md).  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje také informace klientským aplikacím prostřednictvím událostí. Na rozdíl [!INCLUDE[TLA2#tla_winevents](../../../includes/tla2sharptla-winevents-md.md)]od [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , události nejsou založené na mechanismu vysílání. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Klienti se registrují pro konkrétní oznámení událostí a můžou požádat [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] o konkrétní vlastnosti a informace o vzoru ovládacího prvku, které se předají do obslužných rutin událostí. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událost obsahuje odkaz na element, který ji vyvolal. Poskytovatelé můžou zvýšit výkon tím, že vyberou události selektivně v závislosti na tom, jestli některý z klientů naslouchá.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
-- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)
-- [Přehled vlastností automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)
-- [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md)
-- [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md)
+- [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md)
+- [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](ui-automation-control-patterns-overview.md)
+- [Přehled vlastností automatizace uživatelského rozhraní](ui-automation-properties-overview.md)
+- [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md)
+- [Přehled zabezpečení automatizace uživatelského rozhraní](ui-automation-security-overview.md)

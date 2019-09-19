@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0683499241f594b8b37b7dd69b91ed5929670024
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: df7ce0795daabdf34f46e20460bef23e7c486467
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894568"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71043895"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres. exe (Editor lokalizace prostředků systému Windows)
 
-Editor lokalizace prostředků systému Windows, Winres. exe, je nástroj pro vizuální rozložení, který pomáhá lokalizačním odborníkům lokalizovat model Windows Forms prostředky uživatelského rozhraní (UI) používané formuláři. Soubor prostředků .resx nebo .resources sloužící jako vstup do nástroje Winres.exe lze vytvořit pomocí prostředí pro vizuální návrh, jako je například sada Microsoft Visual Studio. Informace o nasazení prostředků v aplikacích .NET Framework najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md).
+Editor lokalizace prostředků systému Windows, Winres. exe, je nástroj pro vizuální rozložení, který pomáhá lokalizačním odborníkům lokalizovat model Windows Forms prostředky uživatelského rozhraní (UI) používané formuláři. Soubor prostředků .resx nebo .resources sloužící jako vstup do nástroje Winres.exe lze vytvořit pomocí prostředí pro vizuální návrh, jako je například sada Microsoft Visual Studio. Informace o nasazení prostředků v aplikacích .NET Framework najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../resources/index.md).
 
-Nástroj Winres. exe je nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio. Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Nástroj Winres. exe je nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio. Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -55,7 +55,7 @@ Stavy prvků UI z formuláře v projektu Windows Forms jsou obvykle uloženy v s
 
 Podívejte se také [na hierarchickou organizaci prostředků pro lokalizaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110)) nebo [hierarchickou organizaci prostředků pro lokalizaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120)).
 
-Nástroj Winres.exe nemůže převést soubor .resx na dopovídající soubor .resources; použijte místo něj nástroj Resgen.exe. Další informace o nástroji Resgen. exe naleznete v tématu [Resgen. exe (generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md).
+Nástroj Winres.exe nemůže převést soubor .resx na dopovídající soubor .resources; použijte místo něj nástroj Resgen.exe. Další informace o nástroji Resgen. exe naleznete v tématu [Resgen. exe (generátor zdrojových souborů)](resgen-exe-resource-file-generator.md).
 
 Nástroj Winres.exe je grafická aplikace, která obnoví verzi návrhu formuláře Windows Forms pouze ze souboru prostředků, aniž by měla přístup ke zdrojovému kódu. Winres. exe hostuje **Návrháře formulářů model Windows Forms** a okno **vlastnosti** sady Visual Studio. Tyto funkce umožňují provádět vizuální úpravy souboru .resources nebo .resx obsahujícího formulář Windows Forms. K úpravám popisků ovládacích prvků a k přizpůsobení umístění a velikosti ovládacích prvků pro cílovou jazykovou verzi obvykle používají lokalizace nástroj Winres. exe.
 
@@ -76,7 +76,7 @@ Chcete-li lokalizovat pomocí nástroje Winres. exe, musíte nejprve vyvinout ap
 > [!NOTE]
 > Nástroj Winres.exe nelze použít k úpravě výchozího souboru prostředků. Nástroj Winres.exe interpretuje všechny změněné vlastnosti jako lokalizované vlastnosti a ukládá je do souboru prostředků cílové jazykové verze.
 
-Konečné verze souborů prostředků jazykové verze lze nakonec použít k vytvoření lokalizovaných verzí aplikace. Další informace najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md).
+Konečné verze souborů prostředků jazykové verze lze nakonec použít k vytvoření lokalizovaných verzí aplikace. Další informace najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../resources/index.md).
 
 Nástroj Winres. exe má následující funkce a možnosti:
 
@@ -127,7 +127,7 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
     ```
 
     > [!NOTE]
-    > Jestliže je formulář, jehož prostředky upravujete, zděděným formulářem, sestavení obsahující zděděný formulář i sestavení obsahující odvozený formulář musí být zaregistrována v globální mezipaměti sestavení (GAC) nebo musí být umístěna ve stejném adresáři jako nástroj WinRes.exe. Další informace o instalaci komponent .NET Framework do mezipaměti GAC naleznete v tématu [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)(GAC).
+    > Jestliže je formulář, jehož prostředky upravujete, zděděným formulářem, sestavení obsahující zděděný formulář i sestavení obsahující odvozený formulář musí být zaregistrována v globální mezipaměti sestavení (GAC) nebo musí být umístěna ve stejném adresáři jako nástroj WinRes.exe. Další informace o instalaci komponent .NET Framework do mezipaměti GAC naleznete v tématu [globální mezipaměť sestavení](../app-domains/gac.md)(GAC).
 
 3. Ve formuláři vyberte ovládací prvky a změňte jejich <xref:System.Windows.Forms.Control.Text%2A> a další vlastnosti tak, aby odrážely lokalizovanou jazykovou verzi a jazyk. Přesuňte ovládací prvky nebo změňte jejich velikost tak, aby vyhovovaly lokalizovanému textu.
 
@@ -135,7 +135,7 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
 
 5. Vyberte odpovídající jazykovou verzi a režim souboru a pak klikněte na **OK**.
 
-   Nástroj uloží soubor pomocí konvence pojmenování, kterou doba běhu pro lokalizované soubory prostředků očekává. Například pokud se rozhodnete `TestApp.resources` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resources` Pokud se rozhodnete `TestApp.resx` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resx` Další informace o zásadách vytváření názvů prostředků naleznete v tématu [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových verzí používaných v době běhu naleznete v tématu <xref:System.Globalization.CultureInfo> třída.
+   Nástroj uloží soubor pomocí konvence pojmenování, kterou doba běhu pro lokalizované soubory prostředků očekává. Například pokud se rozhodnete `TestApp.resources` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resources` Pokud se rozhodnete `TestApp.resx` pro němčinu v Německu, nástroj soubor uloží jako. `TestApp.de-DE.resx` Další informace o zásadách vytváření názvů prostředků naleznete v tématu [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových verzí používaných v době běhu naleznete v tématu <xref:System.Globalization.CultureInfo> třída.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -144,6 +144,6 @@ Měli byste použít verzi nástroje Winres. exe, která byla vydaná s .NET Fra
 - <xref:System.Resources.ResourceManager>
 - <xref:System.Resources.ResourceReader>
 - <xref:System.Resources.ResourceWriter>
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Nástroje](index.md)
+- [Prostředky v desktopových aplikacích](../resources/index.md)
 - [Globalizace a lokalizace](../../standard/globalization-localization/index.md)

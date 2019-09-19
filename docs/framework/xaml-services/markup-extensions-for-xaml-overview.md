@@ -5,12 +5,12 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: 5c29899846e7210c02b6bcc2b677b05581a5c6b1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: adcd224e30d541f27b1583389ca63b6f8a32fc38
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939710"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053861"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
 Rozšíření značek představují techniku XAML pro získání hodnoty, která není primitivní ani konkrétního typu XAML. Pro použití atributů rozšíření značek používají sekvenci známého znaku levé složené závorky `{` k zadání rozsahu rozšíření značek a uzavírací složené `}` závorky pro ukončení. Při použití .NET Framework služby XAML můžete použít některé z předdefinovaných rozšíření značek jazyka XAML ze sestavení System. XAML. Můžete také podtřídou z <xref:System.Windows.Markup.MarkupExtension> třídy definované v souboru System. XAML a definovat vlastní rozšíření značek. Nebo můžete použít rozšíření značek definované konkrétní architekturou, pokud již odkazujete na tuto architekturu.  
@@ -73,7 +73,7 @@ Rozšíření značek představují techniku XAML pro získání hodnoty, která
   
  Předpokládejme například, že `Collate` rozšíření označení je určeno pro podporu pouze režimu, kde je jeden poziční argument, který představuje jeho režim, který je určen `CollationMode` jako konstanta výčtu. V takovém případě by měl být konstruktor s následujícím formulářem:  
   
-```  
+```csharp  
 public Collate(CollationMode collationMode) {...}  
 ```  
   
@@ -91,7 +91,7 @@ public Collate(CollationMode collationMode) {...}
   
  Argumenty jsou označovány jako poziční argumenty, protože pořadí, ve kterém jsou zjištěny tokeny v použití, odpovídají umístění parametru konstruktoru, ke kterému jsou přiřazeny. Zvažte například následující signatura konstruktoru:  
   
-```  
+```csharp  
 public Collate(CollationMode collationMode, object collateThis) {...}  
 ```  
   

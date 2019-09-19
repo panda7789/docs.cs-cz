@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 85d554337d11c3f79d8f70048246e978e185645e
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: f1926d2699357163dbb8685b7ea875e369ca29b7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894919"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046661"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Události Trasování událostí pro Windows v knihovně Task Parallel Library a PLINQ
 
@@ -116,6 +116,6 @@ EVENT_DESCRIPTOR. ID = 1
 
 ## <a name="see-also"></a>Viz také:
 
-- [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)
+- [Trasování událostí pro Windows – události v rozhraní .NET Framework](etw-events.md)
 - [Task Parallel Library (TPL)](../../standard/parallel-programming/task-parallel-library-tpl.md)
 - [Paralelní LINQ (PLINQ)](../../standard/parallel-programming/parallel-linq-plinq.md)

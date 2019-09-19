@@ -2,12 +2,12 @@
 title: Seznamy
 description: Přečtěte F# si o seznamech, seřazené, neměnné řadě prvků stejného typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: e8c4a464306cfedfd36a4685507684d3a1a97a2e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 72f1779d7d077da0f1f4804df93fa4ac11f9b2e3
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630725"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71082913"
 ---
 # <a name="lists"></a>Seznamy
 
@@ -99,7 +99,7 @@ Funkce `RemoveAllMultiples` je rekurzivní funkce, která přijímá dva seznamy
 
 Výstup je následující:
 
-```
+```console
 Primes Up To 100:
 [2; 3; 5; 7; 11; 13; 17; 19; 23; 29; 31; 37; 41; 43; 47; 53; 59; 61; 67; 71; 73; 79; 83; 89; 97]
 ```
@@ -120,7 +120,7 @@ Následující kód demonstruje použití `List.exists`.
 
 Výstup je následující:
 
-```
+```console
 For list [0; 1; 2; 3], contains zero is true
 ```
 
@@ -130,7 +130,7 @@ Následující příklad ukazuje použití `List.exists2`.
 
 Výstup je následující:
 
-```
+```console
 Lists [1; 2; 3; 4; 5] and [5; 4; 3; 2; 1] have at least one equal element at the same position.
 ```
 
@@ -140,7 +140,7 @@ Lists [1; 2; 3; 4; 5] and [5; 4; 3; 2; 1] have at least one equal element at the
 
 Výstup je následující:
 
-```
+```console
 true
 false
 ```
@@ -151,7 +151,7 @@ Podobně [seznam. forall2 –](https://msdn.microsoft.com/library/bb611f02-8277-
 
 Výstup je následující:
 
-```
+```console
 true
 false
 ```
@@ -168,7 +168,7 @@ Následující příklad ukazuje použití `List.sort`.
 
 Výstup je následující:
 
-```
+```console
 [-2; 1; 4; 5; 8]
 ```
 
@@ -178,7 +178,7 @@ Následující příklad ukazuje použití `List.sortBy`.
 
 Výstup je následující:
 
-```
+```console
 [1; -2; 4; 5; 8]
 ```
 
@@ -188,7 +188,7 @@ Další příklad ukazuje použití `List.sortWith`. V tomto příkladu se vlast
 
 Výstup je následující:
 
-```
+```console
 [{ID = 92;
 Rev = 1;}; {ID = 92;
 Rev = 1;}; {ID = 100;
@@ -213,7 +213,7 @@ Pokud elementy musí být transformovány jako první, zavolejte [list. vyskl](h
 
 Výstup je následující:
 
-```
+```console
 "b"
 ```
 
@@ -223,7 +223,7 @@ Jiná skupina operací hledání, [list. tryFind –](https://msdn.microsoft.com
 
 Výstup je následující:
 
-```
+```console
 The first even value is 22.
 The first even value is at position 8.
 ```
@@ -252,7 +252,7 @@ Seznamy, které obsahují řazené kolekce členů, mohou být manipulovány fun
 
 Výstup je následující:
 
-```
+```console
 [(1, -1); (2, -2); (3; -3)]
 ```
 
@@ -262,7 +262,7 @@ Následující příklad kódu ukazuje použití `List.zip3`.
 
 Výstup je následující:
 
-```
+```console
 [(1, -1, 0); (2, -2, 0); (3, -3, 0)]
 ```
 
@@ -274,7 +274,7 @@ Následující příklad kódu ukazuje použití [seznamu. dekomprimovat](https:
 
 Výstup je následující:
 
-```
+```console
 ([1; 3], [2; 4])
 [1; 3] [2; 4]
 ```
@@ -285,7 +285,7 @@ Následující příklad kódu ukazuje použití [seznamu. unzip3 –](https://m
 
 Výstup je následující:
 
-```
+```console
 ([1; 4], [2; 5], [3; 6])
 ```
 
@@ -297,7 +297,7 @@ F#podporuje různé operace na prvcích seznamu. Nejjednodušší je [list. ITER
 
 Výstup je následující:
 
-```
+```console
 List.iter: element is 1
 List.iter: element is 2
 List.iter: element is 3
@@ -318,7 +318,7 @@ Další často používanou funkcí, která transformuje prvky seznamu, je [list
 
 Výstup je následující:
 
-```
+```console
 [2; 3; 4]
 ```
 
@@ -328,7 +328,7 @@ Následující příklad ukazuje použití `List.map2`.
 
 Výstup je následující:
 
-```
+```console
 [5; 7; 9]
 ```
 
@@ -338,7 +338,7 @@ Následující příklad ukazuje použití `List.map3`.
 
 Výstup je následující:
 
-```
+```console
 [7; 10; 13]
 ```
 
@@ -348,7 +348,7 @@ Následující příklad ukazuje použití `List.mapi`.
 
 Výstup je následující:
 
-```
+```console
 [1; 3; 5]
 ```
 
@@ -358,7 +358,7 @@ Následující příklad ukazuje použití `List.mapi2`.
 
 Výstup je následující:
 
-```
+```console
 [0; 7; 18]
 ```
 
@@ -368,7 +368,7 @@ Výstup je následující:
 
 Výstup je následující:
 
-```
+```console
 [1; 2; 3; 2; 4; 6; 3; 6; 9]
 ```
 
@@ -386,7 +386,7 @@ Následující kód demonstruje použití `List.choose` pro výběr slov se velk
 
 Výstup je následující:
 
-```
+```console
 ["Rome's"; "Bob's"]
 ```
 
@@ -440,7 +440,7 @@ V následujícím kódu je první volání lambda výrazu uděleno argumenty 2 a
 
 ### <a name="additional-operations"></a>Další operace
 
-Další informace o dalších operacích v seznamech naleznete v tématu věnovaném modulům Reference Library [Collections. list](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d).
+Další informace o dalších operacích v seznamech naleznete v tématu věnovaném [modulům Reference Library Collections. list](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d).
 
 ## <a name="see-also"></a>Viz také:
 

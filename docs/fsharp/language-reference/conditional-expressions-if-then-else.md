@@ -2,12 +2,12 @@
 title: 'Podmíněné výrazy: if... pak... ostatních'
 description: Naučte se psát podmíněné výrazy v F# pro spouštění různých větví kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 825149bf296eded3cc2b4d8847ba4d82bea40cdc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d9763f37cd9170c42e968282b54a3ce925e92591
+ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630392"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71083023"
 ---
 # <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy:`if...then...else`
 
@@ -31,7 +31,7 @@ Následující příklad ukazuje, jak použít `if...then...else` výraz.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet4501.fs)]
 
-```
+```console
 10 is less than 20
 What is your name? John
 How old are you? 9

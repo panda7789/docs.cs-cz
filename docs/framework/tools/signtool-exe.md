@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46475cbc8517fc73d8b7fd868c7632e5c85a7726
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: f99b2fd4716b069d4ec7a21e369c5178990ce16d
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894791"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044198"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (nástroj pro podpis)
 Sign Tool je nástroj příkazového řádku, který digitálně podepíše soubory, ověří podpisy v souborech a časová razítka souborů.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -39,10 +39,10 @@ signtool [command] [options] [file_name | ...]
   
 |Příkaz|Popis|  
 |-------------|-----------------|  
-|`catdb`|Přidá nebo odebere soubor katalogu z databáze katalogů. Databáze katalogů slouží k automatickému vyhledávání souborů katalogu a jsou označeny identifikátorem GUID. Seznam možností podporovaných `catdb` příkazem naleznete v tématu [CatDB Command Options](../../../docs/framework/tools/signtool-exe.md#catdb).|  
-|`sign`|Digitálně podepíše soubory. Digitální podpisy chrání soubory před neoprávněnými změnami a umožňují uživatelům ověřit podpis na základě podpisového certifikátu. Seznam možností podporovaných `sign` příkazem najdete v tématu [Možnosti příkazu Sign](../../../docs/framework/tools/signtool-exe.md#sign).|  
-|`Timestamp`|Opatří soubory časovým razítkem. Seznam možností podporovaných `TimeStamp` příkazem naleznete v tématu [Možnosti příkazu TimeStamp](../../../docs/framework/tools/signtool-exe.md#TimeStamp).|  
-|`Verify`|Ověří digitální podpis souborů stanovením, zda podpisový certifikát byl vydán důvěryhodnou autoritou, zda podpisový certifikát nebyl odvolán, a případně zda podpisový certifikát je platný pro konkrétní zásady. Seznam možností podporovaných `Verify` příkazem najdete v tématu [ověření možností příkazu](../../../docs/framework/tools/signtool-exe.md#Verify).|  
+|`catdb`|Přidá nebo odebere soubor katalogu z databáze katalogů. Databáze katalogů slouží k automatickému vyhledávání souborů katalogu a jsou označeny identifikátorem GUID. Seznam možností podporovaných `catdb` příkazem naleznete v tématu [CatDB Command Options](signtool-exe.md#catdb).|  
+|`sign`|Digitálně podepíše soubory. Digitální podpisy chrání soubory před neoprávněnými změnami a umožňují uživatelům ověřit podpis na základě podpisového certifikátu. Seznam možností podporovaných `sign` příkazem najdete v tématu [Možnosti příkazu Sign](signtool-exe.md#sign).|  
+|`Timestamp`|Opatří soubory časovým razítkem. Seznam možností podporovaných `TimeStamp` příkazem naleznete v tématu [Možnosti příkazu TimeStamp](signtool-exe.md#TimeStamp).|  
+|`Verify`|Ověří digitální podpis souborů stanovením, zda podpisový certifikát byl vydán důvěryhodnou autoritou, zda podpisový certifikát nebyl odvolán, a případně zda podpisový certifikát je platný pro konkrétní zásady. Seznam možností podporovaných `Verify` příkazem najdete v tématu [ověření možností příkazu](signtool-exe.md#Verify).|  
   
  Tyto možnosti platí pro všechny příkazy nástroje pro podepisování.  
   
@@ -211,5 +211,5 @@ signtool verify /c MyCatalog.cat SystemFile.dll
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

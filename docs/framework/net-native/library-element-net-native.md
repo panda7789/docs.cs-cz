@@ -1,21 +1,21 @@
 ---
-title: <Library> – Element (.NET Native)
+title: <Library>– Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce001ed25d7704301d7f809887a445e3492e93fc
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: bc3c85ab99574c96d8a68d4221f218a1340e4122
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422540"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71049650"
 ---
-# <a name="library-element-net-native"></a>\<Knihovna > – Element (.NET Native)
-Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.  
+# <a name="library-element-net-native"></a>\<Element > knihovny (.NET Native)
+Definuje sestavení, které obsahuje typy a členy typů, jejichž metadata jsou k dispozici pro reflexi v době běhu.  
   
- \<Direktivy > – Element  
-\<Knihovna > – Element  
+ \<Direktivy > element  
+\<Element > knihovny  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,35 +30,35 @@ Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k d
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`Name`|Požadovaný atribut. Určuje název sestavení. Podřízené prvky tohoto `<Library>` element definovat zásady reflexe modulu runtime pro typy a členy typů nalezena v tomto sestavení.|  
+|`Name`|Požadovaný atribut. Určuje název sestavení. Podřízené elementy tohoto `<Library>` elementu definují zásady reflexe modulu runtime pro typy a členy typů nalezené v tomto sestavení.|  
   
-## <a name="name-attribute"></a>Název atributu  
+## <a name="name-attribute"></a>Atribut Name  
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*assembly_name*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření". V části poznámky pro zvláštní forma *název_sestavení* , který podporuje podmíněné zahrnutí metadat ze sestavení.|  
+|*assembly_name*|Jednoduchý název sestavení bez přípony souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnosti. Například název sestavení s názvem Extensions. dll je "Extensions". Zvláštní podobu *assembly_name* , která podporuje podmíněné zahrnutí metadat ze sestavení, naleznete v části poznámky.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
-|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady na Konstruovaný obecný typ. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může použít k definování zásad pro `List<String>` typu.|  
+|[\<> Sestavení](assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
+|[\<Namespace>](namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
+|[\<Zadejte >](type-element-net-native.md)|Použije zásady na konkrétní typ, jako je třída nebo struktura.|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|Použije zásady na konstruovaný obecný typ. Například `List<String>` [ \<element TypeInstantiation >](typeinstantiation-element-net-native.md) lze použít k definování zásad pro typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md)|Kořenový prvek souboru direktiv modulu runtime.|  
+|[\<> Direktiv](directives-element-net-native.md)|Kořenový prvek souboru direktiv modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ \<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md) element může obsahovat nula, jeden nebo více `<Library>` elementy.  
+ Direktivy > element může obsahovat nula, jeden nebo více `<Library>` prvků. [ \<](directives-element-net-native.md)  
   
- `<Library>` Prvek slouží jako kontejner pro definování prvky programu, jejichž metadat je potřeba za běhu; tento element není vyjádření zásad. V době kompilace, kompilačních nástrojů hledání pouze v knihovně, které jsou určené `<Library>` – element pro prvky programu identifikován jeho podřízené prvky. Naproti tomu kompilátoru nástroje hledání všech knihoven, včetně.NET Framework základní knihovny, pro prvky programu identifikovaný podřízených elementů [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) elementu.  
+ `<Library>` Element slouží jako kontejner pro definování prvků programu, jejichž metadata jsou potřebná v době běhu; tento prvek neposkytuje expresní zásady. V době kompilace Nástroj pro kompilátor vyhledává pouze knihovnu určenou `<Library>` prvkem pro prvky programu identifikované jeho podřízenými prvky. Naproti tomu nástroje kompilátoru hledají všechny knihovny, základní knihovny including.NET Framework pro prvky programu identifikované podřízenými prvky [ \<aplikace >](application-element-net-native.md) elementu.  
   
- `<Library>` direktivy může podmíněně využít. Pokud název `<Library>` prvek začíná a končí s hvězdičkou (\*), `<Library>` – direktiva má vliv pouze v případě, že sestavení určena v rozsahu mezi hvězdičky odkazuje aplikaci. Například následující direktivy modulu runtime platí jenom v případě, že Utilities.dll sestavení odkazuje aplikaci.  
+ `<Library>`direktivy mohou být využívány podmíněně. Pokud název `<Library>` elementu začíná a končí hvězdičkou (\*), má tato `<Library>` direktiva účinek pouze v případě, že je v aplikaci odkazováno na sestavení zadané mezi hvězdičkami. Například následující direktiva modulu runtime platí pouze v případě, že aplikace odkazuje na sestavení Utilities. dll.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -70,7 +70,7 @@ Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k d
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<Aplikace > – Element](../../../docs/framework/net-native/application-element-net-native.md)
-- [\<Direktivy > – Element](../../../docs/framework/net-native/directives-element-net-native.md)
-- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [\<> Element aplikace](application-element-net-native.md)
+- [\<Direktivy > element](directives-element-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](runtime-directive-elements.md)

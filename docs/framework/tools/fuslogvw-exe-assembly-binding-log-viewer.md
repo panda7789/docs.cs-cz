@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd27bebdc71c70226a61ad8d912135e0e1671dd8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 6077acab533ecb755ae42b7c4359a6c77ff33449
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851256"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044684"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 
@@ -25,7 +25,7 @@ Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení
 > [!IMPORTANT]
 > Nástroj fuslogvw.exe je nutné spustit s oprávněními správce.
 
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7) s přihlašovacími údaji správce. Další informace najdete v tématu [výzvy k zadání příkazu](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7) s přihlašovacími údaji správce. Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
 V příkazovém řádku zadejte následující:
 
@@ -60,7 +60,7 @@ Prohlížeč zobrazí záznam pro každou nezdařenou vazbu sestavení. Pro kaž
 
     - Popis všech zásad aplikace, vydavatele nebo správce, které byly použity.
 
-    - Zda bylo sestavení nalezeno v [globální mezipaměti sestavení (GAC](../../../docs/framework/app-domains/gac.md)).
+    - Zda bylo sestavení nalezeno v [globální mezipaměti sestavení (GAC](../app-domains/gac.md)).
 
     - Seznam všech zjišťovaných adres URL.
 
@@ -122,7 +122,7 @@ LOG: All probing URLs attempted and failed.
 
 ## <a name="binding-logs-for-native-images"></a>Protokoly vazeb nativních bitových kopií
 
-Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadavky vazby sestavení. Alternativně můžete protokolovat vazby sestavení pro nativní bitové kopie, které byly vytvořeny pomocí nástroje [Ngen. exe (generátor nativních imagí)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).
+Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadavky vazby sestavení. Alternativně můžete protokolovat vazby sestavení pro nativní bitové kopie, které byly vytvořeny pomocí nástroje [Ngen. exe (generátor nativních imagí)](ngen-exe-native-image-generator.md).
 
 #### <a name="to-log-assembly-binds-for-native-images"></a>Protokolování vazeb sestavení nativních bitových kopií
 
@@ -218,7 +218,7 @@ Pomocí dialogového okna **nastavení protokolu** můžete provést následují
 2. Zadejte cestu do textového pole **vlastní cesta protokolu** .
 
 > [!NOTE]
-> [Nástroj Assembly Binding Log Viewer (Fuslogvw. exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení protokolu vazby. V důsledku příležitostného poškození mezipaměti IE může [Prohlížeč protokolu vazeb sestavení (Fuslogvw. exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) někdy zastavit zobrazování nových protokolů vazby v okně zobrazení. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.
+> [Nástroj Assembly Binding Log Viewer (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení protokolu vazby. V důsledku příležitostného poškození mezipaměti IE může [Prohlížeč protokolu vazeb sestavení (Fuslogvw. exe)](fuslogvw-exe-assembly-binding-log-viewer.md) někdy zastavit zobrazování nových protokolů vazby v okně zobrazení. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.
 >
 > Pokud vaše nespravovaná aplikace je hostitelem modulu CLR (Common `IHostAssemblyManager` Language `IHostAssemblyStore` Runtime) implementací rozhraní a, položky protokolu nelze ukládat do mezipaměti WinInet.  Chcete-li zobrazit položky protokolu pro vlastní hostitele implementující tato rozhraní, je nutné zadat alternativní cestu k protokolu.
 
@@ -234,7 +234,7 @@ Pomocí dialogového okna **nastavení protokolu** můžete provést následují
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.TypeLoadException>
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
-- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Globální mezipaměť sestavení](../app-domains/gac.md)
+- [Jak běhové prostředí vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

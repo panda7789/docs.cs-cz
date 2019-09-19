@@ -8,318 +8,318 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e96160b0751e0377b429e63c1be6c6761c406096
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 6409bbecdef2da03a18ed246cb90478b2a1fd7f6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664038"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71054066"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 
-<a name="top"></a> Toto téma popisuje problémy spojené s uvolňování paměti kolekce a využití paměti. Řeší problémy, které se vztahují na spravované haldě a vysvětluje, jak minimalizovat dopad uvolňování paměti u svých aplikací. Všechny problémy obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.
+<a name="top"></a>Toto téma popisuje problémy související s uvolňováním paměti a využití paměti. Řeší problémy, které se týkají spravované haldy, a vysvětluje, jak minimalizovat vliv uvolňování paměti v aplikacích. Každý problém obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.
 
 Toto téma obsahuje následující oddíly:
 
 - [Nástroje pro analýzu výkonu](#performance_analysis_tools)
 
-- [Řešení potíží s problémy s výkonem](#troubleshooting_performance_issues)
+- [Řešení potíží s výkonem](#troubleshooting_performance_issues)
 
-- [Řešení potíží](#troubleshooting_guidelines)
+- [Pokyny pro řešení potíží](#troubleshooting_guidelines)
 
-- [Výkon zaškrtněte procedury](#performance_check_procedures)
+- [Postupy kontroly výkonu](#performance_check_procedures)
 
 <a name="performance_analysis_tools"></a>
 
 ## <a name="performance-analysis-tools"></a>Nástroje pro analýzu výkonu
 
-Následující části popisují nástroje, které jsou k dispozici pro zkoumání problémů paměti využití a uvolňování paměti kolekce. [Postupy](#performance_check_procedures) najdete dál v tomto tématu najdete v těchto nástrojů.
+V následujících částech jsou popsány nástroje, které jsou k dispozici pro zkoumání potíží s využitím paměti a uvolňování paměti. [Postupy](#performance_check_procedures) uvedené dále v tomto tématu se týkají těchto nástrojů.
 
 <a name="perf_counters"></a>
 
 ### <a name="memory-performance-counters"></a>Čítače výkonu paměti
 
-Pomocí čítačů výkonu pro shromažďování dat výkonu. Pokyny najdete v tématu [běhová profilace](../../../docs/framework/debug-trace-profile/runtime-profiling.md). Paměť .NET CLR kategorie čítačů výkonu, jak je popsáno v [čítače výkonu v rozhraní .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md), poskytuje informace o systému uvolňování paměti.
+K shromažďování údajů o výkonu můžete použít čítače výkonu. Pokyny najdete v tématu [profilace modulu runtime](../../../docs/framework/debug-trace-profile/runtime-profiling.md). Kategorie paměti .NET CLR čítače výkonu, jak je popsáno v tématu [čítače výkonu v .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md), poskytuje informace o uvolňování paměti.
 
 <a name="sos"></a>
 
 ### <a name="debugging-with-sos"></a>Ladění pomocí SOS
 
-Můžete použít [ladicí program Windows (WinDbg)](/windows-hardware/drivers/debugger/index) pro kontrolu objektů na spravované haldě.
+K prozkoumání objektů na spravované haldě můžete použít [ladicí program systému Windows (WinDbg)](/windows-hardware/drivers/debugger/index) .
 
-Chcete-li program WinDbg nainstalovat, nainstalujte ladění nástroje pro Windows z [stáhnout ladění nástroje pro Windows](/windows-hardware/drivers/debugger/debugger-download-tools) stránky.
+Chcete-li nainstalovat nástroj WinDbg, nainstalujte ladicí nástroje pro systém Windows ze stránky [Stáhnout ladicí nástroje pro Windows](/windows-hardware/drivers/debugger/debugger-download-tools) .
 
 <a name="etw"></a>
 
 ### <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti
 
-Trasování událostí pro Windows (ETW) je systém trasování, které doplňují profilování a ladění v rozhraní .NET Framework poskytuje podporu. Od verze rozhraní .NET Framework 4, [události trasování událostí pro Windows kolekci paměti](../../../docs/framework/performance/garbage-collection-etw-events.md) zachycení užitečné informace pro spravované haldy z hlediska statistickou analýzu. Například `GCStart_V1` událost, která se vyvolá, když uvolňování paměti se použije, obsahuje následující informace:
+Trasování událostí pro Windows (ETW) je systém trasování, který doplňuje podporu profilování a ladění poskytovanou .NET Framework. Počínaje .NET Framework 4, [události ETW uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md) zaznamenávají užitečné informace pro analýzu spravované haldy ze statistického bodu zobrazení. Například `GCStart_V1` událost, která je vyvolána při výskytu uvolňování paměti, poskytuje následující informace:
 
-- Které generování objektů se shromažďují.
+- Které generace objektů se shromažďují.
 
-- Co spustí uvolnění.
+- Co aktivovalo uvolňování paměti.
 
-- Typ uvolňování paměti (souběžné nebo není souběžných).
+- Typ uvolňování paměti (souběžné nebo nesouběžné).
 
-Protokolování událostí trasování událostí pro Windows je efektivní a nebude maskují všechny problémy s výkonem, který je přidružený k uvolnění paměti. Proces může poskytnout vlastní události ve spojení s událostmi trasování událostí pro Windows. Při přihlášení, můžete určit, jak a kdy dojít k problémům haldy korelaci událostí v aplikaci a události kolekce paměti. Serverová aplikace může například poskytovat události na začátku a konci požadavku klienta.
+Protokolování událostí ETW je efektivní a nebude maskovat žádné problémy s výkonem spojené s uvolňováním paměti. Proces může poskytovat vlastní události ve spojení s událostmi ETW. Při protokolu mohou být události aplikace i události uvolňování paměti v souvislosti s určením, jak a kdy dochází k problémům s haldou. Například serverová aplikace může poskytovat události na začátku a konci žádosti klienta.
 
 <a name="profiling_api"></a>
 
-### <a name="the-profiling-api"></a>Rozhraní API pro profilaci
+### <a name="the-profiling-api"></a>Rozhraní API profilování
 
-Common language runtime (CLR) rozhraní profilování poskytují podrobné informace o objektech, které byly ovlivněny během uvolňování paměti. Profiler můžete být upozorněni, když uvolňování paměti začíná a končí. To může poskytovat sestavy o objekty na spravované haldě, včetně identifikaci objektů v každé generaci. Další informace najdete v tématu [přehled profilace](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md).
+Rozhraní pro profilaci modulu CLR (Common Language Runtime) poskytují podrobné informace o objektech, které byly ovlivněny během uvolňování paměti. Profiler může být upozorněn při zahájení a ukončení uvolňování paměti. Může poskytovat sestavy o objektech na spravované haldě, včetně identifikace objektů v každé generaci. Další informace najdete v tématu [profilace – přehled](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md).
 
-Profilovací programy mohou poskytnout komplexní informace. Komplexní profilovací programy však můžete případně upravit chování aplikace.
+Profilery můžou poskytovat komplexní informace. Složité profilery ale můžou potenciálně upravit chování aplikace.
 
 ### <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 
-Od verze rozhraní .NET Framework 4, (ARM) sledování prostředků domény aplikace umožňuje hostitelům k monitorování využití procesoru a paměti doménou aplikace. Další informace najdete v tématu [sledování prostředků aplikační domény](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
+Počínaje .NET Framework 4 umožňuje monitorování prostředků domény aplikace (ARM) hostitelům monitorovat využití procesoru a paměti podle aplikační domény. Další informace najdete v tématu [monitorování prostředků domény aplikace](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
 
 [Zpět na začátek](#top)
 
 <a name="troubleshooting_performance_issues"></a>
 
-## <a name="troubleshooting-performance-issues"></a>Řešení potíží s problémy s výkonem
+## <a name="troubleshooting-performance-issues"></a>Řešení potíží s výkonem
 
-Prvním krokem je [zjistit, jestli tento problém je ve skutečnosti uvolňování](#IsGC). Pokud zjistíte, že se jedná, vyberte z následujícího seznamu k vyřešení tohoto problému.
+Prvním krokem je [určit, jestli je problém ve skutečnosti uvolňováním paměti](#IsGC). Pokud zjistíte, že je, vyberte z následujícího seznamu, abyste mohli problém vyřešit.
 
-- [Dojde k výjimce na více instancí z důvodu nedostatku paměti](#Issue_OOM)
+- [Je vyvolána výjimka nedostatek paměti.](#Issue_OOM)
 
-- [Proces využívá příliš mnoho paměti](#Issue_TooMuchMemory)
+- [Proces využívá příliš mnoho paměti.](#Issue_TooMuchMemory)
 
-- [Uvolňování nezíská objekty dostatečně rychle](#Issue_NotFastEnough)
+- [Systém uvolňování paměti neuvolňuje objekty dostatečně rychle](#Issue_NotFastEnough)
 
 - [Spravovaná halda je příliš fragmentovaná.](#Issue_Fragmentation)
 
-- [Pozastaví kolekce uvolnění paměti jsou příliš dlouhé](#Issue_LongPauses)
+- [Pozastavení uvolňování paměti jsou příliš dlouhé.](#Issue_LongPauses)
 
-- [Generace 0 je moc velká.](#Issue_Gen0)
+- [Generace 0 je příliš velká.](#Issue_Gen0)
 
-- [Využití procesoru během uvolňování paměti je příliš vysoká.](#Issue_HighCPU)
+- [Využití CPU při uvolňování paměti je příliš vysoké.](#Issue_HighCPU)
 
 <a name="Issue_OOM"></a>
 
-### <a name="issue-an-out-of-memory-exception-is-thrown"></a>Problém: Dojde k výjimce na více instancí z důvodu nedostatku paměti
+### <a name="issue-an-out-of-memory-exception-is-thrown"></a>Problém: Je vyvolána výjimka nedostatek paměti.
 
-Existují dva případy legitimní pro spravované <xref:System.OutOfMemoryException> vyvolání:
+Existují dva legitimní případy, kdy je spravované <xref:System.OutOfMemoryException> vyvoláno:
 
 - Nedostatek virtuální paměti.
 
-  Uvolňování paměti přidělí paměť ze systému v příslušných segmentech v předem určeným rozsahu. Pokud přidělení vyžaduje další segment, ale neexistuje žádná souvislých volný blok ve virtuální paměti prostoru procesu, se nezdaří přidělení pro spravované haldě.
+  Systém uvolňování paměti přiděluje paměť ze systému v segmentech předem určené velikosti. Pokud přidělení vyžaduje další segment, ale v virtuální paměti procesu není k dispozici žádný souvislý bezplatný blok, přidělení pro spravovanou haldu se nezdaří.
 
-- Nemají dostatek fyzické paměti k přidělení.
+- Není dostatek fyzické paměti k přidělení.
 
 |Kontroly výkonu|
 |------------------------|
-|[Určete, jestli je spravované výjimky na více instancí z důvodu nedostatku paměti.](#OOMIsManaged)<br /><br /> [Určete, kolik virtuální paměti je možné vyhradit.](#GetVM)<br /><br /> [Určení, zda je dostatek fyzické paměti.](#Physical)|
+|[Určete, zda je spravovaná výjimka nedostatku paměti.](#OOMIsManaged)<br /><br /> [Určete, kolik virtuální paměti lze rezervovat.](#GetVM)<br /><br /> [Určete, zda je k dispozici dostatek fyzické paměti.](#Physical)|
 
-Pokud zjistíte, že výjimka není oprávněné, obraťte se na Microsoft zákaznický servis a podporu s následujícími informacemi:
+Pokud zjistíte, že výjimka není legitimní, obraťte se na zákaznickou službu a podporu Microsoftu s následujícími informacemi:
 
-- Do zásobníku s spravované výjimky na více instancí z důvodu nedostatku paměti.
+- Zásobník s nespravovanou výjimkou paměti.
 
 - Úplný výpis paměti.
 
-- Data, která prokáže vaše oprávnění, že se nejedná o legitimní-paměti výjimky, včetně dat, která ukazuje, že virtuální nebo fyzická paměť není problém.
+- Data, která ukážou, že se nejedná o legitimní výjimku při nedostatku paměti, včetně dat, která ukazují, že virtuální nebo fyzická paměť není problémem.
 
 <a name="Issue_TooMuchMemory"></a>
 
-### <a name="issue-the-process-uses-too-much-memory"></a>Problém: Proces využívá příliš mnoho paměti
+### <a name="issue-the-process-uses-too-much-memory"></a>Problém: Proces využívá příliš mnoho paměti.
 
-Běžné předpokladem je, že zobrazí využití paměti na **výkonu** karty ve Správci úloh Windows můžete určit, kdy se používá příliš mnoho paměti. Nicméně, které zobrazují se vztahují na pracovní sadu; neposkytuje informace o využití virtuální paměti.
+Běžným předpokladem je, že zobrazení využití paměti na kartě **výkon** ve Správci úloh systému Windows může indikovat, že se používá příliš mnoho paměti. Tento displej se však vztahuje k pracovní sadě; neposkytuje informace o využití virtuální paměti.
 
-Pokud zjistíte, že problém je způsoben spravované haldě, musí spravované haldě měření průběžným monitorováním určete všechny vzorky.
+Pokud zjistíte, že problém je způsoben spravovanou haldou, je nutné změřit spravovanou haldu v čase a určit tak vzory.
 
-Pokud zjistíte, jestli problém nezpůsobuje ve spravované haldě, je nutné použít nativní ladění.
+Pokud zjistíte, že problém není způsoben spravovanou haldou, je nutné použít nativní ladění.
 
 |Kontroly výkonu|
 |------------------------|
-|[Určete, kolik virtuální paměti je možné vyhradit.](#GetVM)<br /><br /> [Určete, kolik paměti potvrzuje spravované haldě.](#ManagedHeapCommit)<br /><br /> [Určete, kolik paměti rezervuje spravované haldě.](#ManagedHeapReserve)<br /><br /> [Určení velké objekty v 2. generace.](#ExamineGen2)<br /><br /> [Určete odkazy na objekty.](#ObjRef)|
+|[Určete, kolik virtuální paměti lze rezervovat.](#GetVM)<br /><br /> [Určete, kolik paměti se spravovaná halda zavazuje.](#ManagedHeapCommit)<br /><br /> [Určete velikost paměti, kterou spravovaná halda rezervuje.](#ManagedHeapReserve)<br /><br /> [Určení velkých objektů v generaci 2.](#ExamineGen2)<br /><br /> [Určete odkazy na objekty.](#ObjRef)|
 
 <a name="Issue_NotFastEnough"></a>
 
-### <a name="issue-the-garbage-collector-does-not-reclaim-objects-fast-enough"></a>Problém: Uvolňování nezíská objekty dostatečně rychle
+### <a name="issue-the-garbage-collector-does-not-reclaim-objects-fast-enough"></a>Problém: Systém uvolňování paměti neuvolňuje objekty dostatečně rychle
 
-Když se objeví jako objekty nejsou jsou uvolněny podle očekávání pro uvolnění paměti, je nutné určit, jestli jsou všechny silné odkazy na tyto objekty.
+Pokud se zobrazí, jako by se objekty neuvolní, jak je očekáváno pro uvolňování paměti, je nutné určit, zda existují silné odkazy na tyto objekty.
 
-Tento problém se můžete setkat také v případě žádná kolekce uvolnění paměti pro generování, který obsahuje objekt mrtvý, což znamená, že nebyla spuštěna finalizační metodu pro objekt mrtvý. Například to je možné při spouštění aplikace jednovláknový apartment (STA) a vlákno této služby, které frontě finalizační metodu nejde volat metodu do něj.
+K tomuto problému může dojít také v případě, že neexistuje uvolňování paměti pro generaci, která obsahuje nedoručený objekt, což znamená, že finalizační metoda pro mrtvý objekt nebyla spuštěna. To je možné například v případě, že používáte vícevláknovou aplikaci s jedním vláknem (STA) a vlákno, které služba Finalize Queue nemůže volat.
 
 |Kontroly výkonu|
 |------------------------|
-|[Zkontrolujte odkazy na objekty.](#ObjRef)<br /><br /> [Určení, zda byla spuštěna finalizační metodu.](#Induce)<br /><br /> [Určení, zda jsou objekty čekání na jejich dokončení.](#Finalize)|
+|[Podívejte se na odkazy na objekty.](#ObjRef)<br /><br /> [Určete, zda byl spuštěn finalizační metoda.](#Induce)<br /><br /> [Určete, zda objekty čekají na dokončení.](#Finalize)|
 
 <a name="Issue_Fragmentation"></a>
 
-### <a name="issue-the-managed-heap-is-too-fragmented"></a>Problém: Na spravované haldě je příliš fragmentovaná.
+### <a name="issue-the-managed-heap-is-too-fragmented"></a>Problém: Spravovaná halda je příliš fragmentovaná.
 
-Úroveň fragmentace se počítá jako poměr volného místa za Celková přidělená paměť pro generování. Přijatelnou úroveň fragmentace pro 2. generace, je více než 20 %. Protože 2. generace můžete získat velmi velký poměr fragmentace je mnohem důležitější než absolutní hodnota.
+Úroveň fragmentace se počítá jako poměr volného místa v celkové přidělené paměti pro generaci. V případě generace 2 není přijatelná úroveň fragmentace více než 20%. Vzhledem k tomu, že generace 2 může dosáhnout hodně velkých, je poměr fragmentace důležitější než absolutní hodnota.
 
-Máte velké množství volného místa v 0. generace není problém vzhledem k tomu, že to je generace, kde jsou přiděleny nové objekty.
+Vynulování volného místa v generaci 0 není problém, protože se jedná o generaci, kde jsou přiděleny nové objekty.
 
-Fragmentace vždy dojde v haldy pro velké objekty, protože není setřepána. Volné objekty, které jsou sousedící jsou přirozeně sbaleny do jednoho místa pro splnění požadavků na přidělení velkého objektu.
+K fragmentaci vždy dochází v haldě velkých objektů, protože není komprimována. Bezplatné objekty, které jsou sousedící, jsou přirozeně sbaleny do jednoho prostoru pro splnění požadavků na přidělení velkých objektů.
 
-Fragmentace stát problémem v 1 a generace 2. Pokud tyto generace velké množství volného místa po uvolnění, použití objektu aplikace může být nutné změny a měli byste zvážit znovu vyhodnotit životnosti dlouhodobé objektů.
+Fragmentace se může stát problémem v generaci 1 a generaci 2. Pokud tyto generace mají velké množství volného místa po uvolnění paměti, použití objektu aplikace může vyžadovat úpravu a měli byste zvážit přehodnocení životnosti dlouhodobých objektů.
 
-Nadměrné Připnutí objektů můžete zvýšit fragmentace. Pokud fragmentace je vysoké, může připnout příliš mnoho objektů.
+Nadměrné Připnutí objektů může zvýšit fragmentaci. Pokud je fragmentace vysoká, je možné připnout příliš mnoho objektů.
 
-Pokud fragmentace paměti virtuální brání systému uvolňování paměti daných segmentů, mohou být jeden z následujících akcí:
+Pokud fragmentaci virtuální paměti brání v uvolňování paměti při přidávání segmentů, může to být jedna z následujících příčin:
 
 - Časté načítání a uvolňování mnoha malých sestavení.
 
-- Příliš mnoho odkazů na objekty modelu COM drží, když spolupráce s nespravovaným kódem.
+- Při spolupráci s nespravovaným kódem je uchováváno příliš mnoho odkazů na objekty COM.
 
-- Vytvoření velké přechodné objektů, což způsobí, že haldy pro velké objekty na přidělují a uvolňují haldy segmenty často.
+- Vytváření velkých přechodných objektů, což způsobí, že halda velkých objektů často přiděluje a uvolňuje segmenty haldy.
 
-  Při hostování CLR, může aplikace vyžadovat, že uvolňování zachovat jeho segmentů. Tím se snižuje frekvence přidělení segmentu. To lze provést pomocí příznaku STARTUP_HOARD_GC_VM v [startup_flags – výčet](../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).
+  Při hostování modulu CLR může aplikace požádat, aby systém uvolňování paměti zachoval své segmenty. Tím se snižuje frekvence přidělení segmentů. Toho je možné dosáhnout použitím příznaku STARTUP_HOARD_GC_VM ve [výčtu STARTUP_FLAGS](../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md).
 
 |Kontroly výkonu|
 |------------------------|
-|[Určení množství volného místa ve spravované haldě.](#Fragmented)<br /><br /> [Určete počet připojených objektů.](#Pinned)|
+|[Určete množství volného místa ve spravované haldě.](#Fragmented)<br /><br /> [Určete počet připnutých objektů.](#Pinned)|
 
-Pokud se domníváte, že neexistuje žádná legitimní příčinou fragmentaci, obraťte se na Microsoft zákaznický servis a podporu.
+Pokud se domníváte, že neexistují žádné oprávněné příčiny pro fragmentaci, obraťte se na zákaznickou službu a podporu Microsoftu.
 
 <a name="Issue_LongPauses"></a>
 
-### <a name="issue-garbage-collection-pauses-are-too-long"></a>Problém: Pozastaví kolekce uvolnění paměti jsou příliš dlouhé
+### <a name="issue-garbage-collection-pauses-are-too-long"></a>Problém: Pozastavení uvolňování paměti jsou příliš dlouhé.
 
-Uvolňování paměti funguje v obnovitelně v reálném čase, takže aplikace musí být schopné tolerovat některé pozastaví. Kritéria pro obnovitelné reálném čase je, že 95 % operací musí dokončit včas.
+Uvolňování paměti funguje v tichém reálném čase, takže aplikace musí být schopná tolerovat některá pozastavení. Kritériem pro měkký reálný čas je to, že 95% operací se musí dokončit včas.
 
-V souběžné uvolňování paměti spravovaná vlákna je možné spustit shromažďování, což znamená, že je možné je minimální.
+V případě souběžného uvolňování paměti můžou spravovaná vlákna běžet během shromažďování, což znamená, že pozastavení jsou velmi minimální.
 
-Pouze několik milisekund, než poslední dočasnému uvolnění (generace 0 a 1), to snižuje pozastaví obvykle není vhodná. Však může snížit pozastaví v 2. generace kolekce tak, že změníte model požadavků na přidělení aplikací.
+Dočasné uvolňování paměti (generace 0 a 1) jsou poslední jenom několik milisekund, takže snížení pauz většinou není proveditelné. Můžete ale snížit počet pozastavení v kolekcích 2. generace změnou vzoru požadavků na přidělení aplikací.
 
-Jiný, přesnější, metoda se má používat [události trasování událostí pro Windows kolekci paměti](../../../docs/framework/performance/garbage-collection-etw-events.md). Časování pro kolekce můžete najít tak, že přidáte tyto časové razítko rozdíly pro posloupnost událostí. Pořadí celé kolekce obsahuje pozastavení prováděcího modulu, uvolňování paměti kolekce a opětovné prováděcího modulu.
+Další přesnější metodou je použít [události ETW pro uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md). Časování pro kolekce můžete najít přidáním rozdílů časových razítek pro posloupnost událostí. Celá sekvence kolekce zahrnuje pozastavení prováděcího modulu, uvolňování paměti samotného a obnovení spouštěcího modulu.
 
-Můžete použít [oznámení pro kolekci paměti](../../../docs/standard/garbage-collection/notifications.md) k určení, zda je server ke kolekci generace 2, a určuje, zda přesměrování požadavků na jiný server by mělo odlehčit jakékoliv potíže se pozastaví.
+Pomocí oznámení o [uvolňování paměti](../../../docs/standard/garbage-collection/notifications.md) můžete zjistit, jestli se server chystá mít kolekci 2. generace, a jestli žádosti o přesměrování na jiný server můžou způsobit problémy s pozastavením.
 
 |Kontroly výkonu|
 |------------------------|
-|[Určuje délku času v uvolňování paměti.](#TimeInGC)<br /><br /> [Určete, co způsobilo uvolnění paměti.](#Triggered)|
+|[Určete dobu v uvolňování paměti.](#TimeInGC)<br /><br /> [Určete, co způsobilo uvolňování paměti.](#Triggered)|
 
 <a name="Issue_Gen0"></a>
 
-### <a name="issue-generation-0-is-too-big"></a>Problém: Generace 0 je moc velká.
+### <a name="issue-generation-0-is-too-big"></a>Problém: Generace 0 je příliš velká.
 
-Generace 0 by mohla mít větší počet objektů v 64bitovém systému, zejména v případě, že místo uvolnění paměti pracovní stanice použijete uvolnění paměti serveru. Je to proto, že je prahová hodnota pro aktivaci 0 uvolnění paměti generace vyšší v těchto prostředích a kolekcemi generace 0 můžete získat mnohem větší. Výkon je vyšší, pokud aplikace přiděluje víc paměti než se aktivuje uvolňování paměti.
+Generace 0 pravděpodobně bude mít větší počet objektů v 64 systému, zvlášť když použijete uvolňování paměti serveru místo uvolnění paměti pracovní stanice. Důvodem je to, že prahová hodnota pro aktivaci uvolňování paměti generace 0 je v těchto prostředích vyšší, a kolekce generace 0 může být mnohem větší. Zvýšení výkonu je vylepšeno, pokud aplikace přiděluje více paměti před aktivací uvolňování paměti.
 
 <a name="Issue_HighCPU"></a>
 
-### <a name="issue-cpu-usage-during-a-garbage-collection-is-too-high"></a>Problém: Využití procesoru během uvolňování paměti je příliš vysoká.
+### <a name="issue-cpu-usage-during-a-garbage-collection-is-too-high"></a>Problém: Využití CPU při uvolňování paměti je příliš vysoké.
 
-Během uvolňování paměti bude vysoké využití procesoru. Pokud značné množství času zpracování se stráven v procesu uvolnění paměti, počtu kolekcí je moc často nebo kolekce je trvají příliš dlouho. Zvýšení přidělení počet objektů na spravované haldě způsobí, že uvolňování paměti dochází častěji. Snížení frekvence přidělení snižuje frekvence uvolnění paměti.
+Využití CPU bude během uvolňování paměti vysoké. Pokud se v uvolňování paměti stráví významné množství času zpracování, počet kolekcí je příliš častý nebo kolekce je trvalá příliš dlouho. Zvýšená míra přidělení objektů na spravované haldě způsobuje, že se uvolňování paměti objevuje častěji. Snížení míry přidělení omezí četnost uvolňování paměti.
 
-Přidělení kurzů můžete sledovat pomocí `Allocated Bytes/second` čítače výkonu. Další informace najdete v tématu [čítače výkonu v rozhraní .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md).
+Sazby přidělení můžete sledovat pomocí `Allocated Bytes/second` čítače výkonu. Další informace najdete v tématu [čítače výkonu v .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md).
 
-Doba trvání kolekce je primárně faktorem počet objektů, které byly zachovány při po přidělení. Uvolňování paměti musí projít velké množství paměti, pokud zůstanou velký počet objektů, které se mají shromažďovat. Je časově náročné práce ke komprimaci zachované objekty. Pokud chcete zjistit, kolik objektů zpracovávaly během kolekci, nastavte zarážku v ladicím programu na konci uvolnění pro zadané generace.
+Doba trvání kolekce je primárně faktorem počtu objektů, které jsou po přidělení zachovány. Systém uvolňování paměti musí projít velkým množstvím paměti, pokud je stále shromažďováno mnoho objektů. Práce na komprimaci pozůstalých je časově náročná. Chcete-li určit, kolik objektů bylo zpracováno během kolekce, nastavte zarážku v ladicím programu na konci uvolňování paměti pro zadanou generaci.
 
 |Kontroly výkonu|
 |------------------------|
-|[Určete, pokud je způsobena vysoké využití procesoru uvolňování paměti.](#HighCPU)<br /><br /> [Nastavení zarážky na konci uvolňování paměti.](#GenBreak)|
+|[Zjistěte, jestli je vysoké využití procesoru způsobeno uvolňováním paměti.](#HighCPU)<br /><br /> [Nastavte zarážku na konci uvolňování paměti.](#GenBreak)|
 
 [Zpět na začátek](#top)
 
 <a name="troubleshooting_guidelines"></a>
 
-## <a name="troubleshooting-guidelines"></a>Řešení potíží
+## <a name="troubleshooting-guidelines"></a>Pokyny pro řešení potíží
 
-Tato část popisuje pokyny, které byste měli zvážit při začnete vaše šetření.
+Tato část popisuje pokyny, které byste měli vzít v úvahu při zahájení šetření.
 
-### <a name="workstation-or-server-garbage-collection"></a>Pracovní stanice nebo uvolnění paměti serveru
+### <a name="workstation-or-server-garbage-collection"></a>Uvolnění paměti pracovní stanice nebo serveru
 
-Určete, pokud používáte správný typ uvolňování paměti. Pokud vaše aplikace používá více vláken a instance objektů, použijte místo uvolnění paměti pracovní stanice uvolnění paměti serveru. Uvolnění paměti serveru funguje ve více vláknech, zatímco uvolňování paměti pracovní stanice vyžaduje více instancí aplikace ke spuštění vlastních vláken pro uvolnění a soutěží o čas procesoru.
+Určete, zda používáte správný typ uvolňování paměti. Pokud vaše aplikace používá více vláken a instancí objektů, použijte místo uvolňování paměti pracovních stanic Server uvolňování paměti serveru. Uvolňování paměti serveru funguje ve více vláknech, zatímco uvolňování paměti pracovní stanice vyžaduje více instancí aplikace, aby spouštěla vlastní vlákna uvolňování paměti a mohla konkurovat času procesoru.
 
-Aplikace, který má nízkou zatížení a, který provádí úlohy zřídka na pozadí, třeba služby, může použít uvolnění paměti pracovní stanice se zakázaným souběžným uvolňováním.
+Aplikace, která má nízké zatížení a provádí úlohy na pozadí, jako je například služba, může použít uvolňování paměti pracovní stanice se zakázaným souběžným uvolňováním paměti.
 
-### <a name="when-to-measure-the-managed-heap-size"></a>Kdy k měření velikosti spravované haldy
+### <a name="when-to-measure-the-managed-heap-size"></a>Kdy změřit velikost spravované haldy
 
-Pokud nepoužíváte profiler, budete muset vytvořit konzistentní měření vzor efektivně diagnostikovat problémy s výkonem. Vezměte v úvahu následující body k vytvoření plánu:
+Pokud nepoužíváte Profiler, budete muset vytvořit jednotný měřicí vzor pro efektivní diagnostiku problémů s výkonem. Pro vytvoření plánu Vezměte v úvahu následující body:
 
-- Pokud budete vyhodnocovat po uvolnění paměti generace 2, bude celou spravovanou haldu zdarma uvolňování paměti (neživými objekty).
+- Pokud měříte po uvolnění paměti 2. generace, celá spravovaná halda bude bez uvolnění paměti (nedoručené objekty).
 
-- Pokud budete vyhodnocovat ihned po uvolnění paměti generace 0, nebudou shromažďovat ještě objekty v generace 1 a 2.
+- Pokud měříte hned po uvolnění paměti generace 0, objekty v generacích 1 a 2 nebudou dosud shromažďovány.
 
-- Pokud budete vyhodnocovat bezprostředně před uvolňování paměti, budete měřit tolik přidělení nejvíce předtím, než spustí uvolnění paměti.
+- Pokud měříte těsně před uvolňováním paměti, měříte co nejvíce přidělení, než začne uvolňování paměti.
 
-- Měření během uvolňování paměti jen těžko, protože datové struktury systému uvolňování paměti nejsou v platném stavu pro procházení a nemusí být schopen poskytnout úplné výsledky. Jedná se o účel.
+- Měření během uvolňování paměti je problematické, protože datové struktury uvolňování paměti nejsou v platném stavu pro procházení a nemusí být schopné poskytnout kompletní výsledky. Jedná se o účel.
 
-- Při použití uvolnění paměti pracovní stanice s souběžné uvolňování paměti, nejsou uvolňovaného objekty komprimovat, takže velikost haldy může být stejná nebo větší (fragmentace může vypadat větší).
+- Pokud používáte uvolňování paměti pracovní stanice s souběžným uvolňováním paměti, uvolněné objekty se nekomprimuje, takže velikost haldy může být stejná nebo větší (fragmentace se může zdát, že je větší).
 
-- Souběžné uvolňování paměti v generaci 2 je zpožděno při fyzické paměti je příliš vysoké.
+- Souběžné uvolňování paměti v generaci 2 je zpožděno, pokud je zatížení fyzické paměti příliš vysoké.
 
-Následující postup popisuje, jak nastavit zarážku, můžete změřit spravované haldě.
+Následující postup popisuje, jak nastavit zarážku, abyste mohli změřit spravovanou haldu.
 
 <a name="GenBreak"></a>
 
-##### <a name="to-set-a-breakpoint-at-the-end-of-garbage-collection"></a>Chcete-li nastavit zarážku na konci uvolňování paměti
+#### <a name="to-set-a-breakpoint-at-the-end-of-garbage-collection"></a>Nastavení zarážky na konci uvolňování paměti
 
-- V rámci WinDbg s příponou SOS ladicího programu, načíst zadejte následující příkaz:
+- V programu WinDbg s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-  **BP mscorwks! WKS::GCHeap::RestartEE "j (dwo (mscorwks! WKS::GCHeap::GcCondemnedGeneration) == 2) "kb"; " g ""**
+  **knihovny mscorwks BP WKS:: GCHeap:: RestartEE "j (DWO (knihovny Mscorwks! WKS:: GCHeap:: GcCondemnedGeneration) = = 2) ' KB '; ' g ' "**
 
-  kde **GcCondemnedGeneration** nastavená na požadované generace. Tento příkaz vyžaduje soukromé symboly.
+  kde **GcCondemnedGeneration** je nastaveno na požadovanou generaci. Tento příkaz vyžaduje soukromé symboly.
 
-  Tento příkaz vynutí zalomení **RestartEE** se spustí po objektů 2. generace mají byla získána pro uvolnění.
+  Tento příkaz vynutí přerušení, pokud je **RestartEE** provedeno po uvolnění objektů generace 2 pro uvolňování paměti.
 
-  Uvolňování paměti serveru pouze jedno vlákno volá **RestartEE**, takže zarážka dojde pouze jednou během uvolnění paměti generace 2.
+  V uvolňování paměti serveru pouze jedno vlákno volá **RestartEE**, takže během uvolňování paměti 2. generace dojde k zarážce pouze jednou.
 
 [Zpět na začátek](#top)
 
 <a name="performance_check_procedures"></a>
 
-## <a name="performance-check-procedures"></a>Výkon zaškrtněte procedury
+## <a name="performance-check-procedures"></a>Postupy kontroly výkonu
 
-Tato část popisuje následující postupy k izolaci příčina potíží s výkonem:
+Tato část popisuje následující postupy k izolaci příčiny problému s výkonem:
 
-- [Určí, zda je problém způsoben uvolňování paměti.](#IsGC)
+- [Určete, zda je problém způsoben uvolňováním paměti.](#IsGC)
 
-- [Určete, jestli je spravované výjimky na více instancí z důvodu nedostatku paměti.](#OOMIsManaged)
+- [Určete, zda je spravovaná výjimka nedostatku paměti.](#OOMIsManaged)
 
-- [Určete, kolik virtuální paměti je možné vyhradit.](#GetVM)
+- [Určete, kolik virtuální paměti lze rezervovat.](#GetVM)
 
-- [Určení, zda je dostatek fyzické paměti.](#Physical)
+- [Určete, zda je k dispozici dostatek fyzické paměti.](#Physical)
 
-- [Určete, kolik paměti potvrzuje spravované haldě.](#ManagedHeapCommit)
+- [Určete, kolik paměti se spravovaná halda zavazuje.](#ManagedHeapCommit)
 
-- [Určete, kolik paměti rezervuje spravované haldě.](#ManagedHeapReserve)
+- [Určete velikost paměti, kterou spravovaná halda rezervuje.](#ManagedHeapReserve)
 
-- [Určení velké objekty v 2. generace.](#ExamineGen2)
+- [Určení velkých objektů v generaci 2.](#ExamineGen2)
 
 - [Určete odkazy na objekty.](#ObjRef)
 
-- [Určení, zda byla spuštěna finalizační metodu.](#Induce)
+- [Určete, zda byl spuštěn finalizační metoda.](#Induce)
 
-- [Určení, zda jsou objekty čekání na jejich dokončení.](#Finalize)
+- [Určete, zda objekty čekají na dokončení.](#Finalize)
 
-- [Určení množství volného místa ve spravované haldě.](#Fragmented)
+- [Určete množství volného místa ve spravované haldě.](#Fragmented)
 
-- [Určete počet připojených objektů.](#Pinned)
+- [Určete počet připnutých objektů.](#Pinned)
 
-- [Určuje délku času v uvolňování paměti.](#TimeInGC)
+- [Určete dobu v uvolňování paměti.](#TimeInGC)
 
-- [Zjistěte, co vyvolalo uvolňování paměti.](#Triggered)
+- [Určete, co aktivovalo uvolňování paměti.](#Triggered)
 
-- [Určete, jestli způsobuje vysoké využití procesoru uvolňování paměti.](#HighCPU)
+- [Určete, zda je vysoké využití procesoru způsobeno uvolňováním paměti.](#HighCPU)
 
 <a name="IsGC"></a>
 
-##### <a name="to-determine-whether-the-problem-is-caused-by-garbage-collection"></a>Chcete-li zjistit, zda je problém způsoben uvolňování paměti
+### <a name="to-determine-whether-the-problem-is-caused-by-garbage-collection"></a>Zjištění, zda je problém způsoben uvolňováním paměti
 
-- Zkontrolujte následující čítače výkonu paměti dvě:
+- Prověřte následující dvě čítače výkonu paměti:
 
-  - **% Času v uvolňování paměti**. Zobrazuje procentuální hodnotu uplynulého času, který byl vynaložen provádění uvolnění posledního cyklu uvolňování paměti kolekce. Tento čítač použijte k určení, zda systému uvolňování paměti spotřebuje uběhla spousta času uvolněte místo na spravované haldě. Pokud doba trvání uvolňování paměti je relativně nízký, to by mohlo znamenat problém prostředků mimo spravované haldě. Tento čítač nemusí být přesné při souběžné nebo je zahrnuta uvolňování paměti na pozadí.
+  - **% Času v GC**. Zobrazuje procento uplynulého času stráveného prováděním uvolňování paměti po posledním cyklu uvolňování paměti. Pomocí tohoto čítače určíte, zda je uvolňování paměti příliš mnoho času na zpřístupnění spravovaného prostoru haldy. Pokud je doba strávená uvolňováním paměti poměrně nízká, může to znamenat problém s prostředky mimo spravovanou haldu. Tento čítač nemusí být přesný, pokud je zapojeno souběžné a uvolňování paměti na pozadí.
 
-  - **Celkový počet svěřených bajtů**. Zobrazuje velikost virtuální paměti aktuálně potvrzené systémem uvolňování paměti. Tento čítač použijte k určení, zda je paměť systému uvolňování paměti používané nadměrné část paměti, která vaše aplikace používá.
+  - **# Celkový počet potvrzených bajtů** Zobrazuje velikost virtuální paměti, která je aktuálně potvrzena systémem uvolňování paměti. Pomocí tohoto čítače určíte, zda paměť využívaná systémem uvolňování paměti je nadměrná část paměti, kterou vaše aplikace používá.
 
-  Většina čítačů výkonu paměti se aktualizují na konci každé uvolňování paměti. Proto že nemusí odrážet aktuální podmínky, které se mají informace o.
+  Většina čítačů výkonu paměti se aktualizuje na konci každého uvolňování paměti. Proto nemusí odrážet aktuální podmínky, o kterých chcete získat informace.
 
 <a name="OOMIsManaged"></a>
 
-##### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Chcete-li zjistit, jestli je spravované výjimky na více instancí z důvodu nedostatku paměti
+### <a name="to-determine-whether-the-out-of-memory-exception-is-managed"></a>Chcete-li určit, zda je výjimka nedostatek paměti spravovaná
 
-1. V ladicím programu WinDbg nebo Visual Studio s rozšířením ladicí program SOS načíst, zadejte tisku výjimky (**pe**) příkaz:
+1. V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte příkaz pro výjimku tisku (**PE**):
 
-    **! pe**
+    **! PE**
 
-    Pokud je spravované výjimky, <xref:System.OutOfMemoryException> se zobrazí jako typ výjimky, jak je znázorněno v následujícím příkladu.
+    Pokud je výjimka spravovaná, <xref:System.OutOfMemoryException> je zobrazena jako typ výjimky, jak je znázorněno v následujícím příkladu.
 
     ```
     Exception object: 39594518
@@ -329,45 +329,45 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
     StackTrace (generated):
     ```
 
-2. Pokud výstup neurčuje výjimku, budete muset určit, které vlákno výjimky na více instancí z důvodu nedostatku paměti je z. Zadejte následující příkaz v ladicím programu, který chcete zobrazit všechna vlákna s jejich zásobníky volání:
+2. Pokud výstup neurčuje výjimku, je nutné určit, ze kterého vlákna je výjimka nedostatek paměti. Zadejte následující příkaz v ladicím programu pro zobrazení všech vláken s jejich zásobníky volání:
 
     **~\*kb**
 
-    Vlákno se zásobníkem, který má volání výjimky je indikován `RaiseTheException` argument. Toto je objektu spravované výjimky.
+    Vlákno se zásobníkem, který obsahuje volání výjimek, je určeno `RaiseTheException` argumentem. Toto je spravovaný objekt výjimky.
 
     ```
     28adfb44 7923918f 5b61f2b4 00000000 5b61f2b4 mscorwks!RaiseTheException+0xa0
     ```
 
-3. Můžete použít následující příkaz pro výpis vnořené výjimky.
+3. Pomocí následujícího příkazu můžete vypsat vnořené výjimky.
 
-    **! pe-vnořené**
+    **! PE – vnořené**
 
-    Pokud nenajdete žádné výjimky, výstup z důvodu nedostatku paměti výjimka pochází z nespravovaného kódu.
+    Pokud nenajdete žádné výjimky, výjimka nedostatek paměti pochází z nespravovaného kódu.
 
 <a name="GetVM"></a>
 
-##### <a name="to-determine-how-much-virtual-memory-can-be-reserved"></a>Chcete-li zjistit, je možné vyhradit velikost virtuální paměti
+### <a name="to-determine-how-much-virtual-memory-can-be-reserved"></a>Určení velikosti virtuální paměti, která může být vyhrazena
 
-- V rámci WinDbg s příponou SOS ladicího programu, načíst zadejte následující příkaz získat největší bezplatná oblasti:
+- V programu WinDbg s načtením rozšíření ladicí program SOS zadejte následující příkaz, který získá největší volnou oblast:
 
-  **! adres – souhrn**
+  **! Adresa – souhrn**
 
-  Největší bezplatná oblasti se zobrazí, jak je znázorněno v následujícím výstupu.
+  Zobrazí se největší volná oblast, jak je znázorněno v následujícím výstupu.
 
   ```
   Largest free region: Base 54000000 - Size 0003A980
   ```
 
-  V tomto příkladu je velikost největší volné oblasti přibližně 24000 KB (3A980 v šestnáctkové hodnotě). Tato oblast je mnohem menší, než které systému uvolňování paměti, musí mít segmentu.
+  V tomto příkladu je velikost největší volné oblasti přibližně 24000 KB (3A980 v šestnáctkové soustavě). Tato oblast je mnohem menší, než systém uvolňování paměti potřebuje pro segment.
 
   -nebo-
 
-- Použití **vmstat** příkaz:
+- Použijte příkaz **vmstat** :
 
-  **!vmstat**
+  **! vmstat**
 
-  Největší bezplatná oblasti je největší hodnotu ve sloupci maximální, jak je znázorněno v následujícím výstupu.
+  Největší volná oblast je největší hodnota ve sloupci MAXIMUM, jak je znázorněno v následujícím výstupu.
 
   ```
   TYPE        MINIMUM   MAXIMUM     AVERAGE   BLK COUNT   TOTAL
@@ -381,37 +381,37 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
 
 <a name="Physical"></a>
 
-##### <a name="to-determine-whether-there-is-enough-physical-memory"></a>Určuje, jestli je dostatečná fyzická paměť
+### <a name="to-determine-whether-there-is-enough-physical-memory"></a>Určení, zda je k dispozici dostatek fyzické paměti
 
-1. Spuštění Správce úloh Windows.
+1. Spusťte Správce úloh systému Windows.
 
-2. Na **výkonu** kartu, podívejte se na potvrzená hodnota. (Ve Windows 7, podívejte se na **potvrzení (KB)** v **systémové skupiny**.)
+2. Na kartě **výkon** se podívejte na potvrzenou hodnotu. (Ve Windows 7 se podívejte na **potvrzení změn (KB)** ve **skupině systém**.)
 
-    Pokud **celkový** blízko **Limit**, máte málo na fyzické paměti.
+    Pokud je **Celkový součet** blízko **limitu**, dochází k nedostatku fyzické paměti.
 
 <a name="ManagedHeapCommit"></a>
 
-##### <a name="to-determine-how-much-memory-the-managed-heap-is-committing"></a>Chcete-li určit, kolik paměti potvrzuje spravované haldy
+### <a name="to-determine-how-much-memory-the-managed-heap-is-committing"></a>Určení množství paměti, kterou spravovaná halda potvrzování
 
-- Použití `# Total committed bytes` čítače výkonu paměti se získat počet bajtů, které se provádí spravované haldě. Uvolňování potvrzení bloků v segmentu, podle potřeby, nikoli všechny najednou.
+- Pomocí čítače výkonu paměti získáte počet bajtů, které spravovaná halda potvrzování. `# Total committed bytes` Systém uvolňování paměti potvrdí bloky dat v segmentu podle potřeby, nikoli ve stejnou dobu.
 
   > [!NOTE]
-  > Nepoužívejte `# Bytes in all Heaps` čítače výkonu, protože nepředstavuje skutečné využití paměti ve spravované haldě. Velikost generace je součástí tuto hodnotu a je ve skutečnosti jeho prahová hodnota velikosti, to znamená, velikost, který indukuje uvolňování paměti, pokud generování je vyplněna objekty. Proto se tato hodnota je obvykle nula.
+  > Nepoužívejte `# Bytes in all Heaps` čítač výkonu, protože nepředstavuje skutečné využití paměti spravovanou haldou. Velikost generování je zahrnuta v této hodnotě a je to skutečná velikost prahové hodnoty, což je velikost, která vychází z uvolňování paměti, pokud je generování vyplněno objekty. Proto je tato hodnota obvykle nula.
 
 <a name="ManagedHeapReserve"></a>
 
-##### <a name="to-determine-how-much-memory-the-managed-heap-reserves"></a>Chcete-li určit, kolik paměti rezervuje spravované haldy
+### <a name="to-determine-how-much-memory-the-managed-heap-reserves"></a>Určení velikosti paměti, kterou spravovaná halda vyhradí
 
-- Použití `# Total reserved bytes` čítače výkonu paměti.
+- Použijte čítač výkonu paměti. `# Total reserved bytes`
 
-  Rezervuje uvolňování paměti v příslušných segmentech a můžete určit, kde segment, který spustí na základě **eeheap** příkazu.
+  Systém uvolňování paměti rezervuje paměť v segmentech a můžete určit, kde se bude segment spouštět, pomocí příkazu **eeheap** .
 
   > [!IMPORTANT]
-  > I když můžete určit množství paměti, které systému uvolňování paměti přiděluje každého segmentu, velikost segmentu je specifický pro implementaci a může se změnit kdykoli, včetně v pravidelné aktualizace. Vaše aplikace by nikdy vytvořit předpoklady o nebo závisí na velikosti konkrétního segmentu, ani snažit konfigurace množství paměti k přidělení segmentu.
+  > I když můžete určit velikost paměti, kterou systém uvolňování paměti přiděluje pro každý segment, velikost segmentu je specifická pro konkrétní implementaci a může se kdykoli změnit, a to i v pravidelných aktualizacích. Vaše aplikace by nikdy neměla zabývat ani záviset na konkrétní velikosti segmentu, ani by se neměla pokoušet nakonfigurovat množství paměti dostupné pro přidělení segmentů.
 
-- V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:
+- V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-  **! eeheap -gc**
+  **! eeheap – GC**
 
   Výsledek je následující.
 
@@ -445,19 +445,19 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   GC Heap Size   0x24db8(150968)
   ```
 
-  Adresy indikován "segmentu" jsou počáteční adresy segmentů.
+  Adresy označené "segment" představují počáteční adresy segmentů.
 
 <a name="ExamineGen2"></a>
 
-##### <a name="to-determine-large-objects-in-generation-2"></a>Chcete-li zjistit velké objekty v 2. generace
+### <a name="to-determine-large-objects-in-generation-2"></a>Určení velkých objektů v generaci 2
 
-- V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:
+- V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-  **! dumpheap-stat**
+  **! dumpheap – stat**
 
-  Pokud je spravované haldy velkých objemů, **dumpheap** může chvíli trvat dokončení.
+  Pokud je spravovaná halda velká, může dokončení **dumpheap** chvíli trvat.
 
-  Je mohli začít analyzovat během posledních několik řádků výstupu, protože jsou vypsány objekty, které používají nejvíce místa. Příklad:
+  Můžete zahájit analýzu z posledních několika řádků výstupu, protože obsahují seznam objektů, které používají nejvíce místa. Příklad:
 
   ```
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
@@ -473,11 +473,11 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Total 8454945 objects
   ```
 
-  Poslední objekt uvedené je řetězec a zabírá nejvíce místa. Můžete zkontrolovat aplikace, abyste viděli, jak se dá optimalizovat řetězcových objektů. Zobrazit řetězce, které jsou v rozmezí od 150 až 200 bajtů, zadejte následující příkaz:
+  Poslední uvedený objekt je řetězec a zabírá nejvíce místa. Můžete kontrolovat svoji aplikaci, abyste viděli, jak lze optimalizovat objekty řetězců. Chcete-li zobrazit řetězce, které jsou v rozmezí 150 až 200 bajtů, zadejte následující příkaz:
 
-  **! dumpheap-zadejte 150 - max -min System.String 200**
+  **! dumpheap-Type System. String-min 150-max 200**
 
-  Příklad výsledků je následujícím způsobem.
+  Příkladem výsledků je následující.
 
   ```
   Address  MT           Size  Gen
@@ -485,23 +485,23 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   …
   ```
 
-  Místo celého čísla na řetězec pro ID může být efektivnější. Pokud stejný řetězec je opakováno tisíce časy, vezměte v úvahu interning řetězce. Další informace o interning řetězce, naleznete v referenčním tématu pro <xref:System.String.Intern%2A?displayProperty=nameWithType> metody.
+  Použití celého čísla namísto řetězce pro ID může být efektivnější. Pokud se stejný řetězec opakuje v tisících, zvažte, že se bude považovat za interning. Další informace o použití řetězců naleznete v tématu Reference k <xref:System.String.Intern%2A?displayProperty=nameWithType> metodě.
 
 <a name="ObjRef"></a>
 
-##### <a name="to-determine-references-to-objects"></a>Chcete-li zjistit odkazy na objekty.
+### <a name="to-determine-references-to-objects"></a>Určení odkazů na objekty
 
-- V rámci WinDbg s příponou SOS ladicího programu, načíst zadejte následující příkaz pro seznam odkazů na objekty:
+- V programu WinDbg s načtením rozšíření ladicí program SOS zadejte následující příkaz pro výpis odkazů na objekty:
 
   **! gcroot**
 
   `-or-`
 
-- Pokud chcete zjistit odkazy pro konkrétní objekt, patří adresu:
+- Chcete-li určit odkazy na konkrétní objekt, zadejte adresu:
 
   **! gcroot 1c37b2ac**
 
-  Kořeny na zásobníky může být falešně pozitivních výsledků. Další informace získáte pomocí příkazu `!help gcroot`.
+  Kořeny nalezené v zásobnících můžou být falešně pozitivní. Další informace získáte pomocí příkazu `!help gcroot`.
 
   ```
   ebx:Root:19011c5c(System.Windows.Forms.Application+ThreadContext)->
@@ -519,13 +519,13 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Scan Thread 6 OSTHread 484
   ```
 
-  **Gcroot** příkazu může trvat delší dobu. Libovolný objekt, který není uvolněn systémem uvolňování paměti je objekt za provozu. To znamená, že některé kořenové je přímo nebo nepřímo držení objektu, takže **gcroot** by měl vrátit informace o cestě k objektu. By měl prozkoumat grafy vrátil a zobrazit, proč jsou tyto objekty stále odkazuje.
+  Dokončení příkazu **gcroot** může trvat dlouhou dobu. Libovolný objekt, který není uvolněn uvolňováním paměti, je živý objekt. To znamená, že některé kořenové složky jsou přímo nebo nepřímo uchovávány na objekt, takže **gcroot** by měl vrátit informace o cestě k objektu. Měli byste prošetřit vrácené grafy a zjistit, proč se na tyto objekty stále odkazuje.
 
 <a name="Induce"></a>
 
-##### <a name="to-determine-whether-a-finalizer-has-been-run"></a>Chcete-li zjistit, zda byla spuštěna finalizační metodu
+### <a name="to-determine-whether-a-finalizer-has-been-run"></a>Určení, zda byl spuštěn finalizační metoda
 
-- Spustit testovací program, který obsahuje následující kód:
+- Spusťte testovací program, který obsahuje následující kód:
 
   ```csharp
   GC.Collect();
@@ -533,23 +533,23 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   GC.Collect();
   ```
 
-  Pokud test řeší problém, znamená to, že nebyl systému uvolňování paměti uvolní objektů, protože byla pozastavena finalizační metody týkajících se těchto objektů. <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> Metoda umožňuje finalizační metody pro dokončení úloh a vyřeší daný problém.
+  Pokud test problém vyřeší, znamená to, že systém uvolňování paměti neuvolňuje objekty, protože byly pozastaveny finalizační metody pro tyto objekty. <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> Metoda umožňuje, aby finalizační metody dokončily své úkoly a vyřešily problém.
 
 <a name="Finalize"></a>
 
-##### <a name="to-determine-whether-there-are-objects-waiting-to-be-finalized"></a>Chcete-li zjistit, zda jsou objekty čekání na jejich dokončení
+### <a name="to-determine-whether-there-are-objects-waiting-to-be-finalized"></a>Určení, zda objekty čekají na dokončení
 
-1. V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:
+1. V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-    **! finalizequeue**
+    **!finalizequeue**
 
-    Podívejte se na počet objektů, které jsou připraveny k dokončení. Pokud je vysoké číslo, musíte prozkoumat proč tyto finalizační metody nemůže vůbec průběh nebo nelze průběh rychlé dostatečně.
+    Podívejte se na počet objektů, které jsou připravené k dokončení. Pokud je číslo vysoké, je nutné prostudovat, proč tyto finalizační metody nemůžou průběžně postupovat, nebo nemůže rychle probíhat.
 
-2. Pokud chcete získat výstup vláken, zadejte následující příkaz:
+2. Výstup vláken získáte tak, že zadáte následující příkaz:
 
     **vlákna – speciální**
 
-    Tento příkaz zjistí výstupu, jako je následující.
+    Tento příkaz poskytuje výstup jako následující.
 
     ```
        OSID     Special thread type
@@ -558,17 +558,17 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
     4    df0    GC SuspendEE
     ```
 
-    Vlákno finalizační metody Určuje, které finalizační metodu, pokud existuje, je právě spuštěna. Pokud vlákno finalizační metodu neběží žádné finalizační metody, čeká událost určit, ke své práci. Ve většině případů se zobrazí vlákna finalizační metody v tomto stavu protože běží na THREAD_HIGHEST_PRIORITY a by měl dokončit spuštění finalizační metody, pokud existuje, velmi rychle.
+    Finalizační vlákno indikuje, který finalizační metodu (pokud existuje) se právě spouští. Když finalizační vlákno nespouští žádné finalizační metody, čeká na událost, aby ji informovala o své práci. Ve většině případů se v tomto stavu zobrazí finalizační vlákno, protože běží na THREAD_HIGHEST_PRIORITY a má za následek, že se mají dokončit spuštěné finalizační metody, pokud jsou nějaké velmi rychlé.
 
 <a name="Fragmented"></a>
 
-##### <a name="to-determine-the-amount-of-free-space-in-the-managed-heap"></a>Chcete-li zjistit množství volného místa ve spravované haldě
+### <a name="to-determine-the-amount-of-free-space-in-the-managed-heap"></a>Určení množství volného místa ve spravované haldě
 
-- V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:
+- V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-  **! dumpheap-zadejte zdarma - stat**
+  **! dumpheap – typ Free – stat**
 
-  Tento příkaz zobrazí celkovou velikost volné objekty na spravované haldě, jak je znázorněno v následujícím příkladu.
+  Tento příkaz zobrazí celkovou velikost všech bezplatných objektů na spravované haldě, jak je znázorněno v následujícím příkladu.
 
   ```
   total 230 objects
@@ -578,9 +578,9 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Total 230 objects
   ```
 
-- Pokud chcete zjistit volné místo v generaci 0, zadejte následující příkaz pro informace o využití paměti podle generace:
+- Chcete-li zjistit volné místo v generaci 0, zadejte následující příkaz pro informace o spotřebě paměti podle generace:
 
-  **! eeheap -gc**
+  **! eeheap – GC**
 
   Tento příkaz zobrazí výstup podobný následujícímu. Poslední řádek zobrazuje dočasný segment.
 
@@ -598,7 +598,7 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   46120000 46120038  49e05d04   0x03ce5ccc(63855820)
   ```
 
-- Vypočítejte místo používané 0. generace:
+- Vypočítat místo využívané v generaci 0:
 
   **? 49e05d04-0x49521f8c**
 
@@ -608,9 +608,9 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Evaluate expression: 9321848 = 008e3d78
   ```
 
-- Následující příkaz vypíše volného místa v rozsahu 0. generace:
+- Následující příkaz vypíše volné místo v rámci rozsahu generace 0:
 
-  **! dumpheap-zadejte zdarma - stat 0x49521f8c 49e05d04**
+  **! dumpheap-typ Free-stat 0x49521f8c 49e05d04**
 
   Výsledek je následující.
 
@@ -635,17 +635,17 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Total 409 objects
   ```
 
-  Tento výstup ukazuje, že část haldy 0. generace používá 9 MB volného místa pro objekty a je 7 MB volného místa. Tato analýza ukazuje rozsahu, ke které generace 0 přispívá k fragmentaci. Toto množství využití haldy by měl odečtena od celkové částky jako Příčina fragmentace dlouhodobé objekty.
+  Tento výstup ukazuje, že část haldy generace 0 používá 9 MB prostoru pro objekty a má 7 MB volného místa. Tato analýza zobrazuje rozsah, ke kterému generace 0 přispívá ke fragmentaci. Tato velikost využití haldy by měla být zlevněná od celkové částky jako příčina fragmentace dlouhodobými objekty.
 
 <a name="Pinned"></a>
 
-##### <a name="to-determine-the-number-of-pinned-objects"></a>Počet nepřesunutelných objektů
+### <a name="to-determine-the-number-of-pinned-objects"></a>Určení počtu připnutých objektů
 
-- V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz:
+- V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz:
 
-  **! GC**
+  **!gchandles**
 
-  Statistické údaje zobrazené zahrnuje počet připojených popisovačů, jak ukazuje následující příklad.
+  Zobrazené statistiky obsahují počet připnutých popisovačů, jak ukazuje následující příklad.
 
   ```
   GC Handle Statistics:
@@ -655,15 +655,15 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
 
 <a name="TimeInGC"></a>
 
-##### <a name="to-determine-the-length-of-time-in-a-garbage-collection"></a>K určení délky času v uvolňování paměti
+### <a name="to-determine-the-length-of-time-in-a-garbage-collection"></a>Určení doby v uvolňování paměti
 
-- Zkontrolujte `% Time in GC` čítače výkonu paměti.
+- Prověřte čítač výkonu paměti. `% Time in GC`
 
-  Hodnota se počítá pomocí časový interval vzorku. Protože čítače se aktualizují na konci každé uvolňování paměti, aktuální ukázky budou mít stejnou hodnotu jako předchozí ukázce, pokud žádné kolekce došlo k chybě během intervalu.
+  Hodnota se vypočítává pomocí časového intervalu vzorkování. Vzhledem k tomu, že počítadla jsou aktualizována na konci každého uvolňování paměti, aktuální vzorek bude mít stejnou hodnotu jako předchozí vzorek, pokud během intervalu nedošlo k žádným kolekcím.
 
-  Časem shromáždění vynásobením časový interval vzorku s procentuální hodnotu.
+  Čas shromažďování dat je získán vynásobením času intervalu vzorkování s procentuální hodnotou.
 
-  Následující data se zobrazí dvě sekund u 8 druhé studie čtyři intervalů vzorkování. `Gen0`, `Gen1`, A `Gen2` sloupce zobrazují počet uvolnění paměti, ke kterým došlo během tohoto intervalu pro tuto generaci.
+  Následující data znázorňují čtyři intervaly vzorkování dvou sekund pro studii 8 sekund. Sloupce `Gen0`, `Gen1` a`Gen2` zobrazují počet uvolňování paměti, ke kterým došlo během daného intervalu pro danou generaci.
 
   ```
   Interval    Gen0    Gen1    Gen2    % Time in GC
@@ -673,9 +673,9 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
           4      11       3       1               3
   ```
 
-  Tyto informace se nezobrazuje, když došlo k uvolnění paměti, ale můžete určit počet uvolnění paměti, ke kterým došlo v časový interval. Za předpokladu, že nejhorší případ, desátý uvolnění paměti generace 0 dokončeno na začátku druhé interval a dokončení jedenáctý uvolnění paměti generace 0 na konci páté interval. Doba mezi koncem na desetinu a konec jedenáctý kolekce uvolnění paměti je přibližně 2 sekund a čítač výkonu zobrazuje 3 %, proto byla trvání jedenáctý kolekce uvolnění paměti generace 0 (% 2 sekundy * 3 = 60ms).
+  Tyto informace se nezobrazují, když dojde k uvolnění paměti, ale můžete určit počet uvolňování paměti, ke kterým došlo v časovém intervalu. V případě nejhoršího případu bylo dokončeno uvolňování paměti desáté generace 0 na začátku druhého intervalu a jedenácté uvolňování paměti 0 na konci pátého intervalu. Doba mezi koncem desátého a koncem jedenáctého uvolňování paměti je přibližně 2 sekundy a čítač výkonu zobrazuje 3%, takže doba trvání jedenáctého uvolňování paměti 0 (2 sekundy * 3% = 60ms).
 
-  V tomto příkladu jsou 5 období.
+  V tomto příkladu je 5 teček.
 
   ```
   Interval    Gen0    Gen1    Gen2     % Time in GC
@@ -686,11 +686,11 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
           5      11       4       2               20
   ```
 
-  Druhé generace 2 kolekce paměti během intervalu třetí a dokončení v pátém intervalu. Za předpokladu, že nejhorším případě, byl poslední uvolnění paměti 0. generace kolekce, který skončil na začátku druhý interval a generace 2 uvolňování dokončeno v čase konce páté intervalu. Doba mezi koncem kolekce uvolnění paměti generace 0 a na konci uvolnění paměti generace 2 je proto 4 sekundy. Vzhledem k tomu, `% Time in GC` čítač je 20 %, maximální množství času se generaci uvolňování paměti 2 mohou trvalo (4 sekundy * 20 % = 800ms).
+  Druhá kolekce paměti 2. generace začala během třetího intervalu a skončila v pátém intervalu. Za nejhorší případ byl poslední uvolňování paměti pro kolekci generace 0, která skončila na začátku druhého intervalu, a uvolnění paměti 2. generace bylo dokončeno na konci pátého intervalu. Proto je čas mezi koncem uvolňování paměti generace 0 a koncem uvolňování paměti 2. generace 4 sekundy. Vzhledem k tomu, že čítačje20%,pakmaximálnídoba,pokteroubybylomožnéučinituvolňovánípaměti2.generace,je(4sekundy*20%=800ms).`% Time in GC`
 
-- Alternativně můžete zjistit délku kolekce uvolnění paměti pomocí [události trasování událostí pro Windows kolekci paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)a analyzovat informace k určení doby trvání uvolňování paměti.
+- Alternativně můžete určit délku uvolňování paměti pomocí [událostí ETW pro uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)a analyzovat informace a určit dobu trvání uvolňování paměti.
 
-  Například následující data zobrazují sekvenci událostí, ke které došlo během nesouběžné uvolňování paměti.
+  Například následující data ukazují sekvenci události, ke které došlo během nesouběžného uvolňování paměti.
 
   ```
   Timestamp    Event name
@@ -703,13 +703,13 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   517918        GCRestartEEEnd
   ```
 
-  Pozastavování spravovaná vlákna trvalo 26us (`GCSuspendEEEnd` – `GCSuspendEEBegin_V1`).
+  Pozastavení spravovaného vlákna trvalo 26us (`GCSuspendEEEnd` – `GCSuspendEEBegin_V1`).
 
-  Skutečné uvolňování trvalo 4.8ms (`GCEnd_V1` – `GCStart_V1`).
+  Skutečné uvolňování paměti trvalo 4,8 ms (`GCEnd_V1` – `GCStart_V1`).
 
   Obnovení spravovaných vláken trvalo 21us (`GCRestartEEEnd` – `GCRestartEEBegin`).
 
-  Následující výstup představuje příklad, uvolňování paměti na pozadí a obsahuje pole procesu, vlákna a události. (Zobrazují se všechna data.)
+  Následující výstup poskytuje příklad pro uvolňování paměti na pozadí a obsahuje pole proces, vlákno a událost. (Ne všechna data jsou zobrazena.)
 
   ```
   timestamp(us)    event name            process    thread    event field
@@ -729,23 +729,23 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   89931464        GCHeapStats            Test.exe    4372
   ```
 
-  `GCStart_V1` Událost v 42504816 ukazuje na to, že se jedná uvolňování paměti na pozadí, protože poslední pole má `1`. Toto číslo změní uvolňování paměti 102019.
+  Událost v 42504816 označuje, že se jedná o uvolňování paměti na pozadí, protože poslední pole `1`je. `GCStart_V1` To se v tomto případě stalo uvolňováním paměti. 102019.
 
-  `GCStart` Události dochází, protože je potřeba pro kolekci uvolnění dočasné paměti před zahájením uvolňování na pozadí. Toto číslo změní uvolňování paměti 102020.
+  K `GCStart` události dochází, protože před spuštěním uvolňování paměti na pozadí je zapotřebí dočasné uvolňování paměti. To se v tomto případě stalo uvolňováním paměti. 102020.
 
-  Při uvolňování paměti 42514170, číslo. 102020 dokončí. Spravovaná vlákna jsou v tomto okamžiku restartuje. To je dokončen ve vlákně 4372, která spustí tuto uvolňování paměti na pozadí.
+  V 42514170, č. uvolnění paměti. 102020 dokončí. Spravovaná vlákna jsou v tuto chvíli restartována. Tato operace je dokončena ve vláknu 4372, které aktivovalo tuto kolekci paměti na pozadí.
 
-  Ve vlákně 4744 dojde k pozastavení. Toto je pouze doba, jakou má pozastavit spravovaná vlákna uvolňování na pozadí. Tato doba je přibližně 99ms ((63784407-63685394)/1000).
+  Na vlákně 4744 dojde k pozastavení. Toto je jediná doba, s jakou má uvolňování paměti na pozadí pozastavit spravovaná vlákna. Toto trvání je přibližně 99ms ((63784407-63685394)/1000).
 
-  `GCEnd` Na 89931423 je událost pro uvolňování na pozadí. To znamená, že uvolňování na pozadí trvalo o 47seconds ((89931423-42504816)/1000).
+  `GCEnd` Událost pro uvolňování paměti na pozadí je 89931423. To znamená, že uvolňování paměti na pozadí uplynulo pro přibližně 47seconds ((89931423-42504816)/1000).
 
-  Zatímco spravovaná vlákna jsou spuštěné, zobrazí se libovolný počet kolekcí uvolnění dočasné paměti, ke kterým dochází.
+  I když jsou spuštěná spravovaná vlákna, vidíte libovolný počet dočasných uvolňování paměti, ke kterým dochází.
 
 <a name="Triggered"></a>
 
-##### <a name="to-determine-what-triggered-a-garbage-collection"></a>Chcete-li zjistit, co vyvolalo uvolňování paměti
+### <a name="to-determine-what-triggered-a-garbage-collection"></a>Určení toho, co vyvolalo uvolňování paměti
 
-- V ladicím programu WinDbg nebo Visual Studio s rozšířením SOS ladicího programu, načíst zadejte následující příkaz, který zobrazit všechna vlákna s jejich zásobníky volání:
+- V ladicím programu WinDbg nebo Visual Studio s načteným rozšířením ladicího programu SOS zadejte následující příkaz pro zobrazení všech vláken s jejich zásobníky volání:
 
   **~\*kb**
 
@@ -757,9 +757,9 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   0012f490 79fa22bd fragment_ni!request.Main(System.String[])+0x48
   ```
 
-  Pokud kolekce paměti bylo způsobené nedostatečnou pamětí oznámení z operačního systému, zásobník volání je podobné, s tím rozdílem, že vlákno je vlákna finalizační metody. Vlákno finalizační metodu získá oznámení o asynchronní nedostatek paměti a indukuje kolekce uvolnění paměti.
+  Pokud uvolňování paměti bylo způsobeno oznámením o nedostatku paměti z operačního systému, je zásobník volání podobný, s tím rozdílem, že vlákno je finalizační vlákno. Finalizační vlákno získá oznámení o asynchronní nedostatku paměti a vyřadí uvolňování paměti.
 
-  Pokud se uvolňování paměti kolekce byla způsobena přidělení paměti zásobníku se zobrazí takto:
+  Pokud uvolňování paměti bylo způsobeno přidělením paměti, zásobník se zobrazí takto:
 
   ```
   0012f230 7a07c551 mscorwks!WKS::GCHeap::GarbageCollectGeneration
@@ -773,13 +773,13 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   0000002a 79fa22bd fragment_ni!request.Main(System.String[])+0x153
   ```
 
-  Pomocné rutiny just-in-time (`JIT_New*`) nakonec volá `GCHeap::GarbageCollectGeneration`. Pokud zjistíte, že kolekce uvolnění paměti generace 2 jsou způsobeny přidělení, je třeba určit objektů, které byly shromážděny sadou 2 uvolnění paměti generace a jak se jim vyhnout. To znamená, že budete chtít zjistit rozdíl mezi začátkem a koncem 2 uvolnění paměti generace a objekty, které způsobily 2. generace kolekce.
+  Nakonec se volá`JIT_New*` `GCHeap::GarbageCollectGeneration`pomocník za běhu (). Pokud zjistíte, že jsou uvolňovány paměti generace 2 způsobeny přidělením, je nutné určit, které objekty jsou shromažďovány uvolňováním paměti 2. generace a jak se jim vyhnout. To znamená, že chcete určit rozdíl mezi začátkem a koncem uvolňování paměti 2. generace a objekty, které způsobily kolekci 2. generace.
 
-  Například zadejte následující příkaz v ladicím programu zobrazíte od 2. generace kolekce:
+  Zadejte například následující příkaz v ladicím programu, který zobrazí začátek kolekce generace 2:
 
-  **! dumpheap-stat**
+  **! dumpheap – stat**
 
-  Příklad výstupu (zkrácený komentář pro zobrazení objektů, které používají nejvíce místa):
+  Příklad výstupu (zkráceně pro zobrazení objektů, které používají nejvíce místa):
 
   ```
   79124228    31857      9862328 System.Object[]
@@ -797,11 +797,11 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Total 6471774 objects
   ```
 
-  Zopakujte příkaz na konci 2. generace:
+  Opakujte tento příkaz na konci generace 2:
 
-  **! dumpheap-stat**
+  **! dumpheap – stat**
 
-  Příklad výstupu (zkrácený komentář pro zobrazení objektů, které používají nejvíce místa):
+  Příklad výstupu (zkráceně pro zobrazení objektů, které používají nejvíce místa):
 
   ```
   79124228    26648      9314256 System.Object[]
@@ -818,15 +818,15 @@ Tato část popisuje následující postupy k izolaci příčina potíží s vý
   Total 6417525 objects
   ```
 
-  `double[]` Objekty zmizí konci výstupu, což znamená, že byly shromážděny. Tyto objekty zohlednily přibližně 70 MB. Většinu zbývajících objektech nezměnil. Proto tyto `double[]` objekty byly důvod, proč došlo k této kolekce uvolnění paměti generace 2. Dalším krokem je zjistit, proč `double[]` objekty jsou existuje a proč se ukončila. Můžete požádat o kód vývojáře, kde tyto objekty pochází, nebo můžete použít **gcroot** příkazu.
+  `double[]` Objekty zmizely na konci výstupu, což znamená, že byly shromážděny. Tyto objekty jsou přibližně 70 MB. Zbývající objekty se nezměnily mnohem. Proto by tyto `double[]` objekty byly důvodem, proč došlo k této chybě uvolňování paměti 2. generace. V dalším kroku zjistíte, proč `double[]` jsou objekty tam a proč uhynulé. Můžete požádat vývojáře kódu, ze kterého pocházejí tyto objekty, nebo můžete použít příkaz **gcroot** .
 
 <a name="HighCPU"></a>
 
-##### <a name="to-determine-whether-high-cpu-usage-is-caused-by-garbage-collection"></a>Chcete-li zjistit, jestli způsobuje vysoké využití procesoru uvolňování paměti
+### <a name="to-determine-whether-high-cpu-usage-is-caused-by-garbage-collection"></a>Určení, zda vysoké využití procesoru je způsobeno uvolňováním paměti
 
-- Korelace `% Time in GC` hodnota čítače výkonu paměti s časem procesu.
+- Proveďte korelaci hodnoty čítače výkonu pamětisčasemprocesu.`% Time in GC`
 
-  Pokud `% Time in GC` hodnotu špičky ve stejnou dobu jako čas procesu, uvolňování paměti je příčinou vysoké využití procesoru. V opačném případě profilujte aplikaci, najít, kde dochází k vysoké využití.
+  Pokud je `% Time in GC` hodnota špičky ve stejnou dobu jako doba zpracování, uvolňování paměti způsobuje vysoké využití procesoru. V opačném případě profilujte aplikaci, abyste zjistili, kde dochází k vysokému využití.
 
 ## <a name="see-also"></a>Viz také:
 

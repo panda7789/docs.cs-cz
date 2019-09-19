@@ -12,40 +12,40 @@ helpviewer_keywords:
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9a70b8c3509b785d70b041b449c759e7994e5984
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3e8769ec972ec76d04d2f22368fdde99de9c6de
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754229"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052546"
 ---
 # <a name="loaderlock-mda"></a>loaderLock – pomocník spravovaného ladění (MDA)
-`loaderLock` Pomocníka spravovaného ladění (MDA) upozorní na pokusy pro spuštění spravovaného kódu na vlákno, které drží zámek zavaděče operační systém Microsoft Windows.  Takové spuštění je neplatný, protože to může vést k zablokování a použití knihoven DLL předtím, než se inicializují zavaděčem operačního systému.  
+Pomocník `loaderLock` spravovaného ladění (MDA) detekuje pokusy o spuštění spravovaného kódu ve vlákně, které má zámek zavaděče operačního systému Microsoft Windows.  Jakékoli takové spuštění je neplatné, protože může vést k zablokování a používání knihoven DLL předtím, než byly inicializovány zavaděčem operačního systému.  
   
 ## <a name="symptoms"></a>Příznaky  
- Většina běžných chyby při provádění kódu uvnitř zámku zaváděcího programu operačního systému je, že se při pokusu o volání další funkce Win32, které také vyžadují zámek zavaděče zablokování vlákna.  Příkladem takové funkce jsou `LoadLibrary`, `GetProcAddress`, `FreeLibrary`, a `GetModuleHandle`.  Aplikace nemusí zavolat přímo tyto funkce. modul CLR (CLR) může volat tyto funkce v důsledku vyšší úroveň volání, například <xref:System.Reflection.Assembly.Load%2A> nebo první volání na platformu vyvolání metody.  
+ Nejběžnějším selháním při spouštění kódu uvnitř zámku zavaděče operačního systému je, že při pokusu o volání dalších funkcí Win32, které také vyžadují zámek zavaděče, budou vlákna zablokována.  Příklady takových funkcí `LoadLibrary`jsou, `GetProcAddress`, `FreeLibrary`a `GetModuleHandle`.  Aplikace nemusí přímo volat tyto funkce; modul CLR (Common Language Runtime) může volat tyto funkce jako výsledek volání <xref:System.Reflection.Assembly.Load%2A> vyšší úrovně jako nebo první volání metody Invoke platformy.  
   
- Zablokování může také dojít, pokud vlákno čeká další vlákno zahájení nebo dokončení.  Jakmile se vlákno spustí nebo dokončí provádění, musíte získat zavaděči operačního systému k doručení událostí na ovlivněných knihovny DLL.  
+ K zablokování může docházet také v případě, že vlákno čeká na spuštění nebo dokončení jiného vlákna.  Když se vlákno spustí nebo dokončí, musí získat zámek zavaděče operačního systému, aby mohl doručovat události do ovlivněných knihoven DLL.  
   
- A konečně existují případy, kdy volání do knihoven DLL může dojít před těmito knihovnami DLL byly správně inicializovány zavaděčem operačního systému.  Na rozdíl od zablokování chyby, které můžete zjistit kontrolou zásobníky všech vláken součástí zablokování, je velmi obtížné diagnostikovat, použití neinicializovaného knihoven DLL bez použití toto MDA.  
+ Nakonec existují případy, kdy volání do knihoven DLL mohou nastat předtím, než tyto knihovny DLL byly správně inicializovány zavaděčem operačního systému.  Na rozdíl od chyb zablokování, které mohou být diagnostikovány kontrolou zásobníků všech vláken zapojených do zablokování, je velmi obtížné diagnostikovat použití neinicializovaných knihoven DLL bez použití tohoto procesu MDA.  
   
-## <a name="cause"></a>Příčina  
- Smíšená spravovaného a nespravovaného C++ sestavení vytvořené pro rozhraní .NET Framework verze 1.0 nebo 1.1, obecně se pokusí spustit spravovaný kód uvnitř zámku zaváděcího programu, pokud zvláštní pozornost je už zabraný, například propojení s **NOENTRY**.
+## <a name="cause"></a>příčina  
+ Smíšená spravovaná a C++ nespravovaná sestavení vytvořená pro .NET Framework verze 1,0 nebo 1,1 se obecně pokusí spustit spravovaný kód uvnitř zámku zavaděče, pokud se nebere zvláštní péče, například propojení s **/NOENTRY**.
   
- Smíšená spravovaného a nespravovaného C++ sestavení vytvořené pro rozhraní .NET Framework verze 2.0 jsou méně náchylný k tyto problémy s stejné menší riziko jako aplikace pomocí nespravovaných knihoven DLL, které porušují pravidla operačního systému.  Například, pokud nespravovaná knihovna DLL pro `DllMain` vstupní bod volání `CoCreateInstance` získat spravovaný objekt, který byl zpřístupněn do modelu COM, výsledek je pokus o spuštění uvnitř zámku zaváděcího programu spravovaného kódu. Další informace o problémech zámek zavaděče v rozhraní .NET Framework verze 2.0 nebo novější, naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies).  
+ Smíšená spravovaná a C++ nespravovaná sestavení vytvořená pro .NET Framework verze 2,0 jsou pro tyto problémy méně náchylná a mají stejné snížené riziko jako aplikace využívající nespravované knihovny DLL, které porušují pravidla operačního systému.  Například pokud `DllMain` vstupní bod nespravované knihovny DLL volá `CoCreateInstance` , aby získal spravovaný objekt, který byl vystaven modelu COM, výsledkem je pokus o spuštění spravovaného kódu uvnitř zámku zavaděče. Další informace o problémech uzamknutí zavaděče v .NET Framework verze 2,0 a novějších naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies).  
   
 ## <a name="resolution"></a>Řešení  
- Ve Visual C++ .NET 2002 a Visual C++ .NET 2003, knihovny DLL zkompilovaná `/clr` – možnost kompilátoru může nedeterministicky vzájemné zablokování při načtení; tento problém se volala smíšené problém zámek DLL načítání nebo zavaděče. V aplikaci Visual C++ 2005 a novějších téměř všechny seznam se odebrala z procesu načítání smíšených knihoven DLL. Existují však některé zbývající scénáře, pro které zavaděč zámku může (deterministicky). Prováděcí účet příčiny a řešení pro zbývající problémy zámek zavaděče, naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies). Toto téma neidentifikuje váš problém zámek zavaděče, máte k prozkoumání zásobníku vlákna, chcete-li zjistit, proč dochází k zámek zavaděče a pokyny k vyřešení problému. Podívejte se na trasování zásobníku pro vlákno, které se má toto MDA aktivováno.  Vlákno se pokouší o neoprávněně volat do spravovaného kódu při držení zámku zaváděcího programu operačního systému.  Zobrazí se pravděpodobně knihovnu DLL `DllMain` nebo ekvivalentní vstupní bod do zásobníku.  Pravidla operačního systému pro jak právně postupovat z uvnitř jako vstupní bod jsou poměrně omezené.  Tato pravidla bránit žádné spravované spuštění.  
+ V aplikaci C++ Visual .NET 2002 a C++ Visual .NET 2003 byly knihovny DLL `/clr` zkompilované s možností kompilátoru při načtení nedeterministické, ale tento problém byl nazýván smíšeným načítáním knihoven DLL nebo problémem s zámkem zavaděče. V jazyce C++ Visual 2005 a novějším byla téměř všechna determinismem odebrána z smíšeného procesu načítání knihovny DLL. Existuje však několik zbývajících scénářů, pro které může dojít k uzamknutí zavaděče (k deterministickému). Podrobný účet příčin a řešení pro zbývající problémy zámků zavaděče naleznete v tématu [inicializace smíšených sestavení](/cpp/dotnet/initialization-of-mixed-assemblies). Pokud toto téma neidentifikuje váš problém uzamknutí zavaděče, je nutné prostudovat zásobník vlákna, abyste zjistili, proč k uzamknutí zavaděče dojde, a jak problém vyřešit. Podívejte se na trasování zásobníku pro vlákno, které aktivovalo Tento MDA.  Vlákno se pokouší o neoprávněné volání spravovaného kódu, zatímco drží zámek zavaděče operačního systému.  Pravděpodobně se v zásobníku zobrazuje `DllMain` i ekvivalentní vstupní bod knihovny DLL.  Pravidla operačního systému pro to, co můžete právně dělat, se v tomto vstupním bodě poměrně omezí.  Tato pravidla vylučují jakékoli spravované spuštění.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
- Obvykle bude zablokování několik vláken uvnitř procesu.  Jeden z těchto vlákna by mohla být odpovědný za provedení uvolnění paměti, abyste tomuto vzájemnému zablokování může mít významný vliv na celý proces vlákna.  Kromě toho zabrání jakékoli další operace, které vyžadují operačního systému nastavený zámek zavaděče, třeba načítání a uvolňování sestavení nebo knihovny DLL a spouštění nebo zastavování vláken.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul runtime  
+ Obvykle se několik vláken uvnitř procesu zablokuje.  Jedním z těchto vláken je pravděpodobně podproces zodpovědný za provedení uvolňování paměti, takže toto zablokování může mít významný dopad na celý proces.  Kromě toho zabrání žádné další operace, které vyžadují zámek zavaděče operačního systému, jako je načítání a uvolňování sestavení nebo knihoven DLL a spuštění nebo zastavení vláken.  
   
- V některých případech neobvyklé je také možné narušení přístupu nebo s podobnými problémy až se spustí v knihovnách DLL, které se volají, než byl inicializován.  
+ V některých neobvyklých případech je také možné, že dojde k narušení přístupu nebo k podobným problémům v knihovnách DLL, které jsou volány před inicializací.  
   
 ## <a name="output"></a>Výstup  
- Toto MDA hlásí, že probíhá pokus o neplatné spravované spuštění.  Je potřeba zkontrolovat zásobníku vlákna, chcete-li zjistit, proč dochází k zámek zavaděče a pokyny k vyřešení problému.  
+ Tento MDA hlásí, že probíhá pokus o neoprávněné spravované spuštění.  Je nutné prostudovat zásobník vlákna, abyste zjistili, proč k uzamknutí zavaděče dojde, a jak tento problém vyřešit.  
   
-## <a name="configuration"></a>Konfigurace  
+## <a name="configuration"></a>Konfiguraci  
   
 ```xml  
 <mdaConfig>  
@@ -57,4 +57,4 @@ ms.locfileid: "61754229"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](diagnosing-errors-with-managed-debugging-assistants.md)
