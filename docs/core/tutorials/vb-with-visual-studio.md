@@ -7,12 +7,12 @@ ms.date: 08/07/2017
 dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 7787121afcfae4978141d36d25ddfa0a4f54df56
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b4f3cc055f73332db1348ef35174beab614df147
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660438"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039604"
 ---
 # <a name="build-a-visual-basic-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení Hello World aplikace Visual Basic s .NET Core SDK v aplikaci Visual Studio 2017
 
@@ -20,7 +20,7 @@ Toto téma poskytuje podrobný Úvod k sestavování, ladění a publikování j
 
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s nainstalovanou úlohou vývoj ".NET Core pro různé platformy". Svou aplikaci můžete vyvíjet pomocí .NET Core 2,0.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s nainstalovanou úlohou vývoj ".NET Core pro různé platformy". Svou aplikaci můžete vyvíjet pomocí .NET Core 2,1 nebo novějších verzí.
 
 Další informace najdete v tématu [předpoklady pro .NET Core v systému Windows](../windows-prerequisites.md).
 
@@ -71,7 +71,7 @@ Vylepšete aplikaci, aby se uživateli zobrazila výzva k jejímu jménu a zobra
 
 1. Zkompilujte program tím, že kliknete na **sestavit** > sestavení**řešení**.
 
-1. Spusťte program v režimu ladění v sadě Visual Studio tak, že vyberete zelenou šipku na panelu nástrojů, stisknete klávesu F5 > nebo kliknete na položku nabídky**Spustit ladění** ladění. Zadáním názvu a stisknutím klávesy ENTER odpovězte na výzvu.
+1. Spusťte program v režimu ladění v sadě Visual Studio tak, že vyberete zelenou šipku na panelu nástrojů, stisknete klávesu F5 nebo > kliknete na položku nabídky**Spustit ladění** ladění. Zadáním názvu a stisknutím klávesy ENTER odpovězte na výzvu.
 
    ![Okno konzoly s upraveným výstupem programu](./media/with-visual-studio/hello-world-update.png)
 

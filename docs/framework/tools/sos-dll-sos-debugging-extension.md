@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c5033b32c1623885b5408f428ce4bc4202d50ce1
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 9a8d41228c46de0f18b5a92def0591d6373d3d69
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894626"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71044100"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS. dll (rozšíření ladění SOS)
 
@@ -74,7 +74,7 @@ SOS Debugging Extension (SOS. dll) pomáhá ladit spravované programy v aplikac
 |**IP2MD** \< *Adresa kódu*>|`MethodDesc` Zobrazuje strukturu na zadané adrese v kódu, který byl zkompilován JIT.|
 |`ListNearObj` (`lno`) *\<obj_address>*|Zobrazí objekty před a za zadanou adresou. Tento příkaz vyhledá adresu v haldě uvolňování paměti vypadající jako platný začátek spravovaného objektu (podle platné tabulky metod) a objekt následující za adresou argumentu.|
 |**MinidumpMode** [**0**] [**1**]|Zabrání ve spuštění nebezpečných příkazů pomocí minimálního výpisu.<br /><br /> Předejte **0** pro vypnutí této funkce nebo **1** pro povolení této funkce. Ve výchozím nastavení je hodnota **MinidumpMode** nastavena na **0**.<br /><br /> Mini výpisy vytvořené pomocí příkazu **. dump/m** nebo **výpisu. dump** mají omezená data specifická pro CLR a umožňují, aby se správně spouštěla pouze podmnožina příkazů SOS. Některé příkazy mohou selhat s neočekávanými chybami, jelikož požadované oblasti paměti nejsou zmapovány nebo jsou zmapovány pouze částečně. Tato možnost zabraňuje ve spuštění nebezpečných příkazů s minimálním výpisem.|
-|**Name2EE**> \< typ nebo název metody pro název modulu \<><br /><br /> -nebo-<br /><br /> **Name2EE** *název*modulu \<> *typ nebo název metody* \<>|Zobrazuje strukturu a `EEClass` strukturu zadaného typu nebo metody v zadaném modulu. `MethodTable`<br /><br /> Zadaný modul musí být načten v procesu.<br /><br /> Chcete-li získat správný název typu, procházejte modul pomocí programu [Ildasm. exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Můžete také předat `*` jako parametr název modulu a vyhledat všechny načtené spravované moduly. Parametr *názvu modulu* může být také název ladicího programu pro modul, jako `mscorlib` je například nebo. `image00400000`<br /><br /> Tento příkaz podporuje syntaxi ladicího programu Windows <`module`<>`!``type`>. Typ musí být plně kvalifikovaný.|
+|**Name2EE**> \< typ nebo název metody pro název modulu \<><br /><br /> -nebo-<br /><br /> **Name2EE** *název*modulu \<> *typ nebo název metody* \<>|Zobrazuje strukturu a `EEClass` strukturu zadaného typu nebo metody v zadaném modulu. `MethodTable`<br /><br /> Zadaný modul musí být načten v procesu.<br /><br /> Chcete-li získat správný název typu, procházejte modul pomocí programu [Ildasm. exe (IL Disassembler)](ildasm-exe-il-disassembler.md). Můžete také předat `*` jako parametr název modulu a vyhledat všechny načtené spravované moduly. Parametr *názvu modulu* může být také název ladicího programu pro modul, jako `mscorlib` je například nebo. `image00400000`<br /><br /> Tento příkaz podporuje syntaxi ladicího programu Windows <`module`<>`!``type`>. Typ musí být plně kvalifikovaný.|
 |**ObjSize** [\<*Adresa objektu*>] &#124; [ **-Aggregate**] [ **-stat**]|Zobrazí velikost zadaného objektu. Pokud nezadáte žádné parametry, příkaz **ObjSize** zobrazí velikost všech objektů nalezených ve spravovaných vláknech, zobrazí všechny popisovače systému uvolňování paměti v procesu a celková velikost všech objektů, na které odkazují tyto popisovače. Příkaz **ObjSize** zahrnuje velikost všech podřízených objektů kromě nadřazeného objektu.<br /><br /> Možnost **-Aggregate** lze použít společně s argumentem **-stat** pro získání podrobného zobrazení typů, které jsou stále rootované. Pomocí **! dumpheap-stat** a **! ObjSize-Aggregate-stat**můžete určit, které objekty již nejsou root a diagnostikovat různé problémy s pamětí.|
 |**PrintException** [ **-Nested**] [ **-Lines**] [\<*Adresa objektu výjimky*>]<br /><br /> -nebo-<br /><br /> **PE** [ **-Nested**] [\<*Adresa objektu výjimky*>]|Zobrazí a formátuje pole libovolného objektu odvozeného ze <xref:System.Exception> třídy na zadané adrese. Pokud nezadáte adresu, příkaz **PrintException** zobrazí poslední výjimku vyvolanou v aktuálním vlákně.<br /><br /> Možnost **-Nested** zobrazí podrobnosti o vnořených objektech výjimek.<br /><br /> Možnost **-Lines** zobrazí informace o zdroji, pokud je k dispozici.<br /><br /> Tento příkaz můžete použít k formátování a zobrazení `_stackTrace` pole, což je binární pole.|
 |**ProcInfo** [ **-ENV**] [ **-Time**] [ **-mem**]|Zobrazí proměnné prostředí pro proces, čas jádra CPU a statistiky využití paměti.|
@@ -206,5 +206,5 @@ Následující příkaz zobrazí informace o tokenu metadat na adrese `02000003`
 
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)
-- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](index.md)
+- [Příkazové řádky](developer-command-prompt-for-vs.md)
