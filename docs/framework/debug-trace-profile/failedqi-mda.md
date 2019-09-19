@@ -10,37 +10,37 @@ helpviewer_keywords:
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7ca7d98dba7f66aee96d0f2059086c442df17f5b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fec1bfb402f3b394ceb36590c3a880f82c5cb101
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660457"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71052785"
 ---
-# <a name="failedqi-mda"></a><span data-ttu-id="44c45-102">failedQI – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="44c45-102">failedQI MDA</span></span>
-<span data-ttu-id="44c45-103">`failedQI` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul runtime volá `QueryInterface` na ukazatele rozhraní modelu COM jménem obálka volatelná aplikacemi běhu (RCW) a `QueryInterface` volání selže.</span><span class="sxs-lookup"><span data-stu-id="44c45-103">The `failedQI` managed debugging assistant (MDA) is activated when the runtime calls `QueryInterface` on a COM interface pointer on behalf of a runtime callable wrapper (RCW), and the `QueryInterface` call fails.</span></span>  
+# <a name="failedqi-mda"></a><span data-ttu-id="a070f-102">failedQI – pomocník spravovaného ladění (MDA)</span><span class="sxs-lookup"><span data-stu-id="a070f-102">failedQI MDA</span></span>
+<span data-ttu-id="a070f-103">Pomocník spravovaného ladění (MDA) je aktivován při volání `QueryInterface` za běhu v ukazateli rozhraní modelu COM za běhu s voláním obálky (RCW) za běhu a `QueryInterface` volání se nezdařilo. `failedQI`</span><span class="sxs-lookup"><span data-stu-id="a070f-103">The `failedQI` managed debugging assistant (MDA) is activated when the runtime calls `QueryInterface` on a COM interface pointer on behalf of a runtime callable wrapper (RCW), and the `QueryInterface` call fails.</span></span>  
   
-## <a name="symptoms"></a><span data-ttu-id="44c45-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="44c45-104">Symptoms</span></span>  
- <span data-ttu-id="44c45-105">Přetypování na obálky RCW selže nebo volání COM z obálky RCW dojde k neočekávanému selhání.</span><span class="sxs-lookup"><span data-stu-id="44c45-105">A cast on an RCW fails, or a call to COM from an RCW fails unexpectedly.</span></span>  
+## <a name="symptoms"></a><span data-ttu-id="a070f-104">Příznaky</span><span class="sxs-lookup"><span data-stu-id="a070f-104">Symptoms</span></span>  
+ <span data-ttu-id="a070f-105">Přetypování na RCW se nepovedlo nebo se neočekávaně vyvolá volání modelu COM z RCW.</span><span class="sxs-lookup"><span data-stu-id="a070f-105">A cast on an RCW fails, or a call to COM from an RCW fails unexpectedly.</span></span>  
   
-## <a name="cause"></a><span data-ttu-id="44c45-106">Příčina</span><span class="sxs-lookup"><span data-stu-id="44c45-106">Cause</span></span>  
+## <a name="cause"></a><span data-ttu-id="a070f-106">příčina</span><span class="sxs-lookup"><span data-stu-id="a070f-106">Cause</span></span>  
   
-- <span data-ttu-id="44c45-107">Při volání z nesprávného kontextu.</span><span class="sxs-lookup"><span data-stu-id="44c45-107">The call is made from the wrong context.</span></span>  
+- <span data-ttu-id="a070f-107">Volání bylo provedeno z chybného kontextu.</span><span class="sxs-lookup"><span data-stu-id="a070f-107">The call is made from the wrong context.</span></span>  
   
-- <span data-ttu-id="44c45-108">Registrovaný server proxy se nedaří `QueryInterface` volat, protože došlo k pokusu o volání v chybném kontextu.</span><span class="sxs-lookup"><span data-stu-id="44c45-108">The registered proxy is failing the `QueryInterface` call because the call was attempted in the wrong context.</span></span>  
+- <span data-ttu-id="a070f-108">Registrovaný proxy server selhává `QueryInterface` při volání, protože došlo k pokusu o volání v nesprávném kontextu.</span><span class="sxs-lookup"><span data-stu-id="a070f-108">The registered proxy is failing the `QueryInterface` call because the call was attempted in the wrong context.</span></span>  
   
-- <span data-ttu-id="44c45-109">Proxy služby vlastnictví OLE vrátí selhání hodnoty HRESULT.</span><span class="sxs-lookup"><span data-stu-id="44c45-109">An OLE-owned proxy returned a failure HRESULT.</span></span>  
+- <span data-ttu-id="a070f-109">Proxy ve vlastnictví OLE vrátil chybu HRESULT.</span><span class="sxs-lookup"><span data-stu-id="a070f-109">An OLE-owned proxy returned a failure HRESULT.</span></span>  
   
-## <a name="resolution"></a><span data-ttu-id="44c45-110">Řešení</span><span class="sxs-lookup"><span data-stu-id="44c45-110">Resolution</span></span>  
- <span data-ttu-id="44c45-111">Pravidla modelu COM naleznete v dokumentaci MSDN.</span><span class="sxs-lookup"><span data-stu-id="44c45-111">See the MSDN documentation on COM rules.</span></span>  
+## <a name="resolution"></a><span data-ttu-id="a070f-110">Řešení</span><span class="sxs-lookup"><span data-stu-id="a070f-110">Resolution</span></span>  
+ <span data-ttu-id="a070f-111">Prohlédněte si dokumentaci MSDN o pravidlech modelu COM.</span><span class="sxs-lookup"><span data-stu-id="a070f-111">See the MSDN documentation on COM rules.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="44c45-112">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="44c45-112">Effect on the Runtime</span></span>  
- <span data-ttu-id="44c45-113">Pokud `QueryInterface` volání selže, kontext se přepnul a `QueryInterface` volání se opakovat pokus o zobrazíte, pokud byl nesprávný kontextu 2!s!(0x%3!s!).</span><span class="sxs-lookup"><span data-stu-id="44c45-113">If a `QueryInterface` call fails, the context is switched and the `QueryInterface` call is attempted again to see if an incorrect context was at fault.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="a070f-112">Vliv na modul runtime</span><span class="sxs-lookup"><span data-stu-id="a070f-112">Effect on the Runtime</span></span>  
+ <span data-ttu-id="a070f-113">Pokud volání selže, kontext je přepnut `QueryInterface` a volání se znovu pokusí zjistit, zda došlo k chybě v nesprávném kontextu. `QueryInterface`</span><span class="sxs-lookup"><span data-stu-id="a070f-113">If a `QueryInterface` call fails, the context is switched and the `QueryInterface` call is attempted again to see if an incorrect context was at fault.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="44c45-114">Výstup</span><span class="sxs-lookup"><span data-stu-id="44c45-114">Output</span></span>  
- <span data-ttu-id="44c45-115">Název spravovaného rozhraní, GUID rozhraní a hodnota HRESULT chyby.</span><span class="sxs-lookup"><span data-stu-id="44c45-115">The managed name of the interface, the GUID of the interface, and the HRESULT of the failure.</span></span>  
+## <a name="output"></a><span data-ttu-id="a070f-114">Výstup</span><span class="sxs-lookup"><span data-stu-id="a070f-114">Output</span></span>  
+ <span data-ttu-id="a070f-115">Spravovaný název rozhraní, identifikátor GUID rozhraní a hodnota HRESULT selhání.</span><span class="sxs-lookup"><span data-stu-id="a070f-115">The managed name of the interface, the GUID of the interface, and the HRESULT of the failure.</span></span>  
   
-## <a name="configuration"></a><span data-ttu-id="44c45-116">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="44c45-116">Configuration</span></span>  
+## <a name="configuration"></a><span data-ttu-id="a070f-116">Konfiguraci</span><span class="sxs-lookup"><span data-stu-id="a070f-116">Configuration</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -50,8 +50,8 @@ ms.locfileid: "64660457"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="44c45-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="44c45-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a070f-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a070f-117">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [<span data-ttu-id="44c45-118">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="44c45-118">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="44c45-119">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="44c45-119">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+- [<span data-ttu-id="a070f-118">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="a070f-118">Diagnosing Errors with Managed Debugging Assistants</span></span>](diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="a070f-119">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="a070f-119">Interop Marshaling</span></span>](../interop/interop-marshaling.md)
