@@ -1,19 +1,19 @@
 ---
-title: Předpověď cen pomocí regrese pomocí Tvůrce modelů
+title: 'Kurz: Předpověď cen pomocí regrese pomocí Tvůrce modelů'
 description: V tomto kurzu se naučíte, jak vytvořit regresní model pomocí Tvůrce modelů ML.NET pro předpověď cen, konkrétně v New Yorku City taxislužby tarifs.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 09/12/2019
+ms.date: 09/18/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 675ca58ab071293fe5c04b1b85337fb1e48dfbea
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: bb344a7f01e8ffe0e40578c6fb2f28bebd2eb807
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991352"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117965"
 ---
-# <a name="predict-prices-using-regression-with-model-builder"></a>Předpověď cen pomocí regrese pomocí Tvůrce modelů
+# <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: Předpověď cen pomocí regrese pomocí Tvůrce modelů
 
 Naučte se používat Tvůrce modelů ML.NET k vytvoření regresního modelu () pro předpověď cen.  Aplikace konzoly .NET, kterou vyvíjíte v tomto kurzu, předpovídá taxislužby tarify na základě historických dat o taxislužby tarifech z historických Praha.
 

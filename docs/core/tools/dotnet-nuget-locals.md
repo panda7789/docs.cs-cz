@@ -3,12 +3,12 @@ title: dotnet – místní příkazy NuGet
 description: Příkaz dotnet NuGet Locals vymaže nebo vypíše místní prostředky NuGet, jako je mezipaměť požadavků HTTP, dočasná mezipaměť nebo složka globálních balíčků v celém počítači.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 0cf025f91a7582fafc401799cd1d8b933b087535
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 482e841d3b402084eb8c7f2456779f1600a5dd19
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202465"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117625"
 ---
 # <a name="dotnet-nuget-locals"></a>dotnet nuget locals
 
@@ -24,7 +24,7 @@ ms.locfileid: "70202465"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-```console
+```dotnetcli
 dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
 dotnet nuget locals [-h|--help]
 ```
@@ -66,31 +66,31 @@ dotnet nuget locals [-h|--help]
 
 * Zobrazuje cesty ke všem adresářům místní mezipaměti (adresář HTTP-cache, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals –l all
   ```
 
 * Zobrazuje cestu k místnímu adresáři protokolu HTTP-cache:
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals --list http-cache
   ```
 
 * Vymaže všechny soubory ze všech adresářů místní mezipaměti (adresář mezipaměti protokolu HTTP, adresář mezipaměti globálních balíčků a dočasný adresář mezipaměti):
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals --clear all
   ```
 
 * Vymaže všechny soubory v místní složce mezipaměti Global-Packages:
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals -c global-packages
   ```
 
 * Vymaže všechny soubory v adresáři místní dočasné mezipaměti:
 
-  ```console
+  ```dotnetcli
   dotnet nuget locals -c temp
   ```
 

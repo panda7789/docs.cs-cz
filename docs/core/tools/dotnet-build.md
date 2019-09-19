@@ -2,12 +2,12 @@
 title: dotnet – příkaz sestavení
 description: Příkaz dotnet Build vytvoří projekt a všechny jeho závislosti.
 ms.date: 08/08/2019
-ms.openlocfilehash: e92555dad2bc76d8c72eca9a30be1d3a8b5924f7
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0b353d60691fb4bb85536c68dc4ab248f45c3a76
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988527"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117760"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -23,7 +23,7 @@ ms.locfileid: "70988527"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-```console
+```dotnetcli
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
     [--no-incremental] [--no-restore] [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
@@ -122,30 +122,30 @@ Soubor projektu nebo řešení, který se má sestavit Pokud není zadán soubor
 
 * Sestavení projektu a jeho závislostí:
 
-  ```console
+  ```dotnetcli
   dotnet build
   ```
 
 * Sestavení projektu a jeho závislostí pomocí konfigurace vydané verze:
 
-  ```console
+  ```dotnetcli
   dotnet build --configuration Release
   ```
 
 * Sestavení projektu a jeho závislostí pro určitý modul runtime (v tomto příkladu Ubuntu 18,04):
 
-  ```console
+  ```dotnetcli
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
 * Sestavit projekt a použít zadaný zdroj balíčku NuGet během operace obnovení (.NET Core 2,0 SDK a novější verze):
 
-  ```console
+  ```dotnetcli
   dotnet build --source c:\packages\mypackages
   ```
 
 * Sestavte projekt a nastavte parametr Version 1.2.3.4 jako parametr sestavení pomocí `-p` [Možnosti MSBuild](#msbuild):
 
-  ```console
+  ```dotnetcli
   dotnet build -p:Version=1.2.3.4
   ```

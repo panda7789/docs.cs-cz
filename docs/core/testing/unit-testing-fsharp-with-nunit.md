@@ -6,12 +6,12 @@ ms.date: 10/04/2018
 dev_langs:
 - fsharp
 ms.custom: seodec18
-ms.openlocfilehash: cf313f8197280bdbb943c12ef0c7a29284ec01a5
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 1a5320f47b880c2d84132d70e1d0be19d6de486b
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849773"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116211"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování F# částí knihoven v .NET Core pomocí příkazu dotnet test a nunit
 
@@ -29,7 +29,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-with-FSharp* , který bude obsahovat řešení.
 V tomto novém adresáři spusťte následující příkaz, který vytvoří nový soubor řešení pro knihovnu tříd a testovací projekt:
 
-```console
+```dotnetcli
 dotnet new sln
 ```
 
@@ -43,7 +43,7 @@ Potom vytvořte adresář *MathService* . Následující osnova ukazuje struktur
 
 Vytvořte *MathService* aktuální adresář a spusťte následující příkaz pro vytvoření zdrojového projektu:
 
-```console
+```dotnetcli
 dotnet new classlib -lang F#
 ```
 
@@ -56,7 +56,7 @@ module MyMath =
 
 Změňte adresář zpátky na adresář *testování částí s* adresářem-FSharp. Spuštěním následujícího příkazu přidejte projekt knihovny tříd do řešení:
 
-```console
+```dotnetcli
 dotnet sln add .\MathService\MathService.fsproj
 ```
 
@@ -75,7 +75,7 @@ Dále vytvořte adresář *MathService. Tests* . Následující osnova znázorň
 
 Vytvořte adresář *MathService. Tests* pro aktuální adresář a vytvořte nový projekt pomocí následujícího příkazu:
 
-```console
+```dotnetcli
 dotnet new nunit -lang F#
 ```
 
@@ -91,7 +91,7 @@ Tím se vytvoří testovací projekt, který jako testovací rozhraní použív�
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jste přidali NUnit a testovací adaptér NUnit. Nyní přidejte `MathService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```console
+```dotnetcli
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
@@ -112,7 +112,7 @@ Máte následující konečné rozložení řešení:
 
 Spusťte následující příkaz v adresáři *Unit-Testing-with-FSharp* :
 
-```console
+```dotnetcli
 dotnet sln add .\MathService.Tests\MathService.Tests.fsproj
 ```
 

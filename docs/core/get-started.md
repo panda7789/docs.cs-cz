@@ -4,12 +4,12 @@ description: Vyhledejte prostředky, které se naučíte sestavovat aplikace .NE
 author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
-ms.openlocfilehash: 3c530c71d1cfa9d0c4cf09f38519970f6ef8da51
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5846b3c62a4a44b0d6bcdfbaaa00e12e5a157ab0
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969900"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116527"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -23,7 +23,7 @@ Nejprve Stáhněte a nainstalujte [.NET Core SDK](https://dotnet.microsoft.com/d
 
 Pak otevřete terminál, jako je například **PowerShell**, **příkazový řádek**nebo **bash**. Zadáním následujících `dotnet` příkazů vytvořte a spusťte C# aplikaci.
 
-```console
+```dotnetcli
 dotnet new console --output sample1
 dotnet run --project sample1
 ```

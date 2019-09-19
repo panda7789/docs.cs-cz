@@ -4,12 +4,12 @@ description: Popisuje, jak vytvořit globální nástroj. Globální nástroj je
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: f60e26d14e89b6b7c34b32bf9a114fe4ad691981
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 5c2b1e459f0308f5f96eb041c10f4d7a7ae0ca20
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202768"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117445"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globálního nástroje .NET Core pomocí .NET Core CLI
 
@@ -23,7 +23,7 @@ Tento článek používá .NET Core CLI k vytvoření a správě projektu.
 
 Náš ukázkový nástroj bude Konzolová aplikace, která generuje robota ASCII a vytiskne zprávu. Nejprve vytvořte novou konzolovou aplikaci .NET Core.
 
-```console
+```dotnetcli
 dotnet new console -o botsay
 ```
 
@@ -117,7 +117,7 @@ static void ShowBot(string message)
 
 Spusťte projekt a podívejte se na výstup. Zkuste tyto variace příkazového řádku pro zobrazení různých výsledků:
 
-```csharp
+```dotnetcli
 dotnet run
 dotnet run -- "Hello from the bot"
 dotnet run -- hello from the bot
@@ -158,15 +158,15 @@ I když `<PackageOutputPath>` je volitelný, použijte ho v tomto příkladu. Uj
 
 Dále vytvořte balíček NuGet pro vaši aplikaci.
 
-```console
+```dotnetcli
 dotnet pack
 ```
 
-Soubor je vytvořen ve složce identifikované `<PackageOutputPath>` hodnotou XML ze `botsay.csproj` `./nupkg` souboru, který je v tomto příkladu složkou. `botsay.1.0.0.nupkg` To usnadňuje instalaci a testování. Pokud chcete veřejně vydávat nástroj, nahrajte ho do <https://www.nuget.org>. Jakmile je nástroj k dispozici v NuGet, vývojáři můžou provést instalaci nástroje pro všechny uživatele pomocí `--global` možnosti instalačního příkazu [nástroje dotnet](dotnet-tool-install.md) .
+Soubor je vytvořen ve složce identifikované `<PackageOutputPath>` hodnotou XML ze `botsay.csproj` `./nupkg` souboru, který je v tomto příkladu složkou. `botsay.1.0.0.nupkg` To usnadňuje instalaci a testování. Pokud chcete veřejně vydávat nástroj, nahrajte ho do <https://www.nuget.org>. Jakmile je nástroj k dispozici v NuGet, vývojáři můžou provést instalaci nástroje pro všechny uživatele pomocí `--global` možnosti [instalačního příkazu nástroje dotnet](dotnet-tool-install.md) .
 
 Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 
-```console
+```dotnetcli
 dotnet tool install --global --add-source ./nupkg botsay
 ```
 
@@ -188,6 +188,6 @@ Nyní byste měli být schopni zadat `botsay` a získat odpověď z nástroje.
 
 Až budete s nástrojem hotovi, můžete ho odebrat pomocí následujícího příkazu:
 
-```console
+```dotnetcli
 dotnet tool uninstall -g botsay
 ```

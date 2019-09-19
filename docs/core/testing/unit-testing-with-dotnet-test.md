@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
-ms.openlocfilehash: 1a6c8ed515e62bed921290a54e3d9687bb889a4d
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: d85e3e69721d8933565b1c80fb7ed21b2291e60e
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374155"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117293"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování C# částí v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -24,7 +24,7 @@ Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-using-do
 V tomto novém adresáři spusťte příkaz [`dotnet new sln`](../tools/dotnet-new.md) a vytvořte nové řešení. Díky řešení je snazší spravovat jak knihovnu tříd, tak projekt testování částí.
 V adresáři řešení vytvořte adresář *PrimeService* . Struktura adresáře a souborů by měla být takto:
 
-```console
+```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -51,7 +51,7 @@ Změňte adresář zpátky na adresář *-Test-Using-dotnet-test* .
 
 Spusťte příkaz [dotnet sln](../tools/dotnet-sln.md) a přidejte do řešení projekt knihovny tříd:
 
-```console
+```dotnetcli
 dotnet sln add ./PrimeService/PrimeService.csproj
 ```
 
@@ -59,7 +59,7 @@ dotnet sln add ./PrimeService/PrimeService.csproj
 
 Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
-```console
+```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -80,7 +80,7 @@ Nastavte adresář *PrimeService. Tests* na aktuální adresář a vytvořte nov
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jsme přidali xUnit a xUnit Runner. Nyní přidejte `PrimeService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```console
+```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.csproj
 ```
 
@@ -88,7 +88,7 @@ Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet
 
 Následující příklad ukazuje konečné rozložení řešení:
 
-```console
+```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -101,7 +101,7 @@ Následující příklad ukazuje konečné rozložení řešení:
 
 Chcete-li přidat testovací projekt do řešení, spusťte příkaz [dotnet sln](../tools/dotnet-sln.md) v adresáři *Unit-Testing-using-dotnet-test* :
 
-```console
+```dotnetcli
 dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 

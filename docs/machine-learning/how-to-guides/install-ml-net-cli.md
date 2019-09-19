@@ -3,12 +3,12 @@ title: Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 description: Přehled a instalace nástroje rozhraní příkazového řádku ML.NET (CLI).
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 8b6de466a6cf72b44a16c80fc024671bc4e975e8
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: baced9bbcc72153458d42d4b6d8206921bf187b8
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106897"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71118005"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 
@@ -33,7 +33,7 @@ Rozhraní příkazového řádku ML.NET je nainstalováno jako jakýkoli jiný g
 
 Následující příklad ukazuje, jak nainstalovat rozhraní příkazového řádku ML.NET ve výchozím umístění informačního kanálu NuGet:
 
-```console
+```dotnetcli
 dotnet tool install -g mlnet
 ```
 
@@ -58,13 +58,13 @@ Měli byste vidět nápovědu k dostupným příkazům pro nástroj mlnet, jako 
 
 Pokud se pokoušíte nainstalovat předběžnou verzi nebo konkrétní verzi nástroje, můžete určit [rozhraní](../../standard/frameworks.md) pomocí následujícího formátu:
 
-```console
+```dotnetcli
 dotnet tool install -g mlnet --framework <FRAMEWORK>
 ```
 
 Můžete také zjistit, jestli je balíček správně nainstalovaný, zadáním následujícího příkazu:
 
-```console
+```dotnetcli
 dotnet tool list -g
 ```
 
@@ -72,7 +72,7 @@ dotnet tool list -g
 
 Zadejte následující příkaz pro odinstalaci balíčku z místního počítače:
 
-```console
+```dotnetcli
 dotnet tool uninstall mlnet -g
 ```
 
@@ -80,7 +80,7 @@ dotnet tool uninstall mlnet -g
 
 Zadáním následujícího příkazu aktualizujete balíček z místního počítače:
 
-```console
+```dotnetcli
 dotnet tool update -g mlnet
 ```
 
@@ -100,7 +100,7 @@ V počítači, ve kterém chcete povolit dokončování, budete muset provést d
 
 1. `dotnet-suggest` Globální nástroj nainstalujete spuštěním následujícího příkazu:
 
-    ```console
+    ```dotnetcli
     dotnet tool install dotnet-suggest -g
     ```
 

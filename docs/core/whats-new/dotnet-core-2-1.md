@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: d0f4e2997e6e847cfd3c41ddb13096379d75343e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 519c55dbe8b55191b682067da558167f86199b7e
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925725"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116227"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -39,7 +39,7 @@ Hlavní zaměření rozhraní .NET Core 2,1 zvyšuje výkon při sestavování, 
 
 - Použití dlouhotrvajících serverů sestavení sady SDK, které jsou procesy, které jsou rozloženy `dotnet build` mezi jednotlivá volání. Eliminují potřebu JIT zkompilovat velké bloky kódu pokaždé, když `dotnet build` se spustí. Procesy sestavení serveru mohou být automaticky ukončeny pomocí následujícího příkazu:
 
-   ```console
+   ```dotnetcli
    dotnet buildserver shutdown
    ```
 
@@ -49,7 +49,7 @@ K dispozici je řada nástrojů, které byly k dispozici pouze pro [`DotnetCliTo
 
 - `dotnet watch`poskytuje sledovací proces systému souborů, který čeká na změnu souboru před spuštěním určené sady příkazů. Například následující příkaz automaticky znovu sestaví aktuální projekt a generuje podrobný výstup pokaždé, když se změní soubor:
 
-   ```console
+   ```dotnetcli
    dotnet watch -- --verbose build
    ```
 
@@ -71,7 +71,7 @@ K dispozici je řada nástrojů, které byly k dispozici pouze pro [`DotnetCliTo
 
 K instalaci globálního nástroje použijte příkaz [dotnet Tool Install](../tools/dotnet-tool-install.md) . Příklad:
 
-```console
+```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
@@ -116,7 +116,7 @@ Toto nastavení můžete upravit některým ze tří způsobů:
 
 - Při použití [nástrojů .NET Core CLI](../tools/index.md)přidejte následující možnost s požadovanou hodnotou do příkazu .NET Core, například `run`:
 
-   ```console
+   ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0
    ```
 

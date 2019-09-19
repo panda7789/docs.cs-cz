@@ -1,21 +1,21 @@
 ---
 title: Úložiště balíčků modulu runtime
-description: Další informace o použití úložiště balíčků modulu runtime pro cílové manifestů, které používá .NET Core.
+description: Naučte se používat úložiště balíčků modulu runtime pro cílení na manifesty používané .NET Core.
 author: bleroy
 ms.date: 08/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 2f37e0de4b6fcb1b2047470b0a9df3753fe87d71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a8d2d3298f144347c36c640700a1e578dc14715
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614359"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116552"
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčků modulu runtime
 
-Počínaje .NET Core 2.0, je možné k zabalení a nasazení aplikace před známými sadu balíčků, které existují v cílovém prostředí. Výhody jsou rychlejší nasazení, nižší využití místa na disku a vylepšené spouštění výkonu v některých případech.
+Počínaje .NET Core 2,0 je možné zabalit a nasazovat aplikace na známou sadu balíčků, které existují v cílovém prostředí. Výhody jsou rychlejší nasazení, nižší využití místa na disku a Vylepšený výkon při spuštění v některých případech.
 
-Tato funkce je implementovaná jako *úložiště balíčků modulu runtime*, což je adresář na disku, kde jsou uloženy balíčky (obvykle v */usr/local/share/dotnet/store* v systému macOS nebo Linuxu a *C: / Program soubory/dotnet/store* na Windows). V tomto adresáři neexistují podadresáře pro architektury a [platforem](../../standard/frameworks.md). Soubor rozložení je podobným způsobem, který [NuGet prostředky jsou rozloženy na disku](/nuget/create-packages/supporting-multiple-target-frameworks#framework-version-folder-structure):
+Tato funkce je implementována jako *běhové úložiště balíčků*, což je adresář na disku, kde jsou uloženy balíčky (obvykle na */usr/local/share/dotnet/Store* v MacOS/Linux a *C:/Program Files/dotnet/Store* ve Windows). V tomto adresáři jsou podadresáře pro architektury a [cílové](../../standard/frameworks.md)architektury. Rozložení souboru je podobné způsobu, jakým [jsou prostředky NuGet na disku rozloženy](/nuget/create-packages/supporting-multiple-target-frameworks#framework-version-folder-structure):
 
 ```
 \dotnet
@@ -32,13 +32,13 @@ Tato funkce je implementovaná jako *úložiště balíčků modulu runtime*, co
                 ...
 ```
 
-A *cíl manifestu* soubor obsahuje seznam balíčků v úložiště balíčků modulu runtime. Vývojáři mohou cílit manifestu, při publikování své aplikace. Cíl manifestu se většinou poskytuje vlastník cílové produkčního prostředí.
+*Cílový soubor manifestu* uvádí balíčky v úložišti balíčků modulu runtime. Vývojáři můžou tento manifest cílit při publikování aplikace. Cílový manifest je obvykle poskytován vlastníkem cílového produkčního prostředí.
 
-## <a name="preparing-a-runtime-environment"></a>Příprava prostředí runtime
+## <a name="preparing-a-runtime-environment"></a>Příprava běhového prostředí
 
-Správce prostředí modulu runtime může optimalizovat aplikace pro rychlejší nasazení a nižší využití místa na disku vytvořením úložiště balíčků modulu runtime a odpovídající cíl manifestu.
+Správce běhového prostředí může optimalizovat aplikace pro rychlejší nasazení a snížit využití místa na disku vytvořením běhového balíčku za běhu a odpovídajícího cílového manifestu.
 
-Prvním krokem je vytvoření *manifest balíčku úložiště* , který obsahuje seznam balíčků, které tvoří úložiště balíčků modulu runtime. Tento formát souboru je kompatibilní s formátem souboru projektu (*csproj*).
+Prvním krokem je vytvoření *manifestu balíčku pro úložiště* , který obsahuje seznam balíčků, které tvoří úložiště balíčků modulu runtime. Tento formát souboru je kompatibilní s formátem souboru projektu (*csproj*).
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -51,7 +51,7 @@ Prvním krokem je vytvoření *manifest balíčku úložiště* , který obsahuj
 
 **Příklad**
 
-Následující příklad manifestu úložiště balíčků (*packages.csproj*) se používá k přidání [ `Newtonsoft.Json` ](https://www.nuget.org/packages/Newtonsoft.Json/) a [ `Moq` ](https://www.nuget.org/packages/moq/) do úložiště balíčků modulu runtime:
+Následující ukázkový manifest úložiště balíčků (*Packages. csproj*) se používá k přidání [`Newtonsoft.Json`](https://www.nuget.org/packages/Newtonsoft.Json/) a [`Moq`](https://www.nuget.org/packages/moq/) do úložiště balíčků modulu runtime:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -62,25 +62,25 @@ Následující příklad manifestu úložiště balíčků (*packages.csproj*) s
 </Project>
 ```
 
-Zřídit úložiště balíčků modulu runtime pomocí provádí `dotnet store` manifest balíčku úložiště, modul runtime a framework:
+Zřízení úložiště `dotnet store` balíčků modulu runtime spuštěním s manifestem úložiště balíčků, modulem runtime a rozhraním:
 
-```console
+```dotnetcli
 dotnet store --manifest <PATH_TO_MANIFEST_FILE> --runtime <RUNTIME_IDENTIFIER> --framework <FRAMEWORK>
 ```
 
 **Příklad**
 
-```console
+```dotnetcli
 dotnet store --manifest packages.csproj --runtime win10-x64 --framework netcoreapp2.0 --framework-version 2.0.0
 ```
 
-Můžete předat více cílové úložiště balíčků cesty k manifestu do jediné [ `dotnet store` ](../tools/dotnet-store.md) příkaz opakováním možnost a cestu v příkazu.
+Můžete předat několik cest k manifestu cílového úložiště balíčků do jediného [`dotnet store`](../tools/dotnet-store.md) příkazu opakováním možnosti a cesty v příkazu.
 
-Výchozí výstup příkazu je balíček úložiště v nabídce *.dotnet/store* podadresář tím profil daného uživatele. Můžete zadat jiné umístění pomocí `--output <OUTPUT_DIRECTORY>` možnost. Kořenový adresář úložiště obsahuje cíl manifestu *artifact.xml* souboru. Tento soubor může být k dispozici ke stažení a používá aplikace autory, kteří chtějí cílí toto úložiště při publikování.
+Ve výchozím nastavení je výstupem příkazu úložiště balíčků v podadresáři *. dotnet/Store* profilu uživatele. Pomocí `--output <OUTPUT_DIRECTORY>` možnosti můžete zadat jiné umístění. Kořenový adresář úložiště obsahuje cílový soubor *. XML artefaktu* manifestu. Tento soubor může být zpřístupněn ke stažení a musí ho používat autoři aplikací, kteří chtějí toto úložiště cílit při publikování.
 
 **Příklad**
 
-Následující *artifact.xml* po spuštění předchozího příkladu je vytvořen soubor. Všimněte si, že [ `Castle.Core` ](https://www.nuget.org/packages/Castle.Core/) je závislost `Moq`, takže ji vložila automaticky a zobrazí se v *artifacts.xml* soubor manifestu.
+Následující soubor *artefakt. XML* se vytvoří po spuštění předchozího příkladu. Všimněte si [`Castle.Core`](https://www.nuget.org/packages/Castle.Core/) , že se jedná `Moq`o závislost, takže je automaticky zahrnutá a zobrazí se v souboru manifestu *artefakts. XML* .
 
 ```xml
 <StoreArtifacts>
@@ -90,27 +90,27 @@ Následující *artifact.xml* po spuštění předchozího příkladu je vytvoř
 </StoreArtifacts>
 ```
 
-## <a name="publishing-an-app-against-a-target-manifest"></a>Publikování aplikace proti cílové manifestu
+## <a name="publishing-an-app-against-a-target-manifest"></a>Publikování aplikace proti cílovému manifestu
 
-Pokud máte soubor manifestu cíl na disku, je při publikování aplikace s využitím zadat cestu k souboru [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz:
+Pokud máte cílový soubor manifestu na disku, zadejte cestu k souboru při publikování aplikace pomocí [`dotnet publish`](../tools/dotnet-publish.md) příkazu:
 
-```console
+```dotnetcli
 dotnet publish --manifest <PATH_TO_MANIFEST_FILE>
 ```
 
 **Příklad**
 
-```console
+```dotnetcli
 dotnet publish --manifest manifest.xml
 ```
 
-Nasazení výsledné publikované aplikace do prostředí, který má balíčky, které je popsáno v manifestu cíl. Pokud tak neučiníte za následek selhání spuštění aplikace.
+Výslednou publikovanou aplikaci nasadíte do prostředí, které obsahuje balíčky popsané v cílovém manifestu. V důsledku neúspěšného spuštění aplikace dojde k selhání.
 
-Určení více manifestů cílové při publikování aplikace opakováním možnost a cestu (například `--manifest manifest1.xml --manifest manifest2.xml`). Pokud tak učiníte, aplikace je oříznut pro sjednocení balíčky zadané v cílové soubory manifestu k příkazu k dispozici.
+Zadejte více cílových manifestů při publikování aplikace opakováním možnosti a cesty (například `--manifest manifest1.xml --manifest manifest2.xml`). V takovém případě se aplikace ořízne pro sjednocení balíčků zadaných v cílových souborech manifestu, které jsou k dispozici v příkazu.
 
-## <a name="specifying-target-manifests-in-the-project-file"></a>Zadání cílové manifesty v souboru projektu
+## <a name="specifying-target-manifests-in-the-project-file"></a>Určení cílových manifestů v souboru projektu
 
-Alternativa k určení cílového manifesty s [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz je se zadávají v souboru projektu jako středníkem oddělený seznam cest v rámci  **\<TargetManifestFiles >** značky.
+Alternativou k určení cílových manifestů pomocí [`dotnet publish`](../tools/dotnet-publish.md) příkazu je zadat je do souboru projektu jako seznam cest oddělených středníkem  **\<** v rámci značky TargetManifestFiles >.
 
 ```xml
 <PropertyGroup>
@@ -118,17 +118,17 @@ Alternativa k určení cílového manifesty s [ `dotnet publish` ](../tools/dotn
 </PropertyGroup>
 ```
 
-Určení manifestů cíl v souboru projektu, pouze v případě cílového prostředí pro aplikaci je dobře známé, například pro projekty .NET Core. To není případ open-source projektů. Uživatelé open source projektu je obvykle nasazení do různých produkční prostředí. Tyto produkční prostředí obvykle mají různé sady předem nainstalované balíčky. Předpoklady o cíl manifestu nemůže provádět v těchto prostředích, proto byste měli použít `--manifest` možnost [ `dotnet publish` ](../tools/dotnet-publish.md).
+Zadejte cílové manifesty v souboru projektu pouze v případě, že cílové prostředí pro aplikaci je dobře známé, například u projektů .NET Core. Nejedná se o případ open source projektů. Uživatelé open source projektu ji obvykle nasadí do různých produkčních prostředí. Tato produkční prostředí mají většinou nainstalované různé sady balíčků. V takových prostředích nemůžete vytvářet předpoklady pro cílový manifest, proto byste měli použít `--manifest` [`dotnet publish`](../tools/dotnet-publish.md)možnost.
 
-## <a name="aspnet-core-implicit-store"></a>Implicitní úložiště ASP.NET Core
+## <a name="aspnet-core-implicit-store"></a>ASP.NET Core implicitního úložiště
 
-ASP.NET Core implicitní úložiště platí jenom pro ASP.NET Core 2.0. Důrazně doporučujeme aplikace pomocí ASP.NET Core 2.1 nebo novější, která zajišťuje **není** použít implicitní úložiště. ASP.NET Core 2.1 a pozdější použití sdílené architektuře.
+ASP.NET Core implicitní úložiště platí pouze pro ASP.NET Core 2,0. Důrazně doporučujeme, aby aplikace používaly ASP.NET Core 2,1 a novější, které **nepoužívají implicitní** úložiště. ASP.NET Core 2,1 a novější používají sdílené rozhraní.
 
-Funkce úložiště balíčků modulu runtime používá implicitně aplikace ASP.NET Core při nasazení aplikace jako [nasazení závisí na architektuře (chyba)](index.md#framework-dependent-deployments-fdd) aplikace. Cíle v [ `Microsoft.NET.Sdk.Web` ](https://github.com/aspnet/websdk) zahrnují manifesty odkazující na implicitní úložiště balíček v cílovém systému. Kromě toho libovolnou aplikaci disketové jednotky, na kterém závisí `Microsoft.AspNetCore.All` balíček výsledky v publikované aplikaci, která obsahuje jenom aplikace a její prostředky a není balíčky uvedené v `Microsoft.AspNetCore.All` Microsoft.aspnetcore.all. Předpokládá se, že tyto balíčky jsou k dispozici v cílovém systému.
+Funkce úložiště balíčků za běhu se implicitně používá v aplikaci ASP.NET Core, když se aplikace nasadí jako aplikace [nasazení závislá na rozhraní (FDD)](index.md#framework-dependent-deployments-fdd) . Cíle v [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) zahrnutých manifestech odkazují na implicitní úložiště balíčků v cílovém systému. Kromě toho jakákoli aplikace FDD, která závisí na `Microsoft.AspNetCore.All` balíčku, má za následek publikovanou aplikaci, která obsahuje jenom aplikaci a její prostředky, a ne balíčky uvedené `Microsoft.AspNetCore.All` v Metapackage. Předpokládá se, že tyto balíčky jsou k dispozici v cílovém systému.
 
-Úložiště balíčků modulu runtime je nainstalován na hostiteli, když je nainstalovaná sada .NET Core SDK. Další instalační programy může poskytovat úložiště balíčků modulu runtime, včetně Zip/tarballu instalace sady .NET Core SDK `apt-get`, Red Hat Yumu, sady .NET Core Windows serveru, který hostuje a ruční runtime úložiště balíčků zařízení.
+V případě, že je nainstalováno .NET Core SDK, je úložiště balíčků modulu runtime nainstalováno na hostiteli. Ostatní instalační programy můžou poskytovat běhové úložiště balíčků, včetně instalací zip/tarballu .NET Core SDK, `apt-get`, Red Hat Yumu, hostování sady .NET Core Windows serveru a ručních instalací běhového balíčku.
 
-Při nasazování [nasazení závisí na architektuře (chyba)](index.md#framework-dependent-deployments-fdd) aplikace, ujistěte se, že cílové prostředí má nainstalovaná sada .NET Core SDK. Pokud je aplikace nasazena do prostředí, který neobsahuje ASP.NET Core, můžete zrušit implicitní úložiště tak, že zadáte  **\<PublishWithAspNetCoreTargetManifest >** nastavena na `false` v souboru projektu jako v v následujícím příkladu:
+Při nasazování aplikace [pro nasazení závislé na rozhraní (FDD)](index.md#framework-dependent-deployments-fdd) se ujistěte, že je v cílovém prostředí nainstalovaný .NET Core SDK. Pokud je aplikace nasazená do prostředí, které neobsahuje ASP.NET Core, můžete implicitní úložiště `false`  **\<** odhlásit zadáním > v souboru projektu jako v následujícím příkladu. :
 
 ```xml
 <PropertyGroup>
@@ -137,15 +137,15 @@ Při nasazování [nasazení závisí na architektuře (chyba)](index.md#framewo
 ```
 
 > [!NOTE]
-> Pro [samostatná nasazení (SCD)](index.md#self-contained-deployments-scd) aplikací, se předpokládá, že cílový systém nutně neobsahuje požadované balíčky manifestu. Proto  **\<PublishWithAspNetCoreTargetManifest >** nelze nastavit na `true` SCD aplikace.
+> Pro aplikace [s podporou nasazení (SCD)](index.md#self-contained-deployments-scd) se předpokládá, že cílový systém nutně neobsahuje požadované balíčky manifestu. `true`  **Proto\<PublishWithAspNetCoreTargetManifest >** nelze nastavit na pro aplikaci SCD.
 
-Pokud nasazujete aplikaci se závislostí manifestu, který je k dispozici v nasazení (je k dispozici v sestavení *bin* složky), úložiště balíčků modulu runtime *nepoužívá* na hostiteli pro toto sestavení. *Bin* sestavení složky se používá bez ohledu na jejich přítomnosti v úložiště balíčků modulu runtime na hostiteli.
+Pokud nasadíte aplikaci se závislostí manifestu, která je přítomna v nasazení (sestavení je k dispozici ve složce *bin* ), není úložiště balíčků modulu runtime *použito* na hostiteli pro toto sestavení. Sestavení složky *bin* se používá bez ohledu na jeho přítomnost v úložišti balíčků modulu runtime na hostiteli.
 
-Verze závislosti uvedené v manifestu musí odpovídat verzi závislosti v úložiště balíčků modulu runtime. Pokud máte Neshoda verzí mezi závislosti v manifestu cíl a verze, která existuje v úložiště balíčků modulu runtime a aplikace neobsahuje požadovanou verzi balíčku v jeho nasazení, aplikace se nespustí. Výjimka obsahuje název cílového manifestu, který volá se pro sestavení úložiště balíčků modulu runtime, které vám pomohou s řešením neshoda.
+Verze závislosti uvedená v manifestu se musí shodovat s verzí závislosti v úložišti balíčků modulu runtime. Pokud se neshoduje s verzí mezi závislostí v cílovém manifestu a verzí, která existuje v úložišti balíčků modulu runtime a aplikace neobsahuje požadovanou verzi balíčku ve svém nasazení, aplikace se nepodaří spustit. Výjimkou je název cílového manifestu, který byl volán pro sestavení úložiště balíčků modulu runtime, což vám pomůže vyřešit neshodu.
 
-Pokud je nasazení *oříznut* při publikování, jsou pouze konkrétní verze manifestu balíčky určujete sražených z publikovaných výstupu. Balíčky na uvedené verze musí být k dispozici na na spuštění hostitele pro aplikaci.
+Pokud je při publikování *oříznuto* nasazení, jsou z publikovaného výstupu zadrženy pouze konkrétní verze balíčků manifestů, které označíte. Aby bylo možné aplikaci spustit, musí být balíčky na zmíněných verzích přítomny na hostiteli.
 
 ## <a name="see-also"></a>Viz také:
 
-- [DotNet – publikování](../tools/dotnet-publish.md)
+- [dotnet – publikování](../tools/dotnet-publish.md)
 - [dotnet-store](../tools/dotnet-store.md)

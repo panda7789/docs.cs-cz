@@ -2,12 +2,12 @@
 title: příkaz dotnet Pack
 description: Příkaz dotnet Pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 08/08/2019
-ms.openlocfilehash: c230fa201fce02ab537afc4e14468788d32b8c8a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 99dd8e35601f82adf2a3101121028f191a4c3da4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039483"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117652"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -23,7 +23,7 @@ ms.locfileid: "71039483"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-```console
+```dotnetcli
 dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
     [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
     [-v|--verbosity] [--version-suffix]
@@ -127,54 +127,54 @@ Webové projekty nejsou ve výchozím nastavení nabaleny. Chcete-li přepsat v�
 
 - Sbalit projekt v aktuálním adresáři:
 
-  ```console
+  ```dotnetcli
   dotnet pack
   ```
 
 - `app1` Sbalit projekt:
 
-  ```console
+  ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj
   ```
 
 - Sbalení projektu v aktuálním adresáři a umístění výsledných balíčků do `nupkgs` složky:
 
-  ```console
+  ```dotnetcli
   dotnet pack --output nupkgs
   ```
 
 - Sbalení projektu v aktuálním adresáři do `nupkgs` složky a přeskočení kroku sestavení:
 
-  ```console
+  ```dotnetcli
   dotnet pack --no-build --output nupkgs
   ```
 
 - S příponou verze projektu nakonfigurovanou jako `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` v souboru *. csproj* rozbalte aktuální projekt a aktualizujte výslednou verzi balíčku s danou příponou:
 
-  ```console
+  ```dotnetcli
   dotnet pack --version-suffix "ci-1234"
   ```
 
 - Nastavte na verzi `2.1.0` `PackageVersion` balíčku vlastnost MSBuild:
 
-  ```console
+  ```dotnetcli
   dotnet pack -p:PackageVersion=2.1.0
   ```
 
 - Sbalení projektu pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
 
-  ```console
+  ```dotnetcli
   dotnet pack -p:TargetFrameworks=net45
   ```
 
 - Sbalení projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2,0 a novější verze):
 
-  ```console
+  ```dotnetcli
   dotnet pack --runtime win10-x64
   ```
 
 - Sbalení projektu pomocí [souboru. nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
 
-  ```console
+  ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget
   ```

@@ -4,12 +4,12 @@ description: Seznamte se s koncepty testování částí v .NET Core pomocí int
 author: rprouse
 ms.date: 10/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1682cf7cb351951d3bea9a64d963cd6a8995c083
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 97902bbfb035d3403d3e7236a0c67fa60d7d9d94
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849676"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117338"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování částí Visual Basic knihoven .NET Core pomocí příkazu dotnet test a NUnit
 
@@ -26,7 +26,7 @@ Tento kurz vás provede interaktivním vytvořením ukázkového řešení, kter
 
 Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-VB-nunit* , který bude obsahovat řešení. V tomto novém adresáři spusťte následující příkaz, který vytvoří nový soubor řešení pro knihovnu tříd a testovací projekt:
 
-```console
+```dotnetcli
 dotnet new sln
 ```
 
@@ -40,7 +40,7 @@ Potom vytvořte adresář *PrimeService* . Následující osnova znázorňuje st
 
 Vytvořte *PrimeService* aktuální adresář a spusťte následující příkaz pro vytvoření zdrojového projektu:
 
-```console
+```dotnetcli
 dotnet new classlib -lang VB
 ```
 
@@ -60,7 +60,7 @@ End Namespace
 
 Změňte adresář zpátky na adresář *testování částí-VB-using-MSTest* . Spuštěním následujícího příkazu přidejte projekt knihovny tříd do řešení:
 
-```console
+```dotnetcli
 dotnet sln add .\PrimeService\PrimeService.vbproj
 ```
 
@@ -79,7 +79,7 @@ Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázor�
 
 Vytvořte adresář *PrimeService. Tests* pro aktuální adresář a vytvořte nový projekt pomocí následujícího příkazu:
 
-```console
+```dotnetcli
 dotnet new nunit -lang VB
 ```
 
@@ -89,7 +89,7 @@ Příkaz [dotnet New](../tools/dotnet-new.md) vytvoří testovací projekt, kter
 
 Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new`v předchozím kroku jste přidali NUnit a testovací adaptér NUnit. Nyní přidejte `PrimeService` knihovnu tříd jako jinou závislost do projektu. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```console
+```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.vbproj
 ```
 
@@ -110,7 +110,7 @@ Máte následující konečné rozložení řešení:
 
 Spusťte následující příkaz v adresáři *Unit-Testing-VB-nunit* :
 
-```console
+```dotnetcli
 dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj
 ```
 

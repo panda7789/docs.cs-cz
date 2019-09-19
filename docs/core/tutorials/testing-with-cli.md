@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak organizovat a testovat projekty .NET
 author: cartermp
 ms.date: 09/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: a8724c971521b8d65700d61a1ce523c1dfdddf0a
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d93ba5f41f1e7b5818790d0853bd219466b317ee
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202996"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117372"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -86,7 +86,7 @@ Vytvořte následující strukturu složek se zvýrazněným obsahem souboru:
 
 Spusťte následující příkaz:
 
-```console
+```dotnetcli
 dotnet run
 ```
 
@@ -107,7 +107,7 @@ Přejděte zpět do složky *Src* a vytvořte *testovací* složku se složkou *
 
 Testovací projekt aktuálně nemůže testovat typy v `NewTypes` a vyžaduje odkaz `NewTypes` na projekt. Chcete-li přidat odkaz na projekt, [`dotnet add reference`](../tools/dotnet-add-reference.md) použijte příkaz:
 
-```console
+```dotnetcli
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 

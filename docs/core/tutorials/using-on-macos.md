@@ -3,12 +3,12 @@ title: 'Kurz: Vytvoření řešení .NET Core v macOS pomocí Visual Studio Code
 description: Tento dokument popisuje kroky a pracovní postup pro vytvoření řešení .NET Core pomocí Visual Studio Code.
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: 022afd99c6d36d7a60ac40f3f27ba073c5470bd2
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 5df43ae235b9fd901a65f7f8898bec67e24de682
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71082814"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117368"
 ---
 # <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Kurz: Vytvoření řešení .NET Core v macOS pomocí Visual Studio Code
 
@@ -33,19 +33,19 @@ Spusťte Visual Studio Code. Stiskněte klávesu <kbd>CTRL</kbd> + <kbd>\`</kbd>
 
 Začněte vytvořením souboru řešení, který slouží jako kontejner pro jeden nebo více projektů .NET Core. V terminálu spusťte [`dotnet new`](../tools/dotnet-new.md) příkaz pro vytvoření nového řešení *zlatý. sln* uvnitř nové složky s názvem *zlatá*:
 
-```console
+```dotnetcli
 dotnet new sln -o golden
 ```
 
 Přejděte do nové *zlaté* složky a spusťte následující příkaz pro vytvoření projektu knihovny, který ve složce *knihovny* vytvoří dva soubory,*Library. csproj* a *Class1.cs*:
 
-```console
+```dotnetcli
 dotnet new classlib -o library
 ```
 
 Spusťte příkaz pro přidání nově vytvořeného projektu *Library. csproj* do řešení: [`dotnet sln`](../tools/dotnet-sln.md)
 
-```console
+```dotnetcli
 dotnet sln add library/library.csproj
 ```
 
@@ -63,7 +63,7 @@ Soubor *Library. csproj* obsahuje následující informace:
 
 Naše metody knihovny serializovat a deserializovat objekty ve formátu JSON. Pro podporu serializace a deserializace JSON přidejte odkaz na `Newtonsoft.Json` balíček NuGet. `dotnet add` Příkaz přidá nové položky do projektu. Chcete-li přidat odkaz na balíček NuGet, použijte [`dotnet add package`](../tools/dotnet-add-package.md) příkaz a zadejte název balíčku:
 
-```console
+```dotnetcli
 dotnet add library package Newtonsoft.Json
 ```
 
@@ -77,7 +77,7 @@ Tím se `Newtonsoft.Json` přidá a jeho závislosti do projektu knihovny. Pří
 
 Execute [`dotnet restore`](../tools/dotnet-restore.md)([Viz poznámku](#dotnet-restore-note)), která obnoví závislosti a vytvoří složku *obj* v *knihovně* se třemi soubory, včetně souboru *Project. assets. JSON* :
 
-```console
+```dotnetcli
 dotnet restore
 ```
 
@@ -100,7 +100,7 @@ Třída obsahuje jednu veřejnou `Get`metodu, která vrací součet dvou čísel
 
 Sestavte knihovnu pomocí [`dotnet build`](../tools/dotnet-build.md) příkazu. Tím se vytvoří soubor *Library. dll* v rámci *zlaté/knihovny/přihrádky/ladění/netstandard 1.4*:
 
-```console
+```dotnetcli
 dotnet build
 ```
 
@@ -108,19 +108,19 @@ dotnet build
 
 Sestavte projekt testů pro knihovnu. Ze *zlaté* složky vytvořte nový testovací projekt:
 
-```console
+```dotnetcli
 dotnet new xunit -o test-library
 ```
 
 Přidejte testovací projekt do řešení:
 
-```console
+```dotnetcli
 dotnet sln add test-library/test-library.csproj
 ```
 
 Přidejte projekt odkaz na knihovnu, kterou jste vytvořili v předchozí části, aby kompilátor mohl najít a použít projekt knihovny. [`dotnet add reference`](../tools/dotnet-add-reference.md) Použijte příkaz:
 
-```console
+```dotnetcli
 dotnet add test-library/test-library.csproj reference library/library.csproj
 ```
 
@@ -154,7 +154,7 @@ Všimněte si, že hodnota 42 se nerovná 19 + 23 (nebo 42) při prvním vytvoř
 
 Ze *zlaté* složky spusťte následující příkazy:
 
-```console
+```dotnetcli
 dotnet restore 
 dotnet test test-library/test-library.csproj
 ```
@@ -163,7 +163,7 @@ Tyto příkazy rekurzivně vyhledají všechny projekty pro obnovení závislost
 
 Upravte soubor *UnitTest1.cs* a změňte kontrolní výraz z `Assert.NotEqual` na. `Assert.Equal` Spusťte následující příkaz ze *zlaté* složky a spusťte test znovu, který projde tímto časem:
 
-```console
+```dotnetcli
 dotnet test test-library/test-library.csproj
 ```
 
@@ -173,19 +173,19 @@ Aplikace konzoly, kterou vytvoříte pomocí následujících kroků, provede z�
 
 Vytvořit novou konzolovou aplikaci ze *zlaté* složky:
 
-```console
+```dotnetcli
 dotnet new console -o app
 ```
 
 Přidejte projekt konzolové aplikace do řešení:
 
-```console
+```dotnetcli
 dotnet sln add app/app.csproj
 ```
 
 Vytvořte závislost na knihovně spuštěním `dotnet add reference` příkazu:
 
-```console
+```dotnetcli
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
@@ -204,7 +204,7 @@ using Library;
 
 Spuštěním následujícího `dotnet run` příkazu spusťte spustitelný soubor, `-p` kde možnost `dotnet run` určuje projekt pro hlavní aplikaci. Aplikace vytvoří řetězec "odpověď je 42".
 
-```console
+```dotnetcli
 dotnet run -p app/app.csproj
 ```
 

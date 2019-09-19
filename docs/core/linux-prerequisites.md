@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislosti rozhraní .NET Core
 author: thraka
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: 5fcf931572f3c7e9b9857d2e91e9d620c7aad0bd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 31c53b2cc0fe576e56685f4a5561258136fd2541
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969871"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116583"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -150,7 +150,7 @@ V systému Linux jsou k dispozici dvě možnosti balíčku instalačního progra
 
 Skript ve výchozím nastavení instaluje nejnovější verzi "LTS", která je aktuálně .NET Core 1,1. Pokud chcete nainstalovat .NET Core 2,1, spusťte skript s následujícím přepínačem:
 
-```console
+```bash
 ./dotnet-install.sh -c Current
 ```
 

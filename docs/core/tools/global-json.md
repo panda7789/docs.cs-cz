@@ -3,12 +3,12 @@ title: global.json – přehled
 description: Naučte se používat soubor Global. JSON k nastavení verze .NET Core SDK při spouštění příkazů .NET Core CLI.
 ms.date: 12/03/2018
 ms.custom: updateeachrelease, seodec18
-ms.openlocfilehash: 3c3793011560cd7428e47bd3340d0a935247760f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2c1fec102993b61e1eb699e8d3508b773302f569
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849596"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117430"
 ---
 # <a name="globaljson-overview"></a>global.json – přehled
 
@@ -53,7 +53,7 @@ Následující příklad ukazuje obsah souboru *Global. JSON* :
 
 Je užitečné znát, které verze jsou k dispozici, aby je bylo možné nastavit v *globálním souboru. JSON* . Úplný seznam podporovaných dostupných sad SDK najdete na stránce [stáhnout jádro .NET Core](https://dotnet.microsoft.com/download/dotnet-core) . Počínaje sadou .NET Core 2,1 SDK můžete spuštěním následujícího příkazu ověřit, které verze sady SDK jsou na vašem počítači již nainstalovány:
 
-```console
+```dotnetcli
 dotnet --list-sdks
 ```
 
@@ -61,7 +61,7 @@ Pokud chcete na svém počítači nainstalovat další .NET Core SDK verze, nav�
 
 Nový soubor *Global. JSON* můžete v aktuálním adresáři vytvořit spuštěním příkazu [dotnet New](dotnet-new.md) , podobně jako v následujícím příkladu:
 
-```console
+```dotnetcli
 dotnet new globaljson --sdk-version 2.2.100
 ```
 

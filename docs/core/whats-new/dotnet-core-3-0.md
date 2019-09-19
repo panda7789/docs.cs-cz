@@ -6,24 +6,25 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 09/05/2019
-ms.openlocfilehash: 2d18e7750e0c2e2a44028d1e906a8536e47d979d
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.date: 09/17/2019
+ms.openlocfilehash: 08ad77fbad7ad468e45fe629041ded82544792f2
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70394287"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116113"
 ---
-# <a name="whats-new-in-net-core-30-preview-9"></a>Co je nového v .NET Core 3,0 (Preview 9)
+# <a name="whats-new-in-net-core-30-release-candidate-1"></a>Co je nového v .NET Core 3,0 (Release Candidate 1)
 
-Tento článek popisuje, co je v .NET Core 3,0 (v Preview 9) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 až Release Candidate 1 (RC1) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
-.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme používat [Visual Studio 2019 16,3 Preview 3](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pro Mac 8,3](https://docs.microsoft.com/visualstudio/mac/install-preview?view=vsmac-2019)nebo [Visual Studio Code](https://code.visualstudio.com/) s  **C# rozšířením**.
+.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme používat [Visual Studio 2019 16,3 Preview 4](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pro Mac 8,3](https://docs.microsoft.com/visualstudio/mac/install-preview?view=vsmac-2019)nebo [Visual Studio Code](https://code.visualstudio.com/) s  **C# rozšířením**.
 
-[Stáhněte si a začněte používat .NET Core 3,0 Preview 9](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
+[Stáhněte si a začněte s .NET Core 3,0 RC1](https://aka.ms/netcore3download) hned na Windows, MacOS nebo Linux.
 
 Další informace o jednotlivých vydaných verzích Preview najdete v následujících oznámeních:
 
+- [Oznámení .NET Core 3,0 RC1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-release-candidate-1/)
 - [Oznámení .NET Core 3,0 Preview 9](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-9/)
 - [Oznámení .NET Core 3,0 Preview 8](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/)
 - [Oznámení .NET Core 3,0 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/)
@@ -36,9 +37,9 @@ Další informace o jednotlivých vydaných verzích Preview najdete v následuj
 
 ## <a name="production-supported-preview"></a>Verze Preview podporovaná v produkci
 
-.NET Core Preview 9 se považuje za produkčního, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v Preview 9, najdete v [oznámení verze Preview 9](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-9/).
+.NET Core RC1 se považuje za produkční, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v RC1, najdete v [oznámení RC1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-release-candidate-1/).
 
-Pokud používáte předchozí verzi Preview, musíte přejít na verzi Preview 9, abyste pokračovali v používání možnosti "podpora živě".
+Pokud používáte předchozí verzi Preview, musíte přejít na RC1, aby pokračovala podpora "začít živě".
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
@@ -125,7 +126,7 @@ Chcete-li publikovat soubor s jedním souborem, nastavte `PublishSingleFile` v p
 
 -nebo-
 
-```console
+```dotnetcli
 dotnet publish -r win10-x64 /p:PublishSingleFile=true
 ```
 
@@ -147,7 +148,7 @@ Chcete-li tento nástroj povolit, `<PublishTrimmed>` přidejte do projektu nasta
 </PropertyGroup>
 ```
 
-```console
+```dotnetcli
 dotnet publish -r <rid> -c Release
 ```
 
@@ -197,7 +198,7 @@ Chcete-li zkompilovat projekt jako ReadyToRun, postupujte takto:
 
 01. Publikujte samostatně uzavřenou aplikaci. Tento příkaz například vytvoří samostatnou aplikaci pro 64 verzi Windows:
 
-    ```console
+    ```dotnetcli
     dotnet publish -c Release -r win-x64 --self-contained true
     ```
 
@@ -266,7 +267,7 @@ Součást Desktop systému Windows je součástí sady Windows .NET Core 3,0 SDK
 
 Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících `dotnet` příkazů:
 
-```console
+```dotnetcli
 dotnet new wpf
 dotnet new winforms
 ```

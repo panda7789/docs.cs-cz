@@ -4,12 +4,12 @@ description: Přehled nástroje Microsoft WCF dotnet-Svcutil, který přidává 
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7c3e2f7bcfb337a09a9cc13068c22d496762a90f
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: c6eb17ca6cd4ce920cd358a87d2a4a6759dc3439
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969937"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117255"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>WCF dotnet – nástroj Svcutil pro .NET Core
 
@@ -64,14 +64,14 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
 
 2. V tomto adresáři C# vytvořte nový webový projekt pomocí [`dotnet new`](../tools/dotnet-new.md) příkazu následujícím způsobem:
 
-    ```console
+    ```dotnetcli
     dotnet new web
     ```
 
 3. Nainstalujte balíček NuGet jako nástroj rozhraní příkazového řádku: [ `dotnet-svcutil` ](https://nuget.org/packages/dotnet-svcutil) <!-- markdownlint-disable MD023 -->
     # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
-    ```console
+    ```dotnetcli
     dotnet tool install --global dotnet-svcutil
     ```
 
@@ -86,7 +86,7 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
 
     Pak obnovte balíček _dotnet-Svcutil_ pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu následujícím způsobem:
 
-    ```console
+    ```dotnetcli
     dotnet restore
     ```
 
@@ -96,13 +96,13 @@ V okně příkazového řádku Windows, macOS nebo Linux proveďte následujíc�
 
     # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
-    ```console
+    ```dotnetcli
     dotnet-svcutil http://contoso.com/SayHello.svc
     ```
 
     # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
 
-    ```console
+    ```dotnetcli
     dotnet svcutil http://contoso.com/SayHello.svc
     ```
 
@@ -114,7 +114,7 @@ Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference.
 
 1. Pomocí [`dotnet restore`](../tools/dotnet-restore.md) příkazu obnovte balíčky služby WCF následujícím způsobem:
 
-    ```console
+    ```dotnetcli
     dotnet restore
     ```
 
@@ -148,7 +148,7 @@ Vygenerovaný soubor je uložený jako _HelloSvcutil/ServiceReference/reference.
 
 5. Spusťte aplikaci pomocí [`dotnet run`](../tools/dotnet-run.md) příkazu následujícím způsobem:
 
-    ```console
+    ```dotnetcli
     dotnet run
     ```
 
@@ -159,13 +159,13 @@ Měl by se zobrazit následující výstup: "Hello dotnet-Svcutil!"
 Podrobný popis `dotnet-svcutil` parametrů nástroje získáte tak, že vyvoláte nástroj, který předává parametr help následujícím způsobem:
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet – Svcutil 2. x](#tab/dotnetsvcutil2x)
 
-```console
+```dotnetcli
 dotnet-svcutil --help
 ```
 
 # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet – Svcutil 1. x](#tab/dotnetsvcutil1x)
 
-```console
+```dotnetcli
 dotnet svcutil --help
 ```
 

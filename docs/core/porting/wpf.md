@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 9885f666e68b795b9b6aba9cf31f9750e30fd170
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 1528e578a978de38998b3f3f4b7beb72ff7422d4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512287"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117069"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopové aplikace WPF na .NET Core
 
@@ -94,7 +94,7 @@ Dále musíte vytvořit projekt **MyWPFCore. csproj** v adresáři **MyWPFAppCor
 
 Pokud nechcete vytvořit soubor projektu ručně, můžete použít aplikaci Visual Studio nebo .NET Core SDK k vygenerování projektu. Je však nutné odstranit všechny ostatní soubory vygenerované šablonou projektu s výjimkou souboru projektu. Chcete-li použít sadu SDK, spusťte následující příkaz z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet new wpf -o MyWPFAppCore -n MyWPFCore
 ```
 
@@ -111,7 +111,7 @@ SolutionFolder
 
 Projekt **MyWPFCore. csproj** budete chtít přidat do aplikace **MyApp. sln** pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet sln add .\MyWPFAppCore\MyWPFCore.csproj
 ```
 
@@ -187,7 +187,7 @@ Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do
 
 Nejpravděpodobnější .NET Framework aplikace WPF má soubor **Packages. config** , který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Například pokud projekt .NET Framework odkazuje na `MahApps.Metro` balíček NuGet, přidejte ho do projektu pomocí sady Visual Studio. Odkaz na balíček můžete přidat také pomocí .NET Core CLI v adresáři **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet add .\MyWPFAppCore\MyWPFCore.csproj package MahApps.Metro -v 2.0.0-alpha0262
 ```
 
@@ -203,7 +203,7 @@ Předchozí příkaz přidá následující odkaz NuGet do projektu **MyWPFCore.
 
 Pokud máte problémy s kompilací vašich projektů, můžete používat jenom některá rozhraní API jenom pro Windows, která jsou k dispozici v .NET Framework, ale nejsou dostupná v .NET Core. Do projektu se můžete pokusit přidat balíček NuGet [sady Windows Compatibility Pack][compat-pack] . Tento balíček se spouští jenom ve Windows a přidává asi 20 000 rozhraní API Windows do projektů .NET Core a .NET Standard.
 
-```cli
+```dotnetcli
 dotnet add .\MyWPFAppCore\MyWPFCore.csproj package Microsoft.Windows.Compatibility
 ```
 
@@ -221,7 +221,7 @@ Jak je popsáno v tomto článku, Visual Studio 2019 podporuje pouze návrháře
 
 Jakmile aplikace Visual Studio 2019 podporuje návrháře WPF, můžete zkopírovat nebo vložit obsah souboru projektu .NET Core do souboru projektu .NET Framework. Pak odstraňte vzory glob souborů přidané s `<Source>` položkami a. `<EmbeddedResource>` Opravte cesty pro všechny odkazy na projekt, které vaše aplikace používá. Tím se efektivně upgraduje .NET Framework projekt na projekt .NET Core.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 - Přečtěte si další informace o sadě [Windows Compatibility Pack][compat-pack].
 - Podívejte se [na video o přenosu](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) .NET Frameworkho projektu WPF do .NET Core.

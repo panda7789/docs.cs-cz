@@ -4,12 +4,12 @@ description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké js
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9ff7e33a50eb0c5fb649b44dda6d72412a134584
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 01c1463ceddcd64e5bab05b95a5ae4a91b6da838
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202588"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117458"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
 
@@ -49,7 +49,7 @@ Pokud je nástroj hostovaný na NuGet, můžete si ho vyhledat pomocí hledání
 
 K instalaci globálního nástroje použijte příkaz [dotnet nástroje install](dotnet-tool-install.md) .NET Core CLI. Následující příklad ukazuje, jak nainstalovat globální nástroj ve výchozím umístění:
 
-```console
+```dotnetcli
 dotnet tool install -g dotnetsay
 ```
 
@@ -57,7 +57,7 @@ Pokud nástroj není možné nainstalovat, zobrazí se chybové zprávy. Ověřt
 
 Pokud se pokoušíte nainstalovat předběžnou verzi nebo konkrétní verzi nástroje, můžete číslo verze zadat v následujícím formátu:
 
-```console
+```dotnetcli
 dotnet tool install -g <package-name> --version <version-number>
 ```
 
@@ -94,7 +94,7 @@ dotnetsay
 
 Pokud autor nástroje chtěl, aby se nástroj objevil v kontextu `dotnet` výzvy, mohl by ho napsat způsobem, který ho zavolá, jako `dotnet <command>`například:
 
-```console
+```dotnetcli
 dotnet doc
 ```
 
@@ -120,7 +120,7 @@ Pokud aplikace nemůže najít vhodný modul runtime, spuštění se nespustí a
 
 Dalším problémem, ke kterému může dojít, je, že globální nástroj, který byl vytvořen v dřívější verzi Preview, nemusí běžet s aktuálně nainstalovanými moduly runtime .NET Core. To, které moduly runtime jsou nainstalovány na počítači, můžete zjistit pomocí následujícího příkazu:
 
-```console
+```dotnetcli
 dotnet --list-runtimes
 ```
 
@@ -141,24 +141,24 @@ Kontaktujte autora globálního nástroje a podívejte se, jestli můžou znovu 
 
 Zjistit, které příkazy jsou k dispozici pro globální nástroje:
 
-```console
+```dotnetcli
 dotnet tool --help
 ```
 
 Aktualizace globálního nástroje zahrnuje odinstalaci a opětovnou instalaci s nejnovější stabilní verzí. Pokud chcete aktualizovat globální nástroj, použijte příkaz [dotnet nástroje Update](dotnet-tool-update.md) :
 
-```console
+```dotnetcli
 dotnet tool update -g <packagename>
 ```
 
-Odeberte globální nástroj pomocí odinstalace [nástroje dotnet](dotnet-tool-uninstall.md):
+Odeberte globální nástroj pomocí [odinstalace nástroje dotnet](dotnet-tool-uninstall.md):
 
-```console
+```dotnetcli
 dotnet tool uninstall -g <packagename>
 ```
 
 Chcete-li zobrazit všechny globální nástroje, které jsou aktuálně nainstalovány v počítači, spolu s jejich verzí a příkazy, použijte příkaz pro [seznam nástrojů dotnet](dotnet-tool-list.md) :
 
-```console
+```dotnetcli
 dotnet tool list -g
 ```

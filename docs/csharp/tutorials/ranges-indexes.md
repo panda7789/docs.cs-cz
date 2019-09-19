@@ -3,16 +3,16 @@ title: Prozkoumat rozsahy dat pomocí indexů a rozsahů
 description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí indexů a rozsahů, abyste prozkoumali řezy sekvenční sady dat.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 27f4b90f130345dd10517a5de78c759066afdf07
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: d0eeadfff9732ced22e045536a88ed49cd98bbaa
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926642"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117840"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
-Rozsahy a indexy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům <xref:System.Array>v <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>. Tyto funkce umožňují přesnější, jasnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům prvků v sekvenci.
+Rozsahy a indexy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům <xref:System.Array>v <xref:System.String>, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>. Tyto funkce umožňují přesnější, jasnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům prvků v sekvenci.
 
 V tomto kurzu se naučíte:
 
@@ -24,12 +24,12 @@ V tomto kurzu se naučíte:
 
 ## <a name="language-support-for-indices-and-ranges"></a>Podpora jazyků pro indexy a rozsahy
 
-Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory.
+Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 
 - <xref:System.Index?displayProperty=nameWithType>představuje index do sekvence.
-- `^` Operátor, který určuje, že index je relativní ke konci sekvence.
+- Index z operátoru `^`end, který určuje, že index je relativní ke konci sekvence.
 - <xref:System.Range?displayProperty=nameWithType>představuje dílčí rozsah sekvence.
-- Operátor Range (`..`), který určuje začátek a konec rozsahu jako jeho operandy.
+- Operátor `..`rozsahu, který určuje začátek a konec rozsahu jako jeho operandy.
 
 Pojďme začít s pravidly pro indexy. Zvažte pole `sequence`. Index je stejný jako `sequence[0]`. `0` Index je stejný jako `sequence[sequence.Length]`. `^0` Všimněte si `sequence[^0]` , že vyvolá výjimku, stejně jako `sequence[sequence.Length]` . Pro jakékoli číslo `n`je index `^n` stejný jako `sequence[sequence.Length - n]`.
 

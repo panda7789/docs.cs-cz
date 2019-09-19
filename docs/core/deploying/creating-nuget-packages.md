@@ -1,43 +1,43 @@
 ---
-title: Vytvoří balíček NuGet s nástroji .NET Core rozhraní příkazového řádku (CLI)
-description: Zjistěte, jak vytvořit balíček NuGet pomocí příkazu "balíčku dotnet".
+title: Vytvoření balíčku NuGet pomocí nástrojů rozhraní příkazového řádku (CLI) .NET Core
+description: Naučte se vytvořit balíček NuGet pomocí příkazu dotnet Pack.
 author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: b86b2706968bf302a8421bcc8e12c32a97102e9e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d36a6ee7d524933577928daa9993fba8ce62f6c7
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632112"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116699"
 ---
-# <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Jak vytvořit balíček NuGet s nástroji .NET Core rozhraní příkazového řádku (CLI)
+# <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Vytvoření balíčku NuGet pomocí nástrojů rozhraní příkazového řádku (CLI) .NET Core
 
 > [!NOTE]
-> Následující obrázek znázorňuje ukázky příkazového řádku s použitím systému Unix. `dotnet pack` Příkaz, jak je znázorněno zde funguje stejným způsobem jako na Windows.
+> Následující příklad ukazuje ukázky příkazového řádku v systému UNIX. `dotnet pack` Příkaz, jak je znázorněno zde, funguje stejně jako v systému Windows.
 
-Knihovny .NET standard a .NET Core se očekává distribuována jako balíčky NuGet. Toto je ve skutečnosti jak všech knihoven .NET Standard jsou distribuované a využívat. Snadno to provádí pomocí `dotnet pack` příkazu.
+Očekává se, že jsou knihovny .NET Standard a .NET Core distribuované jako balíčky NuGet. To je fakt, jak jsou distribuovány a spotřebovány všechny knihovny .NET Standard. To je nejsnáze hotové `dotnet pack` pomocí příkazu.
 
-Představte si, že jste napsali úžasnou novou knihovnu, která chcete distribuovat přes NuGet. Můžete vytvořit balíček NuGet pomocí nástrojů pro různé platformy k tomu přesně! V následujícím příkladu se předpokládá knihovnu s názvem **SuperAwesomeLibrary** cíle, které `netstandard1.0`.
+Představte si, že jste právě napsali Super novou knihovnu, kterou byste chtěli distribuovat přes NuGet. Můžete vytvořit balíček NuGet s nástroji pro různé platformy, abyste ho mohli přesně dělat. Následující příklad předpokládá, že knihovna s názvem **SuperAwesomeLibrary** , `netstandard1.0`která cílí na.
 
-Pokud máte přechodné závislosti; To znamená, že projekt, který závisí na jiném balíčku, budete muset Ujistěte se, že k obnovení balíčků pro celé řešení s `dotnet restore` příkaz před vytvořením balíčku NuGet. Pokud tak neučiníte způsobí `dotnet pack` příkaz nebude správně fungovat.
+Pokud máte přenosné závislosti; To znamená, že projekt, který závisí na jiném balíčku, budete muset před vytvořením balíčku NuGet ověřit balíčky pro celé řešení pomocí `dotnet restore` příkazu. Pokud to neuděláte, nebudou mít `dotnet pack` příkaz správně fungovat.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Až se ujistíte, obnovení balíčků, můžete přejít k adresáři, kde se nachází knihovny:
+Po obnovení balíčků můžete přejít do adresáře, kde je knihovna umístěná:
 
 ```console
 cd src/SuperAwesomeLibrary
 ```
 
-Pak je pouze jediný příkaz z příkazového řádku:
+Pak se jedná jenom o jediný příkaz z příkazového řádku:
 
-```console
+```dotnetcli
 dotnet pack
 ```
 
-Vaše `/bin/Debug` složky se teď měl vypadat takto:
+Vaše `/bin/Debug` složka bude nyní vypadat takto:
 
 ```console
 $ ls bin/Debug
@@ -47,13 +47,13 @@ SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg
 ```
 
-Mějte na paměti, vznikne balíčku, který je schopen právě laděny. Pokud chcete vytvořit balíček NuGet s binárními soubory verze, všechno, co potřebujete udělat je přidat `--configuration` (nebo `-c`) přepněte a použít `release` jako argument.
+Všimněte si, že se tím vytvoří balíček, který je schopný ladit. Pokud chcete vytvořit balíček NuGet s binárními soubory vydání, stačí přidat `--configuration` přepínač (nebo `-c`) a použít `release` ho jako argument.
 
-```console
+```dotnetcli
 dotnet pack --configuration release
 ```
 
-Vaše `/bin` složky budou mít `release` složku, která obsahuje váš balíček NuGet s binárními soubory verze:
+Vaše `/bin` složka teď bude `release` obsahovat složku obsahující balíček NuGet s binárními soubory vydání:
 
 ```console
 $ ls bin/release
@@ -63,11 +63,11 @@ SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg
 ```
 
-A teď máte soubory potřebné k publikování balíčku NuGet.
+A teď máte potřebné soubory pro publikování balíčku NuGet!
 
-## <a name="dont-confuse-dotnet-pack-with-dotnet-publish"></a>Nepleťte si `dotnet pack` s `dotnet publish`
+## <a name="dont-confuse-dotnet-pack-with-dotnet-publish"></a>Nepleťte `dotnet pack` si s`dotnet publish`
 
-Je důležité si uvědomit, že v žádném bodě `dotnet publish` příkaz nepodílí. `dotnet publish` Příkaz slouží k nasazení aplikace se všemi jejich závislosti ve stejné sadě – ne pro generování balíčku NuGet k distribuci a spotřebované prostřednictvím balíčku NuGet.
+Je důležité si uvědomit, že v žádném okamžiku není `dotnet publish` zahrnutý příkaz. `dotnet publish` Příkaz slouží k nasazení aplikací se všemi jejich závislostmi ve stejné sadě, a ne pro vygenerování balíčku NuGet, který se má distribuovat a spotřebovat přes NuGet.
 
 ## <a name="see-also"></a>Viz také:
 

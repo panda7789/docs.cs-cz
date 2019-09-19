@@ -3,12 +3,12 @@ title: Vlastní šablony pro dotnet New
 description: Seznamte se s vlastními šablonami pro jakýkoli typ projektu nebo souborů .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: be49e28d3aa09c9b3a3cb169ca39ff817a062b8f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7a599973a1914f0df187557e48718263f16546f3
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849846"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117802"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro dotnet New
 
@@ -24,11 +24,11 @@ Pokud chcete postupovat podle návodu a vytvořit šablonu, přečtěte si člá
 
 Při instalaci [.NET Core SDK](https://dotnet.microsoft.com/download)obdržíte spoustu předdefinovaných šablon pro vytváření projektů a souborů, včetně konzolových aplikací, knihoven tříd, projektů testování částí, ASP.NET Corech aplikací (včetně [úhlů](https://angular.io/) a [reagujících](https://facebook.github.io/react/) projektů). a konfigurační soubory. Pokud chcete zobrazit seznam předdefinovaných šablon, spusťte `dotnet new` příkaz `-l|--list` s možností:
 
-```console
+```dotnetcli
 dotnet new --list
 ```
 
-## <a name="configuration"></a>Konfiguraci
+## <a name="configuration"></a>Konfigurace
 
 Šablona se skládá z následujících částí:
 
@@ -170,7 +170,7 @@ K instalaci balíčku použijte příkaz [dotnet New-i |--Install](dotnet-new.md
 
 K instalaci balíčku šablony použijte identifikátor balíčku NuGet.
 
-```console
+```dotnetcli
 dotnet new -i <NUGET_PACKAGE_ID>
 ```
 
@@ -178,7 +178,7 @@ dotnet new -i <NUGET_PACKAGE_ID>
 
 Zadejte cestu k souboru balíčku NuGet *. nupkg* .
 
-```console
+```dotnetcli
 dotnet new -i <PATH_TO_NUPKG_FILE>
 ```
 
@@ -186,7 +186,7 @@ dotnet new -i <PATH_TO_NUPKG_FILE>
 
 Šablony lze nainstalovat ze složky šablony, jako je například složka *mytemplate1* z výše uvedeného příkladu. Zadejte cestu ke složce ve složce *. template. config* . Cesta k adresáři šablon nemusí být absolutní. K odinstalaci šablony, která je nainstalovaná ze složky, je ale nutná absolutní cesta.
 
-```console
+```dotnetcli
 dotnet new -i <FILE_SYSTEM_DIRECTORY>
 ```
 
@@ -194,7 +194,7 @@ dotnet new -i <FILE_SYSTEM_DIRECTORY>
 
 Příkaz uninstall bez dalších parametrů zobrazí seznam všech nainstalovaných šablon.
 
-```console
+```dotnetcli
 dotnet new -u
 ```
 
@@ -230,13 +230,13 @@ K odinstalaci balíčku použijte příkaz [dotnet New-u |--Uninstall](dotnet-ne
 
 Pokud byl balíček nainstalován buď pomocí kanálu NuGet, nebo přímo v souboru *. nupkg* , zadejte identifikátor.
 
-```console
+```dotnetcli
 dotnet new -u <NUGET_PACKAGE_ID>
 ```
 
 Pokud byl balíček nainstalovaný zadáním cesty ke složce *. template. config* , použijte k odinstalaci balíčku tuto **absolutní** cestu. Ve výstupu poskytnutém `dotnet new -u` příkazem můžete zobrazit absolutní cestu k šabloně. Další informace najdete v části [získání seznamu nainstalovaných šablon](#get-a-list-of-installed-templates) výše.
 
-```console
+```dotnetcli
 dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>
 ```
 
@@ -244,7 +244,7 @@ dotnet new -u <ABSOLUTE_FILE_SYSTEM_DIRECTORY>
 
 Po instalaci šablony použijte tuto šablonu spuštěním `dotnet new <TEMPLATE>` příkazu stejným způsobem jako u jakékoli jiné předem instalované šablony. Můžete také zadat [Možnosti](dotnet-new.md#options) `dotnet new` příkazu, včetně možností specifických pro šablonu, které jste nakonfigurovali v nastavení šablony. Zadejte krátký název šablony přímo do příkazu:
 
-```console
+```dotnetcli
 dotnet new <TEMPLATE>
 ```
 

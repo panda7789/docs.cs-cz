@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: 7ef36be47648ae338b5fe70b75431006c99be31f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: b2a660d2fc42f0dfe932afce167058f7c1efc92b
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105217"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71116503"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postupy: Port model Windows Forms desktopové aplikace do .NET Core
 
@@ -92,7 +92,7 @@ Dále musíte vytvořit projekt **MyFormsCore. csproj** v adresáři **MyFormsAp
 
 Pokud nechcete vytvořit soubor projektu ručně, můžete použít aplikaci Visual Studio nebo .NET Core SDK k vygenerování projektu. Je však nutné odstranit všechny ostatní soubory vygenerované šablonou projektu s výjimkou souboru projektu. Chcete-li použít sadu SDK, spusťte následující příkaz z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet new winforms -o MyFormsAppCore -n MyFormsCore
 ```
 
@@ -109,7 +109,7 @@ SolutionFolder
 
 Projekt **MyFormsCore. csproj** budete chtít přidat do aplikace **MyApp. sln** pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 ```
 
@@ -167,7 +167,7 @@ Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do
 
 Pravděpodobně vaše aplikace .NET Framework model Windows Forms má soubor **Packages. config** , který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Pokud například projekt .NET Framework `MetroFramework`odkazoval na `MetroFramework.Design`balíčky NuGet, a `MetroFramework.Fonts` , přidejte do projektu každý z nich pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework.Design
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package MetroFramework.Fonts
@@ -264,7 +264,7 @@ Jak vidíte, `<OutputType>` uzel byl odebrán, což nastaví výchozí kompilát
 
 Dále v hlavním projektu .NET Core **MyFormsCore. csproj** přidejte odkaz na novou knihovnu ovládacích prvků .net Core model Windows Forms. Přidejte odkaz buď pomocí sady Visual Studio, nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\MyControlsCore.csproj
 ```
 
@@ -280,7 +280,7 @@ Předchozí příkaz přidá následující do projektu **MyFormsCore. csproj** 
 
 Pokud máte problémy s kompilací vašich projektů, můžete používat jenom některá rozhraní API jenom pro Windows, která jsou k dispozici v .NET Framework, ale nejsou dostupná v .NET Core. Do projektu se můžete pokusit přidat balíček NuGet [sady Windows Compatibility Pack][compat-pack] . Tento balíček se spouští jenom ve Windows a přidává asi 20 000 rozhraní API Windows do projektů .NET Core a .NET Standard.
 
-```cli
+```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj package Microsoft.Windows.Compatibility
 ```
 
@@ -298,7 +298,7 @@ Jak je popsáno v tomto článku, Visual Studio 2019 podporuje pouze Návrháře
 
 Jakmile aplikace Visual Studio 2019 podporuje Návrhář formulářů, můžete zkopírovat nebo vložit obsah souboru projektu .NET Core do souboru projektu .NET Framework. Pak odstraňte vzory glob souborů přidané s `<Source>` položkami a. `<EmbeddedResource>` Opravte cesty pro všechny odkazy na projekt, které vaše aplikace používá. Tím se efektivně upgraduje .NET Framework projekt na projekt .NET Core.
  
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 - Přečtěte si další informace o sadě [Windows Compatibility Pack][compat-pack].
 - Podívejte se [na video o přenosu](https://www.youtube.com/watch?v=upVQEUc_KwU) .NET Framework model Windows Forms projektu do .NET Core.

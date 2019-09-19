@@ -3,12 +3,12 @@ title: dotnet – příkaz push NuGet
 description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 87557f606dead921961349fec4575394e6d359fd
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3299f79ec62aebdcdbef38f1e8b09a2dc5529ec4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202545"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117489"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -24,7 +24,7 @@ ms.locfileid: "70202545"
 
 ## <a name="synopsis"></a>Stručný obsah
 
-```console
+```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
     [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
@@ -90,37 +90,37 @@ Vypíše krátkou nápovědu k příkazu.
 
 * Vloží *foo. nupkg* na výchozí zdroj nabízených oznámení a určí klíč rozhraní API:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
 * Vložení *foo. nupkg* do vlastního zdroje `https://customsource`nabízených oznámení zadání klíče rozhraní API:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
   ```
 
 * Vloží *foo. nupkg* na výchozí zdroj nabízených oznámení:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push foo.nupkg
   ```
 
 * Vloží *foo. Symbols. nupkg* na výchozí zdroj symbolů:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push foo.symbols.nupkg
   ```
 
 * Vloží *foo. nupkg* na výchozí zdroj nabízených oznámení a určí časový limit 360 sekund:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push foo.nupkg --timeout 360
   ```
 
 * Vloží všechny soubory *. nupkg* v aktuálním adresáři do výchozího zdroje nabízených oznámení:
 
-  ```console
+  ```dotnetcli
   dotnet nuget push *.nupkg
   ```
   

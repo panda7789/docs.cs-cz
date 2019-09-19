@@ -4,12 +4,12 @@ description: Naučte se vytvářet knihovny .NET Core pomocí nástrojů .NET Co
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: 90d960c996acd5a34ffb2215344e123dabad1014
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 536319bc02b45e7948c89ae67988e821a55a842d
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849476"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117415"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
@@ -249,7 +249,7 @@ Je důležité, abyste mohli testovat napříč platformami. V poli můžete pou
 
 1. Obnovit balíčky a sestavit projekty:
 
-   ```bash
+   ```dotnetcli
    dotnet restore
    dotnet build
    ```
@@ -321,7 +321,7 @@ Tím se přidají tři projekty výše a soubor řešení, který je propojuje d
 
 Nejlepším způsobem, jak odkazovat na projekt, je použít .NET Core CLI pro přidání odkazu na projekt. Z adresářů projektu **AwesomeLibrary. CSharp** a **AwesomeLibrary. FSharp** můžete spustit následující příkaz:
 
-```console
+```dotnetcli
 dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 
