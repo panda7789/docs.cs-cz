@@ -2,12 +2,12 @@
 title: dotnet – příkaz Add Reference
 description: Příkaz dotnet Add Reference poskytuje pohodlný způsob, jak přidat projekt do odkazů projektu.
 ms.date: 06/26/2019
-ms.openlocfilehash: 867596058aad8f9c38918e6d6657709d0d0699b3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 06d10f6903251bc9d29ae856a900a20610565a14
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784043"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117786"
 ---
 # <a name="dotnet-add-reference"></a>dotnet – přidat odkaz
 
@@ -65,18 +65,18 @@ ms.locfileid: "70784043"
 
 * Přidat odkaz na projekt:
 
-  ```console
+  ```dotnetcli
   dotnet add app/app.csproj reference lib/lib.csproj
   ```
 
 * Přidat do projektu více odkazů na projekt v aktuálním adresáři:
 
-  ```console
+  ```dotnetcli
   dotnet add reference lib1/lib1.csproj lib2/lib2.csproj
   ```
 
 * Přidání více odkazů na projekt pomocí vzoru expanze názvů na platformě Linux/UNIX:
 
-  ```console
+  ```dotnetcli
   dotnet add app/app.csproj reference **/*.csproj
   ```

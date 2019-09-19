@@ -1,25 +1,25 @@
 ---
-title: příkaz listovat nástrojů DotNet
-description: Příkaz dotnet nástroj seznam uvádí zadaného nástroje rozhraní .NET Core globální z vašeho počítače.
+title: příkaz pro seznam nástrojů dotnet
+description: Příkaz pro výpis seznamu nástrojů dotnet obsahuje seznam zadaného globálního nástroje .NET Core z počítače.
 ms.date: 05/29/2018
-ms.openlocfilehash: d3ff7fc90faf6ede3f7de0d5af5112c77ca140db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 6d35b1dce0c6d57edb0c6dd5f9711f093bc804aa
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61648565"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117561"
 ---
-# <a name="dotnet-tool-list"></a>seznam nástrojů DotNet
+# <a name="dotnet-tool-list"></a>dotnet tool list
 
 [!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
-`dotnet tool list` -Obsahuje seznam všech [globální nástroje .NET Core](global-tools.md) aktuálně nainstalované ve výchozím adresáři na svém počítači nebo v zadané cestě.
+`dotnet tool list`– Zobrazí seznam všech [globálních nástrojů .NET Core](global-tools.md) , které jsou aktuálně nainstalované ve výchozím adresáři na vašem počítači nebo v zadané cestě.
 
-## <a name="synopsis"></a>Souhrn
+## <a name="synopsis"></a>Stručný obsah
 
-```console
+```dotnetcli
 dotnet tool list <-g|--global>
 dotnet tool list <--tool-path>
 dotnet tool list <-h|--help>
@@ -27,36 +27,36 @@ dotnet tool list <-h|--help>
 
 ## <a name="description"></a>Popis
 
-`dotnet tool list` Příkaz poskytuje způsob, jak můžete vypsat všechny globální nástroje .NET Core nainstalovat celou uživatel na svém počítači (profil aktuálního uživatele) nebo v zadané cestě. Příkaz vypíše název balíčku, nainstalovanou verzi a příkaz globální nástroj. Použití příkazu seznam, buď musíte zadat, že chcete zobrazit všechny nástroje celou uživatele pomocí `--global` možnost nebo zadat vlastní cesty pomocí `--tool-path` možnost.
+`dotnet tool list` Příkaz umožňuje zobrazit seznam všech globálních nástrojů .NET Core nainstalovaných na vašem počítači (aktuální profil uživatele) nebo v zadané cestě. Příkaz vypíše název balíčku, nainstalovanou verzi a příkaz globálních nástrojů. Chcete-li použít příkaz list, je nutné určit, že chcete zobrazit všechny nástroje pro celý uživatel pomocí `--global` možnosti nebo zadat vlastní cestu `--tool-path` pomocí možnosti.
 
 ## <a name="options"></a>Možnosti
 
 `-g|--global`
 
-Vypíše nástroje globální uživatelské úrovni. Nelze kombinovat s `--tool-path` možnost. Pokud nezadáte tuto možnost, je nutné zadat `--tool-path` možnost.
+Obsahuje seznam globálních nástrojů pro všechny uživatele. Nelze kombinovat s `--tool-path` možností. Pokud tuto možnost nezadáte, musíte zadat `--tool-path` možnost.
 
 `-h|--help`
 
-Vytiskne krátký nápovědy pro příkaz.
+Vypíše krátkou nápovědu k příkazu.
 
 `--tool-path <PATH>`
 
-Určuje vlastní umístění, kde najít globální nástroje. Cesta může být absolutní nebo relativní. Nelze kombinovat s `--global` možnost. Pokud nezadáte tuto možnost, je nutné zadat `--global` možnost.
+Určuje vlastní umístění, kde se mají najít globální nástroje. Cesta může být absolutní nebo relativní. Nelze kombinovat s `--global` možností. Pokud tuto možnost nezadáte, musíte zadat `--global` možnost.
 
 ## <a name="examples"></a>Příklady
 
-Uvádí všechny nainstalované nástroje pro globální uživatelské úrovni na svém počítači (profil aktuálního uživatele):
+Zobrazí seznam všech globálních nástrojů nainstalovaných v celém počítači (aktuální profil uživatele):
 
 `dotnet tool list -g`
 
-Vypíše globální nástroje z konkrétní složky Windows:
+Zobrazí seznam globálních nástrojů z konkrétní složky systému Windows:
 
 `dotnet tool list --tool-path c:\global-tools`
 
-Vypíše globální nástroje z konkrétní složky Linux nebo macOS:
+Zobrazí seznam globálních nástrojů z konkrétní složky Linux/macOS:
 
 `dotnet tool list --tool-path ~/bin`
 
 ## <a name="see-also"></a>Viz také:
 
-- [.NET Core Global Tools](global-tools.md)
+- [Globální nástroje .NET Core](global-tools.md)

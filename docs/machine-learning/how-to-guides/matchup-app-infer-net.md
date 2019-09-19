@@ -3,12 +3,12 @@ title: Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravd
 description: Naučte se používat programování pravděpodobnostní s Infer.NET k vytvoření aplikace seznamu her pro zápasu v závislosti na zjednodušené verzi TrueSkill.
 ms.date: 05/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: aa3ad9528238e4f5a5eb187af71f2d2da1ea9cba
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: edb747355f2d41d0400c6a989eea37423bbda2b4
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855784"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117984"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
 
@@ -28,7 +28,7 @@ Programování pravděpodobnostní vám umožňuje vytvářet statistické model
 
 1. Otevřete nový příkazový řádek a spusťte následující příkazy:
 
-```console
+```dotnetcli
 dotnet new console -o myApp
 cd myApp
 ```
@@ -39,7 +39,7 @@ Příkaz vytvoří aplikaci typu`console`. `new` `dotnet` Parametr vytvoří adr
 
 Pokud chcete používat Infer.NET, musíte `Microsoft.ML.Probabilistic.Compiler` balíček nainstalovat. Na příkazovém řádku spusťte následující příkaz:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.ML.Probabilistic.Compiler
 ```
 
@@ -130,7 +130,7 @@ namespace myApp
 
 Na příkazovém řádku spusťte následující příkaz:
 
-```console
+```dotnetcli
 dotnet run
 ```
 
@@ -155,7 +155,7 @@ Ve výsledcích si všimněte, že hráč 3 rozhodne o něco vyšším než hrá
 
 Návrh statistických modelů je dovedností sám o sobě. Tým Microsoft Research Cambridge napsal [bezplatnou online knihu](http://mbmlbook.com/), která poskytuje mírné představení tohoto článku. Kapitola 3 této knihy pokrývá model TrueSkill podrobněji. Jakmile máte model, můžete ho transformovat na kód pomocí [obsáhlé dokumentace](https://dotnet.github.io/infer/) na webu Infer.NET.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Podívejte se na úložiště GitHub Infer.NET a pokračujte v učení a Najděte další ukázky.
 > [!div class="nextstepaction"]
