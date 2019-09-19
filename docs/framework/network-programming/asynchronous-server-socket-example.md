@@ -9,15 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: f52dfce66b6d62a8eb7bf75b626feacfb9172c29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 555b0661bf68a7461f87bf2895e47284a03c41a6
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61927527"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048960"
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad asynchronního serverového soketu
-Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavena s asynchronní soketu, tak, že není pozastavené spuštění serverové aplikace čeká připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  
+Následující ukázkový program vytvoří server, který přijímá žádosti o připojení od klientů. Server je sestaven pomocí asynchronního soketu, takže spuštění serverové aplikace není pozastavené, když čeká na připojení z klienta. Aplikace přijme řetězec z klienta, zobrazí řetězec v konzole nástroje a potom vrátí řetězec zpátky klientovi. Řetězec z klienta musí obsahovat řetězec "\<EOF >" k signalizaci konce zprávy.  
   
 ```vb  
 Imports System  
@@ -291,6 +291,6 @@ public class AsynchronousSocketListener {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příklad asynchronního klientského soketu](../../../docs/framework/network-programming/asynchronous-client-socket-example.md)
-- [Použití asynchronního serverového soketu](../../../docs/framework/network-programming/using-an-asynchronous-server-socket.md)
-- [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)
+- [Příklad asynchronního klientského soketu](asynchronous-client-socket-example.md)
+- [Použití asynchronního serverového soketu](using-an-asynchronous-server-socket.md)
+- [Příklady kódu soketu](socket-code-examples.md)

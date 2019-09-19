@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0'
+title: 'Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WinFX Runtime user-agent string
 - presence of WPT [WPF], detecting
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
-ms.openlocfilehash: e307125a2a8de3edc4df2fc1022c6e3de1904879
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c68daf2cb5687497e66ad3022ce42352a17ae0f7
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960247"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053441"
 ---
-# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0
+# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
 Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, musí nejdřív ověřit, že je k dispozici modul runtime .NET Framework. Toto téma poskytuje skript napsaný ve formátu HTML/JavaScript, který mohou správci použít k určení, zda .NET Framework k dispozici v systému.  
   
 > [!NOTE]
@@ -23,7 +23,7 @@ Než můžou správci nasadit aplikace Microsoft .NET Framework v systému, mus�
 ## <a name="detect-the-net-clr-user-agent-string"></a>Zjištění řetězce uživatelského agenta .NET CLR  
  Když je nainstalovaná .NET Framework, soubor MSI přidá ".NET CLR" a číslo verze do řetězce UserAgent. Následující příklad ukazuje skript vložený do jednoduché stránky HTML. Skript vyhledá řetězec UserAgent a určí, zda je .NET Framework nainstalován, a zobrazí stavovou zprávu výsledků hledání.  
   
-```  
+```html  
 <HTML>  
   <HEAD>  
     <TITLE>Test for the .NET Framework 3.0</TITLE>  

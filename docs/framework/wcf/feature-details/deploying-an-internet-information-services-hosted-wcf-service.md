@@ -2,12 +2,12 @@
 title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 95c56f767bbe8dce44ea742de00c65c357bd1378
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e46bcec846fcc8f9455c436bb551564e1cb5b5ea
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895108"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71053317"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 
@@ -29,7 +29,7 @@ Podrobný návod k vytváření služby WCF hostované službou IIS najdete v t�
 
 Aby služby WCF hostované službou IIS fungovaly správně, musí být nainstalované WCF, IIS a ASP.NET. Postupy pro instalaci WCF (jako součást .NET Framework), ASP.NET a IIS se liší v závislosti na vašem operačním systému. Další informace o instalaci WCF a .NET Framework najdete v tématu [instalace .NET Framework pro vývojáře](../../install/guide-for-developers.md). Chcete-li nainstalovat službu IIS v systému Windows 10, otevřete **Ovládací panely** **programy a funkce** a potom vyberte možnost **zapnout nebo vypnout funkce systému Windows**. V **funkcích Windows**vyberte **Internetová informační služba** a pak zvolte **OK**.
 
-![Funkce Windows se zvýrazněnou službou IIS](media/windows-features-iis.png)
+![Funkce Windows se zvýrazněnou službou IIS](./media/windows-features-iis.png)
 
 Pokyny k instalaci služby IIS do jiných operačních systémů najdete v tématu [instalace služby IIS v systému Windows Vista a Windows 7](/iis/install/installing-iis-7/installing-iis-on-windows-vista-and-windows-7) a [Instalace IIS 8,5 na Windows Server 2012 R2](/iis/install/installing-iis-85/installing-iis-85-on-windows-server-2012-r2).
 

@@ -17,25 +17,25 @@ helpviewer_keywords:
 - Internet, streams
 - streams
 ms.assetid: 02b05fba-7235-45ce-94e5-060436ee0875
-ms.openlocfilehash: 9f7d6bfcaa0d1cc4eb6c83cb53120bec695fe85e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa3fc56dc461d4fe22e2ff391f3561d8834128d8
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583477"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046880"
 ---
 # <a name="using-streams-on-the-network"></a>Použití streamů v síti
-Síťové prostředky jsou reprezentovány v rozhraní .NET Framework jako datové proudy. Rozhraní .NET Framework pomocí zpracování datových proudů obecně, nabízí následující možnosti:  
+Síťové prostředky jsou reprezentovány v .NET Framework jako datové proudy. Při obecném zpracování datových proudů nabízí .NET Framework následující možnosti:  
   
-- Běžný způsob odesílání a příjem dat z webu. Bez ohledu skutečný obsah souboru – HTML, XML nebo cokoli jiného, bude aplikace používat <xref:System.IO.Stream.Write%2A?displayProperty=nameWithType> a <xref:System.IO.Stream.Read%2A?displayProperty=nameWithType> odesílat a přijímat data.  
+- Běžný způsob, jak odesílat a přijímat webová data. Bez ohledu na skutečný obsah souboru – HTML, XML nebo cokoli jiného – vaše aplikace bude používat <xref:System.IO.Stream.Write%2A?displayProperty=nameWithType> a <xref:System.IO.Stream.Read%2A?displayProperty=nameWithType> k posílání a přijímání dat.  
   
-- Kompatibilita s datovými proudy v rozhraní .NET Framework. Datové proudy se používají v rozhraní .NET Framework, která má bohaté infrastrukturu pro jejich zpracování. Například můžete upravit aplikaci, která čte data XML z <xref:System.IO.FileStream> číst data z <xref:System.Net.Sockets.NetworkStream> místo toho změnou jen několika řádků kódu, které inicializovat datový proud. Hlavní rozdíly mezi **NetworkStream** třídy a jiné datové proudy, které **NetworkStream** neumožňuje vyhledávání, <xref:System.Net.Sockets.NetworkStream.CanSeek%2A> vždy vrátí vlastnost **false**a <xref:System.Net.Sockets.NetworkStream.Seek%2A> a <xref:System.Net.Sockets.NetworkStream.Position%2A> vyvolání metody <xref:System.NotSupportedException>.  
+- Kompatibilita s datovými proudy napříč .NET Framework. Datové proudy se používají v rámci .NET Framework, které mají bohatou infrastrukturu pro jejich zpracování. Například můžete upravit aplikaci, která čte data jazyka XML z a <xref:System.IO.FileStream> <xref:System.Net.Sockets.NetworkStream> , a to tak, že změníte pouze pár řádků kódu, které inicializují datový proud. Hlavní rozdíly mezi třídou **NetworkStream** a jinými datovými proudy je, že **NetworkStream** nelze vyhledat, <xref:System.Net.Sockets.NetworkStream.CanSeek%2A> vlastnost <xref:System.Net.Sockets.NetworkStream.Seek%2A> vždy vrátí **hodnotu false**a metody a <xref:System.Net.Sockets.NetworkStream.Position%2A> vyvolávají výjimku <xref:System.NotSupportedException>.  
   
-- Zpracování dat, protože doručena. Datové proudy poskytují přístup k datům, jako je e-mailu ze sítě, místo vynucení aplikace čekat celá sada dat ke stažení.  
+- Zpracování dat při jejich doručení. Datové proudy poskytují přístup k datům, když se dorazí ze sítě, a nenutí, aby aplikace čekala na stažení celé datové sady.  
   
- <xref:System.Net.Sockets> Obsahuje obor názvů **NetworkStream** třídu, která implementuje <xref:System.IO.Stream> třídy speciálně pro použití se síťovým prostředkům. Třídy v <xref:System.Net.Sockets> oboru názvů, použijte **NetworkStream** pro reprezentaci datových proudů.  
+ Obor názvů obsahuje<xref:System.IO.Stream> třídu NetworkStream, která implementuje specifickou třídu pro použití se síťovými prostředky. <xref:System.Net.Sockets> Třídy v <xref:System.Net.Sockets> oboru názvů používají třídu **NetworkStream** k reprezentování datových proudů.  
   
- Chcete-li odesílat data do sítě pomocí vrácený datový proud, zavolejte <xref:System.Net.WebRequest.GetRequestStream%2A> na vaše <xref:System.Net.WebRequest>. **WebRequest** odešle hlavičky požadavku na server, pak může odesílat data k síťovému prostředku pomocí volání <xref:System.IO.Stream.BeginWrite%2A>, <xref:System.IO.Stream.EndWrite%2A>, nebo <xref:System.IO.Stream.Write%2A> metoda ve vráceném datovém proudu. Může vyžadovat některé protokoly, jako je například HTTP, můžete nastavit vlastnosti specifické pro protokol před odesláním údajů. Následující příklad kódu ukazuje, jak nastavit vlastnosti specifické pro protokol HTTP pro odesílání dat. Předpokládá, že proměnné `sendData` obsahuje data k odeslání a že je proměnná `sendLength` je počet bajtů dat k odeslání.  
+ Pokud chcete odesílat data do sítě pomocí vráceného datového proudu, <xref:System.Net.WebRequest.GetRequestStream%2A> zavolejte <xref:System.Net.WebRequest>na. **WebRequest** pošle hlavičky žádosti na server. pak můžete odeslat data do síťového prostředku voláním <xref:System.IO.Stream.BeginWrite%2A>metody, <xref:System.IO.Stream.EndWrite%2A>nebo <xref:System.IO.Stream.Write%2A> na vráceném datovém proudu. Některé protokoly, například HTTP, můžou před odesláním dat vyžadovat, abyste nastavili vlastnosti specifické pro protokol. Následující příklad kódu ukazuje, jak nastavit vlastnosti specifické pro protokol HTTP pro odesílání dat. Předpokládá, že proměnná `sendData` obsahuje data k odeslání a že proměnná `sendLength` je počet bajtů dat k odeslání.  
   
 ```csharp  
 HttpWebRequest request =   
@@ -68,19 +68,19 @@ Catch
 End Try  
 ```  
   
- Chcete-li přijímat data ze sítě, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A> na vaše <xref:System.Net.WebResponse>. Potom může číst data ze síťových prostředků pomocí volání <xref:System.IO.Stream.BeginRead%2A>, <xref:System.IO.Stream.EndRead%2A>, nebo <xref:System.IO.Stream.Read%2A> metoda ve vráceném datovém proudu.  
+ Pokud chcete přijímat data ze sítě, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A> <xref:System.Net.WebResponse>na. Pak můžete číst data ze síťového prostředku voláním <xref:System.IO.Stream.BeginRead%2A>metody, <xref:System.IO.Stream.EndRead%2A>nebo <xref:System.IO.Stream.Read%2A> ve vráceném datovém proudu.  
   
- Při použití datových proudů z síťovým prostředkům, mějte na paměti následující body:  
+ Při použití datových proudů ze síťových prostředků mějte na paměti následující body:  
   
-- **CanSeek** vždy vrátí vlastnost **false** od **NetworkStream** třídy nelze změnit pozici v datovém proudu. **Seek** a **pozice** vyvolání metody **NotSupportedException**.  
+- Vlastnost **CanSeek** vždy vrací **hodnotu false** , protože třída **NetworkStream** nemůže měnit pozici v datovém proudu. Metody **hledání** a **umístění** vyvolávají výjimku **NotSupportedException**.  
   
-- Při použití **WebRequest** a **WebResponse**, Streamovat instancí vytvořených voláním **GetResponseStream** jsou jen pro čtení a instance vytvořené pomocí volání datovýproudstream **GetRequestStream** jsou jen pro zápis.  
+- Když použijete **WebRequest** a **WebResponse**, instance streamu vytvořené voláním **GetResponseStream** jsou jen pro čtení a instance streamu vytvořené voláním **GetRequestStream** jsou jen pro zápis.  
   
-- Použití <xref:System.IO.StreamReader> třídy, aby bylo snazší kódování. Následující příklad kódu používá **StreamReader** přečíst kódováním ASCII stream z **WebResponse** (v příkladu se nezobrazují žádost o).  
+- <xref:System.IO.StreamReader> Použijte třídu, aby bylo kódování snazší. Následující příklad kódu používá **StreamReader** ke čtení datového proudu kódovaného ASCII z **WebResponse** (příklad neukazuje vytvoření žádosti).  
   
-- Volání **GetResponse** může blokovat, pokud nejsou k dispozici síťové prostředky. Měli byste zvážit použití asynchronního požadavku s <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody.  
+- Volání **GetResponse** může blokovat, pokud nejsou k dispozici síťové prostředky. Měli byste zvážit použití asynchronního požadavku s <xref:System.Net.WebRequest.BeginGetResponse%2A> metodami a. <xref:System.Net.WebRequest.EndGetResponse%2A>  
   
-- Volání **GetRequestStream** můžete blokovat, když se vytvoří připojení k serveru. Měli byste zvážit použití asynchronního požadavku pro datový proud s <xref:System.Net.WebRequest.BeginGetRequestStream%2A> a <xref:System.Net.WebRequest.EndGetRequestStream%2A> metody.  
+- Volání **GetRequestStream** může blokovat při vytvoření připojení k serveru. Měli byste zvážit použití asynchronního požadavku pro datový proud s <xref:System.Net.WebRequest.BeginGetRequestStream%2A> metodami a. <xref:System.Net.WebRequest.EndGetRequestStream%2A>  
   
 ```csharp  
 // Create a response object.  
@@ -104,5 +104,5 @@ sr.Close()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
-- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Postupy: Vyžádání dat pomocí třídy WebRequest](how-to-request-data-using-the-webrequest-class.md)
+- [Žádosti o data](requesting-data.md)
