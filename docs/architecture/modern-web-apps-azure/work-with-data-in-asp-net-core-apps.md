@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 3b251003a2da998936a11acff3cc2975c4b78838
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 9d9e75767f5ed5010f618d5dbe1e58fe79454597
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373997"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117298"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -25,13 +25,13 @@ Pokud vytváříte novou ASP.NET Core aplikaci, která potřebuje pracovat s rel
 
 Pokud chcete použít EF Core s databází SQL Server, spusťte následující příkaz dotnet CLI:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
 Přidání podpory pro zdroj dat pro nedostatek paměti pro testování:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
 
