@@ -3,45 +3,45 @@ title: dotnet – příkaz vstest
 description: Příkaz dotnet VSTest vytvoří projekt a všechny jeho závislosti.
 author: mairaw
 ms.date: 05/30/2018
-ms.openlocfilehash: da18fda6419cb9eaa1f488a3576161c3054b4426
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: ffe3807be2c35fb4d6b46b83ed84200433f551d8
+ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969817"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71117515"
 ---
-# <a name="dotnet-vstest"></a><span data-ttu-id="643d7-103">dotnet vstest</span><span class="sxs-lookup"><span data-stu-id="643d7-103">dotnet vstest</span></span>
+# <a name="dotnet-vstest"></a><span data-ttu-id="69600-103">dotnet vstest</span><span class="sxs-lookup"><span data-stu-id="69600-103">dotnet vstest</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="643d7-104">Name</span><span class="sxs-lookup"><span data-stu-id="643d7-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="69600-104">Name</span><span class="sxs-lookup"><span data-stu-id="69600-104">Name</span></span>
 
-<span data-ttu-id="643d7-105">`dotnet-vstest`– Spustí testy ze zadaných souborů.</span><span class="sxs-lookup"><span data-stu-id="643d7-105">`dotnet-vstest` - Runs tests from the specified files.</span></span>
+<span data-ttu-id="69600-105">`dotnet-vstest`– Spustí testy ze zadaných souborů.</span><span class="sxs-lookup"><span data-stu-id="69600-105">`dotnet-vstest` - Runs tests from the specified files.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="643d7-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="643d7-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="69600-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="69600-106">Synopsis</span></span>
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="643d7-107">.NET Core 2,1</span><span class="sxs-lookup"><span data-stu-id="643d7-107">.NET Core 2.1</span></span>](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="69600-107">.NET Core 2,1</span><span class="sxs-lookup"><span data-stu-id="69600-107">.NET Core 2.1</span></span>](#tab/netcore21)
 
-```console
+```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [--Blame|/Blame] [--InIsolation|/InIsolation]
     [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="643d7-108">.NET Core 2,0</span><span class="sxs-lookup"><span data-stu-id="643d7-108">.NET Core 2.0</span></span>](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="69600-108">.NET Core 2,0</span><span class="sxs-lookup"><span data-stu-id="69600-108">.NET Core 2.0</span></span>](#tab/netcore20)
 
-```console
+```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath] 
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="643d7-109">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="643d7-109">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="69600-109">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="69600-109">.NET Core 1.x</span></span>](#tab/netcore1x)
 
-```console
+```dotnetcli
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger] 
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
@@ -49,57 +49,57 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 ---
 
-## <a name="description"></a><span data-ttu-id="643d7-110">Popis</span><span class="sxs-lookup"><span data-stu-id="643d7-110">Description</span></span>
+## <a name="description"></a><span data-ttu-id="69600-110">Popis</span><span class="sxs-lookup"><span data-stu-id="69600-110">Description</span></span>
 
-<span data-ttu-id="643d7-111">`dotnet-vstest` Příkaz`VSTest.Console` spustí aplikaci příkazového řádku pro spuštění automatizovaných testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="643d7-111">The `dotnet-vstest` command runs the `VSTest.Console` command-line application to run automated unit tests.</span></span>
+<span data-ttu-id="69600-111">`dotnet-vstest` Příkaz`VSTest.Console` spustí aplikaci příkazového řádku pro spuštění automatizovaných testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="69600-111">The `dotnet-vstest` command runs the `VSTest.Console` command-line application to run automated unit tests.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="643d7-112">Arguments</span><span class="sxs-lookup"><span data-stu-id="643d7-112">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="69600-112">Arguments</span><span class="sxs-lookup"><span data-stu-id="69600-112">Arguments</span></span>
 
 `TEST_FILE_NAMES`
 
-<span data-ttu-id="643d7-113">Spustí testy ze zadaných sestavení.</span><span class="sxs-lookup"><span data-stu-id="643d7-113">Run tests from the specified assemblies.</span></span> <span data-ttu-id="643d7-114">Rozdělte více názvů testovacích sestavení s mezerami.</span><span class="sxs-lookup"><span data-stu-id="643d7-114">Separate multiple test assembly names with spaces.</span></span>
+<span data-ttu-id="69600-113">Spustí testy ze zadaných sestavení.</span><span class="sxs-lookup"><span data-stu-id="69600-113">Run tests from the specified assemblies.</span></span> <span data-ttu-id="69600-114">Rozdělte více názvů testovacích sestavení s mezerami.</span><span class="sxs-lookup"><span data-stu-id="69600-114">Separate multiple test assembly names with spaces.</span></span>
 
-## <a name="options"></a><span data-ttu-id="643d7-115">Možnosti</span><span class="sxs-lookup"><span data-stu-id="643d7-115">Options</span></span>
+## <a name="options"></a><span data-ttu-id="69600-115">Možnosti</span><span class="sxs-lookup"><span data-stu-id="69600-115">Options</span></span>
 
-# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="643d7-116">.NET Core 2,1</span><span class="sxs-lookup"><span data-stu-id="643d7-116">.NET Core 2.1</span></span>](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="69600-116">.NET Core 2,1</span><span class="sxs-lookup"><span data-stu-id="69600-116">.NET Core 2.1</span></span>](#tab/netcore21)
 
 `--Settings|/Settings:<Settings File>`
 
-<span data-ttu-id="643d7-117">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-117">Settings to use when running tests.</span></span>
+<span data-ttu-id="69600-117">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-117">Settings to use when running tests.</span></span>
 
 `--Tests|/Tests:<Test Names>`
 
-<span data-ttu-id="643d7-118">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="643d7-118">Run tests with names that match the provided values.</span></span> <span data-ttu-id="643d7-119">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="643d7-119">Separate multiple values with commas.</span></span>
+<span data-ttu-id="69600-118">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="69600-118">Run tests with names that match the provided values.</span></span> <span data-ttu-id="69600-119">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="69600-119">Separate multiple values with commas.</span></span>
 
 `--TestAdapterPath|/TestAdapterPath`
 
-<span data-ttu-id="643d7-120">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="643d7-120">Use custom test adapters from a given path (if any) in the test run.</span></span>
+<span data-ttu-id="69600-120">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="69600-120">Use custom test adapters from a given path (if any) in the test run.</span></span>
 
 `--Platform|/Platform:<Platform type>`
 
-<span data-ttu-id="643d7-121">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-121">Target platform architecture used for test execution.</span></span> <span data-ttu-id="643d7-122">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="643d7-122">Valid values are `x86`, `x64`, and `ARM`.</span></span>
+<span data-ttu-id="69600-121">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-121">Target platform architecture used for test execution.</span></span> <span data-ttu-id="69600-122">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="69600-122">Valid values are `x86`, `x64`, and `ARM`.</span></span>
 
 `--Framework|/Framework:<Framework Version>`
 
-<span data-ttu-id="643d7-123">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-123">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="643d7-124">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="643d7-124">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="643d7-125">Další podporované hodnoty jsou `Framework40`, `Framework45`, `FrameworkCore10`a `FrameworkUap10`.</span><span class="sxs-lookup"><span data-stu-id="643d7-125">Other supported values are `Framework40`, `Framework45`, `FrameworkCore10`, and `FrameworkUap10`.</span></span>
+<span data-ttu-id="69600-123">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-123">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="69600-124">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="69600-124">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="69600-125">Další podporované hodnoty jsou `Framework40`, `Framework45`, `FrameworkCore10`a `FrameworkUap10`.</span><span class="sxs-lookup"><span data-stu-id="69600-125">Other supported values are `Framework40`, `Framework45`, `FrameworkCore10`, and `FrameworkUap10`.</span></span>
 
 `--Parallel|/Parallel`
 
-<span data-ttu-id="643d7-126">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-126">Execute tests in parallel.</span></span> <span data-ttu-id="643d7-127">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="643d7-127">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="643d7-128">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="643d7-128">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
+<span data-ttu-id="69600-126">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-126">Execute tests in parallel.</span></span> <span data-ttu-id="69600-127">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="69600-127">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="69600-128">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="69600-128">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-<span data-ttu-id="643d7-129">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-129">Run tests that match the given expression.</span></span> <span data-ttu-id="643d7-130">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="643d7-130">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="643d7-131">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="643d7-131">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="643d7-132">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="643d7-132">Parenthesis `()` are used to group sub-expressions.</span></span>
+<span data-ttu-id="69600-129">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="69600-129">Run tests that match the given expression.</span></span> <span data-ttu-id="69600-130">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="69600-130">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="69600-131">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="69600-131">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="69600-132">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="69600-132">Parenthesis `()` are used to group sub-expressions.</span></span>
 
 `-?|--Help|/?|/Help`
 
-<span data-ttu-id="643d7-133">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-133">Prints out a short help for the command.</span></span>
+<span data-ttu-id="69600-133">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="69600-133">Prints out a short help for the command.</span></span>
 
 `--logger|/logger:<Logger Uri/FriendlyName>`
 
-<span data-ttu-id="643d7-134">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-134">Specify a logger for test results.</span></span>
+<span data-ttu-id="69600-134">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="69600-134">Specify a logger for test results.</span></span>
 
-* <span data-ttu-id="643d7-135">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="643d7-135">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
+* <span data-ttu-id="69600-135">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="69600-135">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
 
   ```console
   /logger:TfsPublisher;
@@ -111,7 +111,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
       [;RunTitle=<title>]
   ```
 
-* <span data-ttu-id="643d7-136">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="643d7-136">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="643d7-137">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="643d7-137">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="643d7-138">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-138">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
+* <span data-ttu-id="69600-136">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="69600-136">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="69600-137">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="69600-137">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="69600-138">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="69600-138">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -119,75 +119,75 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 `-lt|--ListTests|/lt|/ListTests:<File Name>`
 
-<span data-ttu-id="643d7-139">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-139">Lists all discovered tests from the given test container.</span></span>
+<span data-ttu-id="69600-139">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="69600-139">Lists all discovered tests from the given test container.</span></span>
 
 `--ParentProcessId|/ParentProcessId:<ParentProcessId>`
 
-<span data-ttu-id="643d7-140">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="643d7-140">Process ID of the parent process responsible for launching the current process.</span></span>
+<span data-ttu-id="69600-140">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="69600-140">Process ID of the parent process responsible for launching the current process.</span></span>
 
 `--Port|/Port:<Port>`
 
-<span data-ttu-id="643d7-141">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="643d7-141">Specifies the port for the socket connection and receiving the event messages.</span></span>
+<span data-ttu-id="69600-141">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="69600-141">Specifies the port for the socket connection and receiving the event messages.</span></span>
 
 `--Diag|/Diag:<Path to log file>`
 
-<span data-ttu-id="643d7-142">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="643d7-142">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="643d7-143">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="643d7-143">Logs are written to the provided file.</span></span>
+<span data-ttu-id="69600-142">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="69600-142">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="69600-143">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="69600-143">Logs are written to the provided file.</span></span>
 
 `--Blame|/Blame`
 
-<span data-ttu-id="643d7-144">Spustí testy v režimu viny.</span><span class="sxs-lookup"><span data-stu-id="643d7-144">Runs the tests in blame mode.</span></span> <span data-ttu-id="643d7-145">Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-145">This option is helpful in isolating the problematic tests causing test host to crash.</span></span> <span data-ttu-id="643d7-146">Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence. XML* , který zachycuje pořadí spuštění testů před selháním.</span><span class="sxs-lookup"><span data-stu-id="643d7-146">It creates an output file in the current directory as *Sequence.xml* that captures the order of tests execution before the crash.</span></span>
+<span data-ttu-id="69600-144">Spustí testy v režimu viny.</span><span class="sxs-lookup"><span data-stu-id="69600-144">Runs the tests in blame mode.</span></span> <span data-ttu-id="69600-145">Tato možnost je užitečná při izolaci problematických testů, které způsobují selhání hostitele testu.</span><span class="sxs-lookup"><span data-stu-id="69600-145">This option is helpful in isolating the problematic tests causing test host to crash.</span></span> <span data-ttu-id="69600-146">Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence. XML* , který zachycuje pořadí spuštění testů před selháním.</span><span class="sxs-lookup"><span data-stu-id="69600-146">It creates an output file in the current directory as *Sequence.xml* that captures the order of tests execution before the crash.</span></span>
 
 `--InIsolation|/InIsolation`
 
-<span data-ttu-id="643d7-147">Spustí testy v izolovaném procesu.</span><span class="sxs-lookup"><span data-stu-id="643d7-147">Runs the tests in an isolated process.</span></span> <span data-ttu-id="643d7-148">Díky tomu je proces *VSTest. Console. exe* méně pravděpodobný při chybě v testech zastavit, ale testy mohou běžet pomaleji.</span><span class="sxs-lookup"><span data-stu-id="643d7-148">This makes *vstest.console.exe* process less likely to be stopped on an error in the tests, but tests may run slower.</span></span>
+<span data-ttu-id="69600-147">Spustí testy v izolovaném procesu.</span><span class="sxs-lookup"><span data-stu-id="69600-147">Runs the tests in an isolated process.</span></span> <span data-ttu-id="69600-148">Díky tomu je proces *VSTest. Console. exe* méně pravděpodobný při chybě v testech zastavit, ale testy mohou běžet pomaleji.</span><span class="sxs-lookup"><span data-stu-id="69600-148">This makes *vstest.console.exe* process less likely to be stopped on an error in the tests, but tests may run slower.</span></span>
 
 `@<file>`
 
-<span data-ttu-id="643d7-149">Přečte soubor odpovědí pro další možnosti.</span><span class="sxs-lookup"><span data-stu-id="643d7-149">Reads response file for more options.</span></span>
+<span data-ttu-id="69600-149">Přečte soubor odpovědí pro další možnosti.</span><span class="sxs-lookup"><span data-stu-id="69600-149">Reads response file for more options.</span></span>
 
 `args`
 
-<span data-ttu-id="643d7-150">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="643d7-150">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="643d7-151">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="643d7-151">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="643d7-152">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="643d7-152">Use a space to separate multiple arguments.</span></span>
+<span data-ttu-id="69600-150">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="69600-150">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="69600-151">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="69600-151">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="69600-152">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="69600-152">Use a space to separate multiple arguments.</span></span>
 
-# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="643d7-153">.NET Core 2,0</span><span class="sxs-lookup"><span data-stu-id="643d7-153">.NET Core 2.0</span></span>](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="69600-153">.NET Core 2,0</span><span class="sxs-lookup"><span data-stu-id="69600-153">.NET Core 2.0</span></span>](#tab/netcore20)
 
 `--Settings|/Settings:<Settings File>`
 
-<span data-ttu-id="643d7-154">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-154">Settings to use when running tests.</span></span>
+<span data-ttu-id="69600-154">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-154">Settings to use when running tests.</span></span>
 
 `--Tests|/Tests:<Test Names>`
 
-<span data-ttu-id="643d7-155">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="643d7-155">Run tests with names that match the provided values.</span></span> <span data-ttu-id="643d7-156">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="643d7-156">Separate multiple values with commas.</span></span>
+<span data-ttu-id="69600-155">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="69600-155">Run tests with names that match the provided values.</span></span> <span data-ttu-id="69600-156">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="69600-156">Separate multiple values with commas.</span></span>
 
 `--TestAdapterPath|/TestAdapterPath`
 
-<span data-ttu-id="643d7-157">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="643d7-157">Use custom test adapters from a given path (if any) in the test run.</span></span>
+<span data-ttu-id="69600-157">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="69600-157">Use custom test adapters from a given path (if any) in the test run.</span></span>
 
 `--Platform|/Platform:<Platform type>`
 
-<span data-ttu-id="643d7-158">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-158">Target platform architecture used for test execution.</span></span> <span data-ttu-id="643d7-159">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="643d7-159">Valid values are `x86`, `x64`, and `ARM`.</span></span>
+<span data-ttu-id="69600-158">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-158">Target platform architecture used for test execution.</span></span> <span data-ttu-id="69600-159">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="69600-159">Valid values are `x86`, `x64`, and `ARM`.</span></span>
 
 `--Framework|/Framework:<Framework Version>`
 
-<span data-ttu-id="643d7-160">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-160">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="643d7-161">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="643d7-161">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="643d7-162">Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.</span><span class="sxs-lookup"><span data-stu-id="643d7-162">Other supported values are `Framework40`, `Framework45`, and `FrameworkCore10`.</span></span>
+<span data-ttu-id="69600-160">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-160">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="69600-161">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="69600-161">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="69600-162">Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.</span><span class="sxs-lookup"><span data-stu-id="69600-162">Other supported values are `Framework40`, `Framework45`, and `FrameworkCore10`.</span></span>
 
 `--Parallel|/Parallel`
 
-<span data-ttu-id="643d7-163">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-163">Execute tests in parallel.</span></span> <span data-ttu-id="643d7-164">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="643d7-164">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="643d7-165">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="643d7-165">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
+<span data-ttu-id="69600-163">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-163">Execute tests in parallel.</span></span> <span data-ttu-id="69600-164">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="69600-164">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="69600-165">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="69600-165">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-<span data-ttu-id="643d7-166">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-166">Run tests that match the given expression.</span></span> <span data-ttu-id="643d7-167">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="643d7-167">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="643d7-168">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="643d7-168">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="643d7-169">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="643d7-169">Parenthesis `()` are used to group sub-expressions.</span></span>
+<span data-ttu-id="69600-166">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="69600-166">Run tests that match the given expression.</span></span> <span data-ttu-id="69600-167">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="69600-167">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="69600-168">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="69600-168">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="69600-169">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="69600-169">Parenthesis `()` are used to group sub-expressions.</span></span>
 
 `-?|--Help|/?|/Help`
 
-<span data-ttu-id="643d7-170">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-170">Prints out a short help for the command.</span></span>
+<span data-ttu-id="69600-170">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="69600-170">Prints out a short help for the command.</span></span>
 
 `--logger|/logger:<Logger Uri/FriendlyName>`
 
-<span data-ttu-id="643d7-171">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-171">Specify a logger for test results.</span></span>
+<span data-ttu-id="69600-171">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="69600-171">Specify a logger for test results.</span></span>
 
-* <span data-ttu-id="643d7-172">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="643d7-172">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
+* <span data-ttu-id="69600-172">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="69600-172">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
 
   ```console
   /logger:TfsPublisher;
@@ -199,7 +199,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
       [;RunTitle=<title>]
   ```
 
-* <span data-ttu-id="643d7-173">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="643d7-173">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="643d7-174">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="643d7-174">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="643d7-175">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-175">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
+* <span data-ttu-id="69600-173">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="69600-173">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="69600-174">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="69600-174">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="69600-175">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="69600-175">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -207,63 +207,63 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 `-lt|--ListTests|/lt|/ListTests:<File Name>`
 
-<span data-ttu-id="643d7-176">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-176">Lists all discovered tests from the given test container.</span></span>
+<span data-ttu-id="69600-176">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="69600-176">Lists all discovered tests from the given test container.</span></span>
 
 `--ParentProcessId|/ParentProcessId:<ParentProcessId>`
 
-<span data-ttu-id="643d7-177">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="643d7-177">Process ID of the parent process responsible for launching the current process.</span></span>
+<span data-ttu-id="69600-177">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="69600-177">Process ID of the parent process responsible for launching the current process.</span></span>
 
 `--Port|/Port:<Port>`
 
-<span data-ttu-id="643d7-178">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="643d7-178">Specifies the port for the socket connection and receiving the event messages.</span></span>
+<span data-ttu-id="69600-178">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="69600-178">Specifies the port for the socket connection and receiving the event messages.</span></span>
 
 `--Diag|/Diag:<Path to log file>`
 
-<span data-ttu-id="643d7-179">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="643d7-179">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="643d7-180">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="643d7-180">Logs are written to the provided file.</span></span>
+<span data-ttu-id="69600-179">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="69600-179">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="69600-180">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="69600-180">Logs are written to the provided file.</span></span>
 
 `args`
 
-<span data-ttu-id="643d7-181">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="643d7-181">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="643d7-182">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="643d7-182">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="643d7-183">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="643d7-183">Use a space to separate multiple arguments.</span></span>
+<span data-ttu-id="69600-181">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="69600-181">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="69600-182">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="69600-182">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="69600-183">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="69600-183">Use a space to separate multiple arguments.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="643d7-184">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="643d7-184">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="69600-184">.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="69600-184">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 `--Settings|/Settings:<Settings File>`
 
-<span data-ttu-id="643d7-185">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-185">Settings to use when running tests.</span></span>
+<span data-ttu-id="69600-185">Nastavení, které se má použít při spouštění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-185">Settings to use when running tests.</span></span>
 
 `--Tests|/Tests:<Test Names>`
 
-<span data-ttu-id="643d7-186">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="643d7-186">Run tests with names that match the provided values.</span></span> <span data-ttu-id="643d7-187">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="643d7-187">Separate multiple values with commas.</span></span>
+<span data-ttu-id="69600-186">Spustí testy s názvy, které odpovídají zadaným hodnotám.</span><span class="sxs-lookup"><span data-stu-id="69600-186">Run tests with names that match the provided values.</span></span> <span data-ttu-id="69600-187">Více hodnot oddělte čárkami.</span><span class="sxs-lookup"><span data-stu-id="69600-187">Separate multiple values with commas.</span></span>
 
 `--TestAdapterPath|/TestAdapterPath`
 
-<span data-ttu-id="643d7-188">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="643d7-188">Use custom test adapters from a given path (if any) in the test run.</span></span>
+<span data-ttu-id="69600-188">Použijte vlastní testovací adaptéry z dané cesty (pokud existuje) v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="69600-188">Use custom test adapters from a given path (if any) in the test run.</span></span>
 
 `--Platform|/Platform:<Platform type>`
 
-<span data-ttu-id="643d7-189">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-189">Target platform architecture used for test execution.</span></span> <span data-ttu-id="643d7-190">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="643d7-190">Valid values are `x86`, `x64`, and `ARM`.</span></span>
+<span data-ttu-id="69600-189">Cílová architektura platformy použitá pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-189">Target platform architecture used for test execution.</span></span> <span data-ttu-id="69600-190">Platné hodnoty jsou `x86`, `x64`, a `ARM`.</span><span class="sxs-lookup"><span data-stu-id="69600-190">Valid values are `x86`, `x64`, and `ARM`.</span></span>
 
 `--Framework|/Framework:<Framework Version>`
 
-<span data-ttu-id="643d7-191">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-191">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="643d7-192">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="643d7-192">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="643d7-193">Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.</span><span class="sxs-lookup"><span data-stu-id="643d7-193">Other supported values are `Framework40`, `Framework45`, and `FrameworkCore10`.</span></span>
+<span data-ttu-id="69600-191">Cílová verze .NET Framework používaná pro spuštění testu.</span><span class="sxs-lookup"><span data-stu-id="69600-191">Target .NET Framework version used for test execution.</span></span> <span data-ttu-id="69600-192">Příklady platných hodnot jsou `.NETFramework,Version=v4.6` nebo. `.NETCoreApp,Version=v1.0`</span><span class="sxs-lookup"><span data-stu-id="69600-192">Examples of valid values are `.NETFramework,Version=v4.6` or `.NETCoreApp,Version=v1.0`.</span></span> <span data-ttu-id="69600-193">Další podporované hodnoty jsou `Framework40`, `Framework45`a `FrameworkCore10`.</span><span class="sxs-lookup"><span data-stu-id="69600-193">Other supported values are `Framework40`, `Framework45`, and `FrameworkCore10`.</span></span>
 
 `--Parallel|/Parallel`
 
-<span data-ttu-id="643d7-194">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-194">Execute tests in parallel.</span></span> <span data-ttu-id="643d7-195">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="643d7-195">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="643d7-196">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="643d7-196">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
+<span data-ttu-id="69600-194">Paralelní provádění testů.</span><span class="sxs-lookup"><span data-stu-id="69600-194">Execute tests in parallel.</span></span> <span data-ttu-id="69600-195">Ve výchozím nastavení jsou všechny dostupné jádra počítače k dispozici pro použití.</span><span class="sxs-lookup"><span data-stu-id="69600-195">By default, all available cores on the machine are available for use.</span></span> <span data-ttu-id="69600-196">Určete explicitní počet jader nastavením vlastnosti MaxCpuCount v uzlu RunConfiguration v souboru runsettings.</span><span class="sxs-lookup"><span data-stu-id="69600-196">Specify an explicit number of cores by setting the MaxCpuCount property under the RunConfiguration node in the runsettings file.</span></span>
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
-<span data-ttu-id="643d7-197">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-197">Run tests that match the given expression.</span></span> <span data-ttu-id="643d7-198">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="643d7-198">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="643d7-199">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="643d7-199">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="643d7-200">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="643d7-200">Parenthesis `()` are used to group sub-expressions.</span></span>
+<span data-ttu-id="69600-197">Spustí testy, které odpovídají danému výrazu.</span><span class="sxs-lookup"><span data-stu-id="69600-197">Run tests that match the given expression.</span></span> <span data-ttu-id="69600-198">`<Expression>`má formát `<property>Operator<value>[|&<Expression>]`, kde operátor je jedna z `=`, `!=`nebo `~`.</span><span class="sxs-lookup"><span data-stu-id="69600-198">`<Expression>` is of the format `<property>Operator<value>[|&<Expression>]`, where Operator is one of `=`, `!=`, or `~`.</span></span> <span data-ttu-id="69600-199">Operátor `~` obsahuje sémantiku Contains a je použitelný pro řetězcové vlastnosti, jako `DisplayName`je.</span><span class="sxs-lookup"><span data-stu-id="69600-199">Operator `~` has 'contains' semantics and is applicable for string properties like `DisplayName`.</span></span> <span data-ttu-id="69600-200">K seskupení dílčích výrazů sepoužívajízávorky.`()`</span><span class="sxs-lookup"><span data-stu-id="69600-200">Parenthesis `()` are used to group sub-expressions.</span></span>
 
 `-?|--Help|/?|/Help`
 
-<span data-ttu-id="643d7-201">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="643d7-201">Prints out a short help for the command.</span></span>
+<span data-ttu-id="69600-201">Vypíše krátkou nápovědu k příkazu.</span><span class="sxs-lookup"><span data-stu-id="69600-201">Prints out a short help for the command.</span></span>
 
 `--logger|/logger:<Logger Uri/FriendlyName>`
 
-<span data-ttu-id="643d7-202">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-202">Specify a logger for test results.</span></span>
+<span data-ttu-id="69600-202">Zadejte protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="69600-202">Specify a logger for test results.</span></span>
 
-* <span data-ttu-id="643d7-203">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="643d7-203">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
+* <span data-ttu-id="69600-203">K publikování výsledků testů do Team Foundation Server použijte `TfsPublisher` zprostředkovatele protokolovacího nástroje:</span><span class="sxs-lookup"><span data-stu-id="69600-203">To publish test results to Team Foundation Server, use the `TfsPublisher` logger provider:</span></span>
 
   ```console
   /logger:TfsPublisher;
@@ -275,7 +275,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
       [;RunTitle=<title>]
   ```
 
-* <span data-ttu-id="643d7-204">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="643d7-204">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="643d7-205">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="643d7-205">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="643d7-206">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="643d7-206">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
+* <span data-ttu-id="69600-204">K protokolování výsledků do souboru sady Visual Studio výsledky testů (TRX) použijte `trx` poskytovatele protokolovacího nástroje.</span><span class="sxs-lookup"><span data-stu-id="69600-204">To log results to a Visual Studio Test Results File (TRX), use the `trx` logger provider.</span></span> <span data-ttu-id="69600-205">Tento přepínač vytvoří soubor v adresáři výsledků testu s daným názvem souboru protokolu.</span><span class="sxs-lookup"><span data-stu-id="69600-205">This switch creates a file in the test results directory with given log file name.</span></span> <span data-ttu-id="69600-206">Pokud `LogFileName` není zadaný, vytvoří se jedinečný název souboru, který bude obsahovat výsledky testu.</span><span class="sxs-lookup"><span data-stu-id="69600-206">If `LogFileName` isn't provided, a unique file name is created to hold the test results.</span></span>
 
   ```console
   /logger:trx [;LogFileName=<Defaults to unique file name>]
@@ -283,44 +283,44 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 `-lt|--ListTests|/lt|/ListTests:<File Name>`
 
-<span data-ttu-id="643d7-207">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="643d7-207">Lists all discovered tests from the given test container.</span></span>
+<span data-ttu-id="69600-207">Zobrazí všechny zjištěné testy z daného kontejneru testů.</span><span class="sxs-lookup"><span data-stu-id="69600-207">Lists all discovered tests from the given test container.</span></span>
 
 `--ParentProcessId|/ParentProcessId:<ParentProcessId>`
 
-<span data-ttu-id="643d7-208">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="643d7-208">Process ID of the parent process responsible for launching the current process.</span></span>
+<span data-ttu-id="69600-208">ID procesu nadřazeného procesu zodpovědného za spuštění aktuálního procesu.</span><span class="sxs-lookup"><span data-stu-id="69600-208">Process ID of the parent process responsible for launching the current process.</span></span>
 
 `--Port|/Port:<Port>`
 
-<span data-ttu-id="643d7-209">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="643d7-209">Specifies the port for the socket connection and receiving the event messages.</span></span>
+<span data-ttu-id="69600-209">Určuje port pro připojení soketu a příjem zpráv událostí.</span><span class="sxs-lookup"><span data-stu-id="69600-209">Specifies the port for the socket connection and receiving the event messages.</span></span>
 
 `--Diag|/Diag:<Path to log file>`
 
-<span data-ttu-id="643d7-210">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="643d7-210">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="643d7-211">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="643d7-211">Logs are written to the provided file.</span></span>
+<span data-ttu-id="69600-210">Povolí podrobné protokoly pro testovací platformu.</span><span class="sxs-lookup"><span data-stu-id="69600-210">Enables verbose logs for the test platform.</span></span> <span data-ttu-id="69600-211">Protokoly se zapisují do poskytnutého souboru.</span><span class="sxs-lookup"><span data-stu-id="69600-211">Logs are written to the provided file.</span></span>
 
 `args`
 
-<span data-ttu-id="643d7-212">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="643d7-212">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="643d7-213">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="643d7-213">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="643d7-214">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="643d7-214">Use a space to separate multiple arguments.</span></span>
+<span data-ttu-id="69600-212">Určuje nadbytečné argumenty, které se mají předat adaptéru.</span><span class="sxs-lookup"><span data-stu-id="69600-212">Specifies extra arguments to pass to the adapter.</span></span> <span data-ttu-id="69600-213">Argumenty jsou zadány jako páry název-hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu.</span><span class="sxs-lookup"><span data-stu-id="69600-213">Arguments are specified as name-value pairs of the form `<n>=<v>`, where `<n>` is the argument name and `<v>` is the argument value.</span></span> <span data-ttu-id="69600-214">K oddělení více argumentů použijte mezeru.</span><span class="sxs-lookup"><span data-stu-id="69600-214">Use a space to separate multiple arguments.</span></span>
 
 ---
 
-## <a name="examples"></a><span data-ttu-id="643d7-215">Příklady</span><span class="sxs-lookup"><span data-stu-id="643d7-215">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="69600-215">Příklady</span><span class="sxs-lookup"><span data-stu-id="69600-215">Examples</span></span>
 
-<span data-ttu-id="643d7-216">Spustit testy v `mytestproject.dll`:</span><span class="sxs-lookup"><span data-stu-id="643d7-216">Run tests in `mytestproject.dll`:</span></span>
+<span data-ttu-id="69600-216">Spustit testy v `mytestproject.dll`:</span><span class="sxs-lookup"><span data-stu-id="69600-216">Run tests in `mytestproject.dll`:</span></span>
 
 `dotnet vstest mytestproject.dll`
 
-<span data-ttu-id="643d7-217">Spustit testy v `mytestproject.dll`nástroji, exportovat do vlastní složky s vlastním názvem:</span><span class="sxs-lookup"><span data-stu-id="643d7-217">Run tests in `mytestproject.dll`, exporting to custom folder with custom name:</span></span>
+<span data-ttu-id="69600-217">Spustit testy v `mytestproject.dll`nástroji, exportovat do vlastní složky s vlastním názvem:</span><span class="sxs-lookup"><span data-stu-id="69600-217">Run tests in `mytestproject.dll`, exporting to custom folder with custom name:</span></span>
 
 `dotnet vstest mytestproject.dll --logger:"trx;LogFileName=custom_file_name.trx" --ResultsDirectory:custom/file/path`
 
-<span data-ttu-id="643d7-218">Spustit testy v `mytestproject.dll` a `myothertestproject.exe`:</span><span class="sxs-lookup"><span data-stu-id="643d7-218">Run tests in `mytestproject.dll` and `myothertestproject.exe`:</span></span>
+<span data-ttu-id="69600-218">Spustit testy v `mytestproject.dll` a `myothertestproject.exe`:</span><span class="sxs-lookup"><span data-stu-id="69600-218">Run tests in `mytestproject.dll` and `myothertestproject.exe`:</span></span>
 
 `dotnet vstest mytestproject.dll myothertestproject.exe`
 
-<span data-ttu-id="643d7-219">Spustit `TestMethod1` testy:</span><span class="sxs-lookup"><span data-stu-id="643d7-219">Run `TestMethod1` tests:</span></span>
+<span data-ttu-id="69600-219">Spustit `TestMethod1` testy:</span><span class="sxs-lookup"><span data-stu-id="69600-219">Run `TestMethod1` tests:</span></span>
 
 `dotnet vstest /Tests:TestMethod1`
 
-<span data-ttu-id="643d7-220">Běh `TestMethod1` a`TestMethod2` testy:</span><span class="sxs-lookup"><span data-stu-id="643d7-220">Run `TestMethod1` and `TestMethod2` tests:</span></span>
+<span data-ttu-id="69600-220">Běh `TestMethod1` a`TestMethod2` testy:</span><span class="sxs-lookup"><span data-stu-id="69600-220">Run `TestMethod1` and `TestMethod2` tests:</span></span>
 
 `dotnet vstest /Tests:TestMethod1,TestMethod2`
