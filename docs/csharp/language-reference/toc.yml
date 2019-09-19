@@ -190,7 +190,7 @@
               href: keywords/using-static.md
             - name: using – příkaz
               href: keywords/using-statement.md
-        - name: extern alias
+        - name: externí alias
           href: keywords/extern-alias.md
     - name: Klíčová slova pro testování typů
       items:
@@ -293,7 +293,7 @@
       displayName: '>, <, >=, <=, greater, less'
     - name: Operátory pro přístup k členům
       href: operators/member-access-operators.md
-      displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
+      displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation, ^, index from end, hat, .., range'
     - name: Operátory pro testování typů a přetypování
       href: operators/type-testing-and-cast.md
       displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
