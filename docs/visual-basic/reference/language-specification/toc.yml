@@ -25,6 +25,8 @@
       href: ../../../../_vblang/spec/expressions.md
     - name: Komentáře dokumentace
       href: ../../../../_vblang/spec/documentation-comments.md
+    - name: Rozlišení přetěžování
+      href: ../../../../_vblang/spec/overload-resolution.md
     - name: Gramatika
       items:
         - name: vb.html
