@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09179ebe123f1287c8b057783bb421153f5e1183
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: a53c8b7b88bd25a6611c33218c7a386de55889e9
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894179"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151764"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné v .NET Framework. Oba můžou mít pole, vlastnosti a události. Mohou mít také statické a nestatické metody. Jedním z významných rozdílů je, že struktury jsou typy hodnot a třídy jsou odkazové typy.  
@@ -108,7 +108,7 @@ typedef struct _MYARRAYSTRUCT
   
  Pro všechny struktury v této ukázce <xref:System.Runtime.InteropServices.StructLayoutAttribute> se používá atribut, aby bylo zajištěno, že jsou členy uspořádány v paměti postupně, v pořadí, ve kterém jsou uvedeny.  
   
- `TestStructInStruct3` `TestArrayInStruct` `App` Třída obsahuje spravované prototypy `TestStructInStruct`pro, a metody, které jsou volány třídou. `LibWrap` Každý prototyp deklaruje jeden parametr následujícím způsobem:  
+ `TestStructInStruct3` `TestArrayInStruct` `App` Třída obsahuje spravované prototypy `TestStructInStruct`pro, a metody, které jsou volány třídou. `NativeMethods` Každý prototyp deklaruje jeden parametr následujícím způsobem:  
   
 - `TestStructInStruct`deklaruje odkaz na typ `MyPerson2` jako jeho parametr.  
   
@@ -159,7 +159,7 @@ typedef struct _WIN32_FIND_DATA
   
  V této ukázce `FindData` třída obsahuje odpovídající datový člen pro každý prvek původní struktury a vloženou strukturu. Místo dvou původních vyrovnávacích pamětí znaků třída nahradí řetězce. **MarshalAsAttribute** nastaví <xref:System.Runtime.InteropServices.UnmanagedType> výčet na **ByValTStr**, který slouží k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaných strukturách.  
   
- Třída obsahuje spravovaný prototyp `FindFirstFile` `FindData` metody, která předá třídu jako parametr. `LibWrap` Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> atributy a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení.  
+ Třída obsahuje spravovaný prototyp `FindFirstFile` `FindData` metody, která předá třídu jako parametr. `NativeMethods` Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> atributy a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení.  
   
 ### <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-cpp[Conceptual.Interop.Marshaling#17](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/findfile.cpp#17)]
@@ -202,7 +202,7 @@ union MYUNION2
   
  `MyUnion2_1`a `MyUnion2_2` obsahují hodnotový typ (Integer) a řetězec v uvedeném pořadí. Ve spravovaném kódu se typy hodnot a typy odkazů nepovolují překrývat. Tato ukázka používá přetížení metody, aby volající mohl použít oba typy při volání stejné nespravované funkce. Rozložení `MyUnion2_1` je explicitní a má přesnou hodnotu posunu. Naproti tomu `MyUnion2_2` má sekvenční rozložení, protože explicitní rozložení nejsou povolena s odkazovým typem. Atribut nastaví výčet na ByValTStr, který se používá k identifikaci vložených znakových polí s pevnou délkou, která se zobrazí v nespravovaném vyjádření sjednocení. <xref:System.Runtime.InteropServices.MarshalAsAttribute> <xref:System.Runtime.InteropServices.UnmanagedType>  
   
- Třída obsahuje prototypy `TestUnion` pro metody a `TestUnion2`. `LibWrap` `TestUnion2`je přetížený pro deklaraci `MyUnion2_1` nebo `MyUnion2_2` jako parametry.  
+ Třída obsahuje prototypy `TestUnion` pro metody a `TestUnion2`. `NativeMethods` `TestUnion2`je přetížený pro deklaraci `MyUnion2_1` nebo `MyUnion2_2` jako parametry.  
   
 ### <a name="declaring-prototypes"></a>Deklarace prototypů  
  [!code-cpp[Conceptual.Interop.Marshaling#28](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/unions.cpp#28)]
@@ -242,7 +242,7 @@ typedef struct _SYSTEMTIME {
   
  V této ukázce `SystemTime` třída obsahuje prvky původní struktury reprezentované jako členy třídy. <xref:System.Runtime.InteropServices.StructLayoutAttribute> Atribut je nastaven tak, aby bylo zajištěno, že jsou členy uspořádány v paměti sekvenčně v pořadí, ve kterém jsou zobrazeny.  
   
- Třída obsahuje spravovaný prototyp `GetSystemTime` `SystemTime` metody, která ve výchozím nastavení předává třídu jako vstupně-výstupní parametr. `LibWrap` Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> atributy a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení. Aby volající mohl přijímat výsledky, musí být tyto [směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) aplikovány explicitně. Třída vytvoří novou instanci `SystemTime` třídy a přistupuje k jejím datovým polím. `App`  
+ Třída obsahuje spravovaný prototyp `GetSystemTime` `SystemTime` metody, která ve výchozím nastavení předává třídu jako vstupně-výstupní parametr. `NativeMethods` Parametr musí být deklarován s <xref:System.Runtime.InteropServices.InAttribute> atributy a <xref:System.Runtime.InteropServices.OutAttribute> , protože třídy, které jsou odkazové typy, jsou předány jako parametry ve výchozím nastavení. Aby volající mohl přijímat výsledky, musí být tyto [směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100)) aplikovány explicitně. Třída vytvoří novou instanci `SystemTime` třídy a přistupuje k jejím datovým polím. `App`  
   
 ### <a name="code-samples"></a>Ukázky kódu  
  [!code-cpp[Conceptual.Interop.Marshaling#25](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/systime.cpp#25)]
@@ -266,7 +266,7 @@ typedef struct _MYSTRSTRUCT2
   
  `MyStruct` Třída obsahuje objekt řetězce znaků ANSI. <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> Pole určuje formát ANSI. `MyUnsafeStruct`, je struktura obsahující <xref:System.IntPtr> typ místo řetězce.  
   
- Třída obsahuje přetíženou metodu `TestOutArrayOfStructs`prototypu `LibWrap` . Pokud metoda deklaruje ukazatel jako parametr, třída by měla být označena `unsafe` klíčovým slovem. Vzhledem k tomu, že Visual Basic nemůže použít nezabezpečený kód, přetíženou metodu, nezabezpečený modifikátor a `MyUnsafeStruct` strukturu jsou zbytečné.  
+ Třída obsahuje přetíženou metodu `TestOutArrayOfStructs`prototypu `NativeMethods` . Pokud metoda deklaruje ukazatel jako parametr, třída by měla být označena `unsafe` klíčovým slovem. Vzhledem k tomu, že Visual Basic nemůže použít nezabezpečený kód, přetíženou metodu, nezabezpečený modifikátor a `MyUnsafeStruct` strukturu jsou zbytečné.  
   
  `App` Třída`UsingMarshaling` implementuje metodu, která provádí všechny úlohy, které jsou nezbytné k předání pole. Pole je označeno pomocí `out` klíčového slova (`ByRef` v Visual Basic) k označení toho, že data přecházejí z volaného volajícího. Implementace používá následující <xref:System.Runtime.InteropServices.Marshal> metody třídy:  
   

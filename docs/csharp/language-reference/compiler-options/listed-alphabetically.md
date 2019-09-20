@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 37eedc6d41867a6d5e6a49b8df5040c657bb2689
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 450463100782f98b6ded0781b1d3c19b0db97534
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602751"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151767"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -29,7 +29,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[-baseaddress](baseaddress-compiler-option.md)|Určuje základní adresu pro knihovnu, která má být sestavena.|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor hlášení o chybě. Tento soubor se pošle spolu s případnými informacemi o chybách, pokud se použije s-errorreport: prompt nebo-errorreport: Send.|
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generuje kontroly přetečení.|
-|-checksumalgorithm:\<ALG >|Určuje algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1. |
+|-checksumalgorithm:\<ALG >|Určuje algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA256 (výchozí) nebo SHA1.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1. |
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku, která má být použita při otevírání zdrojových souborů.|
 |[-debug](debug-compiler-option.md)|Vygeneruje ladicí informace.|
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|
@@ -77,7 +77,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |-RuleSet:\<soubor >|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi subsystému, který může spustitelný soubor použít.|
 |[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné ze čtyř možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
-|[-unsafe](unsafe-compiler-option.md)|Umožňuje [](../keywords/unsafe.md) nezabezpečený kód.|
+|[-unsafe](unsafe-compiler-option.md)|Umožňuje [nezabezpečený](../keywords/unsafe.md) kód.|
 |[-utf8output](utf8output-compiler-option.md)|Vytvoří výstup zpráv kompilátoru v kódování UTF-8.|
 |– verze|Zobrazte číslo verze kompilátoru a ukončete.|
 |[-warn](warn-compiler-option.md)|Nastaví úroveň upozornění (0-4).|

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 5113de6d8d333983e6e26579ff9803a9f5a62816
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: ab6ff2ba6e0f3f1ea9e34de80b67276a990bc83b
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254178"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151850"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
 Toto téma poskytuje přehled nastavení registru Microsoft ClearType používaných aplikacemi WPF.  
@@ -63,7 +63,7 @@ Toto téma poskytuje přehled nastavení registru Microsoft ClearType používan
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>Úroveň gamma  
- Úroveň gamma odkazuje na nelineární vztah mezi hodnotou pixelu a světelností. Nastavení úrovně gamma by mělo odpovídat fyzickým charakteristikám zobrazovacího zařízení; v opačném případě může dojít k narušením vykresleného výstupu. Například test může být příliš velký nebo příliš úzký nebo se může zobrazit Barva olemování na hranách svislých stonků glyfů.  
+ Úroveň gamma odkazuje na nelineární vztah mezi hodnotou pixelu a světelností. Nastavení úrovně gamma by mělo odpovídat fyzickým charakteristikám zobrazovacího zařízení; v opačném případě může dojít k narušením vykresleného výstupu. Například text může být příliš velký nebo příliš úzký nebo se může zobrazit Barva olemování svislých stonků glyfů.  
   
  Úroveň gamma je celočíselná hodnota, která je v rozsahu od 1000 do 2200. Výchozí úroveň je 1900.  
   

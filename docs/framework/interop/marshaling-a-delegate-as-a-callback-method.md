@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2697950a371d66f2e57731e0ff01ed531a07955e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0e2289b3c12c7c83a39f1ad8d5a1365349ca6442
+ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946402"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71151799"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
 Tato ukázka předvádí, jak předat delegáty nespravované funkci očekávající ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní k ukazateli funkce bezpečnému pro typ nebo funkci zpětného volání.
@@ -40,7 +40,7 @@ Ukázka zpětného volání používá následující nespravované funkce, kter
 
 [Knihovny pinvokelib. dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) je vlastní nespravovaná knihovna, která obsahuje implementaci pro dříve uvedené funkce.
 
-V této ukázce `LibWrap` třída obsahuje spravované prototypy `TestCallBack` pro metody a `TestCallBack2` . Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například `FPtr` Delegáti a `FPtr2` mají signatury `DoSomething` , které jsou stejné jako metody a `DoSomething2` .
+V této ukázce `NativeMethods` třída obsahuje spravované prototypy `TestCallBack` pro metody a `TestCallBack2` . Obě metody předají delegátovi funkce zpětného volání jako parametr. Signatura delegáta musí odpovídat podpisu metody, na kterou odkazuje. Například `FPtr` Delegáti a `FPtr2` mají signatury `DoSomething` , které jsou stejné jako metody a `DoSomething2` .
 
 ## <a name="declaring-prototypes"></a>Deklarace prototypů
 [!code-cpp[Conceptual.Interop.Marshaling#37](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.interop.marshaling/cpp/callback.cpp#37)]
