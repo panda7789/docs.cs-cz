@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 51feb770e84af170bf31a6ba363a1d9e72616284
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 19d1d5f81b5be9b843698b6e61d8571d4edfa66f
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373780"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181949"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikací ASP.NET Core MVC
 
@@ -109,7 +109,7 @@ Projekty webového rozhraní API by měly uvažovat `[ApiController]` o použit�
 > - **Outlook**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **ApiController – atribut**
- > <https://docs.microsoft.com/aspnet/core/web-api/?view=aspnetcore-2.2>
+ > <https://docs.microsoft.com/aspnet/core/web-api/>
 
 ## <a name="working-with-dependencies"></a>Práce se závislostmi
 
@@ -395,7 +395,7 @@ public IActionResult ExecutiveSalaryReport()
 
 Pomocí zásad tímto způsobem můžete oddělit druhy akcí, které jsou omezené z konkrétních rolí nebo pravidel, která se na ně vztahují. Pokud později vytvoříte novou roli, která potřebuje mít přístup k určitým prostředkům, můžete místo aktualizace všech seznamů rolí u každého \[\] autorizačního atributu jednoduše aktualizovat zásadu.
 
-#### <a name="claims"></a>Podpory
+#### <a name="claims"></a>podpory
 
 Deklarace identity jsou páry název-hodnota, které představují vlastnosti ověřeného uživatele. Můžete například ukládat číslo zaměstnance pro uživatele jako deklaraci identity. Deklarace identity se pak dají použít jako součást zásad autorizace. Můžete vytvořit zásadu nazvanou "EmployeeOnly", která vyžaduje existenci deklarace identity s názvem "EmployeeNumber", jak je znázorněno v tomto příkladu:
 
@@ -603,5 +603,5 @@ _Další informace o možnostech nasazení Azure najdete v [kapitole 10](develop
 >   <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
->[Předchozí](common-client-side-web-technologies.md)Další
->[](work-with-data-in-asp-net-core-apps.md)
+>[Předchozí](common-client-side-web-technologies.md)
+>[Další](work-with-data-in-asp-net-core-apps.md)

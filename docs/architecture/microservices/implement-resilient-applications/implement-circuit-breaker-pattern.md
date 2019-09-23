@@ -2,12 +2,12 @@
 title: Implementace vzoru pro přerušení okruhu
 description: Naučte se implementovat vzor pro přerušení okruhu jako doplňkový systém pro opakované pokusy http.
 ms.date: 10/16/2018
-ms.openlocfilehash: f40a8eec50a4293e4dfb4df647ce3f69f6dc361b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: eec14273cb9480df51d6e5865106ccfc045845c4
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296100"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181937"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace systému jističe
 
@@ -55,7 +55,7 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 }
 ```
 
-Ve výše uvedeném příkladu kódu je zásada pro přerušení okruhu nakonfigurovaná tak, že se přeruší nebo otevře okruh v případě, že při opakování požadavků HTTP došlo k pěti po sobě jdoucími chybám. Pokud k tomu dojde, okruh bude po dobu 30 sekund přerušen: v takovém případě budou volání okamžitě neúspěšná pomocí přepínacího modulu okruhů, nikoli ve skutečnosti.  Zásady automaticky interpretují [relevantní výjimky a stavové kódy http](/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1#handle-transient-faults) jako chyby.  
+Ve výše uvedeném příkladu kódu je zásada pro přerušení okruhu nakonfigurovaná tak, že se přeruší nebo otevře okruh v případě, že při opakování požadavků HTTP došlo k pěti po sobě jdoucími chybám. Pokud k tomu dojde, okruh bude po dobu 30 sekund přerušen: v takovém případě budou volání okamžitě neúspěšná pomocí přepínacího modulu okruhů, nikoli ve skutečnosti.  Zásady automaticky interpretují [relevantní výjimky a stavové kódy http](/aspnet/core/fundamentals/http-requests#handle-transient-faults) jako chyby.  
 
 K přesměrování požadavků na záložní infrastrukturu by se měly také použít vypínače okruhů, pokud máte problémy v konkrétním prostředku, který je nasazený v jiném prostředí než klientská aplikace nebo služba provádějící volání HTTP. Tímto způsobem dojde v případě výpadku v datovém centru, které ovlivňuje pouze vaše mikroslužby back-end, ale ne klientské aplikace, a klientské aplikace se mohou přesměrovat na záložní služby. Polly plánuje novou zásadu pro automatizaci tohoto scénáře [zásad převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) . 
 
@@ -148,5 +148,5 @@ Nakonec další možnost pro `CircuitBreakerPolicy` je použít `Isolate` (kter�
   [https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker](/azure/architecture/patterns/circuit-breaker)
 
 >[!div class="step-by-step"]
->[Předchozí](implement-http-call-retries-exponential-backoff-polly.md)Další
->[](monitor-app-health.md)
+>[Předchozí](implement-http-call-retries-exponential-backoff-polly.md)
+>[Další](monitor-app-health.md)
