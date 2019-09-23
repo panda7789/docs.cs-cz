@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 748e7f484227b6a60a2309bde185079b30fe19de
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 604a67d1bea219b8eee2e7ac21040666083664ee
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117170"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182047"
 ---
 ### <a name="ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes"></a>ZipArchiveEntry už nezpracovává archivy s nekonzistentními velikostmi záznamů.
 

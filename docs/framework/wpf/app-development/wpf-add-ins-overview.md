@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 4fd8fe00fe6974bdcbf7b4af4da25150996de8c3
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a146f15a1c2755f254e198d471a42ca9ec29b072
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401707"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182542"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 
@@ -27,7 +27,7 @@ ms.locfileid: "68401707"
 
 ## <a name="prerequisites"></a>Požadavky
 
-Je požadována znalost .NET Framework Model doplňku. Další informace najdete v tématu [Doplňky a rozšiřitelnost](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
+Je požadována znalost .NET Framework Model doplňku. Další informace najdete v tématu [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
 <a name="AddInsOverview"></a>
 
@@ -66,7 +66,7 @@ Aby bylo možné použít doplňky, hostitelské aplikace je musí najít a nač
 Nakonec vývoj robustního modelu doplňku je netriviálním členem. Z tohoto důvodu .NET Framework poskytuje infrastrukturu pro sestavování modelů doplňku.
 
 > [!NOTE]
-> Podrobnější informace o doplňcích najdete v tématu [Doplňky a rozšiřitelnost](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
+> Podrobnější informace o doplňcích najdete v tématu [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
 <a name="NETFrameworkAddInModelOverview"></a>
 
@@ -127,7 +127,7 @@ Způsoby <xref:System.AddIn.Contract.INativeHandleContract>použití <xref:Syste
 
 Pro doplněk, který vrací uživatelské rozhraní pro hostitelskou aplikaci, jsou potřeba následující:
 
-1. Je třeba vytvořit hostitelskou aplikaci, doplněk a kanál, jak je popsáno v dokumentaci .NET Framework [Doplňky a rozšiřitelnost](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) .
+1. Je třeba vytvořit hostitelskou aplikaci, doplněk a kanál, jak je popsáno v dokumentaci .NET Framework [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) .
 
 2. Kontrakt musí implementovat <xref:System.AddIn.Contract.IContract> a, aby vracel uživatelské rozhraní, kontrakt musí deklarovat metodu s návratovou hodnotou typu <xref:System.AddIn.Contract.INativeHandleContract>.
 
@@ -147,7 +147,7 @@ Příklad, který ukazuje, jak implementovat doplněk, který vrací uživatelsk
 
 Když je doplněk uživatelským rozhraním, vyžadují se následující:
 
-1. Je třeba vytvořit hostitelskou aplikaci, doplněk a kanál, jak je popsáno v dokumentaci .NET Framework [Doplňky a rozšiřitelnost](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) .
+1. Je třeba vytvořit hostitelskou aplikaci, doplněk a kanál, jak je popsáno v dokumentaci .NET Framework [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)) .
 
 2. Rozhraní kontraktu pro doplněk musí implementovat <xref:System.AddIn.Contract.INativeHandleContract>.
 
@@ -311,7 +311,7 @@ Ve výchozím nastavení platí, že při použití více domén aplikace jsou v
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.LoaderOptimizationAttribute>
-- [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
+- [Doplňky a rozšíření](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Aplikační domény](../../app-domains/application-domains.md)
 - [Přehled vzdálené komunikace .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Vytváření objektů – vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))

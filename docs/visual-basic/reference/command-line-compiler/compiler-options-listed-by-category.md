@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: d8a1e36c0932de9bf50c109ea979a1e358795388
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 8f09566585c06531a346b0143a6002c2854a0b01
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331539"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182563"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Visual Basic možnosti kompilátoru uvedené podle kategorie
 Kompilátor příkazového řádku Visual Basic je k dispozici jako alternativa k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Následuje seznam možností kompilátoru příkazového řádku Visual Basic seřazených podle funkční kategorie.  
@@ -72,7 +72,7 @@ Kompilátor příkazového řádku Visual Basic je k dispozici jako alternativa 
 |[-warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|Propaguje upozornění na chyby.|  
 |`-ruleset:<file>`|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|  
   
-## <a name="help"></a>Help  
+## <a name="help"></a>Nápověda  
   
 |Možnost|Účel|  
 |---|---|  
@@ -129,4 +129,4 @@ Kompilátor příkazového řádku Visual Basic je k dispozici jako alternativa 
 ## <a name="see-also"></a>Viz také:
 
 - [Visual Basic možnosti kompilátoru seřazené abecedně](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)
-- [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties?view=vs-2017)
+- [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties)

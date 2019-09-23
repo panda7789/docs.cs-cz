@@ -5,12 +5,12 @@ ms.date: 08/20/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: e1dcc719738a2beb3e63463245d4721c5298cf85
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 8d21ae5ae3aa4701ddd7d042d5069351c22864bb
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666664"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182547"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu do ASP.NET Core webového rozhraní API
 
@@ -23,11 +23,11 @@ Naučte se, jak na webu sloužit předem trained ML.NET model strojového učen�
 
 - [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
 - Prostředí.
-- Předem vyškolený model. Pomocí [kurzu ML.NET analýza mínění](../tutorials/sentiment-analysis.md) sestavte svůj vlastní model nebo si stáhněte tento [model služby Machine Learning s](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip) představitelnou mínění analýzou.
+- Předem vyškolený model. Pomocí [kurzu ML.NET analýza mínění](../tutorials/sentiment-analysis.md) sestavte svůj vlastní model nebo si stáhněte tento [model služby Machine Learning s představitelnou mínění analýzou](https://github.com/dotnet/samples/blob/master/machine-learning/models/sentimentanalysis/sentiment_model.zip) .
 
 ## <a name="create-aspnet-core-web-api-project"></a>Vytvoření projektu webového rozhraní API ASP.NET Core
 
-1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor > nový > projekt** . V dialogovém okně Nový projekt vyberte uzel **vizuálu C#**  následovaný webovým uzlem . Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** . Do textového pole **název** zadejte "SentimentAnalysisWebAPI" a pak vyberte tlačítko **OK** .
+1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor > nový > projekt** . V dialogovém okně Nový projekt vyberte uzel  **C# vizuálu** následovaný **webovým** uzlem. Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** . Do textového pole **název** zadejte "SentimentAnalysisWebAPI" a pak vyberte tlačítko **OK** .
 
 1. V okně, které zobrazuje různé typy ASP.NET Core projektů, vyberte **rozhraní API** a klikněte na tlačítko **OK** .
 
@@ -52,11 +52,11 @@ Naučte se, jak na webu sloužit předem trained ML.NET model strojového učen�
 
 Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
-1. Vytvořte v projektu adresář s názvem datamodels pro uložení datových modelů:
+1. Vytvořte v projektu adresář s názvem *Datamodels* pro uložení datových modelů:
 
     V Průzkumník řešení klikněte pravým tlačítkem myši na projekt a vyberte Přidat > Nová složka. Zadejte "datamodels" a stiskněte **ENTER**.
 
-2. V Průzkumník řešení klikněte pravým tlačítkem na adresář datamodels a pak vyberte Přidat > nová položka.
+2. V Průzkumník řešení klikněte pravým tlačítkem na adresář *Datamodels* a pak vyberte Přidat > nová položka.
 3. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentData.cs*. Pak vyberte tlačítko **Přidat** . V editoru kódu se otevře soubor *SentimentData.cs* . Do horní části *SentimentData.cs*přidejte následující příkaz using:
 
     ```csharp
@@ -77,7 +77,7 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
     }
     ```
 
-4. V Průzkumník řešení klikněte pravým tlačítkem na adresář datamodels a pak vyberte **Přidat > Nová položka**.
+4. V Průzkumník řešení klikněte pravým tlačítkem na adresář *Datamodels* a pak vyberte **Přidat > Nová položka**.
 5. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *SentimentPrediction.cs*. Pak vyberte tlačítko Přidat. V editoru kódu se otevře soubor *SentimentPrediction.cs* . Do horní části *SentimentPrediction.cs*přidejte následující příkaz using:
 
     ```csharp
@@ -105,7 +105,7 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
 
 K provedení jedné předpovědi použijte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Aby bylo možné v [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) aplikaci používat, musíte ji vytvořit, až bude potřeba. V takovém případě je osvědčeným postupem použití injektáže závislostí.
 
-Následující odkaz poskytuje další informace, pokud se chcete dozvědět o [vkládání závislostí v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
+Následující odkaz poskytuje další informace, pokud se chcete dozvědět o [vkládání závislostí v ASP.NET Core](/aspnet/core/fundamentals/dependency-injection).
 
 1. Otevřete třídu *Startup.cs* a na začátek souboru přidejte následující příkaz using:
 
@@ -202,4 +202,4 @@ Blahopřejeme! Úspěšně jste zasloužili vašemu modelu, aby se předpovědi 
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Nasazení do Azure](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs?view=aspnetcore-2.1#deploy-the-app-to-azure)
+- [Nasazení do Azure](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs#deploy-the-app-to-azure)

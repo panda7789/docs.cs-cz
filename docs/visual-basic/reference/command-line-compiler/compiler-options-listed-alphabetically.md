@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: 3fd07c9f2cdea3987602502cf242893b44aaddba
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 09c2879c0a46efe6258685d8201959a626735a85
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331570"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182661"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic možnosti kompilátoru seřazené abecedně
 Visual Basic Kompilátor příkazového řádku je k dispozici jako alternativa k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Následující seznam uvádí možnosti kompilátoru Visual Basic příkazového řádku seřazené abecedně.  
@@ -83,4 +83,4 @@ Visual Basic Kompilátor příkazového řádku je k dispozici jako alternativa 
 ## <a name="see-also"></a>Viz také:
 
 - [Visual Basic možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)
-- [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties?view=vs-2017)
+- [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties)

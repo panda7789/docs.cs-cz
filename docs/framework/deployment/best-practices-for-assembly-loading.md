@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 727d1b4ecb17eafb448205aa0c7eea36c5545b98
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a95679f659f13956fd230f07e9401af9097a043c
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052224"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182479"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Doporučené postupy pro načtení sestavení
 Tento článek popisuje způsoby, jak zabránit problémům s typem identity, který může <xref:System.InvalidCastException>vést <xref:System.MissingMethodException>k chybám, a. Tento článek popisuje následující doporučení:  
@@ -154,7 +154,7 @@ Tento článek popisuje způsoby, jak zabránit problémům s typem identity, kt
  Pokud není možné umístit všechna vaše sestavení do cesty pro zjišťování, zvažte alternativy, jako je například použití modelu doplňku .NET Framework, umístění sestavení do globální mezipaměti sestavení (GAC) nebo vytváření domén aplikace.  
   
 ### <a name="consider-using-the-net-framework-add-in-model"></a>Zvažte použití .NET Frameworkho modelu doplňku  
- Pokud používáte kontext načtení z k implementaci doplňků, které obvykle nejsou nainstalovány v základu aplikace, použijte Model doplňku .NET Framework. Tento model poskytuje izolaci na úrovni domény aplikace nebo procesu bez nutnosti spravovat domény aplikace sami. Informace o modelu doplňku naleznete v tématu [Doplňky a rozšiřitelnost](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).  
+ Pokud používáte kontext načtení z k implementaci doplňků, které obvykle nejsou nainstalovány v základu aplikace, použijte Model doplňku .NET Framework. Tento model poskytuje izolaci na úrovni domény aplikace nebo procesu bez nutnosti spravovat domény aplikace sami. Informace o modelu doplňku naleznete v tématu [Doplňky a rozšiřitelnost](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).  
   
 ### <a name="consider-using-the-global-assembly-cache"></a>Zvažte použití globální mezipaměti sestavení (GAC)  
  Umístěte sestavení do globální mezipaměti sestavení (GAC), abyste získali výhodu sdílené cesty sestavení, která je mimo základ aplikace, aniž by došlo ke ztrátě výhod výchozího kontextu zatížení nebo k nevýhodám ostatních kontextů.  

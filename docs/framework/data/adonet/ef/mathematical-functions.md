@@ -2,24 +2,24 @@
 title: Matematické funkce
 ms.date: 03/30/2017
 ms.assetid: b040c7cb-156d-40f2-9152-61065b18148c
-ms.openlocfilehash: b6f248382f069df59a55e85e9a764b0df700fb26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e5658e28c7d806f7fd38f941bfa7254e7806e11
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780312"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182492"
 ---
 # <a name="mathematical-functions"></a>Matematické funkce
 
-Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje matematické funkce, které provádějí výpočty na vstupní hodnoty, které jsou k dispozici jako argumenty a vrací výsledek číselnou hodnotu. Tyto funkce jsou v oboru názvů systému SQL Server, která je k dispozici, když použijete SqlClient. Vlastnost oboru názvů poskytovatele umožňuje zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce Entity Framework. Následující tabulka popisuje SqlClient matematických funkcí.  
+.NET Framework Zprostředkovatel dat for SQL Server (SqlClient) poskytuje matematické funkce, které provádějí výpočty na vstupních hodnotách, které jsou k dispozici jako argumenty, a vrátí výsledek číselné hodnoty. Tyto funkce jsou v oboru názvů SqlServer, který je k dispozici při použití nástroje SqlClient. Vlastnost Namespace poskytovatele umožňuje Entity Framework zjistit, která předpona je používána tímto poskytovatelem pro konkrétní konstrukce, jako jsou typy a funkce. V následující tabulce jsou popsány matematické funkce SqlClient.  
   
-## <a name="absexpression"></a>Abs(Expression)
+## <a name="absexpression"></a>ABS (výraz)
 
-Provede funkci absolutní hodnotu.
+Provede funkci absolutní hodnoty.
 
 **Argumenty**
 
-`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`.
+`expression`: A `Int32` ,`Int64`, nebo`Decimal`. `Double`
 
 **Návratová hodnota**
 
@@ -29,7 +29,7 @@ Absolutní hodnota zadaného výrazu.
 
 `SqlServer.ABS(-2)`
 
-## <a name="acosexpression"></a>ACOS(Expression)
+## <a name="acosexpression"></a>ACOS (výraz)
 
 Vrátí hodnotu Arkus kosinus určeného výrazu.
 
@@ -45,7 +45,7 @@ A `Double`.
 
 `SqlServer.ACOS(.9)`
 
-## <a name="asinexpression"></a>ASIN(Expression)
+## <a name="asinexpression"></a>ASIN (výraz)
 
 Vrátí hodnotu Arkus sinus určeného výrazu.
 
@@ -61,9 +61,9 @@ A `Double`.
 
 `SqlServer.ASIN(.9)`
 
-## <a name="atanexpression"></a>Atan(Expression)
+## <a name="atanexpression"></a>ATAN (výraz)
 
-Vrátí hodnotu Arkus tangens zadaného číselný výraz.
+Vrací hodnotu arkustangens zadaného číselného výrazu.
 
 **Argumenty**
 
@@ -77,9 +77,9 @@ A `Double`.
 
 `SqlServer.ATAN(9)`
 
-## <a name="atn2expression-expression"></a>ATN2(Expression, Expression)
+## <a name="atn2expression-expression"></a>ATN2 (výraz, výraz)
 
-Vrací úhel v radiánech, jehož tangens odpovídá mezi zadaným dvou numerických výrazů.
+Vrátí úhel v radiánech, jejichž tangens je mezi dvěma zadanými číselnými výrazy.
 
 **Argumenty**
 
@@ -93,26 +93,26 @@ A `Double`.
 
 `SqlServer.ATN2(9, 8)`
  
-## <a name="ceilingexpression"></a>CEILING(Expression)
+## <a name="ceilingexpression"></a>STROP (výraz)
 
-Převede zadaný výraz na nejmenší celé číslo, který je větší než nebo rovny.
+Převede zadaný výraz na nejmenší celé číslo, které je větší než nebo rovno.
 
 **Argumenty**
 
-`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`.
+`expression`: A `Int32` ,`Int64`, nebo`Decimal`. `Double`
 
 **Návratová hodnota**
 
-`Int32`, `Int64`, `Double`, Nebo `Decimal`.
+A `Int32` ,`Int64`, nebo`Decimal`. `Double`
 
 **Příklad** 
 
 [!code-csharp[DP EntityServices Concepts#SQLSERVER_CEILING](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_ceiling)]
 [!code-sql[DP EntityServices Concepts#SQLSERVER_CEILING](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_ceiling)]
 
-## <a name="cosexpression"></a>Cos(Expression)
+## <a name="cosexpression"></a>COS (výraz)
 
-Vypočítá trigonometrických kosinus úhlu určeného v radiánech. 
+Vypočítá trigonometrický kosinus zadaného úhlu v radiánech. 
 
 **Argumenty** 
 
@@ -126,9 +126,9 @@ A `Double`.
 
 `SqlServer.COS(45)`
 
-## <a name="cotexpression"></a>COT(Expression)
+## <a name="cotexpression"></a>COT (výraz)
 
-Vypočítá trigonometrických kotangens úhlu určeného v radiánech. 
+Vypočítá trigonometrický kotangens zadaného úhlu v radiánech. 
 
 **Argumenty** 
 
@@ -142,23 +142,23 @@ A `Double`.
 
 `SqlServer.COT(60)`
   
-## <a name="degreesradians"></a>DEGREES(RADIANS)
+## <a name="degreesradians"></a>STUPNĚ (radiány)
 
 Vrátí odpovídající úhel ve stupních. 
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`. 
+`expression`: A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
 
 **Návratová hodnota** 
 
-`Int32`, `Int64`, `Double`, Nebo `Decimal`. 
+A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
 
 **Příklad** 
 
 `SqlServer.DEGREES(3.1)`
 
-## <a name="expexpression"></a>Exp(Expression)
+## <a name="expexpression"></a>EXP (výraz)
 
 Vypočítá exponenciální hodnotu zadaného číselného výrazu. 
 
@@ -170,11 +170,11 @@ Vypočítá exponenciální hodnotu zadaného číselného výrazu.
 
 A `Double`. 
 
-**Příklad** `SqlServer.EXP(1)`
+**Příklad**`SqlServer.EXP(1)`
 
-## <a name="floorexpression"></a>Floor(Expression)
+## <a name="floorexpression"></a>FLOOR (výraz)
 
-Převede zadaný výraz na největší celé číslo menší než nebo rovna k němu. 
+Převede zadaný výraz na největší celé číslo menší nebo rovno. 
 
 **Argumenty** 
 
@@ -189,9 +189,9 @@ A `Double`.
 [!code-csharp[DP EntityServices Concepts#SQLSERVER_FLOOR](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_floor)] 
 [!code-sql[DP EntityServices Concepts#SQLSERVER_FLOOR](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_floor)]
 
-## <a name="logexpression"></a>LOG(Expression)
+## <a name="logexpression"></a>LOG (výraz)
 
-Vypočítá přirozený logaritmus zadaného `float` výrazu. 
+Vypočítá přirozený logaritmus určeného `float` výrazu. 
 
 **Argumenty** 
 
@@ -205,9 +205,9 @@ A `Double`.
 
 `SqlServer.LOG(100)`
 
-## <a name="log10expression"></a>LOG10(Expression)
+## <a name="log10expression"></a>Log10 – (výraz)
 
-Vrátí logaritmus o základu 10 zadaného `Double` výrazu. 
+Vrátí logaritmus o základu 10 určeného `Double` výrazu. 
 
 **Argumenty** 
 
@@ -223,7 +223,7 @@ A `Double`.
 
 ## <a name="pi"></a>PI()
 
-Vrátí konstantní hodnotu čísla pí jako `Double`. 
+Vrátí konstantní hodnotu pí jako `Double`. 
 
 **Návratová hodnota** 
 
@@ -233,7 +233,7 @@ A `Double`.
 
 `SqlServer.PI()`
 
-## <a name="powernumericexpression-powerexpression"></a>NAPÁJENÍ (numeric_expression, power_expression)
+## <a name="powernumeric_expression-power_expression"></a>NAPÁJENÍ (numeric_expression, power_expression)
 
 Vypočítá hodnotu zadaného výrazu na zadanou mocninu.
 
@@ -241,102 +241,88 @@ Vypočítá hodnotu zadaného výrazu na zadanou mocninu.
 
 |  |  |
 |--|--|
-|`numeric_expression`| `Int32`, `Int64`, `Double`, Nebo `Decimal`.|
-|`power_expression`| A `Double` , která představuje schopnost, který se má použít `numeric_expression`.| 
+|`numeric_expression`| A `Int32` ,`Int64`, nebo`Decimal`. `Double`|
+|`power_expression`| Který představuje mocninu, pro kterou chcete `numeric_expression`vyvolat. `Double`| 
 
 **Návratová hodnota** 
 
-Hodnota zadaného `numeric_expression` do zadaného `power_expression`. 
+Hodnota zadaná `numeric_expression` pro zadanou `power_expression`hodnotu. 
 
 **Příklad** 
 
 `SqlServer.POWER(2,7)`
 
-## <a name="radiansexpression"></a>RADIANS(Expression)
+## <a name="radiansexpression"></a>RADIÁNy (výraz)
 
 Převede stupně na radiány. 
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`. 
+`expression`: A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
 
 **Návratová hodnota** 
 
-`Int32`, `Int64`, `Double`, Nebo `Decimal`. 
+A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
 
 **Příklad** 
 
 `SqlServer.RADIANS(360.0)`
 
-## <a name="randseed"></a>RAND([seed])
+## <a name="randseed"></a>RAND ([Seed])
 
-Vrací náhodnou hodnotu od 0 do 1. 
+Vrátí náhodnou hodnotu od 0 do 1. 
 
 **Argumenty** 
 
-Počáteční hodnoty jako `Int32`. Pokud počáteční hodnotu nezadáte, přiřadí databázový stroj SQL serveru náhodně počáteční hodnoty. Pro zadaný počáteční hodnoty vrácený výsledek je vždy stejný.
+Hodnota počáteční hodnoty jako `Int32`. Pokud není zadaná počáteční hodnota, přiřadí SQL Server databázovému stroji počáteční hodnotu náhodně. U zadané počáteční hodnoty je vrácený výsledek vždycky stejný.
 
 **Návratová hodnota** 
 
-Náhodnou `Double` hodnotu od 0 do 1. 
+Náhodná `Double` hodnota od 0 do 1. 
 
 **Příklad** 
 
 `SqlServer.RAND()`
   
-## <a name="roundnumericexpression-lengthfunction"></a>Round(Numeric_Expression, length[,Function])
+## <a name="roundnumeric_expression-lengthfunction"></a>ROUND (numeric_expression; Length [; function])
 
-Vrátí hodnotu číselného výrazu, zaokrouhlí se zadané délky nebo přesnosti. 
+Vrátí číselný výraz zaokrouhlený na zadanou délku nebo přesnost. 
 
 **Argumenty** 
 
 |  |  |
 |--|--|
-|`numeric_expression`| `Int32`, `Int64`, `Double`, Nebo `Decimal`. 
-|`length`| `Int32` , Která představuje přesnost, ke kterému `numeric_expression` má být zaokrouhleno. Když `length` je kladné číslo, `numeric_expression` se zaokrouhlí na počet desetinných míst určené `length`. Když `length` je záporné číslo, `numeric_expression` poloměr zaoblení nalevo od desetinné čárky, jak jsou určené `length`.|
-|`function` | Volitelné. `Int32` , Který představuje typ operace k provedení. Pokud funkce je vynechán nebo má hodnotu 0 (výchozí), `numeric_expression` zaokrouhleno. Když je hodnota jiná než je zadána hodnota 0, `numeric_expression` je oříznutá. |
+|`numeric_expression`| A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
+|`length`| Hodnota, která představuje přesnost, na `numeric_expression` kterou má být zaokrouhlena. `Int32` Pokud `length` je kladné číslo, `numeric_expression` je zaokrouhleno na počet desetinných míst určených parametrem `length`. V `length` případě, že je záporné `numeric_expression` číslo, je zaokrouhleno na levé straně desetinné čárky, jak je `length`uvedeno v.|
+|`function` | Volitelný parametr. `Int32` Který představuje typ operace, která má být provedena. Pokud je funkce vynechána nebo má hodnotu 0 (výchozí), `numeric_expression` je zaokrouhlena. Pokud je zadána jiná hodnota než 0, `numeric_expression` je zkrácena. |
 
 **Návratová hodnota** 
 
-Hodnota zadaného `numeric_expression` do zadaného `power_expression`.
+Hodnota zadaná `numeric_expression` pro zadanou `power_expression`hodnotu.
 
 **Příklad** 
 
 `SqlServer.ROUND(748.58, -3)`
 
-## <a name="signexpression"></a>Sign(Expression) 
+## <a name="signexpression"></a>SIGN (výraz) 
 
-Vrátí kladné (+ 1), nula (0) nebo záporné znaménko (-1), z určeného výrazu. 
+Vrátí kladné znaménko (+ 1), nula (0) nebo negativní (-1) znak zadaného výrazu. 
 
 **Argumenty** 
 
-`expression`: `Int32`, `Int64`, `Double`, nebo `Decimal` 
+`expression`: `Int32`, `Int64`, nebo`Double``Decimal` 
 
 **Návratová hodnota** 
 
-`Int32`, `Int64`, `Double`, Nebo `Decimal`. 
+A `Int32` ,`Int64`, nebo`Decimal`. `Double` 
 
 **Příklad** 
 
 `SqlServer.SIGN(-10)`
 
-## <a name="sinexpression"></a>Sin(Expression)
+## <a name="sinexpression"></a>SIN (výraz)
 
-Vypočítá trigonometrických sinus úhlu určeného v radiánech a vrátí `Double` výrazu. 
-
-**Argumenty** 
-
-`expression`: A `Double`. 
-
-**Návratová hodnota** 
-
-A `Double`. 
-
-**Příklad** `SqlServer.SIN(20)`
-
-## <a name="sqrtexpression"></a>Sqrt(Expression)
-
-Vrátí druhou odmocninu z určeného výrazu. 
+Vypočítá trigonometrický sinus zadaného úhlu v radiánech a vrátí `Double` výraz. 
 
 **Argumenty** 
 
@@ -346,11 +332,25 @@ Vrátí druhou odmocninu z určeného výrazu.
 
 A `Double`. 
 
-**Příklad** `SqlServer.SQRT(3600)`
+**Příklad**`SqlServer.SIN(20)`
 
-## <a name="squareexpression"></a>Square(Expression)
+## <a name="sqrtexpression"></a>SQRT (výraz)
 
-Vrátí druhou mocninu, z určeného výrazu. 
+Vrátí druhou odmocninu určeného výrazu. 
+
+**Argumenty** 
+
+`expression`: A `Double`. 
+
+**Návratová hodnota** 
+
+A `Double`. 
+
+**Příklad**`SqlServer.SQRT(3600)`
+
+## <a name="squareexpression"></a>SQUARE (výraz)
+
+Vrátí čtverci určeného výrazu. 
 
 **Argumenty** 
 
@@ -364,9 +364,9 @@ A `Double`.
 
 `SqlServer.SQUARE(25)`
 
-## <a name="tanexpression"></a>Tan(Expression)
+## <a name="tanexpression"></a>TAN (výraz)
 
-Vypočítá jeho tangens zadaného výrazu.
+Vypočítá tangens zadaného výrazu.
 
 **Argumenty** 
 
@@ -382,10 +382,10 @@ Vypočítá jeho tangens zadaného výrazu.
   
 ## <a name="see-also"></a>Viz také:
 
-Další informace o matematických funkcí, které SqlClient podporuje najdete v dokumentaci pro verzi systému SQL Server, který jste zadali v manifestu zprostředkovatele, SqlClient:
+Další informace o matematických funkcích, které SqlClient podporuje, najdete v dokumentaci k verzi SQL Server, kterou jste zadali v manifestu zprostředkovatele SqlClient:
 
 - **SQL Server 2005:** [Matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms177516(v=sql.90))
 - **SQL Server 2008:** [Matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms177516(v=sql.100))
-- **SQL Server 2012 a novější:** [Matematické funkce (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql?view=sql-server-2017)
+- **SQL Server 2012 a novější:** [Matematické funkce (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql)
 
 - [SqlClient pro funkce Entity Framework](sqlclient-for-ef-functions.md)

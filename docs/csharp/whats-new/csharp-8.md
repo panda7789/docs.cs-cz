@@ -1,13 +1,13 @@
 ---
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
-ms.date: 09/10/2019
-ms.openlocfilehash: 1d6d52692a9a3f8b6fa4e333f086a880c54106b4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 09/20/2019
+ms.openlocfilehash: a434d1f7598bc3f6787f7466e48fb161db192761
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117822"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182408"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -28,6 +28,7 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Indexy a rozsahy](#indices-and-ranges)
 - [Přiřazení slučování s hodnotou null](#null-coalescing-assignment)
 - [Nespravované konstruované typy](#unmanaged-constructed-types)
+- [stackalloc ve vnořených výrazech](#stackalloc-in-nested-expressions)
 - [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
 
 > [!NOTE]
@@ -493,6 +494,16 @@ Span<Coords<int>> coordinates = stackalloc[]
 ```
 
 Další informace naleznete v tématu [nespravované typy](../language-reference/builtin-types/unmanaged-types.md).
+
+## <a name="stackalloc-in-nested-expressions"></a>stackalloc ve vnořených výrazech
+
+Počínaje `stackalloc` <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> 8,0 platí, že pokud je výsledek [stackalloc](../language-reference/operators/stackalloc.md) výrazu typu nebo,můžetepoužítvýrazvjinýchvýrazech:<xref:System.Span%601?displayProperty=nameWithType> C#
+
+```csharp
+Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
+var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
+Console.WriteLine(ind);  // output: 1
+```
 
 ## <a name="enhancement-of-interpolated-verbatim-strings"></a>Vylepšení interpolované doslovného řetězce
 

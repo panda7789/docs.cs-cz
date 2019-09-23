@@ -13,17 +13,17 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 83b1b3a7db63154dccc07325b1a1948a2db3953a
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 000a6b6dc892e65b50ae413ab3cb95d2a73ef0ef
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151828"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182574"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Podpora DateTime a DateTimeOffset v System.Text.Json
 
 Knihovna System. text. JSON analyzuje a zapisuje <xref:System.DateTime> <xref:System.DateTimeOffset> a hodnotuje hodnoty podle rozšířeného profilu ISO 8601:-2019.
-[Převaděče](https://docs.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1?view=netcore-3.0) poskytují vlastní podporu pro serializaci a deserializaci <xref:System.Text.Json.JsonSerializer>pomocí.
+[Převaděče](xref:System.Text.Json.Serialization.JsonConverter%601) poskytují vlastní podporu pro serializaci a deserializaci <xref:System.Text.Json.JsonSerializer>pomocí.
 Vlastní podporu je také možné implementovat při použití <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter>.
 
 ## <a name="support-for-the-iso-8601-12019-format"></a>Podpora formátu ISO 8601-1:2019
@@ -67,7 +67,7 @@ Při pokusu o čtení nekompatibilních formátů <xref:System.Text.Json.Utf8Jso
 
 ### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Při použití<xref:System.Text.Json.JsonSerializer>
 
-Pokud chcete, aby serializátor prováděl vlastní analýzu nebo formátování, můžete implementovat [vlastní převaděče](https://docs.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1?view=netcore-3.0).
+Pokud chcete, aby serializátor prováděl vlastní analýzu nebo formátování, můžete implementovat [vlastní převaděče](xref:System.Text.Json.Serialization.JsonConverter%601).
 Tady je několik příkladů:
 
 #### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Používání `DateTime(Offset).Parse` a`DateTime(Offset).ToString`

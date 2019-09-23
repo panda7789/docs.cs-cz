@@ -14,18 +14,18 @@ ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 4fd1f1dc0c2c0ad9ae2009ed592e48b8eeaa2783
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: f051d7a51a5f4ff8debf40fafbb8acfd8f7098f5
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373677"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182625"
 ---
 # <a name="walkthrough-serialize-collections-of-standard-types"></a>Návod: Serializace kolekcí standardních typů
 
 Vaše vlastní ovládací prvky budou někdy vystavovat kolekci jako vlastnost. Tento návod ukazuje, jak použít <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> třídu pro řízení způsobu serializace kolekce v době návrhu. <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> Použití hodnoty na vlastnost kolekce zajistí, že bude vlastnost serializována.
 
-Postup kopírování kódu v tomto tématu jako jediného výpisu naleznete v [tématu How to: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
+Postup kopírování kódu v tomto tématu jako jediného výpisu naleznete v [tématu How to: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171833(v=vs.120)).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -125,15 +125,15 @@ Chcete-li otestovat chování serializace ovládacího prvku, umístěte ho do f
 > [!NOTE]
 > V takovém případě **Návrhář formulářů** negeneruje žádné přiřazení k `Strings` vlastnosti.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Jakmile se dozvíte, jak serializovat kolekci standardních typů, zvažte integraci vlastních ovládacích prvků do prostředí v době návrhu. Následující témata popisují, jak vylepšit integraci vlastních ovládacích prvků v době návrhu:
 
-- [Architektura v době návrhu](/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
+- [Architektura v době návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
 
 - [Atributy v ovládacích prvcích Windows Forms](attributes-in-windows-forms-controls.md)
 
-- [Přehled serializace návrháře](/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
+- [Přehled serializace návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171834(v=vs.120))
 
 - [Návod: Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](creating-a-wf-control-design-time-features.md)
 

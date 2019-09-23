@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 2a0ebcf61fd96df6d2235962c1f1e9cac3fb22e6
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 5ef785f476b795a9c53e511d51b2683b99e6da05
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117151"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181980"
 ---
 ### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft. VisualBasic. konstanty. vbNewLine je zastaralá.
 
-Konstanta je označena jako [zastaralá](xref:System.ObsoleteAttribute) v .NET Framework, ale v knihovně .NET Core 3,0 se předtím chyběl atribut. <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName>
+Konstanta je označena jako [zastaralá](xref:System.ObsoleteAttribute) od verze .NET Core 3,0 Preview 8. <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName>
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -16,10 +16,10 @@ Konstanta je označena jako [zastaralá](xref:System.ObsoleteAttribute) v .NET F
 
 #### <a name="details"></a>Podrobnosti
 
-Počínaje verzí .NET Core 3,0 Preview 8 byl [zastaralý](xref:System.ObsoleteAttribute) atribut použit na <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> `vbNewLine` konstantu, aby odpovídal v .NET Framework. `vbNewLine` Použití konstanty generuje upozornění kompilátoru. 
+Počínaje verzí .NET Core 3,0 Preview 8 byl [zastaralý](xref:System.ObsoleteAttribute) atribut použit na <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> konstantu. Použití konstanty generuje upozornění kompilátoru. V předchozích verzích rozhraní .NET Core a .NET Framework nebyla označena jako zastaralá.
 
-V předchozích verzích .NET Core `vbNewLine` nevzniklo upozornění kompilátoru.
-
+Tato změna byla provedena za účelem podpory Visual Basic jako jazyka pro vývoj pro více platforem. Konstanta je `\r\n`ekvivalentem, sekvence znaků nového řádku ve Windows. `vbNewLine` V systémech UNIX je `\n`znak nového řádku.
+ 
 #### <a name="recommended-action"></a>Doporučená akce
 
 [Zastaralá](xref:System.ObsoleteAttribute) zpráva atributu `vbNewLine` pro zahrnuje následující doporučení:

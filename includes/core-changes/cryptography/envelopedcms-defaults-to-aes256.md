@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 7682eae5a28d4ef87d6622b775e0f2f9408bcbae
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: b965c3a975b0f2cadd906799fef1665261d96d6e
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117162"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181971"
 ---
 ### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnvelopedCms ve výchozím nastavení šifrování AES-256
 
-Výchozí algoritmus symetrického šifrování použitý nástrojem `EnvelopedCms` se změnil z TripleDES na AES-256.
+Výchozí symetrický šifrovací algoritmus používaný nástrojem `EnvelopedCms` se změnil z TripleDES na AES-256.
 
 #### <a name="details"></a>Podrobnosti
 
