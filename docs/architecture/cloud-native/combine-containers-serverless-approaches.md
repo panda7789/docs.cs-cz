@@ -1,0 +1,55 @@
+---
+title: Kombinování kontejnerů a přístupů bez serveru
+description: Kombinování kontejnerů a Kubernetes s přístupy bez serveru
+ms.date: 06/30/2019
+ms.openlocfilehash: 58aff43adbdd2e629370cc685f32c7b61c25f85e
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71183432"
+---
+# <a name="combining-containers-and-serverless-approaches"></a><span data-ttu-id="7ec17-103">Kombinování kontejnerů a přístupů bez serveru</span><span class="sxs-lookup"><span data-stu-id="7ec17-103">Combining containers and serverless approaches</span></span>
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+
+<span data-ttu-id="7ec17-104">Aplikace založené na mikroslužbách se často spoléhají na kontejnery, orchestraci a předávání zpráv mezi uzly.</span><span class="sxs-lookup"><span data-stu-id="7ec17-104">Frequently, microservices-based applications rely heavily on containers, orchestration, and message-passing for communication between nodes.</span></span> <span data-ttu-id="7ec17-105">Toto zasílání zpráv je ideálním úkolem pro Azure Functions, ale s ostatními aplikacemi nakonfigurovanými a nasazenými pomocí Kubernetes a souvisejících nástrojů by bylo skvělé, že by bylo možné využít Azure Functions v rámci této stejné sady nástrojů.</span><span class="sxs-lookup"><span data-stu-id="7ec17-105">This messaging is an ideal task for Azure Functions, but with the rest of the application configured and deployed using Kubernetes and related tools, it would be nice to be able to leverage Azure Functions within this same toolset.</span></span> <span data-ttu-id="7ec17-106">Naštěstí můžete zalamovat Azure Functions v kontejnerech Docker a nasazovat je pomocí stejných procesů a nástrojů jako zbytek aplikace založené na Kubernetes.</span><span class="sxs-lookup"><span data-stu-id="7ec17-106">Fortunately, you can wrap Azure Functions in Docker containers and deploy them using the same processes and tools as the rest of your Kubernetes-based app.</span></span>
+
+## <a name="when-does-it-make-sense-to-use-containers-with-serverless"></a><span data-ttu-id="7ec17-107">Kdy je vhodné používat kontejnery s bez serveru?</span><span class="sxs-lookup"><span data-stu-id="7ec17-107">When does it make sense to use containers with serverless?</span></span>
+
+<span data-ttu-id="7ec17-108">Ve výchozím nastavení nemají vaše funkce bez serveru žádné znalosti o platformě, na které se budou spouštět.</span><span class="sxs-lookup"><span data-stu-id="7ec17-108">By default, your serverless functions have no knowledge of the platform on which they'll run.</span></span> <span data-ttu-id="7ec17-109">V některých případech však můžete mít specifické požadavky, které je důležité pro přizpůsobení image kontejneru, ve které se váš kód spustí.</span><span class="sxs-lookup"><span data-stu-id="7ec17-109">However, in some cases you may have specific requirements that make it important for you to customize the container image in which your code will run.</span></span> <span data-ttu-id="7ec17-110">Můžete chtít použít vlastní image, protože vaše funkce závisí na konkrétní jazykové verzi nebo obsahuje závislosti nebo požadavky na konfiguraci, které nejsou podporovány výchozím imagí.</span><span class="sxs-lookup"><span data-stu-id="7ec17-110">You may want to use a custom image because your function relies on a specific language version or has dependencies or configuration requirements that aren't supported by the default image.</span></span> <span data-ttu-id="7ec17-111">V těchto případech může být vhodné přizpůsobit vlastní kontejner a nasadit funkci do vlastního kontejneru Docker.</span><span class="sxs-lookup"><span data-stu-id="7ec17-111">In these cases, it may make sense to customize your own container and deploy your function in a custom Docker container.</span></span>
+
+## <a name="when-should-you-avoid-using-containers-with-azure-functions"></a><span data-ttu-id="7ec17-112">Kdy byste se měli vyhnout použití kontejnerů s Azure Functions?</span><span class="sxs-lookup"><span data-stu-id="7ec17-112">When should you avoid using containers with Azure Functions?</span></span>
+
+<span data-ttu-id="7ec17-113">Pokud očekáváte, že se vám budou účtovat výhody plánu spotřeby pro vaši funkci, nebudete je moct dělat, pokud používáte vlastní kontejner.</span><span class="sxs-lookup"><span data-stu-id="7ec17-113">If you're expecting to benefit from the consumption plan billing for your function, you won't be able to do so if you're using your own container.</span></span> <span data-ttu-id="7ec17-114">A co víc, pokud překročíte jenom pomocí kontejneru Docker a nasadíte své funkce do vlastního clusteru Kubernetes, už nebudete mít k dispozici integrované škálování, které poskytuje Azure Functions.</span><span class="sxs-lookup"><span data-stu-id="7ec17-114">What's more, if you go beyond just using a Docker container and deploy your functions to your own Kubernetes cluster, you'll no longer benefit from the built-in scaling provided by Azure Functions.</span></span> <span data-ttu-id="7ec17-115">Budete muset použít funkce škálování Kubernetes popsané níže.</span><span class="sxs-lookup"><span data-stu-id="7ec17-115">You'll need to use Kubernetes' scaling features, described below.</span></span>
+
+## <a name="how-to-combine-serverless-and-docker-containers"></a><span data-ttu-id="7ec17-116">Jak kombinovat kontejnery bez serveru a Docker</span><span class="sxs-lookup"><span data-stu-id="7ec17-116">How to combine serverless and Docker containers</span></span>
+
+<span data-ttu-id="7ec17-117">Pokud chcete zabalit funkci Azure do kontejneru Docker, nainstalujte Azure Functions Core Tools a pak spusťte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="7ec17-117">To wrap an Azure Function in a Docker container, install the Azure Functions Core Tools and then run the following command:</span></span>
+
+```console
+func init ProjectName --docker
+```
+
+<span data-ttu-id="7ec17-118">Vyberte, který modul runtime pracovního procesu chcete, z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="7ec17-118">Choose which worker runtime you want from the following options:</span></span>
+
+- <span data-ttu-id="7ec17-119">`dotnet` (C#)</span><span class="sxs-lookup"><span data-stu-id="7ec17-119">`dotnet` (C#)</span></span>
+- <span data-ttu-id="7ec17-120">`node` (JavaScript)</span><span class="sxs-lookup"><span data-stu-id="7ec17-120">`node` (JavaScript)</span></span>
+- `python`
+
+<span data-ttu-id="7ec17-121">Když je projekt vytvořen, bude obsahovat souboru Dockerfile.</span><span class="sxs-lookup"><span data-stu-id="7ec17-121">When the project is created, it will include a Dockerfile.</span></span> <span data-ttu-id="7ec17-122">Nyní můžete funkci vytvořit a otestovat místně.</span><span class="sxs-lookup"><span data-stu-id="7ec17-122">Now, you can create and test your function locally.</span></span> <span data-ttu-id="7ec17-123">Sestavte a spusťte pomocí `docker build` příkazů `docker run` a.</span><span class="sxs-lookup"><span data-stu-id="7ec17-123">Build and run it using the  `docker build` and `docker run` commands.</span></span> <span data-ttu-id="7ec17-124">Podrobný postup, jak začít sestavovat Azure Functions s podporou Docker, najdete v kurzu [Vytvoření funkce na platformě Linux s využitím vlastního obrázku](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) .</span><span class="sxs-lookup"><span data-stu-id="7ec17-124">For detailed steps to get started building Azure Functions with Docker support, see the [Create a function on Linux using a custom image](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image) tutorial.</span></span>
+
+## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a><span data-ttu-id="7ec17-125">Jak kombinovat bez serveru a Kubernetes pomocí KEDA</span><span class="sxs-lookup"><span data-stu-id="7ec17-125">How to combine serverless and Kubernetes with KEDA</span></span>
+
+<span data-ttu-id="7ec17-126">Služba Azure Functions se automaticky škáluje tak, aby splňovala požadavky na základě frekvence událostí, které cílí na danou funkci.</span><span class="sxs-lookup"><span data-stu-id="7ec17-126">Azure functions scale automatically to meet demand based on the rate of events that are targeting a given function.</span></span> <span data-ttu-id="7ec17-127">Navíc můžete využít Kubernetes k hostování vašich funkcí a používat automatické škálování založené na událostech založených na Kubernetes nebo KEDA.</span><span class="sxs-lookup"><span data-stu-id="7ec17-127">Additionally, you can leverage Kubernetes to host your functions and use Kubernetes-based Event Driven Autoscaling, or KEDA.</span></span> <span data-ttu-id="7ec17-128">Když se nevyskytnou žádné události, KEDA může škálovat až na 0 instancí a pak v reakci na události může škálovat počet kontejnerů tak, aby splnily požadavky pomocí vodorovného automatického škálování pod.</span><span class="sxs-lookup"><span data-stu-id="7ec17-128">When no events are occurring, KEDA can scale down to 0 instances, and then in response to events it can scale up the number of containers to meet the demand using its horizontal pod autoscaler.</span></span> <span data-ttu-id="7ec17-129">[Přečtěte si další informace o škálování Azure Functions pomocí keda](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda).</span><span class="sxs-lookup"><span data-stu-id="7ec17-129">[Learn more about scaling Azure functions with KEDA](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda).</span></span>
+
+## <a name="references"></a><span data-ttu-id="7ec17-130">Odkazy</span><span class="sxs-lookup"><span data-stu-id="7ec17-130">References</span></span>
+
+- [<span data-ttu-id="7ec17-131">Spuštění Azure Functions v kontejneru Docker</span><span class="sxs-lookup"><span data-stu-id="7ec17-131">Run Azure Functions in a Docker Container</span></span>](https://markheath.net/post/azure-functions-docker)
+- [<span data-ttu-id="7ec17-132">Vytvoření funkce na platformě Linux pomocí vlastní image</span><span class="sxs-lookup"><span data-stu-id="7ec17-132">Create a function on Linux using a custom image</span></span>](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image)
+- [<span data-ttu-id="7ec17-133">Azure Functions pomocí automatického škálování založeného na událostech Kubernetes</span><span class="sxs-lookup"><span data-stu-id="7ec17-133">Azure Functions with Kubernetes Event Driven Autoscaling</span></span>](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda)
+
+>[!div class="step-by-step"]
+><span data-ttu-id="7ec17-134">[Předchozí](leverage-serverless-functions.md)
+>[Další](deploy-containers-azure.md)</span><span class="sxs-lookup"><span data-stu-id="7ec17-134">[Previous](leverage-serverless-functions.md)
+[Next](deploy-containers-azure.md)</span></span>

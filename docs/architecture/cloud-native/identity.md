@@ -1,0 +1,37 @@
+---
+title: Identita
+description: Architekt cloudových nativních aplikací .NET pro Azure | Odcizen
+ms.date: 09/23/2019
+ms.openlocfilehash: 4cc7c04bf323d2589777df466321f6801f511b6f
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71183047"
+---
+# <a name="identity"></a><span data-ttu-id="a69fa-103">Identita</span><span class="sxs-lookup"><span data-stu-id="a69fa-103">Identity</span></span>
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+
+<span data-ttu-id="a69fa-104">Většina softwarových aplikací musí mít znalosti uživatele nebo procesu, který je volá.</span><span class="sxs-lookup"><span data-stu-id="a69fa-104">Most software applications need to have some knowledge of the user or process that is calling them.</span></span> <span data-ttu-id="a69fa-105">Uživatel nebo proces, který interakci s aplikací, je známý jako objekt zabezpečení a proces ověřování a autorizace těchto objektů zabezpečení se označuje jako Správa identit, nebo jen *Identita*.</span><span class="sxs-lookup"><span data-stu-id="a69fa-105">The user or process interacting with an application is known as a security principal, and the process of authenticating and authorizing these principals is known as identity management, or simply *identity*.</span></span> <span data-ttu-id="a69fa-106">Jednoduché aplikace můžou zahrnovat veškerou správu identit v rámci aplikace, ale tento přístup se nedokáže dobře škálovat u mnoha aplikací a mnoha druhů objektů zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-106">Simple applications may include all of their identity management within the application, but this approach doesn't scale well with many applications and many kinds of security principals.</span></span> <span data-ttu-id="a69fa-107">Systém Windows podporuje používání služby Active Directory k zajištění centralizovaného ověřování a autorizace.</span><span class="sxs-lookup"><span data-stu-id="a69fa-107">Windows supports the use of Active Directory to provide centralized authentication and authorization.</span></span>
+
+<!-- (insert figure showing Windows AD auth model) -->
+
+<span data-ttu-id="a69fa-108">I když toto řešení platí v rámci podnikových sítí, není navržené pro uživatele nebo aplikace, které jsou mimo doménu služby AD.</span><span class="sxs-lookup"><span data-stu-id="a69fa-108">While this solution is effective within corporate networks, it isn't designed for use by users or applications that are outside of the AD domain.</span></span> <span data-ttu-id="a69fa-109">S růstem internetových aplikací a rostoucím počtem aplikací pro Cloud Native se vyvinuly modely zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-109">With the growth of Internet-based applications and the rise of cloud-native apps, security models have evolved.</span></span>
+
+<span data-ttu-id="a69fa-110">V dnešním cloudově nativním modelu identity se předpokládá, že je architektura distribuována.</span><span class="sxs-lookup"><span data-stu-id="a69fa-110">In today's cloud-native identity model, architecture is assumed to be distributed.</span></span> <span data-ttu-id="a69fa-111">Aplikace se dají nasadit kdekoli a můžou komunikovat s jinými aplikacemi odkudkoli.</span><span class="sxs-lookup"><span data-stu-id="a69fa-111">Apps can be deployed anywhere and may communicate with other apps anywhere.</span></span> <span data-ttu-id="a69fa-112">Klienti můžou s těmito aplikacemi komunikovat odkudkoli a ve skutečnosti se klienti mohou skládat z jakékoli kombinace platforem a zařízení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-112">Clients may communicate with these apps from anywhere, and in fact, clients may consist of any combination of platforms and devices.</span></span> <span data-ttu-id="a69fa-113">Řešení identity nativní pro Cloud využívají otevřené standardy k zajištění zabezpečeného přístupu k aplikacím od klientů.</span><span class="sxs-lookup"><span data-stu-id="a69fa-113">Cloud-native identity solutions leverage open standards to achieve secure application access from clients.</span></span> <span data-ttu-id="a69fa-114">Tito klienti jsou v rozsahu od lidských uživatelů na počítačích nebo na telefonech k dalším aplikacím hostovaným kdekoli online, k nastavením horních polí a zařízení IOT, na kterých běží jakákoli softwarová platforma kdekoli na světě.</span><span class="sxs-lookup"><span data-stu-id="a69fa-114">These clients range from human users on PCs or phones, to other apps hosted anywhere online, to set-top boxes and IOT devices running any software platform anywhere in the world.</span></span>
+
+<span data-ttu-id="a69fa-115">Moderní cloudová řešení identit obvykle využívají přístupové tokeny, které jsou vydány službou Secure token Service nebo serverem (STS) k objektu zabezpečení, jakmile je jejich identita určena.</span><span class="sxs-lookup"><span data-stu-id="a69fa-115">Modern cloud-native identity solutions typically leverage access tokens that are issued by a secure token service/server (STS) to a security principal once their identity is determined.</span></span> <span data-ttu-id="a69fa-116">Přístupový token, typicky JSON Web Token (JWT), zahrnuje *deklarace identity* objektu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-116">The access token, typically a JSON Web Token (JWT), includes *claims* about the security principal.</span></span> <span data-ttu-id="a69fa-117">Tyto deklarace budou minimálně zahrnovat identitu uživatele, ale můžou zahrnovat i další deklarace identity, které můžou aplikace použít k určení úrovně přístupu k udělení objektu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-117">These claims will minimally include the user's identity but may also include additional claims that can be used by applications to determine the level of access to grant the principal.</span></span>
+
+<!-- (insert figure showing basic handshake involving a principal, an STS, and an app) -->
+
+<span data-ttu-id="a69fa-118">Služba STS obvykle zodpovídá jenom za ověřování objektu zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a69fa-118">Typically, the STS is only responsible for authenticating the principal.</span></span> <span data-ttu-id="a69fa-119">Určení jejich úrovně přístupu k prostředkům je ponecháno i v ostatních částech aplikace.</span><span class="sxs-lookup"><span data-stu-id="a69fa-119">Determining their level of access to resources is left to other parts of the application.</span></span>
+
+## <a name="references"></a><span data-ttu-id="a69fa-120">Odkazy</span><span class="sxs-lookup"><span data-stu-id="a69fa-120">References</span></span>
+
+- [<span data-ttu-id="a69fa-121">Platforma Microsoft identity</span><span class="sxs-lookup"><span data-stu-id="a69fa-121">Microsoft identity platform</span></span>](https://docs.microsoft.com/azure/active-directory/develop/)
+
+>[!div class="step-by-step"]
+><span data-ttu-id="a69fa-122">[Předchozí](azure-monitor.md)
+>[Další](authentication-authorization.md)</span><span class="sxs-lookup"><span data-stu-id="a69fa-122">[Previous](azure-monitor.md)
+[Next](authentication-authorization.md)</span></span>
