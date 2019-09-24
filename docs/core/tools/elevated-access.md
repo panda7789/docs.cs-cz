@@ -3,108 +3,108 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: b6de87f375a584da25e160d79f51f1bc48f3c302
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: cf7c93a0adcae7092a61a6fc6046cd45cf00bf58
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969852"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216305"
 ---
-# <a name="elevated-access-for-dotnet-commands"></a><span data-ttu-id="c74b3-103">Zvýšený přístup pro příkazy dotnet</span><span class="sxs-lookup"><span data-stu-id="c74b3-103">Elevated access for dotnet commands</span></span>
+# <a name="elevated-access-for-dotnet-commands"></a><span data-ttu-id="5079d-103">Zvýšený přístup pro příkazy dotnet</span><span class="sxs-lookup"><span data-stu-id="5079d-103">Elevated access for dotnet commands</span></span>
 
-<span data-ttu-id="c74b3-104">Osvědčené postupy pro vývoj softwaru pomáhají vývojářům psát software, který vyžaduje nejnižší množství oprávnění.</span><span class="sxs-lookup"><span data-stu-id="c74b3-104">Software development best practices guide developers to writing software that requires the least amount of privilege.</span></span> <span data-ttu-id="c74b3-105">Nicméně nějaký software, například nástroje pro monitorování výkonu, vyžaduje oprávnění správce z důvodu pravidel operačního systému.</span><span class="sxs-lookup"><span data-stu-id="c74b3-105">However, some software, like performance monitoring tools, requires admin permission because of operating system rules.</span></span> <span data-ttu-id="c74b3-106">Následující pokyny popisují podporované scénáře pro zápis takového softwaru pomocí .NET Core.</span><span class="sxs-lookup"><span data-stu-id="c74b3-106">The following guidance describes supported scenarios for writing such software with .NET Core.</span></span> 
+<span data-ttu-id="5079d-104">Osvědčené postupy pro vývoj softwaru pomáhají vývojářům psát software, který vyžaduje nejnižší množství oprávnění.</span><span class="sxs-lookup"><span data-stu-id="5079d-104">Software development best practices guide developers to writing software that requires the least amount of privilege.</span></span> <span data-ttu-id="5079d-105">Nicméně nějaký software, například nástroje pro monitorování výkonu, vyžaduje oprávnění správce z důvodu pravidel operačního systému.</span><span class="sxs-lookup"><span data-stu-id="5079d-105">However, some software, like performance monitoring tools, requires admin permission because of operating system rules.</span></span> <span data-ttu-id="5079d-106">Následující pokyny popisují podporované scénáře pro zápis takového softwaru pomocí .NET Core.</span><span class="sxs-lookup"><span data-stu-id="5079d-106">The following guidance describes supported scenarios for writing such software with .NET Core.</span></span> 
 
-<span data-ttu-id="c74b3-107">Následující příkazy lze spustit se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="c74b3-107">The following commands can be run elevated:</span></span>
+<span data-ttu-id="5079d-107">Následující příkazy lze spustit se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="5079d-107">The following commands can be run elevated:</span></span>
 
-- <span data-ttu-id="c74b3-108">`dotnet tool`příkazy, jako je například [Instalace nástroje dotnet](dotnet-tool-install.md).</span><span class="sxs-lookup"><span data-stu-id="c74b3-108">`dotnet tool` commands, such as [dotnet tool install](dotnet-tool-install.md).</span></span>
+- <span data-ttu-id="5079d-108">`dotnet tool`příkazy, jako je například [Instalace nástroje dotnet](dotnet-tool-install.md).</span><span class="sxs-lookup"><span data-stu-id="5079d-108">`dotnet tool` commands, such as [dotnet tool install](dotnet-tool-install.md).</span></span>
 - `dotnet run --no-build`
 
-<span data-ttu-id="c74b3-109">Nedoporučujeme spouštět další příkazy se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="c74b3-109">We don't recommend running other commands elevated.</span></span> <span data-ttu-id="c74b3-110">Konkrétně nedoporučujeme zvyšovat zvýšení oprávnění pomocí příkazů, které používají MSBuild, například [dotnet Restore](dotnet-restore.md), [sestavení dotnet](dotnet-build.md)a [spuštění dotnet](dotnet-run.md).</span><span class="sxs-lookup"><span data-stu-id="c74b3-110">In particular, we don't recommend elevation with commands that use MSBuild, such as [dotnet restore](dotnet-restore.md), [dotnet build](dotnet-build.md), and [dotnet run](dotnet-run.md).</span></span> <span data-ttu-id="c74b3-111">Primárním problémem jsou problémy se správou oprávnění, když uživatel prochází zpátky a zpátky mezi kořenovým a omezeným účtem po vystavení příkazů dotnet.</span><span class="sxs-lookup"><span data-stu-id="c74b3-111">The primary issue is permission management problems when a user transitions back and forth between root and a restricted account after issuing dotnet commands.</span></span> <span data-ttu-id="c74b3-112">Můžete se setkat s omezeným uživatelem, který nemáte přístup k souboru vytvořenému kořenovým uživatelem.</span><span class="sxs-lookup"><span data-stu-id="c74b3-112">You may find as a restricted user that you don't have access to the file built by a root user.</span></span> <span data-ttu-id="c74b3-113">Existují způsoby, jak tuto situaci vyřešit, ale nejsou potřebné k tomu, aby se na první místo dostaly.</span><span class="sxs-lookup"><span data-stu-id="c74b3-113">There are ways to resolve this situation, but they're unnecessary to get into in the first place.</span></span>
+<span data-ttu-id="5079d-109">Nedoporučujeme spouštět další příkazy se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="5079d-109">We don't recommend running other commands elevated.</span></span> <span data-ttu-id="5079d-110">Konkrétně nedoporučujeme zvyšovat zvýšení oprávnění pomocí příkazů, které používají MSBuild, například [dotnet Restore](dotnet-restore.md), [sestavení dotnet](dotnet-build.md)a [spuštění dotnet](dotnet-run.md).</span><span class="sxs-lookup"><span data-stu-id="5079d-110">In particular, we don't recommend elevation with commands that use MSBuild, such as [dotnet restore](dotnet-restore.md), [dotnet build](dotnet-build.md), and [dotnet run](dotnet-run.md).</span></span> <span data-ttu-id="5079d-111">Primárním problémem jsou problémy se správou oprávnění, když uživatel prochází zpátky a zpátky mezi kořenovým a omezeným účtem po vystavení příkazů dotnet.</span><span class="sxs-lookup"><span data-stu-id="5079d-111">The primary issue is permission management problems when a user transitions back and forth between root and a restricted account after issuing dotnet commands.</span></span> <span data-ttu-id="5079d-112">Můžete se setkat s omezeným uživatelem, který nemáte přístup k souboru vytvořenému kořenovým uživatelem.</span><span class="sxs-lookup"><span data-stu-id="5079d-112">You may find as a restricted user that you don't have access to the file built by a root user.</span></span> <span data-ttu-id="5079d-113">Existují způsoby, jak tuto situaci vyřešit, ale nejsou potřebné k tomu, aby se na první místo dostaly.</span><span class="sxs-lookup"><span data-stu-id="5079d-113">There are ways to resolve this situation, but they're unnecessary to get into in the first place.</span></span>
 
-<span data-ttu-id="c74b3-114">Příkazy můžete spustit jako kořen, pokud nebudete mezi kořenem a omezeným účtem přecházet zpátky a zpátky.</span><span class="sxs-lookup"><span data-stu-id="c74b3-114">You can run commands as root as long as you don’t transition back and forth between root and a restricted account.</span></span> <span data-ttu-id="c74b3-115">Například kontejnery Docker se ve výchozím nastavení spouštějí jako kořenové, takže mají tuto vlastnost.</span><span class="sxs-lookup"><span data-stu-id="c74b3-115">For example, Docker containers run as root by default, so they have this characteristic.</span></span>
+<span data-ttu-id="5079d-114">Příkazy můžete spustit jako kořen, pokud nebudete mezi kořenem a omezeným účtem přecházet zpátky a zpátky.</span><span class="sxs-lookup"><span data-stu-id="5079d-114">You can run commands as root as long as you don’t transition back and forth between root and a restricted account.</span></span> <span data-ttu-id="5079d-115">Například kontejnery Docker se ve výchozím nastavení spouštějí jako kořenové, takže mají tuto vlastnost.</span><span class="sxs-lookup"><span data-stu-id="5079d-115">For example, Docker containers run as root by default, so they have this characteristic.</span></span>
 
-## <a name="global-tool-installation"></a><span data-ttu-id="c74b3-116">Instalace globálních nástrojů</span><span class="sxs-lookup"><span data-stu-id="c74b3-116">Global tool installation</span></span>
+## <a name="global-tool-installation"></a><span data-ttu-id="5079d-116">Instalace globálních nástrojů</span><span class="sxs-lookup"><span data-stu-id="5079d-116">Global tool installation</span></span>
 
-<span data-ttu-id="c74b3-117">Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a odinstalovat nástroje .NET Core, které vyžadují vyšší oprávnění ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="c74b3-117">The following instructions demonstrate the recommended way to install, run, and uninstall .NET Core tools that require elevated permissions to execute.</span></span>
+<span data-ttu-id="5079d-117">Následující pokyny ukazují doporučený způsob, jak nainstalovat, spustit a odinstalovat nástroje .NET Core, které vyžadují vyšší oprávnění ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="5079d-117">The following instructions demonstrate the recommended way to install, run, and uninstall .NET Core tools that require elevated permissions to execute.</span></span>
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[<span data-ttu-id="c74b3-118">Windows</span><span class="sxs-lookup"><span data-stu-id="c74b3-118">Windows</span></span>](#tab/windows)
+# <a name="windowstabwindows"></a>[<span data-ttu-id="5079d-118">Windows</span><span class="sxs-lookup"><span data-stu-id="5079d-118">Windows</span></span>](#tab/windows)
 
-### <a name="install-the-global-tool"></a><span data-ttu-id="c74b3-119">Instalace globálního nástroje</span><span class="sxs-lookup"><span data-stu-id="c74b3-119">Install the global tool</span></span>
+### <a name="install-the-global-tool"></a><span data-ttu-id="5079d-119">Instalace globálního nástroje</span><span class="sxs-lookup"><span data-stu-id="5079d-119">Install the global tool</span></span>
 
-<span data-ttu-id="c74b3-120">Pokud složka `%ProgramFiles%\dotnet-tools` již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:</span><span class="sxs-lookup"><span data-stu-id="c74b3-120">If the folder `%ProgramFiles%\dotnet-tools` already exists, do the following to check whether the "Users" group has permission to write or modify that directory:</span></span>
+<span data-ttu-id="5079d-120">Pokud složka `%ProgramFiles%\dotnet-tools` již existuje, proveďte následující kroky a ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravě tohoto adresáře:</span><span class="sxs-lookup"><span data-stu-id="5079d-120">If the folder `%ProgramFiles%\dotnet-tools` already exists, do the following to check whether the "Users" group has permission to write or modify that directory:</span></span>
 
-- <span data-ttu-id="c74b3-121">Klikněte pravým tlačítkem `%ProgramFiles%\dotnet-tools` na složku a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="c74b3-121">Right-click the `%ProgramFiles%\dotnet-tools` folder and select **Properties**.</span></span> <span data-ttu-id="c74b3-122">Otevře se dialogové okno **společné vlastnosti** .</span><span class="sxs-lookup"><span data-stu-id="c74b3-122">The **Common Properties** dialog box opens.</span></span> 
-- <span data-ttu-id="c74b3-123">Vyberte kartu **zabezpečení** . V části **uživatelské jméno nebo název skupiny**ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravám adresáře.</span><span class="sxs-lookup"><span data-stu-id="c74b3-123">Select the **Security** tab. Under **Group or user names**, check whether the “Users” group has permission to write or modify the directory.</span></span> 
-- <span data-ttu-id="c74b3-124">Pokud skupina uživatelé může zapisovat nebo upravovat adresář, použijte při instalaci nástrojů místo příkazu *dotnet-Tools*jiný název adresáře.</span><span class="sxs-lookup"><span data-stu-id="c74b3-124">If the "Users" group can write or modify the directory, use a different directory name when installing the tools rather than *dotnet-tools*.</span></span>
+- <span data-ttu-id="5079d-121">Klikněte pravým tlačítkem `%ProgramFiles%\dotnet-tools` na složku a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="5079d-121">Right-click the `%ProgramFiles%\dotnet-tools` folder and select **Properties**.</span></span> <span data-ttu-id="5079d-122">Otevře se dialogové okno **společné vlastnosti** .</span><span class="sxs-lookup"><span data-stu-id="5079d-122">The **Common Properties** dialog box opens.</span></span> 
+- <span data-ttu-id="5079d-123">Vyberte kartu **zabezpečení** . V části **uživatelské jméno nebo název skupiny**ověřte, zda má skupina uživatelé oprávnění k zápisu nebo úpravám adresáře.</span><span class="sxs-lookup"><span data-stu-id="5079d-123">Select the **Security** tab. Under **Group or user names**, check whether the “Users” group has permission to write or modify the directory.</span></span> 
+- <span data-ttu-id="5079d-124">Pokud skupina uživatelé může zapisovat nebo upravovat adresář, použijte při instalaci nástrojů místo příkazu *dotnet-Tools*jiný název adresáře.</span><span class="sxs-lookup"><span data-stu-id="5079d-124">If the "Users" group can write or modify the directory, use a different directory name when installing the tools rather than *dotnet-tools*.</span></span>
 
-<span data-ttu-id="c74b3-125">Nástroje nainstalujete spuštěním následujícího příkazu v příkazovém řádku se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="c74b3-125">To install tools, run the following command in elevated prompt.</span></span> <span data-ttu-id="c74b3-126">Během instalace vytvoří složku *dotnet-Tools* .</span><span class="sxs-lookup"><span data-stu-id="c74b3-126">It will create the *dotnet-tools* folder during the installation.</span></span>
+<span data-ttu-id="5079d-125">Nástroje nainstalujete spuštěním následujícího příkazu v příkazovém řádku se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="5079d-125">To install tools, run the following command in elevated prompt.</span></span> <span data-ttu-id="5079d-126">Během instalace vytvoří složku *dotnet-Tools* .</span><span class="sxs-lookup"><span data-stu-id="5079d-126">It will create the *dotnet-tools* folder during the installation.</span></span>
 
-```cmd
+```dotnetcli
 dotnet tool install PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools".
 ```
 
-### <a name="run-the-global-tool"></a><span data-ttu-id="c74b3-127">Spustit globální nástroj</span><span class="sxs-lookup"><span data-stu-id="c74b3-127">Run the global tool</span></span>
+### <a name="run-the-global-tool"></a><span data-ttu-id="5079d-127">Spustit globální nástroj</span><span class="sxs-lookup"><span data-stu-id="5079d-127">Run the global tool</span></span>
 
-<span data-ttu-id="c74b3-128">**Možnost 1** Použít úplnou cestu s výzvou se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="c74b3-128">**Option 1** Use the full path with elevated prompt:</span></span>
+<span data-ttu-id="5079d-128">**Možnost 1** Použít úplnou cestu s výzvou se zvýšenými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="5079d-128">**Option 1** Use the full path with elevated prompt:</span></span>
 
 ```cmd
 "%ProgramFiles%\dotnet-tools\TOOLCOMMAND"
 ```
 
-<span data-ttu-id="c74b3-129">**Možnost 2** Přidejte nově vytvořenou složku do `%Path%`.</span><span class="sxs-lookup"><span data-stu-id="c74b3-129">**Option 2** Add the newly created folder to `%Path%`.</span></span> <span data-ttu-id="c74b3-130">Tuto operaci je nutné provést pouze jednou.</span><span class="sxs-lookup"><span data-stu-id="c74b3-130">You only need to do this operation once.</span></span>
+<span data-ttu-id="5079d-129">**Možnost 2** Přidejte nově vytvořenou složku do `%Path%`.</span><span class="sxs-lookup"><span data-stu-id="5079d-129">**Option 2** Add the newly created folder to `%Path%`.</span></span> <span data-ttu-id="5079d-130">Tuto operaci je nutné provést pouze jednou.</span><span class="sxs-lookup"><span data-stu-id="5079d-130">You only need to do this operation once.</span></span>
 
 ```cmd
 setx Path "%Path%;%ProgramFiles%\dotnet-tools\"
 ```
 
-<span data-ttu-id="c74b3-131">A spustit pomocí:</span><span class="sxs-lookup"><span data-stu-id="c74b3-131">And run with:</span></span>
+<span data-ttu-id="5079d-131">A spustit pomocí:</span><span class="sxs-lookup"><span data-stu-id="5079d-131">And run with:</span></span>
 
 ```cmd
 TOOLCOMMAND
 ```
 
-### <a name="uninstall-the-global-tool"></a><span data-ttu-id="c74b3-132">Odinstalace globálního nástroje</span><span class="sxs-lookup"><span data-stu-id="c74b3-132">Uninstall the global tool</span></span>
+### <a name="uninstall-the-global-tool"></a><span data-ttu-id="5079d-132">Odinstalace globálního nástroje</span><span class="sxs-lookup"><span data-stu-id="5079d-132">Uninstall the global tool</span></span>
 
-<span data-ttu-id="c74b3-133">Do příkazového řádku se zvýšenými oprávněními zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="c74b3-133">In an elevated prompt, type the following command:</span></span>
+<span data-ttu-id="5079d-133">Do příkazového řádku se zvýšenými oprávněními zadejte následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="5079d-133">In an elevated prompt, type the following command:</span></span>
 
-```cmd
+```dotnetcli
 dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 ```
 
-# <a name="linuxtablinux"></a>[<span data-ttu-id="c74b3-134">Linux</span><span class="sxs-lookup"><span data-stu-id="c74b3-134">Linux</span></span>](#tab/linux)
+# <a name="linuxtablinux"></a>[<span data-ttu-id="5079d-134">Linux</span><span class="sxs-lookup"><span data-stu-id="5079d-134">Linux</span></span>](#tab/linux)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
-# <a name="macostabmacos"></a>[<span data-ttu-id="c74b3-135">macOS</span><span class="sxs-lookup"><span data-stu-id="c74b3-135">macOS</span></span>](#tab/macos)
+# <a name="macostabmacos"></a>[<span data-ttu-id="5079d-135">macOS</span><span class="sxs-lookup"><span data-stu-id="5079d-135">macOS</span></span>](#tab/macos)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
 ---
 
-## <a name="local-tools"></a><span data-ttu-id="c74b3-136">Místní nástroje</span><span class="sxs-lookup"><span data-stu-id="c74b3-136">Local tools</span></span>
+## <a name="local-tools"></a><span data-ttu-id="5079d-136">Místní nástroje</span><span class="sxs-lookup"><span data-stu-id="5079d-136">Local tools</span></span>
 
-<span data-ttu-id="c74b3-137">Místní nástroje jsou vymezeny podle stromu podadresářů pro jednotlivé uživatele.</span><span class="sxs-lookup"><span data-stu-id="c74b3-137">Local tools are scoped per subdirectory tree, per user.</span></span> <span data-ttu-id="c74b3-138">Při spuštění se zvýšenými oprávněními místní nástroje sdílí omezené uživatelské prostředí do prostředí se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="c74b3-138">When run elevated, local tools share a restricted user environment to the elevated environment.</span></span> <span data-ttu-id="c74b3-139">V systému Linux a macOS to vede k nastavování souborů s přístupem uživatele root.</span><span class="sxs-lookup"><span data-stu-id="c74b3-139">In Linux and macOS, this results in files being set with root user-only access.</span></span> <span data-ttu-id="c74b3-140">Pokud uživatel přepne zpět na účet s omezeným přístupem, uživatel již nebude moci přistupovat k souborům nebo do něj zapisovat.</span><span class="sxs-lookup"><span data-stu-id="c74b3-140">If the user switches back to a restricted account, the user can no longer access or write to the files.</span></span> <span data-ttu-id="c74b3-141">Proto se nedoporučuje instalovat nástroje, které vyžadují zvýšení oprávnění, protože místní nástroje.</span><span class="sxs-lookup"><span data-stu-id="c74b3-141">So installing tools that require elevation as local tools isn't recommended.</span></span> <span data-ttu-id="c74b3-142">Místo toho použijte `--tool-path` možnost a předchozí pokyny pro globální nástroje.</span><span class="sxs-lookup"><span data-stu-id="c74b3-142">Instead, use the `--tool-path` option and the previous guidelines for global tools.</span></span>
+<span data-ttu-id="5079d-137">Místní nástroje jsou vymezeny podle stromu podadresářů pro jednotlivé uživatele.</span><span class="sxs-lookup"><span data-stu-id="5079d-137">Local tools are scoped per subdirectory tree, per user.</span></span> <span data-ttu-id="5079d-138">Při spuštění se zvýšenými oprávněními místní nástroje sdílí omezené uživatelské prostředí do prostředí se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="5079d-138">When run elevated, local tools share a restricted user environment to the elevated environment.</span></span> <span data-ttu-id="5079d-139">V systému Linux a macOS to vede k nastavování souborů s přístupem uživatele root.</span><span class="sxs-lookup"><span data-stu-id="5079d-139">In Linux and macOS, this results in files being set with root user-only access.</span></span> <span data-ttu-id="5079d-140">Pokud uživatel přepne zpět na účet s omezeným přístupem, uživatel již nebude moci přistupovat k souborům nebo do něj zapisovat.</span><span class="sxs-lookup"><span data-stu-id="5079d-140">If the user switches back to a restricted account, the user can no longer access or write to the files.</span></span> <span data-ttu-id="5079d-141">Proto se nedoporučuje instalovat nástroje, které vyžadují zvýšení oprávnění, protože místní nástroje.</span><span class="sxs-lookup"><span data-stu-id="5079d-141">So installing tools that require elevation as local tools isn't recommended.</span></span> <span data-ttu-id="5079d-142">Místo toho použijte `--tool-path` možnost a předchozí pokyny pro globální nástroje.</span><span class="sxs-lookup"><span data-stu-id="5079d-142">Instead, use the `--tool-path` option and the previous guidelines for global tools.</span></span>
 
-## <a name="elevation-during-development"></a><span data-ttu-id="c74b3-143">Zvýšení úrovně během vývoje</span><span class="sxs-lookup"><span data-stu-id="c74b3-143">Elevation during development</span></span>
+## <a name="elevation-during-development"></a><span data-ttu-id="5079d-143">Zvýšení úrovně během vývoje</span><span class="sxs-lookup"><span data-stu-id="5079d-143">Elevation during development</span></span>
 
-<span data-ttu-id="c74b3-144">Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování aplikace.</span><span class="sxs-lookup"><span data-stu-id="c74b3-144">During development, you may need elevated access to test your application.</span></span> <span data-ttu-id="c74b3-145">Tento scénář je běžný například pro aplikace IoT.</span><span class="sxs-lookup"><span data-stu-id="c74b3-145">This scenario is common for IoT apps, for example.</span></span> <span data-ttu-id="c74b3-146">Doporučujeme sestavit aplikaci bez zvýšení oprávnění a pak ji spustit se zvýšením oprávnění.</span><span class="sxs-lookup"><span data-stu-id="c74b3-146">We recommend that you build the application without elevation and then run it with elevation.</span></span> <span data-ttu-id="c74b3-147">Existuje několik vzorů, jak je znázorněno níže:</span><span class="sxs-lookup"><span data-stu-id="c74b3-147">There are a few patterns, as follows:</span></span>
+<span data-ttu-id="5079d-144">Během vývoje můžete potřebovat vyšší úroveň přístupu k otestování aplikace.</span><span class="sxs-lookup"><span data-stu-id="5079d-144">During development, you may need elevated access to test your application.</span></span> <span data-ttu-id="5079d-145">Tento scénář je běžný například pro aplikace IoT.</span><span class="sxs-lookup"><span data-stu-id="5079d-145">This scenario is common for IoT apps, for example.</span></span> <span data-ttu-id="5079d-146">Doporučujeme sestavit aplikaci bez zvýšení oprávnění a pak ji spustit se zvýšením oprávnění.</span><span class="sxs-lookup"><span data-stu-id="5079d-146">We recommend that you build the application without elevation and then run it with elevation.</span></span> <span data-ttu-id="5079d-147">Existuje několik vzorů, jak je znázorněno níže:</span><span class="sxs-lookup"><span data-stu-id="5079d-147">There are a few patterns, as follows:</span></span>
 
-- <span data-ttu-id="c74b3-148">Pomocí vygenerovaného spustitelného souboru (poskytuje nejlepší výkon při spuštění):</span><span class="sxs-lookup"><span data-stu-id="c74b3-148">Using generated executable (it provides the best startup performance):</span></span>
+- <span data-ttu-id="5079d-148">Pomocí vygenerovaného spustitelného souboru (poskytuje nejlepší výkon při spuštění):</span><span class="sxs-lookup"><span data-stu-id="5079d-148">Using generated executable (it provides the best startup performance):</span></span>
 
    ```bash
    dotnet build
    sudo ./bin/Debug/netcoreapp3.0/APPLICATIONNAME
    ```
     
-- <span data-ttu-id="c74b3-149">Pomocí příkazu [dotnet Run](dotnet-run.md) s `—no-build` příznakem Vyhněte se generování nových binárních souborů:</span><span class="sxs-lookup"><span data-stu-id="c74b3-149">Using the [dotnet run](dotnet-run.md) command with the `—no-build` flag to avoid generating new binaries:</span></span>
+- <span data-ttu-id="5079d-149">Pomocí příkazu [dotnet Run](dotnet-run.md) s `—no-build` příznakem Vyhněte se generování nových binárních souborů:</span><span class="sxs-lookup"><span data-stu-id="5079d-149">Using the [dotnet run](dotnet-run.md) command with the `—no-build` flag to avoid generating new binaries:</span></span>
 
    ```bash
    dotnet build
    sudo dotnet run --no-build
    ```
 
-## <a name="see-also"></a><span data-ttu-id="c74b3-150">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c74b3-150">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5079d-150">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5079d-150">See also</span></span>
 
-- [<span data-ttu-id="c74b3-151">Přehled globálních nástrojů .NET Core</span><span class="sxs-lookup"><span data-stu-id="c74b3-151">.NET Core Global Tools overview</span></span>](global-tools.md)
+- [<span data-ttu-id="5079d-151">Přehled globálních nástrojů .NET Core</span><span class="sxs-lookup"><span data-stu-id="5079d-151">.NET Core Global Tools overview</span></span>](global-tools.md)
