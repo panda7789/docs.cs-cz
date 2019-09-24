@@ -1,16 +1,16 @@
 ---
-title: Komunikační infrastruktura sítě
+title: Komunikační infrastruktura Service Mesh
 description: Přečtěte si, jak technologie sítě sítě zefektivňují komunikaci mikroslužeb v cloudu.
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: dc9237197732ea622aad726583140623b0a5a4f4
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 884b3bf9afd80144a36d3328af916f1c1f12bf4f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184783"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214345"
 ---
-# <a name="service-mesh-communication-infrastructure"></a>Komunikační infrastruktura sítě
+# <a name="service-mesh-communication-infrastructure"></a>Komunikační infrastruktura Service Mesh
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -74,4 +74,4 @@ Dál jsme přešli na distribuovaná data v systémech nativních pro Cloud a na
 
 >[!div class="step-by-step"]
 >[Předchozí](rest-grpc.md)
->[Další](distributed-data.md) <!-- Next Chapter -->
+>[Další](distributed-data.md)

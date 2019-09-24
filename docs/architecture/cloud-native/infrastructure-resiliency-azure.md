@@ -2,12 +2,12 @@
 title: Odolnost platformy Azure
 description: Architekt cloudových nativních aplikací .NET pro Azure | Odolnost cloudové infrastruktury s Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 5d8ddc65ccdf4bb305be62e5caca30eab49f87e2
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 7f148588be97fa6bf8a055f5f5bed8e23908277f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182977"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214199"
 ---
 # <a name="azure-platform-resiliency"></a>Odolnost platformy Azure
 
@@ -68,7 +68,7 @@ Cloud Thrives při škálování. Schopnost zvýšit nebo snížit systémové p
 
 - *Využijte výhod funkcí automatického škálování platformy.* Používejte integrované funkce automatického škálování, kdykoli je to možné, ale nemusíte používat vlastní mechanismy nebo mechanizmy třetích stran. Pokud je to možné, použijte plánovaná pravidla škálování k zajištění dostupnosti prostředků bez prodlevy při spuštění, ale podle potřeby přidejte do pravidel reaktivní automatické škálování, abyste se mohli vypořádat s neočekávanými změnami v poptávce. Další informace najdete v tématu [pokyny](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)k automatickému škálování.
 
- - *Horizontální navýšení kapacity* Konečným postupem je horizontální navýšení kapacity, aby bylo možné rychle vyhovět okamžitým špičkám v provozu bez ztráty podnikání. A potom Škálujte dolů (to znamená odebrání nepotřebných prostředků) uvážlivě, aby se zajistila stabilita systému. Jednoduchým způsobem, jak to provést, je nastavit dobu chladnutí, což je čas, který se má čekat mezi operacemi škálování, na pět minut při přidávání prostředků a až 15 minut pro odebrání instancí.
+- *Horizontální navýšení kapacity* Konečným postupem je horizontální navýšení kapacity, aby bylo možné rychle vyhovět okamžitým špičkám v provozu bez ztráty podnikání. A potom Škálujte dolů (to znamená odebrání nepotřebných prostředků) uvážlivě, aby se zajistila stabilita systému. Jednoduchým způsobem, jak to provést, je nastavit dobu chladnutí, což je čas, který se má čekat mezi operacemi škálování, na pět minut při přidávání prostředků a až 15 minut pro odebrání instancí.
 
 ## <a name="built-in-retry-in-services"></a>Integrované opakování ve službách
 

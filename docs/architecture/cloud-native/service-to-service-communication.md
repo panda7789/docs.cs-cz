@@ -3,12 +3,12 @@ title: Komunikace mezi službami
 description: Přečtěte si, jak cloudové mikroslužby back-end komunikují s ostatními back-end mikroslužbami.
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 7a69678fd38a69c3c2d7e91d4aea019c39141cb6
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: e9f27309fd6b03830ab3098d0fb08a7ecf5c0eaa
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184671"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214389"
 ---
 # <a name="service-to-service-communication"></a>Komunikace mezi službami
 
@@ -60,7 +60,7 @@ Oblíbenou možností pro odebrání spojení s mikroslužbami je [model materia
 
 ### <a name="service-aggregator-pattern"></a>Model Agregátoru služby
 
-Další možností pro odstranění propojení mikroslužby-to-micrservice je [agregátorová mikroslužba](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), která je znázorněná fialově na obrázku 4-10. 
+Další možností pro odstranění spojení mikroslužeb proti mikroslužbám je [agregátorová mikroslužba](https://devblogs.microsoft.com/cesardelatorre/designing-and-implementing-api-gateways-with-ocelot-in-a-microservices-and-container-based-architecture/), která je znázorněná fialově na obrázku 4-10. 
 
 ![Služba Agregátoru](./media/aggregator-service.png)
 
@@ -232,4 +232,4 @@ V případě cloudových nativních aplikací, které musí streamovat velký po
 
 >[!div class="step-by-step"]
 >[Předchozí](front-end-communication.md)
->[Další](rest-grpc.md) <!-- Next Chapter -->
+>[Další](rest-grpc.md)

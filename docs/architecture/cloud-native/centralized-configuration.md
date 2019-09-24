@@ -2,12 +2,12 @@
 title: Centralizovaná konfigurace
 description: Centralizovaná konfigurace pomocí Azure Key Vault může zjednodušit správu nativních aplikací cloudu.
 ms.date: 06/30/2019
-ms.openlocfilehash: f4f495591550abccf2c64ef24cbe7620b039d8ca
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 4c516b6773d913acd71ff06742302e9766a141e2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183516"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213998"
 ---
 # <a name="centralized-configuration"></a>Centralizovaná konfigurace
 
@@ -27,4 +27,4 @@ S centralizovanou konfigurací lze nastavení, která platí pro celou aplikaci,
 
 >[!div class="step-by-step"]
 >[Předchozí](deploy-eshoponcontainers-azure.md)
->[Další](scale-applications.md) <!-- Next Chapter -->
+>[Další](scale-applications.md)

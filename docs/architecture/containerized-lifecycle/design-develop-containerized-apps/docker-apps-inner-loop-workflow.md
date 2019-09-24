@@ -2,12 +2,12 @@
 title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 description: Seznamte se s pracovním postupem "vnitřní smyčka" pro vývoj aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: ce573546f61b98c2f93e998203497fa949e9efe8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 04e1b29e6a0cef89df05cc9124806c74a38b5249
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295845"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214355"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -47,8 +47,7 @@ Způsob vývoje aplikace je podobný způsobu, jakým jste to provedete bez Dock
 
 S nejnovějšími verzemi Docker pro Mac a Windows je snazší než kdy dřív vyvíjet aplikace Docker a instalace je jednoduchá.
 
-> [! INFORMACE
->
+> [!TIP]
 > Pokyny, jak <https://docs.docker.com/docker-for-windows/>nastavit Docker for Windows, najdete v tématu.
 >
 >Pokyny, jak <https://docs.docker.com/docker-for-mac/>nastavit Docker pro Mac, najdete v tématu.
@@ -57,8 +56,7 @@ Kromě toho budete potřebovat Editor kódu, abyste mohli skutečně vyvíjet ap
 
 Společnost Microsoft poskytuje Visual Studio Code, což je zjednodušený Editor kódu, který je podporován na počítačích Mac, Windows a Linux, a poskytuje technologii IntelliSense s [podporou pro řadu jazyků](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, jít, Java, Ruby, Python a většina moderních jazyků) [. ladění](https://code.visualstudio.com/Docs/editor/debugging), [integrace s podporou pro Git](https://code.visualstudio.com/Docs/editor/versioncontrol) a [rozšíření](https://code.visualstudio.com/docs/extensions/overview). Tento editor je vhodný pro vývojáře pro Mac a Linux. V systému Windows můžete použít také plnou aplikaci sady Visual Studio.
 
-> [! INFORMACE
->
+> [!TIP]
 > Pokyny, jak <https://code.visualstudio.com/docs/setup/setup-overview/>nainstalovat Visual Studio Code pro Windows, Mac nebo Linux, najdete v tématu.
 >
 > Pokyny, jak <https://docs.docker.com/docker-for-mac/>nastavit Docker pro Mac, najdete v tématu.
@@ -94,7 +92,6 @@ Budete potřebovat `DockerFile` vlastní image, která se má sestavit a na kont
 Obvykle `DockerFile` se nachází v kořenové složce vaší aplikace nebo služby a obsahuje požadované příkazy, aby Docker věděl, jak nastavit a spustit tuto aplikaci nebo službu. Můžete vytvořit `DockerFile` a přidat ho do projektu společně s vaším kódem (Node. js, .NET Core atd.), nebo pokud s prostředím začínáte, podívejte se na následující tip.
 
 > [!TIP]
->
 > Můžete použít rozšíření Docker, které vás provede při použití `Dockerfile` souborů a `docker-compose.yml` souvisejících s kontejnery Docker. Nakonec budete pravděpodobně zapisovat tyto typy souborů bez tohoto nástroje, ale používání rozšíření Docker je dobrým výchozím bodem, který zrychlí výukovou křivku.
 
 Na obrázku 4-24 se můžete podívat, jak se přidávají soubor Docker-skládání pomocí rozšíření Docker pro VS Code.
@@ -133,8 +130,7 @@ V souboru Dockerfile můžete také dát Docker pokyn k naslouchání portu TCP,
 
 V souboru Dockerfile můžete určit další nastavení konfigurace v závislosti na jazyku a rozhraní, které používáte. Například řádek s `["dotnet", "MySingleContainerWebApp.dll"]` informacemi Docker pro spuštění aplikace .NET Core. `ENTRYPOINT` Pokud používáte sadu SDK a .NET Core CLI (`dotnet CLI`) k sestavování a spouštění aplikace .NET, toto nastavení by se lišilo. Klíčovým bodem a dalšími nastaveními závisí na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
 
-> [! INFORMACE
->
+> [!TIP]
 > Další informace o vytváření imagí Docker pro aplikace .NET Core naleznete v <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 >
 > Další informace o vytváření vlastních imagí najdete na <https://docs.docker.com/engine/tutorials/dockerimages/>webu.
@@ -154,7 +150,6 @@ Můžete vytvořit vlastní základní image Docker od začátku, jak je vysvět
 Pro každou vlastní službu, která se skládá z vaší aplikace, budete muset vytvořit související image. Pokud se vaše aplikace skládá z jediné služby nebo webové aplikace, budete potřebovat jenom jednu Image.
 
 > [!NOTE]
->
 > Když vezmete v úvahu "DevOps pracovní postup vnějšího cyklu", image se vytvoří pomocí automatizovaného procesu sestavení pokaždé, když nahrajete zdrojový kód do úložiště Git (průběžná integrace), takže se image vytvoří v globálním prostředí z vašich zdrojový kód.
 >
 > Ale předtím, než se podíváme na tuto trasu vnější smyčky, musíme zajistit správné fungování aplikace Docker, aby nedošlo k tomu, že neobsahují kód, který nemusí správně fungovat v systému správy zdrojového kódu (Git atd.).
@@ -275,5 +270,5 @@ Při použití sady Visual Studio pro Windows nebo Mac můžete v Docker ladit t
 > Další informace o ladění kontejnerů Docker Node. js najdete v <https://blog.docker.com/2016/07/live-debugging-docker/> a. <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>
 
 >[!div class="step-by-step"]
->[Předchozí](docker-apps-development-environment.md)Další
->[](visual-studio-tools-for-docker.md)
+>[Předchozí](docker-apps-development-environment.md)
+>[Další](visual-studio-tools-for-docker.md)

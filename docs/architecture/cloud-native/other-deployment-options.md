@@ -2,12 +2,12 @@
 title: Další možnosti nasazení kontejnerů
 description: Další možnosti nasazení kontejnerů pomocí Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 892514417cb8650c28b7491315f767758278ad6e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1fcb57eedec8c9f5574fffcf409b316332032062
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184881"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214453"
 ---
 # <a name="other-container-deployment-options"></a>Další možnosti nasazení kontejnerů
 
@@ -48,4 +48,4 @@ Azure Container Instances nabízí nejrychlejší a nejjednodušší způsob spo
 
 >[!div class="step-by-step"]
 >[Předchozí](scale-containers-serverless.md)
->[Další](communication-patterns.md) <!-- Next Chapter -->
+>[Další](communication-patterns.md)

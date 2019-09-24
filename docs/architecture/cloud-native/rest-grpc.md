@@ -3,12 +3,12 @@ title: REST a gRPC
 description: Přečtěte si o gRPC, její roli v cloudových nativních aplikacích a o tom, jak se liší od protokolu HTTP REST.
 author: robvet
 ms.date: 09/08/2019
-ms.openlocfilehash: 020b29fc13c72d7e42e5b555fe81e2836c907d6e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d888069168aee1fcfb13354f4b6f9ae2c8d1f233
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184818"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214544"
 ---
 # <a name="rest-and-grpc"></a>REST a gRPC
 
@@ -30,7 +30,7 @@ gRPC je moderní architektura RPC, která je odlehčená a vysoce výkonná. Pro
 
 gRPC se podporuje na nejoblíbenějších platformách, včetně Java C#,, golang a NodeJS. 
 
-## <a name="protocol-buffers"></a>Vyrovnávací paměti protokolu
+## <a name="protocol-buffers"></a>Vyrovnávací paměti protokolů
 
 gRPC zahrnuje další Open Source technologii s názvem [vyrovnávací paměti protokolu](https://developers.google.com/protocol-buffers/docs/overview) nebo zprávy Protobuf pro odesílání a příjem dat. Podobně jako u [kontraktu dat WCF](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/using-data-contracts)Protobuf serializovat strukturovaná data pro systémy ke čtení a zápisu. Snižuje režijní náklady, které uživatelsky čitelné formáty, jako je například XML nebo JSON.
 
@@ -74,4 +74,3 @@ GRPC se může hrát významnou roli v dethroning dominantnímu postavení REST 
 >[!div class="step-by-step"]
 >[Předchozí](service-to-service-communication.md)
 >[Další](service-mesh-communication-infrastructure.md)
-

@@ -2,12 +2,12 @@
 title: Zabezpečení Azure pro Cloud – nativní aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | Zabezpečení Azure pro nativní cloudové aplikace
 ms.date: 06/30/2019
-ms.openlocfilehash: 79e1ec9bd91285041791e36275b03f128f2fe136
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1eb371e5c8497d769265791ae28fd2b3fcfd7387
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183607"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214132"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>Zabezpečení Azure pro Cloud – nativní aplikace
 
@@ -265,8 +265,8 @@ I když Cosmos DB neposkytuje pro poskytování šifrovacích klíčů zákazní
 
 ## <a name="keeping-secure"></a>Zachování zabezpečení
 
-Azure obsahuje všechny nástroje, které jsou nezbytné pro vydání vysoce zabezpečeného produktu. Řetěz je však pouze tak silný jako jeho slabý odkaz. Pokud se aplikace nasazené na Azure nevyvinuly se správnými bezpečnostními místo a dobrými audity zabezpečení, stane se slabým odkazem v řetězu. Existuje mnoho skvělých statických nástrojů pro analýzu, šifrovacích knihoven a postupů zabezpečení, které je možné použít k zajištění toho, aby byl software nainstalovaný v Azure jako takový jako samotný Azure sám zabezpečený. WhiteSource ([Nástroje pro statické analýzy](https://www.whitesourcesoftware.com/), [knihovny šifrování](https://www.libressl.org/)a [postupy zabezpečení](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/), LibreSSL (https://www.libressl.org/) a [červené vs. Modré – interní testování průniku zabezpečení Microsoft Azure](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/) jsou příklady toho, v uvedeném pořadí. 
+Azure obsahuje všechny nástroje, které jsou nezbytné pro vydání vysoce zabezpečeného produktu. Řetěz je však pouze tak silný jako jeho slabý odkaz. Pokud se aplikace nasazené na Azure nevyvinuly se správnými bezpečnostními místo a dobrými audity zabezpečení, stane se slabým odkazem v řetězu. Existuje mnoho skvělých statických nástrojů pro analýzu, šifrovacích knihoven a postupů zabezpečení, které je možné použít k zajištění toho, aby byl software nainstalovaný v Azure jako takový jako samotný Azure sám zabezpečený. [Nástroje statické analýzy](https://www.whitesourcesoftware.com/), [knihovny šifrování](https://www.libressl.org/)a [postupy zabezpečení](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/), [LibreSSL](https://www.libressl.org/) a [Red vs. Modré – interní testování průniku zabezpečení Microsoft Azure](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/) jsou příklady toho, v uvedeném pořadí. 
 
 >[!div class="step-by-step"]
 >[Předchozí](security.md)
->[Další](devops.md) <!-- Next Chapter -->
+>[Další](devops.md)

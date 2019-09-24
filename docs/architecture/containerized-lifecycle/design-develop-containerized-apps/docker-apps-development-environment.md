@@ -2,12 +2,12 @@
 title: Vývojové prostředí pro aplikace Dockeru
 description: Získejte informace o nejdůležitějších možnostech vývojářských nástrojů, které podporují životní cyklus vývojového prostředí Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 0f71ffa5e6870f45908e4def6577120a17ec744c
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 35236e75f47e830d0970ca9cfd074d9a69e6f85c
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295301"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214300"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
@@ -20,7 +20,6 @@ Bez ohledu na to, jestli dáváte přednost celému a výkonnému integrovanému
 Pokud dáváte přednost zjednodušenému editoru pro různé platformy, který podporuje jazyk vývoje, můžete použít Visual Studio Code a Docker CLI. Tyto produkty poskytují jednoduché a stále robustní prostředí, které je důležité pro zjednodušení pracovního postupu vývojářů. Když nainstalujete "Docker pro Mac" nebo "Docker for Windows" (vývojové prostředí), můžou vývojáři Docker používat k vytváření aplikací pro Windows i Linux (běhové prostředí) jeden Docker CLI. Navíc Visual Studio Code podporuje rozšíření pro Docker pomocí IntelliSense pro fázemi a úlohy zástupce pro spouštění příkazů Docker z editoru.
 
 > [!NOTE]
->
 > Pokud chcete stáhnout Visual Studio Code, pokračujte <https://code.visualstudio.com/download>na.
 >
 > Chcete-li stáhnout Docker pro Mac a Windows, <https://www.docker.com/products/docker>pokračujte na.
@@ -47,5 +46,5 @@ Můžete vyvíjet aplikace Docker pomocí nástrojů Microsoftu pro většinu mo
 V podstatě můžete použít moderní jazyk podporovaný Docker v systému Linux nebo Windows.
 
 >[!div class="step-by-step"]
->[Předchozí](deploy-azure-kubernetes-service.md)Další
->[](docker-apps-inner-loop-workflow.md)
+>[Předchozí](deploy-azure-kubernetes-service.md)
+>[Další](docker-apps-inner-loop-workflow.md)

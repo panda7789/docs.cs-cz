@@ -2,12 +2,12 @@
 title: IdentityServer pro nativní cloudové aplikace
 description: Architekt cloudových nativních aplikací .NET pro Azure | IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: 69084ad19a353b2152b67957ee944f6ce36ce370
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 6217f6093d8dc9df6ab058ebdbf99197752aee0c
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183075"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214021"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pro cloudové nativní aplikace
 
@@ -47,7 +47,7 @@ IdentityServer4 je open source a zdarma ho použít. Můžete ji přidat do svý
 
 ## <a name="configuration"></a>Konfigurace
 
-IdentityServer podporuje různé druhy protokolů a poskytovatele pro sociální ověřování, které se dají konfigurovat jako součást každé vlastní instalace. To se obvykle provádí ve `Startup` třídě ASP.NET Core aplikace `ConfigureServices` v metodě. Konfigurace zahrnuje určení podporovaných protokolů a cest k serverům a koncovým bodům, které budou použity. Obrázek 8-X ukazuje příklad konfigurace provedené z projektu uživatelského rozhraní rychlého startu IdentityServer4:
+IdentityServer podporuje různé druhy protokolů a poskytovatele pro sociální ověřování, které se dají konfigurovat jako součást každé vlastní instalace. To se obvykle provádí ve `Startup` třídě ASP.NET Core aplikace `ConfigureServices` v metodě. Konfigurace zahrnuje určení podporovaných protokolů a cest k serverům a koncovým bodům, které budou použity. Obrázek 8-2 ukazuje ukázkovou konfiguraci pořízenou z projektu uživatelského rozhraní rychlého startu IdentityServer4:
 
 ```csharp
 public class Startup
@@ -90,7 +90,7 @@ public class Startup
 }
 ```
 
-**Obrázek 8 – X**. Konfigurace IdentityServer.
+**Obrázek 8-2**. Konfigurace IdentityServer.
 
 IdentityServer také hostuje veřejnou ukázkovou lokalitu, která se dá použít k otestování různých protokolů a konfigurací. Je umístěný na adrese [https://demo.identityserver.io/](https://demo.identityserver.io/) a obsahuje informace o tom, jak nakonfigurovat chování na základě `client_id` poskytovaných funkcí.
 
@@ -106,4 +106,4 @@ Mnoho cloudových nativních aplikací využívá na front-endu rozhraní API na
 
 >[!div class="step-by-step"]
 >[Předchozí](azure-active-directory.md)
->[Další](security.md) <!-- Next Chapter -->
+>[Další](security.md)

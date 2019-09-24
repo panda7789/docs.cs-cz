@@ -2,12 +2,12 @@
 title: Azure Monitor
 description: Použití Azure Monitor k získání přehledu o tom, zda je systém spuštěný.
 ms.date: 09/23/2019
-ms.openlocfilehash: 89c27ffc3ba13194baf7b05e75920bf33dc6c5f3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 20048792e95ef1f6e75551cdd0d3571f972f6c14
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183572"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214096"
 ---
 # <a name="azure-monitor"></a>Azure Monitor 
 
@@ -77,4 +77,4 @@ Azure Monitor automaticky využívá Machine Learning k pochopení normálních 
 
 >[!div class="step-by-step"]
 >[Předchozí](monitoring-azure-kubernetes.md)
->[Další](identity.md) <!-- Next Chapter -->
+>[Další](identity.md)
