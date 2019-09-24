@@ -1,0 +1,31 @@
+- name: Blazor pro vývojáře ASP.NET Web Forms (elektronická kniha)
+  href: index.md
+  items:
+    - name: Úvod
+      href: introduction.md
+    - name: Porovnání architektury
+      href: architecture-comparison.md
+    - name: Modely hostingu
+      href: hosting-models.md
+    - name: Struktura projektu
+      href: project-structure.md
+    - name: Spuštění
+      href: app-startup.md
+    - name: Komponenty
+      href: components.md
+    - name: 'Stránky, směrování a rozložení'
+      href: pages-routing-layouts.md
+    - name: Správa stavu
+      href: state-management.md
+    - name: Formuláře a ověřování
+      href: forms-validation.md
+    - name: Práce s daty
+      href: data.md
+    - name: Middleware
+      href: middleware.md
+    - name: Konfigurace
+      href: config.md
+    - name: Zabezpečení
+      href: security-authentication-authorization.md
+    - name: Migrace
+      href: migration.md

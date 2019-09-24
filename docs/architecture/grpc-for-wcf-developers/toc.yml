@@ -1,0 +1,89 @@
+- name: gRPC pro vývojáře WCF
+  href: index.md
+  items:
+    - name: Úvod
+      href: introduction.md
+    - name: Přehled gRPC
+      href: grpc-overview.md
+      items:
+        - name: Přístup gRPC k RPC
+          href: approach.md
+        - name: Interface Definition Language
+          href: interface-definition-language.md
+        - name: Síťové protokoly
+          href: network-protocols.md
+        - name: Proč se pro vývojáře WCF doporučuje gRPC
+          href: Why-grpc.md
+    - name: Vyrovnávací paměti protokolů
+      href: protocol-buffers.md
+      items:
+        - name: Zprávy ve formátu protobuf
+          href: protobuf-messages.md
+        - name: Skalární datové typy protobuf
+          href: protobuf-data-types.md
+        - name: Vnořené typy protobuf
+          href: protobuf-nested-types.md
+        - name: Opakující se pole pro seznamy a pole
+          href: protobuf-repeated.md
+        - name: Vyhrazená pole protobuf
+          href: protobuf-reserved.md
+        - name: Pole protobuf Any a OneOf pro variantní typy
+          href: protobuf-any-oneof.md
+        - name: Výčty protobuf
+          href: protobuf-enums.md
+        - name: Mapování protobuf pro slovníky
+          href: protobuf-maps.md
+    - name: Porovnání služeb WCF s gRPC
+      href: wcf-services-to-grpc-comparison.md
+      items:
+        - name: Koncové body WCF a metody gRPC
+          href: wcf-endpoints-grpc-methods.md
+        - name: Vazby a přenosy WCF
+          href: wcf-bindings.md
+        - name: Typy RPC
+          href: rpc-types.md
+        - name: Metadata
+          href: metadata.md
+        - name: Zpracování chyb
+          href: error-handling.md
+        - name: Protokoly WS-*
+          href: ws-protocols.md
+    - name: Migrace řešení WCF do gRPC
+      href: migrate-wcf-to-grpc.md
+      items:
+        - name: Vytvoření nového projektu gRPC ASP.NET Core
+          href: create-project.md
+        - name: Migrace služby požadavku a odpovědi WCF do gRPC
+          href: migrate-request-reply.md
+        - name: Migrace duplexních služeb WCF do gRPC
+          href: migrate-duplex-services.md
+        - name: Služby streamování gRPC versus opakující se pole
+          href: streaming-versus-repeated.md
+        - name: Klientské knihovny
+          href: client-libraries.md
+    - name: Zabezpečení v aplikacích gRPC
+      href: security.md
+      items:
+        - name: Přihlašovací údaje volání
+          href: call-credentials.md
+        - name: Přihlašovací údaje kanálu
+          href: channel-credentials.md
+        - name: Šifrování
+          href: encryption.md
+    - name: gRPC v produkčním prostředí
+      href: grpc-in-production.md
+      items:
+        - name: Aplikace v místním prostředí
+          href: self-hosted.md
+        - name: Docker
+          href: docker.md
+        - name: Kubernetes
+          href: kubernetes.md
+        - name: gRPC a Service Mesh
+          href: service-mesh.md
+        - name: Vyrovnávání zatížení
+          href: load-balancing.md
+        - name: Správa výkonu aplikace
+          href: application-performance-management.md
+    - name: Příloha
+      href: appendix.md
