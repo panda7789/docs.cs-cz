@@ -200,7 +200,7 @@
       items:
         - name: nové omezení
           href: keywords/new-constraint.md
-        - name: kde
+        - name: where
           href: keywords/where-generic-type-constraint.md
     - name: Klíčová slova přístupu
       items:
