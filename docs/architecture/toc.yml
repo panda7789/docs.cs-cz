@@ -5,6 +5,8 @@
   items:
     - name: Navrhování moderních webových aplikací pomocí ASP.NET Core a Microsoft Azure
       href: modern-web-apps-azure/
+    - name: Navrhování aplikací .NET nativních pro cloud pro Azure
+      href: cloud-native/
     - name: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows
       href: modernize-with-azure-containers/
     - name: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
@@ -13,3 +15,7 @@
       href: microservices/
     - name: 'Bezserverové aplikace: Architektura, vzory a implementace v Azure'
       href: serverless/
+    - name: Blazor pro vývojáře ASP.NET Web Forms
+      href: blazor-for-web-forms-developers/
+    - name: gRPC ASP.NET Core pro vývojáře WCF
+      href: grpc-for-wcf-developers/

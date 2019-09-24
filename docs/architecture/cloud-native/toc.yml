@@ -1,0 +1,93 @@
+- name: Navrhování aplikací .NET nativních pro cloud pro Azure
+  href: index.md
+  items:
+    - name: Úvod k aplikacím nativním pro cloud
+      href: introduction.md
+      items:
+        - name: Definování aplikací nativních pro cloud
+          href: definition.md
+        - name: Vhodné aplikace nativní pro cloud
+          href: candidate-apps.md
+    - name: Úvod k referenční aplikaci eShopOnContainers
+      href: introduce-eshoponcontainers-reference-app.md
+      items:
+        - name: Mapování aplikace eShopOnContainers ke službám Azure
+          href: map-eshoponcontainers-azure-services.md
+        - name: Nasazení aplikace eShopOnContainers do Azure
+          href: deploy-eshoponcontainers-azure.md
+        - name: Centralizovaná konfigurace
+          href: centralized-configuration.md
+    - name: Škálování aplikací .NET nativních pro cloud
+      href: scale-applications.md
+      items:
+        - name: Využití kontejnerů a orchestrátorů
+          href: leverage-containers-orchestrators.md
+        - name: Využití bezserverových funkcí
+          href: leverage-serverless-functions.md
+        - name: Kombinování kontejnerů a bezserverových přístupů
+          href: combine-containers-serverless-approaches.md
+        - name: Nasazení kontejnerů v Azure
+          href: deploy-containers-azure.md
+        - name: Škálování kontejnerů a bezserverových aplikací
+          href: scale-containers-serverless.md
+        - name: Další možnosti nasazení
+          href: other-deployment-options.md
+    - name: Schémata komunikace nativní pro cloud
+      href: communication-patterns.md
+      items:
+        - name: Komunikace front-endového klienta
+          href: front-end-communication.md
+        - name: Komunikace mezi službami
+          href: service-to-service-communication.md
+        - name: REST a gRPC
+          href: rest-grpc.md
+        - name: Komunikační infrastruktura Service Mesh
+          href: service-mesh-communication-infrastructure.md
+    - name: Distribuovaná data
+      href: distributed-data.md
+      items:
+        - name: Vzorky dat nativní pro cloud
+          href: data-patterns.md
+        - name: Úložiště dat v Azure
+          href: azure-data-storage.md
+    - name: Odolnost nativní pro cloud
+      href: resiliency.md
+      items:
+        - name: Vzory odolnosti aplikací
+          href: application-resiliency-patterns.md
+        - name: Odolnost cloudové infrastruktury v Azure
+          href: infrastructure-resiliency-azure.md
+        - name: Odolná komunikace
+          href: resilient-communications.md
+    - name: Monitorování a stav
+      href: monitoring-health.md
+      items:
+        - name: Vzory pozorovatelnosti
+          href: observability-patterns.md
+        - name: Protokolování pomocí řešení Elastic Stack
+          href: logging-with-elastic-stack.md
+        - name: Monitorování ve službě Azure Kubernetes Service
+          href: monitoring-azure-kubernetes.md
+        - name: Azure Monitor
+          href: azure-monitor.md
+    - name: Identita
+      href: identity.md
+      items:
+        - name: Ověřování a autorizace v aplikacích nativních pro cloud
+          href: authentication-authorization.md
+        - name: Azure Active Directory
+          href: azure-active-directory.md
+        - name: Server identit
+          href: identity-server.md
+    - name: Zabezpečení
+      href: security.md
+      items:
+        - name: Zabezpečení aplikací nativních pro cloud
+          href: azure-security.md
+    - name: DevOps nativní pro cloud
+      href: devops.md
+      items:
+        - name: Infrastruktura jako kód
+          href: infrastructure-as-code.md
+        - name: Aplikační komplety nativní pro cloud
+          href: application-bundles.md
