@@ -2,12 +2,12 @@
 title: Odkazové typy s možnou hodnotou null
 description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: e66d74cdde3b3de9ec3f1b435cdbd3e3b24c2663
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 7ca3ebc413fbe335f79d415249b952132c38f552
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851066"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214396"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -83,7 +83,7 @@ Můžete také použít direktivy pro nastavení stejných kontextů kdekoli v p
 
 Výchozí anotace s možnou hodnotou null a `disabled`kontexty upozornění jsou. Toto rozhodnutí znamená, že váš stávající kód se zkompiluje beze změn a bez generování nových upozornění.
 
-### <a name="nullable-annotation-context"></a>Kontext anotace s možnou hodnotou null
+## <a name="nullable-annotation-context"></a>Kontext anotace s možnou hodnotou null
 
 Kompilátor používá následující pravidla v neaktivním kontextu anotace s možnou hodnotou null:
 

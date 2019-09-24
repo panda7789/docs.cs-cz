@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: b2a660d2fc42f0dfe932afce167058f7c1efc92b
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 7480c86af1acd482adff5e3e24dc229f24af0e5b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116503"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216317"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postupy: Port model Windows Forms desktopové aplikace do .NET Core
 
@@ -50,7 +50,7 @@ Při přenosu .NET Framework model Windows Forms aplikace existuje několik věc
 
 01. Používáte jinou verzi model Windows Forms.
 
-    Po vydání .NET Core 3,0 Preview 1 model Windows Forms otevřít zdroj na GitHubu. Kód pro .NET Core model Windows Forms je rozvětvení základu kódu .NET Framework model Windows Forms. Je možné, že existují nějaké rozdíly a vaše aplikace nebude portem.
+    Po vydání .NET Core 3,0 Preview 1 model Windows Forms otevřít zdroj na GitHubu. Kód pro .NET Core model Windows Forms je rozvětvení .NET Framework model Windows Forms základu kódu. Je možné, že existují nějaké rozdíly a vaše aplikace nebude portem.
 
 01. [Sada Windows Compatibility Pack][compat-pack] vám může při migraci trvat.
 

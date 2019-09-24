@@ -2,12 +2,12 @@
 title: 'Explicitní pole: Klíčové slovo Val'
 description: Přečtěte si F# o klíčovém slově Val, který se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 13e0ba2875e8accfd1c0da0e1c6fef4973309f9b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: fe339e33dae27ae226022a68dd8247d1ab1994b3
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627530"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216479"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Klíčové slovo Val
 
@@ -48,7 +48,7 @@ Následující kód ukazuje použití explicitních polí a pro porovnání, `le
 
 Výstup je následující:
 
-```
+```console
 11 12 abc
 30 def
 ```
@@ -69,7 +69,7 @@ Pokud se chystáte inicializovat strukturu s `mutable` poli bez `mutable` klíč
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6704.fs)]
 
-Explicitní pole nejsou určena pro rutinové použití. Obecně platí, že pokud je to možné, `let` měli byste použít vazbu ve třídě namísto explicitního pole. Explicitní pole jsou užitečná v některých scénářích interoperability, například když potřebujete definovat strukturu, která bude použita v volání metody Invoke do nativního rozhraní API nebo ve scénářích komunikace s objekty COM. Další informace najdete v tématu [](../functions/external-functions.md)věnovaném externím funkcím. Další situací, kdy může být explicitní pole nutné, je při práci s generátorem F# kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečná pro proměnné vlákn-static nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
+Explicitní pole nejsou určena pro rutinové použití. Obecně platí, že pokud je to možné, `let` měli byste použít vazbu ve třídě namísto explicitního pole. Explicitní pole jsou užitečná v některých scénářích interoperability, například když potřebujete definovat strukturu, která bude použita v volání metody Invoke do nativního rozhraní API nebo ve scénářích komunikace s objekty COM. Další informace najdete v tématu věnovaném [externím funkcím](../functions/external-functions.md). Další situací, kdy může být explicitní pole nutné, je při práci s generátorem F# kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečná pro proměnné vlákn-static nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
 
 Když se klíčová slova `member val` zobrazí v definici typu společně, jedná se o definici automaticky implementované vlastnosti. Další informace najdete v tématu [vlastnosti](properties.md).
 

@@ -2,14 +2,14 @@
 title: Průvodce platformou .NET Core
 description: .NET Core je modulární a vysoce výkonná implementace .NET pro vytváření aplikací pro Windows, Linux a Mac. Seznamte se s .NET Core, abyste mohli začít.
 author: richlander
-ms.date: 08/01/2018
+ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: a6112851a3d9b46f02c26313e6537170786df10b
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 95f18ca09852ce139a4b99ed7aef4802d4883e13
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117074"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216219"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -19,19 +19,19 @@ Další informace o .NET Core, včetně jeho vlastností, podporovaných jazycí
 
 V [kurzech pro .NET Core](tutorials/index.md) se dozvíte, jak vytvořit jednoduchou aplikaci .NET Core. Vaše první aplikace je možné začít používat jenom pár minut. Pokud chcete v prohlížeči vyzkoušet .NET Core, podívejte se na [čísla v C# ](../csharp/tutorials/intro-to-csharp/numbers-in-csharp.yml) online kurzu.
 
-## <a name="download-net-core-22"></a>Stáhnout .NET Core 2,2
+## <a name="download-net-core"></a>Stáhnout .NET Core
 
-Stáhněte si [sadu .NET core 2,2 SDK](https://dotnet.microsoft.com/download) a vyzkoušejte .NET Core na počítači s Windows, MacOS nebo Linux. Pokud upřednostňujete použití kontejnerů Docker, přejděte na [dotnet/Core](https://hub.docker.com/_/microsoft-dotnet-core/) .
+Stáhněte si [.NET Core SDK](https://www.microsoft.com/net/download) a vyzkoušejte .NET Core na počítači s Windows, MacOS nebo Linux. A pokud upřednostňujete použití kontejnerů Docker, navštivte web [.NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
 
 Pokud hledáte jinou verzi rozhraní .NET Core, jsou všechny verze .NET Core k dispozici na webu [soubory ke stažení pro .NET](https://dotnet.microsoft.com/download/dotnet-core) Core.
 
-## <a name="net-core-22"></a>.NET Core 2,2
+## <a name="net-core-30"></a>.NET Core 3.0
 
-Nejnovější verze je [.NET Core 2,2](whats-new/dotnet-core-2-2.md). Mezi nové funkce patří: nasazení závislá na rozhraní, spouštěcí háky, ověřování AAD s Azure SQL a podpora pro Windows ARM32.
+Nejnovější verze je .NET Core 3,0. Mezi nové funkce patří podpora stolních počítačů s Windows pomocí Windows Presentation Foundation (WPF) a C# model Windows Forms, úplného vytváření zásobníku pro web s Blazor, nová vylepšení pro signál a službu C# Azure Signal Service C# , nové funkce jazyka s 8 a mnoho dalšího. Úplný seznam nových funkcí v rozhraní .NET Core 3,0 najdete v tématu [co je nového v rozhraní .NET core 3,0](./whats-new/dotnet-core-3-0.md).
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 
-Po instalaci .NET Core SDK otevřete příkazový řádek. Zadáním následujících `dotnet` příkazů vytvořte a spusťte C# aplikaci.
+Po instalaci .NET Core SDK otevřete příkazový řádek. Zadáním následujících `dotnet` příkazů vytvořte a spusťte C# aplikaci:
 
 ```dotnetcli
 dotnet new console
@@ -46,7 +46,7 @@ Hello World!
 
 ## <a name="support"></a>Podpora
 
-.NET Core [podporuje Microsoft](https://dotnet.microsoft.com/platform/support/policy), v systémech Windows, MacOS a Linux. Je aktualizovaná z hlediska zabezpečení a kvality několikrát ročně, obvykle měsíčně.
+.NET Core [podporuje Microsoft](https://dotnet.microsoft.com/platform/support/policy), ve Windows, MacOS a Linux. Je aktualizovaná z hlediska zabezpečení a kvality několikrát ročně, obvykle měsíčně.
 
 Binární distribuce .NET Core se sestavují a testují na serverech spravovaných Microsoftem v Azure a podporují se stejně jako u jakéhokoli produktu společnosti Microsoft.
 

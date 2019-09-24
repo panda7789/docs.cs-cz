@@ -2,12 +2,12 @@
 title: Vazby let ve třídách
 description: Naučte se definovat soukromá pole a soukromé funkce pro F# třídy pomocí vazeb let v definici třídy.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0086d3a91f85395c2bd0555f978c5d951c363357
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1366ab8f1f4f606fe5947a8fc4df10de49346b3e
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627480"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216527"
 ---
 # <a name="let-bindings-in-classes"></a>Vazby let ve třídách
 
@@ -39,7 +39,7 @@ Následující příklady kódu ilustrují několik typů `let` vazeb ve tříd�
 
 Výstup je následující.
 
-```
+```console
 10 52 1 204
 ```
 

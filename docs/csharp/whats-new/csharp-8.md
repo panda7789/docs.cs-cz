@@ -1,17 +1,17 @@
 ---
 title: Co je nového v C# 8,0 – C# příručka
-description: Získejte přehled o nových funkcích dostupných v C# 8,0. Tento článek je aktuální s verzí Preview 5.
+description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: a434d1f7598bc3f6787f7466e48fb161db192761
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 95331c8dd8e8b5e0d5af242752565d8e93120937
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182408"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216494"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
-Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
+C#8,0 přidává následující funkce a vylepšení C# jazyka:
 
 - [Členové jen pro čtení](#readonly-members)
 - [Výchozí členové rozhraní](#default-interface-members)
@@ -30,9 +30,6 @@ Existuje mnoho vylepšení C# jazyka, který můžete vyzkoušet již.
 - [Nespravované konstruované typy](#unmanaged-constructed-types)
 - [stackalloc ve vnořených výrazech](#stackalloc-in-nested-expressions)
 - [Vylepšení interpolované doslovného řetězce](#enhancement-of-interpolated-verbatim-strings)
-
-> [!NOTE]
-> Tento článek byl naposledy aktualizován na C# verzi 8,0 Preview 5.
 
 Zbývající část tohoto článku stručně popisuje tyto funkce. Kde jsou k dispozici podrobné články, jsou uvedeny odkazy na tyto kurzy a přehledy. Pomocí `dotnet try` globálního nástroje můžete prozkoumat tyto funkce ve vašem prostředí:
 

@@ -2,12 +2,12 @@
 title: Měrné jednotky
 description: Přečtěte si, jak plovoucí desetinná čárka a znaménka v celých číslech v F# můžou mít přidružené měrné jednotky, které se obvykle používají k označení délky, objemu a hmotnosti.
 ms.date: 05/16/2016
-ms.openlocfilehash: f97eac9984f934c55aff8cf9f287afbc3aa098f3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a81f7760301dc580e333d4659a72e6259d2c916b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630155"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216688"
 ---
 # <a name="units-of-measure"></a>Měrné jednotky
 
@@ -81,7 +81,7 @@ Také při předání hodnot dimenzí funkcím, které očekávají bez dimenzí
 
 Následující příklad relace zobrazuje výstupy a vstupy tohoto kódu.
 
-```
+```console
 Enter a temperature in degrees Fahrenheit.
 90
 That temperature in degrees Celsius is    32.22.

@@ -1,20 +1,20 @@
 ---
 title: Výrazy dotazu
-description: Další informace o podpoře výrazu dotazu LINQ v JAZYKU F# programovací jazyk.
+description: Přečtěte si o podpoře výrazů dotazů pro LINQ F# v programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: fc077bfbe25f88104e89508ef6283a5bc42eddbd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 6eaac16336cca752eaac355276300c6809c570a8
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645346"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216820"
 ---
 # <a name="query-expressions"></a>Výrazy dotazu
 
 > [!NOTE]
-> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
 
-Výrazy dotazů umožňují dotazování na zdroj dat a umístit data v požadované podobě. Výrazy dotazů poskytovat podporu pro LINQ v JAZYKU F#.
+Výrazy dotazů umožňují dotazování zdroje dat a vložení dat do požadovaného formuláře. Výrazy dotazů poskytují podporu pro LINQ v F#.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,7 +24,7 @@ query { expression }
 
 ## <a name="remarks"></a>Poznámky
 
-Výrazy dotazu představují typ výrazu výpočtu podobný výrazech pořadí. Stejně jako určení posloupnost zadáním kódu ve výrazu pořadí, je třeba zadat sadu dat tím, že poskytuje kód ve výrazu dotazu. Ve výrazu pořadí `yield` – klíčové slovo identifikuje data, která má být vrácena jako součást výsledné pořadí. Ve výrazech dotazů `select` – klíčové slovo provádí stejnou funkci. Kromě `select` – klíčové slovo, F# rovněž podporuje několik operátorů dotazu, které jsou stejně jako část příkazu SQL SELECT. Tady je příklad výrazu jednoduchý dotaz, spolu s kódem, který se připojuje ke zdroji OData s názvem Northwind.
+Výrazy dotazů jsou typem výrazu výpočtu, který se podobá výrazům pořadí. Stejně jako zadáte sekvenci zadáním kódu ve výrazu pořadí, zadáte sadu dat zadáním kódu ve výrazu dotazu. V sekvenčním výrazu `yield` klíčové slovo identifikuje data, která mají být vrácena jako součást výsledné sekvence. `select` Klíčové slovo ve výrazech dotazu provádí stejnou funkci. Kromě `select` klíčového slova F# také podporuje několik operátorů dotazů, které jsou podobně jako části příkazu SELECT jazyka SQL. Tady je příklad jednoduchého výrazu dotazu spolu s kódem, který se připojuje ke zdroji dat Northwind služby OData.
 
 ```fsharp
 // Use the OData type provider to create types that can be used to access the Northwind database.
@@ -46,23 +46,23 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu, vraťte každý zákazník v tabulce zákazníků v databáze ve výsledcích dotazu. Výrazy dotazů návratový typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601>, a proto se můžete provést iteraci pomocí [Seq – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) stejně jako v příkladu se zobrazí.
+V předchozím příkladu kódu je výraz dotazu ve složených závorkách. Význam kódu ve výrazu je, vrátí každého zákazníka v tabulce Customers v databázi ve výsledcích dotazu. Výrazy dotazů vracejí typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601>, a, aby bylo možné je iterovat pomocí [modulu SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) , jak ukazuje příklad.
 
-Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro query – výpočetní výraz je `QueryBuilder`. Další informace najdete v tématu [výrazech výpočtu](computation-expressions.md) a [LINQ.QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
+Každý typ výrazu výpočtu je sestaven z třídy tvůrce. Třída tvůrce pro výraz výpočtu dotazu je `QueryBuilder`. Další informace naleznete v tématu [výrazy výpočtu](computation-expressions.md) a [Třída LINQ. QueryBuilder](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).
 
 ## <a name="query-operators"></a>Operátory dotazů
 
-Operátory dotazů umožňují určit podrobnosti o dotazu, jako např. Chcete změnit kritéria na vrácených záznamů, nebo určit pořadí řazení výsledků. Zdroj dotazu musí podporovat – operátor dotazu. Pokud se pokusíte použít operátor nepodporovaný dotaz `System.NotSupportedException` bude vyvolána výjimka.
+Operátory dotazů umožňují zadat podrobnosti dotazu, například kritéria pro vložení záznamů, které mají být vráceny, nebo zadat pořadí řazení výsledků. Zdroj dotazu musí podporovat operátor dotazu. Pokud se pokusíte použít operátor nepodporovaného dotazu `System.NotSupportedException` , bude vyvolána výjimka.
 
-Ve výrazech dotazů jsou povoleny pouze výrazy, které lze do kódu SQL. Například žádná volání funkce jsou povoleny ve výrazech při použití `where` – operátor dotazu.
+Ve výrazech dotazů jsou povoleny pouze výrazy, které lze přeložit na SQL. Například při použití `where` operátoru dotazu nejsou ve výrazech povoleny žádné volání funkcí.
 
-Tabulka 1 zobrazuje dostupných operátorů dotazu. Kromě toho najdete v článku tabulka2, která porovná dotazy SQL a ekvivalent F# dotazování dále v tomto tématu. Někteří poskytovatelé typů nejsou podporovány některé operátory dotazu. Zejména poskytovatele typu OData má zobrazení omezenou operátorů dotazu, které podporuje z důvodu omezení v prostředí OData. Další informace najdete v tématu [odataservice – zprostředkovatel typu (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Tabulka 1 zobrazuje dostupné operátory dotazů. Kromě toho viz tabulka2, který porovnává dotazy SQL a ekvivalentní F# výrazy dotazu dále v tomto tématu. Některé operátory dotazů nejsou podporovány některými poskytovateli typů. Konkrétně poskytovatel typu OData je omezen v operátorech dotazu, které podporuje z důvodu omezení v OData. Další informace najdete v tématu [Poskytovatel typu ODataService (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
 
-Tato tabulka předpokládá databáze v následujícím tvaru:
+Tato tabulka předpokládá databázi v následujícím tvaru:
 
-![Diagram zobrazující ukázkovou databázi.](./media/query-expressions/student-course-database.png)
+![Diagram, který zobrazuje ukázkovou databázi.](./media/query-expressions/student-course-database.png)
 
-Kód v tabulkách, které následují také předpokládá následující kód připojení databáze. Projekty měli přidat odkazy na sestavení FSharp.Data.TypeProviders, System.Data a System.Data.Linq. Kód, který vytvoří tato databáze je součástí na konci tohoto tématu.
+Kód v tabulkách, které následují, také předpokládá následující kód připojení databáze. Projekty by měly přidat odkazy na sestavení System. data, System. data. Linq a FSharp. data. TypeProviders. Kód, který vytváří tuto databázi, je zahrnut na konci tohoto tématu.
 
 ```fsharp
 open System
@@ -88,7 +88,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
   </tr>
   <tr>
   <td><code>contains</code></td>
-<td>Určuje, zda zadaný prvek direktivy include vybrané elementy.<br/><br/>
+<td>Určuje, zda vybrané prvky obsahují zadaný element.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -101,7 +101,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </tr>
 
 <tr>
-  <td><code>count</code></td><td>Vrátí počet vybraných elementů.<br/><br/>
+  <td><code>count</code></td><td>Vrátí počet vybraných prvků.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -112,7 +112,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 </td></tr>
 <tr>
-<td><code>last</code></td><td>Vybere poslední prvek z nich vybrali doposud.<br/><br/>
+<td><code>last</code></td><td>Vybere poslední prvek těch, které jsou doposud vybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -122,7 +122,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 </td></tr>
 <tr>
-<td><code>lastOrDefault</code></td><td>Vybere poslední prvek zatím zvolené nebo výchozí hodnotu, pokud není nalezen žádný element.<br/><br/>
+<td><code>lastOrDefault</code></td><td>Vybere poslední prvek těch, které jsou doposud vybrány, nebo výchozí hodnotu, pokud není nalezen žádný element.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -132,7 +132,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOne</code></td><td>Vybere jeden, konkrétní element zatím vybrali. Pokud jsou k dispozici více elementy, je vyvolána výjimka.<br/><br/>
+<td><code>exactlyOne</code></td><td>Vybere jeden konkrétní prvek, který je zatím vybraný. Pokud je přítomno více prvků, je vyvolána výjimka.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -143,7 +143,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOneOrDefault</code></td><td>Vybere jeden, konkrétní element zvolené zatím nebo výchozí hodnotu, pokud tento prvek nebyl nalezen.<br/><br/>
+<td><code>exactlyOneOrDefault</code></td><td>Vybere jeden konkrétní prvek, který je vybrán tak daleko, nebo výchozí hodnotu, pokud tento prvek nebyl nalezen.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -154,7 +154,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>headOrDefault</code></td><td>Vybere první prvek zatím zvolené nebo výchozí hodnotu v případě, že posloupnost neobsahuje žádné elementy.<br/><br/>
+<td><code>headOrDefault</code></td><td>Vybere první prvek těch, které jsou doposud vybrány, nebo výchozí hodnotu, pokud sekvence neobsahuje žádné prvky.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -164,7 +164,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>select</code></td><td>Každý prvek, pokud vybrané projekty.<br/><br/>
+<td><code>select</code></td><td>Projekty každý z prvků, které jsou zatím vybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -173,7 +173,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>where</code></td><td>Vybere elementy podle zadanou predikát.<br/><br/>
+<td><code>where</code></td><td>Vybere prvky založené na zadaném predikátu.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -183,7 +183,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minBy</code></td><td>Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu minimální.<br/><br/>
+<td><code>minBy</code></td><td>Vybere hodnotu pro každý prvek, který je zatím vybraný, a vrátí minimální výslednou hodnotu.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -192,7 +192,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxBy</code></td><td>Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu maximální.<br/><br/>
+<td><code>maxBy</code></td><td>Vybere hodnotu pro každý prvek, který je zatím vybraný, a vrátí maximální výslednou hodnotu.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -201,7 +201,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupBy</code></td><td>Seskupuje prvky vybrali zatím podle zadaného selektoru klíče.<br/><br/>
+<td><code>groupBy</code></td><td>Seskupí prvky vybrané tak daleko podle zadaného selektoru klíče.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -211,7 +211,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortBy</code></td><td>Seřadí prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení.<br/><br/>
+<td><code>sortBy</code></td><td>Seřadí prvky vybrané tak daleko ve vzestupném pořadí podle daného klíče řazení.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -221,7 +221,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByDescending</code></td><td>Seřadí prvky vybrali zatím v sestupném pořadí podle daného klíče řazení.<br/><br/>
+<td><code>sortByDescending</code></td><td>Seřadí prvky vybrané tak daleko v sestupném pořadí podle daného klíče řazení.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -231,7 +231,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenBy</code></td><td>Provádí následující řazení prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení. Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.<br/><br/>
+<td><code>thenBy</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení. Tento operátor lze <code>sortBy</code>použít pouze za operátorem, <code>sortByDescending</code>, <code>thenBy</code>nebo. <code>thenByDescending</code><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -243,7 +243,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByDescending</code></td><td>Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daného klíče řazení. Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.<br/><br/>
+<td><code>thenByDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení. Tento operátor lze <code>sortBy</code>použít pouze za operátorem, <code>sortByDescending</code>, <code>thenBy</code>nebo. <code>thenByDescending</code><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -255,7 +255,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupValBy</code></td><td>Vybere hodnotu pro každý prvek vybraný zatím a seskupuje prvky podle daného klíče.<br/><br/>
+<td><code>groupValBy</code></td><td>Vybere hodnotu pro každý prvek, který je zatím vybraný, a seskupí prvky podle daného klíče.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -265,7 +265,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>join</code></td><td>Koreluje dvě sady vybraných hodnot založené na shodujících se klíčích. Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité. Ve všech spojení, pokud je řádek rozdělit po <code>-&gt;</code> symbol, odsazení musí být odsazený alespoň pokud klíčové slovo <code>for</code>.<br/><br/>
+<td><code>join</code></td><td>Koreluje dvě sady vybraných hodnot na základě shodujících se klíčů. Všimněte si, že pořadí klíčů kolem znaménka = přihlašování ve výrazu JOIN je významné. Pokud je čára rozdělena za <code>-&gt;</code> symbol, musí se ve všech spojeních odsazení odsazovat aspoň tak, jak je klíčové slovo. <code>for</code><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -276,7 +276,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupJoin</code></td><td>Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky. Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.<br/><br/>
+<td><code>groupJoin</code></td><td>Koreluje dvě sady vybraných hodnot na základě shodujících se klíčů a seskupí výsledky. Všimněte si, že pořadí klíčů kolem znaménka = přihlašování ve výrazu JOIN je významné.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -290,7 +290,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>leftOuterJoin</code></td><td>Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky. Pokud libovolná skupina je prázdný, skupinu jeden výchozí hodnotou je místo toho použít. Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.<br/><br/>
+<td><code>leftOuterJoin</code></td><td>Koreluje dvě sady vybraných hodnot na základě shodujících se klíčů a seskupí výsledky. Pokud je libovolná skupina prázdná, použije se místo ní skupina s jednou výchozí hodnotou. Všimněte si, že pořadí klíčů kolem znaménka = přihlašování ve výrazu JOIN je významné.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -302,7 +302,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumByNullable</code></td><td>Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot. Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.<br/><br/>
+<td><code>sumByNullable</code></td><td>Vybere hodnotu Nullable pro každý vybraný prvek a vrátí součet těchto hodnot. Pokud libovolná hodnota null nemá hodnotu, je ignorována.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -311,7 +311,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minByNullable</code></td><td>Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí minimum z těchto hodnot. Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.<br/><br/>
+<td><code>minByNullable</code></td><td>Vybere hodnotu Nullable pro každý vybraný prvek a vrátí minimum těchto hodnot. Pokud libovolná hodnota null nemá hodnotu, je ignorována.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -320,7 +320,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxByNullable</code></td><td>Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí maximální hodnoty. Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.<br/><br/>
+<td><code>maxByNullable</code></td><td>Vybere hodnotu Nullable pro každý vybraný prvek a vrátí maximální hodnoty z těchto hodnot. Pokud libovolná hodnota null nemá hodnotu, je ignorována.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -329,7 +329,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageByNullable</code></td><td>Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot. Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.<br/><br/>
+<td><code>averageByNullable</code></td><td>Vybere hodnotu Nullable pro každý vybraný prvek, a to tak daleko a vrátí průměr z těchto hodnot. Pokud libovolná hodnota null nemá hodnotu, je ignorována.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -338,7 +338,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageBy</code></td><td>Hodnotu pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot.<br/><br/>
+<td><code>averageBy</code></td><td>Vybere hodnotu pro každý prvek, který je zatím vybraný, a vrátí průměr těchto hodnot.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -347,7 +347,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>distinct</code></td><td>Vybere různých elementů z prvků vybraných doposud.<br/><br/>
+<td><code>distinct</code></td><td>Vybere odlišné prvky z prvků, které byly doposud vyvybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -358,7 +358,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exists</code></td><td>Určuje, zda libovolný element, pokud vybrané splňuje podmínku.<br/><br/>
+<td><code>exists</code></td><td>Určuje, zda kterýkoli prvek vybraný k tomu daleko splňuje podmínku.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -371,7 +371,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>find</code></td><td>Vybere první prvek, pokud vybrané, který splňuje zadanou podmínku.<br/><br/>
+<td><code>find</code></td><td>Vybírá první vybraný prvek, který splňuje zadanou podmínku.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -380,7 +380,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>all</code></td><td>Určuje, zda všechny prvky vybrali zatím splňují podmínku.<br/><br/>
+<td><code>all</code></td><td>Určuje, zda všechny prvky, které jsou vybrány tak daleko, splní podmínku.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -389,7 +389,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>head</code></td><td>Vybere první prvek od těch, které zatím vybrali.<br/><br/>
+<td><code>head</code></td><td>Vybere první prvek z těch, které byly doposud vyvybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -398,7 +398,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>nth</code></td><td>Element v zadaném indexu mimo tyto vybrané zatím vybere.<br/><br/>
+<td><code>nth</code></td><td>Vybere prvek v zadaném indexu z těch, které byly doposud vyvybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for numbers in data do
@@ -407,7 +407,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skip</code></td><td>Vynechá zadaný počet prvků, zatím vybrána a potom vybere zbývající prvky.<br/><br/>
+<td><code>skip</code></td><td>Vynechá zadaný počet vybraných prvků a následně vybírá zbývající prvky.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -416,7 +416,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skipWhile</code></td><td>Vynechává prvky v sekvenci, dokud je zadaná podmínka pravdivá a potom vybere zbývající prvky.<br/><br/>
+<td><code>skipWhile</code></td><td>Vynechá prvky v sekvenci, pokud je zadaná podmínka pravdivá a potom vybere zbývající prvky.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -426,7 +426,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumBy</code></td><td>Hodnotu pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot.<br/><br/>
+<td><code>sumBy</code></td><td>Vybere hodnotu pro každý prvek, který je zatím vybraný, a vrátí součet těchto hodnot.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -435,7 +435,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>take</code></td><td>Zatím Vybere zadaný počet souvislých prvků z vybraných.<br/><br/>
+<td><code>take</code></td><td>Vybere zadaný počet souvislých prvků z těch, které byly doposud vyvybrány.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -445,7 +445,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>takeWhile</code></td><td>Vybere elementy ze sekvence, dokud je zadaná podmínka je PRAVDA a potom přeskočí zbývající prvky.<br/><br/>
+<td><code>takeWhile</code></td><td>Vybere prvky z sekvence, pokud je zadaná podmínka pravdivá, a poté zbývající prvky přeskočí.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -454,7 +454,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullable</code></td><td>Seřadí prvky zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null.<br/><br/>
+<td><code>sortByNullable</code></td><td>Seřadí prvky vybrané tak daleko ve vzestupném pořadí podle daného klíče řazení s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -464,7 +464,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullableDescending</code></td><td>Seřadí prvky vybrali zatím v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null.<br/><br/>
+<td><code>sortByNullableDescending</code></td><td>Seřadí prvky vybrané tak daleko v sestupném pořadí podle daného klíče řazení s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -474,7 +474,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullable</code></td><td>Provádí následující řazení elementů zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null. Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.<br/><br/>
+<td><code>thenByNullable</code></td><td>Provede následné řazení prvků vybraných ve vzestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned <code>sortBy</code>po, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>nebo jejich variantě s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -485,7 +485,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullableDescending</code></td><td>Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null. Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.<br/><br/>
+<td><code>thenByNullableDescending</code></td><td>Provede následné řazení elementů, které jsou zatím vybrány v sestupném pořadí podle daného klíče řazení s možnou hodnotou null. Tento operátor lze použít pouze ihned <code>sortBy</code>po, <code>sortByDescending</code>, <code>thenBy</code>nebo <code>thenByDescending</code>nebo jejich variantě s možnou hodnotou null.<br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -499,14 +499,14 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </table>
 
 ## <a name="comparison-of-transact-sql-and-f-query-expressions"></a>Porovnání výrazů dotazů v jazycích Transact-SQL a F#
-V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v F#. Kód v této tabulce také předpokládá stejné databázi jako v předchozí tabulce a stejné počáteční kód pro nastavení poskytovatele typu.
+V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty F#v nástroji. Kód v této tabulce také předpokládá stejnou databázi jako předchozí tabulka a stejný počáteční kód pro nastavení poskytovatele typu.
 
 ### <a name="table-2-transact-sql-and-f-query-expressions"></a>Tabulka 2. Výrazy dotazů v jazycích Transact-SQL a F#
 
 <table style="width:100%">
   <tr>
-    <th>Příkaz Transact-SQL (nerozlišuje velikost písmen)</th>
-    <th>F#Dotazování výrazu (rozlišuje velikost písmen)</th>
+    <th>Transact-SQL (nerozlišuje malá a velká písmena)</th>
+    <th>F#Výraz dotazu (rozlišuje velká a malá písmena)</th>
   </tr>
 <tr><td>
 Vyberte všechna pole z tabulky.<br>
@@ -524,7 +524,7 @@ query {
 
 </td></tr>
 <tr><td>
-Počet záznamů v tabulce.<br/>
+Počet záznamů v tabulce<br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 </code></pre>
@@ -585,7 +585,7 @@ query {
 }
 </code></pre>
 </td></tr><tr><td>
-Seskupení s podmínkou.<br/>
+Seskupení s podmínkou<br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -605,7 +605,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-Seskupování pomocí podmínku počtu.<br/>
+Seskupení s podmínkou Count<br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -626,7 +626,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-Seskupení, počítací a sčítání.<br/>
+Seskupování, počítání a sčítání.<br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ), SUM(Student.Age) as total
 FROM Student
@@ -649,7 +649,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-Seskupování, počítací a řazení podle počtu.<br/>
+Seskupování, počítání a řazení podle počtu.<br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) as myCount
 FROM Student
@@ -673,7 +673,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code> sadu zadaných hodnot<br/>
+<code>IN</code>sada zadaných hodnot<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -696,7 +696,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> a <code>TOP</code>.<br/>
+<code>LIKE</code>a <code>TOP</code>.<br/>
 
 <pre><code class="lang-sql">-- '_e%' matches strings where the second character is 'e'
 SELECT TOP 2 * FROM Student
@@ -714,7 +714,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> se vzorkem odpovídat sady.<br/>
+<code>LIKE</code>se sadou porovnávání vzorů.<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -731,7 +731,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> se vzorkem sadu vyloučení.<br/>
+<code>LIKE</code>s nastaveným vzorem vyloučení.<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -750,7 +750,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code> u jednoho pole, ale vybrat jiné pole.<br/>
+<code>LIKE</code>v jednom poli, ale vyberte jiné pole.<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -765,7 +765,7 @@ WHERE Student.Name LIKE '[^abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td><code>LIKE</code>, se hledání dílčího řetězce.<br/>
+</td></tr><tr><td><code>LIKE</code>, s vyhledáváním pomocí dílčího řetězce.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Name like '%A%'
@@ -800,7 +800,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code> se dvěma tabulkami.<br/>
+</td></tr><tr><td><code>LEFT JOIN</code>se dvěma tabulkami.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -819,7 +819,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code> s <code>COUNT</code><br/>
+</td></tr><tr><td><code>JOIN</code>řetězce<code>COUNT</code><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -853,7 +853,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>Počet jedinečných položek.<br/>
+</td></tr><tr><td>Počet jedinečných položek:<br/>
 
 <pre><code class="lang-sql">SELECT DISTINCT COUNT(StudentID) FROM CourseSelection
 </code></pre>
@@ -902,7 +902,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code> s řazení<br/>
+</td></tr><tr><td><code>OR</code>s řazením<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -942,7 +942,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code> dva dotazů.<br/>
+</td></tr><tr><td><code>UNION</code>dvou dotazů.<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
@@ -991,7 +991,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code> Podmínka.<br/>
+</td></tr><tr><td><code>CASE</code>pomocné.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -1054,7 +1054,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>Více spojení.<br/>
+</td></tr><tr><td>Vícenásobná spojení.<br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1077,7 +1077,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>Více levé vnější spojení.<br/>
+</td></tr><tr><td>Několik levých vnějších spojení.<br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1104,7 +1104,7 @@ query {
 
 </td></tr></table>
 
-Následující kód slouží k vytvoření ukázkové databáze pro tyto příklady.
+Následující kód lze použít k vytvoření ukázkové databáze pro tyto příklady.
 
 <pre><code class="lang-sql">SET ANSI_NULLS ON
 GO
@@ -1860,9 +1860,9 @@ query {
 |> Seq.iter (fun (studentName, courseName) -> printfn "%s %s" studentName courseName)
 ```
 
-A tady je úplný výstup, když je tento kód spuštěný F# interaktivní.
+A zde je úplný výstup, pokud je tento kód spuštěn v F# Interactive.
 
-```
+```console
 --> Referenced 'C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\FSharp.Data.TypeProviders.dll'
 
 --> Referenced 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Data.dll'
@@ -2424,5 +2424,5 @@ end
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [LINQ. QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 - [Výpočetní výrazy](Computation-Expressions.md)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5bed2d1d4eda4a4c577f05f614a71aa9180998a7
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 2a751acc129ebd1c917b87f8083ffef72c7d8c17
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182075"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216344"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>Rozhraní API, která verze sestav nyní hlásí produkt a nikoli verzi souboru
 
@@ -12,7 +12,7 @@ ms.locfileid: "71182075"
 
 #### <a name="change-description"></a>Změnit popis
 
-V .NET Core 2,2 a předchozích verzích metody jako <xref:System.Environment.Version?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>a dialog vlastností souboru pro sestavení .NET Core odrážejí verzi souboru. Počínaje .NET Core 3,0 se odrážejí verze produktu. 
+V .NET Core 2,2 a předchozích verzích metody jako <xref:System.Environment.Version?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>a dialog vlastností souboru pro sestavení .NET Core odrážejí verzi souboru. Počínaje .NET Core 3,0 se odrážejí verze produktu.
 
 Následující obrázek znázorňuje rozdíl v informacích o verzi pro sestavení *System. Runtime. dll* pro .net Core 2,2 (vlevo) a .net Core 3,0 (na pravé straně), jak je zobrazeno v dialogovém okně Vlastnosti souboru v **Průzkumníkovi Windows** .
 
@@ -35,12 +35,11 @@ CoreFx
 - <xref:System.Environment.Version?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription?displayProperty=nameWithType>
 
-<!-- 
+<!--
 
 ### Affected APIs
 
 - `P:System.Environment.Version`
 - `P:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription`
-
 
 -->

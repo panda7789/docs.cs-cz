@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c99e3bc59266846fcd5c5774b6050b4e075cbc3f
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: b2f997cf398e59f8e30ac87c1e0360e43a448e85
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374497"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216706"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -117,10 +117,10 @@ Na výsledný řetězec má vliv informace o formátování aktuálního <xref:S
 |<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>|Definuje řetězec, který odděluje skupiny integrálních čísel.|
 |<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSizes%2A>|Definuje počet celých číslic, které se zobrazují ve skupině.|
 
-Následující příklad formátuje <xref:System.Double> hodnotu pomocí specifikátoru formátu měny.
+Následující příklad formátuje <xref:System.Double> hodnotu pomocí specifikátoru formátu měny:
 
 [!code-cpp[Formatting.Numeric.Standard#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#1)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
+[!code-csharp[Formatting.Numeric.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#1)]
 [!code-vb[Formatting.Numeric.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#1)]
 
 [Zpět na tabulku](#table)
@@ -165,10 +165,10 @@ Na výsledný řetězec má vliv informace o formátování aktuálního <xref:S
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic v koeficientu.|
 |<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>|Definuje řetězec, který označuje, že exponent je kladný.|
 
-Následující příklad formátuje <xref:System.Double> hodnotu pomocí exponenciálního specifikátoru formátu.
+Následující příklad formátuje <xref:System.Double> hodnotu pomocí exponenciálního specifikátoru formátu:
 
 [!code-cpp[Formatting.Numeric.Standard#3](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#3)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
+[!code-csharp[Formatting.Numeric.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#3)]
 [!code-vb[Formatting.Numeric.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#3)]
 
 [Zpět na tabulku](#table)
@@ -189,10 +189,10 @@ Na výsledný řetězec má vliv informace o formátování aktuálního <xref:S
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>|Definuje výchozí počet desítkových číslic. Tuto hodnotu lze přepsat pomocí specifikátoru přesnosti.|
 
-Následující příklad formátuje <xref:System.Double> <xref:System.Int32> a hodnotu se specifikátorem formátu s pevnou desetinnou čárkou.
+Následující příklad formátuje <xref:System.Double> <xref:System.Int32> a a hodnotu pomocí specifikátoru formátu s pevnou desetinnou čárkou:
 
 [!code-cpp[Formatting.Numeric.Standard#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#4)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
+[!code-csharp[Formatting.Numeric.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#4)]
 [!code-vb[Formatting.Numeric.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#4)]
 
 [Zpět na tabulku](#table)
@@ -236,10 +236,10 @@ Na výsledný řetězec má vliv informace o formátování aktuálního <xref:S
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální číslice od desítkových číslic.|
 |<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>|Definuje řetězec, který označuje, že exponent je kladný.|
 
-Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem obecného formátu.
+Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou pomocí obecného specifikátoru formátu:
 
 [!code-cpp[Formatting.Numeric.Standard#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#5)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
+[!code-csharp[Formatting.Numeric.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#5)]
 [!code-vb[Formatting.Numeric.Standard#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#5)]
 
 [Zpět na tabulku](#table)
@@ -261,10 +261,10 @@ Na výsledný řetězec má vliv informace o formátování aktuálního <xref:S
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>|Definuje řetězec, který odděluje integrální a desítkové číslice.|
 |<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>|Definuje výchozí počet desítkových číslic. Tuto hodnotu lze přepsat pomocí specifikátoru přesnosti.|
 
-Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem číselného formátu.
+Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou pomocí specifikátoru číselného formátu:
 
 [!code-cpp[Formatting.Numeric.Standard#6](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#6)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
+[!code-csharp[Formatting.Numeric.Standard#6](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#6)]
 [!code-vb[Formatting.Numeric.Standard#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#6)]
 
 [Zpět na tabulku](#table)
@@ -288,10 +288,10 @@ V následující tabulce jsou uvedeny <xref:System.Globalization.NumberFormatInf
 |<xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>|Definuje řetězec, který odděluje skupiny integrálních čísel.|
 |<xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>|Definuje počet celých číslic, které se zobrazují ve skupině.|
 
-Následující příklad formátuje různé hodnoty s plovoucí desetinnou čárkou se specifikátorem procentuálního formátu.
+Následující příklad formátuje hodnoty s plovoucí desetinnou čárkou pomocí specifikátoru formátu procenta:
 
 [!code-cpp[Formatting.Numeric.Standard#7](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/Standard.cpp#7)]
-[!code-csharp-interactive[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
+[!code-csharp[Formatting.Numeric.Standard#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/Standard.cs#7)]
 [!code-vb[Formatting.Numeric.Standard#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/Standard.vb#7)]
 
 [Zpět na tabulku](#table)
@@ -324,9 +324,9 @@ Následující příklad formátuje <xref:System.Numerics.BigInteger> hodnotu po
 > [!IMPORTANT]
 > V některých případech <xref:System.Double> hodnoty formátované pomocí standardního číselného formátovacího řetězce "R" nemusejí úspěšně odcyklovat cestu, pokud jsou `/platform:x64` kompilovány pomocí přepínačů nebo `/platform:anycpu` a spouštěny v 64 systémech. Další informace najdete v následujícím článku.
 
-Chcete-li se vyhnout problému <xref:System.Double> hodnot formátovaných pomocí standardního číselného formátovacího řetězce "R", neúspěšně se zaokrouhlí na `/platform:x64` Trip `/platform:anycpu` , pokud jsou kompilovány pomocí přepínačů nebo a spouštěny v <xref:System.Double> systémech 64. můžete formátovat hodnoty pomocí standardního číselného formátovacího řetězce "G17". Následující příklad používá formátovací řetězec "R" s <xref:System.Double> hodnotou, která neprovádí operaci round-trip, a také používá řetězec formátu "G17" k úspěšnému přenosu původní hodnoty.
+Chcete-li se vyhnout problému <xref:System.Double> hodnot formátovaných pomocí standardního číselného formátovacího řetězce "R", neúspěšně se zaokrouhlí na `/platform:x64` Trip `/platform:anycpu` , pokud jsou kompilovány pomocí přepínačů nebo a spouštěny v <xref:System.Double> systémech 64. můžete formátovat hodnoty pomocí standardního číselného formátovacího řetězce "G17". Následující příklad používá formátovací řetězec "R" s <xref:System.Double> hodnotou, která neprovádí operaci round-trip, a také používá řetězec formátu "G17" k úspěšnému přenosu původní hodnoty:
 
-[!code-csharp-interactive[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
+[!code-csharp[System.Double.ToString#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Double.ToString/cs/roundtripex1.cs#RoundTrip)]
 [!code-vb[System.Double.ToString#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Double.ToString/vb/roundtripex1.vb#5)]
 
 [Zpět na tabulku](#table)
@@ -380,7 +380,7 @@ Bez ohledu na řetězec formátu, <xref:System.Single> Pokud je hodnota nebo <xr
 
 Následující příklad formátuje číselnou integrální hodnotu a hodnotu s plovoucí desetinnou čárkou pomocí jazykové verze en-US a všech specifikátorů standardního číselného formátu. V tomto příkladu se používají dva konkrétní číselné<xref:System.Double> typy <xref:System.Int32>(a), ale by výsledkem byly podobné výsledky pro libovolný z dalších číselných<xref:System.Byte>základních <xref:System.SByte> <xref:System.Int32>typů <xref:System.Int16>(, <xref:System.Int64>,,,, <xref:System.UInt16>, ,<xref:System.UInt64>, ,<xref:System.Single>a )<xref:System.Decimal>. <xref:System.UInt32> <xref:System.Numerics.BigInteger>
 
-[!code-csharp-interactive[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
+[!code-csharp[system.x.tostring-and-culture#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.X.ToString-and-Culture/cs/xts.cs#FinalExample)]
 [!code-vb[system.x.tostring-and-culture#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.X.ToString-and-Culture/vb/xts.vb#1)]
 
 ## <a name="see-also"></a>Viz také:

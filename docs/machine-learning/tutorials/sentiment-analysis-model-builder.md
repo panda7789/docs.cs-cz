@@ -6,12 +6,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c6184e097daf4604173db9e2a34606e68eb0fdc8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 375440d98fd728cc89c1ac620614067edbd3adf8
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054319"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216875"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Kurz: Analýza mínění komentářů k webu ve webové aplikaci pomocí Tvůrce modelů ML.NET
 
@@ -22,13 +22,14 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci ASP.NET Core Razor Pages, kter
 V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
-> * Vytvoření aplikace ASP.NET Core Razor Pages
-> * Příprava a pochopení dat
-> * Zvolit scénář
-> * Načtení dat
-> * Trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu pro předpovědi
+>
+> - Vytvoření aplikace ASP.NET Core Razor Pages
+> - Příprava a pochopení dat
+> - Zvolit scénář
+> - Načtení dat
+> - Trénování modelu
+> - Vyhodnocení modelu
+> - Použití modelu pro předpovědi
 
 > [!NOTE]
 > Tvůrce modelů je aktuálně ve verzi Preview.
@@ -43,17 +44,17 @@ Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu m
 
 1. Vytvořte **aplikaci ASP.NET Core Razor Pages**.
 
-    1. Otevřete Visual Studio a v řádku nabídek vyberte **soubor > nový > projekt** . 
-    1. V dialogovém okně Nový projekt vyberte uzel  **C# vizuálu** následovaný **webovým** uzlem. 
-    1. Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** . 
+    1. Otevřete Visual Studio a v řádku nabídek vyberte **soubor > nový > projekt** .
+    1. V dialogovém okně Nový projekt vyberte uzel  **C# vizuálu** následovaný **webovým** uzlem.
+    1. Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** .
     1. Do textového pole **název** zadejte "SentimentRazor".
-    1. Zaškrtávací políčko **vytvořit adresář pro řešení** by mělo být ve výchozím nastavení zaškrtnuté. Pokud tomu tak není, ověřte ji. 
+    1. Zaškrtávací políčko **vytvořit adresář pro řešení** by mělo být ve výchozím nastavení zaškrtnuté. Pokud tomu tak není, ověřte ji.
     1. Vyberte tlačítko **OK**.
     1. Zvolte **Webová aplikace** v okně, které zobrazuje různé typy ASP.NET Core projektů, a pak vyberte tlačítko **OK** .
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
-Stáhněte si [datovou sadu Detox Wikipedii](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv). Po otevření webové stránky klikněte na ni pravým tlačítkem myši, vyberte **Uložit jako** a uložte soubor kdekoli v počítači. 
+Stáhněte si [datovou sadu Detox Wikipedii](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv). Po otevření webové stránky klikněte na ni pravým tlačítkem myši, vyberte **Uložit jako** a uložte soubor kdekoli v počítači.
 
 Každý řádek v datové sadě *Wikipedii-Detox-250-line-data. TSV* představuje jinou revizi, kterou si uživatel na Wikipedii nanechal. První sloupec představuje mínění textu (0 je non-toxický, 1 je toxický) a druhý sloupec představuje komentář, který opustil uživatel. Sloupce jsou oddělené kartami. Data vypadají jako následující:
 
@@ -67,7 +68,7 @@ Každý řádek v datové sadě *Wikipedii-Detox-250-line-data. TSV* představuj
 
 ![](./media/sentiment-analysis-model-builder/model-builder-screen.png)
 
-Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. 
+Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů.
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *SentimentRazor* a vyberte **Přidat** > **Machine Learning**.
 1. V této ukázce je scénář analýzou mínění. V kroku *scénář* nástroje Tvůrce modelů vyberte **Analýza mínění** scénář.
@@ -85,7 +86,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 
 Úkolem strojového učení, který se používá k výuce modelu předpovědi cen v tomto kurzu, je binární klasifikace. V průběhu procesu školení modelů vlacích sestavuje samostatné modely pomocí různých binárních algoritmů klasifikace a nastavení, aby bylo možné najít nejlepší model pro datovou sadu.
 
-Čas potřebný ke školení modelu je úměrný množství dat. Tvůrce modelů automaticky vybere výchozí hodnotu pro **čas do výuky (sekundy)** na základě velikosti zdroje dat. 
+Čas potřebný ke školení modelu je úměrný množství dat. Tvůrce modelů automaticky vybere výchozí hodnotu pro **čas do výuky (sekundy)** na základě velikosti zdroje dat.
 
 1. I když tvůrce modelů nastaví hodnotu **času na vlak (sekundy)** až 10 sekund, narůstá na 30 sekund. Školení po delší dobu umožňuje tvůrci modelů prozkoumat větší počet algoritmů a kombinaci parametrů při hledání nejlepšího modelu.
 1. Vyberte **Spustit školení**.
@@ -122,8 +123,8 @@ V důsledku školicího procesu se vytvoří dva projekty.
 
 1. Chcete-li použít trained model uvnitř vaší aplikace Razor Pages, přidejte odkaz na projekt *SentimentRazorML. model* .
 
-    1. Klikněte pravým tlačítkem na projekt **SentimentRazor** . 
-    1. Vyberte **přidat > odkaz**. 
+    1. Klikněte pravým tlačítkem na projekt **SentimentRazor** .
+    1. Vyberte **přidat > odkaz**.
     1. Vyberte **projekty > uzel řešení** a ze seznamu ověřte projekt **SentimentRazorML. model** .
     1. Vyberte **OK**.
 
@@ -132,21 +133,21 @@ V důsledku školicího procesu se vytvoří dva projekty.
 K provedení jedné předpovědi použijte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Aby bylo možné použít [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) aplikaci v aplikaci, je nutné ji v případě potřeby vytvořit. V takovém případě je osvědčeným postupem použití injektáže závislostí.
 
 > [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Pro zlepšení výkonu a bezpečnosti vláken použijte `PredictionEnginePool` službu, která [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) vytvoří `PredictionEngine` objekty pro použití aplikací. Další informace o [vytváření a používání `PredictionEngine` fondů objektů v ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)najdete v tomto blogovém příspěvku. 
+> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Pro zlepšení výkonu a bezpečnosti vláken použijte `PredictionEnginePool` službu, která [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) vytvoří `PredictionEngine` objekty pro použití aplikací. Další informace o [vytváření a používání `PredictionEngine` fondů objektů v ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)najdete v tomto blogovém příspěvku.
 
 1. Nainstalujte balíček NuGet *Microsoft.Extensions.ml* :
 
-    1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**. 
-    1. Jako zdroj balíčku vyberte "nuget.org". 
-    1. Vyberte kartu **Procházet** a vyhledejte **Microsoft.Extensions.ml**. 
-    1. Vyberte balíček v seznamu a klikněte na tlačítko **instalovat** . 
+    1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
+    1. Jako zdroj balíčku vyberte "nuget.org".
+    1. Vyberte kartu **Procházet** a vyhledejte **Microsoft.Extensions.ml**.
+    1. Vyberte balíček v seznamu a klikněte na tlačítko **instalovat** .
     1. V dialogovém okně **Náhled změn** klikněte na tlačítko **OK** .
-    1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, v dialogu pro **přijetí licence** vyberte tlačítko **přijmout** . 
+    1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, v dialogu pro **přijetí licence** vyberte tlačítko **přijmout** .
 
 1. Otevřete soubor *Startup.cs* v projektu *SentimentRazor* .
 1. Přidejte následující příkazy using pro odkazování na balíček NuGet *Microsoft.Extensions.ml* a projekt *SentimentRazorML. model* :
 
-    [!code-csharp [StartupUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Startup.cs#L12-L14)]        
+    [!code-csharp [StartupUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Startup.cs#L12-L14)]
 
 1. Vytvořte globální proměnnou pro uložení umístění trained modelového souboru.
 
@@ -172,7 +173,7 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
 
     [!code-csharp [IndexUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L7-L8)]
 
-    Aby bylo možné použít `PredictionEnginePool` konfiguraci `Startup` ve třídě, je nutné ji vložit do konstruktoru modelu, kde jej chcete použít. 
+    Aby bylo možné použít `PredictionEnginePool` konfiguraci `Startup` ve třídě, je nutné ji vložit do konstruktoru modelu, kde jej chcete použít.
 
 1. Přidejte proměnnou pro odkazování `PredictionEnginePool` `IndexModel` uvnitř třídy.
 
@@ -195,15 +196,15 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
 
     1. V rámci metody vrátí neutrální mínění, pokud je vstup od uživatele prázdný nebo má hodnotu null. `OnGetAnalyzeSentiment`
 
-        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L28)] 
-    
-    1. Když je zadaný platný vstup, vytvoří se nová instance `ModelInput`. 
+        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L28)]
 
-        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L29)] 
+    1. Když je zadaný platný vstup, vytvoří se nová instance `ModelInput`.
+
+        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L29)]
 
     1. `PredictionEnginePool` Použijte k předpovídání mínění.
 
-        [!code-csharp [MakePrediction](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L30)] 
+        [!code-csharp [MakePrediction](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L30)]
 
     1. Převeďte předpovězenou `bool` hodnotu na toxické nebo netoxické pomocí následujícího kódu.
 
@@ -217,7 +218,7 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
 
 Výsledky vrácené nástrojem `OnGetAnalyzeSentiment` budou dynamicky zobrazeny `Index` na webové stránce.
 
-1. Otevřete soubor *index. cshtml* v adresáři *stránky* a nahraďte jeho obsah následujícím kódem: 
+1. Otevřete soubor *index. cshtml* v adresáři *stránky* a nahraďte jeho obsah následujícím kódem:
 
     [!code-cshtml [IndexPage](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml)]
 
@@ -253,17 +254,18 @@ Až se aplikace spustí, zadejte *Tvůrce modelů.* do textové oblasti. Zobraze
 
 Pokud potřebujete odkazovat na projekty vygenerované tvůrcem modelu později v jiném řešení, můžete je najít v `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` adresáři.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
-> * Vytvoření aplikace ASP.NET Core Razor Pages
-> * Příprava a pochopení dat
-> * Zvolit scénář
-> * Načtení dat
-> * Trénování modelu
-> * Vyhodnocení modelu
-> * Použití modelu pro předpovědi
+>
+> - Vytvoření aplikace ASP.NET Core Razor Pages
+> - Příprava a pochopení dat
+> - Zvolit scénář
+> - Načtení dat
+> - Trénování modelu
+> - Vyhodnocení modelu
+> - Použití modelu pro předpovědi
 
 ### <a name="additional-resources"></a>Další prostředky
 

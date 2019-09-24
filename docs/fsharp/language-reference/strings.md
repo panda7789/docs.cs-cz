@@ -2,12 +2,12 @@
 title: Řetězce
 description: Přečtěte si F# , jak typ String představuje neproměnlivý text jako sekvenci znaků Unicode.
 ms.date: 07/05/2019
-ms.openlocfilehash: 284de939c90c4d9d4ea064fb4db1fb90a37038e2
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 25f5d7ce5059ba5ddb4e938313c511734c2d7320
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627100"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216732"
 ---
 # <a name="strings"></a>Řetězce
 
@@ -71,7 +71,7 @@ Nebo můžete extrahovat podřetězce pomocí syntaxe řezu pole, jak je znázor
 
 Výstup je následující.
 
-```
+```console
 abc
 def
 ```

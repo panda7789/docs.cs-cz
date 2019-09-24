@@ -6,40 +6,25 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 09/17/2019
-ms.openlocfilehash: 45d5117f264a24c2658debad9a111d4d4b9b9a8e
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 09/22/2019
+ms.openlocfilehash: ddb758b942099657708e79b590c7817c309396d7
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182444"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216273"
 ---
-# <a name="whats-new-in-net-core-30-release-candidate-1"></a>Co je nového v .NET Core 3,0 (Release Candidate 1)
+# <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
-Tento článek popisuje, co je v .NET Core 3,0 až Release Candidate 1 (RC1) novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
+Tento článek popisuje, co je v .NET Core 3,0 novinkou. Jedním z největších vylepšení je podpora desktopových aplikací pro Windows (jenom Windows). Pomocí aplikace .NET Core 3,0 SDK desktopové plochy systému Windows můžete přenést model Windows Forms aplikace a Windows Presentation Foundation (WPF). Aby bylo jasné, že je komponenta Desktop systému Windows podporována a je součástí systému Windows. Další informace najdete v části [Windows Desktop](#windows-desktop) dále v tomto článku.
 
-.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme používat [Visual Studio 2019 16,3 Preview 4](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview), [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview)nebo [Visual Studio Code](https://code.visualstudio.com/) s  **C# rozšířením**.
+.NET Core 3,0 přidává podporu pro C# 8,0. Důrazně doporučujeme, abyste k  **C# rozšíření**používali [Visual Studio 2019 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), [Visual Studio pro Mac 8,3](/visualstudio/mac/install-preview)nebo [Visual Studio Code](https://code.visualstudio.com/) .
 
-[Stáhněte si a začněte s .NET Core 3,0 RC1](https://aka.ms/netcore3download) hned na Windows, MacOS nebo Linux.
+[Stáhněte si a začněte používat .NET Core 3,0](https://aka.ms/netcore3download) hned teď ve Windows, MacOS nebo Linux.
 
-Další informace o jednotlivých vydaných verzích Preview najdete v následujících oznámeních:
+Další informace o této verzi najdete v tématu [oznámení .NET Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
-- [Oznámení .NET Core 3,0 RC1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-release-candidate-1/)
-- [Oznámení .NET Core 3,0 Preview 9](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-9/)
-- [Oznámení .NET Core 3,0 Preview 8](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-8/)
-- [Oznámení .NET Core 3,0 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-7/)
-- [Oznámení .NET Core 3,0 Preview 6](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/)
-- [Oznámení .NET Core 3,0 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-5/)
-- [Oznámení .NET Core 3,0 Preview 4](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
-- [Oznámení .NET Core 3,0 Preview 3](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
-- [Oznámení .NET Core 3,0 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
-- [Oznámení .NET Core 3,0 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-
-## <a name="production-supported-preview"></a>Verze Preview podporovaná v produkci
-
-.NET Core RC1 se považuje za produkční, které je připravené Microsoftem a je plně podporovaná. Počínaje verzí Preview 7 se vydání verzí zaměřuje na polštinu .NET Core 3,0 místo přidávání nových funkcí. Další informace o tom, co se změnilo v RC1, najdete v [oznámení RC1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-release-candidate-1/).
-
-Pokud používáte předchozí verzi Preview, musíte přejít na RC1, aby pokračovala podpora "začít živě".
+.NET Core RC1 se považuje za produkční verzi Microsoft a je plně podporovaná. Pokud používáte verzi Preview, musíte pro pokračování podpory přejít na verzi RTM.
 
 ## <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Instalační služba systému Windows
 
@@ -47,13 +32,13 @@ Instalační program MSI pro Windows se od verze .NET Core 3,0 změnil. Instala�
 
 Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho, [jak je verze .NET Core](../versions/index.md).
 
-## <a name="c-80-preview"></a>C#8,0 Preview
+## <a name="c-80"></a>C#8,0
 
-.NET Core 3,0 podporuje C# 8 Preview. Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).
+C#8,0 je také součástí této verze, která zahrnuje funkce typu odkazu s možnou hodnotou null, asynchronní datové proudy a další vzory. Další informace o C# funkcích 8,0 najdete v tématu [co je nového v C# 8,0](../../csharp/whats-new/csharp-8.md).
 
 ## <a name="net-standard-21"></a>.NET Standard 2,1
 
-I když .NET Core 3,0 podporuje **.NET Standard 2,1**, výchozí `dotnet new classlib` šablona vygeneruje projekt, který cílí na **.NET Standard 2,0**. Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a `TargetFramework` změňte vlastnost `netstandard2.1`na:
+I když .NET Core 3,0 podporuje **.NET Standard 2,1**, vygeneruje `dotnet new classlib` výchozí šablona projekt, který se pořád cílí **.NET Standard 2,0**. Chcete-li cílit na **.NET Standard 2,1**, upravte soubor projektu a `TargetFramework` změňte vlastnost `netstandard2.1`na:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -515,7 +500,7 @@ Další informace o omezené podpoře sériového portu v systému Linux najdete
 
 ## <a name="docker-and-cgroup-memory-limits"></a>Omezení paměti Docker a CGROUP
 
-Počínaje verzí Preview 3 je používání .NET Core 3,0 na platformě Linux s nástrojem Docker lépe kompatibilní s cgroupmi omezeními paměti. Spuštění kontejneru Docker s omezeními paměti, jako je například `docker run -m`s, se změní způsob, jakým se aplikace .NET Core chová.
+Provoz .NET Core 3,0 na platformě Linux s Docker funguje lépe s omezeními CGROUP paměti. Spuštění kontejneru Docker s omezeními paměti, jako je například `docker run -m`s, se změní způsob, jakým se aplikace .NET Core chová.
 
 - Výchozí velikost haldy systému uvolňování paměti (GC): maximálně 20 MB nebo 75% limitu paměti v kontejneru.
 - Explicitní velikost lze nastavit jako absolutní číslo nebo procento limitu CGROUP.

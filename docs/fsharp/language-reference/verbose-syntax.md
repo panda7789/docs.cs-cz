@@ -1,25 +1,25 @@
 ---
 title: Podrobná syntaxe
-description: Informace o rozdílu mezi podrobné a jednoduché syntaxi F# programovací jazyk.
+description: Přečtěte si rozdíl mezi podrobnými a nezjednodušenou F# syntaxí v programovacím jazyce.
 ms.date: 05/16/2016
-ms.openlocfilehash: c95965d7d9d18a0fca11663a474dbbc9375a9494
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d2459da60bba5d88bd23615c8bf09ba64f7c22c4
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641668"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214033"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
-Nejsou k dispozici pro mnoho konstrukcí v dvě formy syntaxe F# jazyka: *podrobná syntaxe* a *nenáročném syntaxi*. Podrobná syntaxe nepoužívá tak často, ale nabízí výhodu v podobě jsou méně citlivé na odsazení. Prostá syntaxe je kratší a používá odsazení který signalizuje, že začátku a konce konstrukce, spíše než další klíčová slova, jako jsou `begin`, `end`, `in`, a tak dále. Výchozí syntaxe je nenáročném syntaxi. Toto téma popisuje syntaxi pro F# vytvoří, pokud není povolené nenáročném syntaxi. Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte nenáročném syntaxi, můžete stále použít podrobné syntaxi pro některé konstruktory. Prostá syntaxe můžete zakázat s použitím `#light "off"` směrnice.
+K dispozici jsou dvě formy syntaxe pro mnoho konstrukcí v F# jazyce: *verbose syntaxe* a *prostá syntaxe*. Podrobná syntaxe není tak, jak se běžně používá, ale má výhodu, že je méně citlivá na odsazení. Zjednodušená syntaxe je kratší a používá odsazení k signalizaci začátku a konce konstrukcí, spíše než další klíčová slova jako `begin`, `end`, `in`a tak dále. Výchozí syntaxí je zjednodušená syntaxe. Toto téma popisuje syntaxi pro F# konstrukce, pokud není povolena zjednodušená syntaxe. Podrobná syntaxe je vždy povolena, takže i v případě, že povolíte zjednodušenou syntaxi, můžete pro některé konstrukty stále používat syntaxi verbose. Pomocí `#light "off"` direktivy můžete zakázat zjednodušenou syntaxi.
 
-## <a name="table-of-constructs"></a>Tabulka konstrukce
+## <a name="table-of-constructs"></a>Tabulka konstrukcí
 
-Následující tabulka ukazuje jednoduchý a podrobné syntaxe F# jazykové konstrukce v kontextech tam, kde existuje rozdíl mezi dvě různými formami. V této tabulce úhel hranaté závorky (&lt;&gt;) uzavřete syntaxe uživatelem zadané elementy. Naleznete v dokumentaci pro každý konstrukce jazyka podrobnější informace o syntaxi použít v rámci těchto konstruktorů.
+Následující tabulka uvádí zjednodušenou a podrobnou syntaxi pro F# jazykové konstrukce v kontextech, kde existuje rozdíl mezi dvěma formuláři. V této tabulce jsou uvedené lomené&lt;závorky (&gt;) ohraničující uživatelsky zadané prvky syntaxe. Podrobnější informace o syntaxi používané v rámci těchto konstrukcí naleznete v dokumentaci k jednotlivým jazykovým konstrukcím.
 
 <table>
 <tr>
-<th>Konstrukce jazyka</th>
+<th>Jazyková konstrukce</th>
 <th>Prostá syntaxe</th>
 <th>Podrobná syntaxe</th>
 </tr>
@@ -99,7 +99,7 @@ for counter = start to finish do
 
 </td><td>
 
-```
+```fsharp
 for counter = start to finish do
     ...
 done
@@ -227,7 +227,7 @@ type <structure-name> =
 
 </td>
 </tr>
-<tr><td>rozlišovaná sjednocení</td><td>
+<tr><td>rozlišené sjednocení</td><td>
 
 ```fsharp
 type <union-name> =
@@ -311,7 +311,7 @@ interface <interface-name>
 
 </td>
 </tr>
-<tr><td>Type – rozšíření</td><td>
+<tr><td>Přípona typu</td><td>
 
 ```fsharp
 type <type-name>

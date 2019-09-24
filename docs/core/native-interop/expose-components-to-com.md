@@ -1,5 +1,5 @@
 ---
-title: Vystavení komponent .NET Core pro COM
+title: Vystavení součástí .NET Core pro COM
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 686d1b31478121a8b2c907d99672a5fcc3438a71
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8f9624414a2b423bd43e8790d11b70ae1ca6286d
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849029"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216228"
 ---
-# <a name="exposing-net-core-components-to-com"></a>Vystavení komponent .NET Core pro COM
+# <a name="exposing-net-core-components-to-com"></a>Vystavení součástí .NET Core pro COM
 
 V .NET Core se proces pro vystavování objektů .NET do modelu COM významně zjednodušil v porovnání s .NET Framework. Následující postup vás provede postupem, jak vystavit třídu modelu COM. V tomto kurzu se dozvíte, jak:
 
@@ -25,16 +25,24 @@ V .NET Core se proces pro vystavování objektů .NET do modelu COM významně z
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte [sadu .NET Core 3,0 Preview 7 SDK](https://dotnet.microsoft.com/download) nebo novější verzi.
+- Nainstalujte [sadu .NET Core 3,0 SDK](https://dotnet.microsoft.com/download) nebo novější verzi.
 
 ## <a name="create-the-library"></a>Vytvoření knihovny
 
 Prvním krokem je vytvoření knihovny.
 
-1. Vytvořte novou složku a v této složce spusťte `dotnet new classlib`.
+1. Vytvořte novou složku a v této složce spusťte následující příkaz:
+    
+    ```dotnetcli
+    dotnet new classlib
+    ```
+
 2. Otevřít `Class1.cs`.
 3. Přidejte `using System.Runtime.InteropServices;` na začátek souboru.
-4. Vytvořte rozhraní s názvem `IServer`. Například:[!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+4. Vytvořte rozhraní s názvem `IServer`. Příklad:
+
+   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+
 5. `[Guid("<IID>")]` Přidejte atribut do rozhraní s identifikátorem GUID rozhraní pro rozhraní modelu COM, které implementujete. Například, `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Všimněte si, že tento identifikátor GUID musí být jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní pro COM. V aplikaci Visual Studio můžete vygenerovat GUID tak, že kliknete na nástroje > vytvořit GUID a otevřete nástroj vytvořit GUID.
 6. Přidejte do rozhraní atribut a určete, jaká základní rozhraní com by měla vaše rozhraní implementovat. `[InterfaceType]`
 7. Vytvořte třídu s názvem `Server` , která `IServer`implementuje.

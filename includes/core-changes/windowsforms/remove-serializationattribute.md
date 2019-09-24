@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e9d76d5907e7d700fc57117ccb43f8c430c615b0
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d48ced9d0201a33f9149aba155ddd3d8bc04c93f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181798"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71217043"
 ---
 ### <a name="serializableattribute-removed-from-some-windows-forms-types"></a>SerializableAttribute byl odebrán z některých typů model Windows Forms.
 
@@ -28,7 +28,7 @@ Následující typy jsou upraveny pomocí <xref:System.SerializableAttribute> .N
 
 V minulosti měl tento mechanismus serializace závažné problémy s údržbou a zabezpečením. Údržba `SerializableAttribute` na typech znamená, že tyto typy musí být testovány pro změny serializace verze na verzi a potenciálně změny serializace architektury rozhraní. Díky tomu je to obtížnější je rozvíjet tyto typy a může být náročné na údržbu. Tyto typy nemají žádné známé scénáře binární serializace, což minimalizuje dopad odebrání atributu.
 
-Další informace naleznete v tématu <https://docs.microsoft.com/en-us/dotnet/standard/serialization/binary-serialization>.
+Další informace naleznete v tématu [binární serializace](~/docs/standard/serialization/binary-serialization.md).
 
 #### <a name="version-introduced"></a>Představená verze
 
@@ -46,7 +46,7 @@ Windows Forms
 
 - Žádné
 
-<!-- 
+<!--
 
 ### Affected APIs
 

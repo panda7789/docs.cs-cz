@@ -2,12 +2,12 @@
 title: Porovnávání vzorů
 description: Naučte se, jak se F# používají vzory pro porovnání dat s logickými strukturami, rozložení dat na části prvků nebo extrakce informací z dat.
 ms.date: 05/16/2016
-ms.openlocfilehash: 60e0d6cd550724bc8448fddd7b163c2c9f1637be
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 0e14fa00103742bbf5f054f8c04a7669ed767e63
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733470"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216797"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
@@ -95,7 +95,7 @@ Použití pojmenovaného pole je volitelné, takže v předchozím příkladu m�
 
 Pokud zadáte více polí, použijte středník (;) jako oddělovač.
 
-```
+```fsharp
 match shape with
 | Rectangle(height = h; width = w) -> printfn "Rectangle with height %f and width %f" h w
 | _ -> ()

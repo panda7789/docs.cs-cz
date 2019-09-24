@@ -3,12 +3,12 @@ title: Generování a využívání asynchronních datových proudů
 description: Tento rozšířený kurz znázorňuje scénáře, kdy generování a využívání asynchronních streamů poskytuje přirozenější způsob práce s posloupnosti dat, která se dají vygenerovat asynchronně.
 ms.date: 02/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 3fdf5299deca365c62a00a8320ea335e96d9078c
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 04c4fe1c7e33138273c5b49c6985efc60767a724
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926693"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216551"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: Generování a využívání asynchronních datových C# proudů pomocí 8,0 a .net Core 3,0
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0 beta. Kompilátor C# 8 beta je k dispozici od verze [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo nejnovější [sady .NET Core 3,0 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Asynchronní streamy jsou první dostupné v .NET Core 3,0 Preview 1.
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
 Budete muset vytvořit [přístupový token GitHubu](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) , abyste mohli získat přístup ke koncovému bodu GraphQL GitHubu. Pro přístupový token GitHubu vyberte následující oprávnění:
 

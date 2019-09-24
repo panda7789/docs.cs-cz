@@ -2,12 +2,12 @@
 title: 'Kurz: Vytvoření zprostředkovatele typů'
 description: Naučte se, jak vytvořit F# vlastní poskytovatele typů F# v 3,0, prozkoumáním několika jednoduchých poskytovatelů typů pro ilustraci základních konceptů.
 ms.date: 02/02/2019
-ms.openlocfilehash: 800b5a670b7f25f462e1ce23c3d40fd2eab3b102
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8d1a1fedf03437ccbacd40616cc7dc3e1da435b2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991868"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214268"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -152,13 +152,13 @@ Než znovu zkompilujete poskytovatele, ujistěte se, že jste uzavřeli všechny
 
 Chcete-li ladit tohoto poskytovatele pomocí příkazů Print, vytvořte skript, který zveřejňuje problém se zprostředkovatelem, a poté použijte následující kód:
 
-```
+```console
 fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 ```
 
 Pokud chcete tohoto poskytovatele ladit pomocí sady Visual Studio, otevřete Developer Command Prompt pro Visual Studio s přihlašovacími údaji správce a spusťte následující příkaz:
 
-```
+```console
 devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 ```
 
@@ -899,7 +899,7 @@ let function1 () =
 
 Tady je obrázek výsledného kódu, který se dekompiluje pomocí programu Ildasm. exe:
 
-```
+```il
 .class public abstract auto ansi sealed Module1
 extends [mscorlib]System.Object
 {
@@ -933,13 +933,11 @@ Při vytváření poskytovatelů typů Sledujte následující konvence.
 
 **Poskytovatelé protokolů připojení** Obecně platí, že názvy většiny knihoven DLL pro protokoly připojení dat a služeb, jako jsou například připojení OData nebo SQL, by měly `TypeProvider` končit `TypeProviders`nebo. Například použijte název knihovny DLL, který se podobá následujícímu řetězci:
 
-```
-  Fabrikam.Management.BasicTypeProviders.dll
-```
+`Fabrikam.Management.BasicTypeProviders.dll`
 
 Zajistěte, aby poskytnuté typy byly členy odpovídajícího oboru názvů, a označte protokol připojení, který jste implementovali:
 
-```
+```fsharp
   Fabrikam.Management.BasicTypeProviders.WmiConnection<…>
   Fabrikam.Management.BasicTypeProviders.DataProtocolConnection<…>
 ```
@@ -1128,8 +1126,8 @@ Zprostředkovatele typů můžete vyvolat pomocí následujících nástrojů:
 
 Můžete často ladit poskytovatele typu, a to pomocí FSC. exe v souboru testovacího skriptu (například Script. FSX). Ladicí program můžete spustit z příkazového řádku.
 
-```
-  devenv /debugexe fsc.exe script.fsx
+```console
+devenv /debugexe fsc.exe script.fsx
 ```
 
   Můžete použít protokolování pro tisk do STDOUT.

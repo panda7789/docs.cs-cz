@@ -2,12 +2,12 @@
 title: Referenční buňky
 description: Přečtěte F# si, jak jsou referenční buňky umístění úložiště, která umožňují vytvářet proměnlivé hodnoty pomocí referenční sémantiky.
 ms.date: 05/16/2016
-ms.openlocfilehash: faaa4a6b54ff0366163b6821edff7fa4cb2f5a88
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2bca7797b272c0e7d5bf54df07041dc08e33709a
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627247"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216779"
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -66,7 +66,7 @@ Ke zdrojové hodnotě lze získat přístup několika způsoby. Hodnota vrácen�
 
 Výstup je následující.
 
-```
+```console
 10
 10
 11
@@ -75,7 +75,7 @@ Výstup je následující.
 
 Pole `contents` je k dispozici pro kompatibilitu s jinými verzemi ml a během kompilace vytvoří upozornění. Chcete-li zakázat upozornění, použijte `--mlcompatibility` možnost kompilátoru. Další informace naleznete v tématu [Možnosti kompilátoru](compiler-options.md).
 
-C#Programátoři by měli znát `ref` , C# že v nástroji není totéž jako `ref` v F#nástroji. Ekvivalentní konstrukce v F# jsou byrefs [](byrefs.md), což jsou jiný koncept z referenčních buněk.
+C#Programátoři by měli znát `ref` , C# že v nástroji není totéž jako `ref` v F#nástroji. Ekvivalentní konstrukce v F# jsou [byrefs](byrefs.md), což jsou jiný koncept z referenčních buněk.
 
 Hodnoty označené jako `mutable`mohou být automaticky povýšeny `'a ref` na hodnotu, je-li zachycena uzávěrkou; viz [hodnoty](./values/index.md).
 

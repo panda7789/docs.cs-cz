@@ -1,69 +1,97 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Dokumentace k ML.NET
+summary: Naučte se používat Open Source ML.NET k sestavování řešení strojového učení a jejich integraci do aplikací. V kurzech, příkladech kódu a dalších vám ukážeme, jak.
 metadata:
-  document_id: na
-  title: 'Dokumentace k ML.NET – kurzy, Reference k rozhraní API'
-  meta.description: 'Learn how to use ML.NET, an open-source and cross-platform machine learning framework you can use to build custom machine learning solutions and integrate them into .NET applications. Incorporate AI into your apps using the .NET skills you already have and without leaving .NET.'
+  title: Dokumentace k ML.NET – kurzy, Reference k rozhraní API
+  description: Naučte se používat Open Source ML.NET k sestavování řešení strojového učení a jejich integraci do aplikací. V kurzech, příkladech kódu a dalších vám ukážeme, jak.
+  ms.prod: dotnet-ml
   ms.topic: landing-page
-  ms.date: 09/16/2019
-  ms.author: nakersha
+  ms.collection: collection
   author: natke
-abstract:
-  description: 'Naučte se používat ML.NET, open source a rozhraní Machine Learning pro různé platformy k vytváření vlastních řešení strojového učení a jejich integraci do aplikací .NET. Návody, příklady kódu, Reference k rozhraní API a další dokumentace ukazují, jak.'
-sections:
-  - title: Podrobné kurzy
-    items:
-      - type: paragraph
-        text: 'Naučte se vytvářet běžná řešení pomocí ML.NET:'
-      - type: paragraph
-        text: '<b>Vývoj s využitím rozhraní ml.NET API</b>:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis">Analyzovat mínění pomocí binární klasifikace</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/github-issue-classification">Kategorizace problémů GitHubu pomocí klasifikace s více třídami</a></li>
-          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices">Předpověď cen pomocí regrese</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">Kategorizace květin podle charakteristik pomocí clusteringu</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">Vytvoření doporučení pro film pro vyfaktoringování pomocí Matrixu</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Sestavení vlastního klasifikátoru imagí pomocí TensorFlow</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/object-detection-onnx">Rozpoznávání objektů v obrázcích pomocí ONNX</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/text-classification-tf">Klasifikace mínění revizí filmů pomocí TensorFlow</a>
-      - type: paragraph
-        text: '<b>Použití Tvůrce modelů</b>, grafické rozšíření sady Visual Studio:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices-with-model-builder">Předpověď cen pomocí Tvůrce modelů</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis-model-builder">Sestavení webové aplikace Razor Pages pro analýzu mínění</a>
-      - type: paragraph
-        text: '<b>Spusťte rozhraní příkazového řádku ml.NET</b>:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/mlnet-cli">Analýza mínění pomocí rozhraní příkazového řádku ML.NET</a>
-  - title: Ukázky
-    items:
-      - type: paragraph
-        text: 'Další informace najdete v části <a href="https://github.com/dotnet/machinelearning-samples">úložiště ukázek</a> na GitHubu pro aplikace v C# a F#.'
-  - title: Reference
-    items:
-      - type: paragraph
-        text: <b>Rozhraní ML.NET API</b>
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="/dotnet/api/?view=ml-dotnet">Rozhraní API Release ml.NET</a> obsahuje komponenty pro zpracování dat, algoritmy pro binární klasifikaci, klasifikaci více tříd, regresi, detekci anomálií, časovou řadu a prognózy, hodnocení, ukládání a načítání modelů, ONNX a TensorFlow. zpracování modelů a mnoho dalšího.'
-          - html: <a href="/dotnet/api/?view=ml-dotnet-preview">Rozhraní API Preview ml.NET</a> obsahuje algoritmy pro úlohy doporučení a podporu pro standardní modely hloubkového učení.
-      - type: paragraph
-        text: <b>Rozhraní AutoML API</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/api/index?view=automl-dotnet">Rozhraní API pro automatické ML</a>
-      - type: paragraph
-        text: <b>Reference k rozhraní příkazového řádku ML.NET</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/reference/ml-net-cli-reference">Reference k příkazům rozhraní příkazového řádku ML.NET</a>
+  ms.author: nakersha
+  ms.date: 09/23/2019
+  ms.openlocfilehash: f6f4d0c516a1310df5c497a3f4e7331877f3c5a9
+  ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/24/2019
+  ms.locfileid: "71216650"
+landingContent:
+- title: O ML.NET
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Co je ML.NET?
+      url: how-does-mldotnet-work.md
+  - linkListType: concept
+    links:
+    - text: Typy modelů strojového učení
+      url: resources/tasks.md
+    - text: Jak zvolit algoritmus
+      url: how-to-choose-an-ml-net-algorithm.md
+    - text: Transformace dat
+      url: resources/transforms.md
+- title: Použití Tvůrce modelů
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Co je Model Builder?
+      url: automate-training-with-model-builder.md
+  - linkListType: quickstart
+    links:
+    - text: Instalace nástroje Model Builder
+      url: how-to-guides/install-model-builder.md
+  - linkListType: tutorial
+    links:
+    - text: Předpověď cen – tvůrce modelů
+      url: tutorials/predict-prices-with-model-builder.md
+    - text: Sestavení webové aplikace Razor Pages pro analýzu mínění
+      url: tutorials/sentiment-analysis-model-builder.md
+- title: Začínáme s rozhraním API
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Sestavení klasifikátoru imagí TensorFlow pomocí učení přenosu
+      url: tutorials/image-classification.md
+    - text: Analýza komentáře webu mínění
+      url: tutorials/sentiment-analysis.md
+    - text: Detekce objektů v obrázcích pomocí ONNX
+      url: tutorials/object-detection-onnx.md
+  - linkListType: how-to-guide
+    links:
+    - text: Načtení dat z různých zdrojů
+      url: how-to-guides/load-data-ml-net.md
+    - text: Příprava dat pro vytvoření modelu
+      url: how-to-guides/prepare-data-ml-net.md
+    - text: Analýza & vyhodnocení modelu
+      url: how-to-guides/train-machine-learning-model-ml-net.md
+    - text: Vytvoření předpovědi s poučeným modelem
+      url: how-to-guides/machine-learning-model-predictions-ml-net.md
+    - text: Uložení & načtení trained model
+      url: how-to-guides/save-load-machine-learning-models-ml-net.md
+- title: Použití rozhraní příkazového řádku ML.NET
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Automatizace školení modelů pomocí rozhraní příkazového řádku ML.NET
+      url: automate-training-with-cli.md
+  - linkListType: quickstart
+    links:
+    - text: Instalace rozhraní příkazového řádku ML.NET
+      url: how-to-guides/install-ml-net-cli.md
+  - linkListType: tutorial
+    links:
+    - text: Analýza mínění-ML.NET CLI & AutoML
+      url: tutorials/mlnet-cli.md
+- title: referenční dokumentace k rozhraní API
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Referenční dokumentace k rozhraní ML.NET API
+      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+    - text: Reference k rozhraní ML.NET API (Preview)
+      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview
+    - text: Reference k rozhraní příkazového řádku ML.NET
+      url: reference/ml-net-cli-reference.md
+    - text: Reference k rozhraní API AutoML
+      url: https://docs.microsoft.com/dotnet/api/?view=automl-dotnet

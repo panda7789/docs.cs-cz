@@ -3,12 +3,12 @@ title: Bezpečně aktualizovat rozhraní pomocí výchozích členů rozhraní v
 description: V tomto rozšířeném kurzu se seznámíte s tím, jak můžete bezpečně přidat nové funkce do stávajících definic rozhraní bez přerušení všech tříd a struktur, které implementují toto rozhraní.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 6a723a116d420dd43d2adeef98b824445dd4f0d7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 271c737e17cc2b93424108e7e1d434fd1c7198be
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926706"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216562"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Kurz: Aktualizace rozhraní s výchozími členy rozhraní C# v 8,0
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru verze C# 8,0 Preview. Kompilátor C# verze Preview 8,0 je k dispozici počínaje verzí [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo nejnovější [sadou .NET Core 3,0 Preview SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0). Výchozí členové rozhraní jsou k dispozici od verze .NET Core 3,0 Preview 4.
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8,0 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
 ## <a name="scenario-overview"></a>Přehled scénáře
 

@@ -2,12 +2,12 @@
 title: Přidání do formátu csproj pro .NET Core
 description: Přečtěte si o rozdílech mezi existujícími a soubory .NET Core csproj.
 ms.date: 04/08/2019
-ms.openlocfilehash: 13239b5235138cc6994841bbb81f8f12e661e337
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 89ab22f0c5e69f29ff31e13d46dce8ba278d08da
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969844"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216200"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Přidání do formátu csproj pro .NET Core
 
@@ -125,13 +125,13 @@ Pokud má projekt více cílových rozhraní, výsledky příkazu by měly být 
 
 ### <a name="sdk-attribute"></a>Atribut sady SDK
 
-Kořenový `<Project>` element souboru *. csproj* má nový atribut s názvem `Sdk`. `Sdk`Určuje sadu SDK, kterou bude projekt používat. Sada SDK, jak popisuje [dokument vrstvení](cli-msbuild-architecture.md) , je sada [úloh](/visualstudio/msbuild/msbuild-tasks) a [cílů](/visualstudio/msbuild/msbuild-targets) nástroje MSBuild, které mohou sestavovat kód .NET Core. Při použití .NET Core 3,0 Preview dodáváme tři hlavní sady SDK pomocí nástrojů .NET Core a dalších dvou sad SDK:
+Kořenový `<Project>` element souboru *. csproj* má nový atribut s názvem `Sdk`. `Sdk`Určuje sadu SDK, kterou bude projekt používat. Sada SDK, jak popisuje [dokument vrstvení](cli-msbuild-architecture.md) , je sada [úloh](/visualstudio/msbuild/msbuild-tasks) a [cílů](/visualstudio/msbuild/msbuild-targets) nástroje MSBuild, které mohou sestavovat kód .NET Core. Pro .NET Core jsou k dispozici následující sady SDK:
 
 1. .NET Core SDK s ID`Microsoft.NET.Sdk`
 2. Sada Web SDK .NET Core s ID`Microsoft.NET.Sdk.Web`
 3. Sada SDK knihovny tříd .NET Core Razor s ID`Microsoft.NET.Sdk.Razor`
-4. Služba pracovních procesů .NET Core s ID `Microsoft.NET.Sdk.Worker` (.NET Core 3,0 Preview)
-5. WinForms rozhraní .NET Core a WPF s ID `Microsoft.NET.Sdk.WindowsDesktop` (.NET Core 3,0 Preview)
+4. Služba pracovních procesů .NET Core s ID `Microsoft.NET.Sdk.Worker` (od .NET Core 3,0)
+5. WinForms rozhraní .NET Core a WPF s ID `Microsoft.NET.Sdk.WindowsDesktop` (od .NET Core 3,0)
 
 Aby bylo možné používat nástroje `Sdk` .NET Core a sestavovat kód, je `<Project>` nutné mít atribut nastaven na jedno z těchto identifikátorů v elementu.
 

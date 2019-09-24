@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 2dd10c0843b2bea4755d5f4f0aceea6509c7cf46
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 38b935814d713284dae1ca931b90c63bbcac332b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054305"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216894"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Kurz: Analýza míněních recenzí filmů pomocí předem připraveného modelu TensorFlow v ML.NET
 
@@ -21,6 +21,7 @@ Model TensorFlow použitý v tomto kurzu byl vyškolen pomocí recenzí filmů z
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
+>
 > * Načtení předem připraveného modelu TensorFlow
 > * Transformovat text komentáře webu k funkcím vhodným pro model
 > * Použití modelu k vytvoření předpovědi
@@ -87,7 +88,7 @@ První je rozdělit text na samostatná slova a použít poskytnutý soubor mapo
 
 Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 600. Jedná se o délku, kterou model TensorFlow očekává.
 
-|Vlastnost| Value|type|
+|Vlastnost| Value|Typ|
 |-------------|-----------------------|------|
 |ReviewText|Tato film je skutečně dobrá|odkazy řetězců|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
@@ -120,7 +121,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
     [!code-csharp[Prediction](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#Prediction "Declare prediction class")]
 
     `MovieReviewSentimentPrediction`je třídou předpovědi použitou po školení modelu. `MovieReviewSentimentPrediction`má jedno `float` pole (`Prediction`) a `VectorType` atribut.
-    
+
 ### <a name="create-the-mlcontext-lookup-dictionary-and-action-to-resize-features"></a>Vytvoření MLContext, vyhledávacího slovníku a akce pro změnu velikosti funkcí
 
 [Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET. Inicializace `mlContext` vytvoří nové prostředí ml.NET, které se dá sdílet v rámci objektů pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v Entity Framework.
@@ -191,7 +192,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Přidejte kód pro vytvoření modelu z kanálu:
 
-    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]  
+    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]
 
     Model ml.NET se vytvoří z řetězce odhady v kanálu voláním `Fit` metody. V takovém případě nebudeme pro vytvoření modelu vytvářet žádná data, protože model TensorFlow již byl dříve vyškolen. Dodáváme prázdný objekt zobrazení dat, který splňuje požadavky `Fit` metody.
 
@@ -200,10 +201,10 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 1. `PredictSentiment` Přidejte metodu`Main` pod metodu:
 
     ```csharp
-        public static void PredictSentiment(MLContext mlContext, ITransformer model)
-        {
+    public static void PredictSentiment(MLContext mlContext, ITransformer model)
+    {
 
-        }
+    }
     ```
 
 1. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek `PredictSentiment()` v metodě:
@@ -222,7 +223,7 @@ Velikost pole s proměnnou délkou se pak změní na pevně stanovenou délku 60
 
 1. Funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) provede předpověď na jeden řádek dat:
 
-    |Vlastnost| Value|type|
+    |Vlastnost| Value|Typ|
     |-------------|-----------------------|------|
     |Předpověď|[0,5459937, 0,454006255]|float []|
 
@@ -241,8 +242,8 @@ Sestavte a spusťte aplikaci.
 Výsledky by měly vypadat podobně jako následující. Během zpracování se zobrazí zprávy. Můžou se zobrazovat upozornění nebo zpracovávat zprávy. Tyto zprávy byly pro přehlednost odebrány z následujících výsledků.
 
 ```console
-   Number of classes: 2
-   Is sentiment/review positive ? Yes
+Number of classes: 2
+Is sentiment/review positive ? Yes
 ```
 
 Blahopřejeme! Nyní jste úspěšně vytvořili model strojového učení pro klasifikaci a předpověď zpráv mínění opětovným použitím předem připraveného `TensorFlow` modelu v ml.NET.
@@ -251,6 +252,7 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
+>
 > * Načtení předem připraveného modelu TensorFlow
 > * Transformovat text komentáře webu k funkcím vhodným pro model
 > * Použití modelu k vytvoření předpovědi

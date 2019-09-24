@@ -4,12 +4,12 @@ description: Naučte se, jak vytvořit aplikaci .NET Core, která podporuje modu
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/28/2019
-ms.openlocfilehash: 54a4459619ee69fc74a14da7ff7fe10a472a4433
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e8b02d9b2175b4663e665db1a5a40a9bf3c44d10
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849443"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216254"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core pomocí modulů plug-in
 
@@ -22,15 +22,29 @@ V tomto kurzu se dozvíte, jak:
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte [sadu SDK .NET Core 3,0 Preview 2](https://dotnet.microsoft.com/download) nebo novější verzi.
+- Nainstalujte [rozhraní .NET Core 3,0](https://dotnet.microsoft.com/download) nebo novější verzi.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
 Prvním krokem je vytvoření aplikace:
 
-1. Vytvořte novou složku a v této složce spusťte `dotnet new console -o AppWithPlugin`. 
-2. Aby bylo možné sestavit projekt snadněji, vytvořte soubor řešení sady Visual Studio. Spusťte `dotnet new sln` ve stejné složce. 
-3. Spusťte `dotnet sln add AppWithPlugin/AppWithPlugin.csproj` aplikaci a přidejte do řešení projekt aplikace.
+1. Vytvořte novou složku a v této složce spusťte následující příkaz:
+
+    ```dotnetcli
+    dotnet new console -o AppWithPlugin
+    ```
+
+2. Aby bylo možné sestavit projekt snadněji, vytvořte soubor řešení sady Visual Studio pomocí. Ve stejné složce spusťte následující příkaz:
+
+    ```dotnetcli
+    dotnet new sln
+    ```
+
+3. Spusťte následující příkaz pro přidání projektu aplikace do řešení:
+
+    ```dotnetcli
+    dotnet sln add AppWithPlugin/AppWithPlugin.csproj
+    ```
 
 Teď můžeme vyplnit kostru naší aplikace. Nahraďte kód v souboru *AppWithPlugin/program. cs* následujícím kódem:
 
@@ -203,8 +217,18 @@ Při použití jiné `PluginLoadContext` instance pro každý modul plug-in mů�
 
 Zpět v kořenové složce proveďte následující kroky:
 
-1. Spusťte `dotnet new classlib -o HelloPlugin` , chcete-li vytvořit nový projekt knihovny `HelloPlugin`tříd s názvem.
-2. Spusťte `dotnet sln add HelloPlugin/HelloPlugin.csproj` , chcete-li přidat projekt `AppWithPlugin` do řešení. 
+1. Spusťte následující příkaz, který vytvoří nový projekt knihovny tříd s názvem `HelloPlugin`:
+    
+    ```dotnetcli
+    dotnet new classlib -o HelloPlugin
+    ```
+
+2. Spusťte následující příkaz pro přidání projektu do `AppWithPlugin` řešení:
+
+    ```dotnetcli
+    dotnet sln add HelloPlugin/HelloPlugin.csproj
+    ```
+
 3. Soubor *HelloPlugin/Class1. cs* nahraďte souborem s názvem *HelloCommand.cs* s následujícím obsahem:
 
 [!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]

@@ -1,30 +1,32 @@
 ---
 title: Předpoklady pro .NET Core ve Windows
 description: Zjistěte, jaké závislosti potřebujete na počítači s Windows pro vývoj a spouštění aplikací .NET Core.
+f1_keywords:
+- NETSDK1045
 ms.custom: updateeachvsrelease
-ms.date: 04/08/2019
-ms.openlocfilehash: 7b2bf2b8353c4f02fa11e9e7531e0d936007be0b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.date: 09/20/2019
+ms.openlocfilehash: c46a1f12ca20c0e21ee205e409a2a5a89e3389b3
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970286"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214547"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
 Tento článek ukazuje podporované verze operačního systému, aby bylo možné spouštět aplikace .NET Core ve Windows. Podporované verze operačního systému a závislosti, které následují, se vztahují na tři způsoby vývoje aplikací .NET Core v systému Windows:
 
-* [Příkazový řádek](tutorials/using-with-xplat-cli.md)
-* [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+* [Příkazový řádek](./tutorials/using-with-xplat-cli.md)
+* [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-Pokud vyvíjíte v systému Windows pomocí sady Visual Studio 2017, v části [požadavky se sadou Visual studio 2017](#prerequisites-with-visual-studio-2017) podrobnější informace o minimálních verzích podporovaných pro vývoj pro .NET Core.
+Pokud vyvíjíte v systému Windows pomocí sady Visual Studio, [požadavky pro vývoj aplikací .NET Core pomocí sady Visual Studio](#prerequisites-to-develop-net-core-apps-with-visual-studio) jsou podrobněji popsány v článku o minimálních verzích podporovaných pro vývoj pro .NET Core.
 
 ## <a name="net-core-supported-operating-systems"></a>Podporované operační systémy .NET Core
 
 Následující články obsahují úplný seznam podporovaných operačních systémů .NET Core na verzi:
 
-* [.NET Core 3,0 (Preview)](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
+* [.NET Core 3.0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
 * [.NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
 * [.NET Core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
 * [.NET Core 1,0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
@@ -51,23 +53,62 @@ Odkazy ke stažení a další informace najdete v tématu stažení z [rozhraní
 >
 > Kromě KB2999226 se ujistěte, že máte nainstalovanou také [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) . Pokud tuto aktualizaci nemáte nainstalovanou, při spuštění aplikace .NET Core se zobrazí chybová zpráva podobná následující: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
-## <a name="prerequisites-for-net-core-30-preview-3"></a>Předpoklady pro .NET Core 3,0 Preview 3
-
-.NET Core 3,0 Preview 3 má stejné požadavky jako jiné verze .NET Core. Pokud však chcete použít aplikaci Visual Studio k vytvoření projektu .NET Core 3,0, je nutné použít [Visual studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Sadu Visual Studio 2019 lze nainstalovat souběžně s jinými verzemi sady Visual Studio bez konfliktu.
-
-## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky v rámci sady Visual Studio 2017
+## <a name="prerequisites-to-develop-net-core-apps-with-visual-studio"></a>Předpoklady pro vývoj aplikací .NET Core pomocí sady Visual Studio
     
-K vývoji aplikací .NET Core pomocí .NET Core SDK můžete použít libovolný editor. Visual Studio 2017 poskytuje integrované vývojové prostředí pro aplikace .NET Core ve Windows.
+I když můžete použít libovolný editor pro vývoj aplikací .NET Core pomocí .NET Core SDK, Visual Studio 2017 a novější verze poskytují integrované vývojové prostředí pro aplikace .NET Core ve Windows.
 
-V poznámkách k [verzi](/visualstudio/releasenotes/vs2017-relnotes)si můžete přečíst další informace o změnách v aplikaci Visual Studio 2017.
+<a name="vs-mapping"></a>
+
+Pro každou verzi .NET Core je vyžadována minimální verze sady Visual Studio. Ověření verze sady Visual Studio:
+
+* V nabídce **help (nápovědu** ) vyberte **informace o Microsoft Visual Studio**.
+* V dialogovém okně **o Microsoft Visual Studio** ověřte číslo verze.
+
+Následující tabulka uvádí minimální verzi pro jednotlivé sady SDK:
+
+| Verze .NET Core SDK | Verze sady Visual Studio                      |
+| --------------------- | ------------------------------------------ |
+| 3.0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
+| 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
+| 2.1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
+| verze                   | Visual Studio 2017 verze 15,0 nebo vyšší. |
 
 <!-- markdownlint-disable MD025 -->
+
+# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
+
+Vývoj aplikací .NET Core v sadě Visual Studio 2019 pomocí sady .NET Core 3,0 SDK:
+
+* [Stáhněte a nainstalujte sadu Visual Studio 2019 verze 16,3 nebo vyšší](/visualstudio/install/install-visual-studio) a vyberte jednu z následujících úloh, které zahrnují .NET Core SDK v závislosti na druhu aplikace, kterou sestavujete:
+
+  * Úloha **vývoje .NET Core pro více platforem** v části **Další sady nástrojů** .
+  * Úlohy **vývoje ASP.NET a webu** v části **web & Cloud** .
+  * Pracovní proces **vývoje pro NET Desktop** v části **Windows** .
+
+Na následujícím obrázku vidíte úlohy **vývoje .NET Core pro různé platformy** vybrané v uživatelském rozhraní sady Visual Studio:
+
+![Snímek obrazovky s instalací sady Visual Studio 2019 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2019-workloads.jpg)
+
+Sada Visual Studio 2019 16,3 po instalaci kterékoli z těchto úloh používá standardně sadu .NET Core 3,0 SDK.
+
+Pokud chcete, aby existující projekty používaly nejnovější modul runtime .NET Core, proveďte cílení každého existujícího projektu .NET Core na .NET Core 3,0 pomocí následujících pokynů:
+
+* V nabídce **projekt** klikněte na příkaz **vlastnosti**.
+* V nabídce Výběr **cílového rozhraní** nastavte hodnotu na **.NET Core 3,0**.
+
+![Snímek vlastnosti projektu aplikace sady Visual Studio 2019 s vybranou položkou nabídky cílové rozhraní .NET Core 3,0](./media/windows-prerequisites/target-dotnet-core-3-0.jpg)
+
+Jakmile máte sadu Visual Studio nakonfigurovanou pomocí sady .NET Core 3,0 SDK, můžete provést následující akce:
+
+* Otevřete, sestavte a spusťte existující projekty .NET Core 1. x a 2. x.
+* Proveďte změny cílení na projekty .NET Core 1. x a 2. x na .NET Core 3,0, sestavte a spusťte.
+* Vytvořte nové projekty .NET Core 3,0.
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Vývoj aplikací .NET Core v sadě Visual Studio 2017 pomocí sady .NET Core 2,2 SDK:
 
- 1. [Stáhněte a nainstalujte si sadu Visual Studio 2017 verze 15.9.0 nebo novější](/visualstudio/install/install-visual-studio) pomocí úlohy **vývoje .NET Core pro různé platformy** (v části **jiné sady nástrojů** ).
+* [Stáhněte a nainstalujte si sadu Visual Studio 2017 verze 15.9.0 nebo novější](/visualstudio/install/install-visual-studio) pomocí úlohy **vývoje .NET Core pro různé platformy** (v části **jiné sady nástrojů** ).
 
 ![Snímek obrazovky s instalací sady Visual Studio 2017 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2017-workloads.jpg)
 
@@ -78,7 +119,7 @@ Aktualizace sady Visual Studio tak, aby používala sadu .NET Core 2,2 SDK:
 
  1. Nainstalujte [sadu .NET Core 2,2 SDK](https://dotnet.microsoft.com/download).
 
- 1. Pokud chcete, aby váš projekt používal nejnovější modul runtime .NET Core, přecílíte stávající nebo nové projekty .NET Core na .NET Core 2,2 pomocí následujících pokynů:
+ 1. Pokud chcete, aby váš projekt používal nejnovější modul runtime .NET Core, přecílíte všechny existující nebo nové projekty .NET Core na .NET Core 2,2 pomocí následujících pokynů:
 
     * V nabídce **projekt** klikněte na příkaz **vlastnosti**.
     * V nabídce Výběr **cílového rozhraní** nastavte hodnotu na **.NET Core 2,2**.
@@ -106,15 +147,3 @@ Pro vývoj aplikací .NET Core 1. x v sadě Visual Studio [Stáhněte a nainstal
 > Další informace o změnách formátu projektu naleznete v části [Přehled změn na nejvyšší úrovni](./tools/cli-msbuild-architecture.md).
 
 ---
-
-<a name="vs-mapping"></a>
-
-> [!TIP]
-> Ověření verze sady Visual Studio:
->
-> * V nabídce **help (nápovědu** ) vyberte **informace o Microsoft Visual Studio**.
-> * V dialogovém okně **o Microsoft Visual Studio** ověřte číslo verze.
->   * Pro aplikace .NET Core 3,0 Preview 3, Visual Studio 2019 verze 16,0 nebo vyšší.
->   * Pro aplikace .NET Core 2,2, Visual Studio 2017 verze 15,9 nebo vyšší.
->   * Pro aplikace .NET Core 2,1, Visual Studio 2017 verze 15,7 nebo vyšší.
->   * Pro aplikace .NET Core 1. x, Visual Studio 2017 verze 15,0 nebo vyšší.

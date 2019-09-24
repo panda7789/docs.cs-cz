@@ -2,12 +2,12 @@
 title: Události
 description: Zjistěte, F# jak události umožňují přidružit volání funkcí k akcím uživatele, které jsou důležité při programování v grafickém uživatelském rozhraní.
 ms.date: 05/16/2016
-ms.openlocfilehash: 7c3f16204b762609323fc2bcdc05f80e85a298e8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e581d9c31c1b8f3c114b86c898011dec3bd52535
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917279"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216457"
 ---
 # <a name="events"></a>Události
 
@@ -36,7 +36,7 @@ Chcete-li vytvořit událost pro třídu, která funguje stejně jako jakákoli 
 
 Výstup je následující.
 
-```
+```console
 Event1 occurred! Object data: Hello World!
 ```
 
@@ -46,7 +46,7 @@ Další funkce poskytované `Event` modulem jsou znázorněny zde. Následujíc�
 
 Výstup předchozího kódu vypadá takto.
 
-```
+```console
 Event occurred.
 Given a value: Event occurred.
 ```

@@ -2,12 +2,12 @@
 title: Přetížení operátoru
 description: Naučte se přetížit aritmetické operátory v typu třídy nebo záznamu a na globální úrovni v F#.
 ms.date: 05/16/2016
-ms.openlocfilehash: c656c1c47938e62386c8f063cf9a6caaaf69d0fe
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d902a06193481ed87131b3336cd8a2ff54b811b4
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627386"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216844"
 ---
 # <a name="operator-overloading"></a>Přetížení operátoru
 
@@ -25,7 +25,7 @@ let [inline] (operator-symbols) parameter-list = function-body
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi je *symbol operátoru* jedna z `+` `/` `-` `*`,,,, a tak dále. `=` *Seznam parametrů* určuje operandy v pořadí, v jakém jsou uvedeny v obvyklé syntaxi daného operátoru. *Tělo metody* vytvoří výslednou hodnotu.
+V předchozí syntaxi je *symbol operátoru* `+`jedna z `-` `*` `/`,,,, a tak dále. `=` *Seznam parametrů* určuje operandy v pořadí, v jakém jsou uvedeny v obvyklé syntaxi daného operátoru. *Tělo metody* vytvoří výslednou hodnotu.
 
 Přetížení operátoru musí být statické. Přetížení operátoru pro unární operátory `+` , jako například a `-`, musí používat vlnovku (`~`) v *symbol operátoru* k označení, že operátor je unární operátor a nikoli binární operátor, jak je znázorněno v následujícím příkladu. změny.
 
@@ -123,7 +123,7 @@ Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jak
 
 ## <a name="prefix-and-infix-operators"></a>Operátory Prefix a Infix
 
-Očekává se, že operátory prefixu budou umístěny před operand nebo operandy, podobně jako funkce. Očekává se, že operátory *vpony* umístit mezi dva operandy.
+Očekává se, že operátory *prefixu* budou umístěny před operand nebo operandy, podobně jako funkce. Očekává se, že operátory *vpony* umístit mezi dva operandy.
 
 Pouze některé operátory lze používat jako operátory Prefix. Některé operátory jsou vždy operátory Prefix, ostatní mohou být Prefix nebo Infix a zbývající jsou vždy operátory Infix. Operátory, které začínají znakem `!`, s výjimkou `!=` a operátoru `~` nebo opakované sekvence`~`, jsou vždy operátory Prefix. Operátory `+`, `-`, `+.`, `-.`, `&`, `&&`, `%` a `%%` mohou být operátory Prefix nebo Infix. Rozlišovat mezi Prefix a Infix verzí operátoru lze přidáním znaku `~` na začátek operátoru Prefix, a to při jeho definici. Znak `~` se nebude používat při použití operátoru, ale pouze při jeho definici.
 
@@ -135,7 +135,7 @@ Následující kód ukazuje použití přetěžování pro implementaci typu zlo
 
 **Výstup:**
 
-```
+```console
 3/4 + 1/2 = 5/4
 3/4 - 1/2 = 1/4
 3/4 * 1/2 = 3/8

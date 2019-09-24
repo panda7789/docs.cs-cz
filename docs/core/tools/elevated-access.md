@@ -3,12 +3,12 @@ title: Zvýšený přístup pro příkazy dotnet
 description: Seznamte se s osvědčenými postupy pro příkazy dotnet, které vyžadují vyšší přístup.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: b6de87f375a584da25e160d79f51f1bc48f3c302
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: cf7c93a0adcae7092a61a6fc6046cd45cf00bf58
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969852"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216305"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Zvýšený přístup pro příkazy dotnet
 
@@ -41,7 +41,7 @@ Pokud složka `%ProgramFiles%\dotnet-tools` již existuje, proveďte následují
 
 Nástroje nainstalujete spuštěním následujícího příkazu v příkazovém řádku se zvýšenými oprávněními. Během instalace vytvoří složku *dotnet-Tools* .
 
-```cmd
+```dotnetcli
 dotnet tool install PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools".
 ```
 
@@ -69,7 +69,7 @@ TOOLCOMMAND
 
 Do příkazového řádku se zvýšenými oprávněními zadejte následující příkaz:
 
-```cmd
+```dotnetcli
 dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 ```
 

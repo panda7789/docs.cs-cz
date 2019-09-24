@@ -2,12 +2,12 @@
 title: 'Smyčky: Výraz for...in'
 description: Podívejte se, F# jak pro... v konstruktoru smyčky výrazů se používá k iteraci přes shody vzoru ve vyčíslitelné kolekci.
 ms.date: 05/16/2016
-ms.openlocfilehash: 640b0f91f6c641f3b49a99dc67abe7e4c31911ea
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5a2ca59ca4199ece5d78010ff780e86ae2b25181
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630724"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216456"
 ---
 # <a name="loops-forin-expression"></a>Smyčky: Výraz for...in
 
@@ -44,7 +44,7 @@ Následující příklady kódu ilustrují použití `for...in` výrazu.
 
 Výstup je následující.
 
-```
+```console
 1
 5
 100
@@ -58,7 +58,7 @@ Následující příklad ukazuje, jak vytvořit smyčku přes sekvenci a jak pou
 
 Výstup je následující.
 
-```
+```console
 1 squared is 1
 2 squared is 4
 3 squared is 9
@@ -77,7 +77,7 @@ Následující příklad ukazuje, jak vytvořit smyčku přes jednoduchý celoč
 
 Výstup Function1 je následující.
 
-```
+```console
 1 2 3 4 5 6 7 8 9 10
 ```
 
@@ -87,7 +87,7 @@ Následující příklad ukazuje, jak vytvořit smyčku v rámci rozsahu s vynec
 
 Výstup `function2` je následující:
 
-```
+```console
 1 3 5 7 9
 ```
 
@@ -97,7 +97,7 @@ Následující příklad ukazuje, jak použít rozsah znaků.
 
 Výstup `function3` je následující:
 
-```
+```console
 a b c d e f g h i j k l m n o p q r s t u v w x y z
 ```
 
@@ -107,7 +107,7 @@ Následující příklad ukazuje, jak použít pro reverzní iteraci zápornou h
 
 Výstup `function4` je následující:
 
-```
+```console
 10 9 8 7 6 5 4 3 2 1 ... Lift off!
 ```
 
@@ -117,7 +117,7 @@ Začátek a konec rozsahu může být také výrazy, například funkce, jako v 
 
 Výstup `function5` tohoto vstupu je následující.
 
-```
+```console
 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 ```
 
@@ -127,7 +127,7 @@ Následující příklad ukazuje použití zástupného znaku (\_), pokud elemen
 
 Výstup je následující.
 
-```
+```console
 Number of elements in list1: 5
 ```
 

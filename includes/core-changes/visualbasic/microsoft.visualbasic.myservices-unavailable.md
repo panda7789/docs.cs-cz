@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ba543414d4f84362c9b9b876395815e837efbd3f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d61e4da187b3ede5e49fa80903d6e4c3b40578b9
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71181791"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216277"
 ---
 ### <a name="types-in-microsoftvisualbasicmyservices-namespace-not-available"></a>Typy v oboru názvů Microsoft. VisualBasic. MyServices nejsou k dispozici.
 
@@ -16,7 +16,7 @@ Typy v <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> oboru n�
 
 #### <a name="details"></a>Podrobnosti
 
-Typy v <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> oboru názvů byly k dispozici v některých verzích .NET Core 3,0 Preview,. Již nejsou od verze .NET Core 3,0 Preview 9 k dispozici.
+Typy v <xref:Microsoft.VisualBasic.MyServices?displayProperty=fullName> oboru názvů byly k dispozici v některých verzích .NET Core 3,0 Preview. Již nejsou od verze .NET Core 3,0 Preview 9 k dispozici.
 
 Typy byly odebrány, aby nedocházelo k zbytečným závislostem sestavení nebo k zásadním změnám v následujících verzích.
  

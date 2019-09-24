@@ -3,12 +3,12 @@ title: Použití funkcí pro porovnávání vzorů k rozšiřování datových t
 description: Tento rozšířený kurz ukazuje, jak používat techniky porovnávání vzorů k vytváření funkcionality pomocí dat a algoritmů, které se vytvářejí samostatně.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 366791b113d3b1f9ccef303553a3656f7e803a32
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 9266bb1e998fba77c27e17e498b72f4a5925dd7a
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926658"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216547"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Kurz: Použití funkcí pro porovnávání vzorů k rozšiřování datových typů
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru verze C# 8,0 Preview. Kompilátor C# 8 Preview je k dispozici v nejnovější verzi sady [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo nejnovější verzi [.NET Core 3,0 Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
 V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
 
@@ -382,6 +382,6 @@ Tento příklad zvýrazňuje jednu z výhod porovnávání vzorů: větve vzorů
 
 Porovnávání vzorů usnadňuje čtení některých typů kódu a nabízí alternativu k objektově orientovaným technikám, když nemůžete přidat kód do tříd. Cloud způsobuje živá data a funkce. *Tvar* dat a jeho *operace* nejsou nutně popsány společně. V tomto kurzu jste ze své původní funkce využili stávající data zcela různými způsoby. Porovnávání vzorů vám dává možnost psát funkce, které tyto typy overrode, i když je nemůžete roztáhnout.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Hotový kód si můžete stáhnout z úložiště GitHub [/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/finished) GitHub. Prozkoumejte vlastní modely a přidejte tuto techniku do vašich běžných kódovacích aktivit. Výukové postupy poskytují další způsob přístupu k problémům a vytváření nových funkcí.

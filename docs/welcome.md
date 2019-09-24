@@ -3,14 +3,14 @@ title: Vítá vás .NET
 description: Začínáme s řadou technologií .NET.
 author: mairaw
 ms.author: mairaw
-ms.date: 05/06/2019
+ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 2927b892f8f83366a46cb113b3f0233bbd168974
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0b4a2380bf2ddb59c181a07d7f8a006d6252d11f
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855477"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216850"
 ---
 # <a name="welcome-to-net"></a>Vítá vás .NET
 
@@ -29,10 +29,10 @@ Informace o rozhraní .NET najdete v následujících blogových příspěvcích
 
 Řiďte se také nejnovějšími událostmi .NET:
 
-- [Microsoft Connect()](https://www.microsoft.com/connectevent)
-- [Microsoft Build 2018](https://channel9.msdn.com/Events/Build/2018)
+- [Microsoft Build](https://www.microsoft.com/build)
 - [.NET conf](https://www.dotnetconf.net/)
-
+- [Microsoft Connect()](https://www.microsoft.com/connectevent)
+- 
 Informace o nejnovějších funkcích přidaných do implementací rozhraní .NET a podporovaných jazyků naleznete v následujících článcích:
 
 - [Co je nového v .NET Core](core/whats-new/index.md)
@@ -52,8 +52,15 @@ Tato dokumentace se věnuje šířce .NET napříč platformami a jazyky. Může
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
 - [Průvodce ML.NET](machine-learning/index.yml)
 - [.NET pro Apache Spark](spark/index.yml)
+- [Architektura aplikace .NET](architecture/index.yml)
 
 Navíc můžete procházet Reference k rozhraní [.NET API](/dotnet/api).
+
+## <a name="videos"></a>Videa
+
+Prozkoumejte videa na webech, mobilních zařízeních, C#počítačích, strojovém učení, kontejnerech/Docker, přístupu k datům a dalších:
+
+[Série videí .NET 101](https://dotnet.microsoft.com/learn/videos)
 
 ## <a name="open-source"></a>Open source
 
