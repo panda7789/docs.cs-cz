@@ -2,12 +2,12 @@
 title: Sekvence
 description: Naučte se používat F# sekvence, když máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků.
 ms.date: 02/19/2019
-ms.openlocfilehash: a57142c5d07455cff02b0b691ebccb9cb9f347fd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 63e878c2c11db25a08d449070ab779a6e6a2c2eb
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627168"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216768"
 ---
 # <a name="sequences"></a>Sekvence
 
@@ -82,7 +82,7 @@ Můžete použít [Seq. init](https://msdn.microsoft.com/library/059de69d-812c-4
 
 Výstup je
 
-```
+```console
 0 10 20 30 40
 ```
 
@@ -104,7 +104,7 @@ Můžete definovat nekonečné sekvence pomocí funkce [Seq. initInfinite –](h
 
 Výstup je následující:
 
-```
+```console
 The sequence seq1 contains numbers from 0 to 20.
 
 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
@@ -134,7 +134,7 @@ Následující kód ukazuje chování a rozdíly mezi `Seq.truncate` a. `Seq.tak
 
 Výstup, před výskytem chyby, je následující.
 
-```
+```console
 1 4 9 16 25 
 1 4 9 16 25 36 49 64 81 100 
 1 4 9 16 25 
@@ -149,7 +149,7 @@ Následující příklad kódu ilustruje chování a rozdíly mezi `Seq.takeWhil
 
 Výstup je následující.
 
-```
+```console
 1 4 9 
 36 49 64 81 100 
 16 25 36 49 64 81 100
@@ -171,7 +171,7 @@ Výstup je následující.
 
 Počáteční sekvence:
 
-```
+```console
 1.0 1.5 2.0 1.5 1.0 1.5 
 
 Windows of length 3: 
@@ -203,7 +203,7 @@ V předchozím kódu je vypočítán a zkontrolován pouze první prvek a výsle
 
 Výstup je následující.
 
-```
+```console
 (1, 34) (2, 33) (0, 33)
 ```
 
@@ -217,7 +217,7 @@ Následující příklad kódu ukazuje použití `Seq.groupBy` pro rozdělení p
 
 Výstup je následující.
 
-```
+```console
 (1, seq [1; 4; 7; 10; ...]) (2, seq [2; 5; 8; 11; ...]) (0, seq [3; 6; 9; 12; ...])
 ```
 

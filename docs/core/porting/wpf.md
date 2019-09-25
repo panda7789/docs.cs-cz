@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 1528e578a978de38998b3f3f4b7beb72ff7422d4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 4ff3ca9610e7fa9355931ca2013def1157fab8b2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117069"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216194"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopové aplikace WPF na .NET Core
 
@@ -52,7 +52,7 @@ Při přenosu .NET Framework aplikace WPF existuje několik věcí, které je t�
 
 01. Používáte jinou verzi WPF.
 
-    Po vydání .NET Core 3,0 Preview 1 se WPF na GitHubu otevře jako zdroj. Kód pro .NET Core WPF je rozvětvení .NET Framework základu kódu WPF. Je možné, že existují nějaké rozdíly a vaše aplikace nebude portem.
+    Po vydání .NET Core 3,0 Preview 1 se WPF na GitHubu otevře zdroj. Kód pro .NET Core WPF je rozvětvení .NET Frameworkho základu pro WPF. Je možné, že existují nějaké rozdíly a vaše aplikace nebude portem.
 
 01. [Sada Windows Compatibility Pack][compat-pack] vám může při migraci trvat.
 
