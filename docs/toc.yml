@@ -485,7 +485,7 @@
           href: framework/resources/
         - name: Usnadnění
           href: framework/ui-automation/
-        - name: Data a modelování
+        - name: "Data a\_modelování"
           href: framework/data/
         - name: Klientské aplikace
           href: framework/develop-client-apps.md
@@ -498,7 +498,7 @@
           href: framework/wcf/
         - name: Windows Workflow Foundation
           href: framework/windows-workflow-foundation/
-        - name: Aplikace služby systému Windows
+        - name: Aplikace spouštěné jako služby systému Windows
           href: framework/windows-services/
         - name: 64bitové aplikace
           href: framework/64-bit-apps.md
@@ -599,7 +599,7 @@
       href: csharp/tour-of-csharp/
     - name: 'Co je nového v jazyce C#'
       items:
-        - name: 'C# 8.0 – Preview 5'
+        - name: 'C# 8.0'
           href: csharp/whats-new/csharp-8.md
         - name: 'C# 7.3'
           href: csharp/whats-new/csharp-7-3.md
@@ -1022,7 +1022,7 @@
           items:
             - name: "Přístup k\_prostředkům počítače"
               href: visual-basic/developing-apps/programming/computer-resources/index.md
-            - name: Protokolování informací z aplikace
+            - name: "Protokolování informací z\_aplikace"
               href: visual-basic/developing-apps/programming/log-info/index.md
             - name: Přístup k uživatelským datům
               href: visual-basic/developing-apps/programming/accessing-user-data.md
@@ -1033,7 +1033,7 @@
               items:
                 - name: 'Postupy: Asynchronní volání webové služby'
                   href: visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md
-            - name: Přístup k nastavení aplikace
+            - name: "Přístup k\_nastavení aplikace"
               href: visual-basic/developing-apps/programming/app-settings/index.md
             - name: 'Zpracování jednotek, adresářů a souborů'
               href: visual-basic/developing-apps/programming/drives-directories-files/processing.md
@@ -1130,7 +1130,7 @@
       items:
         - name: Pole
           href: visual-basic/programming-guide/language-features/arrays/index.md
-        - name: Inicializátory kolekce
+        - name: Inicializátory kolekcí
           href: visual-basic/programming-guide/language-features/collection-initializers/index.md
         - name: Konstanty a výčty
           href: visual-basic/programming-guide/language-features/constants-enums/index.md
@@ -1202,7 +1202,7 @@
           href: visual-basic/programming-guide/language-features/declared-elements/index.md
         - name: Delegáty
           href: visual-basic/programming-guide/language-features/delegates/index.md
-        - name: Statické a dynamické vazby
+        - name: Statické a pozdní vazby
           href: visual-basic/programming-guide/language-features/early-late-binding/index.md
         - name: Typy chyb
           href: visual-basic/programming-guide/language-features/error-types.md
@@ -1522,7 +1522,7 @@
                   href: visual-basic/language-reference/operators/bit-shift-operators.md
                 - name: Operátory porovnání
                   href: visual-basic/language-reference/operators/comparison-operators.md
-                - name: Operátory zřetězení
+                - name: Operátory řetězení
                   href: visual-basic/language-reference/operators/concatenation-operators.md
                 - name: Logické bitové operátory
                   href: visual-basic/language-reference/operators/logical-bitwise-operators.md
@@ -2428,5 +2428,5 @@
   href: spark/index.yml
 - name: Průvodce architekturou aplikací .NET
   href: architecture/index.yml
-- name: Ukázky a kurzy
+- name: Ukázky a výukové programy
   href: samples-and-tutorials/index.md
