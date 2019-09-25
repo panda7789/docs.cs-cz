@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 0c95065e6c380fab6ba33432a32b3297e78027a3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 616c9fdbe62d8147fb74fefc878f9277c2a1156b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926632"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214280"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrovat existující kód s odkazy s možnou hodnotou null
 
@@ -25,7 +25,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0 beta. Kompilátor C# 8 beta je k dispozici v [aplikaci Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo nejnovější verzi [.NET Core 3,0 Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 je k dispozici počínaje [verzí Visual Studio 2019 verze 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) nebo [.NET Core 3,0 SDK](https://dotnet.microsoft.com/download).
 
 V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, včetně sady Visual Studio nebo .NET Core CLI.
 
