@@ -1,5 +1,5 @@
 ---
-title: CLRDataSourceType Enumeration
+title: Výčet CLRDataSourceType
 ms.date: 01/16/2019
 api.name:
 - CLRDataSourceType Enumeration
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: d26cf45a0243d61757af5d9d0c00cf135ae15bdf
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7ace405e2624f15b1cdb6d383222ae87c93289bb
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740867"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274098"
 ---
-# <a name="clrdatasourcetype-enumeration"></a>CLRDataSourceType Enumeration
+# <a name="clrdatasourcetype-enumeration"></a>Výčet CLRDataSourceType
 
-Obsahuje hodnoty, které jsou používány CLRDATA_IL_ADDRESS_MAP struktury.
+Poskytuje hodnoty, které jsou používány strukturou CLRDATA_IL_ADDRESS_MAP.
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,20 +41,20 @@ typedef enum
 
 | Člen                        | Popis                           |
 | ----------------------------- | ------------------------------------- |
-| `CLRDATA_SOURCE_TYPE_INVALID` | K označení, že se nic jiného vztahuje |
+| `CLRDATA_SOURCE_TYPE_INVALID` | Označení, že neplatí nic jiného |
 
 ## <a name="remarks"></a>Poznámky
 
-Tento výčet se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Pro použití je třeba definujte výčet definované výše ve vašem kódu. Toto je také s aliasem se přiřadila `CLRDATA_ENUM` jak je uvedeno v [běžné typy dat](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md).
+Tento výčet je v modulu runtime a není vystavený prostřednictvím žádné hlavičky nebo souborů knihoven. Chcete-li jej použít, definujte výčet definovaný výše v kódu. To je také alias na `CLRDATA_ENUM` to, jak je uvedeno v [Common data types](../common-data-types-unmanaged-api-reference.md).
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádný  
-**Knihovna:** Žádné  
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
+**Hlaviček** Žádné  
+**Knihovna** Žádné  
+**Verze .NET Framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Ladění](index.md)
+- [Výčty pro ladění](debugging-enumerations.md)

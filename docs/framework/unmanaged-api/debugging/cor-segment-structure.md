@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eef2d75a2c8a3445c7f8666fec5be9e4d089e3cb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aabf3ac4e51280bd847d145e15ad804d514ede2c
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740529"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274007"
 ---
-# <a name="corsegment-structure"></a>COR_SEGMENT – struktura
-Obsahuje informace o oblasti paměti spravované haldy.  
+# <a name="cor_segment-structure"></a>COR_SEGMENT – struktura
+Obsahuje informace o oblasti paměti ve spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,24 +43,24 @@ typedef struct _COR_SEGMENT {
 |------------|-----------------|  
 |`start`|Počáteční adresa oblasti paměti.|  
 |`end`|Koncová adresa oblasti paměti.|  
-|`gen`|A [cordebuggenerationtypes –](../../../../docs/framework/unmanaged-api/debugging/cordebuggenerationtypes-enumeration.md) člen výčtu, která určuje generování oblasti paměti.|  
-|`heap`|Číslo haldy, ve kterém se nachází oblasti paměti. Další informace naleznete v části Poznámky.|  
+|`gen`|Člen výčtu [CorDebugGenerationTypes –](cordebuggenerationtypes-enumeration.md) , který označuje generování oblasti paměti.|  
+|`heap`|Číslo haldy, ve které se nachází oblast paměti. Další informace naleznete v části Poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_SEGMENTS` Struktura představuje oblast paměti ve spravované haldě.  `COR_SEGMENTS` objekty jsou členy [ICorDebugHeapRegionEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) kolekci objektu, který je vyplněn volání [icordebugprocess5::enumerateheapregions –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheapregions-method.md) metody.  
+ `COR_SEGMENTS` Struktura představuje oblast paměti ve spravované haldě.  `COR_SEGMENTS`objekty jsou členy objektu kolekce [ICorDebugHeapRegionEnum](icordebugheapsegmentenum-interface.md) , který je vyplněn voláním metody [ICorDebugProcess5:: EnumerateHeapRegions –](icordebugprocess5-enumerateheapregions-method.md) .  
   
- `heap` Pole je číslo procesoru, které odpovídá haldy hlásí. Pro kolekce uvolnění paměti pracovní stanice, jeho hodnota je vždy nula, protože mají pouze jednu haldě uvolňování paměti pracovní stanice. Pro kolekce uvolnění paměti serveru jeho hodnota odpovídá procesor, haldy je připojeno k. Všimněte si, že může existovat více nebo méně kolekce paměti haldy, než je skutečný procesory z důvodu podrobnosti implementace systému uvolňování paměti.  
+ `heap` Pole je číslo procesoru, které odpovídá vyhlášené haldě. Pro kolekce uvolnění paměti pracovní stanice je jeho hodnota vždycky nula, protože pracovní stanice mají jenom jednu haldu uvolňování paměti. Pro sběrače paměti serveru odpovídá jeho hodnota procesoru, ke kterému je halda připojena. Všimněte si, že může existovat více nebo méně hald uvolňování paměti, než kolik existuje skutečným procesorům z důvodu podrobností implementace uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

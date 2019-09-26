@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a839eb2edd36dc726c819a819fd4d427fbaea40
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a5d44f9b5dc42147959d3f1d127a64d39258f515
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740991"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274266"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance – funkce
 Vytvoří objekt rozhraní pro zadanou cílovou položku.  
@@ -39,26 +39,26 @@ HRESULT CLRDataCreateInstance (
   
 ## <a name="parameters"></a>Parametry  
  `iid`  
- [in] Identifikátor rozhraní má být vytvořena.  
+ pro Identifikátor rozhraní, které má být vytvořena instance.  
   
  `target`  
- [in] Ukazatel na uživatelské implementované [iclrdatatarget –](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objekt, který představuje cílovou položku, pro který chcete vytvořit objekt rozhraní.  
+ pro Ukazatel na uživatelem implementovaný objekt [ICLRDataTarget](iclrdatatarget-interface.md) , který představuje cílovou položku, pro kterou chcete vytvořit objekt rozhraní.  
   
  `iface`  
- [out] Ukazatel na adresu objektu vrácené rozhraní.  
+ mimo Ukazatel na adresu vráceného objektu rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRDataTarget` Objektu je implementováno tvůrci ladění aplikace. Implementace závisí na typu představované cílovou položku. Cílová položka může být proces, výpis paměti, vzdálený počítač a tak dále.  
+ `ICLRDataTarget` Objekt je implementován modulem pro ladění aplikace. Implementace závisí na typu reprezentované cílové položky. Cílová položka může být proces, výpis paměti, vzdálený počítač atd.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** ClrData.idl  
+ **Hlaviček** ClrData. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [Globální statické funkce pro ladění](debugging-global-static-functions.md)

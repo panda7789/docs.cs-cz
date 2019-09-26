@@ -8,10 +8,10 @@ helpviewer_keywords:
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
 ms.openlocfilehash: ca984aa724cf3f076d6073aa8b8179abfb91d26c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69951737"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
@@ -115,7 +115,7 @@ ms.locfileid: "69951737"
   
  ![Automaticky otevírané okno s absolutním nebo AbsolutePointm umístěním](./media/popup-placement-behavior/popup-placement-absolute.png "Umístění je absolutní nebo AbsolutePoint.")    
   
- ![Automaticky otevírané okno s] nejnižším umístěním (./media/popup-placement-behavior/popup-placement-bottom.png "Umístění je dole.")   
+ ![Automaticky otevírané okno s nejnižším umístěním](./media/popup-placement-behavior/popup-placement-bottom.png "Umístění je dole.")   
   
  ![Automaticky otevírané okno s centrovým umístěním](./media/popup-placement-behavior/popup-placement-center.png "Umístění je na střed.")    
   
@@ -173,7 +173,7 @@ ms.locfileid: "69951737"
 
  Následující obrázek ukazuje, že <xref:System.Windows.Controls.Primitives.Popup> je-li obrázek skrytý na pravé straně obrazovky, je bod zarovnání automaticky zobrazen v pravém horním rohu. <xref:System.Windows.Controls.Primitives.Popup>  
   
- ![Nový bod zarovnání pro místní okno z důvodu okraje obrazovky] V překryvném okně (./media/popup-placement-behavior/popup-placement-relative-point-right-screen-edge.png "dojde k pravému okraji obrazovky a změna bodu zarovnání automaticky otevíraného okna.")    
+ ![Nový bod zarovnání pro místní okno z důvodu okraje obrazovky] V (./media/popup-placement-behavior/popup-placement-relative-point-right-screen-edge.png "překryvném okně dojde k pravému okraji obrazovky a změna bodu zarovnání automaticky otevíraného okna.")    
   
  Pokud dojde <xref:System.Windows.Controls.Primitives.Popup> k dolnímu a pravému okraji obrazovky, automaticky otevírané okno je bod zarovnání v pravém dolním rohu <xref:System.Windows.Controls.Primitives.Popup>.  
   

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83dac3b9b2ac396cdef19695fcce0f7e20485a50
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 57de11c1c40c05befcf3c99c31c2e07e1ecaec5a
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740390"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273969"
 ---
 # <a name="cordebugblockingobject-structure"></a>CorDebugBlockingObject – struktura
-Definuje objekt, který blokuje vlákno a z určitého důvodu, že je vlákno blokované.  
+Definuje objekt, který blokuje vlákno, a konkrétní důvod, proč je vlákno blokované.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +41,22 @@ CorDebugBlockingReason blockingReason;
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pBlockingObject`|Objekt, na kterém je blokování vlákna. Tento objekt je platný pouze po dobu trvání aktuálního stavu synchronizovaná. Pokud se dvěma vlákny blokují na stejný objekt v rámci stejného synchronizovaného stavu, můžete očekávat [icordebugvalue::getaddress –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getaddress-method.md) metody vrátí stejnou hodnotu. Rozhraní však může nebo nemusí být ukazatel ekvivalentní.|  
-|`dwTimeout`|Počet milisekund před blokující operace způsobí vypršení časového limitu, nebo hodnota NEKONEČNO, což znamená, že bude omezen časovým limitem. Hodnota časového limitu určuje celkový čas blokující operace, bez času, který je stále zbývající.|  
-|`blockingReason`|Důvodu, že je vlákno blokované, u tohoto objektu.|  
+|`pBlockingObject`|Objekt, na kterém vlákno blokuje. Tento objekt je platný pouze po dobu trvání aktuálního synchronizovaného stavu. Pokud jsou dvě vlákna blokována u stejného objektu ve stejném synchronizovaném stavu, může být očekávána metoda [ICorDebugValue:: GetAddress](icordebugvalue-getaddress-method.md) , která vrací stejnou hodnotu. Rozhraní však mohou nebo nemusí být ekvivalentem ukazatele.|  
+|`dwTimeout`|Počet milisekund, po jejichž uplynutí vyprší časový limit operace blokování, nebo hodnota nekonečno, což znamená, že nedojde k vypršení časového limitu. Hodnota časového limitu určuje celkovou dobu blokující operace, nikoli čas, který je stále zbývající.|  
+|`blockingReason`|Důvod, proč je vlákno na tomto objektu blokováno.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlaviček** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

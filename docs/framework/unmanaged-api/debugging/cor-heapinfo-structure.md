@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3dd233643bd18b60b7d6176c34ee57e4061daf7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f7b340a73aa9eaebca9c0d78563ae298557039b8
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740651"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274195"
 ---
-# <a name="corheapinfo-structure"></a>COR_HEAPINFO – struktura
-Obsahuje obecné informace o haldě uvolňování paměti kolekce, včetně toho, zda je vyčíslitelná.  
+# <a name="cor_heapinfo-structure"></a>COR_HEAPINFO – struktura
+Poskytuje obecné informace o haldě uvolňování paměti, včetně toho, zda je vyčíslitelné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,27 +42,27 @@ typedef struct _COR_HEAPINFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true` Pokud se uvolňování paměti kolekce struktur jsou platné a jsou uvedené haldy; v opačném případě `false`.|  
-|`pointerSize`|Velikost v bajtech, ukazatelů na cílové architektuře.|  
-|`numHeaps`|Počet logických uvolňování paměti haldy v procesu.|  
-|`concurrent`|`TRUE` Pokud souběžné uvolňování paměti (pozadí) je povoleno; v opačném případě `FALSE`.|  
-|`gcType`|Člen [cordebuggctype –](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md) výčet, který označuje, zda systému uvolňování paměti běží na serveru nebo pracovní stanice.|  
+|`areGCStructuresValid`|`true`Pokud jsou struktury uvolňování paměti platné a lze vytvořit výčet haldy; v opačném případě. `false`|  
+|`pointerSize`|Velikost ukazatelů v cílové architektuře v bajtech.|  
+|`numHeaps`|Počet hald logických uvolňování paměti v procesu.|  
+|`concurrent`|`TRUE`Pokud je povolené shromažďování paměti souběžného (na pozadí); v opačném případě. `FALSE`|  
+|`gcType`|Člen výčtu [CorDebugGCType –](cordebuggctype-enumeration.md) , který označuje, zda je systém uvolňování paměti spuštěn na pracovní stanici nebo serveru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Instance `COR_HEAPINFO` struktura je vrácený voláním [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metody.  
+ Instance `COR_HEAPINFO` struktury je vrácena voláním metody [ICorDebugProcess5:: GetGCHeapInformation –](icordebugprocess5-getgcheapinformation-method.md) .  
   
- Před vytváření výčtu objektů na haldě uvolňování paměti, musí vždy zkontrolujte `areGCStructuresValid` pole tak, aby byl haldy ve výčtu stavu. Další informace najdete v tématu [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metody.  
+ Před vytvořením výčtu objektů v haldě uvolňování paměti je vždy nutné zaškrtnout `areGCStructuresValid` pole, aby se zajistilo, že je halda ve výčtovém stavu. Další informace naleznete v tématu metoda [ICorDebugProcess5:: GetGCHeapInformation –](icordebugprocess5-getgcheapinformation-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

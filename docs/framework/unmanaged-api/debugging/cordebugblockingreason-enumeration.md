@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3ea71439c9a6c494c218a7cfc18508f4f8173b03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 99fcf160b3e3b2b238520e3db5ba2e74b270380a
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740384"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274133"
 ---
 # <a name="cordebugblockingreason-enumeration"></a>CorDebugBlockingReason – výčet
-Určuje důvody, proč může zablokování vlákna na daný objekt.  
+Určuje důvody, proč se vlákno může v daném objektu zablokovat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,23 +41,23 @@ Typedef enum CorDebugBlockingReason
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`BLOCKING_NONE`|Pouze pro interní použití.|  
-|`BLOCKING_MONITOR_CRITICAL_SECTION`|Vlákno se pokouší získat kritický oddíl, který je přidružený k uzamčení monitoru objektu. Obvykle to nastane, pokud voláním <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> metody.|  
-|`BLOCKING_MONITOR_EVENT`|Vlákno čeká na událost, která je přidružený k uzamčení monitoru objektu. Obvykle to nastane, pokud voláním <xref:System.Threading.Monitor?displayProperty=nameWithType> `Wait` metody.|  
+|`BLOCKING_NONE`|Pouze interní použití.|  
+|`BLOCKING_MONITOR_CRITICAL_SECTION`|Vlákno se snaží získat kritickou část, která je přidružena k zámku monitoru u objektu. Obvykle k tomu dochází při volání jedné z <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> metod nebo. <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>|  
+|`BLOCKING_MONITOR_EVENT`|Vlákno čeká na událost, která je přidružena k zámku monitoru pro objekt. Obvykle k tomu dochází při volání jedné z <xref:System.Threading.Monitor?displayProperty=nameWithType> `Wait` metod.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při `BLOCKING_MONITOR_CRITICAL_SECTION` nebo `BLOCKING_MONITOR_EVENT` člena se používá v [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury, `pBlockingObject` členem struktury odkazuje na rozhraní "ICorDebugValue", který představuje objekt, který je zadání . Je také zaručeno, že k implementaci [icordebugheapvalue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-interface.md) rozhraní.  
+ Pokud je člen `BLOCKING_MONITOR_EVENT` [](cordebugblockingobject-structure.md) `pBlockingObject` nebo použit ve struktuře CorDebugBlockingObject –, člen struktury odkazuje na rozhraní "ICorDebugValue", které představuje objekt, který je právě zadán. `BLOCKING_MONITOR_CRITICAL_SECTION` Je také zaručena implementace rozhraní [ICorDebugHeapValue3](icordebugheapvalue3-interface.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Výčty pro ladění](debugging-enumerations.md)
+- [Ladění](index.md)

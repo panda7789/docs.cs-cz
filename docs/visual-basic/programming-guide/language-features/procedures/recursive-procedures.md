@@ -10,42 +10,44 @@ helpviewer_keywords:
 - functions [Visual Basic], calling recursively
 - recursion
 ms.assetid: ba1d3962-b4c3-48d3-875e-96fdb4198327
-ms.openlocfilehash: de9a2af9fc3cd78879b6525245727a6f52d51c63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b08a06a07f134b7c95251848862d39339e59fe61
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791843"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274346"
 ---
 # <a name="recursive-procedures-visual-basic"></a>Rekurzivní procedury (Visual Basic)
-A *rekurzivní* postup je takový, který zavolá sama sebe. Většinou to není nejúčinnější způsob psaní kódu jazyka Visual Basic.  
+
+*Rekurzivní* procedura je taková, která volá sám sebe. Obecně to není nejúčinnější způsob psaní kódu Visual Basic.  
   
- Následující postup používá rekurze pro výpočet faktoriálu původní argument.  
+ Následující postup používá rekurzi k výpočtu faktoriál jeho původního argumentu.  
   
  [!code-vb[VbVbcnProcedures#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#51)]  
   
-## <a name="considerations-with-recursive-procedures"></a>Informace o rekurzivní procedury  
- **Omezující podmínky**. Je třeba navrhnout rekurzivní procedury pro testování nejméně jedné podmínky, které dokáže ukončit rekurze, a také musí zpracovávat tento případ, ve kterém je splněna žádná z těchto podmínek v rámci dostatečný počet rekurzivních volání. Bez nejméně jedné podmínky, které mohou být splněny bez navrácení služeb po spuštění procedury vysokým rizikem provedení v nekonečné smyčce.  
-  
- **Využití paměti**. Vaše aplikace má omezené množství místa pro místní proměnné. Pokaždé, když procedury zavolá sama sebe, používá více toto místo pro další kopie, které své místní proměnné. Pokud tento proces pokračuje po neomezenou dobu, nakonec způsobí <xref:System.StackOverflowException> chyby.  
-  
- **Efektivita**. Můžete nahradit téměř vždy smyčku rekurze. Smyčka nemá režii předávání argumentů, inicializace úložiště a vrací hodnoty. Výkon může být mnohem lepší bez rekurzivní volání.  
-  
- **Vzájemná rekurze**. Velmi nízký výkon nebo dokonce nekonečnou smyčku, všimnout dva postupy volání mezi sebou. Takový návrh stejným problémům jako v postupu jeden rekurzivní uvede, ale může být obtížnější rozpoznání a ladění.  
-  
- **Volání se závorkami**. Když `Function` proceduru volá rekurzivně sama sebe, je nutné postupovat podle název procedury se závorkami, i v případě, že neexistuje žádný seznam argumentů. V opačném případě je název funkce používá jako návratový typ funkce.  
-  
- **Testování**. Pokud píšete rekurzivní procedury, měli byste ho otestovat velmi pečlivě zajistit, aby že vždy splňuje některé omezující podmínky. Také se ujistěte, že nelze spustit nedostatek paměti z důvodu existence příliš mnoho rekurzivních volání.  
-  
+## <a name="considerations-with-recursive-procedures"></a>Otázky s rekurzivními procedurami
+
+ **Omezující podmínky**. Je nutné navrhnout rekurzivní proceduru pro testování alespoň jedné podmínky, která může ukončit rekurzi, a také je třeba zpracovat případ, kdy není taková podmínka splněna v rozumném počtu rekurzivních volání. Bez nejméně jedné podmínky, která může být splněna bez selhání, váš postup bude mít vysoké riziko, že se spouští v nekonečné smyčce.
+
+ **Využití paměti**. Vaše aplikace má omezené množství místa pro místní proměnné. Pokaždé, když procedura zavolá sám sebe, použije více místa pro další kopie místních proměnných. Pokud tento proces pokračuje neomezeně, způsobí <xref:System.StackOverflowException> to chybu.
+
+ **Efektivita**. Je možné, že téměř vždy nahradíte smyčku pro rekurzi. Smyčka nemá režijní náklady na předávání argumentů, inicializaci dalšího úložiště a vrácení hodnot. Výkon může být mnohem lepší bez rekurzivních volání.
+
+ **Vzájemná rekurze**. Můžete sledovat velmi špatný výkon nebo dokonce nekonečnou smyčku, pokud dva postupy navzájem volají. Takový návrh představuje stejné problémy jako jeden rekurzivní postup, ale může být těžší detekovat a ladit.
+
+ **Volání pomocí závorek**. Při rekurzivním volání procedury je nutné použít název procedury s závorkami, a to i v případě, že neexistuje seznam argumentů. `Function` V opačném případě se název funkce povede jako reprezentace návratové hodnoty funkce.
+
+ **Testování**. Pokud zapíšete rekurzivní proceduru, měli byste je pečlivě otestovat, abyste se ujistili, že vždy splňují určitou omezující podmínku. Měli byste taky zajistit, aby nedošlo k nedostatku paměti z důvodu příliš velkého počtu rekurzivních volání.
+
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.StackOverflowException>
-- [Procedury](./index.md)
-- [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
-- [Procedury vlastnosti](./property-procedures.md)
-- [Procedury operátoru](./operator-procedures.md)
-- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Přetížení procedury](./procedure-overloading.md)
-- [Řešení potíží s procedurami](./troubleshooting-procedures.md)
-- [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
+- [Procedury](index.md)
+- [Procedury Sub](sub-procedures.md)
+- [Procedury funkce](function-procedures.md)
+- [Procedury vlastnosti](property-procedures.md)
+- [Procedury operátoru](operator-procedures.md)
+- [Parametry a argumenty procedury](procedure-parameters-and-arguments.md)
+- [Přetížení procedury](procedure-overloading.md)
+- [Řešení potíží s procedurami](troubleshooting-procedures.md)
+- [Struktury smyčky](../control-flow/loop-structures.md)

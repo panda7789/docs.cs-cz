@@ -4,17 +4,17 @@ description: Obsahuje seznam nejnovějších změn v model Windows Forms pro .NE
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b08361bc71149f517d070a58c97d243840500ea
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 436088836ff5441e426379bb41f96821cbc7e500
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217085"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272725"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Průlomové změny v model Windows Forms
 
 > [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) . 
+> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) .
 
 Následuje seznam nejnovějších změn v model Windows Forms verze .NET Core.
 
@@ -55,7 +55,6 @@ Následuje seznam nejnovějších změn v model Windows Forms verze .NET Core.
 [!INCLUDE[SerializableAttribute removed from some Windows Forms types](~/includes/core-changes/windowsforms/remove-serializationattribute.md)]
 
 ## <a name="net-core-30"></a>.NET Core 3.0
-
 
 [!INCLUDE[Control.DefaultFont changed to Segoe UI 9pt](~/includes/core-changes/windowsforms/control-defaultfont-changed.md)]
 

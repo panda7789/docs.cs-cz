@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61a9cad9d0ce807d62c811e77402b8cc6d8c6905
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc0b67621f77c0741e0b63b84ab1794530d6280b
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740693"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274228"
 ---
-# <a name="corgcreference-structure"></a>COR_GC_REFERENCE – struktura
-Obsahuje informace o objektu, který má být uvolněna.  
+# <a name="cor_gc_reference-structure"></a>COR_GC_REFERENCE – struktura
+Obsahuje informace o objektu, který má být shromážděn z paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,38 +41,38 @@ typedef struct _COR_GC_REFERENCE {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`domain`|Ukazatel na doménu aplikace, ke kterému patří popisovač nebo objekt. Jeho hodnota může být `null`.|  
-|`location`|ICorDebugValue nebo icordebugreferencevalue – rozhraní, která odpovídá objekt, který má být uvolněna.|  
-|`type`|A [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnotu výčtu, která určuje, odkud pochází kořenový adresář. Další informace najdete v části poznámky.|  
-|`extraData`|Údaje o objekt, který má být uvolněna. Tyto informace závisí na zdroji objektu, je určeno `type` pole. Další informace najdete v části poznámky.|  
+|`domain`|Ukazatel na doménu aplikace, ke které patří popisovač nebo objekt. Jeho hodnota může být `null`.|  
+|`location`|Rozhraní ICorDebugValue nebo ICorDebugReferenceValue, které odpovídá objektu, který má být uvolněn do paměti.|  
+|`type`|Hodnota výčtu [CorGCReferenceType –](corgcreferencetype-enumeration.md) , která určuje, odkud kořen pochází. Další informace najdete v části poznámky.|  
+|`extraData`|Další informace o objektu, který má být shromážděn do paměti. Tyto informace závisí na zdroji objektu, jak je uvedeno v `type` poli. Další informace najdete v části poznámky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `type` Je pole [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnotu výčtu, která určuje, odkud pochází odkaz. Konkrétní `COR_GC_REFERENCE` hodnotu můžete sledovat některé z následujících typů spravovaných objektů:  
+ Pole je hodnota výčtu CorGCReferenceType –, která určuje, odkud odkaz pochází. [](corgcreferencetype-enumeration.md) `type` Konkrétní `COR_GC_REFERENCE` hodnota může odrážet kterýkoli z následujících typů spravovaných objektů:  
   
-- Objekty z všechny spravované zásobníky (`CorGCReferenceType.CorReferenceStack`). To zahrnuje živé odkazy ve spravovaném kódu, jakož i objekty vytvořené modulem common language runtime.  
+- Objekty ze všech spravovaných zásobníků`CorGCReferenceType.CorReferenceStack`(). To zahrnuje živé odkazy ve spravovaném kódu a také objekty vytvořené modulem CLR (Common Language Runtime).  
   
-- Objekty z tabulky popisovače (`CorGCReferenceType.CorHandle*`). Jedná se o silná odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
+- Objekty z tabulky Handles (`CorGCReferenceType.CorHandle*`). To zahrnuje silné odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
   
-- Objekty ve frontě finalizační metody (`CorGCReferenceType.CorReferenceFinalizer`). Fronta finalizační metody kořeny objekty, dokud finalizační metodu.  
+- Objekty z fronty finalizační metody (`CorGCReferenceType.CorReferenceFinalizer`). Objekty kořene fronty finalizační metody, dokud není spuštěn finalizační metoda.  
   
- `extraData` Pole obsahuje doplňující data v závislosti na zdroj (nebo typ) odkaz. Možné hodnoty jsou:  
+ `extraData` Pole obsahuje další data v závislosti na zdroji (nebo typu) odkazu. Možné hodnoty jsou:  
   
-- `DependentSource`. Pokud `type` je `CorGCREferenceType.CorHandleStrongDependent`, toto pole je objekt, který, pokud zachování připojení, kořenových adresářů objekt, který má být prováděno uvolnění paměti na `COR_GC_REFERENCE.Location`.  
+- `DependentSource`. Pokud je, `CorGCREferenceType.CorHandleStrongDependent`toto pole je objekt, který, pokud je aktivní, objekt, který má být uvolněn do paměti v `COR_GC_REFERENCE.Location`. `type`  
   
-- `RefCount`. Pokud `type` je `CorGCREferenceType.CorHandleStrongRefCount`, toto pole je počet odkazů popisovače.  
+- `RefCount`. `type` Pokud je `CorGCREferenceType.CorHandleStrongRefCount`, toto pole je počet odkazů popisovače.  
   
-- `Size`. Pokud `type` je `CorGCREferenceType.CorHandleStrongSizedByref`, toto pole je poslední velikost stromu objektů, pro které systému uvolňování paměti počítá kořeny objektu. Všimněte si, že tento výpočet není nutně aktuální.  
+- `Size`. `type` Pokud je `CorGCREferenceType.CorHandleStrongSizedByref`, toto pole je poslední velikost stromu objektu, pro který systém uvolňování paměti vypočítal kořeny objektů. Všimněte si, že tento výpočet není nutně aktuální.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

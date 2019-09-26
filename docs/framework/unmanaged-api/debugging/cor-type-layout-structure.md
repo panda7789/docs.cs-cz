@@ -16,14 +16,14 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1793547cfc0d9637352b62ff47beee41e9f5ac5c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6bd274b1eb14532629580e777288317186544912
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740500"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274167"
 ---
-# <a name="cortypelayout-structure"></a>COR_TYPE_LAYOUT – struktura
+# <a name="cor_type_layout-structure"></a>COR_TYPE_LAYOUT – struktura
 Poskytuje informace o rozložení objektu v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,25 +42,25 @@ typedef struct COR_TYPE_LAYOUT {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`parentID`|Identifikátor k tomuto typu nadřazeného typu. Bude jím typ id hodnotu NULL (token1 = 0, token2 = 0) Pokud id typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
-|`objectSize`|Základní velikost objektu tohoto typu. Toto je celková velikost velkých objektů bez proměnných.|  
-|`numFields`|Počet polí, které jsou součástí objekty tohoto typu.|  
-|`boxOffset`|Pokud je tento typ v poli, počáteční posun objektu polí. Toto pole je platný pouze pro typy hodnot, jako je například primitiv a struktury.|  
-|`type`|Corelementtype –, do které tento typ patří.|  
+|`parentID`|Identifikátor nadřazeného typu na tento typ. Toto bude identifikátor typu s hodnotou NULL (token1 = 0, token2 = 0), pokud ID typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
+|`objectSize`|Základní velikost objektu tohoto typu. Toto je celková velikost pro objekty, které nejsou proměnné velikosti.|  
+|`numFields`|Počet polí, která jsou součástí objektů tohoto typu.|  
+|`boxOffset`|Pokud je tento typ zabalený, počáteční posun pole objektu. Toto pole je platné pouze pro typy hodnot, jako jsou primitivní prvky a struktury.|  
+|`type`|CorElementType –, ke kterému patří tento typ.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `numFields` je větší než nula, můžete volat [icordebugprocess5::gettypefields –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md) metodu k získání informací o polích v tomto typu. Pokud `type` je `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`, nebo `ELEMENT_TYPE_SZARRAY`velikost objekty tohoto typu je proměnná a můžete předat [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) struktury na [icordebugprocess5::getarraylayout – ](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getarraylayout-method.md) metody.  
+ Pokud `numFields` je větší než nula, můžete zavolat metodu [ICorDebugProcess5:: GetTypeFields –](icordebugprocess5-gettypefields-method.md) a získat informace o polích v tomto typu. Pokud `type` je `ELEMENT_TYPE_STRING` ,`ELEMENT_TYPE_ARRAY` [](cor-typeid-structure.md) nebo ,`ELEMENT_TYPE_SZARRAY`velikost objektů tohoto typu je proměnná, a můžete předat strukturu COR_TYPEID do metody [ICorDebugProcess5:: GetArrayLayout –](icordebugprocess5-getarraylayout-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

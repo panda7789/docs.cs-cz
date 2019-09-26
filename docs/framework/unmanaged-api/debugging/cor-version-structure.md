@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b1f0a36d186c6d9788d43b075bf9d67c36ed1acb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ffbe571ebc3d14c12e57b1f805d77e56e97d12e1
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740564"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274176"
 ---
-# <a name="corversion-structure"></a>COR_VERSION – struktura
-Ukládá číslo standardní sestávající ze čtyř částí verze modulu common language runtime.  
+# <a name="cor_version-structure"></a>COR_VERSION – struktura
+Ukládá standardní číslo verze se čtyřmi částmi modulu CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,22 +43,22 @@ typedef struct _COR_VERSION {
 |------------|-----------------|  
 |`dwMajor`|Hlavní číslo verze.|  
 |`dwMinor`|Vedlejší číslo verze.|  
-|`dwBuild`|Číslo sestavení.|  
-|`dwSubBuild`|Číslo dílčí sestavení.|  
+|`dwBuild`|Číslo sestavení|  
+|`dwSubBuild`|Číslo dílčího sestavení|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud číslo verze je 1.0.3705.288, je číslo hlavní verze 1, 0 je číslo podverze, 3705 je číslo sestavení a 288 je číslo dílčí sestavení.  
+ Pokud je číslo verze 1.0.3705.288, 1 je hlavní číslo verze, 0 je číslo dílčí verze, 3705 je číslo sestavení a 288 je číslo dílčího sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlaviček** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

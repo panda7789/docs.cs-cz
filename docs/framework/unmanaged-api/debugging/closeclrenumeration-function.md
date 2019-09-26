@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a9eb9bb1e4abeb98d8d0ba2b052612d918c45f22
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3a05a779d4a56eb8f881da1824d5ffaa363b5a01
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741082"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274284"
 ---
 # <a name="closeclrenumeration-function"></a>CloseCLREnumeration – funkce
-Zavře žádné platný common language runtime (CLR) pokračovat po spuštění události nachází v poli popisovačů vrácený [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md)a uvolní paměť pro cestu pole popisovač a řetězce.  
+Uzavře všechny platné události průběžného modulu CLR (Common Language Runtime), které se nacházejí v poli popisovačů vrácených [funkcí EnumerateCLRs –](enumerateclrs-function.md), a uvolní paměť pro pole popisovačů a cest řetězců.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT CloseCLREnumeration (
   
 ## <a name="parameters"></a>Parametry  
  `pHandleArray`  
- [in] Ukazatel na pole obslužné rutiny událostí vrácených [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md).  
+ pro Ukazatel na pole obslužných rutin událostí vrácených [funkcí EnumerateCLRs –](enumerateclrs-function.md).  
   
  `pStringArray`  
- [in] Ukazatel na pole vrácená z cesty řetězce CLR [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md).  
+ pro Ukazatel na pole cest řetězců CLR vrácených [funkcí EnumerateCLRs –](enumerateclrs-function.md).  
   
  `dwArrayLength`  
- [in] DWORD, který obsahuje velikost (délka) buď `pHandleArray` nebo `pStringArray` (jsou stejné).  
+ pro Hodnota DWORD, která obsahuje velikost (length) buď `pHandleArray` nebo `pStringArray` (jsou stejné).  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Popisovače otevírány [enumerateclrs – funkce](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md) zavřou, a je uvolněna paměť přidělená pro řetězec a popisovače pole.  
+ Obslužné rutiny otevřené [funkcí EnumerateCLRs –](enumerateclrs-function.md) jsou uzavřeny a přidělená paměť pro popisovač a pole řetězců jsou uvolněny.  
   
  E_INVALIDARG  
- Délka `pHandleArray` neodpovídá délce, které je předáno `dwArrayLength`.  
+ Délka `pHandleArray` se neshoduje s délkou, která je `dwArrayLength`předána.  
   
- E_FAIL (nebo jiné E_ návratové kódy)  
- Nelze uvolnit paměť pro funkci `pHandleArray` a `pStringArray`.  
+ E_FAIL (nebo jiné návratové kódy E_)  
+ Funkce nemůže uvolnit paměť pro `pHandleArray` a. `pStringArray`  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** dbgshim.h  
+ **Záhlaví:** dbgshim. h  
   
- **Knihovna:** dbgshim.dll  
+ **Knihovna:** dbgshim. dll  
   
- **Verze rozhraní .NET framework:** 3.5 SP1
+ **Verze .NET Framework:** 3.5 SP1

@@ -4,17 +4,17 @@ description: Obsahuje seznam nejnovějších změn v rozhraní .NET CoreFx, knih
 ms.date: 09/20/2019
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7940da342bae6a745b6729ad00c42dbde27a96c8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 3838bcd7c127860a8307fe31bd85ed5addffb59e
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217134"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272716"
 ---
 # <a name="corefx-breaking-changes"></a>CoreFx průlomové změny
 
 > [!IMPORTANT]
-> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) . 
+> Tento článek je v rámci konstrukce. Nejedná se o úplný seznam nejnovějších změn .NET Core. Další informace o nejnovějších změnách .NET Core můžete v úložišti dotnet/Docs na GitHubu kontrolovat jednotlivé [problémy se změnami](https://github.com/dotnet/docs/issues?q=is%3Aissue+is%3Aopen+label%3Abreaking-change) .
 
 Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core. CoreFx poskytuje primitivní a další obecné typy používané .NET Core.
 
@@ -65,4 +65,3 @@ Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core. CoreFx
 ***
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/ziparchiveentry-and-inconsistent-entry-sizes.md)]
-

@@ -16,16 +16,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2baefa45deb8c13e8c1e627724fbe271b210a9ce
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 36afee8af3de046683c55215a677a529b0837c77
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740881"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274257"
 ---
 # <a name="codechunkinfo-structure"></a>CodeChunkInfo – struktura
 
-Představuje jediný neodkazovaný blok kódu v paměti.  
+Představuje jeden blok kódu v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +40,23 @@ typedef struct _CodeChunkInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`startAddr`|A `CORDB_ADDRESS` hodnotu, která určuje počáteční adresu bloků.|  
-|`length`|Velikost v bajtech, bloků.|  
+|`startAddr`|`CORDB_ADDRESS` Hodnota, která určuje počáteční adresu bloku.|  
+|`length`|Velikost bloku (v bajtech).|  
   
 ## <a name="remarks"></a>Poznámky  
- Jediný neodkazovaný blok kódu je oblast nativní kód, který je součástí objektu kódu, jako je například funkce.  
+ Jediný blok kódu je oblast nativního kódu, který je součástí objektu kódu, jako je například funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlaviček** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [GetCodeChunks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [GetCodeChunks – metoda](icordebugcode2-getcodechunks-method.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

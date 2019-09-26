@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2efe159eaa8b49d4d3825e9737593d0a12fc4d4c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f857f773f02da25fe6650000be777b8290f5af91
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740731"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274062"
 ---
-# <a name="corfield-structure"></a>COR_FIELD – struktura
-Poskytuje informace o pole v objektu.  
+# <a name="cor_field-structure"></a>COR_FIELD – struktura
+Poskytuje informace o poli v objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,23 +41,23 @@ typedef struct COR_FIELD{
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`token`|`mdFieldDef` Token, který můžete použít k získání informací o poli.|  
-|`offset`|Posun v bajtech pro data polí v objektu.|  
-|`id`|A [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) hodnotu, která určuje typ tohoto pole.|  
-|`fieldType`|Corelementtype – hodnotu výčtu, která určuje typ pole.|  
+|`token`|`mdFieldDef` Token, který lze použít k získání informací o poli.|  
+|`offset`|Posun v bajtech k datům pole v objektu.|  
+|`id`|Hodnota [COR_TYPEID](cor-typeid-structure.md) , která identifikuje typ tohoto pole.|  
+|`fieldType`|Hodnota výčtu CorElementType –, která určuje typ pole.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

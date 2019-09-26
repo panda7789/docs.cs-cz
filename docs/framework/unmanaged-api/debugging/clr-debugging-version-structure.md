@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e71a1538e42061c6cb949b22bb63fe6b17a0dfc9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4528ccd77fed2ea2a9b2d08243ffa1535bfad1ae
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741108"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274089"
 ---
-# <a name="clrdebuggingversion-structure"></a>CLR_DEBUGGING_VERSION – struktura
-Určuje verzi modulu common language runtime (CLR) pro účely ladění.  
+# <a name="clr_debugging_version-structure"></a>CLR_DEBUGGING_VERSION – struktura
+Definuje verzi produktu modulu CLR (Common Language Runtime) pro účely ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,25 +43,25 @@ typedef struct _CLR_DEBUGGING_VERSION
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`wStructVersion`|Číslo verze struktura|  
+|`wStructVersion`|Číslo verze struktury|  
 |`wMajor`|Hlavní číslo verze.|  
 |`wMinor`|Vedlejší číslo verze.|  
-|`wBuild`|Číslo sestavení.|  
-|`wRevision`|Číslo revize.|  
+|`wBuild`|Číslo sestavení|  
+|`wRevision`|Číslo revize|  
   
 ## <a name="remarks"></a>Poznámky  
- `CLR_DEBUGGING_VERSION` Struktura je stejná jako cor_version – struktura, ale, `CLR_DEBUGGING_VERSION` struktura obsahuje pole Další Struktura verze (`wStructVersion`). V současné době toto pole musí být nastaveno na hodnotu nula.  
+ Struktura je stejná jako struktura COR_VERSION, ale `CLR_DEBUGGING_VERSION` struktura poskytuje další pole verze struktury (`wStructVersion`). `CLR_DEBUGGING_VERSION` V současné době musí být toto pole nastaveno na hodnotu nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlaviček** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2cccb862a0dfd16eb0bbfe557e3c35373cd7e7b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ec9c4f3afb8f3b7e75e22874996d57d29ce8cf16
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740818"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274219"
 ---
-# <a name="corarraylayout-structure"></a>COR_ARRAY_LAYOUT – struktura
-Poskytuje informace o rozložení objektu array v paměti.  
+# <a name="cor_array_layout-structure"></a>COR_ARRAY_LAYOUT – struktura
+Poskytuje informace o rozložení objektu pole v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,30 +45,30 @@ typedef struct COR_ARRAY_LAYOUT {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`componentID`|Identifikátor typu objektů, které obsahuje pole.|  
-|`componentType`|Corelementtype – hodnotu výčtu, která určuje, zda je součást odkaz kolekce uvolnění paměti, hodnotová třída nebo jednoduchého typu.|  
-|`firstElementOffset`|Posun na první prvek v poli.|  
-|`elementSize`|Velikost jednotlivých prvků.|  
-|`countOffset`|Posun do počtu prvků v poli.|  
-|`rankSize`|Velikost pořadí, v bajtech.|  
-|`numRanks`|Číslo pořadí v poli.|  
-|`rankOffset`|Posun, ve kterém je pořadí spuštění.|  
+|`componentID`|Identifikátor typu objektů, které pole obsahuje.|  
+|`componentType`|Hodnota výčtu CorElementType –, která určuje, zda je komponenta odkaz na uvolňování paměti, třídu hodnot nebo primitivní.|  
+|`firstElementOffset`|Posun k prvnímu prvku v poli.|  
+|`elementSize`|Velikost každého prvku.|  
+|`countOffset`|Posun k počtu prvků v poli.|  
+|`rankSize`|Velikost rozměru (v bajtech).|  
+|`numRanks`|Počet pořadí v poli.|  
+|`rankOffset`|Posun, ve kterém je začátek pořadí.|  
   
 ## <a name="remarks"></a>Poznámky  
- `rankSize` Pole určuje velikost pořadí v vícerozměrné pole. Je přesné pro také jednorozměrná pole.  
+ `rankSize` Pole určuje velikost rozměru v multidimenzionálním poli. Je přesně pro jednorozměrná pole.  
   
- Hodnota `numRanks` 1 pro jednorozměrné pole a `N` pro vícerozměrná pole `N` dimenze.  
+ Hodnota `numRanks` je 1 pro jednorozměrné pole a `N` pro `N` multidimenzionální pole dimenzí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

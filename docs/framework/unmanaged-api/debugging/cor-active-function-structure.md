@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6875ce0e7ae4cefa9b0c8abaded0dd4535bdf838
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 50dd4acece43628b20b6bc50a539ee197e865855
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740822"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274147"
 ---
-# <a name="coractivefunction-structure"></a>COR_ACTIVE_FUNCTION – struktura
-Obsahuje informace o funkcích, které jsou aktuálně aktivní vlákna snímků. Tato struktura je používán [icordebugthread2::getactivefunctions –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) metody.  
+# <a name="cor_active_function-structure"></a>COR_ACTIVE_FUNCTION – struktura
+Obsahuje informace o funkcích, které jsou aktuálně aktivní v rámečcích vlákna. Tato struktura je používána metodou [ICorDebugThread2:: GetActiveFunctions –](icordebugthread2-getactivefunctions-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,22 +42,22 @@ typedef struct  _COR_ACTIVE_FUNCTION {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pAppDomain`|Ukazatel na vlastník domény aplikace `ilOffset` pole.|  
-|`pModule`|Ukazatel na vlastníka modulu `ilOffset` pole.|  
-|`pFunction`|Ukazatel na funkci vlastníka `ilOffset` pole.|  
-|`ilOffset`|Posun Microsoft intermediate language (MSIL) rámce.|  
+|`pAppDomain`|Ukazatel na vlastníka domény aplikace daného `ilOffset` pole.|  
+|`pModule`|Ukazatel na vlastníka `ilOffset` pole.|  
+|`pFunction`|Ukazatel na vlastníka `ilOffset` funkce pole.|  
+|`ilOffset`|Posun jazyka MSIL (Microsoft Intermediate Language) rámce.|  
 |`flags`|Vyhrazeno pro budoucí rozšíření.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl  
+ **Hlaviček** CorDebug. idl  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Struktury pro ladění](debugging-structures.md)
+- [Ladění](index.md)

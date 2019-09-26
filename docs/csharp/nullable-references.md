@@ -2,12 +2,12 @@
 title: Odkazové typy s možnou hodnotou null
 description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: 7ca3ebc413fbe335f79d415249b952132c38f552
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 80018aaa409e7b4c188362482705de33ac5afd85
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214396"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272783"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -35,7 +35,7 @@ string? name;
 
 Jakákoli proměnná, ve `?` které není připojen k názvu typu, je **odkazový typ, který nepovoluje hodnotu null**. Který zahrnuje všechny proměnné referenčního typu v existujícím kódu, když jste povolili tuto funkci.
 
-Kompilátor používá statickou analýzu k určení, zda odkaz s možnou hodnotou null je znám jako jiný než null. Kompilátor vás upozorní, pokud zrušíte odkaz na odkaz s možnou hodnotou null, pokud může mít hodnotu null. Toto chování můžete přepsat pomocí **operátoru null-striktní** (`!`) za názvem proměnné. Například pokud víte, že `name` proměnná není null, ale kompilátor vydá upozornění, můžete napsat následující kód pro přepsání analýzy kompilátoru:
+Kompilátor používá statickou analýzu k určení, zda odkaz s možnou hodnotou null je znám jako jiný než null. Kompilátor vás upozorní, pokud zrušíte odkaz na odkaz s možnou hodnotou null, pokud může mít hodnotu null. Toto chování můžete přepsat pomocí `!` **operátoru null-striktní** za názvem proměnné. Například pokud víte, že `name` proměnná není null, ale kompilátor vydá upozornění, můžete napsat následující kód pro přepsání analýzy kompilátoru:
 
 ```csharp
 name!.Length;
@@ -58,7 +58,7 @@ Hodnota null typu v deklaraci proměnné je řízena *kontextem s možnou hodnot
 
 Kontexty s možnou hodnotou null umožňují detailní kontrolu způsobu, jakým kompilátor interpretuje proměnné referenčního typu. **Kontext poznámky s možnou hodnotou null** pro daný řádek `enabled` zdroje `disabled`je nebo. Představte si předC# 8 kompilátorem, když zkompilujete veškerý kód v kontextu `disabled` s možnou hodnotou null: Libovolný odkazový typ může mít hodnotu null. **Kontext upozornění s možnou hodnotou null** může `enabled` být `disabled`nastaven na nebo. Kontext upozornění s možnou hodnotou null určuje upozornění vygenerovaná kompilátorem pomocí analýzy toku.
 
-Kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null lze `Nullable` nastavit pro projekt `csproj` pomocí elementu v souboru. Tento prvek konfiguruje způsob, jakým kompilátor interpretuje hodnotu null typů a jaká upozornění jsou vygenerována. Platná nastavení jsou:
+Kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null lze `Nullable` nastavit pro projekt pomocí elementu v souboru *. csproj* . Tento prvek konfiguruje způsob, jakým kompilátor interpretuje hodnotu null typů a jaká upozornění jsou vygenerována. Platná nastavení jsou:
 
 - `enable`: Kontext anotace s možnou hodnotou null je **povolen**. Výstražný kontext s možnou hodnotou null je **povolen**.
   - Proměnné typu odkazu, `string` například, nejsou null.  Jsou povolena všechna upozornění na možnost použití hodnoty null.
@@ -68,9 +68,6 @@ Kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null lze `N
   - Proměnné typu odkazu jsou oblivious. Jsou povolena všechna upozornění na možnost použití hodnoty null.
 - `disable`: Kontext anotace s možnou hodnotou null je **zakázán**. Výstražný kontext s možnou hodnotou null je **zakázán**.
   - Proměnné typu odkazu jsou oblivious, stejně jako starší verze C#. Všechna upozornění na možnost použití hodnoty null jsou zakázána.
-
-> [!IMPORTANT]
-> Element se dřív jmenoval `NullableContextOptions`. `Nullable` Přejmenování se dodává se sadou Visual Studio 2019, 16,2-P1. Tato změna nemá .NET Core SDK 3.0.100-preview5-011568. Pokud používáte .NET Core CLI, budete ho muset použít `NullableContextOptions` , až bude k dispozici další verze Preview.
 
 Můžete také použít direktivy pro nastavení stejných kontextů kdekoli v projektu:
 
@@ -101,7 +98,7 @@ Kompilátor používá následující pravidla v povoleném kontextu anotace s m
 - Jakýkoli typ odkazu s `?` možnou hodnotou null (zaznamenáno po typu v deklaraci proměnné) může mít hodnotu null. Statická analýza určuje, zda je hodnota při odkazování na hodnotu nenulová. V takovém případě vás kompilátor upozorní.
 - Operátor null-striktní můžete použít k deklaraci, že odkaz s možnou hodnotou null není null.
 
-V povoleném kontextu `?` anotace s možnou hodnotou null znak připojený k typu odkazu deklaruje **typ odkazu s možnou hodnotou null**. **Operátor null forgiveness** (`!`) se může připojit k výrazu, který deklaruje, že výraz není null.
+V povoleném kontextu `?` anotace s možnou hodnotou null znak připojený k typu odkazu deklaruje **typ odkazu s možnou hodnotou null**. Operátor`!` **null-striktní** může být přidán k výrazu, který deklaruje, že výraz nemá hodnotu null.
 
 ## <a name="nullable-warning-context"></a>Výstražný kontext s možnou hodnotou null
 

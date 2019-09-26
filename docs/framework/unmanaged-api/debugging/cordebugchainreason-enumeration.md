@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e46118e97a4b888a16f12cf6705d2b7e67bbf7ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fce803544b393ac2c441779183cbf49d4c39bdae
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740357"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273982"
 ---
 # <a name="cordebugchainreason-enumeration"></a>CorDebugChainReason – výčet
-Označuje důvod nebo důvodů, proč inicializační řetězec volání.  
+Určuje důvod nebo důvody pro zahájení řetězu volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,32 +50,32 @@ typedef enum CorDebugChainReason {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CHAIN_NONE`|Bylo zahájeno žádný řetězec volání.|  
-|`CHAIN_CLASS_INIT`|Řetězec byl inicializován nástrojem konstruktor.|  
-|`CHAIN_EXCEPTION_FILTER`|Řetězec byl inicializován nástrojem filtr výjimek.|  
-|`CHAIN_SECURITY`|Řetězec byl inicializován nástrojem kód, který vynucuje zabezpečení.|  
-|`CHAIN_CONTEXT_POLICY`|Řetězec byl inicializován nástrojem zásadu kontextu.|  
+|`CHAIN_NONE`|Neinicioval se žádný řetěz volání.|  
+|`CHAIN_CLASS_INIT`|Řetěz byl iniciován konstruktorem.|  
+|`CHAIN_EXCEPTION_FILTER`|Řetěz byl iniciován filtrem výjimky.|  
+|`CHAIN_SECURITY`|Řetězec byl iniciován kódem, který vynutil zabezpečení.|  
+|`CHAIN_CONTEXT_POLICY`|Řetěz byl iniciován zásadami kontextu.|  
 |`CHAIN_INTERCEPTION`|Nepoužívá se.|  
 |`CHAIN_PROCESS_START`|Nepoužívá se.|  
-|`CHAIN_THREAD_START`|Řetězec byl inicializován nástrojem začátku spuštění vlákna.|  
-|`CHAIN_ENTER_MANAGED`|Řetězec byl inicializován nástrojem položku do spravovaného kódu.|  
-|`CHAIN_ENTER_UNMANAGED`|Řetězec byl inicializován nástrojem vstupem nespravovaného kódu.|  
+|`CHAIN_THREAD_START`|Řetěz byl iniciován zahájením provádění vlákna.|  
+|`CHAIN_ENTER_MANAGED`|Řetězec byl iniciován zadáním do spravovaného kódu.|  
+|`CHAIN_ENTER_UNMANAGED`|Řetězec byl iniciován vložením do nespravovaného kódu.|  
 |`CHAIN_DEBUGGER_EVAL`|Nepoužívá se.|  
 |`CHAIN_CONTEXT_SWITCH`|Nepoužívá se.|  
-|`CHAIN_FUNC_EVAL`|Řetězec byl inicializován nástrojem vyhodnocení funkce.|  
+|`CHAIN_FUNC_EVAL`|Řetěz byl iniciován vyhodnocením funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [icordebugchain::getreason –](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) metoda zjistit důvody pro zahájení řetěz volání.  
+ Použijte metodu [ICorDebugChain:: getdůvod](icordebugchain-getreason-method.md) k zjištění důvodů pro zahájení řetězu volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 412e2bb7da7b5b3396342df169d56d2724ddb466
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eab5fc13b74d8af4f0baaa3953c5c73ea255bfe6
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740546"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274023"
 ---
-# <a name="corpubenumprocess-enumeration"></a>COR_PUB_ENUMPROCESS – výčet
-Určuje typ procesu vytvoření výčtu.  
+# <a name="cor_pub_enumprocess-enumeration"></a>COR_PUB_ENUMPROCESS – výčet
+Určuje typ procesu, který se má vyčíslit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,17 +41,17 @@ typedef enum {
 |`COR_PUB_MANAGEDONLY`|Spravovaný proces.|  
   
 ## <a name="remarks"></a>Poznámky  
- Aktuální verze rozhraní API pro nespravované ladění zobrazí pouze pro spravované procesy.  
+ Aktuální verze nespravovaného ladicího rozhraní API vytváří výčet pouze spravovaných procesů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
- **Záhlaví:** CorPub.idl, CorPub.h  
+ **Hlaviček** CorPub. idl, CorPub. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](debugging-enumerations.md)
