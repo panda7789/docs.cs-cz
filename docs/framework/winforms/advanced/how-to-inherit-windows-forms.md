@@ -2,19 +2,19 @@
 title: 'Postupy: Dědění v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
-- CSharp
-- VB
+- csharp
+- vb
 helpviewer_keywords:
 - inherited forms [Windows Forms], creating at run-time
 - inheritance [Windows Forms], forms
 - Windows Forms, inheritance
 ms.assetid: cb3e1c0f-3d2a-4cdc-b0d1-c92eae567ffb
-ms.openlocfilehash: a6d000bc853046cffbc2bddc54d1f5faec689032
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 402386e16687162e25e16e5c30c787f7e721fbba
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968617"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306364"
 ---
 # <a name="how-to-inherit-windows-forms"></a>Postupy: Dědění v modelu Windows Forms
 

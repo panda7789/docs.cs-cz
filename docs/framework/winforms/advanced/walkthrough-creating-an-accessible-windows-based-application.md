@@ -5,13 +5,16 @@ helpviewer_keywords:
 - accessibility [Windows Forms], Windows applications
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
+dev_langs:
+- csharp
+- vb
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 5768177401504f4776a34e499d07b7600597175a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: de25c3dcf33471a1aadb4445a83affab9c40914b
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957195"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306343"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 
@@ -29,7 +32,7 @@ Tento návod bude řešit pět požadavků na přístupnost pro logo Certified f
 
 - Nevytvářejte důležité informace pouhým zvukem.
 
-Další informace najdete v tématu [prostředky pro návrh aplikací](/visualstudio/ide/reference/resources-for-designing-accessible-applications), které jsou k dispozici.
+Další informace najdete v tématu [prostředky pro návrh aplikací, které jsou k dispozici](/visualstudio/ide/reference/resources-for-designing-accessible-applications).
 
 Informace o podpoře různých rozložení klávesnice najdete v tématu [osvědčené postupy pro vývoj aplikací připravených pro použití ve světě](../../../standard/globalization-localization/best-practices-for-developing-world-ready-apps.md).
 
@@ -68,7 +71,7 @@ Při přidávání ovládacích prvků do formuláře mějte na paměti následu
 
 - Přidejte ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázek na konci tabulky, kde najdete model uspořádání ovládacích prvků ve formuláři.
 
-   |Objekt|Vlastnost|Value|
+   |Object|Vlastnost|Value|
    |------------|--------------|-----------|
    |Form1|AccessibleDescription|Formulář objednávky|
    ||Přístupný|Formulář objednávky|
@@ -78,7 +81,7 @@ Při přidávání ovládacích prvků do formuláře mějte na paměti následu
    ||AccessibleDescription|Řez Pizza|
    ||Přístupný|Logo společnosti|
    ||Image|Libovolná ikona nebo rastrový obrázek|
-   |Popisek|Name|companyLabel|
+   |Štítek|Name|companyLabel|
    ||Text|Dobrá pizza|
    ||TabIndex|1|
    ||AccessibleDescription|Název společnosti|
@@ -86,7 +89,7 @@ Při přidávání ovládacích prvků do formuláře mějte na paměti následu
    ||BackColor|Modrá|
    ||ForeColor|Opatřen|
    ||Velikost písma|18|
-   |Popisek|Name|customerLabel|
+   |Štítek|Name|customerLabel|
    ||Text|Název &|
    ||TabIndex|2|
    ||AccessibleDescription|Popisek názvu zákazníka|
@@ -113,7 +116,7 @@ Při přidávání ovládacích prvků do formuláře mějte na paměti následu
    ||TabIndex|1|
    ||AccessibleDescription|Velké Pizza|
    ||Přístupný|Velké Pizza|
-   |Popisek|Name|toppingsLabel|
+   |Štítek|Name|toppingsLabel|
    ||Text|& toppings ($0,75)|
    ||TabIndex|5|
    ||AccessibleDescription|Popisek toppings|
@@ -129,7 +132,7 @@ Při přidávání ovládacích prvků do formuláře mějte na paměti následu
    ||TabIndex|7|
    ||AccessibleDescription|Celková objednávka|
    ||Přístupný|Celková objednávka|
-   |Tlačítko|Name|operaci|
+   |Tlačítko|Name|Operaci|
    ||Text|Zrušit &|
    ||TabIndex|8|
    ||AccessibleDescription|Zrušit pořadí|
@@ -165,96 +168,88 @@ V naší aplikaci je `lblCompanyName`jediným prvkem, který nepoužívá nastav
 1. Vytvořte metodu pro nastavení barev popisku na systémové barvy.
 
     ```vb
-    ' Visual Basic
     Private Sub SetColorScheme()
-       If SystemInformation.HighContrast Then
-          companyLabel.BackColor = SystemColors.Window
-          companyLabel.ForeColor = SystemColors.WindowText
-       Else
-          companyLabel.BackColor = Color.Blue
-          companyLabel.ForeColor = Color.Yellow
-       End If
+        If SystemInformation.HighContrast Then
+            companyLabel.BackColor = SystemColors.Window
+            companyLabel.ForeColor = SystemColors.WindowText
+        Else
+            companyLabel.BackColor = Color.Blue
+            companyLabel.ForeColor = Color.Yellow
+        End If
     End Sub
     ```
 
     ```csharp
-    // C#
     private void SetColorScheme()
     {
-       if (SystemInformation.HighContrast)
-       {
-          companyLabel.BackColor = SystemColors.Window;
-          companyLabel.ForeColor = SystemColors.WindowText;
-       }
-       else
-       {
-          companyLabel.BackColor = Color.Blue;
-          companyLabel.ForeColor = Color.Yellow;
-       }
+        if (SystemInformation.HighContrast)
+        {
+            companyLabel.BackColor = SystemColors.Window;
+            companyLabel.ForeColor = SystemColors.WindowText;
+        }
+        else
+        {
+            companyLabel.BackColor = Color.Blue;
+            companyLabel.ForeColor = Color.Yellow;
+        }
     }
     ```
 
-2. Zavolejte proceduru v konstruktoru formuláře (`Public Sub New()` v Visual Basic a `public class Form1` v vizuálu C#). `SetColorScheme` Chcete-li získat přístup k konstruktoru v Visual Basic, bude nutné rozšířit oblast označený jako **kód vygenerovaný návrhářem Windows Form**.
+2. Zavolejte proceduru v konstruktoru formuláře (`Public Sub New()` v Visual Basic a `public Form1()` v vizuálu C#). `SetColorScheme` Chcete-li získat přístup k konstruktoru v Visual Basic, bude nutné rozšířit oblast označený jako **kód vygenerovaný návrhářem Windows Form**.
 
     ```vb
-    ' Visual Basic
     Public Sub New()
-       MyBase.New()
-       InitializeComponent()
-       SetColorScheme()
+        MyBase.New()
+        InitializeComponent()
+        SetColorScheme()
     End Sub
     ```
 
     ```csharp
-    // C#
     public Form1()
     {
-       InitializeComponent();
-       SetColorScheme();
+        InitializeComponent();
+        SetColorScheme();
     }
     ```
 
 3. Vytvořte proceduru události s odpovídající signaturou, která bude reagovat <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> na událost.
 
     ```vb
-    ' Visual Basic
-    Protected Sub UserPreferenceChanged(ByVal sender As Object, _
-    ByVal e As Microsoft.Win32.UserPreferenceChangedEventArgs)
-       SetColorScheme()
+    Protected Sub UserPreferenceChanged(sender As Object, _
+    e As Microsoft.Win32.UserPreferenceChangedEventArgs)
+        SetColorScheme()
     End Sub
     ```
 
     ```csharp
-    // C#
     public void UserPreferenceChanged(object sender,
     Microsoft.Win32.UserPreferenceChangedEventArgs e)
     {
-       SetColorScheme();
+        SetColorScheme();
     }
     ```
 
 4. Přidejte kód do konstruktoru formuláře po volání `InitializeComponents`, pro připojení procedury události k systémové události. Tato metoda volá `SetColorScheme` proceduru.
 
     ```vb
-    ' Visual Basic
     Public Sub New()
-       MyBase.New()
-       InitializeComponent()
-       SetColorScheme()
-       AddHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
-          AddressOf Me.UserPreferenceChanged
+        MyBase.New()
+        InitializeComponent()
+        SetColorScheme()
+        AddHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
+           AddressOf Me.UserPreferenceChanged
     End Sub
     ```
 
     ```csharp
-    // C#
     public Form1()
     {
-       InitializeComponent();
-       SetColorScheme();
-       Microsoft.Win32.SystemEvents.UserPreferenceChanged
-          += new Microsoft.Win32.UserPreferenceChangedEventHandler(
-          this.UserPreferenceChanged);
+        InitializeComponent();
+        SetColorScheme();
+        Microsoft.Win32.SystemEvents.UserPreferenceChanged
+           += new Microsoft.Win32.UserPreferenceChangedEventHandler(
+           this.UserPreferenceChanged);
     }
     ```
 
@@ -264,34 +259,27 @@ V naší aplikaci je `lblCompanyName`jediným prvkem, který nepoužívá nastav
     > Kód systémové události spouští vlákno oddělené od hlavní aplikace. Pokud událost neuvolníte, kód, který zaznamenáte do události, bude spuštěn i po zavření programu.
 
     ```vb
-    ' Visual Basic
     Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
-       If disposing Then
-          If Not (components Is Nothing) Then
-             components.Dispose()
-          End If
-       End If
-       RemoveHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
-          AddressOf Me.UserPreferenceChanged
-       MyBase.Dispose(disposing)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        RemoveHandler Microsoft.Win32.SystemEvents.UserPreferenceChanged, _
+           AddressOf Me.UserPreferenceChanged
+        MyBase.Dispose(disposing)
     End Sub
     ```
 
     ```csharp
-    // C#
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-       if( disposing )
-       {
-          if (components != null)
-          {
-             components.Dispose();
-          }
-       }
-       Microsoft.Win32.SystemEvents.UserPreferenceChanged
-          -= new Microsoft.Win32.UserPreferenceChangedEventHandler(
-          this.UserPreferenceChanged);
-       base.Dispose( disposing );
+        if(disposing && components != null)
+        {
+            components.Dispose();
+        }
+        Microsoft.Win32.SystemEvents.UserPreferenceChanged
+           -= new Microsoft.Win32.UserPreferenceChangedEventHandler(
+           this.UserPreferenceChanged);
+        base.Dispose( disposing );
     }
     ```
 

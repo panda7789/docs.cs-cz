@@ -1,75 +1,99 @@
 ---
-title: Instalace Tvůrce modelu
-description: Zjistěte, jak nainstalovat nástroj Tvůrce modelu ML.NET
+title: Jak nainstalovat Tvůrce modelů
+description: Zjistěte, jak nainstalovat nástroj ML.NET model Builder.
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 06/21/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: 54ab595c56f816517180aab48022c7df207fe84d
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: b0d45ab7807bf84b98c58e85580d5aa04d0c5f7d
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410650"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306329"
 ---
-# <a name="how-to-install-mlnet-model-builder"></a>Instalace Tvůrce modelu ML.NET
+# <a name="how-to-install-mlnet-model-builder"></a>Postup instalace Tvůrce modelů ML.NET
 
-Zjistěte, jak nainstalovat Tvůrce modelu ML.NET přidání machine learningu do aplikací .NET.
+Naučte se instalovat tvůrce modelů ML.NET a přidat do aplikací .NET strojové učení.
 
 > [!NOTE]
-> Tvůrce modelu je aktuálně ve verzi Preview.
+> Tvůrce modelů je aktuálně ve verzi Preview.
 
 ## <a name="pre-requisites"></a>Požadavky
 
-- Visual Studio 2017 15.9.12 nebo vyšší / Visual Studio. 2019
-- .NET core 2.1 nebo novější sady SDK
+- Visual Studio 2017 15.9.12 nebo novější/Visual Studio 2019
+- Sada .NET Core 2,1 nebo novější SDK
 
 ## <a name="limitations"></a>Omezení
 
-- Rozšíření Tvůrce modelu ML.NET aktuálně funguje pouze v sadě Visual Studio na Windows.
-- Trénovací datové sady limit 1GB
-- SQL Server má limit 100 tisíc řádků pro školení
-- Microsoft SQL Server Data Tools pro Visual Studio 2017 se nepodporuje.
+- Rozšíření tvůrce modelů ML.NET je aktuálně funguje pouze v sadě Visual Studio ve Windows.
+- Školení pro datovou sadu o velikosti 1 GB
+- SQL Server má limit 100 000 řádků pro školení
+- Microsoft SQL Server Data Tools for Visual Studio 2017 se nepodporuje.
 
 ## <a name="install"></a>Instalace
 
-Tvůrce modelu ML.NET se dají nainstalovat přes Visual Studio Marketplace nebo v rámci sady Visual Studio. 
+Tvůrce modelů ML.NET se dá nainstalovat buď prostřednictvím Visual Studio Marketplace, nebo v sadě Visual Studio. 
 
 ### <a name="visual-studio-marketplace"></a>Visual Studio Marketplace
 
 1. Stáhnout z [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MLNET.07)
-1. Postupujte podle pokynů k instalaci na příslušnou verzi sady Visual Studio
+1. Podle zobrazených výzev nainstalujte do příslušné verze sady Visual Studio.
 
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-1. V panelu nabídek vyberte **nástroje** > **rozšíření a aktualizace**
-1. Uvnitř *rozšíření a aktualizace* příkazový řádek, vyberte *Online* uzlu.
-1. Na panelu hledání vyhledejte *Tvůrce modelu ML.NET* a ve výsledcích vyberte ML.NET Tvůrce modelu (Preview)
-1. Postupujte podle pokynů k dokončení instalace
+1. V řádku nabídek vyberte rozšíření **nástrojů** > **a aktualizace** .
+
+    ![Dialogové okno VS2017 Open Extensions Manager](./media/install-model-builder/vs2017-open-extensions-manager.png)
+
+1. V okně s výzvou k *rozšíření a aktualizaci* vyberte *online* uzel.
+1. Na panelu hledání vyhledejte *Tvůrce modelů ml.NET* a z výsledků vyberte ml.NET model Builder (Preview).
+
+    ![VS2017 vyhledat a nainstalovat rozšíření tvůrce modelů v dialogovém okně Správce rozšíření](./media/install-model-builder/vs2017-install-model-builder.png)
+
+1. Podle pokynů dokončete instalaci.
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-1. Na panelu nabídek vyberte **rozšíření** > **spravovat rozšíření**
-1. Uvnitř *rozšíření a aktualizace* příkazový řádek, vyberte *Online* uzlu.
-1. Typ *Tvůrce modelu ML.NET* do panelu vyhledávání vyberte ML.NET Tvůrce modelu (Preview)
-1. Postupujte podle pokynů k dokončení instalace
+1. Na panelu nabídek vyberte **rozšíření** > **Spravovat rozšíření** .
+
+    ![Dialogové okno VS2019 Open Extensions Manager](./media/install-model-builder/vs2019-open-extensions-manager.png)
+
+1. V okně s výzvou k *rozšíření a aktualizaci* vyberte *online* uzel.
+1. Do panelu hledání zadejte *ml.NET model Builder* , vyberte ml.NET model Builder (Preview).
+
+    ![VS2019 vyhledat a nainstalovat rozšíření tvůrce modelů v dialogovém okně Správce rozšíření](./media/install-model-builder/vs2019-install-model-builder.png)
+
+1. Podle pokynů dokončete instalaci.
 
 ## <a name="uninstall"></a>Odinstalovat
 
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
-1. Na panelu nabídek vyberte **nástroje** > **rozšíření a aktualizace**
-1. Uvnitř *rozšíření a aktualizace* výzvu, rozbalte *nainstalováno* uzel a vyberte možnost *nástroje*
-1. Ze seznamu nástrojů vyberte ML.NET Tvůrce modelu (Preview) a pak vyberte *odinstalace*
-1. Postupujte podle pokynů k dokončení odinstalace.
+1. Na řádku nabídek vyberte rozšíření **nástrojů** > **a aktualizace** .
+
+    ![VS2017 otevřít dialogové okno Správa rozšíření](./media/install-model-builder/vs2017-open-extensions-manager.png)
+
+1. V příkazovém řádku *rozšíření a aktualizace* rozbalte *nainstalovaný* uzel a vyberte *nástroje* .
+1. V seznamu nástrojů vyberte Tvůrce modelů ML.NET (Preview) a pak vyberte *odinstalovat* .
+
+    ![VS2017 vyhledat a odinstalovat rozšíření tvůrce modelů v dialogovém okně Správce rozšíření](./media/install-model-builder/vs2017-uninstall-model-builder.png)
+
+1. Dokončete odinstalaci podle pokynů.
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-1. Na panelu nabídek vyberte **rozšíření** > **spravovat rozšíření**
-1. Uvnitř *rozšíření a aktualizace* výzvu, rozbalte *nainstalováno* uzel a vyberte možnost *nástroje*
-1. Ze seznamu nástrojů vyberte ML.NET Tvůrce modelu (Preview) a pak vyberte *odinstalace*
-1. Postupujte podle pokynů k dokončení odinstalace.
+1. Na panelu nabídek vyberte **rozšíření** > **Spravovat rozšíření** .
 
-## <a name="upgrade"></a>Upgrade
+    ![VS2019 otevřít dialogové okno Správa rozšíření](./media/install-model-builder/vs2019-open-extensions-manager.png)
 
-Proces upgradu je podobný procesu instalace. Stáhněte si nejnovější verzi z webu Visual Studio Marketplace nebo pomocí Správce rozšíření v sadě Visual Studio.
+1. V příkazovém řádku *rozšíření a aktualizace* rozbalte *nainstalovaný* uzel a vyberte *nástroje* .
+1. V seznamu nástrojů vyberte Tvůrce modelů ML.NET (Preview) a pak vyberte *odinstalovat* .
+
+    ![VS2019 vyhledat a odinstalovat rozšíření tvůrce modelů v dialogovém okně Správce rozšíření](./media/install-model-builder/vs2019-uninstall-model-builder.png)
+
+1. Dokončete odinstalaci podle pokynů.
+
+## <a name="upgrade"></a>Přejít
+
+Proces upgradu je podobný procesu instalace. Buď si stáhněte nejnovější verzi z Visual Studio Marketplace nebo použijte Správce rozšíření v aplikaci Visual Studio.
