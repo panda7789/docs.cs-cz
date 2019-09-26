@@ -1,0 +1,32 @@
+- name: Windows Presentation Foundation pro .NET Core
+  items:
+    - name: Přehled
+      items:
+        - name: Co je WPF (Windows Presentation Foundation)?
+          href: overview/index.md
+    - name: Začínáme
+      items:
+        - name: Vytvoření aplikace WPF
+          href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
+    - name: Migrace
+      items:
+        - name: Rozdíly oproti rozhraní .NET Framework
+          href: migration/differences-from-net-framework.md
+        - name: Migrace z rozhraní Framework na Core
+          href: migration/convert-project-from-net-framework.md
+    - name: Základy
+      items:
+        - name: XAML
+          href: fundamentals/xaml.md
+        - name: Definování prostředků
+          href: fundamentals/xaml-resources-define.md
+        - name: Styly a šablony
+          items:
+            - name: Přehled
+              href: fundamentals/styles-templates-overview.md
+            - name: Vytvoření a použití stylu
+              href: fundamentals/styles-templates-create-apply-style.md
+    - name: Práce s daty
+      items:
+        - name: Přehled datových vazeb
+          href: data/data-binding-overview.md

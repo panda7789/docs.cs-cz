@@ -532,6 +532,8 @@
       href: framework/tools/
     - name: Další knihovny tříd a rozhraní API
       href: framework/additional-apis/
+- name: Průvodce pro .NET Desktop – WPF (Windows Presentation Foundation)
+  href: desktop-wpf/
 - name: 'Průvodce jazykem C#'
   href: csharp/index.md
   items:
