@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6875ce0e7ae4cefa9b0c8abaded0dd4535bdf838
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 50dd4acece43628b20b6bc50a539ee197e865855
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740822"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274147"
 ---
-# <a name="coractivefunction-structure"></a><span data-ttu-id="6f9bc-102">COR_ACTIVE_FUNCTION – struktura</span><span class="sxs-lookup"><span data-stu-id="6f9bc-102">COR_ACTIVE_FUNCTION Structure</span></span>
-<span data-ttu-id="6f9bc-103">Obsahuje informace o funkcích, které jsou aktuálně aktivní vlákna snímků.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-103">Contains information about the functions that are currently active in a thread's frames.</span></span> <span data-ttu-id="6f9bc-104">Tato struktura je používán [icordebugthread2::getactivefunctions –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-104">This structure is used by the [ICorDebugThread2::GetActiveFunctions](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) method.</span></span>  
+# <a name="cor_active_function-structure"></a><span data-ttu-id="10539-102">COR_ACTIVE_FUNCTION – struktura</span><span class="sxs-lookup"><span data-stu-id="10539-102">COR_ACTIVE_FUNCTION Structure</span></span>
+<span data-ttu-id="10539-103">Obsahuje informace o funkcích, které jsou aktuálně aktivní v rámečcích vlákna.</span><span class="sxs-lookup"><span data-stu-id="10539-103">Contains information about the functions that are currently active in a thread's frames.</span></span> <span data-ttu-id="10539-104">Tato struktura je používána metodou [ICorDebugThread2:: GetActiveFunctions –](icordebugthread2-getactivefunctions-method.md) .</span><span class="sxs-lookup"><span data-stu-id="10539-104">This structure is used by the [ICorDebugThread2::GetActiveFunctions](icordebugthread2-getactivefunctions-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6f9bc-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6f9bc-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="10539-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="10539-105">Syntax</span></span>  
   
 ```cpp  
 typedef struct  _COR_ACTIVE_FUNCTION {  
@@ -38,26 +38,26 @@ typedef struct  _COR_ACTIVE_FUNCTION {
 } COR_ACTIVE_FUNCTION;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="6f9bc-106">Členové</span><span class="sxs-lookup"><span data-stu-id="6f9bc-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="10539-106">Členové</span><span class="sxs-lookup"><span data-stu-id="10539-106">Members</span></span>  
   
-|<span data-ttu-id="6f9bc-107">Člen</span><span class="sxs-lookup"><span data-stu-id="6f9bc-107">Member</span></span>|<span data-ttu-id="6f9bc-108">Popis</span><span class="sxs-lookup"><span data-stu-id="6f9bc-108">Description</span></span>|  
+|<span data-ttu-id="10539-107">Člen</span><span class="sxs-lookup"><span data-stu-id="10539-107">Member</span></span>|<span data-ttu-id="10539-108">Popis</span><span class="sxs-lookup"><span data-stu-id="10539-108">Description</span></span>|  
 |------------|-----------------|  
-|`pAppDomain`|<span data-ttu-id="6f9bc-109">Ukazatel na vlastník domény aplikace `ilOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-109">Pointer to the application domain owner of the `ilOffset` field.</span></span>|  
-|`pModule`|<span data-ttu-id="6f9bc-110">Ukazatel na vlastníka modulu `ilOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-110">Pointer to the module owner of the `ilOffset` field.</span></span>|  
-|`pFunction`|<span data-ttu-id="6f9bc-111">Ukazatel na funkci vlastníka `ilOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-111">Pointer to the function owner of the `ilOffset` field.</span></span>|  
-|`ilOffset`|<span data-ttu-id="6f9bc-112">Posun Microsoft intermediate language (MSIL) rámce.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-112">The Microsoft intermediate language (MSIL) offset of the frame.</span></span>|  
-|`flags`|<span data-ttu-id="6f9bc-113">Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="6f9bc-113">Reserved for future extensibility.</span></span>|  
+|`pAppDomain`|<span data-ttu-id="10539-109">Ukazatel na vlastníka domény aplikace daného `ilOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="10539-109">Pointer to the application domain owner of the `ilOffset` field.</span></span>|  
+|`pModule`|<span data-ttu-id="10539-110">Ukazatel na vlastníka `ilOffset` pole.</span><span class="sxs-lookup"><span data-stu-id="10539-110">Pointer to the module owner of the `ilOffset` field.</span></span>|  
+|`pFunction`|<span data-ttu-id="10539-111">Ukazatel na vlastníka `ilOffset` funkce pole.</span><span class="sxs-lookup"><span data-stu-id="10539-111">Pointer to the function owner of the `ilOffset` field.</span></span>|  
+|`ilOffset`|<span data-ttu-id="10539-112">Posun jazyka MSIL (Microsoft Intermediate Language) rámce.</span><span class="sxs-lookup"><span data-stu-id="10539-112">The Microsoft intermediate language (MSIL) offset of the frame.</span></span>|  
+|`flags`|<span data-ttu-id="10539-113">Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="10539-113">Reserved for future extensibility.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="6f9bc-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6f9bc-114">Requirements</span></span>  
- <span data-ttu-id="6f9bc-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6f9bc-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="10539-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="10539-114">Requirements</span></span>  
+ <span data-ttu-id="10539-115">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="10539-115">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6f9bc-116">**Záhlaví:** CorDebug.idl</span><span class="sxs-lookup"><span data-stu-id="6f9bc-116">**Header:** CorDebug.idl</span></span>  
+ <span data-ttu-id="10539-116">**Hlaviček** CorDebug. idl</span><span class="sxs-lookup"><span data-stu-id="10539-116">**Header:** CorDebug.idl</span></span>  
   
- <span data-ttu-id="6f9bc-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6f9bc-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="10539-117">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="10539-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6f9bc-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6f9bc-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="10539-118">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="10539-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6f9bc-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6f9bc-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10539-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10539-119">See also</span></span>
 
-- [<span data-ttu-id="6f9bc-120">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="6f9bc-120">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [<span data-ttu-id="6f9bc-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="6f9bc-121">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="10539-120">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="10539-120">Debugging Structures</span></span>](debugging-structures.md)
+- [<span data-ttu-id="10539-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="10539-121">Debugging</span></span>](index.md)

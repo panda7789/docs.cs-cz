@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5787f9f143e99ab30879ddcf8168b0e840b2fb4e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 67b85917be590bdba7ed3f10972ad39b731dbcdd
+ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67740980"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71274247"
 ---
-# <a name="clrdataenummemoryflags-enumeration"></a><span data-ttu-id="17078-102">CLRDataEnumMemoryFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="17078-102">CLRDataEnumMemoryFlags Enumeration</span></span>
-<span data-ttu-id="17078-103">Označuje volání, které oblasti paměti [iclrdataenummemoryregions::enummemoryregions –](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) metoda by měla obsahovat.</span><span class="sxs-lookup"><span data-stu-id="17078-103">Indicates which memory regions a call to the [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) method should include.</span></span>  
+# <a name="clrdataenummemoryflags-enumeration"></a><span data-ttu-id="83994-102">CLRDataEnumMemoryFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="83994-102">CLRDataEnumMemoryFlags Enumeration</span></span>
+<span data-ttu-id="83994-103">Určuje, které oblasti paměti musí volání metody [ICLRDataEnumMemoryRegions –:: EnumMemoryRegions –](iclrdataenummemoryregions-enummemoryregions-method.md) zahrnovat.</span><span class="sxs-lookup"><span data-stu-id="83994-103">Indicates which memory regions a call to the [ICLRDataEnumMemoryRegions::EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) method should include.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17078-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17078-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="83994-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83994-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CLRDataEnumMemoryFlags {  
@@ -36,22 +36,22 @@ typedef enum CLRDataEnumMemoryFlags {
 } CLRDataEnumMemoryFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="17078-105">Členové</span><span class="sxs-lookup"><span data-stu-id="17078-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="83994-105">Členové</span><span class="sxs-lookup"><span data-stu-id="83994-105">Members</span></span>  
   
-|<span data-ttu-id="17078-106">Člen</span><span class="sxs-lookup"><span data-stu-id="17078-106">Member</span></span>|<span data-ttu-id="17078-107">Popis</span><span class="sxs-lookup"><span data-stu-id="17078-107">Description</span></span>|  
+|<span data-ttu-id="83994-106">Člen</span><span class="sxs-lookup"><span data-stu-id="83994-106">Member</span></span>|<span data-ttu-id="83994-107">Popis</span><span class="sxs-lookup"><span data-stu-id="83994-107">Description</span></span>|  
 |------------|-----------------|  
-|`CLRDATA_ENUM_MEM_DEFAULT`|<span data-ttu-id="17078-108">Minimální výpis, tedy zhuštěné výpisu stavu paměti.</span><span class="sxs-lookup"><span data-stu-id="17078-108">A minidump, that is, a sparse memory dump.</span></span>|  
-|`CLRDATA_ENUM_MEM_HEAP`|<span data-ttu-id="17078-109">Výpis úplné haldy paměti.</span><span class="sxs-lookup"><span data-stu-id="17078-109">A full heap dump.</span></span>|  
+|`CLRDATA_ENUM_MEM_DEFAULT`|<span data-ttu-id="83994-108">S minimálním výpisem, to znamená zhuštěný výpis paměti.</span><span class="sxs-lookup"><span data-stu-id="83994-108">A minidump, that is, a sparse memory dump.</span></span>|  
+|`CLRDATA_ENUM_MEM_HEAP`|<span data-ttu-id="83994-109">Úplný výpis paměti haldy.</span><span class="sxs-lookup"><span data-stu-id="83994-109">A full heap dump.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="17078-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17078-110">Requirements</span></span>  
- <span data-ttu-id="17078-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17078-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="83994-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83994-110">Requirements</span></span>  
+ <span data-ttu-id="83994-111">**Platformu** Viz [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83994-111">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17078-112">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="17078-112">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="83994-112">**Hlaviček** ClrData. idl, ClrData. h</span><span class="sxs-lookup"><span data-stu-id="83994-112">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="17078-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17078-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="83994-113">**Knihovna** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="83994-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="17078-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17078-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="83994-114">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="83994-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17078-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17078-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="83994-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83994-115">See also</span></span>
 
-- [<span data-ttu-id="17078-116">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="17078-116">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [<span data-ttu-id="83994-116">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="83994-116">Debugging Enumerations</span></span>](debugging-enumerations.md)
