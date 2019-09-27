@@ -2,12 +2,12 @@
 title: Co je nového v C# 7,2
 description: Přehled nových funkcí v C# 7,2.
 ms.date: 08/16/2017
-ms.openlocfilehash: a2010b2bda769a625deb545964a2cc127aaf2e06
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: d559f07c501b2a79472d01e2815b50cd8f0f57a5
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105744"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332310"
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v C# 7,2
 
@@ -63,7 +63,7 @@ Příklad:
 int binaryValue = 0b_0101_0101;
 ```
 
-## <a name="_private-protected_-access-modifier"></a>modifikátor privátního chráněného přístupu
+## <a name="private-protected-access-modifier"></a>Modifikátor *privátního chráněného* přístupu
 
 Nový modifikátor složeného přístupu: `private protected` označuje, že člen může být přístupný pomocí obsahující třídy nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. I `protected internal` když umožňuje přístup odvozenými třídami nebo třídami, které jsou ve `private protected` stejném sestavení, omezují přístup k odvozeným typům deklarovaným ve stejném sestavení.
 
