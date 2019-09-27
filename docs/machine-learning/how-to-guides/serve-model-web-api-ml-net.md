@@ -1,16 +1,16 @@
 ---
 title: Nasazení modelu do ASP.NET Core webového rozhraní API
 description: Obsluha modelu strojového učení ML.NET mínění přes Internet pomocí ASP.NET Core webového rozhraní API
-ms.date: 08/20/2019
+ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8d21ae5ae3aa4701ddd7d042d5069351c22864bb
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1173315bbc88797ce0c6d0fcc9597896f14889ac
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182547"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332693"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Nasazení modelu do ASP.NET Core webového rozhraní API
 
@@ -103,9 +103,9 @@ Musíte vytvořit některé třídy pro vstupní data a předpovědi. Přidejte 
 
 ## <a name="register-predictionenginepool-for-use-in-the-application"></a>Registrovat PredictionEnginePool pro použití v aplikaci
 
-K provedení jedné předpovědi použijte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). Aby bylo možné v [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) aplikaci používat, musíte ji vytvořit, až bude potřeba. V takovém případě je osvědčeným postupem použití injektáže závislostí.
+Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a zabezpečení vlákna použijte kombinaci injektáže a `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
 
-Následující odkaz poskytuje další informace, pokud se chcete dozvědět o [vkládání závislostí v ASP.NET Core](/aspnet/core/fundamentals/dependency-injection).
+Následující odkaz poskytuje další informace, pokud se chcete dozvědět víc o [vkládání závislostí v ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1).
 
 1. Otevřete třídu *Startup.cs* a na začátek souboru přidejte následující příkaz using:
 
@@ -126,14 +126,19 @@ Následující odkaz poskytuje další informace, pokud se chcete dozvědět o [
     {
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
-            .FromFile("MLModels/sentiment_model.zip");
+            .FromFile(modelName: "SentimentAnalysisModel", filePath:"MLModels/sentiment_model.zip", watchForChanges: true);
     }
     ```
 
-Na vysoké úrovni tento kód automaticky inicializuje objekty a služby, pokud je aplikace požaduje, místo toho, aby ji ručně provedete.
+Na vysoké úrovni tento kód automaticky inicializuje objekty a služby pro pozdější použití v případě, že je aplikace požaduje místo ručního provedení. 
 
-> [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602)není bezpečná pro přístup z více vláken. Pro zlepšení výkonu a bezpečnosti vláken použijte `PredictionEnginePool` službu, která [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) vytvoří `PredictionEngine` objekty pro použití aplikací. Další informace o [vytváření a používání `PredictionEngine` fondů objektů v ASP.NET Core](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)najdete v tomto blogovém příspěvku.  
+Modely strojového učení nejsou statické. Jakmile budou k dispozici nová školicí data, model se přeškolí a znovu nasadí. Jedním ze způsobů, jak získat nejnovější verzi modelu do vaší aplikace, je znovu nasadit celou aplikaci. Tím se ale zavádí výpadek aplikace. Služba `PredictionEnginePool` poskytuje mechanismus pro opětovné načtení aktualizovaného modelu bez nutnosti pořizovat aplikaci. 
+
+Nastavte parametr `watchForChanges` na `true` a `PredictionEnginePool` spustí [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) , které naslouchají oznámením o změnách systému souborů a vyvolává události, když dojde ke změně souboru. Tím se zobrazí výzva `PredictionEnginePool` pro automatické opětovné načtení modelu.
+
+Model je identifikován parametrem `modelName`, aby bylo při změně možné znovu načíst více než jeden model na aplikaci. 
+
+Alternativně můžete použít metodu `FromUri` při práci s místně uloženými modely. Místo sledování událostí změněných souborů `FromUri` se dotazuje na vzdálené umístění pro změny. Interval dotazování je ve výchozím nastavení nastaven na 5 minut. Interval dotazování můžete zvýšit nebo snížit na základě požadavků vaší aplikace.
 
 ## <a name="create-predict-controller"></a>Vytvořit kontroler předpovědi
 
@@ -170,7 +175,7 @@ Pokud chcete zpracovat příchozí požadavky HTTP, vytvořte kontroler.
                 return BadRequest();
             }
 
-            SentimentPrediction prediction = _predictionEnginePool.Predict(input);
+            SentimentPrediction prediction = _predictionEnginePool.Predict(modelName: "SentimentAnalysisModel", example: input);
 
             string sentiment = Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative";
 
@@ -179,7 +184,7 @@ Pokud chcete zpracovat příchozí požadavky HTTP, vytvořte kontroler.
     }
     ```
 
-Tento kód přiřadí `PredictionEnginePool` rozhraní předáním do konstruktoru kontroleru, který získáte prostřednictvím vkládání závislostí. `Predict` Pak Metoda`Post` řadiče používá `PredictionEnginePool` k vytvoření předpovědi a vrátí výsledky zpátky uživateli, pokud je to úspěšné.
+Tento kód přiřadí `PredictionEnginePool` rozhraní předáním do konstruktoru kontroleru, který získáte prostřednictvím vkládání závislostí. Pak metoda `Post` řadiče `Predict` používá `PredictionEnginePool` k vytvoření předpovědi pomocí `SentimentAnalysisModel` registrovaného ve třídě `Startup` a vrátí výsledky zpátky uživateli, pokud je úspěšný.
 
 ## <a name="test-web-api-locally"></a>Místní testování webového rozhraní API
 

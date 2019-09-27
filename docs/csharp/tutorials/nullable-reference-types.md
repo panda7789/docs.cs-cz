@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: ea8059061dccc85060b4f6244ff0d7be9b7708b8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 6b127cce66f2f9ced3cee29336b39e2976e03619
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214412"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332346"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Jasně vyjádřete záměr návrhu s hodnotou null a odkazy, které neumožňují hodnotu null.
 
@@ -43,12 +43,6 @@ Vytvořte novou konzolovou aplikaci buď v aplikaci Visual Studio, nebo z přík
 <LangVersion>8.0</LangVersion>
 <Nullable>enable</Nullable>
 ```
-
-> [!IMPORTANT]
-> Element se dřív jmenoval `NullableContextOptions`. `Nullable` Přejmenování se dodává se sadou Visual Studio 2019, 16,2-P1. Tato změna nemá .NET Core SDK 3.0.100-preview5-011568. Pokud používáte .NET Core CLI, budete ho muset použít `NullableContextOptions` , až bude k dispozici další verze Preview.
-
-> [!NOTE]
-> Když C# se uvolní 8 (není v režimu náhledu), `Nullable` element se přidá do nových šablon projektů. Až pak ho budete muset přidat ručně.
 
 ### <a name="design-the-types-for-the-application"></a>Návrh typů pro aplikaci
 

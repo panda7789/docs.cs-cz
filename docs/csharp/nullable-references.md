@@ -2,12 +2,12 @@
 title: Odkazové typy s možnou hodnotou null
 description: Tento článek poskytuje přehled typů odkazů s možnou hodnotou null přidaných v C# 8. Dozvíte se, jak funkce poskytuje zabezpečení proti výjimkám odkazů s hodnotou null pro nové a existující projekty.
 ms.date: 02/19/2019
-ms.openlocfilehash: 80018aaa409e7b4c188362482705de33ac5afd85
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 05a8e14a7c51df685b3ffdf16aab997da0a8036f
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272783"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332364"
 ---
 # <a name="nullable-reference-types"></a>Odkazové typy s možnou hodnotou null
 
@@ -74,9 +74,12 @@ Můžete také použít direktivy pro nastavení stejných kontextů kdekoli v p
 - `#nullable enable`: Nastaví kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null na **povoleno**.
 - `#nullable disable`: Nastaví kontext poznámky s možnou hodnotou null a kontext s možnou hodnotou null na **disabled**.
 - `#nullable restore`: Obnoví kontext anotace s možnou hodnotou null a kontext s možnou hodnotou null na nastavení projektu.
-- `#pragma warning disable nullable`: Nastavte výstražný kontext s možnou hodnotou null na **disabled**.
-- `#pragma warning enable nullable`: Nastavte výstražný kontext s možnou hodnotou null na **povoleno**.
-- `#pragma warning restore nullable`: Obnoví kontext upozornění s možnou hodnotou null na nastavení projektu.
+- `#nullable disable warnings`: Nastavte výstražný kontext s možnou hodnotou null na **disabled**.
+- `#nullable enable warnings`: Nastavte výstražný kontext s možnou hodnotou null na **povoleno**.
+- `#nullable restore warnings`: Obnoví kontext upozornění s možnou hodnotou null na nastavení projektu.
+- `#nullable disable annotations`: Nastavte kontext anotace s možnou hodnotou null na **disabled**.
+- `#nullable enable annotations`: Nastavte kontext anotace s možnou hodnotou null na **Enabled**.
+- `#nullable restore annotations`: Obnoví kontext upozornění poznámky na nastavení projektu.
 
 Výchozí anotace s možnou hodnotou null a `disabled`kontexty upozornění jsou. Toto rozhodnutí znamená, že váš stávající kód se zkompiluje beze změn a bez generování nových upozornění.
 

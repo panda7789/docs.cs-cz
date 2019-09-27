@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 66f60b2342b6ff64f1329cbe57032291d5139384
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 15e18888e307a14c4396966afc0a623e1acba104
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67770599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332813"
 ---
 # <a name="icordebugthreadsetdebugstate-method"></a>ICorDebugThread::SetDebugState – metoda
-Sets flags that describe the debugging state of this ICorDebugThread.  
+Nastaví příznaky, které popisují stav ladění tohoto ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT SetDebugState (
   
 ## <a name="parameters"></a>Parametry  
  `state`  
- [in] Bitová kombinace hodnot cordebugthreadstate – výčet, které určují stav ladění tohoto vlákna.  
+ pro Bitová kombinace hodnot výčtu CorDebugThreadState –, která určuje stav ladění tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetDebugState` Nastaví aktuální stav ladění vlákna. (The "current debug state" represents the debug state if the process were to be continued, not the actual current state.) Běžné hodnoty je THREAD_RUNNING. Pouze ladicí program může ovlivnit stav ladění vlákna. Ladění stavy poslední napříč bude pokračovat, pokud chcete zachovat vlákno pokračuje THREAD_SUSPENDed přes více, abyste mohli nastavit jednou a po tomto datu není nutné se starat o něm. Pozastavení vlákna a procesu obnovení může způsobit zablokování, když je nepravděpodobné, že by obvykle. Toto je vnitřní kvalitu vláken a procesů a podle návrhu. Ladicí program můžete asynchronně přerušit a pokračování vláken pro přerušení zablokování. Pokud je stav vlákna uživatele USER_UNSAFE_POINT, může zablokovat vlákno uvolňování paměti (GC). To znamená, že pozastaveného vlákna má mnohem vyšší pravděpodobnost způsobit zablokování. To nemusí ovlivnit ladění, které už ve frontě událostí. Proto by měl ladicí program vyprázdnění fronty celá událost (voláním [icordebugcontroller::hasqueuedcallbacks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)) před pozastavování a obnovování vláken. Jinak se může zobrazit události na vlákně, které se domnívá, že již byla pozastavena.  
+ `SetDebugState` nastaví aktuální stav ladění vlákna. (Stav "aktuální ladění" představuje stav ladění, pokud proces pokračoval v pokračování, nikoli aktuálním aktuálním stavem.) Normální hodnota tohoto pole je THREAD_RUN. Pouze ladicí program může ovlivnit stav ladění vlákna. Stavy ladění trvají v průběhu několika instancí, takže pokud chcete, aby se THREAD_SUSPENDed vlákno více pokračovalo, můžete ho nastavit jednou a pak se na něj nemusíte starat. Pozastavení vláken a obnovení procesu může způsobit zablokování, i když je obvykle nepravděpodobné. Toto je vnitřní kvalita vláken a procesů a je záměrné. Ladicí program může asynchronně poškodit a obnovit vlákna pro přerušení zablokování. Pokud stav uživatele vlákna zahrnuje USER_UNSAFE_POINT, vlákno může zablokovat uvolňování paměti (GC). To znamená, že pozastavené vlákno má mnohem větší šanci na způsob zablokování. To nemusí mít vliv na události ladění, které jsou už ve frontě. Proto by měl ladicí program Vyprázdnit celou frontu událostí (voláním [ICorDebugController:: HasQueuedCallbacks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)) před přerušením nebo pokračováním v vláknech. V opačném případě může obdržet události pro vlákno, u kterého se domnívá, že již byla pozastavena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlaviček** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

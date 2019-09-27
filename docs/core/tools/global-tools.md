@@ -4,12 +4,12 @@ description: Přehled toho, jaké globální nástroje .NET Core jsou a jaké js
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 01c1463ceddcd64e5bab05b95a5ae4a91b6da838
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 40a0aabcf523e8dac9a3ad226064bbb3c1b3ce5b
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117458"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332011"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globálních nástrojů .NET Core
 
@@ -70,7 +70,7 @@ Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 
 Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-| OS          | Cesta                          |
+| OS          | `Path`                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -107,31 +107,6 @@ Pokyny k použití můžete vyhledat také na webu nástroje nebo zadáním jedn
 dotnet <command> --help
 ```
 
-### <a name="what-could-go-wrong"></a>Co by mohlo jít špatně
-
-Globální nástroje jsou [závislé na architektuře](../deploying/index.md#framework-dependent-deployments-fdd), což znamená, že spoléhají na modul runtime .NET Core nainstalovaný na vašem počítači. Pokud se očekávaný modul runtime nenajde, dodržuje normální pravidla předávaných modulem runtime .NET Core, jako například:
-
-* Aplikace se vrátí k nejvyšší verzi opravy zadané hlavní a dílčí verze.
-* Pokud neexistuje žádný vyhovující modul runtime se shodným číslem hlavní verze a podverze, použije se další vyšší dílčí verze.
-* Mezi verzemi verze Preview modulu runtime nebo verzí Preview a verzí verze Preview nedochází k posunutí. Proto musí být globální nástroje vytvořené pomocí verze Preview znovu sestaveny a znovu publikovány autorem a opětovnou instalací.
-* U globálních nástrojů vytvořených v rozhraní .NET Core 2,1 Preview 1 se můžou vyskytovat další problémy. Další informace najdete v tématu [známé problémy pro .NET Core 2,1 Preview 2](https://github.com/dotnet/core/blob/master/release-notes/2.1/Preview/2.1.0-preview2-known-issues.md).
-
-Pokud aplikace nemůže najít vhodný modul runtime, spuštění se nespustí a ohlásí chybu.
-
-Dalším problémem, ke kterému může dojít, je, že globální nástroj, který byl vytvořen v dřívější verzi Preview, nemusí běžet s aktuálně nainstalovanými moduly runtime .NET Core. To, které moduly runtime jsou nainstalovány na počítači, můžete zjistit pomocí následujícího příkazu:
-
-```dotnetcli
-dotnet --list-runtimes
-```
-
-Kontaktujte autora globálního nástroje a podívejte se, jestli můžou znovu kompilovat a znovu publikovat svůj balíček nástrojů do NuGet s aktualizovaným číslem verze. Po aktualizaci balíčku na NuGet můžete kopii aktualizovat.
-
-.NET Core CLI se pokusí přidat výchozí umístění do proměnné prostředí PATH při prvním použití. Existuje však několik scénářů, kde umístění nemusí být přidáno do cesty automaticky, například:
-
-* Pokud jste nastavili `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` proměnnou prostředí.
-* V macOS, pokud jste nainstalovali .NET Core SDK pomocí souborů *. tar. gz* a NOT *. pkg*.
-* V systému Linux je potřeba upravit soubor prostředí prostředí a nakonfigurovat cestu.
-
 ## <a name="other-cli-commands"></a>Další příkazy rozhraní příkazového řádku
 
 .NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použijte libovolný z `dotnet tool` těchto příkazů s jednou z následujících možností:
@@ -162,3 +137,7 @@ Chcete-li zobrazit všechny globální nástroje, které jsou aktuálně nainsta
 ```dotnetcli
 dotnet tool list -g
 ```
+
+## <a name="see-also"></a>Viz také:
+
+* [Řešení potíží s používáním nástrojů .NET Core](troubleshoot-usage-issues.md)

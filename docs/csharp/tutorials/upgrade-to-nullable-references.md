@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 616c9fdbe62d8147fb74fefc878f9277c2a1156b
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 842b1bb6e0d3032c6181cccf77934541754ff8ec
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214280"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332334"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrovat existující kód s odkazy s možnou hodnotou null
 
@@ -52,9 +52,6 @@ Dobrým dalším krokem je zapnout kontext anotace s možnou hodnotou null a zji
 ```xml
 <Nullable>enable</Nullable>
 ```
-
-> [!IMPORTANT]
-> Element se dřív jmenoval `NullableContextOptions`. `Nullable` Přejmenování se dodává se sadou Visual Studio 2019, 16,2-P1. Tato změna nemá .NET Core SDK 3.0.100-preview5-011568. Pokud používáte .NET Core CLI, budete ho muset použít `NullableContextOptions` , až bude k dispozici další verze Preview.
 
 Proveďte testovací sestavení a Všimněte si seznamu upozornění. V této malé aplikaci kompilátor vygeneruje pět upozornění, takže je pravděpodobně nutné povolit kontext poznámky s možnou hodnotou null a zahájit opravy upozornění pro celý projekt.
 

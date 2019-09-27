@@ -2,14 +2,14 @@
 title: Co je F#
 description: Přečtěte si, F# co je programovací jazyk a F# jaké je programování. Přečtěte si o bohatých datových typech, funkcích a o tom, jak se vejdou dohromady.
 ms.date: 08/03/2018
-ms.openlocfilehash: 0c576fe49fadebd68e4fc9d2b20ea8f0cb991af5
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 3cba509f59a8e81e1a0264de7451e9d80304d768
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630460"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332737"
 ---
-# <a name="what-is-f"></a>Co je F\#
+# <a name="what-is-f"></a>Co je F @ no__t-0
 
 F#je funkční programovací jazyk, který usnadňuje psaní správného a udržovatelného kódu.
 
@@ -45,7 +45,7 @@ F#obsahuje mnoho funkcí, včetně:
 * Porovnávání vzorů
 * Asynchronní programování
 
-V [ F# referenční příručce](./language-reference/index.md)k jazyku jsou popsány úplné sady funkcí.
+V [ F# referenční příručce k jazyku](./language-reference/index.md)jsou popsány úplné sady funkcí.
 
 ## <a name="rich-data-types"></a>Formátované datové typy
 
@@ -100,7 +100,7 @@ F#funkce jsou také první třídy, což znamená, že mohou být předány jako
 F#má plnou podporu pro objekty, které jsou užitečné datové typy, pokud potřebujete Blend data a funkce. F#funkce se používají k manipulaci s objekty.
 
 ```fsharp
-type Set<[<EqualityConditionOn>] 'T when 'T: comparison>(elements: seq<'T>) =
+type Set<'T when 'T: comparison>(elements: seq<'T>) =
     member s.IsEmpty = // Implementation elided
     member s.Contains (value) =// Implementation elided
     member s.Add (value) = // Implementation elided
@@ -110,7 +110,6 @@ type Set<[<EqualityConditionOn>] 'T when 'T: comparison>(elements: seq<'T>) =
     interface IEnumerable<‘T>
     interface IReadOnlyCollection<‘T>
 
-[<RequireQualifiedAccess>]
 module Set =
     let isEmpty (set: Set<'T>) = set.IsEmpty
 
@@ -121,6 +120,6 @@ module Set =
 
 Místo psaní kódu, který je objektově orientovaný, v F#nástroji budete často psát kód, který bude zpracovávat objekty jako jiný datový typ pro zpracování funkcí. Funkce, jako jsou [Obecná rozhraní](./language-reference/interfaces.md), [výrazy objektů](./language-reference/object-expressions.md)a rozumné použití [členů](./language-reference/members/index.md) , jsou běžné ve větších F# programech.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Pokud se chcete dozvědět víc o větší sadě F# funkcí, podívejte se na [ F# prohlídku](tour.md).
