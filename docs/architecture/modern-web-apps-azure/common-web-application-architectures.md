@@ -4,12 +4,12 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: a521be147c462146775caa81b6a31fb37b4103af
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 8985434467346acc360e9a89c052803f495e87d1
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71331998"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -186,7 +186,7 @@ Můžete vytvořit jednu a monolitické webovou aplikaci nebo službu založenou
 
 Chcete-li spravovat tento model, nasadíte jeden kontejner, který bude představovat aplikaci. Chcete-li škálovat, stačí přidat další kopie pomocí nástroje pro vyrovnávání zatížení předem. Jednoduchost pochází ze správy jednoho nasazení v jednom kontejneru nebo virtuálním počítači.
 
-![](./media/image5-13.png)
+![Obrázek 5-13](./media/image5-13.png)
 
 V rámci každého kontejneru můžete zahrnout více komponent, knihoven nebo vnitřních vrstev, jak je znázorněno na obrázku 5-13. Ale podle principu kontejneru _"kontejner provede jednu věc a provede ho v jednom procesu_", vzor monolitické může být konflikt.
 
@@ -198,7 +198,7 @@ Kromě problému "škálovat vše", změny jedné součásti vyžadují dokonče
 
 Přístup k monolitické je společný a mnoho organizací vyvíjí s tímto přístupem k architektuře. Mnoho z nich má dostatečný dobrý výsledek, zatímco jiné jsou omezení na více počítačů. Řada navrhla své aplikace v tomto modelu, protože nástroje a infrastruktura byly příliš obtížné sestavovat architektury orientované na služby (SOA) a nemusely být potřebné, dokud se aplikace vypnula. Pokud zjistíte, že jste dosáhli limitu přístupu monolitické, rozbalíte aplikaci, aby ji bylo možné lépe využívat kontejnery a mikroslužby se může jednat o další logický krok.
 
-![](./media/image5-14.png)
+![Obrázek 5-14](./media/image5-14.png)
 
 Nasazení aplikací monolitické v Microsoft Azure lze dosáhnout použitím vyhrazených virtuálních počítačů pro každou instanci. Pomocí [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/)můžete virtuální počítače snadno škálovat. [Azure App Services](https://azure.microsoft.com/services/app-service/) může spouštět aplikace v monolitické a snadno škálovat instance bez nutnosti správy virtuálních počítačů. Azure App Services může také spouštět jednotlivé instance kontejnerů Docker a zjednodušit tak nasazení. Pomocí Docker můžete nasadit jeden virtuální počítač jako hostitele Docker a spustit víc instancí. Pomocí služby Azure Balancer, jak je znázorněno na obrázku 5-14, můžete spravovat škálování.
 
@@ -305,5 +305,5 @@ Pokud chcete přidat podporu Docker do aplikace pomocí sady Visual Studio, ujis
   <https://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
->[Předchozí](architectural-principles.md)Další
->[](common-client-side-web-technologies.md)
+>[Předchozí](architectural-principles.md)
+>[Další](common-client-side-web-technologies.md)

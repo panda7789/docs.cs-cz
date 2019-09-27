@@ -4,17 +4,17 @@ description: Architekt moderních webových aplikací pomocí ASP.NET Core a Azu
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 7cfb9ada4f963aa392a41cfb9f1b2df22f542d41
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: ed8771a4d79b45d8fad0e5309c886c2e00402ec7
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71331990"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Doporučení hostování Azure pro ASP.NET Core Web Apps
 
 > "Obchodní vedoucí pracovníci obcházejí oddělení IT, aby získali aplikace z cloudu (označované také jako SaaS) a platíte za ně, jako by to bylo předplatné časopisu. A když už službu nepotřebujete, může předplatné zrušit bez nevyužitého zařízení, které se v rohu nepoužívá. "  
-> _\-Daryl Plummer, analytik Gartner_
+> _\- Daryl Plummer, analytik Gartner_
 
 Bez ohledu na potřeby a architekturu vaší aplikace ji Microsoft Azure můžou podporovat. Vaše potřeby hostování můžou být jednoduché jako statický web nebo propracované aplikace tvořené spoustou služeb. Pro ASP.NET Core webové aplikace a podpůrné služby je k dispozici několik známých konfigurací, které se doporučují. Doporučení k tomuto článku jsou seskupená na základě druhu prostředku, který se má hostovat, bez ohledu na to, jestli jsou úplné aplikace, jednotlivé procesy nebo data.
 
@@ -108,7 +108,7 @@ Pokud máte existující aplikaci, která by vyžadovala významné změny pro s
 
 ## <a name="logical-processes"></a>Logické procesy
 
-Jednotlivé logické procesy, které je možné oddělit od zbytku aplikace, je možné nasadit nezávisle na Azure Functions způsobem bez serveru. Azure Functions vám umožňuje napsat kód, který potřebujete pro daný problém, aniž byste se museli starat o aplikaci nebo infrastrukturu, kterou by mohli spustit. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C\#, F\#, Node. js, Pythonu a PHP, což vám umožní vybrat si pro daný úkol nejvíc produktivní jazyk. Podobně jako u většiny cloudových řešení platíte jenom za využité množství času a můžete Azure Functions důvěřovat, abyste mohli škálovat podle potřeby.
+Jednotlivé logické procesy, které je možné oddělit od zbytku aplikace, je možné nasadit nezávisle na Azure Functions způsobem bez serveru. Azure Functions vám umožňuje napsat kód, který potřebujete pro daný problém, aniž byste se museli starat o aplikaci nebo infrastrukturu, kterou by mohli spustit. Můžete si vybrat z nejrůznějších programovacích jazyků, včetně C @ no__t-0, F @ no__t-1, Node. js, Pythonu a PHP, což vám umožní vybrat pro daný úkol nejúčinnější jazyk. Podobně jako u většiny cloudových řešení platíte jenom za využité množství času a můžete Azure Functions důvěřovat, abyste mohli škálovat podle potřeby.
 
 ## <a name="data"></a>Data
 
@@ -124,9 +124,9 @@ Přechodná data založená na příkazech nebo událostech sloužících k orch
 
 Požadavky vaší aplikace by měly určovat její architekturu. K dispozici je celá řada různých služeb Azure. Výběr pravého rozhodnutí je důležité rozhodnutí. Microsoft nabízí galerii referenčních architektur, které vám pomůžou identifikovat typické architektury optimalizované pro běžné scénáře. Můžete najít referenční architekturu, která se bude úzce mapovat na požadavky vaší aplikace, nebo aspoň na výchozím bodu.
 
-Obrázek 11-2 ukazuje příklad referenční architektury. Tento diagram popisuje doporučený postup architektury pro web systému správy obsahu Sitecore optimalizovaný pro marketing.
+Obrázek 11-1 ukazuje příklad referenční architektury. Tento diagram popisuje doporučený postup architektury pro web systému správy obsahu Sitecore optimalizovaný pro marketing.
 
-![](./media/image11-2.png)
+![Obrázek 11-1](./media/image11-2.png)
 
 **Obrázek 11-1.** Referenční architektura Sitecore marketingu webu.
 

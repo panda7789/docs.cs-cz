@@ -2,12 +2,12 @@
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
 ms.date: 01/07/2019
-ms.openlocfilehash: aa500b5525eff9f0bbf91bf98de8945f7c84704f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: de1dad44b1ddc7b04438fb380f240d3be33bbb83
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296072"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71331982"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
 
@@ -21,7 +21,7 @@ Následující kroky ukazují, jak můžete použít opakování protokolu HTTP 
 
 **Odkazování na balíčky ASP.NET Core 2,2**
 
-`HttpClientFactory`je k dispozici od .NET Core 2,1, ale doporučujeme použít nejnovější balíčky ASP.NET Core 2,2 ze sady NuGet ve vašem projektu. Obvykle potřebujete `AspNetCore` Metapackage a balíček `Microsoft.Extensions.Http.Polly`rozšíření.
+`HttpClientFactory` je k dispozici od rozhraní .NET Core 2,1. Doporučujeme však, abyste použili nejnovější balíčky ASP.NET Core 2,2 z NuGet ve vašem projektu. Obvykle potřebujete `AspNetCore` Metapackage a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
 
 **Konfigurace klienta pomocí zásad opakování Polly při spuštění**
 
@@ -34,9 +34,9 @@ services.AddHttpClient<IBasketService, BasketService>()
         .AddPolicyHandler(GetRetryPolicy());
 ```
 
-Metoda **AddPolicyHandler ()** je to, co přidává zásady pro `HttpClient` objekty, které budete používat. V takovém případě přidáváme zásady Polly pro opakování HTTP pomocí exponenciálního omezení rychlosti.
+Metoda **AddPolicyHandler ()** je to, co přidává zásady do objektů `HttpClient`, které budete používat. V takovém případě přidáváme zásady Polly pro opakování HTTP pomocí exponenciálního omezení rychlosti.
 
-Chcete-li mít více modulární přístup, je možné v rámci `Startup.cs` souboru definovat zásady opakování protokolu HTTP v samostatné metodě, jak je znázorněno v následujícím kódu:
+Chcete-li mít obecnější přístup, zásady opakování http lze definovat v samostatné metodě v souboru `Startup.cs`, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -50,8 +50,6 @@ static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
 ```
 
 Pomocí Polly můžete definovat zásady opakování s počtem opakování, exponenciální konfigurací omezení rychlosti a akcemi, které se mají provést, pokud dojde k výjimce HTTP, jako je například protokolování chyby. V takovém případě je zásada nakonfigurovaná tak, aby vyzkoušela šest časů s exponenciálním opakováním, od dvou sekund. 
-
-Proto bude zkoušet šest časů a sekundy mezi jednotlivými opakováními budou exponenciální, počínaje dvou sekundami.
 
 ## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Přidání strategie kolísání do zásady opakování
 
@@ -78,9 +76,9 @@ Policy
 - **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
   <https://github.com/App-vNext/Polly>
 
-- **Brooker ohraničení Zpoždění Lepší zvýšení náhodnosti**  
+- @no__t – 0Marc Brooker. Zpoždění Lepší zvýšení náhodnosti @ no__t-0  
   <https://brooker.co.za/blog/2015/03/21/backoff.html>
 
 >[!div class="step-by-step"]
->[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)Další
->[](implement-circuit-breaker-pattern.md)
+>[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)
+>[Další](implement-circuit-breaker-pattern.md)
