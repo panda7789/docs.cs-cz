@@ -1,29 +1,29 @@
 ---
-title: Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)
+title: Atomované XName a objekty XNamespace (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 21ee7585-7df9-40b4-8c76-a12bb5f29bb3
-ms.openlocfilehash: fe0c4429c89e0028b3b012c87684bd14048de27a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ae6d21c21aac4455e7932015c131fb4295673056
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61951928"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351839"
 ---
-# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)
+# <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-visual-basic"></a>Atomované XName a objekty XNamespace (LINQ to XML) (Visual Basic)
 
-<xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomizované objekty*; to znamená, pokud obsahují stejné kvalifikovaný název, odkazují na stejný objekt. To poskytuje výhody výkon pro dotazy: Při porovnávání rovnosti dvou atomizované objekty názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Základní kód nemusí řetězec porovnání, které by byly časově náročné.
+objekty <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> jsou *atomické*; To znamená, že pokud obsahují stejný kvalifikovaný název, odkazují na stejný objekt. To má za důsledek přínos pro dotazy: Když porovnáte dva atomické názvy pro rovnost, má základní zprostředkující jazyk pouze určit, zda dva odkazy odkazují na stejný objekt. Podkladový kód nemusí provádět porovnávání řetězců, což by mohlo být časově náročné.
 
-## <a name="atomization-semantics"></a>Sémantika atomizace
+## <a name="atomization-semantics"></a>Sémantika atoming
 
-Atomizace znamená, že pokud dva <xref:System.Xml.Linq.XName> objekty mají stejný název místní a jsou ve stejném oboru názvů, sdílejí stejnou instanci. Stejným způsobem, pokud dva <xref:System.Xml.Linq.XNamespace> objekty mají stejný obor názvů URI, které sdílejí stejnou instanci.
+Atoming znamená, že pokud dva objekty <xref:System.Xml.Linq.XName> mají stejný místní název a jsou ve stejném oboru názvů, sdílejí stejnou instanci. Stejným způsobem, pokud dva objekty <xref:System.Xml.Linq.XNamespace> mají stejný identifikátor URI oboru názvů, sdílejí stejnou instanci.
 
-V případě třídy umožňující atomizované objekty objekty musí být konstruktor pro třídu soukromé, není veřejné. Je to proto, že pokud konstruktor public, můžete vytvořit objekt neatomizovaném. <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> Operátor implicitního převodu k převedení řetězce na implementaci třídy <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>. To je, jak získat instanci z těchto objektů. Pomocí konstruktoru, nelze získat instanci, protože konstruktor není dostupný.
+Pro třídu, která povoluje atomované objekty, konstruktor třídy musí být privátní, nikoli Public. Důvodem je, že pokud byl konstruktor veřejný, mohli byste vytvořit neatomické objekty. Třídy <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> implementují implicitní operátor převodu pro převod řetězce na <xref:System.Xml.Linq.XName> nebo <xref:System.Xml.Linq.XNamespace>. Tímto způsobem získáte instanci těchto objektů. Nelze získat instanci pomocí konstruktoru, protože konstruktor je nepřístupný.
 
-<xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> také implementovat operátory rovnosti a nerovnosti, chcete-li zjistit, zda dva objekty porovnávané jsou odkazy na stejnou instanci.
+<xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> také implementují operátory rovnosti a nerovnosti, aby bylo možné určit, zda jsou dva porovnávané objekty odkazy na stejnou instanci.
 
 ## <a name="example"></a>Příklad
 
-Následující kód vytvoří některé <xref:System.Xml.Linq.XElement> objektů a ukazuje, že stejné názvy sdílet stejnou instanci.
+Následující kód vytvoří některé objekty @no__t 0 a ukazuje, že stejné názvy sdílejí stejnou instanci.
 
 ```vb
 Dim r1 As New XElement("Root", "data1")
@@ -46,14 +46,14 @@ End If
 
 Tento příklad vytvoří následující výstup:
 
-```
+```console
 r1 and r2 have names that refer to the same instance.
 The name of r1 and the name in 'n' refer to the same instance.
 ```
 
-Jak už bylo zmíněno dříve, výhodou atomizované objekty objekty je, že při použití jedné z metod osy, můžou <xref:System.Xml.Linq.XName> jako parametr metody osy má jenom k určení, že dva názvy odkaz na stejnou instanci k výběru požadované prvky.
+Jak bylo zmíněno dříve, výhodou pro objekty atoming je, že pokud použijete jednu z metod osy, která jako parametr přebírá <xref:System.Xml.Linq.XName>, metoda Axis má pouze určit, že dva názvy odkazují na stejnou instanci, aby vybrala požadované prvky.
 
-Následující příklad předá <xref:System.Xml.Linq.XName> k <xref:System.Xml.Linq.XContainer.Descendants%2A> volání metody, která pak má lepší výkon z důvodu atomizace vzor.
+Následující příklad předává <xref:System.Xml.Linq.XName> do volání metody <xref:System.Xml.Linq.XContainer.Descendants%2A>, které pak má lepší výkon vzhledem ke schématu atoming.
 
 ```vb
 Dim root As New XElement("Root", New XElement("C1", 1), New XElement("Z1", New XElement("C1", 2), New XElement("C1", 1)))

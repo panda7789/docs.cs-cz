@@ -2,22 +2,22 @@
 title: Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: 1376658f-f695-45f7-a7e0-94664e9619ff
-ms.openlocfilehash: d7102e60c8b5302d4f3bc83b356dbc7de117f57a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e52b6da80100cbffb7dc8725d16c31a67bc19445
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039867"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351663"
 ---
 # <a name="using-datacontractserializer-and-datacontractresolver-to-provide-the-functionality-of-netdatacontractserializer"></a>Použití DataContractSerializer a DataContractResolver pro zajištění funkcí NetDataContractSerializer
-Tato ukázka předvádí, jak použití <xref:System.Runtime.Serialization.DataContractSerializer> s vhodnou <xref:System.Runtime.Serialization.DataContractResolver> funkcí poskytuje stejné funkce jako <xref:System.Runtime.Serialization.NetDataContractSerializer>. V této ukázce se dozvíte, jak <xref:System.Runtime.Serialization.DataContractResolver> vytvořit odpovídající a jak ho přidat <xref:System.Runtime.Serialization.DataContractSerializer>do.
+Tato ukázka předvádí, jak použití <xref:System.Runtime.Serialization.DataContractSerializer> s příslušným <xref:System.Runtime.Serialization.DataContractResolver> poskytuje stejné funkce jako <xref:System.Runtime.Serialization.NetDataContractSerializer>. V této ukázce se dozvíte, jak vytvořit odpovídající <xref:System.Runtime.Serialization.DataContractResolver> a jak ho přidat do <xref:System.Runtime.Serialization.DataContractSerializer>.
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
- <xref:System.Runtime.Serialization.NetDataContractSerializer>se liší od <xref:System.Runtime.Serialization.DataContractSerializer> v jednom důležitém způsobu <xref:System.Runtime.Serialization.NetDataContractSerializer> : obsahuje informace o typu CLR v serializovaném kódu <xref:System.Runtime.Serialization.DataContractSerializer> XML, zatímco ne. Proto lze <xref:System.Runtime.Serialization.NetDataContractSerializer> použít pouze v případě, že serializace a deserializace ukončí sdílení stejných typů CLR. Doporučuje se však použít <xref:System.Runtime.Serialization.DataContractSerializer> , protože jeho výkon je lepší než. <xref:System.Runtime.Serialization.NetDataContractSerializer> Informace, které jsou serializovány <xref:System.Runtime.Serialization.DataContractSerializer> , lze změnit <xref:System.Runtime.Serialization.DataContractResolver> přidáním do ní.
+ <xref:System.Runtime.Serialization.NetDataContractSerializer> se liší od <xref:System.Runtime.Serialization.DataContractSerializer> v jednom důležitém způsobu: <xref:System.Runtime.Serialization.NetDataContractSerializer> zahrnuje informace o typu CLR v serializovaném kódu XML, zatímco <xref:System.Runtime.Serialization.DataContractSerializer> ne. Proto lze použít <xref:System.Runtime.Serialization.NetDataContractSerializer> pouze v případě, že serializace a deserializace končí sdílení stejných typů CLR. Doporučuje se ale použít <xref:System.Runtime.Serialization.DataContractSerializer>, protože jeho výkon je lepší než <xref:System.Runtime.Serialization.NetDataContractSerializer>. Informace, které jsou serializovány v <xref:System.Runtime.Serialization.DataContractSerializer>, lze změnit přidáním <xref:System.Runtime.Serialization.DataContractResolver> do něj.
 
- Tato ukázka se skládá ze dvou projektů. První projekt používá <xref:System.Runtime.Serialization.NetDataContractSerializer> k serializaci objektu. Druhý projekt používá <xref:System.Runtime.Serialization.DataContractSerializer> s a <xref:System.Runtime.Serialization.DataContractResolver> k poskytnutí stejných funkcí jako první projekt.
+ Tato ukázka se skládá ze dvou projektů. První projekt používá <xref:System.Runtime.Serialization.NetDataContractSerializer> k serializaci objektu. Druhý projekt používá <xref:System.Runtime.Serialization.DataContractSerializer> s <xref:System.Runtime.Serialization.DataContractResolver> k poskytnutí stejné funkce jako první projekt.
 
- Následující příklad kódu ukazuje implementaci vlastního <xref:System.Runtime.Serialization.DataContractResolver> názvu `MyDataContractResolver` <xref:System.Runtime.Serialization.DataContractSerializer> , který je přidán do v projektu DCSwithDCR.
+ Následující příklad kódu ukazuje implementaci vlastního <xref:System.Runtime.Serialization.DataContractResolver> s názvem `MyDataContractResolver`, která je přidána do <xref:System.Runtime.Serialization.DataContractSerializer> v projektu DCSwithDCR.
 
 ```csharp
 class MyDataContractResolver : DataContractResolver
@@ -33,10 +33,7 @@ class MyDataContractResolver : DataContractResolver
     public override Type ResolveName(string typeName, string typeNamespace, DataContractResolver knownTypeResolver)
     {
         Type type = knownTypeResolver.ResolveName(typeName, typeNamespace, null);
-        if (type == null)
-        {
-            type = Type.GetType(typeName + ", " + typeNamespace);
-        }
+        type ??= Type.GetType(typeName + ", " + typeNamespace);
         return type;
     }
 

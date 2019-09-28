@@ -1,25 +1,25 @@
 ---
-title: Vyhledání výchozího stylu odstavce (Visual Basic)
+title: Hledání výchozího stylu odstavce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-ms.openlocfilehash: f874033b9a070b951d27f37aae36f738ab1fd222
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6754c48148e81b02eb8c63843b57bc3d28a5774a
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618378"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352896"
 ---
-# <a name="finding-the-default-paragraph-style-visual-basic"></a>Vyhledání výchozího stylu odstavce (Visual Basic)
-První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhledání výchozího stylu odstavce v dokumentu.  
+# <a name="finding-the-default-paragraph-style-visual-basic"></a>Hledání výchozího stylu odstavce (Visual Basic)
+Prvním úkolem při manipulaci s informacemi v WordprocessingML dokumentu je najít výchozí styl odstavců v dokumentu.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad otevře dokumentu Office Open XML WordprocessingML, najde dokument a styl součástí balíčku a pak provede dotaz, který vyhledá výchozí název stylu. Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti z Office Open XML WordprocessingML dokumentů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
+ Následující příklad otevře dokument Office Open XML WordprocessingML, vyhledá části dokumentu a stylu a potom spustí dotaz, který najde výchozí název stylu. Informace o balíčcích dokumentů Office Open XML a částech, ze kterých se skládají, najdete v tématu [Podrobnosti o dokumentech Office Open XML WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).  
   
- Tento dotaz najde uzel s názvem `w:style` , který má atribut s názvem `w:type` s hodnotou "odstavec", a také atribut s názvem `w:default` s hodnotou "1". Vzhledem k tomu, že bude existovat jenom jeden uzel XML s těmito atributy, pomocí dotazu <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor k převodu kolekce na jednotlivý prvek. Potom získá hodnotu atributu s názvem `w:styleId`.  
+ Dotaz vyhledá uzel s názvem `w:style`, který má atribut s názvem `w:type` s hodnotou "Paragraph", a má také atribut s názvem `w:default` s hodnotou "1". Vzhledem k tomu, že bude existovat pouze jeden uzel XML s těmito atributy, dotaz použije operátor <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> k převedení kolekce na typ singleton. Pak získá hodnotu atributu s názvem `w:styleId`.  
   
- Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ### <a name="code"></a>Kód  
   
@@ -82,15 +82,15 @@ End Module
 ### <a name="comments"></a>Komentáře  
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 The default style is: Normal  
 ```  
   
 ## <a name="next-steps"></a>Další kroky  
- V následujícím příkladu vytvoříte podobně jako dotaz, který najde všechny odstavce v dokumentu a jejich stylů:  
+ V dalším příkladu vytvoříte podobný dotaz, který najde všechny odstavce v dokumentu a jejich styly:  
   
-- [Načtení odstavců a jejich stylů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+- [Načítání odstavců a jejich stylů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

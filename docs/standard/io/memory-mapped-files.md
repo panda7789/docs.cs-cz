@@ -11,58 +11,58 @@ helpviewer_keywords:
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c796a93f7ea5ad4664f35788b766117c712b9766
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 80eb5fd8b6c3b9ca8473efd1cab23a406280f1fa
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487050"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392901"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
-Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Od verze rozhraní .NET Framework 4, můžete použít spravovaného kódu pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
+Soubor mapované paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi souborem a prostorem paměti umožňuje aplikaci, včetně více procesů, pro úpravu souboru čtením a zápisem přímo do paměti. Počínaje .NET Framework 4 můžete použít spravovaný kód pro přístup k souborům mapovaným do paměti stejným způsobem jako nativní funkce systému Windows přistupující k souborům mapovaným do paměti, jak je popsáno v tématu [Správa souborů mapovaných](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10))do paměti.  
   
  Existují dva typy souborů mapovaných do paměti:  
   
-- Trvalé soubory mapované paměti  
+- Trvalá paměťově mapované soubory  
   
-     Trvalé soubory jsou soubory mapované paměti, které jsou přidruženy ke zdrojovému souboru na disku. Po dokončení práce se souborem posledního procesu, data uložena do zdrojového souboru na disku. Tyto soubory mapované paměti jsou vhodné pro práci s velmi velký zdrojové soubory.  
+     Trvalé soubory jsou soubory mapované paměti, které jsou přidruženy ke zdrojovému souboru na disku. Až poslední proces dokončí práci se souborem, data se uloží do zdrojového souboru na disku. Tyto soubory mapované paměti jsou vhodné pro práci s extrémně velkými zdrojovými soubory.  
   
-- Netrvalé soubory mapované paměti  
+- Netrvalá paměťově mapované soubory  
   
-     Netrvalé soubory jsou soubory mapované paměti, které nejsou přiřazeny k souboru na disku. Po dokončení práce se souborem posledního procesu, dojde ke ztrátě dat a soubor je uvolněn systémem uvolňování paměti. Tyto soubory jsou vhodné pro vytvoření sdílené paměti pro meziprocesové komunikace (IPC).  
+     Netrvalé soubory jsou soubory mapované paměti, které nejsou přidruženy k souboru na disku. Až poslední proces dokončí práci se souborem, data se ztratí a soubor se uvolní uvolňováním paměti. Tyto soubory jsou vhodné pro vytváření sdílené paměti pro komunikaci mezi procesy (IPC).  
   
 ## <a name="processes-views-and-managing-memory"></a>Procesy, zobrazení a správa paměti  
- Soubory mapované paměti mohou být sdílena několika procesy. Procesy můžete namapovat na stejný soubor mapovaných do paměti pomocí běžný název, který je přiřazen podle procesu, který vytvořil soubor.  
+ Soubory mapované paměti lze sdílet mezi několika procesy. Procesy lze namapovat na stejný soubor mapované paměti pomocí běžného názvu, který je přiřazen procesem, který soubor vytvořil.  
   
- Pro práci se souborem mapovaných do paměti, musí vytvořit zobrazení celého souboru mapované paměti nebo jeho část. Můžete také vytvořit více zobrazení do stejné části souborů mapovaných do paměti a tím vytváření souběžných paměti. Dvě zobrazení zůstat souběžných mají být vytvořené ze stejného souboru mapovaných do paměti.  
+ Chcete-li pracovat se souborem mapované paměti, je nutné vytvořit zobrazení celého souboru mapované paměti nebo jeho části. Můžete také vytvořit více zobrazení do stejné části souboru mapované paměti, čímž vytvoříte souběžnou paměť. Aby dvě zobrazení zůstaly souběžně, je nutné je vytvořit ze stejného souboru mapované paměti.  
   
- Více zobrazení může být také nutné v případě, že soubor je větší než velikost logického paměťový prostor vaší aplikace k dispozici pro mapování (na 32bitových počítačích 2 GB) paměti.  
+ V případě, že je soubor větší než velikost logické paměti, která je k dispozici pro mapování paměti (2 GB na 32 počítači), může být také nutné použít více zobrazení.  
   
- Existují dva typy zobrazení: datový proud stream přístup k zobrazení a zobrazení náhodný přístup. Použití zobrazení datových proudů pro sekvenční přístup k souboru. To se doporučuje pro dočasné soubory a IPC. Náhodný přístup zobrazení jsou upřednostňované pro práci s trvalými soubory.  
+ K dispozici jsou dva typy zobrazení: zobrazení datového proudu a zobrazení náhodného přístupu. Pro sekvenční přístup k souboru použijte zobrazení přístupu ke službě Stream. Tento postup se doporučuje u souborů, které nejsou trvale uložené, a IPC. Zobrazení náhodného přístupu jsou upřednostňována pro práci s trvalými soubory.  
   
- Soubory mapované paměti jsou přístupné prostřednictvím Správce paměti operačního systému, takže soubor automaticky je rozdělen do několika stránek a přístup podle potřeby. Není potřeba zpracovávat správu paměti.  
+ Soubory mapované paměti jsou k dispozici prostřednictvím Správce paměti operačního systému, takže soubor je automaticky rozdělený na několik stránek a v případě potřeby je k dispozici. Správu paměti není nutné zpracovávat sami.  
   
- Následující obrázek znázorňuje způsob více procesů může mít více a překrývající se zobrazení stejné souborů mapovaných do paměti ve stejnou dobu.
+ Následující ilustrace znázorňuje, jak více procesů může mít více a překrývajících se zobrazení do stejného souboru mapované paměti ve stejnou dobu.
 
- Následující obrázek ukazuje několik a překrývající se zobrazení souboru mapovaných do paměti:  
+ Následující obrázek ukazuje více a překrývajících se zobrazení do souboru mapované paměti:  
   
- ![Snímek obrazovky zobrazující zobrazení paměti&#45;namapované souboru.](./media/memory-mapped-files/memory-map-persist-file.png)  
+ ![Snímek obrazovky, který zobrazuje zobrazení souboru&#45;mapované paměti.](./media/memory-mapped-files/memory-map-persist-file.png)  
   
-## <a name="programming-with-memory-mapped-files"></a>Programování s soubory mapované paměti  
- Následující tabulka obsahuje návod pro použití souborů mapovaných do paměti objektů a jejich členy.  
+## <a name="programming-with-memory-mapped-files"></a>Programování s namapovanými soubory paměti  
+ Následující tabulka poskytuje návod pro použití objektů souboru mapovaných do paměti a jejich členů.  
   
-|Úloha|Metody nebo vlastnosti, které chcete použít|  
+|Úkol|Metody nebo vlastnosti, které se mají použít|  
 |----------|----------------------------------|  
-|Získání <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> objekt, který reprezentuje trvalých souborů mapovaných do paměti ze souboru na disku.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType> Metoda.|  
-|Získání <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> objekt, který reprezentuje netrvalé souborů mapovaných do paměti (není přidružené k souboru na disku).|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A?displayProperty=nameWithType> Metoda.<br /><br /> - nebo -<br /><br /> <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A?displayProperty=nameWithType> Metoda.|  
-|Získání <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> objekt existující soubor mapovaných do paměti (trvalá nebo netrvalé).|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting%2A?displayProperty=nameWithType> Metoda.|  
-|Získání <xref:System.IO.UnmanagedMemoryStream> objekt pro sekvenční přístup k zobrazení souborů mapovaných do paměti.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewStream%2A?displayProperty=nameWithType> Metoda.|  
-|Získání <xref:System.IO.UnmanagedMemoryAccessor> objekt pro náhodný přístup zobrazení mapované paměti soubor.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor%2A?displayProperty=nameWithType> Metoda.|  
-|Získání <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle> objekt pro použití s nespravovaným kódem.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SafeMemoryMappedFileHandle%2A?displayProperty=nameWithType> Vlastnost.<br /><br /> - nebo -<br /><br /> <xref:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle%2A?displayProperty=nameWithType> Vlastnost.<br /><br /> - nebo -<br /><br /> <xref:System.IO.MemoryMappedFiles.MemoryMappedViewStream.SafeMemoryMappedViewHandle%2A?displayProperty=nameWithType> Vlastnost.|  
-|Zpoždění přidělování paměti až do zobrazení je vytvořit (dočasný pouze soubory).<br /><br /> (Chcete-li zjistit aktuální velikost systémové stránky, použijte <xref:System.Environment.SystemPageSize%2A?displayProperty=nameWithType> vlastnosti.)|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> Metoda s <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions.DelayAllocatePages?displayProperty=nameWithType> hodnotu.<br /><br /> - nebo -<br /><br /> <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> metody, které mají <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions> výčet jako parametr.|  
+|Chcete-li získat objekt <xref:System.IO.MemoryMappedFiles.MemoryMappedFile>, který představuje trvalý soubor mapované paměti ze souboru na disku.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType>Metoda.|  
+|Chcete-li získat objekt <xref:System.IO.MemoryMappedFiles.MemoryMappedFile>, který představuje netrvalý soubor mapované paměti (není přidružen k souboru na disku).|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A?displayProperty=nameWithType>Metoda.<br /><br /> ani<br /><br /> <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A?displayProperty=nameWithType>Metoda.|  
+|Chcete-li získat objekt <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> existujícího souboru mapované paměti (buď trvalá, nebo netrvalá).|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting%2A?displayProperty=nameWithType>Metoda.|  
+|Chcete-li získat objekt <xref:System.IO.UnmanagedMemoryStream> pro sekvenční zobrazení k souboru mapované paměti.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewStream%2A?displayProperty=nameWithType>Metoda.|  
+|Chcete-li získat objekt <xref:System.IO.UnmanagedMemoryAccessor> pro zobrazení náhodného přístupu k fie mapované paměti.|<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor%2A?displayProperty=nameWithType>Metoda.|  
+|Chcete-li získat objekt <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle> pro použití s nespravovaným kódem.|vlastnost <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SafeMemoryMappedFileHandle%2A?displayProperty=nameWithType><br /><br /> ani<br /><br /> vlastnost <xref:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle%2A?displayProperty=nameWithType><br /><br /> ani<br /><br /> vlastnost <xref:System.IO.MemoryMappedFiles.MemoryMappedViewStream.SafeMemoryMappedViewHandle%2A?displayProperty=nameWithType>|  
+|Zpoždění přidělení paměti, dokud není vytvořeno zobrazení (pouze netrvalé soubory).<br /><br /> (Chcete-li zjistit aktuální velikost stránky systému, použijte vlastnost <xref:System.Environment.SystemPageSize%2A?displayProperty=nameWithType>.)|Metoda <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> s hodnotou <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions.DelayAllocatePages?displayProperty=nameWithType>.<br /><br /> ani<br /><br /> metody <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A>, které mají výčet <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions> jako parametr.|  
   
 ### <a name="security"></a>Zabezpečení  
- Oprávnění můžete použít při vytváření souboru mapovaných do paměti pomocí následujících metod, které provést <xref:System.IO.MemoryMappedFiles.MemoryMappedFileAccess> výčet jako parametr:  
+ Můžete použít přístupová práva při vytváření souboru mapované paměti pomocí následujících metod, které přijímají výčet <xref:System.IO.MemoryMappedFiles.MemoryMappedFileAccess> jako parametr:  
   
 - <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A?displayProperty=nameWithType>  
   
@@ -70,59 +70,59 @@ Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Tot
   
 - <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A?displayProperty=nameWithType>  
   
- Můžete zadat přístupová práva k otevření existujícího souboru mapovaných do paměti pomocí <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting%2A> metodám, které přebírají <xref:System.IO.MemoryMappedFiles.MemoryMappedFileRights> jako parametr.  
+ Můžete zadat přístupová práva pro otevření existujícího souboru mapované paměti pomocí metod <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting%2A>, které jako parametr přebírají <xref:System.IO.MemoryMappedFiles.MemoryMappedFileRights>.  
   
- Kromě toho můžete zahrnout <xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity> objekt, který obsahuje předdefinovaná pravidla přístupu.  
+ Kromě toho můžete zahrnout objekt <xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity>, který obsahuje pravidla předdefinovaného přístupu.  
   
- Chcete-li použít nové nebo změněné pravidel přístupu do souboru mapovaných do paměti, použijte <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl%2A> metody. Pokud chcete získat přístup nebo auditovat pravidla z existujícího souboru, použijte <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.GetAccessControl%2A> metody.  
+ Chcete-li použít nová nebo změněná pravidla přístupu k souboru mapované paměti, použijte metodu <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl%2A>. Chcete-li načíst pravidla přístupu nebo auditu z existujícího souboru, použijte metodu <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.GetAccessControl%2A>.  
   
 ## <a name="examples"></a>Příklady  
   
-### <a name="persisted-memory-mapped-files"></a>Trvalé soubory mapované paměti  
- <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A> Metody vytvořit soubor mapované paměti z existujícího souboru na disku.  
+### <a name="persisted-memory-mapped-files"></a>Trvalá paměťově mapované soubory  
+ Metody <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A> vytvoří soubor mapované paměti z existujícího souboru na disku.  
   
- Následující příklad vytvoří zobrazení součástí velmi velkých souborů mapovaných do paměti a manipuluje s jejich část.  
+ Následující příklad vytvoří zobrazení mapované paměti, které je součástí velmi velkého souboru a pracuje s jeho částí.  
   
  [!code-csharp[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](../../../samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/cs/program.cs#1)]
  [!code-vb[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/vb/program.vb#1)]  
   
- Následující příklad otevře stejné souborů mapovaných do paměti pro jiný proces.  
+ Následující příklad otevře stejný soubor mapované paměti pro jiný proces.  
   
  [!code-csharp[MemoryMappedFiles.MemoryMappedFile.OpenExisting#1](../../../samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/cs/program.cs#1)]
  [!code-vb[MemoryMappedFiles.MemoryMappedFile.OpenExisting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/vb/program.vb#1)]  
   
-### <a name="non-persisted-memory-mapped-files"></a>Netrvalé soubory mapované paměti  
- <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> a <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> metody vytvořit soubor mapovaných do paměti, který není namapovaná na existující soubor na disku.  
+### <a name="non-persisted-memory-mapped-files"></a>Netrvalá paměťově mapované soubory  
+ Metody <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A> a <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%2A> vytvoří soubor mapovaný do paměti, který není namapován na existující soubor na disku.  
   
- Následující příklad se skládá ze tří samostatné procesy (konzolové aplikace), které zápis logické hodnoty do souboru mapovaných do paměti. Dojde k následující posloupnost akcí:  
+ Následující příklad obsahuje tři samostatné procesy (konzolové aplikace), které zapisují logické hodnoty do souboru mapované paměti. Dojde k následujícímu pořadí akcí:  
   
-1. `Process A` Vytvoří soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+1. `Process A` vytvoří soubor mapované paměti a zapíše do něj hodnotu.  
   
-2. `Process B` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+2. `Process B` otevře soubor mapované paměti a zapíše do něj hodnotu.  
   
-3. `Process C` Otevře soubor mapovaných do paměti a zapíše do jeho hodnotu.  
+3. `Process C` otevře soubor mapované paměti a zapíše do něj hodnotu.  
   
-4. `Process A` načte a zobrazí hodnoty ze souborů mapovaných do paměti.  
+4. `Process A` čte a zobrazuje hodnoty z souboru mapované paměti.  
   
-5. Po `Process A` bylo dokončeno s souborů mapovaných do paměti soubor okamžitě uvolněn systémem uvolňování paměti.  
+5. Po dokončení `Process A` se souborem mapované paměti je soubor okamžitě uvolněn uvolňováním paměti.  
   
- Chcete-li spustit tento příklad, postupujte takto:  
+ Chcete-li spustit tento příklad, postupujte následovně:  
   
-1. Zkompilujte aplikaci a otevřít tři okna příkazového řádku.  
+1. Zkompilujte aplikace a otevřete tři okna příkazového řádku.  
   
-2. V prvním okně příkazového řádku, spusťte `Process A`.  
+2. V prvním okně příkazového řádku spusťte `Process A`.  
   
-3. V druhém okně příkazového řádku, spusťte `Process B`.  
+3. V druhém okně příkazového řádku spusťte příkaz `Process B`.  
   
-4. Vraťte se na `Process A` a stiskněte klávesu ENTER.  
+4. Vraťte se do `Process A` a stiskněte klávesu ENTER.  
   
-5. V okně příkazového řádku třetí spusťte `Process C`.  
+5. V třetím okně příkazového řádku spusťte příkaz `Process C`.  
   
-6. Vraťte se na `Process A` a stiskněte klávesu ENTER.  
+6. Vraťte se do `Process A` a stiskněte klávesu ENTER.  
   
- Výstup `Process A` vypadá takto:  
+ Výstup `Process A` je následující:  
   
-```  
+```console  
 Start Process B and press ENTER to continue.  
 Start Process C and press ENTER to continue.  
 Process A says: True  
@@ -130,17 +130,17 @@ Process B says: False
 Process C says: True  
 ```  
   
- **Proces A**  
+ **Zpracování**  
   
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_X#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_X#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/vb/program.vb#1)]  
   
- **Proces B**  
+ **Zpracování B**  
   
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/vb/program.vb#1)]  
   
- **Process C**  
+ **Zpracování C**  
   
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  

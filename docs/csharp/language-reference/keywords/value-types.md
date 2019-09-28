@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 2bbbac098096b46c659c4efde2d1c998c8e2d9ae
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 2a3e7f02ee9d210acae881edd170edbced82dab6
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608379"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353748"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
@@ -32,7 +32,7 @@ Všechny typy hodnot jsou implicitně odvozeny z <xref:System.ValueType?displayP
 
 Na rozdíl od typů odkazů nemůžete odvodit nový typ z hodnotového typu. Nicméně, podobně jako typy odkazů, struktury mohou implementovat rozhraní.
 
-Proměnné typu hodnoty nemůžou `null` být ve výchozím nastavení. Proměnné odpovídajícího typu s možnou [hodnotou null](../../programming-guide/nullable-types/index.md) ale mohou `null`být.
+Proměnné typu hodnoty nemůžou `null` být ve výchozím nastavení. Proměnné odpovídajícího [typu hodnoty s možnou hodnotou null](../../programming-guide/nullable-types/index.md) ale mohou být `null`.
 
 Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializuje výchozí hodnotu tohoto typu. Informace o výchozích hodnotách hodnotových typů najdete v [tabulce s výchozími hodnotami](default-values-table.md).
 
@@ -108,5 +108,5 @@ Informace o formátování výstupu číselných typů najdete v tématu [formá
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Typy](types.md)
-- [Odkazové typy](reference-types.md)
-- [Typy s možnou hodnotou null](../../programming-guide/nullable-types/index.md)
+- [Typy odkazů](reference-types.md)
+- [Typy hodnot s možnou hodnotou null](../../programming-guide/nullable-types/index.md)

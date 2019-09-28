@@ -2,30 +2,30 @@
 title: Konfigurace sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: d8d3293fd2b271c0e1a00a1fca30d5ecd166df12
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 889efc804bb45b384dfde5b4deb520a81d1e5486
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690562"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353051"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Konfigurace sledování pracovního postupu
 
-Pracovní postup můžete provést třemi způsoby:
+Pracovní postup může být proveden třemi způsoby:
 
-- Hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost>
+- Hostovaná v <xref:System.ServiceModel.Activities.WorkflowServiceHost>
 
-- Provést, protože <xref:System.Activities.WorkflowApplication>
+- Provedeno jako <xref:System.Activities.WorkflowApplication>
 
-- Proveden přímo pomocí <xref:System.Activities.WorkflowInvoker>
+- Provedeno přímo pomocí <xref:System.Activities.WorkflowInvoker>
 
-V závislosti na pracovním postupu možnost hostování sledování účastník přidat buď prostřednictvím kódu nebo konfiguračního souboru. Toto téma popisuje, jak je sledování nakonfigurované tak, že přidáte sledování účastník <xref:System.Activities.WorkflowApplication> a získat <xref:System.ServiceModel.Activities.WorkflowServiceHost>a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.
+V závislosti na možnosti hostování pracovního postupu lze sledování účastníka přidat prostřednictvím kódu nebo prostřednictvím konfiguračního souboru. Toto téma popisuje, jak je sledování nakonfigurováno přidáním účastníka sledování do <xref:System.Activities.WorkflowApplication> a do <xref:System.ServiceModel.Activities.WorkflowServiceHost> a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.
 
 ## <a name="configuring-workflow-application-tracking"></a>Konfigurace sledování aplikace pracovního postupu
 
-Pracovní postup můžete spustit pomocí <xref:System.Activities.WorkflowApplication> třídy. Toto téma popisuje konfiguraci sledování pro [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] aplikace pracovního postupu tak, že přidáte sledování účastník <xref:System.Activities.WorkflowApplication> hostitele pracovního postupu. V takovém případě pracovní postup spouští jako aplikace pracovního postupu. Nakonfigurovat aplikace pracovního postupu pomocí kódu (spíše než pomocí konfiguračního souboru), který je v místním prostředí .exe souboru pomocí <xref:System.Activities.WorkflowApplication> třídy. Sledování účastník bude přidán jako rozšíření <xref:System.Activities.WorkflowApplication> instance. To se provádí tak, že přidáte <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci aplikace WorkflowApplication.
+Pracovní postup lze spustit pomocí třídy <xref:System.Activities.WorkflowApplication>. Toto téma ukazuje, jak je nakonfigurováno sledování pro aplikaci pracovního postupu [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] přidáním účastníka sledování do hostitele pracovního postupu <xref:System.Activities.WorkflowApplication>. V takovém případě pracovní postup běží jako aplikace pracovního postupu. Můžete nakonfigurovat aplikaci pracovního postupu prostřednictvím kódu (nikoli pomocí konfiguračního souboru), což je samostatný soubor. exe s použitím třídy <xref:System.Activities.WorkflowApplication>. Účastník sledování se přidá jako rozšíření instance <xref:System.Activities.WorkflowApplication>. To se provádí přidáním <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci WorkflowApplication.
 
-Pro aplikace pracovního postupu můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> rozšíření chování, jak je znázorněno v následujícím kódu.
+U aplikace pracovního postupu můžete přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant>, jak je znázorněno v následujícím kódu.
 
 ```csharp
 LogActivity activity = new LogActivity();
@@ -50,9 +50,9 @@ instance.Extensions.Add(trackingParticipant);
 
 ### <a name="configuring-workflow-service-tracking"></a>Konfigurace sledování služby pracovního postupu
 
-Pracovní postup může být vystavena jako služba WCF při hostování v <xref:System.ServiceModel.Activities.WorkflowServiceHost> hostitele služby. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace .NET ServiceHost pro nějakou službu založenou na pracovního postupu. Tato část vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] používané služby pracovního postupu <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurovaný pomocí souboru Web.config (pro Web hostované služby) nebo soubor App.config (pro služby hostované v samostatné aplikaci, jako je například aplikace konzoly) zadáním chování služby nebo pomocí kódu přidáním specifické pro sledování chování <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce pro tohoto hostitele služby.
+Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní .NET ServiceHost pro službu založenou na pracovních postupech. V této části se dozvíte, jak nakonfigurovat sledování pro službu pracovního postupu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] běžící v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním konkrétního chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.
 
-Pro pracovní postup služby hostované v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.
+U služby pracovního postupu hostovaného v <xref:System.ServiceModel.WorkflowServiceHost> můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí > elementu < `behavior` v konfiguračním souboru, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <behaviors>
@@ -64,10 +64,10 @@ Pro pracovní postup služby hostované v <xref:System.ServiceModel.WorkflowServ
 <behaviors>
 ```
 
-Můžete také služby pracovního postupu hostované v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> rozšíření chování prostřednictvím kódu. Chcete-li přidat vlastní sledování účastník, vytvořit nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost> jak je znázorněno v následujícím příkladu kódu.
+Alternativně můžete pro službu pracovního postupu, která je hostovaná v <xref:System.ServiceModel.WorkflowServiceHost>, přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant> prostřednictvím kódu. Chcete-li přidat vlastního účastníka sledování, vytvořte nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost>, jak je znázorněno v následujícím příkladu kódu.
 
 > [!NOTE]
-> Pokud chcete zobrazit ukázkový kód, který ukazuje, jak vytvořit vlastní chování element, který přidá vlastní sledování účastník, přečtěte si [sledování](./samples/tracking.md) ukázky.
+> Chcete-li zobrazit vzorový kód, který ukazuje, jak vytvořit vlastní prvek chování, který přidá vlastního účastníka sledování, přečtěte si ukázky [sledování](./samples/tracking.md) .
 
 ```csharp
 ServiceHost svcHost = new ServiceHost(typeof(WorkflowService), new
@@ -81,9 +81,9 @@ svcHost.Description.Behaviors.Add(trackingBehavior);
 svcHost.Open();
 ```
 
-Účastník sledování se přidá k hostiteli služby pracovního postupu jako rozšíření chování.
+Účastník sledování se přidá do hostitele služby pracovního postupu jako rozšíření chování.
 
-Následující ukázkový kód ukazuje, jak číst z konfiguračního souboru profilu sledování.
+Následující vzorový kód ukazuje, jak číst profil sledování z konfiguračního souboru.
 
 ```csharp
 TrackingProfile GetProfile(string profileName, string displayName)
@@ -95,10 +95,7 @@ TrackingProfile GetProfile(string profileName, string displayName)
                 return null;
             }
 
-            if (profileName == null)
-            {
-                profileName = "";
-            }
+            profileName ??= "";
 
             //Find the profile with the specified profile name in the list of profile found in config
             var match = from p in new List<TrackingProfile>(trackingSection.TrackingProfiles)
@@ -122,7 +119,7 @@ TrackingProfile GetProfile(string profileName, string displayName)
             return trackingProfile;
 ```
 
-Tento ukázkový kód ukazuje, jak přidat profil sledování do hostitele pracovního postupu.
+Tento vzorový kód ukazuje, jak přidat profil sledování do hostitele pracovního postupu.
 
 ```csharp
 WorkflowServiceHost workflowServiceHost = serviceHostBase as WorkflowServiceHost;
@@ -137,11 +134,11 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> Další informace o sledování profilů najdete [sledování profilů](https://go.microsoft.com/fwlink/?LinkId=201310).
+> Další informace o sledování profilů najdete v tématu [sledování profilů](https://go.microsoft.com/fwlink/?LinkId=201310).
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>Konfigurace sledování pomocí WorkflowInvoker
 
-Konfigurace sledování pracovního postupu spuštěn pomocí <xref:System.Activities.WorkflowInvoker>, přidejte zprostředkovatele sledování jako rozšíření <xref:System.Activities.WorkflowInvoker> instance. Následující příklad kódu je z [vlastní sledování](./samples/custom-tracking.md) vzorku.
+Ke konfiguraci sledování pracovního postupu spuštěného pomocí <xref:System.Activities.WorkflowInvoker> přidejte zprostředkovatele sledování jako rozšíření do instance <xref:System.Activities.WorkflowInvoker>. Následující příklad kódu je z vlastní ukázky [sledování](./samples/custom-tracking.md) .
 
 ```csharp
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
@@ -149,49 +146,49 @@ invoker.Extensions.Add(customTrackingParticipant);
 invoker.Invoke();
 ```
 
-### <a name="viewing-tracking-records-in-event-viewer"></a>Zobrazení sledování záznamů v prohlížeči událostí
+### <a name="viewing-tracking-records-in-event-viewer"></a>Zobrazení záznamů sledování v Prohlížeč událostí
 
-Existují dva protokoly Prohlížeče událostí zajímají hlavně o zobrazení při sledování provádění pracovního postupu - analýzy protokolů a protokolů ladění. Obě nacházet v rámci Microsoft&#124;Windows&#124;uzlu serveru aplikace. Protokoly v této části obsahují události z jedné aplikace, nikoli události, které mají vliv na celý systém.
+Existují dva Prohlížeč událostí protokoly, které se týkají zvláštního zájmu k zobrazení při sledování provádění technologie WF – analytického protokolu a protokolu ladění. Oba se nacházejí v uzlu aplikace&#124;serveru&#124;Microsoft Windows – aplikace. Protokoly v této části obsahují události z jedné aplikace a nikoli události, které mají vliv na celý systém.
 
-Ladění trasování, které události se zapisují do protokolů ladění. Shromažďování událostí trasování ladění pracovního postupu v prohlížeči událostí, povolte protokol ladění.
+Události trasování ladění se zapisují do protokolu ladění. Chcete-li shromáždit události trasování ladění WF v Prohlížeč událostí, povolte protokol ladění.
 
-1. Chcete-li spustit nástroj Prohlížeč událostí, klikněte na tlačítko **Start**a potom klikněte na tlačítko **spustit.** V dialogu Spustit zadejte `eventvwr`.
+1. Chcete-li otevřít Prohlížeč událostí, klikněte na tlačítko **Start**a poté klikněte na příkaz **Spustit.** V dialogovém okně Spustit zadejte `eventvwr`.
 
-2. V dialogovém okně prohlížeče událostí, rozbalte **protokoly aplikací a služeb** uzlu.
+2. V dialogovém okně Prohlížeč událostí rozbalte uzel **protokoly aplikací a služeb** .
 
-3. Rozbalte **Microsoft**, **Windows**, a **aplikace Server-** uzly.
+3. Rozbalte uzly **Microsoft**, **Windows**a **aplikační server – aplikace** .
 
-4. Klikněte pravým tlačítkem myši **ladění** pod uzlem **Server aplikace** uzel a vyberte možnost **povolit protokol**.
+4. Klikněte pravým tlačítkem myši na uzel **ladění** v uzlu **aplikační server – aplikace** a vyberte **Povolit protokol**.
 
-5. Spusťte vaši aplikaci povoleno trasování generovat události trasování.
+5. Spusťte aplikaci s povoleným trasováním a vygenerujte události trasování.
 
-6. Klikněte pravým tlačítkem myši **ladění** uzel a vyberte možnost **aktualizovat.** Trasování událostí by se zobrazovat v prostředním podokně.
+6. Klikněte pravým tlačítkem na uzel **ladění** a vyberte **aktualizovat.** Události trasování by měly být viditelné v prostředním podokně.
 
-WF 4 poskytuje sledování účastník, který zapíše záznamy sledování k relaci ETW (událost trasování pro Windows). Účastník sledování ETW konfigurován pomocí sledování profil přihlásit k odběru sledování záznamů. Pokud je povoleno sledování, chyby sledování záznamů je vygenerován pro trasování událostí pro Windows. Trasování událostí pro Windows Sledování událostí (v rozsahu 100 113) od odpovídající, protože ho vygeneroval účastník sledování ETW sledování události se zapisují do v analytickém protokolu.
+WF 4 poskytuje účastníkovi sledování, který zapisuje záznamy sledování do relace ETW (trasování událostí pro Windows). Účastník sledování ETW je nakonfigurovaný s profilem sledování, aby se mohl přihlásit k odběru sledování záznamů. Pokud je povoleno sledování, jsou záznamy sledování chyb generovány do ETW. Události sledování ETW (mezi rozsahem 100-113) odpovídající sledovacím událostem vygenerovaným účastníkem sledování ETW jsou zapisovány do analytického protokolu.
 
 Chcete-li zobrazit záznamy sledování, postupujte podle těchto kroků.
 
-1. Chcete-li spustit nástroj Prohlížeč událostí, klikněte na tlačítko **Start**a potom klikněte na tlačítko **spustit.** V dialogu Spustit zadejte `eventvwr`.
+1. Chcete-li otevřít Prohlížeč událostí, klikněte na tlačítko **Start**a poté klikněte na příkaz **Spustit.** V dialogovém okně Spustit zadejte `eventvwr`.
 
-2. V dialogovém okně prohlížeče událostí, rozbalte **protokoly aplikací a služeb** uzlu.
+2. V dialogovém okně Prohlížeč událostí rozbalte uzel **protokoly aplikací a služeb** .
 
-3. Rozbalte **Microsoft**, **Windows**, a **aplikace Server-** uzly.
+3. Rozbalte uzly **Microsoft**, **Windows**a **aplikační server – aplikace** .
 
-4. Klikněte pravým tlačítkem myši **analytické** pod uzlem **Server aplikace** uzel a vyberte možnost **povolit protokol**.
+4. Klikněte pravým tlačítkem myši **na uzel Analytics v uzlu** **aplikační server – aplikace** a vyberte možnost **Povolit protokol**.
 
-5. Spuštění vaší aplikace s povolenými sledování k vygenerování záznamů sledování.
+5. Spusťte aplikaci s povoleným sledováním pro generování záznamů sledování.
 
-6. Klikněte pravým tlačítkem myši **analytické** uzel a vyberte možnost **aktualizovat.** Sledování záznamů by se zobrazovat v prostředním podokně.
+6. Klikněte pravým tlačítkem **na uzel analýzy** a vyberte **aktualizovat.** Záznamy sledování by se měly zobrazit v prostředním podokně.
 
-Sledování událostí v prohlížeči událostí na následujícím obrázku:
+Následující obrázek ukazuje sledování událostí v prohlížeči událostí:
 
-![Snímek obrazovky znázorňující Prohlížeč událostí sledování záznamů.](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
+![Snímek obrazovky Prohlížeč událostí zobrazující záznamy o sledování](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
 
-### <a name="registering-an-application-specific-provider-id"></a>Registrace poskytovatele specifické pro aplikaci ID
+### <a name="registering-an-application-specific-provider-id"></a>Registrace ID zprostředkovatele specifického pro aplikaci
 
-Pokud události se zapisují do protokolu konkrétní aplikaci, použijte následující postup zaregistrovat nový manifest zprostředkovatele.
+Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte následující postup k registraci nového manifestu poskytovatele.
 
-1. Deklarujte ID zprostředkovatele v konfiguračním souboru aplikace.
+1. Deklarujete ID zprostředkovatele v konfiguračním souboru aplikace.
 
     ```xml
     <system.serviceModel>
@@ -199,9 +196,9 @@ Pokud události se zapisují do protokolu konkrétní aplikaci, použijte násle
     </system.serviceModel>
     ```
 
-2. Zkopírujte soubor manifestu z %windir%\Microsoft.NET\Framework\\\<nejnovější verzi [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man do dočasného umístění a přejmenujte ho na Microsoft.Windows.ApplicationServer.Applications_Provider1.man
+2. Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework @ no__t-0 @ no__t-1latest verze [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] > \Microsoft.Windows.ApplicationServer.Applications.man do dočasného umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
 
-3. Změňte na nové GUID identifikátoru GUID v souboru manifestu.
+3. Změňte identifikátor GUID v souboru manifestu na nový identifikátor GUID.
 
     ```xml
     <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"
@@ -213,7 +210,7 @@ Pokud události se zapisují do protokolu konkrétní aplikaci, použijte násle
     <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"
     ```
 
-5. Pokud jste změnili název zprostředkovatele v předchozím kroku, změňte názvy kanálů v souboru manifestu na nový název poskytovatele.
+5. Pokud jste v předchozím kroku změnili název poskytovatele, změňte názvy kanálů v souboru manifestu na název nového poskytovatele.
 
     ```xml
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Admin" chid="ADMIN_CHANNEL" symbol="ADMIN_CHANNEL" type="Admin" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ADMIN_CHANNEL.message)" />
@@ -223,37 +220,37 @@ Pokud události se zapisují do protokolu konkrétní aplikaci, použijte násle
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Perf" chid="PERF_CHANNEL" symbol="PERF_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.PERF_CHANNEL.message)" />
     ```
 
-6. Vygenerujte prostředek knihovny DLL pomocí následujících kroků.
+6. Vygenerujte DLL prostředku pomocí následujících kroků.
 
-    1. Nainstalujte Windows SDK. Sada Windows SDK obsahuje kompilátor zprávy ([mc.exe](https://go.microsoft.com/fwlink/?LinkId=184606)) a kompilátor prostředků ([rc.exe](https://go.microsoft.com/fwlink/?LinkId=184605)).
+    1. Nainstalujte Windows SDK. Windows SDK obsahuje kompilátor zpráv ([MC. exe](https://go.microsoft.com/fwlink/?LinkId=184606)) a kompilátor prostředků ([RC. exe](https://go.microsoft.com/fwlink/?LinkId=184605)).
 
-    2. V příkazovém řádku Windows SDK spusťte mc.exe na nový soubor manifestu.
+    2. Na příkazovém řádku Windows SDK spusťte příkaz MC. exe na novém souboru manifestu.
 
         ```console
         mc.exe Microsoft.Windows.ApplicationServer.Applications_Provider1.man
         ```
 
-    3. Spusťte rc.exe na soubor prostředků vygenerované v předchozím kroku.
+    3. Spusťte RC. exe v souboru prostředků vygenerovaném v předchozím kroku.
 
         ```console
         rc.exe  Microsoft.Windows.ApplicationServer.Applications_Provider1.rc
         ```
 
-    4. Vytvořte soubor prázdný cs názvem NewProviderReg.cs.
+    4. Vytvořte prázdný soubor cs s názvem NewProviderReg.cs.
 
-    5. Vytvořte prostředek knihovny DLL pomocí kompilátoru jazyka C#.
+    5. Vytvořte DLL prostředku pomocí C# kompilátoru.
 
         ```console
         csc /target:library /win32res:Microsoft.Windows.ApplicationServer.Applications_Provider1.res NewProviderReg.cs /out:Microsoft.Windows.ApplicationServer.Applications_Provider1.dll
         ```
 
-    6. Změnit název knihovny dll prostředků a zprávy v souboru manifestu z `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` na nový název knihovny dll.
+    6. Změňte název knihovny DLL prostředku a zprávy v souboru manifestu z `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` na nový název knihovny DLL.
 
         ```xml
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">
         ```
 
-    7. Použití [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) k registraci manifestu.
+    7. K registraci manifestu použijte [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) .
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
@@ -261,5 +258,5 @@ Pokud události se zapisují do protokolu konkrétní aplikaci, použijte násle
 
 ## <a name="see-also"></a>Viz také:
 
-- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Monitorování Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [Monitorování aplikací pomocí prostředků infrastruktury aplikace](https://go.microsoft.com/fwlink/?LinkId=201275)

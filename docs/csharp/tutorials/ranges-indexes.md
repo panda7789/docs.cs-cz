@@ -1,18 +1,18 @@
 ---
 title: Prozkoumat rozsahy dat pomocí indexů a rozsahů
 description: V tomto pokročilém kurzu se naučíte prozkoumat data pomocí indexů a rozsahů, abyste prozkoumali řezy sekvenční sady dat.
-ms.date: 04/19/2019
+ms.date: 09/20/2019
 ms.custom: mvc
-ms.openlocfilehash: d0eeadfff9732ced22e045536a88ed49cd98bbaa
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a879601e1358f72e80983992a3cd96ba1fb06a38
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117840"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391965"
 ---
 # <a name="indices-and-ranges"></a>Indexy a rozsahy
 
-Rozsahy a indexy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům <xref:System.Array>v <xref:System.String>, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>. Tyto funkce umožňují přesnější, jasnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům prvků v sekvenci.
+Rozsahy a indexy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům v sekvenci.
 
 V tomto kurzu se naučíte:
 
@@ -74,6 +74,14 @@ Můžete také deklarovat rozsahy nebo indexy jako proměnné. Proměnná se pak
 Následující příklad znázorňuje mnoho z důvodů pro tyto volby. Upravte `x`, `y`a a`z` vyzkoušejte různé kombinace. Při experimentování `x` použijte hodnoty, kde je menší než `y`a `y` je menší než `z` pro platné kombinace. Do nové metody přidejte následující kód. Vyzkoušejte různé kombinace:
 
 [!code-csharp[SemanticsExamples](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
+
+## <a name="type-support-for-indices-and-ranges"></a>Podpora typů pro indexy a rozsahy
+
+Pokud typ poskytuje [indexer](../programming-guide/indexers/index.md) s parametrem <xref:System.Index> nebo <xref:System.Range>, explicitně podporuje indexy nebo rozsahy v uvedeném pořadí.
+
+Typ je **vypočítán** , pokud má vlastnost s názvem `Length` nebo `Count` s přístupným mechanismem getter a návratovým typem `int`. Typ Count, který explicitně nepodporuje indexy nebo rozsahy, může pro ně poskytnout implicitní podporu. Další informace naleznete v části Podpora [implicitního indexu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) a [Podpora implicitního rozsahu](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) v [poznámce k návrhu funkcí](~/_csharplang/proposals/csharp-8.0/ranges.md).
+
+Například následující typy rozhraní .NET podporují jak indexy, tak rozsahy: <xref:System.Array>, <xref:System.String>, <xref:System.Span%601> a <xref:System.ReadOnlySpan%601>. @No__t-0 podporuje indexy, ale nepodporuje rozsahy.
 
 ## <a name="scenarios-for-indices-and-ranges"></a>Scénáře pro indexy a rozsahy
 

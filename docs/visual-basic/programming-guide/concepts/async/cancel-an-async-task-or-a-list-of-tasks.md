@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 2b2fa7447c046f70c840791e7fe9bd874ff3795f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 73627455b1f4460edfe165126a388e961e98921f
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630951"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353126"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)
 
@@ -48,7 +48,7 @@ Pokud chcete sestavit příklad sami, postupujte podle pokynů v části "staže
 
 Pak přidejte následující změny do souboru MainWindow. XAML. vb daného projektu.
 
-1. Deklarujte `CancellationTokenSource` `cts`proměnnou,, která je v oboru pro všechny metody, které k ní přistupují.
+1. Deklarujte proměnnou `CancellationTokenSource` `cts`, která je v oboru pro všechny metody, které k ní přistupují.
 
     ```vb
     Class MainWindow
@@ -57,7 +57,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
         Dim cts As CancellationTokenSource
     ```
 
-2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k oznamování `cts` , když uživatel požaduje zrušení.
+2. Přidejte následující obslužnou rutinu události pro tlačítko **Storno** . Obslužná rutina události používá metodu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> k oznamování `cts`, když si uživatel vyžádá zrušení.
 
     ```vb
     ' ***Add an event handler for the Cancel button.
@@ -69,16 +69,16 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
     End Sub
     ```
 
-3. Proveďte následující změny v obslužné rutině události pro `startButton_Click`tlačítko **Start** .
+3. Proveďte následující změny v obslužné rutině události pro tlačítko **Start** `startButton_Click`.
 
-    - Vytvořte instanci `cts`,. `CancellationTokenSource`
+    - Vytvoří instanci `CancellationTokenSource` `cts`.
 
       ```vb
       ' ***Instantiate the CancellationTokenSource.
       cts = New CancellationTokenSource()
       ```
 
-    - V volání metody `AccessTheWebAsync`, která stahuje obsah zadaného webu, <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> odešlete vlastnost `cts` jako argument. Tato `Token` vlastnost šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
+    - V volání `AccessTheWebAsync`, který stáhne obsah zadaného webu, odešlete vlastnost <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> `cts` jako argument. Vlastnost `Token` šíří zprávu, pokud je požadováno zrušení. Přidejte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit operaci stahování. Následující kód ukazuje změny.
 
       ```vb
       Try
@@ -97,7 +97,7 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
       End Try
       ```
 
-4. V `AccessTheWebAsync` použijte`GetAsync` přetížení metody v<xref:System.Net.Http.HttpClient> typu ke stažení obsahu webu. <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> Pass `ct`– parametr`AccessTheWebAsync`jakodruhýargument. <xref:System.Threading.CancellationToken> Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
+4. V `AccessTheWebAsync` použijte k stažení obsahu webové stránky přetížení <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> metody `GetAsync` v typu <xref:System.Net.Http.HttpClient>. Předejte `ct`, parametr <xref:System.Threading.CancellationToken> `AccessTheWebAsync`, jako druhý argument. Pokud uživatel klikne na tlačítko **Storno** , tento token zprávu přenese.
 
     Následující kód ukazuje změny v `AccessTheWebAsync`.
 
@@ -125,23 +125,23 @@ Pak přidejte následující změny do souboru MainWindow. XAML. vb daného proj
     End Function
     ```
 
-5. Pokud program nerušíte, vytvoří se následující výstup.
+5. Pokud program nezrušíte, vytvoří se následující výstup:
 
-    ```
+    ```console
     Ready to download.
     Length of the downloaded string: 158125.
     ```
 
-    Pokud zvolíte tlačítko **Storno** před tím, než program dokončí stahování obsahu, program vytvoří následující výstup.
+    Pokud zvolíte tlačítko **Storno** před tím, než program dokončí stahování obsahu, program vytvoří následující výstup:
 
-    ```
+    ```console
     Ready to download.
     Download canceled.
     ```
 
 ## <a name="BKMK_CancelaListofTasks"></a>Zrušení seznamu úloh
 
-Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho úloh přiřazením `CancellationTokenSource` stejné instance ke každému úkolu. Pokud zvolíte tlačítko **Zrušit** , zrušíte tím všechny úlohy, které ještě nebyly dokončeny.
+Předchozí příklad můžete roztáhnout tak, aby bylo možné zrušit mnoho úloh přiřazením stejné instance `CancellationTokenSource` k jednotlivým úlohám. Pokud zvolíte tlačítko **Zrušit** , zrušíte tím všechny úlohy, které ještě nebyly dokončeny.
 
 ### <a name="downloading-the-example"></a>Stažení příkladu
 
@@ -185,14 +185,14 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     End Function
     ```
 
-2. Zavolejte metodu v `AccessTheWebAsync`.
+2. Volejte metodu v `AccessTheWebAsync`.
 
     ```vb
     ' ***Call SetUpURLList to make a list of web addresses.
     Dim urlList As List(Of String) = SetUpURLList()
     ```
 
-3. Přidejte následující smyčku `AccessTheWebAsync` do pro zpracování každé webové adresy v seznamu.
+3. Přidejte následující smyčku do `AccessTheWebAsync` ke zpracování každé webové adresy v seznamu.
 
     ```vb
     ' ***Add a loop to process the list of web addresses.
@@ -210,21 +210,21 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
     Next
     ```
 
-4. Vzhledem `AccessTheWebAsync` k tomu, že se zobrazí délka, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>místo.
+4. Vzhledem k tomu, že `AccessTheWebAsync` zobrazuje délky, metoda nemusí vracet cokoli. Odeberte příkaz return a změňte návratový typ metody na <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
 
     ```vb
     Async Function AccessTheWebAsync(ct As CancellationToken) As Task
     ```
 
-    Volejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.
+    Zavolejte metodu z `startButton_Click` pomocí příkazu namísto výrazu.
 
     ```vb
     Await AccessTheWebAsync(cts.Token)
     ```
 
-5. Pokud program nerušíte, vytvoří se následující výstup.
+5. Pokud program nezrušíte, vytvoří se následující výstup:
 
-    ```
+    ```console
     Length of the downloaded string: 35939.
 
     Length of the downloaded string: 237682.
@@ -244,7 +244,7 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
 
     Pokud zvolíte tlačítko **Zrušit** před dokončením stahování, bude výstup obsahovat délky stahování, která byla dokončena před zrušením.
 
-    ```
+    ```console
     Length of the downloaded string: 35939.
 
     Length of the downloaded string: 237682.
@@ -258,7 +258,7 @@ Chcete-li tento příklad roztáhnout sami, postupujte podle pokynů v části "
 
 Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že je nutné přidat odkaz <xref:System.Net.Http>pro.
 
-Projekty si můžete stáhnout z [Async Sample: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+Projekty si můžete stáhnout z ukázky [Async: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
 
 ### <a name="cancel-a-task-example"></a>Příklad zrušení úlohy
 

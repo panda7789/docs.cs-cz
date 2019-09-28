@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)'
+title: 'Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 21f4e6445824a6664b5eaa7ff793ee925aa06cef
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c7874615d62b09f3317a3ef39c28a0e74fd349d1
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592998"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351754"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
-Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (Visual Basic)
+Tento příklad ukazuje, jak provádět agregované výpočty, jako je součet, průměr, minimum a maximum ve sloupcích souboru. csv. Příklady zásad, které jsou zde uvedeny, lze použít na jiné typy strukturovaného textu.  
   
-### <a name="to-create-the-source-file"></a>Chcete-li vytvořit zdrojový soubor  
+### <a name="to-create-the-source-file"></a>Vytvoření zdrojového souboru  
   
-1. Zkopírujte následující řádky do souboru s názvem scores.csv a uložte ho do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, a následné sloupce představují skóre z čtyři zkoušky.  
+1. Zkopírujte následující řádky do souboru s názvem skóre. csv a uložte ho do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, přičemž následující sloupce představují skóre ze čtyř zkoušek.  
   
-    ```  
+    ```csv  
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -140,10 +140,10 @@ End Class
 ' Exam #4 Average: 76.92 High Score: 94 Low Score: 39  
 ```  
   
- Dotaz funguje <xref:System.String.Split%2A> způsobů, jak převést každý řádek textu do pole. Každý prvek pole představuje sloupci. Nakonec text v každém sloupci je převedena na číselné vyjádření. Pokud se soubor nachází soubor oddělené tabulátorem, jen aktualizujte argument v `Split` metodu `\t`.  
+ Dotaz funguje pomocí metody <xref:System.String.Split%2A> k převedení každého řádku textu do pole. Každý prvek pole představuje sloupec. Nakonec se text v každém sloupci převede na jeho číselné vyjádření. Pokud se jedná o soubor oddělený tabulátorem, stačí aktualizovat argument v metodě `Split` na `\t`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 33660f33-b70f-4dca-8c87-ab35cfc2961a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0383dc3024352b9fac879532ab2789a60488c96
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 995f54e81a48fb3f809d99981ad135974544eb28
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331632"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353168"
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Zajištění integrity dat pomocí hodnot hash
 Hodnota hash je číselná hodnota s pevnou délkou, která jednoznačně identifikuje data. Hodnoty hash představují velké objemy dat s mnohem menšími číselnými hodnotami, takže se používají s digitálními podpisy. Hodnotu hash můžete efektivně podepsat, než je třeba podepsat větší hodnotu. Hodnoty hash jsou také užitečné pro ověření integrity dat odesílaných prostřednictvím nezabezpečených kanálů. Hodnota hash přijatých dat se dá porovnat s hodnotou hash dat, protože byla odeslána, aby se zjistilo, jestli se data změnila.  
@@ -50,13 +50,13 @@ Hodnota hash je číselná hodnota s pevnou délkou, která jednoznačně identi
   
  Pokud se dvě hodnoty hash shodují, tento kód zobrazí následující kód konzole:  
   
-```  
+```console  
 The hash codes match.  
 ```  
   
  Pokud se neshodují, kód zobrazí následující:  
   
-```  
+```console  
 The hash codes do not match.  
 ```  
   

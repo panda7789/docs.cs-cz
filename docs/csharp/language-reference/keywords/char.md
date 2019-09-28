@@ -8,34 +8,34 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 754c04bfc3b4090906420d55d55e51606b72f187
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 255e69d3715a22e7933b4036e968e610657748cf
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605946"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353762"
 ---
 # <a name="char-c-reference"></a>char (Referenční dokumentace jazyka C#)
 
-Klíčové slovo slouží k deklaraci instance <xref:System.Char?displayProperty=nameWithType> struktury, kterou .NET Framework používá pro reprezentaci znaku Unicode. `char` Hodnota `Char` objektu je 16bitová číselná hodnota (Ordinal).
+Klíčové slovo `char` slouží k deklaraci instance struktury <xref:System.Char?displayProperty=nameWithType>, kterou .NET Framework používá pro reprezentaci znaku Unicode. Hodnota objektu `Char` je 16bitová číselná hodnota (Ordinal).
 
  Znaky Unicode slouží k reprezentaci většiny psaných jazyků po celém světě.
 
-|type|Rozsah|Velikost|Typ .NET|
+|type|Rozsah|Size|Typ .NET|
 |----------|-----------|----------|-------------------------|
 |`char`|U + 0000 až U + FFFF|16 bitový znak Unicode|<xref:System.Char?displayProperty=nameWithType>|
 
 ## <a name="literals"></a>Literály
 
-Konstanty `char` typu lze zapsat jako znakové literály, šestnáctkové řídicí sekvence nebo reprezentace v kódování Unicode. Můžete také přetypovat kódy integrálních znaků. V následujícím příkladu jsou čtyři `char` proměnné inicializovány se stejným znakem `X`:
+Konstanty typu `char` lze zapsat jako znakové literály, hexadecimální sekvence escape nebo reprezentace v kódování Unicode. Můžete také přetypovat kódy integrálních znaků. V následujícím příkladu se čtyřmi proměnnými `char` inicializuje se stejným znakem `X`:
 
 [!code-csharp[csrefKeywordsTypes#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#19)]
 
 ## <a name="conversions"></a>Převody
 
-[](../builtin-types/floating-point-numeric-types.md) [](../builtin-types/integral-numeric-types.md) [](../builtin-types/integral-numeric-types.md) [](../builtin-types/floating-point-numeric-types.md) [](../builtin-types/integral-numeric-types.md)Lze implicitně převést na UShort, int, uint, Double nebo Decimal. `char` Neexistují však žádné implicitní převody z jiných typů na `char` typ.
+@No__t-0 lze implicitně převést na [UShort](../builtin-types/integral-numeric-types.md), [int](../builtin-types/integral-numeric-types.md), [uint](../builtin-types/integral-numeric-types.md), [Double](../builtin-types/floating-point-numeric-types.md)nebo [Decimal](../builtin-types/floating-point-numeric-types.md). Neexistují však žádné implicitní převody z jiných typů na typ `char`.
 
-Typ poskytuje několik statických metod pro práci s `char` hodnotami. <xref:System.Char?displayProperty=nameWithType>
+Typ <xref:System.Char?displayProperty=nameWithType> poskytuje několik statických metod pro práci s hodnotami `char`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#  
 
@@ -51,5 +51,4 @@ Další informace naleznete v tématu [integrální typy](~/_csharplang/spec/typ
 - [Tabulka předdefinovaných typů](./built-in-types-table.md)
 - [Tabulka implicitních číselných převodů](./implicit-numeric-conversions-table.md)
 - [Tabulka explicitních číselných převodů](./explicit-numeric-conversions-table.md)
-- [Typy s povolenou hodnotou Null](../../programming-guide/nullable-types/index.md)
 - [Řetězce](../../programming-guide/strings/index.md)

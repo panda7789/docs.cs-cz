@@ -2,12 +2,12 @@
 title: Hledání textu v dokumentech aplikace Word (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: f05df74f09373af140766f601cfae26404ada1b8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9eb5eaa8326167501792745da047f904cf001c29
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352922"
 ---
 # <a name="finding-text-in-word-documents-visual-basic"></a>Hledání textu v dokumentech aplikace Word (Visual Basic)
 
@@ -19,7 +19,7 @@ Tento příklad zpracovává dokument WordprocessingML, aby bylo možné najít 
 
 Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).
 
-Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.
+Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.
 
 ```vb
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -155,7 +155,7 @@ End Module
 
 Tento příklad vytvoří následující výstup:
 
-```
+```console
 StyleName:Code >        Console.WriteLine("Hello World")<
 StyleName:Code >Hello World<
 ```
@@ -296,7 +296,7 @@ End Module
 
 Tento příklad vytvoří následující výstup:
 
-```
+```console
 StyleName:Code ><
 ```
 
@@ -312,6 +312,6 @@ V další části najdete další informace o WordprocessingML dokumentech:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
 - [Refaktoring pomocí funkce Pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
 - [Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

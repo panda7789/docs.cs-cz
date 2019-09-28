@@ -8,18 +8,18 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 5b135fee12ac5b78b41a657f2eb458ea104143fc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f0df3170289d780852ee14232e92c3b71412c548
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923937"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392376"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
 Indexery umožňují, aby byly instance třídy nebo struktury indexovány stejně jako pole. Indexovaná hodnota může být nastavena nebo načtena bez explicitního určení typu nebo členu instance. Indexery připomínají [vlastnosti](../classes-and-structs/properties.md) s tím rozdílem, že jejich přístupové objekty přijímají parametry.  
- 
- Následující příklad definuje obecnou třídu pomocí jednoduchých přístupových metod [Get](../../language-reference/keywords/get.md) a [set](../../language-reference/keywords/set.md) pro přiřazení a načtení hodnot. `Program` Třída vytvoří instanci této třídy pro ukládání řetězců.  
+
+ Následující příklad definuje obecnou třídu pomocí jednoduchých přístupových metod [Get](../../language-reference/keywords/get.md) a [set](../../language-reference/keywords/set.md) pro přiřazení a načtení hodnot. Třída `Program` vytvoří instanci této třídy pro ukládání řetězců.  
   
  [!code-csharp[indexers#1](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-1.cs)]  
   
@@ -32,9 +32,9 @@ Je běžné, že přistupující objekt get nebo set indexeru se skládá z jedn
 
 [!code-csharp[indexers#2](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-2.cs)]  
 
-Všimněte si `=>` , že zavádí tělo výrazu a `get` že klíčové slovo se nepoužívá. 
+Všimněte si, že `=>` zavádí tělo výrazu a nepoužívá se klíčové slovo `get`. 
 
-Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako členy Expression-těle. V takovém případě je `get` nutné `set` použít jak klíčová slova, tak i klíčová slova. Příklad:
+Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako členy Expression-těle. V takovém případě musí být použita klíčová slova `get` a `set`. Příklad:
 
 [!code-csharp[indexers#3](../../../../samples/snippets/csharp/programming-guide/indexers/indexer-3.cs)]  
   
@@ -42,11 +42,11 @@ Počínaje C# 7,0 se přístupové objekty get a set můžou implementovat jako 
   
 - Indexery povolují, aby objekty byly indexovány podobným způsobem jako pole.  
   
-- `get` Přistupující objekt vrací hodnotu. `set` Přístupový objekt přiřadí hodnotu.  
+- Přístupový objekt `get` vrací hodnotu. Přístupový objekt `set` přiřadí hodnotu.  
   
 - Klíčové slovo [This](../../language-reference/keywords/this.md) slouží k definování indexeru.  
   
-- Klíčové slovo [Value](../../language-reference/keywords/value.md) slouží k definování hodnoty, kterou přiřazuje `set` indexer.  
+- Klíčové slovo [Value](../../language-reference/keywords/value.md) slouží k definování hodnoty, kterou přiřazuje indexer `set`.  
   
 - Indexery nemusí být indexovány pomocí celočíselné hodnoty; je zde postup, jak definovat konkrétní vyhledávací mechanismus.  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: 7b56185b98d89572e6a8e3b9bc8ed54ad6ef7b37
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d521e56f9ae311eea53028ba189416db289839cd
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68631037"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352880"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Postupy: Kombinování a porovnávání kolekcí řetězců (LINQ) (Visual Basic)
 
@@ -17,7 +17,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
 
 1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:
 
-    ```
+    ```text
     Bankov, Peter
     Holm, Michael
     Garcia, Hugo
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak sloučit soubory, které obsahují řádky textu a 
 
 2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu. Všimněte si, že dva soubory mají některé běžné názvy.
 
-    ```
+    ```text
     Liu, Jinghao
     Bankov, Peter
     Holm, Michael
@@ -165,7 +165,7 @@ End Class
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Vytvořte projekt konzolové aplikace VB.NET s `Imports` příkazem pro obor názvů System. Linq.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
 
 ## <a name="see-also"></a>Viz také:
 

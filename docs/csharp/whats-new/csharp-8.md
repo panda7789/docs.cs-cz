@@ -2,12 +2,12 @@
 title: Co je nového v C# 8,0 – C# příručka
 description: Získejte přehled o nových funkcích dostupných v C# 8,0.
 ms.date: 09/20/2019
-ms.openlocfilehash: 95331c8dd8e8b5e0d5af242752565d8e93120937
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: ee0f6c9d7cfbe829508e3e0900e249c204266ca3
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216494"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396034"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8,0
 
@@ -375,18 +375,18 @@ Asynchronní streamy si můžete vyzkoušet sami v našem kurzu [vytváření a 
 
 ## <a name="indices-and-ranges"></a>Indexy a rozsahy
 
-Rozsahy a indexy poskytují stručnou syntaxi pro určení dílčích rozsahů v poli, [řetězci](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>nebo <xref:System.ReadOnlySpan%601>.
+Indexy a rozsahy poskytují stručnou syntaxi pro přístup k jednotlivým prvkům nebo rozsahům v sekvenci.
 
 Tato podpora jazyků spoléhá na dva nové typy a dva nové operátory:
 
 - <xref:System.Index?displayProperty=nameWithType>představuje index do sekvence.
-- `^` Operátor, který určuje, že index je relativní ke konci sekvence.
+- Index z operátoru end `^`, který určuje, že index je relativní ke konci sekvence.
 - <xref:System.Range?displayProperty=nameWithType>představuje dílčí rozsah sekvence.
-- Operátor Range (`..`), který určuje začátek a konec rozsahu jako jeho operandy.
+- Operátor `..`rozsahu, který určuje začátek a konec rozsahu jako jeho operandy.
 
 Pojďme začít s pravidly pro indexy. Zvažte pole `sequence`. Index je stejný jako `sequence[0]`. `0` Index je stejný jako `sequence[sequence.Length]`. `^0` Všimněte si `sequence[^0]` , že vyvolá výjimku, stejně jako `sequence[sequence.Length]` . Pro jakékoli číslo `n`je index `^n` stejný jako `sequence.Length - n`.
 
-Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah. 
+Rozsah Určuje *začátek* a *konec* rozsahu. Začátek rozsahu je včetně, ale konec rozsahu je exkluzivní, což znamená, že *začátek* je zahrnut v rozsahu, ale *konec* není zahrnutý v rozsahu. Rozsah `[0..^0]` představuje celý rozsah, stejně jako `[0..sequence.Length]` představuje celý rozsah.
 
 Pojďme se podívat na několik příkladů. Vezměte v úvahu následující pole s poznámkou s jeho indexem od začátku do konce:
 
@@ -444,6 +444,8 @@ Rozsah lze použít `[` v rámci znaků a `]` :
 ```csharp
 var text = words[phrase];
 ```
+
+Pouze pole podporují indexy a rozsahy. Můžete také použít indexy a rozsahy s [řetězcem](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601> nebo <xref:System.ReadOnlySpan%601>. Další informace najdete v tématu [Podpora typů pro indexy a rozsahy](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
 Můžete prozkoumat další informace o indexech a oblastech v kurzu týkající se [indexů a rozsahů](../tutorials/ranges-indexes.md).
 

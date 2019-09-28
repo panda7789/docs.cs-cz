@@ -6,37 +6,37 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: 063d7e3b68fbe6c01ff0df4ae935fec5af6f6891
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: df2a235651a2242ffe18df377dce9995af31e99f
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743846"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392461"
 ---
 # <a name="structs-c-programming-guide"></a>Struktury (Průvodce programováním v C#)
 
-Struktury jsou definované pomocí [struktura](../../language-reference/keywords/struct.md) – klíčové slovo, například:  
+Struktury jsou definované pomocí klíčového slova [struct](../../language-reference/keywords/struct.md) , například:  
   
  [!code-csharp[csProgGuideObjects#39](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#39)]  
   
-Struktury sdílet většina podle stejné syntaxe jako třídy. Název struktury musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Struktury jsou omezeny více než třídy následujícími způsoby:  
+Struktury sdílejí většinu stejné syntaxe jako třídy. Název struktury musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Struktury jsou více omezené než třídy následujícími způsoby:  
   
-- V deklaraci struktury pole nelze inicializovat, jestliže nejsou deklarovány jako const nebo statické.  
-- Struktury nelze deklarovat konstruktor bez parametrů (konstruktor bez parametrů) nebo finalizační metodu.  
-- Struktury se zkopírují na přiřazení. Když je struktura přiřazena nové proměnné, se data kopírují a jakékoli změny nová kopie nezmění data pro původní kopírování. To je důležité pamatovat při práci s kolekcemi hodnoty typy, jako `Dictionary<string, myStruct>`.  
+- V rámci deklarace struktury nelze pole inicializovat, pokud nejsou deklarována jako const nebo static.  
+- Struktura nemůže deklarovat konstruktor bez parametrů (konstruktor bez parametrů) nebo finalizační metodu.  
+- Struktury se zkopírují při přiřazení. Když je struktura přiřazena nové proměnné, zkopírují se všechna data a jakákoli změna nové kopie nemění data původní kopie. To je důležité pamatovat při práci s kolekcemi typů hodnot, jako je `Dictionary<string, myStruct>`.  
 - Struktury jsou typy hodnot, na rozdíl od tříd, které jsou odkazové typy.  
-- Na rozdíl od tříd, struktur dá vytvořit instance bez použití `new` operátor.  
-- Struktury můžete deklarovat konstruktory, které mají parametry.
-- Struktura nemůže dědit z jiné třídy nebo struktury a nemůže být základní třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, který dědí z <xref:System.Object>.  
-- Struktury můžou implementovat rozhraní.
-- Struktura nemůže být `null`, a proměnnou struktury nelze přiřadit `null` Pokud je proměnná deklarována jako typ s možnou hodnotou Null.
+- Na rozdíl od tříd lze vytvořit instanci struktur bez použití operátoru `new`.  
+- Struktury mohou deklarovat konstruktory, které mají parametry.
+- Struktura nemůže dědit z jiné struktury nebo třídy a nemůže být základem třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, který dědí z <xref:System.Object>.  
+- Struktura může implementovat rozhraní.
+- Struktura nemůže být `null` a proměnnou struktury nelze přiřadit `null`, pokud je proměnná deklarována jako typ hodnoty s možnou hodnotou null.
   
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Třídy a struktury](index.md)
 - [Třídy](classes.md)
-- [Typy s povolenou hodnotou Null](../nullable-types/index.md)
+- [Typy hodnot s možnou hodnotou null](../nullable-types/index.md)
 - [Názvy identifikátorů](../inside-a-program/identifier-names.md)
 - [Použití struktur](using-structs.md)
-- [Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na metodu třídu](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)
+- [Postupy: Znát rozdíl mezi předáním struktury a předáním odkazu na třídu metodě @ no__t-0

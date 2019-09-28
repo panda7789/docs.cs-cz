@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6409bbecdef2da03a18ed246cb90478b2a1fd7f6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a0d21ab8af3669575a451644deb2b3572fdb7651
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054066"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354024"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 
@@ -321,7 +321,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
     Pokud je výjimka spravovaná, <xref:System.OutOfMemoryException> je zobrazena jako typ výjimky, jak je znázorněno v následujícím příkladu.
 
-    ```
+    ```console
     Exception object: 39594518
     Exception type: System.OutOfMemoryException
     Message: <none>
@@ -335,7 +335,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
     Vlákno se zásobníkem, který obsahuje volání výjimek, je určeno `RaiseTheException` argumentem. Toto je spravovaný objekt výjimky.
 
-    ```
+    ```console
     28adfb44 7923918f 5b61f2b4 00000000 5b61f2b4 mscorwks!RaiseTheException+0xa0
     ```
 
@@ -355,7 +355,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Zobrazí se největší volná oblast, jak je znázorněno v následujícím výstupu.
 
-  ```
+  ```console
   Largest free region: Base 54000000 - Size 0003A980
   ```
 
@@ -369,7 +369,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Největší volná oblast je největší hodnota ve sloupci MAXIMUM, jak je znázorněno v následujícím výstupu.
 
-  ```
+  ```console
   TYPE        MINIMUM   MAXIMUM     AVERAGE   BLK COUNT   TOTAL
   ~~~~        ~~~~~~~   ~~~~~~~     ~~~~~~~   ~~~~~~~~~~  ~~~~
   Free:
@@ -415,7 +415,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Výsledek je následující.
 
-  ```
+  ```console
   Number of GC Heaps: 2
   ------------------------------
   Heap 0 (002db550)
@@ -459,7 +459,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Můžete zahájit analýzu z posledních několika řádků výstupu, protože obsahují seznam objektů, které používají nejvíce místa. Příklad:
 
-  ```
+  ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
   00155f80      533     15216804      Free
   7a747c78   791070     15821400 System.Collections.Specialized.ListDictionary+DictionaryNode
@@ -479,7 +479,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Příkladem výsledků je následující.
 
-  ```
+  ```console
   Address  MT           Size  Gen
   1875d2c0 790fa3e0      152    2 System.String HighlightNullStyle_Blotter_PendingOrder-11_Blotter_PendingOrder-11
   …
@@ -503,7 +503,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Kořeny nalezené v zásobnících můžou být falešně pozitivní. Další informace získáte pomocí příkazu `!help gcroot`.
 
-  ```
+  ```console
   ebx:Root:19011c5c(System.Windows.Forms.Application+ThreadContext)->
   19010b78(DemoApp.FormDemoApp)->
   19011158(System.Windows.Forms.PropertyStore)->
@@ -551,7 +551,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
     Tento příkaz poskytuje výstup jako následující.
 
-    ```
+    ```console
        OSID     Special thread type
     2    cd0    DbgHelper
     3    c18    Finalizer
@@ -570,7 +570,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Tento příkaz zobrazí celkovou velikost všech bezplatných objektů na spravované haldě, jak je znázorněno v následujícím příkladu.
 
-  ```
+  ```console
   total 230 objects
   Statistics:
         MT    Count    TotalSize Class Name
@@ -584,7 +584,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Tento příkaz zobrazí výstup podobný následujícímu. Poslední řádek zobrazuje dočasný segment.
 
-  ```
+  ```console
   Heap 0 (0015ad08)
   generation 0 starts at 0x49521f8c
   generation 1 starts at 0x494d7f64
@@ -604,7 +604,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Výsledek je následující. Generace 0 je přibližně 9 MB.
 
-  ```
+  ```console
   Evaluate expression: 9321848 = 008e3d78
   ```
 
@@ -614,7 +614,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Výsledek je následující.
 
-  ```
+  ```console
   ------------------------------
   Heap 0
   total 409 objects
@@ -647,7 +647,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Zobrazené statistiky obsahují počet připnutých popisovačů, jak ukazuje následující příklad.
 
-  ```
+  ```console
   GC Handle Statistics:
   Strong Handles:      29
   Pinned Handles:      10
@@ -665,7 +665,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Následující data znázorňují čtyři intervaly vzorkování dvou sekund pro studii 8 sekund. Sloupce `Gen0`, `Gen1` a`Gen2` zobrazují počet uvolňování paměti, ke kterým došlo během daného intervalu pro danou generaci.
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2    % Time in GC
           1       9       3       1              10
           2      10       3       1               1
@@ -677,7 +677,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   V tomto příkladu je 5 teček.
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2     % Time in GC
           1       9       3       1                3
           2      10       3       1                1
@@ -686,13 +686,13 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
           5      11       4       2               20
   ```
 
-  Druhá kolekce paměti 2. generace začala během třetího intervalu a skončila v pátém intervalu. Za nejhorší případ byl poslední uvolňování paměti pro kolekci generace 0, která skončila na začátku druhého intervalu, a uvolnění paměti 2. generace bylo dokončeno na konci pátého intervalu. Proto je čas mezi koncem uvolňování paměti generace 0 a koncem uvolňování paměti 2. generace 4 sekundy. Vzhledem k tomu, že čítačje20%,pakmaximálnídoba,pokteroubybylomožnéučinituvolňovánípaměti2.generace,je(4sekundy*20%=800ms).`% Time in GC`
+  Druhá kolekce paměti 2. generace začala během třetího intervalu a skončila v pátém intervalu. Za nejhorší případ byl poslední uvolňování paměti pro kolekci generace 0, která skončila na začátku druhého intervalu, a uvolnění paměti 2. generace bylo dokončeno na konci pátého intervalu. Proto je čas mezi koncem uvolňování paměti generace 0 a koncem uvolňování paměti 2. generace 4 sekundy. Vzhledem k tomu, že počítadlo `% Time in GC` je 20%, pak maximální doba, po kterou by bylo možné považovat uvolňování paměti 2. generace, je (4 sekundy * 20% = 800ms).
 
 - Alternativně můžete určit délku uvolňování paměti pomocí [událostí ETW pro uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)a analyzovat informace a určit dobu trvání uvolňování paměti.
 
   Například následující data ukazují sekvenci události, ke které došlo během nesouběžného uvolňování paměti.
 
-  ```
+  ```console
   Timestamp    Event name
   513052        GCSuspendEEBegin_V1
   513078        GCSuspendEEEnd
@@ -711,7 +711,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Následující výstup poskytuje příklad pro uvolňování paměti na pozadí a obsahuje pole proces, vlákno a událost. (Ne všechna data jsou zobrazena.)
 
-  ```
+  ```console
   timestamp(us)    event name            process    thread    event field
   42504385        GCSuspendEEBegin_V1    Test.exe    4372             1
   42504648        GCSuspendEEEnd         Test.exe    4372
@@ -751,7 +751,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Tento příkaz zobrazí výstup podobný následujícímu.
 
-  ```
+  ```console
   0012f3b0 79ff0bf8 mscorwks!WKS::GCHeap::GarbageCollect
   0012f454 30002894 mscorwks!GCInterface::CollectGeneration+0xa4
   0012f490 79fa22bd fragment_ni!request.Main(System.String[])+0x48
@@ -761,7 +761,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Pokud uvolňování paměti bylo způsobeno přidělením paměti, zásobník se zobrazí takto:
 
-  ```
+  ```console
   0012f230 7a07c551 mscorwks!WKS::GCHeap::GarbageCollectGeneration
   0012f2b8 7a07cba8 mscorwks!WKS::gc_heap::try_allocate_more_space+0x1a1
   0012f2d4 7a07cefb mscorwks!WKS::gc_heap::allocate_more_space+0x18
@@ -781,7 +781,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Příklad výstupu (zkráceně pro zobrazení objektů, které používají nejvíce místa):
 
-  ```
+  ```console
   79124228    31857      9862328 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   00155f80    21248     12256296      Free
@@ -803,7 +803,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
 
   Příklad výstupu (zkráceně pro zobrazení objektů, které používají nejvíce místa):
 
-  ```
+  ```console
   79124228    26648      9314256 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   79103b6c   296770     13057880 System.Threading.ReaderWriterLock

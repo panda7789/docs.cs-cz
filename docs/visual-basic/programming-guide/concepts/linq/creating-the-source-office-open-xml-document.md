@@ -2,12 +2,12 @@
 title: Vytvoření zdrojového dokumentu XML pro Office Open Source (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-ms.openlocfilehash: d01755442a9b64e0577ace4eb05c6818dac9a824
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 75030f3d1c2940cc84f81b85dca921497137439f
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965257"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352956"
 ---
 # <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Vytvoření zdrojového dokumentu XML pro Office Open Source (Visual Basic)
 V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML WordprocessingML, který se používá v dalších příkladech tohoto kurzu. Pokud budete postupovat podle těchto pokynů, váš výstup bude odpovídat výstupu uvedenému v každém příkladu.  
@@ -24,7 +24,7 @@ V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML Wordprocessi
   
 2. Vložte do nového dokumentu následující text:  
   
-    ```  
+    ```text  
     Parsing WordprocessingML with LINQ to XML  
   
     The following example prints to the console.  
@@ -44,9 +44,9 @@ V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML Wordprocessi
   
 3. Naformátuje první řádek stylem "Nadpis 1".  
   
-4. Vyberte řádky, které obsahují kód Visual Basic. První řádek začíná `Imports` klíčovým slovem. Poslední řádek je "End Class". Naformátujte čáry pomocí písma Courier. Naformátujte je pomocí nového stylu a pojmenujte nový styl "Code".  
+4. Vyberte řádky, které obsahují kód Visual Basic. První řádek začíná klíčovým slovem `Imports`. Poslední řádek je "End Class". Naformátujte čáry pomocí písma Courier. Naformátujte je pomocí nového stylu a pojmenujte nový styl "Code".  
   
-5. Nakonec vyberte celý řádek obsahující výstup a naformátujte ho pomocí `Code` stylu.  
+5. Nakonec vyberte celý řádek, který obsahuje výstup, a naformátujte ho pomocí stylu `Code`.  
   
 6. Uložte dokument a pojmenujte ho SampleDoc. docx.  
   
@@ -55,4 +55,4 @@ V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML Wordprocessi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

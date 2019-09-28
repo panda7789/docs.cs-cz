@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbf7c1203a1f6089eefce3ed2876c9ade91cc697
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 3acfa0da0caa29b503f47f23b0e9042d73ef0657
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353387"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -71,9 +71,9 @@ Vylepšené přístupnost, která aplikaci umožňuje zajistit vhodné prostřed
 
 #### <a name="base-classes"></a>Základní třídy
 
-Byl **snížen dopad FIPS na kryptografii**. V předchozích verzích .NET Framework spravované třídy zprostředkovatele kryptografických služeb, jako je <xref:System.Security.Cryptography.SHA256Managed> například throw <xref:System.Security.Cryptography.CryptographicException> a v případě, že systémové šifrovací knihovny jsou konfigurovány v režimu FIPS. Tyto výjimky jsou vyvolány, protože spravované verze tříd zprostředkovatele kryptografických služeb, na rozdíl od systémových kryptografických knihoven, neprošly certifikací FIPS (Federal Information Processing Standards) 140-2. Vzhledem k tomu, že někteří vývojáři mají své vývojové počítače v režimu FIPS, jsou výjimky obvykle vyvolány v produkčních systémech.
+Byl **snížen dopad FIPS na kryptografii**. V předchozích verzích .NET Framework spravované třídy zprostředkovatele kryptografických služeb, jako je například <xref:System.Security.Cryptography.SHA256Managed>, vyvolají <xref:System.Security.Cryptography.CryptographicException>, když jsou systémové šifrovací knihovny konfigurovány v režimu FIPS. Tyto výjimky jsou vyvolány, protože spravované verze tříd zprostředkovatele kryptografických služeb, na rozdíl od systémových kryptografických knihoven, neprošly certifikací FIPS (Federal Information Processing Standards) 140-2. Vzhledem k tomu, že někteří vývojáři mají své vývojové počítače v režimu FIPS, jsou výjimky obvykle vyvolány v produkčních systémech.
 
-Ve výchozím nastavení nejsou v aplikacích, které cílí na .NET Framework 4,8, následující spravované třídy kryptografie <xref:System.Security.Cryptography.CryptographicException> již v tomto případě vyvolávat:
+Ve výchozím nastavení nejsou v aplikacích, které cílí na .NET Framework 4,8, následující spravované třídy kryptografie již v tomto případě vyvolávat <xref:System.Security.Cryptography.CryptographicException>:
 
 - <xref:System.Security.Cryptography.MD5Cng>
 - <xref:System.Security.Cryptography.MD5CryptoServiceProvider>
@@ -82,7 +82,7 @@ Ve výchozím nastavení nejsou v aplikacích, které cílí na .NET Framework 4
 - <xref:System.Security.Cryptography.RIPEMD160Managed>
 - <xref:System.Security.Cryptography.SHA256Managed>
 
-Místo toho tyto třídy přesměrují kryptografické operace do systémové knihovny kryptografie. Tato změna efektivně odstraňuje potenciálně matoucí rozdíl mezi vývojářskými prostředími a provozními prostředími a zpřístupňuje nativní komponenty a spravované komponenty v rámci stejných kryptografických zásad. Aplikace, které závisí na těchto výjimkách, mohou obnovit předchozí chování nastavením přepínače `Switch.System.Security.Cryptography.UseLegacyFipsThrow` AppContext na. `true` Další informace najdete v tématu [spravované kryptografické třídy nevyvolávají výjimku CryptographyException v režimu FIPS](../migration-guide/retargeting/4.7.2-4.8.md#managed-cryptography-classes-do-not-throw-a-cryptographyexception-in-fips-mode).
+Místo toho tyto třídy přesměrují kryptografické operace do systémové knihovny kryptografie. Tato změna efektivně odstraňuje potenciálně matoucí rozdíl mezi vývojářskými prostředími a provozními prostředími a zpřístupňuje nativní komponenty a spravované komponenty v rámci stejných kryptografických zásad. Aplikace, které závisí na těchto výjimkách, mohou obnovit předchozí chování nastavením přepínače AppContext `Switch.System.Security.Cryptography.UseLegacyFipsThrow` na `true`. Další informace najdete v tématu [spravované kryptografické třídy nevyvolávají výjimku CryptographyException v režimu FIPS](../migration-guide/retargeting/4.7.2-4.8.md#managed-cryptography-classes-do-not-throw-a-cryptographyexception-in-fips-mode).
 
 **Použití aktualizované verze ZLib**
 
@@ -96,11 +96,11 @@ Počínaje .NET Framework 4,5 používá sestavení clrcompression. dll [ZLib](h
 
 Nástroje pro orchestraci využívají koncové body stavu ke správě služeb na základě jejich stavu. Kontroly stavu lze také použít pomocí nástrojů pro monitorování ke sledování a poskytování oznámení o dostupnosti a výkonu služby.
 
-**ServiceHealthBehavior** je chování služby WCF, které rozšiřuje <xref:System.ServiceModel.Description.IServiceBehavior>.  Při přidání do <xref:System.ServiceModel.Description.ServiceDescription.Behaviors?displayProperty=nameWithType> kolekce provede chování služby následující akce:
+**ServiceHealthBehavior** je chování služby WCF, které rozšiřuje <xref:System.ServiceModel.Description.IServiceBehavior>.  Při přidání do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors?displayProperty=nameWithType> provede chování služby následující akce:
 
 - Vrátí stav služby s kódy odpovědí HTTP. V řetězci dotazu můžete zadat stavový kód HTTP pro požadavek na test stavu HTTP/GET.
 
-- Publikuje informace o stavu služby. Podrobnosti konkrétní služby, včetně stavu služby, počtu omezení a kapacity, se dají zobrazit pomocí požadavku HTTP/GET s `?health` řetězcem dotazu. Usnadnění přístupu k těmto informacím je důležité při řešení potíží se službou WCF, která se nechová.
+- Publikuje informace o stavu služby. Podrobnosti konkrétní služby, včetně stavu služby, počtu omezení a kapacity, se dají zobrazit pomocí požadavku HTTP/GET s řetězcem dotazu `?health`. Usnadnění přístupu k těmto informacím je důležité při řešení potíží se službou WCF, která se nechová.
 
 Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o stavu služby WCF:
 
@@ -111,10 +111,7 @@ Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o
                      new Uri("http://contoso:81/Service1"));
   ServiceHealthBehavior healthBehavior =
       host.Description.Behaviors.Find<ServiceHealthBehavior>();
-  if (healthBehavior == null)
-  {
-     healthBehavior = new ServiceHealthBehavior();
-  }
+  healthBehavior ??= new ServiceHealthBehavior();
   host.Description.Behaviors.Add(healthBehavior);
   ```
 
@@ -141,24 +138,24 @@ Existují dva způsoby, jak vystavit koncový bod stavu a publikovat informace o
   </behaviors>
   ```
 
-Na stav služby se dá zadat dotaz `OnServiceFailure`pomocí parametrů dotazu `OnListenerFailure`, jako jsou, `OnDispatcherFailure` `OnThrottlePercentExceeded`, a), a pro každý parametr dotazu je možné zadat kód odpovědi HTTP. Pokud je pro parametr dotazu vynechání kódu odpovědi HTTP, ve výchozím nastavení se používá kód odpovědi HTTP 503. Příklad:
+Na stav služby se dá zadat dotaz pomocí parametrů dotazu, jako je `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`), a pro každý parametr dotazu se dá zadat kód odpovědi HTTP. Pokud je pro parametr dotazu vynechání kódu odpovědi HTTP, ve výchozím nastavení se používá kód odpovědi HTTP 503. Příklad:
 
-- OnServiceFailure:`https://contoso:81/Service1?health&OnServiceFailure=450`
+- OnServiceFailure: `https://contoso:81/Service1?health&OnServiceFailure=450`
 
-  Kód stavu odpovědi HTTP 450 je vrácen, když je [Třída ServiceHost. State](xref:System.ServiceModel.Channels.CommunicationObject.State) je <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType>větší než.
+  Kód stavu odpovědi HTTP 450 je vrácen, je-li [Třída ServiceHost. State](xref:System.ServiceModel.Channels.CommunicationObject.State) je větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType>.
 Parametry a příklady dotazů:
 
-- OnDispatcherFailure:`https://contoso:81/Service1?health&OnDispatcherFailure=455`
+- OnDispatcherFailure: `https://contoso:81/Service1?health&OnDispatcherFailure=455`
 
   Stavový kód odpovědi HTTP 455 se vrátí, pokud je stav některého z přeslaných kanálů větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType>.
 
-- OnListenerFailure:`https://contoso:81/Service1?health&OnListenerFailure=465`
+- OnListenerFailure: `https://contoso:81/Service1?health&OnListenerFailure=465`
 
   Stavový kód odpovědi HTTP 465 se vrátí, pokud je stav jakéhokoli naslouchacího procesu kanálu větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType>.
 
 - OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
-  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
+  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
 
   - Pokud je procento větší než 95, vrátí se kód odpovědi HTTP 500.
 
@@ -166,7 +163,7 @@ Parametry a příklady dotazů:
 
   - V opačném případě se vrátí 200.
 
-Stav služby se dá zobrazit v HTML zadáním řetězce dotazu, jako `https://contoso:81/Service1?health` je nebo v XML, zadáním řetězce dotazu, jako `https://contoso:81/Service1?health&Xml`je. Řetězec dotazu jako `https://contoso:81/Service1?health&NoContent` vrátí prázdnou stránku HTML.
+Stav služby se dá zobrazit v HTML zadáním řetězce dotazu, jako je `https://contoso:81/Service1?health` nebo XML zadáním řetězce dotazu, jako je například `https://contoso:81/Service1?health&Xml`. Řetězec dotazu, jako je například `https://contoso:81/Service1?health&NoContent`, vrátí prázdnou stránku HTML.
 
 <a name="wpf48" />
 
@@ -196,7 +193,7 @@ Modul runtime v .NET Framework 4,8 obsahuje následující změny a vylepšení:
 
 **Vylepšení Ngen**. Modul runtime zlepšil správu paměti pro Image [generátoru nativních imagí](../tools/ngen-exe-native-image-generator.md) (NGen), takže data mapovaná z imagí Ngen nejsou rezidentní v paměti. Tím se snižuje plocha dostupná pro útoky, které se pokoušejí spustit libovolný kód úpravou paměti, která se spustí.
 
-**Kontrola antimalwaru pro všechna sestavení**. V předchozích verzích .NET Framework modul runtime prohledává všechna sestavení načtená z disku pomocí programu Windows Defender nebo antimalwarového softwaru jiného výrobce. Nicméně sestavení načtená z jiných zdrojů, například <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> metodou, nejsou prohledávána a mohou potenciálně obsahovat nezjištěné malware. Počínaje .NET Framework 4,8 spuštěným v systému Windows 10 spustí modul runtime kontrolu pomocí antimalwarových řešení, která implementují [rozhraní AMSI (antimalwarová kontrola)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
+**Kontrola antimalwaru pro všechna sestavení**. V předchozích verzích .NET Framework modul runtime prohledává všechna sestavení načtená z disku pomocí programu Windows Defender nebo antimalwarového softwaru jiného výrobce. Nicméně sestavení načtená z jiných zdrojů, například metodou <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType>, nejsou prohledávána a mohou potenciálně obsahovat nezjištěné malware. Počínaje .NET Framework 4,8 spuštěným v systému Windows 10 spustí modul runtime kontrolu pomocí antimalwarových řešení, která implementují [rozhraní AMSI (antimalwarová kontrola)](/windows/desktop/AMSI/antimalware-scan-interface-portal).
 
 <a name="v472" />
 
@@ -221,7 +218,7 @@ Dalším cílem .NET Framework 4.7.2 je lepší přístupnost, která umožňuje
 
 **Nová přetížení RSA. Vytvořte a DSA. Vytvořeny**
 
-<xref:System.Security.Cryptography.DSA> <xref:System.Security.Cryptography.RSA> Metody a umožňují<xref:System.Security.Cryptography.RSA.Create(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType> zadávat klíčové parametry při vytváření instance nového nebo klíče. <xref:System.Security.Cryptography.DSA.Create(System.Security.Cryptography.DSAParameters)?displayProperty=nameWithType> Umožňují nahradit kód podobný následujícímu:
+Metody <xref:System.Security.Cryptography.DSA.Create(System.Security.Cryptography.DSAParameters)?displayProperty=nameWithType> a <xref:System.Security.Cryptography.RSA.Create(System.Security.Cryptography.RSAParameters)?displayProperty=nameWithType> umožňují zadávat klíčové parametry při vytváření instancí nového klíče <xref:System.Security.Cryptography.DSA> nebo <xref:System.Security.Cryptography.RSA>. Umožňují nahradit kód podobný následujícímu:
 
 ```csharp
 // Before .NET Framework 4.7.2
@@ -257,7 +254,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-<xref:System.Security.Cryptography.DSA> <xref:System.Security.Cryptography.RSA> Metody <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> a<xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> umožňují generovat nové klíče nebo klíče s určitou velikostí klíče. Příklad:
+Metody <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> a <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> umožňují generovat nové klíče <xref:System.Security.Cryptography.DSA> nebo <xref:System.Security.Cryptography.RSA> s určitou velikostí klíče. Příklad:
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -274,7 +271,7 @@ End Using
 
 **Konstruktory Rfc2898DeriveBytes přijímají název algoritmu hash.**
 
-Třída má tři nové konstruktory <xref:System.Security.Cryptography.HashAlgorithmName> s parametrem, který identifikuje algoritmus HMAC, který má být použit při odvozování klíčů. <xref:System.Security.Cryptography.Rfc2898DeriveBytes> Místo použití algoritmu SHA-1 by vývojáři měli používat HMAC založené na SHA-2, jako je SHA-256, jak je znázorněno v následujícím příkladu:
+Třída <xref:System.Security.Cryptography.Rfc2898DeriveBytes> má tři nové konstruktory s parametrem <xref:System.Security.Cryptography.HashAlgorithmName>, který identifikuje algoritmus HMAC, který se má použít při odvozování klíčů. Místo použití algoritmu SHA-1 by vývojáři měli používat HMAC založené na SHA-2, jako je SHA-256, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 private static byte[] DeriveKey(string password, out int iterations, out byte[] salt,
@@ -313,13 +310,13 @@ End Function
 
 **Podpora dočasných klíčů**
 
-Import PFX může volitelně načíst soukromé klíče přímo z paměti a obejít pevný disk. Když je nový <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> příznak zadán <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> v konstruktoru nebo v jednom z přetížení <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType> metody, privátní klíče budou načteny jako dočasné klíče. To brání tomu, aby se klíče na disku zobrazily. Naopak
+Import PFX může volitelně načíst soukromé klíče přímo z paměti a obejít pevný disk. Pokud je nový příznak <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> zadán v konstruktoru <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> nebo v jednom z přetížení metody <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType>, privátní klíče budou načteny jako dočasné klíče. To brání tomu, aby se klíče na disku zobrazily. Naopak
 
 - Vzhledem k tomu, že klíče nejsou trvale uložené na disku, certifikáty načtené pomocí tohoto příznaku nejsou vhodnými kandidáty k přidání do X509Store.
 
-- Klíče načtené tímto způsobem jsou téměř vždy načítány prostřednictvím služby Windows CNG. Proto volající musí získat přístup k privátnímu klíči voláním metod rozšíření, jako je například [CERT. GetRSAPrivateKey ()](xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey%2A). <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> Vlastnost nefunguje.
+- Klíče načtené tímto způsobem jsou téměř vždy načítány prostřednictvím služby Windows CNG. Proto volající musí získat přístup k privátnímu klíči voláním metod rozšíření, jako je například [CERT. GetRSAPrivateKey ()](xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey%2A). Vlastnost <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> nefunguje.
 
-- Vzhledem k tomu <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> , že vlastnost starší verze nefunguje s certifikáty, vývojáři by měli před přechodem na dočasné klíče provádět přísné testy.
+- Vzhledem k tomu, že starší vlastnost <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey?displayProperty=nameWithType> nefunguje s certifikáty, vývojáři by měli před přechodem na dočasné klíče provést přísné testování.
 
 **Programové vytváření žádostí o podepsání certifikátu PKCS # 10 a certifikátů veřejných klíčů X. 509**
 
@@ -329,11 +326,11 @@ Další informace a příklady kódu naleznete v tématu "programové vytvářen
 
 **Noví členové SignerInfo**
 
-Počínaje .NET Framework 4.7.2 <xref:System.Security.Cryptography.Pkcs.SignerInfo> třída zveřejňuje Další informace o podpisu. Můžete načíst hodnotu <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> vlastnosti a určit tak algoritmus podpisu, který používá podepisující osoba. <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType>dá se zavolat, aby se získala kopie kryptografického podpisu pro tohoto podepsaného.
+Počínaje .NET Framework 4.7.2 třída <xref:System.Security.Cryptography.Pkcs.SignerInfo> zveřejňuje Další informace o podpisu. Můžete načíst hodnotu vlastnosti <xref:System.Security.Cryptography.Pkcs.SignerInfo.SignatureAlgorithm?displayProperty=fullName> a určit tak algoritmus podpisu, který používá podepisující osoba. pro získání kopie kryptografického podpisu pro tohoto podepsaného se dá volat <xref:System.Security.Cryptography.Pkcs.SignerInfo.GetSignature%2A?displayProperty=nameWithType>.
 
 **Otevření zabaleného datového proudu po odstranění CryptoStream**
 
-Počínaje .NET Framework 4.7.2 <xref:System.Security.Cryptography.CryptoStream> má třída další konstruktor, který umožňuje <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> zavřít zabalený datový proud. Chcete-li nechat zabalený datový proud <xref:System.Security.Cryptography.CryptoStream> otevřený po uvolnění instance, zavolejte nový <xref:System.Security.Cryptography.CryptoStream> konstruktor následujícím způsobem:
+Počínaje .NET Framework 4.7.2 má třída <xref:System.Security.Cryptography.CryptoStream> další konstruktor, který umožňuje <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> zavřít zabalený datový proud. Chcete-li nechat zabaleného datového proudu otevřený po zrušení instance <xref:System.Security.Cryptography.CryptoStream>, zavolejte nový konstruktor <xref:System.Security.Cryptography.CryptoStream> následujícím způsobem:
 
 ```csharp
 var cStream = new CryptoStream(stream, transform, mode, leaveOpen: true);
@@ -345,7 +342,7 @@ Dim cStream = New CryptoStream(stream, transform, mode, leaveOpen:=true)
 
 **Dekomprese změn v DeflateStream**
 
-Počínaje .NET Framework 4.7.2 se implementace operací dekomprese ve <xref:System.IO.Compression.DeflateStream> třídě změnila tak, aby ve výchozím nastavení používala nativní rozhraní API systému Windows. Obvykle to vede k výraznému zlepšení výkonu.
+Počínaje .NET Framework 4.7.2 se implementace operací dekomprese ve třídě <xref:System.IO.Compression.DeflateStream> změnila tak, aby ve výchozím nastavení používala nativní rozhraní API systému Windows. Obvykle to vede k výraznému zlepšení výkonu.
 
 Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení povolená pro aplikace, které cílí na .NET Framework 4.7.2. Aplikace, které jsou cíleny na starší verze .NET Framework, ale jsou spuštěny v rámci .NET Framework 4.7.2, se můžou na toto chování vyjádřit přidáním následujícího [přepínače AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) do konfiguračního souboru aplikace:
 
@@ -355,24 +352,24 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 **Další rozhraní API pro shromažďování**
 
-.NET Framework 4.7.2 přidá mnoho nových rozhraní API k <xref:System.Collections.Generic.SortedSet%601> typům a. <xref:System.Collections.Generic.HashSet%601> Zde jsou některé z nich:
+.NET Framework 4.7.2 přidá do typů <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> řadu nových rozhraní API. Mezi ně patří:
 
-- `TryGetValue`metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
+- metody `TryGetValue`, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
 
-  - [veřejné bool HashSet –\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
-  - [veřejné bool SortedSet\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+  - [Public bool HashSet – @ no__t-1T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
+  - [Public bool SortedSet @ no__t-1T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
 
-- `Enumerable.To*`metody rozšíření, které převádějí kolekci na <xref:System.Collections.Generic.HashSet%601>:
+- metody rozšíření `Enumerable.To*`, které převádějí kolekci na <xref:System.Collections.Generic.HashSet%601>:
 
-  - [public static HashSet –\<TSource > ToHashSet\<TSource > (this IEnumerable\<TSource > Source)](xref:System.Linq.Enumerable.ToHashSet%2A)
-  - [public static HashSet –\<TSource > ToHashSet\<TSource > (this IEnumerable\<TSource > Source, IEqualityComparer\<TSource > Comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
+  - [public static HashSet – @ no__t-1TSource > ToHashSet @ no__t-2TSource > (this IEnumerable @ no__t-3TSource > Source)](xref:System.Linq.Enumerable.ToHashSet%2A)
+  - [public static HashSet – @ no__t-1TSource > ToHashSet @ no__t-2TSource > (this IEnumerable @ no__t-3TSource > Source, IEqualityComparer @ no__t-4TSource > Comparer)](xref:System.Linq.Enumerable.ToHashSet%2A)
 
-- Nové <xref:System.Collections.Generic.HashSet%601> konstruktory, které umožňují nastavit kapacitu kolekce, což vede k výhodám výkonu, když znáte velikost <xref:System.Collections.Generic.HashSet%601> předem:
+- Nové konstruktory <xref:System.Collections.Generic.HashSet%601>, které umožňují nastavit kapacitu kolekce, což vede k výhodám výkonu, když znáte velikost <xref:System.Collections.Generic.HashSet%601> předem:
 
   - [veřejné HashSet – (kapacita celé číslo)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32))
-  - [Public HashSet – (kapacita int, IEqualityComparer\<T > Comparer)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
+  - [Public HashSet – (kapacita int, IEqualityComparer @ no__t-1T > Comparer)](xref:System.Collections.Generic.HashSet%601.%23ctor(System.Int32,System.Collections.Generic.IEqualityComparer%7B%600%7D))
 
-Třída obsahuje nová přetížení <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> metod a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> k načtení hodnoty ze slovníku nebo k jejímu přidání, pokud nebyla nalezena, a pro přidání hodnoty do slovníku nebo její aktualizaci, pokud již existuje. <xref:System.Collections.Concurrent.ConcurrentDictionary%602>
+Třída <xref:System.Collections.Concurrent.ConcurrentDictionary%602> obsahuje nová přetížení metod <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> k načtení hodnoty ze slovníku nebo k jejímu přidání, pokud nebyla nalezena, a pokud se má do slovníku přidat hodnota, pokud již existuje.
 
 ```csharp
 public TValue AddOrUpdate<TArg>(TKey key, Func<TKey, TArg, TValue> addValueFactory, Func<TKey, TValue, TArg, TValue> updateValueFactory, TArg factoryArgument)
@@ -402,9 +399,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 **Podpora souborů cookie stejného webu**
 
-[SameSite](https://tools.ietf.org/html/draft-west-first-party-cookies-07) zabraňuje prohlížeči v posílání souborů cookie spolu s žádostí mezi weby. .NET Framework 4.7.2 přidá <xref:System.Web.HttpCookie.SameSite?displayProperty=nameWithType> vlastnost, jejíž hodnota <xref:System.Web.SameSiteMode?displayProperty=nameWithType> je člen výčtu. Pokud je <xref:System.Web.SameSiteMode.Strict?displayProperty=nameWithType> jeho hodnota nebo <xref:System.Web.SameSiteMode.Lax?displayProperty=nameWithType>, ASP.NET přidá `SameSite` atribut do hlavičky Set-cookie. Podpora SameSite se vztahuje <xref:System.Web.HttpCookie> na objekty i na <xref:System.Web.Security.FormsAuthentication> soubory cookie a <xref:System.Web.SessionState> .
+[SameSite](https://tools.ietf.org/html/draft-west-first-party-cookies-07) zabraňuje prohlížeči v posílání souborů cookie spolu s žádostí mezi weby. .NET Framework 4.7.2 přidá vlastnost <xref:System.Web.HttpCookie.SameSite?displayProperty=nameWithType>, jejíž hodnota je člen výčtu <xref:System.Web.SameSiteMode?displayProperty=nameWithType>. Pokud je jeho hodnota <xref:System.Web.SameSiteMode.Strict?displayProperty=nameWithType> nebo <xref:System.Web.SameSiteMode.Lax?displayProperty=nameWithType>, ASP.NET přidá atribut `SameSite` do hlavičky Set-cookie. Podpora SameSite se vztahuje na objekty @no__t 0 a také na soubory cookie <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.SessionState>.
 
-SameSite pro <xref:System.Web.HttpCookie> objekt můžete nastavit takto:
+SameSite pro objekt <xref:System.Web.HttpCookie> můžete nastavit následujícím způsobem:
 
 ```csharp
 var c = new HttpCookie("secureCookie", "same origin");
@@ -424,7 +421,7 @@ Soubory cookie SameSite můžete také nakonfigurovat na úrovni aplikace úprav
 </system.web>
 ```
 
-SameSite pro <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.SessionState> soubory cookie můžete přidat úpravou konfiguračního souboru Web:
+Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.SessionState> úpravou konfiguračního souboru Web:
 
 ```xml
 <system.web>
@@ -439,11 +436,11 @@ SameSite pro <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.S
 
 <a name="net472" />
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 **Implementace vlastností HttpClientHandler**
 
-.NET Framework 4.7.1 přidal do <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> třídy osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>výjimku. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Vlastnosti jsou:
+.NET Framework 4.7.1 přidal do třídy <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Vlastnosti jsou:
 
 - <xref:System.Net.Http.HttpClientHandler.CheckCertificateRevocationList>
 - <xref:System.Net.Http.HttpClientHandler.SslProtocols>
@@ -456,15 +453,15 @@ SameSite pro <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.S
 
 Rostoucí požadavky na dodržování předpisů a požadavky na zabezpečení vyžadují, aby spousta zákazníků používala vícefaktorové ověřování (MFA). Kromě toho aktuální osvědčené postupy zabrání zahrnutí uživatelských hesel přímo v připojovacích řetězcích. Pro podporu těchto změn .NET Framework 4.7.2 rozšiřuje [připojovací řetězce SqlClient](xref:System.Data.SqlClient.SqlConnection.ConnectionString) přidáním nové hodnoty "Active Directory Interactive" pro stávající klíčové slovo "ověřování" pro podporu MFA a [ověřování Azure AD](/azure/sql-database/sql-database-aad-authentication-configure). Nová interaktivní metoda podporuje uživatele v rámci nativních a federovaných uživatelů Azure AD i uživatele typu Host služby Azure AD. Při použití této metody se pro databáze SQL podporuje ověřování MFA, které ukládá služba Azure AD. Kromě toho proces ověřování požaduje heslo uživatele, aby dodržoval osvědčené postupy zabezpečení.
 
-V předchozích verzích .NET Framework připojení SQL podporovalo pouze <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryPassword?displayProperty=nameWithType> možnosti a. <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryIntegrated?displayProperty=nameWithType> Obě tyto součásti jsou součástí neinteraktivního [protokolu ADAL](/azure/active-directory/develop/active-directory-authentication-libraries), který nepodporuje vícefaktorové ověřování. Díky nové <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryInteractive?displayProperty=nameWithType> možnosti připojení SQL podporuje vícefaktorové ověřování a taky existující metody ověřování (heslo a integrované ověřování), které uživatelům umožňuje zadat uživatelská hesla interaktivně, aniž by museli uchovávat hesla v připojení. řetezce.
+V předchozích verzích .NET Framework připojení SQL podporovalo pouze možnosti <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryPassword?displayProperty=nameWithType> a <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryIntegrated?displayProperty=nameWithType>. Obě tyto součásti jsou součástí neinteraktivního [protokolu ADAL](/azure/active-directory/develop/active-directory-authentication-libraries), který nepodporuje vícefaktorové ověřování. Díky nové možnosti <xref:System.Data.SqlClient.SqlAuthenticationMethod.ActiveDirectoryInteractive?displayProperty=nameWithType> podporuje konektivita SQL VÍCEFAKTOROVÉ ověřování a taky existující metody ověřování (heslo a integrované ověřování), které uživatelům umožňují zadat uživatelská hesla interaktivně, aniž by museli uchovávat hesla v připojovacím řetězci.
 
 Další informace a příklad najdete v tématu Podpora SQL--Azure AD Universal a Multi-Factor Authentication na [blogu .NET](https://devblogs.microsoft.com/dotnet/net-framework-4-7-2-developer-pack-early-access-build-3056-is-available/).
 
 **Podpora pro Always Encrypted verze 2**
 
-NET Framework 4.7.2 přidává podporu pro Always Encrypted založenou na enklávy. Původní verze Always Encrypted je technologie šifrování na straně klienta, ve které šifrovací klíče nikdy nenechávají klienta. V Always Encrypted založeném na enklávy může klient volitelně odesílat šifrovací klíče na zabezpečený enklávy, což je zabezpečená výpočetní entita, kterou je možné považovat za součást SQL Server, ale SQL Server kód nemůže manipulovat. Pro podporu Always Encrypted založeného na enklávy, .NET Framework 4.7.2 přidá následující typy a členy do <xref:System.Data.SqlClient> oboru názvů:
+NET Framework 4.7.2 přidává podporu pro Always Encrypted založenou na enklávy. Původní verze Always Encrypted je technologie šifrování na straně klienta, ve které šifrovací klíče nikdy nenechávají klienta. V Always Encrypted založeném na enklávy může klient volitelně odesílat šifrovací klíče na zabezpečený enklávy, což je zabezpečená výpočetní entita, kterou je možné považovat za součást SQL Server, ale SQL Server kód nemůže manipulovat. Pro podporu Always Encrypted založeného na enklávy, .NET Framework 4.7.2 přidá následující typy a členy do oboru názvů <xref:System.Data.SqlClient>:
 
-- <xref:System.Data.SqlClient.SqlConnectionStringBuilder.EnclaveAttestationUrl?displayProperty=nameWithType>, který určuje identifikátor URI pro Always Encrypted založené na enklávy.
+- <xref:System.Data.SqlClient.SqlConnectionStringBuilder.EnclaveAttestationUrl?displayProperty=nameWithType>, který určuje identifikátor URI pro Always Encrypted založenou na enklávy.
 
 - <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider>, což je abstraktní třída, ze které jsou odvozeni všichni poskytovatelé enklávy.
 
@@ -472,7 +469,7 @@ NET Framework 4.7.2 přidává podporu pro Always Encrypted založenou na enklá
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, který poskytuje parametry ověření identity používané SQL Server k získání informací potřebných ke spuštění konkrétního protokolu ověření identity.
 
-Konfigurační soubor aplikace pak určí konkrétní implementaci abstraktní <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> třídy, která poskytuje funkce pro poskytovatele enklávy. Příklad:
+Konfigurační soubor aplikace pak určí konkrétní implementaci abstraktní třídy <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType>, která poskytuje funkce pro poskytovatele enklávy. Příklad:
 
 ```xml
 <configuration>
@@ -502,13 +499,13 @@ Základní tok Always Encrypted založeného na enklávy:
 
 **Hledání třídách ResourceDictionaries podle zdroje**
 
-Počínaje .NET Framework 4.7.2 může diagnostický pomocník najít <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> vytvářený z daného zdrojového identifikátoru URI. (Tato funkce se používá pro diagnostické asistenty, nikoli pro produkční aplikace.) Pomocník pro diagnostiku, jako je "Edit-and-Continue" sady Visual Studio, umožňuje svému uživateli upravit ResourceDictionary s záměrem, aby se změny projevily u běžící aplikace. V tomto kroku najdete všechny třídách ResourceDictionaries, které spuštěná aplikace vytvořila ze upravovaného slovníku. Například aplikace může deklarovat ResourceDictionary, jehož obsah je zkopírován z daného zdrojového identifikátoru URI:
+Počínaje .NET Framework 4.7.2 může diagnostický pomocník najít adresu @ no__t-0, která byla vytvořena z daného zdrojového identifikátoru URI. (Tato funkce se používá pro diagnostické asistenty, nikoli pro produkční aplikace.) Pomocník pro diagnostiku, jako je "Edit-and-Continue" sady Visual Studio, umožňuje svému uživateli upravit ResourceDictionary s záměrem, aby se změny projevily u běžící aplikace. V tomto kroku najdete všechny třídách ResourceDictionaries, které spuštěná aplikace vytvořila ze upravovaného slovníku. Například aplikace může deklarovat ResourceDictionary, jehož obsah je zkopírován z daného zdrojového identifikátoru URI:
 
 ```xml
 <ResourceDictionary Source="MyRD.xaml">
 ```
 
-Diagnostický pomocník, který upravuje původní kód v souboru *MyRD. XAML* , může k vyhledání slovníku použít novou funkci. Tato funkce je implementována novou statickou metodou <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. Pomocník diagnostiky volá novou metodu pomocí absolutního identifikátoru URI, který identifikuje původní kód, jak je znázorněno v následujícím kódu:
+Diagnostický pomocník, který upravuje původní kód v souboru *MyRD. xaml* can k vyhledání slovníku použijte novou funkci. Tato funkce je implementována novou statickou metodou <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. Pomocník diagnostiky volá novou metodu pomocí absolutního identifikátoru URI, který identifikuje původní kód, jak je znázorněno v následujícím kódu:
 
 ```csharp
 IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(new Uri("pack://application:,,,/MyApp;component/MyRD.xaml"));
@@ -518,13 +515,13 @@ IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.Get
 Dim dictionaries As IEnumerable(Of ResourceDictionary) = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(New Uri("pack://application:,,,/MyApp;component/MyRD.xaml"))
 ```
 
-Metoda vrátí prázdnou hodnotu výčtu <xref:System.Windows.Diagnostics.VisualDiagnostics> [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  , pokud není povolena a proměnná prostředí je nastavena.
+Metoda vrátí prázdný Výčtový, pokud není hodnota @ no__t-0 povolená [@no__t](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)a je nastavena proměnná  environment-.
 
 **Hledání vlastníků ResourceDictionary**
 
-Počínaje .NET Framework 4.7.2 může pomocník pro diagnostiku najít vlastníky <xref:Windows.UI.Xaml.ResourceDictionary>daného. (Tato funkce je určena pro diagnostické asistenty, nikoli pro produkční aplikace.) Pokaždé <xref:Windows.UI.Xaml.ResourceDictionary>, když je provedena změna na, WPF automaticky najde všechny odkazy na [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) , které mohou být ovlivněny změnou.
+Počínaje .NET Framework 4.7.2 může pomocník pro diagnostiku najít vlastníky daného <xref:Windows.UI.Xaml.ResourceDictionary>. (Tato funkce je určena pro diagnostické asistenty, nikoli pro produkční aplikace.) Pokaždé, když je provedena změna <xref:Windows.UI.Xaml.ResourceDictionary>, WPF automaticky najde všechny odkazy na [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) , které mohou být ovlivněny změnou.
 
-Může to vést k tomu, že nástroj pro diagnostiku, jako je například "Edit-and-Continue" sady Visual Studio, může tuto funkci zvětšit a zpracovat odkazy [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Prvním krokem v tomto procesu je vyhledání vlastníků slovníku; To znamená, aby bylo možné najít všechny objekty `Resources` , jejichž vlastnost odkazuje na slovník (buď přímo, nebo nepřímo <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> přes vlastnost). Tři nové statické metody implementované u <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> třídy, jeden pro každý ze základních typů, které `Resources` mají vlastnost, podporují tento krok:
+Může to vést k tomu, že nástroj pro diagnostiku, jako je například "Edit-and-Continue" sady Visual Studio, může tuto funkci zvětšit a zpracovat odkazy [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Prvním krokem v tomto procesu je vyhledání vlastníků slovníku; To znamená, že chcete najít všechny objekty, jejichž vlastnost `Resources` odkazuje na slovník (buď přímo, nebo nepřímo prostřednictvím vlastnosti <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType>). Tři nové statické metody implementované na třídě <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType>, jeden pro každý ze základních typů s vlastností `Resources`, podporují tento krok:
 
 - [`public static IEnumerable<FrameworkElement> GetFrameworkElementOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetFrameworkElementOwners%2A)
 
@@ -532,13 +529,13 @@ Může to vést k tomu, že nástroj pro diagnostiku, jako je například "Edit-
 
 - [`public static IEnumerable<Application> GetApplicationOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetApplicationOwners%2A)
 
-Tyto metody vrátí prázdný vyčíslitelné <xref:System.Windows.Diagnostics.VisualDiagnostics> [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  , pokud není povoleno a proměnná prostředí je nastavena.
+Tyto metody vrátí prázdný vyčíslitelné, pokud není povolená hodnota @ no__t-0 a je nastavená proměnná [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) environment.
 
 **Hledání odkazů na StaticResource**
 
-Diagnostika pomocníka teď může obdržet oznámení vždy, když se vyřeší odkaz na [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . (Tato funkce se používá pro diagnostické asistenty, nikoli pro produkční aplikace.) Nástroj pro diagnostiku, jako je například zařízení "Edit-and-Continue" sady Visual Studio, může chtít aktualizovat všechna použití prostředku, když se <xref:Windows.UI.Xaml.ResourceDictionary> změní jeho hodnota. WPF to provede automaticky pro [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, ale záměrně to neudělá pro odkazy [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Od .NET Framework 4.7.2 může pomocník diagnostiky použít tato oznámení k vyhledání těchto použití statického prostředku.
+Diagnostika pomocníka teď může obdržet oznámení vždy, když se vyřeší odkaz na [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . (Tato funkce se používá pro diagnostické asistenty, nikoli pro produkční aplikace.) Nástroj pro diagnostiku, jako je například zařízení "Edit-and-Continue" sady Visual Studio, může chtít aktualizovat všechna použití prostředku při změně hodnoty <xref:Windows.UI.Xaml.ResourceDictionary>. WPF to provede automaticky pro [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, ale záměrně to neudělá pro odkazy [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Od .NET Framework 4.7.2 může pomocník diagnostiky použít tato oznámení k vyhledání těchto použití statického prostředku.
 
-Oznámení je implementováno novou <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> událostí:
+Oznámení je implementováno novou událostí <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType>:
 
 ```csharp
 public static event EventHandler<StaticResourceResolvedEventArgs> StaticResourceResolved;
@@ -548,7 +545,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-Tato událost je vyvolána pokaždé, když modul runtime vyřeší odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Argumenty popisují rozlišení a označují objekt a vlastnost, které hostují odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) a <xref:Windows.UI.Xaml.ResourceDictionary> klíč a, který se používá pro řešení: <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs>
+Tato událost je vyvolána pokaždé, když modul runtime vyřeší odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) . Argumenty <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> popisují rozlišení a označují objekt a vlastnost, které hostují odkaz [StaticResource](../wpf/advanced/staticresource-markup-extension.md) a parametr @ no__t-2 a klíč, který se používá pro řešení:
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -572,7 +569,7 @@ Public Class StaticResourceResolvedEventArgs : Inherits EventArgs
 End Class
 ```
 
-Událost není vyvolána (a `add` její přistupující objekt je ignorován), pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> není povolena a [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  proměnná prostředí je nastavena.
+Událost není vyvolána (a jeho `add` přístupového objektu se ignoruje), pokud není povolená hodnota @ no__t-1 a je nastavená proměnná [`ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO`](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) environment.
 
 #### <a name="clickonce"></a>ClickOnce
 
@@ -611,15 +608,15 @@ Navíc je hlavní fokus v .NET Framework 4.7.1 vylepšený přístupnost, což a
 
 Tvůrci konfigurace umožňují vývojářům dynamicky vkládat a sestavovat nastavení konfigurace pro aplikace v době běhu. Vlastní tvůrci konfigurace lze použít k úpravě existujících dat v konfiguračním oddílu nebo k sestavení konfiguračního oddílu úplně od začátku. Bez konfiguračních tvůrců, soubory. config jsou statické a jejich nastavení je definováno určitou dobu před spuštěním aplikace.
 
-Chcete-li vytvořit vlastního tvůrce konfigurace, odvodit svého tvůrce z abstraktní <xref:System.Configuration.ConfigurationBuilder> třídy a přepsat jeho <xref:System.Configuration.ConfigurationBuilder.ProcessConfigurationSection%2A?displayProperty=nameWithType> a <xref:System.Configuration.ConfigurationBuilder.ProcessRawXml%2A?displayProperty=nameWithType>. Můžete také definovat své sestavovatele v souboru. config. Další informace najdete v části "tvůrci konfigurace" v příspěvku na blogu [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
+Chcete-li vytvořit vlastního tvůrce konfigurace, odvozujete svého tvůrce od abstraktní třídy <xref:System.Configuration.ConfigurationBuilder> a přepište jeho <xref:System.Configuration.ConfigurationBuilder.ProcessConfigurationSection%2A?displayProperty=nameWithType> a <xref:System.Configuration.ConfigurationBuilder.ProcessRawXml%2A?displayProperty=nameWithType>. Můžete také definovat své sestavovatele v souboru. config. Další informace najdete v části "tvůrci konfigurace" v příspěvku na blogu [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
 
 **Detekce funkcí za běhu**
 
-<xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=nameWithType> Třída poskytuje mechanismus pro určení, zda je předdefinovaná funkce v dané implementaci rozhraní .NET podporována v době kompilace nebo v době běhu. V době kompilace může kompilátor ověřit, zda zadané pole existuje k určení, zda je funkce podporována. Pokud ano, může vygenerovat kód, který tuto funkci využívá. V době běhu může aplikace zavolat <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported%2A?displayProperty=nameWithType> metodu před vygenerováním kódu za běhu. Další informace najdete v tématu [Přidání pomocné metody pro popis funkcí podporovaných modulem runtime](https://github.com/dotnet/corefx/issues/17116).
+Třída <xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=nameWithType> poskytuje mechanismus pro určení, zda je předdefinovaná funkce v dané implementaci rozhraní .NET podporována v době kompilace nebo v době běhu. V době kompilace může kompilátor ověřit, zda zadané pole existuje k určení, zda je funkce podporována. Pokud ano, může vygenerovat kód, který tuto funkci využívá. V době spuštění aplikace může volat metodu <xref:System.Runtime.CompilerServices.RuntimeFeature.IsSupported%2A?displayProperty=nameWithType> před vygenerováním kódu za běhu. Další informace najdete v tématu [Přidání pomocné metody pro popis funkcí podporovaných modulem runtime](https://github.com/dotnet/corefx/issues/17116).
 
 **Typy řazené kolekce členů mají hodnotu serializovat.**
 
-Počínaje .NET Framework 4.7.1 <xref:System.ValueTuple?displayProperty=nameWithType> a přidružené obecné typy jsou označeny jako [serializovatelný](xref:System.SerializableAttribute), což umožňuje binární serializaci. To by mělo být pro snazší migraci typů řazené <xref:System.Tuple%604>kolekce členů, například <xref:System.Tuple%603> a, k hodnotám řazené kolekce členů. Další informace naleznete v příspěvku "Compiler--ValueTuple je serializovatelný" v příspěvku blogu [.NET Framework 4.7.1 runtime a funkce kompilátoru](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
+Počínaje .NET Framework 4.7.1, <xref:System.ValueTuple?displayProperty=nameWithType> a přidružené obecné typy jsou označeny jako [serializovatelný](xref:System.SerializableAttribute), což umožňuje binární serializaci. To by mělo být pro snazší migraci typů řazené kolekce členů, například <xref:System.Tuple%603> a <xref:System.Tuple%604>. Další informace naleznete v příspěvku "Compiler--ValueTuple je serializovatelný" v příspěvku blogu [.NET Framework 4.7.1 runtime a funkce kompilátoru](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
 
 **Podpora odkazů jen pro čtení**
 
@@ -635,11 +632,11 @@ Změny uvolňování paměti (GC) v .NET Framework 4.7.1 vylepšit celkový výk
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 **Podpora SHA-2 pro Message. HashAlgorithm**
 
-V .NET Framework 4,7 a starších verzích <xref:System.Messaging.Message.HashAlgorithm%2A?displayProperty=nameWithType> podporuje vlastnost pouze <xref:System.Messaging.HashAlgorithm.Md5?displayProperty=nameWithType> hodnoty a <xref:System.Messaging.HashAlgorithm.Sha?displayProperty=nameWithType> . Počínaje .NET Framework 4.7.1, <xref:System.Messaging.HashAlgorithm.Sha256?displayProperty=nameWithType>, <xref:System.Messaging.HashAlgorithm.Sha384?displayProperty=nameWithType> <xref:System.Messaging.HashAlgorithm.Sha512?displayProperty=nameWithType> a jsou také podporovány. Určuje, zda je tato hodnota skutečně používána, záleží na službě <xref:System.Messaging.Message> MSMQ, protože samotná instance neprovádí žádné hodnoty hash, ale jednoduše předává hodnoty do služby MSMQ. Další informace najdete v tomto příspěvku na blogu podpora SHA-2 pro Message. HashAlgorithm v části [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
+V .NET Framework 4,7 a starších verzích vlastnost <xref:System.Messaging.Message.HashAlgorithm%2A?displayProperty=nameWithType> podporovala pouze hodnoty <xref:System.Messaging.HashAlgorithm.Md5?displayProperty=nameWithType> a <xref:System.Messaging.HashAlgorithm.Sha?displayProperty=nameWithType>. Počínaje .NET Framework 4.7.1 jsou podporovány také <xref:System.Messaging.HashAlgorithm.Sha256?displayProperty=nameWithType>, <xref:System.Messaging.HashAlgorithm.Sha384?displayProperty=nameWithType> a <xref:System.Messaging.HashAlgorithm.Sha512?displayProperty=nameWithType>. Určuje, zda je tato hodnota skutečně používána, záleží na službě MSMQ, protože instance <xref:System.Messaging.Message> neobsahuje žádné hodnoty hash, ale jednoduše předává hodnoty do služby MSMQ. Další informace najdete v tomto příspěvku na blogu podpora SHA-2 pro Message. HashAlgorithm v části [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
 
 <a name="asp-net471" />
 
@@ -647,11 +644,11 @@ V .NET Framework 4,7 a starších verzích <xref:System.Messaging.Message.HashAl
 
 **Kroky provádění v aplikacích ASP.NET**
 
-ASP.NET zpracovává požadavky v předdefinovaném kanálu, který zahrnuje 23 událostí. ASP.NET spustí jednotlivé obslužné rutiny události jako krok provedení. Ve verzích ASP.NET až .NET Framework 4,7 nemůže ASP.NET z důvodu přepínání mezi nativními a spravovanými vlákny flowovat kontext spuštění. Místo toho ASP.NET selektivní toky pouze <xref:System.Web.HttpContext>. Počínaje .NET Framework 4.7.1 <xref:System.Web.HttpApplication.OnExecuteRequestStep(System.Action{System.Web.HttpContextBase,System.Action})?displayProperty=nameWithType> metoda také umožňuje modulům obnovovat okolní data. Tato funkce je zaměřená na knihovny, které mají na starosti trasování, profilování, diagnostiku nebo transakce, například informace o toku spuštění aplikace. Další informace najdete v příspěvku na blogu věnovaném funkci "ASP.NET provádění kroku" v tématu [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
+ASP.NET zpracovává požadavky v předdefinovaném kanálu, který zahrnuje 23 událostí. ASP.NET spustí jednotlivé obslužné rutiny události jako krok provedení. Ve verzích ASP.NET až .NET Framework 4,7 nemůže ASP.NET z důvodu přepínání mezi nativními a spravovanými vlákny flowovat kontext spuštění. Místo toho ASP.NET pouze selektivní toky <xref:System.Web.HttpContext>. Počínaje .NET Framework 4.7.1 metoda <xref:System.Web.HttpApplication.OnExecuteRequestStep(System.Action{System.Web.HttpContextBase,System.Action})?displayProperty=nameWithType> také umožňuje modulům obnovovat okolní data. Tato funkce je zaměřená na knihovny, které mají na starosti trasování, profilování, diagnostiku nebo transakce, například informace o toku spuštění aplikace. Další informace najdete v příspěvku na blogu věnovaném funkci "ASP.NET provádění kroku" v tématu [.NET Framework 4.7.1 ASP.NET a konfigurační funkce](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
 
 **ASP.NET HttpCookie – analýza**
 
-.NET Framework 4.7.1 zahrnuje novou metodu <xref:System.Web.HttpCookie.TryParse%2A?displayProperty=nameWithType>, která poskytuje standardizovaný způsob, jak <xref:System.Web.HttpCookie> vytvořit objekt z řetězce a přesně přiřadit hodnoty souborů cookie, jako je datum vypršení platnosti a cesta. Další informace najdete v blogovém příspěvku "ASP.NET HttpCookie analyze" v blogu [.NET Framework 4.7.1 ASP.NET and Configuration Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
+.NET Framework 4.7.1 zahrnuje novou metodu <xref:System.Web.HttpCookie.TryParse%2A?displayProperty=nameWithType>, která poskytuje standardizovaný způsob, jak vytvořit objekt <xref:System.Web.HttpCookie> z řetězce a přesně přiřadit hodnoty souborů cookie, jako je datum a cesta vypršení platnosti. Další informace najdete v blogovém příspěvku "ASP.NET HttpCookie analyze" v blogu [.NET Framework 4.7.1 ASP.NET and Configuration Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-asp-net-and-configuration-features/) .
 
 **Možnosti hash SHA-2 pro přihlašovací údaje ověřování ASP.NET Forms**
 
@@ -692,25 +689,25 @@ Seznam nových rozhraní API přidaných do .NET Framework 4,7 najdete v článk
 
 **Vylepšená funkce s použitím kryptografie s eliptickou křivkou (ECC)** *
 
-V .NET Framework 4,7 `ImportParameters(ECParameters)` byly metody přidány <xref:System.Security.Cryptography.ECDsa> do tříd a <xref:System.Security.Cryptography.ECDiffieHellman> , aby objekt mohl představovat již zavedený klíč. `ExportParameters(Boolean)` Metoda byla přidána také pro export klíče pomocí explicitních parametrů křivky.
+V .NET Framework 4,7 byly do tříd <xref:System.Security.Cryptography.ECDsa> a <xref:System.Security.Cryptography.ECDiffieHellman> přidány metody `ImportParameters(ECParameters)`, aby mohl objekt představovat již zavedený klíč. K exportu klíče pomocí explicitních parametrů křivky byla také přidána metoda `ExportParameters(Boolean)`.
 
-.NET Framework 4,7 také přidává podporu pro další křivky (včetně sady křivky Brainpool) a přidala předdefinované definice pro usnadnění vytváření prostřednictvím nových <xref:System.Security.Cryptography.ECDsa.Create%2A> a <xref:System.Security.Cryptography.ECDiffieHellman.Create%2A> výrobních metod.
+.NET Framework 4,7 také přidává podporu pro další křivky (včetně sady křivek Brainpool) a přidala předdefinované definice pro usnadnění vytváření pomocí nových produkčních metod <xref:System.Security.Cryptography.ECDsa.Create%2A> a <xref:System.Security.Cryptography.ECDiffieHellman.Create%2A>.
 
 Na GitHubu můžete vidět [příklad kryptografických vylepšení .NET Framework 4,7](https://gist.github.com/richlander/5a182899895a87a296c21ada97f7a54e) .
 
 **Lepší podpora kontrolních znaků DataContractJsonSerializer**
 
-V .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> serializace řídí řídicí znaky v souladu se standardem ECMAScript 6. Toto chování je ve výchozím nastavení povolené pro aplikace, které cílí na .NET Framework 4,7, a je funkce pro přihlášení k aplikacím, které běží v .NET Framework 4,7, ale cílí na předchozí verzi .NET Framework. Další informace najdete v tématu [Změna cílení na změny v .NET Framework 4,7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+V .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> serializace řídicích znaků v souladu se standardem ECMAScript 6. Toto chování je ve výchozím nastavení povolené pro aplikace, které cílí na .NET Framework 4,7, a je funkce pro přihlášení k aplikacím, které běží v .NET Framework 4,7, ale cílí na předchozí verzi .NET Framework. Další informace najdete v tématu [Změna cílení na změny v .NET Framework 4,7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
 
 <a name="net47" />
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 .NET Framework 4,7 přidává následující funkci související se sítí:
 
 **Výchozí podpora operačního systému pro protokoly TLS***
 
-Zásobník protokolu TLS, který používají komponenty a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> součásti v zásobníku, jako jsou http, FTP a SMTP, umožňuje vývojářům používat výchozí protokoly TLS podporované operačním systémem. Vývojáři už nemusejí mít pevně zakódování verze TLS.
+Zásobník protokolu TLS, který je používán součástmi <xref:System.Net.Security.SslStream?displayProperty=nameWithType> a v zásobníku nástroje, jako jsou HTTP, FTP a SMTP, umožňuje vývojářům používat výchozí protokoly TLS podporované operačním systémem. Vývojáři už nemusejí mít pevně zakódování verze TLS.
 
 <a name="ASP-NET47" />
 
@@ -724,9 +721,9 @@ Počínaje .NET Framework 4,7 přidá ASP.NET novou sadu rozhraní API, která v
 
 - **Úložiště mezipaměti objektů**. Při použití konfiguračního oddílu Noví poskytovatelé mezipaměti můžou vývojáři připojit nové implementace mezipaměti objektů pro aplikaci ASP.NET pomocí nového rozhraní **ICacheStoreProvider** .
 
-- **Monitorování paměti**. Výchozí monitorování paměti v ASP.NET upozorní aplikace, když běží blízko nakonfigurovaného limitu privátních bajtů pro daný proces, nebo když má počítač nedostatek celkového dostupné fyzické paměti RAM. Když jsou tato omezení blízko, jsou aktivována oznámení. U některých aplikací se oznámení aktivují příliš blízko nakonfigurovaných limitů, aby bylo možné reakce na užitečné. Vývojáři teď můžou zapisovat vlastní monitory paměti, které nahradí výchozí hodnotu pomocí <xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType> vlastnosti.
+- **Monitorování paměti**. Výchozí monitorování paměti v ASP.NET upozorní aplikace, když běží blízko nakonfigurovaného limitu privátních bajtů pro daný proces, nebo když má počítač nedostatek celkového dostupné fyzické paměti RAM. Když jsou tato omezení blízko, jsou aktivována oznámení. U některých aplikací se oznámení aktivují příliš blízko nakonfigurovaných limitů, aby bylo možné reakce na užitečné. Vývojáři teď můžou zapisovat vlastní monitory paměti, které nahradí výchozí hodnotu pomocí vlastnosti <xref:System.Web.Hosting.ApplicationMonitors.MemoryMonitor%2A?displayProperty=nameWithType>.
 
-- **Reakce na limit paměti**. Ve výchozím nastavení se ASP.NET pokusí oříznout mezipaměť objektů a pravidelně volat <xref:System.GC.Collect%2A?displayProperty=nameWithType> , pokud je limit procesu privátního bajtu blízko. U některých aplikací je frekvence volání <xref:System.GC.Collect%2A?displayProperty=nameWithType> nebo množství mezipaměti, která je oříznuta, neefektivní. Vývojáři teď můžou nahradit nebo doplnit výchozí chování tím, že se přihlásí k odběru **IObserver** implementace do monitorování paměti aplikace.
+- **Reakce na limit paměti**. Ve výchozím nastavení se ASP.NET pokusí oříznout mezipaměť objektů a pravidelně volat <xref:System.GC.Collect%2A?displayProperty=nameWithType>, pokud je limit procesu privátního bajtu blízko. U některých aplikací je frekvence volání <xref:System.GC.Collect%2A?displayProperty=nameWithType> nebo množství vyrovnávací paměti, které je oříznuté, neefektivní. Vývojáři teď můžou nahradit nebo doplnit výchozí chování tím, že se přihlásí k odběru **IObserver** implementace do monitorování paměti aplikace.
 
 <a name="wcf47" />
 
@@ -746,11 +743,11 @@ Počínaje .NET Framework 4,7 umožňuje WCF nakonfigurovat kromě protokolu SSL
 
 **Vylepšená spolehlivost aplikací WCF a serializace WCF**
 
-WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Zde jsou některé z nich:
+WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Mezi ně patří:
 
 - Lepší podpora pro kombinování asynchronního a synchronního kódu v voláních **Připojení SocketConnection bylo. BeginRead** a **Připojení SocketConnection bylo. Read**.
 - Lepší spolehlivost při přerušení připojení pomocí **SharedConnectionListener** a **DuplexChannelBinder**.
-- Zlepšená spolehlivost operací serializace při volání <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=nameWithType> metody.
+- Zlepšená spolehlivost operací serializace při volání metody <xref:System.Runtime.Serialization.FormatterServices.GetSerializableMembers%28System.Type%29?displayProperty=nameWithType>.
 - Lepší spolehlivost při odebírání nástroje Wait voláním metody **ChannelSynchronizer. RemoveWaiter** .
 
 <a name="wf47" />
@@ -763,7 +760,7 @@ V .NET Framework 4,7 model Windows Forms vylepšuje podporu pro monitory s vysok
 
 Počínaje aplikacemi, které cílí na .NET Framework 4,7, .NET Framework funkce vysokého rozlišení DPI a podpora dynamického DPI pro model Windows Forms aplikace. Podpora vysokého rozlišení DPI vylepšuje rozložení a vzhled formulářů a ovládacích prvků na obrazovkách s vysokým rozlišením DPI. Dynamické DPI mění rozložení a vzhled formulářů a ovládacích prvků, když uživatel změní v běžící aplikaci Měřítko DPI nebo zobrazení.
 
-Podpora vysokého rozlišení DPI je funkce výslovného souhlasu, kterou nakonfigurujete tak, že v konfiguračním souboru aplikace definujete [ \<oddíl System. Windows. Forms. ConfigurationSection >](../configure-apps/file-schema/winforms/index.md) . Další informace o přidání podpory vysokého rozlišení DPI a dynamické podpory DPI do vaší aplikace model Windows Forms najdete [v tématu Podpora vysokého rozlišení DPI v model Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
+Podpora vysokého rozlišení DPI je funkce výslovného souhlasu, kterou konfigurujete definováním oddílu [\<System. Windows. Forms. ConfigurationSection >](../configure-apps/file-schema/winforms/index.md) v konfiguračním souboru aplikace. Další informace o přidání podpory vysokého rozlišení DPI a dynamické podpory DPI do vaší aplikace model Windows Forms najdete [v tématu Podpora vysokého rozlišení DPI v model Windows Forms](../winforms/high-dpi-support-in-windows-forms.md).
 
 <a name="WPF47" />
 
@@ -777,7 +774,7 @@ Teď máte možnost použít na základě [zpráv WM_POINTER](https://docs.micro
 
 **Nová implementace pro rozhraní API pro tisk WPF**
 
-Rozhraní API pro tisk v platformě <xref:System.Printing.PrintQueue?displayProperty=nameWithType> WPF ve třídě volají [rozhraní API pro tiskové dokumenty](/windows/desktop/printdocs/tailored-app-printing-api) systému Windows namísto zastaralých [tiskových rozhraní XPS](/windows/desktop/printdocs/xps-printing). Dopad této změny na kompatibilitu aplikací najdete v tématu [Změna cíle v .NET Framework 4,7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+Rozhraní API pro tisk v WPF ve třídě <xref:System.Printing.PrintQueue?displayProperty=nameWithType> volají [rozhraní API pro tisk dokumentu](/windows/desktop/printdocs/tailored-app-printing-api) Windows namísto zastaralých [tiskových rozhraní XPS](/windows/desktop/printdocs/xps-printing). Dopad této změny na kompatibilitu aplikací najdete v tématu [Změna cíle v .NET Framework 4,7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
 
 <a name="v462" />
 
@@ -815,15 +812,15 @@ ASP.NET v .NET Framework 4.6.2 zahrnuje následující vylepšení:
 
 **Vylepšená podpora pro lokalizované chybové zprávy v validátorech datových poznámek**
 
-Validátory datových poznámek umožňují provádět ověřování přidáním jednoho nebo více atributů do vlastnosti třídy. <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> Element atributu definuje text chybové zprávy, pokud se ověření nepovede. Počínaje .NET Framework 4.6.2, ASP.NET usnadňuje lokalizaci chybových zpráv. Chybové zprávy budou lokalizovány v těchto případech:
+Validátory datových poznámek umožňují provádět ověřování přidáním jednoho nebo více atributů do vlastnosti třídy. Element <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> atributu definuje text chybové zprávy, pokud se ověření nepovede. Počínaje .NET Framework 4.6.2, ASP.NET usnadňuje lokalizaci chybových zpráv. Chybové zprávy budou lokalizovány v těchto případech:
 
-1. Je <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> k dispozici v atributu ověřování.
+1. Hodnota <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> je uvedena v atributu ověřování.
 
 2. Soubor prostředků je uložen ve složce App_LocalResources.
 
-3. Název souboru `DataAnnotation.Localization.{`lokalizovaných zdrojů má *název*`}.resx`formuláře, kde *název* je název jazykové verze ve formátu *languageCode*`-`*Country/regionCode* nebo *languageCode*.
+3. Název souboru lokalizovaných zdrojů má formát `DataAnnotation.Localization.{`*název*`}.resx`, kde *název* je název jazykové verze ve formátu *languageCode*`-`*Country/regionCode* nebo *languageCode*.
 
-4. Klíčovým názvem prostředku je řetězec přiřazený k <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> atributu a jeho hodnota je lokalizovaná chybová zpráva.
+4. Klíčovým názvem prostředku je řetězec přiřazený k atributu <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType> a jeho hodnota je lokalizovaná chybová zpráva.
 
 Například následující atribut poznámky k datům definuje chybovou zprávu výchozí jazykové verze pro neplatné hodnocení.
 
@@ -844,17 +841,17 @@ Public Class RatingInfo
 End Class
 ```
 
-Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve `App.LocalResources` složce. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
+Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve složce `App.LocalResources`. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
 | Name                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
- Lokalizace datových poznámek je navíc rozšiřitelná. Vývojáři mohou připojit vlastní poskytovatele řetězce lokalizátora implementací <xref:System.Web.Globalization.IStringLocalizerProvider> rozhraní k uložení lokalizačního řetězce jinde než v souboru prostředků.
+ Lokalizace datových poznámek je navíc rozšiřitelná. Vývojáři mohou připojit vlastní poskytovatele řetězcového lokalizátora implementací rozhraní @no__t 0 k uložení lokalizačního řetězce jinde než v souboru prostředků.
 
  **Asynchronní podpora s poskytovateli úložiště stavu relace**
 
- ASP.NET teď umožňuje používat metody vracející úlohy s poskytovateli úložiště stavu relace, což aplikacím ASP.NET umožní získat výhody škálovatelnosti Async. Pro podporu asynchronních operací s poskytovateli úložiště stavu relace zahrnuje ASP.NET nové rozhraní <xref:System.Web.SessionState.ISessionStateModule?displayProperty=nameWithType>, které dědí z <xref:System.Web.IHttpModule> a umožňuje vývojářům implementovat vlastní modul stavu relace a zprostředkovatele úložiště asynchronních relací. Rozhraní je definováno následujícím způsobem:
+ ASP.NET teď umožňuje používat metody vracející úlohy s poskytovateli úložiště stavu relace, což aplikacím ASP.NET umožní získat výhody škálovatelnosti Async. Pro podporu asynchronních operací s poskytovateli úložiště stavu relace zahrnuje ASP.NET nové rozhraní <xref:System.Web.SessionState.ISessionStateModule?displayProperty=nameWithType>, které dědí z <xref:System.Web.IHttpModule> a umožňuje vývojářům implementovat vlastní modul stavu relace a zprostředkovatele asynchronních úložišť relací. Rozhraní je definováno následujícím způsobem:
 
 ```csharp
 public interface ISessionStateModule : IHttpModule {
@@ -870,7 +867,7 @@ Public Interface ISessionStateModule : Inherits IHttpModule
 End Interface
 ```
 
- Kromě toho <xref:System.Web.SessionState.SessionStateUtility> třída obsahuje dvě nové <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateReadOnly%2A> metody a <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateRequired%2A>, které lze použít k podpoře asynchronních operací.
+ Kromě toho třída <xref:System.Web.SessionState.SessionStateUtility> zahrnuje dvě nové metody, <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateReadOnly%2A> a <xref:System.Web.SessionState.SessionStateUtility.IsSessionStateRequired%2A>, které lze použít k podpoře asynchronních operací.
 
  **Asynchronní podpora pro poskytovatele výstupní mezipaměti**
 
@@ -878,21 +875,21 @@ End Interface
 
  Byla přidána následující rozhraní API pro podporu zprostředkovatelů asynchronní výstupní mezipaměti:
 
-- Třída, která dědí z <xref:System.Web.Caching.OutputCacheProvider?displayProperty=nameWithType> a umožňuje vývojářům implementovat asynchronního poskytovatele výstupní mezipaměti. <xref:System.Web.Caching.OutputCacheProviderAsync?displayProperty=nameWithType>
+- Třída <xref:System.Web.Caching.OutputCacheProviderAsync?displayProperty=nameWithType>, která dědí z <xref:System.Web.Caching.OutputCacheProvider?displayProperty=nameWithType> a umožňuje vývojářům implementovat asynchronního poskytovatele výstupní mezipaměti.
 
-- <xref:System.Web.Caching.OutputCacheUtility> Třída, která poskytuje podpůrné metody pro konfiguraci výstupní mezipaměti.
+- Třída <xref:System.Web.Caching.OutputCacheUtility>, která poskytuje podpůrné metody pro konfiguraci výstupní mezipaměti.
 
-- 18 nových metod <xref:System.Web.HttpCachePolicy?displayProperty=nameWithType> třídy. Mezi ně <xref:System.Web.HttpCachePolicy.GetCacheability%2A>patří <xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A>, <xref:System.Web.HttpCachePolicy.GetETag%2A>, ,<xref:System.Web.HttpCachePolicy.GetMaxAge%2A>,, ,<xref:System.Web.HttpCachePolicy.GetNoStore%2A>, ,<xref:System.Web.HttpCachePolicy.GetRevalidation%2A>,,, ,<xref:System.Web.HttpCachePolicy.GetUtcLastModified%2A> <xref:System.Web.HttpCachePolicy.GetMaxAge%2A> <xref:System.Web.HttpCachePolicy.GetNoTransforms%2A> <xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A> <xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A> <xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A> <xref:System.Web.HttpCachePolicy.GetVaryByCustom%2A> ,<xref:System.Web.HttpCachePolicy.HasSlidingExpiration%2A>a .<xref:System.Web.HttpCachePolicy.IsValidUntilExpires%2A>
+- 18 nových metod ve třídě <xref:System.Web.HttpCachePolicy?displayProperty=nameWithType>. Mezi ně patří <xref:System.Web.HttpCachePolicy.GetCacheability%2A>, <xref:System.Web.HttpCachePolicy.GetCacheExtensions%2A>, <xref:System.Web.HttpCachePolicy.GetETag%2A>, <xref:System.Web.HttpCachePolicy.GetETagFromFileDependencies%2A>, <xref:System.Web.HttpCachePolicy.GetMaxAge%2A>, <xref:System.Web.HttpCachePolicy.GetMaxAge%2A>, <xref:System.Web.HttpCachePolicy.GetNoStore%2A>, <xref:System.Web.HttpCachePolicy.GetNoTransforms%2A>, <xref:System.Web.HttpCachePolicy.GetOmitVaryStar%2A>, <xref:System.Web.HttpCachePolicy.GetProxyMaxAge%2A>, 0, 1, 2, 3 a 4.
 
-- 2 nové metody ve <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType> třídě: <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> a <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A>.
+- 2 nové metody ve třídě <xref:System.Web.HttpCacheVaryByContentEncodings?displayProperty=nameWithType>: <xref:System.Web.HttpCacheVaryByContentEncodings.GetContentEncodings%2A> a <xref:System.Web.HttpCacheVaryByContentEncodings.SetContentEncodings%2A>.
 
-- 2 nové metody ve <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=nameWithType> třídě: <xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> a <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A>.
+- 2 nové metody ve třídě <xref:System.Web.HttpCacheVaryByHeaders?displayProperty=nameWithType>: <xref:System.Web.HttpCacheVaryByHeaders.GetHeaders%2A> a <xref:System.Web.HttpCacheVaryByHeaders.SetHeaders%2A>.
 
-- 2 nové metody ve <xref:System.Web.HttpCacheVaryByParams?displayProperty=nameWithType> třídě: <xref:System.Web.HttpCacheVaryByParams.GetParams%2A> a <xref:System.Web.HttpCacheVaryByParams.SetParams%2A>.
+- 2 nové metody ve třídě <xref:System.Web.HttpCacheVaryByParams?displayProperty=nameWithType>: <xref:System.Web.HttpCacheVaryByParams.GetParams%2A> a <xref:System.Web.HttpCacheVaryByParams.SetParams%2A>.
 
-- <xref:System.Web.Caching.AggregateCacheDependency?displayProperty=nameWithType> Ve třídě<xref:System.Web.Caching.AggregateCacheDependency.GetFileDependencies%2A> metoda.
+- Ve třídě <xref:System.Web.Caching.AggregateCacheDependency?displayProperty=nameWithType> se jedná o metodu <xref:System.Web.Caching.AggregateCacheDependency.GetFileDependencies%2A>.
 
-- <xref:System.Web.Caching.CacheDependency> V<xref:System.Web.Caching.CacheDependency.GetFileDependencies%2A> metodě metoda.
+- V metodě <xref:System.Web.Caching.CacheDependency.GetFileDependencies%2A> <xref:System.Web.Caching.CacheDependency>.
 
 <a name="Strings" />
 
@@ -900,7 +897,7 @@ End Interface
 
 Znaky v .NET Framework 4.6.2 jsou klasifikovány na základě [standardu Unicode verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V .NET Framework 4,6 a .NET Framework 4.6.1 byly znaky klasifikovány na základě kategorií znaků Unicode 6,3.
 
-Podpora Unicode 8,0 je omezená na klasifikaci znaků <xref:System.Globalization.CharUnicodeInfo> třídou a na typy a metody, které na ní spoléhají. Mezi ně patří <xref:System.Globalization.StringInfo> třída, <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> přetížená metoda a [třídy znaků](../../standard/base-types/character-classes-in-regular-expressions.md) rozpoznané modulem .NET Framework regulárních výrazů.  Porovnání znaků a řetězců a jejich řazení není ovlivněno touto změnou a nadále se spoléhá na základní operační systém nebo v systémech Windows 7 na znaková data, která poskytuje .NET Framework.
+Podpora pro sadu Unicode 8,0 je omezena na klasifikaci znaků pomocí třídy <xref:System.Globalization.CharUnicodeInfo> a na typy a metody, které jsou na ní závislé. Mezi ně patří třída <xref:System.Globalization.StringInfo>, přetížená metoda <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> a [třídy znaků](../../standard/base-types/character-classes-in-regular-expressions.md) rozpoznávané modulem .NET Framework regulárních výrazů.  Porovnání znaků a řetězců a jejich řazení není ovlivněno touto změnou a nadále se spoléhá na základní operační systém nebo v systémech Windows 7 na znaková data, která poskytuje .NET Framework.
 
 Změny v kategoriích znaků z Unicode 6,0 až Unicode 7,0 najdete na webu Unicode Consortium na [standardu Unicode verze 7.0.0](https://www.unicode.org/versions/Unicode7.0.0/) . Změny z Unicode 7,0 na Unicode 8,0 najdete na webu Unicode Consortium na [standardu Unicode verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/) .
 
@@ -912,9 +909,9 @@ Změny v kategoriích znaků z Unicode 6,0 až Unicode 7,0 najdete na webu Unico
 
 .NET Framework 4.6.2 přidává podporu certifikátů x509 (Digital Signature Algorithm), jejichž klíče překračují limit bitů FIPS 186-2 1024.
 
-Kromě podpory většího počtu klíčových velikostí FIPS 186-3 umožňuje .NET Framework 4.6.2 výpočetních signatur pomocí řady SHA-2 algoritmů hash (SHA256, SHA384 a SHA512). Podpora FIPS 186-3 je poskytována novou <xref:System.Security.Cryptography.DSACng?displayProperty=nameWithType> třídou.
+Kromě podpory většího počtu klíčových velikostí FIPS 186-3 umožňuje .NET Framework 4.6.2 výpočetních signatur pomocí řady SHA-2 algoritmů hash (SHA256, SHA384 a SHA512). Podporu FIPS 186-3 poskytuje nová třída <xref:System.Security.Cryptography.DSACng?displayProperty=nameWithType>.
 
-V rámci zachování nejnovějších změn <xref:System.Security.Cryptography.RSA> třídy v .NET Framework 4,6 <xref:System.Security.Cryptography.ECDsa> a třídě <xref:System.Security.Cryptography.DSA> v .NET Framework 4.6.1 má abstraktní základní třída v .NET Framework 4.6.2 další metody, které umožňují volajícím používat tuto funkci. bez přetypování. Můžete zavolat <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPrivateKey%2A?displayProperty=nameWithType> metodu rozšíření pro podepsání dat, jak ukazuje následující příklad.
+V souladu s nedávnémi změnami třídy <xref:System.Security.Cryptography.RSA> v .NET Framework 4,6 a třídou <xref:System.Security.Cryptography.ECDsa> v .NET Framework 4.6.1 má abstraktní základní třída <xref:System.Security.Cryptography.DSA> v .NET Framework 4.6.2 další metody, které umožňují volajícím používat tuto funkci bez přetypování. Můžete zavolat metodu rozšíření <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPrivateKey%2A?displayProperty=nameWithType> pro podepsání dat, jak ukazuje následující příklad.
 
 ```csharp
 public static byte[] SignDataDsaSha384(byte[] data, X509Certificate2 cert)
@@ -934,7 +931,7 @@ Public Shared Function SignDataDsaSha384(data As Byte(), cert As X509Certificate
 End Function
 ```
 
-A můžete zavolat <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPublicKey%2A?displayProperty=nameWithType> metodu rozšíření pro ověření podepsaných dat, jak ukazuje následující příklad.
+A můžete zavolat metodu rozšíření <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPublicKey%2A?displayProperty=nameWithType> pro ověření podepsaných dat, jak ukazuje následující příklad.
 
 ```csharp
 public static bool VerifyDataDsaSha384(byte[] data, byte[] signature, X509Certificate2 cert)
@@ -956,9 +953,9 @@ End Function
 
 **Větší přehlednost pro vstupy pro rutiny odvození ECDiffieHellman klíčů**
 
-.NET Framework 3,5 přidali podporu pro klíčovou smlouvu Diffie-Hellman s eliptickou křivkou se třemi různými rutinami funkce odvození klíče (KDF). Vstupy pro rutiny a samotné rutiny byly nakonfigurovány prostřednictvím vlastností <xref:System.Security.Cryptography.ECDiffieHellmanCng> objektu. Ale vzhledem k tomu, že ne všechny rutiny čtou všechna vstupní vlastnost, existovala v minulosti pro vás rozsáhlá místnost pro nejasnost.
+.NET Framework 3,5 přidali podporu pro klíčovou smlouvu Diffie-Hellman s eliptickou křivkou se třemi různými rutinami funkce odvození klíče (KDF). Vstupy do rutin a samotné rutiny byly nakonfigurovány prostřednictvím vlastností objektu <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Ale vzhledem k tomu, že ne všechny rutiny čtou všechna vstupní vlastnost, existovala v minulosti pro vás rozsáhlá místnost pro nejasnost.
 
-Pro vyřešení tohoto .NET Framework 4.6.2 byly do <xref:System.Security.Cryptography.ECDiffieHellman> základní třídy přidány následující tři metody, které jasně reprezentují tyto KDF rutiny a jejich vstupy:
+Pro vyřešení tohoto .NET Framework 4.6.2 byly do základní třídy <xref:System.Security.Cryptography.ECDiffieHellman> přidány následující tři metody, které jasně reprezentují tyto rutiny KDF a jejich vstupy:
 
 |Metoda ECDiffieHellman|Popis|
 |----------------------------|-----------------|
@@ -970,7 +967,7 @@ Pro vyřešení tohoto .NET Framework 4.6.2 byly do <xref:System.Security.Crypto
 
 Knihovna kryptografických služeb systému Windows (CNG) přidala podporu pro ukládání trvalých symetrických klíčů a používání hardwarových symetrických klíčů a .NET Framework 4.6.2 umožňuje vývojářům využít tuto funkci.  Vzhledem k tomu, že pojem názvů klíčů a poskytovatelů klíčů jsou specifické pro konkrétní implementaci, vyžaduje použití této funkce konstruktor konkrétních typů implementace namísto preferovaného přístupu k továrně (například volání `Aes.Create`).
 
-Pro algoritmy AES (<xref:System.Security.Cryptography.AesCng>) a 3DES (<xref:System.Security.Cryptography.TripleDESCng>) existují trvalé podpory symetrického šifrování-Key. Příklad:
+Pro algoritmy AES (<xref:System.Security.Cryptography.AesCng>) a 3DES (<xref:System.Security.Cryptography.TripleDESCng>) existují trvalé podpory symetrického šifrování klíče. Příklad:
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1011,9 +1008,9 @@ End Function
 
 **Podpora SignedXml pro algoritmus hash SHA-2**
 
-.NET Framework 4.6.2 přidává podporu <xref:System.Security.Cryptography.Xml.SignedXml> tříd pro signatury RSA-SHA256, RSA-SHA384 a RSA-SHA512 pro podpisové metody a SHA256, SHA384 a SHA512 referenční algoritmy Digest.
+.NET Framework 4.6.2 přidává podporu ke třídě <xref:System.Security.Cryptography.Xml.SignedXml> pro metody podpisu RSA-SHA256, RSA-SHA384 a RSA-SHA512, SHA256, SHA384 a SHA512 referenční algoritmy Digest.
 
-Konstanty identifikátoru URI jsou všechny <xref:System.Security.Cryptography.Xml.SignedXml>vystavené na:
+Konstanty identifikátoru URI jsou zpřístupněny na <xref:System.Security.Cryptography.Xml.SignedXml>:
 
 |Pole SignedXml|Konstanta|
 |---------------------|--------------|
@@ -1024,13 +1021,13 @@ Konstanty identifikátoru URI jsou všechny <xref:System.Security.Cryptography.X
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA512Url>|"http://www.w3.org/2001/04/xmlenc#sha512"|
 |<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA512Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"|
 
- Všechny programy, které zaregistrovaly vlastní <xref:System.Security.Cryptography.SignatureDescription> obslužnou rutinu do <xref:System.Security.Cryptography.CryptoConfig> přidat podporu pro tyto algoritmy, budou fungovat stejně jako v minulosti, ale vzhledem k tomu, že jsou <xref:System.Security.Cryptography.CryptoConfig> teď výchozí nastavení platformy, registrace už není. třeba.
+ Všechny programy, které zaregistrovaly vlastní obslužnou rutinu <xref:System.Security.Cryptography.SignatureDescription> do <xref:System.Security.Cryptography.CryptoConfig> pro přidání podpory pro tyto algoritmy, budou i nadále fungovat stejně jako v minulosti, ale vzhledem k tomu, že teď existují výchozí nastavení platformy, registrace <xref:System.Security.Cryptography.CryptoConfig> už není nutná.
 
 <a name="SQLClient" />
 
 ### <a name="sqlclient"></a>SqlClient
 
-.NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>) obsahuje následující nové funkce .NET Framework 4.6.2:
+.NET Framework Zprostředkovatel dat pro SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>) obsahuje následující nové funkce v .NET Frameworkch 4.6.2:
 
 **Sdružování připojení a vypršení časových limitů pomocí databází SQL Azure**
 
@@ -1038,11 +1035,11 @@ Je-li povoleno sdružování připojení a dojde k vypršení časového limitu 
 
 Toto chování není vhodné při připojování k databázím Azure SQL, protože pokusy o připojení mohou selhat s přechodem k přechodným chybám, které se obvykle obnovují rychle. Pro lepší optimalizaci možností opakovaného pokusu o připojení se při selhání připojení k databázím Azure SQL odstraní chování při blokování fondu připojení.
 
-Přidání klíčového slova New `PoolBlockingPeriod` vám umožní vybrat dobu blokování, která se pro vaši aplikaci nejlépe hodí. Mezi hodnoty patří:
+Přidání nového klíčového slova `PoolBlockingPeriod` vám umožní vybrat dobu blokování, která nejlépe vyhovuje vaší aplikaci. Mezi hodnoty patří:
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
-Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQL Database je zakázána a je povolená doba blokování fondu připojení pro aplikaci, která se připojuje k jakékoli jiné instanci SQL Server. Jedná se o výchozí hodnotu. Pokud název koncového bodu serveru končí některým z následujících, považují se za databáze SQL Azure:
+Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQL Database je zakázána a je povolená doba blokování fondu připojení pro aplikaci, která se připojuje k jakékoli jiné instanci SQL Server. Toto je výchozí hodnota. Pokud název koncového bodu serveru končí některým z následujících, považují se za databáze SQL Azure:
 
 - .database.windows.net
 
@@ -1064,9 +1061,9 @@ Doba blokování fondu připojení je vždycky zakázaná.
 
 SQLClient přináší dvě vylepšení pro Always Encrypted:
 
-- Pro zlepšení výkonu parametrizovaných dotazů proti šifrovaným databázovým sloupcům jsou metadata šifrování pro parametry dotazu nyní ukládána do mezipaměti. `true` Pokud je <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionQueryMetadataCacheEnabled%2A?displayProperty=nameWithType> vlastnost nastavena na (což je výchozí hodnota), je-li stejný dotaz volán několikrát, klient načte metadata parametrů ze serveru pouze jednou.
+- Pro zlepšení výkonu parametrizovaných dotazů proti šifrovaným databázovým sloupcům jsou metadata šifrování pro parametry dotazu nyní ukládána do mezipaměti. Vlastnost <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionQueryMetadataCacheEnabled%2A?displayProperty=nameWithType> nastavená na hodnotu `true` (což je výchozí hodnota), pokud je stejný dotaz volán několikrát, klient načte metadata parametrů ze serveru pouze jednou.
 
-- Položky šifrovacího klíče sloupce v mezipaměti klíčů jsou teď po konfigurovatelném časovém intervalu vyřazení, které nastavíte pomocí <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionKeyCacheTtl%2A?displayProperty=nameWithType> vlastnosti.
+- Položky šifrovacího klíče sloupce v mezipaměti klíčů jsou teď po konfigurovatelném časovém intervalu vyřazení, které nastavíte pomocí vlastnosti <xref:System.Data.SqlClient.SqlConnection.ColumnEncryptionKeyCacheTtl%2A?displayProperty=nameWithType>.
 
 <a name="WCF" />
 
@@ -1078,7 +1075,7 @@ V .NET Framework 4.6.2 byly Windows Communication Foundation rozšířeny v nás
 
 Zabezpečení přenosu WCF podporuje certifikáty uložené pomocí knihovny kryptografických služeb systému Windows (CNG). V .NET Framework 4.6.2 je tato podpora omezená na použití certifikátů s veřejným klíčem, který má exponent větší než 32 bitů. Když je aplikace cílena na .NET Framework 4.6.2, je tato funkce ve výchozím nastavení zapnutá.
 
-Pro aplikace, které cílí na .NET Framework 4.6.1 a starší, ale běží na .NET Framework 4.6.2, může být tato funkce povolená přidáním následujícího řádku do [ \<oddílu běhového >](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config nebo Web. config.
+Pro aplikace, které cílí na .NET Framework 4.6.1 a starší, ale běží na .NET Framework 4.6.2, je možné tuto funkci povolit přidáním následujícího řádku do oddílu [\<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config nebo Web. config.
 
 ```xml
 <AppContextSwitchOverrides
@@ -1100,7 +1097,7 @@ AppContext.SetSwitch(disableCngCertificates, False)
 
 **Lepší podpora více pravidel úprav více letního času pomocí třídy DataContractJsonSerializer**
 
-Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> třída podporuje více pravidel úprav pro jedno časové pásmo. Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
+Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda třída <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více pravidel úprav pro jedno časové pásmo. Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
 
 ```xml
 <runtime>
@@ -1108,18 +1105,18 @@ Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda <xref
 </runtime>
 ```
 
-Když je tato funkce povolená, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> objekt místo <xref:System.TimeZone> typu <xref:System.TimeZoneInfo> použije k deserializaci dat data a času typ. <xref:System.TimeZoneInfo>podporuje více pravidel úprav, což umožňuje pracovat s historickými daty časových pásem;   <xref:System.TimeZone> není.
+Pokud je tato funkce povolena, objekt <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> používá typ <xref:System.TimeZoneInfo> místo typu <xref:System.TimeZone> k deserializaci dat data a času. <xref:System.TimeZoneInfo> podporuje více pravidel úprav, což umožňuje pracovat s historickými daty časových pásem;   <xref:System.TimeZone> není.
 
-Další informace o <xref:System.TimeZoneInfo> úpravách struktury a časových pásem najdete v tématu [Přehled časových pásem](../../standard/datetime/time-zone-overview.md).
+Další informace o struktuře <xref:System.TimeZoneInfo> a úpravách časových pásem najdete v tématu [Přehled časových pásem](../../standard/datetime/time-zone-overview.md).
 
 **NetNamedPipeBinding nejlepší shody**
 
-Služba WCF má nové nastavení aplikace, které lze nastavit na klientských aplikacích, aby bylo zajištěno, že se budou vždy připojovat ke službě naslouchat na identifikátoru URI, který nejlépe odpovídá tomu, kterou vyžádají. Když je nastavení této aplikace nastaveno `false` na (výchozí), klienti nástroje používají <xref:System.ServiceModel.NetNamedPipeBinding> k pokusu o připojení ke službě naslouchající na identifikátoru URI, který je podřetězec požadovaného identifikátoru URI.
+Služba WCF má nové nastavení aplikace, které lze nastavit na klientských aplikacích, aby bylo zajištěno, že se budou vždy připojovat ke službě naslouchat na identifikátoru URI, který nejlépe odpovídá tomu, kterou vyžádají. Nastavením této aplikace na `false` (výchozí) je možné, že klienti používají <xref:System.ServiceModel.NetNamedPipeBinding> k pokusu o připojení ke službě naslouchat v identifikátoru URI, který je podřetězcem požadovaného identifikátoru URI.
 
-Například klient se pokusí připojit ke službě naslouchat na adrese `net.pipe://localhost/Service1`, ale na tomto počítači, na kterém je spuštěná s oprávněním správce, `net.pipe://localhost`naslouchá jiná služba. Když je nastavení této aplikace nastaveno `false`na, klient se pokusí připojit k nesprávné službě. Po nastavení nastavení `true`aplikace se klient vždy připojí k nejlépe vyhovující službě.
+Například klient se pokusí připojit ke službě naslouchat na `net.pipe://localhost/Service1`, ale na tomto počítači, na kterém je spuštěná s oprávněním správce, naslouchá na `net.pipe://localhost`. Když je nastavení této aplikace nastaveno na `false`, klient se pokusí připojit k nesprávné službě. Po nastavení nastavení aplikace na hodnotu `true` se klient vždy připojí k nejlépe vyhovující službě.
 
 > [!NOTE]
-> Klienti používají <xref:System.ServiceModel.NetNamedPipeBinding> najít služby na základě základní adresy služby (pokud existuje), nikoli úplné adresy koncového bodu. Chcete-li zajistit, aby toto nastavení vždy fungovalo, měla by služba používat jedinečnou základní adresu.
+> Klienti používající <xref:System.ServiceModel.NetNamedPipeBinding> vyhledávací služby založené na základní adrese služby (pokud existuje), nikoli na celé adrese koncového bodu. Chcete-li zajistit, aby toto nastavení vždy fungovalo, měla by služba používat jedinečnou základní adresu.
 
 Chcete-li tuto změnu povolit, přidejte do souboru App. config nebo Web. config klientské aplikace následující nastavení aplikace:
 
@@ -1139,9 +1136,9 @@ Pokud používáte NetTcp se zabezpečením přenosu a typem přihlašovacích �
 
 - <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> Vlastnost
 
-- Část [> přenosu oddílu > NetTcpBinding \<](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) [ \<](../configure-apps/file-schema/wcf/nettcpbinding.md)
+- Část [\<transport >](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) [> oddílu \<netTcpBinding](../configure-apps/file-schema/wcf/nettcpbinding.md)
 
-- Část [> sslStreamSecurity oddílu CustomBinding > \<](../configure-apps/file-schema/wcf/sslstreamsecurity.md) [ \<](../configure-apps/file-schema/wcf/custombinding.md)
+- Část [\<sslStreamSecurity >](../configure-apps/file-schema/wcf/sslstreamsecurity.md) [> oddílu \<customBinding](../configure-apps/file-schema/wcf/custombinding.md)
 
 <a name="WPF462" />
 
@@ -1151,11 +1148,11 @@ V .NET Framework 4.6.2 byly Windows Presentation Foundation rozšířeny v násl
 
 **Seskupení řazení**
 
-Aplikace, která používá <xref:System.Windows.Data.CollectionView> objekt k seskupení dat, teď může explicitně deklarovat způsob řazení skupin. Explicitní řazení řeší problém neintuitivního řazení, ke kterému dochází, když aplikace dynamicky přidává nebo odebírá skupiny nebo když změní hodnotu vlastností položek, které jsou součástí seskupení. Může také zvýšit výkon procesu vytváření skupiny přesunutím porovnání vlastností seskupení z řazení celé kolekce do řazení skupin.
+Aplikace, která používá objekt <xref:System.Windows.Data.CollectionView> k seskupení dat, teď může explicitně deklarovat způsob řazení skupin. Explicitní řazení řeší problém neintuitivního řazení, ke kterému dochází, když aplikace dynamicky přidává nebo odebírá skupiny nebo když změní hodnotu vlastností položek, které jsou součástí seskupení. Může také zvýšit výkon procesu vytváření skupiny přesunutím porovnání vlastností seskupení z řazení celé kolekce do řazení skupin.
 
-Aby bylo možné podporovat řazení skupin, <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=nameWithType> nové <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=nameWithType> a vlastnosti popisují způsob řazení kolekce skupin vytvořených <xref:System.ComponentModel.GroupDescription> objektem. To je analogické jako způsob, jakým identicky pojmenované <xref:System.Windows.Data.ListCollectionView> vlastnosti popisují způsob řazení datových položek.
+Aby bylo možné podporovat řazení skupin, nové vlastnosti <xref:System.ComponentModel.GroupDescription.SortDescriptions%2A?displayProperty=nameWithType> a <xref:System.ComponentModel.GroupDescription.CustomSort%2A?displayProperty=nameWithType> popisují způsob řazení kolekce skupin vytvořených objektem <xref:System.ComponentModel.GroupDescription>. To je analogické jako v případě, že identicky pojmenované vlastnosti <xref:System.Windows.Data.ListCollectionView> popisují způsob řazení datových položek.
 
-Dvě nové statické vlastnosti <xref:System.Windows.Data.PropertyGroupDescription> <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> třídy a <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A>lze použít v nejběžnějších případech.
+V nejběžnějších případech lze použít dvě nové statické vlastnosti třídy <xref:System.Windows.Data.PropertyGroupDescription> <xref:System.Windows.Data.PropertyGroupDescription.CompareNameAscending%2A> a <xref:System.Windows.Data.PropertyGroupDescription.CompareNameDescending%2A>.
 
 Například následující XAML seskupuje data podle stáří, řadí věkové skupiny ve vzestupném pořadí a seskupuje položky v rámci každé věkové skupiny podle příjmení.
 
@@ -1185,7 +1182,7 @@ Pro podporu nedávných rozmnožení prostředí s vysokým rozlišením DPI a h
 
 V předchozích verzích .NET Framework aplikace WPF používají systémovou rozlišení DPI. Jinými slovy, uživatelské rozhraní aplikace se podle potřeby škáluje operačním systémem, v závislosti na DPI monitoru, na kterém je aplikace vykreslená. ,
 
-U aplikací běžících pod .NET Framework 4.6.2 můžete v aplikacích WPF zakázat změny rozlišení DPI podle monitoru přidáním příkazu konfigurace do [ \<části > modulu runtime](../configure-apps/file-schema/runtime/runtime-element.md) v konfiguračním souboru aplikace následujícím způsobem:
+Pro aplikace běžící pod .NET Framework 4.6.2 můžete v aplikacích WPF zakázat změny rozlišení DPI podle monitoru přidáním příkazu konfigurace do oddílu [\<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) konfiguračního souboru aplikace následujícím způsobem:
 
 ```xml
 <runtime>
@@ -1203,7 +1200,7 @@ V .NET Framework 4.6.2 bylo programovací model Windows Workflow Foundation vyle
 
 Počínaje .NET Framework 4,5 podporuje C# WF výrazy v návrháři sady Visual Studio i v pracovních postupech kódu. Opětovné hostování Návrhář postupu provádění je klíčovou funkcí WF, která umožňuje, aby se Návrhář postupu provádění v aplikaci mimo Visual Studio (například v WPF).  Programovací model Windows Workflow Foundation poskytuje možnost podporovat C# výrazy a IntelliSense v nově hostovaném Návrhář postupu provádění. Další informace najdete na [blogu programovací model Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`Ve verzích .NET Framework před nástrojem .NET Framework 4.6.2 je technologie IntelliSense Návrháře WF rozdělená, když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio. I když je sestavení projektu úspěšné, typy pracovních postupů nejsou v Návrháři nalezeny a upozornění z IntelliSense pro chybějící typy pracovních postupů se zobrazí v okně **Seznam chyb** . .NET Framework 4.6.2 řeší tento problém a zpřístupňuje IntelliSense.
+Když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio, `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` ve verzích .NET Framework před .NET Framework 4.6.2. technologie IntelliSense pro Návrháře WF je poškozena. I když je sestavení projektu úspěšné, typy pracovních postupů nejsou v Návrháři nalezeny a upozornění z IntelliSense pro chybějící typy pracovních postupů se zobrazí v okně **Seznam chyb** . .NET Framework 4.6.2 řeší tento problém a zpřístupňuje IntelliSense.
 
 **Aplikace pracovního postupu V1 se sledováním pracovních postupů zapnuto v režimu FIPS**
 
@@ -1217,9 +1214,9 @@ Pokud tento scénář není povolený, bude při spuštění aplikace i nadále 
 
 **Vylepšení pracovního postupu při použití dynamické aktualizace se sadou Visual Studio Návrhář postupu provádění**
 
-Návrháři aktivity Návrhář postupu provádění, vývojový diagram a jiní návrháři aktivit pracovního postupu nyní úspěšně načetli a zobrazili pracovní postupy, které byly <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> uloženy po volání metody. Ve verzích .NET Framework před .NET Framework 4.6.2 načítání souboru XAML v sadě Visual Studio pro pracovní postup, který byl uložen po volání <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType> , může způsobit následující problémy:
+Návrháři aktivity Návrhář postupu provádění, vývojový diagram a jiní návrháři aktivit pracovního postupu nyní úspěšně načetli a zobrazili pracovní postupy, které byly uloženy po volání metody <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType>. Ve verzích .NET Framework před .NET Framework 4.6.2 načítání souboru XAML v sadě Visual Studio pro pracovní postup, který byl uložen po volání <xref:System.Activities.DynamicUpdate.DynamicUpdateServices.PrepareForUpdate%2A?displayProperty=nameWithType>, může způsobit následující problémy:
 
-- Návrhář postupu provádění nemůže správně načíst soubor XAML (když <xref:System.Activities.Presentation.ViewState.ViewStateData.Id%2A?displayProperty=nameWithType> je na konci řádku).
+- Návrhář postupu provádění nemůže správně načíst soubor XAML (Pokud je <xref:System.Activities.Presentation.ViewState.ViewStateData.Id%2A?displayProperty=nameWithType> na konci řádku).
 
 - Návrhář aktivity vývojového diagramu nebo jiný Návrhář aktivity pracovního postupu může zobrazit všechny objekty ve výchozích umístěních na rozdíl od hodnot připojených vlastností.
 
@@ -1241,9 +1238,9 @@ Převedená aplikace klasické pracovní plochy získala identitu aplikace podob
 
 ### <a name="debugging-improvements"></a>Vylepšení ladění
 
-*Rozhraní API pro nespravované ladění* bylo vylepšeno v .NET Framework 4.6.2, aby bylo možné provést <xref:System.NullReferenceException> další analýzu při vyvolání, aby bylo možné určit, která proměnná v jednom řádku zdrojového kódu je. `null`   Pro podporu tohoto scénáře byla do nespravovaného ladicího rozhraní API přidána následující rozhraní API.
+*Rozhraní API pro nespravované ladění* bylo vylepšeno v .NET Framework 4.6.2, aby bylo možné provést další analýzu při vyvolání <xref:System.NullReferenceException>, aby bylo možné určit, která proměnná v jednom řádku zdrojového kódu je `null`.   Pro podporu tohoto scénáře byla do nespravovaného ladicího rozhraní API přidána následující rozhraní API.
 
-- Rozhraní [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)a [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , která zveřejňují nativní domy spravovaných proměnných. To umožňuje ladicím programům provádět některé analýzy toku kódu, <xref:System.NullReferenceException> když dojde k chybě a chcete-li pracovat zpět k určení spravované proměnné, která odpovídá nativnímu umístění `null`, které bylo.
+- Rozhraní [ICorDebugCode4](../unmanaged-api/debugging/icordebugcode4-interface.md), [ICorDebugVariableHome](../unmanaged-api/debugging/icordebugvariablehome-interface.md)a [ICorDebugVariableHomeEnum](../unmanaged-api/debugging/icordebugvariablehomeenum-interface.md) , která zveřejňují nativní domy spravovaných proměnných. To umožňuje ladicím programům provádět některé analýzy toku kódu, když dojde k <xref:System.NullReferenceException> a chcete-li pracovat zpět k určení spravované proměnné, která odpovídá nativnímu umístění, které bylo `null`.
 
 - Metoda [ICorDebugType2:: GetTypeId.](../unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) poskytuje mapování pro ICorDebugType na [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md), což ladicímu programu umožňuje získat [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) bez instance ICorDebugType. Existující rozhraní API na [COR_TYPEID](../unmanaged-api/debugging/cor-typeid-structure.md) se pak dají použít k určení rozložení třídy typu.
 
@@ -1303,9 +1300,9 @@ ADO.NET teď podporuje nativně ukládání Always Encrypted hlavních klíčů 
 
 Aby mohli uživatelé získat přístup k Always Encrypted chráněným pomocí hlavních klíčů, které jsou uložené v modulu hardwarového zabezpečení (HSM), musí si do aplikačních serverů nebo klientských počítačů nainstalovat poskytovatele kryptografických služeb na základě dodavatele modulu hardwarového zabezpečení (HSM).
 
-**Vylepšené <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> chování připojení pro AlwaysOn**
+**Vylepšené chování při připojení <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> pro AlwaysOn**
 
-SqlClient nyní automaticky poskytuje rychlejší připojení ke skupině dostupnosti AlwaysOn (AG). Transparentně detekuje, jestli se vaše aplikace připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti, a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musela aplikace nastavit připojovací řetězec tak, aby obsahovala `"MultisubnetFailover=true"` , aby označovala, že se připojil ke skupině dostupnosti AlwaysOn. Bez nastavení klíčového slova Connection `true`na se může u aplikace při připojování ke skupině dostupnosti AlwaysOn vyskytnout časový limit. V této *verzi nemusí aplikace* nastavovat <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> `true` již. Další informace o podpoře SqlClient pro skupiny dostupnosti Always On najdete v článku [Podpora SqlClient pro vysokou dostupnost a zotavení po havárii](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
+SqlClient nyní automaticky poskytuje rychlejší připojení ke skupině dostupnosti AlwaysOn (AG). Transparentně detekuje, jestli se vaše aplikace připojuje ke skupině dostupnosti AlwaysOn (AG) v jiné podsíti, a rychle zjistí aktuální aktivní server a poskytuje připojení k serveru. Před touto verzí musela aplikace nastavit připojovací řetězec tak, aby obsahovala `"MultisubnetFailover=true"` k označení toho, že se připojil ke skupině dostupnosti AlwaysOn. Bez nastavení klíčového slova Connection na `true` může při připojování ke skupině dostupnosti AlwaysOn dojít k vypršení časového limitu aplikace. V této *verzi nemusí aplikace* nastavovat <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> na `true` již. Další informace o podpoře SqlClient pro skupiny dostupnosti Always On najdete v článku [Podpora SqlClient pro vysokou dostupnost a zotavení po havárii](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
 <a name="WPF461" />
 
@@ -1315,13 +1312,13 @@ Windows Presentation Foundation zahrnuje řadu vylepšení a změn.
 
 **Vylepšený výkon**
 
-Zpoždění při vyvolávání událostí dotyku bylo opraveno .NET Framework 4.6.1. Kromě toho psaní v <xref:System.Windows.Controls.RichTextBox> ovládacím prvku již během rychlého vstupu nespojuje vlákno vykreslování.
+Zpoždění při vyvolávání událostí dotyku bylo opraveno .NET Framework 4.6.1. Navíc při psaní v ovládacím prvku <xref:System.Windows.Controls.RichTextBox> již nespojuje vlákno vykreslování během rychlého vstupu.
 
 **Vylepšení kontroly pravopisu**
 
 Kontrola pravopisu v subsystému WPF byla aktualizována na Windows 8.1 a novějších verzích, aby bylo možné využívat operační systém pro kontrolu pravopisu dalších jazyků.  Před Windows 8.1 se ve verzích Windows nezměnily žádné funkce.
 
-Stejně jako v předchozích verzích .NET Framework se detekuje jazyk pro <xref:System.Windows.Controls.TextBox> Ora <xref:System.Windows.Controls.RichTextBox> blok ovládacího prvku hledáním informací v následujícím pořadí:
+Stejně jako v předchozích verzích .NET Framework byl zjištěn jazyk pro @no__t Ora <xref:System.Windows.Controls.RichTextBox> blok, a to hledáním informací v následujícím pořadí:
 
 - `xml:lang`, pokud je k dispozici.
 
@@ -1335,7 +1332,7 @@ Další informace o podpoře jazyků v subsystému WPF najdete v [blogovém př�
 
 V .NET Framework 4.6.1 rozpozná WPF vlastní slovníky, které jsou zaregistrované globálně. Tato funkce je kromě možnosti registrace pro jednotlivé ovládací prvky k dispozici.
 
-V předchozích verzích WPF vlastní slovníky nerozpoznaly vyloučená slova a seznamy automatických oprav. Jsou podporovány v Windows 8.1 a Windows 10 prostřednictvím souborů, které lze umístit `%AppData%\Microsoft\Spelling\<language tag>` do adresáře.  Následující pravidla se vztahují na tyto soubory:
+V předchozích verzích WPF vlastní slovníky nerozpoznaly vyloučená slova a seznamy automatických oprav. Jsou podporovány v Windows 8.1 a Windows 10 prostřednictvím souborů, které lze umístit do adresáře `%AppData%\Microsoft\Spelling\<language tag>`.  Následující pravidla se vztahují na tyto soubory:
 
 - Soubory by měly mít přípony. dic (pro přidaná slova),. EXC (vyloučená slova) nebo. ACL (pro automatické opravy).
 
@@ -1354,13 +1351,13 @@ V úložišti GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Sa
 
 **Rozšíření DirectX**
 
-WPF obsahuje [balíček NuGet](https://go.microsoft.com/fwlink/?LinkID=691342) , který poskytuje nové implementace <xref:System.Windows.Interop.D3DImage> , které usnadňují spolupráci s DX10 a DX11 obsahem. Kód pro tento balíček je otevřený source a je dostupný [na GitHubu](https://github.com/Microsoft/WPFDXInterop).
+WPF obsahuje [balíček NuGet](https://go.microsoft.com/fwlink/?LinkID=691342) , který poskytuje nové implementace <xref:System.Windows.Interop.D3DImage>, které usnadňují spolupráci s obsahem DX10 a DX11. Kód pro tento balíček je otevřený source a je dostupný [na GitHubu](https://github.com/Microsoft/WPFDXInterop).
 
 <a name="WWF461" />
 
 ### <a name="windows-workflow-foundation-transactions"></a>Programovací model Windows Workflow Foundation: Transakce
 
-<xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> Metoda teď může použít jiný správce distribuovaných transakcí než MSDTC k povýšení transakce. To provedete tak, že zadáte identifikátor ID zvýšení transakce GUID <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> k novému přetížení. Pokud je tato operace úspěšná, existují omezení na možnosti transakce. Jakmile je povýšen na transakci bez služby MSDTC, následující metody vyvolávají výjimku <xref:System.Transactions.TransactionPromotionException> , protože tyto metody vyžadují povýšení na MSDTC:
+Metoda <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> nyní může použít jiný správce distribuovaných transakcí než MSDTC k povýšení transakce. To provedete tak, že zadáte identifikátor ID zvýšení transakce GUID k novému přetížení <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType>. Pokud je tato operace úspěšná, existují omezení na možnosti transakce. Jakmile je vypsána podpora transakcí bez služby MSDTC, následující metody vyvolávají <xref:System.Transactions.TransactionPromotionException>, protože tyto metody vyžadují povýšení na MSDTC:
 
 - <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType>
 
@@ -1370,9 +1367,9 @@ WPF obsahuje [balíček NuGet](https://go.microsoft.com/fwlink/?LinkID=691342) ,
 
 - <xref:System.Transactions.TransactionInterop.GetTransmitterPropagationToken%2A?displayProperty=nameWithType>
 
-Jakmile je vyřazení transakce bez služby MSDTC, je nutné ji použít pro budoucí trvalé zařazení pomocí protokolů, které definuje. Na <xref:System.Guid> zvýšení transakce lze získat <xref:System.Transactions.Transaction.PromoterType%2A> pomocí vlastnosti. V případě, že transakce propaguje, poskytne <xref:System.Byte> vykonavatel transakce pole, které představuje povýšený token. Aplikace může získat povýšený token pro transakci, která není povýšena MSDTC, s <xref:System.Transactions.Transaction.GetPromotedToken%2A> metodou.
+Jakmile je vyřazení transakce bez služby MSDTC, je nutné ji použít pro budoucí trvalé zařazení pomocí protokolů, které definuje. @No__t-0 vykonavatele transakce lze získat pomocí vlastnosti <xref:System.Transactions.Transaction.PromoterType%2A>. V případě, že transakce propaguje, poskytuje vykonavatel transakce pole <xref:System.Byte>, které představuje povýšený token. Aplikace může získat povýšený token pro transakci, která není povýšena MSDTC, s metodou <xref:System.Transactions.Transaction.GetPromotedToken%2A>.
 
-Aby bylo možné operaci <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> povýšení úspěšně dokončit, musí se uživatelé nového přetížení řídit konkrétní sekvencí volání. Tato pravidla jsou popsána v dokumentaci metody.
+Uživatelé nového přetížení <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> musí následovat za konkrétní sekvencí volání, aby se operace povýšení úspěšně dokončila. Tato pravidla jsou popsána v dokumentaci metody.
 
 <a name="Profile461" />
 
@@ -1386,7 +1383,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
 - Lepší instrumentaci pomocí rozhraní ICorProfiler.
 
-  Profilery, které používají `ICorProfiler` funkci ReJIT rozhraní API pro dynamickou instrumentaci, teď můžou upravovat některá metadata. Dříve takové nástroje mohly instrumentaci IL kdykoli instrumentovat, ale metadata se dají upravovat jenom v době načtení modulu. Vzhledem k tomu, že IL odkazuje na metadata, omezíme tak druhy instrumentace, které by bylo možné provést. Některé z těchto omezení jsme převedli přidáním metody [ICorProfilerInfo7:: ApplyMetaData](../unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) pro podporu podmnožiny úprav metadat po načtení modulu, `AssemblyRef`zejména přidáním nových, `TypeRef`, `TypeSpec` `MemberRef`,, `MemberSpec` a`UserString` záznamy. Tato změna přináší mnohem širší množství možností instrumentace.
+  Profilery, které používají funkci rozhraní ReJit API `ICorProfiler` pro dynamickou instrumentaci, teď můžou upravovat některá metadata. Dříve takové nástroje mohly instrumentaci IL kdykoli instrumentovat, ale metadata se dají upravovat jenom v době načtení modulu. Vzhledem k tomu, že IL odkazuje na metadata, omezíme tak druhy instrumentace, které by bylo možné provést. Některé z těchto omezení jsme převedli přidáním metody [ICorProfilerInfo7:: ApplyMetaData](../unmanaged-api/profiling/icorprofilerinfo7-applymetadata-method.md) pro podporu podmnožiny úprav metadat po načtení modulu, zejména přidáním nových `AssemblyRef`, `TypeRef`, `TypeSpec`, `MemberRef`, `MemberSpec` a `UserString` záznamů. Tato změna přináší mnohem širší množství možností instrumentace.
 
 <a name="NGEN461" />
 
@@ -1414,13 +1411,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Rozhraní API založené na úlohách pro vyprazdňování asynchronních odpovědí**
 
-    ASP.NET nyní poskytuje jednoduché rozhraní API založené na úlohách pro vyprazdňování <xref:System.Web.HttpResponse.FlushAsync%2A?displayProperty=nameWithType>asynchronních odpovědí, což umožňuje, aby odpovědi byly vyčištěny asynchronně pomocí `async/await` podpory vašeho jazyka.
+    ASP.NET nyní poskytuje jednoduché rozhraní API založené na úlohách pro vyprazdňování asynchronních odpovědí <xref:System.Web.HttpResponse.FlushAsync%2A?displayProperty=nameWithType>, které umožňuje asynchronní vyprázdnění odpovědí pomocí podpory `async/await` vašeho jazyka.
 
   - **Vazba modelu podporuje metody vracející úlohy**
 
-    V .NET Framework 4,5 přidal ASP.NET funkci vazby modelu, která povolila rozšiřitelný přístup k datům na základě kódu, na stránky webových formulářů a uživatelské ovládací prvky. Systém vazby modelu teď podporuje <xref:System.Threading.Tasks.Task>– vrací metody vazby modelu. Tato funkce umožňuje vývojářům webových formulářů získat výhody škálovatelnosti v rámci asynchronního přenosu dat při použití novějších verzí systému ORMs, včetně Entity Framework.
+    V .NET Framework 4,5 přidal ASP.NET funkci vazby modelu, která povolila rozšiřitelný přístup k datům na základě kódu, na stránky webových formulářů a uživatelské ovládací prvky. Systém vázání modelů teď podporuje @no__t metody vazby modelu, které vrací -0. Tato funkce umožňuje vývojářům webových formulářů získat výhody škálovatelnosti v rámci asynchronního přenosu dat při použití novějších verzí systému ORMs, včetně Entity Framework.
 
-    Vazba asynchronního modelu je řízena `aspnet:EnableAsyncModelBinding` nastavením konfigurace.
+    Asynchronní vazba modelu je řízena nastavením konfigurace @no__t 0.
 
     ```xml
     <appSettings>
@@ -1428,15 +1425,15 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
     </appSettings>
     ```
 
-    U aplikací, které cílí na .NET Framework 4,6, se nastaví `true`jako výchozí. V aplikacích běžících na .NET Framework 4,6, které cílí na starší verzi .NET Framework, je `false` ve výchozím nastavení. Dá se povolit nastavením nastavení konfigurace na `true`.
+    U aplikací cílících na .NET Framework 4,6 je výchozí hodnota `true`. V aplikacích běžících na .NET Framework 4,6, které cílí na starší verzi .NET Framework, je ve výchozím nastavení `false`. Dá se povolit nastavením nastavení konfigurace na `true`.
 
   - **Podpora HTTP/2 (Windows 10)**
 
     [Http/2](https://www.wikipedia.org/wiki/HTTP/2) je nová verze protokolu HTTP, která poskytuje mnohem lepší využití připojení (méně zpátečních cest mezi klientem a serverem). Výsledkem je načítání webových stránek s nižší latencí pro uživatele.  Webové stránky (na rozdíl od služeb) využívají maximum HTTP/2, protože protokol je optimalizován pro více artefaktů, které jsou požadovány v rámci jednoho prostředí. Do ASP.NET v .NET Framework 4,6 byla přidána podpora protokolu HTTP/2. Vzhledem k tomu, že síťové funkce existují na více vrstvách, byly v systému Windows, ve službě IIS a v ASP.NET k dispozici nové funkce pro povolení protokolu HTTP/2. Abyste mohli používat HTTP/2 s ASP.NET, musíte běžet na Windows 10.
 
-    Pro aplikace Windows 10 Univerzální platforma Windows (UWP), které používají <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> rozhraní API, se standardně podporuje i http/2.
+    HTTP/2 se podporuje i ve výchozím nastavení pro aplikace Windows 10 Univerzální platforma Windows (UWP), které používají rozhraní API <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>.
 
-    Aby bylo možné používat funkci [PUSH_PROMISE](https://http2.github.io/http2-spec/#PUSH_PROMISE) v aplikacích ASP.NET, je nová metoda se dvěma přetíženími <xref:System.Web.HttpResponse.PushPromise%28System.String%29> a <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>přidána do <xref:System.Web.HttpResponse> třídy.
+    Aby bylo možné používat funkci [PUSH_PROMISE](https://http2.github.io/http2-spec/#PUSH_PROMISE) v aplikacích ASP.NET, byla do třídy <xref:System.Web.HttpResponse> přidána nová metoda se dvěma přetíženími, <xref:System.Web.HttpResponse.PushPromise%28System.String%29> a <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>.
 
     > [!NOTE]
     > I když ASP.NET Core podporuje HTTP/2, podpora funkce PUSH Promise ještě není přidaná.
@@ -1453,7 +1450,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Algoritmy hash s náhodným řetězcem**
 
-    .NET Framework 4,5 představil [algoritmus hash s náhodným řetězcem](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md). ASP.NET ho ale nepodporuje, protože některé funkce ASP.NET jsou závislé na stabilním kódu hash. V .NET Framework 4,6 jsou nyní podporovány algoritmy hash s náhodným řetězcem. Pokud chcete tuto funkci povolit, použijte `aspnet:UseRandomizedStringHashAlgorithm` nastavení konfigurace.
+    .NET Framework 4,5 představil [algoritmus hash s náhodným řetězcem](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md). ASP.NET ho ale nepodporuje, protože některé funkce ASP.NET jsou závislé na stabilním kódu hash. V .NET Framework 4,6 jsou nyní podporovány algoritmy hash s náhodným řetězcem. Pokud chcete tuto funkci povolit, použijte nastavení konfigurace `aspnet:UseRandomizedStringHashAlgorithm`.
 
     ```xml
     <appSettings>
@@ -1469,7 +1466,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   .NET Framework 4,6 obsahuje novou verzi 64 kompilátoru JIT (původně kódu s názvem RyuJIT). Nový 64 kompilátor poskytuje významné zlepšení výkonu oproti staršímu 64 kompilátoru JIT. Nový 64 kompilátor je povolen pro 64 procesy spuštěné nad .NET Framework 4,6. Vaše aplikace bude spuštěna v 64m procesu, pokud je kompilována jako 64-bit nebo AnyCPU a je spuštěna v operačním systému 64. I když jste se ujistili, že přechod na nový kompilátor je co možná transparentní, jsou možné změny v chování. Rádi bychom slyšeli o všech problémech, se kterými se setkáte při použití nového kompilátoru JIT. Pokud narazíte na problém, který může souviset s novým 64 kompilátorem JIT, kontaktujte nás přes [Microsoft Connect](https://connect.microsoft.com/) .
 
-  Nový 64 kompilátor JIT zahrnuje také funkce akcelerace hardwarového SIMDu v případě, že se v <xref:System.Numerics> oboru názvů společně s typy SIMD podporují, což může přinést dobré zlepšení výkonu.
+  Nový 64 kompilátor JIT zahrnuje i funkce akcelerace SIMD hardwaru, pokud jsou párovány s typy SIMD v oboru názvů <xref:System.Numerics>, což může přinést dobré zlepšení výkonu.
 
 - **Vylepšení zavaděče sestavení**
 
@@ -1479,37 +1476,37 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   K .NET Framework 4,6 bylo přidáno mnoho nových rozhraní API, které umožňuje použití klíčových scénářů. Mezi ně patří tyto změny a dodatky:
 
-  - **IReadOnlyCollection\<T > implementace**
+  - **IReadOnlyCollection @ no__t-1T > implementace**
 
-    Další kolekce implementují <xref:System.Collections.Generic.IReadOnlyCollection%601> <xref:System.Collections.Generic.Queue%601> například a <xref:System.Collections.Generic.Stack%601>.
+    Další kolekce implementují <xref:System.Collections.Generic.IReadOnlyCollection%601>, například <xref:System.Collections.Generic.Queue%601> a <xref:System.Collections.Generic.Stack%601>.
 
   - **CultureInfo. CurrentCulture a CultureInfo. CurrentUICulture**
 
-    Vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> a<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> jsou nyní určeny pro čtení i zápis, nikoli jen pro čtení. Pokud k těmto vlastnostem <xref:System.Globalization.CultureInfo> přiřadíte nový objekt, změní se také aktuální jazyková verze `Thread.CurrentThread.CurrentCulture` vlákna definovaná vlastností a aktuální jazyková verze `Thread.CurrentThread.CurrentUICulture` vlákna uživatelského rozhraní definovaná vlastnostmi.
+    Vlastnosti <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> jsou nyní určeny pro čtení i zápis, nikoli jen pro čtení. Pokud k těmto vlastnostem přiřadíte nový objekt <xref:System.Globalization.CultureInfo>, změní se také aktuální jazyková verze vlákna definovaná vlastností `Thread.CurrentThread.CurrentCulture` a aktuální jazyková verze vlákna uživatelského rozhraní definovaná vlastnostmi `Thread.CurrentThread.CurrentUICulture`.
 
   - **Vylepšení uvolňování paměti (GC)**
 
-    Třída teď obsahuje <xref:System.GC.TryStartNoGCRegion%2A> metody a <xref:System.GC.EndNoGCRegion%2A> , které umožňují zakázat uvolňování paměti během provádění kritické cesty. <xref:System.GC>
+    Třída <xref:System.GC> nyní obsahuje metody <xref:System.GC.TryStartNoGCRegion%2A> a <xref:System.GC.EndNoGCRegion%2A>, které umožňují zakázat uvolňování paměti během provádění kritické cesty.
 
-    Nové přetížení <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=nameWithType> metody umožňuje řídit, zda je halda malých objektů i halda pro velké objekty Swept a komprimována nebo Swept pouze.
+    Nové přetížení metody <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=nameWithType> umožňuje řídit, zda je halda malých objektů i halda velkých objektů Swept a komprimována nebo Swept pouze.
 
   - **Typy s povolenou SIMD**
 
-    <xref:System.Numerics.Quaternion> <xref:System.Numerics.Vector3> <xref:System.Numerics.Plane> <xref:System.Numerics.Vector2> <xref:System.Numerics.Matrix3x2> <xref:System.Numerics.Vector4>Obor názvů teď obsahuje několik typů s povoleným SIMD, jako jsou, <xref:System.Numerics.Matrix4x4>,,,, a. <xref:System.Numerics>
+    Obor názvů <xref:System.Numerics> nyní zahrnuje řadu typů s povoleným SIMD, například <xref:System.Numerics.Matrix3x2>, <xref:System.Numerics.Matrix4x4>, <xref:System.Numerics.Plane>, <xref:System.Numerics.Quaternion>, <xref:System.Numerics.Vector2>, <xref:System.Numerics.Vector3> a <xref:System.Numerics.Vector4>.
 
     Vzhledem k tomu, že nový 64 kompilátor JIT zahrnuje také funkce akcelerace hardwarového SIMD, existují obzvláště významná zlepšení výkonu při použití typů SIMD s novým 64 kompilátorem JIT.
 
   - **Aktualizace kryptografie**
 
-    Rozhraní API se aktualizuje tak, aby podporovalo [rozhraní API kryptografie Windows CNG.](/windows/desktop/SecCNG/cng-reference) <xref:System.Security.Cryptography?displayProperty=nameWithType> Předchozí verze .NET Framework se jako základ pro <xref:System.Security.Cryptography?displayProperty=nameWithType> implementaci spoléhaly jenom na [starší verzi rozhraní API kryptografie Windows](/windows/desktop/SecCrypto/cryptography-portal) . Měli jsme požadavky na podporu rozhraní API CNG, protože podporuje [moderní kryptografické algoritmy](/windows/desktop/SecCNG/cng-features#suite-b-support), které jsou důležité pro určité kategorie aplikací.
+    Rozhraní API pro <xref:System.Security.Cryptography?displayProperty=nameWithType> se aktualizuje tak, aby podporovalo [rozhraní API kryptografie Windows CNG](/windows/desktop/SecCNG/cng-reference). Předchozí verze .NET Framework u implementace <xref:System.Security.Cryptography?displayProperty=nameWithType> zcela spoléhaly na [starší verzi rozhraní API kryptografie Windows](/windows/desktop/SecCrypto/cryptography-portal) . Měli jsme požadavky na podporu rozhraní API CNG, protože podporuje [moderní kryptografické algoritmy](/windows/desktop/SecCNG/cng-features#suite-b-support), které jsou důležité pro určité kategorie aplikací.
 
     .NET Framework 4,6 obsahuje následující nová vylepšení pro podporu kryptografických rozhraní API Windows CNG:
 
-    - Sada rozšiřujících metod pro certifikáty `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)` x509 a `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)`, která vrací implementaci založenou na CNG spíše než implementaci založenou na rozhraní CAPI, pokud je to možné. (Některé čipové karty atd., stále vyžadují rozhraní CAPI a rozhraní API zařídí záložní verze.)
+    - Sada rozšiřujících metod pro certifikáty x509 `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey(System.Security.Cryptography.X509Certificates.X509Certificate2)` a `System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(System.Security.Cryptography.X509Certificates.X509Certificate2)`, která vrací implementaci založenou na CNG spíše než implementaci založenou na rozhraní CAPI, pokud je to možné. (Některé čipové karty atd., stále vyžadují rozhraní CAPI a rozhraní API zařídí záložní verze.)
 
-    - <xref:System.Security.Cryptography.RSACng?displayProperty=nameWithType> Třída, která poskytuje implementaci CNG algoritmu RSA.
+    - Třída <xref:System.Security.Cryptography.RSACng?displayProperty=nameWithType>, která poskytuje implementaci CNG algoritmu RSA.
 
-    - Vylepšení rozhraní RSA API tak, aby běžné akce již nevyžadovaly přetypování. Například šifrování dat pomocí <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> objektu vyžaduje v předchozích verzích .NET Framework kód jako v následujícím příkladu.
+    - Vylepšení rozhraní RSA API tak, aby běžné akce již nevyžadovaly přetypování. Například šifrování dat pomocí objektu <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> vyžaduje v předchozích verzích .NET Framework kód podobný následujícímu.
 
       [!code-csharp[WhatsNew.Casting#1](~/samples/snippets/csharp/VS_Snippets_CLR/whatsnew.casting/cs/program.cs#1)]
       [!code-vb[WhatsNew.Casting#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/whatsnew.casting/vb/module1.vb#1)]
@@ -1521,7 +1518,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Podpora převodu dat a časů do nebo z času v systému UNIX**
 
-    Do <xref:System.DateTimeOffset> struktury byly přidány následující nové metody, které podporují převod hodnot data a času na čas systému UNIX nebo z něj:
+    Do struktury <xref:System.DateTimeOffset> byly přidány následující nové metody pro podporu převodu hodnot data a času na nebo z času v systému UNIX:
 
     - <xref:System.DateTimeOffset.FromUnixTimeSeconds%2A?displayProperty=nameWithType>
 
@@ -1533,11 +1530,11 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Přepínače kompatibility**
 
-    Nová <xref:System.AppContext> třída přidává novou funkci kompatibility, která umožňuje zapisovačům knihoven poskytnout jednotný mechanismus pro odhlášení pro nové funkce pro své uživatele. Zřizuje volně spojenou smlouvu mezi součástmi za účelem sdělení žádosti o výslovný souhlas. Tato možnost je obvykle důležitá, když dojde ke změně existující funkce. Naopak pro nové funkce už existuje implicitní výslovný souhlas.
+    Nová třída <xref:System.AppContext> přidává novou funkci kompatibility, která umožňuje zapisovačům knihoven poskytnout jednotný mechanismus pro odhlášení pro nové funkce pro své uživatele. Zřizuje volně spojenou smlouvu mezi součástmi za účelem sdělení žádosti o výslovný souhlas. Tato možnost je obvykle důležitá, když dojde ke změně existující funkce. Naopak pro nové funkce už existuje implicitní výslovný souhlas.
 
-    S <xref:System.AppContext>, knihovny definují a zveřejňují přepínače kompatibility, zatímco kód, který na nich závisí, může nastavit tyto přepínače tak, aby ovlivnily chování knihovny. Ve výchozím nastavení knihovny poskytují nové funkce a mění je pouze (to znamená, že poskytují předchozí funkce), pokud je přepínač nastaven.
+    Pomocí <xref:System.AppContext> knihovny definují a zveřejňují přepínače kompatibility, zatímco kód, který na nich závisí, může nastavit tyto přepínače tak, aby ovlivnily chování knihovny. Ve výchozím nastavení knihovny poskytují nové funkce a mění je pouze (to znamená, že poskytují předchozí funkce), pokud je přepínač nastaven.
 
-    Aplikace (nebo knihovna) může deklarovat hodnotu přepínače (což je vždy <xref:System.Boolean> hodnota), kterou definuje závislá knihovna. Přepínač je vždy implicitně `false`. Nastavením přepínače `true` ho povolíte. Explicitním nastavením přepínače, `false` aby bylo zajištěno nové chování.
+    Aplikace (nebo knihovna) může deklarovat hodnotu přepínače (což je vždy hodnota <xref:System.Boolean>), kterou definuje závislá knihovna. Přepínač je vždy implicitně `false`. Nastavení přepínače na @no__t – 0 povoluje. Explicitní nastavení přepínače na `false` poskytuje nové chování.
 
     ```csharp
     AppContext.SetSwitch("Switch.AmazingLib.ThrowOnException", true);
@@ -1593,17 +1590,17 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Změny asynchronního vzoru založeného na úlohách (klepnutím)**
 
-    Pro aplikace, které cílí na .NET Framework 4,6 <xref:System.Threading.Tasks.Task> , <xref:System.Threading.Tasks.Task%601> a objekty dědí jazykovou verzi a jazykovou verzi uživatelského rozhraní volajícího vlákna. Chování aplikací, které cílí na předchozí verze .NET Framework nebo které necílí na konkrétní verzi .NET Framework, není ovlivněno. Další informace naleznete v části <xref:System.Globalization.CultureInfo> "jazyková verze a asynchronní operace založené na úlohách" v tématu třídy.
+    Pro aplikace, které cílí na .NET Framework 4,6, <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty dědí jazykovou verzi a jazykovou verzi uživatelského rozhraní volajícího vlákna. Chování aplikací, které cílí na předchozí verze .NET Framework nebo které necílí na konkrétní verzi .NET Framework, není ovlivněno. Další informace naleznete v části "jazyková verze a asynchronní operace založené na úlohách" v tématu třídy <xref:System.Globalization.CultureInfo>.
 
-    Třída umožňuje znázornit ambientní data, která jsou lokální pro daný tok asynchronního řízení, jako `async` je například metoda. <xref:System.Threading.AsyncLocal%601?displayProperty=nameWithType> Dá se použít k uchovávání dat napříč vlákny. Můžete také definovat metodu zpětného volání, která je upozorněna vždy, když se změní okolní <xref:System.Threading.AsyncLocal%601.Value%2A?displayProperty=nameWithType> data buď z důvodu explicitního Změna vlastnosti, nebo protože vlákno zaznamenalo kontextový přechod.
+    Třída <xref:System.Threading.AsyncLocal%601?displayProperty=nameWithType> umožňuje znázornit ambientní data, která jsou lokální pro daný tok asynchronního řízení, jako je například metoda `async`. Dá se použít k uchovávání dat napříč vlákny. Můžete také definovat metodu zpětného volání, která je upozorněna vždy, když se změní okolní data buď z důvodu explicitní změny vlastnosti <xref:System.Threading.AsyncLocal%601.Value%2A?displayProperty=nameWithType>, nebo protože vlákno zaznamenal přechod do kontextu.
 
-    Do asynchronního vzoru <xref:System.Threading.Tasks.Task.CompletedTask%2A?displayProperty=nameWithType>založeného na <xref:System.Threading.Tasks.Task.FromException%2A?displayProperty=nameWithType>úlohách (klepnutím) byly přidány tři praktické metody, <xref:System.Threading.Tasks.Task.FromCanceled%2A?displayProperty=nameWithType>, a, které budou vracet dokončené úkoly v určitém stavu.
+    Do asynchronního vzoru založeného na úlohách (klepnutím) se přidaly tři praktické metody, <xref:System.Threading.Tasks.Task.CompletedTask%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task.FromCanceled%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.FromException%2A?displayProperty=nameWithType>, které vrátí dokončené úkoly v určitém stavu.
 
-    Třída teď podporuje asynchronní komunikaci s jejím novým <xref:System.IO.Pipes.NamedPipeClientStream.ConnectAsync%2A>. <xref:System.IO.Pipes.NamedPipeClientStream> Metoda.
+    Třída <xref:System.IO.Pipes.NamedPipeClientStream> nyní podporuje asynchronní komunikaci s jejím novým <xref:System.IO.Pipes.NamedPipeClientStream.ConnectAsync%2A>. Metoda.
 
   - **EventSource teď podporuje zápis do protokolu událostí.**
 
-    Nyní můžete použít <xref:System.Diagnostics.Tracing.EventSource> třídu k protokolování administrativních a provozních zpráv do protokolu událostí, a to i na všechny existující relace ETW, které byly vytvořeny v počítači. V minulosti jste pro tuto funkci museli použít balíček NuGet Microsoft. Diagnostics. Tracing. EventSource. Tato funkce je teď integrovaná .NET Framework 4,6.
+    Nyní můžete použít třídu <xref:System.Diagnostics.Tracing.EventSource> pro protokolování administrativních nebo provozních zpráv do protokolu událostí, a to i na všechny existující relace trasování událostí pro Windows vytvořené v počítači. V minulosti jste pro tuto funkci museli použít balíček NuGet Microsoft. Diagnostics. Tracing. EventSource. Tato funkce je teď integrovaná .NET Framework 4,6.
 
     Balíček NuGet i .NET Framework 4,6 byly aktualizovány pomocí následujících funkcí:
 
@@ -1619,13 +1616,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
       Způsobí, že události spuštění a zastavení mezi nimi budou označovat události s ID, které představuje všechny aktuálně aktivní aktivity.
 
-    Pro podporu těchto funkcí byla přetížená <xref:System.Diagnostics.Tracing.EventSource.Write%2A> metoda přidána <xref:System.Diagnostics.Tracing.EventSource> do třídy.
+    Pro podporu těchto funkcí byla přetížená metoda <xref:System.Diagnostics.Tracing.EventSource.Write%2A> přidána do třídy <xref:System.Diagnostics.Tracing.EventSource>.
 
 - **Windows Presentation Foundation (WPF)**
 
   - **Vylepšení HDPI**
 
-    Podpora HDPI v subsystému WPF je teď v .NET Framework 4,6 lepší. Byly provedeny změny rozložení při zaokrouhlování, aby se snížily instance oříznutí v ovládacích prvcích s ohraničením. Ve výchozím nastavení je tato funkce povolená, jenom <xref:System.Runtime.Versioning.TargetFrameworkAttribute> když je nastavená na .NET 4,6.  Aplikace, které jsou cíleny na starší verze rozhraní, ale jsou spuštěny v .NET Framework 4,6, mohou přihlášeni k novému chování přidáním následujícího řádku do [ \<oddílu runtime >](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config:
+    Podpora HDPI v subsystému WPF je teď v .NET Framework 4,6 lepší. Byly provedeny změny rozložení při zaokrouhlování, aby se snížily instance oříznutí v ovládacích prvcích s ohraničením. Ve výchozím nastavení je tato funkce povolená jenom v případě, že je vaše <xref:System.Runtime.Versioning.TargetFrameworkAttribute> nastavená na .NET 4,6.  Aplikace, které jsou cíleny na starší verze rozhraní, ale jsou spuštěny v .NET Framework 4,6 mohou odhlásit novému chování přidáním následujícího řádku do části [\<runtime >](../configure-apps/file-schema/runtime/runtime-element.md) souboru App. config:
 
     ```xml
     <AppContextSwitchOverrides
@@ -1633,13 +1630,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
     />
     ```
 
-    WPF Windows přecházející z více monitorů s různými nastaveními DPI (nastavení s více DPI) se teď kompletně vykreslují bez černých oblastí. Toto chování můžete odhlásit přidáním následujícího řádku do `<appSettings>` oddílu souboru App. config, abyste toto nové chování zakázali:
+    WPF Windows přecházející z více monitorů s různými nastaveními DPI (nastavení s více DPI) se teď kompletně vykreslují bez černých oblastí. Toto chování můžete odhlásit přidáním následujícího řádku do části `<appSettings>` souboru App. config, abyste toto nové chování zakázali:
 
     ```xml
     <add key="EnableMultiMonitorDisplayClipping" value="true"/>
     ```
 
-    Do se <xref:System.Windows.Input.Cursor?displayProperty=nameWithType>přidala podpora pro automatické načtení správného kurzoru na základě nastavení DPI.
+    Do <xref:System.Windows.Input.Cursor?displayProperty=nameWithType> se přidala podpora automatického načítání pravého kurzoru na základě nastavení DPI.
 
   - **Dotykové ovládání je lepší**
 
@@ -1647,13 +1644,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Podpora transparentního podřízeného okna**
 
-    WPF v .NET Framework 4,6 podporuje transparentní podřízená okna v Windows 8.1 a vyšším. To umožňuje vytvořit v oknech nejvyšší úrovně neobdélníkové a průhledné podřízené okna. Tuto funkci můžete povolit nastavením <xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelTransparency%2A?displayProperty=nameWithType> vlastnosti na. `true`
+    WPF v .NET Framework 4,6 podporuje transparentní podřízená okna v Windows 8.1 a vyšším. To umožňuje vytvořit v oknech nejvyšší úrovně neobdélníkové a průhledné podřízené okna. Tuto funkci můžete povolit nastavením vlastnosti <xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelTransparency%2A?displayProperty=nameWithType> na `true`.
 
 - **Windows Communication Foundation (WCF)**
 
   - **Podpora SSL**
 
-    Služba WCF teď podporuje protokol SSL verze TLS 1,1 a TLS 1,2 kromě protokolu SSL 3,0 a TLS 1,0 při použití NetTcp s zabezpečením přenosu a ověřováním klientů. Nyní je možné vybrat, který protokol se má použít, nebo zakázat staré méně zabezpečené protokoly. To lze provést buď nastavením <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A> vlastnosti, nebo přidáním následujícího do konfiguračního souboru.
+    Služba WCF teď podporuje protokol SSL verze TLS 1,1 a TLS 1,2 kromě protokolu SSL 3,0 a TLS 1,0 při použití NetTcp s zabezpečením přenosu a ověřováním klientů. Nyní je možné vybrat, který protokol se má použít, nebo zakázat staré méně zabezpečené protokoly. To lze provést buď nastavením vlastnosti <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A>, nebo přidáním následujícího do konfiguračního souboru.
 
     ```xml
     <netTcpBinding>
@@ -1670,15 +1667,15 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   - **Posílání zpráv pomocí různých připojení HTTP**
 
-    WCF teď umožňuje uživatelům zajistit, aby se určité zprávy odesílaly pomocí různých základních připojení HTTP. Toto lze provést dvěma způsoby:
+    WCF teď umožňuje uživatelům zajistit, aby se určité zprávy odesílaly pomocí různých základních připojení HTTP. Chcete-li to provést dvěma způsoby:
 
     - **Použití předpony názvu skupiny připojení**
 
-      Uživatelé můžou zadat řetězec, který bude WCF používat jako předponu pro název skupiny připojení. Dvě zprávy s různými předponami jsou odesílány pomocí různých základních připojení HTTP. Předponu můžete nastavit přidáním páru klíč-hodnota k <xref:System.ServiceModel.Channels.Message.Properties%2A?displayProperty=nameWithType> vlastnosti zprávy. Klíč je "HttpTransportConnectionGroupNamePrefix"; hodnota je požadovaná předpona.
+      Uživatelé můžou zadat řetězec, který bude WCF používat jako předponu pro název skupiny připojení. Dvě zprávy s různými předponami jsou odesílány pomocí různých základních připojení HTTP. Prefix nastavíte tak, že přidáte dvojici klíč/hodnota ke vlastnosti <xref:System.ServiceModel.Channels.Message.Properties%2A?displayProperty=nameWithType> zprávy. Klíč je "HttpTransportConnectionGroupNamePrefix"; hodnota je požadovaná předpona.
 
     - **Používání různých továrn kanálů**
 
-      Uživatelé taky můžou povolit funkci, která zajistí, že se zprávy odeslané pomocí kanálů vytvořených různými továrnami kanálů budou používat v různých podkladových připojeních HTTP. Chcete-li povolit tuto funkci, musí uživatelé nastavit `appSetting` následující `true`:
+      Uživatelé taky můžou povolit funkci, která zajistí, že se zprávy odeslané pomocí kanálů vytvořených různými továrnami kanálů budou používat v různých podkladových připojeních HTTP. Chcete-li povolit tuto funkci, musí uživatelé nastavit následující `appSetting` na `true`:
 
       ```xml
       <appSettings>
@@ -1688,13 +1685,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Programovací model Windows Workflow Foundation (WWF)**
 
-  Nyní můžete zadat počet sekund, po které bude služba pracovního postupu pojmout požadavek na operaci mimo pořadí, pokud před vypršením časového limitu žádosti existuje nevyřízená záložka bez protokolu. Záložka "non-Protocol" je záložka, která nesouvisí s nezpracovanými aktivitami příjmu. Některé aktivity vytvářejí záložky bez protokolu v rámci jejich implementace, takže nemusí být zřejmé, že existuje záložka bez protokolu. Mezi ně patří stav a výběr. Takže pokud máte službu pracovního postupu implementovanou se stavovým počítačem nebo obsahuje aktivitu vyskladnění, pravděpodobně budete mít záložky bez protokolu. Zadejte interval tak, že přidáte řádek podobný následujícímu do `appSettings` oddílu souboru App. config:
+  Nyní můžete zadat počet sekund, po které bude služba pracovního postupu pojmout požadavek na operaci mimo pořadí, pokud před vypršením časového limitu žádosti existuje nevyřízená záložka bez protokolu. Záložka "non-Protocol" je záložka, která nesouvisí s nezpracovanými aktivitami příjmu. Některé aktivity vytvářejí záložky bez protokolu v rámci jejich implementace, takže nemusí být zřejmé, že existuje záložka bez protokolu. Mezi ně patří stav a výběr. Takže pokud máte službu pracovního postupu implementovanou se stavovým počítačem nebo obsahuje aktivitu vyskladnění, pravděpodobně budete mít záložky bez protokolu. Interval určujete tak, že přidáte řádek podobný následujícímu `appSettings` souboru App. config:
 
   ```xml
   <add key="microsoft:WorkflowServices:FilterResumeTimeoutInSeconds" value="60"/>
   ```
 
-  Výchozí hodnota je 60 sekund. Pokud `value` je hodnota nastavena na 0, žádosti mimo pořadí jsou okamžitě odmítnuty s chybou text, který vypadá takto:
+  Výchozí hodnota je 60 sekund. Je-li hodnota `value` nastavená na hodnotu 0, žádosti mimo pořadí jsou okamžitě odmítnuty s chybou text, který vypadá takto:
 
   ```
   Operation 'Request3|{http://tempuri.org/}IService' on service instance with identifier '2b0667b6-09c8-4093-9d02-f6c67d534292' cannot be performed at this time. Please ensure that the operations are performed in the correct order and that the binding in use provides ordered delivery guarantees.
@@ -1702,11 +1699,11 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   Jedná se o stejnou zprávu, kterou dostanete, pokud je přijata zpráva o operacích mimo pořadí a nejsou k dispozici žádné záložky bez protokolu.
 
-  Pokud hodnota `FilterResumeTimeoutInSeconds` elementu je nenulová, neexistují žádné záložky bez protokolu a časový limit vyprší, operace se nezdařila se zprávou o vypršení časového limitu.
+  Pokud je hodnota elementu `FilterResumeTimeoutInSeconds` nenulová, neexistují žádné záložky bez protokolu a časový limit vyprší, operace se nezdařila s chybovou zprávou.
 
 - **Transakce**
 
-  Nyní můžete zahrnout identifikátor distribuované transakce pro transakci, která způsobila výjimku odvozenou od <xref:System.Transactions.TransactionException> vyvolání. K tomu je potřeba přidat následující klíč do `appSettings` oddílu souboru App. config:
+  Nyní můžete zahrnout identifikátor distribuované transakce pro transakci, která způsobila výjimku odvozenou od <xref:System.Transactions.TransactionException>, která má být vyvolána. To provedete tak, že do části `appSettings` souboru App. config přidáte následující klíč:
 
   ```xml
   <add key="Transactions:IncludeDistributedTransactionIdInExceptionMessage" value="true"/>
@@ -1722,23 +1719,23 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
     V .NET Framework 4,6 byly přidány dvě nová rozhraní API, která umožňují opakované použití portů, což efektivně odstraní limit 64 KB pro souběžná připojení:
 
-    - Hodnota <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType> výčtu.
+    - Hodnota výčtu <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType>.
 
     - <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> Vlastnost.
 
-    Ve výchozím nastavení <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> vlastnost je `false` , `HWRPortReuseOnSocketBind` `HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319` Pokud hodnota klíče registru není nastavená na 0x1. Chcete-li povolit používání místních portů u připojení HTTP, <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> nastavte vlastnost `true`na hodnotu. To způsobí, že všechna odchozí připojení soketu <xref:System.Net.HttpWebRequest> TCP z <xref:System.Net.Http.HttpClient> a bude používat novou možnost soketu Windows 10 [SO_REUSE_UNICASTPORT](/windows/desktop/WinSock/sol-socket-socket-options), která umožňuje použití místního portu.
+    Ve výchozím nastavení je vlastnost <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> `false`, pokud hodnota `HWRPortReuseOnSocketBind` klíče registru `HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319` není nastavená na 0x1. Chcete-li povolit používání místních portů u připojení HTTP, nastavte vlastnost <xref:System.Net.ServicePointManager.ReusePort%2A?displayProperty=nameWithType> na hodnotu `true`. To způsobí, že všechna odchozí připojení soketu TCP z <xref:System.Net.Http.HttpClient> a <xref:System.Net.HttpWebRequest> bude používat novou možnost soketu Windows 10 [SO_REUSE_UNICASTPORT](/windows/desktop/WinSock/sol-socket-socket-options), která umožňuje použití místního portu.
 
-    Vývojáři, kteří vytvářejí pouze sokety, mohou určit <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType> možnost při volání metody, <xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=nameWithType> například tak, aby odchozí sokety opakovaně znovu vyvolaly místní porty během vytváření vazby.
+    Vývojáři, kteří vytvářejí aplikaci jenom Sockets, můžou při volání metody, jako je například <xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=nameWithType>, zadat možnost <xref:System.Net.Sockets.SocketOptionName?displayProperty=nameWithType>, aby odchozí sokety opakovaně při vytváření vazby znovu vyvolaly místní porty.
 
   - **Podpora mezinárodních názvů domén a PunyCode**
 
-    Do <xref:System.Uri.IdnHost%2A> <xref:System.Uri> třídy se přidala nová vlastnost, která bude lépe podporovat názvy mezinárodních domén a Punycode.
+    Do třídy <xref:System.Uri> byla přidána nová vlastnost, <xref:System.Uri.IdnHost%2A>, aby lépe podporovala mezinárodní názvy domén a PunyCode.
 
 - **Změna velikosti v ovládacích prvcích model Windows Forms.**
 
-  Tato funkce byla <xref:System.Windows.Forms.DomainUpDown>rozšířena v .NET Framework 4,6, aby zahrnovala <xref:System.Windows.Forms.NumericUpDown> <xref:System.Windows.Forms.ToolStripSplitButton> typy <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> , a a obdélník určený <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A> vlastností použitou při vykreslování <xref:System.Drawing.Design.UITypeEditor>.
+  Tato funkce se rozšířila v .NET Framework 4,6, aby zahrnovala typy <xref:System.Windows.Forms.DomainUpDown>, <xref:System.Windows.Forms.NumericUpDown>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> a <xref:System.Windows.Forms.ToolStripSplitButton> a obdélník určený vlastností <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A>, který se používá při vykreslování <xref:System.Drawing.Design.UITypeEditor>.
 
-  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte `EnableWindowsFormsHighDpiAutoResizing` element na `true` v souboru konfigurace aplikace (App. config):
+  Toto je funkce výslovného souhlasu. Chcete-li jej povolit, nastavte v souboru konfigurace aplikace (App. config) element `EnableWindowsFormsHighDpiAutoResizing` na hodnotu `true`:
 
   ```xml
   <appSettings>
@@ -1748,7 +1745,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Podpora kódování znakových stránek**
 
-  .NET Core primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezené podpory pro kódování znakových stránek. Můžete přidat podporu pro kódování znakových stránek, která jsou k dispozici v .NET Framework, ale nepodporovaná v .NET Core, <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> registrací kódování znakové stránky pomocí metody. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
+  .NET Core primárně podporuje kódování Unicode a ve výchozím nastavení poskytuje omezené podpory pro kódování znakových stránek. Můžete přidat podporu pro kódování znakových stránek, která jsou k dispozici v .NET Framework, ale nepodporovaná v .NET Core, registrací kódování znakové stránky pomocí metody <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType>. Další informace naleznete v tématu <xref:System.Text.CodePagesEncodingProvider?displayProperty=nameWithType>.
 
 - **.NET Native**
 
@@ -1760,17 +1757,17 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Open Source .NET Framework balíčky**
 
-  Balíčky .NET Core, jako jsou neměnné kolekce, [rozhraní API SIMD](https://go.microsoft.com/fwlink/?LinkID=518639)a síťové rozhraní API, jako jsou ty, <xref:System.Net.Http> které se nacházejí v oboru názvů, jsou teď dostupné jako open source balíčky na [GitHubu](https://github.com/). Přístup k kódu naleznete v tématu [CoreFx na GitHubu](https://github.com/dotnet/corefx). Další informace a o tom, jak přispívat do těchto balíčků, najdete v tématu [.NET Core a open source](../get-started/net-core-and-open-source.md), [Domovská stránka .NET na GitHubu](https://github.com/dotnet/home).
+  Balíčky .NET Core, jako jsou neměnné kolekce, [rozhraní SIMD API](https://go.microsoft.com/fwlink/?LinkID=518639)a síťové rozhraní API, jako jsou ty, které se nacházejí v oboru názvů <xref:System.Net.Http>, jsou teď dostupné jako open source balíčky na [GitHubu](https://github.com/). Přístup k kódu naleznete v tématu [CoreFx na GitHubu](https://github.com/dotnet/corefx). Další informace a o tom, jak přispívat do těchto balíčků, najdete v tématu [.NET Core a open source](../get-started/net-core-and-open-source.md), [Domovská stránka .NET na GitHubu](https://github.com/dotnet/home).
 
 <a name="v452" />
 
 ## <a name="whats-new-in-net-framework-452"></a>Co je nového v .NET Framework 4.5.2
 
-- **Nová rozhraní API pro aplikace ASP.NET** Nové <xref:System.Web.HttpResponse.AddOnSendingHeaders%2A?displayProperty=nameWithType> metody a <xref:System.Web.HttpResponseBase.AddOnSendingHeaders%2A?displayProperty=nameWithType> umožňují kontrolovat a upravovat hlavičky odpovědí a stavový kód, protože odpověď se vyprazdňuje do klientské aplikace. Zvažte použití těchto metod namísto <xref:System.Web.HttpApplication.PreSendRequestHeaders> událostí a <xref:System.Web.HttpApplication.PreSendRequestContent> . jsou efektivnější a spolehlivé.
+- **Nová rozhraní API pro aplikace ASP.NET** Nové metody <xref:System.Web.HttpResponse.AddOnSendingHeaders%2A?displayProperty=nameWithType> a <xref:System.Web.HttpResponseBase.AddOnSendingHeaders%2A?displayProperty=nameWithType> umožňují kontrolovat a upravovat hlavičky odpovědí a stavový kód, protože odpověď se vyprazdňuje do klientské aplikace. Zvažte použití těchto metod namísto <xref:System.Web.HttpApplication.PreSendRequestHeaders> a <xref:System.Web.HttpApplication.PreSendRequestContent> událostí; jsou efektivnější a spolehlivé.
 
-  <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A?displayProperty=nameWithType> Metoda umožňuje naplánovat malé pracovní položky na pozadí. ASP.NET sleduje tyto položky a brání službě IIS v náhlém ukončení pracovního procesu, dokud nebudou dokončeny všechny pracovní položky na pozadí. Tuto metodu nejde volat mimo doménu spravované aplikace ASP.NET.
+  Metoda <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem%2A?displayProperty=nameWithType> umožňuje naplánovat malé pracovní položky na pozadí. ASP.NET sleduje tyto položky a brání službě IIS v náhlém ukončení pracovního procesu, dokud nebudou dokončeny všechny pracovní položky na pozadí. Tuto metodu nejde volat mimo doménu spravované aplikace ASP.NET.
 
-  Nové <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=nameWithType> vlastnosti a <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=nameWithType> vrátí logické hodnoty, které určují, zda byly napsány hlavičky odpovědi. Tyto vlastnosti můžete použít k tomu, abyste se ujistili, že volání <xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=nameWithType> rozhraní API (která vyvolávají výjimky při zápisu hlaviček) budou úspěšná.
+  Nové vlastnosti <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=nameWithType> a <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=nameWithType> vrací logické hodnoty, které určují, zda byly hlavičky odpovědi zapsány. Tyto vlastnosti můžete použít k tomu, abyste se ujistili, že volání rozhraní API, jako je například <xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=nameWithType> (vyvolávající výjimky, pokud byla hlavičky zapsána), budou úspěšné.
 
 - **Změna velikosti v ovládacích prvcích model Windows Forms.** Tato funkce se rozšířila. Nyní můžete použít nastavení systému DPI pro změnu velikosti součástí následujících dalších ovládacích prvků (například šipky rozevíracího seznamu v polích se seznamem):
 
@@ -1781,7 +1778,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
   - <xref:System.Windows.Forms.DataGridView>
   - <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
 
-  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte `EnableWindowsFormsHighDpiAutoResizing` element na `true` v souboru konfigurace aplikace (App. config):
+  Toto je funkce výslovného souhlasu. Chcete-li jej povolit, nastavte v souboru konfigurace aplikace (App. config) element `EnableWindowsFormsHighDpiAutoResizing` na hodnotu `true`:
 
   ```xml
   <appSettings>
@@ -1789,13 +1786,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
   </appSettings>
   ```
 
-- **Nová funkce pracovního postupu.** Správce prostředků, který používá <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> metodu (a proto <xref:System.Transactions.IPromotableSinglePhaseNotification> implementuje rozhraní), může použít novou <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> metodu k vyžádání následujícího:
+- **Nová funkce pracovního postupu.** Správce prostředků, který používá metodu <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> (a proto implementuje rozhraní <xref:System.Transactions.IPromotableSinglePhaseNotification>), může použít novou metodu <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> k vyžádání následujícího:
 
   - Povýšit transakci na transakci Microsoft DTC (Distributed Transaction Coordinator) (MSDTC).
 
-  - Nahraďte <xref:System.Transactions.IPromotableSinglePhaseNotification>,což je trvalé zařazení, které podporuje jednotlivé fáze potvrzení. <xref:System.Transactions.ISinglePhaseNotification>
+  - Nahraďte <xref:System.Transactions.IPromotableSinglePhaseNotification> pomocí <xref:System.Transactions.ISinglePhaseNotification>, což je trvalé zařazení, které podporuje jednotlivé fáze potvrzení.
 
-  To se dá udělat v rámci stejné domény aplikace a nevyžaduje žádný dodatečný nespravovaný kód pro interakci se službou MSDTC, aby bylo možné provést povýšení. Nová metoda může být volána pouze v <xref:System.Transactions?displayProperty=nameWithType> případě <xref:System.Transactions.IPromotableSinglePhaseNotification> `Promote` , že existuje nedokončené volání do metody, která je implementována prostřednictvím zařazení do propagačního objektu.
+  To se dá udělat v rámci stejné domény aplikace a nevyžaduje žádný dodatečný nespravovaný kód pro interakci se službou MSDTC, aby bylo možné provést povýšení. Nová metoda může být volána pouze v případě, že existuje nedokončené volání metody <xref:System.Transactions?displayProperty=nameWithType> do metody <xref:System.Transactions.IPromotableSinglePhaseNotification> @ no__t-2, která je implementována pomocí zařazení.
 
 - **Vylepšení profilace.** Následující nová nespravovaná rozhraní API pro profilaci poskytují robustnější profilaci:
 
@@ -1806,7 +1803,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
   - [SetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
   - [AddAssemblyReference – metoda](../unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md)
 
-  Předchozí `ICorProfiler` implementace podporovaly opožděné načítání závislých sestavení. Nové rozhraní API pro profilování vyžadují závislá sestavení, která jsou vložená profilerem tak, aby se spustitelný hned, místo aby se načetla po úplné inicializaci aplikace. Tato změna neovlivní uživatele existujících `ICorProfiler` rozhraní API.
+  Předchozí implementace `ICorProfiler` podporují opožděné načítání závislých sestavení. Nové rozhraní API pro profilování vyžadují závislá sestavení, která jsou vložená profilerem tak, aby se spustitelný hned, místo aby se načetla po úplné inicializaci aplikace. Tato změna neovlivní uživatele existujících rozhraní API `ICorProfiler`.
 
 - **Vylepšení ladění.** Následující nová nespravovaná ladicí rozhraní API poskytují lepší integraci s profilerem. Teď můžete přistupovat k metadatům vloženým profilerem a také k místním proměnným a kódu vytvořeným požadavky kompilátoru ReJIT při ladění výpisu.
 
@@ -1821,7 +1818,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Zvýšení úrovně transakce a její převedení na trvalý zařazení**
 
-  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType>je nové rozhraní API přidané do .NET Framework 4.5.2 a 4,6:
+  <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> je nové rozhraní API přidané do .NET Framework 4.5.2 a 4,6:
 
   ```csharp
   [System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name = "FullTrust")]
@@ -1839,7 +1836,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
                                           enlistmentOptions As EnlistmentOptions) As Enlistment
   ```
 
-  Metodu lze použít pro zařazení, které bylo dříve vytvořeno <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> v reakci <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType> na metodu. Žádá `System.Transactions` o povýšení transakce na transakci MSDTC a na "převést" zařazení do trvalého zařazení. Po úspěšném <xref:System.Transactions.IPromotableSinglePhaseNotification> dokončení této metody již nebude `System.Transactions`odkazováno na rozhraní a veškerá budoucí oznámení budou doručena do poskytnutého <xref:System.Transactions.ISinglePhaseNotification> rozhraní. Příslušné zařazení musí působit jako trvalé zařazení, které podporuje protokolování a obnovení transakcí. Podrobnosti najdete <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType> v tématu. Zařazení navíc musí podporovat <xref:System.Transactions.ISinglePhaseNotification>.  Tuto metodu lze volat *pouze* během zpracovávání <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType> volání. V takovém případě <xref:System.Transactions.TransactionException> je vyvolána výjimka.
+  Metodu lze použít pro zařazení, které bylo dříve vytvořeno pomocí <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> v reakci na metodu <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. Žádá `System.Transactions`, aby se transakce povýší na transakci MSDTC a na "převést" zařazení do trvalého zařazení. Po úspěšném dokončení této metody již nebude na rozhraní @no__t 0 odkazováno pomocí `System.Transactions` a veškerá budoucí oznámení budou doručena v zadaném rozhraní <xref:System.Transactions.ISinglePhaseNotification>. Příslušné zařazení musí působit jako trvalé zařazení, které podporuje protokolování a obnovení transakcí. Podrobnosti najdete v <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType>. Zařazení navíc musí podporovat <xref:System.Transactions.ISinglePhaseNotification>.  Tuto metodu lze volat *pouze* během zpracování volání <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. V takovém případě je vyvolána výjimka <xref:System.Transactions.TransactionException>.
 
 <a name="v451" />
 
@@ -1867,7 +1864,7 @@ Mezi nové funkce a vylepšení základních tříd v .NET Framework 4.5.1 patř
 
 - Automatické přesměrování vazby pro sestavení. Počínaje Visual Studio 2013 se při kompilování aplikace, která cílí na .NET Framework 4.5.1, dají přesměrování vazby přidat do konfiguračního souboru aplikace, pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Tuto funkci můžete také povolit pro projekty, které cílí na starší verze .NET Framework. Další informace najdete v tématu [jak: Povolí nebo zakáže automatické přesměrování](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)vazby.
 
-- Možnost shromažďovat diagnostické informace, které vývojářům pomůžou zlepšit výkon serverových a cloudových aplikací. Další informace naleznete v tématu <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> metody <xref:System.Diagnostics.Tracing.EventSource> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> třídy.
+- Možnost shromažďovat diagnostické informace, které vývojářům pomůžou zlepšit výkon serverových a cloudových aplikací. Další informace naleznete v tématu metody <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> ve třídě <xref:System.Diagnostics.Tracing.EventSource>.
 
 - Schopnost explicitně komprimovat haldu velkých objektů (LOH) během uvolňování paměti. Další informace najdete v tématu <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> vlastnost.
 
@@ -1879,9 +1876,9 @@ Mezi vylepšení model Windows Forms patří:
 
   - <xref:System.Windows.Forms.PropertyGrid>
   - <xref:System.Windows.Forms.TreeView>
-  - Některé aspekty <xref:System.Windows.Forms.DataGridView> (viz [nové funkce v 4.5.2](#v452) pro další podporované ovládací prvky)
+  - Některé aspekty <xref:System.Windows.Forms.DataGridView> (další podporované ovládací prvky najdete [v části nové funkce v 4.5.2](#v452) )
 
-  Chcete-li povolit tuto funkci, přidejte \<nový element appSettings > do konfiguračního souboru (App. config) a `EnableWindowsFormsHighDpiAutoResizing` nastavte element na `true`:
+  Chcete-li povolit tuto funkci, přidejte nový prvek \<appSettings > do konfiguračního souboru (App. config) a nastavte prvek `EnableWindowsFormsHighDpiAutoResizing` na `true`:
 
   ```xml
   <appSettings>
@@ -1897,9 +1894,9 @@ Vylepšení při ladění .NET Frameworkch aplikací v Visual Studio 2013 zahrnu
 
 - Asynchronní ladění. Aby bylo snazší ladit asynchronní aplikace v Visual Studio 2013, zásobník volání skrývá kód infrastruktury poskytnutý kompilátory pro podporu asynchronního programování a také řetězení v logických nadřazených snímcích, aby bylo možné sledovat provádění logických programů. zřejmě. Okno úkoly nahrazuje okno paralelní úkoly a zobrazuje úkoly, které se vztahují k určité zarážce, a také zobrazí všechny další úkoly, které jsou v aplikaci aktuálně aktivní nebo naplánované. O této funkci si můžete přečíst v části "asynchronní ladění" v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-- Lepší podpora výjimek pro součásti prostředí Windows Runtime. V [!INCLUDE[win81](../../../includes/win81-md.md)]rozhraní, výjimky, které vzniknou z aplikací pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes hranice jazyka. O této funkci si můžete přečíst v části vývoj aplikací pro Windows Store v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
+- Lepší podpora výjimek pro součásti prostředí Windows Runtime. V [!INCLUDE[win81](../../../includes/win81-md.md)] výjimky, které vznikají v aplikacích pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes hranice jazyka. O této funkci si můžete přečíst v části vývoj aplikací pro Windows Store v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-Počínaje Visual Studio 2013 můžete použít [Nástroj pro optimalizaci spravovaného profilu (nástroj Mpgo. exe)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací i aplikací klasické pracovní plochy.
+Počínaje Visual Studio 2013 můžete pomocí [nástroje optimalizace spravovaného profilu (nástroj Mpgo. exe)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) optimalizovat aplikace [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] i aplikace klasické pracovní plochy.
 
 Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual Studio 2013 poznámky k verzi](/aspnet/visual-studio/overview/2013/release-notes).
 
@@ -1911,7 +1908,7 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 - Schopnost snížit restart systému tím, že během nasazení detekuje a zavírá aplikace .NET Framework 4. Viz [snížení počtu restartování systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
 
-- Podpora pro pole, která jsou větší než 2 gigabajty (GB) na 64-bitových platformách. Tato funkce se dá povolit v konfiguračním souboru aplikace. Podívejte se na [ \<prvek gcAllowVeryLargeObjects >](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), který také uvádí další omezení velikosti objektu a velikosti pole.
+- Podpora pro pole, která jsou větší než 2 gigabajty (GB) na 64-bitových platformách. Tato funkce se dá povolit v konfiguračním souboru aplikace. Podívejte se na [prvek > \<gcAllowVeryLargeObjects](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), který obsahuje také další omezení velikosti objektu a velikosti pole.
 
 - Lepší výkon při uvolňování paměti na pozadí pro servery. Pokud používáte systém uvolňování paměti serveru v .NET Framework 4,5, automatické uvolňování paměti na pozadí je povoleno. V tématu [základní informace o uvolňování paměti](../../standard/garbage-collection/fundamentals.md) najdete v části uvolňování paměti serveru na pozadí.
 
@@ -1919,25 +1916,25 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 - Možnost omezit dobu, po kterou se modul regulárních výrazů pokusí přeložit regulární výraz předtím, než vyprší jeho časový limit. Podívejte se <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType> na vlastnost.
 
-- Možnost definovat výchozí jazykovou verzi pro doménu aplikace. Podívejte se <xref:System.Globalization.CultureInfo> na třídu.
+- Možnost definovat výchozí jazykovou verzi pro doménu aplikace. Podívejte se na třídu <xref:System.Globalization.CultureInfo>.
 
-- Podpora konzoly pro kódování Unicode (UTF-16). Podívejte se <xref:System.Console> na třídu.
+- Podpora konzoly pro kódování Unicode (UTF-16). Podívejte se na třídu <xref:System.Console>.
 
-- Podpora správy verzí pro kulturní řazení řetězců a porovnávání dat. Podívejte se <xref:System.Globalization.SortVersion> na třídu.
+- Podpora správy verzí pro kulturní řazení řetězců a porovnávání dat. Podívejte se na třídu <xref:System.Globalization.SortVersion>.
 
 - Lepší výkon při načítání prostředků. Viz [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md).
 
-- Vylepšení komprese zip ke zmenšení velikosti komprimovaného souboru. <xref:System.IO.Compression?displayProperty=nameWithType> Viz obor názvů.
+- Vylepšení komprese zip ke zmenšení velikosti komprimovaného souboru. Podívejte se na obor názvů <xref:System.IO.Compression?displayProperty=nameWithType>.
 
-- Možnost přizpůsobit kontext reflexe pro přepsání výchozího chování reflexe <xref:System.Reflection.Context.CustomReflectionContext> prostřednictvím třídy.
+- Možnost přizpůsobit kontext odrazu pro přepsání výchozího chování reflexe prostřednictvím třídy <xref:System.Reflection.Context.CustomReflectionContext>.
 
-- Podpora verze 2008 mezinárodních názvů domén v aplikacích (IDNA) standard při <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> použití třídy v. [!INCLUDE[win8](../../../includes/win8-md.md)]
+- Podpora verze 2008 mezinárodních názvů domén v aplikacích (IDNA) standard, pokud se třída <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> používá v [!INCLUDE[win8](../../../includes/win8-md.md)].
 
-- Delegování porovnání řetězců k operačnímu systému, které implementuje kódování Unicode 6,0, pokud je .NET Framework použito na [!INCLUDE[win8](../../../includes/win8-md.md)]. Při spuštění na jiných platformách .NET Framework zahrnuje vlastní data porovnání řetězců, která implementují Unicode 5. x. Podívejte se <xref:System.String> na třídu a oddíl <xref:System.Globalization.SortVersion> poznámky třídy.
+- Delegování porovnání řetězců k operačnímu systému, které implementuje kódování Unicode 6,0, pokud je .NET Framework použito v [!INCLUDE[win8](../../../includes/win8-md.md)]. Při spuštění na jiných platformách .NET Framework zahrnuje vlastní data porovnání řetězců, která implementují Unicode 5. x. Podívejte se na třídu <xref:System.String> a oddíl poznámky třídy <xref:System.Globalization.SortVersion>.
 
-- Možnost vypočítat kódy hash pro řetězce na základě domény aplikace. [ Viz\<UseRandomizedStringHashAlgorithm > element](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
+- Možnost vypočítat kódy hash pro řetězce na základě domény aplikace. Viz [\<UseRandomizedStringHashAlgorithm > element](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
 
-- Podpora reflexe typu <xref:System.Type> je <xref:System.Reflection.TypeInfo> rozdělena mezi třídy a. Podívejte [se na reflexi v .NET Framework pro aplikace pro Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
+- Podpora reflexe typu je rozdělená mezi <xref:System.Type> a třídy <xref:System.Reflection.TypeInfo>. Podívejte [se na reflexi v .NET Framework pro aplikace pro Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
 
 ### <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -1949,7 +1946,7 @@ V .NET Framework 4,5 obsahuje Managed Extensibility Framework (MEF) tyto nové f
 
 - Více oborů.
 
-- Podmnožina MEF, kterou můžete použít při vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací. Tato podmnožina je k dispozici jako [balíček ke stažení](https://go.microsoft.com/fwlink/?LinkId=256238) z galerie NuGet. Pokud chcete balíček nainstalovat, otevřete projekt v aplikaci Visual Studio, v nabídce **projekt** vyberte `Microsoft.Composition` **Spravovat balíčky NuGet** a vyhledejte balíček online.
+- Podmnožina MEF, kterou můžete použít při vytváření aplikací [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Tato podmnožina je k dispozici jako [balíček ke stažení](https://go.microsoft.com/fwlink/?LinkId=256238) z galerie NuGet. Chcete-li nainstalovat balíček, otevřete projekt v aplikaci Visual Studio, v nabídce **projekt** vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček `Microsoft.Composition` v online režimu.
 
 Další informace naleznete v tématu [Managed Extensibility Framework (MEF)](../mef/index.md).
 
@@ -1961,9 +1958,9 @@ V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchron
 
 ### <a name="tools"></a>Nástroje
 
-V .NET Framework 4,5 umožňuje generátor souboru prostředků (Resgen. exe) vytvořit soubor. resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikacích ze souboru. Resources vloženého do sestavení .NET Framework. Další informace naleznete v tématu [Resgen. exe (generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
+V .NET Framework 4,5 umožňuje generátor souboru prostředků (Resgen. exe) vytvořit soubor. resw pro použití v aplikacích [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ze souboru. Resources vloženého do sestavení .NET Framework. Další informace naleznete v tématu [Resgen. exe (generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
 
-Optimalizace na základě spravovaného profilu (nástroj Mpgo. exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních imagí. Nástroj příkazového řádku generuje data profilu pro sestavení aplikace nativní bitové kopie. Viz [nástroj Mpgo. exe (Nástroj pro optimalizaci spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Počínaje Visual Studio 2013 můžete pomocí nástroj Mpgo. exe optimalizovat [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace i desktopové aplikace.
+Optimalizace na základě spravovaného profilu (nástroj Mpgo. exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních imagí. Nástroj příkazového řádku generuje data profilu pro sestavení aplikace nativní bitové kopie. Viz [nástroj Mpgo. exe (Nástroj pro optimalizaci spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Počínaje Visual Studio 2013 můžete pomocí nástroj Mpgo. exe optimalizovat aplikace [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] i desktopové aplikace.
 
 <a name="parallel" />
 
@@ -1981,11 +1978,11 @@ ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu W
 
 - [ASP.NET a webové nástroje pro Visual Studio 2013 – poznámky k verzi](/aspnet/visual-studio/overview/2013/release-notes)
 
-### <a name="networking-a-namenetworking-"></a>Sítě<a name="networking" />
+### <a name="networking-a-namenetworking-"></a>Síťové @no__t – 0
 
-.NET Framework 4,5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové <xref:System.Net.Http?displayProperty=nameWithType> obory názvů a. <xref:System.Net.Http.Headers?displayProperty=nameWithType>
+.NET Framework 4,5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové obory názvů <xref:System.Net.Http?displayProperty=nameWithType> a <xref:System.Net.Http.Headers?displayProperty=nameWithType>.
 
-Podpora je také k dispozici pro nové programovací rozhraní pro příjem a interakci s připojením protokolu WebSocket pomocí existující <xref:System.Net.HttpListener> a související třídy. Další informace naleznete v tématu nový <xref:System.Net.WebSockets> obor názvů <xref:System.Net.HttpListener> a třída.
+Podpora je také k dispozici pro nové programovací rozhraní pro příjem a interakci s připojením protokolu WebSocket pomocí existující <xref:System.Net.HttpListener> a souvisejících tříd. Další informace najdete v tématu nový obor názvů <xref:System.Net.WebSockets> a třída <xref:System.Net.HttpListener>.
 
 Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
@@ -1993,9 +1990,9 @@ Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
 - Podpora pro analýzu mezinárodních názvů domén (IDN). Další informace naleznete v tématu <xref:System.Uri> a související třídy.
 
-- Podpora mezinárodní adresy e-mailové adresy (EAI). Další informace najdete v <xref:System.Net.Mail> tématu obor názvů.
+- Podpora mezinárodní adresy e-mailové adresy (EAI). Další informace najdete v oboru názvů <xref:System.Net.Mail>.
 
-- Vylepšená podpora protokolu IPv6. Další informace najdete v <xref:System.Net.NetworkInformation> tématu obor názvů.
+- Vylepšená podpora protokolu IPv6. Další informace najdete v oboru názvů <xref:System.Net.NetworkInformation>.
 
 - Podpora soketu s duálním režimem. Další informace naleznete v <xref:System.Net.Sockets.Socket> tématu třídy a. <xref:System.Net.Sockets.TcpListener>
 
@@ -2005,15 +2002,15 @@ Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
 V .NET Framework 4,5 Windows Presentation Foundation (WPF) obsahuje změny a vylepšení v následujících oblastech:
 
-- Nový <xref:System.Windows.Controls.Ribbon.Ribbon> ovládací prvek, který umožňuje implementovat uživatelské rozhraní pásu karet, které je hostitelem panelu nástrojů pro rychlý přístup, nabídky aplikace a karet.
+- Nový ovládací prvek <xref:System.Windows.Controls.Ribbon.Ribbon>, který umožňuje implementovat uživatelské rozhraní pásu karet, které je hostitelem panelu nástrojů pro rychlý přístup, nabídky aplikace a karet.
 
-- Nové <xref:System.ComponentModel.INotifyDataErrorInfo> rozhraní, které podporuje synchronní a asynchronní ověřování dat.
+- Nové rozhraní <xref:System.ComponentModel.INotifyDataErrorInfo>, které podporuje synchronní a asynchronní ověřování dat.
 
-- Nové funkce pro <xref:System.Windows.Controls.VirtualizingPanel> třídy a <xref:System.Windows.Threading.Dispatcher> .
+- Nové funkce pro třídy <xref:System.Windows.Controls.VirtualizingPanel> a <xref:System.Windows.Threading.Dispatcher>.
 
 - Vylepšený výkon při zobrazování rozsáhlých sad seskupených dat a přístup k kolekcím na vláknech, která nejsou v uživatelském rozhraní.
 
-- Vázání dat na statické vlastnosti, datové vazby na vlastní typy, které implementují <xref:System.Reflection.ICustomTypeProvider> rozhraní a načítání informací o vazbách dat z výrazu vazby.
+- Vázání dat na statické vlastnosti, datové vazby na vlastní typy, které implementují rozhraní <xref:System.Reflection.ICustomTypeProvider> a načítání informací o vazbě dat z výrazu vazby.
 
 - Změna umístění dat při změně hodnot (živé tvarování).
 
@@ -2037,7 +2034,7 @@ V .NET Framework 4,5 byly přidány následující funkce, které zjednodušují
 
 - Změny ve výchozích hodnotách vlastností přenosu snižují pravděpodobnost, že je budete muset nastavit.
 
-- <xref:System.Xml.XmlDictionaryReaderQuotas> Aktualizuje třídu, aby se snížila pravděpodobnost, že bude nutné ručně nakonfigurovat kvóty pro čtečky slovníku XML.
+- Aktualizuje třídu <xref:System.Xml.XmlDictionaryReaderQuotas>, aby se snížila pravděpodobnost, že bude nutné ručně nakonfigurovat kvóty pro čtečky slovníku XML.
 
 - Ověření konfiguračních souborů WCF nástrojem Visual Studio v rámci procesu sestavení, aby bylo možné zjistit chyby konfigurace před spuštěním aplikace.
 
@@ -2053,7 +2050,7 @@ V .NET Framework 4,5 byly přidány následující funkce, které zjednodušují
 
 - Popisy editoru XML.
 
-- <xref:System.ServiceModel.ChannelFactory>Podpora ukládání do mezipaměti.
+- Podpora ukládání do mezipaměti <xref:System.ServiceModel.ChannelFactory>.
 
 - Podpora komprese binárního kodéru
 
@@ -2079,7 +2076,7 @@ V .NET Framework 4,5 byly do programovací model Windows Workflow Foundation (WF
 
   - Podpora návrháře pro vytvoření přechodu na sdílené triggery
 
-  - Aktivity pro vytváření pracovních postupů stavového počítače, <xref:System.Activities.Statements.StateMachine>včetně <xref:System.Activities.Statements.State>:, <xref:System.Activities.Statements.Transition>a.
+  - Aktivity pro vytváření pracovních postupů stavového stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State> a <xref:System.Activities.Statements.Transition>.
 
 - Rozšířené funkce Návrhář postupu provádění, například následující:
 
@@ -2109,7 +2106,7 @@ V .NET Framework 4,5 byly do programovací model Windows Workflow Foundation (WF
 
 - Vylepšení správy verzí:
 
-  - Nová <xref:System.Activities.WorkflowIdentity> třída, která poskytuje mapování mezi trvalou instancí pracovního postupu a její definicí pracovního postupu.
+  - Nová třída <xref:System.Activities.WorkflowIdentity>, která poskytuje mapování mezi trvalou instancí pracovního postupu a její definicí pracovního postupu.
 
   - Souběžné spouštění více verzí pracovních postupů ve stejném hostiteli, včetně <xref:System.ServiceModel.Activities.WorkflowServiceHost>.
 
@@ -2123,9 +2120,9 @@ Další informace najdete v tématu [co je nového v programovací model Windows
 
 ### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
 
-[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]aplikace jsou navržené pro konkrétní faktory typu a využívají sílu operačního systému Windows. Podmnožina .NET Framework 4,5 nebo 4.5.1 je k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] sestavování aplikací pro C# Windows pomocí nebo Visual Basic. Tato podmnožina [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] se nazývá a je popsána v [přehledu](https://go.microsoft.com/fwlink/?LinkId=228491) na stránce Windows Dev Center.
+aplikace [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] jsou navržené pro konkrétní faktory typu a využívají sílu operačního systému Windows. Podmnožina .NET Framework 4,5 nebo 4.5.1 je k dispozici pro vytváření aplikací [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pro systém Windows C# pomocí nebo Visual Basic. Tato podmnožina se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] a je popsána v [přehledu](https://go.microsoft.com/fwlink/?LinkId=228491) na stránce Windows Dev Center.
 
-### <a name="portable-class-libraries-a-nameportable-"></a>Přenositelné knihovny tříd<a name="portable" />
+### <a name="portable-class-libraries-a-nameportable-"></a>Knihovny přenosných tříd <a name="portable" />
 
 Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenositelného projektu knihovny tříd zvolíte platformy (například Windows Phone a [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na společné typy a členy napříč těmito platformami. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 

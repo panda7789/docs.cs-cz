@@ -2,18 +2,18 @@
 title: Příklad odloženého provedení (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-ms.openlocfilehash: 29f118b3e6d49840b94277f17858f1339f2fb08c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d1f66cbe246b609f634989625688965dd4e5c93
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61977623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351802"
 ---
 # <a name="deferred-execution-example-visual-basic"></a>Příklad odloženého provedení (Visual Basic)
-Toto téma ukazuje, jak odložené provedení a opožděné vyhodnocení vliv na spuštění vašich dotazech LINQ to XML.  
+Toto téma ukazuje, jak odložené provádění a opožděné vyhodnocení ovlivní spuštění dotazů LINQ to XML.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje pořadí provádění, když použijete metodu rozšíření, která používá odloženého provedení. V příkladu deklaruje pole tří řetězců. Pak Iteruje přes kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`.  
+ Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Pak provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase`.  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -46,7 +46,7 @@ End Module
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 ToUpper: source abc  
 Main: str ABC  
 ToUpper: source def  
@@ -55,10 +55,10 @@ ToUpper: source ghi
 Main: str GHI  
 ```  
   
- Všimněte si, že při procházení kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`, každá položka je načten z řetězcového pole zdroje a převedený na velká písmena před další položky se načtou ze zdrojového pole řetězce.  
+ Všimněte si, že při iteraci v kolekci vrácené funkcí `ConvertCollectionToUpperCase` je každá položka načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězců.  
   
- Uvidíte, že celého pole řetězce není před každou položku v kolekci vrácené, jsou zpracovávána v převedený na velká písmena `foreach` smyčky v `Main`.  
+ Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje v `Main` smyčka `foreach`.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Odložené provedení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Kurz: Odložené spuštění (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

@@ -2,18 +2,18 @@
 title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 72132c4884f3d9bc94de447a122354b3e0dc2ee5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 2d9d3ea3d55fcd3a59039f4b8b93f37df35bf86d
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71351903"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 
 Asynchronní programy můžete napsat snadněji a intuitivnější pomocí funkcí Async/await. Můžete napsat asynchronní kód, který vypadá jako synchronní kód, a nechat kompilátor zpracovávat obtížné funkce zpětného volání a pokračování, které obvykle zahrnuje asynchronní kód.
 
-Další informace o funkci Async naleznete v tématu [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../../visual-basic/programming-guide/concepts/async/index.md).
+Další informace o funkci Async naleznete v tématu [asynchronní programování s Async a await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
 
 Tento návod začíná s aplikací synchronní Windows Presentation Foundation (WPF), která sečte počet bajtů v seznamu webů. Návod pak převede aplikaci na asynchronní řešení pomocí nových funkcí.
 
@@ -215,9 +215,9 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
 
 1. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
 
-    Měl by se zobrazit výstup, který se podobá následujícímu seznamu.
+    Měl by se zobrazit výstup, který se podobá následujícímu seznamu:
 
-    ```
+    ```console
     msdn.microsoft.com/library/windows/apps/br211380.aspx        383832
     msdn.microsoft.com                                            33964
     msdn.microsoft.com/library/hh290136.aspx               225793

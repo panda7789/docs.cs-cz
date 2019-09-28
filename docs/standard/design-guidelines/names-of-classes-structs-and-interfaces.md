@@ -13,44 +13,44 @@ helpviewer_keywords:
 - generic type parameters
 ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
 author: KrzysztofCwalina
-ms.openlocfilehash: c0790cd20daf859ec81e2252dc9bce46673daf90
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ecd708ccb8eb91270e8ef9c174b8d7e599a2629
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353720"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Názvy tříd, struktur a rozhraní
-Pokyny pro pojmenování, které následují platí pro pojmenování obecného typu.  
+Pokyny pro pojmenování, které následují, se týkají obecného typu pojmenování.  
   
  **✓ DO** název třídy a struktury s podstatná jména či fráze podstatné jméno, pomocí PascalCasing.  
   
- Názvy typů to odlišuje od metody, které jsou pojmenovány příkaz Možnosti.  
+ To odlišuje názvy typů od metod, které jsou pojmenovány pomocí příkazového fráze.  
   
  **✓ DO** název rozhraní tvary přídavných jmen fráze nebo příležitostně s podstatná jména či fráze podstatné jméno.  
   
- Podstatná jména a frází podstatné jméno by měl používat jen zřídka a může znamenat, že typ musí být abstraktní třída a není rozhraní.  
+ Podstatná jména a fráze substantivum by se měly používat zřídka a můžou indikovat, že typ by měl být abstraktní třída, a ne rozhraní.  
   
  **X DO NOT** poskytnout názvy tříd předpona (například "C").  
   
  **✓ CONSIDER** ukončení název odvozené třídy s názvem základní třídy.  
   
- To je velmi čitelný a jasně vysvětluje relace. Tady je několik příkladů tohoto kódu: `ArgumentOutOfRangeException`, což je typ z `Exception`, a `SerializableAttribute`, což je typ z `Attribute`. Je však potřeba použít přiměřené rozhodnutí při uplatňování toto pravidlo; například `Button` třída je typ z `Control` události, i když `Control` nezobrazí ve svém názvu.  
+ To je velmi čitelné a jasně vysvětluje vztah. Některé příklady tohoto kódu v kódu jsou: `ArgumentOutOfRangeException`, což je typ `Exception` a `SerializableAttribute`, což je typ `Attribute`. Je ale důležité použít rozumné rozhodnutí při použití této směrnice. Například třída `Button` je druhem události `Control`, i když `Control` se nezobrazí v názvu.  
   
  **✓ DO** předponu rozhraní názvy písmenem I, že je typ rozhraní.  
   
- Například `IComponent` (popisná podstatná) `ICustomAttributeProvider` (podstatné jméno fráze), a `IPersistable` (přídavného jména) jsou názvy odpovídající rozhraní. Stejně jako jiné názvy typů se vyhněte zkratky.  
+ Například `IComponent` (popisný substantivum), `ICustomAttributeProvider` (substantivum fráze) a `IPersistable` (adjektivum) jsou vhodné názvy rozhraní. Stejně jako u jiných typů názvů Vyhněte zkratce.  
   
  **✓ DO** Ujistěte se, že názvy liší pouze pomocí "I" předpony na název rozhraní při definování pár třída – rozhraní, kde třída je standardní implementace rozhraní.  
   
 ## <a name="names-of-generic-type-parameters"></a>Názvy parametrů obecného typu  
- Obecné typy byly přidány do rozhraní .NET Framework 2.0. Funkce zavedená nová druh identifikátor s názvem *parametr typu*.  
+ K .NET Framework 2,0 byly přidány obecné typy. Funkce představila nový typ identifikátoru nazvaný *parametr typu*.  
   
  **✓ DO** název parametry obecného typu pomocí popisných názvů, pokud je název jednoho písmeno úplně není potřeba vysvětlovat a popisný název nebude přidejte hodnotu.  
   
  **✓ CONSIDER** pomocí `T` jako název typu parametru pro typy s jeden parametr typu jedním písmenem.  
   
-```  
+```csharp  
 public int IComparer<T> { ... }  
 public delegate bool Predicate<T>(T item);  
 public struct Nullable<T> where T:struct { ... }  
@@ -58,7 +58,7 @@ public struct Nullable<T> where T:struct { ... }
   
  **✓ DO** předpony typ popisné názvy parametrů s `T`.  
   
-```  
+```csharp  
 public interface ISessionChannel<TSession> where TSession : ISession {  
     TSession Session { get; }  
 }  
@@ -66,25 +66,25 @@ public interface ISessionChannel<TSession> where TSession : ISession {
   
  **✓ CONSIDER** označující omezení vztahujících se na parametr typu názvu parametru.  
   
- Například s omezením parametru `ISession` může být volána `TSession`.  
+ Například parametr omezený na `ISession` může být volán `TSession`.  
   
 ## <a name="names-of-common-types"></a>Názvy běžných typů  
  **✓ DO** postupujte podle pokynů popsaných v následující tabulce, při pojmenování typy odvozené od nebo implementaci určitých typů rozhraní .NET Framework.  
   
-|Základní typ|Pravidlo typu odvozené/implementace|  
+|Základní typ|Základní pravidlo pro odvození/implementaci typu|  
 |---------------|------------------------------------------|  
 |`System.Attribute`|**✓ DO** přidat příponu "Atribut" názvy vlastních atributů tříd.|  
 |`System.Delegate`|**✓ DO** přidat příponu "Obslužná rutina události" na názvy delegáti, které se používají v události.<br /><br /> **✓ DO** přidat příponu "Zpětné volání" pro názvy delegátů kromě těch, které používá jako obslužné rutiny událostí.<br /><br /> **X DO NOT** přidat příponu "Delegáta" s delegátem.|  
 |`System.EventArgs`|**✓ DO** přidat příponu "EventArgs."|  
 |`System.Enum`|**X DO NOT** odvozovat z této třídy; použijte – klíčové slovo jazyka nepodporuje místo toho, například v jazyce C#, použít `enum` – klíčové slovo.<br /><br /> **X DO NOT** přidat příponu "Výčtu" nebo "Příznak."|  
 |`System.Exception`|**✓ DO** přidat příponu "Výjimky."|  
-|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** přidat příponu "Slovník." Všimněte si, že `IDictionary` je určitý typ kolekce, ale toto pravidlo má přednost před více obecných pokynů kolekce, který následuje.|  
+|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** přidat příponu "Slovník." Všimněte si, že `IDictionary` je konkrétní typ kolekce, ale tyto zásady mají přednost před obecnější pokyny pro kolekce, které následují.|  
 |`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|**✓ DO** přidat příponu "Kolekce."|  
 |`System.IO.Stream`|**✓ DO** přidat příponu "Stream."|  
 |`CodeAccessPermission IPermission`|**✓ DO** přidat příponu "Oprávnění."|  
   
-## <a name="naming-enumerations"></a>Názvy výčtů  
- Názvy typů výčtu (také nazývané výčtů) obecně by měla dodržovat standardní pojmenování typ pravidla (PascalCasing atd.). Existují však další pokyny, které platí konkrétně pro výčty.  
+## <a name="naming-enumerations"></a>Vytváření názvů výčtů  
+ Názvy výčtových typů (označovaných také jako výčty) by obecně měly splňovat standardní pravidla pro pojmenovávání typů (PascalCasing atd.). Existují však další pokyny, které platí konkrétně pro výčty.  
   
  **✓ DO** použijte název singulární typ výčtu pouze v případě jeho hodnoty jsou bitová pole.  
   
@@ -98,7 +98,7 @@ public interface ISessionChannel<TSession> where TSession : ISession {
   
  *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
+ @no__t – 0Reprinted podle oprávnění Pearsonova vzdělávání, Inc. v [Framework pokyny pro návrh: Konvence, idiomy a vzory pro opakovaně použitelné knihovny .NET, druhá edice @ no__t-0 od Krzysztof Cwalina a Brad Abrams, Publikováno od 22. října 2008 Addison-Wesley Professional jako součást sady Microsoft Windows Development Series. *  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b5cf6f0ae66141957d545134a2f8ff8eb799097
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 60693a6570eff6f9d4980d8f29f1385bc7462f08
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946455"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353151"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
-Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které ji transformují na kolekce v paměti pro zákazníky, produkty, objednávky a podrobnosti objednávky. Pro další experiment s PLINQ můžete vložit příklady kódu z některých dalších témat do kódu v tomto tématu a vyvolat ho z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
+Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které ji transformují na kolekce v paměti pro zákazníky, produkty, objednávky a podrobnosti objednávky. K dalšímu experimentování s PLINQ můžete vložit příklady kódu z některých dalších témat do kódu v tomto tématu a vyvolat ho z metody `Main`. Tato data můžete také použít s vlastními dotazy PLINQ.  
   
  Data představují podmnožinu databáze Northwind. 50 (50) záznamy o zákaznících, ale ne všechna pole. Zahrnuje se podmnožina řádků z objednávek a odpovídajících Order_Detail dat pro každého zákazníka. Jsou zahrnuty všechny produkty.  
   
 > [!NOTE]
-> Sada dat není dostatečně velká, aby ukázala, že PLINQ je rychlejší než LINQ to Objects pro dotazy, které obsahují `where` pouze `select` základní a klauzule. Chcete-li sledovat rychlost růstu malých datových sad, jako je například, použijte dotazy, které obsahují výpočetně náročné operace u každého prvku v sadě dat.  
+> Sada dat není dostatečně velká, aby ukázala, že PLINQ je rychlejší než LINQ to Objects pro dotazy, které obsahují pouze základní klauzule `where` a `select`. Chcete-li sledovat rychlost růstu malých datových sad, jako je například, použijte dotazy, které obsahují výpočetně náročné operace u každého prvku v sadě dat.  
   
 ### <a name="to-set-up-this-sample"></a>Nastavení této ukázky  
   
@@ -35,7 +35,7 @@ Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které j
   
 4. Stisknutím klávesy F5 ověřte, zda je projekt správně sestaven a spuštěn. Následující výstup by měl být zobrazen v okně konzoly.  
   
-    ```  
+    ```console  
     Customer count: 50  
     Product count: 77  
     Order count: 190  
@@ -48,7 +48,7 @@ Tato ukázka obsahuje ukázková data ve formátu CSV spolu s metodami, které j
   
 ## <a name="data"></a>Data  
   
-```  
+```console  
 CUSTOMERS  
 ALFKI,Alfreds Futterkiste,Obere Str. 57,Berlin,12209  
 ANATR,Ana Trujillo Emparedados y helados,Avda. de la Constitución 2222,México D.F.,05021  

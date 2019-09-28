@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-ms.openlocfilehash: 77bb567d2b7b8fff2b1b8de43b2d5fa36fffb3b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b2cd67a1c4f30e6fe246124be5b8f7081c539a6
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62017979"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392860"
 ---
 # <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: Generování tříd a dokumentace ke schématu XML pomocí nástroje definice schématu XML
 Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML, která popisuje třídu nebo ke generování třídy definované ve schématu XML. Následující postupy ukazují, jak provádět tyto operace.  
@@ -23,18 +23,18 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
   
 2. Předejte schématu XML jako argument nástroj definici schématu XML, který vytvoří sadu tříd, které budou přesně odpovídat schématu XML, například:  
   
-    ```  
+    ```console  
     xsd mySchema.xsd  
     ```  
   
-     Nástroj lze zpracovat pouze schémata, které odkazují na specifikaci World Wide Web Consortium XML ze dne 16. Jinými slovy, musí být obor názvů schématu XML "http://www.w3.org/2001/XMLSchema" jak je znázorněno v následujícím příkladu.  
+     Nástroj lze zpracovat pouze schémata, které odkazují na specifikaci World Wide Web Consortium XML ze dne 16. Jinými slovy obor názvů schématu XML musí být "http://www.w3.org/2001/XMLSchema", jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8"?>  
     <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
     ```  
   
-3. Upravte tříd pomocí metody, vlastnosti nebo pole, podle potřeby. Další informace o změnách třídu s atributy, naleznete v tématu [řízení XML serializace pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md) a [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+3. Upravte tříd pomocí metody, vlastnosti nebo pole, podle potřeby. Další informace o úpravách třídy s atributy naleznete v tématu [řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md) a [atributů, které řídí serializaci kódovaných SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
  Často je užitečné si prohlédnout schématu XML datový proud, který je generována, když jsou serializovat instance třídy (nebo třídy). Například může publikovat vaše schéma ostatním uživatelům, nebo vám může porovnat s schématu, ke které se snaží dosáhnout shody.  
   
@@ -46,7 +46,7 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
   
 3. Předejte knihovny DLL jako argument Xsd.exe, například:  
   
-    ```  
+    ```console  
     xsd MyFile.dll  
     ```  
   
@@ -59,5 +59,5 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
 - [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
 - [Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [Postupy: Serializace objektu @ no__t-0
+- [Postupy: Deserializace objektu @ no__t-0

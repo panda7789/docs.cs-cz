@@ -2,15 +2,15 @@
 title: Zrušení asynchronních úloh po určitém časovém intervalu (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a48045a3-6a99-42af-b824-af340f0b9a5d
-ms.openlocfilehash: 636e8ffc86ce2849d563094bb780943f57d9cfa4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0b2c0428a6b8affa6b489e48daf4e008ee26e7f3
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958137"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352020"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>Zrušení asynchronních úloh po určitém časovém intervalu (Visual Basic)
-Asynchronní operaci můžete zrušit po časovém intervalu pomocí metody, <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType> Pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném `CancelAfter` výrazem.  
+Asynchronní operaci můžete po časovém intervalu zrušit pomocí metody <xref:System.Threading.CancellationTokenSource.CancelAfter%2A?displayProperty=nameWithType>, pokud nechcete čekat na dokončení operace. Tato metoda naplánuje zrušení všech přidružených úloh, které nejsou dokončeny v časovém období určeném výrazem `CancelAfter`.  
   
  Tento příklad přidá do kódu, který je vyvíjen v rámci [zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pro stažení seznamu webů a zobrazení délky obsahu každého z nich.  
   
@@ -41,7 +41,7 @@ Asynchronní operaci můžete zrušit po časovém intervalu pomocí metody, <xr
   
  Chcete-li sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelAListOfTasks** . Přidejte změny v tomto tématu do projektu.  
   
- Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, `CancelAfter` přidejte `startButton_Click`volání do do, jak ukazuje následující příklad. Sčítání jsou označeny hvězdičkami.  
+ Chcete-li zadat maximální dobu před tím, než jsou úkoly označeny jako zrušené, přidejte volání `CancelAfter` do `startButton_Click`, jak ukazuje následující příklad. Sčítání jsou označeny hvězdičkami.  
   
 ```vb  
 Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)  
@@ -71,9 +71,9 @@ Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub  
 ```  
   
- Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby. Následující výstup je ukázka.  
+ Spusťte program několikrát, abyste ověřili, že výstup může zobrazit výstup pro všechny weby, žádné weby nebo některé weby. Následující výstup je ukázka:  
   
-```  
+```console  
 Length of the downloaded string: 35990.  
   
 Length of the downloaded string: 407399.  
@@ -192,7 +192,7 @@ End Class
 ## <a name="see-also"></a>Viz také:
 
 - [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Zrušení asynchronní úlohy nebo seznamu úloh (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)
 - [Vyladění aplikace v asynchronním prostředí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Asynchronní Ukázka: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

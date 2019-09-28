@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Zachycení chyb (Visual Basic) při analýze'
+title: 'Postupy: Chyby analýzy zachycení (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 22e9068e-ea58-447b-816e-cd1852c11787
-ms.openlocfilehash: 1a5d01d4853a9fd0cc7f0a0e5071b394ab3f218b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a0c0749e8bc6d3fb1a71595778bfc5effaaf8533
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855632"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352939"
 ---
-# <a name="how-to-catch-parsing-errors-visual-basic"></a>Postupy: Zachycení chyb (Visual Basic) při analýze
-Toto téma ukazuje, jak detekovat XML chybně vytvořený nebo je neplatný.  
+# <a name="how-to-catch-parsing-errors-visual-basic"></a>Postupy: Chyby analýzy zachycení (Visual Basic)
+V tomto tématu se dozvíte, jak zjistit chybně vytvořený nebo neplatný kód XML.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je implementováno pomocí <xref:System.Xml.XmlReader>. Pokud je předán chybně vytvořený nebo neplatný XML [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], základní <xref:System.Xml.XmlReader> třída vyvolá výjimku. Různé metody, které analyzovat soubor XML, jako například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, nebude zachytávat výjimky; výjimku pak může být zachycena vaší aplikace.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se implementuje pomocí <xref:System.Xml.XmlReader>. Pokud je do [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] předán chybně vytvořený nebo neplatný kód XML, podkladová třída <xref:System.Xml.XmlReader> vyvolá výjimku. Různé metody, které analyzují kód XML, například <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, nezachycují výjimku; výjimku lze následně zachytit ve vaší aplikaci.  
   
- Všimněte si, že nejde získat chyby analýzy, pokud použijte literály XML. Kompilátor jazyka Visual Basic zachytí chyby XML chybně vytvořený nebo je neplatný.  
+ Všimněte si, že pokud používáte literály XML, nemůžete získat chyby analýzy. Kompilátor Visual Basic zachytí chyby nesprávně vytvořeného nebo neplatného kódu XML.  
   
 ## <a name="example"></a>Příklad  
- Následující kód se pokusí analyzovat kód XML je neplatný:  
+ Následující kód se pokusí analyzovat neplatný kód XML:  
   
 ```vb  
 Try  
@@ -33,13 +33,13 @@ Catch e As System.Xml.XmlException
 End Try  
 ```  
   
- Při spuštění tohoto kódu vyvolala následující výjimku:  
+ Při spuštění tohoto kódu vyvolá následující výjimku:  
   
-```  
+```console  
 The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line 5, position 13.  
 ```  
   
- Informace o výjimkách, které můžete očekávat, že <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, a <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> metody vyvolání, najdete v článku <xref:System.Xml.XmlReader> dokumentaci.  
+ Informace o výjimkách, které můžete očekávat metodou <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> a <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, najdete v dokumentaci k @no__t 4.  
   
 ## <a name="see-also"></a>Viz také:
 
