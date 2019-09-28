@@ -2,18 +2,18 @@
 title: Oficiální image .NET Dockeru
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Oficiální image Docker pro .NET
 ms.date: 01/07/2019
-ms.openlocfilehash: 749485bfe07e0245493da67af915805f644a1897
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 43b2f47912e38e99926d7f06c3cda72f17d0e3fc
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039638"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353867"
 ---
 # <a name="official-net-docker-images"></a>Oficiální image .NET Dockeru
 
 Oficiální image rozhraní .NET Docker jsou image Docker vytvořené a optimalizované Microsoftem. Jsou veřejně dostupné v úložištích Microsoftu v [Docker Hub](https://hub.docker.com/u/microsoft/). Každé úložiště může obsahovat několik imagí v závislosti na verzích .NET a v závislosti na operačním systému a verzích (Linux Debian, Linux Alpine, Windows nano Server, Windows Server Core atd.).
 
-Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí <https://hub.docker.com/\_/microsoft-dotnet-core/>.NET Core:.
+Vzhledem k tomu, že je .NET Core 2,1, jsou všechny image .NET Core, včetně pro ASP.NET Core dostupné v Docker Hub v úložišti imagí <https://hub.docker.com/_/microsoft-dotnet-core/>.NET Core:.
 
 Většina úložišť imagí poskytuje rozsáhlé označování, které vám pomůžou vybrat nejen konkrétní verzi architektury, ale také zvolit operační systém (Linux distribuce nebo Windows verze).
 
@@ -49,5 +49,5 @@ Když prozkoumáte úložiště imagí .NET v Docker Hub, zjistíte více verzí
 | mcr.microsoft.com/dotnet/core/sdk:**2,2** | Rozhraní .NET Core se zahrnutými sadami SDK v systému Linux a Windows (vícenásobný arch) |
 
 > [!div class="step-by-step"]
-> [Předchozí](net-container-os-targets.md)Další
-> [](../architect-microservice-container-applications/index.md)
+> [Předchozí](net-container-os-targets.md)
+> [Další](../architect-microservice-container-applications/index.md)
