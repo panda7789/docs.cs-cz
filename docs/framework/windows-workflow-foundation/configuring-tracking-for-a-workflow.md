@@ -2,30 +2,30 @@
 title: Konfigurace sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: d8d3293fd2b271c0e1a00a1fca30d5ecd166df12
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 889efc804bb45b384dfde5b4deb520a81d1e5486
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690562"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353051"
 ---
-# <a name="configuring-tracking-for-a-workflow"></a><span data-ttu-id="222c7-102">Konfigurace sledování pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="222c7-102">Configuring Tracking for a Workflow</span></span>
+# <a name="configuring-tracking-for-a-workflow"></a><span data-ttu-id="c4ceb-102">Konfigurace sledování pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="c4ceb-102">Configuring Tracking for a Workflow</span></span>
 
-<span data-ttu-id="222c7-103">Pracovní postup můžete provést třemi způsoby:</span><span class="sxs-lookup"><span data-stu-id="222c7-103">A workflow can execute in three ways:</span></span>
+<span data-ttu-id="c4ceb-103">Pracovní postup může být proveden třemi způsoby:</span><span class="sxs-lookup"><span data-stu-id="c4ceb-103">A workflow can execute in three ways:</span></span>
 
-- <span data-ttu-id="222c7-104">Hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost></span><span class="sxs-lookup"><span data-stu-id="222c7-104">Hosted in <xref:System.ServiceModel.Activities.WorkflowServiceHost></span></span>
+- <span data-ttu-id="c4ceb-104">Hostovaná v <xref:System.ServiceModel.Activities.WorkflowServiceHost></span><span class="sxs-lookup"><span data-stu-id="c4ceb-104">Hosted in <xref:System.ServiceModel.Activities.WorkflowServiceHost></span></span>
 
-- <span data-ttu-id="222c7-105">Provést, protože <xref:System.Activities.WorkflowApplication></span><span class="sxs-lookup"><span data-stu-id="222c7-105">Executed as a <xref:System.Activities.WorkflowApplication></span></span>
+- <span data-ttu-id="c4ceb-105">Provedeno jako <xref:System.Activities.WorkflowApplication></span><span class="sxs-lookup"><span data-stu-id="c4ceb-105">Executed as a <xref:System.Activities.WorkflowApplication></span></span>
 
-- <span data-ttu-id="222c7-106">Proveden přímo pomocí <xref:System.Activities.WorkflowInvoker></span><span class="sxs-lookup"><span data-stu-id="222c7-106">Executed directly using <xref:System.Activities.WorkflowInvoker></span></span>
+- <span data-ttu-id="c4ceb-106">Provedeno přímo pomocí <xref:System.Activities.WorkflowInvoker></span><span class="sxs-lookup"><span data-stu-id="c4ceb-106">Executed directly using <xref:System.Activities.WorkflowInvoker></span></span>
 
-<span data-ttu-id="222c7-107">V závislosti na pracovním postupu možnost hostování sledování účastník přidat buď prostřednictvím kódu nebo konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="222c7-107">Depending on the workflow hosting option, a tracking participant can be added either through code or through a configuration file.</span></span> <span data-ttu-id="222c7-108">Toto téma popisuje, jak je sledování nakonfigurované tak, že přidáte sledování účastník <xref:System.Activities.WorkflowApplication> a získat <xref:System.ServiceModel.Activities.WorkflowServiceHost>a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.</span><span class="sxs-lookup"><span data-stu-id="222c7-108">This topic describes how tracking is configured by adding a tracking participant to a <xref:System.Activities.WorkflowApplication> and to a <xref:System.ServiceModel.Activities.WorkflowServiceHost>, and how to enable tracking when using <xref:System.Activities.WorkflowInvoker>.</span></span>
+<span data-ttu-id="c4ceb-107">V závislosti na možnosti hostování pracovního postupu lze sledování účastníka přidat prostřednictvím kódu nebo prostřednictvím konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-107">Depending on the workflow hosting option, a tracking participant can be added either through code or through a configuration file.</span></span> <span data-ttu-id="c4ceb-108">Toto téma popisuje, jak je sledování nakonfigurováno přidáním účastníka sledování do <xref:System.Activities.WorkflowApplication> a do <xref:System.ServiceModel.Activities.WorkflowServiceHost> a jak povolit sledování při použití <xref:System.Activities.WorkflowInvoker>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-108">This topic describes how tracking is configured by adding a tracking participant to a <xref:System.Activities.WorkflowApplication> and to a <xref:System.ServiceModel.Activities.WorkflowServiceHost>, and how to enable tracking when using <xref:System.Activities.WorkflowInvoker>.</span></span>
 
-## <a name="configuring-workflow-application-tracking"></a><span data-ttu-id="222c7-109">Konfigurace sledování aplikace pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="222c7-109">Configuring Workflow Application Tracking</span></span>
+## <a name="configuring-workflow-application-tracking"></a><span data-ttu-id="c4ceb-109">Konfigurace sledování aplikace pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="c4ceb-109">Configuring Workflow Application Tracking</span></span>
 
-<span data-ttu-id="222c7-110">Pracovní postup můžete spustit pomocí <xref:System.Activities.WorkflowApplication> třídy.</span><span class="sxs-lookup"><span data-stu-id="222c7-110">A workflow can run using the <xref:System.Activities.WorkflowApplication> class.</span></span> <span data-ttu-id="222c7-111">Toto téma popisuje konfiguraci sledování pro [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] aplikace pracovního postupu tak, že přidáte sledování účastník <xref:System.Activities.WorkflowApplication> hostitele pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="222c7-111">This topic demonstrates how tracking is configured for a [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] workflow application by adding a tracking participant to the <xref:System.Activities.WorkflowApplication> workflow host.</span></span> <span data-ttu-id="222c7-112">V takovém případě pracovní postup spouští jako aplikace pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="222c7-112">In this case, the workflow runs as a workflow application.</span></span> <span data-ttu-id="222c7-113">Nakonfigurovat aplikace pracovního postupu pomocí kódu (spíše než pomocí konfiguračního souboru), který je v místním prostředí .exe souboru pomocí <xref:System.Activities.WorkflowApplication> třídy.</span><span class="sxs-lookup"><span data-stu-id="222c7-113">You configure a workflow application through code (rather than by using a configuration file), which is a self-hosted .exe file using the <xref:System.Activities.WorkflowApplication> class.</span></span> <span data-ttu-id="222c7-114">Sledování účastník bude přidán jako rozšíření <xref:System.Activities.WorkflowApplication> instance.</span><span class="sxs-lookup"><span data-stu-id="222c7-114">The tracking participant is added as an extension to the <xref:System.Activities.WorkflowApplication> instance.</span></span> <span data-ttu-id="222c7-115">To se provádí tak, že přidáte <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci aplikace WorkflowApplication.</span><span class="sxs-lookup"><span data-stu-id="222c7-115">This is done by adding the <xref:System.Activities.Tracking.TrackingParticipant> to the extensions collection for the WorkflowApplication instance.</span></span>
+<span data-ttu-id="c4ceb-110">Pracovní postup lze spustit pomocí třídy <xref:System.Activities.WorkflowApplication>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-110">A workflow can run using the <xref:System.Activities.WorkflowApplication> class.</span></span> <span data-ttu-id="c4ceb-111">Toto téma ukazuje, jak je nakonfigurováno sledování pro aplikaci pracovního postupu [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] přidáním účastníka sledování do hostitele pracovního postupu <xref:System.Activities.WorkflowApplication>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-111">This topic demonstrates how tracking is configured for a [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] workflow application by adding a tracking participant to the <xref:System.Activities.WorkflowApplication> workflow host.</span></span> <span data-ttu-id="c4ceb-112">V takovém případě pracovní postup běží jako aplikace pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-112">In this case, the workflow runs as a workflow application.</span></span> <span data-ttu-id="c4ceb-113">Můžete nakonfigurovat aplikaci pracovního postupu prostřednictvím kódu (nikoli pomocí konfiguračního souboru), což je samostatný soubor. exe s použitím třídy <xref:System.Activities.WorkflowApplication>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-113">You configure a workflow application through code (rather than by using a configuration file), which is a self-hosted .exe file using the <xref:System.Activities.WorkflowApplication> class.</span></span> <span data-ttu-id="c4ceb-114">Účastník sledování se přidá jako rozšíření instance <xref:System.Activities.WorkflowApplication>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-114">The tracking participant is added as an extension to the <xref:System.Activities.WorkflowApplication> instance.</span></span> <span data-ttu-id="c4ceb-115">To se provádí přidáním <xref:System.Activities.Tracking.TrackingParticipant> do kolekce rozšíření pro instanci WorkflowApplication.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-115">This is done by adding the <xref:System.Activities.Tracking.TrackingParticipant> to the extensions collection for the WorkflowApplication instance.</span></span>
 
-<span data-ttu-id="222c7-116">Pro aplikace pracovního postupu můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> rozšíření chování, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="222c7-116">For a workflow application, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> behavior extension as shown in the following code.</span></span>
+<span data-ttu-id="c4ceb-116">U aplikace pracovního postupu můžete přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant>, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-116">For a workflow application, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> behavior extension as shown in the following code.</span></span>
 
 ```csharp
 LogActivity activity = new LogActivity();
@@ -48,11 +48,11 @@ EtwTrackingParticipant trackingParticipant =
 instance.Extensions.Add(trackingParticipant);
 ```
 
-### <a name="configuring-workflow-service-tracking"></a><span data-ttu-id="222c7-117">Konfigurace sledování služby pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="222c7-117">Configuring Workflow Service Tracking</span></span>
+### <a name="configuring-workflow-service-tracking"></a><span data-ttu-id="c4ceb-117">Konfigurace sledování služby pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="c4ceb-117">Configuring Workflow Service Tracking</span></span>
 
-<span data-ttu-id="222c7-118">Pracovní postup může být vystavena jako služba WCF při hostování v <xref:System.ServiceModel.Activities.WorkflowServiceHost> hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="222c7-118">A workflow can be exposed as a WCF service when hosted in the <xref:System.ServiceModel.Activities.WorkflowServiceHost> service host.</span></span> <span data-ttu-id="222c7-119"><xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace .NET ServiceHost pro nějakou službu založenou na pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="222c7-119"><xref:System.ServiceModel.Activities.WorkflowServiceHost> is a specialized .NET ServiceHost implementation for a workflow-based service.</span></span> <span data-ttu-id="222c7-120">Tato část vysvětluje postup konfigurace sledování [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] používané služby pracovního postupu <xref:System.ServiceModel.Activities.WorkflowServiceHost>.</span><span class="sxs-lookup"><span data-stu-id="222c7-120">This section explains how to configure tracking for a [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] workflow service running in <xref:System.ServiceModel.Activities.WorkflowServiceHost>.</span></span> <span data-ttu-id="222c7-121">Je nakonfigurovaný pomocí souboru Web.config (pro Web hostované služby) nebo soubor App.config (pro služby hostované v samostatné aplikaci, jako je například aplikace konzoly) zadáním chování služby nebo pomocí kódu přidáním specifické pro sledování chování <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce pro tohoto hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="222c7-121">It is configured through a Web.config file (for a Web-hosted service) or an App.config file (for a service hosted in a stand-alone application, such as a console application) by specifying a service behavior or through code by adding a tracking-specific behavior to the <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> collection for the service host.</span></span>
+<span data-ttu-id="c4ceb-118">Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-118">A workflow can be exposed as a WCF service when hosted in the <xref:System.ServiceModel.Activities.WorkflowServiceHost> service host.</span></span> <span data-ttu-id="c4ceb-119"><xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní .NET ServiceHost pro službu založenou na pracovních postupech.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-119"><xref:System.ServiceModel.Activities.WorkflowServiceHost> is a specialized .NET ServiceHost implementation for a workflow-based service.</span></span> <span data-ttu-id="c4ceb-120">V této části se dozvíte, jak nakonfigurovat sledování pro službu pracovního postupu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] běžící v <xref:System.ServiceModel.Activities.WorkflowServiceHost>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-120">This section explains how to configure tracking for a [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] workflow service running in <xref:System.ServiceModel.Activities.WorkflowServiceHost>.</span></span> <span data-ttu-id="c4ceb-121">Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním konkrétního chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-121">It is configured through a Web.config file (for a Web-hosted service) or an App.config file (for a service hosted in a stand-alone application, such as a console application) by specifying a service behavior or through code by adding a tracking-specific behavior to the <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> collection for the service host.</span></span>
 
-<span data-ttu-id="222c7-122">Pro pracovní postup služby hostované v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> element v konfiguračním souboru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="222c7-122">For a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> using the <`behavior`> element in a configuration file, as shown in the following example.</span></span>
+<span data-ttu-id="c4ceb-122">U služby pracovního postupu hostovaného v <xref:System.ServiceModel.WorkflowServiceHost> můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí > elementu < `behavior` v konfiguračním souboru, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-122">For a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> using the <`behavior`> element in a configuration file, as shown in the following example.</span></span>
 
 ```xml
 <behaviors>
@@ -64,10 +64,10 @@ instance.Extensions.Add(trackingParticipant);
 <behaviors>
 ```
 
-<span data-ttu-id="222c7-123">Můžete také služby pracovního postupu hostované v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> rozšíření chování prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="222c7-123">Alternatively, for a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> behavior extension through code.</span></span> <span data-ttu-id="222c7-124">Chcete-li přidat vlastní sledování účastník, vytvořit nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost> jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="222c7-124">To add a custom tracking participant, create a new behavior extension and add it to the <xref:System.ServiceModel.ServiceHost> as shown in the following example code.</span></span>
+<span data-ttu-id="c4ceb-123">Alternativně můžete pro službu pracovního postupu, která je hostovaná v <xref:System.ServiceModel.WorkflowServiceHost>, přidat rozšíření chování <xref:System.Activities.Tracking.EtwTrackingParticipant> prostřednictvím kódu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-123">Alternatively, for a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> behavior extension through code.</span></span> <span data-ttu-id="c4ceb-124">Chcete-li přidat vlastního účastníka sledování, vytvořte nové rozšíření chování a přidejte ho do <xref:System.ServiceModel.ServiceHost>, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-124">To add a custom tracking participant, create a new behavior extension and add it to the <xref:System.ServiceModel.ServiceHost> as shown in the following example code.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="222c7-125">Pokud chcete zobrazit ukázkový kód, který ukazuje, jak vytvořit vlastní chování element, který přidá vlastní sledování účastník, přečtěte si [sledování](./samples/tracking.md) ukázky.</span><span class="sxs-lookup"><span data-stu-id="222c7-125">If you want to view sample code that shows how to create a custom behavior element that adds a custom tracking participant, refer to the [Tracking](./samples/tracking.md) samples.</span></span>
+> <span data-ttu-id="c4ceb-125">Chcete-li zobrazit vzorový kód, který ukazuje, jak vytvořit vlastní prvek chování, který přidá vlastního účastníka sledování, přečtěte si ukázky [sledování](./samples/tracking.md) .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-125">If you want to view sample code that shows how to create a custom behavior element that adds a custom tracking participant, refer to the [Tracking](./samples/tracking.md) samples.</span></span>
 
 ```csharp
 ServiceHost svcHost = new ServiceHost(typeof(WorkflowService), new
@@ -81,9 +81,9 @@ svcHost.Description.Behaviors.Add(trackingBehavior);
 svcHost.Open();
 ```
 
-<span data-ttu-id="222c7-126">Účastník sledování se přidá k hostiteli služby pracovního postupu jako rozšíření chování.</span><span class="sxs-lookup"><span data-stu-id="222c7-126">The tracking participant is added to the workflow service host as an extension to the behavior.</span></span>
+<span data-ttu-id="c4ceb-126">Účastník sledování se přidá do hostitele služby pracovního postupu jako rozšíření chování.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-126">The tracking participant is added to the workflow service host as an extension to the behavior.</span></span>
 
-<span data-ttu-id="222c7-127">Následující ukázkový kód ukazuje, jak číst z konfiguračního souboru profilu sledování.</span><span class="sxs-lookup"><span data-stu-id="222c7-127">This sample code below shows how to read a tracking profile from configuration file.</span></span>
+<span data-ttu-id="c4ceb-127">Následující vzorový kód ukazuje, jak číst profil sledování z konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-127">This sample code below shows how to read a tracking profile from configuration file.</span></span>
 
 ```csharp
 TrackingProfile GetProfile(string profileName, string displayName)
@@ -95,10 +95,7 @@ TrackingProfile GetProfile(string profileName, string displayName)
                 return null;
             }
 
-            if (profileName == null)
-            {
-                profileName = "";
-            }
+            profileName ??= "";
 
             //Find the profile with the specified profile name in the list of profile found in config
             var match = from p in new List<TrackingProfile>(trackingSection.TrackingProfiles)
@@ -122,7 +119,7 @@ TrackingProfile GetProfile(string profileName, string displayName)
             return trackingProfile;
 ```
 
-<span data-ttu-id="222c7-128">Tento ukázkový kód ukazuje, jak přidat profil sledování do hostitele pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="222c7-128">This sample code shows how to add a tracking profile to a workflow host.</span></span>
+<span data-ttu-id="c4ceb-128">Tento vzorový kód ukazuje, jak přidat profil sledování do hostitele pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-128">This sample code shows how to add a tracking profile to a workflow host.</span></span>
 
 ```csharp
 WorkflowServiceHost workflowServiceHost = serviceHostBase as WorkflowServiceHost;
@@ -137,11 +134,11 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> <span data-ttu-id="222c7-129">Další informace o sledování profilů najdete [sledování profilů](https://go.microsoft.com/fwlink/?LinkId=201310).</span><span class="sxs-lookup"><span data-stu-id="222c7-129">For more information on tracking profiles, refer to [Tracking Profiles](https://go.microsoft.com/fwlink/?LinkId=201310).</span></span>
+> <span data-ttu-id="c4ceb-129">Další informace o sledování profilů najdete v tématu [sledování profilů](https://go.microsoft.com/fwlink/?LinkId=201310).</span><span class="sxs-lookup"><span data-stu-id="c4ceb-129">For more information on tracking profiles, refer to [Tracking Profiles](https://go.microsoft.com/fwlink/?LinkId=201310).</span></span>
 
-### <a name="configuring-tracking-using-workflowinvoker"></a><span data-ttu-id="222c7-130">Konfigurace sledování pomocí WorkflowInvoker</span><span class="sxs-lookup"><span data-stu-id="222c7-130">Configuring tracking using WorkflowInvoker</span></span>
+### <a name="configuring-tracking-using-workflowinvoker"></a><span data-ttu-id="c4ceb-130">Konfigurace sledování pomocí WorkflowInvoker</span><span class="sxs-lookup"><span data-stu-id="c4ceb-130">Configuring tracking using WorkflowInvoker</span></span>
 
-<span data-ttu-id="222c7-131">Konfigurace sledování pracovního postupu spuštěn pomocí <xref:System.Activities.WorkflowInvoker>, přidejte zprostředkovatele sledování jako rozšíření <xref:System.Activities.WorkflowInvoker> instance.</span><span class="sxs-lookup"><span data-stu-id="222c7-131">To configure tracking for a workflow executed using <xref:System.Activities.WorkflowInvoker>, add the tracking provider as an extension to a <xref:System.Activities.WorkflowInvoker> instance.</span></span> <span data-ttu-id="222c7-132">Následující příklad kódu je z [vlastní sledování](./samples/custom-tracking.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="222c7-132">The following code example is from the [Custom Tracking](./samples/custom-tracking.md) sample.</span></span>
+<span data-ttu-id="c4ceb-131">Ke konfiguraci sledování pracovního postupu spuštěného pomocí <xref:System.Activities.WorkflowInvoker> přidejte zprostředkovatele sledování jako rozšíření do instance <xref:System.Activities.WorkflowInvoker>.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-131">To configure tracking for a workflow executed using <xref:System.Activities.WorkflowInvoker>, add the tracking provider as an extension to a <xref:System.Activities.WorkflowInvoker> instance.</span></span> <span data-ttu-id="c4ceb-132">Následující příklad kódu je z vlastní ukázky [sledování](./samples/custom-tracking.md) .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-132">The following code example is from the [Custom Tracking](./samples/custom-tracking.md) sample.</span></span>
 
 ```csharp
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
@@ -149,49 +146,49 @@ invoker.Extensions.Add(customTrackingParticipant);
 invoker.Invoke();
 ```
 
-### <a name="viewing-tracking-records-in-event-viewer"></a><span data-ttu-id="222c7-133">Zobrazení sledování záznamů v prohlížeči událostí</span><span class="sxs-lookup"><span data-stu-id="222c7-133">Viewing tracking records in Event Viewer</span></span>
+### <a name="viewing-tracking-records-in-event-viewer"></a><span data-ttu-id="c4ceb-133">Zobrazení záznamů sledování v Prohlížeč událostí</span><span class="sxs-lookup"><span data-stu-id="c4ceb-133">Viewing tracking records in Event Viewer</span></span>
 
-<span data-ttu-id="222c7-134">Existují dva protokoly Prohlížeče událostí zajímají hlavně o zobrazení při sledování provádění pracovního postupu - analýzy protokolů a protokolů ladění.</span><span class="sxs-lookup"><span data-stu-id="222c7-134">There are two Event Viewer logs of particular interest to view when tracking WF execution - the Analytic log and the Debug log.</span></span> <span data-ttu-id="222c7-135">Obě nacházet v rámci Microsoft&#124;Windows&#124;uzlu serveru aplikace.</span><span class="sxs-lookup"><span data-stu-id="222c7-135">Both reside under the Microsoft&#124;Windows&#124;Application Server-Applications node.</span></span> <span data-ttu-id="222c7-136">Protokoly v této části obsahují události z jedné aplikace, nikoli události, které mají vliv na celý systém.</span><span class="sxs-lookup"><span data-stu-id="222c7-136">Logs within this section contain events from a single application rather than events that have an impact on the entire system.</span></span>
+<span data-ttu-id="c4ceb-134">Existují dva Prohlížeč událostí protokoly, které se týkají zvláštního zájmu k zobrazení při sledování provádění technologie WF – analytického protokolu a protokolu ladění.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-134">There are two Event Viewer logs of particular interest to view when tracking WF execution - the Analytic log and the Debug log.</span></span> <span data-ttu-id="c4ceb-135">Oba se nacházejí v uzlu aplikace&#124;serveru&#124;Microsoft Windows – aplikace.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-135">Both reside under the Microsoft&#124;Windows&#124;Application Server-Applications node.</span></span> <span data-ttu-id="c4ceb-136">Protokoly v této části obsahují události z jedné aplikace a nikoli události, které mají vliv na celý systém.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-136">Logs within this section contain events from a single application rather than events that have an impact on the entire system.</span></span>
 
-<span data-ttu-id="222c7-137">Ladění trasování, které události se zapisují do protokolů ladění.</span><span class="sxs-lookup"><span data-stu-id="222c7-137">Debug trace events are written to the Debug Log.</span></span> <span data-ttu-id="222c7-138">Shromažďování událostí trasování ladění pracovního postupu v prohlížeči událostí, povolte protokol ladění.</span><span class="sxs-lookup"><span data-stu-id="222c7-138">To collect WF debug trace events in the Event Viewer, enable the Debug Log.</span></span>
+<span data-ttu-id="c4ceb-137">Události trasování ladění se zapisují do protokolu ladění.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-137">Debug trace events are written to the Debug Log.</span></span> <span data-ttu-id="c4ceb-138">Chcete-li shromáždit události trasování ladění WF v Prohlížeč událostí, povolte protokol ladění.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-138">To collect WF debug trace events in the Event Viewer, enable the Debug Log.</span></span>
 
-1. <span data-ttu-id="222c7-139">Chcete-li spustit nástroj Prohlížeč událostí, klikněte na tlačítko **Start**a potom klikněte na tlačítko **spustit.**</span><span class="sxs-lookup"><span data-stu-id="222c7-139">To open Event Viewer, click **Start**, and then click **Run.**</span></span> <span data-ttu-id="222c7-140">V dialogu Spustit zadejte `eventvwr`.</span><span class="sxs-lookup"><span data-stu-id="222c7-140">In the Run dialog, type `eventvwr`.</span></span>
+1. <span data-ttu-id="c4ceb-139">Chcete-li otevřít Prohlížeč událostí, klikněte na tlačítko **Start**a poté klikněte na příkaz **Spustit.**</span><span class="sxs-lookup"><span data-stu-id="c4ceb-139">To open Event Viewer, click **Start**, and then click **Run.**</span></span> <span data-ttu-id="c4ceb-140">V dialogovém okně Spustit zadejte `eventvwr`.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-140">In the Run dialog, type `eventvwr`.</span></span>
 
-2. <span data-ttu-id="222c7-141">V dialogovém okně prohlížeče událostí, rozbalte **protokoly aplikací a služeb** uzlu.</span><span class="sxs-lookup"><span data-stu-id="222c7-141">In the Event Viewer dialog, expand the **Applications and Services Logs** node.</span></span>
+2. <span data-ttu-id="c4ceb-141">V dialogovém okně Prohlížeč událostí rozbalte uzel **protokoly aplikací a služeb** .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-141">In the Event Viewer dialog, expand the **Applications and Services Logs** node.</span></span>
 
-3. <span data-ttu-id="222c7-142">Rozbalte **Microsoft**, **Windows**, a **aplikace Server-** uzly.</span><span class="sxs-lookup"><span data-stu-id="222c7-142">Expand the **Microsoft**, **Windows**, and **Application Server-Applications** nodes.</span></span>
+3. <span data-ttu-id="c4ceb-142">Rozbalte uzly **Microsoft**, **Windows**a **aplikační server – aplikace** .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-142">Expand the **Microsoft**, **Windows**, and **Application Server-Applications** nodes.</span></span>
 
-4. <span data-ttu-id="222c7-143">Klikněte pravým tlačítkem myši **ladění** pod uzlem **Server aplikace** uzel a vyberte možnost **povolit protokol**.</span><span class="sxs-lookup"><span data-stu-id="222c7-143">Right-click the **Debug** node under the **Application Server-Applications** node, and select **Enable Log**.</span></span>
+4. <span data-ttu-id="c4ceb-143">Klikněte pravým tlačítkem myši na uzel **ladění** v uzlu **aplikační server – aplikace** a vyberte **Povolit protokol**.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-143">Right-click the **Debug** node under the **Application Server-Applications** node, and select **Enable Log**.</span></span>
 
-5. <span data-ttu-id="222c7-144">Spusťte vaši aplikaci povoleno trasování generovat události trasování.</span><span class="sxs-lookup"><span data-stu-id="222c7-144">Execute your tracing-enabled application to generate tracing events.</span></span>
+5. <span data-ttu-id="c4ceb-144">Spusťte aplikaci s povoleným trasováním a vygenerujte události trasování.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-144">Execute your tracing-enabled application to generate tracing events.</span></span>
 
-6. <span data-ttu-id="222c7-145">Klikněte pravým tlačítkem myši **ladění** uzel a vyberte možnost **aktualizovat.**</span><span class="sxs-lookup"><span data-stu-id="222c7-145">Right-click the **Debug** node and select **Refresh.**</span></span> <span data-ttu-id="222c7-146">Trasování událostí by se zobrazovat v prostředním podokně.</span><span class="sxs-lookup"><span data-stu-id="222c7-146">Tracing events should be visible in the center pane.</span></span>
+6. <span data-ttu-id="c4ceb-145">Klikněte pravým tlačítkem na uzel **ladění** a vyberte **aktualizovat.**</span><span class="sxs-lookup"><span data-stu-id="c4ceb-145">Right-click the **Debug** node and select **Refresh.**</span></span> <span data-ttu-id="c4ceb-146">Události trasování by měly být viditelné v prostředním podokně.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-146">Tracing events should be visible in the center pane.</span></span>
 
-<span data-ttu-id="222c7-147">WF 4 poskytuje sledování účastník, který zapíše záznamy sledování k relaci ETW (událost trasování pro Windows).</span><span class="sxs-lookup"><span data-stu-id="222c7-147">WF 4 provides a tracking participant that writes tracking records to an ETW (Event Tracing for Windows) session.</span></span> <span data-ttu-id="222c7-148">Účastník sledování ETW konfigurován pomocí sledování profil přihlásit k odběru sledování záznamů.</span><span class="sxs-lookup"><span data-stu-id="222c7-148">The ETW tracking participant is configured with a tracking profile to subscribe to tracking records.</span></span> <span data-ttu-id="222c7-149">Pokud je povoleno sledování, chyby sledování záznamů je vygenerován pro trasování událostí pro Windows.</span><span class="sxs-lookup"><span data-stu-id="222c7-149">When tracking is enabled, errors tracking records are emitted to ETW.</span></span> <span data-ttu-id="222c7-150">Trasování událostí pro Windows Sledování událostí (v rozsahu 100 113) od odpovídající, protože ho vygeneroval účastník sledování ETW sledování události se zapisují do v analytickém protokolu.</span><span class="sxs-lookup"><span data-stu-id="222c7-150">ETW tracking events (between the range of 100-113) corresponding to the tracking events emitted by the ETW tracking participant are written to the Analytic Log.</span></span>
+<span data-ttu-id="c4ceb-147">WF 4 poskytuje účastníkovi sledování, který zapisuje záznamy sledování do relace ETW (trasování událostí pro Windows).</span><span class="sxs-lookup"><span data-stu-id="c4ceb-147">WF 4 provides a tracking participant that writes tracking records to an ETW (Event Tracing for Windows) session.</span></span> <span data-ttu-id="c4ceb-148">Účastník sledování ETW je nakonfigurovaný s profilem sledování, aby se mohl přihlásit k odběru sledování záznamů.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-148">The ETW tracking participant is configured with a tracking profile to subscribe to tracking records.</span></span> <span data-ttu-id="c4ceb-149">Pokud je povoleno sledování, jsou záznamy sledování chyb generovány do ETW.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-149">When tracking is enabled, errors tracking records are emitted to ETW.</span></span> <span data-ttu-id="c4ceb-150">Události sledování ETW (mezi rozsahem 100-113) odpovídající sledovacím událostem vygenerovaným účastníkem sledování ETW jsou zapisovány do analytického protokolu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-150">ETW tracking events (between the range of 100-113) corresponding to the tracking events emitted by the ETW tracking participant are written to the Analytic Log.</span></span>
 
-<span data-ttu-id="222c7-151">Chcete-li zobrazit záznamy sledování, postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="222c7-151">To view tracking records, follow these steps.</span></span>
+<span data-ttu-id="c4ceb-151">Chcete-li zobrazit záznamy sledování, postupujte podle těchto kroků.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-151">To view tracking records, follow these steps.</span></span>
 
-1. <span data-ttu-id="222c7-152">Chcete-li spustit nástroj Prohlížeč událostí, klikněte na tlačítko **Start**a potom klikněte na tlačítko **spustit.**</span><span class="sxs-lookup"><span data-stu-id="222c7-152">To open Event Viewer, click **Start**, and then click **Run.**</span></span> <span data-ttu-id="222c7-153">V dialogu Spustit zadejte `eventvwr`.</span><span class="sxs-lookup"><span data-stu-id="222c7-153">In the Run dialog, type `eventvwr`.</span></span>
+1. <span data-ttu-id="c4ceb-152">Chcete-li otevřít Prohlížeč událostí, klikněte na tlačítko **Start**a poté klikněte na příkaz **Spustit.**</span><span class="sxs-lookup"><span data-stu-id="c4ceb-152">To open Event Viewer, click **Start**, and then click **Run.**</span></span> <span data-ttu-id="c4ceb-153">V dialogovém okně Spustit zadejte `eventvwr`.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-153">In the Run dialog, type `eventvwr`.</span></span>
 
-2. <span data-ttu-id="222c7-154">V dialogovém okně prohlížeče událostí, rozbalte **protokoly aplikací a služeb** uzlu.</span><span class="sxs-lookup"><span data-stu-id="222c7-154">In the Event Viewer dialog, expand the **Applications and Services Logs** node.</span></span>
+2. <span data-ttu-id="c4ceb-154">V dialogovém okně Prohlížeč událostí rozbalte uzel **protokoly aplikací a služeb** .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-154">In the Event Viewer dialog, expand the **Applications and Services Logs** node.</span></span>
 
-3. <span data-ttu-id="222c7-155">Rozbalte **Microsoft**, **Windows**, a **aplikace Server-** uzly.</span><span class="sxs-lookup"><span data-stu-id="222c7-155">Expand the **Microsoft**, **Windows**, and **Application Server-Applications** nodes.</span></span>
+3. <span data-ttu-id="c4ceb-155">Rozbalte uzly **Microsoft**, **Windows**a **aplikační server – aplikace** .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-155">Expand the **Microsoft**, **Windows**, and **Application Server-Applications** nodes.</span></span>
 
-4. <span data-ttu-id="222c7-156">Klikněte pravým tlačítkem myši **analytické** pod uzlem **Server aplikace** uzel a vyberte možnost **povolit protokol**.</span><span class="sxs-lookup"><span data-stu-id="222c7-156">Right-click the **Analytic** node under the **Application Server-Applications** node, and select **Enable Log**.</span></span>
+4. <span data-ttu-id="c4ceb-156">Klikněte pravým tlačítkem myši **na uzel Analytics v uzlu** **aplikační server – aplikace** a vyberte možnost **Povolit protokol**.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-156">Right-click the **Analytic** node under the **Application Server-Applications** node, and select **Enable Log**.</span></span>
 
-5. <span data-ttu-id="222c7-157">Spuštění vaší aplikace s povolenými sledování k vygenerování záznamů sledování.</span><span class="sxs-lookup"><span data-stu-id="222c7-157">Execute your tracking-enabled application to generate tracking records.</span></span>
+5. <span data-ttu-id="c4ceb-157">Spusťte aplikaci s povoleným sledováním pro generování záznamů sledování.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-157">Execute your tracking-enabled application to generate tracking records.</span></span>
 
-6. <span data-ttu-id="222c7-158">Klikněte pravým tlačítkem myši **analytické** uzel a vyberte možnost **aktualizovat.**</span><span class="sxs-lookup"><span data-stu-id="222c7-158">Right-click the **Analytic** node and select **Refresh.**</span></span> <span data-ttu-id="222c7-159">Sledování záznamů by se zobrazovat v prostředním podokně.</span><span class="sxs-lookup"><span data-stu-id="222c7-159">Tracking records should be visible in the center pane.</span></span>
+6. <span data-ttu-id="c4ceb-158">Klikněte pravým tlačítkem **na uzel analýzy** a vyberte **aktualizovat.**</span><span class="sxs-lookup"><span data-stu-id="c4ceb-158">Right-click the **Analytic** node and select **Refresh.**</span></span> <span data-ttu-id="c4ceb-159">Záznamy sledování by se měly zobrazit v prostředním podokně.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-159">Tracking records should be visible in the center pane.</span></span>
 
-<span data-ttu-id="222c7-160">Sledování událostí v prohlížeči událostí na následujícím obrázku:</span><span class="sxs-lookup"><span data-stu-id="222c7-160">The following image shows tracking events in the event viewer:</span></span>
+<span data-ttu-id="c4ceb-160">Následující obrázek ukazuje sledování událostí v prohlížeči událostí:</span><span class="sxs-lookup"><span data-stu-id="c4ceb-160">The following image shows tracking events in the event viewer:</span></span>
 
-![Snímek obrazovky znázorňující Prohlížeč událostí sledování záznamů.](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
+![Snímek obrazovky Prohlížeč událostí zobrazující záznamy o sledování](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
 
-### <a name="registering-an-application-specific-provider-id"></a><span data-ttu-id="222c7-162">Registrace poskytovatele specifické pro aplikaci ID</span><span class="sxs-lookup"><span data-stu-id="222c7-162">Registering an application-specific provider ID</span></span>
+### <a name="registering-an-application-specific-provider-id"></a><span data-ttu-id="c4ceb-162">Registrace ID zprostředkovatele specifického pro aplikaci</span><span class="sxs-lookup"><span data-stu-id="c4ceb-162">Registering an application-specific provider ID</span></span>
 
-<span data-ttu-id="222c7-163">Pokud události se zapisují do protokolu konkrétní aplikaci, použijte následující postup zaregistrovat nový manifest zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="222c7-163">If events need to be written to a specific application log, follow these steps to register the new provider manifest.</span></span>
+<span data-ttu-id="c4ceb-163">Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte následující postup k registraci nového manifestu poskytovatele.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-163">If events need to be written to a specific application log, follow these steps to register the new provider manifest.</span></span>
 
-1. <span data-ttu-id="222c7-164">Deklarujte ID zprostředkovatele v konfiguračním souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="222c7-164">Declare the provider ID in the application configuration file.</span></span>
+1. <span data-ttu-id="c4ceb-164">Deklarujete ID zprostředkovatele v konfiguračním souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-164">Declare the provider ID in the application configuration file.</span></span>
 
     ```xml
     <system.serviceModel>
@@ -199,21 +196,21 @@ invoker.Invoke();
     </system.serviceModel>
     ```
 
-2. <span data-ttu-id="222c7-165">Zkopírujte soubor manifestu z %windir%\Microsoft.NET\Framework\\\<nejnovější verzi [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man do dočasného umístění a přejmenujte ho na Microsoft.Windows.ApplicationServer.Applications_Provider1.man</span><span class="sxs-lookup"><span data-stu-id="222c7-165">Copy the manifest file from %windir%\Microsoft.NET\Framework\\\<latest version of [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]>\Microsoft.Windows.ApplicationServer.Applications.man to a temporary location, and rename it to Microsoft.Windows.ApplicationServer.Applications_Provider1.man</span></span>
+2. <span data-ttu-id="c4ceb-165">Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework @ no__t-0 @ no__t-1latest verze [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] > \Microsoft.Windows.ApplicationServer.Applications.man do dočasného umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man</span><span class="sxs-lookup"><span data-stu-id="c4ceb-165">Copy the manifest file from %windir%\Microsoft.NET\Framework\\\<latest version of [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]>\Microsoft.Windows.ApplicationServer.Applications.man to a temporary location, and rename it to Microsoft.Windows.ApplicationServer.Applications_Provider1.man</span></span>
 
-3. <span data-ttu-id="222c7-166">Změňte na nové GUID identifikátoru GUID v souboru manifestu.</span><span class="sxs-lookup"><span data-stu-id="222c7-166">Change the GUID in the manifest file to the new GUID.</span></span>
-
-    ```xml
-    <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"
-    ```
-
-4. <span data-ttu-id="222c7-167">Pokud nechcete odinstalovat výchozího zprostředkovatele, změňte název zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="222c7-167">Change the provider name if you do not want to uninstall the default provider.</span></span>
+3. <span data-ttu-id="c4ceb-166">Změňte identifikátor GUID v souboru manifestu na nový identifikátor GUID.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-166">Change the GUID in the manifest file to the new GUID.</span></span>
 
     ```xml
     <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"
     ```
 
-5. <span data-ttu-id="222c7-168">Pokud jste změnili název zprostředkovatele v předchozím kroku, změňte názvy kanálů v souboru manifestu na nový název poskytovatele.</span><span class="sxs-lookup"><span data-stu-id="222c7-168">If you changed the provider name in the previous step, change the channel names in the manifest file to the new provider name.</span></span>
+4. <span data-ttu-id="c4ceb-167">Pokud nechcete odinstalovat výchozího zprostředkovatele, změňte název zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-167">Change the provider name if you do not want to uninstall the default provider.</span></span>
+
+    ```xml
+    <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"
+    ```
+
+5. <span data-ttu-id="c4ceb-168">Pokud jste v předchozím kroku změnili název poskytovatele, změňte názvy kanálů v souboru manifestu na název nového poskytovatele.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-168">If you changed the provider name in the previous step, change the channel names in the manifest file to the new provider name.</span></span>
 
     ```xml
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Admin" chid="ADMIN_CHANNEL" symbol="ADMIN_CHANNEL" type="Admin" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ADMIN_CHANNEL.message)" />
@@ -223,43 +220,43 @@ invoker.Invoke();
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Perf" chid="PERF_CHANNEL" symbol="PERF_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.PERF_CHANNEL.message)" />
     ```
 
-6. <span data-ttu-id="222c7-169">Vygenerujte prostředek knihovny DLL pomocí následujících kroků.</span><span class="sxs-lookup"><span data-stu-id="222c7-169">Generate the resource DLL by following these steps.</span></span>
+6. <span data-ttu-id="c4ceb-169">Vygenerujte DLL prostředku pomocí následujících kroků.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-169">Generate the resource DLL by following these steps.</span></span>
 
-    1. <span data-ttu-id="222c7-170">Nainstalujte Windows SDK.</span><span class="sxs-lookup"><span data-stu-id="222c7-170">Install the Windows SDK.</span></span> <span data-ttu-id="222c7-171">Sada Windows SDK obsahuje kompilátor zprávy ([mc.exe](https://go.microsoft.com/fwlink/?LinkId=184606)) a kompilátor prostředků ([rc.exe](https://go.microsoft.com/fwlink/?LinkId=184605)).</span><span class="sxs-lookup"><span data-stu-id="222c7-171">The Windows SDK includes the message compiler ([mc.exe](https://go.microsoft.com/fwlink/?LinkId=184606)) and resource compiler ([rc.exe](https://go.microsoft.com/fwlink/?LinkId=184605)).</span></span>
+    1. <span data-ttu-id="c4ceb-170">Nainstalujte Windows SDK.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-170">Install the Windows SDK.</span></span> <span data-ttu-id="c4ceb-171">Windows SDK obsahuje kompilátor zpráv ([MC. exe](https://go.microsoft.com/fwlink/?LinkId=184606)) a kompilátor prostředků ([RC. exe](https://go.microsoft.com/fwlink/?LinkId=184605)).</span><span class="sxs-lookup"><span data-stu-id="c4ceb-171">The Windows SDK includes the message compiler ([mc.exe](https://go.microsoft.com/fwlink/?LinkId=184606)) and resource compiler ([rc.exe](https://go.microsoft.com/fwlink/?LinkId=184605)).</span></span>
 
-    2. <span data-ttu-id="222c7-172">V příkazovém řádku Windows SDK spusťte mc.exe na nový soubor manifestu.</span><span class="sxs-lookup"><span data-stu-id="222c7-172">In a Windows SDK command prompt, run mc.exe on the new manifest file.</span></span>
+    2. <span data-ttu-id="c4ceb-172">Na příkazovém řádku Windows SDK spusťte příkaz MC. exe na novém souboru manifestu.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-172">In a Windows SDK command prompt, run mc.exe on the new manifest file.</span></span>
 
         ```console
         mc.exe Microsoft.Windows.ApplicationServer.Applications_Provider1.man
         ```
 
-    3. <span data-ttu-id="222c7-173">Spusťte rc.exe na soubor prostředků vygenerované v předchozím kroku.</span><span class="sxs-lookup"><span data-stu-id="222c7-173">Run rc.exe on the resource file generated in the previous step.</span></span>
+    3. <span data-ttu-id="c4ceb-173">Spusťte RC. exe v souboru prostředků vygenerovaném v předchozím kroku.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-173">Run rc.exe on the resource file generated in the previous step.</span></span>
 
         ```console
         rc.exe  Microsoft.Windows.ApplicationServer.Applications_Provider1.rc
         ```
 
-    4. <span data-ttu-id="222c7-174">Vytvořte soubor prázdný cs názvem NewProviderReg.cs.</span><span class="sxs-lookup"><span data-stu-id="222c7-174">Create an empty cs file called NewProviderReg.cs.</span></span>
+    4. <span data-ttu-id="c4ceb-174">Vytvořte prázdný soubor cs s názvem NewProviderReg.cs.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-174">Create an empty cs file called NewProviderReg.cs.</span></span>
 
-    5. <span data-ttu-id="222c7-175">Vytvořte prostředek knihovny DLL pomocí kompilátoru jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="222c7-175">Create a resource DLL using the C# compiler.</span></span>
+    5. <span data-ttu-id="c4ceb-175">Vytvořte DLL prostředku pomocí C# kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-175">Create a resource DLL using the C# compiler.</span></span>
 
         ```console
         csc /target:library /win32res:Microsoft.Windows.ApplicationServer.Applications_Provider1.res NewProviderReg.cs /out:Microsoft.Windows.ApplicationServer.Applications_Provider1.dll
         ```
 
-    6. <span data-ttu-id="222c7-176">Změnit název knihovny dll prostředků a zprávy v souboru manifestu z `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` na nový název knihovny dll.</span><span class="sxs-lookup"><span data-stu-id="222c7-176">Change the resource and message dll name in the manifest file from `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` to the new dll name.</span></span>
+    6. <span data-ttu-id="c4ceb-176">Změňte název knihovny DLL prostředku a zprávy v souboru manifestu z `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` na nový název knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="c4ceb-176">Change the resource and message dll name in the manifest file from `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` to the new dll name.</span></span>
 
         ```xml
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">
         ```
 
-    7. <span data-ttu-id="222c7-177">Použití [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) k registraci manifestu.</span><span class="sxs-lookup"><span data-stu-id="222c7-177">Use [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) to register the manifest.</span></span>
+    7. <span data-ttu-id="c4ceb-177">K registraci manifestu použijte [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) .</span><span class="sxs-lookup"><span data-stu-id="c4ceb-177">Use [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) to register the manifest.</span></span>
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
         ```
 
-## <a name="see-also"></a><span data-ttu-id="222c7-178">Viz také:</span><span class="sxs-lookup"><span data-stu-id="222c7-178">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4ceb-178">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4ceb-178">See also</span></span>
 
-- [<span data-ttu-id="222c7-179">Windows Server App Fabric monitorování</span><span class="sxs-lookup"><span data-stu-id="222c7-179">Windows Server App Fabric Monitoring</span></span>](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [<span data-ttu-id="222c7-180">Monitorování aplikací pomocí App Fabric</span><span class="sxs-lookup"><span data-stu-id="222c7-180">Monitoring Applications with App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [<span data-ttu-id="c4ceb-179">Monitorování Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="c4ceb-179">Windows Server App Fabric Monitoring</span></span>](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [<span data-ttu-id="c4ceb-180">Monitorování aplikací pomocí prostředků infrastruktury aplikace</span><span class="sxs-lookup"><span data-stu-id="c4ceb-180">Monitoring Applications with App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkId=201275)

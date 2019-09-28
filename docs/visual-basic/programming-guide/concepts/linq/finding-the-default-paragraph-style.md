@@ -1,27 +1,27 @@
 ---
-title: Vyhledání výchozího stylu odstavce (Visual Basic)
+title: Hledání výchozího stylu odstavce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9d094a4a-ec8c-41b0-b7ab-a3deb2a01d45
-ms.openlocfilehash: f874033b9a070b951d27f37aae36f738ab1fd222
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6754c48148e81b02eb8c63843b57bc3d28a5774a
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618378"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71352896"
 ---
-# <a name="finding-the-default-paragraph-style-visual-basic"></a><span data-ttu-id="a3946-102">Vyhledání výchozího stylu odstavce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3946-102">Finding the Default Paragraph Style (Visual Basic)</span></span>
-<span data-ttu-id="a3946-103">První úkol v manipulaci s informace v dokumentu WordprocessingML kurzu je vyhledání výchozího stylu odstavce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="a3946-103">The first task in the Manipulating Information in a WordprocessingML Document tutorial is to find the default style of paragraphs in the document.</span></span>  
+# <a name="finding-the-default-paragraph-style-visual-basic"></a><span data-ttu-id="7d02d-102">Hledání výchozího stylu odstavce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d02d-102">Finding the Default Paragraph Style (Visual Basic)</span></span>
+<span data-ttu-id="7d02d-103">Prvním úkolem při manipulaci s informacemi v WordprocessingML dokumentu je najít výchozí styl odstavců v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="7d02d-103">The first task in the Manipulating Information in a WordprocessingML Document tutorial is to find the default style of paragraphs in the document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a3946-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="a3946-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="7d02d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="7d02d-104">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="a3946-105">Popis</span><span class="sxs-lookup"><span data-stu-id="a3946-105">Description</span></span>  
- <span data-ttu-id="a3946-106">Následující příklad otevře dokumentu Office Open XML WordprocessingML, najde dokument a styl součástí balíčku a pak provede dotaz, který vyhledá výchozí název stylu.</span><span class="sxs-lookup"><span data-stu-id="a3946-106">The following example opens an Office Open XML WordprocessingML document, finds the document and style parts of the package, and then executes a query that finds the default style name.</span></span> <span data-ttu-id="a3946-107">Informace o balíčcích dokumentu Office Open XML a skládají se z části najdete v tématu [podrobnosti z Office Open XML WordprocessingML dokumentů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span><span class="sxs-lookup"><span data-stu-id="a3946-107">For information about Office Open XML document packages, and the parts they consist of, see [Details of Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span></span>  
+### <a name="description"></a><span data-ttu-id="7d02d-105">Popis</span><span class="sxs-lookup"><span data-stu-id="7d02d-105">Description</span></span>  
+ <span data-ttu-id="7d02d-106">Následující příklad otevře dokument Office Open XML WordprocessingML, vyhledá části dokumentu a stylu a potom spustí dotaz, který najde výchozí název stylu.</span><span class="sxs-lookup"><span data-stu-id="7d02d-106">The following example opens an Office Open XML WordprocessingML document, finds the document and style parts of the package, and then executes a query that finds the default style name.</span></span> <span data-ttu-id="7d02d-107">Informace o balíčcích dokumentů Office Open XML a částech, ze kterých se skládají, najdete v tématu [Podrobnosti o dokumentech Office Open XML WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span><span class="sxs-lookup"><span data-stu-id="7d02d-107">For information about Office Open XML document packages, and the parts they consist of, see [Details of Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md).</span></span>  
   
- <span data-ttu-id="a3946-108">Tento dotaz najde uzel s názvem `w:style` , který má atribut s názvem `w:type` s hodnotou "odstavec", a také atribut s názvem `w:default` s hodnotou "1".</span><span class="sxs-lookup"><span data-stu-id="a3946-108">The query finds a node named `w:style` that has an attribute named `w:type` with a value of "paragraph", and also has an attribute named `w:default` with a value of "1".</span></span> <span data-ttu-id="a3946-109">Vzhledem k tomu, že bude existovat jenom jeden uzel XML s těmito atributy, pomocí dotazu <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operátor k převodu kolekce na jednotlivý prvek.</span><span class="sxs-lookup"><span data-stu-id="a3946-109">Because there will be only one XML node with these attributes, the query uses the <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operator to convert a collection to a singleton.</span></span> <span data-ttu-id="a3946-110">Potom získá hodnotu atributu s názvem `w:styleId`.</span><span class="sxs-lookup"><span data-stu-id="a3946-110">It then gets the value of the attribute with the name `w:styleId`.</span></span>  
+ <span data-ttu-id="7d02d-108">Dotaz vyhledá uzel s názvem `w:style`, který má atribut s názvem `w:type` s hodnotou "Paragraph", a má také atribut s názvem `w:default` s hodnotou "1".</span><span class="sxs-lookup"><span data-stu-id="7d02d-108">The query finds a node named `w:style` that has an attribute named `w:type` with a value of "paragraph", and also has an attribute named `w:default` with a value of "1".</span></span> <span data-ttu-id="7d02d-109">Vzhledem k tomu, že bude existovat pouze jeden uzel XML s těmito atributy, dotaz použije operátor <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> k převedení kolekce na typ singleton.</span><span class="sxs-lookup"><span data-stu-id="7d02d-109">Because there will be only one XML node with these attributes, the query uses the <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType> operator to convert a collection to a singleton.</span></span> <span data-ttu-id="7d02d-110">Pak získá hodnotu atributu s názvem `w:styleId`.</span><span class="sxs-lookup"><span data-stu-id="7d02d-110">It then gets the value of the attribute with the name `w:styleId`.</span></span>  
   
- <span data-ttu-id="a3946-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="a3946-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="a3946-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="a3946-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="7d02d-111">Tento příklad používá třídy ze sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="7d02d-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="7d02d-112">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="7d02d-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="a3946-113">Kód</span><span class="sxs-lookup"><span data-stu-id="a3946-113">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="7d02d-113">Kód</span><span class="sxs-lookup"><span data-stu-id="7d02d-113">Code</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -79,18 +79,18 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="a3946-114">Komentáře</span><span class="sxs-lookup"><span data-stu-id="a3946-114">Comments</span></span>  
- <span data-ttu-id="a3946-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a3946-115">This example produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="7d02d-114">Komentáře</span><span class="sxs-lookup"><span data-stu-id="7d02d-114">Comments</span></span>  
+ <span data-ttu-id="7d02d-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7d02d-115">This example produces the following output:</span></span>  
   
-```  
+```console  
 The default style is: Normal  
 ```  
   
-## <a name="next-steps"></a><span data-ttu-id="a3946-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="a3946-116">Next Steps</span></span>  
- <span data-ttu-id="a3946-117">V následujícím příkladu vytvoříte podobně jako dotaz, který najde všechny odstavce v dokumentu a jejich stylů:</span><span class="sxs-lookup"><span data-stu-id="a3946-117">In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="7d02d-116">Další kroky</span><span class="sxs-lookup"><span data-stu-id="7d02d-116">Next Steps</span></span>  
+ <span data-ttu-id="7d02d-117">V dalším příkladu vytvoříte podobný dotaz, který najde všechny odstavce v dokumentu a jejich styly:</span><span class="sxs-lookup"><span data-stu-id="7d02d-117">In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:</span></span>  
   
-- [<span data-ttu-id="a3946-118">Načtení odstavců a jejich stylů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3946-118">Retrieving the Paragraphs and Their Styles (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+- [<span data-ttu-id="7d02d-118">Načítání odstavců a jejich stylů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d02d-118">Retrieving the Paragraphs and Their Styles (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
-## <a name="see-also"></a><span data-ttu-id="a3946-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a3946-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7d02d-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d02d-119">See also</span></span>
 
-- [<span data-ttu-id="a3946-120">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3946-120">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="7d02d-120">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic) </span><span class="sxs-lookup"><span data-stu-id="7d02d-120">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
