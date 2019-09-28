@@ -2,26 +2,26 @@
 title: A-E – příkazy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
-ms.openlocfilehash: 4135f7154a73823400d8b1698421e138650d4854
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfe28b28f197759bb2620d12d550a057d47f4d74
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054338"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591990"
 ---
 # <a name="a-e-statements"></a>A-E – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  
   
 |||||  
 |---|---|---|---|  
-|[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[Volání](../../../visual-basic/language-reference/statements/call-statement.md)|[Třída](../../../visual-basic/language-reference/statements/class-statement.md)|[Const](../../../visual-basic/language-reference/statements/const-statement.md)|  
-|[Continue](../../../visual-basic/language-reference/statements/continue-statement.md)|[Deklarace](../../../visual-basic/language-reference/statements/declare-statement.md)|[Delegát](../../../visual-basic/language-reference/statements/delegate-statement.md)|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md)|  
-|[Proveďte... Smyčka](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[else](../../../visual-basic/language-reference/statements/else-statement.md)|[ukončení](../../../visual-basic/language-reference/statements/end-statement.md)|[End \<keyword>](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|  
-|[Výčet](../../../visual-basic/language-reference/statements/enum-statement.md)|[vymazání](../../../visual-basic/language-reference/statements/erase-statement.md)|[Chyba](../../../visual-basic/language-reference/statements/error-statement.md)|[Event](../../../visual-basic/language-reference/statements/event-statement.md)|  
-|[ukončení](../../../visual-basic/language-reference/statements/exit-statement.md)||||  
+|[AddHandler](addhandler-statement.md)|[Volání](call-statement.md)|[Třída](class-statement.md)|[MX](const-statement.md)|  
+|[Continue](continue-statement.md)|[Deklaroval](declare-statement.md)|[Delegát](delegate-statement.md)|[Dimenzí](dim-statement.md)|  
+|[Do... Procházet](do-loop-statement.md)|[Ostatních](else-statement.md)|[ukončení](end-statement.md)|[End @no__t – 1keyword >](end-keyword-statement.md)|  
+|[Vytváření](enum-statement.md)|[Ověřování](erase-statement.md)|[Chyba](error-statement.md)|[Event](event-statement.md)|  
+|[Akci](exit-statement.md)||||  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkazy F–P](../../../visual-basic/language-reference/statements/f-p-statements.md)
-- [Příkazy Q–Z](../../../visual-basic/language-reference/statements/q-z-statements.md)
-- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)
+- [Příkazy F–P](f-p-statements.md)
+- [Příkazy Q–Z](q-z-statements.md)
+- [Referenční příručka jazyka Visual Basic](../index.md)

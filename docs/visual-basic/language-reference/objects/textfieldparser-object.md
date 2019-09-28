@@ -6,30 +6,30 @@ helpviewer_keywords:
 - TextFieldParser class, aboutTextFieldParser class
 - TextFieldParser class
 ms.assetid: d44bd2b0-7dfc-410b-a48b-534c1e97460b
-ms.openlocfilehash: da5f9058efcbd70c5c76bb1307c126a14861ffc7
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: cac32cd67eb7b6babdf5dab3cb2429c2b8b48ae6
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041774"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592127"
 ---
 # <a name="textfieldparser-object"></a>TextFieldParser – objekt
-Poskytuje metody a vlastnosti pro analýza strukturovaných textových souborů.  
+Poskytuje metody a vlastnosti pro analýzu strukturovaných textových souborů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Public Class TextFieldParser  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o tom, metody a vlastnosti `TextFieldParser` objektu, najdete v článku <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.  
+ Informace o metodách a vlastnostech objektu @no__t 0 naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.  
   
  Další informace najdete v tématu [čtení ze souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.FileIO>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.FileIO>  
   
  **Třída:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>  
   
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)
+ **Shromážděním** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)

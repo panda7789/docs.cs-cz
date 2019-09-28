@@ -1,21 +1,23 @@
 ---
 title: Co je ML.NET a jak to funguje?
 description: ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti, aby používala ML.NET. Tento článek vysvětluje základy strojového učení v ML.NET.
-ms.date: 08/26/2019
+ms.date: 09/27/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: d49a4bdfec133fe805bc9d534e04edf2f9ca5726
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1ae6b82ada841ad172cbe6a59b667aaaf619e714
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929402"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592051"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Co je ML.NET a jak to funguje?
 
-ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti. Tento článek vysvětluje základy strojového učení v ML.NET. 
+ML.NET poskytuje možnost Přidat strojové učení do aplikací .NET v online nebo offline scénáři. Díky této funkci můžete automaticky předpovědi používat data dostupná pro vaši aplikaci, aniž by bylo nutné je připojit k síti. Tento článek vysvětluje základy strojového učení v ML.NET.
+
+ML.NET běží na Windows, Linux a macOS pomocí .NET Core nebo Windows pomocí .NET Framework. bit 64 se podporuje na všech platformách. ve Windows se podporuje bit 32, s výjimkou funkcí souvisejících s TensorFlow, LightGBM a ONNX.
 
 Příklady typů předpovědi, které můžete provést pomocí ML.NET, zahrnují:
 
@@ -99,7 +101,7 @@ Pojďme se do těchto konceptů dig trochu hlubší.
 
 Model ML.NET je objekt, který obsahuje transformace, které se mají provést na vašich vstupních datech, aby bylo možné dorazit na předpokládaný výstup.
 
-### <a name="basic"></a>Základní
+### <a name="basic"></a>Basic
 
 Nejzákladnější model je dvourozměrná lineární regrese, kde jedno průběžné množství je úměrné jinému, jako v příkladu ceny za domu. 
 

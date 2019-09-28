@@ -16,19 +16,19 @@ helpviewer_keywords:
 - / operator [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 335e97f2-c434-439e-9064-76973a051101
-ms.openlocfilehash: d30d871d48bc87e050a072cd01a38065be20616c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 238c062b2dd0744ba96cf9ba8591c0ef39f81bb3
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933263"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592185"
 ---
 # <a name="-operator-visual-basic"></a>/ – operátor (Visual Basic)
 Vydělí dvě čísla a vrátí výsledek s plovoucí desetinnou čárkou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 expression1 / expression2  
 ```  
   
@@ -43,7 +43,7 @@ expression1 / expression2
  Všechny číselné typy, včetně typů unsigned a float-Point a `Decimal`.  
   
 ## <a name="result"></a>Výsledek  
- Výsledkem je celý podíl `expression1` dělený hodnotou `expression2`, včetně všech zbytků.  
+ Výsledkem je celý podíl `expression1` dělený `expression2`, včetně všech zbytků.  
   
  [Operátor \ (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí celočíselný podíl, který zbytek zruší.  
   
@@ -57,28 +57,28 @@ expression1 / expression2
 |Jeden výraz je datový typ [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md) a druhý není typu [Single](../../../visual-basic/language-reference/data-types/single-data-type.md) nebo [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) .|`Decimal`|  
 |Jeden z výrazů je datový typ [Double](../../../visual-basic/language-reference/data-types/double-data-type.md) .|`Double`|  
   
- Před provedením dělení se rozšíří všechny celočíselné číselné výrazy na `Double`. Pokud přiřadíte výsledek celočíselnému datovému typu, Visual Basic se pokusí převést výsledek z `Double` na tento typ. To může vyvolat výjimku, pokud výsledek se nevejde do tohoto typu. Konkrétně naleznete na této stránce s touto stránkou "pokusy o dělení nulou".  
+ Před provedením dělení se všechny celočíselné číselné výrazy rozšíří na `Double`. Pokud přiřadíte výsledek celočíselnému datovému typu, Visual Basic se pokusí převést výsledek z `Double` na tento typ. To může vyvolat výjimku, pokud výsledek se nevejde do tohoto typu. Konkrétně naleznete na této stránce s touto stránkou "pokusy o dělení nulou".  
   
  Pokud `expression1` je `expression2` nebo se vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), bude se zacházet jako nula.  
   
 ## <a name="attempted-division-by-zero"></a>Došlo k pokusu o dělení nulou.  
- Pokud `expression2` je hodnota vyhodnocena jako `/` nula, operátor se chová jinak pro různé datové typy operandů. V následující tabulce je uvedeno možné chování.  
+ Pokud je hodnota `expression2` vyhodnocena jako nula, operátor `/` se chová jinak pro různé datové typy operandů. V následující tabulce je uvedeno možné chování.  
   
-|Datové typy operandů|Chování, `expression2` Pokud je nula|  
+|Datové typy operandů|Chování, pokud je `expression2` nula|  
 |------------------------|---------------------------------------|  
-|Plovoucí desetinná čárka `Double`(`Single` nebo)|Vrátí nekonečno <xref:System.Double.NegativeInfinity>(<xref:System.Double.PositiveInfinity> nebo) <xref:System.Double.NaN> , nebo (není číslo) `expression1` , pokud je také nula.|  
-|`Decimal`|Vyvolá<xref:System.DivideByZeroException>|  
-|Celočíselný (podepsaný nebo nepodepsaný)|Pokus o převod zpět na celočíselný typ <xref:System.OverflowException> se vyvolá, protože integrální <xref:System.Double.PositiveInfinity>typy <xref:System.Double.NegativeInfinity>nemůžou přijmout, nebo.<xref:System.Double.NaN>|  
+|Plovoucí desetinná čárka (`Single` nebo `Double`)|Vrátí nekonečno (<xref:System.Double.PositiveInfinity> nebo <xref:System.Double.NegativeInfinity>) nebo <xref:System.Double.NaN> (nejedná se o číslo), pokud `expression1` je také nula.|  
+|`Decimal`|Vyvolá <xref:System.DivideByZeroException>|  
+|Celočíselný (podepsaný nebo nepodepsaný)|Pokus o převod zpět na celočíselný typ vyvolá <xref:System.OverflowException>, protože integrální typy nemůžou přijmout <xref:System.Double.PositiveInfinity>, <xref:System.Double.NegativeInfinity> nebo <xref:System.Double.NaN>.|  
   
 > [!NOTE]
-> Operátor může být přetížen, což znamená, že třída nebo struktura může předefinovat své chování, pokud má operand typ této třídy nebo struktury. `/` Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `/` lze přetížit, což znamená, že třída nebo struktura může předefinovat *chování, pokud*operand má typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se `/` používá operátor k provádění dělení s plovoucí desetinnou čárkou. Výsledkem je podíl dvou operandů.  
+ V tomto příkladu se používá operátor `/` k provedení dělení s plovoucí desetinnou čárkou. Výsledkem je podíl dvou operandů.  
   
  [!code-vb[VbVbalrOperators#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#16)]  
   
- Výrazy v předchozím příkladu vrací hodnoty 2,5 a 3,333333. Všimněte si, že výsledek je vždy plovoucí desetinná`Double`čárka (), i když oba operandy jsou celočíselné konstanty.  
+ Výrazy v předchozím příkladu vrací hodnoty 2,5 a 3,333333. Všimněte si, že výsledek je vždy plovoucí desetinná čárka (`Double`), i když oba operandy jsou celočíselné konstanty.  
   
 ## <a name="see-also"></a>Viz také:
 

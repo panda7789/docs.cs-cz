@@ -1,15 +1,15 @@
 ---
 title: Předpoklady pro .NET Core v systému Linux
 description: Podporované verze systému Linux a závislosti rozhraní .NET Core pro vývoj, nasazování a spouštění aplikací .NET Core na počítačích se systémem Linux.
-author: thraka
-ms.author: adegeo
-ms.date: 12/14/2018
-ms.openlocfilehash: 31c53b2cc0fe576e56685f4a5561258136fd2541
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+author: leecow
+ms.author: leecow
+ms.date: 09/25/2019
+ms.openlocfilehash: 4c5d79459c9d69111ca6452d9305f0deb37212b8
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116583"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591703"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Předpoklady pro .NET Core v systému Linux
 
@@ -25,69 +25,82 @@ Tento článek ukazuje závislosti potřebné pro vývoj aplikací .NET Core v s
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
 
-.NET Core 2. x považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu). 
-
-Odkazy ke stažení a další informace najdete v tématu soubory ke stažení pro [.NET core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2) nebo soubory ke stažení pro [.NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
-
-Rozhraní .NET Core 2. x je podporováno v následujících distribucích a verzích systému Linux:
-
-* Red Hat Enterprise Linux 7, 6-64 – bit (`x86_64` nebo `amd64`)
-* CentOS 7-64-bit (`x86_64` nebo `amd64`) 
-* Oracle Linux 7-64-bit (`x86_64` nebo `amd64`) 
-* Fedora 28, 27-64 – bit (`x86_64` nebo `amd64`) 
-* Debian 9 (64-bit, `arm32`), 8,7 nebo novější verze-64-bit (`x86_64` nebo `amd64`)
-* Ubuntu 18,04 (64-bit, `arm32`), 16,04, 14,04-64-bit (`x86_64` nebo `amd64`)
-* Linux mentolová 18, 17-64 – bit (`x86_64` nebo `amd64`)
-* openSUSE 42,3 nebo novější verze – 64-bit (`x86_64` nebo `amd64`)
-* SUSE Enterprise Linux (SLES) 12 Service Pack 2 nebo novější-64-bit (`x86_64` nebo `amd64`)
-* Alpine Linux 3,7 nebo novější verze – 64-bit (`x86_64` nebo `amd64`)
-
-Úplný seznam operačních systémů .NET Core 2,1 2,2 a .NET Core 2,2 s podporovanými operačními systémy, distribuce a verze, nepodporované verze operačního systému a zásady životního cyklu najdete v článku podporované verze operačního systému .NET [core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) a .net Core [](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) . odkazy.
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-Odkazy ke stažení a další informace najdete v tématu soubory ke stažení pro [.NET core 1,1](https://dotnet.microsoft.com/download/dotnet-core/1.1) nebo soubory ke stažení pro [.NET Core 1,0](https://dotnet.microsoft.com/download/dotnet-core/1.0).
-
-Rozhraní .NET Core 1. x je podporováno v následujících distribucích a verzích systému`x86_64` Linux `amd64`64-bit:
-
-* Red Hat Enterprise Linux 7
-* CentOS 7
-* Oracle Linux 7
-* Fedora 28 (.NET Core 1,1), 27
-* Debian 8,2 nebo novější verze
-* Ubuntu 18,04 (.NET Core 1,1), 16,04, 14,04
-* Linux Mint 17
-* openSUSE 42,3 nebo novější verze (.NET Core 1,1)
-
-Úplný seznam podporovaných operačních systémů pro .NET Core 1. x najdete v článku podporované verze operačního systému s podporou rozhraní .NET [Core](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) 1. x, verze operačních systémů a odkazy na zásady životního cyklu.
-
-# <a name="net-core-30-preview-1tabnetcore30"></a>[.NET Core 3,0 Preview 1](#tab/netcore30)
-
-.NET Core 3,0 Preview 1 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu). 
+.NET Core 3,0 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu). 
 
 Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení pro .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
-Verze .NET Core 3,0 Preview 1 je podporována v následujících distribucích a verzích systému Linux. 
+.NET Core 3,0 se podporuje na následujících distribucích a verzích systému Linux:
 
-OS                            | Version               | Architektury  
-------------------------------|-----------------------|----------------
-Red Hat Enterprise Linux      | 6                     | x64
-Red Hat Enterprise Linux<br>CentOS<br>Oracle Linux  | 7                     | x64
-Fedora                        | 28                    | x64
-Debian                        | 9                     | x64, ARM32\*, ARM64\*
-Ubuntu                        | 16.04+, 18.04+        | x64, ARM32\*, ARM64\*
-Linux mentolová                    | 18                    | x64
-openSUSE                      | 42.3 +                 | x64
-SUSE Enterprise Linux (SLES)  | 12 SP2+               | x64
-Alpine Linux                  | 3.8 +                  | x64, ARM64
+> [!NOTE]
+> Symbol `+` představuje minimální verzi.
 
-\*Podpora ARM32 a ARM64 začíná na Debian 9 a Ubuntu 16,04. V čipy ARM nejsou starší verze těchto distribuce podporovány.
+| OS                             | Version               | Architektury    |
+| ------------------------------ | --------------------- | ---------------- |
+| Red Hat Enterprise Linux       | 6 +, 7                 | x64 |
+| Oracle Linux                   | 7                     | x64 |
+| CentOS                         | 7                     | x64 |
+| Fedora                         | 29 +                   | x64 |
+| Debian                         | 9 +                    | x64, ARM32, ARM64 |
+| Ubuntu                         | 16.04 +                | x64, ARM32, ARM64 |
+| Linux mentolová                     | 18 +                   | x64 |
+| openSUSE                       | 15 +                   | x64 |
+| SUSE Enterprise Linux (SLES)   | 12 SP2+               | x64 |
+| Alpine Linux                   | 3.8 +                  | x64, ARM64 |
 
 Úplný 3,0 seznam podporovaných operačních systémů, distribucí a verzí operačního systému a odkazů na zásady životního cyklu najdete v tématu podporované verze operačního systému .NET [core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) .
 
 Další informace o tom, jak nainstalovat .NET Core 3,0 na ARM64, najdete v tématu [instalace .NET core 3,0 na Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
+
+# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+
+.NET Core 2,2 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu).
+
+Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2).
+
+.NET Core 2,2 se podporuje v následujících distribucích a verzích systému Linux:
+
+> [!NOTE]
+> Symbol `+` představuje minimální verzi.
+
+| OS                             |  Version                |  Architektury   |
+| ------------------------------ | ----------------------- | ---------------- |
+| Red Hat Enterprise Linux       |  6, 7                   | x64 |
+| Oracle Linux                   |  7                      | x64 |
+| CentOS                         |  7                      | x64 |
+| Fedora                         |  29, 30                 | x64 |
+| Debian                         |  9                      | x64, ARM32 |
+| Ubuntu                         |  16,04, 18,04, 18,10    | x64, ARM32 |
+| Linux mentolová                     |  17, 18                 | x64 |
+| openSUSE                       |  15 +                    | x64 |
+| SUSE Enterprise Linux (SLES)   |  12 SP2+                | x64 |
+| Alpine Linux                   |  3.7 +                   | x64 |
+
+Úplný 2,2 seznam podporovaných operačních systémů, distribucí a verzí operačního systému a odkazů na zásady životního cyklu najdete v tématu podporované verze operačního systému .NET [core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) .
+
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
+
+.NET Core 2,1 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu).
+
+Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+
+.NET Core 2,1 se podporuje v následujících distribucích a verzích systému Linux:
+
+| OS                             |  Version                |  Architektury   |
+| ------------------------------ | ----------------------- | ---------------- |
+| Red Hat Enterprise Linux       |  6, 7, 8                | x64 |
+| Oracle Linux                   |  7                      | x64 |
+| CentOS                         |  7                      | x64 |
+| Fedora                         |  29, 30                 | x64 |
+| Debian                         |  9                      | x64, ARM32 |
+| Ubuntu                         |  16,04, 18,04, 19,04    | x64, ARM32 |
+| Linux mentolová                     |  17, 18                 | x64 |
+| openSUSE                       |  42.3 +                  | x64 |
+| SUSE Enterprise Linux (SLES)   |  12 SP2+                | x64 |
+| Alpine Linux                   |  3.7 +                   | x64 |
+
+Úplný 2,1 seznam podporovaných operačních systémů, distribucí a verzí operačního systému a odkazů na zásady životního cyklu najdete v tématu podporované verze operačního systému .NET [core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) .
 
 ---
 

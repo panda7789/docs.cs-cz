@@ -5,12 +5,12 @@ f1_keywords:
 - NETSDK1045
 ms.custom: updateeachvsrelease
 ms.date: 09/20/2019
-ms.openlocfilehash: c46a1f12ca20c0e21ee205e409a2a5a89e3389b3
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: b1557e6910cb6d0b6d7e2b3ce2aec97d3715fec7
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214547"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591675"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -29,13 +29,10 @@ Následující články obsahují úplný seznam podporovaných operačních sys
 * [.NET Core 3.0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
 * [.NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
 * [.NET Core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
-* [.NET Core 1,0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
 Odkazy ke stažení a další informace najdete v tématu stažení z [rozhraní .NET](https://dotnet.microsoft.com/download) pro stažení nejnovější verze nebo [archivu ke stažení](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
 
 ## <a name="net-core-dependencies"></a>Závislosti .NET Core
-
-.NET Core 1,1 a starší verze vyžadují při spuštění C++ ve verzích Windows starších než Windows 10 a windows Server 2016 vizuál Redistributable. Tato závislost je automaticky nainstalována instalačním programem .NET Core.
 
 [Distribuovatelné C++ součásti Microsoft Visual 2015 Update 3](https://www.microsoft.com/download/details.aspx?id=52685) je třeba nainstalovat ručně v těchto případech:
 
@@ -66,7 +63,7 @@ Pro každou verzi .NET Core je vyžadována minimální verze sady Visual Studio
 
 Následující tabulka uvádí minimální verzi pro jednotlivé sady SDK:
 
-| Verze .NET Core SDK | Verze sady Visual Studio                      |
+| Verze .NET Core SDK | Verze Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3.0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
 | 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
@@ -108,6 +105,7 @@ Jakmile máte sadu Visual Studio nakonfigurovanou pomocí sady .NET Core 3,0 SDK
 
 Vývoj aplikací .NET Core v sadě Visual Studio 2017 pomocí sady .NET Core 2,2 SDK:
 
+* [Stáhněte a nainstalujte sadu Visual Studio 2019 verze 16,3 nebo vyšší](/visualstudio/install/install-visual-studio) pomocí úlohy **vývoje .NET Core pro různé platformy** (v části **jiné sady nástrojů** ).
 * [Stáhněte a nainstalujte si sadu Visual Studio 2017 verze 15.9.0 nebo novější](/visualstudio/install/install-visual-studio) pomocí úlohy **vývoje .NET Core pro různé platformy** (v části **jiné sady nástrojů** ).
 
 ![Snímek obrazovky s instalací sady Visual Studio 2017 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2017-workloads.jpg)
@@ -131,19 +129,5 @@ Jakmile máte sadu Visual Studio nakonfigurovanou pomocí sady .NET Core 2,2 SDK
 * Otevřete, sestavte a spusťte existující projekty .NET Core 1. x a 2. x.
 * Proveďte změny cílení na projekty .NET Core 1. x a 2. x na .NET Core 2,2, sestavte a spusťte.
 * Vytvořte nové projekty .NET Core 2,2.
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-Pro vývoj aplikací .NET Core 1. x v sadě Visual Studio [Stáhněte a nainstalujte sadu Visual Studio 2017](/visualstudio/install/install-visual-studio) s úlohou **"vývoj pro různé sady nástrojů .NET Core"** (v části **ostatní sady nástrojů** ).
-
-![Snímek obrazovky s instalací sady Visual Studio 2017 se zvolenou úlohou "vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-workloads.jpg)
-
-> [!IMPORTANT]
-> Je možné použít Visual Studio 2015 pro vývoj pro .NET Core 1. x, ale nedoporučuje se z následujících důvodů:
->
-> * Nástroje .NET Core jsou verze Preview, což není podporováno.
-> * Projekty jsou založené na projektu Project. JSON, který je zastaralý.
->
-> Další informace o změnách formátu projektu naleznete v části [Přehled změn na nejvyšší úrovni](./tools/cli-msbuild-architecture.md).
 
 ---

@@ -14,80 +14,80 @@ helpviewer_keywords:
 - powers
 - arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-ms.openlocfilehash: 54de9c91d4e166b8ca1733952dfa9c98ebf11ffe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8cdfbec917608211e19c39eb37bd12dbc7c4d33f
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778492"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592213"
 ---
 # <a name="-operator-visual-basic"></a>^ – operátor (Visual Basic)
 
-Umocní jedno číslo na mocninu vyjádřenou druhým číslem.
+Umocní číslo na mocninu jiného čísla.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 number ^ exponent
 ```
 
 ## <a name="parts"></a>Součásti
 
 `number`\
-Povinný parametr. Jakýkoli číselný výraz.
+Povinný parametr. Libovolný číselný výraz.
 
 `exponent`\
-Povinný parametr. Jakýkoli číselný výraz.
+Povinný parametr. Libovolný číselný výraz.
 
 ## <a name="result"></a>Výsledek
 
-Výsledkem je `number` umocněné na sílu `exponent`, vždy jako `Double` hodnotu.
+Výsledek je `number` umocněn na mocninu `exponent`, vždy jako hodnota `Double`.
 
 ## <a name="supported-types"></a>Podporované typy
 
-`Double`. Jakýkoli jiný typ operandy jsou převedeny na `Double`.
+`Double`. Operandy jiného typu jsou převedeny na `Double`.
 
 ## <a name="remarks"></a>Poznámky
 
-Visual Basic vždy provádí umocnění v [datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md).
+Visual Basic vždy provádí umocnění v [datovém typu Double](../../../visual-basic/language-reference/data-types/double-data-type.md).
 
-Hodnota `exponent` může být zlomkové záporné nebo obojí.
+Hodnota `exponent` může být zlomková, záporná nebo obojí.
 
-Při provádění více než jeden umocnění v jednom výrazu `^` operátor je vyhodnocovány, jak je zjištěna zleva doprava.
+Je-li v jednom výrazu proveden více než jeden umocnění, je operátor `^` vyhodnocen tak, jak byl zjištěn zleva doprava.
 
 > [!NOTE]
-> `^` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Pokud váš kód používá tento operátor na takové třídy nebo struktury, ujistěte se, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
+> Operátor `^` lze přetížit, což znamená, že třída nebo struktura může předefinovat *chování, pokud*operand má typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu `^` operátor se má zvýšit číslo mocninu exponent. Výsledkem je první operand umocněné na druhou.
+Následující příklad používá operátor `^` k vyvolání čísla mocninou exponentu. Výsledkem je první operand vyvolaný mocninou sekundy.
 
 [!code-vb[VbVbalrOperators#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#20)]
 
-Předchozí příklad vytváří následující výsledky:
+Předchozí příklad vytvoří následující výsledky:
 
-`exp1` je nastavena na 4 (spolehlivosti 2).
+`exp1` je nastavené na 4 (2 čtvercové).
 
-`exp2` je nastaven na 19683 (umocněnou, 3 pak tuto hodnotu na třetí).
+hodnota `exp2` je nastavená na 19683 (3 na třetí straně a pak na třetí).
 
-`exp3` je nastaven na-125 (-5 umocněnou).
+hodnota `exp3` je nastavena na-125 (-5 na třetí).
 
-`exp4` je nastaven na 625 (čtvrtá exponentem -5).
+hodnota `exp4` je nastavená na 625 (-5 až čtvrtého výkonu).
 
-`exp5` je nastavena na 2 (uživatel root datové krychle 8).
+hodnota `exp5` je nastavena na hodnotu 2 (kořenová hodnota datové krychle 8).
 
-`exp6` je nastaven na 0,5 (1.0 dělený kořenové datové krychle 8).
+hodnota `exp6` je nastavena na 0,5 (1,0 děleno kořenem datové krychle 8).
 
-Všimněte si důležitost závorky ve výrazech v předchozím příkladu. Z důvodu *priorita operátorů*, Visual Basic se obvykle provádí `^` i unární operátor před všechny ostatní `–` operátor. Pokud `exp4` a `exp6` měl vypočtena bez závorek by mít vyprodukoval následující výsledky:
+Všimněte si důležitosti závorek ve výrazech v předchozím příkladu. Z důvodu *přednosti operátoru*Visual Basic obvykle provádí operátor `^` před všemi ostatními, a to i unární operátor `–`. Pokud byla vypočítána hodnota `exp4` a `exp6` bez závorek, byly vytvořeny následující výsledky:
 
-`exp4 = -5 ^ 4` se vypočítá jako – (5 a čtvrtý výkon), které způsobovaly-625.
+`exp4 = -5 ^ 4` se vypočítá jako – (5 až čtvrtého výkonu), což by vedlo k-625.
 
-`exp6 = 8 ^ -1.0 / 3.0` se vypočítá jako (8 – 1 napájení nebo 0,125) 3.0, což by vytvořilo 0.041666666666666666666666666666667 dělený.
+`exp6 = 8 ^ -1.0 / 3.0` by se vypočítalo jako (8 na-1 výkon nebo 0,125) dělené 3,0, což by vedlo k 0.041666666666666666666666666666667.
 
 ## <a name="see-also"></a>Viz také:
 
 - [^= – operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

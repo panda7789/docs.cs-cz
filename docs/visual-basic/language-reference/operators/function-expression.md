@@ -6,19 +6,19 @@ helpviewer_keywords:
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: 4bef609289cdbb192116469bac4fca66ee10fd09
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0ab4a77395b478df06f34240212438f3e6e18f6e
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662524"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592209"
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
 Deklaruje parametry a kód, které definují výraz lambda funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Function ( [ parameterlist ] ) expression  
 - or -  
 Function ( [ parameterlist ] )  
@@ -30,49 +30,49 @@ End Function
   
 |Termín|Definice|  
 |---|---|  
-|`parameterlist`|Volitelné. Seznam místní názvy proměnných, které představují parametry tohoto postupu. Závorky musí být k dispozici i v případě, že je seznam prázdný. Zobrazit [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`parameterlist`|Volitelný parametr. Seznam místních názvů proměnných, které reprezentují parametry tohoto postupu. Závorky musí být přítomny i v případě, že je seznam prázdný. Viz [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
 |`expression`|Povinný parametr. Jeden výraz. Typ výrazu je návratový typ funkce.|  
-|`statements`|Povinný parametr. Seznam příkazů, který vrací hodnotu s použitím `Return` příkazu. (Viz [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).) Typ hodnoty vrácené je návratový typ funkce.|  
+|`statements`|Povinný parametr. Seznam příkazů, které vrací hodnotu pomocí příkazu `Return`. (Viz [návratový příkaz](../../../visual-basic/language-reference/statements/return-statement.md).) Typ vrácené hodnoty je návratový typ funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- A *výraz lambda* je funkce bez názvu, který vypočítává a vrací hodnotu. Výraz lambda můžete použít kdekoli můžete použít typ delegáta, s výjimkou jako argument `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty, naleznete v tématu [delegáta příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md) a [volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+ *Výraz lambda* je funkce bez názvu, který počítá a vrací hodnotu. Výraz lambda můžete použít kdekoli, kde můžete použít typ delegáta, s výjimkou argumentu pro `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty naleznete v tématu [příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) a [odlehčený převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
- Syntaxe výrazu lambda se podobá u standardní funkci. Rozdíly jsou následující:  
+ Syntaxe výrazu lambda se podobá funkci standardní funkce. Rozdíly jsou následující:  
   
 - Výraz lambda nemá název.  
   
-- Výrazy lambda nemůžou mít modifikátory, jako například `Overloads` nebo `Overrides`.  
+- Výrazy lambda nemůžou mít modifikátory, například `Overloads` nebo `Overrides`.  
   
-- Výrazy lambda se nepoužívá `As` klauzule k určení návratového typu funkce. Místo toho typ je odvozen z hodnotu, která se vyhodnotí jako hlavní část výrazu lambda jednořádkového nebo návratovou hodnotu víceřádkového výrazu lambda výrazu. Například, pokud je hlavní část výrazu lambda jednořádkového `Where cust.City = "London"`, je její typ vrácené hodnoty `Boolean`.  
+- Výrazy lambda nepoužívají klauzuli `As` k určení návratového typu funkce. Místo toho je typ odvozen z hodnoty, na kterou se tělo jednořádkového výrazu lambda vyhodnocuje, nebo návratovou hodnotu víceřádkového výrazu lambda. Například pokud tělo jednořádkového výrazu lambda je `Where cust.City = "London"`, jeho návratový typ je `Boolean`.  
   
-- Výraz, ne příkaz musí být tělo tohoto výrazu lambda jednořádkového. Text se může skládat z volání proceduru function, ale ne voláním procedury sub.  
+- Tělo výrazu lambda s jedním řádkem musí být výraz, nikoli příkaz. Tělo může být tvořeno voláním procedury funkce, ale nikoli voláním procedury Sub.  
   
-- Buď všechny parametry musí mít zadaný datové typy nebo všechny musí být odvozený.  
+- Buď musí mít všechny parametry zadané datové typy, nebo musí být všechny odvoditelné.  
   
-- Volitelné a Paramarray parametry nejsou povoleny.  
+- Nepovinné parametry a parametry ParamArray nejsou povoleny.  
   
-- Obecné parametry nejsou povoleny.  
+- Obecné parametry nejsou povolené.  
   
 ## <a name="example"></a>Příklad  
- Následující příklady ukazují dva způsoby, jak vytvořit jednoduchý lambda výrazy. První použití `Dim` k poskytnutí názvu pro funkci. Pro volání funkce, předáte hodnotu parametru.  
+ Následující příklady znázorňují dva způsoby, jak vytvořit jednoduché výrazy lambda. První používá `Dim` k poskytnutí názvu funkce. Chcete-li zavolat funkci, odešlete hodnotu parametru.  
   
  [!code-vb[VbVbalrLambdas#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#1)]  
   
  [!code-vb[VbVbalrLambdas#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- Můžete také deklarovat a spustit funkci ve stejnou dobu.  
+ Alternativně můžete deklarovat a spustit funkci ve stejnou dobu.  
   
  [!code-vb[VbVbalrLambdas#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Tady je příklad výraz lambda, který zvýší její argument a vrátí hodnotu. Příklad ukazuje obě jedním řádkem a víceřádkového výrazu lambda syntaxe výrazu pro funkci. Další příklady najdete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Následuje příklad výrazu lambda, který zvyšuje svůj argument a vrací hodnotu. V příkladu se zobrazuje jak jednoduchá, tak víceřádková syntaxe výrazu lambda pro funkci. Další příklady naleznete v tématu [lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
- Výrazy lambda tvoří základ mnoho operátorů dotazu v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]a můžete explicitně použít v dotazech založených na volání metody. Následující příklad ukazuje typickou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, za nímž následuje překladu dotazu do formátu metody.  
+ Lambda výrazy tvoří mnoho operátorů dotazu v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a lze je použít explicitně v dotazech založených na metodách. Následující příklad ukazuje typický dotaz [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] následovaný překladem dotazu do formátu metody.  
   
 ```vb  
 Dim londonCusts = From cust In db.Customers  
@@ -85,7 +85,7 @@ Dim londonCusts = db.Customers.
                   Select(Function(cust) cust)  
 ```  
   
- Další informace o metodách dotazu naleznete v tématu [dotazy](../../../visual-basic/language-reference/queries/index.md). Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled standardních operátorů dotazu](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
+ Další informace o metodách dotazů naleznete v tématu [dotazy](../../../visual-basic/language-reference/queries/index.md). Další informace o standardních operátorech dotazu najdete v tématu [Přehled standardních operátorů dotazů](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

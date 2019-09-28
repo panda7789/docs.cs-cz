@@ -2,12 +2,12 @@
 title: Články (C# průvodce)
 description: Kolekce rychlých tipů a krátkých a podrobných ukázek kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 92f7e94d8003823c0b166cc617563e63aba78027
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: f764bd0183e3881bfb81ebda7d3c7dd49a4cbdde
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038023"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591611"
 ---
 # <a name="how-to-c"></a>Postupy (C#)
 
@@ -66,7 +66,7 @@ Možná budete muset převést objekt na jiný typ.
 - [Použijte porovnávání vzorů, `as` operátory `is` a pro bezpečné přetypování na jiný typ](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Definujte vlastní převody typů](../language-reference/operators/user-defined-conversion-operators.md).
 - [Určí, zda typ představuje typ hodnoty s možnou hodnotou null](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
-- [Převod mezi typy hodnot s možnou hodnotou null a hodnotami, které](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-type-to-an-underlying-type)neumožňují hodnotu null
+- [Převod mezi typy hodnot s možnou hodnotou null a hodnotami, které](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type)neumožňují hodnotu null
 
 ## <a name="equality-and-ordering-comparisons"></a>Porovnání rovnosti a řazení
 

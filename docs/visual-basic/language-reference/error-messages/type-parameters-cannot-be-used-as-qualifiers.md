@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC32098
 ms.assetid: bab05325-dde8-4621-a5f6-368b5b7b2d76
-ms.openlocfilehash: ba7348ae50965ffcf2719b20934451916c8fa95a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88b5f365c47b98964d9f5a0d22a941d85dcfb95f
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923718"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592140"
 ---
 # <a name="type-parameters-cannot-be-used-as-qualifiers"></a>Parametry typů nelze použít jako kvalifikátory.
-Programovací element je kvalifikován s kvalifikací řetězec, který obsahuje parametr typu.  
+Programovací element je kvalifikován pomocí řetězce kvalifikace, který obsahuje parametr typu.  
   
- Parametr typu představuje požadavek pro typ, který se nemusí zadávat, když je vytvořen obecného typu. To nepředstavuje konkrétní typ definovaný. Kvalifikace řetězec musí obsahovat pouze prvky, které jsou definovány v době kompilace.  
+ Parametr typu představuje požadavek pro typ, který se má zadat při sestavení obecného typu. Nepředstavuje konkrétní definovaný typ. Kvalifikační řetězec musí zahrnovat pouze prvky, které jsou definovány v době kompilace.  
   
- Tato chyba může generovat následující příkazy.  
+ Následující příkazy mohou vygenerovat tuto chybu.  
   
-```  
+```vb  
 Public Function checkText(Of c As System.Windows.Forms.Control)(  
     ByVal badText As String) As Boolean  
   
@@ -34,12 +34,12 @@ End Function
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Odeberte parametr typu z řetězce kvalifikaci, nebo nahraďte určitého typu.  
+1. Odeberte parametr typu z řetězce kvalifikace nebo ho nahraďte definovaným typem.  
   
-2. Pokud budete muset použít konstruovaný typ najít programovací element je kvalifikován, musíte použít další logiku programu.  
+2. Pokud potřebujete použít konstruovaný typ k vyhledání programovacího prvku, který je kvalifikován, je nutné použít další logiku programu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)

@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30149
 ms.assetid: 29d1b7f4-dca7-478c-bbe7-c657f342c183
-ms.openlocfilehash: 432f089bc77928308820d7456d930fba8dc513f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c387b0225375f4675042bef593b23a084305b4fd
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013605"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71591598"
 ---
 # <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<methodname > 'rozhraní'\<interfacename > '
-Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje postupu definované rozhraní. Musíte implementovat každého člena rozhraní.  
+Deklarace třídy nebo struktury pro implementaci rozhraní, ale neimplementuje proceduru definovanou rozhraním. Je nutné implementovat všechny členy rozhraní.  
   
  **ID chyby:** BC30149  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Procedura se stejným názvem a signaturou, jak jsou definovány v rozhraní deklarujte. Nezapomeňte uvést alespoň `End Function` nebo `End Sub` příkazu.  
+1. Deklarujte proceduru se stejným názvem a signaturou, jak je definováno v rozhraní. Nezapomeňte zahrnout alespoň příkaz `End Function` nebo `End Sub`.  
   
-2. Přidat `Implements` klauzuli na konec objektu `Function` nebo `Sub` příkazu. Příklad:  
+2. Přidejte klauzuli `Implements` na konec příkazu `Function` nebo `Sub`. Příklad:  
   
-    ```  
+    ```vb  
     Public Sub DoSomething() Implements IBaseInterface.DoSomething  
     ```  
   
