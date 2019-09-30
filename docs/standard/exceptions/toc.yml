@@ -11,6 +11,8 @@
       href: how-to-explicitly-throw-exceptions.md
     - name: 'Postupy: Vytváření uživatelsky definovaných výjimek'
       href: how-to-create-user-defined-exceptions.md
+    - name: 'Postupy: Vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek'
+      href: how-to-create-localized-exception-messages.md
     - name: Používání obslužných rutin uživatelsky filtrovaných výjimek
       href: using-user-filtered-exception-handlers.md
     - name: 'Postupy: Používání bloků Finally'
