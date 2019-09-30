@@ -317,13 +317,18 @@
       items:
         - name: Přehled
           href: core/tools/index.md
-        - name: Globální nástroje
+        - name: Nástroje
           expanded: true
           items:
-            - name: Přehled
-              href: core/tools/global-tools.md
-            - name: Vytvoření globálního nástroje
-              href: core/tools/global-tools-how-to-create.md
+            - name: Globální nástroje
+              expanded: true
+              items:
+                - name: Přehled
+                  href: core/tools/global-tools.md
+                - name: Vytvoření globálního nástroje
+                  href: core/tools/global-tools-how-to-create.md
+            - name: Řešení potíží s využitím nástrojů
+              href: core/tools/troubleshoot-usage-issues.md
         - name: Přístup se zvýšenými oprávněními
           href: core/tools/elevated-access.md
         - name: Model rozšíření
