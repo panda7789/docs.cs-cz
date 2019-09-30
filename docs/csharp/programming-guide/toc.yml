@@ -31,7 +31,7 @@
       href: generics/
     - name: Jmenné prostory
       href: namespaces/
-    - name: Typy s povolenou hodnotou Null
+    - name: Typy hodnot s povolenou hodnotou Null
       href: nullable-types/
     - name: Nezabezpečený kód a ukazatele
       href: unsafe-code-pointers/
