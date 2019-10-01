@@ -8,55 +8,55 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-ms.openlocfilehash: 449146612938700f59f5e2ec761526d1dc66a3fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 810e942394c75c192e4423afe4c674ef3a2b9900
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663959"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697506"
 ---
-# <a name="systemnet-element-network-settings"></a><span data-ttu-id="408d8-102">\<System .NET > – element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="408d8-102">\<system.Net> Element (Network Settings)</span></span>
-<span data-ttu-id="408d8-103">Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="408d8-103">Contains settings that specify how the .NET Framework connects to the network.</span></span>  
+# <a name="systemnet-element-network-settings"></a><span data-ttu-id="738ab-102">@no__t – element .NET > 0system (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="738ab-102">\<system.Net> Element (Network Settings)</span></span>
+<span data-ttu-id="738ab-103">Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="738ab-103">Contains settings that specify how the .NET Framework connects to the network.</span></span>  
   
- <span data-ttu-id="408d8-104">\<> Konfigurace</span><span class="sxs-lookup"><span data-stu-id="408d8-104">\<configuration></span></span>  
-<span data-ttu-id="408d8-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="408d8-105">\<system.net></span></span>  
+[<span data-ttu-id="738ab-104"> **@no__t – 2configuration >** </span><span class="sxs-lookup"><span data-stu-id="738ab-104">**\<configuration>**</span></span>](../configuration-element.md)  
+<span data-ttu-id="738ab-105">&nbsp; @ no__t-1 **@no__t -3system. net >**</span><span class="sxs-lookup"><span data-stu-id="738ab-105">&nbsp;&nbsp;**\<system.net>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="408d8-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="408d8-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="738ab-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="738ab-106">Syntax</span></span>  
   
 ```xml  
 <system.net>   
 </system.net>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="408d8-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="408d8-107">Attributes and Elements</span></span>  
- <span data-ttu-id="408d8-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="408d8-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="738ab-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="738ab-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="738ab-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="738ab-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="408d8-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="408d8-109">Attributes</span></span>  
- <span data-ttu-id="408d8-110">Žádné</span><span class="sxs-lookup"><span data-stu-id="408d8-110">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="738ab-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="738ab-109">Attributes</span></span>  
+ <span data-ttu-id="738ab-110">Žádné</span><span class="sxs-lookup"><span data-stu-id="738ab-110">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="408d8-111">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="408d8-111">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="738ab-111">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="738ab-111">Child Elements</span></span>  
   
-|<span data-ttu-id="408d8-112">**Element**</span><span class="sxs-lookup"><span data-stu-id="408d8-112">**Element**</span></span>|<span data-ttu-id="408d8-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="408d8-113">**Description**</span></span>|  
+|<span data-ttu-id="738ab-112">**Element**</span><span class="sxs-lookup"><span data-stu-id="738ab-112">**Element**</span></span>|<span data-ttu-id="738ab-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="738ab-113">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="408d8-114">authenticationModules</span><span class="sxs-lookup"><span data-stu-id="408d8-114">authenticationModules</span></span>](authenticationmodules-element-network-settings.md)|<span data-ttu-id="408d8-115">Určuje moduly používané pro ověřování internetových požadavků.</span><span class="sxs-lookup"><span data-stu-id="408d8-115">Specifies modules used to authenticate Internet requests.</span></span>|  
-|[<span data-ttu-id="408d8-116">connectionManagement</span><span class="sxs-lookup"><span data-stu-id="408d8-116">connectionManagement</span></span>](connectionmanagement-element-network-settings.md)|<span data-ttu-id="408d8-117">Určuje maximální počet připojení k hostiteli v Internetu.</span><span class="sxs-lookup"><span data-stu-id="408d8-117">Specifies the maximum number of connections to an Internet host.</span></span>|  
-|[<span data-ttu-id="408d8-118">defaultProxy</span><span class="sxs-lookup"><span data-stu-id="408d8-118">defaultProxy</span></span>](defaultproxy-element-network-settings.md)|<span data-ttu-id="408d8-119">Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).</span><span class="sxs-lookup"><span data-stu-id="408d8-119">Configures the Hypertext Transfer Protocol (HTTP) proxy server.</span></span>|  
-|[<span data-ttu-id="408d8-120">mailSettings</span><span class="sxs-lookup"><span data-stu-id="408d8-120">mailSettings</span></span>](mailsettings-element-network-settings.md)|<span data-ttu-id="408d8-121">Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).</span><span class="sxs-lookup"><span data-stu-id="408d8-121">Configures Simple Mail Transport Protocol (SMTP) mail sending options.</span></span>|  
-|[<span data-ttu-id="408d8-122">requestCaching</span><span class="sxs-lookup"><span data-stu-id="408d8-122">requestCaching</span></span>](requestcaching-element-network-settings.md)|<span data-ttu-id="408d8-123">Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="408d8-123">Controls the caching mechanism for network requests.</span></span>|  
-|[<span data-ttu-id="408d8-124">možnost</span><span class="sxs-lookup"><span data-stu-id="408d8-124">settings</span></span>](settings-element-network-settings.md)|<span data-ttu-id="408d8-125">Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> souvisejících podřízených oborech názvů a.</span><span class="sxs-lookup"><span data-stu-id="408d8-125">Configures basic network options for classes in the <xref:System.Net> and related child namespaces.</span></span>|  
-|[<span data-ttu-id="408d8-126">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="408d8-126">webRequestModules</span></span>](webrequestmodules-element-network-settings.md)|<span data-ttu-id="408d8-127">Určuje moduly, které se použijí k vyžádání informací od hostitelů v Internetu.</span><span class="sxs-lookup"><span data-stu-id="408d8-127">Specifies modules to use to request information from Internet hosts.</span></span>|  
+|[<span data-ttu-id="738ab-114">authenticationModules</span><span class="sxs-lookup"><span data-stu-id="738ab-114">authenticationModules</span></span>](authenticationmodules-element-network-settings.md)|<span data-ttu-id="738ab-115">Určuje moduly používané pro ověřování internetových požadavků.</span><span class="sxs-lookup"><span data-stu-id="738ab-115">Specifies modules used to authenticate Internet requests.</span></span>|  
+|[<span data-ttu-id="738ab-116">connectionManagement</span><span class="sxs-lookup"><span data-stu-id="738ab-116">connectionManagement</span></span>](connectionmanagement-element-network-settings.md)|<span data-ttu-id="738ab-117">Určuje maximální počet připojení k hostiteli v Internetu.</span><span class="sxs-lookup"><span data-stu-id="738ab-117">Specifies the maximum number of connections to an Internet host.</span></span>|  
+|[<span data-ttu-id="738ab-118">defaultProxy</span><span class="sxs-lookup"><span data-stu-id="738ab-118">defaultProxy</span></span>](defaultproxy-element-network-settings.md)|<span data-ttu-id="738ab-119">Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).</span><span class="sxs-lookup"><span data-stu-id="738ab-119">Configures the Hypertext Transfer Protocol (HTTP) proxy server.</span></span>|  
+|[<span data-ttu-id="738ab-120">mailSettings</span><span class="sxs-lookup"><span data-stu-id="738ab-120">mailSettings</span></span>](mailsettings-element-network-settings.md)|<span data-ttu-id="738ab-121">Konfiguruje možnosti odesílání pošty SMTP (Simple Mail Transport Protocol).</span><span class="sxs-lookup"><span data-stu-id="738ab-121">Configures Simple Mail Transport Protocol (SMTP) mail sending options.</span></span>|  
+|[<span data-ttu-id="738ab-122">requestCaching</span><span class="sxs-lookup"><span data-stu-id="738ab-122">requestCaching</span></span>](requestcaching-element-network-settings.md)|<span data-ttu-id="738ab-123">Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="738ab-123">Controls the caching mechanism for network requests.</span></span>|  
+|[<span data-ttu-id="738ab-124">možnost</span><span class="sxs-lookup"><span data-stu-id="738ab-124">settings</span></span>](settings-element-network-settings.md)|<span data-ttu-id="738ab-125">Konfiguruje základní možnosti sítě pro třídy v <xref:System.Net> a souvisejících podřízených oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="738ab-125">Configures basic network options for classes in the <xref:System.Net> and related child namespaces.</span></span>|  
+|[<span data-ttu-id="738ab-126">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="738ab-126">webRequestModules</span></span>](webrequestmodules-element-network-settings.md)|<span data-ttu-id="738ab-127">Určuje moduly, které se použijí k vyžádání informací od hostitelů v Internetu.</span><span class="sxs-lookup"><span data-stu-id="738ab-127">Specifies modules to use to request information from Internet hosts.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="408d8-128">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="408d8-128">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="738ab-128">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="738ab-128">Parent Elements</span></span>  
   
-|<span data-ttu-id="408d8-129">**Element**</span><span class="sxs-lookup"><span data-stu-id="408d8-129">**Element**</span></span>|<span data-ttu-id="408d8-130">**Popis**</span><span class="sxs-lookup"><span data-stu-id="408d8-130">**Description**</span></span>|  
+|<span data-ttu-id="738ab-129">**Element**</span><span class="sxs-lookup"><span data-stu-id="738ab-129">**Element**</span></span>|<span data-ttu-id="738ab-130">**Popis**</span><span class="sxs-lookup"><span data-stu-id="738ab-130">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="408d8-131">rozšířeného</span><span class="sxs-lookup"><span data-stu-id="408d8-131">configuration</span></span>](../configuration-element.md)|<span data-ttu-id="408d8-132">Obsahuje nastavení pro všechny obory názvů.</span><span class="sxs-lookup"><span data-stu-id="408d8-132">Contains settings for all namespaces.</span></span>|  
+|[<span data-ttu-id="738ab-131">rozšířeného</span><span class="sxs-lookup"><span data-stu-id="738ab-131">configuration</span></span>](../configuration-element.md)|<span data-ttu-id="738ab-132">Obsahuje nastavení pro všechny obory názvů.</span><span class="sxs-lookup"><span data-stu-id="738ab-132">Contains settings for all namespaces.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="408d8-133">Poznámky</span><span class="sxs-lookup"><span data-stu-id="408d8-133">Remarks</span></span>  
- <span data-ttu-id="408d8-134"><xref:System.Net> [ ElementSystem.NET>obsahujenastaveníprotřídyvsouvisejícíchpodřízených\<](system-net-element-network-settings.md) oborech názvů a.</span><span class="sxs-lookup"><span data-stu-id="408d8-134">The [\<system.net>](system-net-element-network-settings.md) element contains settings for classes in the <xref:System.Net> and related child namespaces.</span></span> <span data-ttu-id="408d8-135">Nastavení konfigurovat ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly internetových požadavků pro příjem informací z internetových hostitelů.</span><span class="sxs-lookup"><span data-stu-id="408d8-135">The settings configure authentication modules, connection management, mail settings, the proxy server, and Internet request modules for receiving information from Internet hosts.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="738ab-133">Poznámky</span><span class="sxs-lookup"><span data-stu-id="738ab-133">Remarks</span></span>  
+ <span data-ttu-id="738ab-134">Element [@no__t -1System. net >](system-net-element-network-settings.md) obsahuje nastavení pro třídy v <xref:System.Net> a souvisejících podřízených oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="738ab-134">The [\<system.net>](system-net-element-network-settings.md) element contains settings for classes in the <xref:System.Net> and related child namespaces.</span></span> <span data-ttu-id="738ab-135">Nastavení konfigurovat ověřovací moduly, správu připojení, nastavení pošty, proxy server a moduly internetových požadavků pro příjem informací z internetových hostitelů.</span><span class="sxs-lookup"><span data-stu-id="738ab-135">The settings configure authentication modules, connection management, mail settings, the proxy server, and Internet request modules for receiving information from Internet hosts.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="408d8-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="408d8-136">Example</span></span>  
- <span data-ttu-id="408d8-137">Následující příklad ukazuje typickou konfiguraci, kterou <xref:System.Net> používají třídy.</span><span class="sxs-lookup"><span data-stu-id="408d8-137">The following example shows a typical configuration used by <xref:System.Net> classes.</span></span>  
+## <a name="example"></a><span data-ttu-id="738ab-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="738ab-136">Example</span></span>  
+ <span data-ttu-id="738ab-137">Následující příklad ukazuje typickou konfiguraci, kterou používá <xref:System.Net> tříd.</span><span class="sxs-lookup"><span data-stu-id="738ab-137">The following example shows a typical configuration used by <xref:System.Net> classes.</span></span>  
   
 ```xml  
 <configuration>  
@@ -92,6 +92,6 @@ ms.locfileid: "69663959"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="408d8-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="408d8-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="738ab-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="738ab-138">See also</span></span>
 
-- [<span data-ttu-id="408d8-139">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="408d8-139">Network Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="738ab-139">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="738ab-139">Network Settings Schema</span></span>](index.md)

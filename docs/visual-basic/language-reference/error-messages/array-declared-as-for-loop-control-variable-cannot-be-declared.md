@@ -7,34 +7,34 @@ f1_keywords:
 helpviewer_keywords:
 - BC32039
 ms.assetid: 1d8b6560-c9eb-4b71-a038-24c6f5a5ce46
-ms.openlocfilehash: 9f24dd2a20dc3a4935cd288a20a0e12c1d47bee1
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 9e8bb7b79b5a770c3c92e47d8e7c01c5b83d6061
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912344"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701213"
 ---
-# <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a><span data-ttu-id="f7ade-102">Pole deklarované jako řídicí proměnná cyklu typu for nelze deklarovat s počáteční velikostí.</span><span class="sxs-lookup"><span data-stu-id="f7ade-102">Array declared as for loop control variable cannot be declared with an initial size</span></span>
-<span data-ttu-id="f7ade-103">A `For Each` smyčky používá pole jako jeho *element* iterační proměnné ale inicializuje dané pole.</span><span class="sxs-lookup"><span data-stu-id="f7ade-103">A `For Each` loop uses an array as its *element* iteration variable but initializes that array.</span></span>  
+# <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a><span data-ttu-id="01dac-102">Pole deklarované jako řídicí proměnná cyklu typu for nelze deklarovat s počáteční velikostí.</span><span class="sxs-lookup"><span data-stu-id="01dac-102">Array declared as for loop control variable cannot be declared with an initial size</span></span>
+<span data-ttu-id="01dac-103">Smyčka `For Each` používá pole jako jeho proměnnou iterace *elementu* , ale inicializuje toto pole.</span><span class="sxs-lookup"><span data-stu-id="01dac-103">A `For Each` loop uses an array as its *element* iteration variable but initializes that array.</span></span>  
   
- <span data-ttu-id="f7ade-104">Následující příkazy ukazují, jak můžete tuto chybu vygeneruje.</span><span class="sxs-lookup"><span data-stu-id="f7ade-104">The following statements show how this error can be generated.</span></span>  
+ <span data-ttu-id="01dac-104">Následující příkazy ukazují, jak lze tuto chybu vygenerovat.</span><span class="sxs-lookup"><span data-stu-id="01dac-104">The following statements show how this error can be generated.</span></span>  
   
-```  
+```vb  
 Dim arrayList As New List(Of Integer())  
 For Each listElement() As Integer In arrayList  
 For Each listElement(1) As Integer In arrayList  
 ```  
   
- <span data-ttu-id="f7ade-105">První `For Each` příkaz je správný způsob, jak přístup prvky `arrayList`.</span><span class="sxs-lookup"><span data-stu-id="f7ade-105">The first `For Each` statement is the correct way to access elements of `arrayList`.</span></span> <span data-ttu-id="f7ade-106">Druhá `For Each` příkaz vygeneruje tuto chybu.</span><span class="sxs-lookup"><span data-stu-id="f7ade-106">The second `For Each` statement generates this error.</span></span>  
+ <span data-ttu-id="01dac-105">Prvním příkazem `For Each` je správný způsob, jak získat přístup k prvkům `arrayList`.</span><span class="sxs-lookup"><span data-stu-id="01dac-105">The first `For Each` statement is the correct way to access elements of `arrayList`.</span></span> <span data-ttu-id="01dac-106">Druhý příkaz `For Each` vygeneruje tuto chybu.</span><span class="sxs-lookup"><span data-stu-id="01dac-106">The second `For Each` statement generates this error.</span></span>  
   
- <span data-ttu-id="f7ade-107">**ID chyby:** BC32039</span><span class="sxs-lookup"><span data-stu-id="f7ade-107">**Error ID:** BC32039</span></span>  
+ <span data-ttu-id="01dac-107">**ID chyby:** BC32039</span><span class="sxs-lookup"><span data-stu-id="01dac-107">**Error ID:** BC32039</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="f7ade-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="f7ade-108">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="01dac-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="01dac-108">To correct this error</span></span>  
   
-- <span data-ttu-id="f7ade-109">Odebrání inicializace deklarace *element* proměnné iterace.</span><span class="sxs-lookup"><span data-stu-id="f7ade-109">Remove the initialization from the declaration of the *element* iteration variable.</span></span>  
+- <span data-ttu-id="01dac-109">Odeberte inicializaci z deklarace proměnné iterace *elementu* .</span><span class="sxs-lookup"><span data-stu-id="01dac-109">Remove the initialization from the declaration of the *element* iteration variable.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f7ade-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f7ade-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01dac-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="01dac-110">See also</span></span>
 
-- [<span data-ttu-id="f7ade-111">Příkaz For...Next</span><span class="sxs-lookup"><span data-stu-id="f7ade-111">For...Next Statement</span></span>](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [<span data-ttu-id="f7ade-112">Pole</span><span class="sxs-lookup"><span data-stu-id="f7ade-112">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [<span data-ttu-id="f7ade-113">Kolekce</span><span class="sxs-lookup"><span data-stu-id="f7ade-113">Collections</span></span>](../../../standard/collections/index.md)
+- [<span data-ttu-id="01dac-111">Příkaz For...Next</span><span class="sxs-lookup"><span data-stu-id="01dac-111">For...Next Statement</span></span>](../../../visual-basic/language-reference/statements/for-next-statement.md)
+- [<span data-ttu-id="01dac-112">Pole</span><span class="sxs-lookup"><span data-stu-id="01dac-112">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [<span data-ttu-id="01dac-113">Kolekce</span><span class="sxs-lookup"><span data-stu-id="01dac-113">Collections</span></span>](../../../standard/collections/index.md)

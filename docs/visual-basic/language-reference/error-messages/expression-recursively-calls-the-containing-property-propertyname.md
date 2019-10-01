@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 93d02618ff19f431b3602e74478337f6918df289
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665167"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698571"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a><span data-ttu-id="9b3cd-102">Výraz rekurzivně volá nadřazenou vlastnost '\<propertyname > "</span><span class="sxs-lookup"><span data-stu-id="9b3cd-102">Expression recursively calls the containing property '\<propertyname>'</span></span>
-<span data-ttu-id="9b3cd-103">Příkaz v `Set` postup definice vlastnosti uloží hodnotu do názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-103">A statement in the `Set` procedure of a property definition stores a value into the name of the property.</span></span>  
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a><span data-ttu-id="3e5a0-102">Výraz rekurzivně volá nadřazenou vlastnost \<propertyname >.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-102">Expression recursively calls the containing property '\<propertyname>'</span></span>
+<span data-ttu-id="3e5a0-103">Příkaz v proceduře `Set` definice vlastnosti ukládá hodnotu do názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-103">A statement in the `Set` procedure of a property definition stores a value into the name of the property.</span></span>  
   
- <span data-ttu-id="9b3cd-104">Doporučený postup pro drží hodnotu vlastnosti je definování `Private` proměnné ve vlastnosti kontejneru a jeho použití v obou `Get` a `Set` postupy.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-104">The recommended approach to holding the value of a property is to define a `Private` variable in the property's container and use it in both the `Get` and `Set` procedures.</span></span> <span data-ttu-id="9b3cd-105">`Set` Postup by měl pak ukládání příchozích hodnoty v tomto `Private` proměnné.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-105">The `Set` procedure should then store the incoming value in this `Private` variable.</span></span>  
+ <span data-ttu-id="3e5a0-104">Doporučený postup pro uchovávání hodnoty vlastnosti je definovat proměnnou `Private` v kontejneru vlastnosti a použít ji v postupech `Get` a `Set`.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-104">The recommended approach to holding the value of a property is to define a `Private` variable in the property's container and use it in both the `Get` and `Set` procedures.</span></span> <span data-ttu-id="3e5a0-105">Procedura `Set` by pak měla uložit příchozí hodnotu v této proměnné `Private`.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-105">The `Set` procedure should then store the incoming value in this `Private` variable.</span></span>  
   
- <span data-ttu-id="9b3cd-106">`Get` Postup se chová stejně jako `Function` postup, abyste mohli přiřadit hodnotu názvu vlastnosti a vrátit ovládací prvek podle zjištění `End Get` příkazu.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-106">The `Get` procedure behaves like a `Function` procedure, so it can assign a value to the property name and return control by encountering the `End Get` statement.</span></span> <span data-ttu-id="9b3cd-107">Doporučený postup je však chcete zahrnout `Private` jako hodnota v proměnné [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).</span><span class="sxs-lookup"><span data-stu-id="9b3cd-107">The recommended approach, however, is to include the `Private` variable as the value in a [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md).</span></span>  
+ <span data-ttu-id="3e5a0-106">Procedura `Get` se chová jako procedura `Function`, takže může přiřadit hodnotu k názvu vlastnosti a vrátit řízení návratovou hodnotou, když se objeví příkaz `End Get`.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-106">The `Get` procedure behaves like a `Function` procedure, so it can assign a value to the property name and return control by encountering the `End Get` statement.</span></span> <span data-ttu-id="3e5a0-107">Doporučený postup je však zahrnout proměnnou `Private` jako hodnotu v [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md).</span><span class="sxs-lookup"><span data-stu-id="3e5a0-107">The recommended approach, however, is to include the `Private` variable as the value in a [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md).</span></span>  
   
- <span data-ttu-id="9b3cd-108">`Set` Postup se chová stejně jako `Sub` proceduru, která nevrací hodnotu.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-108">The `Set` procedure behaves like a `Sub` procedure, which does not return a value.</span></span> <span data-ttu-id="9b3cd-109">Proto se název procedury nebo vlastnost nemá žádný speciální význam v rámci `Set` postupu a nejde uložit hodnotu do něj.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-109">Therefore, the procedure or property name has no special meaning within a `Set` procedure, and you cannot store a value into it.</span></span>  
+ <span data-ttu-id="3e5a0-108">Procedura `Set` se chová jako procedura `Sub`, která nevrací hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-108">The `Set` procedure behaves like a `Sub` procedure, which does not return a value.</span></span> <span data-ttu-id="3e5a0-109">Název procedury nebo vlastnosti proto nemá žádný zvláštní význam v rámci procesu @no__t 0 a nelze do ní uložit hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-109">Therefore, the procedure or property name has no special meaning within a `Set` procedure, and you cannot store a value into it.</span></span>  
   
- <span data-ttu-id="9b3cd-110">Následující příklad ukazuje postup, který může způsobit, že tato chyba, za nímž následuje doporučený postup.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-110">The following example illustrates the approach that can cause this error, followed by the recommended approach.</span></span>  
+ <span data-ttu-id="3e5a0-110">Následující příklad ilustruje přístup, který může způsobit tuto chybu, následovanou doporučeným přístupem.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-110">The following example illustrates the approach that can cause this error, followed by the recommended approach.</span></span>  
   
-```  
+```vb  
 Public Class illustrateProperties  
 ' The code in the following property causes this error.  
     Public Property badProp() As Char  
@@ -55,16 +55,16 @@ Public Class illustrateProperties
 End Class  
 ```  
   
- <span data-ttu-id="9b3cd-111">Ve výchozím nastavení tato zpráva je upozornění.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-111">By default, this message is a warning.</span></span> <span data-ttu-id="9b3cd-112">Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="9b3cd-112">For more information about hiding warnings or treating warnings as errors, please see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
+ <span data-ttu-id="3e5a0-111">Ve výchozím nastavení je tato zpráva upozornění.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-111">By default, this message is a warning.</span></span> <span data-ttu-id="3e5a0-112">Další informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="3e5a0-112">For more information about hiding warnings or treating warnings as errors, please see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
- <span data-ttu-id="9b3cd-113">**ID chyby:** BC42026</span><span class="sxs-lookup"><span data-stu-id="9b3cd-113">**Error ID:** BC42026</span></span>  
+ <span data-ttu-id="3e5a0-113">**ID chyby:** BC42026</span><span class="sxs-lookup"><span data-stu-id="3e5a0-113">**Error ID:** BC42026</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="9b3cd-114">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="9b3cd-114">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="3e5a0-114">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="3e5a0-114">To correct this error</span></span>  
   
-- <span data-ttu-id="9b3cd-115">Přepsání definice vlastnosti použít doporučený postup, jak je znázorněno v předchozím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9b3cd-115">Rewrite the property definition to use the recommended approach as illustrated in the preceding example.</span></span>  
+- <span data-ttu-id="3e5a0-115">Přepište definici vlastnosti tak, aby používala doporučený přístup, jak je znázorněno v předchozím příkladu.</span><span class="sxs-lookup"><span data-stu-id="3e5a0-115">Rewrite the property definition to use the recommended approach as illustrated in the preceding example.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9b3cd-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b3cd-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3e5a0-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3e5a0-116">See also</span></span>
 
-- [<span data-ttu-id="9b3cd-117">Procedury vlastnosti</span><span class="sxs-lookup"><span data-stu-id="9b3cd-117">Property Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [<span data-ttu-id="9b3cd-118">Příkaz Property</span><span class="sxs-lookup"><span data-stu-id="9b3cd-118">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)
-- [<span data-ttu-id="9b3cd-119">Příkaz Set</span><span class="sxs-lookup"><span data-stu-id="9b3cd-119">Set Statement</span></span>](../../../visual-basic/language-reference/statements/set-statement.md)
+- [<span data-ttu-id="3e5a0-117">Procedury vlastnosti</span><span class="sxs-lookup"><span data-stu-id="3e5a0-117">Property Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
+- [<span data-ttu-id="3e5a0-118">Příkaz Property</span><span class="sxs-lookup"><span data-stu-id="3e5a0-118">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)
+- [<span data-ttu-id="3e5a0-119">Příkaz Set</span><span class="sxs-lookup"><span data-stu-id="3e5a0-119">Set Statement</span></span>](../../../visual-basic/language-reference/statements/set-statement.md)
