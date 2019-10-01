@@ -45,6 +45,10 @@
           href: tutorials/mlnet-cli.md
         - name: Analýza mínění pomocí Model Builderu a Razor Pages
           href: tutorials/sentiment-analysis-model-builder.md
+    - name: Infer.NET
+      items:
+        - name: Pravděpodobnostní programování s Infer.NET
+          href: how-to-guides/matchup-app-infer-net.md
 - name: Koncepty
   items:
     - name: Úlohy ML.NET (typy modelů)
@@ -95,10 +99,6 @@
           href: how-to-guides/install-ml-net-cli.md
         - name: Použití rozhraní API pro automatizované strojové učení
           href: how-to-guides/how-to-use-the-automl-api.md
-    - name: Infer.NET
-      items:
-        - name: Pravděpodobnostní programování s Infer.NET
-          href: how-to-guides/matchup-app-infer-net.md
 - name: Odkaz
   items:
     - name: rozhraní API
