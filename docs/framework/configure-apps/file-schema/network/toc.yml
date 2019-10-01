@@ -81,7 +81,7 @@
               href: remove-element-for-webrequestmodules-network-settings.md
             - name: <clear> – element pro webRequestModules (nastavení sítě)
               href: clear-element-for-webrequestmodules-network-settings.md
-    - name: <Uri> – element (nastavení URI)
+    - name: <uri> – element (nastavení URI)
       href: uri-element-uri-settings.md
       items:
         - name: <idn> – element (nastavení URI)
