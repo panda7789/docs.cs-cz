@@ -2,12 +2,12 @@
 title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Naučte se zpracovávat chyby HTTP pomocí Polly a HttpClientFactory.
 ms.date: 01/07/2019
-ms.openlocfilehash: de1dad44b1ddc7b04438fb380f240d3be33bbb83
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: d5e0b6c830422990aaf1a5e3b6ae257eb3dae99c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331982"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696906"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakovaných pokusů volání HTTP pomocí exponenciálního omezení rychlostiu se zásadami HttpClientFactory a Polly
 
@@ -15,7 +15,7 @@ Doporučený postup pro opakování s exponenciálním omezení rychlosti je vyu
 
 Polly je knihovna .NET, která poskytuje funkce odolnosti a přechodných chyb. Tyto možnosti můžete implementovat pomocí zásad Polly, jako je opakování, přerušení okruhů, izolace přepážky, časový limit a Fallback. Polly cílí na rozhraní .NET 4. x a knihovnu .NET Standard 1,0 (která podporuje .NET Core).
 
-Nicméně použití knihovny Polly s vlastním kódem s HttpClient může být výrazně složité. V původní verzi eShopOnContainers byly [ResilientHttpClient stavební bloky](https://github.com/dotnet-architecture/eShopOnContainers/commit/0c317d56f3c8937f6823cf1b45f5683397274815#diff-e6532e623eb606a0f8568663403e3a10) založené na Polly. Ale s vydáním [HttpClientFactory](use-httpclientfactory-to-implement-resilient-http-requests.md)se odolnost proti chybám protokolu HTTP mnohem zjednodušila, takže sestavení-Block bylo z eShopOnContainers zastaralé. 
+Nicméně psaní vlastního kódu pro použití knihovny Polly s HttpClient může být výrazně složité. V původní verzi eShopOnContainers byly [ResilientHttpClient stavební bloky](https://github.com/dotnet-architecture/eShopOnContainers/commit/0c317d56f3c8937f6823cf1b45f5683397274815#diff-e6532e623eb606a0f8568663403e3a10) založené na Polly. Ale u vydání [HttpClientFactory](use-httpclientfactory-to-implement-resilient-http-requests.md)se implementace odolné komunikace http s Polly stala mnohem jednodušší, takže sestavení-Block bylo od eShopOnContainersu zastaralá. 
 
 Následující kroky ukazují, jak můžete použít opakování protokolu HTTP s integrovaným Polly do HttpClientFactory, který je vysvětlen v předchozí části.
 
@@ -76,7 +76,7 @@ Policy
 - **Polly (odolnost proti chybám .NET a knihovna pro zpracování s přechodnými chybami)**  
   <https://github.com/App-vNext/Polly>
 
-- @no__t – 0Marc Brooker. Zpoždění Lepší zvýšení náhodnosti @ no__t-0  
+- **Brooker ohraničení Kolísání: lepší práce díky náhodnosti**  
   <https://brooker.co.za/blog/2015/03/21/backoff.html>
 
 >[!div class="step-by-step"]

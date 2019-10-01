@@ -1,21 +1,23 @@
 ---
-title: Blazor pro vývojáře webových formulářů ASP.NET
+title: Blazor pro vývojáře ASP.NET Web Forms
 description: Naučte se vytvářet plnohodnotné webové aplikace s využitím .NET pomocí Blazor a .NET Core jednoduchým a známým způsobem.
 author: danroth27
 ms.author: daroth
 ms.date: 09/11/2019
-ms.openlocfilehash: a80483f6a1f1cb9e5a3e2ffff18cbd59c5b67af3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 936f85d4fda9c5396a6586810735877488226157
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71183796"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696935"
 ---
-# <a name="blazor-for-aspnet-web-forms-developers"></a>Blazor pro vývojáře webových formulářů ASP.NET
+# <a name="blazor-for-aspnet-web-forms-developers"></a>Blazor pro vývojáře ASP.NET Web Forms
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![Snímek obrazovky zobrazující titulní knihu aplikací bez serveru](./media/index/blazor-for-web-forms-developers-cover.png)
 
-> STAŽENÍ k dispozici v:<https://aka.ms/blazor-ebook>
+> STAŽENÍ k dispozici v: <https://aka.ms/blazor-ebook>
 
 PUBLIKOVAL (A)
 
@@ -27,7 +29,7 @@ Jeden způsob Microsoftu
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 by Microsoft Corporation
+Copyright © 2019 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -35,7 +37,7 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené <https://www.microsoft.com> na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na <https://www.microsoft.com> na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 

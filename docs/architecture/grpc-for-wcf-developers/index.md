@@ -3,14 +3,16 @@ title: ASP.NET Core gRPC pro vývojáře WCF – gRPC pro vývojáře WCF
 description: BUDE URČENO K ZÁPISU
 author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 7d02d7914aed39613b4a41da55515df80abddfe8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: dc39fc96e7154fb50acd0b65a58586b3fa12ab50
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184447"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696922"
 ---
-# <a name="aspnet-core-grpc-for-wcf-developers"></a>ASP.NET Core gRPC pro vývojáře WCF
+# <a name="aspnet-core-grpc-for-wcf-developers"></a>gRPC ASP.NET Core pro vývojáře WCF
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![titulní obrázek](./media/cover.png)
 
@@ -24,7 +26,7 @@ Jeden způsob Microsoftu
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 by Microsoft Corporation
+Copyright © 2019 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -32,9 +34,9 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
-Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc. Používá se oprávněním.
+Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
 
 Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 

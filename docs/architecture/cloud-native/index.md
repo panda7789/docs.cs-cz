@@ -3,14 +3,16 @@ title: Architekt cloudových nativních aplikací .NET pro Azure
 description: Příručka pro sestavování nativních aplikací cloudu využívajících kontejnery, mikroslužby a funkce bez serveru v Azure.
 author: ardalis
 ms.date: 03/07/2019
-ms.openlocfilehash: 67e235b051702308d2455b2501bfb59a4317635b
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 7f14a690d0153edc43f0ce7f4e91c9e9cd2c6858
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214163"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696778"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>Architekt cloudových nativních aplikací .NET pro Azure
+
+[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ![titulní obrázek](./media/cover.png)
 
@@ -24,7 +26,7 @@ Jeden způsob Microsoftu
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 by Microsoft Corporation
+Copyright © 2019 od společnosti Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy se nedá reprodukovat ani přenést v jakékoli formě nebo jakýmkoli způsobem bez písemného svolení vydavatele.
 
@@ -32,11 +34,11 @@ Tato kniha je k dispozici "tak jak jsou" a vyjadřuje zobrazení a stanoviska au
 
 Některé příklady, které jsou zde uvedeny, jsou k dispozici pouze pro ilustraci a jsou smyšlené. Neexistuje žádné skutečné přidružení nebo připojení, které by mělo být odvozeno.
 
-Microsoft a ochranné známky uvedené https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
+Microsoft a ochranné známky uvedené na https://www.microsoft.com na webové stránce ochranné známky jsou ochranné známky skupiny společností Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
-Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc. Používá se oprávněním.
+Logo Docker Whale je registrovaná ochranná známka společnosti Docker, Inc., kterou používá oprávnění.
 
 Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
