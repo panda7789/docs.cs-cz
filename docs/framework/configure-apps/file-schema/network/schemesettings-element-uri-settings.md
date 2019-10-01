@@ -2,19 +2,19 @@
 title: <schemeSettings> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: 46012b15d41422fb3357e57438e320136809ef41
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 498aef77a1dfd8cffcac73b704b8d1bb6df5d165
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664013"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697759"
 ---
-# <a name="schemesettings-element-uri-settings"></a>\<schemeSettings – element > (nastavení URI)
-Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.  
+# <a name="schemesettings-element-uri-settings"></a>@no__t – element > 0schemeSettings (nastavení URI)
+Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.  
   
- \<> Konfigurace  
-\<uri>  
-\<schemeSettings >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<schemeSettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.
 |[identifikátor URI](uri-element-uri-settings.md)|Obsahuje nastavení, která určují, jak .NET Framework zpracovává webové adresy vyjádřené pomocí identifikátorů URI (Uniform Resource Identifier).|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy zruší počet znaků zakódovaných oddělovači cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
+ Ve výchozím nastavení třídy <xref:System.Uri?displayProperty=nameWithType> zruší řídicí oddělovače% zakódovaných cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> Třída First zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivou adresu URL výše konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> má za následek následující identifikátor URI:  
+ Z tohoto důvodu třída <xref:System.Uri?displayProperty=nameWithType> nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> vede k následujícímu identifikátoru URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje konfiguraci použitou <xref:System.Uri> třídou pro podporu nekódovaných oddělovačů cest v procentech pro schéma HTTP.  
+ Následující příklad ukazuje konfiguraci, kterou používá třída <xref:System.Uri> pro podporu nekódovaných oddělovačů cest pro schéma HTTP v procentech.  
   
 ```xml  
 <configuration>  

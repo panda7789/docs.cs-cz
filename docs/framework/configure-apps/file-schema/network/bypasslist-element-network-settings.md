@@ -8,20 +8,20 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: bd746f07b4c4eb08bf34b01d555b5799d9af0cf3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1dda43be8c0e0c94bdf7b57b67aa4d403b547f97
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927467"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699545"
 ---
-# <a name="bypasslist-element-network-settings"></a>\<BypassList – element > (nastavení sítě)
+# <a name="bypasslist-element-network-settings"></a>@no__t – element > 0bypasslist (nastavení sítě)
 Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.  
   
- \<> Konfigurace  
-\<system.net>  
-\<defaultProxy>  
-\<BypassList >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<bypasslist >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,9 +51,9 @@ Poskytuje sadu regulárních výrazů, které popisují adresy, které nepouží
 |[defaultProxy](defaultproxy-element-network-settings.md)|Nakonfiguruje proxy server protokolu HTTP (Hypertext Transfer Protocol).|  
   
 ## <a name="remarks"></a>Poznámky  
- Seznam pro obejití obsahuje regulární výrazy, které popisují identifikátory <xref:System.Net.WebRequest> URI, které instance přistupuje přímo místo přes proxy server.  
+ Seznam pro obejití obsahuje regulární výrazy, které popisují identifikátory URI, které <xref:System.Net.WebRequest> instancí přímo, nikoli prostřednictvím proxy server.  
   
- Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] +\\. contoso\\. com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] +\\. contoso\\. com $".  
+ Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] + @no__t -0.contoso\\.com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] + @no__t -0.contoso\\.com $".  
   
  Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).  
   

@@ -12,61 +12,61 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: e5cb1ddc130a8b1913f30b0d20d27941005dd9d3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: c6028f524a16b836310f0c8d564205244515cdc9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063251"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701286"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf – operátor (Visual Basic)
-Zkontroluje, zda modul runtime typu výsledek výrazu je kompatibilní s typem se zadaným typem.
+Kontroluje, zda typ modulu runtime výsledku výrazu je kompatibilní s typem zadaného typu.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 result = TypeOf objectexpression Is typename  
 ```  
   
-```  
+```vb  
 result = TypeOf objectexpression IsNot typename  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Vrátí. A `Boolean` hodnotu.  
+ Vrátil. Hodnota `Boolean`.  
   
  `objectexpression`  
- Povinný parametr. Libovolný výraz, který se vyhodnotí na typ odkazu.  
+ Požadováno. Libovolný výraz, který je vyhodnocen jako typ odkazu.  
   
  `typename`  
- Povinný parametr. Všechna data, zadejte název.  
+ Požadováno. Libovolný název datového typu.  
   
 ## <a name="remarks"></a>Poznámky  
- `TypeOf` Operátor určuje, zda za běhu typ `objectexpression` je kompatibilní s `typename`. Kompatibilita závisí na typu kategorie `typename`. Následující tabulka ukazuje, jak se určují kompatibilitu.  
+ Operátor `TypeOf` určuje, zda je běhový typ `objectexpression` kompatibilní s `typename`. Kompatibilita závisí na kategorii typu `typename`. Následující tabulka ukazuje, jak je určována kompatibilita.  
   
 |Typ kategorie `typename`|Kritérium kompatibility|  
 |---------------------------------|-----------------------------|  
-|Třída|`objectexpression` je typu `typename` nebo dědí z `typename`|  
-|Struktura|`objectexpression` je typu `typename`|  
-|Rozhraní|`objectexpression` implementuje `typename` nebo dědí z třídy, která implementuje `typename`|  
+|Třída|`objectexpression` je typu `typename` nebo dědí z `typename`.|  
+|Struktura|`objectexpression` je typu `typename`.|  
+|Rozhraní|`objectexpression` implementuje `typename` nebo dědí ze třídy, která implementuje `typename`.|  
   
- Pokud typ za běhu `objectexpression` splňuje kritéria kompatibility `result` je `True`. V opačném případě `result` je `False`.  Pokud `objectexpression` má hodnotu null, pak `TypeOf`... `Is` vrátí `False`, a... `IsNot` vrátí `True`.  
+ Pokud typ běhu `objectexpression` splňuje kritérium kompatibility, `result` je `True`. V opačném případě `result` `False`.  Pokud je hodnota `objectexpression` null, pak `TypeOf`... `Is` vrátí `False` a... `IsNot` vrátí `True`.  
   
- `TypeOf` je vždy použito s `Is` – klíčové slovo k vytvoření `TypeOf`... `Is` výrazu, nebo se `IsNot` – klíčové slovo k vytvoření `TypeOf`... `IsNot` výrazu.  
+ `TypeOf` se vždy používá s klíčovým slovem `Is` k vytvoření výrazu `TypeOf`... `Is` nebo pomocí klíčového slova `IsNot` pro vytvoření výrazu `TypeOf`... `IsNot`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `TypeOf`... `Is` výrazy pro testování kompatibility typ dvou objektů referenční proměnné s různými datovými typy.  
+ V následujícím příkladu jsou použity výrazy `TypeOf`... `Is` k otestování kompatibility typů dvou proměnných odkazu na objekt s různými datovými typy.  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  
   
- Proměnná `refInteger` je za běhu typu `Integer`. Je kompatibilní s `Integer` , ale ne s `Double`. Proměnná `refForm` je za běhu typu <xref:System.Windows.Forms.Form>. Je kompatibilní s <xref:System.Windows.Forms.Form> protože jeho typ, který je s <xref:System.Windows.Forms.Control> protože <xref:System.Windows.Forms.Form> dědí z <xref:System.Windows.Forms.Control>a s <xref:System.ComponentModel.IComponent> protože <xref:System.Windows.Forms.Form> dědí z <xref:System.ComponentModel.Component>, který implementuje <xref:System.ComponentModel.IComponent>. Ale `refForm` není kompatibilní s <xref:System.Windows.Forms.Label>.  
+ Proměnná `refInteger` má běhový typ `Integer`. Je kompatibilní s `Integer`, ale ne s `Double`. Proměnná `refForm` má běhový typ <xref:System.Windows.Forms.Form>. Je kompatibilní s <xref:System.Windows.Forms.Form>, protože to je jeho typ s <xref:System.Windows.Forms.Control>, protože <xref:System.Windows.Forms.Form> dědí od <xref:System.Windows.Forms.Control> a <xref:System.ComponentModel.IComponent>, protože <xref:System.Windows.Forms.Form> dědí z <xref:System.ComponentModel.Component>, které implementuje <xref:System.ComponentModel.IComponent>. @No__t-0 však není kompatibilní s <xref:System.Windows.Forms.Label>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
 - [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory porovnávání v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

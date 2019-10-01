@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <clear> element, authenticationModules
 - authenticationModules, clear element
 ms.assetid: dc522c45-4a80-4831-8955-f7b68a47edfd
-ms.openlocfilehash: 12ac146926103b40073d34f48895b0645c8a8ed2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 052f7eef30500d37389585956728250a46b718a3
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659466"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698402"
 ---
-# <a name="clear-element-for-authenticationmodules-network-settings"></a>\<Clear – element > pro authenticationModules (nastavení sítě)
+# <a name="clear-element-for-authenticationmodules-network-settings"></a>@no__t – element > 0clear pro authenticationModules (nastavení sítě)
 Vymaže všechny moduly ověřování z aplikace.  
   
- \<> Konfigurace  
-\<system.net>  
-\<authenticationModules>  
-\<Vymazat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<authenticationModules >** ](authenticationmodules-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ Vymaže všechny moduly ověřování z aplikace.
 |[authenticationModules](authenticationmodules-element-network-settings.md)|Určuje moduly používané pro ověřování síťových požadavků.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element odebere všechny moduly ověřování definované dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
+ Element `clear` odebere všechny moduly ověřování definované dříve v konfiguračním souboru nebo na vyšší úrovni v konfigurační hierarchii.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

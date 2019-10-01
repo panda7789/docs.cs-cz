@@ -1,5 +1,5 @@
 ---
-title: <filter><add> Element<listeners> pro pro pro<source>
+title: <filter> element pro <add> pro <listeners> pro <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#filter
@@ -9,23 +9,23 @@ helpviewer_keywords:
 - <filter> element for <add> for <listeners> for <source>
 - filter element for <add> for <listeners> for <source>
 ms.assetid: 15808b80-4579-4c25-b385-178cfdf154ba
-ms.openlocfilehash: 0d25d0b955a94986147922914068c8a1cf2d96c4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ec288685f47c8a35e2371c31d359b604a4967196
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920523"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697160"
 ---
-# <a name="filter-element-for-add-for-listeners-for-source"></a>\<> element Filter elementu \<Add > for \<Listeners > \<for Source >
-Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasování.  
+# <a name="filter-element-for-add-for-listeners-for-source"></a>\<filter > element pro \<add > pro \<listeners > pro \<source >
+Přidá filtr do naslouchacího procesu v kolekci `Listeners` pro zdroj trasování.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> zdrojů  
-\<> zdroje  
-\<> naslouchací proces  
-\<add>  
-\<Filtrovat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9[ **&nbsp;2add >** ](add-element-for-listeners-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 @ no__t-10 @ no__t-11 **&nbsp;3filter >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasová
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`type`|Požadovaný atribut.<br /><br /> Určuje typ filtru, který by měl dědit z <xref:System.Diagnostics.TraceFilter> třídy. Můžete použít název kvalifikovaný obor názvů typu, který odpovídá <xref:System.Type.FullName%2A> vlastnosti typu, nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení, které odpovídají <xref:System.Type.AssemblyQualifiedName%2A> vlastnosti. Informace o plně kvalifikovaných názvech typů naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`type`|Požadovaný atribut.<br /><br /> Určuje typ filtru, který by měl dědit z třídy <xref:System.Diagnostics.TraceFilter>. Můžete použít název kvalifikovaný obor názvů typu, který odpovídá vlastnosti <xref:System.Type.FullName%2A>, nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení, který odpovídá vlastnosti <xref:System.Type.AssemblyQualifiedName%2A>. Informace o plně kvalifikovaných názvech typů naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro určenou třídu filtru.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -57,15 +57,15 @@ Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasová
 |`sources`|Obsahuje zdroje trasování, které spouštějí trasovací zprávy.|  
 |`source`|Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
 |`listeners`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.|  
-|`add`|Přidá naslouchací proces do `Listeners` kolekce pro zdroj trasování.|  
+|`add`|Přidá naslouchací proces do kolekce `Listeners` pro zdroj trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element musí být obsažen `<add>` v elementu pro naslouchací proces zdroje trasování, který určuje typ naslouchacího procesu, nikoli pouze název naslouchacího procesu definovaného v [ \<> sharedListeners.](sharedlisteners-element.md) `<filter>` Pokud je naslouchací proces definován v [ \<> sharedListeners](sharedlisteners-element.md), filtr pro tento naslouchací proces musí být definován v tomto elementu.  
+ Element `<filter>` musí být obsažen v elementu `<add>` pro naslouchací proces zdroje trasování, který určuje typ naslouchacího procesu, nikoli pouze název naslouchacího procesu definovaného v [> \<sharedListeners](sharedlisteners-element.md). Pokud je naslouchací proces definován v [> \<sharedListeners](sharedlisteners-element.md), musí být v tomto elementu definován filtr pro tento naslouchací proces.  
   
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `<filter>` element pro přidání filtru do naslouchacího procesu `console` v `Listeners` kolekci pro zdroj `myTraceSource`trasování a určení úrovně události filtru jako `Error`.  
+ Následující příklad ukazuje, jak použít prvek `<filter>` pro přidání filtru do naslouchacího procesu `console` v kolekci `Listeners` pro zdroj trasování `myTraceSource`, zadáním úrovně události Filter jako `Error`.  
   
 ```xml  
 <configuration>  

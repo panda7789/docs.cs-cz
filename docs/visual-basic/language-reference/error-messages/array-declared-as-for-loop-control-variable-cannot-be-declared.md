@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC32039
 ms.assetid: 1d8b6560-c9eb-4b71-a038-24c6f5a5ce46
-ms.openlocfilehash: 9f24dd2a20dc3a4935cd288a20a0e12c1d47bee1
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 9e8bb7b79b5a770c3c92e47d8e7c01c5b83d6061
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912344"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701213"
 ---
 # <a name="array-declared-as-for-loop-control-variable-cannot-be-declared-with-an-initial-size"></a>Pole deklarované jako řídicí proměnná cyklu typu for nelze deklarovat s počáteční velikostí.
-A `For Each` smyčky používá pole jako jeho *element* iterační proměnné ale inicializuje dané pole.  
+Smyčka `For Each` používá pole jako jeho proměnnou iterace *elementu* , ale inicializuje toto pole.  
   
- Následující příkazy ukazují, jak můžete tuto chybu vygeneruje.  
+ Následující příkazy ukazují, jak lze tuto chybu vygenerovat.  
   
-```  
+```vb  
 Dim arrayList As New List(Of Integer())  
 For Each listElement() As Integer In arrayList  
 For Each listElement(1) As Integer In arrayList  
 ```  
   
- První `For Each` příkaz je správný způsob, jak přístup prvky `arrayList`. Druhá `For Each` příkaz vygeneruje tuto chybu.  
+ Prvním příkazem `For Each` je správný způsob, jak získat přístup k prvkům `arrayList`. Druhý příkaz `For Each` vygeneruje tuto chybu.  
   
  **ID chyby:** BC32039  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Odebrání inicializace deklarace *element* proměnné iterace.  
+- Odeberte inicializaci z deklarace proměnné iterace *elementu* .  
   
 ## <a name="see-also"></a>Viz také:
 

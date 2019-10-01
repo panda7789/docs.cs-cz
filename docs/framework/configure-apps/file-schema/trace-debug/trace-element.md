@@ -10,19 +10,19 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: fd90d271591a47849b3f70aea50cbe909b6fd613
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 02fd794eb7b7b7f46f7f7bc4e43036cb4a4758ed
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920402"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699173"
 ---
-# <a name="trace-element"></a>\<Trace – element > elementu
+# <a name="trace-element"></a>@no__t – element > 0trace
 Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> trasování  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<trace >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,14 +45,14 @@ Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují tra
   
 ## <a name="autoflush-attribute"></a>AutoFlush – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Nevyprázdní výstupní vyrovnávací paměť automaticky. Toto nastavení je výchozí.|  
 |`true`|Automaticky vyprázdní výstupní vyrovnávací paměť.|  
   
 ## <a name="usegloballock-attribute"></a>useGlobalLock – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Nepoužívá globální zámek, pokud naslouchací proces je bezpečný pro přístup z více vláken; v opačném případě používá globální zámek.|  
 |`true`|Používá globální zámek bez ohledu na to, zda je naslouchací proces bezpečný pro přístup z více vláken. Toto nastavení je výchozí.|  
@@ -61,7 +61,7 @@ Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují tra
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> naslouchací proces](listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy.|  
+|[@no__t – 1listeners >](listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -71,7 +71,7 @@ Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují tra
 |`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `<trace>` element k přidání naslouchacího procesu `MyListener` do `Listeners` kolekce. `MyListener`Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. Atribut je nastaven na `false`, což způsobí, že globální zámek nebude použit, pokud je naslouchací proces trasování bezpečný pro přístup z více vláken. `useGlobalLock` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování zapisuje do souboru <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> bez ohledu na to, zda je metoda volána. `autoflush` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> při volání metody odsadí nula mezer. `indentsize`  
+ Následující příklad ukazuje způsob použití prvku `<trace>` pro přidání naslouchacího procesu `MyListener` do kolekce `Listeners`. `MyListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. Atribut `useGlobalLock` je nastaven na hodnotu `false`, což způsobí, že globální zámek nebude použit, pokud je naslouchací proces trasování bezpečný pro přístup z více vláken. Atribut `autoflush` je nastaven na hodnotu `true`, což způsobí, že naslouchací proces trasování zapisuje do souboru bez ohledu na to, zda je volána metoda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType>. Atribut `indentsize` je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces odsadí nula mezer při volání metody <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType>.  
   
 ```xml  
 <configuration>  

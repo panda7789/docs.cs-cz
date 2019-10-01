@@ -1,7 +1,7 @@
 ---
 title: Logické logické operátory – C# referenční informace
 description: Přečtěte C# si o operátorech, které provádějí logické negace, spojení (a) a včetně a exkluzivní operace disjunkce (nebo) s logickými operandy.
-ms.date: 04/08/2019
+ms.date: 09/27/2019
 author: pkulikov
 f1_keywords:
 - '!_CSharpKeyword'
@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 39f5be7a667b4e37e84246ef0bfeb03c0099d4b7
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: cc25d4bfd444dc0acb30fc1c6e6c3c9918af537c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353360"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698685"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logické logické operátory (C# referenční)
 
@@ -54,6 +54,8 @@ Pro operandy [integrálních](../builtin-types/integral-numeric-types.md) typů 
 Operátor `!` vypočítá logickou negaci svého operandu. To znamená, že vytváří `true`, pokud je operand vyhodnocen jako `false` a `false`, pokud je operand vyhodnocen jako `true`:
 
 [!code-csharp-interactive[logical negation](~/samples/csharp/language-reference/operators/BooleanLogicalOperators.cs#Negation)]
+
+Počínaje C# 8,0, unární přípona @no__t operátor-1 je operátor null-striktní. V povoleném kontextu anotace s možnou hodnotou null je použit k deklaraci, že výraz `x` typu odkazu s možnou hodnotou null není null: `x!`. Další informace naleznete v tématu [typy odkazů s možnou hodnotou null](../../nullable-references.md).
 
 ## <a name="logical-and-operator-"></a>Logický operátor AND &amp;
 
@@ -115,7 +117,7 @@ V následujícím příkladu je pravý operand operátoru `||` volání metody, 
 
 U operandů `bool?` podporují operátory `&` a `|` logiku se třemi hodnotami. Sémantika těchto operátorů je definována v následující tabulce:  
   
-|x|Y|x & y|×&#124;y|  
+|x|y|x & y|×&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  
 |true|false|false|true|  
@@ -137,7 +139,7 @@ Podmíněné logické operátory `&&` a `||` nepodporují operandy `bool?`.
 
 ## <a name="compound-assignment"></a>Složené přiřazení
 
-Pro binární operátor `op`, výraz složeného přiřazení formuláře
+Pro binární operátor `op` se složený výraz přiřazení formuláře
 
 ```csharp
 x op= y
@@ -161,7 +163,7 @@ Podmíněné logické operátory `&&` a `||` nepodporují složené přiřazení
 
 Následující seznam uvádí logické operátory od nejvyšší priority k nejnižší:
 
-- Logický operátor negace`!`
+- Logický operátor negace `!`
 - Logický operátor AND `&`
 - Logický exkluzivní operátor OR `^`
 - Logický operátor OR @no__t – 0

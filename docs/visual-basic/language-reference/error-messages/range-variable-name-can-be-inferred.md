@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36599
 ms.assetid: 17763dbe-f74f-4ccb-8086-cb7e45ec4d12
-ms.openlocfilehash: a0b5633bb0efb3c67f73810552ef9a14ac3d0c70
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f448f34dc5909b9128fc700abab5b4f00e911edf
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934274"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701018"
 ---
 # <a name="range-variable-name-can-be-inferred-only-from-a-simple-or-qualified-name-with-no-arguments"></a>Název proměnné rozsahu lze odvodit jen z jednoduchého nebo kvalifikovaného názvu bez argumentů.
-Programový element, který přijímá jeden nebo více argumentů je zahrnutý v dotazu LINQ. Kompilátor nedokáže odvodit proměnnou rozsahu z této programovací element.  
+Programovací prvek, který používá jeden nebo více argumentů, je obsažen v dotazu LINQ. Kompilátor nemůže odvodit proměnnou rozsahu z tohoto programovacího prvku.  
   
  **ID chyby:** BC36599  
   
@@ -23,12 +23,12 @@ Programový element, který přijímá jeden nebo více argumentů je zahrnutý 
   
 1. Zadejte explicitní název proměnné pro programový element, jak je znázorněno v následujícím kódu:  
   
-```  
+```vb  
 Dim query = From var1 In collection1   
             Select VariableAlias= SampleFunction(var1), var1  
 ```  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)

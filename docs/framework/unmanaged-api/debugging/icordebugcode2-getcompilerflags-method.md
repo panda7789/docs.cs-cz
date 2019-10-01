@@ -17,35 +17,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95ba19ae908dbf37052c0a74ef8f99090f3313ba
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1605ee92c8743606ff0e958f112a2d90af43e03a
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748579"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700719"
 ---
 # <a name="icordebugcode2getcompilerflags-method"></a>ICorDebugCode2::GetCompilerFlags – metoda
-Získá příznaky určující podmínky, za kterých byl tento objekt kódu buď kompilován just-in-time (JIT), nebo generován pomocí generátoru nativních bitových kopií (Ngen.exe).  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT GetCompilerFlags (  
-    [out] DWORD *pdwFlags  
-);  
-```  
-  
-## <a name="parameters"></a>Parametry  
+
+Získá příznaky určující podmínky, za kterých byl tento objekt kódu buď kompilován just-in-time (JIT), nebo generován pomocí generátoru nativních bitových kopií (Ngen.exe).
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT GetCompilerFlags (
+    [out] DWORD *pdwFlags
+);
+```
+
+## <a name="parameters"></a>Parametry
+
  `pdwFlags`  
- [out] Ukazatel na hodnotu [cordebugjitcompilerflags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) výčet, který určuje chování kompilátoru JIT nebo Generátor nativních bitových kopií.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
+ mimo Ukazatel na hodnotu výčtu [CorDebugJITCompilerFlags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) , která určuje chování kompilátoru JIT nebo nativního generátoru obrázků.
+
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Hlavička:** CorDebug. idl, CorDebug. h
+
+ **Knihovna:** CorGuids. lib
+
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ 

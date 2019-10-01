@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <nameEntry> element
 - nameEntry element
 ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
-ms.openlocfilehash: d8f4d4aa9c80990cdf858da9fcdf6465438866cf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a339638587f8b544bbc1b0073553f6232ce09694
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927564"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699783"
 ---
-# <a name="nameentry-element"></a>\<nameEntry – element >
+# <a name="nameentry-element"></a>@no__t – element > 0nameEntry
 Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna třída měla mnoho popisných názvů.  
   
- \<> Konfigurace  
-\<mscorlib>  
-\<cryptographySettings >  
-\<cryptoNameMapping>  
-\<nameEntry >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<cryptoNameMapping >** ](cryptonamemapping-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<nameEntry >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,8 +37,8 @@ Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**name**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který kryptografická třída implementuje.|  
-|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu atributu **Name** v [ \<elementu cryptoClass >](cryptoclass-element.md) .|  
+|**Jméno**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který kryptografická třída implementuje.|  
+|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu atributu **Name** v prvku [> \<cryptoClass](cryptoclass-element.md) .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,10 +51,10 @@ Mapuje název třídy na popisný název algoritmu, který umožňuje, aby jedna
 |`system.web`|Určuje kořenový element konfiguračního oddílu ASP.NET.|  
   
 ## <a name="remarks"></a>Poznámky  
- Atribut **Name** může být název jedné z abstraktních tříd nalezených v <xref:System.Security.Cryptography> oboru názvů. Při volání metody **Create** na abstraktní kryptografické třídě je název abstraktní třídy předán <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A> metodě. **CreateFromName** vrací instanci typu, která je označena atributem **Class** . Pokud je atribut **Name** krátkým názvem, jako je například RSA, můžete použít tento název při volání metody **CreateFromName** .  
+ Atribut **Name** může být název jedné z abstraktních tříd nalezených v oboru názvů <xref:System.Security.Cryptography>. Při volání metody **Create** na abstraktní kryptografické třídě je název abstraktní třídy předán metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>. **CreateFromName** vrací instanci typu, která je označena atributem **Class** . Pokud je atribut **Name** krátkým názvem, jako je například RSA, můžete použít tento název při volání metody **CreateFromName** .  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<prvku nameEntry >** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metodě a <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> použít metodu k vrácení `MyCryptoRSAClass` objektu.  
+ Následující příklad ukazuje způsob použití prvku **> @no__t 1nameEntry** k odkazování na třídu kryptografie a ke konfiguraci modulu runtime. Pak můžete předat řetězec "RSA" metodě <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> a použít metodu <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> pro vrácení objektu `MyCryptoRSAClass`.  
   
 ```xml  
 <configuration>  

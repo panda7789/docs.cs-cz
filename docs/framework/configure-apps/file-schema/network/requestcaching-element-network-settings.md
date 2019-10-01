@@ -8,19 +8,19 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: 2a3d0b182acad2351ed095934ca97c6194d344fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f0979d2e0caeb0b22b90572aef0ad53235020f1d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659134"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697830"
 ---
-# <a name="requestcaching-element-network-settings"></a>\<requestCaching – element > (nastavení sítě)
+# <a name="requestcaching-element-network-settings"></a>@no__t – element > 0requestCaching (nastavení sítě)
 Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.  
   
- \<> Konfigurace  
-\<system.net>  
-\<requestCaching>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<requestCaching >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,14 +42,14 @@ ms.locfileid: "69659134"
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`isPrivateCache`|Určuje, jestli mezipaměť poskytuje izolaci mezi informacemi různých uživatelů. Výchozí hodnota je `true`. Tato hodnota by měla `false` být pro aplikace střední vrstvy.|  
+|`isPrivateCache`|Určuje, jestli mezipaměť poskytuje izolaci mezi informacemi různých uživatelů. Výchozí hodnota je `true`. Tato hodnota by měla být `false` pro aplikace střední vrstvy.|  
 |`disableAllCaching`|Určuje, že ukládání do mezipaměti je pro všechny webové odpovědi zakázané, a nedá se přepsat programově.|  
-|`defaultPolicyLevel`|Jedna z hodnot ve <xref:System.Net.Cache.RequestCacheLevel> výčtu. Výchozí hodnota je `BypassCache`.|  
+|`defaultPolicyLevel`|Jedna z hodnot ve výčtu <xref:System.Net.Cache.RequestCacheLevel>. Výchozí hodnota je `BypassCache`.|  
 |`unspecifiedMaximumAge`|Určuje výchozí čas, po kterém je obsah označen jako konec platnosti.|  
   
 ## <a name="policylevel-attribute"></a>policyLevel – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`Default`|Vrátí prostředek uložený v mezipaměti, pokud je prostředek v čerstvém stavu, že velikost obsahu je přesná a že jsou k dispozici atributy vypršení platnosti, změna a délka obsahu.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -65,7 +65,7 @@ ms.locfileid: "69659134"
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
-|[\<defaultFtpCachePolicy – element > (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[@no__t – element > 1defaultFtpCachePolicy (nastavení sítě)](defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

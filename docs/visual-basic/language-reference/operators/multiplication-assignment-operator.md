@@ -10,47 +10,47 @@ helpviewer_keywords:
 - '*= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 96c86509-6eb8-4682-8226-3852e049376f
-ms.openlocfilehash: 7c009a6b3acfe1528a2c34ed1e10735ac86507e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47d3239af6ff24501e6babc23c0db4103c477796
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032128"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701071"
 ---
 # <a name="-operator-visual-basic"></a>*= – operátor (Visual Basic)
-Vynásobí hodnotu proměnné nebo vlastnosti hodnotou výrazu a výsledek přiřadí proměnné nebo vlastnosti.  
+Vynásobí hodnotu proměnné nebo vlastnosti hodnotou výrazu a přiřadí výsledek proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 variableorproperty *= expression  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Povinný parametr. Všechny číselné proměnné nebo vlastnosti.  
+ Požadováno. Jakákoli číselná proměnná nebo vlastnost.  
   
  `expression`  
- Povinný parametr. Jakýkoli číselný výraz.  
+ Požadováno. Libovolný číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Element na levé straně `*=` operátor může být jednoduché skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně operátoru `*=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- `*=` Operátor nejprve vynásobí hodnotu výrazu (na pravé straně operátoru) hodnotu proměnné nebo vlastnosti (na levé straně operátoru). Operátor, který se pak přiřadí výsledek této operace na proměnnou nebo vlastnost.  
+ Operátor `*=` nejprve vynásobí hodnotu výrazu (na pravé straně operátoru) hodnotou proměnné nebo vlastnosti (na levé straně operátoru). Operátor potom přiřadí výsledek této operace proměnné nebo vlastnosti.  
   
 ## <a name="overloading"></a>Přetížení  
- [* – Operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md) může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Přetížení `*` operátor má vliv na chování `*=` operátor. Pokud váš kód používá `*=` v třídě nebo struktuře, která přetížení `*`, je nutné pochopit jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor *](../../../visual-basic/language-reference/operators/multiplication-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má operand typ této třídy nebo struktury. Přetížení operátoru `*` má vliv na chování operátoru `*=`. Pokud váš kód používá `*=` na třídě nebo struktuře, která přetěžuje `*`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `*=` operátor násobit jeden `Integer` proměnné tak, že druhé a přiřadit výsledek, který má první proměnné.  
+ V následujícím příkladu je použit operátor `*=` k vynásobení jedné proměnné `Integer` sekundou a k první proměnné se přiřadí výsledek.  
   
  [!code-vb[VbVbalrOperators#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [* – operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md)
+- [Operátor *](../../../visual-basic/language-reference/operators/multiplication-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 2f17e9828f46e6355cdbbddb1b8a83f1188b1a01
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6d85cc041850300d1d079b227dcb8ed9201a0502
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791741"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699065"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL Serveru
 Izolace snímků vylepšuje souběžnost pro aplikace OLTP.  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Principy izolace snímků a správy verzí řádků  
- Po povolení izolace snímku se v **databázi tempdb**uchovávají aktualizované verze řádků pro každou transakci. Jedinečné pořadové číslo transakce identifikuje každou transakci a tato jedinečná čísla se zaznamenávají pro každou verzi řádku. Transakce funguje s nejnovějšími verzemi řádků, které mají pořadové číslo před pořadovým číslem transakce. Novější verze řádků vytvořené po zahájení transakce jsou transakce ignorovány.  
+ Když je povolená izolace snímku, musí se udržovat aktualizované verze řádků pro každou transakci.  Před SQL Server 2019 byly tyto verze uloženy v **databázi tempdb**. SQL Server 2019 zavádí novou funkci, která zrychluje obnovení databáze (ADR), které vyžaduje vlastní sadu verzí řádků.  Pokud je tedy pro SQL Server 2019 povolená možnost ADR, verze řádků se v **databázi tempdb** uchovávají jako vždy.  Pokud je povoleno pravidlo automatického nasazení, pak všechny verze řádků, jak souvisí s izolací snímku a ADR, jsou uchovávány v úložišti trvalé verze (PVS), které je umístěno v uživatelské databázi ve skupině souborů, kterou uživatel určí. Jedinečné pořadové číslo transakce identifikuje každou transakci a tato jedinečná čísla se zaznamenávají pro každou verzi řádku. Transakce funguje s nejnovějšími verzemi řádků, které mají pořadové číslo před pořadovým číslem transakce. Novější verze řádků vytvořené po zahájení transakce jsou transakce ignorovány.  
   
  Pojem "snímek" odráží skutečnost, že všechny dotazy v transakci jsou ve stejné verzi nebo snímku databáze, na základě stavu databáze v okamžiku, kdy transakce začíná. Na podkladové datové řádky nebo datové stránky v transakci snímku se nezískávají žádné zámky, což umožňuje provádět jiné transakce bez zablokování předchozí nedokončená transakce. Transakce, které upravují data, neblokují transakce, které čtou data, a transakce, které čtou data, neblokují transakce, které zapisují data, protože normálně mají pod výchozí úroveň izolace POTVRZENé pro čtení v SQL Server. Toto neblokující chování také významně snižuje pravděpodobnost zablokování pro komplexní transakce.  
   
@@ -76,7 +76,7 @@ SET READ_COMMITTED_SNAPSHOT ON
  Transakce snímku vždy používá optimistické řízení souběžnosti, což odpírá všechny zámky, které by zabránily aktualizaci řádků v jiných transakcích. Pokud se transakce snímku pokusí Potvrdit aktualizaci na řádek, který byl změněn po zahájení transakce, transakce se vrátí zpět a vyvolá se chyba.  
   
 ## <a name="working-with-snapshot-isolation-in-adonet"></a>Práce s izolací snímku v ADO.NET  
- Izolace snímků je podporována <xref:System.Data.SqlClient.SqlTransaction> třídou v ADO.NET. Pokud byla pro izolaci snímků povolena databáze, ale není nakonfigurována pro READ_COMMITTED_SNAPSHOT on, je nutné při volání <xref:System.Data.SqlClient.SqlTransaction> <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> metody inicializovat použití hodnoty výčtu **IsolationLevel. Snapshot** . Tento fragment kódu předpokládá, že připojení je otevřený <xref:System.Data.SqlClient.SqlConnection> objekt.  
+ Izolace snímků je podporována v ADO.NET třídou <xref:System.Data.SqlClient.SqlTransaction>. Pokud byla pro izolaci snímků povolena databáze, ale není nakonfigurována pro READ_COMMITTED_SNAPSHOT ON, je nutné při volání metody <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> iniciovat <xref:System.Data.SqlClient.SqlTransaction> pomocí hodnoty výčtu **IsolationLevel. Snapshot** . Tento fragment kódu předpokládá, že připojení je otevřený objekt <xref:System.Data.SqlClient.SqlConnection>.  
   
 ```vb  
 Dim sqlTran As SqlTransaction = _  

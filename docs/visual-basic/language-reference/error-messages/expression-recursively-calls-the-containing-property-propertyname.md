@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 93d02618ff19f431b3602e74478337f6918df289
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665167"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698571"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost '\<propertyname > "
-Příkaz v `Set` postup definice vlastnosti uloží hodnotu do názvu vlastnosti.  
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>Výraz rekurzivně volá nadřazenou vlastnost \<propertyname >.
+Příkaz v proceduře `Set` definice vlastnosti ukládá hodnotu do názvu vlastnosti.  
   
- Doporučený postup pro drží hodnotu vlastnosti je definování `Private` proměnné ve vlastnosti kontejneru a jeho použití v obou `Get` a `Set` postupy. `Set` Postup by měl pak ukládání příchozích hodnoty v tomto `Private` proměnné.  
+ Doporučený postup pro uchovávání hodnoty vlastnosti je definovat proměnnou `Private` v kontejneru vlastnosti a použít ji v postupech `Get` a `Set`. Procedura `Set` by pak měla uložit příchozí hodnotu v této proměnné `Private`.  
   
- `Get` Postup se chová stejně jako `Function` postup, abyste mohli přiřadit hodnotu názvu vlastnosti a vrátit ovládací prvek podle zjištění `End Get` příkazu. Doporučený postup je však chcete zahrnout `Private` jako hodnota v proměnné [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
+ Procedura `Get` se chová jako procedura `Function`, takže může přiřadit hodnotu k názvu vlastnosti a vrátit řízení návratovou hodnotou, když se objeví příkaz `End Get`. Doporučený postup je však zahrnout proměnnou `Private` jako hodnotu v [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md).  
   
- `Set` Postup se chová stejně jako `Sub` proceduru, která nevrací hodnotu. Proto se název procedury nebo vlastnost nemá žádný speciální význam v rámci `Set` postupu a nejde uložit hodnotu do něj.  
+ Procedura `Set` se chová jako procedura `Sub`, která nevrací hodnotu. Název procedury nebo vlastnosti proto nemá žádný zvláštní význam v rámci procesu @no__t 0 a nelze do ní uložit hodnotu.  
   
- Následující příklad ukazuje postup, který může způsobit, že tato chyba, za nímž následuje doporučený postup.  
+ Následující příklad ilustruje přístup, který může způsobit tuto chybu, následovanou doporučeným přístupem.  
   
-```  
+```vb  
 Public Class illustrateProperties  
 ' The code in the following property causes this error.  
     Public Property badProp() As Char  
@@ -55,13 +55,13 @@ Public Class illustrateProperties
 End Class  
 ```  
   
- Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení je tato zpráva upozornění. Další informace o skrývání upozornění nebo zpracování upozornění jako chyb najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42026  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přepsání definice vlastnosti použít doporučený postup, jak je znázorněno v předchozím příkladu.  
+- Přepište definici vlastnosti tak, aby používala doporučený přístup, jak je znázorněno v předchozím příkladu.  
   
 ## <a name="see-also"></a>Viz také:
 

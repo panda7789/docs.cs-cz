@@ -1,5 +1,5 @@
 ---
-title: Dokumentace rozhraní .NET framework
+title: Dokumentace k .NET Framework
 ms.date: 04/02/2019
 ms.custom: updateeachrelease
 f1_keywords:
@@ -10,33 +10,33 @@ helpviewer_keywords:
 ms.assetid: f61f02f2-2f20-483d-8f56-a9c8f3a54986
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d93dea42dbb854d8d52bd5cf3e54d1ce0d892d6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e5a86b3abf821a37944a0e478d0bc8f1bea31ccb
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635533"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699057"
 ---
 # <a name="net-framework-guide"></a>Průvodce rozhraním .NET Framework
 
 > [!NOTE]
-> Tato sada obsahu rozhraní .NET Framework obsahuje informace pro rozhraní .NET Framework verze 4.5 prostřednictvím 4.8. Pokud chcete stáhnout rozhraní .NET Framework, naleznete v tématu [instalace rozhraní .NET Framework](./install/guide-for-developers.md). Seznam nových funkcí a změn v rozhraní .NET Framework najdete v tématu [co je nového v rozhraní .NET Framework](./whats-new/index.md). Seznam podporovaných platforem najdete v tématu [rozhraní .NET Framework System Requirements](./get-started/system-requirements.md). Dokumentaci ke službě starší verze rozhraní .NET Framework najdete v tématu [.NET dokumentace k předchozím verzím](https://docs.microsoft.com/previous-versions/dotnet/).
+> Tato .NET Framework sada obsahu obsahuje informace pro .NET Framework verze 4,5 až 4,8. Pokud si chcete stáhnout .NET Framework, přečtěte si téma [instalace .NET Framework](./install/guide-for-developers.md). Seznam nových funkcí a změn v rozhraní .NET Framework najdete v tématu [co je nového v .NET Framework](./whats-new/index.md). Seznam podporovaných platforem najdete v tématu [.NET Framework požadavky na systém](./get-started/system-requirements.md). Dokumentaci k starším verzím .NET Framework najdete v [dokumentaci k předchozím verzím rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/).
 
-Rozhraní .NET Framework je Vývojová platforma pro vytváření aplikací pro web, Windows, Windows Phone, Windows Server a Microsoft Azure. Zahrnuje common language runtime (CLR) a knihovny tříd rozhraní .NET Framework, která zahrnuje celou řadu funkcí a podporu pro mnoho oborových standardů.
+.NET Framework je vývojová platforma pro vytváření aplikací pro web, Windows, Windows Phone, Windows Server a Microsoft Azure. Skládá se z modulu CLR (Common Language Runtime) a knihovny tříd .NET Framework, která zahrnuje širokou škálu funkcí a podpory pro mnoho oborových standardů.
 
-Rozhraní .NET Framework poskytuje mnoho služeb, včetně správy paměti, bezpečnost typů a paměti, zabezpečení, sítě a nasazení aplikace. Poskytuje snadným ovládáním datových struktur a rozhraní API, která abstraktní operační systém Windows nižší úrovně. Můžete použít různé programovací jazyky v rozhraní .NET Framework, včetně C#, F#a Visual Basic.
+.NET Framework poskytuje mnoho služeb, včetně správy paměti, zabezpečení typu a paměti, zabezpečení, sítě a nasazení aplikací. Nabízí snadno použitelné datové struktury a rozhraní API, které obsahují abstraktní operační systém Windows na nižší úrovni. Můžete použít různé programovací jazyky s .NET Framework, včetně C#, F#a Visual Basic.
 
-Obecný úvod k rozhraní .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](./get-started/index.md). Úvod do architektury a klíčových funkcí rozhraní .NET Framework, najdete v článku [přehled](./get-started/overview.md).
+Obecný úvod k .NET Framework pro uživatele a vývojáře naleznete v tématu [Začínáme](./get-started/index.md). Úvod k architektuře a klíčovým funkcím .NET Framework najdete v [přehledu](./get-started/overview.md).
 
-Rozhraní .NET Framework lze použít s Dockerem a s [kontejnery Windows](/virtualization/windowscontainers/about/).
+.NET Framework lze použít s Docker a [kontejnery Windows](/virtualization/windowscontainers/about/).
 
 ## <a name="installation"></a>Instalace
 
-Rozhraní .NET Framework se dodává s Windows, takže umožňuje spouštět aplikace rozhraní .NET Framework. Potřebujete novější verzi rozhraní .NET Framework než ten, který se dodává s vaší verzí Windows. Další informace najdete v tématu [nainstalovat rozhraní .NET Framework na Windows](./install/index.md).
+.NET Framework se dodává se systémem Windows, což vám umožní spouštět aplikace .NET Framework. Možná budete potřebovat novější verzi .NET Framework než ta, která se dodává s vaší verzí Windows. Další informace najdete v tématu [instalace .NET Framework ve Windows](./install/index.md).
 
-Zobrazit [oprava rozhraní .NET Framework](./install/repair.md) se naučíte, opravte instalaci rozhraní .NET Framework, pokud dojde k chybám při instalaci rozhraní .NET Framework.
+Pokud při instalaci .NET Framework dochází k chybám, přečtěte si téma věnované [opravě .NET Framework](./install/repair.md) , kde se dozvíte, jak opravit .NET Framework instalaci.
 
-Podrobné informace o stažení rozhraní .NET Framework, naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](./install/guide-for-developers.md).
+Podrobnější informace o stažení .NET Framework najdete v tématu [instalace .NET Framework pro vývojáře](./install/guide-for-developers.md).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
@@ -47,10 +47,10 @@ Popisuje hlavní nové funkce a změny v nejnovějších verzích rozhraní .NET
 Poskytuje ucelený přehled o rozhraní .NET Framework a odkazy na další materiály.
 
 * [Průvodce instalací](./install/index.md)  
-Poskytuje prostředky a pokyny k instalaci rozhraní .NET Framework a řešení potíží.
+Poskytuje prostředky a pokyny týkající se .NET Framework instalace a řešení potíží.
 
 * [Průvodce migrací](./migration-guide/index.md)  
-Obsahuje seznam změn je potřeba zvážit, pokud migrujete na novou verzi rozhraní .NET Framework vaší aplikace a prostředky.
+Poskytuje prostředky a seznam změn, které je třeba vzít v úvahu, pokud migrujete aplikaci na novou verzi .NET Framework.
 
 * [Průvodce vývojem](./development-guide.md)  
 Poskytuje postupy pro všechny klíčové oblasti technologie a úkoly pro vývoj aplikací včetně vytváření, konfigurace, ladění, zabezpečení a nasazení aplikace a informací o dynamickém programování, interoperabilitě, rozšiřitelnosti, správě paměti a podprocesech.
@@ -59,8 +59,8 @@ Poskytuje postupy pro všechny klíčové oblasti technologie a úkoly pro vývo
 Popisuje nástroje, které pomáhají vyvíjet, konfigurovat a nasazovat aplikace s použitím technologií rozhraní .NET Framework.
 
 * [Další knihovny tříd a rozhraní API](./additional-apis/index.md)  
-Poskytuje dokumentaci pro privátní API rozhraní .NET Framework, používají nástroje pro Microsoft.
+Poskytuje dokumentaci pro soukromá .NET Framework rozhraní API používaná nástroji Microsoftu.
 
 ## <a name="see-also"></a>Viz také:
 
-* [Knihovna tříd rozhraní .NET framework](/dotnet/api/?view=netframework-4.8)
+- [Knihovna tříd .NET Framework](/dotnet/api/?view=netframework-4.8)

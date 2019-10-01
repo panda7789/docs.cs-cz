@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: 5ba781598542d271f41476b1a1e9d61faeb6ff74
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30ec24aefcf8c4d1e110238a2c60a958eded5545
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927185"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699390"
 ---
-# <a name="assert-element"></a>\<Assert – > element
-Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metody zobrazit okno se zprávou. určuje také název souboru, do kterého budou zapsány zprávy.  
+# <a name="assert-element"></a>@no__t – element > 0assert
+Určuje, zda se má při volání metody <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> zobrazit okno se zprávou; Určuje také název souboru, do kterého se mají zapisovat zprávy.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<assert>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<assert >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displ
   
 ## <a name="assertuienabled-attribute"></a>AssertUiEnabled – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`true`|Zobrazí okno se zprávou. Toto nastavení je výchozí.|  
 |`false`|Nezobrazuje okno se zprávou.|  
@@ -56,7 +56,7 @@ Určuje, zda se má při volání <xref:System.Diagnostics.Debug.Assert%2A?displ
 |`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďují, ukládají a směrují zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Oba atributy v rámci  **\<kontrolního elementu >** jsou nepovinné. Okna se zprávou můžete zakázat bez určení souboru, do kterého se mají zprávy zapisovat, nebo můžete zadat soubor, do kterého se mají zapisovat zprávy, a nechat okna zpráv zapnutá.  
+ Oba atributy v prvku **> \<assert** jsou volitelné. Okna se zprávou můžete zakázat bez určení souboru, do kterého se mají zprávy zapisovat, nebo můžete zadat soubor, do kterého se mají zapisovat zprávy, a nechat okna zpráv zapnutá.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak zakázat zobrazování oken zpráv při volání metody **Debug. Assert** a zapsat zprávy do `c:\log.txt`.  

@@ -6,14 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-ms.openlocfilehash: 7e1ac1004e671f592c03bd44ee7ec2e8cc572933
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 32e8f9532244679d2994b0e3d98279d75f7e77b4
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71331621"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701041"
 ---
 # <a name="isnot-operator-visual-basic"></a>IsNot – operátor (Visual Basic)
+
 Porovná dvě proměnné odkazu na objekt.
 
 ## <a name="syntax"></a>Syntaxe
@@ -46,4 +47,4 @@ result = object1 IsNot object2
 - [Operátor Is](is-operator.md)
 - [Operátor Typeof](typeof-operator.md)
 - [Priorita operátorů v Visual Basic](operator-precedence.md)
-- [Postupy: Otestuje, zda jsou dva objekty stejné @ no__t-0
+- [Postupy: Test, zda jsou dva objekty stejné](../../programming-guide/language-features/operators-and-expressions/how-to-test-whether-two-objects-are-the-same.md)

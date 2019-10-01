@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 255e69d3715a22e7933b4036e968e610657748cf
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 63f8871926e8c279678c59a2256bef46b2ff514e
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353762"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698779"
 ---
 # <a name="char-c-reference"></a>char (Referenční dokumentace jazyka C#)
 
@@ -21,13 +21,13 @@ Klíčové slovo `char` slouží k deklaraci instance struktury <xref:System.Cha
 
  Znaky Unicode slouží k reprezentaci většiny psaných jazyků po celém světě.
 
-|type|Rozsah|Size|Typ .NET|
+|Typ|Rozsah|Velikost|Typ .NET|
 |----------|-----------|----------|-------------------------|
 |`char`|U + 0000 až U + FFFF|16 bitový znak Unicode|<xref:System.Char?displayProperty=nameWithType>|
 
 ## <a name="literals"></a>Literály
 
-Konstanty typu `char` lze zapsat jako znakové literály, hexadecimální sekvence escape nebo reprezentace v kódování Unicode. Můžete také přetypovat kódy integrálních znaků. V následujícím příkladu se čtyřmi proměnnými `char` inicializuje se stejným znakem `X`:
+Konstanty typu `char` lze zapsat jako znakové literály, hexadecimální sekvence escape nebo reprezentace v kódování Unicode. Můžete také přetypovat kódy integrálních znaků. V následujícím příkladu jsou čtyři prvky pole `char` inicializovány se stejným znakem `X`:
 
 [!code-csharp[csrefKeywordsTypes#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#19)]
 

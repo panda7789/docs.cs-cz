@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: de5672e5c6762b1e0742e717a3d499a4f93ee8ec
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: fa00aed2cd1e96ec788d4bc9c1c63f20561d8d1c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659345"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698174"
 ---
-# <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest – element > (nastavení sítě)
+# <a name="httpwebrequest-element-network-settings"></a>@no__t – element > 0httpWebRequest (nastavení sítě)
 Přizpůsobuje parametry webového požadavku.  
   
- \<> Konfigurace  
-\<system.net>  
-\<Nastavení >  
-\<httpWebRequest>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<httpWebRequest >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,10 +53,10 @@ Přizpůsobuje parametry webového požadavku.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[možnost](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
+|[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení .NET Framework striktně vynutila specifikaci RFC 2616 pro analýzu identifikátorů URI. Některé odpovědi serveru mohou obsahovat řídicí znaky v zakázaných polích, což způsobí, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> že metoda <xref:System.Net.WebException>vyvolá výjimku. Pokud je **useUnsafeHeaderParsing** nastavené na **hodnotu true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> v tomto případě se v tomto případě nevyvolává. vaše aplikace ale bude zranitelná vůči několika formám útoků s analýzou identifikátoru URI. Nejlepším řešením je změnit server tak, aby odpověď neobsahovala řídicí znaky.  
+ Ve výchozím nastavení .NET Framework striktně vynutila specifikaci RFC 2616 pro analýzu identifikátorů URI. Některé odpovědi serveru můžou obsahovat řídicí znaky v zakázaných polích, což způsobí, že metoda <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> vyvolá <xref:System.Net.WebException>. Pokud je **useUnsafeHeaderParsing** nastavené na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> se v tomto případě nevyvolává. vaše aplikace ale bude zranitelná vůči několika formám útoků s analýzou identifikátoru URI. Nejlepším řešením je změnit server tak, aby odpověď neobsahovala řídicí znaky.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

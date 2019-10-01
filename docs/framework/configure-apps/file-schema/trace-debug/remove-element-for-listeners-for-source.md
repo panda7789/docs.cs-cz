@@ -1,5 +1,5 @@
 ---
-title: <remove>Element pro <listeners> pro<source>
+title: <remove> element pro <listeners> pro <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/remove
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - remove element for <listeners> for <source>
 - <remove> element for <listeners> for <source>
 ms.assetid: 3ff6b578-273d-407f-b07f-8251f1f9f5d0
-ms.openlocfilehash: edd27dd262004aead7db4d81db8ecab0e831dac1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4a11308278f755ec8271477352d91d8797d105c5
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926996"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699490"
 ---
-# <a name="remove-element-for-listeners-for-source"></a>\<Odebrat element > pro \<naslouchací procesy > \<pro > zdrojového kódu
-Odebere naslouchací proces z `Listeners` kolekce pro zdroj trasování.  
+# <a name="remove-element-for-listeners-for-source"></a>> element \<remove pro \<listeners > pro \<source >
+Odebere naslouchací proces z kolekce `Listeners` pro zdroj trasování.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> zdrojů  
-\<> zdroje  
-\<> naslouchací proces  
-\<odebrat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 **&nbsp;1remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +37,7 @@ Odebere naslouchací proces z `Listeners` kolekce pro zdroj trasování.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`name`|Požadovaný atribut.<br /><br /> Název naslouchacího procesu, který se má odebrat z `Listeners` kolekce.|  
+|`name`|Požadovaný atribut.<br /><br /> Název naslouchacího procesu, který se má odebrat z kolekce `Listeners`|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,14 +53,14 @@ Odebere naslouchací proces z `Listeners` kolekce pro zdroj trasování.
 |`listeners`|Určuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element Odebere zadaný naslouchací proces `Listeners` z kolekce pro zdroj trasování. `<remove>`  
+ Element `<remove>` odebere zadaného naslouchacího procesu z kolekce `Listeners` pro zdroj trasování.  
   
- Můžete `Listeners` odebrat prvek z kolekce pro zdroj trasování programově <xref:System.Diagnostics.TraceListenerCollection.Remove%2A> voláním metody <xref:System.Diagnostics.TraceSource> u <xref:System.Diagnostics.TraceSource.Listeners%2A> vlastnosti instance.  
+ Můžete odebrat prvek z kolekce `Listeners` pro zdroj trasování programově voláním metody <xref:System.Diagnostics.TraceListenerCollection.Remove%2A> u vlastnosti <xref:System.Diagnostics.TraceSource.Listeners%2A> instance <xref:System.Diagnostics.TraceSource>.  
   
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad `<remove>` ukazuje, jak použít element před `<add>` použitím elementu pro `Listeners` přidání naslouchacího procesu `console` do kolekce pro zdroj `TraceSourceApp`trasování.  
+ Následující příklad ukazuje, jak použít prvek `<remove>` před použitím prvku `<add>` pro přidání naslouchacího procesu `console` do kolekce `Listeners` pro zdroj trasování `TraceSourceApp`.  
   
 ```xml  
 <configuration>  
@@ -84,5 +84,5 @@ Odebere naslouchací proces z `Listeners` kolekce pro zdroj trasování.
 - <xref:System.Diagnostics.TraceSource.Listeners%2A>
 - <xref:System.Diagnostics.TraceSource>
 - [Trasování a ladění schématu nastavení](index.md)
-- [\<clear>](clear-element-for-listeners-for-source.md)
+- [@no__t – 1clear >](clear-element-for-listeners-for-source.md)
 - [Moduly naslouchání trasování](../../../debug-trace-profile/trace-listeners.md)

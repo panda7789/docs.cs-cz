@@ -14,62 +14,62 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-ms.openlocfilehash: 29e2b159e4c6261a62e788b537102b9b457fe0c8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5ebc5f9dbf674a9a6560bd96b3e8c9edcae08a81
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955821"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701078"
 ---
 # <a name="not-operator-visual-basic"></a>Not – operátor (Visual Basic)
-Provede logickou negaci `Boolean` výrazu nebo bitovou negaci číselného výrazu.  
+Provede logickou negaci pro výraz @no__t 0 nebo bitovou negaci číselného výrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 result = Not expression  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Povinný parametr. Libovolný `Boolean` nebo numerický výraz.  
+ Požadováno. Libovolný `Boolean` nebo číselný výraz.  
   
  `expression`  
- Povinný parametr. Libovolný `Boolean` nebo numerický výraz.  
+ Požadováno. Libovolný `Boolean` nebo číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- V `Boolean` případě výrazů ukazuje následující tabulka, jak `result` je určena.  
+ U výrazů `Boolean` ukazuje následující tabulka, jak se určuje `result`.  
   
 |Pokud `expression` je|Hodnota `result` je|  
 |------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
- U numerických výrazů `Not` operátor obrátí bitové hodnoty libovolného číselného výrazu a nastaví odpovídající bit v `result` závislosti na následující tabulce.  
+ U numerických výrazů operátor `Not` Invertuje bitové hodnoty libovolného číselného výrazu a nastaví odpovídající bit v `result` podle následující tabulky.  
   
-|Pokud je bit `expression` v|Bit v `result` je|  
+|If bit v `expression` je|Bit v `result` je|  
 |-------------------------------|----------------------------|  
-|1|0|  
-|0|1|  
+|první|0,8|  
+|0,8|první|  
   
 > [!NOTE]
 > Vzhledem k tomu, že logické a bitové operátory mají nižší prioritu než jiné aritmetické a relační operátory, měly by být všechny bitové operace uzavřeny v závorkách, aby bylo zajištěno přesné provedení.  
   
 ## <a name="data-types"></a>Datové typy  
- Pro logickou negaci je `Boolean`datový typ výsledku. Pro bitovou negaci je výsledný datový typ stejný jako `expression`u. Nicméně pokud je `Decimal`výraz, je `Long`výsledkem.  
+ Pro logickou negaci je datový typ výsledku `Boolean`. Pro bitovou negaci je výsledný datový typ stejný jako u `expression`. Pokud je však výraz `Decimal`, výsledek je `Long`.  
   
 ## <a name="overloading"></a>Přetížení  
- Operátor může být přetížen, což znamená, že třída nebo struktura může předefinovat své chování, pokud má jeho operand typ této třídy nebo struktury. `Not` Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Operátor `Not` může být *přetížen*, což znamená, že třída nebo struktura může předefinovat své chování, pokud má jeho operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Not` operátor k provedení logické negace `Boolean` výrazu. Výsledkem je `Boolean` hodnota, která představuje obrácenou hodnotu výrazu.  
+ Následující příklad používá operátor `Not` k provedení logické negace na výrazu `Boolean`. Výsledkem je hodnota @no__t 0, která představuje opačnou hodnotu výrazu.  
   
  [!code-vb[VbVbalrOperators#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#33)]  
   
- Předchozí příklad vytvoří výsledky `False` a `True`v uvedeném pořadí.  
+ Předchozí příklad vytvoří výsledky `False` a `True` v uvedeném pořadí.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Not` operátor k provedení logické negace jednotlivých bitů číselného výrazu. Bit ve vzorci výsledků je nastaven na zpětný výsledek odpovídajícího bitu ve vzoru operandu, včetně bitu znaménka.  
+ Následující příklad používá operátor `Not` k provedení logické negace jednotlivých bitů číselného výrazu. Bit ve vzorci výsledků je nastaven na zpětný výsledek odpovídajícího bitu ve vzoru operandu, včetně bitu znaménka.  
   
  [!code-vb[VbVbalrOperators#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#34)]  
   

@@ -1,19 +1,19 @@
 ---
-title: 'Kurz: Generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow'
+title: 'Kurz: generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow'
 description: Přečtěte si, jak přenést znalosti z existujícího modelu TensorFlow do nového modelu klasifikace imagí ML.NET. Model TensorFlow byl vyškolen pro klasifikaci imagí do tisíc kategorií. Model ML.NET využívá učení přenosu pro klasifikaci imagí do méně širších kategorií.
-ms.date: 09/26/2019
+ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
 author: natke
 ms.author: nakersha
-ms.openlocfilehash: 28d8c18721bd353e961284935758a87679c8c8e0
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 8ae966330ca85722c72c92e26363d99c7d9de3e7
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353692"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698652"
 ---
-# <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: Generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow
+# <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Kurz: generování modelu klasifikace imagí ML.NET z předem připraveného modelu TensorFlow
 
 Přečtěte si, jak přenést znalosti z existujícího modelu TensorFlow do nového modelu klasifikace imagí ML.NET.
 
@@ -67,20 +67,18 @@ Klasifikace obrázku je běžný Machine Learning úkol, který nám umožňuje 
 
  Nebo jak na následujících obrázcích zjistit, jestli je image a (n) jídla, hračka nebo zařízení:
 
-![obrázek![informační](./media/image-classification/220px-Pepperoni_pizza.jpg)
-zprávy image Pizza](./media/image-classification/119px-Nalle_-_a_small_brown_teddy_bear.jpg)
-image![Teddy](./media/image-classification/193px-Broodrooster.jpg)
+![pizza obrázek @ no__t-1 @ no__t-2teddy Bear image @ no__t-3 @ no__t-4toaster image @ no__t-5
 
 >[!Note]
 > Předchozí image patří do Wikimedia a jsou jim tyto atributy:
 >
-> * "220px-Pepperoni_pizza.jpg" Public Domain, https://commons.wikimedia.org/w/index.php?curid=79505,
+> * Veřejná doména "220px-Pepperoni_pizza. jpg", https://commons.wikimedia.org/w/index.php?curid=79505,
 > * "119px-Nalle_-_a_small_brown_teddy_bear. jpg" pomocí [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) – s fotografací, CC by-SA 2,0, https://commons.wikimedia.org/w/index.php?curid=48166.
 > * "193px-Broodrooster. jpg" podle [M. Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) vlastní práce, CC by-sa 3,0, https://commons.wikimedia.org/w/index.php?curid=27403
 
-@No__t-0 se vyškole pro klasifikaci imagí do tisíc kategorií, ale pro tento kurz je potřeba klasifikovat obrázky v menší sadě kategorií a jenom v těchto kategoriích. `transfer` Zadejte`transfer learning`část. Můžete přenést `Inception model`schopnost rozpoznávat a klasifikovat obrázky pro nové kategorie omezené na vlastní třídění imagí.
+@No__t-0 se vyškole pro klasifikaci imagí do tisíc kategorií, ale pro tento kurz je potřeba klasifikovat obrázky v menší sadě kategorií a jenom v těchto kategoriích. Zadejte `transfer` část `transfer learning`. Můžete přenést `Inception model` schopnost rozpoznávat a klasifikovat obrázky pro nové kategorie omezené na vlastní třídění imagí.
 
-* Potravinářství
+* Simulant
 * Hračk
 * Náplně
 
@@ -102,7 +100,7 @@ Algoritmus implementovaný tímto Trainer se dobře hodí v případě problém�
 
 ### <a name="data"></a>Data
 
-Existují dva zdroje dat: `.tsv` soubor a soubory obrázků.  Soubor obsahuje dva sloupce: první je definována jako `ImagePath` a druhá druhá `Label` odpovídá obrázku. `tags.tsv` Následující ukázkový soubor neobsahuje řádek záhlaví a vypadá takto:
+Existují dva zdroje dat: soubor `.tsv` a soubory obrázků.  Soubor `tags.tsv` obsahuje dva sloupce: první z nich je definována jako `ImagePath` a druhá hodnota je `Label` odpovídající imagi. Následující ukázkový soubor neobsahuje řádek záhlaví a vypadá takto:
 
 <!-- markdownlint-disable MD010 -->
 ```tsv
@@ -139,11 +137,11 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 1. Stáhněte si [soubor zip adresáře Project assets](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)a rozbalte ho.
 
-1. Zkopírujte adresář do adresáře projektu *TransferLearningTF.* `assets` Tento adresář a jeho podadresáře obsahují data a podpůrné soubory (s výjimkou modelu zahájení, který si stáhnete a přidáte v dalším kroku) potřebném pro tento kurz.
+1. Zkopírujte adresář `assets` do adresáře projektu *TransferLearningTF* . Tento adresář a jeho podadresáře obsahují data a podpůrné soubory (s výjimkou modelu zahájení, který si stáhnete a přidáte v dalším kroku) potřebném pro tento kurz.
 
 1. Stáhněte si [model](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)zahájení a rozbalte ho.
 
-1. Zkopírujte obsah `inception5h` adresáře pouze do složky projektu `assets/inputs-train/inception` *TransferLearningTF* . Tento adresář obsahuje model a další podpůrné soubory potřebné pro tento kurz, jak je znázorněno na následujícím obrázku:
+1. Zkopírujte obsah adresáře `inception5h` pouze do složky projektu *TransferLearningTF* `assets/inputs-train/inception`. Tento adresář obsahuje model a další podpůrné soubory potřebné pro tento kurz, jak je znázorněno na následujícím obrázku:
 
    ![Obsah adresáře v adresáři](./media/image-classification/inception-files.png)
 
@@ -151,7 +149,7 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 ### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definování cest
 
-1. Do horní části souboru `using` *program.cs* přidejte následující dodatečné příkazy:
+1. Do horní části souboru *program.cs* přidejte následující dodatečné příkazy `using`:
 
     [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#AddUsings)]
 
@@ -163,29 +161,29 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
     [!code-csharp[DeclareImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DeclareImageData)]
 
-    `ImageData`je třída vstupních dat obrázku a obsahuje následující <xref:System.String> pole:
+    `ImageData` je vstupní třída dat obrázku a má následující pole <xref:System.String>:
 
-    * `ImagePath`obsahuje název souboru obrázku.
-    * `Label`obsahuje hodnotu pro popisek obrázku.
+    * `ImagePath` obsahuje název souboru obrázku.
+    * `Label` obsahuje hodnotu pro popisek obrázku.
 
 1. Přidejte do projektu novou třídu pro `ImagePrediction`:
 
     [!code-csharp[DeclareImagePrediction](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DeclareImagePrediction)]
 
-    `ImagePrediction`je třída prediktivních imagí a má následující pole:
+    `ImagePrediction` je třída předpovědi obrázku a má následující pole:
 
-    * `Score`obsahuje procento spolehlivosti pro danou klasifikaci obrázku.
-    * `PredictedLabelValue`obsahuje hodnotu pro předpokládaný popisek klasifikace obrázku.
+    * `Score` obsahuje procento spolehlivosti pro danou klasifikaci obrázku.
+    * `PredictedLabelValue` obsahuje hodnotu pro předpokládaný popisek klasifikace obrázku.
 
-    `ImagePrediction`je třída použitá pro předpověď po vyškolení modelu. Má `string` (`ImagePath`) pro cestu k obrázku. @No__t-0 slouží k opakovanému použití a výukového modelu. `PredictedLabelValue` Je používán během předpovědi a vyhodnocení. Pro vyhodnocení se používají vstupy s daty o školení, předpovězené hodnoty a model.
+    `ImagePrediction` je třída použitá pro předpověď po vyškolení modelu. Pro cestu k imagi má `string` (`ImagePath`). @No__t-0 slouží k opakovanému použití a výukového modelu. @No__t-0 se používá během předpovědi a vyhodnocení. Pro vyhodnocení se používají vstupy s daty o školení, předpovězené hodnoty a model.
 
 ### <a name="initialize-variables-in-main"></a>Inicializovat proměnné v Main
 
-1. Inicializujte `MLContext`proměnnou novou instancí. `mlContext`  `Main` Nahraďte `Console.WriteLine("Hello World!")` řádek následujícím kódem v metodě:
+1. Inicializujte proměnnou `mlContext` novou instancí `MLContext`.  Nahraďte řádek `Console.WriteLine("Hello World!")` následujícím kódem v metodě `Main`:
 
     [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#CreateMLContext)]
 
-    [Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializace `mlContext` vytvoří nové prostředí ml.NET, které lze sdílet napříč objekty pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v Entity Framework.
+    [Třída MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializuje se `mlContext` vytvoří nové prostředí ml.NET, které se dá sdílet napříč objekty pracovního postupu pro vytváření modelů. Je podobné, koncepčně, `DBContext` v Entity Framework.
 
 ### <a name="create-a-struct-for-inception-model-parameters"></a>Vytvoření struktury pro parametry modelu vytvářené
 
@@ -197,7 +195,7 @@ Obrázky školení a testování se nacházejí ve složkách assetů, které st
 
 Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více než jednou, vytvořte metodu zobrazení nástrojů pro zpracování zobrazení obrázků a výsledků předpovědi.
 
-1. Vytvořte metodu hned `InceptionSettings` za strukturou pomocí následujícího kódu: `DisplayResults()`
+1. Vytvořte metodu `DisplayResults()` hned za strukturou `InceptionSettings` pomocí následujícího kódu:
 
     ```csharp
     private static void DisplayResults(IEnumerable<ImagePrediction> imagePredictionData)
@@ -212,7 +210,7 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
 ### <a name="create-a-tsv-file-utility-method"></a>Vytvoření metody Utility souboru. TSV
 
-1. Vytvořte metodu hned `DisplayResults()` za metodou pomocí následujícího kódu: `ReadFromTsv()`
+1. Vytvořte metodu `ReadFromTsv()` hned za metodou `DisplayResults()` pomocí následujícího kódu:
 
     ```csharp
     public static IEnumerable<ImageData> ReadFromTsv(string file, string folder)
@@ -238,7 +236,7 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
     }
     ```
 
-1. Vytvořte objekt `ImageData`, který obsahuje plně kvalifikovanou cestu a název souboru obrázku pro jednu `ImagePath`. Přidejte následující kód jako další řádky v `ClassifySingleImage()` metodě:
+1. Vytvořte objekt `ImageData`, který obsahuje plně kvalifikovanou cestu a název souboru obrázku pro jednu `ImagePath`. Přidejte následující kód jako další řádky v metodě `ClassifySingleImage()`:
 
     [!code-csharp[LoadImageData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadImageData)]
 
@@ -246,9 +244,12 @@ Vzhledem k tomu, že zobrazíte data obrázku a související předpovědi více
 
     [!code-csharp[PredictSingle](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#PredictSingle)]
 
-    Třída [třídy PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je pohodlí rozhraní API, které provádí předpovědi pro jednu instanci dat. K získání předpovědi použijte metodu [předpověď ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) .
+    K získání předpovědi použijte metodu [předpověď ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) . [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o [použití `PredictionEnginePool` v ASP.NET Core webovém rozhraní API](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application) .
 
-1. Zobrazit výsledek předpovědi jako další řádek kódu v `ClassifySingleImage()` metodě:
+    > [!NOTE]
+    > rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
+
+1. Zobrazit výsledek předpovědi jako další řádek kódu v metodě `ClassifySingleImage()`:
 
    [!code-csharp[DisplayPrediction](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#DisplayPrediction)]
 
@@ -260,7 +261,7 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
     Tato metoda je srdcem kurzu. Vytvoří kanál pro model a navlakuje kanál k vytvoření modelu ML.NET. Vyhodnocuje také model proti dříve nezobrazeným datům testu.
 
-    Vytvořte metodu hned `InceptionSettings` za`DisplayResults()` strukturou a těsně před metodou pomocí následujícího kódu: `GenerateModel()`
+    Vytvořte metodu `GenerateModel()` hned za strukturou `InceptionSettings` a těsně před metodou `DisplayResults()` pomocí následujícího kódu:
 
     ```csharp
     public static ITransformer GenerateModel(MLContext mlContext)
@@ -299,13 +300,13 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
     [!code-csharp[MapKeyToValue](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#MapKeyToValue)]
 
-## <a name="train-the-model"></a>Trénování modelu
+## <a name="train-the-model"></a>Výuka modelu
 
-1. Načtěte školicí data pomocí obálky [LoadFromTextFile](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile(Microsoft.ML.DataOperationsCatalog,System.String,Microsoft.ML.Data.TextLoader.Options)) . Přidejte následující kód jako další řádek v `GenerateModel()` metodě:
+1. Načtěte školicí data pomocí obálky [LoadFromTextFile](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile(Microsoft.ML.DataOperationsCatalog,System.String,Microsoft.ML.Data.TextLoader.Options)) . Přidejte následující kód jako další řádek v metodě `GenerateModel()`:
 
     [!code-csharp[LoadData](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#LoadData "Load the data")]
 
-    Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView`je flexibilní a efektivní způsob, jak popsat tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do `IDataView` objektu.
+    Data v ML.NET jsou reprezentována jako [Třída IDataView](xref:Microsoft.ML.IDataView). `IDataView` je flexibilní a efektivní způsob, jak popsat tabulková data (číselná a text). Data je možné načíst z textového souboru nebo v reálném čase (například databáze SQL nebo soubory protokolu) do objektu @no__t 0.
 
 1. Vyškolit model s daty načtenými výše:
 
@@ -338,7 +339,7 @@ Kanál ML.NET modelu je řetězec odhady. Všimněte si, že během vytváření
 
     Pro klasifikaci imagí jsou vyhodnocovány následující metriky:
 
-    * `Log-loss`– viz [ztráta protokolu](../resources/glossary.md#log-loss). Chcete, aby byla ztráta protokolu co nejblíže k nule.
+    * `Log-loss` – Podívejte se na [ztrátu protokolu](../resources/glossary.md#log-loss). Chcete, aby byla ztráta protokolu co nejblíže k nule.
     * `Per class Log-loss`. Požadujete, aby byla ztráta protokolu podle třídy co nejblíže k nule.
 
 1. Přidejte následující kód, který vrátí vycvičený model jako další řádek:
@@ -381,7 +382,7 @@ Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro kl
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF) .
 
-V tomto kurzu jste se naučili:
+V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > * Pochopení problému

@@ -10,21 +10,21 @@ helpviewer_keywords:
 - <add> element, bypasslist
 - add element, bypasslist
 ms.assetid: a0b86e28-86b4-4497-abe8-d5fd614c7926
-ms.openlocfilehash: da234402c6ec7e2c1f85e4bd674517b1147f0d18
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1db0ba3b0a213de1175e6e0cee347753d2a413b7
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927480"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699615"
 ---
-# <a name="add-element-for-bypasslist-network-settings"></a>\<Přidat > element pro BypassList (nastavení sítě)
+# <a name="add-element-for-bypasslist-network-settings"></a>@no__t – element > 0add pro BypassList (nastavení sítě)
 Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.  
   
- \<> Konfigurace  
-\<system.net>  
-\<defaultProxy>  
-\<BypassList >  
-\<add>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<add >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**address**|Regulární výraz popisující IP adresu nebo název DNS.|  
+|**adresáře**|Regulární výraz popisující IP adresu nebo název DNS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,11 +53,11 @@ Přidá IP adresu nebo název DNS do seznamu obcházení proxy serverů.
 |[bypasslist](bypasslist-element-network-settings.md)|Poskytuje sadu regulárních výrazů, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
- `add` Element vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS na seznam adres, které obcházejí proxy server.  
+ Element `add` vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS na seznam adres, které obcházejí proxy server.  
   
- Hodnota `address` atributu by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
+ Hodnota atributu `address` by měla být regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
   
- Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] +\\. contoso\\. com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] +\\. contoso\\. com $".  
+ Při zadávání regulárního výrazu pro tento prvek byste měli použít upozornění. Regulární výraz "[a-z] + @no__t -0.contoso\\.com" odpovídá jakémukoli hostiteli v doméně contoso.com, ale také odpovídá jakémukoli hostiteli v doméně contoso.com.cpandl.com. Chcete-li spárovat pouze hostitele v doméně contoso.com, použijte kotvu ("$"): "[a-z] + @no__t -0.contoso\\.com $".  
   
  Další informace o regulárních výrazech naleznete v tématu. [.NET Framework regulární výrazy](../../../../standard/base-types/regular-expressions.md).  
   

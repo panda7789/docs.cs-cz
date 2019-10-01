@@ -9,46 +9,46 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: a5481a9bce01e84ce4f078335c8cd15a747a3c51
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0351d224d9bf08a8f3ca74090de7b9c51c2c61bf
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917218"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701369"
 ---
 # <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
 Porovná dvě proměnné odkazu na objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 result = object1 Is object2  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Povinný parametr. Libovolná `Boolean` hodnota.  
+ Požadováno. Jakákoli hodnota `Boolean`.  
   
  `object1`  
- Povinný parametr. Libovolný `Object` název.  
+ Požadováno. Libovolný název `Object`.  
   
  `object2`  
- Povinný parametr. Libovolný `Object` název.  
+ Požadováno. Libovolný název `Object`.  
   
 ## <a name="remarks"></a>Poznámky  
- `Is` Operátor určuje, zda dva odkazy na objekt odkazují na stejný objekt. Ale neprovádí porovnávání hodnot. Pokud `object1` a `True` `result` `result` `False`oba odkazují na přesnou stejnou instanci objektu, je; Pokud ne, je. `object2`  
+ Operátor `Is` určuje, zda dva odkazy na objekt odkazují na stejný objekt. Ale neprovádí porovnávání hodnot. Pokud `object1` a `object2` odkazují na přesnou stejnou instanci objektu, `result` je `True`; Pokud ne, `result` je `False`.  
   
- `Is`lze také použít s `TypeOf` klíčovým slovem pro `TypeOf`vytvoření... `Is` výraz, který testuje, zda je objektová proměnná kompatibilní s datovým typem.  
+ `Is` lze také použít s klíčovým slovem `TypeOf` k vytvoření výrazu `TypeOf`... `Is`, který testuje, zda je objektová proměnná kompatibilní s datovým typem.  
   
 > [!NOTE]
-> `Is` Klíčové slovo se používá také v rámci [výběru... Příkaz Case](../../../visual-basic/language-reference/statements/select-case-statement.md).  
+> Klíčové slovo `Is` se používá také v rámci [výběru... Příkaz Case](../../../visual-basic/language-reference/statements/select-case-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Is` operátor pro porovnání párů odkazů na objekty. Výsledky jsou přiřazeny k `Boolean` hodnotě, která představuje, zda jsou dva objekty identické.  
+ V následujícím příkladu je použit operátor `Is` pro porovnání párů odkazů na objekty. Výsledky jsou přiřazeny k hodnotě @no__t 0, která představuje, zda jsou dva objekty identické.  
   
  [!code-vb[VbVbalrOperators#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#27)]  
   
- Jak ukazuje předchozí příklad, lze použít `Is` operátor k otestování počátečních a pozdních vázaných objektů.  
+ Jak ukazuje předchozí příklad, můžete použít operátor `Is` k otestování počátečních a pozdních vázaných objektů.  
   
 ## <a name="see-also"></a>Viz také:
 

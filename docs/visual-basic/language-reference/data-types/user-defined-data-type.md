@@ -23,16 +23,16 @@ helpviewer_keywords:
 - user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
-ms.openlocfilehash: 76073037dcaac0e87bc8a352f3b438332d11d881
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d95feec3a976a38c92a215f6da58ae6324085fe8
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630139"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696869"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 
-Obsahuje data ve formátu, který definujete. `Structure` Příkaz definuje formát.
+Obsahuje data ve formátu, který definujete. Příkaz `Structure` definuje formát.
 
 Předchozí verze Visual Basic podporují uživatelsky definovaný typ (UDT). Aktuální verze rozbalí UDT do *struktury*. Struktura je zřetězení jednoho nebo více *členů* různých datových typů. Visual Basic zachází se strukturou jako s jednou jednotkou, i když ke svým členům můžete přistupovat také jednotlivě.
 
@@ -44,31 +44,31 @@ Výchozí hodnota datového typu struktury se skládá z kombinace výchozích h
 
 ## <a name="declaration-format"></a>Formát deklarace
 
-Deklarace struktury začíná [příkazem Structure](../../../visual-basic/language-reference/statements/structure-statement.md) a končí `End Structure` příkazem. `Structure` Příkaz poskytuje název struktury, což je také identifikátor datového typu, ve kterém je struktura definovaná. Jiné části kódu mohou použít tento identifikátor k deklarování proměnných, parametrů a návratových hodnot funkce, které mají být typu dat této struktury.
+Deklarace struktury začíná [příkazem Structure](../../../visual-basic/language-reference/statements/structure-statement.md) a končí příkazem `End Structure`. Příkaz `Structure` poskytuje název struktury, což je také identifikátor datového typu, ve kterém je struktura definovaná. Jiné části kódu mohou použít tento identifikátor k deklarování proměnných, parametrů a návratových hodnot funkce, které mají být typu dat této struktury.
 
-Deklarace mezi `Structure` příkazy a `End Structure` definují členy struktury.
+Deklarace mezi příkazy `Structure` a `End Structure` definují členy struktury.
 
 ## <a name="member-access-levels"></a>Úrovně přístupu členů
 
-Každý člen musíte deklarovat pomocí [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md) nebo příkazu, který určuje úroveň přístupu, jako je například [Public](../../../visual-basic/language-reference/modifiers/public.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../visual-basic/language-reference/modifiers/private.md). Pokud použijete `Dim` příkaz, nastaví se výchozí úroveň přístupu na veřejné.
+Každý člen musíte deklarovat pomocí [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md) nebo příkazu, který určuje úroveň přístupu, jako je například [Public](../../../visual-basic/language-reference/modifiers/public.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../visual-basic/language-reference/modifiers/private.md). Pokud použijete příkaz `Dim`, nastaví se výchozí úroveň přístupu na veřejné.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` na příkaz.
+- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> na příkaz `Structure`.
 
 - **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že uživatelsky definované typy v jiných prostředích nejsou kompatibilní s typy Visual Basic struktury.
 
-- **Rozšiřující.** Neexistuje žádný automatický převod na nebo z žádného datového typu struktury. Operátory převodu můžete definovat ve své struktuře pomocí [příkazu operátoru](../../../visual-basic/language-reference/statements/operator-statement.md)a každý operátor `Widening` převodu lze deklarovat jako nebo `Narrowing`.
+- **Rozšiřující.** Neexistuje žádný automatický převod na nebo z žádného datového typu struktury. Operátory převodu můžete definovat ve své struktuře pomocí [příkazu operátoru](../../../visual-basic/language-reference/statements/operator-statement.md)a můžete deklarovat každý operátor převodu, který má být `Widening` nebo `Narrowing`.
 
 - **Znaky typu.** Datové typy struktury nemají znak typu literálu ani znak typu identifikátoru.
 
-- **Typ rozhraní.** V .NET Framework neexistuje žádný odpovídající typ. Všechny struktury dědí z třídy <xref:System.ValueType?displayProperty=nameWithType>.NET Framework, ale žádná z nich neodpovídá. <xref:System.ValueType?displayProperty=nameWithType>
+- **Typ rozhraní.** V .NET Framework neexistuje žádný odpovídající typ. Všechny struktury dědí z třídy .NET Framework <xref:System.ValueType?displayProperty=nameWithType>, ale žádná jednotlivá struktura neodpovídá <xref:System.ValueType?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
 Následující paradigma znázorňuje obrys deklarace struktury.
 
-```
+```vb
 [Public | Protected | Friend | Protected Friend | Private] Structure structname
     {Dim | Public | Friend | Private} member1 As datatype1
     ' ...

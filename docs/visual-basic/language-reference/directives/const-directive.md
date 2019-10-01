@@ -1,5 +1,5 @@
 ---
-title: '##Const – direktiva (Visual Basic)'
+title: '#Const – direktiva (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.#Const
@@ -15,42 +15,42 @@ helpviewer_keywords:
 - Const statement [Visual Basic], directive (#Const)
 - 'declaring constants [Visual Basic], #const directive'
 ms.assetid: 707669e5-23f9-4f17-8622-a0d534429386
-ms.openlocfilehash: 5458bbebc6064eb6273b8deb5447b8941e1d233f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b8d2da2158a8244b4533eb6ef49049949417216
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746678"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696855"
 ---
 # <a name="const-directive"></a>#Const – direktiva
-Definuje podmíněné konstanty kompilátoru v jazyce Visual Basic.  
+Definuje podmíněné konstanty kompilátoru pro Visual Basic.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 #Const constname = expression  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `constname`  
- Povinný parametr. Název je definována konstanta.  
+ Požadováno. Název konstanty, která je definována.  
   
  `expression`  
- Povinný parametr. Literál, jiné Konstanta podmíněné kompilátoru nebo libovolnou kombinaci, která zahrnuje některé nebo všechny aritmetické nebo logické operátory s výjimkou `Is`.  
+ Požadováno. Literál, jiné podmíněné konstanty kompilátoru nebo libovolná kombinace, která obsahuje všechny nebo všechny aritmetické nebo logické operátory s výjimkou `Is`.  
   
 ## <a name="remarks"></a>Poznámky  
- Podmíněné konstanty kompilátoru jsou vždycky soukromé vzhledem k souboru, ve kterém jsou zobrazeny. Nelze vytvořit konstantu kompilátoru veřejné pomocí `#Const` direktiv; můžete je vytvořit pouze v uživatelském rozhraní nebo se `/define` – možnost kompilátoru.  
+ Podmíněné konstanty kompilátoru jsou vždy soukromé k souboru, ve kterém jsou uvedeny. Nemůžete vytvořit konstanty veřejného kompilátoru pomocí direktivy `#Const`; můžete je vytvořit pouze v uživatelském rozhraní nebo pomocí možnosti kompilátoru `/define`.  
   
- Můžete použít jenom podmíněné konstanty kompilátoru a literály v `expression`. Pomocí standardní konstanta definovaná s `Const` způsobí chybu. Naopak, můžete použít konstanty definované pomocí `#Const` – klíčové slovo pouze pro podmíněnou kompilaci. Konstanty lze také také definovat, v takovém případě mají hodnotu `Nothing`.  
+ V `expression` lze použít pouze podmíněné konstanty a literály kompilátoru. Použití standardní konstanty definované s `Const` způsobí chybu. Naopak můžete použít konstanty definované s klíčovým slovem `#Const` pouze pro podmíněnou kompilaci. Konstanty mohou být také nedefinovány. v takovém případě mají hodnotu `Nothing`.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `#Const` směrnice.  
+ V tomto příkladu se používá direktiva `#Const`.  
   
  [!code-vb[VbVbalrConditionalComp#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [/ define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
+- [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
 - [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

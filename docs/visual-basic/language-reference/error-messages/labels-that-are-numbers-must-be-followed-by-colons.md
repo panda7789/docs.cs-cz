@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30801
 ms.assetid: 67743319-2d1c-496e-bfd9-22b046b43b5a
-ms.openlocfilehash: 3634ea4b97f25e41e27629c51119f2ea4df5f887
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fa474aaff4b1ceaf9b80be5dbc869276a54a6e65
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589778"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700986"
 ---
 # <a name="labels-that-are-numbers-must-be-followed-by-colons"></a>Za popisky, které jsou pouze číselné, musí být uvedena dvojtečka.
-Čísla řádků řídit stejnými pravidly jako jiné druhy popisky a musí obsahovat dvojtečku.  
+Čísla řádků se řídí stejnými pravidly jako jiné druhy štítků a musí obsahovat dvojtečku.  
   
  **ID chyby:** BC30801  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Místo číslo, za nímž následuje dvojtečka na začátku řádku kódu. Příklad:  
+- Číslo následované dvojtečkou umístit na začátek řádku kódu; například:  
   
-    ```  
+    ```vb  
     400:    X += 1  
     ```  
   

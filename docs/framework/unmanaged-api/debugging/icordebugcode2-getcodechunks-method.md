@@ -17,47 +17,50 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bbc7ac7d87c6a5d36dc3432c603bb7d16d62c00
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1bdaf6391ca5c19f073708d6258ad5775bec9824
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747423"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700732"
 ---
 # <a name="icordebugcode2getcodechunks-method"></a>ICorDebugCode2::GetCodeChunks – metoda
-Získá bloky kódu, ze kterých je tento objekt kódu sestaven.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT GetCodeChunks (  
-    [in]  ULONG32     cbufSize,  
-    [out] ULONG32     *pcnumChunks,  
-    [out, size_is(cbufSize), length_is(*pcnumChunks)]   
-        CodeChunkInfo chunks[]  
-);  
-```  
-  
-## <a name="parameters"></a>Parametry  
+
+Získá bloky kódu, ze kterých je tento objekt kódu sestaven.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT GetCodeChunks (
+    [in]  ULONG32     cbufSize,
+    [out] ULONG32     *pcnumChunks,
+    [out, size_is(cbufSize), length_is(*pcnumChunks)]
+        CodeChunkInfo chunks[]
+);
+```
+
+## <a name="parameters"></a>Parametry
+
  `cbufSize`  
- [in] Velikost `chunks` pole.  
-  
+ pro Velikost pole `chunks`
+
  `pcnumChunks`  
- [out] Počet bloků, které jsou vráceny v `chunks` pole.  
-  
+ mimo Počet bloků vrácených v poli `chunks`
+
  `chunks`  
- [out] Pole struktur "codechunkinfo –", z nichž každý představuje jediný neodkazovaný blok kódu. Pokud hodnota `cbufSize` je 0, tento parametr může mít hodnotu null.  
-  
-## <a name="remarks"></a>Poznámky  
- Bloky kódu nikdy se překrývají a jejich brzo bude následovat pořadí, ve kterém jsou by mít byla zřetězených podle [icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md). Objekt Microsoft intermediate language (MSIL) kódu v rozhraní .NET Framework verze 2.0 bude tvořit jeden blok.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
+ mimo Pole struktur "Codechunkinfo –", z nichž každý představuje jeden blok kódu. Pokud je hodnota `cbufSize` 0, tento parametr může mít hodnotu null.
+
+## <a name="remarks"></a>Poznámky
+
+ Bloky kódu se nikdy nepřekrývají a budou postupovat podle pořadí, ve kterém by byly zřetězeny pomocí [ICorDebugCode:: GetCode](icordebugcode-getcode-method.md). Objekt kódu jazyka MSIL (Microsoft Intermediate Language) ve verzi .NET Framework 2,0 bude obsahovat jeden blok kódu.
+
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).
+
+ **Hlavička:** CorDebug. idl, CorDebug. h
+
+ **Knihovna:** CorGuids. lib
+
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ 

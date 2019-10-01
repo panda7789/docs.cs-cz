@@ -4,12 +4,12 @@ description: Naučte se vytvářet uživatelsky definované výjimky s lokalizov
 author: Youssef1313
 ms.author: ronpet
 ms.date: 09/13/2019
-ms.openlocfilehash: 1e5ef5658e4cb71d0689a1786494eaec57d4e7fb
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: b4aa567fccda9354bc5959d6b9838d678d53abef
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332989"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696707"
 ---
 # <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Postupy: vytváření uživatelsky definovaných výjimek s lokalizovanými zprávami výjimek
 
@@ -77,16 +77,22 @@ Vytvořili jste vlastní výjimku a můžete ji vyvolat kdekoli pomocí kódu po
 throw new StudentNotFoundException("The student cannot be found.", "John");
 ```
 
-Problémem s předchozím řádkem je to, že student nebyl nalezen. je pouze konstantní řetězec. V lokalizované aplikaci chcete mít různé zprávy v závislosti na jazykové verzi uživatele.
+Problém s předchozím řádkem je, že `"The student cannot be found."` je pouze konstantní řetězec. V lokalizované aplikaci chcete mít různé zprávy v závislosti na jazykové verzi uživatele.
 Tato možnost je vhodná pro [satelitní sestavení](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md) . Satelitní sestavení je knihovna DLL, která obsahuje prostředky pro určitý jazyk. Když požádáte o konkrétní prostředky v době běhu, modul CLR tento prostředek vyhledá v závislosti na jazykové verzi uživatele. Pokud se pro tuto jazykovou verzi nenajde žádné satelitní sestavení, použijí se prostředky výchozí jazykové verze.
 
 Chcete-li vytvořit lokalizované zprávy o výjimce:
 
 1. Vytvořte novou složku s názvem *Resources* , která bude obsahovat soubory prostředků.
-1. Přidejte do něj nový soubor prostředků. Provedete to tak, že v aplikaci Visual Studio kliknete pravým tlačítkem na složku v **Průzkumník řešení**a vyberete **přidat** **soubor prostředků** -> **nové položky** -> . Pojmenujte soubor *ExceptionMessages. resx*. Toto je výchozí soubor prostředků.
-1. Přidejte dvojici název/hodnota pro vaši zprávu o výjimce, podobně jako na následujícím obrázku: @no__t 0Add prostředky k výchozí jazykové verzi @ no__t-1
+1. Přidejte do něj nový soubor prostředků. Provedete to tak, že v aplikaci Visual Studio kliknete pravým tlačítkem na složku v **Průzkumník řešení**a vyberete **přidat** **soubor prostředků** > **nové položky** > . Pojmenujte soubor *ExceptionMessages. resx*. Toto je výchozí soubor prostředků.
+1. Přidejte dvojici název/hodnota pro vaši zprávu o výjimce, podobně jako na následujícím obrázku:
+
+   ![Přidat prostředky do výchozí jazykové verze](media/add-resources-to-default-culture.jpg)
+
 1. Přidejte nový soubor prostředků pro francouzštinu. Pojmenujte ho *ExceptionMessages.fr-fr. resx*.
-1. Znovu přidejte dvojici název/hodnota pro zprávu o výjimce, ale s francouzskou hodnotou: prostředky ![Add do jazykové verze fr-FR @ no__t-1
+1. Znovu přidejte dvojici název/hodnota pro zprávu o výjimce, ale s francouzskou hodnotou:
+
+   ![Přidat prostředky do jazykové verze fr-FR](media/add-resources-to-fr-culture.jpg)
+
 1. Po sestavení projektu by výstupní složka sestavení měla obsahovat složku *fr-FR* se souborem *. dll* , což je satelitní sestavení.
 1. Výjimku vyvoláte jako následující kód:
 

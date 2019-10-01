@@ -2,20 +2,20 @@
 title: <remove> – element pro schemeSettings (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 4095ba51-de20-4f87-b562-018abe422c91
-ms.openlocfilehash: 4a891eb8a2fd2d66b6435e2ae774ecd4a157c0f9
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 0dc8c6111157ba1f23d4a0449bee8f6626027e23
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659221"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697850"
 ---
-# <a name="remove-element-for-schemesettings-uri-settings"></a>\<Remove – element > pro schemeSettings (nastavení URI)
+# <a name="remove-element-for-schemesettings-uri-settings"></a>@no__t – element > 0remove pro schemeSettings (nastavení URI)
 Odebere nastavení schématu pro název schématu.  
   
- \<> Konfigurace  
-\<uri>  
-\<schemeSettings >  
-\<odebrat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<schemeSettings >** ](schemesettings-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,10 +41,10 @@ Odebere nastavení schématu pro název schématu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<schemeSettings – element > (nastavení URI)](schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.|  
+|[@no__t – element > 1schemeSettings (nastavení URI)](schemesettings-element-uri-settings.md)|Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy zruší počet znaků zakódovaných oddělovači cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
+ Ve výchozím nastavení třídy <xref:System.Uri?displayProperty=nameWithType> zruší řídicí oddělovače% zakódovaných cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ Odebere nastavení schématu pro název schématu.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> Třída First zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivou adresu URL výše konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> má za následek následující identifikátor URI:  
+ Z tohoto důvodu třída <xref:System.Uri?displayProperty=nameWithType> nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> vede k následujícímu identifikátoru URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ Odebere nastavení schématu pro název schématu.
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje konfiguraci použitou <xref:System.Uri> třídou, která odebere všechna nastavení schématu pro schéma HTTP.  
+ Následující příklad ukazuje konfiguraci, kterou používá třída <xref:System.Uri>, která odebere všechna nastavení schématu pro schéma HTTP.  
   
 ```xml  
 <configuration>  

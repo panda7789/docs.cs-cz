@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07f8be1a1831bc00eea3cfb659b46b67b6a78711
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1ec7d615b99ac301948d7ea25318115713ce06ea
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747734"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700846"
 ---
 # <a name="icordebugcodecreatebreakpoint-method"></a>ICorDebugCode::CreateBreakpoint – metoda
-Vytvoří zarážku v tomto segmentu kódu v zadaném posunu.  
+Vytvoří zarážku v tomto segmentu kódu na zadaném posunu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,21 @@ HRESULT CreateBreakpoint (
   
 ## <a name="parameters"></a>Parametry  
  `offset`  
- [in] Posun, na kterém chcete vytvořit zarážku.  
+ pro Posun, ve kterém má být vytvořena zarážka.  
   
  `ppBreakpoint`  
- [out] Ukazatel na adresu objektu "icordebugfunctionbreakpoint –", který představuje zarážku.  
+ mimo Ukazatel na adresu objektu "ICorDebugFunctionBreakpoint", který představuje zarážku.  
   
 ## <a name="remarks"></a>Poznámky  
- Předtím, než je zarážky aktivní, je nutné přidat do objektu process.  
+ Předtím, než je zarážka aktivní, je nutné ji přidat do objektu procesu.  
   
- Pokud tento kód je kód Microsoft intermediate language (MSIL) a je just-in-time (JIT)-kompilované, nativní verzi kódu, zarážka se použijí v kompilaci JIT kódu. (Stejný je hodnota true, pokud kód je zkompilován JIT Kompilátorem později.)  
+ Pokud je tento kód kódem jazyka MSIL (Microsoft Intermediate Language) a existuje nativní verze kódu kompilována za běhu (JIT), zarážka bude použita také v kódu kompilovaném JIT. (Totéž platí, pokud je kód zkompilován kompilátorem JIT později.)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
- **Knihovna:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

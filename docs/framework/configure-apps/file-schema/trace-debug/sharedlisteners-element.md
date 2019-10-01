@@ -11,19 +11,19 @@ helpviewer_keywords:
 - trace listeners, <sharedListeners> element
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-ms.openlocfilehash: 41cabcbce13409b0842cbbd625028b51d32d59d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b419ecf451b79808e545525c7b8761175f390200
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926973"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699292"
 ---
-# <a name="sharedlisteners-element"></a>\<sharedListeners – > element
+# <a name="sharedlisteners-element"></a>@no__t – element > 0sharedListeners
 Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element source nebo Trace.  Tyto naslouchací procesy neobdrží žádné trasování ve výchozím nastavení a není možné načíst tyto naslouchací procesy v době běhu. Naslouchací procesy identifikované jako sdílené naslouchací procesy lze přidat do zdrojů nebo trasování podle názvu.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> sharedListeners  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<sharedListeners >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element sou
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do `sharedListeners` kolekce.|  
+|[@no__t – 1add >](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do kolekce `sharedListeners`.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -53,12 +53,12 @@ Obsahuje naslouchací procesy, na které může odkazovat jakýkoliv element sou
 |`system.diagnostics`|Určuje kořenový element konfiguračního oddílu ASP.NET.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přidání naslouchacího procesu do kolekce Shared Listeners neprovádí aktivní naslouchací proces. Ještě musí být přidán do zdroje trasování nebo do trasování tím, že je přidáte do `Listeners` kolekce pro daný prvek Trace. Třídy naslouchacího procesu v .NET Framework jsou odvozeny z <xref:System.Diagnostics.TraceListener> třídy.  
+ Přidání naslouchacího procesu do kolekce Shared Listeners neprovádí aktivní naslouchací proces. Ještě musí být přidán do zdroje trasování nebo do trasování, protože ho přidáte do kolekce `Listeners` pro tento prvek Trace. Třídy naslouchacího procesu v .NET Framework jsou odvozeny z třídy <xref:System.Diagnostics.TraceListener>.  
   
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad `<sharedListeners>` ukazuje, jak použít element pro přidání naslouchacího procesu `console` do `Listeners` kolekce pro <xref:System.Diagnostics.TraceSource> třídy a <xref:System.Diagnostics.Trace> . Naslouchací proces trasování konzoly zapisuje trasovací informace do konzoly prostřednictvím volání <xref:System.Diagnostics.TraceSource> nebo. <xref:System.Diagnostics.Trace>  
+ Následující příklad ukazuje způsob použití prvku `<sharedListeners>` pro přidání naslouchacího procesu `console` do kolekce `Listeners` pro třídy <xref:System.Diagnostics.TraceSource> a <xref:System.Diagnostics.Trace>. Naslouchací proces trasování konzoly zapisuje trasovací informace do konzoly prostřednictvím volání buď <xref:System.Diagnostics.TraceSource> nebo <xref:System.Diagnostics.Trace>.  
   
 ```xml  
 <configuration>  

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: 7ff44f0251936d51b4e396c37c53322efa110227
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: fd1649edbf7a2c8546992019df667f27df68e02c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659412"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698321"
 ---
-# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy – element > (nastavení sítě)
+# <a name="defaultftpcachepolicy-element-network-settings"></a>@no__t – element > 0defaultFtpCachePolicy (nastavení sítě)
 Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
   
- \<> Konfigurace  
-\<system.net>  
-\<requestCaching>  
-\<defaultFtpCachePolicy>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<requestCaching >** ](requestcaching-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<defaultFtpCachePolicy >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí z�
   
 ## <a name="policylevel-attribute"></a>policyLevel – atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`Default`|Vrátí prostředek uložený v mezipaměti, pokud je prostředek v čerstvém stavu, že velikost obsahu je přesná a že jsou k dispozici atributy vypršení platnosti, změna a délka obsahu.|  
 |`BypassCache`|Vrátí prostředek ze serveru.|  
@@ -65,7 +65,7 @@ Popisuje, zda je ukládání do mezipaměti FTP aktivní a popisuje výchozí z�
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP pro `NoCacheNoStore`.  
+ Následující příklad ukazuje, jak určit zásady ukládání do mezipaměti FTP `NoCacheNoStore`.  
   
 ```xml  
 <configuration>  

@@ -1,5 +1,5 @@
 ---
-title: <type1>'<typename>musí implementovat<membername>'pro rozhraní'<interfacename>.
+title: <type1>'<typename>' musí implementovat '<membername>' pro rozhraní '<interfacename>'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30154
@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-ms.openlocfilehash: 86b0d46e0e27b2fd8d1fccb37f4a3c45e95f5f63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a824b66eaad964049ced5cae5eb2cc370d00ba7f
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792090"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696898"
 ---
-# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<membername > 'rozhraní'\<interfacename > '
-'\<typename >' musí implementovat '\<membername >' rozhraní '\<interfacename >'. Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.  
+# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<type1 > ' \<typename > ' musí implementovat ' \<membername > ' pro rozhraní ' \<interfacename > '
+' \<typename > ' musí implementovat ' \<membername > ' pro rozhraní ' \<interfacename > '. Implementující vlastnost musí mít párové specifikátory ReadOnly a WriteOnly.  
   
- Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje proceduru, vlastnost nebo událost definované rozhraní. Musíte implementovat každého člena rozhraní.  
+ Deklarace třídy nebo struktury pro implementaci rozhraní, ale neimplementuje proceduru, vlastnost nebo událost definovanou rozhraním. Je nutné implementovat všechny členy rozhraní.  
   
  **ID chyby:** BC30154  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Deklarujte člena se stejným názvem a signaturou, jak jsou definovány v rozhraní. Nezapomeňte uvést alespoň `End Function`, `End Sub`, nebo `End Property` příkazu.  
+1. Deklarujete člena se stejným názvem a signaturou, jak je definováno v rozhraní. Nezapomeňte zahrnout alespoň příkaz `End Function`, `End Sub` nebo `End Property`.  
   
-2. Přidat `Implements` klauzuli na konec objektu `Function`, `Sub`, `Property`, nebo `Event` příkazu. Příklad:  
+2. Přidejte klauzuli `Implements` na konec příkazu `Function`, `Sub`, `Property` nebo `Event`. Příklad:  
   
-    ```  
+    ```vb  
     Public Event ItHappened() Implements IBaseInterface.ItHappened  
     ```  
   
-3. Při implementaci vlastnost, ujistěte se, že `ReadOnly` nebo `WriteOnly` se používá stejným způsobem jako v definici rozhraní.  
+3. Při implementaci vlastnosti se ujistěte, že se používá `ReadOnly` nebo `WriteOnly` stejným způsobem jako v definici rozhraní.  
   
-4. Při implementaci vlastnost, deklarujte `Get` a `Set` postupy, podle potřeby.  
+4. Při implementaci vlastnosti deklaruje v případě potřeby postupy `Get` a `Set`.  
   
 ## <a name="see-also"></a>Viz také:
 

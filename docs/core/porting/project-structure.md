@@ -1,72 +1,72 @@
 ---
-title: Uspořádání projektů pro rozhraní .NET Framework a .NET Core
-description: Nápovědu k projektu vlastníky, kteří chtějí kompilaci své řešení pro rozhraní .NET Framework a .NET Core side-by-side.
+title: Uspořádání projektů pro .NET Framework a .NET Core
+description: Pomáhat pro vlastníky projektů, kteří chtějí kompilovat své řešení před .NET Framework a .NET Core souběžně.
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: ab484ccc2c5b51b2ee1dca57df51669d288f3e6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e120e1aee60e88ea33a8290f3bf36eb93bfc91c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663177"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698938"
 ---
-# <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
+# <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání projektu pro podporu .NET Framework a .NET Core
 
-Zjistěte, jak vytvořit řešení, které zkompiluje pro rozhraní .NET Framework a .NET Core – souběžně. Zobrazit několik možností, jak uspořádat projektech při dosažení tohoto cíle. Tady jsou některé typické scénáře, které je třeba zvážit, když jste rozhodování o tom, jak nastavit rozložení projektu s .NET Core. V seznamu nemusí zahrnovat všechno, co chcete, aby; prioritizujte podle potřeb vašeho projektu.
+Přečtěte si, jak vytvořit řešení, které se zkompiluje jak pro .NET Framework, tak i .NET Core souběžně. Prohlédněte si několik možností uspořádání projektů, které vám pomůžou dosáhnout tohoto cíle. Tady jsou některé typické scénáře, které je potřeba vzít v úvahu při rozhodování, jak nastavit rozložení projektu pomocí .NET Core. Seznam nemusí zahrnovat všechno, co potřebujete; nastavte prioritu podle potřeb vašeho projektu.
 
-* [**Existující projekty a projekty .NET Core zkombinovat do jedné projekty**](#replace-existing-projects-with-a-multi-targeted-net-core-project)
+* [**Kombinování stávajících projektů a projektů .NET Core do samostatných projektů**](#replace-existing-projects-with-a-multi-targeted-net-core-project)
 
-  *Co to platí pro:*
-  * Zjednodušení procesu sestavení kompilaci jednoho projektu, spíše než sestavování více projektů, každý cílí na různé verze rozhraní .NET Framework nebo platformu.
-  * Protože je třeba spravovat jediného souboru projektu, která zjednodušuje jejich správa zdrojového souboru pro více cílových projekty. Při přidávání nebo odebírání zdrojových souborů, alternativ vyžadují ruční synchronizaci těchto s vašimi projekty.
-  * Snadno generování balíčku NuGet pro spotřebu.
-  * Umožňuje napsat kód pro konkrétní verzi rozhraní .NET Framework ve vašich knihovnách pomocí direktivy kompilátoru.
+  *Co je dobré pro:*
+  * Zjednodušení procesu sestavení kompilováním jediného projektu namísto kompilace více projektů, z nichž každý cílí na jinou .NET Framework verzi nebo platformu.
+  * Zjednodušení správy zdrojového souboru pro projekty cílené na více lokalit, protože je nutné spravovat jeden soubor projektu. Když přidáváte nebo odebíráte zdrojové soubory, alternativy vyžadují ruční synchronizaci těchto souborů s ostatními projekty.
+  * Snadné generování balíčku NuGet pro spotřebu
+  * Umožňuje psát kód pro konkrétní .NET Frameworkovou verzi v knihovnách pomocí direktiv kompilátoru.
 
   *Nepodporované scénáře:*
-  * Vyžaduje, aby pomocí sady Visual Studio 2017 otevřete existující projekty vývojáři. Pro podporu starších verzích sady Visual Studio [uchovávání souborů projektu v různých složkách](#support-vs) je lepší volbou.
+  * Pro otevření stávajících projektů vyžaduje, aby vývojáři používali Visual Studio 2017. Aby bylo možné podporovat starší verze sady Visual Studio, je lepší volbou [souborů projektu v různých složkách](#support-vs) .
 
-* <a name="support-vs"></a>[**Oddělovat existující projekty a nové projekty .NET Core**](#keep-existing-projects-and-create-a-net-core-project)
+* <a name="support-vs"></a>[**Zachovat existující projekty a nové projekty .NET Core oddělené**](#keep-existing-projects-and-create-a-net-core-project)
 
-  *Co to platí pro:*
-  * Pokračování pro podporu vývoje na existující projekty bez nutnosti upgradu pro vývojáře/přispěvatele, kteří nemají Visual Studio 2017.
-  * Snižuje možnost vytvářet nové chyby v existujících projektů, protože vyžaduje žádné změny kódu v těchto projektech.
+  *Co je dobré pro:*
+  * Pokračování v podpoře vývoje u stávajících projektů bez nutnosti upgradu pro vývojáře a přispěvatele, kteří nemusí mít Visual Studio 2017.
+  * Snížení možnosti vytváření nových chyb v existujících projektech, protože v těchto projektech nejsou vyžadovány žádné změny kódu.
 
 ## <a name="example"></a>Příklad
 
-Vezměte v úvahu následující úložiště:
+Vezměte v úvahu úložiště níže:
 
 ![Existující projekt](./media/project-structure/existing-project-structure.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library/)
 
-Následující část popisuje několik způsobů, jak přidat podporu pro .NET Core pro toto úložiště v závislosti na tom, omezení a složitosti existujících projektů.
+Následující článek popisuje několik způsobů, jak přidat podporu pro .NET Core pro toto úložiště v závislosti na omezeních a složitosti stávajících projektů.
 
-## <a name="replace-existing-projects-with-a-multi-targeted-net-core-project"></a>Nahraďte existující projekty cílené více projektu .NET Core
+## <a name="replace-existing-projects-with-a-multi-targeted-net-core-project"></a>Nahradit existující projekty více cíleným projektem .NET Core
 
-Uspořádání úložiště tak, že všechny existující  *\*.csproj* soubory jsou odebrané a jednu  *\*.csproj* se vytvoří soubor, který cílí na více platforem. To je skvělá možnost, protože jednoho projektu je schopen kompilace pro různá rozhraní. Má také výkon pro zpracování různých kompilace možností a závislosti na cílové rozhraní.
+Reorganizovat úložiště tak, aby všechny existující *@no__t soubory. csproj* byly odebrány a byl vytvořen jeden *@no__t -3. csproj* , který cílí na více rozhraní. Tato možnost je skvělá, protože jeden projekt je schopný kompilovat pro různá rozhraní. Má také možnost zvládnout různé možnosti kompilace a závislosti na cílové rozhraní.
 
-![Vytvoření csproj, který cílí na více platforem](./media/project-structure/multi-targeted-project.png)
+![Vytvoření hodnoty csproj, která cílí na více platforem](./media/project-structure/multi-targeted-project.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/)
 
-Všimněte si změny jsou:
+Změny poznámky jsou:
 
-* Nahrazení *souboru packages.config* a  *\*.csproj* s novou [.NET Core  *\*.csproj*](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/src/Car/Car.csproj). Balíčky NuGet jsou zadány s `<PackageReference> ItemGroup`.
+* Nahrazení souboru *Packages. config* a *@no__t -2. csproj* pomocí nového [rozhraní .NET Core *@no__t -5. csproj*](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/src/Car/Car.csproj). Balíčky NuGet jsou zadané s `<PackageReference> ItemGroup`.
 
-## <a name="keep-existing-projects-and-create-a-net-core-project"></a>Zachovat existující projekty a vytvořte projekt .NET Core
+## <a name="keep-existing-projects-and-create-a-net-core-project"></a>Zachovat existující projekty a vytvořit projekt .NET Core
 
-Pokud je existující projekty, které jsou cíleny na starší rozhraní, můžete ponechat beze změny těchto projektů a používat projekt .NET Core pro budoucí platforem.
+Pokud existují projekty, které jsou cíleny na starší verze rozhraní, je vhodné ponechat tyto projekty nezměněný a použít projekt .NET Core k zacílení budoucích rozhraní.
 
-![Projekt .NET core s existující projekt do jiné složky](./media/project-structure/separate-projects-same-source.png)
+![Projekt .NET Core se stávajícím projektem v jiné složce](./media/project-structure/separate-projects-same-source.png)
 
 [**Zdrojový kód**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj-keep-existing/)
 
-Všimněte si změny jsou:
+Změny poznámky jsou:
 
-* Existující projekty .NET Core a jsou uchovávány v oddělených složek.
-  * Udržování projektů do samostatné složky zabraňuje vynucení, abyste měli Visual Studio 2017. Můžete vytvořit samostatné řešení, které otevře pouze starých projektů.
+* Rozhraní .NET Core a existující projekty jsou uchovávány v samostatných složkách.
+  * Udržování projektů v samostatných složkách zabraňuje vynucení sady Visual Studio 2017. Můžete vytvořit samostatné řešení, které otevírá jenom staré projekty.
 
 ## <a name="see-also"></a>Viz také:
 
-Podrobnosti najdete [portování dokumentace k .NET Core](index.md) další pokyny k migraci až po .NET Core.
+- [Dokumentace k portům .NET Core](index.md)

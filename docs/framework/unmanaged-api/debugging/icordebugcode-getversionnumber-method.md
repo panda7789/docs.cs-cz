@@ -17,38 +17,40 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 155a8d5465e0fb19c55c9d11b67c6031c2b2c4a3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4b6fd6e8043f1c62da8994b43a9b9af45fb2e3c0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747519"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700813"
 ---
 # <a name="icordebugcodegetversionnumber-method"></a>ICorDebugCode::GetVersionNumber – metoda
-Získá počet založen na jedničce, která identifikuje verzi kódu, který představuje tento "ICorDebugCode".  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT GetVersionNumber (  
-    [out] ULONG32    *nVersion  
-);  
-```  
-  
-## <a name="parameters"></a>Parametry  
+
+Získá číslo založené na čísle, které určuje verzi kódu, kterou představuje tento "ICorDebugCode".
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT GetVersionNumber (
+    [out] ULONG32    *nVersion
+);
+```
+
+## <a name="parameters"></a>Parametry
+
  `nVersion`  
- [out] Ukazatel na číslo verze kódu.  
+ mimo Ukazatel na číslo verze kódu.
+
+## <a name="remarks"></a>Poznámky
+
+ Číslo verze se zvýší pokaždé, když se v kódu provede operace Edit-and-Continue (EnC).
+
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Viz [požadavky na systém](../../get-started/system-requirements.md).  
   
-## <a name="remarks"></a>Poznámky  
- Číslo verze se zvýší pokaždé, když operace edit-and-continue (EnC) je prováděno v kódu.  
+ **Hlavička:** CorDebug. idl, CorDebug. h  
   
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Knihovna:** CorGuids. lib  
   
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

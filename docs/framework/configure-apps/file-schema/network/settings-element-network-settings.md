@@ -8,19 +8,19 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: 12797e2f06d03aacd81700eae57d5776c1a6f354
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ba08f630dc602c950da309bf29482d85b41af7ef
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663998"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697683"
 ---
-# <a name="settings-element-network-settings"></a>\<Nastavení > element (nastavení sítě)
-Nakonfiguruje základní možnosti sítě pro <xref:System.Net?displayProperty=nameWithType> obor názvů.  
+# <a name="settings-element-network-settings"></a>@no__t – element > 0settings (nastavení sítě)
+Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displayProperty=nameWithType>.  
   
- \<> Konfigurace  
-\<system.net>  
-\<Nastavení >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<settings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,13 +46,13 @@ Nakonfiguruje základní možnosti sítě pro <xref:System.Net?displayProperty=n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané <xref:System.Net.HttpListener> třídou.|  
+|[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.|  
 |[httpWebRequest](httpwebrequest-element-network-settings.md)|Přizpůsobuje parametry webového požadavku.|  
-|[ipv6](ipv6-element-network-settings.md)|Povolí podporu Internet Protocol verze 6 (IPv6).|  
-|[\<performanceCounter – element > (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
-|[servicePointManager](servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
+|[protokolů](ipv6-element-network-settings.md)|Povolí podporu Internet Protocol verze 6 (IPv6).|  
+|[@no__t – element > 1performanceCounter (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
+|[Třída ServicePointManager](servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
 |[zásuvky](socket-element-network-settings.md)|Určuje, jestli operace soketu používají porty dokončení.|  
-|[\<webProxyScript – element > (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
+|[@no__t – element > 1webProxyScript (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

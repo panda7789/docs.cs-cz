@@ -7,17 +7,17 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 1f7248a23d53fb90202595defbf70e231bd1d5d3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 687990cc86b3303bdef96af26be63af47410f8c0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605984"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698796"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (C# Referenční dokumentace)
 
-V následující tabulce jsou uvedena klíčová slova pro předdefinované C# typy, což jsou aliasy předdefinovaných typů v <xref:System> oboru názvů.  
-  
+V následující tabulce jsou uvedena klíčová slova pro předdefinované C# typy, což jsou aliasy předdefinovaných typů v oboru názvů <xref:System>:
+
 |C#textový|Typ .NET|  
 |--------------|-------------------------|  
 |[bool](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
@@ -38,16 +38,16 @@ V následující tabulce jsou uvedena klíčová slova pro předdefinované C# t
   
 ## <a name="remarks"></a>Poznámky
 
-Všechny typy v tabulce, s výjimkou `object` a `string`, jsou označovány jako jednoduché typy.  
-  
-Typy rozhraní .NET a jejich C# aliasy jejich typu jsou zaměnitelné. Můžete například deklarovat celočíselnou proměnnou pomocí kterékoli z následujících deklarací:  
+Všechny typy v tabulce s výjimkou `object` a `string` jsou označovány jako jednoduché typy.
+
+Typy rozhraní .NET a jejich C# aliasy jejich typu jsou zaměnitelné. Můžete například deklarovat celočíselnou proměnnou pomocí kterékoli z následujících deklarací:
 
 ```csharp
 int x = 123;
 System.Int32 y = 123;
 ```
 
-Použijte operátor [typeof](../operators/type-testing-and-cast.md#typeof-operator) k získání <xref:System.Type?displayProperty=nameWithType> instance, která představuje zadaný typ:
+Použijte operátor [typeof](../operators/type-testing-and-cast.md#typeof-operator) k získání instance <xref:System.Type?displayProperty=nameWithType>, která představuje zadaný typ:
 
 ```csharp
 Type stringType = typeof(string);

@@ -7,20 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: 55120e292ac2a2c822c5510563d1aa167ca921e4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c4f7e31422ccd8129599db1120f9b0cb327d9319
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920452"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697199"
 ---
-# <a name="source-element"></a>\<Element > zdroje
+# <a name="source-element"></a>@no__t – element > 0source
 Určuje zdroj trasování, který inicializuje trasovací zprávy.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> zdrojů  
-\<> zdroje  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<source >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +38,15 @@ Určuje zdroj trasování, který inicializuje trasovací zprávy.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |`name`|Nepovinný atribut.<br /><br /> Určuje název zdroje trasování.|  
-|`switchName`|Nepovinný atribut.<br /><br /> Určuje název instance přepínače trasování v aplikaci. Pokud není přepínač identifikován v `<switches>` prvku, hodnota určuje úroveň přepínače.|  
+|`switchName`|Nepovinný atribut.<br /><br /> Určuje název instance přepínače trasování v aplikaci. Pokud není přepínač identifikován v elementu `<switches>`, hodnota určuje úroveň přepínače.|  
 |`switchType`|Nepovinný atribut.<br /><br /> Určuje typ přepínače trasování. Je-li k dispozici typ, musí být platný název třídy a nemůže být prázdným řetězcem.|  
-|`extraAttribute`|Nepovinný atribut.<br /><br /> Určuje hodnotu pro atribut specifický pro zdroj trasování identifikovaný <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> metodou pro daný zdroj trasování.|  
+|`extraAttribute`|Nepovinný atribut.<br /><br /> Určuje hodnotu pro atribut specifický pro zdroj trasování identifikovaný metodou <xref:System.Diagnostics.TraceSource.GetSupportedAttributes%2A> pro tento zdroj trasování.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<> naslouchací proces](listeners-element-for-source.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
+|[@no__t – 1listeners >](listeners-element-for-source.md)|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -60,7 +60,7 @@ Určuje zdroj trasování, který inicializuje trasovací zprávy.
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `<source>` element k přidání zdroje `mySource` trasování a k nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch`. Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
+ Následující příklad ukazuje způsob použití prvku `<source>` pro přidání zdroje trasování `mySource` a nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch`. Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
   
 ```xml  
 <configuration>  

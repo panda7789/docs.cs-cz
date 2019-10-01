@@ -17,44 +17,47 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3a4e98a7265bda288b20b1cee1a10ab11990e8e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bdf59ee3c7bf41a2bb0ff68db5e70dd5a519a0e9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67748881"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700785"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue – metoda
-Pokračuje v provádění spravovaná vlákna po volání [Metoda Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```cpp  
-HRESULT Continue (  
-    [in] BOOL fIsOutOfBand  
-);  
-```  
-  
-## <a name="parameters"></a>Parametry  
+
+Pokračuje v provádění spravovaných vláken po volání [metody Stop](icordebugcontroller-stop-method.md).
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT Continue (
+    [in] BOOL fIsOutOfBand
+);
+```
+
+## <a name="parameters"></a>Parametry
+
  `fIsOutOfBand`  
- [in] Nastavte na `true` Pokud budete pokračovat z události out-of-band; v opačném případě nastavte na `false`.  
+ pro Nastavte na `true`, pokud budete pokračovat v události mimo IP síť. v opačném případě nastavte na `false`.
+
+## <a name="remarks"></a>Poznámky
+
+`Continue` pokračuje v procesu po volání metody `ICorDebugController::Stop`.
+
+Při ladění v kombinovaném režimu Nevolejte `Continue` ve vlákně události Win32, pokud nebudete pokračovat z události mimo IP síť.
+
+Integrovaná *událost* je buď spravovaná událost, nebo normální nespravovanou událost, během které ladicí program podporuje interakci se spravovaným stavem procesu. V tomto případě ladicí program obdrží zpětné volání [ICorDebugUnmanagedCallback –::D ebugevent](icordebugunmanagedcallback-debugevent-method.md) s parametrem `fOutOfBand` nastaveným na `false`.
   
-## <a name="remarks"></a>Poznámky  
- `Continue` pokračuje v procesu po volání `ICorDebugController::Stop` metody.  
-  
- Při ladění ve smíšeném režimu, nevolejte `Continue` na Win32 události vlákna, pokud se dál pokračuje z out-of-band události.  
-  
- *Integrovaných událostí* je spravovaná událost nebo normální nespravované události, během které ladicí program podporuje interakci s spravovaného stavu zpracování. V takovém případě ladicí program přijímá [icordebugunmanagedcallback::debugevent –](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md) zpětného volání s jeho `fOutOfBand` parametr nastaven na `false`.  
-  
- *Out-of-band události* nespravované události během které je možné interakce s spravované stav procesu, zatímco je ukončen z důvodu události. V takovém případě ladicí program přijímá `ICorDebugUnmanagedCallback::DebugEvent` zpětného volání s jeho `fOutOfBand` parametr nastaven na `true`.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>Viz také:
+*Událost mimo pásmo* je nespravovaná událost, během které je interakce se spravovaným stavem procesu neproveditelná v době, kdy se proces zastavil kvůli události. V tomto případě ladicí program obdrží zpětné volání `ICorDebugUnmanagedCallback::DebugEvent` s parametrem `fOutOfBand` nastaveným na `true`.
+
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Hlavička:** CorDebug. idl, CorDebug. h
+
+ **Knihovna:** CorGuids. lib
+
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ 

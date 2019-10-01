@@ -1,5 +1,5 @@
 ---
-title: <remove>Element pro <listeners> pro<trace>
+title: <remove> element pro <listeners> pro <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,21 +7,21 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: 0c5c9efb8a22d26ea5d4467f9628af5935d6dbad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 56d1e56514aed98d5f3b9f7363e461af6ac68a8c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920473"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697220"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<Odebrat element > pro \<naslouchací procesy > \<pro > trasování
+# <a name="remove-element-for-listeners-for-trace"></a>> element \<remove pro \<listeners > pro \<trace >
 Odebere naslouchací proces z kolekce **posluchačů** .  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> trasování  
-\<> naslouchací proces  
-\<odebrat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<listeners >** ](listeners-element-for-trace.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<remove >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Odebere naslouchací proces z kolekce **posluchačů** .
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**name**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu, který se má odebrat z kolekce posluchačů.|  
+|**Jméno**|Požadovaný atribut.<br /><br /> Název naslouchacího procesu, který se má odebrat z kolekce **posluchačů** .|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,10 +53,10 @@ Odebere naslouchací proces z kolekce **posluchačů** .
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>Odebrání zkolekcezmění<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>chování metod,, a .<xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> <xref:System.Diagnostics.DefaultTraceListener> `Listeners` Volání metody `Fail` <xref:System.Diagnostics.DefaultTraceListener> nebo obvykle vede k zobrazení okna se zprávou, avšak okno se zprávou není zobrazeno, pokud není v `Listeners` kolekci. `Assert`  
+> Odebrání <xref:System.Diagnostics.DefaultTraceListener> z kolekce `Listeners` změní chování metod <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> a <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType>. Volání metody `Assert` nebo `Fail` obvykle vede k zobrazení okna se zprávou, ale pokud <xref:System.Diagnostics.DefaultTraceListener> není v kolekci `Listeners`, nezobrazí se okno se zprávou.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak odebrat výchozí naslouchací proces trasování z kolekce posluchačů trasování.  
+ Následující příklad ukazuje, jak odebrat výchozí naslouchací proces trasování z kolekce **posluchačů** trasování.  
   
 ```xml  
 <configuration>  

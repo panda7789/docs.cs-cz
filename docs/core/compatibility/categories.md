@@ -1,52 +1,52 @@
 ---
-title: Zásadní změna kategorie – .NET Core
-description: Další informace o způsobech, ve kterém jsou rozdělené rozbíjející změny v rozhraní .NET Core.
+title: Přerušující kategorie změn – .NET Core
+description: Přečtěte si o způsobech, kterými jsou zásadní změny zařazené do kategorií v .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/10/2019
-ms.openlocfilehash: 68cd3580e80305e54b41610f05d939a6aff8b54d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: e15b0c566584571440eb09c7fb981874b7517c48
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307505"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698459"
 ---
-# <a name="breaking-change-categories"></a>Zásadní změny kategorií
+# <a name="breaking-change-categories"></a>Kategorie změn způsobujících chyby
 
-*Kompatibilita* odkazuje na možnost kompilace nebo spouštět kód na verzi implementace .NET jiného než ten, pomocí kterého byl původně vytvořen kód. Určité změny mohou ovlivnit kompatibilitu šest různými způsoby. [Jednotlivé typy změn, které jsou považovány za při vyhodnocování kompatibility](index.md) se dělí do pěti kategorií. 
+*Kompatibilita* odkazuje na schopnost zkompilovat nebo spustit kód ve verzi implementace rozhraní .NET, která je jiná než ta, se kterou byl kód původně vyvinut. Konkrétní změna může mít vliv na kompatibilitu šesti různými způsoby. [Jednotlivé druhy změn, které jsou zváženy při hodnocení kompatibility](index.md) , spadají do prvních pěti kategorií. 
 
 ## <a name="behavioral-change"></a>Změna chování
 
-Chování změnit představuje změnu v chování člena. Tato změna může být externě viditelné (například metoda může vyvolat jinou výjimku), nebo to může představovat změněné implementace (například změnit tak, jak se počítá návratovou hodnotu, přidání nebo odebrání volání vnitřní metody nebo dokonce zlepšení výkonu).
+Změna chování představuje změnu chování člena. Změna může být externě viditelná (například metoda může vyvolat jinou výjimku), nebo může představovat změněnou implementaci (například změnu způsobu, jakým se počítá návratová hodnota, přidání nebo odebrání volání vnitřní metody nebo dokonce i výrazné zlepšení výkonu.
 
-Pokud nějaké změny jsou externě viditelné a upravit veřejný kontrakt typ, je snadné je vyhodnotit, protože ovlivňují binární kompatibilitu. Jsou mnohem obtížnější vyhodnotit; implementace změny v závislosti na povaze změny a četnost a vzorce použití rozhraní API dopad změny v rozsahu závažné až neškodného.  
+Pokud jsou změny chování externě viditelné a upravují veřejné kontrakty typu, je možné je snadno vyhodnotit, protože mají vliv na binární kompatibilitu. Změny implementace jsou mnohem obtížně vyhodnoceny. v závislosti na povaze změny a četnosti a vzorcích použití rozhraní API může být dopad změny v rozsahu od závažných až po neškodného.  
 
 ## <a name="binary-compatibility"></a>Binární kompatibilita
 
-Binární kompatibilita se týká schopnost příjemce rozhraní API pomocí rozhraní API na novější verzi bez opětovnou kompilaci. Tyto změny jako přidání metody nebo přidání nové implementace rozhraní na typ nemají vliv na binární kompatibilitu. Odebrání nebo změna veřejných podpisů sestavení tak, aby příjemci už mít přístup k stejné rozhraní vystavené sestavení však nemá vliv binární kompatibilitu. Říká změnu tohoto druhu *binární nekompatibilní změna*.
+Binární kompatibilita odkazuje na schopnost příjemce rozhraní API používat rozhraní API v novější verzi bez nutnosti rekompilace. Takové změny jako přidání metod nebo přidání nové implementace rozhraní do typu neovlivňují binární kompatibilitu. Nicméně odebrání nebo změna veřejných podpisů sestavení, aby příjemci již nemohly přistupovat ke stejnému rozhraní zveřejněnému sestavením, ovlivní binární kompatibilitu. Změna tohoto druhu je označována jako *binární nekompatibilní změna*.
 
-## <a name="source-compatibility"></a>Kompatibility zdroje
+## <a name="source-compatibility"></a>Kompatibilita zdrojů
 
- Zdroj kompatibilita se týká schopnost stávajícím příjemcům rozhraní API znovu kompilovat s novější verzí bez nutnosti jakkoli měnit zdroj. A *zdrojů nekompatibilní změna* nastane, pokud se příjemce je potřeba změnit zdrojový kód, aby se sestavení úspěšně novější verzi rozhraní API.
+ Kompatibilita zdrojů odkazuje na schopnost stávajících uživatelů rozhraní API znovu kompilovat v novější verzi bez jakýchkoli změn ve zdroji. Ke *zdroji nekompatibilní změny* dochází, když příjemce potřebuje upravit zdrojový kód, aby se vytvořil úspěšně na novější verzi rozhraní API.
 
-## <a name="design-time-compatibility"></a>Kompatibility doby návrhu
+## <a name="design-time-compatibility"></a>Kompatibilita při návrhu
 
-Doby návrhu kompatibilita se týká zachování možnosti času návrhu ve verzích sady Visual Studio a jiných prostředích návrhu. Když to může zahrnovat chování nebo uživatelského rozhraní návrháře, nejdůležitější aspekty návrhu kompatibilita se týká kompatibilita projektu. Projekt nebo řešení musí být schopni otevřít a použít na novější verzi návrhové prostředí.
+Kompatibilita v době návrhu označuje zachování prostředí v době návrhu napříč verzemi sady Visual Studio a dalšími prostředími v době návrhu. I když to může zahrnovat chování nebo uživatelské rozhraní návrháře, nejdůležitější aspekt kompatibility při návrhu se týká kompatibility projektů. Projekt nebo řešení musí být možné otevřít a použít v novější verzi prostředí pro dobu návrhu.
 
-## <a name="backwards-compatibility"></a>Zpětné kompatibility
+## <a name="backwards-compatibility"></a>Zpětná kompatibilita
 
-Zpětné kompatibility odkazuje na schopnost spotřebitel existující rozhraní API spustit s novou verzí při chovají stejným způsobem. Změny chování a změny v binární kompatibilitu vliv zpětné kompatibility. Pokud příjemce není možné spouštět nebo jak se bude chovat jinak při spuštění na novější verzi rozhraní API, rozhraní API je *zpětně kompatibilní*.
+Zpětná kompatibilita znamená, že stávajícímu spotřebiteli rozhraní API může běžet na nové verzi, a přitom se chová stejným způsobem. Změny chování a změny binární kompatibility mají vliv na zpětnou kompatibilitu. Pokud se příjemce nedokáže při spuštění v novější verzi rozhraní API spustit jinak, je rozhraní API *zpětně nekompatibilní*.
 
-Změny, které ovlivňují zpětné kompatibility se důrazně nedoporučuje, protože vývojáři ve výchozím nastavení očekávat zpětné kompatibility v novějších verzích rozhraní API.
+Změny, které mají vliv na zpětnou kompatibilitu, se důrazně nedoporučují, protože vývojáři ve výchozím nastavení očekávají zpětnou kompatibilitu v novějších verzích rozhraní API.
 
 ## <a name="forward-compatibility"></a>Dopředná kompatibilita
 
-Dopředná kompatibilita popisuje schopnosti spotřebitel existující rozhraní API ke spuštění starší verze při vykazujících stejné chování. Pokud příjemce není možné spustit nebo se chová jinak se při spuštění na starší verzi rozhraní API, rozhraní API je *nekompatibilní dopředný*. 
+Dopředná kompatibilita odkazuje na schopnost existujícímu příjemci rozhraní API běžet na starší verzi a zároveň se projeví stejné chování. Pokud se příjemce nedokáže při spuštění na starší verzi rozhraní API spustit nebo se nechová jinak, rozhraní API je *předáno nekompatibilní*. 
 
-Prakticky zachování dopředné kompatibility vylučuje všechny změny a dodatky verze, protože tyto změny brání příjemci, který cílí na novější verzi spuštění v rámci starší verze. Vývojáři očekávat, že příjemci, který závisí na novějších rozhraní API nemusí správně fungovat proti starší rozhraní API. 
+Udržování dopředné kompatibility prakticky vylučuje jakékoli změny nebo doplňky z verze na verzi, protože tyto změny brání příjemci, který cílí na novější verzi, ze spuštěné v dřívější verzi. Vývojáři očekávají, že příjemce, který spoléhá na novější rozhraní API, nemusí správně fungovat proti staršímu rozhraní API. 
 
-Zachování dopředné kompatibility není cílem .NET Core.
+Udržování dopředné kompatibility není cílem rozhraní .NET Core.
 
 ## <a name="see-also"></a>Viz také:
 
-[Vyzkoušejte nejnovější změny v rozhraní .NET Core](index.md)
+- [Vyhodnotit poslední změny v .NET Core](index.md)

@@ -10,20 +10,20 @@ helpviewer_keywords:
 - add element, connectionManagement
 - connectionManagement, add element
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
-ms.openlocfilehash: 608c591b910252dd60950bf2aa7565d6df04d5fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3742a040e8c16c38e495a0fd886c4c1f23780758
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664233"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698385"
 ---
-# <a name="add-element-for-connectionmanagement-network-settings"></a>\<Přidat > element pro connectionManagement (nastavení sítě)
+# <a name="add-element-for-connectionmanagement-network-settings"></a>@no__t – element > 0add pro connectionManagement (nastavení sítě)
 Přidá IP adresu nebo název DNS do seznamu správy připojení.  
   
- \<> Konfigurace  
-\<system.net>  
-\<connectionManagement >  
-\<add>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<add >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,15 +54,15 @@ Přidá IP adresu nebo název DNS do seznamu správy připojení.
 |[connectionManagement](connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síťovému hostiteli.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `address` atributu musí být buď hvězdička, která označuje všechna připojení, nebo řetězec formuláře `<schema>://<idn_hostname>[:<port>]`.  
+ Hodnota atributu `address` by měla být buď hvězdička, která označuje všechna připojení, nebo řetězec formuláře `<schema>://<idn_hostname>[:<port>]`.  
   
- Pokud identifikátor URI předaný do libovolného rozhraní API http obsahuje Unicode, název se převede interně <xref:System.Uri.DnsSafeHost%2A> pomocí toho, který může vracet punicode řetězec (chování závisí na aktuální konfiguraci IDN).  
+ Pokud identifikátor URI předaný do libovolného rozhraní API HTTP obsahuje Unicode, název se převede interně pomocí <xref:System.Uri.DnsSafeHost%2A>, což může vracet punicode řetězec (chování závisí na aktuální konfiguraci IDN).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k `www.contoso.com` serveru a dvě připojení ke všem ostatním serverům.  
+ V následujícím příkladu je nakonfiguruje aplikace tak, aby na všech ostatních serverech používala čtyři připojení k serveru `www.contoso.com` a dvě připojení.  
   
 ```xml  
 <configuration>  

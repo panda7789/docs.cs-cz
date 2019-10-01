@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: faaba1b9de302ed916ad1a81c7e80b3fb5a67170
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: d377a77a4a1b4c57e9edd4fbfa364387f1bae479
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664159"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699432"
 ---
-# <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement – element > (nastavení sítě)
+# <a name="connectionmanagement-element-network-settings"></a>@no__t – element > 0connectionManagement (nastavení sítě)
 Určuje maximální počet připojení k síťovému hostiteli.  
   
- \<> Konfigurace  
-\<system.net>  
-\<connectionManagement >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<connectionManagement >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,13 +50,13 @@ Určuje maximální počet připojení k síťovému hostiteli.
 |[system.net](system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak se .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `connectionManagement` Element definuje maximální počet připojení k serveru nebo skupině serverů.  
+ Element `connectionManagement` definuje maximální počet připojení k serveru nebo skupině serverů.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k `www.contoso.com` serveru a dvě připojení ke všem ostatním serverům.  
+ V následujícím příkladu je nakonfiguruje aplikace tak, aby na všech ostatních serverech používala čtyři připojení k serveru `www.contoso.com` a dvě připojení.  
   
 ```xml  
 <configuration>  

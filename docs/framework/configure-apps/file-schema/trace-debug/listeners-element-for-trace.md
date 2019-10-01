@@ -7,20 +7,20 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: e4550d4c4cd9ff37c5937ad366cccf91387c0e3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84b67532825372e7f69d86e1ef6060f4263587eb
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927024"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699353"
 ---
-# <a name="listeners-element-for-trace"></a>\<> element Listeners \<pro Trace >
+# <a name="listeners-element-for-trace"></a>> element \<listeners pro \<trace >
 Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.  
   
- \<Element > Konfigurace  
-\<System. Diagnostics > – element  
-\<Trace – element > elementu  
-\<> element Listeners \<pro Trace >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<listeners >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,9 +42,9 @@ Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do `Listeners` kolekce.|  
-|[\<clear>](clear-element-for-listeners-for-trace.md)|`Listeners` Vymaže kolekci pro Trace.|  
-|[\<remove>](remove-element-for-listeners-for-trace.md)|Odebere naslouchací proces z `Listeners` kolekce.|  
+|[@no__t – 1add >](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do kolekce `Listeners`.|  
+|[@no__t – 1clear >](clear-element-for-listeners-for-trace.md)|Vymaže kolekci `Listeners` pro trasování.|  
+|[@no__t – 1remove >](remove-element-for-listeners-for-trace.md)|Odebere naslouchací proces z kolekce `Listeners`.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -55,13 +55,13 @@ Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. 
 |`trace`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Třídy <xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> sdílejí stejnou kolekci **posluchačů** . Pokud přidáte objekt naslouchacího procesu do kolekce v jedné z těchto tříd, použije druhá třída stejný naslouchací proces. Třídy naslouchacího procesu dodávané s .NET Framework jsou odvozeny z <xref:System.Diagnostics.TraceListener> třídy.  
+ Třídy <xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> sdílejí stejnou kolekci **posluchačů** . Pokud přidáte objekt naslouchacího procesu do kolekce v jedné z těchto tříd, použije druhá třída stejný naslouchací proces. Třídy naslouchacího procesu dodávané s .NET Framework jsou odvozeny z třídy <xref:System.Diagnostics.TraceListener>.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít  **\<>** element Listeners pro přidání posluchačů `MyListener` a `MyEventListener` do kolekce **posluchačů** . `MyListener`Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `MyEventListener`vytvoří položku v protokolu událostí.  
+ Následující příklad ukazuje, jak použít prvek **> @no__t 1listeners** k přidání posluchačů `MyListener` a `MyEventListener` do kolekce **posluchačů** . `MyListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `MyEventListener` vytvoří položku v protokolu událostí.  
   
 ```xml  
 <configuration>  

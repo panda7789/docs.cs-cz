@@ -1,18 +1,18 @@
 ---
-title: 'Kurz: Kategorizace Iris květin – k – znamená clusteringu'
+title: 'Kurz: kategorizace Iris květin – k – znamená clustering'
 description: Naučte se používat ML.NET ve scénáři clusteringu.
 author: pkulikov
-ms.date: 05/16/2019
+ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: e2aaeb8abc6981b420329f194aa7b82c90cae00a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: e360cf2418e2003f9f40628c714e9e8ebd7c3e40
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929104"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698563"
 ---
-# <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Kurz: Kategorizace Iris květin pomocí k-znamená Clustering pomocí ML.NET
+# <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Kurz: kategorizace Iris květin pomocí k-znamená Clustering pomocí ML.NET
 
 Tento kurz ukazuje, jak pomocí ML.NET vytvořit [model clusteringu](../resources/tasks.md#clustering) pro [datovou sadu Iris pro květ](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 > - Příprava dat
 > - Načtení a transformace dat
 > - Výběr algoritmu učení
-> - Trénování modelu
+> - Výuka modelu
 > - Použití modelu pro předpovědi
 
 ## <a name="prerequisites"></a>Požadavky
@@ -41,11 +41,11 @@ Vzhledem k tomu, do které skupiny patří jednotlivé květy, si zvolíte úloh
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Otevřít Visual Studio. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "IrisFlowerClustering" a pak vyberte tlačítko **OK** .
+1. Otevřete Visual Studio. Z řádku nabídek vyberte **soubor** > **Nový** **projekt**  > . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "IrisFlowerClustering" a pak vyberte tlačítko **OK** .
 
 1. Vytvořte v projektu adresář s názvem *data* pro uložení datové sady a souborů modelu:
 
-    V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **Přidat** > **novou složku**. Zadejte "data" a stiskněte ENTER.
+    V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte **přidat** **novou složku** > . Zadejte "data" a stiskněte ENTER.
 
 1. Nainstalujte balíček NuGet **Microsoft.ml** :
 
@@ -71,9 +71,9 @@ V případě příkladu clusteringu tento kurz ignoruje poslední sloupec.
 
 Vytvořte třídy pro vstupní data a předpovědi:
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *IrisData.cs*. Pak vyberte tlačítko **Přidat** .
-1. Do nového souboru `using` přidejte následující direktivu:
+1. Do nového souboru přidejte následující direktivu `using`:
 
    [!code-csharp[Add necessary usings](~/samples/machine-learning/tutorials/IrisFlowerClustering/IrisData.cs#Usings)]
 
@@ -81,95 +81,100 @@ Odeberte existující definici třídy a přidejte následující kód, který d
 
 [!code-csharp[Define data classes](~/samples/machine-learning/tutorials/IrisFlowerClustering/IrisData.cs#ClassDefinitions)]
 
-`IrisData`je vstupní datová třída a má definice pro jednotlivé funkce z datové sady. Pomocí atributu [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute) určete indexy zdrojových sloupců v souboru sady dat.
+`IrisData` je vstupní datová třída a má definice pro jednotlivé funkce z datové sady. Pomocí atributu [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute) určete indexy zdrojových sloupců v souboru sady dat.
 
-Třída představuje výstup modelu clusteringu, který `IrisData` se použije pro instanci. `ClusterPrediction` Použijte atribut [ColumnName](xref:Microsoft.ML.Data.ColumnNameAttribute) k navázání `PredictedClusterId` polí `Distances` a ke sloupcům **PredictedLabel** a **skore** v uvedeném pořadí. V případě úlohy clusteringu mají tyto sloupce následující význam:
+Třída `ClusterPrediction` představuje výstup modelu clusteringu, který se použije pro instanci `IrisData`. Pomocí atributu [ColumnName](xref:Microsoft.ML.Data.ColumnNameAttribute) navažte pole `PredictedClusterId` a `Distances` do sloupců **PredictedLabel** a **skore** . V případě úlohy clusteringu mají tyto sloupce následující význam:
 
 - Sloupec **PredictedLabel** obsahuje ID předpokládaného clusteru.
 - Sloupec **skóre** obsahuje pole, které má na centroids Euclideané vzdálenosti na čtverci. Délka pole se rovná počtu clusterů.
 
 > [!NOTE]
-> `float` Použijte typ pro reprezentaci hodnot s plovoucí desetinnou čárkou ve vstupních a prediktivních datových třídách.
+> K reprezentaci hodnot s plovoucí desetinnou čárkou ve vstupních a prediktivních datových třídách použijte typ `float`.
 
 ## <a name="define-data-and-model-paths"></a>Definování cest k datům a modelům
 
 Vraťte se k souboru *program.cs* a přidejte dvě pole, do kterých se budou uchovávat cesty k souboru sady dat a k souboru pro uložení modelu:
 
-- `_dataPath`obsahuje cestu k souboru s datovou sadou, která se používá ke výukě modelu.
-- `_modelPath`obsahuje cestu k souboru, ve kterém je uložený model trained.
+- `_dataPath` obsahuje cestu k souboru s datovou sadou, která se používá ke výukě modelu.
+- `_modelPath` obsahuje cestu k souboru, ve kterém je uložený model trained.
 
-Přidejte následující kód přímo nad `Main` metodu pro určení těchto cest:
+Přidejte následující kód přímo nad metodu `Main` a určete tyto cesty:
 
 [!code-csharp[Initialize paths](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#Paths)]
 
-Chcete-li provést předchozí kompilování kódu, přidejte `using` do horní části souboru *program.cs* následující direktivy:
+Chcete-li provést předchozí kompilování kódu, přidejte následující direktivy `using` v horní části souboru *program.cs* :
 
 [!code-csharp[Add usings for paths](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#UsingsForPaths)]
 
 ## <a name="create-ml-context"></a>Vytvořit kontext ML
 
-Do horní části souboru `using` *program.cs* přidejte následující další direktivy:
+Přidejte následující další direktivy `using` do horní části souboru *program.cs* :
 
 [!code-csharp[Add Microsoft.ML usings](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#MLUsings)]
 
-V metodě nahraďte `Console.WriteLine("Hello World!");`řádeknásledujícímkódem: `Main`
+V metodě `Main` nahraďte řádek `Console.WriteLine("Hello World!");` následujícím kódem:
 
 [!code-csharp[Create ML context](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateContext)]
 
-<xref:Microsoft.ML.MLContext?displayProperty=nameWithType> Třída představuje prostředí strojového učení a poskytuje mechanismy pro protokolování a vstupní body pro načítání dat, školení modelů, předpovědi a další úkoly. Tato informace je srovnatelná s používáním `DbContext` v Entity Framework.
+Třída <xref:Microsoft.ML.MLContext?displayProperty=nameWithType> představuje prostředí strojového učení a poskytuje mechanismy pro protokolování a vstupní body pro načítání dat, školení modelů, předpovědi a další úkoly. To je srovnatelné v koncepčním použití `DbContext` v Entity Framework.
 
 ## <a name="setup-data-loading"></a>Načítání dat instalace
 
-Přidejte následující kód do `Main` metody pro nastavení způsobu načtení dat:
+Přidejte následující kód do metody `Main` a nastavte způsob, jak načíst data:
 
 [!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateDataView)]
 
-Obecná `IrisData` [ `MLContext.Data.LoadFromTextFile` metoda rozšíření](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) odvodí schéma datové sady ze zadaného typu a vrátí <xref:Microsoft.ML.IDataView> , které lze použít jako vstup pro transformátory.
+Obecná [metoda rozšíření `MLContext.Data.LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) odvodí schéma datové sady ze zadaného typu `IrisData` a vrátí <xref:Microsoft.ML.IDataView>, které lze použít jako vstup pro transformátory.
 
 ## <a name="create-a-learning-pipeline"></a>Vytvoření výukového kanálu
 
 Pro účely tohoto kurzu se studijní kanál úlohy clusteringu skládá ze dvou následujících kroků:
 
 - Zřetězí načtené sloupce do jednoho sloupce **funkce** , který používá clustering Trainer;
-- Použijte Trainer <xref:Microsoft.ML.Trainers.KMeansTrainer> k vytvoření výukového modelu pomocí algoritmu k – znamená + + clustering.
+- Použijte <xref:Microsoft.ML.Trainers.KMeansTrainer> Trainer k vytvoření výukového modelu pomocí algoritmu k.
 
-Do `Main` metody přidejte následující kód:
+Do metody `Main` přidejte následující kód:
 
 [!code-csharp[Create pipeline](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreatePipeline)]
 
 Kód určuje, že sada dat by měla být rozdělena do tří clusterů.
 
-## <a name="train-the-model"></a>Trénování modelu
+## <a name="train-the-model"></a>Výuka modelu
 
-Postup, který jste přidali v předchozích částech, připravil kanál pro školení, ale žádný nebyl proveden. Přidejte následující řádek do `Main` metody pro provádění načítání dat a školení modelu:
+Postup, který jste přidali v předchozích částech, připravil kanál pro školení, ale žádný nebyl proveden. Přidejte následující řádek do metody `Main`, aby se provádělo načítání dat a školení modelu:
 
 [!code-csharp[Train the model](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#TrainModel)]
 
 ### <a name="save-the-model"></a>Uložit model
 
-V tomto okamžiku máte model, který lze integrovat do jakékoli existující nebo nové aplikace .NET. Chcete-li uložit model do souboru. zip, přidejte do `Main` metody následující kód:
+V tomto okamžiku máte model, který lze integrovat do jakékoli existující nebo nové aplikace .NET. Chcete-li uložit model do souboru. zip, přidejte následující kód do metody `Main`:
 
 [!code-csharp[Save the model](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#SaveModel)]
 
 ## <a name="use-the-model-for-predictions"></a>Použití modelu pro předpovědi
 
-K provedení předpovědi použijte <xref:Microsoft.ML.PredictionEngine%602> třídu, která přebírá instance vstupního typu prostřednictvím kanálu transformátoru a vytváří instance výstupního typu. Přidejte následující řádek do `Main` metody pro vytvoření instance této třídy:
+K provedení předpovědi použijte třídu <xref:Microsoft.ML.PredictionEngine%602>, která přebírá instance vstupního typu prostřednictvím kanálu transformátoru a vytváří instance typu výstupu. Přidejte následující řádek do metody `Main` pro vytvoření instance této třídy:
 
 [!code-csharp[Create predictor](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#Predictor)]
 
-`TestIrisData` Vytvořte třídu pro domovní testování instancí testovacích dat:
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o [použití `PredictionEnginePool` v ASP.NET Core webovém rozhraní API](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application) .
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
+> [!NOTE]
+> rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
+
+Vytvořte třídu `TestIrisData` pro domu instancí testovacích dat:
+
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *TestIrisData.cs*. Pak vyberte tlačítko **Přidat** .
 1. Upravte třídu tak, aby byla statická jako v následujícím příkladu:
 
    [!code-csharp[Make class static](~/samples/machine-learning/tutorials/IrisFlowerClustering/TestIrisData.cs#Static)]
 
-Tento kurz zavádí jednu instanci dat Iris v rámci této třídy. Můžete přidat další scénáře pro experimentování s modelem. Do `TestIrisData` třídy přidejte následující kód:
+Tento kurz zavádí jednu instanci dat Iris v rámci této třídy. Můžete přidat další scénáře pro experimentování s modelem. Do třídy `TestIrisData` přidejte následující kód:
 
 [!code-csharp[Test data](~/samples/machine-learning/tutorials/IrisFlowerClustering/TestIrisData.cs#TestData)]
 
-Chcete-li zjistit cluster, do kterého patří zadaná položka, vraťte se do souboru *program.cs* a přidejte následující kód do `Main` metody:
+Chcete-li zjistit cluster, do kterého patří zadaná položka, vraťte se do souboru *program.cs* a přidejte následující kód do metody `Main`:
 
 [!code-csharp[Predict and output results](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#PredictionExample)]
 
@@ -182,9 +187,9 @@ Distances: 11.69127 0.02159119 25.59896
 
 Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro clustering Iris a použili ho k vytvoření předpovědi. Zdrojový kód pro tento kurz najdete v úložišti GitHub [/Samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/IrisFlowerClustering) GitHub.
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste se naučili:
+V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > - Pochopení problému
@@ -192,7 +197,7 @@ V tomto kurzu jste se naučili:
 > - Příprava dat
 > - Načtení a transformace dat
 > - Výběr algoritmu učení
-> - Trénování modelu
+> - Výuka modelu
 > - Použití modelu pro předpovědi
 
 Podívejte se na naše úložiště GitHub a pokračujte v učení a Najděte další ukázky.

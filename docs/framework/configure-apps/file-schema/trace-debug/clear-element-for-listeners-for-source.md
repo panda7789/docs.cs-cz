@@ -1,5 +1,5 @@
 ---
-title: <clear>Element pro <listeners> pro<source>
+title: <clear> element pro <listeners> pro <source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 768d51a74b4c31d1250d2f5d6517f760f886e0a0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 05c20040ef59f4dee6b15bbe0b0369281b532754
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920560"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697195"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<Clear > element pro \<naslouchací procesy > \<pro zdroj >
-`Listeners` Vymaže kolekci zdroje trasování.  
+# <a name="clear-element-for-listeners-for-source"></a>> element \<clear pro \<listeners > pro \<source >
+Vymaže kolekci `Listeners` pro zdroj trasování.  
   
- \<> Konfigurace  
-\<system.diagnostics>  
-\<> zdrojů  
-\<> zdroje  
-\<> naslouchací proces  
-\<Vymazat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 **&nbsp;1clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,13 +50,13 @@ ms.locfileid: "69920560"
 |`listeners`|Určuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Prvek odebere všechny naslouchací procesy `Listeners` z kolekce pro zdroj <xref:System.Diagnostics.DefaultTraceListener>trasování, včetně. `<clear>` `<clear>` Element lze použít před `<add>` použitím prvku, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
+ Element `<clear>` odebere všechny naslouchací procesy z kolekce `Listeners` pro zdroj trasování, včetně <xref:System.Diagnostics.DefaultTraceListener>. Element `<clear>` lze použít před použitím prvku `<add>`, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad `<clear>` ukazuje, jak použít element před `<add>` použitím prvků pro přidání posluchačů `console` a `textListener` do `Listeners` kolekce pro zdroj `TraceSourceApp`trasování.  
+ Následující příklad ukazuje, jak použít prvek `<clear>` před použitím prvků `<add>` k přidání posluchačů `console` a `textListener` do kolekce `Listeners` pro zdroj trasování `TraceSourceApp`.  
   
 ```xml  
 <configuration>  

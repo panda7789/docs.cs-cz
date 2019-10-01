@@ -8,20 +8,20 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 05aac6c1ed3c04bce263a45cafdb9bec906bd75b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3fe6b19d0055aafad859b55960800d9786d7fa08
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664062"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698003"
 ---
-# <a name="performancecounter-element-network-settings"></a>\<performanceCounter – element > (nastavení sítě)
+# <a name="performancecounter-element-network-settings"></a>@no__t – element > 0performanceCounter (nastavení sítě)
 Povolí nebo zakáže čítače výkonu sítě.  
   
- \<> Konfigurace  
-\<system.net>  
-\<Nastavení >  
-\<performanceCounters>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<performanceCounters >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ Povolí nebo zakáže čítače výkonu sítě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[možnost](settings-element-network-settings.md)|Nakonfiguruje základní možnosti sítě pro <xref:System.Net> obor názvů.|  
+|[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
@@ -56,7 +56,7 @@ Povolí nebo zakáže čítače výkonu sítě.
   
  Výchozí hodnota je zakázané čítače výkonu sítě.  
   
- Vlastnost lze použít k získání aktuální hodnoty atributu enabled z příslušných konfiguračních souborů. <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>  
+ Vlastnost <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> lze použít k získání aktuální hodnoty atributu **Enabled** z příslušných konfiguračních souborů.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak nakonfigurovat <xref:System.Net> a související obory názvů pro povolení čítačů výkonu sítě.  

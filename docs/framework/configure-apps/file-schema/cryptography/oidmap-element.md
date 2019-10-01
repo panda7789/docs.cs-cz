@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-ms.openlocfilehash: d2929167f5a7de96a868cd1ac884d2203d09dfb6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eec2c4745ad5a0492ccf04c8f23b901275f23c01
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927532"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698437"
 ---
-# <a name="oidmap-element"></a>\<oidMap – element >
+# <a name="oidmap-element"></a>@no__t – element > 0oidMap
 Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.  
   
- \<> Konfigurace  
-\<mscorlib>  
-\<cryptographySettings >  
-\<oidMap>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<oidMap >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<oidEntry>](oidentry-element.md)|Mapuje identifikátor ID ASN. 1 na popisný název.|  
+|[@no__t – 1oidEntry >](oidentry-element.md)|Mapuje identifikátor ID ASN. 1 na popisný název.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -48,10 +48,10 @@ Obsahuje mapování identifikátoru objektu ASN. 1 na třídy.
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení kryptografie.|  
-|`mscorlib`|`cryptographySettings` Obsahuje element.|  
+|`mscorlib`|Obsahuje prvek `cryptographySettings`.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití  **\<prvku oidMap >** k zahrnutí mapování OID pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
+ Následující příklad ukazuje způsob použití prvku **> @no__t 1oidMap** k zahrnutí mapování OID pro algoritmus hash RIPEMD-160 na implementaci tohoto algoritmu hash.  
   
 ```xml  
 <configuration>  

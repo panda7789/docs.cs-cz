@@ -12,19 +12,19 @@ helpviewer_keywords:
 - ExternalSource directive (#ExternalSource)
 - '#ExternalSource directive'
 ms.assetid: 243bc6a2-34c3-4eeb-a776-9fd2bf988149
-ms.openlocfilehash: 39e6963c97340daab3f0ab7ad6860695f1f6c135
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ac7096e998dd8d2a416dc739e1d7625e1abff7a6
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747035"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696828"
 ---
 # <a name="externalsource-directive"></a>#ExternalSource – direktiva
-Určuje mapování mezi konkrétní řádky zdrojového kódu a textem mimo zdroj.  
+Označuje mapování mezi konkrétními řádky zdrojového kódu a textem externím ke zdroji.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 #ExternalSource( StringLiteral , IntLiteral )  
     [ LogicalLine+ ]  
 #End ExternalSource  
@@ -32,23 +32,23 @@ Určuje mapování mezi konkrétní řádky zdrojového kódu a textem mimo zdro
   
 ## <a name="parts"></a>Součásti  
  `StringLiteral`  
- Cesta k externího zdroje.  
+ Cesta k externímu zdroji  
   
  `IntLiteral`  
  Číslo řádku prvního řádku externího zdroje.  
   
  `LogicalLine`  
- Na řádku, kde dojde k chybě v externím zdroji.  
+ Řádek, kde dojde k chybě v externím zdroji.  
   
  `#End ExternalSource`  
- Ukončuje `#ExternalSource` bloku.  
+ Ukončí blok `#ExternalSource`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato direktiva se používá pouze v kompilátoru a ladicí program.  
+ Tuto direktivu používá pouze kompilátor a ladicí program.  
   
- Zdrojový soubor může obsahovat direktivy externího zdroje, které označují mapování mezi konkrétní řádky kódu ve zdrojovém souboru a textem mimo zdroj, například soubor .aspx. Pokud nedojde k chybám v kódu zdrojové během kompilace, jsou identifikované jako pocházející z externího zdroje.  
+ Zdrojový soubor může obsahovat externí zdrojové direktivy, které označují mapování mezi konkrétními řádky kódu ve zdrojovém souboru a textem externím ke zdroji, jako je například soubor. aspx. Pokud dojde k chybám v určeném zdrojovém kódu během kompilace, jsou identifikovány jako pocházející z externího zdroje.  
   
- Direktivy externího zdroje nemají žádný vliv při kompilaci a nemohou být vnořeny. Ty jsou určené pro interní použití jenom aplikace.  
+ Direktivy externího zdroje nemají žádný vliv na kompilaci a nemohou být vnořené. Jsou určené pouze pro interní použití pouze aplikací.  
   
 ## <a name="see-also"></a>Viz také:
 

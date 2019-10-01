@@ -1,17 +1,17 @@
 ---
-title: 'Kurz: Kategorizace problémů podpory – klasifikace více tříd'
+title: 'Kurz: zařazení do kategorií – problémy s podporou – klasifikace s více třídami'
 description: Zjistěte, jak používat ML.NET ve scénáři klasifikace s více třídami ke klasifikaci problémů GitHubu, aby je bylo možné přiřadit k dané oblasti.
-ms.date: 07/31/2019
+ms.date: 09/30/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 1eb56465bb56906df25c3a094126f2496bef684e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: a6d158d51e6775feaed669c678bb9a36984f08f3
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929225"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698992"
 ---
-# <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Kurz: Kategorizace problémů podpory pomocí klasifikace s více třídami s ML .NET
+# <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>Kurz: kategorizace problémů podpory pomocí klasifikace s více třídami s ML .NET
 
 Tento ukázkový kurz znázorňuje použití ML.NET k vytvoření klasifikátoru problémů GitHubu pro výuku modelu, který klasifikuje a odhadne popisek oblasti pro problém na GitHubu prostřednictvím konzolové aplikace .NET Core využívající C# v aplikaci Visual Studio.
 
@@ -20,7 +20,7 @@ V tomto kurzu se naučíte:
 >
 > * Příprava dat
 > * Transformace dat
-> * Trénování modelu
+> * Výuka modelu
 > * Vyhodnocení modelu
 > * Předpověď s vycvičeným modelem
 > * Nasazení a předpověď pomocí načteného modelu
@@ -38,15 +38,15 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 ### <a name="create-a-project"></a>Vytvoření projektu
 
-1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "GitHubIssueClassification" a pak vyberte tlačítko **OK** .
+1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** **projekt**  > . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "GitHubIssueClassification" a pak vyberte tlačítko **OK** .
 
 2. Vytvořte v projektu adresář s názvem *data* pro uložení souborů datové sady:
 
-    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Přidat** > **novou složku**. Zadejte "data" a stiskněte ENTER.
+    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **přidat** **novou složku** > . Zadejte "data" a stiskněte ENTER.
 
 3. Vytvořte v projektu adresář s názvem *Models* a uložte svůj model:
 
-    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **Přidat** > **novou složku**. Zadejte "modely" a stiskněte ENTER.
+    V **Průzkumník řešení**klikněte pravým tlačítkem na projekt a vyberte **přidat** **novou složku** > . Zadejte "modely" a stiskněte ENTER.
 
 4. Nainstalujte **balíček NuGet Microsoft.ml**:
 
@@ -56,34 +56,34 @@ Zdrojový kód pro tento kurz najdete v úložišti [dotnet/Samples](https://git
 
 1. Stáhněte sady dat [issues_train. TSV](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_train.tsv) a [issues_test. TSV](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_test.tsv) a uložte je do složky *data* , která byla dříve vytvořena. První datová sada Vlaks model strojového učení a druhá se dá použít k vyhodnocení toho, jak přesný je váš model.
 
-2. V Průzkumník řešení klikněte pravým tlačítkem na každý ze \*souborů. TSV a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
+2. V Průzkumník řešení klikněte pravým tlačítkem na všechny soubory @no__t -0. TSV a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
 ### <a name="create-classes-and-define-paths"></a>Vytváření tříd a definování cest
 
-Do horní části souboru `using` *program.cs* přidejte následující dodatečné příkazy:
+Do horní části souboru *program.cs* přidejte následující dodatečné příkazy `using`:
 
 [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#AddUsings)]
 
-Vytvořte tři globální pole pro uchování cest ke nedávno staženým souborům a globální proměnné pro `MLContext`,`DataView`a `PredictionEngine`:
+Vytvořte tři globální pole pro uchování cest ke nedávno staženým souborům a globální proměnné pro `MLContext`, `DataView` a `PredictionEngine`:
 
-* `_trainDataPath`má cestu k datové sadě, která se používá ke výukě modelu.
-* `_testDataPath`má cestu k datové sadě, která se používá k vyhodnocení modelu.
-* `_modelPath`má cestu, kde je uložený model trained.
-* `_mlContext`je rozhraní <xref:Microsoft.ML.MLContext> , které poskytuje kontext zpracování.
-* `_trainingDataView`<xref:Microsoft.ML.IDataView> slouží ke zpracování datové sady školení.
-* `_predEngine`<xref:Microsoft.ML.PredictionEngine%602> je použit pro jeden předpovědi.
+* `_trainDataPath` má cestu k datové sadě, která se používá ke výukě modelu.
+* `_testDataPath` má cestu k datové sadě, která se používá k vyhodnocení modelu.
+* `_modelPath` má cestu, kde je uložený model trained.
+* `_mlContext` je <xref:Microsoft.ML.MLContext>, který poskytuje kontext zpracování.
+* `_trainingDataView` je <xref:Microsoft.ML.IDataView>, který se používá ke zpracování datové sady školení.
+* `_predEngine` je <xref:Microsoft.ML.PredictionEngine%602>, který se používá pro jeden předpovědi.
 
-Přidejte následující kód na řádek přímo nad `Main` metodu pro určení těchto cest a dalších proměnných:
+Přidejte následující kód na řádek vpravo nad metodu `Main` pro určení těchto cest a dalších proměnných:
 
 [!code-csharp[DeclareGlobalVariables](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#DeclareGlobalVariables)]
 
 Vytvořte některé třídy pro vstupní data a předpovědi. Přidejte do projektu novou třídu:
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a vyberte možnost **přidat** **novou položku** > .
 
 1. V dialogovém okně **Přidat novou položku** vyberte **třída** a změňte pole **název** na *GitHubIssueData.cs*. Pak vyberte tlačítko **Přidat** .
 
-    V editoru kódu se otevře soubor *GitHubIssueData.cs* . Do horní části `using` *GitHubIssueData.cs*přidejte následující příkaz:
+    V editoru kódu se otevře soubor *GitHubIssueData.cs* . Přidejte následující příkaz `using` do horní části *GitHubIssueData.cs*:
 
 [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/GitHubIssueClassification/GitHubIssueData.cs#AddUsings)]
 
@@ -91,47 +91,47 @@ Odeberte existující definici třídy a přidejte následující kód, který m
 
 [!code-csharp[DeclareGlobalVariables](~/samples/machine-learning/tutorials/GitHubIssueClassification/GitHubIssueData.cs#DeclareTypes)]
 
-`label` Je sloupec, který chcete předpovědět. Identifikované `Features` jsou vstupy, které modelu přiřadíte pro předpověď popisku.
+@No__t-0 je sloupec, který chcete předpovědět. Identifikované `Features` jsou vstupy, které modelu udělíte k předpovídání popisku.
 
 Pomocí [LoadColumnAttribute](xref:Microsoft.ML.Data.LoadColumnAttribute) určete indexy zdrojových sloupců v sadě dat.
 
-`GitHubIssue`je vstupní datovou třídou a má následující <xref:System.String> pole:
+`GitHubIssue` je vstupní třída DataSet a má následující pole <xref:System.String>:
 
-* první sloupec `ID` (ID problému GitHubu)
+* první sloupec @no__t – 0 (ID problému GitHubu)
 * druhý sloupec `Area` (předpověď pro školení)
-* třetí sloupec `Title` (název problému GitHubu) je první `feature` , který se používá pro předpověď`Area`
-* čtvrtý sloupec `Description` je druhým `feature` použitým pro předpověď`Area`
+* třetí sloupec `Title` (název problému GitHubu) je první `feature`, které se používá pro předpověď `Area`.
+* čtvrtý sloupec `Description` je druhý `feature`, který se používá pro předpověď `Area`.
 
-`IssuePrediction`je třída použitá pro předpověď po vyškolení modelu. Má jeden `string` (`Area`) `PredictedLabel` a`ColumnName` atribut.  `PredictedLabel` Je používán během předpovědi a vyhodnocení. Pro vyhodnocení se používají vstupy s daty o školení, předpovězené hodnoty a model.
+`IssuePrediction` je třída použitá pro předpověď po vyškolení modelu. Má jeden `string` (`Area`) a atribut `PredictedLabel` `ColumnName`.  @No__t-0 se používá během předpovědi a vyhodnocení. Pro vyhodnocení se používají vstupy s daty o školení, předpovězené hodnoty a model.
 
-Všechny operace ML.NET začínají ve třídě [MLContext](xref:Microsoft.ML.MLContext) . Inicializace `mlContext` vytvoří nové prostředí ml.NET, které se dá sdílet v rámci objektů pracovního postupu vytváření modelů. Je podobný, koncepčně, na `DBContext` v. `Entity Framework`
+Všechny operace ML.NET začínají ve třídě [MLContext](xref:Microsoft.ML.MLContext) . Inicializace `mlContext` vytvoří nové prostředí ML.NET, které se dá sdílet napříč objekty pracovního postupu vytváření modelů. Je podobný, koncepčně, `DBContext` v `Entity Framework`.
 
 ### <a name="initialize-variables-in-main"></a>Inicializovat proměnné v Main
 
-Inicializovat globální proměnnou s novou `MLContext` instancí s náhodným osivem (`seed: 0`) pro opakované nebo deterministické výsledky v rámci více školení. `_mlContext`  `Main` Nahraďte `Console.WriteLine("Hello World!")` řádek následujícím kódem v metodě:
+Inicializujte globální proměnnou `_mlContext` novou instancí `MLContext` s náhodným osivem (`seed: 0`) pro opakované nebo deterministické výsledky v rámci více školení.  Nahraďte řádek `Console.WriteLine("Hello World!")` následujícím kódem v metodě `Main`:
 
 [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CreateMLContext)]
 
 ## <a name="load-the-data"></a>Načtení dat
 
-ML.NET používá [třídu IDataView](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob popisující číselná nebo textová tabulková data. `IDataView`může načíst buď textové soubory, nebo v reálném čase (například databáze SQL nebo soubory protokolu).
+ML.NET používá [třídu IDataView](xref:Microsoft.ML.IDataView) jako flexibilní a efektivní způsob popisující číselná nebo textová tabulková data. `IDataView` může načíst buď textové soubory, nebo v reálném čase (například databáze SQL nebo soubory protokolu).
 
-Chcete-li inicializovat a `_trainingDataView` načíst globální proměnnou, aby ji bylo možné použít pro kanál, přidejte `mlContext` po inicializaci následující kód:
+Chcete-li inicializovat a načíst globální proměnnou `_trainingDataView`, aby ji bylo možné použít pro kanál, přidejte po inicializaci `mlContext` následující kód:
 
 [!code-csharp[LoadTrainData](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#LoadTrainData)]
 
 [LoadFromTextFile ()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) definuje schéma dat a čte data v souboru. Převezme proměnné cesty k datům a vrátí `IDataView`.
 
-Přidejte následující jako další řádek kódu v `Main` metodě:
+Přidejte následující jako další řádek kódu do metody `Main`:
 
 [!code-csharp[CallProcessData](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CallProcessData)]
 
-`ProcessData` Metoda provádí následující úlohy:
+Metoda `ProcessData` provádí následující úlohy:
 
 * Extrahuje a transformuje data.
 * Vrátí kanál zpracování.
 
-Vytvořte metodu hned `Main` za metodou pomocí následujícího kódu: `ProcessData`
+Vytvořte metodu `ProcessData` hned za metodou `Main` pomocí následujícího kódu:
 
 ```csharp
 public static IEstimator<ITransformer> ProcessData()
@@ -142,11 +142,11 @@ public static IEstimator<ITransformer> ProcessData()
 
 ## <a name="extract-features-and-transform-the-data"></a>Extrakce funkcí a transformace dat
 
-Vzhledem k tomu `GitHubIssue`, že chcete předpovědět popisek GitHubu oblasti pro, `Area` použijte metodu [MapValueToKey ()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) pro transformaci sloupce do sloupce typu `Label` numerický klíč (formát přijatý algoritmy klasifikace) a přidejte ho jako nový. sloupec datové sady:
+Vzhledem k tomu, že chcete předpovědět popisek GitHubu oblasti `GitHubIssue`, použijte metodu [MapValueToKey ()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) pro transformaci sloupce `Area` na typ číselného klíče `Label` (formát přijatý algoritmy klasifikace) a přidejte ho jako sloupec nové datové sady:
 
 [!code-csharp[MapValueToKey](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#MapValueToKey)]
 
-Dále `mlContext.Transforms.Text.FeaturizeText` volejte, který `DescriptionFeaturized``Title` transformuje `Description`sloupce text (a) na numerický vektor pro každý z nich a.`TitleFeaturized` Přidejte featurization pro oba sloupce do kanálu s následujícím kódem:
+Dále volejte `mlContext.Transforms.Text.FeaturizeText`, která transformuje sloupce text (`Title` a `Description`) do číselného vektoru pro každý s názvem `TitleFeaturized` a `DescriptionFeaturized`. Přidejte featurization pro oba sloupce do kanálu s následujícím kódem:
 
 [!code-csharp[FeaturizeText](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#FeaturizeText)]
 
@@ -154,14 +154,14 @@ Poslední krok v přípravě dat kombinuje všechny sloupce funkcí do sloupce *
 
 [!code-csharp[Concatenate](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#Concatenate)]
 
- V dalším kroku přidejte <xref:Microsoft.ML.Data.EstimatorChain%601.AppendCacheCheckpoint%2A> objekt, aby se zobrazila mezipaměť, takže když provedete iteraci dat víckrát pomocí mezipaměti, může dorazit k vyššímu výkonu, jako u následujícího kódu:
+ Dále přidejte <xref:Microsoft.ML.Data.EstimatorChain%601.AppendCacheCheckpoint%2A> pro ukládání objektu DataView do mezipaměti, takže když Iterujte data víckrát pomocí mezipaměti, může dorazit k vyššímu výkonu, jako s následujícím kódem:
 
 [!code-csharp[AppendCache](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#AppendCache)]
 
 > [!WARNING]
 > Použijte AppendCacheCheckpoint pro malé nebo střední datové sady k nižšímu času školení. Nepoužívejte ho (odebrat. AppendCacheCheckpoint ()) při zpracování velmi rozsáhlých datových sad.
 
-Vrátí kanál na konci `ProcessData` metody.
+Vrátí kanál na konci metody `ProcessData`.
 
 [!code-csharp[ReturnPipeline](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#ReturnPipeline)]
 
@@ -169,18 +169,18 @@ Tento krok zpracovává předzpracování/featurization. Použití dalších sou
 
 ## <a name="build-and-train-the-model"></a>Sestavování a výuka modelu
 
-Do metody přidejte následující volání `BuildAndTrainModel`metody jako další řádek kódu `Main` v metodě:
+Přidejte následující volání do `BuildAndTrainModel`method jako další řádek kódu v metodě `Main`:
 
 [!code-csharp[CallBuildAndTrainModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CallBuildAndTrainModel)]
 
-`BuildAndTrainModel` Metoda provádí následující úlohy:
+Metoda `BuildAndTrainModel` provádí následující úlohy:
 
 * Vytvoří třídu školicího algoritmu.
 * Navlakuje model.
 * Odhadne oblast na základě školicích dat.
 * Vrátí model.
 
-Vytvořte metodu hned `Main` za metodou pomocí následujícího kódu: `BuildAndTrainModel`
+Vytvořte metodu `BuildAndTrainModel` hned za metodou `Main` pomocí následujícího kódu:
 
 ```csharp
 public static IEstimator<ITransformer> BuildAndTrainModel(IDataView trainingDataView, IEstimator<ITransformer> pipeline)
@@ -198,27 +198,27 @@ Klasifikace je úloha strojového učení, která používá data k **určení**
 
 Pro tento typ problému použijte algoritmus učení s více třídami, protože předpověď kategorie problému může být jednou z více kategorií (více tříd), nikoli jenom dvou (binární).
 
-Přidejte algoritmus Machine Learning do definice transformace dat tak, že do prvního řádku kódu `BuildAndTrainModel()`přidáte následující:
+Přidejte algoritmus Machine Learning do definice transformace dat tak, že do prvního řádku kódu přidáte následující příkaz `BuildAndTrainModel()`:
 
 [!code-csharp[AddTrainer](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#AddTrainer)]
 
-[SdcaMaximumEntropy](xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer) je váš algoritmus školicích kurzů pro klasifikace více tříd. Tento údaj je `pipeline` připojen k a přijímá natrénuje `Title` `Description` `Features`a () a vstupníparametryprozískáníinformacízhistorickýchdat.`Label`
+[SdcaMaximumEntropy](xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer) je váš algoritmus školicích kurzů pro klasifikace více tříd. Tato hodnota je připojená k `pipeline` a přijímá natrénuje `Title` a `Description` (`Features`) a vstupní parametry `Label`, abyste se mohli dozvědět od historických dat.
 
-### <a name="train-the-model"></a>Trénování modelu
+### <a name="train-the-model"></a>Výuka modelu
 
-Přizpůsobte si model `splitTrainSet` datům a vraťte vyškolený model přidáním následujícího jako další řádek kódu `BuildAndTrainModel()` v metodě:
+Přizpůsobit model na data `splitTrainSet` a vrátit vyškolený model přidáním následujícího jako další řádek kódu v metodě `BuildAndTrainModel()`:
 
 [!code-csharp[TrainModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#TrainModel)]
 
-`Fit()`Metoda navlakuje váš model transformací datové sady a použitím školení.
+@No__t-0method nahlaste model pomocí transformace datové sady a použití školení.
 
-[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje předat a následně provést předpovědi pro jednu instanci dat. Přidejte toto jako další řádek v `BuildAndTrainModel()` metodě:
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje předat a následně provést předpovědi pro jednu instanci dat. Přidejte toto jako další řádek v metodě `BuildAndTrainModel()`:
 
 [!code-csharp[CreatePredictionEngine1](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CreatePredictionEngine1)]
 
 ### <a name="predict-with-the-trained-model"></a>Předpověď s vycvičeným modelem
 
-Přidejte problém GitHubu pro otestování předpovědi vyškolených modelů v `Predict` metodě vytvořením `GitHubIssue`instance:
+Přidáním problému GitHubu otestujete předpověď vyškolených modelů v metodě `Predict` vytvořením instance `GitHubIssue`:
 
 [!code-csharp[CreateTestIssue1](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CreateTestIssue1)]
 
@@ -228,19 +228,19 @@ Použití funkce [prediktivní ()](xref:Microsoft.ML.PredictionEngine%602.Predic
 
 ### <a name="using-the-model-prediction-results"></a>Použití modelu: předpověď výsledků
 
-Zobrazit `GitHubIssue` a odpovídající `Area` předpověď popisku, aby bylo možné sdílet výsledky a odpovídajícím způsobem je zpracovat.  Pomocí následujícího <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu vytvořte zobrazení výsledků:
+Zobrazit `GitHubIssue` a odpovídající předpověď popisku `Area`, aby bylo možné sdílet výsledky a odpovídajícím způsobem je zpracovat.  Pomocí následujícího kódu <xref:System.Console.WriteLine?displayProperty=nameWithType> vytvořte zobrazení výsledků:
 
 [!code-csharp[OutputPrediction](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#OutputPrediction)]
 
 ### <a name="return-the-model-trained-to-use-for-evaluation"></a>Vrátí vyškolený model, který se má použít pro vyhodnocení.
 
-Vrátí model na konci `BuildAndTrainModel` metody.
+Vrátí model na konci metody `BuildAndTrainModel`.
 
 [!code-csharp[ReturnModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#ReturnModel)]
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Teď, když jste vytvořili a naučili model, je nutné ho vyhodnotit s jinou datovou sadou pro zajištění a ověření kvality. V metodě je model vytvořen v `BuildAndTrainModel` nástroji předán k vyhodnocení. `Evaluate` Vytvořte metodu hned po `BuildAndTrainModel`, jako v následujícím kódu: `Evaluate`
+Teď, když jste vytvořili a naučili model, je nutné ho vyhodnotit s jinou datovou sadou pro zajištění a ověření kvality. V metodě `Evaluate` je objekt vytvořený v `BuildAndTrainModel` předán, aby se vyhodnotil. Vytvořte metodu `Evaluate` hned za `BuildAndTrainModel`, jako v následujícím kódu:
 
 ```csharp
 public static void Evaluate(DataViewSchema trainingDataViewSchema)
@@ -249,24 +249,24 @@ public static void Evaluate(DataViewSchema trainingDataViewSchema)
 }
 ```
 
-`Evaluate` Metoda provádí následující úlohy:
+Metoda `Evaluate` provádí následující úlohy:
 
 * Načte testovací datovou sadu.
 * Vytvoří filtr s více třídami.
 * Vyhodnotí model a vytvoří metriky.
 * Zobrazí metriky.
 
-Přidejte volání do metody New z `Main` metody přímo `BuildAndTrainModel` pod voláním metody pomocí následujícího kódu:
+Přidejte volání do nové metody z metody `Main` přímo pod voláním metody `BuildAndTrainModel` pomocí následujícího kódu:
 
 [!code-csharp[CallEvaluate](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CallEvaluate)]
 
-Stejně jako v případě, že jste použili datovou sadu školení, načtěte testovací datovou sadu přidáním `Evaluate` následujícího kódu do metody:
+Stejně jako v případě, že jste použili datovou sadu školení, načtěte testovací datovou sadu přidáním následujícího kódu do metody `Evaluate`:
 
 [!code-csharp[LoadTestDataset](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#LoadTestDataset)]
 
-Metoda [Evaluate ()](xref:Microsoft.ML.MulticlassClassificationCatalog.Evaluate%2A) počítá metriky kvality pro model používající zadanou datovou sadu. Vrátí <xref:Microsoft.ML.Data.MulticlassClassificationMetrics> objekt, který obsahuje celkové metriky vypočítané filtry klasifikace s více třídami.
+Metoda [Evaluate ()](xref:Microsoft.ML.MulticlassClassificationCatalog.Evaluate%2A) počítá metriky kvality pro model používající zadanou datovou sadu. Vrátí objekt <xref:Microsoft.ML.Data.MulticlassClassificationMetrics>, který obsahuje celkové metriky vypočítané filtry klasifikace více tříd.
 Chcete-li zobrazit metriky pro určení kvality modelu, je nutné je nejprve získat.
-Všimněte si použití metody [Transform ()](xref:Microsoft.ML.ITransformer.Transform%2A) globální proměnné Machine Learning `_trainedModel` ( [ITransformer](xref:Microsoft.ML.ITransformer)) k zadání funkcí a vrácení předpovědi. Do `Evaluate` metody přidejte následující kód jako další řádek:
+Všimněte si, že použití metody [Transform ()](xref:Microsoft.ML.ITransformer.Transform%2A) @no__t globální proměnné ( [ITransformer](xref:Microsoft.ML.ITransformer)) pro zadání funkcí a vrácení předpovědi. Do metody `Evaluate` přidejte následující kód jako další řádek:
 
 [!code-csharp[Evaluate](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#Evaluate)]
 
@@ -288,11 +288,11 @@ Použijte následující kód k zobrazení metrik, sdílení výsledků a pak je
 
 ### <a name="save-the-model-to-a-file"></a>Uložení modelu do souboru
 
-Jakmile se model splní, uložte ho do souboru, aby se předpovědi později nebo v jiné aplikaci. Do `Evaluate` metody přidejte následující kód. 
+Jakmile se model splní, uložte ho do souboru, aby se předpovědi později nebo v jiné aplikaci. Do metody `Evaluate` přidejte následující kód. 
 
 [!code-csharp[SnippetCallSaveModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#SnippetCallSaveModel)]
 
-Vytvořte metodu pod vaší `Evaluate` metodou. `SaveModelAsFile`
+Vytvořte metodu `SaveModelAsFile` pod vaší metodou `Evaluate`.
 
 ```csharp
 private static void SaveModelAsFile(MLContext mlContext,DataViewSchema trainingDataViewSchema, ITransformer model)
@@ -301,17 +301,17 @@ private static void SaveModelAsFile(MLContext mlContext,DataViewSchema trainingD
 }
 ```
 
-Do `SaveModelAsFile` metody přidejte následující kód. Tento kód používá [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) metodu k serializaci a uložení výukového modelu jako souboru ZIP.
+Do metody @no__t 0 přidejte následující kód. Tento kód používá metodu [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) k serializaci a uložení výukového modelu jako souboru ZIP.
 
 [!code-csharp[SnippetSaveModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#SnippetSaveModel)]
 
 ## <a name="deploy-and-predict-with-a-model"></a>Nasazení a předpověď pomocí modelu
 
-Přidejte volání do metody New z `Main` metody přímo `Evaluate` pod voláním metody pomocí následujícího kódu:
+Přidejte volání do nové metody z metody `Main` přímo pod voláním metody `Evaluate` pomocí následujícího kódu:
 
 [!code-csharp[CallPredictIssue](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CallPredictIssue)]
 
-Vytvořte metodu hned `Evaluate` za metodou `SaveModelAsFile` (a těsně před metodou) pomocí následujícího kódu: `PredictIssue`
+Vytvořte metodu `PredictIssue` hned za metodou `Evaluate` (a těsně před metodou `SaveModelAsFile`) pomocí následujícího kódu:
 
 ```csharp
 private static void PredictIssue()
@@ -320,7 +320,7 @@ private static void PredictIssue()
 }
 ```
 
-`PredictIssue` Metoda provádí následující úlohy:
+Metoda `PredictIssue` provádí následující úlohy:
 
 * Načte uložený model.
 * Vytvoří jeden problém testovacích dat.
@@ -328,25 +328,30 @@ private static void PredictIssue()
 * Kombinuje testovací data a předpovědi pro vytváření sestav.
 * Zobrazí předpovězené výsledky.
 
-Načtěte uložený model do aplikace přidáním následujícího kódu do `PredictIssue` metody:
+Načtěte uložený model do aplikace přidáním následujícího kódu do metody `PredictIssue`:
 
 [!code-csharp[SnippetLoadModel](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#SnippetLoadModel)]
 
-Přidejte problém GitHubu pro otestování předpovědi vyškolených modelů v `Predict` metodě vytvořením `GitHubIssue`instance:
+Přidáním problému GitHubu otestujete předpověď vyškolených modelů v metodě `Predict` vytvořením instance `GitHubIssue`:
 
 [!code-csharp[AddTestIssue](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#AddTestIssue)]
 
-Jak jste předtím pracovali, vytvořte `PredictionEngine` instanci s následujícím kódem:
+Jak jste předtím pracovali, vytvořte instanci `PredictionEngine` s následujícím kódem:
 
 [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#CreatePredictionEngine)]
-  
-Použijte pro předpověď popisku oblasti GitHub přidáním následujícího kódu `PredictIssue` do metody pro předpověď: `PredictionEngine`
+
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o [použití `PredictionEnginePool` v ASP.NET Core webovém rozhraní API](https://docs.microsoft.com/en-us/dotnet/machine-learning/how-to-guides/serve-model-web-api-ml-net#register-predictionenginepool-for-use-in-the-application) .
+
+> [!NOTE]
+> rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
+
+Pomocí `PredictionEngine` můžete předpovědět popisek GitHubu oblasti přidáním následujícího kódu do metody `PredictIssue` pro předpověď:
 
 [!code-csharp[PredictIssue](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#PredictIssue)]
 
 ### <a name="using-the-loaded-model-for-prediction"></a>Použití načteného modelu pro předpověď
 
-Zobrazí `Area` se, aby se problém kategorizoval, a podle toho ho zařadí. Pomocí následujícího <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu vytvořte zobrazení výsledků:
+Pokud chcete problém kategorizovat, zobrazte `Area`, abyste ho mohli podle potřeby zařadit do kategorií. Pomocí následujícího kódu <xref:System.Console.WriteLine?displayProperty=nameWithType> vytvořte zobrazení výsledků:
 
 [!code-csharp[DisplayResults](~/samples/machine-learning/tutorials/GitHubIssueClassification/Program.cs#DisplayResults)]
 
@@ -371,12 +376,12 @@ Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení pro kl
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste se naučili:
+V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > * Příprava dat
 > * Transformace dat
-> * Trénování modelu
+> * Výuka modelu
 > * Vyhodnocení modelu
 > * Předpověď s vycvičeným modelem
 > * Nasazení a předpověď pomocí načteného modelu

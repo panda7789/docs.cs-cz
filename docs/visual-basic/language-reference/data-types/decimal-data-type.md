@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-ms.openlocfilehash: bab5a0bd7e0a85d550362bc3c1166566f6dcb81b
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 892824b61cfb6a0172361d220c638cab0a78565d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512776"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700867"
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 
@@ -33,19 +33,19 @@ Obsahuje podepsané 128 hodnoty (16 bajtů) představující 96-bit (12 bajtů) 
 
 ## <a name="remarks"></a>Poznámky
 
-`Decimal` Datový typ poskytuje největší počet platných číslic pro číslo. Podporuje až 29 platných číslic a může reprezentovat hodnoty převyšující 7,9228 × 10 ^ 28. Je zvláště vhodná pro výpočty, jako je finanční, které vyžadují velký počet číslic, ale nemůžou tolerovat chyby při zaokrouhlování.
+Datový typ `Decimal` poskytuje největší počet platných číslic pro číslo. Podporuje až 29 platných číslic a může reprezentovat hodnoty převyšující 7,9228 × 10 ^ 28. Je zvláště vhodná pro výpočty, jako je finanční, které vyžadují velký počet číslic, ale nemůžou tolerovat chyby při zaokrouhlování.
 
 Výchozí hodnota `Decimal` je 0.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Číslic.** `Decimal`není datový typ s plovoucí desetinnou čárkou. `Decimal` Struktura obsahuje binární celočíselnou hodnotu společně s bitem znaménka a koeficientem škálování celého čísla, který určuje, jaká část hodnoty je desítkový zlomek. Z tohoto `Decimal` důvodu čísla mají přesnější reprezentace v paměti než typy s plovoucí desetinnou čárkou`Single` ( `Double`a).
+- **Číslic.** `Decimal` není datový typ s plovoucí desetinnou čárkou. Struktura `Decimal` obsahuje binární celočíselnou hodnotu společně s bitem znaménka a koeficientem škálování celého čísla, který určuje, jaká část hodnoty je desítková frakce. Z tohoto důvodu jsou hodnoty `Decimal` přesnější reprezentace v paměti než typy s plovoucí desetinnou čárkou (`Single` a `Double`).
 
-- **Výkon.** `Decimal` Datový typ je nejpomalejší ze všech číselných typů. Před výběrem datového typu byste měli zvážit důležitost přesnosti oproti výkonu.
+- **Předepsané.** Datový typ `Decimal` je nejpomalejší ze všech číselných typů. Před výběrem datového typu byste měli zvážit důležitost přesnosti oproti výkonu.
 
-- **Rozšiřující.** Datový typ se rozšíří na `Single` nebo `Double`. `Decimal` To znamená, že můžete `Decimal` převést na některý z těchto typů bez výskytu <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+- **Rozšiřující.** Datový typ `Decimal` se rozšíří na `Single` nebo `Double`. To znamená, že můžete převést `Decimal` na některý z těchto typů bez výskytu chyby <xref:System.OverflowException?displayProperty=nameWithType>.
 
-- **Koncové nuly.** Visual Basic neukládá koncové nuly v `Decimal` literálu. `Decimal` Nicméně proměnná zachovává všechny koncové nuly získané výpočty. Toto dokládá následující příklad.
+- **Koncové nuly.** Visual Basic neukládá koncové nuly v literálu `Decimal`. Proměnná `Decimal` však zachovává všechny koncové nuly získané výpočtem. Toto dokládá následující příklad.
 
   ```vb
   Dim d1, d2, d3, d4 As Decimal
@@ -59,16 +59,16 @@ Výchozí hodnota `Decimal` je 0.
 
   Výstup `MsgBox` v předchozím příkladu je následující:
 
-  ```
+  ```console
   d1 = 2.375, d2 = 1.625, d3 = 4.000, d4 = 4
   ```
 
-- **Znaky typu.** Připojení znaku `D` literálového typu k literálu vynutí `Decimal` tento datový typ. Připojení znaku `@` typu identifikátoru k jakémukoli identifikátoru vynutí `Decimal`.
+- **Znaky typu.** Připojení znaku typu literálu `D` do literálu vynutí jej datový typ `Decimal`. Připojení znaku typu identifikátoru `@` k jakémukoli identifikátoru vynutí `Decimal`.
 
-- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Decimal?displayProperty=nameWithType> struktura.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Decimal?displayProperty=nameWithType>.
 
 ## <a name="range"></a>Rozsah
- Je možné, že budete muset `D` použít znak typu pro přiřazení velké hodnoty `Decimal` proměnné nebo konstantě. Tento požadavek je způsoben tím, že kompilátor interpretuje literál `Long` , jako by literální znak typu literálu nenásleduje literál, jak ukazuje následující příklad.
+ Je možné, že budete muset použít znak `D`, abyste přiřadili velkou hodnotu proměnné nebo konstantě `Decimal`. Tento požadavek je způsoben tím, že kompilátor interpretuje literál jako `Long`, pokud literální znak typu se neřídí literálem, jak ukazuje následující příklad.
 
 ```vb
 Dim bigDec1 As Decimal = 9223372036854775807   ' No overflow.
@@ -76,11 +76,11 @@ Dim bigDec2 As Decimal = 9223372036854775808   ' Overflow.
 Dim bigDec3 As Decimal = 9223372036854775808D  ' No overflow.
 ```
 
-Deklarace pro nemá `bigDec1` za následek přetečení, protože hodnota, která je přiřazena, spadá do rozsahu pro. `Long` Hodnota může být přiřazena `Decimal` proměnné. `Long`
+Deklarace `bigDec1` nevyprodukuje přetečení, protože hodnota, která je přiřazena, spadá do rozsahu pro `Long`. Hodnotu `Long` lze přiřadit proměnné `Decimal`.
 
-Deklarace pro `bigDec2` vygeneruje chybu přetečení, protože hodnota, která je přiřazena, je pro `Long`hodnotu příliš velká. Vzhledem k tomu, že číselný literál nemůže být nejdříve `Long`interpretován jako a, nelze jej přiřadit `Decimal` proměnné.
+Deklarace `bigDec2` generuje chybu přetečení, protože hodnota, která je přiřazena, je pro `Long` příliš velká. Vzhledem k tomu, že číselný literál nemůže být nejdříve interpretován jako `Long`, nelze jej přiřadit proměnné `Decimal`.
 
-Pro `bigDec3`je znak `D` literálového typu vyřeší problém tím, že vynutí kompilátor `Decimal` interpretovat literál jako místo jako `Long`.
+U `bigDec3` znak typu literálu `D` vyřeší problém tím, že kompilátor vynutí interpretaci literálu jako `Decimal` namísto jako `Long`.
 
 ## <a name="see-also"></a>Viz také:
 

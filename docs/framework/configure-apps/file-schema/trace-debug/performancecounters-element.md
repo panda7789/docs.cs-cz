@@ -8,20 +8,20 @@ helpviewer_keywords:
 - performanceCounters element
 - <performanceCounters> element
 ms.assetid: a71f605b-c7d9-4501-a5c3-abcbb964a43f
-ms.openlocfilehash: 6144bcbda69b2ba799e87c3e7fa2118fbe4d9bf6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f52fdb2d5b0b7911de63f96663e70735d2f2496c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673730"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697158"
 ---
-# <a name="performancecounters-element"></a>\<čítače výkonu > – Element
+# <a name="performancecounters-element"></a>@no__t – element > 0performanceCounters
 
-Určuje velikost globální paměť sdílenou čítače výkonu.
+Určuje velikost globální paměti sdílené čítači výkonu.
 
- \<Konfigurace > \
-\<system.diagnostics>\
-\<performanceCounters>
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<performanceCounters >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,7 +37,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|filemappingsize|Požadovaný atribut.<br /><br /> Určuje velikost v bajtech, globální paměti sdílí čítače výkonu. Výchozí hodnota je 524288.|
+|filemappingsize|Požadovaný atribut.<br /><br /> Určuje velikost globální paměti sdílené čítači výkonu (v bajtech). Výchozí hodnota je 524288.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
@@ -48,15 +48,15 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |Prvek|Popis|
 |-------------|-----------------|
 |`Configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|
-|`system.diagnostics`|Určuje kořenový element části o konfiguraci technologie ASP.NET.|
+|`system.diagnostics`|Určuje kořenový element konfiguračního oddílu ASP.NET.|
 
 ## <a name="remarks"></a>Poznámky
 
-Čítače výkonu pomocí souboru mapování paměti nebo sdílené paměti k vydávání dat výkonu.  Velikost sdílené paměti určuje, kolik instancí je možné najednou.  Existují dva typy sdílené paměti: globální sdílené paměti a samostatné sdílené paměti.  Všechny kategorie čítačů výkonu nainstalovaný v rozhraní .NET Framework verze 1.0 nebo 1.1 používá globální sdílenou paměť.  Kategorie čítače výkonu nainstalovaná s použitím rozhraní .NET Framework verze 2.0 pomocí samostatné sdílené paměti, s každou kategorii čítače výkonu má svůj vlastní paměti.
+Čítače výkonu k publikování údajů o výkonu používají soubor mapované paměti nebo sdílenou paměť.  Velikost sdílené paměti určuje, kolik instancí lze najednou použít.  Existují dva typy sdílené paměti: globální sdílená paměť a samostatná sdílená paměť.  Globální sdílená paměť je používána všemi kategoriemi čítače výkonu nainstalovanými s verzemi .NET Framework 1,0 nebo 1,1.  Kategorie čítače výkonu nainstalované s .NET Framework verze 2,0 používají samostatnou sdílenou paměť, přičemž každá kategorie čítače výkonu má vlastní paměť.
 
-Velikost globální sdílené paměti lze nastavit pouze s konfiguračním souborem.  Výchozí velikost je 524,288 kolik, maximální velikost je 33,554,432 bajtů a minimální velikost je 32 768 bajtů.  Protože globální sdílené paměti se sdílí všemi procesy a kategorií, určuje první Tvůrce velikost.  Při definování velikost v konfiguračním souboru aplikace, tato velikost se používá pouze pokud je první aplikaci, která způsobí, že čítače výkonu ke spuštění aplikace.  Proto do správného umístění k určení `filemappingsize` hodnota je soubor Machine.config.  Nelze uvolnit paměť v globální sdílené paměti podle jednotlivých čítače, takže nakonec vyčerpá globální sdílené paměti, pokud se vytvoří velký počet instancí čítače výkonu s různými názvy.
+Velikost globální sdílené paměti lze nastavit pouze pomocí konfiguračního souboru.  Výchozí velikost je 524 288 byes, maximální velikost je 33 554 432 bajtů a minimální velikost je 32 768 bajtů.  Vzhledem k tomu, že globální sdílená paměť je sdílena všemi procesy a kategorie, první tvůrce určuje velikost.  Pokud definujete velikost v konfiguračním souboru aplikace, bude tato velikost použita pouze v případě, že je vaše aplikace první aplikací, která způsobuje, že jsou čítače výkonu provedeny.  Proto je správné umístění pro určení hodnoty `filemappingsize` souborem Machine. config.  Paměť v globální sdílené paměti nemůže být uvolněna jednotlivými čítači výkonu, takže je nakonec vyčerpána globální sdílená paměť, pokud je vytvořen velký počet instancí čítače výkonu s různými názvy.
 
-Pro velikost samostatné sdílené paměti hodnotu DWORD FileMappingSize v registru klíč HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<název kategorie >* \Performance odkazuje nejprve za nímž následuje hodnota zadaná pro globální sdílené paměti v konfiguračním souboru. Pokud hodnota FileMappingSize neexistuje, je velikost samostatné sdílené paměti je nastavena na čtvrté jeden (1/4) globální nastavení v konfiguračním souboru.
+V případě velikosti samostatné sdílené paměti je jako první odkazována hodnota DWORD FileMappingSize ve klíči registru HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services @ no__t-0 *\<category název >* \Performance a za ním následuje hodnota. zadáno pro globální sdílenou paměť v konfiguračním souboru. Pokud hodnota FileMappingSize neexistuje, je velikost samostatné sdílené paměti nastavena na jednu čtvrtou (1/4) globální nastavení konfiguračního souboru.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: ac9405fdc6123a5a1352de06f94fefb6d7d4014b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 2105a6dd25a7f6e5e4c1ce286be7f60beae1dca0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659125"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697611"
 ---
-# <a name="smtp-element-network-settings"></a>\<> elementu SMTP (nastavení sítě)
+# <a name="smtp-element-network-settings"></a>@no__t – element > 0smtp (nastavení sítě)
 Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro odesílání e-mailů.  
   
- \<> Konfigurace  
-\<system.net>  
-\<mailSettings >  
-\<smtp>  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<mailSettings >** ](mailsettings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<smtp >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,7 +57,7 @@ Konfiguruje formát doručení, způsob doručení a adresu odesílatele pro ode
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[\<mailSettings – element > (nastavení sítě)](mailsettings-element-network-settings.md)|Nakonfiguruje možnosti odesílání pošty.|  
+|[@no__t – element > 1mailSettings (nastavení sítě)](mailsettings-element-network-settings.md)|Nakonfiguruje možnosti odesílání pošty.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad určuje vhodné parametry protokolu SMTP pro odesílání e-mailů s použitím výchozích síťových přihlašovacích údajů.  

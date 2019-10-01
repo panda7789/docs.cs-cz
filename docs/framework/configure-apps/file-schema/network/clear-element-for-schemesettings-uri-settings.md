@@ -2,20 +2,20 @@
 title: <clear> – element pro schemeSettings (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
-ms.openlocfilehash: 51c669aff767948523172aa075677ad3fb6478a2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e954fef455d0279a945c33f2014913fea9d63064
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664177"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699448"
 ---
-# <a name="clear-element-for-schemesettings-uri-settings"></a>\<Clear – element > pro schemeSettings (nastavení URI)
+# <a name="clear-element-for-schemesettings-uri-settings"></a>@no__t – element > 0clear pro schemeSettings (nastavení URI)
 Vymaže všechna existující nastavení schématu.  
   
- \<> Konfigurace  
-\<uri>  
-\<schemeSettings >  
-\<Vymazat >  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<schemeSettings >** ](schemesettings-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<clear >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +36,10 @@ Vymaže všechna existující nastavení schématu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<schemeSettings – element > (nastavení URI)](schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> se bude analyzovat pro konkrétní schémata.|  
+|[@no__t – element > 1schemeSettings (nastavení URI)](schemesettings-element-uri-settings.md)|Určuje, jak se bude pro konkrétní schémata analyzovat <xref:System.Uri>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy zruší počet znaků zakódovaných oddělovači cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
+ Ve výchozím nastavení třídy <xref:System.Uri?displayProperty=nameWithType> zruší řídicí oddělovače% zakódovaných cest před spuštěním komprese cesty. Tato akce byla implementována jako bezpečnostní mechanismus proti útokům, jako jsou tyto:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -47,7 +47,7 @@ Vymaže všechna existující nastavení schématu.
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> Třída First zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivou adresu URL výše konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> má za následek následující identifikátor URI:  
+ Z tohoto důvodu třída <xref:System.Uri?displayProperty=nameWithType> nejprve zruší oddělovače cest a pak použije kompresi cesty. Výsledek předání škodlivých adres URL výše do konstruktoru třídy <xref:System.Uri?displayProperty=nameWithType> vede k následujícímu identifikátoru URI:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -57,7 +57,7 @@ Vymaže všechna existující nastavení schématu.
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje konfiguraci použitou <xref:System.Uri> třídou, která vymaže všechna nastavení schématu, a potom přidá podporu pro nekódované oddělovače cest pro schéma HTTP v procentech.  
+ Následující příklad ukazuje konfiguraci, kterou používá třída <xref:System.Uri>, která vymaže všechna nastavení schématu, a potom přidá podporu pro nekódované oddělovače cest pro schéma HTTP v procentech.  
   
 ```xml  
 <configuration>  

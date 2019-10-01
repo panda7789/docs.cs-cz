@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC30909
 ms.assetid: ffa7395d-e182-4087-8ce8-079810fdae54
-ms.openlocfilehash: cb5191442ed8d3ee47c5116b10740e277ffa5bac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca67e74d7790352bd1842cb8a59fe1525af6e18c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661916"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700903"
 ---
-# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>"\<membername >' nemůže vystavovat typ '\<typename >' mimo projekt prostřednictvím \<containertype > '\<containertypename >"
-Proměnná, parametr procedury nebo návratová hodnota funkce je vystaven vně svého kontejneru, ale je deklarován jako typ, který nesmí být vystaven vně kontejneru.  
+# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>' \<membername > ' nemůže vystavovat typ ' \<typename > ' mimo projekt prostřednictvím \<containertype > ' \<containertypename > '
+Proměnná, parametr procedury nebo návrat funkce jsou vystaveny mimo svůj kontejner, ale jsou deklarovány jako typ, který nesmí být vystaven mimo kontejner.  
   
- Následující kostrou kód ukazuje situaci, která vygeneruje tuto chybu.  
+ Následující kostrový kód zobrazuje situaci, která tuto chybu generuje.  
   
-```  
+```vb  
 Private Class privateClass  
 End Class  
 Public Class mainClass  
@@ -27,14 +27,14 @@ Public Class mainClass
 End Class  
 ```  
   
- Typ, který je deklarován `Protected`, `Friend`, `Protected Friend`, nebo `Private` má omezený přístup mimo jeho deklarace kontextu. Použití jako data typu proměnné s méně omezený přístup by vůbec nemělo tento účel. V předchozím kódu kostru `exposedVar` je `Public` a by vystavovat `privateClass` kódu, který by neměl mít přístup k němu.  
+ Typ deklarovaný `Protected`, `Friend`, `Protected Friend` nebo `Private`, má mít omezený přístup mimo svůj kontext deklarace. Použije se jako datový typ proměnné s omezeným přístupem bez omezení. V předcházejícím kostrě kódu `exposedVar` je `Public` a vystavení `privateClass` kódu, který by k němu neměl mít přístup.  
   
  **ID chyby:** BC30909  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Změna úrovně přístupu proměnná, parametr procedury nebo funkce vrátit se nejméně omezující jako úroveň přístupu jeho datového typu.  
+- Změňte úroveň přístupu proměnné, parametru procedury nebo vraťte funkci tak, aby byla alespoň omezující jako úroveň přístupu jeho datového typu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
