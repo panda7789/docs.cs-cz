@@ -5,12 +5,12 @@ ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 9617582c79b2278e3a68e7acf84568247b81eca1
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 8090e4565a7e55aaa9cc9939e61eb728a169de8d
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167658"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736876"
 ---
 # <a name="explain-model-predictions-using-permutation-feature-importance"></a>Vysvětlete předpovědi modelů pomocí funkce permutace důležitost
 
@@ -18,7 +18,7 @@ Naučte se vysvětlovat ML.NET Machine Learning model předpovědi tím, že por
 
 Modely strojového učení se často považovat za černé čtverečky, které přijímají vstupy a generují výstup. Zprostředkující kroky nebo interakce mezi funkcemi, které ovlivňují výstup, se zřídka rozumí. Vzhledem k tomu, že je strojové učení zahrnuté do více aspektů každodenního života, jako je zdravotní péče, je velmi důležité pochopit, proč model strojového učení provádí rozhodnutí. Například pokud jsou diagnostiky provedeny modelem strojového učení, odborníci na zdravotní péči potřebují způsob, jak se podívat na faktory, které se při diagnostikování prováděly. Poskytnutí správné diagnostiky by mohlo způsobit velký rozdíl na tom, jestli má pacient rychlejší obnovení. Čím vyšší je úroveň vyjasnění v modelu, větší spolehlivé odborníky na zdravotní péči musí přijmout nebo odmítnout rozhodnutí učiněná modelem.
 
-K vysvětlení modelů, z nichž jeden je PFI, se používají různé techniky. PFI je technika, která se používá k vysvětlení klasifikací a regresních modelů, které jsou nechte inspirovaty pomocí [ *náhodných doménových struktur* Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)(viz oddíl 10). Na nejvyšší úrovni je způsob, jakým funguje, náhodným pohybem dat pro celou datovou sadu a výpočtem množství metriky výkonu, které se v zájmu sníží. Čím větší je tato změna, tím důležitější je funkce. 
+K vysvětlení modelů, z nichž jeden je PFI, se používají různé techniky. PFI je technika, která se používá k vysvětlení klasifikací a regresních modelů, které jsou nechte inspirovaty pomocí [ *náhodných doménových struktur* Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (viz oddíl 10). Na nejvyšší úrovni je způsob, jakým funguje, náhodným pohybem dat pro celou datovou sadu a výpočtem množství metriky výkonu, které se v zájmu sníží. Čím větší je tato změna, tím důležitější je funkce. 
 
 Kromě toho zvýrazňováním nejdůležitějších funkcí se mohou tvůrci modelů soustředit na použití podmnožiny smysluplných funkcí, které mohou potenciálně snižovat dobu šumu a školení.
 
@@ -26,9 +26,9 @@ Kromě toho zvýrazňováním nejdůležitějších funkcí se mohou tvůrci mod
 
 Funkce v datové sadě používané pro tuto ukázku jsou ve sloupcích 1-12. Cílem je předpovědět `Price`. 
 
-| Sloupec | Funkce | Popis 
+| Column | Funkce | Popis 
 | --- | --- | --- |
-| 1 | CrimeRate | Sazba za trestných činů za hlavu
+| 1\. místo | CrimeRate | Sazba za trestných činů za hlavu
 | 2 | ResidentialZones | Místní zóny ve městě
 | 3 | CommercialZones | Jiné než místní zóny ve městě
 | 4 | NearWater | Blízkost k tělo vody
@@ -50,7 +50,7 @@ Ukázka datové sady je uvedena níže:
 2,98,16,1,0.25,10,5,1,8,689,13,36,12
 ```
 
-Data v této ukázce lze modelovat podle třídy, jako `HousingPriceData` je a načtena [`IDataView`](xref:Microsoft.ML.IDataView)do.
+Data v této ukázce lze modelovat podle třídy, jako je `HousingPriceData` a načtena do [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ```csharp
 class HousingPriceData
@@ -128,7 +128,7 @@ var sdcaModel = sdcaEstimator.Fit(preprocessedTrainData);
 
 ## <a name="explain-the-model-with-permutation-feature-importance-pfi"></a>Vysvětlení modelu s funkcí permutace – důležitost (PFI)
 
-V ml.NET použijte [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) metodu pro příslušnou úlohu.
+V ML.NET použijte metodu [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) pro příslušnou úlohu.
 
 ```csharp
 ImmutableArray<RegressionMetricsStatistics> permutationFeatureImportance = 
@@ -137,9 +137,9 @@ ImmutableArray<RegressionMetricsStatistics> permutationFeatureImportance =
         .PermutationFeatureImportance(sdcaModel, preprocessedTrainData, permutationCount:3);
 ```
 
-Výsledkem použití [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) v datové sadě školení [`ImmutableArray`](xref:System.Collections.Immutable.ImmutableArray) je [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics) objekt. [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics)poskytuje souhrnnou statistiku, například střední hodnotu a směrodatnou odchylku pro více pozorování [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics) rovnající se počtu permutací určených `permutationCount` parametrem.
+Výsledkem použití [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) pro datovou sadu školení je [`ImmutableArray`](xref:System.Collections.Immutable.ImmutableArray) objekty [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics) . [`RegressionMetricsStatistics`](xref:Microsoft.ML.Data.RegressionMetricsStatistics) poskytuje souhrnné statistiky, jako je střední hodnota, a směrodatnou odchylku pro více pozorování [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics) rovnající se počtu permutací určených parametrem `permutationCount`.
 
-Důležitost, nebo v tomto případě je absolutní průměrná míra snížení metriky R-čtverce vypočítaná pomocí [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) lze seřadit od nejdůležitějších po nejméně důležité.  
+Důležitost, nebo v tomto případě je absolutní průměrná míra snížení metriky R-čtverce vypočtená pomocí [`PermutationFeatureImportance`](xref:Microsoft.ML.PermutationFeatureImportanceExtensions) a pak může být seřazena od nejdůležitějšího až po nejmenší důležitou.  
 
 ```csharp
 // Order features by importance
@@ -156,7 +156,7 @@ foreach (var feature in featureImportanceMetrics)
 }
 ```
 
-Tisk hodnot pro jednotlivé funkce v `featureImportanceMetrics` nástroji by vygeneroval výstup podobný tomuto:. Mějte na paměti, že byste měli očekávat, že byste měli zobrazit různé výsledky, protože tyto hodnoty se liší v závislosti na datech, která jsou uvedena.  
+Tisk hodnot pro každou funkci v `featureImportanceMetrics` by vygeneroval výstup podobný tomuto:. Mějte na paměti, že byste měli očekávat, že byste měli zobrazit různé výsledky, protože tyto hodnoty se liší v závislosti na datech, která jsou uvedena.  
 
 | Funkce | Změnit na R-čtvercový |
 |:--|:--:|
