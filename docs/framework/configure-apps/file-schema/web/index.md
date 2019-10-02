@@ -9,32 +9,30 @@ helpviewer_keywords:
 - configuration files [ASP.NET]
 - configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
-ms.openlocfilehash: d53d3a105203addfacb1c982e0960bd12996f571
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 71b9e46a8c2d60c853af63ee78e2ed5dbe6e98f4
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941426"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699139"
 ---
 # <a name="web-settings-schema"></a>Schéma nastavení webu
 Webové nastavení určuje nastavení ASP.NET procesoru a na úrovni spuštění, které se vztahuje na chování v rámci procesu spravované vrstvou hostování ASP.NET. Tato nastavení se liší od nastavení aplikačního typu domény, které jsou uvedeny v souboru Web. config aplikace ASP.NET.  
   
- Nastavení webu jsou obsažena v souborech ASPNET. config, které jsou umístěny v instalačních složkách pro verze .NET Framework. Například soubor ASPNET. config pro .NET Framework 2,0 je v následující složce:  
+Nastavení webu jsou obsažena v souborech ASPNET. config, které jsou umístěny v instalačních složkách pro verze .NET Framework. Například soubor ASPNET. config pro .NET Framework 2,0 je v následující složce:  
   
- `C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
+`C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
   
- Webové nastavení se nepoužívá v žádné jiné konfigurační soubory, jako je například soubor Machine. config, kořenový soubor Web. config nebo Web. config na úrovni aplikace.  
+Webové nastavení se nepoužívá v žádné jiné konfigurační soubory, jako je například soubor Machine. config, kořenový soubor Web. config nebo Web. config na úrovni aplikace.  
   
- [\<Element > Konfigurace](../configuration-element.md)  
-  
- [\<System. Web > – element (nastavení webu)](system-web-element-web-settings.md)  
-  
- [\<applicationPool – element > (nastavení webu)](applicationpool-element-web-settings.md)  
+[ **@no__t – 2configuration >** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t -4system. Web >** ](system-web-element-web-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<applicationPool >** ](applicationpool-element-web-settings.md)  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.web>](system-web-element-web-settings.md)|Obsahuje informace, které používá vrstva hostování ASP.NET.|  
-|[\<applicationPool>](applicationpool-element-web-settings.md)|Určuje nastavení ASP.NET CPU a na úrovni spuštění, která se vztahují na chování v rámci procesu spravované vrstvou hostování ASP.NET.|  
+|[@no__t -1System. Web >](system-web-element-web-settings.md)|Obsahuje informace, které používá vrstva hostování ASP.NET.|  
+|[@no__t – 1applicationPool >](applicationpool-element-web-settings.md)|Určuje nastavení ASP.NET CPU a na úrovni spuštění, která se vztahují na chování v rámci procesu spravované vrstvou hostování ASP.NET.|  
   
 ## <a name="see-also"></a>Viz také:
 
