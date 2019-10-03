@@ -316,8 +316,8 @@ Následující tabulka shrnuje pravidla šíření pro varianty a objekty.
 |----------|--------|-----------------------------|
 |**Typ variant** *verze v*|**Objekt** *o*|Nikdy|
 |**Objekt** *o*|**Typ variant** *verze v*|Nikdy|
-|**Variantní*****PV\****|**Ref – objekt** *o*|Vždy|
-|**Ref – objekt** *o*|**Variantní*****PV\****|Vždy|
+|**Variantní**   ***\****  *pv*|**Ref – objekt** *o*|Vždy|
+|**Ref – objekt** *o*|**Variantní**   ***\****  *pv*|Vždy|
 |**Typ variant** *v* **(VT_BYREF** *&#124;* **VT_\*)**|**Objekt** *o*|Nikdy|
 |**Typ variant** *v* **(VT_BYREF** *&#124;* **VT_)**|**Ref – objekt** *o*|Pouze v případě, že se typ nezměnil.|
 
