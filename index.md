@@ -5,13 +5,13 @@ hide_bc: true
 title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
-ms.date: 09/23/2019
-ms.openlocfilehash: f58e1c03f529629556f79881aebd69afc9ed9bde
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.date: 09/30/2019
+ms.openlocfilehash: a30744ca8831375f9a54f054b226274e273a67a5
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351653"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736762"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -818,6 +818,155 @@ ms.locfileid: "71351653"
                                                 <div class="cardText">
                                                     <h3>.NET for Apache Spark</h3>
                                                     <p>Zpracovávejte dávky dat, streamy v reálném čase, strojové učení a ad-hoc dotazy kdekoliv při psaní kódu .NET.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#architecture">Architektura</a>
+                        <ul id="architecture" class="cardsC">
+                            <li>
+                                <a href="/dotnet/architecture/microservices">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/microservices.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/containerized-lifecycle">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/devops.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/modernize-with-azure-containers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/azure-containers.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnerů Windows</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/modern-web-apps-azure">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/tools.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/serverless">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/serverless.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Bezserverové aplikace: Architektura, vzory a implementace v Azure</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/cloud-native">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/cloud-native.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>Preview</strong>: Navrhování aplikací .NET nativních pro cloud pro Azure</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/blazor-for-web-forms-developers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/blazor.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>Preview</strong>: Blazor pro vývojáře ASP.NET Web Forms</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/grpc-for-wcf-developers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/grpc.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>Preview</strong>: gRPC ASP.NET Core pro vývojáře WCF</h3>
                                                 </div>
                                             </div>
                                         </div>
