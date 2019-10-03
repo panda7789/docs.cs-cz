@@ -4,12 +4,12 @@ description: Průvodce různými způsoby, jak podnikové architektury nasadí d
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 8a1203ea2fc7089223c03b3a3e02fd3303610272
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4cc8442509fc8a0e2cc0eb797365423458e77684
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676814"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834342"
 ---
 # <a name="architecture-deployment-approaches"></a>Přístupy k nasazení architektury
 
@@ -97,7 +97,7 @@ Mezi výhody kontejnerů patří:
 
 Kontejner se spouští na hostiteli kontejneru (který zase může běžet na holém počítači nebo virtuálním počítači). V jednom hostiteli může běžet více kontejnerů nebo instancí stejných kontejnerů. Pro skutečné převzetí služeb při selhání a odolnost musí být kontejnery škálované napříč hostiteli.
 
-Další informace o kontejnerech Docker najdete v tématu [co je Docker](../microservices/container-docker-introduction/docker-defined.md)?
+Další informace o kontejnerech Docker najdete v tématu [co je Docker](../microservices/container-docker-introduction/docker-defined.md).
 
 Správa kontejnerů mezi hostiteli obvykle vyžaduje nástroj orchestrace, jako je Kubernetes. Konfigurace a Správa řešení orchestrace může do projektů přidat další režijní náklady a složitost. Naštěstí mnoho poskytovatelů cloudových služeb nabízí služby orchestrace prostřednictvím řešení PaaS, které zjednodušují správu kontejnerů.
 
@@ -109,9 +109,9 @@ Další informace o orchestraci najdete v tématu [Kubernetes v Azure](https://d
 
 Functions as a Service (FaaS) je specializovaná služba kontejneru, která se podobá bez serveru. Konkrétní implementace FaaS, která se nazývá [OpenFaaS](https://github.com/openfaas/faas), je umístěná na kontejnerech a poskytuje možnosti bez serveru. OpenFaaS poskytuje šablony, které zabalí všechny závislosti kontejneru nezbytné ke spuštění části kódu. Použití šablon zjednodušuje proces nasazení kódu jako funkční jednotky. OpenFaaS cílí na architektury, které už obsahují kontejnery a orchestrace, protože můžou používat stávající infrastrukturu. I když poskytuje funkce bez serveru, konkrétně vyžaduje, abyste používali Docker a Orchestrator.
 
-## <a name="serverless"></a>Bez serveru
+## <a name="serverless"></a>Řešení bez serverů
 
-Architektura bez serveru poskytuje jasné oddělení kódu a jeho hostitelského prostředí. Implementujete kód ve *funkci* , která je vyvolána triggerem. Po ukončení této funkce mohou být všechny potřebné prostředky uvolněny. Trigger může být manuální, časový proces, požadavek HTTP nebo nahrání souboru. Výsledek triggeru je spuštění kódu. I když se platformy bez serveru liší, většina poskytuje přístup k předdefinovaným rozhraním API a vazbám, aby se zjednodušily úlohy, jako je zápis do databáze nebo zařazení výsledků do fronty.
+Architektura bez serveru poskytuje jasné oddělení kódu a jeho hostitelského prostředí. Implementujete kód ve *funkci* , která je vyvolána *triggerem*. Po ukončení této funkce mohou být všechny potřebné prostředky uvolněny. Trigger může být manuální, časový proces, požadavek HTTP nebo nahrání souboru. Výsledek triggeru je spuštění kódu. I když se platformy bez serveru liší, většina poskytuje přístup k předdefinovaným rozhraním API a vazbám, aby se zjednodušily úlohy, jako je zápis do databáze nebo zařazení výsledků do fronty.
 
 Bez serveru je architektura, která spoléhá na abstrakci, když se hostitelské prostředí zaměřuje na kód. Lze si představit jako *méně serveru*.
 
@@ -126,7 +126,7 @@ Následující ilustrace znázorňuje čtyři součásti bez serveru. Požadavek
 Mezi výhody nástroje bez serveru patří:
 
 * **Vysoká hustota** Mnoho instancí stejného kódu bez serveru může běžet na stejném hostiteli v porovnání s kontejnery nebo virtuálními počítači. Instance se škálují napříč více hostiteli a odolnostně se škálují.
-* Mikrofakturaci. Většina poskytovatelů bez serveru se fakturuje na základě provádění bez serveru a umožňuje v určitých scénářích obrovské úspory nákladů.
+* **Mikrofakturaci**. Většina poskytovatelů bez serveru se fakturuje na základě provádění bez serveru a umožňuje v určitých scénářích obrovské úspory nákladů.
 * **Okamžité škálování**. Škálování bez serveru se dá škálovat tak, aby se automaticky shodovala s úlohami.
 * **Rychlejší uvedení na trh** Vývojáři se zaměřují na kód a nasazují se přímo na platformu bez serveru. Součásti lze uvolnit nezávisle na sobě.
 
@@ -136,12 +136,12 @@ Servery bez serveru se nejčastěji projednávají v kontextu COMPUTE, ale můž
 
 K dispozici je široké spektrum dostupných možností architektury, včetně hybridního přístupu. Bez serveru se zjednodušuje přístup, Správa a náklady na funkce aplikací na úkor řízení a přenositelnosti. Mnoho platforem bez serveru ale zveřejňuje konfiguraci, která vám pomůžou řešení ladit. Dobré postupy programování můžou také vést k většímu přenositelnému kódu a menšímu zamykání platforem bez serveru. Následující tabulka ilustruje přístup architektury vedle sebe. Vyberte možnost bez serveru v závislosti na potřebách škálování, bez ohledu na to, jestli chcete modul runtime spravovat a jak dobře můžete úlohy rozdělit do malých součástí. Seznámíte se s potenciálními výzvami bez serveru a dalšími rozhodovacími body v další kapitole.
 
-|         |IaaS     |PaaS     |Kontejner|Bez serveru|
+|         |IaaS     |PaaS     |Kontejner|Řešení bez serverů|
 |---------|---------|---------|---------|----------|
-|**Kapacity**|Virtuální počítač       |instance |Aplikace      |Funkce  |
+|**Škálování**|Virtuální počítač       |Instance |Aplikace      |Funkce  |
 |**Abstrahuje**|Hardware|Platforma|Hostitel operačního systému|Modul runtime   |
 |**Jednotce** |Virtuální počítač       |Project  |Image    |Kód      |
-|**Doba platnosti**|Měsíci|Dny do měsíců|Počet minut do dnů|Milisekundy na minuty|
+|**Platné**|Měsíce|Dny do měsíců|Počet minut do dnů|Milisekundy na minuty|
 |**Zodpovědní**|Aplikace, závislosti, modul runtime a operační systém|Aplikace a závislosti|Aplikace, závislosti a modul runtime|Funkce
 
 * **Škálování** odkazuje na jednotku, která se používá ke škálování aplikace.
@@ -152,19 +152,18 @@ K dispozici je široké spektrum dostupných možností architektury, včetně h
 
 Další kapitola se soustředí na architekturu bez serveru, případy použití a vzory návrhu.
 
-## <a name="recommended-resources"></a>Doporučené prostředky
+## <a name="recommended-resources"></a>Doporučené materiály
 
 * [Průvodce architekturou aplikací Azure](https://docs.microsoft.com/azure/architecture/guide/)
 * [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db)
 * [Azure SQL](https://docs.microsoft.com/azure/sql-database)
 * [N-vrstvý model architektury](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier)
 * [Kubernetes v Azure](https://docs.microsoft.com/azure/aks/intro-kubernetes)
-* [Mikroslužeb](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
+* [Mikroslužby](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)
 * [Referenční architektura N-vrstvých virtuálních počítačů](https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/n-tier)
-* [Virtuální počítače](https://docs.microsoft.com/azure/virtual-machines/)
+* [Virtual Machines](https://docs.microsoft.com/azure/virtual-machines/)
 * [Co je Docker?](../microservices/container-docker-introduction/docker-defined.md)
 * [Aplikace SaaS lístky Wingtip](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
 >[!div class="step-by-step"]
->[Předchozí](architecture-approaches.md)Další
->[](serverless-architecture.md)
+>[Předchozí](architecture-approaches.md)@no__t – 1 –[Další](serverless-architecture.md)

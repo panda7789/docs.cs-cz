@@ -1,15 +1,15 @@
 ---
-title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
+title: Postup v DevOps pracovní postup vnější smyčky pro aplikaci Docker
 description: Přečtěte si postup pro "vnější smyčku" pracovního postupu DevOps.
 ms.date: 02/15/2019
-ms.openlocfilehash: e7a82d2e5a5d503e5efbe9ac8242b163baab1286
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5687caff0c635e7add135654a8f564b2c509cbf8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295757"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834558"
 ---
-# <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
+# <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Postup v DevOps pracovní postup vnější smyčky pro aplikaci Docker
 
 Obrázek 5-1 prezentuje ucelené znázornění kroků, které tvoří pracovní postup vnější smyčky DevOps.
 
@@ -19,11 +19,11 @@ Obrázek 5-1 prezentuje ucelené znázornění kroků, které tvoří pracovní 
 
 Teď podívejme každý z těchto kroků podrobněji.
 
-## <a name="step-1-inner-loop-development-workflow"></a>Krok 1: Pracovní postup vývoje vnitřních smyček
+## <a name="step-1-inner-loop-development-workflow"></a>Krok 1: pracovní postup vývoje vnitřních smyček
 
 Tento krok je podrobně vysvětlen v kapitole 4, ale do rekapitulace, kde začíná vnější smyčka, okamžik, kdy vývojář vloží kód do systému správy zdrojového kódu (jako je git) iniciující akce kanálu CI.
 
-## <a name="step-2-source-code-control-integration-and-management-with-azure-devops-services-and-git"></a>Krok 2: Integrace a Správa řízení zdrojového kódu pomocí Azure DevOps Services a Gitu
+## <a name="step-2-source-code-control-integration-and-management-with-azure-devops-services-and-git"></a>Krok 2: integrace a Správa řízení zdrojového kódu pomocí Azure DevOps Services a Gitu
 
 V tomto kroku je potřeba mít systém pro správu verzí, který bude shromažďovat konsolidovanou verzi veškerého kódu, který přichází od různých vývojářů v týmu.
 
@@ -33,7 +33,7 @@ Místní image generované vývojáři by je měli používat jenom při testov�
 
 Azure DevOps Services a Team Foundation Server podporují Git a Správa verzí Team Foundation. Mezi nimi si můžete vybrat a použít ho pro komplexní prostředí Microsoftu. Můžete ale také spravovat kód v externích úložištích (jako jsou GitHub, místní úložiště Git nebo podverze) a pořád se k němu připojit a získat kód jako výchozí bod pro kanál DevOps CI.
 
-## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: Sestavování, CI, integrace a testování pomocí Azure DevOps Services a Docker
+## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: sestavení, CI, integrace a testování pomocí Azure DevOps Services a Docker
 
 CI se ukázalo jako standard pro moderní testování a doručování softwaru. Řešení Docker udržuje jasné oddělení otázek mezi vývojovými a provozními týmy. Neměnnosti imagí Docker zajišťuje opakované nasazení mezi vyvíjeným, testovaným prostřednictvím CI a spuštěným v produkčním prostředí. Modul Docker nasazený v notebookích pro vývojáře a testovací infrastruktura zajišťuje přenos kontejnerů napříč prostředími.
 
@@ -45,7 +45,7 @@ Azure DevOps Services můžete použít jako základ pro sestavování aplikací
 
 Při použití Docker pro nasazení jsou konečné artefakty, které se mají nasadit, image Docker s vaší aplikací nebo službami, které jsou v nich vložené. Tyto image se odešlou nebo publikují do *registru Docker* (soukromé úložiště, jako jsou ty, které můžete mít v Azure Container Registry, nebo veřejný, jako je registr Docker Hub, který se běžně používá pro oficiální základní image).
 
-Tady je základní pojem: Kanál CI se spustí potvrzením změn do úložiště SCC, jako je třeba Git. Potvrzení způsobí, že Azure DevOps Services spustí úlohu sestavení v kontejneru Docker a po úspěšném dokončení této úlohy nahrajte image Docker do registru Docker, jak je znázorněno na obrázku 5-2.
+Tady je základní pojem: kanál CI se spustí potvrzením změn do úložiště SCC, jako je třeba Git. Potvrzení způsobí, že Azure DevOps Services spustí úlohu sestavení v kontejneru Docker a po úspěšném dokončení této úlohy nahrajte image Docker do registru Docker, jak je znázorněno na obrázku 5-2.
 
 ![První část vnější smyčky zahrnuje kroky 1 až 3, od kódu, Run, Debug a Validate, a potom úložiště kódu až po krok sestavení a testování CI.](./media/image2.png)
 
@@ -55,7 +55,7 @@ Zde jsou základní kroky pracovního postupu CI s použitím Docker a Azure Dev
 
 1. Vývojář nahraje potvrzení do úložiště SCC (Git/Azure DevOps Services, GitHub atd.).
 
-2. Pokud používáte Azure DevOps Services nebo Git, je CI integrovaná, což znamená, že je to jednoduché jako zaškrtnutí políčka v Azure DevOps Services. Pokud používáte externí SCC (například GitHub), `webhook` bude oznámení Azure DevOps Services aktualizace nebo nabízení do Gitu/GitHubu.
+2. Pokud používáte Azure DevOps Services nebo Git, je CI integrovaná, což znamená, že je to jednoduché jako zaškrtnutí políčka v Azure DevOps Services. Pokud používáte externí SCC (například GitHub), `webhook` bude upozorňovat Azure DevOps Services aktualizace nebo nabízení k Git/GitHubu.
 
 3. Azure DevOps Services vyžádá úložiště SCC, včetně souboru Dockerfile popisujícího obrázek, a také aplikace a testovací kód.
 
@@ -104,7 +104,7 @@ Proto je po sestavení kontejnerů aplikací v kanálu CI také potřeba nasadit
 
 Pokud používáte jednoho hostitele, můžete k sestavení a nasazení souvisejících kontejnerů použít příkazy Docker, jako je Docker-Build, a otestovat a ověřit prostředí Docker v jednom virtuálním počítači. Pokud ale pracujete s clusterem Orchestrator, jako je DC/OS, Kubernetes nebo Docker Swarm, budete muset své kontejnery nasadit pomocí jiného mechanismu nebo Orchestrator v závislosti na vybraném clusteru nebo plánovači.
 
-Následuje několik typů testů, které lze spustit proti kontejnerům Docker:
+Níže je několik typů testů, které lze spustit proti kontejnerům Docker:
 
 - Testování částí kontejnerů Docker
 
@@ -122,7 +122,7 @@ Po otestování a ověření imagí Docker budete chtít označit a publikovat v
 
 Podobně jako v případě, že je kód aplikace uložený v úložišti SCC (Git atd.) vaším zdrojem pravdy, je registr Docker vaším zdrojem pravdy, aby se vaše binární aplikace nebo bity nasadily do prostředí pro QA nebo do produkčního prostředí.
 
-Obvykle můžete chtít mít vaše osobní úložiště pro vlastní image buď v privátním úložišti v Azure Container Registry, nebo v místním registru, jako je Docker Trusted Registry, nebo ve veřejném cloudu s omezeným přístupem (například Docker Hub), i když v tomto posledním případě není kód open source, musíte důvěřovat zabezpečení od dodavatele. V obou případech je použitá metoda podobná a je založena na `docker push` příkazu, jak je znázorněno na obrázku 5-4.
+Obvykle můžete chtít mít vaše osobní úložiště pro vlastní image buď v privátním úložišti v Azure Container Registry, nebo v místním registru, jako je Docker Trusted Registry, nebo ve veřejném cloudu s omezeným přístupem (například Docker Hub), i když v tomto posledním případě není kód open source, musíte důvěřovat zabezpečení od dodavatele. V obou případech je použitá metoda podobná a je založena na příkazu `docker push`, jak je znázorněno na obrázku 5-4.
 
 ![V kroku 3 se při vytváření integrace a testování (CI) můžou výsledné image Docker publikovat do privátního nebo veřejného registru.](./media/image4.png)
 
@@ -130,7 +130,7 @@ Obvykle můžete chtít mít vaše osobní úložiště pro vlastní image buď 
 
 Existuje několik nabídek registrů Docker od dodavatelů cloudu, jako jsou Azure Container Registry, Amazon Web Services Container Registry, Google Container Registry, Registry Quay a tak dále.
 
-Pomocí úloh Docker můžete odeslat sadu imagí služby definovaných `docker-compose.yml` souborem s více značkami do ověřeného registru Docker (například Azure Container Registry), jak je znázorněno na obrázku 5-5.
+Pomocí úloh Docker můžete odeslat sadu imagí služby definované souborem `docker-compose.yml` s více značkami do ověřeného registru Docker (například Azure Container Registry), jak je znázorněno na obrázku 5-5.
 
 ![Zobrazení prohlížeče kroku pro publikování imagí v registru z Azure DevOps](./media/image5.png)
 
@@ -138,7 +138,7 @@ Pomocí úloh Docker můžete odeslat sadu imagí služby definovaných `docker-
 
 > [! INFORMACE] Další informace o Azure Container Registry najdete v tématu <https://aka.ms/azurecontainerregistry>.
 
-## <a name="step-4-cd-deploy"></a>Krok 4: CD, nasadit
+## <a name="step-4-cd-deploy"></a>Krok 4: CD, nasazení
 
 Neměnnosti imagí Docker zajišťuje opakované nasazení s tím, co se vyvíjí, testuje prostřednictvím CI a běží v produkčním prostředí. Jakmile budete mít image Docker aplikace publikované v registru Docker (buď privátní, nebo veřejné), můžete je nasadit do několika prostředí, která máte (v produkčním prostředí, QA, fázování atd.) z kanálu CD pomocí Azure DevOps Services úlohy kanálu nebo Azure DevOps Services Release Management.
 
@@ -152,19 +152,19 @@ Pojďme se nejdřív podívat na méně složitý scénář: nasazení do jednod
 
 **Obrázek 5-6**. Nasazení kontejnerů aplikací do registru jednoduchých hostitelských prostředí Docker
 
-Obrázek 5-7 vysvětlete, jak můžete pomocí Azure DevOps Services připojit CI sestavení do prostředí pro kontrolu a testování prostřednictvím kliknutím na Docker Compose v dialogovém okně Přidat úlohu. Při nasazení do pracovních nebo produkčních prostředí byste ale obvykle použili Release Management funkcí zpracovávajících více prostředí (například QA, fázování a produkce). Pokud nasazujete na hostitele s jedním Docker, používá úlohu Azure DevOps Services "Docker Compose" (což vyvolává `docker-compose up` příkaz v digestoři). Pokud provádíte nasazení do služby Azure Kubernetes Service (AKS), používá úlohu nasazení Docker, jak je vysvětleno v následující části.
+Obrázek 5-7 vysvětlete, jak můžete pomocí Azure DevOps Services připojit CI sestavení do prostředí pro kontrolu a testování prostřednictvím kliknutím na Docker Compose v dialogovém okně Přidat úlohu. Při nasazení do pracovních nebo produkčních prostředí byste ale obvykle použili Release Management funkcí zpracovávajících více prostředí (například QA, fázování a produkce). Pokud nasazujete na hostitele s jedním Docker, používá úlohu Azure DevOps Services "Docker Compose" (což vyvolává příkaz `docker-compose up` v digestoři). Pokud provádíte nasazení do služby Azure Kubernetes Service (AKS), používá úlohu nasazení Docker, jak je vysvětleno v následující části.
 
 ![Zobrazení prohlížeče pro přidání úkolu Docker Compose.](./media/image7.png)
 
 **Obrázek 5-7**. Přidání úkolu Docker Compose do kanálu Azure DevOps Services
 
-Když vytvoříte vydání v Azure DevOps Services, převezme sadu vstupních artefaktů. Tyto artefakty mají být neměnné po dobu života vydaných verzí napříč všemi prostředími. Při zavedení kontejnerů vstupní artefakty identifikují image v registru k nasazení. V závislosti na tom, jak se tyto image identifikují, není zaručeno, že zůstanou stejné po celou dobu trvání vydané verze, Nejčastějším případem, kdy `myimage:latest` se bude `docker-compose` odkazovat ze souboru.
+Když vytvoříte vydání v Azure DevOps Services, převezme sadu vstupních artefaktů. Tyto artefakty mají být neměnné po dobu života vydaných verzí napříč všemi prostředími. Při zavedení kontejnerů vstupní artefakty identifikují image v registru k nasazení. V závislosti na tom, jak se tyto image identifikují, není zaručeno, že zůstanou stejné po celou dobu trvání vydané verze, což je v případě, že se v souboru `docker-compose` odkazujete `myimage:latest`.
 
 Šablony Azure DevOps Services umožňují generovat artefakty sestavení, které obsahují konkrétní výtahy imagí registru, které mají zaručit jedinečnou identifikaci stejného binárního souboru bitové kopie. To je to, co opravdu chcete použít jako vstup do vydání.
 
 ### <a name="managing-releases-to-docker-environments-by-using-azure-devops-services-release-management"></a>Správa verzí do prostředí Docker pomocí Azure DevOps Services Release Management
 
-Prostřednictvím šablon Azure DevOps Services můžete vytvořit novou image, publikovat ji v registru Docker, spustit ji na hostitelích se systémem Linux nebo Windows a použít příkazy `docker-compose` , jako je například nasazení více kontejnerů jako celé aplikace, a to vše prostřednictvím Azure DevOps Služby Release Management možnosti určené pro více prostředí, jak je znázorněno na obrázku 5-8.
+Prostřednictvím šablon Azure DevOps Services můžete vytvořit novou image, publikovat ji v registru Docker, spustit ji na hostitelích se systémem Linux nebo Windows a použít příkazy, jako je například `docker-compose` k nasazení více kontejnerů jako celé aplikace, a to vše přes Azure DevOps Services Release Management možnosti určené pro více prostředí, jak je znázorněno na obrázku 5-8.
 
 ![Zobrazení prohlížeče Azure DevOps a konfigurace verzí pro vytváření Docker.](./media/image8.png)
 
@@ -184,7 +184,7 @@ Z místa na disku CD-ROM a Azure DevOps Services konkrétně můžete spouštět
 
 **Obrázek 5-9**. Nasazení distribuovaných aplikací do služby kontejneru
 
-Zpočátku byste při nasazení na určité clustery nebo orchestraci použili konkrétní skripty pro nasazení a mechanismy pro každý Orchestrator (tj. Kubernetes a Service Fabric mají různé mechanismy nasazení) místo jednodušší a snadno `docker-compose` použitelný nástroj na základě `docker-compose.yml` definičního souboru. Díky tomu, že se jedná o úlohu nasazení Azure DevOps Services Docker, která je znázorněna na obrázku 5-10, teď můžete nasadit i na podporované orchestrace, a `docker-compose.yml` to jenom pomocí známého souboru, protože tento nástroj pro vás provede překlad (ze svého `docker-compose.yml`soubor do formátu vyžadovaného nástrojem Orchestrator.
+Zpočátku byste při nasazení na určité clustery nebo orchestraci použili konkrétní skripty pro nasazení a mechanismy pro každý Orchestrator (tj. Kubernetes a Service Fabric mají různé mechanismy nasazení) místo jednodušší a snadno použitelný nástroj `docker-compose` na základě definičního souboru `docker-compose.yml`. Díky tomu, že se jedná o úlohu nasazení Docker Azure DevOps Services, která je znázorněna na obrázku 5-10, teď můžete nasadit i na podporované orchestrace jenom pomocí známého souboru `docker-compose.yml`, protože tento nástroj pro vás (ze souboru `docker-compose.yml` do Formát vyžadovaný nástrojem Orchestrator.
 
 ![Zobrazení prohlížeče katalogu úkolů v Azure DevOps a zobrazení úlohy nasazení do Kubernetes](./media/add-deploy-to-kubernetes-task.png)
 
@@ -196,18 +196,17 @@ Obrázek 5-11 ukazuje, jak můžete upravit úlohu nasazení na Kubernetes s odd
 
 **Obrázek 5-11**. Nasazení definice úlohy Docker nasazení do služby ACS DC/OS
 
-> [! INFORMACE] Pokud chcete získat další informace o kanálu CD pomocí Azure DevOps Services a Docker, navštivte<https://azure.microsoft.com/services/devops/pipelines>
+> [! INFORMACE] Pokud chcete získat další informace o kanálu CD pomocí Azure DevOps Services a Docker, navštivte <https://azure.microsoft.com/services/devops/pipelines>.
 
-## <a name="step-5-run-and-manage"></a>Krok 5: Spustit a spravovat
+## <a name="step-5-run-and-manage"></a>Krok 5: spuštění a Správa
 
 Vzhledem k tomu, že spouštění a Správa aplikací na úrovni podniku v produkčním prostředí je zásadním subjektem a v závislosti na typu operací a lidí pracujících na této úrovni (operace IT) a také na velkém rozsahu této oblasti, je celá další kapitola věnována vysvětlení.
 
-## <a name="step-6-monitor-and-diagnose"></a>Krok 6: Monitorování a diagnostika
+## <a name="step-6-monitor-and-diagnose"></a>Krok 6: monitorování a diagnostika
 
 Toto téma je také popsáno v další kapitole v rámci úloh, které provádí v produkčních systémech. je ale důležité zdůraznit, že přehledy získané v tomto kroku musí předávat zpět do vývojového týmu, aby se aplikace neustále vylepšila. Z tohoto pohledu je také součástí DevOps, i když se úlohy a operace obvykle provádějí.
 
 Pouze v případě, že jsou monitorování a diagnostika 100% v rámci sféry DevOps, jsou procesy monitorování a analýzy prováděné vývojovým týmem proti testování nebo beta prostředí. To se provádí buď zátěžovým testováním, nebo monitorováním prostředí verze beta nebo QA, kde testeri beta verzí zkouší nové verze.
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md)
+>[Předchozí](index.md)@no__t – 1 –[Další](create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md)

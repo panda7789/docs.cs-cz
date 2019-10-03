@@ -1,13 +1,13 @@
 ---
-title: Identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb
+title: Identifikace hranic doménových modelů pro jednotlivé mikroslužby
 description: Prozkoumejte podstatu rozdělení velké aplikace na mikroslužby, aby se dosáhlo zvukové architektury.
 ms.date: 09/20/2018
-ms.openlocfilehash: aa903e13b20be1084fad60e6fb7bbb1c61403deb
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9c433066dd8e93dbb09b15e58c9c85617775723d
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295502"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834417"
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Identifikujte hranice doménového modelu pro jednotlivé mikroslužby.
 
@@ -27,21 +27,21 @@ Dozvíte se, že máte správné hranice a velikosti jednotlivých modelů BC a 
 
 Možná nejlepší odpověď na otázku, jak velký doménový model pro jednotlivé mikroslužby by měl být následující: by měl mít autonomní nadmnožinu BC, jak je izolovaný, což vám umožní pracovat bez nutnosti nepřetržitě přepínat na jiné kontexty (jiné modely mikroslužeb). Na obrázku 4-10 vidíte, jak různé mikroslužby (více BCs) mají svůj vlastní model a jak se jejich entity dají definovat, v závislosti na konkrétních požadavcích pro jednotlivé identifikované domény ve vaší aplikaci.
 
-![Entity v několika hranicích modelů (ohraničené kontexty), kde se stejná entita zobrazuje jako "uživatelé", "nákupčí", "Payers" a "zákazníci" v závislosti na ohraničeném kontextu](./media/image10.png)
+![Diagram znázorňující entity v několika hranicích modelu](./media/identify-microservice-domain-model-boundaries/identify-entities-microservice-model-boundries.png)
 
 **Obrázek 4-10**. Identifikace entit a hranic modelu mikroslužeb
 
-Obrázek 4-10 znázorňuje vzorový scénář týkající se systému správy online konferencí. Identifikovali jste několik BCs, které by se daly implementovat jako mikroslužby, a to na základě domén, které vám odborníci na doménu definovali. Jak vidíte, existují entity, které jsou přítomny pouze v jednom modelu mikroslužby, jako jsou platby v mikroslužbě plateb. Ty budou snadno implementovány.
+Obrázek 4-10 znázorňuje vzorový scénář týkající se systému správy online konferencí. Stejná entita se zobrazí jako "uživatelé", "nákupčí", "Payers" a "zákazníci" v závislosti na ohraničeném kontextu. Identifikovali jste několik BCs, které by se daly implementovat jako mikroslužby, a to na základě domén, které vám odborníci na doménu definovali. Jak vidíte, existují entity, které jsou přítomny pouze v jednom modelu mikroslužby, jako jsou platby v mikroslužbě plateb. Ty budou snadno implementovány.
 
 Můžete ale také mít entity, které mají jiný tvar, ale sdílet stejnou identitu napříč různými doménovými modely z více mikroslužeb. Například entita uživatele je identifikována v mikroslužbě správy konferencí. Stejný uživatel se stejnou identitou je ten, který se jmenuje Customers v rámci objednávání mikroslužby, nebo druhý s názvem plátce v rámci platební služby a dokonce i ten, kdo je v mikroslužbě Customer Service pro zákazníky. Důvodem je to, že v závislosti na [jazyku všudypřítomný](https://martinfowler.com/bliki/UbiquitousLanguage.html) , který používá každý odborník domény, může mít uživatel jinou perspektivu i s různými atributy. Entita uživatele v modelu mikroslužeb s názvem konference může mít většinu svých atributů osobních dat. Stejný uživatel ale v rámci platby plátce v platební službě nebo ve tvaru zákazníka ve službě pro zákazníky mikroslužeb ale nemusí potřebovat stejný seznam atributů.
 
 Podobný přístup je znázorněný na obrázku 4-11.
 
-![Při deskládání tradičního datového modelu mezi ohraničenými kontexty můžete mít různé entity, které sdílejí stejnou identitu (kupující je také uživatel) s různými atributy v každém ohraničeném kontextu.](./media/image11.png)
+![Diagram znázorňující, jak rozložit datový model do více doménových modelů](./media/identify-microservice-domain-model-boundaries/decompose-traditional-data-models.png)
 
 **Obrázek 4-11**. Deskládání tradičních datových modelů do několika doménových modelů
 
-Můžete zjistit, jak se uživatel nachází v modelu mikroslužeb správy konferencí, jako uživatelskou entitu a také ve formě entity nákupčího v rámci cenové služby cen, s alternativními atributy nebo podrobnostmi o uživateli, když je ve skutečnosti kupující. Každá mikroslužba nebo BC nemusí potřebovat všechna data související s entitou uživatele, a to jenom v závislosti na problému, který chcete vyřešit, nebo v kontextu. Například v modelu cenové služby Price nepotřebujete adresu ani jméno uživatele, jenom ID (jako identitu) a stav, což bude mít dopad na slevy při cenách za počet míst na odběratele.
+Při deskládání tradičního datového modelu mezi ohraničenými kontexty můžete mít různé entity, které sdílejí stejnou identitu (kupující je také uživatel) s různými atributy v každém ohraničeném kontextu. Můžete zjistit, jak se uživatel nachází v modelu mikroslužeb správy konferencí, jako uživatelskou entitu a také ve formě entity nákupčího v rámci cenové služby cen, s alternativními atributy nebo podrobnostmi o uživateli, když je ve skutečnosti kupující. Každá mikroslužba nebo BC nemusí potřebovat všechna data související s entitou uživatele, a to jenom v závislosti na problému, který chcete vyřešit, nebo v kontextu. Například v modelu cenové služby Price nepotřebujete adresu ani jméno uživatele, jenom ID (jako identitu) a stav, což bude mít dopad na slevy při cenách za počet míst na odběratele.
 
 Entita sedadla má stejný název, ale různé atributy v každém doménovém modelu. Sdílí ale identitu na základě stejného ID, co se stane se jménem uživatele a nákupčího.
 
@@ -50,5 +50,4 @@ V podstatě existuje sdílený koncept uživatele, který existuje ve více slu�
 Existuje několik výhod, které nesdílí stejnou entitu uživatele se stejným počtem atributů napříč doménami. Jednou z výhod je omezit duplicity, aby modely mikroslužeb nemusely mít žádná data, která nepotřebují. Další výhodou je mít hlavní mikroslužbu, která vlastní určitý typ dat na entitu, aby aktualizace a dotazy pro tento typ dat byly řízené pouze touto mikroslužbou.
 
 >[!div class="step-by-step"]
->[Předchozí](distributed-data-management.md)Další
->[](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)
+>[Předchozí](distributed-data-management.md)@no__t – 1 –[Další](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md)

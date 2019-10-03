@@ -2,12 +2,12 @@
 title: Architektura mikroslužeb
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | zobrazení architektury mikroslužeb 30,000 metrů.
 ms.date: 09/20/2018
-ms.openlocfilehash: 3cf2a94140042d3cf76b5b63fe4e98638c56dbfe
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: d1c58d218be9e5f8c0ae8ae732f9bdd06674a2c2
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295478"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834388"
 ---
 # <a name="microservices-architecture"></a>Architektura mikroslužeb
 
@@ -19,11 +19,11 @@ Proč architektura mikroslužeb? V krátké době poskytuje dlouhodobou flexibil
 
 S další výhodou je možné mikroslužby škálovat nezávisle. Místo toho, abyste měli jednu monolitické aplikaci, kterou musíte škálovat jako jednotku, můžete místo toho škálovat konkrétní mikroslužby. Tímto způsobem můžete škálovat pouze funkční oblast, která vyžaduje vyšší výpočetní výkon nebo šířku pásma sítě pro podporu požadavků, nikoli škálovat jiné oblasti aplikace, které nemusejí být škálované. To znamená úspory nákladů, protože potřebujete méně hardwaru.
 
-![V tradičním přístupu monolitické se aplikace škáluje pomocí klonování celé aplikace na několika serverech nebo virtuálních počítačích. V přístupu k mikroslužbám jsou funkce oddělené v menších službách, takže každá služba se může škálovat nezávisle.](./media/image6.png)
+![Diagram rozdílů mezi dvěma metodami nasazení.](./media/microservices-architecture/monolith-deployment-vs-microservice-approach.png)
 
 **Obrázek 4-6**. Monolitické nasazení versus přístup k mikroslužbám
 
-Jako obrázek 4-6 ukazuje přístup mikroslužeb, který umožňuje agilní změny a rychlé opakování každé mikroslužby, protože můžete změnit konkrétní, malé oblasti komplexních, rozsáhlých a škálovatelných aplikací.
+Jak ukazuje obrázek 4-6, v tradičním přístupu monolitické se aplikace škáluje pomocí klonování celé aplikace na několika serverech/virtuálních počítačích. V přístupu k mikroslužbám jsou funkce oddělené v menších službách, takže každá služba se může škálovat nezávisle. Přístup k mikroslužbám umožňuje agilní změny a rychlé opakování každé mikroslužby, protože můžete změnit konkrétní, malé oblasti komplexních, rozsáhlých a škálovatelných aplikací.
 
 Architektově odstupňované aplikace založené na mikroslužbách umožňují průběžnou integraci a průběžné doručování. Zrychluje také doručování nových funkcí do aplikace. Jemně odstupňované sestavování aplikací umožňuje také spouštět a testovat mikroslužby v izolaci a vyvíjet je samostatně a přitom zachovat jasné smlouvy mezi nimi. Pokud neměníte rozhraní nebo kontrakty, můžete změnit interní implementaci jakékoli mikroslužby nebo přidat nové funkce, aniž by došlo k narušení dalších mikroslužeb.
 
@@ -41,23 +41,22 @@ V následujícím seznamu jsou důležité aspekty, jak umožnit v přechodu do 
 
 Z těchto kroků se v této příručce vztahují nebo zavádějí jenom první tři. Poslední dva body, které se vztahují k životnímu cyklu aplikace, jsou pokryty dodatečným [životním cyklem aplikace Docker s využitím Microsoft Platform a nástrojů](https://aka.ms/dockerlifecycleebook) .
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
-- **Označte Russinovich. Mikroslužeb Otáčky aplikací poháněných cloudem** \
+- **Označte Russinovich. Mikroslužby: aplikace s otáčkami, které využívají cloud** \
   <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
-- **Martin Fowlera. Mikroslužeb** \
+- **Martin Fowlera. Mikroslužby** \
   <https://www.martinfowler.com/articles/microservices.html>
 
-- **Martin Fowlera. Požadavky na mikroslužby** \
+- **Martin Fowlera. Požadavky na mikroslužbu** \
   <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
-- **Jimmy Nilsson. Cloud computing v bloku dat** \
+- **Jimmy Nilsson. Cloud computingu bloků dat** \
   <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
-- **Cesar de la Torre. Kontejnerový životní cyklus aplikace Docker s platformou a** nástroji Microsoftu (elektronická kniha ke stažení) \
+- **Cesar de la Torre. Kontejnerový životní cyklus aplikace Docker s platformou a nástroji Microsoftu** (elektronická kniha ke stažení) \
   <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]
->[Předchozí](service-oriented-architecture.md)Další
->[](data-sovereignty-per-microservice.md)
+>[Předchozí](service-oriented-architecture.md)@no__t – 1 –[Další](data-sovereignty-per-microservice.md)

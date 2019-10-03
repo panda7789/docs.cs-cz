@@ -2,12 +2,12 @@
 title: Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Pochopení celkového vztahu mezi vzory CQRS a DDD.
 ms.date: 10/08/2018
-ms.openlocfilehash: 36bffce37176aed6c7d9daea7f2995952b58e895
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f42b553fd30fdffdc6e325b11740fe9162aab7c8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296001"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834305"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použití zjednodušených vzorů CQRS a DDD v mikroslužbě
 
@@ -27,17 +27,18 @@ CQRS znamená, že mají dva objekty pro operaci čtení/zápisu, kde v jiných 
 
 Příkladem tohoto druhu služby je objednávání mikroslužby z referenční aplikace eShopOnContainers. Tato služba implementuje mikroslužby na základě zjednodušeného přístupu CQRS. Používá jeden zdroj dat nebo databázi, ale dva logické modely plus DDD vzory pro transakční doménu, jak je znázorněno na obrázku 7-2.
 
-![Mikroslužba logického řazení obsahuje svou databázi řazení, která může být nebo ne ve stejném hostiteli Docker. Databáze ve stejném hostiteli Docker je dobrá pro vývoj, ale ne pro produkční prostředí.](./media/image2.png)
+![Diagram znázorňující vysokou úroveň zjednodušené CQRS a DDD mikroslužby.](./media/apply-simplified-microservice-cqrs-ddd-patterns/simplified-cqrs-ddd-microservice.png)
 
 **Obrázek 7-2**. Zjednodušená mikroslužba založená na CQRS a DDD
 
+Logická služba "objednávání" zahrnuje databázi řazení, která může být, ale nemusí být stejným hostitelem Docker. Databáze ve stejném hostiteli Docker je dobrá pro vývoj, ale ne pro produkční prostředí.
+
 Aplikační vrstva může být samotné webové rozhraní API. Důležitý aspekt návrhu je, že mikroslužba rozdělila dotazy a ViewModels (datové modely, zejména vytvořené pro klientské aplikace) z příkazů, doménového modelu a transakcí, které následují po vzoru CQRS. Tento přístup uchovává dotazy nezávislé na omezeních a omezeních, které pocházejí ze vzorů DDD, které dávají smysl jenom pro transakce a aktualizace, jak je vysvětleno v dalších částech.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
-- **Greg Young. Správa verzí v systému** ve zdroji událostí (bezplatné čtení elektronické knihy online) \
+- **Greg Young. Správa verzí v systému ve zdroji událostí** (bezplatné čtení elektronické knihy online) \
    <https://leanpub.com/esversioning/read>
 
 >[!div class="step-by-step"]
->[Předchozí](index.md)Další
->[](eshoponcontainers-cqrs-ddd-microservice.md)
+>[Předchozí](index.md)@no__t – 1 –[Další](eshoponcontainers-cqrs-ddd-microservice.md)

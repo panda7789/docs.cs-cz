@@ -1,13 +1,13 @@
 ---
-title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
+title: Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
 ms.date: 10/08/2018
-ms.openlocfilehash: c8447cfcd3155a873d61ee9287f58774392c279d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0f6f47dd5f67fb18695715e5cfc9179206ef6bcf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296753"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834356"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -17,7 +17,7 @@ Jak bylo zmíněno dříve, aplikační vrstvu lze implementovat jako součást 
 
 Například kód aplikační vrstvy řazení mikroslužba je implementován přímo jako součást projektu **objednávání. API** (ASP.NET Core projekt webového rozhraní API), jak je znázorněno na obrázku 7-23.
 
-![Průzkumník řešení zobrazení pořadí. rozhraní API mikroslužby, které zobrazuje podsložky ve složce aplikace: Chování, příkazy, DomainEventHandlers, IntegrationEvents, modely, dotazy a ověřování.](./media/image20.png)
+![Průzkumník řešení zobrazení pořadí. rozhraní API mikroslužby, které zobrazuje podsložky ve složce aplikace: chování, příkazy, DomainEventHandlers, IntegrationEvents, modely, dotazy a ověřování.](./media/image20.png)
 
 **Obrázek 7-23**. Aplikační vrstva v projektu objednávání. API ASP.NET Core Web API
 
@@ -107,7 +107,7 @@ Nejběžnějším vzorem při registraci typů v kontejneru IoC je registrace p�
 
 Při použití funkce DI v .NET Core můžete chtít skenovat sestavení a automaticky registrovat jeho typy podle konvencí. Tato funkce není v současnosti k dispozici v ASP.NET Core. Pro to však můžete použít knihovnu [Scrutor](https://github.com/khellang/Scrutor) . Tento přístup je vhodný, když máte desítky typů, které je třeba registrovat v kontejneru IoC.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další zdroje informací:
 
 - **Matthew krále. Registrace služeb pomocí Scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
@@ -162,7 +162,7 @@ Typ rozsahu instance Určuje, jak je instance sdílena mezi požadavky na stejno
 
 - Jedna instance sdílená napříč všemi objekty pomocí kontejneru IoC (dále v kontejneru ASP.NET Core IoC jako *singleton*).
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další zdroje informací:
 
 - **Úvod do injektáže závislosti v ASP.NET Core** \
   [https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection](/aspnet/core/fundamentals/dependency-injection)
@@ -181,7 +181,7 @@ Vzor příkazu je vnitřně spojen se vzorem CQRS, který byl představen dřív
 
 Jak je znázorněno na obrázku 7-24, je vzor založený na přijímání příkazů ze strany klienta, jejich zpracování na základě pravidel doménové struktury a nakonec trvalého uchování stavů transakcemi.
 
-![Pohled na nejvyšší úroveň na straně zápisu v CQRS: Aplikace uživatelského rozhraní pošle příkaz prostřednictvím rozhraní API, které se dostane na CommandHandler –, který závisí na doménovém modelu a infrastruktuře k aktualizaci databáze.](./media/image21.png)
+![Zobrazení vysoké úrovně na straně zápisu v CQRS: aplikace uživatelského rozhraní odesílá příkaz prostřednictvím rozhraní API, které se dostane k CommandHandler –, které závisí na doménovém modelu a infrastruktuře pro aktualizaci databáze.](./media/image21.png)
 
 **Obrázek 7-24**. Pohled na vysoké úrovni příkazů nebo "na straně transakčního" ve vzoru CQRS
 
@@ -203,7 +203,7 @@ Odešlete příkaz jednomu příjemci. nepublikujete příkaz. Publikování je 
 
 Příkaz je implementován se třídou, která obsahuje datová pole nebo kolekce se všemi informacemi, které jsou potřeba ke spuštění tohoto příkazu. Příkaz je speciální druh objektu Přenos dat (DTO), který se konkrétně používá k vyžádání změn nebo transakcí. Samotný příkaz je založen na přesně informacích, které jsou potřeba ke zpracování příkazu, a nic dalšího.
 
-Následující příklad ukazuje zjednodušenou třídu CreateOrderCommand. Toto je neproměnlivý příkaz, který se používá při řazení mikroslužby v eShopOnContainers.
+Následující příklad ukazuje zjednodušenou třídu `CreateOrderCommand`. Toto je neproměnlivý příkaz, který se používá při řazení mikroslužby v eShopOnContainers.
 
 ```csharp
 // DDD and CQRS patterns comment
@@ -215,7 +215,7 @@ Následující příklad ukazuje zjednodušenou třídu CreateOrderCommand. Toto
 // http://cqrs.nu/Faq
 // https://docs.spine3.org/motivation/immutability.html
 // http://blog.gauffin.org/2012/06/griffin-container-introducing-command-support/
-// https://msdn.microsoft.com/library/bb383979.aspx
+// https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties
 [DataContract]
 public class CreateOrderCommand
     :IAsyncRequest<bool>
@@ -285,9 +285,9 @@ V podstatě třída Command obsahuje všechna data, která potřebujete pro prov
 
 V důsledku dalších charakteristik jsou příkazy neměnné, protože očekávané využití je, že jsou zpracovávány přímo doménovým modelem. Nemusejí se měnit během plánované životnosti. Ve C# třídě lze neměnnosti dosáhnout tak, že neexistují žádné metody setter nebo jiné metody, které mění vnitřní stav.
 
-Mějte na paměti, že pokud máte v úmyslu nebo v případě, že budete provádět příkazy pomocí serializace/deserializace, vlastnosti musí mít privátní metodu setter `[DataMember]` a atribut `[JsonProperty]`(nebo), jinak deserializátor nebude moci Vytvořte objekt v cíli pomocí požadovaných hodnot.
+Je třeba mít na paměti, že Pokud zamýšlíte nebo očekáváte, že se budou provádět příkazy serializace/deserializace, vlastnosti musí mít privátní metodu setter a atribut `[DataMember]` (nebo `[JsonProperty]`), jinak by deserializátor nedokázal rekonstruovat objekt v cíl s požadovanými hodnotami.
 
-Například třída příkazu pro vytvoření objednávky je pravděpodobně podobná z údajů pro pořadí, které chcete vytvořit, ale pravděpodobně nepotřebujete stejné atributy. Například CreateOrderCommand nemá ID objednávky, protože objednávka ještě nebyla vytvořena.
+Například třída příkazu pro vytvoření objednávky je pravděpodobně podobná z údajů pro pořadí, které chcete vytvořit, ale pravděpodobně nepotřebujete stejné atributy. Například `CreateOrderCommand` nemá ID objednávky, protože objednávka ještě nebyla vytvořena.
 
 Mnoho tříd příkazu může být jednoduché, což vyžaduje pouze několik polí o některém stavu, který je třeba změnit. To by znamenalo, že když měníte stav objednávky z "v procesu" na "placeno" nebo "expedovaných", pomocí příkazu podobného následujícímu:
 
@@ -335,7 +335,7 @@ Důležitým bodem je, že při zpracování příkazu by měla být veškerá l
 
 Pokud obslužné rutiny příkazu mají složitý, s příliš velkým množstvím logiky, může to být zápach kódu. Přečtěte si je, a pokud najdete logiku domény, refaktorujte kód pro přesun tohoto chování domény do metod doménových objektů (agregovaná kořenová a podřízená entita).
 
-Jako příklad třídy obslužné rutiny příkazu, následující kód ukazuje stejnou třídu CreateOrderCommandHandler, kterou jste viděli na začátku této kapitoly. V tomto případě chceme zvýraznit metodu popisovače a operace s objekty nebo agregacemi doménového modelu.
+Jako příklad třídy obslužné rutiny příkazu, následující kód ukazuje stejnou třídu `CreateOrderCommandHandler`, kterou jste viděli na začátku této kapitoly. V tomto případě chceme zvýraznit metodu popisovače a operace s objekty nebo agregacemi doménového modelu.
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -392,9 +392,9 @@ Jedná se o další kroky, které by měla obslužná rutina příkazu provést:
 
 - Pokud je výsledkem operace agregace úspěch a po dokončení transakce, vyvolejte integrační události. (Ty můžou být vyvolány i třídami infrastruktury, jako jsou úložiště.)
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další zdroje informací:
 
-- **Označte Seemann. V hranicích nejsou aplikace orientované na objekty.**  \
+- **Označte Seemann. V hranicích nejsou aplikace orientované na objekt** \.
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
 
 - **Příkazy a události** \
@@ -451,9 +451,9 @@ Proto schopnost reagovat na klienta po ověření zprávy příkazu, která byla
 
 Kromě toho asynchronní příkazy jsou jednosměrné příkazy, které v mnoha případech nemusí být potřeba, jak je vysvětleno v následujícím zajímavém Exchangi mezi Burtsev Alexey a Greg Youngem v [online konverzaci](https://groups.google.com/forum/#!msg/dddcqrs/xhJHVxDx2pM/WP9qP8ifYCwJ):
 
-> \[Burtsev Alexey\] hledáme spoustu kódu, kde lidé používají zpracování asynchronních příkazů nebo jednosměrné zasílání zpráv bez jakéhokoli důvodu (neprovádí žádnou dlouhou operaci) (neprovádí se žádné dlouhodobé operace, neprovádí externí asynchronní kód, nejedná se dokonce o různé aplikace). hranice, která bude používat sběrnici zpráv). Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
+> \[Burtsev Alexey @ no__t-1 najdu spoustu kódu, kde lidé používají zpracování asynchronních příkazů nebo jednosměrné zasílání zpráv bez jakéhokoli důvodu (neprovádí se žádné dlouhé operace) hranice, která bude používat sběrnici zpráv). Proč zavádějí tuto zbytečný složitost? A ve skutečnosti jsem neviděl příklad kódu CQRS s blokujícími obslužnými rutinami příkazů, i když bude ve většině případů fungovat přesně dobře.
 >
-> \[Greg Young\] \[... \] asynchronní příkaz neexistuje; jedná se o skutečnou jinou událost. Pokud je potřeba přijmout, co pošlete, a vyvolat událost, Pokud nesouhlasíte, už Neoznamujeme, že se něco \[nestane, ale nejedná se o příkaz.\] Je to vám řekněte mi, že se něco udělalo. Vypadá to jako mírně rozdíl v prvním, ale má mnoho aspektů.
+> \[Greg Young @ no__t-1 \[... \] neexistují asynchronní příkazy; ve skutečnosti se jedná o jinou událost. Pokud je potřeba přijmout, co pošlete, a vyvolat událost, Pokud nesouhlasíte, už Neoznamujeme, že vám @no__t – 0that je, není to příkaz @ no__t-1. Je to vám řekněte mi, že se něco udělalo. Vypadá to jako mírně rozdíl v prvním, ale má mnoho aspektů.
 
 Asynchronní příkazy významně zvyšují složitost systému, protože neexistuje žádný jednoduchý způsob, jak označovat selhání. Proto nejsou asynchronní příkazy jiné doporučovány než při vyžadování požadavků na škálování nebo ve zvláštních případech při komunikaci interních mikroslužeb prostřednictvím zasílání zpráv. V těchto případech je třeba navrhnout samostatné vytváření sestav a systém obnovení pro selhání.
 
@@ -473,14 +473,17 @@ Dalším dobrým důvodem pro použití vzoru prostředníka bylo při prohlíž
 
 > Domnívám se, že se tady může poznamenat testování – nabízí skvělé konzistentní okno s chováním systému. Požadavky, reakce. Zjistili jsme, že tento aspekt je poměrně užitečný při sestavování konzistentně se chovajících testů.
 
-Nejprve se podíváme na vzorový kontroler WebAPI, kde byste ve skutečnosti použili objekt prostředníka. Pokud jste nepoužívali objekt prostředníka, museli byste vložit všechny závislosti pro tento kontroler, například objekt protokolovacího nástroje a další. Konstruktor by proto byl poměrně složitý. Na druhou stranu platí, že pokud použijete objekt prostředníkem, může být konstruktor vašeho kontroleru mnohem jednodušší, ale pouze pár závislostí místo mnoha závislostí, pokud jste měli jeden za operaci křížového vyjmutí, jak je uvedeno v následujícím příkladu:
+Nejprve se podíváme na vzorový kontroler WebAPI, kde byste ve skutečnosti použili objekt prostředníka. Pokud jste nepoužívali objekt prostředníka, je nutné vložit všechny závislosti pro tento kontroler, například objekt protokolovacího nástroje a další. Konstruktor by proto byl poměrně složitý. Na druhou stranu platí, že pokud použijete objekt prostředníkem, může být konstruktor vašeho kontroleru mnohem jednodušší, ale pouze pár závislostí místo mnoha závislostí, pokud jste měli jeden za operaci křížového vyjmutí, jak je uvedeno v následujícím příkladu:
 
 ```csharp
 public class MyMicroserviceController : Controller
 {
     public MyMicroserviceController(IMediator mediator,
                                     IMyMicroserviceQueries microserviceQueries)
-    // ...
+    {
+        // ...
+    }
+}
 ```
 
 Můžete vidět, že zprostředkovatel poskytuje čistý a štíhlý konstruktor webového rozhraní API. Kromě toho v rámci metod kontroleru je kód pro odeslání příkazu do objektu prostředníku skoro jeden řádek:
@@ -499,7 +502,7 @@ public async Task<IActionResult> ExecuteBusinessOperation([FromBody]RunOpCommand
 
 ### <a name="implement-idempotent-commands"></a>Implementace příkazů idempotentní
 
-V **eShopOnContainers**, pokročilejší příklad, který je uveden výše, odesílá objekt CreateOrderCommand z řazení mikroslužeb. Ale vzhledem k tomu, že je obchodní proces objednávání trochu složitější a v našem případě se ve skutečnosti zahájí v rámci služby koš, tato akce odeslání objektu CreateOrderCommand je prováděna z obslužné rutiny události Integration-Event s názvem > UserCheckoutAcceptedIntegrationEvent.cs] (https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) místo jednoduchého řadiče WebApi volaného z klientské aplikace jako v předchozím jednodušším příkladu.
+V **eShopOnContainers**, pokročilejší příklad, který je uveden výše, odesílá objekt CreateOrderCommand z řazení mikroslužeb. Ale vzhledem k tomu, že je obchodní proces objednávání trochu složitější a v našem případě se ve skutečnosti zahájí v rámci služby koš, tato akce odeslání objektu CreateOrderCommand je prováděna z obslužné rutiny události Integration-Event s názvem > UserCheckoutAcceptedIntegrationEvent.cs] (https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) namísto jednoduchého kontroleru WebAPI, který se volá z klientské aplikace jako v předchozím jednodušším příkladu.
 
 Nicméně akce odeslání příkazu do MediatR je poměrně podobná, jak je znázorněno v následujícím kódu.
 
@@ -539,7 +542,7 @@ public class IdentifiedCommand<T, R> : IRequest<R>
 }
 ```
 
-Pak CommandHandler – pro IdentifiedCommand s názvem [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs) bude v podstatě kontrolovat, zda ID přicházející jako součást zprávy již v tabulce existuje. Pokud již existuje, tento příkaz nebude zpracován znovu, takže se chová jako příkaz idempotentní. Tento kód infrastruktury provádí `_requestManager.ExistAsync` volání metody níže.
+Pak CommandHandler – pro IdentifiedCommand s názvem [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs) bude v podstatě kontrolovat, zda ID přicházející jako součást zprávy již v tabulce existuje. Pokud již existuje, tento příkaz nebude zpracován znovu, takže se chová jako příkaz idempotentní. Tento kód infrastruktury provádí volání metody `_requestManager.ExistAsync` níže.
 
 ```csharp
 // IdentifiedCommandHandler.cs
@@ -583,7 +586,7 @@ public class IdentifiedCommandHandler<T, R> :
 }
 ```
 
-Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak provede interní obchodní příkaz a znovu ho odešle zprostředkovateli, jako v poslední části kódu uvedeného výše. spuštěno `_mediator.Send(message.Command)`, z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
+Vzhledem k tomu, že IdentifiedCommand funguje jako obálka obchodního příkazu, když je potřeba zpracovat obchodní příkaz, protože se nejedná o opakované ID, pak provede interní obchodní příkaz a znovu ho odešle zprostředkovateli, jako v poslední části kódu uvedeného výše. spuštění `_mediator.Send(message.Command)` z [IdentifiedCommandHandler.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/IdentifiedCommandHandler.cs).
 
 Při tomto postupu bude probíhat odkazování a spuštění obslužné rutiny obchodního příkazu, v tomto případě [CreateOrderCommandHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Commands/CreateOrderCommandHandler.cs) , který spouští transakce proti objednávce databáze, jak je znázorněno v následujícím kódu.
 
@@ -659,7 +662,7 @@ public class MediatorModule : Autofac.Module
 
 V takovém případě se s MediatR stane "Magic".
 
-Vzhledem k tomu, že každá obslužná `IAsyncRequestHandler<T>` rutina příkazu implementuje obecné rozhraní při registraci sestavení, registruje kód se `RegisteredAssemblyTypes` všemi typy `IAsyncRequestHandler` `CommandHandlers` označenými jako v souvislosti `Commands`s jejich s, děkuji do vztahu, který je uveden `CommandHandler` ve třídě, jako v následujícím příkladu:
+Vzhledem k tomu, že každá obslužná rutina příkazu implementuje při registraci sestavení Obecné rozhraní @no__t 0, registruje kód s `RegisteredAssemblyTypes` všechny typy označené jako `IAsyncRequestHandler`, zatímco se vztahuje na `CommandHandlers` s jejich `Commands` díky vztahu uvedenému na Třída `CommandHandler`, jak je uvedeno v následujícím příkladu:
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -667,7 +670,7 @@ public class CreateOrderCommandHandler
 {
 ```
 
-To je kód, který koreluje příkazy s obslužnými rutinami příkazů. Obslužná rutina je pouze jednoduchá třída, ale dědí z `RequestHandler<T>`, kde T je typ příkazu a MediatR zajistí, že je vyvolána se správnou datovou částí (příkaz).
+To je kód, který koreluje příkazy s obslužnými rutinami příkazů. Obslužná rutina je pouze jednoduchá třída, ale dědí z `RequestHandler<T>`, kde T je typ příkazu, a MediatR zajišťuje, že je vyvolána se správnou datovou částí (příkaz).
 
 ## <a name="apply-cross-cutting-concerns-when-processing-commands-with-the-behaviors-in-mediatr"></a>Při zpracování příkazů s chováním v MediatR použít různé aspekty při vyjmutí
 
@@ -790,7 +793,7 @@ Mohli byste vytvořit další ověření. Jedná se o velmi čistý a elegantní
 
 Podobným způsobem můžete implementovat jiné chování pro další aspekty nebo problémy mimo průřez, které chcete použít pro příkazy při jejich zpracování.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další zdroje informací:
 
 ##### <a name="the-mediator-pattern"></a>Vzor zprostředkovatelů
 
@@ -799,7 +802,7 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
 
 ##### <a name="the-decorator-pattern"></a>Vzor dekoratér
 
-- **Vzor dekoratér** \
+- **Dekoratér vzor** \
   [https://en.wikipedia.org/wiki/Decorator\_pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
@@ -810,22 +813,22 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
 - **CQRS s MediatR a automapper** \
   <https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/>
 
-- **Umístěte své řadiče do stravy: Příspěvky a příkazy.** \
+- **Vložte své řadiče do diety: příspěvky a příkazy.** \
   <https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/>
 
-- **Řešení potíží při průřezu s využitím kanálu prořezávání** \
+- Řešení **potíží v průřezu s použitím kanálu**vedení  \
   <https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/>
 
-- **CQRS a REST: perfektní shoda** \
+- **CQRS a REST: ideální shoda** \
   <https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/>
 
 - **Příklady MediatR kanálu** \
   <https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/>
 
-- **Testovací přípravek pro MediatR a ASP.NET Core – svislé řezy** \
+- **Testovací přípravek pro MediatR a ASP.NET Core** \
   <https://lostechies.com/jimmybogard/2016/10/24/vertical-slice-test-fixtures-for-mediatr-and-asp-net-core/>
 
-- **Vydaná rozšíření MediatR pro vkládání závislostí Microsoftu** \
+- **Rozšíření MediatR pro vkládání závislostí Microsoft** \
   <https://lostechies.com/jimmybogard/2016/07/19/mediatr-extensions-for-microsoft-dependency-injection-released/>
 
 ##### <a name="fluent-validation"></a>Ověření Fluent
@@ -834,5 +837,4 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]
-> [Předchozí](microservice-application-layer-web-api-design.md)Další
-> [](../implement-resilient-applications/index.md)
+> [Předchozí](microservice-application-layer-web-api-design.md)@no__t – 1 –[Další](../implement-resilient-applications/index.md)

@@ -1,15 +1,15 @@
 ---
-title: Stav a data v aplikacích Dockeru
+title: Stav a data v aplikacích Docker
 description: Správa stavu a dat v Docker aplikacích. Instance mikroslužeb jsou vynaloženy, ale DATA nejsou, jak je zpracovat pomocí mikroslužeb.
 ms.date: 09/20/2018
-ms.openlocfilehash: bd0ac007479dcd51f2c639881273b81d1fd8b6d7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 193ac143ca0cc42c248f449b1e1a1339af6f69d1
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039583"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834431"
 ---
-# <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
+# <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Docker
 
 Ve většině případů si můžete kontejner představit jako instanci procesu. Proces neudržuje trvalý stav. I když kontejner může zapisovat do svého místního úložiště za předpokladu, že instance bude v neomezenou dobu považována za předpokladu, že jedno umístění v paměti bude trvalé. Doporučujeme předpokládat, že image kontejneru, jako jsou procesy, mají více instancí, nebo nakonec budou ukončeny. Pokud jsou spravované pomocí produktu Orchestrator, měli byste předpokládat, že se můžou přesunout z jednoho uzlu nebo virtuálního počítače do jiného.
 
@@ -47,17 +47,17 @@ Svazky mohou být pojmenované nebo anonymní (výchozí). Pojmenované svazky p
 
 Jak je znázorněno na obrázku 4-5, běžné svazky Docker lze ukládat mimo samotné kontejnery, ale v rámci fyzických hranic hostitelského serveru nebo virtuálního počítače. Kontejnery Docker ale nemají přístup ke svazku z jednoho hostitelského serveru nebo virtuálního počítače do jiného. Jinými slovy, u těchto svazků není možné spravovat data sdílená mezi kontejnery, které běží na různých hostitelích Docker, i když se dá dosáhnout pomocí ovladače svazku, který podporuje vzdálené hostitele.
 
-![Svazky lze sdílet mezi kontejnery, ale pouze ve stejném hostiteli, pokud nepoužíváte vzdálený ovladač, který podporuje vzdálené hostitele.](./media/image5.png)
+![Diagram znázorňující svazky a externí zdroje dat pro aplikace založené na kontejnerech](./media/docker-application-state-data/volumes-external-data-sources.png)
 
 **Obrázek 4-5**. Svazky a externí zdroje dat pro aplikace založené na kontejnerech
 
-Kromě toho, když jsou kontejnery Docker spravovány nástrojem Orchestrator, kontejnery se mohou pohybovat mezi hostiteli v závislosti na optimalizacích prováděných clusterem. Proto se nedoporučuje používat datové svazky pro obchodní data. Jsou však dobrým mechanismem pro práci s trasovacími soubory, dočasnými soubory nebo podobnými, které nebudou mít vliv na konzistenci obchodních dat.
+Svazky lze sdílet mezi kontejnery, ale pouze ve stejném hostiteli, pokud nepoužíváte vzdálený ovladač, který podporuje vzdálené hostitele. Kromě toho, když jsou kontejnery Docker spravovány nástrojem Orchestrator, kontejnery se mohou pohybovat mezi hostiteli v závislosti na optimalizacích prováděných clusterem. Proto se nedoporučuje používat datové svazky pro obchodní data. Jsou však dobrým mechanismem pro práci s trasovacími soubory, dočasnými soubory nebo podobnými, které nebudou mít vliv na konzistenci obchodních dat.
 
 **Vzdálené zdroje dat a** nástroje pro ukládání do mezipaměti, jako je Azure SQL Database, Azure Cosmos DB nebo Vzdálená mezipaměť, jako je Redis, se dají použít v kontejnerových aplikacích stejným způsobem jako při vývoji bez kontejnerů. Toto je prověřený způsob, jak ukládat data obchodních aplikací.
 
 **Azure Storage.** Podniková data se obvykle musí umístit do externích prostředků nebo databází, jako je Azure Storage. Azure Storage v betonu poskytuje následující služby v cloudu:
 
-- Úložiště objektů BLOB ukládá nestrukturovaná data objektů. Objekt BLOB může být libovolný typ textu nebo binárních dat, jako je například dokument nebo mediální soubory (obrázky, zvukové soubory a videosoubory). BLOB Storage se také označuje jako úložiště objektů.
+- Úložiště objektů BLOB ukládá nestrukturovaná data objektů. Objekt BLOB může být libovolný typ textu nebo binárních dat, jako je například dokument nebo mediální soubory (obrázky, zvukové soubory a videosoubory). Blob Storage se taky může říkat Úložiště objektů.
 
 - Úložiště souborů nabízí sdílené úložiště pro starší verze aplikací, které používají standardní protokol SMB. Virtuální počítače a cloudové služby Azure můžou sdílet souborová data mezi komponentami aplikace přes připojené sdílené složky. Místní aplikace můžou k souborovým datům ve sdílené složce přistupovat prostřednictvím souborové služby REST API.
 
@@ -66,5 +66,4 @@ Kromě toho, když jsou kontejnery Docker spravovány nástrojem Orchestrator, k
 **Relační databáze a databáze NoSQL.** K dispozici je celá řada možností pro externí databáze, od relačních databází, jako jsou SQL Server, PostgreSQL, Oracle nebo databáze NoSQL, jako jsou Azure Cosmos DB, MongoDB atd. Tyto databáze nebudou v rámci tohoto průvodce vysvětleny, protože jsou v naprosto jiném předmětu.
 
 >[!div class="step-by-step"]
->[Předchozí](containerize-monolithic-applications.md)Další
->[](service-oriented-architecture.md)
+>[Předchozí](containerize-monolithic-applications.md)@no__t – 1 –[Další](service-oriented-architecture.md)

@@ -2,12 +2,12 @@
 title: Asynchronní komunikace založená na zprávách
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Asynchronní komunikace založená na zprávách je zásadní pojem architektury mikroslužeb, protože je to nejlepší způsob, jak uchovávat mikroslužby nezávisle na sobě a zároveň je synchronizovat.
 ms.date: 09/20/2018
-ms.openlocfilehash: 65bd0cd2b316fe7011ad8e878852547ee5949f09
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 109737a04eac8cfc30c746d283ca71c697f5b29d
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295572"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834476"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -31,7 +31,7 @@ Komunikace založená na zprávách s jedním přijímačem je zvláště vhodn�
 
 Jakmile začnete odesílat komunikaci na základě zpráv (s příkazy nebo událostmi), měli byste se vyhnout kombinování komunikace založené na zprávách s synchronní komunikací HTTP.
 
-![Jedna mikroslužba přijímající asynchronní zprávu](./media/image18.png)
+![Jedna mikroslužba přijímající asynchronní zprávu](./media/asynchronous-message-based-communication/single-receiver-message-based-communication.png)
 
 **Obrázek 4-18**. Jedna mikroslužba přijímající asynchronní zprávu
 
@@ -53,11 +53,11 @@ Jak bylo popsáno dříve v části [výzvy a řešení pro správu distribuovan
 
 Důležité je, že budete chtít komunikovat s více mikroslužbami, které se přihlásily ke stejné události. K tomu můžete použít publikování a odběr zpráv na základě komunikace řízené událostmi, jak je znázorněno na obrázku 4-19. Tento mechanismus publikování/odběru není výhradně součástí architektury mikroslužeb. Podobá se tomu, že by měl komunikovat s [ohraničenými kontexty](https://martinfowler.com/bliki/BoundedContext.html) v ddd nebo jak rozšířit aktualizace z databáze pro zápis do databáze pro čtení ve vzoru architektury [CQRS (Command and Query Responsibility segregation) (CQRS)](https://martinfowler.com/bliki/CQRS.html) . Cílem je mít v rámci distribuovaného systému konečnou konzistenci mezi několika zdroji dat.
 
-![V asynchronní komunikaci založené na událostech jedna mikroslužba publikuje události do sběrnice událostí a spousta mikroslužeb se může přihlásit k odběru, aby se k ní mohl dostat oznámení a reagovat na ně.](./media/image19.png)
+![Diagram znázorňující komunikaci řízenou asynchronními událostmi](./media/asynchronous-message-based-communication/asynchronous-event-driven-communication.png)
 
 **Obrázek 4-19**. Komunikace zpráv řízených asynchronními událostmi
 
-Vaše implementace určí, který protokol bude použit pro komunikaci založenou na událostech. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) může pomáhat dosáhnout spolehlivé komunikace ve frontě.
+V asynchronní komunikaci založené na událostech jedna mikroslužba publikuje události do sběrnice událostí a spousta mikroslužeb se může přihlásit k odběru, aby se k ní mohl dostat oznámení a reagovat na ně. Vaše implementace určí, který protokol bude použit pro komunikaci založenou na událostech. [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) může pomáhat dosáhnout spolehlivé komunikace ve frontě.
 
 Pokud používáte sběrnici událostí, možná budete chtít použít úroveň abstrakce (například rozhraní sběrnice událostí) založenou na související implementaci ve třídách s kódem pomocí rozhraní API od zprostředkovatele zpráv, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo Service Bus, jako je [Azure Service Bus s tématy. ](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions). Alternativně můžete chtít použít vyšší úroveň služby Service Bus, jako je NServiceBus, MassTransit nebo jasnější, aby vyjadřují Vaši sběrnici událostí a systém pro publikování a odběr.
 
@@ -81,29 +81,28 @@ Při implementaci architektury založené na událostech napříč více mikrosl
 
 Další témata, která je potřeba vzít v úvahu při použití asynchronní komunikace, jsou idempotence zprávy a odstranění duplicitních zpráv. Tato témata jsou popsaná v části [implementace komunikace založené na událostech mezi mikroslužby (události integrace)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md) dále v této příručce.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
 - **Zasílání zpráv řízených událostmi** \
   <http://soapatterns.org/design_patterns/event_driven_messaging>
 
-- **Kanál pro publikování a odběr** \
+- @No__t **kanálu pro publikování a odběr**– 1
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
-- **Udi Dahan. Vyjasněné CQRS** \
+- **UDI Dahan. Vyjasněné CQRS** \
   <http://udidahan.com/2009/12/09/clarified-cqrs/>
 
-- **CQRS (Command and Query Responsibility Segregation) (CQRS)**  \
+- **CQRS (Command and Query Responsibility segregation) (CQRS)**  \
   <https://docs.microsoft.com/azure/architecture/patterns/cqrs>
 
 - **Komunikace mezi ohraničenými kontexty** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
-- **Konečná konzistence** \
+- Konečná **konzistence**@no__t – 1
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocování spojovacího zařízení** \
+- **Jimmy Bogard. Refaktoring směrem k odolnosti: vyhodnocení spojovacího** \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]
-> [Předchozí](communication-in-microservice-architecture.md)Další
-> [](maintain-microservice-apis.md)
+> [Předchozí](communication-in-microservice-architecture.md)@no__t – 1 –[Další](maintain-microservice-apis.md)

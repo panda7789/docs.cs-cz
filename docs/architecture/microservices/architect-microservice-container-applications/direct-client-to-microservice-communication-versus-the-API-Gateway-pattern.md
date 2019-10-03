@@ -2,12 +2,12 @@
 title: Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 description: Seznamte se s rozdíly a využitím vzoru brány API a přímé komunikace mezi klientem a mikroslužbou.
 ms.date: 01/07/2019
-ms.openlocfilehash: c54287ea3e99ff7fe9faf02898b8c322b756e26f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d895ae50e50ade2f8285117491733d5c9814b732
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "70296816"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834441"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API oproti přímé komunikaci mezi klientem a mikroslužbou
 
@@ -17,7 +17,7 @@ V architektuře mikroslužeb každá mikroslužba zveřejňuje sadu (typicky) je
 
 Možným přístupem je použití přímé architektury komunikace mezi klientem a mikroslužbou. V tomto přístupu může klientská aplikace dělat požadavky přímo na některé mikroslužby, jak je znázorněno na obrázku 4-12.
 
-![Diagram znázorňující architekturu komunikace mezi klientem a mikroslužbou, kde každá aplikace komunikuje přímo s jednotlivými mikroslužbami.](./media/image12.png)
+![Diagram znázorňující architekturu komunikace mezi klientem a mikroslužbou.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/direct-client-to-microservice-communication.png)
 
 **Obrázek 4-12**. Použití přímé architektury komunikace mezi klientem a mikroslužbou
 
@@ -53,13 +53,13 @@ V architektuře mikroslužeb klientské aplikace obvykle potřebují využívat 
 
 Proto je pro aplikace založené na mikroslužbách velmi výhodné mít úroveň dereference (brána). Pokud nemáte brány rozhraní API, klientské aplikace musí posílat požadavky přímo na mikroslužby a, které vyvolává problémy, například následující problémy:
 
-- **Spoj**: Bez vzoru brány API jsou klientské aplikace spojeny s interními mikroslužbami. Klientské aplikace potřebují informace o tom, jak se více oblastí aplikace rozloží v mikroslužbách. Při vývoji a refaktoringu vnitřních mikroslužeb tyto akce ovlivnily nechybnou údržbu, protože způsobují přerušující změny klientských aplikací kvůli přímému odkazu na interní mikroslužby z klientských aplikací. Klientské aplikace je třeba často aktualizovat, takže se řešení bude obtížnější vyvíjet.
+- **Spoj**: bez vzoru brány API jsou klientské aplikace propojeny s interními mikroslužbami. Klientské aplikace potřebují informace o tom, jak se více oblastí aplikace rozloží v mikroslužbách. Při vývoji a refaktoringu vnitřních mikroslužeb tyto akce ovlivnily nechybnou údržbu, protože způsobují přerušující změny klientských aplikací kvůli přímému odkazu na interní mikroslužby z klientských aplikací. Klientské aplikace je třeba často aktualizovat, takže se řešení bude obtížnější vyvíjet.
 
-- **Příliš mnoho zpátečních cest**: Jedna stránka nebo obrazovka v klientské aplikaci může vyžadovat několik volání na více služeb. To může vést k tomu, že mezi klientem a serverem dojde k většímu počtu síťových přenosů a přidáním významné latence. Agregace zpracovávaná na mezilehlé úrovni by mohla zlepšit výkon a uživatelské prostředí pro klientskou aplikaci.
+- **Příliš mnoho zpátečních cest**: jedna stránka nebo obrazovka v klientské aplikaci může vyžadovat několik volání na více služeb. To může vést k tomu, že mezi klientem a serverem dojde k většímu počtu síťových přenosů a přidáním významné latence. Agregace zpracovávaná na mezilehlé úrovni by mohla zlepšit výkon a uživatelské prostředí pro klientskou aplikaci.
 
-- **Problémy se zabezpečením**: Bez brány musí být všechny mikroslužby vystavené externímu světu, takže je velikost prostoru pro útoky větší, než když skryjete interní mikroslužby, které nejsou přímo používané klientskými aplikacemi. Menší plocha pro útok je, tím bezpečnější může být aplikace.
+- **Problémy se zabezpečením**: bez brány musí být všechny mikroslužby vystavené externímu světu, takže je velikost prostoru pro útoky větší, než když skryjete interní mikroslužby, které nejsou přímo používané klientskými aplikacemi. Menší plocha pro útok je, tím bezpečnější může být aplikace.
 
-- **Otázky pro průřez**: Každá veřejně publikovaná mikroslužba musí zvládnout obavy, jako je například autorizace, SSL atd. V mnoha situacích by tyto otázky mohly být zpracovány v rámci jedné úrovně, aby byly interní mikroslužby zjednodušeny.
+- **Problémy mezi průřezy**: každá veřejně publikovaná mikroslužba musí mít obavy, jako je například autorizace, SSL atd. V mnoha situacích by tyto otázky mohly být zpracovány v rámci jedné úrovně, aby byly interní mikroslužby zjednodušeny.
 
 ## <a name="what-is-the-api-gateway-pattern"></a>Co je to vzor brány rozhraní API?
 
@@ -69,11 +69,11 @@ Proto brána API se nachází mezi klientskými aplikacemi a mikroslužbami. Fun
 
 Obrázek 4-13 ukazuje, jak se dá vlastní brána API vejít do zjednodušené architektury založené na mikroslužbách jenom s několika mikroslužbami.
 
-![Diagram znázorňující bránu rozhraní API implementovanou jako vlastní služba, aby se aplikace připojovaly k jednomu koncovému bodu, brána API, která je nakonfigurovaná tak, aby přenesla požadavky na jednotlivé mikroslužby.](./media/image13.png)
+![Diagram znázorňující bránu rozhraní API, která je implementovaná jako vlastní služba.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/custom-service-api-gateway.png)
 
 **Obrázek 4-13**. Použití brány API, která je implementovaná jako vlastní služba
 
-V tomto příkladu by se brána API implementovala jako vlastní ASP.NET Core služba webhosta spuštěná jako kontejner.
+Aplikace se připojují k jednomu koncovému bodu, bráně API, která je nakonfigurovaná tak, aby přesměrovala požadavky na jednotlivé mikroslužby. V tomto příkladu by se brána API implementovala jako vlastní ASP.NET Core služba webhosta spuštěná jako kontejner.
 
 Je důležité zdůraznit, že v tomto diagramu byste použili jednu vlastní službu API Gateway, která se týká více a různých klientských aplikací. Tato skutečnost může představovat důležité riziko, protože vaše služba API Gateway se bude zvětšovat a rozvíjet na základě mnoha různých požadavků z klientských aplikací. Nakonec bude bloated z důvodu těchto různých potřeb a efektivně může být poměrně podobný aplikaci monolitické nebo službě monolitické. To je důvod, proč je velmi vhodné rozdělit bránu API ve více službách nebo více menších bran rozhraní API, jeden pro každý klient aplikace typ formuláře-faktor.
 
@@ -83,11 +83,11 @@ Proto by se brány rozhraní API měly oddělit na základě hranic firmy a klie
 
 Při rozdělení vrstvy brány API na několik bran rozhraní API platí, že pokud má vaše aplikace více klientských aplikací, může být primárním objektem Pivot při identifikaci několika typů bran rozhraní API, takže můžete mít různou fasádu pro potřeby jednotlivých klientských aplikací. Tento případ je vzor nazvaný back-end pro front-end ([BFF](https://samnewman.io/patterns/architectural/bff/)), kde každá brána API může poskytovat jiné rozhraní API přizpůsobené pro každý typ klientské aplikace, případně i na základě faktoru formuláře klienta implementací konkrétního kódu adaptéru, který je pod voláními. několik interních mikroslužeb, jak je znázorněno na následujícím obrázku:
 
-![Diagram znázorňující několik vlastních bran rozhraní API, kde jsou brány API oddělené od typu klienta; jeden pro mobilní klienty a jeden pro webové klienty. Tradiční webová aplikace se připojuje ke mikroslužbám MVC, která používá webovou bránu API.](./media/image13.1.png)
+![Diagram znázorňující několik vlastních bran rozhraní API.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/multiple-custom-api-gateways.png)
 
 **Obrázek 4 – 13.1**. Používání několika vlastních bran API
 
-Předchozí obrázek ukazuje zjednodušenou architekturu s několika jemně odstupňovanými branami API. V takovém případě jsou hranice identifikované pro jednotlivé brány rozhraní API založené čistě na vzoru back-end pro front-end ([BFF](https://samnewman.io/patterns/architectural/bff/)), a proto jsou založené jenom na rozhraní API potřebném pro každou klientskou aplikaci. Ale v větších aplikacích byste také měli dál pokračovat a vytvořit další brány API na základě hranic firmy jako druhého kontingenčního pivotu.
+Obrázek 4 – 13.1 zobrazuje brány rozhraní API, které jsou oddělené typem klienta; jeden pro mobilní klienty a jeden pro webové klienty. Tradiční webová aplikace se připojuje ke mikroslužbám MVC, která používá webovou bránu API. Tento příklad znázorňuje zjednodušenou architekturu s několika jemně odstupňovanými branami API. V takovém případě jsou hranice identifikované pro jednotlivé brány rozhraní API založené čistě na vzoru back-end pro front-end ([BFF](https://samnewman.io/patterns/architectural/bff/)), a proto jsou založené jenom na rozhraní API potřebném pro každou klientskou aplikaci. Ale v větších aplikacích byste také měli dál pokračovat a vytvořit další brány API na základě hranic firmy jako druhého kontingenčního pivotu.
 
 ## <a name="main-features-in-the-api-gateway-pattern"></a>Hlavní funkce ve vzoru brány rozhraní API
 
@@ -121,18 +121,18 @@ Další informace najdete v tématu [model snižování zátěže brány](https:
 
 V závislosti na každé implementaci může být k dispozici mnoho dalších častých otázek pro průřezy nabízených produkty API Gateway. Prozkoumáme toto:
 
-- [API Management Azure](https://azure.microsoft.com/services/api-management/)
+- [Azure API Management](https://azure.microsoft.com/services/api-management/)
 - [Ocelot](https://github.com/ThreeMammals/Ocelot)
 
-### <a name="azure-api-management"></a>API Management Azure
+### <a name="azure-api-management"></a>Azure API Management
 
-[API Management Azure](https://azure.microsoft.com/services/api-management/) (jak je znázorněno na obrázku 4-14) nejenom řeší vaše požadavky na bránu API, ale poskytuje funkce, jako je shromažďování přehledů z vašich rozhraní API. Pokud používáte řešení API Management, brána rozhraní API je jenom součást v rámci celého řešení API Management.
+[Azure API Management](https://azure.microsoft.com/services/api-management/) (jak je znázorněno na obrázku 4-14) nejenom vyřeší vaše požadavky na bránu API, ale poskytuje funkce, jako je shromažďování přehledů z vašich rozhraní API. Pokud používáte řešení API Management, brána rozhraní API je jenom součást v rámci celého řešení API Management.
 
-![Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd.](./media/api-gateway-azure-api-management.png)
+![Diagram znázorňující, jak používat Azure API Management jako bránu rozhraní API.](./media/direct-client-to-microservice-communication-versus-the-API-Gateway-pattern/api-gateway-azure-api-management.png)
 
 **Obrázek 4-14**. Použití Azure API Management pro vaši bránu API
 
-V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by se mohl vyvíjet k komponenta monolitické 
+Azure API Management řeší jak vaše brána rozhraní API, tak i jejich požadavky na správu, jako je protokolování, zabezpečení, měření atd. V takovém případě, když používáte produkt, jako je například Azure API Management, skutečnost, že máte jedinou bránu API, není tak riskantní, protože tyto druhy bran rozhraní API jsou "užší", což znamená, že neimplementujete vlastní C# kód, který by se mohl vyvíjet k komponenta monolitické 
 
 Produkty brány rozhraní API obvykle fungují jako reverzní proxy server pro komunikaci příchozího přenosu dat, kde můžete také vyfiltrovat rozhraní API z interních mikroslužeb a použít autorizaci na publikovaná rozhraní API v této jedné vrstvě.
 
@@ -168,29 +168,28 @@ V dalších oddílech se po úvodní části architektury a vzorů vysvětlují,
 
 - Pokud je brána API vyvinutá jedním týmem, může dojít k nekritickému vývoji. To je další důvod, proč lepší přístup je mít několik jemně odstupňovaných bran rozhraní API, které reagují na různé požadavky klientů. Bránu rozhraní API můžete také interně rozdělit do několika oblastí nebo vrstev vlastněných různými týmy, které pracují na vnitřních mikroslužbách.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
-- **Chris Richardson. Vzorku Brána API/back-end pro front-end** \
+- **Chris Richardson. Vzor: Brána API/back-end pro front-end** \
   <https://microservices.io/patterns/apigateway.html>
 
-- **Vzor brány API** \
+- @No__t **vzor brány API**– 1
   <https://docs.microsoft.com/azure/architecture/microservices/gateway>
 
-- **Model agregace a kompozice** \
+- **Model agregace a složení** \
   <https://microservices.io/patterns/data/api-composition.html>
 
-- **API Management Azure** \
+- **Azure API Management** \
   <https://azure.microsoft.com/services/api-management/>
 
-- **Udi Dahan. Složení orientované na služby** \
+- **UDI Dahan. Složení orientované na služby** \
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 - **Clemense obrovské. Zasílání zpráv a mikroslužeb na adrese GOTO 2016 (video)**  \
   <https://www.youtube.com/watch?v=rXi5CLjIQ9k>
 
-- **Brána API v kostce** (Řada kurzů ASP.net Core API Gateway) \
+- **Brána API v kostce** (série kurzů ASP.NET Core API Gateway) \
   <https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html>
 
 >[!div class="step-by-step"]
->[Předchozí](identify-microservice-domain-model-boundaries.md)Další
->[](communication-in-microservice-architecture.md)
+>[Předchozí](identify-microservice-domain-model-boundaries.md)@no__t – 1 –[Další](communication-in-microservice-architecture.md)

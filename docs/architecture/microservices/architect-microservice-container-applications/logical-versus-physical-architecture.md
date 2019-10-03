@@ -1,15 +1,15 @@
 ---
-title: Logická architektura vs. fyzická architektura
+title: Logická architektura versus fyzická architektura
 description: Pochopení rozdílů mezi logickými a fyzickými architekturami.
 ms.date: 09/20/2018
-ms.openlocfilehash: c269369e9b5391e8d25ece46e6b08e34a82fbbba
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 8d1bfca190eb9b18d46625fa4afdec963eb07054
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295493"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834405"
 ---
-# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura vs. fyzická architektura
+# <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
 
 To je užitečné v tomto okamžiku k zastavení a projednání rozdílu mezi logickou architekturou a fyzickou architekturou a jak to platí pro návrh aplikací založených na mikroslužbách.
 
@@ -25,7 +25,7 @@ Proto obchodní mikroslužba nebo ohraničený kontext je logická architektura,
 
 Jak ukazuje obrázek 4-8, může se v katalogu obchodní mikroslužba skládat z několika služeb nebo procesů. Může se jednat o více služeb webového rozhraní API ASP.NET nebo jakýkoli jiný druh služeb pomocí protokolu HTTP nebo jakéhokoliv jiného protokolu. Důležitější je, že tyto služby můžou sdílet stejná data, pokud jsou tyto služby soudržné s ohledem na stejnou obchodní doménu.
 
-![Diagram obchodního mikroslužby katalogu, který obsahuje službu API služby vyhledávání a SQL Server databázi.](./media/image8.png)
+![Diagram obchodních mikroslužeb v katalogu s fyzickými servery](./media/logical-versus-physical-architecture/multiple-physical-services.png)
 
 **Obrázek 4-8**. Obchodní mikroslužba s několika fyzickými službami
 
@@ -34,5 +34,4 @@ Služby v příkladu sdílejí stejný datový model, protože služba webového
 V krátkém případě se logická architektura mikroslužeb vždy nemusí shodovat s architekturou fyzického nasazení. V této příručce se pokaždé, když uvádíme mikroslužbu, rozumíme obchodní nebo logické mikroslužby, která může být namapována na jednu nebo více (fyzických) služeb. Ve většině případů to bude jediná služba, ale může to být víc.
 
 >[!div class="step-by-step"]
->[Předchozí](data-sovereignty-per-microservice.md)Další
->[](distributed-data-management.md)
+>[Předchozí](data-sovereignty-per-microservice.md)@no__t – 1 –[Další](distributed-data-management.md)

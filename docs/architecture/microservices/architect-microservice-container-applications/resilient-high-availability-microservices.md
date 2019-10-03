@@ -2,12 +2,12 @@
 title: Odolnost a vysoká dostupnost v mikroslužbách
 description: Mikroslužby musí být navržené tak, aby odolaly přechodným chybám sítě a závislostem, musí být odolné, aby dosáhli vysoké dostupnosti.
 ms.date: 09/20/2018
-ms.openlocfilehash: bb1bef0c9cc08e43aed80a29effe89587fb296f6
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 6c110b0fe7a80842f12779494e5b0bdd29c5fb64
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296254"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834354"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 
@@ -31,8 +31,8 @@ V části [implementace kontrol stavu v rámci služby ASP.NET Core v](../implem
 
 Máte také možnost použít skvělou Open Source knihovnu s názvem otřesový Pulsi, která je k dispozici na [GitHubu](https://github.com/Xabaril/BeatPulse) a jako [balíček NuGet](https://www.nuget.org/packages/BeatPulse/). Tato knihovna také provádí kontroly stavu s otočením, zpracovává dva typy kontrol:
 
-- **Živý**: Zkontroluje, jestli je mikroslužba aktivní, to znamená, že pokud je možné přijímat žádosti a reagovat na ně. 
-- **Připravenost**: Kontroluje, jestli jsou závislosti mikroslužby (databáze, služby front atd.) připravené, takže mikroslužba může provést to, co má udělat. 
+- **Živý**: kontroluje, jestli je mikroslužba aktivní, to znamená, že pokud je možné přijímat žádosti a reagovat na ně. 
+- **Připravenost**: kontroluje, jestli jsou závislosti mikroslužby (databáze, služby front atd.) připravené, takže mikroslužba může provést to, co má dělat. 
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Používání diagnostiky a protokolování datových proudů událostí
 
@@ -46,7 +46,7 @@ Aplikace založené na mikroslužbách by se neměla pokoušet uložit výstupn�
 
 Když vytváříte aplikaci založenou na mikroslužbách, musíte se zabývat složitou složitostí. Jednou z těchto mikroslužeb je samozřejmě jednoduché řešení, ale desítky nebo stovky typů a tisíce instancí mikroslužeb jsou komplexní problém. Nejedná se jenom o vytváření architektury mikroslužeb. Pokud máte v úmyslu stabilní a soudržný systém, budete potřebovat vysokou dostupnost, adresovatelnost, odolnost, stav a diagnostiku.
 
-![Orchestrace poskytují platformu pro podporu pro spouštění mikroslužeb.](./media/image22.png)
+![Diagram clusterů, které poskytují platformu podpory pro mikroslužby.](./media/resilient-high-availability-microservices/microservice-platform.png)
 
 **Obrázek 4-22**. Platforma mikroslužeb je zásadní pro správu stavu aplikace.
 
@@ -54,9 +54,9 @@ Složité problémy zobrazené na obrázku 4-22 jsou velmi obtížně řešeny u
 
 Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické kontroly, které každý z nich nabízí, se liší v funkcích a stavu zralosti, někdy v závislosti na platformě operačního systému, jak je vysvětleno v další části.
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
-- **Aplikace v dvanácti faktorech XI. Protokolování Zpracování protokolů jako datových proudů událostí** \
+- **Dvanáct-Factor App. XI. Protokoly: zpracování protokolů jako datových proudů událostí** \
   <https://12factor.net/logs>
 
 - **Microsoft Diagnostic využitím eventflow Library** Úložiště GitHub. \
@@ -68,7 +68,7 @@ Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické 
 - **Připojení počítačů s Windows ke službě Azure Monitor** \
   <https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows>
 
-- **Protokolování toho, co znamenáte: Použití bloku aplikace sémantického protokolování** \
+- **Protokolování toho, co znamenáte: použití bloku aplikace sémantického protokolování** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn440729(v=pandp.60)>
 
 - **Splunk** Oficiální lokalita. \
@@ -78,5 +78,4 @@ Různé orchestrace můžou vypadat podobně, ale diagnostické a diagnostické 
   [https://docs.microsoft.com/dotnet/api/system.diagnostics.tracing.eventsource](xref:System.Diagnostics.Tracing.EventSource)
 
 >[!div class="step-by-step"]
->[Předchozí](microservice-based-composite-ui-shape-layout.md)Další
->[](scalable-available-multi-container-microservice-applications.md)
+>[Předchozí](microservice-based-composite-ui-shape-layout.md)@no__t – 1 –[Další](scalable-available-multi-container-microservice-applications.md)

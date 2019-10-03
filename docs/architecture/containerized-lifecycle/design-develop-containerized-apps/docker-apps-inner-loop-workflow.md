@@ -1,19 +1,19 @@
 ---
-title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
+title: Pracovní postup vývoje vnitřních smyček pro aplikace Docker
 description: Seznamte se s pracovním postupem "vnitřní smyčka" pro vývoj aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: 04e1b29e6a0cef89df05cc9124806c74a38b5249
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: c97cd9ba8d740f13c22caa45e344c4961e3b0600
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214355"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834498"
 ---
-# <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
+# <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřních smyček pro aplikace Docker
 
 Předtím, než se aktivuje pracovní postup vnější smyčky zahrnující celý cyklus DevOps, začne vše v každém počítači vývojářů, bude se zakódovat vlastní aplikace, pomocí svých preferovaných jazyků nebo platforem a místně se testuje (obrázek 4-21). V každém případě ale budete mít důležitý obecný bod, bez ohledu na to, jaký jazyk, rozhraní nebo platformy si zvolíte. V tomto konkrétním pracovním postupu budete vždy vyvíjet a testovat kontejnery Docker, ale lokálně.
 
-![Krok 1 – Code/Run/Debug](./media/image18.png)
+![Diagram znázorňující koncept prostředí pro vývoj vnitřních smyček.](./media/docker-apps-inner-loop-workflow/inner-loop-development-context.png)
 
 **Obrázek 4-21**. Vývojový kontext pro vnitřní smyčku
 
@@ -35,11 +35,11 @@ Aplikace se vytvářejí z vašich vlastních služeb a dalších knihoven (záv
 
 Obrázek 4-22 ukazuje základní kroky, které obvykle potřebujete provést při sestavování aplikace Docker, po kterém následují podrobné popisy jednotlivých kroků.
 
-![Přehled pracovního postupu: Krok 1 – kód, krok 2 – zápis fázemi, krok 3 – vytváření imagí definovaných pomocí fázemi, krok 4 – definování služeb pomocí souboru Docker-Write File, kroku 5 – spuštění kontejnerů nebo složených aplikací, krok 6 – testování aplikací, krok 7 – zahájení vnější smyčky (kanály CI/CD) nebo pokračování de veloping.](./media/image19.png)
+![Diagram znázorňující sedm kroků, které je potřeba k vytvoření kontejnerové aplikace.](./media/docker-apps-inner-loop-workflow/life-cycle-containerized-apps-docker-cli.png)
 
 **Obrázek 4-22**. Pracovní postup vysoké úrovně pro životní cyklus aplikací Docker s využitím Docker CLI
 
-### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Krok 1: Spuštění kódování v Visual Studio Code a vytvoření počátečního směrného plánu aplikace nebo služby
+### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Krok 1: začátek kódování Visual Studio Code a vytvoření počátečního směrného plánu aplikace nebo služby
 
 Způsob vývoje aplikace je podobný způsobu, jakým jste to provedete bez Docker. Rozdíl je v tom, že při vývoji nasazujete a testujete svou aplikaci nebo služby běžící v kontejnerech Docker umístěných ve vašem místním prostředí (jako je třeba virtuální počítač Linux nebo Windows).
 
@@ -48,30 +48,30 @@ Způsob vývoje aplikace je podobný způsobu, jakým jste to provedete bez Dock
 S nejnovějšími verzemi Docker pro Mac a Windows je snazší než kdy dřív vyvíjet aplikace Docker a instalace je jednoduchá.
 
 > [!TIP]
-> Pokyny, jak <https://docs.docker.com/docker-for-windows/>nastavit Docker for Windows, najdete v tématu.
+> Pokyny, jak nastavit Docker for Windows, najdete v <https://docs.docker.com/docker-for-windows/>.
 >
->Pokyny, jak <https://docs.docker.com/docker-for-mac/>nastavit Docker pro Mac, najdete v tématu.
+>Pokyny, jak nastavit Docker pro Mac, najdete na <https://docs.docker.com/docker-for-mac/>.
 
 Kromě toho budete potřebovat Editor kódu, abyste mohli skutečně vyvíjet aplikace při použití Docker CLI.
 
 Společnost Microsoft poskytuje Visual Studio Code, což je zjednodušený Editor kódu, který je podporován na počítačích Mac, Windows a Linux, a poskytuje technologii IntelliSense s [podporou pro řadu jazyků](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, jít, Java, Ruby, Python a většina moderních jazyků) [. ladění](https://code.visualstudio.com/Docs/editor/debugging), [integrace s podporou pro Git](https://code.visualstudio.com/Docs/editor/versioncontrol) a [rozšíření](https://code.visualstudio.com/docs/extensions/overview). Tento editor je vhodný pro vývojáře pro Mac a Linux. V systému Windows můžete použít také plnou aplikaci sady Visual Studio.
 
 > [!TIP]
-> Pokyny, jak <https://code.visualstudio.com/docs/setup/setup-overview/>nainstalovat Visual Studio Code pro Windows, Mac nebo Linux, najdete v tématu.
+> Pokyny, jak nainstalovat Visual Studio Code pro Windows, Mac nebo Linux, najdete v článku <https://code.visualstudio.com/docs/setup/setup-overview/>.
 >
-> Pokyny, jak <https://docs.docker.com/docker-for-mac/>nastavit Docker pro Mac, najdete v tématu.
+> Pokyny, jak nastavit Docker pro Mac, najdete na <https://docs.docker.com/docker-for-mac/>.
 
-Můžete pracovat s Docker CLI a napsat svůj kód pomocí editoru kódu, ale použití Visual Studio Code s rozšířením Docker usnadňuje tvorbu a `Dockerfile` `docker-compose.yml` vytváření souborů v pracovním prostoru. Můžete také spouštět úlohy a skripty z Visual Studio Code integrované vývojové prostředí (IDE) a spustit příkazy Docker pomocí příkazu Docker CLI pod.
+Můžete pracovat s Docker CLI a napsat svůj kód pomocí editoru kódu, ale použití Visual Studio Code s rozšířením Docker usnadňuje tvorbu souborů `Dockerfile` a `docker-compose.yml` v pracovním prostoru. Můžete také spouštět úlohy a skripty z Visual Studio Code integrované vývojové prostředí (IDE) a spustit příkazy Docker pomocí příkazu Docker CLI pod.
 
 Rozšíření Docker pro VS Code poskytuje následující funkce:
 
-- Automatické `Dockerfile` generování `docker-compose.yml` souborů a souborů
+- Automatické generování souborů `Dockerfile` a `docker-compose.yml`
 
-- Zvýrazňování syntaxe a tipy k najetí `Dockerfile` myší pro `docker-compose.yml` soubory a
+- Zvýrazňování syntaxe a tipy pro najetí myší pro soubory `docker-compose.yml` a `Dockerfile`
 
-- IntelliSense (dokončování) pro `Dockerfile` soubory `docker-compose.yml` a
+- IntelliSense (dokončování) pro soubory `Dockerfile` a `docker-compose.yml`
 
-- Linting (chyby a upozornění) pro `Dockerfile` soubory
+- Linting (chyby a upozornění) pro soubory `Dockerfile`
 
 - Integrace palet příkazů (F1) pro nejběžnější příkazy Docker
 
@@ -79,24 +79,24 @@ Rozšíření Docker pro VS Code poskytuje následující funkce:
 
 - Nasazení imagí z Dockerhubu a kontejnerů Azure Container Registry do Azure App Service
 
-Chcete-li nainstalovat rozšíření Docker, stiskněte klávesy CTRL + SHIFT + P `ext install`, zadejte a poté spusťte příkaz Install Extension a zobrazte seznam rozšíření Marketplace. Potom zadejte **Docker** pro filtrování výsledků a pak vyberte rozšíření podpora Docker, jak je znázorněno na obrázku 4-23.
+Chcete-li nainstalovat rozšíření Docker, stiskněte klávesy CTRL + SHIFT + P, zadejte `ext install` a potom spusťte příkaz Install Extension, který zobrazí seznam rozšíření webu Marketplace. Potom zadejte **Docker** pro filtrování výsledků a pak vyberte rozšíření podpora Docker, jak je znázorněno na obrázku 4-23.
 
-![Zobrazení rozšíření Docker pro VS Code.](./media/image20.png)
+![Zobrazení rozšíření Docker pro VS Code.](./media/docker-apps-inner-loop-workflow/install-docker-extension-vs-code.png)
 
 **Obrázek 4-23**. Instalace rozšíření Docker v Visual Studio Code
 
-### <a name="step-2-create-a-dockerfile-related-to-an-existing-image-plain-os-or-dev-environments-like-net-core-nodejs-and-ruby"></a>Krok 2: Vytvoření souboru Dockerfile souvisejícího s existující imagí (prostého operačního systému nebo vývojového prostředí, jako je .NET Core, Node. js a Ruby)
+### <a name="step-2-create-a-dockerfile-related-to-an-existing-image-plain-os-or-dev-environments-like-net-core-nodejs-and-ruby"></a>Krok 2: vytvoření souboru Dockerfile souvisejícího s existující imagí (prostého operačního systému nebo vývojového prostředí, jako je .NET Core, Node. js a Ruby)
 
-Budete potřebovat `DockerFile` vlastní image, která se má sestavit a na kontejner, který se má nasadit. Pokud se vaše aplikace skládá z jedné vlastní služby, budete potřebovat jednu `DockerFile`. Pokud se ale vaše aplikace skládá z několika služeb (jako v architektuře mikroslužeb), budete ji `Dockerfile` potřebovat pro každou službu.
+Pro nasazení a na kontejner, který chcete nasadit, budete potřebovat `DockerFile` na vlastní image. Pokud se vaše aplikace skládá z jedné vlastní služby, budete potřebovat jednu `DockerFile`. Pokud se ale vaše aplikace skládá z několika služeb (jako v architektuře mikroslužeb), budete pro každou službu potřebovat jednu `Dockerfile`.
 
-Obvykle `DockerFile` se nachází v kořenové složce vaší aplikace nebo služby a obsahuje požadované příkazy, aby Docker věděl, jak nastavit a spustit tuto aplikaci nebo službu. Můžete vytvořit `DockerFile` a přidat ho do projektu společně s vaším kódem (Node. js, .NET Core atd.), nebo pokud s prostředím začínáte, podívejte se na následující tip.
+@No__t-0 se běžně umísťuje do kořenové složky vaší aplikace nebo služby a obsahuje požadované příkazy, aby Docker věděl, jak tuto aplikaci nebo službu spustit. Můžete vytvořit `DockerFile` a přidat ho do projektu společně s vaším kódem (Node. js, .NET Core atd.), nebo pokud s prostředím začínáte, podívejte se na následující tip.
 
 > [!TIP]
-> Můžete použít rozšíření Docker, které vás provede při použití `Dockerfile` souborů a `docker-compose.yml` souvisejících s kontejnery Docker. Nakonec budete pravděpodobně zapisovat tyto typy souborů bez tohoto nástroje, ale používání rozšíření Docker je dobrým výchozím bodem, který zrychlí výukovou křivku.
+> Pokud používáte soubory `Dockerfile` a `docker-compose.yml`, které se vztahují k vašim kontejnerům Docker, můžete použít rozšíření Docker. Nakonec budete pravděpodobně zapisovat tyto typy souborů bez tohoto nástroje, ale používání rozšíření Docker je dobrým výchozím bodem, který zrychlí výukovou křivku.
 
 Na obrázku 4-24 se můžete podívat, jak se přidávají soubor Docker-skládání pomocí rozšíření Docker pro VS Code.
 
-![Zobrazení konzoly rozšíření Docker pro VS Code.](./media/image24.png)
+![Zobrazení konzoly rozšíření Docker pro VS Code.](./media/docker-apps-inner-loop-workflow/add-docker-files-to-workspace-command.png)
 
 **Obrázek 4-24**. Soubory Docker přidané pomocí **příkazu přidat soubory Docker do pracovního prostoru**
 
@@ -124,16 +124,16 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "MyCustomMicroservice.dll"]
 ```
 
-V tomto případě je bitová kopie založená na verzi 2,2 oficiální image s ASP.NET Core Docker (více imagí pro Linux a Windows), jak je uvedeno na řádku `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. (Další informace o tomto tématu najdete na stránce [ASP.NET Core Docker image](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) a na stránce s [obrázkem rozhraní Docker .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) ).
+V tomto případě je image založená na verzi 2,2 oficiální bitové kopie ASP.NET Core Docker (pro Linux a Windows), jak na řádku `FROM mcr.microsoft.com/dotnet/core/aspnet:2.2`. (Další informace o tomto tématu najdete na stránce [ASP.NET Core Docker image](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) a na stránce s [obrázkem rozhraní Docker .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/) ).
 
 V souboru Dockerfile můžete také dát Docker pokyn k naslouchání portu TCP, který budete používat za běhu (například port 80).
 
-V souboru Dockerfile můžete určit další nastavení konfigurace v závislosti na jazyku a rozhraní, které používáte. Například řádek s `["dotnet", "MySingleContainerWebApp.dll"]` informacemi Docker pro spuštění aplikace .NET Core. `ENTRYPOINT` Pokud používáte sadu SDK a .NET Core CLI (`dotnet CLI`) k sestavování a spouštění aplikace .NET, toto nastavení by se lišilo. Klíčovým bodem a dalšími nastaveními závisí na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
+V souboru Dockerfile můžete určit další nastavení konfigurace v závislosti na jazyku a rozhraní, které používáte. Například řádek `ENTRYPOINT` s `["dotnet", "MySingleContainerWebApp.dll"]` instruuje Docker za účelem spuštění aplikace .NET Core. Pokud používáte sadu SDK a .NET Core CLI (`dotnet CLI`) k sestavování a spouštění aplikace .NET, toto nastavení by se lišilo. Klíčovým bodem a dalšími nastaveními závisí na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
 
 > [!TIP]
-> Další informace o vytváření imagí Docker pro aplikace .NET Core naleznete v <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
+> Další informace o vytváření imagí Docker pro aplikace .NET Core najdete v <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
 >
-> Další informace o vytváření vlastních imagí najdete na <https://docs.docker.com/engine/tutorials/dockerimages/>webu.
+> Pokud chcete získat další informace o vytváření vlastních imagí, použijte <https://docs.docker.com/engine/tutorials/dockerimages/>.
 
 **Použití úložišť imagí s více archy**
 
@@ -145,7 +145,7 @@ Načtení image [dotnet/Core/ASPNET](https://hub.docker.com/_/microsoft-dotnet-c
 
 Můžete vytvořit vlastní základní image Docker od začátku, jak je vysvětleno v tomto [článku](https://docs.docker.com/engine/userguide/eng-image/baseimages/) z Docker. Tento scénář je pravděpodobně nevhodný pro vás, pokud právě začínáte s Docker, ale pokud chcete nastavit konkrétní bity vlastní základní image, můžete to provést.
 
-### <a name="step-3-create-your-custom-docker-images-embedding-your-service-in-it"></a>Krok 3: Vytvořte vlastní image Docker, ve kterých se služba vkládá.
+### <a name="step-3-create-your-custom-docker-images-embedding-your-service-in-it"></a>Krok 3: vytvořte vlastní image Docker, ve kterých se služba vkládá.
 
 Pro každou vlastní službu, která se skládá z vaší aplikace, budete muset vytvořit související image. Pokud se vaše aplikace skládá z jediné služby nebo webové aplikace, budete potřebovat jenom jednu Image.
 
@@ -158,25 +158,25 @@ Pro každou vlastní službu, která se skládá z vaší aplikace, budete muset
 
 Pokud chcete vytvořit image v místním prostředí a používat souboru Dockerfile, můžete použít příkaz Docker Build, jak je znázorněno na obrázku 4-25 (můžete také spustit `docker-compose up --build` pro aplikace složené z několika kontejnerů/služeb).
 
-![Výstup na konzole buildu Docker – sestavování, ve kterém se zobrazují obrázky, které stahují průběh.](./media/image25.png)
+![Snímek obrazovky znázorňující výstup konzoly příkazu Docker Build](./media/docker-apps-inner-loop-workflow/run-docker-build-command.png)
 
 **Obrázek 4-25**. Spouští se sestavení Docker.
 
-Místo toho, aby bylo možné `docker build` přímo spustit ze složky projektu, můžete nejprve vygenerovat nasazovatelné složky s knihovnami .NET potřebné pomocí příkazu Run `dotnet publish` a potom spustit `docker build`.
+V případě potřeby můžete místo přímého spuštění `docker build` ze složky projektu nejprve vygenerovat nasazenou složku s knihovnami .NET potřebné pomocí příkazu Run `dotnet publish` a potom spustit `docker build`.
 
 Tento příklad vytvoří image Docker s názvem `cesardl/netcore-webapi-microservice-docker:first` (`:first` je značka, jako je například specifická verze). Tento krok můžete provést pro každou vlastní bitovou kopii, kterou potřebujete vytvořit pro svoji sestavenou aplikaci Docker s několika kontejnery.
 
 Existující image můžete najít v místním úložišti (ve vývojovém počítači) pomocí příkazu Docker images, jak je znázorněno na obrázku 4-26.
 
-![Výstup z konzoly z příkazu Docker images zobrazující existující image](./media/image26.png)
+![Výstup z konzoly z příkazu Docker images zobrazující existující image](./media/docker-apps-inner-loop-workflow/view-existing-images-with-docker-images.png)
 
 **Obrázek 4-26**. Zobrazení existujících imagí pomocí imagí Docker
 
-### <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Krok 4: Definování služeb v Docker-Compose. yml při sestavování složené aplikace Docker s více službami
+### <a name="step-4-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Krok 4: definování služeb v Docker-Compose. yml při sestavování složené aplikace Docker s více službami
 
-Pomocí tohoto `docker-compose.yml` souboru můžete definovat sadu souvisejících služeb, které mají být nasazeny jako složená aplikace, a příkazy nasazení popsané v části Další krok.
+Pomocí souboru `docker-compose.yml` můžete definovat sadu souvisejících služeb, které mají být nasazeny jako složená aplikace pomocí příkazů pro nasazení, které jsou vysvětleny v části Další krok.
 
-Vytvořte tento soubor ve složce Main nebo root Solution. měl by mít podobný obsah, jako je zobrazený `docker-compose.yml` v tomto souboru:
+Vytvořte tento soubor ve složce Main nebo root Solution. měl by mít podobný obsah jako v tomto souboru `docker-compose.yml`:
 
 ```yml
 version: '3.4'
@@ -205,11 +205,11 @@ V tomto konkrétním případě tento soubor definuje dvě služby: webovou slu�
 
 Služba Redis používá [nejnovější veřejnou image Redis](https://hub.docker.com/_/redis/) získanou z registru Docker Hub. [Redis](https://redis.io/) je oblíbený systém mezipaměti pro aplikace na straně serveru.
 
-### <a name="step-5-build-and-run-your-docker-app"></a>Krok 5: Sestavení a spuštění aplikace Docker
+### <a name="step-5-build-and-run-your-docker-app"></a>Krok 5: sestavení a spuštění aplikace Docker
 
 Pokud má vaše aplikace jenom jeden kontejner, stačí ho spustit nasazením na hostitele Docker (virtuální počítač nebo fyzický server). Pokud je ale vaše aplikace tvořená více službami, je nutné *ji vytvořit*také. Pojďme se podívat na různé možnosti.
 
-***Možnost A: Spuštění jednoho kontejneru nebo služby***
+***Možnost A: spuštění jednoho kontejneru nebo služby***
 
 Bitovou kopii Docker můžete spustit pomocí příkazu Docker Run, jak je znázorněno zde:
 
@@ -219,21 +219,21 @@ docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 
 U tohoto konkrétního nasazení budeme přesměrování požadavků odeslaných na port 80 na interní port 5000. Aplikace nyní naslouchá na externím portu 80 na úrovni hostitele.
 
-***Možnost B: Vytvoření a spuštění aplikace s více kontejnery***
+***Možnost B: vytvoření a spuštění aplikace s více kontejnery***
 
-Ve většině podnikových scénářů se aplikace Docker skládá z několika služeb. V těchto případech můžete spustit `docker-compose up` příkaz (obrázek 4-27), který bude používat soubor Docker-Compose. yml, který jste mohli dříve vytvořit. Spuštěním tohoto příkazu nasadíte složenou aplikaci se všemi souvisejícími kontejnery.
+Ve většině podnikových scénářů se aplikace Docker skládá z několika služeb. V těchto případech můžete spustit příkaz `docker-compose up` (obrázek 4-27), který bude používat soubor Docker-Compose. yml, který jste mohli dříve vytvořit. Spuštěním tohoto příkazu nasadíte složenou aplikaci se všemi souvisejícími kontejnery.
 
-![Výstup konzoly z příkazu Docker-sestavit.](./media/image27.png)
+![Výstup konzoly z příkazu Docker-sestavit.](./media/docker-apps-inner-loop-workflow/results-docker-compose-up.png)
 
 **Obrázek 4-27**. Výsledky spuštění příkazu Docker-sestavit
 
-Po spuštění `docker-compose up`aplikace nasadíte aplikaci a její související kontejnery do hostitele Docker, jak je znázorněno na obrázku 4-28, ve formě reprezentace virtuálního počítače.
+Po spuštění `docker-compose up` nasadíte aplikaci a její související kontejnery do hostitele Docker, jak je znázorněno na obrázku 4-28 ve formě reprezentace virtuálního počítače.
 
-![Virtuální počítač spouštějící aplikace s více kontejnery.](./media/image28.png)
+![Virtuální počítač spouštějící aplikace s více kontejnery.](./media/docker-apps-inner-loop-workflow/vm-with-docker-containers-deployed.png)
 
 **Obrázek 4-28**. Virtuální počítač s nasazenými kontejnery Docker
 
-### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Krok 6: Testování aplikace Docker (místně, na místním VIRTUÁLNÍm počítači CD)
+### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Krok 6: testování aplikace Docker (místně, na místním VIRTUÁLNÍm počítači CD)
 
 Tento krok se bude lišit v závislosti na tom, co vaše aplikace dělá.
 
@@ -247,15 +247,15 @@ docker-machine {IP} {YOUR-CONTAINER-NAME}
 
 V hostiteli Docker otevřete prohlížeč a přejděte k této lokalitě. měla by se zobrazit vaše aplikace nebo služba, jak je znázorněno na obrázku 4-29.
 
-![Zobrazení prohlížeče odpovědi z místního hostitele/rozhraní API/hodnot.](./media/image29.png)
+![Zobrazení prohlížeče odpovědi z místního hostitele/rozhraní API/hodnot.](./media/docker-apps-inner-loop-workflow/test-docker-app-locally-localhost.png)
 
 **Obrázek 4-29**. Místní testování aplikace Docker pomocí místního hostitele
 
-Všimněte si, že používá port 80, ale interně se přesměruje na port 5000, protože to je to, jak bylo `docker run`nasazeno v, jak bylo vysvětleno výše.
+Všimněte si, že používá port 80, ale interně se přesměruje na port 5000, protože to je nasazování s `docker run`, jak bylo vysvětleno výše.
 
 Tuto možnost můžete otestovat pomocí OBLÉ z terminálu. V instalaci Docker ve Windows je výchozí IP adresa 10.0.75.1, jak je znázorněno na obrázku 4-30.
 
-![Výstup z konzoly pro získání http://10.0.75.1/API/values s kudrlinkou](./media/image30.png)
+![Výstup na konzole od načtení http://10.0.75.1/API/values s kudrlinkou](./media/docker-apps-inner-loop-workflow/test-docker-app-locally-curl.png)
 
 **Obrázek 4-30**. Místní testování aplikace Docker pomocí OBLÉ
 
@@ -267,8 +267,7 @@ Při použití sady Visual Studio pro Windows nebo Mac můžete v Docker ladit t
 
 > [! INFORMACE
 >
-> Další informace o ladění kontejnerů Docker Node. js najdete v <https://blog.docker.com/2016/07/live-debugging-docker/> a. <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>
+> Další informace o ladění kontejnerů Docker Node. js najdete na <https://blog.docker.com/2016/07/live-debugging-docker/> a <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
 
 >[!div class="step-by-step"]
->[Předchozí](docker-apps-development-environment.md)
->[Další](visual-studio-tools-for-docker.md)
+>[Předchozí](docker-apps-development-environment.md)@no__t – 1 –[Další](visual-studio-tools-for-docker.md)

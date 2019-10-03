@@ -1,17 +1,17 @@
 ---
-title: Výzvy a řešení správy distribuovaných dat
+title: Výzvy a řešení pro správu distribuovaných dat
 description: Seznamte se s výzvami a řešeními pro správu distribuovaných dat v celém světě mikroslužeb.
 ms.date: 09/20/2018
-ms.openlocfilehash: 7733a4523e147591151cd0dda26c43992dbe9a41
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c30de24591d5a73fd34087f34a69e9c7ed54cd35
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70295524"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834448"
 ---
-# <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
+# <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení pro správu distribuovaných dat
 
-## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Výzva \#1: Jak definovat hranice jednotlivých mikroslužeb
+## <a name="challenge-1-how-to-define-the-boundaries-of-each-microservice"></a>Challenge \#1: jak definovat hranice každé mikroslužby
 
 Definování hranice mikroslužeb je pravděpodobně první výzvou, kterou každý uživatel najde. Každá mikroslužba musí být součástí vaší aplikace a každá mikroslužba by měla být autonomní se všemi výhodami a výzvami, které přináší. Ale jak identifikujete tyto hranice?
 
@@ -19,7 +19,7 @@ Nejprve se musíte zaměřit na logické doménové modely aplikace a souvisejí
 
 Způsob identifikace hranic mezi více kontexty aplikace s různou doménou pro každý kontext je přesně takový, jak můžete identifikovat hranice pro jednotlivé obchodní mikroslužby a související doménové modely a data. Při pokusu o odpojení mezi těmito mikroslužbami se vždycky pokusíte minimalizovat. V této příručce se dozvíte víc podrobností o této identifikaci a návrhu doménového modelu v oddílu, kde se později [identifikují hranice doménového modelu pro jednotlivé mikroslužby](identify-microservice-domain-model-boundaries.md) .
 
-## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Výzva \#2: Vytvoření dotazů, které načítají data z několika mikroslužeb
+## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Výzva \#2: jak vytvářet dotazy, které načítají data z několika mikroslužeb
 
 Druhá výzva je způsob implementace dotazů, které načítají data z několika mikroslužeb, a současně neumožňuje komunikaci s konverzacemi s těmito mikroslužbami ze vzdálených klientských aplikací. Příkladem může být jedna obrazovka z mobilní aplikace, která potřebuje zobrazit informace o uživateli, které vlastní košík, katalog a identitu uživatelů. Dalším příkladem může být složitá sestava zahrnující mnoho tabulek umístěných v několika mikroslužbách. Správné řešení závisí na složitosti dotazů. Ale v každém případě budete potřebovat způsob, jak agregovat informace, pokud chcete zvýšit efektivitu komunikace systému. Nejoblíbenější řešení jsou následující.
 
@@ -37,7 +37,7 @@ Mějte na paměti, že tato Centralizovaná databáze by se používala jenom pr
 
 Pokud ale návrh vaší aplikace zahrnuje nepřetržitou agregaci informací z různých mikroslužeb pro složité dotazy, může to být příznakem špatného návrhu – mikroslužba by měla být izolovaná, jak je to možné, od ostatních mikroslužeb. (To nezahrnuje sestavy/analýzy, které vždy používají centrální databáze studených dat.) Příčinou tohoto problému často může být důvod, jak mikroslužby sloučit. Musíte vyvážit autonomii vývoje a nasazení každé mikroslužby se silnými závislostmi, soudržnosti a agregací dat.
 
-## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Výzva \#3: Jak dosáhnout konzistence napříč několika mikroslužbami
+## <a name="challenge-3-how-to-achieve-consistency-across-multiple-microservices"></a>Výzva \#3: jak dosáhnout konzistence napříč několika mikroslužbami
 
 Jak bylo uvedeno dříve, data vlastněná jednotlivými mikroslužba jsou pro tuto mikroslužbu soukromá a dají se k ní dostat jenom pomocí jejího rozhraní API mikroslužeb. Proto se zobrazí výzva k implementaci koncových obchodních procesů a zachování konzistence napříč několika mikroslužbami.
 
@@ -47,7 +47,7 @@ V hypotetické verzi monolitické této aplikace při změně ceny v tabulce Pro
 
 V aplikacích založených na mikroslužbách ale tabulky produktů a koše jsou vlastněné příslušnými mikroslužbami. Žádná mikroslužba by nikdy neměla zahrnovat tabulky/úložiště vlastněné jinou mikroslužbou ve svých vlastních transakcích, a ne ani v přímých dotazech, jak je znázorněno na obrázku 4-9.
 
-![Mikroslužba nemůže získat přímý přístup k tabulce v jiné mikroslužbě, přičemž k synchronizaci dat se musí použít konečná konzistence.](./media/image9.png)
+![Diagram znázorňující, že data databáze mikroslužeb nejde sdílet.](./media/distributed-data-management/indepentent-microservice-databases.png)
 
 **Obrázek 4-9**. Mikroslužba nemůže získat přímý přístup k tabulce v jiné mikroslužbě.
 
@@ -59,7 +59,7 @@ Kromě toho se ve stylu KYSELosti nebo dvoufázové transakce potvrzení neměn�
 
 Dobrým řešením tohoto problému je použití konečné konzistence mezi mikroslužbami propojenými prostřednictvím komunikace řízené událostmi a systémem pro publikování a odběr. Tato témata jsou popsaná v části [asynchronní komunikace řízená událostmi](asynchronous-message-based-communication.md#asynchronous-event-driven-communication) dále v této příručce.
 
-## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Výzva \#4: Jak navrhovat komunikaci mezi hranicemi mikroslužeb
+## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Výzva @no__t – 04: jak navrhovat komunikaci napříč hranicemi mikroslužeb
 
 Komunikace mezi hranicemi mikroslužeb je skutečnou výzvou. V tomto kontextu komunikace neodkazuje na protokol, který byste měli použít (HTTP, REST, AMQP, zasílání zpráv a tak dále). Místo toho řeší, který styl komunikace byste měli použít, a zejména to, jak by měly být vaše mikroslužby. V závislosti na úrovni spojení, kdy dojde k chybě, se dopad této chyby na váš systém výrazně liší.
 
@@ -81,12 +81,12 @@ Aby bylo možné vyhovět autonomii mikroslužeb a mít lepší odolnost, měli 
 
 Použití asynchronní komunikace je vysvětleno dalšími podrobnostmi dále v této příručce v části [asynchronní integrace mikroslužeb vynutila samostatnou](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) komunikaci mikroslužeb a [asynchronní komunikaci na základě zpráv](asynchronous-message-based-communication.md).
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další zdroje informací:
 
-- **CAP věta** \
+- **Cap věta** \
   <https://en.wikipedia.org/wiki/CAP_theorem>
 
-- **Konečná konzistence** \
+- Konečná **konzistence**@no__t – 1
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
 - **Úvod do konzistence dat** \
@@ -98,15 +98,14 @@ Použití asynchronní komunikace je vysvětleno dalšími podrobnostmi dále v 
 - **Materializované zobrazení** \
   <https://docs.microsoft.com/azure/architecture/patterns/materialized-view>
 
-- **Charles řádek Kyselina vs. ZÁKLAD Posunutí pH při zpracování transakcí databáze** \
+- **Charles řádek Kyselina vs. BASE: posunování pH zpracování transakcí databáze** \
   <https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/>
 
 - **Kompenzační transakce** \
   <https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction>
 
-- **Udi Dahan. Složení orientované na služby** \
+- **UDI Dahan. Složení orientované na služby** \
   <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 >[!div class="step-by-step"]
->[Předchozí](logical-versus-physical-architecture.md)Další
->[](identify-microservice-domain-model-boundaries.md)
+>[Předchozí](logical-versus-physical-architecture.md)@no__t – 1 –[Další](identify-microservice-domain-model-boundaries.md)

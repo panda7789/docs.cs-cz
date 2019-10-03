@@ -4,14 +4,14 @@ description: Přístup k ukázkám, které jsou v rozsahu od zpracování obrazu
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: cb761524976125c816aae925f0c369eb8c76e7de
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7024a33f8a7fccd6afa51c126454afedd87cceee
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926473"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834300"
 ---
-# <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře aplikací bez serveru a případy použití
+# <a name="serverless-business-scenarios-and-use-cases"></a>Obchodní scénáře bez serveru a případy použití
 
 K dispozici je mnoho případů použití a scénářů pro aplikace bez serveru. Tato kapitola obsahuje ukázky, které ilustrují různé scénáře. Scénáře obsahují odkazy na související dokumentaci a veřejné úložiště zdrojového kódu. Ukázky v této kapitole vám umožní začít pracovat s vlastními vytvářením a implementací řešení bez serveru.
 
@@ -27,13 +27,13 @@ Samostatná aplikace s jednou stránkou (SPA) volá funkci bez serveru, která u
 
 ![Galerie automatických obrázků](./media/automated-image-gallery.png)
 
-Úplné úložiště a pokyny pro sestavení aplikace logiky jsou k dispozici zde: [Připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue)
+Úplné úložiště a pokyny pro sestavení aplikace logiky jsou k dispozici zde: [připevnit Event gridu](https://github.com/JeremyLikness/Event-Grid-Glue).
 
 ## <a name="cross-platform-mobile-client-using-xamarinforms-and-functions"></a>Mobilní klient pro různé platformy pomocí Xamarin. Forms a Functions
 
 Podívejte se, jak implementovat jednoduchou službu Azure bez serveru na webovém portálu Azure nebo v aplikaci Visual Studio. Sestavte klienta pomocí Xamarin. Forms, který běží v Androidu, iOS a Windows. Aplikace se pak rozpraví na použití JavaScript Object Notation (JSON) jako komunikačního média mezi serverem a mobilními klienty pomocí back-endu bez serveru.
 
-Další informace najdete v tématu [implementace jednoduché funkce Azure pomocí klienta Xamarin. Forms.](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+Další informace najdete v tématu [implementace jednoduché funkce Azure pomocí klienta Xamarin. Forms](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/).
 
 ## <a name="generate-a-photo-mosaic-with-serverless-image-recognition"></a>Generování fotky s rozpoznáváním imagí bez serveru
 
@@ -55,7 +55,7 @@ Aplikace používá funkci proxy serveru Azure Functions k povolení refaktoring
 
 Proxy poskytuje jeden koncový bod rozhraní API, který se aktualizuje, aby se přesměrovaly jednotlivé požadavky při jejich přesunu na funkce bez serveru.
 
-Můžete si prohlédnout video, které projde celou migrací: [Přezvednutí a posunutí s využitím Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102) Přístup k ukázkovému kódu: [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17).
+Můžete si prohlédnout video, které projde celou migrací: [zvednutí a posunutí s Azure Functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102). Přístup k ukázkovému kódu: [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17).
 
 ## <a name="parse-a-csv-file-and-insert-into-a-database"></a>Analyzovat soubor CSV a vložit do databáze
 
@@ -77,7 +77,7 @@ Pak můžete vytvořit řídicí panel Power BI, abyste získali přehled o shro
 
 ![Příklad Power BI](./media/power-bi-example.png)
 
-Úplné úložiště propojení – úložiště s pokyny jsou k dispozici zde: [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener). O zjednodušené verzi si můžete přečíst tady: [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/).
+Úplné úložiště propojení s pokyny najdete tady: [zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener). O zjednodušené verzi si můžete přečíst tady: [Azure Storage pro aplikace .NET bez serveru v řádu minut](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/).
 
 ## <a name="verify-device-connectivity-using-a-ping"></a>Ověření připojení zařízení pomocí příkazů pro odeslání
 
@@ -85,7 +85,7 @@ Ukázka se skládá z IoT Hub Azure a funkce Azure Functions. Nová zpráva v Io
 
 Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příkazového testu](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/).
 
-## <a name="recommended-resources"></a>Doporučené prostředky
+## <a name="recommended-resources"></a>Doporučené materiály
 
 * [Generátor Azure Functions Photo Mosaic](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
 * [Azure IoT Hub – příkazy pro odesílání](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
@@ -98,5 +98,4 @@ Další informace najdete v tématu věnovaném nástroji [Azure IoT Hub příka
 * [Zkrácení adresy URL bez serveru](https://github.com/jeremylikness/serverless-url-shortener)
 
 >[!div class="step-by-step"]
->[Předchozí](orchestration-patterns.md)Další
->[](serverless-conclusion.md)
+>[Předchozí](orchestration-patterns.md)@no__t – 1 –[Další](serverless-conclusion.md)
