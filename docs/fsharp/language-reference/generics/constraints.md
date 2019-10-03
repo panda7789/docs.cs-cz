@@ -1,17 +1,17 @@
 ---
 title: Omezení
-description: Další informace o F# omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.
+description: Přečtěte F# si o omezeních, která se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkci.
 ms.date: 05/16/2016
-ms.openlocfilehash: bb6625636f0465dd608ae2e8a8986d043b62b6e4
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 9912ba63138d893a7c616661dd2b1cbdbe51916c
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378186"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736794"
 ---
 # <a name="constraints"></a>Omezení
 
-Toto téma popisuje omezení, která můžete použít pro obecný typ parametry k určení požadavků pro argument typu v obecném typu nebo funkce.
+Toto téma popisuje omezení, která lze použít na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkci.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,31 +21,31 @@ type-parameter-list when constraint1 [ and constraint2]
 
 ## <a name="remarks"></a>Poznámky
 
-Existuje několik jiná omezení, které lze použít k omezení typů, které je možné v obecném typu. Následující tabulka uvádí a popisuje těchto omezení.
+Existuje několik různých omezení, která lze použít pro omezení typů, které lze použít v obecném typu. Následující tabulka uvádí a popisuje tato omezení.
 
-|Omezení|Syntaxe|Popis|
+|Jedinečn|Syntaxe|Popis|
 |----------|------|-----------|
-|Omezení typu|*parametr typu* :&gt; *typu*|Zadaný typ musí být větší nebo odvozené od typu určeného nebo, pokud je typ rozhraní, zadaný typ musí implementovat rozhraní.|
-|Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale ne F# seznamu, řazené kolekce členů, funkce, třídy, záznam nebo typy sjednocení.|
-|Omezení explicitního člena|[(]*parametr typu* [nebo... nebo *parametr typu*)]: (*signatura člena*)|Nejméně jeden z argumentů typu, který je k dispozici musí mít člena, který má zadaný podpis; nejsou určené pro obecné použití. Členy musí být buď explicitně definované u typu nebo součást rozšíření implicitních typů, bude platné cíle pro explicitní člen omezení.|
-|Omezení konstruktoru|*parametr typu* : (nové: jednotka –&gt; :)|Zadaný typ musí mít výchozí konstruktor.|
-|Omezení typu hodnoty|: – struktura|Zadaný typ musí být typem hodnoty .NET.|
-|Omezení typu odkazu|: není – struktura|Zadaný typ musí být odkazový typ .NET.|
-|Omezení typu výčtu|: výčtu&lt;*základní typ*&gt;|Zadaný typ musí být výčtového typu, který má zadaný podkladový typ; nejsou určené pro obecné použití.|
-|Omezení delegáta|: delegovat&lt;*typ řazené kolekce členů parametru*, *návratový typ*&gt;|Zadaný typ musí být typem delegáta, který má zadané argumenty a vrátí hodnotu; nejsou určené pro obecné použití.|
-|Porovnání omezení|: porovnání|Zadaný typ musí podporovat porovnání.|
-|Omezení rovnosti|: rovnosti|Zadaný typ musí podporovat rovnosti.|
-|Nespravované omezení|: nespravovaných|Zadaný typ musí být nespravovaným typem. Nespravované typy jsou určité primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, nebo `decimal`), výčtové typy `nativeptr<_>`, nebo strukturu neobecnou jehož pole jsou všechny nespravovaných typů.|
+|Omezení typu|*typ-parametr* : &gt; *typ*|Poskytnutý typ musí být roven nebo odvozen od zadaného typu, nebo, pokud je typ rozhraní, poskytnutý typ musí implementovat rozhraní.|
+|Omezení hodnoty null|*parametr typu* : null|Poskytnutý typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů rozhraní .NET, F# ale ne seznam, řazené kolekce členů, funkce, třídy, záznam nebo sjednocení.|
+|Explicitní omezení členů|[(]*typ-parametr* [nebo... nebo *parametr typu*)]: (*Member-Signature*)|Aspoň jeden z poskytnutých argumentů typu musí mít člena, který má zadaný podpis. není určeno pro běžné použití. Členy musí být buď explicitně definovány pro typ nebo část rozšíření implicitního typu, aby byly platnými cíli pro explicitní omezení členů.|
+|Omezení konstruktoru|*parametr typu* : (New: unit-&gt; ' a)|Poskytnutý typ musí mít konstruktor bez parametrů.|
+|Omezení typu hodnoty|: struct|Poskytnutý typ musí být typ hodnoty .NET.|
+|Omezení typu odkazu|: not struct|Poskytnutý typ musí být typ odkazu .NET.|
+|Omezení typu výčtu|: enum @ no__t-0*podkladového typu*&gt;|Poskytnutý typ musí být Výčtový typ, který má zadaný základní typ. není určeno pro běžné použití.|
+|Omezení delegování|: Delegate @ no__t-0*řazené kolekce členů – typ parametru*, *návratový typ*&gt;|Poskytnutý typ musí být delegovaný typ, který má zadané argumenty a návratovou hodnotu. není určeno pro běžné použití.|
+|Omezení porovnání|: porovnání|Poskytnutý typ musí podporovat porovnání.|
+|Omezení rovnosti|: rovnost|Poskytnutý typ musí podporovat rovnost.|
+|Nespravované omezení|: nespravované|Poskytnutý typ musí být nespravovaný typ. Nespravované typy jsou buď některé primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, 0, 1, 2 nebo 3), výčtové typy, 4 nebo neobecné. struktura, jejíž pole jsou všechny nespravované typy.|
 
-Je nutné přidat omezení, pokud má váš kód používat funkce, která je obecně dostupná v omezení typu, ale ne v typy. Například pokud používáte omezení typu k určení typu třídy, můžete použít některou z metod této třídy v typu nebo obecné funkce.
+Je nutné přidat omezení, pokud váš kód musí používat funkci, která je k dispozici pro typ omezení, ale ne pro obecné typy. Například pokud použijete omezení typu k určení typu třídy, můžete použít libovolnou z metod této třídy v obecné funkci nebo typu.
 
-Určení omezení je to někdy nezbytné při zápisu parametry typu explicitně, protože bez omezení, kompilátor neobsahuje nijak ověřit, že bude k dispozici na libovolný typ, který může být zadán v době běhu pro typ funkce, které používáte parametr.
+Určení omezení se někdy vyžaduje při explicitním zápisu parametrů typu, protože bez omezení nemá kompilátor žádný způsob, jak ověřit, že funkce, které používáte, budou k dispozici pro libovolný typ, který může být dodán v době běhu pro daný typ. ukazatele.
 
-Nejběžnější omezení použít v F# kódu se omezení typu, které určují základní třídy nebo rozhraní. Další omezení jsou používány buď F# knihovny implementovat určité funkce, jako je například omezení explicitního člena, který se používá k implementaci pro aritmetické operátory přetížení operátoru nebo hlavně, protože jsou k dispozici F# podporuje kompletní sadu omezení, která je podporována modulem common language runtime.
+Nejběžnějšími omezeními, která používáte F# v kódu, jsou omezení typu, která určují základní třídy nebo rozhraní. Ostatní omezení používá knihovna k implementaci určitých funkcí F# , jako je například explicitní omezení členů, které se používá k implementaci přetížení operátoru pro aritmetické operátory nebo jsou k dispozici hlavně z těchto důvodů F# . podporuje kompletní sadu omezení, která je podporována modulem CLR (Common Language Runtime).
 
-Během procesu odvození typu jsou některá omezení vyvozena na základě kompilátor automaticky. Například, pokud použijete `+` operátor ve funkci, kompilátor odvodí omezením explicitního člena na tyto typy proměnných, které se používají ve výrazu.
+Během procesu odvození typu je některá omezení odvozena automaticky kompilátorem. Například pokud použijete operátor `+` ve funkci, kompilátor odvodí explicitní omezení členů u typů proměnných, které se používají ve výrazu.
 
-Následující kód ukazuje některé deklarace omezení.
+Následující kód ilustruje některé deklarace omezení:
 
 ```fsharp
 // Base Type Constraint
@@ -111,7 +111,7 @@ type Class14<'T,'U when 'T : equality and 'U : equality> =
 class end
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Další informace najdete v tématech
 
 - [Obecné typy](index.md)
-- [Omezení](constraints.md)
+- [Jednotlivým](constraints.md)
