@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí třídy DataContractSerializer (Visual Basic)'
+title: 'Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: ecaea518-8a0f-4249-b4e5-9b3fb0cdd8ad
-ms.openlocfilehash: 9593dede3eb29aadc7ffb494e1d728cb8e679f0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b747f505b0314c082929fbce25a67f79dd4af35
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054429"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835166"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a><span data-ttu-id="28bb0-102">Postupy: Serializace pomocí třídy DataContractSerializer (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28bb0-102">How to: Serialize Using DataContractSerializer (Visual Basic)</span></span>
-<span data-ttu-id="28bb0-103">Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="28bb0-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
+# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a><span data-ttu-id="3997d-102">Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3997d-102">How to: Serialize Using DataContractSerializer (Visual Basic)</span></span>
+<span data-ttu-id="3997d-103">Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="3997d-103">This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="28bb0-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="28bb0-104">Example</span></span>  
- <span data-ttu-id="28bb0-105">Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty.</span><span class="sxs-lookup"><span data-stu-id="28bb0-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="28bb0-106">K textovým souborům je serializuje a deserializuje je z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="28bb0-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
+## <a name="example"></a><span data-ttu-id="3997d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3997d-104">Example</span></span>  
+ <span data-ttu-id="3997d-105">Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="3997d-105">The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects.</span></span> <span data-ttu-id="3997d-106">Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.</span><span class="sxs-lookup"><span data-stu-id="3997d-106">It then serializes them to text files, and then deserializes them from the text files.</span></span>  
   
 ```vb  
 Imports System  
@@ -72,9 +72,9 @@ Public Class XElementNullContainer
 End Class  
 ```  
   
- <span data-ttu-id="28bb0-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="28bb0-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="3997d-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="3997d-107">This example produces the following output:</span></span>  
   
-```  
+```console  
 Testing for type: System.Xml.Linq.XElement  
   Deserialized type: System.Xml.Linq.XElement  
 Testing for type: XElementContainer  
@@ -83,6 +83,6 @@ Testing for type: XElementNullContainer
   Deserialized type: XElementNullContainer  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="28bb0-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28bb0-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3997d-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3997d-108">See also</span></span>
 
-- [<span data-ttu-id="28bb0-109">Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28bb0-109">Serializing Object Graphs that Contain XElement Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+- [<span data-ttu-id="3997d-109">Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3997d-109">Serializing Object Graphs that Contain XElement Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)

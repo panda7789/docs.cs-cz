@@ -2,26 +2,26 @@
 title: Refaktoring pomocí metody rozšíření (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: 360b723fd8ef63338213dfcaa2c00f659ba3e74a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6ed0e81a7139411507d8f3c16b34a50b2e7aebf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666079"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834896"
 ---
-# <a name="refactoring-using-an-extension-method-visual-basic"></a><span data-ttu-id="3ce15-102">Refaktoring pomocí metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3ce15-102">Refactoring Using an Extension Method (Visual Basic)</span></span>
-<span data-ttu-id="3ce15-103">Tento příklad je založen na předchozím příkladu [načtení textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="3ce15-103">This example builds on the previous example, [Retrieving the Text of the Paragraphs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), by refactoring the concatenation of strings using a pure function that is implemented as an extension method.</span></span>  
+# <a name="refactoring-using-an-extension-method-visual-basic"></a><span data-ttu-id="f7142-102">Refaktoring pomocí metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f7142-102">Refactoring Using an Extension Method (Visual Basic)</span></span>
+<span data-ttu-id="f7142-103">Tento příklad sestaví v předchozím příkladu a [načítá text z odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)refaktoringem zřetězení řetězců pomocí funkce Pure, která je implementována jako metoda rozšíření.</span><span class="sxs-lookup"><span data-stu-id="f7142-103">This example builds on the previous example, [Retrieving the Text of the Paragraphs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), by refactoring the concatenation of strings using a pure function that is implemented as an extension method.</span></span>  
   
- <span data-ttu-id="3ce15-104">Předchozí příklad použitý <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardního dotazu pro řetězení více řetězců do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="3ce15-104">The previous example used the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string.</span></span> <span data-ttu-id="3ce15-105">Je však pohodlnější zapisovat metodu rozšíření k tomu, protože výsledná menší a více jednoduchých dotazů.</span><span class="sxs-lookup"><span data-stu-id="3ce15-105">However, it is more convenient to write an extension method to do this, because the resulting query smaller and more simple.</span></span>  
+ <span data-ttu-id="f7142-104">Předchozí příklad použil standardní operátor dotazu <xref:System.Linq.Enumerable.Aggregate%2A> k zřetězení více řetězců do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="f7142-104">The previous example used the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string.</span></span> <span data-ttu-id="f7142-105">Je ale pohodlnější napsat metodu rozšíření k tomu, protože výsledný dotaz je menší a jednodušší.</span><span class="sxs-lookup"><span data-stu-id="f7142-105">However, it is more convenient to write an extension method to do this, because the resulting query smaller and more simple.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3ce15-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="3ce15-106">Example</span></span>  
- <span data-ttu-id="3ce15-107">V tomto příkladu zpracovává dokumentu WordprocessingML načtení odstavců, styl k jednotlivým odstavcům a každý odstavec.</span><span class="sxs-lookup"><span data-stu-id="3ce15-107">This example processes a WordprocessingML document, retrieving the paragraphs, the style of each paragraph, and the text of each paragraph.</span></span> <span data-ttu-id="3ce15-108">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="3ce15-108">This example builds on the previous examples in this tutorial.</span></span>  
+## <a name="example"></a><span data-ttu-id="f7142-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="f7142-106">Example</span></span>  
+ <span data-ttu-id="f7142-107">Tento příklad zpracovává dokument WordprocessingML, načítá odstavce, styl každého odstavce a text každého odstavce.</span><span class="sxs-lookup"><span data-stu-id="f7142-107">This example processes a WordprocessingML document, retrieving the paragraphs, the style of each paragraph, and the text of each paragraph.</span></span> <span data-ttu-id="f7142-108">Tento příklad sestaví na předchozích příkladech v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="f7142-108">This example builds on the previous examples in this tutorial.</span></span>  
   
- <span data-ttu-id="3ce15-109">Tento příklad obsahuje více přetížení `StringConcatenate` metody.</span><span class="sxs-lookup"><span data-stu-id="3ce15-109">The example contains multiple overloads of the `StringConcatenate` method.</span></span>  
+ <span data-ttu-id="f7142-109">Příklad obsahuje více přetížení metody `StringConcatenate`.</span><span class="sxs-lookup"><span data-stu-id="f7142-109">The example contains multiple overloads of the `StringConcatenate` method.</span></span>  
   
- <span data-ttu-id="3ce15-110">Můžete najít pokyny pro vytvoření zdrojového dokumentu v tomto příkladu v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="3ce15-110">You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="f7142-110">Pokyny pro vytvoření zdrojového dokumentu pro tento příklad najdete v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="f7142-110">You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="3ce15-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="3ce15-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="3ce15-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="3ce15-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="f7142-111">Tento příklad používá třídy ze sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="f7142-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="f7142-112">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="f7142-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 <System.Runtime.CompilerServices.Extension()> _  
@@ -64,10 +64,10 @@ ByVal func As Func(Of T, String), ByVal separator As String) As String
 End Function  
 ```  
   
-## <a name="example"></a><span data-ttu-id="3ce15-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="3ce15-113">Example</span></span>  
- <span data-ttu-id="3ce15-114">Existují čtyři přetížení `StringConcatenate` metody.</span><span class="sxs-lookup"><span data-stu-id="3ce15-114">There are four overloads of the `StringConcatenate` method.</span></span> <span data-ttu-id="3ce15-115">Jedním přetížením jednoduše vezme kolekci řetězců a vrátí jeden řetězec.</span><span class="sxs-lookup"><span data-stu-id="3ce15-115">One overload simply takes a collection of strings and returns a single string.</span></span> <span data-ttu-id="3ce15-116">Další přetížení může trvat kolekci libovolného typu a delegáta této projektů z jednotlivý prvek kolekce na řetězec.</span><span class="sxs-lookup"><span data-stu-id="3ce15-116">Another overload can take a collection of any type, and a delegate that projects from a singleton of the collection to a string.</span></span> <span data-ttu-id="3ce15-117">Existují dvě další přetížení, které vám umožňují určit oddělovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="3ce15-117">There are two more overloads that allow you to specify a separator string.</span></span>  
+## <a name="example"></a><span data-ttu-id="f7142-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="f7142-113">Example</span></span>  
+ <span data-ttu-id="f7142-114">Existují čtyři přetížení metody `StringConcatenate`.</span><span class="sxs-lookup"><span data-stu-id="f7142-114">There are four overloads of the `StringConcatenate` method.</span></span> <span data-ttu-id="f7142-115">Jedno přetížení jednoduše převezme kolekci řetězců a vrátí jeden řetězec.</span><span class="sxs-lookup"><span data-stu-id="f7142-115">One overload simply takes a collection of strings and returns a single string.</span></span> <span data-ttu-id="f7142-116">Jiné přetížení může převzít kolekci libovolného typu a delegáta, který je projektem z typu Singleton, na řetězec.</span><span class="sxs-lookup"><span data-stu-id="f7142-116">Another overload can take a collection of any type, and a delegate that projects from a singleton of the collection to a string.</span></span> <span data-ttu-id="f7142-117">Existují dvě přetížení, která umožňují zadat řetězec oddělovače.</span><span class="sxs-lookup"><span data-stu-id="f7142-117">There are two more overloads that allow you to specify a separator string.</span></span>  
   
- <span data-ttu-id="3ce15-118">Následující kód používá všechna čtyři přetížení.</span><span class="sxs-lookup"><span data-stu-id="3ce15-118">The following code uses all four overloads.</span></span>  
+ <span data-ttu-id="f7142-118">Následující kód používá všechna čtyři přetížení.</span><span class="sxs-lookup"><span data-stu-id="f7142-118">The following code uses all four overloads.</span></span>  
   
 ```vb  
 Dim numbers As String() = {"one", "two", "three"}  
@@ -80,17 +80,17 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString()))
 Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString(), ":"))  
 ```  
   
- <span data-ttu-id="3ce15-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="3ce15-119">This example produces the following output:</span></span>  
+ <span data-ttu-id="f7142-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f7142-119">This example produces the following output:</span></span>  
   
-```  
+```console  
 onetwothree  
 one:two:three:  
 123  
 1:2:3:  
 ```  
   
-## <a name="example"></a><span data-ttu-id="3ce15-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="3ce15-120">Example</span></span>  
- <span data-ttu-id="3ce15-121">V příkladu teď můžete upravit tak, aby využít novou metodu rozšíření:</span><span class="sxs-lookup"><span data-stu-id="3ce15-121">Now, the example can be modified to take advantage of the new extension method:</span></span>  
+## <a name="example"></a><span data-ttu-id="f7142-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="f7142-120">Example</span></span>  
+ <span data-ttu-id="f7142-121">Nyní lze příklad upravit tak, aby využil nové metody rozšíření:</span><span class="sxs-lookup"><span data-stu-id="f7142-121">Now, the example can be modified to take advantage of the new extension method:</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -216,9 +216,9 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="3ce15-122">Tento příklad vytvoří následující výstup při použití u dokumentu je popsáno v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="3ce15-122">This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="f7142-122">Tento příklad vytvoří následující výstup při použití v dokumentu popsaném v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="f7142-122">This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (Visual Basic)](creating-the-source-office-open-xml-document.md).</span></span>
   
-```  
+```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
 StyleName:Normal ><  
 StyleName:Normal >The following example prints to the console.<  
@@ -236,14 +236,14 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- <span data-ttu-id="3ce15-123">Všimněte si, že tento Refaktoring je varianta refaktoring do čistých funkcí.</span><span class="sxs-lookup"><span data-stu-id="3ce15-123">Note that this refactoring is a variant of refactoring into a pure function.</span></span> <span data-ttu-id="3ce15-124">Další téma vás seznámí představu o které budou zohledňovat do čistých funkcí podrobněji.</span><span class="sxs-lookup"><span data-stu-id="3ce15-124">The next topic will introduce the idea of factoring into pure functions in more detail.</span></span>  
+ <span data-ttu-id="f7142-123">Všimněte si, že tento refaktoring je variantou refaktoringu do funkce Pure.</span><span class="sxs-lookup"><span data-stu-id="f7142-123">Note that this refactoring is a variant of refactoring into a pure function.</span></span> <span data-ttu-id="f7142-124">V dalším tématu se dozvíte, jak podrobnější informace o faktorování čistě funkcí.</span><span class="sxs-lookup"><span data-stu-id="f7142-124">The next topic will introduce the idea of factoring into pure functions in more detail.</span></span>  
   
-## <a name="next-steps"></a><span data-ttu-id="3ce15-125">Další kroky</span><span class="sxs-lookup"><span data-stu-id="3ce15-125">Next Steps</span></span>  
- <span data-ttu-id="3ce15-126">Následující příklad ukazuje, jak Refaktorovat tento kód jiným způsobem pomocí čisté funkce:</span><span class="sxs-lookup"><span data-stu-id="3ce15-126">The next example shows how to refactor this code in another way, by using pure functions:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="f7142-125">Další kroky</span><span class="sxs-lookup"><span data-stu-id="f7142-125">Next Steps</span></span>  
+ <span data-ttu-id="f7142-126">Následující příklad ukazuje, jak refaktorovat tento kód jiným způsobem pomocí funkce Pure:</span><span class="sxs-lookup"><span data-stu-id="f7142-126">The next example shows how to refactor this code in another way, by using pure functions:</span></span>  
   
-- [<span data-ttu-id="3ce15-127">Refaktoring pomocí čisté funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3ce15-127">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [<span data-ttu-id="f7142-127">Refaktoring pomocí funkce Pure (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f7142-127">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
-## <a name="see-also"></a><span data-ttu-id="3ce15-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3ce15-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f7142-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f7142-128">See also</span></span>
 
-- [<span data-ttu-id="3ce15-129">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3ce15-129">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [<span data-ttu-id="3ce15-130">Refaktoring do čistých funkcí (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3ce15-130">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [<span data-ttu-id="f7142-129">Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f7142-129">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="f7142-130">Refaktoring na čistě funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f7142-130">Refactoring Into Pure Functions (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

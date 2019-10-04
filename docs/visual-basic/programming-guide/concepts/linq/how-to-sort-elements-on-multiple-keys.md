@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Seřadit elementy na více klíčů (Visual Basic)'
+title: 'Postupy: řazení elementů na více klíčů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0c4c1462-3047-4766-b9e2-7e0e9cc7f421
-ms.openlocfilehash: dfb70a0ea4430d6771c319ab8ed351e8507bd89d
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 9e70a54dcf7ff8cd2e0f767773ad7a56b1da2330
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710284"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835130"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-visual-basic"></a><span data-ttu-id="b17ee-102">Postupy: Seřadit elementy na více klíčů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b17ee-102">How to: Sort Elements on Multiple Keys (Visual Basic)</span></span>
-<span data-ttu-id="b17ee-103">V tomto tématu se dozvíte, jak řadit podle více klíčů.</span><span class="sxs-lookup"><span data-stu-id="b17ee-103">This topic shows how to sort on multiple keys.</span></span>  
+# <a name="how-to-sort-elements-on-multiple-keys-visual-basic"></a><span data-ttu-id="7c31a-102">Postupy: řazení elementů na více klíčů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7c31a-102">How to: Sort Elements on Multiple Keys (Visual Basic)</span></span>
+<span data-ttu-id="7c31a-103">V tomto tématu se dozvíte, jak řadit podle více klíčů.</span><span class="sxs-lookup"><span data-stu-id="7c31a-103">This topic shows how to sort on multiple keys.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b17ee-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b17ee-104">Example</span></span>  
- <span data-ttu-id="b17ee-105">V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.</span><span class="sxs-lookup"><span data-stu-id="b17ee-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>  
+## <a name="example"></a><span data-ttu-id="7c31a-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="7c31a-104">Example</span></span>  
+ <span data-ttu-id="7c31a-105">V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.</span><span class="sxs-lookup"><span data-stu-id="7c31a-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>  
   
- <span data-ttu-id="b17ee-106">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="b17ee-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="7c31a-106">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7c31a-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -34,9 +34,9 @@ For Each r In result
 Next  
 ```  
   
- <span data-ttu-id="b17ee-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b17ee-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="7c31a-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7c31a-107">This code produces the following output:</span></span>  
   
-```  
+```console  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997  
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997  
@@ -61,10 +61,10 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997  
 ```  
   
-## <a name="example"></a><span data-ttu-id="b17ee-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="b17ee-108">Example</span></span>  
- <span data-ttu-id="b17ee-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b17ee-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="b17ee-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="b17ee-110">For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="7c31a-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="7c31a-108">Example</span></span>  
+ <span data-ttu-id="7c31a-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7c31a-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="7c31a-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7c31a-110">For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="b17ee-111">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="b17ee-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>  
+ <span data-ttu-id="7c31a-111">Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="7c31a-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>  
   
 ```vb  
 Imports <xmlns='http://www.adventure-works.com'>  
@@ -89,9 +89,9 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="b17ee-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b17ee-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="7c31a-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7c31a-112">This code produces the following output:</span></span>  
   
-```  
+```console  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997  
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997  
@@ -116,6 +116,6 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b17ee-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b17ee-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7c31a-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c31a-113">See also</span></span>
 
-- [<span data-ttu-id="b17ee-114">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b17ee-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="7c31a-114">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7c31a-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
