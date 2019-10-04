@@ -2,20 +2,20 @@
 title: Architektura Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: 1d4c6495-d64a-46d0-896a-3a01fac90aa9
-ms.openlocfilehash: d341ebd354d5324c5ad71436837cb85737f46c08
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e2effc0f53153057b8a9034e4dc80cb19bbe7685
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64605896"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834866"
 ---
 # <a name="windows-workflow-architecture"></a>Architektura Windows Workflow
-Windows Workflow Foundation (WF) zvýší úroveň abstrakce pro vývoj interaktivní dlouho běžící aplikace. Pracovní jednotky jsou zapouzdřeny jako aktivity. Aktivity spuštění v prostředí, které poskytuje funkce pro řízení toku, zpracování výjimek, šíření chyb, trvalosti dat o stavu, načítání a uvolňování probíhajících pracovních postupů z paměti, sledování a tok transakcí.  
+Programovací model Windows Workflow Foundation (WF) vyvolává úroveň abstrakce pro vývoj interaktivních dlouhotrvajících aplikací. Pracovní jednotky se zapouzdřují jako aktivity. Aktivity běží v prostředí, které poskytuje vybavení pro řízení toku, zpracování výjimek, šíření chyb, stálost stavových dat, načítání a uvolňování probíhajících pracovních postupů z paměti, sledování a toku transakcí.  
   
 ## <a name="activity-architecture"></a>Architektura aktivity  
- Aktivity jsou vyvíjeny jako typy CLR, které jsou odvozeny z buď <xref:System.Activities.Activity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, nebo <xref:System.Activities.NativeActivity>, nebo jejich variant, které vrací hodnotu, <xref:System.Activities.Activity%601>, <xref:System.Activities.CodeActivity%601>, <xref:System.Activities.AsyncCodeActivity%601>, nebo <xref:System.Activities.NativeActivity%601>. Vývoj aktivit, které jsou odvozeny z <xref:System.Activities.Activity> mu umožní Poskládejte si můžete rychle vytvořit jednotky práce, které jsou spuštěny v prostředí pracovního postupu již existujících aktivit. <xref:System.Activities.CodeActivity>, na druhé straně, umožňuje spouštění logiky nebylo vytvořeno ve spravovaném kódu použitím <xref:System.Activities.CodeActivityContext> především pro přístup k argumenty aktivity. <xref:System.Activities.AsyncCodeActivity> je podobný <xref:System.Activities.CodeActivity> s tím rozdílem, že je možné provádět asynchronní úlohy. Vývoj aktivit, které jsou odvozeny z <xref:System.Activities.NativeActivity> umožňuje uživatelům přístup k modulu runtime prostřednictvím <xref:System.Activities.NativeActivityContext> pro funkce, jako je plánování podřízené položky, vytváření záložek, volání asynchronní práce, zápisu transakce a další.  
+ Aktivity jsou vyvíjeny jako typy CLR, které jsou odvozeny od <xref:System.Activities.Activity>, <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity> nebo <xref:System.Activities.NativeActivity> nebo jejich varianty, které vracejí hodnotu, <xref:System.Activities.Activity%601>, <xref:System.Activities.CodeActivity%601>, <xref:System.Activities.AsyncCodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>. Vývoj aktivit odvozený od <xref:System.Activities.Activity> umožňuje uživateli sestavovat již existující aktivity a rychle tak vytvářet jednotky práce, které se spouštějí v prostředí pracovního postupu. <xref:System.Activities.CodeActivity> na druhé straně umožňuje logiku provádění vytvořit ve spravovaném kódu pomocí <xref:System.Activities.CodeActivityContext> primárně pro přístup k argumentům aktivity. <xref:System.Activities.AsyncCodeActivity> se podobá <xref:System.Activities.CodeActivity> s tím rozdílem, že lze použít k implementaci asynchronních úloh. Vývoj aktivit odvozený od <xref:System.Activities.NativeActivity> umožňuje uživatelům přistupovat k modulu runtime prostřednictvím <xref:System.Activities.NativeActivityContext> pro funkce, jako je plánování podřízených objektů, vytváření záložek, vyvolání asynchronní práce, registrace transakcí a další.  
   
- Vytváření aktivit, které jsou odvozeny z <xref:System.Activities.Activity> je deklarativní a dají se vytvářet tyto aktivity v XAML. V následujícím příkladu volá aktivita `Prompt` je vytvořený pomocí další aktivity pro zpracování textu.  
+ Aktivity vytváření, které jsou odvozeny od <xref:System.Activities.Activity> jsou deklarativní a tyto aktivity lze vytvořit v jazyce XAML. V následujícím příkladu se aktivita s názvem `Prompt` vytvoří pomocí jiných aktivit pro tělo provádění.  
   
 ```xml  
 <Activity x:Class='Prompt'  
@@ -36,17 +36,17 @@ xmlns="http://schemas.microsoft.com/2009/workflow">
 ```  
   
 ## <a name="activity-context"></a>Kontext aktivity  
- <xref:System.Activities.ActivityContext> Je autorem aktivity rozhraní pro modul runtime pracovního postupu a poskytuje přístup k modulu runtime řadu funkcí. V následujícím příkladu je definován aktivity, které používá kontext spuštění pro vytvoření záložky (mechanismus, který umožňuje aktivita registrace bodu pokračování v provádění, který šlo obnovit hostitele předávání dat o aktivitě).  
+ @No__t-0 je rozhraní autora aktivity pro modul runtime pracovního postupu a poskytuje přístup k spoustě funkcí běhového prostředí. V následujícím příkladu je definována aktivita, která používá kontext spuštění k vytvoření záložky (mechanismus, který umožňuje aktivity registrovat bod pokračování ve svém spuštění, který může být obnoven hostitelem předávání dat do aktivity).  
   
  [!code-csharp[CFX_WorkflowApplicationExample#15](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#15)]  
   
 ## <a name="activity-life-cycle"></a>Životní cyklus aktivity  
- Instance aktivity na začátku <xref:System.Activities.ActivityInstanceState.Executing> stavu. Pokud nedojde k výjimky, zůstane v tomto stavu, dokud všechny podřízené aktivity jsou dokončené, provádění a jakékoli jiné probíhající práce (<xref:System.Activities.Bookmark> objekty, například) je dokončeno, na které bod přechody <xref:System.Activities.ActivityInstanceState.Closed> stavu. Nadřazená instance aktivity požádat o zrušení; podřízené Pokud podřízená je možné zrušit dokončí za <xref:System.Activities.ActivityInstanceState.Canceled> stavu. Pokud během provádění dojde k výjimce, modul runtime umístí aktivitu <xref:System.Activities.ActivityInstanceState.Faulted> stavu a rozšíří výjimku řetězem nadřazené aktivity. Stavy tři dokončení aktivity jsou následující:  
+ Instance aktivity začíná ve stavu <xref:System.Activities.ActivityInstanceState.Executing>. Pokud nedošlo k výjimkám, zůstane v tomto stavu, dokud nebudou dokončeny všechny podřízené aktivity a dokud nejsou dokončeny všechny ostatní objekty, které čekají na vyřízení (<xref:System.Activities.Bookmark> objektů), a v takovém případě přejdete do stavu <xref:System.Activities.ActivityInstanceState.Closed>. Nadřazená instance aktivity může požádat o zrušení podřízeného objektu. Pokud je možné podřízenou položku zrušit, dokončí se ve stavu <xref:System.Activities.ActivityInstanceState.Canceled>. Pokud je vyvolána výjimka během provádění, modul runtime vloží aktivitu do stavu @no__t 0 a rozšíří výjimku do nadřazeného řetězce aktivit. Níže jsou uvedené tři stavy dokončování aktivity:
   
-- **Zavřít:** Aktivita dokončil svou práci a byl ukončen.  
+- **Uzavřeno:** Aktivita dokončila svoji práci a ukončila ji.  
   
-- **Zrušeno:** Aktivita má řádně opuštěných svou práci a byl ukončen. Pracovní není explicitně vrácena zpět, když se zadá tento stav.  
+- **Zrušeno:** Aktivita byla řádně opuštěna a ukončena. Práce není explicitně vrácena zpět, pokud je tento stav zadán.  
   
-- **Došlo k chybě:** Aktivita došlo k chybě a byl ukončen bez dokončení práce.  
+- **Došlo k chybě:** V aktivitě došlo k chybě a byla ukončena bez dokončení práce.  
   
- Aktivity zůstanou v <xref:System.Activities.ActivityInstanceState.Executing> stav, když jsou trvalé nebo byla uvolněna.
+ Aktivity zůstávají ve stavu <xref:System.Activities.ActivityInstanceState.Executing>, pokud jsou trvalé nebo Nenačtené.

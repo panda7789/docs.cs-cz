@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Seřadit elementy na více klíčů (Visual Basic)'
+title: 'Postupy: řazení elementů na více klíčů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0c4c1462-3047-4766-b9e2-7e0e9cc7f421
-ms.openlocfilehash: dfb70a0ea4430d6771c319ab8ed351e8507bd89d
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 9e70a54dcf7ff8cd2e0f767773ad7a56b1da2330
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710284"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835130"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-visual-basic"></a>Postupy: Seřadit elementy na více klíčů (Visual Basic)
+# <a name="how-to-sort-elements-on-multiple-keys-visual-basic"></a>Postupy: řazení elementů na více klíčů (Visual Basic)
 V tomto tématu se dozvíte, jak řadit podle více klíčů.  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu jsou výsledky seřazeny nejprve podle poštovního směrovacího čísla a pak podle data objednávky.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -36,7 +36,7 @@ Next
   
  Tento kód generuje následující výstup:  
   
-```  
+```console  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997  
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997  
@@ -64,7 +64,7 @@ CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md).  
   
 ```vb  
 Imports <xmlns='http://www.adventure-works.com'>  
@@ -91,7 +91,7 @@ End Module
   
  Tento kód generuje následující výstup:  
   
-```  
+```console  
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997  
 CustomerID:LETSS EmployeeID:8 ShipPostalCode:94117 OrderDate:10/27/1997  
 CustomerID:LETSS EmployeeID:6 ShipPostalCode:94117 OrderDate:11/10/1997  

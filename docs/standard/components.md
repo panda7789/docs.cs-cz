@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: baeb091f7c1757e62ba049afc7a92ae8e73d3925
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: f43cd61fbcb3c1c872961476449822c574f76cff
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70014949"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835285"
 ---
 # <a name="net-architectural-components"></a>Komponenty architektury .NET
 
@@ -28,7 +28,7 @@ Další informace o .NET Standard a o tom, jak je cílit, najdete v tématu [.NE
 
 Každá implementace rozhraní .NET zahrnuje tyto komponenty:
 
-- Jeden nebo více modulů runtime. Příklady: CLR pro .NET Framework CoreCLR a CoreRT pro .NET Core.
+- Jeden nebo více modulů runtime. Příklady: CLR pro .NET Framework, CoreCLR a CoreRT pro .NET Core.
 - Knihovna tříd, která implementuje .NET Standard a může implementovat další rozhraní API. Příklady: .NET Framework základní knihovny tříd, knihovna základních tříd .NET Core.
 - Volitelně jeden nebo více aplikačních architektur. Příklady: [ASP.NET](https://www.asp.net/), [model Windows Forms](../framework/winforms/windows-forms-overview.md)a [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) jsou součástí .NET Framework a .NET Core.
 - Volitelně vývojové nástroje. Některé vývojové nástroje se sdílejí mezi více implementacemi.
@@ -83,6 +83,26 @@ Máte přístup k rozsáhlé sadě nástrojů a komponent infrastruktury, které
 - [MSBuild](/visualstudio/msbuild/msbuild), modul sestavení používaný k sestavení projektů
 - [NuGet](/nuget/), správce balíčků Microsoftu pro .NET
 - Open Source nástroje pro orchestraci sestavení, například [dortíky](https://cakebuild.net/) a [napodobeniny](https://fake.build/)
+
+## <a name="applicable-standards"></a>Příslušné standardy
+
+Specifikace C# jazyka a Common Language Infrastructure (CLI) jsou standardizovány prostřednictvím [mezinárodní® ECMA](https://www.ecma-international.org/). První edice těchto standardů byly publikovány ECMA v prosinci 2001.
+
+Následné Revize standardů byly vyvinuty skupinami úloh TC49-TG2 (C#) a TC49-TG3 (CLI) v rámci technického výboru programovacích jazyků ([TC49](https://www.ecma-international.org/memento/tc49.htm)) a přijímají se do obecného sestavení ECMA a následně podle normy ISO/IEC JTC 1. prostřednictvím procesu rychlého sledování ISO.
+
+### <a name="latest-standards"></a>Nejnovější standardy
+
+Pro [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) rozhraní příkazového [řádku a CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm)) jsou k dispozici následující oficiální dokumenty ECMA:
+
+- **Jazyk Standard (verze 5,0): ECMA-334. PDF C#**  [](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)
+- **Common Language Infrastructure**: Tato akce je k dispozici ve formátu [PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf) a formuláři [zip](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.zip) .
+- **Informace odvozené ze souboru XML oddílu IV**: je k dispozici ve formátech [PDF](https://www.ecma-international.org/publications/files/ECMA-TR/ECMA%20TR-084.pdf) a [zip](https://www.ecma-international.org/publications/files/ECMA-TR/TR-084.zip) .
+ 
+Oficiální dokumenty ISO/IEC jsou k dispozici na stránce Standard ISO/IEC – [veřejně dostupné standardy](https://standards.iso.org/ittf/PubliclyAvailableStandards/) . Tyto odkazy jsou přímo z této stránky:
+
+- **Informační technologie – programovací jazyky – C#** : [ISO/IEC 23270:2018](https://standards.iso.org/ittf/PubliclyAvailableStandards/c075178_ISO_IEC_23270_2018.zip)
+- **Informační technologie – oddíly Common Language Infrastructure (CLI) I až VI**: [ISO/IEC 23271:2012](https://standards.iso.org/ittf/PubliclyAvailableStandards/c058046_ISO_IEC_23271_2012(E).zip)
+- **Informační technologie – Common Language Infrastructure (CLI) – Technická zpráva o informacích odvozených ze souboru XML oddílu IV**: [ISO/IEC TR tr 23272:2011](https://standards.iso.org/ittf/PubliclyAvailableStandards/c057955_ISO_IEC_TR_23272_2011.zip)
 
 ## <a name="see-also"></a>Viz také:
 

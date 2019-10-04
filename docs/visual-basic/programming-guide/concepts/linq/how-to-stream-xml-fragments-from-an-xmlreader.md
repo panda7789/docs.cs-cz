@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: Stream fragmentů XML ze třídy XmlReader (Visual Basic)'
+title: 'Postupy: streamování fragmentů XML ze třídy XmlReader (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-ms.openlocfilehash: 8c5aa1afff983f3763bbf7c74268eba622df7751
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3edb9cbbe9b649a5b4d232a3937e6f322b4a6b7d
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614893"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835149"
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Postupy: Stream fragmentů XML ze třídy XmlReader (Visual Basic)
-Až budete mít ke zpracování velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamování fragmentů pomocí <xref:System.Xml.XmlReader>.  
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Postupy: streamování fragmentů XML ze třídy XmlReader (Visual Basic)
+V případě potřeby zpracování velkých souborů XML nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamovat fragmenty pomocí <xref:System.Xml.XmlReader>.  
   
- Jeden z nejefektivnějších způsobech použití <xref:System.Xml.XmlReader> číst <xref:System.Xml.Linq.XElement> objekty je napsat vlastní metodu vlastní osy. Metodu osy, jako obvykle vrátí kolekci <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy, po vytvoření XML fragment voláním <xref:System.Xml.Linq.XNode.ReadFrom%2A> metody, vrátí kolekci pomocí `yield return`. To poskytuje sémantiku odložené provedení metodě vlastní osy.  
+ Jedním z nejúčinnějších způsobů, jak použít <xref:System.Xml.XmlReader> ke čtení objektů <xref:System.Xml.Linq.XElement>, je napsat vlastní metodu vlastní osy. Metoda Axis obvykle vrací kolekci, jako je například <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy po vytvoření fragmentu XML voláním metody <xref:System.Xml.Linq.XNode.ReadFrom%2A> vraťte kolekci pomocí `yield return`. To poskytuje sémantiku pro odložené provádění vlastní metody osy.  
   
- Při vytváření stromu XML ze <xref:System.Xml.XmlReader> objektu, <xref:System.Xml.XmlReader> musí být umístěna na elementu. <xref:System.Xml.Linq.XNode.ReadFrom%2A> Metoda nevrací před přečtením uzavíracím tagem elementu.  
+ Při vytváření stromu XML z objektu @no__t 0 musí být <xref:System.Xml.XmlReader> umístěn na elementu. Metoda <xref:System.Xml.Linq.XNode.ReadFrom%2A> se nevrátí, dokud nepřečetla uzavírací značku elementu.  
   
- Pokud chcete vytvořit částečné stromové struktury, můžete vytvořit instanci <xref:System.Xml.XmlReader>, pozice čtenáře na uzlu, který chcete převést na <xref:System.Xml.Linq.XElement> stromu a pak vytvořte <xref:System.Xml.Linq.XElement> objektu.  
+ Pokud chcete vytvořit částečný strom, můžete vytvořit instanci <xref:System.Xml.XmlReader>, umístit čtecí modul na uzel, který chcete převést na strom <xref:System.Xml.Linq.XElement>, a pak vytvořit objekt <xref:System.Xml.Linq.XElement>.  
   
- Téma [jak: Stream fragmentů XML pomocí přístup k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) obsahuje informace a příklad toho, jak Streamovat složitější dokumentu.  
+ Téma [Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) obsahuje informace a příklad, jak streamovat složitější dokument.  
   
- Téma [jak: Provádění datových proudů transformace z velké dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití LINQ to XML k transformaci velmi velké dokumentů XML a přitom malá paměťové nároky.  
+ Téma [Postupy: provedení transformace streamování velkých dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití LINQ to XML k transformaci extrémně velkých dokumentů XML při zachování malých nároků na paměť.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vytvoří metodu vlastní osy. Můžete ji dotazovat s použitím [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Metoda vlastní osy `StreamRootChildDoc`, je metoda, která je navržená speciálně pro čtení dokumentu, který má s opakováním `Child` elementu.  
+ Tento příklad vytvoří vlastní metodu osy. Můžete na ně zadat dotaz pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Vlastní metoda osy `StreamRootChildDoc` je metoda, která je navržena speciálně pro čtení dokumentu, který má opakující se prvek `Child`.  
   
 ```vb  
 Module Module1  
@@ -138,14 +138,14 @@ End Class
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 bbb  
 ccc  
 ```  
   
- V tomto příkladu je velmi malý zdrojovém dokumentu. Nicméně i v případě, že došlo k milionům `Child` prvky, v tomto příkladu by stále mají malé paměťové nároky.  
+ V tomto příkladu je zdrojový dokument velmi malý. Nicméně i v případě, že existovaly miliony prvků `Child`, bude mít tento příklad pořád malou paměť.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
+- [Návod: implementace IEnumerable (Of T) v Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
 - [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

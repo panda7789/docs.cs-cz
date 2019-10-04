@@ -2,39 +2,39 @@
 title: Události LINQ to XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-ms.openlocfilehash: dcdaf321cfb75ca77e1d8b3f5a541a9418c3f512
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d35f8063fe87ee4be3dd49a3c0221cb9c47cb22e
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021268"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834986"
 ---
 # <a name="linq-to-xml-events-visual-basic"></a>Události LINQ to XML (Visual Basic)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují upozorněni, když je změněna stromu XML.  
+události [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňují upozorňování při změně stromu XML.  
   
- Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužná rutina události se pak zobrazí události pro změny, které <xref:System.Xml.Linq.XObject> a všech jejích potomků. Můžete například přidat obslužnou rutinu události pro kořen stromu a zpracovat všechny změny do stromové struktury z této obslužné rutiny události.  
+ Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužná rutina události poté obdrží události pro úpravy tohoto <xref:System.Xml.Linq.XObject> a kteréhokoli z jeho potomků. Například můžete přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
   
- Příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události, viz <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.  
+ Příklady událostí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] najdete v článku <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.  
   
 ## <a name="types-and-events"></a>Typy a události  
- Při práci s událostmi se používají následující typy:  
+ Při práci s událostmi můžete použít následující typy:  
   
-|Type|Popis|  
+|Typ|Popis|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události, když událost se vyvolá pro <xref:System.Xml.Linq.XObject>.|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> události.|  
+|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události při vyvolání události pro <xref:System.Xml.Linq.XObject>.|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro události <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.|  
   
  Při úpravě stromu XML jsou vyvolány následující události:  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Nastane bezprostředně před <xref:System.Xml.Linq.XObject> nebo libovolného z jeho potomků se to změnit.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se při <xref:System.Xml.Linq.XObject> došlo ke změně nebo libovolného z jeho potomků změnily.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Proběhne těsně před tímto <xref:System.Xml.Linq.XObject> nebo kterýkoli z jeho potomků bude změněn.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se v případě, že došlo ke změně <xref:System.Xml.Linq.XObject> nebo při změně některého z jeho potomků.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete udržovat celkovou fakturu, který je součtem řádku položek faktury. Tento příklad používá události k údržbě celkový součet všech podřízených elementů v rámci komplexních prvků `Items`.  
+ Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete chtít zachovat celkovou částku faktury, která je součtem položek řádků faktury. V tomto příkladu se používají události pro udržování celkového počtu všech podřízených elementů v rámci komplexního prvku `Items`.  
   
 ### <a name="code"></a>Kód  
   
@@ -93,9 +93,9 @@ End Module
 ```  
   
 ### <a name="comments"></a>Komentáře  
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
-```  
+```console  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XText Remove  
@@ -116,4 +116,4 @@ Total:308
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

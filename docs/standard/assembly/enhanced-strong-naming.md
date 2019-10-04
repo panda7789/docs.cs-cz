@@ -1,5 +1,5 @@
 ---
-title: Rozšířené silné názvy
+title: Vylepšené silné názvy
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 88f9a5c848a8a46b72fb39865ffa861424107438
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 1ab1087a840fe41b9fac7779c73797c470899408
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973248"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834884"
 ---
-# <a name="enhanced-strong-naming"></a>Rozšířené silné názvy
+# <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci sestavení. Jedná se o digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat předávaných od původce (Signer) příjemci (Verifier). Tento podpis slouží jako jedinečná identita pro sestavení a zajišťuje, aby odkazy na sestavení nebyly jednoznačné. Sestavení je podepsáno jako součást procesu sestavení a poté ověřeno při jeho načtení.  
   
  Signatury silného názvu zabraňují škodlivým stranám v manipulaci se sestavením a pak znovu podepisovat sestavení pomocí klíče původního podepisujícího. Klíče se silným názvem ale neobsahují žádné spolehlivé informace o vydavateli, ani neobsahují hierarchii certifikátů. Podpis silného názvu nezaručuje věrohodnost osoby, která podepsala sestavení, nebo označuje, zda byla tato osoba legitimním vlastníkem tohoto klíče. indikuje pouze, že vlastník klíče podepsal sestavení. Proto nedoporučujeme používat podpis silného názvu jako validátor zabezpečení pro důvěřování kódu třetí strany. Microsoft Authenticode je doporučeným způsobem, jak kód ověřit.  
@@ -36,32 +36,32 @@ Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci
 ## <a name="use-enhanced-strong-names"></a>Použití rozšířených silných názvů  
  Klíče se silným názvem se skládají z klíče podpisu a klíče identity. Sestavení je podepsáno klíčem podpisu a je identifikováno klíčem identity. Před .NET Framework 4,5 byly tyto dva klíče identické. Počínaje verzí .NET Framework 4,5 zůstane klíč identity stejný jako ve starších .NET Framework verzích, ale klíč podpisu se rozšiřuje s silnějším algoritmem hash. Kromě toho je podpisový klíč podepsaný klíčem identity pro vytvoření počítadla signatury.  
   
- <xref:System.Reflection.AssemblySignatureKeyAttribute> Atribut umožňuje metadatům sestavení použít již existující veřejný klíč pro identitu sestavení, což umožňuje, aby staré odkazy na sestavení pokračovaly v práci.  <xref:System.Reflection.AssemblySignatureKeyAttribute> Atribut používá podpis signatury, aby bylo zajištěno, že vlastník nového klíče pro podpis je zároveň vlastníkem starého klíče identity.  
+ Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> umožňuje metadatům sestavení použít již existující veřejný klíč pro identitu sestavení, což umožňuje, aby staré odkazy na sestavení pokračovaly v práci.  Atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> používá k zajištění toho, že vlastník nového klíče pro podpis je zároveň vlastníkem starého klíče identity.  
   
 ### <a name="sign-with-sha-2-without-key-migration"></a>Podepsat pomocí SHA-2 bez použití migrace klíče  
  Spusťte následující příkazy z příkazového řádku pro podepsání sestavení bez migrace signatury silného názvu:  
   
 1. Vygenerujte nový klíč identity (v případě potřeby).  
   
-    ```  
+    ```console  
     sn -k IdentityKey.snk  
     ```  
   
 2. Extrahujte veřejný klíč identity a určete, že se při podepisování s tímto klíčem má použít algoritmus SHA-2.  
   
-    ```  
+    ```console  
     sn -p IdentityKey.snk IdentityPubKey.snk sha256  
     ```  
   
 3. Vytvoří zpožděný podpis sestavení se souborem veřejného klíče identity.  
   
-    ```  
+    ```console  
     csc MyAssembly.cs /keyfile:IdentityPubKey.snk /delaySign+  
     ```  
   
 4. Znovu podepište sestavení pomocí páru klíčů s úplnými identitami.  
   
-    ```  
+    ```console  
     sn -Ra MyAssembly.exe IdentityKey.snk  
     ```  
   
@@ -70,32 +70,32 @@ Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci
   
 1. Vygenerujte dvojici klíčů identity a signatury (v případě potřeby).  
   
-    ```  
+    ```console  
     sn -k IdentityKey.snk  
     sn -k SignatureKey.snk  
     ```  
   
 2. Extrahujte veřejný klíč podpisu a určete, že se při podepisování s tímto klíčem má použít algoritmus SHA-2.  
   
-    ```  
+    ```console  
     sn -p SignatureKey.snk SignaturePubKey.snk sha256  
     ```  
   
 3. Extrahujte veřejný klíč identity, který určuje algoritmus hash, který generuje podpis počítadla.  
   
-    ```  
+    ```console  
     sn -p IdentityKey.snk IdentityPubKey.snk  
     ```  
   
-4. Vygenerujte parametry pro <xref:System.Reflection.AssemblySignatureKeyAttribute> atribut a připojte atribut k sestavení.  
+4. Vygenerujte parametry pro atribut <xref:System.Reflection.AssemblySignatureKeyAttribute> a připojte atribut k sestavení.  
   
-    ```  
+    ```console  
     sn -a IdentityPubKey.snk IdentityKey.snk SignaturePubKey.snk  
     ```  
 
     Výsledkem je výstup podobný následujícímu.
 
-    ```
+    ```output
     Information for key migration attribute.
     (System.Reflection.AssemblySignatureKeyAttribute):
     publicKey=
@@ -123,13 +123,13 @@ Podpis silného názvu je mechanismus identity v .NET Framework pro identifikaci
   
 5. Vytvoří zpožděný podpis sestavení s veřejným klíčem identity.  
   
-    ```  
+    ```console  
     csc MyAssembly.cs /keyfile:IdentityPubKey.snk /delaySign+  
     ```  
   
 6. Plně podepíše sestavení pomocí páru podpisových klíčů.  
   
-    ```  
+    ```console  
     sn -Ra MyAssembly.exe SignatureKey.snk  
     ```  
   

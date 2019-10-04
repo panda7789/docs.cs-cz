@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: d9767844400d67e81c7065148b22c62352af0428
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2641637d176b411108aeb2fa00ef4268584e9cb3
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784785"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834275"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Použití transformace XSLT u datové sady
-Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **datové sady** jako data XML. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** se <xref:System.Xml.XmlDataDocument> sadou vám ale umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž byste museli nejdřív zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
+
+Metoda **WriteXml** <xref:System.Data.DataSet> umožňuje napsat obsah **datové sady** jako XML data. Běžným úkolem je pak transformovat tento kód XML do jiného formátu pomocí transformací XSL (XSLT). Synchronizace **datové sady** s <xref:System.Xml.XmlDataDocument> však umožňuje použít šablonu stylů XSLT na obsah **datové sady** , aniž by bylo nutné nejprve zapsat obsah **datové sady** jako XML data pomocí **WriteXml**.  
   
- Následující příklad naplní **datovou sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Následuje obsah šablony stylů XSLT.  
+ Následující příklad naplní **datovou sadu** tabulkami a relacemi, synchronizuje **datovou sadu** s **objektu XmlDataDocument**a zapíše část **datové sady** jako soubor HTML pomocí šablony stylů XSLT. Níže jsou uvedené obsah šablony stylů XSLT:
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -59,7 +60,7 @@ Metoda<xref:System.Data.DataSet> **WriteXml** pro umožňuje napsat obsah **dato
  Následující kód vyplní **datovou sadu** a použije šablonu stylů XSLT.  
   
 > [!NOTE]
-> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** <xref:System.Data.DataRelation> vlastnost na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
+> Pokud aplikujete šablonu stylů XSLT na **datovou sadu** , která obsahuje vztahy, dosáhnete nejlepšího výkonu, pokud nastavíte **vnořenou** vlastnost <xref:System.Data.DataRelation> na **hodnotu true** pro každou vnořenou relaci. Díky tomu můžete použít šablony stylů XSLT, které implementují přirozené křížové zpracování pro navigaci v hierarchii a transformují data, a to na rozdíl od použití osy umístění XPath s náročnou výkonem (například předcházející na stejné úrovni a po sobě jdoucí na stejné úrovni). výrazy testu tabulkového uzlu) pro navigaci. Další informace o vnořených relacích najdete v tématu [vnořování datových vztahů](nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  

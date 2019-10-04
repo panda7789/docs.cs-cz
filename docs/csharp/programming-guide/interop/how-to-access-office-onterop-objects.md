@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup k objektům Interop Office pomocí C# vizuálních C# funkcí – Průvodce programováním'
+title: 'Postupy: přístup k objektům Interop Office pomocí vizuálních C# funkcí C# – Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 8e99402752b3fafb486735d56d66737f03ceec30
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 3399d1aad8a2118775f7779727d4d03ee2002547
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972088"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834207"
 ---
-# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
+# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům Interop Office pomocí vizuálních C# funkcíC# (Průvodce programováním)
 
-Vizuál C# obsahuje funkce, které zjednodušují přístup k OBJEKTŮM rozhraní API Office. Nové funkce zahrnují pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předat argumenty odkazovým parametrům v metodách modelu COM, jako kdyby byly parametry hodnoty.
+Vizuál C# obsahuje funkce, které zjednodušují přístup k OBJEKTŮM rozhraní API Office. Nové funkce zahrnují pojmenované a nepovinné argumenty, nový typ s názvem `dynamic` a možnost předat argumenty odkazovým parametrům v metodách COM, jako by to byly parametry hodnoty.
 
 V tomto tématu použijete nové funkce k psaní kódu, který vytvoří a zobrazí systém Microsoft Office excelový list. Potom napíšete kód pro přidání dokumentu aplikace Office Word, který obsahuje ikonu, která je propojena s listem aplikace Excel.
 
@@ -31,7 +31,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 1. Spusťte Visual Studio.
 
-2. V nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**. Zobrazí se dialogové okno **Nový projekt**.
+2. V nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**. Zobrazí se dialogové okno **Nový projekt** .
 
 3. V podokně **Nainstalované šablony** rozbalte **vizuál C#** a pak klikněte na **Windows**.
 
@@ -41,7 +41,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 6. Do pole **název** zadejte název projektu.
 
-7. Klikněte na **OK**.
+7. Klikněte na tlačítko **OK**.
 
      Nový projekt se zobrazí v **Průzkumník řešení**.
 
@@ -49,33 +49,33 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **Přidat odkaz**. Zobrazí se dialogové okno **Přidat odkaz** .
 
-2. Na stránce **sestavení** vyberte v seznamu **název součásti** možnost **Microsoft. Office. Interop. Word** a pak stiskněte klávesu CTRL a vyberte **Microsoft. Office. Interop. Excel**.  Pokud nevidíte sestavení, možná budete muset zajistit, aby se nainstalovaly a zobrazovaly (viz [postup: Nainstalovat primární spolupracující sestavení](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)pro Office
+2. Na stránce **sestavení** vyberte v seznamu **název součásti** možnost **Microsoft. Office. Interop. Word** a pak stiskněte klávesu CTRL a vyberte **Microsoft. Office. Interop. Excel**.  Pokud nevidíte sestavení, možná budete muset zajistit, aby byly nainstalované a zobrazené. Viz [Postupy: instalace primárních sestavení vzájemné spolupráce pro systém Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies).
 
-3. Klikněte na **OK**.
+3. Klikněte na tlačítko **OK**.
 
 ## <a name="to-add-necessary-using-directives"></a>Přidání nezbytných direktiv using
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor **program.cs** a pak klikněte na **Zobrazit kód**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *program.cs* a pak klikněte na **Zobrazit kód**.
 
-2. Do horní části `using` souboru kódu přidejte následující direktivy.
+2. Přidejte následující direktivy `using` do horní části souboru kódu:
 
      [!code-csharp[csProgGuideOfficeHowTo#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#1)]
 
 ## <a name="to-create-a-list-of-bank-accounts"></a>Vytvoření seznamu bankovních účtů
 
-1. Vložte následující definici třídy do **program.cs**v rámci `Program` třídy.
+1. Vložte následující definici třídy do **program.cs**v rámci třídy `Program`.
 
      [!code-csharp[csProgGuideOfficeHowTo#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#2)]
 
-2. Přidejte následující kód do `Main` metody k `bankAccounts` vytvoření seznamu, který obsahuje dva účty.
+2. Přidejte následující kód do metody `Main` a vytvořte tak seznam `bankAccounts`, který obsahuje dva účty.
 
      [!code-csharp[csProgGuideOfficeHowTo#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#3)]
 
 ## <a name="to-declare-a-method-that-exports-account-information-to-excel"></a>Deklarace metody, která exportuje informace o účtu do Excelu
 
-1. Přidejte následující metodu do `Program` třídy pro nastavení listu aplikace Excel.
+1. Přidejte následující metodu do třídy `Program` pro nastavení listu aplikace Excel.
 
-     Metoda <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> má volitelný parametr pro určení konkrétní šablony. Volitelné parametry, novinka C# ve 4, umožňují vynechat argument pro tento parametr, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že žádný argument není odesílán v `Add` následujícím kódu, používá výchozí šablonu a vytvoří nový sešit. Ekvivalent příkazu v dřívějších verzích nástroje C# vyžaduje zástupný argument:. `ExcelApp.Workbooks.Add(Type.Missing)`
+     Metoda <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> má volitelný parametr pro určení konkrétní šablony. Volitelné parametry, novinka C# ve 4, umožňují vynechat argument pro tento parametr, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že žádný argument není odesílán v následujícím kódu, `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalent příkazu v dřívějších verzích nástroje C# vyžaduje zástupný argument: `ExcelApp.Workbooks.Add(Type.Missing)`.
 
      [!code-csharp[csProgGuideOfficeHowTo#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#4)]
 
@@ -83,27 +83,27 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#5)]
 
-3. Přidejte následující kód na konec `DisplayInExcel`. `foreach` Smyčka vloží informace ze seznamu účtů do prvního dvou sloupců po sobě jdoucích řádků listu.
+3. Přidejte následující kód na konec `DisplayInExcel`. Smyčka `foreach` umístí informace ze seznamu účtů do prvního dvou sloupců po sobě jdoucích řádků listu.
 
      [!code-csharp[csProgGuideOfficeHowTo#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#7)]
 
-4. Přidejte následující kód na konec `DisplayInExcel` a upravte šířku sloupce tak, aby odpovídaly obsahu.
+4. Přidejte následující kód na konec `DisplayInExcel` a upravte šířku sloupců tak, aby odpovídaly obsahu.
 
      [!code-csharp[csProgGuideOfficeHowTo#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#13)]
 
-     Starší verze nástroje C# vyžadují explicitní přetypování pro tyto operace `ExcelApp.Columns[1]` `Object`, protože vrací a `AutoFit` je metoda aplikace <xref:Microsoft.Office.Interop.Excel.Range> Excel. Následující řádky ukazují přetypování.
+     Starší verze nástroje C# vyžadují explicitní přetypování pro tyto operace, protože `ExcelApp.Columns[1]` vrátí `Object` a `AutoFit` je metoda aplikace Excel <xref:Microsoft.Office.Interop.Excel.Range>. Následující řádky ukazují přetypování.
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
-     C#4 a novější verze, převádí `Object` vrácené na `dynamic` automatické, pokud je sestavení odkazováno pomocí možnosti kompilátoru [/Link](../../language-reference/compiler-options/link-compiler-option.md) nebo, ekvivalentní, pokud je vlastnost Excel **Embed Interop Types** nastavená na true. Hodnota true je výchozí hodnota pro tuto vlastnost.
+     C#4 a novější verze, převede vrácené `Object` na `dynamic` automaticky, pokud je na sestavení odkazováno pomocí možnosti kompilátoru [/Link](../../language-reference/compiler-options/link-compiler-option.md) nebo ekvivalentní, pokud je vlastnost Excel **Embed Interop Types** nastavená na hodnotu true. Hodnota true je výchozí hodnota pro tuto vlastnost.
 
 ## <a name="to-run-the-project"></a>Spuštění projektu
 
-1. Přidejte následující řádek na konci `Main`.
+1. Přidejte následující řádek na konec `Main`.
 
      [!code-csharp[csProgGuideOfficeHowTo#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#8)]
 
-2. Stisknutím kláves CTRL + F5.
+2. Stiskněte klávesy CTRL + F5.
 
      Zobrazí se excelový list obsahující data ze dvou účtů.
 
@@ -111,11 +111,11 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 1. Pro ilustraci dalších způsobů, ve C# kterých 4 a novější verze vylepšuje programování pro Office, následující kód otevře aplikaci Word a vytvoří ikonu, která odkazuje na excelový list.
 
-     Metoda `CreateIconInWordDoc`vložení, která `Program` je v tomto kroku k dispozici, do třídy. `CreateIconInWordDoc`používá pojmenované a volitelné argumenty ke snížení složitosti volání metody do <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> a. <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A> Tato volání zahrnují dvě další nové funkce, které C# byly představeny v 4, které zjednodušují volání metod modelu COM, které mají referenční parametry. Nejprve můžete odeslat argumenty parametrům reference, jako by to byly parametry hodnoty. To znamená, že můžete odesílat hodnoty přímo, bez vytváření proměnné pro každý parametr odkazu. Kompilátor generuje dočasné proměnné pro uchovávání hodnot argumentů a zahodí proměnné při návratu ze volání. Za druhé můžete `ref` klíčové slovo vynechat v seznamu argumentů.
+     Metoda Paste `CreateIconInWordDoc`, uvedená dále v tomto kroku, do třídy `Program`. `CreateIconInWordDoc` používá pojmenované a volitelné argumenty ke snížení složitosti volání metody do <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> a <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>. Tato volání zahrnují dvě další nové funkce, které C# byly představeny v 4, které zjednodušují volání metod modelu COM, které mají referenční parametry. Nejprve můžete odeslat argumenty parametrům reference, jako by to byly parametry hodnoty. To znamená, že můžete odesílat hodnoty přímo, bez vytváření proměnné pro každý parametr odkazu. Kompilátor generuje dočasné proměnné pro uchovávání hodnot argumentů a zahodí proměnné při návratu ze volání. Za druhé můžete v seznamu argumentů vynechat klíčové slovo `ref`.
 
-     `Add` Metoda má čtyři referenční parametry, z nichž všechny jsou volitelné. V C# 4,0 a novějších verzích můžete vynechat argumenty pro všechny nebo všechny parametry, pokud chcete použít výchozí hodnoty. V C# 3,0 a starších verzích musí být pro každý parametr k dispozici argument a argument musí být proměnná, protože parametry jsou referenční parametry.
+     Metoda `Add` má čtyři referenční parametry, z nichž všechny jsou volitelné. V C# 4,0 a novějších verzích můžete vynechat argumenty pro všechny nebo všechny parametry, pokud chcete použít výchozí hodnoty. V C# 3,0 a starších verzích musí být pro každý parametr k dispozici argument a argument musí být proměnná, protože parametry jsou referenční parametry.
 
-     `PasteSpecial` Metoda vloží obsah schránky. Metoda má sedm referenčních parametrů, z nichž všechny jsou volitelné. Následující kód Určuje argumenty pro dva z nich: `Link`, chcete-li vytvořit odkaz na zdroj obsahu schránky a `DisplayAsIcon`zobrazit odkaz jako ikonu. V C# 4,0 a novějších verzích můžete použít pojmenované argumenty pro tyto dva a vynechat ostatní. I když se jedná o `ref` parametry odkazu, nemusíte používat klíčové slovo nebo k vytvoření proměnných pro odeslání jako argumenty. Hodnoty můžete přímo odeslat. V C# 3,0 a starších verzích je nutné pro každý parametr odkazu vyplnit argument proměnné.
+     Metoda `PasteSpecial` vloží obsah schránky. Metoda má sedm referenčních parametrů, z nichž všechny jsou volitelné. Následující kód Určuje argumenty pro dva z těchto hodnot: `Link`, pokud chcete vytvořit odkaz na zdroj obsahu schránky a `DisplayAsIcon` pro zobrazení odkazu jako ikony. V C# 4,0 a novějších verzích můžete použít pojmenované argumenty pro tyto dva a vynechat ostatní. I když se jedná o parametry odkazu, nemusíte používat klíčové slovo `ref` nebo k vytvoření proměnných pro odeslání jako argumentů. Hodnoty můžete přímo odeslat. V C# 3,0 a starších verzích je nutné pro každý parametr odkazu vyplnit argument proměnné.
 
      [!code-csharp[csProgGuideOfficeHowTo#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#9)]
 
@@ -123,25 +123,25 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#10)]
 
-2. Přidejte následující příkaz na konci `Main`.
+2. Na konec `Main` přidejte následující příkaz.
 
      [!code-csharp[csProgGuideOfficeHowTo#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#11)]
 
-3. Přidejte následující příkaz na konci `DisplayInExcel`. `Copy` Metoda přidá list do schránky.
+3. Na konec `DisplayInExcel` přidejte následující příkaz. Metoda `Copy` přidá list do schránky.
 
      [!code-csharp[csProgGuideOfficeHowTo#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#12)]
 
-4. Stisknutím kláves CTRL + F5.
+4. Stiskněte klávesy CTRL + F5.
 
      Zobrazí se dokument aplikace Word obsahující ikonu. Dvojitým kliknutím na ikonu přeneste list do popředí.
 
 ## <a name="to-set-the-embed-interop-types-property"></a>Nastavení vlastnosti Embed Interop Types
 
-1. Další vylepšení jsou možná při volání typu modelu COM, který nevyžaduje primární definiční sestavení (PIA) v době běhu. Výsledkem odebrání závislosti na PIA je nezávislost verzí a snazší nasazení. Další informace o výhodách programování bez PIA najdete v tématu [Názorný postup: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).
+1. Další vylepšení jsou možná při volání typu modelu COM, který nevyžaduje primární definiční sestavení (PIA) v době běhu. Výsledkem odebrání závislosti na PIA je nezávislost verzí a snazší nasazení. Další informace o výhodách programování bez PIA naleznete v tématu [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md).
 
-     Kromě toho programování je snazší, protože typy, které jsou požadovány a vraceny metodou com, lze reprezentovat pomocí typu `dynamic` `Object`namísto. Proměnné, které mají `dynamic` typ, nejsou vyhodnocovány až do doby běhu, což eliminuje nutnost explicitního přetypování. Další informace naleznete v tématu [použití typu Dynamic](../types/using-type-dynamic.md).
+     Kromě toho programování je snazší, protože typy, které jsou požadovány a vraceny metodou COM, mohou být reprezentovány pomocí typu `dynamic` namísto `Object`. Proměnné, které mají typ `dynamic`, nejsou vyhodnocovány až do doby běhu, což eliminuje nutnost explicitního přetypování. Další informace naleznete v tématu [použití typu Dynamic](../types/using-type-dynamic.md).
 
-     Ve C# 4 je vkládání informací o typu namísto použití PIA nastaveno jako výchozí chování. Z důvodu tohoto výchozího nastavení je několik z předchozích příkladů zjednodušeno, protože explicitní přetypování není vyžadováno. Například deklarace `worksheet` v `DisplayInExcel` je zapsána jako `Excel._Worksheet workSheet = excelApp.ActiveSheet` spíše než `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Volání `AutoFit` ve stejné metodě by také vyžadovala explicitní přetypování bez výchozí hodnoty, protože `ExcelApp.Columns[1]` vrací `Object`a `AutoFit` je metoda aplikace Excel. Následující kód ukazuje přetypování.
+     Ve C# 4 je vkládání informací o typu namísto použití PIA nastaveno jako výchozí chování. Z důvodu tohoto výchozího nastavení je několik z předchozích příkladů zjednodušeno, protože explicitní přetypování není vyžadováno. Například deklarace `worksheet` v `DisplayInExcel` je zapsána jako `Excel._Worksheet workSheet = excelApp.ActiveSheet` místo `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Volání `AutoFit` ve stejné metodě by také vyžadovala explicitní přetypování bez výchozí hodnoty, protože `ExcelApp.Columns[1]` vrátí `Object` a `AutoFit` je metoda aplikace Excel. Následující kód ukazuje přetypování.
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
@@ -153,15 +153,15 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 ## <a name="to-add-additional-formatting-to-the-table"></a>Přidání dalšího formátování do tabulky
 
-1. Nahraďte dvě volání do `AutoFit` v `DisplayInExcel` pomocí následujícího příkazu.
+1. Nahraďte dvě volání `AutoFit` v `DisplayInExcel` následujícím příkazem.
 
      [!code-csharp[csProgGuideOfficeHowTo#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#15)]
 
-     <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> Metoda má sedm parametrů hodnot, z nichž všechny jsou volitelné. Pojmenované a volitelné argumenty umožňují zadat argumenty pro žádné, některé nebo všechny. V předchozím příkazu je argument zadán pouze pro jeden z parametrů, `Format`. Protože `Format` je prvním parametrem v seznamu parametrů, nemusíte zadávat název parametru. Příkaz však může být snazší pochopit, zda je název parametru zahrnut, jak je uvedeno v následujícím kódu.
+     Metoda <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> má sedm parametrů hodnot, z nichž všechny jsou volitelné. Pojmenované a volitelné argumenty umožňují zadat argumenty pro žádné, některé nebo všechny. V předchozím příkazu je argument zadán pouze pro jeden z parametrů `Format`. Protože `Format` je prvním parametrem v seznamu parametrů, nemusíte zadávat název parametru. Příkaz však může být snazší pochopit, zda je název parametru zahrnut, jak je uvedeno v následujícím kódu.
 
      [!code-csharp[csProgGuideOfficeHowTo#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#16)]
 
-2. Výsledek zobrazíte stisknutím kombinace kláves CTRL + F5. Další formáty jsou uvedeny ve <xref:Microsoft.Office.Interop.Excel.XlRangeAutoFormat> výčtu.
+2. Výsledek zobrazíte stisknutím kombinace kláves CTRL + F5. Další formáty jsou uvedeny ve výčtu <xref:Microsoft.Office.Interop.Excel.XlRangeAutoFormat>.
 
 3. Porovnejte příkaz v kroku 1 s následujícím kódem, který ukazuje argumenty vyžadované v C# 3,0 a dřívějších verzích.
 
@@ -179,4 +179,4 @@ Následující kód ukazuje kompletní příklad.
 - [dynamic](../../language-reference/keywords/dynamic.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md)
-- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)

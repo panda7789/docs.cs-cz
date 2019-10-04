@@ -11,12 +11,12 @@ ms.assetid: 01ef6eba-d044-40f0-951d-78eff7ebd9a9
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: f52c1d127df8f0e831db0749e3453bb1c54d5886
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 86ec8f9ae76f010ebbc3be393d8d257ba5cfc6b6
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972072"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834616"
 ---
 # <a name="how-to-display-a-control-in-the-choose-toolbox-items-dialog-box"></a>Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů
 
@@ -24,7 +24,7 @@ Při vývoji a distribuci ovládacích prvků můžete chtít, aby se tyto ovlá
 
 Chcete-li zobrazit ovládací prvek v dialogovém okně zvolit položky sady nástrojů:
 
-- Nainstalujte sestavení ovládacího prvku do globální mezipaměti sestavení (GAC). Další informace najdete v tématu [jak: Instalace sestavení do globální mezipaměti sestavení (GAC)](../../app-domains/install-assembly-into-gac.md)
+- Nainstalujte sestavení ovládacího prvku do globální mezipaměti sestavení (GAC). Další informace naleznete v tématu [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC](../../app-domains/install-assembly-into-gac.md)).
 
   -nebo-
 
@@ -33,5 +33,5 @@ Chcete-li zobrazit ovládací prvek v dialogovém okně zvolit položky sady ná
 ## <a name="see-also"></a>Viz také:
 
 - [Vývoj ovládacích prvků Windows Forms v době návrhu](developing-windows-forms-controls-at-design-time.md)
-- [Postupy: Instalace sestavení do globální mezipaměti sestavení (GAC)](../../app-domains/install-assembly-into-gac.md)
+- [Postupy: Instalace sestavení do globální mezipaměti sestavení](../../app-domains/install-assembly-into-gac.md)
 - [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

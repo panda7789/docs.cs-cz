@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí třídy DataContractSerializer (Visual Basic)'
+title: 'Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: ecaea518-8a0f-4249-b4e5-9b3fb0cdd8ad
-ms.openlocfilehash: 9593dede3eb29aadc7ffb494e1d728cb8e679f0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b747f505b0314c082929fbce25a67f79dd4af35
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054429"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835166"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a>Postupy: Serializace pomocí třídy DataContractSerializer (Visual Basic)
-Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.  
+# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a>Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)
+Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. K textovým souborům je serializuje a deserializuje je z textových souborů.  
+ Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>. Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.  
   
 ```vb  
 Imports System  
@@ -74,7 +74,7 @@ End Class
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 Testing for type: System.Xml.Linq.XElement  
   Deserialized type: System.Xml.Linq.XElement  
 Testing for type: XElementContainer  

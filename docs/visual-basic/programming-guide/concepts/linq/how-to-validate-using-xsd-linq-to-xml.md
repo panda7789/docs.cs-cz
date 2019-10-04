@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Ověření pomocí XSD (LINQ to XML) (Visual Basic)'
+title: 'Postupy: ověření pomocí XSD (LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-ms.openlocfilehash: a29473b871961af0de033b77076686cc5b9dde0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67b197d3c92e7f72b7bda444f307b191eaec8304
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613349"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835054"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>Postupy: Ověření pomocí XSD (LINQ to XML) (Visual Basic)
-<xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověřit stromu XML pro soubor jazyka pro definici schématu XML (XSD). Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.  
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>Postupy: ověření pomocí XSD (LINQ to XML) (Visual Basic)
+Obor názvů <xref:System.Xml.Schema> obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD (XML Schema Definition Language). Další informace najdete v dokumentaci k metodě <xref:System.Xml.Schema.Extensions.Validate%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>, pak ověří dvě <xref:System.Xml.Linq.XDocument> objekty oproti sadě schémat. Jeden z dokumentů je platný, druhý není.  
+ Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet> a ověří dva objekty <xref:System.Xml.Linq.XDocument> proti sadě schémat. Jeden z dokumentů je platný, druhý není.  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -67,7 +67,7 @@ End Sub
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 Validating doc1  
 doc1 validated  
   
@@ -77,11 +77,11 @@ doc2 did not validate
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ověří, že dokument XML z [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) je platný podle schématu z [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). Poté změní zdrojovém dokumentu XML. Změní `CustomerID` atribut na první zákazníka. Po provedení změny objednávky pak vrátíme se k zákazníkovi, který neexistuje, tak se již neověřují dokumentu XML.  
+ Následující příklad ověřuje, že dokument XML z [ukázkového souboru XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) jsou platné pro schéma z [ukázkového souboru XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). Pak upraví zdrojový dokument XML. Změní u prvního zákazníka atribut `CustomerID`. Po změně budou objednávky odkazovat na zákazníka, který neexistuje, takže dokument XML nebude nadále ověřen.  
   
- Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
- Tento příklad používá následující schéma XSD: [Ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
+ V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -113,7 +113,7 @@ End Sub
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console  
 Attempting to validate  
 custOrdDoc validated  
   

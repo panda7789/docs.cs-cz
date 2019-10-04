@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)'
+title: 'Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: 3c3d0d4d8c45ba2d7016636f0272ace0fdc6ffa3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e12de7380ca34478506fde98aecae2501d2529ee
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592478"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835115"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)
-Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.  
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)
+Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.  
   
-### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
+### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
   
-1. Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
+1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:  
   
-    ```  
+    ```text  
     Bankov, Peter  
     Holm, Michael  
     Garcia, Hugo  
@@ -29,9 +29,9 @@ Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů 
     Garcia, Debra  
     ```  
   
-2. Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.  
+2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu: Všimněte si, že dva soubory mají některé běžné názvy.  
   
-    ```  
+    ```text  
     Liu, Jinghao  
     Bankov, Peter  
     Holm, Michael  
@@ -113,10 +113,10 @@ End Class
 '    Toyoshima, Tim  
 ```  
   
- Program zapíše do samostatného souboru pro každou skupinu ve stejné složce jako datové soubory.  
+ Program zapisuje samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
   
 ## <a name="see-also"></a>Viz také:
 

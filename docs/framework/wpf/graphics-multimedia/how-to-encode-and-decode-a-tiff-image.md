@@ -13,25 +13,25 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - TIFF decoding [WPF]
 ms.assetid: 1dfe3209-fc73-40e6-ad1c-71c1c58b3364
-ms.openlocfilehash: 0b2b638d3aa81e48a1378794435d59da1b323aa2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 173a30e785b16a3617b82b771c463083356d6e6e
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947547"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835291"
 ---
 # <a name="how-to-encode-and-decode-a-tiff-image"></a>Postupy: Kódování a dekódování obrázku TIFF
-Následující příklady ukazují, jak kódovat a dekódovat [!INCLUDE[TLA#tla_tiff](../../../../includes/tlasharptla-tiff-md.md)] image pomocí konkrétní <xref:System.Windows.Media.Imaging.TiffBitmapDecoder> a <xref:System.Windows.Media.Imaging.TiffBitmapEncoder> objekty.  
+Následující příklady ukazují, jak dekódovat a zakódovat obrázek TIFF (Tagged Image File Format) pomocí konkrétních objektů <xref:System.Windows.Media.Imaging.TiffBitmapDecoder> a <xref:System.Windows.Media.Imaging.TiffBitmapEncoder>.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak se dekódovat [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] image pomocí <xref:System.Windows.Media.Imaging.TiffBitmapDecoder> z <xref:System.Uri>.  
+ Tento příklad ukazuje, jak dekódovat obrázek TIFF pomocí <xref:System.Windows.Media.Imaging.TiffBitmapDecoder> z <xref:System.Uri>.  
   
  [!code-cpp[TiffBitmapDecoderEncoder#1](~/samples/snippets/cpp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CPP/TiffEncoderDecoder.cpp#1)]
  [!code-csharp[TiffBitmapDecoderEncoder#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CSharp/TiffEncoderDecoder.cs#1)]
  [!code-vb[TiffBitmapDecoderEncoder#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/VB/TiffEncoderDecoder.vb#1)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak kódovat <xref:System.Windows.Media.Imaging.BitmapSource> do [!INCLUDE[TLA2#tla_tiff](../../../../includes/tla2sharptla-tiff-md.md)] image pomocí <xref:System.Windows.Media.Imaging.TiffBitmapEncoder>.  
+ Tento příklad ukazuje, jak zakódovat <xref:System.Windows.Media.Imaging.BitmapSource> do obrázku TIFF pomocí <xref:System.Windows.Media.Imaging.TiffBitmapEncoder>.  
   
  [!code-cpp[TiffBitmapDecoderEncoder#4](~/samples/snippets/cpp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CPP/TiffEncoderDecoder.cpp#4)]
  [!code-csharp[TiffBitmapDecoderEncoder#4](~/samples/snippets/csharp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CSharp/TiffEncoderDecoder.cs#4)]

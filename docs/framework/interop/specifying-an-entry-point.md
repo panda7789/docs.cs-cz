@@ -8,14 +8,15 @@ helpviewer_keywords:
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 410c8bdb63b56a78dbfa64c21344fdcd6a6656c3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2a5449b4fa77ba99a18595077081089e80bd32df
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051614"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833610"
 ---
 # <a name="specifying-an-entry-point"></a>Určení vstupního bodu
+
 Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo řadový vstupní bod cílové funkce identifikuje v rámci spravovaného projektu funkci napříč hranicemi interoperability. Dále je možné namapovat vstupní bod na jiný název, a tak funkci účinně přejmenovat.  
   
  Následuje seznam možných důvodů přejmenování funkce knihovny DLL:  
@@ -31,7 +32,8 @@ Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo 
  Toto téma popisuje, jakým způsobem lze přejmenovat funkci knihovny DLL ve spravovaném kódu.  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Přejmenování funkce v jazyce Visual Basic  
- Visual Basic používá klíčové slovo **Function** v příkazu **Declare** <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> pro nastavení pole. Následující příklad znázorňuje základní deklaraci.  
+ 
+Visual Basic používá klíčové slovo **Function** v příkazu **Declare** pro nastavení pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType>. Následující příklad znázorňuje základní deklaraci.  
   
 ```vb
 Friend Class NativeMethods
@@ -43,7 +45,7 @@ Friend Class NativeMethods
 End Class
 ```
   
- Vstupní bod **MessageBox** můžete nahradit pomocí **OknoSeZprávou** vložením klíčového slova **alias** do definice, jak je znázorněno v následujícím příkladu. V obou příkladech klíčové slovo **auto** eliminuje nutnost zadat verzi znakového sady vstupního bodu. Další informace o výběru znakové sady naleznete v tématu [Určení znakové sady](specifying-a-character-set.md).  
+Vstupní bod **MessageBox** můžete nahradit pomocí **OknoSeZprávou** vložením klíčového slova **alias** do definice, jak je znázorněno v následujícím příkladu. V obou příkladech klíčové slovo **auto** eliminuje nutnost zadat verzi znakového sady vstupního bodu. Další informace o výběru znakové sady naleznete v tématu [Určení znakové sady](specifying-a-character-set.md).  
   
 ```vb
 Friend Class NativeMethods

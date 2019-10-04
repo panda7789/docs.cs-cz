@@ -2,12 +2,12 @@
 title: 'Postupy: Dynamická aktualizace'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 0a103e980d0d1be08f3ae6850c6af64405582c7b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 95d99afd09daf4d9bf3937a71d7773332ff1bc14
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972079"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834721"
 ---
 # <a name="how-to-dynamic-update"></a>Postupy: Dynamická aktualizace
 Toto téma popisuje základní kroky potřebné k vytvoření a dynamické aktualizaci konfigurace směrování. V tomto příkladu se konfigurace počátečního směrování získá z konfiguračního souboru a směruje všechny zprávy do služby regularCalc kalkulačky. je ale následně Aktualizováno programově, aby se změnil cílový koncový bod služby roundingCalc.  
@@ -18,7 +18,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamické aktua
 > [!NOTE]
 > Dynamické aktualizace se vyskytují pouze v paměti a nevedou k úpravě konfiguračních souborů.  
   
- RegularCalc i roundingCalc podporují stejné operace sčítání, odčítání, násobení a dělení; roundingCalc však Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Konfigurační soubor se používá ke konfiguraci služby ke směrování všech zpráv do služby regularCalc. Po spuštění směrovací služby se služba znovu nakonfiguruje tak, <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> aby směrovala zprávy do služby roundingCalc.  
+ RegularCalc i roundingCalc podporují stejné operace sčítání, odčítání, násobení a dělení; roundingCalc však Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Konfigurační soubor se používá ke konfiguraci služby ke směrování všech zpráv do služby regularCalc. Po spuštění směrovací služby se <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> používá k překonfigurování služby na směrování zpráv do služby roundingCalc.  
   
 ### <a name="implement-initial-configuration"></a>Implementace počáteční konfigurace  
   
@@ -117,7 +117,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamické aktua
     }  
     ```  
   
-3. Chcete-li dynamicky aktualizovat konfiguraci směrování, je nutné vytvořit novou konfiguraci směrování. Tato akce musí obsahovat všechny koncové body, filtry a tabulky filtru, které jsou požadovány pro novou konfiguraci směrování, protože zcela nahradí stávající konfiguraci směrování. Aby bylo možné použít novou konfiguraci směrování, je nutné vyvolat <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> novou konfiguraci a předat ji.  
+3. Chcete-li dynamicky aktualizovat konfiguraci směrování, je nutné vytvořit novou konfiguraci směrování. Tato akce musí obsahovat všechny koncové body, filtry a tabulky filtru, které jsou požadovány pro novou konfiguraci směrování, protože zcela nahradí stávající konfiguraci směrování. Aby bylo možné použít novou konfiguraci směrování, je nutné vyvolat <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> a předat novou konfiguraci.  
   
      Do dříve definované smyčky while přidejte následující kód, který umožní překonfigurovat službu na základě vstupu uživatele.  
   
@@ -163,7 +163,8 @@ Toto téma popisuje základní kroky potřebné k vytvoření a dynamické aktua
     > Vzhledem k tomu, že metoda pro poskytování nového konfigurace RoutingConfiguration je obsažena v rozšíření služby RoutingExtension, mohou být nové objekty konfigurace RoutingConfiguration poskytnuty kdekoli v modelu rozšiřitelnosti WCF, který má nebo může získat odkaz na třídu ServiceHost nebo ServiceExtensions (například v jiném ServiceExtension).
   
 ## <a name="example"></a>Příklad  
- Následuje úplný seznam konzolové aplikace použité v tomto příkladu.  
+
+Následuje úplný seznam konzolové aplikace použité v tomto příkladu:
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -241,7 +242,8 @@ namespace Microsoft.Samples.AdvancedFilters
 ```  
   
 ## <a name="example"></a>Příklad  
- Následuje úplný seznam konfiguračního souboru použitého v tomto příkladu.  
+ 
+Následuje úplný seznam konfiguračního souboru použitého v tomto příkladu:
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -298,4 +300,4 @@ namespace Microsoft.Samples.AdvancedFilters
   
 ## <a name="see-also"></a>Viz také:
 
-- [Směrovací služby](../../../../docs/framework/wcf/samples/routing-services.md)
+- [Směrovací služby](../samples/routing-services.md)

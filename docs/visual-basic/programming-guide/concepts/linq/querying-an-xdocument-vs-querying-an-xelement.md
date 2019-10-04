@@ -1,21 +1,21 @@
 ---
-title: Dotazování na XDocument vs. Dotazování na XElement (Visual Basic)
+title: Dotazování na XDocument a dotazování na XElement (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2d111f84-0ded-4cde-8d93-5440557a726d
-ms.openlocfilehash: 500b1e58663ef6aca052850ad7994687e2cc36f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4aba08319abeb21de79b3b8511044b8272402984
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766490"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834937"
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>Dotazování na XDocument vs. Dotazování na XElement (Visual Basic)
-Při načtení dokumentu prostřednictvím <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, všimnete si, že budete muset psát dotazy trochu jinak než při načtení prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  
+# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>Dotazování na XDocument a dotazování na XElement (Visual Basic)
+Když načtete dokument pomocí <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, všimnete si, že budete muset psát dotazy trochu jinak než při načítání prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  
   
-## <a name="comparison-of-xdocumentload-and-xelementload"></a>Porovnání XDocument.Load a XElement.Load  
- Při načtení dokumentu XML do <xref:System.Xml.Linq.XElement> prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement> v kořenovém adresáři XML stromu obsahuje kořenový element načtený dokument. Ale při načtení stejný dokument XML do <xref:System.Xml.Linq.XDocument> prostřednictvím <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, je kořen stromu <xref:System.Xml.Linq.XDocument> uzel a kořenový element načtený dokument je jeden podřízený prvek povolený <xref:System.Xml.Linq.XElement> uzlu <xref:System.Xml.Linq.XDocument>. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Osy pracovat vzhledem k kořenového uzlu.  
+## <a name="comparison-of-xdocumentload-and-xelementload"></a>Porovnání XDocument. Load a XElement. Load  
+ Při načtení dokumentu XML do <xref:System.Xml.Linq.XElement> prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> obsahuje <xref:System.Xml.Linq.XElement> v kořenovém adresáři stromu XML kořenový prvek načteného dokumentu. Když však načtete stejný dokument XML do <xref:System.Xml.Linq.XDocument> prostřednictvím <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, kořen stromu je uzel <xref:System.Xml.Linq.XDocument> a kořenový prvek načteného dokumentu je jeden povolený podřízený uzel <xref:System.Xml.Linq.XElement> <xref:System.Xml.Linq.XDocument>. Osy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pracují relativně ke kořenovému uzlu.  
   
- Tento první příklad načte stromu XML pomocí <xref:System.Xml.Linq.XElement.Load%2A>. Následně dotazy pro podřízené prvky kořen stromu.  
+ Tento první příklad načte strom XML pomocí <xref:System.Xml.Linq.XElement.Load%2A>. Pak se dotazuje na podřízené prvky kořenového adresáře stromu.  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -36,9 +36,9 @@ For Each e As XElement In childList
 Next  
 ```  
   
- Podle očekávání, tento příklad vytvoří následující výstup:  
+ Jak je očekáváno, tento příklad vytvoří následující výstup:  
   
-```  
+```console
 Querying tree loaded with XElement.Load  
 ----  
 <Child1>1</Child1>  
@@ -46,7 +46,7 @@ Querying tree loaded with XElement.Load
 <Child3>3</Child3>  
 ```  
   
- Následující příklad je stejný jako ten výše, s tím rozdílem, který je načten stromu XML do <xref:System.Xml.Linq.XDocument> místo <xref:System.Xml.Linq.XElement>.  
+ Následující příklad je stejný jako ten výše, s výjimkou, že je strom XML načten do <xref:System.Xml.Linq.XDocument> namísto <xref:System.Xml.Linq.XElement>.  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -69,7 +69,7 @@ Next
   
  Tento příklad vytvoří následující výstup:  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Root>  
@@ -79,9 +79,9 @@ Querying tree loaded with XDocument.Load
 </Root>  
 ```  
   
- Všimněte si, že stejný dotaz vrátil ten `Root` uzlu namísto tří podřízených uzlů.  
+ Všimněte si, že stejný dotaz vrátil místo tří podřízených uzlů jeden uzel `Root`.  
   
- Jedním z přístupů k práci s tímto je použít <xref:System.Xml.Linq.XDocument.Root%2A> vlastnost před použitím metody osy následujícím způsobem:  
+ Jedním z přístupů k tomu, jak se s tímto řešením pracovat, je použít vlastnost <xref:System.Xml.Linq.XDocument.Root%2A> před přístupem k metodám OS následujícím způsobem:  
   
 ```vb  
 ' Create a simple document and  write it to a file  
@@ -102,9 +102,9 @@ For Each e As XElement In childList
 Next  
 ```  
   
- Tento dotaz teď provádí stejným způsobem jako dotazu ve stromové struktuře integrován <xref:System.Xml.Linq.XElement>. Tento příklad vytvoří následující výstup:  
+ Tento dotaz teď funguje stejným způsobem jako dotaz na stromové struktuře <xref:System.Xml.Linq.XElement>. Tento příklad vytvoří následující výstup:  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Child1>1</Child1>  

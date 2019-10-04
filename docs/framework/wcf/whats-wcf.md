@@ -6,93 +6,93 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: a7db79185d4445c68adda214d10be6d31f6ed9e0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 21a01c5d59d30ac89f6baa19dbcdcf718a1b7d88
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425116"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834853"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
-Windows Communication Foundation (WCF) je architektura určená k vytváření aplikací orientovaných na služby. Pomocí technologie WCF, můžete odeslat data jako asynchronní zprávy z jeden koncový bod služby do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupnými službami hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncový bod může být klient služby, který vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo slova jako XML, nebo komplexního, jako binární datový proud. Několik ukázkových scénářů patří:
+Windows Communication Foundation (WCF) je rozhraní pro vytváření aplikací orientovaných na služby. Pomocí WCF můžete odesílat data jako asynchronní zprávy z jednoho koncového bodu služby do jiného. Koncový bod služby může být součástí nepřetržitě dostupné služby hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncovým bodem může být klient služby, která žádá o data z koncového bodu služby. Zprávy mohou být jednoduché jako jeden znak nebo Word odeslaný jako XML nebo jako datový proud binárních dat. Mezi několik ukázkových scénářů patří:
 
-- Zabezpečenou službu ke zpracování obchodních transakcí.
+- Zabezpečená služba pro zpracování obchodních transakcí.
 
-- Služba poskytující aktuální data ostatním uživatelům, jako je například sestavy provoz nebo jiná monitorovací služba.
+- Služba, která poskytuje aktuální data jiným uživatelům, jako je například zpráva o provozu nebo jiná služba monitorování.
 
-- Chatovací služba, která umožňuje dvou osob, které umožňují komunikovat nebo vyměňovat data v reálném čase.
+- Chatovací služba, která umožňuje dvěma lidem komunikovat data nebo je vyměňovat v reálném čase.
 
-- Řídicí panel aplikace, který se dotazuje jednu nebo víc služeb pro data a prezentuje logické prezentace.
+- Aplikace řídicího panelu, která se dotazuje na jednu nebo více služeb pro data a prezentuje ji v logické prezentaci.
 
-- Vystavení pracovního postupu implementovaná jako služba WCF pomocí programovacího modelu Windows Workflow Foundation.
+- Odhalení pracovního postupu implementovaného pomocí programovací model Windows Workflow Foundation jako služby WCF.
 
-- Aplikace Silverlight k dotazování služby pro nejnovější datové kanály.
+- Aplikace Silverlight, která se bude dotazovat služby na nejnovější datové kanály.
 
-Během vytváření těchto aplikací je možné před existenci WCF, WCF usnadňuje vývoj koncových bodů než kdy dřív. Stručně řečeno WCF je určená k poskytování spravovaného přístupu k vytváření webových služeb a klienty webové služby.
+Při vytváření takových aplikací bylo možné ještě před existencí služby WCF vytvářet vývoj koncových bodů snadněji než kdy dřív. Služba WCF je v souhrnu navržena tak, aby nabízela spravovatelný přístup k vytváření webových služeb a klientů webových služeb.
 
 ## <a name="features-of-wcf"></a>Funkce služby WCF
 
-WCF zahrnuje následující sady funkcí. Další informace najdete v tématu [podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).
+WCF zahrnuje následující sadu funkcí. Další informace najdete v tématu [Podrobnosti o funkcích WCF](../../../docs/framework/wcf/feature-details/index.md).
 
-- **Orientaci na služby**
+- **Orientace služby**
 
-     Jednu pomocí standardů WS důsledkem je, že WCF umožňuje vytvořit *služby* aplikací. Architektura orientovaná na služby (SOA) je nekladou na webových službách odesílat a přijímat data. Služby mají hlavní výhodou volně spárované namísto pevně zakódovaný z jedné aplikace do jiného. Vztah volně spárované znamená, že jakýkoli klient vytvoří na libovolné platformě můžete připojit k libovolné službě tak dlouho, dokud jsou splněny základní kontrakty.
+     Jedním z důsledků použití standardů WS je to, že technologie WCF umožňuje vytváření aplikací *orientovaných na služby* . Architektura typu SOA (Service-orientované) je závislá na webových službách pro posílání a přijímání dat. Služby mají obecně výhodně oddělené místo pevně zakódovaných z jedné aplikace do jiné. Volně spojený vztah předpokládá, že se každý klient vytvořený na libovolné platformě může připojit k jakékoli službě, pokud jsou splněné základní smlouvy.
 
 - **Interoperabilita**
 
-     WCF implementuje moderní oborové standardy pro interoperabilitu webové služby. Další informace o podporované standardy, naleznete v tématu [interoperabilita a integrace](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).
+     WCF implementuje moderní oborové standardy pro interoperabilitu webové služby. Další informace o podporovaných standardech najdete v tématu [interoperabilita and Integration](../../../docs/framework/wcf/feature-details/interoperability-and-integration.md).
 
-- **Více vzorům zprávy**
+- **Více vzorů zpráv**
 
-     Zprávy se vyměňují v jednom z několika způsoby. Nejběžnější vzor je vzor žádost odpověď, kde jeden koncový bod vyžaduje data z druhé koncový bod. Druhý odpovědi koncového bodu. Existují další způsoby, jako je například jednosměrná zpráva, ve kterém jeden koncový bod odešle zprávu bez jakékoli očekává odpověď. Složitější vzor je vzor duplexní exchange, kde dva koncové body připojení a odešlete data vpřed a zpět, podobný program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat jiná zpráva exchange vzory pomocí technologie WCF najdete v části [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).
+     Zprávy se vyměňují v jednom z několika vzorů. Nejběžnějším vzorem je vzor požadavků a odpovědí, kdy jeden koncový bod požaduje data z druhého koncového bodu. Druhý koncový bod odpoví. Existují i jiné způsoby, například jednosměrná zpráva, kdy jeden koncový bod odesílá zprávu bez nutnosti očekávat odpověď. Složitější vzor je duplexní vzorek, ve kterém dva koncové body navážou připojení a odesílají data zpátky a zpátky, podobně jako program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat různé vzory výměny zpráv pomocí WCF, najdete v tématu [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).
 
-- **Service Metadata**
+- **Metadata služby**
 
-     WCF podporuje použití formátů podle oborových standardů, jako je například WSDL, schéma XML a WS-Policy publikování metadat služby. Tato metadata slouží k automatickému generování a konfigurace klientů pro přístup ke službám WCF. Metadata je možné publikovat prostřednictvím protokolu HTTP a HTTPS nebo pomocí standardní webové služby Metadata Exchange. Další informace najdete v tématu [metadat](../../../docs/framework/wcf/feature-details/metadata.md).
+     WCF podporuje publikování metadat služby pomocí formátů určených v oborových standardech, jako je WSDL, schéma XML a WS-Polica. Tato metadata lze použít k automatickému generování a konfiguraci klientů pro přístup ke službám WCF. Metadata se dají publikovat přes HTTP a HTTPS nebo pomocí standardu Exchange pro metadata webové služby. Další informace najdete v tématu [metadata](../../../docs/framework/wcf/feature-details/metadata.md).
 
 - **Kontrakty dat**
 
-     Protože WCF pomocí rozhraní .NET Framework, také zahrnuje kód vhodných metod poskytnutí smlouvy, které chcete vynutit. Univerzální typů kontraktů kontraktu dat. je. V podstatě při kódování svojí služby pomocí jazyka Visual C# nebo Visual Basic, nejjednodušší způsob, jak zpracovávat data tím je vytvoření třídy, které představují data entity s vlastnostmi, které patří do datové entity. WCF obsahuje komplexní systém pro práci s daty tímto způsobem snadno. Po vytvoření třídy, které představují data, vaše služba automaticky generuje metadata, která umožňuje klientům v souladu s typy dat, které jste vytvořili. Další informace najdete v tématu [použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+     Protože je WCF sestaveno pomocí .NET Framework, zahrnuje také metody pro kód, které poskytují smlouvy, které chcete vykonat. Jedním z univerzálních typů smluv je kontrakt dat. V podstatě je při psaní služby pomocí vizuálu C# nebo Visual Basic nejjednodušší způsob, jak zpracovávat data, vytvářet třídy, které reprezentují datovou entitu s vlastnostmi, které patří k datové entitě. WCF zahrnuje komplexní systém pro práci s daty tímto snadným způsobem. Jakmile vytvoříte třídy, které reprezentují data, služba automaticky vygeneruje metadata, která klientům umožňují dodržovat typy dat, které jste navrhli. Další informace najdete v tématu [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md).
 
 - **Zabezpečení**
 
-     Zprávy se můžou šifrovat zájmu ochrany osobních údajů a může vyžadovat, aby uživatelé sami ověření před nebudou moct přijímat zprávy. Zabezpečení je možné implementovat pomocí dobře známých standardy, jako je protokol SSL nebo WS-SecureConversation. Další informace najdete v tématu [zabezpečení](../../../docs/framework/wcf/feature-details/security.md).
+     Zprávy mohou být zašifrovány pro ochranu osobních údajů a před povolením přijímání zpráv můžete vyžadovat, aby si uživatelé ověřili sami. Zabezpečení je možné implementovat pomocí dobře známých standardů, jako je SSL nebo WS-SecureConversation. Další informace najdete v tématu [zabezpečení](../../../docs/framework/wcf/feature-details/security.md).
 
 - **Více přenosů a kódování**
 
-     Na žádném z několika předdefinovaných přenosové protokoly a kódováním odesílat zprávy. Nejvíce běžné protokoly a kódováním je odesílání, kódování textu zprávy protokolu SOAP pomocí protokol HTTP (HyperText Transfer) pro použití na webu. WCF umožňuje odesílání zpráv přes protokol TCP, případně název kanálu nebo služby MSMQ. Tyto zprávy mohou být kódovány jako text nebo optimalizovaného binárního formátu.  Binární data mohou být odesílány efektivně pomocí standardní funkce MTOM. Pokud žádný zadaný přenosy ani kódování vyhovovala vašim potřebám, můžete si vytvořit vlastní kódování nebo přenos. Další informace o přenosy a kódování nepodporuje WCF najdete v části [přenosy](../../../docs/framework/wcf/feature-details/transports.md).
+     Zprávy lze odesílat z několika integrovaných přenosových protokolů a kódování. Nejběžnější protokol a kódování je odesílat kódované zprávy protokolu SOAP pomocí protokolu HTTP (HyperText Transfer Protocol) pro použití na webu. Služba WCF také umožňuje odesílat zprávy přes protokol TCP, pojmenované kanály nebo službu MSMQ. Tyto zprávy lze kódovat jako text nebo pomocí optimalizovaného binárního formátu.  Binární data se dají efektivně odesílat pomocí standardu MTOM. Pokud žádný z poskytovaných přenosů nebo kódování nevyhovuje vašim potřebám, můžete vytvořit vlastní přenos nebo kódování. Další informace o přenosech a kódováních, které podporuje WCF, najdete v tématu [přenosy](../../../docs/framework/wcf/feature-details/transports.md).
 
-- **Spolehlivé a zařazených do fronty zpráv**
+- **Spolehlivé zprávy a zprávy zařazené do fronty**
 
-     WCF podporuje spolehlivé zprávy exchange pomocí spolehlivé relace implementuje přes zasílání zpráv WS-Reliable a pomocí služby MSMQ. Další informace o podpoře zařazených do fronty a spolehlivé zasílání zpráv ve službě WCF najdete v části [fronty a spolehlivé relace](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).
+     Služba WCF podporuje spolehlivé výměny zpráv pomocí spolehlivých relací implementovaných prostřednictvím zasílání zpráv WS-Reliable a pomocí služby MSMQ. Další informace o spolehlivé podpoře zasílání zpráv ve frontě v WCF najdete v tématu [fronty a spolehlivé relace](../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md).
 
-- **Trvalý zprávy**
+- **Trvalé zprávy**
 
-     Zpráv trvalý je ten, který se nikdy ztraceno v důsledku přerušení komunikace. Zprávy ve vzorku zpráv trvalý se vždycky uloží do databáze. Pokud dojde k přerušení, databázi můžete obnovit výměně zpráv při obnovení připojení. Můžete také vytvořit zpráv trvalý pomocí Windows Workflow Foundation (WF). Další informace najdete v tématu [služeb pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).
+     Trvalá zpráva je ta, která se nikdy neztratila z důvodu přerušení komunikace. Zprávy ve vzoru odolné zprávy jsou vždy uloženy do databáze. Pokud dojde k přerušení, databáze vám umožní pokračovat v výměně zpráv při obnovení připojení. Můžete také vytvořit trvalé zprávy pomocí programovací model Windows Workflow Foundation (WF). Další informace najdete v tématu [služby pracovních postupů](../../../docs/framework/wcf/feature-details/workflow-services.md).
 
 - **Transakce**
 
-     WCF také podporuje transakce použitím jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci, najdete v článku podpory ve službě WCF [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
+     WCF podporuje také transakce pomocí jednoho ze tří modelů transakce: WS-AtomicTransactions, rozhraní API v oboru názvů <xref:System.Transactions> a Microsoft DTC (Distributed Transaction Coordinator). Další informace o podpoře transakcí v WCF najdete v tématu [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
 
-- **AJAX a podpora REST**
+- **Podpora AJAX a REST**
 
-     REST je příkladem vyvíjející technologie Web 2.0. WCF je možné nakonfigurovat ke zpracování "prostý" XML dat, která není zabalena v obálce SOAP. WCF je možné rozšířit také na podporu konkrétních formáty XML, jako je například ATOM (Oblíbené RSS standard) a dokonce i bez XML formáty, jako je například zápis JSON (JavaScript Object).
+     REST je příkladem vyvíjející se technologie Web 2,0. WCF se dá nakonfigurovat tak, aby zpracovával "jednoduchá" data XML, která nejsou zabalená v obálce SOAP. WCF lze také rozšířit tak, aby podporovalo konkrétní formáty XML, jako je například ATOM (oblíbený Standard RSS), a dokonce i jiné formáty než XML, jako je například JavaScript Object Notation (JSON).
 
 - **Rozšíření**
 
-     Architektura WCF se počet bodů rozšiřitelnosti. Pokud se vyžaduje dodatečné funkce, existuje několik vstupních bodů, které umožňují přizpůsobit chování služby. Další informace o dostupných rozšíření body naleznete v tématu [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).
+     Architektura WCF má několik bodů rozšiřitelnosti. Pokud se vyžaduje další funkce, je k dispozici několik vstupních bodů, které vám umožní přizpůsobit chování služby. Další informace o dostupných bodech rozšiřitelnosti najdete v tématu [rozšíření WCF](../../../docs/framework/wcf/extending/index.md).
 
-## <a name="wcf-integration-with-other-microsoft-technologies"></a>WCF integrace s dalšími technologiemi Microsoftu
+## <a name="wcf-integration-with-other-microsoft-technologies"></a>Integrace WCF s dalšími technologiemi Microsoftu
 
-WCF je flexibilní platforma. Z důvodu této flexibility extreme WCF se používá také v několika dalších produktů společnosti Microsoft. Pochopením základy WCF máte okamžitě využívat, pokud také použít některý z těchto produktů.
+WCF je flexibilní platforma. Z důvodu této extrémní flexibility se WCF používá i v několika dalších produktech Microsoftu. Díky porozumění základům WCF máte okamžitou výhodu, pokud použijete také některý z těchto produktů.
 
-První technologie spárovat se s použitím technologie WCF byla Windows Workflow Foundation (WF). Pracovní postupy zjednodušit vývoj aplikací tím, že zapouzdřující krocích pracovního postupu jako "aktivity". V první verzi systému Windows Workflow Foundation vývojář se musel vytvořit hostitele pracovního postupu. Příští verzi Windows Workflow Foundation byla integrována s použitím technologie WCF. Která může jakýkoli pracovní postup snadno hostované ve službě WCF. Můžete to provést automaticky výběrem typu projektu WF/WCF v sadě Visual Studio 2012 nebo novější.
+První technologie pro párování s WCF byla programovací model Windows Workflow Foundation (WF). Pracovní postupy zjednodušují vývoj aplikací zapouzdřením kroků v pracovním postupu jako "aktivity". V první verzi programovací model Windows Workflow Foundation musel vývojář vytvořit hostitele pro pracovní postup. Další verze programovací model Windows Workflow Foundation byla integrována se službou WCF. To, že je povolený libovolný pracovní postup, který je možné snadno hostovat ve službě WCF. To můžete provést tak, že automaticky zvolíte typ projektu WF/WCF v aplikaci Visual Studio 2012 nebo novější.
 
-Microsoft BizTalk Server R2 také využívá jako komunikační technologie WCF. BizTalk je navržená pro příjem a transformovat data z jednoho standardizovaném formátu do druhého. Zprávy musí doručit do jeho okno se zprávou centrální zprávy se dají transformovat pomocí mapování strict nebo pomocí jedné z funkce BizTalk, jako je jeho modul pracovních postupů. BizTalk teď můžete použít adaptér WCF řádku obchodní (LOB) pro doručení zprávy do okna se zprávou.
+Microsoft BizTalk Server R2 také využívá WCF jako komunikační technologii. BizTalk je navržený tak, aby přijímal a transformoval data z jednoho standardizovaného formátu do jiného. Zprávy musí být doručeny do centrálního okna zpráv, kde lze zprávu transformovat pomocí striktního mapování nebo pomocí jedné z funkcí BizTalk, jako je například modul pracovního postupu. BizTalk teď může k doručování zpráv do okna se zprávou použít obchodní adaptér WCF (LOB).
 
-Microsoft Silverlight je platforma pro vytváření interoperabilních, bohatých webových aplikací, které umožňují vývojářům vytvářet weby náročné na média (například streamování videa). Od verze 2, doplnil Silverlight WCF technologií komunikace, jak připojit aplikace Silverlight do koncových bodů WCF.
+Microsoft Silverlight je platforma pro vytváření interoperabilních a bohatých webových aplikací, které vývojářům umožňují vytvářet weby náročné na média (například streamování videa). Od verze 2 Silverlight zavedlo WCF jako komunikační technologii pro připojení aplikací Silverlight k koncovým bodům WCF.
 
-Hostování funkcí služby Windows Server AppFabric aplikačního serveru jsou vytvořené speciálně pro nasazení a správu aplikací, které používají WCF pro komunikaci. Funkce hostování zahrnují bohaté možnosti nástrojů a konfigurace vytvořené speciálně pro aplikace pro práci s WCF.
+Funkce hostování aplikačního serveru Windows serveru AppFabric jsou určené konkrétně pro nasazení a správu aplikací, které používají WCF pro komunikaci. Mezi funkce hostování patří rozšířené možnosti nástrojů a konfigurace, které jsou určené konkrétně pro aplikace podporující WCF.
 
 ## <a name="see-also"></a>Viz také:
 

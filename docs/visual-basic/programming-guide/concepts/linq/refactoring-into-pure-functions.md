@@ -1,35 +1,35 @@
 ---
-title: Refaktoring do čistých funkcí (Visual Basic)
+title: Refaktoring na čistě funkce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
-ms.openlocfilehash: 0a37b30278c850256355612cec09a4c017c7adc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e951b3e9108f26a9c861eb49c44bb0a510131819
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787163"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834919"
 ---
-# <a name="refactoring-into-pure-functions-visual-basic"></a>Refaktoring do čistých funkcí (Visual Basic)
+# <a name="refactoring-into-pure-functions-visual-basic"></a>Refaktoring na čistě funkce (Visual Basic)
 
-Důležitou součástí čistě funkčním transformacím je učit, jak Refaktorovat kód pomocí čisté funkce.
+Důležitým aspektem čistě funkční transformace je učení, jak refaktorovat kód pomocí čistě funkcí.
 
-Jak je uvedeno dříve v této části, čistě funkci má dvě užitečné vlastnosti:
+Jak bylo uvedeno dříve v této části, funkce Pure má dvě užitečné charakteristiky:
 
-- Nemá žádné vedlejší účinky. Funkce nezmění žádné proměnné nebo dat libovolného typu mimo funkci.
+- Nemá žádné vedlejší účinky. Funkce nemění žádné proměnné ani data žádného typu mimo funkci.
 
-- To je konzistentní. S ohledem stejnou sadu vstupních dat, vždycky vrátí stejnou hodnotu výstup.
+- Je konzistentní. V případě stejné sady vstupních dat bude vždy vracet stejnou výstupní hodnotu.
 
- Jeden způsob, jak přechod do funkčního programování je Refaktorujte již existující kód k odstranění nepotřebných vedlejší účinky a externích závislostí. Tímto způsobem můžete vytvořit čistě funkce verze stávajícího kódu.
+ Jedním ze způsobů, jak přecházet do funkčního programování, je refaktorující existující kód, který eliminuje nepotřebné vedlejší účinky a externí závislosti. Tímto způsobem můžete vytvářet čistě verze funkcí stávajícího kódu.
 
-Toto téma popisuje čistě funkce je a co není. [Kurzu: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) kurz ukazuje, jak pracovat s dokumentu WordprocessingML a obsahuje dva příklady toho, jak refaktorace pomocí čisté funkce.
+Toto téma popisuje, co je funkce Pure a co není. [Kurz: manipulace s obsahem v kurzu WordprocessingML dokumentu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) ukazuje, jak manipulovat s dokumentem WordprocessingML a obsahuje dva příklady refaktorování pomocí funkce Pure.
 
-## <a name="eliminating-side-effects-and-external-dependencies"></a>Odstranění vedlejší účinky a externí závislosti
+## <a name="eliminating-side-effects-and-external-dependencies"></a>Vyloučení vedlejších efektů a externích závislostí
 
-Následující příklady kontrastu dvě funkce čistě a čistě funkce.
+Následující příklady kontrastují dvě nečisté funkce a funkci Pure.
 
-### <a name="non-pure-function-that-changes-a-class-member"></a>Čistě funkce, která se mění členem třídy.
+### <a name="non-pure-function-that-changes-a-class-member"></a>Nečistá funkce, která mění člena třídy
 
-V následujícím kódu `HyphenatedConcat` funkce není čistě funkcí, protože upravuje `aMember` datový člen třídy:
+V následujícím kódu není funkce `HyphenatedConcat` čistě funkcí, protože upravuje datový člen `aMember` ve třídě:
 
 ```vb
 Module Module1
@@ -46,17 +46,17 @@ Module Module1
 End Module
 ```
 
-Tento kód vytvoří následující výstup:
+Tento kód generuje následující výstup:
 
-```
+```console
 StringOne-StringTwo
 ```
 
-Všimněte si, že je bezvýznamná toho, jestli má úpravy dat `public` nebo `private` přístup, nebo je `shared` člen nebo člen instance. Čistě funkce nemění žádná data mimo funkci.
+Všimněte si, že data, která jsou měněna, mají `public` nebo `private` nebo jsou členem `shared` nebo členem instance. Funkce Pure nemění žádná data mimo funkci.
 
-### <a name="non-pure-function-that-changes-an-argument"></a>Čistě funkce, která se mění Argument
+### <a name="non-pure-function-that-changes-an-argument"></a>Nečistá funkce, která mění argument
 
-Následující verze stejné funkce kromě toho není čistě, protože mění obsah svůj parametr, `sb`.
+Kromě toho tato verze této funkce není čistá, protože upravuje obsah svého parametru `sb`.
 
 ```vb
 Module Module1
@@ -72,14 +72,14 @@ Module Module1
 End Module
 ```
 
-Tuto verzi programu vytváří stejný výstup jako první verze, protože `HyphenatedConcat` funkce změnila jejím prvním parametrem (stav) hodnota vyvoláním <xref:System.Text.StringBuilder.Append%2A> členskou funkci. Všimněte si, že tato změna nastane bez ohledu na tom, který `HyphenatedConcat` používá předávání parametrů volání podle hodnoty.
+Tato verze programu vytvoří stejný výstup jako první verze, protože funkce `HyphenatedConcat` změnila hodnotu (stav) prvního parametru vyvoláním členské funkce <xref:System.Text.StringBuilder.Append%2A>. Všimněte si, že tato změna probíhá navzdory tomu, že `HyphenatedConcat` používá předávání parametru volání podle hodnoty.
 
 > [!IMPORTANT]
-> Pro typy odkazů Pokud předáte parametr podle hodnoty, výsledkem zkopírovat odkaz na objekt je předán. Tato kopie je stále spojena se stejná data jako odkaz na původní instanci (až do nového objektu přiřadí proměnná odkaz). Volání odkazem se nutně nevyžaduje pro funkci, kterou chcete upravit parametr.
+> Pro typy odkazů, Pokud předáte parametr podle hodnoty, výsledkem bude kopie odkazu na předaný objekt. Tato kopie je stále přidružená ke stejným datům instance jako původní odkaz (dokud referenční proměnná není přiřazena k novému objektu). Volání po odkazech nemusí nutně vyžadovat, aby funkce mohla upravovat parametr.
 
-### <a name="pure-function"></a>Pure – funkce
+### <a name="pure-function"></a>Funkce Pure
 
-Tato další verze programu postupy implementace `HyphenatedConcat` fungovat jako čistě funkce.
+Tato další verze programu Hows, jak implementovat funkci `HyphenatedConcat` jako čistě funkci.
 
 ```vb
 Module Module1
@@ -95,17 +95,17 @@ Module Module1
 End Module
 ```
 
-Znovu, vytvoří tato verze stejného řádku výstupu: `StringOne-StringTwo`. Všimněte si, že pokud chcete zachovat zřetězené hodnotě, uloží se zprostředkující proměnné `s2`.
+Tato verze znovu vytvoří stejný řádek výstupu: `StringOne-StringTwo`. Všimněte si, že pokud chcete zachovat zřetězenou hodnotu, je uložena do mezilehlé proměnné `s2`.
 
-Je jedním z přístupů, které mohou být velmi užitečná k zápisu funkcí, které jsou místně znečištěná (to znamená, že deklarace a upravit místní proměnné), ale jsou globálně čistě. Tyto funkce mají mnoho vlastností žádoucí skládání, ale Vyhněte se některé z více složitými funkční programovací idiomy, jako je například museli použít rekurzi při jednoduché smyčky by provést totéž.
+Jedním z přístupů, které mohou být velmi užitečné, je psaní funkcí, které jsou místně nečisté (to znamená, že deklarují a mění místní proměnné), ale jsou globálně čistě. Tyto funkce mají mnoho z hlediska žádoucích vlastností, ale nemusíte používat rekurzi idiomy, jako je třeba použití rekurze, když by jednoduchá smyčka mohla dosáhnout stejné věci.
 
 ## <a name="standard-query-operators"></a>Standardní operátory dotazu
 
-Důležitou vlastnost operátory standardního dotazu je, že jsou implementovány jako čistě funkce.
+Důležitou vlastností standardních operátorů dotazu je to, že jsou implementované jako čisté funkce.
 
-Další informace najdete v tématu [přehled operátory standardního dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
+Další informace najdete v tématu [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Funkční programování vs. Imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [Úvod do čistě funkční transformace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Funkční programování vs. imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

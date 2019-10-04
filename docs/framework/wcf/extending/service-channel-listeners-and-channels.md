@@ -1,15 +1,15 @@
 ---
-title: 'Služba: Naslouchací procesy kanálu a kanály'
+title: 'Služba: naslouchací procesy kanálu a kanály'
 ms.date: 03/30/2017
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
-ms.openlocfilehash: 0a740f5dcf682c3c140adb9c4c7c9678c4eae132
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4367d844867db7fdad013e30d047f9385addbce5
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797179"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834801"
 ---
-# <a name="service-channel-listeners-and-channels"></a>Služba: Naslouchací procesy kanálu a kanály
+# <a name="service-channel-listeners-and-channels"></a>Služba: naslouchací procesy kanálu a kanály
 
 Existují tři kategorie objektů kanálů: kanály, naslouchací procesy kanálu a továrny kanálů. Kanály jsou rozhraní mezi aplikací a zásobníkem kanálů. Naslouchací procesy kanálu jsou zodpovědné za vytváření kanálů na straně příjmu (nebo poslouchání), obvykle v reakci na novou příchozí zprávu nebo připojení. Továrny kanálů jsou zodpovědné za vytváření kanálů na straně odeslání pro zahájení komunikace s koncovým bodem.
 
@@ -23,23 +23,23 @@ Následující diagram znázorňuje proces přijímání zpráv a jejich doručo
 
 Naslouchací proces kanálu přijímá zprávy a doručuje je do vrstvy výše přes kanály.
 
-Tento proces může být koncepčně modelován jako fronta uvnitř každého kanálu, i když implementace nemusí ve skutečnosti používat frontu. Naslouchací proces kanálu zodpovídá za příjem zpráv z vrstvy níže nebo z sítě a jejich vložení do fronty. Kanál zodpovídá za získávání zpráv z fronty a jejich předání do vrstvy výše, když tato vrstva požádá o zprávu, například voláním `Receive` na kanál.
+Tento proces může být koncepčně modelován jako fronta uvnitř každého kanálu, i když implementace nemusí ve skutečnosti používat frontu. Naslouchací proces kanálu zodpovídá za příjem zpráv z vrstvy níže nebo z sítě a jejich vložení do fronty. Kanál zodpovídá za získávání zpráv z fronty a jejich předání do vrstvy výše, když tato vrstva požádá o zprávu, například voláním `Receive` na kanálu.
 
-WCF poskytuje pomocníky pro základní třídy pro tento proces. (Diagram pomocných tříd kanálu popsaných v tomto článku najdete v tématu [Přehled modelu kanálů](channel-model-overview.md).)
+WCF poskytuje pomocníky pro základní třídy pro tento proces. Diagram pomocných tříd kanálu popsaných v tomto článku najdete v tématu [Přehled modelů kanálů](channel-model-overview.md).
 
-- Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynutila Stavový počítač popsaný v kroku 2 [Vývoj kanálů.](developing-channels.md) <xref:System.ServiceModel.Channels.CommunicationObject>
+- Třída <xref:System.ServiceModel.Channels.CommunicationObject> implementuje <xref:System.ServiceModel.ICommunicationObject> a vynutila Stavový počítač popsaný v kroku 2 [Vývoj kanálů](developing-channels.md).
 
-- Třída implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje sjednocenou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída pracuje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třída, která implementuje <xref:System.ServiceModel.Channels.IChannel>. <xref:System.ServiceModel.Channels.ChannelManagerBase>
+- Třída <xref:System.ServiceModel.Channels.ChannelManagerBase> implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotnou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase> a <xref:System.ServiceModel.Channels.ChannelListenerBase>. Třída <xref:System.ServiceModel.Channels.ChannelManagerBase> funguje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třída, která implementuje <xref:System.ServiceModel.Channels.IChannel>.
 
-- <xref:System.ServiceModel.Channels.ChannelFactoryBase> Třída implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a<xref:System.ServiceModel.Channels.IChannelFactory> konsoliduje přetíženído`OnCreateChannel` jedné abstraktní metody. `CreateChannel`
+- Třída <xref:System.ServiceModel.Channels.ChannelFactoryBase> implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a konsoliduje `CreateChannel` přetížení do jedné abstraktní metody `OnCreateChannel`.
 
-- <xref:System.ServiceModel.Channels.ChannelListenerBase> Třída implementuje<xref:System.ServiceModel.Channels.IChannelListener>. Je potřeba se starat o základní správu stavu.
+- Třída <xref:System.ServiceModel.Channels.ChannelListenerBase> implementuje <xref:System.ServiceModel.Channels.IChannelListener>. Je potřeba se starat o základní správu stavu.
 
-Následující diskuze jsou založené [na přenosu: Ukázka](../samples/transport-udp.md) UDP
+Následující diskuze jsou založené na ukázce [Transport: UDP](../samples/transport-udp.md) .
 
 ## <a name="creating-a-channel-listener"></a>Vytvoření naslouchacího procesu kanálu
 
-Rozhraní `UdpChannelListener` , které ukázka implementuje, je odvozena <xref:System.ServiceModel.Channels.ChannelListenerBase> od třídy. K příjmu datagramů používá jeden soket UDP. `OnOpen` Metoda přijímá data pomocí soketu UDP v asynchronní smyčce. Data se pak převedou na zprávy pomocí systému kódování zpráv:
+@No__t-0, který ukázka implementuje, je odvozena od třídy <xref:System.ServiceModel.Channels.ChannelListenerBase>. K příjmu datagramů používá jeden soket UDP. Metoda `OnOpen` přijímá data pomocí soketu UDP v asynchronní smyčce. Data se pak převedou na zprávy pomocí systému kódování zpráv:
 
 ```csharp
 message = UdpConstants.MessageEncoder.ReadMessage(
@@ -48,8 +48,8 @@ message = UdpConstants.MessageEncoder.ReadMessage(
 );
 ```
 
-Vzhledem k tomu, že stejný kanál datagram představuje zprávy, které přicházejí z řady zdrojů `UdpChannelListener` , je naslouchací proces typu singleton. K tomuto naslouchacímu procesu je <xref:System.ServiceModel.Channels.IChannel> v jednu chvíli přidružená nejvýše jedna aktivní. Ukázka vygeneruje další pouze v případě, že kanál vrácený <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> metodou je následně vyřazen. Po přijetí zprávy se tato zpráva zaznamená do fronty s tímto kanálem typu singleton.
+Vzhledem k tomu, že stejný kanál datagram představuje zprávy, které přicházejí z řady zdrojů, je `UdpChannelListener` naslouchací proces typu singleton. K tomuto naslouchacímu procesu je v tuto chvíli přidružená nejvýše jedna aktivní <xref:System.ServiceModel.Channels.IChannel>. Ukázka vygeneruje další pouze v případě, že je kanál vrácený metodou <xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> následně vyřazen. Po přijetí zprávy se tato zpráva zaznamená do fronty s tímto kanálem typu singleton.
 
 ### <a name="udpinputchannel"></a>UdpInputChannel
 
-`UdpInputChannel` Třída implementuje<xref:System.ServiceModel.Channels.IInputChannel>. Skládá se z fronty příchozích zpráv, které jsou vyplněny `UdpChannelListener`soketem. Tyto zprávy jsou odřazeny <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> metodou.
+Třída `UdpInputChannel` implementuje <xref:System.ServiceModel.Channels.IInputChannel>. Skládá se z fronty příchozích zpráv, které jsou naplněné soketem `UdpChannelListener`. Tyto zprávy se odřadí do fronty metodou <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A>.

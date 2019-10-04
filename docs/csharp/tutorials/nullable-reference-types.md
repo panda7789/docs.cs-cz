@@ -3,12 +3,12 @@ title: Návrh s použitím typů odkazů s možnou hodnotou null
 description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 8b7c512a2f6bd67b07d8e344ad126026048be172
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 5327a9babdf080a535e292cdcefba6da9d0a725b
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736743"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834072"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Seznámení s typem s možnou hodnotou null a odkazy, které neumožňují hodnotu null, je jasné.
 
@@ -23,7 +23,7 @@ V tomto kurzu se naučíte:
 > - Napsat kód, kde kompilátor vynutil tato rozhodnutí o návrhu.
 > - Použití funkce odkazu s možnou hodnotou null ve vlastních návrzích
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 Musíte nastavit počítač tak, aby běžel .NET Core, včetně kompilátoru C# 8,0. Kompilátor C# 8 beta je k dispozici v rámci sady [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)nebo [.NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
@@ -196,7 +196,7 @@ Posledním krokem je zobrazení výsledků průzkumu. Přidáte kód do mnoha t�
 
 [!code-csharp[ReportResponses](../../../samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#SurveyStatus)]
 
-Vzhledem k tomu, že `surveyResponses` je odkazový typ, který nepovoluje hodnotu null, nejsou před odkazování na odkazování nutné žádné kontroly. Metoda `Answer` vrátí řetězec bez hodnoty null, takže vyberte přetížení `GetValueOrDefault`, které pro výchozí hodnotu převezme druhý argument.
+Vzhledem k tomu, že `surveyResponses` je typ odkazu s možnou hodnotou null, je nutné před zrušením odkazování zkontrolovat. Metoda `Answer` vrací řetězec, který nemůže mít hodnotu null, takže musíme pokrýt případ chybějící odpovědi pomocí operátoru slučování null.
 
 Dále přidejte tyto tři členy Expression-těle do třídy `SurveyRun`:
 

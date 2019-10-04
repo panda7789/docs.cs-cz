@@ -1,20 +1,20 @@
 ---
-title: EXCEPT (Entity SQL)
+title: S VÝJIMKou (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 69cc23e5-3f8f-4b49-b20e-2f84ff11c80d
-ms.openlocfilehash: d00fdeed01de80e441d28e2bcd5da084571b0361
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c4df8c2b72ee60a425c98c64a13a1e2d43d4506e
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251035"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833859"
 ---
-# <a name="except-entity-sql"></a>EXCEPT (Entity SQL)
+# <a name="except-entity-sql"></a>S VÝJIMKou (Entity SQL)
 Vrátí kolekci všech jedinečných hodnot z výrazu dotazu nalevo od operandu EXCEPT, který není také vrácen z výrazu dotazu napravo od operandu EXCEPT. Všechny výrazy musí být stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 expression EXCEPT expression  
 ```  
   
@@ -26,7 +26,7 @@ expression EXCEPT expression
  Kolekce stejného typu nebo společného základního nebo odvozeného typu jako `expression`.  
   
 ## <a name="remarks"></a>Poznámky  
- Výjimkou je jeden z [!INCLUDE[esql](../../../../../../includes/esql-md.md)] množinových operátorů. Všechny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory set jsou vyhodnocovány zleva doprava. V následující tabulce je uvedena priorita [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátorů set.  
+ VÝJIMKou je jeden z operátorů množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Všechny operátory množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou vyhodnocovány zleva doprava. Následující tabulka ukazuje prioritu operátorů množiny [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
 |Priorita|Operátory|  
 |----------------|---------------|  
@@ -38,11 +38,11 @@ expression EXCEPT expression
 ## <a name="example"></a>Příklad  
  Následující Entity SQL dotaz používá operátor EXCEPT k vrácení kolekce libovolných různých hodnot ze dvou výrazů dotazu. Dotaz je založen na modelu prodeje společnosti AdventureWorks. Chcete-li zkompilovat a spustit tento dotaz, postupujte podle následujících kroků:  
   
-1. Postupujte podle pokynů v [tématu Postupy: Spustí dotaz, který vrátí výsledky](../how-to-execute-a-query-that-returns-structuraltype-results.md)StructuralType.  
+1. Použijte postup v tématu [Postup: provedení dotazu, který vrátí výsledky StructuralType](../how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2. Předat následující dotaz jako argument `ExecuteStructuralTypeQuery` metodě:  
+2. Předat následující dotaz jako argument metodě `ExecuteStructuralTypeQuery`:  
   
- [!code-csharp[DP EntityServices Concepts 2#EXCEPT](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#except)]  
+ [!code-sql[DP EntityServices Concepts#EXCEPT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#except)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,24 +3,24 @@ title: Čísla v C# úvodu k C# kurzu
 description: Naučte C# se prozkoumat číselné typy, jejich vlastnosti a metody.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: b0dbb654253b7c6a1ead8f0454be86227a4afb68
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: 731824fefcf4966a885c53be8f71e77140541383
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736710"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834089"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipulace s čísly integrálních a plovoucích bodů v jazyce C @ no__t-0
 
 V tomto kurzu se naučíte, aby se číselné C# typy v interaktivně. Budete psát malé množství kódu, potom zkompilujete a spustíte tento kód. Kurz obsahuje řadu lekcí, které prozkoumají čísla a matematické operace v C#. V těchto lekcích se naučíte základy C# jazyka.
 
-V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux. Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
+V tomto kurzu se očekává, že máte počítač, který můžete použít pro vývoj. Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS. Rychlý přehled příkazů, které budete používat, najdete v článku [seznámit se s vývojovými nástroji](local-environment.md) s odkazy na další podrobnosti.
 
 ## <a name="explore-integer-math"></a>Prozkoumat celočíselné matematické
 
-Vytvořte adresář s názvem **Numbers – rychlý Start**. Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n NumbersInCSharp -o .`.
+Vytvořte adresář s názvem *Numbers – rychlý Start*. Zajistěte, aby byl aktuální adresář a běžel `dotnet new console -n NumbersInCSharp -o .`.
 
-Ve svém oblíbeném editoru otevřete **program.cs** a nahraďte řádek `Console.WriteLine("Hello World!");` následujícím způsobem:
+Ve svém oblíbeném editoru otevřete *program.cs* a nahraďte řádek `Console.WriteLine("Hello World!");` následujícím způsobem:
 
 ```csharp
 int a = 18;
@@ -31,7 +31,7 @@ Console.WriteLine(c);
 
 Spusťte tento kód zadáním `dotnet run` v příkazovém okně.
 
-Právě jste viděli jednu ze základních matematických operací s celými čísly. Typ `int` představuje **celé číslo**, kladné nebo záporné celé číslo. K přidání použijte symbol `+`. Mezi další běžné matematické operace pro celá čísla patří:
+Právě jste viděli jednu ze základních matematických operací s celými čísly. Typ `int` představuje **celé**číslo, nula, kladné nebo záporné celé číslo. K přidání použijte symbol `+`. Mezi další běžné matematické operace pro celá čísla patří:
 
 - `-` pro odčítání
 - `*` pro násobení
@@ -56,7 +56,7 @@ Můžete také experimentovat při provádění více matematických operací na
 > Při prozkoumávání C# (nebo jakémkoli programovacím jazyce) budete při psaní kódu dělat chyby. **Kompilátor** tyto chyby vyhledá a nahlásí je. Pokud výstup obsahuje chybové zprávy, Prohlédněte si v příkladu kód a kód v okně, co je třeba opravit.
 > Toto cvičení vám pomůže zjistit strukturu C# kódu.
 
-Dokončili jste první krok. Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `WorkingWithIntegers` a zapište novou metodu `Main`, která volá `WorkingWithIntegers`. Až budete hotovi, váš kód by měl vypadat takto:
+Dokončili jste první krok. Než začnete s další částí, přesuňte aktuální kód do samostatné metody. Díky tomu je snazší začít pracovat s novým příkladem. Přejmenujte metodu `Main` na `WorkingWithIntegers` a zapište novou metodu `Main`, která volá `WorkingWithIntegers`. Až skončíte, váš kód by měl vypadat takto:
 
 ```csharp
 using System;
@@ -277,7 +277,7 @@ Víte, že `0.3` opakování není přesně stejné jako `1/3`.
 
 ***Výzev***
 
-Zkuste další výpočty s velkými čísly, malými čísly, násobení a dělení pomocí typu `double`.  Vyzkoušejte složitější výpočty.
+Zkuste další výpočty s velkými čísly, malými čísly, násobení a dělení pomocí typu `double`. Vyzkoušejte složitější výpočty.
 
 Po vykonání nějakého času u výzvy Vezměte kód, který jste napsali, a umístěte ho do nové metody. Pojmenujte novou metodu `WorkWithDoubles`.
 
@@ -321,7 +321,7 @@ Dokončili jste rychlý Start s čísly C#. Můžete pokračovat v rychlém star
 Další informace o číslech v C# najdete v následujících tématech:
 
 - [Celočíselné typy](../../language-reference/builtin-types/integral-numeric-types.md)
-- [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/builtin-types/floating-point-numeric-types.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/builtin-types/floating-point-numeric-types.md)
 - [Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)
-- [Tabulka implicitních převodů čísel](../../language-reference/keywords/implicit-numeric-conversions-table.md)
-- [Tabulka explicitních převodů čísel](../../language-reference/keywords/explicit-numeric-conversions-table.md)
+- [Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)
+- [Tabulka explicitních číselných převodů](../../language-reference/keywords/explicit-numeric-conversions-table.md)

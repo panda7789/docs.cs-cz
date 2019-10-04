@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Zápis dotazů se složitým filtrováním (Visual Basic)'
+title: 'Postupy: zápis dotazů se složitým filtrováním (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bf286ffc-7990-4b00-a4eb-ee3d70129950
-ms.openlocfilehash: 0459c9549238257c0a76276a1d10f6d370144214
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 41b967e2876be98016b48da5122478f63385c6a8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709855"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834962"
 ---
-# <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>Postupy: Zápis dotazů se složitým filtrováním (Visual Basic)
+# <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>Postupy: zápis dotazů se složitým filtrováním (Visual Basic)
 Někdy budete chtít zapisovat LINQ to XML dotazy se složitými filtry. Například může být nutné najít všechny prvky, které mají podřízený element s určitým názvem a hodnotou. Toto téma poskytuje příklad zápisu dotazu se složitým filtrováním.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak najít všechny `PurchaseOrder` prvky, které mají podřízený `Address` element, který má `Type` atribut se rovná "dodávání" a `State` podřízený element se rovná "ny". Používá vnořený dotaz v `Where` klauzuli `Any` a operátor vrátí `True` , pokud má kolekce nějaké prvky.  
+ Tento příklad ukazuje, jak najít všechny prvky `PurchaseOrder`, které mají podřízený element `Address`, který má atribut `Type`, který se rovná "expedice" a podřízený element `State` roven "NY". Používá vnořený dotaz v klauzuli `Where` a operátor `Any` vrátí `True`, pokud kolekce obsahuje nějaké prvky.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
- Další informace o `Any` operátoru naleznete v tématu [operace kvantifikátoru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md).  
+ Další informace o operátoru `Any` naleznete v tématu [operace kvantifikátoru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md).  
   
 ```vb  
 Dim root As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -38,14 +38,14 @@ Next
   
  Tento kód generuje následující výstup:  
   
-```  
+```console  
 99505  
 ```  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Několik nákupních objednávek v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
   
 ```vb  
 Imports <xmlns:aw='http://www.adventure-works.com'>  
@@ -72,7 +72,7 @@ End Module
   
  Tento kód generuje následující výstup:  
   
-```  
+```console  
 99505  
 ```  
   

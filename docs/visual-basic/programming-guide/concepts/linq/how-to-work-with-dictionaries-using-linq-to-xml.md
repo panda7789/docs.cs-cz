@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)'
+title: 'Postupy: práce se slovníky pomocí LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: def00fcd356472825ebc4b9f5c306cf3547991e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9773b926d16b51ea912792b0f348a26a9a3c7a29
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614142"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835087"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)
-Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML. Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: práce se slovníky pomocí LINQ to XML (Visual Basic)
+Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá literály XML a dotaz v vložený výraz. Nový dotaz projekty <xref:System.Xml.Linq.XElement> objekty, které pak budou nový obsah `Root` <xref:System.Xml.Linq.XElement> objektu.  
+ Tento příklad používá literály XML a dotaz ve vloženém výrazu. Dotaz projektuje nové objekty @no__t 0, které se pak stanou novým obsahem pro objekt `Root` <xref:System.Xml.Linq.XElement>.  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -29,7 +29,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
           <Root>  
@@ -41,7 +41,7 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří slovník ze souboru XML.  
+ Následující kód vytvoří slovník z XML.  
   
 ```vb  
 Dim root As XElement = _  
@@ -61,9 +61,9 @@ For Each str As String In dict.Keys
 Next  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Tento kód generuje následující výstup:  
   
-```  
+```console  
 Child1:Value1  
 Child2:Value2  
 Child3:Value3  

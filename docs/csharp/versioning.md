@@ -3,12 +3,12 @@ title: C#C# Průvodce správou verzí
 description: Informace o tom, jak funguje C# Správa verzí v prostředí a .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 4c0d5b5c2ac40cb27c90b4908623dc75b26a80cc
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: dcfe373312b88c8ddd8587e27c566a90b25e3c13
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699922"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834062"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C @ no__t-0
 
@@ -110,5 +110,4 @@ Derived Method One: Derived Method One
 
 Modifikátor `override` je vyhodnocen v době kompilace a kompilátor vyvolá chybu, pokud nenajde virtuální člen, který se má přepsat.
 
-Vaše znalosti o popisovaných technikách a také porozumění situacím, které se mají použít, budou mít dlouhý způsob, jak zvýšit přehlednost mezi verzemi knihovny.
- 
+Vaše znalosti o popisovaných technikách a porozumění situacím, ve kterých je lze používat, budou mít dlouhou dobu k usnadnění přechodu mezi verzemi knihovny.

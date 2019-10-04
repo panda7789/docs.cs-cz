@@ -2,25 +2,25 @@
 title: Seznámení se seznámení s nástroji pro C# vývoj
 description: Tento článek poskytuje základní informace o nástrojích, které budete používat pro vývoj C# a aplikace .NET na vašem počítači.
 ms.date: 10/23/2018
-ms.openlocfilehash: fe39bd5e89bb168316b19c62d6e022e36c58fc2f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b18c71c54e4450902f576a1074058abcd5e8aa91
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850762"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834078"
 ---
 # <a name="become-familiar-with-the-net-development-tools"></a>Seznámení s nástroji pro vývoj v .NET
 
 Prvním krokem při spouštění kurzu na vašem počítači je nastavení vývojového prostředí.
-Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v počítačích Mac, PC nebo Linux.
+Kurz rozhraní .NET [Hello World v 10 minutách](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) obsahuje pokyny pro nastavení místního vývojového prostředí v systému Windows, Linux nebo MacOS.
 
 Alternativně můžete nainstalovat [.NET Core SDK](https://dotnet.microsoft.com/download) a [Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="basic-application-development-flow"></a>Vývojový tok pro základní aplikace
 
-Pomocí [`dotnet new`](../../../core/tools/dotnet-new.md) příkazu vytvoříte aplikace. Tento příkaz vygeneruje soubory a prostředky nezbytné pro vaši aplikaci. Úvod do C# kurzů, které používají `console` typ aplikace Jakmile budete mít základní informace, můžete je rozšířit na jiné typy aplikací.
+Aplikace vytvoříte pomocí příkazu [`dotnet new`](../../../core/tools/dotnet-new.md) . Tento příkaz vygeneruje soubory a prostředky nezbytné pro vaši aplikaci. Úvod do C# kurzů, které používají typ aplikace `console`. Jakmile budete mít základní informace, můžete je rozšířit na jiné typy aplikací.
 
-Ostatní příkazy, které budete používat, [`dotnet build`](../../../core/tools/dotnet-build.md) jsou k sestavení spustitelného souboru [`dotnet run`](../../../core/tools/dotnet-run.md) a ke spuštění spustitelného souboru.
+Ostatní příkazy, které použijete, jsou [`dotnet build`](../../../core/tools/dotnet-build.md) pro sestavení spustitelného souboru a [`dotnet run`](../../../core/tools/dotnet-run.md) pro spuštění spustitelného souboru.
 
 ## <a name="pick-your-tutorial"></a>Výběr kurzu
 

@@ -2,19 +2,19 @@
 title: FUNKCE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: ae8da3985f11a2e9f52852876a21f50a412e3b27
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: bacc773351812a5db60f493f3025c8e4b07dbaa2
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250941"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833790"
 ---
 # <a name="function-entity-sql"></a>FUNKCE (Entity SQL)
 Definuje funkci v oboru příkazu Entity SQL dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```sql  
 FUNCTION function-name  
 ( [ { parameter_name <type_definition>   
         [ ,...n ]  
@@ -36,18 +36,18 @@ FUNCTION function-name
  Název parametru ve funkci.  
   
  `function_expression`  
- Platný výraz Entity SQL, který je funkcí. Příkaz ve funkci může působit na `parameter_name` parametry předané do funkce.  
+ Platný výraz Entity SQL, který je funkcí. Příkaz ve funkci může působit na parametry `parameter_name` předané do funkce.  
   
  `data_type`  
  Název podporovaného typu.  
   
- KOLEKCE (< type_definition`>` )  
+ KOLEKCE (< type_definition @ no__t-0)  
  Výraz, který vrací kolekci podporovaných typů, řádků nebo odkazů.  
   
  REF **(** `data_type` **)**  
  Výraz, který vrací odkaz na typ entity.  
   
- ROW **(** `row_expression` **)**  
+ ŘÁDEK **(** `row_expression` **)**  
  Výraz, který vrací anonymní, strukturální záznamy typu z jedné nebo více hodnot. Další informace najdete v části [řádek](row-entity-sql.md).  
   
 ## <a name="remarks"></a>Poznámky  
@@ -61,19 +61,19 @@ FUNCTION function-name
   
  `A()`  
   
- Další informace najdete v tématu [jak: Volání uživatelsky definované funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
+ Další informace naleznete v tématu [How to: Calling a User-Defined Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100)).  
   
  Funkce lze také deklarovat v samotném modelu. Funkce deklarované v modelu jsou spouštěny stejným způsobem jako funkce deklarované jako vložené v příkazu. Další informace najdete v tématu [uživatelsky definované funkce](user-defined-functions-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Následující Entity SQL příkaz definuje funkci `Products` , která přebírá celočíselnou hodnotu pro filtrování vrácených produktů.  
+ Následující Entity SQL příkaz definuje funkci `Products`, která přebírá celočíselnou hodnotu pro filtrování vrácených produktů.  
   
- [!code-csharp[DP EntityServices Concepts 2#FUNCTION1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function1)]  
+ [!code-sql[DP EntityServices Concepts#FUNCTION1](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function1)]  
   
 ## <a name="example"></a>Příklad  
- Následující Entity SQL příkaz definuje funkci `StringReturnsCollection` , která přebírá kolekci řetězců k filtrování vrácených kontaktů.  
+ Následující Entity SQL příkaz definuje funkci `StringReturnsCollection`, která přebírá kolekce řetězců k filtrování vrácených kontaktů.  
   
- [!code-csharp[DP EntityServices Concepts 2#FUNCTION2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#function2)]  
+ [!code-sql[DP EntityServices Concepts#FUNCTION2](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function2)]  
   
 ## <a name="see-also"></a>Viz také:
 
