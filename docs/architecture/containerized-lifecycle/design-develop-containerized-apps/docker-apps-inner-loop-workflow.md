@@ -1,15 +1,15 @@
 ---
-title: Pracovní postup vývoje vnitřních smyček pro aplikace Docker
+title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 description: Seznamte se s pracovním postupem "vnitřní smyčka" pro vývoj aplikací Docker.
 ms.date: 02/15/2019
-ms.openlocfilehash: c97cd9ba8d740f13c22caa45e344c4961e3b0600
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 565852511f3a837066d5da5cf0e3ab0a902dd7da
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834498"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956477"
 ---
-# <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřních smyček pro aplikace Docker
+# <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
 Předtím, než se aktivuje pracovní postup vnější smyčky zahrnující celý cyklus DevOps, začne vše v každém počítači vývojářů, bude se zakódovat vlastní aplikace, pomocí svých preferovaných jazyků nebo platforem a místně se testuje (obrázek 4-21). V každém případě ale budete mít důležitý obecný bod, bez ohledu na to, jaký jazyk, rozhraní nebo platformy si zvolíte. V tomto konkrétním pracovním postupu budete vždy vyvíjet a testovat kontejnery Docker, ale lokálně.
 
@@ -54,10 +54,10 @@ S nejnovějšími verzemi Docker pro Mac a Windows je snazší než kdy dřív v
 
 Kromě toho budete potřebovat Editor kódu, abyste mohli skutečně vyvíjet aplikace při použití Docker CLI.
 
-Společnost Microsoft poskytuje Visual Studio Code, což je zjednodušený Editor kódu, který je podporován na počítačích Mac, Windows a Linux, a poskytuje technologii IntelliSense s [podporou pro řadu jazyků](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, jít, Java, Ruby, Python a většina moderních jazyků) [. ladění](https://code.visualstudio.com/Docs/editor/debugging), [integrace s podporou pro Git](https://code.visualstudio.com/Docs/editor/versioncontrol) a [rozšíření](https://code.visualstudio.com/docs/extensions/overview). Tento editor je vhodný pro vývojáře pro Mac a Linux. V systému Windows můžete použít také plnou aplikaci sady Visual Studio.
+Společnost Microsoft poskytuje Visual Studio Code, což je zjednodušený Editor kódu, který je podporován v systémech Windows, Linux a macOS a poskytuje technologii IntelliSense s [podporou pro řadu jazyků](https://code.visualstudio.com/docs/languages/overview) (JavaScript, .NET, jít, Java, Ruby, Python a většina moderních jazyků). [ladění](https://code.visualstudio.com/Docs/editor/debugging), [integrace s podporou pro Git](https://code.visualstudio.com/Docs/editor/versioncontrol) a [rozšíření](https://code.visualstudio.com/docs/extensions/overview). Tento editor je vhodný pro vývojáře v macOS a Linux. V systému Windows můžete použít také aplikaci Visual Studio.
 
 > [!TIP]
-> Pokyny, jak nainstalovat Visual Studio Code pro Windows, Mac nebo Linux, najdete v článku <https://code.visualstudio.com/docs/setup/setup-overview/>.
+> Pokyny k instalaci Visual Studio Code pro Windows, Linux nebo macOS najdete v článku <https://code.visualstudio.com/docs/setup/setup-overview/>.
 >
 > Pokyny, jak nastavit Docker pro Mac, najdete na <https://docs.docker.com/docker-for-mac/>.
 
@@ -265,9 +265,9 @@ Visual Studio Code podporuje ladění Docker, pokud používáte Node. js a jin�
 
 Při použití sady Visual Studio pro Windows nebo Mac můžete v Docker ladit také kontejnery .NET Core nebo .NET Framework, jak je popsáno v následující části.
 
-> [! INFORMACE
->
-> Další informace o ladění kontejnerů Docker Node. js najdete na <https://blog.docker.com/2016/07/live-debugging-docker/> a <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
+> [!TIP]
+>@no__t – 0To Další informace o ladění kontejnerů Docker Node. js najdete v tématu <https://blog.docker.com/2016/07/live-debugging-docker/> a <https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/>.
 
 >[!div class="step-by-step"]
->[Předchozí](docker-apps-development-environment.md)@no__t – 1 –[Další](visual-studio-tools-for-docker.md)
+>[Předchozí](docker-apps-development-environment.md)
+>[Další](visual-studio-tools-for-docker.md)
