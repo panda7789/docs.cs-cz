@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Provedení transformace XSLT pomocí sestavení'
+title: 'Postupy: provedení transformace XSLT pomocí sestavení'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,15 +8,15 @@ dev_langs:
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4bf0669b94f925052ad5f139cce049018ce7da4f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7e998526f3e5fcefdf6b776fb493cf9625e6c696
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666535"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957150"
 ---
-# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
-Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Sestavení lze předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
+# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: provedení transformace XSLT pomocí sestavení
+Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestavení. Sestavení lze předat přímo do metody <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>.  
   
 ### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>Kopírování souborů XML a XSLT do místního počítače  
   
@@ -134,15 +134,15 @@ Kompilátor XSLT (xsltc. exe) kompiluje šablony stylů XSLT a generuje sestaven
   
 1. Spuštění následujícího příkazu z příkazového řádku vytvoří dvě sestavení s názvem `Transform.dll` a `Transform_Script1.dll` (Toto je výchozí chování. Pokud není uvedeno jinak, název třídy a sestavení se nastaví jako výchozí název hlavní předlohy stylů):  
   
-    ```  
+    ```console  
     xsltc /settings:script+ Transform.xsl  
+    ```
+  
+    Následující příkaz explicitně nastaví název třídy na transformaci:  
+  
+    ```console  
+    xsltc /settings:script+ /class:Transform Transform.xsl  
     ```  
-  
- Následující příkaz explicitně nastaví název třídy na transformaci:  
-  
-```  
-xsltc /settings:script+ /class:Transform Transform.xsl  
-```  
   
 ### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Zahrnutí zkompilovaného sestavení jako odkazu při kompilování kódu.  
   
@@ -150,36 +150,36 @@ xsltc /settings:script+ /class:Transform Transform.xsl
   
 2. Pro příkazový řádek s C#použijte následující:  
   
-    ```  
+    ```console  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
 3. Pro příkazový řádek s Visual Basic použijte následující  
   
-    ```  
+    ```console  
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
 ### <a name="to-use-the-compiled-assembly-in-your-code"></a>Chcete-li použít zkompilované sestavení v kódu.  
   
-1. Následující příklad ukazuje, jak spustit transformaci XSLT pomocí zkompilované šablony stylů.  
+Následující příklad ukazuje, jak spustit transformaci XSLT pomocí zkompilované šablony stylů.  
   
- [!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
- [!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  
+[!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
+[!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  
   
- Chcete-li dynamicky propojit se kompilovaným sestavením, nahraďte  
+Chcete-li dynamicky propojit se kompilovaným sestavením, nahraďte
   
-```  
-xslt.Load(typeof(Transform))  
-```  
-  
- with  
-  
-```  
-xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
+```csharp  
+xslt.Load(typeof(Transform));  
 ```  
   
- v předchozím příkladu. Další informace o metodě Assembly. Load naleznete v tématu.<xref:System.Reflection.Assembly.Load%2A>  
+with  
+  
+```csharp 
+xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"));  
+``` 
+  
+v předchozím příkladu. Další informace o metodě Assembly. Load naleznete v tématu <xref:System.Reflection.Assembly.Load%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 

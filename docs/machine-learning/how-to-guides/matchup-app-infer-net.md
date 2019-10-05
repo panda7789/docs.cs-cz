@@ -3,12 +3,12 @@ title: Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravd
 description: Naučte se používat programování pravděpodobnostní s Infer.NET k vytvoření aplikace seznamu her pro zápasu v závislosti na zjednodušené verzi TrueSkill.
 ms.date: 05/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: edb747355f2d41d0400c6a989eea37423bbda2b4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: f6f91aecfe7fdeffb7e8913309046c7942ecbab7
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117984"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957216"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření aplikace seznam s odpovídajícími hrami s Infer.NET a pravděpodobnostní programováním
 
@@ -33,11 +33,11 @@ dotnet new console -o myApp
 cd myApp
 ```
 
-Příkaz vytvoří aplikaci typu`console`. `new` `dotnet` Parametr vytvoří adresář s názvem `myApp` , kde je vaše aplikace uložená, a naplní ji požadovanými soubory. `-o` `cd myApp` Příkaz vás vloží do nově vytvořeného adresáře aplikace.
+Příkaz `dotnet` vytvoří aplikaci `new` typu `console`. Parametr `-o` vytvoří adresář s názvem `myApp`, kde je vaše aplikace uložená, a naplní ji požadovanými soubory. Příkaz `cd myApp` vloží do nově vytvořeného adresáře aplikace.
 
 ## <a name="install-infernet-package"></a>Nainstalovat balíček Infer.NET
 
-Pokud chcete používat Infer.NET, musíte `Microsoft.ML.Probabilistic.Compiler` balíček nainstalovat. Na příkazovém řádku spusťte následující příkaz:
+Chcete-li použít Infer.NET, je třeba nainstalovat balíček `Microsoft.ML.Probabilistic.Compiler`. Na příkazovém řádku spusťte následující příkaz:
 
 ```dotnetcli
 dotnet add package Microsoft.ML.Probabilistic.Compiler
@@ -53,8 +53,8 @@ Musíte uvést, jaké dovednosti v přehrávači jsou společně s jejich odchyl
 
 Lovu |Replik | Loser
 ---------|----------|---------
- 1 | Přehrávač 0 | Hráč 1
- 2 | Přehrávač 0 | Hráč 3
+ první | Přehrávač 0 | Hráč 1
+ odst | Přehrávač 0 | Hráč 3
  3 | Přehrávač 0 | Hráč 4
  4 | Hráč 1 | Hráč 2
  5 | Hráč 3 | Hráč 1
@@ -64,7 +64,7 @@ Podíváme se na vzorová data a Všimněte si, že hráči 3 a 4 mají jednu ze
 
 ## <a name="write-some-code"></a>Napsat nějaký kód
 
-Model byl navržený tak, jak ho vyjádřit jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. Otevřete `Program.cs` ve svém oblíbeném textovém editoru a nahraďte jeho obsah následujícím kódem:
+Model byl navržený tak, jak ho vyjádřit jako pravděpodobnostní program pomocí rozhraní API pro modelování Infer.NET. V oblíbeném textovém editoru otevřete `Program.cs` a nahraďte jeho obsah následujícím kódem:
 
 ```csharp
 namespace myApp
@@ -138,7 +138,7 @@ dotnet run
 
 Výsledky by měly být podobné následujícímu:
 
-```
+```console
 Compiling model...done.
 Iterating:
 .........|.........|.........|.........|.........| 50

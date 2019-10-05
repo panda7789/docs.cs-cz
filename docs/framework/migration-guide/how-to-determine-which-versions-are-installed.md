@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určit, které verze .NET Framework jsou nainstalovány'
+title: 'Postupy: určení, které verze .NET Framework jsou nainstalovány'
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0df5a5be2997958faa43ee67ae64fc37e1998414
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: abfa42be4b8c759da3fb34a2204058143e39689c
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051595"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956672"
 ---
-# <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Určit, které verze .NET Framework jsou nainstalovány
+# <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: určení, které verze .NET Framework jsou nainstalovány
 
 Uživatelé mohou na svých počítačích [instalovat](https://docs.microsoft.com/dotnet/framework/install) a spouštět více verzí .NET Framework. Když vyvíjíte nebo nasazujete aplikaci, možná budete potřebovat informace o tom, které verze .NET Framework jsou nainstalovány v počítači uživatele.
 
@@ -53,7 +53,7 @@ Chcete-li získat seznam verzí modulu CLR nainstalovaných v počítači, použ
 - [Použití nástroje Clrver](#clr_a)
 - [Použití kódu pro dotazování třídy prostředí](#clr_b)
 
-Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET Framework najdete v tématu [How to: Určete, které aktualizace .NET Framework jsou](how-to-determine-which-net-framework-updates-are-installed.md)nainstalovány.
+Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET Framework najdete v tématu [How to: Určete, které .NET Framework aktualizace se mají nainstalovat](how-to-determine-which-net-framework-updates-are-installed.md).
 
 ## <a name="find-newer-net-framework-versions-45-and-later"></a>Najít novější verze .NET Framework (4,5 a novější)
 
@@ -72,7 +72,7 @@ Informace o zjišťování nainstalovaných aktualizací pro každou verzi .NET 
 
 3. Vyhledejte položku DWORD s názvem **release**. Pokud existuje, budete mít nainstalované .NET Framework 4,5 nebo novější verze. Jeho hodnota je klíč verze, který odpovídá konkrétní verzi .NET Framework. Na následujícím obrázku je například hodnota položky **release** *378389*, což je klíč verze .NET Framework 4,5.
 
-     ![Položka registru pro .NET Framework 4,5](./media/clr-installdir.png "Položka registru pro .NET Framework 4,5")
+     ![Položka registru pro položku registru .NET Framework 4,5](./media/clr-installdir.png "pro .NET Framework 4,5")
 
 V následující tabulce je uvedena hodnota DWORD **verze** v jednotlivých operačních systémech .NET Framework 4,5 a novějších verzích.
 
@@ -83,15 +83,15 @@ V následující tabulce je uvedena hodnota DWORD **verze** v jednotlivých oper
 |Verze rozhraní .NET Framework|Hodnota DWORD verze|
 |--------------------------------|-------------|
 |.NET Framework 4.5|Všechny operační systémy Windows: 378389|
-|.NET Framework 4.5.1|V Windows 8.1 a Windows Server 2012 R2: 378675<br />Ve všech ostatních operačních systémech Windows: 378758|
+|.NET Framework 4.5.1|V Windows 8.1 a Windows Server 2012 R2:378675<br />Ve všech ostatních operačních systémech Windows: 378758|
 |.NET Framework 4.5.2|Všechny operační systémy Windows: 379893|
-|.NET Framework 4.6|Ve Windows 10: 393295<br />Ve všech ostatních operačních systémech Windows: 393297|
+|.NET Framework 4.6|Ve Windows 10:393295<br />Ve všech ostatních operačních systémech Windows: 393297|
 |.NET Framework 4.6.1|V systémech Windows 10 listopad Update: 394254<br />Ve všech ostatních operačních systémech Windows (včetně Windows 10): 394271|
-|.NET Framework 4.6.2|Ve Windows 10 – aktualizace pro výročí a Windows Server 2016: 394802<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 394806|
-|Rozhraní .NET framework 4.7|Ve Windows 10 Creators Update: 460798<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 460805|
-|.NET Framework 4.7.1|V systému Windows 10 patří mezi tvůrci aktualizace a Windows Server verze 1709: 461308<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 461310|
-|.NET Framework 4.7.2|Ve Windows 10. dubna 2018 Update a Windows Server verze 1803: 461808<br/>Ve všech operačních systémech Windows s výjimkou Windows 10 dubna 2018 Update a Windows Server verze 1803: 461814|
-|.NET Framework 4,8|Ve Windows 10 může aktualizace 2019: 528040<br/>Pro všechny ostatní operační systémy Windows (včetně dalších operačních systémů Windows 10): 528049|
+|.NET Framework 4.6.2|Ve Windows 10 – aktualizace pro výročí a Windows Server 2016:394802<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 394806|
+|.NET Framework 4,7|Ve Windows 10 Creators Update: 460798<br />Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 460805|
+|.NET Framework 4.7.1|V systému Windows 10 patří mezi tvůrci aktualizace a Windows Server verze 1709:461308<br/>Ve všech ostatních operačních systémech Windows (včetně dalších operačních systémů Windows 10): 461310|
+|.NET Framework 4.7.2|Ve Windows 10. dubna 2018 Update a Windows Server verze 1803:461808<br/>Ve všech operačních systémech Windows s výjimkou Windows 10 dubna 2018 Update a Windows Server verze 1803:461814|
+|.NET Framework 4,8|Ve Windows 10 Květen 2019 Update: 528040<br/>Pro všechny ostatní operační systémy Windows (včetně dalších operačních systémů Windows 10): 528049|
 
 Tyto hodnoty můžete použít následujícím způsobem:
 
@@ -105,7 +105,7 @@ Tyto hodnoty můžete použít následujícím způsobem:
 
 ### <a name="find-net-framework-versions-45-and-later-with-code"></a>Najít .NET Framework verze 4,5 a novější s kódem
 
-1. Použijte metody <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType>apro přístup k podklíči **Setup\NDP\v4\Full rozhraní HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework** v registru systému Windows. <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A?displayProperty=nameWithType>
+1. Použijte metody <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A?displayProperty=nameWithType> a <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType> pro přístup k podklíči **Setup\NDP\v4\Full rozhraní HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework** v registru systému Windows.
 
     Existence položky DWORD **verze** v podklíči **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** označuje, že v počítači je nainstalována .NET Framework 4,5 nebo novější verze.
 
@@ -128,15 +128,9 @@ Tento příklad se skládá z doporučené praxe pro kontrolu verzí:
 
 - Pomocí příkazů PowerShellu zkontrolujete hodnotu položky **release** podklíče **Setup\NDP\v4\Full HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework** .
 
-Následující příklady kontrolují hodnotu položky **verze** , abyste zjistili, jestli je nainstalovaná .NET Framework 4.6.2 nebo novější. Tento kód se `True` vrátí, pokud je nainstalován `False` , a jinak.
+Následující příklady kontrolují hodnotu položky **verze** , abyste zjistili, jestli je nainstalovaná .NET Framework 4.6.2 nebo novější. Tento kód vrátí `True`, pokud je nainstalován, a `False` v opačném případě.
 
 ```PowerShell
-# PowerShell 5
- Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\' |  Get-ItemPropertyValue -Name Release | Foreach-Object { $_ -ge 394802 }
- ```
-
-```PowerShell
-# PowerShell 4
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
@@ -169,7 +163,7 @@ Chcete-li vyhledat jinou minimální požadovanou verzi .NET Framework, nahraďt
 
 ### <a name="find-net-framework-versions-182114-with-code"></a>Najít .NET Framework verze 1&#8211;4 s kódem
 
-- Použijte třídu pro přístup k podklíči **Setup\NDP rozhraní HKEY_LOCAL_MACHINE\Software\Microsoft\NET Framework** v registru systému Windows. <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType>
+- Použijte třídu <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> pro přístup k podklíči **Setup\NDP rozhraní HKEY_LOCAL_MACHINE\Software\Microsoft\NET Framework** v registru systému Windows.
 
 Následující příklad najde nainstalované verze .NET Framework 1&#8211;4:
 
@@ -199,29 +193,29 @@ K určení, které verze modulu CLR jsou nainstalovány v počítači, použijte
 ### <a name="find-the-current-clr-version-with-the-environment-class"></a>Vyhledat aktuální verzi CLR pomocí třídy Environment
 
 > [!IMPORTANT]
-> U .NET Framework 4,5 a novějších verzí Nepoužívejte <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost k detekci verze modulu CLR. Místo toho proveďte dotaz na registr, jak je popsáno v části [Find .NET Framework verze 4,5 a novější s kódem](#net_d).
+> U .NET Framework 4,5 a novějších verzí nepoužívejte vlastnost <xref:System.Environment.Version%2A?displayProperty=nameWithType> k detekci verze modulu CLR. Místo toho proveďte dotaz na registr, jak je popsáno v části [Find .NET Framework verze 4,5 a novější s kódem](#net_d).
 
-1. Dotaz na <xref:System.Environment.Version?displayProperty=nameWithType> vlastnost pro <xref:System.Version> načtení objektu.
+1. Pomocí dotazu na vlastnost <xref:System.Environment.Version?displayProperty=nameWithType> načtěte objekt <xref:System.Version>.
 
-    Vrácený `System.Version` objekt identifikuje verzi modulu runtime, který aktuálně spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
+    Vrácený objekt `System.Version` identifikuje verzi modulu runtime, který aktuálně spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
 
-    Pro .NET Framework verze 4, 4,5, 4.5.1 a 4.5.2 má řetězcová reprezentace vráceného <xref:System.Version> objektu formu 4.0.30319. *xxxxx*, kde *xxxxx* je menší než 42000. U .NET Framework 4,6 a novějších verzí má formulář 4.0.30319.42000.
+    U .NET Framework verzí 4, 4,5, 4.5.1 a 4.5.2 má řetězcová reprezentace vráceného objektu <xref:System.Version> formu 4.0.30319. *xxxxx*, kde *xxxxx* je menší než 42000. U .NET Framework 4,6 a novějších verzí má formulář 4.0.30319.42000.
 
-2. Po provedení tohoto `Version` objektu se proveďte dotazování následujícím způsobem:
+2. Až budete mít objekt `Version`, proveďte dotazování následujícím způsobem:
 
-   - Pro hlavní identifikátor vydaných verzí (například *4* pro verzi 4,0) použijte <xref:System.Version.Major%2A?displayProperty=nameWithType> vlastnost.
+   - Pro hlavní identifikátor vydaných verzí (například *4* pro verzi 4,0) použijte vlastnost <xref:System.Version.Major%2A?displayProperty=nameWithType>.
 
-   - V případě identifikátoru podverze (například *0* pro verzi 4,0) použijte <xref:System.Version.Minor%2A?displayProperty=nameWithType> vlastnost.
+   - V případě identifikátoru podverze (například *0* pro verzi 4,0) použijte vlastnost <xref:System.Version.Minor%2A?displayProperty=nameWithType>.
 
-   - Pro celý řetězec verze (například *4.0.30319.18010*) použijte <xref:System.Version.ToString%2A?displayProperty=nameWithType> metodu. Tato metoda vrátí jednu hodnotu, která odráží verzi modulu runtime, který spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
+   - Pro řetězec celé verze (například *4.0.30319.18010*) použijte metodu <xref:System.Version.ToString%2A?displayProperty=nameWithType>. Tato metoda vrátí jednu hodnotu, která odráží verzi modulu runtime, který spouští kód. Nevrací verze sestavení ani jiné verze modulu runtime, které mohou být nainstalovány v počítači.
 
-Následující příklad používá <xref:System.Environment.Version%2A?displayProperty=nameWithType> vlastnost k načtení informací o verzi CLR:
+Následující příklad používá vlastnost <xref:System.Environment.Version%2A?displayProperty=nameWithType> pro načtení informací o verzi CLR:
 
 [!code-csharp[ListVersions](../../../samples/snippets/csharp/framework/migration-guide/versions-installed2.cs)]
 [!code-vb[ListVersions](../../../samples/snippets/visualbasic/framework/migration-guide/versions-installed2.vb)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Určení nainstalovaných aktualizací .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md)
+- [Postupy: určení nainstalovaných aktualizací .NET Framework](how-to-determine-which-net-framework-updates-are-installed.md)
 - [Instalace .NET Framework pro vývojáře](../install/guide-for-developers.md)
 - [.NET Framework verze a závislosti](versions-and-dependencies.md)

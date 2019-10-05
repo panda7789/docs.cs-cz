@@ -12,82 +12,88 @@ helpviewer_keywords:
 - program termination
 - execution [Visual Basic], stopping
 ms.assetid: 760bfb32-5c3f-4bdb-a432-9a6001c92db7
-ms.openlocfilehash: 1f386694bd7425ee530b9305ab684b730f9b73c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c25653809c51662ea5b606ab97be6a9b50d5986
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638113"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956936"
 ---
 # <a name="exit-statement-visual-basic"></a>Exit – příkaz (Visual Basic)
-Ukončí proceduru nebo blok a okamžitě přenese ovládací prvek do příkazu za voláním procedury nebo definicí bloku.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-Exit { Do | For | Function | Property | Select | Sub | Try | While }  
-```  
-  
-## <a name="statements"></a>Příkazy  
+
+Ukončí proceduru nebo blok a okamžitě přenese řízení do příkazu za voláním procedury nebo definicí bloku.
+
+## <a name="syntax"></a>Syntaxe
+
+```vb
+Exit { Do | For | Function | Property | Select | Sub | Try | While }
+```
+
+## <a name="statements"></a>Příkazy
+
  `Exit Do`  
- Okamžitě ukončí `Do` smyčky v kterém se zobrazí. Provádění pokračuje pomocí následujícího příkazu `Loop` příkazu. `Exit Do` může být použit pouze uvnitř `Do` smyčky. Při použití v rámci vnořené `Do` smyčky, `Exit Do` ukončení vnitřní smyčky a přenese ovládací prvek na další vyšší úroveň vnoření.  
-  
+ Okamžitě ukončí cyklus `Do`, ve kterém se zobrazí. Provádění pokračuje s příkazem za příkazem `Loop`. `Exit Do` se dá použít jenom uvnitř smyčky `Do`. Při použití v rámci vnořených `Do` smyčky `Exit Do` ukončí vnitřní smyčku a přenáší řízení na další vyšší úroveň vnoření.
+
  `Exit For`  
- Okamžitě ukončí `For` smyčky v kterém se zobrazí. Provádění pokračuje pomocí následujícího příkazu `Next` příkazu. `Exit For` může být použit pouze uvnitř `For`... `Next` nebo `For Each`... `Next` smyčky. Při použití v rámci vnořené `For` smyčky, `Exit For` ukončení vnitřní smyčky a přenese ovládací prvek na další vyšší úroveň vnoření.  
-  
+ Okamžitě ukončí cyklus `For`, ve kterém se zobrazí. Provádění pokračuje s příkazem za příkazem `Next`. `Exit For` se dá použít jenom uvnitř smyčky `For`... `Next` nebo `For Each`... `Next`. Při použití v rámci vnořených `For` smyčky `Exit For` ukončí vnitřní smyčku a přenáší řízení na další vyšší úroveň vnoření.
+
  `Exit Function`  
- Okamžitě ukončí `Function` procedura, ve kterém se zobrazí. Pokračuje s příkazu za příkazem, který volá se, `Function` postup. `Exit Function` může být použit pouze uvnitř `Function` postup.  
-  
- K určení návratovou hodnotu, můžete přiřadit hodnotu k názvu funkce na řádku před `Exit Function` příkazu. Pro přiřazení návratovou hodnotu a ukončení funkce v jednom příkazu, můžete místo toho použít [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
-  
+ Okamžitě ukončí postup @no__t 0, ve kterém se zobrazí. Provádění pokračuje příkazem po příkazu, který volal postup `Function`. `Exit Function` se dá použít jenom uvnitř procedury `Function`.
+
+ Chcete-li zadat návratovou hodnotu, můžete hodnotu přiřadit názvu funkce na řádku před příkazem `Exit Function`. Chcete-li přiřadit návratovou hodnotu a ukončit funkci v jednom příkazu, můžete místo toho použít [příkaz return](return-statement.md).
+
  `Exit Property`  
- Okamžitě ukončí `Property` procedura, ve kterém se zobrazí. Provádění pokračuje s příkazem, který volá `Property` procedury, to znamená, s příkazem požádat nebo nastavení hodnoty vlastnosti. `Exit Property` může být použit pouze uvnitř vlastnosti `Get` nebo `Set` postup.  
-  
- K určení návratovou hodnotu v `Get` postup, můžete přiřadit hodnotu k názvu funkce na řádku před `Exit Property` příkazu. K přiřazení návratovou hodnotu a ukončení `Get` postupu v jednom příkazu, můžete místo toho použít `Return` příkazu.  
-  
- V `Set` postupu `Exit Property` je ekvivalentní příkazu `Return` příkazu.  
-  
+ Okamžitě ukončí postup @no__t 0, ve kterém se zobrazí. Provádění pokračuje s příkazem, který se nazývá postup `Property`, to znamená pomocí příkazu, který požaduje nebo nastavuje hodnotu vlastnosti. `Exit Property` se dá použít jenom uvnitř procedury vlastnosti `Get` nebo `Set`.
+
+ Chcete-li zadat návratovou hodnotu v proceduře `Get`, můžete hodnotu přiřadit názvu funkce na řádku před příkazem `Exit Property`. Chcete-li přiřadit návratovou hodnotu a ukončit proceduru `Get` v jednom příkazu, můžete místo toho použít příkaz `Return`.
+
+ V proceduře `Set` je příkaz `Exit Property` ekvivalentní příkazu `Return`.
+
  `Exit Select`  
- Okamžitě ukončí `Select Case` blok, ve kterém se zobrazí. Provádění pokračuje pomocí následujícího příkazu `End Select` příkazu. `Exit Select` může být použit pouze uvnitř `Select Case` příkazu.  
-  
+ Okamžitě ukončí blok `Select Case`, ve kterém se zobrazí. Provádění pokračuje s příkazem za příkazem `End Select`. `Exit Select` se dá použít jenom uvnitř příkazu `Select Case`.
+
  `Exit Sub`  
- Okamžitě ukončí `Sub` procedura, ve kterém se zobrazí. Pokračuje s příkazu za příkazem, který volá se, `Sub` postup. `Exit Sub` může být použit pouze uvnitř `Sub` postup.  
-  
- V `Sub` postupu `Exit Sub` je ekvivalentní příkazu `Return` příkazu.  
-  
+ Okamžitě ukončí postup @no__t 0, ve kterém se zobrazí. Provádění pokračuje příkazem po příkazu, který volal postup `Sub`. `Exit Sub` se dá použít jenom uvnitř procedury `Sub`.
+
+ V proceduře `Sub` je příkaz `Exit Sub` ekvivalentní příkazu `Return`.
+
  `Exit Try`  
- Okamžitě ukončí `Try` nebo `Catch` blok, ve kterém se zobrazí. Provádění pokračuje `Finally` blokovat, pokud existuje, nebo pomocí následujícího příkazu `End Try` příkaz jinak. `Exit Try` může být použit pouze uvnitř `Try` nebo `Catch` bloku a ne uvnitř `Finally` bloku.  
-  
+ Okamžitě ukončí `Try` nebo `Catch` blok, ve kterém se zobrazí. Provádění pokračuje s blokem `Finally`, pokud existuje, nebo s příkazem, který následuje za příkazem `End Try` v opačném případě. `Exit Try` se dá použít jenom uvnitř bloku `Try` nebo `Catch`, a ne uvnitř bloku `Finally`.
+
  `Exit While`  
- Okamžitě ukončí `While` smyčky v kterém se zobrazí. Provádění pokračuje pomocí následujícího příkazu `End While` příkazu. `Exit While` může být použit pouze uvnitř `While` smyčky. Při použití v rámci vnořené `While` smyčky, `Exit While` předá řízení smyčky, která je jednu úroveň vnořeného nad smyčky kde `Exit While` dojde k.  
-  
-## <a name="remarks"></a>Poznámky  
- Nezaměňujte `Exit` příkazy `End` příkazy. `Exit` konec příkazu není definován.  
-  
-## <a name="example"></a>Příklad  
- V následujícím příkladu podmínka smyčky zastaví smyčky při `index` proměnnou je větší než 100. `If` Příkaz ve smyčce, ale způsobí, že `Exit Do` příkaz zastaví smyčky, pokud indexovaná proměnná je větší než 10.  
-  
- [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]  
-  
-## <a name="example"></a>Příklad  
- Následující příklad přiřadí název funkce návratová hodnota `myFunction`a potom použije `Exit Function` vrácení z funkce.  
-  
- [!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]  
-  
-## <a name="example"></a>Příklad  
- V následujícím příkladu [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) přiřazovat návratovou hodnotu a ukončení funkce.  
-  
- [!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]  
-  
+ Okamžitě ukončí cyklus `While`, ve kterém se zobrazí. Provádění pokračuje s příkazem za příkazem `End While`. `Exit While` se dá použít jenom uvnitř smyčky `While`. Při použití v rámci vnořených smyček `While` `Exit While` přenáší řízení do smyčky, která je jednou vnořenou úrovní nad smyčkou, kde se vyskytuje `Exit While`.
+
+## <a name="remarks"></a>Poznámky
+
+Nezaměňujte příkazy `Exit` s příkazy `End`. `Exit` nedefinuje konec příkazu.
+
+## <a name="example"></a>Příklad
+
+V následujícím příkladu podmínka smyčky zastaví smyčku, když je proměnná `index` větší než 100. Příkaz `If` ve smyčce ale způsobí, že příkaz `Exit Do` zastaví smyčku v případě, že je proměnná indexu větší než 10.
+
+[!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]
+
+## <a name="example"></a>Příklad
+
+Následující příklad přiřadí návratovou hodnotu k názvu funkce `myFunction` a poté pomocí `Exit Function` vrátí z funkce:
+
+[!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]
+
+## <a name="example"></a>Příklad
+
+Následující příklad používá [příkaz return](return-statement.md) k přiřazení návratové hodnoty a ukončení funkce:
+
+[!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]
+
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Continue](../../../visual-basic/language-reference/statements/continue-statement.md)
-- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)
-- [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)
-- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md)
-- [Příkaz Stop](../../../visual-basic/language-reference/statements/stop-statement.md)
-- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Příkaz Continue](continue-statement.md)
+- [Příkaz Do...Loop](do-loop-statement.md)
+- [Příkaz End](end-statement.md)
+- [Příkaz For Each...Next](for-each-next-statement.md)
+- [Příkaz For...Next](for-next-statement.md)
+- [Příkaz Function](function-statement.md)
+- [Příkaz Return](return-statement.md)
+- [Příkaz Stop](stop-statement.md)
+- [Příkaz Sub](sub-statement.md)
+- [Příkaz Try...Catch...Finally](try-catch-finally-statement.md)

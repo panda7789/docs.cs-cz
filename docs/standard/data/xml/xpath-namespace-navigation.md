@@ -5,24 +5,24 @@ ms.technology: dotnet-standard
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cbc45d2c6587f5ff94c5cfbe0251d4b0ebca4231
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6facc047d87c503313015eff4e869861cd6b301
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026793"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957003"
 ---
 # <a name="xpath-namespace-navigation"></a>Navigace oboru názvů XPath
-Používat dotazy jazyka XPath dokumentů XML, budete muset správnému adresování obory názvů XML a elementů obsažených ve obory názvů. Obory názvů zabraňují nejasnostem, které může dojít, když názvy se používají ve více než jednom kontextu; například název `ID` mohou odkazovat na více než jeden identifikátor přidružený k jiné prvky dokumentu XML. Syntaxe Namespace určuje identifikátory URI, názvů a předpony, které rozlišení prvků dokumentu XML.  
+Chcete-li používat dotazy XPath s dokumenty XML, je nutné správně adresovat obory názvů XML a prvky obsažené v oborech názvů. Obory názvů zabraňují nejednoznačnosti, ke kterým může dojít, když se názvy používají ve více než jednom kontextu. například název `ID` může odkazovat na více než jeden identifikátor přidružený k různým prvkům dokumentu XML. Syntaxe oboru názvů určuje identifikátory URI, názvy a předpony, které odlišují prvky dokumentu XML.  
   
- V příkladu v tomto tématu ukazuje použití předpony v navigaci dokument XML s <xref:System.Xml.XPath.XPathNavigator>. Další informace o syntaxi a obory názvů, naleznete v tématu [soubory XML: Principy obory názvů XML](https://docs.microsoft.com/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
+ Příklad v tomto tématu ukazuje použití předpon v navigaci dokumentu XML s <xref:System.Xml.XPath.XPathNavigator>. Další informace o oborech názvů a syntaxi naleznete v tématu [soubory XML: porozumění oborům názvů XML](https://docs.microsoft.com/previous-versions/dotnet/articles/bb986013(v=msdn.10)).  
   
-## <a name="namespace-declarations"></a>Deklarace Namespace  
- Deklarací Namespace zkontrolujte elementů dokumentu XML odlišitelným a adresovatelný při použití instance <xref:System.Xml.XPath.XPathNavigator>. Namespace předpony poskytují stručné syntaxe pro adresování obory názvů.  
+## <a name="namespace-declarations"></a>Deklarace oboru názvů  
+ Deklarace oboru názvů umožňují, aby prvky dokumentu XML byly rozlišené a adresovatelné při použití instance <xref:System.Xml.XPath.XPathNavigator>. Předpony oboru názvů poskytují stručnou syntaxi pro adresování oborů názvů.  
   
- Předpony jsou definované ve formuláři: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` V této syntaxe předponu "`e`" je zkratka pro formální identifikátor URI oboru názvů. Můžete určit `Body` element jako člen `Envelope` oboru názvů pomocí syntaxe: `e:Body`.  
+ Předpony jsou definovány ve formě: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` v této syntaxi je prefixem "`e`" zkratka pro formální identifikátor URI oboru názvů. Element `Body` můžete identifikovat jako člen oboru názvů `Envelope` pomocí syntaxe: `e:Body`.  
   
- Následujícího dokumentu XML se bude odkazovat jako `response.xml` v příkladu navigace v další části.  
+ Následující dokument XML bude v navigačním příkladu v následující části odkazován jako `response.xml`.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -37,38 +37,32 @@ Používat dotazy jazyka XPath dokumentů XML, budete muset správnému adresov�
 </e:Envelope>  
 ```  
   
-## <a name="navigation-by-namespace-prefix"></a>Navigace podle předpony Namespace  
- Kód v této části používá <xref:System.Xml.XPath.XPathNavigator> a <xref:System.Xml.XmlNamespaceManager> objektů k výběru `Search` elementu z dokumentu XML v předchozí části. Dotaz `xpath` obsahuje obor názvů předpony na každý prvek v cestě. Určení přesné identity obory názvů, které obsahují každý prvek zaručuje správnou navigaci na `Search` elementu podle <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> metoda.  
+## <a name="navigation-by-namespace-prefix"></a>Navigace podle předpony oboru názvů  
+ Kód v této části používá @no__t objekty-0 a <xref:System.Xml.XmlNamespaceManager> k výběru prvku `Search` z dokumentu XML v předchozí části. Dotaz `xpath` zahrnuje předpony oboru názvů pro každý prvek v cestě. Určení přesné identity oborů názvů, které obsahují jednotlivé prvky, zajišťuje správné procházení prvku `Search` metodou <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>.  
   
-```  
+```csharp  
 using (XmlReader reader = XmlReader.Create("response.xml"))  
-            {  
-                XPathDocument doc = new XPathDocument(reader);  
-                XPathNavigator nav = doc.CreateNavigator();  
-                XmlNamespaceManager nsmgr =  
-                         new XmlNamespaceManager(nav.NameTable);  
-                nsmgr.AddNamespace("e",   
-                         @"http://schemas.xmlsoap.org/soap/envelope/");  
-                nsmgr.AddNamespace("s",   
-                            @"http://schemas.microsoft.com/v1/Search");  
-                nsmgr.AddNamespace("r",   
-                   @"http://schemas.microsoft.com/v1/Search/metadata");  
-                nsmgr.AddNamespace("i",   
-                         @"http://www.w3.org/2001/XMLSchema-instance");  
+{  
+    XPathDocument doc = new XPathDocument(reader);  
+    XPathNavigator nav = doc.CreateNavigator();
   
-                string xpath = "/e:Envelope/e:Body/s:Search";  
+    XmlNamespaceManager nsmgr = new XmlNamespaceManager(nav.NameTable);  
+    nsmgr.AddNamespace("e", @"http://schemas.xmlsoap.org/soap/envelope/");  
+    nsmgr.AddNamespace("s", @"http://schemas.microsoft.com/v1/Search");  
+    nsmgr.AddNamespace("r", @"http://schemas.microsoft.com/v1/Search/metadata");  
+    nsmgr.AddNamespace("i", @"http://www.w3.org/2001/XMLSchema-instance");  
   
-                XPathNavigator element = nav.SelectSingleNode(xpath, nsmgr);  
+    string xpath = "/e:Envelope/e:Body/s:Search";  
   
-                Console.WriteLine("Element Prefix:" + element.Prefix +   
-                           " Local name:" + element.LocalName);  
-                Console.WriteLine("Namespace URI: " +   
-                            element.NamespaceURI);  
+    XPathNavigator element = nav.SelectSingleNode(xpath, nsmgr);  
   
-            }  
+    Console.WriteLine("Element Prefix:" + element.Prefix +   
+    " Local name:" + element.LocalName);  
+    Console.WriteLine("Namespace URI: " + element.NamespaceURI);  
+}  
 ```  
   
- Přesnost plně kvalifikované názvy a obory názvů je větší než usnadnění. Malým množstvím experimentování s využitím definice dokumentu a kód v předchozích příkladech se ověří, že navigace bez názvů plně kvalifikovaný element vyvolá výjimky. Například definice prvku: `<Search xmlns="http://schemas.microsoft.com/v1/Search">`a dotazů: řetězec `xpath = "/s:Envelope/s:Body/Search";` bez předpony oboru názvů na `Search` element vrátí `null` místo `Search` elementu.  
+ Přesnost plně kvalifikovaného oboru názvů a názvů je větší než pohodlí. Trochu experimentování s definicí dokumentu a kódem v předchozích příkladech ověří, zda navigace bez úplných názvů prvků vyvolá výjimky. Například definice elementu: `<Search xmlns="http://schemas.microsoft.com/v1/Search">` a dotaz: řetězec `xpath = "/s:Envelope/s:Body/Search";` bez předpony oboru názvů na elementu `Search` vrátí `null` namísto prvku `Search`.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57198cb9fb0042a3a74589e2781b3db1a2b829f1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ee06454575afc16c904b60a2301feeb05debdcdf
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963383"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957168"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachycují podřetězce vstupního řetězce. Konstrukce seskupení lze použít k následujícím akcím:  
@@ -29,9 +29,9 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
   
 - Použijte kvantifikátor na dílčí výraz, který má více prvků jazyka regulárních výrazů. Další informace o kvantifikátorech naleznete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
-- Zahrňte dílčí výraz do řetězce, který je vrácený <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodami a. <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>  
+- Zahrňte dílčí výraz do řetězce, který je vrácený metodami <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>.  
   
-- Načte jednotlivé dílčí výrazy z <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnosti a zpracuje je odděleně od odpovídajícího textu jako celku.  
+- Načte jednotlivé dílčí výrazy z vlastnosti <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> a zpracuje je odděleně od odpovídajícího textu jako celku.  
   
  V následující tabulce jsou uvedeny seskupovací konstrukce podporované modulem regulárních výrazů .NET a označuje, zda jsou zaznamenávány nebo nejsou zaznamenávány.  
   
@@ -54,22 +54,22 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="matched-subexpressions"></a>Odpovídající podvýrazy  
  Následující seskupovací konstrukce zachytí odpovídající dílčí výraz:  
   
- `(`dílčí *výraz*`)`  
+ `(` dílčí *výraz* `)`  
   
  kde dílčí *výraz* je libovolný platný vzor regulárního výrazu. Zachycení, která používají kulaté závorky, jsou automaticky číslovány zleva doprava na základě pořadí otevíracích závorek v regulárním výrazu, počínaje od jednoho. Záznam s číslem nula je text, který odpovídá celému vzoru regulárního výrazu.  
   
 > [!NOTE]
-> Ve výchozím nastavení `(`prvek jazyka dílčího *výrazu* `)` zachytí odpovídající dílčí výraz. Ale pokud <xref:System.Text.RegularExpressions.RegexOptions> parametr metody porovnávání vzorů regulárních výrazů <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> obsahuje `n` příznak, nebo pokud je možnost použita pro tento dílčí výraz (viz [Možnosti skupiny](#group_options) dále v tomto tématu), odpovídající dílčí výraz je nezachyceno.  
+> Ve výchozím nastavení @no__t prvek jazyka  s dílčím*výrazem*-0 zachytí odpovídající dílčí výraz. Pokud ale parametr <xref:System.Text.RegularExpressions.RegexOptions> metody porovnávání vzorů regulárních výrazů obsahuje příznak <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> nebo pokud je pro tento dílčí výraz použita možnost `n` (viz [Možnosti skupiny](#group_options) dále v tomto tématu), odpovídající dílčí výraz není zachycen.  
   
  Zachycené skupiny můžete získat čtyřmi způsoby:  
   
-- Pomocí konstrukce zpětných odkazů v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí `\` *čísla*syntaxe, kde *Number* je pořadové číslo zachyceného dílčího výrazu.  
+- Pomocí konstrukce zpětných odkazů v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí syntaxe @no__t*číslo*0, kde *Number* je pořadové číslo zachyceného dílčího výrazu.  
   
-- Pomocí pojmenované konstrukce zpětného odkazu v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován `\k<`ve stejném regulárním výrazu pomocí *názvu*`>`syntaxe, kde *název* je název zachytávající skupiny `\k<`nebo *číslo*`>`, kde  *číslo* je pořadové číslo zachytávající skupiny. Zachytávající skupina má výchozí název, který je totožný s pořadovým číslem. Další informace naleznete v části [pojmenované odpovídající](#named_matched_subexpression) podvýrazy dále v tomto tématu.  
+- Pomocí pojmenované konstrukce zpětného odkazu v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí syntaxe `\k<`*název*`>`, kde *název* je název zachytávající skupiny nebo*číslo*`\k<` `>`, kde *Number* je pořadové číslo. zachytávající skupiny. Zachytávající skupina má výchozí název, který je totožný s pořadovým číslem. Další informace naleznete v části [pojmenované odpovídající podvýrazy](#named_matched_subexpression) dále v tomto tématu.  
   
-- Pomocí `$`sekvence <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> *nahrazení čísla* v volání metody nebo,kdenumberjepořadovéčíslozachycenéhodílčíhovýrazu.<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>  
+- Pomocí sekvence nahrazení @no__t *-0 ve* volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, kde *Number* je pořadové číslo zachyceného dílčího výrazu.  
   
-- Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> objektu vráceného <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastností. Člen na pozici nula v kolekci představuje celou shodu regulárního výrazu. Každý další člen představuje odpovídající dílčí výraz. Další informace naleznete v části [seskupovací konstrukce a objekty regulárních výrazů](#Objects) .  
+- Programově pomocí objektu <xref:System.Text.RegularExpressions.GroupCollection> vráceného vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. Člen na pozici nula v kolekci představuje celou shodu regulárního výrazu. Každý další člen představuje odpovídající dílčí výraz. Další informace naleznete v části [seskupovací konstrukce a objekty regulárních výrazů](#Objects) .  
   
  Následující příklad ilustruje regulární výraz, který identifikuje duplicitní slova v textu. Dvě zachytávající skupiny vzoru regulárního výrazu reprezentují dvě instance duplikovaného slova. Druhá instance je zachycena pro hlášení počáteční pozice ve vstupním řetězci.  
   
@@ -78,9 +78,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
   
  Vzor regulárního výrazu je následující:  
   
-```  
-(\w+)\s(\1)\W  
-```  
+`(\w+)\s(\1)\W`  
   
  Následující tabulka ukazuje, jak je interpretován vzor regulárního výrazu.  
   
@@ -88,76 +86,70 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |-------------|-----------------|  
 |`(\w+)`|Porovná jeden nebo více znaků slova. Toto je první zachytávající skupina.|  
 |`\s`|Porovná prázdný znak.|  
-|`(\1)`|Porovnává s řetězcem v první zachycené skupině. Toto je druhá zachytávající skupina. Tento příklad přiřadí k zachycené skupině, aby bylo možné načíst počáteční pozici duplicitního slova z `Match.Index` vlastnosti.|  
+|`(\1)`|Porovnává s řetězcem v první zachycené skupině. Toto je druhá zachytávající skupina. Tento příklad přiřadí k zachycené skupině, aby bylo možné načíst počáteční pozici duplicitního slova z vlastnosti `Match.Index`.|  
 |`\W`|Porovnává znak, který není slovní, včetně mezer a interpunkce. To brání vzoru regulárního výrazu v porovnání s slovem, které začíná slovem z první zachycené skupiny.|  
   
 <a name="named_matched_subexpression"></a>   
 ## <a name="named-matched-subexpressions"></a>Pojmenované odpovídající podvýrazy  
  Následující seskupovací konstrukce zachytí odpovídající dílčí výraz a umožní vám k němu přistupovat podle názvu nebo čísla:  
   
-```  
-(?<name>subexpression)  
-```  
+`(?<name>subexpression)`  
   
  nebo:  
   
-```  
-(?'name'subexpression)  
-```  
+`(?'name'subexpression)`  
   
  kde *Name* je platný název skupiny a dílčí *výraz* je libovolný platný vzor regulárního výrazu. *název* nesmí obsahovat žádné znaky interpunkce a nesmí začínat číslicí.  
   
 > [!NOTE]
-> Pokud parametr metody porovnávání vzorů regulárních výrazů <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> obsahuje `n` příznak, nebo pokud je možnost použita pro tento dílčí výraz (viz [Možnosti skupiny](#group_options) dále v tomto tématu), jediný způsob, jak zachytit <xref:System.Text.RegularExpressions.RegexOptions> dílčí výraz je explicitně pojmenovat zachytávající skupiny.  
+> Pokud parametr <xref:System.Text.RegularExpressions.RegexOptions> metody porovnávání vzorů regulárních výrazů obsahuje příznak <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> nebo pokud je pro tento dílčí výraz použita možnost `n` (viz [Možnosti skupiny](#group_options) dále v tomto tématu), jediný způsob, jak zachytit dílčí výraz, je explicitní pojmenování zachycujících skupin.  
   
  Pojmenované zachycené skupiny můžete získat následujícími způsoby:  
   
-- Pomocí pojmenované konstrukce zpětného odkazu v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí `\k<` *názvu*`>`syntaxe, kde *název* je název zachyceného dílčího výrazu.  
+- Pomocí pojmenované konstrukce zpětného odkazu v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí syntaxe `\k<`*název*`>`, kde *název* je název zachyceného dílčího výrazu.  
   
-- Pomocí konstrukce zpětných odkazů v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí `\` *čísla*syntaxe, kde *Number* je pořadové číslo zachyceného dílčího výrazu. Pojmenované odpovídající podvýrazy jsou po sobě řazeny po odpovídajících podvýrazech očíslovány zleva doprava.  
+- Pomocí konstrukce zpětných odkazů v rámci regulárního výrazu. Odpovídající dílčí výraz je odkazován ve stejném regulárním výrazu pomocí syntaxe @no__t*číslo*0, kde *Number* je pořadové číslo zachyceného dílčího výrazu. Pojmenované odpovídající podvýrazy jsou po sobě řazeny po odpovídajících podvýrazech očíslovány zleva doprava.  
   
-- Pomocí `${`sekvence nahrazení *názvu* `}` ve <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody nebo, kde název je název zachyceného dílčího výrazu. <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>  
+- Pomocí sekvence*nahrazení @no__t-* 2 `${` ve volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, kde *název* je název zachyceného dílčího výrazu.  
   
-- Pomocí `$`sekvence <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> *nahrazení čísla* v volání metody nebo,kdenumberjepořadovéčíslozachycenéhodílčíhovýrazu.<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>  
+- Pomocí sekvence nahrazení @no__t *-0 ve* volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>, kde *Number* je pořadové číslo zachyceného dílčího výrazu.  
   
-- Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> objektu vráceného <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastností. Člen na pozici nula v kolekci představuje celou shodu regulárního výrazu. Každý další člen představuje odpovídající dílčí výraz. Pojmenované zachycené skupiny jsou uloženy v kolekci po číslovaných zachycených skupinách.  
+- Programově pomocí objektu <xref:System.Text.RegularExpressions.GroupCollection> vráceného vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. Člen na pozici nula v kolekci představuje celou shodu regulárního výrazu. Každý další člen představuje odpovídající dílčí výraz. Pojmenované zachycené skupiny jsou uloženy v kolekci po číslovaných zachycených skupinách.  
   
-- Programově zadáním názvu <xref:System.Text.RegularExpressions.GroupCollection> dílčího výrazu objektu indexeru (v C#) nebo jeho <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> vlastnosti (v Visual Basic).  
+- Prostřednictvím kódu programu zadáním názvu dílčího výrazu k indexeru C#objektu <xref:System.Text.RegularExpressions.GroupCollection> nebo k jeho vlastnosti <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> (v Visual Basic).  
   
- Jednoduchý vzor regulárního výrazu ukazuje, jak číslované (nepojmenované) a pojmenované skupiny lze odkazovat buď programově nebo pomocí syntaxe regulárního výrazu. Regulární výraz `((?<One>abc)\d+)?(?<Two>xyz)(.*)` vytváří následující zachytávající skupiny podle čísla a podle názvu. První zachytávající skupina (číslo 0) vždy odkazuje na celý vzor.  
+ Jednoduchý vzor regulárního výrazu ukazuje, jak číslované (nepojmenované) a pojmenované skupiny lze odkazovat buď programově nebo pomocí syntaxe regulárního výrazu. Regulární výraz `((?<One>abc)\d+)?(?<Two>xyz)(.*)` vytvoří následující zachytávající skupiny podle čísla a podle názvu. První zachytávající skupina (číslo 0) vždy odkazuje na celý vzor.  
   
 |Číslo|Name|Vzor|  
 |------------|----------|-------------|  
-|0|0 (výchozí název)|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
-|1|1 (výchozí název)|`((?<One>abc)\d+)`|  
-|2|2 (výchozí název)|`(.*)`|  
+|0,8|0 (výchozí název)|`((?<One>abc)\d+)?(?<Two>xyz)(.*)`|  
+|první|1 (výchozí název)|`((?<One>abc)\d+)`|  
+|odst|2 (výchozí název)|`(.*)`|  
 |3|Jeden|`(?<One>abc)`|  
 |4|Druhá|`(?<Two>xyz)`|  
   
- Následující příklad ilustruje regulární výraz, který identifikuje duplicitní slova a slovo, které bezprostředně následuje po každém duplicitním slově. Vzor regulárního výrazu definuje dva pojmenované dílčí výrazy: `duplicateWord`, které představují duplicitní slovo, a `nextWord`, který představuje slovo, které následuje po duplikované slově.  
+ Následující příklad ilustruje regulární výraz, který identifikuje duplicitní slova a slovo, které bezprostředně následuje po každém duplicitním slově. Vzor regulárního výrazu definuje dva pojmenované dílčí výrazy: `duplicateWord`, které představují zdvojené slovo; a `nextWord`, který představuje slovo, které následuje za duplikovaným slovem.  
   
  [!code-csharp[RegularExpressions.Language.Grouping#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/grouping2.cs#2)]
  [!code-vb[RegularExpressions.Language.Grouping#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/grouping2.vb#2)]  
   
  Vzor regulárního výrazu je následující:  
   
-```  
-(?<duplicateWord>\w+)\s\k<duplicateWord>\W(?<nextWord>\w+)  
-```  
+`(?<duplicateWord>\w+)\s\k<duplicateWord>\W(?<nextWord>\w+)`  
   
  Následující tabulka ukazuje, jak je interpretován regulární výraz.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`(?<duplicateWord>\w+)`|Porovná jeden nebo více znaků slova. Pojmenujte tuto `duplicateWord`zachytávající skupinu.|  
+|`(?<duplicateWord>\w+)`|Porovná jeden nebo více znaků slova. Pojmenujte tuto zachytávající skupinu `duplicateWord`.|  
 |`\s`|Porovná prázdný znak.|  
 |`\k<duplicateWord>`|Porovnává řetězec ze zachycené skupiny s názvem `duplicateWord`.|  
 |`\W`|Porovnává znak, který není slovní, včetně mezer a interpunkce. To brání vzoru regulárního výrazu v porovnání s slovem, které začíná slovem z první zachycené skupiny.|  
-|`(?<nextWord>\w+)`|Porovná jeden nebo více znaků slova. Pojmenujte tuto `nextWord`zachytávající skupinu.|  
+|`(?<nextWord>\w+)`|Porovná jeden nebo více znaků slova. Pojmenujte tuto zachytávající skupinu `nextWord`.|  
   
- Všimněte si, že název skupiny se může opakovat v regulárním výrazu. Například je možné pro více než jednu skupinu pojmenovat `digit`, jak ukazuje následující příklad. V případě duplicitních názvů je hodnota <xref:System.Text.RegularExpressions.Group> objektu určena posledním úspěšným zachycením ve vstupním řetězci. Kromě toho <xref:System.Text.RegularExpressions.CaptureCollection> je naplněna informace o každém zachycení, stejně jako by se jednalo o duplicitní název skupiny.  
+ Všimněte si, že název skupiny se může opakovat v regulárním výrazu. Například je možné, aby bylo více než jedna skupina pojmenována `digit`, jak ukazuje následující příklad. V případě duplicitních názvů je hodnota objektu <xref:System.Text.RegularExpressions.Group> určena posledním úspěšným zachycením ve vstupním řetězci. Kromě toho <xref:System.Text.RegularExpressions.CaptureCollection> vyplní informace o každém zachycení stejným způsobem, jako by se jednalo o duplicitní název skupiny.  
   
- V následujícím příkladu regulární výraz `\D+(?<digit>\d+)\D+(?<digit>\d+)?` obsahuje dva výskyty skupiny s názvem. `digit` První `digit` pojmenovaná skupina zachycuje jeden nebo více znaků číslice. Druhá `digit` pojmenovaná skupina zachycuje buď žádný nebo jeden výskyt jednoho nebo více znaků číslice. Jak ukazuje výstup z příkladu, pokud druhá zachytávající skupina úspěšně odpovídá textu, hodnota tohoto textu definuje hodnotu <xref:System.Text.RegularExpressions.Group> objektu. Pokud druhá zachytávající skupina nemůže odpovídat vstupnímu řetězci, hodnota poslední úspěšné shody definuje hodnotu <xref:System.Text.RegularExpressions.Group> objektu.  
+ V následujícím příkladu regulární výraz `\D+(?<digit>\d+)\D+(?<digit>\d+)?` zahrnuje dva výskyty skupiny s názvem `digit`. První pojmenovaná skupina `digit` zachycuje jeden nebo více znaků číslice. Druhá pojmenovaná skupina `digit` zachycuje buď žádný nebo jeden výskyt jednoho nebo více znaků číslice. Jak ukazuje výstup z příkladu, pokud druhá zachytávající skupina úspěšně odpovídá textu, hodnota tohoto textu definuje hodnotu objektu <xref:System.Text.RegularExpressions.Group>. Pokud druhá zachytávající skupina nemůže odpovídat vstupnímu řetězci, hodnota poslední úspěšné shody definuje hodnotu objektu <xref:System.Text.RegularExpressions.Group>.  
   
  [!code-csharp[RegularExpressions.Language.Grouping#12](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/duplicate1.cs#12)]
  [!code-vb[RegularExpressions.Language.Grouping#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/duplicate1.vb#12)]  
@@ -167,41 +159,35 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\D+`|Porovnává jeden nebo více znaků, které nejsou desítkové číslice.|  
-|`(?<digit>\d+)`|Porovnává jeden nebo více desítkových znaků. Přiřaďte shodu `digit` s pojmenovanou skupinou.|  
+|`(?<digit>\d+)`|Porovnává jeden nebo více desítkových znaků. Přiřaďte shodu k pojmenované skupině `digit`.|  
 |`\D+`|Porovnává jeden nebo více znaků, které nejsou desítkové číslice.|  
-|`(?<digit>\d+)?`|Porovná žádný nebo jeden výskyt jednoho nebo více znaků desítkové číslice. Přiřaďte shodu `digit` s pojmenovanou skupinou.|  
+|`(?<digit>\d+)?`|Porovná žádný nebo jeden výskyt jednoho nebo více znaků desítkové číslice. Přiřaďte shodu k pojmenované skupině `digit`.|  
   
 <a name="balancing_group_definition"></a>   
 ## <a name="balancing-group-definitions"></a>Vyrovnávání definic skupin  
  Vyrovnávací Seskupovací definice odstraní definici dříve definované skupiny a obchodů v aktuální skupině, interval mezi dříve definovanou skupinou a aktuální skupinou. Tato seskupovací konstrukce má následující formát:  
   
-```  
-(?<name1-name2>subexpression)  
-```  
+`(?<name1-name2>subexpression)`  
   
  nebo:  
   
-```  
-(?'name1-name2' subexpression)  
-```  
+`(?'name1-name2' subexpression)`
   
  kde *název1* je aktuální skupina (volitelné), *název2* je dříve definovaná skupina a dílčí *výraz* je libovolný platný vzor regulárního výrazu. Vyrovnávací Seskupovací definice odstraní definici *název2* a uloží interval mezi *název2* a *název1* v poli *název1*. Pokud není definována žádná skupina *název2* , porovnávání se zaznamená. Vzhledem k tomu, že odstranění poslední definice *název2* odhalí předchozí definici *název2*, Tato konstrukce vám umožní použít zásobník zachycení pro skupinu *název2* jako čítač pro udržení přehledu o vnořených konstrukcích, jako jsou závorky nebo otevírání. a uzavírací závorky.  
   
- Vyrovnávací Seskupovací definice používá *název2* jako zásobník. Počáteční znak každé vnořené konstrukce je umístěn ve skupině a v jeho <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekci. Při porovnání uzavíracího znaku je příslušný počáteční znak odebrán ze skupiny a <xref:System.Text.RegularExpressions.Group.Captures%2A> kolekce je zmenšena o jednu. Po porovnání znaků pro otevření a ukončení všech vnořených konstrukcí je *název2* prázdné.  
+ Vyrovnávací Seskupovací definice používá *název2* jako zásobník. Počáteční znak každé vnořené konstrukce se umístí do skupiny a do kolekce <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>. Při porovnání uzavíracího znaku je jeho odpovídající počáteční znak odebrán ze skupiny a kolekce <xref:System.Text.RegularExpressions.Group.Captures%2A> je zmenšena o jednu. Po porovnání znaků pro otevření a ukončení všech vnořených konstrukcí je *název2* prázdné.  
   
 > [!NOTE]
 > Po úpravě regulárního výrazu v následujícím příkladu pro použití vhodného otevíracího a ukončovacího znaku vnořené konstrukce lze použít pro zpracování většiny vnořených konstrukcí, jako jsou matematické výrazy nebo řádky kódu programu, které zahrnují Vícenásobná volání vnořených metod  
   
- V následujícím příkladu je použita definice vyrovnávací skupiny tak, aby odpovídala levou a pravou lomenou závorku (< >) ve vstupním řetězci. V příkladu jsou definovány dvě pojmenované skupiny `Open` a `Close`, které se používají jako zásobník, aby bylo možné sledovat odpovídající páry lomených závorek. Každá zachycená levá lomená závorka je vložena do kolekce `Open` zachycení skupiny a každá zachycená Pravá lomená závorka je vložena do kolekce `Close` zachycení skupiny. Definice vyrovnávací skupiny zajišťuje odpovídající pravou ostrou závorku pro každou levou lomenou závorku. Pokud není, konečný dílčí vzor, `(?(Open)(?!))`, je vyhodnocen pouze v `Open` případě, že skupina není prázdná (a proto, pokud nebyly všechny vnořené konstrukce uzavřeny). Pokud je výsledný dílčí vzor vyhodnocen, shoda se nezdařila, `(?!)` protože dílčím vzorem je negativní kontrolní výraz dopředného vyhledávání s nulovou šířkou, který vždy selhává.  
+ V následujícím příkladu je použita definice vyrovnávací skupiny tak, aby odpovídala levou a pravou lomenou závorku (< >) ve vstupním řetězci. V příkladu jsou definovány dvě pojmenované skupiny, `Open` a `Close`, které se používají jako zásobník pro sledování párů s odpovídajícími páry lomených závorek. Každá zachycená levá lomená závorka je vložena do kolekce zachycení skupiny @no__t 0 a každá zachycená Pravá lomená závorka se vloží do kolekce zachycení skupiny `Close`. Definice vyrovnávací skupiny zajišťuje odpovídající pravou ostrou závorku pro každou levou lomenou závorku. Pokud není, je konečný dílčí vzor `(?(Open)(?!))` vyhodnocen pouze v případě, že skupina `Open` není prázdná (a proto, pokud nebyly všechny vnořené konstrukce uzavřeny). Pokud je výsledný dílčí vzor vyhodnocován, shoda se nezdařila, protože podvzor `(?!)` je nekonečný kontrolní výraz dopředného vyhledávání s nulovou šířkou, který vždy selhává.  
   
  [!code-csharp[RegularExpressions.Language.Grouping#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/grouping3.cs#3)]
  [!code-vb[RegularExpressions.Language.Grouping#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/grouping3.vb#3)]  
   
  Vzor regulárního výrazu je:  
   
-```  
-^[^<>]*(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*(?(Open)(?!))$  
-```  
+`^[^<>]*(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*(?(Open)(?!))$`  
   
  Regulární výraz je interpretován následujícím způsobem:  
   
@@ -209,54 +195,52 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |-------------|-----------------|  
 |`^`|Začněte na začátku řetězce.|  
 |`[^<>]*`|Porovná žádný nebo více znaků, které nejsou levou nebo pravou lomenou závorku.|  
-|`(?'Open'<)`|Porovnává levou ostrou závorku a přiřadí ji do `Open`skupiny s názvem.|  
+|`(?'Open'<)`|Porovnává levou ostrou závorku a přiřadí ji do skupiny s názvem `Open`.|  
 |`[^<>]*`|Porovná žádný nebo více znaků, které nejsou levou nebo pravou lomenou závorku.|  
 |`((?'Open'<)[^<>]*)+`|Porovná jeden nebo více výskytů levé lomené závorky, za kterými následuje nula nebo více znaků, které nejsou levou nebo pravou lomenou závorku. Toto je druhá zachytávající skupina.|  
-|`(?'Close-Open'>)`|Porovnává pravou ostrou závorku, přiřadí podřetězec `Open` mezi skupinou a aktuální skupinou `Close` ke skupině a `Open` odstraní definici skupiny.|  
+|`(?'Close-Open'>)`|Porovnává pravou ostrou závorku, přiřadí podřetězec mezi skupinou `Open` a aktuální skupinou do skupiny `Close` a odstraní definici skupiny `Open`.|  
 |`[^<>]*`|Porovná žádný nebo více výskytů libovolného znaku, který není levou ani pravou ostrou závorkou.|  
-|`((?'Close-Open'>)[^<>]*)+`|Porovná jeden nebo více výskytů pravé lomené závorky, za kterými následuje nula nebo více výskytů libovolného znaku, který není levou ani pravou ostrou závorkou. Při porovnání pravé lomené závorky přiřaďte podřetězec mezi `Open` skupinou a aktuální skupinou `Close` ke skupině a `Open` odstraňte definici skupiny. Toto je třetí zachytávající skupina.|  
-|`(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*`|Porovná žádný nebo více výskytů následujícího vzoru: jeden nebo více výskytů levé lomené závorky, za kterými následuje nula nebo více znaků bez lomené závorky následované jedním nebo více výskyty pravé lomené závorky, za kterým následuje nula nebo více výskytů. mimo lomené závorky. Při porovnání pravé lomené závorky odstraňte definici `Open` skupiny a podřetězec `Open` mezi skupinou a aktuální skupinou přiřaďte do `Close` skupiny. Toto je první zachytávající skupina.|  
-|`(?(Open)(?!))`|`Open` Pokud skupina existuje, přenechání shody, pokud je možné spárovat prázdný řetězec, ale nezadávejte pozici modulu regulárních výrazů do řetězce. Toto je kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou. Vzhledem k tomu, že prázdný řetězec je vždy implicitně přítomen ve vstupním řetězci, tato shoda se vždy nezdařila. Selhání této shody znamená, že lomené závorky nejsou vyrovnané.|  
+|`((?'Close-Open'>)[^<>]*)+`|Porovná jeden nebo více výskytů pravé lomené závorky, za kterými následuje nula nebo více výskytů libovolného znaku, který není levou ani pravou ostrou závorkou. Při porovnání pravé lomené závorky přiřaďte podřetězec mezi skupinou `Open` a aktuální skupinou do skupiny `Close` a odstraňte definici skupiny `Open`. Toto je třetí zachytávající skupina.|  
+|`(((?'Open'<)[^<>]*)+((?'Close-Open'>)[^<>]*)+)*`|Porovná žádný nebo více výskytů následujícího vzoru: jeden nebo více výskytů levé lomené závorky, za kterými následuje nula nebo více znaků bez lomené závorky následované jedním nebo více výskyty pravé lomené závorky, za kterým následuje nula nebo více výskytů. mimo lomené závorky. Při porovnání pravé lomené závorky odstraňte definici `Open` a přiřaďte podřetězec mezi skupinou `Open` a aktuální skupinou do skupiny `Close`. Toto je první zachytávající skupina.|  
+|`(?(Open)(?!))`|Pokud existuje skupina `Open`, zrušte shodu, pokud je možné spárovat prázdný řetězec, ale nezadávejte pozici modulu regulárních výrazů do řetězce. Toto je kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou. Vzhledem k tomu, že prázdný řetězec je vždy implicitně přítomen ve vstupním řetězci, tato shoda se vždy nezdařila. Selhání této shody znamená, že lomené závorky nejsou vyrovnané.|  
 |`$`|Porovná konec vstupního řetězce.|  
   
- Konečný dílčí výraz, `(?(Open)(?!))`, označuje, zda jsou vnořené konstrukce ve vstupním řetězci správně vyváženy (například zda je každá levá lomená závorka shodná s pravou ostrou závorkou). Používá podmíněné porovnání na základě platné zachycené skupiny; Další informace naleznete v tématu [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md). Pokud je `(?!)` skupina definována, modul regulárních výrazů se pokusí porovnat dílčí výraz ve vstupním řetězci. `Open` Skupina `Open` by měla být definována pouze v případě, že vnořování konstrukcí jsou nevyvážené. Proto by vzor, který má být porovnán ve vstupním řetězci, měl být ten, který vždy způsobí selhání shody. V tomto případě `(?!)` je negativní kontrolní výraz dopředného vyhledávání s nulovou šířkou, který vždy nefunguje, protože prázdný řetězec je vždy implicitně přítomen na další pozici ve vstupním řetězci.  
+ Konečný dílčí výraz `(?(Open)(?!))` označuje, zda jsou vnořené konstrukce ve vstupním řetězci správně vyváženy (například zda je každá levá lomená závorka shodná s pravou ostrou závorkou). Používá podmíněné porovnání na základě platné zachycené skupiny; Další informace naleznete v tématu [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md). Pokud je definována skupina `Open`, modul regulárních výrazů se pokusí porovnat dílčí výraz `(?!)` ve vstupním řetězci. Skupina `Open` by měla být definována pouze v případě, že vnořování konstrukcí jsou nevyvážené. Proto by vzor, který má být porovnán ve vstupním řetězci, měl být ten, který vždy způsobí selhání shody. V takovém případě je `(?!)` kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou, který vždy selhává, protože prázdný řetězec je vždy implicitně přítomen na další pozici ve vstupním řetězci.  
   
- V příkladu modul regulárních výrazů vyhodnocuje vstupní řetězec "\<ABC > < mno\<XYZ > >", jak je znázorněno v následující tabulce.  
+ V příkladu modul regulárních výrazů vyhodnocuje vstupní řetězec "\<abc > < mno @ no__t-1xyz > >", jak je znázorněno v následující tabulce.  
   
 |Krok|Vzor|Výsledek|  
 |----------|-------------|------------|  
-|1|`^`|Zahájí porovnávání na začátku vstupního řetězce.|  
-|2|`[^<>]*`|Vyhledá znaky bez lomené závorky před levou lomenou závorkou; nenajde žádné shody.|  
-|3|`(((?'Open'<)`|Porovná levou ostrou závorku\<v řetězci "ABC >" a přiřadí ji `Open` ke skupině.|  
+|první|`^`|Zahájí porovnávání na začátku vstupního řetězce.|  
+|odst|`[^<>]*`|Vyhledá znaky bez lomené závorky před levou lomenou závorkou; nenajde žádné shody.|  
+|3|`(((?'Open'<)`|Porovná levou ostrou závorku v řetězci "\<abc >" a přiřadí ji ke skupině `Open`.|  
 |4|`[^<>]*`|Odpovídá "ABC".|  
-|5|`)+`|"< ABC" je hodnota druhé zachycené skupiny.<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů nevrátí zpět do `(?'Open'<)[^<>]*)` dílčího vzoru.|  
-|6|`((?'Close-Open'>)`|Porovná pravou ostrou závorku\<v řetězci "ABC >", přiřadí "ABC", což je podřetězec `Open` mezi skupinou a pravou `Close` ostrou závorkou, do skupiny a odstraní aktuální `Open` hodnotu ("<") skupiny, ponecháno prázdné.|  
-|7|`[^<>]*`|Vyhledá znaky bez lomené závorky za pravou ostrou závorkou; nenajde žádné shody.|  
-|8|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Další znak ve vstupním řetězci není pravá lomená závorka, takže modul regulárních výrazů nevrátí zpět do `((?'Close-Open'>)[^<>]*)` dílčího vzoru.|  
-|9|`)*`|Hodnota první zachycené skupiny je "\<ABC >".<br /><br /> Dalším znakem ve vstupním řetězci je levá lomená závorka, takže modul regulárních výrazů se vrátí do `(((?'Open'<)` dílčího vzoru.|  
-|10|`(((?'Open'<)`|Porovná levou ostrou závorku\<v řetězci "mno" a přiřadí ji `Open` ke skupině. Jeho <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> kolekce teď má jednu hodnotu "<".|  
-|11|`[^<>]*`|Odpovídá "mno".|  
-|12|`)+`|"< mno" je hodnota druhé zachycené skupiny.<br /><br /> Dalším znakem ve vstupním řetězci je levá lomená závorka, takže modul regulárních výrazů se vrátí do `(?'Open'<)[^<>]*)` dílčího vzoru.|  
-|13|`(((?'Open'<)`|Porovná levou lomenou závorku\<v "XYZ >" a přiřadí `Open` ji ke skupině. Kolekce skupiny nyní obsahuje dvě zachycení: levou lomenou závorku z\<"mno" a levou lomenou závorku z "\<XYZ >". `Open` <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>|  
-|14|`[^<>]*`|Odpovídá "xyz".|  
-|15|`)+`|"< xyz" je hodnota druhé zachycené skupiny.<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů nevrátí zpět do `(?'Open'<)[^<>]*)` dílčího vzoru.|  
-|16|`((?'Close-Open'>)`|Porovná pravou ostrou závorku\<v "XYZ >". "xyz" přiřadí podřetězec mezi `Open` skupinou a pravou ostrou závorkou `Close` skupině a odstraní aktuální hodnotu `Open` skupiny. Hodnota předchozího zachycení (levá lomená závorka v "\<mno") se zobrazí jako aktuální hodnota `Open` skupiny. Kolekce skupiny nyní obsahuje jedno zachycení, levou lomenou závorku z "\<XYZ >". `Open` <xref:System.Text.RegularExpressions.Group.Captures%2A>|  
-|17|`[^<>]*`|Hledá znaky, které nejsou lomené závorky. nenajde žádné shody.|  
-|18|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Dalším znakem ve vstupním řetězci je Pravá lomená závorka, takže modul regulárních výrazů se vrátí do `((?'Close-Open'>)[^<>]*)` dílčího vzoru.|  
-|19|`((?'Close-Open'>)`|Odpovídá poslední pravé lomené závorce v "XYZ > >", přiřadí\<"mno XYZ >" (podřetězec `Open` mezi skupinou a pravou `Close` ostrou závorkou) do skupiny a odstraní aktuální hodnotu `Open` skupiny. `Open` Skupina je teď prázdná.|  
-|20|`[^<>]*`|Hledá znaky, které nejsou lomené závorky. nenajde žádné shody.|  
-|21|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Další znak ve vstupním řetězci není pravá lomená závorka, takže modul regulárních výrazů nevrátí zpět do `((?'Close-Open'>)[^<>]*)` dílčího vzoru.|  
-|22|`)*`|Hodnota první zachycené skupiny je < mno\<XYZ > >.<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů nevrátí zpět do `(((?'Open'<)` dílčího vzoru.|  
-|23|`(?(Open)(?!))`|`Open` Skupina není definovaná, takže se nezkouší žádná shoda.|  
+|5|`)+`|"< ABC" je hodnota druhé zachycené skupiny.<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů neskočí zpět na dílčí vzor `(?'Open'<)[^<>]*)`.|  
+|6|`((?'Close-Open'>)`|Porovná pravou ostrou závorku v "\<abc >", přiřadí "ABC", což je podřetězec mezi skupinou `Open` a pravou ostrou závorkou, do skupiny `Close` a odstraní aktuální hodnotu ("<") skupiny `Open`, přičemž zůstane prázdná.|  
+|čl|`[^<>]*`|Vyhledá znaky bez lomené závorky za pravou ostrou závorkou; nenajde žádné shody.|  
+|8|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Další znak ve vstupním řetězci není pravá lomená závorka, takže modul regulárních výrazů nevrátí zpět do dílčího vzoru `((?'Close-Open'>)[^<>]*)`.|  
+|9|`)*`|Hodnota první zachycené skupiny je "\<abc >".<br /><br /> Dalším znakem ve vstupním řetězci je levá lomená závorka, takže modul regulárních výrazů se vrátí zpět do dílčího vzoru `(((?'Open'<)`.|  
+|10pruhový|`(((?'Open'<)`|Porovná levou ostrou závorku v řetězci "\<mno" a přiřadí ji do skupiny `Open`. Kolekce <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> má nyní jedinou hodnotu "<".|  
+|odst|`[^<>]*`|Odpovídá "mno".|  
+|12,5|`)+`|"< mno" je hodnota druhé zachycené skupiny.<br /><br /> Dalším znakem ve vstupním řetězci je levá lomená závorka, takže modul regulárních výrazů se vrátí zpět do dílčího vzoru `(?'Open'<)[^<>]*)`.|  
+|13,5|`(((?'Open'<)`|Porovná levou ostrou závorku v řetězci "\<xyz >" a přiřadí ji ke skupině `Open`. Kolekce <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> skupiny `Open` nyní obsahuje dvě zachycení: levou lomenou závorku z "\<mno" a levou ostrou závorku z "\<xyz >".|  
+|čtrnáct|`[^<>]*`|Odpovídá "xyz".|  
+|15|`)+`|"< xyz" je hodnota druhé zachycené skupiny.<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů neskočí zpět na dílčí vzor `(?'Open'<)[^<>]*)`.|  
+|16bitovém|`((?'Close-Open'>)`|Porovná pravou ostrou závorku v "\<xyz >". "xyz" přiřadí podřetězec mezi skupinou `Open` a pravou ostrou závorkou do skupiny `Close` a odstraní aktuální hodnotu skupiny `Open`. Hodnota předchozího zachycení (levá lomená závorka v "\<mno") se stala aktuální hodnotou skupiny `Open`. Kolekce <xref:System.Text.RegularExpressions.Group.Captures%2A> skupiny `Open` nyní obsahuje jedno zachycení, levou hranatou závorku z "\<xyz >".|  
+|sedmnáct|`[^<>]*`|Hledá znaky, které nejsou lomené závorky. nenajde žádné shody.|  
+|let|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Dalším znakem ve vstupním řetězci je Pravá lomená závorka, takže modul regulárních výrazů se vrátí zpět do dílčího vzoru `((?'Close-Open'>)[^<>]*)`.|  
+|čl|`((?'Close-Open'>)`|Odpovídá poslední pravé lomené závorce v "XYZ > >", přiřadí "mno @ no__t-0xyz >" (podřetězec mezi skupinou `Open` a pravou ostrou závorkou) do skupiny `Close` a odstraní aktuální hodnotu skupiny `Open`. Skupina `Open` je nyní prázdná.|  
+|20o|`[^<>]*`|Hledá znaky, které nejsou lomené závorky. nenajde žádné shody.|  
+|20|`)+`|Hodnota třetí zachycené skupiny je ">".<br /><br /> Další znak ve vstupním řetězci není pravá lomená závorka, takže modul regulárních výrazů nevrátí zpět do dílčího vzoru `((?'Close-Open'>)[^<>]*)`.|  
+|22|`)*`|Hodnota první zachycené skupiny je "< mno @ no__t-0xyz > >".<br /><br /> Další znak ve vstupním řetězci není levá lomená závorka, takže modul regulárních výrazů neskočí zpět na dílčí vzor `(((?'Open'<)`.|  
+|listopadu|`(?(Open)(?!))`|Skupina `Open` není definována, takže se nezkouší žádná shoda.|  
 |24|`$`|Odpovídá konci vstupního řetězce.|  
   
 <a name="noncapturing_group"></a>   
 ## <a name="noncapturing-groups"></a>Skupiny bez zachycení  
  Následující seskupovací konstrukce nezachycuje podřetězec, který odpovídá dílčímu výrazu:  
   
-```  
-(?:subexpression)  
-```  
+`(?:subexpression)`
   
  kde dílčí *výraz* je libovolný platný vzor regulárního výrazu. Konstrukce nezachytávající skupiny se obvykle používá při použití kvantifikátoru na skupinu, ale podřetězce zachycené skupinou nejsou žádného zájmu.  
   
@@ -282,16 +266,16 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="group-options"></a>Možnosti skupiny  
  Následující seskupovací konstrukce aplikuje nebo zakáže zadané možnosti v rámci dílčího výrazu:  
   
- `(?imnsx-imnsx:`dílčí *výraz*`)`  
+ `(?imnsx-imnsx:` dílčí *výraz* `)`  
   
  kde dílčí *výraz* je libovolný platný vzor regulárního výrazu. Například `(?i-s:)` zapne nerozlišování velkých a malých písmen a zakáže jednořádkový režim. Další informace o vložených možnostech, které můžete zadat, najdete v tématu [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Můžete určit možnosti, které se vztahují na celý regulární výraz místo dílčího výrazu pomocí <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické metody. Můžete také zadat vložené možnosti, které se použijí po určitém místě regulárního výrazu pomocí `(?imnsx-imnsx)` jazykové konstrukce.  
+> Můžete zadat možnosti, které se vztahují na celý regulární výraz místo dílčího výrazu pomocí konstruktoru třídy <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> nebo statické metody. Můžete také zadat vložené možnosti, které se použijí po určitém místě regulárního výrazu pomocí konstrukce jazyka `(?imnsx-imnsx)`.  
   
- Konstrukce možností skupiny není zachytávající skupina. To znamená, že i když je část řetězce zachycená podvýrazem obsažena v shodě, není obsažena v zachycené skupině ani použita k naplnění <xref:System.Text.RegularExpressions.GroupCollection> objektu.  
+ Konstrukce možností skupiny není zachytávající skupina. To znamená, že i když je část řetězce zachycená *podvýrazem* obsažena v shodě, není obsažena v zachycené skupině ani použita k naplnění objektu <xref:System.Text.RegularExpressions.GroupCollection>.  
   
- Například regulární výraz `\b(?ix: d \w+)\s` v následujícím příkladu používá vložené možnosti v seskupovací konstrukci pro povolení porovnávání bez rozlišování velkých a malých písmen v identifikaci všech slov, která začínají písmenem "d". Regulární výraz je definován tak, jak je uvedeno v následující tabulce.  
+ Například regulární výraz `\b(?ix: d \w+)\s` v následujícím příkladu používá vloženou možnost v seskupovací konstrukci pro povolení porovnávání bez rozlišování velkých a malých písmen v identifikaci všech slov, která začínají písmenem "d". Regulární výraz je definován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -306,9 +290,9 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="zero-width-positive-lookahead-assertions"></a>Pozitivní kontrolní výrazy dopředného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou:  
   
- `(?=`dílčí *výraz*`)`  
+ `(?=` dílčí *výraz* `)`  
   
- kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby shoda byla úspěšná, vstupní řetězec musí odpovídat vzoru regulárního výrazu v podvýrazu, i když odpovídající podřetězec není zahrnutý ve výsledku shody. Kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou nevrací.  
+ kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby shoda byla úspěšná, vstupní řetězec musí odpovídat vzoru regulárního výrazu v *podvýrazu*, i když odpovídající podřetězec není zahrnutý ve výsledku shody. Kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou nevrací.  
   
  Obvykle je kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou nalezen na konci vzoru regulárního výrazu. Definuje podřetězec, který musí být nalezen na konci řetězce, aby došlo ke shodě, ale který by neměl být zahrnut do shody. Je to také užitečné pro zabránění nadměrnému navrácení. Můžete použít kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou pro zajištění, že konkrétní zachycená skupina začíná textem, který odpovídá podmnožině vzoru definované pro tuto zachycenou skupinu. Například pokud zachytávající skupina odpovídá po sobě jdoucích znaků slova, můžete použít kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou pro vyžadování prvního znaku na abecedním znaku.  
   
@@ -329,9 +313,9 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="zero-width-negative-lookahead-assertions"></a>Negativní kontrolní výrazy dopředného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou:  
   
- `(?!`dílčí *výraz*`)`  
+ `(?!` dílčí *výraz* `)`  
   
- kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby shoda byla úspěšná, vstupní řetězec nesmí odpovídat vzoru regulárního výrazu v podvýrazu,i když odpovídající řetězec není zahrnutý ve výsledku shody.  
+ kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby shoda byla úspěšná, vstupní řetězec nesmí odpovídat vzoru regulárního výrazu v *podvýrazu*, i když odpovídající řetězec není zahrnutý ve výsledku shody.  
   
  Negativní kontrolní výraz dopředného vyhledávání s nulovou šířkou se obvykle používá buď na začátku nebo na konci regulárního výrazu. Na začátku regulárního výrazu může definovat konkrétní vzor, který by neměl být spárován, pokud začátek regulárního výrazu definuje podobný, ale obecnější vzor, který se má shodovat. V takovém případě se často používá k omezení zpětného navrácení. Na konci regulárního výrazu může definovat dílčí výraz, který nemůže být proveden na konci porovnávání.  
   
@@ -367,9 +351,9 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="zero-width-positive-lookbehind-assertions"></a>Pozitivní kontrolní výrazy zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou:  
   
- `(?<=`dílčí *výraz*`)`  
+ `(?<=` dílčí *výraz* `)`  
   
- kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby shoda byla úspěšná, musí se dílčí *výraz* vyskytovat ve vstupním řetězci nalevo od aktuální pozice, i když `subexpression` není zahrnutý ve výsledku shody. Kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou nevrací.  
+ kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby byla shoda úspěšná, musí se dílčí *výraz* vyskytovat ve vstupním řetězci nalevo od aktuální pozice, i když `subexpression` není zahrnut ve výsledku shody. Kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou nevrací.  
   
  Kontrolní výrazy pozitivního zpětného vyhledávání s nulovou šířkou jsou obvykle používány na začátku regulárních výrazů. Vzor, který definuje, je podmínkou pro shodu, ačkoli se nejedná o součást výsledku shody.  
   
@@ -378,7 +362,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
  [!code-csharp[RegularExpressions.Language.Grouping#9](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/lookbehind1.cs#9)]
  [!code-vb[RegularExpressions.Language.Grouping#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/lookbehind1.vb#9)]  
   
- Vzor `(?<=\b20)\d{2}\b` regulárního výrazu je interpretován tak, jak je uvedeno v následující tabulce.  
+ Vzor regulárního výrazu `(?<=\b20)\d{2}\b` je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -392,18 +376,18 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="zero-width-negative-lookbehind-assertions"></a>Negativní kontrolní výrazy zpětného vyhledávání s nulovou šířkou  
  Následující seskupovací konstrukce definuje kontrolní výraz negativního zpětného vyhledávání s nulovou šířkou:  
   
- `(?<!`dílčí *výraz*`)`  
+ `(?<!` dílčí *výraz* `)`  
   
- kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby porovnávání bylo úspěšné, nesmí se dílčí *výraz* vyskytovat ve vstupním řetězci nalevo od aktuální pozice. Nicméně jakýkoli podřetězec, který neodpovídá, `subexpression` není zahrnut ve výsledku shody.  
+ kde dílčí *výraz* je libovolný vzor regulárního výrazu. Aby porovnávání bylo úspěšné, nesmí se dílčí *výraz* vyskytovat ve vstupním řetězci nalevo od aktuální pozice. Nicméně jakýkoliv podřetězec, který neodpovídá `subexpression`, není zahrnut ve výsledku shody.  
   
- Negativní kontrolní výrazy zpětného vyhledávání s nulovou šířkou jsou obvykle používány na začátku regulárních výrazů. Vzor, který definuje, vylučuje shodu v řetězci, který následuje. Používají se také k omezení zpětného navrácení, pokud poslední znak nebo znaky v zachycené skupině nesmí být jedním nebo více znaky, které odpovídají vzoru regulárního výrazu dané skupiny. Například pokud skupina zachytává všechny po sobě jdoucí znaky slova, můžete použít kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou, který vyžaduje, aby poslední znak nebyl podtržítkem (\_).  
+ Negativní kontrolní výrazy zpětného vyhledávání s nulovou šířkou jsou obvykle používány na začátku regulárních výrazů. Vzor, který definuje, vylučuje shodu v řetězci, který následuje. Používají se také k omezení zpětného navrácení, pokud poslední znak nebo znaky v zachycené skupině nesmí být jedním nebo více znaky, které odpovídají vzoru regulárního výrazu dané skupiny. Například pokud skupina zachytává všechny po sobě jdoucí znaky slova, můžete použít kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou, který vyžaduje, aby poslední znak nebyl podtržítk (\_).  
   
  Následující příklad se shoduje s datem pro každý den v týdnu, který není víkend (tj. není to sobota ani neděle).  
   
  [!code-csharp[RegularExpressions.Language.Grouping#10](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/negativelookbehind1.cs#10)]
  [!code-vb[RegularExpressions.Language.Grouping#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/negativelookbehind1.vb#10)]  
   
- Vzor `(?<!(Saturday|Sunday) )\b\w+ \d{1,2}, \d{4}\b` regulárního výrazu je interpretován tak, jak je uvedeno v následující tabulce.  
+ Vzor regulárního výrazu `(?<!(Saturday|Sunday) )\b\w+ \d{1,2}, \d{4}\b` je interpretován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -417,13 +401,13 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 ## <a name="nonbacktracking-subexpressions"></a>Dílčí výrazy bez mechanismu navracení  
  Následující seskupovací konstrukce představuje dílčí výraz bez mechanismu navracení (označuje se také jako "hladec"):  
   
- `(?>`dílčí *výraz*`)`  
+ `(?>` dílčí *výraz* `)`  
   
  kde dílčí *výraz* je libovolný vzor regulárního výrazu.  
   
  Obvykle, pokud regulární výraz obsahuje volitelný nebo alternativní odpovídající vzor a shoda není úspěšná, modul regulárních výrazů může vytvořit větve ve více směrech, aby odpovídal vstupnímu řetězci se vzorem. Pokud se shoda nenajde, když vezme první větev, modul regulárních výrazů může zálohovat nebo přesměrovat do bodu, kde trvalo první shodě, a pokusit se o shodu pomocí druhé větve. Tento proces může pokračovat, dokud nebudou všechny větve vyzkoušeny.  
   
- Konstrukce jazyka dílčího *výrazu* `)` zakáže zpětné navrácení. `(?>` Modul regulárních výrazů bude odpovídat počtu znaků ve vstupním řetězci, jak může. V případě, že žádná další shoda není možná, nebude při pokusu o alternativní porovnávání vzorů navázáno. (To znamená, že dílčí výraz odpovídá pouze řetězcům, které by odpovídaly samotnému dílčímu výrazu; nepokusí se porovnat řetězec na základě dílčího výrazu a všech dílčích výrazů, které následují.)  
+ Konstrukce jazyka `(?>` s dílčím*výrazem*`)` zakáže zpětné navrácení. Modul regulárních výrazů bude odpovídat počtu znaků ve vstupním řetězci, jak může. V případě, že žádná další shoda není možná, nebude při pokusu o alternativní porovnávání vzorů navázáno. (To znamená, že dílčí výraz odpovídá pouze řetězcům, které by odpovídaly samotnému dílčímu výrazu; nepokusí se porovnat řetězec na základě dílčího výrazu a všech dílčích výrazů, které následují.)  
   
  Tato možnost se doporučuje, pokud víte, že zpětné navrácení nebude úspěšné. Zabránění modulu regulárních výrazů v provádění zbytečných hledání zlepšuje výkon.  
   
@@ -432,7 +416,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
  [!code-csharp[RegularExpressions.Language.Grouping#11](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/nonbacktracking1.cs#11)]
  [!code-vb[RegularExpressions.Language.Grouping#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/nonbacktracking1.vb#11)]  
   
- Regulární výraz `(?>(\w)\1+).\b` nemechanismu navracení je definován tak, jak je uvedeno v následující tabulce.  
+ Regulární výraz nemechanismu navracení `(?>(\w)\1+).\b` je definován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -444,22 +428,22 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
   
 <a name="Objects"></a>   
 ## <a name="grouping-constructs-and-regular-expression-objects"></a>Seskupovací konstrukce a objekty regulárních výrazů  
- Podřetězce, které jsou porovnány zachycující skupinou regulárního výrazu, jsou reprezentovány <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> objekty, které mohou být načteny <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> z objektu <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> , který je vrácen vlastností. <xref:System.Text.RegularExpressions.GroupCollection> Objekt se vyplní následujícím způsobem:  
+ Podřetězce, které jsou porovnány zachycující skupinou regulárního výrazu, jsou reprezentovány objekty <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType>, které mohou být načteny z objektu <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType>, který je vrácen vlastností <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. Objekt <xref:System.Text.RegularExpressions.GroupCollection> je vyplněný následujícím způsobem:  
   
-- První <xref:System.Text.RegularExpressions.Group> objekt v kolekci (objekt na indexu nula) představuje celou shodu.  
+- První objekt <xref:System.Text.RegularExpressions.Group> v kolekci (objekt na indexu nula) představuje celou shodu.  
   
-- Další sada <xref:System.Text.RegularExpressions.Group> objektů představuje nepojmenované (očíslované) zachytávající skupiny. Zobrazují se v pořadí, ve kterém jsou definované v regulárním výrazu zleva doprava. Hodnoty indexu těchto skupin jsou v rozsahu od 1 do počtu nepojmenovaných zachytávajících skupin v kolekci. (Index konkrétní skupiny odpovídá jeho číslovanému zpětnému odkazu. Další informace o zpětných odkazech naleznete v tématu [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)  
+- Další sada objektů <xref:System.Text.RegularExpressions.Group> představuje nepojmenované (očíslované) zachytávající skupiny. Zobrazují se v pořadí, ve kterém jsou definované v regulárním výrazu zleva doprava. Hodnoty indexu těchto skupin jsou v rozsahu od 1 do počtu nepojmenovaných zachytávajících skupin v kolekci. (Index konkrétní skupiny odpovídá jeho číslovanému zpětnému odkazu. Další informace o zpětných odkazech naleznete v tématu [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)  
   
-- Konečná sada <xref:System.Text.RegularExpressions.Group> objektů představuje pojmenované zachytávající skupiny. Zobrazují se v pořadí, ve kterém jsou definované v regulárním výrazu zleva doprava. Hodnota indexu první pojmenované zachytávající skupiny je jedna větší než index poslední nepojmenované zachytávající skupiny. Pokud v regulárním výrazu nejsou žádné nepojmenované zachytávající skupiny, hodnota indexu první pojmenované zachytávající skupiny je jedna.  
+- Koncová sada objektů <xref:System.Text.RegularExpressions.Group> představuje pojmenované zachytávající skupiny. Zobrazují se v pořadí, ve kterém jsou definované v regulárním výrazu zleva doprava. Hodnota indexu první pojmenované zachytávající skupiny je jedna větší než index poslední nepojmenované zachytávající skupiny. Pokud v regulárním výrazu nejsou žádné nepojmenované zachytávající skupiny, hodnota indexu první pojmenované zachytávající skupiny je jedna.  
   
- Použijete-li kvantifikátor pro <xref:System.Text.RegularExpressions.Group> zachytávající skupinu, odpovídající <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>objekt, vlastnost a <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=nameWithType> vlastnosti <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType>, odrážejí poslední podřetězec, který je zachycen zachytávající skupinou. Můžete načíst úplnou sadu podřetězců, které jsou zachyceny skupinami, které mají kvantifikátory z <xref:System.Text.RegularExpressions.CaptureCollection> objektu, který je vrácen <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastností.  
+ Použijete-li kvantifikátor pro zachytávající skupinu, vlastnosti <xref:System.Text.RegularExpressions.Group> <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>, <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=nameWithType> odrážejí poslední podřetězec, který je zachycen zachytávající skupinou. Můžete načíst úplnou sadu podřetězců, které jsou zachyceny skupinami, které mají kvantifikátory z objektu <xref:System.Text.RegularExpressions.CaptureCollection>, který je vrácen vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.  
   
- Následující příklad upřesňuje vztah mezi <xref:System.Text.RegularExpressions.Group> objekty a. <xref:System.Text.RegularExpressions.Capture>  
+ Následující příklad vysvětluje vztah mezi objekty <xref:System.Text.RegularExpressions.Group> a <xref:System.Text.RegularExpressions.Capture>.  
   
  [!code-csharp[RegularExpressions.Language.Grouping#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.grouping/cs/objectmodel1.cs#4)]
  [!code-vb[RegularExpressions.Language.Grouping#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.grouping/vb/objectmodel1.vb#4)]  
   
- Vzor `(\b(\w+)\W+)+` regulárního výrazu extrahuje jednotlivá slova z řetězce. Je definován tak, jak je uvedeno v následující tabulce.  
+ Vzor regulárního výrazu `(\b(\w+)\W+)+` extrahuje jednotlivá slova z řetězce. Je definován tak, jak je uvedeno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
@@ -468,7 +452,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárního výrazu a zachy
 |`\W+`|Porovnává jeden nebo více znaků, které nejsou v textu.|  
 |`(\b(\w+)\W+)`|Porovnává vzor jednoho nebo více znaků slova následovaných jedním nebo více znaky, které jsou jednou nebo vícekrát. Toto je první zachytávající skupina.|  
   
- Druhá zachytávající skupina odpovídá každému slovu věty. První zachytávající skupina odpovídá jednotlivým slovům společně s interpunkčním znaménkem a prázdným znakem, který následuje za slovem. Objekt <xref:System.Text.RegularExpressions.Group> , jehož index je 2, poskytuje informace o textu, který odpovídá druhá zachytávající skupina. Kompletní sada slov zachycených zachycující skupinou je k dispozici z <xref:System.Text.RegularExpressions.CaptureCollection> objektu vráceného <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastností.  
+ Druhá zachytávající skupina odpovídá každému slovu věty. První zachytávající skupina odpovídá jednotlivým slovům společně s interpunkčním znaménkem a prázdným znakem, který následuje za slovem. Objekt <xref:System.Text.RegularExpressions.Group>, jehož index je 2, poskytuje informace o textu, který odpovídá druhá zachytávající skupina. Kompletní sada slov zachycených zachycující skupinou je k dispozici z objektu <xref:System.Text.RegularExpressions.CaptureCollection> vráceného vlastností <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,24 +8,28 @@ dev_langs:
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83eabbccfa2116142e9ee5889e3368ad4273b541
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: ce0777ba71e5433b42b51ef1530e7a1a46905b25
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306396"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957019"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Ověření XDR s třídou XmlSchemaCollection
 
 Pokud je schéma XDR (XML-data redukované), proti kterému ověřujete, Uloženo v kolekci **XmlSchemaCollection**, je přidruženo k identifikátoru URI oboru názvů, který byl zadán při přidání schématu do kolekce. **XmlValidatingReader** mapuje identifikátor URI oboru názvů v dokumentu XML na schéma, které odpovídá identifikátoru URI v kolekci.
 
 > [!IMPORTANT]
-> Třída je nyní zastaralá a byla nahrazena <xref:System.Xml.Schema.XmlSchemaSet> třídou. <xref:System.Xml.Schema.XmlSchemaCollection> Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídě naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).
+> Třída <xref:System.Xml.Schema.XmlSchemaCollection> je nyní zastaralá a byla nahrazena třídou <xref:System.Xml.Schema.XmlSchemaSet>. Další informace o třídě <xref:System.Xml.Schema.XmlSchemaSet> naleznete v tématu Třída [XmlSchemaSet pro kompilaci schématu](xmlschemaset-for-schema-compilation.md).
 
-Například pokud kořenový prvek dokumentu XML je `<bookstore xmlns="urn:newbooks-schema">`, když je schéma přidáno do sady **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
+Například pokud je kořenový prvek dokumentu XML `<bookstore xmlns="urn:newbooks-schema">`, pokud je schéma přidáno do rozhraní **XmlSchemaCollection** , odkazuje na stejný obor názvů následujícím způsobem:
 
-```
+```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")
+```
+
+```csharp
+xsc.Add("urn:newbooks-schema", "newbooks.xdr");
 ```
 
 Následující příklad kódu vytvoří objekt **XmlValidatingReader** , který převezme výjimku **XmlTextReader** a přidá do sady **XmlSchemaCollection**schéma XDR. XDR:
