@@ -331,12 +331,10 @@
           href: how-to-retrieve-data-from-the-clipboard.md
     - name: Použití sítě ve formulářových aplikacích Windows
       href: networking-in-windows-forms-applications.md
-    - name: Globalizace modelu Windows Forms
+    - name: Globalizace Windows Forms
       href: globalizing-windows-forms.md
       items:
-        - name: Kódování a globalizace Windows Forms
-          href: encoding-and-windows-forms-globalization.md
-        - name: Mezinárodní písma v modelu Windows Forms a ovládacích prvcích
+        - name: Mezinárodní písma ve Windows Forms a ovládacích prvcích
           href: international-fonts-in-windows-forms-and-controls.md
         - name: Obousměrná podpora pro formulářové aplikace Windows
           href: bi-directional-support-for-windows-forms-applications.md
