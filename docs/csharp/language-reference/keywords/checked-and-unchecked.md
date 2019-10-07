@@ -1,5 +1,5 @@
 ---
-title: Zaškrtnuto a nezaškrtnuto - C# odkaz
+title: Zkontrolováno a nezkontrolováno - C# odkaz
 ms.custom: seodec18
 ms.date: 05/15/2018
 helpviewer_keywords:
@@ -17,7 +17,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64592995"
 ---
-# <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
+# <a name="checked-and-unchecked-c-reference"></a>Zkontrolováno a nezkontrolováno (Referenční dokumentace jazyka C#)
 Příkazy jazyka C# lze spustit v kontextu zaškrtnuté nebo nezaškrtnuté. Aritmetické přetečení ve zkontrolovaném kontextu, vyvolá výjimku. V nekontrolovaném kontextu je ignorován Přetečení aritmetické operace a výsledek je rozdělená do se zahodí všechny bity nejvyšším, které se nehodí do cílového typu.  
   
 - [checked](checked.md) kontextu zadejte zaškrtnuto.  
