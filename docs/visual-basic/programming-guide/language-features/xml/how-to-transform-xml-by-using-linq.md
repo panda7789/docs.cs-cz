@@ -5,25 +5,25 @@ helpviewer_keywords:
 - XML [Visual Basic], transforming
 - LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
-ms.openlocfilehash: c34d3988c89e0ce07676e9181200fc039010b50a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08378775f2c30d8ebfcc4f7ceea6fc3ecb2066e5
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62028431"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003259"
 ---
-# <a name="how-to-transform-xml-by-using-linq-visual-basic"></a><span data-ttu-id="a0628-102">Postupy: Transformace XML pomocí LINQ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a0628-102">How to: Transform XML by Using LINQ (Visual Basic)</span></span>
-<span data-ttu-id="a0628-103">[Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují přečíst XML z jednoho zdroje a transformovat ho do nového formátu XML.</span><span class="sxs-lookup"><span data-stu-id="a0628-103">[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) make it easy to read XML from one source and transform it to a new XML format.</span></span> <span data-ttu-id="a0628-104">Můžete využívat dotazy LINQ načítat obsah, který umožňuje transformovat nebo změnit obsah v existující dokument na nový formát XML.</span><span class="sxs-lookup"><span data-stu-id="a0628-104">You can take advantage of LINQ queries to retrieve the content to transform, or change content in an existing document to a new XML format.</span></span>  
+# <a name="how-to-transform-xml-by-using-linq-visual-basic"></a><span data-ttu-id="bc903-102">Postupy: Transformace XML pomocí LINQ (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="bc903-102">How to: Transform XML by Using LINQ (Visual Basic)</span></span>
+<span data-ttu-id="bc903-103">[Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují čtení XML z jednoho zdroje a jejich transformaci do nového formátu XML.</span><span class="sxs-lookup"><span data-stu-id="bc903-103">[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) make it easy to read XML from one source and transform it to a new XML format.</span></span> <span data-ttu-id="bc903-104">Můžete využít výhod dotazů LINQ k načtení obsahu pro transformaci nebo změnu obsahu v existujícím dokumentu do nového formátu XML.</span><span class="sxs-lookup"><span data-stu-id="bc903-104">You can take advantage of LINQ queries to retrieve the content to transform, or change content in an existing document to a new XML format.</span></span>  
   
- <span data-ttu-id="a0628-105">V příkladu v tomto tématu transformuje obsah ze zdrojového dokumentu XML do formátu HTML, které lze zobrazit v prohlížeči.</span><span class="sxs-lookup"><span data-stu-id="a0628-105">The example in this topic transforms content from an XML source document to HTML to be viewed in a browser.</span></span>  
+ <span data-ttu-id="bc903-105">Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTML pro zobrazení v prohlížeči.</span><span class="sxs-lookup"><span data-stu-id="bc903-105">The example in this topic transforms content from an XML source document to HTML to be viewed in a browser.</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-transform-an-xml-document"></a><span data-ttu-id="a0628-106">K transformaci dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="a0628-106">To transform an XML document</span></span>  
+### <a name="to-transform-an-xml-document"></a><span data-ttu-id="bc903-106">Transformace dokumentu XML</span><span class="sxs-lookup"><span data-stu-id="bc903-106">To transform an XML document</span></span>  
   
-1. <span data-ttu-id="a0628-107">V sadě Visual Studio vytvořte nový projekt v jazyce Visual Basic **konzolovou aplikaci** šablony projektu.</span><span class="sxs-lookup"><span data-stu-id="a0628-107">In Visual Studio, create a new Visual Basic project in the **Console Application** project template.</span></span>  
+1. <span data-ttu-id="bc903-107">V aplikaci Visual Studio vytvořte nový projekt Visual Basic v šabloně projektu **Konzolová aplikace** .</span><span class="sxs-lookup"><span data-stu-id="bc903-107">In Visual Studio, create a new Visual Basic project in the **Console Application** project template.</span></span>  
   
-2. <span data-ttu-id="a0628-108">Poklikejte na soubor Module1.vb vytvořen v projektu a upravte kód jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="a0628-108">Double-click the Module1.vb file created in the project to modify the Visual Basic code.</span></span> <span data-ttu-id="a0628-109">Přidejte následující kód, který `Sub Main` z `Module1` modulu.</span><span class="sxs-lookup"><span data-stu-id="a0628-109">Add the following code to the `Sub Main` of the `Module1` module.</span></span> <span data-ttu-id="a0628-110">Tento kód vytvoří zdrojovém dokumentu XML jako <xref:System.Xml.Linq.XDocument> objektu.</span><span class="sxs-lookup"><span data-stu-id="a0628-110">This code creates the source XML document as an <xref:System.Xml.Linq.XDocument> object.</span></span>  
+2. <span data-ttu-id="bc903-108">Dvojím kliknutím na soubor Module1. vb, který jste vytvořili v projektu, upravte kód Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="bc903-108">Double-click the Module1.vb file created in the project to modify the Visual Basic code.</span></span> <span data-ttu-id="bc903-109">Přidejte následující kód do `Sub Main` modulu `Module1`.</span><span class="sxs-lookup"><span data-stu-id="bc903-109">Add the following code to the `Sub Main` of the `Module1` module.</span></span> <span data-ttu-id="bc903-110">Tento kód vytvoří zdrojový dokument XML jako objekt <xref:System.Xml.Linq.XDocument>.</span><span class="sxs-lookup"><span data-stu-id="bc903-110">This code creates the source XML document as an <xref:System.Xml.Linq.XDocument> object.</span></span>  
   
     ```vb  
     Dim catalog =   
@@ -57,11 +57,11 @@ ms.locfileid: "62028431"
         </Catalog>  
     ```  
   
-     <span data-ttu-id="a0628-111">[Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).</span><span class="sxs-lookup"><span data-stu-id="a0628-111">[How to: Load XML from a File, String, or Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).</span></span>  
+     <span data-ttu-id="bc903-111">[Postupy: načtení XML ze souboru, řetězce nebo datového proudu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).</span><span class="sxs-lookup"><span data-stu-id="bc903-111">[How to: Load XML from a File, String, or Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).</span></span>  
   
-3. <span data-ttu-id="a0628-112">Za kód k vytvoření zdrojového dokumentu XML, přidejte následující kód k načtení všech \<knihy > prvky z objektu a transformují je na dokument HTML.</span><span class="sxs-lookup"><span data-stu-id="a0628-112">After the code to create the source XML document, add the following code to retrieve all the \<Book> elements from the object and transform them into an HTML document.</span></span> <span data-ttu-id="a0628-113">Seznam \<knihy > prvků je vytvořena pomocí dotaz LINQ, který vrátí kolekci <xref:System.Xml.Linq.XElement> objektů, které obsahují kód HTML pro transformovaná.</span><span class="sxs-lookup"><span data-stu-id="a0628-113">The list of \<Book> elements is created by using a LINQ query that returns a collection of <xref:System.Xml.Linq.XElement> objects that contain the transformed HTML.</span></span> <span data-ttu-id="a0628-114">Vložené výrazy můžete použít pro převedení hodnot ze zdrojového dokumentu v novém formátu XML.</span><span class="sxs-lookup"><span data-stu-id="a0628-114">You can use embedded expressions to put the values from the source document in the new XML format.</span></span>  
+3. <span data-ttu-id="bc903-112">Po vytvoření zdrojového dokumentu XML přidejte následující kód, který načte všechny prvky \<Book > z objektu a převede je na dokument HTML.</span><span class="sxs-lookup"><span data-stu-id="bc903-112">After the code to create the source XML document, add the following code to retrieve all the \<Book> elements from the object and transform them into an HTML document.</span></span> <span data-ttu-id="bc903-113">Seznam > prvků \<Book je vytvořen pomocí dotazu LINQ, který vrací kolekci objektů <xref:System.Xml.Linq.XElement>, které obsahují transformovaný kód HTML.</span><span class="sxs-lookup"><span data-stu-id="bc903-113">The list of \<Book> elements is created by using a LINQ query that returns a collection of <xref:System.Xml.Linq.XElement> objects that contain the transformed HTML.</span></span> <span data-ttu-id="bc903-114">Vložené výrazy můžete použít k umístění hodnot ze zdrojového dokumentu do nového formátu XML.</span><span class="sxs-lookup"><span data-stu-id="bc903-114">You can use embedded expressions to put the values from the source document in the new XML format.</span></span>  
   
-     <span data-ttu-id="a0628-115">Výsledný dokumentu HTML je zapsána do souboru s použitím <xref:System.Xml.Linq.XElement.Save%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="a0628-115">The resulting HTML document is written to a file by using the <xref:System.Xml.Linq.XElement.Save%2A> method.</span></span>  
+     <span data-ttu-id="bc903-115">Výsledný dokument HTML je zapsán do souboru pomocí metody <xref:System.Xml.Linq.XElement.Save%2A>.</span><span class="sxs-lookup"><span data-stu-id="bc903-115">The resulting HTML document is written to a file by using the <xref:System.Xml.Linq.XElement.Save%2A> method.</span></span>  
   
     ```vb  
     Dim htmlOutput =   
@@ -82,11 +82,11 @@ ms.locfileid: "62028431"
     htmlOutput.Save("BookDescription.html")  
     ```  
   
-4. <span data-ttu-id="a0628-116">Po `Sub Main` z `Module1`, přidejte novou metodu (`Sub`) k transformaci \<popis > uzlu na zadaném formátu HTML.</span><span class="sxs-lookup"><span data-stu-id="a0628-116">After `Sub Main` of `Module1`, add a new method (`Sub`) to transform a \<Description> node into the specified HTML format.</span></span> <span data-ttu-id="a0628-117">Tato metoda je volána kód v předchozím kroku a používá k zachování formát \<popis > elementy.</span><span class="sxs-lookup"><span data-stu-id="a0628-117">This method is called by the code in the previous step and is used to preserve the format of the \<Description> elements.</span></span>  
+4. <span data-ttu-id="bc903-116">Po `Sub Main` `Module1` přidejte novou metodu (`Sub`) pro transformaci > uzlu \<Description do zadaného formátu HTML.</span><span class="sxs-lookup"><span data-stu-id="bc903-116">After `Sub Main` of `Module1`, add a new method (`Sub`) to transform a \<Description> node into the specified HTML format.</span></span> <span data-ttu-id="bc903-117">Tato metoda je volána kódem v předchozím kroku a slouží k uchování formátu > prvků \<Description.</span><span class="sxs-lookup"><span data-stu-id="bc903-117">This method is called by the code in the previous step and is used to preserve the format of the \<Description> elements.</span></span>  
   
-     <span data-ttu-id="a0628-118">Tato metoda nahrazuje dílčí prvky \<popis > element s HTML.</span><span class="sxs-lookup"><span data-stu-id="a0628-118">This method replaces sub-elements of the \<Description> element with HTML.</span></span> <span data-ttu-id="a0628-119">`ReplaceWith` Metoda se používá k zachování umístění podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="a0628-119">The `ReplaceWith` method is used to preserve the location of the sub-elements.</span></span> <span data-ttu-id="a0628-120">Transformovaný obsah \<popis > element je součástí HTML odstavec (\<p >) element.</span><span class="sxs-lookup"><span data-stu-id="a0628-120">The transformed content of the \<Description> element is included in an HTML paragraph (\<p>) element.</span></span> <span data-ttu-id="a0628-121"><xref:System.Xml.Linq.XContainer.Nodes%2A> Vlastnost se používá k načtení transformovaný obsah \<popis > element.</span><span class="sxs-lookup"><span data-stu-id="a0628-121">The <xref:System.Xml.Linq.XContainer.Nodes%2A> property is used to retrieve the transformed content of the \<Description> element.</span></span> <span data-ttu-id="a0628-122">Tím se zajistí, že dílčí prvky jsou součástí převedeného obsahu.</span><span class="sxs-lookup"><span data-stu-id="a0628-122">This ensures that sub-elements are included in the transformed content.</span></span>  
+     <span data-ttu-id="bc903-118">Tato metoda nahrazuje dílčí prvky \<Description > elementu pomocí HTML.</span><span class="sxs-lookup"><span data-stu-id="bc903-118">This method replaces sub-elements of the \<Description> element with HTML.</span></span> <span data-ttu-id="bc903-119">Metoda `ReplaceWith` slouží k zachování umístění dílčích prvků.</span><span class="sxs-lookup"><span data-stu-id="bc903-119">The `ReplaceWith` method is used to preserve the location of the sub-elements.</span></span> <span data-ttu-id="bc903-120">Transformovaný obsah elementu \<Description > je obsažen v elementu odstavce HTML (@no__t-li >).</span><span class="sxs-lookup"><span data-stu-id="bc903-120">The transformed content of the \<Description> element is included in an HTML paragraph (\<p>) element.</span></span> <span data-ttu-id="bc903-121">Vlastnost <xref:System.Xml.Linq.XContainer.Nodes%2A> slouží k načtení transformovanýho obsahu elementu \<Description >.</span><span class="sxs-lookup"><span data-stu-id="bc903-121">The <xref:System.Xml.Linq.XContainer.Nodes%2A> property is used to retrieve the transformed content of the \<Description> element.</span></span> <span data-ttu-id="bc903-122">Tím se zajistí, že dílčí prvky budou zahrnuty v transformovaným obsahu.</span><span class="sxs-lookup"><span data-stu-id="bc903-122">This ensures that sub-elements are included in the transformed content.</span></span>  
   
-     <span data-ttu-id="a0628-123">Přidejte následující kód za `Sub Main` z `Module1`.</span><span class="sxs-lookup"><span data-stu-id="a0628-123">Add the following code after `Sub Main` of `Module1`.</span></span>  
+     <span data-ttu-id="bc903-123">Následující kód přidejte po `Sub Main` `Module1`.</span><span class="sxs-lookup"><span data-stu-id="bc903-123">Add the following code after `Sub Main` of `Module1`.</span></span>  
   
     ```vb  
     Public Function TransformDescription(ByVal desc As XElement) As XElement  
@@ -114,11 +114,11 @@ ms.locfileid: "62028431"
     End Function  
     ```  
   
-5. <span data-ttu-id="a0628-124">Uložte provedené změny.</span><span class="sxs-lookup"><span data-stu-id="a0628-124">Save your changes.</span></span>  
+5. <span data-ttu-id="bc903-124">Uložte provedené změny.</span><span class="sxs-lookup"><span data-stu-id="bc903-124">Save your changes.</span></span>  
   
-6. <span data-ttu-id="a0628-125">Stisknutím klávesy F5 spusťte kód.</span><span class="sxs-lookup"><span data-stu-id="a0628-125">Press F5 to run the code.</span></span> <span data-ttu-id="a0628-126">Výsledná uložit dokument bude vypadat takto:</span><span class="sxs-lookup"><span data-stu-id="a0628-126">The resulting saved document will resemble the following:</span></span>  
+6. <span data-ttu-id="bc903-125">Stisknutím klávesy F5 spusťte kód.</span><span class="sxs-lookup"><span data-stu-id="bc903-125">Press F5 to run the code.</span></span> <span data-ttu-id="bc903-126">Výsledný uložený dokument bude vypadat přibližně takto:</span><span class="sxs-lookup"><span data-stu-id="bc903-126">The resulting saved document will resemble the following:</span></span>  
   
-    ```  
+    ```html  
     <?xml version="1.0"?>  
     <html>  
       <body>  
@@ -155,11 +155,11 @@ ms.locfileid: "62028431"
     </html>  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="a0628-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a0628-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bc903-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc903-127">See also</span></span>
 
-- [<span data-ttu-id="a0628-128">Literály XML</span><span class="sxs-lookup"><span data-stu-id="a0628-128">XML Literals</span></span>](../../../../visual-basic/language-reference/xml-literals/index.md)
-- [<span data-ttu-id="a0628-129">Manipulace s kódem XML v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="a0628-129">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
-- [<span data-ttu-id="a0628-130">XML</span><span class="sxs-lookup"><span data-stu-id="a0628-130">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [<span data-ttu-id="a0628-131">Postupy: Načtení XML ze souboru, řetězce nebo Stream</span><span class="sxs-lookup"><span data-stu-id="a0628-131">How to: Load XML from a File, String, or Stream</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
-- [<span data-ttu-id="a0628-132">LINQ</span><span class="sxs-lookup"><span data-stu-id="a0628-132">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [<span data-ttu-id="a0628-133">Úvod do LINQ v JAZYKU Visual Basic</span><span class="sxs-lookup"><span data-stu-id="a0628-133">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [<span data-ttu-id="bc903-128">Literály XML</span><span class="sxs-lookup"><span data-stu-id="bc903-128">XML Literals</span></span>](../../../../visual-basic/language-reference/xml-literals/index.md)
+- [<span data-ttu-id="bc903-129">Manipulace s XML v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="bc903-129">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [<span data-ttu-id="bc903-130">XML</span><span class="sxs-lookup"><span data-stu-id="bc903-130">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [<span data-ttu-id="bc903-131">Postupy: Načtení XML ze souboru, řetězce nebo streamu</span><span class="sxs-lookup"><span data-stu-id="bc903-131">How to: Load XML from a File, String, or Stream</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
+- [<span data-ttu-id="bc903-132">LINQ</span><span class="sxs-lookup"><span data-stu-id="bc903-132">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [<span data-ttu-id="bc903-133">Úvod do jazyka LINQ v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="bc903-133">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

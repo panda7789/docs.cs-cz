@@ -8,29 +8,29 @@ helpviewer_keywords:
 - text [WPF], typography
 - typography [WPF]
 ms.assetid: e4ef38db-b7d1-4bda-87ab-8bb738440ddc
-ms.openlocfilehash: bbefaba4491fca1b21b6a214048d9db1394c4bc7
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 38f9a9c79bfda9abb46181f433d28268b8a37762
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545328"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004579"
 ---
-# <a name="typography"></a><span data-ttu-id="dc113-102">Typografie</span><span class="sxs-lookup"><span data-stu-id="dc113-102">Typography</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="dc113-103">zahrnuje podporu pro bohatou prezentaci textu obsahu.</span><span class="sxs-lookup"><span data-stu-id="dc113-103">includes support for rich presentation of text content.</span></span> <span data-ttu-id="dc113-104">Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu.</span><span class="sxs-lookup"><span data-stu-id="dc113-104">Text in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] is rendered using Microsoft ClearType, which enhances the clarity and readability of text.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<span data-ttu-id="dc113-105">podporuje také písma OpenType, která poskytují další možnosti nad rámec těch, které [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] jsou definovány ve formátu.</span><span class="sxs-lookup"><span data-stu-id="dc113-105">also supports OpenType fonts, which provide additional capabilities beyond those defined by the [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format.</span></span>  
+# <a name="typography"></a><span data-ttu-id="ae322-102">Typografie</span><span class="sxs-lookup"><span data-stu-id="ae322-102">Typography</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="ae322-103">zahrnuje podporu pro bohatou prezentaci textu obsahu.</span><span class="sxs-lookup"><span data-stu-id="ae322-103">includes support for rich presentation of text content.</span></span> <span data-ttu-id="ae322-104">Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se vykresluje pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu.</span><span class="sxs-lookup"><span data-stu-id="ae322-104">Text in [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] is rendered using Microsoft ClearType, which enhances the clarity and readability of text.</span></span> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <span data-ttu-id="ae322-105">také podporuje písma OpenType, která poskytují další možnosti nad rámec těch, které jsou definovány formátem® TrueType.</span><span class="sxs-lookup"><span data-stu-id="ae322-105">also supports OpenType fonts, which provide additional capabilities beyond those defined by the TrueType® format.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="dc113-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="dc113-106">In This Section</span></span>  
- [<span data-ttu-id="dc113-107">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="dc113-107">Typography in WPF</span></span>](typography-in-wpf.md)  
- [<span data-ttu-id="dc113-108">ClearType – přehled</span><span class="sxs-lookup"><span data-stu-id="dc113-108">ClearType Overview</span></span>](cleartype-overview.md)  
- [<span data-ttu-id="dc113-109">Nastavení registru ClearType</span><span class="sxs-lookup"><span data-stu-id="dc113-109">ClearType Registry Settings</span></span>](cleartype-registry-settings.md)  
- [<span data-ttu-id="dc113-110">Kreslení formátovaného textu</span><span class="sxs-lookup"><span data-stu-id="dc113-110">Drawing Formatted Text</span></span>](drawing-formatted-text.md)  
- [<span data-ttu-id="dc113-111">Pokročilé formátování textu</span><span class="sxs-lookup"><span data-stu-id="dc113-111">Advanced Text Formatting</span></span>](advanced-text-formatting.md)  
- [<span data-ttu-id="dc113-112">Písma</span><span class="sxs-lookup"><span data-stu-id="dc113-112">Fonts</span></span>](fonts-wpf.md)  
- [<span data-ttu-id="dc113-113">Glyfy</span><span class="sxs-lookup"><span data-stu-id="dc113-113">Glyphs</span></span>](glyphs.md)  
- [<span data-ttu-id="dc113-114">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="dc113-114">How-to Topics</span></span>](typography-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ae322-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ae322-106">In This Section</span></span>  
+ [<span data-ttu-id="ae322-107">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="ae322-107">Typography in WPF</span></span>](typography-in-wpf.md)  
+ [<span data-ttu-id="ae322-108">ClearType – přehled</span><span class="sxs-lookup"><span data-stu-id="ae322-108">ClearType Overview</span></span>](cleartype-overview.md)  
+ [<span data-ttu-id="ae322-109">Nastavení registru ClearType</span><span class="sxs-lookup"><span data-stu-id="ae322-109">ClearType Registry Settings</span></span>](cleartype-registry-settings.md)  
+ [<span data-ttu-id="ae322-110">Kreslení formátovaného textu</span><span class="sxs-lookup"><span data-stu-id="ae322-110">Drawing Formatted Text</span></span>](drawing-formatted-text.md)  
+ [<span data-ttu-id="ae322-111">Pokročilé formátování textu</span><span class="sxs-lookup"><span data-stu-id="ae322-111">Advanced Text Formatting</span></span>](advanced-text-formatting.md)  
+ [<span data-ttu-id="ae322-112">Písma</span><span class="sxs-lookup"><span data-stu-id="ae322-112">Fonts</span></span>](fonts-wpf.md)  
+ [<span data-ttu-id="ae322-113">Glyfy</span><span class="sxs-lookup"><span data-stu-id="ae322-113">Glyphs</span></span>](glyphs.md)  
+ [<span data-ttu-id="ae322-114">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="ae322-114">How-to Topics</span></span>](typography-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="dc113-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dc113-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ae322-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ae322-115">See also</span></span>
 
 - <xref:System.Windows.Documents.Typography>
-- [<span data-ttu-id="dc113-116">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="dc113-116">Documents in WPF</span></span>](documents-in-wpf.md)
-- [<span data-ttu-id="dc113-117">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="dc113-117">OpenType Font Features</span></span>](opentype-font-features.md)
-- [<span data-ttu-id="dc113-118">Optimalizace výkonu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="dc113-118">Optimizing WPF Application Performance</span></span>](optimizing-wpf-application-performance.md)
+- [<span data-ttu-id="ae322-116">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="ae322-116">Documents in WPF</span></span>](documents-in-wpf.md)
+- [<span data-ttu-id="ae322-117">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="ae322-117">OpenType Font Features</span></span>](opentype-font-features.md)
+- [<span data-ttu-id="ae322-118">Optimalizace výkonu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="ae322-118">Optimizing WPF Application Performance</span></span>](optimizing-wpf-application-performance.md)
