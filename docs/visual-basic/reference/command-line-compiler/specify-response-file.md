@@ -4,43 +4,43 @@ ms.date: 03/13/2018
 helpviewer_keywords:
 - '@ (Specify Response File) compiler option [Visual Basic]'
 ms.assetid: a6847eaa-e5f9-4303-9421-45b55484b9ca
-ms.openlocfilehash: b84d50334e56305c27c5c0bc54578ba871a28365
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: deab111cc669941a1cd7dc143dd699b6521221bb
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937287"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004989"
 ---
 # <a name="-specify-response-file-visual-basic"></a>@ (Určení souboru odezvy) (Visual Basic)
 Určuje soubor, který obsahuje možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 @response_file  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `response_file`  
- Povinný parametr. Soubor se seznamem možností kompilátoru nebo souborů zdrojového kódu, které mají být zkompilovány. Uzavřete název souboru do uvozovek (""), pokud obsahuje mezeru.  
+ Požadováno. Soubor se seznamem možností kompilátoru nebo souborů zdrojového kódu, které mají být zkompilovány. Uzavřete název souboru do uvozovek (""), pokud obsahuje mezeru.  
   
 ## <a name="remarks"></a>Poznámky  
  Kompilátor zpracovává možnosti kompilátoru a soubory zdrojového kódu zadané v souboru odpovědí, jako kdyby byly zadány v příkazovém řádku.  
   
  Chcete-li v kompilaci zadat více než jeden soubor odpovědí, zadejte více možností souboru odpovědi, například následující.  
   
-```  
+```console  
 @file1.rsp @file2.rsp  
 ```  
   
- V souboru odpovědí se může na jednom řádku objevit více možností kompilátoru a souborů zdrojového kódu. Jedna specifikace možnosti kompilátoru se musí vyskytovat na jednom řádku (nemůže zabírat více řádků). Soubory odpovědí mohou obsahovat komentáře, které začínají `#` symbolem.  
+ V souboru odpovědí se může na jednom řádku objevit více možností kompilátoru a souborů zdrojového kódu. Jedna specifikace možnosti kompilátoru se musí vyskytovat na jednom řádku (nemůže zabírat více řádků). Soubory odpovědí mohou obsahovat komentáře, které začínají symbolem `#`.  
   
  Můžete kombinovat možnosti zadané v příkazovém řádku s možnostmi určenými v jednom nebo více souborech odpovědí. Kompilátor zpracuje možnosti příkazu, jak je nalezne. Proto argumenty příkazového řádku mohou přepsat dříve uvedené možnosti v souborech odpovědí. Naopak možnosti v parametrech přepsání souboru odpovědí uvedených dříve na příkazovém řádku nebo v jiných souborech odpovědí.  
   
- Visual Basic poskytuje soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe. Soubor Vbc. rsp je ve výchozím nastavení zahrnut, pokud `-noconfig` se nepoužívá možnost. Další informace najdete v tématu [-config](../../../visual-basic/reference/command-line-compiler/noconfig.md).  
+ Visual Basic poskytuje soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe. Pokud není použita možnost `-noconfig`, je soubor Vbc. rsp součástí výchozího nastavení. Další informace najdete v tématu [-config](../../../visual-basic/reference/command-line-compiler/noconfig.md).  
   
 > [!NOTE]
-> Tato `@` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
+> Možnost `@` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující řádky jsou z ukázkového souboru odezvy.  
@@ -54,7 +54,7 @@ source2.vb
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `@` možnost se souborem odpovědí s názvem. `File1.rsp`  
+ Následující příklad ukazuje, jak použít možnost `@` se souborem odpovědí s názvem `File1.rsp`.  
   
 ```console
 vbc @file1.rsp  

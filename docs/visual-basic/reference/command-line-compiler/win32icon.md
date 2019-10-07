@@ -6,19 +6,19 @@ helpviewer_keywords:
 - -win32icon compiler option [Visual Basic]
 - /win32icon compiler option [Visual Basic]
 ms.assetid: aecaab01-9353-46c5-941c-6edabd4eff92
-ms.openlocfilehash: dc48a8f79aa04892c514917da00b8fd6489695b1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6b4b69d227c857442de6857fac023090b3698e81
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593082"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004641"
 ---
 # <a name="-win32icon"></a>-win32icon
-Vloží soubor .ico do výstupního souboru. Tento soubor .ico, který představuje výstupní soubor v **Průzkumníka souborů**.  
+Vloží soubor. ico do výstupního souboru. Tento soubor. ico představuje výstupní soubor v **Průzkumníkovi souborů**.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -win32icon:filename  
 ```  
   
@@ -26,19 +26,19 @@ Vloží soubor .ico do výstupního souboru. Tento soubor .ico, který představ
   
 |Termín|Definice|  
 |---|---|  
-|`filename`|Soubor .ico, který chcete přidat do výstupního souboru. Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.|  
+|`filename`|Soubor. ico, který se má přidat do výstupního souboru. Uzavřete název souboru do uvozovek (""), pokud obsahuje mezeru.|  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete vytvořit soubor .ico s Microsoft Windows Resource kompilátor (RC). Nástroj resource compiler je vyvolán při kompilaci programu v jazyce Visual C++; soubor .ico je vytvořen ze souboru .rc. `-win32icon` a `-win32resource` možnosti se vzájemně vylučují.  
+ Soubor. ico můžete vytvořit pomocí kompilátoru Microsoft Windows Resource Compiler (RC). Kompilátor prostředků je vyvolán při kompilování vizuálního C++ programu; soubor. ico je vytvořen ze souboru. rc. Možnosti `-win32icon` a `-win32resource` se vzájemně vylučují.  
   
- Zobrazit [- linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) k odkázání na soubor prostředků rozhraní .NET Framework nebo [-prostředku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) připojit soubor prostředků rozhraní .NET Framework. Zobrazit [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) importovat soubor .res.  
+ Viz [-linkresource – (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) pro odkazování na soubor prostředků .NET Framework nebo [prostředku (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) pro připojení souboru prostředků .NET Framework. Viz [– Win32Resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) pro import souboru. res.  
   
-|Chcete-li nastavit - win32icon v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení-win32icon v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **aplikace** kartu.<br />3.  Upravte hodnotu v **ikonu** pole.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **aplikace** .<br />3. upravte hodnotu v poli s **ikonami** .|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a připojí soubor .ico `Rf.ico`.  
+ Následující kód zkompiluje `In.vb` a připojí soubor. ico `Rf.ico`.  
   
 ```console
 vbc -win32icon:rf.ico in.vb  
@@ -46,5 +46,5 @@ vbc -win32icon:rf.ico in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

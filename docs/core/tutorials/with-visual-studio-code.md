@@ -4,12 +4,12 @@ description: Naučte se, jak vytvořit a ladit první aplikaci .NET Core C# pomo
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 03a2edcbb3414cfd63006603424a3ca1eade528f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 4e283f631f463953185a37bf196a1a9b706eee2b
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849450"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002318"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s jazykem C# a nástrojem Visual Studio Code
 
@@ -29,20 +29,21 @@ Pojďme začít jednoduchý program Hello World v .NET Core:
 
     - Otevřete Visual Studio Code.
     - V levé nabídce klikněte na ikonu Průzkumníka a pak klikněte na **Otevřít složku**.
-    - V hlavní nabídce vyberte **soubor** > **Otevřít složku** a otevřete složku, ve které chcete mít C# projekt, a klikněte na **Vybrat složku**. V našem příkladu vytvoříme složku pro náš projekt s názvem *HelloWorld*.
+    - Vyberte **soubor** > **Otevřít složku** z hlavní nabídky a otevřete složku, ve které chcete mít C# projekt, a klikněte na **Vybrat složku**. V našem příkladu vytvoříme složku pro náš projekt s názvem *HelloWorld*.
 
       ![Visual Studio Code otevření složky](media/with-visual-studio-code/vs-code-open-folder.png)
 
 2. Inicializovat C# projekt:
-    - Otevřete integrovaný terminál z Visual Studio Code výběrem možnosti **Zobrazit** > **integrovaný terminál** v hlavní nabídce.
+
+    - Otevřete integrovaný terminál z Visual Studio Code výběrem možnosti **zobrazit** > **integrovaný terminál** z hlavní nabídky.
     - V okně terminálu zadejte `dotnet new console`.
-    - Tento příkaz vytvoří `Program.cs` ve složce soubor s jednoduchým programem "Hello World", který je již napsán, spolu se C# souborem projektu s `HelloWorld.csproj`názvem.
+    - Tento příkaz vytvoří soubor *program.cs* ve složce s jednoduchým již zapsaným programem "Hello World" společně se souborem C# projektu s názvem *HelloWorld. csproj*.
 
       ![Příkaz dotnet New](media/with-visual-studio-code/dotnet-new-command.png)
 
 3. Vyřešte prostředky sestavení:
 
-    - Pro **.NET Core 1. x**zadejte `dotnet restore`. Při `dotnet restore` spuštění získáte přístup k požadovaným balíčkům .NET Core, které jsou potřeba k sestavení projektu.
+    - Pro **.NET Core 1. x**zadejte `dotnet restore`. Pokud používáte `dotnet restore`, získáte přístup k požadovaným balíčkům .NET Core, které jsou potřeba k sestavení projektu.
 
       ![Příkaz dotnet restore](media/with-visual-studio-code/dotnet-restore-command.png)
 
@@ -56,7 +57,7 @@ Pojďme začít jednoduchý program Hello World v .NET Core:
 
 Můžete si také prohlédnout krátký video kurz pro další nápovědu k instalaci ve [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [MacOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS)nebo [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Ladění
+## <a name="debug"></a>Ladit
 
 1. Otevřete *program.cs* kliknutím na něj. Při prvním otevření C# souboru v Visual Studio Code [OmniSharp](https://www.omnisharp.net/) načte v editoru.
 
@@ -70,7 +71,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
     ![Otevřete kartu ladění v Visual Studio Code](media/with-visual-studio-code/open-debug-tab.png)
 
-4. Vyhledejte zelenou šipku v horní části podokna. Ujistěte se, že rozevírací seznam vedle něho byl `.NET Core Launch (console)` vybrán.
+4. Vyhledejte zelenou šipku v horní části podokna. Zajistěte, aby v rozevíracím seznamu vedle něho byla vybrána možnost **spuštění rozhraní .NET Core (konzola)** .
 
     ![Výběr .NET Core v Visual Studio Code](media/with-visual-studio-code/select-net-core.png)
 
@@ -78,7 +79,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
     ![Nastavení zarážky](media/with-visual-studio-code/set-breakpoint-vs-code.png)
 
-6. Chcete-li spustit ladění, vyberte klávesu <kbd>F5</kbd> nebo zelenou šipku. Ladicí program zastaví provádění programu při dosažení zarážky, kterou jste nastavili v předchozím kroku.
+6. Chcete-li spustit ladění, stiskněte klávesu <kbd>F5</kbd> nebo vyberte zelenou šipku. Ladicí program zastaví provádění programu při dosažení zarážky, kterou jste nastavili v předchozím kroku.
     - Během ladění můžete zobrazit místní proměnné v levém horním podokně nebo použít konzolu ladění.
 
 7. Vyberte modrou šipku v horní části a pokračujte v ladění, nebo vyberte červené čtverce v horní části a zastavte.
@@ -90,9 +91,9 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
 ## <a name="add-a-class"></a>Přidání třídy
 
-1. Pokud chcete přidat novou třídu, klikněte na VSCode Explorer pravým tlačítkem myši a vyberte **nový soubor**. Tím se přidá nový soubor do složky, kterou jste otevřeli v VSCode.
-2. Pojmenujte `MyClass.cs`soubor. Je nutné jej uložit s `.cs` příponou na konci, aby jej bylo možné rozpoznat jako CSharp soubor.
-3. Přidejte následující kód k vytvoření první třídy. Ujistěte se, že jste zahrnuli správný obor názvů, abyste na něj `Program.cs` mohli odkazovat ze souboru.
+1. Pokud chcete přidat novou třídu, klikněte pravým tlačítkem na VSCode Explorer a vyberte **nový soubor**. Tím se přidá nový soubor do složky, kterou jste otevřeli v VSCode.
+2. Pojmenujte soubor *MyClass.cs*. Je nutné jej uložit s rozšířením `.cs` na konci, aby bylo rozpoznáno jako CSharp soubor.
+3. Přidejte následující kód k vytvoření první třídy. Ujistěte se, že jste zahrnuli správný obor názvů, abyste na něj mohli odkazovat ze souboru *program.cs* :
 
     ``` csharp
     using System;
@@ -109,7 +110,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
     }
     ```
 
-4. Zavolejte svou novou třídu z metody Main v `Program.cs` metodě přidáním kódu níže.
+4. Zavolejte svou novou třídu z metody Main v *program.cs* přidáním kódu níže:
 
     ```csharp
     using System;
@@ -120,7 +121,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
         {
             static void Main(string[] args)
             {
-                MyClass c1 = new MyClass();
+                var c1 = new MyClass();
                 Console.WriteLine($"Hello World! {c1.ReturnMessage()}");
             }
         }
@@ -138,7 +139,7 @@ Můžete si také prohlédnout krátký video kurz pro další nápovědu k inst
 
 ### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Chybí požadované prostředky pro sestavení a ladění C# v Visual Studio Code. Můj ladicí program říká "žádnou konfiguraci".
 
-Rozšíření Visual Studio Code C# může generovat assety pro sestavení a ladění. Visual Studio Code vás vyzve k vygenerování těchto assetů při prvním otevření C# projektu. Pokud jste nevytvořili prostředky, můžete tento příkaz přesto spustit otevřením palety příkazů (**Zobrazit paletu příkazů >** ) a zadáním "> .NET: Vygenerujte prostředky pro sestavení a ladění. Výběrem této možnosti se vytvoří konfigurační soubory. VSCode, Launch. JSON a Tasks. JSON, které potřebujete.
+Rozšíření Visual Studio Code C# může generovat assety pro sestavení a ladění. Visual Studio Code vás vyzve k vygenerování těchto assetů při prvním otevření C# projektu. Pokud jste nevytvořili prostředky, můžete přesto spustit tento příkaz otevřením palety příkazů (**zobrazení palety příkazů zobrazit >** ) a zadáním "> .NET: generovat prostředky pro sestavení a ladění". Výběrem této možnosti se vytvoří konfigurační soubory *. VSCode*, *Launch. JSON*a *Tasks. JSON* , které potřebujete.
 
 ## <a name="see-also"></a>Viz také:
 

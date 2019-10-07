@@ -7,35 +7,35 @@ helpviewer_keywords:
 - Continue statement [Visual Basic]
 - loops, transferring to next iteration
 ms.assetid: 3ad00103-358b-4af3-a3a8-1b9ea0e995d3
-ms.openlocfilehash: 5523be69f2901851c86f6c0263548e3577507ff9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ee5fb19db6eafeb7e4bed12935d0b950d6368d6
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638243"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005100"
 ---
 # <a name="continue-statement-visual-basic"></a>Continue – příkaz (Visual Basic)
-Přenosy ovládacího prvku okamžitě na další iteraci smyčky.  
+Okamžitě přenese řízení na další iteraci smyčky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Continue { Do | For | While }  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete přenášet z uvnitř `Do`, `For`, nebo `While` smyčky na další iteraci smyčky. Ovládací prvek ihned přejde k testovací podmínky smyčky, který je ekvivalentem k přenosu do `For` nebo `While` příkazu, nebo `Do` nebo `Loop` příkazu, který obsahuje `Until` nebo `While` klauzuli.  
+ V rámci smyčky `Do`, `For` nebo `While` se můžete přenést do další iterace této smyčky. Řízení se okamžitě předává do testu podmínky smyčky, který odpovídá přenosu do příkazu `For` nebo `While` nebo do příkazu `Do` nebo `Loop`, který obsahuje klauzuli `Until` nebo `While`.  
   
- Můžete použít `Continue` v libovolném umístění v smyčky, která umožňuje přenosy. Pravidla povolení přenos řízení jsou stejné jako [příkazu GoTo](../../../visual-basic/language-reference/statements/goto-statement.md).  
+ Můžete použít `Continue` v jakémkoli umístění smyčky, která umožňuje přenosy. Pravidla umožňující přenos řízení se shodují s [příkazem goto](../../../visual-basic/language-reference/statements/goto-statement.md).  
   
- Například, pokud je zcela obsažený v rámci smyčky `Try` bloku, `Catch` bloku nebo `Finally` blok, můžete použít `Continue` přenos ze smyčky. Pokud na druhou stranu, `Try`... `End Try` struktura je obsažen v rámci smyčky, nebude možné použít `Continue` k přenosu řízení z celkového počtu `Finally` bloku a vy můžete použít k převodu z `Try` nebo `Catch` blokovat jenom v případě, že je úplně přenést z celkového počtu `Try`... `End Try` struktury.  
+ Například pokud je smyčka úplně obsažena v bloku `Try`, bloku `Catch` nebo bloku `Finally`, můžete k přenosu ze smyčky použít `Continue`. Je-li na druhé straně struktura `Try`... `End Try` obsažena v rámci smyčky, nelze použít `Continue` pro přenos řízení z bloku `Finally` a můžete ho použít k přenosu z bloku `Try` nebo `Catch` pouze v případě, že jste přenesli zcela z @no_ – 6... `End Try` struktura.  
   
- Pokud třeba máte vnořené smyčky stejného typu `Do` smyčky v jiném `Do` smyčky, `Continue Do` příkaz přeskočí na další iteraci nejvnitřnější `Do` smyčku, která ji obsahuje. Nemůžete použít `Continue` přeskočit na další iteraci smyčky obsahující stejného typu.  
+ Pokud máte vnořené smyčky stejného typu, například smyčka `Do` v rámci jiné smyčky `Do`, příkaz `Continue Do` přeskočí na další iteraci nejvnitřnější smyčky `Do`, která ho obsahuje. @No__t-0 nelze použít k přeskočení na další iteraci obsahující smyčky stejného typu.  
   
- Pokud máte vnořené smyčky různých typů, třeba `Do` smyčky v rámci `For` smyčky, můžete přeskočit na další iteraci smyčky, buď pomocí `Continue Do` nebo `Continue For`.  
+ Pokud máte vnořené smyčky různých typů, například smyčka `Do` v rámci smyčky `For`, můžete přeskočit na další iteraci smyčky buď pomocí `Continue Do` nebo `Continue For`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Continue While` příkaz přejděte tak do dalšího sloupce pole, pokud dělitel je nula. `Continue While` Se nachází uvnitř `For` smyčky. Přenese na `While col < lastcol` příkazu, který je na další iteraci nejvnitřnější `While` smyčku, která obsahuje `For` smyčky.  
+ Následující příklad kódu používá příkaz `Continue While` k přeskočení na další sloupec pole, pokud je dělitel nula. @No__t-0 je uvnitř smyčky `For`. Přenáší na příkaz `While col < lastcol`, což je další iterace nejvnitřnější smyčky "`While`", která obsahuje smyčku `For`.  
   
  [!code-vb[VbVbalrStatements#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#14)]  
   

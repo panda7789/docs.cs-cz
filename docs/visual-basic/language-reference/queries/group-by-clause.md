@@ -12,19 +12,19 @@ helpviewer_keywords:
 - Group By statement [Visual Basic]
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
-ms.openlocfilehash: 04378d2c9a7e565343ff663997e2a3e61f04f9d2
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 8b3a480c226debc529c268e83437d15192592bd3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423573"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004751"
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By – klauzule (Visual Basic)
-Seskupuje prvky sady výsledků dotazu. Můžete také použít k aplikaci agregačních funkcí na každou skupinu. Operace seskupení je založená na jeden nebo více klíčů.  
+Seskupí prvky výsledku dotazu. Lze také použít k aplikování agregačních funkcí na každou skupinu. Operace seskupení je založena na jednom nebo více klíčích.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]  
   Into aggregateList  
 ```  
@@ -33,45 +33,45 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 - `listField1`, `listField2`  
   
-     Volitelné. Jedno nebo více polí proměnné dotazu nebo proměnné, které explicitně určete pole, které mají být zahrnuty ve výsledku seskupené. Pokud nebyla určena žádná pole, všechna pole, proměnná dotazu nebo proměnné jsou zahrnuty ve výsledku seskupené.  
+     Volitelné. Jedno nebo více polí proměnné nebo proměnných dotazu, které explicitně identifikují pole, která mají být součástí seskupeného výsledku. Nejsou-li zadána žádná pole, jsou v seskupeném výsledku obsažena všechna pole proměnné dotazu nebo proměnné.  
   
 - `keyExp1`  
   
-     Povinný parametr. Výraz, který určuje klíč pro použití k určení skupiny prvků. Můžete zadat více než jeden klíč k určení složený klíč.  
+     Požadováno. Výraz, který identifikuje klíč, který se má použít k určení skupin prvků. Můžete zadat více než jeden klíč, který určí složený klíč.  
   
 - `keyExp2`  
   
-     Volitelné. Jeden nebo více dalších klíčů, které jsou spojené s `keyExp1` vytvoření složeného klíče.  
+     Volitelné. Jeden nebo více dalších klíčů, které jsou kombinovány s `keyExp1` pro vytvoření složeného klíče.  
   
 - `aggregateList`  
   
-     Povinný parametr. Jeden nebo více výrazů, které určují, jak se agregují skupiny. Chcete-li zjistit název člena pro seskupené výsledky, použijte `Group` – klíčové slovo, které může být v některém z následujících forem:  
+     Požadováno. Jeden nebo více výrazů, které identifikují způsob agregace skupin. Chcete-li identifikovat název člena pro seskupené výsledky, použijte klíčové slovo `Group`, které může být v jednom z následujících forem:  
   
-    ```  
+    ```vb  
     Into Group  
     ```  
   
      -nebo-  
   
-    ```  
+    ```vb  
     Into <alias> = Group  
     ```  
   
-     Může také obsahovat agregační funkce, které chcete aplikovat ve skupině.  
+     Můžete také zahrnout agregační funkce, které se mají použít pro skupinu.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `Group By` klauzule přerušení výsledků dotazu do skupin. Seskupení podle klíče nebo složený klíč skládající se z více klíčů. Prvky, které jsou spojeny s odpovídající hodnoty klíče jsou součástí stejné skupiny.  
+ K přerušení výsledků dotazu do skupin lze použít klauzuli `Group By`. Seskupení je založeno na klíči nebo složeném klíči, který se skládá z více klíčů. Prvky, které jsou přidruženy k odpovídajícím hodnotám klíčů, jsou zahrnuty ve stejné skupině.  
   
- Můžete použít `aggregateList` parametr `Into` klauzule a `Group` – klíčové slovo k identifikaci názvu členu, který se používá k odkazování skupiny. Můžete použít také v agregačních funkcí `Into` klauzule k výpočtu hodnot seskupených elementů. Seznam standardní agregační funkce najdete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ Použijete parametr `aggregateList` klauzule `Into` a klíčové slovo `Group` k identifikaci názvu člena, který se používá k odkazování na skupinu. V klauzuli `Into` můžete také zahrnout agregační funkce pro výpočet hodnot seskupených prvků. Seznam standardních agregačních funkcí naleznete v tématu [klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu seskupí seznam zákazníků na základě jejich umístění (země nebo oblast) a poskytuje počet zákazníků v každé skupině. Výsledky jsou seřazené podle názvu země/oblast. Seskupené výsledky jsou řazeny podle název města.  
+ Následující příklad kódu seskupuje seznam zákazníků na základě jejich umístění (země/oblast) a poskytuje počet zákazníků v každé skupině. Výsledky jsou seřazené podle názvu země nebo oblasti. Seskupené výsledky jsou seřazené podle názvu města.  
   
  [!code-vb[VbSimpleQuerySamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

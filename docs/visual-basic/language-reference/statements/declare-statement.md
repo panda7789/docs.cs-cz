@@ -27,12 +27,12 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-ms.openlocfilehash: 6ff20af1ef439e27cffaf306c7917dbc98a419ce
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: e839fe14c360229fbe0350fd7878c7a844056e8b
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662911"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005089"
 ---
 # <a name="declare-statement"></a>Declare – příkaz
 
@@ -40,7 +40,7 @@ Deklaruje odkaz na proceduru implementovanou v externím souboru.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 [ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _
 Declare [ charsetmodifier ] [ Sub ] name Lib "libname" _
 [ Alias "aliasname" ] [ ([ parameterlist ]) ]
@@ -54,92 +54,92 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 
 |Termín|Definice|
 |---|---|
-|`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|
-|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br />- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|
-|`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|
-|`charsetmodifier`|Volitelné. Určuje znakovou sadou a soubor vyhledat informace. Může být jedna z následujících akcí:<br /><br /> -   [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md) (výchozí)<br />-   [Kódování Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)|
-|`Sub`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Označuje, že externí procedura nesmí vracet hodnotu.|
-|`Function`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Označuje, že externí procedura, vrátí hodnotu.|
-|`name`|Povinný parametr. Název externího odkazu. Další informace najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
-|`Lib`|Povinný parametr. Zavádí `Lib` klauzuli, která identifikuje externí soubor (knihovna DLL nebo prostředek kódu) obsahující externí proceduru.|
-|`libname`|Povinný parametr. Název souboru, který obsahuje postup deklarovaný.|
-|`Alias`|Volitelné. Označuje, že název zadaný v nelze postup deklarované v rámci svého souboru identifikovat `name`. Zadejte jeho identifikaci v `aliasname`.|
-|`aliasname`|Povinné, pokud používáte `Alias` – klíčové slovo. Řetězec, který identifikuje postupu v jednom ze dvou způsobů:<br /><br /> Název vstupního bodu procedury v rámci svého souboru do uvozovek (`""`)<br /><br /> -nebo-<br /><br /> Znak čísla (`#`) následované celé číslo určující řadová číslovka vstupní bod podle postupu v jeho souboru|
-|`parameterlist`|Povinné, pokud, které procedura používá parametry. Zobrazit [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|
-|`returntype`|Požadováno pokud `Function` určena a `Option Strict` je `On`. Datový typ hodnoty vrácené procedurou.|
+|`attributelist`|Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|
+|`accessmodifier`|Volitelné. Může to být jedna z následujících:<br /><br /> @no__t – 0[veřejných](../../../visual-basic/language-reference/modifiers/public.md)<br />[chráněný](../../../visual-basic/language-reference/modifiers/protected.md) @no__t – 0<br />-    –[přítel](../../../visual-basic/language-reference/modifiers/friend.md)<br />@no__t – 0[privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />[přítel chráněný](../../language-reference/modifiers/protected-friend.md) @no__t – 0<br />- [Private Protected](../../language-reference/modifiers/private-protected.md)<br /><br /> Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|
+|`Shadows`|Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|
+|`charsetmodifier`|Volitelné. Určuje znakovou sadu a informace o hledání souborů. Může to být jedna z následujících:<br /><br /> -   [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md) (výchozí)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />@no__t – 0[auto](../../../visual-basic/language-reference/modifiers/auto.md)|
+|`Sub`|Volitelné, ale musí se zobrazit buď `Sub`, nebo `Function`. Indikuje, že externí procedura nevrací hodnotu.|
+|`Function`|Volitelné, ale musí se zobrazit buď `Sub`, nebo `Function`. Označuje, že externí procedura vrací hodnotu.|
+|`name`|Požadováno. Název tohoto externího odkazu Další informace naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
+|`Lib`|Požadováno. Zavádí klauzuli `Lib`, která identifikuje externí soubor (knihovna DLL nebo prostředek kódu) obsahující externí proceduru.|
+|`libname`|Požadováno. Název souboru, který obsahuje deklarovanou proceduru.|
+|`Alias`|Volitelné. Označuje, že procedura, kterou deklarujete, nelze v rámci svého souboru identifikovat pomocí názvu zadaného v `name`. Určíte jeho identifikaci v `aliasname`.|
+|`aliasname`|Vyžaduje se, pokud použijete klíčové slovo `Alias`. Řetězec, který identifikuje proceduru jedním ze dvou způsobů:<br /><br /> Název vstupního bodu procedury v souboru, v rámci uvozovek (`""`)<br /><br /> -nebo-<br /><br /> Znak čísla (`#`) následovaný celým číslem určujícím pořadové číslo vstupního bodu procedury v rámci jeho souboru|
+|`parameterlist`|Vyžaduje se, pokud procedura převezme parametry. Viz [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|
+|`returntype`|Požadováno, pokud je zadána hodnota `Function` a `Option Strict` je `On`. Datový typ hodnoty vrácené procedurou|
 
 ## <a name="remarks"></a>Poznámky
 
-Někdy potřebujete volání procedury definované v souboru (například DLL nebo prostředek) vně vašeho projektu. Když toto provedete, kompilátor jazyka Visual Basic nemá přístup k informacím, které potřebuje k voláním procedury správně, třeba kde je umístěn postup, jak je identifikovaný, jeho volací sekvence a návratový typ a řetězec znakové sady, které používá. `Declare` Příkaz vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.
+Někdy je nutné volat proceduru definovanou v souboru (například knihovna DLL nebo prostředek kódu) mimo váš projekt. Pokud to uděláte, kompilátor Visual Basic nemá přístup k informacím, které potřebuje k správnému volání procedury, jako je například kde je procedura umístěna, jak je identifikována, její volající sekvence a návratový typ a znaková sada, kterou používá. Příkaz `Declare` vytvoří odkaz na externí proceduru a poskytne tyto nezbytné informace.
 
-Můžete použít `Declare` pouze na úrovni modulu. To znamená, že *kontext deklarace* externího odkazu musí být třída, struktura nebo modulu a nemůže být zdrojový soubor, obor názvů, rozhraní, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+@No__t-0 můžete použít pouze na úrovni modulu. To znamená, že *kontext deklarace* pro externí odkaz musí být třída, struktura nebo modul a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, proceduru nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
 
-Externí odkazuje na výchozí [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu.
+Externí odkazy jsou výchozí pro [veřejný](../../../visual-basic/language-reference/modifiers/public.md) přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu.
 
-## <a name="rules"></a>pravidla
+## <a name="rules"></a>Pravidly
 
-- **Atributy.** Můžete použít atributy k externí odkaz. Všechny atributy, které použijete nemá vliv, pouze ve vašem projektu, ne v externím souboru.
+- **Atribut.** Můžete použít atributy na externí odkaz. Libovolný atribut, který použijete, má vliv pouze na projekt, nikoli v externím souboru.
 
-- **Modifikátory.** Externí procedury jsou implicitně [Shared](../../../visual-basic/language-reference/modifiers/shared.md). Nelze použít `Shared` – klíčové slovo deklarace externí odkaz a nelze změnit stav jeho sdílení.
+- **Modifikátory.** Externí procedury jsou implicitně [sdíleny](../../../visual-basic/language-reference/modifiers/shared.md). Při deklaraci externího odkazu nemůžete použít klíčové slovo `Shared` a nemůžete změnit jeho sdílený stav.
 
-  Externí procedura nemůže účastnit přepsání, implementovat členy rozhraní nebo zpracování událostí. Proto nelze použít `Overrides`, `Overridable`, `NotOverridable`, `MustOverride`, `Implements`, nebo `Handles` – klíčové slovo v `Declare` příkazu.
+  Externí procedura se nemůže zúčastnit přepsání, implementace členů rozhraní nebo zpracování událostí. V příkazu `Declare` proto nelze použít klíčové slovo `Overrides`, `Overridable`, `NotOverridable`, `MustOverride`, `Implements` nebo `Handles`.
 
-- **Název externí procedury.** Není nutné poskytnout tento vnější odkaz se stejným názvem (v `name`) jako název vstupního bodu podle postupu v jeho externí soubor (`aliasname`). Můžete použít `Alias` klauzule zadat název vstupního bodu. To může být užitečné v případě, že externí procedura má stejný název jako vyhrazené modifikátor jazyka Visual Basic nebo proměnné, procedura nebo jiné programovací element ve stejném oboru.
-
-  > [!NOTE]
-  > Názvy vstupního bodu ve většině knihoven DLL jsou malá a velká písmena.
-
-- **Externí procedura číslo.** Alternativně můžete použít `Alias` klauzule k určení řadová číslovka vstupní bod v exportní tabulce externího souboru. K tomuto účelu začnete `aliasname` znakem čísla (`#`). To může být užitečné, pokud libovolný znak v názvu externí procedura není povolený v jazyce Visual Basic nebo na externí soubor exportuje postupu bez názvu.
-
-## <a name="data-type-rules"></a>Datový typ pravidla
-
-- **Datové typy parametrů.** Pokud `Option Strict` je `On`, musíte zadat typ dat každého parametru ve `parameterlist`. To může být libovolného datového typu nebo název výčtu, strukturu, třídu nebo rozhraní. V rámci `parameterlist`, můžete použít `As` klauzule zadejte datový typ argumentu pro každý parametr předat.
+- **Název externí procedury** Tento externí odkaz není nutné zadávat na stejný název (v `name`) jako název vstupní bod v rámci jeho externího souboru (`aliasname`). Pomocí klauzule `Alias` můžete zadat název vstupního bodu. To může být užitečné v případě, že externí procedura má stejný název jako Visual Basic rezervovaný modifikátor nebo proměnná, procedura nebo jakýkoli jiný programový prvek ve stejném oboru.
 
   > [!NOTE]
-  > V případě, že externí procedura nebyl zapsán pro rozhraní .NET Framework, je třeba Ujistěte se, že datové typy, které odpovídají. Například, pokud deklarujete externí odkaz na proceduru Visual Basic 6.0 se `Integer` parametr (16 bitů v jazyce Visual Basic 6.0), je nutné určit, odpovídající argument jako `Short` v `Declare` příkaz, protože to je 16 - v jazyce Visual Basic bit celočíselného typu. Obdobně `Long` má odlišnou datovou šířku v jazyce Visual Basic 6.0 a `Date` je implementováno jinak.
+  > Názvy vstupních bodů ve většině knihoven DLL rozlišují velká a malá písmena.
 
-- **Návratový typ Data.** Je-li externí procedura `Function` a `Option Strict` je `On`, musíte zadat datový typ hodnoty vrácené volajícímu kódu. To může být libovolného datového typu nebo název výčtu, strukturu, třídu nebo rozhraní.
+- **Externí číslo procedury** Alternativně můžete použít klauzuli `Alias` a zadat tak pořadové číslo vstupního bodu v exportní tabulce externího souboru. Chcete-li to provést, začněte `aliasname` s znakem čísla (`#`). To může být užitečné, pokud libovolný znak v názvu externí procedury není povolen v Visual Basic, nebo pokud externí soubor exportuje proceduru bez názvu.
+
+## <a name="data-type-rules"></a>Pravidla datového typu
+
+- **Datové typy parametrů.** Pokud je `Option Strict` `On`, je nutné zadat datový typ každého parametru v `parameterlist`. Může to být libovolný datový typ nebo název výčtu, struktury, třídy nebo rozhraní. V rámci `parameterlist` použijete klauzuli `As` k určení datového typu argumentu, který se má předat jednotlivým parametrům.
 
   > [!NOTE]
-  > Kompilátor jazyka Visual Basic neověřuje, že datové typy jsou nekompatibilní s direktivami externí proceduru. Pokud dojde k neshodě, generuje modul common language runtime <xref:System.Runtime.InteropServices.MarshalDirectiveException> výjimka za běhu.
+  > Pokud externí procedura nebyla zapsána pro .NET Framework, je nutné dbát na to, aby datové typy odpovídaly. Například pokud deklarujete externí odkaz na Visual Basic 6,0 s parametrem `Integer` (16 bitů v Visual Basic 6,0), je nutné určit odpovídající argument jako `Short` v příkazu `Declare`, protože se jedná o 16bitový celočíselný typ v Visual Basic. Podobně `Long` má odlišnou šířku dat v Visual Basic 6,0 a `Date` je implementováno jinak.
 
-- **Výchozí datové typy.** Pokud `Option Strict` je `Off` a nezadáte datový typ parametru `parameterlist`, kompilátor jazyka Visual Basic převede odpovídající argument [datový typ objektu](../../../visual-basic/language-reference/data-types/object-data-type.md). Podobně pokud nezadáte `returntype`, kompilátor má návratový typ dat bude `Object`.
+- **Návratový typ dat** Pokud je externí procedura `Function` a `Option Strict` je `On`, je nutné zadat datový typ hodnoty vrácené volajícímu kódu. Může to být libovolný datový typ nebo název výčtu, struktury, třídy nebo rozhraní.
 
   > [!NOTE]
-  > Vzhledem k tomu, že pracujete s externí procedura, která může být napsána na různé platformy, je nebezpečné, nevyvozujte předpoklady o datových typech a zajistí, aby výchozí. Je mnohem bezpečnější zadejte datový typ každý parametr nebo návratovou hodnotu, pokud existuje. To také zlepšuje čitelnost vašeho kódu.
+  > Kompilátor Visual Basic neověřuje, zda jsou datové typy kompatibilní s externí procedurou. Pokud dojde k neshodě, modul CLR (Common Language Runtime) vygeneruje v době běhu výjimku <xref:System.Runtime.InteropServices.MarshalDirectiveException>.
 
-## <a name="behavior"></a>Chování
+- **Výchozí datové typy.** Pokud je `Option Strict` `Off` a neurčíte datový typ parametru v `parameterlist`, kompilátor Visual Basic převede odpovídající argument na [datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md). Podobně pokud nezadáte `returntype`, kompilátor převezme typ vracených dat, který bude `Object`.
 
-- **Obor.** Externí odkaz je v oboru v celém jeho třídy, struktury nebo modulu.
+  > [!NOTE]
+  > Vzhledem k tomu, že pracujete s externí procedurou, která mohla být napsána na jiné platformě, je nebezpečné dělat jakékoli předpoklady týkající se datových typů nebo jim umožnit jejich výchozí nastavení. Je mnohem bezpečnější zadat datový typ každého parametru a vrácenou hodnotu, pokud existuje. Tím se také zlepšuje čitelnost kódu.
 
-- **Doba platnosti.** Externí odkaz má stejnou dobu platnosti jako třídy, struktury nebo modul, ve kterém je deklarována.
+## <a name="behavior"></a>Předvídatelně
 
-- **Volání externí procedury.** Volání externí procedury stejně jako voláte `Function` nebo `Sub` proceduru – s použitím ve výrazech, pokud vrátí hodnotu, nebo zadáním v [volání příkazu](../../../visual-basic/language-reference/statements/call-statement.md) Pokud nevrací hodnotu.
+- **Oboru.** Externí odkaz je v rozsahu v rámci své třídy, struktury nebo modulu.
 
-  Předání argumentů do externí procedury přesně podle specifikace `parameterlist` v `Declare` příkazu. Není vezměte v úvahu jak parametry byly původně deklarovány v externím souboru. Podobně, pokud je návratová hodnota, použít ho přesně podle specifikace `returntype` v `Declare` příkazu.
+- **Platné.** Externí odkaz má stejnou životnost jako třída, struktura nebo modul, ve kterém je deklarována.
 
-- **Znakové sady.** Můžete zadat v `charsetmodifier` jak by měl Visual Basic zařazovat řetězce při volání externí proceduru. `Ansi` Modifikátor instruuje Visual Basic zařazovat všechny řetězce na hodnoty ANSI a `Unicode` modifikátor přesměruje ho zařazovat všechny řetězce k hodnotám Unicode. `Auto` Modifikátor instruuje Visual Basic k zařazování řetězců v kódu podle rozhraní .NET Framework pravidla podle externího odkazu `name`, nebo `aliasname` -li zadán. Výchozí hodnota je `Ansi`.
+- **Volání externí procedury.** Externí procedura se volá stejným způsobem jako `Function` nebo `Sub` – pomocí výrazu ve výrazu, pokud vrátí hodnotu nebo zadáním v [příkazu volání](../../../visual-basic/language-reference/statements/call-statement.md) , pokud nevrátí hodnotu.
 
-  `charsetmodifier` také určuje, jak by měl Visual Basic vyhledávat externí procedura v rámci svého externího souboru. `Ansi` a `Unicode` i přímé jazyka Visual Basic k vyhledání bez úpravy jejího názvu během vyhledávání. `Auto` instruuje Visual Basic k určení základní znakové sadě běhovou platformu a případně upravit název externí procedury následujícím způsobem:
+  Do příkazu `Declare` předáte argumenty k externí proceduře přesně tak, jak je určeno `parameterlist`. Neberou v úvahu způsob, jakým byly parametry původně deklarovány v externím souboru. Podobně, pokud existuje návratová hodnota, použijte ji přesně tak, jak je určeno hodnotou `returntype` v příkazu `Declare`.
 
-  - Na platformě ANSI, například Windows 95, Windows 98 či Windows Millennium Edition nejdřív vyhledejte externí procedura bez úprav název. Pokud se to nepodaří, připojte na konec název externí procedury "A" a znovu vyhledat.
+- **Znakové sady.** Můžete zadat v `charsetmodifier`, jak by měla Visual Basic zařazovat řetězce při volání externí procedury. Modifikátor `Ansi` přesměruje Visual Basic na zařazení všech řetězců do hodnot ANSI a modifikátor `Unicode` ho přesměruje na zařazení všech řetězců do hodnot Unicode. Modifikátor `Auto` přesměruje Visual Basic na zařazování řetězců podle .NET Framework pravidel založených na externích odkazech `name` nebo `aliasname`, pokud je zadaný. Výchozí hodnota je `Ansi`.
 
-  - Na platformě Unicode, jako je například Windows NT, Windows 2000 nebo Windows XP nejprve vyhledejte externí procedura bez úprav název. Pokud se to nepodaří připojit "W" na konci externí procedura pojmenujte a znovu vyhledat.
+  `charsetmodifier` také určuje, jak má Visual Basic vyhledat externí postup v rámci svého externího souboru. `Ansi` a `Unicode` Přímá Visual Basic k jejímu vyhledání bez změny názvu během hledání. `Auto` přímé Visual Basic k určení základní znakové sady běhové platformy a případně upraví název externí procedury následujícím způsobem:
 
-- **Mechanismus.** Jazyk Visual Basic používá rozhraní .NET Framework *vyvolání platformy* (PInvoke) mechanismus řešení a přístup k externí procedury. `Declare` Příkazu a <xref:System.Runtime.InteropServices.DllImportAttribute> třída oba použít tento mechanismus automaticky a není nutné žádnou znalost PInvoke. Další informace najdete v tématu [názorný postup: Volání rozhraní API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).
+  - Na platformě ANSI, jako je Windows 95, Windows 98 nebo Windows Millennium Edition, nejprve vyhledáte externí postup beze změny názvu. V případě neúspěšného pokusu připojit "A" k konci názvu externí procedury a znovu ho vyhledat.
+
+  - Na platformě Unicode, jako je Windows NT, Windows 2000 nebo Windows XP, nejprve vyhledáte externí postup beze změny názvu. Pokud se to nezdaří, přidejte "W" na konec názvu externí procedury a znovu ho vyhledejte.
+
+- **Mechanismy.** Visual Basic používá mechanismus *volání .NET Framework platformy* (PInvoke) pro řešení a přístup k externím procedurám. Příkaz `Declare` a třída <xref:System.Runtime.InteropServices.DllImportAttribute> používají tento mechanismus automaticky a nepotřebujete žádné znalosti PInvoke. Další informace najdete v tématu [Návod: volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).
 
 > [!IMPORTANT]
-> V případě, že externí procedura běží mimo modul CLR (CLR), je *nespravovaný kód*. Při volání tento postup, například funkce rozhraní Windows API nebo metodu modelu COM může zveřejnit aplikaci na bezpečnostní rizika. Další informace najdete v tématu [zabezpečené kódování pokyny pro nespravovaný kód](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).
+> Pokud externí procedura běží mimo modul CLR (Common Language Runtime), jedná se o *nespravovaný kód*. Když zavoláte takovou proceduru, například funkci rozhraní Windows API nebo metodu COM, můžete svou aplikaci vystavit bezpečnostním rizikům. Další informace najdete v tématu [pokyny k zabezpečenému kódování pro nespravovaný kód](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad deklaruje externí odkaz na `Function` proceduru, která vrací aktuální uživatelské jméno. Potom volá externí procedura `GetUserNameA` jako součást `getUser` postup.
+Následující příklad deklaruje externí odkaz na proceduru @no__t 0, která vrací aktuální uživatelské jméno. Pak zavolá externí proceduru `GetUserNameA` jako součást procedury `getUser`.
 
 [!code-vb[VbVbalrStatements#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#15)]
 
 ## <a name="example"></a>Příklad
 
-<xref:System.Runtime.InteropServices.DllImportAttribute> Poskytuje alternativní způsob použití funkcí v nespravovaném kódu. Následující příklad deklaruje importované funkce bez použití `Declare` příkazu.
+@No__t-0 poskytuje alternativní způsob používání funkcí v nespravovaném kódu. Následující příklad deklaruje importovanou funkci bez použití příkazu `Declare`.
 
 [!code-vb[VbVbalrStatements#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#16)]
 

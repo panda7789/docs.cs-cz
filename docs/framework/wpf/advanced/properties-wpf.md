@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], properties
 - properties [WPF]
 ms.assetid: d6e0197f-f2c4-48ed-b45b-b9cdb64aab1c
-ms.openlocfilehash: d3d11950f919c13590a0212b8d03d394d59d3550
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7b394c4bbb294f9eb09666cf3e2223f897abd09b
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928437"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003139"
 ---
 # <a name="properties-wpf"></a>Vlastnosti (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]poskytuje sadu služeb, které lze použít k rozšiřování funkcí vlastnosti modulu CLR (Common Language Runtime). Souhrnně se tyto služby obvykle označují jako systém vlastností WPF. Vlastnost, která je zajištěna [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] systémem vlastností, je označována jako vlastnost závislosti.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje sadu služeb, které lze použít k rozšiřování funkčnosti vlastnosti modulu CLR (Common Language Runtime). Souhrnně se tyto služby obvykle označují jako systém vlastností WPF. Vlastnost, která je zajištěna systémem vlastností WPF, je známá jako vlastnost závislosti.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
@@ -36,7 +36,7 @@ ms.locfileid: "70928437"
 - [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)
 - [Témata s postupy](properties-how-to-topics.md)
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Odkaz  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  

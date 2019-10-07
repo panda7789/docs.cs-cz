@@ -9,24 +9,24 @@ helpviewer_keywords:
 - colors of elements [WPF], changing
 - elements [WPF], changing color of
 ms.assetid: 7e246802-3625-47a7-ae9d-c8a2a40fd040
-ms.openlocfilehash: 744963cc543110121a777e1d4c3cdcb3cec40d9e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c59dc5f2f8f26fac69933f9ef641a3a51306619
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776867"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004832"
 ---
 # <a name="how-to-change-the-color-of-an-element-using-focus-events"></a>Postupy: Změna barvy elementu použitím událostí fokusu
-Tento příklad ukazuje, jak změnit barvu elementu získává a ztratí fokus pomocí <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus> události.  
+Tento příklad ukazuje, jak změnit barvu prvku při nárůstu a ztrátě fokusu pomocí událostí <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus>.  
   
- Tento příklad se skládá z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubor a soubor kódu na pozadí.  
+ Tento příklad se skládá ze souboru [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a souboru kódu na pozadí.  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[TLA2#tla_titlexaml](../../../../includes/tla2sharptla-titlexaml-md.md)] vytvoří uživatelské rozhraní, který se skládá ze dvou <xref:System.Windows.Controls.Button> objekty a připojí obslužné rutiny událostí pro <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus> události <xref:System.Windows.Controls.Button> objekty.  
+ Následující kód XAML vytvoří uživatelské rozhraní, které se skládá ze dvou objektů @no__t 0 a připojuje obslužné rutiny událostí pro události <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus> k objektům <xref:System.Windows.Controls.Button>.  
   
  [!code-xaml[gotfocusLostfocusEffectUsingEvent#GotLostFocusSampleXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/gotfocusLostfocusEffectUsingEvent/CSharp/Window1.xaml#gotlostfocussamplexaml)]  
   
- Následující kód vytvoří <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus> obslužných rutin událostí.  Když <xref:System.Windows.Controls.Button> zisky klávesnice fokus, <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> se změní na červený.  Když <xref:System.Windows.Controls.Button> ztratí fokus klávesnice <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> se změní zpět na bílou.  
+ Následující kód na pozadí vytvoří obslužné rutiny událostí <xref:System.Windows.UIElement.GotFocus> a <xref:System.Windows.UIElement.LostFocus>.  Když se aktivuje klávesnice <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Control.Background%2A> <xref:System.Windows.Controls.Button> se změní na červenou.  Když <xref:System.Windows.Controls.Button> ztratí fokus klávesnice, <xref:System.Windows.Controls.Control.Background%2A> <xref:System.Windows.Controls.Button> se změní zpátky na bílou.  
   
  [!code-csharp[gotfocusLostfocusEffectUsingEvent#GotLostFocusSampleEventHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/gotfocusLostfocusEffectUsingEvent/CSharp/Window1.xaml.cs#gotlostfocussampleeventhandlers)]
  [!code-vb[gotfocusLostfocusEffectUsingEvent#GotLostFocusSampleEventHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/gotfocusLostfocusEffectUsingEvent/VisualBasic/Window1.xaml.vb#gotlostfocussampleeventhandlers)]  

@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: b86684bab6c552102af7486b2c9ab49ea703a175
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 41cbe57f1e3711bb4e18b2b4da28c26ebbd2bc60
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627288"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005704"
 ---
 # <a name="controls-by-category"></a>Řízení podle kategorie
-Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky seskupeny do několika kategorií. Tyto kategorie je možné vybrat příslušný ovládací prvek pro váš scénář tím, že pomáhá můžete zjistit, jaké ovládací prvky mají podobné vzory využití nebo funkce.  
+Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do několika kategorií. Tyto kategorie lze použít k výběru vhodného ovládacího prvku pro váš scénář tím, že vám pomohou zjistit, které ovládací prvky mají podobné vzorce nebo funkce používání.  
   
 ## <a name="layout"></a>Rozložení  
- Ovládací prvky rozložení se používají ke správě velikost, rozměry, pozice a uspořádání podřízených elementů.  
+ Ovládací prvky rozložení se používají ke správě velikosti, rozměrů, umístění a uspořádání podřízených prvků.  
   
 - <xref:System.Windows.Controls.Border>  
   
@@ -56,14 +56,14 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>Tlačítka  
- Tlačítka jsou jedním z nejzákladnějších ovládacích prvků uživatelského rozhraní. Aplikace obvykle provádět určité operace v <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, když uživatel klikne na ně.  
+ Tlačítka jsou jedním z nejzákladnější základní ovládací prvky uživatelského rozhraní. Aplikace obvykle provádějí určitou úlohu v události <xref:System.Windows.Controls.Primitives.ButtonBase.Click>, když na ně uživatel klikne.  
   
 - <xref:System.Windows.Controls.Button>  
   
 - <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
 ## <a name="data-display"></a>Zobrazení dat  
- Ovládací prvky zobrazení dat se používají k zobrazení informací ze zdroje dat.  
+ Ovládací prvky zobrazení dat slouží k zobrazení informací ze zdroje dat.  
   
 - <xref:System.Windows.Controls.DataGrid>  
   
@@ -71,15 +71,15 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
   
 - <xref:System.Windows.Controls.TreeView>  
   
-## <a name="date-display-and-selection"></a>Výběr a zobrazení data  
- Ovládací prvky data slouží k zobrazení a výběr informací z kalendáře.  
+## <a name="date-display-and-selection"></a>Zobrazení data a výběr  
+ Ovládací prvky data slouží k zobrazení a výběru informací o kalendáři.  
   
 - <xref:System.Windows.Controls.Calendar>  
   
 - <xref:System.Windows.Controls.DatePicker>  
   
 ## <a name="menus"></a>Nabídky  
- Nabídky se používají k seskupení souvisejících akcí nebo poskytovat kontextové pomoc.  
+ Nabídky se používají k seskupení souvisejících akcí nebo k poskytnutí kontextové pomoci.  
   
 - <xref:System.Windows.Controls.ContextMenu>  
   
@@ -88,7 +88,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.ToolBar>  
   
 ## <a name="selection"></a>Výběr  
- Ovládací prvky výběru se používají a povolit tak uživateli vybrat jednu nebo více možností.  
+ Ovládací prvky výběru slouží k tomu, aby uživatel mohl vybrat jednu nebo více možností.  
   
 - <xref:System.Windows.Controls.CheckBox>  
   
@@ -101,7 +101,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.Slider>  
   
 ## <a name="navigation"></a>Navigace  
- Ovládací prvky pro navigaci vylepšit nebo rozšířit navigační prostředí aplikace tak, že vytvoříte cílení snímků nebo vzhledu aplikace s kartami.  
+ Navigační ovládací prvky zvyšují nebo rozšiřují navigaci v aplikacích vytvořením cílení rámců nebo vzhledu aplikace s kartami.  
   
 - <xref:System.Windows.Controls.Frame>  
   
@@ -114,7 +114,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.TabControl>  
   
 ## <a name="dialog-boxes"></a>Dialogová okna  
- Dialogová okna poskytují cílené podporu pro běžné scénáře zásahu uživatele, jako je například tisk.  
+ Dialogová okna poskytují cílenou podporu běžných scénářů uživatelské interakce, jako je tisk.  
   
 - <xref:Microsoft.Win32.OpenFileDialog>  
   
@@ -123,7 +123,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:Microsoft.Win32.SaveFileDialog>  
   
 ## <a name="user-information"></a>Informace o uživateli  
- Informace o uživatelských ovládacích prvků kontextové svůj názor nebo ujasněte uživatelské rozhraní aplikace. Uživateli obvykle nelze pracovat s tyto ovládací prvky.  
+ Ovládací prvky informace o uživateli poskytují kontextovou zpětnou vazbu nebo objasňují uživatelské rozhraní aplikace. Uživatel obvykle nemůže s těmito ovládacími prvky pracovat.  
   
 - <xref:System.Windows.Controls.AccessText>  
   
@@ -140,7 +140,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.ToolTip>  
   
 ## <a name="documents"></a>Dokumenty  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje několik specializovaných ovládacích prvků pro zobrazení dokumentů. Tyto ovládací prvky optimalizaci prostředí pro čtení, na základě scénáře cíloví uživatelé.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje několik specializovaných ovládacích prvků pro zobrazení dokumentů. Tyto ovládací prvky optimalizují možnosti čtení na základě scénáře cíleného uživatele.  
   
 - <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -153,7 +153,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.StickyNoteControl>  
   
 ## <a name="input"></a>Vstup  
- Vstupní ovládací prvky umožňují uživateli vyžadovat zadání textu a další obsah.  
+ Ovládací prvky vstupu umožňují uživateli zadání textu a dalšího obsahu.  
   
 - <xref:System.Windows.Controls.TextBox>  
   
@@ -162,7 +162,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.PasswordBox>  
   
 ## <a name="media"></a>Média  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje integrovanou podporu pro hostování audio a video obsahu, jakož i [kodeky] nejoblíbenějších formátů obrázku.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje integrovanou podporu pro hostování zvukového a obrazového obsahu a také [kodeky] pro nejoblíbenější formáty obrázků.  
   
 - <xref:System.Windows.Controls.Image>  
   
@@ -171,7 +171,7 @@ Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky se
 - <xref:System.Windows.Controls.SoundPlayerAction>  
   
 ## <a name="digital-ink"></a>Digitální inkoust  
- Digitální inkoust ovládací prvky poskytují integrovanou podporu pro [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] funkce, jako je zobrazení inkoustu a vstupu rukopisu.  
+ Ovládací prvky digitální rukopisu poskytují integrovanou podporu pro funkce Tablet PC, jako je například zobrazení rukopisu a vstup rukopisu.  
   
 - <xref:System.Windows.Controls.InkCanvas>  
   

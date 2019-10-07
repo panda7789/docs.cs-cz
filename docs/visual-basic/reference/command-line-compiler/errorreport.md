@@ -6,55 +6,55 @@ helpviewer_keywords:
 - /errorreport compiler option [Visual Basic]
 - errorreport compiler option [Visual Basic]
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
-ms.openlocfilehash: 5471f0783eee5e2c14cf0f140094d5c292a73756
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8e193a8cb4d4dbc7515c32139bad9dce8b48ed7
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663255"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005617"
 ---
 # <a name="-errorreport"></a>-errorreport
 
-Určuje, jak by měl kompilátor jazyka Visual Basic ohlásit interní chyby kompilátoru.
+Určuje, jak by měl kompilátor Visual Basic hlásit vnitřní chyby kompilátoru.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 -errorreport:{ prompt | queue | send | none }
 ```
 
 ## <a name="remarks"></a>Poznámky
 
-Tato možnost poskytuje pohodlný způsob, jak sestavu jazyce Visual Basic vnitřní chyba kompilátoru (ICE) týmu Visual Basic v Microsoftu. Ve výchozím nastavení kompilátor odesílá žádné informace o společnosti Microsoft. Ale pokud narazíte na chybu kompilátoru, tato možnost umožňuje nahlásit chyby do Microsoftu. Tyto informace vám pomohou určit příčinu odborníky z Microsoftu a může zvýšit následující verzi jazyka Visual Basic.
+Tato možnost poskytuje pohodlný způsob, jak ohlásit Visual Basic vnitřní chybu kompilátoru (ICE) týmu Visual Basic v Microsoftu. Ve výchozím nastavení kompilátor neodesílá společnosti Microsoft žádné informace. Pokud ale dojde k vnitřní chybě kompilátoru, tato možnost vám umožní ohlásit chybu společnosti Microsoft. Tyto informace pomohou technikům Microsoftu identifikovat příčinu a mohou vám pomoci vylepšit další vydání Visual Basic.
 
-Uživatele umožňuje odeslat sestavy závisí na počítače a uživatelských oprávnění zásad.
+Schopnost uživatele odesílat sestavy závisí na oprávněních pro počítače a uživatele.
 
-Následující tabulka shrnuje vliv `-errorreport` možnost.
+Následující tabulka shrnuje efekt možnosti `-errorreport`.
 
-|Možnost|Chování|
+|Možnost|Předvídatelně|
 |---|---|
-|`prompt`|Pokud dojde k chybě vnitřní kompilátor, dialogové okno se zobrazí tak, aby se zobrazí přesně ta data, která shromažďují kompilátor. Můžete určit, jestli nejsou k dispozici žádné citlivé informace v chybové zprávě a rozhodnutí na tom, zda chcete odesílat společnosti Microsoft. Pokud se rozhodnete odeslat a povolit nastavení zásad počítače a uživatele, kompilátor odesílá data do Microsoftu.|
-|`queue`|Zařadí do fronty zprávy o chybách. Při přihlašování s použitím oprávnění správce, můžete nahlásit všechny chyby od posledního byly zaznamenány v (nezobrazí se výzva k odeslání zprávy o chybách více než jednou za tři dny). Toto je výchozí chování při `-errorreport` možnost není zadána.|
-|`send`|Pokud dojde k chybě vnitřního kompilátoru a nastavení zásad počítače a uživatele nepovoluje, kompilátor odesílá data do Microsoftu.<br /><br /> Možnost `-errorreport:send` pokusí automaticky odesílat informace o chybách společnosti Microsoft, pokud vytváření sestav je povoleno podle [zasílání zpráv o chybách Windows](/windows/desktop/wer/windows-error-reporting) nastavení systému. |
-|`none`|Pokud dojde k chybě vnitřní kompilátor, nebude shromážděné nebo odeslané společnosti Microsoft.|
+|`prompt`|Pokud dojde k vnitřní chybě kompilátoru, zobrazí se dialogové okno, abyste mohli zobrazit přesná data, která kompilátor shromáždil. Můžete určit, jestli se v hlášení o chybách nacházejí nějaké citlivé informace, a rozhodnout se, jestli se má poslat Microsoftu. Pokud se rozhodnete ho odeslat a nastavení zásad počítače a uživatele ho povolí, kompilátor pošle data společnosti Microsoft.|
+|`queue`|Zařadí do fronty zprávu o chybách. Když se přihlásíte s oprávněními správce, můžete nahlásit všechny chyby od posledního přihlášení (nebudete vyzváni k odeslání zpráv o selhání více než jednou za tři dny). Toto je výchozí chování, pokud není zadána možnost `-errorreport`.|
+|`send`|Pokud dojde k vnitřní chybě kompilátoru a nastavení zásad počítače a uživatele je povolí, kompilátor odesílá data společnosti Microsoft.<br /><br /> Možnost `-errorreport:send` se pokusí automaticky odeslat informace o chybě společnosti Microsoft, pokud je vytváření sestav povoleno nastavením [zasílání zpráv o chybách systému Windows](/windows/desktop/wer/windows-error-reporting) systému. |
+|`none`|Dojde-li k vnitřní chybě kompilátoru, nebude shromažďována ani odeslána společnosti Microsoft.|
 
-Kompilátor odešle data, která zahrnuje zásobníku v době výskytu chyby, který obvykle obsahuje určitý zdrojový kód. Pokud `-errorreport` se používá s [- bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) možnost, celý zdrojový soubor je odeslaný.
+Kompilátor odesílá data, která zahrnují zásobník v době chyby, což obvykle zahrnuje nějaký zdrojový kód. Pokud se `-errorreport` používá s možností [-bugreport –](../../../visual-basic/reference/command-line-compiler/bugreport.md) , pak se pošle celý zdrojový soubor.
 
-Tato možnost je vhodné použít v [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) možnost, protože umožňuje technikům Microsoftu informace snadno chybu reprodukovat.
+Tato možnost se nejlépe používá s možností [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) , protože umožňuje vývojářům Microsoftu snadněji reprodukování chyby.
 
 > [!NOTE]
-> `-errorreport` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.
+> Možnost `-errorreport` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
 
 ## <a name="example"></a>Příklad
 
-Následující kód se pokusí zkompilovat `T2.vb`, a pokud kompilátor narazí vnitřní chyba kompilátoru, vyzve vás k odeslání zprávy o chybách společnosti Microsoft.
+Následující kód se pokusí zkompilovat `T2.vb` a pokud kompilátor narazí na vnitřní chybu kompilátoru, zobrazí výzvu k odeslání zprávy o chybách společnosti Microsoft.
 
-```
+```console
 vbc -errorreport:prompt t2.vb
 ```
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)

@@ -1,26 +1,26 @@
 ---
-title: 'Postupy: Vrácení sad řádků'
+title: 'Postupy: vrácení sad řádků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 725718f5-da29-4841-9f53-aafef64ba977
-ms.openlocfilehash: 5ec188e0345140297062d0a10dfbbc4a294bbb7d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b853a6f2175009cbcbc01c14a6732b98e37e1a7f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781605"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003058"
 ---
-# <a name="how-to-return-rowsets"></a>Postupy: Vrácení sad řádků
+# <a name="how-to-return-rowsets"></a>Postupy: vrácení sad řádků
 Tento příklad vrátí sadu řádků z databáze a obsahuje vstupní parametr pro filtrování výsledku.  
   
  Když spustíte uloženou proceduru, která vrací sadu řádků, použijete *výslednou* třídu, která ukládá návraty z uložené procedury. Další informace najdete v tématu [analýza zdrojového kódu LINQ to SQL](analyzing-linq-to-sql-source-code.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků, a používá vstupní parametr, který vrátí pouze řádky, které uvádějí "Londýn" jako město zákazníka. Příklad předpokládá vyčíslitelné `CustomersByCityResult` třídy.  
+ Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků, a používá vstupní parametr, který vrátí pouze řádky, které uvádějí "Londýn" jako město zákazníka. Příklad předpokládá vyčíslitelné třídy `CustomersByCityResult`.  
   
-```  
+```sql  
 CREATE PROCEDURE [dbo].[Customers By City]  
     (@param1 NVARCHAR(20))  
 AS  

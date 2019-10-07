@@ -9,45 +9,45 @@ helpviewer_keywords:
 - optionexplicit compiler option [Visual Basic]
 - -optionexplicit compiler option [Visual Basic]
 ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
-ms.openlocfilehash: 54d438541e8840e4394b24b20b4f394ff8cdb820
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c0946b94bfe02d797d1a484088869375703eb6a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788944"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005306"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
-Pokud proměnné nejsou deklarovány před jejich použití způsobí, že kompilátor pro hlášení chyb.  
+Způsobí, že kompilátor ohlásí chyby, pokud proměnné nejsou deklarovány dříve, než budou použity.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -optionexplicit[+ | -]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Volitelné. Zadejte `-optionexplicit+` tak, aby vyžadovala explicitní deklaraci proměnných. `-optionexplicit+` Možnost je výchozí a je stejný jako `-optionexplicit`. `-optionexplicit-` Možnost umožňuje implicitní deklaraci proměnných.  
+ Volitelné. Zadejte `-optionexplicit+` pro vyžadování explicitní deklarace proměnných. Možnost `-optionexplicit+` je výchozí a je stejná jako `-optionexplicit`. Možnost `-optionexplicit-` povoluje implicitní deklaraci proměnných.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud soubor zdrojového kódu obsahuje [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md), přepíše příkaz `-optionexplicit` nastavení příkazového řádku kompilátoru.  
+ Pokud soubor zdrojového kódu obsahuje [příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md), přepíše příkaz nastavení kompilátoru příkazového řádku `-optionexplicit`.  
   
-### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>Chcete-li nastavit - optionexplicit v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>Nastavení-OptionExplicit – v integrovaném vývojovém prostředí sady Visual Studio  
   
-1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.   
   
-2. Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na kartu **kompilovat** .  
   
-3. Upravte hodnotu v **Option Explicit** pole.  
+3. Upravte hodnotu v poli **explicitní možnosti** .  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje, kdy `-optionexplicit-` se používá.  
+ Následující kód je zkompilován při použití `-optionexplicit-`.  
   
  [!code-vb[VbVbalrCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionExplicitOff.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)

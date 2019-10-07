@@ -1,18 +1,18 @@
 ---
-title: 'Návod: Manipulace s daty (Visual Basic)'
+title: 'Návod: manipulace s daty (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 1f6a54f6-ec33-452a-a37d-48122207bf14
-ms.openlocfilehash: a74216c53c45790b974938c7155e0b5e1043ac13
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7acce3f8483fab3c2978de7cbd1b9d875900f1d3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792284"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003395"
 ---
-# <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: Manipulace s daty (Visual Basic)
-Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přidání, úpravu a odstranění dat v databázi. Budete používat kopii ukázkové databáze Northwind pro přidání zákazníka, změnu názvu zákazníka a odstranění objednávky.  
+# <a name="walkthrough-manipulating-data-visual-basic"></a>Návod: manipulace s daty (Visual Basic)
+Tento návod poskytuje základní kompletní scénář [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pro přidání, úpravu a odstranění dat v databázi. Budete používat kopii ukázkové databáze Northwind pro přidání zákazníka, změnu názvu zákazníka a odstranění objednávky.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -38,7 +38,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá ze šesti hlavních úloh:  
   
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Vytvoření řešení v aplikaci Visual Studio.  
+- Vytvoření řešení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v aplikaci Visual Studio.  
   
 - Do projektu se přidává soubor s kódem databáze.  
   
@@ -51,7 +51,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
 - Odesílají se tyto změny do databáze Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření řešení LINQ to SQL  
- V tomto prvním úkolu vytvoříte řešení sady Visual Studio, které obsahuje nezbytné odkazy pro sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  
+ V tomto prvním úkolu vytvoříte řešení sady Visual Studio, které obsahuje nezbytné odkazy pro sestavení a spuštění projektu [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Vytvoření řešení LINQ to SQL  
   
@@ -63,10 +63,10 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 4. Do pole **název** zadejte **LinqDataManipulationApp**.  
   
-5. Klikněte na **OK**.  
+5. Klikněte na tlačítko **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů a direktiv LINQ  
- Tento návod používá sestavení, která nemusí být nainstalována ve výchozím nastavení v projektu. Pokud `System.Data.Linq` není v projektu uvedena jako odkaz (klikněte na tlačítko **Zobrazit všechny soubory** v **Průzkumník řešení** a rozbalte uzel **odkazy** ), přidejte jej, jak je vysvětleno v následujícím postupu.  
+ Tento návod používá sestavení, která nemusí být nainstalována ve výchozím nastavení v projektu. Pokud `System.Data.Linq` není v projektu uveden jako odkaz (klikněte na tlačítko **Zobrazit všechny soubory** v **Průzkumník řešení** a rozbalte uzel **odkazy** ), přidejte jej, jak je vysvětleno v následujícím postupu.  
   
 #### <a name="to-add-systemdatalinq"></a>Přidání System. data. Linq  
   
@@ -96,7 +96,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 #### <a name="to-set-up-and-test-the-database-connection"></a>Nastavení a otestování připojení k databázi  
   
-1. Do `Sub Main`následujícího pole zadejte nebo vložte následující kód:  
+1. Do `Sub Main` zadejte nebo vložte následující kód:  
   
      [!code-vb[DLinqWalk3VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#2)]  
   
@@ -107,13 +107,13 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
      Ukončete aplikaci stisknutím klávesy ENTER v okně **konzoly** nebo kliknutím na **Zastavit ladění** v nabídce **ladění** sady Visual Studio.  
   
 ## <a name="creating-a-new-entity"></a>Vytvoření nové entity  
- Vytvoření nové entity je jednoduché. Můžete vytvořit objekty (například `Customer`) `New` pomocí klíčového slova.  
+ Vytvoření nové entity je jednoduché. Můžete vytvořit objekty (například `Customer`) pomocí klíčového slova `New`.  
   
- V tomto a v následujících částech provedete změny pouze v místní mezipaměti. Do databáze se neodesílají žádné změny, dokud nebudete volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> směrem ke konci tohoto návodu.  
+ V tomto a v následujících částech provedete změny pouze v místní mezipaměti. Do databáze se neodesílají žádné změny, dokud nebudete volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> směrem k konci tohoto návodu.  
   
 #### <a name="to-add-a-new-customer-entity-object"></a>Přidání nového objektu entity zákazníka  
   
-1. Vytvořte nový `Customer` přidáním následujícího `Console.ReadLine` kódu do `Sub Main`:  
+1. Vytvořte nový `Customer` přidáním následujícího kódu před `Console.ReadLine` v `Sub Main`:  
   
      [!code-vb[DLinqWalk3VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#3)]  
   
@@ -132,11 +132,11 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
 3. V okně **konzoly** stiskněte klávesu ENTER a zastavte ladění.  
   
 ## <a name="updating-an-entity"></a>Aktualizace entity  
- V následujících krocích `Customer` navedete objekt a upravíte jednu z jeho vlastností.  
+ V následujících krocích načtete objekt `Customer` a upravíte jednu z jeho vlastností.  
   
 #### <a name="to-change-the-name-of-a-customer"></a>Změna názvu zákazníka  
   
-- Níže přidejte následující kód `Console.ReadLine()`:  
+- Níže `Console.ReadLine()` přidejte následující kód:  
   
      [!code-vb[DLinqWalk3VB#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#4)]  
   
@@ -147,7 +147,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 #### <a name="to-delete-a-row"></a>Odstranění řádku  
   
-- Přidejte následující kód, který je `Console.ReadLine()`právě uveden výše:  
+- Přidejte následující kód, který je právě uveden `Console.ReadLine()`:  
   
      [!code-vb[DLinqWalk3VB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#5)]  
   
@@ -156,11 +156,11 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
 #### <a name="to-submit-changes-to-the-database"></a>Odeslání změn do databáze  
   
-1. Vložte následující kód hned `Console.ReadLine`takto:  
+1. Vložte následující kód těsně nad `Console.ReadLine`:  
   
      [!code-vb[DLinqWalk3VB#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#6)]  
   
-2. Vložte následující kód (po `SubmitChanges`), chcete-li zobrazit před a za následky odeslání změn:  
+2. Vložte následující kód (po `SubmitChanges`) pro zobrazení efektů před a po odeslání změn:  
   
      [!code-vb[DLinqWalk3VB#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk3VB/vb/Module1.vb#7)]  
   
@@ -168,7 +168,7 @@ Tento návod poskytuje základní kompletní [!INCLUDE[vbtecdlinq](../../../../.
   
      Okno konzoly se zobrazí takto:  
   
-    ```  
+    ```console
     Customers matching CA before update:  
     Customer ID: CACTU  
     Customer ID: RICAR  

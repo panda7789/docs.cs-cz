@@ -6,19 +6,19 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: 6eb9d50a3ecd80acb0349f1ba315d9cf8ccc6dc2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cae6b34aadf6698a337e52aa1ea1ce44206836ac
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937240"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004621"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bude vložen do přenositelného spustitelného souboru (PE) projektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -win32manifest: fileName  
 ```  
   
@@ -38,13 +38,13 @@ Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bu
   
  Pokud je splněna některá z následujících podmínek, bude se aplikace vztahovat k virtualizaci:  
   
-1. Použijete `-nowin32manifest` možnost a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků systému Windows (. res) `-win32resource` pomocí možnosti.  
+1. Použijete možnost `-nowin32manifest` a neposkytnete manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků Windows (. res) pomocí možnosti `-win32resource`.  
   
 2. Poskytnete vlastní manifest, který neurčuje požadovanou úroveň spuštění.  
   
  Visual Studio vytvoří soubor default. manifest a uloží ho do adresářů pro ladění a vydání spolu se spustitelným souborem. Výchozí soubor App. manifest můžete zobrazit nebo upravit kliknutím na **Zobrazit nastavení nástroje řízení uživatelských účtů** na kartě **aplikace** v Návrháři projektu. Další informace naleznete na [stránce aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
- Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí `-nowin32manifest` možnosti. Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytvoření a vložení výchozího manifestu do souboru PE.  
+ Manifest aplikace můžete zadat jako vlastní krok po sestavení nebo jako součást souboru prostředků Win32 pomocí možnosti `-nowin32manifest`. Tuto možnost použijte, pokud chcete, aby se vaše aplikace mohla vztahovat k virtualizaci souborů nebo registru v systému Windows Vista. Tím zabráníte kompilátoru v vytvoření a vložení výchozího manifestu do souboru PE.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje výchozí manifest, který Visual Basic Kompilátor vloží do PE.  

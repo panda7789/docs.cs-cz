@@ -1,5 +1,5 @@
 ---
-title: -definovat (Visual Basic)
+title: -define (Visual Basic)
 ms.date: 03/10/2018
 helpviewer_keywords:
 - -d compiler option [Visual Basic]
@@ -9,21 +9,25 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: d0a483e7a3c9e9863db39e89d655cf172c1e8c81
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b2c0173416418f67446c5441a93e5b06e93dc12
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649722"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002382"
 ---
-# <a name="-define-visual-basic"></a>-definovat (Visual Basic)
+# <a name="-define-visual-basic"></a>-define (Visual Basic)
 Definuje podmíněné konstanty kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -define:["]symbol[=value][,symbol[=value]]["]  
-' -or-  
+```
+
+or
+
+```console  
 -d:["]symbol[=value][,symbol[=value]]["]  
 ```  
   
@@ -31,30 +35,30 @@ Definuje podmíněné konstanty kompilátoru.
   
 |Termín|Definice|  
 |---|---|  
-|`symbol`|Povinný parametr. Symbol definovat.|  
-|`value`|Volitelné. Hodnota pro přiřazení `symbol`. Pokud `value` je řetězec, musí být uzavřen v pořadí zpětné lomítko a znak uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, pak je provedena na hodnotu True.|  
+|`symbol`|Požadováno. Symbol, který má být definován.|  
+|`value`|Volitelné. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\ ") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-define` Možnost má efekt se používá podobně jako `#Const` direktivy preprocesoru ve zdrojovém souboru, s výjimkou této konstanty definované pomocí `-define` jsou veřejné a použít na všechny soubory v projektu.  
+ Možnost `-define` má podobný účinek jako použití direktivy preprocesoru `#Const` ve zdrojovém souboru s tím rozdílem, že konstanty definované `-define` jsou veřejné a platí pro všechny soubory v projektu.  
   
- Symboly, které jsou vytvořené pomocí této možnosti se můžete `#If`... `Then`... `#Else` direktivy podmíněné kompilace zdrojové soubory.  
+ Symboly vytvořené pomocí této možnosti můžete použít spolu s direktivou `#If`... `Then`... `#Else` pro podmíněné kompilování zdrojových souborů.  
   
- `-d` je zkratka pro `-define`.  
+ `-d` je krátká forma `-define`.  
   
- Můžete definovat více symbolů se `-define` s použitím čárky k oddělení definice symbolů.  
+ Můžete definovat více symbolů pomocí `-define` pomocí čárky pro oddělení definic symbolů.  
   
-|Chcete-li nastavit / define v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení/define v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Advanced**.<br />4.  Upravte hodnotu v **konstanty vlastní** pole.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit**.<br />4. upravte hodnotu v poli **vlastní konstanty** .|  
   
 ## <a name="example"></a>Příklad  
- Následující kód definuje a pak používá dva podmíněné konstanty kompilátoru.  
+ Následující kód definuje a poté používá dvě podmíněné konstanty kompilátoru.  
   
  [!code-vb[VbVbalrCompiler#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#45)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
 - [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

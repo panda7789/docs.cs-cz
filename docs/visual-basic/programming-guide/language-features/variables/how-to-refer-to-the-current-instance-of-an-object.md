@@ -8,28 +8,28 @@ helpviewer_keywords:
 - current instance
 - object variables [Visual Basic]
 ms.assetid: 7f9b2c77-03cd-428f-adc2-b18070226e7c
-ms.openlocfilehash: 70955cd55dfb91d4111e59ae58bfe409a4470433
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6c216dbc59bcad7a9f24bb01f856c3d29c288dbb
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663533"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005664"
 ---
 # <a name="how-to-refer-to-the-current-instance-of-an-object-visual-basic"></a>Postupy: Odkazování na aktuální instanci objektu (Visual Basic)
-*Aktuální instance* objektu je instance, ve kterém právě spouští kód.  
+*Aktuální instance* objektu je instance, ve které je právě spuštěn kód.  
   
- Můžete použít `Me` – klíčové slovo k odkazování na aktuální instanci.  
+ Pomocí klíčového slova `Me` můžete odkazovat na aktuální instanci.  
   
-### <a name="to-refer-to-the-current-instance"></a>K odkazování na aktuální instanci  
+### <a name="to-refer-to-the-current-instance"></a>Pro odkazování na aktuální instanci  
   
-- Použít `Me` – klíčové slovo, které běžně používáte název proměnné objektu.  
+- Použijte klíčové slovo `Me`, kde byste normálně použili název proměnné objektu.  
   
-    ```  
+    ```vb  
     Me.ForeColor = System.Drawing.Color.Crimson  
     Me.Close()  
     ```  
   
-     I když `Me` se chová stejně jako objekt proměnné, nelze ji deklarovat ani nic jí přiřadit. `Me` vždy odkazuje na aktuální instanci.  
+     I když `Me` se chová jako proměnná objektu, nemůžete ji deklarovat nebo k ní přiřadit cokoli. `Me` vždy odkazuje na aktuální instanci.  
   
 ## <a name="see-also"></a>Viz také:
 

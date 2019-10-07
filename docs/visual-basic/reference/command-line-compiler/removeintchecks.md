@@ -9,19 +9,19 @@ helpviewer_keywords:
 - /removeintchecks compiler option [Visual Basic]
 - -removeintchecks compiler option [Visual Basic]
 ms.assetid: c1835bd5-1e38-4fba-bd2f-6984774765d4
-ms.openlocfilehash: c086a031d5cef4563a6769e7683dcb1110b8fe49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bea6ca24ea6da9000267e754d52fe0ca152f7d7f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788762"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005224"
 ---
 # <a name="-removeintchecks"></a>-removeintchecks
-Zapne přetečení-Chyba při kontrole celočíselné operace zapnutí nebo vypnutí.  
+Zapne nebo vypne kontrolu chyb pro celočíselné operace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -removeintchecks[+ | -]  
 ```  
   
@@ -29,14 +29,14 @@ Zapne přetečení-Chyba při kontrole celočíselné operace zapnutí nebo vypn
   
 |Termín|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. `-removeintchecks-` Možnost způsobí, že kompilátoru, aby všechny výpočty celé číslo chyby přetečení. Výchozí hodnota je `-removeintchecks-`.<br /><br /> Určení `-removeintchecks` nebo `-removeintchecks+` brání kontroly chyb a rychlejší kvůli výpočtům celé číslo. Ale bez kontroly chyb, a pokud jsou datové kapacity. typ došlo k přetečení, nesprávné výsledky mohou být uložena bez vyvolání k chybě.|  
+|`+` &#124; `-`|Volitelné. Možnost `-removeintchecks-` způsobí, že kompilátor zkontroluje všechny celočíselné výpočty pro chyby přetečení. Výchozí hodnota je `-removeintchecks-`.<br /><br /> Zadáním `-removeintchecks` nebo `-removeintchecks+` zabráníte kontrole chyb a rychleji můžete provádět výpočty celých čísel. Bez kontroly chyb a v případě, že dojde k přetečení kapacit datových typů, mohou být uloženy nesprávné výsledky bez vyvolání chyby.|  
   
-|Chcete-li nastavit - removeintchecks v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení-removeintchecks – v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Upřesnit** tlačítko.<br />4.  Změnit hodnotu **odebrat kontroly přetečení celých čísel** pole.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit** .<br />4. Změňte hodnotu pole **Odebrat kontroly přetečení celých čísel** .|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `Test.vb` a vypne kontrolu chyb přetečení celého čísla.  
+ Následující kód zkompiluje `Test.vb` a vypne přetečení celého čísla – kontrola chyb.  
   
 ```console
 vbc -removeintchecks+ test.vb  
@@ -44,5 +44,5 @@ vbc -removeintchecks+ test.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -1,24 +1,24 @@
 ---
-title: -imports (Visual Basic)
+title: -Imports (Visual Basic)
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /imports compiler option [Visual Basic]
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 075eeccc7d80943d2757a97b9a355bbea3ef9d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 929e24a1ffd02d4e21ab1b925ddd59050b5d3cc4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663242"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005572"
 ---
-# <a name="-imports-visual-basic"></a>-imports (Visual Basic)
-Obory názvů importuje ze zadaného sestavení.  
+# <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
+Importuje obory názvů z určeného sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -imports:namespaceList  
 ```  
   
@@ -26,19 +26,19 @@ Obory názvů importuje ze zadaného sestavení.
   
 |Termín|Definice|  
 |---|---|  
-|`namespaceList`|Povinný parametr. Čárkami oddělený seznam oborů názvů, které se mají naimportovat.|  
+|`namespaceList`|Požadováno. Seznam oborů názvů oddělených čárkami, které se mají importovat|  
   
 ## <a name="remarks"></a>Poznámky  
- `-imports` Možnost importuje libovolný obor názvů definovaných v rámci aktuální sadu zdrojových souborů nebo ze všech odkazovaných sestavení.  
+ Možnost `-imports` importuje libovolný obor názvů definovaný v aktuální sadě zdrojových souborů nebo z libovolného odkazovaného sestavení.  
   
- Členové v oboru názvů zadaným `-imports` jsou k dispozici pro všechny soubory zdrojového kódu dané kompilace. Použít [příkaz Imports (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro použití oboru názvů v souboru jednoho zdrojového kódu.  
+ Členy v oboru názvů zadané s `-imports` jsou k dispozici pro všechny soubory zdrojového kódu v kompilaci. Použijte [příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k použití oboru názvů v jednom souboru zdrojového kódu.  
   
-|Chcete-li nastavit/importuje v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení/Imports v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **odkazy** kartu.<br />3.  Zadejte název oboru názvů v seznamu vedle možnosti **přidat Import uživatelů** tlačítko.<br />4.  Klikněte na tlačítko **přidat Import uživatelů** tlačítko.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **odkazy** .<br />3. Zadejte název oboru názvů do pole vedle tlačítka **Přidat import uživatele** .<br />4. klikněte na tlačítko **Přidat import uživatele** .|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje, kdy `/imports:system.globalization` je zadán. Bez něho úspěšné kompilace vyžaduje buď `Imports System.Globalization` příkazem být zahrnuty na začátku souboru se zdrojovým kódem, nebo jako plně kvalifikovat vlastnost `System.Globalization.CultureInfo.CurrentCulture.Name`.
+ Následující kód zkompiluje, pokud je zadána hodnota `/imports:system.globalization`. Bez této akce kompilace vyžaduje, aby příkaz `Imports System.Globalization` byl zahrnut na začátku souboru zdrojového kódu nebo aby byla vlastnost plně kvalifikovaná jako `System.Globalization.CultureInfo.CurrentCulture.Name`.
 
 ```vb
 Module Example
@@ -50,6 +50,6 @@ End Module
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

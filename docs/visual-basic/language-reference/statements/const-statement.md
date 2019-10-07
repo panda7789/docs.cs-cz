@@ -6,35 +6,35 @@ f1_keywords:
 helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-ms.openlocfilehash: 9d2e0c7b2b81a79f95fa852b3975f4512d87f8e0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 522ac71767707ae90a3f1d11d45ef8b29471ae6c
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623994"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005124"
 ---
 # <a name="const-statement-visual-basic"></a>Const – příkaz (Visual Basic)
-Deklaruje a definuje jeden nebo více konstant.  
+Deklaruje a definuje jednu nebo více konstant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] [ Shadows ]   
 Const constantlist  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `attributelist`  
- Volitelné. Seznam atributů, které se vztahují na všechny konstanty deklarované v tomto prohlášení. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").  
+ Volitelné. Seznam atributů, které se vztahují na všechny konstanty deklarované v tomto příkazu. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`" a "`>`").  
   
  `accessmodifier`  
- Volitelné. Slouží k určení, jaký kód může přistupovat k těmto konstanty. Může být [veřejné](../../../visual-basic/language-reference/modifiers/public.md), [chráněné](../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md), [Protected Friend](../modifiers/protected-friend.md), [privátní](../../../visual-basic/language-reference/modifiers/private.md), nebo [Private, Protected](../../language-reference/modifiers/private-protected.md).
+ Volitelné. Toto použijte k určení, ke kterému kódu má přístup k těmto konstantám. Může být [Veřejná](../../../visual-basic/language-reference/modifiers/public.md), [chráněná](../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md), [Protected Friend](../modifiers/protected-friend.md), [Private](../../../visual-basic/language-reference/modifiers/private.md)nebo [Private Protected](../../language-reference/modifiers/private-protected.md).
   
  `Shadows`  
- Volitelné. Použijte pro předeklarovat a skrýt programovací element v základní třídě. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).  
+ Volitelné. Použijte k předeklaraci a skrytí programovacího prvku v základní třídě. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).  
   
  `constantlist`  
- Povinný parametr. Seznam konstant deklarované v tomto prohlášení.  
+ Požadováno. Seznam konstant, které jsou deklarovány v tomto příkazu.  
   
  `constant` `[ ,` `constant` `... ]`  
   
@@ -42,62 +42,62 @@ Const constantlist
   
  `constantname` `[ As` `datatype` `] =` `initializer`  
   
-|Část|Popis|  
+|Částí|Popis|  
 |----------|-----------------|  
-|`constantname`|Povinný parametr. Název konstanty. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`datatype`|Požadováno pokud `Option Strict` je `On`. Datový typ konstanty.|  
-|`initializer`|Povinný parametr. Výraz, který je vyhodnocen v době kompilace a přiřazený konstantě.|  
+|`constantname`|Požadováno. Název konstanty. Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`datatype`|Vyžaduje se, pokud je `Option Strict` `On`. Datový typ konstanty.|  
+|`initializer`|Požadováno. Výraz vyhodnocený v době kompilace a přiřazený konstantě|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud máte ve své aplikaci hodnotu, která se nikdy nemění, můžete definovat pojmenované konstanty a použít místo literálovou hodnotou. Název je snazší než hodnota mějte na paměti. Můžete definovat konstantu pouze jednou a použít ji na mnoha místech ve vašem kódu. Pokud v novější verzi, je potřeba znovu definovat hodnotu, `Const` příkaz je jediným místem, budete muset provést změnu.  
+ Pokud máte hodnotu, která se ve vaší aplikaci nikdy nemění, můžete definovat pojmenovanou konstantu a použít ji místo hodnoty literálu. Název je snazší pamatovat než hodnota. Konstantu můžete definovat pouze jednou a použít ji na mnoha místech kódu. Pokud v novější verzi potřebujete předefinovat hodnotu, je příkaz `Const` jediným místem, kde je třeba provést změnu.  
   
- Můžete použít `Const` pouze na úrovni modulu nebo proceduru. To znamená, že *kontext deklarace* pro proměnnou musí být třída, struktura, modulu, proceduru nebo blok a nemůže být zdrojový soubor, obor názvů nebo rozhraní. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ @No__t-0 můžete použít pouze v modulu nebo v úrovni procedury. To znamená, že *kontext deklarace* proměnné musí být třída, struktura, modul, procedura nebo blok a nemůže se jednat o zdrojový soubor, obor názvů nebo rozhraní. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Místní konstanty (uvnitř procedury) výchozí veřejný přístup, a nemůže používat žádné modifikátory přístupu na nich. Třídy a modul výchozí konstanty (mimo všechny procedury) člen privátní přístup a struktura členské konstanty výchozí veřejný přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu.  
+ Místní konstanty (uvnitř procedury) jako výchozí pro veřejný přístup a nemůžete použít žádné modifikátory přístupu. Konstanty členů třídy a modulu (mimo jakákoli procedura) výchozí pro privátní přístup a členské konstanty struktury jsou standardně přístupné pro veřejný přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu.  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Místní deklarace.** Konstanta deklarovanou na úrovni modulu, mimo všechny procedury, je *členské konstanty*; je členem třídy, struktury, nebo modul, který je deklaruje.  
+- **Kontext deklarace** Konstanta deklarovaná na úrovni modulu, mimo jakoukoli proceduru, je *členská konstanta*; je členem třídy, struktury nebo modulu, který je deklaruje.  
   
-     Konstanta deklarované na úroveň procedury je *lokální konstanta*; je místní pro proceduru nebo blok, který deklaruje ho.  
+     Konstanta deklarovaná na úrovni procedury je *místní konstanta*; je místní pro proceduru nebo blok, který je deklaruje.  
   
-- **Atributy.** Můžete použít atributy pouze na členské konstanty, nikoli na místní konstanty. Atribut přispívá informace metadat sestavení, která není smysl pro dočasné úložiště, jako je například místní konstanty.  
+- **Atribut.** Atributy lze použít pouze pro členské konstanty, nikoli pro místní konstanty. Atribut přispívá k metadatům sestavení, která nejsou smysluplná pro dočasné úložiště, jako jsou například místní konstanty.  
   
-- **Modifikátory.** Standardně jsou všechny konstanty `Shared`, `Static`, a `ReadOnly`. Nemůžete použít žádnou z těchto klíčových slov při deklarování konstantní.  
+- **Modifikátory.** Ve výchozím nastavení jsou všechny konstanty `Shared`, `Static` a `ReadOnly`. Při deklaraci konstanty nemůžete použít žádná z těchto klíčových slov.  
   
-     Na úrovni postupu nelze použít `Shadows` nebo žádný přístup k modifikátory deklarovat lokální konstanty.  
+     Na úrovni procedury nemůžete použít `Shadows` ani žádné modifikátory přístupu k deklaraci místních konstant.  
   
-- **Více konstant.** Je možné deklarovat několik konstant ve stejném příkazu deklarace, určení `constantname` část pro každé z nich. Více konstant jsou odděleny čárkami.  
+- **Několik konstant.** Můžete deklarovat několik konstant v rámci jednoho příkazu deklarace, přičemž pro každou z nich určíte část `constantname`. Vícenásobné konstanty jsou odděleny čárkami.  
   
-## <a name="data-type-rules"></a>Datový typ pravidla  
+## <a name="data-type-rules"></a>Pravidla datového typu  
   
-- **Datové typy.** `Const` Příkazu můžete deklarovat datový typ proměnné. Můžete zadat libovolný datový typ nebo název výčtu.  
+- **Datové typy.** Příkaz `Const` může deklarovat datový typ proměnné. Můžete zadat libovolný datový typ nebo název výčtu.  
   
-- **Výchozí typ.** Pokud nezadáte `datatype`, konstanta má datový typ `initializer`. Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`. Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Object`.  
+- **Výchozí typ** Pokud nezadáte `datatype`, konstanta převezme datový typ `initializer`. Pokud zadáte obě `datatype` i `initializer`, datový typ `initializer` musí být převeden na `datatype`. Pokud není k dispozici žádná `datatype` ani `initializer`, datový typ se nastaví jako výchozí `Object`.  
   
-- **Různé typy.** Můžete určit různé datové typy pro různé konstanty pomocí samostatné `As` klauzuli pro každou proměnnou můžete deklarovat. Nelze však deklarovat několik konstant bude stejného typu pomocí společného `As` klauzuli.  
+- **Různé typy.** Pro každou proměnnou, kterou deklarujete, můžete určit různé typy dat pro různé @no__t konstanty. Některé konstanty však nelze deklarovat jako stejný typ pomocí běžné klauzule `As`.  
   
-- **Inicializace.** Hodnota v každé konstanty musí inicializovat `constantlist`. Použijete `initializer` zadat výraz, který se přidělí na konstantu. Výraz může obsahovat libovolnou kombinaci literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány. Aritmetické a logické operátory můžete kombinovat takovýchto prvků.  
+- **Operace.** Je nutné inicializovat hodnotu každé konstanty v `constantlist`. Pomocí `initializer` můžete zadat výraz, který se má přiřadit konstantě. Výraz může být libovolná kombinace literálů, dalších konstant, které jsou již definovány, a členů výčtu, které jsou již definovány. K kombinování takových prvků lze použít aritmetické a logické operátory.  
   
-     Nelze použít proměnné nebo funkce v `initializer`. Ale můžete použít klíčová slova převodu například `CByte` a `CShort`. Můžete také použít `AscW` při volání s konstantou `String` nebo `Char` argument, protože, který může být vyhodnocen v době kompilace.  
+     V `initializer` nemůžete použít proměnné ani funkce. Můžete však použít klíčová slova převodu, například `CByte` a `CShort`. @No__t-0 můžete použít také v případě, že ho zavoláte s konstantním argumentem `String` nebo `Char`, protože je možné ho vyhodnotit v době kompilace.  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Předvídatelně  
   
-- **Obor.** Místní konstanty je přístupný jenom v rámci jejich proceduru nebo blok. Členské konstanty jsou přístupné z kamkoli v jejich třídy, struktury nebo modulu.  
+- **Oboru.** Místní konstanty jsou přístupné pouze v rámci jejich procedury nebo bloku. Konstanty členů jsou přístupné odkudkoli v rámci své třídy, struktury nebo modulu.  
   
-- **Kvalifikace.** Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena konstanta s názvem této třídy, struktury nebo modulu. Kód mimo území proceduru nebo blok nemůže odkazovat na žádné místní konstanty v rámci tohoto postupu nebo bloku.  
+- **Vydal.** Kód mimo třídu, strukturu nebo modul musí kvalifikovat název členské konstanty s názvem této třídy, struktury nebo modulu. Kód mimo proceduru nebo blok nemůže odkazovat na žádné místní konstanty v rámci tohoto postupu nebo bloku.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `Const` příkaz k deklaraci konstanty pro použití namísto hodnoty literálu.  
+ Následující příklad používá příkaz `Const` k deklaraci konstant pro použití namísto hodnot literálu.  
   
  [!code-vb[VbVbalrStatements#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#13)]  
   
 ## <a name="example"></a>Příklad  
- Je-li definovat konstantu s datovým typem `Object`, kompilátor jazyka Visual Basic poskytuje typ `initializer`, namísto `Object`. V následujícím příkladu, konstanta `naturalLogBase` má run-time typu `Decimal`.  
+ Definujete-li konstantu s datovým typem `Object`, kompilátor Visual Basic mu místo `Object` poskytne typ `initializer`. V následujícím příkladu konstanta `naturalLogBase` má běhový typ `Decimal`.  
   
  [!code-vb[VbVbalrStatements#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#87)]  
   
- V předchozím příkladu <xref:System.Type.ToString%2A> metodu na <xref:System.Type> objekt vrácený [GetType – operátor](../../../visual-basic/language-reference/operators/gettype-operator.md), protože <xref:System.Type> nelze převést na `String` pomocí `CStr`.  
+ Předchozí příklad používá metodu <xref:System.Type.ToString%2A> u objektu <xref:System.Type> vráceného [operátorem GetType](../../../visual-basic/language-reference/operators/gettype-operator.md), protože <xref:System.Type> nelze převést na `String` pomocí `CStr`.  
   
 ## <a name="see-also"></a>Viz také:
 

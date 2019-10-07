@@ -9,19 +9,19 @@ helpviewer_keywords:
 - /baseaddress compiler option [Visual Basic]
 - baseaddress compiler option [Visual Basic]
 ms.assetid: c982bcf2-46e5-47a2-bc8f-a5cc32b7dc47
-ms.openlocfilehash: e8dfe95ef3385635f5839ecc96047911544a256e
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6ee842dbe65cbd9d147e77ec523a2b031d303738
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591446"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002386"
 ---
 # <a name="-baseaddress"></a>-baseaddress
-Určuje výchozí základní adresa, při vytváření knihovny DLL.  
+Určuje výchozí základní adresu při vytváření knihovny DLL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -baseaddress:address  
 ```  
   
@@ -29,24 +29,24 @@ Určuje výchozí základní adresa, při vytváření knihovny DLL.
   
 |Termín|Definice|  
 |---|---|  
-|`address`|Povinný parametr. Základní adresa pro knihovnu DLL. Tato adresa musí být zadán jako šestnáctkové číslo.|  
+|`address`|Požadováno. Základní adresa knihovny DLL. Tato adresa musí být zadána jako šestnáctkové číslo.|  
   
 ## <a name="remarks"></a>Poznámky  
- Výchozí základní adresa knihovny DLL je nastavena pomocí rozhraní .NET Framework.  
+ Výchozí základní adresa pro knihovnu DLL je nastavena .NET Framework.  
   
- Mějte na paměti, že se zaokrouhlí nižší řád slova v této adrese. Například pokud chcete zadat 0x11110001, to se zaokrouhlí na 0x11110000.  
+ Uvědomte si, že slovo v této adrese se zaokrouhluje na zaoblené. Pokud například zadáte 0x11110001, je zaokrouhlena na 0x11110000.  
   
- Chcete-li dokončit proces podepisování pro knihovnu DLL, použijte `–R` – možnost Nástroje pro silné pojmenovávání (Sn.exe).  
+ Chcete-li dokončit proces podepisování pro knihovnu DLL, použijte možnost `–R` nástroje pro vytváření silných názvů (Sn. exe).  
   
- Tato možnost se ignoruje, pokud cíl není knihovny DLL.  
+ Tato možnost je ignorována, pokud cíl není knihovna DLL.  
   
-|Chcete-li nastavit - baseaddress v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení-BaseAddress v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Advanced**.<br />4.  Upravte hodnotu v **základní adresa knihovny DLL:** pole. **Poznámka:**      **Základní adresa knihovny DLL:** pole je jen pro čtení, pokud cíl není knihovny DLL.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit**.<br />4. upravte hodnotu v poli **základní adresa knihovny DLL:** . **Poznámka:**      **Základní adresa knihovny DLL:** box je jen pro čtení, pokud cíl není knihovna DLL.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Sn.exe (nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))
+- [Sn. exe (Nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))

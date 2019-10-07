@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Generování objektového modelu jako externího souboru'
+title: 'Postupy: generování objektového modelu jako externího souboru'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 3fd84d878ab07411bba41a13ff3eef91b2425e8a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 915c02de55211efa24a4aa9f21ddc2c7e60fa41a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793583"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002736"
 ---
-# <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: Generování objektového modelu jako externího souboru
+# <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: generování objektového modelu jako externího souboru
 Jako alternativu k mapování na základě atributů můžete vytvořit objektový model jako externí soubor XML pomocí nástroje příkazového řádku SQLMetal. Další informace naleznete v tématu [SqlMetal. exe (Nástroj pro generování kódu)](../../../../tools/sqlmetal-exe-code-generation-tool.md). Pomocí externího souboru mapování XML můžete v kódu zmenšit přehlednost. Můžete také změnit chování úpravou externího souboru bez nutnosti opětovné kompilace binárních souborů aplikace. Další informace najdete v tématu [externí mapování](external-mapping.md).  
   
 > [!NOTE]
@@ -18,7 +18,7 @@ Jako alternativu k mapování na základě atributů můžete vytvořit objektov
 ## <a name="example"></a>Příklad  
  Následující příkaz generuje externí mapovací soubor z ukázkové databáze Northwind.  
   
-```  
+```console  
 sqlmetal /server:myserver /database:northwind /map:externalfile.xml  
 ```  
   
@@ -52,4 +52,4 @@ sqlmetal /server:myserver /database:northwind /map:externalfile.xml
 
 - [Vytvoření objektového modelu](creating-the-object-model.md)
 - [Externí mapování](external-mapping.md)
-- [Postupy: Generování objektového modelu v Visual Basic neboC#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)

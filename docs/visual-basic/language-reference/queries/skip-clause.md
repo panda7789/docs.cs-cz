@@ -8,43 +8,43 @@ helpviewer_keywords:
 - Skip statement [Visual Basic]
 - Skip clause [Visual Basic]
 ms.assetid: f00eb172-3907-4c43-9745-d8546ab86234
-ms.openlocfilehash: db2d79596895505ddaa7778e831082a94c7ad44e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e52de186e1475bfabd02821a0cd2384d8350eed3
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945246"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004764"
 ---
 # <a name="skip-clause-visual-basic"></a>Skip – klauzule (Visual Basic)
-Vynechá zadaný počet prvků v kolekci a vrátí zbývající prvky.  
+Obchází zadaný počet prvků v kolekci a vrátí zbývající prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Skip count  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Povinný parametr. Hodnota nebo výraz, který se vyhodnotí jako počet elementů pořadí přeskočit.  
+ Požadováno. Hodnota nebo výraz, který se vyhodnotí na počet prvků sekvence, která se má přeskočit.  
   
 ## <a name="remarks"></a>Poznámky  
- `Skip` Klauzule způsobí, že dotaz obejít prvky na začátek seznamu výsledků a vrátí zbývající prvky. Počet prvků, které mají přeskočit je identifikován `count` parametru.  
+ Klauzule `Skip` způsobí, že dotaz obchází prvky na začátku seznamu výsledků a vrátí zbývající prvky. Počet elementů, které mají být přeskočeny, je identifikován parametrem `count`.  
   
- Můžete použít `Skip` klauzule `Take` klauzule, která vrátí celou řadu dat z libovolnou část dotazu. K tomuto účelu předat index prvního prvku rozsahu, který chcete `Skip` klauzule a velikost rozsahu `Take` klauzuli.  
+ Klauzuli `Skip` s klauzulí `Take` můžete použít k vrácení rozsahu dat z libovolného segmentu dotazu. Provedete to tak, že předáte index prvního prvku rozsahu na klauzuli `Skip` a velikost rozsahu na klauzuli `Take`.  
   
- Při použití `Skip` klauzule v dotazu, budete také muset zajistit, že výsledky jsou vráceny v pořadí, které vám umožní `Skip` klauzule obejít požadovaných výsledků. Další informace o řazení výsledků dotazu, naleznete v tématu [klauzuli ORDER by](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Použijete-li v dotazu klauzuli `Skip`, může být také nutné zajistit, aby výsledky byly vráceny v pořadí, které umožní, aby klauzule `Skip` využívala zamýšlené výsledky. Další informace o řazení výsledků dotazu naleznete v tématu [ORDER by klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- Můžete použít `SkipWhile` klauzule k určení, že pouze některé prvky jsou ignorovány, v závislosti na zadaných podmínek.  
+ Pomocí klauzule `SkipWhile` můžete určit, že se v závislosti na zadané podmínce ignorují jenom určité prvky.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá `Skip` klauzule spolu s `Take` klauzule vrátit data z dotazu na stránkách. `GetCustomers` Funkce používá `Skip` klauzule obejít zákazníky v seznamu, dokud se zadaný počáteční index, hodnotu a použití `Take` klauzuli pro vrácení stránky s zákazníků od hodnotě indexu.  
+ Následující příklad kódu používá klauzuli `Skip` spolu s klauzulí `Take` pro vrácení dat z dotazu na stránkách. Funkce `GetCustomers` používá klauzuli `Skip` pro obejít zákazníky v seznamu do zadané hodnoty počátečního indexu a pomocí klauzule `Take` vrátí stránku zákazníků počínaje touto hodnotou indexu.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

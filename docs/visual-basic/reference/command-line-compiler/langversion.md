@@ -1,44 +1,44 @@
 ---
-title: -langversion (Visual Basic)
+title: -langversion – (Visual Basic)
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /langversion compiler option [Visual Basic]
 - langversion compiler option [Visual Basic]
 - -langversion compiler option [Visual Basic]
 ms.assetid: 59b7b0c8-2dde-4e9b-94e7-0237f7e0bafb
-ms.openlocfilehash: db2cb1eb107973e9ce60ecb0d669c677d4fa2c51
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15f334f280c2aca83ba5b628a1137464c31c6282
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793950"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005553"
 ---
-# <a name="-langversion-visual-basic"></a>-langversion (Visual Basic)
-Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je zahrnutá v zadané verzi jazyka Visual Basic.  
+# <a name="-langversion-visual-basic"></a>-langversion – (Visual Basic)
+Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena v zadané Visual Basic jazykové verzi.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -langversion:version  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `version`  
- Povinný parametr. Jazykovou verzi používané během kompilace. Platné hodnoty jsou `9`, `10`, `11`, `12`, `14`, `15`, `15.3`, `15.5`, `default` a `latest`.
+ Požadováno. Jazyková verze, která se má použít během kompilace. Přijaté hodnoty jsou `9`, `10`, `11`, `12`, `14`, `15`, `15.3`, `15.5`, `default` a `latest`.
 
- Libovolné celé číslo můžete také zadat pomocí `.0` jako vedlejší verze, například `11.0`.
+ Některá z celých čísel může být zadána také pomocí `.0` jako dílčí verze, například `11.0`.
 
- Zobrazí seznam všech možných hodnot tak, že zadáte `-langversion:?` na příkazovém řádku.  
+ Seznam všech možných hodnot můžete zobrazit zadáním `-langversion:?` na příkazovém řádku.  
   
 ## <a name="remarks"></a>Poznámky  
- `-langversion` Možnost určuje, jaké syntaxe kompilátor přijímá. Například pokud chcete zadat, že je jazyková verze 9.0, kompilátor vygeneruje chyby syntaxe, která je platná pouze ve verzi 10.0 a novější.  
+ Možnost `-langversion` určuje, jakou syntaxi podporuje kompilátor. Například pokud určíte, že je jazyková verze 9,0, kompilátor generuje chyby pro syntaxi, která je platná pouze ve verzi 10,0 a novější.  
   
- Tuto možnost můžete použít při vývoji aplikací, které jiné cílové verze rozhraní .NET Framework. Například pokud se zaměřujete na rozhraní .NET Framework 3.5, můžete použít tuto možnost k zajištění, že je velmi riskantní používat syntaxi z jazykové verze 10.0.  
+ Tuto možnost můžete použít při vývoji aplikací, které cílí na různé verze .NET Framework. Pokud například cílíte .NET Framework 3,5, můžete použít tuto možnost, abyste se ujistili, že nepoužíváte syntaxi z verze Language 10,0.  
   
- Můžete nastavit `-langversion` přímo pouze pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version).  
+ @No__t-0 můžete nastavit přímo pouze pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version).  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `sample.vb` 9.0 jazyka Visual Basic.  
+ Následující kód zkompiluje `sample.vb` pro Visual Basic 9,0.  
   
 ```console  
 vbc -langversion:9.0 sample.vb  
@@ -46,6 +46,6 @@ vbc -langversion:9.0 sample.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [Cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version)

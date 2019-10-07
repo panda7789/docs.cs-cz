@@ -7,51 +7,55 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: 9bf7170cee31f92481b15fb1227f21895cd3734d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c2fbe5aa6f0b9ac8c99c9b9ec5cdf0a7d9764ab8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649735"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002403"
 ---
-# <a name="-debug-visual-basic"></a>-debug (Visual Basic)
-Způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupních souborů.  
+# <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
+Způsobí, že kompilátor vygeneruje ladicí informace a umístí je do výstupních souborů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console 
 -debug[+ | -]  
-' -or-  
+```
+
+or
+
+```console  
 -debug:[full | pdbonly]  
-```  
+```
   
 ## <a name="arguments"></a>Arguments  
   
 |Termín|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. Určení `+` nebo `/debug` způsobí, že kompilátor generovat ladicí informace a umístěte ho do souboru pdb. Určení `-` má stejný účinek jako bez zadání `/debug`.|  
-|`full` &#124; `pdbonly`|Volitelné. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `/debug:pdbonly`, výchozí hodnota je `full`, což vám umožní připojit ke spuštěnému programu ladicí program. `pdbonly` Argument umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazí jazyk sestavení kódu pouze v případě, že je spuštěný program je připojen k ladicímu programu.|  
+|`+` &#124; `-`|Volitelné. Zadání `+` nebo `/debug` způsobí, že kompilátor vygeneruje ladicí informace a umístí je do souboru. pdb. Zadání `-` má stejný účinek jako nespecifikuje `/debug`.|  
+|`full` &#124; `pdbonly`|Volitelné. Určuje typ ladicích informací generovaných kompilátorem. Pokud nezadáte `/debug:pdbonly`, výchozí hodnota je `full`, což umožňuje připojit k běžícímu programu ladicí program. Argument `pdbonly` umožňuje ladění zdrojového kódu, když je program spuštěn v ladicím programu, ale zobrazuje kód jazyka sestavení pouze v případě, že je spuštěný program připojen k ladicímu programu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tuto možnost použijte, chcete-li vytvořit sestavení pro ladění. Pokud nezadáte `/debug`, `/debug+`, nebo `/debug:full`, nebude možné ladit výstupní soubor programu.  
+ Tuto možnost použijte k vytvoření sestavení ladění. Pokud nezadáte `/debug`, `/debug+` nebo `/debug:full`, nebudete moct ladit výstupní soubor programu.  
   
- Ve výchozím nastavení, není aktivováno ladicí informace (`/debug-`). Chcete-li generovat ladicí informace, zadejte `/debug` nebo `/debug+`.  
+ Ve výchozím nastavení nejsou informace o ladění generovány (`/debug-`). Chcete-li vygenerovat informace o ladění, zadejte `/debug` nebo `/debug+`.  
   
- Informace o tom, jak konfigurovat výkon ladění aplikace najdete v tématu [usnadnění bitové kopie k ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
+ Informace o tom, jak nakonfigurovat výkon ladění aplikace, najdete v tématu [Vytvoření obrázku pro snadnější ladění](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   
-|Chcete-li nastavit - debug v integrovaném vývojovém prostředí sady Visual Studio|  
+|Nastavení ladění v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  S projekt vybraný v **Průzkumníka řešení**na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Upřesnit možnosti kompilace**.<br />4.  Upravte hodnotu v **Generovat ladicí informace** pole.|  
+|1. s projektem vybraným v **Průzkumník řešení**v nabídce **projekt** klikněte na **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na možnost **Pokročilé možnosti kompilace**.<br />4. upravte hodnotu v poli **generovat ladicí informace** .|  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu vloží ladicí informace do výstupního souboru `App.exe`.  
+ Následující příklad vloží informace o ladění do výstupního souboru `App.exe`.  
   
-```  
+```console  
 vbc -debug -out:app.exe test.vb  
 ```  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

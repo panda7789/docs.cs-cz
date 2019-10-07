@@ -8,19 +8,19 @@ helpviewer_keywords:
 - /optioninfer compiler option [Visual Basic]
 - optioninfer compiler option [Visual Basic]
 ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
-ms.openlocfilehash: 4848dec148bc528e7a30940643e3364f1bb5f805
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c6fc7e9dcfbce938ad75b0f357c2bfa9cd10703a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939203"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005321"
 ---
 # <a name="-optioninfer"></a>-optioninfer
 Povoluje použití odvození místního typu v deklaracích proměnných.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -optioninfer[+ | -]  
 ```  
   
@@ -28,13 +28,13 @@ Povoluje použití odvození místního typu v deklaracích proměnných.
   
 |Termín|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelný parametr. Zadejte `-optioninfer+` , chcete-li povolit odvození místního `-optioninfer-` typu, nebo jej zablokovat. Možnost bez zadané hodnoty je stejná jako `-optioninfer+`. `-optioninfer` Výchozí hodnota, pokud `-optioninfer` není k dispozici přepínač, je také. `-optioninfer+` Výchozí hodnota je nastavena v souboru odpovědí Vbc. rsp.|  
+|`+` &#124; `-`|Volitelné. Chcete-li povolit odvození místního typu, zadejte hodnotu `-optioninfer+`, nebo `-optioninfer-` pro jeho blokování. Možnost `-optioninfer` bez zadané hodnoty je stejná jako `-optioninfer+`. Výchozí hodnota, pokud není k dispozici přepínač `-optioninfer`, je také `-optioninfer+`. Výchozí hodnota je nastavena v souboru odpovědí Vbc. rsp.|  
   
 > [!NOTE]
-> Můžete použít `-noconfig` možnost pro zachování vnitřních výchozích hodnot kompilátoru místo těch, které jsou určeny v Vbc. rsp. Výchozí hodnota kompilátoru pro tuto možnost je `-optioninfer-`.  
+> Pomocí možnosti `-noconfig` můžete zachovat interní výchozí hodnoty kompilátoru místo těch, které jsou zadány v Vbc. rsp. Výchozí hodnota kompilátoru pro tuto možnost je `-optioninfer-`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud soubor zdrojového kódu obsahuje [příkaz Option](../../../visual-basic/language-reference/statements/option-infer-statement.md), přepíše `-optioninfer` příkaz nastavení kompilátoru příkazového řádku.  
+ Pokud soubor zdrojového kódu obsahuje [příkaz Option](../../../visual-basic/language-reference/statements/option-infer-statement.md), přepíše příkaz nastavení kompilátoru příkazového řádku `-optioninfer`.  
   
 ### <a name="to-set--optioninfer-in-the-visual-studio-ide"></a>Nastavení-optioninfer – v integrovaném vývojovém prostředí sady Visual Studio  
   
@@ -43,7 +43,7 @@ Povoluje použití odvození místního typu v deklaracích proměnných.
 2. Na kartě **kompilovat** upravte hodnotu v poli **možnost odvodit** .  
   
 ## <a name="example"></a>Příklad  
- Následující kód je zkompilován `test.vb` s povoleným odvozením lokálního typu.  
+ Následující kód zkompiluje `test.vb` s povoleným odvozením místního typu.  
   
 ```console
 vbc -optioninfer+ test.vb  

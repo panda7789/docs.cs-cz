@@ -8,15 +8,15 @@ helpviewer_keywords:
 - text [WPF], typography
 - typography [WPF]
 ms.assetid: e4ef38db-b7d1-4bda-87ab-8bb738440ddc
-ms.openlocfilehash: bbefaba4491fca1b21b6a214048d9db1394c4bc7
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 38f9a9c79bfda9abb46181f433d28268b8a37762
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545328"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004579"
 ---
 # <a name="typography"></a>Typografie
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]zahrnuje podporu pro bohatou prezentaci textu obsahu. Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vykreslen pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]podporuje také písma OpenType, která poskytují další možnosti nad rámec těch, které [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] jsou definovány ve formátu.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zahrnuje podporu pro bohatou prezentaci textu obsahu. Text v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se vykresluje pomocí technologie Microsoft ClearType, která vylepšuje přehlednost a čitelnost textu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také podporuje písma OpenType, která poskytují další možnosti nad rámec těch, které jsou definovány formátem® TrueType.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Typografie v rozhraní WPF](typography-in-wpf.md)  

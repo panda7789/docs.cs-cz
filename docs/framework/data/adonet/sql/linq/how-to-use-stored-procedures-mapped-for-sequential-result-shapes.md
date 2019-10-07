@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: Použití uložených procedur mapovaných pro sekvenční tvary výsledků'
+title: 'Postupy: použití uložených procedur mapovaných pro sekvenční obrazce výsledků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: a73530de-5a4e-4d9c-8d66-abb19c225b11
-ms.openlocfilehash: bae10e823a274304f21292cf55947a4d4eaccc10
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8378a175ab2479ab9769ca08579e1c89269eaba4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781466"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003219"
 ---
-# <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Postupy: Použití uložených procedur mapovaných pro sekvenční tvary výsledků
-Tento druh uložené procedury může generovat více než jeden obrazec výsledku, ale víte, v jakém pořadí se výsledky vrátí. Porovnejte tento scénář se scénářem, ve kterém neznáte sekvenci vrácených možností. Další informace najdete v tématu [jak: Použití uložených procedur mapovaných pro více tvarů](how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md)výsledků.  
+# <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Postupy: použití uložených procedur mapovaných pro sekvenční obrazce výsledků
+Tento druh uložené procedury může generovat více než jeden obrazec výsledku, ale víte, v jakém pořadí se výsledky vrátí. Porovnejte tento scénář se scénářem, ve kterém neznáte sekvenci vrácených možností. Další informace najdete v tématu [Postupy: použití uložených procedur mapovaných pro více obrazců výsledků](how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md).  
   
 ## <a name="example"></a>Příklad  
  Zde je T-SQL uložené procedury, která vrací více výsledných tvarů postupně:  
   
-```  
+```sql
 CREATE PROCEDURE MultipleResultTypesSequentially  
 AS  
 select * from products  

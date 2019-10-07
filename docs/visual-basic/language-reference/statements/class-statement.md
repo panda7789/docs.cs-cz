@@ -13,19 +13,19 @@ helpviewer_keywords:
 - classes [Visual Basic], data members
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
-ms.openlocfilehash: 7fbf2b15105a9fdcda5c7f6653753a4da54b394b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2e4514686afcbbe0e9ff0b3326c1be212db4f9f8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622345"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005153"
 ---
 # <a name="class-statement-visual-basic"></a>Class – příkaz (Visual Basic)
-Deklaruje název třídy a zavádí definici proměnných, vlastností, událostí a postupy, které tvoří třídu.  
+Deklaruje název třídy a zavádí definici proměnných, vlastností, událostí a procedur, které třída zahrnuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 [ <attributelist> ] [ accessmodifier ] [ Shadows ] [ MustInherit | NotInheritable ] [ Partial ] _  
 Class name [ ( Of typelist ) ]  
     [ Inherits classname ]  
@@ -38,72 +38,72 @@ End Class
   
 |Termín|Definice|  
 |---|---|  
-|`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />-   [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br />- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)<br/><br/> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|  
-|`MustInherit`|Volitelné. Zobrazit [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).|  
-|`NotInheritable`|Volitelné. Zobrazit [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).|  
+|`attributelist`|Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
+|`accessmodifier`|Volitelné. Může to být jedna z následujících:<br /><br /> @no__t – 0[veřejných](../../../visual-basic/language-reference/modifiers/public.md)<br />[chráněný](../../../visual-basic/language-reference/modifiers/protected.md) @no__t – 0<br />-    –[přítel](../../../visual-basic/language-reference/modifiers/friend.md)<br />@no__t – 0[privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />[přítel chráněný](../../language-reference/modifiers/protected-friend.md) @no__t – 0<br />- [Private Protected](../../language-reference/modifiers/private-protected.md)<br/><br/> Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
+|`MustInherit`|Volitelné. Viz [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).|  
+|`NotInheritable`|Volitelné. Viz [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md).|  
 |`Partial`|Volitelné. Označuje částečnou definici třídy. Zobrazit [částečné](../../../visual-basic/language-reference/modifiers/partial.md).|  
-|`name`|Povinný parametr. Název této třídy. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`name`|Požadováno. Název této třídy Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`Of`|Volitelné. Určuje, že se jedná o obecnou třídu.|  
-|`typelist`|Povinné, pokud používáte [z](../../../visual-basic/language-reference/statements/of-clause.md) – klíčové slovo. Seznam parametrů typu pro tuto třídu. Zobrazit [seznamu](../../../visual-basic/language-reference/statements/type-list.md).|  
-|`Inherits`|Volitelné. Označuje, že tato třída dědí členy jiné třídy. Zobrazit [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
-|`classname`|Povinné, pokud používáte `Inherits` příkazu. Název třídy, ze kterého tato třída odvozená.|  
-|`Implements`|Volitelné. Označuje, že tato třída implementuje členy jednoho nebo více rozhraní. Zobrazit [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).|  
-|`interfacenames`|Povinné, pokud používáte `Implements` příkazu. Názvy rozhraní, které tato třída implementuje.|  
+|`typelist`|Povinné, pokud použijete klíčové slovo [of](../../../visual-basic/language-reference/statements/of-clause.md) . Seznam parametrů typu pro tuto třídu. Viz [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).|  
+|`Inherits`|Volitelné. Označuje, že tato třída dědí členy jiné třídy. Viz [příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
+|`classname`|Vyžaduje se, pokud použijete příkaz `Inherits`. Název třídy, ze které je tato třída odvozena.|  
+|`Implements`|Volitelné. Označuje, že tato třída implementuje členy jednoho nebo více rozhraní. Viz [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md).|  
+|`interfacenames`|Vyžaduje se, pokud použijete příkaz `Implements`. Názvy rozhraní, které tato třída implementuje.|  
 |`statements`|Volitelné. Příkazy, které definují členy této třídy.|  
-|`End Class`|Povinný parametr. Ukončuje `Class` definice.|  
+|`End Class`|Požadováno. Ukončí definici `Class`.|  
   
 ## <a name="remarks"></a>Poznámky  
- A `Class` prohlášení definuje nového datového typu. A *třídy* je základním stavebním blokem objektově orientované programování (OOP). Další informace najdete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+ Příkaz `Class` definuje nový datový typ. *Třída* je základním stavebním blokem objektově orientovaného programování (OOP). Další informace naleznete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
- Můžete použít `Class` pouze na úrovni oboru názvů nebo modulu. To znamená, *kontextu deklarace* pro třídu musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nesmí být procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ @No__t-0 můžete použít pouze v oboru názvů nebo na úrovni modulu. To znamená, že *kontext deklarace* pro třídu musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Každá instance třídy má životnost nezávislou na všech ostatních instancích. Tato doba života začíná, když je vytvořena [operátor New](../../../visual-basic/language-reference/operators/new-operator.md) klauzule nebo funkcí, jako <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>. Končí při byly nastaveny všechny proměnné odkazující na instanci [nic](../../../visual-basic/language-reference/nothing.md) nebo instancí jiné třídy.  
+ Každá instance třídy má životnost nezávisle na všech ostatních instancích. Tato doba života začíná, když je vytvořena [novou klauzulí operátoru](../../../visual-basic/language-reference/operators/new-operator.md) nebo funkcí, jako je například <xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>. Končí, když jsou všechny proměnné ukazující na instanci nastavené na [hodnotu Nothing](../../../visual-basic/language-reference/nothing.md) nebo na instance jiných tříd.  
   
- Třídy výchozí [Friend](../../../visual-basic/language-reference/modifiers/friend.md) přístup. Můžete nastavit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Třídy, které jsou ve výchozím nastavení [typu Friend](../../../visual-basic/language-reference/modifiers/friend.md) Access. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Pravidly  
   
-- **Vnoření.** Můžete definovat jednu třídu v rámci jiného. Vnější třída se nazývá *obsahující třídu*, a vnitřní třída se nazývá *vnořenou třídu*.  
+- **Vnoření.** Můžete definovat jednu třídu v rámci jiné. Vnější třída se nazývá *obsahující třídu*a vnitřní třída se nazývá *vnořená třída*.  
   
-- **Dědičnost.** Pokud třída používá [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete zadat pouze jednu základní třídu nebo rozhraní. Třída nemůže dědit z více než jeden element.  
+- **Dědičnost.** Pokud třída používá [příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete zadat pouze jednu základní třídu nebo rozhraní. Třída nemůže dědit z více než jednoho prvku.  
   
-     Třída nemůže dědit z jiné třídy s více omezující úroveň přístupu. Například `Public` třída nemůže dědit od třídy `Friend` třídy.  
+     Třída nemůže dědit z jiné třídy s více omezující úrovní přístupu. Například třída `Public` nemůže dědit z třídy `Friend`.  
   
-     Třída nemůže dědit ze třídy do něho vnořený.  
+     Třída nemůže dědit z třídy, ve které je vnořená.  
   
-- **Implementace.** Pokud třída používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), musíte implementovat každého člena definovaného každým rozhraním, zadejte v `interfacenames`. Jedinou výjimkou je to je patřící třídě člena základní třídy. Další informace najdete v tématu "Patřící třídě" [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md).  
+- **Provádění.** Pokud třída používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), je nutné implementovat každého člena definovaného každým rozhraním, které zadáte v `interfacenames`. Výjimkou je přeimplementace člena základní třídy. Další informace naleznete v části "reimplementace" v tématu [Implements](../../../visual-basic/language-reference/statements/implements-clause.md).  
   
-- **Výchozí vlastnost.** Třída může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
+- **Výchozí vlastnost.** Třída může zadat maximálně jednu vlastnost jako *výchozí vlastnost*. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Předvídatelně  
   
-- **Úroveň přístupu.** V rámci třídy můžete deklarovat každého člena se svou vlastní úroveň přístupu. Členy třídy ve výchozím nastavení [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnné a konstanty, které výchozí [privátní](../../../visual-basic/language-reference/modifiers/private.md) přístup. Pokud třída má omezený přístup k více než jeden z jejích členů, úroveň přístupu ke třídě přednost.  
+- **Úroveň přístupu.** V rámci třídy můžete deklarovat každého člena s vlastní úrovní přístupu. Členové třídy jsou výchozí pro [veřejný](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnných a konstant, což je výchozí nastavení [privátního](../../../visual-basic/language-reference/modifiers/private.md) přístupu. Pokud má třída více omezený přístup než jeden z jejích členů, má úroveň přístupu ke třídě přednost.  
   
-- **Obor.** Třída je v oboru v celém jeho nadřazeného oboru názvů, třídy, struktury nebo modulu.  
+- **Oboru.** Třída je v oboru, který obsahuje obor názvů, třídu, strukturu nebo modul.  
   
-     Obor každého člena třídy je celá třída.  
+     Rozsah každého člena třídy je celá třída.  
   
-     **Doba platnosti.** Visual Basic nepodporuje statické třídy. Ekvivalentní statická třída poskytuje modulu. Další informace najdete v tématu [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md).  
+     **Platné.** Visual Basic nepodporuje statické třídy. Funkční ekvivalent statické třídy je poskytován modulem. Další informace naleznete v tématu [příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md).  
   
-     Členy třídy mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+     Členové třídy mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace najdete v tématu [Doba života v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
-- **Kvalifikace.** Kód mimo třídu musí kvalifikovat název člena s názvem třídy.  
+- **Vydal.** Kód mimo třídu musí kvalifikovat název člena s názvem této třídy.  
   
-     Pokud kód uvnitř vnořené třídy vytváří nekvalifikovaný odkaz na programovací prvek, Visual Basic vyhledá prvek nejprve ve vnořené třídy, pak v jeho obsahující třídy, a tak dále navýšení kapacity na vnější obsahující element.  
+     Pokud kód uvnitř vnořené třídy vytvoří nekvalifikovaný odkaz na prvek programování, Visual Basic vyhledá prvek nejprve ve vnořené třídě, potom v jeho nadřazené třídě a tak dále k vnějšímu nadřazenému prvku.  
   
 ## <a name="classes-and-modules"></a>Třídy a moduly  
- Tyto prvky řada podobností, ale existuje několik důležitých rozdílů.  
+ Tyto prvky mají hodně podobnosti, ale existují i některé důležité rozdíly.  
   
-- **Terminologie.** Předchozí verzí jazyka Visual Basic rozpoznat dva typy modulů: *moduly tříd* (.cls soubory) a *standardní moduly* (BAS soubory). Aktuální verze volá tyto *třídy* a *moduly*v uvedeném pořadí.  
+- **Vede.** Předchozí verze Visual Basic rozpoznávají dva typy modulů: *moduly tříd* (soubory. CLS) a *standardní moduly* (soubory. bas). Aktuální verze volá tyto *třídy* a *moduly*, v uvedeném pořadí.  
   
-- **Sdílené členy.** Můžete řídit, jestli je sdílené člen třídy nebo člena instance.  
+- **Sdílené členy.** Můžete určit, zda je člen třídy sdíleným členem nebo členem instance.  
   
-- **Objekt orientace.** Třídy jsou objektově orientované, ale nejsou moduly. Můžete vytvořit jednu nebo víc instancí třídy. Další informace najdete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+- **Orientace objektu.** Třídy jsou objektově orientované, ale moduly nejsou. Můžete vytvořit jednu nebo více instancí třídy. Další informace naleznete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Class` příkaz k definování třídy a několik členů.  
+ Následující příklad používá příkaz `Class` k definování třídy a několika členů.  
   
  [!code-vb[VbVbalrStatements#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#62)]  
   
@@ -114,6 +114,6 @@ End Class
 - [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
 - [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Doba života objektu: Vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)

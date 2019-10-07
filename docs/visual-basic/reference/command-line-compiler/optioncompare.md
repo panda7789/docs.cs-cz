@@ -9,47 +9,47 @@ helpviewer_keywords:
 - -optioncompare compiler option [Visual Basic]
 - /optioncompare compiler option [Visual Basic]
 ms.assetid: 7237b766-b44d-4cc5-9a3c-885348a7d9e4
-ms.openlocfilehash: fd26643c2c289459b1e7b158952c402e42bae39b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ee130073b95dfbab5616a54c188b09fa92ccc930
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639872"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005360"
 ---
 # <a name="-optioncompare"></a>-optioncompare
-Určuje způsob porovnávání řetězců.  
+Určuje, jak se provádí porovnávání řetězců.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -optioncompare:{binary | text}  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete zadat `-optioncompare` v jednom z těchto dvou tvarů: `-optioncompare:binary` použít porovnávání binárních řetězců a `-optioncompare:text` používat textové porovnávání řetězců. Ve výchozím nastavení, kterou kompilátor používá `-optioncompare:binary`.  
+ Můžete zadat `-optioncompare` v jednom ze dvou forem: `-optioncompare:binary` pro použití binárního porovnávání řetězců a `-optioncompare:text` pro použití porovnávání textových řetězců. Ve výchozím nastavení kompilátor používá `-optioncompare:binary`.  
   
- V Microsoft Windows určuje aktuální znakové stránce binární řazení. Typické binární řazení vypadá takto:  
+ V systému Microsoft Windows aktuální znaková stránka Určuje binární pořadí řazení. Typickým binárním pořadím řazení je následující:  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
- Textový řetězec porovnání jsou založeny na pořadí řazení nerozlišujícího velikost písmen textu určuje podle národního prostředí vašeho systému. Typické textové řazení vypadá takto:  
+ Textové porovnávání řetězců je založeno na pořadí řazení textu bez rozlišování velkých a malých písmen, které určuje národní prostředí vašeho systému. Typický způsob řazení textu je následující:  
   
  `(A = a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
-### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a>Chcete-li nastavit - optioncompare v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--optioncompare-in-the-visual-studio-ide"></a>Nastavení-OptionCompare – v integrovaném vývojovém prostředí sady Visual Studio  
   
-1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.   
   
-2. Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na kartu **kompilovat** .  
   
-3. Upravte hodnotu v **Option Compare** pole.  
+3. Upravte hodnotu v poli **Porovnat možnost** .  
   
-### <a name="to-set--optioncompare-programmatically"></a>Chcete-li nastavit - optioncompare prostřednictvím kódu programu  
+### <a name="to-set--optioncompare-programmatically"></a>Programové nastavení – OptionCompare –  
   
-- Zobrazit [Option Compare – příkaz](../../../visual-basic/language-reference/statements/option-compare-statement.md).  
+- Viz [příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `ProjFile.vb` a používá binární porovnání řetězců.  
+ Následující kód zkompiluje `ProjFile.vb` a používá porovnávání binárních řetězců.  
   
 ```console
 vbc -optioncompare:binary projFile.vb  
@@ -57,7 +57,7 @@ vbc -optioncompare:binary projFile.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
 - [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
 - [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)

@@ -13,36 +13,36 @@ helpviewer_keywords:
 - property procedures
 - Get statement [Visual Basic], property procedures
 ms.assetid: 46a98379-e1a2-45dd-a48c-b51213f5ab07
-ms.openlocfilehash: b637f6a5f3ef367dfe769c2878878eeb938e3c81
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3b57ae45815fbd91cad17cddbed4d01037eb92f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638806"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002084"
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)
-Procedury vlastnosti je řadu příkazů jazyka Visual Basic, které pracují s vlastní vlastnost v modulu, třídy nebo struktury. Procedury vlastnosti jsou známé také jako *přistupující objekty vlastnosti*.  
+Procedura vlastnosti je řada příkazů Visual Basic, které pracují s vlastní vlastností v modulu, třídě nebo struktuře. Procedury vlastnosti jsou také známé jako *přistupující objekty vlastností*.  
   
- Visual Basic poskytuje pokyny pro následující vlastnost:  
+ Visual Basic poskytuje následující procedury vlastností:  
   
-- A `Get` postup vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.  
+- Procedura `Get` vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.  
   
-- A `Set` postup nastaví vlastnost na hodnotu, včetně odkazu na objekt. Je volána při přiřazení hodnoty k vlastnosti.  
+- Procedura `Set` nastaví vlastnost na hodnotu, včetně odkazu na objekt. Je volána, když přiřadíte hodnotu k vlastnosti.  
   
- Obvykle definovat ve dvojicích, pomocí procedury vlastnosti `Get` a `Set` příkazy, ale můžete definovat těchto postupech samostatně, pokud je vlastnost jen pro čtení ([získat příkaz](../../../../visual-basic/language-reference/statements/get-statement.md)) nebo pouze pro zápis ([nastavení Příkaz](../../../../visual-basic/language-reference/statements/set-statement.md)).  
+ Procedury vlastností ve dvojicích obvykle definujete pomocí příkazů `Get` a `Set`, ale můžete definovat buď samostatně, pokud je vlastnost jen pro čtení ([příkaz Get](../../../../visual-basic/language-reference/statements/get-statement.md)) nebo pouze pro zápis ([příkaz set](../../../../visual-basic/language-reference/statements/set-statement.md)).  
   
- Můžete vynechat `Get` a `Set` procedury při použití automaticky implementované vlastnosti. Další informace najdete v tématu [implemented Properties](./auto-implemented-properties.md).  
+ Při použití automaticky implementované vlastnosti můžete vynechat postup `Get` a `Set`. Další informace najdete v tématu věnovaném [automaticky implementovaným vlastnostem](./auto-implemented-properties.md).  
   
- Definujte vlastnosti do třídy, struktury a moduly. Vlastnosti jsou `Public` ve výchozím nastavení, což znamená, že je můžete volat z libovolného místa v aplikaci s přístupem k vlastnosti kontejneru.  
+ Můžete definovat vlastnosti v třídách, strukturách a modulech. Ve výchozím nastavení jsou vlastnosti `Public`, což znamená, že je můžete volat odkudkoli v aplikaci, která má přístup k kontejneru vlastnosti.  
   
- Porovnání vlastnostmi a proměnnými, naleznete v tématu [rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md).  
+ Porovnání vlastností a proměnných naleznete [v tématu rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md).  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- Samotné vlastnosti je definován bloku kódu uzavřený do složených závorek [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md) a `End Property` příkazu. V tomto bloku se každá procedura property zobrazí jako z vnitřního bloku uzavřeny v příkazu deklarace (`Get` nebo `Set`) a odpovídající `End` deklarace.  
+ Samotná vlastnost je definována blokem kódu uzavřeným v rámci [příkazu Property](../../../../visual-basic/language-reference/statements/property-statement.md) a příkazu `End Property`. V rámci tohoto bloku se každá procedura Vlastnosti zobrazuje jako vnitřní blok uzavřený v rámci příkazu deklarace (`Get` nebo `Set`) a shoda deklarace `End`.  
   
  Syntaxe pro deklaraci vlastnosti a její postupy je následující:  
   
-```  
+```vb  
 [Default] [Modifiers] Property PropertyName[(ParameterList)] [As DataType]  
     [AccessLevel] Get  
         ' Statements of the Get procedure.  
@@ -59,49 +59,49 @@ End Property
 [Default] [Modifiers] Property PropertyName [(ParameterList)] [As DataType]  
 ```  
   
- `Modifiers` Můžete určit úroveň přístupu a informace týkající se přetížení, přepsání, sdílení a stínování, stejně jako Určuje, zda je vlastnost jen pro čtení nebo jen pro zápis. `AccessLevel` Na `Get` nebo `Set` postupu může být libovolné úrovni, která je více omezující než úroveň přístupu, zadaná pro vlastnost samotný. Další informace najdete v tématu [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md).  
+ @No__t-0 může určovat úroveň přístupu a informace týkající se přetěžování, přepsání, sdílení a stínování a také zda je vlastnost jen pro čtení nebo jen pro zápis. @No__t-0 v proceduře `Get` nebo `Set` může být libovolná úroveň, která je více omezující než úroveň přístupu zadaná pro samotnou vlastnost. Další informace naleznete v tématu [příkaz Vlastnosti](../../../../visual-basic/language-reference/statements/property-statement.md).  
   
 ### <a name="data-type"></a>Datový typ  
- Typ dat vlastnosti a úroveň přístupu objektu zabezpečení jsou definovány v `Property` příkaz není v procedury vlastností. Vlastnost může mít pouze jednoho datového typu. Například nelze definovat vlastnost k ukládání `Decimal` hodnotu, ale načíst `Double` hodnotu.  
+ Datový typ a úroveň přístupu objektu vlastnosti jsou definovány v příkazu `Property`, nikoli v procedurách vlastnosti. Vlastnost může mít pouze jeden datový typ. Například nelze definovat vlastnost pro uložení hodnoty @no__t 0, ale načtení hodnoty `Double`.  
   
 ### <a name="access-level"></a>Úroveň přístupu  
- Ale můžete definovat úroveň zabezpečení přístupu pro vlastnost a dál omezit úroveň přístupu v jednom z jeho procedury vlastností. Například můžete definovat `Public` vlastnost a potom definovat, `Private Set` postup. `Get` Postup zůstane `Public`. Můžete změnit úroveň přístupu pouze v jednom z vlastnosti postupů a můžete pouze si je více omezující než úroveň přístupu instančního objektu. Další informace najdete v tématu [jak: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md).  
+ Můžete však definovat hlavní úroveň přístupu pro vlastnost a dále omezit úroveň přístupu v jednom z jeho procedur vlastností. Můžete například definovat vlastnost `Public` a pak definovat proceduru `Private Set`. Procedura `Get` zůstane `Public`. Úroveň přístupu můžete změnit jenom v jednom z procedur vlastnosti a můžete ji omezit jenom na úroveň přístupu zabezpečení. Další informace najdete v tématu [Postupy: deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md).  
   
 ## <a name="parameter-declaration"></a>Deklarace parametru  
- Deklarujete každý parametr stejným způsobem jako u [Sub – procedury](./sub-procedures.md), s tím rozdílem, že musí být mechanismus předávání `ByVal`.  
+ Každý parametr deklarujete stejným způsobem jako u [dílčích procedur](./sub-procedures.md), s tím rozdílem, že mechanismus předávání musí být `ByVal`.  
   
  Syntaxe pro každý parametr v seznamu parametrů je následující:  
   
  `[Optional] ByVal [ParamArray] parametername As datatype`  
   
- Pokud se jedná o volitelný parametr, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnota je následujícím způsobem:  
+ Pokud je parametr volitelný, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnoty je následující:  
   
  `Optional ByVal parametername As datatype = defaultvalue`  
   
 ## <a name="property-value"></a>Hodnota vlastnosti  
- V `Get` procedury, vrácená hodnota je zadaný pro volání výrazu jako hodnotu vlastnosti.  
+ V proceduře `Get` je návratová hodnota zadána do volajícího výrazu jako hodnota vlastnosti.  
   
- V `Set` postupu hodnota nové vlastnosti je předán jako parametr `Set` příkazu. Pokud explicitně deklarujete parametr, musíte ji deklarovat s typem dat jako vlastnost. Pokud parametr nedeklaruje, kompilátor používá implicitní parametr `Value` představující nová hodnota pro přiřazení k vlastnosti.  
+ V proceduře `Set` je nová hodnota vlastnosti předána parametru příkazu `Set`. Pokud explicitně deklarujete parametr, je nutné jej deklarovat se stejným datovým typem jako vlastnost. Pokud parametr nedeklarujete, kompilátor použije implicitní parametr `Value` pro reprezentaci nové hodnoty, která má být přiřazena vlastnosti.  
   
 ## <a name="calling-syntax"></a>Syntaxe volání  
- Vyvolání procedury vlastnosti implicitně tím, že odkaz na vlastnost. Můžete použít název vlastnosti stejným způsobem použijete název proměnné, s tím rozdílem, že je nutné zadat hodnoty pro všechny argumenty, které nejsou nepovinné a je nutné uzavřít do závorek seznamu argumentů. Pokud nejsou dodány žádné argumenty, můžete volitelně vynechejte závorky.  
+ Proceduru vlastnosti můžete implicitně vyvolat tak, že vytvoříte odkaz na vlastnost. Název vlastnosti použijete stejným způsobem jako název proměnné, s výjimkou toho, že je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné, a je třeba uzavřít seznam argumentů v závorkách. Pokud nejsou zadány žádné argumenty, můžete volitelně vynechat závorky.  
   
- Syntaxe pro implicitní volání `Set` postup je následující:  
+ Syntaxe pro implicitní volání procedury `Set` je následující:  
   
  `propertyname[(argumentlist)] = expression`  
   
- Syntaxe pro implicitní volání `Get` postup je následující:  
+ Syntaxe pro implicitní volání procedury `Get` je následující:  
   
  `lvalue = propertyname[(argumentlist)]`  
   
  `Do While (propertyname[(argumentlist)] > expression)`  
   
-### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
- Následující vlastnosti se ukládají úplný název jako dva základní názvy, křestní jméno a příjmení. Když volající kód čte `fullName`, `Get` postup kombinuje dva základní názvy a vrátí úplný název. Pokud volající kód přiřadí nový úplný název, `Set` postup pokusy o jeho rozdělení na dva základní názvy. Pokud nelze najít mezeru, uloží jej jako křestní jméno.  
+### <a name="illustration-of-declaration-and-call"></a>Ilustrace deklarace a volání  
+ Následující vlastnost uchovává úplný název jako dva názvy prvků, křestní jméno a příjmení. Když volající kód přečte `fullName`, procedura `Get` kombinuje dva názvy prvků a vrátí úplný název. Když volající kód přiřadí nový úplný název, procedura `Set` se pokusí ho rozdělit do dvou názvů prvků. Pokud nenalezne žádné místo, uloží ho jako křestní jméno.  
   
  [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]  
   
- Následující příklad ukazuje typické volání procedury vlastnosti z `fullName`.  
+ Následující příklad ukazuje typická volání procedur vlastností `fullName`.  
   
  [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]  
   
@@ -111,9 +111,9 @@ End Property
 - [Procedury funkce](./function-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

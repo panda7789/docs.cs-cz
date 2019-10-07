@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 2a599322ef955b9f702f8960f294f5d093ede74a
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 6cd16f4d5586dcee54152b430f14911f5a9c5682
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834752"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005135"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Obousměrné funkce v přehledu WPF
 
 Na rozdíl od jakékoli jiné vývojové platformy @no__t – 0 obsahuje mnoho funkcí, které podporují rychlý vývoj obousměrného obsahu, například smíšenou levou a pravou a zprava doleva data ve stejném dokumentu. Ve stejnou dobu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří Skvělé prostředí pro uživatele, kteří vyžadují obousměrné funkce, jako jsou arabské a hebrejské speaking Users.
 
-Následující části vysvětlují mnoho obousměrných funkcí společně s příklady ilustrující, jak dosáhnout nejlepšího zobrazení obousměrného obsahu. Většina ukázek používá [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], ale můžete snadno použít koncepty pro C# nebo Microsoft Visual Basic Code.
+Následující části vysvětlují mnoho obousměrných funkcí společně s příklady ilustrující, jak dosáhnout nejlepšího zobrazení obousměrného obsahu. Většina ukázek používá XAML, ale můžete snadno použít koncepty pro C# nebo Microsoft Visual Basic kód.
 
 <a name="FlowDirection"></a>
 
@@ -136,7 +136,7 @@ V některých případech se <xref:System.Windows.FlowDirection> nechová podle 
 
 **Obrázek**
 
-@No__t-0 představuje ovládací prvek, který zobrazuje obrázek. V [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] lze použít s vlastností <xref:System.Windows.Controls.Image.Source%2A> definující [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] <xref:System.Windows.Controls.Image> k zobrazení.
+@No__t-0 představuje ovládací prvek, který zobrazuje obrázek. V jazyce XAML lze použít s vlastností @no__t 0 definující [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] <xref:System.Windows.Controls.Image> pro zobrazení.
 
 Na rozdíl od jiných prvků [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nedědí <xref:System.Windows.Controls.Image> <xref:System.Windows.FlowDirection> z kontejneru. Pokud je však <xref:System.Windows.FlowDirection> nastavené explicitně na <xref:System.Windows.FlowDirection.RightToLeft>, zobrazí se <xref:System.Windows.Controls.Image> převráceno vodorovně. To je implementováno jako pohodlnější funkce pro vývojáře obousměrného obsahu. vzhledem k tomu, že v některých případech je vodorovný překlopení obrázku požadovaným efektem.
 
@@ -249,7 +249,7 @@ text1.Language = System.Windows.Markup.XmlLanguage.GetLanguage(System.Globalizat
 
 <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> představuje aktuální jazykovou verzi použitou aktuálním vláknem v době běhu.
 
-Konečný příklad [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] by měl být podobný následujícímu příkladu.
+Konečný příklad XAML by měl být podobný následujícímu příkladu.
 
 [!code-xaml[Numbers2#Numbers2](~/samples/snippets/csharp/VS_Snippets_Wpf/Numbers2/CS/Window1.xaml#numbers2)]
 

@@ -6,19 +6,19 @@ helpviewer_keywords:
 - /warnaserror compiler option [Visual Basic]
 - -warnaserror compiler option [Visual Basic]
 ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
-ms.openlocfilehash: 4382ec8feda2df1e83fd2fdc509abb66984e501f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8af6d3ef4efecd53dcf38c33d0aa2cf182f07d30
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937243"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004648"
 ---
 # <a name="-warnaserror-visual-basic"></a>-warnaserror – (Visual Basic)
 Způsobí, že kompilátor bude zacházet s prvním výskytem upozornění jako s chybou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -warnaserror[+ | -][:numberList]  
 ```  
   
@@ -26,26 +26,26 @@ Způsobí, že kompilátor bude zacházet s prvním výskytem upozornění jako 
   
 |Termín|Definice|  
 |---|---|  
-|+ &#124; -|Volitelný parametr. Ve výchozím nastavení `-warnaserror-` platí; upozornění nebrání kompilátoru v vytváření výstupního souboru. Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby. `-warnaserror`|  
-|`numberList`|Volitelný parametr. Seznam čísel ID upozornění oddělených čárkami, na které se `-warnaserror` možnost vztahuje. Pokud není zadané žádné ID upozornění, bude `-warnaserror` možnost platit pro všechna upozornění.|  
+|+ &#124; -|Volitelné. Ve výchozím nastavení platí `-warnaserror-`; Upozornění nebrání kompilátoru v vytváření výstupního souboru. Možnost `-warnaserror`, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.|  
+|`numberList`|Volitelné. Seznam čísel ID upozornění oddělených čárkami, na které se vztahuje možnost `-warnaserror`. Pokud není zadané žádné ID upozornění, bude možnost `-warnaserror` platit pro všechna upozornění.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-warnaserror` Možnost zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
+ Možnost `-warnaserror` zpracovává všechna upozornění jako chyby. Všechny zprávy, které by byly obvykle hlášeny jako upozornění, jsou místo toho hlášeny jako chyby. Kompilátor ohlásí následné výskyty stejného upozornění jako upozornění.  
   
- Ve výchozím nastavení `-warnaserror-` je to v platnosti, což způsobí, že upozornění budou pouze informativní. Možnost, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby. `-warnaserror`  
+ Ve výchozím nastavení platí `-warnaserror-`, což způsobí, že upozornění budou pouze informativní. Možnost `-warnaserror`, která je stejná jako `-warnaserror+`, způsobí, že upozornění budou považována za chyby.  
   
  Pokud chcete, aby se jako chyby považovala jenom některá konkrétní upozornění, můžete zadat čárkami oddělený seznam čísel upozornění, která se budou považovat za chyby.  
   
 > [!NOTE]
-> `-warnaserror` Možnost neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](../../../visual-basic/reference/command-line-compiler/nowarn.md) upozornění.  
+> Možnost `-warnaserror` neurčuje, jak se zobrazují upozornění. Pro vypnutí upozornění použijte možnost [-](../../../visual-basic/reference/command-line-compiler/nowarn.md) upozornění.  
   
 |Nastavení-warnaserror –, aby považovala všechna upozornění jako chyby v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2.  Klikněte na kartu **kompilovat** .<br />3.  Ujistěte se, že není zaškrtnuté políčko **Zakázat všechna upozornění** .<br />4.  Zaškrtněte políčko **považovat všechna upozornění za chyby** .|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. Ujistěte se, že není zaškrtnuté políčko **Zakázat všechna upozornění** .<br />4. zaškrtněte políčko **považovat všechna upozornění za chyby** .|  
   
 |Nastavení-warnaserror – pro zacházení s konkrétními upozorněními jako s chybami v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.<br />2.  Klikněte na kartu **kompilovat** .<br />3.  Ujistěte se, že není zaškrtnuté políčko **Zakázat všechna upozornění** .<br />4.  Ujistěte se, že zaškrtávací políčko **považovat všechna upozornění jako chyby** není zaškrtnuté.<br />5.  Vyberte **chybu** ze sloupce **oznámení** vedle upozornění, které by mělo být považováno za chybu.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**.<br />2. klikněte na kartu **kompilovat** .<br />3. Ujistěte se, že není zaškrtnuté políčko **Zakázat všechna upozornění** .<br />4. Ujistěte se, že není zaškrtnuté políčko **považovat všechna upozornění jako chyby** .<br />5. Vyberte **chybu** ze sloupce **oznámení** vedle upozornění, které by mělo být považováno za chybu.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `In.vb` a nasměruje kompilátor, aby zobrazil chybu pro první výskyt každého upozornění, které najde.  

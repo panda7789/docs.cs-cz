@@ -8,49 +8,49 @@ helpviewer_keywords:
 - optionstrict compiler option [Visual Basic]
 - /optionstrict compiler option [Visual Basic]
 ms.assetid: c7b10086-0fa4-49db-b3c8-4ae0db5957da
-ms.openlocfilehash: 22423877325806e6e6abe535ad98530eb924780e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d281fe07754f0471f8d6c0e31cf3ea890060504
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625899"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005346"
 ---
 # <a name="-optionstrict"></a>-optionstrict
-Vynutí sémantiku přísného typu pro omezení převodů implicitních typů.  
+Vynutila striktní sémantiku typu pro omezení implicitních převodů typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -optionstrict[+ | -]  
 -optionstrict[:custom]  
 ```  
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Volitelné. `-optionstrict+` Omezí implicitní převod typu. Výchozí hodnota pro tuto možnost je `-optionstrict-`. `-optionstrict+` Možnost je stejný jako `-optionstrict`. Můžete je používat pro typ povolující sémantiku.  
+ Volitelné. Možnost `-optionstrict+` omezuje implicitní převod typu. Výchozí hodnota pro tuto možnost je `-optionstrict-`. Možnost `-optionstrict+` je stejná jako `-optionstrict`. Pro sémantiku typu lze použít obojí.  
   
  `custom`  
- Povinný parametr. Zobrazit upozornění, pokud není respektována striktní sémantika jazyka.  
+ Požadováno. Zobrazit upozornění, pokud není respektována striktní sémantika jazyka  
   
 ## <a name="remarks"></a>Poznámky  
- Když `-optionstrict+` platí, pouze rozšiřující převody typu lze implicitně. Implicitní zužující převody typů, jako je například přiřazení `Decimal` zadejte objekt na objekt typu celé číslo, které jsou hlášeny jako chyby.  
+ Pokud je platný `-optionstrict+`, lze implicitně převést pouze rozšiřující převody typů. Implicitně zúžené převody typů, jako je například přiřazení objektu typu `Decimal` k objektu typu Integer, jsou hlášeny jako chyby.  
   
- Chcete-li generovat upozornění pro implicitní zužující převody typů, použijte `-optionstrict:custom`. Použití `-nowarn:numberlist` ignorovat konkrétní varování a `-warnaserror:numberlist` považovat konkrétní upozornění jako chyby.  
+ Chcete-li generovat upozornění pro implicitní zužující převody typů, použijte `-optionstrict:custom`. Pomocí `-nowarn:numberlist` můžete ignorovat konkrétní upozornění a `-warnaserror:numberlist` pro považovat konkrétní upozornění za chyby.  
   
-### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a>Chcete-li nastavit - optionstrict v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a>Nastavení-OptionStrict – v integrovaném vývojovém prostředí sady Visual Studio  
   
-1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti.**   
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **Vlastnosti.**   
   
-2. Klikněte na tlačítko **kompilaci** kartu.  
+2. Klikněte na kartu **kompilovat** .  
   
-3. Upravte hodnotu v **Option Strict** pole.  
+3. Upravte hodnotu v poli **Option Strict** .  
   
-### <a name="to-set--optionstrict-programmatically"></a>Chcete-li nastavit - optionstrict prostřednictvím kódu programu  
+### <a name="to-set--optionstrict-programmatically"></a>Programové nastavení – OptionStrict –  
   
-- Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
+- Viz [příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `Test.vb` pomocí sémantiku přísného typu.  
+ Následující kód zkompiluje `Test.vb` pomocí sémantiky striktního typu.  
   
 ```console
 vbc -optionstrict+ test.vb  
@@ -58,12 +58,12 @@ vbc -optionstrict+ test.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
 - [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
 - [-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)
-- [-warnaserror (Visual Basic)](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
+- [-warnaserror – (Visual Basic)](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

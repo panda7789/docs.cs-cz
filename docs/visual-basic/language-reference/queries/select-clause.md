@@ -8,52 +8,52 @@ helpviewer_keywords:
 - Select clause [Visual Basic]
 - queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
-ms.openlocfilehash: 367d810c2358963bfe2f092a390443eccdc66941
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 087472c51d203be083fea0d39ade6f12066cfcb4
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945259"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004747"
 ---
 # <a name="select-clause-visual-basic"></a>Select – klauzule (Visual Basic)
 Definuje výsledek dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```vb  
 Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]  
 ```  
   
 ## <a name="parts"></a>Součásti  
  `var1`  
- Volitelné. Alias, který slouží k odkazování výsledky výrazu sloupce.  
+ Volitelné. Alias, který lze použít k odkazování na výsledky výrazu sloupce.  
   
  `fieldName1`  
- Povinný parametr. Název pole má vrátit ve výsledku dotazu.  
+ Požadováno. Název pole, které se má vrátit do výsledku dotazu.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `Select` klauzule k definování výsledků k vrácení z dotazu. To umožňuje definovat členy nové anonymní typ, který je vytvořen pomocí dotazu nebo cílové členy pojmenovaného typu, která je vrácena dotazem. `Select` Klauzule není vyžadován pro dotaz. Pokud ne `Select` není zadána klauzule, dotaz vrátí typ podle členů proměnných rozsahu, který je identifikován aktuálního oboru. Další informace najdete v tématu [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). Když dotaz slouží k vytvoření pojmenovaného typu, vrátí výsledek typu <xref:System.Collections.Generic.IEnumerable%601> kde `T` je typ vytvořený.  
+ Klauzuli `Select` můžete použít k definování výsledků, které se mají vrátit z dotazu. To vám umožňuje definovat členy nového anonymního typu, který je vytvořen dotazem, nebo pro cílení členů pojmenovaného typu, který je vrácen dotazem. Klauzule `Select` není pro dotaz vyžadována. Pokud není zadána žádná klauzule `Select`, dotaz vrátí typ založený na všech členech proměnných rozsahu určených pro aktuální obor. Další informace najdete v tématu [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). Když dotaz vytvoří pojmenovaný typ, vrátí výsledek typu <xref:System.Collections.Generic.IEnumerable%601>, kde `T` je vytvořený typ.  
   
- `Select` Klauzule můžete odkazovat na žádné proměnné v aktuálním oboru. To zahrnuje proměnné rozsahu podle `From` – klauzule (nebo `From` klauzule). Zahrnuje také všechny nové proměnné vytvořené pomocí alias podle `Aggregate`, `Let`, `Group By`, nebo `Group Join` klauzule nebo proměnné z předchozí `Select` klauzule ve výrazu dotazu. `Select` Klauzule může také obsahovat statické hodnoty. Například následující příklad kódu ukazuje výraz dotazu, ve kterém `Select` klauzule definuje výsledek dotazu jako nový anonymní typ s čtyři členy: `ProductName`, `Price`, `Discount`, a `DiscountedPrice`. `ProductName` a `Price` člen hodnoty pocházejí z proměnné rozsahu produktu, který je definován v `From` klauzuli. `DiscountedPrice` Hodnotu člen se počítá v `Let` klauzuli. `Discount` Člen je statický hodnotu.  
+ Klauzule `Select` se může odkazovat na jakékoli proměnné v aktuálním oboru. To zahrnuje proměnné rozsahu identifikované v klauzuli `From` (nebo klauzule `From`). Obsahuje také všechny nové proměnné vytvořené s aliasem pomocí klauzulí `Aggregate`, `Let`, `Group By` nebo `Group Join` nebo proměnné z předchozí klauzule `Select` ve výrazu dotazu. Klauzule `Select` může také zahrnovat statické hodnoty. Například následující příklad kódu ukazuje výraz dotazu, ve kterém klauzule `Select` definuje výsledek dotazu jako nový anonymní typ se čtyřmi členy: `ProductName`, `Price`, `Discount` a `DiscountedPrice`. Hodnoty členů `ProductName` a `Price` jsou odebírány z proměnné rozsahu produktu, která je definována v klauzuli `From`. Hodnota člena `DiscountedPrice` je vypočítána v klauzuli `Let`. Člen `Discount` je statická hodnota.  
   
  [!code-vb[VbSimpleQuerySamples#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#27)]  
   
- `Select` Klauzule zavádí novou sadu proměnných rozsahu pro následné dotazování klauzule a předchozích proměnných rozsahu již nejsou v oboru. Poslední `Select` návratová hodnota dotazu určuje klauzuli ve výrazu dotazu. Například následující dotaz vrátí společnosti název a pořadí ID pro každý objednávku zákazníka, pro kterou celkový počet překročí 500. První `Select` identifikuje proměnné rozsahu pro klauzuli `Where` klauzule a druhá `Select` klauzuli. Druhá `Select` klauzule určuje hodnoty vrácené dotazem jako nové anonymního typu.  
+ Klauzule `Select` zavádí novou sadu proměnných rozsahu pro následné klauzule dotazu a předchozí proměnné rozsahu již nejsou v oboru. Poslední klauzule `Select` ve výrazu dotazu určuje návratovou hodnotu dotazu. Například následující dotaz vrátí název společnosti a ID objednávky pro každé pořadí zákazníků, pro které součet převyšuje 500. První klauzule `Select` identifikuje proměnné rozsahu pro klauzuli `Where` a druhou klauzuli `Select`. Druhá klauzule `Select` identifikuje hodnoty vrácené dotazem jako nový anonymní typ.  
   
  [!code-vb[VbSimpleQuerySamples#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#28)]  
   
- Pokud `Select` klauzule určuje jednu položku k vrácení, výrazu dotazu vrátí kolekci typu tuto jednu položku. Pokud `Select` klauzule určuje více položek k vrácení, výrazu dotazu vrátí kolekci nový anonymní typ, na základě vybraných položek. Například následující dva dotazy vrací kolekce na základě dvou různých typů `Select` klauzuli. První dotaz vrací kolekci názvů společnosti jako řetězce. Druhý dotaz vrátí kolekci `Customer` objekty vyplní názvy společností a informace o adrese.  
+ Pokud klauzule `Select` identifikuje jednu položku, která se má vrátit, výraz dotazu vrátí kolekci typu dané jedné položky. Pokud klauzule `Select` identifikuje více položek, které mají být vráceny, výraz dotazu vrátí kolekci nového anonymního typu na základě vybraných položek. Následující dva dotazy například vrátí kolekce dvou různých typů na základě klauzule `Select`. První dotaz vrátí kolekci názvů společností jako řetězce. Druhý dotaz vrátí kolekci objektů `Customer` vyplněných názvy společnosti a informacemi o adrese.  
   
  [!code-vb[VbSimpleQuerySamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#29)]  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz používá výraz `From` klauzule k deklaraci proměnné rozsahu `cust` pro `customers` kolekce. `Select` Klauzule vybere jméno zákazníka a ID hodnotu a naplní `CompanyName` a `CustomerID` sloupce nové proměnné rozsahu. `For Each` Příkaz cyklickému každý vráceného objektu a zobrazí `CompanyName` a `CustomerID` sloupcích pro každý záznam.  
+ Následující výraz dotazu používá klauzuli `From` k deklaraci proměnné rozsahu `cust` pro kolekci `customers`. Klauzule `Select` vybere název a hodnotu ID zákazníka a naplní sloupce `CompanyName` a `CustomerID` nové proměnné rozsahu. Příkazy `For Each` se přeskočí na každý vrácený objekt a zobrazí sloupce `CompanyName` a `CustomerID` pro každý záznam.  
   
  [!code-vb[VbSimpleQuerySamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#30)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
 - [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

@@ -17,70 +17,70 @@ helpviewer_keywords:
 - local variables [Visual Basic], declarations
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
-ms.openlocfilehash: 4706f306e8db252b35148f8e6a0f8c42122f5482
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 726347efc2e12100f7d89348a316037babc785e5
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583387"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72003298"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklarace proměnné v jazyce Visual Basic
-Deklarujete proměnnou k určení jeho název a vlastnosti. Příkaz deklarace proměnných [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Jeho umístění a obsah zadat vlastnosti proměnnou.  
+Deklarujete proměnnou pro určení jejího názvu a charakteristiky. Příkaz deklarace pro proměnné je [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Jeho umístění a obsah určují charakteristiky proměnné.  
   
- Proměnné pravidla pojmenování, najdete v článku [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Informace o pravidlech pojmenovávání a požadavcích naleznete v tématu [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
-## <a name="declaration-levels"></a>Deklarace úrovně  
+## <a name="declaration-levels"></a>Úrovně deklarací  
   
 ### <a name="local-and-member-variables"></a>Místní a členské proměnné  
- A *lokální proměnná* je ten, který je deklarován v rámci procedury. A *členskou proměnnou* je členem typu jazyka Visual Basic je deklarován na úrovni modulu uvnitř třídy, struktury nebo modulu, ale ne v rámci žádné procedury interní této třídy, struktury nebo modulu.  
+ *Lokální proměnná* je jedna, která je deklarována v rámci procedury. *Členská proměnná* je členem Visual Basicho typu; je deklarována na úrovni modulu uvnitř třídy, struktury nebo modulu, ale ne v rámci žádné procedury vnitřní k této třídě, struktuře nebo modulu.  
   
-### <a name="shared-and-instance-variables"></a>Sdílené a Instance proměnné  
- Ve třídě nebo struktuře kategorie členskou proměnnou závisí Určuje, jestli se sdílí. Pokud je deklarovaná s [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) – klíčové slovo, je *sdílené proměnné*, a existuje v jedné kopii sdílí mezi všemi instancemi třídy nebo struktury.  
+### <a name="shared-and-instance-variables"></a>Sdílené a proměnné instance  
+ Ve třídě nebo struktuře závisí kategorie členské proměnné na tom, zda je nebo není sdílena. Je-li deklarován se [sdíleným](../../../../visual-basic/language-reference/modifiers/shared.md) klíčovým slovem, jedná se o *sdílenou proměnnou*a existuje v jedné kopii sdílené mezi všemi instancemi třídy nebo struktury.  
   
- V opačném případě se *proměnnou instance*, a samostatnou kopii se vytvoří pro každou instanci třídy nebo struktury. Dané kopie proměnnou instance je k dispozici pouze pro instanci třídy nebo struktury, ve kterém byla vytvořena. Je nezávislé na kopii této instance proměnné v jeho ostatní instance dané třídy nebo struktury.  
+ V opačném případě se jedná o *proměnnou instance*a samostatná kopie je vytvořena pro každou instanci třídy nebo struktury. Daná kopie proměnné instance je k dispozici pouze pro instanci třídy nebo struktury, ve které byla vytvořena. Je nezávislý na kopii proměnné instance v jakékoli jiné instanci třídy nebo struktury.  
   
-## <a name="declaring-data-type"></a>Deklarující typ dat  
- [Jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzuli v příkazu deklarace umožňuje definovat datový typ nebo typ objektu se deklarace proměnné. Můžete určit kterékoli z následujících typů proměnné:  
+## <a name="declaring-data-type"></a>Deklarace datového typu  
+ Klauzule [as](../../../../visual-basic/language-reference/statements/as-clause.md) v příkazu Declaration umožňuje definovat datový typ nebo typ objektu pro proměnnou, kterou deklarujete. Pro proměnnou můžete zadat kterýkoli z následujících typů:  
   
-- Základní datový typ, jako například `Boolean`, `Long`, nebo `Decimal`  
+- Základní datový typ, například `Boolean`, `Long` nebo `Decimal`  
   
-- Složený datový typ, jako je například pole nebo strukturu  
+- Složený datový typ, jako je například pole nebo struktura  
   
-- Typ objektu nebo třída definovaná ve vaší aplikaci nebo v jiné aplikaci  
+- Typ objektu nebo třída definovaný buď v aplikaci, nebo v jiné aplikaci.  
   
-- Třída rozhraní .NET Framework, například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
+- Třída .NET Framework, například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
   
-- Typ rozhraní, jako například <xref:System.IComparable> nebo <xref:System.IDisposable>  
+- Typ rozhraní, například <xref:System.IComparable> nebo <xref:System.IDisposable>  
   
- Je možné deklarovat několik proměnných v jednom příkazu bez nutnosti opakování datového typu. V následující příkazy, proměnné `i`, `j`, a `k` jsou deklarovány jako typ `Integer`, `l` a `m` jako `Long`, a `x` a `y` jako `Single`:  
+ Můžete deklarovat několik proměnných v jednom příkazu bez nutnosti opakovat datový typ. V následujících příkazech jsou proměnné `i`, `j` a `k` deklarované jako typ `Integer`, `l` a `m` jako `Long` a `y` a  jako `Single`:  
   
-```  
+```vb  
 Dim i, j, k As Integer  
 ' All three variables in the preceding statement are declared as Integer.  
 Dim l, m As Long, x, y As Single  
 ' In the preceding statement, l and m are Long, x and y are Single.  
 ```  
   
- Další informace o typech dat najdete v části [datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md). Další informace o objektech naleznete v tématu [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) a [programování pomocí komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
+ Další informace o typech dat najdete v tématu [datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md). Další informace o objektech naleznete v tématu [objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) a [programování pomocí komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
   
 ## <a name="local-type-inference"></a>Odvození místního typu  
- *Odvození typu* slouží k určení typů dat místní proměnné deklarované bez `As` klauzuli. Kompilátor odvodí typ proměnné z typu výrazu inicializace. To umožňuje deklarovat proměnné bez explicitní uvedení typu. V následujícím příkladu obě `num1` a `num2` jsou silného typu jako celá čísla.  
+ *Odvození typu* se používá k určení datových typů místních proměnných deklarovaných bez klauzule `As`. Kompilátor odvodí typ proměnné z typu inicializačního výrazu. To umožňuje deklarovat proměnné bez explicitního oznámení typu. V následujícím příkladu jsou oba `num1` a `num2` silně typu Integer.  
   
  [!code-vb[VbVbalrTypeInference#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#1)]  
   
- Pokud chcete použít odvození místního typu `Option Infer` musí být nastaveno na `On`. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md) a [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
+ Pokud chcete použít odvození místního typu, `Option Infer` musí být nastaven na `On`. Další informace naleznete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md) a [příkaz k odvození možnosti](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
   
-## <a name="characteristics-of-declared-variables"></a>Vlastnosti deklarované proměnné  
- *Životnost* proměnné je časové období, během které je k dispozici pro použití. Obecně platí proměnná existuje jako prvek, který deklaruje (například procedury nebo třídy) i nadále existovat. Pokud proměnná není potřeba pokračovat, existující za dobu života jeho nadřazeného elementu, není potřeba dělat nic zvláštního v deklaraci. Pokud proměnná je potřeba pokračovat déle než jeho nadřazený element, můžete zahrnout `Static` nebo `Shared` – klíčové slovo v jeho `Dim` příkazu. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+## <a name="characteristics-of-declared-variables"></a>Charakteristiky deklarovaných proměnných  
+ *Doba života* proměnné je doba, po kterou je možné ji použít. Obecně platí, že proměnná existuje, pokud element, který ji deklaruje (například procedura nebo třída), nadále existují. Pokud proměnná nemusí pokračovat po dobu životnosti jejího obsahujícího prvku, nemusíte v deklaraci provádět žádné zvláštní akce. Pokud proměnná potřebuje nadále existovat, než obsahuje element, můžete do svého příkazu `Dim` zahrnout klíčové slovo `Static` nebo `Shared`. Další informace najdete v tématu [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
- *Oboru* proměnné je sada veškerý kód, který na ni můžete odkazovat bez kvalifikace názvu. Obor proměnné je určeno ve kterém je deklarována. Proměnné definované v dané oblasti, aniž byste museli kvalifikovat jejich názvy můžete použít kód umístěný v dané oblasti. Další informace najdete v tématu [obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
+ *Rozsah* proměnné je sada veškerého kódu, který se na něj může odkazovat bez kvalifikovaného názvu. Rozsah proměnné je určen podle toho, kde je deklarována. Kód umístěný v dané oblasti může používat proměnné definované v této oblasti, aniž by bylo nutné kvalifikovat jejich názvy. Další informace najdete v tématu věnovaném [oboru v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
- Proměnné *úroveň přístupu* je rozsah kód, který má oprávnění k přístupu. Ta se určují podle modifikátor přístupu (například [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) nebo [privátní](../../../../visual-basic/language-reference/modifiers/private.md)), který používáte v `Dim` příkaz. Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ *Úroveň přístupu* proměnné je rozsah kódu, který má oprávnění k přístupu. To je určeno modifikátorem přístupu (například [veřejným](../../../../visual-basic/language-reference/modifiers/public.md) nebo [soukromým](../../../../visual-basic/language-reference/modifiers/private.md)), který používáte v příkazu `Dim`. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Vytvoření nové proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)
-- [Postupy: Přesun dat do a z proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)
+- [Postupy: Přesun dat do proměnné a z proměnné](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)

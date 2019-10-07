@@ -8,72 +8,67 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: f34b5d512a8054b0ab0d3fba54525801eb560143
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: af441c0fd040897ebcd7af2edd6122a47e70468a
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040464"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002130"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion – (C# možnosti kompilátoru)
 
-Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena ve C# zvolené specifikaci jazyka.  
-  
-## <a name="syntax"></a>Syntaxe  
+Způsobí, že kompilátor přijme pouze syntaxi, která je obsažena ve C# zvolené specifikaci jazyka.
+
+## <a name="syntax"></a>Syntaxe
 
 ```console
--langversion:option  
+-langversion:option
 ```
 
 ## <a name="arguments"></a>Arguments
 
  `option`  
- Platné jsou následující hodnoty:  
-  
-|Možnost|Význam|  
-|------------|-------------|  
-|preview|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview, kterou může podporovat.|
-|latest|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze (včetně dílčích verzí), které může podporovat.|
-|latestMajor|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější hlavní verze, kterou může podporovat.|
-|8.0|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 8,0 nebo nižší. <sup id="TCS80">[CS80](#FCS80)</sup>|
-|7.3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší <sup id="TCS73">CS73</sup>|
-|7.2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší <sup id="TCS72">CS72</sup>|
-|7.1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší <sup id="TCS71">CS71</sup>|
-|7|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší <sup id="TCS7">CS7</sup>|
-|6|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 6,0 nebo nižší <sup id="TCS6">CS6</sup>|
-|5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší <sup id="TCS5">CS5</sup>|
-|4|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 4,0 nebo nižším <sup id="TCS4">CS4</sup> .|
-|3|Kompilátor přijímá jenom syntaxi, která je zahrnutá C# v 3,0 nebo nižší části <sup id="TCS3">CS3</sup> .|
-|ISO-2|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2006 (2,0) <sup id="TISO2">ISO2</sup>|
-|ISO-1|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2003 (1.0/1.2) <sup id="TISO1">ISO1</sup>|  
+ Platné jsou následující hodnoty:
 
-Výchozí jazyková verze závisí na cílové architektuře vaší aplikace a na nainstalované verzi sady SDK nebo sady Visual Studio. Tato pravidla jsou definovaná v článku o [konfiguraci jazykové verze](../configure-language-version.md#defaults) .
+|Možnost|Význam|
+|------------|-------------|
+|Tisk|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze Preview, kterou může podporovat.|
+|nejnovější|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější verze (včetně dílčích verzí), které může podporovat.|
+|latestMajor|Kompilátor přijímá všechny platné jazykové syntaxe z nejnovější hlavní verze, kterou může podporovat.|
+|8.0|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 8,0 nebo nižší.|
+|7,3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,3 nebo nižší.|
+|7,2|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,2 nebo nižší.|
+|7,1|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,1 nebo nižší.|
+|čl|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 7,0 nebo nižší.|
+|6|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 6,0 nebo nižší.|
+|5|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 5,0 nebo nižší.|
+|4|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 4,0 nebo nižší.|
+|3|Kompilátor přijímá pouze syntaxi, která je obsažena C# v 3,0 nebo nižší.|
+|ISO-2|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2006 (2,0).|
+|ISO-1|Kompilátor přijímá pouze syntaxi, která je obsažena v normě ISO C# /IEC 23270:2003 (1.0/1.2).|
+
+Výchozí jazyková verze závisí na cílové architektuře vaší aplikace a na nainstalované verzi sady SDK nebo sady Visual Studio. Tato pravidla jsou definována v článku [Konfigurace jazykové verze](../configure-language-version.md#defaults) .
 
 ## <a name="remarks"></a>Poznámky
 
- Metadata, na která C# odkazuje vaše aplikace, nepodléhají možnosti kompilátoru **-langversion –** .  
+Metadata, na která C# odkazuje vaše aplikace, nepodléhají možnosti kompilátoru **-langversion –** .
   
- Vzhledem k tomu, že C# každá verze kompilátoru obsahuje rozšíření jazykové specifikace, **-langversion –** neposkytuje ekvivalentní funkce starší verze kompilátoru.  
+Vzhledem k tomu, že C# každá verze kompilátoru obsahuje rozšíření jazykové specifikace, **-langversion –** neposkytuje ekvivalentní funkce starší verze kompilátoru.
 
- Kromě toho i C# když se aktualizace verze obecně shodují s hlavními .NET Framework verzemi, Nová syntaxe a funkce nejsou nutně vázané na konkrétní verzi Frameworku. I když nové funkce budou jednoznačně vyžadovat novou aktualizaci kompilátoru, která se také vydává C# společně s revizí, každá konkrétní funkce má své vlastní minimální požadavky na rozhraní .NET API nebo modul CLR (Common Language Runtime), které by mohly umožňovat jeho spuštění v rámci architektury nižší verze včetně balíčků NuGet nebo jiných knihoven.
-  
- Bez ohledu na to, který parametr **-langversion –** použijete, použijete aktuální verzi modulu CLR (Common Language Runtime) k vytvoření souboru. exe nebo. dll. Jedinou výjimkou jsou Friend sestavení a [-moduleassemblyname –C# (možnost kompilátoru)](./moduleassemblyname-compiler-option.md), která funguje v rámci **-langversion –: ISO-1**.  
+Kromě toho i C# když se aktualizace verze obecně shodují s hlavními .NET Framework verzemi, Nová syntaxe a funkce nejsou nutně vázané na konkrétní verzi Frameworku. I když nové funkce budou jednoznačně vyžadovat novou aktualizaci kompilátoru, která se také vydává C# společně s revizí, každá konkrétní funkce má své vlastní minimální požadavky na rozhraní .NET API nebo modul CLR (Common Language Runtime), které by mohly umožňovat jeho spuštění v rámci architektury nižší verze včetně balíčků NuGet nebo jiných knihoven.
 
- Další způsoby, jak určit C# jazykovou verzi, najdete v tématu věnovaném [ C# jazykové verzi](../configure-language-version.md) .
-  
- Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete <xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>v tématu.  
+Bez ohledu na to, který parametr **-langversion –** použijete, použijete aktuální verzi modulu CLR (Common Language Runtime) k vytvoření souboru. exe nebo. dll. Jedinou výjimkou jsou Friend sestavení a [-moduleassemblyname –C# (možnost kompilátoru)](./moduleassemblyname-compiler-option.md), která funguje v rámci **-langversion –: ISO-1**.  
 
-## <a name="see-also"></a>Viz také:
+Další způsoby, jak určit C# jazykovou verzi, najdete v článku věnovaném [ C# jazykové verzi](../configure-language-version.md) .
 
-- [Možnosti kompilátoru jazyka C#](index.md)
-- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+Informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>.
 
 ### <a name="c-language-specification"></a>Specifikace jazyka C#
 
-|Version|Odkaz|Popis|
+|Version|Propojit|Popis|
 |-------|----|-----------|
 |C#7,0 a novější||momentálně není k dispozici|
-|C#6,0|[Odkaz](../language-specification/index.md)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
+|C#6,0|[Propojit](../language-specification/index.md)|C#Specifikace jazyka verze 6 – neoficiální koncept: .NET Foundation|
 |C#5,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf)|Standard ECMA-334 5. edice|
 |C#3,0|[Stáhnout dokument](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|C#Specifikace jazyka verze 3,0: Microsoft Corporation|
 |C#2,0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-334%204th%20edition%20June%202006.pdf)|Standard ECMA – 334 4. edice|
@@ -82,14 +77,19 @@ Výchozí jazyková verze závisí na cílové architektuře vaší aplikace a n
 
 ### <a name="minimum-compiler-version-needed-to-support-all-language-features"></a>Minimální verze kompilátoru, která je potřeba pro podporu všech funkcí jazyka
 
-[↩](#TCS80)<a name="FCS80">CS80</a>: Microsoft Visual Studio/Build Tools 2019, verze 16 nebo .NET Core 3,0 SDK  
-[↩](#TCS73)<a name="FCS73">CS73</a>: Microsoft Visual Studio/Build Tools 2017, verze 15,7  
-[↩](#TCS72)<a name="FCS72">CS72</a>: Microsoft Visual Studio/Build Tools 2017, verze 15,5  
-[↩](#TCS71)<a name="FCS71">CS71</a>: Microsoft Visual Studio/Build Tools 2017, verze 15,3  
-[↩](#TCS7)<a name="FCS7">CS7</a>: Microsoft Visual Studio/Build Tools 2017  
-[↩](#TCS6)<a name="FCS6">CS6</a>: Microsoft Visual Studio/Build Tools 2015  
-[↩](#TCS5)<a name="FCS5">CS5</a>: Microsoft Visual Studio/Build Tools 2012 nebo .NET Framework 4,5 kompilátor  
-[↩](#TCS4)<a name="FCS4">CS4</a>: Microsoft Visual Studio/Build Tools 2010 nebo .NET Framework 4,0 kompilátor  
-[↩](#TCS3)<a name="FCS3">CS3</a>: Microsoft Visual Studio/Build Tools 2008 nebo .NET Framework 3,5 kompilátor  
-[↩](#TISO2)<a name="FISO2">ISO2</a>: Microsoft Visual Studio/Build Tools 2005 nebo .NET Framework 2,0 kompilátor  
-[↩](#TISO1)<a name="FISO1">ISO1</a>: Microsoft Visual Studio/Build Tools .NET 2002 nebo sady. Kompilátor N rozhraní 1,0  
+CS80: Microsoft Visual Studio/Build Tools 2019, verze 16 nebo .NET Core 3,0 SDK  
+CS73: Microsoft Visual Studio/Build Tools 2017, verze 15,7  
+CS72: Microsoft Visual Studio/Build Tools 2017, verze 15,5  
+CS71: Microsoft Visual Studio/Build Tools 2017, verze 15,3  
+CS7: Microsoft Visual Studio/Build Tools 2017  
+CS6: Microsoft Visual Studio/Build Tools 2015  
+CS5: Microsoft Visual Studio/Build Tools 2012 nebo .NET Framework 4,5 kompilátor  
+CS4: Microsoft Visual Studio/Build Tools 2010 nebo .NET Framework 4,0 kompilátor  
+CS3: Microsoft Visual Studio/Build Tools 2008 nebo .NET Framework 3,5 kompilátor  
+ISO2: Microsoft Visual Studio/Build Tools 2005 nebo .NET Framework 2,0 kompilátor  
+ISO1: Microsoft Visual Studio/Build Tools .NET 2002 nebo sady. Kompilátor N rozhraní 1,0  
+
+## <a name="see-also"></a>Viz také:
+
+- [Možnosti kompilátoru jazyka C#](index.md)
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

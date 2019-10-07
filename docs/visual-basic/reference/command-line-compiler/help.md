@@ -9,21 +9,25 @@ helpviewer_keywords:
 - -? compiler option [Visual Basic]
 - '? compiler option [Visual Basic]'
 ms.assetid: eb984aa5-ac98-4d0b-a0d2-24238d7bc8dc
-ms.openlocfilehash: 287a2ed3f54f85435a986d3a6ecd77f7009fb195
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 33b1837415001253122388f7b4992abf6f96903f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938226"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005601"
 ---
 # <a name="-help---visual-basic"></a>-help, -? (Visual Basic)
 Zobrazí možnosti kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -help  
-' -or-  
+```
+
+or  
+
+```console
 -?  
 ```  
   
@@ -31,12 +35,12 @@ Zobrazí možnosti kompilátoru.
  Pokud zahrnete tuto možnost do kompilace, není vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
   
 > [!NOTE]
-> Tato `-help` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
+> Možnost `-help` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zobrazí pomocníka z příkazového řádku.  
   
-```  
+```console  
 vbc -help  
 ```  
   
