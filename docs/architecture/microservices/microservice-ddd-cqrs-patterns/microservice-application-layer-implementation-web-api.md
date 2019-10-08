@@ -1,13 +1,13 @@
 ---
-title: Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
+title: Implementace aplikační vrstvy mikroslužby pomocí webového rozhraní API
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Seznamte se s vkládáním závislostí a vzorci a jejich podrobnostmi o implementaci v aplikační vrstvě webového rozhraní API.
 ms.date: 10/08/2018
-ms.openlocfilehash: 0f6f47dd5f67fb18695715e5cfc9179206ef6bcf
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: d462f692366575fd01842f41252fc96658fdcac5
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834356"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72002331"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implementace aplikační vrstvy mikroslužeb pomocí webového rozhraní API
 
@@ -107,7 +107,7 @@ Nejběžnějším vzorem při registraci typů v kontejneru IoC je registrace p�
 
 Při použití funkce DI v .NET Core můžete chtít skenovat sestavení a automaticky registrovat jeho typy podle konvencí. Tato funkce není v současnosti k dispozici v ASP.NET Core. Pro to však můžete použít knihovnu [Scrutor](https://github.com/khellang/Scrutor) . Tento přístup je vhodný, když máte desítky typů, které je třeba registrovat v kontejneru IoC.
 
-#### <a name="additional-resources"></a>Další zdroje informací:
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Matthew krále. Registrace služeb pomocí Scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
@@ -162,7 +162,7 @@ Typ rozsahu instance Určuje, jak je instance sdílena mezi požadavky na stejno
 
 - Jedna instance sdílená napříč všemi objekty pomocí kontejneru IoC (dále v kontejneru ASP.NET Core IoC jako *singleton*).
 
-#### <a name="additional-resources"></a>Další zdroje informací:
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Úvod do injektáže závislosti v ASP.NET Core** \
   [https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection](/aspnet/core/fundamentals/dependency-injection)
@@ -392,7 +392,7 @@ Jedná se o další kroky, které by měla obslužná rutina příkazu provést:
 
 - Pokud je výsledkem operace agregace úspěch a po dokončení transakce, vyvolejte integrační události. (Ty můžou být vyvolány i třídami infrastruktury, jako jsou úložiště.)
 
-#### <a name="additional-resources"></a>Další zdroje informací:
+#### <a name="additional-resources"></a>Další zdroje
 
 - **Označte Seemann. V hranicích nejsou aplikace orientované na objekt** \.
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
@@ -502,7 +502,7 @@ public async Task<IActionResult> ExecuteBusinessOperation([FromBody]RunOpCommand
 
 ### <a name="implement-idempotent-commands"></a>Implementace příkazů idempotentní
 
-V **eShopOnContainers**, pokročilejší příklad, který je uveden výše, odesílá objekt CreateOrderCommand z řazení mikroslužeb. Ale vzhledem k tomu, že je obchodní proces objednávání trochu složitější a v našem případě se ve skutečnosti zahájí v rámci služby koš, tato akce odeslání objektu CreateOrderCommand je prováděna z obslužné rutiny události Integration-Event s názvem > UserCheckoutAcceptedIntegrationEvent.cs] (https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) namísto jednoduchého kontroleru WebAPI, který se volá z klientské aplikace jako v předchozím jednodušším příkladu.
+V **eShopOnContainers**, pokročilejší příklad, který je uveden výše, odesílá objekt CreateOrderCommand z řazení mikroslužeb. Ale vzhledem k tomu, že je obchodní proces objednávání trochu složitější a v našem případě se ve skutečnosti zahájí v rámci služby koš, tato akce odeslání objektu CreateOrderCommand je prováděna z obslužné rutiny události Integration-Event s názvem [ UserCheckoutAcceptedIntegrationEvent](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) místo jednoduchého kontroleru WebApi volaného z klientské aplikace jako v předchozím jednodušším příkladu.
 
 Nicméně akce odeslání příkazu do MediatR je poměrně podobná, jak je znázorněno v následujícím kódu.
 
@@ -793,7 +793,7 @@ Mohli byste vytvořit další ověření. Jedná se o velmi čistý a elegantní
 
 Podobným způsobem můžete implementovat jiné chování pro další aspekty nebo problémy mimo průřez, které chcete použít pro příkazy při jejich zpracování.
 
-#### <a name="additional-resources"></a>Další zdroje informací:
+#### <a name="additional-resources"></a>Další zdroje
 
 ##### <a name="the-mediator-pattern"></a>Vzor zprostředkovatelů
 
@@ -837,4 +837,5 @@ Podobným způsobem můžete implementovat jiné chování pro další aspekty n
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]
-> [Předchozí](microservice-application-layer-web-api-design.md)@no__t – 1 –[Další](../implement-resilient-applications/index.md)
+> [Předchozí](microservice-application-layer-web-api-design.md)
+> [Další](../implement-resilient-applications/index.md)
