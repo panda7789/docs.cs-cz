@@ -10,24 +10,24 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: f7d69f299b0b7638d6f8052e6aa0e77fac39c8e4
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 18a8037b6b4433a4a83860eae205174f3036d6e8
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016103"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005011"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
-Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] s vaší aplikací.  
+Toto téma poskytuje přehled o tom, jak zabalit písma pomocí aplikace [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 > [!NOTE]
 > Stejně jako u většiny typů softwaru jsou soubory písem licencované a nikoli prodávatelné. Licence, které řídí použití písem, se liší od dodavatele k dodavatelům, ale obecně většinou licencí, včetně těch, které se týkají písem, která Microsoft dodává s aplikacemi a Windows, nedovolují vkládání písem do aplikací ani jiné distribuci. Proto je jako vývojář zodpovědný za to, že máte požadovaná licenční práva pro všechna písma vložená v rámci aplikace nebo jinak znovu distribuovat.  
 
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Úvod do balení písem  
- Můžete snadno zabalit písma jako prostředky v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rámci svých aplikací, aby se zobrazil text uživatelského rozhraní a další typy textových obsahu. Písma mohou být oddělena nebo vložena do souborů sestavení aplikace. Můžete také vytvořit knihovnu písem pouze pro prostředky, kterou může vaše aplikace odkazovat.  
+ Můžete snadno zabalit písma jako prostředky v aplikacích [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a zobrazit tak text uživatelského rozhraní a další typy textových obsahu. Písma mohou být oddělena nebo vložena do souborů sestavení aplikace. Můžete také vytvořit knihovnu písem pouze pro prostředky, kterou může vaše aplikace odkazovat.  
   
- Písma OpenType [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] a Font obsahují příznak typu fsType, který označuje licenční práva pro vkládání písem. Tento příznak typu se však vztahuje pouze na vložená písma uložená v dokumentu – neodkazuje se na písma vložená v aplikaci. Můžete načíst práva pro vkládání písma pro písmo vytvořením <xref:System.Windows.Media.GlyphTypeface> objektu a odkazování na jeho <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A> vlastnost. Další informace o příznaku fsType najdete v části "OS/2 a metriky Windows" v tématu [specifikace OpenType](https://www.microsoft.com/typography/otspec/os2.htm) .  
+ Písma OpenType a TrueType® obsahují příznak typu fsType, který označuje licenční práva pro vkládání písem. Tento příznak typu se však vztahuje pouze na vložená písma uložená v dokumentu – neodkazuje se na písma vložená v aplikaci. Můžete načíst práva pro vkládání písma pro písmo vytvořením objektu <xref:System.Windows.Media.GlyphTypeface> a odkazem na jeho vlastnost <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A>. Další informace o příznaku fsType najdete v části "OS/2 a metriky Windows" v tématu [specifikace OpenType](https://www.microsoft.com/typography/otspec/os2.htm) .  
   
  Web [Typografie společnosti Microsoft](https://docs.microsoft.com/typography/) obsahuje kontaktní informace, které vám pomůžou najít konkrétního dodavatele písma nebo najít dodavatele písma pro vlastní práci.  
   
@@ -47,7 +47,7 @@ Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_wincli
 </Project>  
 ```  
   
- Aby bylo zajištěno, že aplikace bude moci používat písma v době běhu, musí být písma přístupná v adresáři nasazení aplikace. `<CopyToOutputDirectory>` Element v souboru projektu aplikace umožňuje automaticky Kopírovat písma do adresáře nasazení aplikace během procesu sestavení. Následující příklad souboru projektu ukazuje, jak zkopírovat písma do adresáře nasazení.  
+ Aby bylo zajištěno, že aplikace bude moci používat písma v době běhu, musí být písma přístupná v adresáři nasazení aplikace. Element `<CopyToOutputDirectory>` v souboru projektu aplikace umožňuje automaticky Kopírovat písma do adresáře nasazení aplikace během procesu sestavení. Následující příklad souboru projektu ukazuje, jak zkopírovat písma do adresáře nasazení.  
   
 ```xml  
 <ItemGroup>  
@@ -81,19 +81,19 @@ Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_wincli
 ```  
   
 > [!NOTE]
-> Když přidáte písma jako prostředky do aplikace, ujistěte se, že nastavujete `<Resource>` prvek a `<EmbeddedResource>` nikoli element v souboru projektu vaší aplikace. `<EmbeddedResource>` Element pro akci sestavení není podporován.  
+> Když přidáte písma jako prostředky do aplikace, ujistěte se, že nastavujete prvek `<Resource>` a ne prvek `<EmbeddedResource>` v souboru projektu vaší aplikace. Element `<EmbeddedResource>` pro akci sestavení není podporován.  
   
  Následující příklad kódu ukazuje, jak odkazovat na prostředky písma aplikace.  
   
  [!code-xaml[FontSnippets#FontPackageSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
   
 ### <a name="referencing-font-resource-items-from-code"></a>Odkazování na položky prostředků písma z kódu  
- Chcete-li odkazovat na položky prostředků písma z kódu, je nutné dodat odkaz na prostředek o dvou částech: základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]a odkaz na umístění písma. Tyto hodnoty se používají jako parametry pro <xref:System.Windows.Media.FontFamily.%23ctor%2A> metodu. Následující příklad kódu ukazuje, jak odkazovat na prostředky písma aplikace v podadresáři projektu s názvem `resources`.  
+ Chcete-li odkazovat na položky prostředků písma z kódu, je nutné dodat odkaz na prostředek o dvou částech: základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]; a odkaz na umístění písma. Tyto hodnoty se používají jako parametry pro metodu <xref:System.Windows.Media.FontFamily.%23ctor%2A>. Následující příklad kódu ukazuje, jak odkazovat na prostředky písma aplikace v podadresáři projektu s názvem `resources`.  
   
  [!code-csharp[FontSnippets#FontPackageSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
  [!code-vb[FontSnippets#FontPackageSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
   
- Základem [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] může být adresář aplikace, ve kterém se nachází prostředek písma. V takovém případě odkaz na umístění písma nepotřebuje zadat adresář, ale musel by obsahovat úvodní`./`znak "", což znamená, že se prostředek písma nachází ve stejném adresáři určeném základem. [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] Následující příklad kódu ukazuje alternativní způsob odkazování na položku prostředku písma – je ekvivalentní k předchozímu příkladu kódu.  
+ Základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] může zahrnovat podadresář aplikace, ve kterém se nachází prostředek písma. V takovém případě by odkaz na umístění písma nemusel zadat adresář, ale musel by obsahovat úvodní "`./`", což znamená, že se prostředek písma nachází ve stejném adresáři určeném základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]. Následující příklad kódu ukazuje alternativní způsob odkazování na položku prostředku písma – je ekvivalentní k předchozímu příkladu kódu.  
   
  [!code-csharp[FontSnippets#FontPackageSnippet5](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet5)]
  [!code-vb[FontSnippets#FontPackageSnippet5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet5)]  
@@ -119,12 +119,12 @@ Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_wincli
  [!code-vb[FontSnippets#FontPackageSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/pages/homepage.xaml.vb#fontpackagesnippet4)]  
   
 ### <a name="enumerating-fonts-in-an-application"></a>Vyčíslení písem v aplikaci  
- Chcete-li vytvořit výčet písem jako položek prostředků v aplikaci, použijte <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> buď <xref:System.Windows.Media.Fonts.GetTypefaces%2A> metodu, nebo. Následující příklad ukazuje, jak použít <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> metodu pro vrácení <xref:System.Windows.Media.FontFamily> kolekce objektů z umístění písma aplikace. V tomto případě aplikace obsahuje podadresář s názvem "Resources".  
+ Chcete-li vytvořit výčet písem jako položek prostředků v aplikaci, použijte buď metodu <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> nebo <xref:System.Windows.Media.Fonts.GetTypefaces%2A>. Následující příklad ukazuje, jak použít metodu <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> pro vrácení kolekce objektů <xref:System.Windows.Media.FontFamily> z umístění písma aplikace. V tomto případě aplikace obsahuje podadresář s názvem "Resources".  
   
  [!code-csharp[FontSnippets#FontsSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet3)]
  [!code-vb[FontSnippets#FontsSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet3)]  
   
- Následující příklad ukazuje, jak použít <xref:System.Windows.Media.Fonts.GetTypefaces%2A> metodu pro vrácení <xref:System.Windows.Media.Typeface> kolekce objektů z umístění písma aplikace. V tomto případě aplikace obsahuje podadresář s názvem "Resources".  
+ Následující příklad ukazuje, jak použít metodu <xref:System.Windows.Media.Fonts.GetTypefaces%2A> pro vrácení kolekce objektů <xref:System.Windows.Media.Typeface> z umístění písma aplikace. V tomto případě aplikace obsahuje podadresář s názvem "Resources".  
   
  [!code-csharp[FontSnippets#FontsSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet7)]
  [!code-vb[FontSnippets#FontsSnippet7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet7)]  
@@ -152,21 +152,21 @@ Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_wincli
  [!code-xaml[OpenTypeFontsSample#OpenTypeFontsSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
   
 > [!NOTE]
-> Tato sada SDK obsahuje sadu ukázkových písem OpenType, která můžete používat s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacemi. Písma jsou definována v knihovně určené pouze pro prostředky. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
+> Tato sada SDK obsahuje sadu ukázkových písem OpenType, která můžete použít s aplikacemi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Písma jsou definována v knihovně určené pouze pro prostředky. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
 <a name="limitations_on_font_usage"></a>   
 ## <a name="limitations-on-font-usage"></a>Omezení používání písem  
- Následující seznam popisuje několik omezení pro balení a používání písem v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacích:  
+ Následující seznam popisuje několik omezení pro balení a používání písem v aplikacích [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
   
-- **Bity oprávnění k vkládání písem:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace nekontrolují ani vynutily žádné bity oprávnění vkládání písem. Další informace najdete v části [Fonts Introduction_to_Packing](#introduction_to_packaging_fonts) .  
+- **Bity oprávnění k vkládání písem:** aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nekontrolují ani vynutily žádné bity oprávnění vkládání písem. Další informace najdete v části [Fonts Introduction_to_Packing](#introduction_to_packaging_fonts) .  
   
-- **Umístění původních písem:** aplikace nepovolují odkaz na písmo http nebo FTP [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]  
+- **Umístění původních písem:** aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepovolují odkaz na písmo @no__t http nebo FTP-2.  
   
-- **Absolutní identifikátor URI pomocí balíčku: Notation:** aplikace neumožňují <xref:System.Windows.Media.FontFamily> vytvořit objekt programově pomocí příkazu Pack: jako součást absolutního [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkazu na písmo. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Například `"pack://application:,,,/resources/#Pericles Light"` je neplatný odkaz na písmo.  
+- **Absolutní identifikátor URI pomocí balíčku: Notation:** aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neumožňují vytvořit objekt <xref:System.Windows.Media.FontFamily> programově pomocí příkazu Pack: jako součást absolutního odkazu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] na písmo. Například `"pack://application:,,,/resources/#Pericles Light"` je neplatný odkaz na písmo.  
   
 - **Automatické vkládání písem:** Během návrhu není dostupná žádná podpora pro hledání použití písem aplikace a automatické vkládání písem do prostředků aplikace.  
   
-- **Podsady písem:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace nepodporují vytváření podmnožin písem pro nepevné dokumenty.  
+- **Sady písem:** aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nepodporují vytváření podmnožin písem pro nepevné dokumenty.  
   
 - V případech, kdy je k dispozici nesprávný odkaz, se aplikace vrátí k použití dostupného písma.  
   
@@ -174,7 +174,7 @@ Toto téma poskytuje přehled o tom, jak zabalit písma [!INCLUDE[TLA#tla_wincli
 
 - <xref:System.Windows.Documents.Typography>
 - <xref:System.Windows.Media.FontFamily>
-- [Typografie Microsoftu: Odkazy, novinky a kontakty](https://docs.microsoft.com/typography/)
+- [Typografie Microsoft – odkazy, novinky a kontakty](https://docs.microsoft.com/typography/)
 - [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
 - [Funkce písma OpenType](opentype-font-features.md)
 - [Ukázková sada písem OpenType](sample-opentype-font-pack.md)

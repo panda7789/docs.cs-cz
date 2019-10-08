@@ -1,35 +1,35 @@
 ---
-title: 'Postupy: Objekt nastavení proměnné, aby neodkazovala na žádnou instanci (Visual Basic)'
+title: 'Postupy: Nastavení proměnné objektu tak, aby neodkazovala na žádnou instanci (Visual Basic).'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Nothing keyword [Visual Basic], variable assignment
 - object variables [Visual Basic], null reference
 ms.assetid: e6d30578-bdae-4142-a3ac-a10697bf696a
-ms.openlocfilehash: 820d4cb9d17bf467d257bfbba5f43f07228c0b4f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e647f2f891b06aa1767faac49b01df98ea31ec1c
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663558"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004912"
 ---
-# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a>Postupy: Objekt nastavení proměnné, aby neodkazovala na žádnou instanci (Visual Basic)
-Proměnné objektu z libovolné instance objektu můžete zrušit nastavením na [nic](../../../../visual-basic/language-reference/nothing.md).  
+# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a>Postupy: Nastavení proměnné objektu tak, aby neodkazovala na žádnou instanci (Visual Basic).
+Můžete zrušit přidružení objektové proměnné z libovolné instance objektu nastavením na [hodnotu Nothing](../../../../visual-basic/language-reference/nothing.md).  
   
-### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a>Zrušit přiřazení proměnné objektu z libovolné instance objektu  
+### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a>Zrušení přidružení objektové proměnné od libovolné instance objektu  
   
 - Nastavte proměnnou na `Nothing` v příkazu přiřazení.  
   
-    ```  
+    ```vb  
     ' Assume account is a defined class  
     Dim currentAccount As account  
     currentAccount = Nothing  
     ```  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Pokud váš kód se pokusí o přístup ke členu objektu proměnné, která byla nastavena na `Nothing`, <xref:System.NullReferenceException> vyvolá. Pokud nastavíte proměnné objektu na `Nothing` často, nebo pokud je to možné, proměnná není inicializovaná, je vhodné k uzavření přístupu členů v `Try...Catch...Finally` bloku.  
+ Pokud se váš kód pokusí o přístup k členu proměnné objektu, která je nastavená na `Nothing`, dojde k <xref:System.NullReferenceException>. Pokud nastavíte proměnnou objektu na hodnotu `Nothing` často, nebo pokud je možné, že proměnná není inicializována, je vhodné uzavřít přístup členů do bloku `Try...Catch...Finally`.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Pokud používáte proměnné objektu pro objekty, které obsahují důvěrné nebo citlivé údaje, můžete nastavit proměnnou `Nothing` při nezabýváte aktivně se jeden z těchto objektů. To snižuje riziko škodlivý kód, získání přístupu k datům.  
+ Použijete-li proměnnou objektu pro objekty, které obsahují důvěrné nebo citlivé údaje, můžete nastavit proměnnou na hodnotu `Nothing`, pokud se neaktivně nepracujete s jedním z těchto objektů. To snižuje riziko, že škodlivý kód získá přístup k datům.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -2,71 +2,77 @@
 title: Zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: 34f4f11176b3827ec3e4622944ffe02be5207df9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6c0d676a37648678b2b726a46a6238ccc1b3331
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856680"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72004885"
 ---
-# <a name="error-handling"></a>Zpracování chyb
-## <a name="error-handling-in-windows-communication-foundation"></a>Zpracování chyb v Windows Communication Foundation  
- Když služba dojde k neočekávané výjimce nebo chyba, existuje více způsobů návrhu řešení typu zpracování výjimek. Když neexistuje žádné jedno "Opravit" nebo "co nejlépe praxi" zpracování chyb řešení, existuje více cest platná pro jeden vzít v úvahu. Obvykle je vhodné, že jedna implementace hybridní řešení, která kombinuje několik přístupů ze seznamu níže, v závislosti na složitosti implementace WCF, typ a frekvenci výjimek, zpracováván vs. neošetřené povaze výjimky a všechny související požadavky zásad, trasování a protokolování.  
+# <a name="error-handling-in-windows-communication-foundation-wcf"></a>Zpracování chyb v Windows Communication Foundation (WCF)
+
+Když dojde k neočekávané výjimce nebo chybě služby, existuje několik způsobů, jak navrhnout řešení pro zpracování výjimek. I když není k dispozici žádný jediný "správný" nebo "osvědčený postup" řešení pro zpracování chyb, existuje několik platných cest pro jeden, který je třeba zvážit. Obvykle se doporučuje, aby jedna implementovala hybridní řešení, které kombinuje více přístupů ze seznamu níže v závislosti na složitosti implementace WCF, typu a četnosti výjimek, zpracovaných a nezpracovaných povaze. výjimky a všechny přidružené trasování, protokolování nebo požadavky zásad.
+
+Tato řešení jsou podrobněji vysvětlena ve zbývající části tohoto oddílu.
+
+## <a name="the-microsoft-enterprise-library"></a>Microsoft Enterprise Library
+
+Blok aplikace pro zpracování výjimek Microsoft Enterprise Library pomáhá implementovat běžné vzory návrhu a vytvořit konzistentní strategii pro zpracování výjimek, ke kterým dochází ve všech vrstvách architektury podnikové aplikace. Je navržena tak, aby podporovala typický kód obsažený v příkazech catch v součástech aplikace. Místo opakování tohoto kódu (například kódu, který protokoluje informace o výjimce) ve stejných blocích catch v rámci aplikace, blok aplikace pro zpracování výjimek umožňuje vývojářům zapouzdřit tuto logiku jako opakovaně použitelné obslužné rutiny výjimek.
+
+Tato knihovna obsahuje předem zastaralou obslužnou rutinu výjimky smlouvy o selhání. Tato obslužná rutina výjimky je navržena pro použití v hranicích služby WCF a generuje novou kontrakt chyby z výjimky.
+
+Aplikační bloky mají za cíl zahrnovat běžně používané osvědčené postupy a poskytují společný přístup k zpracování výjimek v celé vaší aplikaci. Na druhé straně vlastní obslužné rutiny chyb a smlouvy o selhání vyvíjené na vlastní může být také velmi užitečné. Například vlastní obslužné rutiny chyb poskytují vynikající možnost automaticky propagovat všechny výjimky na FaultExceptions a také přidávat možnosti protokolování do aplikace.
+
+Další informace najdete v tématu [Microsoft Enterprise Library](https://docs.microsoft.com/previous-versions/msp-n-p/ff632023(v=pandp.10)).
+
+## <a name="dealing-with-expected-exceptions"></a>Zvládnutí očekávaných výjimek
+
+Správným postupem je zachytit očekávaná výjimka v každé operaci nebo v příslušném bodu rozšiřitelnosti, rozhodnout, zda je lze obnovit z a vrátit správnou vlastní chybu v FaultException @ no__t-0T >.
   
- Tato řešení jsou vysvětleny hlouběji ve zbytku této části.  
-  
-### <a name="the-microsoft-enterprise-library"></a>Microsoft Enterprise Library  
- Microsoft Enterprise Library výjimka Handling Application Block pomáhá implementovat běžné vzory návrhu a vytvořit konzistentní strategie pro zpracování výjimek, ke kterým dochází v všechny vrstvy architektury podnikové aplikace. Je určená pro podporu typické kód obsažený v příkazech catch v součásti aplikace. Výjimka Handling Application Block namísto tento kód (například kód, který zaznamenává informace o výjimce) v blocích catch stejné v celé aplikaci, umožňuje vývojářům k zapouzdření tuto logiku jako obslužné rutiny výjimek opakovaně použitelné.  
-  
- Tato knihovna obsahuje out-of-the-box obslužnou rutinu výjimky selhání kontraktu. Této obslužné rutiny výjimky je určen k použití na hranicích mezi službami Windows® Communication Foundation (WCF) a vygeneruje nový kontrakt chyby z výjimky.  
-  
- Bloky aplikace cílem začlenění běžně používaných osvědčené postupy a poskytují běžný postup pro zpracování v rámci aplikace výjimek. Na druhé straně obslužné rutiny vlastních chyb a selhání kontraktů vyvinuté v vlastního může také být velmi užitečné. Například obslužné rutiny vlastních chyb poskytuje skvělou příležitost se automaticky zvýšit úroveň všech výjimek FaultExceptions a také pro přidání možností protokolování do vaší aplikace.  
-  
- Další informace najdete v tématu [Microsoft Enterprise Library](https://docs.microsoft.com/previous-versions/msp-n-p/ff632023(v=pandp.10)).  
-  
-### <a name="dealing-with-expected-exceptions"></a>Práce s očekávané výjimky  
- Správný kurz akce má zachytit očekávané výjimky v každé operace nebo bod relevantní rozšiřitelnosti, rozhodnout, zda je možné obnovit z a vrátí správné vlastní chyby v FaultException\<T >  
-  
-### <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Řešení pomocí IErrorHandler neočekávané výjimky  
- Řešit neočekávané výjimky, je "spojit" IErrorHandler doporučené kurz akce. Obslužné rutiny chyb pouze zachytit výjimky na úrovni modulu runtime WCF (vrstva "model služby"), ne ve vrstvě kanálu. Jediný způsob, jak se připojit IErrorHandler na úrovni kanálu je vytvořte vlastní kanál, který se ve většině scénářů nedoporučuje.  
-  
- "Neočekávanou výjimku" není obecně neobnovitelné výjimce ani zpracování výjimek; je místo toho uživatel neočekávané výjimky. Neobnovitelné výjimce (například výjimku paměti) – jedna obecně provádí [obslužná rutina výjimky modelu služby](xref:System.ServiceModel.Dispatcher.ExceptionHandler) automaticky – nelze obecně zpracovat bez výpadku a jediným důvodem pro zpracování takových výjimky vůbec může být dodatečné protokolování nebo se vraťte do klienta standardní výjimka. Dojde k výjimce zpracování v zpracování zprávy – například serializace, kodér nebo úroveň formátovací modul – obecně nelze zpracovat v IErrorHandler, protože je obecně buď příliš brzy, nebo příliš pozdě pro obslužnou rutinu chyb zasáhnout podle čas, kdy dojde k tyto výjimky. Podobně nelze zpracovat výjimky přenosu IErrorHandler.  
-  
- S IErrorHandler můžete explicitně řídit chování aplikace, když dojde k výjimce. Můžete:  
-  
-1. Rozhodněte, jestli se mají odeslat klientovi chybu  
-  
-2. Nahraďte výjimku chybu  
-  
-3. Nahraďte jinou chybu selhání  
-  
-4. Provádět protokolování nebo trasování  
-  
-5. Provést jiné vlastní aktivity  
-  
- Obslužné rutiny vlastních chyb jeden můžete nainstalovat tak, že přidáte na vlastnost ErrorHandlers dispečerů kanálu pro vaši službu.  Je možné mít víc než jedna obslužná rutina chyb a jsou volány v pořadí, ve kterém jsou přidané do této kolekce.  
-  
- IErrorHandler.ProvideFault řídí chybová zpráva, která je odeslána do klienta. Tato metoda je volána bez ohledu na typ výjimky vyvolané operace ve službě. Pokud žádná operace se zde provádí, WCF předpokládá jeho výchozí chování a pokračuje, jako by nebyly žádné obslužné rutiny vlastních chyb na místě.  
-  
- Jednu oblast, můžete případně použít tento přístup je, když chcete vytvořit centrální místo pro převod výjimky na chyby, před jejich odesláním do klienta (zajistí, že instance není uvolněn a kanál nebyl přesunut do stavu chyba).  
-  
- Metoda IErrorHandler.HandleError se obvykle používá k implementaci chyba související chování jako je například protokolování, chyba systému oznámení, vypínání aplikace atd. IErrorHandler.HandleError lze volat na více místech ve službě, a v závislosti na tom, kde je vyvolána chyba, metoda HandleError můžou nebo nelze volat ve stejném vlákně jako operace; v tomto ohledu nebudou provedeny žádné záruky.  
-  
-### <a name="dealing-with-exceptions-outside-wcf"></a>Práce s výjimkami mimo WCF  
- Často, může dojít v rámci kontextu aplikace WCF konfigurace výjimek, výjimky připojovací řetězec databáze a další podobné výjimky, ale představují samy o sobě nejsou výjimek způsobených modelu služby nebo samotnou webovou službu. Tyto výjimky jsou externí vzhledem k webové službě "regulární" výjimky a by měly být zpracovány stejně jako ostatní externí výjimky v prostředí mají zpracovat.  
-  
-### <a name="tracing-exceptions"></a>Sledování výjimek  
- Trasování je pouze "pokrývající vše" místem, kde jeden může potenciálně sledovat všechny výjimky. Další informace o trasování a protokolování výjimek naleznete v tématu trasování a protokolování.  
-  
-### <a name="uri-template-errors-when-using-webgetattribute-and-webinvokeattribute"></a>Identifikátor URI šablony chyby při použitím WebGetAttribute i WebInvokeAttribute  
- Atributy WebGet a WebInvoke vám umožňují určit šablona identifikátoru URI, který mapuje součástí adresu požadavek na parametry operace. Například šablona identifikátoru URI "počasí / {state} / {Město}" mapuje adresu požadavek na literálové tokeny, parametr s názvem stavu a parametr s názvem Město. Tyto parametry může pak být vázána podle názvu k některým formálních parametrů operace.  
-  
- Parametry šablony se zobrazí ve formě řetězce v rámci identifikátoru URI při typy jiné než řetězec může být formální parametry typu kontraktu. Převod je proto potřeba předtím, než může vyvolat operaci. A [tabulku převod formátů](wcf-web-http-programming-model-overview.md) je k dispozici.  
-  
- Nicméně pokud převod selže, pak se nedají v operaci vědět, že se něco nepovedlo. Převod typu místo toho poskytuje informace o ve formě selhání odeslání.  
-  
- Chyba odeslání převodu typu může být stejně jako mnoho dalších typů zpracování chyb zkontroloval nainstalováním obslužná rutina chyby. Bod rozšiřitelnosti IErrorHandler je volána pro zpracování výjimek na úrovni služby. Odtud odpověď k odeslání zpět do volajícího – a také jako provádět jakékoli vlastní úlohy vytváření sestav – je možné zvolit.  
-  
+## <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Zvládnutí neočekávaných výjimek pomocí IErrorHandler
+
+Pokud se chcete zabývat s neočekávanými výjimkami, doporučuje se postupovat "připojit" k IErrorHandler. Obslužné rutiny chyb zachytí pouze výjimky na úrovni modulu runtime WCF ("vrstva modelu služby"), nikoli ve vrstvě kanálu. Jediným způsobem, jak připojit IErrorHandler na úrovni kanálu, je vytvořit vlastní kanál, který se ve většině scénářů nedoporučuje.
+
+"Nečekaná výjimka" není obecně výjimka nezotavitelné ani výjimka zpracování; místo toho se jedná o neočekávanou výjimku uživatele. Výjimka nezotavitelné (například výjimka z důvodu nedostatku paměti) – ta, která je obecně zpracovávána [obslužnou rutinou výjimky modelu služby](xref:System.ServiceModel.Dispatcher.ExceptionHandler) automaticky – nemůže být obecně zpracována bez problémů a jediným důvodem pro zpracování takové výjimky ve všech případech. dodatečné protokolování nebo vrácení standardní výjimky klientovi. Při zpracování zprávy dojde k výjimce zpracování – například na úrovni serializace, kodér nebo formátovacího modulu – obecně nelze zpracovat na IErrorHandler, protože je všeobecně příliš nebo příliš pozdě, než se obslužná rutina chyby zavede čas, kdy dochází k těmto výjimkám. Podobně je možné zpracovat výjimky přenosu na IErrorHandler.
+
+Pomocí IErrorHandler můžete explicitně řídit chování aplikace, když je vyvolána výjimka. Možná:  
+
+1. Rozhodněte, zda chcete klientovi odeslat chybu.
+
+2. Nahraďte výjimku chybou.
+
+3. Nahraďte chybu jinou chybou.
+
+4. Proveďte protokolování nebo trasování.
+
+5. Proveďte další vlastní aktivity.
+
+Jedna z nich může nainstalovat vlastní obslužnou rutinu chyb přidáním do vlastnosti ErrorHandlers pro odeslání kanálu pro vaši službu.  Je možné mít více než jednu obslužnou rutinu chyb a jsou volány v pořadí, v jakém jsou přidány do této kolekce.
+
+IErrorHandler. ProvideFault řídí zprávu o chybě, která je odeslána klientovi. Tato metoda je volána bez ohledu na typ výjimky vyvolané operací ve vaší službě. Pokud zde není provedena žádná operace, WCF předpokládá své výchozí chování a pokračuje, jako kdyby nebyly na svém místě žádné vlastní obslužné rutiny chyb.
+
+Jednou z oblastí, které byste mohli použít tento přístup, je, že chcete vytvořit centrální místo pro převod výjimek na chyby předtím, než jsou odesílány klientovi (zajištění, že instance není uvolněna a kanál není přesunut do stavu selhání).
+
+Metoda IErrorHandler. HandleError se obvykle používá k implementaci chování souvisejícího s chybami, jako je protokolování chyb, systémová oznámení, ukončení aplikace atd. IErrorHandler. HandleError lze volat na více místech uvnitř služby a v závislosti na tom, kde je chyba vyvolána, metoda HandleError může nebo nemusí být volána stejným vláknem jako operace. v tomto ohledu se nevedou žádné záruky.
+
+## <a name="dealing-with-exceptions-outside-wcf"></a>Obchodování s výjimkami mimo WCF
+
+V kontextu aplikace WCF se často můžou vyskytovat výjimky konfigurace, výjimky připojovacích řetězců k databázi a jiné podobné výjimky, ale samy nejsou výjimky způsobené modelem služby nebo samotnými webovými službami. Tyto výjimky jsou "standardními" výjimkami externími pro webovou službu a měly by být zpracovány stejně jako jiné externí výjimky v prostředí.
+
+## <a name="tracing-exceptions"></a>Trasování výjimek
+
+Trasování je jediné místo "catch-All", kde jeden může potenciálně Zobrazit všechny výjimky. Další informace o trasování a protokolování výjimek najdete v tématu trasování a protokolování.
+
+## <a name="uri-template-errors-when-using-webgetattribute-and-webinvokeattribute"></a>Chyby šablon identifikátoru URI při použití funkce WebGetAttribute a WebInvokeAttribute
+
+Atributy WebGet a WebInvoke umožňují zadat šablonu identifikátoru URI, která mapuje součásti adresy požadavku na parametry operace. Například šablona identifikátoru URI "počasí/{State}/{City}" mapuje adresu žádosti na literálové tokeny, parametr s názvem State a parametr s názvem City. Tyto parametry je pak možné svázat podle názvu s některými formálními parametry operace.
+
+Parametry šablony se zobrazí ve formě řetězců v identifikátoru URI, zatímco formální parametry typové kontraktu mohou být typy bez řetězců. Proto je třeba provést převod, aby bylo možné operaci vyvolat. [Tabulka formátů převodu](wcf-web-http-programming-model-overview.md) je k dispozici.
+
+Pokud však převod neproběhne úspěšně, neexistuje žádný způsob, jak dát této operaci jistotu, že došlo k nějakému problému. Převod typu se místo povrchů ve formě chyby odeslání.
+
+Selhání odeslání převodu typu lze zkontrolovat stejně jako u mnoha dalších typů selhání odeslání instalací obslužné rutiny chyby. Bod rozšiřitelnosti IErrorHandler se volá za účelem zpracování výjimek na úrovni služby. Odtud se dá odpověď odeslat volajícímu a také provádět jakékoli vlastní úkoly a vytváření sestav – může být zvolena.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Základní programování WCF](../basic-wcf-programming.md)
