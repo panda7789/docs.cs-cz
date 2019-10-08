@@ -115,6 +115,8 @@
           href: 'https://docs.microsoft.com/dotnet/api/index?view=automl-dotnet'
 - name: Prostředky
   items:
+    - name: Přehled
+      href: resources/index.md
     - name: Slovníček
       href: resources/glossary.md
     - name: Telemetrie rozhraní příkazového řádku
