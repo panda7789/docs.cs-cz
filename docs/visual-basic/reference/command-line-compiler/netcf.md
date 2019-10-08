@@ -9,47 +9,47 @@ helpviewer_keywords:
 - netcf compiler option [Visual Basic]
 - /netcf compiler option [Visual Basic]
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
-ms.openlocfilehash: 028fa148d0e5622648a5fdfff1789c3d0bfde057
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 3df7e622f97a5a1291736180e3964b1b3deaea2f
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268278"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005448"
 ---
 # <a name="-netcf"></a>-netcf
 
-Nastaví kompilátoru cílit na .NET Compact Framework.
+Nastaví kompilátor pro cílení na prostředí .NET Compact Framework.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 -netcf
 ```
 
 ## <a name="remarks"></a>Poznámky
 
-`-netcf` Možnost způsobí, že kompilátor jazyka Visual Basic cílit na .NET Compact Framework než úplné rozhraní .NET Framework. Funkce jazyka, které je k dispozici pouze v úplné rozhraní .NET Framework je zakázáno.
+Možnost `-netcf` způsobí, že kompilátor Visual Basic cílit na prostředí .NET Compact Framework, nikoli na úplný .NET Framework. Funkce jazyka, které jsou k dispozici pouze v plném .NET Framework, jsou zakázány.
 
-`-netcf` Možnost je určena pro použití s [- sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Funkce jazyka zakázal `-netcf` jsou stejné funkce jazyka, není k dispozici v souborech cílem `-sdkpath`.
+Možnost `-netcf` je navržena pro použití s parametrem [-SdkPath –](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Funkce jazyka zakázané `-netcf` jsou stejné funkce jazyka, které nejsou k dispozici v souborech cílících na `-sdkpath`.
 
 > [!NOTE]
-> `-netcf` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku. `-netcf` Nastavena možnost při načtení projektu Visual Basic zařízení.
+> Možnost `-netcf` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku. Možnost `-netcf` je nastavena při načtení projektu Visual Basic zařízení.
 
-`-netcf` Možnost změní následující funkce jazyka:
+Možnost `-netcf` mění následující jazykové funkce:
 
-- [End \<– klíčové slovo > příkaz](../../../visual-basic/language-reference/statements/end-keyword-statement.md) klíčové slovo ukončí provádění programu, je zakázaná. Následující program zkompiluje a spustí bez `-netcf` , ale selže v době kompilace s `-netcf`.
+- Klíčové slovo [příkazového > End \<keyword](../../../visual-basic/language-reference/statements/end-keyword-statement.md) , které ukončí provádění programu, je zakázané. Následující program zkompiluje a spustí bez `-netcf`, ale v době kompilace se nezdařila s `-netcf`.
 
   [!code-vb[VbVbalrCompiler#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/netcf.vb#34)]
 
-- Pozdní vazba v všechny formuláře je zakázaná. Chyby při kompilaci jsou generovány, pokud nedojde k rozpoznaný scénáře pozdní vazbu. Následující program zkompiluje a spustí bez `-netcf` , ale selže v době kompilace s `-netcf`.
+- Pozdní vazba je ve všech formulářích zakázaná. Chyby při kompilaci jsou generovány při zjištění rozpoznaných scénářů s pozdní vazbou. Následující program zkompiluje a spustí bez `-netcf`, ale v době kompilace se nezdařila s `-netcf`.
 
   [!code-vb[VbVbalrCompiler#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#35)]
 
-- [Automaticky](../../../visual-basic/language-reference/modifiers/auto.md), [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md), a [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md) modifikátory jsou zakázané. Syntaxe [deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) příkaz také upraví tak `Declare Sub|Function name Lib "library" [Alias "alias"] [([arglist])]`. Následující kód demonstruje účinek `-netcf` v kompilaci.
+- Modifikátory [auto](../../../visual-basic/language-reference/modifiers/auto.md), [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)a [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md) jsou zakázané. Syntaxe příkazu [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) je také změněna na `Declare Sub|Function name Lib "library" [Alias "alias"] [([arglist])]`. Následující kód ukazuje účinek `-netcf` na kompilaci.
 
   [!code-vb[VbVbalrCompiler#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#36)]
 
-- Pomocí klíčových slov jazyka Visual Basic 6.0, které byly odebrány z jazyka Visual Basic generuje různé chyby při `-netcf` se používá. Tato akce ovlivní chybové zprávy pro následující klíčová slova:
+- Použití klíčových slov Visual Basic 6,0 odebraných z Visual Basic generuje při použití `-netcf` jinou chybu. To má vliv na chybové zprávy pro následující klíčová slova:
 
   - `Open`
 
@@ -85,7 +85,7 @@ Nastaví kompilátoru cílit na .NET Compact Framework.
 
 ## <a name="example"></a>Příklad
 
-Následující kód zkompiluje `Myfile.vb` s rozhraním .NET Compact Framework, použití verze knihovny mscorlib.dll a Microsoft.VisualBasic.dll najde v adresáři výchozí instalace rozhraní .NET Compact Framework na jednotce C:. Obvykle byste použili nejnovější verzi rozhraní .NET Compact Framework.
+Následující kód zkompiluje `Myfile.vb` s prostředí .NET Compact Framework pomocí verzí knihovny mscorlib. dll a Microsoft. VisualBasic. dll, která se nachází ve výchozím instalačním adresáři prostředí .NET Compact Framework na jednotce C. Obvykle byste použili nejnovější verzi prostředí .NET Compact Framework.
 
 ```console
 vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactFrameworkSDK\v1.0.5000\Windows CE " myfile.vb
@@ -93,6 +93,6 @@ vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactF
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)

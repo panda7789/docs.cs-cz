@@ -7,27 +7,27 @@ helpviewer_keywords:
 - nologo compiler option [Visual Basic]
 - /nologo compiler option [Visual Basic]
 ms.assetid: 25ef54b6-d676-4639-a2d2-a747a158bc07
-ms.openlocfilehash: 07e1718554b158635b9d8b04958834e804e1fe9f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb64a468f67745b80b47b42c4fac18852279035d
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964381"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005423"
 ---
 # <a name="-nologo-visual-basic"></a>-unlogo (Visual Basic)
 Potlačí zobrazení nápisu copyrightu a informativní zprávy během kompilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 -nologo  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zadáte `-nologo`, kompilátor nezobrazí banner o autorských právech. Ve výchozím nastavení `-nologo` není platná.  
+ Pokud zadáte `-nologo`, kompilátor nezobrazí banner s copyrightem. Ve výchozím nastavení není `-nologo` v platnosti.  
   
 > [!NOTE]
-> Tato `-nologo` možnost není k dispozici ve vývojovém prostředí sady Visual Studio. je k dispozici pouze při kompilaci z příkazového řádku.  
+> Možnost `-nologo` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `T2.vb` a nezobrazuje banner s copyrightem.  

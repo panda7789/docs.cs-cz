@@ -1,5 +1,5 @@
 ---
-title: 'Optimalizace výkonu: Prostředky aplikace'
+title: 'Optimalizace výkonu: Zdroje aplikace'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application resources [WPF], performance
@@ -9,36 +9,36 @@ helpviewer_keywords:
 - brushes [WPF], performance
 - sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-ms.openlocfilehash: 362d0f0fd3282365e5e05dcd43c49a9fd2ddc9a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 759d02afe1934d2ace4ed226d5d911db2d676d98
+ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62017940"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005038"
 ---
-# <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Prostředky aplikace
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje sdílení prostředků aplikace tak, aby mezi elementy podobné typy může podporovat konzistentního vzhledu a chování. Toto téma obsahuje několik doporučení v této oblasti, které vám můžou pomoci zvýšit výkon vašich aplikací.  
+# <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
+@no__t – 0 umožňuje sdílení prostředků aplikace, aby bylo možné podporovat konzistentní vzhled nebo chování napříč podobnými elementy typu. Toto téma nabízí několik doporučení v této oblasti, které vám pomůžou zlepšit výkon aplikací.  
   
- Další informace o prostředcích naleznete v tématu [prostředky XAML](xaml-resources.md).  
+ Další informace o prostředcích najdete v tématu věnovaném [prostředkům XAML](xaml-resources.md).  
   
 ## <a name="sharing-resources"></a>Sdílení prostředků  
- Pokud vaše aplikace používá vlastní ovládací prvky a definuje prostředky v <xref:System.Windows.ResourceDictionary> (nebo prostředky XAML uzel), doporučuje se, že buď definujete prostředky na <xref:System.Windows.Application> nebo <xref:System.Windows.Window> objekt úroveň nebo definovat výchozí motivu pro vlastní ovládací prvky. Definování prostředků v vlastního ovládacího prvku <xref:System.Windows.ResourceDictionary> má dopad na výkon pro každou instanci tohoto ovládacího prvku. Například pokud máte operace náročné na výkon štětce definované jako součást definice prostředků vlastního ovládacího prvku a velký počet instancí vlastního ovládacího prvku, pracovní sada aplikace se výrazně zvýšit.  
+ Pokud vaše aplikace používá vlastní ovládací prvky a definuje prostředky v <xref:System.Windows.ResourceDictionary> (nebo uzlu prostředků XAML), doporučuje se, abyste buď definovali prostředky na úrovni objektu <xref:System.Windows.Application> nebo <xref:System.Windows.Window>, nebo je definovali ve výchozím motivu pro vlastní ovládací prvky. Definování prostředků ve vlastním ovládacím prvku <xref:System.Windows.ResourceDictionary> nepředstavuje dopad na výkon pro každou instanci daného ovládacího prvku. Pokud máte například operace štětce náročné na výkon definované jako součást definice prostředků vlastního ovládacího prvku a mnoha instancí vlastního ovládacího prvku, bude pracovní sada aplikace významně zvýšena.  
   
- Pro ilustraci tohoto bodu, zvažte následující skutečnosti. Řekněme, že vyvíjíte a karty hry s použitím [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pro většinu karetní hry je třeba 52 karet s 52 různých tváří. Rozhodnout k implementaci vlastního ovládacího prvku karty a definovat 52 štětce (nichž každý představuje karty lícem) v prostředcích vlastního ovládacího prvku karty. V hlavní aplikaci vytvoříte nejdřív 52 instance tohoto vlastního ovládacího prvku karty. Každá instance vlastního ovládacího prvku karta generuje 52 instance <xref:System.Windows.Media.Brush> objekty, které poskytuje celkový počet 52 * 52 <xref:System.Windows.Media.Brush> objekty ve vaší aplikaci. Přesunutím štětce nemá dostatek prostředků vlastní ovládací prvek karty na <xref:System.Windows.Application> nebo <xref:System.Windows.Window> úrovni objektu nebo definování výchozí motivu pro vlastní ovládací prvek, snížíte pracovní sady aplikací, protože jsou nyní sdílení 52 štětců mezi 52 instance ovládacího prvku karty.  
+ K ilustraci tohoto bodu Vezměte v úvahu následující skutečnosti. Řekněme, že vyvíjíte karetní hru pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Pro většinu karetních her budete potřebovat 52 karet s 52 různými ploškami. Rozhodnete se implementovat vlastní ovládací prvek karty a v prostředcích vlastního ovládacího prvku karty definujete 52 štětců (které představují plošku na kartě). Ve vaší hlavní aplikaci jste zpočátku vytvořili 52 instancí tohoto vlastního ovládacího prvku karty. Každá instance vlastního ovládacího prvku karta generuje 52 instancí objektů @no__t 0, což vám poskytne celkem 52 * 52 objektů <xref:System.Windows.Media.Brush> ve vaší aplikaci. Přesunutím štětců mimo prostředky vlastního ovládacího prvku karty na úroveň objektu <xref:System.Windows.Application> nebo <xref:System.Windows.Window> nebo jejich definováním ve výchozím motivu vlastního ovládacího prvku zmenšíte pracovní sadu aplikace, protože nyní sdílíte 52 štětce z 52 instance ovládacího prvku karta  
   
 ## <a name="sharing-a-brush-without-copying"></a>Sdílení štětce bez kopírování  
- Pokud máte více elementů se stejnou <xref:System.Windows.Media.Brush> objektu, definice štětec jako prostředek a odkaz, spíše definice vloženě štětce v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]. Tato metoda vytvoří jednu instanci a znovu použít to, že definice vloženě štětce v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] vytvoří novou instanci pro každý prvek.  
+ Pokud máte více elementů, které používají stejný objekt <xref:System.Windows.Media.Brush>, definujte štětce jako prostředek a odkazujte na něj namísto definování štětce vloženého do XAML. Tato metoda vytvoří jednu instanci a znovu ji použije, zatímco při definování štětců v jazyce XAML se vytvoří nová instance pro každý prvek.  
   
- Následující ukázkový kód to znázorňuje:  
+ Tento bod znázorňuje následující příklad kódu:  
   
  [!code-xaml[Performance#PerformanceSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
   
-## <a name="use-static-resources-when-possible"></a>Použití statické prostředky, pokud je to možné  
- Statický prostředek poskytuje hodnotu pro všechny atributy vlastnosti XAML vyhledáním odkaz na prostředek už definované. Chování při vyhledávání pro daný prostředek je obdobou vyhledávání za kompilace.  
+## <a name="use-static-resources-when-possible"></a>Pokud je to možné, používejte statické prostředky.  
+ Statický prostředek poskytuje hodnotu pro libovolný atribut vlastnosti XAML vyhledáním odkazu na již definovaný prostředek. Chování vyhledávání pro tento prostředek je analogické k vyhledávání v době kompilace.  
   
- Dynamický prostředek na druhé straně vytvoří dočasné výraz během počáteční kompilace a vyhledávání prostředků tedy odložit, dokud hodnota požadovaný prostředek je skutečně potřeba, abyste mohli vytvořit objekt. Chování při vyhledávání pro daný prostředek je obdobou vyhledávání za běhu, což má dopad na výkon. Použití statické prostředky, kdykoli je to možné ve vaší aplikaci pomocí dynamické prostředky pouze v případě potřeby.  
+ Dynamický prostředek na druhé straně vytvoří během počáteční kompilace dočasný výraz, čímž se odloží vyhledávání prostředků, dokud není požadovaná hodnota prostředku pro vytvoření objektu skutečně nutná. Chování vyhledávání pro tento prostředek je analogické k prohledávání za běhu, které zaplatí vliv na výkon. Používejte statické prostředky, kdykoli je to možné v aplikaci, použitím dynamických prostředků pouze v případě potřeby.  
   
- Následující příklad kódu ukazuje použití obou typů prostředků:  
+ Následující ukázka kódu ukazuje použití obou typů prostředků:  
   
  [!code-xaml[Performance#PerformanceSnippet8](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   
